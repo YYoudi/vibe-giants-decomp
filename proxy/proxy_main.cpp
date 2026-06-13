@@ -178,6 +178,25 @@ static float __cdecl DetActive_CosLookupA(float a) {
     if (orig) { float o = orig(a); if (mine != o) g_dtMM_CosA++; }
     return mine;
 }
+// ── ACTIVE: more validated scalar ports (promote whichever fire) ──
+static uint32_t g_dtC_TrigC=0, g_dtMM_TrigC=0; static void* g_dtT_TrigC=nullptr;
+static uint32_t g_dtC_FClamp=0, g_dtMM_FClamp=0; static void* g_dtT_FClamp=nullptr;
+static uint32_t g_dtC_Mod5=0, g_dtMM_Mod5=0; static void* g_dtT_Mod5=nullptr;
+static float __cdecl DetActive_TrigLookupC(float a) {
+    g_dtC_TrigC++; float mine = Callbacks::RE_TrigLookupC(a);
+    auto o = reinterpret_cast<float(__cdecl*)(float)>(g_dtT_TrigC); if(o){float r=o(a); if(mine!=r)g_dtMM_TrigC++;}
+    return mine;
+}
+static float __cdecl DetActive_FloatClamp(float a) {
+    g_dtC_FClamp++; float mine = Callbacks::RE_FloatClamp(a);
+    auto o = reinterpret_cast<float(__cdecl*)(float)>(g_dtT_FClamp); if(o){float r=o(a); if(mine!=r)g_dtMM_FClamp++;}
+    return mine;
+}
+static uint32_t __cdecl DetActive_Mod5(uint32_t x) {
+    g_dtC_Mod5++; uint32_t mine = Callbacks::RE_Mod5(x);
+    auto o = reinterpret_cast<uint32_t(__cdecl*)(uint32_t)>(g_dtT_Mod5); if(o){uint32_t r=o(x); if(mine!=r)g_dtMM_Mod5++;}
+    return mine;
+}
 
 DETOUR_OBS(VFS_OpenFile)                  // 0x00621e50 — engine VFS open (callback 17)
 DETOUR_OBS(VFS_OpenFileVariant)           // 0x006222d0 — engine VFS open variant (callback 15)
@@ -189,6 +208,9 @@ static DetourProbe g_probes[] = {
     { "Math_VectorDistanceSq",      0x00638d40, DetActive_VectorDistanceSq,        &g_dtTramp_VDS,                         &g_dtCount_VDS                         },
     { "Trig_SinLookupA",            0x006387b0, DetActive_SinLookupA,              &g_dtTramp_SinA,                        &g_dtCount_SinA                        },
     { "Trig_CosLookupA",            0x00638780, DetActive_CosLookupA,              &g_dtTramp_CosA,                        &g_dtCount_CosA                        },
+    { "Trig_TrigLookupC",           0x00638740, DetActive_TrigLookupC,             &g_dtT_TrigC,                           &g_dtC_TrigC                           },
+    { "Math_FloatClamp",            0x006389a0, DetActive_FloatClamp,              &g_dtT_FClamp,                          &g_dtC_FClamp                          },
+    { "Math_Mod5",                  0x00635890, DetActive_Mod5,                    &g_dtT_Mod5,                            &g_dtC_Mod5                            },
     { "VFS_OpenFile",               0x00621e50, DetObs_VFS_OpenFile,               &g_dtTramp_VFS_OpenFile,               &g_dtCount_VFS_OpenFile               },
     { "VFS_OpenFileVariant",        0x006222d0, DetObs_VFS_OpenFileVariant,        &g_dtTramp_VFS_OpenFileVariant,        &g_dtCount_VFS_OpenFileVariant        },
     { "VFS_Initialize",             0x00622930, DetObs_VFS_Initialize,             &g_dtTramp_VFS_Initialize,             &g_dtCount_VFS_Initialize             },
@@ -213,6 +235,30 @@ static void InstallDetourProbes() {
     }
     Logger::Log("[detour] %d/%d probes installed", ok, g_probeCount);
     Logger::Separator();
+}
+
+// Drive each ACTIVELY-detoured function with a deterministic sweep. This feeds
+// the active hooks' trampoline dual-compare (mine vs real original) so cold
+// functions (rarely called by the cinematic) are still validated every run —
+// not just the hot ones (VDS) that the game exercises millions of times.
+static void DriveActiveDetours() {
+    auto driveF = [](uint32_t addr) {
+        auto fn = reinterpret_cast<float (__cdecl *)(float)>((uintptr_t)addr);
+        for (uint32_t i = 0; i < 1024; i++) {
+            float a = (float)((int32_t)((i * 2654435761u) >> 8) % 2001 - 1000);
+            if (i % 2 == 0) a = -a;
+            (void)fn(a);   // active hook dual-compares internally
+        }
+    };
+    auto driveU = [](uint32_t addr) {
+        auto fn = reinterpret_cast<uint32_t (__cdecl *)(uint32_t)>((uintptr_t)addr);
+        for (uint32_t i = 0; i < 1024; i++) (void)fn(i * 2654435761u);
+    };
+    if (g_dtTramp_SinA)   driveF(0x006387b0);
+    if (g_dtTramp_CosA)   driveF(0x00638780);
+    if (g_dtT_TrigC)      driveF(0x00638740);
+    if (g_dtT_FClamp)     driveF(0x006389a0);
+    if (g_dtT_Mod5)       driveU(0x00635890);
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -299,6 +345,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID reserved) {
                     g_dtCount_VDS, g_dtMismatch_VDS, g_dtCount_VDS/200);
         Logger::Log("[GiantsRE Proxy] ACTIVE trig: SinLookupA %u calls/%u mm, CosLookupA %u calls/%u mm",
                     g_dtCount_SinA, g_dtMM_SinA, g_dtCount_CosA, g_dtMM_CosA);
+        Logger::Log("[GiantsRE Proxy] ACTIVE more: TrigLookupC %u/%u, FloatClamp %u/%u, Mod5 %u/%u",
+                    g_dtC_TrigC, g_dtMM_TrigC, g_dtC_FClamp, g_dtMM_FClamp, g_dtC_Mod5, g_dtMM_Mod5);
         Logger::Separator();
         Logger::Log("[GiantsRE Proxy] FLICK opcode histogram (entry-sampled, %u calls):",
                     g_dtCount_FLICK);
@@ -376,6 +424,7 @@ void UpCallsLoad(uint32_t version, uint32_t count, uint32_t callbackTablePtr) {
     InstallDetourProbes();
 
     Callbacks::RunSelfTests();
+    DriveActiveDetours();   // feed active hooks a sweep → trampoline dual-compare validates cold fns too
 }
 
 // ═══════════════════════════════════════════════════════════════

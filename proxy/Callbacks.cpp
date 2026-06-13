@@ -504,12 +504,11 @@ uint32_t RunSelfTests() {
     total += SelfTest_SinCosLookup();
     total += SelfTest_VectorDistanceSq();
     // ── sweep batch: pure leaves via direct-address call ──
-    total += SelfTest_Sweep_FloatF(Sweep::OrigSinA(),  RE_SinLookupA,  "SinLookupA 0x006387b0");
-    total += SelfTest_Sweep_FloatF(Sweep::OrigCosA(),  RE_CosLookupA,  "CosLookupA 0x00638780");
-    total += SelfTest_Sweep_FloatF(Sweep::OrigClamp(), RE_FloatClamp,  "FloatClamp 0x006389a0");
-    total += SelfTest_Sweep_Mod5();
-    total += SelfTest_TrigLookupC();
-    total += SweepAuto::Run();   // auto-generated scalar-leaf batch (38+ functions)
+    // NOTE: SinA/CosA/TrigC/FloatClamp/Mod5 are now ACTIVELY detoured (validated
+    // by the active hooks' trampoline dual-compare in proxy_main), so their
+    // direct-address self-tests are removed here — calling the raw entry now
+    // hits our hook, not the original. The active dual-compare IS their proof.
+    total += SweepAuto::Run();   // auto-generated scalar-leaf batch (38 modulo fns, NOT detoured)
     // AllMul/ArrayIndexFloat/IsEven disabled — calling those originals in
     // isolation (64-bit return / pointer deref / __fastcall) crashes the
     // harness. Revisit with in-game shadow instead of direct-address call.
