@@ -65,16 +65,21 @@ float VectorDistanceSq(const float* a, const float* b)
 // DAT_00698800: sin table (float[16384])
 // DAT_006ac800: cos table (float[16384]) — accessed as uint32_t offset
 
-static float s_sinTable[0x4000];      // DAT_00698800
-static float s_cosTable[0x4000];      // DAT_006ac800
-static float DAT_006543c8 = 10430.378f;  // Radians-to-index scale
-static float DAT_0066be20 = 0.5f;        // Rounding bias
+// Embedded real trig data (TrigTables.cpp) — single source of truth.
+// The old s_sinTable/s_cosTable were EMPTY (zero-init) → SinCosLookup returned
+// zeros, breaking EntityMatrix yaw/roll/pitch. The old scale 10430.378 was also
+// WRONG: the validated value at 0x006543c8 is 45.511 (16384/360, DEGREES), not
+// 65536/2π. FUN_006387e0 (proxy-validated 513/513 bit-exact) confirms degrees.
+extern const uint32_t kSinTable[16384];
+extern const uint32_t kCosTable[16384];
 
 void SinCosLookup(float angle, float* outSin, float* outCos)
 {
-    uint32_t index = (int32_t)(angle * DAT_006543c8 + DAT_0066be20) & 0x3FFF;
-    *outSin = s_sinTable[index];
-    *outCos = s_cosTable[index];
+    const float kScale  = 45.511112213134766f;  // _DAT_006543c8 = 16384/360 (degrees)
+    const float kOffset = 0.5f;                 // DAT_0066be20
+    uint32_t index = (int32_t)(angle * kScale + kOffset) & 0x3FFF;
+    *outSin = reinterpret_cast<const float*>(kSinTable)[index];
+    *outCos = reinterpret_cast<const float*>(kCosTable)[index];
 }
 
 // ─── CheckProcessorSupport (FUN_006391d0) — PASS ────────────────
