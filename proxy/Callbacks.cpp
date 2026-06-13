@@ -14,6 +14,7 @@
 #include <cmath>
 #include <cstdint>
 #include <cstring>
+#include <initializer_list>
 
 namespace Callbacks {
 
@@ -150,6 +151,16 @@ float RE_ArrayIndexFloat(const int32_t* desc, int32_t idx) {
 }
 // FUN_0043e430 — is-even predicate on *p.
 int RE_IsEven(const uint32_t* p) { return (*p & 1u) == 0u ? 1 : 0; }
+// FUN_00635850 (FLICK callee) — int f(int p, float a):
+//   (int)( *(int*)(p+0x18) * a * *(int*)(p+0x1c) + *(int*)(p+0x10) )  [float math]
+//   Reads 3 object fields; deterministic given (fields, a). Validated via synthetic struct.
+int RE_FlickFieldMath(int p, float a) {
+    return (int)((float)*(int*)(p + 0x18) * a * (float)*(int*)(p + 0x1c) + (float)*(int*)(p + 0x10));
+}
+// FUN_00634e80 (FLICK callee) — int f(int p): return (*(short*)(p+4)==1) ? p : 0;
+int RE_FlickFlagCheck(int p) {
+    return (*(short*)(p + 4) == 1) ? p : 0;
+}
 
 // ═══════════════════════════════════════════════════════════════
 // Detour-original registry (engineAddr → trampoline that runs the true original)
@@ -480,6 +491,46 @@ uint32_t SelfTest_IsEven() {
     Logger::Log("[selftest] IsEven 0x0043e430: %u/4096 mismatches", mismatch);
     return mismatch;
 }
+// FLICK-path leaf callees, validated with a synthetic struct (read-only field
+// math). These FIRE in the cinematic (callees of ProcessFlickCommands).
+uint32_t SelfTest_HotCallees() {
+    uint32_t mm = 0;
+    {
+        auto orig = reinterpret_cast<int (__cdecl *)(int, float)>(0x00635850);
+        if (orig) {
+            int32_t buf[16] = {0};
+            uint32_t m = 0;
+            for (uint32_t i = 0; i < 512; i++) {
+                uint32_t q = i * 2654435761u;
+                buf[4] = (int32_t)(q & 0xFFFF) - 16384;      // +0x10
+                buf[6] = (int32_t)((q >> 8) & 0xFFF) - 2048; // +0x18
+                buf[7] = (int32_t)((q >> 16) & 0xFF) - 128;  // +0x1c
+                float a = (float)((int32_t)((q >> 4) & 0xFF)) * 0.1f;
+                int o = orig((int)buf, a);
+                int mine = RE_FlickFieldMath((int)buf, a);
+                if (o != mine) { if (m<4) Logger::Log("[selftest] FlickFieldMath mm i=%u o=%d m=%d", i, o, mine); m++; }
+            }
+            Logger::Log("[selftest] FlickFieldMath 0x00635850: %u/512 mm", m);
+            mm += m;
+        }
+    }
+    {
+        auto orig = reinterpret_cast<int (__cdecl *)(int)>(0x00634e80);
+        if (orig) {
+            int32_t buf[4] = {0};
+            uint32_t m = 0;
+            for (short v : {0, 1, 2, -1, 0x100, 0x1234}) {
+                *(short*)((char*)buf + 4) = v;
+                int o = orig((int)buf);
+                int mine = RE_FlickFlagCheck((int)buf);
+                if (o != mine) { if(m<4) Logger::Log("[selftest] FlickFlagCheck mm v=%d", v); m++; }
+            }
+            Logger::Log("[selftest] FlickFlagCheck 0x00634e80: %u/6 mm", m);
+            mm += m;
+        }
+    }
+    return mm;
+}
 } // namespace
 
 uint32_t RunSelfTests() {
@@ -503,6 +554,7 @@ uint32_t RunSelfTests() {
     }
     total += SelfTest_SinCosLookup();
     total += SelfTest_VectorDistanceSq();
+    total += SelfTest_HotCallees();   // FLICK-path leaf callees (00635850, 00634e80)
     // ── sweep batch: pure leaves via direct-address call ──
     // NOTE: SinA/CosA/TrigC/FloatClamp/Mod5 are now ACTIVELY detoured (validated
     // by the active hooks' trampoline dual-compare in proxy_main), so their
