@@ -161,6 +161,17 @@ int RE_FlickFieldMath(int p, float a) {
 int RE_FlickFlagCheck(int p) {
     return (*(short*)(p + 4) == 1) ? p : 0;
 }
+// FUN_00638d00 — VectorDistanceSq2D (111 callers, hot). 2D version of VDS.
+float RE_VectorDistanceSq2D(const float* a, const float* b) {
+    long double dx = (long double)b[0] - a[0];
+    long double dy = (long double)b[1] - a[1];
+    return (float)(dx * dx + dy * dy);
+}
+// Deep-mined read-only accessors (depth<=3 callees of hot fns), synthetic-struct self-test:
+int RE_AccField1c(int p)        { return *(int*)(p + 0x1c); }                  // 006408c0
+int RE_AccU2PlusP(int p)        { return (unsigned int)*(unsigned short*)(p + 2) + p; } // 00640c60
+int RE_AccU2PlusP4(int p)       { return *(unsigned short*)(p + 2) + 4 + p; }          // 00640c70
+int RE_AccDeref1c(int p)        { return *(int*)(*(int*)(p + 4) + 0x1c); }     // 00640bf0
 
 // ═══════════════════════════════════════════════════════════════
 // Detour-original registry (engineAddr → trampoline that runs the true original)
@@ -531,6 +542,47 @@ uint32_t SelfTest_HotCallees() {
     }
     return mm;
 }
+// Deep-mined callees: VDS2D (hot) + 4 read-only accessors (synthetic struct).
+uint32_t SelfTest_DeepCallees() {
+    uint32_t mm = 0;
+    // FUN_00638d00 VectorDistanceSq2D — 2D vec pairs.
+    {
+        auto orig = reinterpret_cast<float (__cdecl *)(const float*, const float*)>(0x00638d00);
+        if (orig) {
+            uint32_t seed = 0xABCDEF01u; uint32_t m = 0;
+            auto nf = [&](){ seed = seed*1103515245u+12345u; return (float)((int32_t)(seed>>8) % 2001 - 1000) + (float)(seed & 0xFF)/256.0f; };
+            for (uint32_t i = 0; i < 2048; i++) {
+                float a[2] = { nf(), nf() }, b[2] = { nf(), nf() };
+                float o = orig(a, b), mine = RE_VectorDistanceSq2D(a, b);
+                uint32_t ob, mb; std::memcpy(&ob,&o,4); std::memcpy(&mb,&mine,4);
+                if (ob != mb) m++;
+            }
+            Logger::Log("[selftest] VectorDistanceSq2D 0x00638d00: %u/2048 bit-mm (1ULP=codegen)", m);
+            mm += m;
+        }
+    }
+    // Accessors with a synthetic struct.
+    {
+        int32_t buf[16]; for (int i=0;i<16;i++) buf[i] = (0xA0+i)*0x101 + i;  // deterministic pattern
+        int32_t inner[16]; for (int i=0;i<16;i++) inner[i] = (0xB0+i)*0x101;
+        buf[1] = (int32_t)inner;  // p+4 -> inner (for 00640bf0 deref)
+        int p = (int)buf;
+        struct A { uint32_t addr; int (*fn)(int); const char* nm; } accs[] = {
+            {0x006408c0, RE_AccField1c,  "AccField1c"},
+            {0x00640c60, RE_AccU2PlusP,  "AccU2PlusP"},
+            {0x00640c70, RE_AccU2PlusP4, "AccU2PlusP4"},
+            {0x00640bf0, RE_AccDeref1c,  "AccDeref1c"},
+        };
+        for (auto& a : accs) {
+            auto orig = reinterpret_cast<int (__cdecl *)(int)>(a.addr);
+            if (!orig) continue;
+            int o = orig(p), mine = a.fn(p);
+            Logger::Log("[selftest] %s 0x%06X: orig=%d mine=%d %s", a.nm, a.addr, o, mine, o==mine?"OK":"MISMATCH");
+            if (o != mine) mm++;
+        }
+    }
+    return mm;
+}
 } // namespace
 
 uint32_t RunSelfTests() {
@@ -555,6 +607,7 @@ uint32_t RunSelfTests() {
     total += SelfTest_SinCosLookup();
     total += SelfTest_VectorDistanceSq();
     total += SelfTest_HotCallees();   // FLICK-path leaf callees (00635850, 00634e80)
+    total += SelfTest_DeepCallees();  // VDS2D + deep-mined accessors
     // ── sweep batch: pure leaves via direct-address call ──
     // NOTE: SinA/CosA/TrigC/FloatClamp/Mod5 are now ACTIVELY detoured (validated
     // by the active hooks' trampoline dual-compare in proxy_main), so their
