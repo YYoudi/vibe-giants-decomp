@@ -7,6 +7,12 @@
 
 namespace Giants {
 
+// --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
+static uint32_t g_state_00702c20 = 0;  // was @0x0X00702C20
+static uint32_t g_state_00702c1c = 0;  // was @0x0X00702C1C
+static uint32_t g_state_00702c24 = 0;  // was @0x0X00702C24
+static uint32_t g_state_00702c28 = 0;  // was @0x0X00702C28
+
 // ═══════════════════════════════════════════════════════════════════
 // AngleDiff (FUN_00638870) — 33 callers — PASS
 // ═══════════════════════════════════════════════════════════════════
@@ -300,13 +306,13 @@ void ResetEntityBuffers()
     }
 
     // Reset state buffer (0x74 bytes at DAT_00702c00), preserving sentinels
-    uint32_t uVar3 = *reinterpret_cast<uint32_t*>(0x00702c20);
-    uint32_t uVar2 = *reinterpret_cast<uint32_t*>(0x00702c1c);
+    uint32_t uVar3 = g_state_00702c20;
+    uint32_t uVar2 = g_state_00702c1c;
     memset(reinterpret_cast<void*>(0x00702c00), 0, 0x74);
-    *reinterpret_cast<uint32_t*>(0x00702c1c) = uVar2;
-    *reinterpret_cast<uint32_t*>(0x00702c24) = uVar2;
-    *reinterpret_cast<uint32_t*>(0x00702c20) = uVar3;
-    *reinterpret_cast<uint32_t*>(0x00702c28) = uVar3;
+    g_state_00702c1c = uVar2;
+    g_state_00702c24 = uVar2;
+    g_state_00702c20 = uVar3;
+    g_state_00702c28 = uVar3;
 }
 
 } // namespace Giants

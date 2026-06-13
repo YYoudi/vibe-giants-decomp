@@ -26,6 +26,9 @@
 
 namespace Giants {
 
+// --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
+static char g_state_00702a60 = 0;  // was @0x0X00702A60
+
 // Forward declaration — defined in ScenePipeline.cpp
 extern void* g_d3d9Device;  // IDirect3DDevice9* (found by scanner)
 
@@ -231,7 +234,7 @@ void LockGraphics()
         0, nullptr, 0, 0xF003F, nullptr, &g_hPlayerRootKey, &disposition);
 
     // Open current player subkey if name is set
-    // Original: *reinterpret_cast<char*>(0x00702a60) — hardcoded address
+    // Original: g_state_00702a60 — hardcoded address
     // Safe: read from registry instead
     char playerName[64] = {};
     if (g_hKey != nullptr)

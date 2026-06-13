@@ -7,6 +7,10 @@
 
 namespace Giants {
 
+// --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
+static uint32_t g_state_007028A0 = 0;  // was @0x0X007028A0
+static uint32_t g_state_007028A4 = 0;  // was @0x0X007028A4
+
 // ═══════════════════════════════════════════════════════════════════
 // WideStringCopyConstruct (FUN_00443070) — 31 callers — PASS
 // ═══════════════════════════════════════════════════════════════════
@@ -199,13 +203,13 @@ void RenderSprite(int spriteData, int renderEntry, uint32_t flags,
         if ((entryFlags & 4) != 0)
         {
             // Billboard mode with aspect ratio correction
-            float aspectScale = static_cast<float>(*reinterpret_cast<uint32_t*>(0x007028A0)) /
+            float aspectScale = static_cast<float>(g_state_007028A0) /
                                 640.0f;
 
             *reinterpret_cast<float*>(renderEntry + 0x38) = localScale * *reinterpret_cast<float*>(renderEntry + 0x20) * aspectScale + posY + depthScale;
-            *reinterpret_cast<float*>(renderEntry + 0x3C) = (width * *reinterpret_cast<float*>(renderEntry + 0x24) * static_cast<float>(*reinterpret_cast<uint32_t*>(0x007028A4))) / 480.0f + height;
+            *reinterpret_cast<float*>(renderEntry + 0x3C) = (width * *reinterpret_cast<float*>(renderEntry + 0x24) * static_cast<float>(g_state_007028A4)) / 480.0f + height;
             *reinterpret_cast<float*>(renderEntry + 0x44) = localScale * *reinterpret_cast<float*>(renderEntry + 0x2C) * aspectScale + posY + depthScale;
-            *reinterpret_cast<float*>(renderEntry + 0x48) = (width * *reinterpret_cast<float*>(renderEntry + 0x30) * static_cast<float>(*reinterpret_cast<uint32_t*>(0x007028A4))) / 480.0f + height;
+            *reinterpret_cast<float*>(renderEntry + 0x48) = (width * *reinterpret_cast<float*>(renderEntry + 0x30) * static_cast<float>(g_state_007028A4)) / 480.0f + height;
         }
     }
     else

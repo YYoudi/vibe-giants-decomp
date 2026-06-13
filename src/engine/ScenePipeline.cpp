@@ -11,6 +11,11 @@
 
 namespace Giants {
 
+// --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
+static char g_state_006ff367 = 0;  // was @0x0X006FF367
+static char g_state_0068578c = 0;  // was @0x0X0068578C
+static float g_state_00727e38 = 0.0f;  // was @0x0X00727E38
+
 // ─── External data references used by EndSceneDirectional ─────
 static char DAT_00702b5e = 0;
 static char DAT_00702b61 = 0;
@@ -150,7 +155,7 @@ void EndSceneDirectional()
 
         int iVar3 = 1;       // first-iteration flag
         int iVar1 = reinterpret_cast<int>(g_sceneReady) + 0x4edc;
-        *reinterpret_cast<char*>(0x006ff367) = 1;  // rendering flag
+        g_state_006ff367 = 1;  // rendering flag
 
         for (int iVar4 = 0; iVar4 < 6; iVar4++)
         {
@@ -198,7 +203,7 @@ void EndSceneDirectional()
                     **reinterpret_cast<void(***)(void*)>(
                         *reinterpret_cast<void**>(g_rendererObj) + 0x44))(&g_camX);
 
-                *reinterpret_cast<char*>(0x0068578c) = 1;
+                g_state_0068578c = 1;
 
                 RenderPassHelper();           // FUN_005f9c10 — SetupViewportMatrix stub
                 PostRenderPass();             // FUN_005fa310 — CopyAndObfuscateMatrix stub
@@ -245,7 +250,7 @@ void EndSceneDirectional()
             **reinterpret_cast<void(***)(void*)>(
                 *reinterpret_cast<void**>(g_rendererObj) + 0xa0))(0, 0);
 
-        *reinterpret_cast<char*>(0x006ff367) = 0;
+        g_state_006ff367 = 0;
 
         // Mark scene as rendered (set bit 0x4000)
         *reinterpret_cast<uint32_t*>(
@@ -304,7 +309,7 @@ int ProcessSceneTransition()
                 if (levelState == 2)
                 {
                     // Fade-out transition
-                    DAT_007495b4 -= *reinterpret_cast<float*>(0x00727e38);
+                    DAT_007495b4 -= g_state_00727e38;
                     DAT_00748929 = 1;
                     if (DAT_007495b4 > 0.0f)
                     {

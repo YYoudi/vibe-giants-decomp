@@ -5,6 +5,10 @@
 
 namespace Giants {
 
+// --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
+static float g_state_0074beb4 = 0.0f;  // was @0x0X0074BEB4
+static int g_state_0074bed4 = 0;  // was @0x0X0074BED4
+
 extern const char* GetUIString();              // FUN_00551ae0
 extern void        CommitTextRender();         // FUN_0062c690
 extern void        SetTextInterpolation(float t, int len);  // FUN_0062c420
@@ -73,8 +77,8 @@ uint32_t LayoutUIText(int param_1, int param_2, int param_3, int param_4)
     }
 
     // Compute interpolation value
-    float interp = invProgress + (progress / *reinterpret_cast<float*>(0x0074beb4)) *
-                   static_cast<float>(*reinterpret_cast<int*>(0x0074bed4));
+    float interp = invProgress + (progress / g_state_0074beb4) *
+                   static_cast<float>(g_state_0074bed4);
     SetTextInterpolation(interp, strLen);
 
     *reinterpret_cast<char**>(0x007280cc) = nullptr;

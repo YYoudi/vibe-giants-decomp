@@ -13,6 +13,9 @@ using uint = unsigned int;
 
 namespace Giants {
 
+// --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
+static uint32_t g_state_00702b04 = 0;  // was @0x0X00702B04
+
 // ─── Static State ─────────────────────────────────────────────
 
 int*     g_rawInputDevice = nullptr;  // DAT_00727e5c
@@ -218,7 +221,7 @@ void InputCommandSwitch(int param1, uint32_t param2)
     {
     case 0x20:
         // Toggle camera mode or set flag
-        if (*reinterpret_cast<uint32_t*>(0x00702b04) == 0)
+        if (g_state_00702b04 == 0)
         {
             DAT_00702c45 = 1;
             return;
