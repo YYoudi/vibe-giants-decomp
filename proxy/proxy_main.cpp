@@ -161,6 +161,24 @@ static float __cdecl DetActive_VectorDistanceSq(const float* a, const float* b) 
     return mine;  // ACTIVE: return our port's result
 }
 
+// ── ACTIVE: trig single-output lookups (validated ports, promote if they fire) ──
+static uint32_t g_dtCount_SinA = 0, g_dtMM_SinA = 0; static void* g_dtTramp_SinA = nullptr;
+static uint32_t g_dtCount_CosA = 0, g_dtMM_CosA = 0; static void* g_dtTramp_CosA = nullptr;
+static float __cdecl DetActive_SinLookupA(float a) {
+    g_dtCount_SinA++;
+    float mine = Callbacks::RE_SinLookupA(a);
+    auto orig = reinterpret_cast<float (__cdecl *)(float)>(g_dtTramp_SinA);
+    if (orig) { float o = orig(a); if (mine != o) g_dtMM_SinA++; }
+    return mine;
+}
+static float __cdecl DetActive_CosLookupA(float a) {
+    g_dtCount_CosA++;
+    float mine = Callbacks::RE_CosLookupA(a);
+    auto orig = reinterpret_cast<float (__cdecl *)(float)>(g_dtTramp_CosA);
+    if (orig) { float o = orig(a); if (mine != o) g_dtMM_CosA++; }
+    return mine;
+}
+
 DETOUR_OBS(VFS_OpenFile)                  // 0x00621e50 — engine VFS open (callback 17)
 DETOUR_OBS(VFS_OpenFileVariant)           // 0x006222d0 — engine VFS open variant (callback 15)
 DETOUR_OBS(VFS_Initialize)                // 0x00622930 — VFS init (67 branches)
@@ -169,6 +187,8 @@ static DetourProbe g_probes[] = {
     { "FLICK_ProcessFlickCommands", 0x004e7b10, DetObs_FLICK, &g_dtTramp_FLICK, &g_dtCount_FLICK },
     { "Player_LoadDefaultPlayer",   0x00552990, DetObs_Player_LoadDefaultPlayer,   &g_dtTramp_Player_LoadDefaultPlayer,   &g_dtCount_Player_LoadDefaultPlayer   },
     { "Math_VectorDistanceSq",      0x00638d40, DetActive_VectorDistanceSq,        &g_dtTramp_VDS,                         &g_dtCount_VDS                         },
+    { "Trig_SinLookupA",            0x006387b0, DetActive_SinLookupA,              &g_dtTramp_SinA,                        &g_dtCount_SinA                        },
+    { "Trig_CosLookupA",            0x00638780, DetActive_CosLookupA,              &g_dtTramp_CosA,                        &g_dtCount_CosA                        },
     { "VFS_OpenFile",               0x00621e50, DetObs_VFS_OpenFile,               &g_dtTramp_VFS_OpenFile,               &g_dtCount_VFS_OpenFile               },
     { "VFS_OpenFileVariant",        0x006222d0, DetObs_VFS_OpenFileVariant,        &g_dtTramp_VFS_OpenFileVariant,        &g_dtCount_VFS_OpenFileVariant        },
     { "VFS_Initialize",             0x00622930, DetObs_VFS_Initialize,             &g_dtTramp_VFS_Initialize,             &g_dtCount_VFS_Initialize             },
@@ -277,6 +297,8 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID reserved) {
         Logger::Log("[GiantsRE Proxy] ACTIVE replacement VectorDistanceSq (0x00638d40): "
                     "%u calls, %u dual-mismatches (expected ~%u @1ULP) — RETURNING OUR RESULT",
                     g_dtCount_VDS, g_dtMismatch_VDS, g_dtCount_VDS/200);
+        Logger::Log("[GiantsRE Proxy] ACTIVE trig: SinLookupA %u calls/%u mm, CosLookupA %u calls/%u mm",
+                    g_dtCount_SinA, g_dtMM_SinA, g_dtCount_CosA, g_dtMM_CosA);
         Logger::Separator();
         Logger::Log("[GiantsRE Proxy] FLICK opcode histogram (entry-sampled, %u calls):",
                     g_dtCount_FLICK);

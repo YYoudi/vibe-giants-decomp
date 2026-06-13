@@ -107,6 +107,68 @@ int InsnLen(const uint8_t* p, bool* relBranch) {
         case 0xAE: case 0xAF:                          // scas
             return base;
 
+        // ── 0F two-byte escape (SSE/MMX/cmov/etc.) ──
+        // Whitelist sub-opcodes that take a modrm (the common SIMD moves/arith).
+        // Refuses anything else so we never mis-relocate. SSE2-using functions
+        // (movss/movaps/...) are common in the math/trig modules — this unblocks
+        // hooking them.
+        case 0x0F: {
+            uint8_t sub = p[base];                 // second opcode byte
+            auto hasModrm = [](uint8_t s) -> bool {
+                switch (s) {
+                  // SSE moves / shuffle / arithmetic (all modrm)
+                  case 0x10: case 0x11: case 0x12: case 0x13:
+                  case 0x14: case 0x15: case 0x16: case 0x17:
+                  case 0x28: case 0x29: case 0x2A: case 0x2B:
+                  case 0x2C: case 0x2D: case 0x2E: case 0x2F:
+                  case 0x40: case 0x41: case 0x42: case 0x43:
+                  case 0x44: case 0x45: case 0x46: case 0x47:
+                  case 0x48: case 0x49: case 0x4A: case 0x4B:
+                  case 0x4C: case 0x4D: case 0x4E: case 0x4F:   // cmov
+                  case 0x50: case 0x51: case 0x52: case 0x53:
+                  case 0x54: case 0x55: case 0x56: case 0x57:
+                  case 0x58: case 0x59: case 0x5A: case 0x5B:
+                  case 0x5C: case 0x5D: case 0x5E: case 0x5F:   // SSE arith
+                  case 0x60: case 0x61: case 0x62: case 0x63:
+                  case 0x64: case 0x65: case 0x66: case 0x67:
+                  case 0x68: case 0x69: case 0x6A: case 0x6B:
+                  case 0x6C: case 0x6D: case 0x6E: case 0x6F:   // MMX/SSE2
+                  case 0x70: case 0x71: case 0x72: case 0x73:
+                  case 0x74: case 0x75: case 0x76: case 0x77:
+                  case 0x7E: case 0x7F:
+                  case 0xA4: case 0xA5: case 0xAC: case 0xAD: // shld/shrd
+                  case 0xB0: case 0xB1: case 0xB6: case 0xB7:  // cmpxchg/movzx
+                  case 0xBB: case 0xBC: case 0xBD: case 0xBE: case 0xBF:
+                  case 0xC0: case 0xC1: case 0xC2: case 0xC3:
+                  case 0xC4: case 0xC5: case 0xC6: case 0xC7:
+                  case 0xD0: case 0xD1: case 0xD2: case 0xD3:
+                  case 0xD4: case 0xD5: case 0xD6: case 0xD7:
+                  case 0xD8: case 0xD9: case 0xDA: case 0xDB:
+                  case 0xDC: case 0xDD: case 0xDE: case 0xDF:
+                  case 0xE0: case 0xE1: case 0xE2: case 0xE3:
+                  case 0xE4: case 0xE5: case 0xE6: case 0xE7:
+                  case 0xE8: case 0xE9: case 0xEA: case 0xEB:
+                  case 0xEC: case 0xED: case 0xEE: case 0xEF:
+                  case 0xF0: case 0xF1: case 0xF2: case 0xF3:
+                  case 0xF4: case 0xF5: case 0xF6: case 0xF7:
+                  case 0xF8: case 0xF9: case 0xFA: case 0xFB:
+                  case 0xFC: case 0xFD: case 0xFE:
+                    return true;
+                  default:
+                    return false;
+                }
+            };
+            if (!hasModrm(sub)) return 0;          // refuse unknown 0F ops
+            int mlen = modrmLen(base + 1);
+            int imm = 0;
+            // 0F sub-opcodes with a trailing imm8
+            if (sub==0x70 || sub==0x71 || sub==0x72 || sub==0x73 ||
+                sub==0xC2 || sub==0xC4 || sub==0xC5 || sub==0xC6 || sub==0xBA)
+                imm = 1;
+            return base + 1 + mlen + imm;          // 0F + sub + modrm [+ imm8]
+        }
+
+
         // ── push/pop imm ──
         case 0x6A: return base + 1;   // push imm8
         case 0x68: return base + 4;   // push imm32
