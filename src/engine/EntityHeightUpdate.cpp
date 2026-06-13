@@ -13,10 +13,10 @@ extern int*     g_SomeGlobal;     // DAT_00702774 — Camera.cpp
 extern char     DAT_00702c45;     // Camera state flag — Camera.cpp
 
 // ─── Module-local constants ────────────────────────────────────
-static float& DAT_0066c0c4 = *reinterpret_cast<float*>(0x0066c0c4);  // Max height (80.0f)
-static float& DAT_0066c2b8 = *reinterpret_cast<float*>(0x0066c2b8);  // Min height (-90.0f)
+static float DAT_0066c0c4 = 4.435572400719624e-17f;  // faithful @0x0066C0C4  // Max height (80.0f)
+static float DAT_0066c2b8 = -5.356838946398158e+20f;  // faithful @0x0066C2B8  // Min height (-90.0f)
 static float* DAT_0065c7d8 = reinterpret_cast<float*>(0x0065c7d8);   // Height table
-static int&   DAT_00681dc4 = *reinterpret_cast<int*>(0x00681dc4);    // Table index
+static int DAT_00681dc4 = 4281887232;  // faithful @0x00681DC4    // Table index
 
 // ─── External callees ──────────────────────────────────────────
 extern void FUN_0062a0b0();  // SSE2 sqrt/damping

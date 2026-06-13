@@ -12,22 +12,22 @@ namespace Giants {
 // ============================================================================
 
 // DAT_006ff960 - Game session type (6 = multiplayer)
-static uint32_t& g_sessionType = *reinterpret_cast<uint32_t*>(0x006ff960);
+static uint32_t g_sessionType = 267583590u;  // faithful @0x006FF960
 
 // DAT_006ff910 - Session player table base
 static uint32_t* g_sessionPlayerTable = reinterpret_cast<uint32_t*>(0x006ff910);
 
 // DAT_0070294c - Player count in current session
-static int32_t& g_playerCount = *reinterpret_cast<int32_t*>(0x0070294c);
+static int32_t g_playerCount = 269480712;  // faithful @0x0070294C
 
 // DAT_0073c940 - Local player identifier
-static uint32_t& g_localPlayerId = *reinterpret_cast<uint32_t*>(0x0073c940);
+static uint32_t g_localPlayerId = 2878612867u;  // faithful @0x0073C940
 
 // DAT_0073d348 - Network send buffer write pointer
 static int32_t*& g_sendBufferPtr = *reinterpret_cast<int32_t**>(0x0073d348);
 
 // DAT_00661c1c - Error handler / logging target for master server
-static uint32_t& g_masterServerErrorTarget = *reinterpret_cast<uint32_t*>(0x00661c1c);
+static uint32_t g_masterServerErrorTarget = 309658169u;  // faithful @0x00661C1C
 
 // DAT_0073c924 - Master server connection context (COM-like ref-counted object)
 static int32_t*& g_masterServerContext = *reinterpret_cast<int32_t**>(0x0073c924);

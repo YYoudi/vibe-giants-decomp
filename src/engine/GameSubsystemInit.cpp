@@ -8,16 +8,16 @@ namespace Giants {
 
 // ─── Globals (shared — many defined in other TUs) ──────────────
 extern uint32_t DAT_0074892c;    // Active flag — ScenePipeline.cpp, MathUtilsExtended.cpp
-static uint32_t& DAT_00748a40 = *reinterpret_cast<uint32_t*>(0x00748a40);  // Entity count A
-static uint32_t& DAT_00748a30 = *reinterpret_cast<uint32_t*>(0x00748a30);  // Entity count B
-static uint32_t& DAT_00748b48 = *reinterpret_cast<uint32_t*>(0x00748b48);  // Init phase flag
+static uint32_t DAT_00748a40 = 1723814925u;  // faithful @0x00748A40  // Entity count A
+static uint32_t DAT_00748a30 = 2257178251u;  // faithful @0x00748A30  // Entity count B
+static uint32_t DAT_00748b48 = 1141968883u;  // faithful @0x00748B48  // Init phase flag
 extern uint32_t DAT_00702d58;    // Callback arg — EntitySystem.cpp
 extern uint32_t DAT_00702d50;    // Resolve callback ptr — GameCommand.cpp
-static uint32_t& DAT_00702d54 = *reinterpret_cast<uint32_t*>(0x00702d54);  // Secondary callback
-static uint32_t& DAT_00748b44 = *reinterpret_cast<uint32_t*>(0x00748b44);  // First-init flag
+static uint32_t DAT_00702d54 = 1158610952u;  // faithful @0x00702D54  // Secondary callback
+static uint32_t DAT_00748b44 = 6733344u;  // faithful @0x00748B44  // First-init flag
 extern uint32_t DAT_00747d3c;    // Already initialized? — CRTStubs.cpp, EffectSystem.cpp
-static uint32_t& DAT_0068298c = *reinterpret_cast<uint32_t*>(0x0068298c);  // Game context B
-static uint32_t& DAT_00682e98 = *reinterpret_cast<uint32_t*>(0x00682e98);  // Game context A
+static uint32_t DAT_0068298c = 4076889789u;  // faithful @0x0068298C  // Game context B
+static uint32_t DAT_00682e98 = 7350580u;  // faithful @0x00682E98  // Game context A
 extern int       g_activeArray[]; // DAT_00748b50 — ActiveIndex.cpp (entity state block)
 
 // ─── Forward declarations ──────────────────────────────────────

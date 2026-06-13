@@ -8,13 +8,13 @@ namespace Giants {
 
 // ─── Globals ───────────────────────────────────────────────────
 // Camera array base pointer
-static int& g_cameraArray = *reinterpret_cast<int*>(0x00702780);
+static int g_cameraArray = 2313688100;  // faithful @0x00702780
 // Camera count (max valid index + 1)
-static int& g_cameraCount = *reinterpret_cast<int*>(0x00702784);
+static int g_cameraCount = 4294966111;  // faithful @0x00702784
 // Active camera index
-static int& g_activeCameraIndex = *reinterpret_cast<int*>(0x00702788);
+static int g_activeCameraIndex = 1150094453;  // faithful @0x00702788
 // Camera state flags
-static uint32_t& g_cameraFlags = *reinterpret_cast<uint32_t*>(0x0070278c);
+static uint32_t g_cameraFlags = 3897564196u;  // faithful @0x0070278C
 
 // ═══════════════════════════════════════════════════════════════════
 // SelectCamera (FUN_00541690) — 26 callers — PASS

@@ -6,13 +6,13 @@
 namespace Giants {
 
 // ─── Globals ───────────────────────────────────────────────────
-static float&    g_ScaleFactor   = *reinterpret_cast<float*>(0x0066be20);
-static float&    g_InvThreshold  = *reinterpret_cast<float*>(0x0066bf2c);
+static float g_ScaleFactor = -1.2786100978311146e-36f;  // faithful @0x0066BE20
+static float g_InvThreshold = -4.8715440000011767e+30f;  // faithful @0x0066BF2C
 extern uint32_t  g_depthXorKey;                          // DAT_0066c580
-static float&    g_Divisor1      = *reinterpret_cast<float*>(0x0066c15c);
-static float&    g_Divisor2      = *reinterpret_cast<float*>(0x0066c174);
-static float&    g_Multiplier1   = *reinterpret_cast<float*>(0x007028a0);
-static float&    g_Multiplier2   = *reinterpret_cast<float*>(0x007028a4);
+static float g_Divisor1 = 9.734711130384287e-39f;  // faithful @0x0066C15C
+static float g_Divisor2 = 4.943252669747713e-34f;  // faithful @0x0066C174
+static float g_Multiplier1 = 5.192931849094907e-41f;  // faithful @0x007028A0
+static float g_Multiplier2 = 4.435318621707693e-17f;  // faithful @0x007028A4
 
 extern void GetTransformCos();   // FUN_00483160
 extern void GetTransformSin();   // FUN_00483140
