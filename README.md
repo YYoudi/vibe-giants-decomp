@@ -1,5 +1,5 @@
 # Giants: Citizen Kabuto — AI Reverse-Engineering Experiment
-
+Idea inspired by https://youtu.be/XbKYW4Pg7QA?si=ihwZNJJUfiLpwK6t
 > ## ⚠️ READ THIS FIRST — THIS IS A VIBE-CODED, AI-HALLUCINATED MESS
 >
 > **I do not know what I am doing.** I am not a reverse engineer, not a C++
@@ -57,20 +57,6 @@ means even the LLM admitted it was sketchy but the code was still dumped.
 
 ---
 
-## The honest pipeline
-
-The whole thing is driven by a handful of Claude Code slash-command "skills"
-(see [`.claude/commands/`](.claude/commands/)). This is what they do:
-
-- **`/re-function <addr>`** — decompile one function via Ghidra, let the LLM
-  clean it up, emit a C++ stub.
-- **`/re-batch <addr> <addr>...`** — run the above sequentially over several
-  addresses (never in parallel — the decompiler session state is single-file).
-- **`/re-trace <addr>`** — walk cross-references up to the binary's `entry`
-  point and show the call graph.
-- **`/re-pipeline [N]`** — the autonomous loop: pick N targets → decompile →
-  stub → build → update tracker. This is the "let it run overnight" mode.
-
 Tooling in the loop:
 
 - **Ghidra 12.1.2** for decompilation + cross-references.
@@ -107,14 +93,11 @@ Tooling in the loop:
 ├── RE-TRACKER.json       # The progress tracker: every function, its verdict,
 │                         #   file, line count, issues. The closest thing to a
 │                         #   real "what got done" index.
-├── CLAUDE.md             # The AI's own working notes / architecture cheat-sheet
-│                         #   (French). Read it to see how the agent thinks.
-└── .claude/commands/     # The slash-command skills that drive the pipeline
 ```
 
 ### Architecture, as the AI understood it
 
-This map is from `CLAUDE.md` — it reflects what the pipeline *thinks* the call
+This map reflects what the pipeline *thinks* the call
 graph looks like. Trust it only as a rough guide:
 
 ```
@@ -170,12 +153,12 @@ declarations so the reversed code compiles without the DirectX SDK.
 If you (somehow) want to reproduce the loop that produced this, you'll need to
 bring the parts that aren't redistributable:
 
-1. A legally-owned copy of *Giants: Citizen Kabuto* + the community 1.5 patch.
+1. A legally-owned copy of *Giants: Citizen Kabuto* + the community 1.5 patch available here https://giantswd.org/?file=2#984.
    Put `GiantsMain.exe` somewhere the bridge can find it.
 2. **Ghidra 12.1.2**, import the exe, point the configs at it.
 3. Clone the two tools the harness depends on (not included here):
-   - `re-agent` — LLM orchestrator
-   - `ghidra-ai-bridge` — headless-Ghidra bridge
+   - `auto-re-agent` — LLM orchestrator ([https://github.com/Dryxio/auto-re-agent](https://github.com/Dryxio/auto-re-agent))
+   - `ghidra-ai-bridge` — headless-Ghidra bridge ([https://github.com/Dryxio/ghidra-ai-bridge](https://github.com/Dryxio/ghidra-ai-bridge))
 4. Copy [`re-agent.example.yaml`](re-agent.example.yaml) → `re-agent.yaml` and
    [`ghidra-bridge.example.yaml`](ghidra-bridge.example.yaml) →
    `ghidra-bridge.yaml`, fill in paths and your own LLM API key.
