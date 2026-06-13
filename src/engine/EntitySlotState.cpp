@@ -6,7 +6,7 @@
 namespace Giants {
 
 // ─── Globals ───────────────────────────────────────────────────
-static float DAT_0066c09c = 3.0853849335568794e+17f;  // faithful @0x0066C09C  // Reference scale value
+static float DAT_0066c09c = 50.0f;  // faithful @0x0066C09C  // Reference scale value
 
 // ─── External callees ──────────────────────────────────────────
 extern void FUN_00497350();  // Scale comparison helper A

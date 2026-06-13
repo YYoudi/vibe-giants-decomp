@@ -6,7 +6,7 @@
 namespace Giants {
 
 // ─── Globals ───────────────────────────────────────────────────
-static uint32_t DAT_007027a8 = 1410338561u;  // faithful @0x007027A8  // Entity linked list head
+static uint32_t DAT_007027a8 = 0;  // state (BSS @0x007027A8, engine-populated)  // Entity linked list head
 
 // ═══════════════════════════════════════════════════════════════════
 // FindEntityByType (FUN_00463250) — 19 callers — PASS

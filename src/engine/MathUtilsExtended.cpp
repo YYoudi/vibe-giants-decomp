@@ -300,8 +300,8 @@ void ResetEntityBuffers()
     }
 
     // Reset state buffer (0x74 bytes at DAT_00702c00), preserving sentinels
-    uint32_t uVar3 = 251684549;
-    uint32_t uVar2 = 337935;
+    uint32_t uVar3 = *reinterpret_cast<uint32_t*>(0x00702c20);
+    uint32_t uVar2 = *reinterpret_cast<uint32_t*>(0x00702c1c);
     memset(reinterpret_cast<void*>(0x00702c00), 0, 0x74);
     *reinterpret_cast<uint32_t*>(0x00702c1c) = uVar2;
     *reinterpret_cast<uint32_t*>(0x00702c24) = uVar2;

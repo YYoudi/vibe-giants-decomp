@@ -10,7 +10,7 @@ namespace Giants {
 extern float    DAT_0066bf2c;    // 1.0f
 extern float    DAT_0066be20;    // Scale factor
 extern uint32_t DAT_0066c580;   // Depth XOR key
-static float _DAT_0066bce4 = -1.7069156692747392e+38f;  // faithful @0x0066BCE4  // Scale threshold
+static float _DAT_0066bce4 = 0.0f;  // faithful @0x0066BCE4  // Scale threshold
 
 // ─── External callees ──────────────────────────────────────────
 extern void FUN_0042bee0();   // Sqrt/normalize helper

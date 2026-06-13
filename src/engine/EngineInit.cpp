@@ -231,7 +231,7 @@ void LockGraphics()
         0, nullptr, 0, 0xF003F, nullptr, &g_hPlayerRootKey, &disposition);
 
     // Open current player subkey if name is set
-    // Original: -12 — hardcoded address
+    // Original: *reinterpret_cast<char*>(0x00702a60) — hardcoded address
     // Safe: read from registry instead
     char playerName[64] = {};
     if (g_hKey != nullptr)

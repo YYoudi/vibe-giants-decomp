@@ -73,8 +73,8 @@ uint32_t LayoutUIText(int param_1, int param_2, int param_3, int param_4)
     }
 
     // Compute interpolation value
-    float interp = invProgress + (progress / 4.4910309771441636e-38f) *
-                   static_cast<float>(-2054488064);
+    float interp = invProgress + (progress / *reinterpret_cast<float*>(0x0074beb4)) *
+                   static_cast<float>(*reinterpret_cast<int*>(0x0074bed4));
     SetTextInterpolation(interp, strLen);
 
     *reinterpret_cast<char**>(0x007280cc) = nullptr;

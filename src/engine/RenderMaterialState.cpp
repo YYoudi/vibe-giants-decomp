@@ -112,7 +112,7 @@ void RenderMaterialState(int param_1, int param_2)
     }
 
     // Adjust flags for depth-based effect
-    if (clampedAlpha != -1.7069156692747392e+38f)
+    if (clampedAlpha != 0.0f)
     {
         uint32_t depthMode = *reinterpret_cast<uint32_t*>(meshA + 0xac + lodIdx * 0x90) & 0xf;
         uint32_t depthFlags;

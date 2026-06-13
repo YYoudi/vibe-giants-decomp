@@ -2687,7 +2687,7 @@ static float* g_sinTable = reinterpret_cast<float*>(0x00698800);  // 16K entry s
     static float _DAT_006543cc_val = 0.0f;
     #define _DAT_006543cc _DAT_006543cc_val
 
-static float DAT_0066be20_ref = -1.2786100978311146e-36f;  // faithful @0x0066BE20
+static float DAT_0066be20_ref = 0.5f;  // faithful @0x0066BE20
 
 float SinTableLookup(float angle)
 {

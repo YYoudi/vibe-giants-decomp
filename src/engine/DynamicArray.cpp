@@ -9,7 +9,7 @@ namespace Giants {
 
 // ─── Globals ───────────────────────────────────────────────────
 extern int g_globalValue;  // DAT_00701a3c — AnimationCalc.cpp
-static uint32_t DAT_00701a3c = 1954305085u;  // faithful @0x00701A3C  // Allocation tracker
+static uint32_t DAT_00701a3c = 0;  // state (BSS @0x00701A3C, engine-populated)  // Allocation tracker
 
 // ═══════════════════════════════════════════════════════════════════
 // ArrayResizeDword (FUN_004810b0) — 20 callers — PASS
