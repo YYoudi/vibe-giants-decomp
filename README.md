@@ -187,8 +187,7 @@ gitignored (machine paths + a live API key).
 
 ## Credit & licensing
 
-- The **community patch and SDK** are by `ncblakely` and the Giants modding
-  community — without that work none of this would be possible.
+- The **community patch and SDK** are by `ncblakely` and the Giants amazing modding community.
 - *Giants: Citizen Kabuto* is © Planet Moon Studios / Interplay, 2000. This
   project is an independent fan reverse-engineering effort; it ships **no**
   original assets or binaries.

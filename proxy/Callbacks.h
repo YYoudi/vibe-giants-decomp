@@ -76,6 +76,13 @@ extern void* g_validationHooks[22];
 void Init();
 
 // ═══════════════════════════════════════════════════════════════
+// Auto-generated scalar-leaf batch (proxy/SweepAuto.cpp).
+// Pattern-matched pure cdecl leaves (x % K, x / K, …) validated in bulk by a
+// generic direct-address uint sweep. Regenerate / extend via /tmp/make_sweepauto.py.
+// ═══════════════════════════════════════════════════════════════
+namespace SweepAuto { uint32_t Run(); }
+
+// ═══════════════════════════════════════════════════════════════
 // Deterministic self-tests (proxy-driven — independent of game coverage)
 // ═══════════════════════════════════════════════════════════════
 // Must be called AFTER UpCallsLoad has captured the original pointers.

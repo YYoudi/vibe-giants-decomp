@@ -494,6 +494,7 @@ uint32_t RunSelfTests() {
     total += SelfTest_Sweep_FloatF(Sweep::OrigClamp(), RE_FloatClamp,  "FloatClamp 0x006389a0");
     total += SelfTest_Sweep_Mod5();
     total += SelfTest_TrigLookupC();
+    total += SweepAuto::Run();   // auto-generated scalar-leaf batch (38+ functions)
     // AllMul/ArrayIndexFloat/IsEven disabled — calling those originals in
     // isolation (64-bit return / pointer deref / __fastcall) crashes the
     // harness. Revisit with in-game shadow instead of direct-address call.
