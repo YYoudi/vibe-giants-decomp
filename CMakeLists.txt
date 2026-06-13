@@ -134,6 +134,10 @@ add_executable(GiantsMain WIN32 ${MAIN_SOURCES})
 # Link against the full engine static lib
 target_link_libraries(GiantsMain PRIVATE giants_engine)
 
+# Emit a linker map so crash addresses (from the vectored handler's stack walk)
+# can be resolved to function names.
+target_link_options(GiantsMain PRIVATE -Wl,-Map,build_recomp/GiantsMain.map)
+
 # Windows libraries (same as engine + proxy)
 if(WIN32)
     target_link_libraries(GiantsMain PRIVATE

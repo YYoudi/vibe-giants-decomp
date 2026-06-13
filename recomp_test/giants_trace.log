@@ -1,0 +1,22 @@
+[TRACE] GiantsRE Standalone — trace started
+[TRACE] WinMain entered
+[TRACE] Command line: -launcher -window
+[TRACE] Registering window class...
+[TRACE] Window class registered (atom=0xC314)
+[TRACE] Creating window (1280x720, windowed)...
+[ENTER] WndProc (G:\GiantsRE\src\engine\WndProc.cpp:71)
+[ENTER] WndProc (G:\GiantsRE\src\engine\WndProc.cpp:63)
+[TRACE] Window created: hWnd=0x00160ea8
+[TRACE] Calling InitializeEngine...
+[ENTER] InitializeEngine (G:\GiantsRE\src\engine\EngineInit.cpp:284)
+[TRACE] Renderer name: 'gg_dx9r.dll'
+[ENTER] LoadGDVSystem (G:\GiantsRE\src\renderer\RendererLoader.cpp:28)
+[TRACE] LoadRendererDLL returned NULL
+[EXIT ] LoadGDVSystem (G:\GiantsRE\src\renderer\RendererLoader.cpp:28)
+[ENTER] LoadGDVSystem (G:\GiantsRE\src\renderer\RendererLoader.cpp:28)
+[TRACE] LoadRendererDLL returned NULL
+[EXIT ] LoadGDVSystem (G:\GiantsRE\src\renderer\RendererLoader.cpp:28)
+[EXIT ] InitializeEngine (G:\GiantsRE\src\engine\EngineInit.cpp:284)
+[TRACE] InitializeEngine returned 0
+[FATAL] InitializeEngine failed
+[ENTER] WndProc (G:\GiantsRE\src\engine\WndProc.cpp:63)

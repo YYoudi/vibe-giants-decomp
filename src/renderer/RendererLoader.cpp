@@ -119,6 +119,9 @@ namespace Giants {
 // Return 0/nullptr to avoid crashes when renderer reads return values.
 // Logging is suppressed after the first N calls to avoid log spam.
 
+// Validated engine functions wired as callbacks (defined in giants_engine):
+void FUN_006387e0(float angle, uint32_t* sinOut, uint32_t* cosOut);  // SinCosLookup (TrigTables.cpp)
+
 static volatile long g_cbLogCount = 0;
 static const long CB_LOG_LIMIT = 200;  // Only log first 200 callback invocations total
 
@@ -197,8 +200,9 @@ void InitUpCallTable(uint32_t* outParams)
         s_callbackTable[11] = (void*)&Stub_ReturnEmptyStr;
         // idx 12: TextureLoader — void
         s_callbackTable[12] = (void*)&Stub_NoOp;
-        // idx 13: SinCosLookup — void
-        s_callbackTable[13] = (void*)&Stub_NoOp;
+        // idx 13: SinCosLookup — REAL validated port (TrigTables.cpp FUN_006387e0).
+        // The renderer needs sin/cos for transforms; the NoOp stub gave garbage → crash.
+        s_callbackTable[13] = (void*)&FUN_006387e0;
         // idx 14: TimeAccessor — void
         s_callbackTable[14] = (void*)&Stub_NoOp;
         // idx 15: VFSOpenFileVariant — returns HANDLE (void*)

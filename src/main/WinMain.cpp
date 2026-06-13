@@ -69,6 +69,22 @@ static LONG CALLBACK CrashHandler(PEXCEPTION_POINTERS pEx)
             fprintf(g_traceLog, "[CRASH]   ESP+%02X: %08lX\n", i*4, (unsigned long)sp[i]);
         }
 
+        // Walk the EBP chain to log return addresses (call stack) — identifies
+        // which engine/renderer function led to the crash.
+        fprintf(g_traceLog, "[CRASH] Call stack (EBP chain return addresses):\n");
+        DWORD ebp = ctx->Ebp;
+        for (int frame = 0; frame < 24 && ebp != 0 && ebp > ctx->Esp && ebp < 0x3000000; frame++) {
+            DWORD retAddr = *((DWORD*)(uintptr_t)(ebp + 4));
+            const char* where = "unknown";
+            uintptr_t a = (uintptr_t)retAddr;
+            if (a >= 0x400000 && a < 0x700000) where = "recomp-engine";
+            else if (a >= 0x10000000 && a < 0x10200000) where = "gg_dx9r(renderer)";
+            else if (a >= 0x62300000 && a < 0x62400000) where = "gg_dx9r(renderer)";
+            else if (a >= 0x70000000) where = "system-DLL";
+            fprintf(g_traceLog, "[CRASH]   #%d  ret=0x%08lX  (%s)\n", frame, (unsigned long)retAddr, where);
+            ebp = *((DWORD*)(uintptr_t)ebp);
+        }
+
         fflush(g_traceLog);
     }
     return EXCEPTION_CONTINUE_SEARCH; // Let it crash after logging
