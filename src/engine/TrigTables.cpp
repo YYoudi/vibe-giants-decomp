@@ -4,10 +4,15 @@
 // the file — the engine fills them at startup). Angles are in DEGREES;
 // scale = 16384/360 = 45.511..., offset = 0.5 (round-to-nearest). Index & 0x3fff.
 // Port validated bit-exact via proxy self-test (513/513) + in-game active detour.
+// kSinTable/kCosTable are the SINGLE SOURCE OF TRUTH for trig data in the recomp
+// exe (extern) — CRTStubs SinTableLookup/FastSinTable and MathUtils SinCosLookup
+// all index these, NOT the original's hardcoded addresses (which are invalid in
+// the recomp layout) and NOT the BSS/empty arrays that were there before.
 #include <cstdint>
 
-namespace { // internal linkage
-const uint32_t kSinTable[16384] = {
+namespace Giants {  // match CRTStubs.h namespace (callers reference Giants::kSinTable etc.)
+
+extern const uint32_t kSinTable[16384] = {
     0x00000000, 0x39C90FDB, 0x3A490FDA, 0x3A96CBE2, 0x3AC90FD6, 0x3AFB53C8, 0x3B16CBDB, 0x3B2FEDD2,
     0x3B490FC6, 0x3B6231B9, 0x3B7B53AA, 0x3B8A3ACC, 0x3B96CBC1, 0x3BA35CB6, 0x3BAFEDA9, 0x3BBC7E99,
     0x3BC90F88, 0x3BD5A076, 0x3BE23160, 0x3BEEC24A, 0x3BFB5331, 0x3C03F20B, 0x3C0A3A7C, 0x3C1082EA,
@@ -2057,7 +2062,7 @@ const uint32_t kSinTable[16384] = {
     0xBBC90E36, 0xBBBC7E44, 0xBBAFEA51, 0xBBA35A5C, 0xBB96CA66, 0xBB8A3A6E, 0xBB7B4CE9, 0xBB622CF4,
     0xBB490CFC, 0xBB2FED03, 0xBB16C508, 0xBAFB4A18, 0xBAC90A1D, 0xBA96CA20, 0xBA48F443, 0xB9C8E888,
 };
-const uint32_t kCosTable[16384] = {
+extern const uint32_t kCosTable[16384] = {
     0x3F800000, 0x3F7FFFFF, 0x3F7FFFFB, 0x3F7FFFF5, 0x3F7FFFEC, 0x3F7FFFE1, 0x3F7FFFD4, 0x3F7FFFC4,
     0x3F7FFFB1, 0x3F7FFF9C, 0x3F7FFF85, 0x3F7FFF6B, 0x3F7FFF4E, 0x3F7FFF30, 0x3F7FFF0E, 0x3F7FFEEA,
     0x3F7FFEC4, 0x3F7FFE9B, 0x3F7FFE70, 0x3F7FFE43, 0x3F7FFE13, 0x3F7FFDE0, 0x3F7FFDAB, 0x3F7FFD73,
@@ -4107,7 +4112,6 @@ const uint32_t kCosTable[16384] = {
     0x3F7FFEC4, 0x3F7FFEEA, 0x3F7FFF0E, 0x3F7FFF30, 0x3F7FFF4E, 0x3F7FFF6B, 0x3F7FFF85, 0x3F7FFF9C,
     0x3F7FFFB1, 0x3F7FFFC4, 0x3F7FFFD4, 0x3F7FFFE1, 0x3F7FFFEC, 0x3F7FFFF5, 0x3F7FFFFB, 0x3F7FFFFF,
 };
-}
 
 // FUN_006387e0 — SinCosLookup. Faithful port; replaces the `return 0` stub.
 // C++ linkage (no extern "C") so it matches the typed declaration in CRTStubs.h.
@@ -4118,3 +4122,5 @@ void FUN_006387e0(float angle, uint32_t* sinOut, uint32_t* cosOut) {
     if (sinOut) *sinOut = kSinTable[idx];
     if (cosOut) *cosOut = kCosTable[idx];
 }
+
+}  // namespace Giants

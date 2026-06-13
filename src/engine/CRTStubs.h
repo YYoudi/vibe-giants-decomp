@@ -697,10 +697,16 @@ void TaskInvoke(int param_1);  // FUN_0061d160
 // Touches pages to commit stack memory. 10 callers, 0 callees.
 void AllocaProbe();  // FUN_00643f40
 
+// ─── Trig data (single source of truth — embedded real data, TrigTables.cpp) ──
+// Used by SinTableLookup / FastSinTable / MathUtils SinCosLookup. NOT the
+// original's hardcoded addresses (invalid in the recomp layout).
+#include <cstdint>
+extern const uint32_t kSinTable[16384];
+extern const uint32_t kCosTable[16384];
+
 // ─── SinTableLookup (FUN_006387b0) ──────────────────────
-// Fast sine from precomputed 16K table at DAT_00698800.
-// Index = param_1 * scale + offset, masked to 0x3FFF.
-// 10 callers, 0 callees.
+// Fast sine from precomputed 16K table. RADIANS input; scale = 16384/2π.
+// 10 callers, 0 callees. Validated via proxy active detour (0 mismatch).
 float SinTableLookup(float angle);  // FUN_006387b0
 
 // ─── TrivialOffset8 (FUN_0043eb60) ──────────────────────

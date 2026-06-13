@@ -2691,8 +2691,10 @@ static float& DAT_0066be20_ref = *reinterpret_cast<float*>(0x0066be20);
 
 float SinTableLookup(float angle)
 {
-    int index = static_cast<int>(angle * _DAT_006543cc + DAT_0066be20_ref) & 0x3FFF;
-    return g_sinTable[index];
+    const float kScale  = 2607.594482421875f;  // _DAT_006543cc (radians->index)
+    const float kOffset = 0.5f;                // DAT_0066be20
+    int index = static_cast<int>(angle * kScale + kOffset) & 0x3FFF;
+    return reinterpret_cast<const float*>(kSinTable)[index];
 }
 
 // ═══════════════════════════════════════════════════════════════════
@@ -7055,11 +7057,15 @@ void BigIntShiftLeft(uint32_t* param_1, uint8_t param_2)
     // Shifts big integer left by param_2 bits
 }
 
-// FastSinTable (FUN_00638780) — Fast sin lookup. 7 callers, 0 callees.
+// FastSinTable (FUN_00638780) — cos table lookup (mislabeled "sin" in the lib;
+// validated as cos via proxy active detour, 0 mismatch). RADIANS input,
+// scale 16384/2π, reads the embedded cos table (kCosTable).
 float FastSinTable(float param_1)
 {
-    // Table-based fast sin using lookup at DAT_006ac800
-    return sinf(param_1); // stub
+    const float kScale  = 2607.594482421875f;
+    const float kOffset = 0.5f;
+    int index = static_cast<int>(param_1 * kScale + kOffset) & 0x3FFF;
+    return reinterpret_cast<const float*>(kCosTable)[index];
 }
 
 // AsyncResultInit (FUN_0061ce90) — Init async result. 7 callers, 0 callees.
