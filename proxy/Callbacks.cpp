@@ -486,6 +486,21 @@ uint32_t RunSelfTests() {
     Logger::Separator();
     Logger::Log("[selftest] Running deterministic self-tests...");
     uint32_t total = 0;
+    // ── one-shot dump of the runtime-populated trig tables for recomp migration ──
+    // The sin/cos tables are BSS (zero in the exe FILE); the engine fills them at
+    // startup. Dump the populated runtime copy so we can embed real data in the
+    // recompiled exe. Idempotent — overwrites trig_dump.bin each run.
+    {
+        FILE* f = fopen("trig_dump.bin", "wb");
+        if (f) {
+            fwrite((const void*)0x00698800, 4, 16384, f);  // sin table
+            fwrite((const void*)0x0069C800, 4, 16384, f);  // cos table
+            fclose(f);
+            volatile float sc = *(volatile float*)0x006543c8;
+            volatile float of = *(volatile float*)0x0066be20;
+            Logger::Log("[dump] trig_dump.bin written (sin+cos, 32768 floats); scale=%.6f offset=%.6f", sc, of);
+        }
+    }
     total += SelfTest_SinCosLookup();
     total += SelfTest_VectorDistanceSq();
     // ── sweep batch: pure leaves via direct-address call ──

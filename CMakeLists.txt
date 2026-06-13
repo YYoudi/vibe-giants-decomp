@@ -146,8 +146,9 @@ target_include_directories(GiantsMain PRIVATE
     ${CMAKE_SOURCE_DIR}/stubs
 )
 
-# Output to GameFiles/ for easy testing
+# Output to build_recomp/ — NEVER clobber the original GameFiles/GiantsMain.exe
+# (the original is the proxy's oracle; overwriting it breaks validation).
 set_target_properties(GiantsMain PROPERTIES
     OUTPUT_NAME "GiantsMain"
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/GameFiles"
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build_recomp"
 )

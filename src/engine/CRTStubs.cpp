@@ -99,7 +99,7 @@ int FUN_00443010(...) { return 0; }
 int FUN_00558360(...) { return 0; }
 int FUN_00656bf4(...) { return 0; }
 int FUN_00559dc0(...) { return 0; }
-int FUN_006387e0(...) { return 0; }
+// FUN_006387e0 (SinCosLookup) — REAL validated port in TrigTables.cpp (replaces this stub).
 int FUN_0053ea80(...) { return 0; }
 int FUN_00559530(...) { return 0; }
 int FUN_00558730(...) { return 0; }

@@ -81,7 +81,7 @@ int FUN_00443010(...);
 int FUN_00558360(...);
 int FUN_00656bf4(...);
 int FUN_00559dc0(...);
-int FUN_006387e0(...);
+void FUN_006387e0(float angle, uint32_t* sinOut, uint32_t* cosOut);  // SinCosLookup — real port in TrigTables.cpp
 int FUN_0053ea80(...);
 int FUN_00559530(...);
 int FUN_00558730(...);
