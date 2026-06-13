@@ -509,6 +509,8 @@ uint32_t RunSelfTests() {
     // direct-address self-tests are removed here — calling the raw entry now
     // hits our hook, not the original. The active dual-compare IS their proof.
     total += SweepAuto::Run();   // auto-generated scalar-leaf batch (38 modulo fns, NOT detoured)
+    total += SelfTest_ArrayIndexFloat();
+    total += SelfTest_IsEven();
     // AllMul/ArrayIndexFloat/IsEven disabled — calling those originals in
     // isolation (64-bit return / pointer deref / __fastcall) crashes the
     // harness. Revisit with in-game shadow instead of direct-address call.
