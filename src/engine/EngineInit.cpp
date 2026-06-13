@@ -165,6 +165,10 @@ namespace {
 
 } // anonymous namespace
 
+// Crash-diagnostic accessors (Giants scope; access file/anon statics in this TU).
+void* GetEngineContextPtr() { return g_engineContext; }
+DWORD* GetRendererStatePtr() { return g_rendererState; }  // anon member, TU-visible
+
 // Callback function pointers from renderer UpCalls table
 extern void (*g_fnRegisterTimer)(DWORD interval, void* callback);  // DAT_0072801c → (*)(0x2C, DAT_0074c468)
 extern void (*g_fnUpdateFrame)();                                    // DAT_00728004 → (*)(void)

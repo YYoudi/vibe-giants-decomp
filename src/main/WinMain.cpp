@@ -72,8 +72,7 @@ static LONG CALLBACK CrashHandler(PEXCEPTION_POINTERS pEx)
 
         // Walk the EBP chain to log return addresses (call stack) — identifies
         // which engine/renderer function led to the crash.
-        fprintf(g_traceLog, "[CRASH] Call stack (StackWalk64):\n");
-        {
+        fprintf(g_traceLog, "[CRASH] Call stack (StackWalk64):\n");        {
             HANDLE hProc = GetCurrentProcess(); HANDLE hThr = GetCurrentThread();
             SymSetOptions(SYMOPT_DEFERRED_LOADS);
             SymInitialize(hProc, nullptr, TRUE);
@@ -102,6 +101,17 @@ static LONG CALLBACK CrashHandler(PEXCEPTION_POINTERS pEx)
             }
             SymCleanup(hProc);
         }
+
+        // Dump engine state — search for the bad pointer the renderer computed.
+        extern void* GetEngineContextPtr();
+        extern DWORD* GetRendererStatePtr();
+        void* ec = GetEngineContextPtr();
+        DWORD* rs = GetRendererStatePtr();
+        fprintf(g_traceLog, "[DUMP] g_engineContext=%p:", ec);
+        if (ec) for (int i=0;i<7;i++) fprintf(g_traceLog, " [%d]=0x%08X", i, ((DWORD*)ec)[i]);
+        fprintf(g_traceLog, "\n[DUMP] g_rendererState[0..47]:");
+        for (int i=0;i<48;i++) fprintf(g_traceLog, " %08X", rs[i]);
+        fprintf(g_traceLog, "\n");
 
         fflush(g_traceLog);
     }
