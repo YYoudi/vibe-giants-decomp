@@ -15,8 +15,11 @@ extern char     DAT_00702c45;     // Camera state flag — Camera.cpp
 // ─── Module-local constants ────────────────────────────────────
 static float DAT_0066c0c4 = 80.0f;  // faithful @0x0066C0C4  // Max height (80.0f)
 static float DAT_0066c2b8 = -90.0f;  // faithful @0x0066C2B8  // Min height (-90.0f)
-static float* DAT_0065c7d8 = reinterpret_cast<float*>(0x0065c7d8);   // Height table
-static int DAT_00681dc4 = 0;  // faithful @0x00681DC4    // Table index
+// Height scale table — runtime-dumped from the original (file extraction gave
+// garbage: this region is runtime-populated, not clean .rdata). Values verified
+// via proxy probe: {0.5, 0.2, 0.1, 0.05}. Indexed by DAT_00681dc4 (0..3).
+static const float DAT_0065c7d8[4] = {0.5f, 0.2f, 0.1f, 0.05f};  // runtime-verified @0x0065c7d8
+static int DAT_00681dc4 = 0;  // Table index (BSS state, engine sets 0..3)
 
 // ─── External callees ──────────────────────────────────────────
 extern void FUN_0062a0b0();  // SSE2 sqrt/damping

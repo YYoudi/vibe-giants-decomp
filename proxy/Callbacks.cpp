@@ -648,6 +648,22 @@ uint32_t RunSelfTests() {
             volatile float of = *(volatile float*)0x0066be20;
             Logger::Log("[dump] trig_dump.bin written (sin+cos, 32768 floats); scale=%.6f offset=%.6f", sc, of);
         }
+        // Probe candidate lookup tables at runtime (file extraction gave garbage —
+        // these may be BSS/runtime-populated or non-float). Dump 128 entries each
+        // and log the first few so we can tell if they're real const tables.
+        auto probe = [](const char* name, uint32_t addr, int n) {
+            FILE* g = fopen("table_probe.txt", "a");
+            if (g) { fprintf(g, "%s @0x%08X:", name, addr); fclose(g); }
+            char line[256] = {0}; int p = 0;
+            for (int i = 0; i < n && p < 200; i++) {
+                uint32_t raw = ((const volatile uint32_t*)addr)[i];
+                float asF; std::memcpy(&asF, &raw, 4);
+                p += snprintf(line+p, sizeof(line)-p, " [%d]=0x%08X(%.3g)", i, raw, asF);
+            }
+            Logger::Log("[probe] %s%s", name, line);
+        };
+        probe("height_0065c7d8", 0x0065c7d8, 8);
+        probe("heightIdx_00681dc4", 0x00681dc4, 4);
     }
     total += SelfTest_SinCosLookup();
     total += SelfTest_VectorDistanceSq();
