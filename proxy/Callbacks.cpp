@@ -172,6 +172,18 @@ int RE_AccField1c(int p)        { return *(int*)(p + 0x1c); }                  /
 int RE_AccU2PlusP(int p)        { return (unsigned int)*(unsigned short*)(p + 2) + p; } // 00640c60
 int RE_AccU2PlusP4(int p)       { return *(unsigned short*)(p + 2) + 4 + p; }          // 00640c70
 int RE_AccDeref1c(int p)        { return *(int*)(*(int*)(p + 4) + 0x1c); }     // 00640bf0
+// FUN_006355f0 — float f(int p, int a) = (a - field+0x10) / (field+0x1c * field+0x18)
+float RE_FieldDiv(int p, int a) {
+    return (float)(a - *(int*)(p + 0x10)) / (float)(*(int*)(p + 0x1c) * *(int*)(p + 0x18));
+}
+// FUN_00632900 — bool f(byte* p1, byte* p2): string-EQUALITY (returns true iff
+// equal). The decompiler's `(-(uint)bVar2 | 1)==0` always yields false at the
+// break, so it returns true only when both reach null together. (The bVar2
+// <compare is dead code / a Ghidra artifact.) Confirmed empirically: ""vs"a" → 0.
+bool RE_StrCmpLe(const uint8_t* p1, const uint8_t* p2) {
+    while (*p1 == *p2) { if (*p1 == 0) return true; p1++; p2++; }
+    return false;  // differ → not equal
+}
 
 // ═══════════════════════════════════════════════════════════════
 // Detour-original registry (engineAddr → trampoline that runs the true original)
@@ -581,6 +593,39 @@ uint32_t SelfTest_DeepCallees() {
             if (o != mine) mm++;
         }
     }
+    // FUN_006355f0 FieldDiv — synthetic struct.
+    {
+        auto orig = reinterpret_cast<float (__cdecl *)(int, int)>(0x006355f0);
+        if (orig) {
+            int32_t buf[16] = {0}; uint32_t m = 0;
+            for (uint32_t i = 0; i < 512; i++) {
+                uint32_t q = i * 2654435761u;
+                buf[4] = (int32_t)(q & 0xFFFF) - 32768;  // +0x10
+                buf[6] = (int32_t)((q >> 8) & 0x1FF) + 1; // +0x18 (avoid 0)
+                buf[7] = (int32_t)((q >> 16) & 0x1FF) + 1; // +0x1c
+                int a = (int32_t)(q & 0xFFF) - 2048;
+                float o = orig((int)buf, a), mine = RE_FieldDiv((int)buf, a);
+                uint32_t ob, mb; std::memcpy(&ob,&o,4); std::memcpy(&mb,&mine,4);
+                if (ob != mb) m++;
+            }
+            Logger::Log("[selftest] FieldDiv 0x006355f0: %u/512 bit-mm", m); mm += m;
+        }
+    }
+    // FUN_00632900 StrCmpLe — synthetic string pairs.
+    {
+        auto orig = reinterpret_cast<bool (__cdecl *)(const uint8_t*, const uint8_t*)>(0x00632900);
+        if (orig) {
+            const char* strs[] = {"", "a", "abc", "abd", "ab", "abc", "xyz", "xYz", "123", "124", "12", ""};
+            uint32_t m = 0, n = 0;
+            for (int i = 0; i < 10; i++) for (int j = 0; j < 10; j++) {
+                const uint8_t* a = (const uint8_t*)strs[i%12];
+                const uint8_t* b = (const uint8_t*)strs[j%12];
+                bool o = orig(a, b), mine = RE_StrCmpLe(a, b); n++;
+                if (o != mine) { if(m<4) Logger::Log("[selftest] StrCmpLe mm '%s'vs'%s' o=%d m=%d", strs[i%12], strs[j%12], o, mine); m++; }
+            }
+            Logger::Log("[selftest] StrCmpLe 0x00632900: %u/%u mm", m, n); mm += m;
+        }
+    }
     return mm;
 }
 } // namespace
@@ -616,6 +661,9 @@ uint32_t RunSelfTests() {
     total += SweepAuto::Run();   // auto-generated scalar-leaf batch (38 modulo fns, NOT detoured)
     total += SelfTest_ArrayIndexFloat();
     total += SelfTest_IsEven();
+    // AllMul/64-bit CRT helpers NOT self-testable: calling __allmul from MinGW
+    // crashes (convention/register mismatch — returns garbage like 'b' then faults).
+    // Would need naked-asm to match MSVC's EDX:EAX convention. Skipped.
     // AllMul/ArrayIndexFloat/IsEven disabled — calling those originals in
     // isolation (64-bit return / pointer deref / __fastcall) crashes the
     // harness. Revisit with in-game shadow instead of direct-address call.
