@@ -32,7 +32,11 @@ int GFXGetCapabilities(void* caps) {
 // this as the render device. All vtable calls are no-ops (return S_OK/0). No real
 // D3D9 interaction → no D3D9 threads → no D3D9 crashes. Lets the recomp's init
 // path proceed to MainGameLoop.
-static long __stdcall DevStub() { return 0; } // S_OK
+// Naked no-op: returns 0 (S_OK) without cleaning any stack args (cdecl-like).
+// The recomp's CallThiscall wrappers handle their own stack cleanup.
+extern "C" __attribute__((naked)) long DevStub() {
+    __asm__ volatile ("xor %eax, %eax\n\t ret");
+}
 static void* g_devVtable[64] = {0};
 static struct { void** vtable; int pad[15]; } g_fakeDevice = { g_devVtable, {0} };
 

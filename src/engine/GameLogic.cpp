@@ -75,6 +75,7 @@ extern "C" __attribute__((naked)) void CallThiscall_U32() {
         "movl 4(%esp), %ecx\n\t"    /* ecx = objPtr (this) */
         "pushl 12(%esp)\n\t"         /* push argVal (3rd param) */
         "call *12(%esp)\n\t"         /* call methodPtr (2nd param, shifted) */
+        "addl $4, %esp\n\t"          /* clean pushed arg (caller cleanup) */
         "ret\n\t"
     );
 }
