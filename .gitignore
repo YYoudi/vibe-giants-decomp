@@ -102,3 +102,4 @@ CLAUDE.md
 .claude/
 build_recomp/*.map
 giants_trace.log
+recomp_test/
