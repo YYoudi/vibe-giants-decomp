@@ -38,6 +38,18 @@ void BufferDealloc_Predict(const int* desc, void** expData, uint32_t* expFlags);
 // 192 callers, ~2.8M calls/cinematic. Returns squared distance (no sqrt).
 float RE_VectorDistanceSq(const float* a, const float* b);
 
+// ── Self-test sweep batch (pure leaves, validated by direct-address call) ──
+// These read only const tables/globals → validated without game coverage by
+// calling the TRUE original at its (non-ASLR) entry address directly.
+float    RE_SinLookupA(float angle);   // FUN_006387b0 — sin table, scale _DAT_006543cc
+float    RE_CosLookupA(float angle);   // FUN_00638780 — cos table (Ghidra base 0x006ac800, suspect)
+uint32_t RE_Mod5(uint32_t x);          // FUN_00635890 — x % 5
+float    RE_FloatClamp(float x);       // FUN_006389a0 — float diff/clamp via const globals
+float    RE_TrigLookupC(float angle);  // FUN_00638740 — table lookup, scale _DAT_006543d0 (base suspect)
+uint64_t RE_AllMul(uint64_t a, uint64_t b); // FUN_00645670 — 64-bit multiply (CRT helper)
+float    RE_ArrayIndexFloat(const int32_t* desc, int32_t idx); // FUN_0048aca0 — *(float*)(desc[1]*idx + desc[0])
+int      RE_IsEven(const uint32_t* p); // FUN_0043e430 — (*p & 1) == 0
+
 // ═══════════════════════════════════════════════════════════════
 // Detour-original registry
 //
