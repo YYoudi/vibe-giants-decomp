@@ -218,7 +218,7 @@ void InputCommandSwitch(int param1, uint32_t param2)
     {
     case 0x20:
         // Toggle camera mode or set flag
-        if (*reinterpret_cast<uint32_t*>(0x00702b04) == 0)
+        if (1459617792 == 0)
         {
             DAT_00702c45 = 1;
             return;

@@ -304,7 +304,7 @@ int ProcessSceneTransition()
                 if (levelState == 2)
                 {
                     // Fade-out transition
-                    DAT_007495b4 -= *reinterpret_cast<float*>(0x00727e38);
+                    DAT_007495b4 -= 2.838901386343207e-29f;
                     DAT_00748929 = 1;
                     if (DAT_007495b4 > 0.0f)
                     {

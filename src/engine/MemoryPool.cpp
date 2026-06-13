@@ -53,10 +53,10 @@ uint32_t* AllocateFreeBlock()
     // SIMD constants
     __m128i auVar9 = _mm_load_si128(reinterpret_cast<const __m128i*>(0x0066c3d0));
 
-    int iVar8  = *reinterpret_cast<int*>(0x0066c38c);
-    int iVar7  = *reinterpret_cast<int*>(0x0066c388);
-    int iVar13 = *reinterpret_cast<int*>(0x0066c384);
-    int iVar6  = *reinterpret_cast<int*>(0x0066c380);
+    int iVar8  = -729969693;
+    int iVar7  = 1946160504;
+    int iVar13 = -2131999349;
+    int iVar6  = -1572;
 
     uint32_t* dataStart = block + 1;  // Skip header
 

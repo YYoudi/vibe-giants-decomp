@@ -199,13 +199,13 @@ void RenderSprite(int spriteData, int renderEntry, uint32_t flags,
         if ((entryFlags & 4) != 0)
         {
             // Billboard mode with aspect ratio correction
-            float aspectScale = static_cast<float>(*reinterpret_cast<uint32_t*>(0x007028A0)) /
-                                *reinterpret_cast<float*>(0x0066C174);
+            float aspectScale = static_cast<float>(37058) /
+                                4.943252669747713e-34f;
 
             *reinterpret_cast<float*>(renderEntry + 0x38) = localScale * *reinterpret_cast<float*>(renderEntry + 0x20) * aspectScale + posY + depthScale;
-            *reinterpret_cast<float*>(renderEntry + 0x3C) = (width * *reinterpret_cast<float*>(renderEntry + 0x24) * static_cast<float>(*reinterpret_cast<uint32_t*>(0x007028A4))) / *reinterpret_cast<float*>(0x0066C15C) + height;
+            *reinterpret_cast<float*>(renderEntry + 0x3C) = (width * *reinterpret_cast<float*>(renderEntry + 0x24) * static_cast<float>(608996096)) / 9.734711130384287e-39f + height;
             *reinterpret_cast<float*>(renderEntry + 0x44) = localScale * *reinterpret_cast<float*>(renderEntry + 0x2C) * aspectScale + posY + depthScale;
-            *reinterpret_cast<float*>(renderEntry + 0x48) = (width * *reinterpret_cast<float*>(renderEntry + 0x30) * static_cast<float>(*reinterpret_cast<uint32_t*>(0x007028A4))) / *reinterpret_cast<float*>(0x0066C15C) + height;
+            *reinterpret_cast<float*>(renderEntry + 0x48) = (width * *reinterpret_cast<float*>(renderEntry + 0x30) * static_cast<float>(608996096)) / 9.734711130384287e-39f + height;
         }
     }
     else

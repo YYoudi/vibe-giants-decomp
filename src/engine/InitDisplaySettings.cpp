@@ -139,7 +139,7 @@ void InitDisplaySettings()
 
     // 0x004f878a: Calculate viewport dimensions with aspect scale
     // DAT_0066be20 = g_aspectScale (float multiplier)
-    float aspectScale = *reinterpret_cast<float*>(0x0066be20);
+    float aspectScale = -1.2786100978311146e-36f;
     g_viewportWidth  = static_cast<float>(g_screenWidth) * aspectScale;   // DAT_0074bb90
     g_viewportHeight = static_cast<float>(g_screenHeight) * aspectScale;  // DAT_0074bb94
     g_viewportX = g_viewportWidth + 0.0f;   // DAT_0074bb98 (float add, possibly for rounding)

@@ -353,25 +353,25 @@ void SceneFrameBegin()
     // FUN_00499e30 — set game mode
 
     // Phase 6: Copy lighting/material data (with XOR depth deobfuscation)
-    DAT_007489b0 = *reinterpret_cast<uint32_t*>(0x00685784);
-    DAT_007489b4 = *reinterpret_cast<uint32_t*>(0x00685788);
-    DAT_007489e0 = *reinterpret_cast<uint32_t*>(0x006857a0);
-    DAT_007489e4 = *reinterpret_cast<uint32_t*>(0x006857a4);
-    DAT_007489ec = *reinterpret_cast<uint32_t*>(0x006857ac);
-    DAT_007489d0 = *reinterpret_cast<uint32_t*>(0x00685790);
-    DAT_007489d4 = *reinterpret_cast<uint32_t*>(0x00685794);
-    DAT_007489dc = *reinterpret_cast<uint32_t*>(0x00685798) ^ DAT_0066c580;
-    DAT_007489f0 = *reinterpret_cast<uint32_t*>(0x006857b0);
-    DAT_007489f4 = *reinterpret_cast<uint32_t*>(0x006857b4);
-    DAT_007489fc = *reinterpret_cast<uint32_t*>(0x006857bc);
-    DAT_00748a00 = *reinterpret_cast<uint32_t*>(0x006857c0);
-    DAT_00748a04 = *reinterpret_cast<uint32_t*>(0x006857c4);
-    DAT_00748a0c = *reinterpret_cast<uint32_t*>(0x006857cc);
-    DAT_007489e8 = *reinterpret_cast<uint32_t*>(0x006857a8) ^ DAT_0066c580;
-    DAT_007489f8 = *reinterpret_cast<uint32_t*>(0x006857b8) ^ DAT_0066c580;
-    DAT_007489b8 = *reinterpret_cast<uint32_t*>(0x0067f47c);
-    DAT_00748a08 = *reinterpret_cast<uint32_t*>(0x006857c8) ^ DAT_0066c580;
-    DAT_007489bc = *reinterpret_cast<uint32_t*>(0x0067f0f4);
+    DAT_007489b0 = 2717483272;
+    DAT_007489b4 = 1962934273;
+    DAT_007489e0 = 7335812;
+    DAT_007489e4 = 3376416059;
+    DAT_007489ec = 1962962985;
+    DAT_007489d0 = 4135912565;
+    DAT_007489d4 = 4202891636;
+    DAT_007489dc = 2374831874 ^ DAT_0066c580;
+    DAT_007489f0 = 49971977;
+    DAT_007489f4 = 57838863;
+    DAT_007489fc = 420;
+    DAT_00748a00 = 4185983092;
+    DAT_00748a04 = 421;
+    DAT_00748a0c = 2231661830;
+    DAT_007489e8 = 882966643 ^ DAT_0066c580;
+    DAT_007489f8 = 4185980928 ^ DAT_0066c580;
+    DAT_007489b8 = 227217269;
+    DAT_00748a08 = 4286805109 ^ DAT_0066c580;
+    DAT_007489bc = 100691961;
 
     // FUN_0052def0 — post-snapshot callback
 
