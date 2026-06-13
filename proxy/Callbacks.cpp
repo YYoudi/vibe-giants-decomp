@@ -664,6 +664,9 @@ uint32_t RunSelfTests() {
         };
         probe("height_0065c7d8", 0x0065c7d8, 8);
         probe("heightIdx_00681dc4", 0x00681dc4, 4);
+        probe("sessionPlayerTbl_006ff910", 0x006ff910, 8);
+        probe("stringTblBase_00747d3c", 0x00747d3c, 8);
+        probe("stringTblCnt_00747d38", 0x00747d38, 4);
     }
     total += SelfTest_SinCosLookup();
     total += SelfTest_VectorDistanceSq();
