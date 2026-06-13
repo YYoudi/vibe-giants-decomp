@@ -12,9 +12,14 @@ extern float _DAT_0066bd40;    // Degree-to-radian conversion factor
 extern uint32_t DAT_0066c580;  // Depth XOR key (g_depthXorKey)
 
 // ─── Function pointer table for sin/cos ────────────────────────
-// PTR_FUN_0067d230 = sinf, PTR_FUN_0067d234 = cosf
-static float (*SinfPtr)(float) = reinterpret_cast<float(*)(float)>(0x0067d230);
-static float (*CosfPtr)(float) = reinterpret_cast<float(*)(float)>(0x0067d234);
+// Original: PTR_FUN_0067d230/0x0067d234 are dispatch-table slots filled by
+// CheckProcessorSupport (the decompiler lost the indirection, showing the slot
+// address as the function pointer). For the recomp, wire directly to the
+// validated engine trig (SinTableLookup=sin, FastSinTable=cos, proxy-verified).
+float SinTableLookup(float angle);   // FUN_006387b0 (radians, validated)
+float FastSinTable(float angle);     // FUN_00638780 (cos, validated)
+static float (*SinfPtr)(float) = &SinTableLookup;
+static float (*CosfPtr)(float) = &FastSinTable;
 
 // ═══════════════════════════════════════════════════════════════════
 // BuildRotationFromEuler (FUN_0063e480) — 21 callers — PASS
