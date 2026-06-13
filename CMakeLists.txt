@@ -44,6 +44,12 @@ file(GLOB_RECURSE ENGINE_HEADERS
 # ─── Main library target ─────────────────────────────────────
 add_library(giants_engine STATIC ${ENGINE_SOURCES} ${ENGINE_HEADERS})
 
+# Keep frame pointers so the recomp crash handler's EBP-walk yields real return
+# addresses (resolvable via nm) — needed to diagnose render-path crashes.
+# PUBLIC propagates to GiantsMain + gg_dx9r (both link giants_engine). Include
+# -g so StackWalk64/SymFromAddr can resolve crash addresses to symbol names.
+target_compile_options(giants_engine PUBLIC -fno-omit-frame-pointer -g3)
+
 target_include_directories(giants_engine PUBLIC
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/stubs
@@ -141,7 +147,7 @@ target_link_options(GiantsMain PRIVATE -Wl,-Map,build_recomp/GiantsMain.map)
 # Windows libraries (same as engine + proxy)
 if(WIN32)
     target_link_libraries(GiantsMain PRIVATE
-        dinput8 dxguid winmm advapi32 user32 gdi32
+        dinput8 dxguid winmm advapi32 user32 gdi32 dbghelp
     )
 endif()
 

@@ -13,6 +13,7 @@
 #include "renderer/RendererLoader.h"
 
 #include <windows.h>
+#include <dbghelp.h>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -71,18 +72,35 @@ static LONG CALLBACK CrashHandler(PEXCEPTION_POINTERS pEx)
 
         // Walk the EBP chain to log return addresses (call stack) — identifies
         // which engine/renderer function led to the crash.
-        fprintf(g_traceLog, "[CRASH] Call stack (EBP chain return addresses):\n");
-        DWORD ebp = ctx->Ebp;
-        for (int frame = 0; frame < 24 && ebp != 0 && ebp > ctx->Esp && ebp < 0x3000000; frame++) {
-            DWORD retAddr = *((DWORD*)(uintptr_t)(ebp + 4));
-            const char* where = "unknown";
-            uintptr_t a = (uintptr_t)retAddr;
-            if (a >= 0x400000 && a < 0x700000) where = "recomp-engine";
-            else if (a >= 0x10000000 && a < 0x10200000) where = "gg_dx9r(renderer)";
-            else if (a >= 0x62300000 && a < 0x62400000) where = "gg_dx9r(renderer)";
-            else if (a >= 0x70000000) where = "system-DLL";
-            fprintf(g_traceLog, "[CRASH]   #%d  ret=0x%08lX  (%s)\n", frame, (unsigned long)retAddr, where);
-            ebp = *((DWORD*)(uintptr_t)ebp);
+        fprintf(g_traceLog, "[CRASH] Call stack (StackWalk64):\n");
+        {
+            HANDLE hProc = GetCurrentProcess(); HANDLE hThr = GetCurrentThread();
+            SymSetOptions(SYMOPT_DEFERRED_LOADS);
+            SymInitialize(hProc, nullptr, TRUE);
+            CONTEXT ctxCopy = *ctx;
+            STACKFRAME64 sf = {};
+            sf.AddrPC.Offset = ctx->Eip;     sf.AddrPC.Mode = AddrModeFlat;
+            sf.AddrStack.Offset = ctx->Esp;  sf.AddrStack.Mode = AddrModeFlat;
+            sf.AddrFrame.Offset = ctx->Ebp;  sf.AddrFrame.Mode = AddrModeFlat;
+            for (int frame = 0; frame < 32; frame++) {
+                if (!StackWalk64(IMAGE_FILE_MACHINE_I386, hProc, hThr, &sf, &ctxCopy,
+                                 nullptr, SymFunctionTableAccess64, SymGetModuleBase64, nullptr))
+                    break;
+                DWORD64 pc = sf.AddrPC.Offset;
+                const char* where = "unknown";
+                if (pc >= 0x401000 && pc < 0x444000) where = "recomp-engine";
+                else if (pc >= 0x10000000 && pc < 0x10200000) where = "renderer";
+                else if (pc >= 0x62300000 && pc < 0x62400000) where = "renderer";
+                else if (pc >= 0x70000000) where = "system-DLL";
+                char symBuf[sizeof(SYMBOL_INFO)+256] = {0};
+                SYMBOL_INFO* sym = (SYMBOL_INFO*)symBuf; sym->SizeOfStruct = sizeof(SYMBOL_INFO); sym->MaxNameLen = 256;
+                const char* name = "";
+                if (SymFromAddr(hProc, pc, nullptr, sym)) name = sym->Name;
+                fprintf(g_traceLog, "[CRASH]   #%d  pc=0x%08llX  %s %s\n",
+                        frame, (unsigned long long)pc, where, name);
+                if (pc == 0) break;
+            }
+            SymCleanup(hProc);
         }
 
         fflush(g_traceLog);
