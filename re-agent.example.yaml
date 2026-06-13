@@ -1,0 +1,45 @@
+# Example re-agent configuration — copy to re-agent.yaml and fill in your key.
+# The real re-agent.yaml is gitignored because it holds a live API key.
+#
+# Set the key via env var OR inline below (do NOT commit a real key):
+#   $env:RE_AGENT_LLM_API_KEY = "<your key>"
+
+project_profile:
+  hook_patterns: []
+  stub_patterns: []
+  stub_markers: ["STUB", "TODO", "FIXME"]
+  stub_call_prefix: ""
+  class_macro: ""
+  source_root: "G:/GiantsRE/src"
+  source_extensions: [".cpp", ".h", ".hpp"]
+  hooks_csv: null
+
+llm:
+  provider: "claude"
+  model: "glm-5.1"          # any Anthropic-API-compatible model
+  api_key: "${RE_AGENT_LLM_API_KEY}"
+  base_url: "https://api.z.ai/api/anthropic"
+  max_tokens: 8192
+  temperature: 0.0
+  timeout_s: 1800
+
+backend:
+  type: "ghidra-bridge"
+  cli_path: "ghidra-bridge"
+  timeout_s: 60
+
+parity:
+  enabled: true
+  call_count_warn_diff: 3
+  cache_dir: "G:/GiantsRE/.cache/re-agent-parity"
+
+orchestrator:
+  max_review_rounds: 4
+  max_functions_per_class: 10
+  objective_verifier_enabled: true
+
+output:
+  report_dir: "G:/GiantsRE/reports/re-agent"
+  log_dir: "G:/GiantsRE/reports/re-agent/logs"
+  session_file: "G:/GiantsRE/re-agent-progress.json"
+  format: "json"

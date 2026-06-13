@@ -1,0 +1,5 @@
+LIBRARY gg_dx9r
+EXPORTS
+    GDVSysCreate         @1
+    GFXGetCapabilities   @2
+    UpCallsLoad          @3

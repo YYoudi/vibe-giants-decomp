@@ -1,0 +1,21 @@
+# Example ghidra-bridge configuration — copy to ghidra-bridge.yaml and edit paths.
+# The real ghidra-bridge.yaml is gitignored (machine-specific absolute paths).
+
+ghidra:
+  install_dir: "<path>/ghidra_12.1.2_PUBLIC"
+  project_dir: "<path>/ghidra_projects"
+  project_name: "GiantsRE"
+  program_name: "GiantsMain.exe"
+
+paths:
+  export_dir: "<path>/ghidra_exports"
+  address_map: "<path>/ghidra_exports/address_map.json"
+
+source:
+  root: "<path>/src"
+  file_extensions: [".cpp", ".h", ".hpp"]
+
+binary:
+  # GiantsMain.exe is x86 PE32, ImageBase 0x00400000, ~2.69MB
+  code_range_min: 0x00400000
+  code_range_max: 0x00700000

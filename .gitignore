@@ -1,0 +1,102 @@
+# =============================================================================
+#  GiantsRE .gitignore
+#  Keep this repo LEAN and PUBLIC-SAFE: only the AI-generated source, the
+#  tracker, build config and docs. No game binaries, no big tooling, no secrets.
+# =============================================================================
+
+# ─── THIRD-PARTY CLONED REPOS (never publish, they belong upstream) ───────────
+/auto-re-agent/
+/ghidra-ai-bridge/
+
+# ─── GAME FILES & COPYRIGHTED BINARIES (1.5 GB+, do NOT distribute) ───────────
+/GameFiles/
+/RESSOURCES_FOR_AI/
+
+# ─── GHIDRA PROJECT & GENERATED EXPORTS (huge, regenerable from the .exe) ─────
+/ghidra_projects/
+/ghidra_exports/
+*.gpr
+*.rep
+*.gbak
+
+# ─── BUILD ARTIFACTS (CMake / MinGW / MSVC) ───────────────────────────────────
+/build/
+/build32/
+/CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+CMakeUserPresets.json
+Makefile
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.exe
+*.pdb
+*.ilk
+*.exp
+
+# ─── SECRETS & MACHINE-LOCAL CONFIG ──────────────────────────────────────────
+# re-agent.yaml contains a real LLM API key — NEVER commit it.
+re-agent.yaml
+re-agent.yaml.*
+ghidra-bridge.yaml
+
+# ─── RE-AGENT SESSION / PROGRESS SCRATCH ─────────────────────────────────────
+re-agent-progress.json
+re-agent-progress.tmp
+*.tmp
+*.bak
+
+# ─── ONE-OFF WORKFLOW / CYCLE SCRATCH (kept locally, not published) ──────────
+/batch_decompile_cycle*.json
+/batch_decompile_cycle*.py
+/cycle*_named.json
+/discover_*.py
+/generate_stubs_cycle*.py
+/generate_*_batch.py
+/update_tracker_cycle*.py
+/flesh_out_*.py
+/inject_cycle*.py
+/rebatch_cycle*.py
+/fix_errors.py
+/flesh_batch1.json
+/flesh_batch*.json
+/re-result-*.txt
+
+# Per-function re-agent output dumps (1526 generated .cpp, regenerable; the
+# curated version lives in src/). Keep locally, don't publish the bulk.
+/reports/
+# NOTE: RE-TRACKER.json (1.7 MB) IS published — it documents RE progress.
+
+# ─── PYTHON ──────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+dist/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.cache/
+
+# ─── EDITOR / OS ─────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ─── CLAUDE CODE LOCAL STATE (skills in .claude/commands/ ARE published) ─────
+.claude/settings.local.json
+
+# ─── INSTALLER / MISC LOGS ───────────────────────────────────────────────────
+InstallationLog.txt
+.env
+CLAUDE.md
+.claude/
