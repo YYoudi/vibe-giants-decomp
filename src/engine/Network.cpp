@@ -23,14 +23,14 @@ static int32_t g_playerCount = 269480712;  // faithful @0x0070294C
 // DAT_0073c940 - Local player identifier
 static uint32_t g_localPlayerId = 2878612867u;  // faithful @0x0073C940
 
-// DAT_0073d348 - Network send buffer write pointer
-static int32_t*& g_sendBufferPtr = *reinterpret_cast<int32_t**>(0x0073d348);
+// DAT_0073d348 - Network send buffer write pointer (mutable, engine-populated)
+static int32_t* g_sendBufferPtr = nullptr;  // faithful (was *reinterpret_cast<int32_t**>(0x0073d348))
 
 // DAT_00661c1c - Error handler / logging target for master server
 static uint32_t g_masterServerErrorTarget = 309658169u;  // faithful @0x00661C1C
 
-// DAT_0073c924 - Master server connection context (COM-like ref-counted object)
-static int32_t*& g_masterServerContext = *reinterpret_cast<int32_t**>(0x0073c924);
+// DAT_0073c924 - Master server connection context (mutable, engine-populated)
+static int32_t* g_masterServerContext = nullptr;  // faithful (was *reinterpret_cast<int32_t**>(0x0073c924))
 
 
 // ============================================================================
