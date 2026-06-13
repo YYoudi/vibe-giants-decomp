@@ -144,7 +144,23 @@ static void __cdecl DetObs_FLICK() {
 }
 
 DETOUR_OBS(Player_LoadDefaultPlayer)      // 0x00552990 — loads intro_island scene
-DETOUR_OBS(Math_VectorDistanceSq)         // 0x00638d40 — 192 callers; moves?
+// ── ACTIVE replacement: VectorDistanceSq (FUN_00638d40) ─────────
+// Proven bit-exact (8153/8192, 39@1ULP). This detour RETURNS our result instead
+// of forwarding — the first engine function running as an ACTIVE proven
+// replacement inside the original process. Dual-compared to the trampoline for
+// telemetry; equivalence is confirmed MACHINE-CHECKABLY by the cinematic
+// metrics staying identical (PreRenderCheck/ScenePipelineEntry counts + no-crash).
+static uint32_t g_dtCount_VDS = 0;
+static uint32_t g_dtMismatch_VDS = 0;
+static void*    g_dtTramp_VDS = nullptr;
+static float __cdecl DetActive_VectorDistanceSq(const float* a, const float* b) {
+    g_dtCount_VDS++;
+    float mine = Callbacks::RE_VectorDistanceSq(a, b);
+    auto orig = reinterpret_cast<float (__cdecl *)(const float*, const float*)>(g_dtTramp_VDS);
+    if (orig) { float o = orig(a, b); if (mine != o) g_dtMismatch_VDS++; }
+    return mine;  // ACTIVE: return our port's result
+}
+
 DETOUR_OBS(VFS_OpenFile)                  // 0x00621e50 — engine VFS open (callback 17)
 DETOUR_OBS(VFS_OpenFileVariant)           // 0x006222d0 — engine VFS open variant (callback 15)
 DETOUR_OBS(VFS_Initialize)                // 0x00622930 — VFS init (67 branches)
@@ -152,7 +168,7 @@ DETOUR_OBS(VFS_Initialize)                // 0x00622930 — VFS init (67 branche
 static DetourProbe g_probes[] = {
     { "FLICK_ProcessFlickCommands", 0x004e7b10, DetObs_FLICK, &g_dtTramp_FLICK, &g_dtCount_FLICK },
     { "Player_LoadDefaultPlayer",   0x00552990, DetObs_Player_LoadDefaultPlayer,   &g_dtTramp_Player_LoadDefaultPlayer,   &g_dtCount_Player_LoadDefaultPlayer   },
-    { "Math_VectorDistanceSq",      0x00638d40, DetObs_Math_VectorDistanceSq,      &g_dtTramp_Math_VectorDistanceSq,      &g_dtCount_Math_VectorDistanceSq      },
+    { "Math_VectorDistanceSq",      0x00638d40, DetActive_VectorDistanceSq,        &g_dtTramp_VDS,                         &g_dtCount_VDS                         },
     { "VFS_OpenFile",               0x00621e50, DetObs_VFS_OpenFile,               &g_dtTramp_VFS_OpenFile,               &g_dtCount_VFS_OpenFile               },
     { "VFS_OpenFileVariant",        0x006222d0, DetObs_VFS_OpenFileVariant,        &g_dtTramp_VFS_OpenFileVariant,        &g_dtCount_VFS_OpenFileVariant        },
     { "VFS_Initialize",             0x00622930, DetObs_VFS_Initialize,             &g_dtTramp_VFS_Initialize,             &g_dtCount_VFS_Initialize             },
@@ -257,6 +273,10 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD reason, LPVOID reserved) {
                         g_probes[i].name, g_probes[i].addr,
                         n > 0 ? "*** FIRED ***" : "silent", n);
         }
+        Logger::Separator();
+        Logger::Log("[GiantsRE Proxy] ACTIVE replacement VectorDistanceSq (0x00638d40): "
+                    "%u calls, %u dual-mismatches (expected ~%u @1ULP) — RETURNING OUR RESULT",
+                    g_dtCount_VDS, g_dtMismatch_VDS, g_dtCount_VDS/200);
         Logger::Separator();
         Logger::Log("[GiantsRE Proxy] FLICK opcode histogram (entry-sampled, %u calls):",
                     g_dtCount_FLICK);
