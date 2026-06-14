@@ -2,8 +2,7 @@
 
 The PS2 prototype of Giants: Citizen Kabuto (`SLUS_201.78`, a MIPS R5900 ELF) was
 shipped **unstripped**. Its `.symtab` exposes **4 769 named functions** and **1 691
-named globals**, plus a 1 MB `.mdebug` block. Because the PS2 and PC builds share the
-same C++ source (per modder "Amazed", ~50 % of functions are identical), these names
+named globals**, plus a 1 MB `.mdebug` block. Because the PS2 and PC builds shar ecommon C++ source, these names
 and signatures are ground truth for naming the stripped PC `GiantsMain.exe`.
 
 ## Files
