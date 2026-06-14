@@ -47,13 +47,12 @@ int LoadDefaultPlayer()
         fflush(g_traceLog);
     }
 
-    // Load "intro_island" via vtable dispatch on the game-context object.
-    // vtable[0x18](levelCtx, "intro_island") — the level-load method (not yet ported).
+    // Load "intro_island" via the game-context's level-load method (vtable[6]/0x18
+    // in the original). Called directly (cdecl) to avoid thiscall convention issues.
+    extern int LevelLoad(void* self, const char* levelName);
     uint32_t* playerData = nullptr;
     if (levelCtx != nullptr) {
-        void** vtable = *reinterpret_cast<void***>(levelCtx);
-        // vtable[0x18/4 = 6] = level-load. Stubbed for now (method not ported).
-        (void)vtable;
+        LevelLoad(levelCtx, "intro_island");
     }
     if (playerData != nullptr) {
         DAT_00702778 = *playerData;

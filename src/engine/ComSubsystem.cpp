@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cstdint>
+#include <cstdio>
 
 namespace Giants {
 
@@ -122,6 +123,24 @@ void RegisterGameContext() {
 // Query the game-context object (used by GetGameContext / FUN_00461a60).
 void* ComQueryGameContext() {
     return ComQuery(&g_comGuid_gameContext);
+}
+
+// Level-load method (the game-context's vtable[6]/0x18 in the original, called
+// by LoadDefaultPlayer with "intro_island"). Functional: looks up the level file
+// in the VFS to verify the level-load path reaches the file system. The full
+// scene-build (parse .gck, construct scene graph) is the next phase.
+// VFSFileLookup is defined in VirtualFileSystem.cpp (namespace Giants).
+uint32_t VFSFileLookup(char* filename);  // FUN_00623f00
+int LevelLoad(void* /*self*/, const char* levelName) {
+    extern FILE* g_traceLog;
+    char path[128];
+    snprintf(path, sizeof(path), "%s", levelName);
+    uint32_t handle = VFSFileLookup(path);
+    if (g_traceLog) {
+        fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): VFSFileLookup -> 0x%08X\n", levelName, handle);
+        fflush(g_traceLog);
+    }
+    return handle != 0 ? 1 : 0;
 }
 
 } // namespace Giants
