@@ -236,6 +236,11 @@ static void LoadTerrain() {
             g_tTriCount++;
         }
     }
+    // Marker file so the build harness can verify the terrain mesh loaded
+    // (the visual is the user's; this confirms the data path headlessly).
+    FILE* m = fopen("terrain_loaded.txt", "w");
+    if (m) { fprintf(m, "loaded W=%d H=%d tris=%d hasLightmap=%d\n",
+                     g_tW, g_tH, g_tTriCount, hasLightmap ? 1 : 0); fclose(m); }
 }
 
 static void DrawTerrain(IDirect3DDevice9* dev) {
