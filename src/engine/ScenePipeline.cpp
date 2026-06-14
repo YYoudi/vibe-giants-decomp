@@ -11,6 +11,15 @@
 
 namespace Giants {
 
+// ─── thiscall vtable-call wrappers (defined in GameLogic.cpp) ──────────────
+// The renderer COM object's vtable entries are thiscall (ECX=this). Calling
+// them via a plain reinterpret_cast does NOT set ECX, so the callee reads `this`
+// from garbage. These naked-asm wrappers set ECX=objPtr before the indirect call:
+//   CallThiscall_Void(objPtr, methodPtr)            — no stack args
+//   CallThiscall_U32 (objPtr, methodPtr, argVal)    — one uint32 stack arg
+extern "C" void CallThiscall_Void();  // (void* objPtr, void* methodPtr)
+extern "C" void CallThiscall_U32();   // (void* objPtr, void* methodPtr, uint32_t argVal)
+
 // --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
 static char g_state_006ff367 = 0;  // was @0x0X006FF367
 static char g_state_0068578c = 0;  // was @0x0X0068578C
@@ -69,8 +78,12 @@ bool BeginScene()
         // rather than dereferenced. g_subsystem00 is the renderer COM object
         // (== g_renderDevice); it carries vtable[0xa4/4]=41=BeginScene.
         if (g_renderDevice)
-            (*reinterpret_cast<void(**)()>(
-                *reinterpret_cast<uintptr_t*>(g_renderDevice) + 0xa4))();
+        {
+            void** vt = *reinterpret_cast<void***>(g_renderDevice);
+            if (vt[0xa4 / 4])
+                reinterpret_cast<void(*)(void*, void*)>(CallThiscall_Void)(
+                    g_renderDevice, vt[0xa4 / 4]);  // vtable[41] = BeginScene (thiscall)
+        }
 
         // vtable[4] on each subsystem — stage setup (stage_id, param)
         using StageSetup = void(*)(void*, int, int);
@@ -148,10 +161,14 @@ uint32_t ShutdownSubsystems(uint32_t param)
             (*reinterpret_cast<VMethod0*>(
                 *reinterpret_cast<void***>(g_subsystem38)[1]))(g_subsystem38);
 
-        // vtable[0xa8/4] = index 42 on subsystem00 (= g_renderDevice, DAT_00702700) — final renderer shutdown
+        // vtable[0xa8/4] = index 42 on g_renderDevice (DAT_00702700) — final renderer shutdown (EndScene)
         if (g_renderDevice)
-            (*reinterpret_cast<void(**)()>(
-                reinterpret_cast<void**>(*reinterpret_cast<void***>(g_renderDevice))[0xa8 / 4]))();
+        {
+            void** vt = *reinterpret_cast<void***>(g_renderDevice);
+            if (vt[0xa8 / 4])
+                reinterpret_cast<void(*)(void*, void*)>(CallThiscall_Void)(
+                    g_renderDevice, vt[0xa8 / 4]);  // vtable[42] = EndScene (thiscall)
+        }
     }
 
     return 1;
@@ -403,9 +420,15 @@ void FrameEnd()
         sceneState = *reinterpret_cast<uint32_t*>(reinterpret_cast<int>(g_sceneReady) + 0x1b4);
     }
 
-    // vtable[0xac] — PrePresent or BeginFrame
-    ((void(__thiscall*)(void*, uint32_t))(
-        *reinterpret_cast<void***>(g_rendererObj))[0xac / 4])(g_rendererObj, sceneState);
+    // vtable[0xac/4 = 43] — PrePresent / Clear (thiscall: this, sceneState).
+    // Uses the CallThiscall wrapper so ECX=this is set (the bare reinterpret_cast
+    // call left ECX garbage and crashed the renderer).
+    {
+        void** vt = *reinterpret_cast<void***>(g_rendererObj);
+        if (vt[0xac / 4])
+            reinterpret_cast<void(*)(void*, void*, uint32_t)>(CallThiscall_U32)(
+                g_rendererObj, vt[0xac / 4], sceneState);
+    }
 
     // ── Phase 2: Scene begin/end for frame stats ──
     BeginScene();
@@ -493,9 +516,13 @@ void FrameEnd()
         }
     }
 
-    // ── Phase 6: Present (vtable[0xbc]) ──
-    reinterpret_cast<void(*)()>(
-        (*reinterpret_cast<void***>(g_rendererObj))[0xbc / 4])();
+    // ── Phase 6: Present (vtable[0xbc/4 = 47], thiscall: this) ──
+    {
+        void** vt = *reinterpret_cast<void***>(g_rendererObj);
+        if (vt[0xbc / 4])
+            reinterpret_cast<void(*)(void*, void*)>(CallThiscall_Void)(
+                g_rendererObj, vt[0xbc / 4]);
+    }
 }
 
 // ─── Stubs for remaining callees ──────────────────────────────

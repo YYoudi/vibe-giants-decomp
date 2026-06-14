@@ -170,57 +170,21 @@ uint32_t ProcessGameLogic()
     }
 
     // ── Phase 5: Render pipeline ──────────────────────────────────
+    // The full render cycle is OWNED by FrameEnd (FUN_005253b0), matching the
+    // original exe structure: FrameEnd does PrePresent(vtable[43]) →
+    // BeginScene()→vtable[41] → overlay → ShutdownSubsystems()→vtable[42] →
+    // FPS limiter → Present(vtable[47]). All vtable calls use the CallThiscall
+    // wrappers (ECX=this). Phase 5's old inline render is removed (it double-
+    // rendered with FrameEnd and used bare calls that left ECX garbage).
     if (g_renderDevice != nullptr)
     {
-        void** vtable = *(void***)g_renderDevice;
-
-        // Render pipeline uses the renderer COM object (gg_dx9r.dll).
-        // The renderer manages D3D9 device state internally.
-        // vtable[43] = PrePresent (thiscall: this, sceneState)
-        // vtable[41] = BeginScene/RendererInit (calls D3D9 BeginScene internally)
-        // vtable[42] = Shutdown/EndScene (calls D3D9 EndScene internally)
-        // vtable[47] = Present (swaps buffers)
-
-        // Step 1: PrePresent — prepare frame
-        if (vtable[43])
-        {
-            reinterpret_cast<void(*)(void*, void*, uint32_t)>(CallThiscall_U32)(
-                g_renderDevice, vtable[43], 0);
-        }
-
-        // Step 2: BeginScene — renderer calls D3D9 BeginScene internally
-        if (vtable[41])
-        {
-            reinterpret_cast<void(*)(void*, void*)>(CallThiscall_Void)(
-                g_renderDevice, vtable[41]);
-        }
-
-        // ── D3D9 draw calls removed (rebuild-exe experiment) ─────
-        // The renderer COM object (gg_dx9r.dll) manages D3D9 draw state internally.
-        // Standalone draw calls were part of the abandoned rebuild approach.
-
-        // Step 3: Shutdown/EndScene — renderer calls D3D9 EndScene
-        if (vtable[42])
-        {
-            reinterpret_cast<void(*)(void*, void*)>(CallThiscall_Void)(
-                g_renderDevice, vtable[42]);
-        }
-
-        // Step 4: Present — swap buffers
-        if (vtable[47])
-        {
-            reinterpret_cast<void(*)(void*, void*)>(CallThiscall_Void)(
-                g_renderDevice, vtable[47]);
-        }
-
-        // Phase 11: Frame end (FPS limiter + pre-present)
         extern void FrameEnd();
         FrameEnd();
 
         g_renderFrameCount++;
         if (g_renderFrameCount <= 3 && g_traceLog)
         {
-            fprintf(g_traceLog, "[RENDER] Frame %d: renderer pipeline + D3D9 draw OK\n",
+            fprintf(g_traceLog, "[RENDER] Frame %d: FrameEnd render cycle OK\n",
                 g_renderFrameCount);
             fflush(g_traceLog);
         }
