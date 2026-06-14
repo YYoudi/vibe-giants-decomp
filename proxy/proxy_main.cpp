@@ -425,6 +425,10 @@ void UpCallsLoad(uint32_t version, uint32_t count, uint32_t callbackTablePtr) {
 
     Callbacks::RunSelfTests();
     DriveActiveDetours();   // feed active hooks a sweep → trampoline dual-compare validates cold fns too
+
+    // Live-inspect the original's COM subsystem (engine context, factory dispatch
+    // tables, object vtables) — reveals runtime ground truth for the porting wall.
+    Callbacks::DumpCOMState();
 }
 
 // ═══════════════════════════════════════════════════════════════

@@ -167,6 +167,14 @@ float RE_VectorDistanceSq2D(const float* a, const float* b) {
     long double dy = (long double)b[1] - a[1];
     return (float)(dx * dx + dy * dy);
 }
+// FUN_00638c80 — distance3d (PS2-proven name: distance3d(P3D*,P3D*)). 3D Euclidean
+// distance: sqrt of VDS over 3 components. Double accumulation + sqrt, matches original.
+float RE_Distance3D(const float* a, const float* b) {
+    double dx = (double)b[0] - a[0];
+    double dy = (double)b[1] - a[1];
+    double dz = (double)b[2] - a[2];
+    return (float)sqrt(dx * dx + dy * dy + dz * dz);
+}
 // Deep-mined read-only accessors (depth<=3 callees of hot fns), synthetic-struct self-test:
 int RE_AccField1c(int p)        { return *(int*)(p + 0x1c); }                  // 006408c0
 int RE_AccU2PlusP(int p)        { return (unsigned int)*(unsigned short*)(p + 2) + p; } // 00640c60
@@ -377,6 +385,40 @@ uint32_t SelfTest_VectorDistanceSq() {
     }
     Logger::Log("[selftest] VectorDistanceSq: %u/%u bit-mismatches, maxULP=%u "
                 "(0 mismatches ⇒ bit-exact vs x87 original)",
+                mismatch, N, maxUlp);
+    return mismatch;
+}
+// ── distance3d self-test (FUN_00638c80, PS2-proven name) ──────────
+// Deterministic vec3 sweep; compares RE_Distance3D against the original at its
+// fixed address. sqrt rounding ⇒ allow small ULP drift.
+uint32_t SelfTest_Distance3D() {
+    auto orig = reinterpret_cast<float(__cdecl*)(const float*, const float*)>(0x00638c80);
+    uint32_t seed = 0xD15DA5E3u;
+    auto nextf = [&]() -> float {
+        seed = seed * 1103515245u + 12345u;
+        int32_t q = static_cast<int32_t>(seed >> 9);
+        return static_cast<float>(q % 4001) - 2000.0f;
+    };
+    const uint32_t N = 4096;
+    uint32_t mismatch = 0, maxUlp = 0;
+    for (uint32_t i = 0; i < N; i++) {
+        float a[4] = { nextf(), nextf(), nextf(), 0.0f };
+        float b[4] = { nextf(), nextf(), nextf(), 0.0f };
+        if (i % 1024 == 0) { b[0]=a[0]; b[1]=a[1]; b[2]=a[2]; } // identical points → 0
+        float mine = RE_Distance3D(a, b);
+        float o    = orig(a, b);
+        uint32_t mb, ob; std::memcpy(&mb, &mine, 4); std::memcpy(&ob, &o, 4);
+        if (mb != ob) {
+            mismatch++;
+            uint32_t ulp = (mb > ob) ? (mb - ob) : (ob - mb);
+            if (ulp > maxUlp) maxUlp = ulp;
+            if (mismatch <= 5)
+                Logger::Log("[selftest] Distance3D mm a=(%.0f,%.0f,%.0f) b=(%.0f,%.0f,%.0f) "
+                            "mine=0x%08X(%.4f) orig=0x%08X(%.4f) ulp=%u",
+                            a[0],a[1],a[2],b[0],b[1],b[2], mb, mine, ob, o, ulp);
+        }
+    }
+    Logger::Log("[selftest] Distance3D 0x00638c80 (PS2 distance3d): %u/%u mm, maxULP=%u",
                 mismatch, N, maxUlp);
     return mismatch;
 }
@@ -670,6 +712,7 @@ uint32_t RunSelfTests() {
     }
     total += SelfTest_SinCosLookup();
     total += SelfTest_VectorDistanceSq();
+    total += SelfTest_Distance3D();   // FUN_00638c80 (PS2 distance3d)
     total += SelfTest_HotCallees();   // FLICK-path leaf callees (00635850, 00634e80)
     total += SelfTest_DeepCallees();  // VDS2D + deep-mined accessors
     // ── sweep batch: pure leaves via direct-address call ──
@@ -689,6 +732,104 @@ uint32_t RunSelfTests() {
     Logger::Log("[selftest] Done — %u total mismatches", total);
     Logger::Separator();
     return total;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// DumpCOMState — live-inspect the original's COM subsystem.
+// Called from UpCallsLoad AFTER the engine fully initialized (it had to build
+// the 22-callback table + create all COM objects before calling UpCallsLoad).
+// Reads the engine context (DAT_0073c924), state pointer (DAT_00702774), and
+// the COM factory dispatch tables (DAT_0065f184/0065d154/00660194) that
+// FUN_00461a60 etc. dispatch through. Dumps structs + vtables to reveal the
+// runtime ground truth that static decompilation cannot resolve.
+// ═══════════════════════════════════════════════════════════════
+static void DumpVtable(const char* label, uint32_t vtblAddr) {
+    if (vtblAddr < 0x00400000 || vtblAddr > 0x007fffff) {
+        Logger::Log("[COM-DUMP]   %s vtable @ 0x%08X — out of .rdata range, skip", label, vtblAddr);
+        return;
+    }
+    Logger::Log("[COM-DUMP]   %s vtable @ 0x%08X:", label, vtblAddr);
+    const uint32_t* vt = reinterpret_cast<const uint32_t*>(vtblAddr);
+    for (int i = 0; i < 24; i++) {
+        uint32_t fn = vt[i];
+        const char* where = "?";
+        if (fn >= 0x00400000 && fn < 0x00450000) where = "exe";
+        else if (fn >= 0x10000000 && fn < 0x10200000) where = "renderer";
+        else if (fn == 0) where = "null";
+        Logger::Log("[COM-DUMP]     vt[%2d] = 0x%08X (%s)", i, fn, where);
+    }
+}
+
+static void DumpObject(const char* label, uint32_t objAddr, int nDwords = 16) {
+    if (objAddr < 0x00400000 || objAddr > 0x7fffffff) {
+        Logger::Log("[COM-DUMP] %s = 0x%08X (not a valid object ptr)", label, objAddr);
+        return;
+    }
+    Logger::Log("[COM-DUMP] %s @ 0x%08X:", label, objAddr);
+    const uint32_t* obj = reinterpret_cast<const uint32_t*>(objAddr);
+    for (int i = 0; i < nDwords; i++) {
+        char line[160]; int p = 0;
+        float asF; std::memcpy(&asF, &obj[i], 4);
+        p += snprintf(line+p, sizeof(line)-p, "[COM-DUMP]   +0x%02X = 0x%08X", i*4, obj[i]);
+        if (obj[i] >= 0x00400000 && obj[i] < 0x007fffff)
+            p += snprintf(line+p, sizeof(line)-p, " (ptr)");
+        else if (asF > -1e9f && asF < 1e9f && (obj[i] & 0x7f800000) != 0)
+            p += snprintf(line+p, sizeof(line)-p, " (%.4g)", asF);
+        Logger::Log("%s", line);
+    }
+    // First dword is the vtable → dump it
+    DumpVtable(label, obj[0]);
+}
+
+void DumpCOMState() {
+    Logger::Separator();
+    Logger::Log("[COM-DUMP] === Live COM subsystem inspection (original runtime) ===");
+
+    // 1) Engine context / COM registry root: DAT_0073c924
+    //    Read as a pointer (6+ functions deref *0x0073c924). The agent audit
+    //    found it's the COM object registry root.
+    uint32_t engineCtxPtr = *reinterpret_cast<uint32_t*>(0x0073c924);
+    Logger::Log("[COM-DUMP] DAT_0073c924 (engine context ptr) = 0x%08X", engineCtxPtr);
+    if (engineCtxPtr) DumpObject("EngineContext", engineCtxPtr, 24);
+
+    // 2) Active state/scene pointer: DAT_00702774
+    uint32_t statePtr = *reinterpret_cast<uint32_t*>(0x00702774);
+    Logger::Log("[COM-DUMP] DAT_00702774 (active state ptr) = 0x%08X", statePtr);
+
+    // 3) The three COM factory dispatch tables that FUN_00461a60 /
+    //    FUN_00443f80 / FUN_0046fd40 dispatch through (their virtual-call
+    //    targets — the static-analysis blind spot). These are .rdata globals.
+    struct DispatchTbl { const char* name; uint32_t addr; };
+    DispatchTbl tables[] = {
+        {"DAT_0065f184 (FUN_00461a60 factory tbl)", 0x0065f184},
+        {"DAT_0065d154 (FUN_00443f80 factory tbl)", 0x0065d154},
+        {"DAT_00660194 (FUN_0046fd40 factory tbl)", 0x00660194},
+        {"DAT_0065f184 -4 (possible vtbl ptr)",     0x0065f180},
+    };
+    for (auto& t : tables) {
+        uint32_t val = *reinterpret_cast<uint32_t*>(t.addr);
+        Logger::Log("[COM-DUMP] %s -> 0x%08X (deref)", t.name, val);
+        if (val >= 0x00400000 && val < 0x007fffff)
+            DumpVtable(t.name, val);
+    }
+
+    // 4) The COM object vtables directly referenced in PreInitCheck decompilation
+    //    (these are the classes the engine instantiates during init).
+    DumpVtable("PTR_FUN_0065ce08 (InitCOMSubsystem obj vtbl)", 0x0065ce08);
+    DumpVtable("PTR_FUN_0066a574 (PreInitCheck obj+0x68 vtbl)", 0x0066a574);
+    DumpVtable("PTR_FUN_00660250 (PreInitCheck obj+0x50 vtbl)", 0x00660250);
+    DumpVtable("PTR_FUN_0065dc80 (PreInitCheck obj+0x4c vtbl)", 0x0065dc80);
+
+    // 5) Binary dump of the engine context for offline analysis
+    if (engineCtxPtr) {
+        FILE* f = fopen("com_dump.bin", "wb");
+        if (f) {
+            fwrite(reinterpret_cast<const void*>(engineCtxPtr), 1, 1024, f);
+            fclose(f);
+            Logger::Log("[COM-DUMP] com_dump.bin written (1024 bytes from engine context)");
+        }
+    }
+    Logger::Separator();
 }
 
 } // namespace Callbacks
