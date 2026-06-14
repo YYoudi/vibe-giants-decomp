@@ -1,1 +1,47 @@
 pc_addr,pc_name,ps2_addr,ps2_name,shared,conf,sample_shared
+005e0440,FUN_005e0440,0x001df5f0,teammecc_setup_enemies__FP6OBJECTi,13,1.0,BAZ_CT60 | BAZ_CT61 | BAZ_CT63
+005e3840,FUN_005e3840,0x001e2cd8,teammecc_set_mode,11,1.0,AIMeccAttackLoc | AIMeccAttackTarg | AIMeccBusy
+004a9570,FUN_004a9570,0x001d0218,smartie_move,7,1.0,BAZ_CT29 | BAZ_CT30 | DELCT29_1
+00453370,FUN_00453370,0x001dd200,chat_init,6,1.0,ChatColorDisciple | ChatColorMission | ChatColorPlayerAll
+005e30e0,FUN_005e30e0,0x001e2580,mecc_shot,5,1.0,GOR_CT59 | GOR_CT69 | REG_CT56
+005c6550,FUN_005c6550,0x001d0218,smartie_move,6,0.8,DELCT23_2 | DELCT24_2 | GORCT23_2
+004aca40,FUN_004aca40,0x00110280,smartie_base_attack_comment__FP6OBJECT,3,0.8,DELCT15_2 | GOR_CT15 | REG_CT15
+00469670,FUN_00469670,0x001df5f0,teammecc_setup_enemies__FP6OBJECTi,2,0.667,BAZ_CT61 | BAZ_CT63
+004aa710,FUN_004aa710,0x0011eb50,bldg_get_bldg_name,2,0.667,BaseBldgMeccBase | BaseBldgReaperBase
+005038f0,FUN_005038f0,0x0013ca50,item_check,2,0.667,InstantHealthLarge | InstantHealthMed
+00509c00,FUN_00509c00,0x00141100,AttackObject__FP6OBJECTT0P3P3DT2fi,2,0.667,Kabutomessage1 | Kabutomessage2
+005536d0,FUN_005536d0,0x0016b158,showchat_mission_objective__Fi,2,0.667,MissionObjective | Trainer1
+005b5140,FUN_005b5140,0x001c39b8,rpman_move,2,0.667,SmChBorjoyzeeSteal | SmChYanSteal
+005dfcd0,FUN_005dfcd0,0x001df5f0,teammecc_setup_enemies__FP6OBJECTi,2,0.667,BAZ_CT64 | GOR_CT64
+004ab890,FUN_004ab890,0x0011f188,PS2BaseViewTextRender,3,0.6,%d/%d Working | BaseHintOutOfFood | BaseWorking
+005d1e20,FUN_005d1e20,0x001d63c0,smartie_get_name__FP6OBJECT,2,0.545,Borjoyzee | SmNameSyl%c%d
+0044b660,FUN_0044b660,0x0023cd48,_vfprintf_r,2,0.433,0123456789ABCDEF | 0123456789abcdef
+0044cb00,FUN_0044cb00,0x0023cd48,_vfprintf_r,2,0.433,0123456789ABCDEF | 0123456789abcdef
+004b7ee0,FUN_004b7ee0,0x0023cd48,_vfprintf_r,2,0.433,0123456789ABCDEF | 0123456789abcdef
+004bc570,FUN_004bc570,0x0023cd48,_vfprintf_r,2,0.433,0123456789ABCDEF | 0123456789abcdef
+0050d090,FUN_0050d090,0x00141100,AttackObject__FP6OBJECTT0P3P3DT2fi,2,0.381,Kabutomessage1 | Kabutomessage2
+0044d230,FUN_0044d230,0x0023cd48,_vfprintf_r,1,0.333,0123456789abcdef
+00494d50,FUN_00494d50,0x0010fa10,meccbaseitem_finish_building,1,0.333,BaseChatMCPHouseDone
+004ab610,FUN_004ab610,0x0011f188,PS2BaseViewTextRender,1,0.333,BaseHintAddSmartie
+004bbee0,FUN_004bbee0,0x0023cd48,_vfprintf_r,1,0.333,0123456789abcdef
+004e3c50,FUN_004e3c50,0x001ae088,firewall_create_fire__FP6OBJECTT0Uifffi,1,0.333,SpellHintFire
+00504a20,FUN_00504a20,0x0013d6d8,inv_award_item,1,0.333,InvChPickupItem
+0052f3f0,FUN_0052f3f0,0x0016b158,showchat_mission_objective__Fi,1,0.333,MissionObjective
+00537130,FUN_00537130,0x00166990,mecc_fire_logic__FP6OBJECT,1,0.333,HintWaitRepair
+0053c710,FUN_0053c710,0x001ad078,reaper_check_enter_teleport__FP6OBJECT,1,0.333,FlagHintTeleport
+0057eb60,FUN_0057eb60,0x0019fc40,reaperbasebldg_finish_building,1,0.333,BaseChatRpPHouseDone
+0058acd0,FUN_0058acd0,0x001a8048,reaper_finish_shrinker,1,0.333,SpellHintShrink
+005912a0,FUN_005912a0,0x001ad078,reaper_check_enter_teleport__FP6OBJECT,1,0.333,FlagHintTeleport
+005d29a0,FUN_005d29a0,0x00168ef0,mecc_special_weapon_logic__FP6OBJECT,1,0.333,PhErrNotGround
+005ebca0,FUN_005ebca0,0x00180888,player_draw_missile_lock,1,0.333,MissileLock
+00445c50,FUN_00445c50,0x0023cd48,_vfprintf_r,1,0.167,(null)
+00469a90,FUN_00469a90,0x001d0218,smartie_move,1,0.167,Borjoyzee
+005068f0,FUN_005068f0,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
+00506b90,FUN_00506b90,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
+00532f00,FUN_00532f00,0x00164f10,mecc_logic,1,0.167,AIMeccPrefix
+0053d120,FUN_0053d120,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
+00584c50,FUN_00584c50,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
+00589590,FUN_00589590,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
+0058cd20,FUN_0058cd20,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
+005cce60,FUN_005cce60,0x001d0218,smartie_move,1,0.167,Borjoyzee
+005cee50,FUN_005cee50,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro

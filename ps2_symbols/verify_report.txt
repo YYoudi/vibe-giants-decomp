@@ -1,0 +1,150 @@
+string-semantic agreement: 12/86
+
+004a9570 -> smartie_move
+   strings=['BAZ_CT29', 'BAZ_CT30', 'DELCT29_1', 'DELCT30']
+00469670 -> teammecc_setup_enemies__FP6OBJECTi
+   strings=['BAZ_CT61', 'BAZ_CT63']
+005c6550 -> smartie_move
+   strings=['DELCT23_2', 'DELCT24_2', 'Error: ObjObj type %d not found', 'GORCT23_2']
+005b3af0 -> rpman_jetski_race__FP6OBJECTf
+   strings=['SoundFail {0}']
+005b3f90 -> rpman_init__FP6OBJECT
+   strings=['SoundFail {0}']
+0048f130 -> mecc_in_gyro
+   strings=['list too long']
+004a69a0 -> playergroup_claim_base
+   strings=['Error: ObjObj type %d not found']
+004f88c0 -> giftshopview_enable
+   strings=['Overflow of dialog level stack']
+00555c50 -> mission_init__FPc
+   strings=["':\r\n            if ((iVar25 != 0) && (puVar24 = DAT_007027a8, *(int *)(iVar25 + 0x22c) == 3)) {\r\n              for (; puVar24 != (undefined4 *)0x0; puVar24 = (undefined4 *)*puVar24) {\r\n                if (*(int *)(puVar24[3] + 4) == 0x434) {\r\n                  puVar1 = (uint *)(puVar24[3] + 0x124);\r\n                  *puVar1 = *puVar1 | 0x8000;\r\n                }\r\n              }\r\n              iVar15 = FUN_00559dc0();\r\n              iVar25 = DAT_00702774;\r\n              *(undefined8 *)(iVar15 + 0xf0) = *(undefined8 *)(DAT_00702774 + 0xf0);\r\n              *(undefined4 *)(iVar15 + 0xf8) = *(undefined4 *)(iVar25 + 0xf8);\r\n              iVar25 = DAT_00702774;\r\n              uVar16 = *(undefined4 *)(DAT_00702774 + 0x2e8);\r\n              uVar5 = *(undefined4 *)(DAT_00702774 + 0x2ec);\r\n              uVar7 = *(undefined4 *)(DAT_00702774 + 0x2f0);\r\n              *(undefined4 *)(iVar15 + 0x2e4) = *(undefined4 *)(DAT_00702774 + 0x2e4);\r\n              *(undefined4 *)(iVar15 + 0x2e8) = uVar16;\r\n              *(undefined4 *)(iVar15 + 0x2ec) = uVar5;\r\n              *(undefined4 *)(iVar15 + 0x2f0) = uVar7;\r\n              uVar16 = *(undefined4 *)(iVar25 + 0x2f8);\r\n              uVar5 = *(undefined4 *)(iVar25 + 0x2fc);\r\n              uVar7 = *(undefined4 *)(iVar25 + 0x300);\r\n              *(undefined4 *)(iVar15 + 0x2f4) = *(undefined4 *)(iVar25 + 0x2f4);\r\n              *(undefined4 *)(iVar15 + 0x2f8) = uVar16;\r\n              *(undefined4 *)(iVar15 + 0x2fc) = uVar5;\r\n              *(undefined4 *)(iVar15 + 0x300) = uVar7;\r\n              uVar16 = *(undefined4 *)(iVar25 + 0x308);\r\n              uVar5 = *(undefined4 *)(iVar25 + 0x30c);\r\n              uVar7 = *(undefined4 *)(iVar25 + 0x310);\r\n              *(undefined4 *)(iVar15 + 0x304) = *(undefined4 *)(iVar25 + 0x304);\r\n              *(undefined4 *)(iVar15 + 0x308) = uVar16;\r\n              *(undefined4 *)(iVar15 + 0x30c) = uVar5;\r\n              *(undefined4 *)(iVar15 + 0x310) = uVar7;\r\n              uVar16 = *(undefined4 *)(iVar25 + 0x318);\r\n              uVar5 = *(undefined4 *)(iVar25 + 0x31c);\r\n              uVar7 = *(undefined4 *)(iVar25 + 800);\r\n              *(undefined4 *)(iVar15 + 0x314) = *(undefined4 *)(iVar25 + 0x314);\r\n              *(undefined4 *)(iVar15 + 0x318) = uVar16;\r\n              *(undefined4 *)(iVar15 + 0x31c) = uVar5;\r\n              *(undefined4 *)(iVar15 + 800) = uVar7;\r\n              *(undefined4 *)(iVar15 + 0x324) = *(undefined4 *)(iVar25 + 0x324);\r\n              uVar16 = *(undefined4 *)(DAT_00702774 + 0x114);\r\n              *(uint *)(iVar15 + 0x124) = *(uint *)(iVar15 + 0x124) | 0x400;\r\n              *(undefined4 *)(iVar15 + 0x114) = uVar16;\r\n              *(undefined4 *)(iVar15 + 0x148) = 1;\r\n              FUN_00584990();\r\n              FUN_005a7860();\r\n              fVar21 = DAT_0066c290;\r\n            }\r\n            *(undefined4 *)(iVar12 + 0x237c + (int)DAT_00702770) = 1;\r\n            pfVar9 = pfVar23;\r\n            iVar25 = DAT_00702774;\r\n            fVar20 = fRam00000018;\r\n            uVar16 = uRam0000001c;\r\n            cVar17 = cStack_155;\r\n            goto LAB_00555dc0;\r\n          case '#':\r\n            DAT_00702770[0x140a] = *pfVar23;\r\n            pfVar9 = (float *)((int)pfVar9 + 5);\r\n            iVar25 = DAT_00702774;\r\n            fVar20 = fRam00000018;\r\n            uVar16 = uRam0000001c;\r\n            cVar17 = cStack_155;\r\n            goto LAB_00555dc0;\r\n          case '$':\r\n            *(undefined4 *)(iVar12 + 0x2380 + (int)DAT_00702770) = 1;\r\n            if ((DAT_00702774 == 0) || (*(int *)(DAT_00702774 + 0x22c) != 2)) {\r\n              pfVar9 = pfVar23;\r\n              iVar25 = DAT_00702774;\r\n              fVar20 = fRam00000018;\r\n              uVar16 = uRam0000001c;\r\n              cVar17 = cStack_155;\r\n              if ((DAT_00702774 != 0) && (*(int *)(DAT_00702774 + 0x22c) == 3)) {\r\n                if (DAT_00702774 == 0) {\r\n                  iVar25 = 0;\r\n                }\r\n                else {\r\n                  iVar25 = *(int *)(DAT_00702774 + 0x14c);\r\n                }\r\n                *(undefined4 *)(iVar25 + 0xcd4) = 0;\r\n                iVar25 = DAT_00702774;\r\n                fVar20 = fRam00000018;\r\n                uVar16 = uRam0000001c;\r\n              }\r\n            }\r\n            else {\r\n              if (DAT_00702774 == 0) {\r\n                iVar25 = 0;\r\n              }\r\n              else {\r\n                iVar25 = *(int *)(DAT_00702774 + 0x14c);\r\n              }\r\n              *(undefined4 *)(iVar25 + 0x3c) = 0;\r\n              pfVar9 = pfVar23;\r\n              iVar25 = DAT_00702774;\r\n              fVar20 = fRam00000018;\r\n              uVar16 = uRam0000001c;\r\n              cVar17 = cStack_155;\r\n            }\r\n            goto LAB_00555dc0;\r\n          case '%':\r\n            *(undefined4 *)(iVar12 + 0x2370 + (int)DAT_00702770) = 1;\r\n            DAT_00748914 = 1;\r\n            pfVar9 = pfVar23;\r\n            iVar25 = DAT_00702774;\r\n            fVar20 = fRam00000018;\r\n            uVar16 = uRam0000001c;\r\n            cVar17 = cStack_155;\r\n            goto LAB_00555dc0;\r\n          case '&':\r\n            *(float *)(iVar12 + 0x2364 + (int)DAT_00702770) = *pfVar23;\r\n            *(undefined4 *)(iVar12 + 0x2368 + (int)DAT_00702770) = *(undefined4 *)((int)pfVar9 + 5);\r\n            pfVar9 = (float *)((int)pfVar9 + 9);\r\n            iVar25 = DAT_00702774;\r\n            fVar20 = fRam00000018;\r\n            uVar16 = uRam0000001c;\r\n            cVar17 = cStack_155;\r\n            goto LAB_00555dc0;\r\n          default:\r\n            goto switchD_00555dd7_default;\r\n          }\r\n          goto LAB_00556f68;\r\n        }\r\n      }\r\n    }\r\n    uVar16 = 0;\r\n  }\r\n  return uVar16;\r\nswitchD_00555dd7_default:\r\n  FUN_00463000(auStack_10c,", 'CamMode']
+0059e180 -> reaper_check_enter_jet_ski__FP6OBJECT
+   strings=['%8.0f', '%d:%02d', '%d:%02d:%02d', '%s %s']
+005cee50 -> smartie_check_follow__FP6OBJECTf
+   strings=['FlagHintDriveGyro']
+005b3230 -> rpman_racer_tilt__FP6OBJECTff
+   strings=['SoundFail {0}']
+00589590 -> reaper_fire_bow__FP6OBJECT
+   strings=['Error: ObjObj type %d not found', 'InvChDropItem']
+0053df20 -> vimpsoul_move
+   strings=['SoundFail {0}']
+0053ab40 -> reaper_special_action_logic__FP6OBJECT
+   strings=['PhErrNotOnSomething']
+005cdab0 -> smartie_lock_to_player
+   strings=['SoundFail {0}']
+005cce60 -> smartie_clear_sparklies__FP6OBJECT
+   strings=['Borjoyzee']
+00584c50 -> reaper_logic
+   strings=['FlagHintDriveGyro']
+00453520 -> sprintf
+   strings=['%m/%d/%Y %I:%M:%S %p', '[%s] - %s ', 'chatlog.txt']
+00591730 -> reaper_update_spell_status__FP6OBJECT
+   strings=['Error: ObjObj type %d not found']
+005a3f20 -> ripper_control__FP6OBJECT
+   strings=['SoundFail {0}']
+005ce1f0 -> smartie_unlock_from_player
+   strings=['SoundFail {0}']
+005e0440 -> teammecc_setup_enemies__FP6OBJECTi
+   strings=['BAZ_CT60', 'BAZ_CT61', 'BAZ_CT63', 'BAZ_CT64']
+005d17c0 -> kbos_shot
+   strings=['SoundFail {0}']
+004bedf0 -> dactyl_control__FP6OBJECT
+   strings=['SoundFail {0}']
+0044b660 -> _vfprintf_r
+   strings=['0123456789ABCDEF', '0123456789abcdef']
+0044cb00 -> _vfprintf_r
+   strings=['0123456789ABCDEF', '0123456789abcdef']
+004b7ee0 -> _vfprintf_r
+   strings=['0123456789ABCDEF', '0123456789abcdef']
+004bc570 -> _vfprintf_r
+   strings=['0123456789ABCDEF', '0123456789abcdef']
+005ec1d0 -> turret_process
+   strings=['SoundFail {0}']
+0053b5d0 -> mecc_replenish_basepit_energy__FP6OBJECT
+   strings=['Error: ObjObj type %d not found']
+00515f80 -> kabutoai_move
+   strings=['Error: ObjObj type %d not found', 'SoundFail {0}']
+005a1600 -> ripper_medium_move__FP6OBJECT
+   strings=['Error: ObjObj type %d not found', 'SoundFail {0}']
+005bdd90 -> barracks_logic
+   strings=['SoundFail {0}']
+00509c00 -> AttackObject__FP6OBJECTT0P3P3DT2fi
+   strings=['Kabutomessage1', 'Kabutomessage2']
+005c17d0 -> physicshost_logic
+   strings=['SoundFail {0}']
+004eadd0 -> fx_processOpCodes__FP6FxDataiP6OBJECT
+   strings=['%s%02d', 'Encountered PopObj but FX stack top is null. Dumping last 10 effects:', 'Error: unexpected end of fx data. Dumping last 10 effects:', "Fx System got unknown opcode for fx \\'%s\\', this is fatal.  (Last op %d)"]
+005cf900 -> smartie_animselect
+   strings=['SoundFail {0}']
+005bcdf0 -> rpman_shot
+   strings=['SoundFail {0}']
+0049d2d0 -> cleaner_process
+   strings=['SoundFail {0}']
+005eefc0 -> verm_control__FP6OBJECT
+   strings=['SoundFail {0}']
+0055fc80 -> offspring_logic__FP6OBJECT
+   strings=['Error: ObjObj type %d not found', 'SoundFail {0}']
+005a0540 -> ripper_death_logic__FP6OBJECT
+   strings=['fx_vimp_mana']
+005ea0d0 -> tornado_logic
+   strings=['n_wind']
+0049bbb0 -> charger_move
+   strings=['Error: ObjObj type %d not found', 'SoundFail {0}']
+0055f900 -> reaper_shot
+   strings=['SoundFail {0}']
+00558360 -> object_destroy
+   strings=['SoundFail {0}']
+005c1490 -> projectile_deflect__FP6OBJECTP3P3DPc
+   strings=['SoundFail {0}']
+005a0650 -> ripper_small_move__FP6OBJECT
+   strings=['SoundFail {0}']
+00523e40 -> loglauncher_process
+   strings=['SoundFail {0}']
+005dfcd0 -> teammecc_setup_slaves
+   strings=['BAZ_CT57', 'BAZ_CT64', 'GOR_CT04', 'GOR_CT06']
+005d52c0 -> sonak_control__FP6OBJECT
+   strings=['SoundFail {0}']
+005bf0b0 -> barracks_shot
+   strings=['SoundFail {0}']
+005a2b00 -> ripper_large_move__FP6OBJECT
+   strings=['Error: ObjObj type %d not found', 'SoundFail {0}']
+004fecb0 -> rndfloatrange
+   strings=['ground_get_planegg', '{}: World terrain was not loaded']
+005a7cb0 -> rpboat_damage__FP6OBJECT
+   strings=['SoundFail {0}']
+004e4140 -> vimp_control__FP6OBJECT
+   strings=['SoundFail {0}']
+0051bd90 -> evilreaper_set_new_location__FP6OBJECTi
+   strings=['SoundFail {0}']
+004bdfa0 -> corpse_create
+   strings=['Error: ObjObj type %d not found']
+00595d80 -> evilreaper_select_firewall_loc__FP6OBJECT
+   strings=['SoundFail {0}']
+004e3060 -> make_dust_ball
+   strings=['Error: ObjObj type %d not found']
+00583020 -> reaper_turbo_towards_moving_target__FP6OBJECT
+   strings=['Error: ObjObj type %d not found']
+0044d230 -> _vfprintf_r
+   strings=['0123456789abcdef']
+004bbee0 -> _vfprintf_r
+   strings=['0123456789abcdef']
+005b10c0 -> fire_sniper_shot__FP6OBJECTT0
+   strings=['SoundFail {0}']
+00569c70 -> item_drop_all_random
+   strings=['Error: ObjObj type %d not found']
+0055f290 -> offspring_can_attack__FP6OBJECT
+   strings=['SoundFail {0}']
+005a62f0 -> make_spit__FP6OBJECTP3P3Df
+   strings=['Error: ObjObj type %d not found']
+00539f90 -> mecc_to_bush
+   strings=['Error: ObjObj type %d not found']
+005f0420 -> make_shot__FP6OBJECTP3P3Df
+   strings=['Error: ObjObj type %d not found']
+00445c50 -> _vfprintf_r
+   strings=['(nil)', '(null)', 'invalid type specifier']
+00469a90 -> smartie_move
+   strings=['Borjoyzee']
+0053d120 -> reaper_check_enter_jet_ski__FP6OBJECT
+   strings=['FlagHintDriveGyro']
+0058cd20 -> reaper_check_enter_jet_ski__FP6OBJECT
+   strings=['FlagHintDriveGyro']

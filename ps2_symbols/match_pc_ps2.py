@@ -62,69 +62,57 @@ def load_ps2():
     return e, funcs, text_bytes, t_addr, strmap, ranges
 
 def ps2_string_refs(text_bytes, t_addr, funcs, strmap, ranges):
-    """Return {func_addr: set(string)} via lui/addiu/ori address tracking."""
+    """Return {func_addr: set(string)} via word-by-word MIPS decode + lui/addiu/ori/addu
+    address tracking. Decodes word-by-word so R5900 MMI instructions (unknown to capstone's
+    MIPS32 mode) are skipped instead of halting the stream."""
     import capstone
     md = capstone.Cs(capstone.CS_ARCH_MIPS,
                      capstone.CS_MODE_MIPS32 + capstone.CS_MODE_LITTLE_ENDIAN)
-    md.detail = False
-    # disassemble whole .text once, then attribute instructions to functions by addr range
-    insns = list(md.disasm(text_bytes, t_addr))
-    # index instruction addresses
-    func_starts = sorted(funcs.keys())
-    def owner(addr):
-        # find function whose [start,start+size) contains addr
-        import bisect
-        i = bisect.bisect_right(func_starts, addr) - 1
-        if i < 0: return None
-        st = func_starts[i]; nm, sz = funcs[st]
-        if st <= addr < st+sz: return st
-        return None
     def in_str_range(a):
-        return any(lo<=a<hi for lo,hi in ranges)
-    # walk instructions tracking regs within sliding window per function
-    cur=None; regs={}; out=collections.defaultdict(set)
-    for ins in insns:
-        own = owner(ins.address)
-        if own != cur:
-            cur=own; regs={}
-        if cur is None: continue
-        mn = ins.mnemonic; op = ins.op_str.replace(" ","")
-        parts = op.split(",")
-        def regset(idx,val):
-            if idx < len(parts):
-                r=parts[idx]
-                if r.startswith("$"): regs[r]=val & 0xFFFFFFFF
-        if mn=="lui" and len(parts)==2:
-            r=parts[0]
-            try: imm=int(parts[1],0)
-            except: imm=None
-            if imm is not None and r.startswith("$"): regs[r]=(imm&0xffff)<<16
-        elif mn in ("addiu","daddiu") and len(parts)==3:
-            rd,rs,imm=parts
-            try: v=int(imm,0)
-            except: v=None
-            base=regs.get(rs,0)
-            if v is not None:
-                ea=(base + (v & 0xffff if v<0x8000 else v-0x10000)) & 0xFFFFFFFF
+        return any(lo <= a < hi for lo, hi in ranges)
+    out = collections.defaultdict(set)
+    n = len(text_bytes)
+    for faddr, (fname, fsize) in funcs.items():
+        off = faddr - t_addr
+        if off < 0 or off + fsize > n:
+            continue
+        regs = {}
+        p = off
+        end = off + fsize
+        while p + 4 <= n and p < end:
+            got = next(md.disasm(text_bytes[p:p+4], t_addr + p), None)
+            p += 4
+            if got is None:
+                continue  # unknown R5900 opcode -> skip word, keep reg state
+            mn = got.mnemonic
+            parts = got.op_str.replace(" ", "").split(",")
+            if mn == "lui" and len(parts) == 2 and parts[0].startswith("$"):
+                try: imm = int(parts[1], 0)
+                except ValueError: continue
+                regs[parts[0]] = (imm & 0xffff) << 16
+            elif mn in ("addiu", "addi") and len(parts) == 3:
+                rd, rs, imm = parts
+                try: v = int(imm, 0)
+                except ValueError: continue
+                sv = v - 0x10000 if v >= 0x8000 else v
+                ea = (regs.get(rs, 0) + sv) & 0xFFFFFFFF
                 if in_str_range(ea) and ea in strmap:
-                    out[cur].add(strmap[ea])
-                if rd.startswith("$"): regs[rd]=ea
-        elif mn=="ori" and len(parts)==3:
-            rd,rs,imm=parts
-            try: v=int(imm,0)
-            except: v=None
-            base=regs.get(rs,0)
-            if v is not None:
-                ea=(base | (v & 0xffff)) & 0xFFFFFFFF
+                    out[faddr].add(strmap[ea])
+                if rd.startswith("$"): regs[rd] = ea
+            elif mn == "ori" and len(parts) == 3:
+                rd, rs, imm = parts
+                try: v = int(imm, 0)
+                except ValueError: continue
+                ea = (regs.get(rs, 0) | (v & 0xffff)) & 0xFFFFFFFF
                 if in_str_range(ea) and ea in strmap:
-                    out[cur].add(strmap[ea])
-                if rd.startswith("$"): regs[rd]=ea
-        elif mn=="addu" and len(parts)==3:
-            rd,rs,rt=parts
-            ea=(regs.get(rs,0)+regs.get(rt,0))&0xFFFFFFFF
-            if in_str_range(ea) and ea in strmap:
-                out[cur].add(strmap[ea])
-            if rd.startswith("$"): regs[rd]=ea
+                    out[faddr].add(strmap[ea])
+                if rd.startswith("$"): regs[rd] = ea
+            elif mn == "addu" and len(parts) == 3:
+                rd, rs, rt = parts
+                ea = (regs.get(rs, 0) + regs.get(rt, 0)) & 0xFFFFFFFF
+                if in_str_range(ea) and ea in strmap:
+                    out[faddr].add(strmap[ea])
+                if rd.startswith("$"): regs[rd] = ea
     return out
 
 # ----------------------------------------------------------------- PC side ----
