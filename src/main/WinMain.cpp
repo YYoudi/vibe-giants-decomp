@@ -175,6 +175,10 @@ static LONG CALLBACK CrashHandler(PEXCEPTION_POINTERS pEx)
 
 } // namespace Giants
 
+// Forward-declare the char* CLI-parser overload (defined in EngineLifecycle.cpp;
+// the no-arg InitGlobals() is declared via GameLoop.h).
+namespace Giants { void InitGlobals(char* commandLine); }
+
 // ═══════════════════════════════════════════════════════════════
 // WinMain — Entry Point
 // ═══════════════════════════════════════════════════════════════
@@ -311,6 +315,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         fprintf(Giants::g_traceLog, "[TRACE] VFS_Initialize done\n");
         fflush(Giants::g_traceLog);
     }
+
+    // ─── Phase 3a5: Parse command line (InitGlobals — original CLI parser) ──
+    // The original parses the command line early (player/server/level/FPS tokens
+    // + -window/-nointro/-dedicated/+connect/+host switches). InitGlobals(char*)
+    // is the real parser; the no-arg InitGlobals() called inside MainGameLoop only
+    // does the globals memset. Wire the char* overload so the tokenizer runs
+    // (token-matching is still stubbed in EngineLifecycle.cpp — port it to
+    // activate flag/level handling).
+    Giants::InitGlobals(lpCmdLine ? lpCmdLine : (char*)"");
 
     // ─── Phase 3b: Load default player / intro scene ───────────
     {
