@@ -154,18 +154,21 @@ static void DrawGrid(IDirect3DDevice9* dev, float t) {
     D3DCOLOR c1 = D3DCOLOR_XRGB(60, 60, 90);
     D3DCOLOR c2 = D3DCOLOR_XRGB(120, 120, 160);
 
-    Vertex lines[2];
-    dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
+    // Batch ALL grid lines into ONE draw call (2 verts * 2*(2N+1) lines) — far
+    // gentler on the GPU driver than ~80 individual DrawPrimitiveUP calls.
+    const int kLineCount = 2 * (2 * N + 1);
+    Vertex lines[2 * 2 * 21 * 2]; // sized for N<=20; index below
+    int n = 0;
     for (int i = -N; i <= N; i++) {
         D3DCOLOR c = (i == 0) ? c2 : c1;
-        lines[0] = { (float)i * S, y, (float)-N * S, c };
-        lines[1] = { (float)i * S, y, (float) N * S, c };
-        dev->DrawPrimitiveUP(D3DPT_LINELIST, 1, lines, sizeof(Vertex));
-        lines[0] = { (float)-N * S, y, (float)i * S, c };
-        lines[1] = { (float) N * S, y, (float)i * S, c };
-        dev->DrawPrimitiveUP(D3DPT_LINELIST, 1, lines, sizeof(Vertex));
+        lines[n++] = { (float)i * S, y, (float)-N * S, c };
+        lines[n++] = { (float)i * S, y, (float) N * S, c };
+        lines[n++] = { (float)-N * S, y, (float)i * S, c };
+        lines[n++] = { (float) N * S, y, (float)i * S, c };
     }
-    (void)t;
+    dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
+    dev->DrawPrimitiveUP(D3DPT_LINELIST, n / 2, lines, sizeof(Vertex));
+    (void)t; (void)kLineCount;
 }
 
 extern "C" __attribute__((fastcall)) long Wrap_EndScene(struct Wrap* self) {

@@ -41,6 +41,37 @@ int       g_gameState         = 0;         // DAT_006866c4
 // ─── Vectored Exception Handler for crash diagnosis ──────────────
 static LONG CALLBACK CrashHandler(PEXCEPTION_POINTERS pEx)
 {
+    // Filter out BENIGN exceptions so the trace reflects only real crashes:
+    //  - IsBadReadPtr and friends deliberately raise an access violation to
+    //    probe a pointer, then catch it themselves (SEH-internal probing).
+    //  - GPU driver DLLs (AMDXN32, nvoglv, igdumd, d3d9 internals) raise and
+    //    swallow exceptions as part of normal operation.
+    // We are FIRST in the VEH chain (priority 1), so we see all of these.
+    // Only LOG when the fault is in OUR code: the recomp engine image range,
+    // the gg_dx9r renderer DLL, or a null call whose caller is our engine.
+    {
+        DWORD code = pEx->ExceptionRecord->ExceptionCode;
+        uintptr_t addr = (uintptr_t)pEx->ExceptionRecord->ExceptionAddress;
+        const uintptr_t ENG_LO = 0x00401000, ENG_HI = 0x00444000;
+        const uintptr_t RND_LO = 0x10000000, RND_HI = 0x10200000;
+
+        bool inOurCode = (addr >= ENG_LO && addr < ENG_HI) || (addr >= RND_LO && addr < RND_HI);
+
+        // Null call (EIP==0): only ours if the stack contains a return address
+        // inside the engine image. Driver-originated null calls stay silent.
+        if (addr == 0) {
+            CONTEXT* c = pEx->ContextRecord;
+            DWORD* sp = (DWORD*)(uintptr_t)c->Esp;
+            for (int i = 0; i < 24 && !inOurCode; i++) {
+                DWORD v = sp[i];
+                if (v >= ENG_LO && v < ENG_HI) inOurCode = true;
+            }
+        }
+
+        if (!inOurCode) return EXCEPTION_CONTINUE_SEARCH; // benign, silent
+        (void)code;
+    }
+
     if (g_traceLog)
     {
         DWORD code = pEx->ExceptionRecord->ExceptionCode;
@@ -64,12 +95,34 @@ static LONG CALLBACK CrashHandler(PEXCEPTION_POINTERS pEx)
                 (unsigned int)((uintptr_t)addr - 0x10000000));
         }
 
-        // Dump stack for context
+        // Dump stack for context — resolve each value's module so we can tell
+        // whether the null call came from the engine (fixable), the renderer,
+        // d3d9.dll, or a GPU driver DLL (benign driver-internal SEH).
         DWORD* sp = (DWORD*)(uintptr_t)ctx->Esp;
-        fprintf(g_traceLog, "[CRASH] Stack dump (ESP+0..+64):\n");
+        HANDLE hProcForStack = GetCurrentProcess();
+        fprintf(g_traceLog, "[CRASH] Stack dump (ESP+0..+64, with module resolution):\n");
         for (int i = 0; i < 16; i++)
         {
-            fprintf(g_traceLog, "[CRASH]   ESP+%02X: %08lX\n", i*4, (unsigned long)sp[i]);
+            DWORD val = sp[i];
+            HMODULE hMod = nullptr;
+            char modTag[96] = "";
+            // Only attempt resolution for plausible code addresses.
+            if (val >= 0x00400000 && val < 0x80000000) {
+                if (GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
+                                       GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+                                       (LPCSTR)(uintptr_t)val, &hMod) && hMod) {
+                    char path[MAX_PATH] = {0};
+                    if (GetModuleFileNameA(hMod, path, sizeof(path))) {
+                        const char* base = strrchr(path, '\\');
+                        base = base ? base + 1 : path;
+                        uintptr_t modBase = (uintptr_t)hMod;
+                        snprintf(modTag, sizeof(modTag), "  <%s +0x%X>",
+                                 base, (unsigned)(val - modBase));
+                    }
+                }
+            }
+            fprintf(g_traceLog, "[CRASH]   ESP+%02X: %08lX%s\n",
+                    i*4, (unsigned long)val, modTag);
         }
 
         // Walk the EBP chain to log return addresses (call stack) — identifies
