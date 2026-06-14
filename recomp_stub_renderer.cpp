@@ -65,12 +65,8 @@ static void PerspectiveLH(float* m, float fovy, float aspect, float zn, float zf
 // thiscall wrappers (ECX=this=Wrap*, access dev at [ecx+4]).
 extern "C" __attribute__((fastcall)) long Wrap_Clear(struct Wrap* self, uint32_t) {
     if (self->dev) {
-        // Animate: cycle background for a visible pulsing effect.
-        DWORD tick = GetTickCount() / 20;
-        D3DCOLOR c = D3DCOLOR_XRGB(
-            (tick >> 1) & 0x1F,
-            10 + ((tick >> 2) & 0x1F),
-            20 + (tick ^ (tick >> 4)) & 0x3F);
+        // Sky-blue clear (background fill — the intro_island menu is under open sky).
+        D3DCOLOR c = D3DCOLOR_XRGB(120, 165, 220);
         self->dev->Clear(0, nullptr, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, c, 1.0f, 0);
     }
     return 0;
@@ -183,6 +179,18 @@ static uint8_t* g_tLightmap = nullptr;   // RGB per cell (real terrain colors)
 static TVertex* g_tMesh = nullptr;
 static int      g_tTriCount = 0;
 static bool     g_tTried = false;
+// Real terrain world placement (from GTI header) — render at engine coords.
+static float    g_tOffX = 0, g_tOffY = 0, g_tStretch = 40.0f, g_tMinH = 0;
+// Real camera keyframes from flk_intro_island_1.bin (engine frame: X, Y, Z=height).
+// Camera01's flight path + its look-at target (Camera01.Target).
+struct CamKey { float ex, ey, ez; };
+static const CamKey g_camKeys[] = {
+    { 2758.73f, -2020.50f, 2868.66f },
+    { -1333.42f, 5655.65f, 3078.72f },
+    { -1979.81f, 4736.02f,  715.19f },
+    { -3230.62f, 4058.18f,  374.02f },
+};
+static const CamKey g_camTarget = { -1239.0f, 1776.8f, 222.8f };
 
 static void LoadTerrain() {
     if (g_tTried) return;
@@ -194,6 +202,7 @@ static void LoadTerrain() {
     if (fread(&g_tH, 4, 1, f) != 1) { fclose(f); return; }
     fread(&stretch, 4, 1, f); fread(&offX, 4, 1, f); fread(&offY, 4, 1, f);
     fread(&minH, 4, 1, f); fread(&maxH, 4, 1, f);
+    g_tOffX = offX; g_tOffY = offY; g_tStretch = stretch; g_tMinH = minH;
     if (g_tW <= 0 || g_tH <= 0 || g_tW > 256 || g_tH > 256) { fclose(f); return; }
     int cc = g_tW * g_tH;
     g_tHeights = (float*)malloc(cc * 4);
@@ -202,14 +211,16 @@ static void LoadTerrain() {
     size_t lr = fread(g_tLightmap, 1, cc * 3, f);  // may be absent in old files
     fclose(f);
     bool hasLightmap = (lr == (size_t)(cc * 3));
-    const float xs = 24.0f / g_tW;
-    const float zs = 24.0f / g_tH;
+    (void)maxH;
     const float hRange = (maxH - minH > 0.001f) ? (maxH - minH) : 1.0f;
+    // Render at REAL engine world coords (GTI: pos = offset + index*stretch, height
+    // from heights[]). Engine is Z-up (height=Z); D3D is Y-up → we put height in Y,
+    // engine-X in X, engine-Y in Z (the documented Y/Z swap).
     auto vpos = [&](int x, int y) {
-        float hx = (x - g_tW * 0.5f) * xs;
-        float hz = (y - g_tH * 0.5f) * zs;
-        float hy = (g_tHeights[y * g_tW + x] - minH) / hRange * 4.0f;
-        return TVertex{ hx, hy, hz };
+        float ex = offX + x * stretch;        // engine X
+        float ey = offY + y * stretch;        // engine Y
+        float h  = g_tHeights[y * g_tW + x];  // engine Z (height)
+        return TVertex{ ex, h, ey };          // D3D: (X, Y=height, Z=engineY)
     };
     auto realColor = [&](int x, int y) -> D3DCOLOR {
         if (hasLightmap) {
@@ -246,12 +257,25 @@ static void LoadTerrain() {
 static void DrawTerrain(IDirect3DDevice9* dev) {
     LoadTerrain();
     if (!g_tMesh || g_tTriCount == 0) return;
-    // Slowly orbit the camera around the terrain so the user can see it's 3D.
-    float ang = GetTickCount() / 3000.0f;
-    float cx = sinf(ang) * 22.0f, cz = cosf(ang) * 22.0f;
+    // REAL camera from flk_intro_island_1.bin: interpolate the 4 FLICK keyframes
+    // (Camera01's flight). Engine frame (X,Y,Z=height) → D3D Y-up via Y/Z swap:
+    //   cam render pos = (ex, ez, ey), target render = (tex, tez, tey).
+    constexpr int NKEYS = sizeof(g_camKeys)/sizeof(g_camKeys[0]);
+    float seg = fmodf(GetTickCount() / 4000.0f, (float)NKEYS);  // ~4s per keyframe
+    int k0 = (int)floorf(seg) % NKEYS;
+    int k1 = (k0 + 1) % NKEYS;
+    float frac = seg - floorf(seg);
+    // smoothstep for ease in/out
+    frac = frac*frac*(3 - 2*frac);
+    const CamKey &a = g_camKeys[k0], &b = g_camKeys[k1];
+    float ex = a.ex + (b.ex - a.ex) * frac;
+    float ey = a.ey + (b.ey - a.ey) * frac;
+    float ez = a.ez + (b.ez - a.ez) * frac;
+    Vec3 camPos  = { ex, ez, ey };                          // (X, Z, Y)
+    Vec3 target  = { g_camTarget.ex, g_camTarget.ez, g_camTarget.ey };
     float view[16], proj[16];
-    ViewMatrixLH(view, {cx, 12.0f, cz}, {0, 1.0f, 0}, {0, 1, 0});
-    PerspectiveLH(proj, 0.9f, 16.0f / 9.0f, 0.5f, 200.0f);
+    ViewMatrixLH(view, camPos, target, {0, 1, 0});
+    PerspectiveLH(proj, 0.9f, 16.0f / 9.0f, 1.0f, 20000.0f);  // large far plane (world is ~5000 units)
     dev->SetTransform((D3DTRANSFORMSTATETYPE)2, (const D3DMATRIX*)view);
     dev->SetTransform((D3DTRANSFORMSTATETYPE)3, (const D3DMATRIX*)proj);
     dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
