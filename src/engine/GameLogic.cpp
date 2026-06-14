@@ -137,6 +137,10 @@ uint32_t ProcessGameLogic()
     // Phase 3: Input mapping + controller state (safe — separate module)
     TimerTick();
 
+    // Phase 3b: Camera update (FUN_0049a040 — camera selection + projection)
+    extern void UpdateActiveCamera();
+    UpdateActiveCamera();
+
     // Phase 4: Countdown timer (safe — uses our globals)
     if (g_countdownActive != 0 && !g_cutsceneMode)
     {
