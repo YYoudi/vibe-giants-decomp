@@ -811,33 +811,18 @@ void DumpCOMState() {
                 const uint32_t* arr = reinterpret_cast<const uint32_t*>(arrPtr);
                 for (uint32_t i = 0; i < cnt; i++) {
                     uint32_t entry = arr[i];
-                    // Each entry is a subsystem object; its [0] is the class descriptor
-                    // whose body carries the class name string.
-                    char nm[40] = "";
                     if (entry >= 0x00400000 && entry < 0x7fffffff) {
                         const uint32_t* obj = reinterpret_cast<const uint32_t*>(entry);
-                        uint32_t clsDesc = obj[0];
-                        if (clsDesc >= 0x00400000 && clsDesc < 0x007fffff) {
-                            // Class descriptors carry a name string in their body;
-                            // scan the first 0x80 bytes for a printable run.
-                            const char* p = reinterpret_cast<const char*>(clsDesc);
-                            int run = 0, start = -1;
-                            for (int j = 0; j < 0x80; j++) {
-                                if (p[j] >= 'A' && p[j] <= 'z') {
-                                    if (run == 0) start = j;
-                                    run++;
-                                    if (run >= 4) {  // found a name
-                                        int len = run;
-                                        while (start+len < 0x80 && p[start+len] >= 'A' && p[start+len] <= 'z') len++;
-                                        int cp = len < (int)sizeof(nm) ? len : (int)sizeof(nm)-1;
-                                        memcpy(nm, p+start, cp); nm[cp] = 0;
-                                        break;
-                                    }
-                                } else run = 0;
-                            }
+                        uint32_t vtbl = obj[0];
+                        Logger::Log("[COM-DUMP]   [%u] obj=0x%08X vtable=0x%08X", i, entry, vtbl);
+                        // dump first 8 vtable methods (to identify the interface —
+                        // the game-context's level-load is at vtable[6]/0x18)
+                        if (vtbl >= 0x00400000 && vtbl < 0x007fffff) {
+                            const uint32_t* vt = reinterpret_cast<const uint32_t*>(vtbl);
+                            for (int j = 0; j < 8; j++)
+                                Logger::Log("[COM-DUMP]        vt[%d]=0x%08X", j, vt[j]);
                         }
                     }
-                    Logger::Log("[COM-DUMP]   [%u] entry=0x%08X cls=%s", i, entry, nm[0] ? nm : "?");
                 }
             }
         }
