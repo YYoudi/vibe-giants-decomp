@@ -133,19 +133,28 @@ void* ComQueryGameContext() {
 uint32_t VFSFileLookup(char* filename);  // FUN_00623f00
 int LevelLoad(void* /*self*/, const char* levelName) {
     extern FILE* g_traceLog;
+    extern unsigned long VFSExtractFile(const char*, unsigned char*, unsigned int);
     // The level terrain is stored as "<name>.gti" in the VFS (GZP archives).
-    // Try the terrain extension (confirmed: "intro_island.gti" is indexed).
     char path[128];
     snprintf(path, sizeof(path), "%s.gti", levelName);
     uint32_t handle = VFSFileLookup(path);
     if (handle == 0) {
-        // Fallback: try the bare name + other extensions.
         snprintf(path, sizeof(path), "%s", levelName);
         handle = VFSFileLookup(path);
     }
-    if (g_traceLog) {
-        fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): VFS handle -> 0x%08X %s\n",
-                levelName, handle, handle ? "(terrain found)" : "(not found)");
+    if (handle != 0) {
+        // Extract the terrain to verify the GZP read + LZ77 decompression work.
+        static unsigned char terrainBuf[1 << 20];  // 1MB scratch
+        uint32_t sz = VFSExtractFile(path, terrainBuf, sizeof(terrainBuf));
+        if (g_traceLog) {
+            fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): extracted %s -> %u bytes\n",
+                    levelName, path, sz);
+            if (sz >= 4) fprintf(g_traceLog, "[LOAD]   first 4 bytes: %02X %02X %02X %02X\n",
+                                 terrainBuf[0], terrainBuf[1], terrainBuf[2], terrainBuf[3]);
+            fflush(g_traceLog);
+        }
+    } else if (g_traceLog) {
+        fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): terrain not found in VFS\n", levelName);
         fflush(g_traceLog);
     }
     return handle != 0 ? 1 : 0;
