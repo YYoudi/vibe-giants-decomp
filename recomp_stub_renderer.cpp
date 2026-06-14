@@ -187,6 +187,38 @@ extern "C" __attribute__((fastcall)) long Wrap_Present(struct Wrap* self) {
 
 static void* g_vtbl[64];
 
+// ─── Factory interface (renderer → engine) ────────────────────────────
+// InitGraphicsResources calls Wrap vtable[2]/[3]/[4] as free functions
+// (cdecl, no `this`) to obtain device/buffer handles. The returned objects
+// are COM-like Resources; BeginScene calls their vtable[4] (stage setup),
+// ShutdownSubsystems their vtable[1] (shutdown), bindBuffer their vtable[2].
+// All Resource vtable entries are cdecl no-ops (the stub owns rendering via the
+// Wrap's Clear/BeginScene/EndScene/Present slots; these just satisfy the
+// ref-counted stage machinery so it runs instead of being skipped).
+struct Resource { void** vtable; int ref; };
+
+extern "C" long Res_Vtbl0()                                        { return 0; }
+extern "C" long Res_Vtbl1(void* /*self*/, uint32_t /*param*/)      { return 0; } // shutdown(this,param)
+extern "C" long Res_Vtbl2(void* /*device*/)                        { return 0; } // bind(device)
+extern "C" long Res_Vtbl4(void* /*self*/, int, int)                { return 0; } // setup(this,stage,param)
+
+static void* g_resVtable[8] = {
+    (void*)Res_Vtbl0, (void*)Res_Vtbl1, (void*)Res_Vtbl2, (void*)Res_Vtbl0,
+    (void*)Res_Vtbl4, (void*)Res_Vtbl0, (void*)Res_Vtbl0, (void*)Res_Vtbl0,
+};
+static Resource g_capsResource   = { g_resVtable, 1 };
+static Resource g_deviceResource = { g_resVtable, 1 };
+
+// Factory methods — cdecl free functions (called via the Wrap vtable).
+extern "C" void* Factory_GetCaps() { return &g_capsResource; }
+extern "C" void* Factory_CreateDevice() { return &g_deviceResource; }
+extern "C" void* Factory_CreateBuffer(uint32_t, uint32_t, uint32_t, void*,
+                                      uint32_t, uint32_t, uint32_t, uint32_t) {
+    Resource* r = (Resource*)malloc(sizeof(Resource));
+    if (r) { r->vtable = g_resVtable; r->ref = 1; }
+    return r;
+}
+
 extern "C" __declspec(dllexport)
 int GFXGetCapabilities(void* caps) {
     if (caps) { memset(caps, 0, 48);
@@ -217,6 +249,10 @@ void* __cdecl GDVSysCreate(unsigned int ctx, HWND hWnd, DWORD* w, DWORD* win, DW
     g_vtbl[41] = (void*)&Wrap_BeginScene; // BeginScene
     g_vtbl[42] = (void*)&Wrap_EndScene;   // EndScene
     g_vtbl[47] = (void*)&Wrap_Present;    // Present
+    // Factory interface (InitGraphicsResources calls these as cdecl free fns).
+    g_vtbl[2]  = (void*)&Factory_CreateDevice; // vtable[2]  = CreateDevice → device Resource
+    g_vtbl[3]  = (void*)&Factory_GetCaps;      // vtable[3]  = GetCaps → caps Resource
+    g_vtbl[4]  = (void*)&Factory_CreateBuffer; // vtable[4]  = CreateBuffer → buffer Resource
     g_wrap.vtbl = g_vtbl; g_wrap.dev = g_dev;
     return &g_wrap;
 }
