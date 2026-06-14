@@ -149,8 +149,30 @@ int LevelLoad(void* /*self*/, const char* levelName) {
         if (g_traceLog) {
             fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): extracted %s -> %u bytes\n",
                     levelName, path, sz);
-            if (sz >= 4) fprintf(g_traceLog, "[LOAD]   first 4 bytes: %02X %02X %02X %02X\n",
-                                 terrainBuf[0], terrainBuf[1], terrainBuf[2], terrainBuf[3]);
+            // Parse the GTI header (96 bytes) for terrain dimensions.
+            // GtiHeader: [0]sig [8]XOff [12]YOff [16]MinH [20]MaxH [24]Width [28]Height [32]Stretch
+            if (sz >= 96) {
+                uint32_t sig = *(uint32_t*)&terrainBuf[0];
+                float minX = *(float*)&terrainBuf[8], minY = *(float*)&terrainBuf[12];
+                float minH = *(float*)&terrainBuf[16], maxH = *(float*)&terrainBuf[20];
+                int32_t w = *(int32_t*)&terrainBuf[24], h = *(int32_t*)&terrainBuf[28];
+                float stretch = *(float*)&terrainBuf[32];
+                fprintf(g_traceLog, "[LOAD]   GTI sig=0x%08X W=%d H=%d minH=%.1f maxH=%.1f stretch=%.3f XY=(%.0f,%.0f)\n",
+                        sig, w, h, minH, maxH, stretch, minX, minY);
+                // Write the heightmap region for the stub renderer (cross-module pass).
+                // Heightmap follows the 96-byte header; size = W*H heights.
+                FILE* hf = fopen("terrain_meta.bin", "wb");
+                if (hf) {
+                    int32_t meta[4] = { w, h };
+                    float hh[2] = { minH, maxH };
+                    fwrite(meta, 4, 2, hf);
+                    fwrite(hh, 4, 2, hf);
+                    fwrite(&stretch, 4, 1, hf);
+                    fwrite(terrainBuf + 96, 1, sz > 96 ? sz - 96 : 0, hf);  // raw data after header
+                    fclose(hf);
+                    fprintf(g_traceLog, "[LOAD]   wrote terrain_meta.bin (%d bytes payload)\n", sz - 96);
+                }
+            }
             fflush(g_traceLog);
         }
     } else if (g_traceLog) {
