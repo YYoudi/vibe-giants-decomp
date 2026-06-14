@@ -38,4 +38,7 @@ void InitCOMSubsystem_Real();
 // FUN_00443e20 — InitStringSubsystem (creates + registers string-lookup subsystem).
 void InitStringSubsystem_Real();
 
+// Register the game-context object (so GetGameContext's query succeeds).
+void RegisterGameContext();
+
 } // namespace Giants

@@ -642,6 +642,7 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
     // core COM object. Functional reconstruction via ComRegistry.
     InitCOMSubsystem_Real();
     InitStringSubsystem_Real();  // FUN_00443e20 — string-lookup subsystem
+    RegisterGameContext();       // game-context object (FUN_00461a60 queries it)
     if (g_traceLog) {
         fprintf(g_traceLog, "[COM] COM subsystem init done, registry count=%d\n", ComRegistryCount());
         fflush(g_traceLog);

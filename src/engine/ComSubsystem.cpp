@@ -103,4 +103,25 @@ extern "C" void* ComFactory_Query(const void* typeId) {
     return ComQuery(typeId);
 }
 
+// Game-context GUID (DAT_0065f184 equivalent — what GetGameContext queries).
+static const char g_comGuid_gameContext = 0;
+
+// Register the game-context object (created during PreInitCheck in the original).
+// Wired into the init path so GetGameContext's query succeeds.
+void RegisterGameContext() {
+    ComObject* obj = static_cast<ComObject*>(operator_new(sizeof(ComObject)));
+    if (!obj) return;
+    obj->vtable = g_comVtbl_0065ce08;
+    obj->strongRef = 1;
+    obj->weakRef = 1;
+    obj->pad = 0;
+    memset(obj->data, 0, sizeof(obj->data));
+    ComRegister(&g_comGuid_gameContext, obj);
+}
+
+// Query the game-context object (used by GetGameContext / FUN_00461a60).
+extern "C" void* ComQueryGameContext() {
+    return ComQuery(&g_comGuid_gameContext);
+}
+
 } // namespace Giants

@@ -174,16 +174,13 @@ int* GetGameContext(uint32_t param_1)
 {
     // Compute vtable selector from param_1
     uint32_t vtableSelector = -(uint32_t)(param_1 != 0xFFFFFFFC) & param_1;
-
-    // Stub: In the binary, this performs complex COM-style construction:
-    //   1. vtable = *(int*)vtableSelector
-    //   2. constructor = *(vtable + 8)
-    //   3. constructor(local_8, &DAT_0065f184)
-    //   4. Return [object_ptr, refcount_block_ptr]
-    //
-    // Thread-safe ref-counting uses LOCK/UNLOCK primitives.
     (void)vtableSelector;
-    return nullptr;
+
+    // Functional reconstruction: the original dispatches through vtable[2]
+    // (QueryInterface) with &DAT_0065f184 to obtain the game-context object.
+    // Our ComRegistry holds it under the game-context GUID. Query + return.
+    extern void* ComQueryGameContext();
+    return reinterpret_cast<int*>(ComQueryGameContext());
 }
 
 // ═══════════════════════════════════════════════════════════════════
