@@ -159,18 +159,38 @@ int LevelLoad(void* /*self*/, const char* levelName) {
                 float stretch = *(float*)&terrainBuf[32];
                 fprintf(g_traceLog, "[LOAD]   GTI sig=0x%08X W=%d H=%d minH=%.1f maxH=%.1f stretch=%.3f XY=(%.0f,%.0f)\n",
                         sig, w, h, minH, maxH, stretch, minX, minY);
-                // Write the heightmap region for the stub renderer (cross-module pass).
-                // Heightmap follows the 96-byte header; size = W*H heights.
-                FILE* hf = fopen("terrain_meta.bin", "wb");
-                if (hf) {
-                    int32_t meta[4] = { w, h };
-                    float hh[2] = { minH, maxH };
-                    fwrite(meta, 4, 2, hf);
-                    fwrite(hh, 4, 2, hf);
-                    fwrite(&stretch, 4, 1, hf);
-                    fwrite(terrainBuf + 96, 1, sz > 96 ? sz - 96 : 0, hf);  // raw data after header
-                    fclose(hf);
-                    fprintf(g_traceLog, "[LOAD]   wrote terrain_meta.bin (%d bytes payload)\n", sz - 96);
+                // Decode the GTI RLE heightmap (spec from GiantsEdit GtiFormat.cs):
+                //   byte b: b>=0x80 → skip (256-b) cells; else read (b+1) literal cells,
+                //   each 8 bytes = float height + byte tri + RGB.
+                int cellCount = w * h;
+                static float heights[256 * 256];  // max grid
+                if (cellCount <= 256 * 256) {
+                    for (int i = 0; i < cellCount; i++) heights[i] = minH;  // default
+                    int pos = 96, cellIdx = 0;
+                    while (cellIdx < cellCount && pos < (int)sz) {
+                        uint8_t b = terrainBuf[pos++];
+                        if (b >= 0x80) {
+                            cellIdx += (256 - b);
+                        } else {
+                            int lit = b + 1;
+                            for (int i = 0; i < lit && cellIdx < cellCount && pos + 8 <= (int)sz; i++) {
+                                heights[cellIdx] = *(float*)&terrainBuf[pos];
+                                pos += 8;
+                                cellIdx++;
+                            }
+                        }
+                    }
+                    // Write decoded heights for the stub renderer (cross-module pass).
+                    FILE* hf = fopen("terrain_heights.bin", "wb");
+                    if (hf) {
+                        fwrite(&w, 4, 1, hf); fwrite(&h, 4, 1, hf);
+                        fwrite(&stretch, 4, 1, hf);
+                        fwrite(&minX, 4, 1, hf); fwrite(&minY, 4, 1, hf);
+                        fwrite(&minH, 4, 1, hf); fwrite(&maxH, 4, 1, hf);
+                        fwrite(heights, 4, cellCount, hf);
+                        fclose(hf);
+                        fprintf(g_traceLog, "[LOAD]   decoded+wrote terrain_heights.bin (%d cells)\n", cellCount);
+                    }
                 }
             }
             fflush(g_traceLog);
