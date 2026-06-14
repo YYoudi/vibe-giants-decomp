@@ -1265,8 +1265,10 @@ void EntityVelocityCopy(int param_1);  // FUN_0056ce30
 // EntityCreate (FUN_00581ab0) — Creates entity in slot from params. 4 callers, 0 callees.
 void EntityCreate(int param_1, uint32_t param_2, int param_3);  // FUN_00581ab0
 
-// StrLessThan (FUN_00632900) — Byte-by-byte string less-than comparison. 4 callers, 0 callees.
-bool StrLessThan(uint8_t* a, uint8_t* b);  // FUN_00632900
+// StrEqual (FUN_00632900) — PROVEN equivalent (proxy self-test, 0 mismatch).
+// String EQUALITY (true iff equal). Was mis-named StrLessThan from a Ghidra
+// artifact; proxy oracle corrected the semantics. 4 callers, 0 callees.
+bool StrEqual(const uint8_t* p1, const uint8_t* p2);  // FUN_00632900
 
 // MemMoveOverlap (FUN_006329d0) — memmove for overlapping regions. 4 callers, 0 callees.
 void MemMoveOverlap(uint8_t* dest, int srcOff, int dstOff, int len);  // FUN_006329d0
