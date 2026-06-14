@@ -90,4 +90,9 @@ namespace SweepAuto { uint32_t Run(); }
 // fixed vector and logs any divergence. Returns the number of mismatches found.
 uint32_t RunSelfTests();
 
+// Live-inspect the original's COM subsystem at runtime (engine context,
+// state pointer, factory dispatch tables, object vtables). Called from
+// UpCallsLoad after the engine has fully initialized.
+void DumpCOMState();
+
 } // namespace Callbacks
