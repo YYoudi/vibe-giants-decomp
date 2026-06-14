@@ -20,6 +20,11 @@
 
 namespace Giants {
 
+// Stubs for VFS helper functions referenced by VFS_Initialize (need full impl later).
+void VFS_RegisterFile(const char*, unsigned int, unsigned int, unsigned int, unsigned int) {}
+const char* VFS_GetDataPath(int) { return "Bin"; }
+const char* VFS_GetStreamPath(int) { return "Bin"; }
+
 void VFS_Initialize()
 {
     // Phase 1: Override directory

@@ -9,6 +9,7 @@
 #include "engine/GameLoop.h"
 #include "engine/EngineInit.h"
 #include "engine/Player.h"
+#include "vfs/VirtualFileSystem.h"
 #include "engine/TraceLog.h"
 #include "engine/CRTStubs.h"
 #include "renderer/RendererLoader.h"
