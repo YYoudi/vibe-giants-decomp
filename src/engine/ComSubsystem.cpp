@@ -120,7 +120,7 @@ void RegisterGameContext() {
 }
 
 // Query the game-context object (used by GetGameContext / FUN_00461a60).
-extern "C" void* ComQueryGameContext() {
+void* ComQueryGameContext() {
     return ComQuery(&g_comGuid_gameContext);
 }
 
