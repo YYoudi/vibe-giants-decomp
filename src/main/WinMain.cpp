@@ -248,6 +248,17 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         return 3;
     }
 
+    // ─── Phase 3a: Initialize VFS (file system) ────────────────
+    if (Giants::g_traceLog) {
+        fprintf(Giants::g_traceLog, "[TRACE] Calling VFS_Initialize...\n");
+        fflush(Giants::g_traceLog);
+    }
+    Giants::VFS_Initialize();
+    if (Giants::g_traceLog) {
+        fprintf(Giants::g_traceLog, "[TRACE] VFS_Initialize done\n");
+        fflush(Giants::g_traceLog);
+    }
+
     // ─── Phase 3b: Load default player / intro scene ───────────
     {
         int ldpResult = Giants::LoadDefaultPlayer();

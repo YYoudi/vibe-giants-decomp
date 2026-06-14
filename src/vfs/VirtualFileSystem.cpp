@@ -84,6 +84,7 @@ void VFS_Initialize()
                 ReadFile(hFile, &indexSize, 8, &bytesRead, nullptr);
 
                 // Read each file entry
+                if (indexSize > 100000) { CloseHandle(hFile); continue; } // sanity cap
                 for (uint32_t i = 0; i < indexSize; i++) {
                     uint8_t entryHeader[18];
                     ReadFile(hFile, entryHeader, 0x12, &bytesRead, nullptr);
