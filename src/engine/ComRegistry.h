@@ -35,4 +35,7 @@ int ComRegistryCount();
 // COM object). Defined in ComSubsystem.cpp.
 void InitCOMSubsystem_Real();
 
+// FUN_00443e20 — InitStringSubsystem (creates + registers string-lookup subsystem).
+void InitStringSubsystem_Real();
+
 } // namespace Giants

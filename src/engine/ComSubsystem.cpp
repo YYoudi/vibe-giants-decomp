@@ -76,4 +76,31 @@ void InitCOMSubsystem_Real() {
     // FUN_0042fd68() — refcount helper (stubbed)
 }
 
+// GUID for the string-lookup subsystem (DAT_0065d154 in the original).
+static const char g_comGuid_0065d154 = 0;
+
+// FUN_00443e20 — InitStringSubsystem. Creates + registers the string-lookup
+// subsystem (the live dump showed the engine context's class = "TextLookupService",
+// which is likely this subsystem). Size 0x14 (smart-pointer-like COM object).
+void InitStringSubsystem_Real() {
+    ComObject* obj = static_cast<ComObject*>(operator_new(0x14 + sizeof(ComObject::data)));
+    if (!obj) return;
+    obj->vtable = g_comVtbl_0065ce08;  // reuse base COM vtable (functional)
+    obj->strongRef = 1;
+    obj->weakRef = 1;
+    obj->pad = 0;
+    memset(obj->data, 0, sizeof(obj->data));
+    ComRegister(&g_comGuid_0065d154, obj);
+}
+
+// FUN_00461a60 — the central COM factory (33 callers). Original:
+//   (**(code**)(*(int*)(param_1)+8))(out, &DAT_0065f184)
+// i.e. QueryInterface: query the registry by the type-ID GUID, return the obj.
+// Functional version: ComQuery by GUID. param_1 (the source object) is ignored
+// since our registry is global (the original dispatches through param_1's vtable
+// to reach the same global registry).
+extern "C" void* ComFactory_Query(const void* typeId) {
+    return ComQuery(typeId);
+}
+
 } // namespace Giants

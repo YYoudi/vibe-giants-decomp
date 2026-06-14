@@ -641,8 +641,9 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
     // Initialize the COM subsystem (FUN_0042fc00) — creates + registers the
     // core COM object. Functional reconstruction via ComRegistry.
     InitCOMSubsystem_Real();
+    InitStringSubsystem_Real();  // FUN_00443e20 — string-lookup subsystem
     if (g_traceLog) {
-        fprintf(g_traceLog, "[COM] InitCOMSubsystem done, registry count=%d\n", ComRegistryCount());
+        fprintf(g_traceLog, "[COM] COM subsystem init done, registry count=%d\n", ComRegistryCount());
         fflush(g_traceLog);
     }
 
