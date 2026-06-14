@@ -3,6 +3,7 @@
 
 #include "Player.h"
 #include <windows.h>
+#include <cstdio>
 
 namespace Giants {
 
@@ -36,20 +37,31 @@ int LoadDefaultPlayer()
         return 0;  // placeholder for FUN_0045af70 result
     }
 
-    // Not in-game: load intro level
-    // FUN_00461a60 — get level loader context
-    void* levelCtx = nullptr; // FUN_00461a60(&local_1c)
+    // Not in-game: load intro level via the COM factory (FUN_00461a60).
+    extern int* GetGameContext(uint32_t);
+    extern FILE* g_traceLog;
+    int* levelCtx = GetGameContext(0);  // query the game-context object
+    if (g_traceLog) {
+        fprintf(g_traceLog, "[LOAD] LoadDefaultPlayer: GetGameContext -> %p (COM registry path)\n",
+                (void*)levelCtx);
+        fflush(g_traceLog);
+    }
 
-    // Load "intro_island" via vtable dispatch
-    // vtable[0x18](levelCtx, "intro_island")
-    uint32_t* playerData = nullptr; // (**vtable[0x18])(levelCtx, "intro_island")
+    // Load "intro_island" via vtable dispatch on the game-context object.
+    // vtable[0x18](levelCtx, "intro_island") — the level-load method (not yet ported).
+    uint32_t* playerData = nullptr;
+    if (levelCtx != nullptr) {
+        void** vtable = *reinterpret_cast<void***>(levelCtx);
+        // vtable[0x18/4 = 6] = level-load. Stubbed for now (method not ported).
+        (void)vtable;
+    }
     if (playerData != nullptr) {
         DAT_00702778 = *playerData;
         DAT_0074893c = DAT_00702778;
     }
 
     // FUN_00501f50 — initialize level
-    int result = 0; // FUN_00501f50()
+    int result = 0;
     DAT_00725e88 = 1;  // Mark level as loaded
 
     // COM-like release of level context object
