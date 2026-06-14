@@ -1,0 +1,134 @@
+# OBJECT struct layout — recovered from PS2 field-access patterns
+
+Mined 779 PS2 functions taking an `OBJECT*` parameter. Each offset is a
+struct field; the accessor function names reveal its semantics.
+
+**CAVEAT**: PS2 = GCC/MIPS, PC = MSVC/x86 — struct alignment may differ (doubles,
+padding). Treat offsets as a semantic guide; reconcile against the PC binary.
+
+| offset | width | #loads | #stores | #funcs | accessor functions (top) |
+|--------|------:|-------:|--------:|-------:|---------------------------|
+| `0x-6148` | 4 | 1 | 0 | 1 | reaper_create_fake_reaper |
+| `0x-4` | 4 | 1 | 0 | 1 | teammecc_get_hide_set |
+| `0x4` | 4 | 6 | 6 | 10 | mecc_calculate_mass, piranha_launch_fx, reaper_handle_turbo_spell, reaper_check_turbo, rpman_verify_bush, SegVsMesh |
+| `0x6` | 1 | 1 | 0 | 1 | BoneLookAt |
+| `0x8` | 4 | 29 | 5 | 25 | mecc_calculate_mass, sf_disarm_followers, ripper_medium_move, ripper_control, rpman_consider_group_halt, getfirelockandgun |
+| `0xc` | 4 | 15 | 2 | 12 | army_count_rpman, buoy_advance, herd_create_check, AI_AnimSelect, collide_localline_objtris_mips, ai_move_short |
+| `0x10` | 4 | 15 | 4 | 13 | CompileSet, barracks_alert_rippers, vimp_set_run_anim, addValidObjectToTree, ai_move_flyer, kabutoai_is_punch_anim |
+| `0x14` | 4 | 9 | 4 | 6 | fx_weatherSystemLogic, ai_move_short, ai_move_flyer, ai_flush_completed_goals, fillin_snap, SegVsMesh |
+| `0x18` | 4 | 2 | 0 | 2 | fx_weatherSystemLogic, SegVsMesh |
+| `0x1c` | 4 | 2 | 0 | 2 | fx_weatherSystemLogic, SegVsMesh |
+| `0x20` | 4 | 2 | 2 | 2 | reaper_jump, kabuto_death |
+| `0x24` | 4 | 6 | 0 | 5 | ripper_control, kabutoai_setup_stage2, rpboat_damage, rpboat_tilt, rpboat_physics |
+| `0x28` | 4 | 1 | 0 | 1 | checkForLeafRadiusIncrease |
+| `0x2c` | 4 | 1 | 0 | 1 | fillin_snap |
+| `0x30` | 4 | 1 | 0 | 1 | vimp_set_run_anim |
+| `0x34` | 4 | 1 | 1 | 2 | rpman_tornado_logic, rpman_tuba_horn_check |
+| `0x3c` | 4 | 1 | 0 | 1 | evilreaper_setup_turbo_stall |
+| `0x48` | 4 | 1 | 0 | 1 | evilreaper_setup_turbo_stall |
+| `0x54` | 4 | 0 | 1 | 1 | minishop_use_icon |
+| `0x58` | 4 | 1 | 0 | 1 | fillin_snap |
+| `0x5c` | 4 | 1 | 0 | 1 | fillin_snap |
+| `0x60` | 4 | 1 | 1 | 2 | WeaponIdSetPresent, WeaponIdCheck |
+| `0x64` | 4 | 1 | 0 | 1 | WeaponIdCheck |
+| `0x68` | 4 | 1 | 0 | 1 | ItemsIdGetCurrent |
+| `0x78` | 4 | 1 | 0 | 1 | CompileSet |
+| `0x7c` | 4 | 1 | 0 | 1 | AI_AnimSelect |
+| `0x80` | 4 | 1 | 1 | 1 | reaper_update_spell_status |
+| `0x84` | 4 | 1 | 0 | 1 | base_add_smartie_to_building |
+| `0x88` | 4 | 1 | 0 | 1 | AI_AnimSelect |
+| `0x8c` | 4 | 0 | 1 | 1 | reaper_update_spell_status |
+| `0x9c` | 4 | 1 | 0 | 1 | vimp_way_ahead |
+| `0xb4` | 4 | 2 | 1 | 1 | army_platoon_coordinated_attack |
+| `0xe0` | 4 | 3 | 0 | 3 | collide_localline_objtris_mips, vu0_ObjectCollision, TreeBend |
+| `0xf4` | 4 | 1 | 0 | 1 | rpman_tuba_horn_check |
+| `0xf8` | 4 | 0 | 1 | 1 | minishop_use_icon |
+| `0x124` | 4 | 0 | 1 | 1 | sf_arm_followers |
+| `0x134` | 4 | 1 | 0 | 1 | army_platoon_base_attack |
+| `0x138` | 4 | 1 | 0 | 1 | TargetCenter |
+| `0x13c` | 4 | 1 | 0 | 1 | TargetCenter |
+| `0x140` | 4 | 1 | 0 | 1 | TargetCenter |
+| `0x148` | 4 | 6 | 0 | 5 | ripper_small_move, buoy_ambient, rockgen_create_mud, marker_create_path, verm_gib |
+| `0x14c` | 4 | 3 | 0 | 3 | buoy_ambient, rockgen_create_mud, verm_gib |
+| `0x150` | 4 | 18 | 1 | 18 | lift_logic, buoy_ambient, collgrid_fill_table_moveable, rockgen_create_mud, reaper_turbo_towards_moving_target, fillin_snap |
+| `0x160` | 4 | 1 | 0 | 1 | verm_gib |
+| `0x164` | 4 | 1 | 0 | 1 | verm_gib |
+| `0x16c` | 4 | 20 | 1 | 18 | charger_select_run_anim, rpboat_animselect, rpman_select_patrol_anim, TargetSize2, offspring_select_run_anim, reaper_replenish_basepit_energy |
+| `0x170` | 4 | 2 | 0 | 2 | fillin_snap, mecc_set_fire |
+| `0x174` | 4 | 0 | 1 | 1 | grenade_do_bounce |
+| `0x17c` | 4 | 1 | 0 | 1 | mecc_set_fire |
+| `0x180` | 4 | 174 | 38 | 47 | rpman_setup_firing_parameters, evilreaper_init_bow_firing, evilreaper_init_sword_attack, rpboat_fire, mecc_init, rpboat_logic |
+| `0x184` | 4 | 4 | 1 | 3 | mission_trigger, mission_check_obj_death, vu0_ObjectCollision |
+| `0x188` | 4 | 9 | 2 | 9 | sf_disarm_followers, reaper_hail_spell, reaper_can_do_cosmetic_anim, evilreaper_invalid_turbo_loc, rpman_setup_firing_parameters, rpman_check_bush_patrol_resume |
+| `0x18c` | 4 | 8 | 12 | 15 | sf_disarm_followers, ripper_switch_to_normal_ai, ripper_medium_move, charger_select_run_anim, ripper_large_move, rpman_transfer_leader |
+| `0x190` | 4 | 10 | 1 | 8 | formation_find_spline, mecc_backpack_display_logic, ripper_control, dactyl_control, ripper_switch_to_normal_ai, rpman_consider_group_halt |
+| `0x194` | 4 | 3 | 2 | 3 | meccbasepit_move_food, teammecc_get_hideloc, army_goto_label |
+| `0x198` | 4 | 0 | 1 | 1 | TurretShoot |
+| `0x19c` | 4 | 3 | 1 | 2 | smartie_remove_from_cliff, ItemsIdGetCurrent |
+| `0x1a0` | 4 | 1 | 1 | 2 | army_process_active_orders, rpman_consider_group_halt |
+| `0x1a4` | 4 | 3 | 0 | 2 | ripper_control, dactyl_control |
+| `0x1a8` | 4 | 108 | 0 | 102 | marker_create_path, formation_find_spline, ripper_control, rpman_consider_group_halt, army_release_alive_order, army_insert_alive_order |
+| `0x1ac` | 4 | 6 | 0 | 6 | reaper_can_do_spell_anim, vimp_set_run_anim, push_it, kabuto_death, PhysicsExCollisionPlane2_OLD, reaper_can_cast_spell_generic |
+| `0x1b0` | 4 | 1 | 1 | 1 | grenade_do_stopped |
+| `0x1b4` | 4 | 2 | 2 | 3 | grenade_do_bounce, grenade_do_stopped, rpman_get_thrust |
+| `0x1b8` | 4 | 2 | 2 | 3 | army_platoon_base_attack, grenade_do_stopped, rpman_get_thrust |
+| `0x1c4` | 4 | 0 | 1 | 1 | grenade_do_stopped |
+| `0x1c8` | 4 | 0 | 1 | 1 | grenade_do_stopped |
+| `0x1d0` | 4 | 0 | 1 | 1 | popup_pre_logic |
+| `0x1d4` | 4 | 0 | 1 | 1 | popup_pre_logic |
+| `0x1d8` | 4 | 2 | 2 | 3 | offspring_logic, reaper_is_falling, popup_pre_logic |
+| `0x1e8` | 4 | 4 | 0 | 4 | mecc_get_thrust, reaper_is_falling, rpman_get_thrust, object_set_flags |
+| `0x1fc` | 4 | 2 | 0 | 2 | collgrid_fill_table_moveable, teammecc_get_hide_set |
+| `0x218` | 4 | 8 | 0 | 6 | formation_find_spline, ripper_control, dactyl_control, evilreaper_turbo_move, rpman_consider_group_halt, rpman_jetski_race |
+| `0x224` | 4 | 0 | 1 | 1 | verm_init_parameters |
+| `0x234` | 4 | 3 | 0 | 3 | marker_process, piranha_launch_fx, smartie_get_name |
+| `0x238` | 4 | 4 | 0 | 4 | gate_death_move, is_enemy_bush, get_mecc_playergroup, er_cluster_post |
+| `0x240` | 4 | 1 | 0 | 1 | rpman_get_thrust |
+| `0x264` | 4 | 1 | 0 | 1 | rpman_get_thrust |
+| `0x26c` | 4 | 11 | 0 | 9 | sf_disarm_followers, gate_death_move, reaper_can_do_cosmetic_anim, evilreaper_verify_enemy, rpman_verify_enemy, teammecc_setup_enemies |
+| `0x274` | 4 | 7 | 2 | 7 | SetupCameraDataNormal, base_template_logic, collgrid_fill_table_moveable, gate_death_move, path_obj_calculate, reaper_turbo_towards_moving_target |
+| `0x278` | 4 | 6 | 6 | 2 | teammecc_get_attackloc, teammecc_get_hideloc |
+| `0x27c` | 4 | 2 | 0 | 1 | teammecc_get_new_wander_loc |
+| `0x280` | 4 | 3 | 0 | 3 | reaper_is_falling, KabutoControls, object_set_flags |
+| `0x288` | 4 | 0 | 1 | 1 | teammecc_get_hideloc |
+| `0x28c` | 4 | 24 | 0 | 23 | rpman_handle_death, dactyl_control, formation_find_spline, ripper_control, rpman_consider_group_halt, sonak_control |
+| `0x294` | 4 | 6 | 0 | 6 | evilreaper_check_los, ripper_check_los, bunker_check_los, sonak_check_los, KabutoControls, object_set_flags |
+| `0x2a1` | 1 | 1 | 0 | 1 | gate_death_move |
+| `0x2b4` | 4 | 3 | 0 | 2 | rpboat_logic, offspring_select_turn_anim |
+| `0x2bc` | 4 | 1 | 0 | 1 | reaper_can_do_cosmetic_anim |
+| `0x2c0` | 4 | 1 | 0 | 1 | reaper_can_do_cosmetic_anim |
+| `0x2c4` | 4 | 4 | 2 | 4 | reaper_disable_spells, reaper_disable_firing, CameraControl, rpboat_logic |
+| `0x2cc` | 4 | 0 | 1 | 1 | vu0_ObjectCollision |
+| `0x2ec` | 4 | 18 | 1 | 13 | reaper_shrinker_post, er_shrinker_post, buoy_ambient, mecc_backpack_display_logic, reaper_finish_smartie_grab, ripper_control |
+| `0x2f0` | 4 | 17 | 2 | 11 | EnergyIncrease, sf_disarm_followers, gate_death_move, reaper_can_do_cosmetic_anim, evilreaper_verify_enemy, rpman_verify_enemy |
+| `0x2fc` | 4 | 1 | 1 | 1 | kabuto_new_offspring |
+| `0x30c` | 4 | 1 | 0 | 1 | ValidateTargetClass |
+| `0x310` | 4 | 2 | 0 | 2 | ValidateTargetClass, push_it |
+| `0x314` | 4 | 2 | 0 | 2 | ValidateTargetClass, push_it |
+| `0x35c` | 4 | 13 | 1 | 9 | mecc_backpack_display_logic, getfirelockandgun, multi_player_respawn, ValidateTargetClass, path_obj_calculate, reaper_check_enter_turretview |
+| `0x360` | 1 | 0 | 1 | 1 | multi_player_respawn |
+| `0x361` | 1 | 0 | 2 | 2 | multi_player_respawn, TurretShoot |
+| `0x3fc` | 4 | 1 | 0 | 1 | mecc_get_thrust |
+| `0x400` | 4 | 3 | 0 | 3 | mecc_get_thrust, mission_check_obj_proximity, vu0_ObjectCollision |
+| `0x420` | 4 | 1 | 1 | 1 | fx_weatherSystemLogic |
+| `0x450` | 4 | 1 | 0 | 1 | army_process_active_orders |
+| `0x464` | 4 | 3 | 0 | 3 | RenderShadow, SegVsMesh, vu0_ObjectCollision |
+| `0x5dc` | 4 | 1 | 0 | 1 | mecc_get_thrust |
+| `0x5e0` | 4 | 1 | 0 | 1 | mecc_get_thrust |
+| `0x5e4` | 4 | 1 | 0 | 1 | mecc_get_thrust |
+| `0x5e8` | 4 | 1 | 0 | 1 | mecc_get_thrust |
+| `0x5ec` | 4 | 1 | 0 | 1 | mecc_get_thrust |
+| `0x6d8` | 4 | 1 | 0 | 1 | teammecc_set_slave_goal |
+| `0x828` | 4 | 4 | 0 | 3 | reaper_walkrun_go, reaper_handle_turbo_spell, reaper_swim_turbo |
+| `0xcb0` | 4 | 2 | 0 | 2 | barracks_release_ripper, barracks_release_rpman |
+| `0xedc` | 4 | 1 | 0 | 1 | evilreaper_logic |
+| `0xee4` | 4 | 1 | 0 | 1 | evilreaper_logic |
+| `0x1050` | 4 | 1 | 0 | 1 | teammecc_get_attackloc |
+| `0x1080` | 4 | 1 | 0 | 1 | ripper_drop_health |
+| `0x12ac` | 4 | 1 | 0 | 1 | offspring_fire_ranged |
+| `0x1368` | 4 | 2 | 0 | 2 | evilreaper_init_bow_firing, evilreaper_logic |
+| `0x2b2c` | 4 | 1 | 0 | 1 | FLK_ObjectInFlick |
+| `0x2cc4` | 4 | 3 | 0 | 2 | mission_check_obj_proximity, FLK_ObjectInFlick |
+| `0x4a28` | 4 | 6 | 0 | 2 | army_load, army_save |
+| `0x6b24` | 4 | 1 | 0 | 1 | sonak_control |
+| `0x6b60` | 4 | 9 | 0 | 6 | ripper_medium_move, rpboat_fire, verm_control, ripper_large_move, ripper_control, rpman_consider_flying |
