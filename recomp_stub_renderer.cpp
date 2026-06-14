@@ -65,8 +65,12 @@ static void PerspectiveLH(float* m, float fovy, float aspect, float zn, float zf
 // thiscall wrappers (ECX=this=Wrap*, access dev at [ecx+4]).
 extern "C" __attribute__((fastcall)) long Wrap_Clear(struct Wrap* self, uint32_t) {
     if (self->dev) {
-        // Sky-blue background (the intro_island menu sits under an open sky).
-        D3DCOLOR c = D3DCOLOR_XRGB(120, 165, 220);
+        // Animate: cycle background for a visible pulsing effect.
+        DWORD tick = GetTickCount() / 20;
+        D3DCOLOR c = D3DCOLOR_XRGB(
+            (tick >> 1) & 0x1F,
+            10 + ((tick >> 2) & 0x1F),
+            20 + (tick ^ (tick >> 4)) & 0x3F);
         self->dev->Clear(0, nullptr, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, c, 1.0f, 0);
     }
     return 0;
@@ -239,45 +243,17 @@ static void LoadTerrain() {
                      g_tW, g_tH, g_tTriCount, hasLightmap ? 1 : 0); fclose(m); }
 }
 
-// Draw a water plane surrounding the island (the intro_island menu sits in a sea).
-// Placed at the terrain's waterline (low height), large enough to extend past the grid.
-static void DrawWater(IDirect3DDevice9* dev) {
-    if (!g_tMesh) return;  // only with terrain
-    // Waterline ≈ where lightmap turns blue; use a fraction of the height range.
-    float waterY = -0.3f;  // below the terrain's mid (sea level)
-    float s = 60.0f;       // large plane
-    struct WV { float x, y, z; D3DCOLOR c; };
-    // Slightly animated blue water (gentle shimmer via two shades).
-    DWORD tick = GetTickCount() / 400;
-    int sh = (tick & 3);
-    D3DCOLOR deep = D3DCOLOR_XRGB(35, 70 + sh * 4, 110 + sh * 6);
-    D3DCOLOR shal = D3DCOLOR_XRGB(70, 120 + sh * 5, 160 + sh * 6);
-    WV water[6] = {
-        { -s, waterY, -s, deep }, {  s, waterY, -s, deep }, {  s, waterY,  s, shal },
-        { -s, waterY, -s, deep }, {  s, waterY,  s, shal }, { -s, waterY,  s, shal },
-    };
-    float world[16] = {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1};
-    dev->SetTransform((D3DTRANSFORMSTATETYPE)0, (const D3DMATRIX*)world);
-    dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
-    dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, 2, water, sizeof(WV));
-}
-
 static void DrawTerrain(IDirect3DDevice9* dev) {
     LoadTerrain();
     if (!g_tMesh || g_tTriCount == 0) return;
-    // Slow cinematic camera arc (the menu's camera drifts). Vary height + angle.
-    float ang = GetTickCount() / 6000.0f;          // slow orbit (~37s/rev)
-    float arc = sinf(GetTickCount() / 11000.0f);   // gentle height bob
-    float cx = sinf(ang) * 24.0f;
-    float cz = cosf(ang) * 24.0f;
-    float cy = 9.0f + arc * 4.0f;
+    // Slowly orbit the camera around the terrain so the user can see it's 3D.
+    float ang = GetTickCount() / 3000.0f;
+    float cx = sinf(ang) * 22.0f, cz = cosf(ang) * 22.0f;
     float view[16], proj[16];
-    ViewMatrixLH(view, {cx, cy, cz}, {0, 1.2f, 0}, {0, 1, 0});
-    PerspectiveLH(proj, 0.85f, 16.0f / 9.0f, 0.5f, 200.0f);
+    ViewMatrixLH(view, {cx, 12.0f, cz}, {0, 1.0f, 0}, {0, 1, 0});
+    PerspectiveLH(proj, 0.9f, 16.0f / 9.0f, 0.5f, 200.0f);
     dev->SetTransform((D3DTRANSFORMSTATETYPE)2, (const D3DMATRIX*)view);
     dev->SetTransform((D3DTRANSFORMSTATETYPE)3, (const D3DMATRIX*)proj);
-    // Water first (drawn under the island), then the terrain on top.
-    DrawWater(dev);
     dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
     dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, g_tTriCount, g_tMesh, sizeof(TVertex));
 }
