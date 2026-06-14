@@ -139,6 +139,9 @@ uint32_t ShutdownSubsystems(uint32_t param)
 
 void EndSceneDirectional()
 {
+    // Guard: skip if no scene loaded (prevents crash on zeroed state)
+    if (g_sceneReady == 0) return;
+
     // Light direction table: 6 directions with different vector components
     // LightDir defined in GiantsTypes.h (7 floats, 28 bytes)
 
