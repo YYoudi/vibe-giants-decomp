@@ -6,6 +6,7 @@
 // window) while avoiding the original renderer's callback-driven render path.
 #include <windows.h>
 #include <cstdint>
+#include <cmath>
 #include <d3d9.h>
 
 static IDirect3D9* g_d3d = nullptr;
@@ -33,7 +34,21 @@ extern "C" __attribute__((fastcall)) long Wrap_BeginScene(struct Wrap* self) {
     if (self->dev) self->dev->BeginScene(); return 0;
 }
 extern "C" __attribute__((fastcall)) long Wrap_EndScene(struct Wrap* self) {
-    if (self->dev) self->dev->EndScene(); return 0;
+    if (self->dev) {
+        // Draw a spinning colored triangle — visible 3D from the recomp exe.
+        struct Vertex { float x, y, z; D3DCOLOR color; };
+        float a = GetTickCount() / 500.0f;
+        float ca = cosf(a), sa = sinf(a);
+        Vertex tri[3] = {
+            { 0.0f,        0.5f,        0.0f, D3DCOLOR_XRGB(255, 0, 0) },
+            { -0.5f * ca - (-0.5f) * sa, -0.5f * ca + (-0.5f) * sa, 0.0f, D3DCOLOR_XRGB(0, 255, 0) },
+            {  0.5f * ca - (-0.5f) * sa,  0.5f * ca + (-0.5f) * sa, 0.0f, D3DCOLOR_XRGB(0, 0, 255) },
+        };
+        self->dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
+        self->dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, 1, tri, sizeof(Vertex));
+        self->dev->EndScene();
+    }
+    return 0;
 }
 extern "C" __attribute__((fastcall)) long Wrap_Present(struct Wrap* self) {
     if (self->dev) self->dev->Present(nullptr, nullptr, nullptr, nullptr);
