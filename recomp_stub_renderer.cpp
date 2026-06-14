@@ -179,6 +179,7 @@ static void DrawGrid(IDirect3DDevice9* dev, float t) {
 struct TVertex { float x, y, z; D3DCOLOR color; };
 static int      g_tW = 0, g_tH = 0;
 static float*   g_tHeights = nullptr;
+static uint8_t* g_tLightmap = nullptr;   // RGB per cell (real terrain colors)
 static TVertex* g_tMesh = nullptr;
 static int      g_tTriCount = 0;
 static bool     g_tTried = false;
@@ -194,34 +195,41 @@ static void LoadTerrain() {
     fread(&stretch, 4, 1, f); fread(&offX, 4, 1, f); fread(&offY, 4, 1, f);
     fread(&minH, 4, 1, f); fread(&maxH, 4, 1, f);
     if (g_tW <= 0 || g_tH <= 0 || g_tW > 256 || g_tH > 256) { fclose(f); return; }
-    g_tHeights = (float*)malloc(g_tW * g_tH * 4);
-    if (fread(g_tHeights, 4, g_tW * g_tH, f) != (size_t)(g_tW * g_tH)) { fclose(f); return; }
+    int cc = g_tW * g_tH;
+    g_tHeights = (float*)malloc(cc * 4);
+    if (fread(g_tHeights, 4, cc, f) != (size_t)cc) { fclose(f); return; }
+    g_tLightmap = (uint8_t*)malloc(cc * 3);
+    size_t lr = fread(g_tLightmap, 1, cc * 3, f);  // may be absent in old files
     fclose(f);
-    // Build a triangle-list mesh, centered at origin, scaled to fit the view.
-    const float xs = 24.0f / g_tW;       // terrain ~24 units wide
+    bool hasLightmap = (lr == (size_t)(cc * 3));
+    const float xs = 24.0f / g_tW;
     const float zs = 24.0f / g_tH;
     const float hRange = (maxH - minH > 0.001f) ? (maxH - minH) : 1.0f;
     auto vpos = [&](int x, int y) {
         float hx = (x - g_tW * 0.5f) * xs;
         float hz = (y - g_tH * 0.5f) * zs;
-        float hy = (g_tHeights[y * g_tW + x] - minH) / hRange * 4.0f;  // height 0..4
+        float hy = (g_tHeights[y * g_tW + x] - minH) / hRange * 4.0f;
         return TVertex{ hx, hy, hz };
     };
-    auto colorFor = [&](float frac) {
-        // low=dark green, mid=brown, high=white (snow caps)
-        if (frac > 0.8f) return D3DCOLOR_XRGB(240, 240, 255);
-        if (frac > 0.5f) return D3DCOLOR_XRGB(120, 90, 60);
-        if (frac > 0.15f) return D3DCOLOR_XRGB(60, 110, 50);
-        return D3DCOLOR_XRGB(40, 70, 120);  // water/low
+    auto realColor = [&](int x, int y) -> D3DCOLOR {
+        if (hasLightmap) {
+            int i = (y * g_tW + x) * 3;
+            return D3DCOLOR_XRGB(g_tLightmap[i], g_tLightmap[i+1], g_tLightmap[i+2]);
+        }
+        float fr = (g_tHeights[y * g_tW + x] - minH) / hRange;
+        if (fr > 0.8f) return D3DCOLOR_XRGB(240, 240, 255);
+        if (fr > 0.5f) return D3DCOLOR_XRGB(120, 90, 60);
+        if (fr > 0.15f) return D3DCOLOR_XRGB(60, 110, 50);
+        return D3DCOLOR_XRGB(40, 70, 120);
     };
     g_tMesh = (TVertex*)malloc((g_tW - 1) * (g_tH - 1) * 6 * sizeof(TVertex));
     g_tTriCount = 0;
     for (int y = 0; y < g_tH - 1; y++) {
         for (int x = 0; x < g_tW - 1; x++) {
-            TVertex a = vpos(x, y), b = vpos(x + 1, y), c = vpos(x, y + 1), d = vpos(x + 1, y + 1);
-            float fr = (g_tHeights[y * g_tW + x] - minH) / hRange;
-            D3DCOLOR col = colorFor(fr);
-            a.color = b.color = c.color = d.color = col;
+            TVertex a = vpos(x, y); a.color = realColor(x, y);
+            TVertex b = vpos(x + 1, y); b.color = realColor(x + 1, y);
+            TVertex c = vpos(x, y + 1); c.color = realColor(x, y + 1);
+            TVertex d = vpos(x + 1, y + 1); d.color = realColor(x + 1, y + 1);
             g_tMesh[g_tTriCount * 3 + 0] = a; g_tMesh[g_tTriCount * 3 + 1] = b; g_tMesh[g_tTriCount * 3 + 2] = c;
             g_tTriCount++;
             g_tMesh[g_tTriCount * 3 + 0] = b; g_tMesh[g_tTriCount * 3 + 1] = d; g_tMesh[g_tTriCount * 3 + 2] = c;
