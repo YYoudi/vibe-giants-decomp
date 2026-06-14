@@ -133,11 +133,19 @@ void* ComQueryGameContext() {
 uint32_t VFSFileLookup(char* filename);  // FUN_00623f00
 int LevelLoad(void* /*self*/, const char* levelName) {
     extern FILE* g_traceLog;
+    // The level terrain is stored as "<name>.gti" in the VFS (GZP archives).
+    // Try the terrain extension (confirmed: "intro_island.gti" is indexed).
     char path[128];
-    snprintf(path, sizeof(path), "%s", levelName);
+    snprintf(path, sizeof(path), "%s.gti", levelName);
     uint32_t handle = VFSFileLookup(path);
+    if (handle == 0) {
+        // Fallback: try the bare name + other extensions.
+        snprintf(path, sizeof(path), "%s", levelName);
+        handle = VFSFileLookup(path);
+    }
     if (g_traceLog) {
-        fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): VFSFileLookup -> 0x%08X\n", levelName, handle);
+        fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): VFS handle -> 0x%08X %s\n",
+                levelName, handle, handle ? "(terrain found)" : "(not found)");
         fflush(g_traceLog);
     }
     return handle != 0 ? 1 : 0;

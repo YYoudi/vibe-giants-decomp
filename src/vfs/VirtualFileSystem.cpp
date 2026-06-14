@@ -20,8 +20,57 @@
 
 namespace Giants {
 
-// Stubs for VFS helper functions referenced by VFS_Initialize (need full impl later).
-void VFS_RegisterFile(const char*, unsigned int, unsigned int, unsigned int, unsigned int) {}
+// ─── Functional VFS file table ────────────────────────────────────
+// The original builds a FNV-1a hash table; here a linear table (functional).
+// Spec confirmed by GiantZiP source + sent_by_Amazed docs (2026-06-15).
+struct VfsEntry {
+    char name[128];          // filename WITH extension, no path (e.g. "intro_island.gti")
+    uint32_t compressedSize; // size field (block size incl 16-byte sub-header)
+    uint32_t uncompressedSize;
+    uint32_t dataOffset;     // 'start' — absolute offset of file data in its archive
+    uint32_t compressionType;// compr (1=LZ77, 2=stored)
+    char     archiveName[64];// which .gzp it came from (for later extraction)
+};
+constexpr int kMaxVfsEntries = 8192;
+static VfsEntry g_vfsEntries[kMaxVfsEntries];
+static int g_vfsCount = 0;
+static char g_currentArchive[64] = "";
+
+// Case-insensitive strcmp (the original uses case-insensitive lookup).
+static int vfsStrEq(const char* a, const char* b) {
+    while (*a && *b) {
+        char ca = (*a >= 'A' && *a <= 'Z') ? *a + 32 : *a;
+        char cb = (*b >= 'A' && *b <= 'Z') ? *b + 32 : *b;
+        if (ca != cb) return 0;
+        a++; b++;
+    }
+    return *a == 0 && *b == 0;
+}
+
+// VFS_RegisterFile — stores an entry in the table (was a no-op stub).
+// Args (corrected per GiantZiP spec): name, compressedSize, uncompressedSize,
+// dataOffset, compressionType.
+void VFS_RegisterFile(const char* name, unsigned int compressedSize,
+                      unsigned int uncompressedSize, unsigned int dataOffset,
+                      unsigned int compressionType) {
+    if (!name || g_vfsCount >= kMaxVfsEntries) return;
+    // Dedup (case-insensitive): first registration wins (Override > GZP priority).
+    for (int i = 0; i < g_vfsCount; i++)
+        if (vfsStrEq(g_vfsEntries[i].name, name)) return;
+    VfsEntry& e = g_vfsEntries[g_vfsCount++];
+    snprintf(e.name, sizeof(e.name), "%s", name);
+    e.compressedSize = compressedSize;
+    e.uncompressedSize = uncompressedSize;
+    e.dataOffset = dataOffset;
+    e.compressionType = compressionType;
+    snprintf(e.archiveName, sizeof(e.archiveName), "%s", g_currentArchive);
+}
+
+int VFS_GetFileCount() { return g_vfsCount; }
+const char* VFS_GetFileName(int i) {
+    return (i >= 0 && i < g_vfsCount) ? g_vfsEntries[i].name : nullptr;
+}
+
 const char* VFS_GetDataPath(int) { return "Bin"; }
 const char* VFS_GetStreamPath(int) { return "Bin"; }
 
@@ -61,6 +110,7 @@ void VFS_Initialize()
             HANDLE hFile = CreateFileA(pathBuffer, GENERIC_READ, FILE_SHARE_READ,
                                        nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
             if (hFile == INVALID_HANDLE_VALUE) continue;
+            snprintf(g_currentArchive, sizeof(g_currentArchive), "%s", findData.cFileName);
 
             // Read magic number
             uint32_t magic;
@@ -69,38 +119,37 @@ void VFS_Initialize()
             ReadFile(hFile, &magic, 4, &bytesRead, nullptr);
 
             if (magic == GZP_MAGIC) {
-                // GZP custom format: read header then seek to index at end
+                // GZP custom format (spec from GiantZiP source):
+                //   header[0..3]=magic, header[4..7]=indexOffset
+                //   index header (at indexOffset): [unknown:u32][fileCount:u32]
+                //   each entry: [size:u32][uncmpSize:u32][date:u32][start:u32][compr:u8][nameLen:u8][name:nameLen]
                 SetFilePointer(hFile, 0, nullptr, FILE_BEGIN);
-
                 uint8_t header[8];
                 ReadFile(hFile, header, 8, &bytesRead, nullptr);
-
-                // Seek to file index (at offset header[4..7] from start)
                 uint32_t indexOffset = *reinterpret_cast<uint32_t*>(&header[4]);
                 SetFilePointer(hFile, indexOffset, nullptr, FILE_BEGIN);
 
-                // Read index size
-                uint32_t indexSize;
-                ReadFile(hFile, &indexSize, 8, &bytesRead, nullptr);
+                uint32_t indexHdr[2];  // [0]=unknown, [1]=fileCount
+                ReadFile(hFile, indexHdr, 8, &bytesRead, nullptr);
+                uint32_t fileCount = indexHdr[1];
+                if (fileCount > 100000) { CloseHandle(hFile); continue; } // sanity cap
 
-                // Read each file entry
-                if (indexSize > 100000) { CloseHandle(hFile); continue; } // sanity cap
-                for (uint32_t i = 0; i < indexSize; i++) {
-                    uint8_t entryHeader[18];
-                    ReadFile(hFile, entryHeader, 0x12, &bytesRead, nullptr);
-
-                    uint32_t nameLen = entryHeader[16] | (entryHeader[17] << 8);
-                    char* name = static_cast<char*>(malloc(nameLen + 0x17));
-                    ReadFile(hFile, name + 0x16, nameLen, &bytesRead, nullptr);
-
-                    // Register file in VFS
-                    VFS_RegisterFile(
-                        name + 0x16,
-                        *reinterpret_cast<uint32_t*>(&entryHeader[8]),  // compressed size
-                        *reinterpret_cast<uint32_t*>(&entryHeader[4]),  // uncompressed size
-                        *reinterpret_cast<uint32_t*>(&entryHeader[12]), // date
-                        *reinterpret_cast<uint32_t*>(&entryHeader[0])   // offset
-                    );
+                for (uint32_t i = 0; i < fileCount; i++) {
+                    uint8_t eh[18];
+                    ReadFile(hFile, eh, 0x12, &bytesRead, nullptr);
+                    if (bytesRead != 0x12) break;
+                    uint32_t compressedSize   = *reinterpret_cast<uint32_t*>(&eh[0]);
+                    uint32_t uncompressedSize = *reinterpret_cast<uint32_t*>(&eh[4]);
+                    // eh[8..11] = date (unused here)
+                    uint32_t dataOffset       = *reinterpret_cast<uint32_t*>(&eh[12]);
+                    uint8_t  compr            = eh[16];
+                    uint8_t  nameLen          = eh[17];   // 1 byte, includes null terminator
+                    char name[128];
+                    if (nameLen >= sizeof(name)) nameLen = sizeof(name) - 1;
+                    DWORD nr = 0;
+                    ReadFile(hFile, name, nameLen, &nr, nullptr);
+                    name[nameLen] = 0;  // ensure null-terminated
+                    VFS_RegisterFile(name, compressedSize, uncompressedSize, dataOffset, compr);
                 }
             }
             // Note: magic == ZIP_MAGIC (0x4034b50) is handled differently
@@ -691,7 +740,16 @@ uint32_t VFSFileLookup(char* filename)
     // if (entryPtr == sentinel) return 0;
     // return *(uint32_t*)(entryPtr + 0x20);
     */
-
+    // Functional implementation: linear search of the registered file table
+    // (case-insensitive). The original uses an FNV-1a hash table; behavior is
+    // equivalent for lookup-by-name. Returns a non-zero handle (the entry's
+    // dataOffset, which identifies the file) on match, 0 on miss.
+    if (!filename) return 0;
+    for (int i = 0; i < g_vfsCount; i++) {
+        if (vfsStrEq(g_vfsEntries[i].name, filename)) {
+            return g_vfsEntries[i].dataOffset ? g_vfsEntries[i].dataOffset : 1;
+        }
+    }
     return 0;
 }
 

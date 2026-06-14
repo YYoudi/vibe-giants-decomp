@@ -89,6 +89,10 @@ uint32_t* DirectoryPathJoin(uint32_t* param1, int* param2);  // FUN_00623dc0
 // 2 callers (FUN_00622930, FUN_00621e50), 8 callees.
 uint32_t VFSFileLookup(char* filename);  // FUN_00623f00
 
+// Functional VFS table accessors (for diagnostics).
+int VFS_GetFileCount();
+const char* VFS_GetFileName(int i);
+
 // ─── VFSFileOpen (FUN_00624cb0) — FAIL ────────────────────────
 // Mutex-locked, checks zip vs raw file, creates stream reader.
 // 1 caller (FUN_005791c0), 18 callees.
