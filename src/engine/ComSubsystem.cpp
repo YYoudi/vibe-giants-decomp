@@ -164,6 +164,7 @@ int LevelLoad(void* /*self*/, const char* levelName) {
                 //   each 8 bytes = float height + byte tri + RGB.
                 int cellCount = w * h;
                 static float heights[256 * 256];  // max grid
+                static uint8_t lightmap[256 * 256 * 3];  // RGB per cell (real terrain colors)
                 if (cellCount <= 256 * 256) {
                     for (int i = 0; i < cellCount; i++) heights[i] = minH;  // default
                     int pos = 96, cellIdx = 0;
@@ -175,12 +176,16 @@ int LevelLoad(void* /*self*/, const char* levelName) {
                             int lit = b + 1;
                             for (int i = 0; i < lit && cellIdx < cellCount && pos + 8 <= (int)sz; i++) {
                                 heights[cellIdx] = *(float*)&terrainBuf[pos];
+                                // Cell layout: float height(4) + byte triangle(1) + R(1) + G(1) + B(1)
+                                lightmap[cellIdx * 3 + 0] = terrainBuf[pos + 5];
+                                lightmap[cellIdx * 3 + 1] = terrainBuf[pos + 6];
+                                lightmap[cellIdx * 3 + 2] = terrainBuf[pos + 7];
                                 pos += 8;
                                 cellIdx++;
                             }
                         }
                     }
-                    // Write decoded heights for the stub renderer (cross-module pass).
+                    // Write decoded heights + lightmap for the stub renderer.
                     FILE* hf = fopen("terrain_heights.bin", "wb");
                     if (hf) {
                         fwrite(&w, 4, 1, hf); fwrite(&h, 4, 1, hf);
@@ -188,8 +193,9 @@ int LevelLoad(void* /*self*/, const char* levelName) {
                         fwrite(&minX, 4, 1, hf); fwrite(&minY, 4, 1, hf);
                         fwrite(&minH, 4, 1, hf); fwrite(&maxH, 4, 1, hf);
                         fwrite(heights, 4, cellCount, hf);
+                        fwrite(lightmap, 1, cellCount * 3, hf);  // RGB lightmap
                         fclose(hf);
-                        fprintf(g_traceLog, "[LOAD]   decoded+wrote terrain_heights.bin (%d cells)\n", cellCount);
+                        fprintf(g_traceLog, "[LOAD]   decoded+wrote terrain_heights.bin (%d cells + lightmap)\n", cellCount);
                     }
                 }
             }
