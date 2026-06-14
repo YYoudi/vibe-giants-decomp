@@ -194,7 +194,9 @@ int  PreInitCheck() { return 1; }           // FUN_005c45f0
 int  InitAudioSystem() { return 1; }        // FUN_0062af40
 void InitDisplaySettings() {}               // FUN_004f86c0
 void InitDisplayMode() {}                   // FUN_0062b9c0
-void InitGraphicsResources() {}             // FUN_004f7fa0
+// InitGraphicsResources (FUN_004f7fa0) is defined in GraphicsResources.cpp —
+// real body that creates devices/buffers via the renderer factory. Do NOT stub
+// it here (was a duplicate-definition link error).
 void FinalInit() {}                         // FUN_0062f7e0
 void InitNetwork() {}                       // FUN_004f8550
 void SavePlayerProfile() {}                 // FUN_00540770
@@ -627,6 +629,13 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
     // removed so FrameEnd owns the single render cycle (original exe structure).
     extern void* g_rendererObj;
     g_rendererObj = g_renderDevice;
+
+    // Also unify g_renderFactory (DAT_00702700, 4th copy) so InitGraphicsResources
+    // runs its device/buffer-creation logic. The stub renderer's factory methods
+    // (vtable[2]/[3]/[4]) return 0, so devices/buffers stay null until a real
+    // renderer is used — but the function no longer early-returns.
+    extern void* g_renderFactory;
+    g_renderFactory = g_renderDevice;
 
     UnlockGraphics();
     if (g_traceLog) { fprintf(g_traceLog, "[TRACE] Phase B/C done — UnlockGraphics\n"); fflush(g_traceLog); }
