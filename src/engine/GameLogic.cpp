@@ -142,6 +142,8 @@ uint32_t ProcessGameLogic()
     extern void AnimateCameraPath();
     UpdateActiveCamera();
     AnimateCameraPath();
+    extern void SetupProjection(int);
+    SetupProjection(0);
 
     // Phase 4: Countdown timer (safe — uses our globals)
     if (g_countdownActive != 0 && !g_cutsceneMode)
