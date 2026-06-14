@@ -1,63 +1,85 @@
-// GiantsRE — Minimal stub renderer DLL for recomp-exe testing.
-// Creates a real D3D9 device but does NOT call back into the engine during render
-// (no UpCalls invocations). This lets the recomp exe complete InitializeEngine +
-// enter MainGameLoop without the render-path crash (which comes from the original
-// renderer using incomplete engine state). The result: a RUNNING recomp exe that
-// creates a window + D3D9 device + enters its game loop — even without rendering.
-//
-// Build: i686-w64-mingw32-g++ -shared -o gg_dx9r.dll recomp_stub_renderer.cpp -ld3d9
-// Deploy: copy as gg_dx9r.dll in the run directory (GameFiles).
-
+// GiantsRE — D3D9 wrapper stub renderer.
+// Creates a REAL D3D9 device, wraps it with a Giants-compatible vtable layout:
+//   vtable[43] = Clear (green background), vtable[41] = BeginScene,
+//   vtable[42] = EndScene, vtable[47] = Present.
+// Other entries are no-ops. This gives the recomp VISIBLE rendering (a colored
+// window) while avoiding the original renderer's callback-driven render path.
 #include <windows.h>
+#include <cstdint>
 #include <d3d9.h>
 
 static IDirect3D9* g_d3d = nullptr;
-static IDirect3DDevice9* g_device = nullptr;
+static IDirect3DDevice9* g_dev = nullptr;
 
-extern "C" __declspec(dllexport)
-int GFXGetCapabilities(void* caps) {
-    if (caps) {
-        // Fill minimal capability info (name + version)
-        memset(caps, 0, 48);
-        strcpy((char*)((char*)caps + 12), "GiantsRE Stub DX9");
-        *((int*)caps + 0) = 1;   // maxAnisotropy
-        *((int*)caps + 1) = 0;   // flags
-        *((int*)caps + 2) = 0;   // priority
-        *((int*)caps + 3) = 1;   // interfaceVersion
-    }
-    return 1;
-}
-
-// Minimal fake device — a struct with a vtable of no-op stubs. The recomp treats
-// this as the render device. All vtable calls are no-ops (return S_OK/0). No real
-// D3D9 interaction → no D3D9 threads → no D3D9 crashes. Lets the recomp's init
-// path proceed to MainGameLoop.
-// Naked no-op: returns 0 (S_OK) without cleaning any stack args (cdecl-like).
-// The recomp's CallThiscall wrappers handle their own stack cleanup.
+// Naked no-op (cdecl, caller cleanup).
 extern "C" __attribute__((naked)) long DevStub() {
     __asm__ volatile ("xor %eax, %eax\n\t ret");
 }
-static void* g_devVtable[64] = {0};
-static struct { void** vtable; int pad[15]; } g_fakeDevice = { g_devVtable, {0} };
+
+// Wrapper object: Giants vtable at [0], real D3D9 device at [4].
+struct Wrap { void** vtbl; IDirect3DDevice9* dev; } g_wrap = {};
+
+// thiscall wrappers (ECX=this=Wrap*, access dev at [ecx+4]).
+extern "C" __attribute__((fastcall)) long Wrap_Clear(struct Wrap* self, uint32_t) {
+    if (self->dev) { D3DCOLOR c = D3DCOLOR_XRGB(0, 64, 0); // dark green
+        self->dev->Clear(0, nullptr, D3DCLEAR_TARGET, c, 1.0f, 0); }
+    return 0;
+}
+extern "C" __attribute__((fastcall)) long Wrap_BeginScene(struct Wrap* self) {
+    if (self->dev) self->dev->BeginScene(); return 0;
+}
+extern "C" __attribute__((fastcall)) long Wrap_EndScene(struct Wrap* self) {
+    if (self->dev) self->dev->EndScene(); return 0;
+}
+extern "C" __attribute__((fastcall)) long Wrap_Present(struct Wrap* self) {
+    if (self->dev) self->dev->Present(nullptr, nullptr, nullptr, nullptr);
+    return 0;
+}
+
+static void* g_vtbl[64];
 
 extern "C" __declspec(dllexport)
-void* __cdecl GDVSysCreate(unsigned int context, HWND hWnd, DWORD* width,
-                           DWORD* windowed, DWORD* mode, void* param) {
-    // Fill vtable with no-op stubs (all device methods return S_OK).
-    for (int i = 0; i < 64; i++) g_devVtable[i] = (void*)&DevStub;
-    return &g_fakeDevice;
+int GFXGetCapabilities(void* caps) {
+    if (caps) { memset(caps, 0, 48);
+        strcpy((char*)((char*)caps + 12), "GiantsRE D3D9 Wrap");
+        *((int*)caps) = 1; *((int*)caps + 3) = 1; }
+    return 1;
 }
 
 extern "C" __declspec(dllexport)
-void __cdecl UpCallsLoad(unsigned int version, unsigned int count, unsigned int table) {
-    // Store the callback table but do NOT call any callbacks during render.
-    // This prevents the render-path crash (original renderer calls engine callbacks
-    // that are stubbed → bad data → crash).
+void* __cdecl GDVSysCreate(unsigned int ctx, HWND hWnd, DWORD* w, DWORD* win, DWORD* mode, void* param) {
+    if (!g_d3d) g_d3d = Direct3DCreate9(D3D_SDK_VERSION);
+    if (!g_d3d) return nullptr;
+    D3DPRESENT_PARAMETERS pp = {};
+    pp.Windowed = TRUE;
+    pp.BackBufferWidth = w ? *w : 1280; pp.BackBufferHeight = 720;
+    pp.BackBufferFormat = D3DFMT_A8R8G8B8; pp.BackBufferCount = 1;
+    pp.SwapEffect = D3DSWAPEFFECT_DISCARD; pp.hDeviceWindow = hWnd;
+    pp.EnableAutoDepthStencil = TRUE; pp.AutoDepthStencilFormat = D3DFMT_D24S8;
+    pp.PresentationInterval = D3DPRESENT_INTERVAL_IMMEDIATE;
+    HRESULT hr = g_d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd,
+                                      D3DCREATE_SOFTWARE_VERTEXPROCESSING, &pp, &g_dev);
+    if (FAILED(hr)) g_d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_REF, hWnd,
+                            D3DCREATE_SOFTWARE_VERTEXPROCESSING, &pp, &g_dev);
+    if (!g_dev) return nullptr;
+    // Build Giants-compatible vtable.
+    for (int i = 0; i < 64; i++) g_vtbl[i] = (void*)&DevStub;
+    g_vtbl[43] = (void*)&Wrap_Clear;      // PrePresent → Clear
+    g_vtbl[41] = (void*)&Wrap_BeginScene; // BeginScene
+    g_vtbl[42] = (void*)&Wrap_EndScene;   // EndScene
+    g_vtbl[47] = (void*)&Wrap_Present;    // Present
+    g_wrap.vtbl = g_vtbl; g_wrap.dev = g_dev;
+    return &g_wrap;
+}
+
+extern "C" __declspec(dllexport)
+void __cdecl UpCallsLoad(unsigned int ver, unsigned int count, unsigned int table) {
+    // No-op — the stub renderer does not call back into the engine.
 }
 
 BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID) {
     if (reason == DLL_PROCESS_DETACH) {
-        if (g_device) { g_device->Release(); g_device = nullptr; }
+        if (g_dev) { g_dev->Release(); g_dev = nullptr; }
         if (g_d3d) { g_d3d->Release(); g_d3d = nullptr; }
     }
     return TRUE;
