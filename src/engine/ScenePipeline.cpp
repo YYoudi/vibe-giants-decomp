@@ -63,31 +63,44 @@ bool BeginScene()
 
     if (wasZero)
     {
-        // Initialize all render stages via vtable dispatch
-        // vtable[0xa4/4] on subsystem00 — main renderer init
-        (*reinterpret_cast<void(**)()>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem00) + 0xa4))();
+        // Initialize all render stages via vtable dispatch. Each subsystem is
+        // null-guarded: until InitGraphicsResources populates the render-pipeline
+        // stage objects (g_subsystem18-38), they are nullptr and must be skipped
+        // rather than dereferenced. g_subsystem00 is the renderer COM object
+        // (== g_renderDevice); it carries vtable[0xa4/4]=41=BeginScene.
+        if (g_renderDevice)
+            (*reinterpret_cast<void(**)()>(
+                *reinterpret_cast<uintptr_t*>(g_renderDevice) + 0xa4))();
 
         // vtable[4] on each subsystem — stage setup (stage_id, param)
         using StageSetup = void(*)(void*, int, int);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem18) + 4))(g_subsystem18, 1, 0);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem24) + 4))(g_subsystem24, 2, 0);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem1c) + 4))(g_subsystem1c, 1, 4);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem2c) + 4))(g_subsystem2c, 2, 4);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem28) + 4))(g_subsystem28, 2, 2);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem20) + 4))(g_subsystem20, 1, 5);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem30) + 4))(g_subsystem30, 0, 5);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem34) + 4))(g_subsystem34, 0, 5);
-        (*reinterpret_cast<StageSetup*>(
-            *reinterpret_cast<uintptr_t*>(g_subsystem38) + 4))(g_subsystem38, 0, 5);
+        if (g_subsystem18)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem18) + 4))(g_subsystem18, 1, 0);
+        if (g_subsystem24)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem24) + 4))(g_subsystem24, 2, 0);
+        if (g_subsystem1c)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem1c) + 4))(g_subsystem1c, 1, 4);
+        if (g_subsystem2c)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem2c) + 4))(g_subsystem2c, 2, 4);
+        if (g_subsystem28)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem28) + 4))(g_subsystem28, 2, 2);
+        if (g_subsystem20)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem20) + 4))(g_subsystem20, 1, 5);
+        if (g_subsystem30)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem30) + 4))(g_subsystem30, 0, 5);
+        if (g_subsystem34)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem34) + 4))(g_subsystem34, 0, 5);
+        if (g_subsystem38)
+            (*reinterpret_cast<StageSetup*>(
+                *reinterpret_cast<uintptr_t*>(g_subsystem38) + 4))(g_subsystem38, 0, 5);
     }
 
     return true;
@@ -102,32 +115,43 @@ uint32_t ShutdownSubsystems(uint32_t param)
 
     if (g_sceneRefCount == 0)
     {
-        // vtable[1] on each subsystem — shutdown/release
+        // vtable[1] on each subsystem — shutdown/release. Null-guarded: see
+        // BeginScene — stage subsystems are nullptr until populated.
         using VMethod1 = void(*)(void*, uint32_t);
         using VMethod0 = void(*)(void*);
 
-        (*reinterpret_cast<VMethod1*>(
-            *reinterpret_cast<void***>(g_subsystem30)[1]))(g_subsystem30, param);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem28)[1]))(g_subsystem28);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem2c)[1]))(g_subsystem2c);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem18)[1]))(g_subsystem18);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem24)[1]))(g_subsystem24);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem1c)[1]))(g_subsystem1c);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem20)[1]))(g_subsystem20);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem34)[1]))(g_subsystem34);
-        (*reinterpret_cast<VMethod0*>(
-            *reinterpret_cast<void***>(g_subsystem38)[1]))(g_subsystem38);
+        if (g_subsystem30)
+            (*reinterpret_cast<VMethod1*>(
+                *reinterpret_cast<void***>(g_subsystem30)[1]))(g_subsystem30, param);
+        if (g_subsystem28)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem28)[1]))(g_subsystem28);
+        if (g_subsystem2c)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem2c)[1]))(g_subsystem2c);
+        if (g_subsystem18)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem18)[1]))(g_subsystem18);
+        if (g_subsystem24)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem24)[1]))(g_subsystem24);
+        if (g_subsystem1c)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem1c)[1]))(g_subsystem1c);
+        if (g_subsystem20)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem20)[1]))(g_subsystem20);
+        if (g_subsystem34)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem34)[1]))(g_subsystem34);
+        if (g_subsystem38)
+            (*reinterpret_cast<VMethod0*>(
+                *reinterpret_cast<void***>(g_subsystem38)[1]))(g_subsystem38);
 
-        // vtable[0xa8/4] = index 42 on subsystem00 — final renderer shutdown
-        (*reinterpret_cast<void(**)()>(
-            reinterpret_cast<void**>(*reinterpret_cast<void***>(g_subsystem00))[0xa8 / 4]))();
+        // vtable[0xa8/4] = index 42 on subsystem00 (= g_renderDevice, DAT_00702700) — final renderer shutdown
+        if (g_renderDevice)
+            (*reinterpret_cast<void(**)()>(
+                reinterpret_cast<void**>(*reinterpret_cast<void***>(g_renderDevice))[0xa8 / 4]))();
     }
 
     return 1;
