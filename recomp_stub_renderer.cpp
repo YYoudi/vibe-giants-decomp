@@ -1,9 +1,13 @@
 // GiantsRE — D3D9 wrapper stub renderer.
 // Creates a REAL D3D9 device, wraps it with a Giants-compatible vtable layout:
-//   vtable[43] = Clear (green background), vtable[41] = BeginScene,
-//   vtable[42] = EndScene, vtable[47] = Present.
-// Other entries are no-ops. This gives the recomp VISIBLE rendering (a colored
-// window) while avoiding the original renderer's callback-driven render path.
+//   vtable[43] = Clear, vtable[41] = BeginScene,
+//   vtable[42] = EndScene (draws the scene), vtable[47] = Present.
+// Other entries are no-ops. This gives the recomp VISIBLE rendering — a richer
+// 3D scene (rotating cube + grid floor + animated background) — while avoiding
+// the original renderer's callback-driven render path.
+//
+// This is the visual proof-of-life for the recompiled GiantsMain.exe: the
+// engine's ProcessGameLogic 11-phase loop drives these wrappers every frame.
 #include <windows.h>
 #include <cstdint>
 #include <cmath>
@@ -20,32 +24,155 @@ extern "C" __attribute__((naked)) long DevStub() {
 // Wrapper object: Giants vtable at [0], real D3D9 device at [4].
 struct Wrap { void** vtbl; IDirect3DDevice9* dev; } g_wrap = {};
 
+// ─── Minimal matrix math (D3D left-handed, row-major) ───────────────
+struct Vec3 { float x, y, z; };
+
+static Vec3 vsub(Vec3 a, Vec3 b) { return { a.x - b.x, a.y - b.y, a.z - b.z }; }
+static Vec3 vadd(Vec3 a, Vec3 b) { return { a.x + b.x, a.y + b.y, a.z + b.z }; }
+static Vec3 vscale(Vec3 a, float s) { return { a.x*s, a.y*s, a.z*s }; }
+static float vdot(Vec3 a, Vec3 b) { return a.x*b.x + a.y*b.y + a.z*b.z; }
+static Vec3 vcross(Vec3 a, Vec3 b) {
+    return { a.y*b.z - a.z*b.y, a.z*b.x - a.x*b.z, a.x*b.y - a.y*b.x };
+}
+static Vec3 vnorm(Vec3 a) {
+    float len = sqrtf(vdot(a, a));
+    if (len < 1e-8f) return {0,0,0};
+    return vscale(a, 1.0f / len);
+}
+
+// D3D left-handed LookAt view matrix (row-major, 4x4).
+static void ViewMatrixLH(float* m, Vec3 eye, Vec3 at, Vec3 up) {
+    Vec3 z = vnorm(vsub(at, eye));
+    Vec3 x = vnorm(vcross(up, z));
+    Vec3 y = vcross(z, x);
+    m[0]=x.x; m[1]=y.x; m[2]=z.x; m[3]=0;
+    m[4]=x.y; m[5]=y.y; m[6]=z.y; m[7]=0;
+    m[8]=x.z; m[9]=y.z; m[10]=z.z; m[11]=0;
+    m[12]=-vdot(x,eye); m[13]=-vdot(y,eye); m[14]=-vdot(z,eye); m[15]=1;
+}
+
+// D3D left-handed perspective projection matrix (row-major, 4x4).
+static void PerspectiveLH(float* m, float fovy, float aspect, float zn, float zf) {
+    float yScale = 1.0f / tanf(fovy * 0.5f);
+    float xScale = yScale / aspect;
+    m[0]=xScale; m[1]=0; m[2]=0; m[3]=0;
+    m[4]=0; m[5]=yScale; m[6]=0; m[7]=0;
+    m[8]=0; m[9]=0; m[10]=zf/(zf-zn); m[11]=1;
+    m[12]=0; m[13]=0; m[14]=-zn*zf/(zf-zn); m[15]=0;
+}
+
 // thiscall wrappers (ECX=this=Wrap*, access dev at [ecx+4]).
 extern "C" __attribute__((fastcall)) long Wrap_Clear(struct Wrap* self, uint32_t) {
     if (self->dev) {
-        // Animate: cycle blue channel for a visible pulsing effect.
+        // Animate: cycle background for a visible pulsing effect.
         DWORD tick = GetTickCount() / 20;
-        D3DCOLOR c = D3DCOLOR_XRGB(0, 64, (tick ^ (tick >> 4)) & 0x7F);
+        D3DCOLOR c = D3DCOLOR_XRGB(
+            (tick >> 1) & 0x1F,
+            10 + ((tick >> 2) & 0x1F),
+            20 + (tick ^ (tick >> 4)) & 0x3F);
         self->dev->Clear(0, nullptr, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, c, 1.0f, 0);
     }
     return 0;
 }
 extern "C" __attribute__((fastcall)) long Wrap_BeginScene(struct Wrap* self) {
-    if (self->dev) self->dev->BeginScene(); return 0;
+    if (self->dev) {
+        self->dev->BeginScene();
+        // Set up a proper 3D camera once per frame.
+        float view[16], proj[16];
+        ViewMatrixLH(view, {0.0f, 3.0f, -6.0f}, {0,0,0}, {0,1,0});
+        PerspectiveLH(proj, 0.9f, 16.0f/9.0f, 0.1f, 100.0f);
+        self->dev->SetTransform((D3DTRANSFORMSTATETYPE)2, (const D3DMATRIX*)view);   // VIEW
+        self->dev->SetTransform((D3DTRANSFORMSTATETYPE)3, (const D3DMATRIX*)proj);   // PROJECTION
+        self->dev->SetRenderState(D3DRS_LIGHTING, FALSE);
+        self->dev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+        self->dev->SetRenderState(D3DRS_ZENABLE, TRUE);
+    }
+    return 0;
 }
+
+// Cube vertices: position + diffuse color (FVF XYZ|DIFFUSE).
+struct Vertex { float x, y, z; D3DCOLOR color; };
+
+// 12 triangles (6 faces x 2) of a unit cube centered at origin.
+static const Vec3 kCubeV[8] = {
+    {-1,-1,-1},{ 1,-1,-1},{ 1, 1,-1},{-1, 1,-1},  // back face
+    {-1,-1, 1},{ 1,-1, 1},{ 1, 1, 1},{-1, 1, 1},  // front face
+};
+static const int kCubeTri[12][3] = {
+    {0,1,2},{0,2,3},  // back
+    {5,4,7},{5,7,6},  // front
+    {4,0,3},{4,3,7},  // left
+    {1,5,6},{1,6,2},  // right
+    {3,2,6},{3,6,7},  // top
+    {4,5,1},{4,1,0},  // bottom
+};
+static const D3DCOLOR kFaceColor[6] = {
+    D3DCOLOR_XRGB(220, 60, 60),   // back  - red
+    D3DCOLOR_XRGB(60, 220, 90),   // front - green
+    D3DCOLOR_XRGB(70, 130, 240),  // left  - blue
+    D3DCOLOR_XRGB(255, 200, 40),  // right - yellow
+    D3DCOLOR_XRGB(220, 220, 220), // top   - white
+    D3DCOLOR_XRGB(160, 90, 220),  // bottom- purple
+};
+
+// World rotation matrix (around Y then X), row-major.
+static void RotWorld(float* m, float ay, float ax) {
+    float ca = cosf(ay), sa = sinf(ay);
+    float cb = cosf(ax), sb = sinf(ax);
+    // Ry * Rx
+    m[0]=ca;      m[1]=0;   m[2]=-sa;     m[3]=0;
+    m[4]=sb*sa;   m[5]=cb;  m[6]=sb*ca;   m[7]=0;
+    m[8]=cb*sa;   m[9]=-sb; m[10]=cb*ca;  m[11]=0;
+    m[12]=0;      m[13]=0;  m[14]=0;      m[15]=1;
+}
+
+static void DrawCube(IDirect3DDevice9* dev, float t) {
+    float world[16];
+    RotWorld(world, t, t * 0.6f);
+    dev->SetTransform((D3DTRANSFORMSTATETYPE)0, (const D3DMATRIX*)world); // WORLD
+
+    Vertex tri[36];
+    for (int f = 0; f < 6; f++) {
+        for (int i = 0; i < 2; i++) {
+            const int* idx = kCubeTri[f*2 + i];
+            tri[f*6 + i*3 + 0] = { kCubeV[idx[0]].x, kCubeV[idx[0]].y, kCubeV[idx[0]].z, kFaceColor[f] };
+            tri[f*6 + i*3 + 1] = { kCubeV[idx[1]].x, kCubeV[idx[1]].y, kCubeV[idx[1]].z, kFaceColor[f] };
+            tri[f*6 + i*3 + 2] = { kCubeV[idx[2]].x, kCubeV[idx[2]].y, kCubeV[idx[2]].z, kFaceColor[f] };
+        }
+    }
+    dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
+    dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, 12, tri, sizeof(Vertex));
+}
+
+static void DrawGrid(IDirect3DDevice9* dev, float t) {
+    float world[16] = {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1};
+    dev->SetTransform((D3DTRANSFORMSTATETYPE)0, (const D3DMATRIX*)world); // WORLD
+
+    const int N = 20;           // grid half-extent in cells
+    const float S = 1.0f;       // cell size
+    const float y = -2.0f;
+    D3DCOLOR c1 = D3DCOLOR_XRGB(60, 60, 90);
+    D3DCOLOR c2 = D3DCOLOR_XRGB(120, 120, 160);
+
+    Vertex lines[2];
+    dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
+    for (int i = -N; i <= N; i++) {
+        D3DCOLOR c = (i == 0) ? c2 : c1;
+        lines[0] = { (float)i * S, y, (float)-N * S, c };
+        lines[1] = { (float)i * S, y, (float) N * S, c };
+        dev->DrawPrimitiveUP(D3DPT_LINELIST, 1, lines, sizeof(Vertex));
+        lines[0] = { (float)-N * S, y, (float)i * S, c };
+        lines[1] = { (float) N * S, y, (float)i * S, c };
+        dev->DrawPrimitiveUP(D3DPT_LINELIST, 1, lines, sizeof(Vertex));
+    }
+    (void)t;
+}
+
 extern "C" __attribute__((fastcall)) long Wrap_EndScene(struct Wrap* self) {
     if (self->dev) {
-        // Draw a spinning colored triangle — visible 3D from the recomp exe.
-        struct Vertex { float x, y, z; D3DCOLOR color; };
-        float a = GetTickCount() / 500.0f;
-        float ca = cosf(a), sa = sinf(a);
-        Vertex tri[3] = {
-            { 0.0f,        0.5f,        0.0f, D3DCOLOR_XRGB(255, 0, 0) },
-            { -0.5f * ca - (-0.5f) * sa, -0.5f * ca + (-0.5f) * sa, 0.0f, D3DCOLOR_XRGB(0, 255, 0) },
-            {  0.5f * ca - (-0.5f) * sa,  0.5f * ca + (-0.5f) * sa, 0.0f, D3DCOLOR_XRGB(0, 0, 255) },
-        };
-        self->dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
-        self->dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, 1, tri, sizeof(Vertex));
+        float t = GetTickCount() / 700.0f;
+        DrawGrid(self->dev, t);
+        DrawCube(self->dev, t);
         self->dev->EndScene();
     }
     return 0;
