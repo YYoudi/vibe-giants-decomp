@@ -621,14 +621,12 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
         goto show_gfx_error;
     }
 
-    // NOTE: DAT_00702700 is split into two C++ globals here — g_renderDevice
-    // (assigned above) and g_rendererObj (used by FrameEnd/EndSceneDirectional).
-    // g_rendererObj is deliberately LEFT NULL for now: wiring it makes FrameEnd
-    // run, but FrameEnd re-issues BeginScene/Present that ProcessGameLogic Phase
-    // 5 already did → double-render → fatal D3D9/driver exception. Enabling it
-    // requires removing the redundant Phase 5 render calls (a render-split
-    // refactor), gated on confirming BeginScene()/ShutdownSubsystems() drive the
-    // renderer vtable. Tracked as the duplicate-DAT_00702700 bug.
+    // Unify DAT_00702700: g_rendererObj (used by FrameEnd's guard) = g_renderDevice.
+    // Now safe — BeginScene/ShutdownSubsystems/FrameEnd vtable calls use the
+    // CallThiscall wrappers (ECX=this), and Phase 5's redundant inline render is
+    // removed so FrameEnd owns the single render cycle (original exe structure).
+    extern void* g_rendererObj;
+    g_rendererObj = g_renderDevice;
 
     UnlockGraphics();
     if (g_traceLog) { fprintf(g_traceLog, "[TRACE] Phase B/C done — UnlockGraphics\n"); fflush(g_traceLog); }
