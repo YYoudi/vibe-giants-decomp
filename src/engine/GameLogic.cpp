@@ -145,6 +145,11 @@ uint32_t ProcessGameLogic()
     extern void SetupProjection(int);
     SetupProjection(0);
 
+    // Phase 3d: World transform — set to identity (no scene loaded yet)
+    extern void SetWorldTransform(const float*);
+    static const float s_identity[16] = {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1};
+    SetWorldTransform(s_identity);
+
     // Phase 4: Countdown timer (safe — uses our globals)
     if (g_countdownActive != 0 && !g_cutsceneMode)
     {
