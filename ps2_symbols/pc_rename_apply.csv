@@ -1,0 +1,379 @@
+pc_addr,apply_name,ps2_demangled,params,conf,tier,notes
+005e3840,teammecc_set_mode,teammecc_set_mode,,1.00,string-anchor,SAFE_APPLY
+00453370,chat_init,chat_init,,1.00,string-anchor,SAFE_APPLY
+005e30e0,mecc_shot,mecc_shot,,1.00,string-anchor,SAFE_APPLY
+004aca40,smartie_base_attack_comment,smartie_base_attack_comment(OBJECT*),OBJECT*,1.00,string-anchor,SAFE_APPLY
+004aa710,bldg_get_bldg_name,bldg_get_bldg_name,,1.00,string-anchor,SAFE_APPLY
+005038f0,item_check,item_check,,1.00,string-anchor,SAFE_APPLY
+005b5140,rpman_move,rpman_move,,1.00,string-anchor,SAFE_APPLY
+005d1e20,smartie_get_name,smartie_get_name(OBJECT*),OBJECT*,1.00,string-anchor,SAFE_APPLY
+004a9570,smartie_move,smartie_move,,1.00,string-anchor(weak),SAFE_APPLY
+00494d50,meccbaseitem_finish_building,meccbaseitem_finish_building,,0.90,string-anchor,SAFE_APPLY
+004e3c50,firewall_create_fire,"firewall_create_fire(OBJECT*, /*same*/, unsigned int, float, float, float, int)","OBJECT*, /*same*/, unsigned int, float, float, float, int",0.90,string-anchor,SAFE_APPLY
+00504a20,inv_award_item,inv_award_item,,0.90,string-anchor,SAFE_APPLY
+00537130,mecc_fire_logic,mecc_fire_logic(OBJECT*),OBJECT*,0.90,string-anchor,SAFE_APPLY
+0057eb60,reaperbasebldg_finish_building,reaperbasebldg_finish_building,,0.90,string-anchor,SAFE_APPLY
+0058acd0,reaper_finish_shrinker,reaper_finish_shrinker,,0.90,string-anchor,SAFE_APPLY
+005d29a0,mecc_special_weapon_logic,mecc_special_weapon_logic(OBJECT*),OBJECT*,0.90,string-anchor,SAFE_APPLY
+005ebca0,player_draw_missile_lock,player_draw_missile_lock,,0.90,string-anchor,SAFE_APPLY
+00532f00,mecc_logic,mecc_logic,,0.90,string-anchor,SAFE_APPLY
+0048fba0,object_animate_process,object_animate_process,,0.72,propagated,REVIEW
+0062a0b0,FRateGetSecsframe,FRateGetSecsframe,,0.70,propagated,REVIEW
+005e80c0,TextGetPtr,TextGetPtr,,0.70,propagated,REVIEW
+00463000,strcpy,strcpy,,0.70,propagated,REVIEW
+00469670,teammecc_setup_enemies,"teammecc_setup_enemies(OBJECT*, int)","OBJECT*, int",0.67,string-anchor(weak),REVIEW
+005536d0,showchat_mission_objective,showchat_mission_objective(int),int,0.67,string-anchor(weak),REVIEW
+0045f460,chat_insert,chat_insert,,0.65,propagated,REVIEW
+005c6550,smartie_move,smartie_move,,0.64,propagated,COLLISION_REVIEW
+00453a40,chat_insert_name,chat_insert_name,,0.63,propagated,REVIEW
+004e9cd0,fx_create,fx_create,,0.63,propagated,REVIEW
+00638d40,distancesq3d,"distancesq3d(P3D*, /*same*/)","P3D*, /*same*/",0.62,propagated,REVIEW
+0057f680,meccbaseitem_shot,meccbaseitem_shot,,0.62,propagated,REVIEW
+005d6540,vsoul_activate_mana,"vsoul_activate_mana(OBJECT*, /*same*/, int, float, int)","OBJECT*, /*same*/, int, float, int",0.61,propagated,REVIEW
+005b3af0,rpman_jetski_race,"rpman_jetski_race(OBJECT*, float)","OBJECT*, float",0.61,propagated,REVIEW
+005acba0,rpman_verify_bush,rpman_verify_bush(OBJECT*),OBJECT*,0.61,propagated,REVIEW
+005b3f90,rpman_init,rpman_init(OBJECT*),OBJECT*,0.60,propagated,REVIEW
+00493810,meccbaseitem_move,meccbaseitem_move,,0.60,propagated,REVIEW
+0057dbb0,reaperbasebldg_move,reaperbasebldg_move,,0.60,propagated,REVIEW
+005b07a0,rpman_select_patrol_anim,"rpman_select_patrol_anim(OBJECT*, int)","OBJECT*, int",0.60,propagated,REVIEW
+0056ea70,IconDefTextDescription,IconDefTextDescription,,0.60,propagated,REVIEW
+005ad0c0,rpman_consider_group_halt,"rpman_consider_group_halt(OBJECT*, /*same*/)","OBJECT*, /*same*/",0.60,propagated,REVIEW
+004ab890,PS2BaseViewTextRender,PS2BaseViewTextRender,,0.60,string-anchor(weak),REVIEW
+00469de0,fx_delete,fx_delete,,0.60,propagated,DRAFT
+005e81d0,TextGetPtrRandom,TextGetPtrRandom,,0.60,propagated,DRAFT
+005ad450,rpman_spline_return_info,rpman_spline_return_info(OBJECT*),OBJECT*,0.59,propagated,DRAFT
+0056cd80,playerobj_eval_refpt,playerobj_eval_refpt,,0.59,propagated,DRAFT
+00539bd0,mecc_is_bush_logic,mecc_is_bush_logic(OBJECT*),OBJECT*,0.58,propagated,DRAFT
+005adb50,rpman_verify_enemy,"rpman_verify_enemy(OBJECT*, float)","OBJECT*, float",0.58,propagated,DRAFT
+00469d20,ObjIsReaper,ObjIsReaper,,0.58,propagated,DRAFT
+005b0ac0,rpman_select_fly_anim,"rpman_select_fly_anim(OBJECT*, int)","OBJECT*, int",0.58,propagated,DRAFT
+0048d740,ai_movedir_set_goal,ai_movedir_set_goal,,0.58,propagated,DRAFT
+0048f130,mecc_in_gyro,mecc_in_gyro,,0.57,propagated,DRAFT
+005b0470,rpman_select_stand_anim,"rpman_select_stand_anim(OBJECT*, int, int)","OBJECT*, int, int",0.57,propagated,DRAFT
+004ff8b0,project_vector_to_object,project_vector_to_object,,0.57,propagated,DRAFT
+005af0d0,rpman_chase_angle_loc,"rpman_chase_angle_loc(OBJECT*, P3D*)","OBJECT*, P3D*",0.57,propagated,DRAFT
+004a69a0,playergroup_claim_base,playergroup_claim_base,,0.57,propagated,DRAFT
+005ad4e0,rpman_spline_move,rpman_spline_move(OBJECT*),OBJECT*,0.56,propagated,DRAFT
+004ff520,project_cursor_to_ground,project_cursor_to_ground,,0.56,propagated,DRAFT
+00500940,hurt_pusher,hurt_pusher,,0.56,propagated,DRAFT
+005ab410,rpman_jet,rpman_jet(OBJECT*),OBJECT*,0.56,propagated,DRAFT
+005aea50,rpman_army_set_sniper_location,rpman_army_set_sniper_location(OBJECT*),OBJECT*,0.56,propagated,DRAFT
+0053a690,mecc_disable_repair_gun,mecc_disable_repair_gun,,0.56,propagated,DRAFT
+005b0600,rpman_select_patrol_scan_anim,rpman_select_patrol_scan_anim(OBJECT*),OBJECT*,0.56,propagated,DRAFT
+00535af0,mecc_death_logic,mecc_death_logic(OBJECT*),OBJECT*,0.55,propagated,DRAFT
+005066f0,item_create_base_pickup,item_create_base_pickup,,0.55,propagated,DRAFT
+00500d30,hurt_object,hurt_object,,0.55,propagated,DRAFT
+00502a10,WeaponIdSetCurrent,"WeaponIdSetCurrent(OBJECT*, int)","OBJECT*, int",0.55,propagated,DRAFT
+004f88c0,giftshopview_enable,giftshopview_enable,,0.55,propagated,DRAFT
+005cf100,smartie_check_follow2,smartie_check_follow2,,0.55,propagated,DRAFT
+00558730,sound_setup_sequence,sound_setup_sequence,,0.54,propagated,DRAFT
+0056ca90,ObjectCalculateTransform,ObjectCalculateTransform,,0.54,propagated,DRAFT
+00555c50,mission_init,mission_init(char*),char*,0.54,propagated,DRAFT
+00557380,mission_fail,mission_fail(void),void,0.54,propagated,DRAFT
+00555140,load_mission_continuity,"load_mission_continuity(int, int)","int, int",0.54,propagated,DRAFT
+005b1d20,make_grenade_shot,"make_grenade_shot(OBJECT*, float)","OBJECT*, float",0.54,propagated,DRAFT
+005b36d0,rpman_jetski_race_calc_speed,rpman_jetski_race_calc_speed(OBJECT*),OBJECT*,0.54,propagated,DRAFT
+005ace50,rpman_hide_patrol_check_time,rpman_hide_patrol_check_time(OBJECT*),OBJECT*,0.54,propagated,DRAFT
+005af580,rpman_select_scan_anim,"rpman_select_scan_anim(OBJECT*, int, int, int)","OBJECT*, int, int, int",0.53,propagated,DRAFT
+005acd30,rpman_bush_consider,rpman_bush_consider(OBJECT*),OBJECT*,0.53,propagated,DRAFT
+005aca20,rpman_bush_check_logic,rpman_bush_check_logic(OBJECT*),OBJECT*,0.53,propagated,DRAFT
+00497350,meccbasepit_bldg_from_object,meccbasepit_bldg_from_object,,0.53,propagated,DRAFT
+005df970,teammecc_create,teammecc_create,,0.53,propagated,DRAFT
+005e2f30,mecc_smoke,mecc_smoke,,0.53,propagated,DRAFT
+005033d0,item_play_pickup_sound,"item_play_pickup_sound(OBJECT*, int)","OBJECT*, int",0.53,propagated,DRAFT
+0059e180,reaper_check_enter_jet_ski,reaper_check_enter_jet_ski(OBJECT*),OBJECT*,0.53,propagated,DRAFT
+0053a400,mecc_disable_personal_shield,mecc_disable_personal_shield,,0.52,propagated,DRAFT
+00532e40,ProcAnimDir,ProcAnimDir,,0.52,propagated,DRAFT
+005b0dd0,rpman_select_alert_scan,"rpman_select_alert_scan(OBJECT*, int)","OBJECT*, int",0.52,propagated,DRAFT
+005ab630,rpman_setup_firing_parameters,"rpman_setup_firing_parameters(OBJECT*, int)","OBJECT*, int",0.52,propagated,DRAFT
+006389d0,dirfcalcp3d,"dirfcalcp3d(P3D*, /*same*/)","P3D*, /*same*/",0.51,propagated,DRAFT
+005ae2b0,rpman_scan_for_enemy,"rpman_scan_for_enemy(OBJECT*, float, int, int)","OBJECT*, float, int, int",0.51,propagated,DRAFT
+005ea7b0,playerobj_tornado_push,playerobj_tornado_push,,0.51,propagated,DRAFT
+005bc510,rpman_notify_hit,rpman_notify_hit,,0.50,propagated,DRAFT
+00638c80,distance3d,"distance3d(P3D*, /*same*/)","P3D*, /*same*/",0.50,propagated,DRAFT
+00536640,mecc_do_health_grenade_mine2,mecc_do_health_grenade_mine2(OBJECT*),OBJECT*,0.50,propagated,DRAFT
+005cee50,smartie_check_follow,"smartie_check_follow(OBJECT*, float)","OBJECT*, float",0.50,propagated,DRAFT
+00532b50,MeccPhysicsExApplyLocation,MeccPhysicsExApplyLocation(OBJECT*),OBJECT*,0.50,propagated,DRAFT
+0063e7f0,mecc_repairwand_off,mecc_repairwand_off,,0.50,propagated,DRAFT
+005fbbf0,mecc_find_target_xhair_nearest,"mecc_find_target_xhair_nearest(float, float, float, ?F*, OBJECT*, void*, ?_, int, void*)","float, float, float, ?F*, OBJECT*, void*, ?_, int, void*",0.50,propagated,DRAFT
+00565f40,PhysicsExUpdate,PhysicsExUpdate,,0.50,propagated,DRAFT
+00536470,mecc_do_health_grenade_mine1,mecc_do_health_grenade_mine1(OBJECT*),OBJECT*,0.50,propagated,DRAFT
+00536290,mecc_do_flare,mecc_do_flare(OBJECT*),OBJECT*,0.49,propagated,DRAFT
+005323c0,new_fire,"new_fire(OBJECT*, int, float*, /*same*/, P3D*, float)","OBJECT*, int, float*, /*same*/, P3D*, float",0.49,propagated,DRAFT
+00638d90,normalize,"normalize(float*, ?N)","float*, ?N",0.49,propagated,DRAFT
+006387e0,calc_sincosd,"calc_sincosd(float, float*, /*same*/)","float, float*, /*same*/",0.49,propagated,DRAFT
+005ded10,spath_logic,spath_logic,,0.49,propagated,DRAFT
+005b3230,rpman_racer_tilt,"rpman_racer_tilt(OBJECT*, float, float)","OBJECT*, float, float",0.49,propagated,DRAFT
+00589590,reaper_fire_bow,reaper_fire_bow(OBJECT*),OBJECT*,0.49,propagated,DRAFT
+005865a0,reaper_death,reaper_death(OBJECT*),OBJECT*,0.49,propagated,DRAFT
+004532b0,atox,atox(char*),char*,0.49,propagated,DRAFT
+0053df20,vimpsoul_move,vimpsoul_move,,0.49,propagated,DRAFT
+005ad710,rpman_find_hide_spot,"rpman_find_hide_spot(OBJECT*, int)","OBJECT*, int",0.49,propagated,DRAFT
+005aae50,rpman_tornado_logic,rpman_tornado_logic(OBJECT*),OBJECT*,0.48,propagated,DRAFT
+005a7290,meccbasepit_smoke,meccbasepit_smoke(OBJECT*),OBJECT*,0.48,propagated,DRAFT
+005f7b70,object_water_ripple,object_water_ripple,,0.48,propagated,DRAFT
+005b0910,rpman_select_fly_scan_anim,rpman_select_fly_scan_anim(OBJECT*),OBJECT*,0.48,propagated,DRAFT
+005932d0,reaper_firecircle_move,reaper_firecircle_move,,0.48,propagated,DRAFT
+00539470,mecc_jet,mecc_jet,,0.48,propagated,DRAFT
+005ae210,rpman_scan_for_mine,"rpman_scan_for_mine(OBJECT*, float)","OBJECT*, float",0.48,propagated,DRAFT
+00531380,marker_follow_path,marker_follow_path,,0.47,propagated,DRAFT
+00499720,buoy_process,buoy_process(OBJECT*),OBJECT*,0.47,propagated,DRAFT
+0053ab40,reaper_special_action_logic,reaper_special_action_logic(OBJECT*),OBJECT*,0.47,propagated,DRAFT
+00568b50,PhysicsExApplyLocation,PhysicsExApplyLocation,,0.47,propagated,DRAFT
+005b4eb0,rpman_set_smartie_goal,rpman_set_smartie_goal(OBJECT*),OBJECT*,0.47,propagated,DRAFT
+0055c2c0,object_apply_location,object_apply_location,,0.47,propagated,DRAFT
+005af190,rpman_maintain_hide,rpman_maintain_hide(OBJECT*),OBJECT*,0.47,propagated,DRAFT
+004f11e0,fx_logic,fx_logic,,0.46,propagated,DRAFT
+005cdab0,smartie_lock_to_player,smartie_lock_to_player,,0.46,propagated,DRAFT
+005cce60,smartie_clear_sparklies,smartie_clear_sparklies(OBJECT*),OBJECT*,0.46,propagated,DRAFT
+00498fd0,buoy_activate_next,"buoy_activate_next(OBJECT*, int)","OBJECT*, int",0.46,propagated,DRAFT
+005a9580,rpboat_ghost_logic,rpboat_ghost_logic(OBJECT*),OBJECT*,0.46,propagated,DRAFT
+005abc60,rpman_setup_firing,rpman_setup_firing(OBJECT*),OBJECT*,0.46,propagated,DRAFT
+005b2820,rpman_rapid_fire,"rpman_rapid_fire(OBJECT*, int, int, int)","OBJECT*, int, int, int",0.46,propagated,DRAFT
+005aeb70,rpman_set_enemy_attack_goal,"rpman_set_enemy_attack_goal(OBJECT*, int)","OBJECT*, int",0.46,propagated,DRAFT
+005c5e30,smartie_handle_reaper_grab,"smartie_handle_reaper_grab(OBJECT*, ObjSpecSmartie*)","OBJECT*, ObjSpecSmartie*",0.46,propagated,DRAFT
+00584c50,reaper_logic,reaper_logic,,0.46,propagated,DRAFT
+00521260,lift_logic,lift_logic(OBJECT*),OBJECT*,0.46,propagated,DRAFT
+00453520,sprintf,sprintf,,0.46,propagated,DRAFT
+0056c270,playerobj_walkrun,playerobj_walkrun,,0.46,propagated,DRAFT
+005ad9c0,rpman_alert_team,"rpman_alert_team(OBJECT*, float)","OBJECT*, float",0.46,propagated,DRAFT
+0055a8a0,ObjIsMecc,ObjIsMecc,,0.46,propagated,DRAFT
+005af100,rpman_bunker_chase_angle,"rpman_bunker_chase_angle(OBJECT*, P3D*)","OBJECT*, P3D*",0.46,propagated,DRAFT
+00588a90,reaper_check_turbo,reaper_check_turbo(OBJECT*),OBJECT*,0.46,propagated,DRAFT
+0048e200,ai_goal_process,ai_goal_process,,0.46,propagated,DRAFT
+005b2160,rpman_nonrapid_fire,"rpman_nonrapid_fire(OBJECT*, int, int, int)","OBJECT*, int, int, int",0.45,propagated,DRAFT
+005b3070,rpman_consider_flying,rpman_consider_flying(OBJECT*),OBJECT*,0.45,propagated,DRAFT
+005712c0,projectile_logic,projectile_logic,,0.45,propagated,DRAFT
+00566e20,PhysicsExApplyMoveControls,PhysicsExApplyMoveControls,,0.45,propagated,DRAFT
+005668b0,PhysicsExApplyBasicForces,PhysicsExApplyBasicForces,,0.45,propagated,DRAFT
+004a68f0,base_find_closest,base_find_closest,,0.45,propagated,DRAFT
+0053ea80,item_get_ammo,item_get_ammo,,0.45,propagated,DRAFT
+00587c80,reaper_fire_logic,reaper_fire_logic(OBJECT*),OBJECT*,0.45,propagated,DRAFT
+00551be0,kbos_move,kbos_move,,0.45,propagated,DRAFT
+00591730,reaper_update_spell_status,reaper_update_spell_status(OBJECT*),OBJECT*,0.45,propagated,DRAFT
+0056be60,playerobj_turn,playerobj_turn,,0.45,propagated,DRAFT
+005af030,rpman_change_anim,"rpman_change_anim(OBJECT*, int, int, SDKY, float, int)","OBJECT*, int, int, SDKY, float, int",0.45,propagated,DRAFT
+0056e960,PROJ_DefGet,PROJ_DefGet,,0.45,propagated,DRAFT
+005a3f20,ripper_control,ripper_control(OBJECT*),OBJECT*,0.45,propagated,DRAFT
+005cd1e0,sonakring_move,sonakring_move,,0.45,propagated,DRAFT
+005068f0,item_drop_backheld,item_drop_backheld,,0.45,propagated,DRAFT
+005b4fd0,rpman_army_goto_firepit,rpman_army_goto_firepit(OBJECT*),OBJECT*,0.45,propagated,DRAFT
+005aacf0,rpman_goto_last_loc,"rpman_goto_last_loc(OBJECT*, int)","OBJECT*, int",0.44,propagated,DRAFT
+00638d00,distancesq2d,"distancesq2d(P3D*, /*same*/)","P3D*, /*same*/",0.44,propagated,DRAFT
+005b1f20,rpman_flying_fire,rpman_flying_fire(OBJECT*),OBJECT*,0.44,propagated,DRAFT
+0048ef70,ai_moveonly_set_goal,ai_moveonly_set_goal,,0.44,propagated,DRAFT
+005f45a0,piranha_go,piranha_go,,0.44,propagated,DRAFT
+005b0f00,rpman_select_run_anim,rpman_select_run_anim(OBJECT*),OBJECT*,0.44,propagated,DRAFT
+005a8d00,rpboat_tilt,rpboat_tilt(OBJECT*),OBJECT*,0.44,propagated,DRAFT
+005ce1f0,smartie_unlock_from_player,smartie_unlock_from_player,,0.44,propagated,DRAFT
+005e0440,teammecc_setup_enemies,"teammecc_setup_enemies(OBJECT*, int)","OBJECT*, int",0.44,propagated,COLLISION_REVIEW
+0056fe30,PROJ_Create2,PROJ_Create2,,0.44,propagated,DRAFT
+00586e80,reaper_walkrun_go,reaper_walkrun_go(OBJECT*),OBJECT*,0.43,propagated,DRAFT
+00502c30,SpecialWeaponIdSet,"SpecialWeaponIdSet(OBJECT*, int)","OBJECT*, int",0.43,propagated,DRAFT
+005d17c0,kbos_shot,kbos_shot,,0.43,propagated,DRAFT
+0051c680,evilreaper_logic,evilreaper_logic(OBJECT*),OBJECT*,0.43,propagated,DRAFT
+004bedf0,dactyl_control,dactyl_control(OBJECT*),OBJECT*,0.43,propagated,DRAFT
+005d5090,sonak_patrol_move,sonak_patrol_move(OBJECT*),OBJECT*,0.43,propagated,DRAFT
+0044b660,_vfprintf_r,_vfprintf_r,,0.43,string-anchor(weak),DRAFT
+0044cb00,_vfprintf_r,_vfprintf_r,,0.43,string-anchor(weak),COLLISION_REVIEW
+004b7ee0,_vfprintf_r,_vfprintf_r,,0.43,string-anchor(weak),COLLISION_REVIEW
+004bc570,_vfprintf_r,_vfprintf_r,,0.43,string-anchor(weak),COLLISION_REVIEW
+005ec1d0,turret_process,turret_process,,0.43,propagated,DRAFT
+005e4910,mecc_animselect_gm,mecc_animselect_gm,,0.43,propagated,DRAFT
+005acc10,rpman_smartie_consider,"rpman_smartie_consider(OBJECT*, /*same*/)","OBJECT*, /*same*/",0.43,propagated,DRAFT
+005840c0,corpse_logic,corpse_logic,,0.43,propagated,DRAFT
+0050afb0,object_create_child,object_create_child,,0.43,propagated,DRAFT
+005693d0,ObjProcessInfoPrologue,"ObjProcessInfoPrologue(OBJECT*, ObjProcessInfo*, float, int)","OBJECT*, ObjProcessInfo*, float, int",0.43,propagated,DRAFT
+0053b5d0,mecc_replenish_basepit_energy,mecc_replenish_basepit_energy(OBJECT*),OBJECT*,0.43,propagated,DRAFT
+0048d780,ai_move_force_goal,ai_move_force_goal,,0.43,propagated,DRAFT
+005e2020,teammecc_get_hideloc,"teammecc_get_hideloc(OBJECT*, int)","OBJECT*, int",0.42,propagated,DRAFT
+0055ccc0,object_change_ospec,object_change_ospec,,0.42,propagated,DRAFT
+00565e90,PhysicsExCalcModelSpeeds,PhysicsExCalcModelSpeeds,,0.42,propagated,DRAFT
+005584d0,sound_stop_sequence,sound_stop_sequence,,0.42,propagated,DRAFT
+0056bb40,huskdam_move,huskdam_move(OBJECT*),OBJECT*,0.42,propagated,DRAFT
+005949a0,evilreaper_verify_enemy,"evilreaper_verify_enemy(OBJECT*, float)","OBJECT*, float",0.42,propagated,DRAFT
+0050c410,laser_ghost,laser_ghost(OBJECT*),OBJECT*,0.42,propagated,DRAFT
+00538cb0,mecc_get_thrust,"mecc_get_thrust(OBJECT*, float, float*, /*same*/)","OBJECT*, float, float*, /*same*/",0.42,propagated,DRAFT
+0063e480,GEO_MatBuildXYZ,GEO_MatBuildXYZ,,0.42,propagated,DRAFT
+005a3cd0,ripper_spline_move,ripper_spline_move(OBJECT*),OBJECT*,0.42,propagated,DRAFT
+00515f80,kabutoai_move,kabutoai_move,,0.42,propagated,DRAFT
+0050d090,kabuto_logic,kabuto_logic,,0.42,propagated,DRAFT
+005a1600,ripper_medium_move,ripper_medium_move(OBJECT*),OBJECT*,0.42,propagated,DRAFT
+004a9d40,ripper_shot,ripper_shot,,0.42,propagated,DRAFT
+00538eb0,mecc_calc_thrust_for_height,mecc_calc_thrust_for_height,,0.41,propagated,DRAFT
+00638a90,dirucalcp3d,"dirucalcp3d(P3D*, /*same*/)","P3D*, /*same*/",0.41,propagated,DRAFT
+005bdd90,barracks_logic,barracks_logic,,0.41,propagated,DRAFT
+0056c1a0,playerobj_lookud,playerobj_lookud,,0.41,propagated,DRAFT
+0042bee0,PhysicsExApplyLimitingRadius,PhysicsExApplyLimitingRadius,,0.41,propagated,DRAFT
+006386b0,bldg_get_refpt_worldlocdir,bldg_get_refpt_worldlocdir,,0.41,propagated,DRAFT
+005912a0,reaper_check_enter_teleport,reaper_check_enter_teleport(OBJECT*),OBJECT*,0.41,propagated,DRAFT
+00587da0,make_arrow,"make_arrow(OBJECT*, /*same*/, P3D*, unsigned int*, int)","OBJECT*, /*same*/, P3D*, unsigned int*, int",0.41,propagated,DRAFT
+005b1760,fire_bullet_shot,"fire_bullet_shot(OBJECT*, /*same*/, int, int)","OBJECT*, /*same*/, int, int",0.41,propagated,DRAFT
+004f2dc0,reaper_replenish_basepit_energy,reaper_replenish_basepit_energy(OBJECT*),OBJECT*,0.41,propagated,DRAFT
+005f16e0,vimp_logic,vimp_logic,,0.41,propagated,DRAFT
+00509c00,AttackObject,"AttackObject(OBJECT*, /*same*/, P3D*, /*same*/, float, int)","OBJECT*, /*same*/, P3D*, /*same*/, float, int",0.41,propagated,DRAFT
+00559dc0,object_allocate_type,object_allocate_type,,0.41,propagated,DRAFT
+0048e960,ai_chase_location,"ai_chase_location(OBJECT*, P3D*, unsigned int)","OBJECT*, P3D*, unsigned int",0.41,propagated,DRAFT
+0053f2a0,reaper_firecircle_detonate,reaper_firecircle_detonate(OBJECT*),OBJECT*,0.41,propagated,DRAFT
+005581d0,sound_play_player,sound_play_player,,0.41,propagated,DRAFT
+005c17d0,physicshost_logic,physicshost_logic,,0.41,propagated,DRAFT
+00582c30,reaper_turbo_calculate,reaper_turbo_calculate(OBJECT*),OBJECT*,0.40,propagated,DRAFT
+005a9a50,rpboat_logic,rpboat_logic(OBJECT*),OBJECT*,0.40,propagated,DRAFT
+005831f0,reaper_update_xhair_status,reaper_update_xhair_status(OBJECT*),OBJECT*,0.40,propagated,DRAFT
+0055bce0,create_locked_object_tform,create_locked_object_tform,,0.40,propagated,DRAFT
+005735e0,rpman_sfrelease,rpman_sfrelease,,0.40,propagated,DRAFT
+0050bbb0,marker_process,marker_process(OBJECT*),OBJECT*,0.40,propagated,DRAFT
+004eadd0,fx_processOpCodes,"fx_processOpCodes(FxData*, int, OBJECT*)","FxData*, int, OBJECT*",0.40,propagated,DRAFT
+005e2400,teammecc_set_slave_goal,"teammecc_set_slave_goal(OBJECT*, int)","OBJECT*, int",0.40,propagated,DRAFT
+0056a2c0,hurt_swimmer,hurt_swimmer(OBJECT*),OBJECT*,0.40,propagated,DRAFT
+005bc380,rpman_gib,"rpman_gib(OBJECT*, /*same*/)","OBJECT*, /*same*/",0.40,propagated,DRAFT
+00558f80,rndint,rndint,,0.40,propagated,DRAFT
+005e12b0,teammecc_get_attackloc,"teammecc_get_attackloc(OBJECT*, int)","OBJECT*, int",0.40,propagated,DRAFT
+0048f2f0,ObjectSetAnim,ObjectSetAnim,,0.40,propagated,DRAFT
+005cf900,smartie_animselect,smartie_animselect,,0.40,propagated,DRAFT
+004e5ad0,object_update,"object_update(OBJECT*, int)","OBJECT*, int",0.40,propagated,DRAFT
+00638f10,chase_angle,chase_angle,,0.40,propagated,DRAFT
+00506b90,item_drop_curweap,item_drop_curweap,,0.40,propagated,DRAFT
+0053b1d0,mecc_stop_looping_effects,mecc_stop_looping_effects,,0.39,propagated,DRAFT
+005bcdf0,rpman_shot,rpman_shot,,0.39,propagated,DRAFT
+00586820,reaper_set_pitch,reaper_set_pitch(OBJECT*),OBJECT*,0.39,propagated,DRAFT
+00638820,diff_angle,diff_angle,,0.39,propagated,DRAFT
+0049a420,piranha_swim_randomly,piranha_swim_randomly(OBJECT*),OBJECT*,0.39,propagated,DRAFT
+0049d2d0,cleaner_process,cleaner_process,,0.39,propagated,DRAFT
+005eefc0,verm_control,verm_control(OBJECT*),OBJECT*,0.39,propagated,DRAFT
+00570390,PROJ_Create3,PROJ_Create3,,0.39,propagated,DRAFT
+0055fc80,offspring_logic,offspring_logic(OBJECT*),OBJECT*,0.39,propagated,DRAFT
+0057ce80,reaperbase_init,reaperbase_init,,0.39,propagated,DRAFT
+005a0540,ripper_death_logic,ripper_death_logic(OBJECT*),OBJECT*,0.39,propagated,DRAFT
+005e0fd0,teammecc_get_wantloc_formation,teammecc_get_wantloc_formation,,0.38,propagated,DRAFT
+005ea0d0,tornado_logic,tornado_logic,,0.38,propagated,DRAFT
+0053d780,multi_player_respawn,"multi_player_respawn(OBJECT*, int)","OBJECT*, int",0.38,propagated,DRAFT
+0058b590,evilreaper_award_item,evilreaper_award_item(OBJECT*),OBJECT*,0.38,propagated,DRAFT
+0049bbb0,charger_move,charger_move,,0.38,propagated,DRAFT
+0055f900,reaper_shot,reaper_shot,,0.38,propagated,DRAFT
+00558360,object_destroy,object_destroy,,0.38,propagated,DRAFT
+0048ddb0,ai_do_update_goal,"ai_do_update_goal(unsigned int, OBJECT*, P3D*, float, float)","unsigned int, OBJECT*, P3D*, float, float",0.38,propagated,DRAFT
+0055c150,object_set_location,object_set_location,,0.38,propagated,DRAFT
+00596c10,evilreaper_turbo_move,evilreaper_turbo_move(OBJECT*),OBJECT*,0.38,propagated,DRAFT
+005d1f60,smartie_ai_goal_process,smartie_ai_goal_process(OBJECT*),OBJECT*,0.38,propagated,DRAFT
+005c1490,projectile_deflect,"projectile_deflect(OBJECT*, P3D*, char*)","OBJECT*, P3D*, char*",0.38,propagated,DRAFT
+005a0650,ripper_small_move,ripper_small_move(OBJECT*),OBJECT*,0.38,propagated,DRAFT
+0051bb80,kbos_attach_object,kbos_attach_object,,0.38,propagated,DRAFT
+00569e70,piranha_chase_swimmer,piranha_chase_swimmer(OBJECT*),OBJECT*,0.38,propagated,DRAFT
+00584990,reaper_init,reaper_init(OBJECT*),OBJECT*,0.38,propagated,DRAFT
+00523e40,loglauncher_process,loglauncher_process,,0.38,propagated,DRAFT
+00594f30,evilreaper_turbo_calculate,evilreaper_turbo_calculate(OBJECT*),OBJECT*,0.38,propagated,DRAFT
+0056afe0,team_count,team_count,,0.37,propagated,DRAFT
+0053a260,mecc_enable_personal_shield,mecc_enable_personal_shield,,0.37,propagated,DRAFT
+005ce040,smartie_escape_reaper_grab,smartie_escape_reaper_grab,,0.37,propagated,DRAFT
+005d1cd0,smartie_make_held_object,"smartie_make_held_object(OBJECT*, int)","OBJECT*, int",0.37,propagated,DRAFT
+005ce760,smartie_attach_to_base,smartie_attach_to_base,,0.37,propagated,DRAFT
+0058c220,reaper_fire_sword,reaper_fire_sword(OBJECT*),OBJECT*,0.37,propagated,DRAFT
+00518a60,reaper_animselect,reaper_animselect,,0.37,propagated,DRAFT
+005f2da0,vimp_turn,vimp_turn(OBJECT*),OBJECT*,0.37,propagated,DRAFT
+004feb50,in_fov,in_fov,,0.37,propagated,DRAFT
+005dfcd0,teammecc_setup_slaves,teammecc_setup_slaves,,0.37,propagated,DRAFT
+004ea1b0,sound_stop_player,sound_stop_player,,0.37,propagated,DRAFT
+00594660,evilreaper_scan_for_enemy,"evilreaper_scan_for_enemy(OBJECT*, float)","OBJECT*, float",0.37,propagated,DRAFT
+005312b0,marker_spline_eval_spline,marker_spline_eval_spline,,0.37,propagated,DRAFT
+0058d360,reaper_finish_smartie_grab,reaper_finish_smartie_grab(OBJECT*),OBJECT*,0.37,propagated,DRAFT
+005bf710,rpman_bunker_start,"rpman_bunker_start(OBJECT*, /*same*/, int)","OBJECT*, /*same*/, int",0.37,propagated,DRAFT
+005d52c0,sonak_control,sonak_control(OBJECT*),OBJECT*,0.36,propagated,DRAFT
+004e9fc0,fxobj_delete,"fxobj_delete(OBJECT*, FxOspec*, int)","OBJECT*, FxOspec*, int",0.36,propagated,DRAFT
+00566ed0,PhysicsExCalcControledModelSpeeds,PhysicsExCalcControledModelSpeeds,,0.36,propagated,DRAFT
+005a7860,rpboat_lock_to_boat,"rpboat_lock_to_boat(OBJECT*, /*same*/)","OBJECT*, /*same*/",0.36,propagated,DRAFT
+005583d0,sound_interrupt_sequence,sound_interrupt_sequence,,0.36,propagated,DRAFT
+00557290,mission_trigger,mission_trigger(OBJECT*),OBJECT*,0.36,propagated,DRAFT
+005bf0b0,barracks_shot,barracks_shot,,0.36,propagated,DRAFT
+005a2b00,ripper_large_move,ripper_large_move(OBJECT*),OBJECT*,0.36,propagated,DRAFT
+004a1320,get_floor_z_point,get_floor_z_point,,0.36,propagated,DRAFT
+0050a120,kabuto_death,kabuto_death(OBJECT*),OBJECT*,0.36,propagated,DRAFT
+005822f0,reaper_can_cast_spell_specific,"reaper_can_cast_spell_specific(OBJECT*, ObjSpecReaper*, int)","OBJECT*, ObjSpecReaper*, int",0.36,propagated,DRAFT
+004fecb0,rndfloatrange,rndfloatrange,,0.36,propagated,DRAFT
+005925f0,reaper_activate_partysmartie,reaper_activate_partysmartie(OBJECT*),OBJECT*,0.36,propagated,DRAFT
+005a7cb0,rpboat_damage,rpboat_damage(OBJECT*),OBJECT*,0.36,propagated,DRAFT
+00582d70,reaper_handle_turbo_spell,reaper_handle_turbo_spell(OBJECT*),OBJECT*,0.36,propagated,DRAFT
+00507fa0,throw_collision_callback,throw_collision_callback,,0.36,propagated,DRAFT
+005abb80,rpman_kamikazi_explode,rpman_kamikazi_explode(OBJECT*),OBJECT*,0.35,propagated,DRAFT
+005d5f40,sonak_scan_for_enemy,"sonak_scan_for_enemy(OBJECT*, float)","OBJECT*, float",0.35,propagated,DRAFT
+005322b0,getfirelockandgun,"getfirelockandgun(OBJECT*, unsigned char, OBJECT**, int*)","OBJECT*, unsigned char, OBJECT**, int*",0.35,propagated,DRAFT
+004ffb40,gun_find_right,gun_find_right,,0.35,propagated,DRAFT
+0056a4a0,piranha_process,piranha_process,,0.35,propagated,DRAFT
+004994f0,buoy_advance,"buoy_advance(OBJECT*, int)","OBJECT*, int",0.35,propagated,DRAFT
+0056fc10,PROJ_CreateBasic,PROJ_CreateBasic,,0.35,propagated,DRAFT
+004e4140,vimp_control,vimp_control(OBJECT*),OBJECT*,0.35,propagated,DRAFT
+005a03f0,ripper_choose_enemy,"ripper_choose_enemy(OBJECT*, float)","OBJECT*, float",0.35,propagated,DRAFT
+0046d170,multi_display_player_cursor_info,multi_display_player_cursor_info(void),void,0.35,propagated,DRAFT
+005067d0,item_drop_item,item_drop_item,,0.35,propagated,DRAFT
+00508ad0,ObjectLockOnKabuto,ObjectLockOnKabuto,,0.35,propagated,DRAFT
+005a1500,ripper_medium_choose_chaseloc,"ripper_medium_choose_chaseloc(OBJECT*, float)","OBJECT*, float",0.35,propagated,DRAFT
+0053de60,vsoul_find_nearest_reaper,"vsoul_find_nearest_reaper(OBJECT*, float)","OBJECT*, float",0.35,propagated,DRAFT
+0051bd90,evilreaper_set_new_location,"evilreaper_set_new_location(OBJECT*, int)","OBJECT*, int",0.34,propagated,DRAFT
+00558240,mecc_exit_bush,mecc_exit_bush,,0.34,propagated,DRAFT
+00595070,evilreaper_setup_turbo,"evilreaper_setup_turbo(OBJECT*, P3D*)","OBJECT*, P3D*",0.34,propagated,DRAFT
+004bdfa0,corpse_create,corpse_create,,0.34,propagated,DRAFT
+005a6660,ripper_chase_angle,"ripper_chase_angle(OBJECT*, P3D*, float)","OBJECT*, P3D*, float",0.34,propagated,DRAFT
+004a3660,collide_objects,collide_objects(OBJECT*),OBJECT*,0.34,propagated,DRAFT
+005e0bd0,teammecc_get_hide_set,"teammecc_get_hide_set(OBJECT*, int)","OBJECT*, int",0.34,propagated,DRAFT
+00595d80,evilreaper_select_firewall_loc,evilreaper_select_firewall_loc(OBJECT*),OBJECT*,0.34,propagated,DRAFT
+005e1110,teammecc_get_new_wander_loc,"teammecc_get_new_wander_loc(OBJECT*, int, P3D*, float, float, /*same*/, float, float, float, float)","OBJECT*, int, P3D*, float, float, /*same*/, float, float, float, float",0.34,propagated,DRAFT
+00520cf0,lift_update_rider_position,lift_update_rider_position(OBJECT*),OBJECT*,0.34,propagated,DRAFT
+005f3f60,vimp_get_wanted_loc,vimp_get_wanted_loc(OBJECT*),OBJECT*,0.34,propagated,DRAFT
+005d2c80,charger_change_anim,"charger_change_anim(OBJECT*, int, int, SDKY, float, int)","OBJECT*, int, int, SDKY, float, int",0.34,propagated,DRAFT
+00638ba0,distance2d,"distance2d(P3D*, /*same*/)","P3D*, /*same*/",0.34,propagated,DRAFT
+00531580,formation_create_sonak,"formation_create_sonak(OBJECT*, int)","OBJECT*, int",0.34,propagated,DRAFT
+004650b0,IconDefPickupType,IconDefPickupType,,0.34,propagated,DRAFT
+005cccf0,smartie_party_lock,"smartie_party_lock(OBJECT*, /*same*/, int)","OBJECT*, /*same*/, int",0.34,propagated,DRAFT
+00499dd0,camera_is_firstp,camera_is_firstp,,0.34,propagated,DRAFT
+004e3060,make_dust_ball,make_dust_ball,,0.33,propagated,DRAFT
+004ffba0,reaper_init_trails,reaper_init_trails,,0.33,propagated,DRAFT
+00583020,reaper_turbo_towards_moving_target,reaper_turbo_towards_moving_target(OBJECT*),OBJECT*,0.33,propagated,DRAFT
+00593f70,evilreaper_get_turbo_loc,"evilreaper_get_turbo_loc(OBJECT*, P3D*, float, float, float, /*same*/)","OBJECT*, P3D*, float, float, float, /*same*/",0.33,propagated,DRAFT
+00494b10,meccbaseitem_start_building,meccbaseitem_start_building,,0.33,propagated,DRAFT
+0057e920,reaperbasebldg_start_building,reaperbasebldg_start_building,,0.33,propagated,DRAFT
+0044d230,_vfprintf_r,_vfprintf_r,,0.33,string-anchor(weak),COLLISION_REVIEW
+004ab610,PS2BaseViewTextRender,PS2BaseViewTextRender,,0.33,string-anchor(weak),COLLISION_REVIEW
+004bbee0,_vfprintf_r,_vfprintf_r,,0.33,string-anchor(weak),COLLISION_REVIEW
+0052f3f0,showchat_mission_objective,showchat_mission_objective(int),int,0.33,string-anchor(weak),COLLISION_REVIEW
+0053c710,reaper_check_enter_teleport,reaper_check_enter_teleport(OBJECT*),OBJECT*,0.33,string-anchor(weak),COLLISION_REVIEW
+005e2de0,mecc_set_fire,"mecc_set_fire(OBJECT*, int)","OBJECT*, int",0.33,propagated,DRAFT
+00584000,reaper_stop_looping_effects,reaper_stop_looping_effects,,0.33,propagated,DRAFT
+0055f5f0,offspring_set_chase_location,"offspring_set_chase_location(OBJECT*, int)","OBJECT*, int",0.33,propagated,DRAFT
+004ea2b0,fx_resume,fx_resume,,0.33,propagated,DRAFT
+0056bd70,playerobj_normal_logic,playerobj_normal_logic,,0.33,propagated,DRAFT
+00584b70,reaper_change_bow,reaper_change_bow(OBJECT*),OBJECT*,0.33,propagated,DRAFT
+005b10c0,fire_sniper_shot,"fire_sniper_shot(OBJECT*, /*same*/)","OBJECT*, /*same*/",0.33,propagated,DRAFT
+00569c70,item_drop_all_random,item_drop_all_random,,0.33,propagated,DRAFT
+0055f290,offspring_can_attack,offspring_can_attack(OBJECT*),OBJECT*,0.33,propagated,DRAFT
+005a62f0,make_spit,"make_spit(OBJECT*, P3D*, float)","OBJECT*, P3D*, float",0.33,propagated,DRAFT
+00497ea0,blood_from_point,blood_from_point,,0.33,propagated,DRAFT
+0049bab0,charger_set_charge_location,"charger_set_charge_location(OBJECT*, int)","OBJECT*, int",0.33,propagated,DRAFT
+00491420,army_create_ripper,"army_create_ripper(OBJECT*, ArmyOrder*, int)","OBJECT*, ArmyOrder*, int",0.32,propagated,DRAFT
+0055e390,object_setup_specialtype,object_setup_specialtype,,0.32,propagated,DRAFT
+0058e5b0,reaper_fire_move,reaper_fire_move,,0.32,propagated,DRAFT
+005f43a0,vimp_update_nervousness,vimp_update_nervousness(OBJECT*),OBJECT*,0.32,propagated,DRAFT
+005fac30,ai_clear_move_goal,ai_clear_move_goal,,0.32,propagated,DRAFT
+00508da0,FootDust,FootDust,,0.32,propagated,DRAFT
+005864d0,reaper_drop_current_weapon,reaper_drop_current_weapon(OBJECT*),OBJECT*,0.32,propagated,DRAFT
+00638870,diff_rangle,"diff_rangle(float, float)","float, float",0.32,propagated,DRAFT
+005f36f0,vimp_animselect,vimp_animselect,,0.31,propagated,DRAFT
+004542b0,powf,powf,,0.31,propagated,DRAFT
+005f99b0,world_ripple_create,world_ripple_create,,0.31,propagated,DRAFT
+00539f90,mecc_to_bush,mecc_to_bush,,0.31,propagated,DRAFT
+005c55f0,line_of_sight_grid,line_of_sight_grid,,0.31,propagated,DRAFT
+005f0420,make_shot,"make_shot(OBJECT*, P3D*, float)","OBJECT*, P3D*, float",0.31,propagated,DRAFT
+00566ab0,PhysicsExTargetVelocitySlope,PhysicsExTargetVelocitySlope,,0.31,propagated,DRAFT
+00582210,reaper_xhair_validate,"reaper_xhair_validate(OBJECT*, void*)","OBJECT*, void*",0.31,propagated,DRAFT
+00500b40,hurt_area,hurt_area,,0.31,propagated,DRAFT
+0049dd90,get_floor_z_point_plat,get_floor_z_point_plat,,0.31,propagated,DRAFT
+00566270,PhysicsExGroundCollision,PhysicsExGroundCollision,,0.30,propagated,DRAFT
+004a09f0,collide_movement_process,collide_movement_process,,0.30,propagated,DRAFT
+00595c60,evilreaper_select_teleport_loc,evilreaper_select_teleport_loc(OBJECT*),OBJECT*,0.30,propagated,DRAFT
+0058ca20,reaper_tornado_create,reaper_tornado_create,,0.30,propagated,DRAFT
+00566c70,PhysicsExApplyControls2,PhysicsExApplyControls2,,0.30,propagated,DRAFT
+00558570,reaper_multi_firecircle_shot,reaper_multi_firecircle_shot(OBJECT*),OBJECT*,0.30,propagated,DRAFT
+005a7960,rpboat_animselect,rpboat_animselect(OBJECT*),OBJECT*,0.30,propagated,DRAFT
+00445c50,_vfprintf_r,_vfprintf_r,,0.17,string-anchor(weak),COLLISION_REVIEW
+00469a90,smartie_move,smartie_move,,0.17,string-anchor(weak),COLLISION_REVIEW
+0053d120,reaper_check_enter_jet_ski,reaper_check_enter_jet_ski(OBJECT*),OBJECT*,0.17,string-anchor(weak),COLLISION_REVIEW
+0058cd20,reaper_check_enter_jet_ski,reaper_check_enter_jet_ski(OBJECT*),OBJECT*,0.17,string-anchor(weak),COLLISION_REVIEW

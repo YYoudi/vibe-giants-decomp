@@ -16,12 +16,47 @@ and signatures are ground truth for naming the stripped PC `GiantsMain.exe`.
 | `SLUS_201.78.rodata_strings.txt` | PS2 `.rodata` strings (for string-based PC↔PS2 matching) |
 | `MODULE_INDEX.md` | Functions grouped by semantic prefix (scannable) |
 | `lookup.py` | Search the database by keyword/regex/prefix/global |
+| `match_pc_ps2.py` | **String-anchor matcher**: shared unique strings → PC↔PS2 seeds |
+| `match_propagate.py` | **Call-graph propagation**: grows seeds via 2-seed agreement |
+| `verify_matches.py` | String-semantic sanity check on propagated matches |
 
 ## Regenerating
 
 ```bash
-python extract_ps2_symbols.py   # needs: pyelftools, 7z at C:\Program Files\7-Zip
+python extract_ps2_symbols.py     # ISO → ELF → symbols (pyelftools, 7z)
+python match_pc_ps2.py            # → pc_ps2_matches.csv/.md (string anchors)
+python match_propagate.py         # → pc_ps2_matches_full.csv/.md (+ propagation)
+python verify_matches.py          # → verify_report.txt
 ```
+
+## Automated PC↔PS2 matching — method & reliability
+
+**Two-stage pipeline, most-reliable signal first:**
+
+1. **String anchors** (`match_pc_ps2.py`): disassemble PS2 `.text` word-by-word
+   (capstone MIPS-LE, skipping unknown R5900 opcodes), track `lui`/`addiu`/`ori`/`addu`
+   address formation to resolve `.rodata`/`.data` string references per PS2 function;
+   intersect with string literals extracted from each PC Ghidra decompiled body. A pair
+   sharing a *rare* string anchors a match.
+2. **Call-graph propagation** (`match_propagate.py`): the string anchors whose PS2
+   function is claimed by exactly one PC function become **seeds** (17, e.g.
+   `firewall_create_fire`←SpellHintFire, `inv_award_item`←InvChPickupItem). Then iterate:
+   F↔G matched when **≥2 independent matched parent-pairs** both call (F,G), mutual
+   uniqueness required both ways, confidence decays 0.75×/hop.
+
+**Result: 378 matches** (17 string seeds + 344 propagated), tiered by confidence.
+
+**Independent validation — MIPS/x86 size ratio.** Genuine matches compile the same
+algorithm to two architectures, so MIPS-byte ÷ x86-size clusters around a constant.
+Matched pairs: stdev **1.31**, **81 %** within 0.4–2.5× of median (61 % within 0.6–1.7×)
+vs random pairs stdev **7.58**, only **30 %/17 %**. Tight clustering confirms signal.
+
+| conf | ~count | use |
+|------|--------|-----|
+| 1.0 / 0.9 | 26 | string-anchored — apply directly |
+| 0.6–0.8 | ~45 | 1-hop propagation — apply, light review |
+| 0.4–0.5 | ~238 | multi-hop — draft names, review on touch |
+| 0.3 | ~73 | deep propagation — candidate, verify first |
 
 ## How to use during PC reverse-engineering
 
