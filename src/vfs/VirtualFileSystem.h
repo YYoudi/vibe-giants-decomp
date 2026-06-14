@@ -93,6 +93,10 @@ uint32_t VFSFileLookup(char* filename);  // FUN_00623f00
 int VFS_GetFileCount();
 const char* VFS_GetFileName(int i);
 
+// Extract a file from the VFS by name into outBuf. Returns uncompressed size
+// (0 on failure). Handles GZP LZ77 decompression (compr=1).
+uint32_t VFSExtractFile(const char* name, unsigned char* outBuf, unsigned int outBufSize);
+
 // ─── VFSFileOpen (FUN_00624cb0) — FAIL ────────────────────────
 // Mutex-locked, checks zip vs raw file, creates stream reader.
 // 1 caller (FUN_005791c0), 18 callees.

@@ -71,6 +71,72 @@ const char* VFS_GetFileName(int i) {
     return (i >= 0 && i < g_vfsCount) ? g_vfsEntries[i].name : nullptr;
 }
 
+// Find a VFS entry by name (case-insensitive). Returns index or -1.
+static int VFSFindEntry(const char* name) {
+    if (!name) return -1;
+    for (int i = 0; i < g_vfsCount; i++)
+        if (vfsStrEq(g_vfsEntries[i].name, name)) return i;
+    return -1;
+}
+
+// LZ77 decompressor (ported from GiantZiP Unit3.pas Decompress — authoritative).
+// buf=compressed input (starting at the payload, after the 16-byte sub-header),
+// dcbuf=output, finalsize=expected uncompressed size.
+static void GzpDecompress(const uint8_t* buf, uint8_t* dcbuf, long finalsize) {
+    long i = 0, j = 0;
+    const long vbufstart = 0xFEE;
+    int decbits = 8;
+    uint8_t decbyte = 0;
+    while (j < finalsize) {
+        if (decbits == 8) { decbyte = buf[i++]; decbits = 0; }
+        if (((decbyte >> decbits) & 1) == 0) {
+            // back-reference
+            long decpos = ((buf[i] + ((long)(buf[i+1] & 0xF0) << 4) - vbufstart - j) & 0xFFF) - 4096 + j;
+            long declen = (buf[i+1] & 0x0F) + 3;
+            i += 2;
+            while (declen > 0) {
+                dcbuf[j] = (decpos >= 0) ? dcbuf[decpos] : 32;  // space if before-start
+                j++; decpos++; declen--;
+            }
+        } else {
+            // literal
+            dcbuf[j++] = buf[i++];
+        }
+        decbits++;
+    }
+}
+
+// Extract a file from the VFS by name into outBuf (caller-allocated, >= uncompressedSize).
+// Returns the uncompressed size, or 0 on failure. GZP spec: at dataOffset, a
+// 16-byte sub-header [sizeCmp:u32][sizeUncmp:u32][date:u32][compr:u32], then payload.
+uint32_t VFSExtractFile(const char* name, uint8_t* outBuf, uint32_t outBufSize) {
+    int idx = VFSFindEntry(name);
+    if (idx < 0) return 0;
+    const VfsEntry& e = g_vfsEntries[idx];
+    char path[512];
+    snprintf(path, sizeof(path), "Bin\\%s", e.archiveName);
+    HANDLE h = CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, nullptr,
+                           OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    if (h == INVALID_HANDLE_VALUE) return 0;
+    SetFilePointer(h, e.dataOffset, nullptr, FILE_BEGIN);
+    uint32_t hdr[4];  // sizeCmp, sizeUncmp, date, compr
+    DWORD nr; ReadFile(h, hdr, 16, &nr, nullptr);
+    uint32_t sizeCmp = hdr[0], sizeUncmp = hdr[1], compr = hdr[3];
+    if (sizeUncmp > outBufSize) { CloseHandle(h); return 0; }
+    uint8_t* payload = (uint8_t*)malloc(sizeCmp > 16 ? sizeCmp - 16 : sizeCmp);
+    uint32_t payLen = (sizeCmp > 16) ? sizeCmp - 16 : sizeCmp;
+    ReadFile(h, payload, payLen, &nr, nullptr);
+    CloseHandle(h);
+    if (compr == 1) {
+        GzpDecompress(payload, outBuf, sizeUncmp);  // LZ77
+    } else {
+        uint32_t cp = payLen < sizeUncmp ? payLen : sizeUncmp;
+        memcpy(outBuf, payload, cp);
+    }
+    free(payload);
+    return sizeUncmp;
+}
+
 const char* VFS_GetDataPath(int) { return "Bin"; }
 const char* VFS_GetStreamPath(int) { return "Bin"; }
 
