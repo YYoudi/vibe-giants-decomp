@@ -1896,8 +1896,8 @@ void PlayerScoreUpdate(int param_1);  // FUN_0045b080 — 6c/10e
 void NetworkEntityUpdate(int param_1);  // FUN_00572990 — 6c/10e
 uint32_t TaskWaitAny(uint32_t param_1, int param_2);  // FUN_0060c0d0 — 6c/13e
 uint32_t TaskWaitAll(uint32_t param_1, int param_2);  // FUN_0060d370 — 6c/13e
-void EntitySmartieProcess(int param_1);  // FUN_004a9570 — 6c/15e
-void RenderEntityProcess(int param_1);  // FUN_004e3c50 — 6c/15e
+void EntitySmartieProcess(int param_1);  // FUN_004a9570 — PS2 "smartie_move" (conf 1.0). 6c/15e
+void RenderEntityProcess(int param_1);  // FUN_004e3c50 — PS2 "firewall_create_fire" (conf 0.9, MIS-NAMED by recomp). 6c/15e
 void EntityVimpProcess(int param_1);  // FUN_0058cef0 — 6c/19e
 
 // ═══════════════════════════════════════════════════════════
@@ -1992,7 +1992,7 @@ void RenderFn536470();  // FUN_00536470 — 3c/1e
 void RenderFn558130();  // FUN_00558130 — 3c/1e
 void RenderFn565580();  // FUN_005654a0 — 3c/1e
 void FloatOp565A80();  // FUN_00565a80 — 3c/1e
-void SwitchOp5D29A0();  // FUN_005d29a0 — 3c/1e
+void SwitchOp5D29A0();  // FUN_005d29a0 — PS2 "mecc_special_weapon_logic" (conf 0.9). 3c/1e
 void FloatOp5E0FD0();  // FUN_005e0fd0 — 3c/1e
 void RenderFn5E8BC0();  // FUN_005e8bc0 — 3c/1e
 void RenderFn5F54D0();  // FUN_005f54d0 — 3c/1e

@@ -8265,18 +8265,21 @@ uint32_t TaskWaitAll(uint32_t param_1, int param_2)
     return 0;
 }
 
-// EntitySmartieProcess (FUN_004a9570) — 6 callers, 15 callees.
-// Processes Smartie NPC entity — AI, animations, interactions.
+// SmartieMove (FUN_004a9570) — PS2-proven name (conf 1.0, 7 shared strings:
+// BAZ_CT29/BAZ_CT30/DELCT29...). 6 callers, 15 callees. Drives Smartie NPC
+// movement/AI. (Was guessed "EntitySmartieProcess" — PS2 symbol confirms.)
 void EntitySmartieProcess(int param_1)
 {
     // AI state machine, pathfinding, animation blending
 }
 
-// RenderEntityProcess (FUN_004e3c50) — 6 callers, 15 callees.
-// Processes render entity — updates transform, LOD, materials.
+// FirewallCreateFire (FUN_004e3c50) — PS2-proven name (conf 0.9, strings:
+// SpellHintFire). 6 callers, 15 callees. Creates the firewall spell effect.
+// (Recomp had MIS-NAMED this "RenderEntityProcess" from call-graph location —
+// PS2 debug symbol corrects: it is the firewall spell creator, NOT rendering.)
 void RenderEntityProcess(int param_1)
 {
-    // Update render state, select LOD, submit to queue
+    // Firewall spell creation logic
 }
 
 // EntityVimpProcess (FUN_0058cef0) — 6 callers, 19 callees.
@@ -8530,7 +8533,7 @@ void RenderFn536470() {}  // FUN_00536470
 void RenderFn558130() {}  // FUN_00558130
 void RenderFn565580() {}  // FUN_00565580
 void FloatOp565A80() {}  // FUN_00565a80 — floating point operation
-void SwitchOp5D29A0() {}  // FUN_005d29a0 — switch-based dispatch
+void SwitchOp5D29A0() {}  // FUN_005d29a0 — PS2-proven "mecc_special_weapon_logic" (conf 0.9, PhErrNotGround). Mecc special-weapon dispatch.
 void FloatOp5E0FD0() {}  // FUN_005e0fd0 — floating point operation
 void RenderFn5E8BC0() {}  // FUN_005e8bc0
 void RenderFn5F54D0() {}  // FUN_005f54d0
