@@ -11,6 +11,9 @@
 # ─── GAME FILES & COPYRIGHTED BINARIES (1.5 GB+, do NOT distribute) ───────────
 /GameFiles/
 /RESSOURCES_FOR_AI/
+# PS2 prototype ELF — copyrighted binary, derived from the ISO above.
+# Only the text/CSV symbol artifacts in ps2_symbols/ are committed.
+/ps2_symbols/SLUS_201.78
 
 # ─── GHIDRA PROJECT & GENERATED EXPORTS (huge, regenerable from the .exe) ─────
 /ghidra_projects/

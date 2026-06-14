@@ -1,0 +1,896 @@
+                00000000000000000123456789abcdef
+                0000000000000000Inf
+         (((((                  
+## internel error in libkernl.a!
+%12f %12f %12f %12f 
+%30s %i/%i
+%d/%d Working
+%s%.2d/%.2d/%.4d 
+%s%.2d:%.2d:%.2d
+%s%.2d:%.2d:%.2d%s
+%s%4d/%.2d/%.2d 
+(a) invalid motion_type(%d)-0
+(b) invalid motion_type(%d)-1
+(c) invalid motion_type(%d)-2
+(null)
+***Uninitialized***
+***Unused***
+---------------------------------------------------
+-60*24<=diff && diff <= 60*24
+0123456789ABCDEF
+0123456789abcdef
+10bad_typeid
+13bad_exception
+14__si_type_info
+16__attr_type_info
+16__func_type_info
+16__ptmd_type_info
+16__ptmf_type_info
+16__user_type_info
+17__array_type_info
+17__class_type_info
+19__builtin_type_info
+19__pointer_type_info
+1h!"3
+433333
+83O8v?
+8bad_cast
+9bad_alloc
+9exception
+9type_info
+<D1_CHCR=%08x:
+<D2_CHCR=%08x:
+<Empty>
+<VIF1_STAT=%08x:
+= Skip to the next picture =
+>U2l>B
+>pts buffer overflow
+?333333
+?433333
+?All Missions
+?Base Mecc 1/Mecc Start Point
+?CD57
+?ChatBoxHint
+?PhErrNotGroundOrWater
+?W_STORY1
+?[mus_Score::add]
+?bin/Text/GTEXTENG.BIN
+?bin\mainmenu\GiantsR1.pss
+?ffffff
+?gfffff
+@ffffff
+AAAAAA
+AIMeccAttackLoc
+AIMeccAttackTarg
+AIMeccBusy
+AIMeccHide
+AIMeccNone
+AIMeccPrefix
+AIMeccRange
+AIMeccReturn
+ALL WEAPONS ON
+AM_BCHDL
+AM_BCHNL
+AM_BRDS1
+AM_BRDS2
+AM_BRDS3
+AM_BRDS4
+AM_BRDS5
+AM_BRDS6
+AM_BRDS7
+AM_BRDS8
+AM_BRDS9
+AM_BRGL1
+AM_DRMS1
+AM_DRMS2
+AM_DRMS3
+AM_DRMS4
+AM_DRMS5
+AM_DRMS6
+AM_DRMS7
+AM_DRMS8
+AM_DSAN1
+AM_DSAN2
+AM_DSAN3
+AM_DSAN4
+AM_DSAN5
+AM_DSAN6
+AM_DSAN7
+AM_DSAN8
+AM_DSAN9
+AM_MS1I2
+AM_PBRL1
+AM_RPMBL
+AM_RS32A
+AM_SMTS1
+AM_SMTS2
+AM_SMTS3
+AM_SMTS4
+AM_SMTS5
+AM_SMTS6
+AM_STRS1
+AM_STRS2
+AM_STRS3
+AM_STRS4
+AM_TRMBL
+AM_TRML1
+AM_TRSL1
+AM_TRSL2
+AM_VOLCL
+AM_VOLS1
+AM_VOLS2
+AM_VOLS3
+AM_VOLS4
+AM_WICS1
+AM_WICS2
+AM_WICS3
+AM_WICS4
+AM_WINL1
+AM_WINL2
+AM_WINL3
+AM_WINS1
+AM_WINS2
+AM_WINS3
+AM_WINS4
+AM_WTRL1
+AM_WTRL2
+ANGRY RED WORLD SELECT
+Army Generic %d
+Army Platoon %d
+Assertion Failed @ %s on %d
+Assertion Failed @ %s on %d : %s
+BAX007_1
+BAX007_2
+BAZ008_1
+BAZ040_1
+BAZ040_2
+BAZ040_3
+BAZ040_4
+BAZ067_1
+BAZ070_1
+BAZ_CT01
+BAZ_CT06
+BAZ_CT09
+BAZ_CT11
+BAZ_CT29
+BAZ_CT30
+BAZ_CT47
+BAZ_CT57
+BAZ_CT60
+BAZ_CT61
+BAZ_CT63
+BAZ_CT64
+BAZ_CT65
+BBBBBB
+BIN/GDATA.GBN
+BIN/ICONS/icon.sys
+BIN/ICONS/view.icn
+BIN/WHITE.PTX
+BIN/WPNDEFS.BIN
+BIN/WRLDLST.BIN
+BIN\DECALS\DECALS.PTX
+BIN\GAMEFONT\SMFONT.PTX
+BIN\ICONS\MC_ICONS.PTX
+BIN\MAINMENU\INTRO.BIN
+BIN\MAINMENU\MANMNU.BIN
+BIN\SFX\Giants.scb
+BIN\SFX\IOPD.sfx
+BIN\SFX\IOPK.sfx
+BIN\SFX\IOPM.sfx
+BIN\SFX\KSTORY1.sfx
+BIN\SFX\KSTORY2.sfx
+BIN\SFX\KSTORY3.sfx
+BIN\SFX\KSTORY4.sfx
+BIN\SFX\KSTORY5.sfx
+BIN\SFX\MSTORY1.sfx
+BIN\SFX\MSTORY2.sfx
+BIN\SFX\MSTORY3.sfx
+BIN\SFX\MSTORY4.sfx
+BIN\SFX\MSTORY5.sfx
+BIN\SFX\Menu.sfx
+BIN\SFX\MusicD.sfx
+BIN\SFX\MusicK.sfx
+BIN\SFX\MusicM.sfx
+BIN\SFX\RSTORY1.sfx
+BIN\SFX\RSTORY2.sfx
+BIN\SFX\RSTORY3C.sfx
+BIN\SFX\RSTORY4.sfx
+BIN\SFX\RSTORY5.sfx
+BIN\SFX\VSTREAMS.SFX
+BOR041_1
+BOR054_1
+BOUNDING BOX OFF
+BOUNDING BOX ON
+BSCREAM1
+BSCREAM2
+Base Kabuto
+Base Mecc 2/Reaper Start Point
+Base Reaper 1/Kabuto Start Point
+Base Reaper 2
+BaseBldg
+BaseBldgMeccBase
+BaseBldgReaperBase
+BaseChatMCPHouseDone
+BaseChatRpPHouseDone
+BaseHintAddSmartie
+BaseHintOutOfFood
+BasePHMeccGyropad
+BasePHMeccPort
+BasePHMeccSam
+BasePHMeccShop
+BasePHMeccSpecial
+BasePHMeccTower
+BasePHMeccTurret
+BasePHRpPier
+BasePHRpPort
+BasePHRpSam
+BasePHRpShop
+BasePHRpSpecial
+BasePHRpTower
+BasePHRpTurret
+BaseStateBuilding
+BaseStateBuilt
+BaseStatePaused
+BaseStateTentative
+BaseStateUnknown
+BaseWorking
+BldgDescr
+Borjoyzee
+C:/Projects/GiantsPsx2/Source/GiantsPS2/decal.cpp
+C:/Projects/GiantsPsx2/Source/GiantsPS2/mission.cpp
+C:/Projects/GiantsPsx2/Source/GiantsPS2/ps2temp.cpp
+C:/Projects/GiantsPsx2/Source/PS2System/dma.cpp
+C:/Projects/GiantsPsx2/Source/PS2System/gs.cpp
+C:/Projects/GiantsPsx2/Source/PS2System/gsa.cpp
+COMPLETE
+CSC handler error
+Camera01
+Camera02
+Camera02.Target
+Can't open rom0:ROMVER
+Can't read rom error
+Can't start thread for streaming.
+ChatColorDisciple
+ChatColorMission
+ChatColorPlayerAll
+ChatColorPlayerTeam
+ChatColorSmartie
+ChatColorSystem
+CompileSet: Weird Floating Point Error?!
+D1_MADR=%08x:
+D1_QWC=%08x>
+D1_TADR=%08x:
+D2_MADR=%08x:
+D2_QWC=%08x>
+D2_TADR=%08x:
+DEL009_1
+DEL019_1
+DEL026_1
+DEL046_1
+DEL047_1
+DEL047_2
+DELCT15_2
+DELCT23_2
+DELCT24_2
+DELCT29_1
+DEX001_1
+DEX001_4
+DEX001_6
+DEX002_4
+DEX002_6
+DEX005_1
+DEX005_2
+DElCT24_2
+DISCONNECT
+DMA ADD not active
+D_B_smartbrick
+DateNotation=%d
+Default Tree
+DiskReady 0
+DiskReady ended
+Dynamic shadow texture
+ERROR
+EXECCMD
+Error code detected(BDEC)
+Exited...?
+FAILED
+FINDCTP1
+F_AM_BCHNL
+F_AM_TRELL
+F_BLOW_UP
+F_BORJOYZEE
+F_BUBBLE
+F_CHANNEL_ISLANDS
+F_CHARGER
+F_DELPHI_CHANGES
+F_DELPHI_LEAVES
+F_DRAWBRIDGE
+F_FREEDOM
+F_GETBUSH
+F_GETFOOD
+F_GETSMARTIE
+F_GET_RPG
+F_GIANTS_FACE_OFF
+F_HARAKIRI
+F_JETPACK
+F_JETSKI
+F_KABUTOSTONE
+F_KABUTO_FIGHT
+F_KABUTO_STEP_ON_SMARTIE
+F_LAND_BOAT
+F_LOVE_STORY
+F_ME_HDFL1
+F_MILL_GUN
+F_MRHORN
+F_MS_MSFTO
+F_NICK_HEARTBEAT2
+F_OUT_OF_PORTAL
+F_POPUPBOMB
+F_R31_DELPH_WINS
+F_R31_RH_WINS
+F_R32_DELPH_WINS
+F_R32_RH_WINS
+F_R33_DELPH_WINS
+F_R33_RH_WINS
+F_R5_DELPHI_WINS
+F_R5_RH_WINS
+F_RESCUE_MECCS
+F_RETURNWIFE
+F_ROCKETLAUNCHER
+F_ROCK_CRUSH
+F_RPARECOMING
+F_SAVEWIFE
+F_SAVE_REG
+F_SAVE_SM
+F_SMARTIE_BITE
+F_THROW_OFF_CLIFF
+F_TIM_DAD1
+F_TORTURESQUARE
+F_YAN_PLEADS
+FlagHintDriveGyro
+FlagHintTeleport
+Flying Patrol %d
+Fx Texture Animation
+Fx Texture Frames
+GIF_STAT=%08x>
+GOR001_1
+GORCT23_2
+GORCT67_1
+GOR_CT01
+GOR_CT04
+GOR_CT06
+GOR_CT09
+GOR_CT11
+GOR_CT15
+GOR_CT24
+GOR_CT29
+GOR_CT30
+GOR_CT47
+GOR_CT48
+GOR_CT51
+GOR_CT57
+GOR_CT59
+GOR_CT61
+GOR_CT62
+GOR_CT64
+GOR_CT69
+Gfmodf
+GiantFont_Eng
+GiantsPS2
+HintWaitRepair
+I?h!"3
+I@h!"4
+INFINITE AMMO
+INTERRUPT OVERLAP - gs_drawDoneHandler - %d
+INTERRUPT OVERLAP - gs_vblankHandler - %d
+INTERRUPT OVERLAP - gs_xferDoneHandler - %d
+INVINCIBILITY  OFF
+INVINCIBILITY ON
+Infinity
+InstantHealthLarge
+InstantHealthMed
+InvChDropItem
+InvChPickupItem
+Invalid macroblock_address_increment code(0x%08x)
+Invalid macroblock_type code: 0
+Invalid modion type -- ignored(%d)
+JETFUEL INFINITE
+JETFUEL LIMITED
+JS_FINIS
+JS_MBOUY
+JS_START
+Jaw Bottom
+KA_2HAND
+KA_ATTCK
+KA_BELCH
+KA_BELLY
+KA_BRETH
+KA_CANON
+KA_ELBOW
+KA_FETCH
+KA_JSTMP
+KA_OFDIE
+KA_RETRN
+KA_SCRAT
+KA_STOMP
+Kabuto UsrAnm Memory
+Kabutomessage1
+Kabutomessage2
+Kabutomessage3
+Kamikaze %d
+L_ankle01
+L_eyebrow
+L_foot01
+L_shin01
+L_shoulder
+L_thigh01
+L_toes01
+Libcdvd Exit
+Libcdvd bind err %d CD_Init %d
+Libcdvd bind err CdDiskReady
+Libcdvd bind err CdSearchFile
+Libcdvd bind err N CMD
+Libcdvd bind err PowerOffCB
+Libcdvd bind err S cmd
+LoadBuffer
+Loading...
+MEC001_1
+MIPPOLE OFF
+MIPPOLE ON
+MODULES\IOPSFX.IRX
+MODULES\LIBSD.IRX
+MODULES\MCMAN.IRX
+MODULES\MCSERV.IRX
+MODULES\PADMAN.IRX
+MODULES\SDRDRV.IRX
+MODULES\SIO2MAN.IRX
+MPChFlagRetTime
+Map Screen
+MbP?;
+McChDead
+McChEnemyDead
+McChEnemyShieldDown
+McChLowHealth
+McChResting
+McChRevive
+MeccBase
+Menu_txt_Controls
+Menu_txt_Delphi_Cntrls
+Menu_txt_Kabuto_Cntrls
+Menu_txt_Load_Game
+Menu_txt_Mecc_Cntrls
+Menu_txt_Mission_Objs
+Menu_txt_Quit_To_Menu
+Menu_txt_Restart_Mission
+Menu_txt_Return_To_Game
+Menu_txt_Save_Game
+MissileLock
+MissionObjective
+N cmd wait
+Ncmd fail sema cur_cmd:%d keep_cmd:%d
+NoEnemyStructures
+OF_FTCH1
+OF_HATCH
+Oct 18 2000
+PRESS BUTTON_L1
+PRESS BUTTON_L2
+PRESS BUTTON_R1
+PRESS BUTTON_R2
+PRESS CIRCLE
+PRESS SELECT To RETURN
+PRESS SQUARE
+PRESS TRIANGLE
+PROFILER OFF
+PROFILER ON
+PhErrNotGround
+PhErrNotOnSomething
+Press SELECT to return to game
+REG014_1
+REG_CT01
+REG_CT04
+REG_CT06
+REG_CT09
+REG_CT11
+REG_CT15
+REG_CT23
+REG_CT24
+REG_CT29
+REG_CT30
+REG_CT37
+REG_CT38
+REG_CT47
+REG_CT51
+REG_CT56
+REG_CT57
+REG_CT58
+REG_CT59
+REG_CT61
+REG_CT62
+REG_CT64
+REX002_1
+REX002_3
+REX004_3
+REX004_4
+REX005_1
+REX005_2
+RGD001_1
+RM_Death1
+RM_Death2
+RM_Death3
+RM_Death4
+RM_Death5
+RM_Death6
+RPBaseHintOutOfFood
+RPMAN_SHORT_HIT1RPMAN_SHORT_HIT1
+RPMAN_SHORT_HIT2RPMAN_SHORT_HIT2
+RSTORY31
+RSTORY32
+RSTORY33
+R_Thumb_1
+R_eyebrow
+R_shoulder
+R_thumb2
+RacingCurLap
+RacingFinish
+RacingGetReady
+RacingGo
+RacingPosition
+Ref_Camera
+Ref_Lbigspk
+Ref_Lhand01
+Ref_Lspike
+Ref_Rbigspk
+Ref_Rhand
+Ref_Rspike
+Ref_ground
+Ref_k_b_Rhand
+Ref_kab_Rhand
+Ref_kb_Rhand
+Ripper %d
+Rotation       : 
+Running .ELF File
+Rusted_metal_stripe
+S cmd wait
+SAP013_1
+SAX001_3
+SAX001_5
+SAX002_2
+SAX002_3
+SAX005_2
+SLUS-20178
+SR_FSKTB
+SR_SPCLE
+SR_SPCLU
+SR_SPFHE
+SR_SPSHR
+SR_SPSHS
+SR_SPTEL
+STABLE
+STANDARD AMMO
+STANDARD WEAPONS
+STUDIO_A
+STUDIO_B
+STUDIO_C
+SaveBuffer
+SaveFxTable
+SaveIndexTable
+SaveObjectTable
+SaveOspec
+Sax004_1
+Scale          : 
+Scmd fail sema cur_cmd:%d keep_cmd:%d
+ShopAvailBows
+ShopAvailOther
+ShopAvailSpecial
+ShopAvailSpells
+ShopAvailWeap
+ShopCurBow
+ShopCurOther
+ShopCurSpecial
+ShopCurWeap
+ShopHealthPool
+ShopRPCurSpell
+ShopRPHolding
+ShopRPOtherItems
+Skeleton01
+Skeleton02
+Skeleton03
+SmChBaseAttack
+SmChBorjoyzeeSteal
+SmChDropBase
+SmChDropoff
+SmChPHDone
+SmChPHPickup
+SmChPickup
+SmChRide
+SmChStillStolen
+SmChYanSteal
+SmNameSyl%c%d
+Sniper %d
+SpellHintFire
+SpellHintShrink
+Sphere01
+Sphere02
+SummerTime=%d
+TARGET SELECT OFF
+TARGET SELECT ON
+TIM012_1
+TIM022_1
+TIM023_1
+TIM035_3
+TOB001_1
+TTY: err ti->wlen=%08x
+TTY: packet size larger than expect
+TTY: receive error
+TTY: send err %d
+Teeth Bottom
+Teeth Top
+TextColor1
+TextColor2
+TextColor3
+TextColor4
+TextColor5
+TextColor6
+TextColor7
+TextColor8
+TextColor9
+The size of work area is too small
+TimeNotation=%d
+Timezone=%d
+Too many macroblocks in picture
+Too small buffer size for %dx%d picture
+Trainer1
+Trainer2
+Translation    : 
+Txt_BusyCD
+Txt_CD_OPEN
+Txt_Checking_Memory_Card
+Txt_Controller_Busy
+Txt_Controller_Discon
+Txt_Controller_Unsup
+Txt_Controller_Unsup_Mode
+Txt_Delete_Data
+Txt_Delete_Failed
+Txt_Delete_Settings
+Txt_Delete_Successful
+Txt_Deleting_Data
+Txt_Deleting_Settings
+Txt_Dialog_No
+Txt_Dialog_Yes
+Txt_Formatting_Memory_Card
+Txt_Insufficient_Space
+Txt_Load_Failed
+Txt_Load_Game
+Txt_Loading_Data
+Txt_Memory_Card_Error
+Txt_NOCD
+Txt_No_Giants_Save_Data
+Txt_No_Memory_Card
+Txt_Overwrite_Game
+Txt_Overwrite_Settings
+Txt_Panther_cntrls
+Txt_Quit_Mission
+Txt_Restart_Mission
+Txt_Save_Failed
+Txt_Save_Game
+Txt_Save_Successful
+Txt_Saving_Data
+Txt_Unable_To_Save
+Txt_Unformatted_Memory_Card
+Txt_WrongCD
+UID_Null
+Unknown Extension
+Unknown, But Usable (%d)
+Unsupported profile/level
+UsrAnm Memory
+WARNING : Piece is NULL!  Skipping...
+WIF006_1
+WIF006_2
+WIF006_3
+WIF006_4
+WRLDLST%d.BIN
+W_KSTORY1
+W_KSTORY2
+W_KSTORY3
+W_KSTORY4
+W_KSTORY5
+W_RSTORY1
+W_RSTORY2
+W_RSTORY3
+W_RSTORY4
+W_RSTORY5
+W_STORY2
+W_STORY3
+W_STORY4
+W_STORY5
+Wood_rings
+Wood_tile
+YAN012_1
+YAN012_2
+YAN012_3
+YAN012_4
+YAN012_5
+YAN017_1
+YAN030_1
+YAN031_1
+YAN031_2
+YAN031_3
+YANCHI_1
+YANCHI_2
+YANCHI_3
+YANCHI_4
+YANCHI_5
+YANCHI_6
+YANCHI_7
+YANCHI_8
+[MPEG ERROR]%s
+[libpad.a = %d.%d, padman.irx = %d.%d]
+[mus_Score::add]
+_chroma_format needs to be 1: 420
+_pictureSpatialScalableExtension is not supported
+_pictureTemporalScalableExtension is not supported
+_sequenceScalableExtension() is not implemented
+_sliceA0(): error happens
+acosf
+asinf
+assertion "%s" failed: file "%s", line %d
+atan2f
+b_flames
+bad chain1
+bad chain2
+bad_alloc
+baz_ct01
+baz_ct47
+baz_ct57
+bin\%s\%s.bin
+bin\flk_%s.bin
+bin\mainmenu\DMmovie.pss
+bin\mainmenu\ECredits.pss
+bin\mainmenu\MDK2.pss
+bin\mainmenu\WWRacing.pss
+bin\story2\flicks\flk_%s.bin
+bind error libmc 
+bloodblob
+bug in vfprintf: bad base
+c <= 0x99
+c <=99
+call cdreadstm call
+call cdreadstm cmd
+cdread end
+cdrom0:\
+cdrom0:\%s;1
+cdrom0:\MODULES\IOPRP224.IMG;1
+decal_create: decal grid row width > MAX_GRID_WIDTH
+dex001_1
+dex001_4
+dex002_4
+dex002_6
+dex005_1
+dex005_2
+dma_ensureFreeIcmds: must add code for 16 bit version if usage desired
+dvdrom0:/%s;1
+ee call cmd search %s
+error 
+flk_%s.bin
+floor1_tile
+fx emitter
+fx stack
+fx tracer
+fx vfade
+fx weather
+fx_emitter
+fx_tracer
+gor_ct47
+ground bump texture
+gs_allocFreePages: out of free pages
+gs_init: Illegal draw pixel storage format
+gs_init: Illegal zbuffer storage format
+gs_zbufCopy: invalid pixel storage mode
+gs_zbufCopyGetValue: invalid pixel storage mode
+gsa_setupFileTextures: obsolete ptx/chunk data found
+gsm10_01
+herd markers
+host0:%s
+host0:\SLUS_123.45;1
+icon.sys
+image buffer needs to be aligned to 64byte boundary(0x%08x)
+intra && skip MB
+l_ankle01
+libdma: sync timeout
+libmc: too old release of mcman.irx
+libmc: too old release of mcserv.irx
+libpad: Module version mismatch 
+libpad: buffer addr is not 64 byte align. %08x
+libpad: pad port is already open [%d][%d]
+libpad: sceSifSetDma faild
+libpad: tPadDma Structure Invalid
+libscf.c
+list ptr
+load slow follow custom
+load_chroma_intra_quantizer_matrix == 1
+load_chroma_non_intra_quantizer_matrix == 1
+mc_answer1
+mc_answer2
+mc_answer3
+mc_answer4
+mc_answer5
+mc_answer6
+object bones
+odd number of field pictures
+pack_header_field_flag needs to be '0' in PS
+projectile load
+prtc != NULL
+ps2 object datas
+q=B_smartbrick
+ref point names
+ref point offsets
+reg_ct47
+rex002_1
+rex002_3
+rex004_3
+rex004_4
+rex005_1
+rex005_2
+rom0:ROMVER
+rom0:UDNL 
+rpman_answer1
+rpman_bush
+rpman_whisp1
+rpman_whisp2
+rpman_whisp3
+rscream1
+rstory3_race_1
+rstory3_race_2
+rstory3_race_3
+rstory5_race_1
+rusted_metal
+s6 failed
+s8 failed
+s9 failed
+s_stony2
+sceCdCbfunc= %d sceCdCbfunc_num= %d
+sceCdStPause call
+sceCdStRead BLK Read Ended
+sceCdStRead BLK Read cur_size= %d read_size= %d req_size= %d err 0x%x
+sceCdStRead call read size= %d mode= %d
+sceCdStResume call
+sceCdStStat call
+sceGsDefDispEnv:Not support displaymode for %d!!
+sceGsPutDrawEnv: DMA Ch.2 does not terminate
+sceGsSyncPath: DMA Ch.1 does not terminate
+sceGsSyncPath: DMA Ch.2 does not terminate
+sceGsSyncPath: GIF does not terminate
+sceGsSyncPath: VIF1 does not terminate
+sceGsSyncPath: VU1 does not terminate
+sceMpegGetPicture() decode error
+search loc lbn %d
+search name %s
+search size %d
+sequence list
+shadow_ptree
+shadow_round
+shadow_square
+skiped macroblock in I picure is not allowed
+slice_start_code(0x%08x) out of range
+slow follow custom
+slow frate list
+sm_thatch
+smhatch load
+smhatch slist
+spline objs
+spline.bin
+sqrtf
+status called
+temp_create_rndr_base: obsolete ptx/chunk data found
+test.ANM
+test.SKN
+textdata
+the second field is missing
+too long parameter '%s'
+unknown picture sutructure
+vertical size > 2800
+view.icn
+w_glowball
+work area size is too small
+worlddata
+yan031_1
