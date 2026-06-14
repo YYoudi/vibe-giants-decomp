@@ -139,7 +139,9 @@ uint32_t ProcessGameLogic()
 
     // Phase 3b: Camera update (FUN_0049a040 — camera selection + projection)
     extern void UpdateActiveCamera();
+    extern void AnimateCameraPath();
     UpdateActiveCamera();
+    AnimateCameraPath();
 
     // Phase 4: Countdown timer (safe — uses our globals)
     if (g_countdownActive != 0 && !g_cutsceneMode)
