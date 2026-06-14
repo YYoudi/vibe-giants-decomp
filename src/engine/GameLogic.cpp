@@ -150,6 +150,10 @@ uint32_t ProcessGameLogic()
     static const float s_identity[16] = {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1};
     SetWorldTransform(s_identity);
 
+    // Phase 3f: Scene transition state machine (advances scene load → active)
+    extern int ProcessSceneTransition();
+    ProcessSceneTransition();
+
     // Phase 4: Countdown timer (safe — uses our globals)
     if (g_countdownActive != 0 && !g_cutsceneMode)
     {
