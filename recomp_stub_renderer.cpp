@@ -11,6 +11,7 @@
 #include <windows.h>
 #include <cstdint>
 #include <cmath>
+#include <cstdio>
 #include <d3d9.h>
 
 static IDirect3D9* g_d3d = nullptr;
@@ -171,10 +172,84 @@ static void DrawGrid(IDirect3DDevice9* dev, float t) {
     (void)t; (void)kLineCount;
 }
 
+// ─── Terrain rendering (reads decoded heights from terrain_heights.bin) ───
+// The recomp decodes intro_island.gti (115x142 grid) and writes the heights to
+// terrain_heights.bin. Here we read it once + render the terrain mesh — REAL
+// game content (the actual intro island) rendered by the recomp.
+struct TVertex { float x, y, z; D3DCOLOR color; };
+static int      g_tW = 0, g_tH = 0;
+static float*   g_tHeights = nullptr;
+static TVertex* g_tMesh = nullptr;
+static int      g_tTriCount = 0;
+static bool     g_tTried = false;
+
+static void LoadTerrain() {
+    if (g_tTried) return;
+    g_tTried = true;
+    FILE* f = fopen("terrain_heights.bin", "rb");
+    if (!f) return;
+    float stretch, offX, offY, minH, maxH;
+    if (fread(&g_tW, 4, 1, f) != 1) { fclose(f); return; }
+    if (fread(&g_tH, 4, 1, f) != 1) { fclose(f); return; }
+    fread(&stretch, 4, 1, f); fread(&offX, 4, 1, f); fread(&offY, 4, 1, f);
+    fread(&minH, 4, 1, f); fread(&maxH, 4, 1, f);
+    if (g_tW <= 0 || g_tH <= 0 || g_tW > 256 || g_tH > 256) { fclose(f); return; }
+    g_tHeights = (float*)malloc(g_tW * g_tH * 4);
+    if (fread(g_tHeights, 4, g_tW * g_tH, f) != (size_t)(g_tW * g_tH)) { fclose(f); return; }
+    fclose(f);
+    // Build a triangle-list mesh, centered at origin, scaled to fit the view.
+    const float xs = 24.0f / g_tW;       // terrain ~24 units wide
+    const float zs = 24.0f / g_tH;
+    const float hRange = (maxH - minH > 0.001f) ? (maxH - minH) : 1.0f;
+    auto vpos = [&](int x, int y) {
+        float hx = (x - g_tW * 0.5f) * xs;
+        float hz = (y - g_tH * 0.5f) * zs;
+        float hy = (g_tHeights[y * g_tW + x] - minH) / hRange * 4.0f;  // height 0..4
+        return TVertex{ hx, hy, hz };
+    };
+    auto colorFor = [&](float frac) {
+        // low=dark green, mid=brown, high=white (snow caps)
+        if (frac > 0.8f) return D3DCOLOR_XRGB(240, 240, 255);
+        if (frac > 0.5f) return D3DCOLOR_XRGB(120, 90, 60);
+        if (frac > 0.15f) return D3DCOLOR_XRGB(60, 110, 50);
+        return D3DCOLOR_XRGB(40, 70, 120);  // water/low
+    };
+    g_tMesh = (TVertex*)malloc((g_tW - 1) * (g_tH - 1) * 6 * sizeof(TVertex));
+    g_tTriCount = 0;
+    for (int y = 0; y < g_tH - 1; y++) {
+        for (int x = 0; x < g_tW - 1; x++) {
+            TVertex a = vpos(x, y), b = vpos(x + 1, y), c = vpos(x, y + 1), d = vpos(x + 1, y + 1);
+            float fr = (g_tHeights[y * g_tW + x] - minH) / hRange;
+            D3DCOLOR col = colorFor(fr);
+            a.color = b.color = c.color = d.color = col;
+            g_tMesh[g_tTriCount * 3 + 0] = a; g_tMesh[g_tTriCount * 3 + 1] = b; g_tMesh[g_tTriCount * 3 + 2] = c;
+            g_tTriCount++;
+            g_tMesh[g_tTriCount * 3 + 0] = b; g_tMesh[g_tTriCount * 3 + 1] = d; g_tMesh[g_tTriCount * 3 + 2] = c;
+            g_tTriCount++;
+        }
+    }
+}
+
+static void DrawTerrain(IDirect3DDevice9* dev) {
+    LoadTerrain();
+    if (!g_tMesh || g_tTriCount == 0) return;
+    // Slowly orbit the camera around the terrain so the user can see it's 3D.
+    float ang = GetTickCount() / 3000.0f;
+    float cx = sinf(ang) * 22.0f, cz = cosf(ang) * 22.0f;
+    float view[16], proj[16];
+    ViewMatrixLH(view, {cx, 12.0f, cz}, {0, 1.0f, 0}, {0, 1, 0});
+    PerspectiveLH(proj, 0.9f, 16.0f / 9.0f, 0.5f, 200.0f);
+    dev->SetTransform((D3DTRANSFORMSTATETYPE)2, (const D3DMATRIX*)view);
+    dev->SetTransform((D3DTRANSFORMSTATETYPE)3, (const D3DMATRIX*)proj);
+    dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
+    dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, g_tTriCount, g_tMesh, sizeof(TVertex));
+}
+
 extern "C" __attribute__((fastcall)) long Wrap_EndScene(struct Wrap* self) {
     if (self->dev) {
+        DrawTerrain(self->dev);   // REAL intro_island terrain (if decoded)
         float t = GetTickCount() / 700.0f;
-        DrawGrid(self->dev, t);
+        DrawGrid(self->dev, t);   // grid floor (fallback if no terrain)
         DrawCube(self->dev, t);
         self->dev->EndScene();
     }
