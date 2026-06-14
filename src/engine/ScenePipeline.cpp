@@ -395,18 +395,25 @@ void FrameEnd()
     else
     {
         // Module-specific rendering via function pointer table
-        // DAT_00747b64 = function pointer array, DAT_00747b74 = COM object array
-        void* moduleObj = reinterpret_cast<void**>(DAT_00747b74)[DAT_00682204 * 6];
-        if (moduleObj == nullptr)
+        // DAT_00747b64 = function pointer array, DAT_00747b74 = COM object array.
+        // Null-guarded: with no scene loaded these arrays are unpopulated, so a
+        // raw indirect call would jump to null. Skip until the module table is real.
+        int idx = DAT_00682204 * 6;
+        if (idx >= 0)
         {
-            // Direct function call
-            reinterpret_cast<void(*)()>(reinterpret_cast<void**>(DAT_00747b64)[DAT_00682204 * 6])();
-        }
-        else
-        {
-            // COM vtable call: vtable[2]
-            reinterpret_cast<void(*)()>(
-                (*reinterpret_cast<void***>(moduleObj))[2])();
+            void* moduleObj = reinterpret_cast<void**>(DAT_00747b74)[idx];
+            if (moduleObj == nullptr)
+            {
+                void(*fn)() = reinterpret_cast<void(*)()>(
+                    reinterpret_cast<void**>(DAT_00747b64)[idx]);
+                if (fn != nullptr) fn();
+            }
+            else
+            {
+                void(*fn)() = reinterpret_cast<void(*)()>(
+                    (*reinterpret_cast<void***>(moduleObj))[2]);
+                if (fn != nullptr) fn();
+            }
         }
     }
 
