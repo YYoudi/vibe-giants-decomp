@@ -17,6 +17,9 @@ extern void*    ExceptionList;
 
 // ─── LoadDefaultPlayer (FUN_00552990) — FAIL (usable ~55%) ─────
 
+// Stub for FUN_0045f6e0 (network player name resolution — not needed for single-player).
+int ResolveNetworkPlayerName(uint32_t index) { return 0; }
+
 int LoadDefaultPlayer()
 {
     if (DAT_006ff960 == 6) {

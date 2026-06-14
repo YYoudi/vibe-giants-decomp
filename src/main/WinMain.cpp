@@ -8,6 +8,7 @@
 #include "engine/Engine.h"
 #include "engine/GameLoop.h"
 #include "engine/EngineInit.h"
+#include "engine/Player.h"
 #include "engine/TraceLog.h"
 #include "engine/CRTStubs.h"
 #include "renderer/RendererLoader.h"
@@ -244,6 +245,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
         }
         MessageBoxA(nullptr, "Engine initialization failed", "GiantsRE", MB_OK);
         return 3;
+    }
+
+    // ─── Phase 3b: Load default player / intro scene ───────────
+    {
+        int ldpResult = Giants::LoadDefaultPlayer();
+        if (Giants::g_traceLog) {
+            fprintf(Giants::g_traceLog, "[TRACE] LoadDefaultPlayer returned %d\n", ldpResult);
+            fflush(Giants::g_traceLog);
+        }
     }
 
     // ─── Phase 4: Enter Game Loop ──────────────────────────────
