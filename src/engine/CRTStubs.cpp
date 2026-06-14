@@ -5055,17 +5055,20 @@ void EntityCreate(int param_1, uint32_t param_2, int param_3)
     // Walk entity slots, find empty, populate from param_2/param_3
 }
 
-// StrLessThan (FUN_00632900) — PASS
-// Byte-by-byte string less-than comparison. 0 callees, 4 callers.
-bool StrLessThan(uint8_t* a, uint8_t* b)
+// StrEqual (FUN_00632900) — PROVEN equivalent (proxy self-test, 0 mismatch).
+// Returns true iff the two byte strings are EQUAL (both reach null together).
+// NOTE: a prior Ghidra-derived stub mis-named this "StrLessThan" and implemented
+// a less-than comparison — the proxy oracle proved the real semantics is equality.
+// The decompiler's `(-(uint)bVar2 | 1)==0` branch is a Ghidra artifact (always
+// false); empirically "" vs "a" → false, "a" vs "a" → true. Same bug-class as
+// the cos-address aliasing caught earlier. 0 callees, 4 callers.
+bool StrEqual(const uint8_t* p1, const uint8_t* p2)
 {
-    if (a == nullptr || b == nullptr) return false;
-    while (true) {
-        uint8_t ca = *a;
-        if (ca != *b) return ca < *b;
-        if (ca == 0) return false;
-        a++; b++;
+    while (*p1 == *p2) {
+        if (*p1 == 0) return true;
+        p1++; p2++;
     }
+    return false;  // differ → not equal
 }
 
 // MemMoveOverlap (FUN_006329d0) — PASS
