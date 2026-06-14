@@ -20,6 +20,7 @@
 #include "GameLoop.h"
 #include "DirectInput.h"
 #include "TraceLog.h"
+#include "ComRegistry.h"
 #include "../renderer/RendererLoader.h"
 #include <cstdio>
 #include <cstdlib>
@@ -636,6 +637,14 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
     // renderer is used — but the function no longer early-returns.
     extern void* g_renderFactory;
     g_renderFactory = g_renderDevice;
+
+    // Initialize the COM subsystem (FUN_0042fc00) — creates + registers the
+    // core COM object. Functional reconstruction via ComRegistry.
+    InitCOMSubsystem_Real();
+    if (g_traceLog) {
+        fprintf(g_traceLog, "[COM] InitCOMSubsystem done, registry count=%d\n", ComRegistryCount());
+        fflush(g_traceLog);
+    }
 
     UnlockGraphics();
     if (g_traceLog) { fprintf(g_traceLog, "[TRACE] Phase B/C done — UnlockGraphics\n"); fflush(g_traceLog); }

@@ -31,4 +31,8 @@ void* ComQuery(ComGuid guid);
 // Number of subsystems currently registered (for diagnostics).
 int ComRegistryCount();
 
+// FUN_0042fc00 — InitCOMSubsystem (real body, creates + registers the core
+// COM object). Defined in ComSubsystem.cpp.
+void InitCOMSubsystem_Real();
+
 } // namespace Giants
