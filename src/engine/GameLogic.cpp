@@ -213,6 +213,10 @@ uint32_t ProcessGameLogic()
                 g_renderDevice, vtable[47]);
         }
 
+        // Phase 11: Frame end (FPS limiter + pre-present)
+        extern void FrameEnd();
+        FrameEnd();
+
         g_renderFrameCount++;
         if (g_renderFrameCount <= 3 && g_traceLog)
         {

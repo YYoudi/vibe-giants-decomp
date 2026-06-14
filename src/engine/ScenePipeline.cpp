@@ -368,6 +368,9 @@ extern uint32_t g_frameCounter;           // DAT_0074bbb8 — RenderDoc frame co
 
 void FrameEnd()
 {
+    // Guard: skip if no renderer object (prevents crash on zeroed state)
+    if (g_rendererObj == nullptr) return;
+
     // ── Phase 1: Pre-present renderer call ──
     // Get scene object state value (0 if no scene)
     uint32_t sceneState = 0;
