@@ -21,8 +21,12 @@ struct Wrap { void** vtbl; IDirect3DDevice9* dev; } g_wrap = {};
 
 // thiscall wrappers (ECX=this=Wrap*, access dev at [ecx+4]).
 extern "C" __attribute__((fastcall)) long Wrap_Clear(struct Wrap* self, uint32_t) {
-    if (self->dev) { D3DCOLOR c = D3DCOLOR_XRGB(0, 64, 0); // dark green
-        self->dev->Clear(0, nullptr, D3DCLEAR_TARGET, c, 1.0f, 0); }
+    if (self->dev) {
+        // Animate: cycle blue channel for a visible pulsing effect.
+        DWORD tick = GetTickCount() / 20;
+        D3DCOLOR c = D3DCOLOR_XRGB(0, 64, (tick ^ (tick >> 4)) & 0x7F);
+        self->dev->Clear(0, nullptr, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, c, 1.0f, 0);
+    }
     return 0;
 }
 extern "C" __attribute__((fastcall)) long Wrap_BeginScene(struct Wrap* self) {
