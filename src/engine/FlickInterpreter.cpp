@@ -272,6 +272,43 @@ uint32_t ProcessFlickCommands()
             ctx[0x38] = *(uint32_t*)&rate;              // ctx[0x38] = rate
             break;
         }
+        case 0x20: {  // Set actor/camera position — REAL decompiled body
+            // opcodes[1] = recordSize (5/6/7/9), opcodes[recordSize-1] = actor index.
+            // Writes position XYZ (+W) into the actor slot at +0x890..0x8a4.
+            uint32_t actorIdx = opcodes[recordSize - 1];
+            if ((int32_t)actorIdx >= 0 && ctx[0x28] != 0) {
+                uint8_t* slot = (uint8_t*)(ctx[0x28] + actorIdx * 0x8e4);
+                *(uint32_t*)(slot + 0x890) = opcodes[2];
+                *(uint32_t*)(slot + 0x894) = opcodes[3];
+                if (recordSize >= 6) *(uint32_t*)(slot + 0x898) = opcodes[4];
+                if (recordSize >= 7) *(uint32_t*)(slot + 0x8a4) = opcodes[5];
+            }
+            break;
+        }
+        case 0x21: {  // Set actor visibility/scale field — REAL decompiled body
+            if ((int32_t)opcodes[2] >= 0 && *(float*)&opcodes[3] > 0.0f && ctx[0x28] != 0) {
+                uint8_t* slot = (uint8_t*)(ctx[0x28] + opcodes[2] * 0x8e4);
+                *(uint32_t*)(slot + 0x37c) = opcodes[3];
+            }
+            break;
+        }
+        case 0x23: {  // Set actor animation field — REAL decompiled body
+            if ((int32_t)opcodes[2] >= 0 && ctx[0x28] != 0) {
+                uint8_t* slot = (uint8_t*)(ctx[0x28] + opcodes[2] * 0x8e4);
+                *(uint32_t*)(slot + 0x8b0) = 0;
+                *(uint32_t*)(slot + 0x8ac) = opcodes[3];
+                *(uint32_t*)(slot + 0x8b4) = opcodes[3];
+            }
+            break;
+        }
+        case 0x26: {  // Set context default duration — REAL decompiled body
+            ctx[0x4e] = opcodes[2];
+            break;
+        }
+        case 0x28: {  // Set context field 0x4f (string/name ref) — REAL decompiled body
+            ctx[0x4f] = (opcodes[2] == 0) ? 0 : (opcodes[2] + (uint32_t)stringTableBase);
+            break;
+        }
         // Yield opcodes — save position + return to game loop (resume next call)
         case 5:   // Wait/Yield
         case 8:   // End of block
