@@ -64,6 +64,7 @@ if(WIN32)
         advapi32
         user32
         gdi32
+        d3d9
     )
 endif()
 

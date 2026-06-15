@@ -14,6 +14,7 @@
 
 #include <cstdio>
 #include <cmath>
+#include <d3d9.h>
 
 namespace Giants {
 
@@ -220,6 +221,20 @@ uint32_t ProcessGameLogic()
         }
     }
 #endif
+
+    // ── Direct D3D9 present (bypass the renderer protocol) ──────────
+    // FINDING (tested 2026-06-15): the raw IDirect3DDevice9 (g_d3d9Device, found
+    // by the EngineInit scanner) is OWNED by the renderer (gg_dx9r.dll), which
+    // holds the swapchain. Calling IDirect3DDevice9::Present directly HANGS the
+    // loop (1 frame in 6s) — Present deadlocks against the renderer's swapchain
+    // ownership. Clear alone is fine, but Present cannot be driven externally.
+    // CONCLUSION: direct D3D9 manipulation of the renderer's device is not viable.
+    // Visible output requires either (B) a stub renderer that OWNS its own device,
+    // or (A) driving the real renderer's full protocol. Direct device reuse blocked.
+    // extern void* g_d3d9Device;
+    // if (g_d3d9Device) { IDirect3DDevice9* dev=(IDirect3DDevice9*)g_d3d9Device;
+    //   dev->Clear(0,nullptr,D3DCLEAR_TARGET,D3DCOLOR_XRGB(20,40,100),1.0f,0);
+    //   dev->Present(nullptr,nullptr,g_hWnd,nullptr); }  // HANGS — disabled
 
     return 1;
 }
