@@ -21,6 +21,7 @@ static uint32_t* DAT_00747d2c = nullptr;    // FLICK context (main state)
 extern uint32_t VFSFileLookup(char* filename); // FUN_00623f00 (Giants namespace)
 extern uint32_t VFSExtractFile(const char*, unsigned char*, unsigned int);
 static uint8_t g_flickData[65536];  // FLICK script buffer (max 64KB)
+static uint32_t g_flickLoadedSize = 0;  // actual bytes loaded from the .bin
 static uint32_t g_flickCtx[0x140 / 4];  // FLICK context (0x140 bytes)
 
 void LoadFlickScript(const char* flickName) {
@@ -54,6 +55,7 @@ void LoadFlickScript(const char* flickName) {
     //   ctx[0x24] = *(data+8) (entity count)
     //   ctx[0x25] = *(data+0xc) (animation count)
     uint32_t* data = (uint32_t*)g_flickData;
+    g_flickLoadedSize = sz;
     memset(g_flickCtx, 0, sizeof(g_flickCtx));
     g_flickCtx[0x21] = (uint32_t)data;             // string table base
     g_flickCtx[0x22] = (uint32_t)(data + 0x18/4);  // opcode pointer (data + 0x18)
@@ -92,20 +94,34 @@ uint32_t ProcessFlickCommands()
     uint32_t* ctx = DAT_00747d2c;
     int stringTableBase = ctx[0x21];
     uint32_t* opcodes = (uint32_t*)ctx[0x22];
+    // Bounds: script end = start of data + loaded size (capped to buffer).
+    // data[1] is the FLICK body size per the header, but the loaded file may
+    // be shorter — use the actual byte count, capped to the static buffer.
+    uint32_t* dataBase = (uint32_t*)stringTableBase;
+    uint32_t loadedU32 = g_flickLoadedSize >> 2;
+    if (loadedU32 > (sizeof(g_flickData) >> 2)) loadedU32 = sizeof(g_flickData) >> 2;
+    uint32_t* dataEnd = dataBase + loadedU32;
 
     // Main dispatch loop. KEY: each opcode record carries its own size at
     // opcodes[1] (in u32 units). Advance = opcodes += opcodes[1]. Yield opcodes
     // (5, 8, 9, 34) save position + return to the game loop.
     while (true) {
+        // Bounds check: don't read past the script
+        if (opcodes < dataBase || opcodes + 2 > dataEnd) break;
         uint32_t op = opcodes[0];
         uint32_t recordSize = opcodes[1];  // record size in u32 (self-describing)
-        if (recordSize == 0) break;         // safety (avoid infinite loop)
+        if (recordSize < 2 || recordSize > 100) break;  // safety (avoid infinite loop / overflow)
+        if (opcodes + recordSize > dataEnd) break;       // don't advance past end
 
         switch (op) {
         case 1: {  // InitDirector — create director object in slot
+            // ctx[0x27] = entity/director pool base. In the functional path the
+            // pool is not allocated (would be FUN_006405d0 in FlickCreateInterpreter).
+            // Guard: if the pool is null, skip the slot write to avoid near-null deref.
+            if (ctx[0x27] == 0) break;
             int nameOff = (opcodes[3] != 0) ? stringTableBase + opcodes[3] : 0;
             int* slot = (int*)(ctx[0x27] + opcodes[2] * 0xc);
-            if (slot && slot[2] == 0) {
+            if (slot[2] == 0) {
                 // FUN_00633480(0, 0, nameOff) — create director (stubbed)
                 slot[2] = 1;  // mark initialized
             }

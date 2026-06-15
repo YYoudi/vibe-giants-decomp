@@ -244,7 +244,9 @@ int PreInitCheck()
     return 1;  // success
 }
 int  InitAudioSystem() { return 1; }        // FUN_0062af40
-void InitDisplaySettings() {}               // FUN_004f86c0
+// InitDisplaySettings (FUN_004f86c0) — real body in InitDisplaySettings.cpp
+// (vtable display-capability query + fullscreen + viewport). Do NOT stub here
+// (duplicate-definition: the empty stub shadowed the real body).
 void InitDisplayMode() {}                   // FUN_0062b9c0
 // InitGraphicsResources (FUN_004f7fa0) is defined in GraphicsResources.cpp —
 // real body that creates devices/buffers via the renderer factory. Do NOT stub
@@ -750,7 +752,9 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
     if (g_initialized) return 0;
 
     InitDisplayMode();
+    if (g_traceLog) { fprintf(g_traceLog, "[TRACE] InitDisplayMode OK\n"); fflush(g_traceLog); }
     InitGraphicsResources();
+    if (g_traceLog) { fprintf(g_traceLog, "[TRACE] InitGraphicsResources OK\n"); fflush(g_traceLog); }
 
     // ── Phase H: DirectInput + cursor hide ──────────────────────
     if (g_traceLog) { fprintf(g_traceLog, "[TRACE] Phase G done — direct input\n"); fflush(g_traceLog); }
