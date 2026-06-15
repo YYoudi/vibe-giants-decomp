@@ -25,19 +25,27 @@ static uint32_t g_flickCtx[0x140 / 4];  // FLICK context (0x140 bytes)
 
 void LoadFlickScript(const char* flickName) {
     extern FILE* g_traceLog;
-    // Extract the FLICK .bin from VFS
+    // Try VFS first, then loose file on disk (Bin/ directory).
     char path[128]; snprintf(path, sizeof(path), "%s", flickName);
-    if (VFSFileLookup(path) == 0) {
-        // Try with .bin extension
+    uint32_t sz = 0;
+    if (VFSFileLookup(path) != 0) {
+        sz = VFSExtractFile(path, g_flickData, sizeof(g_flickData));
+    }
+    if (sz == 0) {
         snprintf(path, sizeof(path), "%s.bin", flickName);
-        if (VFSFileLookup(path) == 0) {
-            if (g_traceLog) { fprintf(g_traceLog, "[FLICK] %s not found in VFS\n", flickName); fflush(g_traceLog); }
-            return;
+        if (VFSFileLookup(path) != 0) {
+            sz = VFSExtractFile(path, g_flickData, sizeof(g_flickData));
         }
     }
-    uint32_t sz = VFSExtractFile(path, g_flickData, sizeof(g_flickData));
+    if (sz == 0) {
+        // Loose file fallback: open directly from Bin/
+        snprintf(path, sizeof(path), "Bin\\%s.bin", flickName);
+        FILE* f = fopen(path, "rb");
+        if (!f) { snprintf(path, sizeof(path), "%s.bin", flickName); f = fopen(path, "rb"); }
+        if (f) { sz = fread(g_flickData, 1, sizeof(g_flickData), f); fclose(f); }
+    }
     if (sz < 0x18) {
-        if (g_traceLog) { fprintf(g_traceLog, "[FLICK] %s too small (%d bytes)\n", path, sz); fflush(g_traceLog); }
+        if (g_traceLog) { fprintf(g_traceLog, "[FLICK] %s not found (VFS + loose)\n", flickName); fflush(g_traceLog); }
         return;
     }
     // Set up the context (per FlickCreateInterpreter):
