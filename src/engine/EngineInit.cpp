@@ -251,7 +251,8 @@ int PreInitCheck()
 // InitDisplaySettings (FUN_004f86c0) — real body in InitDisplaySettings.cpp
 // (vtable display-capability query + fullscreen + viewport). Do NOT stub here
 // (duplicate-definition: the empty stub shadowed the real body).
-void InitDisplayMode() {}                   // FUN_0062b9c0
+// InitDisplayMode (FUN_0062b9c0) — real body in DisplayMode.cpp (GDI font init:
+// MemoryDC + 128x64 DIB + LOGFONT/CreateFontIndirectA). Do NOT stub here.
 // InitGraphicsResources (FUN_004f7fa0) is defined in GraphicsResources.cpp —
 // real body that creates devices/buffers via the renderer factory. Do NOT stub
 // it here (was a duplicate-definition link error).
