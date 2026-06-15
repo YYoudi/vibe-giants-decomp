@@ -217,8 +217,8 @@ int PreInitCheck()
     // Phase 4: Init COM subsystem (FUN_0042fc00 — creates + registers core COM obj)
     InitCOMSubsystem_Real();
 
-    // Phase 5: Factory init (FUN_0046fd40 — create factory object)
-    // Stubbed — ComRegistry handles factory queries functionally.
+    // Phase 5: Factory init (FUN_0046fd40 — create factory object via DAT_00660194)
+    RegisterFactoryInit();
 
     // Phase 6: Register game context + callbacks (FUN_005c4400 + object creation)
     RegisterGameContext();

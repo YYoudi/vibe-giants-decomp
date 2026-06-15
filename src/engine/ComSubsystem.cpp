@@ -125,6 +125,18 @@ void* ComQueryGameContext() {
     return ComQuery(&g_comGuid_gameContext);
 }
 
+// FUN_0046fd40 — factory init subsystem (dispatches via DAT_00660194 GUID).
+// Same COM smart-pointer pattern as GetGameContext. Register functionally.
+static const char g_comGuid_00660194 = 0;
+void RegisterFactoryInit() {
+    ComObject* obj = static_cast<ComObject*>(operator_new(sizeof(ComObject)));
+    if (!obj) return;
+    obj->vtable = g_comVtbl_0065ce08;
+    obj->strongRef = 1; obj->weakRef = 1; obj->pad = 0;
+    memset(obj->data, 0, sizeof(obj->data));
+    ComRegister(&g_comGuid_00660194, obj);
+}
+
 // FUN_005c4400 — register frame/update callback objects. Original creates 4
 // small callback objects (operator_new(4) → set vtable) + adds to a global array
 // (DAT_0073e784). Functional: create + count them (the callbacks fire per-frame).
