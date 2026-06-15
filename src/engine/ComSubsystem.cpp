@@ -70,11 +70,27 @@ void InitCOMSubsystem_Real() {
     obj->weakRef = 1;
     obj->pad = 0;
     memset(obj->data, 0, sizeof(obj->data));
-    // FUN_004358b0() — sub-init (stubbed)
-    // Register via the COM registry (original: engine-context vtable[1](GUID, obj))
+
+    // FUN_004358b0 — COM subsystem sub-init: sets secondary vtables + creates
+    // an internal linked list (self-referencing node) + reserves vectors.
+    // Original sets obj fields at specific offsets within the 0x48 data area.
+    uint32_t* fields = reinterpret_cast<uint32_t*>(obj->data);
+    fields[0] = 0;  // PTR_FUN_0065d0c0 (secondary vtable — original .rdata addr)
+    fields[1] = 0;  // DAT_0065d0b4 (secondary vtable 2)
+    fields[2] = 0x3f800000;  // 1.0f (scale factor)
+    // Create the self-referencing linked list node (operator_new(0x18))
+    uint32_t* listNode = static_cast<uint32_t*>(operator_new(0x18));
+    if (listNode) {
+        listNode[0] = (uint32_t)listNode;  // prev = self
+        listNode[1] = (uint32_t)listNode;  // next = self
+        fields[3] = (uint32_t)listNode;    // head node
+    }
+    fields[8] = 7;   // initial capacity hint
+    fields[9] = 8;   // initial capacity hint
+    // FUN_00437e00(0x10, listNode) — vector reserve (stubbed)
+    // FUN_004409f0(0) x2 — allocator init (stubbed)
+
     ComRegister(&g_comGuid_0065cdf8, obj);
-    // FUN_0042e110() — config load (stubbed)
-    // FUN_0042fd68() — refcount helper (stubbed)
 }
 
 // GUID for the string-lookup subsystem (DAT_0065d154 in the original).
