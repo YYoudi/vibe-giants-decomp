@@ -125,6 +125,28 @@ uint32_t ProcessFlickCommands()
 
     uint32_t* ctx = DAT_00747d2c;
     int stringTableBase = ctx[0x21];
+
+    // Per-frame field interpolation: advance ctx[0x36] (current value) toward
+    // ctx[0x37] (target) using ctx[0x38] (per-second rate) × frame delta. This
+    // is the runtime half of opcode 0x1f (set up above) — the engine advances
+    // the animated field each tick. Ported behavior from FUN_004e7b59.
+    {
+        extern float g_smoothedTime;  // per-frame delta (seconds), GameLogic.cpp
+        float current = *(float*)&ctx[0x36];
+        float target  = *(float*)&ctx[0x37];
+        float rate    = *(float*)&ctx[0x38];
+        if (rate != 0.0f) {
+            current += rate * g_smoothedTime;
+            // Clamp to target (stop overshooting the interpolation)
+            if ((rate > 0.0f && current >= target) ||
+                (rate < 0.0f && current <= target)) {
+                current = target;
+                ctx[0x38] = 0;  // animation complete
+            }
+            ctx[0x36] = *(uint32_t*)&current;
+        }
+    }
+
     uint32_t* opcodes = (uint32_t*)ctx[0x22];
     // Bounds: script end = start of data + loaded size (capped to buffer).
     // data[1] is the FLICK body size per the header, but the loaded file may
@@ -228,6 +250,26 @@ uint32_t ProcessFlickCommands()
         case 10: { // Entity field computation — calls FlickFieldMath (validated)
             // FUN_00635850(ctx[0x2d]+0xc, ctx[0x2c]) — the validated FLICK math
             // (entity field computation). Stubbed (ctx[0x2d] is 0 — no entity).
+            break;
+        }
+        case 0x1f: {  // Animate field (opacity/brightness) — REAL decompiled body
+            // Ported verbatim from FUN_004e7b10 case 0x1f. Interpolates ctx[0x36]
+            // (current value) toward a target over a duration, storing the per-unit
+            // interpolation rate in ctx[0x38]. The per-frame advance is done below.
+            //   opcodes[2] = target value (float as uint32)
+            //   opcodes[3] = duration (float as uint32, seconds)
+            float target   = *(float*)&opcodes[2];
+            float duration = *(float*)&opcodes[3];
+            ctx[0x37] = *(uint32_t*)&target;            // ctx[0x37] = target
+            float rate;
+            if (duration == 0.0f) {
+                ctx[0x36] = *(uint32_t*)&target;        // instant: current = target
+                rate = 0.0f;
+            } else {
+                float current = *(float*)&ctx[0x36];
+                rate = (target - current) / duration;   // per-second interpolation rate
+            }
+            ctx[0x38] = *(uint32_t*)&rate;              // ctx[0x38] = rate
             break;
         }
         // Yield opcodes — save position + return to game loop (resume next call)
