@@ -113,6 +113,22 @@ uint32_t ProcessFlickCommands()
         if (recordSize < 2 || recordSize > 100) break;  // safety (avoid infinite loop / overflow)
         if (opcodes + recordSize > dataEnd) break;       // don't advance past end
 
+        // Diagnostic: log the first 40 opcode records of each script pass to see
+        // what the menu cinematic actually executes.
+        {
+            extern FILE* g_traceLog;
+            static int s_flickOpCount = 0;
+            if (g_traceLog && s_flickOpCount < 40) {
+                fprintf(g_traceLog, "[FLICK-OP] #%d op=%u recSize=%u args=[%u,%u,%u]\n",
+                        s_flickOpCount, op, recordSize,
+                        recordSize > 2 ? opcodes[2] : 0,
+                        recordSize > 3 ? opcodes[3] : 0,
+                        recordSize > 4 ? opcodes[4] : 0);
+                fflush(g_traceLog);
+                s_flickOpCount++;
+            }
+        }
+
         switch (op) {
         case 1: {  // InitDirector — create director object in slot
             // ctx[0x27] = entity/director pool base. In the functional path the
