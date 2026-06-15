@@ -41,5 +41,6 @@ void InitStringSubsystem_Real();
 // Register the game-context object (so GetGameContext's query succeeds).
 void RegisterGameContext();
 void RegisterCallbacks();  // FUN_005c4400 — frame/update callback registration
+void RegisterFactoryInit(); // FUN_0046fd40 — factory init subsystem (DAT_00660194)
 
 } // namespace Giants
