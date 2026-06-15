@@ -314,14 +314,22 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     if (Giants::g_traceLog) {
         int fc = Giants::VFS_GetFileCount();
         fprintf(Giants::g_traceLog, "[VFS] Initialize done: %d files indexed\n", fc);
-        for (int i = 0; i < fc && i < 25; i++)
-            fprintf(Giants::g_traceLog, "[VFS]   [%d] %s\n", i, Giants::VFS_GetFileName(i));
-        // Try level-name lookups (various extension conventions).
-        const char* names[] = {"intro_island", "intro_island.gti", "intro_island.gck",
-                               "intro_island.bin", "w_intro_island.bin", "intros.bin"};
-        for (auto n : names) {
-            char buf[128]; snprintf(buf, sizeof(buf), "%s", n);
-            fprintf(Giants::g_traceLog, "[VFS] lookup \"%s\" -> 0x%08X\n", n, Giants::VFSFileLookup(buf));
+        // Scan ALL indexed files for menu-scene assets (logo, sun, sky, water, etc.)
+        const char* kw[] = {"logo","sun","sky","water","sea","dome","cloud","flare",
+                            "intro_island","lens","glow","menu","mp_screen","loading","island"};
+        for (int i = 0; i < fc; i++) {
+            const char* nm = Giants::VFS_GetFileName(i);
+            if (!nm) continue;
+            for (auto k : kw) {
+                // case-insensitive contains
+                bool match = false;
+                for (const char *p = nm; *p; p++) {
+                    const char* a = p; const char* b = k;
+                    while (*a && *b && ((*a|32)==(*b|32))) { a++; b++; }
+                    if (*b == 0) { match = true; break; }
+                }
+                if (match) { fprintf(Giants::g_traceLog, "[VFS-ASSET] %s\n", nm); break; }
+            }
         }
         fflush(Giants::g_traceLog);
     }
