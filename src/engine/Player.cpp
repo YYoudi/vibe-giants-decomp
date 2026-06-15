@@ -54,6 +54,9 @@ int LoadDefaultPlayer()
     if (levelCtx != nullptr) {
         LevelLoad(levelCtx, "intro_island");
     }
+    // Load the FLICK cinematic script (drives the menu camera + logo animation).
+    extern void LoadFlickScript(const char*);
+    LoadFlickScript("flk_intro_island_1");
     if (playerData != nullptr) {
         DAT_00702778 = *playerData;
         DAT_0074893c = DAT_00702778;

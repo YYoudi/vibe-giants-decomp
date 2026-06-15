@@ -7,16 +7,65 @@
 #include <cstring>
 #include <windows.h>
 #include "FlickInterpreter.h"
+#include <cstdio>
+#include <cstring>
 
 namespace Giants {
 
 // ─── External data references ─────────────────────────────────
 static uint32_t* DAT_00747d2c = nullptr;    // FLICK context (main state)
+
+// Load a FLICK script from the VFS + set up the interpreter context.
+// The original: FlickLoadAnimationFile (FUN_004e5030) + FlickCreateInterpreter
+// (FUN_004e5150). Here: VFS-extract the .bin + populate the context struct.
+extern uint32_t VFSFileLookup(char* filename); // FUN_00623f00 (Giants namespace)
+extern uint32_t VFSExtractFile(const char*, unsigned char*, unsigned int);
+static uint8_t g_flickData[65536];  // FLICK script buffer (max 64KB)
+static uint32_t g_flickCtx[0x140 / 4];  // FLICK context (0x140 bytes)
+
+void LoadFlickScript(const char* flickName) {
+    extern FILE* g_traceLog;
+    // Extract the FLICK .bin from VFS
+    char path[128]; snprintf(path, sizeof(path), "%s", flickName);
+    if (VFSFileLookup(path) == 0) {
+        // Try with .bin extension
+        snprintf(path, sizeof(path), "%s.bin", flickName);
+        if (VFSFileLookup(path) == 0) {
+            if (g_traceLog) { fprintf(g_traceLog, "[FLICK] %s not found in VFS\n", flickName); fflush(g_traceLog); }
+            return;
+        }
+    }
+    uint32_t sz = VFSExtractFile(path, g_flickData, sizeof(g_flickData));
+    if (sz < 0x18) {
+        if (g_traceLog) { fprintf(g_traceLog, "[FLICK] %s too small (%d bytes)\n", path, sz); fflush(g_traceLog); }
+        return;
+    }
+    // Set up the context (per FlickCreateInterpreter):
+    //   ctx[0x21] = data ptr (string table base = data itself)
+    //   ctx[0x22] = data + 0x18 (opcode stream start)
+    //   ctx[0x24] = *(data+8) (entity count)
+    //   ctx[0x25] = *(data+0xc) (animation count)
+    uint32_t* data = (uint32_t*)g_flickData;
+    memset(g_flickCtx, 0, sizeof(g_flickCtx));
+    g_flickCtx[0x21] = (uint32_t)data;             // string table base
+    g_flickCtx[0x22] = (uint32_t)(data + 0x18/4);  // opcode pointer (data + 0x18)
+    g_flickCtx[0x24] = data[2];                     // entity count (offset +8)
+    g_flickCtx[0x25] = data[3];                     // animation count (offset +0xc)
+    DAT_00747d2c = g_flickCtx;
+    if (g_traceLog) {
+        fprintf(g_traceLog, "[FLICK] Loaded %s (%d bytes, entities=%d anims=%d) — context ready\n",
+                path, sz, g_flickCtx[0x24], g_flickCtx[0x25]);
+        fflush(g_traceLog);
+    }
+}
 static float     DAT_00727e38 = 0;          // Frame delta time
 static uint32_t  g_depthXorKey = 0;         // DAT_0066c580
 static float     DAT_0066c12c = 0;          // Flick timing constant
 static float     DAT_0066bf2c = 0;          // Wave period for animation
 static uint32_t  DAT_0074c5d4 = 0;          // Error counter for FLICK errors
+static uint32_t  DAT_00702b14 = 0;       // FLICK-related global
+static float     DAT_0066bef8 = 0;          // FLICK wave constant 2
+static uint32_t  DAT_00702794 = 0;       // FLICK entity count global
 static uint32_t  DAT_00702770 = 0;          // Scene/render context
 
 // Stub helpers for unresolved functions
@@ -413,7 +462,7 @@ void SetRenderFlags(int objectPtr, int slotIndex, uint32_t param_3,
                     uint32_t param_4, uint32_t param_5, uint32_t param_6,
                     float duration)
 {
-    extern char DAT_00702b14;  // Animation enabled flag
+    // DAT_00702b14 is declared at top of file as uint32_t.
     extern float DAT_0066bf2c;  // Current time
     extern float DAT_0066bef8;  // Last render time
 
@@ -761,7 +810,7 @@ void TransferEntityBones(int dstEntity, int srcEntity)
 // Original:
 // undefined4 * __fastcall FUN_0055a8a0(int param_1)
 // {
-//   undefined4 *puVar1 = DAT_00702794;
+//   uint32_t* puVar1 = (uint32_t*)DAT_00702794;
 //   do {
 //     if (puVar1 == (undefined4 *)0x0) return (undefined4 *)0x0;
 //     int iVar3 = 0; puVar2 = puVar1;
@@ -776,7 +825,7 @@ void TransferEntityBones(int dstEntity, int srcEntity)
 // }
 uint32_t* FindEntityTypeEntry(int entityTypeId)
 {
-    extern uint32_t* DAT_00702794;  // Entity type registry head
+    
 
     uint32_t* node = DAT_00702794;
     while (true) {
