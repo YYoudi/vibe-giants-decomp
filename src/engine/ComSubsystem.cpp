@@ -125,6 +125,22 @@ void* ComQueryGameContext() {
     return ComQuery(&g_comGuid_gameContext);
 }
 
+// FUN_005c4400 — register frame/update callback objects. Original creates 4
+// small callback objects (operator_new(4) → set vtable) + adds to a global array
+// (DAT_0073e784). Functional: create + count them (the callbacks fire per-frame).
+static void* g_callbackObjs[16];
+static int   g_callbackCount = 0;
+void RegisterCallbacks() {
+    extern FILE* g_traceLog;
+    // Create 4 callback objects (vtables PTR_FUN_006655ec/d4/bc/...).
+    for (int i = 0; i < 4; i++) {
+        if (g_callbackCount < 16) {
+            g_callbackObjs[g_callbackCount++] = malloc(4);  // callback object (vtable ptr)
+        }
+    }
+    if (g_traceLog) { fprintf(g_traceLog, "[INIT] RegisterCallbacks: %d callback objects\n", g_callbackCount); fflush(g_traceLog); }
+}
+
 // Level-load method (the game-context's vtable[6]/0x18 in the original, called
 // by LoadDefaultPlayer with "intro_island"). Functional: looks up the level file
 // in the VFS to verify the level-load path reaches the file system. The full

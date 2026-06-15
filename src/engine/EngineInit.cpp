@@ -220,8 +220,9 @@ int PreInitCheck()
     // Phase 5: Factory init (FUN_0046fd40 — create factory object)
     // Stubbed — ComRegistry handles factory queries functionally.
 
-    // Phase 6: Register game context (FUN_005c4400 + object creation)
+    // Phase 6: Register game context + callbacks (FUN_005c4400 + object creation)
     RegisterGameContext();
+    RegisterCallbacks();
 
     // Phase 7: Create the 4 COM objects (original: operator_new + vtable + register
     // via DAT_0073c924->vtable[1]). The objects have vtables PTR_FUN_0066a574,
