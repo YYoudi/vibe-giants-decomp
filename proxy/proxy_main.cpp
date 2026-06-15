@@ -420,15 +420,12 @@ void UpCallsLoad(uint32_t version, uint32_t count, uint32_t callbackTablePtr) {
 
     // Detour-observe engine-internal subsystems the intro exercises but the 22
     // callbacks don't cover (FLICK, camera, audio, asset load, math, timing).
-    // Must run BEFORE self-tests so detour trampolines are registered.
-    InstallDetourProbes();
-
-    Callbacks::RunSelfTests();
-    DriveActiveDetours();   // feed active hooks a sweep → trampoline dual-compare validates cold fns too
-
-    // Live-inspect the original's COM subsystem (engine context, factory dispatch
-    // tables, object vtables) — reveals runtime ground truth for the porting wall.
-    Callbacks::DumpCOMState();
+    // DISABLED for clean startup tracing — the active detours (VDS/SinA) +
+    // probes break the normal menu startup (EXIT 1). Re-enable for gamegauge.
+    // InstallDetourProbes();
+    // Callbacks::RunSelfTests();
+    // DriveActiveDetours();
+    // Callbacks::DumpCOMState();
 }
 
 // ═══════════════════════════════════════════════════════════════
