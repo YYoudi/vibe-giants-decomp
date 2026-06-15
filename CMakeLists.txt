@@ -90,6 +90,17 @@ add_custom_target(report
 # Enables hooking of engine→renderer callbacks for gradual replacement.
 # ═══════════════════════════════════════════════════════════════════
 
+# ─── Stub Renderer (Route B for visible output) ───────────────────────
+# A self-contained gg_dx9r replacement that OWNS its own IDirect3DDevice9
+# (no engine-context protocol needed). Deployed as gg_dx9r.dll it lets the
+# recomp render (Clear/Present/text) directly via D3D9.
+add_library(gg_dx9r_stub SHARED
+    src/renderer_stub/StubRenderer.cpp
+)
+target_sources(gg_dx9r_stub PRIVATE ${CMAKE_SOURCE_DIR}/src/renderer_stub/StubDef.def)
+set_target_properties(gg_dx9r_stub PROPERTIES OUTPUT_NAME "gg_dx9r_stub" PREFIX "" SUFFIX ".dll")
+target_link_libraries(gg_dx9r_stub PRIVATE d3d9 user32 gdi32)
+
 file(GLOB PROXY_SOURCES "proxy/*.cpp" "proxy/*.h")
 
 add_library(gg_dx9r SHARED ${PROXY_SOURCES})
