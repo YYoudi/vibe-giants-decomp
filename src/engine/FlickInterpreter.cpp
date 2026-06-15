@@ -36,57 +36,51 @@ uint32_t ProcessFlickCommands()
     int stringTableBase = ctx[0x21];
     uint32_t* opcodes = (uint32_t*)ctx[0x22];
 
-    // Main dispatch loop
+    // Main dispatch loop. KEY: each opcode record carries its own size at
+    // opcodes[1] (in u32 units). Advance = opcodes += opcodes[1]. Yield opcodes
+    // (5, 8, 9, 34) save position + return to the game loop.
     while (true) {
-        switch (*opcodes) {
+        uint32_t op = opcodes[0];
+        uint32_t recordSize = opcodes[1];  // record size in u32 (self-describing)
+        if (recordSize == 0) break;         // safety (avoid infinite loop)
 
-        case 1: {  // InitDirector
-            // Resolve string offset for director name
-            int nameOffset = (opcodes[3] != 0) ? stringTableBase + opcodes[3] : 0;
+        switch (op) {
+        case 1: {  // InitDirector — create director object in slot
+            int nameOff = (opcodes[3] != 0) ? stringTableBase + opcodes[3] : 0;
             int* slot = (int*)(ctx[0x27] + opcodes[2] * 0xc);
-
-            if (slot != nullptr) {
-                if (slot[2] == 0) {
-                    // FUN_00633480 — create director object
-                    int director = 0; // FUN_00633480(0, 0, nameOffset)
-                    if (director != 0) {
-                        *slot = director;
-                    }
-                    slot[2] = 1;  // Mark initialized
-                } else {
-                    // FUN_00640a00 — error: duplicate director
-                }
+            if (slot && slot[2] == 0) {
+                // FUN_00633480(0, 0, nameOff) — create director (stubbed)
+                slot[2] = 1;  // mark initialized
             }
             break;
         }
-
-        case 2: {  // SetCameraTarget
-            int targetName = (opcodes[3] != 0) ? stringTableBase + opcodes[3] : 0;
-            // FUN_004e5530 — set camera target
-            // FUN_004e5530(targetName, opcodes[4], opcodes[5])
+        case 2: {  // SetCameraTarget — set the camera's look-at target
+            // FUN_004e5530(targetName, opcodes[4], opcodes[5]) — stubbed
             break;
         }
-
-        case 3: {  // CreateEntity
+        case 3: {  // CreateEntity — create a scene entity from template
             int entityName = (opcodes[5] != 0) ? stringTableBase + opcodes[5] : 0;
             int templateName = (opcodes[3] != 0) ? stringTableBase + opcodes[3] : 0;
             int entityId = opcodes[2];
-
-            // Complex entity creation with animation setup
-            // Resolves entity from template pool via vtable calls
-            // FUN_00634e20 — create entity instance
+            // FUN_00634e20 — create entity instance (stubbed)
+            (void)entityName; (void)templateName; (void)entityId;
             break;
         }
-
+        // Yield opcodes — save position + return to game loop (resume next call)
+        case 5:   // Wait/Yield
+        case 8:   // End of block
+        case 9:   // End of section
+        case 34:  // Frame wait
+            ctx[0x22] = (uint32_t)(opcodes + recordSize);  // save resume position
+            return 1;
         default:
-            // Opcodes 4+ handle: move, rotate, animate, wait, sound, etc.
-            // Not yet fully analyzed — 20+ more cases
+            // Opcodes 4, 6, 7, 10-33, 35+: move, rotate, animate, sound, etc.
+            // Processed but stubbed — just advance past them.
             break;
         }
 
-        // Advance to next opcode record
-        // opcodes += record_size (varies per opcode)
-        break;  // Placeholder — actual code loops until end marker
+        opcodes += recordSize;  // advance to next record (self-describing size)
+        ctx[0x22] = (uint32_t)opcodes;  // update position
     }
 
     return 1;
