@@ -24,6 +24,8 @@
 #include "../renderer/RendererLoader.h"
 #include <cstdio>
 #include <cstdlib>
+#include <string>
+#include <unordered_map>
 
 namespace Giants {
 
@@ -261,7 +263,69 @@ void LastInitStep() {}                      // FUN_00552990
 void ShowErrorDialog(const char*) {}        // FUN_0062edc0
 void ClearString() {}                       // FUN_004439b0
 void DebugLog(const char*) {}               // FUN_00461f00
-const char* GetLocalizedString(const char* key) { return key; } // FUN_005e80c0
+// ─── GetLocalizedString (FUN_005e80c0) ─────────────────────────
+// Localization lookup. The original builds a hash map from GText<Lang>.bin
+// (loader FUN_005e7de0). Format (reverse-engineered from the decompile +
+// GTextEnglish.bin inspection):
+//   [0..3]   count        (DAT_0068575c)  — number of string entries
+//   [4..7]   keySize      (DAT_00685760)  — key region size in bytes
+//   [8..11]  valSize      (DAT_00685764)  — value region size in bytes
+//   [12..]   table        count*8 bytes — each entry: {u32 keyOff, u32 valOff}
+//   then     keyRegion    keySize bytes (null-separated key strings)
+//   then     valRegion    valSize bytes (null-separated localized strings)
+// Lookup: key = keyRegion + entry.keyOff, value = valRegion + entry.valOff.
+// Here we parse the file on first call into a std::unordered_map (functionally
+// equivalent to the original's hash table). Language is English per the
+// current game config (DAT_0074be20 = "English").
+static std::unordered_map<std::string, std::string> g_textTable;
+static bool g_textTableLoaded = false;
+static void LoadGTextTable() {
+    g_textTableLoaded = true;
+    // Try Bin/GTextEnglish.bin (loose), then VFS, then cwd.
+    FILE* f = fopen("Bin\\GTextEnglish.bin", "rb");
+    if (!f) f = fopen("GTextEnglish.bin", "rb");
+    if (!f) {
+        extern FILE* g_traceLog;
+        if (g_traceLog) { fprintf(g_traceLog, "[TEXT] GTextEnglish.bin not found\n"); fflush(g_traceLog); }
+        return;
+    }
+    uint32_t count = 0, keySize = 0, valSize = 0;
+    if (fread(&count, 4, 1, f) != 1 || fread(&keySize, 4, 1, f) != 1 || fread(&valSize, 4, 1, f) != 1) {
+        fclose(f); return;
+    }
+    // Sanity-cap to avoid huge allocs from a malformed header.
+    if (count == 0 || count > 200000 || keySize > (1u << 24) || valSize > (1u << 24)) {
+        fclose(f); return;
+    }
+    uint32_t* table = (uint32_t*)malloc((size_t)count * 8);
+    char* keyRegion = (char*)malloc(keySize);
+    char* valRegion = (char*)malloc(valSize);
+    if (!table || !keyRegion || !valRegion) {
+        free(table); free(keyRegion); free(valRegion); fclose(f); return;
+    }
+    fread(table, 8, count, f);
+    fread(keyRegion, 1, keySize, f);
+    fread(valRegion, 1, valSize, f);
+    fclose(f);
+
+    for (uint32_t i = 0; i < count; i++) {
+        uint32_t keyOff = table[i * 2 + 0];
+        uint32_t valOff = table[i * 2 + 1];
+        if (keyOff < keySize && valOff < valSize) {
+            g_textTable[std::string(keyRegion + keyOff)] = std::string(valRegion + valOff);
+        }
+    }
+    free(table); free(keyRegion); free(valRegion);
+    extern FILE* g_traceLog;
+    if (g_traceLog) { fprintf(g_traceLog, "[TEXT] GTextEnglish.bin loaded: %u entries\n", count); fflush(g_traceLog); }
+}
+const char* GetLocalizedString(const char* key) {  // FUN_005e80c0
+    if (!g_textTableLoaded) LoadGTextTable();
+    if (key == nullptr) return "";
+    auto it = g_textTable.find(key);
+    if (it != g_textTable.end()) return it->second.c_str();
+    return key;  // not found → return the key (matches original fallback)
+}
 void FormatString(const char*, void*) {}    // FUN_00463000
 void FormatStringArg(const char*, const char*) {} // fmt::vformat wrapper
 
@@ -812,6 +876,18 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
     if (g_traceLog) {
         fprintf(g_traceLog, "[TRACE] InitializeEngine completed successfully\n");
         fflush(g_traceLog);
+    }
+
+    // Self-test: verify the GText localization table loads and resolves keys.
+    {
+        extern const char* GetLocalizedString(const char*);
+        const char* yes = GetLocalizedString("ButtonYes");
+        const char* quit = GetLocalizedString("MH_Quit");
+        if (g_traceLog) {
+            fprintf(g_traceLog, "[TEXT-TEST] ButtonYes=\"%s\" MH_Quit=\"%s\"\n",
+                    yes ? yes : "(null)", quit ? quit : "(null)");
+            fflush(g_traceLog);
+        }
     }
 
     return 1;
