@@ -161,11 +161,13 @@ uint32_t ProcessGameLogic()
     // Phase 3e: Light direction render (6-pass light setup)
     extern void EndSceneDirectional();
     EndSceneDirectional();
+#endif
 
-    // Phase 3f: Scene transition state machine (advances scene load → active)
+    // Phase 3f: Scene transition state machine (advances scene load → active).
+    // SAFE in init-behavior mode: it guards on g_sceneReady != 0 (null here —
+    // no scene object built), so it no-ops. Behavioral, not renderer — kept active.
     extern int ProcessSceneTransition();
     ProcessSceneTransition();
-#endif
 
     // Phase 3g: FLICK cinematic interpreter — drives camera + logo animation.
     // In the original, this fires every frame during the menu (4503 calls observed).
