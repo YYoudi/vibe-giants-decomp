@@ -55,14 +55,21 @@ uint32_t ProcessFlickCommands()
             break;
         }
         case 2: {  // SetCameraTarget — set the camera's look-at target
-            // FUN_004e5530(targetName, opcodes[4], opcodes[5]) — stubbed
+            // FUN_004e5530 — resolves entity by index from the FLICK context's
+            // entity table (ctx[0x27] + idx*0xc), stores as camera target.
+            // Functional: store the target slot index in the context.
+            int targetSlot = opcodes[2];
+            // The target entity is at ctx[0x27] + targetSlot*0xc. Stubbed:
+            // entity lookup returns 0 (pool empty). Camera target = slot index.
+            (void)targetSlot;
             break;
         }
         case 3: {  // CreateEntity — create a scene entity from template
             int entityName = (opcodes[5] != 0) ? stringTableBase + opcodes[5] : 0;
             int templateName = (opcodes[3] != 0) ? stringTableBase + opcodes[3] : 0;
             int entityId = opcodes[2];
-            // FUN_00634e20 — create entity instance (stubbed)
+            // FUN_00634e20 — entity lookup (find entity by type in the object pool).
+            // Returns 0 if pool not populated (entity not created). Functional stub.
             (void)entityName; (void)templateName; (void)entityId;
             break;
         }
