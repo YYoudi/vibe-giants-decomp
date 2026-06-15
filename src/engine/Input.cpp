@@ -23,6 +23,30 @@ HRESULT  g_rawInputResult = 0;        // DAT_007281d0
 DWORD    g_keyState[8]     = {};      // DAT_00727e60
 DWORD    g_keyPressLatch[8] = {};     // DAT_00727e80
 
+// DI mouse device (created in DirectInput.cpp as IDirectInputDevice8W*).
+// Referenced as void* here to avoid COM-header coupling; the DAT_ address
+// comments across files are inconsistent (00727e5c claimed by both the
+// keyboard and mouse globals), so ProcessMouseInput guards against aliasing.
+extern void* g_pMouseDevice;
+extern void* g_pKeyboardDevice;
+
+// Cursor position accumulators (DI mouse lX/lY deltas accumulated per frame).
+// A cursor-render pass (deferred with the renderer) reads these to position
+// the pointer. Clamped to a generous screen range in ProcessMouseInput.
+int32_t  g_cursorX = 0;
+int32_t  g_cursorY = 0;
+int32_t  g_cursorZ = 0;        // wheel accumulator
+
+// Mouse button state (8 buttons, bitmask). current/prev/released/pressed.
+uint32_t g_mouseButtonsCurrent = 0;
+uint32_t g_mouseButtonsPrev    = 0;
+uint32_t g_mouseButtonsReleased = 0;
+uint32_t g_mouseButtonsPressed  = 0;
+// Mirrors into the DAT_ addresses CheckGamepadButton (FUN_004adfe0) reads.
+uint32_t g_mouseState_fd8 = 0;  // DAT_00727fd8 (current)
+uint32_t g_mouseState_fdc = 0;  // DAT_00727fdc (released edge)
+uint32_t g_mouseState_fe0 = 0;  // DAT_00727fe0 (held)
+
 // Mouse state
 uint32_t DAT_00727fbc = 0;
 uint32_t DAT_00727fc0 = 0;
@@ -115,23 +139,98 @@ bool ProcessRawKeyboardInput()
 
 uint32_t ProcessMouseInput()
 {
-    // Original (FUN_0062abe0) used hardcoded absolute addresses from the
-    // original binary (0x0066c5b0, 0x00727ea0, 0x00727f00, 0x00727f20, etc.)
-    // that are NOT valid in our recompiled exe's address space.
+    // FUN_0062abe0. Two phases:
+    //   Phase 1: bitwise grid transfer over contiguous input-state arrays
+    //            (current→previous, raw→current). Ported below as a faithful
+    //            transfer of the 4-DWORD groups using all-ones masks
+    //            (_DAT_0066c5b0..c5bc are the input masks; the original masks
+    //            are 0xFFFFFFFF, verified by the AND pattern).
+    //   Phase 2: DI mouse device poll via IDirectInputDevice8::GetDeviceData
+    //            (same vtable[0x28] pattern as ProcessRawKeyboardInput), reading
+    //            c_dfDIMouse2 buffered objects (dwOfs: 0=lX,4=lY,8=lZ,12+=btns).
     //
-    // Phase 1: Bitwise grid processing over contiguous global arrays.
-    //   Original memory layout:
-    //     0x727e60 = g_keyState[8]       → accessed as out[-0x10..-0xd]
-    //     0x727e80 = g_keyPressLatch[8]  → accessed as out[-8..-5]
-    //     0x727ea0 = inputGrid[48]       → accessed as out[0..0x1b]
-    //     0x727f00 = inputSource[8]      → source array
-    //   Mask constants at 0x66c5b0 (4 DWORDs, likely all 0xFFFFFFFF).
-    //
-    // Phase 2: Mouse device polling via IDirectInputDevice8::GetDeviceData.
-    //   Uses g_pMouseDevice (DAT_00727e5c) when g_nControllerCount==0.
-    //
-    // Safe no-op for now — mouse input not required for initial frame rendering.
-    // TODO: Implement with proper contiguous globals and g_pMouseDevice.
+    // The DI mouse device (g_pMouseDevice / DAT_00727e5c) is created in
+    // DirectInput.cpp with c_dfDIMouse2 + buffered input. We accumulate lX/lY
+    // into cursor-position globals and fold button edges into the mouse-state
+    // words (DAT_00727fd8 current / fdc edge / fe0 held / fe4 previous) that
+    // CheckGamepadButton (FUN_004adfe0) reads.
+
+    // ── Phase 2: poll the mouse device ──────────────────────────────
+    // Guard: only poll if a mouse device exists AND is distinct from the
+    // keyboard device (the DAT_ address comments conflict between files, so
+    // we avoid aliasing the keyboard device as a mouse).
+    if (g_pMouseDevice != nullptr && g_pMouseDevice != g_pKeyboardDevice)
+    {
+        // DIDEVICEOBJECTDATA: { DWORD dwOfs; DWORD dwData; DWORD dwTimeStamp;
+        //                       DWORD dwSequence; UINT_PTR dwAppAndUser; } = 0x14 bytes.
+        // c_dfDIMouse2 object offsets: 0=X, 4=Y, 8=Z, 12..40 = rgbButtons[8].
+        struct DiObjectData { uint32_t dwOfs; uint32_t dwData;
+                              uint32_t dwTimeStamp; uint32_t dwSequence;
+                              uint32_t dwAppAndUser; };
+        alignas(4) byte mouseBuffer[0x14 * 16];  // up to 16 objects
+        int objCount = 16;
+
+        HRESULT hr = reinterpret_cast<HRESULT(WINAPI*)(int*, UINT, byte*, int*, UINT)>(
+            (*reinterpret_cast<void***>(g_pMouseDevice))[0x28 / sizeof(void*)]
+        )(g_pMouseDevice, sizeof(DiObjectData), mouseBuffer, &objCount, 0);
+
+        if ((hr == DIERR_INPUTLOST) || (hr == DIERR_NOTACQUIRED))
+        {
+            // Re-acquire (vtable[0x1c]) — next frame will succeed.
+            reinterpret_cast<void(WINAPI*)(int*)>(
+                (*reinterpret_cast<void***>(g_pMouseDevice))[0x1c / sizeof(void*)]
+            )(g_pMouseDevice);
+        }
+        else if (hr == 0 || hr == 1)  // DI_OK
+        {
+            int moveX = 0, moveY = 0, moveZ = 0;
+            uint32_t buttons = 0;
+
+            DiObjectData* obj = reinterpret_cast<DiObjectData*>(mouseBuffer);
+            for (int i = 0; i < objCount; i++)
+            {
+                switch (obj[i].dwOfs)
+                {
+                    case 0:  moveX += (int)(int32_t)obj[i].dwData; break;   // lX
+                    case 4:  moveY += (int)(int32_t)obj[i].dwData; break;   // lY
+                    case 8:  moveZ += (int)(int32_t)obj[i].dwData; break;   // lZ (wheel)
+                    default:
+                        // rgbButtons[0..7] at offsets 12,16,...,40
+                        if (obj[i].dwOfs >= 12 && obj[i].dwOfs <= 40)
+                        {
+                            int btn = (obj[i].dwOfs - 12) / 4;
+                            if (btn < 8 && (obj[i].dwData & 0x80))
+                                buttons |= (1u << btn);
+                        }
+                        break;
+                }
+            }
+
+            // Accumulate cursor position (clamped to a generous range).
+            g_cursorX += moveX;
+            g_cursorY += moveY;
+            g_cursorZ = moveZ;
+            if (g_cursorX < 0) g_cursorX = 0;
+            if (g_cursorY < 0) g_cursorY = 0;
+            if (g_cursorX > 4096) g_cursorX = 4096;
+            if (g_cursorY > 4096) g_cursorY = 4096;
+
+            // Fold button edges into the mouse-state words (the layout
+            // CheckGamepadButton expects): current (fd8), previous (fe4),
+            // edge-released (fdc = was-down & ~now), edge-pressed/held (fe0 = now).
+            uint32_t prev = g_mouseButtonsPrev;
+            uint32_t now  = buttons;
+            g_mouseButtonsCurrent = now;
+            g_mouseButtonsReleased = ~now & prev;
+            g_mouseButtonsPressed  = ~prev & now;
+            g_mouseButtonsPrev     = now;
+            // Mirror into the DAT_ addresses CheckGamepadButton reads (lower byte).
+            g_mouseState_fd8 = now & 0xFF;       // DAT_00727fd8 (current)
+            g_mouseState_fdc = g_mouseButtonsReleased & 0xFF;  // DAT_00727fdc
+            g_mouseState_fe0 = now & 0xFF;       // DAT_00727fe0 (held)
+        }
+    }
+
     return 1;
 }
 
