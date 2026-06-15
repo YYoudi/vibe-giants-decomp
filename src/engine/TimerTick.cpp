@@ -553,8 +553,33 @@ bool CheckKeyboardButton(int, uint32_t) { return false; }
 //   }
 // }
 
-// STUB: bool CheckGamepadButton(uint32_t param_1, uint32_t param_2) � DAT_ names need header mapping
-bool CheckGamepadButton(uint32_t, uint32_t) { return false; }
+// CheckGamepadButton (FUN_004adfe0) — REAL decompiled body. Maps button codes
+// 0x65..0x6c to 8 gamepad button bitmasks; 0x6d/0x6e = mouse scroll direction.
+// param_2: 0=not-pressed, 1=current(pressed), 2=edge(prev), 3=held.
+bool CheckGamepadButton(uint32_t param_1, uint32_t param_2)
+{
+    uint32_t uVar2 = 0;
+    switch (param_1) {
+        case 0x65: uVar2 = 1;    break;
+        case 0x66: uVar2 = 2;    break;
+        case 0x67: uVar2 = 4;    break;
+        case 0x68: uVar2 = 8;    break;
+        case 0x69: uVar2 = 0x10; break;
+        case 0x6a: uVar2 = 0x20; break;
+        case 0x6b: uVar2 = 0x40; break;
+        case 0x6c: uVar2 = 0x80; break;
+        case 0x6d: return ((int32_t)DAT_00727fc4 > 0);   // scroll up
+        case 0x6e: return ((int32_t)DAT_00727fc4 < 0);   // scroll down
+        default: return false;
+    }
+    switch (param_2) {
+        case 0: return ((DAT_00727fd8 & uVar2) == 0);  // not pressed
+        case 1: return ((DAT_00727fd8 & uVar2) != 0);  // current
+        case 2: return ((DAT_00727fdc & uVar2) != 0);  // released edge
+        case 3: return ((DAT_00727fe0 & uVar2) != 0);  // held
+        default: return false;
+    }
+}
 
 
 // ─── CheckAxisButton (FUN_004ade20) ─────────────────────────────
