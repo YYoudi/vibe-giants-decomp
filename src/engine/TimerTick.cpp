@@ -42,6 +42,7 @@ static uint8_t  DAT_00702c37 = 0;          // Combined button flag
 static uint8_t  DAT_00702c3a = 0;
 static char     DAT_00702898 = 0;          // Keyboard/mouse active flag
 static uint32_t DAT_00727e80 = 0;          // Key state word
+static uint32_t DAT_00727ea0 = 0;          // Raw key state array base
 static uint32_t _DAT_00727e84 = 0;         // Key state word 2
 static uint32_t _DAT_00727e90 = 0;         // Key state word 3
 static uint32_t DAT_00727e98 = 0;          // Key state word 4
@@ -522,8 +523,29 @@ void ResetInputState()
 //   return false;
 // }
 
-// STUB: bool CheckKeyboardButton(int param_1, uint32_t param_2) � DAT_ names need header mapping
-bool CheckKeyboardButton(int, uint32_t) { return false; }
+// CheckKeyboardButton (FUN_004ae0c0) — REAL decompiled body. Keyboard-style
+// button check using the input-mapping tables DAT_00745278 (DWORD index into
+// the key-state arrays) and DAT_0074527c (bit position). param_2 selects the
+// state array: 0=raw(ea0), 1=latch(e80), 2=extended(ee0), 3=current(ec0).
+// The mapping tables are populated by KeyBindingLoader (FUN_004b4130, not yet
+// ported) — until then they're empty and this returns false (same as stub).
+static uint32_t DAT_00745278[0x200] = {0};  // input-mapping DWORD-index table
+static uint8_t  DAT_0074527c[0x200] = {0};  // input-mapping bit-position table
+bool CheckKeyboardButton(int param_1, uint32_t param_2)
+{
+    int idx = param_1 * 10;
+    uint32_t dwordIdx = DAT_00745278[idx];
+    uint32_t bit = 1u << (DAT_0074527c[idx] & 0x1f);
+    uint32_t uVar1 = 0;
+    switch (param_2) {
+        case 0: uVar1 = *(&DAT_00727ea0 + dwordIdx) & bit; break;  // raw
+        case 1: return ((bit & (&DAT_00727e80)[dwordIdx]) != 0);   // latch
+        case 2: uVar1 = (&DAT_00727ee0)[dwordIdx] & bit; break;    // extended
+        case 3: uVar1 = (&DAT_00727ec0)[dwordIdx] & bit; break;    // current
+        default: return false;
+    }
+    return (uVar1 != 0);
+}
 
 
 // ─── CheckGamepadButton (FUN_004adfe0) ──────────────────────────
