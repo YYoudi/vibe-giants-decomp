@@ -236,6 +236,25 @@ uint32_t ProcessGameLogic()
     //   dev->Clear(0,nullptr,D3DCLEAR_TARGET,D3DCOLOR_XRGB(20,40,100),1.0f,0);
     //   dev->Present(nullptr,nullptr,g_hWnd,nullptr); }  // HANGS — disabled
 
+    // ── Stub-renderer render path ────────────────────────────────────
+    // With the stub renderer (gg_dx9r_stub.dll, Route B) deployed as gg_dx9r.dll,
+    // the render device's vtable methods are OWNED by the stub and use D3D9
+    // directly (no engine-context protocol). So we can call Clear (vtable[43])
+    // and Present (vtable[47]) via thiscall — giving VISIBLE output.
+    if (g_renderDevice != nullptr)
+    {
+        void** vtable = *reinterpret_cast<void***>(g_renderDevice);
+        typedef void (__attribute__((thiscall)) *PFN_This)(void* self);
+        if (vtable[43]) reinterpret_cast<PFN_This>(vtable[43])(g_renderDevice);  // Clear
+        if (vtable[47]) reinterpret_cast<PFN_This>(vtable[47])(g_renderDevice);  // Present
+        g_renderFrameCount++;
+        if (g_renderFrameCount <= 2 && g_traceLog) {
+            fprintf(g_traceLog, "[STUB-RENDER] frame %d: Clear+Present via stub vtable[43]/[47]\n",
+                    g_renderFrameCount);
+            fflush(g_traceLog);
+        }
+    }
+
     return 1;
 }
 
