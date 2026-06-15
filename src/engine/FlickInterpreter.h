@@ -176,3 +176,4 @@ int BuildSkinBinding(
 void CopyStringTruncated(char* param_1, char* param_2, size_t param_3);  // FUN_006329a0
 
 } // namespace Giants
+void LoadFlickScript(const char* flickName);
