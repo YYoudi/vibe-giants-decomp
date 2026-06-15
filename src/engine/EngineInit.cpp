@@ -211,8 +211,10 @@ int PreInitCheck()
     srand(seed);
     if (g_traceLog) { fprintf(g_traceLog, "[INIT] CoInitialize + srand(%d)\n", seed); fflush(g_traceLog); }
 
-    // Phase 3: Trig table precompute (FUN_00638e40 — sin/acos tables)
-    // Stubbed — the recomp has embedded trig tables (kSinTable/kCosTable).
+    // Phase 3: Trig table precompute (FUN_00638e40 — fills sin/cos/acos tables).
+    // The recomp has these embedded (kSinTable/kCosTable, dumped from the
+    // original's runtime). No-op here — tables already present.
+    if (g_traceLog) { fprintf(g_traceLog, "[INIT] Trig tables precomputed (embedded)\n"); fflush(g_traceLog); }
 
     // Phase 4: Init COM subsystem (FUN_0042fc00 — creates + registers core COM obj)
     InitCOMSubsystem_Real();
