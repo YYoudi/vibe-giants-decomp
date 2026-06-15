@@ -73,11 +73,34 @@ uint32_t ProcessFlickCommands()
             (void)entityName; (void)templateName; (void)entityId;
             break;
         }
+        case 4: {  // SetCameraPosition — resolve camera position entity (like case 2)
+            int posSlot = opcodes[2];
+            (void)posSlot;  // entity lookup stubbed
+            break;
+        }
+        case 6: {  // Reset state flags
+            ctx[0x30] = 0;
+            ctx[0x2f] = 0;
+            break;
+        }
+        case 7: {  // Set camera timing (duration/delay as float params)
+            float duration = (float)opcodes[2];
+            float delay = (float)opcodes[3];
+            *(float*)&ctx[0x34] = duration;
+            if (delay == 0.0f) {
+                *(float*)&ctx[0x33] = duration;
+            }
+            break;
+        }
+        case 10: { // Entity field computation — calls FlickFieldMath (validated)
+            // FUN_00635850(ctx[0x2d]+0xc, ctx[0x2c]) — the validated FLICK math
+            // (entity field computation). Stubbed (ctx[0x2d] is 0 — no entity).
+            break;
+        }
         // Yield opcodes — save position + return to game loop (resume next call)
         case 5:   // Wait/Yield
         case 8:   // End of block
         case 9:   // End of section
-        case 34:  // Frame wait
             ctx[0x22] = (uint32_t)(opcodes + recordSize);  // save resume position
             return 1;
         default:
