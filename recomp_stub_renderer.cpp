@@ -336,16 +336,18 @@ static void DrawLogo(IDirect3DDevice9* dev, Vec3 camPos, Vec3 camFwd) {
         }
     }
     if (!g_logoMesh || g_logoTris == 0) return;
-    // Logo is camera-fixed: scale + place in front of camera (screen-centered).
+    // Logo is camera-fixed + screen-filling (real menu behavior). Place at real
+    // size (~100 units) at 100 units in front of camera, centered on the model.
     float world[16];
-    float s = 0.08f;
-    float cx = camPos.x + camFwd.x * 30.0f;
-    float cy = camPos.y + camFwd.y * 30.0f;
-    float cz = camPos.z + camFwd.z * 30.0f;
+    float s = 1.0f;  // real size (model is ~100 units)
+    float cx = camPos.x + camFwd.x * 100.0f;
+    float cy = camPos.y + camFwd.y * 100.0f;
+    float cz = camPos.z + camFwd.z * 100.0f;
     world[0]=s;  world[1]=0;  world[2]=0;  world[3]=0;
     world[4]=0;  world[5]=s;  world[6]=0;  world[7]=0;
     world[8]=0;  world[9]=0;  world[10]=s; world[11]=0;
-    world[12]=cx-5.0f; world[13]=cy; world[14]=cz; world[15]=1;
+    // Center the model (X:62-118→center ~90, Y:~12, Z:-15..-23→center ~-19)
+    world[12]=cx-90.0f; world[13]=cy-12.0f; world[14]=cz+19.0f; world[15]=1;
     dev->SetTransform((D3DTRANSFORMSTATETYPE)0, (const D3DMATRIX*)world);
     dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
     dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, g_logoTris, g_logoMesh, sizeof(LVertex));
