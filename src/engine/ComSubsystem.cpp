@@ -61,6 +61,20 @@ static const char g_comGuid_0065cdf8 = 0;  // &this serves as the GUID
 // Local operator_new (the original's allocator; here plain malloc).
 static void* operator_new(size_t n) { return malloc(n); }
 
+// FUN_00437e00 — vector reserve (ensure capacity). Functional: realloc-based.
+// Original manages a vector struct (ptr, size, capacity). Here simplified.
+static void* VectorReserve(int capacity, void* existing) {
+    if (existing) return realloc(existing, capacity * 4);  // assume 4-byte elements
+    return malloc(capacity * 4);
+}
+
+// FUN_004409f0 — typed sub-object allocator (switch-based). Functional: malloc+zero.
+static void* TypedAllocator(int type) {
+    void* obj = operator_new(type == 0 ? 0x20 : 0x40);  // size by type
+    if (obj) memset(obj, 0, type == 0 ? 0x20 : 0x40);
+    return obj;
+}
+
 // FUN_0042fc00 — InitCOMSubsystem. Creates + registers the core COM object.
 void InitCOMSubsystem_Real() {
     ComObject* obj = static_cast<ComObject*>(operator_new(0x58));  // 0x58 bytes
