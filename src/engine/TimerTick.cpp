@@ -394,8 +394,97 @@ void TimerTick()
 //   if ((float)DAT_007282c8 < DAT_00702c20) DAT_00702c20 = (float)DAT_007282c8;
 // }
 
-// STUB: void ResetInputState() � DAT_ names need header mapping
-void ResetInputState() {}
+// ResetInputState (FUN_004adab0) — REAL decompiled body. Clears the input flag
+// block (DAT_00702c00, 0x74 bytes) then re-extracts all button/key/mouse bits
+// from the processed state arrays (DAT_00727e80+). This is stage 3 of the input
+// pipeline (raw→processed→flags). NOTE: stage 2 (ProcessMouseInput Phase-1 grid
+// transfer 00727e60→00727e80+) and global unification across Input.cpp are
+// needed for the flags to reflect live input; the body is faithful regardless.
+void ResetInputState()
+{
+    float fVar1 = DAT_00702c1c;   // aspect X (preserved across clear)
+    float fVar2 = DAT_00702c20;   // aspect Y
+    // Original: memset(&DAT_00702c00, 0, 0x74) — a contiguous 0x74-byte flag
+    // block. In the recomp these are separate statics (referenced across ~10
+    // files), so a real memset would overflow BSS. Zero them explicitly instead.
+    g_mappedAction = 0;
+    DAT_00702c01 = 0; DAT_00702c02 = 0; DAT_00702c03 = 0; DAT_00702c04 = 0;
+    DAT_00702c05 = 0; DAT_00702c06 = 0; DAT_00702c07 = 0; DAT_00702c08 = 0;
+    DAT_00702c09 = 0; DAT_00702c0a = 0; DAT_00702c0b = 0; DAT_00702c0c = 0;
+    DAT_00702c0d = 0; DAT_00702c0e = 0; DAT_00702c0f = 0; DAT_00702c10 = 0;
+    DAT_00702c11 = 0; DAT_00702c12 = 0; DAT_00702c13 = 0; DAT_00702c14 = 0;
+    DAT_00702c15 = 0; DAT_00702c16 = 0; DAT_00702c17 = 0; DAT_00702c18 = 0;
+    DAT_00702c19 = 0; DAT_00702c1a = 0;
+    DAT_00702c2c = 0; DAT_00702c2d = 0; DAT_00702c2e = 0; DAT_00702c2f = 0;
+    DAT_00702c30 = 0; DAT_00702c31 = 0; DAT_00702c32 = 0;
+    DAT_00702c33 = 0; DAT_00702c34 = 0; DAT_00702c35 = 0; DAT_00702c36 = 0;
+    DAT_00702c37 = 0; DAT_00702c38 = 0; DAT_00702c39 = 0; DAT_00702c3a = 0;
+    DAT_00702c68 = 0; DAT_00702c6c = 0; DAT_00702c70 = 0;
+    DAT_00702c24 = fVar1;
+    DAT_00702c28 = fVar2;
+    if (DAT_00702898 != '\0') {  // keyboard/mouse active flag
+        DAT_00702c2c = (_DAT_00727e84 & 0x400400) != 0;
+        DAT_00702c2d = (uint8_t)(DAT_00727e98 >> 0x12) & 1;
+        DAT_00702c2e = (uint8_t)(DAT_00727e98 >> 7) & 1;
+        DAT_00702c2f = (uint8_t)(DAT_00727e98 >> 9) & 1;
+        DAT_00702c31 = (uint8_t)(DAT_00727e98 >> 0x13) & 1;
+        DAT_00702c32 = (uint8_t)(DAT_00727e98 >> 0xf) & 1;
+        DAT_00702c30 = (uint8_t)(DAT_00727e98 >> 0x11) & 1;
+        DAT_00702c37 = ((DAT_00727e80 & 0x20000000) != 0 || (_DAT_00727e90 & 0x20000000) != 0) ? 1 : 0;
+        DAT_00702c35 = (uint8_t)(DAT_00727ec0 >> 0x16) & 1;
+        DAT_00702c36 = (uint8_t)(DAT_00727ec0 >> 0x13) & 1;
+        DAT_00702c38 = (uint8_t)(DAT_00727e80 >> 0x14) & 1;
+        DAT_00702c39 = (uint8_t)(DAT_00727e80 >> 0x15) & 1;
+        uint8_t bVar3 = (uint8_t)(DAT_00727e80 >> 0x18);
+        DAT_00702c33 = bVar3 >> 2 & 1;
+        DAT_00702c34 = bVar3 >> 3 & 1;
+    }
+    DAT_00702c01 = (uint8_t)(DAT_00727ed8 >> 8) & 1;
+    DAT_00702c02 = (uint8_t)(DAT_00727ed8 >> 0x10) & 1;   // _2_1_ byte
+    DAT_00702c03 = (uint8_t)(DAT_00727ed8 >> 0xb) & 1;
+    DAT_00702c04 = (uint8_t)(DAT_00727ed8 >> 0xd) & 1;
+    DAT_00702c07 = (uint8_t)(DAT_00727ec0 >> 1) & 1;
+    if ((((_DAT_00727e84 & 0x1000000) == 0) && ((_DAT_00727e94 & 0x1000000) == 0)) &&
+        ((_DAT_00727ee4 & 0x1000000) == 0) &&
+        (((((_DAT_00727ef4 & 0x1000000) == 0) && ((DAT_00727ec4 & 0x1000000) == 0)) &&
+          ((_DAT_00727ed4 & 0x1000000) == 0)))) {
+        DAT_00702c08 = (uint8_t)(DAT_00727ec0 >> 0x1c) & 1;
+    } else {
+        DAT_00702c08 = 0;
+    }
+    DAT_00702c09 = (uint8_t)((uint32_t)DAT_00727ee0 >> 0x1c) & 1;
+    DAT_00702c19 = (uint8_t)(DAT_00727ec0 >> 0xe) & 1;
+    DAT_00702c13 = (uint8_t)(DAT_00727ed8 >> 0x13) & 1;
+    DAT_00702c1a = (uint8_t)(DAT_00727ec0 >> 0xf) & 1;
+    DAT_00702c14 = (uint8_t)(DAT_00727ed8 >> 0x12) & 1;
+    DAT_00702c15 = (uint8_t)(DAT_00727ed8 >> 7) & 1;
+    DAT_00702c16 = (uint8_t)(DAT_00727ed8 >> 0xf) & 1;
+    DAT_00702c17 = (uint8_t)(DAT_00727ed8 >> 9) & 1;
+    uint8_t bVar5 = (uint8_t)DAT_00727fe0;   // mouse held state
+    DAT_00702c18 = (uint8_t)(DAT_00727ed8 >> 0x11) & 1;
+    DAT_00702c0b = bVar5 & 1;
+    uint8_t bVar4 = (uint8_t)DAT_00727fdc;   // mouse released edge
+    DAT_00702c0a = bVar4 & 1;
+    uint8_t bVar3b = (uint8_t)DAT_00727fd8;  // mouse current
+    DAT_00702c0c = bVar3b & 1;
+    DAT_00702c0e = bVar5 & 2;
+    DAT_00702c11 = bVar5 & 4;
+    DAT_00702c0d = bVar4 & 2;
+    DAT_00702c10 = bVar4 & 4;
+    DAT_00702c12 = bVar3b & 4;
+    DAT_00702c0f = bVar3b & 2;
+    DAT_00702c05 = (uint8_t)(DAT_00727ec4 >> 0x13) & 1;
+    DAT_00702c06 = (uint8_t)(DAT_00727ec4 >> 0x14) & 1;
+    DAT_00702c68 = (float)(int32_t)DAT_00727fbc;
+    DAT_00702c1c = (float)(int32_t)DAT_00727fbc + fVar1;
+    DAT_00702c6c = (float)(int32_t)DAT_00727fc0;
+    DAT_00702c70 = (float)(int32_t)DAT_00727fc4;
+    DAT_00702c20 = fVar2 - (float)(int32_t)DAT_00727fc0;
+    if (DAT_00702c1c < 0.0f) DAT_00702c1c = 0.0f;
+    if ((float)DAT_007282c4 < DAT_00702c1c) DAT_00702c1c = (float)DAT_007282c4;
+    if (DAT_00702c20 < 0.0f) DAT_00702c20 = 0.0f;
+    if ((float)DAT_007282c8 < DAT_00702c20) DAT_00702c20 = (float)DAT_007282c8;
+}
 
 
 // ─── CheckKeyboardButton (FUN_004ae0c0) ─────────────────────────
