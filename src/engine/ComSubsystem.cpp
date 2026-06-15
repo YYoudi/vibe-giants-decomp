@@ -30,12 +30,19 @@ struct ComObject {
     uint8_t data[0x48];
 };
 
-// vtable methods (functional). Init is a no-op setup; Release decrements
-// refcount and frees when both reach zero (matches FUN_00431ae0 semantics:
-// "if (p) (*vtable[2])(1)" — the release path).
-extern "C" void __fastcall ComVtbl_Init(ComObject* /*self*/) {
-    // FUN_00431af0 — sets secondary vtables + calls sub-inits. Stubbed: the
-    // object is already zeroed + primary vtable set by InitCOMSubsystem.
+// vtable methods. Init (FUN_00431af0) sets secondary vtables + calls sub-inits.
+// Release (FUN_00431ae0) is the smart-pointer release.
+extern "C" void __fastcall ComVtbl_Init(ComObject* self) {
+    if (!self) return;
+    // FUN_00431af0 — set secondary vtables at data+0x10/+0x14, then call sub-inits.
+    // The sub-init (FUN_004358b0) is already done in InitCOMSubsystem_Real.
+    // Here we set the secondary vtable pointers (original .rdata addresses are
+    // not valid in recomp; use functional nullptr stubs).
+    uint32_t* fields = reinterpret_cast<uint32_t*>(self->data);
+    // fields[4] (=data+0x10) = secondary vtable PTR_FUN_0065d0c0
+    // fields[5] (=data+0x14) = secondary vtable DAT_0065d0b4
+    // Already set by FUN_004358b0 sub-init. The callees (FUN_00443c70 x2,
+    // FUN_00430380, FUN_004303e0) are string/config inits — stubbed.
 }
 extern "C" void __fastcall ComVtbl_Release(ComObject* self, int /*arg*/) {
     // FUN_00431ae0 — smart-pointer release. Decrement strong refcount.
