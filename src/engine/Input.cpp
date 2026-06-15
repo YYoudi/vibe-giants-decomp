@@ -37,24 +37,22 @@ int32_t  g_cursorX = 0;
 int32_t  g_cursorY = 0;
 int32_t  g_cursorZ = 0;        // wheel accumulator
 
-// Mouse button state (8 buttons, bitmask). current/prev/released/pressed.
-uint32_t g_mouseButtonsCurrent = 0;
-uint32_t g_mouseButtonsPrev    = 0;
-uint32_t g_mouseButtonsReleased = 0;
-uint32_t g_mouseButtonsPressed  = 0;
-// Mirrors into the DAT_ addresses CheckGamepadButton (FUN_004adfe0) reads.
-uint32_t g_mouseState_fd8 = 0;  // DAT_00727fd8 (current)
-uint32_t g_mouseState_fdc = 0;  // DAT_00727fdc (released edge)
-uint32_t g_mouseState_fe0 = 0;  // DAT_00727fe0 (held)
+// Mouse button state — CANONICAL definitions (shared across Input.cpp and
+// TimerTick.cpp via extern). ProcessMouseInput writes these; CheckGamepadButton
+// (FUN_004adfe0) and ResetInputState (FUN_004adab0) in TimerTick.cpp read them.
+//   DAT_00727fd8 = current pressed buttons (bitmask, low byte = 8 mouse btns)
+//   DAT_00727fdc = released edge (~now & prev)
+//   DAT_00727fe0 = held (currently down)
+//   DAT_00727fe4 = previous frame's state
+uint32_t DAT_00727fd8 = 0;  // current
+uint32_t DAT_00727fdc = 0;  // released edge
+uint32_t DAT_00727fe0 = 0;  // held
+uint32_t DAT_00727fe4 = 0;  // previous
 
-// Mouse state
+// Mouse movement accumulators (axis deltas).
 uint32_t DAT_00727fbc = 0;
 uint32_t DAT_00727fc0 = 0;
 uint32_t DAT_00727fc4 = 0;
-uint32_t g_mousePrevState = 0;        // DAT_00727fd8
-uint32_t g_mouseCurrState = 0;        // DAT_00727fdc
-uint32_t DAT_00727fe0     = 0;
-uint32_t DAT_00727fe4     = 0;
 
 // ─── ProcessRawKeyboardInput (FUN_0062aac0) ──────────────────
 // Status: PASS
@@ -215,19 +213,14 @@ uint32_t ProcessMouseInput()
             if (g_cursorX > 4096) g_cursorX = 4096;
             if (g_cursorY > 4096) g_cursorY = 4096;
 
-            // Fold button edges into the mouse-state words (the layout
-            // CheckGamepadButton expects): current (fd8), previous (fe4),
-            // edge-released (fdc = was-down & ~now), edge-pressed/held (fe0 = now).
-            uint32_t prev = g_mouseButtonsPrev;
+            // Fold button edges into the canonical mouse-state words that
+            // CheckGamepadButton (FUN_004adfe0) reads across TUs.
+            uint32_t prev = DAT_00727fe4;
             uint32_t now  = buttons;
-            g_mouseButtonsCurrent = now;
-            g_mouseButtonsReleased = ~now & prev;
-            g_mouseButtonsPressed  = ~prev & now;
-            g_mouseButtonsPrev     = now;
-            // Mirror into the DAT_ addresses CheckGamepadButton reads (lower byte).
-            g_mouseState_fd8 = now & 0xFF;       // DAT_00727fd8 (current)
-            g_mouseState_fdc = g_mouseButtonsReleased & 0xFF;  // DAT_00727fdc
-            g_mouseState_fe0 = now & 0xFF;       // DAT_00727fe0 (held)
+            DAT_00727fd8 = now & 0xFF;             // current pressed
+            DAT_00727fdc = (~now & prev) & 0xFF;   // released edge
+            DAT_00727fe0 = now & 0xFF;             // held
+            DAT_00727fe4 = now & 0xFF;             // previous (for next frame)
         }
     }
 

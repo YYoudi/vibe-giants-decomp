@@ -49,9 +49,12 @@ static uint32_t DAT_00727ec0 = 0;          // Current key state
 static uint32_t DAT_00727ec4 = 0;          // Key state extended
 static uint32_t DAT_00727ed8 = 0;          // Arrow/numpad key state
 static uint32_t DAT_00727ee0 = 0;          // Extended key state
-static uint32_t DAT_00727fd8 = 0;          // Mouse raw state
-static uint32_t DAT_00727fdc = 0;          // Mouse current state
-static uint32_t DAT_00727fe0 = 0;          // Mouse pressed bits
+// Mouse button state — CANONICAL definitions live in Input.cpp (ProcessMouseInput
+// writes them). Extern here so CheckGamepadButton / ResetInputState read the same
+// state (was a disconnected duplicate-DAT static copy).
+extern uint32_t DAT_00727fd8;              // Mouse current pressed
+extern uint32_t DAT_00727fdc;              // Mouse released edge
+extern uint32_t DAT_00727fe0;              // Mouse held
 static float    DAT_007282c8 = 0.0f;       // Mouse sensitivity
 
 // ─── Additional key state globals ───────────────────────────────
