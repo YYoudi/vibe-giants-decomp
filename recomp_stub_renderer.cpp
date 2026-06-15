@@ -191,6 +191,8 @@ static const CamKey g_camKeys[] = {
     { -3230.62f, 4058.18f,  374.02f },
 };
 static const CamKey g_camTarget = { -1239.0f, 1776.8f, 222.8f };
+// Last frame's camera state (set by DrawTerrain, used by DrawLogo).
+static Vec3 g_lastCamPos = {0,0,0}, g_lastCamFwd = {0,0,1};
 
 static void LoadTerrain() {
     if (g_tTried) return;
@@ -273,6 +275,8 @@ static void DrawTerrain(IDirect3DDevice9* dev) {
     float ez = a.ez + (b.ez - a.ez) * frac;
     Vec3 camPos  = { ex, ez, ey };                          // (X, Z, Y)
     Vec3 target  = { g_camTarget.ex, g_camTarget.ez, g_camTarget.ey };
+    g_lastCamPos = camPos;
+    g_lastCamFwd = vnorm(vsub(target, camPos));
     float view[16], proj[16];
     ViewMatrixLH(view, camPos, target, {0, 1, 0});
     PerspectiveLH(proj, 0.9f, 16.0f / 9.0f, 1.0f, 20000.0f);  // large far plane (world is ~5000 units)
@@ -282,9 +286,76 @@ static void DrawTerrain(IDirect3DDevice9* dev) {
     dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, g_tTriCount, g_tMesh, sizeof(TVertex));
 }
 
+// ─── Logo rendering (Giants_logo_3D.gbs — the menu's always-visible 3D logo) ───
+// The logo is camera-fixed (moves WITH the camera in the menu, so it stays
+// screen-centered while the terrain scrolls behind). We render it in front of
+// the camera each frame, matching that behavior.
+struct LVertex { float x, y, z; D3DCOLOR color; };
+static LVertex* g_logoMesh = nullptr;
+static int      g_logoTris = 0;
+static bool     g_logoTried = false;
+
+static void DrawLogo(IDirect3DDevice9* dev, Vec3 camPos, Vec3 camFwd) {
+    if (!g_logoTried) {
+        g_logoTried = true;
+        FILE* f = fopen("logo_mesh.bin", "rb");
+        if (f) {
+            uint32_t nv = 0, nt = 0;
+            fread(&nv, 4, 1, f);
+            if (nv > 0 && nv < 100000) {
+                // Read indexed verts: 3 floats (pos) + 3 bytes (color), 15 bytes each.
+                float* vpos = (float*)malloc(nv * 3 * 4);
+                for (uint32_t i = 0; i < nv; i++) {
+                    fread(&vpos[i*3], 4, 1, f);
+                    fread(&vpos[i*3+1], 4, 1, f);
+                    fread(&vpos[i*3+2], 4, 1, f);
+                    uint8_t rgb[3]; fread(rgb, 1, 3, f);  // skip color (use metallic)
+                }
+                fread(&nt, 4, 1, f);
+                if (nt > 0 && nt < 100000) {
+                    uint32_t* tri = (uint32_t*)malloc(nt * 3 * 4);
+                    fread(tri, 4, nt * 3, f);
+                    g_logoMesh = (LVertex*)malloc(nt * 3 * sizeof(LVertex));
+                    g_logoTris = 0;
+                    for (uint32_t i = 0; i < nt; i++) {
+                        uint32_t a = tri[i*3], b = tri[i*3+1], c = tri[i*3+2];
+                        if (a >= nv || b >= nv || c >= nv) continue;  // bounds check
+                        D3DCOLOR col = D3DCOLOR_XRGB(210, 190, 130);  // metallic gold
+                        g_logoMesh[g_logoTris*3+0] = {vpos[a*3], vpos[a*3+1], vpos[a*3+2], col};
+                        g_logoMesh[g_logoTris*3+1] = {vpos[b*3], vpos[b*3+1], vpos[b*3+2], col};
+                        g_logoMesh[g_logoTris*3+2] = {vpos[c*3], vpos[c*3+1], vpos[c*3+2], col};
+                        g_logoTris++;
+                    }
+                    free(tri);
+                }
+                free(vpos);
+            }
+            fclose(f);
+            FILE* m = fopen("logo_loaded.txt", "w");
+            if (m) { fprintf(m, "logo tris=%d\n", g_logoTris); fclose(m); }
+        }
+    }
+    if (!g_logoMesh || g_logoTris == 0) return;
+    // Logo is camera-fixed: scale + place in front of camera (screen-centered).
+    float world[16];
+    float s = 0.08f;
+    float cx = camPos.x + camFwd.x * 30.0f;
+    float cy = camPos.y + camFwd.y * 30.0f;
+    float cz = camPos.z + camFwd.z * 30.0f;
+    world[0]=s;  world[1]=0;  world[2]=0;  world[3]=0;
+    world[4]=0;  world[5]=s;  world[6]=0;  world[7]=0;
+    world[8]=0;  world[9]=0;  world[10]=s; world[11]=0;
+    world[12]=cx-5.0f; world[13]=cy; world[14]=cz; world[15]=1;
+    dev->SetTransform((D3DTRANSFORMSTATETYPE)0, (const D3DMATRIX*)world);
+    dev->SetFVF(D3DFVF_XYZ | D3DFVF_DIFFUSE);
+    dev->DrawPrimitiveUP(D3DPT_TRIANGLELIST, g_logoTris, g_logoMesh, sizeof(LVertex));
+}
+
 extern "C" __attribute__((fastcall)) long Wrap_EndScene(struct Wrap* self) {
     if (self->dev) {
         DrawTerrain(self->dev);   // REAL intro_island terrain (if decoded)
+        // Logo is camera-fixed: render it in front of the camera (screen-centered).
+        DrawLogo(self->dev, g_lastCamPos, g_lastCamFwd);
         float t = GetTickCount() / 700.0f;
         DrawGrid(self->dev, t);   // grid floor (fallback if no terrain)
         DrawCube(self->dev, t);
