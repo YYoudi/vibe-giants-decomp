@@ -191,7 +191,55 @@ static char g_audioErrorTarget[256] = {}; // Error message buffer for audio init
 // ─── Stub implementations for forward-declared callees ────────
 // Placeholder no-ops until each function is fully reversed.
 
-int  PreInitCheck() { return 1; }           // FUN_005c45f0
+// PreInitCheck (FUN_005c45f0) — the root init orchestrator (430 lines, 36 callees).
+// Ported with essential steps + guarded callees so the init advances past the
+// stub. Each step logs to trace + continues on failure (the original aborts on
+// hard failures, but for reconstruction we want max progress).
+int PreInitCheck()
+{
+    extern FILE* g_traceLog;
+    extern void InitCOMSubsystem_Real();
+    extern void InitStringSubsystem_Real();
+    extern void RegisterGameContext();
+
+    // Phase 1: Version log (original: FUN_005f0fe0 + vformat + FUN_0043f440)
+    if (g_traceLog) { fprintf(g_traceLog, "[INIT] PreInitCheck: Starting Giants v1.520.59\n"); fflush(g_traceLog); }
+
+    // Phase 2: COM init + RNG seed (original: CoInitialize + timeGetTime + srand)
+    CoInitialize(nullptr);
+    DWORD seed = timeGetTime() & 0x7FFF;
+    srand(seed);
+    if (g_traceLog) { fprintf(g_traceLog, "[INIT] CoInitialize + srand(%d)\n", seed); fflush(g_traceLog); }
+
+    // Phase 3: Trig table precompute (FUN_00638e40 — sin/acos tables)
+    // Stubbed — the recomp has embedded trig tables (kSinTable/kCosTable).
+
+    // Phase 4: Init COM subsystem (FUN_0042fc00 — creates + registers core COM obj)
+    InitCOMSubsystem_Real();
+
+    // Phase 5: Factory init (FUN_0046fd40 — create factory object)
+    // Stubbed — ComRegistry handles factory queries functionally.
+
+    // Phase 6: Register game context (FUN_005c4400 + object creation)
+    RegisterGameContext();
+
+    // Phase 7: Create the 4 COM objects (original: operator_new + vtable + register
+    // via DAT_0073c924->vtable[1]). The objects have vtables PTR_FUN_0066a574,
+    // PTR_FUN_00660250, PTR_FUN_0065dc80. Stubbed — ComRegistry provides the
+    // functional equivalent.
+
+    // Phase 8: Init string subsystem (FUN_00443e20)
+    InitStringSubsystem_Real();
+
+    // Phase 9: Launcher pipe protocol (ReadFile magic 0x02/0x7a330000)
+    // Skipped — -launcher flag bypasses this.
+
+    // Phase 10: Get game context + init level (FUN_00461a60 + FUN_00501f50)
+    // These run during LoadDefaultPlayer (already wired).
+
+    if (g_traceLog) { fprintf(g_traceLog, "[INIT] PreInitCheck done — registry count=%d\n", ComRegistryCount()); fflush(g_traceLog); }
+    return 1;  // success
+}
 int  InitAudioSystem() { return 1; }        // FUN_0062af40
 void InitDisplaySettings() {}               // FUN_004f86c0
 void InitDisplayMode() {}                   // FUN_0062b9c0
