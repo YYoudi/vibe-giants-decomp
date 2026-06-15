@@ -7,6 +7,7 @@
 //   on the renderer factory object at DAT_00702700.
 
 #include "GraphicsResources.h"
+#include <cstdio>
 #include <cstdlib>
 #include <cstdint>
 #include <windows.h>
@@ -78,6 +79,18 @@ DWORD  g_playerIdFlag = 0;              // DAT_007028b0
 
 void InitGraphicsResources()
 {
+    // INIT-BEHAVIOR RECONSTRUCTION MODE: this function creates render devices +
+    // vertex/index buffers via the renderer factory vtable (vtable[2]/[3]/[4]).
+    // The real gg_dx9r.dll factory methods are thiscall and require the full
+    // engine-context protocol (UpCalls + state) the recomp doesn't yet drive —
+    // calling them crashes deep in the renderer (vtable[3]=0x1001DB10). Per the
+    // project focus (init BEHAVIOR, not visual rendering), the device/buffer
+    // creation is deferred. Devices/buffers stay null; the game loop guards on
+    // g_renderDevice and runs the init sequence without rendering.
+    extern FILE* g_traceLog;
+    if (g_traceLog) { fprintf(g_traceLog, "[GFX] InitGraphicsResources: factory device/buffer creation deferred (init-behavior mode)\n"); fflush(g_traceLog); }
+    return;
+
     // The factory object at DAT_00702700 is a COM-style renderer factory.
     // Its vtable provides device creation and buffer allocation methods.
     void* factory = g_renderFactory;   // DAT_00702700

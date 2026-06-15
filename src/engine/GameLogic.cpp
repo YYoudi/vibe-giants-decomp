@@ -137,6 +137,14 @@ uint32_t ProcessGameLogic()
     // Phase 3: Input mapping + controller state (safe — separate module)
     TimerTick();
 
+    // INIT-BEHAVIOR RECONSTRUCTION MODE: the renderer-dependent phases below
+    // (camera/projection/world-transform/light passes → all vtable dispatch into
+    // gg_dx9r.dll) crash deep in the renderer because the engine-context protocol
+    // isn't fully driven yet. Per the project focus (init BEHAVIOR, not rendering),
+    // these phases are skipped so the loop runs continuously exercising the
+    // behavioral state (timer, input, FLICK cinematic, scene-transition FSM,
+    // countdown). They're re-enabled when the renderer protocol is reconstructed.
+#if 0
     // Phase 3b: Camera update (FUN_0049a040 — camera selection + projection)
     extern void UpdateActiveCamera();
     extern void AnimateCameraPath();
@@ -157,6 +165,7 @@ uint32_t ProcessGameLogic()
     // Phase 3f: Scene transition state machine (advances scene load → active)
     extern int ProcessSceneTransition();
     ProcessSceneTransition();
+#endif
 
     // Phase 3g: FLICK cinematic interpreter — drives camera + logo animation.
     // In the original, this fires every frame during the menu (4503 calls observed).
@@ -181,6 +190,11 @@ uint32_t ProcessGameLogic()
     // FPS limiter → Present(vtable[47]). All vtable calls use the CallThiscall
     // wrappers (ECX=this). Phase 5's old inline render is removed (it double-
     // rendered with FrameEnd and used bare calls that left ECX garbage).
+    // Phase 5 (renderer render cycle) is deferred in init-behavior mode — FrameEnd
+    // drives the full PrePresent→BeginScene→Present pipeline via renderer vtable
+    // calls that crash without the complete engine-context protocol. Skipped so the
+    // loop runs continuously. Re-enabled when the renderer protocol is reconstructed.
+#if 0
     if (g_renderDevice != nullptr)
     {
         extern void FrameEnd();
@@ -194,6 +208,7 @@ uint32_t ProcessGameLogic()
             fflush(g_traceLog);
         }
     }
+#endif
 
     return 1;
 }

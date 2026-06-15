@@ -94,6 +94,12 @@ uint32_t MainGameLoop(HINSTANCE hInstance, uint32_t param2, int nCmdShow)
     // Original: COM Release, audio shutdown, renderer free
     // TODO: implement cleanup sequence
 
+    if (g_traceLog) {
+        fprintf(g_traceLog, "[LOOP] MainGameLoop exited after %d frames (shutdown=%d)\n",
+                frameCount, g_shutdownRequested);
+        fflush(g_traceLog);
+    }
+
     return 0;
 }
 
