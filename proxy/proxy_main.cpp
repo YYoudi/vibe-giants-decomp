@@ -422,7 +422,7 @@ void UpCallsLoad(uint32_t version, uint32_t count, uint32_t callbackTablePtr) {
     // callbacks don't cover (FLICK, camera, audio, asset load, math, timing).
     // DISABLED for clean startup tracing — the active detours (VDS/SinA) +
     // probes break the normal menu startup (EXIT 1). Re-enable for gamegauge.
-    // InstallDetourProbes();
+    InstallDetourProbes();
     // Callbacks::RunSelfTests();
     // DriveActiveDetours();
     // Callbacks::DumpCOMState();
