@@ -20,6 +20,8 @@
 
 #include <cstring>
 #include <cstdlib>
+#include <cstdio>
+#include <windows.h>
 
 namespace Giants {
 
@@ -656,42 +658,100 @@ void FullRenderCleanup()
 
 void PrimaryRenderReset()
 {
-    // Stub: Reads ~20 game configuration values from registry key DAT_0074be5c.
-    // Each read follows the pattern:
-    //   if (condition && DAT_0074be5c != NULL) {
-    //       DWORD size = 4;
-    //       RegQueryValueExA(DAT_0074be5c, "ValueName", 0, 0, &global, &size);
-    //   }
-    //
-    // Values read (in order):
-    //   "PlayerTeam"        -> DAT_00702930 (always)
-    //   "GameTeam"          -> DAT_0070292c (if DAT_00702b40 == 0)
-    //   "SessionName"       -> DAT_00702968 (if DAT_00702b30 == 0, 0x20 bytes)
-    //   "GameType"          -> DAT_00702934 (if DAT_00702b48 == 0, then unconditionally)
-    //   "GameBaseLevel"     -> DAT_00702928
-    //   "AllowJoiners"      -> DAT_00702938
-    //   "DamageTeammates"   -> DAT_00702939
-    //   "NoVimps"           -> DAT_0070295c
-    //   "LockTeams"         -> DAT_00702950
-    //   "PointsPerKill"     -> DAT_0070293c
-    //   "PointsPerCapture"  -> DAT_00702940
-    //   "CapturePreventTime"-> DAT_00702944
-    //   "MaxPlayers"        -> DAT_0070294c (if DAT_00702b44 == 0)
-    //   "SmartieDifficulty" -> DAT_00702954
-    //   "VimpMeatDifficulty"-> DAT_00702958
-    //   "TimeLimit"         -> DAT_007029ec
-    //   "PlayerScoreLimit"  -> DAT_007029fc
-    //   "TeamScoreLimit"    -> DAT_00702a0c
-    //   "BaseComplete"      -> DAT_00702a10
-    //   "Unavail1"          -> DAT_00702af0
-    //   "Unavail2"          -> DAT_00702af4
-    //
-    // Derived values computed:
-    //   DAT_00702948 = (float)CapturePreventTime * DAT_0066c0ac
-    //   DAT_007029e0 = (TimeLimit > 0) ? 1 : 0
-    //   DAT_00702a30 = (float)TimeLimit * DAT_0066c0ac
-    //   DAT_007029f0 = (PlayerScoreLimit > 0) ? 1 : 0
-    //   DAT_00702a00 = (TeamScoreLimit > 0) ? 1 : 0
+    // FUN_00501340: reads ~20 per-player game-config values from the player
+    // registry key (DAT_0074be5c). The real opened key is g_hPlayerKey in
+    // EngineInit.cpp (the local DAT_0074be5c static here is a separate null
+    // copy due to the cross-TU duplicate-DAT split, so we extern the real one).
+    extern HKEY g_hPlayerKey;  // DAT_0074be5c — opened in EngineInit LockGraphics
+    if (g_hPlayerKey == nullptr)
+        return;
+
+    // Target globals (original DAT_ addresses; declared here, file-local).
+    static uint32_t DAT_00702930 = 0;  // PlayerTeam
+    static uint32_t DAT_0070292c = 0;  // GameTeam
+    static char     DAT_00702968[0x20] = {};  // SessionName (32 bytes)
+    static uint32_t DAT_00702934 = 0;  // GameType
+    static uint32_t DAT_00702928 = 0;  // GameBaseLevel
+    static uint8_t  DAT_00702938 = 0;  // AllowJoiners
+    static uint8_t  DAT_00702939 = 0;  // DamageTeammates
+    static uint8_t  DAT_0070295c = 0;  // NoVimps
+    static uint8_t  DAT_00702950 = 0;  // LockTeams
+    static uint32_t DAT_0070293c = 0;  // PointsPerKill
+    static uint32_t DAT_00702940 = 0;  // PointsPerCapture
+    static uint32_t DAT_00702944 = 0;  // CapturePreventTime
+    static uint32_t DAT_0070294c = 0;  // MaxPlayers
+    static uint32_t DAT_00702954 = 0;  // SmartieDifficulty
+    static uint32_t DAT_00702958 = 0;  // VimpMeatDifficulty
+    static uint32_t DAT_007029ec = 0;  // TimeLimit
+    static uint32_t DAT_007029fc = 0;  // PlayerScoreLimit
+    static uint32_t DAT_00702a0c = 0;  // TeamScoreLimit
+    static uint32_t DAT_00702a10 = 0;  // BaseComplete
+    static uint32_t DAT_00702af0 = 0;  // Unavail1
+    static uint32_t DAT_00702af4 = 0;  // Unavail2
+    // Derived
+    static float    DAT_00702948 = 0.0f;  // = CapturePreventTime * scale
+    static uint8_t  DAT_007029e0 = 0;     // = TimeLimit > 0
+    static float    DAT_00702a30 = 0.0f;  // = TimeLimit * scale
+    static uint8_t  DAT_007029f0 = 0;     // = PlayerScoreLimit > 0
+    static uint8_t  DAT_00702a00 = 0;     // = TeamScoreLimit > 0
+    extern float    DAT_0066c0ac;          // time-limit scale constant
+
+    // Helper to read a DWORD value.
+    auto readDword = [&](const char* name, uint32_t* out) {
+        DWORD size = 4;
+        RegQueryValueExA(g_hPlayerKey, name, nullptr, nullptr,
+                         reinterpret_cast<LPBYTE>(out), &size);
+    };
+
+    readDword("PlayerTeam",        &DAT_00702930);
+    readDword("GameTeam",          &DAT_0070292c);
+    readDword("GameType",          &DAT_00702934);
+    readDword("GameBaseLevel",     &DAT_00702928);
+    readDword("PointsPerKill",     &DAT_0070293c);
+    readDword("PointsPerCapture",  &DAT_00702940);
+    readDword("CapturePreventTime",&DAT_00702944);
+    readDword("MaxPlayers",        &DAT_0070294c);
+    readDword("SmartieDifficulty", &DAT_00702954);
+    readDword("VimpMeatDifficulty",&DAT_00702958);
+    readDword("TimeLimit",         &DAT_007029ec);
+    readDword("PlayerScoreLimit",  &DAT_007029fc);
+    readDword("TeamScoreLimit",    &DAT_00702a0c);
+    readDword("BaseComplete",      &DAT_00702a10);
+    readDword("Unavail1",          &DAT_00702af0);
+    readDword("Unavail2",          &DAT_00702af4);
+
+    // Byte-sized values.
+    auto readByte = [&](const char* name, uint8_t* out) {
+        DWORD size = 1;
+        RegQueryValueExA(g_hPlayerKey, name, nullptr, nullptr,
+                         out, &size);
+    };
+    readByte("AllowJoiners",     &DAT_00702938);
+    readByte("DamageTeammates",  &DAT_00702939);
+    readByte("NoVimps",          &DAT_0070295c);
+    readByte("LockTeams",        &DAT_00702950);
+
+    // SessionName is a 0x20-byte string.
+    {
+        DWORD size = 0x20;
+        RegQueryValueExA(g_hPlayerKey, "SessionName", nullptr, nullptr,
+                         reinterpret_cast<LPBYTE>(DAT_00702968), &size);
+        DAT_00702968[0x1f] = 0;
+    }
+
+    // Derived values.
+    DAT_00702948 = static_cast<float>(DAT_00702944) * DAT_0066c0ac;
+    DAT_007029e0 = (DAT_007029ec > 0) ? 1 : 0;
+    DAT_00702a30 = static_cast<float>(DAT_007029ec) * DAT_0066c0ac;
+    DAT_007029f0 = (DAT_007029fc > 0) ? 1 : 0;
+    DAT_00702a00 = (DAT_00702a0c > 0) ? 1 : 0;
+
+    extern FILE* g_traceLog;
+    if (g_traceLog) {
+        fprintf(g_traceLog, "[PROFILE] PrimaryRenderReset read player config: GameType=%u GameBaseLevel=%u PlayerTeam=%u MaxPlayers=%u TimeLimit=%u\n",
+                DAT_00702934, DAT_00702928, DAT_00702930, DAT_0070294c, DAT_007029ec);
+        fflush(g_traceLog);
+    }
 }
 
 // ─── PartialRenderCleanup (FUN_00501a20) ─────────────────────
