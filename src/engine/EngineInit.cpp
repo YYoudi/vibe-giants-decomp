@@ -243,7 +243,9 @@ int PreInitCheck()
     if (g_traceLog) { fprintf(g_traceLog, "[INIT] PreInitCheck done — registry count=%d\n", ComRegistryCount()); fflush(g_traceLog); }
     return 1;  // success
 }
-int  InitAudioSystem() { return 1; }        // FUN_0062af40
+// InitAudioSystem (FUN_0062af40) — real body in AudioSystem.cpp (SDV plugin
+// loader). Do NOT stub here (duplicate-definition: the no-arg stub shadowed
+// the real const char*/uint32_t body and was never called).
 // InitDisplaySettings (FUN_004f86c0) — real body in InitDisplaySettings.cpp
 // (vtable display-capability query + fullscreen + viewport). Do NOT stub here
 // (duplicate-definition: the empty stub shadowed the real body).
@@ -724,7 +726,12 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
     // ── Phase E: Audio system initialization ────────────────────
     if (g_traceLog) { fprintf(g_traceLog, "[TRACE] Phase D done — checking audio\n"); fflush(g_traceLog); }
     {
-        int audioResult = InitAudioSystem();
+        // FUN_0062af40 — load the SDV sound driver. The driver name is "ds"
+        // (DirectSound → gs_ds.dll); path is nullptr (load from the working dir,
+        // which is the game install dir). The EngineInit.cpp no-arg stub that
+        // shadowed the real body has been removed so this calls AudioSystem.cpp.
+        extern int InitAudioSystem(const char* path, uint32_t name);
+        int audioResult = InitAudioSystem(nullptr, reinterpret_cast<uint32_t>("ds"));
         if (audioResult == 0)
         {
             // Audio failed — continue anyway for testing
