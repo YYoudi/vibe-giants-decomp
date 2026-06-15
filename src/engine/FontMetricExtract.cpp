@@ -82,6 +82,14 @@ namespace {
 __attribute__((noinline))
 void FontMetricExtractGlyph(int param_1)
 {
+#if 0
+    // BODY PRESERVED but disabled: the FUN_0062be70 decompile references font
+    // globals whose DAT_ addresses collide with DisplayMode.cpp's declarations
+    // (e.g. DAT_0074beb8 is the 0x554-byte metrics table in DisplayMode but was
+    // assumed to be an atlas Y cursor here). Re-enable after reconciling the
+    // font-global layout (be60/be68/bedc owned by DisplayMode; bf0c/bed8/bed4/
+    // bebc to be defined). The text-DISPLAY mechanism (DrawTextExecute via
+    // renderer vtable[50]/[9]/device1[1]) is documented in TextRender.cpp.
     char* local_14 = &DAT_0074bf0c[param_1 * 5];
 
     // (&DAT_0074bf0e)[ param_1 * 5 ] == DAT_0074bf0c[ param_1*5 + 2 ]
@@ -233,6 +241,8 @@ void FontMetricExtractGlyph(int param_1)
 
     DAT_0074bebc = DAT_0074bebc + 1u + (unsigned int)(unsigned char)pcVar10[2];
     DAT_0074bed0 = 1;   // mark atlas dirty
+#endif
+    (void)param_1;
 }
 
 } // anonymous namespace
@@ -248,6 +258,18 @@ void FontMetricExtract()
     for (int ch = 0x20; ch <= 0x7e; ++ch) {
         FontMetricExtractGlyph(ch);
     }
+}
+
+// Public per-glyph entry. NOTE: the real FUN_0062be70 body (FontMetricExtractGlyph,
+// in the anonymous namespace above) references font globals whose DAT_ addresses
+// collide with DisplayMode.cpp's declarations (e.g. DAT_0074beb8 is the 0x554-byte
+// metrics table in DisplayMode but the subagent assumed it's an atlas Y cursor).
+// Calling it directly would touch mismatched globals. Guarded stub until those
+// globals are reconciled — the DrawTextExecute renderer mechanism (the path to
+// actually DISPLAYING text) is documented in TextRender.cpp regardless.
+void FontMetricExtractChar(int ch)
+{
+    (void)ch;
 }
 
 } // namespace Giants

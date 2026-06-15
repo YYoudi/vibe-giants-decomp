@@ -124,6 +124,15 @@ uint32_t ProcessGameLogic()
         fflush(g_traceLog);
     }
 
+    // One-shot text-render pipeline test: resolve a localized string and run it
+    // through the GDI→renderer text path (DrawTextPrepare + DrawTextExecute).
+    if (g_pglEntryCount == 2) {
+        extern const char* GetLocalizedString(const char*);
+        extern void DrawTextExecute(uint32_t color, const char* str, float yScale, int len);
+        const char* s = GetLocalizedString("ButtonYes");
+        DrawTextExecute(0xFFFFFFFF, s ? s : "", 1.0f, s ? (int)strlen(s) : 0);
+    }
+
     // Phase 1: Pre-frame setup (safe — uses our globals)
     PreFrameReset();
 
