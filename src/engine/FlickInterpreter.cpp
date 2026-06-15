@@ -59,8 +59,40 @@ void LoadFlickScript(const char* flickName) {
     memset(g_flickCtx, 0, sizeof(g_flickCtx));
     g_flickCtx[0x21] = (uint32_t)data;             // string table base
     g_flickCtx[0x22] = (uint32_t)(data + 0x18/4);  // opcode pointer (data + 0x18)
-    g_flickCtx[0x24] = data[2];                     // entity count (offset +8)
-    g_flickCtx[0x25] = data[3];                     // animation count (offset +0xc)
+    uint32_t entityCount = data[2];                  // entity count (offset +8)
+    uint32_t animCount    = data[3];                 // animation count (offset +0xc)
+    uint32_t pathCount    = data[4];                 // path count (offset +0x10)
+    g_flickCtx[0x24] = entityCount;
+    g_flickCtx[0x25] = animCount;
+    g_flickCtx[0x26] = pathCount;
+
+    // Allocate the entity/actor/path pools (per FlickCreateInterpreter FUN_004e5150):
+    //   ctx[0x27] = entity pool (entityCount * 0xc per slot)
+    //   ctx[0x28] = actor pool  (animCount * 0x8e4 per slot)
+    //   ctx[0x29] = path pool   (pathCount * 0x380 per slot)
+    // Cap counts to avoid huge allocations from a malformed header.
+    if (entityCount > 0 && entityCount < 4096) {
+        void* pool = calloc(entityCount, 0xc);
+        g_flickCtx[0x27] = (uint32_t)pool;
+    }
+    if (animCount > 0 && animCount < 1024) {
+        void* pool = calloc(animCount, 0x8e4);
+        g_flickCtx[0x28] = (uint32_t)pool;
+    }
+    if (pathCount > 0 && pathCount < 1024) {
+        void* pool = calloc(pathCount, 0x380);
+        g_flickCtx[0x29] = (uint32_t)pool;
+    }
+
+    // Default interpreter state (per FlickCreateInterpreter steps 5-6).
+    g_flickCtx[0x2a] = 1;                 // active flag
+    g_flickCtx[0x2f] = 1;                 // visible flag
+    g_flickCtx[0x30] = 1;                 // enabled flag
+    g_flickCtx[0x34] = 0x3f800000;        // 1.0f scale X
+    g_flickCtx[0x33] = 0x3f800000;        // 1.0f scale Y
+    g_flickCtx[0x37] = 0x3f800000;        // 1.0f opacity
+    g_flickCtx[0x4e] = 0x447a0000;        // 1000.0f default duration (ms)
+
     DAT_00747d2c = g_flickCtx;
     if (g_traceLog) {
         fprintf(g_traceLog, "[FLICK] Loaded %s (%d bytes, entities=%d anims=%d) — context ready\n",
