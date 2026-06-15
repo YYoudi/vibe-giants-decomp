@@ -91,6 +91,16 @@ void InitCOMSubsystem_Real() {
     // FUN_004409f0(0) x2 — allocator init (stubbed)
 
     ComRegister(&g_comGuid_0065cdf8, obj);
+
+    // FUN_0042e110 — config file loader (parses Default configuration).
+    // Functional stub: defaults used (no config file parsed yet). The original
+    // loads a config via FUN_00431980 + parses key-value sections. Porting the
+    // full parser is a transitive chain (9 callees). For now, defaults.
+    extern FILE* g_traceLog;
+    if (g_traceLog) { fprintf(g_traceLog, "[INIT] Config loaded (defaults)\n"); fflush(g_traceLog); }
+
+    // FUN_0042fd68 — refcount helper (0 callees, trivial decrement).
+    // Already handled by the ComObject strongRef/weakRef fields.
 }
 
 // GUID for the string-lookup subsystem (DAT_0065d154 in the original).
