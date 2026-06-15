@@ -158,6 +158,11 @@ uint32_t ProcessGameLogic()
     extern int ProcessSceneTransition();
     ProcessSceneTransition();
 
+    // Phase 3g: FLICK cinematic interpreter — drives camera + logo animation.
+    // In the original, this fires every frame during the menu (4503 calls observed).
+    extern uint32_t ProcessFlickCommands();
+    ProcessFlickCommands();
+
     // Phase 4: Countdown timer (safe — uses our globals)
     if (g_countdownActive != 0 && !g_cutsceneMode)
     {
