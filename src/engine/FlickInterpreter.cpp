@@ -139,11 +139,23 @@ uint32_t ProcessFlickCommands()
     // (5, 8, 9, 34) save position + return to the game loop.
     while (true) {
         // Bounds check: don't read past the script
-        if (opcodes < dataBase || opcodes + 2 > dataEnd) break;
+        if (opcodes < dataBase || opcodes + 2 > dataEnd) {
+            extern FILE* g_traceLog;
+            static bool s_loggedEnd = false;
+            if (g_traceLog && !s_loggedEnd) { fprintf(g_traceLog, "[FLICK] loop end: opcode ptr out of bounds (opcodes=%p dataEnd=%p) — script complete\n", (void*)opcodes, (void*)dataEnd); fflush(g_traceLog); s_loggedEnd = true; }
+            break;
+        }
         uint32_t op = opcodes[0];
         uint32_t recordSize = opcodes[1];  // record size in u32 (self-describing)
-        if (recordSize < 2 || recordSize > 100) break;  // safety (avoid infinite loop / overflow)
-        if (opcodes + recordSize > dataEnd) break;       // don't advance past end
+        if (recordSize < 2 || recordSize > 100) {
+            extern FILE* g_traceLog;
+            static bool s_loggedBad = false;
+            if (g_traceLog && !s_loggedBad) { fprintf(g_traceLog, "[FLICK] loop end: hit string table (op=0x%08X recSize=0x%08X at offset %d) — script complete\n", op, recordSize, (int)((opcodes-dataBase)*4)); fflush(g_traceLog); s_loggedBad = true; }
+            break;  // safety (avoid infinite loop / overflow)
+        }
+        if (opcodes + recordSize > dataEnd) {
+            break;       // don't advance past end
+        }
 
         // Diagnostic: log the first 40 opcode records of each script pass to see
         // what the menu cinematic actually executes.
