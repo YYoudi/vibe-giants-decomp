@@ -14,6 +14,7 @@
 
 #include <cstdio>
 #include <cmath>
+#include <cstdlib>
 #include <d3d9.h>
 
 namespace Giants {
@@ -125,15 +126,6 @@ uint32_t ProcessGameLogic()
         fflush(g_traceLog);
     }
 
-    // One-shot text-render pipeline test: resolve a localized string and run it
-    // through the GDI→renderer text path (DrawTextPrepare + DrawTextExecute).
-    if (g_pglEntryCount == 2) {
-        extern const char* GetLocalizedString(const char*);
-        extern void DrawTextExecute(uint32_t color, const char* str, float yScale, int len);
-        const char* s = GetLocalizedString("ButtonYes");
-        DrawTextExecute(0xFFFFFFFF, s ? s : "", 1.0f, s ? (int)strlen(s) : 0);
-    }
-
     // Phase 1: Pre-frame setup (safe — uses our globals)
     PreFrameReset();
 
@@ -183,6 +175,7 @@ uint32_t ProcessGameLogic()
     // In the original, this fires every frame during the menu (4503 calls observed).
     extern uint32_t ProcessFlickCommands();
     ProcessFlickCommands();
+    if (g_traceLog && g_pglEntryCount <= 2) { fprintf(g_traceLog, "[PGL] Phase3g FLICK OK\n"); fflush(g_traceLog); }
 
     // Phase 4: Countdown timer (safe — uses our globals)
     if (g_countdownActive != 0 && !g_cutsceneMode)
@@ -236,12 +229,14 @@ uint32_t ProcessGameLogic()
     //   dev->Clear(0,nullptr,D3DCLEAR_TARGET,D3DCOLOR_XRGB(20,40,100),1.0f,0);
     //   dev->Present(nullptr,nullptr,g_hWnd,nullptr); }  // HANGS — disabled
 
-    // ── Stub-renderer render path ────────────────────────────────────
-    // With the stub renderer (gg_dx9r_stub.dll, Route B) deployed as gg_dx9r.dll,
-    // the render device's vtable methods are OWNED by the stub and use D3D9
-    // directly (no engine-context protocol). So we can call Clear (vtable[43])
-    // and Present (vtable[47]) via thiscall — giving VISIBLE output.
-    if (g_renderDevice != nullptr)
+    // ── Stub-renderer render path (DIAGNOSTIC — stub only) ───────────
+    // With the stub renderer (gg_dx9r_stub.dll) deployed as gg_dx9r.dll, the
+    // device vtable[43/44/45/46/47] are stub-invented D3D9-backed methods. With
+    // the REAL gg_dx9r.dll those slots mean different things → crash. So this
+    // path runs ONLY when the stub is active (env STUB_RENDER=1). The real
+    // renderer renders via FrameEnd (re-enabled separately).
+    static bool s_stubRender = (getenv("STUB_RENDER") != nullptr);
+    if (s_stubRender && g_renderDevice != nullptr)
     {
         void** vtable = *reinterpret_cast<void***>(g_renderDevice);
         typedef void (__attribute__((thiscall)) *PFN_This)(void* self);
