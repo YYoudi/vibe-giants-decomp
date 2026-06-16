@@ -263,3 +263,15 @@ A hobbyist let AI agents decompile an old game's engine in a loop for days.
 This is the resulting pile of **probably-wrong C++**, now aimed at the
 **original vanilla 1.0** game (DX7), with a large 1.5-era legacy pile being
 rebased onto it. It builds. Please don't trust it.
+
+---
+
+## To the GiantsWD community
+
+And finally, a genuine thank-you to the people behind
+**[GiantsWD](https://www.giantswd.org/)**. A game from 2000 has no business
+still having a living community in 2026 — yet here we are, 26 years on: a small
+but stubborn crew still gathering the remaining players, keeping the mods and
+patches available, and holding the door open for anyone who wants to revisit
+*Giants*. This project only exists because you kept the game worth caring about.
+Thank you.
