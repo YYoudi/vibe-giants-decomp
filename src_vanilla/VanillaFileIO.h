@@ -12,9 +12,11 @@
 
 extern "C" {
     // Engine file API (cdecl). Names match vanilla function addresses.
+    // IAT-confirmed (BinLoader subagent): FUN_0051d7b0 = SetFilePointer (SEEK, FILE_BEGIN),
+    // NOT read-C-string. FUN_0051d750 = ReadFile (read N bytes).
     uint32_t FUN_00539e30(const char* filename);                       // open → handle (0=fail)
-    void     FUN_0051d750(uint32_t handle, void* buf, uint32_t count); // read
-    void     FUN_0051d7b0(uint32_t handle, char* buf);                 // read line (C-string)
+    void     FUN_0051d750(uint32_t handle, void* buf, uint32_t count); // read count bytes
+    void     FUN_0051d7b0(uint32_t handle, uint32_t offset);           // SetFilePointer(SEEK FILE_BEGIN)
     void     FUN_0051d850(uint32_t handle);                            // close
 }
 
