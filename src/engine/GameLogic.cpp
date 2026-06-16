@@ -76,9 +76,8 @@ extern "C" __attribute__((naked)) void CallThiscall_U32() {
     __asm__ volatile (
         "movl 4(%esp), %ecx\n\t"    /* ecx = objPtr (this) */
         "pushl 12(%esp)\n\t"         /* push argVal (3rd param) */
-        "call *12(%esp)\n\t"         /* call methodPtr (2nd param, shifted) */
-        "addl $4, %esp\n\t"          /* clean pushed arg (caller cleanup) */
-        "ret\n\t"
+        "call *12(%esp)\n\t"         /* call methodPtr (callee-cleans the pushed arg, true thiscall) */
+        "ret\n\t"                    /* caller cleans its own (objPtr,methodPtr,argVal) */
     );
 }
 
@@ -119,6 +118,11 @@ static int g_pglEntryCount = 0;
 
 uint32_t ProcessGameLogic()
 {
+    // Stub-renderer detection (env STUB_RENDER set only when the diagnostic stub
+    // is deployed). Real renderer → drive the real render path (FrameEnd); stub
+    // → drive the stub-invented vtable path.
+    static bool s_stubRender = (getenv("STUB_RENDER") != nullptr);
+
     g_pglEntryCount++;
     if (g_pglEntryCount <= 2 && g_traceLog) {
         fprintf(g_traceLog, "[PGL] ProcessGameLogic enter #%d, g_renderDevice=%p, g_d3d9Device=%p\n",
@@ -214,6 +218,20 @@ uint32_t ProcessGameLogic()
         }
     }
 #endif
+    // REAL renderer render path: FrameEnd drives PrePresent(vtable[43])→BeginScene
+    // →overlay→Present(vtable[47]) via thiscall. Re-enabled now that the
+    // engine-context registry lets the real renderer's methods work. Stub-renderer
+    // mode uses its own path below.
+    if (!s_stubRender && g_renderDevice != nullptr)
+    {
+        extern void FrameEnd();
+        FrameEnd();
+        g_renderFrameCount++;
+        if (g_renderFrameCount <= 3 && g_traceLog) {
+            fprintf(g_traceLog, "[REAL-RENDER] frame %d: FrameEnd OK\n", g_renderFrameCount);
+            fflush(g_traceLog);
+        }
+    }
 
     // ── Direct D3D9 present (bypass the renderer protocol) ──────────
     // FINDING (tested 2026-06-15): the raw IDirect3DDevice9 (g_d3d9Device, found
@@ -235,7 +253,6 @@ uint32_t ProcessGameLogic()
     // the REAL gg_dx9r.dll those slots mean different things → crash. So this
     // path runs ONLY when the stub is active (env STUB_RENDER=1). The real
     // renderer renders via FrameEnd (re-enabled separately).
-    static bool s_stubRender = (getenv("STUB_RENDER") != nullptr);
     if (s_stubRender && g_renderDevice != nullptr)
     {
         void** vtable = *reinterpret_cast<void***>(g_renderDevice);
