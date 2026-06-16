@@ -174,3 +174,19 @@ set_target_properties(GiantsMain PROPERTIES
     OUTPUT_NAME "GiantsMain"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build_recomp"
 )
+
+# ═══════════════════════════════════════════════════════════════════
+# Vanilla-Native Recomp — GiantsMain_vanilla (canonical target)
+# Targets vanilla 1.0 Giants.exe (2574 functions, DX7 renderer).
+# src_vanilla/ = vanilla-native source (ported from vanilla_decompiled/).
+# ═══════════════════════════════════════════════════════════════════
+add_executable(GiantsMain_vanilla WIN32
+    src_vanilla/WinMain_vanilla.cpp
+)
+target_link_libraries(GiantsMain_vanilla PRIVATE user32 gdi32)
+target_compile_options(GiantsMain_vanilla PRIVATE -m32)
+target_link_options(GiantsMain_vanilla PRIVATE -m32 -static-libgcc -static-libstdc++ -Wl,-Map,build_recomp/GiantsMain_vanilla.map)
+set_target_properties(GiantsMain_vanilla PROPERTIES
+    OUTPUT_NAME "GiantsMain_vanilla"
+    RUNTIME_OUTPUT_DIRECTORY "build_recomp"
+)
