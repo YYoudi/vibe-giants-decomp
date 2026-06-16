@@ -58,11 +58,15 @@ namespace {
 // Slot +0x98 (RVA 0x87e0) — DrawPrimitive-style stage-3 entry. In FUN_00523700
 // it is called as `(renderer, 0)` to open the overlay draw pass.
 //   [0x52375f] mov eax,[0x654940]; push ebx(=0); push eax; call [eax+0x98]
+// Note: g_vRenderer IS the object; method ptrs are inline at fixed offsets
+// (single indirection `call [eax+0x98]`, NOT double via a vtable at [+0]).
 inline void RendererSlot98(void* renderer, uint32_t arg) {
     if (!renderer) return;
     typedef void(__cdecl *Slot98Fn)(void*, uint32_t);
-    void** vtbl = *(void***)renderer;
-    (*(Slot98Fn)vtbl[0x98 / 4])(renderer, arg);
+    void** methods = (void**)renderer;
+    Slot98Fn fn = (Slot98Fn)methods[0x98 / 4];
+    if (!fn) return;
+    fn(renderer, arg);
 }
 
 // Slot +0xa8 (RVA 0x8990) — present/EndScene-equivalent. Called as `(renderer)`
@@ -70,8 +74,10 @@ inline void RendererSlot98(void* renderer, uint32_t arg) {
 inline void RendererSlotA8(void* renderer) {
     if (!renderer) return;
     typedef void(__cdecl *SlotA8Fn)(void*);
-    void** vtbl = *(void***)renderer;
-    (*(SlotA8Fn)vtbl[0xa8 / 4])(renderer);
+    void** methods = (void**)renderer;
+    SlotA8Fn fn = (SlotA8Fn)methods[0xa8 / 4];
+    if (!fn) return;
+    fn(renderer);
 }
 
 // Slot +0x84 (RVA 0x73e0) — scene-state refcount toggle. Called as
@@ -79,18 +85,25 @@ inline void RendererSlotA8(void* renderer) {
 inline void RendererSlot84(void* renderer, uint32_t arg) {
     if (!renderer) return;
     typedef void(__cdecl *Slot84Fn)(void*, uint32_t);
-    void** vtbl = *(void***)renderer;
-    (*(Slot84Fn)vtbl[0x84 / 4])(renderer, arg);
+    void** methods = (void**)renderer;
+    Slot84Fn fn = (Slot84Fn)methods[0x84 / 4];
+    if (!fn) return;
+    fn(renderer, arg);
 }
 
 // Slot +0xb4 (RVA 0xc6a0) — entity/texture-list thunk → list walker 0xc630.
 // Called as `(renderer, entry)` per texture sub-entry. Confirmed by
-// FUN_0050e4d0 [0x50e4f0]: `call [eax+0xb4]` with (renderer, &entry).
+// FUN_0050e4d0 [0x50e4f0]: `mov eax,[0x654940]; push ebx(=entry); push eax;
+// call [eax+0xb4]` — SINGLE indirection: reads the fn-ptr directly from
+// renderer+0xb4 (g_vRenderer is the OBJECT, not a vtable ptr; the renderer
+// struct embeds its method-pointers inline at fixed offsets like +0xb4).
 inline void RendererSlotB4(void* renderer, void* entry) {
     if (!renderer) return;
     typedef void(__cdecl *SlotB4Fn)(void*, void*);
-    void** vtbl = *(void***)renderer;
-    (*(SlotB4Fn)vtbl[0xb4 / 4])(renderer, entry);
+    void** methods = (void**)renderer;
+    SlotB4Fn fn = (SlotB4Fn)methods[0xb4 / 4];
+    if (!fn) return;
+    fn(renderer, entry);
 }
 
 } // namespace
@@ -270,22 +283,27 @@ extern "C" uint32_t SceneWalk_Textures(void) {
     void* renderer = g_vRenderer;
     uint32_t dispatched = 0;
 
+    if (g_vTrace) { fprintf(g_vTrace, "[SCENE/WalkTextures] begin: renderer=%p list=0x%08x\n", renderer, g_TextureEntityList); fflush(g_vTrace); }
+    if (!renderer) return 0;
+
     // Primary list: g_TextureEntityList (DAT_005a78b4).
     TextureListNode* node = (TextureListNode*)(uintptr_t)g_TextureEntityList;
     while (node) {
         uint32_t sub_count = node->sub_count;          // [0x50e4dd] [esi+0x28]
         TextureEntry* entry = (TextureEntry*)((uintptr_t)node + 0x2c); // [0x50e4e6]
+        if (g_vTrace) { fprintf(g_vTrace, "[SCENE/WalkTextures] node=%p name='%s' subs=%u\n", (void*)node, node->name, sub_count); fflush(g_vTrace); }
         for (uint32_t i = 0; i < sub_count; ++i) {
-            if (renderer) {
-                RendererSlotB4(renderer, entry);        // [0x50e4f0] call [eax+0xb4]
-            }
+            const char* nm = *(const char* const*)((uintptr_t)entry + 0x00);
+            if (g_vTrace) { fprintf(g_vTrace, "[SCENE/WalkTextures]   [%u] entry=%p name='%s' → slot 0xb4...\n", i, (void*)entry, nm ? nm : "(null)"); fflush(g_vTrace); }
+            RendererSlotB4(renderer, entry);        // [0x50e4f0] call [eax+0xb4]
+            if (g_vTrace) { fprintf(g_vTrace, "[SCENE/WalkTextures]   [%u]   slot 0xb4 returned OK\n", i); fflush(g_vTrace); }
             ++dispatched;
             entry = (TextureEntry*)((uintptr_t)entry + 0x24); // [0x50e4fd] stride
         }
         node = node->next;                              // [0x50e504] mov esi,[esi]
     }
 
-    if (g_vTrace && dispatched) {
+    if (g_vTrace) {
         fprintf(g_vTrace, "[SCENE/WalkTextures] dispatched %u entries via slot 0xb4\n",
                 dispatched);
         fflush(g_vTrace);

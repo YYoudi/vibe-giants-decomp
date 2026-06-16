@@ -107,6 +107,26 @@ extern "C" void FUN_0051d7b0(uint32_t handle, uint32_t offset) {
     f->pos = (offset < f->data.size()) ? offset : (uint32_t)f->data.size();
 }
 
+extern "C" void FUN_0051d7d0(uint32_t handle, int32_t delta) {
+    // IAT-confirmed: vanilla FUN_0051d7d0 = SetFilePointer(handle, delta, NULL, FILE_CURRENT).
+    // Used by FUN_0050d8f0 to skip the 2 flag bytes per texture name entry.
+    VFile* f = slot(handle);
+    if (!f) return;
+    int32_t np = (int32_t)f->pos + delta;
+    if (np < 0) np = 0;
+    if ((uint32_t)np > f->data.size()) np = (int32_t)f->data.size();
+    f->pos = (uint32_t)np;
+}
+
+extern "C" uint32_t FUN_0051d7f0(uint32_t handle) {
+    // IAT-confirmed: vanilla FUN_0051d7f0 = SetFilePointer(handle, 0, NULL, FILE_CURRENT)
+    // = RETURN current file position. (Ghidra decompile lost the eax return because
+    // the function ends with `ret` and SetFilePointer's eax flows through.)
+    VFile* f = slot(handle);
+    if (!f) return 0;
+    return f->pos;
+}
+
 extern "C" void FUN_0051d850(uint32_t handle) {
     VFile* f = slot(handle);
     if (!f) return;

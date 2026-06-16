@@ -16,7 +16,9 @@ extern "C" {
     // NOT read-C-string. FUN_0051d750 = ReadFile (read N bytes).
     uint32_t FUN_00539e30(const char* filename);                       // open → handle (0=fail)
     void     FUN_0051d750(uint32_t handle, void* buf, uint32_t count); // read count bytes
-    void     FUN_0051d7b0(uint32_t handle, uint32_t offset);           // SetFilePointer(SEEK FILE_BEGIN)
+    void     FUN_0051d7b0(uint32_t handle, uint32_t offset);           // SetFilePointer(SEEK FILE_BEGIN)  [vanilla 0x51d7b0]
+    void     FUN_0051d7d0(uint32_t handle, int32_t delta);             // SetFilePointer(SEEK FILE_CURRENT) [vanilla 0x51d7d0]
+    uint32_t FUN_0051d7f0(uint32_t handle);                            // SetFilePointer(0, FILE_CURRENT) = GET POSITION [vanilla 0x51d7f0]
     void     FUN_0051d850(uint32_t handle);                            // close
 }
 
