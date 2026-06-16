@@ -15,6 +15,7 @@
 // Scene list-management ports (defined in VanillaSceneLists.cpp).
 extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
+extern "C" void* SpawnTestEntity(uint32_t typeId, float x, float y, float z); // test entity into g_PlacedObjectList
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -123,6 +124,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // The renderer's callback[20] (FUN_00523aa0) checks this gate each frame to drive
     // the scene dispatch. (Entities still need vtables via object_create_child to draw.)
     FUN_004290f0(1);
+    // ── Spawn a test entity into g_PlacedObjectList (stub vtable) to prove the dispatch
+    // walk is connected end-to-end (the stub Render logs when the renderer dispatches it).
+    SpawnTestEntity(1, 0.0f, 0.0f, 0.0f);
     // ── .BIN level loader self-test (FUN_004b7c50 port: parse w_intro_island.bin) ──
     // NOTE: body alignment under fix by subagent; may loop on garbage count — last so it
     // doesn't block the other self-tests if it hangs.
