@@ -18,6 +18,8 @@
 #include <cstdint>
 #include <cstring>
 
+static void StubLog(const char* msg);  // forward decl (defined below)
+
 // ─── Stub wrapper object: [0]=vtable, [1]=IDirect3DDevice9*, [2..]=state ──
 // The vtable must be large enough for all slots the recomp indexes. We provide
 // no-op defaults and implement the known render slots via D3D9.
@@ -46,9 +48,27 @@ static HRESULT __attribute__((thiscall)) Stub_EndScene(StubDevice* self) {
     return 0;
 }
 static HRESULT __attribute__((thiscall)) Stub_Clear(StubDevice* self) {
-    if (self && self->d3d9)
-        return self->d3d9->Clear(0, nullptr, D3DCLEAR_TARGET,
-                                 D3DCOLOR_XRGB(20, 40, 100), 1.0f, 0);
+    // Clear via GDI FillRect on the backbuffer DC (more reliable than D3D Clear
+    // when GetDC is used for text — avoids D3D/GDI composition issues).
+    if (!self || !self->d3d9) return 0;
+    IDirect3DSurface9* back = nullptr;
+    if (FAILED(self->d3d9->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &back)) || !back) return 0;
+    HDC hdc = nullptr;
+    static bool s_loggedGetDC = false;
+    HRESULT hr = back->GetDC(&hdc);
+    if (!s_loggedGetDC) {
+        s_loggedGetDC = true;
+        char msg[128]; snprintf(msg, sizeof(msg), "[STUB] backbuffer GetDC hr=0x%08X, hdc=%p", (unsigned)hr, hdc);
+        StubLog(msg);
+    }
+    if (SUCCEEDED(hr) && hdc) {
+        RECT rc = { 0, 0, 1280, 720 };
+        HBRUSH br = CreateSolidBrush(RGB(20, 40, 100));
+        FillRect(hdc, &rc, br);
+        DeleteObject(br);
+        back->ReleaseDC(hdc);
+    }
+    back->Release();
     return 0;
 }
 static HRESULT __attribute__((thiscall)) Stub_Present(StubDevice* self) {
@@ -57,7 +77,25 @@ static HRESULT __attribute__((thiscall)) Stub_Present(StubDevice* self) {
     return 0;
 }
 
-// ─── Text rendering via GDI on the backbuffer (no d3dx9 needed) ────────
+// ─── Cursor rendering (a crosshair / box at the mouse position) ────────
+static void __attribute__((thiscall)) Stub_DrawCursor(StubDevice* self, int x, int y) {
+    if (!self || !self->d3d9) return;
+    IDirect3DSurface9* back = nullptr;
+    if (FAILED(self->d3d9->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &back)) || !back) return;
+    HDC hdc = nullptr;
+    if (SUCCEEDED(back->GetDC(&hdc)) && hdc) {
+        // Clamp cursor into the viewport; scale mouse units (~0..4096) to pixels.
+        int px = (x < 0) ? 0 : (x * 1280) / 4096;
+        int py = (y < 0) ? 0 : (y * 720) / 4096;
+        HPEN pen = CreatePen(PS_SOLID, 2, RGB(255, 220, 0));
+        HGDIOBJ old = SelectObject(hdc, pen);
+        MoveToEx(hdc, px - 10, py, nullptr); LineTo(hdc, px + 10, py);
+        MoveToEx(hdc, px, py - 10, nullptr); LineTo(hdc, px, py + 10);
+        SelectObject(hdc, old); DeleteObject(pen);
+        back->ReleaseDC(hdc);
+    }
+    back->Release();
+}
 // IDirect3DDevice9::GetBackBuffer → IDirect3DSurface9::GetDC → GDI DrawText
 // → ReleaseDC. Draws the localized string the recomp passes each frame.
 static HFONT g_stubFont = nullptr;
@@ -77,9 +115,18 @@ static void __attribute__((thiscall)) Stub_DrawTextString(StubDevice* self, cons
         HFONT oldFont = (HFONT)SelectObject(hdc, g_stubFont);
         SetBkMode(hdc, TRANSPARENT);
         SetTextColor(hdc, RGB(255, 255, 255));
-        RECT rc = { 20, 20, 1260, 700 };
-        // Draw a label + the localized string.
-        DrawTextA(hdc, str, -1, &rc, DT_LEFT | DT_TOP | DT_NOCLIP);
+        // Draw each '\n'-separated line at increasing Y.
+        int y = 20;
+        const char* p = str;
+        while (*p) {
+            const char* nl = strchr(p, '\n');
+            int len = nl ? (int)(nl - p) : -1;
+            RECT rc = { 20, y, 1260, y + 40 };
+            DrawTextA(hdc, p, len, &rc, DT_LEFT | DT_TOP | DT_NOCLIP);
+            y += 32;
+            if (!nl) break;
+            p = nl + 1;
+        }
         SelectObject(hdc, oldFont);
         back->ReleaseDC(hdc);
     }
@@ -107,6 +154,7 @@ static void** BuildStubVtable() {
         vt[42] = (void*)&Stub_EndScene;
         vt[43] = (void*)&Stub_Clear;
         vt[44] = (void*)&Stub_DrawTextString;   // draw a localized string (thiscall str arg)
+        vt[45] = (void*)&Stub_DrawCursor;        // draw cursor at (x,y) (thiscall int args)
         vt[47] = (void*)&Stub_Present;
         vt[53] = (void*)&Stub_GetCapability;   // 0xD4/4 = GetCapability
         init = true;
@@ -138,6 +186,7 @@ void* __cdecl GDVSysCreate(const char* cmdLine, HWND hWnd, void* dispCfg,
     pp.BackBufferHeight = 720;
     pp.BackBufferFormat = D3DFMT_UNKNOWN;
     pp.hDeviceWindow = hWnd;
+    pp.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;  // required for GetDC on backbuffer
 
     IDirect3DDevice9* dev = nullptr;
     HRESULT hr = d3d->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd,

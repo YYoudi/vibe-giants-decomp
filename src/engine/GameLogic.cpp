@@ -246,17 +246,27 @@ uint32_t ProcessGameLogic()
         void** vtable = *reinterpret_cast<void***>(g_renderDevice);
         typedef void (__attribute__((thiscall)) *PFN_This)(void* self);
         typedef void (__attribute__((thiscall)) *PFN_Str)(void* self, const char* str);
+        typedef void (__attribute__((thiscall)) *PFN_XY)(void* self, int x, int y);
         if (vtable[43]) reinterpret_cast<PFN_This>(vtable[43])(g_renderDevice);  // Clear
-        // Draw localized strings via the stub's text slot (vtable[44]).
+        // Draw a multi-line localized menu via the stub's text slot (vtable[44]).
         if (vtable[44]) {
             extern const char* GetLocalizedString(const char*);
-            const char* yes   = GetLocalizedString("ButtonYes");
-            const char* no    = GetLocalizedString("ButtonNo");
-            const char* title = GetLocalizedString("MH_Quit");
-            char line[256];
-            snprintf(line, sizeof(line), "GiantsRE stub renderer  |  Yes=\"%s\"  No=\"%s\"  frame=%d",
-                     yes ? yes : "?", no ? no : "?", g_renderFrameCount);
-            reinterpret_cast<PFN_Str>(vtable[44])(g_renderDevice, line);
+            const char* yes = GetLocalizedString("ButtonYes");
+            const char* no  = GetLocalizedString("ButtonNo");
+            const char* q   = GetLocalizedString("MH_Quit");
+            char buf[512];
+            snprintf(buf, sizeof(buf),
+                     "GIANTS: Citizen Kabuto — RECOMP (stub renderer)\n"
+                     "frame=%d\n"
+                     "ButtonYes = %s\nButtonNo = %s\nMH_Quit = %s\n"
+                     "(localized from GTextEnglish.bin, 2081 entries)",
+                     g_renderFrameCount, yes ? yes : "?", no ? no : "?", q ? q : "?");
+            reinterpret_cast<PFN_Str>(vtable[44])(g_renderDevice, buf);
+        }
+        // Draw the cursor at the accumulated mouse position (vtable[45]).
+        if (vtable[45]) {
+            extern int32_t g_cursorX, g_cursorY;
+            reinterpret_cast<PFN_XY>(vtable[45])(g_renderDevice, g_cursorX, g_cursorY);
         }
         if (vtable[47]) reinterpret_cast<PFN_This>(vtable[47])(g_renderDevice);  // Present
         g_renderFrameCount++;
