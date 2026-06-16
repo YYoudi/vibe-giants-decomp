@@ -11,6 +11,7 @@
 #include "VanillaGTI.h"
 #include "VanillaGBS.h"
 #include "VanillaBinLoader.h"
+#include "VanillaText.h"
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -109,7 +110,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     VanillaGTI::SelfTest();
     // ── GBS model parser self-test (parse intro_1.gbs mesh) ──
     VanillaGBS::SelfTest();
+    // ── Localized-text lookup (callback[11] GetLocalizedString: GTextEnglish.bin) ──
+    if (VanillaText::Load("English")) {
+        if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] text lookup '$IDnew' = '%s'\n", VanillaText::Lookup("$IDnew")); fflush(g_vTrace); }
+    }
     // ── .BIN level loader self-test (FUN_004b7c50 port: parse w_intro_island.bin) ──
+    // NOTE: body alignment under fix by subagent; may loop on garbage count — last so it
+    // doesn't block the other self-tests if it hangs.
     VanillaBinLoader::SelfTest();
 
     // ── Message pump (game loop) ──
