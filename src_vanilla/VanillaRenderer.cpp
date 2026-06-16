@@ -76,6 +76,15 @@ static void __cdecl Stub_Free(void* p) { free(p); }
 // (same MinGW heap → consistent, no cross-CRT free).
 static void* __cdecl Stub_Alloc(int /*a0*/, size_t size, void* /*heap*/) { return malloc(size); }
 
+// callback[11] GetLocalizedString (vanilla 0x50d7f0): const char* (const char* key) →
+// localized string. Returns a default ("") if key is null. The renderer calls this during
+// scene render (0x71a0) and the menus use it for UI text. Wired to VanillaText::Lookup.
+extern "C" const char* VanillaText_Lookup(const char* key);  // defined in VanillaText.cpp
+static const char* __cdecl Stub_GetLocalizedString(const char* key) {
+    if (!key) return "";
+    return VanillaText_Lookup(key);
+}
+
 // The renderer object returned by GDVSysCreate (vanilla global DAT_00654940). The
 // engine drives its ~55 thiscall methods (see RE_docs/DX7_RENDER_RECIPE.md) to render.
 extern "C" void* g_vRenderer = nullptr;   // DAT_00654940
@@ -98,7 +107,7 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
         (void*)Stub_Void,     // 8  SceneEnd
         (void*)Stub_Void,     // 9  PreRenderCheck
         (void*)Stub_Void,     // 10 BufferDeallocator
-        (void*)Stub_EmptyStr, // 11 GetLocalizedString
+        (void*)Stub_GetLocalizedString, // 11 GetLocalizedString (real: VanillaText lookup)
         (void*)Stub_Void,     // 12 TextureLoader
         (void*)Stub_Void,     // 13 SinCosLookup
         (void*)Stub_Void,     // 14 TimeAccessor
