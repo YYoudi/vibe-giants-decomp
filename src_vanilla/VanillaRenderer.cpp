@@ -181,3 +181,31 @@ extern "C" void VanillaReadDisplayConfig() {
         }
     }
 }
+
+// ─── Per-frame render entry (renderer method [0x20] = obj+0x80 = RVA 0x7370) ───
+// The vanilla game loop's core: `frameState = (*obj[0x20])(obj, frameState)`.
+// 0x7370 calls obj->[0x28c]->vtable[0x68] (a D3D/DDraw COM interface method, likely
+// TestCooperativeLevel) and returns a status: 0=ok/rendered, 3=device state change,
+// or handles DDERR_* (0x88760xxx). This is the FAITHFUL per-frame render driver.
+// obj+0x28c must be a valid D3D interface (set during GDVSysCreate device-init).
+extern "C" int VanillaRunFrame(int frameState) {
+    extern FILE* g_vTrace;
+    if (!g_vRenderer) return frameState;
+    uint32_t* obj = (uint32_t*)g_vRenderer;
+    void* iface28c = (void*)(uintptr_t)obj[0x28c / 4];
+    void* method20 = ((void**)g_vRenderer)[0x80 / 4];
+    static int s_loggedFields = 0;
+    if (g_vTrace && !s_loggedFields) {
+        s_loggedFields = 1;
+        fprintf(g_vTrace, "[VRENDER] obj fields: +0x280=%08x +0x284=%08x +0x288=%08x +0x28c=%08x +0x290=%08x | method[0x20]=%p\n",
+                obj[0x280/4], obj[0x284/4], obj[0x288/4], obj[0x28c/4], obj[0x290/4], method20);
+        fflush(g_vTrace);
+    }
+    if (!iface28c || !method20) {
+        if (g_vTrace && !s_loggedFields) { fprintf(g_vTrace, "[VRENDER] RunFrame: obj+0x28c or method[0x20] NULL — device not render-ready\n"); fflush(g_vTrace); }
+        return frameState;
+    }
+    typedef int (__cdecl *PFN_RunFrame)(void* self, int state);
+    int r = ((PFN_RunFrame)method20)(g_vRenderer, frameState);
+    return r;
+}
