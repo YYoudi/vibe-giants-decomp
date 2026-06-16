@@ -10,21 +10,30 @@ fresh **DX12** renderer (skip the community DX8/9/11 chain).
 
 | File | Purpose |
 |------|---------|
-| `ghidra_proj/VanillaProj` | **Ghidra project with vanilla Giants.exe analyzed.** Open this to work on vanilla. |
+| **`VERSION_MAP_v2.csv`** | **PRIMARY bridge (collision-free)**: 1247 1.5→vanilla pairs, tiered EXACT/HIGH/MEDIUM/LOW with all signals + PS2 name. Use this. See `VERSION_MAP_v2.md`. |
+| `VERSION_MAP_v2.md` | How to use v2, the merges, the fingerprint-weakness finding, validation. |
+| `recomp_functions.jsonl` | 6254 1.5 functions: addr, size, callees, strings, mnemonic fingerprint (exported via `ExportFunctions.java`). |
 | `vanilla_functions.jsonl` | 2574 vanilla functions: addr, size, callees, strings, mnemonic fingerprint. |
-| `VERSION_MAP_full.csv` | **The bridge**: 461 1.5→vanilla function pairs, with confidence + origin (seed=string-confirmed, propagated=call-graph). |
-| `VERSION_MAP.csv` | 123 string-confirmed pairs with identity tier (IDENTICAL/NEAR/MODIFIED). |
-| `ExportFunctions.java` | Ghidra export script (rerun if you re-analyze). |
-| `build_version_map.py`, `propagate_map.py` | Regenerate the map. |
+| `match_fingerprint.py` | Regenerate v2 (the reliable multi-signal matcher). |
+| `VERSION_MAP_full.csv` | *(legacy)* old call-graph map, 461 pairs — **had 20 collisions, superseded by v2.** |
+| `VERSION_MAP.csv` | *(legacy)* 123 string-confirmed pairs (pre-uniqueness). |
+| `ghidra_proj/VanillaProj` | Ghidra project with vanilla Giants.exe analyzed. Open this to work on vanilla. |
+| `ExportFunctions.java` | Ghidra export script (rerun if you re-analyze either binary). |
+| `build_version_map.py`, `propagate_map.py` | *(legacy)* regenerate the old map. |
 
 ## The numbers — how identical is 1.5 to vanilla?
 
-- vanilla functions discovered: **2574** | 1.520.59: **6254** (1.5 grew +76 % .text).
-- 1.5 functions mapped to a vanilla counterpart: **461** (17 % of vanilla covered)
-  - 123 string-confirmed (conf 1.0), of which 8 IDENTICAL / 13 NEAR / 102 MODIFIED
-  - 338 call-graph-propagated (conf 0.4–0.8)
-- The 461 is a **bootstrap**, not exhaustive. Reconcile the rest interactively with both
-  Ghidra projects open (1.5 `ghidra_projects/GiantsRE` + vanilla `version_bridge/ghidra_proj/VanillaProj`).
+- vanilla functions: **2574** | 1.520.59: **6254** (1.5 grew +76 % .text).
+- **v2 map: 1247 pairs (48 % of vanilla covered)** — collision-free.
+  - 257 reliable (EXACT 14 / HIGH 114 / MEDIUM 129) + 990 LOW hints.
+  - **The old 461-pair map had 20 collisions (~11 % corrupted) — superseded.**
+- **Critical finding**: the compiler changed between vanilla and 1.5, so mnemonic
+  fingerprints are weak cross-version (correct match Jaccard ~0.19). Reliable signals
+  are: shared rare strings > size > call-graph topology > fingerprint.
+- **6 genuine many-to-1 merges** where 1.5 split a vanilla function (notably vanilla
+  `005222c0` = InitializeEngine + MainGameLoop merged). See `VERSION_MAP_v2.md`.
+- Reconcile the rest interactively with both Ghidra projects open
+  (1.5 `ghidra_projects/GiantsRE` + vanilla `version_bridge/ghidra_proj/VanillaProj`).
 
 ## How to carry your 1.5 knowledge onto vanilla
 

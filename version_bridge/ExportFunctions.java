@@ -90,6 +90,6 @@ public class ExportFunctions extends GhidraScript {
             n++;
         }
         pw.close();
-        println("EXPORTED "+n+" functions -> "+OUT);
+        println("EXPORTED "+n+" functions -> "+out);
     }
 }
