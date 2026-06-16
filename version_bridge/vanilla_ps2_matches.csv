@@ -1,0 +1,55 @@
+vanilla_addr,vanilla_name,ps2_addr,ps2_name,shared,conf,sample_shared
+00507270,FUN_00507270,0x001df5f0,teammecc_setup_enemies__FP6OBJECTi,14,1.0,BAZ_CT60 | BAZ_CT61 | BAZ_CT63
+0050a720,FUN_0050a720,0x001e2cd8,teammecc_set_mode,11,1.0,AIMeccAttackLoc | AIMeccAttackTarg | AIMeccBusy
+00479590,FUN_00479590,0x0015fce8,marker_get_name,9,1.0,***Uninitialized*** | ***Unused*** | Army Generic %d
+00520430,FUN_00520430,0x001dd200,chat_init,9,1.0,TextColor1 | TextColor2 | TextColor3
+00538820,FUN_00538820,0x001dd200,chat_init,6,1.0,ChatColorDisciple | ChatColorMission | ChatColorPlayerAll
+0050e540,FUN_0050e540,0x001e68c0,texture_object_debug_dump,4,1.0,GiantFont_Eng | b_flames | bloodblob
+00409730,FUN_00409730,0x00110280,smartie_base_attack_comment__FP6OBJECT,4,0.846,DELCT15_2 | GOR_CT15 | REG_CT15
+0041c1a0,FUN_0041c1a0,0x0011eb50,bldg_get_bldg_name,2,0.667,BaseBldgMeccBase | BaseBldgReaperBase
+0044d270,FUN_0044d270,0x0012ef70,fx_setupTextureAnimtion__FP10FXSTACKTAGif,2,0.667,Fx Texture Animation | Fx Texture Frames
+0045e650,FUN_0045e650,0x00141100,AttackObject__FP6OBJECTT0P3P3DT2fi,2,0.667,Kabutomessage1 | Kabutomessage2
+00491950,FUN_00491950,0x0016b158,showchat_mission_objective__Fi,2,0.667,MissionObjective | Trainer1
+004b50b0,FUN_004b50b0,0x001986d8,read_objects_bin_PS2,2,0.667,ref point names | ref point offsets
+004fb060,FUN_004fb060,0x001d3748,smartie_lock_to_player,2,0.667,SmChPHPickup | SmChPickup
+004fb440,FUN_004fb440,0x001d3d58,smartie_unlock_from_player,2,0.667,SmChDropBase | SmChDropoff
+004fdf20,FUN_004fdf20,0x001d63c0,smartie_get_name__FP6OBJECT,2,0.533,Borjoyzee | SmNameSyl%c%d
+00408fd0,FUN_00408fd0,0x0010fa10,meccbaseitem_finish_building,1,0.333,BaseChatMCPHouseDone
+0040af10,FUN_0040af10,0x001e68c0,texture_object_debug_dump,1,0.333,bloodblob
+00446ca0,FUN_00446ca0,0x001e68c0,texture_object_debug_dump,1,0.333,b_flames
+0044a9c0,FUN_0044a9c0,0x001e68c0,texture_object_debug_dump,1,0.333,GiantFont_Eng
+0044cd80,FUN_0044cd80,0x0012e7d0,fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii,1,0.333,fx_emitter
+0044d050,FUN_0044d050,0x0012ea30,fx_setupTracer__FP10FXSTACKTAG,1,0.333,fx_tracer
+0044d670,FUN_0044d670,0x0012d740,fx_stackPush__FPP10FXSTACKTAGT0P6OBJECT,1,0.333,fx stack
+0045c6c0,FUN_0045c6c0,0x0013d6d8,inv_award_item,1,0.333,InvChPickupItem
+00476d40,FUN_00476d40,0x0015b718,alloc_bump_reference__FPP7TextureP7Texture,1,0.333,ground bump texture
+0047f350,FUN_0047f350,0x00166990,mecc_fire_logic__FP6OBJECT,1,0.333,HintWaitRepair
+00481ca0,FUN_00481ca0,0x00169a80,mecc_check_enter_minishop__FP6OBJECT,1,0.333,NoEnemyStructures
+004823e0,FUN_004823e0,0x001ad078,reaper_check_enter_teleport__FP6OBJECT,1,0.333,FlagHintTeleport
+0049b480,FUN_0049b480,0x00172168,sound_get_free_sequence__Fv,1,0.333,sequence list
+0049f6e0,FUN_0049f6e0,0x001757a8,objspec_get_movetype_string,1,0.333,MTNone
+004acea0,FUN_004acea0,0x00180888,player_draw_missile_lock,1,0.333,MissileLock
+004afef0,FUN_004afef0,0x00184918,KabutoProcAnimsCreate,1,0.333,Kabuto UsrAnm Memory
+004b77f0,FUN_004b77f0,0x0019b480,read_world_list,1,0.333,worlddata
+004bbf70,FUN_004bbf70,0x0019fc40,reaperbasebldg_finish_building,1,0.333,BaseChatRpPHouseDone
+004c55c0,FUN_004c55c0,0x001a8048,reaper_finish_shrinker,1,0.333,SpellHintShrink
+004c5890,FUN_004c5890,0x001a85b0,reaper_finish_slow_follow__FP6OBJECTPUi,1,0.333,slow follow custom
+004cb030,FUN_004cb030,0x001ad078,reaper_check_enter_teleport__FP6OBJECT,1,0.333,FlagHintTeleport
+0050d660,FUN_0050d660,0x001e5720,TextPtrInit__Fv,1,0.333,textdata
+0051ea20,FUN_0051ea20,0x0012bd38,FRateSlowTime,1,0.333,slow frate list
+0044ad40,FUN_0044ad40,0x0012c110,fx_setupWeather__Fi,1,0.167,fx weather
+0044d530,FUN_0044d530,0x0012f528,fx_setupVerticleFade__FP10FXSTACKTAGfffff,1,0.167,fx vfade
+0045d630,FUN_0045d630,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
+0045d860,FUN_0045d860,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
+00479e90,FUN_00479e90,0x0014f560,lift_logic__FP6OBJECT,1,0.167,spline objs
+00482720,FUN_00482720,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
+004af260,FUN_004af260,0x00182bc8,ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef,1,0.167,UsrAnm Memory
+004bae80,FUN_004bae80,0x0011e9e0,base_get_required_smarties__FP6OBJECTi,1,0.167,Extractor
+004c47c0,FUN_004c47c0,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
+004c68d0,FUN_004c68d0,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
+004fbd70,FUN_004fbd70,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
+005338d0,FUN_005338d0,0x001d0218,smartie_move,1,0.167,Borjoyzee
+00537510,FUN_00537510,0x001d0218,smartie_move,1,0.167,Borjoyzee
+0053bd00,FUN_0053bd00,0x0023cd48,_vfprintf_r,1,0.167,0123456789ABCDEF
+0053c380,FUN_0053c380,0x0023cd48,_vfprintf_r,1,0.167,0123456789ABCDEF
+0053c5c0,FUN_0053c5c0,0x0023cd48,_vfprintf_r,1,0.167,0123456789ABCDEF
