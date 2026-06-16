@@ -244,6 +244,10 @@ against the same install.
 - The historical starting point for this work was the **community 1.5 patch and
   SDK** by `ncblakely` and the Giants amazing modding community; the canonical
   target is now the original **vanilla 1.0** game.
+- Thanks to **Z.AI** for their **GLM-5.1 / GLM-5.2** models — open-weight,
+  genuinely powerful, and far more affordable than Claude. These are the models
+  that actually drive the agents in this repo (the decompilation loop, the
+  Frida/disasm analysis, even this README).
 - *Giants: Citizen Kabuto* is © Planet Moon Studios / Interplay, 2000. This
   project is an independent fan reverse-engineering effort; it ships **no**
   original assets or binaries.
