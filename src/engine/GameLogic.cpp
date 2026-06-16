@@ -219,10 +219,12 @@ uint32_t ProcessGameLogic()
     }
 #endif
     // REAL renderer render path: FrameEnd drives PrePresent(vtable[43])→BeginScene
-    // →overlay→Present(vtable[47]) via thiscall. Re-enabled now that the
-    // engine-context registry lets the real renderer's methods work. Stub-renderer
-    // mode uses its own path below.
-    if (!s_stubRender && g_renderDevice != nullptr)
+    // →overlay→Present(vtable[47]) via thiscall. Needs the renderer STATE populated
+    // by InitGraphicsResources (deferred — its factory vtable + .rdata format
+    // descriptors must be reconstructed/captured first). Gated behind REAL_RENDER
+    // env so the stable loop is the default.
+    static bool s_realRender = (getenv("REAL_RENDER") != nullptr);
+    if (!s_stubRender && s_realRender && g_renderDevice != nullptr)
     {
         extern void FrameEnd();
         FrameEnd();
