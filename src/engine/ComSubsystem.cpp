@@ -209,18 +209,26 @@ uint32_t VFSFileLookup(char* filename);  // FUN_00623f00
 int LevelLoad(void* /*self*/, const char* levelName) {
     extern FILE* g_traceLog;
     extern unsigned long VFSExtractFile(const char*, unsigned char*, unsigned int);
+    if (g_traceLog) { fprintf(g_traceLog, "[LOAD] LevelLoad enter: %s\n", levelName); fflush(g_traceLog); }
     // The level terrain is stored as "<name>.gti" in the VFS (GZP archives).
     char path[128];
     snprintf(path, sizeof(path), "%s.gti", levelName);
+    if (g_traceLog) { fprintf(g_traceLog, "[LOAD] LevelLoad: VFSFileLookup(%s)...\n", path); fflush(g_traceLog); }
     uint32_t handle = VFSFileLookup(path);
+    if (g_traceLog) { fprintf(g_traceLog, "[LOAD] LevelLoad: VFSFileLookup -> %u\n", handle); fflush(g_traceLog); }
     if (handle == 0) {
         snprintf(path, sizeof(path), "%s", levelName);
         handle = VFSFileLookup(path);
     }
-    if (handle != 0) {
-        // Extract the terrain to verify the GZP read + LZ77 decompression work.
+    if (handle != 0 && getenv("DUMP_TERRAIN")) {
+        // DIAGNOSTIC ONLY: extract + decode GTI + write terrain_heights.bin for
+        // the stub renderer's terrain display. Skipped by default — it crashes
+        // when the real gg_dx9r.dll is loaded (heap/VFS interaction), and the
+        // real renderer doesn't need terrain_heights.bin. Enable via DUMP_TERRAIN=1.
         static unsigned char terrainBuf[1 << 20];  // 1MB scratch
+        if (g_traceLog) { fprintf(g_traceLog, "[LOAD] LevelLoad: VFSExtractFile(%s)...\n", path); fflush(g_traceLog); }
         uint32_t sz = VFSExtractFile(path, terrainBuf, sizeof(terrainBuf));
+        if (g_traceLog) { fprintf(g_traceLog, "[LOAD] LevelLoad: VFSExtractFile -> %u bytes\n", sz); fflush(g_traceLog); }
         if (g_traceLog) {
             fprintf(g_traceLog, "[LOAD] LevelLoad(\"%s\"): extracted %s -> %u bytes\n",
                     levelName, path, sz);
