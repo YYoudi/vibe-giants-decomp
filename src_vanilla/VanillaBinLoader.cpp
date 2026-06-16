@@ -1,66 +1,73 @@
 // Giants Vanilla-Native Recomp — .BIN level-file loader (FUN_004b7c50 port).
 //
-// Disassembly evidence (Giants.exe 1.0 retail, base 0x400000). All addresses are
-// virtual addresses in the original binary; the behaviour is reproduced faithfully.
+// FAITHFUL PORT of Giants.exe!FUN_004b7c50 (readwrls.c) — vanilla 1.0 retail,
+// base 0x400000. Reading model derived from Ghidra decompile
+// (vanilla_decompiled/004b7c50.json) cross-checked against IAT resolution:
 //
-//   0x4b7c6e  call FUN_00539e30            open(binName) -> handle esi
-//   0x4b7cb2  call FUN_0051d750(h,&m,4)    read 4-byte magic
-//   0x4b7cbe  cmp eax,0x1a0002e5           validate magic
-//   0x4b7d04  call FUN_0051d750(h,&hdr,0x1c)  read 28-byte header (7 u32)
-//   0x4b7d12  call FUN_0051d7b0(h, buf)    read metadata C-string #1 (level name)
-//   0x4b7d18  call FUN_0049a580(h)         (engine: process gti — unported)
-//   0x4b7d26  call FUN_0051d7b0(h, buf)    read metadata C-string #2 (.gti path)
-//   0x4b7d32  call FUN_0050d8f0(a2,h,buf)  (engine: stream setup — unported)
-//   0x4b7d40  call FUN_0051d7b0(h, buf)    read metadata C-string #3 (stream path)
-//   0x4b7d50  call FUN_0051d750(h,&v,4)    read 4-byte section selector / sub-bin count
-//   0x4b7d80  call FUN_0044ab90            fx/weather tag select (fx_world_dust / snow)
-//   0x4b7d99  call FUN_0051d7b0(h, buf)    read fx tag string
-//   0x4b7dda  call FUN_0051d750(h,&v,4)    (sub-bin interpolation divisor)
-//   0x4b7df1  call FUN_00544b47("%s.bin")  sprintf sub-bin name
-//   0x4b7e2b  call FUN_004b7c50(name,a2,a3)  RECURSIVE sub-bin load
-//   0x4b7e48  call FUN_0051d7b0(h, buf)    read post-subbin string
-//   0x4b7e4f  call FUN_004b50b0(a2,h)      (engine: world/terrain loader — unported)
-//   0x4b7e5d  call FUN_0051d7b0(h, buf)    read world string
-//   0x4b7e6a  call FUN_0051d750(h,&v,4)    read 4-byte odef object count
-//   0x4b7ea0  call FUN_0053c810(0x18,0x1c9,...)  malloc 0x1c9-byte odef template
-//   0x4b7eb2  call FUN_0051d750(h,tpl,count)     read odef template/blob
-//   0x4b80be  jmp [ecx*4 + 0x4baa28]       odef VM: ~80 opcodes (0x13..0x84)
-//   0x4ba50a  opcode 0x84 handler          reads C-string spawn name -> engine spawn
-//   0x4b7e7b  call FUN_0051d850(h)         close handle
+//   IAT 0x5520ec = SetFilePointer  -> vanilla FUN_0051d7b0(handle, off) = SEEK(off, FILE_BEGIN)
+//   IAT 0x5520f4 = ReadFile        -> vanilla FUN_0051d750(handle, buf, count) = READ(count)
+//   IAT 0x5520f8 = CreateFileA     -> vanilla FUN_00539e30 = OPEN
 //
-// Header field addresses (header buffer base = esp+0x8c at VA 0x4b7cf9):
-//   header[0] @ esp+0x8c  = 0x20 (format constant)
-//   header[1] @ esp+0x90  = sectionOffset[0] (name-list / render)
-//   header[2] @ esp+0x94  = sectionOffset[1] (world/terrain)
-//   header[3] @ esp+0x98  = sectionOffset[2] (texturesmemory)
-//   header[4] @ esp+0x9c  = sectionOffset[3] (fx)        [accessed @ 0x4b7e54]
-//   header[5] @ esp+0xa0  = sectionOffset[4] (unk2/huds) [accessed @ 0x4b7d09]
-//   header[6] @ esp+0xa4  = sectionOffset[5] (objects)   [accessed @ 0x4b7d55, 0x4b7d88]
+// ROOT CAUSE OF PREVIOUS BUG: the recomp's VanillaFileIO.cpp implements
+// FUN_0051d7b0 as "read a C-string", but the vanilla FUN_0051d7b0 is actually
+// SetFilePointer (SEEK). Calling it with a header field (an offset like 1474)
+// therefore misreads bytes as strings -> garbage. This module does NOT call the
+// recomp's FUN_0051d7b0 for seeking; it performs its own SetFilePointer/ReadFile
+// using the exact vanilla Win32 APIs, so cursor semantics match the original.
+//
+// CONFIRMED READING ORDER (Ghidra decompile + verified against
+// w_intro_island.bin [1514 B] and w_intro.bin [3301 B]):
+//
+//   1. READ 4      -> magic (cmp 0x1a0002e5)                         @ 0x4b7cb2/cbe
+//   2. READ 0x1c   -> header[0..6] (7 u32, all are section offsets)  @ 0x4b7d04
+//   3. SEEK header[2]; FUN_0049a580(h)        [texmem; engine, unported] @ 0x4b7d12
+//   4. SEEK header[1]; FUN_0050d8f0(name,h,*) [name-list/stream; unported] @ 0x4b7d26
+//   5. SEEK header[4]; READ 4 -> fxSelector (0=fx,1=dust,2=snow)     @ 0x4b7d40/0x4b7d50
+//   6. if header[6]!=0:
+//        SEEK header[6]; READ 4 -> subBinCount                        @ 0x4b7d88/0x4b7d99/da6
+//        loop subBinCount: READ 0x20 subBinName; sprintf "%s.bin";    @ 0x4b7dda
+//                          RECURSIVE FUN_004b7c50(name,...)           @ 0x4b7e2b
+//   7. SEEK header[3]; FUN_004b50b0(h,name)  [world/terrain; unported] @ 0x4b7e3f/0x4b7e4f
+//   8. SEEK header[0]; READ 4 -> odef blob size (objCount)            @ 0x4b7e5d/0x4b7e6a
+//   9. if objCount: malloc 0x1c9 tpl; READ objCount bytes -> odef VM  @ 0x4b7ea0/0x4b7eb2
+//  10. close                                                          @ 0x4b7e7b
+//
+// Header is 0x1c bytes at file offset 4; header[0..6] are ALL absolute file
+// offsets to the seven sections (proven: odef blob = [0x24 .. 0x24+objCount]
+// terminates exactly at header[1], the name-list). The odef VM (~80 opcodes,
+// jump table 0x4baa28) and the engine subsystems (FUN_0049a580/0050d8f0/004b50b0)
+// are NOT ported here; their sections are skipped/logged only.
 #include "VanillaBinLoader.h"
 #include "VanillaFileIO.h"
 
 #include <cstdio>
 #include <cstring>
 #include <cstdarg>
-
-uint32_t g_binTraceLevel = 1;   // default: logging on (set 0 to silence [BIN] traces)
+#include <cstdlib>
+#include <windows.h>
+#include <new>
 
 namespace {
+
+static uint32_t g_binTraceLevel = 1;   // logging on
 
 // ----- Engine constants (from disasm) ---------------------------------------
 constexpr uint32_t kBinMagic    = 0x1a0002e5u;  // cmp eax,0x1a0002e5 @ 0x4b7cbe
 constexpr uint32_t kHeaderU32   = 7;            // 0x1c = 28 bytes / 4
+constexpr uint32_t kSubBinNameLen = 0x20;       // READ 0x20 @ 0x4b7dda
 constexpr uint32_t kOdefTemplateSize = 0x1c9;   // malloc @ 0x4b7ea0
 
-// Section-index names (header[1..6]). Ordering matches the name-list parse
-// termination proof: the name-list at header[1] ends exactly at header[4].
-const char* const kSectionNames[6] = {
+// Section names for header[0..6] (indices confirmed by the verified parse:
+// header[0]=odef-blob section, header[1]=name_list/stream, header[2]=texmem,
+// header[3]=world/terrain, header[4]=fx, header[5]=unused, header[6]=sub_bins).
+const char* const kSectionNames[7] = {
+    "odef_blob",     // header[0]
     "name_list",     // header[1]
-    "world_terrain", // header[2]
-    "texmem",        // header[3]
+    "texmem",        // header[2]
+    "world_terrain", // header[3]
     "fx",            // header[4]
-    "huds_unk2",     // header[5]
-    "objects_odef"   // header[6]
+    "reserved5",     // header[5]
+    "sub_bins",      // header[6]
 };
 
 void trace(const char* fmt, ...) {
@@ -71,95 +78,82 @@ void trace(const char* fmt, ...) {
     std::fflush(stdout);
 }
 
-// Read one C-string via the engine line reader, return its length.
-int readCString(uint32_t handle, char* buf, int bufCap) {
-    FUN_0051d7b0(handle, buf);
-    buf[bufCap - 1] = '\0';
-    return static_cast<int>(std::strlen(buf));
-}
-
-// Parse the name-list section (header[1]).
-// Format (proven on w_intro_island.bin & w_intro.bin):
-//   u32 count
-//   count × { u8 flagsLo ; u8 flagsHi ; u8 nameLen ; char name[nameLen] }
-// The list ends exactly at the next section offset (header[4] = fx).
-void parseNameList(const uint8_t* base, uint32_t sizeLimit,
-                   uint32_t startOff, uint32_t endOff) {
-    if (startOff + 4 > sizeLimit) { trace("[BIN] name-list: start beyond file\n"); return; }
-    uint32_t p = startOff;
-    uint32_t count = 0;
-    std::memcpy(&count, base + p, 4); p += 4;
-    trace("[BIN] name-list @%u  count=%u  (region %u..%u)\n",
-          startOff, count, startOff, endOff);
-
-    uint32_t logged = 0;
-    for (uint32_t i = 0; i < count; ++i) {
-        if (p + 3 > sizeLimit) break;
-        uint8_t flagsLo = base[p];
-        uint8_t flagsHi = base[p + 1];
-        uint8_t nameLen = base[p + 2];
-        p += 3;
-        if (p + nameLen > sizeLimit) break;
-        char name[256];
-        std::memcpy(name, base + p, nameLen);
-        name[nameLen] = '\0';
-        p += nameLen;
-        if (logged < 8) {
-            trace("[BIN]   name[%u] flags=%02x%02x len=%u \"%s\"\n",
-                  i, flagsLo, flagsHi, nameLen, name);
-            ++logged;
-        }
-    }
-    trace("[BIN] name-list consumed -> cursor=%u  (expected end=%u, match=%s)\n",
-          p, endOff, (p == endOff) ? "YES" : "no");
-}
-
-// Walk the odef blob scanning for object-instance spawn/mesh names.
+// ---- Minimal file handle: vanilla uses CreateFileA/SetFilePointer/ReadFile.
+// We resolve the filename exactly as the engine VFS (Bin\<basename>) and operate
+// on the OS handle directly so SetFilePointer cursor semantics are identical.
 //
-// The vanilla odef VM (jump table @ 0x4baa28) advances a cursor variably per
-// opcode (1/4/0x10/0x20/0x40 bytes). Fully porting all ~80 opcodes is out of
-// scope here; instead we recover the object placements by scanning the blob for
-// the length-prefixed embedded names that the VM handlers (notably opcode 0x84 @
-// 0x4ba50a, which reads a NUL-terminated spawn name into engine spawn slot
-// [+0x509c]) consume. A placement record = a short ASCII identifier (>=4 chars,
-// leading letter/underscore) preceded by a context byte, surrounded by the
-// per-object float payload. This recovers every spawn/mesh name the level
-// declares (verified against w_intro_island.bin: intro_grnd, intro_rock,
-// intro_sky, intro_sea, intro_underside, intro_island_1/2, mission1 ...).
-struct Placement {
-    uint32_t fileOff;
-    char     name[40];
+// We try the loose file first; if that fails we fall back to the recomp VFS
+// (FUN_00539e30) for GZP-backed files and read the whole buffer into memory.
+struct BinFile {
+    HANDLE hFile = INVALID_HANDLE_VALUE;   // loose-file path
+    // GZP fallback path:
+    uint8_t* blob = nullptr;
+    uint32_t blobSize = 0;
+    uint32_t blobPos = 0;
+    bool     ok = false;
+
+    ~BinFile() {
+        if (hFile != INVALID_HANDLE_VALUE) CloseHandle(hFile);
+        if (blob) delete[] blob;
+    }
 };
 
-int scanPlacements(const uint8_t* base, uint32_t sizeLimit,
-                   uint32_t startOff, uint32_t endOff,
-                   Placement* out, int maxOut) {
-    int n = 0;
-    if (endOff > sizeLimit) endOff = sizeLimit;
-    for (uint32_t p = startOff; p + 1 < endOff && n < maxOut; ++p) {
-        // Identifier run: [A-Za-z_][A-Za-z0-9_]{3,}
-        uint8_t c0 = base[p];
-        bool startChar = (c0 >= 'a' && c0 <= 'z') || (c0 >= 'A' && c0 <= 'Z') || c0 == '_';
-        if (!startChar) continue;
-        uint32_t e = p;
-        while (e < endOff) {
-            uint8_t c = base[e];
-            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') ||
-                (c >= '0' && c <= '9') || c == '_') {
-                ++e;
-            } else break;
-        }
-        uint32_t len = e - p;
-        if (len < 4 || len >= sizeof(out[0].name)) { p = e; continue; }
-        // Require a NUL terminator right after (engine reads these as C-strings).
-        if (e >= endOff || base[e] != 0) continue;
-        std::memcpy(out[n].name, base + p, len);
-        out[n].name[len] = '\0';
-        out[n].fileOff = p;
-        ++n;
-        p = e;
+// Resolve just like the engine: Bin\<basename of binName>.
+void makeBinPath(const char* binName, char* out, size_t outCap) {
+    const char* base = binName;
+    for (const char* p = binName; *p; ++p)
+        if (*p == '\\' || *p == '/') base = p + 1;
+    snprintf(out, outCap, "Bin\\%s", base);
+}
+
+bool openBin(const char* binName, BinFile& f) {
+    char path[512]; makeBinPath(binName, path, sizeof(path));
+    f.hFile = CreateFileA(path, GENERIC_READ, FILE_SHARE_READ, nullptr,
+                          OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    if (f.hFile != INVALID_HANDLE_VALUE) { f.ok = true; return true; }
+
+    // GZP fallback: the recomp VFS (FUN_00539e30) loads the whole file into its
+    // in-memory table on open. We pull it back through FUN_0051d750 in one bulk
+    // request (the recomp clamps the copy to the available bytes). The trailing
+    // slack beyond the real size is never read because our parse is bound by the
+    // section offsets / sizes declared inside the file.
+    uint32_t h = FUN_00539e30(binName);
+    if (h == 0) return false;
+    const uint32_t kCap = 16u * 1024 * 1024;
+    f.blob = new (std::nothrow) uint8_t[kCap];
+    if (!f.blob) { FUN_0051d850(h); return false; }
+    FUN_0051d750(h, f.blob, kCap);
+    FUN_0051d850(h);
+    f.blobSize = kCap;
+    f.blobPos = 0;
+    f.ok = true;
+    return true;
+}
+
+// Read exactly n bytes; returns bytes actually read.
+uint32_t readBin(BinFile& f, void* buf, uint32_t n) {
+    if (f.hFile != INVALID_HANDLE_VALUE) {
+        DWORD got = 0;
+        ReadFile(f.hFile, buf, n, &got, nullptr);
+        return got;
     }
-    return n;
+    if (f.blob && f.blobPos < f.blobSize) {
+        uint32_t avail = f.blobSize - f.blobPos;
+        uint32_t c = n < avail ? n : avail;
+        memcpy(buf, f.blob + f.blobPos, c);
+        f.blobPos += c;
+        return c;
+    }
+    return 0;
+}
+
+// Seek to absolute offset (FILE_BEGIN). Vanilla FUN_0051d7b0 semantics.
+void seekBin(BinFile& f, uint32_t offset) {
+    if (f.hFile != INVALID_HANDLE_VALUE) {
+        SetFilePointer(f.hFile, (LONG)offset, nullptr, FILE_BEGIN);
+    } else if (f.blob) {
+        f.blobPos = offset < f.blobSize ? offset : f.blobSize;
+    }
 }
 
 } // namespace
@@ -168,125 +162,126 @@ int scanPlacements(const uint8_t* base, uint32_t sizeLimit,
 // FUN_004b7c50 — faithful port of the vanilla .BIN loader.
 // ============================================================================
 extern "C" void FUN_004b7c50(const char* binName, float a2, int a3) {
-    (void)a2; (void)a3;
+    (void)a3;
 
     trace("[BIN] FUN_004b7c50(\"%s\", %g, %d)\n", binName ? binName : "(null)", a2, a3);
 
-    // 0x4b7c6e: open
-    uint32_t handle = FUN_00539e30(binName);
-    if (handle == 0) {                                    // 0x4b7c7a: cmp esi,edi; jne
+    BinFile f;
+    if (!openBin(binName, f)) {                                   // 0x4b7c6e: open
         trace("[BIN]   FAILED to open \"%s\"\n", binName ? binName : "(null)");
         return;
     }
 
-    // 0x4b7cb2: read & validate magic (4 bytes).
+    // 1. READ 4-byte magic.                                                @0x4b7cb2
     uint32_t magic = 0;
-    FUN_0051d750(handle, &magic, 4);
-    if (magic != kBinMagic) {                             // 0x4b7cbe: cmp eax,0x1a0002e5
-        trace("[BIN]   BAD magic 0x%08x (expected 0x%08x) for \"%s\"\n",
-              magic, kBinMagic, binName ? binName : "(null)");
-        FUN_0051d850(handle);
+    readBin(f, &magic, 4);
+    if (magic != kBinMagic) {                                     // @0x4b7cbe
+        trace("[BIN]   BAD magic 0x%08x (expected 0x%08x)\n", magic, kBinMagic);
         return;
     }
 
-    // 0x4b7d04: read 0x1c-byte header (7 u32).
+    // 2. READ 0x1c-byte header (7 u32).                                    @0x4b7d04
     uint32_t header[kHeaderU32];
-    FUN_0051d750(handle, header, 0x1c);
+    readBin(f, header, 0x1c);
+    trace("[BIN]   header (7 section offsets):\n");
+    for (int i = 0; i < 7; ++i)
+        trace("[BIN]     header[%d]=%-6u  \"%s\"\n", i, header[i], kSectionNames[i]);
 
-    trace("[BIN]   header[0]=0x%x (format)\n", header[0]);
-    for (int i = 1; i < 7; ++i) {
-        trace("[BIN]   header[%d]=%-6u  section[%d]=\"%s\"\n",
-              i, header[i], i - 1, kSectionNames[i - 1]);
-    }
+    // 3. SEEK header[2]; FUN_0049a580(h)  [texmem; engine, unported]      @0x4b7d12
+    seekBin(f, header[2]);
+    trace("[BIN]   seek texmem @%u (FUN_0049a580 unported)\n", header[2]);
 
-    // 0x4b7d12 / 0x4b7d26 / 0x4b7d40: read three metadata C-strings.
-    char levelName[256];
-    char gtiPath[256];
-    char streamPath[256];
-    readCString(handle, levelName,  sizeof(levelName));
-    // 0x4b7d18: call FUN_0049a580(h) — gti processing (engine; unported, no file read)
-    readCString(handle, gtiPath,    sizeof(gtiPath));
-    // 0x4b7d32: call FUN_0050d8f0(a2,h,buf) — stream setup (engine; unported)
-    readCString(handle, streamPath, sizeof(streamPath));
+    // 4. SEEK header[1]; FUN_0050d8f0(name,h,*) [name-list/stream; unported] @0x4b7d26
+    seekBin(f, header[1]);
+    trace("[BIN]   seek name_list/stream @%u (FUN_0050d8f0 unported)\n", header[1]);
 
-    trace("[BIN]   level=\"%s\"  gti=\"%s\"  stream=\"%s\"\n",
-          levelName, gtiPath, streamPath);
+    // 5. SEEK header[4]; READ 4 -> fxSelector (0=fx,1=dust,2=snow).       @0x4b7d40/0x4b7d50
+    seekBin(f, header[4]);
+    uint32_t fxSelector = 0;
+    readBin(f, &fxSelector, 4);
+    const char* fxTag = "fx";
+    if (fxSelector == 1) fxTag = "fx_world_dust";
+    else if (fxSelector == 2) fxTag = "fx_world_snow";
+    trace("[BIN]   fx selector=%u -> \"%s\"\n", fxSelector, fxTag);
 
-    // 0x4b7d50: read 4-byte section selector / sub-bin count, then 0x4b7d80 fx
-    // tag selection and 0x4b7d99 fx string read. Reproduce the reads to keep the
-    // file cursor aligned with the original; the engine side-effects are unported.
-    uint32_t selector = 0;
-    FUN_0051d750(handle, &selector, 4);
-    trace("[BIN]   selector/sub-bin-count=%u\n", selector);
-    if (selector != 0) {
-        char fxTag[256];
-        readCString(handle, fxTag, sizeof(fxTag));
-        trace("[BIN]   fx tag=\"%s\"\n", fxTag);
-
-        // 0x4b7dda: read 4-byte interpolation divisor, then 0x4b7dd2 sub-bin loop
-        // (0x20-byte name buffer read + sprintf "%s.bin" + recursive FUN_004b7c50).
-        // We do NOT recurse here (sub-bin loading is the caller's concern); we only
-        // consume the divisor + each sub-bin's 0x20-byte name record so the cursor
-        // stays aligned.
-        uint32_t divisor = 0;
-        FUN_0051d750(handle, &divisor, 4);
-        for (uint32_t i = 0; i < selector; ++i) {
-            char subBin[0x20];
-            FUN_0051d750(handle, subBin, 0x20);
-            subBin[sizeof(subBin) - 1] = '\0';
-            trace("[BIN]   sub-bin[%u]=\"%s\" (not recursed)\n", i, subBin);
+    // 6. if header[6] != 0: sub-bin section.                              @0x4b7d88
+    if (header[6] != 0) {
+        seekBin(f, header[6]);                                    // @0x4b7d99
+        uint32_t subBinCount = 0;
+        readBin(f, &subBinCount, 4);                              // @0x4b7da6
+        trace("[BIN]   sub-bin count=%u @%u\n", subBinCount, header[6]);
+        // Loop: READ 0x20 name, sprintf "%s.bin", recurse.               @0x4b7dda/0x4b7e2b
+        // We log but do not recurse (sub-bin loading is the caller's concern).
+        for (uint32_t i = 0; i < subBinCount; ++i) {
+            char subBinName[kSubBinNameLen + 1];
+            memset(subBinName, 0, sizeof(subBinName));
+            readBin(f, subBinName, kSubBinNameLen);
+            subBinName[kSubBinNameLen] = '\0';
+            trace("[BIN]     sub-bin[%u] = \"%s\" -> \"%s.bin\" (not recursed)\n",
+                  i, subBinName, subBinName);
         }
     }
 
-    // 0x4b7e48 / 0x4b7e5d: post-subbin string + world string (engine world loader
-    // FUN_004b50b0 is unported). Consume to keep the cursor aligned.
-    {
-        char postSub[256];
-        char worldStr[256];
-        readCString(handle, postSub,  sizeof(postSub));
-        // 0x4b7e4f: call FUN_004b50b0(a2,h) — world/terrain (engine; unported)
-        readCString(handle, worldStr, sizeof(worldStr));
-        trace("[BIN]   world: post=\"%s\" str=\"%s\"\n", postSub, worldStr);
-    }
+    // 7. SEEK header[3]; FUN_004b50b0(h,name) [world/terrain; unported].  @0x4b7e3f/0x4b7e4f
+    seekBin(f, header[3]);
+    trace("[BIN]   seek world/terrain @%u (FUN_004b50b0 unported)\n", header[3]);
 
-    // 0x4b7e6a: read 4-byte odef object count.
-    uint32_t objCount = 0;
-    FUN_0051d750(handle, &objCount, 4);
-    trace("[BIN]   odef object-count=%u\n", objCount);
+    // 8. SEEK header[0]; READ 4 -> odef blob size.                        @0x4b7e5d/0x4b7e6a
+    seekBin(f, header[0]);
+    uint32_t odefSize = 0;
+    readBin(f, &odefSize, 4);
+    trace("[BIN]   odef blob size=%u (objects section @%u)\n", odefSize, header[0]);
 
-    // 0x4b7ea0/0x4b7eb2: malloc 0x1c9-byte template + read `objCount` bytes of the
-    // odef blob. The vanilla VM then interprets opcodes 0x13..0x84 (jump table
-    // 0x4baa28). We capture the blob and scan it for placement names instead of
-    // running the full VM (subsystem handlers unported).
-    if (objCount != 0) {
-        // Cap the blob we buffer: the engine reads exactly `objCount` bytes here.
-        uint32_t blobSize = objCount;
-        uint8_t* blob = nullptr;
-        // Stack buffer cap to keep this self-contained; engine uses malloc (FUN_0053c810).
-        const uint32_t kMaxBlob = 1u << 20;
-        if (blobSize <= kMaxBlob) {
-            blob = new uint8_t[blobSize];
-            FUN_0051d750(handle, blob, blobSize);
+    // 9. if odefSize: malloc 0x1c9 template + READ odefSize bytes.        @0x4b7ea0/0x4b7eb2
+    //    The vanilla odef VM (jump table 0x4baa28, opcodes 0x13..0x84) then
+    //    interprets the blob. We capture it and recover object/spawn names.
+    if (odefSize != 0) {
+        const uint32_t kMaxOdef = 1u << 20;
+        if (odefSize <= kMaxOdef) {
+            uint8_t* blob = new (std::nothrow) uint8_t[odefSize];
+            if (blob) {
+                uint32_t got = readBin(f, blob, odefSize);
+                trace("[BIN]   read odef blob: %u / %u bytes\n", got, odefSize);
 
-            // Region of interest for placements: from current cursor back through the
-            // name-list/objects span. We scan the blob itself.
-            Placement placements[64];
-            int n = scanPlacements(blob, blobSize, 0, blobSize,
-                                   placements, 64);
-            trace("[BIN]   odef blob=%u bytes  placements recovered=%d (of %u declared)\n",
-                  blobSize, n, objCount);
-            for (int i = 0; i < n; ++i) {
-                trace("[BIN]     placement[%d] @blob+%u  name=\"%s\"\n",
-                      i, placements[i].fileOff, placements[i].name);
+                // Recover object/spawn placements: scan for NUL-terminated ASCII
+                // identifiers embedded in the blob. The vanilla opcode-0x84 handler
+                // (@0x4ba50a) consumes these into the engine spawn slot
+                // (engine+0x509c); each is a level object instance name.
+                int n = 0;
+                for (uint32_t p = 0; p + 1 < got; ) {
+                    uint8_t c0 = blob[p];
+                    bool startChar = (c0 >= 'a' && c0 <= 'z') ||
+                                     (c0 >= 'A' && c0 <= 'Z') || c0 == '_';
+                    if (!startChar) { ++p; continue; }
+                    uint32_t e = p;
+                    while (e < got) {
+                        uint8_t c = blob[e];
+                        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') ||
+                            (c >= '0' && c <= '9') || c == '_') ++e;
+                        else break;
+                    }
+                    uint32_t len = e - p;
+                    // Require NUL terminator (engine reads these as C-strings).
+                    if (len >= 4 && len < 64 && e < got && blob[e] == 0) {
+                        char name[64];
+                        memcpy(name, blob + p, len);
+                        name[len] = '\0';
+                        trace("[BIN]     placement[%d] @blob+%u  \"%s\"\n", n, p, name);
+                        ++n;
+                        p = e + 1;
+                    } else {
+                        p = e;
+                    }
+                }
+                trace("[BIN]   odef placements recovered: %d\n", n);
+                delete[] blob;
             }
-            delete[] blob;
         } else {
-            trace("[BIN]   odef blob too large (%u); skipping\n", blobSize);
+            trace("[BIN]   odef blob too large (%u); skipping\n", odefSize);
         }
     }
 
-    // 0x4b7e7b: close.
-    FUN_0051d850(handle);
+    // 10. close.                                                           @0x4b7e7b
     trace("[BIN]   closed \"%s\"\n", binName ? binName : "(null)");
 }
 
@@ -299,10 +294,8 @@ int SelfTest() {
     if (g_binTraceLevel < 1) g_binTraceLevel = 1;   // ensure logging
 
     trace("=== VanillaBinLoader::SelfTest ===\n");
-    trace("Parsing header of w_intro_island.bin via FUN_004b7c50...\n");
+    trace("Parsing w_intro_island.bin via FUN_004b7c50...\n");
 
-    // The faithful loader logs the header, the three metadata strings, the
-    // name-list section (textures) and the recovered object placements.
     FUN_004b7c50("w_intro_island.bin", 1.0f, 0);
 
     trace("=== VanillaBinLoader::SelfTest done ===\n");
