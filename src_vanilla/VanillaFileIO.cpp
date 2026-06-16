@@ -100,16 +100,11 @@ extern "C" void FUN_0051d750(uint32_t handle, void* buf, uint32_t count) {
     f->pos += n;
 }
 
-extern "C" void FUN_0051d7b0(uint32_t handle, char* buf) {
+extern "C" void FUN_0051d7b0(uint32_t handle, uint32_t offset) {
+    // IAT-confirmed: vanilla FUN_0051d7b0 = SetFilePointer(handle, offset, FILE_BEGIN).
     VFile* f = slot(handle);
-    if (!f || !buf) return;
-    // read a C-string (until null or end) — the engine stores null-terminated strings.
-    uint32_t start = f->pos;
-    while (f->pos < f->data.size() && f->data[f->pos] != 0) f->pos++;
-    uint32_t len = f->pos - start;
-    if (len) memcpy(buf, f->data.data() + start, len);
-    buf[len] = 0;
-    if (f->pos < f->data.size()) f->pos++; // skip the null terminator
+    if (!f) return;
+    f->pos = (offset < f->data.size()) ? offset : (uint32_t)f->data.size();
 }
 
 extern "C" void FUN_0051d850(uint32_t handle) {
@@ -125,10 +120,10 @@ int SelfTest() {
     if (h) {
         uint32_t magic = 0;
         FUN_0051d750(h, &magic, 4);
-        // read first world name line
-        char name[64] = {0};
-        FUN_0051d7b0(h, name);
-        if (g_vTrace) { fprintf(g_vTrace, "[VFILE] WorldList.bin magic=%08x first='%s'\n", magic, name); fflush(g_vTrace); }
+        // exercise seek (FUN_0051d7b0 = SetFilePointer): seek to offset 100, read a byte.
+        FUN_0051d7b0(h, 100);
+        uint8_t b = 0; FUN_0051d750(h, &b, 1);
+        if (g_vTrace) { fprintf(g_vTrace, "[VFILE] WorldList.bin magic=%08x byte@100=%02x\n", magic, b); fflush(g_vTrace); }
         FUN_0051d850(h);
     }
     // GZP-resident file
