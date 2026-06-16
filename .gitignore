@@ -107,3 +107,4 @@ build_recomp/*.map
 giants_trace.log
 recomp_test/
 GameFiles-VanillaV1/
+vanilla_decompiled/
