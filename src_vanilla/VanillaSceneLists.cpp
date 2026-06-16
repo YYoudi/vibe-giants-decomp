@@ -430,23 +430,17 @@ extern "C" void FUN_004b77f0(void) {
     for (int i = 0; i < WORLDLIST_FILE_COUNT && slot < g_LevelCount; i++) {
         char* blob = reinterpret_cast<char*>(static_cast<uintptr_t>(g_WorldListBuf[i]));
         if (!blob) continue;
-        // First dword = entry count for this file.
+        // Layout (verified on worldlist.bin, 688B): [count:u32][count×offset:u32][strings].
+        // name[i] = blob + offset[i]  (offset[0]=0x80=128 → "Story1"). Offsets relative to blob start.
         uint32_t per_file = *reinterpret_cast<uint32_t*>(blob);
-        char* str = blob + 4;   // string data starts after the count dword
-        char* blob_end = blob + 4;
-        // Determine end of string region (blob_size was read per file; we
-        // approximate by walking until we've consumed per_file strings).
+        uint32_t* offsets = reinterpret_cast<uint32_t*>(blob + 4);
         for (uint32_t j = 0; j < per_file && slot < g_LevelCount; j++, slot++) {
             LevelEntry* e = &table[slot];
-            e->name_ptr = str;                                          // [0x4b7998]
-            // Advance past this NUL-terminated string.
-            char* next = str;
-            while (*next) ++next;
-            ++next;  // skip NUL
+            char* nm = blob + offsets[j];
+            e->name_ptr = nm;                                           // [0x4b7998]
+            char* next = nm; while (*next) ++next; ++next;              // skip NUL
             e->name_ptr2 = next;                                        // [0x4b79b5]
-            e->something = *reinterpret_cast<uint32_t*>(str);           // [0x4b79c1]
-            str = next;
-            (void)blob_end;
+            e->something = *reinterpret_cast<uint32_t*>(nm);            // [0x4b79c1]
         }
     }
 
