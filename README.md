@@ -30,6 +30,14 @@ An experimental, **AI-generated** C++ reconstruction of the engine inside
 renderers by `ncblakely`). The 2000 game ran on the in-house **"Amityville"
 engine** — x86 PE32, ~2.69 MB.
 
+> **Direction update (2026-06-16).** The canonical reverse target has pivoted to
+> **vanilla 1.0 retail** (`Giants.exe`) and its **DX7** renderer — the 1.5/DX9
+> path (`src/`, `GiantsMain.exe`) is now **legacy reference** being rebased onto
+> vanilla, not the goal. The 1.5↔vanilla function map and the per-layer cleanup
+> plan live in `version_bridge/`; the fresh vanilla-native recomp starts in
+> `src_vanilla/`. `src/` itself is unchanged below — still the 1.5-era
+> reconstruction (~6,260 fn).
+
 This is **not** a playable source port and **not** a drop-in replacement. It is
 a big pile of C++ stubs and partially-decompiled functions, produced by an
 automated loop:
