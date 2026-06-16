@@ -69,6 +69,12 @@ static void __cdecl Stub_Void() {}
 static void* __cdecl Stub_Null() { return nullptr; }
 static void* __cdecl Stub_EmptyStr() { return (void*)""; }
 static void __cdecl Stub_Free(void* p) { free(p); }
+// callback[18] = the engine ALLOCATOR (vanilla 0x521a20 → debug-heap malloc 0x53c810,
+// signature alloc(a0, size, heap)). The renderer allocates its objects (incl. the
+// 0x57c renderer obj in GDVSysCreate) through this. MUST return a real pointer —
+// GDVSysCreate fails (returns NULL) if it can't allocate. Freed by callback[19]=free
+// (same MinGW heap → consistent, no cross-CRT free).
+static void* __cdecl Stub_Alloc(int /*a0*/, size_t size, void* /*heap*/) { return malloc(size); }
 
 // Build + call UpCallsLoad + GDVSysCreate with the vanilla contract.
 extern "C" void* VanillaInitRenderer(HWND hWnd) {
@@ -95,7 +101,7 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
         (void*)Stub_Null,     // 15 VFSOpenFileVariant
         (void*)Stub_Null,     // 16 VFSOpenMusicFile
         (void*)Stub_Null,     // 17 VFSOpenFile
-        (void*)Stub_Null,     // 18 SelfReference
+        (void*)Stub_Alloc,    // 18 EngineAllocator (malloc — GDVSysCreate allocs via this)
         (void*)Stub_Free,     // 19 CRT_free
         (void*)Stub_Void,     // 20 ScenePipelineEntry
     };
@@ -105,19 +111,26 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
     reinterpret_cast<PFN_UpCallsLoad>(g_UpCallsLoad)(0x2775, 21, callbacks);
     if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] UpCallsLoad(0x2775, 21) called\n"); fflush(g_vTrace); }
 
-    // GDVSysCreate — vanilla DX7 has 9 params (NOT the 1.5's 6-param signature!):
-    //   GDVSysCreate(lpCmdLine, configStruct, width, height, bpp, ?, windowed, &dispCfg, &modeCfg)
-    // The vanilla WinMain (0x5222c0) calls it with width=0x1e0(480) initially,
-    // retrying with 640x480 if it returns NULL. configStruct (DAT_005dca50) is a
-    // zeroed 0x104-byte buffer (hWnd may be at offset 0 — testing). engineCtx=NULL
-    // (no COM registry — the 1.5 6th param doesn't exist in vanilla).
-    // GDVSysCreate param 2 = hWnd directly (DAT_005dca50 = CreateWindowExA return).
-    uint32_t dispCfg[8] = {0};
-    uint32_t modeCfg[8] = {0};
+    // GDVSysCreate — vanilla DX7 signature captured via Frida (frida_gdvargs.js)
+    // on the original Giants.exe → gg_dx7r.dll. The EXACT 9 args the original passes:
+    //   GDVSysCreate(lpCmdLine, hWnd, 0, 0, bpp=32, 0, windowed=1, &ddDeviceGUID, &ddIID)
+    // a2=0, a3=0 (NOT width/height — those come from the registry VideoWidth/Height
+    // which GDVSysCreate reads internally). a4=32 (bpp). a6=1 (windowed).
+    // a7/a8 are DirectDraw device + interface GUIDs (the EXACT bytes captured from
+    // the original's .data at 0x631828/0x631838). GDVSysCreate's internal device-init
+    // sub (0x10006520) calls DirectDrawCreateEx(a7, &lpDD, a8, NULL) and returns NULL
+    // if it fails — so the GUIDs MUST be valid. (See disasm_gdvsyscreate.py +
+    // reports/frida_gdvargs.txt.)
+    static const GUID g_DD_DEVICE_GUID = {
+        0xd7b71e3e, 0x41d5, 0x11cf, {0xf3,0x73,0x25,0xa2,0x0e,0xc2,0xcd,0x35} };
+    static const GUID g_DD_IID = {
+        0x84e63de0, 0x46aa, 0x11cf, {0x81,0x6f,0x00,0x00,0xc0,0x20,0x15,0x6e} };
     extern const char* __lpCmdLine;
-    typedef void* (__cdecl *PFN_GDVSysCreate_9)(const char*, HWND, uint32_t, uint32_t, uint32_t, uint32_t, uint32_t, void*, void*);
+    typedef void* (__cdecl *PFN_GDVSysCreate_9)(const char*, HWND, uint32_t, uint32_t,
+                                                uint32_t, uint32_t, uint32_t, const GUID*, const GUID*);
     void* device = reinterpret_cast<PFN_GDVSysCreate_9>(g_GDVSysCreate)(
-        __lpCmdLine ? __lpCmdLine : "", hWnd, 640, 480, 16, 0, 1, dispCfg, modeCfg);
-    if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] GDVSysCreate(hWnd=%p, 640x480) -> device=%p\n", hWnd, device); fflush(g_vTrace); }
+        __lpCmdLine ? __lpCmdLine : "", hWnd, 0, 0, 32, 0, 1,
+        &g_DD_DEVICE_GUID, &g_DD_IID);
+    if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] GDVSysCreate(hWnd=%p, bpp=32 win) -> device=%p\n", hWnd, device); fflush(g_vTrace); }
     return device;
 }
