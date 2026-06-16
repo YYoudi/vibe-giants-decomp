@@ -65,3 +65,7 @@ const char* Lookup(const char* key) {
 }
 
 } // namespace VanillaText
+
+// C-linkage accessor for the UpCalls callback[11] wiring.
+extern "C" const char* VanillaText_Lookup(const char* key) { return VanillaText::Lookup(key); }
+
