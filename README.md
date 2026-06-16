@@ -67,14 +67,46 @@ but the code was still dumped.
 
 Tooling in the loop:
 
-- **Ghidra 12.1.2** for decompilation + cross-references.
-- **`re-agent`** (cloned upstream from https://github.com/Dryxio/auto-re-agent, not included) — an LLM orchestrator that
-  drives Ghidra, asks the model to re-decompile/review each function, and
-  produces a PASS/FAIL verdict with a parity check.
+The project stacks several complementary tools — static decompilation, dynamic
+capture, a runtime oracle, and cross-version bridges.
+
+**Static (Ghidra):**
+- **Ghidra 12.1.2** for decompilation + cross-references. Two projects: the
+  legacy 1.5 binary (`GiantsMain.exe`) and the canonical vanilla 1.0 binary
+  (`Giants.exe`, `version_bridge/ghidra_proj/VanillaProj`).
+- **`re-agent`** (cloned upstream from https://github.com/Dryxio/auto-re-agent,
+  not included) — an LLM orchestrator that drives Ghidra to re-decompile/review
+  each function with a PASS/FAIL parity verdict. This produced the legacy 1.5
+  `src/` bulk. It is **dormant right now** — the active frontier is dynamic
+  (below) — but it remains the tool for static vanilla decompilation at scale.
 - **`ghidra-ai-bridge`** (cloned upstream, not included) — the bridge the agent
-  uses to talk to a headless Ghidra.
+  uses to talk to a headless Ghidra. Headless Java scripts
+  (`scripts/ExportVanillaDecompiled.java`, `version_bridge/ExportFunctions.java`)
+  dump function bodies/fingerprints without the review loop.
+
+**Dynamic (Frida):**
+- **Frida** hooks the *live original* vanilla binary to capture what static
+  analysis cannot: the real DX7 renderer contract, the per-frame call sequence,
+  and callback arguments. Scripts in `scripts/frida_dx7_*.js` (+ `*_run.py`).
+
+**Runtime oracle (proxy DLL):**
+- The **proxy** (`proxy/`) is a drop-in renderer DLL that intercepts every
+  engine↔renderer call and bit-compares the recomp's behaviour against the
+  original at runtime — the parity check that "it builds" cannot give you.
+
+**Disassembly + cross-version bridges:**
+- **Capstone** (`scripts/dx7_disasm.py`, `disasm_gdvsyscreate.py`,
+  `disasm_fn.py`) maps renderer RVAs → D3D7 method semantics.
+- **`version_bridge/`** matches 1.5↔vanilla functions (relocation-invariant
+  fingerprints + rare strings + call-graph) to drive the rebase.
+- **`ps2_symbols/`** disassembles the PS2 debug ELF (`SLUS_201.78`, full symbols)
+  and matches it to PC functions for authoritative naming.
+
+**Build:**
 - **MinGW-w64 (32-bit)** as the build sanity check — if the generated C++ won't
-  compile as `-m32`, the loop tries to fix it.
+  compile as `-m32`, the loop tries to fix it. **Python 3.11** drives the
+  Frida/disasm/bridge scripts. *(Planned, not yet wired: x32dbg for interactive
+  debugging, PIX/RenderDoc for frame capture.)*
 
 > **Why is so much not in this repo?** The two tools above, the Ghidra projects,
 > the exported JSON, and all game files are gitignored (too big, or not mine to
@@ -158,22 +190,32 @@ declarations so the reversed code compiles without the DirectX SDK.
 ## Reproducing the setup
 
 If you (somehow) want to reproduce the loop that produced this, you'll need to
-bring the parts that aren't redistributable:
+bring the parts that aren't redistributable. The stack is wider than "Ghidra +
+an LLM" — dynamic capture and a runtime oracle do most of the validation.
 
-1. A legally-owned **vanilla 1.0 retail** copy of *Giants: Citizen Kabuto*
-   (`Giants.exe` + `gg_dx7r.dll`). The community **1.5 patch** (DX9/DX11/DX12,
-   https://giantswd.org/?file=2#984) is **optional** — only useful to compare
-   against the legacy `src/`.
-2. **Ghidra 12.1.2**, import `Giants.exe`, point the configs at it.
-3. Clone the two tools the harness depends on (not included here):
+1. **Game binaries.** A legally-owned **vanilla 1.0 retail** copy of *Giants:
+   Citizen Kabuto* (`Giants.exe` + its DX7 renderer `gg_dx7r.dll`) — the
+   canonical target. The community **1.5 patch** (`GiantsMain.exe` +
+   `gg_dx9r/dx11r/dx12r.dll`, https://giantswd.org/?file=2#984) is **optional** —
+   the legacy `src/` was built from it. Optionally the **PS2 debug ELF**
+   (`SLUS_201.78`) for the naming oracle.
+2. **Ghidra 12.1.2** — import both PC binaries; the vanilla project lives at
+   `version_bridge/ghidra_proj/VanillaProj`.
+3. **Python 3.11** + the analysis deps (drives Frida, capstone, the matchers):
+   ```bash
+   pip install frida capstone
+   ```
+4. **Clone the two harness tools** the static loop depends on (not included):
    - `auto-re-agent` — LLM orchestrator ([https://github.com/Dryxio/auto-re-agent](https://github.com/Dryxio/auto-re-agent))
    - `ghidra-ai-bridge` — headless-Ghidra bridge ([https://github.com/Dryxio/ghidra-ai-bridge](https://github.com/Dryxio/ghidra-ai-bridge))
-4. Copy [`re-agent.example.yaml`](re-agent.example.yaml) → `re-agent.yaml` and
-   [`ghidra-bridge.example.yaml`](ghidra-bridge.example.yaml) →
-   `ghidra-bridge.yaml`, fill in paths and your own LLM API key.
+5. **MinGW-w64 32-bit** toolchain — the original binary is PE32 x86.
+6. **Configs:** copy [`re-agent.example.yaml`](re-agent.example.yaml) →
+   `re-agent.yaml` and [`ghidra-bridge.example.yaml`](ghidra-bridge.example.yaml)
+   → `ghidra-bridge.yaml`, fill in paths and your own LLM API key.
 
-The configs in this repo are `.example` templates only — the real ones are
-gitignored (machine paths + a live API key).
+The real configs are gitignored (machine paths + a live API key). The Frida hooks
+attach to your local vanilla install; the proxy builds as a drop-in renderer DLL
+against the same install.
 
 ---
 
