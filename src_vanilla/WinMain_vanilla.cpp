@@ -8,6 +8,7 @@
 #include "VanillaVFS.h"
 #include "VanillaFileIO.h"
 #include "VanillaAudio.h"
+#include "VanillaGTI.h"
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -102,6 +103,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     VanillaFileIO::SelfTest();
     // ── Audio subsystem loader (FUN_0051f900 port: load gs_ds.dll + resolve SDV/MDV/VDV exports) ──
     VanillaAudio::Load("ds");
+    // ── GTI terrain parser self-test (parse intro_island.gti heightfield) ──
+    VanillaGTI::SelfTest();
 
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
