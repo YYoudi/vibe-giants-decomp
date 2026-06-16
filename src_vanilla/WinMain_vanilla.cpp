@@ -6,6 +6,7 @@
 #include <windows.h>
 #include <cstdio>
 #include "VanillaVFS.h"
+#include "VanillaFileIO.h"
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -96,6 +97,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // ── VFS data-layer self-test (load a real GZP archive) ──
     // Validates the GZP reader (header parse + LZ decompress) against vanilla assets.
     VanillaVFS::SelfTest("Bin\\w_intro_island.gzp");
+    // ── Engine file I/O self-test (open WorldList.bin loose + a GZP file) ──
+    VanillaFileIO::SelfTest();
 
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
