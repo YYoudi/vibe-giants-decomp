@@ -435,6 +435,26 @@ extern "C" __declspec(dllexport)
 void* GDVSysCreate(uint32_t context, HWND hWnd, DWORD* width, DWORD* windowed,
                    DWORD* mode, void* param) {
     Logger::Log("GDVSysCreate: ctx=%u, hWnd=0x%p, *w=%u", context, hWnd, width ? *width : 0);
+
+    // ── CAPTURE the ORIGINAL's engine-context (param) + its vtable ──
+    // This is the ground truth the recomp's stub engine-context must reproduce
+    // for the real renderer to stop crashing. param is the engine-context COM
+    // object; param[0] = its vtable. Dump the object fields + vtable methods,
+    // resolving addresses against the original exe's image (0x00400000+).
+    if (param) {
+        uint32_t* obj = (uint32_t*)param;
+        uint32_t vtbl = obj[0];
+        Logger::Log("ENGINECTX: obj=0x%p vtable=0x%08X fields[1..6]=%08X %08X %08X %08X %08X %08X",
+            param, vtbl, obj[1], obj[2], obj[3], obj[4], obj[5], obj[6]);
+        if (vtbl > 0x400000 && vtbl < 0x800000) {  // vtable in original exe image
+            uint32_t* vt = (uint32_t*)vtbl;
+            for (int i = 0; i < 24; i++) {
+                if (vt[i] == 0) { Logger::Log("  vtable[%2d] = NULL", i); continue; }
+                Logger::Log("  vtable[%2d] = 0x%08X", i, vt[i]);
+            }
+        }
+    }
+
     void* device = g_realGDVSysCreate(context, hWnd, width, windowed, mode, param);
     Logger::Log("  -> device=0x%p", device);
     return device;
