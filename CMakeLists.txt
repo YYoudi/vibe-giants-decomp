@@ -182,7 +182,7 @@ set_target_properties(GiantsMain PROPERTIES
 # ═══════════════════════════════════════════════════════════════════
 file(GLOB VANILLA_SOURCES "src_vanilla/*.cpp")
 add_executable(GiantsMain_vanilla WIN32 ${VANILLA_SOURCES})
-target_link_libraries(GiantsMain_vanilla PRIVATE user32 gdi32)
+target_link_libraries(GiantsMain_vanilla PRIVATE user32 gdi32 dinput dxguid)
 target_compile_options(GiantsMain_vanilla PRIVATE -m32)
 target_link_options(GiantsMain_vanilla PRIVATE -m32 -static-libgcc -static-libstdc++ -Wl,-Map,build_recomp/GiantsMain_vanilla.map)
 set_target_properties(GiantsMain_vanilla PROPERTIES
