@@ -152,11 +152,14 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
 
 // ─── Display-config getter (renderer method [0x1b] = obj+0x6c = RVA 0xc970) ───
 // The vanilla WinMain (FUN_005222c0) calls this RIGHT after GDVSysCreate to read the
-// current display mode into engine globals DAT_005dcb34/cb44, then compares vs the
-// device GUIDs to decide if the display changed. 0xc970 is a pure GETTER: it copies
-// 2×16-byte config blocks OUT of the renderer's D3D-framework sub-object (obj+0x284
-// → +0x830 and +0x8cc) into the caller's buffers. Harmless read — reproduces the
-// vanilla init step faithfully. (disasm: reports the config, no side effects.)
+// current display mode into engine globals DAT_005dcb34/cb44. 0xc970 is a pure GETTER:
+// copies 2×16-byte config blocks OUT of the renderer's D3D-framework sub-object
+// (obj+0x284 → +0x830 and +0x8cc) into the caller's buffers. Harmless read.
+//
+// *** CALLING CONVENTION (disasm-confirmed 2026-06-16): vanilla DX7 renderer methods
+// are __cdecl with `this` as the EXPLICIT FIRST STACK ARG (mov eax,[esp+4]; ... ret —
+// NOT thiscall, NO ECX-this, NO callee stack cleanup). The engine calls them as
+// (*obj[N])(obj, args). So we use a plain __cdecl fn-ptr with obj as arg0. ***
 extern "C" void VanillaReadDisplayConfig() {
     extern FILE* g_vTrace;
     if (!g_vRenderer) return;
@@ -164,10 +167,10 @@ extern "C" void VanillaReadDisplayConfig() {
     // 16-byte display-config buffers the WinMain reads into).
     static uint32_t g_dispCfg1[4] = {0};   // DAT_005dcb34
     static uint32_t g_dispCfg2[4] = {0};   // DAT_005dcb44
-    // method[0x1b] at obj+0x6c. thiscall: fn(this, &out1, &out2).
-    void** vtbl = (void**)g_vRenderer;
-    void* method6c = vtbl[0x6c / 4];
-    typedef void (__attribute__((thiscall)) *PFN_GetDispCfg)(void* self, void* out1, void* out2);
+    // method[0x1b] at obj+0x6c. __cdecl: fn(this, &out1, &out2).
+    void** tbl = (void**)g_vRenderer;
+    void* method6c = tbl[0x6c / 4];
+    typedef void (__cdecl *PFN_GetDispCfg)(void* self, void* out1, void* out2);
     if (method6c) {
         ((PFN_GetDispCfg)method6c)(g_vRenderer, g_dispCfg1, g_dispCfg2);
         if (g_vTrace) {
