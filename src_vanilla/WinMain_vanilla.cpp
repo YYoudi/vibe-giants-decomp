@@ -15,6 +15,7 @@
 #include "VanillaTGA.h"
 #include "VanillaFeed.h"
 #include "VanillaInput.h"
+#include "VanillaTextureLoad.h"
 // Scene list-management ports (defined in VanillaSceneLists.cpp).
 extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
@@ -149,6 +150,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     //    This is the recipe from RE_docs/OBJECT_VTABLE_SYSTEM.md §7. After this
     //    the original gg_dx7r.dll should build its scene-entities internally.
     VanillaFeedTextures();
+
+    // ── Load pixel data for every texture entry (FUN_0050dd20 port). After
+    //    VanillaFeedTextures populates g_TextureEntityList, this parses each
+    //    entry's .tga/.dds from the level GZP and stores the pixel buffer at
+    //    entry+0x04 (+ format/mip fields). NOTE: this does NOT by itself create
+    //    the renderer surface / link-node at entry+0x08 — that is done by the
+    //    renderer's slot +0xb0 (driven by the per-entity texture-bind walk at
+    //    VA 0x4f3c20). It DOES supply the pixel data that slot +0xb0 uploads.
+    VanillaLoadAllTextures();
 
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
