@@ -13,6 +13,7 @@
 #include "VanillaBinLoader.h"
 #include "VanillaText.h"
 #include "VanillaTGA.h"
+#include "VanillaFeed.h"
 // Scene list-management ports (defined in VanillaSceneLists.cpp).
 extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
@@ -134,6 +135,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // NOTE: body alignment under fix by subagent; may loop on garbage count — last so it
     // doesn't block the other self-tests if it hangs.
     VanillaBinLoader::SelfTest();
+
+    // ── Feed the level's texture list to the renderer (FUN_004b7c50 sub-path:
+    //    SEEK header[1] name_list → FUN_0050d8f0 populates g_TextureEntityList →
+    //    SceneWalk_Textures dispatches each entry to renderer slot +0xb4).
+    //    This is the recipe from RE_docs/OBJECT_VTABLE_SYSTEM.md §7. After this
+    //    the original gg_dx7r.dll should build its scene-entities internally.
+    VanillaFeedTextures();
 
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration

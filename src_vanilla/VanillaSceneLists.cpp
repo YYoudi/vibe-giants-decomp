@@ -54,26 +54,9 @@ extern "C" {
     uint32_t g_WorldState = 0;          // DAT_006316ec
 }
 
-// ============================================================================
-// Helper: stream-size query (FUN_0051d7f0 in vanilla).
-// ============================================================================
-// Vanilla [0x51d7f0]: seek(stream, 0, SEEK_END-equivalent) and return the
-// position. Our file API doesn't expose seek on the in-memory handle, so we
-// approximate by reading nothing and using the cached handle size. The engine
-// uses this only to size the texture data_size field; we read the remaining
-// byte count from the handle instead.
-extern "C" uint32_t FUN_0051d7f0(uint32_t handle);  // declared here, defined below
-
-// Minimal inline implementation: return remaining bytes in the stream handle.
-// (Vanilla's version calls a seek-to-end virtual; our handle is in-memory so
-// we approximate with the byte count.) This matches how FUN_0050d8f0 uses it
-// to populate TextureListNode.data_size.
-extern "C" uint32_t FUN_0051d7f0(uint32_t handle) {
-    // The vanilla API [0x5520ec] is a seek; we don't have a real seek on our
-    // memory handle, so return 0 (data_size is informational for the reader).
-    (void)handle;
-    return 0;
-}
+// FUN_0051d7f0 (GetFilePosition) is defined in VanillaFileIO.cpp (added there
+// once the IAT semantics were confirmed via capstone: SetFilePointer(0, CURRENT)).
+// Not redeclared here — see VanillaFileIO.h.
 
 // ============================================================================
 // Internal: head-insert a freshly-allocated node into a circular list.
@@ -91,68 +74,107 @@ static inline void head_insert(uint32_t* head_ptr, void* new_node) {
 // FUN_0050d8f0 — Texture/entity list INSERT (head at DAT_005a78b4)
 // ============================================================================
 //
-// Confirmed signature: void FUN_0050d8f0(const char* name, uint32_t stream, int version)
-//   arg1 = [esp+0x40] (name)   — used in the name-match loop + strcpy to +0x04
-//   arg2 = [esp+0x44] (stream) — passed to FUN_0051d7f0 / FUN_0051d750
-//   arg3 = [esp+0x48] (version)— NOT directly referenced in body (caller passes scene ver)
-// Disasm evidence:
-//   [0x50d8f6] mov esi,[0x5a78b4]            ; walk current head
-//   [0x50d901] mov eax,[esp+0x40]            ; arg1 (name)
-//   [0x50d925] call FUN_0051d7f0             ; data_size = stream_size(stream)
-//   [0x50d936] call FUN_0051d750(stream,&count,4) ; read sub_count
-//   [0x50d99b] lea eax,[eax+eax*8]           ; eax = sub_count*9
-//   [0x50d9ad] lea edi,[ebp+eax*4+0x2c]      ; alloc size = sub_count*0x24 + 0x2c
-//   [0x50d9b4] call FUN_0053c810(...)        ; allocate (allocator)
-//   [0x50d9c9] rep stosd                     ; zero-fill
-//   [0x50d9d5] mov eax,[0x5a78b4]            ; old head
-//   [0x50d9da] mov [ebp+0],eax               ; new_node->next = old head
-//   [0x50d9dd] mov eax,[esp+0x40]            ; name
-//   [0x50d9e1] mov [0x5a78b4],ebp            ; head = new_node
-//   [0x50d9e7..] strcpy loop                 ; name → +0x04
-//   [0x50d9f7] mov [ebp+0x24],ecx            ; data_size @ +0x24
-//   [0x50d9fe] mov [ebp+0x28],edx            ; sub_count @ +0x28
-//   [0x50da0d] lea ebx,[ebp+eax*4+0x2c]      ; entries base @ +0x2c
-//   [0x50da30..] per-entry loop (stride 0x24, reads via FUN_0051d750)
-extern "C" void FUN_0050d8f0(const char* name, uint32_t stream, int version) {
-    (void)version;
-
-    // Phase 1: name-match walk (if a node with this name exists, vanilla
-    // skips re-insertion). We replicate the walk at [0x50d8f6..0x50d91e].
+// CONFIRMED signature: void FUN_0050d8f0(const char* name, uint32_t stream)
+//   arg1 = [esp+0x40] (name)   — node name (strcpy to +0x04)
+//   arg2 = [esp+0x44] (stream) — file handle (caller has just SEEK'd to name_list)
+//
+// ON-DISK FORMAT (verified against w_intro_island.bin @ header[1]=0x46d):
+//   u32 sub_count                          ← read by [0x50d936]
+//   sub_count × {                          ← per-entry on-disk record
+//     u8  flagsLo                          ← SKIPPED via FUN_0051d7d0(stream,1) [0x50d94d]
+//     u8  flagsHi                          ← SKIPPED via FUN_0051d7d0(stream,1) [0x50d955]
+//     u8  nameLen                          ← READ via FUN_0051d750(stream,&b,1) [0x50d962]
+//     char name[nameLen]                   ← READ via FUN_0051d750(stream,buf,nameLen) [0x50d978]
+//   }
+//
+// IN-MEMORY NODE LAYOUT (node + 0x2c entries, each 0x24 = 9 dwords):
+//   +0x00 next                            [0x50d9da] = old head (head-insert)
+//   +0x04 name[0x20]                      [0x50d9e7] strcpy(name@+4, param_1)
+//   +0x24 data_size                       [0x50d9f7] = stream position (FUN_0051d7f0)
+//   +0x28 sub_count                       [0x50d9fe] = u32 read from stream
+//   +0x2c entries[sub_count] (stride 0x24)
+//     per entry:
+//       +0x00 → string-pool ptr (this entry's name)   [0x50da9e] *puVar4 = puVar8
+//       +0x08 = 0                                     [0x50daab] puVar4[2] = 0
+//       +0x14 = 8                                     [0x50dab3] puVar4[5] = 8
+//       +0x18 = 8                                     [0x50dab5] puVar4[6] = 8
+//       +0x20 = flagsLo (read first byte)             [0x50da8f] *(puVar4+8) byte = local_29
+//       +0x23 = flagsHi (read second byte)            [0x50da9b] *(puVar4+0x23) byte = local_29
+//   [after entries] name-string-pool (each entry's name copied NUL-terminated)
+//
+// `data_size` = FUN_0051d7f0(stream) = CURRENT stream position captured before
+// reading sub_count (Ghidra decompile misled earlier: it's GetFilePosition
+// via SetFilePointer(0, FILE_CURRENT), NOT the file size — confirmed by capstone).
+// The vanilla body then re-seeks via FUN_0051d7b0(stream, data_size+4) to skip
+// past sub_count before the second-pass entry-fill loop.
+extern "C" void FUN_0050d8f0(const char* name, uint32_t stream) {
+    // Phase 1: name-match walk (if a node with this name exists, skip).
+    //   [0x50d8f6..0x50d91e] for each node, strcmp(node->name@+4, name).
     TextureListNode* cur = reinterpret_cast<TextureListNode*>(static_cast<uintptr_t>(g_TextureEntityList));
     while (cur) {
         if (name && std::strcmp(cur->name, name) == 0) {
-            if (g_vTrace) { std::fprintf(g_vTrace, "[TEXLIST] duplicate '%s' — skip insert\n", name ? name : "(null)"); std::fflush(g_vTrace); }
+            if (g_vTrace) { std::fprintf(g_vTrace, "[TEXLIST] duplicate '%s' — skip insert\n", name); std::fflush(g_vTrace); }
             return;
         }
         cur = cur->next;
     }
 
-    // Phase 2: read data_size (stream size) + sub_count from the stream.
-    //   [0x50d925] data_size = FUN_0051d7f0(stream)
+    // Phase 2: capture stream position (iVar3) + read sub_count.
+    //   [0x50d925] iVar3 = FUN_0051d7f0(stream) = GetFilePosition
     //   [0x50d936] FUN_0051d750(stream, &sub_count, 4)
     const uint32_t data_size = FUN_0051d7f0(stream);
     uint32_t sub_count = 0;
     FUN_0051d750(stream, &sub_count, 4);
 
-    // Phase 3: allocate node = 0x2c + sub_count*0x24, zero-fill.
-    //   [0x50d99b..0x50d9ad] size = sub_count*9*4 + 0x2c
-    //   [0x50d9b4] allocate, [0x50d9c9] memset(0)
-    const uint32_t node_size = 0x2c + sub_count * 0x24;
+    // Cap sub_count to something sane to defend against a bad stream position.
+    if (sub_count > 4096) {
+        if (g_vTrace) { std::fprintf(g_vTrace, "[TEXLIST] sub_count=%u too large (bad stream pos %u) — ABORT\n", sub_count, data_size); std::fflush(g_vTrace); }
+        return;
+    }
+
+    // Phase 3: First-pass walk to size the trailing name-string pool.
+    //   The vanilla body computes the pool size as `iVar2 + 0x2c + sub_count*0x24`
+    //   where iVar2 is the cumulative strlen+1 of each entry name (computed by
+    //   walking the on-disk entries via skip/read at [0x50d94a..0x50d999]). We
+    //   replicate: skip 2, read nameLen, read nameLen bytes, accumulate strlen+1.
+    uint32_t pool_size = 0;
+    {
+        uint32_t pos_after_count = FUN_0051d7f0(stream);  // stream now at entries[0]
+        for (uint32_t i = 0; i < sub_count; i++) {
+            FUN_0051d7d0(stream, 1);                 // skip flagsLo
+            FUN_0051d7d0(stream, 1);                 // skip flagsHi
+            uint8_t nameLen = 0;
+            FUN_0051d750(stream, &nameLen, 1);
+            char nm[256] = {0};
+            FUN_0051d750(stream, nm, nameLen);
+            nm[sizeof(nm) - 1] = '\0';
+            // strlen(nm) + 1 (NUL)
+            uint32_t L = (uint32_t)std::strlen(nm) + 1;
+            pool_size += L;
+        }
+        // Re-seek to entries[0] for the second pass (identical to vanilla's
+        // FUN_0051d7b0(stream, data_size+4) at [0x50d9fe region]).
+        FUN_0051d7b0(stream, data_size + 4);
+        (void)pos_after_count;
+    }
+
+    // Phase 4: allocate node = 0x2c header + sub_count*0x24 entries + pool_size.
+    //   Vanilla [0x50d99b..0x50d9ad] size = sub_count*9*4 + 0x2c + iVar2(pool)
+    //   [0x50d9b4] allocate, [0x50d9c9] memset(0).
+    const uint32_t node_size = 0x2c + sub_count * 0x24 + pool_size;
     TextureListNode* node = static_cast<TextureListNode*>(std::calloc(1, node_size));
     if (!node) {
         if (g_vTrace) { std::fprintf(g_vTrace, "[TEXLIST] alloc %u FAILED for '%s'\n", node_size, name ? name : "(null)"); std::fflush(g_vTrace); }
         return;
     }
 
-    // Phase 4: head-insert into g_TextureEntityList.
+    // Phase 5: head-insert into g_TextureEntityList.
     //   [0x50d9d5..0x50d9e1] node->next = head; head = node;
     node->next = reinterpret_cast<TextureListNode*>(static_cast<uintptr_t>(g_TextureEntityList));
     g_TextureEntityList = static_cast<uint32_t>(reinterpret_cast<uintptr_t>(node));
 
-    // Phase 5: fill header fields.
-    //   [0x50d9e7..0x50d9f1] strcpy(node+4, name)
-    //   [0x50d9f7] node->data_size = data_size
-    //   [0x50d9fe] node->sub_count = sub_count
+    // Phase 6: fill header fields.
+    //   [0x50d9e7..] strcpy(node+4, name); [0x50d9f7] data_size; [0x50d9fe] sub_count.
     if (name) {
         std::strncpy(node->name, name, sizeof(node->name) - 1);
         node->name[sizeof(node->name) - 1] = '\0';
@@ -160,28 +182,47 @@ extern "C" void FUN_0050d8f0(const char* name, uint32_t stream, int version) {
     node->data_size = data_size;
     node->sub_count = sub_count;
 
-    // Phase 6: read sub_count entries (stride 0x24) from the stream.
-    //   [0x50da30..0x50dac9] per-entry loop:
-    //     FUN_0051d750(stream, &entry+0x00, 1)   ; byte0
-    //     FUN_0051d750(stream, &entry+0x01, 1)   ; byte1
-    //     FUN_0051d750(stream, &entry+0x1e, 4)   ; trailing name dword
-    //     [0x50daa0] advance ebp by 0x24
-    // Vanilla reads 1+1+4 bytes per entry plus fills fixed dwords at +0x18/+0x1c
-    // (see [0x50dab0]/[0x50dab3]); we faithfully read the 1+1+4 stream bytes.
+    // Phase 7: per-entry fill loop (faithful 1:1 with vanilla [0x50da30..0x50dac9]).
+    //   On disk per entry: {flagsLo:1, flagsHi:1, nameLen:1, name:nameLen}.
+    //   In memory per entry (stride 0x24):
+    //     +0x00 → string-pool ptr (this entry's NUL-terminated name)
+    //     +0x08 = 0, +0x14 = 8, +0x18 = 8 (fixed dwords)
+    //     +0x20 byte = flagsLo, +0x23 byte = flagsHi
     uint8_t* entries = reinterpret_cast<uint8_t*>(node) + 0x2c;
+    char*    pool    = reinterpret_cast<char*>(entries + sub_count * 0x24);
+    char*    pool_cur = pool;
     for (uint32_t i = 0; i < sub_count; i++) {
-        TextureEntry* e = reinterpret_cast<TextureEntry*>(entries + i * 0x24);
-        FUN_0051d750(stream, &e->byte0, 1);                 // [0x50da49]
-        FUN_0051d750(stream, &e->byte1, 1);                 // [0x50da5d]
-        FUN_0051d750(stream, e->name, 4);                   // [0x50da6d] 4-byte name tail
-        // Vanilla writes fixed dwords (8, 8) at entry+0x18/+0x1c — informational.
-        *reinterpret_cast<uint32_t*>(reinterpret_cast<uint8_t*>(e) + 0x18) = 8;  // [0x50daaa]
-        e->fixed_18 = 8;                                                          // [0x50dab0]
+        uint8_t* e = entries + i * 0x24;
+        // Read flagsLo (byte → entry+0x20) + flagsHi (byte → entry+0x23).
+        uint8_t flagsLo = 0, flagsHi = 0;
+        FUN_0051d750(stream, &flagsLo, 1);            // [0x50da49] read first byte
+        FUN_0051d750(stream, &flagsHi, 1);            // [0x50da5d] read second byte
+        *(e + 0x20) = flagsLo;                        // [0x50da8f]
+        *(e + 0x23) = flagsHi;                        // [0x50da9b]
+        // Read nameLen + name bytes.
+        uint8_t nameLen = 0;
+        FUN_0051d750(stream, &nameLen, 1);            // [0x50da69]
+        FUN_0051d750(stream, pool_cur, nameLen);      // [0x50da78]
+        pool_cur[nameLen] = '\0';
+        // Install string-pool pointer into entry+0x00.
+        *reinterpret_cast<char**>(e + 0x00) = pool_cur;  // [0x50da9e]
+        // Fixed dwords (per vanilla [0x50daab]/[0x50dab3]/[0x50dab5]).
+        *reinterpret_cast<uint32_t*>(e + 0x08) = 0;       // puVar4[2] = 0
+        *reinterpret_cast<uint32_t*>(e + 0x14) = 8;       // puVar4[5] = 8
+        *reinterpret_cast<uint32_t*>(e + 0x18) = 8;       // puVar4[6] = 8
+        // Advance pool pointer past this name (strlen+1).
+        pool_cur += std::strlen(pool_cur) + 1;
     }
 
     if (g_vTrace) {
-        std::fprintf(g_vTrace, "[TEXLIST] insert '%s' subs=%u size=%u node=%p head=%08x\n",
-                     name ? name : "(null)", sub_count, node_size, static_cast<void*>(node), g_TextureEntityList);
+        std::fprintf(g_vTrace, "[TEXLIST] insert '%s' subs=%u pool=%u node=%p head=%08x\n",
+                     name ? name : "(null)", sub_count, pool_size, static_cast<void*>(node), g_TextureEntityList);
+        for (uint32_t i = 0; i < sub_count && i < 16; i++) {
+            uint8_t* e = entries + i * 0x24;
+            const char* nm = *reinterpret_cast<const char* const*>(e + 0x00);
+            std::fprintf(g_vTrace, "[TEXLIST]   [%u] '%s' flags=%02x,%02x\n",
+                         i, nm ? nm : "(null)", *(e + 0x20), *(e + 0x23));
+        }
         std::fflush(g_vTrace);
     }
 }
