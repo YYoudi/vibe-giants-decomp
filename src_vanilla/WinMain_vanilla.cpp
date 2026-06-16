@@ -9,11 +9,13 @@
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
 FILE* g_vTrace = nullptr;
+const char* __lpCmdLine = nullptr;
 static HWND  g_vHWnd = nullptr;
 static HINSTANCE g_vHInst = nullptr;
 static bool g_vRunning = true;
 
 extern "C" int VanillaLoadRenderer(const char* pathPrefix, const char* rendererName);
+extern "C" void* VanillaInitRenderer(HWND hWnd);
 
 // ─── Vanilla WinMain (FUN_005222c0) — structure ported from decompiled ──
 // The vanilla binary fuses InitializeEngine + MainGameLoop into this one
@@ -24,6 +26,7 @@ LRESULT CALLBACK VanillaWndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
 }
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow) {
+    __lpCmdLine = lpCmdLine;
     g_vTrace = fopen("vanilla_trace.log", "w");
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] GiantsRE vanilla-native recomp — entry\n"); fflush(g_vTrace); }
     g_vHInst = hInstance;
@@ -35,21 +38,42 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     wc.hInstance = hInstance;
     wc.hCursor = LoadCursorA(nullptr, IDC_ARROW);
     wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
-    wc.lpszClassName = "Giants";
+    wc.lpszClassName = "Example";  // vanilla: class name = "Example" (s_Example_0057fb64)
     ATOM atom = RegisterClassA(&wc);
     if (!atom) { if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] RegisterClass failed\n"); fflush(g_vTrace); } return 1; }
 
     // ── CreateWindow ──
-    g_vHWnd = CreateWindowExA(0, "Giants", "Giants: Citizen Kabuto",
-        WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720,
+    // Vanilla: CreateWindowExA(0x40000, "Example", "Giants", 0x6CF0000, CW_USEDEFAULT, ...)
+    // 0x6CF0000 = WS_CLIPSIBLINGS|WS_CLIPCHILDREN|WS_CAPTION|WS_SYSMENU|WS_THICKFRAME|WS_MINIMIZEBOX|WS_MAXIMIZEBOX
+    g_vHWnd = CreateWindowExA(0x40000, "Example", "Giants",
+        0x06CF0000, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
         nullptr, nullptr, hInstance, nullptr);
     if (!g_vHWnd) { if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] CreateWindow failed\n"); fflush(g_vTrace); } return 1; }
     ShowWindow(g_vHWnd, nCmdShow);
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Window created hwnd=%p\n", g_vHWnd); fflush(g_vTrace); }
 
+    // ── Registry setup (the vanilla init chain does this before GDVSysCreate) ──
+    // The DX7 renderer reads HKCU\Software\PlanetMoon\Giants for display settings.
+    HKEY hKey;
+    DWORD disp;
+    if (RegCreateKeyExA(HKEY_CURRENT_USER, "Software\\PlanetMoon\\Giants", 0, nullptr, 0,
+                        KEY_ALL_ACCESS, nullptr, &hKey, &disp) == ERROR_SUCCESS) {
+        DWORD w = 640, h = 480, win = 1;
+        RegSetValueExA(hKey, "Renderer", 0, REG_SZ, (BYTE*)"gg_dx7r.dll", 11);
+        RegSetValueExA(hKey, "VideoWidth", 0, REG_DWORD, (BYTE*)&w, 4);
+        RegSetValueExA(hKey, "VideoHeight", 0, REG_DWORD, (BYTE*)&h, 4);
+        RegSetValueExA(hKey, "Windowed", 0, REG_DWORD, (BYTE*)&win, 4);
+        RegCloseKey(hKey);
+        if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Registry set (640x480 windowed)\n"); fflush(g_vTrace); }
+    }
+
     // ── Engine init: load the DX7 renderer (FUN_0051eb70) ──
     int renderOk = VanillaLoadRenderer(nullptr, "dx7r");
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Renderer load: %s\n", renderOk ? "OK" : "FAILED"); fflush(g_vTrace); }
+    if (renderOk) {
+        void* device = VanillaInitRenderer(g_vHWnd);
+        if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] DX7 device: %p\n", device); fflush(g_vTrace); }
+    }
 
     // Remaining init (callees stubbed — port from vanilla_decompiled/*.json):
     //   - Registry open (DefPlayer, MusicVolume, SoundVolume)
