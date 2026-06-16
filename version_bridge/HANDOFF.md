@@ -15,6 +15,7 @@ fresh **DX12** renderer (skip the community DX8/9/11 chain).
 | `recomp_functions.jsonl` | 6254 1.5 functions: addr, size, callees, strings, mnemonic fingerprint (exported via `ExportFunctions.java`). |
 | `vanilla_functions.jsonl` | 2574 vanilla functions: addr, size, callees, strings, mnemonic fingerprint. |
 | `match_fingerprint.py` | Regenerate v2 (the reliable multi-signal matcher). |
+| **`PATCH_LAYER_CLASSIFICATION.md`** | **What in `/src/` is patch-only / DX9+**: 3-bucket stratification (vanilla-core ~694 files / COM+DX9 quarantine 10 files / diagnostic tooling). Answers "how to handle the DX9+ `/src/` content now that vanilla is canonical." |
 | `VERSION_MAP_full.csv` | *(legacy)* old call-graph map, 461 pairs — **had 20 collisions, superseded by v2.** |
 | `VERSION_MAP.csv` | *(legacy)* 123 string-confirmed pairs (pre-uniqueness). |
 | `ghidra_proj/VanillaProj` | Ghidra project with vanilla Giants.exe analyzed. Open this to work on vanilla. |
