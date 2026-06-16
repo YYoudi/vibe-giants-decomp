@@ -5,6 +5,7 @@
 // Callees are stubbed until ported from vanilla_decompiled/*.json.
 #include <windows.h>
 #include <cstdio>
+#include "VanillaVFS.h"
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -91,6 +92,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     //   - Game loop (message pump + ProcessRawKeyboardInput + ProcessGameLogic)
     // Each callee ported cycle by cycle from vanilla_decompiled/.
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Engine init stubs (renderer/audio/input/level not yet ported)\n"); fflush(g_vTrace); }
+
+    // ── VFS data-layer self-test (load a real GZP archive) ──
+    // Validates the GZP reader (header parse + LZ decompress) against vanilla assets.
+    VanillaVFS::SelfTest("Bin\\w_intro_island.gzp");
 
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
