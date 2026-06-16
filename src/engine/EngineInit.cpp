@@ -29,6 +29,10 @@
 
 namespace Giants {
 
+// Engine-context service registry init (EngineContext.cpp) — registers
+// placeholder service objects under the captured IIDs for renderer queries.
+extern "C" void EngineContext_InitServices();
+
 // --- runtime state globals (were *reinterpret_cast derefs; engine-populated) ---
 static char g_state_00702a60 = 0;  // was @0x0X00702A60
 
@@ -534,6 +538,9 @@ int InitializeEngine(unsigned int param_1, unsigned int param_2)
                 fprintf(g_traceLog, "[TRACE] Engine context allocated at %p\n", g_engineContext);
                 fflush(g_traceLog);
             }
+            // Register placeholder services under the 6 captured IIDs so the
+            // renderer's GDVSysCreate-time Query() calls resolve (non-null).
+            EngineContext_InitServices();
         }
     }
 
