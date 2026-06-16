@@ -8,6 +8,7 @@
 #include "Camera.h"
 #include "GiantsTypes.h"
 #include <windows.h>
+#include <cstdio>
 
 namespace Giants {
 
@@ -431,7 +432,10 @@ void FrameEnd()
     }
 
     // ── Phase 2: Scene begin/end for frame stats ──
+    extern FILE* g_traceLog;
+    if (g_traceLog && g_frameCounter < 2) { fprintf(g_traceLog, "[FE] after PrePresent(vt43), calling BeginScene\n"); fflush(g_traceLog); }
     BeginScene();
+    if (g_traceLog && g_frameCounter < 2) { fprintf(g_traceLog, "[FE] after BeginScene(vt41), overlay+Shutdown\n"); fflush(g_traceLog); }
 
     // ── Phase 3: Debug overlay / per-module rendering ──
     if (DAT_00682204 == -1)
@@ -468,6 +472,7 @@ void FrameEnd()
     // FUN_00526be0 and FUN_005655e0 are frame-stat/debug overlays
 
     ShutdownSubsystems(0);
+    if (g_traceLog && g_frameCounter < 2) { fprintf(g_traceLog, "[FE] after ShutdownSubsystems(vt42), FPS+Present\n"); fflush(g_traceLog); }
 
     // ── Phase 4: FPS limiter (QueryPerformanceCounter + Sleep) ──
     if (g_qpcFrequency == 0)
@@ -504,7 +509,10 @@ void FrameEnd()
     g_lastFrameTime = currentTime / (g_qpcFrequency / 1000);
 
     // ── Phase 5: RenderDoc F12 capture trigger ──
-    if (g_frameCounter != 0)
+    // Guard: g_frameCounter here is the RenderDoc capture OBJECT pointer, not a
+    // counter — it's null when RenderDoc isn't active. Skip unless non-null AND
+    // a plausible pointer (avoid deref of garbage).
+    if (g_frameCounter != 0 && g_frameCounter > 0x10000)
     {
         uint16_t keyState = GetAsyncKeyState(0x7b);  // VK_F12
         if ((keyState & 1) != 0 && g_frameCounter != 0)
@@ -517,6 +525,7 @@ void FrameEnd()
     }
 
     // ── Phase 6: Present (vtable[0xbc/4 = 47], thiscall: this) ──
+    if (g_traceLog && g_frameCounter < 2) { fprintf(g_traceLog, "[FE] before Present(vt47), g_frameCounter=%d\n", g_frameCounter); fflush(g_traceLog); }
     {
         void** vt = *reinterpret_cast<void***>(g_rendererObj);
         if (vt[0xbc / 4])
