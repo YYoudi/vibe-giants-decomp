@@ -10,15 +10,30 @@ addrs.forEach(function(a, i) {
     Interceptor.attach(ptr(a), {
       onEnter: function(args) {
         counts[i]++;
-        if (counts[i] <= 6) {
+        if (counts[i] <= 8) {
           var ecx = this.context.ecx;
           var sp = this.context.esp;
-          // thiscall: ECX=this; stack args at esp+4, esp+8, ...
-          var s1 = sp.add(4).readPointer();   // stack arg 1 (param_2 for Register/Query = GUID)
-          // Try reading a 16-byte GUID at s1 (could be ptr-to-GUID or GUID-by-value).
-          var guid = '';
-          try { guid = s1.readByteArray(16); } catch(e) {}
-          send({type:'call', idx:i, name:names[i], n:counts[i], ecx:ecx.toString(), arg2:s1.toString()}, guid);
+          // thiscall: ECX=this; stack args at esp+4 (param_2), esp+8 (param_3)...
+          var guid = null;
+          var info = {type:'call', idx:i, name:names[i], n:counts[i], ecx:ecx.toString()};
+          try {
+            if (i === 1) {
+              // Register: param_2 (esp+4) = ptr to GUID struct (16 bytes at *esp+4)
+              var gp = sp.add(4).readPointer();
+              info.arg2 = gp.toString();
+              guid = gp.readByteArray(16);
+            } else if (i === 2) {
+              // Query: param_3 (esp+8) = POINTER to GUID; FUN_00635d70 derefs it.
+              var gp = sp.add(8).readPointer();
+              info.arg3 = gp.toString();
+              guid = gp.readByteArray(16);
+            } else if (i === 3) {
+              // Unregister: param_2 (esp+4) = GUID by value
+              info.arg2 = sp.add(4).toString();
+              guid = sp.add(4).readByteArray(16);
+            }
+          } catch(e) { info.readErr = e.message; }
+          send(info, guid);
         }
       }
     });
