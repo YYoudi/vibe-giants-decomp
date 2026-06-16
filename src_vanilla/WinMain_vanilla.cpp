@@ -12,6 +12,7 @@
 #include "VanillaGBS.h"
 #include "VanillaBinLoader.h"
 #include "VanillaText.h"
+#include "VanillaTGA.h"
 // Scene list-management ports (defined in VanillaSceneLists.cpp).
 extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
@@ -114,6 +115,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     VanillaGTI::SelfTest();
     // ── GBS model parser self-test (parse intro_1.gbs mesh) ──
     VanillaGBS::SelfTest();
+    // ── TGA texture parser self-test (parse intro_sea.tga) ──
+    VanillaTGA::SelfTest();
     // ── Localized-text lookup (callback[11] GetLocalizedString: GTextEnglish.bin) ──
     if (VanillaText::Load("English")) {
         if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] text lookup '$IDnew' = '%s'\n", VanillaText::Lookup("$IDnew")); fflush(g_vTrace); }
