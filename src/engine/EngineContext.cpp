@@ -62,13 +62,12 @@ extern "C" void* __attribute__((thiscall)) EngineCtx_Register(uint32_t* /*self*/
     return (void*)(uintptr_t)serviceObj;
 }
 
-// vtable[2] Query(this, outPtr, guidValue) — FUN_00636180. Looks up the GUID,
-// writes {serviceObj, refcnt} into outPtr[0..1]. Returns outPtr.
-extern "C" void* __attribute__((thiscall)) EngineCtx_Query(uint32_t* /*self*/, uint32_t* outPtr, uint32_t guidValue) {
-    // guidValue is passed by value (a 4-byte stack arg) — but the GUID is 16
-    // bytes; FUN_00635d70(local, param_3) builds the key. The capture shows the
-    // GUID bytes are at the stack slot. We read 16 bytes from &guidValue.
-    Guid g; memcpy(g.b, &guidValue, 16);
+// vtable[2] Query(this, outPtr, guidPtr) — FUN_00636180. guidPtr is a POINTER to
+// the 16-byte GUID (FUN_00635d70 derefs it). Looks up, writes {serviceObj,refcnt}
+// into outPtr[0..1]. Returns outPtr.
+extern "C" void* __attribute__((thiscall)) EngineCtx_Query(uint32_t* /*self*/, uint32_t* outPtr, uint32_t guidPtr) {
+    Guid g = {};
+    if (guidPtr) memcpy(g.b, (void*)(uintptr_t)guidPtr, 16);
     auto it = g_serviceRegistry.find(g);
     if (outPtr) {
         if (it != g_serviceRegistry.end()) {
@@ -87,9 +86,10 @@ extern "C" uint32_t __attribute__((thiscall)) EngineCtx_Release(uint32_t* self, 
     return (uint32_t)(uintptr_t)self;
 }
 
-// vtable[3] Unregister(this, guid) — FUN_006362D0. Removes the service.
-extern "C" void __attribute__((thiscall)) EngineCtx_Unregister(uint32_t* /*self*/, uint32_t guidValue) {
-    Guid g; memcpy(g.b, &guidValue, 16);
+// vtable[3] Unregister(this, guidPtr) — FUN_006362D0. guidPtr = pointer to GUID.
+extern "C" void __attribute__((thiscall)) EngineCtx_Unregister(uint32_t* /*self*/, uint32_t guidPtr) {
+    Guid g = {};
+    if (guidPtr) memcpy(g.b, (void*)(uintptr_t)guidPtr, 16);
     g_serviceRegistry.erase(g);
 }
 
@@ -111,6 +111,31 @@ extern "C" void* g_engineContextVtbl[5] = {
 // so the renderer's queries resolve). Used by the recomp's subsystem inits.
 extern "C" void EngineContext_RegisterService(const uint8_t iidBytes[16], void* serviceObj) {
     g_serviceRegistry[MakeGuid(iidBytes)] = serviceObj;
+}
+
+// ─── Placeholder service objects (minimal no-op COM vtable) ───────────────
+// Registered under the 6 captured IIDs so the renderer's GDVSysCreate-time
+// queries resolve to a non-null object (vs null → crash). The renderer then
+// calls the object's vtable methods; these no-ops let it proceed past the
+// query. REAL service objects replace these as each subsystem is ported.
+static uint32_t __attribute__((thiscall)) Svc_RetSelf(uint32_t* self) { return (uint32_t)(uintptr_t)self; }
+static void      __attribute__((thiscall)) Svc_NoOp(uint32_t*) {}
+static void* g_svcVtbl[8] = {
+    (void*)&Svc_RetSelf, (void*)&Svc_RetSelf, (void*)&Svc_NoOp, (void*)&Svc_NoOp,
+    (void*)&Svc_NoOp, (void*)&Svc_NoOp, (void*)&Svc_NoOp, (void*)&Svc_NoOp,
+};
+static uint32_t g_svcObjects[6][4] = {};  // [0]=vtable ptr set at init
+static void* g_svcObjPtrs[6] = {};
+
+// Called from EngineInit after the engine-context is created — registers a
+// placeholder service under each captured IID so renderer queries resolve.
+extern "C" void EngineContext_InitServices() {
+    const uint8_t* iids[6] = { IID_TextLookup, IID_Svc2, IID_Svc3, IID_Svc4, IID_Svc5, IID_Svc6 };
+    for (int i = 0; i < 6; i++) {
+        g_svcObjects[i][0] = (uint32_t)(uintptr_t)g_svcVtbl;
+        g_svcObjPtrs[i] = (void*)&g_svcObjects[i];
+        g_serviceRegistry[MakeGuid(iids[i])] = g_svcObjPtrs[i];
+    }
 }
 
 } // namespace Giants

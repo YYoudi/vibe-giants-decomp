@@ -196,11 +196,9 @@ void InitUpCallTable(uint32_t* outParams)
         s_callbackTable[9] = (void*)&Stub_NoOp;
         // idx 10: BufferDeallocator(int*) — void
         s_callbackTable[10] = (void*)&Stub_NoOpBuf;
-        // idx 11: GetLocalizedString (FUN_005e80c0) — REAL port (EngineInit.cpp),
-        // GText-backed (2081 entries). Replaces Stub_ReturnEmptyStr so the renderer
-        // gets actual localized strings, not "".
-        extern const char* GetLocalizedString(const char* key);
-        s_callbackTable[11] = (void*)&GetLocalizedString;
+        // idx 11: GetLocalizedString — stub for now (real GText-backed port caused
+        // an earlier crash during UpCallsLoad; convention under investigation).
+        s_callbackTable[11] = (void*)&Stub_ReturnEmptyStr;
         // idx 12: TextureLoader — void
         s_callbackTable[12] = (void*)&Stub_NoOp;
         // idx 13: SinCosLookup — REAL validated port (TrigTables.cpp FUN_006387e0).
