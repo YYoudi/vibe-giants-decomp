@@ -17,6 +17,7 @@ static bool g_vRunning = true;
 extern "C" int VanillaLoadRenderer(const char* pathPrefix, const char* rendererName);
 extern "C" void* VanillaInitRenderer(HWND hWnd);
 extern "C" void VanillaReadDisplayConfig();
+extern "C" int VanillaRunFrame(int frameState);
 
 // ─── Vanilla WinMain (FUN_005222c0) — structure ported from decompiled ──
 // The vanilla binary fuses InitializeEngine + MainGameLoop into this one
@@ -92,7 +93,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Engine init stubs (renderer/audio/input/level not yet ported)\n"); fflush(g_vTrace); }
 
     // ── Message pump (game loop) ──
+    // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
+    // (renderer method 0x7370 = per-frame render entry). We reproduce it; frameState=1
+    // (the "rendering" state). Limited logging to avoid spam.
     MSG msg;
+    int frameState = 1;
+    int frameCount = 0;
     while (g_vRunning) {
         while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
             if (msg.message == WM_QUIT) { g_vRunning = false; break; }
@@ -100,7 +106,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
             DispatchMessageA(&msg);
         }
         if (!g_vRunning) break;
-        // Per-frame game logic (ProcessGameLogic etc.) — stubbed.
+        // Per-frame render driver (vanilla method [0x20]).
+        int newState = VanillaRunFrame(frameState);
+        if (frameCount < 5) {
+            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: state %d -> %d\n", frameCount, frameState, newState); fflush(g_vTrace); }
+        }
+        frameState = newState;
+        frameCount++;
     }
 
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Exit\n"); fflush(g_vTrace); }
