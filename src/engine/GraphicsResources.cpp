@@ -79,129 +79,65 @@ DWORD  g_playerIdFlag = 0;              // DAT_007028b0
 
 void InitGraphicsResources()
 {
-    // INIT-BEHAVIOR RECONSTRUCTION MODE: this function creates render devices +
-    // vertex/index buffers via the renderer factory vtable (vtable[2]/[3]/[4]).
-    // The real gg_dx9r.dll factory methods are thiscall and require the full
-    // engine-context protocol (UpCalls + state) the recomp doesn't yet drive —
-    // calling them crashes deep in the renderer (vtable[3]=0x1001DB10). Per the
-    // project focus (init BEHAVIOR, not visual rendering), the device/buffer
-    // creation is deferred. Devices/buffers stay null; the game loop guards on
-    // g_renderDevice and runs the init sequence without rendering.
+    // FUN_004f7fa0: create 4 render devices + 9 buffers (3 groups) via the
+    // renderer factory vtable (thiscall) + 2 heap scratch blocks. Format
+    // descriptors are FOURCC tags captured from original .rdata VA
+    // 0x0066310c..0x0066314c (8 bytes: 4-char tag LE + 0).
     extern FILE* g_traceLog;
-    if (g_traceLog) { fprintf(g_traceLog, "[GFX] InitGraphicsResources: factory device/buffer creation deferred (init-behavior mode)\n"); fflush(g_traceLog); }
-    return;
-
-    // The factory object at DAT_00702700 is a COM-style renderer factory.
-    // Its vtable provides device creation and buffer allocation methods.
     void* factory = g_renderFactory;   // DAT_00702700
-    if (factory == nullptr)
-        return;
+    if (factory == nullptr) return;
 
-    // ── Step 1: Create 4 device handles ──────────────────────────
-    // vtable[3] (offset 0x0C) = GetCaps — returns capability/device handle
-    // vtable[2] (offset 0x08) = CreateDevice — returns device handle
-    //
-    // In the original binary the calls are:
-    //   g_device0 = vtable[3]()   — capability query / primary device
-    //   g_device1 = vtable[2]()   — secondary device
-    //   g_device2 = vtable[2]()   — tertiary device
-    //   g_device3 = vtable[2]()   — quaternary device
+    // Captured format descriptors (raw bytes: 50424c53 00000000 = "PBLS" LE).
+    static const uint32_t fmtRaw[9][2] = {
+        {0x534C4250,0},{0x53464250,0},{0x53494250,0},{0x444C4250,0},{0x44464250,0},
+        {0x44544250,0},{0x4D494250,0},{0x4C494250,0},{0x42494250,0},
+    };
+    void* fmt[9];
+    for (int i=0;i<9;i++) fmt[i]=(void*)&fmtRaw[i];
 
-    auto* vtable = *reinterpret_cast<void***>(factory);
+    void** vtable = *reinterpret_cast<void***>(factory);
+    typedef void* (__attribute__((thiscall)) *PFN_GetDev)(void* self);
+    typedef void* (__attribute__((thiscall)) *PFN_CreateBuf)(void* self, uint32_t, uint32_t, uint32_t, void*, uint32_t, uint32_t, uint32_t, uint32_t);
+    typedef void  (__attribute__((thiscall)) *PFN_BindBuf)(void* self, void* device);
+    PFN_GetDev    getCaps   = reinterpret_cast<PFN_GetDev>(vtable[3]);    // 0x0C
+    PFN_GetDev    getDevice = reinterpret_cast<PFN_GetDev>(vtable[2]);    // 0x08
+    PFN_CreateBuf createBuf = reinterpret_cast<PFN_CreateBuf>(vtable[4]); // 0x10
 
-    // typedef void* (*GetCapsFn)();
-    auto getDevice = reinterpret_cast<void*(*)()>(vtable[2]);       // offset 0x08
-    auto getCaps   = reinterpret_cast<void*(*)()>(vtable[3]);       // offset 0x0C
+    // Step 1: 4 device handles (g_device0 via GetCaps, 1-3 via CreateDevice).
+    g_device0 = getCaps(factory);
+    g_device1 = getDevice(factory);
+    g_device2 = getDevice(factory);
+    g_device3 = getDevice(factory);
+    if (g_traceLog) { fprintf(g_traceLog, "[GFX] devices: d0=%p d1=%p d2=%p d3=%p\n", g_device0,g_device1,g_device2,g_device3); fflush(g_traceLog); }
 
-    g_device0 = getCaps();        // DAT_00702708 — capability handle
-    g_device1 = getDevice();      // DAT_0070270c — secondary device
-    g_device2 = getDevice();      // DAT_00702710 — tertiary device
-    g_device3 = getDevice();      // DAT_00702714 — quaternary device
-
-    // ── Step 2: Create Group 0 buffers (bound to device 0) ──────
-    // vtable[4] (offset 0x10) = CreateBuffer(type, count, stride, fmt, 0,0,0,0)
-    // vtable[5] (offset 0x14) = bind buffer to device (called via buffer's vtable[2])
-    //
-    // Buffer binding: each buffer has its own vtable; vtable[2] binds it to a device.
-    //   buffer->vtable[2](device) — adds buffer to the device's resource list
-
-    auto createBuffer = reinterpret_cast<void*(*)(uint32_t, uint32_t, uint32_t, void*, uint32_t, uint32_t, uint32_t, uint32_t)>(
-        vtable[4]   // offset 0x10
-    );
-
-    // Format descriptor pointers (in .rdata section)
-    void* fmt0 = reinterpret_cast<void*>(0x0066310c);  // DAT_0066310c
-    void* fmt1 = reinterpret_cast<void*>(0x00663114);  // DAT_00663114
-    void* fmt2 = reinterpret_cast<void*>(0x0066311c);  // DAT_0066311c
-
-    // Buffer 0: type=2 (index), 2 elements, stride=0
-    g_buffer0 = createBuffer(2, 2, 0, fmt0, 0, 0, 0, 0);         // DAT_00702718
-    // Buffer 1: type=2 (index), 0x80 elements, stride=0x80
-    g_buffer1 = createBuffer(2, 0x80, 0x80, fmt1, 0, 0, 0, 0);   // DAT_0070271c
-    // Buffer 2: type=2 (index), 4000 elements, stride=0
-    g_buffer2 = createBuffer(2, 4000, 0, fmt2, 0, 0, 0, 0);      // DAT_00702720
-
-    // Bind all Group 0 buffers to device 0 (g_device0 → DAT_0070270c)
-    // Each buffer's vtable[2] takes the device handle:
-    //   (**buffer_vtable)(device)
-    auto bindBuffer = [](void* buffer, void* device) {
-        if (buffer && device)
-        {
-            auto* bvt = *reinterpret_cast<void***>(buffer);
-            auto bindFn = reinterpret_cast<void(*)(void*)>(bvt[2]);  // offset 0x08
-            bindFn(device);
+    auto bindBuf = [&](void* buffer, void* device) {
+        if (buffer && device) {
+            void** bvt = *reinterpret_cast<void***>(buffer);
+            if (bvt[2]) reinterpret_cast<PFN_BindBuf>(bvt[2])(buffer, device);
         }
     };
 
-    bindBuffer(g_buffer0, g_device0);
-    bindBuffer(g_buffer1, g_device0);
-    bindBuffer(g_buffer2, g_device0);
-
-    // ── Step 3: Create Group 1 buffers (bound to device 1) ──────
-
-    void* fmt3 = reinterpret_cast<void*>(0x00663124);  // DAT_00663124
-    void* fmt4 = reinterpret_cast<void*>(0x0066312c);  // DAT_0066312c
-    void* fmt5 = reinterpret_cast<void*>(0x00663134);  // DAT_00663134
-
-    // Buffer 3: type=2, 0x100 elements, stride=0
-    g_buffer3 = createBuffer(2, 0x100, 0, fmt3, 0, 0, 0, 0);     // DAT_00702724
-    // Buffer 4: type=2, 0x100 elements, stride=0x100
-    g_buffer4 = createBuffer(2, 0x100, 0x100, fmt4, 0, 0, 0, 0); // DAT_0070272c
-    // Buffer 5: type=2, 0x200 elements, stride=0
-    g_buffer5 = createBuffer(2, 0x200, 0, fmt5, 0, 0, 0, 0);     // DAT_00702728
-
-    // Bind Group 1 to device 1 (g_device1 → DAT_00702710)
-    bindBuffer(g_buffer3, g_device1);
-    bindBuffer(g_buffer4, g_device1);
-    bindBuffer(g_buffer5, g_device1);
-
-    // ── Step 4: Create Group 2 buffers (bound to device 2) ──────
-
-    void* fmt6 = reinterpret_cast<void*>(0x0066313c);  // DAT_0066313c
-    void* fmt7 = reinterpret_cast<void*>(0x00663144);  // DAT_00663144
-    void* fmt8 = reinterpret_cast<void*>(0x0066314c);  // DAT_0066314c
-
-    // Buffer 6: type=0 (vertex), 32000 elements
-    g_buffer6 = createBuffer(0, 32000, 0, fmt6, 0, 0, 0, 0);     // DAT_00702730
-    // Buffer 7: type=6 (index/other), 32000 elements
-    g_buffer7 = createBuffer(6, 32000, 0, fmt7, 0, 0, 0, 0);     // DAT_00702734
-
-    // Buffer 8: type depends on renderer mode
-    // DAT_00702be4 == 3 → type 8 (DX11/12 enhanced), else type 1 (standard)
+    // Group 0 (device 0): buffers 0,1,2
+    g_buffer0 = createBuf(factory, 2, 2, 0, fmt[0], 0,0,0,0);
+    g_buffer1 = createBuf(factory, 2, 0x80, 0x80, fmt[1], 0,0,0,0);
+    g_buffer2 = createBuf(factory, 2, 4000, 0, fmt[2], 0,0,0,0);
+    bindBuf(g_buffer0, g_device0); bindBuf(g_buffer1, g_device0); bindBuf(g_buffer2, g_device0);
+    // Group 1 (device 1): buffers 3,4,5
+    g_buffer3 = createBuf(factory, 2, 0x100, 0, fmt[3], 0,0,0,0);
+    g_buffer4 = createBuf(factory, 2, 0x100, 0x100, fmt[4], 0,0,0,0);
+    g_buffer5 = createBuf(factory, 2, 0x200, 0, fmt[5], 0,0,0,0);
+    bindBuf(g_buffer3, g_device1); bindBuf(g_buffer4, g_device1); bindBuf(g_buffer5, g_device1);
+    // Group 2 (device 2): buffers 6,7,8
+    g_buffer6 = createBuf(factory, 0, 32000, 0, fmt[6], 0,0,0,0);
+    g_buffer7 = createBuf(factory, 6, 32000, 0, fmt[7], 0,0,0,0);
     uint32_t buf8Type = (g_rendererMode == 3) ? 8 : 1;
-    g_buffer8 = createBuffer(buf8Type, 32000, 0, fmt8, 0, 0, 0, 0);  // DAT_00702738
+    g_buffer8 = createBuf(factory, buf8Type, 32000, 0, fmt[8], 0,0,0,0);
+    bindBuf(g_buffer6, g_device2); bindBuf(g_buffer7, g_device2); bindBuf(g_buffer8, g_device2);
 
-    // Bind Group 2 to device 2 (g_device2 → DAT_00702714)
-    bindBuffer(g_buffer6, g_device2);
-    bindBuffer(g_buffer7, g_device2);
-    bindBuffer(g_buffer8, g_device2);
-
-    // ── Step 5: Allocate heap blocks ─────────────────────────────
-    // Two large heap allocations used as scratch buffers for vertex data.
-    // 0x5DC00 = 384,000 bytes each
-
-    g_heapBlock0 = malloc(0x5DC00);    // DAT_0070273c
-    g_heapBlock1 = malloc(0x5DC00);    // DAT_00702740
+    // Step 5: 2 heap scratch blocks (384000 bytes each)
+    g_heapBlock0 = malloc(0x5DC00);
+    g_heapBlock1 = malloc(0x5DC00);
+    if (g_traceLog) { fprintf(g_traceLog, "[GFX] buffers created + heap allocated\n"); fflush(g_traceLog); }
 }
 
 // ─── Internal: Reset a single render buffer object ─────────────────
