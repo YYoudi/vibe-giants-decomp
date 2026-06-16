@@ -245,11 +245,23 @@ uint32_t ProcessGameLogic()
     {
         void** vtable = *reinterpret_cast<void***>(g_renderDevice);
         typedef void (__attribute__((thiscall)) *PFN_This)(void* self);
+        typedef void (__attribute__((thiscall)) *PFN_Str)(void* self, const char* str);
         if (vtable[43]) reinterpret_cast<PFN_This>(vtable[43])(g_renderDevice);  // Clear
+        // Draw localized strings via the stub's text slot (vtable[44]).
+        if (vtable[44]) {
+            extern const char* GetLocalizedString(const char*);
+            const char* yes   = GetLocalizedString("ButtonYes");
+            const char* no    = GetLocalizedString("ButtonNo");
+            const char* title = GetLocalizedString("MH_Quit");
+            char line[256];
+            snprintf(line, sizeof(line), "GiantsRE stub renderer  |  Yes=\"%s\"  No=\"%s\"  frame=%d",
+                     yes ? yes : "?", no ? no : "?", g_renderFrameCount);
+            reinterpret_cast<PFN_Str>(vtable[44])(g_renderDevice, line);
+        }
         if (vtable[47]) reinterpret_cast<PFN_This>(vtable[47])(g_renderDevice);  // Present
         g_renderFrameCount++;
         if (g_renderFrameCount <= 2 && g_traceLog) {
-            fprintf(g_traceLog, "[STUB-RENDER] frame %d: Clear+Present via stub vtable[43]/[47]\n",
+            fprintf(g_traceLog, "[STUB-RENDER] frame %d: Clear+DrawText+Present via stub\n",
                     g_renderFrameCount);
             fflush(g_traceLog);
         }

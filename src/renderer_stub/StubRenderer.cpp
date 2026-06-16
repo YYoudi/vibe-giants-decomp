@@ -56,6 +56,35 @@ static HRESULT __attribute__((thiscall)) Stub_Present(StubDevice* self) {
         return self->d3d9->Present(nullptr, nullptr, self->hWnd, nullptr);
     return 0;
 }
+
+// ─── Text rendering via GDI on the backbuffer (no d3dx9 needed) ────────
+// IDirect3DDevice9::GetBackBuffer → IDirect3DSurface9::GetDC → GDI DrawText
+// → ReleaseDC. Draws the localized string the recomp passes each frame.
+static HFONT g_stubFont = nullptr;
+static void __attribute__((thiscall)) Stub_DrawTextString(StubDevice* self, const char* str) {
+    if (!self || !self->d3d9 || !str || !*str) return;
+    if (!g_stubFont) {
+        g_stubFont = CreateFontA(28, 0, 0, 0, FW_BOLD, FALSE, FALSE, FALSE,
+                                 DEFAULT_CHARSET, OUT_DEFAULT_PRECIS,
+                                 CLIP_DEFAULT_PRECIS, ANTIALIASED_QUALITY,
+                                 DEFAULT_PITCH | FF_SWISS, "Arial");
+    }
+    IDirect3DSurface9* back = nullptr;
+    if (FAILED(self->d3d9->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &back)) || !back)
+        return;
+    HDC hdc = nullptr;
+    if (SUCCEEDED(back->GetDC(&hdc)) && hdc) {
+        HFONT oldFont = (HFONT)SelectObject(hdc, g_stubFont);
+        SetBkMode(hdc, TRANSPARENT);
+        SetTextColor(hdc, RGB(255, 255, 255));
+        RECT rc = { 20, 20, 1260, 700 };
+        // Draw a label + the localized string.
+        DrawTextA(hdc, str, -1, &rc, DT_LEFT | DT_TOP | DT_NOCLIP);
+        SelectObject(hdc, oldFont);
+        back->ReleaseDC(hdc);
+    }
+    back->Release();
+}
 static void __attribute__((thiscall)) Stub_NoOp(StubDevice* /*self*/) {}
 static uint32_t __attribute__((thiscall)) Stub_GetCapability(StubDevice* /*self*/, int idx) {
     // index 1=width, 2=height, 0=windowed flag
@@ -77,6 +106,7 @@ static void** BuildStubVtable() {
         vt[41] = (void*)&Stub_BeginScene;
         vt[42] = (void*)&Stub_EndScene;
         vt[43] = (void*)&Stub_Clear;
+        vt[44] = (void*)&Stub_DrawTextString;   // draw a localized string (thiscall str arg)
         vt[47] = (void*)&Stub_Present;
         vt[53] = (void*)&Stub_GetCapability;   // 0xD4/4 = GetCapability
         init = true;
