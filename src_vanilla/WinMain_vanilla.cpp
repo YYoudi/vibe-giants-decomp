@@ -14,6 +14,7 @@
 #include "VanillaText.h"
 #include "VanillaTGA.h"
 #include "VanillaFeed.h"
+#include "VanillaInput.h"
 // Scene list-management ports (defined in VanillaSceneLists.cpp).
 extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
@@ -95,6 +96,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
         }
     }
 
+    // ── DirectInput 7 init (FUN_0051ede0 port: keyboard + mouse, DI7 fallback DI3) ──
+    {
+        bool inOk = VanillaInput_Init(g_vHWnd);
+        if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] DirectInput7 init: %s\n", inOk ? "OK (keyboard+mouse acquired)" : "FAILED"); fflush(g_vTrace); }
+    }
+
     // Remaining init (callees stubbed — port from vanilla_decompiled/*.json):
     //   - Registry open (DefPlayer, MusicVolume, SoundVolume)
     //   - Renderer load (UpCallsLoad 21 callbacks + GDVSysCreate NULL engineCtx)
@@ -157,6 +164,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
             DispatchMessageA(&msg);
         }
         if (!g_vRunning) break;
+        // Per-frame input poll (DirectInput7 keyboard + mouse — FUN_0051f0e0/1f0 port).
+        VanillaInput_Poll();
         // Per-frame render driver (vanilla method [0x20]). Force frameState=0 every
         // frame to drive the render fn (0x7340 → scene render 0x71a0). With an empty
         // scene (obj+0x4f0 self-list) the scene walk is a no-op, so this is safe and
@@ -171,5 +180,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     }
 
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Exit\n"); fflush(g_vTrace); }
+    VanillaInput_Fini();
     return (int)msg.wParam;
 }
