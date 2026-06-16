@@ -85,6 +85,11 @@ static const char* __cdecl Stub_GetLocalizedString(const char* key) {
     return VanillaText_Lookup(key);
 }
 
+// callback[20] ScenePipelineEntry (vanilla 0x523aa0): checks g_ScenePipelineGate, if set
+// drives the scene dispatch (FUN_00523700 loading/overlay frame + the entity/texture
+// walks). Wired to the real port in VanillaSceneDispatch.cpp.
+extern "C" void FUN_00523aa0(void);
+
 // The renderer object returned by GDVSysCreate (vanilla global DAT_00654940). The
 // engine drives its ~55 thiscall methods (see RE_docs/DX7_RENDER_RECIPE.md) to render.
 extern "C" void* g_vRenderer = nullptr;   // DAT_00654940
@@ -116,7 +121,7 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
         (void*)Stub_Null,     // 17 VFSOpenFile
         (void*)Stub_Alloc,    // 18 EngineAllocator (malloc — GDVSysCreate allocs via this)
         (void*)Stub_Free,     // 19 CRT_free
-        (void*)Stub_Void,     // 20 ScenePipelineEntry
+        (void*)FUN_00523aa0,   // 20 ScenePipelineEntry (real: scene dispatch gate)
     };
 
     // UpCallsLoad(version=0x2775, count=21, table).
