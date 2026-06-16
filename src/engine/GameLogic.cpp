@@ -248,6 +248,8 @@ uint32_t ProcessGameLogic()
         typedef void (__attribute__((thiscall)) *PFN_Str)(void* self, const char* str);
         typedef void (__attribute__((thiscall)) *PFN_XY)(void* self, int x, int y);
         if (vtable[43]) reinterpret_cast<PFN_This>(vtable[43])(g_renderDevice);  // Clear
+        // Draw the real intro_island terrain (vtable[46]) — terrain_heights.bin.
+        if (vtable[46]) reinterpret_cast<PFN_This>(vtable[46])(g_renderDevice);
         // Draw a multi-line localized menu via the stub's text slot (vtable[44]).
         if (vtable[44]) {
             extern const char* GetLocalizedString(const char*);
