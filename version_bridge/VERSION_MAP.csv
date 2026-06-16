@@ -1,0 +1,124 @@
+1.5_addr,1.5_name,vanilla_addr,identity,shared,size_ratio,ps2_name,sample
+0062af40,FUN_0062af40,0051f900,IDENTICAL,119,1.08,,"['Failed to load MDVFinit', 'Failed to load MDVGetGlobalControlF']"
+005e3840,FUN_005e3840,0050a720,IDENTICAL,11,1.04,teammecc_set_mode,"['AIMeccAttackLoc', 'AIMeccAttackTarg']"
+0045b3f0,FUN_0045b3f0,0052a340,IDENTICAL,9,1.09,,"['CommStatActive', 'CommStatConf']"
+0046dd40,FUN_0046dd40,00539730,IDENTICAL,7,1.02,,"['CommFlagCapsOn', 'WinCondMetBase']"
+005e9300,FUN_005e9300,0050dd20,IDENTICAL,5,1.02,,"['%s.dds', '%s.tga']"
+0046da10,FUN_0046da10,00539480,IDENTICAL,2,1.02,,"['BaseHintEnemyBase', 'BaseHintHomeBase']"
+00490eb0,FUN_00490eb0,00407820,IDENTICAL,2,1.03,,"['Army Bld System Has No Platoons (this is fatal)', 'Army Bld System got unknown platoon name (%s']"
+0062e1a0,FUN_0062e1a0,005222c0,IDENTICAL,2,1.08,,"['ErrFailedGFX', 'ErrFailedSND']"
+004af150,FUN_004af150,004208f0,MODIFIED,56,1.41,,"['InpActivateBackItem', 'InpActivatePartyHouse']"
+00459be0,FUN_00459be0,005286e0,MODIFIED,34,1.57,,"['ButtonContinue', 'ButtonDefaults']"
+00629a50,FUN_00629a50,0051d920,MODIFIED,27,2.78,,"['DIERR_ACQUIRED', 'DIERR_ALREADYINITIALIZED']"
+0045e0a0,FUN_0045e0a0,0052de00,MODIFIED,19,1.41,,"['CommChgBaseCompleteNo', 'CommChgBaseCompleteYes']"
+005e0440,FUN_005e0440,00507270,MODIFIED,13,1.84,teammecc_setup_enemies,"['BAZ_CT60', 'BAZ_CT61']"
+004901f0,FUN_004901f0,00404c10,MODIFIED,12,1.53,,"['B_smartbrick', 'D_B_smartbrick']"
+005dfcd0,FUN_005dfcd0,00507270,MODIFIED,12,1.87,teammecc_setup_slaves,"['BAZ_CT57', 'BAZ_CT64']"
+006233f0,FUN_006233f0,0053a660,MODIFIED,9,4.18,,"['DestDir', 'English']"
+004d2730,FUN_004d2730,00524c10,MODIFIED,5,2.15,,"['ButtonUseAddr', 'CommTCPHostIP']"
+0062edc0,FUN_0062edc0,00523700,MODIFIED,5,2.32,,"['Enter  to Continue', 'Escape to Exit Game']"
+005cc670,FUN_005cc670,004f9f10,MODIFIED,4,1.86,,"['BAZ_CT09', 'GOR_CT09']"
+0062a230,FUN_0062a230,0051eb70,MODIFIED,4,1.85,,"['Failed to load GDVSysCreate', 'Failed to load UpCallsLoad']"
+0062d100,FUN_0062d100,005222c0,MODIFIED,4,2.0,,"['AppAccel', 'AppMenu']"
+0044e780,FUN_0044e780,004b77f0,MODIFIED,3,2.09,,"['Bad version for worldlist', 'Failed to open worldlist.bin']"
+0045fed0,FUN_0045fed0,005304a0,MODIFIED,3,9.24,,"['R/s:% 4d,     B/s:% 5d,     Rt:% 6d,     Bt:% 6d,     Sh:% 6d,     Bh:% 6d', 'S/s:% 4d,     B/s:% 5d,     St:% 6d,     Bt:% 6d']"
+004aca40,FUN_004aca40,00409730,MODIFIED,3,3.77,smartie_base_attack_comment,"['DELCT15_2', 'GOR_CT15']"
+004d13a0,FUN_004d13a0,00499680,MODIFIED,3,2.86,,"['FailNo', 'FailTitle']"
+00501340,FUN_00501340,0045a0f0,MODIFIED,3,1.77,,"['GameBaseLevel', 'PlayerTeam']"
+005403e0,FUN_005403e0,00483740,MODIFIED,3,1.72,,"['GameOptions', 'GameOptionsVersion']"
+00550f00,FUN_00550f00,0048fef0,MODIFIED,3,3.0,,"['story5_Pad', 'story5_get_food_1']"
+0059e180,FUN_0059e180,004d31d0,MODIFIED,3,1.79,reaper_check_enter_jet_ski,"['%8.0f', 'CapsAllowedTimer']"
+00456d20,FUN_00456d20,00526af0,MODIFIED,2,2.74,,"['SessionName', '[None]']"
+0045b4e0,FUN_0045b4e0,00499680,MODIFIED,2,48.1,,"['FailNo', 'FailYes']"
+00466890,FUN_00466890,00536380,MODIFIED,2,1.6,,"['-----------------------', 'Sending object snapshot']"
+00469670,FUN_00469670,00507270,MODIFIED,2,3.37,teammecc_setup_enemies,"['BAZ_CT61', 'BAZ_CT63']"
+004aa710,FUN_004aa710,0041c1a0,MODIFIED,2,1.9,bldg_get_bldg_name,"['BaseBldgMeccBase', 'BaseBldgReaperBase']"
+004d0fd0,FUN_004d0fd0,0042be90,MODIFIED,2,1.55,,"['Pop mismatch', 'Underflow of dialog level stack']"
+004e96b0,FUN_004e96b0,0044ab90,MODIFIED,2,2.0,,"['Bad version for Fx.bin', 'Failed to open Fx.bin']"
+0050d090,FUN_0050d090,0045e650,MODIFIED,2,37.53,kabuto_logic,"['Kabutomessage1', 'Kabutomessage2']"
+00540770,FUN_00540770,00483740,MODIFIED,2,4.08,,"['GameOptions', 'GameOptionsVersion']"
+00623ce0,FUN_00623ce0,0053a660,MODIFIED,2,8.07,,"['Stream', 'Stream%s']"
+0062cd40,FUN_0062cd40,00521b60,MODIFIED,2,4.27,,"['Fatal Error', 'Invalid Localization']"
+00402770,FUN_00402770,00419070,MODIFIED,1,38.53,,['smartie']
+00453b50,FUN_00453b50,00538bd0,MODIFIED,1,2.49,,['ChatBoxHint']
+004545b0,FUN_004545b0,00524290,MODIFIED,1,1.45,,['DPlayInitFail']
+00455990,FUN_00455990,005257d0,MODIFIED,1,1.31,,['ErrDPOpenSess']
+00456130,FUN_00456130,005286e0,MODIFIED,1,4.27,,['CommShowConnHPing']
+00457970,FUN_00457970,0045a0f0,MODIFIED,1,2.25,,['PlayerTeam']
+004594f0,FUN_004594f0,005286e0,MODIFIED,1,10.08,,['CommShowConnLBaseComplete']
+0045b190,FUN_0045b190,005286e0,MODIFIED,1,65.51,,['ButtonDefaults']
+0045b1f0,FUN_0045b1f0,0052a340,MODIFIED,1,1.53,,['CommStatWLoad']
+0045dae0,FUN_0045dae0,0052dac0,MODIFIED,1,1.84,,['CommStatPlrTeam']
+004743f0,FUN_004743f0,004a6b30,MODIFIED,1,1.81,,['Table']
+0048f820,FUN_0048f820,00403b40,MODIFIED,1,1.19,,"['Reference point mismatch: object type %d, objectset type %d']"
+00494d50,FUN_00494d50,00408fd0,MODIFIED,1,1.06,meccbaseitem_finish_building,['BaseChatMCPHouseDone']
+004b3cd0,FUN_004b3cd0,00422880,MODIFIED,1,1.03,,['KeyVersion']
+004b4130,FUN_004b4130,00422880,MODIFIED,1,2.36,,['KeyVersion']
+004d0870,FUN_004d0870,005222c0,MODIFIED,1,2.87,,['Giants Fatal Error']
+004d0f60,FUN_004d0f60,0042be90,MODIFIED,1,1.09,,['Underflow of dialog level stack']
+004d2410,FUN_004d2410,005286e0,MODIFIED,1,7.86,,['ButtonDefaults']
+004d2ce0,FUN_004d2ce0,005286e0,MODIFIED,1,8.36,,['CommShowConnLAddTime']
+004d2fd0,FUN_004d2fd0,005286e0,MODIFIED,1,2.49,,['CommShowConnLAddTime']
+004e5030,FUN_004e5030,004471b0,MODIFIED,1,2.45,,['flk_%s.bin']
+004e7b10,FUN_004e7b10,004494c0,MODIFIED,1,1.49,,['Flick shadow']
+004eadd0,FUN_004eadd0,0044d270,MODIFIED,1,60.51,fx_processOpCodes,['%s%02d']
+004f2f90,FUN_004f2f90,0044ab90,MODIFIED,1,1.75,,['%s.bin']
+004f3d00,FUN_004f3d00,0051db20,MODIFIED,1,1.06,,['Unknown']
+00504a20,FUN_00504a20,0045c6c0,MODIFIED,1,3.27,inv_award_item,['InvChPickupItem']
+005154b0,FUN_005154b0,00469a30,MODIFIED,1,1.03,,['laser texture']
+00523b20,FUN_00523b20,00473290,MODIFIED,1,1.03,,"['Lock error%d Object %d, LObject %d, SrcRef %d, DstRef %d']"
+00526be0,FUN_00526be0,00474900,MODIFIED,1,4.11,,['Render Error']
+00526ed0,FUN_00526ed0,00474950,MODIFIED,1,1.27,,['Bad version of GB2 file']
+0052f3f0,FUN_0052f3f0,00491950,MODIFIED,1,6.25,showchat_mission_objective,['MissionObjective']
+00532f00,FUN_00532f00,00481ca0,MODIFIED,1,19.16,mecc_logic,['NoEnemyStructures']
+00537130,FUN_00537130,0047f350,MODIFIED,1,1.65,mecc_fire_logic,['HintWaitRepair']
+0053c710,FUN_0053c710,004cb030,MODIFIED,1,2.03,reaper_check_enter_teleport,['FlagHintTeleport']
+00541a50,FUN_00541a50,004254a0,MODIFIED,1,1.65,,['DevNoMissionLoad']
+005434f0,FUN_005434f0,0045a0f0,MODIFIED,1,1.41,,['WorldName']
+00544c20,FUN_00544c20,0045a0f0,MODIFIED,1,1.16,,['MPWorldName']
+005497f0,FUN_005497f0,0048a690,MODIFIED,1,1.35,,['MH_MissionLoad']
+0054cc20,FUN_0054cc20,004a39c0,MODIFIED,1,1.11,,['%dx%dx%d']
+005549d0,FUN_005549d0,00494210,MODIFIED,1,1.03,,['SaveGameVersion']
+00557020,FUN_00557020,00495ae0,MODIFIED,1,1.36,,['Flick Mission Load Error (last op = %d)']
+00557cc0,FUN_00557cc0,0049a580,MODIFIED,1,1.26,,['SFX%d']
+00559530,FUN_00559530,0049c6b0,MODIFIED,1,1.91,,"['Out of objects, exceeded limit']"
+0055a4a0,FUN_0055a4a0,0049ccf0,MODIFIED,1,1.19,,['Dynamic shadow texture']
+0055e6f0,FUN_0055e6f0,004a1360,MODIFIED,1,1.06,,"['Failed to find WorldAnim ""%s""']"
+00576050,FUN_00576050,004b4ef0,MODIFIED,1,1.58,,['GData.gbn']
+005790e0,FUN_005790e0,004b7a10,MODIFIED,1,1.88,,['Failed to load world read task!']
+0057ca20,FUN_0057ca20,004b7c50,MODIFIED,1,11.83,,['Bad version for %s']
+0057eb60,FUN_0057eb60,004bbf70,MODIFIED,1,1.06,reaperbasebldg_finish_building,['BaseChatRpPHouseDone']
+0058acd0,FUN_0058acd0,004c55c0,MODIFIED,1,1.86,reaper_finish_shrinker,['SpellHintShrink']
+005912a0,FUN_005912a0,004cb030,MODIFIED,1,2.03,reaper_check_enter_teleport,['FlagHintTeleport']
+0059ba00,FUN_0059ba00,004d31d0,MODIFIED,1,11.0,,['InDome']
+005a0540,FUN_005a0540,004cb360,MODIFIED,1,2.79,ripper_death_logic,['fx_vimp_mana']
+005b5140,FUN_005b5140,004cb360,MODIFIED,1,36.55,rpman_move,['fx_vimp_mana']
+005c1d20,FUN_005c1d20,004f3110,MODIFIED,1,2.01,,['Water texture']
+005c35b0,FUN_005c35b0,004f3880,MODIFIED,1,6.37,,['Environment texture']
+005c3e20,FUN_005c3e20,00491430,MODIFIED,1,6.77,,['wm_%s.bin']
+005c45f0,FUN_005c45f0,004f4070,MODIFIED,1,5.63,,['ErrGameFiles']
+005de9b0,FUN_005de9b0,00506040,MODIFIED,1,1.26,,['Error: missing objdata in status initialization (%d)']
+005e7de0,FUN_005e7de0,0050d660,MODIFIED,1,1.86,,['GText%s.bin']
+005e9b20,FUN_005e9b20,0050eb50,MODIFIED,1,1.2,,['%s.tga']
+005ea0d0,FUN_005ea0d0,00432db0,MODIFIED,1,4.44,tornado_logic,['n_wind']
+005ebca0,FUN_005ebca0,004acea0,MODIFIED,1,4.48,player_draw_missile_lock,['MissileLock']
+005f67f0,FUN_005f67f0,0051ab40,MODIFIED,1,1.59,,['elevation_texture']
+005ffc30,FUN_005ffc30,005344d0,MODIFIED,1,6.48,,['MPChLeaveGame']
+00622930,FUN_00622930,0053a660,MODIFIED,1,1.52,,['VO_Sfx']
+0062be70,FUN_0062be70,00520840,MODIFIED,1,1.03,,['Text Texture table is full!']
+0062cff3,Catch@0062cff3,00521b60,MODIFIED,1,1.24,,['Fatal Error']
+0062f610,FUN_0062f610,00523700,MODIFIED,1,3.82,,['Giants Error']
+0062f7e0,FUN_0062f7e0,00523b60,MODIFIED,1,1.11,,['legal']
+004b17c0,FUN_004b17c0,00422bd0,NEAR,65,1.26,,"['Inp%s', 'InpAuxMouseButton1']"
+00453370,FUN_00453370,00538820,NEAR,6,1.25,chat_init,"['ChatColorDisciple', 'ChatColorMission']"
+005762a0,FUN_005762a0,004b50b0,NEAR,6,1.35,,"['%s.gbs', '%s.skn']"
+005791c0,FUN_005791c0,004b7c50,NEAR,5,1.21,,"['%s.anm', 'Bad version for %s (%X vs %X)']"
+00454e00,FUN_00454e00,00524c10,NEAR,3,1.39,,"['CommNoSessions', 'IPAddress']"
+00549150,FUN_00549150,0048a4b0,NEAR,3,1.15,,"['Bad version for %s', 'Failed to open %s']"
+005536d0,FUN_005536d0,00491950,NEAR,3,1.22,showchat_mission_objective,"['MissionObjective', 'Trainer1']"
+00492060,FUN_00492060,00406c80,NEAR,2,1.34,,"['Army Bld System got unknown opcode, this is fatal.  (Last op %d)', 'Army bin has too many labels %d, label ignored']"
+004d1070,FUN_004d1070,0042be90,NEAR,2,1.4,,"['Pop mismatch', 'Underflow of dialog level stack']"
+00501740,FUN_00501740,0045a0f0,NEAR,2,1.2,,"['MPWorldName', 'WorldName']"
+00509c00,FUN_00509c00,0045e650,NEAR,2,1.26,AttackObject,"['Kabutomessage1', 'Kabutomessage2']"
+00575e10,FUN_00575e10,004b4ba0,NEAR,2,1.25,,"['Bad version for GameObj.bin', 'Failed to open GameObj.bin']"
+005d1e20,FUN_005d1e20,004fdf20,NEAR,2,1.24,smartie_get_name,"['SmNameSyl%c%d', 'Timmy']"
