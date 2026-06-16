@@ -106,10 +106,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
             DispatchMessageA(&msg);
         }
         if (!g_vRunning) break;
-        // Per-frame render driver (vanilla method [0x20]).
-        int newState = VanillaRunFrame(frameState);
-        if (frameCount < 5) {
-            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: state %d -> %d\n", frameCount, frameState, newState); fflush(g_vTrace); }
+        // Per-frame render driver (vanilla method [0x20]). Force frameState=0 every
+        // frame to drive the render fn (0x7340 → scene render 0x71a0). With an empty
+        // scene (obj+0x4f0 self-list) the scene walk is a no-op, so this is safe and
+        // exercises the BeginScene/Clear/EndScene/Present path. (Faithful to vanilla's
+        // 0x7370(obj,0)→0x7340 render trigger.)
+        int newState = VanillaRunFrame(0);
+        if (frameCount < 8) {
+            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: RunFrame(0) -> %d\n", frameCount, newState); fflush(g_vTrace); }
         }
         frameState = newState;
         frameCount++;
