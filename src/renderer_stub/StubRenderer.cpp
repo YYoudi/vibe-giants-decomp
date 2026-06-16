@@ -77,6 +77,90 @@ static HRESULT __attribute__((thiscall)) Stub_Present(StubDevice* self) {
     return 0;
 }
 
+// ─── Terrain rendering (real intro_island data from terrain_heights.bin) ──
+// Reads the decoded terrain (w×h grid + RGB lightmap written by Player.cpp
+// LevelLoad) once, builds a DIB, and StretchBlts it onto the backbuffer each
+// frame — shows the actual game terrain as a top-down colored map.
+static HBITMAP g_terrainBmp = nullptr;
+static int g_terrainW = 0, g_terrainH = 0;
+static void LoadTerrainBitmap() {
+    if (g_terrainBmp) return;
+    FILE* f = fopen("terrain_heights.bin", "rb");
+    if (!f) f = fopen("GameFiles\\terrain_heights.bin", "rb");
+    if (!f) { StubLog("[STUB] terrain_heights.bin not found"); return; }
+    int w = 0, h = 0;
+    float stretch, minX, minY, minH, maxH;
+    if (fread(&w, 4, 1, f) != 1 || fread(&h, 4, 1, f) != 1 ||
+        fread(&stretch, 4, 1, f) != 1 || fread(&minX, 4, 1, f) != 1 ||
+        fread(&minY, 4, 1, f) != 1 || fread(&minH, 4, 1, f) != 1 ||
+        fread(&maxH, 4, 1, f) != 1) { fclose(f); return; }
+    int cells = w * h;
+    if (w <= 0 || h <= 0 || w > 1024 || h > 1024) { fclose(f); return; }
+    fseek(f, cells * 4, SEEK_CUR);  // skip heights
+    unsigned char* lightmap = (unsigned char*)malloc((size_t)cells * 3);
+    if (fread(lightmap, 1, (size_t)cells * 3, f) != (size_t)cells * 3) { free(lightmap); fclose(f); return; }
+    fclose(f);
+
+    // Build a bottom-up DIB (w × h, 24-bit BGR) from the lightmap.
+    BITMAPINFO bi = {};
+    bi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+    bi.bmiHeader.biWidth = w;
+    bi.bmiHeader.biHeight = h;  // positive = bottom-up
+    bi.bmiHeader.biPlanes = 1;
+    bi.bmiHeader.biBitCount = 24;
+    bi.bmiHeader.biCompression = BI_RGB;
+    HDC screen = GetDC(nullptr);
+    g_terrainBmp = CreateDIBSection(screen, &bi, DIB_RGB_COLORS, nullptr, nullptr, 0);
+    ReleaseDC(nullptr, screen);
+    if (!g_terrainBmp) { free(lightmap); return; }
+    // Get the DIB bits and fill BGR (DIB is bottom-up; lightmap is row-major top-down).
+    BITMAPINFO query = bi;
+    unsigned char* bits = nullptr;
+    // Lock bits via GetDIBits into our buffer.
+    HDC memdc = CreateCompatibleDC(nullptr);
+    HGDIOBJ old = SelectObject(memdc, g_terrainBmp);
+    // Compute row stride (24-bit, DWORD-aligned).
+    int stride = ((w * 3 + 3) & ~3);
+    unsigned char* dib = (unsigned char*)calloc(1, (size_t)stride * h);
+    for (int y = 0; y < h; y++) {
+        int srcRow = (h - 1 - y);  // flip vertically (DIB bottom-up)
+        for (int x = 0; x < w; x++) {
+            int si = (srcRow * w + x) * 3;
+            int di = y * stride + x * 3;
+            dib[di + 0] = lightmap[si + 2];  // B
+            dib[di + 1] = lightmap[si + 1];  // G
+            dib[di + 2] = lightmap[si + 0];  // R
+        }
+    }
+    SetDIBits(memdc, g_terrainBmp, 0, h, dib, &query, DIB_RGB_COLORS);
+    free(dib);
+    SelectObject(memdc, old);
+    DeleteDC(memdc);
+    free(lightmap);
+    g_terrainW = w; g_terrainH = h;
+    char msg[128]; snprintf(msg, sizeof(msg), "[STUB] terrain loaded %dx%d", w, h);
+    StubLog(msg);
+}
+static void __attribute__((thiscall)) Stub_DrawTerrain(StubDevice* self) {
+    if (!self || !self->d3d9) return;
+    LoadTerrainBitmap();
+    if (!g_terrainBmp) return;
+    IDirect3DSurface9* back = nullptr;
+    if (FAILED(self->d3d9->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &back)) || !back) return;
+    HDC hdc = nullptr;
+    if (SUCCEEDED(back->GetDC(&hdc)) && hdc) {
+        HDC memdc = CreateCompatibleDC(hdc);
+        HGDIOBJ old = SelectObject(memdc, g_terrainBmp);
+        // Scale terrain to a centered rectangle.
+        SetStretchBltMode(hdc, COLORONCOLOR);
+        StretchBlt(hdc, 0, 0, 1280, 720, memdc, 0, 0, g_terrainW, g_terrainH, SRCCOPY);
+        SelectObject(memdc, old);
+        DeleteDC(memdc);
+        back->ReleaseDC(hdc);
+    }
+    back->Release();
+}
+
 // ─── Cursor rendering (a crosshair / box at the mouse position) ────────
 static void __attribute__((thiscall)) Stub_DrawCursor(StubDevice* self, int x, int y) {
     if (!self || !self->d3d9) return;
@@ -155,6 +239,7 @@ static void** BuildStubVtable() {
         vt[43] = (void*)&Stub_Clear;
         vt[44] = (void*)&Stub_DrawTextString;   // draw a localized string (thiscall str arg)
         vt[45] = (void*)&Stub_DrawCursor;        // draw cursor at (x,y) (thiscall int args)
+        vt[46] = (void*)&Stub_DrawTerrain;        // draw terrain_heights.bin lightmap (thiscall)
         vt[47] = (void*)&Stub_Present;
         vt[53] = (void*)&Stub_GetCapability;   // 0xD4/4 = GetCapability
         init = true;
