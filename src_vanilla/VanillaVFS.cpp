@@ -102,8 +102,9 @@ std::vector<uint8_t> GzpReadFile(const char* archivePath, const char* fileName) 
             if (en.compSize && fread(comp.data(), 1, en.compSize, f) != en.compSize) { fclose(f); return {}; }
             fclose(f);
             std::vector<uint8_t> out(en.uncmpSize);
-            if (en.compr == 0) {
-                // stored raw
+            if (en.compr == 0 || en.compr == 2) {
+                // stored raw (compr 0 and 2 = uncompressed; 1 = LZ). compr=2 files have
+                // compSize = uncmpSize + 16 (a 16-byte trailer/prefix) — copy uncmpSize.
                 if (en.uncmpSize <= en.compSize) memcpy(out.data(), comp.data(), en.uncmpSize);
                 else return {};
             } else {
