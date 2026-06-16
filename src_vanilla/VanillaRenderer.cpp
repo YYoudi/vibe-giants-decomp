@@ -76,6 +76,10 @@ static void __cdecl Stub_Free(void* p) { free(p); }
 // (same MinGW heap → consistent, no cross-CRT free).
 static void* __cdecl Stub_Alloc(int /*a0*/, size_t size, void* /*heap*/) { return malloc(size); }
 
+// The renderer object returned by GDVSysCreate (vanilla global DAT_00654940). The
+// engine drives its ~55 thiscall methods (see RE_docs/DX7_RENDER_RECIPE.md) to render.
+extern "C" void* g_vRenderer = nullptr;   // DAT_00654940
+
 // Build + call UpCallsLoad + GDVSysCreate with the vanilla contract.
 extern "C" void* VanillaInitRenderer(HWND hWnd) {
     extern FILE* g_vTrace;
@@ -128,9 +132,20 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
     extern const char* __lpCmdLine;
     typedef void* (__cdecl *PFN_GDVSysCreate_9)(const char*, HWND, uint32_t, uint32_t,
                                                 uint32_t, uint32_t, uint32_t, const GUID*, const GUID*);
+    // Vanilla WinMain (FUN_005222c0): GDVSysCreate(cmdLine, hWnd, w, h, bpp, flags, windowed=1,
+    // &GUID1, &GUID2). w/h come from registry globals DAT_00631818/1c (0 in the captured
+    // run → renderer reads width/height from registry itself). On NULL, retry 640x480.
     void* device = reinterpret_cast<PFN_GDVSysCreate_9>(g_GDVSysCreate)(
         __lpCmdLine ? __lpCmdLine : "", hWnd, 0, 0, 32, 0, 1,
         &g_DD_DEVICE_GUID, &g_DD_IID);
+    if (!device) {
+        // Vanilla retry path: 0x280(640) x 0x1e0(480).
+        device = reinterpret_cast<PFN_GDVSysCreate_9>(g_GDVSysCreate)(
+            __lpCmdLine ? __lpCmdLine : "", hWnd, 0x280, 0x1e0, 32, 0, 1,
+            &g_DD_DEVICE_GUID, &g_DD_IID);
+        if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] GDVSysCreate retry(640x480) -> device=%p\n", device); fflush(g_vTrace); }
+    }
     if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] GDVSysCreate(hWnd=%p, bpp=32 win) -> device=%p\n", hWnd, device); fflush(g_vTrace); }
+    g_vRenderer = device;   // store as DAT_00654940
     return device;
 }
