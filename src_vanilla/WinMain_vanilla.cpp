@@ -16,6 +16,7 @@ static bool g_vRunning = true;
 
 extern "C" int VanillaLoadRenderer(const char* pathPrefix, const char* rendererName);
 extern "C" void* VanillaInitRenderer(HWND hWnd);
+extern "C" void VanillaReadDisplayConfig();
 
 // ─── Vanilla WinMain (FUN_005222c0) — structure ported from decompiled ──
 // The vanilla binary fuses InitializeEngine + MainGameLoop into this one
@@ -73,6 +74,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     if (renderOk) {
         void* device = VanillaInitRenderer(g_vHWnd);
         if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] DX7 device: %p\n", device); fflush(g_vTrace); }
+        // NOTE: vanilla WinMain next calls 2 engine callbacks (DAT_005dc24c/2d8) THEN
+        // renderer method [0x1b] (0xc970, display-config getter). Those callbacks set up
+        // obj+0x284 (the D3D-framework sub-object 0xc970 reads). Calling 0xc970 without
+        // them crashes (uninitialized obj+0x284). Deferred until those callbacks are ported.
+        (void)device;
     }
 
     // Remaining init (callees stubbed — port from vanilla_decompiled/*.json):
