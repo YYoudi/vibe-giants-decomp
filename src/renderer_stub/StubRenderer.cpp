@@ -1,4 +1,17 @@
-// Giants Stub Renderer (gg_dx9r_stub.dll) — Route B for visible output.
+// Giants Stub Renderer (gg_dx9r_stub.dll) — *** DIAGNOSTIC ONLY / NOT RE ***
+//
+// WARNING: this is NOT part of the path to a 100%-identical recomp. It is a
+// diagnostic/visualization tool that OWNS its own D3D9 device and renders game
+// DATA (terrain heights, localized strings, cursor) via INVENTED methods (GDI
+// DrawText on backbuffer, StretchBlt, a hand-built mesh) — NOT the game's real
+// render path (GDI glyph→texture→renderer vtable[50]/device1[1], real scene
+// pipeline). It exists only to PROVE the recomp can open a window + drive a
+// D3D9 device + display real extracted data.
+//
+// The real path to 100%-identical is: reconstruct the engine-context vtable +
+// the 22 real UpCalls callbacks (captured from the ORIGINAL via the proxy,
+// validated dual-mode), wire them into the recomp so the REAL gg_dx9r.dll stops
+// crashing and renders by its genuine path. Do NOT enrich this stub further.
 //
 // The real gg_dx9r.dll requires the full engine-context protocol (UpCalls + 22
 // callbacks + engine-context vtable) which the recomp doesn't drive — its
@@ -17,6 +30,7 @@
 #include <cstdio>
 #include <cstdint>
 #include <cstring>
+#include <cmath>
 
 static void StubLog(const char* msg);  // forward decl (defined below)
 
@@ -161,6 +175,121 @@ static void __attribute__((thiscall)) Stub_DrawTerrain(StubDevice* self) {
     back->Release();
 }
 
+// ─── 3D terrain rendering (real intro_island heights as a mesh) ────────
+// Builds a vertex + index buffer from terrain_heights.bin and renders the
+// island in 3D with a perspective camera — the real game look (vs the 2D map).
+// Manual matrix math (no d3dx9 dependency).
+struct Vec3 { float x, y, z; };
+static Vec3 vsub(Vec3 a, Vec3 b){ return {a.x-b.x,a.y-b.y,a.z-b.z}; }
+static Vec3 vadd(Vec3 a, Vec3 b){ return {a.x+b.x,a.y+b.y,a.z+b.z}; }
+static Vec3 vscale(Vec3 a, float s){ return {a.x*s,a.y*s,a.z*s}; }
+static float vdot(Vec3 a, Vec3 b){ return a.x*b.x+a.y*b.y+a.z*b.z; }
+static Vec3 vcross(Vec3 a, Vec3 b){ return {a.y*b.z-a.z*b.y, a.z*b.x-a.x*b.z, a.x*b.y-a.y*b.x}; }
+static Vec3 vnorm(Vec3 a){ float l = sqrtf(vdot(a,a)); return l>0 ? vscale(a, 1.0f/l) : a; }
+typedef float Mtx[16];
+static void LookAtLH(Mtx m, Vec3 eye, Vec3 at, Vec3 up) {
+    Vec3 z = vnorm(vsub(at, eye));
+    Vec3 x = vnorm(vcross(up, z));
+    Vec3 y = vcross(z, x);
+    m[0]=x.x; m[1]=y.x; m[2]=z.x; m[3]=0;
+    m[4]=x.y; m[5]=y.y; m[6]=z.y; m[7]=0;
+    m[8]=x.z; m[9]=y.z; m[10]=z.z; m[11]=0;
+    m[12]=-vdot(x,eye); m[13]=-vdot(y,eye); m[14]=-vdot(z,eye); m[15]=1;
+}
+static void PerspectiveFovLH(Mtx m, float fovY, float aspect, float zn, float zf) {
+    float yScale = 1.0f / tanf(fovY/2.0f);
+    float xScale = yScale / aspect;
+    for (int i=0;i<16;i++) m[i]=0;
+    m[0]=xScale; m[5]=yScale; m[10]=zf/(zf-zn); m[11]=1; m[14]=-zn*zf/(zf-zn);
+}
+static void Identity(Mtx m){ for(int i=0;i<16;i++) m[i]=0; m[0]=m[5]=m[10]=m[15]=1; }
+struct TerrainMesh {
+    IDirect3DVertexBuffer9* vb = nullptr;
+    IDirect3DIndexBuffer9*  ib = nullptr;
+    int w = 0, h = 0, nVerts = 0, nIndices = 0;
+    float cx = 0, cz = 0;  // world center
+};
+static TerrainMesh g_terrain;
+struct TerrainVertex { float x, y, z; D3DCOLOR color; };  // FVF XYZ|DIFFUSE, 16 bytes
+static void BuildTerrain3D(IDirect3DDevice9* dev) {
+    if (g_terrain.vb) return;
+    FILE* f = fopen("terrain_heights.bin", "rb");
+    if (!f) f = fopen("GameFiles\\terrain_heights.bin", "rb");
+    if (!f) return;
+    int w, h; float stretch, minX, minY, minH, maxH;
+    if (fread(&w,4,1,f)!=1||fread(&h,4,1,f)!=1||fread(&stretch,4,1,f)!=1||
+        fread(&minX,4,1,f)!=1||fread(&minY,4,1,f)!=1||fread(&minH,4,1,f)!=1||fread(&maxH,4,1,f)!=1||
+        w<=0||h<=0||w>1024||h>1024) { fclose(f); return; }
+    int cells = w*h;
+    float* heights = (float*)malloc(cells*4);
+    fread(heights, 4, cells, f);
+    unsigned char* lightmap = (unsigned char*)malloc((size_t)cells*3);
+    fread(lightmap, 1, (size_t)cells*3, f);
+    fclose(f);
+
+    g_terrain.nVerts = cells;
+    if (FAILED(dev->CreateVertexBuffer(cells*sizeof(TerrainVertex), 0,
+            D3DFVF_XYZ|D3DFVF_DIFFUSE, D3DPOOL_MANAGED, &g_terrain.vb, nullptr))) {
+        free(heights); free(lightmap); return;
+    }
+    TerrainVertex* v = nullptr;
+    g_terrain.vb->Lock(0, 0, (void**)&v, 0);
+    for (int j=0;j<h;j++) for (int i=0;i<w;i++) {
+        int k = j*w+i;
+        v[k].x = minX + i*stretch;
+        v[k].z = minY + j*stretch;
+        v[k].y = heights[k];
+        v[k].color = D3DCOLOR_XRGB(lightmap[k*3], lightmap[k*3+1], lightmap[k*3+2]);
+    }
+    g_terrain.vb->Unlock();
+    g_terrain.cx = minX + (w*stretch)/2.0f;
+    g_terrain.cz = minY + (h*stretch)/2.0f;
+
+    // Index buffer: 2 triangles per cell quad.
+    int nQuads = (w-1)*(h-1);
+    g_terrain.nIndices = nQuads*6;
+    dev->CreateIndexBuffer(g_terrain.nIndices*sizeof(uint16_t), 0, D3DFMT_INDEX16, D3DPOOL_MANAGED, &g_terrain.ib, nullptr);
+    uint16_t* idx = nullptr;
+    g_terrain.ib->Lock(0, 0, (void**)&idx, 0);
+    int p = 0;
+    for (int j=0;j<h-1;j++) for (int i=0;i<w-1;i++) {
+        int a = j*w+i, b = a+1, c = a+w, d = c+1;
+        idx[p++]=a; idx[p++]=c; idx[p++]=b;
+        idx[p++]=b; idx[p++]=c; idx[p++]=d;
+    }
+    g_terrain.ib->Unlock();
+    g_terrain.w=w; g_terrain.h=h;
+    free(heights); free(lightmap);
+    char msg[128]; snprintf(msg,sizeof(msg),"[STUB] terrain3D mesh %dv/%di", g_terrain.nVerts, g_terrain.nIndices);
+    StubLog(msg);
+}
+static void __attribute__((thiscall)) Stub_DrawTerrain3D(StubDevice* self) {
+    if (!self || !self->d3d9) return;
+    BuildTerrain3D(self->d3d9);
+    if (!g_terrain.vb || !g_terrain.ib) return;
+    IDirect3DDevice9* dev = self->d3d9;
+    dev->BeginScene();
+    // Camera: orbiting view above the island center (manual matrices, no d3dx9).
+    static float ang = 0.0f; ang += 0.005f;
+    Vec3 eye = { g_terrain.cx + cosf(ang)*4000.0f, 3000.0f, g_terrain.cz + sinf(ang)*4000.0f };
+    Vec3 at  = { g_terrain.cx, 0, g_terrain.cz };
+    Vec3 up  = { 0, 1, 0 };
+    Mtx view, proj, world;
+    LookAtLH(view, eye, at, up);
+    PerspectiveFovLH(proj, 3.14159f/4.0f, 1280.0f/720.0f, 100.0f, 20000.0f);
+    Identity(world);
+    dev->SetTransform(D3DTS_VIEW, (D3DMATRIX*)view);
+    dev->SetTransform(D3DTS_PROJECTION, (D3DMATRIX*)proj);
+    dev->SetTransform(D3DTS_WORLD, (D3DMATRIX*)world);
+    dev->SetRenderState(D3DRS_LIGHTING, FALSE);
+    dev->SetRenderState(D3DRS_CULLMODE, D3DCULL_NONE);
+    dev->SetFVF(D3DFVF_XYZ|D3DFVF_DIFFUSE);
+    dev->SetStreamSource(0, g_terrain.vb, 0, sizeof(TerrainVertex));
+    dev->SetIndices(g_terrain.ib);
+    dev->DrawIndexedPrimitive(D3DPT_TRIANGLELIST, 0, 0, g_terrain.nVerts, 0, g_terrain.nIndices/3);
+    dev->EndScene();
+}
+
 // ─── Cursor rendering (a crosshair / box at the mouse position) ────────
 static void __attribute__((thiscall)) Stub_DrawCursor(StubDevice* self, int x, int y) {
     if (!self || !self->d3d9) return;
@@ -239,7 +368,7 @@ static void** BuildStubVtable() {
         vt[43] = (void*)&Stub_Clear;
         vt[44] = (void*)&Stub_DrawTextString;   // draw a localized string (thiscall str arg)
         vt[45] = (void*)&Stub_DrawCursor;        // draw cursor at (x,y) (thiscall int args)
-        vt[46] = (void*)&Stub_DrawTerrain;        // draw terrain_heights.bin lightmap (thiscall)
+        vt[46] = (void*)&Stub_DrawTerrain3D;      // 3D terrain mesh (real heights)
         vt[47] = (void*)&Stub_Present;
         vt[53] = (void*)&Stub_GetCapability;   // 0xD4/4 = GetCapability
         init = true;
