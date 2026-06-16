@@ -156,12 +156,22 @@ namespace {
         return 0; // S_OK
     }
 
-    // vtable entries (indices 3+ padded for safety)
+    // vtable entries — 5 REAL methods (Release/Register/Query/Unregister/Clear)
+    // backed by the value-keyed COM service registry (EngineContext.cpp). Captured
+    // from the original via proxy+Frida: the renderer calls all 5; the stub had
+    // only 3 (rest null) → renderer+0x1DB3B crash. See EngineContext.cpp.
+    extern "C" void* __attribute__((thiscall)) EngineCtx_Release(uint32_t*, uint8_t);
+    extern "C" void* __attribute__((thiscall)) EngineCtx_Register(uint32_t*, uint32_t*, uint32_t, uint32_t*);
+    extern "C" void* __attribute__((thiscall)) EngineCtx_Query(uint32_t*, uint32_t*, uint32_t);
+    extern "C" void  __attribute__((thiscall)) EngineCtx_Unregister(uint32_t*, uint32_t);
+    extern "C" void  __attribute__((thiscall)) EngineCtx_Clear(uint32_t*);
     static void* g_engineContextVtable[16] = {
-        (void*)&EngineContext_Vtbl0,
-        (void*)&EngineContext_Vtbl1,
-        (void*)&EngineContext_Vtbl2,
-        nullptr, nullptr, nullptr, nullptr,
+        (void*)&EngineCtx_Release,
+        (void*)&EngineCtx_Register,
+        (void*)&EngineCtx_Query,
+        (void*)&EngineCtx_Unregister,
+        (void*)&EngineCtx_Clear,
+        nullptr, nullptr, nullptr,
         nullptr, nullptr, nullptr, nullptr,
         nullptr, nullptr, nullptr, nullptr
     };
