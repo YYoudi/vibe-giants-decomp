@@ -25,6 +25,8 @@ extern "C" FILE* g_vTrace;
 // Defined in VanillaSceneLists.cpp / VanillaSceneDispatch.cpp.
 extern "C" void  FUN_0050d8f0(const char* name, uint32_t stream);
 extern "C" uint32_t SceneWalk_Textures(void);   // FUN_0050e4d0 port
+// TEXMEM section handler (VanillaTexmem.cpp). Reads header[2].
+extern "C" void  FUN_0049a580(uint32_t stream);
 
 namespace {
 
@@ -67,11 +69,22 @@ extern "C" uint32_t VanillaFeedTextures(void) {
         std::fflush(g_vTrace);
     }
 
-    // 4. SEEK header[1] (name_list) then call FUN_0050d8f0(name, handle).
-    //    This mirrors FUN_004b7c50 [0x4b7d24..0x4b7d32] exactly:
-    //      push ecx (=header[1]); push esi (=handle); call 0x51d7b0   ; SEEK
-    //      push edx (=version); push esi (=handle); push ebp (=name); call 0x50d8f0
-    //    FUN_0050d8f0 reads sub_count + entries from the name_list section.
+    // 4a. SEEK header[2] (texmem) then call FUN_0049a580(stream).
+    //     This mirrors FUN_004b7c50 [0x4b7d09..0x4b7d18] EXACTLY (esp-tracking
+    //     on the cdecl calls confirms header[2], not header[0] as a naive read
+    //     of [esp+0xa0] suggests): the 3 pushes for the header-read are NOT
+    //     cleaned before 0x4b7d09, so [esp+0xa0] resolves to header[2].
+    //     FUN_0049a580 reads the versioned texmem header (+ optional records).
+    //     It is called BEFORE the name_list read in vanilla.
+    FUN_0051d7b0(handle, header[2]);
+    if (g_vTrace) { std::fprintf(g_vTrace, "[FEED] SEEK texmem @%u; calling FUN_0049a580\n", header[2]); std::fflush(g_vTrace); }
+    FUN_0049a580(handle);
+
+    // 4b. SEEK header[1] (name_list) then call FUN_0050d8f0(name, handle).
+    //     This mirrors FUN_004b7c50 [0x4b7d1d..0x4b7d32]:
+    //       [0x4b7d24] SEEK(header, header[1])
+    //       [0x4b7d32] FUN_0050d8f0(name, handle)
+    //     FUN_0050d8f0 reads sub_count + entries from the name_list section.
     FUN_0051d7b0(handle, header[1]);
     if (g_vTrace) { std::fprintf(g_vTrace, "[FEED] SEEK name_list @%u; calling FUN_0050d8f0\n", header[1]); std::fflush(g_vTrace); }
 
