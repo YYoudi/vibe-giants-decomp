@@ -8,10 +8,12 @@
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
-static FILE* g_vTrace = nullptr;
+FILE* g_vTrace = nullptr;
 static HWND  g_vHWnd = nullptr;
 static HINSTANCE g_vHInst = nullptr;
 static bool g_vRunning = true;
+
+extern "C" int VanillaLoadRenderer(const char* pathPrefix, const char* rendererName);
 
 // ─── Vanilla WinMain (FUN_005222c0) — structure ported from decompiled ──
 // The vanilla binary fuses InitializeEngine + MainGameLoop into this one
@@ -45,8 +47,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     ShowWindow(g_vHWnd, nCmdShow);
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Window created hwnd=%p\n", g_vHWnd); fflush(g_vTrace); }
 
-    // ── Engine init (callees stubbed — port from vanilla_decompiled/*.json) ──
-    // The vanilla WinMain (0x5222c0) calls ~50 functions here including:
+    // ── Engine init: load the DX7 renderer (FUN_0051eb70) ──
+    int renderOk = VanillaLoadRenderer(nullptr, "dx7r");
+    if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Renderer load: %s\n", renderOk ? "OK" : "FAILED"); fflush(g_vTrace); }
+
+    // Remaining init (callees stubbed — port from vanilla_decompiled/*.json):
     //   - Registry open (DefPlayer, MusicVolume, SoundVolume)
     //   - Renderer load (UpCallsLoad 21 callbacks + GDVSysCreate NULL engineCtx)
     //   - Audio init (gs_ds.dll)

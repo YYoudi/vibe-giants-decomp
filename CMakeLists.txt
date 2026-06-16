@@ -180,9 +180,8 @@ set_target_properties(GiantsMain PROPERTIES
 # Targets vanilla 1.0 Giants.exe (2574 functions, DX7 renderer).
 # src_vanilla/ = vanilla-native source (ported from vanilla_decompiled/).
 # ═══════════════════════════════════════════════════════════════════
-add_executable(GiantsMain_vanilla WIN32
-    src_vanilla/WinMain_vanilla.cpp
-)
+file(GLOB VANILLA_SOURCES "src_vanilla/*.cpp")
+add_executable(GiantsMain_vanilla WIN32 ${VANILLA_SOURCES})
 target_link_libraries(GiantsMain_vanilla PRIVATE user32 gdi32)
 target_compile_options(GiantsMain_vanilla PRIVATE -m32)
 target_link_options(GiantsMain_vanilla PRIVATE -m32 -static-libgcc -static-libstdc++ -Wl,-Map,build_recomp/GiantsMain_vanilla.map)
