@@ -31,9 +31,33 @@ order: **shared rare strings > size in bytes > call-graph topology > fingerprint
   - **HIGH 114** — transfer, light verify (>=2 strings, or 1 string + size<=1.40, or propagation>=4)
   - **MEDIUM 129** — verify body (1 string + size<=1.80, or propagation>=2)
   - **LOW 990** — HINT only, verify in Ghidra (structural: best size+caller-count match)
-- Reliable set (EXACT+HIGH+MEDIUM): **257 pairs**. The 990 LOW are explicitly guesses.
-- Origin: string 123, fingerprint 4, propagated 130, structural 990.
+- Reliable set (EXACT+HIGH+MEDIUM): **258 pairs**. The 990 LOW are explicitly guesses.
+- Origin: string 123, fingerprint 4, propagated 130, triangulated 1, structural 990.
 - **1.5->vanilla many: 0** (one vanilla per 1.5 func, guaranteed).
+
+## PS2 triangulation (independent cross-check)
+
+`triangulate.py` routes a third signal through the PS2 symbol dictionary: if a 1.5
+func AND a vanilla func both independently string-anchor to the SAME PS2 function
+(PS2 = FULL debug symbols = authoritative), they match. This is independent of the
+direct 1.5<->vanilla comparison.
+
+- vanilla->PS2 string matches are sparse (54 candidates, 14 conf>=0.4) — vanilla has
+  few string refs and PS2 has only ~223 funcs with string refs — so call-graph
+  propagation gets no traction (0 grown). This is the honest ceiling.
+- Result: **8 v2 pairs independently CONFIRMED** (+`triangulated` flag), **1 NEW**
+  reliable pair (AttackObject), **1 conflict flagged** (chat_init: v2's vanilla
+  00538820 is correct via 6 ChatColor strings; the PS2 leg matched a different vanilla
+  func on TextColor strings — v2 wins, conflict kept for the record).
+
+## Transitive PS2 naming — the main payoff
+
+For every reliable v2 pair whose 1.5 side has a PS2 name (from the 1.5->PS2 match
+set), the **vanilla address inherits that authoritative name**. **100 reliable pairs
+(39%) carry a PS2 name** in the `ps2_name` column — e.g. vanilla `0050a720`=
+`teammecc_set_mode`, `00538820`=`chat_init`, `004d31d0`=`reaper_check_enter_jet_ski`,
+`004fdf20`=`smartie_get_name`. The main agent reversing vanilla gets real names/types
+for 100 functions out of the box.
 
 ## Many-to-1 MERGES (1.5 split a vanilla function) — 6 cases, 14 funcs
 
