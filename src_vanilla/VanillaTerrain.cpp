@@ -231,6 +231,25 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
     if (!wvt) { trace("[VTERRAIN] wrapper vtable NULL\n"); return 0; }
     void* drawPrim = wvt[0x64 / 4];   // vt[25] = DrawPrimitive
     if (!drawPrim) { trace("[VTERRAIN] DrawPrimitive (vt[0x64]) NULL\n"); return 0; }
+    // Diagnostic: the device's render target is NOT obj+0x288 (the surface Present shows) —
+    // obj+0x288 is the presented primary, not a valid D3D render target. The renderer copies
+    // the device back-buffer to obj+0x288 in its frame (a step the manual driver lacks).
+    {
+        void* rt = nullptr;
+        typedef long (__stdcall *PFN_GetRT)(void*, void**);
+        auto grt = (PFN_GetRT)wvt[0x24 / 4];
+        if (grt) grt(wrapper, &rt);
+        trace("[VTERRAIN] device render-target=%p  presented(obj+0x288)=%p (renderer copies btwn them in its frame)\n", rt, obj[0x288 / 4]);
+    }
+    // ── DIAGNOSTIC: screen-space triangle (XYZRHW, bypasses transforms) to confirm
+    // DrawPrimitive produces VISIBLE output end-to-end. White/red/green, centered @640x480.
+    {   struct V { float x,y,z,rhw; uint32_t diff; };  // XYZRHW|DIFFUSE=0x044, 20 bytes
+        V tri[3] = { {320.f,80.f,0.f,1.f,0xFFFFFFFF}, {80.f,400.f,0.f,1.f,0xFFFF2020},
+                     {560.f,400.f,0.f,1.f,0xFF20FF20} };
+        typedef long (__stdcall *PFN_DP)(void*,uint32_t,uint32_t,const void*,uint32_t,uint32_t);
+        long hr2 = ((PFN_DP)drawPrim)(wrapper, 3, 0x044, tri, 3, 0);
+        trace("[VTERRAIN] TEST TRIANGLE (XYZRHW) hr=0x%lx\n", (unsigned long)hr2);
+    }
     // Set up camera (world/view/projection + cull/z) so the world-coord terrain maps to screen.
     SetupCamera(wrapper, wvt);
     typedef long (__stdcall *PFN_DrawPrim)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
