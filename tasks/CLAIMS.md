@@ -18,3 +18,13 @@ _(empty — agents add their claims here)_
 - **Worktree per agent**: for heavy parallel editing, use `EnterWorktree` so each agent has an isolated copy; main integrates + builds.
 - **Subagents use `sonnet`** (glm-5.1) for portage/RE; main (opus/glm-5.2) integrates + builds + decides.
 - **Back-off on 529**: if the gateway returns 529, go sequential; don't immediately re-fork.
+
+## Overnight run 2026-06-18 — chantier queue
+Priorité : bit-fidelity (mesure→spec→port vanilla documenté→auto-vérif). Subagents sonnet retournent code/docs (n'éditent pas les fichiers shared). Main intègre+build+commit.
+
+- [Q1] Renderer method semantic map (obj+offset → D3D7 semantic) — RE_docs/DX7_METHOD_MAP_v2.md — @subagent-A
+- [Q2] VFS callbacks 15-17 (FUN_006222d0/00621fe0/00621e50) — src_vanilla/VanillaVFSCallbacks.* — @subagent-B
+- [Q3] Menu scene chain: .BIN loader FUN_004b7c50 port — src_vanilla/VanillaBinLoader.cpp — @main
+- [Q4] Audio FUN_0051f900 (gs_ds.dll) port — src_vanilla/VanillaAudio.cpp — pending
+- [Q5] Core fn batch (VERSION_MAP_v2 EXACT/HIGH) — new RE_<fn>.cpp each — pending
+- [Q6] Renderer transform/texture path (for menu 3D fidelity) — pending
