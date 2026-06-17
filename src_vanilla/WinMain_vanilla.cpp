@@ -16,6 +16,7 @@
 #include "VanillaFeed.h"
 #include "VanillaInput.h"
 #include "VanillaTextureLoad.h"
+#include "VanillaTerrain.h"
 // Scene list-management ports (defined in VanillaSceneLists.cpp).
 extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
@@ -159,6 +160,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     //    renderer's slot +0xb0 (driven by the per-entity texture-bind walk at
     //    VA 0x4f3c20). It DOES supply the pixel data that slot +0xb0 uploads.
     VanillaLoadAllTextures();
+    // NOTE: terrain draw (VanillaTerrain_Draw) parses the GTI + builds a triangle grid OK,
+    // but SEGFAULTS when submitted to renderer slot +0x98 standalone — the renderer must be
+    // in-scene (BeginScene called). Must be injected INTO the renderer's frame cycle
+    // (between BeginScene and Present, e.g. via the scene-walk callback) — TODO.
 
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
