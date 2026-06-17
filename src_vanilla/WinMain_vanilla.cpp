@@ -184,13 +184,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
         if (!g_vRunning) break;
         // Per-frame input poll (DirectInput7 keyboard + mouse — FUN_0051f0e0/1f0 port).
         VanillaInput_Poll();
-        // Manual frame driver: BeginScene → terrain draw (in-scene) → EndScene → Present.
-        // Injects the engine terrain draw between BeginScene and EndScene so submitted
-        // geometry is visible (the renderer's 0x7340 does the frame internally with no
-        // engine-draw injection point).
-        VanillaDriveFrame([](){ VanillaTerrain::VanillaTerrain_Draw("intro_island.gti", "Bin\\w_intro_island.gzp"); });
+        // Renderer's own frame (0x7370→0x7340: BeginScene+Clear+scene+EndScene). Used to
+        // Frida-capture the real frame method sequence (which slots fire + the real Present).
+        int newState = VanillaRunFrame(0);
         if (frameCount < 4) {
-            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: DriveFrame(terrain)\n", frameCount); fflush(g_vTrace); }
+            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: RunFrame(0) -> %d\n", frameCount, newState); fflush(g_vTrace); }
         }
         frameCount++;
     }
