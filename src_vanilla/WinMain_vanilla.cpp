@@ -185,11 +185,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
         if (!g_vRunning) break;
         // Per-frame input poll (DirectInput7 keyboard + mouse — FUN_0051f0e0/1f0 port).
         VanillaInput_Poll();
-        // Stable loop: renderer's own frame (0x7370→0x7340). Present mechanism still TBD
-        // (slot+0x60 ≠ present, obj+0x288 ≠ GDI surface). Boot-sequence port is next.
-        int newState = VanillaRunFrame(0);
+        // Manual frame driver with CORRECT present: SetRT(obj+0x28c) → BeginScene → draw → EndScene → Flip(obj+0x28c vt[0x68]).
+        VanillaDriveFrame(nullptr);  // no draw hook for first test — just the present cycle
+        int newState = 0;
         if (frameCount < 3) {
-            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: RunFrame(0) -> %d\n", frameCount, newState); fflush(g_vTrace); }
+            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: DriveFrame(SetRT+Flip)\n", frameCount); fflush(g_vTrace); }
         }
         frameCount++;
     }
