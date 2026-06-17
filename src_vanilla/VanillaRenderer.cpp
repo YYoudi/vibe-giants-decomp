@@ -267,6 +267,37 @@ extern "C" int VanillaRunFrame(int frameState) {
 // in-scene (between BeginScene and EndScene) so submitted geometry is visible.
 // All renderer methods are __cdecl(this, args); ptrs read via single-indirection
 // *(void**)(renderer+offset).
+// Test if obj+0x288 (the presented surface) is VISIBLE by GetDC + FillRect (GDI). If the
+// window turns the fill color, obj+0x288 is the on-screen surface → we can draw 2D content
+// (intros/textures) there directly (bypassing the broken 3D present).
+extern "C" void VanillaTestSurfaceVisible() {
+    extern FILE* g_vTrace;
+    if (!g_vRenderer) return;
+    void** obj = (void**)g_vRenderer;
+    void* surf = obj[0x288 / 4];
+    if (!surf) return;
+    void** vt = *(void***)surf;
+    if (!vt) return;
+    // IDirectDrawSurface7: GetDC=vt[17]/byte0x44, ReleaseDC=vt[26]/byte0x68.
+    typedef long (__stdcall *PFN_GetDC)(void*, void**);
+    typedef long (__stdcall *PFN_RelDC)(void*, void*);
+    auto getdc = (PFN_GetDC)vt[0x44 / 4];
+    auto reldc = (PFN_RelDC)vt[0x68 / 4];
+    if (!getdc || !reldc) { if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] obj+0x288 no GetDC/ReleaseDC (vt[17]=%p vt[26]=%p)\n", getdc, reldc); fflush(g_vTrace); } return; }
+    void* hdc = nullptr;
+    long hr = getdc(surf, &hdc);
+    if (hr == 0 && hdc) {
+        // Fill the whole surface bright magenta (GDI) — if visible, the window turns magenta.
+        void* brush = CreateSolidBrush(0x00FF00FF);  // magenta (BGR)
+        RECT r = { 0, 0, 640, 480 };
+        FillRect((void*)hdc, &r, brush);
+        DeleteObject(brush);
+        reldc(surf, hdc);
+        if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] obj+0x288 GetDC OK + FillRect magenta (surface=%p hdc=%p)\n", surf, hdc); fflush(g_vTrace); }
+    } else {
+        if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] obj+0x288 GetDC FAILED hr=0x%lx (not a GDI surface?)\n", (unsigned long)hr); fflush(g_vTrace); }
+    }
+}
 typedef void (__cdecl *PFN_RenderMethod0)(void* self);   // (this) methods
 extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     extern FILE* g_vTrace;
