@@ -291,28 +291,64 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     extern FILE* g_vTrace;
     if (!g_vRenderer) return;
     void** obj = (void**)g_vRenderer;
-    void* wrapper = obj[0x294 / 4];   // IDirect3DDevice7
-    void** wvt = wrapper ? *(void***)wrapper : nullptr;
-    void* flipped = obj[0x28c / 4];  // the surface 0x7370 Flips (vt[0x68]) — the REAL present target
-    if (!wrapper || !wvt || !flipped) return;
 
-    // FIX: Set the D3D device's render target to obj+0x28c (the Flipped surface) so
-    // DrawPrimitive draws where the Flip will show it.
-    PFN_SetRT setRT = (PFN_SetRT)(uintptr_t)wvt[0x20 / 4];   // vt[8]=SetRenderTarget
-    long hrRT = setRT ? setRT(wrapper, flipped, 0) : -1;
-    // BeginScene (vt[5]=byte0x14), EndScene (vt[6]=byte0x18), on the D3D wrapper.
-    PFN_COM0 beginScene = (PFN_COM0)(uintptr_t)wvt[0x14 / 4];
-    PFN_COM0 endScene   = (PFN_COM0)(uintptr_t)wvt[0x18 / 4];
-    // obj+0x28c vtable: vt[0x64]=Lock/BeginFrame (0x7340 calls before scene), vt[0x68]=Flip (0x7370).
-    void** fvt = *(void***)flipped;
-    PFN_Flip lockFrame = (PFN_Flip)(uintptr_t)(fvt ? fvt[0x64 / 4] : nullptr);
-    PFN_Flip flip       = (PFN_Flip)(uintptr_t)(fvt ? fvt[0x68 / 4] : nullptr);
-    long hrLock = lockFrame ? lockFrame(flipped, 0) : -1;
+    // Drive the EXACT front-table frame sequence the original uses during intros:
+    // slot+0x90 (BeginScene+Clear) → slot+0x98 (DrawPrimitive, 0 verts) → slot+0x94 (EndScene).
+    // The original fires these per frame; the recomp doesn't (empty scene) → no present → black.
+    // Even with 0 verts, the BeginScene/EndScene bracket + frame cycle should trigger the present.
+    typedef void (__cdecl *PFN_Cdecl0)(void*);
+    typedef void (__cdecl *PFN_Cdecl1)(void*, uint32_t);
+    PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];   // BeginScene+Clear
+    PFN_Cdecl1 m98 = (PFN_Cdecl1)(uintptr_t)obj[0x98 / 4];   // DrawPrimitive (vertexCount arg)
+    PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];   // EndScene
+    if (m90) m90(g_vRenderer);        // BeginScene + Clear
+    if (drawHook) drawHook();          // optional engine draw
+    if (m98) m98(g_vRenderer, 0);      // DrawPrimitive (0 verts — completes frame cycle)
+    if (m94) m94(g_vRenderer);        // EndScene
+    if (g_vTrace) { static int n=0; if(n<3){fprintf(g_vTrace,"[VRENDER] DriveFrame: 0x90+0x98(0)+0x94 (original intro sequence)\n");fflush(g_vTrace);n++;} }
 
-    if (beginScene) beginScene(wrapper);
-    if (drawHook) drawHook();
-    if (endScene) endScene(wrapper);
-    long hrFlip = flip ? flip(flipped, 0) : -1;
-    if (g_vTrace) { static int n=0; if(n<3){fprintf(g_vTrace,"[VRENDER] DriveFrame: Lock=%lx Flip=%lx\n",(unsigned long)hrLock,(unsigned long)hrFlip);fflush(g_vTrace);n++;} }
-    if (g_vTrace) { static int n=0; if(n<3){fprintf(g_vTrace,"[VRENDER] DriveFrame: SetRT(obj+0x28c)=%lx BeginScene+EndScene OK Flip=%lx\n",(unsigned long)hrRT,(unsigned long)hrFlip);fflush(g_vTrace);n++;} }
+    // GDI PRESENT: get the D3D device's render-target surface → GetDC → BitBlt to the window.
+    // This bypasses the renderer's internal present (which we haven't found) by directly
+    // copying the RT pixels to the window via GDI. If the RT has content (Clear/draw), the
+    // window shows it.
+    {
+        void* wrapper2 = obj[0x294 / 4];
+        void** wvt2 = wrapper2 ? *(void***)wrapper2 : nullptr;
+        if (wrapper2 && wvt2) {
+            typedef long (__stdcall *PFN_GetRT)(void*, void**);
+            typedef long (__stdcall *PFN_SurfGetDC)(void*, void**);
+            typedef long (__stdcall *PFN_SurfRelDC)(void*, void*);
+            PFN_GetRT getRT = (PFN_GetRT)(uintptr_t)wvt2[0x24 / 4];
+            void* rt = nullptr;
+            if (getRT) getRT(wrapper2, &rt);
+            if (rt) {
+                void** rvt = *(void***)rt;
+                PFN_SurfGetDC getDC = (PFN_SurfGetDC)(uintptr_t)(rvt ? rvt[0x44 / 4] : nullptr); // vt[17]=GetDC
+                PFN_SurfRelDC relDC = (PFN_SurfRelDC)(uintptr_t)(rvt ? rvt[0x68 / 4] : nullptr); // vt[26]=ReleaseDC
+                if (getDC && relDC) {
+                    void* rtHDC = nullptr;
+                    long hr = getDC(rt, &rtHDC);
+                    if (hr == 0 && rtHDC) {
+                        // Draw a bright test rect on the RT so the BitBlt shows SOMETHING.
+                        RECT rr = {50, 50, 300, 300};
+                        void* br = CreateSolidBrush(0x0000FF); // red (BGR)
+                        FillRect((void*)rtHDC, &rr, br);
+                        DeleteObject(br);
+                        HWND hw = nullptr;
+                        // Get the window HWND from obj+0x26c (the renderer stores it)
+                        void* hwndv = obj[0x26c / 4];
+                        if (hwndv) hw = (HWND)hwndv;
+                        if (hw) {
+                            void* winDC = GetDC(hw);
+                            if (winDC) {
+                                BitBlt((void*)winDC, 0, 0, 640, 480, (void*)rtHDC, 0, 0, 0xCC0020 /*SRCCOPY*/);
+                                ReleaseDC(hw, (void*)winDC);
+                            }
+                        }
+                        relDC(rt, rtHDC);
+                    }
+                }
+            }
+        }
+    }
 }
