@@ -267,6 +267,10 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         return;
     }
     ((PFN_RenderMethod0)mBeginClear)(g_vRenderer);   // BeginScene + Clear
+    // obj+0x42c is the Present "ready" gate flag (slot+0x60/0xc880 skips present if 0).
+    // It's normally set by the full engine display-init (methods [0x1c-0x1f]); force it so
+    // Present actually flips our back buffer to the window.
+    *(uintptr_t*)((char*)g_vRenderer + 0x42c) = 1;
     if (drawHook) drawHook();                        // engine geometry (in-scene)
     ((PFN_RenderMethod0)mEndScene)(g_vRenderer);     // EndScene
     ((PFN_RenderMethod0)mPresent)(g_vRenderer);      // Present
