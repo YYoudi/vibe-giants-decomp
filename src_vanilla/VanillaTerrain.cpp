@@ -23,6 +23,46 @@
 
 extern FILE* g_vTrace;
 
+// ── Minimal D3D7 matrix helpers (row-major, D3D row-vector convention v' = v*M) ──
+struct Vec3 { float x, y, z; };
+static Vec3 vsub(Vec3 a, Vec3 b) { return { a.x - b.x, a.y - b.y, a.z - b.z }; }
+static float vdot(Vec3 a, Vec3 b) { return a.x * b.x + a.y * b.y + a.z * b.z; }
+static Vec3 vcross(Vec3 a, Vec3 b) { return { a.y*b.z - a.z*b.y, a.z*b.x - a.x*b.z, a.x*b.y - a.y*b.x }; }
+static Vec3 vnorm(Vec3 a) { float l = sqrtf(vdot(a, a)); if (l < 1e-9f) l = 1; return { a.x/l, a.y/l, a.z/l }; }
+using Mtx = float[16];   // row-major: m[r*4+c]
+static void mtxIdentity(Mtx m) { for (int i=0;i<16;i++) m[i]=0; m[0]=m[5]=m[10]=m[15]=1; }
+static void mtxLookAtLH(Mtx m, Vec3 eye, Vec3 at, Vec3 up) {
+    // D3D LH look-at (row-major). zaxis = forward(at-eye), xaxis = cross(up,zaxis), yaxis=cross(zaxis,xaxis)
+    Vec3 z = vnorm(vsub(at, eye));
+    Vec3 x = vnorm(vcross(up, z));
+    Vec3 y = vcross(z, x);
+    m[0]=x.x; m[1]=y.x; m[2]=z.x; m[3]=0;
+    m[4]=x.y; m[5]=y.y; m[6]=z.y; m[7]=0;
+    m[8]=x.z; m[9]=y.z; m[10]=z.z; m[11]=0;
+    m[12]=-vdot(x,eye); m[13]=-vdot(y,eye); m[14]=-vdot(z,eye); m[15]=1;
+}
+static void mtxPerspectiveFovLH(Mtx m, float fovy, float aspect, float zn, float zf) {
+    float ys = 1.0f / tanf(fovy * 0.5f);
+    float xs = ys / aspect;
+    for (int i=0;i<16;i++) m[i]=0;
+    m[0]=xs; m[5]=ys; m[10]=zf/(zf-zn); m[11]=1; m[14]=-zn*zf/(zf-zn);
+}
+// SetTransform (vt[11]=byte 0x2c) + SetRenderState (vt[20]=byte 0x50) on the wrapper.
+typedef long (__stdcall *PFN_SetXform)(void*, uint32_t, const float*);
+typedef long (__stdcall *PFN_SetRS)(void*, uint32_t, uint32_t);
+static void SetupCamera(void* wrapper, void** wvt) {
+    Mtx world, view, proj;
+    mtxIdentity(world);
+    // Island spans x[0..4600] y[0..5680] z[-40..760]; center ~(2300,2840,300).
+    mtxLookAtLH(view, {2300.f, -4000.f, 2500.f}, {2300.f, 2840.f, 0.f}, {0.f, 0.f, 1.f});
+    mtxPerspectiveFovLH(proj, 1.0472f /*60deg*/, 640.f/480.f, 10.f, 30000.f);
+    auto sx = (PFN_SetXform)wvt[0x2c / 4];
+    if (sx) { sx(wrapper, 1 /*WORLD*/, world); sx(wrapper, 2 /*VIEW*/, view); sx(wrapper, 3 /*PROJECTION*/, proj); }
+    auto sr = (PFN_SetRS)wvt[0x50 / 4];
+    if (sr) { sr(wrapper, 22 /*D3DRENDERSTATE_CULLMODE*/, 1 /*D3DCULL_NONE*/);
+              sr(wrapper, 7  /*D3DRENDERSTATE_ZENABLE*/, 0 /*FALSE — show all*/); }
+}
+
 namespace VanillaTerrain {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────
@@ -190,6 +230,8 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
     if (!wvt) { trace("[VTERRAIN] wrapper vtable NULL\n"); return 0; }
     void* drawPrim = wvt[0x64 / 4];   // vt[25] = DrawPrimitive
     if (!drawPrim) { trace("[VTERRAIN] DrawPrimitive (vt[0x64]) NULL\n"); return 0; }
+    // Set up camera (world/view/projection + cull/z) so the world-coord terrain maps to screen.
+    SetupCamera(wrapper, wvt);
     typedef long (__stdcall *PFN_DrawPrim)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
     int vCount = (int)verts.size();
     const uint32_t fvf = 0x002 /*D3DFVF_XYZ*/ | 0x040 /*D3DFVF_DIFFUSE*/ | 0x100 /*D3DFVF_TEX1*/;
