@@ -16,6 +16,7 @@
 #include "VanillaBinLoader.h"
 #include "VanillaText.h"
 #include "VanillaTGA.h"
+#include "VanillaLoadScreen.h"
 #include "VanillaFeed.h"
 #include "VanillaInput.h"
 #include "VanillaTextureLoad.h"
@@ -193,6 +194,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     VanillaGBS::SelfTest();
     // ── TGA texture parser self-test (parse intro_sea.tga) ──
     VanillaTGA::SelfTest();
+    // ── Loading-screen picker self-test (FUN_0045a530 port: intro_island -> giants_loading) ──
+    VanillaLoadScreen::SelfTest();
     // ── Localized-text lookup (callback[11] GetLocalizedString: GTextEnglish.bin) ──
     if (VanillaText::Load("English")) {
         if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] text lookup '$IDnew' = '%s'\n", VanillaText::Lookup("$IDnew")); fflush(g_vTrace); }
