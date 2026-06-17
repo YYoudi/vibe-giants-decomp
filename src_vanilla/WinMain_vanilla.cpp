@@ -36,6 +36,7 @@ extern "C" void VanillaReadDisplayConfig();
 extern "C" void VanillaDumpWrapperVtable(void);
 extern "C" int VanillaRunFrame(int frameState);
 extern "C" void VanillaDriveFrame(void (*drawHook)(void));   // manual BeginScene→hook→EndScene→Present
+extern "C" void VanillaTestSurfaceVisible(void);              // GetDC(obj+0x288) + FillRect — surface visibility test
 
 // ─── Vanilla WinMain (FUN_005222c0) — structure ported from decompiled ──
 // The vanilla binary fuses InitializeEngine + MainGameLoop into this one
@@ -184,10 +185,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
         if (!g_vRunning) break;
         // Per-frame input poll (DirectInput7 keyboard + mouse — FUN_0051f0e0/1f0 port).
         VanillaInput_Poll();
-        // Renderer's own frame (0x7370→0x7340: BeginScene+Clear+scene+EndScene). Used to
-        // Frida-capture the real frame method sequence (which slots fire + the real Present).
+        // Stable loop: renderer's own frame (0x7370→0x7340). Present mechanism still TBD
+        // (slot+0x60 ≠ present, obj+0x288 ≠ GDI surface). Boot-sequence port is next.
         int newState = VanillaRunFrame(0);
-        if (frameCount < 4) {
+        if (frameCount < 3) {
             if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: RunFrame(0) -> %d\n", frameCount, newState); fflush(g_vTrace); }
         }
         frameCount++;
