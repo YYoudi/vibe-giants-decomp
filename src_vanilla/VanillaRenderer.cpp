@@ -5,6 +5,12 @@
 #include <windows.h>
 #include <cstdio>
 #include <cstdint>
+#include "VanillaVFS.h"
+#include "VanillaTGA.h"
+
+// Input (for intro skip — click/space).
+extern "C" bool VanillaInput_KeyDown(int dik);
+extern "C" void VanillaInput_Poll(void);
 
 // Vanilla globals (DAT_ addresses from vanilla binary):
 static FARPROC g_GDVSysCreate = nullptr;   // DAT_005dc01c
@@ -329,11 +335,48 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                     void* rtHDC = nullptr;
                     long hr = getDC(rt, &rtHDC);
                     if (hr == 0 && rtHDC) {
-                        // Draw a bright test rect on the RT so the BitBlt shows SOMETHING.
-                        RECT rr = {50, 50, 300, 300};
-                        void* br = CreateSolidBrush(0x0000FF); // red (BGR)
-                        FillRect((void*)rtHDC, &rr, br);
-                        DeleteObject(br);
+                        // INTRO SEQUENCE: cycle through the 3 intro images (dmlarge000 → planetmoon → legal)
+                        // matching intros.bin. Each shown for ~5s (test) or click to skip.
+                        struct IntroState {
+                            int current = 0; // 0=dmlarge000, 1=planetmoon, 2=legal
+                            VanillaTGA::Image imgs[3];
+                            bool loaded = false;
+                            uint32_t showStart = 0;
+                        };
+                        static IntroState st;
+                        if (!st.loaded) {
+                            // Load the 3 intro textures. dmlarge000+planetmoon in xx_intro.gzp, legal in VO_SfxFrench.gzp.
+                            for (int i = 0; i < 3; i++) {
+                                const char* names[] = {"dmlarge000.tga","planetmoon.tga","legalfrench.tga"};
+                                const char* gzps[] = {"Bin\\xx_intro.gzp","Bin\\xx_intro.gzp","Bin\\VO_SfxFrench.gzp"};
+                                auto data = VanillaVFS::GzpReadFile(gzps[i], names[i]);
+                                if (!data.empty()) st.imgs[i] = VanillaTGA::Parse(data.data(), data.size());
+                            }
+                            st.loaded = true;
+                            st.showStart = GetTickCount();
+                        }
+                        // Click to skip (check DIK_SPACE or mouse button)
+                        VanillaInput_Poll();
+                        uint32_t now = GetTickCount();
+                        if (VanillaInput_KeyDown(0x39) /*DIK_SPACE*/ || (now - st.showStart) > 5000) {
+                            st.current = (st.current + 1) % 3;
+                            st.showStart = now;
+                        }
+                        // Display current intro image
+                        auto& img = st.imgs[st.current];
+                        if (img.ok && img.pixels.size() > 0) {
+                            BITMAPINFO bi = {};
+                            bi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+                            bi.bmiHeader.biWidth = img.width;
+                            bi.bmiHeader.biHeight = img.height;
+                            bi.bmiHeader.biPlanes = 1;
+                            bi.bmiHeader.biBitCount = img.bitsPerPixel;
+                            bi.bmiHeader.biCompression = 0;
+                            SetStretchBltMode((void*)rtHDC, 3 /*STRETCH_HALFTONE for better quality*/);
+                            StretchDIBits((void*)rtHDC, 0, 0, 640, 480,
+                                          0, 0, img.width, img.height,
+                                          img.pixels.data(), &bi, 0, 0xCC0020 /*SRCCOPY*/);
+                        }
                         HWND hw = nullptr;
                         // Get the window HWND from obj+0x26c (the renderer stores it)
                         void* hwndv = obj[0x26c / 4];
