@@ -406,40 +406,13 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         if (g_vTrace) { static int tm2=0; if(tm2<2){fprintf(g_vTrace,"[BOOT] MENU: terrain draw returned OK\n");fflush(g_vTrace);tm2++;} }
         if (m94) m94(g_vRenderer);                                // EndScene
 
-        // Client rect for the BitBlt extent.
-        RECT crc; GetClientRect((HWND)(uintptr_t)obj[0x26c / 4], &crc);
-        int cw = crc.right - crc.left, ch = crc.bottom - crc.top;
-        if (cw > 640) cw = 640;        // clamp to device RT (640x480)
-        if (ch > 480) ch = 480;
-
-        // GDI present: GetDC(device RT) → BitBlt(RT → window).
-        void* wrapper2 = obj[0x294 / 4];
-        void** wvt2 = wrapper2 ? *(void***)wrapper2 : nullptr;
-        if (wrapper2 && wvt2) {
-            typedef long (__stdcall *PFN_GetRT)(void*, void**);
-            typedef long (__stdcall *PFN_SurfGetDC)(void*, void**);
-            typedef long (__stdcall *PFN_SurfRelDC)(void*, void*);
-            PFN_GetRT getRT = (PFN_GetRT)(uintptr_t)wvt2[0x24 / 4];
-            void* rt = nullptr;
-            if (getRT) getRT(wrapper2, &rt);
-            if (rt) {
-                void** rvt = *(void***)rt;
-                PFN_SurfGetDC getDC = (PFN_SurfGetDC)(uintptr_t)(rvt ? rvt[0x44 / 4] : nullptr);
-                PFN_SurfRelDC relDC = (PFN_SurfRelDC)(uintptr_t)(rvt ? rvt[0x68 / 4] : nullptr);
-                void* rtHDC = nullptr;
-                if (getDC && relDC && getDC(rt, &rtHDC) == 0 && rtHDC) {
-                    HWND hw = (HWND)(uintptr_t)obj[0x26c / 4];
-                    if (hw) {
-                        void* winDC = GetDC(hw);
-                        if (winDC) {
-                            BitBlt((void*)winDC, 0, 0, cw, ch, (void*)rtHDC, 0, 0, 0xCC0020 /*SRCCOPY*/);
-                            ReleaseDC(hw, (void*)winDC);
-                        }
-                    }
-                    relDC(rt, rtHDC);
-                }
-            }
-        }
+        // REAL present via the renderer's end-of-frame slot +0xa8 (DX7_METHOD_MAP_v2.md).
+        // The internal present (+0x60) is gated by obj+0x42c (present-ready flag) — set it.
+        // This replaces the former GDI BitBlt workaround (GetDC(RT)→BitBlt→window).
+        PFN_Cdecl0 m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];    // Present (end-of-frame)
+        obj[0x42c / 4] = (void*)1;                                 // present-ready gate
+        if (m_a8) m_a8(g_vRenderer);
+        if (g_vTrace) { static int tp=0; if(tp<2){fprintf(g_vTrace,"[BOOT] MENU: +0xa8 Present called\n");fflush(g_vTrace);tp++;} }
         return;
     }
 
