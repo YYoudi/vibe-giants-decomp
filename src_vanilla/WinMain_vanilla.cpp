@@ -33,6 +33,7 @@ static bool g_vRunning = true;
 extern "C" int VanillaLoadRenderer(const char* pathPrefix, const char* rendererName);
 extern "C" void* VanillaInitRenderer(HWND hWnd);
 extern "C" void VanillaReadDisplayConfig();
+extern "C" void VanillaDumpWrapperVtable(void);
 extern "C" int VanillaRunFrame(int frameState);
 extern "C" void VanillaDriveFrame(void (*drawHook)(void));   // manual BeginScene→hook→EndScene→Present
 
@@ -96,6 +97,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
             // Vanilla WinMain next step: read the current display config (method [0x1b]=0xc970).
             // Methods are __cdecl(this-as-first-arg) per disasm — VanillaReadDisplayConfig handles that.
             VanillaReadDisplayConfig();
+            VanillaDumpWrapperVtable();
         }
     }
 
