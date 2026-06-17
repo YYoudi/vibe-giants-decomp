@@ -60,7 +60,8 @@ static void SetupCamera(void* wrapper, void** wvt) {
     if (sx) { sx(wrapper, 1 /*WORLD*/, world); sx(wrapper, 2 /*VIEW*/, view); sx(wrapper, 3 /*PROJECTION*/, proj); }
     auto sr = (PFN_SetRS)wvt[0x50 / 4];
     if (sr) { sr(wrapper, 22 /*D3DRENDERSTATE_CULLMODE*/, 1 /*D3DCULL_NONE*/);
-              sr(wrapper, 7  /*D3DRENDERSTATE_ZENABLE*/, 0 /*FALSE — show all*/); }
+              sr(wrapper, 7  /*D3DRENDERSTATE_ZENABLE*/, 0 /*FALSE — show all*/);
+              sr(wrapper, 27 /*D3DRENDERSTATE_ALPHABLENDENABLE*/, 0 /*FALSE — opaque*/); }
 }
 
 namespace VanillaTerrain {
@@ -96,7 +97,7 @@ static void trace(const char* fmt, ...) {
 // 0x00RRGGBB (the renderer's diffuse format per FUN_00438530 which writes
 // 0xffffff for unlit and a packed value from the cell otherwise).
 static uint32_t packRGB(uint8_t r, uint8_t g, uint8_t b) {
-    return (uint32_t(r) << 16) | (uint32_t(g) << 8) | uint32_t(b);
+    return 0xFF000000u | (uint32_t(r) << 16) | (uint32_t(g) << 8) | uint32_t(b);  // alpha=0xFF opaque
 }
 
 // Returns the number of triangles appended. out is appended to.
