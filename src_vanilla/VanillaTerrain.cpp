@@ -260,6 +260,8 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
     // triangle proved reaches the screen). Camera = same params as SetupCamera.
     // Row-vector convention: v' = v · M (matches mtxLookAtLH/mtxPerspectiveFovLH above).
     Mtx view, proj;
+    // Working camera (shows the island solid + centered). Island spans x[0..4560]
+    // y[0..5680] z[-40..760], center (2280,2840).
     mtxLookAtLH(view, {2300.f, -4000.f, 2500.f}, {2300.f, 2840.f, 0.f}, {0.f, 0.f, 1.f});
     mtxPerspectiveFovLH(proj, 1.0472f /*60deg*/, 640.f / 480.f, 10.f, 30000.f);
     struct ScreenV { float x, y, z, rhw; uint32_t diff; };  // XYZRHW|DIFFUSE=0x044, 20B
