@@ -161,7 +161,7 @@ void seekBin(BinFile& f, uint32_t offset) {
 // ============================================================================
 // FUN_004b7c50 — faithful port of the vanilla .BIN loader.
 // ============================================================================
-extern "C" void FUN_004b7c50(const char* binName, float a2, int a3) {
+extern "C" void FUN_004b7c50_legacy_light(const char* binName, float a2, int a3) {
     (void)a3;
 
     trace("[BIN] FUN_004b7c50(\"%s\", %g, %d)\n", binName ? binName : "(null)", a2, a3);

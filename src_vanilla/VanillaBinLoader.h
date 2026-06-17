@@ -43,7 +43,7 @@ extern "C" {
     // Opens binName, validates magic 0x1a0002e5, reads the 0x1c header, seeks to
     // each section offset (SetFilePointer model), and logs object placements from
     // the odef blob. Does not mutate engine lists.
-    void FUN_004b7c50(const char* binName, float a2, int a3);
+    void FUN_004b7c50(char* binName, float a2, float a3);   // canonical sig (full port VanillaBinLoaderFull.cpp)
 }
 
 namespace VanillaBinLoader {

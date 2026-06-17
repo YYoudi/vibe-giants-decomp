@@ -14,6 +14,7 @@
 #include "VanillaGTI.h"
 #include "VanillaGBS.h"
 #include "VanillaBinLoader.h"
+#include "VanillaBinLoaderFull.h"   // safe SelfTest (reads .bin + validates magic)
 #include "VanillaText.h"
 #include "VanillaTGA.h"
 #include "VanillaLoadScreen.h"
@@ -216,7 +217,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // ── .BIN level loader self-test (FUN_004b7c50 port: parse w_intro_island.bin) ──
     // NOTE: body alignment under fix by subagent; may loop on garbage count — last so it
     // doesn't block the other self-tests if it hangs.
-    VanillaBinLoader::SelfTest();
+    VanillaBinLoaderFull::SelfTest();   // safe: reads w_intro_island.bin + validates magic (full loader dormant)
 
     // ── Feed the level's texture list to the renderer (FUN_004b7c50 sub-path:
     //    SEEK header[1] name_list → FUN_0050d8f0 populates g_TextureEntityList →
