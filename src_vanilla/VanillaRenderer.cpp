@@ -196,6 +196,29 @@ extern "C" void VanillaReadDisplayConfig() {
     }
 }
 
+// Dump the renderer's private wrapper object vtable (wrapper@obj+0x294) + key front-table
+// slots, so the vertex-buffer lock + DrawPrimitive methods can be identified (the terrain
+// draw crashes because slot+0x98 reads from a locked VB — we need the VB-lock slot).
+extern "C" void VanillaDumpWrapperVtable() {
+    extern FILE* g_vTrace;
+    if (!g_vRenderer || !g_vTrace) return;
+    uintptr_t obj = (uintptr_t)g_vRenderer;
+    uintptr_t wrapper = *(uintptr_t*)(obj + 0x294);
+    if (!wrapper) { fprintf(g_vTrace, "[VRENDER] wrapper@obj+0x294 = NULL\n"); fflush(g_vTrace); return; }
+    uintptr_t vt = *(uintptr_t*)wrapper;
+    fprintf(g_vTrace, "[VRENDER] wrapper=%08x vtable=%08x\n", (unsigned)wrapper, (unsigned)vt);
+    fprintf(g_vTrace, "[VRENDER] wrapper vt slots:\n");
+    for (int i = 0; i < 48; i++) {
+        uintptr_t fn = *(uintptr_t*)(vt + i * 4);
+        fprintf(g_vTrace, "   vt[%02x (+0x%02x)] = %08x\n", i, i * 4, (unsigned)fn);
+    }
+    // front-table slots
+    fprintf(g_vTrace, "[VRENDER] front-table: ");
+    int offs[] = {0x60, 0x90, 0x94, 0x98, 0x9c, 0xa0, 0xa4, 0xb0, 0xb4, 0xc0};
+    for (int o : offs) fprintf(g_vTrace, "+%02x=%08x ", o, (unsigned)*(uintptr_t*)(obj + o));
+    fprintf(g_vTrace, "\n"); fflush(g_vTrace);
+}
+
 // ─── Per-frame render entry (renderer method [0x20] = obj+0x80 = RVA 0x7370) ───
 // The vanilla game loop's core: `frameState = (*obj[0x20])(obj, frameState)`.
 // 0x7370 calls obj->[0x28c]->vtable[0x68] (a D3D/DDraw COM interface method, likely
@@ -224,8 +247,7 @@ extern "C" int VanillaRunFrame(int frameState) {
     return r;
 }
 
-// ─── Manual frame driver: BeginScene → (draw hook) → EndScene → Present ───
-// The renderer's 0x7340 does the whole frame internally (no engine-draw injection point).
+// ─── Manual frame driver: BeginScene → (draw hook) → EndScene → Present ───// The renderer's 0x7340 does the whole frame internally (no engine-draw injection point).
 // To draw ENGINE geometry (terrain/objects) we drive the frame manually using the mapped
 // renderer methods (DX7_METHOD_MAP.md): slot+0x90 (0x86a0)=BeginScene+Clear+scene-open,
 // slot+0x94 (0x87a0)=EndScene, slot+0x60 (0xc880)=Present/Flip. The drawHook runs
