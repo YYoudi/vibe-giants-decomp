@@ -43,6 +43,11 @@ extern "C" void VanillaTestSurfaceVisible(void);              // GetDC(obj+0x288
 // function. In 1.5 they were split (InitializeEngine 0x62e1a0 + MainGameLoop
 // 0x62d100). The vanilla version is 2339 bytes, 77 callees.
 LRESULT CALLBACK VanillaWndProc(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
+    // Suppress background erase entirely. During boot (intros/loading) we draw
+    // double-buffered GDI each frame; Windows' default WM_ERASEBKGND would fill
+    // the window with the class brush BETWEEN our frames → visible black flash
+    // (the flicker). Returning 1 (= "erased, do nothing") prevents that tear.
+    if (msg == WM_ERASEBKGND) return 1;
     return DefWindowProcA(hWnd, msg, wp, lp);
 }
 
@@ -58,7 +63,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     wc.lpfnWndProc = VanillaWndProc;
     wc.hInstance = hInstance;
     wc.hCursor = LoadCursorA(nullptr, IDC_ARROW);
-    wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
+    wc.hbrBackground = nullptr;   // NO auto-erase: boot draws double-buffered; avoids flicker
     wc.lpszClassName = "Example";  // vanilla: class name = "Example" (s_Example_0057fb64)
     ATOM atom = RegisterClassA(&wc);
     if (!atom) { if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] RegisterClass failed\n"); fflush(g_vTrace); } return 1; }
