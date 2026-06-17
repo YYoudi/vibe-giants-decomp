@@ -34,6 +34,7 @@ extern "C" int VanillaLoadRenderer(const char* pathPrefix, const char* rendererN
 extern "C" void* VanillaInitRenderer(HWND hWnd);
 extern "C" void VanillaReadDisplayConfig();
 extern "C" int VanillaRunFrame(int frameState);
+extern "C" void VanillaDriveFrame(void (*drawHook)(void));   // manual BeginScene→hook→EndScene→Present
 
 // ─── Vanilla WinMain (FUN_005222c0) — structure ported from decompiled ──
 // The vanilla binary fuses InitializeEngine + MainGameLoop into this one
@@ -181,16 +182,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
         if (!g_vRunning) break;
         // Per-frame input poll (DirectInput7 keyboard + mouse — FUN_0051f0e0/1f0 port).
         VanillaInput_Poll();
-        // Per-frame render driver (vanilla method [0x20]). Force frameState=0 every
-        // frame to drive the render fn (0x7340 → scene render 0x71a0). With an empty
-        // scene (obj+0x4f0 self-list) the scene walk is a no-op, so this is safe and
-        // exercises the BeginScene/Clear/EndScene/Present path. (Faithful to vanilla's
-        // 0x7370(obj,0)→0x7340 render trigger.)
-        int newState = VanillaRunFrame(0);
-        if (frameCount < 8) {
-            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: RunFrame(0) -> %d\n", frameCount, newState); fflush(g_vTrace); }
+        // Manual frame driver: BeginScene → terrain draw (in-scene) → EndScene → Present.
+        // Injects the engine terrain draw between BeginScene and EndScene so submitted
+        // geometry is visible (the renderer's 0x7340 does the frame internally with no
+        // engine-draw injection point).
+        VanillaDriveFrame(nullptr);   // test: BeginScene→EndScene→Present with no draw hook
+        if (frameCount < 4) {
+            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: DriveFrame(nohook)\n", frameCount); fflush(g_vTrace); }
         }
-        frameState = newState;
         frameCount++;
     }
 

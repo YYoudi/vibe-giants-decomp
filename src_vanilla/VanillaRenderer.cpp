@@ -223,3 +223,29 @@ extern "C" int VanillaRunFrame(int frameState) {
     int r = ((PFN_RunFrame)method20)(g_vRenderer, frameState);
     return r;
 }
+
+// ─── Manual frame driver: BeginScene → (draw hook) → EndScene → Present ───
+// The renderer's 0x7340 does the whole frame internally (no engine-draw injection point).
+// To draw ENGINE geometry (terrain/objects) we drive the frame manually using the mapped
+// renderer methods (DX7_METHOD_MAP.md): slot+0x90 (0x86a0)=BeginScene+Clear+scene-open,
+// slot+0x94 (0x87a0)=EndScene, slot+0x60 (0xc880)=Present/Flip. The drawHook runs
+// in-scene (between BeginScene and EndScene) so submitted geometry is visible.
+// All renderer methods are __cdecl(this, args); ptrs read via single-indirection
+// *(void**)(renderer+offset).
+typedef void (__cdecl *PFN_RenderMethod0)(void* self);   // (this) methods
+extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
+    extern FILE* g_vTrace;
+    if (!g_vRenderer) return;
+    void** obj = (void**)g_vRenderer;
+    void* mBeginClear = obj[0x90 / 4];   // slot +0x90 = 0x86a0 (BeginScene + Clear + scene-open)
+    void* mEndScene   = obj[0x94 / 4];   // slot +0x94 = 0x87a0 (EndScene)
+    void* mPresent    = obj[0x60 / 4];   // slot +0x60 = 0xc880 (Present/Flip)
+    if (!mBeginClear || !mEndScene || !mPresent) {
+        if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] DriveFrame: missing method (begin=%p end=%p present=%p)\n", mBeginClear, mEndScene, mPresent); fflush(g_vTrace); }
+        return;
+    }
+    ((PFN_RenderMethod0)mBeginClear)(g_vRenderer);   // BeginScene + Clear
+    if (drawHook) drawHook();                        // engine geometry (in-scene)
+    ((PFN_RenderMethod0)mEndScene)(g_vRenderer);     // EndScene
+    ((PFN_RenderMethod0)mPresent)(g_vRenderer);      // Present
+}
