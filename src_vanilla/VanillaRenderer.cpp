@@ -349,14 +349,61 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         st.phaseStart = GetTickCount();
     }
 
-    // ── MENU phase: hand control to the real D3D renderer frame ──
-    // (empty scene → black; feeding obj+0x4f0 = next chantier).
+    // ── MENU phase: manual D3D frame bracket + terrain + GDI RT-present ──
+    // The renderer's own per-frame (0x7370 / method[0x20]) does NOT call callback[7]
+    // (SceneBegin/DrawTerrain) with our empty scene, so we drive the scene manually:
+    //   obj[0x90] = BeginScene + Clear   (renderer front-table, __cdecl(this))
+    //   obj[0x94] = EndScene
+    // Between them we draw the island heightfield on the device RT (in-scene), then
+    // present via the PROVEN path (commit 495b269): GetDC(device RT) → BitBlt(RT → window).
     if (st.phase == BOOT_MENU) {
         if (s_lastLoggedPhase != BOOT_MENU) {
-            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === reached MENU phase — driving real D3D frame (scene empty → black) ===\n"); fflush(g_vTrace); }
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU phase — manual bracket + terrain + GDI RT-present ===\n"); fflush(g_vTrace); }
             s_lastLoggedPhase = BOOT_MENU;
         }
-        VanillaRunFrame(1);
+        typedef void (__cdecl *PFN_Cdecl0)(void*);
+        PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];   // BeginScene + Clear
+        PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];   // EndScene
+        if (m90) m90(g_vRenderer);                                // BeginScene + Clear (device RT)
+        if (g_vTrace) { static int tm=0; if(tm<2){fprintf(g_vTrace,"[BOOT] MENU: terrain draw start\n");fflush(g_vTrace);} }
+        cbSceneBegin_DrawTerrain();                               // draw island on device RT (in-scene)
+        if (g_vTrace) { static int tm2=0; if(tm2<2){fprintf(g_vTrace,"[BOOT] MENU: terrain draw returned OK\n");fflush(g_vTrace);tm2++;} }
+        if (m94) m94(g_vRenderer);                                // EndScene
+
+        // Client rect for the BitBlt extent.
+        RECT crc; GetClientRect((HWND)(uintptr_t)obj[0x26c / 4], &crc);
+        int cw = crc.right - crc.left, ch = crc.bottom - crc.top;
+        if (cw > 640) cw = 640;        // clamp to device RT (640x480)
+        if (ch > 480) ch = 480;
+
+        // GDI present: GetDC(device RT) → BitBlt(RT → window).
+        void* wrapper2 = obj[0x294 / 4];
+        void** wvt2 = wrapper2 ? *(void***)wrapper2 : nullptr;
+        if (wrapper2 && wvt2) {
+            typedef long (__stdcall *PFN_GetRT)(void*, void**);
+            typedef long (__stdcall *PFN_SurfGetDC)(void*, void**);
+            typedef long (__stdcall *PFN_SurfRelDC)(void*, void*);
+            PFN_GetRT getRT = (PFN_GetRT)(uintptr_t)wvt2[0x24 / 4];
+            void* rt = nullptr;
+            if (getRT) getRT(wrapper2, &rt);
+            if (rt) {
+                void** rvt = *(void***)rt;
+                PFN_SurfGetDC getDC = (PFN_SurfGetDC)(uintptr_t)(rvt ? rvt[0x44 / 4] : nullptr);
+                PFN_SurfRelDC relDC = (PFN_SurfRelDC)(uintptr_t)(rvt ? rvt[0x68 / 4] : nullptr);
+                void* rtHDC = nullptr;
+                if (getDC && relDC && getDC(rt, &rtHDC) == 0 && rtHDC) {
+                    HWND hw = (HWND)(uintptr_t)obj[0x26c / 4];
+                    if (hw) {
+                        void* winDC = GetDC(hw);
+                        if (winDC) {
+                            BitBlt((void*)winDC, 0, 0, cw, ch, (void*)rtHDC, 0, 0, 0xCC0020 /*SRCCOPY*/);
+                            ReleaseDC(hw, (void*)winDC);
+                        }
+                    }
+                    relDC(rt, rtHDC);
+                }
+            }
+        }
         return;
     }
 
