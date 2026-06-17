@@ -28,3 +28,8 @@ Priorité : bit-fidelity (mesure→spec→port vanilla documenté→auto-vérif)
 - [Q4] Audio FUN_0051f900 (gs_ds.dll) port — src_vanilla/VanillaAudio.cpp — pending
 - [Q5] Core fn batch (VERSION_MAP_v2 EXACT/HIGH) — new RE_<fn>.cpp each — pending
 - [Q6] Renderer transform/texture path (for menu 3D fidelity) — pending
+
+## Batch progress (overnight 2026-06-18)
+DONE: Q1 renderer-method-map (DX7_METHOD_MAP_v2.md), Q2 VFS callbacks 15-17 (linked), Q4 audio full 59/59, FUN_0045a530 loading screen (verified giants_loading), scene-chain FUN_004913c0+FUN_004f3230 (linked, callees stubbed in VanillaStubs.cpp), MENU real +0xa8 Present (GDI hack removed).
+IN-PROGRESS: @subagent-E selector callees (FUN_0053c970/0052f960/0045a520/004b7640/004b77c0 → make selector real), @subagent-F .BIN loader FUN_004b7c50.
+NEXT: wire selector+.BIN loader into boot step 14; port remaining SetupGame callees; menu 3D via +0x20 projection (+0x14 world) per DX7_METHOD_MAP_v2.
