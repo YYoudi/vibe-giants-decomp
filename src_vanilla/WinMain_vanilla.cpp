@@ -197,14 +197,15 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     VanillaTGA::SelfTest();
     // ── Loading-screen picker self-test (FUN_0045a530 port: intro_island -> giants_loading) ──
     VanillaLoadScreen::SelfTest();
-    // ── Scene-selector self-test (FUN_004913c0 port: scan level table for intro_island) ──
-    VanillaSceneLoad_SelfTest();
     // ── Localized-text lookup (callback[11] GetLocalizedString: GTextEnglish.bin) ──
     if (VanillaText::Load("English")) {
         if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] text lookup '$IDnew' = '%s'\n", VanillaText::Lookup("$IDnew")); fflush(g_vTrace); }
     }
     // ── WorldList reader (FUN_004b77f0: reads worldlist*.bin → level table) ──
     FUN_004b77f0();
+    // ── Scene-selector self-test (FUN_004913c0 port: scan level table for intro_island) ──
+    //   runs AFTER FUN_004b77f0 so g_LevelTable is populated.
+    VanillaSceneLoad_SelfTest();
     // ── Activate the scene-pipeline gate (FUN_004290f0(1) → g_ScenePipelineGate=1).
     // The renderer's callback[20] (FUN_00523aa0) checks this gate each frame to drive
     // the scene dispatch. (Entities still need vtables via object_create_child to draw.)
