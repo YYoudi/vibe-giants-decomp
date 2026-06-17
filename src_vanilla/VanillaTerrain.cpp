@@ -64,6 +64,8 @@ static void SetupCamera(void* wrapper, void** wvt) {
               sr(wrapper, 27 /*D3DRENDERSTATE_ALPHABLENDENABLE*/, 0 /*FALSE — opaque*/); }
 }
 
+extern "C" int VanillaTerrain_DrawX(const char* a, const char* b) { return VanillaTerrain::VanillaTerrain_Draw(a, b); }
+
 namespace VanillaTerrain {
 
 // ─── Helpers ──────────────────────────────────────────────────────────────

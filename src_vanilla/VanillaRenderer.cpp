@@ -90,6 +90,19 @@ static const char* __cdecl Stub_GetLocalizedString(const char* key) {
 // walks). Wired to the real port in VanillaSceneDispatch.cpp.
 extern "C" void FUN_00523aa0(void);
 
+// callback[7] SceneBegin: the renderer calls this at scene-render start (during its own
+// frame, on the device's back-buffer render target, BEFORE the RT→presented-surface copy).
+// Drawing here puts geometry on the surface that actually gets presented. We use it to
+// inject the terrain heightfield (the manual frame driver skipped the copy → black screen).
+extern "C" int VanillaTerrain_DrawX(const char*, const char*);  // namespace VanillaTerrain wrapper (added below)
+static void __cdecl cbSceneBegin_DrawTerrain() {
+    extern FILE* g_vTrace;
+    static int s_n = 0;
+    if (s_n < 2) { if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] cbSceneBegin: drawing terrain in-renderer-frame\n"); fflush(g_vTrace); } }
+    VanillaTerrain_DrawX("intro_island.gti", "Bin\\w_intro_island.gzp");
+    s_n++;
+}
+
 // The renderer object returned by GDVSysCreate (vanilla global DAT_00654940). The
 // engine drives its ~55 thiscall methods (see RE_docs/DX7_RENDER_RECIPE.md) to render.
 extern "C" void* g_vRenderer = nullptr;   // DAT_00654940
@@ -108,7 +121,7 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
         (void*)Stub_EmptyStr, // 4  ErrorStringAccessor
         (void*)Stub_Void,     // 5  SecurityCheck
         (void*)Stub_Void,     // 6  PostFrameCallback
-        (void*)Stub_Void,     // 7  SceneBegin
+        (void*)cbSceneBegin_DrawTerrain, // 7  SceneBegin (inject terrain draw in-renderer-frame)
         (void*)Stub_Void,     // 8  SceneEnd
         (void*)Stub_Void,     // 9  PreRenderCheck
         (void*)Stub_Void,     // 10 BufferDeallocator
