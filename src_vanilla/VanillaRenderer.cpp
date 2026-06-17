@@ -5,12 +5,18 @@
 #include <windows.h>
 #include <cstdio>
 #include <cstdint>
+#include <cstring>
+#include <vector>
 #include "VanillaVFS.h"
 #include "VanillaTGA.h"
 
 // Input (for intro skip — click/space).
 extern "C" bool VanillaInput_KeyDown(int dik);
 extern "C" void VanillaInput_Poll(void);
+extern "C" uint32_t VanillaInput_MouseButtons(void);   // bitmask: bit0=LMB
+// The renderer's own per-frame entry (renderer method [0x20] = 0x7370): does the
+// full D3D frame internally (BeginScene/Clear/scene-walk/EndScene/present).
+extern "C" int VanillaRunFrame(int frameState);
 
 // Vanilla globals (DAT_ addresses from vanilla binary):
 static FARPROC g_GDVSysCreate = nullptr;   // DAT_005dc01c
@@ -298,100 +304,173 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     if (!g_vRenderer) return;
     void** obj = (void**)g_vRenderer;
 
-    // Drive the EXACT front-table frame sequence the original uses during intros:
-    // slot+0x90 (BeginScene+Clear) → slot+0x98 (DrawPrimitive, 0 verts) → slot+0x94 (EndScene).
-    // The original fires these per frame; the recomp doesn't (empty scene) → no present → black.
-    // Even with 0 verts, the BeginScene/EndScene bracket + frame cycle should trigger the present.
-    typedef void (__cdecl *PFN_Cdecl0)(void*);
-    typedef void (__cdecl *PFN_Cdecl1)(void*, uint32_t);
-    PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];   // BeginScene+Clear
-    PFN_Cdecl1 m98 = (PFN_Cdecl1)(uintptr_t)obj[0x98 / 4];   // DrawPrimitive (vertexCount arg)
-    PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];   // EndScene
-    if (m90) m90(g_vRenderer);        // BeginScene + Clear
-    if (drawHook) drawHook();          // optional engine draw
-    if (m98) m98(g_vRenderer, 0);      // DrawPrimitive (0 verts — completes frame cycle)
-    if (m94) m94(g_vRenderer);        // EndScene
-    if (g_vTrace) { static int n=0; if(n<3){fprintf(g_vTrace,"[VRENDER] DriveFrame: 0x90+0x98(0)+0x94 (original intro sequence)\n");fflush(g_vTrace);n++;} }
+    // ─── Boot state machine (user-confirmed original sequence) ───
+    //   INTRO1 (Digital Mayhem / dmlarge000)
+    //   → INTRO2 (PlanetMoon / planetmoon)
+    //   → INTRO3 (Giants + legal FR / legalfrench)
+    //   → LOADING (int_loadisland.tga)
+    //   → MENU (real D3D frame; empty scene → black until obj+0x4f0 is fed).
+    // Advance = mouse CLICK (edge) / SPACE / per-phase timeout. NO infinite loop.
+    //
+    // Anti-flicker: intros & loading draw DOUBLE-BUFFERED GDI (memory DC → single
+    // BitBlt to screen). Combined with window hbrBackground=NULL + WM_ERASEBKGND
+    // returning TRUE (no auto-erase), there is no erase/redraw tear → no flicker.
+    enum BootPhase { BOOT_INTRO = 0, BOOT_LOADING = 1, BOOT_MENU = 2 };
+    struct BootState {
+        int phase = BOOT_INTRO;
+        int introIdx = 0;                 // 0..2 during BOOT_INTRO
+        uint32_t phaseStart = 0;          // GetTickCount at phase entry
+        VanillaTGA::Image imgs[3];
+        VanillaTGA::Image loadImg;
+        bool loaded = false;
+        uint32_t prevMouse = 0;           // click edge-detect
+        float fade = 0.f;
+        std::vector<uint8_t> scratch;     // reuse for per-frame fade pixel work
+    };
+    static BootState st;
+    static bool s_loggedPhase = false;
+    static int s_lastLoggedPhase = -1;
 
-    // GDI PRESENT: get the D3D device's render-target surface → GetDC → BitBlt to the window.
-    // This bypasses the renderer's internal present (which we haven't found) by directly
-    // copying the RT pixels to the window via GDI. If the RT has content (Clear/draw), the
-    // window shows it.
-    {
-        void* wrapper2 = obj[0x294 / 4];
-        void** wvt2 = wrapper2 ? *(void***)wrapper2 : nullptr;
-        if (wrapper2 && wvt2) {
-            typedef long (__stdcall *PFN_GetRT)(void*, void**);
-            typedef long (__stdcall *PFN_SurfGetDC)(void*, void**);
-            typedef long (__stdcall *PFN_SurfRelDC)(void*, void*);
-            PFN_GetRT getRT = (PFN_GetRT)(uintptr_t)wvt2[0x24 / 4];
-            void* rt = nullptr;
-            if (getRT) getRT(wrapper2, &rt);
-            if (rt) {
-                void** rvt = *(void***)rt;
-                PFN_SurfGetDC getDC = (PFN_SurfGetDC)(uintptr_t)(rvt ? rvt[0x44 / 4] : nullptr); // vt[17]=GetDC
-                PFN_SurfRelDC relDC = (PFN_SurfRelDC)(uintptr_t)(rvt ? rvt[0x68 / 4] : nullptr); // vt[26]=ReleaseDC
-                if (getDC && relDC) {
-                    void* rtHDC = nullptr;
-                    long hr = getDC(rt, &rtHDC);
-                    if (hr == 0 && rtHDC) {
-                        // INTRO SEQUENCE: cycle through the 3 intro images (dmlarge000 → planetmoon → legal)
-                        // matching intros.bin. Each shown for ~5s (test) or click to skip.
-                        struct IntroState {
-                            int current = 0; // 0=dmlarge000, 1=planetmoon, 2=legal
-                            VanillaTGA::Image imgs[3];
-                            bool loaded = false;
-                            uint32_t showStart = 0;
-                        };
-                        static IntroState st;
-                        if (!st.loaded) {
-                            // Load the 3 intro textures. dmlarge000+planetmoon in xx_intro.gzp, legal in VO_SfxFrench.gzp.
-                            for (int i = 0; i < 3; i++) {
-                                const char* names[] = {"dmlarge000.tga","planetmoon.tga","legalfrench.tga"};
-                                const char* gzps[] = {"Bin\\xx_intro.gzp","Bin\\xx_intro.gzp","Bin\\VO_SfxFrench.gzp"};
-                                auto data = VanillaVFS::GzpReadFile(gzps[i], names[i]);
-                                if (!data.empty()) st.imgs[i] = VanillaTGA::Parse(data.data(), data.size());
-                            }
-                            st.loaded = true;
-                            st.showStart = GetTickCount();
-                        }
-                        // Click to skip (check DIK_SPACE or mouse button)
-                        VanillaInput_Poll();
-                        uint32_t now = GetTickCount();
-                        if (VanillaInput_KeyDown(0x39) /*DIK_SPACE*/ || (now - st.showStart) > 5000) {
-                            st.current = (st.current + 1) % 3;
-                            st.showStart = now;
-                        }
-                        // Display current intro image
-                        auto& img = st.imgs[st.current];
-                        if (img.ok && img.pixels.size() > 0) {
-                            BITMAPINFO bi = {};
-                            bi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-                            bi.bmiHeader.biWidth = img.width;
-                            bi.bmiHeader.biHeight = img.height;
-                            bi.bmiHeader.biPlanes = 1;
-                            bi.bmiHeader.biBitCount = img.bitsPerPixel;
-                            bi.bmiHeader.biCompression = 0;
-                            SetStretchBltMode((void*)rtHDC, 3 /*STRETCH_HALFTONE for better quality*/);
-                            StretchDIBits((void*)rtHDC, 0, 0, 640, 480,
-                                          0, 0, img.width, img.height,
-                                          img.pixels.data(), &bi, 0, 0xCC0020 /*SRCCOPY*/);
-                        }
-                        HWND hw = nullptr;
-                        // Get the window HWND from obj+0x26c (the renderer stores it)
-                        void* hwndv = obj[0x26c / 4];
-                        if (hwndv) hw = (HWND)hwndv;
-                        if (hw) {
-                            void* winDC = GetDC(hw);
-                            if (winDC) {
-                                BitBlt((void*)winDC, 0, 0, 640, 480, (void*)rtHDC, 0, 0, 0xCC0020 /*SRCCOPY*/);
-                                ReleaseDC(hw, (void*)winDC);
-                            }
-                        }
-                        relDC(rt, rtHDC);
-                    }
-                }
-            }
+    // One-time asset load (intro textures from GZPs + loading screen).
+    if (!st.loaded) {
+        const char* names[3] = { "dmlarge000.tga", "planetmoon.tga", "legalfrench.tga" };
+        const char* gzps[3]  = { "Bin\\xx_intro.gzp", "Bin\\xx_intro.gzp", "Bin\\VO_SfxFrench.gzp" };
+        for (int i = 0; i < 3; i++) {
+            auto d = VanillaVFS::GzpReadFile(gzps[i], names[i]);
+            if (!d.empty()) st.imgs[i] = VanillaTGA::Parse(d.data(), d.size());
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro[%d] %s: ok=%d %dx%d %dbp\n",
+                i, names[i], st.imgs[i].ok ? 1 : 0, st.imgs[i].width, st.imgs[i].height, st.imgs[i].bitsPerPixel); fflush(g_vTrace); }
         }
+        auto ld = VanillaVFS::GzpReadFile("Bin\\w_menus.gzp", "int_loadisland.tga");
+        if (!ld.empty()) st.loadImg = VanillaTGA::Parse(ld.data(), ld.size());
+        if (g_vTrace) { fprintf(g_vTrace, "[BOOT] loading screen int_loadisland.tga: ok=%d %dx%d\n",
+            st.loadImg.ok ? 1 : 0, st.loadImg.width, st.loadImg.height); fflush(g_vTrace); }
+        st.loaded = true;
+        st.phaseStart = GetTickCount();
     }
+
+    // ── MENU phase: hand control to the real D3D renderer frame ──
+    // (empty scene → black; feeding obj+0x4f0 = next chantier).
+    if (st.phase == BOOT_MENU) {
+        if (s_lastLoggedPhase != BOOT_MENU) {
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === reached MENU phase — driving real D3D frame (scene empty → black) ===\n"); fflush(g_vTrace); }
+            s_lastLoggedPhase = BOOT_MENU;
+        }
+        VanillaRunFrame(1);
+        return;
+    }
+
+    // ── INTRO / LOADING: input + timing ──
+    VanillaInput_Poll();
+    uint32_t now = GetTickCount();
+    uint32_t mb = VanillaInput_MouseButtons();
+    bool click = (mb & 0x1) && !(st.prevMouse & 0x1);   // LMB rising edge
+    bool space = VanillaInput_KeyDown(0x39);             // DIK_SPACE
+    st.prevMouse = mb;
+
+    // Per-phase timing. Intros: fade-in 600 / hold 3000 / fade-out 600 (≈4.2s each).
+    // Loading: hold 1500ms. Either advances on click/space or timeout.
+    uint32_t FADE_IN, HOLD, FADE_OUT;
+    if (st.phase == BOOT_INTRO) { FADE_IN = 600; HOLD = 3000; FADE_OUT = 600; }
+    else                        { FADE_IN = 400; HOLD = 1500; FADE_OUT = 0; }  // LOADING
+    uint32_t elapsed = now - st.phaseStart;
+
+    if (st.phase == BOOT_INTRO) {
+        if (elapsed < FADE_IN)                              st.fade = (float)elapsed / FADE_IN;
+        else if (elapsed < FADE_IN + HOLD)                  st.fade = 1.0f;
+        else if (elapsed < FADE_IN + HOLD + FADE_OUT)       st.fade = 1.0f - (float)(elapsed - FADE_IN - HOLD) / FADE_OUT;
+        else                                                st.fade = 0.0f;
+    } else { // LOADING: simple fade-in then hold at full
+        if (elapsed < FADE_IN) st.fade = (float)elapsed / FADE_IN;
+        else                   st.fade = 1.0f;
+    }
+    bool phaseDone = (click || space || elapsed > FADE_IN + HOLD + FADE_OUT);
+
+    // ── Phase transitions ──
+    if (phaseDone) {
+        if (st.phase == BOOT_INTRO) {
+            st.introIdx++;
+            if (st.introIdx >= 3) {
+                st.phase = BOOT_LOADING;
+                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros done → LOADING phase\n"); fflush(g_vTrace); }
+            } else {
+                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro → next (%d)\n", st.introIdx); fflush(g_vTrace); }
+            }
+        } else { // BOOT_LOADING → BOOT_MENU
+            st.phase = BOOT_MENU;
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] loading done → MENU phase\n"); fflush(g_vTrace); }
+        }
+        st.phaseStart = now;
+        st.fade = 0.0f;
+    }
+
+    // ── Draw current phase (double-buffered GDI on the window DC) ──
+    HWND hw = nullptr;
+    void* hwndv = obj[0x26c / 4];
+    if (hwndv) hw = (HWND)hwndv;
+    if (!hw) return;
+    HDC winDC = GetDC(hw);
+    if (!winDC) return;
+
+    RECT clientRect;
+    GetClientRect(hw, &clientRect);
+    int winW = clientRect.right - clientRect.left;
+    int winH = clientRect.bottom - clientRect.top;
+
+    // Memory DC (double buffer) — single atomic BitBlt to screen = no flicker.
+    HDC memDC = CreateCompatibleDC(winDC);
+    HBITMAP memBM = CreateCompatibleBitmap(winDC, winW, winH);
+    HBITMAP oldBM = (HBITMAP)SelectObject(memDC, memBM);
+
+    // Black background (letterbox + fade target).
+    RECT rfull = { 0, 0, winW, winH };
+    HBRUSH bb = CreateSolidBrush(0);
+    FillRect(memDC, &rfull, bb);
+    DeleteObject(bb);
+
+    // Pick image for current phase.
+    const VanillaTGA::Image* img = nullptr;
+    if (st.phase == BOOT_INTRO) {
+        if (st.introIdx >= 0 && st.introIdx < 3) img = &st.imgs[st.introIdx];
+    } else { // LOADING
+        img = &st.loadImg;
+    }
+    if (img && img->ok && !img->pixels.empty() && st.fade > 0.01f) {
+        // Fade-to-black: darken a scratch copy by (fade).
+        st.scratch.assign(img->pixels.begin(), img->pixels.end());
+        int bpp = img->bitsPerPixel / 8;        // bytes per pixel
+        int npx = img->width * img->height;
+        uint8_t f = (uint8_t)(st.fade * 255.0f);
+        for (int i = 0; i < npx; i++) {
+            uint8_t* p = &st.scratch[(size_t)i * bpp];
+            p[0] = (uint8_t)((p[0] * f) >> 8);   // B
+            p[1] = (uint8_t)((p[1] * f) >> 8);   // G
+            p[2] = (uint8_t)((p[2] * f) >> 8);   // R
+            // alpha (if present) left as-is
+        }
+        BITMAPINFO bi = {};
+        bi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
+        bi.bmiHeader.biWidth = img->width;
+        bi.bmiHeader.biHeight = img->height;     // positive = bottom-up (matches VanillaTGA)
+        bi.bmiHeader.biPlanes = 1;
+        bi.bmiHeader.biBitCount = img->bitsPerPixel;
+        bi.bmiHeader.biCompression = 0;
+        // Center + maintain aspect ratio.
+        float sx = (float)winW / img->width, sy = (float)winH / img->height;
+        float scale = sx < sy ? sx : sy;
+        int dstW = (int)(img->width * scale);
+        int dstH = (int)(img->height * scale);
+        int dstX = (winW - dstW) / 2;
+        int dstY = (winH - dstH) / 2;
+        SetStretchBltMode(memDC, 3 /*HALFTONE*/);
+        StretchDIBits(memDC, dstX, dstY, dstW, dstH, 0, 0, img->width, img->height,
+                      st.scratch.data(), &bi, 0, 0xCC0020);
+    }
+
+    // Single atomic blit → no erase/redraw tear.
+    BitBlt(winDC, 0, 0, winW, winH, memDC, 0, 0, 0xCC0020);
+    SelectObject(memDC, oldBM);
+    DeleteObject(memBM);
+    DeleteDC(memDC);
+    ReleaseDC(hw, winDC);
 }
