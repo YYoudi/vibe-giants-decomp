@@ -5,6 +5,9 @@
 // Callees are stubbed until ported from vanilla_decompiled/*.json.
 #include <windows.h>
 #include <cstdio>
+#include <cstring>
+#include <cctype>
+#include "VanillaBoot.h"
 #include "VanillaVFS.h"
 #include "VanillaFileIO.h"
 #include "VanillaAudio.h"
@@ -29,6 +32,57 @@ const char* __lpCmdLine = nullptr;
 static HWND  g_vHWnd = nullptr;
 static HINSTANCE g_vHInst = nullptr;
 static bool g_vRunning = true;
+
+// ─── Boot/CLI configuration (phase-jump + test flags) ───
+VanillaBootConfig g_bootCfg;
+
+// Minimal tokenizer: matches "-flag" and "-flag value" against the dev/test flag set.
+// Tokens are whitespace-delimited. Comparison is case-insensitive on the leading "-".
+void VanillaParseArgs(const char* cmdLine) {
+    if (!cmdLine) return;
+    const char* p = cmdLine;
+    auto skipWs = [](const char* q) { while (*q && isspace((unsigned char)*q)) q++; return q; };
+    auto ieq = [](const char* a, const char* b) {
+        while (*a && *b) { if (tolower((unsigned char)*a) != tolower((unsigned char)*b)) return false; a++; b++; } return *a == *b; };
+    while (*p) {
+        p = skipWs(p);
+        if (!*p) break;
+        // extract one token
+        const char* s = p;
+        while (*p && !isspace((unsigned char)*p)) p++;
+        size_t len = (size_t)(p - s);
+        char tok[128] = {0};
+        if (len >= sizeof(tok)) len = sizeof(tok) - 1;
+        memcpy(tok, s, len); tok[len] = 0;
+        // match
+        if (tok[0] != '-' && tok[0] != '+') continue;
+        if (ieq(tok, "-skip-intros") || ieq(tok, "-nointro") || ieq(tok, "+nointro")) {
+            g_bootCfg.skipIntros = true;
+        } else if (ieq(tok, "-at")) {
+            // next token = phase
+            p = skipWs(p);
+            const char* v = p;
+            while (*p && !isspace((unsigned char)*p)) p++;
+            size_t vl = (size_t)(p - v);
+            char val[64] = {0};
+            if (vl >= sizeof(val)) vl = sizeof(val) - 1;
+            memcpy(val, v, vl); val[vl] = 0;
+            if (ieq(val, "menu")) g_bootCfg.atMenu = true;
+            else if (vl > 6 && (ieq(val, "level:") || !strncmp(val, "level:", 6))) {
+                g_bootCfg.atMenu = true;                 // skip intros + loading
+                strncpy(g_bootCfg.level, val + 6, sizeof(g_bootCfg.level) - 1);
+            }
+        } else if (ieq(tok, "-frames")) {
+            p = skipWs(p);
+            g_bootCfg.frameLimit = atoi(p);
+            while (*p && !isspace((unsigned char)*p)) p++;
+        } else if (ieq(tok, "-no-audio")) {
+            g_bootCfg.noAudio = true;
+        }
+    }
+    if (g_vTrace) { fprintf(g_vTrace, "[BOOTCFG] skipIntros=%d atMenu=%d frameLimit=%d noAudio=%d level='%s'\n",
+        (int)g_bootCfg.skipIntros, (int)g_bootCfg.atMenu, g_bootCfg.frameLimit, (int)g_bootCfg.noAudio, g_bootCfg.level); fflush(g_vTrace); }
+}
 
 extern "C" int VanillaLoadRenderer(const char* pathPrefix, const char* rendererName);
 extern "C" void* VanillaInitRenderer(HWND hWnd);
@@ -56,6 +110,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     g_vTrace = fopen("vanilla_trace.log", "w");
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] GiantsRE vanilla-native recomp — entry\n"); fflush(g_vTrace); }
     g_vHInst = hInstance;
+
+    // ── Phase-jump / test flags (parsed before anything else) ──
+    VanillaParseArgs(lpCmdLine);
 
     // ── RegisterClass (vanilla strings: AppAccel, AppIcon, AppMenu, "Giants") ──
     WNDCLASSA wc = {};
@@ -129,7 +186,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // ── Engine file I/O self-test (open WorldList.bin loose + a GZP file) ──
     VanillaFileIO::SelfTest();
     // ── Audio subsystem loader (FUN_0051f900 port: load gs_ds.dll + resolve SDV/MDV/VDV exports) ──
-    VanillaAudio::Load("ds");
+    if (!g_bootCfg.noAudio) VanillaAudio::Load("ds");
     // ── GTI terrain parser self-test (parse intro_island.gti heightfield) ──
     VanillaGTI::SelfTest();
     // ── GBS model parser self-test (parse intro_1.gbs mesh) ──
@@ -197,6 +254,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
             if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: DriveFrame(SetRT+Flip)\n", frameCount); fflush(g_vTrace); }
         }
         frameCount++;
+        // Deterministic capture mode: exit cleanly after N MENU-phase frames.
+        if (g_bootCfg.frameLimit > 0 && frameCount >= g_bootCfg.frameLimit) {
+            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frameLimit %d reached — clean exit\n", g_bootCfg.frameLimit); fflush(g_vTrace); }
+            g_vRunning = false;
+        }
     }
 
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Exit\n"); fflush(g_vTrace); }

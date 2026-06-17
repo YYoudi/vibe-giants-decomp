@@ -9,6 +9,7 @@
 #include <vector>
 #include "VanillaVFS.h"
 #include "VanillaTGA.h"
+#include "VanillaBoot.h"   // g_bootCfg (phase-jump flags)
 
 // Input (for intro skip — click/space).
 extern "C" bool VanillaInput_KeyDown(int dik);
@@ -347,6 +348,12 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
             st.loadImg.ok ? 1 : 0, st.loadImg.width, st.loadImg.height); fflush(g_vTrace); }
         st.loaded = true;
         st.phaseStart = GetTickCount();
+        // Phase-jump flags: skip intros / go straight to MENU (or later, level load).
+        if (g_bootCfg.atMenu || g_bootCfg.skipIntros) {
+            st.phase = BOOT_MENU;
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] phase-jump: starting at MENU (skipIntros=%d atMenu=%d)\n",
+                (int)g_bootCfg.skipIntros, (int)g_bootCfg.atMenu); fflush(g_vTrace); }
+        }
     }
 
     // ── MENU phase: manual D3D frame bracket + terrain + GDI RT-present ──
