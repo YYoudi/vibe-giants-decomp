@@ -25,19 +25,47 @@ uint32_t DAT_005dc25c = 0;   // fn-ptr global (reset cluster 3)
 uint32_t DAT_005dc2e8 = 0;   // fn-ptr global
 uint32_t DAT_005dc32c = 0;   // fn-ptr global
 uint32_t DAT_006310e8 = 0;   // secondary world/stream handle
+uint32_t DAT_005dd5d8 = 0;   // game-state phase gate (FUN_0052f960 tests == 4)
+uint32_t DAT_0059ca4c = 0;   // level-selector scratch (FUN_0045a520 writes)
+
+// Level table — DEFINED in VanillaSceneLists.cpp (g_LevelTable=DAT_00631388, g_LevelCount=DAT_00631384).
+extern uint32_t g_LevelTable;
+extern uint32_t g_LevelCount;
 
 // rdata string tag (setupgam.c:148 — free file/line assert tag). extern "C" gives
 // it external linkage (C++ `const` alone = internal linkage → link fail).
 extern const char s_C__Giants_Source_main_setupgam_c_00564ebc[] = "C:\\Giants\\Source\\main\\setupgam.c";
 
 // ── FUN_ callees (no-op link stubs; return 0 where a value is expected) ──
-// FUN_004913c0 callees:
-int  FUN_0052f960(void) { return 0; }                 // gate: DAT_005dd5d8 == 4
+// FUN_004913c0 callees — faithfully ported (vanilla_decompiled/*.json):
+// FUN_00547250 = engine strcmp (called by FUN_0053c970). Ported as real strcmp.
+int FUN_00547250(const char* a, const char* b) {
+    while (*a && (*a == *b)) { a++; b++; }
+    return (int)(unsigned char)*a - (int)(unsigned char)*b;
+}
+// FUN_0053c970: nonzero(true) when strings equal. (vanilla 0053c970)
+int FUN_0053c970(const char* a, const char* b) { return FUN_00547250(a, b) == 0; }
+// FUN_0052f960: gate — DAT_005dd5d8 == 4. (vanilla 0052f960)
+int FUN_0052f960(void) { return DAT_005dd5d8 == 4; }
+// FUN_0045a520: setter — DAT_0059ca4c = v. (vanilla 0045a520)
+void FUN_0045a520(uint32_t v) { DAT_0059ca4c = v; }
+// FUN_004b7640: level-record lookup by first-dword key. Stride 0x1428 dwords = 0x50A0 bytes.
+//   Returns a pointer into g_LevelTable on first-dword match, else NULL. (vanilla 004b7640)
+void* FUN_004b7640(int key) {
+    int* base = (int*)(uintptr_t)g_LevelTable;
+    int n = (int)g_LevelCount;
+    for (int i = 0; i < n; i++) {
+        int* entry = base + i * 0x1428;
+        if (*entry == key) return entry;
+    }
+    return 0;
+}
+// FUN_004b77c0: level-table walk. FIXME(unverified): decompile shows void+dead-store
+//   (computes a max it discards). The selector FUN_004913c0 uses its return as the
+//   scan loop bound, so it must return the entry COUNT (g_LevelCount). Returning
+//   g_LevelCount makes the selector functional — confirm dynamically vs original.
+int  FUN_004b77c0(void) { return (int)g_LevelCount; }
 void FUN_0052a050(void) {}
-int  FUN_004b77c0(void) { return 0; }                 // level-table max-index
-void* FUN_004b7640(int) { return 0; }                 // level-record lookup
-int  FUN_0053c970(const char*, const char*) { return 0; }  // strcmp==0
-void FUN_0045a520(uint32_t) {}                        // DAT_0059ca4c = v
 void FUN_0045a530(void) {}                            // async-load kick
 // FUN_004f3230 callees:
 void FUN_004aa190(void) {}

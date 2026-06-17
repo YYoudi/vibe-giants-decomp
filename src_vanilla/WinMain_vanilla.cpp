@@ -25,6 +25,7 @@
 extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
 extern "C" void* SpawnTestEntity(uint32_t typeId, float x, float y, float z); // test entity into g_PlacedObjectList
+extern "C" int VanillaSceneLoad_SelfTest(void);   // FUN_004913c0 selector self-test (scan level table)
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -196,6 +197,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     VanillaTGA::SelfTest();
     // ── Loading-screen picker self-test (FUN_0045a530 port: intro_island -> giants_loading) ──
     VanillaLoadScreen::SelfTest();
+    // ── Scene-selector self-test (FUN_004913c0 port: scan level table for intro_island) ──
+    VanillaSceneLoad_SelfTest();
     // ── Localized-text lookup (callback[11] GetLocalizedString: GTextEnglish.bin) ──
     if (VanillaText::Load("English")) {
         if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] text lookup '$IDnew' = '%s'\n", VanillaText::Lookup("$IDnew")); fflush(g_vTrace); }
