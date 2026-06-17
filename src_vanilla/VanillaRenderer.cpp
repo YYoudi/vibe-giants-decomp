@@ -10,6 +10,7 @@
 #include "VanillaVFS.h"
 #include "VanillaTGA.h"
 #include "VanillaBoot.h"   // g_bootCfg (phase-jump flags)
+#include "VanillaVFSCallbacks.h"  // callbacks 15/16/17 (vanilla FUN_006222d0/00621fe0/00621e50)
 
 // Input (for intro skip — click/space).
 extern "C" bool VanillaInput_KeyDown(int dik);
@@ -142,9 +143,9 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
         (void*)Stub_Void,     // 12 TextureLoader
         (void*)Stub_Void,     // 13 SinCosLookup
         (void*)Stub_Void,     // 14 TimeAccessor
-        (void*)Stub_Null,     // 15 VFSOpenFileVariant
-        (void*)Stub_Null,     // 16 VFSOpenMusicFile
-        (void*)Stub_Null,     // 17 VFSOpenFile
+        (void*)cbVFSOpenFileVariant, // 15 VFSOpenFileVariant (vanilla FUN_006222d0)
+        (void*)cbVFSOpenMusicFile,   // 16 VFSOpenMusicFile   (vanilla FUN_00621fe0)
+        (void*)cbVFSOpenFile,        // 17 VFSOpenFile        (vanilla FUN_00621e50)
         (void*)Stub_Alloc,    // 18 EngineAllocator (malloc — GDVSysCreate allocs via this)
         (void*)Stub_Free,     // 19 CRT_free
         (void*)FUN_00523aa0,   // 20 ScenePipelineEntry (real: scene dispatch gate)
