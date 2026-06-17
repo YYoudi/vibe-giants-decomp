@@ -244,23 +244,61 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
         trace("[VTERRAIN] device render-target=%p  presented(obj+0x288)=%p (renderer copies btwn them in its frame)\n", rt, obj[0x288 / 4]);
     }
     // ── DIAGNOSTIC: screen-space triangle (XYZRHW, bypasses transforms) to confirm
-    // DrawPrimitive produces VISIBLE output end-to-end. White/red/green, centered @640x480.
-    {   struct V { float x,y,z,rhw; uint32_t diff; };  // XYZRHW|DIFFUSE=0x044, 20 bytes
-        V tri[3] = { {320.f,80.f,0.f,1.f,0xFFFFFFFF}, {80.f,400.f,0.f,1.f,0xFFFF2020},
-                     {560.f,400.f,0.f,1.f,0xFF20FF20} };
-        typedef long (__stdcall *PFN_DP)(void*,uint32_t,uint32_t,const void*,uint32_t,uint32_t);
-        long hr2 = ((PFN_DP)drawPrim)(wrapper, 3, 0x044, tri, 3, 0);
-        trace("[VTERRAIN] TEST TRIANGLE (XYZRHW) hr=0x%lx\n", (unsigned long)hr2);
+    // DrawPrimitive produces VISIBLE output end-to-end. DISABLED now that the projected
+    // terrain reaches the screen (kept here commented for regression checks).
+    // {   struct V { float x,y,z,rhw; uint32_t diff; };
+    //     V tri[3] = { {320.f,80.f,0.f,1.f,0xFFFFFFFF}, {80.f,400.f,0.f,1.f,0xFFFF2020},
+    //                  {560.f,400.f,0.f,1.f,0xFF20FF20} };
+    //     typedef long (__stdcall *PFN_DP)(void*,uint32_t,uint32_t,const void*,uint32_t,uint32_t);
+    //     long hr2 = ((PFN_DP)drawPrim)(wrapper, 3, 0x044, tri, 3, 0);
+    //     trace("[VTERRAIN] TEST TRIANGLE (XYZRHW) hr=0x%lx\n", (unsigned long)hr2);
+    // }
+    // The custom wrapper@obj+0x294 does NOT honour standard IDirect3DDevice7 transforms
+    // (its vtable layout differs → SetupCamera/SetTransform is a no-op), so world-space
+    // XYZ vertices (fvf 0x142) never get projected → invisible. We instead project the
+    // heightfield to screen-space OURSELVES and submit as XYZRHW (the path the test
+    // triangle proved reaches the screen). Camera = same params as SetupCamera.
+    // Row-vector convention: v' = v · M (matches mtxLookAtLH/mtxPerspectiveFovLH above).
+    Mtx view, proj;
+    mtxLookAtLH(view, {2300.f, -4000.f, 2500.f}, {2300.f, 2840.f, 0.f}, {0.f, 0.f, 1.f});
+    mtxPerspectiveFovLH(proj, 1.0472f /*60deg*/, 640.f / 480.f, 10.f, 30000.f);
+    struct ScreenV { float x, y, z, rhw; uint32_t diff; };  // XYZRHW|DIFFUSE=0x044, 20B
+    std::vector<ScreenV> screen;
+    screen.reserve(verts.size());
+    int behind = 0;
+    for (const auto& wv : verts) {
+        // VIEW (world=identity)
+        float vx = wv.x*view[0]  + wv.y*view[4]  + wv.z*view[8]  + view[12];
+        float vy = wv.x*view[1]  + wv.y*view[5]  + wv.z*view[9]  + view[13];
+        float vz = wv.x*view[2]  + wv.y*view[6]  + wv.z*view[10] + view[14];
+        // PROJ
+        float cx = vx*proj[0] + vy*proj[4] + vz*proj[8]  + proj[12];
+        float cy = vx*proj[1] + vy*proj[5] + vz*proj[9]  + proj[13];
+        float cz = vx*proj[2] + vy*proj[6] + vz*proj[10] + proj[14];
+        float cw = vx*proj[3] + vy*proj[7] + vz*proj[11] + proj[15];   // = vz (view-space z)
+        if (cw < 1.0f) { behind++; cw = 1.0f; }                        // clamp behind-camera
+        float invw = 1.0f / cw;
+        float nx = cx * invw, ny = cy * invw;
+        ScreenV s;
+        s.x   = (nx * 0.5f + 0.5f) * 640.f;
+        s.y   = (1.0f - (ny * 0.5f + 0.5f)) * 480.f;
+        s.z   = 0.0f;          // constant near depth → no z-cull (matches the proven test tri)
+        s.rhw = invw;
+        // Height-shaded bright colour so the heightfield is unmistakably visible: scale the
+        // world-Z (height, ≈ -40..760) into a green→white ramp. ARGB for D3D DIFFUSE.
+        float h = wv.z;  if (h < 0.f) h = 0.f;  if (h > 760.f) h = 760.f;
+        float t = h / 760.f;
+        uint8_t r = (uint8_t)(60.f + 195.f * t);
+        uint8_t g = (uint8_t)(140.f + 115.f * t);
+        uint8_t b = (uint8_t)(40.f + 80.f * t);
+        s.diff = 0xFF000000u | (uint32_t(r) << 16) | (uint32_t(g) << 8) | uint32_t(b);
+        screen.push_back(s);
     }
-    // Set up camera (world/view/projection + cull/z) so the world-coord terrain maps to screen.
-    SetupCamera(wrapper, wvt);
     typedef long (__stdcall *PFN_DrawPrim)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
-    int vCount = (int)verts.size();
-    const uint32_t fvf = 0x002 /*D3DFVF_XYZ*/ | 0x040 /*D3DFVF_DIFFUSE*/ | 0x100 /*D3DFVF_TEX1*/;
-    long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, fvf,
-                                       verts.data(), vCount, 0);
-    trace("[VTERRAIN] SubmitTris: DrawPrimitive(wrapper=%p, TRIANGLELIST, fvf=0x%x, %d verts, %d tris) hr=0x%lx\n",
-          wrapper, fvf, vCount, triCount, (unsigned long)hr);
+    long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, 0x044 /*XYZRHW|DIFFUSE*/,
+                                       screen.data(), (uint32_t)screen.size(), 0);
+    trace("[VTERRAIN] SubmitTris(PROJECTED→XYZRHW): %d verts, %d tris, behind-clamp=%d, hr=0x%lx\n",
+          (int)screen.size(), triCount, behind, (unsigned long)hr);
     return triCount;
 }
 
