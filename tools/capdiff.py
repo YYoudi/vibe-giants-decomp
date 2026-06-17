@@ -24,6 +24,12 @@ correctly" without a compare that PASSES (or a documented reason it can't).
 import argparse, os, sys, subprocess, time, ctypes
 from ctypes import wintypes
 from PIL import Image, ImageChops
+try:
+    import frida
+    HAVE_FRIDA = True
+except Exception:
+    HAVE_FRIDA = False
+FRIDA_CTRL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "scripts", "frida_orig_control.js")
 
 ROOT      = r"G:\GiantsRE"
 RECOMP    = os.path.join(ROOT, "GameFiles-VanillaV1", "GiantsMain_vanilla.exe")
@@ -92,8 +98,22 @@ def launch(exe, args=None):
 
 def appsnap(out):
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    r = subprocess.run(APPSNAP + ["-o", out, WIN_TITLE], capture_output=True, text=True)
+    # -t 100 = strict match: avoid fuzzy-matching the "GiantsRE" editor window (which
+    # contains "Giants" as a substring) when the game window is absent.
+    r = subprocess.run(APPSNAP + ["-t", "100", "-o", out, WIN_TITLE], capture_output=True, text=True)
     return os.path.exists(out)
+
+def foreground(title=WIN_TITLE, timeout=8.0):
+    """Bring the game window to the foreground (SendInput targets the fg window)."""
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        hwnd = find_window(title)
+        if hwnd:
+            ctypes.windll.user32.ShowWindow(hwnd, 9)   # SW_RESTORE
+            ctypes.windll.user32.SetForegroundWindow(hwnd)
+            return hwnd
+        time.sleep(0.3)
+    return 0
 
 # ── phase -> timing/flags ──
 # Recomp + original now share the SAME intro timing (fade 0.2s / hold 12s, measured —
@@ -119,26 +139,63 @@ def capture_recomp(phase, out, extra_flags=None):
     kill("GiantsMain_vanilla.exe")
     return ok
 
+def frida_skip_intros(proc_name="Giants_nocd.exe", timeout=15):
+    """Attach Frida to the original, call rpc.skipintros to deterministically skip the
+    3-intro sequence (SendInput is fragile). Returns True on success.
+    DISABLED by default — frida-agent injection crashes the no-CD original (anti-debug /
+    DX7 conflict). Enable with GIANTS_USE_FRIDA=1 once injection is stabilized."""
+    if not HAVE_FRIDA or os.environ.get("GIANTS_USE_FRIDA") != "1":
+        return False
+    try:
+        session = frida.attach(proc_name)
+        src = open(FRIDA_CTRL, "r", encoding="utf-8").read()
+        script = session.create_script(src)
+        done = {"ok": False}
+        def on_msg(message, data):
+            if message.get("type") == "send" and message.get("payload", {}).get("type") == "OK":
+                done["ok"] = True
+        script.on("message", on_msg)
+        script.load()
+        t0 = time.time()
+        # wait for READY, then call rpc
+        time.sleep(0.5)
+        try:
+            r = script.exports_sync.skipintros()
+        except Exception:
+            r = False
+        # wait for the OK message
+        while not done["ok"] and time.time() - t0 < timeout:
+            time.sleep(0.3)
+        session.detach()
+        return done["ok"] or bool(r)
+    except Exception as e:
+        print(f"[frida] skip failed: {e}", file=sys.stderr)
+        return False
+
 def capture_original(phase, out):
-    """Run original (Giants_nocd), optionally skip intros via SendInput, appsnap at phase."""
+    """Run original (Giants_nocd), skip intros, appsnap at phase.
+    Intros: capture during natural play (no skip). Menu/loading: Frida skip (reliable)."""
     if not os.path.exists(ORIG):
         print(f"[orig] {ORIG} not found", file=sys.stderr); return False
     kill("Giants.exe"); kill("Giants_nocd.exe")
     launch(ORIG, ["-window"])
     time.sleep(3.0)                                   # let the window + intro1 appear
     if phase.startswith("intro"):
-        # intros are visible right after boot; capture intro1 immediately, others at offset
+        # intros visible right after boot; capture intro1 immediately, others at offset
         wait = PHASE_WAIT[phase]
         extra = max(0, wait - 3000) / 1000.0
         time.sleep(extra)
         ok = appsnap(out); kill("Giants_nocd.exe"); return ok
-    # loading / menu: skip the 3 intros by spamming click+space (original skips on input edge)
-    for _ in range(4):
-        send_click(); send_space(); time.sleep(0.5)
+    # loading / menu: the most RELIABLE path to the original's menu is to let the 3
+    # intros play out NATURALLY (3 × ~12.4s ≈ 38s) — SendInput skip destabilizes the
+    # DX7 window and Frida injection crashes the no-CD exe. No input = no crash.
+    # Slow (~40s) but deterministic. (Skip methods kept above for when stabilized.)
     if phase == "loading":
-        time.sleep(1.5)                               # loading flashes briefly after intros
+        # loading screen (giants_loading.tga) flashes during the async load right after
+        # the intros end — capture just before/at the 38s boundary.
+        time.sleep(36.0)
     else:                                             # menu
-        time.sleep(5.0)                               # let the menu 3D settle
+        time.sleep(42.0)                              # past all 3 intros + menu settle
     ok = appsnap(out); kill("Giants_nocd.exe")
     return ok
 

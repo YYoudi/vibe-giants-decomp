@@ -29,3 +29,12 @@ shows only during that async load, then menu 3D scene + GUI appear.
 - Currently the recomp shows only the projected heightfield (green→yellow diagnostic).
   Fidelity target: textured island + water + sky + 3D logo + 2D menu GUI overlay, with
   the camera driven by the menu screen's `ref_camera1`.
+
+## Measured baseline (capdiff compare menu, 2026-06-17)
+The original's first menu screen (post-intros) = **profile-select**: 3D "GIANTS CITIZEN
+KABUTO" logo + red "Player" beam + French GUI ("Qui êtes-vous ?", "Entrer un nouveau nom
+de joueur", "Sélectionnez ce nom...") over a dark cloudy sky. The island 3D scene is the
+background beneath the GUI.
+- **recomp (diagnostic terrain) vs original (profile-select) = mean_abs_delta 0.2992 → FAIL.**
+- Target: < 0.04 (PASS). Gap = the whole scene chain (FUN_004913c0→FUN_0045a530→FUN_004b7c50→FUN_004f3230) + textured logo/sky + 2D GUI.
+- Reliable original-menu capture = NATURAL intro playback (~42s, no SendInput/Frida — both destabilize the no-CD exe).
