@@ -73,7 +73,8 @@ def find_window(title=WIN_TITLE):
 
 def kill(name):
     subprocess.run(["taskkill","/F","/IM",name], capture_output=True)
-    time.sleep(1)
+    time.sleep(3)   # DX7 device (gg_dx7r.dll) needs time to fully release or the next
+                    # process that creates a device on the same adapter hangs/crashes.
 
 def launch(exe, args=None):
     """Robust detached launch. The DX7 original segfaults under a plain bash/Python
@@ -95,8 +96,10 @@ def appsnap(out):
     return os.path.exists(out)
 
 # ── phase -> timing/flags ──
-# recomp: full-boot phase offsets (ms into a non-skipped boot). menu uses skip.
-RECOMP_PHASE_WAIT = {"intro1":2200, "intro2":6800, "intro3":11400, "loading":13200, "menu":2000}
+# Recomp + original now share the SAME intro timing (fade 0.2s / hold 12s, measured —
+# behavior_specs/intro_timings.md), so a single offset table works for both. Offset =
+# mid-hold of each phase (well past fade-in, before fade-out). menu uses -skip-intros.
+PHASE_WAIT = {"intro1":6000, "intro2":18000, "intro3":30000, "loading":1000, "menu":2500}
 
 def capture_recomp(phase, out, extra_flags=None):
     """Run recomp to <phase>, appsnap while the window is live, then kill.
@@ -110,7 +113,7 @@ def capture_recomp(phase, out, extra_flags=None):
     if extra_flags:
         args += extra_flags
     launch(RECOMP, args)
-    wait = RECOMP_PHASE_WAIT[phase]
+    wait = PHASE_WAIT[phase]
     time.sleep(wait / 1000.0 + 1.5)        # +1.5s for process startup + appsnap settle
     ok = appsnap(out)
     kill("GiantsMain_vanilla.exe")
@@ -125,7 +128,7 @@ def capture_original(phase, out):
     time.sleep(3.0)                                   # let the window + intro1 appear
     if phase.startswith("intro"):
         # intros are visible right after boot; capture intro1 immediately, others at offset
-        wait = RECOMP_PHASE_WAIT[phase]
+        wait = PHASE_WAIT[phase]
         extra = max(0, wait - 3000) / 1000.0
         time.sleep(extra)
         ok = appsnap(out); kill("Giants_nocd.exe"); return ok

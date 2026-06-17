@@ -322,7 +322,6 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         int introIdx = 0;                 // 0..2 during BOOT_INTRO
         uint32_t phaseStart = 0;          // GetTickCount at phase entry
         VanillaTGA::Image imgs[3];
-        VanillaTGA::Image loadImg;
         bool loaded = false;
         uint32_t prevMouse = 0;           // click edge-detect
         float fade = 0.f;
@@ -332,20 +331,49 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     static bool s_loggedPhase = false;
     static int s_lastLoggedPhase = -1;
 
-    // One-time asset load (intro textures from GZPs + loading screen).
+    // One-time asset load: intro textures, DATA-DRIVEN from intros.bin (vanilla
+    // FUN_00523b60 reads this plaintext file — see behavior_specs/intro_timings.md).
+    // NOTE: there is NO loading screen between intros and menu in the vanilla boot
+    // (behavior_specs/loading_screen.md). The recomp's former "LOAD ISLAND" screen was
+    // an INVENTION — int_loadisland.tga is menu chrome, never shown standalone. Removed.
     if (!st.loaded) {
-        const char* names[3] = { "dmlarge000.tga", "planetmoon.tga", "legalfrench.tga" };
-        const char* gzps[3]  = { "Bin\\xx_intro.gzp", "Bin\\xx_intro.gzp", "Bin\\VO_SfxFrench.gzp" };
-        for (int i = 0; i < 3; i++) {
-            auto d = VanillaVFS::GzpReadFile(gzps[i], names[i]);
-            if (!d.empty()) st.imgs[i] = VanillaTGA::Parse(d.data(), d.size());
-            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro[%d] %s: ok=%d %dx%d %dbp\n",
-                i, names[i], st.imgs[i].ok ? 1 : 0, st.imgs[i].width, st.imgs[i].height, st.imgs[i].bitsPerPixel); fflush(g_vTrace); }
+        char introNames[3][64] = { "dmlarge000.tga", "planetmoon.tga", "legalfrench.tga" };
+        // Read the canonical intro list from Bin\intros.bin (loose plaintext, one name/line).
+        FILE* f = fopen("Bin\\intros.bin", "rb");
+        if (f) {
+            char buf[256] = {0}; size_t n = fread(buf, 1, sizeof(buf) - 1, f); fclose(f);
+            int idx = 0;
+            for (char* line = strtok(buf, "\r\n"); line && idx < 3; line = strtok(nullptr, "\r\n")) {
+                if (line[0]) {
+                    snprintf(introNames[idx], sizeof(introNames[idx]), "%s.tga", line);
+                    idx++;
+                }
+            }
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros.bin -> [%s, %s, %s]\n",
+                introNames[0], introNames[1], introNames[2]); fflush(g_vTrace); }
         }
-        auto ld = VanillaVFS::GzpReadFile("Bin\\w_menus.gzp", "int_loadisland.tga");
-        if (!ld.empty()) st.loadImg = VanillaTGA::Parse(ld.data(), ld.size());
-        if (g_vTrace) { fprintf(g_vTrace, "[BOOT] loading screen int_loadisland.tga: ok=%d %dx%d\n",
-            st.loadImg.ok ? 1 : 0, st.loadImg.width, st.loadImg.height); fflush(g_vTrace); }
+        // Each intros.bin name may live in different GZPs and under a locale variant
+        // (e.g. "legal" → legal.tga or legalFrench.tga). Try candidates until one loads.
+        const char* gzps[3]  = { "Bin\\xx_intro.gzp", "Bin\\xx_intro.gzp", "Bin\\VO_SfxFrench.gzp" };
+        const char* gzpsAlt[3] = { "Bin\\VO_SfxFrench.gzp", "Bin\\VO_SfxFrench.gzp", "Bin\\xx_intro.gzp" };
+        for (int i = 0; i < 3; i++) {
+            char frName[80];
+            // strip ".tga", build "<stem>French.tga" locale variant
+            snprintf(frName, sizeof(frName), "%.*sFrench.tga", (int)(strlen(introNames[i]) - 4), introNames[i]);
+            const char* candidates[3] = { introNames[i], frName, nullptr };
+            const char* candidateGzps[3] = { gzps[i], gzps[i], gzpsAlt[i] };
+            for (int c = 0; c < 3 && !st.imgs[i].ok; c++) {
+                if (!candidates[c]) break;
+                auto d = VanillaVFS::GzpReadFile(candidateGzps[c], candidates[c]);
+                if (d.empty() && candidateGzps[c] != gzpsAlt[i]) d = VanillaVFS::GzpReadFile(gzpsAlt[i], candidates[c]);
+                if (!d.empty()) {
+                    st.imgs[i] = VanillaTGA::Parse(d.data(), d.size());
+                    snprintf(introNames[i], sizeof(introNames[i]), "%s", candidates[c]);  // log the resolved name
+                }
+            }
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro[%d] %s: ok=%d %dx%d %dbp\n",
+                i, introNames[i], st.imgs[i].ok ? 1 : 0, st.imgs[i].width, st.imgs[i].height, st.imgs[i].bitsPerPixel); fflush(g_vTrace); }
+        }
         st.loaded = true;
         st.phaseStart = GetTickCount();
         // Phase-jump flags: skip intros / go straight to MENU (or later, level load).
@@ -422,22 +450,17 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     bool space = VanillaInput_KeyDown(0x39);             // DIK_SPACE
     st.prevMouse = mb;
 
-    // Per-phase timing. Intros: fade-in 600 / hold 3000 / fade-out 600 (≈4.2s each).
-    // Loading: hold 1500ms. Either advances on click/space or timeout.
-    uint32_t FADE_IN, HOLD, FADE_OUT;
-    if (st.phase == BOOT_INTRO) { FADE_IN = 600; HOLD = 3000; FADE_OUT = 600; }
-    else                        { FADE_IN = 400; HOLD = 1500; FADE_OUT = 0; }  // LOADING
+    // Per-phase timing — MEASURED from vanilla FUN_00523b60 .data globals
+    // (behavior_specs/intro_timings.md): fade 0.2s, hold 12.0s, linear alpha.
+    //   DAT_00552300=0.20 (fade s), DAT_005522b8=12.0 (hold s), DAT_00552358=5.0 (rate).
+    // The former 600/3000/600 values were INVENTED — replaced with the real ones.
+    const uint32_t FADE_IN = 200, HOLD = 12000, FADE_OUT = 200;   // ms
     uint32_t elapsed = now - st.phaseStart;
 
-    if (st.phase == BOOT_INTRO) {
-        if (elapsed < FADE_IN)                              st.fade = (float)elapsed / FADE_IN;
-        else if (elapsed < FADE_IN + HOLD)                  st.fade = 1.0f;
-        else if (elapsed < FADE_IN + HOLD + FADE_OUT)       st.fade = 1.0f - (float)(elapsed - FADE_IN - HOLD) / FADE_OUT;
-        else                                                st.fade = 0.0f;
-    } else { // LOADING: simple fade-in then hold at full
-        if (elapsed < FADE_IN) st.fade = (float)elapsed / FADE_IN;
-        else                   st.fade = 1.0f;
-    }
+    if (elapsed < FADE_IN)                              st.fade = (float)elapsed / FADE_IN;
+    else if (elapsed < FADE_IN + HOLD)                  st.fade = 1.0f;
+    else if (elapsed < FADE_IN + HOLD + FADE_OUT)       st.fade = 1.0f - (float)(elapsed - FADE_IN - HOLD) / FADE_OUT;
+    else                                                st.fade = 0.0f;
     bool phaseDone = (click || space || elapsed > FADE_IN + HOLD + FADE_OUT);
 
     // ── Phase transitions ──
@@ -445,12 +468,15 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         if (st.phase == BOOT_INTRO) {
             st.introIdx++;
             if (st.introIdx >= 3) {
-                st.phase = BOOT_LOADING;
-                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros done → LOADING phase\n"); fflush(g_vTrace); }
+                // NO loading screen between intros and menu (behavior_specs/boot_sequence.md,
+                // loading_screen.md). The real giants_loading.tga shows only during the async
+                // level load (FUN_004913c0→FUN_0045a530), not yet ported. Go straight to MENU.
+                st.phase = BOOT_MENU;
+                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros done → MENU (no fake loading screen)\n"); fflush(g_vTrace); }
             } else {
                 if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro → next (%d)\n", st.introIdx); fflush(g_vTrace); }
             }
-        } else { // BOOT_LOADING → BOOT_MENU
+        } else { // BOOT_LOADING → BOOT_MENU (legacy branch; BOOT_LOADING no longer entered)
             st.phase = BOOT_MENU;
             if (g_vTrace) { fprintf(g_vTrace, "[BOOT] loading done → MENU phase\n"); fflush(g_vTrace); }
         }
@@ -486,9 +512,8 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     const VanillaTGA::Image* img = nullptr;
     if (st.phase == BOOT_INTRO) {
         if (st.introIdx >= 0 && st.introIdx < 3) img = &st.imgs[st.introIdx];
-    } else { // LOADING
-        img = &st.loadImg;
     }
+    // (BOOT_LOADING removed — no fake loading screen. BOOT_MENU returns early above.)
     if (img && img->ok && !img->pixels.empty() && st.fade > 0.01f) {
         // Fade-to-black: darken a scratch copy by (fade).
         st.scratch.assign(img->pixels.begin(), img->pixels.end());
