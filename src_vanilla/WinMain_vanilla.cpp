@@ -188,9 +188,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
         // Injects the engine terrain draw between BeginScene and EndScene so submitted
         // geometry is visible (the renderer's 0x7340 does the frame internally with no
         // engine-draw injection point).
-        VanillaDriveFrame(nullptr);   // test: BeginScene→EndScene→Present with no draw hook
+        VanillaDriveFrame([](){ VanillaTerrain::VanillaTerrain_Draw("intro_island.gti", "Bin\\w_intro_island.gzp"); });
         if (frameCount < 4) {
-            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: DriveFrame(nohook)\n", frameCount); fflush(g_vTrace); }
+            if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] frame %d: DriveFrame(terrain)\n", frameCount); fflush(g_vTrace); }
         }
         frameCount++;
     }

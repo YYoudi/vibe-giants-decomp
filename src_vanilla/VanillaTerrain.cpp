@@ -175,23 +175,28 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
               g_vRenderer, verts.size());
         return 0;
     }
-
-    // Vanilla scene bracket: slot +0x90 (BeginScene) ... slot +0x94 (EndScene).
-    // The renderer's scene-open also does the Clear + texture-stage setup.
-    // We call BeginScene, draw, EndScene — matching the intros.bin fade loop
-    // pattern in FUN_00523b60.
-    CallRendererSlot(kSlot_BeginScene);
-
-    // DrawPrimitive TRIANGLELIST: slot +0x98 takes (this, vertexCount).
-    // The vertex data pointer is implicit (renderer's current VB stream);
-    // for a true standalone test we would lock a VB first via slot +0xc
-    // (FUN_00438f00 pattern), copy our verts in, unlock, then draw.
+    // Call IDirect3DDevice7::DrawPrimitive DIRECTLY on the renderer's wrapper COM device
+    // (wrapper@obj+0x294, vtable = *wrapper). DrawPrimitive = vt index 25 = byte 0x64
+    // (confirmed from d3d.h IDirect3DDevice7 vtable order). DX7 DrawPrimitive is
+    // UP-style: takes a direct user vertex pointer (no VB lock needed).
+    //   HRESULT DrawPrimitive(this, D3DPT_TRIANGLELIST=3, DWORD fvf, void* verts,
+    //                          DWORD vertexCount, DWORD flags=0)
+    // TerrainVertex = xyz(12)+diffuse(4)+uv(8) = 24B → fvf = XYZ|DIFFUSE|TEX1 = 0x142.
+    // BeginScene/EndScene are handled by the manual frame driver (VanillaDriveFrame).
+    void** obj = (void**)g_vRenderer;
+    void* wrapper = obj[0x294 / 4];
+    if (!wrapper) { trace("[VTERRAIN] wrapper@obj+0x294 NULL\n"); return 0; }
+    void** wvt = *(void***)wrapper;
+    if (!wvt) { trace("[VTERRAIN] wrapper vtable NULL\n"); return 0; }
+    void* drawPrim = wvt[0x64 / 4];   // vt[25] = DrawPrimitive
+    if (!drawPrim) { trace("[VTERRAIN] DrawPrimitive (vt[0x64]) NULL\n"); return 0; }
+    typedef long (__stdcall *PFN_DrawPrim)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
     int vCount = (int)verts.size();
-    CallRendererSlot(kSlot_DrawPrimitiveTriList, (void*)(intptr_t)vCount);
-
-    CallRendererSlot(kSlot_EndScene);
-    trace("[VTERRAIN] SubmitTris: drew %d verts (%d tris) via slot +0x98\n",
-          vCount, triCount);
+    const uint32_t fvf = 0x002 /*D3DFVF_XYZ*/ | 0x040 /*D3DFVF_DIFFUSE*/ | 0x100 /*D3DFVF_TEX1*/;
+    long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, fvf,
+                                       verts.data(), vCount, 0);
+    trace("[VTERRAIN] SubmitTris: DrawPrimitive(wrapper=%p, TRIANGLELIST, fvf=0x%x, %d verts, %d tris) hr=0x%lx\n",
+          wrapper, fvf, vCount, triCount, (unsigned long)hr);
     return triCount;
 }
 
