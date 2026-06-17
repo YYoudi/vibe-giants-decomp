@@ -274,48 +274,45 @@ extern "C" void VanillaTestSurfaceVisible() {
     extern FILE* g_vTrace;
     if (!g_vRenderer) return;
     void** obj = (void**)g_vRenderer;
-    void* surf = obj[0x288 / 4];
-    if (!surf) return;
-    void** vt = *(void***)surf;
-    if (!vt) return;
-    // IDirectDrawSurface7: GetDC=vt[17]/byte0x44, ReleaseDC=vt[26]/byte0x68.
-    typedef long (__stdcall *PFN_GetDC)(void*, void**);
-    typedef long (__stdcall *PFN_RelDC)(void*, void*);
-    auto getdc = (PFN_GetDC)vt[0x44 / 4];
-    auto reldc = (PFN_RelDC)vt[0x68 / 4];
-    if (!getdc || !reldc) { if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] obj+0x288 no GetDC/ReleaseDC (vt[17]=%p vt[26]=%p)\n", getdc, reldc); fflush(g_vTrace); } return; }
-    void* hdc = nullptr;
-    long hr = getdc(surf, &hdc);
-    if (hr == 0 && hdc) {
-        // Fill the whole surface bright magenta (GDI) — if visible, the window turns magenta.
-        void* brush = CreateSolidBrush(0x00FF00FF);  // magenta (BGR)
-        RECT r = { 0, 0, 640, 480 };
-        FillRect((void*)hdc, &r, brush);
-        DeleteObject(brush);
-        reldc(surf, hdc);
-        if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] obj+0x288 GetDC OK + FillRect magenta (surface=%p hdc=%p)\n", surf, hdc); fflush(g_vTrace); }
-    } else {
-        if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] obj+0x288 GetDC FAILED hr=0x%lx (not a GDI surface?)\n", (unsigned long)hr); fflush(g_vTrace); }
-    }
+    // Diagnostic: compare device RT (obj+0x294 GetRenderTarget) with obj+0x28c (flipped by 0x7370).
+    void* wrapper = obj[0x294 / 4];
+    void** wvt = wrapper ? *(void***)wrapper : nullptr;
+    void* rt = nullptr;
+    if (wvt) { typedef long(__stdcall *PFN_GetRT)(void*, void**); PFN_GetRT grt = (PFN_GetRT)(uintptr_t)(wvt[0x24/4]); if (grt) grt(wrapper, &rt); }
+    void* flipped = obj[0x28c / 4];
+    if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] device-RT=%p  obj+0x28c(flipped)=%p  obj+0x288=%p  match=%d\n",
+        rt, flipped, obj[0x288/4], rt == flipped); fflush(g_vTrace); }
 }
-typedef void (__cdecl *PFN_RenderMethod0)(void* self);   // (this) methods
+typedef void (__cdecl *PFN_RenderMethod0)(void* self);
+typedef long (__stdcall *PFN_COM0)(void* self);          // (this) stdcall COM
+typedef long (__stdcall *PFN_SetRT)(void* self, void* surf, uint32_t flags);
+typedef long (__stdcall *PFN_Flip)(void* self, uint32_t flags);
 extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     extern FILE* g_vTrace;
     if (!g_vRenderer) return;
     void** obj = (void**)g_vRenderer;
-    void* mBeginClear = obj[0x90 / 4];   // slot +0x90 = 0x86a0 (BeginScene + Clear + scene-open)
-    void* mEndScene   = obj[0x94 / 4];   // slot +0x94 = 0x87a0 (EndScene)
-    void* mPresent    = obj[0x60 / 4];   // slot +0x60 = 0xc880 (Present/Flip)
-    if (!mBeginClear || !mEndScene || !mPresent) {
-        if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] DriveFrame: missing method (begin=%p end=%p present=%p)\n", mBeginClear, mEndScene, mPresent); fflush(g_vTrace); }
-        return;
-    }
-    ((PFN_RenderMethod0)mBeginClear)(g_vRenderer);   // BeginScene + Clear
-    // obj+0x42c is the Present "ready" gate flag (slot+0x60/0xc880 skips present if 0).
-    // It's normally set by the full engine display-init (methods [0x1c-0x1f]); force it so
-    // Present actually flips our back buffer to the window.
-    *(uintptr_t*)((char*)g_vRenderer + 0x42c) = 1;
-    if (drawHook) drawHook();                        // engine geometry (in-scene)
-    ((PFN_RenderMethod0)mEndScene)(g_vRenderer);     // EndScene
-    ((PFN_RenderMethod0)mPresent)(g_vRenderer);      // Present
+    void* wrapper = obj[0x294 / 4];   // IDirect3DDevice7
+    void** wvt = wrapper ? *(void***)wrapper : nullptr;
+    void* flipped = obj[0x28c / 4];  // the surface 0x7370 Flips (vt[0x68]) — the REAL present target
+    if (!wrapper || !wvt || !flipped) return;
+
+    // FIX: Set the D3D device's render target to obj+0x28c (the Flipped surface) so
+    // DrawPrimitive draws where the Flip will show it.
+    PFN_SetRT setRT = (PFN_SetRT)(uintptr_t)wvt[0x20 / 4];   // vt[8]=SetRenderTarget
+    long hrRT = setRT ? setRT(wrapper, flipped, 0) : -1;
+    // BeginScene (vt[5]=byte0x14), EndScene (vt[6]=byte0x18), on the D3D wrapper.
+    PFN_COM0 beginScene = (PFN_COM0)(uintptr_t)wvt[0x14 / 4];
+    PFN_COM0 endScene   = (PFN_COM0)(uintptr_t)wvt[0x18 / 4];
+    // obj+0x28c vtable: vt[0x64]=Lock/BeginFrame (0x7340 calls before scene), vt[0x68]=Flip (0x7370).
+    void** fvt = *(void***)flipped;
+    PFN_Flip lockFrame = (PFN_Flip)(uintptr_t)(fvt ? fvt[0x64 / 4] : nullptr);
+    PFN_Flip flip       = (PFN_Flip)(uintptr_t)(fvt ? fvt[0x68 / 4] : nullptr);
+    long hrLock = lockFrame ? lockFrame(flipped, 0) : -1;
+
+    if (beginScene) beginScene(wrapper);
+    if (drawHook) drawHook();
+    if (endScene) endScene(wrapper);
+    long hrFlip = flip ? flip(flipped, 0) : -1;
+    if (g_vTrace) { static int n=0; if(n<3){fprintf(g_vTrace,"[VRENDER] DriveFrame: Lock=%lx Flip=%lx\n",(unsigned long)hrLock,(unsigned long)hrFlip);fflush(g_vTrace);n++;} }
+    if (g_vTrace) { static int n=0; if(n<3){fprintf(g_vTrace,"[VRENDER] DriveFrame: SetRT(obj+0x28c)=%lx BeginScene+EndScene OK Flip=%lx\n",(unsigned long)hrRT,(unsigned long)hrFlip);fflush(g_vTrace);n++;} }
 }
