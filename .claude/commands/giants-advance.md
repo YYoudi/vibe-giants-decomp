@@ -2,7 +2,12 @@
 
 **Le SEUL skill pour faire avancer le projet** — recomp 100%-identique de Giants: Citizen Kabuto (vanilla 1.0 DX7). Tu tournes en continu, tu délègues (subagents) ou fais plusieurs choses pour **toujours progresser**. Cycle : `mesure → spec → implémente → build → VÉRIFIE → commit`. Un cycle = un commit.
 
-## ⚑ PRINCIPE SUPRÊME : MESURE AVANT CODE + PREUVE AVANT DE CLAMER
+## ⚑ STRATÉGIE : TU DÉCIDES SEUL (ne demande JAMAIS de choix à l'humain)
+**C'est TOI qui choisis les avancées stratégiques — tu t'y connais mieux que l'humain.** Ne pose JAMAIS de question « option A ou B ? » à l'humain. Tu évalues, tu décides, tu fais. L'humain est **testeur visuel uniquement, sur ta demande expresse** (et seulement pour du subjectif qu'aucun outil ne peut trancher — un rendu « ressemble-t-il à l'original »). Pour TOUT le reste (architecture, techno, ordre des chantiers, quel outil bâtir), tu tranches seul.
+
+**Remets TOUJOURS tes outils en question.** À chaque cycle, demande-toi : « un meilleur outil accélérerait-il ça ? » S'il te manque quelque chose (proxy, capture, diff, debugger, asm-diff, RenderDoc, Frida script, automatisation), **construis-le ou installe-le TOI-MÊME**. Tu as internet (`curl`/`pip`) + terminal + 800k contexte. **Teste-le, ne demande pas.** Le proxy DX7, capdiff, appsnap, les flags de phase — tous bâtis ainsi. Continue ce mouvement.
+
+## ⚑ PRINCIPE : MESURE AVANT CODE + PREUVE AVANT DE CLAMER
 1. **Mesure avant code** : pour TOUT comportement observable, mesure l'original d'abord → `behavior_specs/<x>.md` → implémente → vérifie. Coder un observable sans l'avoir mesuré = **dérive** (CLAUDE.md §0 règle 5).
 2. **Succès = preuve, pas « ça tourne + visible »**. Deux modes de preuve, choisis le bon :
    - **Visuel** (ce qui s'affiche) → `tools/run.sh <phase>` (capdiff vs original) doit **PASS** (mean_abs_delta < seuil).
