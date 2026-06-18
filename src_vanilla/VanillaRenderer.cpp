@@ -17,6 +17,7 @@
 extern "C" bool VanillaInput_KeyDown(int dik);
 extern "C" void VanillaInput_Poll(void);
 extern "C" uint32_t VanillaInput_MouseButtons(void);   // bitmask: bit0=LMB
+extern "C" void VanillaInput_MousePos(int* x, int* y); // absolute client-relative cursor pos
 extern "C" void FUN_004913c0(void);   // boot step 14: intro_island selector (VanillaSceneLoad.cpp)
 // The renderer's own per-frame entry (renderer method [0x20] = 0x7370): does the
 // full D3D frame internally (BeginScene/Clear/scene-walk/EndScene/present).
@@ -455,6 +456,23 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 // (0.1208→0.1717). So the bracket does NOT draw the logo (parse is kept as
                 // reusable GBS infrastructure; the real logo render is a canonical-path task).
                 if (g_vTrace) { static int ln=0; if(ln<1){fprintf(g_vTrace,"[LOGO] real tris parsed (%u) — bracket render DISABLED (flat render = blob, +delta). Needs real 3D menu path.\n", (uint32_t)(s_tris.size()/9));fflush(g_vTrace);ln++;} }
+            }
+        }
+        // ── Custom mouse cursor (FUN_0042e450 port): "cursor00.tga" drawn as a quad at
+        //    the mouse position via the 2D blitter. The original replaces the OS cursor
+        //    with this textured quad at DAT_0063111c/1120 (mouse X/Y).
+        {
+            void* wrapper = obj[0x294 / 4];
+            static VanillaBlit::TiledImage* s_cursor = nullptr;
+            static bool s_cursorTried = false;
+            if (wrapper && !s_cursorTried) {
+                s_cursorTried = true;
+                s_cursor = VanillaBlit::Load(wrapper, "Bin\\w_menus.gzp", "cursor00.tga");
+            }
+            if (wrapper && s_cursor) {
+                int mx = 0, my = 0;
+                VanillaInput_MousePos(&mx, &my);
+                VanillaBlit::Draw(wrapper, s_cursor, mx, my, 1.0f);
             }
         }
         if (m94) m94(g_vRenderer);

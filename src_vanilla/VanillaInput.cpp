@@ -278,6 +278,17 @@ extern "C" uint32_t VanillaInput_MouseButtons(void) {
     return g_mouseButtons;
 }
 
+// Absolute mouse position (client-relative) for the cursor. Vanilla DAT_0063111c/1120.
+// DirectInput gives deltas; for a windowed game GetCursorPos + ScreenToClient is the
+// reliable absolute position (matches where the OS cursor is).
+extern "C" void VanillaInput_MousePos(int* x, int* y) {
+    POINT p = {0, 0};
+    GetCursorPos(&p);
+    if (g_hWnd) ScreenToClient(g_hWnd, &p);
+    if (x) *x = (int)p.x;
+    if (y) *y = (int)p.y;
+}
+
 extern void VanillaInput_MouseDelta_int(int* dx, int* dy, int* dz);  // fwd
 extern "C" void VanillaInput_MouseDelta(int* dx, int* dy, int* dz) {
     if (dx) *dx = g_mouseDX;
