@@ -1,6 +1,9 @@
 #include <cstdint>
 #include <cstdlib>
 #include <cstring>
+#include <cstdio>
+#include <vector>
+#include "VanillaVFS.h"
 // Generated .BIN loader (FUN_004b7c50) link stubs. Loader is DORMANT.
 extern "C" {
 int FUN_0053c970(const char* a, const char* b);   // strcmp-eq (defined in VanillaStubs.cpp)
@@ -166,9 +169,53 @@ uint32_t DAT_0059c958 = 0;
 uint32_t DAT_0059c960 = 0;
 uint32_t DAT_0059c964 = 0;
 uint32_t DAT_0059c96c = 0;
+// FUN_0053a3e0 (fileread.c) — load a named asset blob into a freshly-allocated buffer.
+// Vanilla: ZipFind in the current GZP (DAT_005e12b0) + Bin\Override\<name> loose-file
+// fallback + GZP-source caching; returns (*outBuf, *outSize). Faithful behavior port via
+// VanillaVFS::GzpReadFile (the recomp's GZP reader). makewrld/anim/sfx/texture loaders call
+// this; the former no-op stub made makewrld early-return (world never built).
 void FUN_0053a3e0(const char* name, uint32_t* outData, uint32_t* outSize) {
     if (outData) *outData = 0;
     if (outSize) *outSize = 0;
+    if (!name || !*name) return;
+    // 1. Bin\Override\<name> loose file (vanilla tries this for dev overrides).
+    {
+        char path[512];
+        snprintf(path, sizeof(path), "Bin\\Override\\%s", name);
+        FILE* f = fopen(path, "rb");
+        if (f) {
+            fseek(f, 0, SEEK_END); long sz = ftell(f); fseek(f, 0, SEEK_SET);
+            if (sz > 0) {
+                void* buf = malloc((size_t)sz);
+                if (buf && fread(buf, 1, (size_t)sz, f) == (size_t)sz) {
+                    if (outData) *outData = (uint32_t)(uintptr_t)buf; else free(buf);
+                    if (outSize) *outSize = (uint32_t)sz;
+                } else if (buf) free(buf);
+            }
+            fclose(f);
+            return;
+        }
+    }
+    // 2. Search candidate GZPs (level + common). Vanilla uses the "current" GZP context;
+    // the recomp searches the level GZP first then a fallback list.
+    static const char* gzps[] = {
+        "Bin\\w_intro_island.gzp",  // menu/intro level (current)
+        "Bin\\tx_lev1.gzp", "Bin\\xx_intro.gzp", "Bin\\xx_menus.gzp", "Bin\\w_menus.gzp",
+        "Bin\\xx_giants_logo_3d.gzp", "Bin\\extra.gzp",
+    };
+    for (const char* gz : gzps) {
+        std::vector<uint8_t> data = VanillaVFS::GzpReadFile(gz, name);
+        if (!data.empty()) {
+            void* buf = malloc(data.size());
+            if (buf) {
+                memcpy(buf, data.data(), data.size());
+                if (outData) *outData = (uint32_t)(uintptr_t)buf; else free(buf);
+                if (outSize) *outSize = (uint32_t)data.size();
+            }
+            return;
+        }
+    }
+    // not found: outputs stay 0 (callers treat as failure / early-return).
 }
 uint32_t FUN_0053db60(int, int, uint32_t) { return 0; }
 int* FUN_0053dc40(uint32_t) { static int z=0; return &z; }
