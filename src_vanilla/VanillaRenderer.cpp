@@ -395,14 +395,18 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     // present via the PROVEN path (commit 495b269): GetDC(device RT) → BitBlt(RT → window).
     if (st.phase == BOOT_MENU) {
         if (s_lastLoggedPhase != BOOT_MENU) {
-            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU phase — VanillaRunFrame (renderer's own scene walk) ===\n"); fflush(g_vTrace); }
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU phase — manual bracket + terrain (scene populated: 204 tex bound) ===\n"); fflush(g_vTrace); }
             s_lastLoggedPhase = BOOT_MENU;
         }
-        // Drive the renderer's OWN per-frame (method[0x20] = 0x7370): it does FrameReset →
-        // SetCameraProjection → Clear → BeginScene → scene walk (dispatch the populated lists)
-        // → EndScene → Present. Scene data is populated by the loader (FUN_004b7c50) +
-        // texture feed (SceneWalk_Textures → slot 0xb4). This is the REAL render path.
-        VanillaRunFrame(1);
+        typedef void (__cdecl *PFN_Cdecl0)(void*);
+        PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];   // BeginScene + Clear
+        PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];   // EndScene
+        if (m90) m90(g_vRenderer);
+        cbSceneBegin_DrawTerrain();                               // draw terrain (scene now populated with textures)
+        if (m94) m94(g_vRenderer);
+        PFN_Cdecl0 m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];   // Present
+        obj[0x42c / 4] = (void*)1;
+        if (m_a8) m_a8(g_vRenderer);
         return;
     }
 
