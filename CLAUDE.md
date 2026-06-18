@@ -72,6 +72,19 @@
 8. **Auto-vérif obligatoire, validation humaine sur demande.** L'agent auto-vérifie tout ce qui est objectif via `tools/capdiff.py` (recomp vs original frame-diff) + oracle proxy (bit-exact) + Frida (timing/séquence). L'humain ne valide QUE sur demande explicite ou pour du subjectif — l'agent tourne en continu sinon.
 9. **Spec = source de vérité observable.** `behavior_specs/` (boot_sequence, intro_timings, loading_screen, menu_render…) dérive des mesures originales. Le recomp doit matcher la spec ; un écart = bug à corriger, pas une approximation à accepter.
 10. **Diagnostic-only élargi.** Tout dessin GDI/custom hors du chemin renderer prouvé qui produit une sortie FINALE (non étiquetée « DIAGNOSTIC ») = dérive. Les rendus diagnostics doivent être étiquetés et exclus du boot canonique.
+11. **AUCUN CODE PRÉCÉDENT N'EST ACQUIS — remets-toi en question à CHAQUE écriture.**
+    Tout le code déjà dans `src_vanilla/` est une **HYPOTHÈSE non prouvée**, PAS une vérité. La
+    seule vérité = l'observation runtime de l'original. À chaque cycle :
+    - **Ne pars JAMAIS du principe que le code existant est correct** juste parce qu'il a déjà été
+      écrit/buildé. Le build vert ≠ fidèle. « Ça tourne » ≠ « ça reproduit ».
+    - **Re-vérifie le code courant contre la nouvelle observation.** Si une découverte runtime
+      (Frida/proxy/appsnap) contredit ce que fait le code actuel → **remplace-le**, même si ça
+      jette du travail. Conserver du code faux parce qu'il « existait déjà » = dérive.
+    - **Une hypothèse recomp se prouve par capdiff PASS ou proxy 0-mismatch.** Sans preuve, c'est
+      du brouillon à réécrire, pas un acquis à préserver.
+    **État constaté (2026-06-19) : 0 reproduction valide observée.** Aucune frame recomp n'a passé
+    capdiff vs original. Donc : TOUT le recomp actuel est non prouvé. Traite-le comme du brouillon
+    à invalider/remplacer, pas comme une fondation. L'observation de l'original prime sur tout code.
 
 ### PARALLÉLISATION — à CHAQUE itération / CHAQUE pause
 **Avant chaque tour de boucle, pose-toi explicitement : « Comment puis-je PARALLÉLISER ce tour ? »** Tu as un budget token énorme et 800k context — le fan-out est ton levier de vélocité principal.
