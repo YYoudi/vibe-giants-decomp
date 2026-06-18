@@ -21,15 +21,32 @@
 
 namespace VanillaGBS {
 
+// A sub-object: a named mesh part with its own triangle indices (into indexedVertices)
+// + material. tris is a flat list of vertex-pool indices (3 per triangle).
+struct SubObj {
+    std::string name;
+    std::vector<uint16_t> tris;   // decoded RLE tridata; len = 3 * triangle_count
+    int32_t  verticeref_start = 0;
+    int32_t  verticeref_count = 0;
+    uint32_t totaltris = 0;
+    uint32_t diffuse = 0xFFFFFFFF;   // packed BBGGRR material diffuse
+};
+
 struct Model {
     uint32_t magic, options, numVertices;
     bool hasNormals, hasUVs, hasRGBs;
-    std::vector<float>   vertices;   // numVertices*3
-    uint32_t nverts;                 // indexed vertex count
+    std::vector<float>   vertices;        // numVertices*3 (base vertex pool)
+    uint32_t nverts;                       // indexed vertex count
+    std::vector<uint16_t> indexedVertices; // indexed_vertices: remap into base vertex pool
     uint32_t numSubObjects;
-    std::vector<std::string> subObjectNames;
+    std::vector<SubObj>   subObjs;
+    std::vector<std::string> subObjectNames;  // (kept for compat / logging)
     std::vector<std::string> texNames;
     bool ok = false;
+
+    // Build a flat position triangle list (XYZ per vertex, 3 per triangle) from ALL
+    // sub-objects' decoded tris. Resolves tridata idx -> indexedVertices -> base vertex.
+    std::vector<float> buildPositionTris() const;
 };
 
 Model Parse(const uint8_t* data, size_t len);

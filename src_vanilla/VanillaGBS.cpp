@@ -42,7 +42,10 @@ Model Parse(const uint8_t* data, size_t len) {
     if (pos + 4 > len) return m;
     m.nverts = rdU32(data + pos); pos += 4;
     if (m.nverts > 200000) return m;
-    pos += (size_t)m.nverts * 2;          // indexed_vertices u16
+    m.indexedVertices.resize(m.nverts);
+    for (uint32_t i = 0; i < m.nverts; i++) {
+        m.indexedVertices[i] = uint16_t(data[pos]) | (uint16_t(data[pos+1])<<8); pos += 2;
+    }
     if (m.hasNormals) pos += (size_t)m.nverts * 2; // indexed_normals
     if (m.hasUVs)     pos += (size_t)m.nverts * 8; // vertuv f32[2]
     if (m.hasRGBs)    pos += (size_t)m.nverts * 3; // vertrgb u8[3]
@@ -55,17 +58,36 @@ Model Parse(const uint8_t* data, size_t len) {
     if (pos + 4 > len) { m.ok = true; return m; }
     m.numSubObjects = rdU32(data + pos); pos += 4;
     for (uint32_t i = 0; i < m.numSubObjects && pos < len; i++) {
+        SubObj so;
         char objname[33] = {0}; memcpy(objname, data + pos, 32); pos += 32;
+        so.name = objname;
         m.subObjectNames.push_back(objname);
-        if (pos + 16 > len) break;
-        pos += 4;                       // maxobjindex
-        uint32_t totaltris = rdU32(data + pos); pos += 4;
-        uint32_t ntris = rdU32(data + pos); pos += 4;
-        pos += 8;                       // verticeref_start, verticeref_count
-        // tridata RLE: [count:u16][count*3 u16]
-        // ntris here = number of u16 "triples"? Walk conservatively.
-        // (Full RLE decode deferred — just skip the tridata block.)
-        pos += (size_t)ntris * 2;
+        if (pos + 20 > len) break;
+        pos += 4;                                   // maxobjindex
+        so.totaltris = rdU32(data + pos); pos += 4; // totaltris
+        uint32_t ntris = rdU32(data + pos); pos += 4; // ntris (tridata u16 count)
+        // tridata: ntris u16, RLE-encoded as [count:u16][count×3 idx:u16]. Decode into
+        // a flat triangle-vertex-index list (each idx indexes indexedVertices). Spec order:
+        // tridata comes BEFORE verticeref_start/count.
+        const uint8_t* tristart = data + pos;
+        size_t triAvail = (len - pos) / 2;
+        size_t ti = 0;
+        uint32_t guard = 0;
+        while (ti + 1 <= triAvail && so.tris.size() / 3 < so.totaltris && guard++ < 1000000) {
+            uint16_t count = uint16_t(tristart[ti*2]) | (uint16_t(tristart[ti*2+1])<<8); ti++;
+            if (count == 0) break;
+            for (uint16_t c = 0; c < count && ti + 3 <= triAvail; c++) {
+                for (int k = 0; k < 3; k++) {
+                    so.tris.push_back(uint16_t(tristart[ti*2]) | (uint16_t(tristart[ti*2+1])<<8));
+                    ti++;
+                }
+            }
+        }
+        pos += (size_t)ntris * 2;   // skip the WHOLE tridata block (ntris = u16 count)
+        so.verticeref_start = (int32_t)rdU32(data + pos); pos += 4;  // verticeref_start
+        so.verticeref_count = (int32_t)rdU32(data + pos); pos += 4;  // verticeref_count
+        // material: [if UVs] texname[32]+bumpname[32], falloff; [if RGBs] blend; flags;
+        //           emissive,ambient,diffuse,specular (packed BBGGRR); power.
         if (m.hasUVs) {
             char tex[33]={0}, bump[33]={0};
             if (pos+64<=len){ memcpy(tex,data+pos,32); memcpy(bump,data+pos+32,32); m.texNames.push_back(tex); }
@@ -73,11 +95,34 @@ Model Parse(const uint8_t* data, size_t len) {
         } else { pos += 4; }            // falloff
         if (m.hasRGBs) pos += 4;        // blend
         pos += 4;                       // flags
-        pos += 16;                      // emissive/ambient/diffuse/specular
+        pos += 4;                       // emissive
+        pos += 4;                       // ambient
+        so.diffuse = rdU32(data + pos); pos += 4;   // diffuse (BBGGRR)
+        pos += 4;                       // specular
         pos += 4;                       // power
+        m.subObjs.push_back(std::move(so));
     }
     m.ok = true;
     return m;
+}
+
+std::vector<float> Model::buildPositionTris() const {
+    std::vector<float> out;
+    for (const auto& so : subObjs) {
+        for (size_t t = 0; t + 2 < so.tris.size(); t += 3) {
+            for (int k = 0; k < 3; k++) {
+                uint16_t idx = so.tris[t + k];
+                size_t poolIdx = (size_t)so.verticeref_start + idx;
+                if (poolIdx >= indexedVertices.size()) { out.push_back(0); out.push_back(0); out.push_back(0); continue; }
+                uint16_t base = indexedVertices[poolIdx];
+                if ((size_t)base * 3 + 2 >= vertices.size()) { out.push_back(0); out.push_back(0); out.push_back(0); continue; }
+                out.push_back(vertices[(size_t)base * 3 + 0]);
+                out.push_back(vertices[(size_t)base * 3 + 1]);
+                out.push_back(vertices[(size_t)base * 3 + 2]);
+            }
+        }
+    }
+    return out;
 }
 
 bool SelfTest() {
