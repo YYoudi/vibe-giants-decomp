@@ -35,7 +35,7 @@
 - **Auto-vérif visuelle (CŒUR)** : `tools/capdiff.py` — capture recomp (flags de phase) + capture original (Giants_nocd) + diff PIL → verdict PASS/FAIL. `tools/run.sh <phase>` = build→deploy→capture→diff en une commande. `appsnap` (`uvx appsnap -o <png> "Giants"`) pour captures ponctuelles.
 - **Flags de phase recomp (C1)** : `-skip-intros`, `-at menu`, `-at level:<name>`, `-frames N`, `-no-audio` → tester une phase sans rejouer le boot.
 - **Specs observables** : `behavior_specs/*.md` (mesurées sur l'original) — source de vérité pour tout comportement observable.
-- **Oracle** : proxy `gg_dx9r.dll` (dual-mode bit-compare, 1.5/DX9) ; proxy vanilla DX7 (à câbler, C5).
+- **Oracle** : proxy `gg_dx9r.dll` (dual-mode bit-compare, 1.5/DX9) ; proxy vanilla DX7 C5 (proxy_dx7/ → gg_dx7r.dll, capture 21 callbacks) BUILT.
 - **Cross-référence** : ISO PS2 debug symbols (`ps2_symbols/`) pour le nommage PC↔PS2.
 - **À construire si besoin** : asm-diff (recomp vs original, fonction par fonction), capture PIX/RenderDoc de frame, moniteur API custom.
 
