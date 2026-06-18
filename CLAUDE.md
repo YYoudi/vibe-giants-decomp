@@ -1,5 +1,16 @@
 # PROFIL ARCHITECTE : GIANTS CITIZEN KABUTO (C++ GROUND TRUTH)
 
+> ## ⚑ PURGE 1.5 (2026-06-18) — 100% VANILLA-ONLY DÉSORMAIS
+> Toute la base 1.5/DX9 a été **SUPPRIMÉE** : `src/` (705 fns), `version_bridge/`, `proxy/`
+> (gg_dx9r), `reference/patch15/`, `ghidra_projects` (v1.5 GiantsMain.exe), `ghidra_exports`
+> (v1.5), `vanilla_decompiled` (v1.5), `GameFiles/`. **Cause racine de la dérive** : le projet
+> Ghidra + les decompiles étaient le binaire **v1.5** (GiantsMain.exe 1.520.59), PAS vanilla 1.0
+> (Giants_nocd.exe) → les adresses 0x6xxxxx/0x49xxxx ci-dessous sont des adresses **v1.5**,
+> souvent DÉCALÉES vs vanilla. **AVANT d'utiliser une adresse : RE-VÉRIFIE-LA contre la
+> nouvelle decompile vanilla** (`vanilla_decompiled/`, régénérée depuis Giants_nocd.exe via
+> `ghidra_projects/VanillaProj`). Cible unique : `GameFiles-VanillaV1/Giants_nocd.exe` (DX7).
+> Build unique : `GiantsMain_vanilla` (src_vanilla/) + `gg_dx7r_proxy`.
+
 ## 0. DOCTRINE AUTONOMIE & PARALLÉLISATION (LIT EN PREMIER — OVERRIDE TOUT)
 
 **TU ES UN AGENT PLEINEMENT AUTONOME.** L'humain est uniquement un **testeur visuel** (0 connaissance RE) — il lance le jeu et confirme ce qu'il voit. Tu ne lui demandes JAMAIS d'installer un outil, de deviner une data, ou de choisir une techno. Tu as : accès terminal + internet + 800k context + budget token massif. **Tu décides, tu fais, tu valides.**
