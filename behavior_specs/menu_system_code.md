@@ -49,3 +49,28 @@ FUN_00497230 is the MULTIPLAYER-OPTIONS menu (a sub-menu). The MAIN menu (Single
 Multiplayer / Options / Quit) and the profile-select are sibling functions using the same
 text primitives. The text-render primitives (FUN_0042c750/cd40/d0a0) are the shared core —
 port those first to unlock all menus.
+
+## Font system (added — the text-render core)
+The text primitives draw glyphs from the **Giants bitmap font**, a tile-sheet texture:
+- **FUN_0044a9c0**: font init — `DAT_00654988 = FUN_0044a4e0("GiantFont_Eng", "0123456789 <punct> ... <letters>")`.
+- **FUN_004a4e0(fontName, charset)**: builds the font struct (0x110 B): cell size = 32.0
+  (puVar4[2]=0x42000000) + a 256-entry CHARMAP (char → glyph cell index) from the charset
+  string. Chars not in the charset map to index 2 (blank/space).
+- **Font texture**: `GiantFont_Eng` lives in **tx_lev1.gzp** (a glyph tile-sheet; each
+  glyph = a 32px cell, indexed by the charmap). Loaded as a tiled texture (FUN_0050eb50).
+- **Metrics**: FUN_00521260 (string width), FUN_00521390/005212f0 (char/line metrics) —
+  used by FUN_0042c430 to measure/layout text.
+- **Deferred queue**: FUN_0042c750 enqueues a dialog entry (0x38 B: align, pos, flags,
+  string, scale) to the dialog list (DAT_0059e3a0); a per-frame FLUSH draws all entries as
+  glyph-cell quads via the renderer's 2D mechanism (DAT_00654948/00654958 — same as the
+  tiled blitter, [[behavior_specs/vanilla_2d_render_pipeline.md]]).
+
+## Port plan (text → menus)
+1. Load GiantFont_Eng (tx_lev1.gzp) as a tiled texture; build the charmap from the vanilla
+   charset (need the exact charset string @ s________________0123456789__<_>___0055a948).
+2. Port the deferred text queue + flush: for each entry, per char → glyph cell index →
+   draw a UV-subrect quad (32px cell) via the 2D blitter at advancing X.
+3. Port a menu driver (profile-select first — "Qui êtes-vous?" + "Player") using the
+   On/Off selection pattern + the text queue.
+4. Cursor (DONE, [[memory/loading_registry_cursor]]) + mouse hover → selection.
+

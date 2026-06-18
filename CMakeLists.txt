@@ -1,188 +1,32 @@
 cmake_minimum_required(VERSION 3.20)
 project(GiantsRE CXX)
 
-# ─── x86 32-bit target ────────────────────────────────────────
-# GiantsMain.exe is PE32 x86, all stubs must compile as 32-bit
-if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-    message(WARNING " GiantsRE requires 32-bit compilation.")
-    message(WARNING " MSVC: run from 'x86 Native Tools Command Prompt'")
-    message(WARNING " MinGW: set -DCMAKE_CXX_FLAGS=-m32")
-endif()
+# ═════════════════════════════════════════════════════════════════
+# Giants: Citizen Kabuto — vanilla 1.0 native recomp (CANONICAL TARGET).
+# 100% vanilla-only. The 1.5/DX9 path was DELETED (it caused version/address drift:
+# the Ghidra project + decompile were v1.5 GiantsMain.exe, not vanilla Giants_nocd.exe).
+# Binary: GameFiles-VanillaV1/Giants_nocd.exe (2574 fns, DX7 gg_dx7r.dll).
+# ═════════════════════════════════════════════════════════════════
 
+# ─── x86 32-bit target (vanilla Giants_nocd.exe is PE32 x86) ───
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# Compiler-specific flags
 if(MSVC)
     add_compile_options(/W3 /Zi /Od)
-    # Force 32-bit
     set(CMAKE_GENERATOR_PLATFORM Win32 CACHE STRING "" FORCE)
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(-m32 -g -Wall -Wno-unknown-pragmas -fpermissive)
     add_link_options(-m32 -static-libgcc -static-libstdc++ -Wl,-Bstatic,-lwinpthread,-Bdynamic)
 endif()
 
-# ─── Stub headers for missing Windows/DirectX types ──────────
-# These provide minimal declarations so our reversed code compiles
-# without requiring the full DX SDK
-include_directories(${CMAKE_SOURCE_DIR}/stubs)
-
-# ─── Source files ─────────────────────────────────────────────
-# Auto-discover all source files — ensures new modules are always compiled
-file(GLOB_RECURSE ENGINE_SOURCES
-    "src/engine/*.cpp"
-    "src/renderer/*.cpp"
-    "src/vfs/*.cpp"
-)
-
-file(GLOB_RECURSE ENGINE_HEADERS
-    "src/engine/*.h"
-    "src/renderer/*.h"
-    "src/vfs/*.h"
-)
-
-# ─── Main library target ─────────────────────────────────────
-add_library(giants_engine STATIC ${ENGINE_SOURCES} ${ENGINE_HEADERS})
-
-# Keep frame pointers so the recomp crash handler's EBP-walk yields real return
-# addresses (resolvable via nm) — needed to diagnose render-path crashes.
-# PUBLIC propagates to GiantsMain + gg_dx9r (both link giants_engine). Include
-# -g so StackWalk64/SymFromAddr can resolve crash addresses to symbol names.
-target_compile_options(giants_engine PUBLIC -fno-omit-frame-pointer -g3)
-
-target_include_directories(giants_engine PUBLIC
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/stubs
-)
-
-# Link Windows libraries (no-op on non-Windows, but we only target Windows)
-if(WIN32)
-    target_link_libraries(giants_engine PRIVATE
-        dinput8
-        dxguid
-        winmm
-        advapi32
-        user32
-        gdi32
-        d3d9
-    )
-endif()
-
-# ─── Compilation check target ────────────────────────────────
-# 'make check' or 'cmake --build . --target check' — compile only, no linking
-add_custom_target(check
-    COMMAND ${CMAKE_COMMAND} -E echo "Checking compilation..."
-    COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target giants_engine
-    COMMAND ${CMAKE_COMMAND} -E echo "Compilation check passed."
-    VERBATIM
-)
-
-# ─── Verification report target ──────────────────────────────
-add_custom_target(report
-    COMMAND ${CMAKE_COMMAND} -E echo "RE-TRACKER stats:"
-    COMMAND python -c "import json; d=json.load(open('${CMAKE_SOURCE_DIR}/RE-TRACKER.json')); print(f'  Tracked: {d[\"stats\"][\"tracked\"]}'); print(f'  Reversed: {d[\"stats\"][\"reversed\"]} (PASS: {d[\"stats\"][\"pass\"]}, FAIL: {d[\"stats\"][\"fail_usable\"]})'); print(f'  Queued: {d[\"stats\"][\"queued\"]}'); print(f'  Source: {d[\"stats\"][\"source_lines\"]} lines, {d[\"stats\"][\"source_files\"]} files')"
-    VERBATIM
-)
-
-# ═══════════════════════════════════════════════════════════════════
-# Proxy DLL — gg_dx9r.dll replacement
-# Loads the real gg_dx9r_orig.dll and forwards all 3 renderer exports.
-# Enables hooking of engine→renderer callbacks for gradual replacement.
-# ═══════════════════════════════════════════════════════════════════
-
-# ─── Stub Renderer (Route B for visible output) ───────────────────────
-# A self-contained gg_dx9r replacement that OWNS its own IDirect3DDevice9
-# (no engine-context protocol needed). Deployed as gg_dx9r.dll it lets the
-# recomp render (Clear/Present/text) directly via D3D9.
-add_library(gg_dx9r_stub SHARED
-    src/renderer_stub/StubRenderer.cpp
-)
-target_sources(gg_dx9r_stub PRIVATE ${CMAKE_SOURCE_DIR}/src/renderer_stub/StubDef.def)
-set_target_properties(gg_dx9r_stub PROPERTIES OUTPUT_NAME "gg_dx9r_stub" PREFIX "" SUFFIX ".dll")
-target_link_libraries(gg_dx9r_stub PRIVATE d3d9 user32 gdi32)
-
-file(GLOB PROXY_SOURCES "proxy/*.cpp" "proxy/*.h")
-
-add_library(gg_dx9r SHARED ${PROXY_SOURCES})
-
-# Ensure frame pointers for leave+jmp tail-call forwarding in proxy hooks
-target_compile_options(gg_dx9r PRIVATE -fno-omit-frame-pointer)
-
-# Use .def file for exact export ordinals
-target_sources(gg_dx9r PRIVATE ${CMAKE_SOURCE_DIR}/proxy/ProxyDef.def)
-
-# Link against our RE'd engine code (static lib)
-# NOTE: Disabled for now — proxy only needs forwarding, not the full engine.
-#       Re-enable when we start replacing functions with our implementations.
-target_link_libraries(gg_dx9r PRIVATE giants_engine)
-
-# Windows libraries
-if(WIN32)
-    target_link_libraries(gg_dx9r PRIVATE
-        dinput8 dxguid winmm advapi32 user32 gdi32
-    )
-endif()
-
-target_include_directories(gg_dx9r PUBLIC
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/stubs
-    ${CMAKE_SOURCE_DIR}/proxy
-)
-
-# Output name must match exactly what the game expects
-set_target_properties(gg_dx9r PROPERTIES
-    OUTPUT_NAME "gg_dx9r"
-    PREFIX ""
-    SUFFIX ".dll"
-)
-
-# ═══════════════════════════════════════════════════════════════════
-# Standalone GiantsMain.exe — recompiled from reverse-engineered C++
-# Links against giants_engine (static lib with all 6254 RE'd functions).
-# Entry point: WinMain → InitializeEngine → MainGameLoop
-# ═══════════════════════════════════════════════════════════════════
-
-# Main entry point source (separate from engine library to avoid CRT conflicts)
-set(MAIN_SOURCES
-    "src/main/WinMain.cpp"
-)
-
-add_executable(GiantsMain WIN32 ${MAIN_SOURCES})
-
-# Link against the full engine static lib
-target_link_libraries(GiantsMain PRIVATE giants_engine)
-
-# Emit a linker map so crash addresses (from the vectored handler's stack walk)
-# can be resolved to function names.
-target_link_options(GiantsMain PRIVATE -Wl,-Map,build_recomp/GiantsMain.map)
-
-# Windows libraries (same as engine + proxy)
-if(WIN32)
-    target_link_libraries(GiantsMain PRIVATE
-        dinput8 dxguid winmm advapi32 user32 gdi32 dbghelp
-    )
-endif()
-
-target_include_directories(GiantsMain PRIVATE
-    ${CMAKE_SOURCE_DIR}/src
-    ${CMAKE_SOURCE_DIR}/stubs
-)
-
-# Output to build_recomp/ — NEVER clobber the original GameFiles/GiantsMain.exe
-# (the original is the proxy's oracle; overwriting it breaks validation).
-set_target_properties(GiantsMain PROPERTIES
-    OUTPUT_NAME "GiantsMain"
-    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build_recomp"
-)
-
-# ═══════════════════════════════════════════════════════════════════
-# Vanilla-Native Recomp — GiantsMain_vanilla (canonical target)
-# Targets vanilla 1.0 Giants.exe (2574 functions, DX7 renderer).
-# src_vanilla/ = vanilla-native source (ported from vanilla_decompiled/).
-# ═══════════════════════════════════════════════════════════════════
+# ═════════════════════════════════════════════════════════════════
+# Target 1: GiantsMain_vanilla — the vanilla 1.0 recomp (canonical).
+# src_vanilla/ = vanilla-native source (ported from vanilla_decompiled/, which must be
+# regenerated from Giants_nocd.exe — the OLD decompile was v1.5, DELETED).
+# ═════════════════════════════════════════════════════════════════
 file(GLOB VANILLA_SOURCES "src_vanilla/*.cpp")
 add_executable(GiantsMain_vanilla WIN32 ${VANILLA_SOURCES})
-target_link_libraries(GiantsMain_vanilla PRIVATE user32 gdi32 dinput dxguid)
+target_link_libraries(GiantsMain_vanilla PRIVATE user32 gdi32 dinput dxguid ddraw)
 target_compile_options(GiantsMain_vanilla PRIVATE -m32)
 target_link_options(GiantsMain_vanilla PRIVATE -m32 -static-libgcc -static-libstdc++ -Wl,-Map,build_recomp/GiantsMain_vanilla.map)
 set_target_properties(GiantsMain_vanilla PROPERTIES
@@ -190,9 +34,11 @@ set_target_properties(GiantsMain_vanilla PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "build_recomp"
 )
 
-# ── Vanilla DX7 capture proxy (C5 oracle) ──
+# ═════════════════════════════════════════════════════════════════
+# Target 2: gg_dx7r_proxy — vanilla DX7 capture proxy (C5 oracle).
 # Builds gg_dx7r.dll. Deploy: rename real gg_dx7r.dll → gg_dx7r_orig.dll, drop this AS
-# gg_dx7r.dll. Captures the original's 21 UpCallsLoad callbacks → giants_dx7_proxy.log.
+# gg_dx7r.dll. Captures the original's 21 UpCallsLoad callbacks + the D3D7 render trace.
+# ═════════════════════════════════════════════════════════════════
 add_library(gg_dx7r_proxy SHARED ${CMAKE_SOURCE_DIR}/proxy_dx7/dx7_proxy_main.cpp)
 target_include_directories(gg_dx7r_proxy PRIVATE ${CMAKE_SOURCE_DIR}/proxy_dx7)
 set_target_properties(gg_dx7r_proxy PROPERTIES OUTPUT_NAME "gg_dx7r" PREFIX "" SUFFIX ".dll")
