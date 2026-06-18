@@ -67,6 +67,14 @@ Classifier via `vanilla_functions.jsonl` : callees vides + pas de global muté �
 **Autonomes (trace/oracle, pas d'œil)** : portage callees sur le chemin boot, VFS, audio, mapping 55 méthodes renderer, init-chain.
 
 ## Règles
+- **AUCUN CODE PRÉCÉDENT N'EST ACQUIS (suprême).** Tout code dans `src_vanilla/` est une
+  **hypothèse non prouvée**, pas une vérité. Build vert ≠ fidèle ; « ça tourne » ≠ « ça reproduit ».
+  À CHAQUE cycle : ne suppose JAMAIS que le code courant est correct parce qu'il existe déjà.
+  Re-vérifie-le contre l'observation runtime ; si une découverte contredit le code actuel →
+  **remplace-le** (jette le travail faux, ne le préserve pas). Une hypothèse ne se prouve QUE par
+  capdiff PASS ou proxy 0-mismatch. **État 2026-06-19 : 0 reproduction valide observée** → tout le
+  recomp est non prouvé, à invalider/remplacer, pas une fondation. L'observation de l'original
+  prime sur tout code existant.
 - **Anti-dérive** : pas de code custom/inventé. Diagnostic stub isolé/étiqueté. (1.5/DX9 PURGED — vanilla-only.)
 - **Mesure avant code** + **asset-display** + **succès = preuve (capdiff PASS / proxy 0-mismatch)**.
 - **Preuve avant assemblage** : n'assemble que du prouvé (Ghidra vanilla vérifié OU 0 mismatch).

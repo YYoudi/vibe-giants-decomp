@@ -521,13 +521,14 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         typedef void (__cdecl *PFN_Cdecl1i)(void*, uint32_t);
         PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];   // BeginScene + Clear
         PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];   // EndScene
-        // +0x98 = Clear/FillBackground (obj, ARGB color). The MEASURED original menu
-        // background is a dark stormy sky (reference_screens/orig_menu_REFERENCE.png):
-        // top ~RGB(20,15,15) → mid ~RGB(31,42,59) → bottom ~RGB(28,30,40). The island
-        // terrain is the INTRO cinematic, NOT the menu — removed (was wrong content).
+        // +0x98 = Clear/FillBackground (obj, ARGB color). The original menu has a dark
+        // stormy sky + the 3D island scene behind the 2D overlays. Render the terrain
+        // through the 3D pipeline (now proven functional) after BeginScene, before 2D.
         PFN_Cdecl1i m98 = (PFN_Cdecl1i)(uintptr_t)obj[0x98 / 4];
-        if (m98) m98(g_vRenderer, 0xFF31243b);   // dark blue-gray sky (mid-gradient avg)
+        if (m98) m98(g_vRenderer, 0xFF31243b);   // dark blue-gray sky
         if (m90) m90(g_vRenderer);
+        // ── 3D island terrain through the D3D7 transform pipeline (perspective + lit + textured).
+        VanillaTerrain_DrawX("intro_island.gti", "Bin\\w_intro_island.gzp");
         // ── Menu logo = Giants_logo_512.tga (a 2D image, NOT the xx_giants_logo_3d 3D mesh).
         //    The original menu renders the chrome "GIANTS / CITIZEN KABUTO" as a single 2D
         //    textured quad (one of the menu trace's 130 quads). Identified via GZP index
