@@ -395,25 +395,14 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     // present via the PROVEN path (commit 495b269): GetDC(device RT) → BitBlt(RT → window).
     if (st.phase == BOOT_MENU) {
         if (s_lastLoggedPhase != BOOT_MENU) {
-            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU phase — manual bracket + terrain + GDI RT-present ===\n"); fflush(g_vTrace); }
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU phase — VanillaRunFrame (renderer's own scene walk) ===\n"); fflush(g_vTrace); }
             s_lastLoggedPhase = BOOT_MENU;
         }
-        typedef void (__cdecl *PFN_Cdecl0)(void*);
-        PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];   // BeginScene + Clear
-        PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];   // EndScene
-        if (m90) m90(g_vRenderer);                                // BeginScene + Clear (device RT)
-        if (g_vTrace) { static int tm=0; if(tm<2){fprintf(g_vTrace,"[BOOT] MENU: terrain draw start\n");fflush(g_vTrace);} }
-        cbSceneBegin_DrawTerrain();                               // draw island on device RT (in-scene)
-        if (g_vTrace) { static int tm2=0; if(tm2<2){fprintf(g_vTrace,"[BOOT] MENU: terrain draw returned OK\n");fflush(g_vTrace);tm2++;} }
-        if (m94) m94(g_vRenderer);                                // EndScene
-
-        // REAL present via the renderer's end-of-frame slot +0xa8 (DX7_METHOD_MAP_v2.md).
-        // The internal present (+0x60) is gated by obj+0x42c (present-ready flag) — set it.
-        // This replaces the former GDI BitBlt workaround (GetDC(RT)→BitBlt→window).
-        PFN_Cdecl0 m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];    // Present (end-of-frame)
-        obj[0x42c / 4] = (void*)1;                                 // present-ready gate
-        if (m_a8) m_a8(g_vRenderer);
-        if (g_vTrace) { static int tp=0; if(tp<2){fprintf(g_vTrace,"[BOOT] MENU: +0xa8 Present called\n");fflush(g_vTrace);tp++;} }
+        // Drive the renderer's OWN per-frame (method[0x20] = 0x7370): it does FrameReset →
+        // SetCameraProjection → Clear → BeginScene → scene walk (dispatch the populated lists)
+        // → EndScene → Present. Scene data is populated by the loader (FUN_004b7c50) +
+        // texture feed (SceneWalk_Textures → slot 0xb4). This is the REAL render path.
+        VanillaRunFrame(1);
         return;
     }
 
