@@ -78,7 +78,24 @@ void FUN_004470d0(void) {}
 void FUN_0044a120(void) {}
 void FUN_004d20f0(void) {}
 void FUN_0044ab40(void) {}
-void* FUN_0049d280(int) { return 0; }                 // spawn-record lookup
+// FUN_0049d280: obj-type lookup by u32 id. Walks DAT_006313b0 linked list; each node
+//   [0]=next, [1]=count, [2..]=entries stride 0x119 dwords, key at entry[0]. Returns
+//   ptr to the matching entry (node + iVar2*0x119 + 2), else NULL. (vanilla 0049d280)
+extern "C" uint32_t DAT_006313b0;
+void* FUN_0049d280(int typeId) {
+    uint32_t* node = (uint32_t*)(uintptr_t)DAT_006313b0;
+    while (node) {
+        int count = (int)node[1];
+        if (count > 0) {
+            for (int i = 0; i < count; i++) {
+                uint32_t* entry = node + 2 + i * 0x119;
+                if (*entry == (uint32_t)typeId) return entry;
+            }
+        }
+        node = (uint32_t*)(uintptr_t)node[0];
+    }
+    return 0;
+}
 void FUN_004af220(uint32_t) {}                        // procanim cleanup
 void FUN_0051eb10(void) {}
 void FUN_0049cc60(void) {}

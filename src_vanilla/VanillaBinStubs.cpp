@@ -25,7 +25,23 @@ void FUN_00476d40() {}
 void FUN_00491830() {}
 void FUN_0049ccf0() {}
 void FUN_0049cfd0() {}
-void FUN_0049d2d0() {}
+// FUN_0049d2d0: obj-type lookup (walks DAT_006313b4 linked list; node [0]=next,
+//   [1]=count, key at node+3, entries stride 0xc1 dwords). Returns matching entry
+//   (node + iVar2*0xc1 + 2), else NULL. (vanilla 0049d2d0)
+void* FUN_0049d2d0(int typeId) {
+    uint32_t* node = (uint32_t*)(uintptr_t)DAT_006313b4;
+    while (node) {
+        int count = (int)node[1];
+        if (count > 0) {
+            for (int i = 0; i < count; i++) {
+                uint32_t* entry = node + 3 + i * 0xc1;
+                if (*entry == (uint32_t)typeId) return node + i * 0xc1 + 2;
+            }
+        }
+        node = (uint32_t*)(uintptr_t)node[0];
+    }
+    return 0;
+}
 void FUN_0049f3b0() {}
 void FUN_004a1360() {}
 void FUN_004b7b30() {}
