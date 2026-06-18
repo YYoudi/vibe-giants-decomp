@@ -21,7 +21,42 @@ static uint32_t c_setTex = 0, c_dp = 0, c_dpvb = 0, c_stss = 0, c_sr = 0, c_xfor
 static uint32_t c_dip = 0, c_dps = 0, c_dips = 0, c_dpvb6 = 0, c_dipvb8 = 0, c_mtx = 0;
 static uint32_t g_frame = 0;
 static uint32_t g_setTexLogged = 0;
+// Lazy device discovery (the device is created AFTER GDVSysCreate, so the fixed obj+0x294
+// offset was empty at hook time — rule 11: stale 1.5 offset). We scan the renderer object for a
+// pointer whose vtable lives in d3dim700.dll, triggered from the per-frame callback[9].
+static void*     g_rendererObj = nullptr;
+static uintptr_t g_d3dimBase = 0, g_d3dimSize = 0;
+static void*     g_origCb9 = nullptr;
+static bool      g_hooksInstalled = false;
+static int       readable(void* p) {
+    MEMORY_BASIC_INFORMATION mbi;
+    if (!VirtualQuery(p, &mbi, sizeof(mbi))) return 0;
+    return (mbi.State == MEM_COMMIT && (mbi.Protect & (PAGE_READONLY|PAGE_READWRITE|PAGE_EXECUTE|PAGE_EXECUTE_READ|PAGE_EXECUTE_READWRITE)));
+}
+// Scan g_rendererObj for a pointer P whose vtable (i.e. *(void**)P) has slots in d3dim700.dll.
+static void* FindD3D7Device() {
+    if (!g_rendererObj || !g_d3dimBase) return nullptr;
+    char* base = (char*)g_rendererObj;
+    for (uint32_t off = 0; off < 0x2000; off += 4) {
+        if (!readable(base + off)) break;
+        void* cand = *(void**)(base + off);
+        if (!cand || !readable(cand) || !readable((char*)cand + 4)) continue;
+        void* vt = *(void**)cand;
+        if (!vt || !readable(vt)) continue;
+        // sample vtable slots; the D3D7 device vtable has many slots all in d3dim700
+        int hits = 0;
+        for (int s = 2; s < 0x160/4 && hits < 3; s += 6) {
+            if (!readable((char*)vt + s*4)) break;
+            uintptr_t a = (uintptr_t)((void**)vt)[s];
+            if (a >= g_d3dimBase && a < g_d3dimBase + g_d3dimSize) hits++;
+        }
+        if (hits >= 3) return cand;
+    }
+    return nullptr;
+}
+static void TryInstallHooksLazy();  // fwd
 static void InstallD3D7Hooks(void* wrapper);   // forward decl (defined in hook section)
+static DWORD WINAPI PollThread(LPVOID);          // forward decl (lazy device discovery)
 static void DumpStage0Texture(void* device);   // forward decl (one-shot quad-texture dump)
 
 static void Log(const char* fmt, ...) {
@@ -76,29 +111,10 @@ void* GDVSysCreate(const char* a, HWND b, void* c, void* d, void* e, void* f) {
     Log("[DX7PROXY] GDVSysCreate(cmdLine=\"%s\", hwnd=%p, ...)", a ? a : "(null)", (void*)b);
     void* r = g_realGDVSysCreate(a, b, c, d, e, f);
     Log("[DX7PROXY] GDVSysCreate -> renderer=%p", r);
-    // Dump the wrapper@obj+0x294 vtable (all function addresses) for offline disasm.
+    // Enumerate modules AFTER GDVSysCreate to find d3dim700.dll's base+size (the D3D7 device
+    // vtable methods live there). Used by FindD3D7Device() for the lazy scan.
     if (r) {
-        char** obj = (char**)r;
-        void* wrapper = *(void**)(obj + 0x294/sizeof(char*));
-        if (wrapper) {
-            void** vtbl = *(void***)wrapper;
-            Log("[DX7PROXY] === WRAPPER VTABLE DUMP (obj+0x294=%p, vtbl=%p) ===", wrapper, vtbl);
-            for (uint32_t off = 0; off < 0x160; off += 4) {
-                void* fn = vtbl[off/4];
-                if (!fn) continue;
-                // Resolve which module owns this vtable slot (pinpoint DrawPrim/SetTexture DLL).
-                HMODULE mfn = nullptr;
-                char mnm[256] = {0};
-                GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-                                   (LPCSTR)fn, &mfn);
-                if (mfn) GetModuleBaseNameA(GetCurrentProcess(), mfn, mnm, sizeof(mnm)-1);
-                unsigned offInMod = mfn ? (unsigned)((uintptr_t)fn - (uintptr_t)mfn) : 0;
-                Log("[DX7PROXY]   wvt[0x%03x] = %p  [%s+0x%x]", off, fn, mnm[0] ? mnm : "?", offInMod);
-            }
-            Log("[DX7PROXY] === END WRAPPER VTABLE ===");
-        }
-        // Enumerate modules AFTER GDVSysCreate (all DLLs now loaded) to find which DLL
-        // contains the wrapper vtable functions (0x63xxxxx range).
+        g_rendererObj = r;
         HMODULE mods[512]; DWORD needed = 0;
         if (EnumProcessModules(GetCurrentProcess(), mods, sizeof(mods), &needed)) {
             int count = needed / sizeof(HMODULE);
@@ -107,11 +123,18 @@ void* GDVSysCreate(const char* a, HWND b, void* c, void* d, void* e, void* f) {
                 char nm[256] = {0};
                 GetModuleBaseNameA(GetCurrentProcess(), mods[i], nm, sizeof(nm)-1);
                 Log("[DX7PROXY]   mod: 0x%08x %s", (unsigned)(uintptr_t)mods[i], nm);
+                if (_stricmp(nm, "d3dim700.dll") == 0) {
+                    g_d3dimBase = (uintptr_t)mods[i];
+                    MODULEINFO mi; if (GetModuleInformation(GetCurrentProcess(), mods[i], &mi, sizeof(mi)))
+                        g_d3dimSize = mi.SizeOfImage;
+                    Log("[DX7PROXY] d3dim700.dll base=0x%08x size=0x%x", (unsigned)g_d3dimBase, (unsigned)g_d3dimSize);
+                }
             }
             Log("[DX7PROXY] === END MODULES ===");
         }
-        // Install per-object D3D7 trace hooks (SetTexture/DrawPrimitive/...).
-        InstallD3D7Hooks(*(void**)((char**)r + 0x294/sizeof(char*)));
+        // Launch a polling thread that finds the D3D7 device once it's created (post-init) and
+        // installs the per-frame trace hooks. Avoids the stale obj+0x294 timing assumption.
+        CloseHandle(CreateThread(nullptr, 0, PollThread, nullptr, 0, nullptr));
     }
     return r;
 }
@@ -296,6 +319,25 @@ static void InstallD3D7Hooks(void* wrapper) {
     *(void***)wrapper = g_vtCopy;
     DWORD tmp = 0; VirtualProtect(wrapper, sizeof(void*), oldp, &tmp);
     Log("[DX7PROXY] D3D7 trace hooks INSTALLED on device %p (vtable %p -> copy %p)", wrapper, oldvt, g_vtCopy);
+}
+
+// Lazy device discovery: scan the renderer object for the IDirect3DDevice7 (whose vtable lives in
+// d3dim700.dll). The device is created AFTER GDVSysCreate, so this runs from a polling thread
+// (no callback-signature assumption, no timing guess). Patches the device vtable ptr once found.
+static void TryInstallHooksLazy() {
+    if (g_hooksInstalled) return;
+    void* dev = FindD3D7Device();
+    if (dev) { InstallD3D7Hooks(dev); g_hooksInstalled = true;
+        Log("[DX7PROXY] LAZY device found via scan = %p", dev); }
+}
+static DWORD WINAPI PollThread(LPVOID) {
+    for (int i = 0; i < 400 && !g_hooksInstalled; i++) {  // up to ~20s
+        TryInstallHooksLazy();
+        if (g_hooksInstalled) break;
+        Sleep(50);
+    }
+    Log("[DX7PROXY] poll thread exit (installed=%d)", g_hooksInstalled);
+    return 0;
 }
 
 // Export 2: UpCallsLoad — CAPTURE the 21 callbacks, then forward.
