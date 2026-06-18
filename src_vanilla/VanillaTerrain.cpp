@@ -264,7 +264,7 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
     // y[0..5680] z[-40..760], center (2280,2840).
     mtxLookAtLH(view, {2300.f, -4000.f, 2500.f}, {2300.f, 2840.f, 0.f}, {0.f, 0.f, 1.f});
     mtxPerspectiveFovLH(proj, 1.0472f /*60deg*/, 640.f / 480.f, 10.f, 30000.f);
-    struct ScreenV { float x, y, z, rhw; uint32_t diff; };  // XYZRHW|DIFFUSE=0x044, 20B
+    struct ScreenV { float x, y, z, rhw; uint32_t diff; float u, v; };  // XYZRHW|DIFFUSE|TEX1=0x144, 28B
     std::vector<ScreenV> screen;
     screen.reserve(verts.size());
     int behind = 0;
@@ -294,10 +294,13 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
         uint8_t g = (uint8_t)(140.f + 115.f * t);
         uint8_t b = (uint8_t)(40.f + 80.f * t);
         s.diff = 0xFF000000u | (uint32_t(r) << 16) | (uint32_t(g) << 8) | uint32_t(b);
+        // UV: map terrain world position to texture coords [0..1] (intro_grnd covers the island).
+        s.u = wv.x / 4600.0f;
+        s.v = wv.y / 5680.0f;
         screen.push_back(s);
     }
     typedef long (__stdcall *PFN_DrawPrim)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
-    long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, 0x044 /*XYZRHW|DIFFUSE*/,
+    long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, 0x144 /*XYZRHW|DIFFUSE|TEX1*/,
                                        screen.data(), (uint32_t)screen.size(), 0);
     trace("[VTERRAIN] SubmitTris(PROJECTED→XYZRHW): %d verts, %d tris, behind-clamp=%d, hr=0x%lx\n",
           (int)screen.size(), triCount, behind, (unsigned long)hr);
