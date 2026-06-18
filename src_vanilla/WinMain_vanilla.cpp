@@ -33,6 +33,7 @@ extern "C" uint32_t DAT_006316ec;   // world_state ptr (defined in VanillaStubs.
 extern "C" uint32_t g_videoWidth, g_videoHeight, g_videoDepth, g_windowed, g_gameOptions;
 extern "C" void VanillaSettings_EnsureDefaults(void);
 extern "C" void VanillaSettings_Load(void);
+extern "C" void VanillaRenderer_Shutdown(void);   // release DX7 device on exit
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -303,7 +304,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Exit — shutting down renderer\n"); fflush(g_vTrace); }
     // Release the DX7 device + renderer so the adapter frees for the next launch (the
     // device-leak root cause of the repeated-launch crash).
-    extern "C" void VanillaRenderer_Shutdown(void);
     VanillaRenderer_Shutdown();
     if (g_vHWnd) DestroyWindow(g_vHWnd);
     VanillaInput_Fini();
