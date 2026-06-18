@@ -135,6 +135,7 @@ def capture_recomp(phase, out, extra_flags=None):
     launch(RECOMP, args)
     wait = PHASE_WAIT[phase]
     time.sleep(wait / 1000.0 + 1.5)        # +1.5s for process startup + appsnap settle
+    foreground("Giants"); time.sleep(1.0)   # recomp window title is also "Giants"
     ok = appsnap(out)
     kill("GiantsMain_vanilla.exe")
     return ok
@@ -185,6 +186,7 @@ def capture_original(phase, out):
         wait = PHASE_WAIT[phase]
         extra = max(0, wait - 3000) / 1000.0
         time.sleep(extra)
+        foreground("Giants"); time.sleep(1.0)          # ensure game is foreground for appsnap
         ok = appsnap(out); kill("Giants_nocd.exe"); return ok
     # loading / menu: the most RELIABLE path to the original's menu is to let the 3
     # intros play out NATURALLY (3 × ~12.4s ≈ 38s) — SendInput skip destabilizes the
@@ -196,6 +198,11 @@ def capture_original(phase, out):
         time.sleep(36.0)
     else:                                             # menu
         time.sleep(42.0)                              # past all 3 intros + menu settle
+    # CRITICAL: re-foreground the game window before appsnap — during the long natural
+    # intro playback other windows (Task Manager, editor) steal foreground, and appsnap
+    # then captures the foreground (desktop) instead of the game → invalid capture.
+    foreground("Giants")
+    time.sleep(1.0)
     ok = appsnap(out); kill("Giants_nocd.exe")
     return ok
 
@@ -224,7 +231,7 @@ def main():
     pr = sub.add_parser("recomp");  pr.add_argument("phase"); pr.add_argument("-o","--out", required=True); pr.add_argument("--flags", nargs="*")
     po = sub.add_parser("original"); po.add_argument("phase"); po.add_argument("-o","--out", required=True)
     pd = sub.add_parser("diff"); pd.add_argument("a"); pd.add_argument("b"); pd.add_argument("-o","--out")
-    pc = sub.add_parser("compare"); pc.add_argument("phase"); pc.add_argument("--thresh", type=float, default=PASS_THRESH)
+    pc = sub.add_parser("compare"); pc.add_argument("phase"); pc.add_argument("--thresh", type=float, default=PASS_THRESH); pc.add_argument("--refresh-original", action="store_true")
     args = ap.parse_args()
 
     if args.cmd == "recomp":
@@ -243,12 +250,24 @@ def main():
         r = os.path.join(SHOTS, f"cmp_recomp_{args.phase}.png")
         o = os.path.join(SHOTS, f"cmp_orig_{args.phase}.png")
         df = os.path.join(SHOTS, f"cmp_diff_{args.phase}.png")
+        # Cached reference original: the DX7 original is FLAKY under repeated automated
+        # launches (device state doesn't release cleanly → "not responding" hang), and a
+        # menu capture takes ~42s. The original menu is essentially static, so we cache a
+        # VERIFIED capture and reuse it. Refresh with --refresh-original (manual check that
+        # the new capture is the real game, not a desktop/hang dialog).
+        ref = os.path.join(ROOT, "reference_screens", f"orig_{args.phase}_REFERENCE.png")
+        use_ref = os.path.exists(ref) and not getattr(args, "refresh_original", False)
         ok1 = capture_recomp(args.phase, r)
-        # Both the recomp and the original use gg_dx7r.dll → the DX7 device must be
-        # fully released before the other process creates its own, or the second one
-        # hangs/crashes. Give the driver time to tear down.
-        time.sleep(4.0)
-        ok2 = capture_original(args.phase, o)
+        if use_ref:
+            import shutil; shutil.copyfile(ref, o)
+            ok2 = True
+            print(f"[compare {args.phase}] using cached original reference: {ref}")
+        else:
+            # Both the recomp and the original use gg_dx7r.dll → the DX7 device must be
+            # fully released before the other process creates its own, or the second one
+            # hangs/crashes. Give the driver time to tear down.
+            time.sleep(4.0)
+            ok2 = capture_original(args.phase, o)
         if not (ok1 and ok2):
             print(f"[compare {args.phase}] capture failed (recomp={ok1} original={ok2})"); sys.exit(2)
         d, v = diff_images(r, o, df, args.thresh)
