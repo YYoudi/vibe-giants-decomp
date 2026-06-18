@@ -48,6 +48,22 @@ void* GDVSysCreate(const char* a, HWND b, void* c, void* d, void* e, void* f) {
     Log("[DX7PROXY] GDVSysCreate(cmdLine=\"%s\", hwnd=%p, ...)", a ? a : "(null)", (void*)b);
     void* r = g_realGDVSysCreate(a, b, c, d, e, f);
     Log("[DX7PROXY] GDVSysCreate -> renderer=%p", r);
+    // Dump the wrapper@obj+0x294 vtable (all function addresses) for offline disasm.
+    if (r) {
+        char** obj = (char**)r;
+        void* wrapper = *(void**)(obj + 0x294/sizeof(char*));
+        if (wrapper) {
+            void** vtbl = *(void***)wrapper;
+            Log("[DX7PROXY] === WRAPPER VTABLE DUMP (obj+0x294=%p, vtbl=%p) ===", wrapper, vtbl);
+            for (uint32_t off = 0; off < 0x160; off += 4) {
+                void* fn = vtbl[off/4];
+                if (!fn) continue;
+                // Only log if the address is in gg_dx7r_orig.dll's range (skip null/garbage)
+                Log("[DX7PROXY]   wvt[0x%02x] = %p", off, fn);
+            }
+            Log("[DX7PROXY] === END WRAPPER VTABLE ===");
+        }
+    }
     return r;
 }
 
