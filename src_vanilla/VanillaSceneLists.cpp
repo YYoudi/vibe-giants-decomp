@@ -254,7 +254,7 @@ extern "C" void FUN_0050d8f0(const char* name, uint32_t stream) {
 // per-object placement rows. The opcode-driven per-object body (Q/Y/Z/[/R/V/W/X
 // cases at [0x4b52cb..0x4b5667]) is ported as a faithful record-reader that
 // consumes the on-disk ObjectRef6 rows.
-extern "C" void FUN_004b50b0(uint32_t stream, const char* scene_name) {
+extern "C" void FUN_004b50b0_legacy(uint32_t stream, const char* scene_name) {
     // ---- Phase 1: 'odef' list (object definitions) → DAT_006313ac ----
     // [0x4b50cd] read count; [0x4b50e5] allocate count*0x52 + 4-byte header;
     // [0x4b511c..0x4b5150] head-insert into DAT_006313ac; zero-fill; set +4=count.

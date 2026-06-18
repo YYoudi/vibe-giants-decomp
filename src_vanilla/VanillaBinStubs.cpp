@@ -22,10 +22,11 @@ uint32_t DAT_005633c8 = 0;
 uint32_t DAT_006313b0 = 0;
 uint32_t DAT_006313b4 = 0;
 uint32_t DAT_006552c0 = 0;
+float _DAT_005525f8 = 0.0f;   // FIXME(unverified): .data float const used by FUN_00472560 scale
+void FUN_004720d0(uint32_t* /*v*/) {}   // FIXME(unverified): callee — quat transform (FUN_00472560 dep)
 void FUN_00405080() {}
 void FUN_00429100() {}
 void FUN_0044ab90() {}
-void FUN_00472560() {}
 void FUN_00476d40() {}
 void FUN_00491830() {}
 void FUN_0049ccf0() {}
@@ -139,4 +140,16 @@ extern const char s_World_gt_fogmin_gt__0_0f_0056348c[] = "World gt fogmin gt 0 
 extern const char s_World_gt_waterfogmax_gt__0_0f_0056343c[] = "World gt waterfogmax gt 0 0f";
 extern const char s_World_gt_waterfogmin_gt__0_0f_00563458[] = "World gt waterfogmin gt 0 0f";
 extern const char s_WorldAnims_after_references__005632d0[] = "WorldAnims after references ";
+// placements (FUN_004b50b0) callees + globals + string stubs (dormant)
+uint32_t DAT_006313ac = 0;
+uint32_t DAT_006313b8 = 0;
+uint32_t DAT_006313c8 = 0;
+void FUN_00403470() {}
+void FUN_00404f70() {}
+void FUN_00405200() {}
+void FUN_00474d10() {}
+void FUN_0049c920() {}
+void FUN_0049d240() {}
+void FUN_00545ab0() {}
+extern const char s_Dynamic_shadow_texture_0055f824[] = "Dynamic shadow texture";
 } // extern "C"
