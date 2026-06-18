@@ -55,11 +55,15 @@ Pour TOUT comportement observable (ce qui s'affiche, l'ordre, la durée, la vale
 - **Structures** : layouts/globals vanilla ≠ 1.5 — réaligne `GiantsTypes` structure par structure.
 - **DLL setups** : `gg_dx7r.dll` = renderer vanilla (cible). `gg_dx7r_stub.dll` = diagnostic. `gg_dx9r*.dll` + proxy = legacy 1.5/oracle. Original oracle = `Giants_nocd.exe`.
 
-## Subagents (parallélisation MAX, back-off 529)
-- Objectif : **parallélisation maximale** que tolère le gateway. Fork des subagents sur chantiers **indépendants** (fichiers disjoints via claim board / worktree). Le portage moteur-core est embarrassingly parallel.
+## Subagents (parallélisation MAX selon les vraies limites de concurrence)
+**Limites de concurrence réelles du gateway api.z.ai** (vérifiées 2026-06-18) :
+- **GLM-5.1 (sonnet) = 10 requêtes en vol** → fork jusqu'à **~8 subagents sonnet** en parallèle (garde 2 de marge).
+- **GLM-5.2 (opus) = 5 requêtes en vol** → la main (opus) + quelques subagents opus si besoin ; reste sous 5.
+- Les **529** qu'on a eus n'étaient PAS le plafond de concurrence (on n'avait que 2 subagents) — c'était de la **surcharge serveur transitoire**. Donc : un 529 = retry/back-off ponctuel, PAS une raison pour limiter à 2 subagents. Fork large (jusqu'à ~8 sonnet).
+- Objectif : **parallélisation maximale**. Fork des subagents sur chantiers **indépendants** (fichiers disjoints via claim board / worktree). Le portage moteur-core est embarrassingly parallel.
 - **Modèle** : `sonnet` (glm-5.1) pour les subagents ; opus (glm-5.2) pour la main (intégration, build, décisions).
 - **Anti-race** : un seul rédacteur par fichier ; ils RETOURNENT du code, toi seul tu intègres + build. **Worktree par agent** (EnterWorktree) pour zéro conflit.
-- **API 529** : back-off (séquentiel), ne réessaie pas le fork immédiatement.
+- **API 529 transitoire** : retry après quelques secondes (back-off), re-fork — ce n'est PAS le plafond de concurrence.
 - **re-agent** : JAMAIS en parallèle (session unique).
 
 ## Args
