@@ -25,9 +25,13 @@ extern "C" int VanillaRunFrame(int frameState);
 // D3D7 texture creation + device SetTexture@0x8c (measured texturing mechanism).
 extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
 // Canonical 2D tiled blitter (FUN_00433900 port) — see vanilla_2d_render_pipeline.md.
-namespace VanillaBlit { struct TiledImage; TiledImage* Load(void*, const char*, const char*); void Draw(void*, TiledImage*, int, int, float); }
+namespace VanillaBlit { struct TiledImage; TiledImage* Load(void*, const char*, const char*);
+    void Draw(void*, TiledImage*, int, int, float);
+    void DrawScaled(void*, TiledImage*, int, int, int, int, float); }
 // Bitmap font (GiantFont_Eng) — FUN_0044a9c0 port; see menu_system_code.md.
 namespace VanillaFont { struct Font; Font* Load(void*); void Draw(void*, Font*, const char*, int, int, int, uint32_t); }
+// Device resolution (registry) — for DrawScaled intro/loading device-fit.
+extern "C" uint32_t g_videoWidth, g_videoHeight;
 
 // Vanilla globals (DAT_ addresses from vanilla binary):
 static FARPROC g_GDVSysCreate = nullptr;   // DAT_005dc01c
@@ -593,12 +597,16 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     }
     if (m98) m98(g_vRenderer, 0xFF000000);   // Clear BLACK (vanilla +0x98 Clear(0))
     if (m90) m90(g_vRenderer);               // BeginScene
+    // Intro/loading TGAs are larger than the device (intros=1600x1200 vs 640x480 device) →
+    // DrawScaled to the device res (vanilla device-fit). giants_loading is 640x480 (1:1).
+    int devW = g_videoWidth ? (int)g_videoWidth : 640;
+    int devH = g_videoHeight ? (int)g_videoHeight : 480;
     if (device && st.phase == BOOT_INTRO && st.fade > 0.01f
         && ii >= 0 && ii < 3 && s_introTiles[ii]) {
-        VanillaBlit::Draw(device, s_introTiles[ii], 0, 0, st.fade);
+        VanillaBlit::DrawScaled(device, s_introTiles[ii], 0, 0, devW, devH, st.fade);
     }
     if (device && st.phase == BOOT_LOADING && st.fade > 0.01f && s_loadingTile) {
-        VanillaBlit::Draw(device, s_loadingTile, 0, 0, st.fade);
+        VanillaBlit::DrawScaled(device, s_loadingTile, 0, 0, devW, devH, st.fade);
     }
     if (m94) m94(g_vRenderer);               // EndScene
     obj[0x42c / 4] = (void*)1;
