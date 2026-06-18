@@ -26,7 +26,6 @@ float _DAT_005525f8 = 0.0f;   // FIXME(unverified): .data float const used by FU
 void FUN_004720d0(uint32_t* /*v*/) {}   // FIXME(unverified): callee — quat transform (FUN_00472560 dep)
 void FUN_00405080() {}
 void FUN_00429100() {}
-void FUN_0044ab90() {}
 void FUN_00476d40() {}
 void FUN_00491830() {}
 void FUN_0049ccf0() {}
@@ -171,4 +170,8 @@ uint32_t DAT_0055f778 = 0;
 uint32_t DAT_006313cc[14] = {0};
 extern const char s_Out_of_objects__exceeded_limit_0055f7f0[] = "Out of objects exceeded limit";
 extern const char s_Warning__ObjObj_type__d_not_foun_0055f7cc[] = "Warning ObjObj type d not foun";
+uint32_t DAT_0059c958 = 0;
+uint32_t DAT_0059c960 = 0;
+uint32_t DAT_0059c964 = 0;
+uint32_t DAT_0059c96c = 0;
 } // extern "C"
