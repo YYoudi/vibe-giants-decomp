@@ -88,6 +88,8 @@ void VanillaParseArgs(const char* cmdLine) {
             while (*p && !isspace((unsigned char)*p)) p++;
         } else if (ieq(tok, "-no-audio")) {
             g_bootCfg.noAudio = true;
+        } else if (ieq(tok, "-scene3d")) {
+            g_bootCfg.scene3d = true;
         }
     }
     if (g_vTrace) { fprintf(g_vTrace, "[BOOTCFG] skipIntros=%d atMenu=%d frameLimit=%d noAudio=%d level='%s'\n",

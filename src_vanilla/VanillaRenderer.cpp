@@ -430,6 +430,18 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     // Between them we draw the island heightfield on the device RT (in-scene), then
     // present via the PROVEN path (commit 495b269): GetDC(device RT) → BitBlt(RT → window).
     if (st.phase == BOOT_MENU) {
+        // -scene3d EXPERIMENT: call the renderer's REAL scene walk (0x7370) instead of the
+        // 2D bracket. Tests whether the 3D pipeline produces ANY output with the current
+        // (loader-populated) scene state. The renderer's scene walk does its own full frame
+        // (BeginScene/Clear/walk/EndScene/Present) + camera/render-lists.
+        if (g_bootCfg.scene3d) {
+            if (s_lastLoggedPhase != BOOT_MENU) {
+                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU -scene3d: calling renderer scene walk (0x7370) ===\n"); fflush(g_vTrace); }
+                s_lastLoggedPhase = BOOT_MENU;
+            }
+            VanillaRunFrame(0);
+            return;
+        }
         if (s_lastLoggedPhase != BOOT_MENU) {
             if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU phase — manual bracket + terrain (scene populated: 204 tex bound) ===\n"); fflush(g_vTrace); }
             s_lastLoggedPhase = BOOT_MENU;
