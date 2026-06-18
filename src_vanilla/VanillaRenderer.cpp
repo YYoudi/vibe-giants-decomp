@@ -26,6 +26,8 @@ extern "C" int VanillaRunFrame(int frameState);
 extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
 // Canonical 2D tiled blitter (FUN_00433900 port) — see vanilla_2d_render_pipeline.md.
 namespace VanillaBlit { struct TiledImage; TiledImage* Load(void*, const char*, const char*); void Draw(void*, TiledImage*, int, int, float); }
+// Bitmap font (GiantFont_Eng) — FUN_0044a9c0 port; see menu_system_code.md.
+namespace VanillaFont { struct Font; Font* Load(void*); void Draw(void*, Font*, const char*, int, int, int, uint32_t); }
 
 // Vanilla globals (DAT_ addresses from vanilla binary):
 static FARPROC g_GDVSysCreate = nullptr;   // DAT_005dc01c
@@ -456,6 +458,19 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 // (0.1208→0.1717). So the bracket does NOT draw the logo (parse is kept as
                 // reusable GBS infrastructure; the real logo render is a canonical-path task).
                 if (g_vTrace) { static int ln=0; if(ln<1){fprintf(g_vTrace,"[LOGO] real tris parsed (%u) — bracket render DISABLED (flat render = blob, +delta). Needs real 3D menu path.\n", (uint32_t)(s_tris.size()/9));fflush(g_vTrace);ln++;} }
+            }
+        }
+        // ── Bitmap-font text (FUN_0044a9c0 port) — GiantFont_Eng via tx_lev1.gzp. Test
+        //    render of the profile-select prompt (the menu's first text). Cell layout
+        //    refined from the measured font sheet (see [FONT] trace).
+        {
+            void* wrapper = obj[0x294 / 4];
+            static VanillaFont::Font* s_font = nullptr;
+            static bool s_fontTried = false;
+            if (wrapper && !s_fontTried) { s_fontTried = true; s_font = VanillaFont::Load(wrapper); }
+            if (wrapper && s_font) {
+                VanillaFont::Draw(wrapper, s_font, "QUI ETES VOUS?", 60, 40, 24, 0xFFFFFFFF);
+                VanillaFont::Draw(wrapper, s_font, "Player", 120, 80, 24, 0xFFFF8060);
             }
         }
         // ── Custom mouse cursor (FUN_0042e450 port): "cursor00.tga" drawn as a quad at
