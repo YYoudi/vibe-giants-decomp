@@ -5,6 +5,7 @@
 // This is the ORACLE for bit-exact validation of the recomp's vanilla callback table
 // (VanillaRenderer.cpp callbacks[]). Observe mode first (capture); dual-mode after.
 #include <windows.h>
+#include <psapi.h>
 #include <cstdio>
 #include <cstdint>
 
@@ -35,6 +36,18 @@ BOOL APIENTRY DllMain(HMODULE, DWORD reason, LPVOID) {
         Log("[DX7PROXY] resolved: GDVSysCreate=%p UpCallsLoad=%p",
             (void*)g_realGDVSysCreate, (void*)g_realUpCallsLoad);
         if (!g_realGDVSysCreate || !g_realUpCallsLoad) { Log("[DX7PROXY] missing export"); return FALSE; }
+        // Enumerate loaded modules to find which DLL contains the wrapper vtable (0x63xxxxx range).
+        {
+            HMODULE mods[256]; DWORD needed = 0;
+            if (EnumProcessModules(GetCurrentProcess(), mods, sizeof(mods), &needed)) {
+                int count = needed / sizeof(HMODULE);
+                for (int i = 0; i < count; i++) {
+                    char name[256] = {0};
+                    GetModuleBaseNameA(GetCurrentProcess(), mods[i], name, sizeof(name)-1);
+                    Log("[DX7PROXY] module: %p %s", (void*)mods[i], name);
+                }
+            }
+        }
     } else if (reason == DLL_PROCESS_DETACH) {
         Log("[DX7PROXY] detach");
         if (g_log) { fflush(g_log); fclose(g_log); g_log = nullptr; }
@@ -62,6 +75,19 @@ void* GDVSysCreate(const char* a, HWND b, void* c, void* d, void* e, void* f) {
                 Log("[DX7PROXY]   wvt[0x%02x] = %p", off, fn);
             }
             Log("[DX7PROXY] === END WRAPPER VTABLE ===");
+        }
+        // Enumerate modules AFTER GDVSysCreate (all DLLs now loaded) to find which DLL
+        // contains the wrapper vtable functions (0x63xxxxx range).
+        HMODULE mods[512]; DWORD needed = 0;
+        if (EnumProcessModules(GetCurrentProcess(), mods, sizeof(mods), &needed)) {
+            int count = needed / sizeof(HMODULE);
+            Log("[DX7PROXY] === MODULES (%d) ===", count);
+            for (int i = 0; i < count; i++) {
+                char nm[256] = {0};
+                GetModuleBaseNameA(GetCurrentProcess(), mods[i], nm, sizeof(nm)-1);
+                Log("[DX7PROXY]   mod: 0x%08x %s", (unsigned)(uintptr_t)mods[i], nm);
+            }
+            Log("[DX7PROXY] === END MODULES ===");
         }
     }
     return r;

@@ -406,7 +406,46 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         PFN_Cdecl1i m98 = (PFN_Cdecl1i)(uintptr_t)obj[0x98 / 4];
         if (m98) m98(g_vRenderer, 0xFF2a2a3e);   // dark blue sky (Giants menu background)
         if (m90) m90(g_vRenderer);
-        cbSceneBegin_DrawTerrain();                               // draw terrain (scene now populated with textures)
+        // Bind the intro_grnd texture via +0xb4 (BindTexture — called per-frame per-texture
+        // during SceneWalk_Textures). Walk g_TextureEntityList to find the intro_grnd entry
+        // + call +0xb4(renderer, entry) so DrawPrimitive uses it.
+        {
+            extern uint32_t g_TextureEntityList;   // DAT_005a78b4
+            typedef void (__cdecl *PFN_BindTex)(void*, void*);
+            PFN_BindTex bindTex = (PFN_BindTex)(uintptr_t)obj[0xb4 / 4];
+            if (bindTex) {
+                // Walk the texture list: node {next(0x00), name(0x04,32B), data(0x24), subs(0x28), entries(0x2c, stride 0x24)}
+                for (uint32_t* node = (uint32_t*)(uintptr_t)g_TextureEntityList; node && bindTex; node = (uint32_t*)(uintptr_t)node[0]) {
+                    uint32_t subs = node[0x28/4];  // sub_count
+                    char* nodeNm = (char*)(uintptr_t)&node[1];  // name at +0x04
+                    for (uint32_t i = 0; i < subs; i++) {
+                        uint32_t* entry = node + 0x2c/4 + i * (0x24/4);  // entry stride 0x24
+                        const char* enm = *(const char**)(uintptr_t)entry;  // entry name ptr
+                        if (enm && strstr(enm, "intro_grnd")) {
+                            bindTex(g_vRenderer, entry);  // BindTexture!
+                            if (g_vTrace) { static int bn=0; if(bn<2){fprintf(g_vTrace,"[BOOT] MENU: bound intro_grnd via +0xb4\n");fflush(g_vTrace);bn++;} }
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        // Enable texturing at stage 0 via the wrapper's SetTextureStageState (vt[0x94]).
+        // Without this, COLOROP defaults to DISABLE → textures ignored even when bound.
+        {
+            void* wrapper = obj[0x294 / 4];
+            if (wrapper) {
+                void** wvt = *(void***)wrapper;
+                typedef long (__stdcall *PFN_STSS)(void*, uint32_t, uint32_t, uint32_t);
+                PFN_STSS stss = (PFN_STSS)(uintptr_t)(wvt ? wvt[0x94 / 4] : nullptr);
+                if (stss) {
+                    stss(wrapper, 0, 1 /*D3DTSS_COLOROP*/,   4 /*D3DTOP_MODULATE*/);
+                    stss(wrapper, 0, 2 /*D3DTSS_COLORARG1*/, 2 /*D3DTA_TEXTURE*/);
+                    stss(wrapper, 0, 3 /*D3DTSS_COLORARG2*/, 0 /*D3DTA_DIFFUSE*/);
+                }
+            }
+        }
+        cbSceneBegin_DrawTerrain();                               // draw terrain (now with intro_grnd bound + stage 0 enabled)
         if (m94) m94(g_vRenderer);
         PFN_Cdecl0 m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];   // Present
         obj[0x42c / 4] = (void*)1;
