@@ -300,7 +300,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
         }
     }
 
-    if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Exit\n"); fflush(g_vTrace); }
+    if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Exit — shutting down renderer\n"); fflush(g_vTrace); }
+    // Release the DX7 device + renderer so the adapter frees for the next launch (the
+    // device-leak root cause of the repeated-launch crash).
+    extern "C" void VanillaRenderer_Shutdown(void);
+    VanillaRenderer_Shutdown();
+    if (g_vHWnd) DestroyWindow(g_vHWnd);
     VanillaInput_Fini();
     return (int)msg.wParam;
 }

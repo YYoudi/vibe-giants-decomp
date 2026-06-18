@@ -130,6 +130,25 @@ static void __cdecl cbSceneBegin_DrawTerrain() {
 // engine drives its ~55 thiscall methods (see RE_docs/DX7_RENDER_RECIPE.md) to render.
 extern "C" void* g_vRenderer = nullptr;   // DAT_00654940
 
+// Shutdown: release the DX7 device + renderer so the adapter is freed for the NEXT launch.
+// Without this the device leaks → the next process's GDVSysCreate hangs (DX7 device conflict)
+// — the root cause of the "recomp crashes on repeated launch" flakiness. Mirrors the vanilla
+// ShutdownSubsystems (0x004f7f10) ref-counted teardown: Release the wrapper IDirect3DDevice7
+// (vtable 0x08) until gone, then release the renderer object's own ref.
+extern "C" void VanillaRenderer_Shutdown(void) {
+    if (!g_vRenderer) return;
+    uint32_t* obj = (uint32_t*)g_vRenderer;
+    void* wrapper = obj[0x294 / 4];
+    if (wrapper) {
+        void** wvt = *(void***)wrapper;
+        typedef void (__stdcall *PFN_Release)(void*);
+        PFN_Release rel = (PFN_Release)(uintptr_t)(wvt ? wvt[0x08 / 4] : nullptr);  // IUnknown::Release
+        if (rel) { for (int i = 0; i < 8; i++) rel(wrapper); }   // drain ref-count
+    }
+    g_vRenderer = nullptr;
+    Sleep(500);   // let the DX7 driver release the adapter before the process exits
+}
+
 // Build + call UpCallsLoad + GDVSysCreate with the vanilla contract.
 extern "C" void* VanillaInitRenderer(HWND hWnd) {
     extern FILE* g_vTrace;
