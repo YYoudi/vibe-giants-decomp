@@ -197,3 +197,4 @@ add_library(gg_dx7r_proxy SHARED ${CMAKE_SOURCE_DIR}/proxy_dx7/dx7_proxy_main.cp
 target_include_directories(gg_dx7r_proxy PRIVATE ${CMAKE_SOURCE_DIR}/proxy_dx7)
 set_target_properties(gg_dx7r_proxy PROPERTIES OUTPUT_NAME "gg_dx7r" PREFIX "" SUFFIX ".dll")
 target_sources(gg_dx7r_proxy PRIVATE ${CMAKE_SOURCE_DIR}/proxy_dx7/Dx7ProxyDef.def)
+target_link_libraries(gg_dx7r_proxy PRIVATE psapi)

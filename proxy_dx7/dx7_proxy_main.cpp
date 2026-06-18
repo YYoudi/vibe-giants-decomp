@@ -71,8 +71,14 @@ void* GDVSysCreate(const char* a, HWND b, void* c, void* d, void* e, void* f) {
             for (uint32_t off = 0; off < 0x160; off += 4) {
                 void* fn = vtbl[off/4];
                 if (!fn) continue;
-                // Only log if the address is in gg_dx7r_orig.dll's range (skip null/garbage)
-                Log("[DX7PROXY]   wvt[0x%02x] = %p", off, fn);
+                // Resolve which module owns this vtable slot (pinpoint DrawPrim/SetTexture DLL).
+                HMODULE mfn = nullptr;
+                char mnm[256] = {0};
+                GetModuleHandleExA(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+                                   (LPCSTR)fn, &mfn);
+                if (mfn) GetModuleBaseNameA(GetCurrentProcess(), mfn, mnm, sizeof(mnm)-1);
+                unsigned offInMod = mfn ? (unsigned)((uintptr_t)fn - (uintptr_t)mfn) : 0;
+                Log("[DX7PROXY]   wvt[0x%03x] = %p  [%s+0x%x]", off, fn, mnm[0] ? mnm : "?", offInMod);
             }
             Log("[DX7PROXY] === END WRAPPER VTABLE ===");
         }
