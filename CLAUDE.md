@@ -1,5 +1,32 @@
 # PROFIL ARCHITECTE : GIANTS CITIZEN KABUTO (C++ GROUND TRUTH)
 
+> ## ⚑ MÉTHODOLOGIE RE (LIT EN PREMIER — comment on reproduit le jeu)
+> **Workflow obligatoire** : OBSERVER (runtime) → DOCUMENTER → PORTER (decompilé) → VÉRIFIER (match).
+> On ne devine JAMAIS. On OBSERVE le vrai jeu, puis on reproduit.
+>
+> **Ressources RE existantes (UTILISE-LES — ne réinvente pas) :**
+> 1. **14 repos d'Amazed** (`RESSOURCES_FOR_AI/git_repos_from_amazed/`) — RE clean-room :
+>    formats (GZP/GTI/GBS/SKN/ANM/.BIN), décompression LZ, extraction objets, serveur.
+>    Code source Python/C++ RE''d. `gck-map-extract-objects/lib/fileutils.py` = le décompresseur
+>    LZ canonique (notre GZP reader est un port de ça).
+> 2. **PS2 debug symbols** (`ps2_symbols/`) — 4769 fonctions NOMMÉES du binaire PS2 (SLUS_201.78).
+>    Sert au NAMING des fonctions PC vanilla. Le binaire PS2 partage la logique avec le PC.
+> 3. **vanilla_decompiled/** — 2574 fonctions décompilées (Ghidra) de `Giants_nocd.exe`.
+>    Source de vérité pour le PORTAGE (chaque fonction recomp doit matcher ce corps).
+> 4. **Proxy DX7** (`proxy_dx7/`) — hook le renderer de l'original en runtime :
+>    capture les 21 callbacks, la vtable D3D7, trace SetTexture/SetTransform/DrawPrimitive.
+>    C'est l'outil d'OBSERVATION du rendu.
+> 5. **asm-diff (À CONSTRUIRE)** — la méthode standard de décompilation (sm64decomp, etc.) :
+>    compile le C recomp → compare l'assembleur produit vs l'original, fonction par fonction.
+>    Match instruction-par-instruction = preuve ultime. Le capdiff visuel est insuffisant.
+>
+> **Workflow de décompilation standard** :
+> (a) OBSERVER l'original en runtime (Frida VFSOpenFile + proxy DX7 + appsnap).
+> (b) LIRE la fonction vanilla dans vanilla_decompiled/.
+> (c) PORTER en C++ dans src_vanilla/ (corps Ghidra vérifié + noms PS2).
+> (d) VÉRIFIER : asm-diff (instructions matchent) → capdiff (visuel matche) → 0-mismatch (bit-exact).
+> Ne JAMAIS sauter (a). Ne JAMAIS deviner un comportement non observé.
+
 > ## ⚑ PURGE 1.5 (2026-06-18) — 100% VANILLA-ONLY DÉSORMAIS
 > Toute la base 1.5/DX9 a été **SUPPRIMÉE** : `src/` (705 fns), `version_bridge/`, `proxy/`
 > (gg_dx9r), `reference/patch15/`, `ghidra_projects` (v1.5 GiantsMain.exe), `ghidra_exports`
