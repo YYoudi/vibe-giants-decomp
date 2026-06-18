@@ -30,7 +30,6 @@ void FUN_0044ab90() {}
 void FUN_00476d40() {}
 void FUN_00491830() {}
 void FUN_0049ccf0() {}
-void FUN_0049cfd0() {}
 // FUN_0049d2d0: obj-type lookup (walks DAT_006313b4 linked list; node [0]=next,
 //   [1]=count, key at node+3, entries stride 0xc1 dwords). Returns matching entry
 //   (node + iVar2*0xc1 + 2), else NULL. (vanilla 0049d2d0)
@@ -48,7 +47,6 @@ void* FUN_0049d2d0(int typeId) {
     }
     return 0;
 }
-void FUN_0049f3b0() {}
 // FUN_004a1360: WorldAnim lookup. Walks world_state(DAT_006316ec)+0x210 array (count at
 //   +0x20c, stride 0xc) comparing param_1 via FUN_0053c970. Returns matching entry
 //   (base + iVar2*0xc), else logs "Failed to find WorldAnim" + returns 0. (vanilla 004a1360)
@@ -152,4 +150,14 @@ void FUN_0049c920() {}
 void FUN_0049d240() {}
 void FUN_00545ab0() {}
 extern const char s_Dynamic_shadow_texture_0055f824[] = "Dynamic shadow texture";
+void FUN_0049f480(int,int) {}
+int FUN_00458e70(int) { return 0; }
+void FUN_00458dd0(int,int) {}
+int FUN_00458e00(int) { return 0; }
+void FUN_00458da0(int,int) {}
+void FUN_0045ba30(int,int) {}
+uint32_t DAT_0055f8cc = 0;
+uint32_t DAT_0055f8e0 = 0;
+extern const char s_C__Giants_Source_main_objspec_c_0056152c[] = "C Giants Source main objspec c";
+extern const char s_ospec_0056154c[] = "ospec";
 } // extern "C"
