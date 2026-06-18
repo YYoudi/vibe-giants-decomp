@@ -27,6 +27,8 @@ extern "C" void FUN_004b77f0(void);   // WorldList.bin reader → level table
 extern "C" void FUN_004290f0(uint32_t);   // scene-pipeline gate activator (DAT_0058c15c)
 extern "C" void* SpawnTestEntity(uint32_t typeId, float x, float y, float z); // test entity into g_PlacedObjectList
 extern "C" int VanillaSceneLoad_SelfTest(void);   // FUN_004913c0 selector self-test (scan level table)
+extern "C" void FUN_004b7c50(char* name, float a2, float a3);   // .BIN loader (VanillaBinLoaderFull.cpp)
+extern "C" uint32_t DAT_006316ec;   // world_state ptr (defined in VanillaStubs.cpp)
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -207,6 +209,18 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // ── Scene-selector self-test (FUN_004913c0 port: scan level table for intro_island) ──
     //   runs AFTER FUN_004b77f0 so g_LevelTable is populated.
     VanillaSceneLoad_SelfTest();
+    // ── Boot step 4 / 14: load the MENU scene via the real .BIN loader (FUN_004b7c50).
+    // W_Intro.bin = the menu background scene (island + sky + logo). This populates the
+    // scene lists (textures/placements/makewrld) so the renderer's real scene walk renders
+    // the actual scene. Heavily logged; diagnose the crash/stop point.
+    if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === invoking FUN_004b7c50 (loader) on W_Intro.bin ===\n"); fflush(g_vTrace); }
+    // Allocate a world_state buffer (DAT_006316ec) so loader/makwrld derefs are safe
+    // (zero-reads instead of null-deref crash). makewrld early-returns (FUN_0053a3e0 stubbed)
+    // but the odef VM + sound loader deref world_state at many offsets — need valid memory.
+    static char g_world_state[0x10000] = {0};   // 64KB — generous (sound writes +0x4554, makewrld +0x4ef8)
+    DAT_006316ec = (uint32_t)(uintptr_t)g_world_state;
+    FUN_004b7c50("W_Intro.bin", 1.0f, 0.0f);
+    if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === FUN_004b7c50 returned ===\n"); fflush(g_vTrace); }
     // ── Activate the scene-pipeline gate (FUN_004290f0(1) → g_ScenePipelineGate=1).
     // The renderer's callback[20] (FUN_00523aa0) checks this gate each frame to drive
     // the scene dispatch. (Entities still need vtables via object_create_child to draw.)
