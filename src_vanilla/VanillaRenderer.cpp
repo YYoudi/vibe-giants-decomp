@@ -399,8 +399,12 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
             s_lastLoggedPhase = BOOT_MENU;
         }
         typedef void (__cdecl *PFN_Cdecl0)(void*);
+        typedef void (__cdecl *PFN_Cdecl1i)(void*, uint32_t);
         PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];   // BeginScene + Clear
         PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];   // EndScene
+        // +0x98 = Clear/FillBackground (obj, ARGB color) — set sky color before BeginScene.
+        PFN_Cdecl1i m98 = (PFN_Cdecl1i)(uintptr_t)obj[0x98 / 4];
+        if (m98) m98(g_vRenderer, 0xFF2a2a3e);   // dark blue sky (Giants menu background)
         if (m90) m90(g_vRenderer);
         cbSceneBegin_DrawTerrain();                               // draw terrain (scene now populated with textures)
         if (m94) m94(g_vRenderer);
