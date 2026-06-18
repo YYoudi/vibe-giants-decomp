@@ -24,7 +24,6 @@ uint32_t DAT_006313b4 = 0;
 uint32_t DAT_006552c0 = 0;
 float _DAT_005525f8 = 0.0f;   // FIXME(unverified): .data float const used by FUN_00472560 scale
 void FUN_004720d0(uint32_t* /*v*/) {}   // FIXME(unverified): callee — quat transform (FUN_00472560 dep)
-void FUN_00405080() {}
 void FUN_00429100() {}
 void FUN_00476d40() {}
 void FUN_00491830() {}
@@ -174,4 +173,9 @@ uint32_t DAT_0059c958 = 0;
 uint32_t DAT_0059c960 = 0;
 uint32_t DAT_0059c964 = 0;
 uint32_t DAT_0059c96c = 0;
+void FUN_0053a3e0(const char*, uint32_t*, char**) {}
+uint32_t FUN_0053db60(int, int, uint32_t) { return 0; }
+int* FUN_0053dc40(uint32_t) { static int z=0; return &z; }
+uint32_t DAT_00585354 = 0;
+uint32_t DAT_0058534c = 0;
 } // extern "C"
