@@ -76,6 +76,10 @@ extern bool VanillaInput_KeyPressed(int dik);
 //   bit 0 = left, bit 1 = right, bit 2 = middle (vanilla DAT_005dc200).
 extern uint32_t VanillaInput_MouseButtons(void);
 
+// VanillaInput_MousePos: writes the absolute client-relative cursor X/Y (vanilla
+// DAT_0063111c/1120) — for the custom menu cursor.
+extern void VanillaInput_MousePos(int* x, int* y);
+
 // VanillaInput_MouseDelta: writes the per-frame mouse X/Y/Z deltas (vanilla
 // decodes these from DIDEVICEOBJECTDATA in FUN_0051f1f0).
 extern void VanillaInput_MouseDelta(int* dx, int* dy, int* dz);
