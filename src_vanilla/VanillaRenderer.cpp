@@ -500,13 +500,11 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 if (wrapper) {
                     void** wvt = *(void***)wrapper;
                     typedef long (__stdcall *PFN_DP)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
-                    PFN_DP dp = (PFN_DP)(uintptr_t)(wvt ? wvt[0x28 / 4] : nullptr);
+                    PFN_DP dp = (PFN_DP)(uintptr_t)(wvt ? wvt[0x64 / 4] : nullptr);  // vt[25]=DrawPrimitive (0x28 was Clear → E_INVALIDARG)
                     if (dp) {
-                        // DIAGNOSTIC logo draw: the terrain binding above left stage-0 COLOROP=MODULATE
-                        // with the wrapper's *internal* texture state unset → DrawPrimitive returns
-                        // E_INVALIDARG (0x80070057). Disable texturing for this flat-shaded logo so the
-                        // wrapper accepts the DIFFUSE-only vertices. (Terrain's own draw re-enables
-                        // its state; this bracket is diagnostic-only — see CLAUDE.md §0 rule 10.)
+                        // Diagnostic logo draw: disable texturing so the wrapper accepts flat-shaded
+                        // DIFFUSE-only vertices (COLOROP=MODULATE left set by the terrain bracket).
+                        // (Diagnostic-only — see CLAUDE.md §0 rule 10.)
                         typedef long (__stdcall *PFN_STSSx)(void*, uint32_t, uint32_t, uint32_t);
                         PFN_STSSx stssOff = (PFN_STSSx)(uintptr_t)(wvt ? wvt[0x94 / 4] : nullptr);
                         if (stssOff) stssOff(wrapper, 0, 1 /*D3DTSS_COLOROP*/, 1 /*D3DTOP_DISABLE*/);
