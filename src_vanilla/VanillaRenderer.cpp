@@ -412,10 +412,13 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         PFN_Cdecl1i m98 = (PFN_Cdecl1i)(uintptr_t)obj[0x98 / 4];
         if (m98) m98(g_vRenderer, 0xFF31243b);   // dark blue-gray sky (mid-gradient avg)
         if (m90) m90(g_vRenderer);
-        // ── Draw the 3D logo mesh (xx_giants_logo_3d.gbs, 1337 verts) — the menu's main
-        //    Orthographic front view, centered on screen, gold color.
+        // ── Draw the 3D logo mesh (xx_giants_logo_3d.gbs) with REAL triangle connectivity.
+        //    VanillaGBS now decodes the per-subobject tridata RLE → real triangles (was
+        //    grouping base vertices in arbitrary 3s = garbage "lines"). Orthographic front
+        //    view, centered, flat chrome-gray. (Diagnostic bracket — CLAUDE.md §0 rule 10.)
         {
             static VanillaGBS::Model s_logo;
+            static std::vector<float> s_tris;       // flat XYZ, triangles expanded
             static float s_lmin[3] = {0}, s_lmax[3] = {0};
             static bool s_logoLoaded = false;
             if (!s_logoLoaded) {
@@ -423,62 +426,28 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 if (ld.empty()) ld = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "Giants_logo_3d.gbs");
                 if (!ld.empty()) {
                     s_logo = VanillaGBS::Parse(ld.data(), ld.size());
-                    if (s_logo.ok && s_logo.numVertices > 0) {
-                        for (uint32_t i = 0; i < s_logo.numVertices; i++) {
-                            float vx = s_logo.vertices[i*3], vy = s_logo.vertices[i*3+1], vz = s_logo.vertices[i*3+2];
-                            if (i == 0) { s_lmin[0]=s_lmax[0]=vx; s_lmin[1]=s_lmax[1]=vy; s_lmin[2]=s_lmax[2]=vz; }
-                            for (int j = 0; j < 3; j++) {
-                                float v = (&vx)[j*1]; // can't index like this; do manually
-                            }
+                    if (s_logo.ok) {
+                        s_tris = s_logo.buildPositionTris();
+                        for (size_t i = 0; i + 2 < s_tris.size(); i += 3) {
+                            float x = s_tris[i], y = s_tris[i+1], z = s_tris[i+2];
+                            if (i == 0) { s_lmin[0]=s_lmax[0]=x; s_lmin[1]=s_lmax[1]=y; s_lmin[2]=s_lmax[2]=z; }
+                            if (x<s_lmin[0]) s_lmin[0]=x; if (x>s_lmax[0]) s_lmax[0]=x;
+                            if (y<s_lmin[1]) s_lmin[1]=y; if (y>s_lmax[1]) s_lmax[1]=y;
+                            if (z<s_lmin[2]) s_lmin[2]=z; if (z>s_lmax[2]) s_lmax[2]=z;
                         }
-                        // manual bounds
-                        for (uint32_t i = 0; i < s_logo.numVertices; i++) {
-                            float vx = s_logo.vertices[i*3], vy = s_logo.vertices[i*3+1], vz = s_logo.vertices[i*3+2];
-                            if (vx < s_lmin[0]) s_lmin[0] = vx; if (vx > s_lmax[0]) s_lmax[0] = vx;
-                            if (vy < s_lmin[1]) s_lmin[1] = vy; if (vy > s_lmax[1]) s_lmax[1] = vy;
-                            if (vz < s_lmin[2]) s_lmin[2] = vz; if (vz > s_lmax[2]) s_lmax[2] = vz;
-                        }
-                        if (g_vTrace) { fprintf(g_vTrace, "[LOGO] bounds X[%.1f..%.1f] Y[%.1f..%.1f] Z[%.1f..%.1f] verts=%u\n",
-                            s_lmin[0], s_lmax[0], s_lmin[1], s_lmax[1], s_lmin[2], s_lmax[2], s_logo.numVertices); fflush(g_vTrace); }
+                        if (g_vTrace) { fprintf(g_vTrace, "[LOGO] REAL tris=%u baseVerts=%u bounds X[%.0f..%.0f] Y[%.0f..%.0f] Z[%.0f..%.0f]\n",
+                            (uint32_t)(s_tris.size()/9), s_logo.numVertices, s_lmin[0], s_lmax[0], s_lmin[1], s_lmax[1], s_lmin[2], s_lmax[2]); fflush(g_vTrace); }
                     }
                 }
                 s_logoLoaded = true;
             }
-            // Project + draw point cloud.
-            if (s_logo.ok && s_logo.numVertices > 0) {
-                struct PtV { float x, y, z, rhw; uint32_t diff; float u, v; }; // XYZRHW|DIFFUSE|TEX1=0x144
-                std::vector<PtV> pts(s_logo.numVertices);
-                float cx = (s_lmin[0] + s_lmax[0]) * 0.5f;
-                float cy = (s_lmin[1] + s_lmax[1]) * 0.5f;
-                float rangeX = s_lmax[0] - s_lmin[0]; if (rangeX < 1.0f) rangeX = 1.0f;
-                float rangeY = s_lmax[1] - s_lmin[1]; if (rangeY < 1.0f) rangeY = 1.0f;
-                float scaleX = 480.0f / rangeX;
-                float scaleY = 200.0f / rangeY;
-                for (uint32_t i = 0; i < s_logo.numVertices; i++) {
-                    pts[i].x = 320.0f + (s_logo.vertices[i*3] - cx) * scaleX;
-                    pts[i].y = 240.0f + (s_logo.vertices[i*3+1] - cy) * scaleY;
-                    pts[i].z = 0.0f; pts[i].rhw = 1.0f;
-                    pts[i].diff = 0xFFFFD700;  // gold
-                    pts[i].u = 0.0f; pts[i].v = 0.0f;  // dummy UV (texturing enabled but no texture)
-                }
-                void* wrapper = obj[0x294 / 4];
-                if (wrapper) {
-                    void** wvt = *(void***)wrapper;
-                    typedef long (__stdcall *PFN_DP)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
-                    PFN_DP dp = (PFN_DP)(uintptr_t)(wvt ? wvt[0x64 / 4] : nullptr);  // vt[25]=DrawPrimitive (0x28 was Clear → E_INVALIDARG)
-                    if (dp) {
-                        // Diagnostic logo draw: disable texturing so the wrapper accepts flat-shaded
-                        // DIFFUSE-only vertices (COLOROP=MODULATE left set by the terrain bracket).
-                        // (Diagnostic-only — see CLAUDE.md §0 rule 10.)
-                        typedef long (__stdcall *PFN_STSSx)(void*, uint32_t, uint32_t, uint32_t);
-                        PFN_STSSx stssOff = (PFN_STSSx)(uintptr_t)(wvt ? wvt[0x94 / 4] : nullptr);
-                        if (stssOff) stssOff(wrapper, 0, 1 /*D3DTSS_COLOROP*/, 1 /*D3DTOP_DISABLE*/);
-                        uint32_t triCount = (s_logo.numVertices / 3) * 3;
-                        long hr = dp(wrapper, 3, 0x144 /*XYZRHW|DIFFUSE|TEX1*/, pts.data(), triCount, 0);
-                        if (stssOff) stssOff(wrapper, 0, 1 /*D3DTSS_COLOROP*/, 4 /*D3DTOP_MODULATE*/); // restore
-                        if (g_vTrace) { static int ln=0; if(ln<1){fprintf(g_vTrace,"[LOGO] DrawPrimitive TRIANGLELIST %u verts hr=0x%lx\n", triCount, (unsigned long)hr);fflush(g_vTrace);ln++;} }
-                    }
-                }
+            if (s_logo.ok && s_tris.size() >= 9) {
+                // The 3D logo needs the real menu camera + perspective + chrome material
+                // (it's an extruded mesh). A flat orthographic bracket render fills the
+                // bounding box (no depth/cull) → a messy blob that RAISES capdiff delta
+                // (0.1208→0.1717). So the bracket does NOT draw the logo (parse is kept as
+                // reusable GBS infrastructure; the real logo render is a canonical-path task).
+                if (g_vTrace) { static int ln=0; if(ln<1){fprintf(g_vTrace,"[LOGO] real tris parsed (%u) — bracket render DISABLED (flat render = blob, +delta). Needs real 3D menu path.\n", (uint32_t)(s_tris.size()/9));fflush(g_vTrace);ln++;} }
             }
         }
         if (m94) m94(g_vRenderer);
