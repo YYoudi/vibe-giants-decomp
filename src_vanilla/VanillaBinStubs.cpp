@@ -183,4 +183,8 @@ void FUN_0044bc40(int, int, void*) {}
 extern const char s_C__Giants_Source_main_object_c_0055f784[] = "C Giants Source main object c";
 extern const char s_Transform_Ref_Mats_0055f810[] = "Transform Ref Mats";
 extern const char s_Too_many_scenerios__skipping___d_0055e7ec[] = "Too many scenerios skipping d";
+uint32_t DAT_0063141c = 0;
+uint32_t DAT_00631418 = 0;
+uint32_t DAT_0063185c = 0;
+uint32_t DAT_0062f510 = 0;
 } // extern "C"
