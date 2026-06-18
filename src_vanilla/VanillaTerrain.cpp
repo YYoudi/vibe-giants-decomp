@@ -299,11 +299,36 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
         s.v = wv.y / 5680.0f;
         screen.push_back(s);
     }
+    // D3D7 3D TRANSFORM PIPELINE: set VIEW+PROJ+light, draw world-space XYZ verts directly.
+    {
+        typedef long (__stdcall *PFN_SX)(void*, uint32_t, const float*);
+        typedef long (__stdcall *PFN_SVP)(void*, const void*);
+        typedef long (__stdcall *PFN_SR)(void*, uint32_t, uint32_t);
+        typedef long (__stdcall *PFN_SL)(void*, uint32_t, const void*);
+        typedef long (__stdcall *PFN_LE)(void*, uint32_t, uint32_t);
+        void** wvt = *(void***)wrapper;
+        PFN_SX sx = (PFN_SX)(uintptr_t)wvt[0x2c / 4];
+        PFN_SR sr = (PFN_SR)(uintptr_t)wvt[0x50 / 4];
+        PFN_SL sl = (PFN_SL)(uintptr_t)wvt[0x48 / 4];
+        PFN_LE le = (PFN_LE)(uintptr_t)wvt[0xb0 / 4];
+        float ident[16] = {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1};
+        if (sx) { sx(wrapper, 256, ident); sx(wrapper, 2, view); sx(wrapper, 3, proj); }
+        static bool s_lit = false;
+        if (!s_lit) { s_lit = true;
+            if (sr) { sr(wrapper, 7, 1); sr(wrapper, 14, 1); sr(wrapper, 139, 0xFFFFFFFF); }
+            struct D3DL7 { uint32_t t; float d[3]; float da; float s[3]; float sa; float a[3]; float aa;
+                float p[3]; float dir[3]; float range; float fall; float a0,a1,a2; float th,ph; };
+            D3DL7 lt = {1, {1,1,1},1, {0,0,0},0, {0.5f,0.5f,0.5f},1, {0,0,0}, {0,-0.5f,-1}, 100000,0, 1,0,0, 0,0};
+            if (sl) sl(wrapper, 0, &lt);
+            if (le) le(wrapper, 0, 1);
+        }
+    }
+    // Draw world-space XYZ verts through the D3D7 transform pipeline (NOT XYZRHW software-projected).
     typedef long (__stdcall *PFN_DrawPrim)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
-    long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, 0x144 /*XYZRHW|DIFFUSE|TEX1*/,
-                                       screen.data(), (uint32_t)screen.size(), 0);
-    trace("[VTERRAIN] SubmitTris(PROJECTED→XYZRHW): %d verts, %d tris, behind-clamp=%d, hr=0x%lx\n",
-          (int)screen.size(), triCount, behind, (unsigned long)hr);
+    long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, 0x142 /*XYZ|DIFFUSE|TEX1*/,
+                                       verts.data(), (uint32_t)verts.size(), 0);
+    trace("[VTERRAIN] SubmitTris(D3D7-3D-PIPELINE): %d verts, %d tris, hr=0x%lx\n",
+          (int)verts.size(), triCount, (unsigned long)hr);
     return triCount;
 }
 
