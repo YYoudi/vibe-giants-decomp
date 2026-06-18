@@ -1,3 +1,4 @@
+#include <cmath>
 // Vanilla-Native Recomp — Renderer Loader
 // Ported from vanilla FUN_0051eb70 (296 bytes). Loads gg_<name>.dll (e.g.
 // gg_dx7r.dll) and resolves the 2 vanilla renderer exports: GDVSysCreate +
@@ -430,10 +431,80 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     // Between them we draw the island heightfield on the device RT (in-scene), then
     // present via the PROVEN path (commit 495b269): GetDC(device RT) → BitBlt(RT → window).
     if (st.phase == BOOT_MENU) {
-        // -scene3d EXPERIMENT: call the renderer's REAL scene walk (0x7370) instead of the
-        // 2D bracket. Tests whether the 3D pipeline produces ANY output with the current
-        // (loader-populated) scene state. The renderer's scene walk does its own full frame
-        // (BeginScene/Clear/walk/EndScene/Present) + camera/render-lists.
+        // -test3d: prove the D3D7 3D TRANSFORM PIPELINE works. Set perspective + view
+        // matrices via SetTransform@0x2c, draw a 3D triangle (XYZ|DIFFUSE, NOT XYZRHW).
+        // If perspective 3D appears, the device's transform pipeline is functional →
+        // the foundation for faithful 3D reproduction exists.
+        if (g_bootCfg.scene3d) {  // reuse the flag for now
+            void* wrapper = obj[0x294 / 4];
+            if (wrapper) {
+                void** wvt = *(void***)wrapper;
+                // SetTransform@0x2c, SetRenderState@0x50, DrawPrimitive@0x64, Clear@0x28
+                typedef long (__stdcall *PFN_SetXform)(void*, uint32_t, const float*);
+                typedef long (__stdcall *PFN_SR)(void*, uint32_t, uint32_t);
+                typedef long (__stdcall *PFN_DP)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
+                typedef long (__stdcall *PFN_Clear)(void*, uint32_t, void*, uint32_t, uint32_t, float, uint32_t);
+                PFN_SetXform sx = (PFN_SetXform)(uintptr_t)wvt[0x2c / 4];
+                PFN_SR sr = (PFN_SR)(uintptr_t)wvt[0x50 / 4];
+                PFN_DP dp = (PFN_DP)(uintptr_t)wvt[0x64 / 4];
+                PFN_Clear clr = (PFN_Clear)(uintptr_t)wvt[0x28 / 4];
+                // SetViewport@0x34 — required for 3D→screen mapping (DX7 needs a viewport).
+                typedef long (__stdcall *PFN_SetVP)(void*, const void*);
+                PFN_SetVP svp = (PFN_SetVP)(uintptr_t)wvt[0x34 / 4];
+                struct VP7 { uint32_t sz, x, y, w, h; float minZ, maxZ; };
+                VP7 vp = { sizeof(VP7), 0, 0, (uint32_t)(g_videoWidth?g_videoWidth:640), (uint32_t)(g_videoHeight?g_videoHeight:480), 0.0f, 1.0f };
+                if (svp) svp(wrapper, &vp);
+                // Perspective projection (fov=60°, aspect=4:3, znear=1, zfar=5000)
+                float yS = 1.7320508f;  // cot(30°)
+                float xS = yS * 0.75f;  // /aspect(640/480)
+                float proj[16] = { xS,0,0,0, 0,yS,0,0, 0,0,1.0002f,1, 0,0,-1.0002f,0 };
+                // View matrix: camera at (0,0,-200) looking toward +Z (origin). DX7 LEFT-HANDED:
+                // +Z is INTO the screen. View translation = +200 puts world-origin at view-z=200 (in front).
+                float view[16] = { 1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,200,1 };
+                // World = identity
+                float world[16] = { 1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1 };
+                // 3D triangle (XYZ|DIFFUSE FVF=0x102): a spinning-ish triangle at origin
+                struct V3 { float x, y, z; uint32_t diff; };
+                static float rot = 0; rot += 0.02f;
+                float cr = cosf(rot), sv = sinf(rot);
+                V3 tri[3] = {
+                    { 0, 50, 0, 0xFFFF0000 },                   // top, red
+                    { cr * 50, -50, sv * 50, 0xFF00FF00 },     // bottom-right, green
+                    { -cr * 50, -50, -sv * 50, 0xFF0000FF },   // bottom-left, blue
+                };
+                // Use the RENDERER's scene bracket (sets the correct render target surface —
+                // the device's own Clear draws to the wrong surface that Present doesn't show).
+                typedef void (__cdecl *PFN_Cdecl0)(void*);
+                PFN_Cdecl0 m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];  // renderer BeginScene+Clear
+                PFN_Cdecl0 m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];  // renderer EndScene
+                PFN_Cdecl0 m_a8t = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4]; // renderer Present
+                if (m90) m90(g_vRenderer);  // BeginScene+Clear on the CORRECT surface
+                if (sx) { sx(wrapper, 256, world); sx(wrapper, 2, view); sx(wrapper, 3, proj); }
+                if (sr) { sr(wrapper, 7, 1); sr(wrapper, 14, 1); sr(wrapper, 22, 1); sr(wrapper, 139, 0xFFFFFFFF); }  // ZENABLE, CULLNONE(14=1=D3DCULL_NONE? try), no cull(22), AMBIENT white(139)
+                // DX7 XYZ vertices ALWAYS go through lighting → set a light so the triangle isn't black.
+                typedef long (__stdcall *PFN_SetLight)(void*, uint32_t, const void*);
+                typedef long (__stdcall *PFN_LightEnable)(void*, uint32_t, uint32_t);
+                PFN_SetLight sl = (PFN_SetLight)(uintptr_t)wvt[0x48 / 4];     // SetLight@idx18
+                PFN_LightEnable le = (PFN_LightEnable)(uintptr_t)wvt[0xb0 / 4]; // LightEnable@idx44
+                // D3DLIGHT7 directional: white diffuse, pointing -Z (toward the triangle from camera).
+                struct D3DLIGHT7 { uint32_t type; float diff[3]; float diff_a; float spec[3]; float spec_a;
+                    float amb[3]; float amb_a; float pos[3]; float dir[3]; float range; float falloff;
+                    float a0,a1,a2; float theta,phi; };
+                D3DLIGHT7 light = { 1 /*D3DLIGHT_DIRECTIONAL*/, {1,1,1},1, {0,0,0},0, {0.5f,0.5f,0.5f},1,
+                    {0,0,-200},{0,0,1}, 1000, 0, 1,0,0, 0,0 };
+                if (sl) sl(wrapper, 0, &light);
+                if (le) le(wrapper, 0, 1);  // enable light 0
+                long hr = dp ? dp(wrapper, 4, 0x042, tri, 3, 0) : -1;
+                if (g_vTrace) { static int ln=0; if(ln<2){fprintf(g_vTrace,"[TEST3D] renderer-bracket + SetTransform + DrawPrimitive hr=0x%lx\n",(unsigned long)hr);fflush(g_vTrace);ln++;} }
+                if (m94) m94(g_vRenderer);  // EndScene
+                // Present
+                typedef void (__cdecl *PFN_Cdecl0)(void*);
+                PFN_Cdecl0 m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];
+                obj[0x42c / 4] = (void*)1;
+                if (m_a8t) m_a8(g_vRenderer);
+                return;
+            }
+        }
         if (g_bootCfg.scene3d) {
             if (s_lastLoggedPhase != BOOT_MENU) {
                 if (g_vTrace) { fprintf(g_vTrace, "[BOOT] === MENU -scene3d: calling renderer scene walk (0x7370) ===\n"); fflush(g_vTrace); }
