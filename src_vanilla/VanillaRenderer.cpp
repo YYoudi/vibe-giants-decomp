@@ -23,6 +23,8 @@ extern "C" void FUN_004913c0(void);   // boot step 14: intro_island selector (Va
 extern "C" int VanillaRunFrame(int frameState);
 // D3D7 texture creation + device SetTexture@0x8c (measured texturing mechanism).
 extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
+// Canonical 2D tiled blitter (FUN_00433900 port) — see vanilla_2d_render_pipeline.md.
+namespace VanillaBlit { struct TiledImage; TiledImage* Load(void*, const char*, const char*); void Draw(void*, TiledImage*, int, int, float); }
 
 // Vanilla globals (DAT_ addresses from vanilla binary):
 static FARPROC g_GDVSysCreate = nullptr;   // DAT_005dc01c
@@ -331,6 +333,9 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         uint32_t prevMouse = 0;           // click edge-detect
         float fade = 0.f;
         std::vector<uint8_t> scratch;     // reuse for per-frame fade pixel work
+        char resolvedGzp[3][80] = {0};    // GZP that resolved each intro (for tiled load)
+        char resolvedName[3][80] = {0};   // resolved intro TGA name (locale variant)
+        bool tiledLoaded[3] = {false,false,false};
     };
     static BootState st;
     static bool s_loggedPhase = false;
@@ -374,6 +379,8 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 if (!d.empty()) {
                     st.imgs[i] = VanillaTGA::Parse(d.data(), d.size());
                     snprintf(introNames[i], sizeof(introNames[i]), "%s", candidates[c]);  // log the resolved name
+                    snprintf(st.resolvedGzp[i], sizeof(st.resolvedGzp[i]), "%s", candidateGzps[c]);
+                    snprintf(st.resolvedName[i], sizeof(st.resolvedName[i]), "%s", candidates[c]);
                 }
             }
             if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro[%d] %s: ok=%d %dx%d %dbp\n",
@@ -500,72 +507,32 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         st.fade = 0.0f;
     }
 
-    // ── Draw current phase (double-buffered GDI on the window DC) ──
-    HWND hw = nullptr;
-    void* hwndv = obj[0x26c / 4];
-    if (hwndv) hw = (HWND)hwndv;
-    if (!hw) return;
-    HDC winDC = GetDC(hw);
-    if (!winDC) return;
-
-    RECT clientRect;
-    GetClientRect(hw, &clientRect);
-    int winW = clientRect.right - clientRect.left;
-    int winH = clientRect.bottom - clientRect.top;
-
-    // Memory DC (double buffer) — single atomic BitBlt to screen = no flicker.
-    HDC memDC = CreateCompatibleDC(winDC);
-    HBITMAP memBM = CreateCompatibleBitmap(winDC, winW, winH);
-    HBITMAP oldBM = (HBITMAP)SelectObject(memDC, memBM);
-
-    // Black background (letterbox + fade target).
-    RECT rfull = { 0, 0, winW, winH };
-    HBRUSH bb = CreateSolidBrush(0);
-    FillRect(memDC, &rfull, bb);
-    DeleteObject(bb);
-
-    // Pick image for current phase.
-    const VanillaTGA::Image* img = nullptr;
-    if (st.phase == BOOT_INTRO) {
-        if (st.introIdx >= 0 && st.introIdx < 3) img = &st.imgs[st.introIdx];
+    // ── Draw current intro phase via the CANONICAL 2D tiled blitter (FUN_00433900 port).
+    //    Drives the D3D7 device like the original: +0x98 Clear(0=BLACK) → BeginScene →
+    //    tiled blit(introTiles, fade) → EndScene → +0xa8 Present. Replaces the GDI BitBlt
+    //    bracket (a fundamental deviation — see behavior_specs/vanilla_2d_render_pipeline.md).
+    typedef void (__cdecl *PFN_Cdecl0)(void*);
+    typedef void (__cdecl *PFN_Cdecl1i)(void*, uint32_t);
+    PFN_Cdecl1i m98 = (PFN_Cdecl1i)(uintptr_t)obj[0x98 / 4];   // Clear/FillBackground
+    PFN_Cdecl0  m90 = (PFN_Cdecl0)(uintptr_t)obj[0x90 / 4];    // BeginScene
+    PFN_Cdecl0  m94 = (PFN_Cdecl0)(uintptr_t)obj[0x94 / 4];    // EndScene
+    PFN_Cdecl0  m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];   // Present
+    void* device = obj[0x294 / 4];
+    // Lazy-load the current intro as 128px tiled D3D7 textures (once per intro).
+    static VanillaBlit::TiledImage* s_introTiles[3] = {nullptr,nullptr,nullptr};
+    int ii = st.introIdx;
+    if (device && st.phase == BOOT_INTRO && ii >= 0 && ii < 3
+        && !st.tiledLoaded[ii] && st.resolvedName[ii][0]) {
+        st.tiledLoaded[ii] = true;
+        s_introTiles[ii] = VanillaBlit::Load(device, st.resolvedGzp[ii], st.resolvedName[ii]);
     }
-    // (BOOT_LOADING removed — no fake loading screen. BOOT_MENU returns early above.)
-    if (img && img->ok && !img->pixels.empty() && st.fade > 0.01f) {
-        // Fade-to-black: darken a scratch copy by (fade).
-        st.scratch.assign(img->pixels.begin(), img->pixels.end());
-        int bpp = img->bitsPerPixel / 8;        // bytes per pixel
-        int npx = img->width * img->height;
-        uint8_t f = (uint8_t)(st.fade * 255.0f);
-        for (int i = 0; i < npx; i++) {
-            uint8_t* p = &st.scratch[(size_t)i * bpp];
-            p[0] = (uint8_t)((p[0] * f) >> 8);   // B
-            p[1] = (uint8_t)((p[1] * f) >> 8);   // G
-            p[2] = (uint8_t)((p[2] * f) >> 8);   // R
-            // alpha (if present) left as-is
-        }
-        BITMAPINFO bi = {};
-        bi.bmiHeader.biSize = sizeof(BITMAPINFOHEADER);
-        bi.bmiHeader.biWidth = img->width;
-        bi.bmiHeader.biHeight = img->height;     // positive = bottom-up (matches VanillaTGA)
-        bi.bmiHeader.biPlanes = 1;
-        bi.bmiHeader.biBitCount = img->bitsPerPixel;
-        bi.bmiHeader.biCompression = 0;
-        // Center + maintain aspect ratio.
-        float sx = (float)winW / img->width, sy = (float)winH / img->height;
-        float scale = sx < sy ? sx : sy;
-        int dstW = (int)(img->width * scale);
-        int dstH = (int)(img->height * scale);
-        int dstX = (winW - dstW) / 2;
-        int dstY = (winH - dstH) / 2;
-        SetStretchBltMode(memDC, 3 /*HALFTONE*/);
-        StretchDIBits(memDC, dstX, dstY, dstW, dstH, 0, 0, img->width, img->height,
-                      st.scratch.data(), &bi, 0, 0xCC0020);
+    if (m98) m98(g_vRenderer, 0xFF000000);   // Clear BLACK (vanilla +0x98 Clear(0))
+    if (m90) m90(g_vRenderer);               // BeginScene
+    if (device && st.phase == BOOT_INTRO && st.fade > 0.01f
+        && ii >= 0 && ii < 3 && s_introTiles[ii]) {
+        VanillaBlit::Draw(device, s_introTiles[ii], 0, 0, st.fade);
     }
-
-    // Single atomic blit → no erase/redraw tear.
-    BitBlt(winDC, 0, 0, winW, winH, memDC, 0, 0, 0xCC0020);
-    SelectObject(memDC, oldBM);
-    DeleteObject(memBM);
-    DeleteDC(memDC);
-    ReleaseDC(hw, winDC);
+    if (m94) m94(g_vRenderer);               // EndScene
+    obj[0x42c / 4] = (void*)1;
+    if (m_a8) m_a8(g_vRenderer);             // Present
 }
