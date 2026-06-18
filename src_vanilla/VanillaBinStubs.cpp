@@ -1,6 +1,7 @@
 #include <cstdint>
 // Generated .BIN loader (FUN_004b7c50) link stubs. Loader is DORMANT.
 extern "C" {
+int FUN_0053c970(const char* a, const char* b);   // strcmp-eq (defined in VanillaStubs.cpp)
 uint32_t _DAT_005522b0 = 0;
 uint32_t _DAT_005522c0 = 0;
 uint32_t _DAT_00552344 = 0;
@@ -43,7 +44,21 @@ void* FUN_0049d2d0(int typeId) {
     return 0;
 }
 void FUN_0049f3b0() {}
-void FUN_004a1360() {}
+// FUN_004a1360: WorldAnim lookup. Walks world_state(DAT_006316ec)+0x210 array (count at
+//   +0x20c, stride 0xc) comparing param_1 via FUN_0053c970. Returns matching entry
+//   (base + iVar2*0xc), else logs "Failed to find WorldAnim" + returns 0. (vanilla 004a1360)
+int FUN_004a1360(const char* name) {
+    extern uint32_t DAT_006316ec;
+    if (DAT_006316ec == 0) return 0;   // FIXME(defensive): world_state null while dormant
+    int count = *(int*)(uintptr_t)(DAT_006316ec + 0x20c);
+    if (count <= 0) return 0;
+    uint32_t base = *(uint32_t*)(uintptr_t)(DAT_006316ec + 0x210);
+    for (int i = 0; i < count; i++) {
+        const char* entryName = *(const char**)(uintptr_t)(base + i * 0xc);
+        if (FUN_0053c970(name, entryName) != 0) return base + i * 0xc;
+    }
+    return 0;   // vanilla logs "Failed to find WorldAnim '%s'" via FUN_00544b47+FUN_00523aa0
+}
 void FUN_004b7b30() {}
 void FUN_0050e3c0() {}
 void FUN_0051bd20() {}
