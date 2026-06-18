@@ -90,10 +90,11 @@ Font* Load(void* device) {
             for (int y = 0; y < img.height; y++) {
                 uint8_t* dr = dst + y*lk.lPitch; const uint8_t* sr = img.pixels.data() + y*img.width*bpp;
                 for (int x = 0; x < img.width; x++) {
-                    // font sheet is greyscale-on-black: use intensity as alpha, white RGB.
-                    int intensity = (sr[x*bpp]+sr[x*bpp+1]+sr[x*bpp+2])/3;
-                    dr[x*4+0] = dr[x*4+1] = dr[x*4+2] = 255;   // white glyph
-                    dr[x*4+3] = (uint8_t)intensity;             // alpha = intensity
+                    // GiantFont_Eng is 32bpp: white RGB + glyph coverage in the ALPHA channel.
+                    // (Not greyscale-in-RGB — using RGB intensity gave alpha=255 everywhere → blocks.)
+                    dr[x*4+0] = dr[x*4+1] = dr[x*4+2] = 255;       // white glyph
+                    dr[x*4+3] = (bpp >= 4) ? sr[x*bpp+3]            // TGA alpha = glyph coverage
+                                           : (uint8_t)((sr[x*bpp]+sr[x*bpp+1]+sr[x*bpp+2])/3);
                 }
             }
             ((PFN_Unlock)vt(f->texSurf)[0x80/4])(f->texSurf, nullptr);
