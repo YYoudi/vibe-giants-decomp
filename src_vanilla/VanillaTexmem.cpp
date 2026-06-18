@@ -87,7 +87,7 @@ extern "C" {
 // read, allocation + bulk read, per-entry loop). The per-entry body writes into
 // the 0x2c-stride pool at the index read from each record; it does NOT touch
 // the g_TextureEntityList TextureEntry +0x08 field (see RE_docs/TEXMEM_HANDLER.md).
-void FUN_0049a580(uint32_t stream) {
+void FUN_0049a580_legacy(uint32_t stream) {
     // ── [0x49a580..0x49a5dd] Lazy pool init ──
     if (g_TexmemPool == nullptr) {
         g_TexmemSlots = kPoolSlots;                                   // [0x49a5a7]
