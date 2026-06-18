@@ -16,6 +16,7 @@
 extern "C" bool VanillaInput_KeyDown(int dik);
 extern "C" void VanillaInput_Poll(void);
 extern "C" uint32_t VanillaInput_MouseButtons(void);   // bitmask: bit0=LMB
+extern "C" void FUN_004913c0(void);   // boot step 14: intro_island selector (VanillaSceneLoad.cpp)
 // The renderer's own per-frame entry (renderer method [0x20] = 0x7370): does the
 // full D3D frame internally (BeginScene/Clear/scene-walk/EndScene/present).
 extern "C" int VanillaRunFrame(int frameState);
@@ -442,11 +443,12 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         if (st.phase == BOOT_INTRO) {
             st.introIdx++;
             if (st.introIdx >= 3) {
-                // NO loading screen between intros and menu (behavior_specs/boot_sequence.md,
-                // loading_screen.md). The real giants_loading.tga shows only during the async
-                // level load (FUN_004913c0→FUN_0045a530), not yet ported. Go straight to MENU.
+                // Boot step 14 (behavior_specs/boot_sequence.md): FUN_004913c0 selects
+                // intro_island (scan level table → DAT_00631380) + kicks async load
+                // (FUN_0045a530 still stubbed → loading screen not yet shown). Then menu.
+                FUN_004913c0();   // boot step 14: selector (declared at file scope)
                 st.phase = BOOT_MENU;
-                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros done → MENU (no fake loading screen)\n"); fflush(g_vTrace); }
+                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros done → step14 FUN_004913c0 (selector) → MENU\n"); fflush(g_vTrace); }
             } else {
                 if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro → next (%d)\n", st.introIdx); fflush(g_vTrace); }
             }
