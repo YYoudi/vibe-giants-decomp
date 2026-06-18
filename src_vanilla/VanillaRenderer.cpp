@@ -494,30 +494,35 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     // (behavior_specs/intro_timings.md): fade 0.2s, hold 12.0s, linear alpha.
     //   DAT_00552300=0.20 (fade s), DAT_005522b8=12.0 (hold s), DAT_00552358=5.0 (rate).
     // The former 600/3000/600 values were INVENTED — replaced with the real ones.
-    const uint32_t FADE_IN = 200, HOLD = 12000, FADE_OUT = 200;   // ms
+    // Phase timing: intros = 0.2s fade / 12s hold (DAT_00552300/005522b8). LOADING screen
+    // shows during async level load (vanilla FUN_0045a530) — brief here (load is sync).
+    const uint32_t FADE_IN = 200, HOLD = 12000, FADE_OUT = 200;   // ms (intros)
+    const uint32_t LOAD_HOLD = (st.phase == BOOT_LOADING) ? 1800 : 0; // ms (loading screen)
+    uint32_t ph_fadeIn = (st.phase == BOOT_LOADING) ? 300 : FADE_IN;
+    uint32_t ph_hold   = (st.phase == BOOT_LOADING) ? LOAD_HOLD : HOLD;
+    uint32_t ph_fadeOut= (st.phase == BOOT_LOADING) ? 300 : FADE_OUT;
     uint32_t elapsed = now - st.phaseStart;
 
-    if (elapsed < FADE_IN)                              st.fade = (float)elapsed / FADE_IN;
-    else if (elapsed < FADE_IN + HOLD)                  st.fade = 1.0f;
-    else if (elapsed < FADE_IN + HOLD + FADE_OUT)       st.fade = 1.0f - (float)(elapsed - FADE_IN - HOLD) / FADE_OUT;
-    else                                                st.fade = 0.0f;
-    bool phaseDone = (click || space || elapsed > FADE_IN + HOLD + FADE_OUT);
+    if (elapsed < ph_fadeIn)                                  st.fade = (float)elapsed / ph_fadeIn;
+    else if (elapsed < ph_fadeIn + ph_hold)                   st.fade = 1.0f;
+    else if (elapsed < ph_fadeIn + ph_hold + ph_fadeOut)      st.fade = 1.0f - (float)(elapsed - ph_fadeIn - ph_hold) / ph_fadeOut;
+    else                                                      st.fade = 0.0f;
+    bool phaseDone = (click || space || elapsed > ph_fadeIn + ph_hold + ph_fadeOut);
 
     // ── Phase transitions ──
     if (phaseDone) {
         if (st.phase == BOOT_INTRO) {
             st.introIdx++;
             if (st.introIdx >= 3) {
-                // Boot step 14 (behavior_specs/boot_sequence.md): FUN_004913c0 selects
-                // intro_island (scan level table → DAT_00631380) + kicks async load
-                // (FUN_0045a530 still stubbed → loading screen not yet shown). Then menu.
-                FUN_004913c0();   // boot step 14: selector (declared at file scope)
-                st.phase = BOOT_MENU;
-                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros done → step14 FUN_004913c0 (selector) → MENU\n"); fflush(g_vTrace); }
+                // Boot step 14: FUN_004913c0 selects intro_island + the LOADING screen
+                // (vanilla FUN_0045a530) shows giants_loading.tga during the level load.
+                FUN_004913c0();   // selector (declared at file scope)
+                st.phase = BOOT_LOADING;   // intros → loading screen → menu
+                if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intros done → LOADING screen (giants_loading.tga)\n"); fflush(g_vTrace); }
             } else {
                 if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro → next (%d)\n", st.introIdx); fflush(g_vTrace); }
             }
-        } else { // BOOT_LOADING → BOOT_MENU (legacy branch; BOOT_LOADING no longer entered)
+        } else if (st.phase == BOOT_LOADING) {   // loading screen done → menu
             st.phase = BOOT_MENU;
             if (g_vTrace) { fprintf(g_vTrace, "[BOOT] loading done → MENU phase\n"); fflush(g_vTrace); }
         }
@@ -544,11 +549,22 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         st.tiledLoaded[ii] = true;
         s_introTiles[ii] = VanillaBlit::Load(device, st.resolvedGzp[ii], st.resolvedName[ii]);
     }
+    // LOADING screen (vanilla FUN_0045a530): giants_loading.tga tiled, shown while the
+    // level loads. For the menu/intro level the player char is 'I' → giants_loading.
+    static VanillaBlit::TiledImage* s_loadingTile = nullptr;
+    static bool s_loadingTried = false;
+    if (device && st.phase == BOOT_LOADING && !s_loadingTried) {
+        s_loadingTried = true;
+        s_loadingTile = VanillaBlit::Load(device, "Bin\\xx_giants_logo_3d.gzp", "giants_loading.tga");
+    }
     if (m98) m98(g_vRenderer, 0xFF000000);   // Clear BLACK (vanilla +0x98 Clear(0))
     if (m90) m90(g_vRenderer);               // BeginScene
     if (device && st.phase == BOOT_INTRO && st.fade > 0.01f
         && ii >= 0 && ii < 3 && s_introTiles[ii]) {
         VanillaBlit::Draw(device, s_introTiles[ii], 0, 0, st.fade);
+    }
+    if (device && st.phase == BOOT_LOADING && st.fade > 0.01f && s_loadingTile) {
+        VanillaBlit::Draw(device, s_loadingTile, 0, 0, st.fade);
     }
     if (m94) m94(g_vRenderer);               // EndScene
     obj[0x42c / 4] = (void*)1;
