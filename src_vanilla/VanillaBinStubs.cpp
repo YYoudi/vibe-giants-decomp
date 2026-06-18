@@ -146,7 +146,6 @@ void FUN_0049c920() {}
 void FUN_0049d240() {}
 void FUN_00545ab0() {}
 extern const char s_Dynamic_shadow_texture_0055f824[] = "Dynamic shadow texture";
-void FUN_0049f480(int,int) {}
 int FUN_00458e70(int) { return 0; }
 void FUN_00458dd0(int,int) {}
 int FUN_00458e00(int) { return 0; }
@@ -157,8 +156,6 @@ uint32_t DAT_0055f8e0 = 0;
 extern const char s_C__Giants_Source_main_objspec_c_0056152c[] = "C Giants Source main objspec c";
 extern const char s_ospec_0056154c[] = "ospec";
 void FUN_00472ef0(uint32_t*, void*) {}
-uint32_t FUN_0049c150(void) { return 0; }
-void FUN_0051eca0(void*) {}
 uint32_t FUN_0049c400(void*) { return 0; }
 uint32_t DAT_00631404 = 0;
 uint32_t DAT_0059e3dc = 0;
@@ -176,9 +173,7 @@ uint32_t FUN_0053db60(int, int, uint32_t) { return 0; }
 int* FUN_0053dc40(uint32_t) { static int z=0; return &z; }
 uint32_t DAT_00585354 = 0;
 uint32_t DAT_0058534c = 0;
-void FUN_0049f350(int) {}
 void FUN_0049c9b0(int, int) {}
-void FUN_0049f2d0(int) {}
 void FUN_0044bc40(int, int, void*) {}
 extern const char s_C__Giants_Source_main_object_c_0055f784[] = "C Giants Source main object c";
 extern const char s_Transform_Ref_Mats_0055f810[] = "Transform Ref Mats";
@@ -187,4 +182,8 @@ uint32_t DAT_0063141c = 0;
 uint32_t DAT_00631418 = 0;
 uint32_t DAT_0063185c = 0;
 uint32_t DAT_0062f510 = 0;
+uint32_t DAT_0059e3e4 = 0;
+uint32_t DAT_005dc028 = 0;
+uint32_t FUN_0052fdb0(void) { return 0; }
+extern const char s_Warning_we_ve_used_all_the_uniqu_0055f7a4[] = "Warning we ve used all the uniqu";
 } // extern "C"
