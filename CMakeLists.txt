@@ -189,3 +189,11 @@ set_target_properties(GiantsMain_vanilla PROPERTIES
     OUTPUT_NAME "GiantsMain_vanilla"
     RUNTIME_OUTPUT_DIRECTORY "build_recomp"
 )
+
+# ── Vanilla DX7 capture proxy (C5 oracle) ──
+# Builds gg_dx7r.dll. Deploy: rename real gg_dx7r.dll → gg_dx7r_orig.dll, drop this AS
+# gg_dx7r.dll. Captures the original's 21 UpCallsLoad callbacks → giants_dx7_proxy.log.
+add_library(gg_dx7r_proxy SHARED ${CMAKE_SOURCE_DIR}/proxy_dx7/dx7_proxy_main.cpp)
+target_include_directories(gg_dx7r_proxy PRIVATE ${CMAKE_SOURCE_DIR}/proxy_dx7)
+set_target_properties(gg_dx7r_proxy PROPERTIES OUTPUT_NAME "gg_dx7r" PREFIX "" SUFFIX ".dll")
+target_sources(gg_dx7r_proxy PRIVATE ${CMAKE_SOURCE_DIR}/proxy_dx7/Dx7ProxyDef.def)
