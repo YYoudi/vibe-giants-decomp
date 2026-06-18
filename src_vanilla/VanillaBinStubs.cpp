@@ -27,7 +27,6 @@ void FUN_004720d0(uint32_t* /*v*/) {}   // FIXME(unverified): callee — quat tr
 void FUN_00429100() {}
 void FUN_00476d40() {}
 void FUN_00491830() {}
-void FUN_0049ccf0() {}
 // FUN_0049d2d0: obj-type lookup (walks DAT_006313b4 linked list; node [0]=next,
 //   [1]=count, key at node+3, entries stride 0xc1 dwords). Returns matching entry
 //   (node + iVar2*0xc1 + 2), else NULL. (vanilla 0049d2d0)
@@ -178,4 +177,10 @@ uint32_t FUN_0053db60(int, int, uint32_t) { return 0; }
 int* FUN_0053dc40(uint32_t) { static int z=0; return &z; }
 uint32_t DAT_00585354 = 0;
 uint32_t DAT_0058534c = 0;
+void FUN_0049f350(int) {}
+void FUN_0049c9b0(int, int) {}
+void FUN_0049f2d0(int) {}
+void FUN_0044bc40(int, int, void*) {}
+extern const char s_C__Giants_Source_main_object_c_0055f784[] = "C Giants Source main object c";
+extern const char s_Transform_Ref_Mats_0055f810[] = "Transform Ref Mats";
 } // extern "C"
