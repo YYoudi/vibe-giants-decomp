@@ -10,7 +10,9 @@
 #include "VanillaMakeWorld.h"
 
 #include <cstdint>
+#include <cstdio>
 #include <cstring>
+extern "C" FILE* g_vTrace;
 
 // ============================================================================
 // Globals (world_state + scratch + 1.0f). These are defined elsewhere; we only
@@ -187,6 +189,7 @@ extern "C" void FUN_00476d40(const char* param_1) {
     //   FUN_0053a3e0(param_1, &local_60, &local_34);
     //   if (local_34 == 0) return;            // load failed
     // ------------------------------------------------------------------
+    if (g_vTrace) { fprintf(g_vTrace, "[MAKEWORLD] requesting world_data via FUN_0053a3e0(\"%s\")\n", param_1 ? param_1 : "(null)"); fflush(g_vTrace); }
     FUN_0053a3e0(param_1, &local_60, &local_34);
     if (local_34 == 0) {
         return;

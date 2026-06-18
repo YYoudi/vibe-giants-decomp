@@ -166,7 +166,10 @@ uint32_t DAT_0059c958 = 0;
 uint32_t DAT_0059c960 = 0;
 uint32_t DAT_0059c964 = 0;
 uint32_t DAT_0059c96c = 0;
-void FUN_0053a3e0(const char*, uint32_t*, char**) {}
+void FUN_0053a3e0(const char* name, uint32_t* outData, uint32_t* outSize) {
+    if (outData) *outData = 0;
+    if (outSize) *outSize = 0;
+}
 uint32_t FUN_0053db60(int, int, uint32_t) { return 0; }
 int* FUN_0053dc40(uint32_t) { static int z=0; return &z; }
 uint32_t DAT_00585354 = 0;
