@@ -7,12 +7,21 @@
 
 **Remets TOUJOURS tes outils en question.** À chaque cycle, demande-toi : « un meilleur outil accélérerait-il ça ? » S'il te manque quelque chose (proxy, capture, diff, debugger, asm-diff, RenderDoc, Frida script, automatisation), **construis-le ou installe-le TOI-MÊME**. Tu as internet (`curl`/`pip`) + terminal + 800k contexte. **Teste-le, ne demande pas.** Le proxy DX7, capdiff, appsnap, les flags de phase — tous bâtis ainsi. Continue ce mouvement.
 
-## ⚑ PRINCIPE : MESURE AVANT CODE + PREUVE AVANT DE CLAMER
-1. **Mesure avant code** : pour TOUT comportement observable, mesure l'original d'abord → `behavior_specs/<x>.md` → implémente → vérifie. Coder un observable sans l'avoir mesuré = **dérive** (CLAUDE.md §0 règle 5).
-2. **Succès = preuve, pas « ça tourne + visible »**. Deux modes de preuve, choisis le bon :
-   - **Visuel** (ce qui s'affiche) → `tools/run.sh <phase>` (capdiff vs original) doit **PASS** (mean_abs_delta < seuil).
-   - **Bit-exact** (fonctions/callbacks) → proxy/oracle dual-mode : notre impl vs original, **0 mismatch**.
-   Ne JAMAIS clamer un rendu/fonction correct sans la preuve correspondante.
+## ⚑ PRINCIPE : OBSERVATION RUNTIME AVANT CODE + PREUVE AVANT DE CLAMER
+1. **OBSERVATION RUNTIME (suprême)** : pour TOUT comportement observable, tu DOIS d'abord **OBSERVER
+   le vrai jeu en RUNTIME** — pas lire le code Ghidra. OBSERVER = hook Frida (fichiers ouverts,
+   fonctions appelées) + proxy DX7 (SetTexture/SetTransform/DrawPrimitive avec args) + appsnap
+   (capture écran). L'analyse STATIQUE (lire le décompilé) est utile pour PORTER mais n'est PAS
+   une observation. Workflow obligatoire :
+   (a) **OBSERVER** l'original en runtime → quels assets chargent, quel renderer appelé, quel caméra.
+   (b) **DOCUMENTER** l'observation → `behavior_specs/`.
+   (c) **PORTER** le code vanilla du décompilé.
+   (d) **VÉRIFIER** le recomp matche l'observation.
+   **NE JAMAIS deviner quel asset le jeu charge** (Giants_logo_512 deviné du GZP index = DÉRIVE).
+   **NE JAMAIS écrire de code de rendu sans avoir observé l'original faire ce rendu**.
+2. **Succès = preuve, pas « ça tourne + visible »**. Deux modes de preuve :
+   - **Visuel** → `tools/run.sh <phase>` (capdiff vs original) doit **PASS**.
+   - **Bit-exact** → proxy/oracle dual-mode, **0 mismatch**.
 
 ## Cible canonique : VANILLA 1.0
 `GameFiles-VanillaV1/Giants_nocd.exe` (vanilla 1.0, DX7 `gg_dx7r.dll`, 2 exports, 21 callbacks, engineCtx=NULL). **100% vanilla-only** — the 1.5/DX9 path was PURGED 2026-06-18 (it caused version/address drift: the Ghidra project was v1.5 GiantsMain.exe, not vanilla). Original oracle = `Giants_nocd.exe`.
@@ -30,14 +39,19 @@
 **Flags phase recomp (C1)** : `-skip-intros`, `-at menu`, `-at level:<name>`, `-frames N`, `-no-audio`. (`-skip-intros -frames 200` atteint le menu en ~5s vs ~15s.)
 **Frida** (`scripts/frida_*.js`) — capture timing/séquence de l'original + RPC. **`appsnap`** (`uvx appsnap -o <png> "Giants"`) capture ponctuelle. `-t 100` match strict.
 
-## Workflow (BOUCLER)
-1. **Cible** le prochain blocker (trace log, capdiff FAIL, ou callee du chemin boot). Pas de spec → MESURE d'abord → `behavior_specs/`.
-2. **Diagnostique** : statique (`vanilla_decompiled/*.json`, re-agent vanilla) + dynamique (Frida/proxy sur l'original). **Vérifie QUE la fonction est sur le chemin réellement exécuté** (ne porte pas du code mort — si le loader n'est pas câblé, ses callees sont dormant : priorise le câblage ou le proxy).
-3. **Implémente** : porte le corps vanilla OU capture+valide via oracle. Cite les DAT_. Vérifie la règle asset-display.
-4. **Build** : `bash tools/build.sh GiantsMain_vanilla` (lock sérialisé si >1 agent). Vert.
-5. **Vérifie** : capdiff PASS (visuel) OU proxy 0-mismatch (bit-exact). FAIL = fixe le recomp, n'affaiblis pas la spec.
-6. **Commit + push** : `git add -u && git commit -q -m "RE(...): ..."` (EN, pas de trailer Claude, guard secret/lourds).
-7. **Reboucle**. Pas de résumé — enchaîne. **Priorise toujours ce qui débloque le plus** (le chemin boot réel > callee dormant ; le proxy/oracle > portage abstrait).
+## Workflow (BOUCLER — OBSERVER → DOCUMENTER → PORTER → VÉRIFIER)
+1. **OBSERVER l'original en RUNTIME** (suprême, avant tout code) :
+   - Hook Frida callback[17] VFSOpenFile → quels fichiers le jeu ouvre, dans quel ordre.
+   - Proxy DX7 → quels SetTexture/SetTransform/DrawPrimitive, avec quels args.
+   - appsnap → ce qui s'affiche à l'écran.
+   - Sans observation = tu devines = DÉRIVE.
+2. **DOCUMENTER** l'observation comme spec (`behavior_specs/<x>.md`). Une spec = une observation runtime, pas une lecture de code.
+3. **DIAGNOSTIQUER** : lire la fonction vanilla dans `vanilla_decompiled/`. Vérifier qu'elle est sur le chemin exécuté (ne porte pas du code mort). Utiliser les noms PS2 (`ps2_symbols/`) pour identifier.
+4. **PORTER** le corps vanilla en C++ dans `src_vanilla/`. Citer les DAT_. Vérifier la règle asset-display (prouvée par runtime, pas par GZP index).
+5. **Build** : `bash tools/build.sh GiantsMain_vanilla`. Vert.
+6. **VÉRIFIER** : capdiff PASS (visuel) OU proxy 0-mismatch (bit-exact). FAIL = fixe le recomp, n'affaiblis pas la spec.
+7. **Commit + push** : `git add -u && git commit -q -m "RE(...): ..."` (EN, pas de trailer Claude, guard secret/lourds).
+8. **Reboucle**. **Priorise toujours ce qui débloque le plus** (observer l'original > porter du code > deviner).
 
 ## Classification des fonctions (choisis la validation)
 | Classe | Validation | Autonomie |
