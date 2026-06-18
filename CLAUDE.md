@@ -6,7 +6,7 @@
 
 ### Règles d'autonomie absolues
 1. **Il te manque un outil ? INSTALLE-LE ou CONSTRUIS-LE.** Tu as `pip`, `curl`, le terminal, internet. Frida/debugger/asm-diff/PIX → tu les poses toi-même. Un script de comparaison/diff/capture qui n'existe pas → tu l'écris. Ne jamais attendre l'humain.
-2. **Pas de code custom/inventé dans le recomp.** Tout vient d'un corps Ghidra (adresse DAT_ documentée) OU est validé bit-à-bit vs l'original (oracle proxy). Un rendu « maison » (GDI DrawText, clear custom) = diagnostic-only, jamais présenté comme RE. (Voir skill `giants-proxy` § anti-dérive.)
+2. **Pas de code custom/inventé dans le recomp.** Tout vient d'un corps Ghidra (adresse DAT_ documentée) OU est validé bit-à-bit vs l'original (oracle proxy). Un rendu « maison » (GDI DrawText, clear custom) = diagnostic-only, jamais présenté comme RE. (Voir skill `giants-advance` § anti-dérive.)
 3. **Le RE ne s'arrête pas à Ghidra (statique).** Complète systématiquement par de l'analyse **dynamique** : hook Frida sur l'original (D3D9/DirectSound/registry/renderer), breakpoints, capture de frame. Le décompilé Ghidra est ~60-90 % correct → confirme TOUJOURS par observation runtime de l'original avant de câbler.
 4. **Preuve avant assemblage.** N'assembler dans l'exe recompilé QUE des fonctions prouvées équivalentes (oracle = original via proxy, 0 mismatch) ou portées fidèlement (corps Ghidra vérifié).
 
@@ -40,7 +40,7 @@
 - **À construire si besoin** : asm-diff (recomp vs original, fonction par fonction), capture PIX/RenderDoc de frame, moniteur API custom.
 
 ### Auto-amélioration continue
-- Met à jour **ce fichier** + le skill `giants-proxy` + les mémoires après chaque session/jalon.
+- Met à jour **ce fichier** + le skill `giants-advance` + les mémoires après chaque session/jalon.
 - Si une méthodo marche (ex: self-test bit-exact, shadow in-game), documente-la dans le skill pour la réutiliser.
 - Si tu te surprends à inventer du code (dérive stub), STOP, reviens à la doctrine, corrige le skill.
 
