@@ -1,70 +1,66 @@
 # giants-advance
 
-Avance autonome sur le recodage **100%-identique** de Giants: Citizen Kabuto jusqu'à blocage dur. Cycle : `mesure → spec → implémente → build → auto-vérif (capdiff) → commit`. Pas de résumé en route. Un cycle = un commit. **Tu ne t'arrêtes QUE sur demande humaine ou blocage dur.**
+**Le SEUL skill pour faire avancer le projet** — recomp 100%-identique de Giants: Citizen Kabuto (vanilla 1.0 DX7). Tu tournes en continu, tu délègues (subagents) ou fais plusieurs choses pour **toujours progresser**. Cycle : `mesure → spec → implémente → build → VÉRIFIE → commit`. Un cycle = un commit.
 
-## ⚑ PRINCIPE SUPRÊME : MESURE AVANT CODE (OVERRIDE TOUT)
-Pour TOUT comportement observable (ce qui s'affiche, l'ordre, la durée, la valeur de fondu, quel asset à quel instant) : **mesure l'original d'abord** → écris une spec dans `behavior_specs/` → implémente → vérifie par `tools/run.sh <phase>` (capdiff PASS). Coder un observable sans l'avoir mesuré = **dérive** (CLAUDE.md §0 règle 5). Le succès = « matche l'original » (capdiff PASS), JAMAIS « ça tourne + quelque chose s'affiche ». Ne JAMAIS clamer qu'un rendu est correct sans un `compare` qui PASS.
+## ⚑ PRINCIPE SUPRÊME : MESURE AVANT CODE + PREUVE AVANT DE CLAMER
+1. **Mesure avant code** : pour TOUT comportement observable, mesure l'original d'abord → `behavior_specs/<x>.md` → implémente → vérifie. Coder un observable sans l'avoir mesuré = **dérive** (CLAUDE.md §0 règle 5).
+2. **Succès = preuve, pas « ça tourne + visible »**. Deux modes de preuve, choisis le bon :
+   - **Visuel** (ce qui s'affiche) → `tools/run.sh <phase>` (capdiff vs original) doit **PASS** (mean_abs_delta < seuil).
+   - **Bit-exact** (fonctions/callbacks) → proxy/oracle dual-mode : notre impl vs original, **0 mismatch**.
+   Ne JAMAIS clamer un rendu/fonction correct sans la preuve correspondante.
 
 ## Cible canonique : VANILLA 1.0
-**vanilla 1.0 retail** (`GameFiles-VanillaV1/Giants_nocd.exe`, 2574 fn, DX7 `gg_dx7r.dll`). Le 1.520.59 se transfère comme connaissance via `version_bridge/VERSION_MAP_v2.csv`. Renderers DX9/11/12 post-1.4 = **réimplémentés par nous**, pas hérités. Piste 1.5/DX9 = legacy/oracle, plus canon.
+`GameFiles-VanillaV1/Giants_nocd.exe` (2574 fn, DX7 `gg_dx7r.dll`, 2 exports, 21 callbacks, engineCtx=NULL). Le 1.5/DX9 (`gg_dx9r.dll`, 22 callbacks, engine-context) = **legacy/oracle secondaire**, plus canon. Renderers DX9/11/12 post-1.4 = réimplémentés par nous. Original oracle = `Giants_nocd.exe`.
 
 ## Contexte (LIS EN PREMIER)
-- **`CLAUDE.md` §0** — doctrine + **règles de fidélité observable 5-10** (mesure-avant-code, asset-display, succès=matche-original, auto-vérif, spec=source, diagnostic-only élargi). OVERRIDE tout.
-- **`behavior_specs/`** — specs mesurées sur l'original. **Source de vérité de tout observable.** En particulier : `boot_sequence.md` (chaîne FUN_005222c0, 15 étapes), `intro_timings.md` (fondu 0.2s / tenu 12s / 3 images depuis intros.bin), `loading_screen.md` (giants_loading.tga via FUN_0045a530, **PAS int_loadisland**), `menu_render.md` (3D+2D ensemble, chargés au boot step 4).
-- **`vanilla_decompiled/*.json`** — corps vanilla (source de provenance). Index `version_bridge/vanilla_functions.jsonl`.
-- **`RE_docs/DX7_RENDERER_CONTRACT.md`** + **`DX7_RENDER_RECIPE.md`** — contrat DX7 (21 callbacks, engineCtx=NULL, 2 exports, table 0x57c).
-- **Skill `/giants-proxy`** — oracle proxy + classification.
-- **Mémoires** (`.../memory/`) — `dx7-minimal-contract.md`, `boot-sequence-and-3d-terrain.md`, `scene-load-roadmap.md`, `giants-format-specs.md`.
-- **`git log --oneline -20`** — état courant.
+- **CLAUDE.md §0** — doctrine + règles fidélité observable 5-10. OVERRIDE tout.
+- **`behavior_specs/`** — specs mesurées (boot chain, intro timings 0.2s/12s, loading=giants_loading PAS int_loadisland, menu 3D+2D).
+- **`vanilla_decompiled/*.json`** — corps vanilla (provenance). Index `version_bridge/vanilla_functions.jsonl`.
+- **`RE_docs/DX7_RENDERER_CONTRACT.md` + `DX7_METHOD_MAP_v2.md` + `DX7_RENDER_RECIPE.md`** — contrat (21 callbacks, table 0x57c, 57 slots mappés).
+- **Mémoires** (`.../memory/`) — `overnight-2026-06-18-batch.md` (état courant callees), `dx7-minimal-contract.md`, `boot-sequence-and-3d-terrain.md`, `scene-load-roadmap.md`, `giants-format-specs.md`.
+- **`git log --oneline -20`** — où on en est.
 
-## Outils d'auto-vérif (OBLIGATOIRES — ne code pas un observable sans les utiliser)
-- **`tools/run.sh <phase> [compare|recomp|original] [norebuild]`** — build→deploy→capture→diff en une commande. rc 0=PASS / 1=diff-FAIL / 2=capture-fail.
-- **`tools/capdiff.py`** — capture recomp (flags de phase) + capture original (Giants_nocd) + diff PIL (mean_abs_delta). Subcommands `recomp|original|diff|compare`. **L'original se lance via PowerShell Start-Process** (segfault sous subprocess plain) ; 4s de relâchement DX7 entre recomp et original (même `gg_dx7r.dll`).
-- **Flags de phase recomp (C1)** : `-skip-intros`, `-at menu`, `-at level:<name>`, `-frames N`, `-no-audio`. **Teste une phase sans rejouer le boot** (`-skip-intros -frames 200` atteint le menu en ~5s vs ~15s).
-- **Frida** (`scripts/frida_*.js`) — capture timing/séquence de l'original + RPC de contrôle.
-- **`appsnap`** (`uvx appsnap -o <png> "Giants"`) — capture ponctuelle.
+## Outils (OBLIGATOIRES — choisis selon le mode de preuve)
+**Visuel (capdiff)** : `tools/run.sh <phase> [compare|recomp|original] [norebuild]` (build→deploy→capture→diff, rc 0=PASS/1=FAIL/2=capture-fail). `tools/capdiff.py` (capture recomp flags-phase + original Giants_nocd + diff PIL). Original via PowerShell Start-Process (segfault sous subprocess) ; 4s relâchement DX7 entre les deux (même gg_dx7r.dll).
+**Bit-exact (proxy oracle, C5)** : `proxy_dx7/` → `gg_dx7r.dll` capture-proxy. Deploy : real gg_dx7r.dll → `gg_dx7r_orig.dll`, proxy AS gg_dx7r.dll, run original → `giants_dx7_proxy.log` capture les 21 callbacks. Pour valider un callback : dual-mode (notre impl + originale, compare, 0 mismatch). Le proxy 1.5 (`proxy/`, gg_dx9r) reste pour l'oracle secondaire.
+**Flags phase recomp (C1)** : `-skip-intros`, `-at menu`, `-at level:<name>`, `-frames N`, `-no-audio`. (`-skip-intros -frames 200` atteint le menu en ~5s vs ~15s.)
+**Frida** (`scripts/frida_*.js`) — capture timing/séquence de l'original + RPC. **`appsnap`** (`uvx appsnap -o <png> "Giants"`) capture ponctuelle. `-t 100` match strict.
 
-## Workflow (BOUCLE jusqu'à blocage dur)
-1. **Cible** le prochain observable à matcher (ou blocker lu dans trace). Si pas de spec → **MESURE d'abord** (Frida/capture/decompile) → écris `behavior_specs/<x>.md`.
-2. **Diagnostique** : statique (`vanilla_decompiled/*.json`, ghidra-bridge/re-agent sur vanilla ; sémantique 1.5 via `VERSION_MAP_v2.csv`) + dynamique (Frida sur l'original vanilla).
-3. **Implémente** : porte le corps vanilla OU capture+valide via oracle. Documente les DAT_ en commentaires. **Vérifie la règle asset-display** avant d'afficher quoi que ce soit.
-4. **Build** : `cd /g/GiantsRE && export PATH="/c/msys64/mingw32/bin:$PATH" && mingw32-make GiantsMain_vanilla`. **Build = série** (1 make, lock `tools/.build.lock` si >1 agent). Vérifie vert.
-5. **Auto-vérif** : `tools/run.sh <phase>` → doit PASS. Si FAIL : le recomp dévie de l'original → **fixe le recomp, n'affaiblis pas la spec**. Pour une nouvelle phase sans original capturable, documente pourquoi (Frida à venir).
-6. **Commit + push** si progression : `git add -u && git commit -q -m "RE(...): ..."` (EN, pas de trailer Claude, guard secret/lourds).
-7. **Reboucle**. Pas de résumé — enchaîne.
+## Workflow (BOUCLER)
+1. **Cible** le prochain blocker (trace log, capdiff FAIL, ou callee du chemin boot). Pas de spec → MESURE d'abord → `behavior_specs/`.
+2. **Diagnostique** : statique (`vanilla_decompiled/*.json`, re-agent vanilla) + dynamique (Frida/proxy sur l'original). **Vérifie QUE la fonction est sur le chemin réellement exécuté** (ne porte pas du code mort — si le loader n'est pas câblé, ses callees sont dormant : priorise le câblage ou le proxy).
+3. **Implémente** : porte le corps vanilla OU capture+valide via oracle. Cite les DAT_. Vérifie la règle asset-display.
+4. **Build** : `bash tools/build.sh GiantsMain_vanilla` (lock sérialisé si >1 agent). Vert.
+5. **Vérifie** : capdiff PASS (visuel) OU proxy 0-mismatch (bit-exact). FAIL = fixe le recomp, n'affaiblis pas la spec.
+6. **Commit + push** : `git add -u && git commit -q -m "RE(...): ..."` (EN, pas de trailer Claude, guard secret/lourds).
+7. **Reboucle**. Pas de résumé — enchaîne. **Priorise toujours ce qui débloque le plus** (le chemin boot réel > callee dormant ; le proxy/oracle > portage abstrait).
 
-## Blocage DUR (seuls arrêts — sinon continue)
-- **Sur demande humaine explicite** (l'humain valide sur demande uniquement — tu tournes en continu sinon).
-- Décision de direction que seul l'humain peut prendre.
-- Outil absent non-installable (tu as pip/curl — installe Frida/x32dbg toi-même d'abord).
-- Gateway 529 persistant ou build cassé >3 fix.
+## Classification des fonctions (choisis la validation)
+| Classe | Validation | Autonomie |
+|--------|-----------|-----------|
+| **Pure** (feuille, déterministe) | self-test bit-exact (proxy) | 100% |
+| **Stateful déterministe** | shadow-predict (prédit → originale → compare → retourne originale) | 100% |
+| **Stateful complexe / I-O** (FS, audio, rendu) | swap-and-run + capdiff visuel | capdiff auto, humain si subjectif |
+Classifier via `vanilla_functions.jsonl` : callees vides + pas de global muté ⇒ pur.
 
-→ À un vrai blocage : 3 lignes (où, ce qui bloque, prochaine action) puis rends la main.
-
-## Chantiers (l'axe visuel = l'original ; les autres = autonomes)
-**Axe visuel principal** : menu/île 3D fidèle (texturé, eau, ciel, logo 3D, GUI 2D, caméra `ref_camera1`) — nourrir la scène via la chaîne `FUN_004913c0→FUN_0045a530→FUN_004b7c50→FUN_004f3230`. **Toujours vérifier par `compare menu` qui doit PASS.**
-**Chantiers autonomes** (vérifiables par trace/oracle/asm-diff, pas d'œil requis) : VFS (callbacks 15-17 + GZP), audio (`FUN_0051f900`), 21 callbacks UpCalls, mapping sémantique des ~55 méthodes renderer (RVA→D3D7), init-chain engine (`FUN_004f41c0`…), portage moteur-core via `VERSION_MAP_v2` (embarrassingly parallel).
+## Chantiers (toujours progresser — choisis par impact)
+**Axe visuel (menu/île 3D fidèle)** : câbler la chaîne boot réelle `FUN_004913c0→FUN_0045a530→FUN_004b7c50(makewrld+placements+SFX...)→FUN_004f3230` pour que la scène se peuple. **CLEF : FUN_0053a3e0 (asset loader) est le pont — le porte (via VanillaVFS::GzpReadFile) puis câble le loader → `compare menu` doit PASS.**
+**Bit-exact (proxy)** : capture les 21 callbacks vanilla via le proxy C5, valider chaque impl du recomp (callback table VanillaRenderer.cpp) en dual-mode 0-mismatch.
+**Autonomes (trace/oracle, pas d'œil)** : portage callees sur le chemin boot, VFS, audio, mapping 55 méthodes renderer, init-chain.
 
 ## Règles
-- **Anti-dérive** : pas de rendu/logique inventée. Diagnostic stub isolé et étiqueté. Mur COM + DX9 registry = quarantaine `reference/patch15/`, jamais câblé.
-- **Mesure avant code** (observable) + **asset-display** + **succès = capdiff PASS** (CLAUDE.md §0 règles 5-7).
-- **Preuve avant assemblage** : Ghidra vanilla vérifié OU 0 mismatch vs original.
-- **Build = série** (1 make). Subagents : `g++ -fsyntax-only` ; toi seul intègres + build.
+- **Anti-dérive** : pas de code custom/inventé. Diagnostic stub isolé/étiqueté. Mur COM + DX9 registry = quarantaine `reference/patch15/`, jamais câblé.
+- **Mesure avant code** + **asset-display** + **succès = preuve (capdiff PASS / proxy 0-mismatch)**.
+- **Preuve avant assemblage** : n'assemble que du prouvé (Ghidra vanilla vérifié OU 0 mismatch).
+- **Build = série** (1 make, `tools/build.sh` lock). Subagents : `g++ -fsyntax-only` ; toi seul intègres + build.
 - **CRT heap** : jamais ton `free()` MinGW sur un buffer MSVC.
-- **Conventions** : callbacks UpCalls `__cdecl`. **Méthodes renderer DX7 = `__cdecl(this,args)`** (this en 1er arg, `mov eax,[esp+4]; ret`) — PAS thiscall. engineCtx=NULL, 21 callbacks, 2 exports.
-- **Structures** : layouts/globals vanilla ≠ 1.5 — réaligne `GiantsTypes` structure par structure.
-- **DLL setups** : `gg_dx7r.dll` = renderer vanilla (cible). `gg_dx7r_stub.dll` = diagnostic. `gg_dx9r*.dll` + proxy = legacy 1.5/oracle. Original oracle = `Giants_nocd.exe`.
+- **Conventions** : callbacks UpCalls `__cdecl`. **Méthodes renderer DX7 = `__cdecl(this,args)`** (this en 1er, `mov eax,[esp+4]; ret`). engineCtx=NULL, 21 callbacks, 2 exports.
+- **DLL setups** : `gg_dx7r.dll` = renderer vanilla (cible). `gg_dx7r_orig.dll` = real (pour le proxy). `gg_dx9r*.dll` + proxy 1.5 = legacy/oracle.
 
-## Subagents (parallélisation MAX selon les vraies limites de concurrence)
-**Limites de concurrence réelles du gateway api.z.ai** (vérifiées 2026-06-18) :
-- **GLM-5.1 (sonnet) = 10 requêtes en vol** → fork jusqu'à **~8 subagents sonnet** en parallèle (garde 2 de marge).
-- **GLM-5.2 (opus) = 5 requêtes en vol** → la main (opus) + quelques subagents opus si besoin ; reste sous 5.
-- Les **529** qu'on a eus n'étaient PAS le plafond de concurrence (on n'avait que 2 subagents) — c'était de la **surcharge serveur transitoire**. Donc : un 529 = retry/back-off ponctuel, PAS une raison pour limiter à 2 subagents. Fork large (jusqu'à ~8 sonnet).
-- Objectif : **parallélisation maximale**. Fork des subagents sur chantiers **indépendants** (fichiers disjoints via claim board / worktree). Le portage moteur-core est embarrassingly parallel.
-- **Modèle** : `sonnet` (glm-5.1) pour les subagents ; opus (glm-5.2) pour la main (intégration, build, décisions).
-- **Anti-race** : un seul rédacteur par fichier ; ils RETOURNENT du code, toi seul tu intègres + build. **Worktree par agent** (EnterWorktree) pour zéro conflit.
-- **API 529 transitoire** : retry après quelques secondes (back-off), re-fork — ce n'est PAS le plafond de concurrence.
-- **re-agent** : JAMAIS en parallèle (session unique).
+## Subagents (parallélisation MAX — vraies limites)
+- **GLM-5.1 (sonnet) = 10 concurrent** → fork jusqu'à ~8 subagents sonnet. **GLM-5.2 (opus) = 5 concurrent** → main + qq opus.
+- **529/429 = surcharge/limite transitoire** (PAS le plafond de concurrence) → back-off retry, pas de limite à 2. Le plafond = les chiffres ci-dessus.
+- Fork sur chantiers **indépendants** (fichiers disjoints, claim board / worktree). Anti-race : 1 rédacteur/fichier ; ils RETOURNENT du code, toi seul intègres+build. Modèle : `sonnet` subagents, `opus` main. **re-agent = JAMAIS en parallèle** (session unique).
 
 ## Args
-$ARGUMENTS — directive additionnelle (sinon : « continue le blocker courant »).
+$ARGUMENTS — directive additionnelle (sinon : « continue le blocker courant, priorise le chemin boot réel ou le proxy/oracle »).
