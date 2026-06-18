@@ -160,4 +160,15 @@ uint32_t DAT_0055f8cc = 0;
 uint32_t DAT_0055f8e0 = 0;
 extern const char s_C__Giants_Source_main_objspec_c_0056152c[] = "C Giants Source main objspec c";
 extern const char s_ospec_0056154c[] = "ospec";
+void FUN_00472ef0(uint32_t*, void*) {}
+uint32_t FUN_0049c150(void) { return 0; }
+void FUN_0051eca0(void*) {}
+uint32_t FUN_0049c400(void*) { return 0; }
+uint32_t DAT_00631404 = 0;
+uint32_t DAT_0059e3dc = 0;
+uint32_t DAT_0059e3e0 = 0;
+uint32_t DAT_0055f778 = 0;
+uint32_t DAT_006313cc[14] = {0};
+extern const char s_Out_of_objects__exceeded_limit_0055f7f0[] = "Out of objects exceeded limit";
+extern const char s_Warning__ObjObj_type__d_not_foun_0055f7cc[] = "Warning ObjObj type d not foun";
 } // extern "C"
