@@ -21,6 +21,8 @@ extern "C" void FUN_004913c0(void);   // boot step 14: intro_island selector (Va
 // The renderer's own per-frame entry (renderer method [0x20] = 0x7370): does the
 // full D3D frame internally (BeginScene/Clear/scene-walk/EndScene/present).
 extern "C" int VanillaRunFrame(int frameState);
+// D3D7 texture creation + device SetTexture@0x8c (measured texturing mechanism).
+extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
 
 // Vanilla globals (DAT_ addresses from vanilla binary):
 static FARPROC g_GDVSysCreate = nullptr;   // DAT_005dc01c
@@ -445,6 +447,12 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                     stss(wrapper, 0, 3 /*D3DTSS_COLORARG2*/, 0 /*D3DTA_DIFFUSE*/);
                 }
             }
+        }
+        // Bind intro_grnd as a real D3D7 texture at stage 0 (device SetTexture@0x8c —
+        // the MEASURED texturing mechanism; see behavior_specs/menu_render_d3d7_trace.md).
+        {
+            void* wrapper = obj[0x294 / 4];
+            if (wrapper) VanillaD3D7_BindIntroGrnd(wrapper);
         }
         cbSceneBegin_DrawTerrain(); // inject terrain heightfield (callback[7] body — manual frame)
         // ── Draw the 3D logo as a point cloud (1337 vertices from xx_giants_logo_3d.gbs).
