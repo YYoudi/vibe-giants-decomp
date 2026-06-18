@@ -175,4 +175,50 @@ void Draw(void* device, TiledImage* img, int dstX, int dstY, float fade) {
     // restore: disable alpha blend (so subsequent non-blended draws are unaffected).
     if (sr) sr(device, D3DRS_ALPHABLENDENABLE, 0);
 }
+
+// Draw the tiled image SCALED to a (dstW x dstH) rectangle (the vanilla device-fit path —
+// intros are 1600x1200 but the device is 640x480, so native Draw crops them). Each tile maps
+// to its proportional sub-rectangle of the destination, UVs = the tile's sub-rect.
+void DrawScaled(void* device, TiledImage* img, int dstX, int dstY, int dstW, int dstH, float fade) {
+    if (!device || !img || !img->ok || dstW <= 0 || dstH <= 0) return;
+    void** dvt = vt(device);
+    PFN_SetTex setTex = (PFN_SetTex)dvt[0x8c/4];
+    PFN_STSS stss     = (PFN_STSS)dvt[0x94/4];
+    PFN_SR   sr       = (PFN_SR)dvt[0x50/4];
+    PFN_DP   dp       = (PFN_DP)dvt[0x64/4];
+    if (!setTex || !dp) return;
+    if (sr) {
+        sr(device, D3DRS_ALPHABLENDENABLE, 1);
+        sr(device, D3DRS_SRCBLEND,  D3DBLEND_SRCALPHA);
+        sr(device, D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA);
+    }
+    stss(device, 0, D3DTSS_COLOROP,   D3DTOP_MODULATE);
+    stss(device, 0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+    stss(device, 0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+    stss(device, 0, D3DTSS_ALPHAOP,   D3DTOP_SELECTARG2);
+    stss(device, 0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+    uint32_t a = (uint32_t)(fade * 255.0f); if (a > 255) a = 255;
+    uint32_t diff = (a << 24) | 0x00FFFFFF;
+    struct PtV { float x, y, z, rhw; uint32_t diff; float u, v; };
+    float sx = (float)dstW / (float)(img->tilesX * img->tileW);  // dest px per src px
+    float sy = (float)dstH / (float)(img->tilesY * img->tileH);
+    for (int ty = 0; ty < img->tilesY; ty++) {
+        for (int tx = 0; tx < img->tilesX; tx++) {
+            Tile& t = img->tiles[ty * img->tilesX + tx];
+            if (!t.surf) continue;
+            setTex(device, 0, t.surf);
+            float x0 = dstX + (tx * img->tileW) * sx;
+            float y0 = dstY + (ty * img->tileH) * sy;
+            float x1 = x0 + t.sw * sx, y1 = y0 + t.sh * sy;
+            PtV v[4] = {
+                { x0, y0, 0.0f, 1.0f, diff, 0.0f, 0.0f },
+                { x1, y0, 0.0f, 1.0f, diff, 1.0f, 0.0f },
+                { x1, y1, 0.0f, 1.0f, diff, 1.0f, 1.0f },
+                { x0, y1, 0.0f, 1.0f, diff, 0.0f, 1.0f },
+            };
+            dp(device, D3DPT_TRIANGLEFAN, 0x144, v, 4, 0);
+        }
+    }
+    if (sr) sr(device, D3DRS_ALPHABLENDENABLE, 0);
+}
 } // namespace VanillaBlit
