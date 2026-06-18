@@ -25,7 +25,6 @@ uint32_t DAT_006552c0 = 0;
 float _DAT_005525f8 = 0.0f;   // FIXME(unverified): .data float const used by FUN_00472560 scale
 void FUN_004720d0(uint32_t* /*v*/) {}   // FIXME(unverified): callee — quat transform (FUN_00472560 dep)
 void FUN_00429100() {}
-void FUN_00476d40() {}
 // FUN_0049d2d0: obj-type lookup (walks DAT_006313b4 linked list; node [0]=next,
 //   [1]=count, key at node+3, entries stride 0xc1 dwords). Returns matching entry
 //   (node + iVar2*0xc1 + 2), else NULL. (vanilla 0049d2d0)
@@ -155,7 +154,6 @@ uint32_t DAT_0055f8cc = 0;
 uint32_t DAT_0055f8e0 = 0;
 extern const char s_C__Giants_Source_main_objspec_c_0056152c[] = "C Giants Source main objspec c";
 extern const char s_ospec_0056154c[] = "ospec";
-void FUN_00472ef0(uint32_t*, void*) {}
 uint32_t FUN_0049c400(void*) { return 0; }
 uint32_t DAT_00631404 = 0;
 uint32_t DAT_0059e3dc = 0;
@@ -186,4 +184,16 @@ uint32_t DAT_0059e3e4 = 0;
 uint32_t DAT_005dc028 = 0;
 uint32_t FUN_0052fdb0(void) { return 0; }
 extern const char s_Warning_we_ve_used_all_the_uniqu_0055f7a4[] = "Warning we ve used all the uniqu";
+uint32_t DAT_0059cadc = 0;
+uint32_t DAT_0059cae0 = 0;
+extern const char s_links_0055d658[] = "links";
+extern const char s_C__Giants_Source_main_linkage_c_0055d660[] = "C Giants Source main linkage c";
+void FUN_00436960(void) {}
+void FUN_00454620(void* a, void* b, void* c, void* d) {}
+void FUN_00458ab0(int a, int b, void* out) {}
+void FUN_004768e0(void) {}
+void FUN_004778f0(void* a, void* b) {}
+void FUN_0050e3a0(void* a) {}
+void FUN_005236f0(void) {}
+void FUN_0053a3c0(void* a) {}
 } // extern "C"
