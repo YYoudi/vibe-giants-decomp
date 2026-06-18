@@ -75,7 +75,29 @@ def send_space():
     time.sleep(0.05)
 
 def find_window(title=WIN_TITLE):
-    return ctypes.windll.user32.FindWindowW(None, title)
+    """Find the game window robustly via EnumWindows — pick the visible top-level window
+    whose title matches AND has a non-trivial client rect. FindWindowW returns the first
+    registered "Giants" window, which is sometimes a phantom/stale 0x0 handle (e.g. during
+    the original's intro transitions) → wrong capture."""
+    u = ctypes.windll.user32
+    EnumWindowsProc = ctypes.WINFUNCTYPE(ctypes.c_bool, wintypes.HWND, wintypes.LPARAM)
+    best = [0, 0]   # [hwnd, area]
+    def cb(hwnd, _l):
+        if not u.IsWindowVisible(hwnd):
+            return True
+        n = ctypes.create_unicode_buffer(256)
+        u.GetWindowTextW(hwnd, n, 256)
+        if n.value != title:
+            return True
+        rc = wintypes.RECT(); u.GetClientRect(hwnd, ctypes.byref(rc))
+        w = rc.right - rc.left; h = rc.bottom - rc.top
+        if w > 50 and h > 50 and w*h > best[1]:
+            best[0] = hwnd; best[1] = w*h
+        return True
+    u.EnumWindows(EnumWindowsProc(cb), 0)
+    if best[0]:
+        return best[0]
+    return u.FindWindowW(None, title)   # last resort
 
 def kill(name):
     subprocess.run(["taskkill","/F","/IM",name], capture_output=True)
@@ -98,8 +120,10 @@ def launch(exe, args=None):
 
 def appsnap(out):
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    # -t 100 = strict match: avoid fuzzy-matching the "GiantsRE" editor window (which
-    # contains "Giants" as a substring) when the game window is absent.
+    # appsnap CLI (strict title match) — the ONLY method that captures the ORIGINAL's DX7
+    # window content (PrintWindow returns black for the original's DX overlay surface,
+    # though it works for the recomp). Reliability depends on the game window being
+    # foreground (see capture_original/capture_recomp foreground() calls).
     r = subprocess.run(APPSNAP + ["-t", "100", "-o", out, WIN_TITLE], capture_output=True, text=True)
     return os.path.exists(out)
 
@@ -135,7 +159,10 @@ def capture_recomp(phase, out, extra_flags=None):
     launch(RECOMP, args)
     wait = PHASE_WAIT[phase]
     time.sleep(wait / 1000.0 + 1.5)        # +1.5s for process startup + appsnap settle
-    foreground("Giants"); time.sleep(1.0)   # recomp window title is also "Giants"
+    # Re-foreground only for long-wait phases (menu/loading: window loses fg during 42s
+    # intro playback). Intros are fade-time-sensitive — skip foreground here (drift).
+    if not phase.startswith("intro"):
+        foreground("Giants"); time.sleep(1.0)
     ok = appsnap(out)
     kill("GiantsMain_vanilla.exe")
     return ok
@@ -182,11 +209,14 @@ def capture_original(phase, out):
     launch(ORIG, ["-window"])
     time.sleep(3.0)                                   # let the window + intro1 appear
     if phase.startswith("intro"):
-        # intros visible right after boot; capture intro1 immediately, others at offset
+        # intros visible right after boot; capture intro1 immediately, others at offset.
+        # NOTE: do NOT foreground+sleep here — intros are fade-time-sensitive (0.2s fade,
+        # 12s hold) and the +1s drift desynchronizes recomp/original capture (regression
+        # intro1 0.0006→0.0556). The game window stays foreground during the short intro
+        # wait, so no re-foregrounding is needed (it's only needed for the 42s menu wait).
         wait = PHASE_WAIT[phase]
         extra = max(0, wait - 3000) / 1000.0
         time.sleep(extra)
-        foreground("Giants"); time.sleep(1.0)          # ensure game is foreground for appsnap
         ok = appsnap(out); kill("Giants_nocd.exe"); return ok
     # loading / menu: the most RELIABLE path to the original's menu is to let the 3
     # intros play out NATURALLY (3 × ~12.4s ≈ 38s) — SendInput skip destabilizes the
@@ -209,8 +239,11 @@ def capture_original(phase, out):
 def diff_images(a, b, out_diff=None, thresh=PASS_THRESH):
     """Mean-abs-delta in [0,1]. Returns (delta, verdict)."""
     ia, ib = Image.open(a).convert("RGB"), Image.open(b).convert("RGB")
-    # resize to common size for comparison
-    w = min(ia.width, ib.width); h = min(ia.height, ib.height)
+    # Normalize BOTH to the canonical render resolution 640x480. The recomp window
+    # (784x561) and original window (640x480) differ even though both RENDER at 640x480;
+    # comparing at mismatched sizes/aspects squashes content → spurious delta. 640x480 is
+    # the registry render res for both.
+    w, h = 640, 480
     ia, ib = ia.resize((w,h)), ib.resize((w,h))
     ch = ImageChops.difference(ia, ib)
     n = w * h

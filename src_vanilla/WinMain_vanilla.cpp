@@ -133,8 +133,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // ── CreateWindow ──
     // Vanilla: CreateWindowExA(0x40000, "Example", "Giants", 0x6CF0000, CW_USEDEFAULT, ...)
     // 0x6CF0000 = WS_CLIPSIBLINGS|WS_CLIPCHILDREN|WS_CAPTION|WS_SYSMENU|WS_THICKFRAME|WS_MINIMIZEBOX|WS_MAXIMIZEBOX
+    // Size the window for a 640x480 CLIENT (the render resolution + original's window) so
+    // hwnd-based capture gets 640x480 for both → valid pixel comparison (CW_USEDEFAULT gave
+    // a 784x561 window that stretched the 640x480 render, breaking capdiff via aspect squash).
+    RECT _rc = { 0, 0, 640, 480 };
+    AdjustWindowRectEx(&_rc, 0x06CF0000, FALSE, 0x40000);
     g_vHWnd = CreateWindowExA(0x40000, "Example", "Giants",
-        0x06CF0000, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+        0x06CF0000, CW_USEDEFAULT, CW_USEDEFAULT, _rc.right - _rc.left, _rc.bottom - _rc.top,
         nullptr, nullptr, hInstance, nullptr);
     if (!g_vHWnd) { if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] CreateWindow failed\n"); fflush(g_vTrace); } return 1; }
     ShowWindow(g_vHWnd, nCmdShow);
@@ -166,6 +171,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
             // Methods are __cdecl(this-as-first-arg) per disasm — VanillaReadDisplayConfig handles that.
             VanillaReadDisplayConfig();
             VanillaDumpWrapperVtable();
+            // Force a 640x480 CLIENT so the window matches the 640x480 render (the renderer
+            // resizes to ~784x561, stretching the render → capture blur → capdiff noise).
+            // Match the original's 640x480 window for clean pixel comparison.
+            RECT rc = { 0, 0, 640, 480 };
+            AdjustWindowRectEx(&rc, 0x06CF0000, FALSE, 0x40000);
+            SetWindowPos(g_vHWnd, nullptr, 0, 0, rc.right - rc.left, rc.bottom - rc.top,
+                         SWP_NOMOVE | SWP_NOZORDER);
         }
     }
 
@@ -232,6 +244,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // NOTE: body alignment under fix by subagent; may loop on garbage count — last so it
     // doesn't block the other self-tests if it hangs.
     VanillaBinLoaderFull::SelfTest();   // safe: reads w_intro_island.bin + validates magic (full loader dormant)
+    // ── Logo mesh test: parse xx_giants_logo_3d.gbs for the 3D menu logo ──
+    {
+        auto ld = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "xx_giants_logo_3d.gbs");
+        if (ld.empty()) ld = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "Giants_logo_3d.gbs");
+        if (!ld.empty()) {
+            VanillaGBS::Model logo = VanillaGBS::Parse(ld.data(), ld.size());
+            if (g_vTrace) { fprintf(g_vTrace, "[LOGO] gbs: ok=%d verts=%u subobjs=%u texNames=%u\n",
+                logo.ok, logo.numVertices, logo.numSubObjects, (unsigned)logo.texNames.size()); fflush(g_vTrace); }
+        } else if (g_vTrace) { fprintf(g_vTrace, "[LOGO] GBS not found in xx_giants_logo_3d.gzp\n"); fflush(g_vTrace); }
+    }
 
     // ── Feed the level's texture list to the renderer (FUN_004b7c50 sub-path:
     //    SEEK header[1] name_list → FUN_0050d8f0 populates g_TextureEntityList →
