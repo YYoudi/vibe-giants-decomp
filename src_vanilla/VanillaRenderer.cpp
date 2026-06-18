@@ -445,42 +445,27 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         PFN_Cdecl1i m98 = (PFN_Cdecl1i)(uintptr_t)obj[0x98 / 4];
         if (m98) m98(g_vRenderer, 0xFF31243b);   // dark blue-gray sky (mid-gradient avg)
         if (m90) m90(g_vRenderer);
-        // ── Draw the 3D logo mesh (xx_giants_logo_3d.gbs) with REAL triangle connectivity.
-        //    VanillaGBS now decodes the per-subobject tridata RLE → real triangles (was
-        //    grouping base vertices in arbitrary 3s = garbage "lines"). Orthographic front
-        //    view, centered, flat chrome-gray. (Diagnostic bracket — CLAUDE.md §0 rule 10.)
+        // ── Menu logo = Giants_logo_512.tga (a 2D image, NOT the xx_giants_logo_3d 3D mesh).
+        //    The original menu renders the chrome "GIANTS / CITIZEN KABUTO" as a single 2D
+        //    textured quad (one of the menu trace's 130 quads). Identified via GZP index
+        //    (xx_giants_logo_3d.gzp). Rendered centered, device-fit, via the 2D blitter.
         {
-            static VanillaGBS::Model s_logo;
-            static std::vector<float> s_tris;       // flat XYZ, triangles expanded
-            static float s_lmin[3] = {0}, s_lmax[3] = {0};
-            static bool s_logoLoaded = false;
-            if (!s_logoLoaded) {
-                auto ld = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "xx_giants_logo_3d.gbs");
-                if (ld.empty()) ld = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "Giants_logo_3d.gbs");
-                if (!ld.empty()) {
-                    s_logo = VanillaGBS::Parse(ld.data(), ld.size());
-                    if (s_logo.ok) {
-                        s_tris = s_logo.buildPositionTris();
-                        for (size_t i = 0; i + 2 < s_tris.size(); i += 3) {
-                            float x = s_tris[i], y = s_tris[i+1], z = s_tris[i+2];
-                            if (i == 0) { s_lmin[0]=s_lmax[0]=x; s_lmin[1]=s_lmax[1]=y; s_lmin[2]=s_lmax[2]=z; }
-                            if (x<s_lmin[0]) s_lmin[0]=x; if (x>s_lmax[0]) s_lmax[0]=x;
-                            if (y<s_lmin[1]) s_lmin[1]=y; if (y>s_lmax[1]) s_lmax[1]=y;
-                            if (z<s_lmin[2]) s_lmin[2]=z; if (z>s_lmax[2]) s_lmax[2]=z;
-                        }
-                        if (g_vTrace) { fprintf(g_vTrace, "[LOGO] REAL tris=%u baseVerts=%u bounds X[%.0f..%.0f] Y[%.0f..%.0f] Z[%.0f..%.0f]\n",
-                            (uint32_t)(s_tris.size()/9), s_logo.numVertices, s_lmin[0], s_lmax[0], s_lmin[1], s_lmax[1], s_lmin[2], s_lmax[2]); fflush(g_vTrace); }
-                    }
-                }
-                s_logoLoaded = true;
+            int devW = g_videoWidth ? (int)g_videoWidth : 640;
+            int devH = g_videoHeight ? (int)g_videoHeight : 480;
+            void* wrapper = obj[0x294 / 4];
+            static VanillaBlit::TiledImage* s_logoImg = nullptr;
+            static bool s_logoTried = false;
+            if (wrapper && !s_logoTried) {
+                s_logoTried = true;
+                s_logoImg = VanillaBlit::Load(wrapper, "Bin\\xx_giants_logo_3d.gzp", "Giants_logo_512.tga");
             }
-            if (s_logo.ok && s_tris.size() >= 9) {
-                // The 3D logo needs the real menu camera + perspective + chrome material
-                // (it's an extruded mesh). A flat orthographic bracket render fills the
-                // bounding box (no depth/cull) → a messy blob that RAISES capdiff delta
-                // (0.1208→0.1717). So the bracket does NOT draw the logo (parse is kept as
-                // reusable GBS infrastructure; the real logo render is a canonical-path task).
-                if (g_vTrace) { static int ln=0; if(ln<1){fprintf(g_vTrace,"[LOGO] real tris parsed (%u) — bracket render DISABLED (flat render = blob, +delta). Needs real 3D menu path.\n", (uint32_t)(s_tris.size()/9));fflush(g_vTrace);ln++;} }
+            if (wrapper && s_logoImg) {
+                // Logo 512x256 (2:1), centered, ~75% of device width.
+                int lw = (devW * 3) / 4;
+                int lh = lw / 2;                       // keep 2:1 aspect
+                int lx = (devW - lw) / 2;
+                int ly = (devH - lh) / 2 - devH/8;     // slightly above center
+                VanillaBlit::DrawScaled(wrapper, s_logoImg, lx, ly, lw, lh, 1.0f);
             }
         }
         // ── Bitmap-font text (FUN_0044a9c0 port) — GiantFont_Eng via tx_lev1.gzp. Test
