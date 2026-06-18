@@ -10,6 +10,7 @@
 #include "VanillaVFS.h"
 #include "VanillaTGA.h"
 #include "VanillaBoot.h"   // g_bootCfg (phase-jump flags)
+#include "VanillaGBS.h"    // 3D logo mesh parser
 #include "VanillaVFSCallbacks.h"  // callbacks 15/16/17 (vanilla FUN_006222d0/00621fe0/00621e50)
 
 // Input (for intro skip — click/space).
@@ -445,7 +446,78 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 }
             }
         }
-        cbSceneBegin_DrawTerrain();                               // draw terrain (now with intro_grnd bound + stage 0 enabled)
+        cbSceneBegin_DrawTerrain(); // inject terrain heightfield (callback[7] body — manual frame)
+        // ── Draw the 3D logo as a point cloud (1337 vertices from xx_giants_logo_3d.gbs).
+        //    Orthographic front view, centered on screen, gold color.
+        {
+            static VanillaGBS::Model s_logo;
+            static float s_lmin[3] = {0}, s_lmax[3] = {0};
+            static bool s_logoLoaded = false;
+            if (!s_logoLoaded) {
+                auto ld = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "xx_giants_logo_3d.gbs");
+                if (ld.empty()) ld = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "Giants_logo_3d.gbs");
+                if (!ld.empty()) {
+                    s_logo = VanillaGBS::Parse(ld.data(), ld.size());
+                    if (s_logo.ok && s_logo.numVertices > 0) {
+                        for (uint32_t i = 0; i < s_logo.numVertices; i++) {
+                            float vx = s_logo.vertices[i*3], vy = s_logo.vertices[i*3+1], vz = s_logo.vertices[i*3+2];
+                            if (i == 0) { s_lmin[0]=s_lmax[0]=vx; s_lmin[1]=s_lmax[1]=vy; s_lmin[2]=s_lmax[2]=vz; }
+                            for (int j = 0; j < 3; j++) {
+                                float v = (&vx)[j*1]; // can't index like this; do manually
+                            }
+                        }
+                        // manual bounds
+                        for (uint32_t i = 0; i < s_logo.numVertices; i++) {
+                            float vx = s_logo.vertices[i*3], vy = s_logo.vertices[i*3+1], vz = s_logo.vertices[i*3+2];
+                            if (vx < s_lmin[0]) s_lmin[0] = vx; if (vx > s_lmax[0]) s_lmax[0] = vx;
+                            if (vy < s_lmin[1]) s_lmin[1] = vy; if (vy > s_lmax[1]) s_lmax[1] = vy;
+                            if (vz < s_lmin[2]) s_lmin[2] = vz; if (vz > s_lmax[2]) s_lmax[2] = vz;
+                        }
+                        if (g_vTrace) { fprintf(g_vTrace, "[LOGO] bounds X[%.1f..%.1f] Y[%.1f..%.1f] Z[%.1f..%.1f] verts=%u\n",
+                            s_lmin[0], s_lmax[0], s_lmin[1], s_lmax[1], s_lmin[2], s_lmax[2], s_logo.numVertices); fflush(g_vTrace); }
+                    }
+                }
+                s_logoLoaded = true;
+            }
+            // Project + draw point cloud.
+            if (s_logo.ok && s_logo.numVertices > 0) {
+                struct PtV { float x, y, z, rhw; uint32_t diff; float u, v; }; // XYZRHW|DIFFUSE|TEX1=0x144
+                std::vector<PtV> pts(s_logo.numVertices);
+                float cx = (s_lmin[0] + s_lmax[0]) * 0.5f;
+                float cy = (s_lmin[1] + s_lmax[1]) * 0.5f;
+                float rangeX = s_lmax[0] - s_lmin[0]; if (rangeX < 1.0f) rangeX = 1.0f;
+                float rangeY = s_lmax[1] - s_lmin[1]; if (rangeY < 1.0f) rangeY = 1.0f;
+                float scaleX = 480.0f / rangeX;
+                float scaleY = 200.0f / rangeY;
+                for (uint32_t i = 0; i < s_logo.numVertices; i++) {
+                    pts[i].x = 320.0f + (s_logo.vertices[i*3] - cx) * scaleX;
+                    pts[i].y = 240.0f + (s_logo.vertices[i*3+1] - cy) * scaleY;
+                    pts[i].z = 0.0f; pts[i].rhw = 1.0f;
+                    pts[i].diff = 0xFFFFD700;  // gold
+                    pts[i].u = 0.0f; pts[i].v = 0.0f;  // dummy UV (texturing enabled but no texture)
+                }
+                void* wrapper = obj[0x294 / 4];
+                if (wrapper) {
+                    void** wvt = *(void***)wrapper;
+                    typedef long (__stdcall *PFN_DP)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
+                    PFN_DP dp = (PFN_DP)(uintptr_t)(wvt ? wvt[0x28 / 4] : nullptr);
+                    if (dp) {
+                        // DIAGNOSTIC logo draw: the terrain binding above left stage-0 COLOROP=MODULATE
+                        // with the wrapper's *internal* texture state unset → DrawPrimitive returns
+                        // E_INVALIDARG (0x80070057). Disable texturing for this flat-shaded logo so the
+                        // wrapper accepts the DIFFUSE-only vertices. (Terrain's own draw re-enables
+                        // its state; this bracket is diagnostic-only — see CLAUDE.md §0 rule 10.)
+                        typedef long (__stdcall *PFN_STSSx)(void*, uint32_t, uint32_t, uint32_t);
+                        PFN_STSSx stssOff = (PFN_STSSx)(uintptr_t)(wvt ? wvt[0x94 / 4] : nullptr);
+                        if (stssOff) stssOff(wrapper, 0, 1 /*D3DTSS_COLOROP*/, 1 /*D3DTOP_DISABLE*/);
+                        uint32_t triCount = (s_logo.numVertices / 3) * 3;
+                        long hr = dp(wrapper, 3, 0x144 /*XYZRHW|DIFFUSE|TEX1*/, pts.data(), triCount, 0);
+                        if (stssOff) stssOff(wrapper, 0, 1 /*D3DTSS_COLOROP*/, 4 /*D3DTOP_MODULATE*/); // restore
+                        if (g_vTrace) { static int ln=0; if(ln<1){fprintf(g_vTrace,"[LOGO] DrawPrimitive TRIANGLELIST %u verts hr=0x%lx\n", triCount, (unsigned long)hr);fflush(g_vTrace);ln++;} }
+                    }
+                }
+            }
+        }
         if (m94) m94(g_vRenderer);
         PFN_Cdecl0 m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];   // Present
         obj[0x42c / 4] = (void*)1;
