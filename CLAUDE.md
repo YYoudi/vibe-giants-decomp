@@ -24,8 +24,23 @@
 ### Règles de fidélité OBSERVABLE (ANTI-DÉRIVE RENFORCÉE — rajoutées 2026-06-17)
 *Le code source prouvé ne suffit pas : le résultat ASSEMBLÉ et AFFICHÉ doit matcher l'original. C'est l'écart qui a laissé inventer un faux écran « LOAD ISLAND » et des timings de fondu devinés.*
 
-5. **MESURE AVANT CODE (suprême, observable).** Pour TOUT comportement observable — ce qui s'affiche, dans quel ordre, pendant combien de temps, à quelle valeur de fondu, quel asset à quel instant — tu DOIS d'abord **capturer/mesurer l'équivalent chez l'original** et l'enregistrer comme spec vérifiable (`behavior_specs/<x>.md`), AVANT d'implémenter. Coder un comportement observable sans l'avoir mesuré = **dérive**, au même titre que du code inventé.
-6. **Règle asset-display.** N'affiche JAMAIS un asset à un point T sauf si la spec confirme que l'original l'affiche à ce point. (Ex : `int_loadisland.tga` est du chrome de menu — ne s'affiche jamais standalone. L'écran de chargement réel = `giants_loading.tga` via `FUN_0045a530`.)
+5. **OBSERVATION RUNTIME AVANT CODE (suprême — PAS l'analyse statique).**
+   **MESURER ≠ LIRE LE CODE GHIDRA.** La mesure = **OBSERVER LE VRAI JEU EN RUNTIME** via des hooks
+   (Frida sur les fonctions/fichiers, proxy DX7 sur les appels renderer). Lire le code décompilé
+   est de l'analyse STATIQUE — utile pour PORTER, mais INSUFFISANTE pour PROUVER ce que le jeu
+   fait vraiment. Pour TOUT comportement observable :
+   (a) **OBSERVER** l'original en runtime : hook Frida callback[17] VFSOpenFile → quels fichiers
+   s'ouvrent ; proxy DX7 → quels SetTexture/SetTransform/DrawPrimitive avec quels args ; appsnap
+   → ce qui s'affiche.
+   (b) **DOCUMENTER** l'observation comme spec (`behavior_specs/`).
+   (c) **PORTER** le code vanilla (du décompilé) qui produit ce comportement.
+   (d) **VÉRIFIER** le recomp matche l'observation (capdiff PASS ou proxy 0-mismatch).
+   **NE JAMAIS deviner quel asset le jeu charge.** TOUJOURS l'observer via un hook runtime.
+   (Ex : Giants_logo_512.tga a été deviné du GZP index sans observation runtime → DÉRIVE.)
+6. **Règle asset-display (PROUVÉ par runtime, pas par GZP index).** N'affiche JAMAIS un asset
+   sauf si une **observation runtime** (hook VFSOpenFile sur l'original) confirme que l'original
+   le charge ET l'affiche à ce moment. L'index GZP liste les assets existants, PAS ce que le jeu
+   charge. Voir le workflow OBSERVER→DOCUMENTER→PORTER→VÉRIFIER ci-dessus.
 7. **Critère de succès = matche l'original, pas « ça tourne + visible ».** Une frame recomp est réussie si `tools/run.sh <phase>` (capture-diff vs original) → **PASS** (mean_abs_delta < seuil). No-crash = prérequis minimal, jamais un succès. Ne JAMAIS clamer « le menu rend correctement » sans un `compare` qui PASS.
 8. **Auto-vérif obligatoire, validation humaine sur demande.** L'agent auto-vérifie tout ce qui est objectif via `tools/capdiff.py` (recomp vs original frame-diff) + oracle proxy (bit-exact) + Frida (timing/séquence). L'humain ne valide QUE sur demande explicite ou pour du subjectif — l'agent tourne en continu sinon.
 9. **Spec = source de vérité observable.** `behavior_specs/` (boot_sequence, intro_timings, loading_screen, menu_render…) dérive des mesures originales. Le recomp doit matcher la spec ; un écart = bug à corriger, pas une approximation à accepter.
