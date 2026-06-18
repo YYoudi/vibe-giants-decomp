@@ -26,7 +26,6 @@ float _DAT_005525f8 = 0.0f;   // FIXME(unverified): .data float const used by FU
 void FUN_004720d0(uint32_t* /*v*/) {}   // FIXME(unverified): callee — quat transform (FUN_00472560 dep)
 void FUN_00429100() {}
 void FUN_00476d40() {}
-void FUN_00491830() {}
 // FUN_0049d2d0: obj-type lookup (walks DAT_006313b4 linked list; node [0]=next,
 //   [1]=count, key at node+3, entries stride 0xc1 dwords). Returns matching entry
 //   (node + iVar2*0xc1 + 2), else NULL. (vanilla 0049d2d0)
@@ -183,4 +182,5 @@ void FUN_0049f2d0(int) {}
 void FUN_0044bc40(int, int, void*) {}
 extern const char s_C__Giants_Source_main_object_c_0055f784[] = "C Giants Source main object c";
 extern const char s_Transform_Ref_Mats_0055f810[] = "Transform Ref Mats";
+extern const char s_Too_many_scenerios__skipping___d_0055e7ec[] = "Too many scenerios skipping d";
 } // extern "C"
