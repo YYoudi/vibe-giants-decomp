@@ -29,6 +29,10 @@ extern "C" void* SpawnTestEntity(uint32_t typeId, float x, float y, float z); //
 extern "C" int VanillaSceneLoad_SelfTest(void);   // FUN_004913c0 selector self-test (scan level table)
 extern "C" void FUN_004b7c50(char* name, float a2, float a3);   // .BIN loader (VanillaBinLoaderFull.cpp)
 extern "C" uint32_t DAT_006316ec;   // world_state ptr (defined in VanillaStubs.cpp)
+// Registry settings (VanillaSettings.cpp — port of FUN_00483740/FUN_004a3900).
+extern "C" uint32_t g_videoWidth, g_videoHeight, g_videoDepth, g_windowed, g_gameOptions;
+extern "C" void VanillaSettings_EnsureDefaults(void);
+extern "C" void VanillaSettings_Load(void);
 
 // Vanilla globals (DAT_ addresses from vanilla binary, 0x5DXXXX = .data)
 // Declared as named globals — will be populated as functions are ported.
@@ -133,10 +137,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // ── CreateWindow ──
     // Vanilla: CreateWindowExA(0x40000, "Example", "Giants", 0x6CF0000, CW_USEDEFAULT, ...)
     // 0x6CF0000 = WS_CLIPSIBLINGS|WS_CLIPCHILDREN|WS_CAPTION|WS_SYSMENU|WS_THICKFRAME|WS_MINIMIZEBOX|WS_MAXIMIZEBOX
-    // Size the window for a 640x480 CLIENT (the render resolution + original's window) so
-    // hwnd-based capture gets 640x480 for both → valid pixel comparison (CW_USEDEFAULT gave
-    // a 784x561 window that stretched the 640x480 render, breaking capdiff via aspect squash).
-    RECT _rc = { 0, 0, 640, 480 };
+    // Size the window for the registry-configured CLIENT (g_videoWidth/Height, read from
+    // HKCU\Software\PlanetMoon\Giants — vanilla FUN_00483740). The renderer sizes its device
+    // to the same; matching client = no stretch → clean capture.
+    RECT _rc = { 0, 0, (LONG)(g_videoWidth ? g_videoWidth : 640), (LONG)(g_videoHeight ? g_videoHeight : 480) };
     AdjustWindowRectEx(&_rc, 0x06CF0000, FALSE, 0x40000);
     g_vHWnd = CreateWindowExA(0x40000, "Example", "Giants",
         0x06CF0000, CW_USEDEFAULT, CW_USEDEFAULT, _rc.right - _rc.left, _rc.bottom - _rc.top,
@@ -145,20 +149,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     ShowWindow(g_vHWnd, nCmdShow);
     if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Window created hwnd=%p\n", g_vHWnd); fflush(g_vTrace); }
 
-    // ── Registry setup (the vanilla init chain does this before GDVSysCreate) ──
-    // The DX7 renderer reads HKCU\Software\PlanetMoon\Giants for display settings.
-    HKEY hKey;
-    DWORD disp;
-    if (RegCreateKeyExA(HKEY_CURRENT_USER, "Software\\PlanetMoon\\Giants", 0, nullptr, 0,
-                        KEY_ALL_ACCESS, nullptr, &hKey, &disp) == ERROR_SUCCESS) {
-        DWORD w = 640, h = 480, win = 1;
-        RegSetValueExA(hKey, "Renderer", 0, REG_SZ, (BYTE*)"gg_dx7r.dll", 11);
-        RegSetValueExA(hKey, "VideoWidth", 0, REG_DWORD, (BYTE*)&w, 4);
-        RegSetValueExA(hKey, "VideoHeight", 0, REG_DWORD, (BYTE*)&h, 4);
-        RegSetValueExA(hKey, "Windowed", 0, REG_DWORD, (BYTE*)&win, 4);
-        RegCloseKey(hKey);
-        if (g_vTrace) { fprintf(g_vTrace, "[VANILLA] Registry set (640x480 windowed)\n"); fflush(g_vTrace); }
-    }
+    // ── Registry setup (vanilla init chain: FUN_004a3900 defaults + FUN_00483740 read) ──
+    // The DX7 renderer reads HKCU\Software\PlanetMoon\Giants for VideoWidth/Height/Depth.
+    // Ensure first-run defaults, then READ the real values into globals (the renderer +
+    // window use the player's configured resolution, not a hardcoded 640x480).
+    VanillaSettings_EnsureDefaults();
+    VanillaSettings_Load();
 
     // ── Engine init: load the DX7 renderer (FUN_0051eb70) ──
     int renderOk = VanillaLoadRenderer(nullptr, "dx7r");
@@ -171,10 +167,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
             // Methods are __cdecl(this-as-first-arg) per disasm — VanillaReadDisplayConfig handles that.
             VanillaReadDisplayConfig();
             VanillaDumpWrapperVtable();
-            // Force a 640x480 CLIENT so the window matches the 640x480 render (the renderer
-            // resizes to ~784x561, stretching the render → capture blur → capdiff noise).
-            // Match the original's 640x480 window for clean pixel comparison.
-            RECT rc = { 0, 0, 640, 480 };
+            // Force the CLIENT to the registry resolution so the window matches the render
+            // (the renderer resizes the window, stretching the render → capture blur).
+            RECT rc = { 0, 0, (LONG)(g_videoWidth ? g_videoWidth : 640), (LONG)(g_videoHeight ? g_videoHeight : 480) };
             AdjustWindowRectEx(&rc, 0x06CF0000, FALSE, 0x40000);
             SetWindowPos(g_vHWnd, nullptr, 0, 0, rc.right - rc.left, rc.bottom - rc.top,
                          SWP_NOMOVE | SWP_NOZORDER);
