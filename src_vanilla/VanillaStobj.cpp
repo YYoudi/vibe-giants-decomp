@@ -179,3 +179,73 @@ extern "C" void FUN_0049ccf0(int param_1, int param_2) {
         FUN_0044bc40(0, 0x14, args);
     }
 }
+
+// ── FUN_0051eca0 — copy string into the error-string buffer DAT_005dc028. (vanilla 0051eca0)
+extern "C" { extern uint32_t DAT_005dc028; }   // error string buffer
+extern "C" void FUN_0051eca0(char* param_1) {
+    char* dst = (char*)(uintptr_t)&DAT_005dc028;
+    char c;
+    do { c = *param_1; *dst = c; param_1++; dst++; } while (c != '\0');
+}
+
+// ── FUN_0049c150 — generate a unique object id. (vanilla 0049c150)
+extern "C" {
+extern uint32_t DAT_0059e3e4;   // unique-id counter
+extern const char s_Warning_we_ve_used_all_the_uniqu_0055f7a4[];
+uint32_t FUN_0052fdb0(void);    // FIXME(unverified): low id generator
+extern void FUN_00523aa0(const char*);
+}
+extern "C" uint32_t FUN_0049c150(void) {
+    DAT_0059e3e4 = DAT_0059e3e4 + 1;
+    if (DAT_0059e3e4 == 0) { FUN_00523aa0(s_Warning_we_ve_used_all_the_uniqu_0055f7a4); DAT_0059e3e4 = DAT_0059e3e4 + 1; }
+    return FUN_0052fdb0() | (DAT_0059e3e4 << 8);
+}
+
+// ── FUN_0049f350 — kind-change teardown: run old-kind destructor + free +0x100. (vanilla 0049f350)
+extern "C" void FUN_0049f350(int param_1) {
+    int k = *(int*)(uintptr_t)(param_1 + 0x1e0);
+    uintptr_t dtbl = (uintptr_t)&DAT_0055f8e0;
+    if ((k < 0x6b) && (*(uint32_t*)(dtbl + k * 0x44) != 0) && (*(int*)(uintptr_t)(param_1 + 0x100) != 0)) {
+        typedef void (__cdecl *Fn)(int); (*(Fn*)(dtbl + k * 0x44))(param_1);
+    }
+    if (*(int*)(uintptr_t)(param_1 + 0x100) != 0) {
+        FUN_0053c5c0((void*)(uintptr_t)*(int*)(uintptr_t)(param_1 + 0x100), s_C__Giants_Source_main_objspec_c_0056152c, 0xf9);
+        *(uint32_t*)(uintptr_t)(param_1 + 0x100) = 0;
+    }
+}
+
+// ── FUN_0049f480 — copy objspec data from src to dst (same kind). (vanilla 0049f480)
+extern "C" void FUN_0049f480(int param_1, int param_2) {
+    if ((*(int*)(uintptr_t)(param_2 + 0x100) != 0) && (*(int*)(uintptr_t)(param_1 + 0x100) != 0)) {
+        int k = *(int*)(uintptr_t)(param_2 + 0x1e0);
+        if (k == *(int*)(uintptr_t)(param_1 + 0x1e0)) {
+            uint32_t uVar2 = 0;
+            uintptr_t ctbl = (uintptr_t)&DAT_0055f8cc;
+            if ((k < 0x6b) && (*(uint32_t*)(ctbl + k * 0x44) != 0)) {
+                typedef uint32_t (__cdecl *Ctor)(int); uVar2 = (*(Ctor*)(ctbl + k * 0x44))(param_2);
+            }
+            uint32_t* s = *(uint32_t**)(uintptr_t)(param_2 + 0x100);
+            uint32_t* d = *(uint32_t**)(uintptr_t)(param_1 + 0x100);
+            for (uint32_t n = uVar2 >> 2; n != 0; n--) { *d = *s; s++; d++; }
+            for (uint32_t r = uVar2 & 3; r != 0; r--) { *(uint8_t*)d = *(uint8_t*)s; s = (uint32_t*)((int)s + 1); d = (uint32_t*)((int)d + 1); }
+        }
+    }
+}
+
+// ── FUN_0049f2d0 — alloc + zero the objspec for a stobj (constructor → size → calloc → zero). (vanilla 0049f2d0)
+extern "C" void FUN_0049f2d0(int param_1) {
+    if ((*(int*)(uintptr_t)(param_1 + 0x100) == 0) && (*(int*)(uintptr_t)(param_1 + 0x1e0) < 0x6b)) {
+        int k = *(int*)(uintptr_t)(param_1 + 0x1e0);
+        uintptr_t ctbl = (uintptr_t)&DAT_0055f8cc;
+        if (*(uint32_t*)(ctbl + k * 0x44) != 0) {
+            typedef uint32_t (__cdecl *Ctor)(int);
+            uint32_t uVar1 = (*(Ctor*)(ctbl + k * 0x44))(param_1);
+            if (uVar1 != 0) {
+                uint32_t* puVar2 = (uint32_t*)FUN_0053c810(0x18, uVar1, s_ospec_0056154c, s_C__Giants_Source_main_objspec_c_0056152c, 0xed);
+                *(uint32_t**)(uintptr_t)(param_1 + 0x100) = puVar2;
+                for (uint32_t n = uVar1 >> 2; n != 0; n--) { *puVar2 = 0; puVar2++; }
+                for (uint32_t r = uVar1 & 3; r != 0; r--) { *(uint8_t*)puVar2 = 0; puVar2 = (uint32_t*)((int)puVar2 + 1); }
+            }
+        }
+    }
+}
