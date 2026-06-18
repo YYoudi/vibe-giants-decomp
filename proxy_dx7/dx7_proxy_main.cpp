@@ -5,6 +5,7 @@
 // This is the ORACLE for bit-exact validation of the recomp's vanilla callback table
 // (VanillaRenderer.cpp callbacks[]). Observe mode first (capture); dual-mode after.
 #include <windows.h>
+#include <ddraw.h>
 #include <psapi.h>
 #include <cstdio>
 #include <cstdint>
@@ -21,6 +22,7 @@ static uint32_t c_dip = 0, c_dps = 0, c_dips = 0, c_dpvb6 = 0, c_dipvb8 = 0, c_m
 static uint32_t g_frame = 0;
 static uint32_t g_setTexLogged = 0;
 static void InstallD3D7Hooks(void* wrapper);   // forward decl (defined in hook section)
+static void DumpStage0Texture(void* device);   // forward decl (one-shot quad-texture dump)
 
 static void Log(const char* fmt, ...) {
     if (!g_log) g_log = fopen("giants_dx7_proxy.log", "a");
@@ -182,11 +184,78 @@ static long __stdcall H_DIPS(void* t, uint32_t prim, uint32_t vt, void* strided,
 }
 static long __stdcall H_DPVB(void* t, uint32_t prim, void* vb, uint32_t st, uint32_t cnt, uint32_t fl) {
     c_dpvb6++; if (g_frame <= 2 && c_dpvb6 <= 20) Log("[DX7PROXY]   DrawPrimitiveVB(prim=%u vb=%p start=%u verts=%u)", prim, vb, st, cnt);
+    DumpStage0Texture(t);   // one-shot: dump first quads' textures (sky/logo) to BMP
     return ((PFN_DPVB)g_orig[0x7c/4])(t, prim, vb, st, cnt, fl);
 }
 static long __stdcall H_DIPVB(void* t, uint32_t prim, void* vb, uint32_t st, uint32_t cnt, const void* idx, uint32_t ic, uint32_t fl) {
     c_dipvb8++; if (g_frame <= 2 && c_dipvb8 <= 20) Log("[DX7PROXY]   DrawIndexedPrimitiveVB(prim=%u vb=%p start=%u verts=%u idx=%u)", prim, vb, st, cnt, ic);
     return ((PFN_DIPVB)g_orig[0x80/4])(t, prim, vb, st, cnt, idx, ic, fl);
+}
+
+// ─── one-shot stage-0 texture dumper (identify sky/logo assets) ──────────────
+// On the first few DrawPrimitiveVB calls of frame 1, grab the device's stage-0
+// texture (GetTexture@0x88), Lock it, write a BMP. The first fullscreen quad after
+// Clear = the sky background. Caps at 6 distinct surfaces to catch sky + logo.
+static void* g_dumpedPtrs[16];
+static int   g_dumpCount = 0;
+static bool  g_dumpDone = false;
+static void DumpStage0Texture(void* device) {
+    if (g_dumpDone || g_frame != 1 || g_dumpCount >= 6) return;
+    if (!device) return;
+    void** dvt = *(void***)device;
+    if (!dvt || !dvt[0x88/4]) return;
+    typedef long (__stdcall *PFN_GetTex)(void*, uint32_t, void**);
+    void* surf = nullptr;
+    ((PFN_GetTex)dvt[0x88/4])(device, 0, &surf);
+    if (!surf) return;
+    // dedup by surface ptr
+    for (int i = 0; i < g_dumpCount; i++) if (g_dumpedPtrs[i] == surf) {
+        ((long(__stdcall*)(void*))(*(void***)surf)[0x08/4])(surf); return; }
+    g_dumpedPtrs[g_dumpCount++] = surf;
+    // Lock + read desc
+    DDSURFACEDESC2 lk = {}; lk.dwSize = sizeof(lk);
+    void** svt = *(void***)surf;
+    typedef long (__stdcall *PFN_LockS)(void*, void*, DDSURFACEDESC2*, uint32_t, void*);
+    long hr = ((PFN_LockS)svt[0x64/4])(surf, nullptr, &lk, 0, nullptr);
+    if (hr == 0 && lk.lpSurface) {
+        char path[64]; snprintf(path, sizeof(path), "quad_tex_%d.bmp", g_dumpCount - 1);
+        FILE* f = fopen(path, "wb");
+        if (f) {
+            uint32_t w = lk.dwWidth, h = lk.dwHeight;
+            uint32_t bpp = lk.ddpfPixelFormat.dwRGBBitCount;
+            uint32_t rowBytes = w * 4;
+            uint8_t* src = (uint8_t*)lk.lpSurface;
+            // BMP: 24-bit BGR, bottom-up
+            uint32_t pad = (4 - ((w * 3) % 4)) % 4;
+            uint32_t imgSize = (w * 3 + pad) * h;
+            struct { char id[2]; uint32_t sz, res1, off; } fh = {{'B','M'}, 54 + imgSize, 0, 54};
+            struct { uint32_t hdrsz, w, h; uint16_t planes, bpp; uint32_t comp, imgsz, xppm, yppm, clr, imp; }
+                ih = {40, w, h, 1, 24, 0, imgSize, 2835, 2835, 0, 0};
+            fwrite(&fh, 1, sizeof(fh), f); fwrite(&ih, 1, sizeof(ih), f);
+            for (int32_t y = (int32_t)h - 1; y >= 0; y--) {
+                uint8_t* srow = src + y * lk.lPitch;
+                for (uint32_t x = 0; x < w; x++) {
+                    uint8_t b, g, r;
+                    if (bpp == 32) { b = srow[x*4+0]; g = srow[x*4+1]; r = srow[x*4+2]; }
+                    else if (bpp == 24) { b = srow[x*3+0]; g = srow[x*3+1]; r = srow[x*3+2]; }
+                    else if (bpp == 16) { // R5G6B5
+                        uint16_t v = srow[x*2+0] | (srow[x*2+1] << 8);
+                        r = (v >> 11) << 3; g = (v >> 5 & 0x3f) << 2; b = (v & 0x1f) << 3;
+                    } else { b = g = r = 0; }
+                    uint8_t px[3] = {b, g, r}; fwrite(px, 1, 3, f);
+                }
+                for (uint32_t p = 0; p < pad; p++) fputc(0, f);
+            }
+            fclose(f);
+            Log("[DX7PROXY] dumped stage0 tex #%d %p -> %s (%ux%u bpp=%u pitch=%d)",
+                g_dumpCount - 1, surf, path, w, h, bpp, lk.lPitch);
+        }
+        ((long(__stdcall*)(void*, void*))svt[0x80/4])(surf, nullptr);  // Unlock
+    } else {
+        Log("[DX7PROXY] tex dump Lock FAILED hr=0x%lx", (unsigned long)hr);
+    }
+    ((long(__stdcall*)(void*))svt[0x08/4])(surf);  // Release
+    if (g_dumpCount >= 6) g_dumpDone = true;
 }
 static long __stdcall H_SetTexture(void* t, uint32_t stage, void* surf) {
     c_setTex++;
