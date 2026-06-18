@@ -1,3 +1,4 @@
+extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
 #include <cstdarg>
 // Giants Vanilla-Native Recomp — Terrain (GTI heightfield) render port.
 // See VanillaTerrain.h for the design and RE_docs/TERRAIN_RENDER.md for the
@@ -323,6 +324,8 @@ static int SubmitTris(const std::vector<TerrainVertex>& verts, int triCount) {
             if (le) le(wrapper, 0, 1);
         }
     }
+    // Bind intro_grnd texture at stage 0 (texture creation cached in VanillaD3D7Tex).
+    VanillaD3D7_BindIntroGrnd(wrapper);  // SetTexture@0x8c + STSS MODULATE
     // Draw world-space XYZ verts through the D3D7 transform pipeline (NOT XYZRHW software-projected).
     typedef long (__stdcall *PFN_DrawPrim)(void*, uint32_t, uint32_t, const void*, uint32_t, uint32_t);
     long hr = ((PFN_DrawPrim)drawPrim)(wrapper, 3 /*D3DPT_TRIANGLELIST*/, 0x142 /*XYZ|DIFFUSE|TEX1*/,
