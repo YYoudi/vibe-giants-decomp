@@ -1,7 +1,11 @@
 #include <cstdint>
+#include <cstdlib>
+#include <cstring>
 // Generated .BIN loader (FUN_004b7c50) link stubs. Loader is DORMANT.
 extern "C" {
 int FUN_0053c970(const char* a, const char* b);   // strcmp-eq (defined in VanillaStubs.cpp)
+extern uint32_t g_TextureEntityList;              // DAT_005a78b4 (defined in VanillaEngine.cpp)
+uint32_t DAT_005a78b8 = 0;                         // second texture list head (texture.c)
 uint32_t _DAT_005522b0 = 0;
 uint32_t _DAT_005522c0 = 0;
 uint32_t _DAT_00552344 = 0;
@@ -60,9 +64,45 @@ int FUN_004a1360(const char* name) {
     return 0;   // vanilla logs "Failed to find WorldAnim '%s'" via FUN_00544b47+FUN_00523aa0
 }
 void FUN_004b7b30() {}
-void FUN_0050e3c0() {}
+// FUN_0053c810: tagged engine allocator → returns zeroed buffer of `size`. (vanilla 0053c810)
+// FIXME(unverified): vanilla uses a pool heap; we calloc for now (recomp heap, freed by FUN_0053c5c0).
+void* FUN_0053c810(uint32_t /*pool*/, uint32_t size, const char* /*tag*/, const char* /*file*/, uint32_t /*line*/) {
+    return std::calloc(1, size ? size : 1);
+}
+// FUN_0050e3c0: texture resolve. Phase 1: walk g_TextureEntityList (DAT_005a78b4), per node
+//   walk entries (count node[10], stride 9 dwords from node+0xb) by name. Phase 2: walk
+//   DAT_005a78b8 (entries at node+1) by name. Phase 3: not found → alloc (strlen+0x2b),
+//   zero, head-insert into DAT_005a78b8, copy name, set flag bit 0x10 at +0x23. (vanilla 0050e3c0)
+void* FUN_0050e3c0(char* name) {
+    // Phase 1 + 2: search existing.
+    for (uint32_t* n = (uint32_t*)(uintptr_t)g_TextureEntityList; n; n = (uint32_t*)(uintptr_t)n[0]) {
+        uint32_t cnt = n[10];
+        if (cnt != 0) {
+            for (uint32_t i = 0; i < cnt; i++) {
+                const char* en = *(const char**)(uintptr_t)(&n[0xb + i * 9]);
+                if (FUN_0053c970(name, en) != 0) return &n[0xb + i * 9 * 1];
+            }
+        }
+    }
+    for (uint32_t* n = (uint32_t*)(uintptr_t)DAT_005a78b8; n; n = (uint32_t*)(uintptr_t)n[0]) {
+        const char* en = *(const char**)(uintptr_t)&n[1];
+        if (FUN_0053c970(name, (const char*)en) != 0) return &n[1];
+    }
+    // Phase 3: allocate + insert new entry.
+    uint32_t slen = (uint32_t)std::strlen(name) + 1;
+    uint32_t size = slen + 0x2b;
+    uint32_t* node = (uint32_t*)FUN_0053c810(0x1d, size, 0, 0, 0x2c6);
+    if (!node) return 0;
+    std::memset(node, 0, size);
+    node[0] = DAT_005a78b8;          // head-insert
+    DAT_005a78b8 = (uint32_t)(uintptr_t)node;
+    // node[1] = &node[10] (name slot at node+0x28, i.e. node[10] in dword terms = +0x28)
+    node[1] = (uint32_t)(uintptr_t)&node[10];
+    std::strcpy((char*)&node[10], name);
+    *((uint8_t*)node + 0x23) |= 0x10;
+    return &node[1];
+}
 void FUN_0051bd20() {}
-void FUN_0053c810() {}
 void FUN_0053c890() {}
 void FUN_00544b47() {}
 void FUN_00544b99() {}
