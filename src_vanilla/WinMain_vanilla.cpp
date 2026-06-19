@@ -103,6 +103,7 @@ extern "C" void* VanillaInitRenderer(HWND hWnd);
 extern "C" void VanillaReadDisplayConfig();
 extern "C" void VanillaDumpWrapperVtable(void);
 extern "C" int VanillaRunFrame(int frameState);
+extern "C" uint32_t g_SceneState_631568;  // scene state enum (DAT_00631568; 6 = 3D render path)
 extern "C" void VanillaDriveFrame(void (*drawHook)(void));   // manual BeginScene→hook→EndScene→Present
 extern "C" void VanillaTestSurfaceVisible(void);              // GetDC(obj+0x288) + FillRect — surface visibility test
 
@@ -274,6 +275,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // but SEGFAULTS when submitted to renderer slot +0x98 standalone — the renderer must be
     // in-scene (BeginScene called). Must be injected INTO the renderer's frame cycle
     // (between BeginScene and Present, e.g. via the scene-walk callback) — TODO.
+
+    // EXPERIMENT (2026-06-19): force scene state = 6 (the 3D render path; vanilla FUN_00539540
+    // sets DAT_00631568=6 to enter the level). The recomp never calls FUN_00539540, so state stays
+    // 0 (menu/dialog path) and the scene-walk renders no 3D. This tests whether state=6 is the gate.
+    g_SceneState_631568 = 6;
 
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
