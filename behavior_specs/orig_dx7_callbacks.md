@@ -52,6 +52,23 @@ To port them faithfully: re-export from Ghidra at those addresses, or disassembl
 Giants_nocd.exe. (callback[17]=00539f00 is the VFS open-by-name wrapper; FUN_00539e30 — Frida-hooked
 in orig_vfsopen.md — is its sibling 0xD0 below.)
 
+## 6 missing callbacks DISASSEMBLED (2026-06-19, via scripts/disasm_exe.py) — semantics identified
+- **[7] = 004a1320**: `mov eax,[esp+4] (this); mov ecx,[esp+8] (out); add eax,0xa0; copy 3 dwords
+  from [eax] → [ecx]`. Reads `obj+0xa0` (a Vec3 = object/camera POSITION) into the out ptr. So
+  callback[7] is a POSITION ACCESSOR, NOT "SceneBegin/inject-terrain" (the recomp's label). The
+  recomp's `cbSceneBegin_DrawTerrain` at [7] is WRONG.
+- **[8] = 004a1340**: `mov eax,[esp+4]; test eax; je; mov ecx,[eax+0xd8]; test ch,ch; js; mov eax,1; ret`
+  — checks a flag bit in `obj+0xd8`, returns 1 if set. A visibility/flag predicate.
+- **[9] = 0050dd10**: `push 1; push this; call 0x50dd20; ret` — thin wrapper → FUN_0050dd20(this, 1).
+- **[15] = 0053a2b0**: VFS open variant — `call 0x53a660 (GZP index init); push this; push DAT_005e12b4
+  (GZP index root); call 0x53b280` (resolve+open). Confirmed VFS open.
+- **[16] = 0053a090**: VFS open variant (string/path processing, DAT_005520f8 IAT). Confirmed VFS.
+- **[17] = 00539f00**: `sub esp,0x200; call 0x53a660; ... path string (cmp 0x5c '\\') ...` — the VFS
+  open-by-name (builds/resolves the path). Confirmed VFSOpenFile. FUN_00539e30 (Frida-hooked) is its
+  callee sibling.
+So callbacks [15],[16],[17] are 3 VFS-open variants (confirmed), [7]=position accessor, [8]=flag
+predicate, [9]=wrapper. The recomp callback table needs these VANILLA semantics, not the 1.5 labels.
+
 ## KNOWN BUG — proxy D3D7 per-frame trace captured 0 frames
 The proxy's `InstallD3D7Hooks` assumed the wrapper device is at `obj+0x294` (a 1.5-era offset). In
 vanilla the "WRAPPER VTABLE DUMP" came back EMPTY and `total frames captured: 0` — the offset is
