@@ -698,6 +698,19 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     }
     if (m98) m98(g_vRenderer, 0xFF000000);   // Clear BLACK (vanilla +0x98 Clear(0))
     if (m90) m90(g_vRenderer);               // BeginScene
+    // DIAGNOSTIC: the device render target vs the renderer's surfaces (white-render root cause).
+    // CONFIRMED 2026-06-19: device-RT != obj+0x28c (the presented surface) -> device texture draws
+    // never reach the flipped surface -> white frame. SetRenderTarget(obj+0x28c) is REJECTED
+    // (DDERR_INVALIDSURFACETYPE 0x80004001) so obj+0x28c is not RT-eligible; the fix must instead
+    // make the renderer Present the device-RT, or draw through the renderer's own surface path.
+    if (device && g_vTrace) {
+        typedef long (__stdcall *PFN_GetRT)(void*, void**);
+        void** dvt = *(void***)device;
+        PFN_GetRT grt = (PFN_GetRT)(uintptr_t)dvt[0x24/4];
+        void* devRT = nullptr; if (grt) grt(device, &devRT);
+        static int s_diag = 0;
+        if (s_diag < 1) { fprintf(g_vTrace, "[RTDIAG] device-RT=%p obj+0x28c=%p obj+0x288=%p match28c=%d\n", devRT, obj[0x28c/4], obj[0x288/4], devRT==obj[0x28c/4]); fflush(g_vTrace); s_diag++; }
+    }
     // Intro/loading TGAs are larger than the device (intros=1600x1200 vs 640x480 device) →
     // DrawScaled to the device res (vanilla device-fit). giants_loading is 640x480 (1:1).
     int devW = g_videoWidth ? (int)g_videoWidth : 640;
