@@ -74,3 +74,18 @@ The recomp's callback[12] is Stub_Void → renderer gets no camera → no view t
 Next: port callback[12] to return the camera globals (populated by the camera-update fns
 FUN_0040d560/0040d9f0 from the active object) so the renderer has a view. This is the faithful
 camera path (vs the bbox-guess in VanillaLogo_Draw).
+
+## 2026-06-19 — projection matrix OBSERVED; view + per-object submit still missing
+Frida-hooked the original's renderer method +0x20 (SetCameraProjection) at the menu (scripts/
+frida_projmatrix.js). The 3D-scene projection matrix captured (t=38.18s):
+  [1.2990,0,0,0 ; 0,1.7321,0,0 ; 0,0,1.0001,1.0 ; 0,0,-1.0001,0]
+=> standard LH perspective, fovY=60° (cot(30°)=√3=1.7321), aspect=4/3 (640/480), znear≈1, zfar large.
+(The 2D/HUD identity matrix [1,0,0,0;0,1,0,0;0,0,0,0;0,0,0,1] is also pushed for overlays.)
+Pushed this exact matrix to the recomp renderer+0x20 in the boot. Result: STILL 71% white / 0%
+colored. So projection alone isn't enough — the VIEW matrix (camera pos -527.9,499.4,44 ang 163,0,0,
+observed via frida_camglobals.js) AND the per-object world-transform + DrawPrimitive loop are also
+missing. callback[12] (cbCameraState, faithful to 0040d430) was NOT called by the renderer — the
+camera is engine-PUSHED (via renderer methods), not callback-polled.
+REMAINING = the full per-frame 3D pipeline: renderer+0x20 (proj, DONE) + view matrix (camera method
+TBD — observe which renderer method takes the view) + the entity walk that submits each object's
+mesh with its world transform (FUN_004f3230 scene-spawn + per-frame entity/texture walk at 0x4f3c20).

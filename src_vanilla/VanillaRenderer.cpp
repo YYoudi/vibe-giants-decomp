@@ -105,6 +105,25 @@ static void __cdecl Stub_Free(void* p) { free(p); }
 // (same MinGW heap → consistent, no cross-CRT free).
 static void* __cdecl Stub_Alloc(int /*a0*/, size_t size, void* /*heap*/) { return malloc(size); }
 
+// callback[12] = vanilla 0040d430 (rule-11: it's the CAMERA-STATE accessor, NOT "TextureLoader").
+// Signature: void cb(float* p1, float* p2, float* p3, float* p4) where p1/p2/p3 = the 3 camera
+// ANGLES (DAT_005561b0/b4/b8) and p4[0..2] = camera POSITION (DAT_005561a4/a8/ac). The renderer
+// builds its view matrix from these. OBSERVED at the original's menu via Frida (scripts/
+// frida_camglobals.js @ t~40s): pos=(-527.9, 499.4, 44.0), ang=(163.0, 0.0, 0.0). Faithful (measured,
+// not guessed). TODO: animate/port the camera-update fns (FUN_0040d560/0040d9f0) for a live camera.
+static float g_CamPos[3] = { -527.9f, 499.4f, 44.0f };
+static float g_CamAng[3] = { 163.0f, 0.0f, 0.0f };
+static void __cdecl cbCameraState(float* p1, float* p2, float* p3, float* p4) {
+    if (p1) *p1 = g_CamAng[0];
+    if (p2) *p2 = g_CamAng[1];
+    if (p3) *p3 = g_CamAng[2];
+    if (p4) { p4[0] = g_CamPos[0]; p4[1] = g_CamPos[1]; p4[2] = g_CamPos[2]; }
+    extern FILE* g_vTrace;
+    static int s_n = 0;
+    if (g_vTrace && s_n < 2) { s_n++; fprintf(g_vTrace, "[CB12] camera-state called (pos %.1f,%.1f,%.1f ang %.1f,%.1f,%.1f)\n",
+        g_CamPos[0],g_CamPos[1],g_CamPos[2], g_CamAng[0],g_CamAng[1],g_CamAng[2]); fflush(g_vTrace); }
+}
+
 // callback[11] GetLocalizedString (vanilla 0x50d7f0): const char* (const char* key) →
 // localized string. Returns a default ("") if key is null. The renderer calls this during
 // scene render (0x71a0) and the menus use it for UI text. Wired to VanillaText::Lookup.
@@ -174,7 +193,7 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
         (void*)Stub_Void,     // 9  PreRenderCheck
         (void*)Stub_Void,     // 10 BufferDeallocator
         (void*)Stub_GetLocalizedString, // 11 GetLocalizedString (real: VanillaText lookup)
-        (void*)Stub_Void,     // 12 TextureLoader
+        (void*)cbCameraState, // 12 CameraState accessor (vanilla 0040d430; OBSERVED menu camera)
         (void*)Stub_Void,     // 13 SinCosLookup
         (void*)Stub_Void,     // 14 TimeAccessor
         (void*)cbVFSOpenFileVariant, // 15 VFSOpenFileVariant (vanilla FUN_006222d0)
