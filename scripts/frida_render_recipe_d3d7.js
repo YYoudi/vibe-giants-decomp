@@ -36,7 +36,7 @@ else {
 
     var nTr=0, nTx=0, nDp=0, nRs=0, nBeg=0;
     var MAX=40;
-    var START_AT=33.0;     // skip the 3 intros (~12s each) -> capture the MENU 3D recipe
+    var START_AT=33.0;     // skip the 3 intros (~12s each) -> capture the auto-advanced menu recipe
     function ready(){ return ((Date.now()-t0)/1000) >= START_AT; }
 
     Interceptor.attach(pBeginScene, { onEnter: function(a){
