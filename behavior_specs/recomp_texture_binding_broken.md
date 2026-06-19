@@ -174,3 +174,15 @@ remaining ~0.20 vs the true tga = window chrome captured by appsnap (~5%) + 14% 
 minor color fidelity.
 NEXT (tooling): fix capdiff's original-loading capture to catch the actual loading screen (event-
 driven, or correct timing) for a valid comparison.
+
+## ✅ LOADING SCREEN PASS — TGA vertical-flip was the last bug (2026-06-19)
+The loading device-RT matched the true giants_loading.tga at delta 0.168 with the content correct
+but VERTICALLY FLIPPED (BMP vs ref-flipped = 0.011). ROOT CAUSE: VanillaTGA::Parse computed the
+TGA descriptor's topOrigin bit but DISCARDED it ((void)topOrigin). TGA default origin is BOTTOM-LEFT
+so pixels are stored bottom-to-top; the recomp stored them as-is → row 0 = bottom → rendered upside
+down. FIX: flip the rows in Parse when !topOrigin (so img.pixels is top-origin, matching D3D V=0
+at top). Affects ALL TGA-based render (loading/intros/font/logo).
+VERIFICATION (clean, no chrome): -saveframe dumps the device-RT to BMP; vs the true
+giants_loading.tga = **delta 0.0108 PASS**. The loading screen is faithfully reproduced.
+NOTE: capdiff "compare loading" still shows ~0.15 because the ORIGINAL loading capture is broken
+(94% black, timing miss) — that's a capdiff tooling gap, NOT a recomp fidelity issue.

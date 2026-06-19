@@ -69,6 +69,19 @@ Image Parse(const uint8_t* data, size_t len) {
             }
         }
     }
+    // TGA default origin is BOTTOM-LEFT (descriptor bit 5 clear). The pixel data is stored
+    // bottom-to-top in that case. Flip the rows so img.pixels is top-origin (row 0 = top),
+    // matching how the D3D texture is sampled (V=0 at top). Without this, images render upside-down
+    // (verified: loading screen was V-flipped vs the source, delta 0.168 -> 0.011 PASS when flipped).
+    if (!topOrigin && img.height > 1) {
+        size_t rowBytes = (size_t)img.width * bpp;
+        std::vector<uint8_t> tmp(rowBytes);
+        for (uint32_t y = 0; y < img.height / 2; y++) {
+            uint8_t* a = img.pixels.data() + (size_t)y * rowBytes;
+            uint8_t* b = img.pixels.data() + (size_t)(img.height - 1 - y) * rowBytes;
+            memcpy(tmp.data(), a, rowBytes); memcpy(a, b, rowBytes); memcpy(b, tmp.data(), rowBytes);
+        }
+    }
     img.ok = true;
     return img;
 }
