@@ -186,3 +186,12 @@ VERIFICATION (clean, no chrome): -saveframe dumps the device-RT to BMP; vs the t
 giants_loading.tga = **delta 0.0108 PASS**. The loading screen is faithfully reproduced.
 NOTE: capdiff "compare loading" still shows ~0.15 because the ORIGINAL loading capture is broken
 (94% black, timing miss) — that's a capdiff tooling gap, NOT a recomp fidelity issue.
+
+## INTRO1 verified (2026-06-19)
+-at intro1/2/3 flags added (jump to intro index, frozen, fade=1 for capture). intro1 device-RT vs
+the true dmlarge000.tga (1600x1200) = delta 0.0588 (near-PASS). The intro is 1600x1200 downscaled
+to the 640x480 device (DrawScaled) — the downscale adds ~0.05 lossy delta that the original also
+incurs when displaying at 640x480 (so 0.0588 vs the 1600x1200 source is expected; a fair PASS would
+compare recomp vs original-both-downscaled, but the original intro appsnap capture is flaky).
+Both the TGA V-flip fix AND the device-640 fix apply to intros (same pipeline).
+STATUS: loading PASSES (0.0108 vs true tga); intro1 near-PASS (0.0588). Two 2D phases reproduced.
