@@ -139,3 +139,15 @@ Likely causes to debug: (a) VanillaTGA::Parse mishandles 24bpp (loading is 24bpp
 wrong pixels; (b) GDI BitBlt / appsnap capture resize (656x519 window -> 640x480) averaging colors;
 (c) the device-RT GetDC readback pitch/format mismatch. The GDI-present VISIBLE-CONTENT mechanism
 is proven (dark bg renders, was white); the texture CONTENT fidelity is the remaining issue.
+
+## Loading image renders BLURRED/DARKENED (2026-06-19)
+Via GDI present + StretchBlt, the loading screen renders RECOGNIZABLE content but blurred/darkened:
+- recomp top colors: (31,33,39)x96283, (13,16,22)x57775, (2,40,0)x51987 DARK GREEN, (61,1,0)x9018 dark red.
+- reference: (0,0,0)x11908, (0,0,4)x3344, (0,180,24)x2722 BRIGHT GREEN, (0,166,22)x2650.
+The bright-green portrait regions (2722px) spread to ~51987px dark-green — a ~16x area blur. The
+image looks DOWN-REZZED then stretched (each channel ~x0.22, +33 offset). Cause TBD: device-RT may
+be a lower resolution than 640x480 (rendered small then StretchBlt upsampled), OR the texture is
+created/filtred at low res. pixel-match (within 20) = 78/2000 (4%). delta=0.216.
+Also found: GDVSysCreate RESIZES the window to 1024x720 (display mode) while the device renders
+640x480 — fixed the GDI present to StretchBlt device-RT -> window client (was BitBlt filling only
+the top-left 640x480).

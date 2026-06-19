@@ -385,7 +385,13 @@ static void VanillaGdiPresent(void* device, void* hwnd, int devW, int devH, FILE
     HDC surfDC = (HDC)(uintptr_t)surfDCptr;
     HDC winDC = GetDC((HWND)hwnd);
     if (winDC) {
-        BitBlt(winDC, 0, 0, devW, devH, surfDC, 0, 0, SRCCOPY);
+        // The renderer resizes the window to its display mode (e.g. 1024x720) while the device
+        // renders at devW x devH (640x480). StretchBlt the device-RT to fill the whole window
+        // client so captures aren't distorted (BitBlt only filled the top-left devW x devH).
+        RECT crc; GetClientRect((HWND)hwnd, &crc);
+        int cW = crc.right - crc.left, cH = crc.bottom - crc.top;
+        if (cW > 0 && cH > 0) StretchBlt(winDC, 0, 0, cW, cH, surfDC, 0, 0, devW, devH, SRCCOPY);
+        else BitBlt(winDC, 0, 0, devW, devH, surfDC, 0, 0, SRCCOPY);
         ReleaseDC((HWND)hwnd, winDC);
     }
     if (surfRelDC) surfRelDC(rt, surfDCptr);
@@ -751,8 +757,7 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         VanillaBlit::DrawScaled(device, s_introTiles[ii], 0, 0, devW, devH, st.fade);
     }
     if (device && st.phase == BOOT_LOADING) {
-        // Draw the loading image as ONE full-size textured quad (avoids tiled multi-draw
-        // VRAM-eviction / later-tile-bind issues that left only the left portion rendering).
+        // Loading image as one full-size textured quad (avoids tiled multi-draw issues).
         static void* s_fullLoad = nullptr; static int s_flw=0, s_flh=0; static bool s_tried=false;
         if (!s_tried) { s_tried=true; s_fullLoad = VanillaBlit::LoadFullSurface(device, "Bin\\xx_giants_logo_3d.gzp", "giants_loading.tga", &s_flw, &s_flh); }
         if (s_fullLoad) VanillaBlit::DrawFull(device, s_fullLoad, devW, devH);
