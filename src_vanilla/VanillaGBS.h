@@ -38,17 +38,26 @@ struct Model {
     std::vector<float>   vertices;        // numVertices*3 (base vertex pool)
     uint32_t nverts;                       // indexed vertex count
     std::vector<uint16_t> indexedVertices; // indexed_vertices: remap into base vertex pool
+    std::vector<float>   vertuv;           // nverts*2 (u,v) — V already flipped (v*-1), per canonical reader
+    std::vector<uint8_t>  verrgb;           // nverts*3 (r,g,b) if hasRGBs
     uint32_t numSubObjects;
     std::vector<SubObj>   subObjs;
     std::vector<std::string> subObjectNames;  // (kept for compat / logging)
     std::vector<std::string> texNames;
     bool ok = false;
+    // Axis-aligned bounding box of the base vertex pool (min/max XYZ).
+    float bboxMin[3] = {0,0,0}, bboxMax[3] = {0,0,0};
 
     // Build a flat position triangle list (XYZ per vertex, 3 per triangle) from ALL
     // sub-objects' decoded tris. Resolves tridata idx -> indexedVertices -> base vertex.
     std::vector<float> buildPositionTris() const;
+    // Build interleaved XYZ+DIFFUSE+UV verts (8 floats: x,y,z, diff, u,v) per triangle vertex,
+    // matching D3D7 FVF 0x142 (XYZ|DIFFUSE|TEX1). diff = per-subobj material diffuse (BBGGRR->ARGB).
+    // outCount = number of vertices (== 3 * total triangles across subobjs).
+    std::vector<float> buildTexturedTris(size_t* outVertCount = nullptr) const;
 };
 
 Model Parse(const uint8_t* data, size_t len);
 bool SelfTest();   // parses intro_1.gbs from xx_intro.gzp, logs structure
+bool LogoSelfTest();  // parses Giants_logo_3D.gbs (menu 3D logo), logs structure + textured-tri count
 } // namespace VanillaGBS
