@@ -82,3 +82,17 @@ The camera path is `FUN_0040d560` (selects active camera obj DAT_005561a0) → `
 `FUN_0040d190` (push matrix to renderer). These are stateful deep-engine functions (active-cam
 object graph at obj+0x170/+0x210, globals DAT_00556184/0055618c/00631224/006310e8). Porting them
 is multi-cycle. Until then, the recomp has no VIEW → renders white/wrong-framed.
+
+## Input-injection — ALL automated methods BLOCKED (2026-06-19, 4 methods tested)
+The 3D scene is click-gated. Tested driving the original past the click via:
+1. **SendInput** (mouse_event synthetic) — DI8 ignores. (frida_menu_observe / recipe_3d_run)
+2. **PostMessage WM_LBUTTONDOWN/UP** to the hwnd — DI8 ignores (WndProc menu path doesn't fire).
+3. **GetAsyncKeyState / GetKeyState hooks** (logical-level, scripts/frida_click_inject.js) — game
+   uses DI8 directly for menu advance, not these.
+4. **IDirectInputDevice::GetDeviceState hook** (scripts/frida_diclick_inject.js, the actual DI8
+   data path — force rgbButtons[0]|=0x80 on the mouse device) — DirectInput7 CreateDevice method
+   hook did not fire (CreateDeviceEx / timing issue); game uses dinput.dll (DI7).
+RESULT across all 4: game stays on the 2D profile-select overlay, **0 big-mesh draws**.
+CONCLUSION: automated 3D-scene entry is not feasible via input injection. The 3D island+logo
+mesh draw recipe (strided vertex data) requires MANUAL human clicks. The auto-advanced menu
+state (2D overlay only) is the ceiling for automated observation of the menu.
