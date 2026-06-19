@@ -244,6 +244,31 @@ void* FirstSurface(TiledImage* img, int* imgW, int* imgH) {
     return img->tiles[0].surf;
 }
 
+// Draw a single full-size surface as one textured quad covering (0,0)-(dstW,dstH). For images
+// that fit in one texture (avoids tiled multi-draw VRAM-eviction issues).
+void DrawFull(void* device, void* surf, int dstW, int dstH) {
+    if (!device || !surf || dstW <= 0 || dstH <= 0) return;
+    void** dvt = vt(device);
+    PFN_SetTex setTex = (PFN_SetTex)dvt[0x8c/4];
+    PFN_STSS stss     = (PFN_STSS)dvt[0x94/4];
+    PFN_SR   sr       = (PFN_SR)dvt[0x50/4];
+    PFN_DP   dp       = (PFN_DP)dvt[0x64/4];
+    if (!setTex || !dp) return;
+    if (sr) { sr(device, D3DRS_ALPHABLENDENABLE, 0); }
+    stss(device, 0, D3DTSS_COLOROP, D3DTOP_SELECTARG1);  // color = texture (no modulate)
+    stss(device, 0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+    stss(device, 0, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+    setTex(device, 0, surf);
+    struct PtV { float x, y, z, rhw; uint32_t diff; float u, v; };
+    PtV v[4] = {
+        { 0.0f, 0.0f, 0.0f, 1.0f, 0xFFFFFFFF, 0.0f, 0.0f },
+        { (float)dstW, 0.0f, 0.0f, 1.0f, 0xFFFFFFFF, 1.0f, 0.0f },
+        { (float)dstW, (float)dstH, 0.0f, 1.0f, 0xFFFFFFFF, 1.0f, 1.0f },
+        { 0.0f, (float)dstH, 0.0f, 1.0f, 0xFFFFFFFF, 0.0f, 1.0f },
+    };
+    dp(device, D3DPT_TRIANGLEFAN, 0x144, v, 4, 0);
+}
+
 // Load a TGA as a SINGLE full-size D3D7 surface (no tiling) — for the renderer's +0xa8 Present
 // which blits a source surface at its native size. Returns the surface + sets w/h.
 void* LoadFullSurface(void* device, const char* gzp, const char* tgaName, int* outW, int* outH) {

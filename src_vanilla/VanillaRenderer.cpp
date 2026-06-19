@@ -30,6 +30,7 @@ extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
 // Canonical 2D tiled blitter (FUN_00433900 port) — see vanilla_2d_render_pipeline.md.
 namespace VanillaBlit { struct TiledImage; TiledImage* Load(void*, const char*, const char*);
     void* FirstSurface(TiledImage*, int* imgW, int* imgH);
+    void DrawFull(void* device, void* surf, int dstW, int dstH);
     void* LoadFullSurface(void* device, const char* gzp, const char* tgaName, int* outW, int* outH);
     int GetTileSurfaces(TiledImage*, int* imgW, int* imgH, void** outSurfs, int maxSurfs);
     void Draw(void*, TiledImage*, int, int, float);
@@ -749,8 +750,13 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         && ii >= 0 && ii < 3 && s_introTiles[ii]) {
         VanillaBlit::DrawScaled(device, s_introTiles[ii], 0, 0, devW, devH, st.fade);
     }
-    if (device && st.phase == BOOT_LOADING && st.fade > 0.01f && s_loadingTile) {
-        VanillaBlit::DrawScaled(device, s_loadingTile, 0, 0, devW, devH, st.fade);
+    if (device && st.phase == BOOT_LOADING) {
+        // Draw the loading image as ONE full-size textured quad (avoids tiled multi-draw
+        // VRAM-eviction / later-tile-bind issues that left only the left portion rendering).
+        static void* s_fullLoad = nullptr; static int s_flw=0, s_flh=0; static bool s_tried=false;
+        if (!s_tried) { s_tried=true; s_fullLoad = VanillaBlit::LoadFullSurface(device, "Bin\\xx_giants_logo_3d.gzp", "giants_loading.tga", &s_flw, &s_flh); }
+        if (s_fullLoad) VanillaBlit::DrawFull(device, s_fullLoad, devW, devH);
+        else if (s_loadingTile) VanillaBlit::DrawScaled(device, s_loadingTile, 0, 0, devW, devH, 1.0f);
     }
     if (m94) m94(g_vRenderer);               // EndScene
     obj[0x42c / 4] = (void*)1;

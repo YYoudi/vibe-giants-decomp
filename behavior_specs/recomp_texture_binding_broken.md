@@ -127,3 +127,15 @@ refinement to PASS (<0.04). Applied to BOOT_INTRO + BOOT_LOADING.
 - NOTE: GDI present is a VISIBILITY BRIDGE, not the faithful renderer Present path (anti-dérive:
   the original uses the renderer's own Present with a managed source). Use it to get visible 2D
   while the managed-source creation mechanism is reverse-engineered.
+
+## Loading render content is IMPERFECT (2026-06-19)
+GDI present shows real content (dark bg) but the LOADING IMAGE is not pixel-faithful:
+- reference giants_loading.tga: ~8000 green portrait pixels ((0,180,24)x2722, (0,166,22)x2650, ...),
+  dark bg (0,0,0)/(0,0,4).
+- recomp render: only ~483 green, dark bg (13,16,22) [brighter/bluer than ref (0,0,4)].
+Both tiled DrawScaled AND single-quad DrawFull give the SAME imperfect result (delta ~0.21) -> not a
+tiling/eviction issue. The whole image is off (dark bg color differs, portraits mostly missing).
+Likely causes to debug: (a) VanillaTGA::Parse mishandles 24bpp (loading is 24bpp; intros 32bpp) ->
+wrong pixels; (b) GDI BitBlt / appsnap capture resize (656x519 window -> 640x480) averaging colors;
+(c) the device-RT GetDC readback pitch/format mismatch. The GDI-present VISIBLE-CONTENT mechanism
+is proven (dark bg renders, was white); the texture CONTENT fidelity is the remaining issue.
