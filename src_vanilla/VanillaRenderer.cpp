@@ -441,6 +441,10 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
             if (g_vTrace) { fprintf(g_vTrace, "[BOOT] phase-jump: starting at MENU (skipIntros=%d atMenu=%d)\n",
                 (int)g_bootCfg.skipIntros, (int)g_bootCfg.atMenu); fflush(g_vTrace); }
         }
+        if (g_bootCfg.atLoading) {
+            st.phase = BOOT_LOADING;          // -at loading: jump straight to the loading screen
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] phase-jump: starting at LOADING (giants_loading.tga)\n"); fflush(g_vTrace); }
+        }
     }
 
     // ── MENU phase: manual D3D frame bracket + terrain + GDI RT-present ──
@@ -657,7 +661,7 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
             } else {
                 if (g_vTrace) { fprintf(g_vTrace, "[BOOT] intro → next (%d)\n", st.introIdx); fflush(g_vTrace); }
             }
-        } else if (st.phase == BOOT_LOADING) {   // loading screen done → menu
+        } else if (st.phase == BOOT_LOADING && !g_bootCfg.atLoading) {   // loading screen done → menu
             st.phase = BOOT_MENU;
             if (g_vTrace) { fprintf(g_vTrace, "[BOOT] loading done → MENU phase\n"); fflush(g_vTrace); }
         }
