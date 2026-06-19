@@ -84,3 +84,21 @@ only path to visible output.
 - NEXT: call renderer+0x8c BEFORE BeginScene with the correct surface (the device backbuffer, or
   the surface Present flips) to bind the RT so device draws reach the presented surface. Requires
   observing the original's +0x8c call at INIT (before t=2s) to capture surf+flags args.
+
+## +0xa8 Present-with-source discovery (2026-06-19, Frida init recipe)
+The canonical intro frame on the ORIGINAL is:
+  (+0x98 Clear) → (+0x90 BeginScene) → (+0x94 EndScene) → (+0xa8 Present)
+where **+0xa8 Present = (this, srcW, srcH, fade, srcSurface)** — OBSERVED args:
+  obj, 0x640(=1600=srcW), 0x4b0(=1200=srcH), fade(1.0→0.95→...), srcSurface(0xf8e7510)
+=> the renderer BLITS the source surface (intro TGA dims 1600x1200) with fade + presents
+INTERNALLY. The recomp calls m_a8(obj) with NO source -> renders nothing/white. THIS is a real
+bug: the recomp invokes Present wrong (missing srcW/srcH/fade/srcSurface).
+- +0x8c (PushVP/SetRT) is NEVER called by the original (disproven RT-bind hypothesis).
+- +0xd8 (CreateTexture) is NEVER called either -> the srcSurface handle (0xf8e7510) is created by
+  a different mechanism, and released by +0xb4 ReleaseTexture (lifecycle: ?create / +0xb4 release).
+- TESTED passing a raw D3D7 tile surface (VanillaBlit::FirstSurface) to +0xa8(obj,640,480,1.0,surf)
+  -> STILL WHITE. The renderer does not accept a raw IDirectDrawSurface7; the source must be a
+  renderer-MANAGED texture handle (created via the unknown method, same type as 0xf8e7510).
+- REMAINING: identify how the original creates the renderer-managed source handle (the texture
+  passed to +0xa8). Likely a renderer method not yet mapped, or callback[?] (engine TextureLoader).
+  Once known: create loading/intro source via that method, pass to +0xa8 -> visible 2D.
