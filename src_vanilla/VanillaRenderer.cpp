@@ -4,6 +4,7 @@
 // gg_dx7r.dll) and resolves the 2 vanilla renderer exports: GDVSysCreate +
 // UpCallsLoad. NO GFXGetCapabilities (that's a 1.5-era 3rd export).
 #include <windows.h>
+#include <ddraw.h>
 #include <cstdio>
 #include <cstdint>
 #include <cstring>
@@ -698,11 +699,6 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     }
     if (m98) m98(g_vRenderer, 0xFF000000);   // Clear BLACK (vanilla +0x98 Clear(0))
     if (m90) m90(g_vRenderer);               // BeginScene
-    // DIAGNOSTIC: the device render target vs the renderer's surfaces (white-render root cause).
-    // CONFIRMED 2026-06-19: device-RT != obj+0x28c (the presented surface) -> device texture draws
-    // never reach the flipped surface -> white frame. SetRenderTarget(obj+0x28c) is REJECTED
-    // (DDERR_INVALIDSURFACETYPE 0x80004001) so obj+0x28c is not RT-eligible; the fix must instead
-    // make the renderer Present the device-RT, or draw through the renderer's own surface path.
     if (device && g_vTrace) {
         typedef long (__stdcall *PFN_GetRT)(void*, void**);
         void** dvt = *(void***)device;
