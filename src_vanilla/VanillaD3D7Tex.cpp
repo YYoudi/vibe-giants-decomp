@@ -102,7 +102,10 @@ extern "C" void VanillaD3D7_BindTga(void* device, const char* gzpPath, const cha
         }
         *pCacheSurf = texSurf;
     }
-    if (*pCacheSurf) ((PFN_SetTex)dvt[0x8c/4])(device, 0, *pCacheSurf);
+    if (*pCacheSurf) {
+        long hr = ((PFN_SetTex)dvt[0x8c/4])(device, 0, *pCacheSurf);
+        if (g_vTrace) { fprintf(g_vTrace, "[D3D7TEX] SetTexture(stage0, %p) hr=0x%lx\n", *pCacheSurf, (unsigned long)hr); fflush(g_vTrace); }
+    }
 }
 
 extern "C" void VanillaD3D7_BindIntroGrnd(void* device) {
