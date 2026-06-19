@@ -61,3 +61,16 @@ manual-D3D7-texture approach is a confirmed dead end. The FAITHFUL path = port t
 (FUN_004913c0 → FUN_0045a530 → FUN_004b7c50 → FUN_004f3230) so the scene is populated, then the
 renderer's scene-walk renders it (with textures) itself. (Also: the d3d7-3d-pipeline "textured
 terrain" memory is likely STALE — clean captures show white for both terrain-menu and logo3d.)
+
+## 2026-06-19 — scene-state=6 + camera blocker identified (state=6 experiment)
+Forced g_SceneState_631568=6 (the 3D render path; vanilla FUN_00539540 sets DAT_00631568=6 to enter
+a level). Result: the scene-walk now does MUCH more — loads textures via the renderer's OWN slot 0xb4
+path (143 texture entries incl. intro_sky, intro_grnd), spawns objects ([OBJ/Spawn] typeId=1). So
+state=6 drives the FAITHFUL renderer texture path (not my manual SetTexture hack — this is the
+renderer doing it itself). BUT the render is still 64% white / 0% colored.
+**Remaining blocker = CAMERA**: callback[12] (vanilla 0040d430) returns the camera state
+(DAT_005561a4/a8/ac = pos, DAT_005561b0/b4/b8 = angles) the renderer builds its view matrix from.
+The recomp's callback[12] is Stub_Void → renderer gets no camera → no view transform → no 3D.
+Next: port callback[12] to return the camera globals (populated by the camera-update fns
+FUN_0040d560/0040d9f0 from the active object) so the renderer has a view. This is the faithful
+camera path (vs the bbox-guess in VanillaLogo_Draw).
