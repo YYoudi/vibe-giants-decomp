@@ -21,6 +21,7 @@ struct VanillaBootConfig {
     bool   scene3d     = false;   // -scene3d: MENU calls the renderer's REAL scene walk (0x7370) instead of the 2D bracket
     bool   logo3d      = false;   // -logo3d: MENU renders the 3D logo MODEL (Giants_logo_3D.gbs + Giants_logo_512.tga) via D3D7, not the 2D blit
     int    frameLimit  = 0;       // -frames N (0 = unlimited)
+    char   saveFrame[256] = {0};  // -saveframe <path>: save device-RT to BMP once (clean fidelity check)
     char   level[64]   = {0};     // -at level:<name> (future)
 };
 

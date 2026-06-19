@@ -87,6 +87,11 @@ void VanillaParseArgs(const char* cmdLine) {
             p = skipWs(p);
             g_bootCfg.frameLimit = atoi(p);
             while (*p && !isspace((unsigned char)*p)) p++;
+        } else if (ieq(tok, "-saveframe")) {
+            p = skipWs(p); const char* v = p;
+            while (*p && !isspace((unsigned char)*p)) p++;
+            size_t vl = (size_t)(p - v); if (vl >= sizeof(g_bootCfg.saveFrame)) vl = sizeof(g_bootCfg.saveFrame)-1;
+            memcpy(g_bootCfg.saveFrame, v, vl); g_bootCfg.saveFrame[vl] = 0;
         } else if (ieq(tok, "-no-audio")) {
             g_bootCfg.noAudio = true;
         } else if (ieq(tok, "-scene3d")) {

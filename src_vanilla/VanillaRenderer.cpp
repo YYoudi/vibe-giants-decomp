@@ -405,6 +405,49 @@ static void VanillaGdiPresent(void* device, void* hwnd, int devW, int devH, FILE
     }
     if (surfRelDC) surfRelDC(rt, surfDCptr);
 }
+
+// Save the device render-target to a BMP file (clean fidelity check — no window/appsnap/chrome).
+// Reusable verification: compare the saved BMP directly to the source TGA.
+static bool VanillaSaveDeviceRT(void* device, const char* path, int devW, int devH) {
+    if (!device || !path) return false;
+    void** dvt = *(void***)device;
+    typedef long (__stdcall *PFN_GetRT)(void*, void**);
+    typedef long (__stdcall *PFN_SurfGetDC)(void*, void**);
+    typedef long (__stdcall *PFN_SurfRelDC)(void*, void*);
+    PFN_GetRT grt = (PFN_GetRT)(uintptr_t)dvt[0x24/4];
+    void* rt = nullptr; if (grt) grt(device, &rt);
+    if (!rt) return false;
+    void** svt = *(void***)rt;
+    PFN_SurfGetDC surfGetDC = (PFN_SurfGetDC)(uintptr_t)svt[0x44/4];
+    PFN_SurfRelDC surfRelDC = (PFN_SurfRelDC)(uintptr_t)svt[0x68/4];
+    void* dcptr = nullptr;
+    long hr = surfGetDC ? surfGetDC(rt, &dcptr) : -1;
+    if (hr != 0 || !dcptr) return false;
+    HDC hdc = (HDC)(uintptr_t)dcptr;
+    HDC mdc = CreateCompatibleDC(hdc);
+    HBITMAP bmp = CreateCompatibleBitmap(hdc, devW, devH);
+    HGDIOBJ old = SelectObject(mdc, bmp);
+    BitBlt(mdc, 0, 0, devW, devH, hdc, 0, 0, SRCCOPY);
+    // write BMP
+    BITMAPINFOHEADER bi = { sizeof(BITMAPINFOHEADER), devW, devH, 1, 32, 0, devW*devH*4, 0, 0, 0, 0 };
+    unsigned char* bits = (unsigned char*)malloc(devW * devH * 4);
+    int got = GetDIBits(mdc, bmp, 0, devH, bits, (BITMAPINFO*)&bi, BI_RGB);
+    FILE* f = nullptr;
+    bool ok = false;
+    if (got && bits && fopen_s(&f, path, "wb") == 0 && f) {
+        int pad = 0, hdr = 54;
+        BITMAPFILEHEADER bf = { 0x4D42, (DWORD)(hdr + devW*devH*4), 0, 0, (DWORD)hdr };
+        fwrite(&bf, 1, sizeof(bf), f);
+        fwrite(&bi, 1, sizeof(bi), f);
+        fwrite(bits, 1, devW*devH*4, f);
+        fclose(f);
+        ok = true;
+    }
+    free(bits);
+    SelectObject(mdc, old); DeleteObject(bmp); DeleteDC(mdc);
+    if (surfRelDC) surfRelDC(rt, dcptr);
+    return ok;
+}
 extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     extern FILE* g_vTrace;
     if (!g_vRenderer) return;
@@ -773,6 +816,15 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         else if (s_loadingTile) VanillaBlit::DrawScaled(device, s_loadingTile, 0, 0, devW, devH, 1.0f);
     }
     if (m94) m94(g_vRenderer);               // EndScene
+    // -saveframe: dump the device-RT to a BMP once (clean fidelity check, no window/appsnap/chrome).
+    if (device && g_bootCfg.saveFrame[0]) {
+        static bool s_saved = false;
+        if (!s_saved) {
+            bool ok = VanillaSaveDeviceRT(device, g_bootCfg.saveFrame, devW, devH);
+            if (g_vTrace) { fprintf(g_vTrace, "[SAVEFRAME] %s -> %s\n", g_bootCfg.saveFrame, ok ? "OK" : "FAIL"); fflush(g_vTrace); }
+            s_saved = true;
+        }
+    }
     obj[0x42c / 4] = (void*)1;
     // Present. The renderer's +0xa8 Present needs a renderer-managed source the recomp can't
     // produce (broken -> white). For 2D phases (intro/loading) use the PROVEN GDI present:
