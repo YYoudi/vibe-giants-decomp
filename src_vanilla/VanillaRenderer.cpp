@@ -539,6 +539,12 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
             st.phase = BOOT_LOADING;          // -at loading: jump straight to the loading screen
             if (g_vTrace) { fprintf(g_vTrace, "[BOOT] phase-jump: starting at LOADING (giants_loading.tga)\n"); fflush(g_vTrace); }
         }
+        if (g_bootCfg.atIntro >= 0) {
+            st.phase = BOOT_INTRO;             // -at introN: jump to intro index, frozen for capture
+            st.introIdx = g_bootCfg.atIntro;
+            st.fade = 1.0f;                    // full-opacity (held state)
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] phase-jump: starting at INTRO[%d] (frozen)\n", g_bootCfg.atIntro); fflush(g_vTrace); }
+        }
     }
 
     // ── MENU phase: manual D3D frame bracket + terrain + GDI RT-present ──
@@ -743,7 +749,7 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     bool phaseDone = (click || space || elapsed > ph_fadeIn + ph_hold + ph_fadeOut);
 
     // ── Phase transitions ──
-    if (phaseDone) {
+    if (phaseDone && g_bootCfg.atIntro < 0) {   // -at introN freezes the intro for capture
         if (st.phase == BOOT_INTRO) {
             st.introIdx++;
             if (st.introIdx >= 3) {

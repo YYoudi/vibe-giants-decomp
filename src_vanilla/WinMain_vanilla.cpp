@@ -79,6 +79,9 @@ void VanillaParseArgs(const char* cmdLine) {
             memcpy(val, v, vl); val[vl] = 0;
             if (ieq(val, "menu")) g_bootCfg.atMenu = true;
             else if (ieq(val, "loading")) g_bootCfg.atLoading = true;
+            else if (ieq(val, "intro1")) g_bootCfg.atIntro = 0;
+            else if (ieq(val, "intro2")) g_bootCfg.atIntro = 1;
+            else if (ieq(val, "intro3")) g_bootCfg.atIntro = 2;
             else if (vl > 6 && (ieq(val, "level:") || !strncmp(val, "level:", 6))) {
                 g_bootCfg.atMenu = true;                 // skip intros + loading
                 strncpy(g_bootCfg.level, val + 6, sizeof(g_bootCfg.level) - 1);
