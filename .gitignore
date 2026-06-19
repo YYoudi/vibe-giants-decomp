@@ -1,115 +1,104 @@
-# =============================================================================
+
 #  GiantsRE .gitignore
 #  Keep this repo LEAN and PUBLIC-SAFE: only the AI-generated source, the
 #  tracker, build config and docs. No game binaries, no big tooling, no secrets.
 # =============================================================================
-
-# ─── THIRD-PARTY CLONED REPOS (never publish, they belong upstream) ───────────
-/auto-re-agent/
-/ghidra-ai-bridge/
-
-# ─── GAME FILES & COPYRIGHTED BINARIES (1.5 GB+, do NOT distribute) ───────────
-/GameFiles/
-/RESSOURCES_FOR_AI/
-# PS2 prototype ELF — copyrighted binary, derived from the ISO above.
-# Only the text/CSV symbol artifacts in ps2_symbols/ are committed.
-/ps2_symbols/SLUS_201.78
-
-# ─── GHIDRA PROJECT & GENERATED EXPORTS (huge, regenerable from the .exe) ─────
-/ghidra_projects/
-/ghidra_exports/
-*.gpr
-*.rep
-*.gbak
-
 # ─── BUILD ARTIFACTS (CMake / MinGW / MSVC) ───────────────────────────────────
-/build/
-/build32/
-/CMakeFiles/
-cmake_install.cmake
-CMakeCache.txt
-CMakeUserPresets.json
-Makefile
+# ─── CLAUDE CODE LOCAL STATE (skills in .claude/commands/ ARE published) ─────
+# ─── EDITOR / OS ─────────────────────────────────────────────────────────────
+# ─── GAME FILES & COPYRIGHTED BINARIES (1.5 GB+, do NOT distribute) ───────────
+# ─── GHIDRA PROJECT & GENERATED EXPORTS (huge, regenerable from the .exe) ─────
+# ─── INSTALLER / MISC LOGS ───────────────────────────────────────────────────
+# ─── ONE-OFF WORKFLOW / CYCLE SCRATCH (kept locally, not published) ──────────
+# ─── PYTHON ──────────────────────────────────────────────────────────────────
+# ─── RE-AGENT SESSION / PROGRESS SCRATCH ─────────────────────────────────────
+# ─── SECRETS & MACHINE-LOCAL CONFIG ──────────────────────────────────────────
+# ─── THIRD-PARTY CLONED REPOS (never publish, they belong upstream) ───────────
+# curated version lives in src/). Keep locally, don't publish the bulk.
+# NOTE: RE-TRACKER.json (1.7 MB) IS published — it documents RE progress.
+# Only the text/CSV symbol artifacts in ps2_symbols/ are committed.
+# Per-function re-agent output dumps (1526 generated .cpp, regenerable; the
+# PS2 prototype ELF — copyrighted binary, derived from the ISO above.
+# re-agent.yaml contains a real LLM API key — NEVER commit it.
+*.a
+*.bak
+*.dll
+*.egg
+*.egg-info/
+*.exe
+*.exp
+*.gbak
+*.gpr
+*.ilk
+*.lib
 *.o
 *.obj
-*.a
-*.lib
-*.dll
-*.exe
 *.pdb
-*.ilk
-*.exp
-
-# ─── SECRETS & MACHINE-LOCAL CONFIG ──────────────────────────────────────────
-# re-agent.yaml contains a real LLM API key — NEVER commit it.
-re-agent.yaml
-re-agent.yaml.*
-ghidra-bridge.yaml
-
-# ─── RE-AGENT SESSION / PROGRESS SCRATCH ─────────────────────────────────────
-re-agent-progress.json
-re-agent-progress.tmp
-*.tmp
-*.bak
-
-# ─── ONE-OFF WORKFLOW / CYCLE SCRATCH (kept locally, not published) ──────────
-/batch_decompile_cycle*.json
-/batch_decompile_cycle*.py
-/cycle*_named.json
-/discover_*.py
-/generate_stubs_cycle*.py
-/generate_*_batch.py
-/update_tracker_cycle*.py
-/flesh_out_*.py
-/inject_cycle*.py
-/rebatch_cycle*.py
-/fix_errors.py
-/flesh_batch1.json
-/flesh_batch*.json
-/re-result-*.txt
-
-# Per-function re-agent output dumps (1526 generated .cpp, regenerable; the
-# curated version lives in src/). Keep locally, don't publish the bulk.
-/reports/
-# NOTE: RE-TRACKER.json (1.7 MB) IS published — it documents RE progress.
-
-# ─── PYTHON ──────────────────────────────────────────────────────────────────
-__pycache__/
 *.py[cod]
-*.egg-info/
-*.egg
-dist/
-.venv/
-venv/
+*.rep
+*.swo
+*.swp
+*.tmp
+*~
+.cache/
+.claude/
+.claude/settings.local.json
+.DS_Store
+.env
+.idea/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
-.cache/
-
-# ─── EDITOR / OS ─────────────────────────────────────────────────────────────
+.venv/
 .vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-Thumbs.db
-
-# ─── CLAUDE CODE LOCAL STATE (skills in .claude/commands/ ARE published) ─────
-.claude/settings.local.json
-
-# ─── INSTALLER / MISC LOGS ───────────────────────────────────────────────────
-InstallationLog.txt
-.env
-CLAUDE.md
-.claude/
+/auto-re-agent/
+/batch_decompile_cycle*.json
+/batch_decompile_cycle*.py
+/build/
+/build32/
+/CMakeFiles/
+/cycle*_named.json
+/discover_*.py
+/fix_errors.py
+/flesh_batch*.json
+/flesh_batch1.json
+/flesh_out_*.py
+/GameFiles/
+/generate_*_batch.py
+/generate_stubs_cycle*.py
+/ghidra_exports/
+/ghidra_projects/
+/ghidra-ai-bridge/
+/inject_cycle*.py
+/ps2_symbols/SLUS_201.78
+/rebatch_cycle*.py
+/reports/
+/re-result-*.txt
+/RESSOURCES_FOR_AI/
+/update_tracker_cycle*.py
+__pycache__/
 build_recomp/*.map
-giants_trace.log
-recomp_test/
-GameFiles-VanillaV1/
-vanilla_decompiled/
-undef.txt
+CLAUDE.md
+cmake_install.cmake
+CMakeCache.txt
+CMakeUserPresets.json
+dist/
 extracted/
+GameFiles-VanillaV1/
+ghidra-bridge.yaml
+giants_trace.log
+InstallationLog.txt
+Makefile
+re-agent.yaml
+re-agent.yaml.*
+re-agent-progress.json
+re-agent-progress.tmp
 recomp_*.png
 recomp_logo3d*.png
 recomp_terrain*.png
+recomp_test/
+shots/
+Thumbs.db
+undef.txt
+vanilla_decompiled/
+venv/
