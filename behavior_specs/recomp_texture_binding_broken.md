@@ -102,3 +102,14 @@ bug: the recomp invokes Present wrong (missing srcW/srcH/fade/srcSurface).
 - REMAINING: identify how the original creates the renderer-managed source handle (the texture
   passed to +0xa8). Likely a renderer method not yet mapped, or callback[?] (engine TextureLoader).
   Once known: create loading/intro source via that method, pass to +0xa8 -> visible 2D.
+
+## +0xa8 raw-surface test result (2026-06-19)
++0xa8(obj, srcW, srcH, fade, srcSurface) ACCEPTS a raw IDirectDrawSurface7 and blits it at NATIVE
+size. Verified: passing a 128px tile surface with dims (128,128) drew that tile top-left (black
+count +~6000). But a full 640x480 surface with dims (640,480) did NOT fill the screen (center
+stayed white, no green portrait pixels) — single large textures exceed DX7 texture-size limits and
+the renderer composites TILED images via its MANAGED source format internally (the 0xf8e7510 handle
+is a renderer-managed tiled-image object, not a single texture). +0xa8 takes no position arg, so it
+cannot composite a tile grid itself. CONCLUSION: full-screen 2D via +0xa8 requires the renderer's
+MANAGED tiled-source format (creation method unknown — not +0xd8, not a raw surface). The recomp's
+m_a8(obj) bare-Present call is confirmed wrong (missing srcW/srcH/fade/srcSurface).

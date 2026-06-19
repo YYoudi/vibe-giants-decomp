@@ -243,4 +243,19 @@ void* FirstSurface(TiledImage* img, int* imgW, int* imgH) {
     if (imgH) *imgH = img->imgH;
     return img->tiles[0].surf;
 }
+
+// Load a TGA as a SINGLE full-size D3D7 surface (no tiling) — for the renderer's +0xa8 Present
+// which blits a source surface at its native size. Returns the surface + sets w/h.
+void* LoadFullSurface(void* device, const char* gzp, const char* tgaName, int* outW, int* outH) {
+    auto gz = VanillaVFS::GzpReadFile(gzp, tgaName);
+    if (gz.empty()) return nullptr;
+    VanillaTGA::Image img = VanillaTGA::Parse(gz.data(), gz.size());
+    if (!img.ok || img.pixels.empty()) return nullptr;
+    int bpp = img.bitsPerPixel / 8;
+    void* surf = CreateTexSurf(device, img.width, img.height, img.pixels.data(), bpp);
+    if (outW) *outW = img.width;
+    if (outH) *outH = img.height;
+    if (g_vTrace) { fprintf(g_vTrace, "[BLIT] LoadFullSurface '%s' %dx%d surf=%p\n", tgaName, img.width, img.height, surf); fflush(g_vTrace); }
+    return surf;
+}
 } // namespace VanillaBlit

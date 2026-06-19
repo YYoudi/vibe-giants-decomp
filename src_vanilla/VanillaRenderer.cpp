@@ -30,6 +30,7 @@ extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
 // Canonical 2D tiled blitter (FUN_00433900 port) — see vanilla_2d_render_pipeline.md.
 namespace VanillaBlit { struct TiledImage; TiledImage* Load(void*, const char*, const char*);
     void* FirstSurface(TiledImage*, int* imgW, int* imgH);
+    void* LoadFullSurface(void* device, const char* gzp, const char* tgaName, int* outW, int* outH);
     int GetTileSurfaces(TiledImage*, int* imgW, int* imgH, void** outSurfs, int maxSurfs);
     void Draw(void*, TiledImage*, int, int, float);
     void DrawScaled(void*, TiledImage*, int, int, int, int, float); }
@@ -723,4 +724,10 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     if (m94) m94(g_vRenderer);               // EndScene
     obj[0x42c / 4] = (void*)1;
     if (m_a8) m_a8(g_vRenderer);             // Present
+    // NOTE: +0xa8 OBSERVED signature is (this, srcW, srcH, fade, srcSurface) — the renderer blits
+    // a source surface + presents. A raw D3D7 tile surface draws at native size (verified: a 128px
+    // tile appears top-left), but a full 640x480 surface doesn't fill correctly (texture-size limit
+    // + the renderer composites tiled images via its MANAGED format, created by an unknown method,
+    // not +0xd8). The recomp's m_a8(obj) with no source is wrong; full fix needs the managed source.
+}
 }
