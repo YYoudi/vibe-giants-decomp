@@ -235,7 +235,8 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
     // &GUID1, &GUID2). w/h come from registry globals DAT_00631818/1c (0 in the captured
     // run → renderer reads width/height from registry itself). On NULL, retry 640x480.
     void* device = reinterpret_cast<PFN_GDVSysCreate_9>(g_GDVSysCreate)(
-        __lpCmdLine ? __lpCmdLine : "", hWnd, 0, 0, 32, 0, 1,
+        __lpCmdLine ? __lpCmdLine : "", hWnd, g_videoWidth ? g_videoWidth : 640,
+        g_videoHeight ? g_videoHeight : 480, 32, 0, 1,
         &g_DD_DEVICE_GUID, &g_DD_IID);
     if (!device) {
         // Vanilla retry path: 0x280(640) x 0x1e0(480).
@@ -246,6 +247,14 @@ extern "C" void* VanillaInitRenderer(HWND hWnd) {
     }
     if (g_vTrace) { fprintf(g_vTrace, "[VRENDER] GDVSysCreate(hWnd=%p, bpp=32 win) -> device=%p\n", hWnd, device); fflush(g_vTrace); }
     g_vRenderer = device;   // store as DAT_00654940
+    // The renderer resizes the window to its display mode (e.g. 1024x720); force it back to the
+    // device render size so GDI BitBlt is 1:1 (no StretchBlt/capdiff-resize blur).
+    if (hWnd) {
+        RECT rc = { 0, 0, (LONG)(g_videoWidth ? g_videoWidth : 640), (LONG)(g_videoHeight ? g_videoHeight : 480) };
+        AdjustWindowRectEx(&rc, 0x06CF0000, FALSE, 0x40000);
+        SetWindowPos(hWnd, nullptr, 0, 0, rc.right - rc.left, rc.bottom - rc.top,
+                     SWP_NOMOVE | SWP_NOZORDER);
+    }
     return device;
 }
 

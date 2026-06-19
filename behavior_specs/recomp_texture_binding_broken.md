@@ -151,3 +151,14 @@ created/filtred at low res. pixel-match (within 20) = 78/2000 (4%). delta=0.216.
 Also found: GDVSysCreate RESIZES the window to 1024x720 (display mode) while the device renders
 640x480 — fixed the GDI present to StretchBlt device-RT -> window client (was BitBlt filling only
 the top-left 640x480).
+
+## BLUR FIXED — device must be 640x480 (2026-06-19 MAJOR)
+ROOT CAUSE of the blur: the first GDVSysCreate call passed width=0,height=0 (auto) → the renderer
+created the device at the DISPLAY MODE (1024x720), so the device-RT was 1024x720. The 640x480
+loading image drew into the top-left quarter, then GDI StretchBlt + capdiff resize roundtrip
+BLURRED it (green portraits 2722px spread to 51987px dark-green).
+FIX: pass g_videoWidth/Height (640x480) to GDVSysCreate explicitly → device-RT is 640x480 →
+loading image draws 1:1 → **green portraits render: 525 -> 13013 (ref 15102, 86%)**.
+capdiff compare loading: 0.1719 -> 0.1585 (from ~white 0.5+). Loading screen now RECOGNIZABLE.
+Also tried forcing the window back to 640x480 after GDVSysCreate (SetWindowPos) — no effect
+(renderer re-resizes per frame). Remaining 0.1585 = content fidelity + original-capture timing.
