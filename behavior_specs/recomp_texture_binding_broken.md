@@ -52,3 +52,17 @@ the renderer's presented surface. The original submits draws through the RENDERE
 targets the correct surface internally (DrawIndexedPrimitiveStrided — the observed real path). The
 faithful scene-population + renderer-draw-submission chain is required; device-direct draws are a
 dead end for visible output.
+
+## Bridge attempts (both FAILED — 2026-06-19)
+1. SetRenderTarget(device, obj+0x28c) → 0x80004001 (E_NOTIMPL/DDERR_INVALIDSURFACETYPE).
+   obj+0x28c is not RT-eligible; cannot repoint the device RT to the presented surface.
+2. Lock(obj+0x28c) via surface vtable slot 0x64 → hr=0x0 but lpSurface=0/pitch=0/w=0/h=0.
+   obj+0x28c is not a lockable IDirectDrawSurface7 (slot 0x64 isn't its Lock, or it's not a
+   surface). Direct CPU blit to the presented surface is not viable either.
+## Texture pipeline is HEALTHY (confirmed)
+CreateTexSurf: CreateSurface OK, Lock hr=0x0 (lpSurface valid, lPitch=512=128*4, pixels copied).
+DrawScaled: SetTexture@0x8c hr=0x0, DrawPrimitive@0x64 hr=0x0, fade alpha ramps 0x27→0xff.
+The texture is created, populated, bound, and drawn — all S_OK. The ONLY break is the device-RT
+vs presented-surface mismatch. => Device-direct rendering cannot reach the screen in this renderer.
+The faithful scene-population + renderer-draw-submission chain (callback[7]/+0xb4/+0x7370) is the
+only path to visible output.

@@ -70,7 +70,9 @@ static void* CreateTexSurf(void* device, int w, int h, const uint8_t* srcBGR, in
     if (hr != 0 || !surf) return nullptr;
     // Lock + copy srcBGR → 32bit BGRX.
     DDSURFACEDESC2 lk = {}; lk.dwSize = sizeof(lk);
-    if (((PFN_Lock)vt(surf)[0x64/4])(surf, nullptr, &lk, 0, nullptr) == 0 && lk.lpSurface) {
+    long hrL = ((PFN_Lock)vt(surf)[0x64/4])(surf, nullptr, &lk, 0, nullptr);
+    if (g_vTrace) { static int s_lk=0; if(s_lk<2){ fprintf(g_vTrace,"[BLIT-CreateTexSurf] %dx%d Lock hr=0x%lx lpSurface=%p lPitch=%d\n",w,h,(unsigned long)hrL,lk.lpSurface,(int)lk.lPitch); fflush(g_vTrace); s_lk++; } }
+    if (hrL == 0 && lk.lpSurface) {
         uint8_t* dst = (uint8_t*)lk.lpSurface;
         for (int y = 0; y < h; y++) {
             uint8_t* drow = dst + y * lk.lPitch;
