@@ -26,10 +26,14 @@ see `orig_logo3d_model.md`) into the recomp via the proven D3D7 3D pipeline. Dri
   still blocked by the flaky game launch under the proxy.
 
 ## Next (focused)
-1. Fix the texture-sampling-white bug: investigate DDSCAPS2_TEXTUREMANAGE upload, the Lock flags
-   (try DDLOCK_WAIT / write-only), whether SetTexture@0x8c actually sticks (log its HRESULT), and
-   whether the menu bracket's BeginScene/EndScene resets texture state. The terrain path had
-   `tex_variety` in an earlier `-scene3d` test — re-establish that first to isolate.
+1. Fix the texture-sampling-white bug. Diagnosed so far: texture surface created, `Lock hr=0x0`
+   (valid surface, correct pitch, pixels copied), AND `SetTexture@0x8c hr=0x0` (binds OK) — yet the
+   sampler returns white everywhere (lit faces render white, unlit faces render dark-mesh). Tried
+   DDSCAPS2_TEXTUREMANAGE (79% white) vs DDSCAPS_SYSTEMMEMORY (96% white, worse) — managed is
+   better. UVs span U[-1.67..2.67]/V[-0.06..1.45] (outside [0,1], but WRAP should tile, not white).
+   Root cause NOT found by reasoning — needs RenderDoc surface inspection or comparing against the
+   terrain path that reported tex_variety=3405 in an earlier `-scene3d` test (re-establish that to
+   isolate what's different).
 2. Capture the original's per-frame SetTransform/SetTexture/DrawPrimitive recipe (proxy or Frida
-   device-vtable hook) for the faithful camera + material, then switch COLOROP to MODULATE and
-   tune to capdiff-PASS vs `orig_menu_3d.png`.
+   device-vtable hook) for the faithful camera + material, then tune to capdiff-PASS vs
+   `orig_menu_3d.png`.
