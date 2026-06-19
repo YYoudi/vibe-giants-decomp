@@ -66,3 +66,21 @@ The texture is created, populated, bound, and drawn — all S_OK. The ONLY break
 vs presented-surface mismatch. => Device-direct rendering cannot reach the screen in this renderer.
 The faithful scene-population + renderer-draw-submission chain (callback[7]/+0xb4/+0x7370) is the
 only path to visible output.
+
+## Frame-recipe clarification (2026-06-19, Frida on original)
+- **Intros render via DEVICE draws, NOT renderer front-table methods.** frida_intro_recipe.js hooked
+  renderer+0x8c/+0x90/+0x98/+0x9c/+0xa0/+0xa8 during intros (boot, no clicks) — NONE fired during
+  the intro phase. So intros (and the menu 2D overlay) drive the D3D7 device directly (SetTexture/
+  DrawPrimitive), same as observed. The recomp's VanillaBlit device-direct approach is correct in
+  PRINCIPLE.
+- **Present = renderer+0xa8 confirmed** (frida_present_path.js: fires at ~12.8s during intro2).
+  GetRenderTarget is NOT called per-frame by the original (can't observe device-RT passively).
+- The canonical frame order (DX7_METHOD_MAP): (+0x8c PushVP/SetRT) → (+0x98 Clear) → (+0x90
+  BeginScene) → (+0x9c 2D Blt) → (+0xa8 Present). +0x8c MUST precede BeginScene.
+- **+0x8c (PushViewport/SetRenderTarget) is the missing RT bind.** The recomp never calls it →
+  device-RT stays != presented surface. Attempting (+0x8c)(obj, presented, 0) AFTER BeginScene
+  CRASHED (ordering violation — +0x8c must be before BeginScene, and the correct surface+flags are
+  unknown). SetRenderTarget(device,obj+0x28c) rejected; obj+0x28c not lockable.
+- NEXT: call renderer+0x8c BEFORE BeginScene with the correct surface (the device backbuffer, or
+  the surface Present flips) to bind the RT so device draws reach the presented surface. Requires
+  observing the original's +0x8c call at INIT (before t=2s) to capture surf+flags args.
