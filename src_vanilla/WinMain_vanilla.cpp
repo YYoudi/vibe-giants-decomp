@@ -39,7 +39,7 @@ extern "C" void VanillaRenderer_Shutdown(void);   // release DX7 device on exit
 // Declared as named globals — will be populated as functions are ported.
 FILE* g_vTrace = nullptr;
 const char* __lpCmdLine = nullptr;
-static HWND  g_vHWnd = nullptr;
+HWND  g_vHWnd = nullptr;   // non-static: VanillaRenderer's GDI present needs the window handle
 static HINSTANCE g_vHInst = nullptr;
 static bool g_vRunning = true;
 

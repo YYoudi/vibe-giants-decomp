@@ -113,3 +113,17 @@ is a renderer-managed tiled-image object, not a single texture). +0xa8 takes no 
 cannot composite a tile grid itself. CONCLUSION: full-screen 2D via +0xa8 requires the renderer's
 MANAGED tiled-source format (creation method unknown — not +0xd8, not a raw surface). The recomp's
 m_a8(obj) bare-Present call is confirmed wrong (missing srcW/srcH/fade/srcSurface).
+
+## GDI present = VISIBLE CONTENT (2026-06-19 breakthrough)
+The renderer's +0xa8 Present is broken (needs renderer-managed source). BYPASS: GDI-present the
+device render-target (where VanillaBlit D3D draws land) onto the window — VanillaGdiPresent():
+GetDC(device-RT) [surface vtable GetDC@0x44] -> BitBlt(RT -> window DC) -> ReleaseDC@0x68.
+This is the PROVEN path (commit 495b269) restored. RESULT: the LOADING screen now renders REAL
+content (was ~90% white): dark bg (13,16,22) + 116 green portrait pixels (was 1). First non-white
+recomp render. recomp-loading vs giants_loading.tga ref = 0.2162 (was ~white) — needs fade/scaling
+refinement to PASS (<0.04). Applied to BOOT_INTRO + BOOT_LOADING.
+- intro1 capdiff capture FAILS via appsnap (timing during the 130-tile intro animation — render
+  works per trace, capture window-matching issue). To verify.
+- NOTE: GDI present is a VISIBILITY BRIDGE, not the faithful renderer Present path (anti-dérive:
+  the original uses the renderer's own Present with a managed source). Use it to get visible 2D
+  while the managed-source creation mechanism is reverse-engineered.
