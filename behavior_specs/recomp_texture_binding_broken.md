@@ -195,3 +195,15 @@ incurs when displaying at 640x480 (so 0.0588 vs the 1600x1200 source is expected
 compare recomp vs original-both-downscaled, but the original intro appsnap capture is flaky).
 Both the TGA V-flip fix AND the device-640 fix apply to intros (same pipeline).
 STATUS: loading PASSES (0.0108 vs true tga); intro1 near-PASS (0.0588). Two 2D phases reproduced.
+
+## 3D via GDI present — infrastructure works, but 3D pipeline needs lighting (2026-06-19)
+Extended VanillaGdiPresent to the menu/scene3d path (was using broken m_a8). The device-RT -saveframe
+now captures the 3D frame cleanly. RESULT: the scene3d test triangle (XYZ|DIFFUSE FVF 0x042) draws
+with hr=S_OK but renders BLACK. ROOT CAUSE: DX7 lighting is always-on for XYZ vertices; the test
+triangle has NO normals (FVF 0x042 = XYZ|DIFFUSE, no NORMAL) so the lighting pipeline can't compute
+a lit color -> black. (Earlier "BRIGHT=2346" 3D claims were false — Rule 11: they were measured via
+the broken m_a8/appsnap path, not clean device-RT.)
+NEXT (3D): either add normals (FVF XYZ|NORMAL|...) so the directional light works, OR bake vertex
+colors and disable lighting (D3DRENDERSTATE_LIGHTING), OR use the observed DrawIndexedPrimitiveStrided
+path with proper vertex format. The 2D path (XYZRHW, no lighting) is proven; 3D needs the lighting
+sorted. GDI present works for 3D (device-RT draws reach the screen) once the 3D content is lit.

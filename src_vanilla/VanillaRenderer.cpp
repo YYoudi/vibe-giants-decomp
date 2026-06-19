@@ -621,11 +621,11 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 long hr = dp ? dp(wrapper, 4, 0x042, tri, 3, 0) : -1;
                 if (g_vTrace) { static int ln=0; if(ln<2){fprintf(g_vTrace,"[TEST3D] renderer-bracket + SetTransform + DrawPrimitive hr=0x%lx\n",(unsigned long)hr);fflush(g_vTrace);ln++;} }
                 if (m94) m94(g_vRenderer);  // EndScene
-                // Present
-                typedef void (__cdecl *PFN_Cdecl0)(void*);
-                PFN_Cdecl0 m_a8 = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4];
                 obj[0x42c / 4] = (void*)1;
-                if (m_a8t) m_a8(g_vRenderer);
+                // -saveframe (scene3d returns early, so save here).
+                if (g_bootCfg.saveFrame[0]) { static bool s=false; if(!s){ VanillaSaveDeviceRT(wrapper, g_bootCfg.saveFrame, (int)(g_videoWidth?g_videoWidth:640), (int)(g_videoHeight?g_videoHeight:480)); s=true; } }
+                // Present via GDI (device-RT -> window); the renderer's +0xa8 is broken (white).
+                { extern void* g_vHWnd; if (g_vHWnd) VanillaGdiPresent(wrapper, g_vHWnd, (int)(g_videoWidth?g_videoWidth:640), (int)(g_videoHeight?g_videoHeight:480), g_vTrace); }
                 return;
             }
         }
