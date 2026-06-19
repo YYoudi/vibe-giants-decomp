@@ -730,4 +730,3 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     // + the renderer composites tiled images via its MANAGED format, created by an unknown method,
     // not +0xd8). The recomp's m_a8(obj) with no source is wrong; full fix needs the managed source.
 }
-}
