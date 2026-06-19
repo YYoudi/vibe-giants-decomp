@@ -162,3 +162,15 @@ loading image draws 1:1 → **green portraits render: 525 -> 13013 (ref 15102, 8
 capdiff compare loading: 0.1719 -> 0.1585 (from ~white 0.5+). Loading screen now RECOGNIZABLE.
 Also tried forcing the window back to 640x480 after GDVSysCreate (SetWindowPos) — no effect
 (renderer re-resizes per frame). Remaining 0.1585 = content fidelity + original-capture timing.
+
+## ORIGINAL loading capture is BROKEN (black) — recomp loading IS reproduced (2026-06-19)
+The capdiff original-loading reference (cmp_orig_loading.png) is 94% BLACK (288640/307200 px) — it
+captures a BLACK frame, NOT the loading screen (timing miss: the loading screen is transient ~1.8s
+after intros; the fixed capture time lands on a black frame before/after). So capdiff "compare
+loading" = 0.1585 is INVALID (recomp's real loading image vs original's black screen).
+The RECOMP loading IS reproduced: vs the TRUE giants_loading.tga (extracted), delta=0.2083 with
+green portraits at 13013/15102 (86%). The loading screen content is substantially rendered. The
+remaining ~0.20 vs the true tga = window chrome captured by appsnap (~5%) + 14% missing green +
+minor color fidelity.
+NEXT (tooling): fix capdiff's original-loading capture to catch the actual loading screen (event-
+driven, or correct timing) for a valid comparison.
