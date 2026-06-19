@@ -1,34 +1,54 @@
-# RECOMP TEXTURE BINDING BROKEN — silent render regression (2026-06-19, Rule 11 catch)
+# RECOMP WHITE-RENDER ROOT CAUSE — draws succeed but target a NON-PRESENTED surface (2026-06-19)
 
-## Symptom
-EVERY render phase is now ~90% white with a consistent near-white-blue RGB(241,243,249):
-- intro1 capdiff = **0.5139 FAIL** (was 0.0006 PASS — REGRESSION). recomp intro1 = white.
-- loading (-at loading, frozen) = white center. giants_loading.tga loaded (trace: 5x4 tiles) but
-  NOT visible. Original loading screen = mostly BLACK + green character portraits.
-- menu = white (known).
+## Verified facts (HRESULT logging in VanillaBlit::DrawScaled)
+giants_loading.tga, tile0, during fade-in:
+  hrSetTex (SetTexture@0x8c)   = 0x0  (S_OK)  ← texture BOUND successfully
+  hrDrawPrim (DrawPrimitive@0x64) = 0x0  (S_OK)  ← quad DRAWN successfully
+  surf = 0x0eefbf30 (valid IDirectDrawSurface7*)
+  diff alpha ramps 0x27→0xff (fade-in correct)
+=> SetTexture is NOT broken. The textured quad draws SUCCEED. Yet the visible frame is white.
 
-## Root cause (the FUNDAMENTAL blocker, unifies 2D + 3D white-render)
-Textures LOAD (VanillaBlit::Load succeeds, TGA decoded into 128px D3D7 tiles) but they do NOT
-appear on the presented DX7 surface. The recomp draws textured quads (DrawScaled / DrawPrimitive)
-but the result is the device's default near-white-blue surface, NOT the texture.
-=> **IDirect3DDevice7::SetTexture (vtable 0x8c) is not binding the tile surfaces** (or the draw
-targets the wrong surface / wrong texture stage). Same failure mode as the 3D white-render.
-The (241,243,249) color = the untextured-quad default (vertex/material color modulated with no
-texture = light fill).
+## TRUE root cause (unifies 2D + 3D white-render)
+The D3D7 device draws (SetTexture/DrawPrimitive via the wrapper@obj+0x294) render to the DEVICE's
+current render target. But the renderer's Present method (obj+0xa8) presents a DIFFERENT surface
+(obj+0x28c, the renderer's internal managed surface). So the device draws NEVER reach the surface
+that gets flipped to screen → the frame shows the presented surface's default (white/near-white-blue
+RGB 241,243,249). Confirmed by VanillaTestSurfaceVisible (device-RT vs obj+0x28c mismatch).
+This is why intros (0.0006→0.5139), loading, AND 3D all render white: one surface-mismatch root cause.
 
-## How the regression happened
-VanillaBlit (the faithful port of the canonical 2D tiled blitter FUN_00433900, driving the D3D7
-device) REPLACED the earlier GDI BitBlt 2D path. The GDI path produced visually-correct intros
-(capdiff PASS) but was not the faithful renderer path. VanillaBlit IS the faithful path but its
-texture binding doesn't reach the visible surface → white. Net: visual correctness was traded for
-a faithful-but-broken path, with NO continuous verification catching the regression.
-
-## Rule 11 lesson
-"Build green ≠ faithful." The recomp built and ran fine while silently regressing intro rendering
-from PASS to 0.51 FAIL. Continuous per-cycle capdiff (at least intro1) is required to catch this.
+## Why GDI intros USED to pass
+The earlier GDI BitBlt path drew directly to the presented surface via GetDC (the right surface),
+so intros rendered correctly (capdiff PASS). VanillaBlit (faithful D3D port) draws to the device RT
+(wrong surface) → white. Visual correctness was traded for a faithful-but-mis-targeted path.
 
 ## Fix direction (next)
-Make SetTexture@0x8c actually bind the D3D7 tile surface (IDirectDrawSurface7*) so textured quads
-sample the texture. Verify the texture-stage COLOROP (SetTextureStageState@0x94 state 6 = MODULATE)
-and that the draw targets the SAME surface the renderer Presents (+0xa8). Once textures bind,
-2D intros/loading AND 3D should gain visible content together.
+Make the device draws land on the presented surface. Options:
+ (a) Set the device render target to obj+0x28c (SetRenderTarget@device-vtable) before the texture
+     draws, so SetTexture/DrawPrimitive write to the surface the renderer Presents.
+ (b) Discover which surface the renderer's m90/m94 bracket targets and draw there.
+ (c) Have the renderer's OWN per-frame (+0x7370) do the draws (it targets the right surface
+     internally) — requires the faithful scene-population chain.
+ (a) is the smallest verifiable fix: if the device RT = obj+0x28c, the loading texture should
+ appear → intro1/loading capdiff should recover toward PASS.
+
+## Lesson (Rule 11)
+The recomp built+ran fine while silently rendering white everywhere. Continuous per-cycle capdiff
+(≥ intro1) is mandatory to catch render regressions.
+
+## CONFIRMED (2026-06-19, RTDIAG in VanillaRenderer loading-draw)
+After the renderer's m90 (BeginScene+Clear), the D3D7 device's current render target is NOT the
+surface the renderer Presents:
+  device GetRenderTarget = 0x0c47ab90   (where SetTexture/DrawPrimitive draws land)
+  obj+0x28c              = 0x0c47ab70   (surface the renderer's m_a8 Present flips) — 0x20 bytes
+                                        apart (a back/front-buffer pair or distinct surfaces)
+  match = 0 (different)
+=> device draws go to 0x0c47ab90; the presented surface 0x0c47ab70 is never drawn to → white frame.
+Forcing SetRenderTarget(device, obj+0x28c) is REJECTED (0x80004001 DDERR_INVALIDSURFACETYPE) —
+obj+0x28c is not RT-eligible. So the fix is NOT "repoint the device RT".
+## Real fix path
+The device-direct draw approach (VanillaBlit calling device SetTexture/DrawPrimitive) cannot reach
+the renderer's presented surface. The original submits draws through the RENDERER's own path
+(callback[7] SceneBegin/DrawTerrain, method +0xb4 entity/texture thunk, +0x7370 scene-walk) which
+targets the correct surface internally (DrawIndexedPrimitiveStrided — the observed real path). The
+faithful scene-population + renderer-draw-submission chain is required; device-direct draws are a
+dead end for visible output.

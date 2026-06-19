@@ -206,7 +206,7 @@ void DrawScaled(void* device, TiledImage* img, int dstX, int dstY, int dstW, int
         for (int tx = 0; tx < img->tilesX; tx++) {
             Tile& t = img->tiles[ty * img->tilesX + tx];
             if (!t.surf) continue;
-            setTex(device, 0, t.surf);
+            long hrT = setTex(device, 0, t.surf);
             float x0 = dstX + (tx * img->tileW) * sx;
             float y0 = dstY + (ty * img->tileH) * sy;
             float x1 = x0 + t.sw * sx, y1 = y0 + t.sh * sy;
@@ -216,7 +216,8 @@ void DrawScaled(void* device, TiledImage* img, int dstX, int dstY, int dstW, int
                 { x1, y1, 0.0f, 1.0f, diff, 1.0f, 1.0f },
                 { x0, y1, 0.0f, 1.0f, diff, 0.0f, 1.0f },
             };
-            dp(device, D3DPT_TRIANGLEFAN, 0x144, v, 4, 0);
+            long hrD = dp(device, D3DPT_TRIANGLEFAN, 0x144, v, 4, 0);
+            if (g_vTrace && ty == 0 && tx == 0) { fprintf(g_vTrace, "[BLIT-DrawScaled] tile0 surf=%p hrSetTex=0x%lx hrDrawPrim=0x%lx diff=0x%x\n", t.surf, (unsigned long)hrT, (unsigned long)hrD, diff); fflush(g_vTrace); }
         }
     }
     if (sr) sr(device, D3DRS_ALPHABLENDENABLE, 0);
