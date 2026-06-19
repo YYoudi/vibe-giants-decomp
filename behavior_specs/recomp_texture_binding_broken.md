@@ -218,3 +218,14 @@ range. So the 3D draw produces NOTHING on the device-RT despite hr=S_OK — NOT 
 The XYZ (transformable) path isn't producing visible output (the XYZRHW 2D path works fine via the
 same device+GDI present). Remaining suspects: SetTransform not engaging the transform pipeline, or
 the XYZ DrawPrimitive silently no-ops. This is a separate 3D-pipeline debug; the 2D path is proven.
+
+## ✅ 3D TRANSFORM PIPELINE PROVEN (2026-06-19) — ZENABLE was the blocker
+With ZENABLE OFF (D3DRENDERSTATE_ZENABLE=7=0), the scene3d test triangle RENDERS: 21601 bright px,
+all 3 colored verts visible (R-dominant 1389, G 1356, B 1421), centered on screen (x 216-420,
+center 320) = a proper PERSPECTIVE 3D triangle. The 3D transform pipeline WORKS (device
+SetTransform VIEW=2/PROJ=3 + XYZ|NORMAL|DIFFUSE FVF 0x52 DrawPrimitive + GDI present). ROOT CAUSE of
+the prior black: ZENABLE on (7=1) but the depth buffer wasn't cleared → the triangle's z (~0.995)
+failed the depth test against stale depth → discarded. FIX: ZENABLE off (or clear the depth buffer).
+Both the 2D (XYZRHW, z=0 — passes depth) and now 3D (XYZ — needs ZENABLE off without depth-clear)
+pipelines produce visible output via GDI present. NEXT: clear the depth buffer (so proper 3D
+occlusion works with ZENABLE on) + apply the observed camera to render the real island/logo scene.

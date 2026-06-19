@@ -605,7 +605,7 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 PFN_Cdecl0 m_a8t = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4]; // renderer Present
                 if (m90) m90(g_vRenderer);  // BeginScene+Clear on the CORRECT surface
                 if (sx) { sx(wrapper, 256, world); sx(wrapper, 2, view); sx(wrapper, 3, proj); }
-                if (sr) { sr(wrapper, 7, 1); sr(wrapper, 22, 1); sr(wrapper, 137, 0); sr(wrapper, 139, 0xFFFFFFFF); }  // ZENABLE, CULL_NONE(22), LIGHTING OFF(137), AMBIENT(139)
+                if (sr) { sr(wrapper, 7, 0); sr(wrapper, 22, 1); sr(wrapper, 137, 0); sr(wrapper, 139, 0xFFFFFFFF); }  // ZENABLE OFF(7=0), CULL_NONE(22), LIGHTING OFF(137), AMBIENT(139)
                 // DX7 XYZ vertices ALWAYS go through lighting → set a light so the triangle isn't black.
                 typedef long (__stdcall *PFN_SetLight)(void*, uint32_t, const void*);
                 typedef long (__stdcall *PFN_LightEnable)(void*, uint32_t, uint32_t);
