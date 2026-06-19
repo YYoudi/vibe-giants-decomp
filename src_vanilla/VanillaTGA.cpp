@@ -42,6 +42,16 @@ Image Parse(const uint8_t* data, size_t len) {
 
     size_t pixBytes = (size_t)img.width * img.height * bpp;
     img.pixels.resize(pixBytes);
+    if (g_vTrace) {  // one-shot: dump raw VFS header + pixel-start bytes to verify the input data
+        static int dumpN = 0;
+        if (dumpN < 4) { dumpN++;
+            fprintf(g_vTrace, "[VTGA] hdr: idLen=%u cmapType=%u type=%u w=%u h=%u bpp=%u desc=0x%02x len=%zu pixBytes=%zu pos=%zu\n",
+                    idLen, colorMapType, img.imageType, img.width, img.height, img.bitsPerPixel, descriptor, len, pixBytes, pos);
+            fprintf(g_vTrace, "[VTGA] raw@0:"); for (int i=0;i<18;i++) fprintf(g_vTrace," %02x", data[i]); fprintf(g_vTrace,"\n");
+            if (pos+8 <= len) { fprintf(g_vTrace,"[VTGA] raw@pos(%zu):", pos); for (int i=0;i<8;i++) fprintf(g_vTrace," %02x", data[pos+i]); fprintf(g_vTrace,"\n"); }
+            fflush(g_vTrace);
+        }
+    }
 
     if (img.imageType == 2) {
         // uncompressed

@@ -25,15 +25,22 @@ see `orig_logo3d_model.md`) into the recomp via the proven D3D7 3D pipeline. Dri
   faithful camera/transforms come from the per-frame render-recipe capture (proxy D3D7 trace),
   still blocked by the flaky game launch under the proxy.
 
+## ROOT CAUSE FOUND (2026-06-19) — it's a VFS bug, NOT D3D texturing
+The texture samples white because `VanillaVFS::GzpReadFile("xx_giants_logo_3d.gzp",
+"Giants_logo_512.tga")` returns a buffer of the CORRECT size (393260 = 18 + 512*256*3) with the
+CORRECT TGA header (512x256 type2 24bpp) but **ALL-ZERO pixel data**. Confirmed by trace:
+`VFSraw Giants_logo_512.tga len=393260 hdr: 00 00 02 ... 00 02 00 01 18 00` (512x256 ✓) yet pixels
+zero; `copy center(256,128): src=000000...`, `READBACK: 000000...`.
+Python `tools/gzp_extract.py` decompresses the SAME entry correctly (metallic logo PNG). So the LZ
+data is valid — the recomp `VanillaVFS` LZ decompressor (port of Amazed's fileutils.py) produces
+zeros for THIS entry (compr=1, compSize=226336 uncmpSize=393260). Other entries (intro_sea 256x256)
+decompress fine (`raw@pos: 68 47 3e ...`). Entry-specific LZ bug.
+The D3D path is INNOCENT: SetTexture hr=0x0, Lock hr=0x0, surface created + pixels copied (just
+zero pixels). Fix = `VanillaVFS::GzpReadFile` (src_vanilla/VanillaVFS.cpp) — diff its LZ against
+the Python canonical (tools/gzp_extract.py lz_decompress) for this entry.
+
 ## Next (focused)
-1. Fix the texture-sampling-white bug. Diagnosed so far: texture surface created, `Lock hr=0x0`
-   (valid surface, correct pitch, pixels copied), AND `SetTexture@0x8c hr=0x0` (binds OK) — yet the
-   sampler returns white everywhere (lit faces render white, unlit faces render dark-mesh). Tried
-   DDSCAPS2_TEXTUREMANAGE (79% white) vs DDSCAPS_SYSTEMMEMORY (96% white, worse) — managed is
-   better. UVs span U[-1.67..2.67]/V[-0.06..1.45] (outside [0,1], but WRAP should tile, not white).
-   Root cause NOT found by reasoning — needs RenderDoc surface inspection or comparing against the
-   terrain path that reported tex_variety=3405 in an earlier `-scene3d` test (re-establish that to
-   isolate what's different).
-2. Capture the original's per-frame SetTransform/SetTexture/DrawPrimitive recipe (proxy or Frida
-   device-vtable hook) for the faithful camera + material, then tune to capdiff-PASS vs
-   `orig_menu_3d.png`.
+1. **Fix VanillaVFS LZ for Giants_logo_512** (diff vs Python canonical) → logo texture non-zero →
+   3D logo renders with its metallic texture.
+2. Capture the original's per-frame render recipe (proxy/Frida) for the faithful camera, tune to
+   capdiff-PASS vs `orig_menu_3d.png`.

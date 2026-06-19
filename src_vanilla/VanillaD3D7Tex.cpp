@@ -47,6 +47,17 @@ extern "C" void VanillaD3D7_BindTga(void* device, const char* gzpPath, const cha
     if (!*pCacheSurf && !*pTried) {
         *pTried = 1;
         auto gz = VanillaVFS::GzpReadFile(gzpPath, tgaName);
+        if (g_vTrace && gz.size() > 18 && (strstr(tgaName, "logo") || strstr(tgaName, "Logo"))) {
+            static int lz = 0;
+            if (lz < 1) { lz++;
+                const uint8_t* r = gz.data();
+                fprintf(g_vTrace, "[D3D7TEX] VFSraw %s len=%zu hdr:", tgaName, gz.size());
+                for (int i=0;i<18;i++) fprintf(g_vTrace," %02x", r[i]);
+                size_t c = 18 + (gz.size()>18? (size_t)(256*(int)gz.size()/1024)% (gz.size()-18): 0); // approx mid
+                fprintf(g_vTrace, " mid:"); for (size_t i=c;i<c+8 && i<gz.size();i++) fprintf(g_vTrace," %02x", r[i]);
+                fprintf(g_vTrace,"\n"); fflush(g_vTrace);
+            }
+        }
         VanillaTGA::Image img = gz.empty() ? VanillaTGA::Image{} : VanillaTGA::Parse(gz.data(), gz.size());
         if (!img.ok || img.pixels.empty()) {
             if (g_vTrace) { fprintf(g_vTrace, "[D3D7TEX] %s load FAILED ok=%d\n", tgaName, (int)img.ok); fflush(g_vTrace); }
@@ -98,6 +109,16 @@ extern "C" void VanillaD3D7_BindTga(void* device, const char* gzpPath, const cha
                     drow[x*4+2] = srow[x*srcBpp+2]; drow[x*4+3] = 0xFF;
                 }
             }
+            if (g_vTrace) {  // dump center pixels (where the logo is) src + dst BEFORE unlock
+                uint32_t cx = img.width/2, cy = img.height/2;
+                const uint8_t* s = src + (cy*img.width + cx)*srcBpp;
+                uint8_t* d = dst + cy*lk.lPitch + cx*4;
+                fprintf(g_vTrace, "[D3D7TEX] %s copy center(%u,%u): src=", tgaName, cx, cy);
+                for (int i = 0; i < 6; i++) fprintf(g_vTrace, " %02x%02x%02x", s[i*srcBpp+2], s[i*srcBpp+1], s[i*srcBpp]);
+                fprintf(g_vTrace, " dst=");
+                for (int i = 0; i < 6; i++) fprintf(g_vTrace, " %02x%02x%02x", d[i*4+2], d[i*4+1], d[i*4]);
+                fprintf(g_vTrace, "\n"); fflush(g_vTrace);
+            }
             ((PFN_Unlock)vt(texSurf)[0x80/4])(texSurf, nullptr);
         }
         *pCacheSurf = texSurf;
@@ -105,6 +126,20 @@ extern "C" void VanillaD3D7_BindTga(void* device, const char* gzpPath, const cha
     if (*pCacheSurf) {
         long hr = ((PFN_SetTex)dvt[0x8c/4])(device, 0, *pCacheSurf);
         if (g_vTrace) { fprintf(g_vTrace, "[D3D7TEX] SetTexture(stage0, %p) hr=0x%lx\n", *pCacheSurf, (unsigned long)hr); fflush(g_vTrace); }
+    }
+    // ONE-SHOT readback: re-Lock the texture + dump first 8 pixels to PROVE the surface has data.
+    static int rbOnce = 0;
+    if (*pCacheSurf && rbOnce < 1 && g_vTrace) {
+        rbOnce++;
+        DDSURFACEDESC2 rb = {}; rb.dwSize = sizeof(rb);
+        long lh = ((PFN_Lock)vt(*pCacheSurf)[0x64/4])(*pCacheSurf, nullptr, &rb, 0, nullptr);
+        if (lh == 0 && rb.lpSurface) {
+            uint8_t* s = (uint8_t*)rb.lpSurface;
+            fprintf(g_vTrace, "[D3D7TEX] READBACK %s pitch=%d first px:", tgaName, (int)rb.lPitch);
+            for (int i = 0; i < 8; i++) fprintf(g_vTrace, " %02x%02x%02x", s[i*4+2], s[i*4+1], s[i*4+0]);
+            fprintf(g_vTrace, "\n"); fflush(g_vTrace);
+        }
+        ((PFN_Unlock)vt(*pCacheSurf)[0x80/4])(*pCacheSurf, nullptr);
     }
 }
 
