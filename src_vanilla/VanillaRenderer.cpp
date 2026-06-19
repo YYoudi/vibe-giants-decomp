@@ -11,6 +11,7 @@
 #include "VanillaVFS.h"
 #include "VanillaTGA.h"
 #include "VanillaBoot.h"   // g_bootCfg (phase-jump flags)
+#include "VanillaLogo.h"   // VanillaLogo_Draw (-logo3d: menu 3D logo model render)
 #include "VanillaGBS.h"    // 3D logo mesh parser
 #include "VanillaVFSCallbacks.h"  // callbacks 15/16/17 (vanilla FUN_006222d0/00621fe0/00621e50)
 
@@ -527,6 +528,13 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
         PFN_Cdecl1i m98 = (PFN_Cdecl1i)(uintptr_t)obj[0x98 / 4];
         if (m98) m98(g_vRenderer, 0xFF31243b);   // dark blue-gray sky
         if (m90) m90(g_vRenderer);
+        // ── -logo3d: render the menu 3D logo MODEL (Giants_logo_3D.gbs + Giants_logo_512.tga)
+        //    through the D3D7 3D pipeline. Observed asset (orig_logo3d_model.md): the menu
+        //    centerpiece is this 3D model, NOT a flat 2D blit. Diagnostic path (camera iterated
+        //    via capdiff) — replaces the terrain + 2D-blit paths for this flag.
+        if (g_bootCfg.logo3d) {
+            VanillaLogo_Draw();
+        } else {
         // ── 3D island terrain through the D3D7 transform pipeline (perspective + lit + textured).
         VanillaTerrain_DrawX("intro_island.gti", "Bin\\w_intro_island.gzp");
         // ── Menu logo = Giants_logo_512.tga (a 2D image, NOT the xx_giants_logo_3d 3D mesh).
@@ -552,6 +560,7 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 VanillaBlit::DrawScaled(wrapper, s_logoImg, lx, ly, lw, lh, 1.0f);
             }
         }
+        }  // end else (non-logo3d: terrain + 2D logo blit)
         // ── Bitmap-font text (FUN_0044a9c0 port) — GiantFont_Eng via tx_lev1.gzp. Test
         //    render of the profile-select prompt (the menu's first text). Cell layout
         //    refined from the measured font sheet (see [FONT] trace).
