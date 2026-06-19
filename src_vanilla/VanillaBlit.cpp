@@ -224,4 +224,23 @@ void DrawScaled(void* device, TiledImage* img, int dstX, int dstY, int dstW, int
     }
     if (sr) sr(device, D3DRS_ALPHABLENDENABLE, 0);
 }
+
+// Return the full image dims + a packed array of the tile surface pointers (the format the
+// renderer's +0xa8 Present consumes: a base pointer to consecutive surface ptrs + srcW/srcH).
+// outSurfs is filled with the tile IDirectDrawSurface7* pointers; returns the count.
+int GetTileSurfaces(TiledImage* img, int* imgW, int* imgH, void** outSurfs, int maxSurfs) {
+    if (!img || !img->ok) return 0;
+    if (imgW) *imgW = img->imgW;
+    if (imgH) *imgH = img->imgH;
+    int n = (int)img->tiles.size();
+    if (n > maxSurfs) n = maxSurfs;
+    for (int i = 0; i < n; i++) outSurfs[i] = img->tiles[i].surf;
+    return n;
+}
+void* FirstSurface(TiledImage* img, int* imgW, int* imgH) {
+    if (!img || !img->ok || img->tiles.empty()) return nullptr;
+    if (imgW) *imgW = img->imgW;
+    if (imgH) *imgH = img->imgH;
+    return img->tiles[0].surf;
+}
 } // namespace VanillaBlit

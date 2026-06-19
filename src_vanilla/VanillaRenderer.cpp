@@ -29,6 +29,8 @@ extern "C" int VanillaRunFrame(int frameState);
 extern "C" void VanillaD3D7_BindIntroGrnd(void* device);
 // Canonical 2D tiled blitter (FUN_00433900 port) — see vanilla_2d_render_pipeline.md.
 namespace VanillaBlit { struct TiledImage; TiledImage* Load(void*, const char*, const char*);
+    void* FirstSurface(TiledImage*, int* imgW, int* imgH);
+    int GetTileSurfaces(TiledImage*, int* imgW, int* imgH, void** outSurfs, int maxSurfs);
     void Draw(void*, TiledImage*, int, int, float);
     void DrawScaled(void*, TiledImage*, int, int, int, int, float); }
 // Bitmap font (GiantFont_Eng) — FUN_0044a9c0 port; see menu_system_code.md.
