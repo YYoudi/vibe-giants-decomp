@@ -281,6 +281,22 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nCmdShow
     // 0 (menu/dialog path) and the scene-walk renders no 3D. This tests whether state=6 is the gate.
     g_SceneState_631568 = 6;
 
+    // EXPERIMENT: push the OBSERVED projection matrix to the renderer via method +0x20
+    // (SetCameraProjection). Observed on the original at the menu via Frida (frida_projmatrix.js):
+    // fovY=60°, aspect 4/3, znear~1 — standard LH perspective. The recomp never sets it, so the
+    // renderer has no projection. This tests whether projection was the missing piece.
+    extern void* g_vRenderer;
+    if (g_vRenderer) {
+        void** obj = (void**)g_vRenderer;
+        typedef void (__cdecl *PFN_SetProj)(void*, const float*);
+        PFN_SetProj setProj = (PFN_SetProj)obj[0x20 / 4];
+        if (setProj) {
+            static const float proj[16] = { 1.2990f,0,0,0, 0,1.7321f,0,0, 0,0,1.0001f,1.0f, 0,0,-1.0001f,0 };
+            setProj(g_vRenderer, proj);
+            if (g_vTrace) { fprintf(g_vTrace, "[BOOT] pushed observed projection via renderer+0x20\n"); fflush(g_vTrace); }
+        }
+    }
+
     // ── Message pump (game loop) ──
     // Vanilla WinMain loop core: frameState = (*obj[0x20])(obj, frameState) per iteration
     // (renderer method 0x7370 = per-frame render entry). We reproduce it; frameState=1
