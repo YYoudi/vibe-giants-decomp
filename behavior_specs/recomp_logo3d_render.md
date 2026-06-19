@@ -41,9 +41,13 @@ by this DX7 wrapper. (Tried DDSCAPS_SYSTEMMEMORY instead → 96% white, worse.)
 ## Next (focused)
 1. **Fix the texture upload** via the robust DX7 pattern: create a SYSTEMMEMORY offscreen surface,
    fill it (guaranteed), create the managed TEXTURE surface, then **Blt** sysmem→texture (forces the
-   driver upload) — instead of Lock-writing the managed surface directly. Need the wrapper-surface
-   Blt vtable slot (Lock@0x64=slot25, Unlock@0x80=slot32, GetDDInterface@0x90=slot36 — non-standard
-   shift; Blt to be found empirically, ~slot6/0x18). Once uploaded, the logo's metallic texture
-   should render.
+   driver upload) — instead of Lock-writing the managed surface directly.
+   **Blt slot search (2026-06-19)**: dumped the wrapper-surface vtable (all slots in DDRAW.dll).
+   Lock@0x64=slot25, Unlock@0x80=slot32, GetDDInterface@0x90=slot36 (non-standard, +1/+2 shift vs
+   IDirectDrawSurface7). Tried Blt@0x18(slot6) → **CRASH** (slot6=BltBatch, wrong). Blt@0x14(slot5)
+   with full RECTs → hr=0x80070057 (invalid-arg, no crash) — slot5 not Blt either, or signature/caps
+   mismatch. **Blt's slot still unknown** — needs ddraw.dll symbols or RenderDoc. Alternative: try
+   SetTexture on a DDSCAPS_TEXTURE|DDSCAPS_SYSTEMMEMORY surface directly (driver may sample sysmem),
+   or IDirect3DDevice7::Load.
 2. Capture the original's per-frame render recipe (proxy/Frida) for the faithful camera, tune to
    capdiff-PASS vs `orig_menu_3d.png`.
