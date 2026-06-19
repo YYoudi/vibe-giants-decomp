@@ -358,6 +358,37 @@ typedef void (__cdecl *PFN_RenderMethod0)(void* self);
 typedef long (__stdcall *PFN_COM0)(void* self);          // (this) stdcall COM
 typedef long (__stdcall *PFN_SetRT)(void* self, void* surf, uint32_t flags);
 typedef long (__stdcall *PFN_Flip)(void* self, uint32_t flags);
+
+// GDI present (the PROVEN path, commit 495b269): read the device render-target surface (where
+// VanillaBlit D3D draws land) via GetDC, BitBlt it onto the window. Bypasses the renderer's
+// broken +0xa8 Present (which needs a renderer-managed source the recomp can't produce).
+// IDirectDrawSurface7 vtable: GetDC@0x44 (idx17), ReleaseDC@0x68 (idx26), Lock@0x64 (idx25).
+static void VanillaGdiPresent(void* device, void* hwnd, int devW, int devH, FILE* tr) {
+    if (!device || !hwnd) return;
+    void** dvt = *(void***)device;
+    typedef long (__stdcall *PFN_GetRT)(void*, void**);
+    typedef long (__stdcall *PFN_SurfGetDC)(void*, void**);
+    typedef long (__stdcall *PFN_SurfRelDC)(void*, void*);
+    PFN_GetRT grt = (PFN_GetRT)(uintptr_t)dvt[0x24/4];
+    void* rt = nullptr;
+    if (grt) grt(device, &rt);
+    if (!rt) return;
+    void** svt = *(void***)rt;
+    PFN_SurfGetDC surfGetDC = (PFN_SurfGetDC)(uintptr_t)svt[0x44/4];
+    PFN_SurfRelDC surfRelDC = (PFN_SurfRelDC)(uintptr_t)svt[0x68/4];
+    void* surfDCptr = nullptr;
+    long hr = surfGetDC ? surfGetDC(rt, &surfDCptr) : -1;
+    static int s_log = 0;
+    if (tr && s_log < 2) { fprintf(tr, "[GDIPRES] GetDC(device-RT=%p) hr=0x%lx dc=%p\n", rt, (unsigned long)hr, surfDCptr); fflush(tr); s_log++; }
+    if (hr != 0 || !surfDCptr) return;
+    HDC surfDC = (HDC)(uintptr_t)surfDCptr;
+    HDC winDC = GetDC((HWND)hwnd);
+    if (winDC) {
+        BitBlt(winDC, 0, 0, devW, devH, surfDC, 0, 0, SRCCOPY);
+        ReleaseDC((HWND)hwnd, winDC);
+    }
+    if (surfRelDC) surfRelDC(rt, surfDCptr);
+}
 extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     extern FILE* g_vTrace;
     if (!g_vRenderer) return;
@@ -723,7 +754,13 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
     }
     if (m94) m94(g_vRenderer);               // EndScene
     obj[0x42c / 4] = (void*)1;
-    if (m_a8) m_a8(g_vRenderer);             // Present
+    // Present. The renderer's +0xa8 Present needs a renderer-managed source the recomp can't
+    // produce (broken -> white). For 2D phases (intro/loading) use the PROVEN GDI present:
+    // BitBlt the device-RT (where VanillaBlit drew) onto the window.
+    extern void* g_vHWnd;
+    if ((st.phase == BOOT_INTRO || st.phase == BOOT_LOADING) && g_vHWnd) {
+        VanillaGdiPresent(device, g_vHWnd, devW, devH, g_vTrace);
+    } else if (m_a8) m_a8(g_vRenderer);             // Present (menu/3D phases)
     // NOTE: +0xa8 OBSERVED signature is (this, srcW, srcH, fade, srcSurface) — the renderer blits
     // a source surface + presents. A raw D3D7 tile surface draws at native size (verified: a 128px
     // tile appears top-left), but a full 640x480 surface doesn't fill correctly (texture-size limit
