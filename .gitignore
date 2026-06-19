@@ -110,3 +110,6 @@ GameFiles-VanillaV1/
 vanilla_decompiled/
 undef.txt
 extracted/
+recomp_*.png
+recomp_logo3d*.png
+recomp_terrain*.png
