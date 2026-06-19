@@ -31,6 +31,18 @@ Model Parse(const uint8_t* data, size_t len) {
     for (size_t i = 0; i < m.vertices.size(); i++) {
         memcpy(&m.vertices[i], data + pos, 4); pos += 4;
     }
+    // bbox of base vertex pool (for camera framing).
+    if (m.numVertices) {
+        m.bboxMin[0]=m.bboxMax[0]=m.vertices[0];
+        m.bboxMin[1]=m.bboxMax[1]=m.vertices[1];
+        m.bboxMin[2]=m.bboxMax[2]=m.vertices[2];
+        for (uint32_t i = 1; i < m.numVertices; i++) {
+            float x=m.vertices[i*3], y=m.vertices[i*3+1], z=m.vertices[i*3+2];
+            if (x<m.bboxMin[0])m.bboxMin[0]=x; if (x>m.bboxMax[0])m.bboxMax[0]=x;
+            if (y<m.bboxMin[1])m.bboxMin[1]=y; if (y>m.bboxMax[1])m.bboxMax[1]=y;
+            if (z<m.bboxMin[2])m.bboxMin[2]=z; if (z>m.bboxMax[2])m.bboxMax[2]=z;
+        }
+    }
     // normals
     if (m.hasNormals) {
         if (pos + 8 > len) return m;
@@ -47,8 +59,22 @@ Model Parse(const uint8_t* data, size_t len) {
         m.indexedVertices[i] = uint16_t(data[pos]) | (uint16_t(data[pos+1])<<8); pos += 2;
     }
     if (m.hasNormals) pos += (size_t)m.nverts * 2; // indexed_normals
-    if (m.hasUVs)     pos += (size_t)m.nverts * 8; // vertuv f32[2]
-    if (m.hasRGBs)    pos += (size_t)m.nverts * 3; // vertrgb u8[3]
+    if (m.hasUVs) {                                // vertuv f32[2] — KEEP (v flipped, per canonical)
+        m.vertuv.resize((size_t)m.nverts * 2);
+        if (pos + m.vertuv.size() * 4 > len) return m;
+        for (uint32_t i = 0; i < m.nverts; i++) {
+            float u, v;
+            memcpy(&u, data + pos, 4); pos += 4;
+            memcpy(&v, data + pos, 4); pos += 4;
+            m.vertuv[i*2+0] = u;
+            m.vertuv[i*2+1] = -v;  // canonical reader flips V
+        }
+    }
+    if (m.hasRGBs) {                               // vertrgb u8[3] — KEEP
+        m.verrgb.resize((size_t)m.nverts * 3);
+        if (pos + m.verrgb.size() > len) return m;
+        memcpy(m.verrgb.data(), data + pos, m.verrgb.size()); pos += m.verrgb.size();
+    }
 
     // MaxObjs
     if (pos + 4 > len) { m.ok = true; return m; }
@@ -125,6 +151,44 @@ std::vector<float> Model::buildPositionTris() const {
     return out;
 }
 
+// Interleaved XYZ(3) + DIFFUSE(1) + UV(2) = 6 floats per vertex, 3 verts per triangle.
+// FVF 0x142 (XYZ|DIFFUSE|TEX1). diff = per-subobj material diffuse; UV from vertuv (if present).
+std::vector<float> Model::buildTexturedTris(size_t* outVertCount) const {
+    std::vector<float> out;
+    size_t vc = 0;
+    for (const auto& so : subObjs) {
+        // diffuse packed BBGGRR -> ARGB (0xFF alpha)
+        uint32_t b = (so.diffuse) & 0xFF, g = (so.diffuse >> 8) & 0xFF, r = (so.diffuse >> 16) & 0xFF;
+        uint32_t diff = 0xFF000000u | (r << 16) | (g << 8) | b;
+        float df; memcpy(&df, &diff, 4);
+        for (size_t t = 0; t + 2 < so.tris.size(); t += 3) {
+            for (int k = 0; k < 3; k++) {
+                uint16_t idx = so.tris[t + k];
+                size_t poolIdx = (size_t)so.verticeref_start + idx;
+                float x=0, y=0, z=0, u=0, v=0;
+                if (poolIdx < indexedVertices.size()) {
+                    uint16_t base = indexedVertices[poolIdx];
+                    if ((size_t)base * 3 + 2 < vertices.size()) {
+                        x = vertices[(size_t)base * 3 + 0];
+                        y = vertices[(size_t)base * 3 + 1];
+                        z = vertices[(size_t)base * 3 + 2];
+                    }
+                    if (hasUVs && poolIdx * 2 + 1 < vertuv.size()) {
+                        u = vertuv[poolIdx * 2 + 0];
+                        v = vertuv[poolIdx * 2 + 1];
+                    }
+                }
+                out.push_back(x); out.push_back(y); out.push_back(z);
+                out.push_back(df);
+                out.push_back(u); out.push_back(v);
+                vc++;
+            }
+        }
+    }
+    if (outVertCount) *outVertCount = vc;
+    return out;
+}
+
 bool SelfTest() {
     auto data = VanillaVFS::GzpReadFile("Bin\\xx_intro.gzp", "intro_1.gbs");
     if (data.empty()) {
@@ -145,6 +209,37 @@ bool SelfTest() {
         fflush(g_vTrace);
     }
     return true;
+}
+
+// Parse the menu 3D logo model (Giants_logo_3D.gbs from xx_giants_logo_3d.gzp) and log its
+// structure + verify the textured-tri builder. Confirms the parser handles the real logo asset.
+bool LogoSelfTest() {
+    auto data = VanillaVFS::GzpReadFile("Bin\\xx_giants_logo_3d.gzp", "Giants_logo_3D.gbs");
+    if (data.empty()) {
+        if (g_vTrace) { fprintf(g_vTrace, "[VGBS] logo: Giants_logo_3D.gbs not found\n"); fflush(g_vTrace); }
+        return false;
+    }
+    Model m = Parse(data.data(), data.size());
+    if (!m.ok) {
+        if (g_vTrace) { fprintf(g_vTrace, "[VGBS] logo: parse FAILED (magic=%08x)\n", m.magic); fflush(g_vTrace); }
+        return false;
+    }
+    size_t vc = 0;
+    auto tris = m.buildTexturedTris(&vc);
+    if (g_vTrace) {
+        fprintf(g_vTrace, "[VGBS] logo OK: magic=%08x verts=%u nverts=%u subobjs=%u bbox=(%.1f..%.1f, %.1f..%.1f, %.1f..%.1f)\n",
+                m.magic, m.numVertices, m.nverts, m.numSubObjects,
+                m.bboxMin[0], m.bboxMax[0], m.bboxMin[1], m.bboxMax[1], m.bboxMin[2], m.bboxMax[2]);
+        for (size_t i = 0; i < m.subObjectNames.size() && i < 6; i++)
+            fprintf(g_vTrace, "   subobj[%zu] '%s' tex='%s' tris=%u\n", i,
+                    i < m.subObjectNames.size() ? m.subObjectNames[i].c_str() : "",
+                    i < m.texNames.size() ? m.texNames[i].c_str() : "",
+                    i < m.subObjs.size() ? m.subObjs[i].totaltris : 0);
+        fprintf(g_vTrace, "[VGBS] logo buildTexturedTris: %zu verts (%zu floats), expected %u verts\n",
+                vc, tris.size() / 6, m.numVertices);
+        fflush(g_vTrace);
+    }
+    return vc > 0;
 }
 
 } // namespace VanillaGBS
