@@ -16,6 +16,7 @@
 struct VanillaBootConfig {
     bool   skipIntros  = false;   // -skip-intros / -nointro
     bool   atMenu      = false;   // -at menu
+    bool   atLoading   = false;   // -at loading: start directly at the LOADING screen (giants_loading.tga)
     bool   noAudio     = false;   // -no-audio
     bool   scene3d     = false;   // -scene3d: MENU calls the renderer's REAL scene walk (0x7370) instead of the 2D bracket
     bool   logo3d      = false;   // -logo3d: MENU renders the 3D logo MODEL (Giants_logo_3D.gbs + Giants_logo_512.tga) via D3D7, not the 2D blit

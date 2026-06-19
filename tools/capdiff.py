@@ -152,6 +152,8 @@ def capture_recomp(phase, out, extra_flags=None):
     args = ["-launcher", "-window"]
     if phase == "menu":
         args += ["-skip-intros"]           # boot straight to menu
+    elif phase == "loading":
+        args += ["-at", "loading"]         # boot straight to the loading screen
     # large -frames keeps the process alive while we appsnap
     args += ["-frames", "5000"]
     if extra_flags:
