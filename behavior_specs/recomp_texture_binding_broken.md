@@ -207,3 +207,14 @@ NEXT (3D): either add normals (FVF XYZ|NORMAL|...) so the directional light work
 colors and disable lighting (D3DRENDERSTATE_LIGHTING), OR use the observed DrawIndexedPrimitiveStrided
 path with proper vertex format. The 2D path (XYZRHW, no lighting) is proven; 3D needs the lighting
 sorted. GDI present works for 3D (device-RT draws reach the screen) once the 3D content is lit.
+
+## DX7 render-state values (from mingw d3dtypes.h) + 3D triangle still black (2026-06-19)
+Authoritative DX7 (not DX8) render-state enum values:
+  D3DRENDERSTATE_ZENABLE=7, CULLMODE=22 (D3DCULL_NONE=1, CCW=3), LIGHTING=137, AMBIENT=139.
+Transform states (OBSERVED earlier): WORLD=1, VIEW=2, PROJ=3, TEXTURE0=16 (NOT the DX8 256+).
+The scene3d test triangle remains BLACK even with LIGHTING=137 OFF (verts should use diffuse
+directly), CULL_NONE(22), AMBIENT(139) white, VIEW=2/PROJ=3 set correctly, triangle verts in NDC
+range. So the 3D draw produces NOTHING on the device-RT despite hr=S_OK — NOT a lighting/cull issue.
+The XYZ (transformable) path isn't producing visible output (the XYZRHW 2D path works fine via the
+same device+GDI present). Remaining suspects: SetTransform not engaging the transform pipeline, or
+the XYZ DrawPrimitive silently no-ops. This is a separate 3D-pipeline debug; the 2D path is proven.

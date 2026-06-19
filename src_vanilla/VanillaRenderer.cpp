@@ -587,14 +587,15 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 float view[16] = { 1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,200,1 };
                 // World = identity
                 float world[16] = { 1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1 };
-                // 3D triangle (XYZ|DIFFUSE FVF=0x102): a spinning-ish triangle at origin
-                struct V3 { float x, y, z; uint32_t diff; };
+                // 3D triangle (XYZ|NORMAL|DIFFUSE FVF=0x52): DX7 lighting needs normals. Normal (0,0,1)
+                // faces the camera (+Z); light dir (0,0,-1) travels toward -Z so it lights +Z faces.
+                struct V3 { float x, y, z; float nx, ny, nz; uint32_t diff; };
                 static float rot = 0; rot += 0.02f;
                 float cr = cosf(rot), sv = sinf(rot);
                 V3 tri[3] = {
-                    { 0, 50, 0, 0xFFFF0000 },                   // top, red
-                    { cr * 50, -50, sv * 50, 0xFF00FF00 },     // bottom-right, green
-                    { -cr * 50, -50, -sv * 50, 0xFF0000FF },   // bottom-left, blue
+                    { 0, 50, 0,  0,0,1, 0xFFFF0000 },                   // top, red
+                    { cr * 50, -50, sv * 50,  0,0,1, 0xFF00FF00 },     // bottom-right, green
+                    { -cr * 50, -50, -sv * 50,  0,0,1, 0xFF0000FF },   // bottom-left, blue
                 };
                 // Use the RENDERER's scene bracket (sets the correct render target surface —
                 // the device's own Clear draws to the wrong surface that Present doesn't show).
@@ -604,7 +605,7 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                 PFN_Cdecl0 m_a8t = (PFN_Cdecl0)(uintptr_t)obj[0xa8 / 4]; // renderer Present
                 if (m90) m90(g_vRenderer);  // BeginScene+Clear on the CORRECT surface
                 if (sx) { sx(wrapper, 256, world); sx(wrapper, 2, view); sx(wrapper, 3, proj); }
-                if (sr) { sr(wrapper, 7, 1); sr(wrapper, 14, 1); sr(wrapper, 22, 1); sr(wrapper, 139, 0xFFFFFFFF); }  // ZENABLE, CULLNONE(14=1=D3DCULL_NONE? try), no cull(22), AMBIENT white(139)
+                if (sr) { sr(wrapper, 7, 1); sr(wrapper, 22, 1); sr(wrapper, 137, 0); sr(wrapper, 139, 0xFFFFFFFF); }  // ZENABLE, CULL_NONE(22), LIGHTING OFF(137), AMBIENT(139)
                 // DX7 XYZ vertices ALWAYS go through lighting → set a light so the triangle isn't black.
                 typedef long (__stdcall *PFN_SetLight)(void*, uint32_t, const void*);
                 typedef long (__stdcall *PFN_LightEnable)(void*, uint32_t, uint32_t);
@@ -615,10 +616,10 @@ extern "C" void VanillaDriveFrame(void (*drawHook)(void)) {
                     float amb[3]; float amb_a; float pos[3]; float dir[3]; float range; float falloff;
                     float a0,a1,a2; float theta,phi; };
                 D3DLIGHT7 light = { 1 /*D3DLIGHT_DIRECTIONAL*/, {1,1,1},1, {0,0,0},0, {0.5f,0.5f,0.5f},1,
-                    {0,0,-200},{0,0,1}, 1000, 0, 1,0,0, 0,0 };
+                    {0,0,-200},{0,0,-1}, 1000, 0, 1,0,0, 0,0 };
                 if (sl) sl(wrapper, 0, &light);
                 if (le) le(wrapper, 0, 1);  // enable light 0
-                long hr = dp ? dp(wrapper, 4, 0x042, tri, 3, 0) : -1;
+                long hr = dp ? dp(wrapper, 4, 0x52, tri, 3, 0) : -1;
                 if (g_vTrace) { static int ln=0; if(ln<2){fprintf(g_vTrace,"[TEST3D] renderer-bracket + SetTransform + DrawPrimitive hr=0x%lx\n",(unsigned long)hr);fflush(g_vTrace);ln++;} }
                 if (m94) m94(g_vRenderer);  // EndScene
                 obj[0x42c / 4] = (void*)1;
