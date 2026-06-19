@@ -66,3 +66,19 @@ st=27, st=28, st=29, st=60, st=136/137/141/145/146 (texture-stage / colorop stat
    post-intro screen renders only the 2D profile-select overlay). To OBSERVE the 3D mesh
    draw recipe, the original must be driven past the click (SendInput fails on DI8;
    Frida must synthesize the click via a different route, or the 4-clicks done manually).
+
+## Click-to-enter-3D — input injection BLOCKED (2026-06-19)
+The 3D island+logo mesh draws are click-gated. Attempted to drive the original past the click
+to OBSERVE the 3D mesh recipe via `scripts/frida_render_recipe_3d_run.py` (AttachThreadInput
+foreground + SendInput AND PostMessage WM_LBUTTONDOWN/UP, 8 clicks). RESULT: the game stayed
+on the 2D profile-select overlay — **0 big-mesh (vCount>50) DrawIndexedPrimitiveStrided draws**.
+DI8 foreground/exclusive mouse ignores both SendInput and PostMessage for scene-entry. So the
+3D mesh draw recipe (the actual strided vertex data for island+logo) can only be captured with
+MANUAL human clicks. The auto-advanced menu (post-intro, no click) renders only the 2D overlay.
+
+## Faithful port roadmap (next cycles)
+The camera path is `FUN_0040d560` (selects active camera obj DAT_005561a0) → `FUN_0040d9f0`
+(computes eye/target/up) → `FUN_00403880` (mtxLookAtLH → DAT_005561c0/00556204) →
+`FUN_0040d190` (push matrix to renderer). These are stateful deep-engine functions (active-cam
+object graph at obj+0x170/+0x210, globals DAT_00556184/0055618c/00631224/006310e8). Porting them
+is multi-cycle. Until then, the recomp has no VIEW → renders white/wrong-framed.
