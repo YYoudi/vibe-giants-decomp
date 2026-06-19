@@ -25,22 +25,25 @@ see `orig_logo3d_model.md`) into the recomp via the proven D3D7 3D pipeline. Dri
   faithful camera/transforms come from the per-frame render-recipe capture (proxy D3D7 trace),
   still blocked by the flaky game launch under the proxy.
 
-## ROOT CAUSE FOUND (2026-06-19) — it's a VFS bug, NOT D3D texturing
-The texture samples white because `VanillaVFS::GzpReadFile("xx_giants_logo_3d.gzp",
-"Giants_logo_512.tga")` returns a buffer of the CORRECT size (393260 = 18 + 512*256*3) with the
-CORRECT TGA header (512x256 type2 24bpp) but **ALL-ZERO pixel data**. Confirmed by trace:
-`VFSraw Giants_logo_512.tga len=393260 hdr: 00 00 02 ... 00 02 00 01 18 00` (512x256 ✓) yet pixels
-zero; `copy center(256,128): src=000000...`, `READBACK: 000000...`.
-Python `tools/gzp_extract.py` decompresses the SAME entry correctly (metallic logo PNG). So the LZ
-data is valid — the recomp `VanillaVFS` LZ decompressor (port of Amazed's fileutils.py) produces
-zeros for THIS entry (compr=1, compSize=226336 uncmpSize=393260). Other entries (intro_sea 256x256)
-decompress fine (`raw@pos: 68 47 3e ...`). Entry-specific LZ bug.
-The D3D path is INNOCENT: SetTexture hr=0x0, Lock hr=0x0, surface created + pixels copied (just
-zero pixels). Fix = `VanillaVFS::GzpReadFile` (src_vanilla/VanillaVFS.cpp) — diff its LZ against
-the Python canonical (tools/gzp_extract.py lz_decompress) for this entry.
+## ROOT CAUSE (2026-06-19, corrected) — VFS is INNOCENT; bug = managed-texture upload
+**CORRECTION**: an earlier note blamed VanillaVFS (claimed zero pixels). That was WRONG. PROOF:
+dumped the recomp's `VanillaVFS::GzpReadFile` output for Giants_logo_512 to a file and ran
+`cmp vfsdump_logo512.tga extracted/.../Giants_logo_512.tga` → **IDENTICAL** (393260 bytes,
+byte-exact). The earlier "center=zeros" samples hit legitimately-BLACK regions of the texture
+(the logo's black background). VanillaVFS + the LZ port + VanillaTGA all produce correct pixels.
+
+So the texture surface gets the CORRECT pixels (verified: Lock hr=0x0, valid surface, pixels copied;
+the data matches the canonical extraction). `SetTexture@0x8c hr=0x0` (binds). **Yet the sampler
+returns white** → the managed texture (DDSCAPS2_TEXTUREMANAGE) is NOT being uploaded to the device's
+texture memory. The Lock-write to the managed surface's system-memory shadow isn't committed to VRAM
+by this DX7 wrapper. (Tried DDSCAPS_SYSTEMMEMORY instead → 96% white, worse.)
 
 ## Next (focused)
-1. **Fix VanillaVFS LZ for Giants_logo_512** (diff vs Python canonical) → logo texture non-zero →
-   3D logo renders with its metallic texture.
+1. **Fix the texture upload** via the robust DX7 pattern: create a SYSTEMMEMORY offscreen surface,
+   fill it (guaranteed), create the managed TEXTURE surface, then **Blt** sysmem→texture (forces the
+   driver upload) — instead of Lock-writing the managed surface directly. Need the wrapper-surface
+   Blt vtable slot (Lock@0x64=slot25, Unlock@0x80=slot32, GetDDInterface@0x90=slot36 — non-standard
+   shift; Blt to be found empirically, ~slot6/0x18). Once uploaded, the logo's metallic texture
+   should render.
 2. Capture the original's per-frame render recipe (proxy/Frida) for the faithful camera, tune to
    capdiff-PASS vs `orig_menu_3d.png`.

@@ -47,17 +47,6 @@ extern "C" void VanillaD3D7_BindTga(void* device, const char* gzpPath, const cha
     if (!*pCacheSurf && !*pTried) {
         *pTried = 1;
         auto gz = VanillaVFS::GzpReadFile(gzpPath, tgaName);
-        if (g_vTrace && gz.size() > 18 && (strstr(tgaName, "logo") || strstr(tgaName, "Logo"))) {
-            static int lz = 0;
-            if (lz < 1) { lz++;
-                const uint8_t* r = gz.data();
-                fprintf(g_vTrace, "[D3D7TEX] VFSraw %s len=%zu hdr:", tgaName, gz.size());
-                for (int i=0;i<18;i++) fprintf(g_vTrace," %02x", r[i]);
-                size_t c = 18 + (gz.size()>18? (size_t)(256*(int)gz.size()/1024)% (gz.size()-18): 0); // approx mid
-                fprintf(g_vTrace, " mid:"); for (size_t i=c;i<c+8 && i<gz.size();i++) fprintf(g_vTrace," %02x", r[i]);
-                fprintf(g_vTrace,"\n"); fflush(g_vTrace);
-            }
-        }
         VanillaTGA::Image img = gz.empty() ? VanillaTGA::Image{} : VanillaTGA::Parse(gz.data(), gz.size());
         if (!img.ok || img.pixels.empty()) {
             if (g_vTrace) { fprintf(g_vTrace, "[D3D7TEX] %s load FAILED ok=%d\n", tgaName, (int)img.ok); fflush(g_vTrace); }
