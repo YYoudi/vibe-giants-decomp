@@ -51,3 +51,13 @@ by this DX7 wrapper. (Tried DDSCAPS_SYSTEMMEMORY instead → 96% white, worse.)
    or IDirect3DDevice7::Load.
 2. Capture the original's per-frame render recipe (proxy/Frida) for the faithful camera, tune to
    capdiff-PASS vs `orig_menu_3d.png`.
+
+## 2026-06-19 — renderer's OWN scene-walk also renders white (scene not loaded)
+Tested -scene3d (VanillaRunFrame → renderer's real scene walk, slot 0x7370) with a clean
+forced-foreground capture: 88% white, 0% colored, 6 distinct. So it's NOT just my manual
+SetTexture — the renderer's scene-walk ALSO renders nothing, because the recomp never loads the
+SCENE (no FUN_004b7c50 world load, no camera setup via callback[12], no object placements). The
+manual-D3D7-texture approach is a confirmed dead end. The FAITHFUL path = port the boot chain
+(FUN_004913c0 → FUN_0045a530 → FUN_004b7c50 → FUN_004f3230) so the scene is populated, then the
+renderer's scene-walk renders it (with textures) itself. (Also: the d3d7-3d-pipeline "textured
+terrain" memory is likely STALE — clean captures show white for both terrain-menu and logo3d.)
