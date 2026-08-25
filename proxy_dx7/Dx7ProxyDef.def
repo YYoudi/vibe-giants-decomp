@@ -1,4 +1,0 @@
-LIBRARY gg_dx7r
-EXPORTS
-    GDVSysCreate    @1
-    UpCallsLoad     @2
