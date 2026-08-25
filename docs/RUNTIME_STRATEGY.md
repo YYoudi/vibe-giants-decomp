@@ -162,3 +162,11 @@ Mecc-renderer enum internals (for the record): wrapper +0x1050 reads device coun
 [0x1002844C] (Reaper build used 0x100282BC); accept-path = format check (+0x10CC call
 +0xD2B6, reject jl +0x10D3), QI reject (+0x10EE), caps 0x80000 flag (+0x11A7);
 device-add +0x1300 increments the counter and fills descs at 0x1001D048+idx*0x900.
+
+### Intro skip (validated)
+
+Renaming `Bin/intros.bin` (work copy only) skips the 3-slide intro (dmlarge000 /
+planetmoon / legal, clickable with fades per user intel) — boots straight to the
+main menu. Combined recipe for a fast observation session:
+`boot_menu_patch.py` (CD stub + device-filter NOP) → OK on « Continue? » →
+foreground window → screen capture (screenshot_screen.ps1).

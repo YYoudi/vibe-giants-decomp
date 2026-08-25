@@ -60,3 +60,11 @@ Only reverse what is NOT covered. Update this file when coverage changes.
 6. System-layer functions — `scripts/re_db.json` (28 fns / 14 globals, apply_labels.py).
 7. Main-loop / frame architecture — blocked on the real menu (D3DEnum filter rejects
    dgVoodoo devices; GOG D3D8 renderer crashes on v1.0 exe).
+
+## Behavioral quirks (user-provided, empirically validated)
+
+- **`Bin/intros.bin`** (29 bytes, plain CRLF text) = the intro slide list:
+  `dmlarge000`, `planetmoon`, `legal` — 3 fullscreen clickable images with fades.
+  Temporarily renaming/removing it in the WORK COPY skips the intro entirely and
+  boots straight to the main menu (validated via vision loop: starfield menu
+  renders directly, no slides). Vanilla copy untouched.
