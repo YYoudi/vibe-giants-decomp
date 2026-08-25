@@ -138,3 +138,27 @@ runtime entirely), unhooking amdxn32, GOG Giants.exe vs v1.0 renderer-interface 
    `gck-map-extract-objects/lib/fileutils.py`.
 5. GIANTSCD.1 marker mystery: monitor at +0x1233E1 may poll the CD continuously — verify what it
    reads when the flag is pre-set.
+
+## 9. REAL MENU REACHED (2026-08-25, runtime-only patch)
+
+Breakthrough chain (files on disk remain byte-identical to vanilla):
+1. `scripts/boot_menu_patch.py`: boots the canonical session (CD stub + erun), then
+   after gg_dx7r is mapped (armed at the LoadLibraryA return site 0x51EBEF) applies:
+   **gg_dx7r+0x10D3: `0F 8C rel32` (jl reject after the display-format check via
+   +0xD2B6) → `90 x6`** — device-filter acceptance bypass.
+2. The enumeration then succeeds; the game asks « Continue? » (its own fallback dialog)
+   → click OK (screen coords window 658,416 + 85,135).
+3. Renderer reinitializes (DLL unload/reload) and the REAL menu renders.
+
+⚠️ Vision note: the game window is GPU-composited (dgVoodoo→D3D11): PrintWindow/
+BitBlt window captures show only a corner fragment. Use **screen-region capture**
+(`scripts/screenshot_screen.ps1`, CopyFromScreen) — that reveals the actual menu.
+
+Menu verified: starfield background, options « Language / Options / Player Setup /
+Campaign / Start ». Keyboard navigation proven: DOWN×2 moved the highlight
+Language→Campaign, UP×2 back (menu1..menu7 captures in RuntimeLab/logs).
+
+Mecc-renderer enum internals (for the record): wrapper +0x1050 reads device count
+[0x1002844C] (Reaper build used 0x100282BC); accept-path = format check (+0x10CC call
++0xD2B6, reject jl +0x10D3), QI reject (+0x10EE), caps 0x80000 flag (+0x11A7);
+device-add +0x1300 increments the counter and fills descs at 0x1001D048+idx*0x900.
