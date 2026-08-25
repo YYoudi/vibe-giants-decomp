@@ -78,6 +78,23 @@ Registry keys that matter: `HKCU\Software\PlanetMoon\Giants` SrcDir (CD) / DestD
 | Mecc demo clean (jan 2001) | system d3dim700 | boot to ~109 MB, then AV loop in msvcrt strlen called from d3dim700 ← device-enumeration string |
 | Mecc demo + DDrawCompat 0.7.1 | DDrawCompat ddraw + system d3dim700 | same d3dim700 AV loop |
 | GOG 2008 build (1.449, D3D8 wrapper — loads d3d8.dll/d3d8thk) | d3d8 | heap-corruption AV in ntdll (mov eax,[ecx+14] heap walk) after ~66 MB |
+| **Mecc demo + dgVoodoo2 2.87.3 (DDraw.dll + D3DImm.dll→d3dim700.dll)** | **dgVoodoo → D3D11 → amdxx32** | **✅ MENU REACHED: window "GFX_DX7" responding, frame presented, engine idle-waiting for input** |
+
+Winning work-dir layout: `GiantsWork/{Giants.exe (vanilla bytes), gg_dx7r.dll (Mecc), ddraw.dll + d3dim700.dll (dgVoodoo2 MS/x86), dgVoodoo.conf}`.
+Note: dgVoodoo → amdxx32 (AMD D3D11 driver) throws SEH exceptions continuously in normal
+operation — x64dbg must not pause on them (`erun` / IgnoreRange), else boot crawls forever.
+
+## 6b. Menu-state architecture (observed via 3× minidump sampling)
+
+- 11 threads; the game MAIN thread (stack ~0x1Axxxx) sits inside:
+  `game → gg_dx7r+0x6687 → user32 message pump (5-6 frames) → PeekMessageW` —
+  i.e. the renderer's present/wait path pumps messages cooperatively; the menu is
+  BLOCKED WAITING FOR INPUT (not wedged): identical dumps ×3, window Responding=True,
+  one presented frame, zero CPU.
+- Message APIs are **W-variants** (PeekMessageW) — A-variant bps never fire.
+- No per-frame QPC/timeGetTime calls observed at menu idle.
+- Deeper stable stack values (indirect-call returns, no E8 alignment): giants+0x18B750,
+  giants+0x130000 — candidates for the main-loop frames once walked properly.
 
 Wedged-process forensics (procdump + minidump): main thread blocked in kernel wait, top game
 frame **Giants+0x3005C** (wrapper calling +0x2FF10 — event/semaphore wait family); all other
@@ -99,8 +116,9 @@ runtime entirely), unhooking amdxn32, GOG Giants.exe vs v1.0 renderer-interface 
 
 ## 8. Next steps
 
-1. dgVoodoo2 (x86 ddraw+d3dim700 replacement) + Mecc renderer → try to reach the menu.
-2. On stable menu: main-loop anchors via per-frame API bps (QPC/PeekMessage alternates).
+1. Human: confirm what the GFX_DX7 window shows (menu art? logo? garbage?) and click through it.
+2. Main-loop anchors: walk the pump chain deeper (indirect-call alignment at +0x18B750 /
+   +0x130000), or hardware-bp the upcall table entries `[0x654948]/[0x654958]` (called per frame).
 3. Cross-ref runtime anchors with `ps2_symbols/pc_ps2_matches.csv`; name functions in x64dbg via labels.
 4. GZP runtime trace: bp on the LZ decompressor during level load; validate vs
    `gck-map-extract-objects/lib/fileutils.py`.
