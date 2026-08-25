@@ -1,0 +1,39 @@
+{"seq": 1, "eip": "0x75e676e0", "pause": "non-bp stop #1 (DLL entry / exception?)", "logtail": ["", "[state] PAUSED at 0x75E676E0 (gdi32full) | mov edi,edi"]}
+{"seq": 2, "eip": "0x75e67770", "pause": "non-bp stop #2 (DLL entry / exception?)", "logtail": ["", "[state] PAUSED at 0x75E67770 (gdi32full) | mov edi,edi"]}
+{"seq": 3, "eip": "0x777887f9", "pause": "non-bp stop #3 (DLL entry / exception?)", "logtail": ["", "[state] PAUSED at 0x777887F9 (ntdll) | jmp ntdll.77788802"]}
+{"seq": 4, "eip": "0x547358", "pause": "non-bp stop #4 (DLL entry / exception?)", "logtail": ["", "[state] PAUSED at 0x547358 (giants) | push ebp"]}
+{"seq": 5, "eip": "0x5753ab90", "pause": "non-bp stop #5 (DLL entry / exception?)", "logtail": ["", "[state] PAUSED at 0x5753AB90 (inputhost) | mov edi,edi"]}
+{"seq": 6, "eip": "0x5753ac80", "pause": "non-bp stop #6 (DLL entry / exception?)", "logtail": ["", "[state] PAUSED at 0x5753AC80 (inputhost) | mov edi,edi"]}
+{"seq": 7, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\aablood.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 8, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\aanoeng.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 9, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\extra.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 10, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\sfxlev1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 11, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\tx_lev1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 12, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_intro_island.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 13, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Kstory1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 14, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Kstory2.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 15, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Kstory3.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 16, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Kstory4.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 17, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Kstory5.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 18, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_menus.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 19, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_3WAY_L1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 20, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_3WAY_L2.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 21, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_3WAY_L3.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 22, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_3WAY_Lw1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 23, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Mecc_L1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 24, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Mecc_L2.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 25, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Mecc_L3.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 26, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Mecc_Lw1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 27, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Reaper_L1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 28, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Reaper_L2.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 29, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Reaper_L3.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 30, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_M_Reaper_Lw1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 31, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Rstory1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 32, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Rstory2.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 33, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Rstory3_race_1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 34, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Rstory3_race_2.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 35, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Rstory3_race_3.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 36, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Rstory4.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 37, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Rstory5.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 38, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Story1.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}
+{"seq": 39, "eip": "0x7617e9f0", "api": "CreateFileA", "args": {"a1": "Bin\\w_Story2.gzp", "a2": "0x80000000"}, "caller": "0x53B9E5"}

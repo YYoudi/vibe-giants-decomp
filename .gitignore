@@ -102,3 +102,11 @@ Thumbs.db
 undef.txt
 vanilla_decompiled/
 venv/
+# ─── RUNTIME LAB: working copy of the game + heavy captures ───────────────────
+# GameFiles copy, Procmon PML/CSV dumps, minidumps. Small filtered logs
+# (*_summary.txt, *.jsonl) in RuntimeLab/logs/ ARE published.
+/RuntimeLab/GiantsWork/
+/RuntimeLab/logs/*.pml
+/RuntimeLab/logs/*.csv
+/RuntimeLab/logs/*.dmp
+/RuntimeLab/logs/xdbg_boot_raw.log

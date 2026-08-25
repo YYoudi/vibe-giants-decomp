@@ -1,0 +1,74 @@
+total rows scanned: 2274017
+Giants.exe events: 177
+
+== operations ==
+   177  Process Profiling
+
+== registry paths (top 60) ==
+
+== images loaded ==
+
+== file paths (top 80) ==
+  177  
+
+== LAST 60 events (stall point) ==
+05:04:55,3053796 Process Profiling             [SUCCESS] User Time: 730.3437500 seconds, Kernel Time: 8.8437500 secon
+05:04:56,3009931 Process Profiling             [SUCCESS] User Time: 731.3437500 seconds, Kernel Time: 8.8437500 secon
+05:04:57,3082031 Process Profiling             [SUCCESS] User Time: 732.3437500 seconds, Kernel Time: 8.8593750 secon
+05:04:58,2949816 Process Profiling             [SUCCESS] User Time: 733.3281250 seconds, Kernel Time: 8.8593750 secon
+05:04:59,2944657 Process Profiling             [SUCCESS] User Time: 734.3281250 seconds, Kernel Time: 8.8593750 secon
+05:05:00,2968475 Process Profiling             [SUCCESS] User Time: 735.2500000 seconds, Kernel Time: 8.9062500 secon
+05:05:01,2978578 Process Profiling             [SUCCESS] User Time: 736.2343750 seconds, Kernel Time: 8.9218750 secon
+05:05:02,2980999 Process Profiling             [SUCCESS] User Time: 737.2187500 seconds, Kernel Time: 8.9375000 secon
+05:05:03,3009626 Process Profiling             [SUCCESS] User Time: 738.2187500 seconds, Kernel Time: 8.9375000 secon
+05:05:04,3030779 Process Profiling             [SUCCESS] User Time: 739.2187500 seconds, Kernel Time: 8.9375000 secon
+05:05:05,3063538 Process Profiling             [SUCCESS] User Time: 740.2187500 seconds, Kernel Time: 8.9375000 secon
+05:05:06,3075132 Process Profiling             [SUCCESS] User Time: 741.2187500 seconds, Kernel Time: 8.9375000 secon
+05:05:07,2981227 Process Profiling             [SUCCESS] User Time: 742.1718750 seconds, Kernel Time: 8.9531250 secon
+05:05:08,2999693 Process Profiling             [SUCCESS] User Time: 743.1718750 seconds, Kernel Time: 8.9531250 secon
+05:05:09,3049271 Process Profiling             [SUCCESS] User Time: 744.1562500 seconds, Kernel Time: 8.9531250 secon
+05:05:10,3049958 Process Profiling             [SUCCESS] User Time: 745.1093750 seconds, Kernel Time: 8.9531250 secon
+05:05:11,2985571 Process Profiling             [SUCCESS] User Time: 746.0000000 seconds, Kernel Time: 8.9531250 secon
+05:05:12,2990472 Process Profiling             [SUCCESS] User Time: 746.9375000 seconds, Kernel Time: 9.0156250 secon
+05:05:13,3000354 Process Profiling             [SUCCESS] User Time: 747.8593750 seconds, Kernel Time: 9.0781250 secon
+05:05:14,2995042 Process Profiling             [SUCCESS] User Time: 748.8281250 seconds, Kernel Time: 9.0781250 secon
+05:05:15,2993451 Process Profiling             [SUCCESS] User Time: 749.8125000 seconds, Kernel Time: 9.0937500 secon
+05:05:16,3041955 Process Profiling             [SUCCESS] User Time: 750.8125000 seconds, Kernel Time: 9.0937500 secon
+05:05:17,2923744 Process Profiling             [SUCCESS] User Time: 751.7968750 seconds, Kernel Time: 9.0937500 secon
+05:05:18,3092430 Process Profiling             [SUCCESS] User Time: 752.7968750 seconds, Kernel Time: 9.1093750 secon
+05:05:19,2945861 Process Profiling             [SUCCESS] User Time: 753.6875000 seconds, Kernel Time: 9.2031250 secon
+05:05:20,2955504 Process Profiling             [SUCCESS] User Time: 754.6718750 seconds, Kernel Time: 9.2031250 secon
+05:05:21,2968266 Process Profiling             [SUCCESS] User Time: 755.5937500 seconds, Kernel Time: 9.2343750 secon
+05:05:22,2960124 Process Profiling             [SUCCESS] User Time: 756.5937500 seconds, Kernel Time: 9.2343750 secon
+05:05:23,2989695 Process Profiling             [SUCCESS] User Time: 757.5937500 seconds, Kernel Time: 9.2343750 secon
+05:05:24,3045805 Process Profiling             [SUCCESS] User Time: 758.5937500 seconds, Kernel Time: 9.2343750 secon
+05:05:25,2982349 Process Profiling             [SUCCESS] User Time: 759.5781250 seconds, Kernel Time: 9.2343750 secon
+05:05:26,2983450 Process Profiling             [SUCCESS] User Time: 760.5781250 seconds, Kernel Time: 9.2343750 secon
+05:05:27,3035590 Process Profiling             [SUCCESS] User Time: 761.5781250 seconds, Kernel Time: 9.2343750 secon
+05:05:28,3061895 Process Profiling             [SUCCESS] User Time: 762.5781250 seconds, Kernel Time: 9.2343750 secon
+05:05:29,2988248 Process Profiling             [SUCCESS] User Time: 763.5781250 seconds, Kernel Time: 9.2343750 secon
+05:05:30,3000631 Process Profiling             [SUCCESS] User Time: 764.5468750 seconds, Kernel Time: 9.2656250 secon
+05:05:31,3039210 Process Profiling             [SUCCESS] User Time: 765.5468750 seconds, Kernel Time: 9.2656250 secon
+05:05:32,3056953 Process Profiling             [SUCCESS] User Time: 766.5468750 seconds, Kernel Time: 9.2656250 secon
+05:05:33,3080141 Process Profiling             [SUCCESS] User Time: 767.5468750 seconds, Kernel Time: 9.2656250 secon
+05:05:34,2976368 Process Profiling             [SUCCESS] User Time: 768.5468750 seconds, Kernel Time: 9.2656250 secon
+05:05:35,3030364 Process Profiling             [SUCCESS] User Time: 769.5468750 seconds, Kernel Time: 9.2656250 secon
+05:05:36,3081745 Process Profiling             [SUCCESS] User Time: 770.5312500 seconds, Kernel Time: 9.2968750 secon
+05:05:37,2980717 Process Profiling             [SUCCESS] User Time: 771.5156250 seconds, Kernel Time: 9.2968750 secon
+05:05:38,3038389 Process Profiling             [SUCCESS] User Time: 772.5156250 seconds, Kernel Time: 9.2968750 secon
+05:05:39,2969533 Process Profiling             [SUCCESS] User Time: 773.5156250 seconds, Kernel Time: 9.2968750 secon
+05:05:40,3056016 Process Profiling             [SUCCESS] User Time: 774.5156250 seconds, Kernel Time: 9.2968750 secon
+05:05:41,2990119 Process Profiling             [SUCCESS] User Time: 775.5000000 seconds, Kernel Time: 9.2968750 secon
+05:05:42,3043703 Process Profiling             [SUCCESS] User Time: 776.5000000 seconds, Kernel Time: 9.2968750 secon
+05:05:43,3016106 Process Profiling             [SUCCESS] User Time: 777.5000000 seconds, Kernel Time: 9.2968750 secon
+05:05:44,3061148 Process Profiling             [SUCCESS] User Time: 778.4843750 seconds, Kernel Time: 9.2968750 secon
+05:05:45,2957259 Process Profiling             [SUCCESS] User Time: 779.4531250 seconds, Kernel Time: 9.2968750 secon
+05:05:46,3049904 Process Profiling             [SUCCESS] User Time: 780.4531250 seconds, Kernel Time: 9.2968750 secon
+05:05:47,3000292 Process Profiling             [SUCCESS] User Time: 781.4375000 seconds, Kernel Time: 9.3125000 secon
+05:05:48,3065386 Process Profiling             [SUCCESS] User Time: 782.4375000 seconds, Kernel Time: 9.3125000 secon
+05:05:49,3062222 Process Profiling             [SUCCESS] User Time: 783.4218750 seconds, Kernel Time: 9.3125000 secon
+05:05:50,3014161 Process Profiling             [SUCCESS] User Time: 784.3906250 seconds, Kernel Time: 9.3437500 secon
+05:05:51,3072188 Process Profiling             [SUCCESS] User Time: 785.3593750 seconds, Kernel Time: 9.3437500 secon
+05:05:52,3059778 Process Profiling             [SUCCESS] User Time: 786.3593750 seconds, Kernel Time: 9.3437500 secon
+05:05:53,3069955 Process Profiling             [SUCCESS] User Time: 787.3593750 seconds, Kernel Time: 9.3437500 secon
+05:05:54,3068013 Process Profiling             [SUCCESS] User Time: 788.3593750 seconds, Kernel Time: 9.3437500 secon

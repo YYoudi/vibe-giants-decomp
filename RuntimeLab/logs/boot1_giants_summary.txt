@@ -1,0 +1,241 @@
+total rows scanned: 3996551
+Giants.exe events: 14037
+
+== operations ==
+ 11032  ReadFile
+   520  CreateFile
+   312  CloseFile
+   272  Process Profiling
+   223  IRP_MJ_CLOSE
+   211  RegOpenKey
+   195  QueryDirectory
+   185  QueryOpen
+   185  RegEnumValue
+   141  RegQueryValue
+   127  RegQueryKey
+   108  QueryNameInformationFile
+   102  QuerySecurityFile
+    86  RegCloseKey
+    68  RegSetInfoKey
+    64  CreateFileMapping
+    64  FASTIO_RELEASE_FOR_SECTION_SYNCHRONIZATION
+    58  Load Image
+    32  QueryBasicInformationFile
+     9  Thread Exit
+     9  Thread Create
+     9  QueryStatInformation
+     7  QueryStandardInformationFile
+     7  RegEnumKey
+     5  RegCreateKey
+     1  Process Exit
+     1  RegSetValue
+     1  Process Start
+     1  QueryInformationVolume
+     1  QueryAttributeInformationVolume
+     1  QuerySizeInformationVolume
+
+== registry paths (top 60) ==
+
+== images loaded ==
+  1  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Giants.exe
+  1  C:\Windows\System32\ntdll.dll
+  1  C:\Windows\SysWOW64\ntdll.dll
+  1  C:\Windows\System32\wow64.dll
+  1  C:\Windows\System32\wow64base.dll
+  1  C:\Windows\System32\wow64win.dll
+  1  C:\Windows\System32\wow64con.dll
+  1  C:\Windows\System32\wow64cpu.dll
+  1  C:\Windows\SysWOW64\kernel32.dll
+  1  C:\Windows\SysWOW64\KernelBase.dll
+  1  C:\Windows\SysWOW64\apphelp.dll
+  1  C:\Windows\SysWOW64\AcGenral.dll
+  1  C:\Windows\SysWOW64\msvcrt.dll
+  1  C:\Windows\SysWOW64\sechost.dll
+  1  C:\Windows\SysWOW64\shlwapi.dll
+  1  C:\Windows\SysWOW64\ucrtbase.dll
+  1  C:\Windows\SysWOW64\user32.dll
+  1  C:\Windows\SysWOW64\win32u.dll
+  1  C:\Windows\SysWOW64\gdi32.dll
+  1  C:\Windows\SysWOW64\gdi32full.dll
+  1  C:\Windows\SysWOW64\msvcp_win.dll
+  1  C:\Windows\SysWOW64\ole32.dll
+  1  C:\Windows\SysWOW64\combase.dll
+  1  C:\Windows\SysWOW64\rpcrt4.dll
+  1  C:\Windows\SysWOW64\oleaut32.dll
+  1  C:\Windows\SysWOW64\advapi32.dll
+  1  C:\Windows\SysWOW64\SHCore.dll
+  1  C:\Windows\SysWOW64\shell32.dll
+  1  C:\Windows\SysWOW64\uxtheme.dll
+  1  C:\Windows\SysWOW64\winmm.dll
+  1  C:\Windows\SysWOW64\samcli.dll
+  1  C:\Windows\SysWOW64\msacm32.dll
+  1  C:\Windows\SysWOW64\version.dll
+  1  C:\Windows\SysWOW64\userenv.dll
+  1  C:\Windows\SysWOW64\dwmapi.dll
+  1  C:\Windows\SysWOW64\urlmon.dll
+  1  C:\Windows\SysWOW64\winspool.drv
+  1  C:\Windows\SysWOW64\ntmarta.dll
+  1  C:\Windows\SysWOW64\mpr.dll
+  1  C:\Windows\SysWOW64\sspicli.dll
+  1  C:\Windows\SysWOW64\iertutil.dll
+  1  C:\Windows\SysWOW64\windows.storage.dll
+  1  C:\Windows\SysWOW64\cfgmgr32.dll
+  1  C:\Windows\SysWOW64\srvcli.dll
+  1  C:\Windows\SysWOW64\netutils.dll
+  1  C:\Windows\SysWOW64\imm32.dll
+  1  C:\Windows\SysWOW64\ws2_32.dll
+  1  C:\Windows\SysWOW64\dinput.dll
+  1  C:\Windows\SysWOW64\InputHost.dll
+  1  C:\Windows\SysWOW64\CoreMessaging.dll
+  1  C:\Windows\SysWOW64\bcryptprimitives.dll
+  1  C:\Windows\SysWOW64\cryptbase.dll
+  1  C:\Windows\SysWOW64\kernel.appcore.dll
+  1  C:\Windows\SysWOW64\msctf.dll
+  1  C:\Windows\SysWOW64\clbcatq.dll
+  1  C:\Windows\SysWOW64\TextInputFramework.dll
+  1  C:\Windows\SysWOW64\oleacc.dll
+  1  C:\Windows\SysWOW64\TextShaping.dll
+
+== file paths (top 80) ==
+  832  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_mecc_base.gzp
+  820  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_efx.gzp
+  774  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_mecclev1.gzp
+  736  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_reaper_base.gzp
+  544  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_kabutolev1.gzp
+  540  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_smartie_stuff.gzp
+  476  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_reaperlev1.gzp
+  464  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_reaperman.gzp
+  384  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_guard_buildings.gzp
+  368  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\w_menus.gzp
+  326  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_mecc_flick.gzp
+  292  
+  258  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_raik.gzp
+  254  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_permanentaliens.gzp
+  218  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_ripper.gzp
+  200  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_offspring.gzp
+  196  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_sm_evil.gzp
+  178  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_giantwalls.gzp
+  171  HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink
+  170  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_bigwalls.gzp
+  134  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_vimp.gzp
+  134  G:\Games\Giants\Bin\VO_SfxEnglish.gzp
+  130  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_guard_barracks.gzp
+  124  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_plants.gzp
+  112  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\tx_lev1.gzp
+   98  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_effects.gzp
+   98  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_sonak.gzp
+   96  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_jetski.gzp
+   94  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_ambient.gzp
+   90  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_reaper_flick.gzp
+   88  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_ptree.gzp
+   86  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_verm.gzp
+   76  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\w_Story1.gzp
+   76  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_kab_stuff.gzp
+   74  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_charger.gzp
+   72  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_formations.gzp
+   65  HKLM
+   60  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_seamonster.gzp
+   60  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_smborjoyzee.gzp
+   58  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_birds.gzp
+   50  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_guard_prison.gzp
+   48  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_rpqueen.gzp
+   48  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_smartie.gzp
+   48  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_smyan.gzp
+   48  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_story1.gzp
+   46  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_snow_stuff.gzp
+   45  HKCU
+   44  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin
+   44  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_smtimmy.gzp
+   44  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_story4.gzp
+   40  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_bridge.gzp
+   40  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_smfemale.gzp
+   38  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_kabuto_flick.gzp
+   38  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_lander.gzp
+   36  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_menus.gzp
+   34  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_rocks.gzp
+   30  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\w_M_3WAY_L3.gzp
+   30  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\w_Story3.gzp
+   30  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_guard_army_barracks.gzp
+   30  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_intro.gzp
+   30  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_pier.gzp
+   30  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_rstory3.gzp
+   28  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\aanoeng.gzp
+   28  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_reaper_ship.gzp
+   28  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_smyan_pagoda.gzp
+   26  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\aablood.gzp
+   26  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_dactyl.gzp
+   26  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_jetski_rpm.gzp
+   24  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_guard_drawbridge.gzp
+   22  C:\Windows\apppatch\01DD2F5D1D1D6508.sysmain.sdb
+   22  C:\Windows\SysWOW64\windows.storage.dll
+   22  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\w_Story2.gzp
+   22  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_giants_logo_3d.gzp
+   22  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Bin\xx_kstory5.gzp
+   21  G:\VibeRE\GiantsRE\RuntimeLab\GiantsWork\Giants.exe
+   21  C:\Windows\SysWOW64\uxtheme.dll
+   21  C:\Windows\SysWOW64\ntmarta.dll
+   21  C:\Windows\SysWOW64\cfgmgr32.dll
+   21  C:\Windows\SysWOW64\srvcli.dll
+   21  C:\Windows\SysWOW64\netutils.dll
+
+== LAST 60 events (stall point) ==
+04:31:51,3339599 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:52,3298034 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:53,3310971 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:54,3355564 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:55,3377572 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:56,3400971 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:57,3319928 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:58,3377006 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:31:59,3384172 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2656250 seconds
+04:32:00,3380866 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:01,3415049 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:02,3389672 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:03,3393375 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:04,3276120 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:05,3300616 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:06,3386707 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:07,3368236 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:08,3363346 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:09,3263372 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:10,3271588 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:11,3298867 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:12,3297207 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:13,3404758 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:14,3261218 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:15,3394816 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:16,3364541 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:17,3351920 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:18,3368137 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:19,3309408 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:20,3299035 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:21,3272523 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:22,3390591 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:23,3377260 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:24,3368871 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:25,3332243 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:26,3333106 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:27,3312514 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:28,3293594 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:29,3280004 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:30,3402511 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:31,3390896 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:32,3328508 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:33,3313957 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:34,3310373 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:35,3346220 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:36,3370376 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:37,3392499 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:38,3392090 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:39,3322993 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:40,3327608 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:41,3345282 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:42,3375168 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:43,3366847 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:44,3363546 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:45,3287408 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:46,3319213 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:47,3322620 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:48,3360995 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:49,3379658 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
+04:32:50,3404416 Process Profiling             [SUCCESS] User Time: 0.0156250 seconds, Kernel Time: 0.2812500 seconds
