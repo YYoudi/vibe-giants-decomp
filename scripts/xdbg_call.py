@@ -41,7 +41,7 @@ def call(tool: str, arguments: dict | None = None, timeout: int = 120):
         method="POST",
     )
     with urllib.request.urlopen(req, timeout=timeout) as resp:
-        body = json.load(resp)
+        body = json.loads(resp.read().decode("utf-8", errors="replace"))
     if "error" in body:
         return f"ERROR: {body['error']}"
     parts = body.get("result", {}).get("content", [])

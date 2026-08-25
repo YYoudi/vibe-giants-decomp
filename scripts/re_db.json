@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "target": "Giants.exe v1.0 PC (MD5 330c6a9a8ab0fa4b0173d925e1d5ec27)",
+    "image_base": "0x400000",
+    "note": "All addresses are VAs. evidence: runtime = observed live under x64dbg; static = disassembly; res = documented in RESSOURCES_FOR_AI. Apply with scripts/apply_labels.py",
+    "updated": "2026-08-25"
+  },
+  "functions": {
+    "0x547358": {"name": "entry_point", "evidence": "runtime (x64dbg entry bp)"},
+    "0x53AE80": {"name": "cd_check", "evidence": "runtime+static: label 'GIANTS1'+CDFS vs SrcDir root; cache 0x631890; stub target B8 01 00 00 00 C3"},
+    "0x53AE60": {"name": "cd_check_bool_wrapper", "evidence": "static: wraps 0x53B280, neg/sbb bool"},
+    "0x5233E1": {"name": "cd_monitor_set_valid", "evidence": "static: mov [0x631890],1"},
+    "0x523404": {"name": "cd_monitor_clear_valid", "evidence": "static: mov [0x631890],0"},
+    "0x51EBEF": {"name": "renderer_load_return_site", "evidence": "runtime: LoadLibraryA('gg_dx7r.dll') returns here"},
+    "0x53A4C0": {"name": "vfs_fileread_load", "evidence": "static+runtime: fileread.c; search order Bin\\Override -> Bin; pkg switch; calls gzp_block_read"},
+    "0x53B490": {"name": "gzp_block_read", "evidence": "runtime: (off,len,dst); 16B block hdr {csize,usize,crc,type}; type2=stored type1=LZ"},
+    "0x53B4F4": {"name": "gzp_block_read_lz_branch", "evidence": "runtime bp hit"},
+    "0x53B5A5": {"name": "lzss_decompress_core", "evidence": "static: const 0xFEE (lzss.c)"},
+    "0x53B920": {"name": "gzp_enum_nodes", "evidence": "static: walks list 0x5E52E4 w/ callback"},
+    "0x53B960": {"name": "file_open_plain", "evidence": "static: CreateFileA, no magic check"},
+    "0x53B9B0": {"name": "gzp_open_parse_toc", "evidence": "static+runtime: magic 0x6608F101, TOC parse, node build/append"},
+    "0x53BB50": {"name": "gzp_close_free", "evidence": "static: re-read TOC, free nodes, CloseHandle"},
+    "0x53C810": {"name": "mem_alloc_tagged", "evidence": "static+runtime: (size,file,line,tag) 'gzpmem'/'lzssbuff'"},
+    "0x53C5C0": {"name": "mem_free_tagged", "evidence": "static: paired with 0x53C810, file/line args"},
+    "0x432FDE": {"name": "video_init_upcall_store", "evidence": "runtime crash: UpCall[obj+0x10](4)->NULL; fild 0x6314E4(width) coords store"},
+    "0x43005C": {"name": "wait_wrapper_site", "evidence": "runtime dump: main thread blocked at wrapper->0x42FF10"},
+    "0x530000": {"name": "menu_loop_cand_A", "evidence": "runtime dump stack recurrence"},
+    "0x58B750": {"name": "menu_loop_cand_B", "evidence": "runtime dump stack recurrence"},
+    "0x53A5E0": {"name": "vfs_calls_gzp_block_read", "evidence": "static+runtime ret addr 0x53A5E5"}
+  },
+  "globals": {
+    "0x654948": {"name": "g_renderer_objA_fptable", "evidence": "runtime: UpCall +8 used at video init"},
+    "0x654958": {"name": "g_renderer_objB_fptable", "evidence": "runtime: UpCall +0x10 returned NULL (contaminated renderer)"},
+    "0x5E52E4": {"name": "g_gzp_node_list", "evidence": "static xrefs"},
+    "0x5EE74C": {"name": "g_current_file_handle", "evidence": "runtime+static xrefs (28)"},
+    "0x5E12C4": {"name": "g_current_package", "evidence": "static: vfs compares/sets"},
+    "0x5E11A0": {"name": "g_cd_path_SrcDir", "evidence": "runtime: 'D:\\Games\\Giants' = HKCU SrcDir"},
+    "0x631890": {"name": "g_cd_validated_flag", "evidence": "runtime+static"},
+    "0x5E12D0": {"name": "g_vfs_busy_flag", "evidence": "static: cleared on open/close paths"},
+    "0x6314E4": {"name": "g_video_width_int", "evidence": "static: fild at video init"},
+    "0x6314E8": {"name": "g_video_height_int", "evidence": "static: fild at video init"}
+  },
+  "strings": {
+    "0x581560": "GIANTS1 (expected CD label)",
+    "0x581558": "CDFS (expected fs)",
+    "0x581568": "%s\\..\\GIANTSCD.1 (CD marker)",
+    "0x581498": "C:\\Giants\\Source\\Utils\\fileread.c",
+    "0x5815C8": "C:\\Giants\\Source\\Utils\\lzss.c",
+    "0x581584": "C:\\Giants\\Source\\Utils\\hash.c",
+    "0x5814BC": "gzpmem",
+    "0x5815B4": "lzssbuff",
+    "0x581414": "Bin\\Override",
+    "0x581424": "Bin",
+    "0x581428": "%s\\Bin"
+  }
+}

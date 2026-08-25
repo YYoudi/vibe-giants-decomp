@@ -74,27 +74,41 @@ Registry keys that matter: `HKCU\Software\PlanetMoon\Giants` SrcDir (CD) / DestD
 
 | gg_dx7r.dll | stack | result |
 |---|---|---|
-| contaminated (demo-patched, prev. sessions) | system d3dim700 | AV Giants+0x32FDE (E_OUTOFMEMORY path) |
-| Mecc demo clean (jan 2001) | system d3dim700 | boot to ~109 MB, then AV loop in msvcrt strlen called from d3dim700 ← device-enumeration string |
-| Mecc demo + DDrawCompat 0.7.1 | DDrawCompat ddraw + system d3dim700 | same d3dim700 AV loop |
-| GOG 2008 build (1.449, D3D8 wrapper — loads d3d8.dll/d3d8thk) | d3d8 | heap-corruption AV in ntdll (mov eax,[ecx+14] heap walk) after ~66 MB |
-| **Mecc demo + dgVoodoo2 2.87.3 (DDraw.dll + D3DImm.dll→d3dim700.dll)** | **dgVoodoo → D3D11 → amdxx32** | **✅ MENU REACHED: window "GFX_DX7" responding, frame presented, engine idle-waiting for input** |
+| contaminated (demo-patched) | system d3dim700 | AV Giants+0x32FDE (E_OUTOFMEMORY path) |
+| Mecc demo clean (jan 2001) | system d3dim700 | AV loop in msvcrt strlen called from d3dim700 (device-enumeration string) |
+| Mecc + DDrawCompat 0.7.1 | DDrawCompat + system d3dim700 | same d3dim700 AV loop |
+| Mecc/Reaper + dgVoodoo2 2.87.3 (DDraw+D3DImm) | dgVoodoo→D3D11→amdxx32 | **D3DEnum rejects all devices → error dialog "Enumeration failed (D3DEnum_EnumerateDevices)"** |
+| GOG 2008 (D3D8 wrapper) | d3d8 | 640×480 window created, then **fatal wild-jump crash 0xC0000005 @0xAB227401** (vtable corruption — 1.449-interface skew vs v1.0 exe) |
 
-Winning work-dir layout: `GiantsWork/{Giants.exe (vanilla bytes), gg_dx7r.dll (Mecc), ddraw.dll + d3dim700.dll (dgVoodoo2 MS/x86), dgVoodoo.conf}`.
-Note: dgVoodoo → amdxx32 (AMD D3D11 driver) throws SEH exceptions continuously in normal
-operation — x64dbg must not pause on them (`erun` / IgnoreRange), else boot crawls forever.
+**CORRECTION (2026-08-25, vision loop):** the earlier "MENU REACHED" claim was FALSE — the
+windowed "GFX_DX7" 640×480-ish window with Responding=True was the renderer's ERROR DIALOG
+waiting for OK. The autonomous screenshot+analyze loop (`scripts/screenshot_window.ps1`,
+PrintWindow PW_RENDERFULLCONTENT; use `screenshot_region.ps1` BitBlt when the window is dead)
+exposed it. No human needed: capture → analyze → decide.
 
-## 6b. Menu-state architecture (observed via 3× minidump sampling)
+### D3DEnum failure anatomy (Reaper dll, same offsets ± in Mecc)
 
-- 11 threads; the game MAIN thread (stack ~0x1Axxxx) sits inside:
-  `game → gg_dx7r+0x6687 → user32 message pump (5-6 frames) → PeekMessageW` —
-  i.e. the renderer's present/wait path pumps messages cooperatively; the menu is
-  BLOCKED WAITING FOR INPUT (not wedged): identical dumps ×3, window Responding=True,
-  one presented frame, zero CPU.
-- Message APIs are **W-variants** (PeekMessageW) — A-variant bps never fire.
-- No per-frame QPC/timeGetTime calls observed at menu idle.
-- Deeper stable stack values (indirect-call returns, no E8 alignment): giants+0x18B750,
-  giants+0x130000 — candidates for the main-loop frames once walked properly.
+- error-string dispatcher `gg_dx7r+0x6600` maps hr → text; **0x81000002** = "Enumeration failed"
+- wrapper `D3DEnum_EnumerateDevices` `gg_dx7r+0x1050`: count at `[0x100282BC]`; 0 → error
+- enumerator `+0xD7E0`, per-device callback `+0x10A0` — **callback IS called** (≥2 devices
+  enumerated by dgVoodoo) but every device rejected by the internal filter
+  (caps test `test [esp+0x134], 0x80000` = D3DDEVCAPS_HWRASTERIZATION at `+0x11A7`,
+  format checks via `+0xD7E6`/`+0xD7F7`, guid==NULL condition at `+0x11B4`)
+- stepping through the filter drowns in amdxx32 SEH storms — unresolved; next lever: locate
+  the count++ path / patch accept branches, or query dgVoodoo advertised caps directly.
+
+### Renderer interface (observed)
+
+- Exports of gg_dx7r: `GDVSysCreate` (+0x2ED0), `UpCallsLoad` (+0xD4C0) (Reaper build)
+- Interface call order at boot observed via bp probe (`scripts/probe_iface.py`):
+  D3DEnum wrapper → enumerator → per-device callback(s), ×2 rounds.
+- ⚠️ Software bps must be set AFTER the dll is mapped: setting them during LoadLibraryA
+  gets them overwritten by the loader. Arm at the exe's LoadLibraryA return site 0x51EBEF.
+
+### Game self-narration
+
+- The game/renderer emits **OutputDebugString** at runtime (seen ×4 before the GOG crash).
+  Capture harness: `scripts/capture_ods.py` (bp OutputDebugStringA/W → string args).
 
 Wedged-process forensics (procdump + minidump): main thread blocked in kernel wait, top game
 frame **Giants+0x3005C** (wrapper calling +0x2FF10 — event/semaphore wait family); all other
