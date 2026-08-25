@@ -48,24 +48,15 @@ Only reverse what is NOT covered. Update this file when coverage changes.
 
 ## RE gaps worth attacking (unique value)
 
-1. **GTI terrain format** — STARTED (this session): header decoded from `gwd_maps/*.gck`
-   (zip archives containing `default.gti` + map `.bin` + `.gmm` + TGAs):
-   `{u32 ver=3, u32 0, f32 minXZ=-2000, f32 ?, f32 maxheight, u32 100, u32 100,
-   f32 tile=40.0, f32 0.5, f32 0.5, u32 color 0x3903126F ×2, u16 flags, f32 1.0,
-   char[16] "useless" (dev label!), pad}` → world 4000×4000. Body = variable records
-   `{u8 type(02/05/07/00), u8[3] RGB?, f32 height}` (~1099 in stunt_show, tail = flat
-   500.0 plateau). Full decode needs the exe's GTI loader (not yet located — no direct
-   xrefs to "story1.gti"; it's loaded via the world table referenced at +0xF4070).
-2. **GText*.bin translations** — MOSTLY SOLVED: `{u32 count, u32 pool2_off, u32 pool3_off,
-   pad, count×{u32 offA, u32 offB}, pool1=UI ids ("$KB_..","IDselect"), pool2=mission ids
-   ("MO_kstory4_3"), pool3=text lines ("Yes, yes that's where they took my singing partner!")}`.
-   Parser: `scripts/gtext_parse.py` (auto-calibrated base, ~96% clean; ±3 table/pool edge
-   ambiguity remains — needs exe loader for the last mile). French count=1879 vs EN 1852.
-3. **WorldList.bin** — decoded: `{u32 ?, u32 payloadLen=filesize-8, u32 count=31,
-   u32 offsets[count], records: char name[~15..16] + u32 id}` — 31 worlds (Story1-5,
-   Rstory1-5 + races, Kstory1-5, intro_island, M_Mecc_L1/L2, M_3WAY...).
-4. **world.gb2** — new format spotted in the exe's world table (am_ms1.wav + story1.gti +
-   w_intro.bin + world.gb2 per world).
-5. System-layer functions of v1.0 Giants.exe — runtime anchors in `scripts/re_db.json`.
-6. Main-loop / frame architecture (blocked on reaching the real menu — D3DEnum filter
-   rejects all dgVoodoo devices; GOG D3D8 renderer crashes on v1.0 exe).
+1. **GTI terrain** — ✅ SOLVED (loader +0x76D40, `scripts/gti_parse.py` validated: 958
+   records / 0 bad / rendered max == maxh). Open tails: the 829 post-RLE bytes in stunt_show
+   (texture/lightmap section?), chunk records for v2/v3 (count>0 files unseen).
+2. **GText*.bin** — ✅ SOLVED 100% (loader +0x10D660; `scripts/gtext_parse.py` clean on
+   EN/FR/DE/IT/ES).
+3. **WorldList.bin** — decoded: {?, payloadLen, count, offsets[], name+id records}.
+4. **world.gb2** — still undecoded; world table at +0xF4070 references {wav, gti, bin, gb2}.
+5. **.bin object format (0x1A0002E5)** — loader at +0xB7C50; body structure unmapped.
+   **.abx (0x1A0002DD)** — loader at +0xBA83B region; body unmapped.
+6. System-layer functions — `scripts/re_db.json` (28 fns / 14 globals, apply_labels.py).
+7. Main-loop / frame architecture — blocked on the real menu (D3DEnum filter rejects
+   dgVoodoo devices; GOG D3D8 renderer crashes on v1.0 exe).
