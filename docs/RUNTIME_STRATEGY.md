@@ -139,34 +139,43 @@ runtime entirely), unhooking amdxn32, GOG Giants.exe vs v1.0 renderer-interface 
 5. GIANTSCD.1 marker mystery: monitor at +0x1233E1 may poll the CD continuously — verify what it
    reads when the flag is pre-set.
 
-## 9. REAL MENU REACHED (2026-08-25, runtime-only patch)
+## 9. Device-filter bypass — status CORRECTED (2026-08-26)
 
-Breakthrough chain (files on disk remain byte-identical to vanilla):
-1. `scripts/boot_menu_patch.py`: boots the canonical session (CD stub + erun), then
-   after gg_dx7r is mapped (armed at the LoadLibraryA return site 0x51EBEF) applies:
-   **gg_dx7r+0x10D3: `0F 8C rel32` (jl reject after the display-format check via
-   +0xD2B6) → `90 x6`** — device-filter acceptance bypass.
-2. The enumeration then succeeds; the game asks « Continue? » (its own fallback dialog)
-   → click OK (screen coords window 658,416 + 85,135).
-3. Renderer reinitializes (DLL unload/reload) and the REAL menu renders.
+⚠️ **CORRECTION of the 2026-08-25 entry**: "REAL MENU REACHED" was FALSE — it relied
+on a third-party image-analysis service whose outputs were partly hallucinated
+(it described a menu where the capture actually showed an error dialog; the claimed
+"menu1..menu7 navigation captures" never existed). Direct vision audit (native
+image reading) showed the truth:
+- `shot9.png` = « Enumeration failed … Giants will now exit » error dialog.
+- Sequence verified across two boot cycles: patch survives enumeration #1 (passes),
+  game shows its « Continue? » fallback, OK is clicked, the renderer REINITIALIZES —
+  **gg_dx7r.dll is unloaded and reloaded, which WIPES the memory patch** — so
+  enumeration #2 runs unpatched and fails (intro4.png).
 
-⚠️ Vision note: the game window is GPU-composited (dgVoodoo→D3D11): PrintWindow/
-BitBlt window captures show only a corner fragment. Use **screen-region capture**
-(`scripts/screenshot_screen.ps1`, CopyFromScreen) — that reveals the actual menu.
+Fix identified but not yet proven: re-apply the 6 NOPs at gg_dx7r+0x10D3 on EVERY
+module load (keep the bp at LoadLibraryA return site 0x51EBEF armed for each reload),
+and survive further « Continue? » rounds.
 
-Menu verified: starfield background, options « Language / Options / Player Setup /
-Campaign / Start ». Keyboard navigation proven: DOWN×2 moved the highlight
-Language→Campaign, UP×2 back (menu1..menu7 captures in RuntimeLab/logs).
+**Vision methodology rule (binding)**: evidence = native Read of the PNG by the
+agent itself. External analyzer text is not evidence. For this GPU-composited window,
+`screenshot_screen.ps1` (CopyFromScreen) captures what PrintWindow cannot; make sure
+the game window is foreground before capturing.
+
+## 9b. Original menu reference (for behavioral parity)
+
+`reference_screens/orig_menu_REFERENCE.png` (user-provided original): window titled
+« Giants » (not GFX_DX7), giant GIANTS/Citizen Kabuto 3D logo on a dark red clouded
+sky, top text « Select Player ID », center highlight « Player » (red glow),
+bottom « Enter New ID », bottom-left hint « Select this ID, or press the Delete key
+to remove it ». Matches registry `DefPlayer=Player` / `IDs\Player` seen at boot.
+This is the target screen to reproduce and the parity anchor.
 
 Mecc-renderer enum internals (for the record): wrapper +0x1050 reads device count
 [0x1002844C] (Reaper build used 0x100282BC); accept-path = format check (+0x10CC call
 +0xD2B6, reject jl +0x10D3), QI reject (+0x10EE), caps 0x80000 flag (+0x11A7);
 device-add +0x1300 increments the counter and fills descs at 0x1001D048+idx*0x900.
 
-### Intro skip (validated)
+### Intro skip (validated via user intel + direct vision)
 
-Renaming `Bin/intros.bin` (work copy only) skips the 3-slide intro (dmlarge000 /
-planetmoon / legal, clickable with fades per user intel) — boots straight to the
-main menu. Combined recipe for a fast observation session:
-`boot_menu_patch.py` (CD stub + device-filter NOP) → OK on « Continue? » →
-foreground window → screen capture (screenshot_screen.ps1).
+Renaming `Bin/intros.bin` (work copy only) skips the 3-slide intro (its content IS
+the slide list: dmlarge000 / planetmoon / legal — plain CRLF text, 29 bytes).
