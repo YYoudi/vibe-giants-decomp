@@ -1,0 +1,22 @@
+[boot] pid=1604
+[patch] verified=True
+[A_ddenum_enter] #1
+[B_format_ok] #1
+[C_qi_FAILED(eax=hr)] #1 eax(hr)=0x0
+[D_qi_ok] #1
+[E_call_enumdevices] #1
+[F_adddev] #1
+[F_adddev] #2
+[F_adddev] #3
+[A_ddenum_enter] #2
+[B_format_ok] #2
+[C_qi_FAILED(eax=hr)] #2 eax(hr)=0x0
+[D_qi_ok] #2
+[E_call_enumdevices] #2
+[F_adddev] #4
+[A_ddenum_enter] #3
+[B_format_ok] #3
+[C_qi_FAILED(eax=hr)] #3 eax(hr)=0x0
+[D_qi_ok] #3
+[E_call_enumdevices] #3
+[summary] {'A_ddenum_enter': 3, 'B_format_ok': 3, 'C_qi_FAILED(eax=hr)': 3, 'D_qi_ok': 3, 'E_call_enumdevices': 3, 'F_adddev': 9}
