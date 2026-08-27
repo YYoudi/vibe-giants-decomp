@@ -41,3 +41,46 @@ First-time import: replace `-process Giants.exe -noanalysis` with
 - `static`  = capstone/Ghidra disassembly
 - `res`     = RESSOURCES_FOR_AI (Amazed repos, game_structure.txt, …)
 - `ps2`     = SLUS_201.78 symbol table (dev-authored names, same C++ source)
+
+## Interactive mode: ghidra-mcp (bethington) — PREFERRED
+
+A 226-endpoint MCP server runs headless (no GUI) against the shared project:
+
+```
+# one-time: build + install (done 2026-08-28)
+cd G:/Tools/ghidra-mcp
+M2_HOME=G:/Tools/maven/apache-maven-3.9.9 python -m tools.setup preflight --ghidra-path G:/Tools/ghidra_12.1.2_PUBLIC
+M2_HOME=... python -m tools.setup ensure-prereqs --ghidra-path ... && python -m tools.setup build
+# extension installed at G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Extensions/GhidraMCP
+# launcher bat: RuntimeLab/start_ghidra_mcp.bat
+
+# every session (background):
+cmd //c G:/VibeRE/GiantsRE/RuntimeLab/start_ghidra_mcp.bat
+#   -> HTTP 127.0.0.1:8089, opens ghidra_projects/GiantsRE.gpr (renames included)
+curl http://127.0.0.1:8089/open_project      -d '{"path":"G:/VibeRE/GiantsRE/ghidra_projects/GiantsRE.gpr"}'
+curl http://127.0.0.1:8089/load_program_from_project -d '{"path":"/Giants.exe"}'
+```
+
+Key REST calls (params are QUERY unless noted; body = JSON):
+
+| Action | Call |
+|---|---|
+| decompile one | `POST /decompile_function?address=0x53AE80` |
+| decompile many | `POST /decompile_function?functions=0x53AE80,0x53B490` → `{addr: C}` |
+| list functions | `GET /list_functions?limit=&offset=` |
+| search strings | `GET /list_strings` / string-anchored discovery tools |
+| xrefs | xref endpoints (`/get_xrefs_...`) |
+| rename | `POST /rename_function` (old, new) — feeds the shared project |
+| comments/types/structs | dedicated write endpoints (253 tools total) |
+
+Python bridge (MCP stdio for ZCode) is registered in `~/.zcode/cli/config.json`:
+`{"command":"python","args":["-m","bridge_mcp_ghidra"]}` — bridge default target is
+exactly `http://127.0.0.1:8089`, so no extra config. Tools appear after session reload.
+
+### Workflow loop (updated — replaces "rerun headless for every change")
+
+1. Observe runtime anchor (x64dbg) → add to `scripts/re_db.json`.
+2. While the headless server is up: `POST /rename_function` directly + bulk-decompile
+   via `/decompile_function?functions=...` and save to `decompiled/system_layer/`.
+3. Periodically commit project state by running the headless `-postScript` pair once
+   (rarely needed; interactive writes already persist to the project on save/close).

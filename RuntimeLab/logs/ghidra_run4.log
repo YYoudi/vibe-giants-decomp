@@ -1,0 +1,66 @@
+INFO  Using log config file: jar:file:/G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (983 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2732 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-emotionengine-reloaded\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    G:\VibeRE\GiantsRE\scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-lx-loader\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessAnalyzer)  
+INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessProject)  
+INFO  REPORT: Processing project file: /Giants.exe (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ghidra_apply_matches.java 'G:\VibeRE\GiantsRE\ps2_symbols\pc_ps2_matches_full.csv'  (HeadlessAnalyzer)  
+INFO  SCRIPT: G:\VibeRE\GiantsRE\scripts\ghidra_apply_matches.java (HeadlessAnalyzer)  
+INFO  ghidra_apply_matches.java> matches: renamed=17 candidate-commented=317 no-func=44 (GhidraScript)  
+INFO  REPORT: Execute script: ghidra_dump_system.java 'G:\VibeRE\GiantsRE\scripts\system_names.json' 'G:\VibeRE\GiantsRE\decompiled\system_layer'  (HeadlessAnalyzer)  
+INFO  SCRIPT: G:\VibeRE\GiantsRE\scripts\ghidra_dump_system.java (HeadlessAnalyzer)  
+INFO  ghidra_dump_system.java> names loaded: 43 (GhidraScript)  
+INFO  ghidra_dump_system.java> names applied=21 created=2 (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled cd_check (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled cd_monitor_set_valid (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled BinFileRead (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled gzp_block_read (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled gzp_open_parse_toc (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled gzp_close_free (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled mem_alloc_tagged (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled mem_free_tagged (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled gti_terrain_load (GhidraScript)  
+INFO  ghidra_dump_system.java> no function at 0x510d660 (gtext_load) (GhidraScript)  
+INFO  ghidra_dump_system.java> no function at 0x510d7f0 (gtext_lookup) (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled bin_load_1a0002e5 (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled world_files_validate (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled video_init_upcall_site_fn (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled renderer_load_caller_fn (GhidraScript)  
+INFO  ghidra_dump_system.java> decompiled abx_load_region (GhidraScript)  
+INFO  ghidra_dump_system.java> decompile ok=14 fail=2 (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /Giants.exe (HeadlessAnalyzer)  

@@ -63,3 +63,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Messages de commit en **anglais**, concis (ce qui a été reversé + statut).
 - `pull --rebase` avant push ; si rejet, rebase + retry.
 - **JAMAIS** de trailer `Co-Authored-By` ni mention de Claude/AI dans les commits.
+
+## OUTIL GHIDRA MCP INTERACTIF (bethington/ghidra-mcp, installé 2026-08-28)
+
+- Serveur headless : `cmd //c G:/VibeRE/GiantsRE/RuntimeLab/start_ghidra_mcp.bat`
+  (HTTP 127.0.0.1:8089, ouvre ghidra_projects/GiantsRE.gpr avec renames PS2 inclus).
+- MCP dans ZCode : serveur stdio `python -m bridge_mcp_ghidra` (déjà enregistré,
+  scope user, avec x64dbg). 253 outils : décomp unitaire/bulk, renames, xrefs,
+  strings, types/structs, scripts, émulation P-code.
+- Boucle decomp : ancre runtime → re_db.json → rename via MCP + bulk-decompile
+  → decompiled/system_layer/*.c. Détails : docs/DECOMP_PIPELINE.md.
+- Runner headless classique (analyzeHeadless + scripts Java) reste pour les
+  passes batch complètes.
