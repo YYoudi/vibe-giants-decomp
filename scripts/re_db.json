@@ -51,8 +51,8 @@
    "evidence": "static: walks list 0x5E52E4 w/ callback"
   },
   "0x53B960": {
-   "name": "file_open_plain",
-   "evidence": "static: CreateFileA, no magic check"
+   "name": "BinFileOpenRead",
+   "evidence": "PS2 symbol BinFileOpenRead(0x112090); CreateFileA plain open"
   },
   "0x53B9B0": {
    "name": "gzp_open_parse_toc",
@@ -115,8 +115,12 @@
    "evidence": "static: 14 callers incl gti/gtext/abx/bin loaders"
   },
   "0x510D7F0": {
-   "name": "gtext_lookup",
-   "evidence": "static: hash get by key string, default 'Null'"
+   "name": "gtext_lookup_HashKey",
+   "evidence": "PS2 HashKey(char*)(0x121780) / InitHashTable__7CSysMapi(0x121960): 1901-bucket get-by-key"
+  },
+  "0x53A090": {
+   "name": "BinFileRead",
+   "evidence": "PS2 symbol BinFileRead(0x112118)+fileread.c string in exe; static+runtime"
   }
  },
  "globals": {
