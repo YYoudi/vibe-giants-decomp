@@ -110,3 +110,4 @@ venv/
 /RuntimeLab/logs/*.csv
 /RuntimeLab/logs/*.dmp
 /RuntimeLab/logs/xdbg_boot_raw.log
+/RuntimeLab/menu_build/
