@@ -1,0 +1,23 @@
+INFO  Using log config file: jar:file:/G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (983 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+Ghidra initialized in headless mode
+No credentials configured - server connection will use anonymous/default auth
+INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (DefaultProject)  
+INFO  Opened project: GiantsRE from G:\VibeRE\GiantsRE\ghidra_projects (HeadlessProgramProvider)  
+Opened project: GiantsRE
+Registered 226 REST API endpoints
+HTTP server started on 127.0.0.1:8089
+GhidraMCP Headless Server v7.0.0-headless running on port 8089
+Press Ctrl+C to stop
+INFO  Closed project (HeadlessProgramProvider)  
+INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (DefaultProject)  
+INFO  Opened project: GiantsRE from G:\VibeRE\GiantsRE\ghidra_projects (HeadlessProgramProvider)  
+INFO  Fixing Properties... (ConsoleTaskMonitor)  
+INFO  Loaded program from project: Giants.exe (HeadlessProgramProvider)  

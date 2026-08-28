@@ -95,8 +95,17 @@ def main():
     off = patch_bytes(gbuf, pg, GG_VTABLE_SLOT_VA, struct.pack("<I", scratch_va))
     print(f"[gg] vtable slot {hex(GG_VTABLE_SLOT_VA)} -> {hex(scratch_va)} (off {hex(off)})")
 
+    # kill ASLR on the dll: absolute baked pointers require the preferred base
+    dc = pg.OPTIONAL_HEADER.DllCharacteristics
+    pg.OPTIONAL_HEADER.DllCharacteristics = dc & ~0x0040  # clear DYNAMIC_BASE
+    print(f"[gg] DllCharacteristics {dc:#06x} -> {pg.OPTIONAL_HEADER.DllCharacteristics:#06x} (ASLR off)")
+    pg.__data__ = None
     open(f"{OUT_DIR}/gg_dx7r.dll", "wb").write(bytes(gbuf))
-    print("[gg] written")
+    # rewrite header bytes via pefile to persist DllCharacteristics
+    pe2 = pefile.PE(data=bytes(gbuf))
+    pe2.OPTIONAL_HEADER.DllCharacteristics = dc & ~0x0040
+    pe2.write(f"{OUT_DIR}/gg_dx7r.dll")
+    print("[gg] written (ASLR disabled)")
 
     # sanity: vanilla untouched
     import hashlib

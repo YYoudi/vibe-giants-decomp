@@ -49,3 +49,30 @@ RuntimeLab\run_decompile_all.bat    # full dump + index + stats (≈20 min)
 ```
 Project: `ghidra_projects/GiantsRE.gpr` (single Ghidra lock — stop the MCP
 headless server on :8089 before running).
+
+## Menu path — state (2026-08-28, cycle "dernière itération menu")
+
+Validated (static patched build `RuntimeLab/menu_build/`, vanilla untouched):
+- CD-check stub + gg format-NOP + vtable-slot redirect (scratch stub baked in
+  .data @0x10019E38, slot @0x100037A0) — **verified live in memory** (attached,
+  bytes confirmed, base 0x10000000, no rebase; DllCharacteristics already 0).
+- The D3DEnum wall is GONE: build reaches the DirectSound stage and shows
+  `Giants Error: ErrFailedSND` (222x130 native box; OK = continue sans son —
+  legitimate original option; flag DAT_005dca58 in FUN_005222c0 decides
+  abort/continue).
+- After OK: window goes borderless 3072-wide and the post-init wedge/present
+  path remains the final blocker (either silent no-present or the known
+  fatal-loop; one ntdll 0xC0000005 crash event logged 09:59).
+
+Non-determinism warning: recent <30 s "deaths" have NO crash events — they are
+windows being closed manually / focus issues while the desktop is user-active.
+Autonomous UI tests must wait for an idle desktop.
+
+Launcher: `loader_src/giants_menu.rs -> menu_build/GiantsMenu.exe` (rustc GNU
+toolchain): starts patched build + click-rotation dismissal schedule
+(OK 0.33/0.90, alt 0.26/0.74, Enter last — Enter alone hits default=Cancel on
+native error boxes and aborts).
+
+Next iteration (menu): sample the wedged process right after SND-OK
+(wedge_sample.py, now size-gated and decoder-fixed) → identify the looping
+thread's game frames → static patch; then menu render + capture.
