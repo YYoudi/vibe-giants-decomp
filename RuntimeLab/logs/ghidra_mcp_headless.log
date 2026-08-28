@@ -17,9 +17,12 @@ ERROR Error opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE.gpr (He
 	at ghidra.framework.data.DefaultProjectData.<init>(DefaultProjectData.java:120)
 	at ghidra.framework.project.DefaultProject.<init>(DefaultProject.java:119)
 	at ghidra.framework.project.DefaultProjectManager.openProject(DefaultProjectManager.java:131)
-	at com.xebyte.headless.HeadlessProgramProvider.openProject(HeadlessProgramProvider.java:928)
-	at com.xebyte.headless.GhidraMCPHeadlessServer.loadInitialPrograms(GhidraMCPHeadlessServer.java:334)
-	at com.xebyte.headless.GhidraMCPHeadlessServer.launch(GhidraMCPHeadlessServer.java:109)
+	at com.xebyte.headless.HeadlessProgramProvider.openProject(HeadlessProgramProvidStopping HTTP server...
+Closing programs...
+Closing project...
+Server stopped
+Appuyez sur une touche pour continuer... 
+xebyte.headless.GhidraMCPHeadlessServer.launch(GhidraMCPHeadlessServer.java:109)
 	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
 	at ghidra.Ghidra.main(Ghidra.java:54)
  

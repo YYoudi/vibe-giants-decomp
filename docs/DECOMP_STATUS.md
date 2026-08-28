@@ -162,3 +162,19 @@ Remaining paths to menu-3D (next cycle, ranked):
    D3D2/7 user-mode implementation)
 2. Iterative in-d3dim700 crash fixing (reverse d3dim700 itself)
 3. DxWnd with a manual profile (GUI automation via computer-use MCP)
+
+## TARGET SWITCH (2026-08-28): GOG 1.4.0 (build 1.449) is now the RE target
+
+User decision: abandon v1.0 RE (legacy D3D2/7 stack unusable on WDDM); the GOG
+1.4 install (G:\Games\Giants, exe md5 fe0745143d2f6ee1fdf3f0f3e38ee398, base
+0x400000, image 0x262000) is the new target — it RUNS natively on the user's
+Win11 (user-validated: menu 3D + HUD render, captured in gog141_menu.png,
+identical to orig_menu_REFERENCE.png).
+
+State: Ghidra project ghidra_projects_gog144/GOG144 analyzed: **2755
+functions, 59 named** (version strings/imports auto-named). v1.0 knowledge
+ports: same game/formats; re_db v1.0 anchors need re-mapping (function
+addresses shifted).
+
+instros.bin: renamed in G:\Games\Giants\Bin too (intro skipped) — restore
+when desired.
