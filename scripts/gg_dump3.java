@@ -20,7 +20,9 @@ public class gg_dump3 extends GhidraScript {
         List<Anchor> anchors = List.of(
             new Anchor("crash28BB_site", 0x100028BBL),
             new Anchor("crash282A", 0x1000282AL),
-            new Anchor("crash2780", 0x10002780L));
+            new Anchor("crash2780", 0x10002780L),
+            new Anchor("fmtcheck_wrapper", 0x1000D2B6L),
+            new Anchor("fmtcheck_ret_true", 0x1000D2C7L));
         DecompInterface di = new DecompInterface();
         di.openProgram(currentProgram);
         var mon = new ConsoleTaskMonitor();

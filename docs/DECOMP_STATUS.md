@@ -133,3 +133,32 @@ something else (a specific mode list?). Next probe: bp the wrapper, dump its
 inputs + the mode it rejects, then satisfy that exact condition (registry
 VideoWidth/Height/Depth? desktop mode?) — then NO NOP needed and the device
 desc chain stays valid.
+
+## Final wall characterization (2026-08-28, fin de cycle menu)
+
+A/B test conclusive: BOTH config A (redirect+stub) and B (pristine+NOP) die
+at 4-6 s rc=0xC0000005 NOW, while the same builds survived this morning.
+Leaked monitoring loops from my own session were killing the game windows
+(found + killed 6 stale bash loops); A/B re-run after cleanup still dies
+=> the regression is ENVIRONMENTAL, not patch-related (something changed
+system-wide this afternoon; suspected: dinput/dsound state or the
+inpoutx64.sys removal fallout — game binaries contain ZERO inpout refs).
+
+Decoded from runtime: the renderer QIs for **IID_IDirect3D2**
+(F5049E77-4861-11D2-A407-00A0C90629A8 — confirmed in Wine headers) = a 1996
+interface. Full stack analysis:
+- v1.0 renderer speaks D3D2/7-era → needs the legacy DDraw/D3D7 kernel path
+  (vestigial on WDDM Win11 — root cause of every modern-stack failure)
+- dgVoodoo 2.87: no IDirect3D2/7 QI support (E_NOINTERFACE measured)
+- GOG renderer: requires the 1.449 exe's upcall table (interface skew:
+  crashes calling a NULL slot the v1.0 exe never fills)
+- system d3dim700 (Win11 2026 build): boots furthest (device created,
+  draws attempted) but Lock/draw crashes internally (0xCC uninitialized
+  bank base; DDLOCK_WAIT fix advanced past Lock into d3dim700 internals)
+
+Remaining paths to menu-3D (next cycle, ranked):
+1. WineD3D built for Windows (adolfintel/wined3d4win scripts = full MXE
+   cross-build; implements DDraw1-7 + D3D1-9 over OpenGL — the ONLY complete
+   D3D2/7 user-mode implementation)
+2. Iterative in-d3dim700 crash fixing (reverse d3dim700 itself)
+3. DxWnd with a manual profile (GUI automation via computer-use MCP)

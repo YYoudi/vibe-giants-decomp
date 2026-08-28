@@ -2,7 +2,7 @@ INFO  Using log config file: jar:file:/G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Fram
 INFO  Using log file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\application.log (LoggingInitialization)  
 INFO  Loading user preferences: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\preferences (Preferences)  
 INFO  Searching for classes... (ClassSearcher)  
-INFO  Class search complete (1566 ms) (ClassSearcher)  
+INFO  Class search complete (978 ms) (ClassSearcher)  
 INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
@@ -10,15 +10,32 @@ INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFact
 Ghidra initialized in headless mode
 No credentials configured - server connection will use anonymous/default auth
 INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (DefaultProject)  
-INFO  Opened project: GiantsRE from G:\VibeRE\GiantsRE\ghidra_projects (HeadlessProgramProvider)  
-Opened project: GiantsRE
-INFO  Removed old presave file: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE.rep\idata\00\~00000000.db\tmp12246454067691937155.ps (LocalBufferFile)  
-Registered 226 REST API endpoints
-HTTP server started on 127.0.0.1:8089
-GhidraMCP Headless Server v7.0.0-headless running on port 8089
-Press Ctrl+C to stop
-INFO  Closed project (HeadlessProgramProvider)  
-INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (DefaultProject)  
-INFO  Opened project: GiantsRE from G:\VibeRE\GiantsRE\ghidra_projects (HeadlessProgramProvider)  
-INFO  Fixing Properties... (ConsoleTaskMonitor)  
-INFO  Loaded program from project: Giants.exe (HeadlessProgramProvider)  
+ERROR Error opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE.gpr (HeadlessProgramProvider) ghidra.framework.store.LockException: Unable to lock project! G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE
+	at ghidra.framework.data.DefaultProjectData.getProjectLock(DefaultProjectData.java:353)
+	at ghidra.framework.data.DefaultProjectData.initLock(DefaultProjectData.java:323)
+	at ghidra.framework.data.DefaultProjectData.init(DefaultProjectData.java:315)
+	at ghidra.framework.data.DefaultProjectData.<init>(DefaultProjectData.java:120)
+	at ghidra.framework.project.DefaultProject.<init>(DefaultProject.java:119)
+	at ghidra.framework.project.DefaultProjectManager.openProject(DefaultProjectManager.java:131)
+	at com.xebyte.headless.HeadlessProgramProvider.openProject(HeadlessProgramProvider.java:928)
+	at com.xebyte.headless.GhidraMCPHeadlessServer.loadInitialPrograms(GhidraMCPHeadlessServer.java:334)
+	at com.xebyte.headless.GhidraMCPHeadlessServer.launch(GhidraMCPHeadlessServer.java:109)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+Failed to open project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE.gpr
+Exception in thread "main" java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:565)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+	at java.base/sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:89)
+	at jdk.httpserver/sun.net.httpserver.ServerImpl.<init>(ServerImpl.java:145)
+	at jdk.httpserver/sun.net.httpserver.HttpServerImpl.<init>(HttpServerImpl.java:50)
+	at jdk.httpserver/sun.net.httpserver.DefaultHttpServerProvider.createHttpServer(DefaultHttpServerProvider.java:35)
+	at jdk.httpserver/com.sun.net.httpserver.HttpServer.create(HttpServer.java:152)
+	at com.xebyte.headless.GhidraMCPHeadlessServer.startServer(GhidraMCPHeadlessServer.java:365)
+	at com.xebyte.headless.GhidraMCPHeadlessServer.launch(GhidraMCPHeadlessServer.java:112)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+Appuyez sur une touche pour continuer... 

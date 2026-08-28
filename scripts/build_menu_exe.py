@@ -82,14 +82,36 @@ def main():
     pg = pefile.PE(data=bytearray(dll))
     gbuf = bytearray(dll)
 
-    off = patch_bytes(gbuf, pg, GG_FORMAT_NOP_VA, bytes.fromhex("90" * 6))
-    print(f"[gg] format-NOP @ {hex(GG_FORMAT_NOP_VA)} -> off {hex(off)}")
+    # NO format NOP: system ddraw creates the device natively (8/25 proof);
+    # the NOP admitted desc-less devices -> strlen(0xCC)/dinput AVs later.
 
     # NO stub baked into .data: any byte we place inside the allocator pools
     # corrupts chunk headers (heap AV during enum). The launcher writes both
     # the stub and the slot redirect at runtime into the zero tail of .data.
     scratch_va = 0x1002B000  # deep in the loader-zeroed .data tail (beyond raw)
     print(f"[gg] .data left pristine; launcher will use scratch {hex(scratch_va)}")
+
+    # ---- DDLOCK_WAIT fix: Lock(flags=0) fails forever on d3dim700/modern,
+    # leaving the bank base stale (0xCC) -> draw strcpy AV. Route the flags
+    # push (VA 0x10002540, 9 bytes) through a code cave in the .text tail
+    # padding (0x100169CA, executable) that sets DDLOCK_WAIT (0x01000000).
+    GG_WAIT_SITE = 0x10002540
+    GG_WAIT_CAVE = 0x100169CA
+    GG_LOCK_CALL = 0x10002554
+    cave = bytes.fromhex('8D4E6C')                    # lea ecx,[esi+0x6c]
+    cave += bytes.fromhex('6800000001')               # push DDLOCK_WAIT
+    cave += bytes.fromhex('51')                       # push ecx (out ptr)
+    cave += bytes.fromhex('8B8496BC000000')           # mov eax,[esi+edx*4+0xbc]
+    cave += bytes.fromhex('50')                       # push eax (vertex buffer)
+    cave += bytes.fromhex('8B10')                     # mov edx,[eax] (vtable)
+    rel_c = GG_LOCK_CALL - (GG_WAIT_CAVE + len(cave) + 5)  # +5 = the jmp itself
+    cave += b'\xE9' + struct.pack('<i', rel_c)        # jmp 0x10002554
+    patch_bytes(gbuf, pg, GG_WAIT_CAVE, cave)
+    patch_bytes(gbuf, pg, GG_WAIT_SITE,
+                b'\xE9' + struct.pack('<i', GG_WAIT_CAVE - (GG_WAIT_SITE + 5))
+                + b'\x90' * 4)
+    print(f"[gg] DDLOCK_WAIT: site {hex(GG_WAIT_SITE)} -> cave {hex(GG_WAIT_CAVE)}"
+          f" -> call {hex(GG_LOCK_CALL)}")
 
     # NOTE: vtable redirect must NOT be static — the same slot is exercised
     # during device enumeration (temp bank test) where a scratch pointer gets
