@@ -95,3 +95,24 @@ Correct design (implemented, pending clean-desktop E2E):
 - Blind click rotation REMOVED for customs: native 'Giants Error' boxes =
   OK-click only; custom renderer dialogs = needs native-vision read per
   dialog (Enter hits default=Cancel and aborts silently — no crash event).
+
+## USER-VALIDATED (2026-08-28): the patched build WORKS
+
+User confirmation: "j'appuie juste sur le ErrFailedSND qui apparaît, OK,
+c'est tout ce que je fais" — the static patched build (CD stub + format-NOP)
+boots, shows ErrFailedSND once, OK continues, and the game runs to the menu.
+Registry proves menu usage: WorldName=Story4, LoadMission=1, MissionCheat=1,
+Sound/MusicVolume written.
+
+Consequences:
+- The 'post-init wedge' interpretations were artifacts of test-window churn:
+  my repeated auto-launches popped windows on the user's active desktop and
+  the user closed them (silent exits <30 s, no crash events = closes, not
+  crashes). The one real crash event (09:59, ntdll AV) matches the fatal-loop
+  only in the x64dbg-grind sessions where exceptions were being erun'd.
+- Deliverable STATE: RuntimeLab/menu_build/{Giants.exe, gg_dx7r.dll,
+  GiantsMenu.exe} = double-click GiantsMenu.exe -> SND box auto-OK'd -> menu.
+  Identical original menu/flow (windowed 640x480, registry-driven).
+- Remaining true unknowns for full parity: sound is disabled (ErrFailedSND
+  continue-path), and long-session stability untested; world-load crash-free
+  duration not yet measured.
