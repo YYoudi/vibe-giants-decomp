@@ -1,0 +1,75 @@
+INFO  Using log config file: jar:file:/G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (977 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2673 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 60 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-emotionengine-reloaded\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    G:\VibeRE\GiantsRE\scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-lx-loader\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessAnalyzer)  
+INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessProject)  
+INFO  REPORT: Processing project file: /Giants.exe (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: decompile_all.java 'G:\VibeRE\GiantsRE\vanilla_decompiled' '0x552000'  (HeadlessAnalyzer)  
+INFO  SCRIPT: G:\VibeRE\GiantsRE\scripts\decompile_all.java (HeadlessAnalyzer)  
+INFO  decompile_all.java> total functions: 2972 (GhidraScript)  
+INFO  decompile_all.java>   100/2972 (failed=0 named=0) (GhidraScript)  
+INFO  decompile_all.java>   200/2972 (failed=0 named=0) (GhidraScript)  
+INFO  decompile_all.java>   300/2972 (failed=0 named=0) (GhidraScript)  
+INFO  decompile_all.java>   400/2972 (failed=0 named=1) (GhidraScript)  
+INFO  decompile_all.java>   500/2972 (failed=0 named=2) (GhidraScript)  
+INFO  decompile_all.java>   600/2972 (failed=0 named=4) (GhidraScript)  
+WARN  Decompiling 0045c340: Unable to read bytes at ram:03030300 (DecompileCallback)  
+INFO  decompile_all.java>   700/2972 (failed=0 named=4) (GhidraScript)  
+INFO  decompile_all.java>   800/2972 (failed=0 named=8) (GhidraScript)  
+INFO  decompile_all.java>   900/2972 (failed=0 named=8) (GhidraScript)  
+INFO  decompile_all.java>   1000/2972 (failed=0 named=10) (GhidraScript)  
+INFO  decompile_all.java>   1100/2972 (failed=0 named=10) (GhidraScript)  
+INFO  decompile_all.java>   1200/2972 (failed=0 named=14) (GhidraScript)  
+INFO  decompile_all.java>   1300/2972 (failed=0 named=15) (GhidraScript)  
+INFO  decompile_all.java>   1400/2972 (failed=0 named=15) (GhidraScript)  
+INFO  decompile_all.java>   1500/2972 (failed=0 named=17) (GhidraScript)  
+INFO  decompile_all.java>   1600/2972 (failed=0 named=20) (GhidraScript)  
+INFO  decompile_all.java>   1700/2972 (failed=0 named=21) (GhidraScript)  
+INFO  decompile_all.java>   1800/2972 (failed=0 named=22) (GhidraScript)  
+INFO  decompile_all.java>   1900/2972 (failed=0 named=23) (GhidraScript)  
+INFO  decompile_all.java>   2000/2972 (failed=0 named=24) (GhidraScript)  
+INFO  decompile_all.java>   2100/2972 (failed=0 named=31) (GhidraScript)  
+WARN  Decompiling 0053d120, pcode error at 0053da79: Unable to resolve constructor at 0053da79 (DecompileCallback)  
+WARN  Decompiling 0053d780, pcode error at 0053da79: Unable to resolve constructor at 0053da79 (DecompileCallback)  
+INFO  decompile_all.java>   2200/2972 (failed=0 named=38) (GhidraScript)  
+INFO  decompile_all.java>   2300/2972 (failed=0 named=44) (GhidraScript)  
+INFO  decompile_all.java>   2400/2972 (failed=0 named=58) (GhidraScript)  
+INFO  decompile_all.java>   2500/2972 (failed=0 named=73) (GhidraScript)  
+INFO  decompile_all.java> DONE total_nonthunk=2575 done=2575 failed=0 named=78 (3.0%) skipped_gt_maxva=211 va_range=0x401000..0x551C1B
+ (GhidraScript)  
+INFO  REPORT: Save succeeded for processed file: /Giants.exe (HeadlessAnalyzer)  

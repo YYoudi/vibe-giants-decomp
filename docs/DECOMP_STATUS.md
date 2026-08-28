@@ -27,9 +27,11 @@ Snapshot 2026-08-28. Regenerate anytime: `RuntimeLab/run_decompile_all.bat`
 ## Known gaps / next levers (ranked)
 
 1. **Naming scale-up** — 78/2575 named. Levers:
-   - grow PC↔PS2 matching: the string-anchor+propagate pipeline stopped at 378;
-     feed it ALL PS2 4769 names against the now-complete dump (decomp strings
-     instead of raw disasm) — expect a large second wave.
+   - INPUT READY: `decompiled/pc_function_strings.json` (527 functions with
+     their referenced strings, via export_string_map.java) + all 4769 PS2
+     names in ps2_symbols/. Wave-2 matcher: exact string-set intersection
+     against PS2 per-function string refs (match_pc_ps2.py needs a small
+     adapter to read this JSON instead of ghidra_exports).
    - runtime anchors: level-load trace (menu→campaign) names the gameplay core.
 2. **133 decompile failures** in the 0x57c000–0x585000 cluster (pcode
    "Unable to resolve constructor" warnings) — tail of .text, likely post-1.0

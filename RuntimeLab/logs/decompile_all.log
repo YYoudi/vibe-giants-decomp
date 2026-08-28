@@ -1,0 +1,107 @@
+INFO  Using log config file: jar:file:/G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (981 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2627 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 60 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-emotionengine-reloaded\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    G:\VibeRE\GiantsRE\scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-lx-loader\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessAnalyzer)  
+INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessProject)  
+INFO  Removed old presave file: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE.rep\idata\00\~00000000.db\tmp3740727107709572429.ps (LocalBufferFile)  
+INFO  REPORT: Processing project file: /Giants.exe (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: decompile_all.java 'G:\VibeRE\GiantsRE\vanilla_decompiled'  (HeadlessAnalyzer)  
+INFO  SCRIPT: G:\VibeRE\GiantsRE\scripts\decompile_all.java (HeadlessAnalyzer)  
+INFO  decompile_all.java> total functions: 2972 (GhidraScript)  
+INFO  decompile_all.java>   250/2972 (failed=0 named=0) (GhidraScript)  
+INFO  decompile_all.java>   500/2972 (failed=0 named=2) (GhidraScript)  
+WARN  Decompiling 0045c340: Unable to read bytes at ram:03030300 (DecompileCallback)  
+INFO  decompile_all.java>   750/2972 (failed=0 named=3) (GhidraScript)  
+INFO  decompile_all.java>   1000/2972 (failed=0 named=5) (GhidraScript)  
+INFO  decompile_all.java>   1250/2972 (failed=0 named=8) (GhidraScript)  
+INFO  decompile_all.java>   1500/2972 (failed=0 named=10) (GhidraScript)  
+INFO  decompile_all.java>   1750/2972 (failed=0 named=14) (GhidraScript)  
+INFO  decompile_all.java>   2000/2972 (failed=0 named=17) (GhidraScript)  
+WARN  Decompiling 0053d120, pcode error at 0053da79: Unable to resolve constructor at 0053da79 (DecompileCallback)  
+WARN  Decompiling 0053d780, pcode error at 0053da79: Unable to resolve constructor at 0053da79 (DecompileCallback)  
+INFO  decompile_all.java>   2250/2972 (failed=0 named=31) (GhidraScript)  
+INFO  decompile_all.java>   2500/2972 (failed=0 named=66) (GhidraScript)  
+WARN  Decompiling 005583d0, pcode error at 00558445: Unable to resolve constructor at 00558445 (DecompileCallback)  
+WARN  Decompiling 005583d0, pcode error at 005586b8: Unable to resolve constructor at 005586b8 (DecompileCallback)  
+WARN  Decompiling 005583d0, pcode error at 005587ac: Unable to resolve constructor at 005587ac (DecompileCallback)  
+WARN  Decompiling 005583d0, pcode error at 00558c31: Unable to resolve constructor at 00558c31 (DecompileCallback)  
+WARN  Decompiling 00558f80, pcode error at 00558f81: Unable to resolve constructor at 00558f81 (DecompileCallback)  
+WARN  Decompiling 0055ccc0, pcode error at 0055ccfc: Unable to resolve constructor at 0055ccfc (DecompileCallback)  
+WARN  Decompiling 0055f900, pcode error at 0056004c: Unable to resolve constructor at 0056004c (DecompileCallback)  
+WARN  Decompiling 0055fc80, pcode error at 0056004c: Unable to resolve constructor at 0056004c (DecompileCallback)  
+WARN  Decompiling 0055fc80, pcode error at 0056004c: Unable to resolve constructor at 0056004c (DecompileCallback)  
+WARN  Decompiling 00566270, pcode error at 00566361: Unable to resolve constructor at 00566361 (DecompileCallback)  
+WARN  Decompiling 005668b0, pcode error at 00567540: Unable to resolve constructor at 00567540 (DecompileCallback)  
+WARN  Decompiling 00566ab0, pcode error at 00567540: Unable to resolve constructor at 00567540 (DecompileCallback)  
+WARN  Decompiling 00566c70, pcode error at 00567540: Unable to resolve constructor at 00567540 (DecompileCallback)  
+WARN  Decompiling 00566e20, pcode error at 00567540: Unable to resolve constructor at 00567540 (DecompileCallback)  
+WARN  Decompiling 00566ed0, pcode error at 00567540: Unable to resolve constructor at 00567540 (DecompileCallback)  
+WARN  Decompiling 00568b50, pcode error at 00568cb1: Unable to resolve constructor at 00568cb1 (DecompileCallback)  
+WARN  Decompiling 005693d0, pcode error at 0056a610: Failed to resolve varnode <Sreg>, index=7 (DecompileCallback)  
+WARN  Decompiling 00569e70, pcode error at 0056a610: Failed to resolve varnode <Sreg>, index=7 (DecompileCallback)  
+WARN  Decompiling 0056a2c0, pcode error at 0056a610: Failed to resolve varnode <Sreg>, index=7 (DecompileCallback)  
+WARN  Decompiling 0056a4a0, pcode error at 0056a610: Failed to resolve varnode <Sreg>, index=7 (DecompileCallback)  
+WARN  Decompiling 0056cd80, pcode error at 0056cd98: Failed to resolve varnode <Sreg>, index=6 (DecompileCallback)  
+WARN  Decompiling 0056e960, pcode error at 00570a18: Unable to resolve constructor at 00570a18 (DecompileCallback)  
+WARN  Decompiling 0056ea70, pcode error at 00570a18: Unable to resolve constructor at 00570a18 (DecompileCallback)  
+WARN  Decompiling 0056fc10, pcode error at 00570a18: Unable to resolve constructor at 00570a18 (DecompileCallback)  
+WARN  Decompiling 0056fe30, pcode error at 00570a18: Unable to resolve constructor at 00570a18 (DecompileCallback)  
+WARN  Decompiling 0057dbb0, pcode error at 0057dbb5: Unable to resolve constructor at 0057dbb5 (DecompileCallback)  
+WARN  Decompiling 0057dbb0, pcode error at 0057dbba: Unable to resolve constructor at 0057dbba (DecompileCallback)  
+WARN  Decompiling 00582c30, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 00582d70, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 00583020, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 005831f0, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 00584000, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 005840c0, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 00584990, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 00584b70, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+WARN  Decompiling 00584c50, pcode error at 00584c78: Unable to resolve constructor at 00584c78 (DecompileCallback)  
+INFO  decompile_all.java>   2750/2972 (failed=133 named=76) (GhidraScript)  
+WARN  Decompiling 0062a0b0, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 006386b0, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 006387e0, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 00638820, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 00638870, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 006389d0, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 00638a90, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 00638ba0, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 00638c80, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 00638d00, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+WARN  Decompiling 00638d40, pcode error at 006568d4: Could not follow disassembly flow into non-existing memory at 006568d4 (DecompileCallback)  
+Appuyez sur une touche pour continuer... 
