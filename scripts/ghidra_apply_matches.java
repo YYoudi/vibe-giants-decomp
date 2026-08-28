@@ -16,6 +16,9 @@ import ghidra.util.task.ConsoleTaskMonitor;
 public class ghidra_apply_matches extends GhidraScript {
     public void run() throws Exception {
         String csvPath = getScriptArgs()[0];
+        double minRename = getScriptArgs().length > 1 ? Double.parseDouble(getScriptArgs()[1]) : 0.9;
+        String draftPrefix = getScriptArgs().length > 2 ? getScriptArgs()[2] : "ps2_";
+        double minDraft = getScriptArgs().length > 3 ? Double.parseDouble(getScriptArgs()[3]) : 0.35;
         var fm = currentProgram.getFunctionManager();
         var af = currentProgram.getAddressFactory().getDefaultAddressSpace();
         var listing = currentProgram.getListing();
@@ -34,7 +37,7 @@ public class ghidra_apply_matches extends GhidraScript {
                 fn = fm.getFunctionContaining(addr);
             }
             if (fn == null) { missed++; continue; }
-            if (conf >= 0.9) {
+            if (conf >= minRename) {
                 try { fn.setName(name, SourceType.USER_DEFINED); renamed++; continue; }
                 catch (Exception ex) { /* fallthrough to comment */ }
             }
