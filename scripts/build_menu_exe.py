@@ -92,9 +92,9 @@ def main():
     # second stub: constant-zero pointer variant (future use)
     print(f"[gg] stub mov eax,{hex(scratch_va)}; ret baked at off {hex(scratch_off)}")
 
-    off = patch_bytes(gbuf, pg, GG_VTABLE_SLOT_VA, struct.pack("<I", scratch_va))
-    print(f"[gg] vtable slot {hex(GG_VTABLE_SLOT_VA)} -> {hex(scratch_va)} (off {hex(off)})")
-
+    # NOTE: vtable redirect must NOT be static — the same slot is exercised
+    # during device enumeration (temp bank test) where a scratch pointer gets
+    # freed -> heap AV. It is applied by the launcher AFTER the SND dialog.
     # kill ASLR on the dll: absolute baked pointers require the preferred base
     dc = pg.OPTIONAL_HEADER.DllCharacteristics
     pg.OPTIONAL_HEADER.DllCharacteristics = dc & ~0x0040  # clear DYNAMIC_BASE

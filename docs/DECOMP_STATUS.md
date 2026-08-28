@@ -76,3 +76,22 @@ native error boxes and aborts).
 Next iteration (menu): sample the wedged process right after SND-OK
 (wedge_sample.py, now size-gated and decoder-fixed) → identify the looping
 thread's game frames → static patch; then menu render + capture.
+
+## CRITICAL causal correction (2026-08-28, late cycle)
+
+The static vtable redirect was a REGRESSION: the same gg_dx7r slot (+0x10 of
+vtable 0x10003790) is ALSO exercised DURING device enumeration (temp bank
+test) where the returned pointer is freed -> ntdll heap AV at ~6 s (dump
+proven: ESI=0x10019E38 stub, stack full of gg+0xde26/0xecf6 enum frames).
+Timeline confusion resolved: pre-redirect build reached ErrFailedSND at ~90 s
+(enum rounds x3, adddev x9); redirect made it die at 6 s.
+
+Correct design (implemented, pending clean-desktop E2E):
+- static build = CD stub + format-NOP ONLY (no redirect)
+- GiantsMenu.exe v2 (rustc): after dismissing ErrFailedSND with OK-click,
+  WriteProcessMemory into the live game: slot(gg_base+0x37A0) <- stub
+  (gg_base+0x19E38, baked in .data) — redirect lands AFTER enum, BEFORE
+  video-init upcalls. EnumProcessModulesEx finds gg base (ASLR-safe anyway).
+- Blind click rotation REMOVED for customs: native 'Giants Error' boxes =
+  OK-click only; custom renderer dialogs = needs native-vision read per
+  dialog (Enter hits default=Cancel and aborts silently — no crash event).

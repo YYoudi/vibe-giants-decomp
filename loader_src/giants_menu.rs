@@ -12,6 +12,51 @@ extern "system" {
     fn SetCursorPos(x: i32, y: i32) -> i32;
     fn mouse_event(f: u32, dx: i32, dy: i32, d: i32, e: usize);
     fn FindWindowW(cls: *const u16, title: *const u16) -> isize;
+    fn OpenProcess(access: u32, inherit: i32, pid: u32) -> isize;
+    fn WriteProcessMemory(h: isize, addr: *mut u8, buf: *const u8, size: usize, written: *mut usize) -> i32;
+    fn EnumProcessModulesEx(h: isize, mods: *mut isize, cb: u32, needed: *mut u32, filter: u32) -> i32;
+    fn GetModuleFileNameExW(h: isize, m: isize, buf: *mut u16, size: u32) -> u32;
+    fn CloseHandle(h: isize) -> i32;
+}
+
+const PROCESS_VM_OPERATION: u32 = 0x0008;
+const PROCESS_VM_READ: u32 = 0x0010;
+const PROCESS_VM_WRITE: u32 = 0x0020;
+const PROCESS_QUERY_INFORMATION: u32 = 0x0400;
+const LIST_MODULES_32BIT: u32 = 0x01;
+
+/// After the SND dialog is dismissed: write the vtable-slot redirect into the
+/// live game (slot = gg_base+0x37A0 -> gg_base+0x19E38 stub baked in .data).
+fn apply_redirect(pid: u32) {
+    unsafe {
+        let h = OpenProcess(
+            PROCESS_VM_OPERATION | PROCESS_VM_READ | PROCESS_VM_WRITE | PROCESS_QUERY_INFORMATION,
+            0, pid);
+        if h == 0 { println!("  redirect: OpenProcess failed"); return; }
+        let mut mods = [0isize; 1024];
+        let mut needed = 0u32;
+        if EnumProcessModulesEx(h, mods.as_mut_ptr(),
+            (mods.len() * std::mem::size_of::<isize>()) as u32, &mut needed, LIST_MODULES_32BIT) == 0 {
+            println!("  redirect: EnumProcessModulesEx failed"); CloseHandle(h); return;
+        }
+        let count = (needed as usize / std::mem::size_of::<isize>()).min(mods.len());
+        let mut gg_base = 0usize;
+        let mut namebuf = [0u16; 512];
+        for i in 0..count {
+            let n = GetModuleFileNameExW(h, mods[i], namebuf.as_mut_ptr(), 512);
+            let s = String::from_utf16_lossy(&namebuf[..n as usize]);
+            if s.to_lowercase().ends_with("gg_dx7r.dll") { gg_base = mods[i] as usize; break; }
+        }
+        if gg_base == 0 { println!("  redirect: gg_dx7r not found"); CloseHandle(h); return; }
+        let slot = gg_base + 0x37A0;
+        let stub = gg_base + 0x19E38;
+        // value = stub address (4 bytes LE)
+        let bytes = stub.to_le_bytes();
+        let mut written = 0usize;
+        let ok = WriteProcessMemory(h, slot as *mut u8, bytes.as_ptr(), 4, &mut written);
+        println!("  redirect: slot {:#x} -> {:#x} ok={} written={}", slot, stub, ok, written);
+        CloseHandle(h);
+    }
 }
 
 fn send_enter() {
@@ -72,6 +117,7 @@ fn main() {
         (35, 1), (55, 2), (75, 0), (95, 1), (115, 2), (135, 0),
         (160, 1), (185, 2), (210, 0), (235, 1), (260, 2), (285, 0),
     ]; // 1 = OK (0.33,0.90)  2 = alt (0.26,0.74)  0 = Enter
+    let mut redirect_done = false;
     let t0 = std::time::Instant::now();
     for (at, kind) in schedule {
         while t0.elapsed().as_secs() < at {
@@ -83,6 +129,7 @@ fn main() {
             std::thread::sleep(std::time::Duration::from_millis(250));
             match kind {
                 0 => { send_enter(); println!("[{}] Enter", t0.elapsed().as_secs()); }
+                9 => {}
                 1 => { click(0.33, 0.90); println!("[{}] OK-click", t0.elapsed().as_secs()); }
                 _ => { click(0.26, 0.74); println!("[{}] alt-click", t0.elapsed().as_secs()); }
             }
