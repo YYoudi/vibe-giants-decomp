@@ -116,3 +116,20 @@ Consequences:
 - Remaining true unknowns for full parity: sound is disabled (ErrFailedSND
   continue-path), and long-session stability untested; world-load crash-free
   duration not yet measured.
+
+## Video-wall post-mortem (2026-08-28 cycle 2) — matrix refined
+
+| combo (all: CD stub + format-NOP + gs_ds/eaxman/Bin present) | result |
+|---|---|
+| system ddraw/d3dim700 + GUIDs présents | enum x3 OK, SND box, après OK → borderless 3072 + spin-wedge (Responding=False, CPU burn), black |
+| system + GUIDs purgés | same wedge (no crash events, one mover thread = dinput worker; all game threads asleep — need procdump **-ma** dumps for reliable stack walk; -mm lacks stack memory here) |
+| dgVoodoo pair + GUIDs purgés | instant death <8 s: heap AV freeing 0x10019E38-era addresses during enum (dump-proven even with slot untouched: pre-existing corruption was from earlier stub bake; with pristine .data: still instant death) → **dgVoodoo DDraw lacks IDirect3D7 QI (E_NOINTERFACE measured)** — unusable for this renderer |
+| crash chain | strlen(uninit 0xCC desc) at gg+0x28BB (DrawIndexedPrimitiveVB submit fn +0x27F0): the format-NOP accepts a device whose desc fields were never filled; strlen on never-written stack buffer |
+
+Refined conclusion: the format-check must PASS LEGITIMATELY (device desc filled
+properly). The check (+0xD2B6 wrapper) fails under system d3dim700 for the
+bogus legacy GUID — GUID purge alone didn't fix it, so the wrapper asks for
+something else (a specific mode list?). Next probe: bp the wrapper, dump its
+inputs + the mode it rejects, then satisfy that exact condition (registry
+VideoWidth/Height/Depth? desktop mode?) — then NO NOP needed and the device
+desc chain stays valid.

@@ -85,12 +85,11 @@ def main():
     off = patch_bytes(gbuf, pg, GG_FORMAT_NOP_VA, bytes.fromhex("90" * 6))
     print(f"[gg] format-NOP @ {hex(GG_FORMAT_NOP_VA)} -> off {hex(off)}")
 
-    scratch_va, scratch_off = find_zero_slack(gbuf, pg, 96)
-    assert scratch_va, "no .data slack found"
-    stub = bytes.fromhex("B8") + struct.pack("<I", scratch_va) + bytes.fromhex("C3")
-    gbuf[scratch_off:scratch_off + len(stub)] = stub
-    # second stub: constant-zero pointer variant (future use)
-    print(f"[gg] stub mov eax,{hex(scratch_va)}; ret baked at off {hex(scratch_off)}")
+    # NO stub baked into .data: any byte we place inside the allocator pools
+    # corrupts chunk headers (heap AV during enum). The launcher writes both
+    # the stub and the slot redirect at runtime into the zero tail of .data.
+    scratch_va = 0x1002B000  # deep in the loader-zeroed .data tail (beyond raw)
+    print(f"[gg] .data left pristine; launcher will use scratch {hex(scratch_va)}")
 
     # NOTE: vtable redirect must NOT be static — the same slot is exercised
     # during device enumeration (temp bank test) where a scratch pointer gets

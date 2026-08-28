@@ -49,12 +49,21 @@ fn apply_redirect(pid: u32) {
         }
         if gg_base == 0 { println!("  redirect: gg_dx7r not found"); CloseHandle(h); return; }
         let slot = gg_base + 0x37A0;
-        let stub = gg_base + 0x19E38;
-        // value = stub address (4 bytes LE)
-        let bytes = stub.to_le_bytes();
-        let mut written = 0usize;
-        let ok = WriteProcessMemory(h, slot as *mut u8, bytes.as_ptr(), 4, &mut written);
-        println!("  redirect: slot {:#x} -> {:#x} ok={} written={}", slot, stub, ok, written);
+        let scratch = gg_base + 0x2B000; // loader-zeroed .data tail, outside pools
+        // 1) write stub into scratch: mov eax, scratch ; ret
+        let stub = {
+            let mut v = vec![0xB8u8];
+            v.extend_from_slice(&(scratch as u32).to_le_bytes());
+            v.push(0xC3);
+            v
+        };
+        let mut w1 = 0usize;
+        let ok1 = WriteProcessMemory(h, scratch as *mut u8, stub.as_ptr(), stub.len(), &mut w1);
+        // 2) redirect slot -> scratch
+        let mut w2 = 0usize;
+        let ok2 = WriteProcessMemory(h, slot as *mut u8, (scratch as u32).to_le_bytes().as_ptr(), 4, &mut w2);
+        println!("  redirect: stub@{:#x} w={} ok={} ; slot {:#x} -> {:#x} w={} ok={}",
+                 scratch, w1, ok1, slot, scratch, w2, ok2);
         CloseHandle(h);
     }
 }
