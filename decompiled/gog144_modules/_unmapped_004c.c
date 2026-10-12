@@ -7782,7 +7782,7 @@ LAB_004ccbc0:
 
           uVar4 = FUN_004fa1e0();
 
-          FUN_004fe2d0(uVar4,&PTR_DAT_00562510 + *piVar7 * 0x16,0x3e19999a,0x3e4ccccd,&uStack_1d4,
+          FUN_004FE2D0(uVar4,&PTR_DAT_00562510 + *piVar7 * 0x16,0x3e19999a,0x3e4ccccd,&uStack_1d4,
 
                        &uStack_1cc);
 
@@ -7886,7 +7886,7 @@ LAB_004ccbc0:
 
           iVar5 = FUN_004fa1e0();
 
-          FUN_004fe2d0(iVar5,&PTR_DAT_00562510 + *(int *)(local_22c + iVar6 * 4) * 0x16,0x3f000000,0
+          FUN_004FE2D0(iVar5,&PTR_DAT_00562510 + *(int *)(local_22c + iVar6 * 4) * 0x16,0x3f000000,0
 
                        ,&fStack_224,&fStack_228);
 
@@ -8527,7 +8527,7 @@ undefined4 FUN_004cda80(void)
 
   }
 
-  FUN_0042d490();
+  main_drawobj_0042d490();
 
   FUN_0040d6b0();
 
@@ -8723,7 +8723,7 @@ undefined4 FUN_004cda80(void)
 
     FUN_004cd5d0();
 
-    FUN_00431700();
+    main_drawwatr_00431700();
 
     FUN_0042d550();
 
@@ -9795,7 +9795,7 @@ LAB_004cf539:
 
         FUN_004a76e0(*(undefined4 *)(iVar11 + 0x24),*(undefined4 *)(iVar11 + 0x28),&local_34);
 
-        FUN_004014b0(fVar5,&local_34,*(undefined4 *)(*(int *)(iVar11 + 0x24) + 200));
+        main_ai_move_004014b0(fVar5,&local_34,*(undefined4 *)(*(int *)(iVar11 + 0x24) + 200));
 
         *(undefined4 *)((int)fVar5 + 0xe4) = 0x65;
 
@@ -10371,7 +10371,7 @@ LAB_004cf982:
 
       param_1 = (float)fVar15;
 
-      FUN_004014b0(fVar5,&local_34,param_1);
+      main_ai_move_004014b0(fVar5,&local_34,param_1);
 
       *(uint *)((int)fVar5 + 0x1c8) = *(uint *)((int)fVar5 + 0x1c8) & 0xfffff1ff;
 

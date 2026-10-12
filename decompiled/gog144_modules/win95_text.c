@@ -1,14 +1,14 @@
 /* Giants 1.449 — module win95/text
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\win95/text.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0051adb0 @ 0x0051ADB0 ===== */
+/* ===== win95_text_0051adb0 @ 0x0051ADB0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051adb0(int param_1)
+void win95_text_0051adb0(int param_1)
 
 
 
@@ -184,7 +184,7 @@ void FUN_0051adb0(int param_1)
 
     _DAT_005dd3be = 0;
 
-    FUN_0051adb0(0x18);
+    win95_text_0051adb0(0x18);
 
     puVar5 = &DAT_005562b8;
 
@@ -298,8 +298,8 @@ void FUN_0051adb0(int param_1)
 
 }
 
-/* ===== FUN_0051b160 @ 0x0051B160 ===== */
-void FUN_0051b160(void)
+/* ===== win95_text_0051b160 @ 0x0051B160 ===== */
+void win95_text_0051b160(void)
 
 
 

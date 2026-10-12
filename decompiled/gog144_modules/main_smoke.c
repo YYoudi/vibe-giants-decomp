@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/smoke
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/smoke.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004f8e10 @ 0x004F8E10 ===== */
-void FUN_004f8e10(int param_1,float param_2,undefined4 param_3)
+/* ===== main_smoke_004f8e10 @ 0x004F8E10 ===== */
+void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
 
 
@@ -134,8 +134,8 @@ void FUN_004f8e10(int param_1,float param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004f9170 @ 0x004F9170 ===== */
-void FUN_004f9170(int param_1)
+/* ===== main_smoke_004f9170 @ 0x004F9170 ===== */
+void main_smoke_004f9170(int param_1)
 
 
 

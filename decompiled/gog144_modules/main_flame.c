@@ -34,7 +34,7 @@ void FUN_00442f70(undefined4 *param_1,float param_2)
 
   if (DAT_0059cda8 == 0) {
 
-    DAT_0059cda8 = FUN_00508750(s_b_flames_0055859c);
+    DAT_0059cda8 = main_texture_00508750(s_b_flames_0055859c);
 
   }
 

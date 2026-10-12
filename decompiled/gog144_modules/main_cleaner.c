@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/cleaner
- * 3 functions (0 named) — decompiled, names from PS2 symbols
+ * 3 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/cleaner.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0040f390 @ 0x0040F390 ===== */
-void FUN_0040f390(void)
+/* ===== main_cleaner_0040f390 @ 0x0040F390 ===== */
+void main_cleaner_0040f390(void)
 
 
 
@@ -121,7 +121,7 @@ void FUN_0040f3c0(void)
 
       if ((iVar7 != 0) && (*(float *)(iVar7 + 0x1c0) <= *(float *)(iVar7 + 0x278))) {
 
-        FUN_0040f750(iVar7);
+        main_cleaner_0040f750(iVar7);
 
         iVar10 = DAT_00632ed8;
 
@@ -241,12 +241,12 @@ void FUN_0040f3c0(void)
 
 }
 
-/* ===== FUN_0040f750 @ 0x0040F750 ===== */
+/* ===== main_cleaner_0040f750 @ 0x0040F750 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0040f750(int param_1)
+void main_cleaner_0040f750(int param_1)
 
 
 
@@ -310,7 +310,7 @@ void FUN_0040f750(int param_1)
 
   FUN_0042b010(iVar2);
 
-  FUN_00404b60(param_1,0xffffffff);
+  main_animate_00404b60(param_1,0xffffffff);
 
   FUN_0042b030();
 

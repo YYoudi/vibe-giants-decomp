@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/scrnshot
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/scrnshot.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004ebae0 @ 0x004EBAE0 ===== */
-void FUN_004ebae0(void)
+/* ===== main_scrnshot_004ebae0 @ 0x004EBAE0 ===== */
+void main_scrnshot_004ebae0(void)
 
 
 

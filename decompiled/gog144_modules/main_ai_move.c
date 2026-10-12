@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/ai_move
- * 15 functions (0 named) — decompiled, names from PS2 symbols
+ * 15 functions (11 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/ai_move.c(pp) (assert-string evidence)
  */
 
@@ -102,8 +102,8 @@ void FUN_00401050(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00401160 @ 0x00401160 ===== */
-void FUN_00401160(int param_1,undefined4 *param_2,undefined4 param_3)
+/* ===== main_ai_move_00401160 @ 0x00401160 ===== */
+void main_ai_move_00401160(int param_1,undefined4 *param_2,undefined4 param_3)
 
 
 
@@ -249,8 +249,8 @@ void FUN_00401160(int param_1,undefined4 *param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_00401310 @ 0x00401310 ===== */
-void FUN_00401310(int param_1,undefined4 *param_2,undefined4 param_3)
+/* ===== main_ai_move_00401310 @ 0x00401310 ===== */
+void main_ai_move_00401310(int param_1,undefined4 *param_2,undefined4 param_3)
 
 
 
@@ -392,8 +392,8 @@ void FUN_00401310(int param_1,undefined4 *param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004014b0 @ 0x004014B0 ===== */
-void FUN_004014b0(int param_1,undefined4 *param_2,undefined4 param_3)
+/* ===== main_ai_move_004014b0 @ 0x004014B0 ===== */
+void main_ai_move_004014b0(int param_1,undefined4 *param_2,undefined4 param_3)
 
 
 
@@ -598,8 +598,8 @@ void FUN_00401610(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_004016d0 @ 0x004016D0 ===== */
-void FUN_004016d0(int param_1,undefined4 *param_2)
+/* ===== main_ai_move_004016d0 @ 0x004016D0 ===== */
+void main_ai_move_004016d0(int param_1,undefined4 *param_2)
 
 
 
@@ -673,8 +673,8 @@ void FUN_004016d0(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00401790 @ 0x00401790 ===== */
-void FUN_00401790(int param_1,undefined4 param_2,undefined4 *param_3)
+/* ===== main_ai_move_00401790 @ 0x00401790 ===== */
+void main_ai_move_00401790(int param_1,undefined4 param_2,undefined4 *param_3)
 
 
 
@@ -750,8 +750,8 @@ void FUN_00401790(int param_1,undefined4 param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_00401850 @ 0x00401850 ===== */
-void FUN_00401850(int param_1,undefined4 param_2,undefined4 *param_3)
+/* ===== main_ai_move_00401850 @ 0x00401850 ===== */
+void main_ai_move_00401850(int param_1,undefined4 param_2,undefined4 *param_3)
 
 
 
@@ -827,8 +827,8 @@ void FUN_00401850(int param_1,undefined4 param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_00401910 @ 0x00401910 ===== */
-void FUN_00401910(int param_1,undefined4 param_2)
+/* ===== main_ai_move_00401910 @ 0x00401910 ===== */
+void main_ai_move_00401910(int param_1,undefined4 param_2)
 
 
 
@@ -1183,7 +1183,7 @@ LAB_004026d0:
 
           FUN_004125f0(local_90,iVar5,&local_88);
 
-          puVar7 = (undefined4 *)FUN_004033d0();
+          puVar7 = (undefined4 *)main_ai_move_004033d0();
 
           *puVar7 = *(undefined4 *)(param_1 + 0x168);
 
@@ -1343,7 +1343,7 @@ LAB_004026d0:
 
       if ((int)*(uint *)(iVar4 + 0x14) < 0) {
 
-        FUN_00402b90(param_1,*(undefined4 *)(iVar4 + 0x10),iVar4 + 4);
+        main_ai_move_00402b90(param_1,*(undefined4 *)(iVar4 + 0x10),iVar4 + 4);
 
       }
 
@@ -1375,7 +1375,7 @@ LAB_004026d0:
 
           if ((iVar5 == 0) && ((int)local_90 < 2)) {
 
-            FUN_004029a0(param_1,iVar4 + 4);
+            main_ai_move_004029a0(param_1,iVar4 + 4);
 
           }
 
@@ -1387,7 +1387,7 @@ LAB_004026d0:
 
             do {
 
-              puVar6 = (undefined4 *)FUN_004033d0();
+              puVar6 = (undefined4 *)main_ai_move_004033d0();
 
               *puVar6 = *(undefined4 *)(param_1 + 0x168);
 
@@ -1419,7 +1419,7 @@ LAB_004026d0:
 
           local_90 = 0.0;
 
-          FUN_004029a0(param_1,iVar4 + 4);
+          main_ai_move_004029a0(param_1,iVar4 + 4);
 
         }
 
@@ -1427,7 +1427,7 @@ LAB_004026d0:
 
       else {
 
-        FUN_004029a0(param_1,iVar4 + 4);
+        main_ai_move_004029a0(param_1,iVar4 + 4);
 
       }
 
@@ -1445,8 +1445,8 @@ LAB_004026d0:
 
 }
 
-/* ===== FUN_004029a0 @ 0x004029A0 ===== */
-void FUN_004029a0(int param_1,undefined4 param_2)
+/* ===== main_ai_move_004029a0 @ 0x004029A0 ===== */
+void main_ai_move_004029a0(int param_1,undefined4 param_2)
 
 
 
@@ -1630,8 +1630,8 @@ void FUN_004029a0(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00402b90 @ 0x00402B90 ===== */
-void FUN_00402b90(int param_1,undefined4 param_2,undefined4 param_3)
+/* ===== main_ai_move_00402b90 @ 0x00402B90 ===== */
+void main_ai_move_00402b90(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -2174,8 +2174,8 @@ LAB_00403218:
 
 }
 
-/* ===== FUN_004033d0 @ 0x004033D0 ===== */
-undefined4 * FUN_004033d0(void)
+/* ===== main_ai_move_004033d0 @ 0x004033D0 ===== */
+undefined4 * main_ai_move_004033d0(void)
 
 
 
@@ -2237,8 +2237,8 @@ undefined4 * FUN_004033d0(void)
 
 }
 
-/* ===== FUN_00403460 @ 0x00403460 ===== */
-void FUN_00403460(void)
+/* ===== main_ai_move_00403460 @ 0x00403460 ===== */
+void main_ai_move_00403460(void)
 
 
 

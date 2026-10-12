@@ -258,28 +258,28 @@ undefined4 FUN_00450d00(void)
 
 }
 
-/* ===== FUN_00450d10 @ 0x00450D10 ===== */
-void FUN_00450d10(void)
+/* ===== FUN_00450D10 @ 0x00450D10 ===== */
+void FUN_00450D10(void)
 
 
 
 {
 
-  FUN_00426f40(&LAB_00450db0,&LAB_00450e60);
+  FUN_00426F40(&LAB_00450db0,&LAB_00450e60);
 
-  FUN_00426fa0();
+  FUN_00426FA0();
 
   DAT_0059d804 = FUN_00497cd0(0x127);
 
-  DAT_0059d808 = FUN_00427150();
+  DAT_0059d808 = main_dlog_00427150();
 
-  FUN_004273b0(DAT_0059d808,0,0x3f000000,0x3ecccccd,0xa000000,s_GameOverRestart_00559da8);
+  main_dlog_004273b0(DAT_0059d808,0,0x3f000000,0x3ecccccd,0xa000000,s_GameOverRestart_00559da8);
 
-  FUN_00427e80(DAT_0059d808,1,0x3f000000,0x3f19999a,0x8000062);
+  main_dlog_00427e80(DAT_0059d808,1,0x3f000000,0x3f19999a,0x8000062);
 
-  FUN_00428340(DAT_0059d808,1,s_AGameOverQuit_00559d96 + 2);
+  main_dlog_00428340(DAT_0059d808,1,s_AGameOverQuit_00559d96 + 2);
 
-  FUN_00428340(DAT_0059d808,1,s_GameOverRestart_00559da8);
+  main_dlog_00428340(DAT_0059d808,1,s_GameOverRestart_00559da8);
 
   DAT_00632aa4._3_1_ = 0;
 
@@ -1468,15 +1468,15 @@ void FUN_00452130(undefined4 param_1)
 
   FUN_0051c8d0();
 
-  FUN_004824e0();
+  FUN_004824E0();
 
 LAB_004521d9:
 
-  FUN_0051c9f0();
+  FUN_0051C9F0();
 
-  FUN_0051b160();
+  win95_text_0051b160();
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
   DAT_005ddb4c = 1;
 
@@ -1862,9 +1862,9 @@ void FUN_00452490(int *param_1,int *param_2)
 
   }
 
-  FUN_00426f40(&LAB_00454820,&LAB_00454360);
+  FUN_00426F40(&LAB_00454820,&LAB_00454360);
 
-  FUN_00426fa0();
+  FUN_00426FA0();
 
   piVar1 = param_2;
 
@@ -2222,7 +2222,7 @@ LAB_0045282a:
 
   }
 
-  iVar2 = FUN_00500520(&DAT_00632900);
+  iVar2 = main_status_00500520(&DAT_00632900);
 
   if (iVar2 == 0) {
 
@@ -6092,17 +6092,17 @@ void FUN_00457270(void)
 
 {
 
-  FUN_0051a100(s_PlayerTeam_0055a040,&DAT_00632f14);
+  FUN_0051A100(s_PlayerTeam_0055a040,&DAT_00632f14);
 
   if (DAT_0063316c == 0) {
 
-    FUN_0051a100(s_GameTeam_0055a034,&DAT_00632f10);
+    FUN_0051A100(s_GameTeam_0055a034,&DAT_00632f10);
 
   }
 
   if (DAT_00633168 == 0) {
 
-    FUN_0051a100(s_GameBaseLevel_0055a024,&DAT_00632f0c);
+    FUN_0051A100(s_GameBaseLevel_0055a024,&DAT_00632f0c);
 
   }
 
@@ -6114,49 +6114,49 @@ void FUN_00457270(void)
 
   if (DAT_00633174 == 0) {
 
-    FUN_0051a100(s_GameType_0055a00c,&DAT_00632f18);
+    FUN_0051A100(s_GameType_0055a00c,&DAT_00632f18);
 
   }
 
-  FUN_0051a100(s_AllowJoiners_00559ffc,&DAT_00632f1c);
+  FUN_0051A100(s_AllowJoiners_00559ffc,&DAT_00632f1c);
 
-  FUN_0051a100(s_DamageTeammates_00559fec,&DAT_00632f20);
+  FUN_0051A100(s_DamageTeammates_00559fec,&DAT_00632f20);
 
-  FUN_0051a100(s_LockTeams_00559fe0,&DAT_00632f38);
+  FUN_0051A100(s_LockTeams_00559fe0,&DAT_00632f38);
 
-  FUN_0051a100(s_PointsPerKill_00559fd0,&DAT_00632f24);
+  FUN_0051A100(s_PointsPerKill_00559fd0,&DAT_00632f24);
 
-  FUN_0051a100(s_PointsPerCapture_00559fbc,&DAT_00632f28);
+  FUN_0051A100(s_PointsPerCapture_00559fbc,&DAT_00632f28);
 
-  FUN_0051a100(s_CapturePreventTime_00559fa8,&DAT_00632f2c);
+  FUN_0051A100(s_CapturePreventTime_00559fa8,&DAT_00632f2c);
 
   DAT_00632f30 = (float)DAT_00632f2c * 60.0;
 
   if (DAT_00633170 == 0) {
 
-    FUN_0051a100(s_MaxPlayers_00559f9c,&DAT_00632f34);
+    FUN_0051A100(s_MaxPlayers_00559f9c,&DAT_00632f34);
 
   }
 
-  FUN_0051a100(s_SmartieDifficulty_00559f88,&DAT_00632f3c);
+  FUN_0051A100(s_SmartieDifficulty_00559f88,&DAT_00632f3c);
 
-  FUN_0051a100(s_VimpMeatDifficulty_00559f74,&DAT_00632f40);
+  FUN_0051A100(s_VimpMeatDifficulty_00559f74,&DAT_00632f40);
 
-  FUN_0051a100(s_TimeLimit_00559f68,&DAT_00632fcc);
+  FUN_0051A100(s_TimeLimit_00559f68,&DAT_00632fcc);
 
   DAT_00633010 = (float)DAT_00632fcc * 60.0;
 
   DAT_00632fc0 = (uint)(0 < DAT_00632fcc);
 
-  FUN_0051a100(s_PlayerScoreLimit_00559f54,&DAT_00632fdc);
+  FUN_0051A100(s_PlayerScoreLimit_00559f54,&DAT_00632fdc);
 
   DAT_00632fd0 = (uint)(0 < DAT_00632fdc);
 
-  FUN_0051a100(s_TeamScoreLimit_00559f44,&DAT_00632fec);
+  FUN_0051A100(s_TeamScoreLimit_00559f44,&DAT_00632fec);
 
   _DAT_00632fe0 = (uint)(0 < DAT_00632fec);
 
-  FUN_0051a100(s__BaseComplete_00559f33 + 1,&DAT_00632ff0);
+  FUN_0051A100(s__BaseComplete_00559f33 + 1,&DAT_00632ff0);
 
   FUN_00452a30(1,0);
 
@@ -6203,7 +6203,7 @@ void FUN_00457440(void)
 
   DAT_00632ee4 = FUN_004b0a00(&DAT_00632ee8);
 
-  FUN_0051a0c0(s_FarClipIndex_0055a04c,&DAT_006331bc);
+  FUN_0051A0C0(s_FarClipIndex_0055a04c,&DAT_006331bc);
 
   FUN_00535f40();
 
@@ -6234,7 +6234,7 @@ void FUN_004574d0(void)
 
        (((DAT_00633160 == 0 && (DAT_00633248 == 0)) && (DAT_00633104 == 0)))) {
 
-      FUN_00483ba0();
+      FUN_00483BA0();
 
       return;
 
@@ -6261,7 +6261,7 @@ void FUN_00457550(void)
 
   {
 
-    FUN_00482b60();
+    FUN_00482B60();
 
     return;
 
@@ -6350,7 +6350,7 @@ LAB_004575ee:
 
         DAT_00632d20 = 0;
 
-        iVar2 = FUN_004b09c0(0);
+        iVar2 = FUN_004B09C0(0);
 
         pcVar3 = *(char **)(iVar2 + 4);
 
@@ -6384,7 +6384,7 @@ LAB_004575ee:
 
         if (param_1 == 0xe) {
 
-          FUN_00489d40();
+          FUN_00489D40();
 
           return;
 
@@ -6400,7 +6400,7 @@ LAB_004575ee:
 
       if (iVar2 != 0) {
 
-        FUN_00488a80();
+        FUN_00488A80();
 
         DAT_00632f08 = 0;
 
@@ -6468,7 +6468,7 @@ void FUN_004576e0(void)
 
   _DAT_0059da0c = 0x3f800000;
 
-  FUN_00508eb0(DAT_0059d9fc,DAT_0059da00,DAT_0059da04,DAT_0059da08);
+  main_texture_00508eb0(DAT_0059d9fc,DAT_0059da00,DAT_0059da04,DAT_0059da08);
 
   DAT_0059d9fc = 0;
 
@@ -6478,7 +6478,7 @@ void FUN_004576e0(void)
 
   DAT_0059da08 = 0;
 
-  iVar1 = FUN_004b09c0(DAT_0059d9f0);
+  iVar1 = FUN_004B09C0(DAT_0059d9f0);
 
   if ((iVar1 == 0) ||
 
@@ -6498,11 +6498,11 @@ void FUN_004576e0(void)
 
   }
 
-  FUN_005088d0(puVar3,&DAT_0059d9fc,&DAT_0059da00,&DAT_0059da04,&DAT_0059da08);
+  main_texture_005088d0(puVar3,&DAT_0059d9fc,&DAT_0059da00,&DAT_0059da04,&DAT_0059da08);
 
   FUN_004270f0();
 
-  FUN_00426f40(&LAB_004577f0,&LAB_00457970);
+  FUN_00426F40(&LAB_004577f0,&LAB_00457970);
 
   return;
 

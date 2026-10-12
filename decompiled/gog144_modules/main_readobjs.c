@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/readobjs
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/readobjs.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004b0540 @ 0x004B0540 ===== */
-void FUN_004b0540(void)
+/* ===== main_readobjs_004b0540 @ 0x004B0540 ===== */
+void main_readobjs_004b0540(void)
 
 
 
@@ -108,7 +108,7 @@ void FUN_004b0540(void)
 
         puVar5[0x115] = 0;
 
-        FUN_004057d0(puVar5);
+        main_animate_004057d0(puVar5);
 
         iVar3 = iVar3 + 1;
 
@@ -144,7 +144,7 @@ void FUN_004b0540(void)
 
           iVar2 = *local_c;
 
-          FUN_00405780(iVar2);
+          main_animate_00405780(iVar2);
 
           iVar4 = 0;
 

@@ -1,10 +1,10 @@
 /* Giants 1.449 — module Utils/lzss
- * 3 functions (0 named) — decompiled, names from PS2 symbols
+ * 3 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Utils/lzss.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_005395f0 @ 0x005395F0 ===== */
-void FUN_005395f0(byte *param_1,uint param_2,byte *param_3)
+/* ===== utils_lzss_005395f0 @ 0x005395F0 ===== */
+void utils_lzss_005395f0(byte *param_1,uint param_2,byte *param_3)
 
 
 
@@ -462,8 +462,8 @@ LAB_0053983f:
 
 }
 
-/* ===== FUN_00539b10 @ 0x00539B10 ===== */
-undefined4 FUN_00539b10(LPCSTR param_1)
+/* ===== utils_lzss_00539b10 @ 0x00539B10 ===== */
+undefined4 utils_lzss_00539b10(LPCSTR param_1)
 
 
 
@@ -583,8 +583,8 @@ undefined4 FUN_00539b10(LPCSTR param_1)
 
 }
 
-/* ===== FUN_00539cb0 @ 0x00539CB0 ===== */
-undefined4 FUN_00539cb0(void)
+/* ===== utils_lzss_00539cb0 @ 0x00539CB0 ===== */
+undefined4 utils_lzss_00539cb0(void)
 
 
 

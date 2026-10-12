@@ -3,8 +3,8 @@
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004b0900 @ 0x004B0900 ===== */
-bool FUN_004b0900(int param_1,undefined4 param_2,int param_3)
+/* ===== FUN_004B0900 @ 0x004B0900 ===== */
+bool FUN_004B0900(int param_1,undefined4 param_2,int param_3)
 
 
 
@@ -110,8 +110,8 @@ switchD_004b095c_caseD_0:
 
 }
 
-/* ===== FUN_004b09c0 @ 0x004B09C0 ===== */
-int * FUN_004b09c0(int param_1)
+/* ===== FUN_004B09C0 @ 0x004B09C0 ===== */
+int * FUN_004B09C0(int param_1)
 
 
 
@@ -172,7 +172,7 @@ undefined4 FUN_004b0a00(undefined4 param_1)
 
     do {
 
-      iVar1 = FUN_0053a860(*(undefined4 *)(iVar3 + 4 + DAT_00632d28),param_1);
+      iVar1 = FUN_0053A860(*(undefined4 *)(iVar3 + 4 + DAT_00632d28),param_1);
 
       if (iVar1 != 0) {
 
@@ -296,8 +296,8 @@ char * world_get_nicename(int param_1)
 
 }
 
-/* ===== FUN_004b0b40 @ 0x004B0B40 ===== */
-void FUN_004b0b40(void)
+/* ===== FUN_004B0B40 @ 0x004B0B40 ===== */
+void FUN_004B0B40(void)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module win95/frate
- * 3 functions (1 named) — decompiled, names from PS2 symbols
+ * 3 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\win95/frate.c(pp) (assert-string evidence)
  */
 
@@ -56,8 +56,8 @@ void FRateSlowTime(float param_1,float *param_2,float param_3,float param_4,floa
 
 }
 
-/* ===== FUN_00518c60 @ 0x00518C60 ===== */
-void FUN_00518c60(void)
+/* ===== win95_frate_00518c60 @ 0x00518C60 ===== */
+void win95_frate_00518c60(void)
 
 
 
@@ -119,8 +119,8 @@ void FUN_00518c60(void)
 
 }
 
-/* ===== FUN_00518cd0 @ 0x00518CD0 ===== */
-void FUN_00518cd0(void)
+/* ===== win95_frate_00518cd0 @ 0x00518CD0 ===== */
+void win95_frate_00518cd0(void)
 
 
 

@@ -1,10 +1,10 @@
 /* Giants 1.449 — module comm/multi
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\comm/multi.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00533280 @ 0x00533280 ===== */
-void FUN_00533280(int param_1)
+/* ===== comm_multi_00533280 @ 0x00533280 ===== */
+void comm_multi_00533280(int param_1)
 
 
 
@@ -78,8 +78,8 @@ void FUN_00533280(int param_1)
 
 }
 
-/* ===== FUN_00533370 @ 0x00533370 ===== */
-void FUN_00533370(int param_1,int param_2)
+/* ===== comm_multi_00533370 @ 0x00533370 ===== */
+void comm_multi_00533370(int param_1,int param_2)
 
 
 

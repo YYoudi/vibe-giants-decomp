@@ -4956,7 +4956,7 @@ void FUN_00515f60(int param_1)
 
     DAT_006331bc = param_1;
 
-    FUN_0051a130(s_FarClipIndex_0055a04c,param_1);
+    FUN_0051A130(s_FarClipIndex_0055a04c,param_1);
 
     if ((DAT_005dcf50 == 0.0) && (_DAT_005dcf58 == 0.0)) {
 
@@ -8474,12 +8474,12 @@ undefined4 FUN_00518f20(void)
 
 }
 
-/* ===== FUN_00518fa0 @ 0x00518FA0 ===== */
+/* ===== FUN_00518FA0 @ 0x00518FA0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00518fa0(void)
+void FUN_00518FA0(void)
 
 
 
@@ -9248,8 +9248,8 @@ undefined4 FUN_00519be0(void)
 
 }
 
-/* ===== FUN_00519c70 @ 0x00519C70 ===== */
-void FUN_00519c70(void)
+/* ===== FUN_00519C70 @ 0x00519C70 ===== */
+void FUN_00519C70(void)
 
 
 
@@ -9312,8 +9312,8 @@ void FUN_00519ca0(int param_1)
 
 }
 
-/* ===== FUN_00519cf0 @ 0x00519CF0 ===== */
-undefined4 * FUN_00519cf0(void)
+/* ===== FUN_00519CF0 @ 0x00519CF0 ===== */
+undefined4 * FUN_00519CF0(void)
 
 
 
@@ -9566,8 +9566,8 @@ void FUN_00519ed0(void)
 
 }
 
-/* ===== FUN_00519f20 @ 0x00519F20 ===== */
-int FUN_00519f20(DWORD *param_1,DWORD param_2,LPCSTR param_3)
+/* ===== FUN_00519F20 @ 0x00519F20 ===== */
+int FUN_00519F20(DWORD *param_1,DWORD param_2,LPCSTR param_3)
 
 
 
@@ -9737,8 +9737,8 @@ void FUN_0051a090(LPCSTR param_1,BYTE *param_2)
 
 }
 
-/* ===== FUN_0051a0c0 @ 0x0051A0C0 ===== */
-void FUN_0051a0c0(LPCSTR param_1,LPBYTE param_2)
+/* ===== FUN_0051A0C0 @ 0x0051A0C0 ===== */
+void FUN_0051A0C0(LPCSTR param_1,LPBYTE param_2)
 
 
 
@@ -9770,8 +9770,8 @@ void FUN_0051a0c0(LPCSTR param_1,LPBYTE param_2)
 
 }
 
-/* ===== FUN_0051a100 @ 0x0051A100 ===== */
-void FUN_0051a100(LPCSTR param_1,LPBYTE param_2)
+/* ===== FUN_0051A100 @ 0x0051A100 ===== */
+void FUN_0051A100(LPCSTR param_1,LPBYTE param_2)
 
 
 
@@ -9793,8 +9793,8 @@ void FUN_0051a100(LPCSTR param_1,LPBYTE param_2)
 
 }
 
-/* ===== FUN_0051a130 @ 0x0051A130 ===== */
-void FUN_0051a130(LPCSTR param_1)
+/* ===== FUN_0051A130 @ 0x0051A130 ===== */
+void FUN_0051A130(LPCSTR param_1)
 
 
 
@@ -10955,7 +10955,7 @@ void FUN_0051b500(uint param_1,undefined4 param_2,float param_3,undefined4 param
 
   
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
   bVar2 = *param_6;
 
@@ -11391,7 +11391,7 @@ void FUN_0051ba00(undefined4 param_1,undefined4 param_2,float param_3,float para
 
   fVar4 = (param_3 / _DAT_005dd8c4) * (float)DAT_00632e88;
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
   bVar2 = *param_6;
 
@@ -11543,7 +11543,7 @@ float10 FUN_0051bc90(float param_1,byte *param_2,int param_3)
 
   fVar4 = (param_1 / _DAT_005dd8c4) * (float)DAT_00632e88;
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
   bVar2 = *param_2;
 
@@ -11591,12 +11591,12 @@ float10 FUN_0051bc90(float param_1,byte *param_2,int param_3)
 
 }
 
-/* ===== FUN_0051bd30 @ 0x0051BD30 ===== */
+/* ===== FUN_0051BD30 @ 0x0051BD30 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_0051bd30(float param_1,byte *param_2)
+float10 FUN_0051BD30(float param_1,byte *param_2)
 
 
 
@@ -11638,7 +11638,7 @@ float10 FUN_0051bd30(float param_1,byte *param_2)
 
   fVar4 = (param_1 / _DAT_005dd8c4) * (float)DAT_00632e88;
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
   bVar2 = *param_2;
 
@@ -11725,7 +11725,7 @@ float10 FUN_0051bde0(float param_1,byte *param_2)
 
   fVar4 = (param_1 / _DAT_005dd8c4) * (float)DAT_00632e88;
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
   bVar2 = *param_2;
 
@@ -11921,7 +11921,7 @@ void FUN_0051bed0(uint param_1,undefined4 *param_2,float param_3,byte *param_4,i
 
   local_40[2] = -1.7014118e+38;
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
   bVar3 = *param_4;
 
@@ -12791,12 +12791,12 @@ LAB_0051c979:
 
 }
 
-/* ===== FUN_0051c9f0 @ 0x0051C9F0 ===== */
+/* ===== FUN_0051C9F0 @ 0x0051C9F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051c9f0(void)
+void FUN_0051C9F0(void)
 
 
 
@@ -13173,7 +13173,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
       DAT_005ddb54 = FUN_0051c890(DAT_005dda78);
 
-      iVar3 = FUN_0051dc20(in_stack_00000004);
+      iVar3 = FUN_0051DC20(in_stack_00000004);
 
       if (iVar3 != 0) {
 
@@ -13193,7 +13193,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
             FUN_00482700();
 
-            FUN_0051c9f0();
+            FUN_0051C9F0();
 
           }
 
@@ -13261,7 +13261,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
           DAT_005ddb80 = 0;
 
-          FUN_00452000();
+          main_gfxhelp_00452000();
 
           (*(code *)*DAT_00656420)(DAT_00656420);
 
@@ -13600,7 +13600,7 @@ void FUN_0051d0d0(char *param_1)
 
       iVar6 = 0;
 
-      iVar3 = FUN_00426460();
+      iVar3 = main_dedicated_00426460();
 
       if (iVar3 != 0) {
 
@@ -14186,12 +14186,12 @@ LAB_0051daf3:
 
 }
 
-/* ===== FUN_0051dc20 @ 0x0051DC20 ===== */
+/* ===== FUN_0051DC20 @ 0x0051DC20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_0051dc20(undefined4 param_1,undefined4 param_2)
+undefined4 FUN_0051DC20(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -14849,11 +14849,11 @@ LAB_0051e1b3:
 
   FUN_00515ed0(0);
 
-  FUN_004824e0();
+  FUN_004824E0();
 
 LAB_0051e225:
 
-  FUN_0051c9f0();
+  FUN_0051C9F0();
 
   (**(code **)(DAT_00656420 + 0x70))(DAT_00656420,&uStack_68);
 
@@ -14869,9 +14869,9 @@ LAB_0051e225:
 
   }
 
-  FUN_0051adb0(0x18);
+  win95_text_0051adb0(0x18);
 
-  FUN_00451e10();
+  main_gfxhelp_00451e10();
 
   FUN_004041f0();
 
@@ -14911,7 +14911,7 @@ LAB_0051e225:
 
     param_2 = 0x3f400000;
 
-    FUN_0051a100(s_MusicVolume_0055be24,&param_2);
+    FUN_0051A100(s_MusicVolume_0055be24,&param_2);
 
     (*DAT_005dd32c)(param_2);
 
@@ -14919,7 +14919,7 @@ LAB_0051e225:
 
     param_2 = 0x3f400000;
 
-    FUN_0051a100(s_SoundVolume_0055be18,&param_2);
+    FUN_0051A100(s_SoundVolume_0055be18,&param_2);
 
     (*DAT_005dd2cc)(param_2);
 
@@ -15369,7 +15369,7 @@ void FUN_0051f2f0(void)
 
             DAT_00632f08 = 9999;
 
-            FUN_0052daa0(0);
+            FUN_0052DAA0(0);
 
             FUN_0052db50(0);
 
@@ -15594,7 +15594,7 @@ void FUN_0051f470(void)
 
     if (DAT_00633160 == 0) {
 
-      FUN_0051fc90();
+      FUN_0051FC90();
 
       return;
 
@@ -15768,7 +15768,7 @@ LAB_0051f6a4:
 
     uStack_240 = 0;
 
-    FUN_00529c00(&uStack_24c,&uStack_248,&uStack_244,&uStack_240);
+    FUN_00529C00(&uStack_24c,&uStack_248,&uStack_244,&uStack_240);
 
     puStack_1fc = &uStack_24c;
 
@@ -15786,7 +15786,7 @@ LAB_0051f6a4:
 
         if (DAT_005defa0 == 0) {
 
-          iVar3 = FUN_0052d300(0,0,0x22cf,s_giants_0057dda8,&uStack_24c,&LAB_0052cb90,&LAB_0052cbc0,
+          iVar3 = net_0052d300(0,0,0x22cf,s_giants_0057dda8,&uStack_24c,&LAB_0052cb90,&LAB_0052cbc0,
 
                                &LAB_0052ced0,&LAB_0052cfe0,0);
 
@@ -15808,7 +15808,7 @@ LAB_0051f6a4:
 
       }
 
-      FUN_005233f0();
+      FUN_005233F0();
 
       iVar3 = FUN_00426540();
 
@@ -16204,8 +16204,8 @@ void FUN_0051fba0(void)
 
 }
 
-/* ===== FUN_0051fc90 @ 0x0051FC90 ===== */
-void FUN_0051fc90(void)
+/* ===== FUN_0051FC90 @ 0x0051FC90 ===== */
+void FUN_0051FC90(void)
 
 
 
@@ -16245,23 +16245,23 @@ void FUN_0051fc90(void)
 
   FUN_0040d7b0(DAT_0059ee98,0);
 
-  FUN_00426f40(&LAB_0051fe70,&LAB_0051fe60);
+  FUN_00426F40(&LAB_0051fe70,&LAB_0051fe60);
 
-  FUN_00426fa0();
+  FUN_00426FA0();
 
-  DAT_005def84 = FUN_00427150();
+  DAT_005def84 = main_dlog_00427150();
 
   FUN_0051a030(s_IPAddress_0057de38,&DAT_00632f68,0x40);
 
-  FUN_00427bb0(DAT_005def84,3,0x3f000000,0x3f333333,0x2a000000,s_ButtonSearch_0057de28);
+  main_dlog_00427bb0(DAT_005def84,3,0x3f000000,0x3f333333,0x2a000000,s_ButtonSearch_0057de28);
 
-  FUN_00427bb0(DAT_005def84,4,0x3f000000,0x3ee66666,0x2a000000,s_ButtonUseAddr_0057de18);
+  main_dlog_00427bb0(DAT_005def84,4,0x3f000000,0x3ee66666,0x2a000000,s_ButtonUseAddr_0057de18);
 
-  FUN_004273b0(DAT_005def84,0,0x3f000000,0x3e4ccccd,0x2a000000,s_CommTCPIPParams_0057de08);
+  main_dlog_004273b0(DAT_005def84,0,0x3f000000,0x3e4ccccd,0x2a000000,s_CommTCPIPParams_0057de08);
 
-  FUN_004273b0(DAT_005def84,0,0x3f000000,0x3e6b851f,0x2a000000,s_CommTCPIPParams2_0057ddf4);
+  main_dlog_004273b0(DAT_005def84,0,0x3f000000,0x3e6b851f,0x2a000000,s_CommTCPIPParams2_0057ddf4);
 
-  FUN_004273b0(DAT_005def84,0,0x3f000000,0x3eb33333,0x2a000000,s_CommTCPHostIP_0057dde4);
+  main_dlog_004273b0(DAT_005def84,0,0x3f000000,0x3eb33333,0x2a000000,s_CommTCPHostIP_0057dde4);
 
   uVar8 = 0;
 
@@ -16329,7 +16329,7 @@ LAB_0051fe04:
 
 LAB_0051fe2f:
 
-  FUN_00427970(DAT_005def84,2,0x3f000000,0x3ec28f5c,uVar8 | 0x28000010,&DAT_00632f68,0x20);
+  main_dlog_00427970(DAT_005def84,2,0x3f000000,0x3ec28f5c,uVar8 | 0x28000010,&DAT_00632f68,0x20);
 
   return;
 

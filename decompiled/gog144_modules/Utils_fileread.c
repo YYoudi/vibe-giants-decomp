@@ -1,10 +1,10 @@
 /* Giants 1.449 — module Utils/fileread
- * 2 functions (1 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Utils/fileread.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00538560 @ 0x00538560 ===== */
-void FUN_00538560(undefined4 param_1)
+/* ===== utils_fileread_00538560 @ 0x00538560 ===== */
+void utils_fileread_00538560(undefined4 param_1)
 
 
 
@@ -181,7 +181,7 @@ LAB_005386ba:
 
         if (DAT_005e2c88 != 0) {
 
-          FUN_00539cb0();
+          utils_lzss_00539cb0();
 
         }
 
@@ -201,7 +201,7 @@ LAB_005386ba:
 
       *param_2 = uVar4;
 
-      FUN_005395f0(*(undefined4 *)(iVar3 + 0xc),*(undefined4 *)(iVar3 + 8),uVar4);
+      utils_lzss_005395f0(*(undefined4 *)(iVar3 + 0xc),*(undefined4 *)(iVar3 + 8),uVar4);
 
       *param_3 = *(undefined4 *)(iVar3 + 8);
 

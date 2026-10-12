@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/texture
- * 8 functions (0 named) — decompiled, names from PS2 symbols
+ * 8 functions (7 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/texture.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00507c50 @ 0x00507C50 ===== */
-void FUN_00507c50(char *param_1,undefined4 param_2)
+/* ===== main_texture_00507c50 @ 0x00507C50 ===== */
+void main_texture_00507c50(char *param_1,undefined4 param_2)
 
 
 
@@ -38,7 +38,7 @@ void FUN_00507c50(char *param_1,undefined4 param_2)
 
   for (puVar8 = DAT_005a8844; puVar8 != (undefined4 *)0x0; puVar8 = (undefined4 *)*puVar8) {
 
-    iVar2 = FUN_0053a860(puVar8 + 1,param_1);
+    iVar2 = FUN_0053A860(puVar8 + 1,param_1);
 
     if (iVar2 != 0) {
 
@@ -210,8 +210,8 @@ void FUN_00507c50(char *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00507e50 @ 0x00507E50 ===== */
-void FUN_00507e50(void)
+/* ===== main_texture_00507e50 @ 0x00507E50 ===== */
+void main_texture_00507e50(void)
 
 
 
@@ -341,8 +341,8 @@ void FUN_00507e50(void)
 
 }
 
-/* ===== FUN_00507fa0 @ 0x00507FA0 ===== */
-void FUN_00507fa0(void)
+/* ===== main_texture_00507fa0 @ 0x00507FA0 ===== */
+void main_texture_00507fa0(void)
 
 
 
@@ -444,8 +444,8 @@ void FUN_00507fa0(void)
 
 }
 
-/* ===== FUN_005080a0 @ 0x005080A0 ===== */
-void FUN_005080a0(int *param_1,int param_2)
+/* ===== main_texture_005080a0 @ 0x005080A0 ===== */
+void main_texture_005080a0(int *param_1,int param_2)
 
 
 
@@ -747,7 +747,7 @@ LAB_00508282:
 
 LAB_00508353:
 
-        FUN_00538560(piStack_1d4);
+        utils_fileread_00538560(piStack_1d4);
 
         return;
 
@@ -1141,7 +1141,7 @@ LAB_00508606:
 
   }
 
-  FUN_00538560(puStack_1b4);
+  utils_fileread_00538560(puStack_1b4);
 
   return;
 
@@ -1172,12 +1172,12 @@ void FUN_005086e0(int param_1)
 
 }
 
-/* ===== FUN_00508750 @ 0x00508750 ===== */
+/* ===== main_texture_00508750 @ 0x00508750 ===== */
 /* PS2 candidate: texture_read (conf 0.633) */
 
 
 
-undefined4 * FUN_00508750(char *param_1)
+undefined4 * main_texture_00508750(char *param_1)
 
 
 
@@ -1213,7 +1213,7 @@ undefined4 * FUN_00508750(char *param_1)
 
       do {
 
-        iVar2 = FUN_0053a860(param_1,*puVar3);
+        iVar2 = FUN_0053A860(param_1,*puVar3);
 
         if (iVar2 != 0) break;
 
@@ -1235,7 +1235,7 @@ undefined4 * FUN_00508750(char *param_1)
 
   for (; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
 
-    iVar2 = FUN_0053a860(param_1,puVar3[1]);
+    iVar2 = FUN_0053A860(param_1,puVar3[1]);
 
     if (iVar2 != 0) {
 
@@ -1309,10 +1309,12 @@ undefined4 * FUN_00508750(char *param_1)
 
 }
 
-/* ===== FUN_005088d0 @ 0x005088D0 ===== */
+/* ===== main_texture_005088d0 @ 0x005088D0 ===== */
 undefined4
 
-FUN_005088d0(undefined4 param_1,uint *param_2,uint *param_3,int *param_4,undefined4 *param_5)
+main_texture_005088d0
+
+          (undefined4 param_1,uint *param_2,uint *param_3,int *param_4,undefined4 *param_5)
 
 
 
@@ -1582,7 +1584,7 @@ FUN_005088d0(undefined4 param_1,uint *param_2,uint *param_3,int *param_4,undefin
 
       }
 
-      FUN_00538560(puStack_ac);
+      utils_fileread_00538560(puStack_ac);
 
       iStack_78 = bVar2 + 3;
 
@@ -1886,8 +1888,8 @@ LAB_00508c6d:
 
 }
 
-/* ===== FUN_00508eb0 @ 0x00508EB0 ===== */
-void FUN_00508eb0(int param_1,int param_2,undefined4 param_3,int param_4)
+/* ===== main_texture_00508eb0 @ 0x00508EB0 ===== */
+void main_texture_00508eb0(int param_1,int param_2,undefined4 param_3,int param_4)
 
 
 

@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/linkage
- * 3 functions (0 named) — decompiled, names from PS2 symbols
+ * 3 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/linkage.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00470250 @ 0x00470250 ===== */
-void FUN_00470250(int *param_1,int *param_2)
+/* ===== main_linkage_00470250 @ 0x00470250 ===== */
+void main_linkage_00470250(int *param_1,int *param_2)
 
 
 
@@ -132,8 +132,8 @@ void FUN_00470250(int *param_1,int *param_2)
 
 }
 
-/* ===== FUN_00470360 @ 0x00470360 ===== */
-void FUN_00470360(int *param_1,int *param_2)
+/* ===== main_linkage_00470360 @ 0x00470360 ===== */
+void main_linkage_00470360(int *param_1,int *param_2)
 
 
 
@@ -277,8 +277,8 @@ void FUN_00470360(int *param_1,int *param_2)
 
 }
 
-/* ===== FUN_00470610 @ 0x00470610 ===== */
-void FUN_00470610(void)
+/* ===== main_linkage_00470610 @ 0x00470610 ===== */
+void main_linkage_00470610(void)
 
 
 

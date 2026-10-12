@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/ANIMATE
- * 8 functions (0 named) — decompiled, names from PS2 symbols
+ * 8 functions (6 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/ANIMATE.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00404b60 @ 0x00404B60 ===== */
-void FUN_00404b60(int param_1,int param_2)
+/* ===== main_animate_00404b60 @ 0x00404B60 ===== */
+void main_animate_00404b60(int param_1,int param_2)
 
 
 
@@ -128,8 +128,8 @@ LAB_00404c65:
 
 }
 
-/* ===== FUN_004050d0 @ 0x004050D0 ===== */
-float * FUN_004050d0(float param_1)
+/* ===== main_animate_004050d0 @ 0x004050D0 ===== */
+float * main_animate_004050d0(float param_1)
 
 
 
@@ -272,12 +272,12 @@ void FUN_00405130(undefined4 *param_1,int *param_2)
 
 }
 
-/* ===== FUN_00405240 @ 0x00405240 ===== */
+/* ===== main_animate_00405240 @ 0x00405240 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00405240(char *param_1)
+void main_animate_00405240(char *param_1)
 
 
 
@@ -313,7 +313,7 @@ void FUN_00405240(char *param_1)
 
   for (puVar6 = DAT_005841a4; puVar6 != (undefined4 *)0x0; puVar6 = (undefined4 *)*puVar6) {
 
-    iVar4 = FUN_0053a860(pcVar3,puVar6 + 3);
+    iVar4 = FUN_0053A860(pcVar3,puVar6 + 3);
 
     if (iVar4 != 0) {
 
@@ -498,7 +498,7 @@ void FUN_004053b0(undefined4 *param_1,int param_2,char *param_3)
 
         puVar6 = (undefined4 *)*puVar6) {
 
-      iVar4 = FUN_0053a860(pcVar9,puVar6 + 3);
+      iVar4 = FUN_0053A860(pcVar9,puVar6 + 3);
 
       pcVar11 = pcVar9;
 
@@ -670,7 +670,7 @@ LAB_004056ea:
 
   for (; puVar6 != (undefined4 *)0x0; puVar6 = (undefined4 *)*puVar6) {
 
-    iVar4 = FUN_0053a860(pcVar11,puVar6 + 3);
+    iVar4 = FUN_0053A860(pcVar11,puVar6 + 3);
 
     if (iVar4 != 0) {
 
@@ -692,7 +692,7 @@ LAB_004056ea:
 
     fVar5 = (float)FUN_0053ba50(0,0,param_1);
 
-    FUN_00405700(pcVar11,fVar5);
+    main_animate_00405700(pcVar11,fVar5);
 
     if (fVar5 != 0.0) {
 
@@ -748,8 +748,8 @@ LAB_004054e8:
 
 }
 
-/* ===== FUN_00405700 @ 0x00405700 ===== */
-void FUN_00405700(char *param_1,undefined4 param_2)
+/* ===== main_animate_00405700 @ 0x00405700 ===== */
+void main_animate_00405700(char *param_1,undefined4 param_2)
 
 
 
@@ -819,8 +819,8 @@ void FUN_00405700(char *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00405780 @ 0x00405780 ===== */
-void FUN_00405780(int param_1)
+/* ===== main_animate_00405780 @ 0x00405780 ===== */
+void main_animate_00405780(int param_1)
 
 
 
@@ -852,8 +852,8 @@ void FUN_00405780(int param_1)
 
 }
 
-/* ===== FUN_004057d0 @ 0x004057D0 ===== */
-void FUN_004057d0(int param_1)
+/* ===== main_animate_004057d0 @ 0x004057D0 ===== */
+void main_animate_004057d0(int param_1)
 
 
 

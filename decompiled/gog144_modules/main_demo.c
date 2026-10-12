@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/demo
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/demo.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004267a0 @ 0x004267A0 ===== */
+/* ===== main_demo_004267a0 @ 0x004267A0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004267a0(void)
+void main_demo_004267a0(void)
 
 
 
@@ -260,7 +260,7 @@ void FUN_004267a0(void)
 
     DAT_005999bc = DAT_005999bc + 1;
 
-    iVar4 = FUN_00426c10();
+    iVar4 = main_demo_00426c10();
 
     if ((iVar4 == 0) && (DAT_00632d60 != 0)) {
 
@@ -322,12 +322,12 @@ void FUN_004267a0(void)
 
 }
 
-/* ===== FUN_00426c10 @ 0x00426C10 ===== */
+/* ===== main_demo_00426c10 @ 0x00426C10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_00426c10(void)
+undefined4 main_demo_00426c10(void)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/readgbls
- * 2 functions (1 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/readgbls.c(pp) (assert-string evidence)
  */
 
@@ -94,8 +94,8 @@ LAB_004ae43b:
 
 }
 
-/* ===== FUN_004ae480 @ 0x004AE480 ===== */
-void FUN_004ae480(void)
+/* ===== main_readgbls_004ae480 @ 0x004AE480 ===== */
+void main_readgbls_004ae480(void)
 
 
 

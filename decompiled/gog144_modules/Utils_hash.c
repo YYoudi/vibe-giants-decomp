@@ -1,10 +1,10 @@
 /* Giants 1.449 — module Utils/hash
- * 6 functions (0 named) — decompiled, names from PS2 symbols
+ * 6 functions (6 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Utils/hash.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_005391c0 @ 0x005391C0 ===== */
-undefined4 * FUN_005391c0(int param_1,int param_2,uint param_3)
+/* ===== utils_hash_005391c0 @ 0x005391C0 ===== */
+undefined4 * utils_hash_005391c0(int param_1,int param_2,uint param_3)
 
 
 
@@ -66,8 +66,8 @@ undefined4 * FUN_005391c0(int param_1,int param_2,uint param_3)
 
 }
 
-/* ===== FUN_00539230 @ 0x00539230 ===== */
-int * FUN_00539230(int *param_1,char *param_2)
+/* ===== utils_hash_00539230 @ 0x00539230 ===== */
+int * utils_hash_00539230(int *param_1,char *param_2)
 
 
 
@@ -279,8 +279,8 @@ int * FUN_00539230(int *param_1,char *param_2)
 
 }
 
-/* ===== FUN_00539470 @ 0x00539470 ===== */
-void FUN_00539470(undefined4 *param_1)
+/* ===== utils_hash_00539470 @ 0x00539470 ===== */
+void utils_hash_00539470(undefined4 *param_1)
 
 
 
@@ -314,8 +314,8 @@ void FUN_00539470(undefined4 *param_1)
 
 }
 
-/* ===== FUN_005394c0 @ 0x005394C0 ===== */
-void FUN_005394c0(int param_1)
+/* ===== utils_hash_005394c0 @ 0x005394C0 ===== */
+void utils_hash_005394c0(int param_1)
 
 
 
@@ -343,8 +343,8 @@ void FUN_005394c0(int param_1)
 
 }
 
-/* ===== FUN_00539500 @ 0x00539500 ===== */
-int * FUN_00539500(int *param_1,char *param_2)
+/* ===== utils_hash_00539500 @ 0x00539500 ===== */
+int * utils_hash_00539500(int *param_1,char *param_2)
 
 
 
@@ -444,8 +444,8 @@ int * FUN_00539500(int *param_1,char *param_2)
 
 }
 
-/* ===== FUN_005395a0 @ 0x005395A0 ===== */
-void FUN_005395a0(undefined4 *param_1)
+/* ===== utils_hash_005395a0 @ 0x005395A0 ===== */
+void utils_hash_005395a0(undefined4 *param_1)
 
 
 

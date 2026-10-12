@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/DRAWOBJ
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/DRAWOBJ.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0042d490 @ 0x0042D490 ===== */
+/* ===== main_drawobj_0042d490 @ 0x0042D490 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0042d490(void)
+void main_drawobj_0042d490(void)
 
 
 
@@ -38,8 +38,8 @@ void FUN_0042d490(void)
 
 }
 
-/* ===== FUN_0042d500 @ 0x0042D500 ===== */
-void FUN_0042d500(void)
+/* ===== main_drawobj_0042d500 @ 0x0042D500 ===== */
+void main_drawobj_0042d500(void)
 
 
 

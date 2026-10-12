@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/editor
- * 6 functions (0 named) — decompiled, names from PS2 symbols
+ * 6 functions (5 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/editor.c(pp) (assert-string evidence)
  */
 
@@ -278,7 +278,7 @@ LAB_004362a7:
 
   if (DAT_0059cd44 == 0) {
 
-    FUN_00438350();
+    main_editor_00438350();
 
     DAT_0059cd44 = 1;
 
@@ -306,7 +306,7 @@ LAB_004362a7:
 
         }
 
-        piVar11 = (int *)FUN_004415d0();
+        piVar11 = (int *)main_editor_004415d0();
 
         piVar11[0xe] = iVar10;
 
@@ -336,7 +336,7 @@ LAB_004362a7:
 
       if (iVar10 != 0) {
 
-        piVar11 = (int *)FUN_004415d0();
+        piVar11 = (int *)main_editor_004415d0();
 
         piVar11[0xe] = iVar10;
 
@@ -358,9 +358,9 @@ LAB_00436453:
 
       DAT_0059cc38 = 2;
 
-      FUN_004959c0();
+      FUN_004959C0();
 
-      FUN_00426f40(&LAB_00438ef0,&LAB_00438dd0);
+      FUN_00426F40(&LAB_00438ef0,&LAB_00438dd0);
 
       DAT_00632ab0 = 0;
 
@@ -368,9 +368,9 @@ LAB_00436453:
 
       DAT_00632aaa = 0;
 
-      FUN_00519c70();
+      FUN_00519C70();
 
-      FUN_00438350();
+      main_editor_00438350();
 
       switch(DAT_0059cc38) {
 
@@ -382,7 +382,7 @@ LAB_00436453:
 
 switchD_004364b2_caseD_1:
 
-        FUN_00439df0();
+        FUN_00439DF0();
 
         return;
 
@@ -398,7 +398,7 @@ switchD_004364b2_caseD_2:
 
 switchD_004364b2_caseD_3:
 
-        FUN_0043aa40();
+        FUN_0043AA40();
 
         return;
 
@@ -406,7 +406,7 @@ switchD_004364b2_caseD_3:
 
 switchD_004364b2_caseD_4:
 
-        FUN_0043b530();
+        FUN_0043B530();
 
         return;
 
@@ -414,7 +414,7 @@ switchD_004364b2_caseD_4:
 
 switchD_004364b2_caseD_5:
 
-        FUN_0043bd80();
+        FUN_0043BD80();
 
         return;
 
@@ -422,7 +422,7 @@ switchD_004364b2_caseD_5:
 
 switchD_004364b2_caseD_6:
 
-        FUN_0043c580();
+        FUN_0043C580();
 
         return;
 
@@ -430,7 +430,7 @@ switchD_004364b2_caseD_6:
 
 switchD_004364b2_caseD_7:
 
-        FUN_0043d0a0();
+        FUN_0043D0A0();
 
         return;
 
@@ -454,7 +454,7 @@ switchD_004364b2_caseD_9:
 
 switchD_004364b2_caseD_a:
 
-        FUN_0043f950();
+        FUN_0043F950();
 
         return;
 
@@ -462,7 +462,7 @@ switchD_004364b2_caseD_a:
 
 switchD_004364b2_caseD_b:
 
-        FUN_0043fbc0();
+        FUN_0043FBC0();
 
         return;
 
@@ -470,7 +470,7 @@ switchD_004364b2_caseD_b:
 
 switchD_004364b2_caseD_c:
 
-        FUN_0043fe90();
+        FUN_0043FE90();
 
         return;
 
@@ -484,9 +484,9 @@ switchD_004364b2_caseD_c:
 
     DAT_0059cc38 = 3;
 
-    FUN_004959c0();
+    FUN_004959C0();
 
-    FUN_00426f40(&LAB_00438ef0,&LAB_00438dd0);
+    FUN_00426F40(&LAB_00438ef0,&LAB_00438dd0);
 
     DAT_00632ab0 = 0;
 
@@ -494,9 +494,9 @@ switchD_004364b2_caseD_c:
 
     DAT_00632aaa = 0;
 
-    FUN_00519c70();
+    FUN_00519C70();
 
-    FUN_00438350();
+    main_editor_00438350();
 
     switch(DAT_0059cc38) {
 
@@ -1546,7 +1546,7 @@ LAB_00437d68:
 
       for (piVar11 = DAT_0059cc44; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-        ppiVar13 = (int **)FUN_004415d0();
+        ppiVar13 = (int **)main_editor_004415d0();
 
         piVar21 = piVar11;
 
@@ -1654,7 +1654,7 @@ LAB_00437d68:
 
       for (piVar11 = local_7c; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-        piVar12 = (int *)FUN_004415d0();
+        piVar12 = (int *)main_editor_004415d0();
 
         piVar20 = piVar11;
 
@@ -1764,7 +1764,7 @@ LAB_00437d68:
 
       for (piVar11 = DAT_0059cd04; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-        ppiVar13 = (int **)FUN_004415d0();
+        ppiVar13 = (int **)main_editor_004415d0();
 
         piVar21 = piVar11;
 
@@ -2176,7 +2176,7 @@ LAB_0043670e:
 
   }
 
-  piVar11 = (int *)FUN_004415d0();
+  piVar11 = (int *)main_editor_004415d0();
 
   piVar11[0xe] = iVar10;
 
@@ -2250,7 +2250,7 @@ LAB_004367b5:
 
         }
 
-        piVar11 = (int *)FUN_004415d0();
+        piVar11 = (int *)main_editor_004415d0();
 
         piVar11[0xe] = iVar10;
 
@@ -2410,7 +2410,7 @@ LAB_004368ab:
 
       for (piVar11 = DAT_0059cbd8; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-        piVar12 = (int *)FUN_004415d0();
+        piVar12 = (int *)main_editor_004415d0();
 
         piVar20 = piVar11;
 
@@ -2470,8 +2470,8 @@ LAB_004368ab:
 
 }
 
-/* ===== FUN_00438350 @ 0x00438350 ===== */
-void FUN_00438350(void)
+/* ===== main_editor_00438350 @ 0x00438350 ===== */
+void main_editor_00438350(void)
 
 
 
@@ -2795,12 +2795,12 @@ LAB_004384e0:
 
 }
 
-/* ===== FUN_0043a590 @ 0x0043A590 ===== */
+/* ===== main_editor_0043a590 @ 0x0043A590 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0043a590(void)
+void main_editor_0043a590(void)
 
 
 
@@ -2838,9 +2838,9 @@ void FUN_0043a590(void)
 
     DAT_0059cc38 = 6;
 
-    FUN_004959c0();
+    FUN_004959C0();
 
-    FUN_00426f40(&LAB_00438ef0,&LAB_00438dd0);
+    FUN_00426F40(&LAB_00438ef0,&LAB_00438dd0);
 
     DAT_00632ab0 = 0;
 
@@ -2848,9 +2848,9 @@ void FUN_0043a590(void)
 
     DAT_00632aaa = 0;
 
-    FUN_00519c70();
+    FUN_00519C70();
 
-    FUN_00438350();
+    main_editor_00438350();
 
     switch(DAT_0059cc38) {
 
@@ -2862,7 +2862,7 @@ void FUN_0043a590(void)
 
     case 1:
 
-      FUN_00439df0();
+      FUN_00439DF0();
 
       return;
 
@@ -2874,31 +2874,31 @@ void FUN_0043a590(void)
 
     case 3:
 
-      FUN_0043aa40();
+      FUN_0043AA40();
 
       return;
 
     case 4:
 
-      FUN_0043b530();
+      FUN_0043B530();
 
       return;
 
     case 5:
 
-      FUN_0043bd80();
+      FUN_0043BD80();
 
       return;
 
     case 6:
 
-      FUN_0043c580();
+      FUN_0043C580();
 
       return;
 
     case 7:
 
-      FUN_0043d0a0();
+      FUN_0043D0A0();
 
       return;
 
@@ -2916,19 +2916,19 @@ void FUN_0043a590(void)
 
     case 10:
 
-      FUN_0043f950();
+      FUN_0043F950();
 
       return;
 
     case 0xb:
 
-      FUN_0043fbc0();
+      FUN_0043FBC0();
 
       return;
 
     case 0xc:
 
-      FUN_0043fe90();
+      FUN_0043FE90();
 
       return;
 
@@ -2956,7 +2956,7 @@ void FUN_0043a590(void)
 
       DAT_0059cbd8 = (undefined4 *)0x0;
 
-      puVar5 = (undefined4 *)FUN_004415d0();
+      puVar5 = (undefined4 *)main_editor_004415d0();
 
       puVar5[0xe] = uVar2;
 
@@ -3142,7 +3142,7 @@ void FUN_0043a590(void)
 
         for (puVar5 = DAT_0059cbd8; puVar5 != (undefined4 *)0x0; puVar5 = (undefined4 *)*puVar5) {
 
-          puVar4 = (undefined4 *)FUN_004415d0();
+          puVar4 = (undefined4 *)main_editor_004415d0();
 
           puVar6 = puVar5;
 
@@ -3182,8 +3182,8 @@ void FUN_0043a590(void)
 
 }
 
-/* ===== FUN_00440d90 @ 0x00440D90 ===== */
-void FUN_00440d90(void)
+/* ===== main_editor_00440d90 @ 0x00440D90 ===== */
+void main_editor_00440d90(void)
 
 
 
@@ -3215,7 +3215,7 @@ void FUN_00440d90(void)
 
   MoveFileExA(local_208,local_108,1);
 
-  FUN_00438350();
+  main_editor_00438350();
 
   iVar2 = FUN_00543a11(local_208,&DAT_00558550);
 
@@ -3419,8 +3419,8 @@ void FUN_00440d90(void)
 
 }
 
-/* ===== FUN_004415d0 @ 0x004415D0 ===== */
-undefined4 * FUN_004415d0(void)
+/* ===== main_editor_004415d0 @ 0x004415D0 ===== */
+undefined4 * main_editor_004415d0(void)
 
 
 
@@ -3482,8 +3482,8 @@ undefined4 * FUN_004415d0(void)
 
 }
 
-/* ===== FUN_00441660 @ 0x00441660 ===== */
-void FUN_00441660(void)
+/* ===== main_editor_00441660 @ 0x00441660 ===== */
+void main_editor_00441660(void)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module Main/mission
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/mission.c(pp) (assert-string evidence)
  */
 
@@ -72,8 +72,8 @@ void FUN_00490860(void)
 
 }
 
-/* ===== FUN_00490970 @ 0x00490970 ===== */
-void FUN_00490970(void)
+/* ===== main_mission_00490970 @ 0x00490970 ===== */
+void main_mission_00490970(void)
 
 
 

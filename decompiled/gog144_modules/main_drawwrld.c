@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/drawwrld
- * 5 functions (0 named) — decompiled, names from PS2 symbols
+ * 5 functions (5 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/drawwrld.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004329b0 @ 0x004329B0 ===== */
+/* ===== main_drawwrld_004329b0 @ 0x004329B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004329b0(void)
+void main_drawwrld_004329b0(void)
 
 
 
@@ -346,8 +346,8 @@ void FUN_004329b0(void)
 
 }
 
-/* ===== FUN_00432e10 @ 0x00432E10 ===== */
-void FUN_00432e10(void)
+/* ===== main_drawwrld_00432e10 @ 0x00432E10 ===== */
+void main_drawwrld_00432e10(void)
 
 
 
@@ -445,8 +445,8 @@ void FUN_00432e10(void)
 
 }
 
-/* ===== FUN_00434c80 @ 0x00434C80 ===== */
-void FUN_00434c80(int param_1)
+/* ===== main_drawwrld_00434c80 @ 0x00434C80 ===== */
+void main_drawwrld_00434c80(int param_1)
 
 
 
@@ -482,8 +482,8 @@ void FUN_00434c80(int param_1)
 
 }
 
-/* ===== FUN_00435170 @ 0x00435170 ===== */
-uint * FUN_00435170(int param_1,uint param_2,uint param_3)
+/* ===== main_drawwrld_00435170 @ 0x00435170 ===== */
+uint * main_drawwrld_00435170(int param_1,uint param_2,uint param_3)
 
 
 
@@ -593,8 +593,8 @@ uint * FUN_00435170(int param_1,uint param_2,uint param_3)
 
 }
 
-/* ===== FUN_00435e20 @ 0x00435E20 ===== */
-void FUN_00435e20(void)
+/* ===== main_drawwrld_00435e20 @ 0x00435E20 ===== */
+void main_drawwrld_00435e20(void)
 
 
 

@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/STATUS
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/STATUS.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00500520 @ 0x00500520 ===== */
-int FUN_00500520(int *param_1)
+/* ===== main_status_00500520 @ 0x00500520 ===== */
+int main_status_00500520(int *param_1)
 
 
 

@@ -315,7 +315,7 @@ void FUN_004f3af0(int param_1)
 
           }
 
-          sound_play_stream((int)p0,p1,0,unaff_EDI);
+          FUN_004961C0((int)p0,p1,0,unaff_EDI);
 
           uVar7 = FUN_00507b00(s_SmChGyropadDone_00562250,1,1);
 
@@ -1175,11 +1175,11 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
           fVar6 = (float10)FUN_0050a400(iVar2,iVar1);
 
-          FUN_00401910(iVar4,(float)fVar6);
+          main_ai_move_00401910(iVar4,(float)fVar6);
 
           fVar6 = (float10)FUN_0050a400(iVar1,iVar2);
 
-          FUN_00401910(param_1,(float)fVar6);
+          main_ai_move_00401910(param_1,(float)fVar6);
 
         }
 
@@ -5460,8 +5460,8 @@ LAB_004fe1c0:
 
 }
 
-/* ===== FUN_004fe2d0 @ 0x004FE2D0 ===== */
-void FUN_004fe2d0(int param_1,int param_2,float param_3,float param_4,float *param_5,float *param_6)
+/* ===== FUN_004FE2D0 @ 0x004FE2D0 ===== */
+void FUN_004FE2D0(int param_1,int param_2,float param_3,float param_4,float *param_5,float *param_6)
 
 
 
@@ -5601,7 +5601,7 @@ void FUN_004ff6a0(float param_1)
 
       uVar1 = (uint)(*(int *)((int)DAT_00632a88 + 0x18c) == *(int *)((int)fVar2 + 0x18c));
 
-      FUN_00500520(&DAT_00632900);
+      main_status_00500520(&DAT_00632900);
 
       local_28 = (param_1 / (float)DAT_00632e84) * (float)DAT_00632924;
 

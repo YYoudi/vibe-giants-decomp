@@ -1,16 +1,16 @@
 /* Giants 1.449 — module Main/commonbase
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/commonbase.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00418f00 @ 0x00418F00 ===== */
+/* ===== main_commonbase_00418f00 @ 0x00418F00 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: smartie_move (conf 0.522) */
 
 
 
-void FUN_00418f00(int param_1,undefined4 param_2,int param_3,float *param_4)
+void main_commonbase_00418f00(int param_1,undefined4 param_2,int param_3,float *param_4)
 
 
 

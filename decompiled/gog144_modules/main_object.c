@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/object
- * 6 functions (1 named) — decompiled, names from PS2 symbols
+ * 6 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/object.c(pp) (assert-string evidence)
  */
 
@@ -38,8 +38,8 @@ void object_allocate_init(void)
 
 }
 
-/* ===== FUN_00496b90 @ 0x00496B90 ===== */
-void FUN_00496b90(void)
+/* ===== main_object_00496b90 @ 0x00496B90 ===== */
+void main_object_00496b90(void)
 
 
 
@@ -249,8 +249,8 @@ void FUN_004975c0(void)
 
 }
 
-/* ===== FUN_004976e0 @ 0x004976E0 ===== */
-void FUN_004976e0(void)
+/* ===== main_object_004976e0 @ 0x004976E0 ===== */
+void main_object_004976e0(void)
 
 
 
@@ -333,7 +333,7 @@ void FUN_00497770(int param_1,int param_2)
 
     if (*(int *)(param_2 + 0x1e0) != *(int *)(param_1 + 0x1e0)) {
 
-      FUN_00499e10(param_1);
+      main_objspec_00499e10(param_1);
 
     }
 
@@ -415,7 +415,7 @@ void FUN_00497770(int param_1,int param_2)
 
     *(undefined4 *)(param_1 + 0x180) = *(undefined4 *)(param_2 + 0x180);
 
-    FUN_00499da0(param_1);
+    main_objspec_00499da0(param_1);
 
     FUN_00499f30(param_1,param_2);
 

@@ -1,10 +1,10 @@
 /* Giants 1.449 — module Main/dedicated
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/dedicated.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00426460 @ 0x00426460 ===== */
-undefined4 FUN_00426460(void)
+/* ===== main_dedicated_00426460 @ 0x00426460 ===== */
+undefined4 main_dedicated_00426460(void)
 
 
 
@@ -54,8 +54,8 @@ undefined4 FUN_00426460(void)
 
 }
 
-/* ===== FUN_00426510 @ 0x00426510 ===== */
-void FUN_00426510(void)
+/* ===== main_dedicated_00426510 @ 0x00426510 ===== */
+void main_dedicated_00426510(void)
 
 
 

@@ -1,14 +1,14 @@
 /* Giants 1.449 — module Main/gfxhelp
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/gfxhelp.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00451e10 @ 0x00451E10 ===== */
+/* ===== main_gfxhelp_00451e10 @ 0x00451E10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00451e10(void)
+void main_gfxhelp_00451e10(void)
 
 
 
@@ -86,8 +86,8 @@ void FUN_00451e10(void)
 
 }
 
-/* ===== FUN_00452000 @ 0x00452000 ===== */
-void FUN_00452000(void)
+/* ===== main_gfxhelp_00452000 @ 0x00452000 ===== */
+void main_gfxhelp_00452000(void)
 
 
 

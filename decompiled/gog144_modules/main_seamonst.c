@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/seamonst
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/seamonst.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004ec2c0 @ 0x004EC2C0 ===== */
-void FUN_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
+/* ===== main_seamonst_004ec2c0 @ 0x004EC2C0 ===== */
+void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
 
 

@@ -399,7 +399,7 @@ uint FUN_00412180(int param_1,int param_2,int param_3)
 
   
 
-  FUN_00410200();
+  main_collgrid_00410200();
 
   pcVar13 = *(char **)(param_1 + 0x21c);
 
@@ -696,7 +696,7 @@ byte FUN_00412570(int param_1,int param_2,int param_3)
 
   
 
-  FUN_00410200(param_1);
+  main_collgrid_00410200(param_1);
 
   pcVar1 = *(char **)(param_1 + 0x21c);
 
@@ -753,7 +753,7 @@ void FUN_004125f0(int param_1,float *param_2,float *param_3)
 
   param_3[2] = param_2[2];
 
-  FUN_00410200();
+  main_collgrid_00410200();
 
   pcVar1 = *(char **)(param_1 + 0x21c);
 
@@ -876,7 +876,7 @@ void FUN_00412730(int param_1,int param_2,int param_3,int param_4,int param_5)
 
   
 
-  FUN_00410200();
+  main_collgrid_00410200();
 
   pcVar17 = *(char **)(param_1 + 0x21c);
 
@@ -3702,7 +3702,7 @@ undefined4 FUN_00414d40(int param_1,int param_2)
 
   FUN_0042b010(iVar8);
 
-  FUN_00404b60(param_2,0xffffffff);
+  main_animate_00404b60(param_2,0xffffffff);
 
   FUN_0042b030();
 
@@ -4956,9 +4956,9 @@ void FUN_004162c0(int param_1)
 
   }
 
-  FUN_00426f40(&LAB_00416630,&LAB_00416b40);
+  FUN_00426F40(&LAB_00416630,&LAB_00416b40);
 
-  FUN_00426fa0();
+  FUN_00426FA0();
 
   *(undefined1 *)(param_1 + 0x20a) = 0;
 
@@ -5070,7 +5070,7 @@ LAB_00416450:
 
   }
 
-  FUN_00500520(&DAT_00632900);
+  main_status_00500520(&DAT_00632900);
 
   DAT_0063291c = 0xf;
 
@@ -7426,7 +7426,7 @@ void FUN_00418cf0(int param_1,int param_2)
 
     *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) & 0xbfffffff;
 
-    FUN_00410200(param_1);
+    main_collgrid_00410200(param_1);
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffffdfff;
 
@@ -7766,7 +7766,7 @@ void FUN_0041a260(undefined4 param_1,int param_2)
 
   FUN_00530bd0(param_1,0,3,0,0x1e,&local_c);
 
-  FUN_00418f00(param_1,0x1e,0xc,&local_c);
+  main_commonbase_00418f00(param_1,0x1e,0xc,&local_c);
 
   return;
 
@@ -7851,7 +7851,7 @@ void FUN_0041a340(undefined4 param_1,int param_2,int param_3)
 
   FUN_00530bd0(param_1,0,2,0,0x21,&local_c);
 
-  FUN_00418f00(param_1,0x21,0xc,&local_c);
+  main_commonbase_00418f00(param_1,0x21,0xc,&local_c);
 
   return;
 
@@ -7920,7 +7920,7 @@ void FUN_0041a410(undefined4 param_1,int param_2,int param_3)
 
   FUN_00530bd0(param_1,0,2,0,0x24,&local_c);
 
-  FUN_00418f00(param_1,0x24,0xc,&local_c);
+  main_commonbase_00418f00(param_1,0x24,0xc,&local_c);
 
   return;
 
@@ -11572,7 +11572,7 @@ void FUN_0041f0f0(undefined4 param_1)
 
   _DAT_0058c5d4 = param_1;
 
-  FUN_00519c70();
+  FUN_00519C70();
 
   return;
 

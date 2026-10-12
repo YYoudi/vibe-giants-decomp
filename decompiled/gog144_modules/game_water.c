@@ -1,10 +1,10 @@
 /* Giants 1.449 — module game/water
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\game/water.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00513be0 @ 0x00513BE0 ===== */
-undefined4 * FUN_00513be0(int param_1,int param_2)
+/* ===== game_water_00513be0 @ 0x00513BE0 ===== */
+undefined4 * game_water_00513be0(int param_1,int param_2)
 
 
 
@@ -282,8 +282,8 @@ switchD_00513dc3_default:
 
 }
 
-/* ===== FUN_00513eb0 @ 0x00513EB0 ===== */
-void FUN_00513eb0(int *param_1)
+/* ===== game_water_00513eb0 @ 0x00513EB0 ===== */
+void game_water_00513eb0(int *param_1)
 
 
 

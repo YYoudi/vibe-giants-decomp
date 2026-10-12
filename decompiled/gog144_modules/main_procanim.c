@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/procanim
- * 3 functions (2 named) — decompiled, names from PS2 symbols
+ * 3 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/procanim.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004a8150 @ 0x004A8150 ===== */
-void FUN_004a8150(int param_1)
+/* ===== main_procanim_004a8150 @ 0x004A8150 ===== */
+void main_procanim_004a8150(int param_1)
 
 
 

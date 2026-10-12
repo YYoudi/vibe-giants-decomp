@@ -1,10 +1,10 @@
 /* Giants 1.449 — module Main/menu
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/menu.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00483200 @ 0x00483200 ===== */
-void FUN_00483200(int param_1,int param_2)
+/* ===== main_menu_00483200 @ 0x00483200 ===== */
+void main_menu_00483200(int param_1,int param_2)
 
 
 
@@ -86,8 +86,8 @@ void FUN_00483200(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004832f0 @ 0x004832F0 ===== */
-void FUN_004832f0(void)
+/* ===== main_menu_004832f0 @ 0x004832F0 ===== */
+void main_menu_004832f0(void)
 
 
 
@@ -123,7 +123,7 @@ void FUN_004832f0(void)
 
         if (puVar6[-1] != 0) {
 
-          FUN_00483200(iVar3,0);
+          main_menu_00483200(iVar3,0);
 
         }
 
@@ -173,7 +173,7 @@ void FUN_004832f0(void)
 
         if (*(int *)(iVar3 + 0x48) != 0) {
 
-          FUN_00483200(0xffffffff,iVar3);
+          main_menu_00483200(0xffffffff,iVar3);
 
         }
 

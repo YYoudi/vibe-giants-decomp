@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/blood
- * 4 functions (0 named) — decompiled, names from PS2 symbols
+ * 4 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/blood.c(pp) (assert-string evidence)
  */
 
@@ -38,14 +38,14 @@ void FUN_0040b220(void)
 
   DAT_00632dac = DAT_005841c4;
 
-  DAT_005841c8 = FUN_00508750(s_bloodblob_00554ffc);
+  DAT_005841c8 = main_texture_00508750(s_bloodblob_00554ffc);
 
   return;
 
 }
 
-/* ===== FUN_0040b290 @ 0x0040B290 ===== */
-void FUN_0040b290(void)
+/* ===== main_blood_0040b290 @ 0x0040B290 ===== */
+void main_blood_0040b290(void)
 
 
 
@@ -63,8 +63,8 @@ void FUN_0040b290(void)
 
 }
 
-/* ===== FUN_0040bab0 @ 0x0040BAB0 ===== */
-void FUN_0040bab0(void)
+/* ===== main_blood_0040bab0 @ 0x0040BAB0 ===== */
+void main_blood_0040bab0(void)
 
 
 
@@ -98,8 +98,8 @@ void FUN_0040bab0(void)
 
 }
 
-/* ===== FUN_0040bb10 @ 0x0040BB10 ===== */
-void FUN_0040bb10(void)
+/* ===== main_blood_0040bb10 @ 0x0040BB10 ===== */
+void main_blood_0040bb10(void)
 
 
 

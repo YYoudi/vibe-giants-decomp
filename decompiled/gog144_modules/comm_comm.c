@@ -1,14 +1,14 @@
 /* Giants 1.449 — module comm/comm
- * 4 functions (0 named) — decompiled, names from PS2 symbols
+ * 4 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\comm/comm.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00520490 @ 0x00520490 ===== */
+/* ===== comm_comm_00520490 @ 0x00520490 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 
 
-void FUN_00520490(void)
+void comm_comm_00520490(void)
 
 
 
@@ -140,7 +140,9 @@ void FUN_00520490(void)
 
         }
 
-        FUN_004273b0(DAT_005def88,0x3ea,0x3f000000,0x41200000,0x8a000000,s_ErrDPOpenSess_0057def4);
+        main_dlog_004273b0(DAT_005def88,0x3ea,0x3f000000,0x41200000,0x8a000000,
+
+                           s_ErrDPOpenSess_0057def4);
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
@@ -222,7 +224,7 @@ void FUN_00520490(void)
 
         if (DAT_005def88 != 0) {
 
-          FUN_00427180(DAT_005def88);
+          main_dlog_00427180(DAT_005def88);
 
         }
 
@@ -250,8 +252,8 @@ void FUN_00520490(void)
 
 }
 
-/* ===== FUN_00529e00 @ 0x00529E00 ===== */
-void FUN_00529e00(void)
+/* ===== comm_comm_00529e00 @ 0x00529E00 ===== */
+void comm_comm_00529e00(void)
 
 
 
@@ -351,7 +353,7 @@ void FUN_00529e00(void)
 
   uStack_124 = 0;
 
-  FUN_00529c00(&uStack_130,&stack0xfffffed4,&piStack_128,&uStack_124);
+  FUN_00529C00(&uStack_130,&stack0xfffffed4,&piStack_128,&uStack_124);
 
   puVar2[0x10] = &uStack_130;
 
@@ -383,8 +385,8 @@ LAB_00529f64:
 
 }
 
-/* ===== FUN_00529f80 @ 0x00529F80 ===== */
-void FUN_00529f80(void)
+/* ===== comm_comm_00529f80 @ 0x00529F80 ===== */
+void comm_comm_00529f80(void)
 
 
 
@@ -466,8 +468,8 @@ void FUN_00529f80(void)
 
 }
 
-/* ===== FUN_0052acc0 @ 0x0052ACC0 ===== */
-undefined4 FUN_0052acc0(LPSTR param_1)
+/* ===== comm_comm_0052acc0 @ 0x0052ACC0 ===== */
+undefined4 comm_comm_0052acc0(LPSTR param_1)
 
 
 

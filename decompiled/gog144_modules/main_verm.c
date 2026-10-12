@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/verm
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/verm.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0050f830 @ 0x0050F830 ===== */
-void FUN_0050f830(undefined4 param_1,int param_2,undefined4 *param_3,undefined4 *param_4)
+/* ===== main_verm_0050f830 @ 0x0050F830 ===== */
+void main_verm_0050f830(undefined4 param_1,int param_2,undefined4 *param_3,undefined4 *param_4)
 
 
 

@@ -1,10 +1,10 @@
 /* Giants 1.449 — module Main/flick
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/flick.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00443740 @ 0x00443740 ===== */
-undefined4 FUN_00443740(undefined4 *param_1)
+/* ===== main_flick_00443740 @ 0x00443740 ===== */
+undefined4 main_flick_00443740(undefined4 *param_1)
 
 
 
@@ -44,7 +44,7 @@ undefined4 FUN_00443740(undefined4 *param_1)
 
       if (piVar6[0x13a] == 0) {
 
-        FUN_00499c80(piVar6 + -0xb8);
+        main_objspec_00499c80(piVar6 + -0xb8);
 
       }
 

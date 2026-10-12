@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/objspec
- * 5 functions (0 named) — decompiled, names from PS2 symbols
+ * 5 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/objspec.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00499c80 @ 0x00499C80 ===== */
-void FUN_00499c80(int param_1)
+/* ===== main_objspec_00499c80 @ 0x00499C80 ===== */
+void main_objspec_00499c80(int param_1)
 
 
 
@@ -101,8 +101,8 @@ void FUN_00499cd0(int param_1)
 
 }
 
-/* ===== FUN_00499da0 @ 0x00499DA0 ===== */
-void FUN_00499da0(int param_1)
+/* ===== main_objspec_00499da0 @ 0x00499DA0 ===== */
+void main_objspec_00499da0(int param_1)
 
 
 
@@ -154,8 +154,8 @@ void FUN_00499da0(int param_1)
 
 }
 
-/* ===== FUN_00499e10 @ 0x00499E10 ===== */
-void FUN_00499e10(int param_1)
+/* ===== main_objspec_00499e10 @ 0x00499E10 ===== */
+void main_objspec_00499e10(int param_1)
 
 
 

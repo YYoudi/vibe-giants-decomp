@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/makewrld
- * 3 functions (1 named) — decompiled, names from PS2 symbols
+ * 3 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/makewrld.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00472e40 @ 0x00472E40 ===== */
-void FUN_00472e40(void)
+/* ===== main_makewrld_00472e40 @ 0x00472E40 ===== */
+void main_makewrld_00472e40(void)
 
 
 
@@ -20,9 +20,9 @@ void FUN_00472e40(void)
 
   if (DAT_006330e4 != 0) {
 
-    FUN_004b0540();
+    main_readobjs_004b0540();
 
-    FUN_00495430();
+    main_noise_00495430();
 
     mem_free_tagged(*(undefined4 *)(DAT_006330e4 + 0x18),s_C__Giants_source_main_makewrld_c_0055b874
 
@@ -48,7 +48,7 @@ void FUN_00472e40(void)
 
     }
 
-    FUN_00432e10();
+    main_drawwrld_00432e10();
 
     piVar1 = (int *)(DAT_006330e4 + 0x4eec);
 
@@ -494,8 +494,8 @@ void FUN_00472e40(void)
 
 }
 
-/* ===== FUN_00473600 @ 0x00473600 ===== */
-void FUN_00473600(float *param_1)
+/* ===== main_makewrld_00473600 @ 0x00473600 ===== */
+void main_makewrld_00473600(float *param_1)
 
 
 
@@ -1172,7 +1172,7 @@ void gti_terrain_load(undefined4 param_1)
 
   }
 
-  uVar5 = FUN_00508750(piVar4);
+  uVar5 = main_texture_00508750(piVar4);
 
   *(undefined4 *)(DAT_006330e4 + 0x4ec0) = uVar5;
 
@@ -1180,7 +1180,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x1e8) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x1e8));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x1e8));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ec4) = uVar5;
 
@@ -1188,7 +1188,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x1f0) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x1f0));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x1f0));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ec8) = uVar5;
 
@@ -1220,7 +1220,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4f20) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4f20));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4f20));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ecc) = uVar5;
 
@@ -1228,7 +1228,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4f28) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4f28));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4f28));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ed0) = uVar5;
 
@@ -1236,7 +1236,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4f30) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4f30));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4f30));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ed4) = uVar5;
 
@@ -1412,7 +1412,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4ef0) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4ef0));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4ef0));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ed8) = uVar5;
 
@@ -1420,7 +1420,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4ef8) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4ef8));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4ef8));
 
     *(undefined4 *)(DAT_006330e4 + 0x4edc) = uVar5;
 
@@ -1428,7 +1428,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4f00) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4f00));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4f00));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ee0) = uVar5;
 
@@ -1466,7 +1466,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4f08) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4f08));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4f08));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ee4) = uVar5;
 
@@ -1474,7 +1474,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4f10) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4f10));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4f10));
 
     *(undefined4 *)(DAT_006330e4 + 0x4ee8) = uVar5;
 
@@ -1482,7 +1482,7 @@ void gti_terrain_load(undefined4 param_1)
 
   if (*(int *)(DAT_006330e4 + 0x4f18) != 0) {
 
-    uVar5 = FUN_00508750(*(int *)(DAT_006330e4 + 0x4f18));
+    uVar5 = main_texture_00508750(*(int *)(DAT_006330e4 + 0x4f18));
 
     *(undefined4 *)(DAT_006330e4 + 0x4eec) = uVar5;
 
@@ -1794,7 +1794,7 @@ void gti_terrain_load(undefined4 param_1)
 
   }
 
-  FUN_00538560(local_60);
+  utils_fileread_00538560(local_60);
 
   local_84 = 0;
 
@@ -1948,7 +1948,7 @@ switchD_0047500c_default:
 
   *(undefined4 *)(DAT_006330e4 + 0x4f3c) = 1;
 
-  FUN_004329b0();
+  main_drawwrld_004329b0();
 
   local_8 = 0;
 

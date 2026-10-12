@@ -1,10 +1,10 @@
 /* Giants 1.449 — module Main/fx
- * 9 functions (6 named) — decompiled, names from PS2 symbols
+ * 9 functions (8 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/fx.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004470b0 @ 0x004470B0 ===== */
-void FUN_004470b0(undefined4 param_1)
+/* ===== main_fx_004470b0 @ 0x004470B0 ===== */
+void main_fx_004470b0(undefined4 param_1)
 
 
 
@@ -66,8 +66,8 @@ void FUN_004470b0(undefined4 param_1)
 
 }
 
-/* ===== FUN_004471a0 @ 0x004471A0 ===== */
-void FUN_004471a0(void)
+/* ===== main_fx_004471a0 @ 0x004471A0 ===== */
+void main_fx_004471a0(void)
 
 
 
@@ -1221,7 +1221,7 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(undefined4 *p0,int p1,float p2)
 
         FUN_00542f27(local_200,s__s_02d_00559a44,local_280,iVar3);
 
-        uVar1 = FUN_00508750(local_200);
+        uVar1 = main_texture_00508750(local_200);
 
         *(undefined4 *)(**(int **)(p0[1] + 0x2f4) + iVar3 * 4) = uVar1;
 

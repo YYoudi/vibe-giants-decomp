@@ -108,7 +108,7 @@ void FUN_004019e0(byte param_1,int param_2,float *param_3,undefined4 param_4,und
 
       if ((param_1 & 2) != 0) {
 
-        puVar2 = (undefined4 *)FUN_004033d0();
+        puVar2 = (undefined4 *)main_ai_move_004033d0();
 
         *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -136,7 +136,7 @@ LAB_00401cd9:
 
       if ((param_1 & 4) != 0) {
 
-        puVar2 = (undefined4 *)FUN_004033d0();
+        puVar2 = (undefined4 *)main_ai_move_004033d0();
 
         *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -146,7 +146,7 @@ LAB_00401cd9:
 
         puVar2[5] = 0x20;
 
-        FUN_004016d0(param_2,param_3);
+        main_ai_move_004016d0(param_2,param_3);
 
         return;
 
@@ -256,7 +256,7 @@ LAB_00401cd9:
 
           if ((param_1 & 4) != 0) {
 
-            puVar2 = (undefined4 *)FUN_004033d0();
+            puVar2 = (undefined4 *)main_ai_move_004033d0();
 
             *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -266,7 +266,7 @@ LAB_00401cd9:
 
             puVar2[5] = 0x20;
 
-            puVar2 = (undefined4 *)FUN_004033d0();
+            puVar2 = (undefined4 *)main_ai_move_004033d0();
 
             *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -286,7 +286,7 @@ LAB_00401cd9:
 
           if ((param_1 & 1) != 0) {
 
-            puVar2 = (undefined4 *)FUN_004033d0();
+            puVar2 = (undefined4 *)main_ai_move_004033d0();
 
             *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -296,7 +296,7 @@ LAB_00401cd9:
 
             puVar2[5] = 0x20;
 
-            puVar2 = (undefined4 *)FUN_004033d0();
+            puVar2 = (undefined4 *)main_ai_move_004033d0();
 
             *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -340,7 +340,7 @@ LAB_00401cd9:
 
           if ((param_1 & 4) != 0) {
 
-            puVar2 = (undefined4 *)FUN_004033d0();
+            puVar2 = (undefined4 *)main_ai_move_004033d0();
 
             *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -350,7 +350,7 @@ LAB_00401cd9:
 
             puVar2[5] = 0x20;
 
-            FUN_004016d0(param_2,pfVar1);
+            main_ai_move_004016d0(param_2,pfVar1);
 
             return;
 
@@ -358,7 +358,7 @@ LAB_00401cd9:
 
           if ((param_1 & 1) != 0) {
 
-            puVar2 = (undefined4 *)FUN_004033d0();
+            puVar2 = (undefined4 *)main_ai_move_004033d0();
 
             *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -376,7 +376,7 @@ LAB_00401cd9:
 
 LAB_00401da3:
 
-          puVar2 = (undefined4 *)FUN_004033d0();
+          puVar2 = (undefined4 *)main_ai_move_004033d0();
 
           *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -396,7 +396,7 @@ LAB_00401da3:
 
       }
 
-      puVar2 = (undefined4 *)FUN_004033d0();
+      puVar2 = (undefined4 *)main_ai_move_004033d0();
 
       *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -432,7 +432,7 @@ LAB_00401da3:
 
   if ((param_1 & 2) != 0) {
 
-    puVar2 = (undefined4 *)FUN_004033d0();
+    puVar2 = (undefined4 *)main_ai_move_004033d0();
 
     *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -454,7 +454,7 @@ LAB_00401da3:
 
   if ((param_1 & 4) != 0) {
 
-    puVar2 = (undefined4 *)FUN_004033d0();
+    puVar2 = (undefined4 *)main_ai_move_004033d0();
 
     *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -464,7 +464,7 @@ LAB_00401da3:
 
     puVar2[5] = 0x20;
 
-    FUN_004016d0(param_2,param_3);
+    main_ai_move_004016d0(param_2,param_3);
 
     return;
 
@@ -474,7 +474,7 @@ LAB_00401f0b:
 
   if ((param_1 & 1) == 0) {
 
-    puVar2 = (undefined4 *)FUN_004033d0();
+    puVar2 = (undefined4 *)main_ai_move_004033d0();
 
     *puVar2 = *(undefined4 *)(param_2 + 0x168);
 
@@ -492,7 +492,7 @@ LAB_00401f0b:
 
   }
 
-  puVar2 = (undefined4 *)FUN_004033d0();
+  puVar2 = (undefined4 *)main_ai_move_004033d0();
 
   *puVar2 = *(undefined4 *)(param_2 + 0x168);
 

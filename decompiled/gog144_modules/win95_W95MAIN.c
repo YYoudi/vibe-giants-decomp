@@ -250,9 +250,11 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
       }
 
-      uVar10 = FUN_005088d0(pcVar1,auStack_544 + iStack_5d4,(int)&iStack_540 + iStack_5d4,
+      uVar10 = main_texture_005088d0
 
-                            auStack_53c + iStack_5d4,auStack_538 + iStack_5d4);
+                         (pcVar1,auStack_544 + iStack_5d4,(int)&iStack_540 + iStack_5d4,
+
+                          auStack_53c + iStack_5d4,auStack_538 + iStack_5d4);
 
       *(undefined4 *)(acStack_5c4 + iStack_5d4 + -4) = uVar10;
 
@@ -534,7 +536,7 @@ LAB_0051f1b8:
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
-        FUN_00508eb0(piVar16[-1],*piVar16,piVar16[1],piVar16[2]);
+        main_texture_00508eb0(piVar16[-1],*piVar16,piVar16[1],piVar16[2]);
 
       }
 

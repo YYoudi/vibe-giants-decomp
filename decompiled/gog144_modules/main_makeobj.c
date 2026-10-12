@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/makeobj
- * 3 functions (1 named) — decompiled, names from PS2 symbols
+ * 3 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/makeobj.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00471e10 @ 0x00471E10 ===== */
-undefined4 * FUN_00471e10(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
+/* ===== main_makeobj_00471e10 @ 0x00471E10 ===== */
+undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
@@ -110,7 +110,7 @@ undefined4 * FUN_00471e10(undefined4 param_1,undefined4 *param_2,undefined4 *par
 
         local_14 = puVar10[3];
 
-        iVar4 = FUN_0053a860(&local_20,param_2);
+        iVar4 = FUN_0053A860(&local_20,param_2);
 
         if (iVar4 != 0) {
 
@@ -174,7 +174,7 @@ undefined4 * FUN_00471e10(undefined4 param_1,undefined4 *param_2,undefined4 *par
 
             if (local_38 != 0) {
 
-              uVar5 = FUN_00508750(&local_10);
+              uVar5 = main_texture_00508750(&local_10);
 
               *param_3 = uVar5;
 
@@ -412,7 +412,7 @@ undefined4 * FUN_00471e10(undefined4 param_1,undefined4 *param_2,undefined4 *par
 
           puVar6[6] = local_30;
 
-          FUN_00538560(local_40);
+          utils_fileread_00538560(local_40);
 
           return puVar6;
 
@@ -1103,7 +1103,7 @@ LAB_004723a2:
 
         if (local_40[0] != '\0') {
 
-          uVar9 = FUN_00508750(local_40);
+          uVar9 = main_texture_00508750(local_40);
 
           *(undefined4 *)(puVar17 + -0x16) = uVar9;
 
@@ -1127,7 +1127,7 @@ LAB_004723a2:
 
         if (local_60[0] != '\0') {
 
-          uVar9 = FUN_00508750(local_60);
+          uVar9 = main_texture_00508750(local_60);
 
           *(undefined4 *)(puVar17 + -0x12) = uVar9;
 
@@ -1347,14 +1347,14 @@ LAB_004723a2:
 
   }
 
-  FUN_00538560(local_a4);
+  utils_fileread_00538560(local_a4);
 
   return puVar7;
 
 }
 
-/* ===== FUN_00472dd0 @ 0x00472DD0 ===== */
-void FUN_00472dd0(int param_1)
+/* ===== main_makeobj_00472dd0 @ 0x00472DD0 ===== */
+void main_makeobj_00472dd0(int param_1)
 
 
 

@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/xform
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/xform.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00517740 @ 0x00517740 ===== */
+/* ===== main_xform_00517740 @ 0x00517740 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00517740(void)
+void main_xform_00517740(void)
 
 
 

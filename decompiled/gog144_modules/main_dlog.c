@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/dlog
- * 19 functions (0 named) — decompiled, names from PS2 symbols
+ * 19 functions (19 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/dlog.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00427150 @ 0x00427150 ===== */
-void FUN_00427150(void)
+/* ===== main_dlog_00427150 @ 0x00427150 ===== */
+void main_dlog_00427150(void)
 
 
 
@@ -30,8 +30,8 @@ void FUN_00427150(void)
 
 }
 
-/* ===== FUN_00427180 @ 0x00427180 ===== */
-void FUN_00427180(undefined4 *param_1)
+/* ===== main_dlog_00427180 @ 0x00427180 ===== */
+void main_dlog_00427180(undefined4 *param_1)
 
 
 
@@ -119,8 +119,8 @@ LAB_004271f3:
 
 }
 
-/* ===== FUN_00427230 @ 0x00427230 ===== */
-void FUN_00427230(int *param_1,int param_2)
+/* ===== main_dlog_00427230 @ 0x00427230 ===== */
+void main_dlog_00427230(int *param_1,int param_2)
 
 
 
@@ -220,10 +220,10 @@ LAB_004272ca:
 
 }
 
-/* ===== FUN_004273b0 @ 0x004273B0 ===== */
-void FUN_004273b0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+/* ===== main_dlog_004273b0 @ 0x004273B0 ===== */
+void main_dlog_004273b0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
 
-                 uint param_5,undefined4 param_6)
+                       ,uint param_5,undefined4 param_6)
 
 
 
@@ -319,10 +319,10 @@ void FUN_004273b0(undefined4 *param_1,undefined4 param_2,undefined4 param_3,unde
 
 }
 
-/* ===== FUN_00427490 @ 0x00427490 ===== */
-void FUN_00427490(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+/* ===== main_dlog_00427490 @ 0x00427490 ===== */
+void main_dlog_00427490(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
 
-                 uint param_5,undefined4 param_6,undefined4 param_7)
+                       ,uint param_5,undefined4 param_6,undefined4 param_7)
 
 
 
@@ -418,8 +418,8 @@ void FUN_00427490(undefined4 *param_1,undefined4 param_2,undefined4 param_3,unde
 
 }
 
-/* ===== FUN_00427790 @ 0x00427790 ===== */
-void FUN_00427790(int *param_1,int param_2,int param_3)
+/* ===== main_dlog_00427790 @ 0x00427790 ===== */
+void main_dlog_00427790(int *param_1,int param_2,int param_3)
 
 
 
@@ -467,8 +467,8 @@ void FUN_00427790(int *param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004277f0 @ 0x004277F0 ===== */
-void FUN_004277f0(int *param_1,int param_2,undefined4 param_3)
+/* ===== main_dlog_004277f0 @ 0x004277F0 ===== */
+void main_dlog_004277f0(int *param_1,int param_2,undefined4 param_3)
 
 
 
@@ -516,14 +516,14 @@ void FUN_004277f0(int *param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_00427890 @ 0x00427890 ===== */
+/* ===== main_dlog_00427890 @ 0x00427890 ===== */
 /* WARNING: Removing unreachable block (ram,0x00427936) */
 
 
 
-void FUN_00427890(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+void main_dlog_00427890(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
 
-                 uint param_5,undefined4 param_6)
+                       ,uint param_5,undefined4 param_6)
 
 
 
@@ -609,10 +609,10 @@ void FUN_00427890(undefined4 *param_1,undefined4 param_2,undefined4 param_3,unde
 
 }
 
-/* ===== FUN_00427970 @ 0x00427970 ===== */
-void FUN_00427970(undefined4 *param_1,float param_2,undefined4 param_3,undefined4 param_4,
+/* ===== main_dlog_00427970 @ 0x00427970 ===== */
+void main_dlog_00427970(undefined4 *param_1,float param_2,undefined4 param_3,undefined4 param_4,
 
-                 float param_5,float param_6,undefined4 param_7)
+                       float param_5,float param_6,undefined4 param_7)
 
 
 
@@ -704,11 +704,11 @@ void FUN_00427970(undefined4 *param_1,float param_2,undefined4 param_3,undefined
 
   fVar7 = (float10)FUN_0051bc00(param_6);
 
-  fVar8 = (float10)FUN_0051bd30(puVar4[0xd],puVar4[10]);
+  fVar8 = (float10)FUN_0051BD30(puVar4[0xd],puVar4[10]);
 
   param_6 = (float)fVar8;
 
-  fVar8 = (float10)FUN_0051bd30(puVar4[0xd],&DAT_005562b8);
+  fVar8 = (float10)FUN_0051BD30(puVar4[0xd],&DAT_005562b8);
 
   if ((float10)param_6 < fVar8 * (float10)(int)puVar4[0xb]) {
 
@@ -730,10 +730,10 @@ void FUN_00427970(undefined4 *param_1,float param_2,undefined4 param_3,undefined
 
 }
 
-/* ===== FUN_00427bb0 @ 0x00427BB0 ===== */
-void FUN_00427bb0(undefined4 *param_1,float param_2,float param_3,undefined4 param_4,float param_5,
+/* ===== main_dlog_00427bb0 @ 0x00427BB0 ===== */
+void main_dlog_00427bb0(undefined4 *param_1,float param_2,float param_3,undefined4 param_4,
 
-                 float param_6)
+                       float param_5,float param_6)
 
 
 
@@ -833,7 +833,7 @@ void FUN_00427bb0(undefined4 *param_1,float param_2,float param_3,undefined4 par
 
   fVar8 = (float10)FUN_0051bc00(param_6);
 
-  fVar9 = (float10)FUN_0051bd30(fVar3,*puVar7);
+  fVar9 = (float10)FUN_0051BD30(fVar3,*puVar7);
 
   param_3 = (float)((float10)param_5 + (float10)param_5 + fVar9 + (float10)0.01);
 
@@ -851,10 +851,10 @@ void FUN_00427bb0(undefined4 *param_1,float param_2,float param_3,undefined4 par
 
 }
 
-/* ===== FUN_00427d00 @ 0x00427D00 ===== */
-void FUN_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,undefined4 param_4,
+/* ===== main_dlog_00427d00 @ 0x00427D00 ===== */
+void main_dlog_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,undefined4 param_4,
 
-                 float param_5,float param_6)
+                       float param_5,float param_6)
 
 
 
@@ -948,7 +948,7 @@ void FUN_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,undefined
 
   }
 
-  fVar8 = (float10)FUN_0051bd30(uVar4,puVar5[0xb]);
+  fVar8 = (float10)FUN_0051BD30(uVar4,puVar5[0xb]);
 
   param_2 = (float)(fVar8 + (float10)param_6 + (float10)0.005);
 
@@ -966,10 +966,10 @@ void FUN_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,undefined
 
 }
 
-/* ===== FUN_00427e80 @ 0x00427E80 ===== */
-void FUN_00427e80(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+/* ===== main_dlog_00427e80 @ 0x00427E80 ===== */
+void main_dlog_00427e80(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
 
-                 undefined4 param_5)
+                       ,undefined4 param_5)
 
 
 
@@ -1035,8 +1035,8 @@ void FUN_00427e80(undefined4 *param_1,undefined4 param_2,undefined4 param_3,unde
 
 }
 
-/* ===== FUN_00428080 @ 0x00428080 ===== */
-void FUN_00428080(int *param_1,int param_2,int param_3,char *param_4)
+/* ===== main_dlog_00428080 @ 0x00428080 ===== */
+void main_dlog_00428080(int *param_1,int param_2,int param_3,char *param_4)
 
 
 
@@ -1158,8 +1158,8 @@ void FUN_00428080(int *param_1,int param_2,int param_3,char *param_4)
 
 }
 
-/* ===== FUN_00428140 @ 0x00428140 ===== */
-void FUN_00428140(int *param_1,int param_2,char *param_3,undefined4 param_4)
+/* ===== main_dlog_00428140 @ 0x00428140 ===== */
+void main_dlog_00428140(int *param_1,int param_2,char *param_3,undefined4 param_4)
 
 
 
@@ -1267,8 +1267,8 @@ void FUN_00428140(int *param_1,int param_2,char *param_3,undefined4 param_4)
 
 }
 
-/* ===== FUN_004281f0 @ 0x004281F0 ===== */
-void FUN_004281f0(int *param_1,int param_2,char *param_3)
+/* ===== main_dlog_004281f0 @ 0x004281F0 ===== */
+void main_dlog_004281f0(int *param_1,int param_2,char *param_3)
 
 
 
@@ -1376,8 +1376,8 @@ void FUN_004281f0(int *param_1,int param_2,char *param_3)
 
 }
 
-/* ===== FUN_00428290 @ 0x00428290 ===== */
-void FUN_00428290(int *param_1,int param_2,undefined4 param_3,undefined4 param_4)
+/* ===== main_dlog_00428290 @ 0x00428290 ===== */
+void main_dlog_00428290(int *param_1,int param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -1489,8 +1489,8 @@ void FUN_00428290(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 
 }
 
-/* ===== FUN_00428340 @ 0x00428340 ===== */
-void FUN_00428340(int *param_1,int param_2,undefined4 param_3)
+/* ===== main_dlog_00428340 @ 0x00428340 ===== */
+void main_dlog_00428340(int *param_1,int param_2,undefined4 param_3)
 
 
 
@@ -1602,8 +1602,8 @@ void FUN_00428340(int *param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004283f0 @ 0x004283F0 ===== */
-void FUN_004283f0(int *param_1,int param_2)
+/* ===== main_dlog_004283f0 @ 0x004283F0 ===== */
+void main_dlog_004283f0(int *param_1,int param_2)
 
 
 
@@ -1659,8 +1659,8 @@ void FUN_004283f0(int *param_1,int param_2)
 
 }
 
-/* ===== FUN_004286c0 @ 0x004286C0 ===== */
-void FUN_004286c0(int *param_1,int param_2,int param_3,char *param_4)
+/* ===== main_dlog_004286c0 @ 0x004286C0 ===== */
+void main_dlog_004286c0(int *param_1,int param_2,int param_3,char *param_4)
 
 
 

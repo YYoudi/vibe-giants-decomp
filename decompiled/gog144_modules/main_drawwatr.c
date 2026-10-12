@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/drawwatr
- * 2 functions (0 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/drawwatr.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00430f30 @ 0x00430F30 ===== */
-void FUN_00430f30(float param_1)
+/* ===== main_drawwatr_00430f30 @ 0x00430F30 ===== */
+void main_drawwatr_00430f30(float param_1)
 
 
 
@@ -60,12 +60,12 @@ void FUN_00430f30(float param_1)
 
 }
 
-/* ===== FUN_00431700 @ 0x00431700 ===== */
+/* ===== main_drawwatr_00431700 @ 0x00431700 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00431700(void)
+void main_drawwatr_00431700(void)
 
 
 

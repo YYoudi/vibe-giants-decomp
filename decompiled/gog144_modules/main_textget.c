@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/textget
- * 2 functions (1 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/textget.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_005078e0 @ 0x005078E0 ===== */
-void FUN_005078e0(void)
+/* ===== main_textget_005078e0 @ 0x005078E0 ===== */
+void main_textget_005078e0(void)
 
 
 
@@ -20,7 +20,7 @@ void FUN_005078e0(void)
 
     if (DAT_0057bc94 != 0) {
 
-      FUN_00539470(DAT_0057bc94);
+      utils_hash_00539470(DAT_0057bc94);
 
     }
 
@@ -129,7 +129,7 @@ void TextPtrInit__Fv(void)
 
       FUN_005179d0(iVar3);
 
-      DAT_0057bc94 = FUN_005391c0(0x76d,4,1);
+      DAT_0057bc94 = utils_hash_005391c0(0x76d,4,1);
 
       iVar3 = 0;
 
@@ -137,7 +137,9 @@ void TextPtrInit__Fv(void)
 
         do {
 
-          iVar2 = FUN_00539230(DAT_0057bc94,*(int *)(DAT_0057bc88 + iVar3 * 8) + DAT_0057bc8c);
+          iVar2 = utils_hash_00539230(DAT_0057bc94,*(int *)(DAT_0057bc88 + iVar3 * 8) + DAT_0057bc8c
+
+                                     );
 
           *(int *)(iVar2 + 4) = *(int *)(DAT_0057bc88 + 4 + iVar3 * 8) + DAT_0057bc90;
 

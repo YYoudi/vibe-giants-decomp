@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/readdata
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/readdata.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004adfa0 @ 0x004ADFA0 ===== */
-void FUN_004adfa0(void)
+/* ===== main_readdata_004adfa0 @ 0x004ADFA0 ===== */
+void main_readdata_004adfa0(void)
 
 
 

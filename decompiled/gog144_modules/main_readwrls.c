@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/readwrls
- * 4 functions (2 named) — decompiled, names from PS2 symbols
+ * 4 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/readwrls.c(pp) (assert-string evidence)
  */
 
@@ -423,7 +423,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
   FUN_00517930(iVar6,local_39c);
 
-  FUN_00507c50(param_1,iVar6,local_3e4);
+  main_texture_00507c50(param_1,iVar6,local_3e4);
 
   FUN_00517930(iVar6,local_390);
 
@@ -451,7 +451,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
     }
 
-    FUN_004470b0(pcVar26);
+    main_fx_004470b0(pcVar26);
 
   }
 
@@ -737,7 +737,7 @@ LAB_004b1410:
 
       pfVar21 = (float *)((int)pfVar21 + 0x11);
 
-      uVar10 = FUN_00508750(*(undefined4 *)(DAT_006330e4 + 0x50));
+      uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x50));
 
       *(undefined4 *)(DAT_006330e4 + 0x4c) = uVar10;
 
@@ -767,7 +767,7 @@ LAB_004b1410:
 
       pfVar21 = (float *)((int)pfVar21 + 0x11);
 
-      uVar10 = FUN_00508750(*(undefined4 *)(DAT_006330e4 + 0x58));
+      uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x58));
 
       *(undefined4 *)(DAT_006330e4 + 0x54) = uVar10;
 
@@ -783,7 +783,7 @@ LAB_004b1410:
 
       pfVar21 = (float *)((int)pfVar21 + 0x11);
 
-      uVar10 = FUN_00508750(*(undefined4 *)(DAT_006330e4 + 0x60));
+      uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x60));
 
       *(undefined4 *)(DAT_006330e4 + 0x5c) = uVar10;
 
@@ -799,7 +799,7 @@ LAB_004b1410:
 
       pfVar21 = (float *)((int)pfVar21 + 0x11);
 
-      uVar10 = FUN_00508750(*(undefined4 *)(DAT_006330e4 + 0x68));
+      uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x68));
 
       *(undefined4 *)(DAT_006330e4 + 100) = uVar10;
 
@@ -839,7 +839,7 @@ LAB_004b1410:
 
       pfVar21 = (float *)((int)pfVar21 + 0x11);
 
-      uVar10 = FUN_00508750(*(undefined4 *)(DAT_006330e4 + 0x78));
+      uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x78));
 
       *(undefined4 *)(DAT_006330e4 + 0x74) = uVar10;
 
@@ -855,7 +855,7 @@ LAB_004b1410:
 
       pfVar21 = (float *)((int)pfVar21 + 0x11);
 
-      uVar10 = FUN_00508750(*(undefined4 *)(DAT_006330e4 + 0x70));
+      uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x70));
 
       *(undefined4 *)(DAT_006330e4 + 0x6c) = uVar10;
 
@@ -1923,7 +1923,7 @@ switchD_004b1431_caseD_2d:
 
       }
 
-      uVar10 = FUN_00405240(local_1e4);
+      uVar10 = main_animate_00405240(local_1e4);
 
       local_418 = pcVar26 + 1;
 
@@ -2153,7 +2153,7 @@ switchD_004b1431_caseD_2d:
 
       do {
 
-        iVar15 = FUN_0053a860(iVar6 + 0x210 + DAT_006330e4,pfVar20);
+        iVar15 = FUN_0053A860(iVar6 + 0x210 + DAT_006330e4,pfVar20);
 
         if (iVar15 != 0) break;
 
@@ -3759,8 +3759,8 @@ switchD_004b1431_caseD_89:
 
 }
 
-/* ===== FUN_004b42d0 @ 0x004B42D0 ===== */
-void FUN_004b42d0(void)
+/* ===== main_readwrls_004b42d0 @ 0x004B42D0 ===== */
+void main_readwrls_004b42d0(void)
 
 
 
@@ -3798,8 +3798,8 @@ void FUN_004b42d0(void)
 
 }
 
-/* ===== FUN_004b4330 @ 0x004B4330 ===== */
-void FUN_004b4330(void)
+/* ===== main_readwrls_004b4330 @ 0x004B4330 ===== */
+void main_readwrls_004b4330(void)
 
 
 
@@ -3851,9 +3851,9 @@ void FUN_004b4330(void)
 
     *(undefined4 *)(DAT_006330e4 + 0x50) = 0;
 
-    FUN_004b0540();
+    main_readobjs_004b0540();
 
-    FUN_00495430();
+    main_noise_00495430();
 
     return;
 

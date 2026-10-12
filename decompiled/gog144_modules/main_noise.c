@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/noise
- * 4 functions (2 named) — decompiled, names from PS2 symbols
+ * 4 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/noise.c(pp) (assert-string evidence)
  */
 
@@ -248,8 +248,8 @@ void read_sfx_bin(undefined4 param_1)
 
 }
 
-/* ===== FUN_00495430 @ 0x00495430 ===== */
-void FUN_00495430(void)
+/* ===== main_noise_00495430 @ 0x00495430 ===== */
+void main_noise_00495430(void)
 
 
 
@@ -285,7 +285,7 @@ void FUN_00495430(void)
 
           if (*(int *)(iVar1 + 4) != 0) {
 
-            FUN_00538560(*(int *)(iVar1 + 4));
+            utils_fileread_00538560(*(int *)(iVar1 + 4));
 
             *(undefined4 *)(iVar1 + 4) = 0;
 
@@ -602,8 +602,8 @@ int sound_get_free_sequence__Fv(void)
 
 }
 
-/* ===== FUN_00496170 @ 0x00496170 ===== */
-void FUN_00496170(void)
+/* ===== main_noise_00496170 @ 0x00496170 ===== */
+void main_noise_00496170(void)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/collgrid
- * 5 functions (0 named) — decompiled, names from PS2 symbols
+ * 5 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/collgrid.c(pp) (assert-string evidence)
  */
 
@@ -22,8 +22,8 @@ void FUN_004101d0(int param_1)
 
 }
 
-/* ===== FUN_00410200 @ 0x00410200 ===== */
-void FUN_00410200(int param_1)
+/* ===== main_collgrid_00410200 @ 0x00410200 ===== */
+void main_collgrid_00410200(int param_1)
 
 
 
@@ -199,7 +199,7 @@ void FUN_00410200(int param_1)
 
     if ((uVar2 & 0x100000) != 0) {
 
-      FUN_00410c70(param_1,&local_284,&local_288,&local_27c);
+      main_collgrid_00410c70(param_1,&local_284,&local_288,&local_27c);
 
       local_28c = local_260 + 1;
 
@@ -287,7 +287,7 @@ void FUN_00410200(int param_1)
 
     if ((uVar2 & 8) != 0) {
 
-      FUN_00411140();
+      main_collgrid_00411140();
 
       return;
 
@@ -295,7 +295,7 @@ void FUN_00410200(int param_1)
 
     if ((uVar2 & 0x1000) != 0) {
 
-      FUN_00411a10();
+      main_collgrid_00411a10();
 
       return;
 
@@ -445,8 +445,8 @@ void FUN_00410200(int param_1)
 
 }
 
-/* ===== FUN_00410c70 @ 0x00410C70 ===== */
-void FUN_00410c70(int param_1,float *param_2,float *param_3,float *param_4)
+/* ===== main_collgrid_00410c70 @ 0x00410C70 ===== */
+void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *param_4)
 
 
 
@@ -866,8 +866,8 @@ void FUN_00410c70(int param_1,float *param_2,float *param_3,float *param_4)
 
 }
 
-/* ===== FUN_00411140 @ 0x00411140 ===== */
-void FUN_00411140(int param_1)
+/* ===== main_collgrid_00411140 @ 0x00411140 ===== */
+void main_collgrid_00411140(int param_1)
 
 
 
@@ -1451,8 +1451,8 @@ void FUN_00411140(int param_1)
 
 }
 
-/* ===== FUN_00411a10 @ 0x00411A10 ===== */
-void FUN_00411a10(int param_1)
+/* ===== main_collgrid_00411a10 @ 0x00411A10 ===== */
+void main_collgrid_00411a10(int param_1)
 
 
 

@@ -479,7 +479,7 @@ void FUN_00500830(void)
 
   
 
-  if ((DAT_00633044 != 0) && (iVar1 = FUN_00500520(&DAT_00632900), iVar1 != 0)) {
+  if ((DAT_00633044 != 0) && (iVar1 = main_status_00500520(&DAT_00632900), iVar1 != 0)) {
 
     if (DAT_00633020 == 0) {
 
@@ -544,7 +544,7 @@ void FUN_00500890(int param_1)
 
   
 
-  iVar11 = FUN_00500520(&DAT_00632900);
+  iVar11 = main_status_00500520(&DAT_00632900);
 
   if (iVar11 == 0) {
 
@@ -1020,7 +1020,7 @@ void FUN_00500e20(void)
 
   
 
-  iVar1 = FUN_00500520(&DAT_00632900);
+  iVar1 = main_status_00500520(&DAT_00632900);
 
   if (iVar1 == 0) {
 
@@ -1916,7 +1916,7 @@ void teammecc_setup_enemies__FP6OBJECTi(OBJECT *p0,int p1)
 
       }
 
-      uVar6 = sound_play_stream((int)pcVar17,pcVar18,0,unaff_EDI);
+      uVar6 = FUN_004961C0((int)pcVar17,pcVar18,0,unaff_EDI);
 
       *(undefined4 *)(iVar12 + 0x1f8) = uVar6;
 
@@ -2088,7 +2088,7 @@ switchD_00501829_caseD_3:
 
                 }
 
-                sound_play_stream((int)pcVar17,pcVar18,0,unaff_EDI);
+                FUN_004961C0((int)pcVar17,pcVar18,0,unaff_EDI);
 
                 _DAT_0057a774 = 45.0;
 
@@ -2188,7 +2188,7 @@ switchD_00501829_caseD_3:
 
                 }
 
-                sound_play_stream((int)pcVar17,pcVar18,0,unaff_EDI);
+                FUN_004961C0((int)pcVar17,pcVar18,0,unaff_EDI);
 
                 _DAT_0057a774 = 45.0;
 
@@ -4284,7 +4284,7 @@ LAB_00503c4b:
 
     if (local_10 == -1) {
 
-      FUN_00401310(iVar2,&local_c,local_18);
+      main_ai_move_00401310(iVar2,&local_c,local_18);
 
       iVar5 = FUN_00402240(iVar2);
 
@@ -5124,7 +5124,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
               }
 
-              uVar10 = sound_play_stream((int)pcVar16,pcVar9,0,unaff_EDI);
+              uVar10 = FUN_004961C0((int)pcVar16,pcVar9,0,unaff_EDI);
 
               *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -5446,7 +5446,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
               }
 
-              uVar10 = sound_play_stream((int)pcVar16,pcVar9,0,unaff_EDI);
+              uVar10 = FUN_004961C0((int)pcVar16,pcVar9,0,unaff_EDI);
 
               *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -5786,7 +5786,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
         if (iVar8 == 0) {
 
-          uVar10 = sound_play_stream(0x57b7f4,*(char **)(DAT_006330e4 + 0x50e0),0,unaff_EDI);
+          uVar10 = FUN_004961C0(0x57b7f4,*(char **)(DAT_006330e4 + 0x50e0),0,unaff_EDI);
 
           *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -6068,7 +6068,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
             }
 
-            uVar10 = sound_play_stream((int)pcVar16,pcVar9,0,unaff_EDI);
+            uVar10 = FUN_004961C0((int)pcVar16,pcVar9,0,unaff_EDI);
 
             *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -8937,7 +8937,7 @@ void FUN_00508720(int param_1)
 
   if ((*(int *)(param_1 + 0x14) == 8) && ((*(byte *)(param_1 + 0x1e) & 8) == 0)) {
 
-    FUN_005080a0(param_1,0);
+    main_texture_005080a0(param_1,0);
 
   }
 
@@ -11610,7 +11610,7 @@ LAB_0050d17f:
 
           fVar13 = (float10)FUN_004d5760(0x43b40000);
 
-          FUN_00401910(iVar9,(float)fVar13);
+          main_ai_move_00401910(iVar9,(float)fVar13);
 
           *(undefined4 *)(iVar9 + 0xe4) = 0xd;
 
@@ -12124,7 +12124,7 @@ switchD_0050ca70_caseD_15:
 
     if (*(int *)((int)param_1 + 0x168) == 0) {
 
-      FUN_00401790(param_1,*(float *)((int)pfVar1[1] + 0xa8) + pfVar1[5],pfVar3);
+      main_ai_move_00401790(param_1,*(float *)((int)pfVar1[1] + 0xa8) + pfVar1[5],pfVar3);
 
     }
 
@@ -12404,9 +12404,11 @@ switchD_0050ca70_caseD_15:
 
           pfVar1[4] = *(float *)((int)param_1 + 0xa8);
 
-          FUN_00401850(param_1,(float)(fVar13 + (float10)*(float *)((int)pfVar1[1] + 0xa8)),
+          main_ai_move_00401850
 
-                       pfVar1 + 2);
+                    (param_1,(float)(fVar13 + (float10)*(float *)((int)pfVar1[1] + 0xa8)),pfVar1 + 2
+
+                    );
 
           *(undefined4 *)((int)param_1 + 0xe4) = 0x18;
 

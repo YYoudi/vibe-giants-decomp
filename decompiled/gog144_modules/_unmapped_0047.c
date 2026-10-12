@@ -732,7 +732,7 @@ switchD_004711dd_default:
 
         FUN_004cc810(0,0);
 
-        FUN_00431700();
+        main_drawwatr_00431700();
 
         FUN_00451da0();
 
@@ -1325,7 +1325,7 @@ void FUN_00471a60(int param_1)
 
       DAT_00632b8c = 0;
 
-      FUN_004ee800();
+      FUN_004EE800();
 
       return;
 
@@ -1333,7 +1333,7 @@ void FUN_00471a60(int param_1)
 
     if ((param_1 != 0) && (DAT_00633128 != 0)) {
 
-      FUN_004a54e0();
+      FUN_004A54E0();
 
       return;
 
@@ -1377,13 +1377,13 @@ void FUN_00471a60(int param_1)
 
         if (DAT_00632d60 != 0) {
 
-          FUN_004267a0();
+          main_demo_004267a0();
 
         }
 
         if (param_1 != 0) {
 
-          FUN_004a54e0();
+          FUN_004A54E0();
 
         }
 
@@ -1415,7 +1415,7 @@ void FUN_00471a60(int param_1)
 
           FUN_004f75c0();
 
-          FUN_00518c60();
+          win95_frate_00518c60();
 
           for (puVar1 = DAT_00632d68; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
@@ -1593,7 +1593,7 @@ void FUN_004721b0(undefined4 param_1,undefined4 param_2)
 
 {
 
-  FUN_00471e10(param_1,param_2,0);
+  main_makeobj_00471e10(param_1,param_2,0);
 
   return;
 
@@ -2282,7 +2282,7 @@ void FUN_004753c0(void)
 
     DAT_00633020 = 0;
 
-    FUN_00426f40(&LAB_00475b40,&LAB_00476150);
+    FUN_00426F40(&LAB_00475b40,&LAB_00476150);
 
     DAT_0059dbf4 = (float)*(int *)(DAT_006330e4 + 0x1d8) * *(float *)(DAT_006330e4 + 0x1c0) * 0.5 +
 
@@ -2714,8 +2714,8 @@ int FUN_00475a40(float param_1,float param_2)
 
 }
 
-/* ===== FUN_00476dc0 @ 0x00476DC0 ===== */
-undefined4 FUN_00476dc0(void)
+/* ===== FUN_00476DC0 @ 0x00476DC0 ===== */
+undefined4 FUN_00476DC0(void)
 
 
 

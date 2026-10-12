@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/tracer
- * 2 functions (1 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/tracer.c(pp) (assert-string evidence)
  */
 
@@ -100,8 +100,8 @@ undefined4 tracer_get_tracer(int *param_1)
 
 }
 
-/* ===== FUN_0050a170 @ 0x0050A170 ===== */
-void FUN_0050a170(void)
+/* ===== main_tracer_0050a170 @ 0x0050A170 ===== */
+void main_tracer_0050a170(void)
 
 
 

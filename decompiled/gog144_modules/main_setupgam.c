@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/setupgam
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/setupgam.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004eda20 @ 0x004EDA20 ===== */
-void FUN_004eda20(void)
+/* ===== main_setupgam_004eda20 @ 0x004EDA20 ===== */
+void main_setupgam_004eda20(void)
 
 
 
@@ -32,9 +32,9 @@ void FUN_004eda20(void)
 
   FUN_004a4510();
 
-  FUN_0040f390();
+  main_cleaner_0040f390();
 
-  FUN_00513eb0(DAT_006328f4);
+  game_water_00513eb0(DAT_006328f4);
 
   DAT_006328f4 = 0;
 
@@ -70,7 +70,7 @@ void FUN_004eda20(void)
 
   }
 
-  FUN_00435e20();
+  main_drawwrld_00435e20();
 
   FUN_004433a0();
 
@@ -82,67 +82,67 @@ void FUN_004eda20(void)
 
   uVar1 = FUN_00497d20(2);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x85);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x248);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x270);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x349);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x34b);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x34a);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x3b5);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x3b);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x42f);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x42e);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x4ab);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x4aa);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x4ac);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(0x4ad);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   uVar1 = FUN_00497d20(1);
 
-  FUN_004a8150(uVar1);
+  main_procanim_004a8150(uVar1);
 
   iVar4 = 0;
 
@@ -206,13 +206,13 @@ void FUN_004eda20(void)
 
   }
 
-  FUN_00518cd0();
+  win95_frate_00518cd0();
 
-  FUN_004976e0();
+  main_object_004976e0();
 
-  FUN_004b0540();
+  main_readobjs_004b0540();
 
-  FUN_004471a0();
+  main_fx_004471a0();
 
   (*DAT_005dd290)();
 
@@ -220,11 +220,11 @@ void FUN_004eda20(void)
 
   (*DAT_005dd360)();
 
-  FUN_00495430();
+  main_noise_00495430();
 
-  FUN_00496170();
+  main_noise_00496170();
 
-  FUN_0050a170();
+  main_tracer_0050a170();
 
   if (DAT_006330e4 != 0) {
 
@@ -260,31 +260,31 @@ void FUN_004eda20(void)
 
     }
 
-    FUN_00472e40();
+    main_makewrld_00472e40();
 
   }
 
-  FUN_004b4330();
+  main_readwrls_004b4330();
 
   FUN_0040b300();
 
-  FUN_00507fa0();
+  main_texture_00507fa0();
 
-  FUN_00490970();
+  main_mission_00490970();
 
   DAT_006330e4 = 0;
 
   DAT_00632a88 = 0;
 
-  FUN_0042d500();
+  main_drawobj_0042d500();
 
-  FUN_00470610();
+  main_linkage_00470610();
 
-  FUN_00403460();
+  main_ai_move_00403460();
 
-  FUN_0049fa90();
+  main_path_0049fa90();
 
-  FUN_00441660();
+  main_editor_00441660();
 
   return;
 

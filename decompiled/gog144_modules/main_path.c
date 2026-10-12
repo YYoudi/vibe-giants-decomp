@@ -1,10 +1,10 @@
 /* Giants 1.449 — module main/path
- * 4 functions (1 named) — decompiled, names from PS2 symbols
+ * 4 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/path.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0049fa90 @ 0x0049FA90 ===== */
-void FUN_0049fa90(void)
+/* ===== main_path_0049fa90 @ 0x0049FA90 ===== */
+void main_path_0049fa90(void)
 
 
 
@@ -197,28 +197,28 @@ void path_world_init__Fv(void)
 
   DAT_005a0ce8 = 0;
 
-  FUN_0049ff30(&local_18,&local_30,in_stack_0000000c,in_stack_00000010,in_stack_00000014);
+  main_path_0049ff30(&local_18,&local_30,in_stack_0000000c,in_stack_00000010,in_stack_00000014);
 
   return;
 
 }
 
-/* ===== FUN_0049ff30 @ 0x0049FF30 ===== */
+/* ===== main_path_0049ff30 @ 0x0049FF30 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-uint FUN_0049ff30(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int param_4,
+uint main_path_0049ff30(undefined4 param_1,undefined4 param_2,undefined4 *param_3,int param_4,
 
-                 undefined4 param_5,uint param_6,float param_7,float param_8,float param_9,
+                       undefined4 param_5,uint param_6,float param_7,float param_8,float param_9,
 
-                 uint *param_10,undefined4 param_11,uint param_12,float param_13,float param_14,
+                       uint *param_10,undefined4 param_11,uint param_12,float param_13,
 
-                 float param_15,uint *param_16,undefined4 param_17,uint param_18,float param_19,
+                       float param_14,float param_15,uint *param_16,undefined4 param_17,
 
-                 float param_20,float param_21,uint *param_22,undefined4 param_23,uint param_24,
+                       uint param_18,float param_19,float param_20,float param_21,uint *param_22,
 
-                 uint param_25,uint param_26,uint param_27)
+                       undefined4 param_23,uint param_24,uint param_25,uint param_26,uint param_27)
 
 
 
@@ -1056,12 +1056,12 @@ LAB_004a079b:
 
 }
 
-/* ===== FUN_004a0f40 @ 0x004A0F40 ===== */
+/* ===== main_path_004a0f40 @ 0x004A0F40 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004a0f40(int param_1,undefined4 param_2,float *param_3,float *param_4)
+void main_path_004a0f40(int param_1,undefined4 param_2,float *param_3,float *param_4)
 
 
 
@@ -1209,7 +1209,7 @@ void FUN_004a0f40(int param_1,undefined4 param_2,float *param_3,float *param_4)
 
   DAT_005a0ce8 = 1;
 
-  FUN_0049ff30();
+  main_path_0049ff30();
 
   return;
 
