@@ -6981,11 +6981,11 @@ void FUN_004cc7e0(void)
 
   if (0 < DAT_00633244) {
 
-    FUN_00430fd0();
+    main_drawwatr_00430fd0();
 
   }
 
-  FUN_00434280();
+  main_drawwrld_00434280();
 
   return;
 
@@ -7036,7 +7036,7 @@ void FUN_004cc810(void)
 
   if (DAT_00633244 < 1) {
 
-    FUN_00430fd0();
+    main_drawwatr_00430fd0();
 
     return;
 
@@ -8539,11 +8539,11 @@ undefined4 FUN_004cda80(void)
 
     if (0 < DAT_00633244) {
 
-      FUN_00430fd0();
+      main_drawwatr_00430fd0();
 
     }
 
-    FUN_00434280();
+    main_drawwrld_00434280();
 
     FUN_00435f30();
 
@@ -8573,7 +8573,7 @@ undefined4 FUN_004cda80(void)
 
           ((iVar8 != DAT_00632a88 || (DAT_00633108 != 0)))) &&
 
-         ((*(int *)(iVar8 + 0x1e0) != 0x4e || (iVar9 = FUN_00447fa0(iVar8,2), iVar9 == 0)))) {
+         ((*(int *)(iVar8 + 0x1e0) != 0x4e || (iVar9 = Main_fx_00447fa0(iVar8,2), iVar9 == 0)))) {
 
         if (((iVar8 == iVar5) || (*(int *)(iVar8 + 0x210) == iVar5)) ||
 
@@ -8715,11 +8715,11 @@ undefined4 FUN_004cda80(void)
 
     if (DAT_00633244 < 1) {
 
-      FUN_00430fd0();
+      main_drawwatr_00430fd0();
 
     }
 
-    FUN_00448100();
+    Main_fx_00448100();
 
     FUN_004cd5d0();
 
@@ -8813,7 +8813,7 @@ undefined4 FUN_004cda80(void)
 
     FUN_004431c0();
 
-    FUN_00509dd0();
+    main_tracer_00509dd0();
 
     FUN_0042ea60();
 

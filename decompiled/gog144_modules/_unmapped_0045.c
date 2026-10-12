@@ -1309,7 +1309,7 @@ void FUN_00452090(int param_1)
 
     DAT_006331ac = (uint)(param_1 == 0);
 
-    FUN_00432f30();
+    main_drawwrld_00432f30();
 
     return;
 
@@ -6456,7 +6456,7 @@ void FUN_004576e0(void)
 
   
 
-  FUN_00508860();
+  main_texture_00508860();
 
   DAT_006330dc = 1;
 

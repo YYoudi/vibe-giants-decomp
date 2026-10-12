@@ -187,7 +187,7 @@ LAB_005386ba:
 
         DAT_005e2c88 = 0;
 
-        iVar6 = FUN_00539ac0(local_200);
+        iVar6 = Utils_lzss_00539ac0(local_200);
 
         if (iVar6 == 0) goto LAB_00538784;
 

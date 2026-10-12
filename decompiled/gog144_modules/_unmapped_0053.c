@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (7 named) — decompiled, names from PS2 symbols
+ * 179 functions (9 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -9636,7 +9636,7 @@ void FUN_005363f0(char *param_1,undefined4 param_2)
 
   pcVar6 = local_12c;
 
-  fVar8 = (float10)FUN_004272e0();
+  fVar8 = (float10)main_dlog_004272e0();
 
   fVar2 = (float)fVar8;
 
@@ -9979,7 +9979,7 @@ void FUN_00536700(int param_1)
 
   
 
-  fVar12 = (float10)FUN_004272e0();
+  fVar12 = (float10)main_dlog_004272e0();
 
   fVar1 = (float)fVar12;
 
@@ -12797,7 +12797,7 @@ LAB_00538b60:
 
                   DAT_005e2c60 = iVar2;
 
-                  FUN_00539a80(&LAB_00538f60);
+                  Utils_lzss_00539a80(&LAB_00538f60);
 
                   utils_lzss_00539cb0();
 
@@ -13427,8 +13427,8 @@ undefined4 * FUN_005393e0(int param_1,char *param_2)
 
 }
 
-/* ===== FUN_00539a80 @ 0x00539A80 ===== */
-undefined4 FUN_00539a80(code *param_1)
+/* ===== Utils/lzss_00539a80 @ 0x00539A80 ===== */
+undefined4 Utils_lzss_00539a80(code *param_1)
 
 
 
@@ -13456,8 +13456,8 @@ undefined4 FUN_00539a80(code *param_1)
 
 }
 
-/* ===== FUN_00539ac0 @ 0x00539AC0 ===== */
-undefined4 FUN_00539ac0(LPCSTR param_1)
+/* ===== Utils/lzss_00539ac0 @ 0x00539AC0 ===== */
+undefined4 Utils_lzss_00539ac0(LPCSTR param_1)
 
 
 

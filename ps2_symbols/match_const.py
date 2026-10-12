@@ -13,7 +13,7 @@ PC side: integer literals from the decompiled bodies.
 Output: ps2_symbols/pc_ps2_const_anchors_1449.csv (append-ready format for
 match_propagate seeds: pc_addr,pc_name,ps2_addr,ps2_name,shared,conf)
 """
-import csv, json, os, re, glob, collections
+import csv, json, os, re, sys, glob, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -114,7 +114,15 @@ def pc_consts():
 
 def main():
     print("[*] PS2 constants ...")
-    psc = ps2_consts()
+    cache = os.path.join(HERE, "ps2_consts_cache.json")
+    if os.path.exists(cache) and "--refresh" not in sys.argv:
+        psc = {int(k, 16): set(v) for k, v in json.load(open(cache, encoding="utf-8")).items()}
+        print("    (from cache — use --refresh to recompute)")
+    else:
+        psc = ps2_consts()
+        json.dump({hex(k): sorted(v) for k, v in psc.items()},
+                  open(cache, "w", encoding="utf-8"))
+        print("    (computed and cached)")
     print(f"    {len(psc)} PS2 funcs with constants")
     pcc = pc_consts()
     print(f"    {len(pcc)} PC funcs with constants")

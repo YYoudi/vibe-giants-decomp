@@ -101,7 +101,7 @@ void path_world_init__Fv(void)
 
   local_10 = in_stack_00000004[2];
 
-  FUN_0049fb80();
+  main_path_0049fb80();
 
   local_30 = *in_stack_00000008;
 
@@ -109,7 +109,7 @@ void path_world_init__Fv(void)
 
   local_28 = in_stack_00000008[2];
 
-  FUN_0049fb80(in_stack_00000008,local_24,local_20,local_1c);
+  main_path_0049fb80(in_stack_00000008,local_24,local_20,local_1c);
 
   if (DAT_005a0cf8 == 0) {
 
@@ -175,9 +175,9 @@ void path_world_init__Fv(void)
 
               FUN_005170f0(iVar2,&local_3c,iVar1 + 0x18);
 
-              FUN_0049fb80(iVar1,iVar1 + 0xc,iVar1 + 0x10,iVar1 + 0x14);
+              main_path_0049fb80(iVar1,iVar1 + 0xc,iVar1 + 0x10,iVar1 + 0x14);
 
-              FUN_0049fb80(iVar1 + 0x18,iVar1 + 0x24,iVar1 + 0x28,iVar1 + 0x2c);
+              main_path_0049fb80(iVar1 + 0x18,iVar1 + 0x24,iVar1 + 0x28,iVar1 + 0x2c);
 
               iVar5 = iVar5 + 0x30;
 
@@ -282,7 +282,7 @@ uint main_path_0049ff30(undefined4 param_1,undefined4 param_2,undefined4 *param_
 
   FUN_00543e00();
 
-  iVar7 = FUN_004a0b70(in_stack_00001334,in_stack_00001338);
+  iVar7 = main_path_004a0b70(in_stack_00001334,in_stack_00001338);
 
   if (iVar7 == 0) {
 
@@ -538,7 +538,9 @@ switchD_004a0274_default:
 
       do {
 
-        iVar10 = FUN_004a0d00(uVar14,uVar15,bVar6,param_3[iVar7],&param_24,&param_25,&param_26);
+        iVar10 = main_path_004a0d00(uVar14,uVar15,bVar6,param_3[iVar7],&param_24,&param_25,&param_26
+
+                                   );
 
         if (iVar10 == 0) {
 
@@ -588,13 +590,13 @@ LAB_004a0393:
 
           if (puVar13 == (uint *)0x0) {
 
-            FUN_004a0a00(&param_6);
+            main_path_004a0a00(&param_6);
 
           }
 
           else if (bVar21) {
 
-            FUN_004a0b00(puVar13,&param_6);
+            main_path_004a0b00(puVar13,&param_6);
 
           }
 
@@ -670,7 +672,7 @@ LAB_004a0533:
 
           param_16 = puVar19;
 
-          fVar22 = (float10)FUN_004a0b20(&param_12,in_stack_00001338);
+          fVar22 = (float10)main_path_004a0b20(&param_12,in_stack_00001338);
 
           param_15 = (float)fVar22;
 
@@ -682,7 +684,7 @@ LAB_004a0533:
 
 LAB_004a069f:
 
-            FUN_004a0a00(puVar9);
+            main_path_004a0a00(puVar9);
 
             iVar7 = DAT_005a0cf0;
 
@@ -758,7 +760,7 @@ LAB_004a064f:
 
           param_22 = puVar19;
 
-          fVar22 = (float10)FUN_004a0b20(&param_18,in_stack_00001338);
+          fVar22 = (float10)main_path_004a0b20(&param_18,in_stack_00001338);
 
           param_21 = (float)fVar22;
 
@@ -892,7 +894,7 @@ LAB_004a079b:
 
       do {
 
-        iVar10 = FUN_004a0b70(puVar9 + -0xc,puVar9);
+        iVar10 = main_path_004a0b70(puVar9 + -0xc,puVar9);
 
         if (iVar10 == 0) {
 

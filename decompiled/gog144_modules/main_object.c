@@ -32,7 +32,7 @@ void object_allocate_init(void)
 
   DAT_00632da4 = DAT_0059f370;
 
-  FUN_004705c0();
+  main_linkage_004705c0();
 
   return;
 
@@ -51,7 +51,7 @@ void main_object_00496b90(void)
 
   DAT_00632da4 = 0;
 
-  FUN_004705c0();
+  main_linkage_004705c0();
 
   return;
 
@@ -223,7 +223,7 @@ void object_list_update(void)
 
       FUN_00499cd0(piVar4);
 
-      FUN_00470480(piVar4);
+      main_linkage_00470480(piVar4);
 
       *piVar4 = (int)DAT_00632da4;
 

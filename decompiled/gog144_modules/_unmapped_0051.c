@@ -10975,7 +10975,7 @@ void FUN_0051b500(uint param_1,undefined4 param_2,float param_3,undefined4 param
 
   if (DAT_005dd390 != 0) {
 
-    FUN_00508840(&DAT_005dd3a0);
+    main_texture_00508840(&DAT_005dd3a0);
 
     DAT_005dd390 = 0;
 
@@ -11242,7 +11242,7 @@ void FUN_0051b850(uint param_1,undefined4 param_2,float param_3,float param_4,fl
 
     if (DAT_005dd390 != 0) {
 
-      FUN_00508840(&DAT_005dd3a0);
+      main_texture_00508840(&DAT_005dd3a0);
 
       DAT_005dd390 = 0;
 
@@ -11941,7 +11941,7 @@ void FUN_0051bed0(uint param_1,undefined4 *param_2,float param_3,byte *param_4,i
 
   if (DAT_005dd390 != 0) {
 
-    FUN_00508840(&DAT_005dd3a0);
+    main_texture_00508840(&DAT_005dd3a0);
 
     DAT_005dd390 = 0;
 
@@ -12298,7 +12298,7 @@ void FUN_0051c590(int param_1)
 
       DAT_006331ac = (uint)(param_1 == 0);
 
-      FUN_00432f30();
+      main_drawwrld_00432f30();
 
       return;
 
@@ -12310,7 +12310,7 @@ void FUN_0051c590(int param_1)
 
     DAT_006331ac = 1;
 
-    FUN_00432f30();
+    main_drawwrld_00432f30();
 
     return;
 
@@ -12733,7 +12733,7 @@ LAB_0051c927:
 
 LAB_0051c935:
 
-      FUN_00432f30();
+      main_drawwrld_00432f30();
 
     }
 
@@ -12902,7 +12902,7 @@ LAB_0051cb4e:
 
   FUN_00500490(uVar1);
 
-  FUN_00435c90();
+  main_drawwrld_00435c90();
 
   return;
 
@@ -14683,7 +14683,7 @@ LAB_0051e04a:
 
 LAB_0051e058:
 
-          FUN_00432f30();
+          main_drawwrld_00432f30();
 
         }
 
@@ -14795,7 +14795,7 @@ LAB_0051e167:
 
 LAB_0051e175:
 
-      FUN_00432f30();
+      main_drawwrld_00432f30();
 
     }
 

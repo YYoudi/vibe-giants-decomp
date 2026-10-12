@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (1 named) — decompiled, names from PS2 symbols
+ * 100 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00410720 @ 0x00410720 ===== */
-void FUN_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
+/* ===== main/collgrid_00410720 @ 0x00410720 ===== */
+void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
 
 
 

@@ -80,7 +80,7 @@ void main_menu_00483200(int param_1,int param_2)
 
   }
 
-  FUN_00447fd0();
+  Main_fx_00447fd0();
 
   return;
 
@@ -255,7 +255,7 @@ void main_menu_004832f0(void)
 
   }
 
-  FUN_00447f20(0,2);
+  Main_fx_00447f20(0,2);
 
   if (DAT_00632a88 == 0) {
 

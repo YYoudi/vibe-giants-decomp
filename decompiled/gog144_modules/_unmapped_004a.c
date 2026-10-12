@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (2 named) — decompiled, names from PS2 symbols
+ * 131 functions (12 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004a0a00 @ 0x004A0A00 ===== */
-void FUN_004a0a00(undefined4 *param_1)
+/* ===== main/path_004a0a00 @ 0x004A0A00 ===== */
+void main_path_004a0a00(undefined4 *param_1)
 
 
 
@@ -102,8 +102,8 @@ void FUN_004a0a00(undefined4 *param_1)
 
 }
 
-/* ===== FUN_004a0b00 @ 0x004A0B00 ===== */
-void FUN_004a0b00(int param_1,int param_2)
+/* ===== main/path_004a0b00 @ 0x004A0B00 ===== */
+void main_path_004a0b00(int param_1,int param_2)
 
 
 
@@ -119,8 +119,8 @@ void FUN_004a0b00(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004a0b20 @ 0x004A0B20 ===== */
-float10 FUN_004a0b20(uint *param_1,int param_2)
+/* ===== main/path_004a0b20 @ 0x004A0B20 ===== */
+float10 main_path_004a0b20(uint *param_1,int param_2)
 
 
 
@@ -140,8 +140,8 @@ float10 FUN_004a0b20(uint *param_1,int param_2)
 
 }
 
-/* ===== FUN_004a0b70 @ 0x004A0B70 ===== */
-undefined4 FUN_004a0b70(uint param_1,int param_2)
+/* ===== main/path_004a0b70 @ 0x004A0B70 ===== */
+undefined4 main_path_004a0b70(uint param_1,int param_2)
 
 
 
@@ -211,7 +211,7 @@ undefined4 FUN_004a0b70(uint param_1,int param_2)
 
       iVar6 = iVar6 + -1;
 
-      iVar2 = FUN_004a0d00(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1);
+      iVar2 = main_path_004a0d00(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1);
 
       if (iVar2 != 0) {
 
@@ -223,7 +223,7 @@ undefined4 FUN_004a0b70(uint param_1,int param_2)
 
       if ((-1 < iVar5) &&
 
-         (iVar3 = FUN_004a0d00(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1),
+         (iVar3 = main_path_004a0d00(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1),
 
          iVar2 = iVar4 + iVar1, iVar3 != 0)) {
 
@@ -251,13 +251,13 @@ undefined4 FUN_004a0b70(uint param_1,int param_2)
 
         iVar4 = iVar4 + -1;
 
-        iVar2 = FUN_004a0d00(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1);
+        iVar2 = main_path_004a0d00(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1);
 
         if ((iVar2 != 0) ||
 
            ((iVar2 = iVar6, -1 < iVar5 &&
 
-            (iVar3 = FUN_004a0d00(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1),
+            (iVar3 = main_path_004a0d00(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1),
 
             iVar2 = iVar6 + iVar1, iVar3 != 0)))) break;
 
@@ -281,10 +281,12 @@ undefined4 FUN_004a0b70(uint param_1,int param_2)
 
 }
 
-/* ===== FUN_004a0d00 @ 0x004A0D00 ===== */
+/* ===== main/path_004a0d00 @ 0x004A0D00 ===== */
 undefined1
 
-FUN_004a0d00(int param_1,int param_2,int param_3,int param_4,int *param_5,int *param_6,int *param_7)
+main_path_004a0d00(int param_1,int param_2,int param_3,int param_4,int *param_5,int *param_6,
+
+                  int *param_7)
 
 
 
@@ -5260,7 +5262,7 @@ void player_draw_missile_lock(void)
 
   if (0.0 < _DAT_00632b54) {
 
-    fVar2 = (float10)FUN_004272e0();
+    fVar2 = (float10)main_dlog_004272e0();
 
     DAT_005a0ee4 = 0x3f000000;
 
@@ -5307,7 +5309,7 @@ void FUN_004a5eb0(void)
 
   if (0.0 < _DAT_00632d10) {
 
-    fVar1 = (float10)FUN_004272e0();
+    fVar1 = (float10)main_dlog_004272e0();
 
     _DAT_005a0ee8 = 0x3ecccccd;
 
@@ -5418,11 +5420,11 @@ void FUN_004a5f40(int param_1)
 
       *(uint *)(DAT_00632a88 + 0x1c8) = *(uint *)(DAT_00632a88 + 0x1c8) | 1;
 
-      FUN_004704e0(&DAT_00632d78,DAT_00632a88);
+      main_linkage_004704e0(&DAT_00632d78,DAT_00632a88);
 
-      FUN_004704e0(&DAT_00632d70,DAT_00632a88);
+      main_linkage_004704e0(&DAT_00632d70,DAT_00632a88);
 
-      FUN_004704e0(&DAT_00632d74,DAT_00632a88);
+      main_linkage_004704e0(&DAT_00632d74,DAT_00632a88);
 
       if (param_1 == 1) {
 
@@ -7162,8 +7164,8 @@ void FUN_004a7df0(float *param_1,float param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004a8cc0 @ 0x004A8CC0 ===== */
-void FUN_004a8cc0(undefined4 *param_1)
+/* ===== main/procanim_004a8cc0 @ 0x004A8CC0 ===== */
+void main_procanim_004a8cc0(undefined4 *param_1)
 
 
 
@@ -7175,8 +7177,8 @@ void FUN_004a8cc0(undefined4 *param_1)
 
 }
 
-/* ===== FUN_004a8ce0 @ 0x004A8CE0 ===== */
-void FUN_004a8ce0(undefined4 *param_1)
+/* ===== main/procanim_004a8ce0 @ 0x004A8CE0 ===== */
+void main_procanim_004a8ce0(undefined4 *param_1)
 
 
 
@@ -7188,8 +7190,8 @@ void FUN_004a8ce0(undefined4 *param_1)
 
 }
 
-/* ===== FUN_004a8d00 @ 0x004A8D00 ===== */
-void FUN_004a8d00(undefined4 *param_1)
+/* ===== main/procanim_004a8d00 @ 0x004A8D00 ===== */
+void main_procanim_004a8d00(undefined4 *param_1)
 
 
 
@@ -7201,8 +7203,8 @@ void FUN_004a8d00(undefined4 *param_1)
 
 }
 
-/* ===== FUN_004a8d20 @ 0x004A8D20 ===== */
-void FUN_004a8d20(undefined4 *param_1)
+/* ===== main/procanim_004a8d20 @ 0x004A8D20 ===== */
+void main_procanim_004a8d20(undefined4 *param_1)
 
 
 
@@ -7214,8 +7216,8 @@ void FUN_004a8d20(undefined4 *param_1)
 
 }
 
-/* ===== FUN_004a8d40 @ 0x004A8D40 ===== */
-void FUN_004a8d40(int param_1)
+/* ===== main/procanim_004a8d40 @ 0x004A8D40 ===== */
+void main_procanim_004a8d40(int param_1)
 
 
 
@@ -12230,7 +12232,7 @@ LAB_004ae6c3:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000b0 + iVar20) = uVar11;
 
@@ -12242,7 +12244,7 @@ LAB_004ae6c3:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000b4 + iVar20) = uVar11;
 
@@ -12254,7 +12256,7 @@ LAB_004ae6c3:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000b8 + iVar20) = uVar11;
 
@@ -12266,7 +12268,7 @@ LAB_004ae6c3:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000bc + iVar20) = uVar11;
 
@@ -12278,7 +12280,7 @@ LAB_004ae6c3:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000c0 + iVar20) = uVar11;
 
@@ -12322,7 +12324,7 @@ LAB_004aed0a:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000b0 + iVar20) = uVar11;
 
@@ -12334,7 +12336,7 @@ LAB_004aed0a:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000b4 + iVar20) = uVar11;
 
@@ -12346,7 +12348,7 @@ LAB_004aed0a:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000b8 + iVar20) = uVar11;
 
@@ -12358,7 +12360,7 @@ LAB_004aed0a:
 
         } while (bVar2 != 0);
 
-        uVar11 = FUN_00447210();
+        uVar11 = Main_fx_00447210();
 
         *(undefined4 *)(&stack0x000000bc + iVar20) = uVar11;
 
@@ -12370,7 +12372,7 @@ LAB_004aed0a:
 
         } while (bVar2 != 0);
 
-        uVar13 = FUN_00447210();
+        uVar13 = Main_fx_00447210();
 
         uVar11 = *(undefined4 *)pbVar25;
 
@@ -13806,7 +13808,7 @@ switchD_004af2c0_caseD_2a:
 
     fVar31 = *(float *)((int)pfVar29 + 1);
 
-    uVar11 = FUN_00447210();
+    uVar11 = Main_fx_00447210();
 
     puVar10[0xbf] = uVar11;
 
@@ -14048,7 +14050,7 @@ switchD_004af2c0_caseD_2a:
 
       iVar20 = puVar10[0x40];
 
-      uVar11 = FUN_00447210();
+      uVar11 = Main_fx_00447210();
 
       *(undefined4 *)(iVar20 + 4) = uVar11;
 
@@ -14072,7 +14074,7 @@ switchD_004af2c0_caseD_2a:
 
       iVar20 = puVar10[0x40];
 
-      uVar11 = FUN_00447210();
+      uVar11 = Main_fx_00447210();
 
       *(undefined4 *)(iVar20 + 8) = uVar11;
 
@@ -14202,7 +14204,7 @@ switchD_004af2c0_caseD_2a:
 
       puVar14 = (undefined4 *)puVar10[0x40];
 
-      uVar16 = FUN_00447210();
+      uVar16 = Main_fx_00447210();
 
       *puVar14 = uVar16;
 

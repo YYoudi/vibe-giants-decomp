@@ -10,10 +10,8 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 00403b50,BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i,BasicUsrAnmApply,0,False,False,
 00403e60,object_animate_process,object animate,0,False,False,
 00405130,loadsave_save__FPCc,loadsave save,0,False,False,
-004053b0,AnimationCreate,AnimationCreate,15,False,True,AnimationCreate
 00406bc0,army_create_rpman__FP6OBJECTP9ArmyOrderifi,army rpman,0,False,False,
-00406dd0,army_process_opcodes__FP6OBJECTPPUci,army opcodes,4,False,False,army
-004078f0,army_create_platoon__FP6OBJECTPcT1,army platoon,7,False,True,army; platoon
+00406dd0,army_process_opcodes__FP6OBJECTPPUci,army opcodes,4,True,True,army
 00407c40,meccbase_init,meccbase,0,False,False,
 00408530,meccbaseitem_move,meccbaseitem,0,True,False,
 00408ec0,meccbaseitem_start_building,meccbaseitem start building,0,False,False,
@@ -32,8 +30,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 0040d790,camera_override_done,camera override done,0,False,False,
 0040db70,SetupCameraDataNormal__FP6OBJECTT0,SetupCameraDataNormal,0,False,False,
 0040ee20,charger_change_anim__FP6OBJECTii4SDKYfi,charger change anim,0,False,False,
-0040f3c0,cleaner_go_obj,cleaner,7,True,True,cleaner
-004101d0,collgrid_clear_grid,collgrid clear grid,8,False,True,collgrid; grid
 00412df0,collide_objects__FP6OBJECT,collide objects,0,False,False,
 00413e40,get_floor_z_point,floor point,0,False,False,
 00413e90,get_floor_z_point_plat,floor point plat,0,False,False,
@@ -85,7 +81,7 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 00455890,project_cursor_to_ground,project cursor ground,0,False,False,
 00455920,project_vector_to_object,project vector object,0,False,False,
 00455b70,project_cursor_to_object,project cursor object,0,False,False,
-00455c80,object_create_child,object child,0,False,False,
+00455c80,object_create_child,object child,0,True,False,
 00456010,gun_find_left,find left,0,False,False,
 00456050,gun_find_right,find right,0,False,False,
 00456470,herd_create_one,herd,0,False,False,
@@ -127,10 +123,7 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 0046aeb0,kbos_init,kbos,0,False,False,
 0046baf0,kbos_attach_object,kbos attach object,0,False,False,
 0046bc60,kbos_scan_food__FP6OBJECTP14ObjProcessInfo,kbos scan food,0,False,False,
-00470710,object_lock_logic,object lock,6,False,True,object; lock
 00471a60,game_loop_run,game loop,0,False,False,
-00476e90,showchat_mission_objective__Fi,showchat mission objective,9,False,True,mission; objective
-00477050,showchat_mission_objective__Fi,showchat mission objective,9,False,True,mission; objective
 00477340,marker_spline_adjust_buoy,marker spline adjust buoy,0,True,False,
 00477da0,marker_spline_adjust_scale,marker spline adjust scale,0,False,False,
 00477f20,marker_spline_rotate_tangent,marker spline rotate tangent,0,True,False,
@@ -148,7 +141,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 0047f740,mecc_jet,mecc,0,False,False,
 0047fff0,mecc_to_bush,mecc bush,0,True,False,
 00480150,mecc_exit_bush,mecc exit bush,0,False,False,
-004801c0,mecc_enable_personal_shield,mecc enable personal shield,6,True,True,shield
 004802c0,mecc_disable_personal_shield,mecc disable personal shield,0,True,False,
 004803a0,mecc_enable_repair_gun,mecc enable repair,0,True,False,
 00480400,mecc_disable_repair_gun,mecc disable repair,0,True,False,
@@ -168,24 +160,15 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 00494120,mission_check_obj_proximity__FP6OBJECT,mission proximity,0,False,False,
 00494400,mission_unload_mission_objects__Fv,mission unload mission objects,0,False,False,
 00494890,buoy_process__FP6OBJECT,buoy,0,False,False,
-004954e0,sound_play_obj,sound play,5,False,True,sound
-00495550,sound_play_player,sound play player,5,False,True,sound
 00495700,sound_stop_player,sound stop player,0,False,False,
 00495750,sound_stop_obj,sound stop,0,False,False,
-00495840,sound_play_3dpos,sound play 3dpos,5,False,True,sound
-00495920,sound_play,sound play,5,False,True,sound
 00495990,sound_stop,sound stop,0,False,False,
 00495e10,sound_stop_sequence,sound stop sequence,0,False,False,
 00495ee0,sound_interrupt_sequence,sound interrupt sequence,0,False,False,
 004967e0,objanim_select_anim,objanim select anim,0,False,False,
-00496c00,object_allocate_type,object allocate type,6,True,True,object; type
-00497150,object_allocate_type_end,object allocate type,6,False,True,object; type
-00497450,object_set_objectset,object objectset,6,False,True,object
-00497510,object_destroy,object destroy,0,False,False,
-004975c0,object_list_update,object list,6,True,True,object
-00497770,object_copy_personality,object copy personality,6,False,True,object
+00497510,object_destroy,object destroy,0,True,False,
 004979b0,object_copy_posdirinfo,object copy posdirinfo,0,False,False,
-00497a50,object_copy_activedata,object copy activedata,0,False,False,
+00497a50,object_copy_activedata,object copy activedata,0,True,False,
 00497d20,objectset_find,objectset find,0,False,False,
 00497d70,object_find,object find,0,True,False,
 004982c0,mecc_logic,mecc,0,True,False,
@@ -193,15 +176,14 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 00498cf0,create_static_object,static object,0,False,False,
 00499200,destroy_player_object,destroy player object,0,False,False,
 00499280,object_set_location_fix,object location,0,False,False,
-00499310,object_set_location,object location,0,False,False,
-004993c0,object_set_location_p3d,object location,0,False,False,
+00499310,object_set_location,object location,0,True,False,
+004993c0,object_set_location_p3d,object location,0,True,False,
 00499500,object_apply_location,object apply location,0,False,False,
-00499cd0,object_free_all_allocated_data,object allocated data,0,False,False,
-00499e70,object_change_ospec,object change ospec,5,True,True,ospec
-00499fa0,object_mty_check_obj,object,0,False,False,
+00499cd0,object_free_all_allocated_data,object allocated data,0,True,False,
+00499fa0,object_mty_check_obj,object,0,True,False,
 0049a180,objspec_get_movetype_string,objspec movetype string,0,False,False,
 0049a1f0,PROJ_ObjectFinalize,PROJ ObjectFinalize,0,False,False,
-0049b8a0,object_setup_specialtype,object specialtype,0,False,False,
+0049b8a0,object_setup_specialtype,object specialtype,0,True,False,
 0049baa0,object_destroy_specialtype,object destroy specialtype,0,False,False,
 0049bc90,object_get_ref_world,object world,0,False,False,
 0049df90,offspring_dive_release_target__FP6OBJECT,offspring dive release target,0,False,False,
@@ -253,7 +235,7 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 004b8e40,reaper_give_other,reaper give other,0,False,False,
 004b8f00,reaper_give_ammo,reaper give ammo,0,False,False,
 004b9080,reaper_set_bow,reaper,0,False,False,
-004b9120,reaper_cycle_weapon__FP6OBJECTi,reaper cycle weapon,0,False,False,
+004b9120,reaper_cycle_weapon__FP6OBJECTi,reaper cycle weapon,0,True,False,
 004b9330,reaper_give_all_spell_energy,reaper give spell energy,0,False,False,
 004b95d0,reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi,reaper cast spell specific,0,False,False,
 004ba1a0,reaper_xhair_validate__FP6OBJECTPv,reaper xhair validate,0,False,False,
@@ -262,7 +244,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 004bc930,reaper_turbo_towards_moving_target__FP6OBJECT,reaper turbo towards moving target,0,False,False,
 004bcb30,reaper_set_pitch__FP6OBJECT,reaper pitch,0,False,False,
 004bce60,reaper_walkrun_go__FP6OBJECT,reaper walkrun,0,False,False,
-004bd7c0,reaper_change_bow__FP6OBJECT,reaper change,6,False,True,change
 004bdaa0,reaper_select_bow,reaper select,0,False,False,
 004bdbf0,reaper_select_sword,reaper select sword,0,False,False,
 004bddb0,reaper_fire_logic__FP6OBJECT,reaper fire,0,False,False,
@@ -280,7 +261,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 004c2140,reaper_finish_teleport,reaper finish teleport,0,False,False,
 004c26d0,reaper_init_trails,reaper trails,0,False,False,
 004c2ab0,reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap,reaper trail,0,False,False,
-004c54d0,reaper_check_enter_teleport__FP6OBJECT,reaper enter teleport,8,False,True,teleport
 004c5810,reaper_replenish_basepit_energy__FP6OBJECT,reaper replenish basepit energy,0,False,False,
 004ca560,evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1,evilreaper turbo,0,False,False,
 004ca890,evilreaper_scan_for_enemy__FP6OBJECTf,evilreaper scan enemy,0,False,False,
@@ -306,7 +286,7 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 004d77e0,charger_do_fx__FP6OBJECTiii,charger,0,False,False,
 004e1030,rpman_goto_last_loc__FP6OBJECTi,rpman goto last,0,False,False,
 004e1240,rpman_jet__FP6OBJECT,rpman,0,False,False,
-004e1970,rpman_shot,rpman,0,False,False,
+004e1970,rpman_shot,rpman,0,True,False,
 004e2ce0,rpman_find_hide_spot__FP6OBJECTi,rpman find hide spot,0,False,False,
 004e30b0,rpman_verify_enemy__FP6OBJECTf,rpman verify enemy,0,False,False,
 004e3440,rpman_smartie_consider__FP6OBJECTT0,rpman smartie consider,0,False,False,
@@ -322,7 +302,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 004e6ba0,rpboat_logic__FP6OBJECT,rpboat,0,False,False,
 004e7390,rpman_set_smartie_goal__FP6OBJECT,rpman smartie goal,0,False,False,
 004e7460,rpman_army_goto_firepit__FP6OBJECT,rpman army goto firepit,0,False,False,
-004e7970,rpman_gib__FP6OBJECTT0,rpman,5,False,True,rpman
 004e7ae0,rpman_notify_hit,rpman notify,0,False,False,
 004ea3e0,barracks_logic,barracks,0,False,False,
 004ed9e0,world_reset_callback_add,world reset callback,0,True,False,
@@ -345,11 +324,10 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 004f9380,ripper_medium_move__FP6OBJECT,ripper medium,0,False,False,
 004fa520,hurt_pusher,hurt pusher,0,False,False,
 00500a60,item_create_base_pickup,base pickup,0,False,False,
-00500fb0,team_count,team count,0,False,False,
+00500fb0,team_count,team count,0,True,False,
 00501000,team_toggle,team toggle,0,False,False,
 00501070,item_drop_curweap,drop curweap,0,False,False,
-005011f0,teammecc_create,teammecc,8,True,True,teammecc
-00501670,teammecc_toggle,teammecc toggle,0,False,False,
+00501670,teammecc_toggle,teammecc toggle,0,True,False,
 00502660,teammecc_get_wantloc_formation,teammecc wantloc formation,0,True,False,
 00502750,teammecc_get_new_wander_loc__FP6OBJECTiP3P3DffT2ffff,teammecc wander,0,False,False,
 00502890,teammecc_get_attackloc__FP6OBJECTi,teammecc attackloc,0,True,False,
@@ -357,8 +335,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 00503970,teammecc_set_slave_goal__FP6OBJECTi,teammecc slave goal,0,True,False,
 00504050,mecc_set_fire__FP6OBJECTi,mecc fire,0,False,False,
 00507b00,TextGetPtr,TextGetPtr,0,False,False,
-00507b40,TextGetPtrRandom,TextGetPtrRandom,0,False,False,
-00507c10,TextGetPtrQ,TextGetPtrQ,0,False,False,
 005086e0,object_finit_ospec,object finit ospec,0,False,False,
 005093e0,ripper_control__FP6OBJECT,ripper control,0,False,False,
 0050a390,atand2pos,atand2pos,0,False,False,
@@ -404,7 +380,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 00536050,atox__FPc,atox,0,False,False,
 005362d0,chat_insert,chat insert,0,False,False,
 00536580,chat_insert_lf,chat insert,0,False,False,
-00536620,chat_insert_name,chat insert name,0,False,False,
 00536700,mecc_get_thrust__FP6OBJECTfPfT2,mecc thrust,0,False,False,
 00536b20,multi_draw_health_bar_horizontal__FP6OBJECTff,multi health horizontal,0,False,False,
 00536cb0,multi_display_player_cursor_info__Fv,multi display player cursor info,0,False,False,

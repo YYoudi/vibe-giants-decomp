@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (5 named) — decompiled, names from PS2 symbols
+ * 87 functions (13 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -8880,8 +8880,8 @@ undefined * TextGetPtrQ(undefined1 *param_1)
 
 }
 
-/* ===== FUN_00507e40 @ 0x00507E40 ===== */
-void FUN_00507e40(void)
+/* ===== main/texture_00507e40 @ 0x00507E40 ===== */
+void main_texture_00507e40(void)
 
 
 
@@ -8895,8 +8895,8 @@ void FUN_00507e40(void)
 
 }
 
-/* ===== FUN_00507f80 @ 0x00507F80 ===== */
-void FUN_00507f80(void)
+/* ===== main/texture_00507f80 @ 0x00507F80 ===== */
+void main_texture_00507f80(void)
 
 
 
@@ -8928,8 +8928,8 @@ void FUN_00507f80(void)
 
 }
 
-/* ===== FUN_00508720 @ 0x00508720 ===== */
-void FUN_00508720(int param_1)
+/* ===== main/texture_00508720 @ 0x00508720 ===== */
+void main_texture_00508720(int param_1)
 
 
 
@@ -8945,8 +8945,8 @@ void FUN_00508720(int param_1)
 
 }
 
-/* ===== FUN_00508840 @ 0x00508840 ===== */
-void FUN_00508840(undefined4 param_1)
+/* ===== main/texture_00508840 @ 0x00508840 ===== */
+void main_texture_00508840(undefined4 param_1)
 
 
 
@@ -8958,8 +8958,8 @@ void FUN_00508840(undefined4 param_1)
 
 }
 
-/* ===== FUN_00508860 @ 0x00508860 ===== */
-void FUN_00508860(void)
+/* ===== main/texture_00508860 @ 0x00508860 ===== */
+void main_texture_00508860(void)
 
 
 
@@ -9571,8 +9571,8 @@ void FUN_00509b80(int param_1)
 
 }
 
-/* ===== FUN_00509dc0 @ 0x00509DC0 ===== */
-void FUN_00509dc0(int param_1,undefined4 param_2)
+/* ===== main/tracer_00509dc0 @ 0x00509DC0 ===== */
+void main_tracer_00509dc0(int param_1,undefined4 param_2)
 
 
 
@@ -9584,8 +9584,8 @@ void FUN_00509dc0(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00509dd0 @ 0x00509DD0 ===== */
-void FUN_00509dd0(void)
+/* ===== main/tracer_00509dd0 @ 0x00509DD0 ===== */
+void main_tracer_00509dd0(void)
 
 
 
@@ -9697,7 +9697,7 @@ void FUN_00509dd0(void)
 
           iVar3 = piVar2[3] + iVar7 * 0x24;
 
-          FUN_00509f10(iVar3,piVar2[7],piVar2[0xf],piVar2[3] + iVar4 * 0x24,iVar3);
+          main_tracer_00509f10(iVar3,piVar2[7],piVar2[0xf],piVar2[3] + iVar4 * 0x24,iVar3);
 
           iVar5 = iVar5 + 1;
 
@@ -9721,10 +9721,12 @@ void FUN_00509dd0(void)
 
 }
 
-/* ===== FUN_00509f10 @ 0x00509F10 ===== */
-void FUN_00509f10(undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,
+/* ===== main/tracer_00509f10 @ 0x00509F10 ===== */
+void main_tracer_00509f10
 
-                 undefined4 param_5)
+               (undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,
+
+               undefined4 param_5)
 
 
 

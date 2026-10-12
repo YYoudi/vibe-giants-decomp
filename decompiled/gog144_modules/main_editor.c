@@ -152,7 +152,7 @@ void FUN_004361b0(void)
 
       if (puVar15 == (undefined4 *)0x0) {
 
-        iVar10 = FUN_00437fa0(0);
+        iVar10 = main_editor_00437fa0(0);
 
         if (iVar10 == 0) {
 
@@ -292,7 +292,7 @@ LAB_004362a7:
 
   if (((DAT_0059cbf0 == 0) && (DAT_0059cbec == 0)) && (!bVar1)) {
 
-    iVar10 = FUN_00437fa0(1);
+    iVar10 = main_editor_00437fa0(1);
 
     if ((DAT_0059cbd8 == (int *)0x0) || (DAT_0059cbd8[0xe] == iVar10)) {
 
@@ -382,7 +382,7 @@ LAB_00436453:
 
 switchD_004364b2_caseD_1:
 
-        FUN_00439DF0();
+        main_editor_00439df0();
 
         return;
 
@@ -390,7 +390,7 @@ switchD_004364b2_caseD_1:
 
 switchD_004364b2_caseD_2:
 
-        FUN_0043a440();
+        main_editor_0043a440();
 
         return;
 
@@ -398,7 +398,7 @@ switchD_004364b2_caseD_2:
 
 switchD_004364b2_caseD_3:
 
-        FUN_0043AA40();
+        main_editor_0043aa40();
 
         return;
 
@@ -406,7 +406,7 @@ switchD_004364b2_caseD_3:
 
 switchD_004364b2_caseD_4:
 
-        FUN_0043B530();
+        main_editor_0043b530();
 
         return;
 
@@ -414,7 +414,7 @@ switchD_004364b2_caseD_4:
 
 switchD_004364b2_caseD_5:
 
-        FUN_0043BD80();
+        main_editor_0043bd80();
 
         return;
 
@@ -422,7 +422,7 @@ switchD_004364b2_caseD_5:
 
 switchD_004364b2_caseD_6:
 
-        FUN_0043C580();
+        main_editor_0043c580();
 
         return;
 
@@ -430,7 +430,7 @@ switchD_004364b2_caseD_6:
 
 switchD_004364b2_caseD_7:
 
-        FUN_0043D0A0();
+        main_editor_0043d0a0();
 
         return;
 
@@ -438,7 +438,7 @@ switchD_004364b2_caseD_7:
 
 switchD_004364b2_caseD_8:
 
-        FUN_00440230();
+        main_editor_00440230();
 
         return;
 
@@ -446,7 +446,7 @@ switchD_004364b2_caseD_8:
 
 switchD_004364b2_caseD_9:
 
-        FUN_00440500();
+        main_editor_00440500();
 
         return;
 
@@ -454,7 +454,7 @@ switchD_004364b2_caseD_9:
 
 switchD_004364b2_caseD_a:
 
-        FUN_0043F950();
+        main_editor_0043f950();
 
         return;
 
@@ -462,7 +462,7 @@ switchD_004364b2_caseD_a:
 
 switchD_004364b2_caseD_b:
 
-        FUN_0043FBC0();
+        main_editor_0043fbc0();
 
         return;
 
@@ -470,7 +470,7 @@ switchD_004364b2_caseD_b:
 
 switchD_004364b2_caseD_c:
 
-        FUN_0043FE90();
+        main_editor_0043fe90();
 
         return;
 
@@ -504,7 +504,7 @@ switchD_004364b2_caseD_c:
 
 switchD_004364b2_caseD_0:
 
-      FUN_00439660();
+      main_editor_00439660();
 
       return;
 
@@ -1522,11 +1522,11 @@ LAB_00437d68:
 
         for (; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-          iVar10 = FUN_004380e0(piVar11[0xd]);
+          iVar10 = main_editor_004380e0(piVar11[0xd]);
 
           piVar11[0xe] = iVar10;
 
-          FUN_004382b0(iVar10,piVar11);
+          main_editor_004382b0(iVar10,piVar11);
 
           if ((*(uint *)(piVar11[0xe] + 0x1c8) & 0x8000000) != 0) {
 
@@ -1574,13 +1574,13 @@ LAB_00437d68:
 
           ; piVar11 = (int *)*piVar11) {
 
-        FUN_00438230(piVar11[0xe],piVar11);
+        main_editor_00438230(piVar11[0xe],piVar11);
 
       }
 
       for (; DAT_0059cc44 = piVar21, piVar20 != (int *)0x0; piVar20 = (int *)*piVar20) {
 
-        FUN_004382b0(piVar20[0xe],piVar20);
+        main_editor_004382b0(piVar20[0xe],piVar20);
 
         piVar21 = DAT_0059cc44;
 
@@ -1740,11 +1740,11 @@ LAB_00437d68:
 
         for (; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-          iVar10 = FUN_004380e0(piVar11[0xd]);
+          iVar10 = main_editor_004380e0(piVar11[0xd]);
 
           piVar11[0xe] = iVar10;
 
-          FUN_004382b0(iVar10,piVar11);
+          main_editor_004382b0(iVar10,piVar11);
 
           if ((*(uint *)(piVar11[0xe] + 0x1c8) & 0x8000000) != 0) {
 
@@ -1792,13 +1792,13 @@ LAB_00437d68:
 
           ; piVar11 = (int *)*piVar11) {
 
-        FUN_00438230(piVar11[0xe],piVar11);
+        main_editor_00438230(piVar11[0xe],piVar11);
 
       }
 
       for (; DAT_0059cd04 = piVar21, piVar20 != (int *)0x0; piVar20 = (int *)*piVar20) {
 
-        FUN_004382b0(piVar20[0xe],piVar20);
+        main_editor_004382b0(piVar20[0xe],piVar20);
 
         piVar21 = DAT_0059cd04;
 
@@ -2114,7 +2114,7 @@ LAB_00437d68:
 
   }
 
-  iVar10 = FUN_00437fa0(1);
+  iVar10 = main_editor_00437fa0(1);
 
   if (DAT_00632ad5 == '\0') {
 
@@ -2148,7 +2148,7 @@ LAB_00437d68:
 
 LAB_0043670e:
 
-  iVar10 = FUN_00437fa0(1);
+  iVar10 = main_editor_00437fa0(1);
 
   piVar11 = DAT_0059cbd8;
 
@@ -2242,7 +2242,7 @@ LAB_004367b5:
 
       if ((DAT_0059cbf4 != 0) &&
 
-         (iVar10 = FUN_004380e0(DAT_0059cbf4), piVar11 = DAT_0059cbd8, iVar10 != 0)) {
+         (iVar10 = main_editor_004380e0(DAT_0059cbf4), piVar11 = DAT_0059cbd8, iVar10 != 0)) {
 
         for (; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
@@ -2266,7 +2266,7 @@ LAB_004367b5:
 
       do {
 
-        FUN_00438230(piVar11[0xe],piVar11);
+        main_editor_00438230(piVar11[0xe],piVar11);
 
         piVar11 = (int *)*piVar11;
 
@@ -2276,11 +2276,11 @@ LAB_004367b5:
 
       for (; piVar21 != (int *)0x0; piVar21 = (int *)*piVar21) {
 
-        iVar10 = FUN_004380e0(piVar21[0xd]);
+        iVar10 = main_editor_004380e0(piVar21[0xd]);
 
         piVar21[0xe] = iVar10;
 
-        FUN_004382b0(iVar10,piVar21);
+        main_editor_004382b0(iVar10,piVar21);
 
         if ((*(uint *)(piVar21[0xe] + 0x1c8) & 0x8000000) != 0) {
 
@@ -2402,7 +2402,7 @@ LAB_004368ab:
 
       for (piVar11 = DAT_0059cbd8; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-        FUN_00438230(piVar11[0xe],piVar11);
+        main_editor_00438230(piVar11[0xe],piVar11);
 
       }
 
@@ -2824,9 +2824,9 @@ void main_editor_0043a590(void)
 
   
 
-  uVar2 = FUN_00428460(DAT_0059cd54,1);
+  uVar2 = main_dlog_00428460(DAT_0059cd54,1);
 
-  iVar3 = FUN_00428670(DAT_0059cd54,1,uVar2);
+  iVar3 = main_dlog_00428670(DAT_0059cd54,1,uVar2);
 
   DAT_0059cd40 = iVar3;
 
@@ -2834,7 +2834,7 @@ void main_editor_0043a590(void)
 
     DAT_0059cc30 = *(undefined4 *)(DAT_0059cd30 + iVar3 * 0x24);
 
-    FUN_00439490();
+    main_editor_00439490();
 
     DAT_0059cc38 = 6;
 
@@ -2856,79 +2856,79 @@ void main_editor_0043a590(void)
 
     case 0:
 
-      FUN_00439660();
+      main_editor_00439660();
 
       return;
 
     case 1:
 
-      FUN_00439DF0();
+      main_editor_00439df0();
 
       return;
 
     case 2:
 
-      FUN_0043a440();
+      main_editor_0043a440();
 
       return;
 
     case 3:
 
-      FUN_0043AA40();
+      main_editor_0043aa40();
 
       return;
 
     case 4:
 
-      FUN_0043B530();
+      main_editor_0043b530();
 
       return;
 
     case 5:
 
-      FUN_0043BD80();
+      main_editor_0043bd80();
 
       return;
 
     case 6:
 
-      FUN_0043C580();
+      main_editor_0043c580();
 
       return;
 
     case 7:
 
-      FUN_0043D0A0();
+      main_editor_0043d0a0();
 
       return;
 
     case 8:
 
-      FUN_00440230();
+      main_editor_00440230();
 
       return;
 
     case 9:
 
-      FUN_00440500();
+      main_editor_00440500();
 
       return;
 
     case 10:
 
-      FUN_0043F950();
+      main_editor_0043f950();
 
       return;
 
     case 0xb:
 
-      FUN_0043FBC0();
+      main_editor_0043fbc0();
 
       return;
 
     case 0xc:
 
-      FUN_0043FE90();
+      main_editor_0043fe90();
 
       return;
 
@@ -2938,11 +2938,11 @@ void main_editor_0043a590(void)
 
   else {
 
-    FUN_00439490();
+    main_editor_00439490();
 
     if (DAT_0059cbd8 == (undefined4 *)0x0) {
 
-      uVar2 = FUN_004380e0(*(undefined4 *)(DAT_0059cd30 + iVar3 * 0x24));
+      uVar2 = main_editor_004380e0(*(undefined4 *)(DAT_0059cd30 + iVar3 * 0x24));
 
       while (puVar5 = DAT_0059cbd8, puVar5 != (undefined4 *)0x0) {
 
@@ -2966,7 +2966,7 @@ void main_editor_0043a590(void)
 
       do {
 
-        FUN_00438230(puVar5[0xe],puVar5);
+        main_editor_00438230(puVar5[0xe],puVar5);
 
         puVar5 = (undefined4 *)*puVar5;
 
@@ -3092,7 +3092,7 @@ void main_editor_0043a590(void)
 
         do {
 
-          FUN_00438230(puVar5[0xe],puVar5);
+          main_editor_00438230(puVar5[0xe],puVar5);
 
           puVar5 = (undefined4 *)*puVar5;
 
@@ -3166,7 +3166,7 @@ void main_editor_0043a590(void)
 
         *puVar1 = 0;
 
-        uVar2 = FUN_004380e0(*(undefined4 *)(iVar3 * 0x24 + DAT_0059cd30));
+        uVar2 = main_editor_004380e0(*(undefined4 *)(iVar3 * 0x24 + DAT_0059cd30));
 
         DAT_0059cbd8[0xe] = uVar2;
 
@@ -3397,7 +3397,7 @@ void main_editor_00440d90(void)
 
         do {
 
-          FUN_00440770(iVar2,*(undefined4 *)(iVar6 + iVar7 * 4),0);
+          main_editor_00440770(iVar2,*(undefined4 *)(iVar6 + iVar7 * 4),0);
 
           iVar7 = iVar7 + 1;
 

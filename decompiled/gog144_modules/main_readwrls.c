@@ -601,7 +601,7 @@ LAB_004b10f8:
 
   *(undefined4 *)(DAT_006330e4 + 0x4e94) = 0xbd4ccccd;
 
-  FUN_004b0ea0();
+  main_readwrls_004b0ea0();
 
   local_400 = 0;
 

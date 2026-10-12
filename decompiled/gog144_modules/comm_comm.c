@@ -50,13 +50,13 @@ void comm_comm_00520490(void)
 
   
 
-  uVar3 = FUN_00428460(DAT_005def88,1);
+  uVar3 = main_dlog_00428460(DAT_005def88,1);
 
   if ((DAT_00633180 != 0) ||
 
-     (local_26c = (undefined4 *)FUN_00428670(DAT_005def88,1,uVar3), local_26c != (undefined4 *)0x0))
+     (local_26c = (undefined4 *)main_dlog_00428670(DAT_005def88,1,uVar3),
 
-  {
+     local_26c != (undefined4 *)0x0)) {
 
     MultiByteToWideChar(0,0,&DAT_0063304c,-1,local_208,0x208);
 
@@ -180,7 +180,7 @@ void comm_comm_00520490(void)
 
         FUN_0051fba0();
 
-        iVar5 = FUN_00428490(DAT_005def88,1);
+        iVar5 = main_dlog_00428490(DAT_005def88,1);
 
         if (0 < iVar5) {
 
@@ -188,7 +188,7 @@ void comm_comm_00520490(void)
 
           do {
 
-            iVar4 = FUN_00428670(DAT_005def88,1,iVar7);
+            iVar4 = main_dlog_00428670(DAT_005def88,1,iVar7);
 
             if (iVar4 != 0) {
 

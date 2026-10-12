@@ -151,7 +151,7 @@ void main_collgrid_00410200(int param_1)
 
       }
 
-      FUN_00410720(param_1,CONCAT44(&local_28c,local_278));
+      main_collgrid_00410720(param_1,CONCAT44(&local_28c,local_278));
 
       if (600 < (int)local_28c - (int)local_260) {
 
@@ -221,7 +221,7 @@ void main_collgrid_00410200(int param_1)
 
       local_26c = local_284;
 
-      FUN_00410720(param_1,local_278,&local_28c);
+      main_collgrid_00410720(param_1,local_278,&local_28c);
 
       pfVar7 = (float *)(*(int *)(*(int *)(param_1 + 8) + 0x400) + 0x44);
 
@@ -239,7 +239,7 @@ void main_collgrid_00410200(int param_1)
 
       local_278[0] = local_288;
 
-      FUN_00410720(param_1,local_278,&local_28c);
+      main_collgrid_00410720(param_1,local_278,&local_28c);
 
       if (600 < (int)local_28c - (int)local_260) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (5 named) — decompiled, names from PS2 symbols
+ * 90 functions (9 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -339,12 +339,12 @@ void FUN_004B0B40(void)
 
 }
 
-/* ===== FUN_004b0d80 @ 0x004B0D80 ===== */
+/* ===== main/readwrls_004b0d80 @ 0x004B0D80 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004b0d80(void)
+void main_readwrls_004b0d80(void)
 
 
 
@@ -376,12 +376,12 @@ void FUN_004b0d80(void)
 
 }
 
-/* ===== FUN_004b0e50 @ 0x004B0E50 ===== */
+/* ===== main/readwrls_004b0e50 @ 0x004B0E50 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_004b0e50(void)
+float10 main_readwrls_004b0e50(void)
 
 
 
@@ -391,8 +391,8 @@ float10 FUN_004b0e50(void)
 
 }
 
-/* ===== FUN_004b0e60 @ 0x004B0E60 ===== */
-void FUN_004b0e60(undefined4 param_1)
+/* ===== main/readwrls_004b0e60 @ 0x004B0E60 ===== */
+void main_readwrls_004b0e60(undefined4 param_1)
 
 
 
@@ -410,8 +410,8 @@ void FUN_004b0e60(undefined4 param_1)
 
 }
 
-/* ===== FUN_004b0ea0 @ 0x004B0EA0 ===== */
-void FUN_004b0ea0(void)
+/* ===== main/readwrls_004b0ea0 @ 0x004B0EA0 ===== */
+void main_readwrls_004b0ea0(void)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (8 named) — decompiled, names from PS2 symbols
+ * 142 functions (11 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -74,8 +74,8 @@ void FUN_004907e0(void)
 
 }
 
-/* ===== FUN_00490940 @ 0x00490940 ===== */
-void FUN_00490940(void)
+/* ===== Main/mission_00490940 @ 0x00490940 ===== */
+void Main_mission_00490940(void)
 
 
 
@@ -8030,7 +8030,7 @@ void FUN_00497c90(int param_1)
 
     do {
 
-      FUN_00508840(*puVar2);
+      main_texture_00508840(*puVar2);
 
       iVar1 = iVar1 + 1;
 
@@ -9847,11 +9847,11 @@ LAB_004991da:
 
       *(uint *)(iVar1 + 0xdc) = *(uint *)(iVar1 + 0xdc) | 0x80000000;
 
-      FUN_004704e0(&DAT_00632d78,iVar1);
+      main_linkage_004704e0(&DAT_00632d78,iVar1);
 
-      FUN_004704e0(&DAT_00632d70,iVar1);
+      main_linkage_004704e0(&DAT_00632d70,iVar1);
 
-      FUN_004704e0(&DAT_00632d74,iVar1);
+      main_linkage_004704e0(&DAT_00632d74,iVar1);
 
       if (param_1 == 1) {
 
@@ -14243,8 +14243,8 @@ LAB_0049f8f1:
 
 }
 
-/* ===== FUN_0049fb00 @ 0x0049FB00 ===== */
-void FUN_0049fb00(undefined4 param_1,int *param_2,int *param_3)
+/* ===== main/path_0049fb00 @ 0x0049FB00 ===== */
+void main_path_0049fb00(undefined4 param_1,int *param_2,int *param_3)
 
 
 
@@ -14302,8 +14302,8 @@ void FUN_0049fb00(undefined4 param_1,int *param_2,int *param_3)
 
 }
 
-/* ===== FUN_0049fb80 @ 0x0049FB80 ===== */
-void FUN_0049fb80(float *param_1,int *param_2,int *param_3,undefined1 *param_4)
+/* ===== main/path_0049fb80 @ 0x0049FB80 ===== */
+void main_path_0049fb80(float *param_1,int *param_2,int *param_3,undefined1 *param_4)
 
 
 

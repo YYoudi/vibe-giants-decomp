@@ -12,7 +12,7 @@ pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
 00405130,FUN_00405130,,loadsave_save__FPCc,0.525,w2-propagated,
 004053b0,FUN_004053B0,,AnimationCreate,0.95,w2-propagated-verified,
 00406bc0,FUN_00406BC0,,army_create_rpman__FP6OBJECTP9ArmyOrderifi,0.491,w2-propagated,
-00406dd0,FUN_00406DD0,,army_process_opcodes__FP6OBJECTPPUci,0.505,w2-propagated,
+00406dd0,FUN_00406DD0,,army_process_opcodes__FP6OBJECTPPUci,0.95,w2-propagated-verified,
 004078f0,FUN_004078F0,,army_create_platoon__FP6OBJECTPcT1,0.95,w2-propagated-verified,
 00407c40,FUN_00407C40,,meccbase_init,0.412,w2-propagated,
 00408530,FUN_00408530,,meccbaseitem_move,0.591,w2-propagated,

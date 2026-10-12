@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (2 named) — decompiled, names from PS2 symbols
+ * 105 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -2185,7 +2185,7 @@ LAB_00404137:
 
     do {
 
-      FUN_00404d70(param_1,pfVar4,uVar11,uVar9,(int)param_2 + 4 + (int)piVar8);
+      main_ANIMATE_00404d70(param_1,pfVar4,uVar11,uVar9,(int)param_2 + 4 + (int)piVar8);
 
       param_2 = (float)((int)param_2 + 0x20);
 
@@ -2201,7 +2201,7 @@ LAB_00404137:
 
     do {
 
-      FUN_00404d70(param_1,pfVar4,uVar11,uVar9,puVar10);
+      main_ANIMATE_00404d70(param_1,pfVar4,uVar11,uVar9,puVar10);
 
       uVar3 = *puVar10;
 
@@ -2909,12 +2909,12 @@ void FUN_004047c0(int param_1,int param_2,int param_3,int param_4)
 
 }
 
-/* ===== FUN_00404d70 @ 0x00404D70 ===== */
+/* ===== main/ANIMATE_00404d70 @ 0x00404D70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00404d70(int param_1,undefined4 param_2,int param_3,int param_4,uint *param_5)
+void main_ANIMATE_00404d70(int param_1,undefined4 param_2,int param_3,int param_4,uint *param_5)
 
 
 
@@ -3335,12 +3335,12 @@ int FUN_00406bc0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,u
 
 }
 
-/* ===== FUN_00406dd0 @ 0x00406DD0 ===== */
+/* ===== army_process_opcodes__FP6OBJECTPPUci @ 0x00406DD0 ===== */
 /* PS2 candidate: army_process_opcodes__FP6OBJECTPPUci (conf 0.505) */
 
 
 
-void FUN_00406dd0(int param_1,int *param_2,int param_3)
+void army_process_opcodes__FP6OBJECTPPUci(int param_1,int *param_2,int param_3)
 
 
 
@@ -4527,7 +4527,7 @@ void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined
 
     local_84 = DAT_005841b8 + iVar8;
 
-    FUN_00406dd0(param_1,&local_84,0);
+    army_process_opcodes__FP6OBJECTPPUci(param_1,&local_84,0);
 
     *(undefined4 *)(iVar1 + 8) = param_3;
 

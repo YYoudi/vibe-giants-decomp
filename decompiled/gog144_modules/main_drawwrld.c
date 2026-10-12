@@ -401,7 +401,7 @@ void main_drawwrld_00432e10(void)
 
       if (iVar1 != 0) {
 
-        FUN_00508840(iVar1);
+        main_texture_00508840(iVar1);
 
         FUN_005086e0(*(undefined4 *)(iVar3 + 0xc + DAT_006330e4));
 
@@ -409,7 +409,7 @@ void main_drawwrld_00432e10(void)
 
       if (*(int *)(iVar3 + DAT_006330e4) != 0) {
 
-        FUN_00508840(*(int *)(iVar3 + DAT_006330e4));
+        main_texture_00508840(*(int *)(iVar3 + DAT_006330e4));
 
         FUN_005086e0(*(undefined4 *)(iVar3 + DAT_006330e4));
 
@@ -419,7 +419,7 @@ void main_drawwrld_00432e10(void)
 
       if (iVar1 != 0) {
 
-        FUN_00508840(iVar1);
+        main_texture_00508840(iVar1);
 
         FUN_005086e0(*(undefined4 *)(iVar3 + -0xc + DAT_006330e4));
 
@@ -429,7 +429,7 @@ void main_drawwrld_00432e10(void)
 
       if (iVar1 != 0) {
 
-        FUN_00508840(iVar1);
+        main_texture_00508840(iVar1);
 
         FUN_005086e0(*(undefined4 *)(iVar3 + -0x18 + DAT_006330e4));
 
@@ -581,7 +581,7 @@ uint * main_drawwrld_00435170(int param_1,uint param_2,uint param_3)
 
   puVar3[0x1f] = 0;
 
-  FUN_00434f80(puVar3,0,0);
+  main_drawwrld_00434f80(puVar3,0,0);
 
   *(undefined4 *)(puVar3[7] + 4) = 0x33c;
 

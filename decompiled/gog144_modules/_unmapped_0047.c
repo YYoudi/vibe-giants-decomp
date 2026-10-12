@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (5 named) — decompiled, names from PS2 symbols
+ * 67 functions (12 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -28,8 +28,8 @@ void FUN_00470220(undefined4 param_1)
 
 }
 
-/* ===== FUN_00470480 @ 0x00470480 ===== */
-void FUN_00470480(undefined4 *param_1)
+/* ===== main/linkage_00470480 @ 0x00470480 ===== */
+void main_linkage_00470480(undefined4 *param_1)
 
 
 
@@ -81,8 +81,8 @@ void FUN_00470480(undefined4 *param_1)
 
 }
 
-/* ===== FUN_004704e0 @ 0x004704E0 ===== */
-void FUN_004704e0(int *param_1,int *param_2)
+/* ===== main/linkage_004704e0 @ 0x004704E0 ===== */
+void main_linkage_004704e0(int *param_1,int *param_2)
 
 
 
@@ -140,12 +140,12 @@ void FUN_004704e0(int *param_1,int *param_2)
 
 }
 
-/* ===== FUN_004705c0 @ 0x004705C0 ===== */
+/* ===== main/linkage_004705c0 @ 0x004705C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004705c0(void)
+void main_linkage_004705c0(void)
 
 
 
@@ -1586,8 +1586,8 @@ void FUN_00471dc0(void)
 
 }
 
-/* ===== FUN_004721b0 @ 0x004721B0 ===== */
-void FUN_004721b0(undefined4 param_1,undefined4 param_2)
+/* ===== main/makeobj_004721b0 @ 0x004721B0 ===== */
+void main_makeobj_004721b0(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -1599,10 +1599,12 @@ void FUN_004721b0(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00473570 @ 0x00473570 ===== */
-void FUN_00473570(float *param_1,float *param_2,float *param_3,int param_4,int param_5,int param_6,
+/* ===== main/makewrld_00473570 @ 0x00473570 ===== */
+void main_makewrld_00473570
 
-                 int param_7)
+               (float *param_1,float *param_2,float *param_3,int param_4,int param_5,int param_6,
+
+               int param_7)
 
 
 
@@ -1630,8 +1632,10 @@ void FUN_00473570(float *param_1,float *param_2,float *param_3,int param_4,int p
 
 }
 
-/* ===== FUN_00473e10 @ 0x00473E10 ===== */
-void FUN_00473e10(int param_1,int param_2,float *param_3,float *param_4,undefined4 param_5)
+/* ===== main/makewrld_00473e10 @ 0x00473E10 ===== */
+void main_makewrld_00473e10
+
+               (int param_1,int param_2,float *param_3,float *param_4,undefined4 param_5)
 
 
 
@@ -1735,8 +1739,8 @@ switchD_00473e6b_default:
 
 }
 
-/* ===== FUN_00473ff0 @ 0x00473FF0 ===== */
-undefined4 FUN_00473ff0(int param_1,int param_2,int param_3,int param_4,int param_5)
+/* ===== main/makewrld_00473ff0 @ 0x00473FF0 ===== */
+undefined4 main_makewrld_00473ff0(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -1904,7 +1908,7 @@ undefined4 FUN_00473ff0(int param_1,int param_2,int param_3,int param_4,int para
 
     }
 
-    FUN_00473e10(param_1,param_2,local_18,local_c,*(byte *)(iVar3 + 0xc) & 7);
+    main_makewrld_00473e10(param_1,param_2,local_18,local_c,*(byte *)(iVar3 + 0xc) & 7);
 
     switch(*(byte *)(iVar3 + 0xc) & 7) {
 

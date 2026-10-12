@@ -92,7 +92,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d2c = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d2c = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -128,7 +128,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d30 = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d30 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -164,7 +164,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d3c = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d3c = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -200,7 +200,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d40 = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d40 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -236,7 +236,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d44 = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d44 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -272,7 +272,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d48 = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d48 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -308,7 +308,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d38 = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d38 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -344,7 +344,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d34 = FUN_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d34 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 

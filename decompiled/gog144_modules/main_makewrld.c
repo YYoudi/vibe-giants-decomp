@@ -54,7 +54,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4eec) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4eec));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4eec));
 
       iVar3 = *piVar1;
 
@@ -78,7 +78,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      FUN_00508840(*piVar1);
+      main_texture_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -102,7 +102,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ee4) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4ee4));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ee4));
 
       iVar3 = *piVar1;
 
@@ -126,7 +126,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ee0) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4ee0));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ee0));
 
       iVar3 = *piVar1;
 
@@ -150,7 +150,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      FUN_00508840(*piVar1);
+      main_texture_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -174,7 +174,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ed8) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4ed8));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ed8));
 
       iVar3 = *piVar1;
 
@@ -198,7 +198,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ed4) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4ed4));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ed4));
 
       iVar3 = *piVar1;
 
@@ -222,7 +222,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      FUN_00508840(*piVar1);
+      main_texture_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -246,7 +246,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ecc) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4ecc));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ecc));
 
       iVar3 = *piVar1;
 
@@ -270,7 +270,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ec8) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4ec8));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ec8));
 
       iVar3 = *piVar1;
 
@@ -294,7 +294,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      FUN_00508840(*piVar1);
+      main_texture_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -318,7 +318,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ec0) != 0) {
 
-      FUN_00508840(*(int *)(DAT_006330e4 + 0x4ec0));
+      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ec0));
 
       iVar3 = *piVar1;
 
@@ -625,93 +625,129 @@ void main_makewrld_00473600(float *param_1)
 
             case 1:
 
-              FUN_00473570(local_48,local_54,local_3c,puVar1,iVar10,iVar8,
+              main_makewrld_00473570
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                        (local_48,local_54,local_3c,puVar1,iVar10,iVar8,
 
-              FUN_00473570(local_54,local_3c,local_48,puVar1,iVar5,iVar8,
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+              main_makewrld_00473570
 
-              FUN_00473570(local_3c,local_48,local_54,puVar1,iVar10,iVar8 + 1,
+                        (local_54,local_3c,local_48,puVar1,iVar5,iVar8,
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
+
+              main_makewrld_00473570
+
+                        (local_3c,local_48,local_54,puVar1,iVar10,iVar8 + 1,
+
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
               break;
 
             case 4:
 
-              FUN_00473570(local_3c,local_48,local_60,puVar1,iVar10,iVar8 + 1,
+              main_makewrld_00473570
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                        (local_3c,local_48,local_60,puVar1,iVar10,iVar8 + 1,
 
-              FUN_00473570(local_48,local_60,local_3c,puVar1,iVar10,iVar8,
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+              main_makewrld_00473570
 
-              FUN_00473570(local_60,local_3c,local_48,puVar1,iVar5,iVar8 + 1,
+                        (local_48,local_60,local_3c,puVar1,iVar10,iVar8,
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
+
+              main_makewrld_00473570
+
+                        (local_60,local_3c,local_48,puVar1,iVar5,iVar8 + 1,
+
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
               break;
 
             case 5:
 
-              FUN_00473570(local_3c,local_48,local_60,puVar1,iVar10,iVar8 + 1,
+              main_makewrld_00473570
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                        (local_3c,local_48,local_60,puVar1,iVar10,iVar8 + 1,
 
-              FUN_00473570(local_48,local_60,local_3c,puVar1,iVar10,iVar8,
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+              main_makewrld_00473570
 
-              FUN_00473570(local_60,local_3c,local_48,puVar1,iVar5,iVar8 + 1,
+                        (local_48,local_60,local_3c,puVar1,iVar10,iVar8,
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
+
+              main_makewrld_00473570
+
+                        (local_60,local_3c,local_48,puVar1,iVar5,iVar8 + 1,
+
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
             case 3:
 
-              FUN_00473570(local_54,local_60,local_48,puVar1,iVar5,iVar8,
+              main_makewrld_00473570
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                        (local_54,local_60,local_48,puVar1,iVar5,iVar8,
 
-              FUN_00473570(local_48,local_54,local_60,puVar1,iVar10,iVar8,
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+              main_makewrld_00473570
 
-              FUN_00473570(local_60,local_48,local_54,puVar1,iVar5,iVar8 + 1,
+                        (local_48,local_54,local_60,puVar1,iVar10,iVar8,
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
+
+              main_makewrld_00473570
+
+                        (local_60,local_48,local_54,puVar1,iVar5,iVar8 + 1,
+
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
               break;
 
             case 6:
 
-              FUN_00473570(local_48,local_54,local_3c,puVar1,iVar10,iVar8,
+              main_makewrld_00473570
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                        (local_48,local_54,local_3c,puVar1,iVar10,iVar8,
 
-              FUN_00473570(local_54,local_3c,local_48,puVar1,iVar5,iVar8,
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+              main_makewrld_00473570
 
-              FUN_00473570(local_3c,local_48,local_54,puVar1,iVar10,iVar8 + 1,
+                        (local_54,local_3c,local_48,puVar1,iVar5,iVar8,
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
+
+              main_makewrld_00473570
+
+                        (local_3c,local_48,local_54,puVar1,iVar10,iVar8 + 1,
+
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
             case 2:
 
-              FUN_00473570(local_60,local_3c,local_54,puVar1,iVar5,iVar8 + 1,
+              main_makewrld_00473570
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                        (local_60,local_3c,local_54,puVar1,iVar5,iVar8 + 1,
 
-              FUN_00473570(local_3c,local_54,local_60,puVar1,iVar10,iVar8 + 1,
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+              main_makewrld_00473570
 
-              FUN_00473570(local_54,local_60,local_3c,puVar1,iVar5,iVar8,
+                        (local_3c,local_54,local_60,puVar1,iVar10,iVar8 + 1,
 
-                           *(undefined4 *)(DAT_006330e4 + 0x1d8));
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
+
+              main_makewrld_00473570
+
+                        (local_54,local_60,local_3c,puVar1,iVar5,iVar8,
+
+                         *(undefined4 *)(DAT_006330e4 + 0x1d8));
 
               break;
 
@@ -1258,7 +1294,7 @@ void gti_terrain_load(undefined4 param_1)
 
       *piVar4 = iVar11;
 
-      FUN_00508720(puVar6);
+      main_texture_00508720(puVar6);
 
       puVar7 = puVar6;
 
@@ -1318,7 +1354,7 @@ void gti_terrain_load(undefined4 param_1)
 
       *piVar4 = iVar11;
 
-      FUN_00508720(puVar6);
+      main_texture_00508720(puVar6);
 
       puVar7 = (undefined4 *)*piVar4;
 
@@ -1376,7 +1412,7 @@ void gti_terrain_load(undefined4 param_1)
 
       *piVar4 = iVar11;
 
-      FUN_00508720(puVar6);
+      main_texture_00508720(puVar6);
 
       puVar7 = (undefined4 *)*piVar4;
 
@@ -1980,7 +2016,7 @@ switchD_0047500c_default:
 
           iStack_24 = iVar20;
 
-          iVar11 = FUN_00473ff0();
+          iVar11 = main_makewrld_00473ff0();
 
           if (iVar11 == 0) {
 
@@ -2022,7 +2058,7 @@ switchD_0047500c_default:
 
                   iStack_28 = iVar15;
 
-                  iVar3 = FUN_00473ff0();
+                  iVar3 = main_makewrld_00473ff0();
 
                   iVar11 = DAT_006330e4;
 

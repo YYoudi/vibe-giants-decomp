@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (3 named) — decompiled, names from PS2 symbols
+ * 48 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -3558,12 +3558,12 @@ int FUN_004f8800(float param_1)
 
 }
 
-/* ===== FUN_004f90e0 @ 0x004F90E0 ===== */
+/* ===== main/smoke_004f90e0 @ 0x004F90E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004f90e0(undefined4 param_1,float param_2)
+void main_smoke_004f90e0(undefined4 param_1,float param_2)
 
 
 
@@ -4822,7 +4822,7 @@ void FUN_004fa520(int param_1,float param_2)
 
       if (iVar3 != 0) {
 
-        FUN_00508720(iVar3);
+        main_texture_00508720(iVar3);
 
         uVar12 = uVar11 | 4;
 
