@@ -219,9 +219,9 @@ void FUN_004f3af0(int param_1)
 
       if ((iVar6 != 0) && (iVar6 == DAT_00632a88)) {
 
-        uVar7 = FUN_00507b40(s_SmChPHDone_00562284,4,0);
+        uVar7 = TextGetPtrRandom(s_SmChPHDone_00562284,4,0);
 
-        FUN_00536620(iVar1 + 0x80,uVar7);
+        chat_insert_name(iVar1 + 0x80,uVar7);
 
       }
 
@@ -309,11 +309,11 @@ void FUN_004f3af0(int param_1)
 
           }
 
-          FUN_004961c0(pcVar9,uVar7,0);
+          sound_play_stream(pcVar9,uVar7,0);
 
           uVar7 = FUN_00507b00(s_SmChGyropadDone_00562250,1,1);
 
-          FUN_00536620(iVar1 + 0x80,uVar7);
+          chat_insert_name(iVar1 + 0x80,uVar7);
 
         }
 
@@ -900,9 +900,9 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
       }
 
-      uVar3 = FUN_00507b40(pcVar5,4,0);
+      uVar3 = TextGetPtrRandom(pcVar5,4,0);
 
-      FUN_00536620(iVar4 + 0x80,uVar3);
+      chat_insert_name(iVar4 + 0x80,uVar3);
 
     }
 
@@ -1267,9 +1267,9 @@ LAB_004f5334:
 
     }
 
-    uVar7 = FUN_00507b40(pcVar8,4,0);
+    uVar7 = TextGetPtrRandom(pcVar8,4,0);
 
-    FUN_00536620(iVar5 + 0x80,uVar7);
+    chat_insert_name(iVar5 + 0x80,uVar7);
 
   }
 
@@ -1998,7 +1998,7 @@ void FUN_004f5c10(int param_1,int param_2,undefined4 param_3)
 
     uVar4 = FUN_0052aed0(param_2);
 
-    uVar4 = FUN_00507b40(s_SmChKidnapped_005622dc,uVar4);
+    uVar4 = TextGetPtrRandom(s_SmChKidnapped_005622dc,uVar4);
 
     uVar5 = 0xffffffff;
 
@@ -2940,7 +2940,7 @@ void smartie_get_name__FP6OBJECT(int param_1)
 
         FUN_00542f27(puVar8,s_SmNameSyl_c_d_005622f8,iVar9 + 0x41,uVar4 + 1);
 
-        pcVar5 = (char *)FUN_00507c10(puVar8);
+        pcVar5 = (char *)TextGetPtrQ(puVar8);
 
         uVar4 = 0xffffffff;
 

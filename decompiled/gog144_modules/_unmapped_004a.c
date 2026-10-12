@@ -5282,7 +5282,7 @@ void player_draw_missile_lock(void)
 
     fVar3 = (float)(fVar2 * (float10)1.2);
 
-    uVar1 = FUN_00507c10(s_MissileLock_0055eb2c,fVar3);
+    uVar1 = TextGetPtrQ(s_MissileLock_0055eb2c,fVar3);
 
     FUN_0051ba00(0xff0000,0,fVar3,0x3f000000,DAT_005a0ee4,uVar1);
 

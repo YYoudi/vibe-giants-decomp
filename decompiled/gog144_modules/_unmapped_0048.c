@@ -2607,7 +2607,9 @@ void FUN_00482b60(void)
 
     if ((DAT_006330e4 != 0) && (DAT_0059eedc < 1)) {
 
-      DAT_0059eedc = FUN_004961c0(s_intro_island_0055be84,*(undefined4 *)(DAT_006330e4 + 0x50e0),1);
+      DAT_0059eedc = sound_play_stream(s_intro_island_0055be84,
+
+                                       *(undefined4 *)(DAT_006330e4 + 0x50e0),1);
 
     }
 
@@ -3571,7 +3573,9 @@ void FUN_00483ba0(void)
 
     if ((DAT_006330e4 != 0) && (DAT_0059eedc < 1)) {
 
-      DAT_0059eedc = FUN_004961c0(s_intro_island_0055be84,*(undefined4 *)(DAT_006330e4 + 0x50e0),1);
+      DAT_0059eedc = sound_play_stream(s_intro_island_0055be84,
+
+                                       *(undefined4 *)(DAT_006330e4 + 0x50e0),1);
 
     }
 

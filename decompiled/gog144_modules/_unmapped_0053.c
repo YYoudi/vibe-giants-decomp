@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (5 named) — decompiled, names from PS2 symbols
+ * 179 functions (6 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -678,7 +678,7 @@ void FUN_00530520(int param_1,int param_2,int param_3)
 
     if ((-1 < param_3) && (param_3 < 0x45)) {
 
-      pbVar5 = (byte *)FUN_00507b40((&PTR_s_SuChatMissile_0057f3a8)[param_3]);
+      pbVar5 = (byte *)TextGetPtrRandom((&PTR_s_SuChatMissile_0057f3a8)[param_3]);
 
       pbVar11 = (&PTR_s_SuChatMissile_0057f3a8)[param_3];
 
@@ -888,7 +888,7 @@ LAB_005305d9:
 
     }
 
-    uVar8 = FUN_00507b40(s_MPChSuicide_0057fe44);
+    uVar8 = TextGetPtrRandom(s_MPChSuicide_0057fe44);
 
     FUN_00542f27(local_300,uVar8,pcVar3);
 
@@ -898,7 +898,7 @@ LAB_005305d9:
 
     if ((-1 < param_3) && (param_3 < 0x45)) {
 
-      pbVar5 = (byte *)FUN_00507b40((&PTR_s_DChatMissile_0057f290)[param_3]);
+      pbVar5 = (byte *)TextGetPtrRandom((&PTR_s_DChatMissile_0057f290)[param_3]);
 
       pbVar11 = (&PTR_s_DChatMissile_0057f290)[param_3];
 
@@ -1182,7 +1182,7 @@ LAB_005307b6:
 
     }
 
-    uVar8 = FUN_00507b40(s_MPChKilled_0057fe38);
+    uVar8 = TextGetPtrRandom(s_MPChKilled_0057fe38);
 
     FUN_00542f27(local_300,uVar8,pcVar4,pcVar3);
 
@@ -1351,7 +1351,7 @@ void FUN_005308b0(undefined4 param_1,int param_2)
 
     uVar2 = FUN_0052adf0(uVar6 & 0xff);
 
-    uVar3 = FUN_00507b40(s_MPChKilled_0057fe38);
+    uVar3 = TextGetPtrRandom(s_MPChKilled_0057fe38);
 
     FUN_00542f27(local_2c8,uVar3,uVar2,local_2f0);
 
@@ -1520,7 +1520,7 @@ void rpman_move(int param_1,int param_2)
 
       }
 
-      uVar4 = FUN_00507b40(s_MPChFlagCap_0057fe50);
+      uVar4 = TextGetPtrRandom(s_MPChFlagCap_0057fe50);
 
       FUN_00542f27(local_2c8,uVar4,uVar3,pcVar8);
 
@@ -4027,7 +4027,7 @@ LAB_00532513:
 
             else {
 
-              FUN_00536620(uVar5,pcVar15,bVar3 & 0xf,bVar3 & 0x20);
+              chat_insert_name(uVar5,pcVar15,bVar3 & 0xf,bVar3 & 0x20);
 
             }
 
@@ -9438,61 +9438,61 @@ void chat_init(void)
 
   _DAT_006328c0 = 0;
 
-  pcVar1 = (char *)FUN_00507c10(s_ChatColorSystem_00580248);
+  pcVar1 = (char *)TextGetPtrQ(s_ChatColorSystem_00580248);
 
   if (*pcVar1 != '?') {
 
-    uVar2 = FUN_00507c10(s_ChatColorSystem_00580248);
+    uVar2 = TextGetPtrQ(s_ChatColorSystem_00580248);
 
     _DAT_006328c4 = FUN_00536050(uVar2);
 
   }
 
-  pcVar1 = (char *)FUN_00507c10(s_ChatColorPlayerAll_00580234);
+  pcVar1 = (char *)TextGetPtrQ(s_ChatColorPlayerAll_00580234);
 
   if (*pcVar1 != '?') {
 
-    uVar2 = FUN_00507c10(s_ChatColorPlayerAll_00580234);
+    uVar2 = TextGetPtrQ(s_ChatColorPlayerAll_00580234);
 
     _DAT_006328c8 = FUN_00536050(uVar2);
 
   }
 
-  pcVar1 = (char *)FUN_00507c10(s_ChatColorPlayerTeam_00580220);
+  pcVar1 = (char *)TextGetPtrQ(s_ChatColorPlayerTeam_00580220);
 
   if (*pcVar1 != '?') {
 
-    uVar2 = FUN_00507c10(s_ChatColorPlayerTeam_00580220);
+    uVar2 = TextGetPtrQ(s_ChatColorPlayerTeam_00580220);
 
     _DAT_006328cc = FUN_00536050(uVar2);
 
   }
 
-  pcVar1 = (char *)FUN_00507c10(s_ChatColorSmartie_0058020c);
+  pcVar1 = (char *)TextGetPtrQ(s_ChatColorSmartie_0058020c);
 
   if (*pcVar1 != '?') {
 
-    uVar2 = FUN_00507c10(s_ChatColorSmartie_0058020c);
+    uVar2 = TextGetPtrQ(s_ChatColorSmartie_0058020c);
 
     _DAT_006328d0 = FUN_00536050(uVar2);
 
   }
 
-  pcVar1 = (char *)FUN_00507c10(s_ChatColorDisciple_005801f8);
+  pcVar1 = (char *)TextGetPtrQ(s_ChatColorDisciple_005801f8);
 
   if (*pcVar1 != '?') {
 
-    uVar2 = FUN_00507c10(s_ChatColorDisciple_005801f8);
+    uVar2 = TextGetPtrQ(s_ChatColorDisciple_005801f8);
 
     _DAT_006328d4 = FUN_00536050(uVar2);
 
   }
 
-  pcVar1 = (char *)FUN_00507c10(s_ChatColorMission_005801e4);
+  pcVar1 = (char *)TextGetPtrQ(s_ChatColorMission_005801e4);
 
   if (*pcVar1 != '?') {
 
-    uVar2 = FUN_00507c10(s_ChatColorMission_005801e4);
+    uVar2 = TextGetPtrQ(s_ChatColorMission_005801e4);
 
     _DAT_006328d8 = FUN_00536050(uVar2);
 
@@ -9803,12 +9803,12 @@ void FUN_00536580(char *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00536620 @ 0x00536620 ===== */
+/* ===== chat_insert_name @ 0x00536620 ===== */
 /* PS2 candidate: chat_insert_name (conf 0.75) */
 
 
 
-void FUN_00536620(char *param_1,char *param_2,undefined4 param_3,int param_4)
+void chat_insert_name(char *param_1,char *param_2,undefined4 param_3,int param_4)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (2 named) — decompiled, names from PS2 symbols
+ * 87 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -1896,7 +1896,7 @@ void teammecc_setup_enemies__FP6OBJECTi(int param_1)
 
       }
 
-      uVar4 = FUN_004961c0(pcVar16,uVar4,0);
+      uVar4 = sound_play_stream(pcVar16,uVar4,0);
 
       *(undefined4 *)(iVar11 + 0x1f8) = uVar4;
 
@@ -2068,7 +2068,7 @@ switchD_00501829_caseD_3:
 
                 }
 
-                FUN_004961c0(pcVar16,uVar4,0);
+                sound_play_stream(pcVar16,uVar4,0);
 
                 _DAT_0057a774 = 45.0;
 
@@ -2168,7 +2168,7 @@ switchD_00501829_caseD_3:
 
                 }
 
-                FUN_004961c0(pcVar16,uVar4,0);
+                sound_play_stream(pcVar16,uVar4,0);
 
                 _DAT_0057a774 = 45.0;
 
@@ -2176,11 +2176,11 @@ switchD_00501829_caseD_3:
 
               uVar4 = FUN_0049a180(*(undefined4 *)(*(int *)(iVar5 + 0x14) + 0x1e0));
 
-              uVar4 = FUN_00507b40(s_McChEnemyDead_0057b62c,uVar4);
+              uVar4 = TextGetPtrRandom(s_McChEnemyDead_0057b62c,uVar4);
 
               FUN_00542f27(auStack_100,uVar4);
 
-              FUN_00536620((&PTR_DAT_0057a920)[*(int *)(iVar11 + 0x174)],auStack_100,5,0);
+              chat_insert_name((&PTR_DAT_0057a920)[*(int *)(iVar11 + 0x174)],auStack_100,5,0);
 
               *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) & 0xfff7ffff;
 
@@ -5134,7 +5134,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
               }
 
-              uVar10 = FUN_004961c0(pcVar9,uVar10,0);
+              uVar10 = sound_play_stream(pcVar9,uVar10,0);
 
               *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -5456,7 +5456,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
               }
 
-              uVar10 = FUN_004961c0(pcVar9,uVar10,0);
+              uVar10 = sound_play_stream(pcVar9,uVar10,0);
 
               *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -5796,7 +5796,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
         if (iVar8 == 0) {
 
-          uVar10 = FUN_004961c0(s_BAZ_CT06_0057b7f4,*(undefined4 *)(DAT_006330e4 + 0x50e0),0);
+          uVar10 = sound_play_stream(s_BAZ_CT06_0057b7f4,*(undefined4 *)(DAT_006330e4 + 0x50e0),0);
 
           *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -6078,7 +6078,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
             }
 
-            uVar10 = FUN_004961c0(pcVar9,uVar10,0);
+            uVar10 = sound_play_stream(pcVar9,uVar10,0);
 
             *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -8760,12 +8760,12 @@ undefined * FUN_00507b00(undefined *param_1)
 
 }
 
-/* ===== FUN_00507b40 @ 0x00507B40 ===== */
+/* ===== TextGetPtrRandom @ 0x00507B40 ===== */
 /* PS2 candidate: TextGetPtrRandom (conf 0.75) */
 
 
 
-undefined * FUN_00507b40(undefined *param_1)
+undefined * TextGetPtrRandom(undefined *param_1)
 
 
 
@@ -8837,12 +8837,12 @@ undefined * FUN_00507b40(undefined *param_1)
 
 }
 
-/* ===== FUN_00507c10 @ 0x00507C10 ===== */
+/* ===== TextGetPtrQ @ 0x00507C10 ===== */
 /* PS2 candidate: TextGetPtrQ (conf 0.7) */
 
 
 
-undefined * FUN_00507c10(undefined1 *param_1)
+undefined * TextGetPtrQ(undefined1 *param_1)
 
 
 

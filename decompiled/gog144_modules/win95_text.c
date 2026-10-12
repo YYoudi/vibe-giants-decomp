@@ -202,91 +202,91 @@ void FUN_0051adb0(int param_1)
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor1_0057d768);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor1_0057d768);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor1_0057d768);
+      uVar3 = TextGetPtrQ(s_TextColor1_0057d768);
 
       _DAT_0057d6e4 = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor2_0057d75c);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor2_0057d75c);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor2_0057d75c);
+      uVar3 = TextGetPtrQ(s_TextColor2_0057d75c);
 
       _DAT_0057d6e8 = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor3_0057d750);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor3_0057d750);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor3_0057d750);
+      uVar3 = TextGetPtrQ(s_TextColor3_0057d750);
 
       _DAT_0057d6ec = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor4_0057d744);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor4_0057d744);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor4_0057d744);
+      uVar3 = TextGetPtrQ(s_TextColor4_0057d744);
 
       _DAT_0057d6f0 = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor5_0057d738);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor5_0057d738);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor5_0057d738);
+      uVar3 = TextGetPtrQ(s_TextColor5_0057d738);
 
       _DAT_0057d6f4 = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor6_0057d72c);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor6_0057d72c);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor6_0057d72c);
+      uVar3 = TextGetPtrQ(s_TextColor6_0057d72c);
 
       _DAT_0057d6f8 = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor7_0057d720);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor7_0057d720);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor7_0057d720);
+      uVar3 = TextGetPtrQ(s_TextColor7_0057d720);
 
       _DAT_0057d6fc = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor8_0057d714);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor8_0057d714);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor8_0057d714);
+      uVar3 = TextGetPtrQ(s_TextColor8_0057d714);
 
       _DAT_0057d700 = FUN_00536050(uVar3);
 
     }
 
-    pcVar2 = (char *)FUN_00507c10(s_TextColor9_0057d708);
+    pcVar2 = (char *)TextGetPtrQ(s_TextColor9_0057d708);
 
     if (*pcVar2 != '?') {
 
-      uVar3 = FUN_00507c10(s_TextColor9_0057d708);
+      uVar3 = TextGetPtrQ(s_TextColor9_0057d708);
 
       _DAT_0057d704 = FUN_00536050(uVar3);
 

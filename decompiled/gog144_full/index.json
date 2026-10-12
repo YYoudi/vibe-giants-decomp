@@ -2587,7 +2587,7 @@
  "0x00445A20": {
   "name": "FUN_00445a20",
   "named": false,
-  "len": 14662
+  "len": 14667
  },
  "0x00446620": {
   "name": "FUN_00446620",
@@ -2817,7 +2817,7 @@
  "0x00449CE0": {
   "name": "FUN_00449ce0",
   "named": false,
-  "len": 67219
+  "len": 20
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -4352,7 +4352,7 @@
  "0x00482B60": {
   "name": "FUN_00482b60",
   "named": false,
-  "len": 3415
+  "len": 3461
  },
  "0x00482E90": {
   "name": "FUN_00482e90",
@@ -4382,7 +4382,7 @@
  "0x00483BA0": {
   "name": "FUN_00483ba0",
   "named": false,
-  "len": 2711
+  "len": 2757
  },
  "0x00483E50": {
   "name": "FUN_00483e50",
@@ -4925,9 +4925,9 @@
   "len": 406
  },
  "0x004961C0": {
-  "name": "FUN_004961c0",
-  "named": false,
-  "len": 469
+  "name": "sound_play_stream",
+  "named": true,
+  "len": 474
  },
  "0x004961E0": {
   "name": "FUN_004961e0",
@@ -5682,7 +5682,7 @@
  "0x004A5E10": {
   "name": "player_draw_missile_lock",
   "named": true,
-  "len": 733
+  "len": 732
  },
  "0x004A5EB0": {
   "name": "FUN_004a5eb0",
@@ -7602,7 +7602,7 @@
  "0x004F3AF0": {
   "name": "FUN_004f3af0",
   "named": false,
-  "len": 3630
+  "len": 3647
  },
  "0x004F3DE0": {
   "name": "FUN_004f3de0",
@@ -7637,7 +7637,7 @@
  "0x004F4C00": {
   "name": "smartie_lock_to_player",
   "named": true,
-  "len": 3523
+  "len": 3531
  },
  "0x004F4ED0": {
   "name": "FUN_004f4ed0",
@@ -7652,7 +7652,7 @@
  "0x004F50C0": {
   "name": "smartie_unlock_from_player",
   "named": true,
-  "len": 3844
+  "len": 3852
  },
  "0x004F5410": {
   "name": "FUN_004f5410",
@@ -7677,7 +7677,7 @@
  "0x004F5C10": {
   "name": "FUN_004f5c10",
   "named": false,
-  "len": 3988
+  "len": 3992
  },
  "0x004F6090": {
   "name": "FUN_004f6090",
@@ -7707,7 +7707,7 @@
  "0x004F7C10": {
   "name": "smartie_get_name__FP6OBJECT",
   "named": true,
-  "len": 2462
+  "len": 2461
  },
  "0x004F8350": {
   "name": "FUN_004f8350",
@@ -7987,7 +7987,7 @@
  "0x00501740": {
   "name": "teammecc_setup_enemies__FP6OBJECTi",
   "named": true,
-  "len": 22780
+  "len": 22803
  },
  "0x005025D0": {
   "name": "FUN_005025d0",
@@ -8037,7 +8037,7 @@
  "0x00504980": {
   "name": "teammecc_set_mode",
   "named": true,
-  "len": 24873
+  "len": 24893
  },
  "0x005059B0": {
   "name": "FUN_005059b0",
@@ -8060,14 +8060,14 @@
   "len": 381
  },
  "0x00507B40": {
-  "name": "FUN_00507b40",
-  "named": false,
-  "len": 924
+  "name": "TextGetPtrRandom",
+  "named": true,
+  "len": 928
  },
  "0x00507C10": {
-  "name": "FUN_00507c10",
-  "named": false,
-  "len": 458
+  "name": "TextGetPtrQ",
+  "named": true,
+  "len": 457
  },
  "0x00507C50": {
   "name": "FUN_00507c50",
@@ -9017,7 +9017,7 @@
  "0x0051ADB0": {
   "name": "FUN_0051adb0",
   "named": false,
-  "len": 4845
+  "len": 4827
  },
  "0x0051B160": {
   "name": "FUN_0051b160",
@@ -9402,7 +9402,7 @@
  "0x00521620": {
   "name": "FUN_00521620",
   "named": false,
-  "len": 1519
+  "len": 1518
  },
  "0x005217B0": {
   "name": "FUN_005217b0",
@@ -9482,7 +9482,7 @@
  "0x00522580": {
   "name": "FUN_00522580",
   "named": false,
-  "len": 1093
+  "len": 1092
  },
  "0x005226B0": {
   "name": "FUN_005226b0",
@@ -9507,7 +9507,7 @@
  "0x005233F0": {
   "name": "FUN_005233f0",
   "named": false,
-  "len": 22323
+  "len": 22291
  },
  "0x00524DE0": {
   "name": "FUN_00524de0",
@@ -9622,7 +9622,7 @@
  "0x0052A050": {
   "name": "FUN_0052a050",
   "named": false,
-  "len": 9283
+  "len": 9282
  },
  "0x0052A940": {
   "name": "FUN_0052a940",
@@ -10182,17 +10182,17 @@
  "0x00530520": {
   "name": "FUN_00530520",
   "named": false,
-  "len": 11125
+  "len": 11141
  },
  "0x005308B0": {
   "name": "FUN_005308b0",
   "named": false,
-  "len": 2286
+  "len": 2290
  },
  "0x005309E0": {
   "name": "rpman_move",
   "named": true,
-  "len": 2380
+  "len": 2384
  },
  "0x00530B10": {
   "name": "FUN_00530b10",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 35913
+  "len": 35917
  },
  "0x00532E20": {
   "name": "FUN_00532e20",
@@ -10382,7 +10382,7 @@
  "0x00536170": {
   "name": "chat_init",
   "named": true,
-  "len": 1711
+  "len": 1699
  },
  "0x005362D0": {
   "name": "FUN_005362d0",
@@ -10400,9 +10400,9 @@
   "len": 620
  },
  "0x00536620": {
-  "name": "FUN_00536620",
-  "named": false,
-  "len": 1458
+  "name": "chat_insert_name",
+  "named": true,
+  "len": 1462
  },
  "0x00536700": {
   "name": "FUN_00536700",

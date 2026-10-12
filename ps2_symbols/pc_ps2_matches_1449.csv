@@ -1,47 +1,58 @@
 pc_addr,pc_name,ps2_addr,ps2_name,shared,conf,sample_shared
 00501740,FUN_00501740,0x001df5f0,teammecc_setup_enemies__FP6OBJECTi,14,1.0,BAZ_CT60 | BAZ_CT61 | BAZ_CT63
 00504980,FUN_00504980,0x001e2cd8,teammecc_set_mode,11,1.0,AIMeccAttackLoc | AIMeccAttackTarg | AIMeccBusy
-00476dd0,FUN_00476dd0,0x0015fce8,marker_get_name,9,1.0,***Uninitialized*** | ***Unused*** | Army Generic %d
+00476dd0,FUN_00476dd0,0x0015fce8,marker_get_name,10,1.0,***Uninitialized*** | ***Unused*** | Army Generic %d
 00536170,FUN_00536170,0x001dd200,chat_init,6,1.0,ChatColorDisciple | ChatColorMission | ChatColorPlayerAll
+00507970,FUN_00507970,0x001e5720,TextPtrInit__Fv,3,1.0,keydata | keyoffs | textdata
 0041c0c0,FUN_0041c0c0,0x0011eb50,bldg_get_bldg_name,2,0.667,BaseBldgMeccBase | BaseBldgReaperBase
 004498e0,FUN_004498e0,0x0012ef70,fx_setupTextureAnimtion__FP10FXSTACKTAGif,2,0.667,Fx Texture Animation | Fx Texture Frames
 0045ba70,FUN_0045ba70,0x00141100,AttackObject__FP6OBJECTT0P3P3DT2fi,2,0.667,Kabutomessage1 | Kabutomessage2
+00480540,FUN_00480540,0x00168ef0,mecc_special_weapon_logic__FP6OBJECT,2,0.667,PhErrNotGround | PhErrNotOnSomething
+004950a0,FUN_004950a0,0x00171370,read_sfx_bin,2,0.667,sfxdef | sounds
 004f4c00,FUN_004f4c00,0x001d3748,smartie_lock_to_player,2,0.667,SmChPHPickup | SmChPickup
 004f50c0,FUN_004f50c0,0x001d3d58,smartie_unlock_from_player,2,0.667,SmChDropBase | SmChDropoff
-004f7c10,FUN_004f7c10,0x001d63c0,smartie_get_name__FP6OBJECT,2,0.519,Borjoyzee | SmNameSyl%c%d
+00509ba0,FUN_00509ba0,0x001e7600,tracer_get_tracer,2,0.667,seglist | tracer
 00409030,FUN_00409030,0x0010fa10,meccbaseitem_finish_building,1,0.333,BaseChatMCPHouseDone
 0040b220,FUN_0040b220,0x001e68c0,texture_object_debug_dump,1,0.333,bloodblob
+0042ea60,FUN_0042ea60,0x001e68c0,texture_object_debug_dump,1,0.333,n_wind
 00442f70,FUN_00442f70,0x001e68c0,texture_object_debug_dump,1,0.333,b_flames
 00446ee0,FUN_00446ee0,0x001e68c0,texture_object_debug_dump,1,0.333,GiantFont_Eng
+004481e0,FUN_004481e0,0x0012d0b8,fx_get_free_effect__Fv,1,0.333,fx list
 00449400,FUN_00449400,0x0012e7d0,fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii,1,0.333,fx_emitter
 004496d0,FUN_004496d0,0x0012ea30,fx_setupTracer__FP10FXSTACKTAG,1,0.333,fx_tracer
 00459930,FUN_00459930,0x0013d6d8,inv_award_item,1,0.333,InvChPickupItem
 0045e9b0,FUN_0045e9b0,0x001435d8,validate_eat__FP6OBJECTT0,1,0.333,Kabutomessage3
-00474440,FUN_00474440,0x0015b718,alloc_bump_reference__FPP7TextureP7Texture,1,0.333,ground bump texture
+004721d0,FUN_004721d0,0x00173ad0,object_clone_objectset,1,0.333,vertuv
 00476e90,FUN_00476e90,0x0016b158,showchat_mission_objective__Fi,1,0.333,MissionObjective
 00477050,FUN_00477050,0x0016b158,showchat_mission_objective__Fi,1,0.333,MissionObjective
+004776c0,FUN_004776c0,0x00160378,marker_create_path__FP6OBJECTi,1,0.333,spline objs
 0047e0b0,FUN_0047e0b0,0x00166990,mecc_fire_logic__FP6OBJECT,1,0.333,HintWaitRepair
-00480540,FUN_00480540,0x00168ef0,mecc_special_weapon_logic__FP6OBJECT,1,0.333,PhErrNotGround
 00495f20,FUN_00495f20,0x00172168,sound_get_free_sequence__Fv,1,0.333,sequence list
+00496b30,FUN_00496b30,0x00172ea0,object_allocate_init,1,0.333,bigobj
+0049fd40,FUN_0049fd40,0x0017aa78,path_world_init__Fv,1,0.333,bridge
 004a5e10,FUN_004a5e10,0x00180888,player_draw_missile_lock,1,0.333,MissileLock
 004a8e10,FUN_004a8e10,0x00184918,KabutoProcAnimsCreate,1,0.333,Kabuto UsrAnm Memory
+004ae310,FUN_004ae310,0x00198520,reread_globals_bin,1,0.333,gadata
+004b0ab0,FUN_004b0ab0,0x0019b3e8,world_get_nicename,1,0.333,[null]
 004b0b70,FUN_004b0b70,0x0019b480,read_world_list,1,0.333,worlddata
+004b0fc0,FUN_004b0fc0,0x0019e980,finish_worldanim_list__FiP9WorldAnim,1,0.333,walist
 004b5640,FUN_004b5640,0x0019fc40,reaperbasebldg_finish_building,1,0.333,BaseChatRpPHouseDone
 004bfcc0,FUN_004bfcc0,0x001a8048,reaper_finish_shrinker,1,0.333,SpellHintShrink
 004c0010,FUN_004c0010,0x001a85b0,reaper_finish_slow_follow__FP6OBJECTPUi,1,0.333,slow follow custom
 004c62c0,FUN_004c62c0,0x001ae088,firewall_create_fire__FP6OBJECTT0Uifffi,1,0.333,SpellHintFire
 004f3af0,FUN_004f3af0,0x00168ef0,mecc_special_weapon_logic__FP6OBJECT,1,0.333,SmChPHDone
-00507970,FUN_00507970,0x001e5720,TextPtrInit__Fv,1,0.333,textdata
 00518be0,FUN_00518be0,0x0012bd38,FRateSlowTime,1,0.333,slow frate list
+0051cc20,FUN_0051cc20,0x0018cdf8,CheckSaveGameName__Fv,1,0.333,Giants
+0053a780,FUN_0053a780,0x0016a150,MemString,1,0.333,memstr
+004f7c10,FUN_004f7c10,0x001d63c0,smartie_get_name__FP6OBJECT,1,0.222,SmNameSyl%c%d
 00447270,FUN_00447270,0x0012c110,fx_setupWeather__Fi,1,0.167,fx weather
 00449ba0,FUN_00449ba0,0x0012f528,fx_setupVerticleFade__FP10FXSTACKTAGfffff,1,0.167,fx vfade
-0045a900,FUN_0045a900,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
-0045ab30,FUN_0045ab30,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
-004776c0,FUN_004776c0,0x0014f560,lift_logic__FP6OBJECT,1,0.167,spline objs
+0045a900,FUN_0045a900,0x0013e648,item_drop_backheld,1,0.167,InvChDropItem
+0045ab30,FUN_0045ab30,0x0013e648,item_drop_backheld,1,0.167,InvChDropItem
+00474440,FUN_00474440,0x0015c080,make_world_PS2,1,0.167,wbboxes
 004810d0,FUN_004810d0,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
 004a8190,FUN_004a8190,0x00182bc8,ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef,1,0.167,UsrAnm Memory
-004b4560,FUN_004b4560,0x0011e9e0,base_get_required_smarties__FP6OBJECTi,1,0.167,Extractor
-004beee0,FUN_004beee0,0x001a9e70,reaper_special_action_logic__FP6OBJECT,1,0.167,InvChDropItem
+004beee0,FUN_004beee0,0x0013e648,item_drop_backheld,1,0.167,InvChDropItem
 004c1170,FUN_004c1170,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
 004f5950,FUN_004f5950,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
-005309e0,FUN_005309e0,0x001d0218,smartie_move,1,0.167,Borjoyzee
+005309e0,FUN_005309e0,0x001c39b8,rpman_move,1,0.167,Borjoyzee

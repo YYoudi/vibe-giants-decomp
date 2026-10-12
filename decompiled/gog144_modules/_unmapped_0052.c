@@ -1231,7 +1231,7 @@ void FUN_00521620(int param_1)
 
   FUN_00542f27(local_80,s_GameTeam_s_0057dfbc,(&PTR_PTR_0057dc54)[param_1]);
 
-  uVar3 = FUN_00507c10(local_80);
+  uVar3 = TextGetPtrQ(local_80);
 
   FUN_00427890(DAT_005def8c,0x130,DAT_0057dc9c,0x41300000,0x81000002,uVar3);
 
@@ -2403,7 +2403,7 @@ void FUN_00522580(int param_1,int param_2)
 
     }
 
-    uVar2 = FUN_00507c10(pcVar1);
+    uVar2 = TextGetPtrQ(pcVar1);
 
     FUN_00427890(DAT_005def8c,0x1fb,DAT_0057dc98 - 0.01,0x41f00000,0x85000002,uVar2);
 
@@ -3276,51 +3276,51 @@ void FUN_005233f0(void)
 
     DAT_005def8c = FUN_00427150();
 
-    uVar3 = FUN_00507c10(s_CommShowConnTitle_0057e340);
+    uVar3 = TextGetPtrQ(s_CommShowConnTitle_0057e340);
 
     FUN_00427890(DAT_005def8c,5,0x3d3851ec,0x40666666,0x80000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnHPlayers_0057e328);
+    uVar3 = TextGetPtrQ(s_CommShowConnHPlayers_0057e328);
 
     FUN_00427890(DAT_005def8c,0xb,0x3da3d70a,0x41400000,0x81000000,uVar3);
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0xc,0x3e800000,0x41400000,0x81000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnHPing_0057e300);
+    uVar3 = TextGetPtrQ(s_CommShowConnHPing_0057e300);
 
     FUN_00427890(DAT_005def8c,0xd,0x3ed70a3d,0x41400000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnHScore_0057e2ec);
+    uVar3 = TextGetPtrQ(s_CommShowConnHScore_0057e2ec);
 
     FUN_00427890(DAT_005def8c,0xe,0x3ef0a3d7,0x41400000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0xf,0x3f028f5c,0x41400000,0x81000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnHTeams_0057e2c4);
+    uVar3 = TextGetPtrQ(s_CommShowConnHTeams_0057e2c4);
 
     FUN_00427890(DAT_005def8c,7,0x3da3d70a,0x40e00000,0x81000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnHCount_0057e2b0);
+    uVar3 = TextGetPtrQ(s_CommShowConnHCount_0057e2b0);
 
     FUN_00427890(DAT_005def8c,8,0x3e6147ae,0x40e00000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,9,0x3e8f5c29,0x40e00000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnHDeaths_0057e29c);
+    uVar3 = TextGetPtrQ(s_CommShowConnHDeaths_0057e29c);
 
     FUN_00427890(DAT_005def8c,10,0x3eae147b,0x40e00000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnHGame_0057e288);
+    uVar3 = TextGetPtrQ(s_CommShowConnHGame_0057e288);
 
     FUN_00427890(DAT_005def8c,0x10,0x3f4ccccd,0x40e00000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x12d,DAT_0057dc9c - 0.01,0x41100000,0x85000002,uVar3);
 
@@ -3368,7 +3368,7 @@ void FUN_005233f0(void)
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x12f,DAT_0057dc9c - 0.01,0x41200000,0x85000002,uVar3);
 
@@ -3434,7 +3434,7 @@ void FUN_005233f0(void)
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x131,DAT_0057dc9c - 0.01,0x41300000,0x85000002,uVar3);
 
@@ -3486,7 +3486,7 @@ LAB_00523950:
 
     DAT_00632ee4 = iVar6;
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x135,DAT_0057dc9c - 0.01,0x41400000,0x85000002,uVar3);
 
@@ -3584,11 +3584,11 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x11,0x3f4ccccd,0x41600000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnLMaxPl_0057e20c);
+    uVar3 = TextGetPtrQ(s_CommShowConnLMaxPl_0057e20c);
 
     FUN_00427890(DAT_005def8c,0x191,DAT_0057dc98 - 0.01,0x41700000,0x85000002,uVar3);
 
@@ -3626,7 +3626,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x193,DAT_0057dc98 - 0.01,0x41800000,0x85000002,uVar3);
 
@@ -3668,7 +3668,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x19f,DAT_0057dc98 - 0.01,0x41880000,0x85000002,uVar3);
 
@@ -3702,7 +3702,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x195,DAT_0057dc98 - 0.01,0x41900000,0x85000002,uVar3);
 
@@ -3738,7 +3738,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x197,DAT_0057dc98 - 0.01,0x41980000,0x85000002,uVar3);
 
@@ -3798,7 +3798,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x199,DAT_0057dc98 - 0.01,0x41a00000,0x85000002,uVar3);
 
@@ -3868,7 +3868,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x19b,DAT_0057dc98 - 0.01,0x41a80000,0x85000002,uVar3);
 
@@ -3930,7 +3930,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x1a1,DAT_0057dc98 - 0.01,0x41b00000,0x85000002,uVar3);
 
@@ -3984,7 +3984,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x1a3,DAT_0057dc98 - 0.01,0x41b80000,0x85000002,uVar3);
 
@@ -4018,11 +4018,11 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x12,0x3f4ccccd,0x41c80000,0x89000000,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnLTimeLimit_0057e118);
+    uVar3 = TextGetPtrQ(s_CommShowConnLTimeLimit_0057e118);
 
     FUN_00427890(DAT_005def8c,0x1f5,DAT_0057dc98 - 0.01,0x41d00000,0x85000002,uVar3);
 
@@ -4082,7 +4082,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x19d,DAT_0057dc98,0x41d80000,0x81000002,uVar3);
 
@@ -4100,7 +4100,7 @@ LAB_00523950:
 
     FUN_00427860(DAT_005def8c,0x19d,(-(uint)bVar2 & 0x282792) + 0xa0a0a0);
 
-    uVar3 = FUN_00507c10(s_CommShowConnLPScoreLimit_0057e0e4);
+    uVar3 = TextGetPtrQ(s_CommShowConnLPScoreLimit_0057e0e4);
 
     FUN_00427890(DAT_005def8c,0x1f7,DAT_0057dc98 - 0.01,0x41e00000,0x85000002,uVar3);
 
@@ -4160,7 +4160,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x1f9,DAT_0057dc98 - 0.01,0x41e80000,0x85000002,uVar3);
 
@@ -4228,7 +4228,7 @@ LAB_00523950:
 
     }
 
-    uVar3 = FUN_00507c10();
+    uVar3 = TextGetPtrQ();
 
     FUN_00427890(DAT_005def8c,0x1fb,DAT_0057dc98 - 0.01,0x41f00000,0x85000002,uVar3);
 
@@ -4248,7 +4248,7 @@ LAB_00523950:
 
     FUN_00522580(DAT_00632ff0,uVar3);
 
-    uVar3 = FUN_00507c10(s_CommShowConnLEndGameNow_0057e0b0);
+    uVar3 = TextGetPtrQ(s_CommShowConnLEndGameNow_0057e0b0);
 
     FUN_00427890(DAT_005def8c,0x1fd,DAT_0057dc98,0x41f80000,0x81000002,uVar3);
 
@@ -6687,7 +6687,7 @@ void FUN_0052a050(int param_1)
 
         FUN_00542f27(local_4c4,s_BaseLevel_s_0057dfc8,(&PTR_DAT_0057dc8c)[iVar8]);
 
-        uVar4 = FUN_00507c10(local_4c4);
+        uVar4 = TextGetPtrQ(local_4c4);
 
         FUN_00427890(DAT_005def8c,0x132,DAT_0057dc9c,0x41400000,0x81000002,uVar4);
 

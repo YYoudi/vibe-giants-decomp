@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (1 named) — decompiled, names from PS2 symbols
+ * 142 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -6751,14 +6751,14 @@ void FUN_00495ee0(int *param_1)
 
 }
 
-/* ===== FUN_004961c0 @ 0x004961C0 ===== */
+/* ===== sound_play_stream @ 0x004961C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: sound_play_stream (conf 0.621) */
 
 
 
-undefined4 FUN_004961c0(void)
+undefined4 sound_play_stream(void)
 
 
 
