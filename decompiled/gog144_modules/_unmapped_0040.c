@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (1 named) — decompiled, names from PS2 symbols
+ * 105 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -3100,7 +3100,7 @@ LAB_00404e2f:
 
   if ((uVar2 & 1) != 0) {
 
-    FUN_00495550(uVar7,param_1);
+    sound_play_player(uVar7,param_1);
 
   }
 
@@ -3211,7 +3211,7 @@ int FUN_00406bc0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,u
 
   
 
-  iVar3 = FUN_00496c00(0xd7,0x80000000);
+  iVar3 = object_allocate_type(0xd7,0x80000000);
 
   iVar2 = *(int *)(iVar3 + 0x100);
 
@@ -3522,7 +3522,7 @@ void FUN_00406dd0(int param_1,int *param_2,int param_3)
 
 LAB_004072d1:
 
-          FUN_004078f0(param_1,pfVar14,pfVar15);
+          army_create_platoon__FP6OBJECTPcT1(param_1,pfVar14,pfVar15);
 
           iVar11 = *(int *)(param_1 + 0x100);
 
@@ -4444,12 +4444,12 @@ switchD_00406e2f_caseD_1:
 
 }
 
-/* ===== FUN_004078f0 @ 0x004078F0 ===== */
-/* PS2 candidate: army_create_platoon__FP6OBJECTPcT1 (conf 0.417) */
+/* ===== army_create_platoon__FP6OBJECTPcT1 @ 0x004078F0 ===== */
+/* PS2 candidate: army_create_platoon__FP6OBJECTPcT1 (conf 0.46699999999999997) */
 
 
 
-void FUN_004078f0(int param_1,undefined4 param_2,undefined4 param_3)
+void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -4684,7 +4684,7 @@ void FUN_00407c40(int param_1)
 
   }
 
-  iVar2 = FUN_00496c00(*piVar1,0);
+  iVar2 = object_allocate_type(*piVar1,0);
 
   if (iVar2 != 0) {
 
@@ -4734,7 +4734,7 @@ void FUN_00407c40(int param_1)
 
     } while ((int)piVar6 < 0x554e60);
 
-    iVar3 = FUN_00496c00(0x342,0);
+    iVar3 = object_allocate_type(0x342,0);
 
     FUN_004186c0(iVar2,0,&local_c,&local_10);
 
@@ -6079,7 +6079,7 @@ LAB_004090c8:
 
         uVar5 = FUN_00497d20(*(int *)(&DAT_00554564 + iVar3 * 0x58));
 
-        FUN_00497450(iVar6,uVar5);
+        object_set_objectset(iVar6,uVar5);
 
       }
 
@@ -6461,7 +6461,7 @@ void FUN_00409780(int param_1,int param_2,int param_3)
 
       uVar2 = FUN_00497d20(*(int *)(&DAT_00554564 + param_2 * 0x58));
 
-      FUN_00497450(iVar1,uVar2);
+      object_set_objectset(iVar1,uVar2);
 
       return;
 
@@ -6475,7 +6475,7 @@ void FUN_00409780(int param_1,int param_2,int param_3)
 
       uVar2 = FUN_00497d20(*(int *)(&DAT_00554568 + param_2 * 0x58));
 
-      FUN_00497450(iVar1,uVar2);
+      object_set_objectset(iVar1,uVar2);
 
       return;
 
@@ -6485,7 +6485,7 @@ void FUN_00409780(int param_1,int param_2,int param_3)
 
   else {
 
-    FUN_00497450(iVar1,param_2);
+    object_set_objectset(iVar1,param_2);
 
   }
 
@@ -6631,7 +6631,7 @@ void FUN_00409b60(int param_1,int param_2)
 
 LAB_00409bc6:
 
-  FUN_004101d0(param_1);
+  collgrid_clear_grid(param_1);
 
   *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x800;
 
@@ -6719,7 +6719,7 @@ LAB_00409bc6:
 
         fx_get_free_effect__Fv();
 
-        FUN_004954e0(0x615,param_1,pcVar7,uVar8,puVar9);
+        sound_play_obj(0x615,param_1,pcVar7,uVar8,puVar9);
 
         return;
 
@@ -6865,7 +6865,7 @@ undefined4 FUN_0040a5e0(int param_1,int param_2)
 
     uVar1 = *(undefined4 *)(iVar2 + 0x30);
 
-    iVar2 = FUN_00496c00((&DAT_00554560)[param_2 * 0x16],0x80000000);
+    iVar2 = object_allocate_type((&DAT_00554560)[param_2 * 0x16],0x80000000);
 
     FUN_004993c0(iVar2,&local_c);
 
@@ -7794,7 +7794,7 @@ void FUN_0040afb0(int param_1,int param_2)
 
   }
 
-  iVar3 = FUN_00496c00(uVar4,0);
+  iVar3 = object_allocate_type(uVar4,0);
 
   *(int *)(iVar1 + 0x52c + param_2 * 4) = iVar3;
 
@@ -9647,7 +9647,7 @@ void FUN_0040d280(void)
 
     }
 
-    FUN_00495550(uVar2,DAT_00632a88);
+    sound_play_player(uVar2,DAT_00632a88);
 
     DAT_005550c4 = 3;
 
@@ -9659,7 +9659,7 @@ void FUN_0040d280(void)
 
   if (iVar1 != 0) {
 
-    FUN_00495550(0x397,DAT_00632a88);
+    sound_play_player(0x397,DAT_00632a88);
 
     return;
 
@@ -9673,7 +9673,7 @@ void FUN_0040d280(void)
 
     if (iVar1 != 0) {
 
-      FUN_00495550(0x6db,DAT_00632a88);
+      sound_play_player(0x6db,DAT_00632a88);
 
     }
 
@@ -9681,7 +9681,7 @@ void FUN_0040d280(void)
 
   }
 
-  FUN_00495550(0x5e9,DAT_00632a88);
+  sound_play_player(0x5e9,DAT_00632a88);
 
   return;
 
@@ -9742,7 +9742,7 @@ void FUN_0040d370(void)
 
     }
 
-    FUN_00495550(uVar2,DAT_00632a88);
+    sound_play_player(uVar2,DAT_00632a88);
 
     DAT_005550c4 = 0;
 
@@ -9754,7 +9754,7 @@ void FUN_0040d370(void)
 
   if (iVar1 != 0) {
 
-    FUN_00495550(0x397,DAT_00632a88);
+    sound_play_player(0x397,DAT_00632a88);
 
     return;
 
@@ -9768,7 +9768,7 @@ void FUN_0040d370(void)
 
     if (iVar1 != 0) {
 
-      FUN_00495550(0x6db,DAT_00632a88);
+      sound_play_player(0x6db,DAT_00632a88);
 
     }
 
@@ -9776,7 +9776,7 @@ void FUN_0040d370(void)
 
   }
 
-  FUN_00495550(0x5e9,DAT_00632a88);
+  sound_play_player(0x5e9,DAT_00632a88);
 
   return;
 
@@ -10760,7 +10760,7 @@ void FUN_0040e1c0(int param_1)
 
       fx_get_free_effect__Fv();
 
-      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
+      sound_play_obj(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10776,7 +10776,7 @@ void FUN_0040e1c0(int param_1)
 
       fx_get_free_effect__Fv();
 
-      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
+      sound_play_obj(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10792,7 +10792,7 @@ void FUN_0040e1c0(int param_1)
 
       fx_get_free_effect__Fv();
 
-      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
+      sound_play_obj(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10810,7 +10810,7 @@ LAB_0040e451:
 
       fx_get_free_effect__Fv();
 
-      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
+      sound_play_obj(0x48c,param_1,pcVar3,uVar4,puVar5);
 
       return;
 
@@ -10834,7 +10834,7 @@ LAB_0040e451:
 
       fx_get_free_effect__Fv();
 
-      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
+      sound_play_obj(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10850,7 +10850,7 @@ LAB_0040e451:
 
       fx_get_free_effect__Fv();
 
-      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
+      sound_play_obj(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10866,7 +10866,7 @@ LAB_0040e451:
 
       fx_get_free_effect__Fv();
 
-      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
+      sound_play_obj(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 

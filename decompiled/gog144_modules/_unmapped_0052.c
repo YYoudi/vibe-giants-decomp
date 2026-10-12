@@ -134,7 +134,7 @@ LAB_005200bb:
 
   }
 
-  DAT_0059ee98 = FUN_00496c00(0x403,0x80000000);
+  DAT_0059ee98 = object_allocate_type(0x403,0x80000000);
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
@@ -397,7 +397,7 @@ void FUN_00520B90(void)
 
       FUN_0051ea20(s_gamespy_send_statechange_called_a_0057df34);
 
-      FUN_00495920(0x65a);
+      sound_play(0x65a);
 
       return;
 
@@ -407,7 +407,7 @@ void FUN_00520B90(void)
 
       FUN_0051ea20(s_gamespy_send_statechange_called_w_0057df04);
 
-      FUN_00495920(0x65a);
+      sound_play(0x65a);
 
       return;
 
@@ -417,7 +417,7 @@ void FUN_00520B90(void)
 
   }
 
-  FUN_00495920(0x65a);
+  sound_play(0x65a);
 
   return;
 
@@ -514,7 +514,7 @@ void FUN_00520D70(void)
 
     FUN_0052f170(0);
 
-    FUN_00495920(0x65a);
+    sound_play(0x65a);
 
     if ((0xd < DAT_00632f08) && (DAT_005def8c != 0)) {
 
@@ -669,7 +669,7 @@ void FUN_00520FD0(void)
 
       FUN_0051ea20(s_gamespy_send_statechange_called_a_0057df34);
 
-      FUN_00495920(0x65a);
+      sound_play(0x65a);
 
       return;
 
@@ -679,7 +679,7 @@ void FUN_00520FD0(void)
 
       FUN_0051ea20(s_gamespy_send_statechange_called_w_0057df04);
 
-      FUN_00495920(0x65a);
+      sound_play(0x65a);
 
       return;
 
@@ -689,7 +689,7 @@ void FUN_00520FD0(void)
 
   }
 
-  FUN_00495920(0x65a);
+  sound_play(0x65a);
 
   return;
 
@@ -894,7 +894,7 @@ void FUN_00521150(int param_1,int param_2)
 
         FUN_0052ea80(local_200,1,0,0);
 
-        FUN_00495920(0x65a);
+        sound_play(0x65a);
 
       }
 

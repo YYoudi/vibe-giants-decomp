@@ -3323,7 +3323,7 @@ LAB_005319de:
 
            (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
 
-          iVar6 = FUN_00496c00(*(undefined4 *)(pcVar15 + 1),0x80000000);
+          iVar6 = object_allocate_type(*(undefined4 *)(pcVar15 + 1),0x80000000);
 
           iVar4 = *(int *)(iVar6 + 0x100);
 
@@ -3399,9 +3399,9 @@ LAB_005319de:
 
            (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
 
-          iVar4 = FUN_00496c00(*(undefined4 *)(pcVar15 + 1),0);
+          iVar4 = object_allocate_type(*(undefined4 *)(pcVar15 + 1),0);
 
-          FUN_00499e70(iVar4,0x25);
+          object_change_ospec(iVar4,0x25);
 
           puVar2 = *(uint **)(iVar4 + 0x100);
 
@@ -3521,9 +3521,9 @@ LAB_005319de:
 
         if ((iVar4 != 0) && (9 < DAT_00632f08)) {
 
-          iVar4 = FUN_00496c00(*(undefined4 *)(pcVar15 + 0x11),0);
+          iVar4 = object_allocate_type(*(undefined4 *)(pcVar15 + 0x11),0);
 
-          FUN_00499e70(iVar4,0x59);
+          object_change_ospec(iVar4,0x59);
 
           *(undefined4 *)(iVar4 + 0xa0) = *(undefined4 *)(pcVar15 + 5);
 
@@ -3599,7 +3599,7 @@ LAB_005319de:
 
            (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1)), iVar4 == 0)) {
 
-          iVar4 = FUN_00496c00(0x3df,2);
+          iVar4 = object_allocate_type(0x3df,2);
 
           *(uint *)(iVar4 + 0x1d0) = *(uint *)(iVar4 + 0x1d0) | 0xf0f;
 
@@ -3773,7 +3773,7 @@ LAB_00532b21:
 
            (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1)), iVar4 == 0)) {
 
-          iVar4 = FUN_00496c00(0x434,0x80000000);
+          iVar4 = object_allocate_type(0x434,0x80000000);
 
           *(undefined4 *)(iVar4 + 0x188) = *(undefined4 *)(pcVar15 + 1);
 
@@ -5202,7 +5202,7 @@ LAB_0053369f:
 
     if ((*(byte *)(param_1 + 0xc) & 0x10) != 0) {
 
-      FUN_004801c0(iVar2);
+      mecc_enable_personal_shield(iVar2);
 
     }
 
@@ -5631,13 +5631,13 @@ void FUN_00533b00(int param_1)
 
     }
 
-    iVar5 = FUN_00496c00(0x2e9,0x80000000);
+    iVar5 = object_allocate_type(0x2e9,0x80000000);
 
     if (iVar5 != 0) {
 
       *(undefined4 *)(iVar5 + 0x188) = *(undefined4 *)(param_1 + 1);
 
-      FUN_00499e70(iVar5,0x4b);
+      object_change_ospec(iVar5,0x4b);
 
       FUN_0046b3f0(iVar5,param_1 + 5);
 

@@ -191,19 +191,19 @@ void FUN_00510f50(float param_1,float param_2)
 
   }
 
-  FUN_00495840(uVar5,iVar2);
+  sound_play_3dpos(uVar5,iVar2);
 
   iVar3 = FUN_004d5730(100);
 
   if (0x31 < iVar3) {
 
-    FUN_00495840(0x550,iVar2);
+    sound_play_3dpos(0x550,iVar2);
 
     return;
 
   }
 
-  FUN_00495840(0x54f,iVar2);
+  sound_play_3dpos(0x54f,iVar2);
 
   return;
 
@@ -1743,7 +1743,7 @@ int FUN_005129d0(undefined4 *param_1,uint param_2,int param_3,int param_4,undefi
 
   }
 
-  iVar2 = FUN_00496c00(DAT_0057bffc,0);
+  iVar2 = object_allocate_type(DAT_0057bffc,0);
 
   *(undefined4 *)(iVar2 + 0xc4) = param_5;
 
@@ -1922,7 +1922,7 @@ undefined4 FUN_00512c80(int param_1,undefined4 param_2,undefined4 param_3,undefi
 
     if (iVar4 != 0) {
 
-      iVar4 = FUN_00496c00(0x332,0x400);
+      iVar4 = object_allocate_type(0x332,0x400);
 
       *(undefined4 *)(iVar4 + 0xa0) = *(undefined4 *)(param_1 + 0xa0);
 
@@ -1936,7 +1936,7 @@ undefined4 FUN_00512c80(int param_1,undefined4 param_2,undefined4 param_3,undefi
 
       *(uint *)(iVar4 + 0xd8) = *(uint *)(iVar4 + 0xd8) | 0x40000000;
 
-      FUN_00499e70(iVar4,0x54);
+      object_change_ospec(iVar4,0x54);
 
       fx_get_free_effect__Fv();
 
@@ -4327,7 +4327,7 @@ void FUN_00515710(int param_1,undefined4 *param_2,float param_3,float param_4,un
 
   if (0.0 < param_3) {
 
-    iVar2 = FUN_00496c00(*(undefined4 *)(DAT_00632ed8 + 0x1e8),param_5);
+    iVar2 = object_allocate_type(*(undefined4 *)(DAT_00632ed8 + 0x1e8),param_5);
 
     fVar5 = (float10)FUN_004d5780(-*(float *)(DAT_00632ed8 + 0x218),
 
@@ -4546,7 +4546,7 @@ void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float p
 
           FUN_0050ae40((float)fVar8,&param_6,&param_7);
 
-          iVar4 = FUN_00496c00(0x89,uVar3);
+          iVar4 = object_allocate_type(0x89,uVar3);
 
           *(undefined4 *)(iVar4 + 0xa0) = *(undefined4 *)(param_1 + 0xa0);
 
@@ -4668,7 +4668,7 @@ void FUN_00515ba0(undefined4 param_1)
 
         fVar3 = pfVar5[-1];
 
-        iVar4 = FUN_00496c00(*(undefined4 *)(DAT_00632ed8 + 0x1e8),param_1);
+        iVar4 = object_allocate_type(*(undefined4 *)(DAT_00632ed8 + 0x1e8),param_1);
 
         fVar6 = (float10)FUN_004d5780(-*(float *)(DAT_00632ed8 + 0x218),
 
@@ -16239,7 +16239,7 @@ void FUN_0051FC90(void)
 
   }
 
-  DAT_0059ee98 = FUN_00496c00(0x403,0x80000000);
+  DAT_0059ee98 = object_allocate_type(0x403,0x80000000);
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 

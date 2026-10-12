@@ -510,7 +510,7 @@ LAB_004195d2:
 
     }
 
-    iVar8 = FUN_00496c00(uVar7,0x80000000);
+    iVar8 = object_allocate_type(uVar7,0x80000000);
 
     FUN_0041b390(iVar8,param_1);
 
@@ -1076,7 +1076,7 @@ LAB_004195d2:
 
           _DAT_00657674 = 0x40000000;
 
-          FUN_00495920(0x651);
+          sound_play(0x651);
 
         }
 

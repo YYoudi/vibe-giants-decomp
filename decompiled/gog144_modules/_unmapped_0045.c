@@ -2286,7 +2286,7 @@ LAB_0045282a:
 
 LAB_00452a14:
 
-  FUN_00495920(0x673);
+  sound_play(0x673);
 
   return;
 
@@ -3315,7 +3315,7 @@ void FUN_004544f0(void)
 
     }
 
-    FUN_00495920(0x674);
+    sound_play(0x674);
 
     return;
 
@@ -3323,7 +3323,7 @@ void FUN_004544f0(void)
 
   FUN_004417a0();
 
-  FUN_00495920(0x674);
+  sound_play(0x674);
 
   return;
 
@@ -4786,7 +4786,7 @@ LAB_00455d20:
 
   if (0 < param_3) {
 
-    iVar3 = FUN_00497150(param_3,0x20);
+    iVar3 = object_allocate_type_end(param_3,0x20);
 
     *(undefined4 *)(iVar3 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
@@ -5373,7 +5373,7 @@ int FUN_00456470(int param_1,undefined4 param_2,int param_3)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00496c00(*(undefined4 *)(iVar4 + 4),0x80000000);
+  iVar2 = object_allocate_type(*(undefined4 *)(iVar4 + 4),0x80000000);
 
   *(int *)(iVar2 + 0x274) = param_1;
 
@@ -7434,7 +7434,7 @@ LAB_00458528:
 
   if (param_2 == 0xb) {
 
-    iVar7 = FUN_00497150(0x3c,0x21);
+    iVar7 = object_allocate_type_end(0x3c,0x21);
 
     *(undefined4 *)(iVar7 + 0x18c) = uVar5;
 
@@ -7462,7 +7462,7 @@ LAB_0045863f:
 
   else if (param_2 == 0x13) {
 
-    iVar7 = FUN_00497150(0x381,0x20);
+    iVar7 = object_allocate_type_end(0x381,0x20);
 
     *(undefined4 *)(iVar7 + 0x214) = 0;
 
@@ -7476,7 +7476,7 @@ LAB_0045863f:
 
     uVar5 = FUN_004a8fb0(0x13,1,0x20);
 
-    iVar7 = FUN_00497150(uVar5);
+    iVar7 = object_allocate_type_end(uVar5);
 
     *(undefined4 *)(iVar7 + 0x214) = 2;
 
@@ -7486,7 +7486,7 @@ LAB_0045863f:
 
     uVar5 = FUN_004a8fb0(param_2,1,0x20);
 
-    iVar7 = FUN_00497150(uVar5);
+    iVar7 = object_allocate_type_end(uVar5);
 
     goto LAB_0045863f;
 
@@ -9771,9 +9771,9 @@ void FUN_0045a740(undefined4 *param_1,undefined4 param_2,int param_3)
 
   }
 
-  iVar2 = FUN_00496c00(iVar2,0);
+  iVar2 = object_allocate_type(iVar2,0);
 
-  FUN_00499e70(iVar2,0x25);
+  object_change_ospec(iVar2,0x25);
 
   puVar1 = *(undefined4 **)(iVar2 + 0x100);
 
@@ -9856,9 +9856,9 @@ int FUN_0045a820(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   }
 
-  iVar3 = FUN_00496c00(iVar3,0);
+  iVar3 = object_allocate_type(iVar3,0);
 
-  FUN_00499e70(iVar3,0x25);
+  object_change_ospec(iVar3,0x25);
 
   puVar2 = *(undefined4 **)(iVar3 + 0x100);
 
@@ -10086,7 +10086,7 @@ void FUN_0045ab30(int param_1)
 
         }
 
-        FUN_00495550(0x578,param_1);
+        sound_play_player(0x578,param_1);
 
         local_104 = (undefined4 *)0x0;
 
@@ -12075,7 +12075,7 @@ void FUN_0045d190(int param_1,byte param_2,undefined4 param_3)
 
   if ((*(float *)(iVar4 + 0x158) != fVar1) || ((char)param_3 != '\0')) {
 
-    FUN_00495550(0x6e4,param_1);
+    sound_play_player(0x6e4,param_1);
 
     iVar3 = FUN_0052e4a0(param_1);
 
@@ -12203,7 +12203,7 @@ undefined4 FUN_0045d300(uint *param_1)
 
   if (param_1[0x3a] != 0) {
 
-    FUN_00499e70(param_1,0xf);
+    object_change_ospec(param_1,0xf);
 
     return 0;
 
@@ -12333,7 +12333,7 @@ undefined4 FUN_0045d300(uint *param_1)
 
   puVar2[0x58] = puVar2[0x59];
 
-  iVar5 = FUN_00496c00(0x2ed,1);
+  iVar5 = object_allocate_type(0x2ed,1);
 
   *(uint **)(iVar5 + 0x210) = puVar3;
 
@@ -12349,7 +12349,7 @@ undefined4 FUN_0045d300(uint *param_1)
 
   *(uint *)(iVar5 + 0xdc) = *(uint *)(iVar5 + 0xdc) | 0x2000000;
 
-  uVar6 = FUN_00496c00(0x3fa,1);
+  uVar6 = object_allocate_type(0x3fa,1);
 
   puVar2[0x54] = uVar6;
 
@@ -12373,9 +12373,9 @@ undefined4 FUN_0045d300(uint *param_1)
 
   do {
 
-    uVar6 = FUN_00497150(0x362,0);
+    uVar6 = object_allocate_type_end(0x362,0);
 
-    FUN_00499e70(uVar6,0);
+    object_change_ospec(uVar6,0);
 
     *(uint *)(uVar6 + 0x18c) = puVar3[99];
 
@@ -12393,9 +12393,9 @@ undefined4 FUN_0045d300(uint *param_1)
 
   } while (local_4 != 0);
 
-  uVar6 = FUN_00497150(0x3d4,0);
+  uVar6 = object_allocate_type_end(0x3d4,0);
 
-  FUN_00499e70(uVar6,0);
+  object_change_ospec(uVar6,0);
 
   *(uint *)(uVar6 + 0x18c) = puVar3[99];
 
@@ -12415,7 +12415,7 @@ LAB_0045d6d4:
 
     uVar6 = puVar3[0x40];
 
-    FUN_00495550(0x6e4,puVar3);
+    sound_play_player(0x6e4,puVar3);
 
     iVar5 = FUN_0052e4a0(puVar3);
 
@@ -12457,7 +12457,7 @@ LAB_0045d736:
 
     uVar6 = puVar3[0x40];
 
-    FUN_00495550(0x6e4,puVar3);
+    sound_play_player(0x6e4,puVar3);
 
     iVar5 = FUN_0052e4a0(puVar3);
 
@@ -12861,7 +12861,7 @@ LAB_0045dd27:
 
       if ((float)piVar6[1] != 0.0) {
 
-        iVar7 = FUN_00497150(0x4ba,0x80000000);
+        iVar7 = object_allocate_type_end(0x4ba,0x80000000);
 
         if (iVar7 != 0) {
 
@@ -13049,7 +13049,7 @@ LAB_0045de98:
 
           if (iVar7 != 0) {
 
-            FUN_004954e0(0x407,iVar7);
+            sound_play_obj(0x407,iVar7);
 
             iVar5 = FUN_0052e4a0(param_1);
 
@@ -13413,7 +13413,7 @@ void FUN_0045e440(int param_1)
 
         if (*(int *)(param_1 + 0x10) != 0xca) {
 
-          FUN_00495550(0x453,param_1);
+          sound_play_player(0x453,param_1);
 
           FUN_004034a0(param_1,0xca,0x20,0,0,0x3e800000);
 
@@ -13423,7 +13423,7 @@ void FUN_0045e440(int param_1)
 
           iVar5 = *(int *)(param_1 + 0x100);
 
-          iVar6 = FUN_00496c00(0x4af,0x80000000);
+          iVar6 = object_allocate_type(0x4af,0x80000000);
 
           *(int *)(iVar5 + 0x32c) = iVar6;
 
@@ -13471,13 +13471,13 @@ LAB_0045e62f:
 
           if ((*(uint *)(param_1 + 0x30) & 2) == 0) goto LAB_0045e648;
 
-          FUN_00495550(0x453,param_1);
+          sound_play_player(0x453,param_1);
 
           goto LAB_0045e62f;
 
         }
 
-        FUN_00495550(0x455,param_1);
+        sound_play_player(0x455,param_1);
 
         uVar12 = 0;
 
@@ -13489,7 +13489,7 @@ LAB_0045e62f:
 
       else {
 
-        FUN_00495550(0x455,param_1);
+        sound_play_player(0x455,param_1);
 
         uVar12 = 0x3e800000;
 
@@ -13519,7 +13519,7 @@ LAB_0045e648:
 
       iVar5 = *(int *)(param_1 + 0x100);
 
-      iVar6 = FUN_00496c00(0x4af,0x80000000);
+      iVar6 = object_allocate_type(0x4af,0x80000000);
 
       *(int *)(iVar5 + 0x32c) = iVar6;
 
@@ -13597,7 +13597,7 @@ LAB_0045e51d:
 
       else {
 
-        FUN_00495550(0x452,param_1);
+        sound_play_player(0x452,param_1);
 
         FUN_00495700(0x453,param_1);
 
@@ -13609,7 +13609,7 @@ LAB_0045e51d:
 
     else {
 
-      FUN_00495550(0x452,param_1);
+      sound_play_player(0x452,param_1);
 
       FUN_00495700(0x453,param_1);
 

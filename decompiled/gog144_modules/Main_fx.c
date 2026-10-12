@@ -136,7 +136,7 @@ int fx_setupWeather__Fi(int p0)
 
   
 
-  iVar2 = FUN_00496c00(p0,0);
+  iVar2 = object_allocate_type(p0,0);
 
   iVar1 = *(int *)(iVar2 + 0x100);
 

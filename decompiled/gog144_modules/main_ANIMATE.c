@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/ANIMATE
- * 8 functions (6 named) — decompiled, names from PS2 symbols
+ * 8 functions (7 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/ANIMATE.c(pp) (assert-string evidence)
  */
 
@@ -431,12 +431,12 @@ LAB_0040534a:
 
 }
 
-/* ===== FUN_004053b0 @ 0x004053B0 ===== */
-/* PS2 candidate: AnimationCreate (conf 0.595) */
+/* ===== AnimationCreate @ 0x004053B0 ===== */
+/* PS2 candidate: AnimationCreate (conf 0.645) */
 
 
 
-void FUN_004053b0(undefined4 *param_1,int param_2,char *param_3)
+void AnimationCreate(undefined4 *param_1,int param_2,char *param_3)
 
 
 

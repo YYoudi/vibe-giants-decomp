@@ -259,7 +259,7 @@ LAB_00440295:
 
       main_dlog_004281f0(DAT_0059cd6c,1,local_100);
 
-      uVar5 = FUN_00476e90(iVar2);
+      uVar5 = showchat_mission_objective__Fi(iVar2);
 
       FUN_004287c0(DAT_0059cd6c,1,iVar2,uVar5);
 
@@ -1223,7 +1223,7 @@ void FUN_004417a0(void)
 
   DAT_00632a88 = DAT_0059cbb0;
 
-  DAT_00632a88 = FUN_00496c00(2,0x80000000);
+  DAT_00632a88 = object_allocate_type(2,0x80000000);
 
   FUN_0049b8a0(DAT_00632a88);
 
@@ -1248,7 +1248,7 @@ void FUN_004419d0(undefined4 param_1)
 
   
 
-  iVar3 = FUN_00496c00(*(undefined4 *)(DAT_00632ed8 + 0x420),0x80000000);
+  iVar3 = object_allocate_type(*(undefined4 *)(DAT_00632ed8 + 0x420),0x80000000);
 
   puVar2 = *(undefined4 **)(iVar3 + 0x100);
 
@@ -1278,7 +1278,7 @@ void FUN_004419d0(undefined4 param_1)
 
   *puVar1 = *puVar1 | 4;
 
-  iVar3 = FUN_00496c00(*(undefined4 *)(DAT_00632ed8 + 0x44c),0x80000000);
+  iVar3 = object_allocate_type(*(undefined4 *)(DAT_00632ed8 + 0x44c),0x80000000);
 
   puVar2 = *(undefined4 **)(iVar3 + 0x100);
 
@@ -1306,9 +1306,9 @@ void FUN_004419d0(undefined4 param_1)
 
   *(uint *)(*(int *)(iVar3 + 8) + 4) = *(uint *)(*(int *)(iVar3 + 8) + 4) | 4;
 
-  iVar3 = FUN_00496c00(0x274,0);
+  iVar3 = object_allocate_type(0x274,0);
 
-  FUN_00499e70(iVar3,0x10);
+  object_change_ospec(iVar3,0x10);
 
   FUN_004036f0(iVar3,1);
 
@@ -1353,7 +1353,7 @@ void FUN_00441d20(undefined4 *param_1,float param_2)
 
   
 
-  iVar2 = FUN_00496c00(0x2a0,0x80000000);
+  iVar2 = object_allocate_type(0x2a0,0x80000000);
 
   fVar1 = *(float *)(DAT_00632ed8 + 0x50c) * param_2;
 
@@ -1383,7 +1383,7 @@ void FUN_00441d20(undefined4 *param_1,float param_2)
 
   do {
 
-    iVar3 = FUN_00496c00(0x29f,0x80000000);
+    iVar3 = object_allocate_type(0x29f,0x80000000);
 
     FUN_0049bc90(iVar2,param_2,iVar3 + 0xa0);
 
@@ -1609,7 +1609,7 @@ void FUN_00442330(undefined4 param_1,int param_2)
 
       if (*(int *)(iVar4 + 0x188) != 0) {
 
-        iVar6 = FUN_00496c00(*(undefined4 *)(iVar4 + 4),0x11);
+        iVar6 = object_allocate_type(*(undefined4 *)(iVar4 + 4),0x11);
 
         *(undefined4 *)(iVar6 + 0x170) = *(undefined4 *)(iVar4 + 0x170);
 
@@ -1864,7 +1864,7 @@ void FUN_00442ec0(int param_1)
 
         }
 
-        FUN_00495840(0x63b,param_1 + 0xa0);
+        sound_play_3dpos(0x63b,param_1 + 0xa0);
 
       }
 
@@ -3632,7 +3632,7 @@ undefined4 FUN_004444c0(int param_1)
 
   }
 
-  FUN_004975c0();
+  object_list_update();
 
   FUN_0044efd0();
 
@@ -5131,7 +5131,7 @@ LAB_00445a50:
 
     if (-1 < (int)puVar12[2]) {
 
-      FUN_004954e0(puVar12[3],puVar12[2] * 0x874 + 0xc + param_1[0x28]);
+      sound_play_obj(puVar12[3],puVar12[2] * 0x874 + 0xc + param_1[0x28]);
 
       puVar12 = puVar12 + puVar12[1];
 
@@ -5181,7 +5181,7 @@ LAB_00445a50:
 
     if (-1 < (int)puVar12[2]) {
 
-      FUN_00495920(puVar12[2]);
+      sound_play(puVar12[2]);
 
       puVar12 = puVar12 + puVar12[1];
 
@@ -6150,7 +6150,7 @@ int FUN_00446890(void)
 
       FUN_005155c0();
 
-      FUN_004975c0();
+      object_list_update();
 
       DAT_0059ce54 = main_flick_00443740(DAT_0059ce54);
 
@@ -7289,7 +7289,7 @@ void FUN_00447f20(int param_1,byte param_2)
 
       FUN_00499500(iVar1);
 
-      FUN_00470710(iVar1);
+      object_lock_logic(iVar1);
 
     }
 
@@ -8005,7 +8005,7 @@ int fx_createGameLockedObj__FP6FxDataiii
 
   if ((*(byte *)(param_1 + 0x10) & 4) != 0) {
 
-    iVar4 = FUN_00496c00(param_3,0);
+    iVar4 = object_allocate_type(param_3,0);
 
     piVar1 = *(int **)(iVar4 + 0x100);
 
@@ -8057,7 +8057,7 @@ int fx_createGameLockedObj__FP6FxDataiii
 
     }
 
-    FUN_00470710(iVar4);
+    object_lock_logic(iVar4);
 
     *(undefined4 *)(iVar4 + 0xfc) = *(undefined4 *)(param_1 + 8);
 
@@ -8112,11 +8112,11 @@ int FUN_00448e10(int param_1,undefined4 param_2,int param_3,float param_4,float 
 
   
 
-  iVar4 = FUN_00496c00(param_2,0x80000000);
+  iVar4 = object_allocate_type(param_2,0x80000000);
 
   if (*(int *)(iVar4 + 0x1e0) != 0x4e) {
 
-    FUN_00499e70(iVar4,0x4e);
+    object_change_ospec(iVar4,0x4e);
 
   }
 
@@ -9958,7 +9958,7 @@ LAB_0044cee6:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_00495840();
+        sound_play_3dpos();
 
       }
 
@@ -9972,7 +9972,7 @@ LAB_0044cee6:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_00495840();
+        sound_play_3dpos();
 
       }
 
@@ -9994,7 +9994,7 @@ LAB_0044cee6:
 
         else {
 
-          FUN_004954e0();
+          sound_play_obj();
 
         }
 
@@ -10020,7 +10020,7 @@ LAB_0044cee6:
 
         else {
 
-          FUN_004954e0();
+          sound_play_obj();
 
         }
 
@@ -10762,7 +10762,7 @@ LAB_0044b93c:
 
       pfVar20 = (float *)((int)pfVar19 + 9);
 
-      if (((in_stack_0000d774 == 0) && (!bVar5)) && (FUN_00495920(), 0.0 < fVar17)) {
+      if (((in_stack_0000d774 == 0) && (!bVar5)) && (sound_play(), 0.0 < fVar17)) {
 
         in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x2000;
 
@@ -10782,7 +10782,7 @@ LAB_0044b93c:
 
       fVar21 = (float10)FUN_004d5780();
 
-      if (((in_stack_0000d774 == 0) && (!bVar5)) && (FUN_00495920(), 0.0 < (float)fVar21)) {
+      if (((in_stack_0000d774 == 0) && (!bVar5)) && (sound_play(), 0.0 < (float)fVar21)) {
 
         in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x2000;
 
@@ -12662,7 +12662,7 @@ LAB_0044de79:
 
           *(undefined4 *)(*(int *)(puStack0000003c[1] + 0x100) + 0x108) = uVar16;
 
-          FUN_00495550();
+          sound_play_player();
 
         }
 
@@ -12736,7 +12736,7 @@ LAB_0044de79:
 
         else {
 
-          FUN_00495550();
+          sound_play_player();
 
         }
 

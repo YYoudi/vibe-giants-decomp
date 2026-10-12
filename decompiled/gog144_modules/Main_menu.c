@@ -225,7 +225,7 @@ void main_menu_004832f0(void)
 
     FUN_004959e0(1);
 
-    FUN_004975c0();
+    object_list_update();
 
     FUN_00535390();
 

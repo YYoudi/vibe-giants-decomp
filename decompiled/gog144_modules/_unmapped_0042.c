@@ -8083,11 +8083,11 @@ int FUN_00425a40(int param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_00496c00(param_2,0);
+  iVar1 = object_allocate_type(param_2,0);
 
   if (iVar1 != 0) {
 
-    FUN_00499e70(iVar1,0x59);
+    object_change_ospec(iVar1,0x59);
 
     if (param_1 != 0) {
 
@@ -8174,11 +8174,11 @@ int FUN_00425b50(int param_1)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_00496c00(2,0);
+    iVar1 = object_allocate_type(2,0);
 
     *(undefined4 *)(iVar1 + 0xf4) = *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x4c);
 
-    FUN_00499e70(iVar1,0x59);
+    object_change_ospec(iVar1,0x59);
 
     *(undefined4 *)(iVar1 + 0xa0) = *(undefined4 *)(param_1 + 0xa0);
 
@@ -11704,7 +11704,7 @@ LAB_00429710:
 
         if (puVar8[2] != -1) {
 
-          FUN_00495920(0x65a);
+          sound_play(0x65a);
 
         }
 
@@ -11768,7 +11768,7 @@ LAB_00429782:
 
         if (param_1[2] != piVar5[2]) {
 
-          FUN_00495920(0x65a);
+          sound_play(0x65a);
 
         }
 
@@ -12962,7 +12962,7 @@ LAB_0042a410:
 
     if (param_1[2] != piVar2[2]) {
 
-      FUN_00495920(0x65a);
+      sound_play(0x65a);
 
     }
 

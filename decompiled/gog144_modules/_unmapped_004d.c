@@ -596,7 +596,7 @@ void FUN_004d1bd0(int param_1)
 
         *(undefined4 *)(param_1 + 0x184) = 0x3f800000;
 
-        FUN_004954e0(0x4e8,param_1);
+        sound_play_obj(0x4e8,param_1);
 
         FUN_00495750(0x4ea,param_1);
 
@@ -762,7 +762,7 @@ LAB_004d2364:
 
       pfVar1[0xe] = 0.0;
 
-      FUN_004954e0(0x4ea,param_1);
+      sound_play_obj(0x4ea,param_1);
 
       *(undefined4 *)(param_1 + 0xe4) = 0x1f;
 
@@ -1372,7 +1372,7 @@ LAB_004d2d85:
 
         else {
 
-          FUN_004954e0(0x4e8,param_1);
+          sound_play_obj(0x4e8,param_1);
 
           *(undefined4 *)(param_1 + 0xe4) = 0x2d;
 
@@ -1482,7 +1482,7 @@ LAB_004d27a6:
 
       if (local_78 < *(float *)(DAT_00632ed8 + 0xd8) * *(float *)(DAT_00632ed8 + 0xd8)) {
 
-        FUN_004954e0(0x4e6,param_1);
+        sound_play_obj(0x4e6,param_1);
 
         *(undefined4 *)(param_1 + 0xe4) = 0x2a;
 
@@ -1598,7 +1598,7 @@ LAB_004d27a6:
 
 LAB_004d2124:
 
-    FUN_004954e0(0x4f5,param_1);
+    sound_play_obj(0x4f5,param_1);
 
     *(undefined4 *)(param_1 + 0xe4) = 0x2b;
 
@@ -1626,7 +1626,7 @@ LAB_004d2124:
 
       FUN_004041f0(param_1 + 0xa0);
 
-      FUN_004954e0(0x4ea,param_1);
+      sound_play_obj(0x4ea,param_1);
 
       *(undefined4 *)(param_1 + 0xe4) = 0x1f;
 
@@ -1654,7 +1654,7 @@ LAB_004d2124:
 
     pfVar1[0xe] = 0.0;
 
-    FUN_004954e0(0x4f3,param_1);
+    sound_play_obj(0x4f3,param_1);
 
     *(undefined4 *)(param_1 + 0xe4) = 0x20;
 
@@ -1670,7 +1670,7 @@ LAB_004d2124:
 
     if (0.0 < *(float *)(param_1 + 0xa8)) {
 
-      iVar6 = FUN_00496c00(0xdb,0x11);
+      iVar6 = object_allocate_type(0xdb,0x11);
 
       FUN_004979b0(iVar6,param_1);
 
@@ -1750,7 +1750,7 @@ LAB_004d2124:
 
       *(undefined4 *)(param_1 + 0x184) = 0x3f800000;
 
-      FUN_004954e0(0x4e8,param_1);
+      sound_play_obj(0x4e8,param_1);
 
     }
 
@@ -1774,7 +1774,7 @@ LAB_004d2124:
 
     if (pfVar1[3] == 0.0) {
 
-      FUN_004954e0(0x4f5,param_1);
+      sound_play_obj(0x4f5,param_1);
 
       *(undefined4 *)(param_1 + 0xe4) = 0x2b;
 
@@ -1926,7 +1926,7 @@ switchD_004d1ccc_caseD_28:
 
       ((1.9666667 <= *(float *)(param_1 + 0x14) && (*(float *)(param_1 + 0x18) < 1.9666667)))))) {
 
-    FUN_004954e0(0x4ed,param_1);
+    sound_play_obj(0x4ed,param_1);
 
   }
 
@@ -2555,11 +2555,11 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
   if (iVar3 != 0) {
 
-    iVar4 = FUN_00496c00(0x374,0);
+    iVar4 = object_allocate_type(0x374,0);
 
     if (iVar4 != 0) {
 
-      FUN_00497770(iVar4,iVar3);
+      object_copy_personality(iVar4,iVar3);
 
       FUN_00497a50(iVar4,iVar3);
 
@@ -2593,7 +2593,7 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
         }
 
-        FUN_00495840(uVar7,param_1 + 0xa0);
+        sound_play_3dpos(uVar7,param_1 + 0xa0);
 
         *(undefined4 *)(iVar4 + 0xf4) = 0x636;
 
@@ -2625,7 +2625,7 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
         }
 
-        FUN_00495840(uVar7,param_1 + 0xa0);
+        sound_play_3dpos(uVar7,param_1 + 0xa0);
 
         *(undefined4 *)(iVar4 + 0xf4) = 0x637;
 
@@ -3078,7 +3078,7 @@ void FUN_004d4ae0(int param_1)
 
   if (*(int *)(param_1 + 0xe4) == 0) {
 
-    FUN_004954e0(0x4ff,param_1);
+    sound_play_obj(0x4ff,param_1);
 
     *(undefined4 *)(param_1 + 0xe4) = 1;
 
@@ -3094,7 +3094,7 @@ void FUN_004d4ae0(int param_1)
 
     *(undefined4 *)(param_1 + 0xe4) = 2;
 
-    iVar4 = FUN_00496c00(0xdb,0x11);
+    iVar4 = object_allocate_type(0xdb,0x11);
 
     FUN_004979b0(iVar4,param_1);
 
@@ -3122,7 +3122,7 @@ void FUN_004d4ae0(int param_1)
 
       *(undefined4 *)(param_1 + 0xe4) = 5;
 
-      iVar4 = FUN_00496c00(0xe5,0x11);
+      iVar4 = object_allocate_type(0xe5,0x11);
 
       puVar2 = *(undefined4 **)(iVar4 + 0x100);
 
@@ -3455,7 +3455,7 @@ void FUN_004d5810(int param_1,int param_2)
 
     *(undefined4 *)(param_2 + 0x18c) = 0;
 
-    FUN_004954e0(0x62a,param_2);
+    sound_play_obj(0x62a,param_2);
 
   }
 
@@ -3496,7 +3496,7 @@ void FUN_004d5910(int param_1,int param_2)
 
   if (*(int *)(param_2 + 0x1e0) != 0x5a) {
 
-    FUN_00499e70(param_2,0x5a);
+    object_change_ospec(param_2,0x5a);
 
   }
 
@@ -4251,7 +4251,7 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
     *(undefined4 *)(iVar2 + 0x18c) = 0;
 
-    FUN_004954e0(0x62a,iVar2);
+    sound_play_obj(0x62a,iVar2);
 
     return;
 

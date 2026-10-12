@@ -4988,7 +4988,7 @@ void FUN_004162c0(int param_1)
 
   }
 
-  FUN_00495920(0x652);
+  sound_play(0x652);
 
   FUN_0040d6b0(&DAT_00657510);
 
@@ -5050,7 +5050,7 @@ void FUN_004162c0(int param_1)
 
 LAB_00416450:
 
-  DAT_00657564 = FUN_00496c00(uVar3,0);
+  DAT_00657564 = object_allocate_type(uVar3,0);
 
   if (DAT_00657564 != 0) {
 
@@ -7204,7 +7204,7 @@ undefined4 FUN_00418a00(int param_1,float param_2)
 
   if (*piVar1 != 0) {
 
-    iVar3 = FUN_00496c00(*piVar1,0);
+    iVar3 = object_allocate_type(*piVar1,0);
 
     if (iVar3 == 0) {
 
@@ -7230,7 +7230,7 @@ undefined4 FUN_00418a00(int param_1,float param_2)
 
     if (param_1 == 2) {
 
-      fVar4 = (float)FUN_00496c00(0x344,0x10);
+      fVar4 = (float)object_allocate_type(0x344,0x10);
 
       DAT_00632d14 = fVar4;
 
@@ -7240,7 +7240,7 @@ undefined4 FUN_00418a00(int param_1,float param_2)
 
       if (param_1 != 3) goto LAB_00418bc3;
 
-      fVar4 = (float)FUN_00496c00(0x343,0x10);
+      fVar4 = (float)object_allocate_type(0x343,0x10);
 
       DAT_00632d18 = fVar4;
 
@@ -7326,7 +7326,7 @@ LAB_00418bc3:
 
       }
 
-      iVar3 = FUN_00496c00(uVar9,0x80000000);
+      iVar3 = object_allocate_type(uVar9,0x80000000);
 
       FUN_0041b390(iVar3,fVar2);
 
@@ -7997,7 +7997,7 @@ void FUN_0041a570(undefined4 param_1)
 
       if (*(int *)(iVar1 + 4) == 0x3d5) {
 
-        iVar4 = FUN_00496c00(0x2ee,0x80000000);
+        iVar4 = object_allocate_type(0x2ee,0x80000000);
 
       }
 
@@ -8005,7 +8005,7 @@ void FUN_0041a570(undefined4 param_1)
 
         if (*(int *)(iVar1 + 4) != 0x3d9) goto LAB_0041a787;
 
-        iVar4 = FUN_00496c00(0x2d9,0x80000000);
+        iVar4 = object_allocate_type(0x2d9,0x80000000);
 
       }
 
@@ -8152,7 +8152,7 @@ void FUN_0041a7f0(int param_1,float param_2)
 
   }
 
-  iVar2 = FUN_00496c00(uVar5,0x80000000);
+  iVar2 = object_allocate_type(uVar5,0x80000000);
 
   iVar3 = (int)param_2 * 0x1c + iVar3;
 
@@ -8472,7 +8472,7 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   
 
-  iVar3 = FUN_00496c00(param_1,0x80000000);
+  iVar3 = object_allocate_type(param_1,0x80000000);
 
   *(undefined4 *)(iVar3 + 0x188) = param_2;
 
@@ -8631,7 +8631,7 @@ void FUN_0041ae70(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
   
 
-  iVar4 = FUN_00496c00(param_2,0x80000000);
+  iVar4 = object_allocate_type(param_2,0x80000000);
 
   iVar7 = *(int *)(param_1 + 0x100);
 
@@ -9040,7 +9040,7 @@ void FUN_0041b390(int param_1,int param_2)
 
   else {
 
-    iVar2 = FUN_00496c00(*piVar1,0);
+    iVar2 = object_allocate_type(*piVar1,0);
 
     local_50 = *(float *)(param_2 + 0xa0) - (float)piVar1[4];
 
@@ -9140,7 +9140,7 @@ void FUN_0041b390(int param_1,int param_2)
 
     }
 
-    iVar2 = FUN_00496c00(uVar7,0);
+    iVar2 = object_allocate_type(uVar7,0);
 
     *(int *)(iVar2 + 0x210) = param_1;
 
@@ -9377,7 +9377,7 @@ undefined4 FUN_0041b660(int param_1,int param_2)
 
         _DAT_00657674 = 0x40000000;
 
-        FUN_00495920(0x651);
+        sound_play(0x651);
 
       }
 
@@ -10375,7 +10375,7 @@ int FUN_0041e440(float param_1)
 
   }
 
-  iVar4 = FUN_00496c00(uVar5,0x80000000);
+  iVar4 = object_allocate_type(uVar5,0x80000000);
 
   iVar6 = iVar6 * 0x1c + iVar1;
 
@@ -10914,7 +10914,7 @@ LAB_0041ea62:
 
     }
 
-    iVar2 = FUN_00496c00(0xb,0x80000000);
+    iVar2 = object_allocate_type(0xb,0x80000000);
 
     iVar3 = 0;
 
@@ -11116,7 +11116,7 @@ void FUN_0041ebf0(int param_1,float param_2,int param_3)
 
   
 
-  iVar3 = FUN_00496c00(0xb,0x80000000);
+  iVar3 = object_allocate_type(0xb,0x80000000);
 
   *(int *)(iVar3 + 0x274) = param_1;
 
@@ -11393,7 +11393,7 @@ void FUN_0041ee70(int param_1)
 
             }
 
-            iVar2 = FUN_00496c00(0xb,0x80000000);
+            iVar2 = object_allocate_type(0xb,0x80000000);
 
             *(int *)(iVar2 + 0x274) = param_1;
 
@@ -11415,7 +11415,7 @@ void FUN_0041ee70(int param_1)
 
           else {
 
-            iVar2 = FUN_00496c00(0xb,0x80000000);
+            iVar2 = object_allocate_type(0xb,0x80000000);
 
             *(int *)(iVar2 + 0x274) = param_1;
 
@@ -11439,7 +11439,7 @@ void FUN_0041ee70(int param_1)
 
         else {
 
-          iVar2 = FUN_00496c00(0xb,0x80000000);
+          iVar2 = object_allocate_type(0xb,0x80000000);
 
           *(int *)(iVar2 + 0x274) = param_1;
 
@@ -11475,7 +11475,7 @@ void FUN_0041ee70(int param_1)
 
       else {
 
-        iVar2 = FUN_00496c00(0xb,0x80000000);
+        iVar2 = object_allocate_type(0xb,0x80000000);
 
         *(int *)(iVar2 + 0x274) = param_1;
 
@@ -11511,7 +11511,7 @@ void FUN_0041ee70(int param_1)
 
     else {
 
-      iVar2 = FUN_00496c00(0xb,0x80000000);
+      iVar2 = object_allocate_type(0xb,0x80000000);
 
       *(int *)(iVar2 + 0x274) = param_1;
 

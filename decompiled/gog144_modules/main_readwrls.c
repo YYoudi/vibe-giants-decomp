@@ -1005,7 +1005,7 @@ LAB_004b1410:
 
         FUN_00425eb0(&DAT_00657400);
 
-        iVar6 = FUN_00496c00(0x406,0);
+        iVar6 = object_allocate_type(0x406,0);
 
         if (iVar6 == 0) {
 
@@ -1047,7 +1047,7 @@ LAB_004b1410:
 
       if ((puVar19 != (undefined4 *)0x0) && (iVar6 != 0)) {
 
-        FUN_00497770(puVar19,iVar6);
+        object_copy_personality(puVar19,iVar6);
 
         FUN_00497a50(puVar19,iVar6);
 
@@ -1447,7 +1447,7 @@ switchD_004b1431_caseD_2d:
 
       if (puVar19[1] != 0x23f) {
 
-        FUN_00499e70(puVar19,0x36);
+        object_change_ospec(puVar19,0x36);
 
         *(undefined4 *)puVar19[0x40] = uVar10;
 
@@ -1547,9 +1547,9 @@ switchD_004b1431_caseD_2d:
 
       if ((puVar19 != (undefined4 *)0x0) && (iVar6 != 0)) {
 
-        FUN_00497770(puVar19,iVar6);
+        object_copy_personality(puVar19,iVar6);
 
-        FUN_00499e70(puVar19,0x16);
+        object_change_ospec(puVar19,0x16);
 
         puVar7 = (undefined4 *)
 
@@ -1669,9 +1669,9 @@ switchD_004b1431_caseD_2d:
 
       if ((puVar19 != (undefined4 *)0x0) && (iVar6 != 0)) {
 
-        FUN_00497770(puVar19,iVar6);
+        object_copy_personality(puVar19,iVar6);
 
-        FUN_00499e70(puVar19,0x18);
+        object_change_ospec(puVar19,0x18);
 
         puVar19[0x28] = *pfVar23;
 
@@ -2029,7 +2029,7 @@ switchD_004b1431_caseD_2d:
 
       if ((puVar19 != (undefined4 *)0x0) && (iVar6 != 0)) {
 
-        FUN_00497770(puVar19,iVar6);
+        object_copy_personality(puVar19,iVar6);
 
         FUN_00497a50(puVar19,iVar6);
 
@@ -2401,7 +2401,7 @@ switchD_004b1431_caseD_2c:
 
       uVar10 = FUN_0049bd10(pfVar20);
 
-      FUN_00499e70(puVar19,0x4f);
+      object_change_ospec(puVar19,0x4f);
 
       *(undefined4 *)puVar19[0x40] = uVar10;
 

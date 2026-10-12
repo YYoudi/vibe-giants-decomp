@@ -180,7 +180,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
       }
 
-      FUN_00495550(0x3a8,pOVar4);
+      sound_play_player(0x3a8,pOVar4);
 
     }
 

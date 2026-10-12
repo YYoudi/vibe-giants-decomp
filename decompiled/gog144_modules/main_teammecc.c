@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/teammecc
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/teammecc.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_005011f0 @ 0x005011F0 ===== */
-/* PS2 candidate: teammecc_create (conf 0.492) */
+/* ===== teammecc_create @ 0x005011F0 ===== */
+/* PS2 candidate: teammecc_create (conf 0.542) */
 
 
 
-void FUN_005011f0(int param_1,int param_2)
+void teammecc_create(int param_1,int param_2)
 
 
 
@@ -90,9 +90,9 @@ void FUN_005011f0(int param_1,int param_2)
 
       do {
 
-        iVar3 = FUN_00496c00(*(undefined4 *)(param_1 + 4),0x13);
+        iVar3 = object_allocate_type(*(undefined4 *)(param_1 + 4),0x13);
 
-        FUN_00497770(iVar3,param_1);
+        object_copy_personality(iVar3,param_1);
 
         FUN_00497a50(iVar3,param_1);
 

@@ -30,9 +30,9 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
   iVar6 = 0;
 
-  iVar3 = FUN_00496c00(0x4a,0);
+  iVar3 = object_allocate_type(0x4a,0);
 
-  FUN_00499e70(iVar3,0x18);
+  object_change_ospec(iVar3,0x18);
 
   FUN_004993c0(iVar3,param_1 + 0xa0);
 
@@ -165,9 +165,9 @@ void main_smoke_004f9170(int param_1)
 
   iVar7 = 0;
 
-  iVar4 = FUN_00496c00(0x4a,0);
+  iVar4 = object_allocate_type(0x4a,0);
 
-  FUN_00499e70(iVar4,0x18);
+  object_change_ospec(iVar4,0x18);
 
   FUN_004993c0(iVar4,param_1 + 0xa0);
 

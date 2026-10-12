@@ -18,7 +18,7 @@ void FUN_00465030(undefined4 param_1,undefined4 param_2)
 
   uVar1 = param_2;
 
-  FUN_00495550(param_1,param_2);
+  sound_play_player(param_1,param_2);
 
   iVar2 = FUN_0052e4a0(uVar1);
 
@@ -943,7 +943,7 @@ LAB_00465d3b:
 
       }
 
-      FUN_00495550(uVar5,param_1);
+      sound_play_player(uVar5,param_1);
 
       iVar3 = *(int *)((int)fVar4 + 0x2dc);
 
@@ -997,7 +997,7 @@ LAB_00465d3b:
 
   fVar4 = param_1;
 
-  FUN_00495550(uVar5,param_1);
+  sound_play_player(uVar5,param_1);
 
 LAB_00465d63:
 
@@ -2451,7 +2451,7 @@ void FUN_0046aeb0(int param_1)
 
     if (*(int *)(param_1 + 4) == 0x2e9) {
 
-      uVar6 = FUN_00496c00(0x3b1,1);
+      uVar6 = object_allocate_type(0x3b1,1);
 
       puVar2[0x2c] = uVar6;
 
@@ -2523,7 +2523,7 @@ void FUN_0046aeb0(int param_1)
 
         if (*(int *)(param_1 + 0xe8) == 1) {
 
-          FUN_00495840(0x4b2,(undefined4 *)(param_1 + 0xa0));
+          sound_play_3dpos(0x4b2,(undefined4 *)(param_1 + 0xa0));
 
           *(undefined4 *)(param_1 + 0xe4) = 3;
 
@@ -2531,7 +2531,7 @@ void FUN_0046aeb0(int param_1)
 
         else {
 
-          FUN_004954e0(0x4b1,param_1);
+          sound_play_obj(0x4b1,param_1);
 
           *(undefined4 *)(param_1 + 0xe4) = 2;
 
@@ -2866,7 +2866,7 @@ int FUN_0046b560(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
   
 
-  iVar1 = FUN_00496c00(0x2ea,0x80000000);
+  iVar1 = object_allocate_type(0x2ea,0x80000000);
 
   *(undefined4 *)(iVar1 + 0xe8) = 1;
 
@@ -2911,11 +2911,11 @@ int FUN_0046b5e0(undefined4 param_1)
 
   
 
-  iVar1 = FUN_00496c00(0x2e9,0x80000000);
+  iVar1 = object_allocate_type(0x2e9,0x80000000);
 
   if (iVar1 != 0) {
 
-    FUN_00499e70(iVar1,0x4b);
+    object_change_ospec(iVar1,0x4b);
 
     *(undefined4 *)(iVar1 + 0xe8) = 0;
 
@@ -3435,7 +3435,7 @@ undefined4 FUN_0046bc60(float param_1,int *param_2)
 
           }
 
-          FUN_004954e0(0x4ab,fVar4);
+          sound_play_obj(0x4ab,fVar4);
 
           **(uint **)((int)fVar4 + 0x100) = **(uint **)((int)fVar4 + 0x100) & 0xffffffc3;
 
@@ -3698,9 +3698,9 @@ int FUN_0046e830(int param_1,int param_2)
 
   
 
-  iVar2 = FUN_00496c00(0x374,0x80000000);
+  iVar2 = object_allocate_type(0x374,0x80000000);
 
-  FUN_00499e70(iVar2,0x4c);
+  object_change_ospec(iVar2,0x4c);
 
   *(undefined4 *)(iVar2 + 0xe8) = 0;
 

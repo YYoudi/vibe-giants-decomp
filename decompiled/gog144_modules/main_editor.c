@@ -908,7 +908,7 @@ LAB_004374a1:
 
               *(float *)(iVar10 + 200) = _DAT_00632b10 * 0.33333334 + *(float *)(iVar10 + 200);
 
-              FUN_004101d0(piVar11[0xe]);
+              collgrid_clear_grid(piVar11[0xe]);
 
               iVar10 = piVar11[0xe];
 
@@ -970,7 +970,7 @@ LAB_004374a1:
 
             *(float *)(piVar11[0xe] + 0xa4) = _DAT_0059cc08 - local_70 * local_80;
 
-            FUN_004101d0(piVar11[0xe]);
+            collgrid_clear_grid(piVar11[0xe]);
 
             FUN_00499280(piVar11[0xe]);
 
@@ -1028,7 +1028,7 @@ LAB_004374a1:
 
                _DAT_00632b10 * 0.33333334 + *(float *)(piVar11[0xe] + 0xcc);
 
-          FUN_004101d0(piVar11[0xe]);
+          collgrid_clear_grid(piVar11[0xe]);
 
           iVar10 = piVar11[0xe];
 
@@ -1076,7 +1076,7 @@ LAB_004374a1:
 
             *(float *)(iVar10 + 0xd0) = _DAT_00632b10 * 0.33333334 + *(float *)(iVar10 + 0xd0);
 
-            FUN_004101d0(piVar11[0xe]);
+            collgrid_clear_grid(piVar11[0xe]);
 
             iVar10 = piVar11[0xe];
 
@@ -1396,7 +1396,7 @@ LAB_00437d68:
 
           FUN_00499280(piVar11[0xe]);
 
-          FUN_004101d0(piVar11[0xe]);
+          collgrid_clear_grid(piVar11[0xe]);
 
           if (DAT_0059cbe0 != 0) {
 

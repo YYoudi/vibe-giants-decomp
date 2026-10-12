@@ -1090,7 +1090,7 @@ void FUN_00431a00(undefined4 *param_1,float param_2,float param_3,float param_4,
 
   }
 
-  FUN_00495840(uVar5,param_1);
+  sound_play_3dpos(uVar5,param_1);
 
   FUN_0052ff00(&DAT_0059caa0 + iVar4 * 8,0x20);
 
@@ -1177,13 +1177,13 @@ void FUN_00431ae0(undefined4 *param_1)
 
   if (0x31 < iVar5) {
 
-    FUN_00495840(0x668,param_1 + 1);
+    sound_play_3dpos(0x668,param_1 + 1);
 
     return;
 
   }
 
-  FUN_00495840(0x667,param_1 + 1);
+  sound_play_3dpos(0x667,param_1 + 1);
 
   return;
 
@@ -1330,7 +1330,7 @@ void FUN_00431b80(void)
 
     }
 
-    FUN_00495840(uVar15,&local_c);
+    sound_play_3dpos(uVar15,&local_c);
 
     FUN_0052ff00(&DAT_0059caa0 + iVar12 * 8,0x20);
 
@@ -4059,7 +4059,7 @@ int FUN_004380e0(undefined4 param_1)
 
   uVar2 = param_1;
 
-  iVar3 = FUN_00496c00(param_1,0x80000000);
+  iVar3 = object_allocate_type(param_1,0x80000000);
 
   FUN_00455890(iVar3 + 0xa0,0x447a0000,&param_1);
 
@@ -9255,7 +9255,7 @@ void FUN_0043D0A0(void)
 
         DAT_0059cbb0 = DAT_00632a88;
 
-        DAT_00632a88 = FUN_00496c00(3,0x80000000);
+        DAT_00632a88 = object_allocate_type(3,0x80000000);
 
         FUN_0049b8a0();
 
@@ -9767,7 +9767,7 @@ LAB_0043e09d:
 
       main_dlog_004281f0(DAT_0059cd80,1,local_100);
 
-      uVar6 = FUN_00476e90(iVar3);
+      uVar6 = showchat_mission_objective__Fi(iVar3);
 
       FUN_004287c0(DAT_0059cd80,1,iVar3,uVar6);
 
@@ -9876,7 +9876,7 @@ LAB_0043effd:
 
       main_dlog_004281f0(DAT_0059cd8c,1,local_100);
 
-      uVar5 = FUN_00476e90(iVar2);
+      uVar5 = showchat_mission_objective__Fi(iVar2);
 
       FUN_004287c0(DAT_0059cd8c,1,iVar2,uVar5);
 
@@ -10172,7 +10172,7 @@ LAB_0043e09d:
 
             main_dlog_004281f0(DAT_0059cd80,1,local_100);
 
-            uVar5 = FUN_00476e90(iVar2);
+            uVar5 = showchat_mission_objective__Fi(iVar2);
 
             FUN_004287c0(DAT_0059cd80,1,iVar2,uVar5);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/cleaner
- * 3 functions (2 named) — decompiled, names from PS2 symbols
+ * 3 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/cleaner.c(pp) (assert-string evidence)
  */
 
@@ -22,14 +22,14 @@ void main_cleaner_0040f390(void)
 
 }
 
-/* ===== FUN_0040f3c0 @ 0x0040F3C0 ===== */
+/* ===== cleaner_go_obj @ 0x0040F3C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: cleaner_go_obj (conf 0.454) */
+/* PS2 candidate: cleaner_go_obj (conf 0.504) */
 
 
 
-void FUN_0040f3c0(void)
+void cleaner_go_obj(void)
 
 
 
@@ -177,7 +177,7 @@ void FUN_0040f3c0(void)
 
           do {
 
-            iVar9 = FUN_00496c00(0x2ad,0x80000000);
+            iVar9 = object_allocate_type(0x2ad,0x80000000);
 
             fVar12 = (float10)FUN_004d5760(*(undefined4 *)(DAT_00632ed8 + 0x538));
 

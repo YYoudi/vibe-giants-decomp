@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/objspec
- * 5 functions (3 named) — decompiled, names from PS2 symbols
+ * 5 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/objspec.c(pp) (assert-string evidence)
  */
 
@@ -85,7 +85,7 @@ void FUN_00499cd0(int param_1)
 
   *(undefined4 *)(param_1 + 0x104) = 0;
 
-  FUN_004101d0(param_1);
+  collgrid_clear_grid(param_1);
 
   if (*(int *)(param_1 + 0x2dc) != 0) {
 
@@ -183,12 +183,12 @@ void main_objspec_00499e10(int param_1)
 
 }
 
-/* ===== FUN_00499e70 @ 0x00499E70 ===== */
-/* PS2 candidate: object_change_ospec (conf 0.549) */
+/* ===== object_change_ospec @ 0x00499E70 ===== */
+/* PS2 candidate: object_change_ospec (conf 0.5990000000000001) */
 
 
 
-void FUN_00499e70(int param_1,int param_2)
+void object_change_ospec(int param_1,int param_2)
 
 
 

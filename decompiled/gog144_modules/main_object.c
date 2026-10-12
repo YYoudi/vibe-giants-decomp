@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/object
- * 6 functions (3 named) — decompiled, names from PS2 symbols
+ * 6 functions (6 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/object.c(pp) (assert-string evidence)
  */
 
@@ -57,12 +57,12 @@ void main_object_00496b90(void)
 
 }
 
-/* ===== FUN_00497450 @ 0x00497450 ===== */
-/* PS2 candidate: object_set_objectset (conf 0.429) */
+/* ===== object_set_objectset @ 0x00497450 ===== */
+/* PS2 candidate: object_set_objectset (conf 0.479) */
 
 
 
-void FUN_00497450(int param_1,int param_2)
+void object_set_objectset(int param_1,int param_2)
 
 
 
@@ -84,7 +84,7 @@ void FUN_00497450(int param_1,int param_2)
 
       if (*(int *)(param_1 + 0x2d8) != *(int *)(param_2 + 0x450)) {
 
-        FUN_00497450(param_1,0);
+        object_set_objectset(param_1,0);
 
         iVar3 = *(int *)(param_2 + 0x450);
 
@@ -138,12 +138,12 @@ void FUN_00497450(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004975c0 @ 0x004975C0 ===== */
-/* PS2 candidate: object_list_update (conf 0.412) */
+/* ===== object_list_update @ 0x004975C0 ===== */
+/* PS2 candidate: object_list_update (conf 0.46199999999999997) */
 
 
 
-void FUN_004975c0(void)
+void object_list_update(void)
 
 
 
@@ -290,18 +290,18 @@ void main_object_004976e0(void)
 
   }
 
-  FUN_004975c0();
+  object_list_update();
 
   return;
 
 }
 
-/* ===== FUN_00497770 @ 0x00497770 ===== */
-/* PS2 candidate: object_copy_personality (conf 0.324) */
+/* ===== object_copy_personality @ 0x00497770 ===== */
+/* PS2 candidate: object_copy_personality (conf 0.374) */
 
 
 
-void FUN_00497770(int param_1,int param_2)
+void object_copy_personality(int param_1,int param_2)
 
 
 
@@ -369,7 +369,7 @@ void FUN_00497770(int param_1,int param_2)
 
       if (*(int *)(param_1 + 0x2d8) != *(int *)(iVar5 + 0x450)) {
 
-        FUN_00497450(param_1,0);
+        object_set_objectset(param_1,0);
 
         iVar7 = *(int *)(iVar5 + 0x450);
 

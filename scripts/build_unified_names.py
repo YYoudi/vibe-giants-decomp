@@ -81,7 +81,7 @@ def main():
                 verified[norm(parts[0])] = parts[1]
     for a in list(cand):
         if a in verified:
-            cand[a] = [(min(1.0, c + 0.05), t + "-verified", verified[a]) for c, t, n in cand[a]]
+            cand[a] = [(0.95, t + "-verified", verified[a]) for c, t, n in cand[a]]
     rows, conflicts = [], []
     for a, lst in cand.items():
         lst.sort(reverse=True)

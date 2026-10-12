@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/collgrid
- * 5 functions (4 named) — decompiled, names from PS2 symbols
+ * 5 functions (5 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/collgrid.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004101d0 @ 0x004101D0 ===== */
-/* PS2 candidate: collgrid_clear_grid (conf 0.547) */
+/* ===== collgrid_clear_grid @ 0x004101D0 ===== */
+/* PS2 candidate: collgrid_clear_grid (conf 0.5970000000000001) */
 
 
 
-void FUN_004101d0(int param_1)
+void collgrid_clear_grid(int param_1)
 
 
 

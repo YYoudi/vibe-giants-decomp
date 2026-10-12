@@ -34,7 +34,7 @@ void comm_multi_00533280(int param_1)
 
     }
 
-    iVar3 = FUN_00496c00(*(undefined4 *)(param_1 + 1),0x80000000);
+    iVar3 = object_allocate_type(*(undefined4 *)(param_1 + 1),0x80000000);
 
     *(undefined4 *)(iVar3 + 0x274) = 0;
 
@@ -129,7 +129,7 @@ void comm_multi_00533370(int param_1,int param_2)
 
 LAB_005333ee:
 
-      iVar4 = FUN_00496c00(*(undefined4 *)(param_1 + 1),0x80000000);
+      iVar4 = object_allocate_type(*(undefined4 *)(param_1 + 1),0x80000000);
 
       *(undefined4 *)(iVar4 + 0x188) = *(undefined4 *)(param_1 + 5);
 
@@ -145,7 +145,7 @@ LAB_005333ee:
 
     }
 
-    iVar3 = FUN_00496c00(*(undefined4 *)(param_1 + 1),0x80000000);
+    iVar3 = object_allocate_type(*(undefined4 *)(param_1 + 1),0x80000000);
 
     *(undefined4 *)(iVar3 + 0x188) = *(undefined4 *)(param_1 + 5);
 
