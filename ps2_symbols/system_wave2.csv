@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0046aa30,FUN_0046AA30,,gfx_d3d_0046aa30,0.9,sys-d3d-string,
+0051d0d0,FUN_0051D0D0,,gfx_d3d_0051d0d0,0.9,sys-d3d-string,
+0051a280,FUN_0051A280,,stream_0051a280,0.9,sys-stream-string,
+00538800,FUN_00538800,,stream_00538800,0.9,sys-stream-string,

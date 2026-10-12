@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (2 named) — decompiled, names from PS2 symbols
+ * 186 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -9948,12 +9948,12 @@ void FUN_0051a250(LPCSTR param_1)
 
 }
 
-/* ===== FUN_0051a280 @ 0x0051A280 ===== */
+/* ===== stream_0051a280 @ 0x0051A280 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_0051a280(char *param_1,undefined4 param_2)
+undefined4 stream_0051a280(char *param_1,undefined4 param_2)
 
 
 
@@ -13007,7 +13007,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
   }
 
-  FUN_0051d0d0();
+  gfx_d3d_0051d0d0();
 
   hHandle = CreateMutexA((LPSECURITY_ATTRIBUTES)0x0,0,s_Giants_CK_0057d960);
 
@@ -13297,14 +13297,14 @@ undefined4 CheckSaveGameName__Fv(void)
 
 }
 
-/* ===== FUN_0051d0d0 @ 0x0051D0D0 ===== */
+/* ===== gfx_d3d_0051d0d0 @ 0x0051D0D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: cd_monitor_set_valid (conf 0.722) */
 
 
 
-void FUN_0051d0d0(char *param_1)
+void gfx_d3d_0051d0d0(char *param_1)
 
 
 
@@ -14539,7 +14539,7 @@ LAB_0051de4b:
 
 LAB_0051ded4:
 
-  iVar1 = FUN_0051a280(&DAT_005ddae8,&DAT_005ddae0);
+  iVar1 = stream_0051a280(&DAT_005ddae8,&DAT_005ddae0);
 
   if (iVar1 == 0) {
 

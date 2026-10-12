@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (6 named) — decompiled, names from PS2 symbols
+ * 179 functions (7 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -12381,7 +12381,7 @@ undefined4 FUN_005380e0(undefined4 param_1)
 
   
 
-  FUN_00538800();
+  stream_00538800();
 
   iVar2 = FUN_005393e0(DAT_005e2c78,param_1);
 
@@ -12534,12 +12534,12 @@ void FUN_005387c0(void)
 
 }
 
-/* ===== FUN_00538800 @ 0x00538800 ===== */
+/* ===== stream_00538800 @ 0x00538800 ===== */
 /* PS2 candidate: mecc_disable_repair_gun (conf 0.559) */
 
 
 
-void FUN_00538800(void)
+void stream_00538800(void)
 
 
 
@@ -12751,9 +12751,9 @@ LAB_00538add:
 
             if (iVar2 == 0) {
 
-              FUN_00538800();
+              stream_00538800();
 
-              FUN_00538800();
+              stream_00538800();
 
               uVar8 = 0xffffffff;
 
@@ -13151,7 +13151,7 @@ undefined4 FUN_00539000(void)
 
 {
 
-  FUN_00538800();
+  stream_00538800();
 
   return DAT_005e2840;
 

@@ -11064,7 +11064,7 @@ undefined4 FUN_004ee890(void)
 
   
 
-  FUN_00538800();
+  stream_00538800();
 
   iVar1 = FUN_00538540(s_world_gb2_005620f8);
 

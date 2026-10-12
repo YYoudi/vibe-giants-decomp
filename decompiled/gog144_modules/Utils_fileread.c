@@ -45,7 +45,7 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
   
 
-  FUN_00538800();
+  stream_00538800();
 
   EnterCriticalSection((LPCRITICAL_SECTION)&DAT_005e2948);
 
