@@ -20,7 +20,7 @@ Outputs:
   ps2_symbols/pc_ps2_matches_full.csv   full layered correspondence (string + propagated)
   ps2_symbols/pc_ps2_matches_full.md    human-readable
 """
-import csv, os, re, json, glob, collections, bisect
+import csv, os, re, sys, json, glob, collections, bisect
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -81,6 +81,8 @@ def ps2_graph():
 
 # ------------------------------------------------------------- propagation ----
 def main():
+    tag = sys.argv[1] if len(sys.argv) > 1 else ""   # e.g. "_1449" -> *_full_1449.*
+    seed_csv = SEED_CSV.replace(".csv", f"{tag}.csv")
     print("[*] building PC call graph ...")
     pc_callees, pc_callers, pc_names = pc_graph()
     print(f"    PC: {len(pc_callees)} funcs w/ callees, {len(pc_callers)} w/ callers")
@@ -92,7 +94,7 @@ def main():
     # (unique in the PS2 direction). This removes ambiguous duplicate clusters
     # (e.g. _vfprintf_r x4, smartie_move x3) while keeping rock-solid single-string
     # anchors like firewall_create_fire(SpellHintFire), inv_award_item(InvChPickupItem).
-    rows_csv = list(csv.DictReader(open(SEED_CSV, encoding="utf-8")))
+    rows_csv = list(csv.DictReader(open(seed_csv, encoding="utf-8")))
     ps2_to_pcs = collections.defaultdict(list)
     for r in rows_csv:
         ps2_to_pcs[r["ps2_addr"]].append(r["pc_addr"])
@@ -188,7 +190,7 @@ def main():
 
     # also fold in the lower-confidence string matches (conf<1) as a separate tier
     string_matches = []
-    with open(SEED_CSV, encoding="utf-8") as f:
+    with open(seed_csv, encoding="utf-8") as f:
         for r in csv.DictReader(f):
             if r["pc_addr"] in M: continue
             string_matches.append((r["pc_addr"], int(r["ps2_addr"],16), float(r["conf"]),
@@ -206,13 +208,13 @@ def main():
                      "conf":conf,"tier":"string-anchor(weak)","shared":shared})
     rows.sort(key=lambda r:(-r["conf"], r["tier"]))
 
-    csvp = os.path.join(HERE,"pc_ps2_matches_full.csv")
+    csvp = os.path.join(HERE,f"pc_ps2_matches_full{tag}.csv")
     with open(csvp,"w",newline="",encoding="utf-8") as f:
         w=csv.DictWriter(f,fieldnames=["pc_addr","pc_name","ps2_addr","ps2_name","conf","tier","shared"])
         w.writeheader(); w.writerows(rows)
     n_str = sum(1 for r in rows if r["tier"]=="string-anchor")
     n_prop = sum(1 for r in rows if r["tier"]=="propagated")
-    mdp = os.path.join(HERE,"pc_ps2_matches_full.md")
+    mdp = os.path.join(HERE,f"pc_ps2_matches_full{tag}.md")
     with open(mdp,"w",encoding="utf-8") as f:
         f.write(f"# PC <-> PS2 full correspondence (string anchors + call-graph propagation)\n\n")
         f.write(f"- string-anchor (conf=1.0): **{n_str}**\n")

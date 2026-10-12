@@ -133,6 +133,7 @@ def pc_string_refs():
 
 # --------------------------------------------------------------- matching -----
 def main():
+    tag = sys.argv[1] if len(sys.argv) > 1 else ""   # e.g. "_1449" -> pc_ps2_matches_1449.csv
     print("[*] loading PS2 ELF ...")
     e, funcs, text_bytes, t_addr, strmap, ranges = load_ps2()
     print(f"    PS2 functions: {len(funcs)}  printable string runs: {len(strmap)}")
@@ -191,13 +192,13 @@ def main():
         })
     rows.sort(key=lambda r:(-r["conf"], -r["shared"]))
 
-    csvp=os.path.join(HERE,"pc_ps2_matches.csv")
+    csvp=os.path.join(HERE,f"pc_ps2_matches{tag}.csv")
     with open(csvp,"w",newline="",encoding="utf-8") as f:
         w=csv.DictWriter(f,fieldnames=["pc_addr","pc_name","ps2_addr","ps2_name","shared","conf","sample_shared"])
         w.writeheader(); w.writerows(rows)
     # markdown report: high-confidence matches
     high=[r for r in rows if r["conf"]>=0.5 and r["shared"]>=1]
-    mdp=os.path.join(HERE,"pc_ps2_matches.md")
+    mdp=os.path.join(HERE,f"pc_ps2_matches{tag}.md")
     with open(mdp,"w",encoding="utf-8") as f:
         f.write(f"# PC <-> PS2 automated matches (string-anchor)\n\n")
         f.write(f"Total candidate matches: **{len(rows)}**  |  high-confidence (conf>=0.5): **{len(high)}**\n\n")

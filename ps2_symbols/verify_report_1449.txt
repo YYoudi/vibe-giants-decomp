@@ -1,0 +1,90 @@
+string-semantic agreement: 36/80
+
+0053a700 -> MemAllocMsg
+   strings=['Memory Fail on %s (%ld bytes)(%s:%d)']
+0045dcb0 -> marker_process__FP6OBJECT
+   strings=['FX_heat_giantwall', 'FX_lens_explode', 'FX_lens_fire', 'FX_lens_smoke1']
+004f5c10 -> smartie_board_player__FP6OBJECTT0i
+   strings=['SmChKidnapped']
+0052adf0 -> smartie_check_follow__FP6OBJECTf
+   strings=['%s %d', 'CommUnnamedPlayer']
+0047caa0 -> teammecc_create
+   strings=['fx_nozzle_machine']
+004b7450 -> reaper_animselect
+   strings=['Afx_slow_spell']
+004f3af0 -> meccbaseitem_shot
+   strings=['BAZ_CT09', 'GOR_CT09', 'REG_CT09', 'SmChGyropadDone']
+00531470 -> mecc_special_weapon_logic__FP6OBJECT
+   strings=['    receivedata.buff[%d] = %d (0x%X)', "':\n        iVar4 = FUN_0052aa70();\n        if (((iVar4 != 0) && (9 < DAT_00632f08)) &&\n           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {\n          iVar6 = FUN_00496c00(*(undefined4 *)(pcVar15 + 1),0x80000000);\n          iVar4 = *(int *)(iVar6 + 0x100);\n          *(undefined4 *)(iVar6 + 0x188) = *(undefined4 *)(pcVar15 + 5);\n          *(undefined4 *)(iVar6 + 0xa0) = *(undefined4 *)(pcVar15 + 0xd);\n          *(undefined4 *)(iVar6 + 0xa4) = *(undefined4 *)(pcVar15 + 0x11);\n          *(undefined4 *)(iVar6 + 0xa8) = *(undefined4 *)(pcVar15 + 0x15);\n          *(undefined4 *)(iVar6 + 200) = *(undefined4 *)(pcVar15 + 0x19);\n          *(undefined4 *)(iVar6 + 0x18c) = *(undefined4 *)(pcVar15 + 9);\n          iVar8 = FUN_00499030(iVar6,0x26f,0xffffffff,*(undefined4 *)(iVar4 + 0x30),0);\n          *(int *)(iVar4 + 0x38) = iVar8;\n          *(uint *)(iVar8 + 0xd8) = *(uint *)(iVar8 + 0xd8) | 0x40000000;\n          iVar4 = FUN_00499030(iVar6,0x273,0xffffffff,*(undefined4 *)(iVar4 + 0x30),0);\n          *(int *)(iVar8 + 0x274) = iVar4;\n          *(uint *)(iVar4 + 0xd8) = *(uint *)(iVar4 + 0xd8) | 0x40000000;\n        }\n        DAT_005e0304 = DAT_005e0304 + 0x1d;\n        break;\n      case '#':\n        iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1));\n        if (iVar4 != 0) {\n          FUN_00497510(iVar4);\n          pcVar14 = DAT_005e0304;\n        }\n        goto LAB_00532b8b;\n      case '$':\n        iVar4 = FUN_0052aa70();\n        if (((iVar4 != 0) && (9 < DAT_00632f08)) &&\n           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1)), iVar4 != 0)) {\n          *(undefined4 *)(iVar4 + 0x278) = *(undefined4 *)(pcVar15 + 5);\n          FUN_004034a0(iVar4,1,0x84,0,0,0);\n          *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | 1;\n        }\n        DAT_005e0304 = DAT_005e0304 + 9;\n        break;\n      case '%':\n        iVar4 = FUN_0052aa70();\n        if (((iVar4 != 0) && (9 < DAT_00632f08)) &&\n           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {\n          iVar4 = FUN_00496c00(*(undefined4 *)(pcVar15 + 1),0);\n          FUN_00499e70(iVar4,0x25);\n          puVar2 = *(uint **)(iVar4 + 0x100);\n          *(undefined4 *)(iVar4 + 0xa0) = *(undefined4 *)(pcVar15 + 9);\n          *(undefined4 *)(iVar4 + 0xa4) = *(undefined4 *)(pcVar15 + 0xd);\n          *(undefined4 *)(iVar4 + 0xa8) = *(undefined4 *)(pcVar15 + 0x11);\n          *(undefined4 *)(iVar4 + 0x128) = *(undefined4 *)(pcVar15 + 0x15);\n          *(undefined4 *)(iVar4 + 300) = *(undefined4 *)(pcVar15 + 0x19);\n          *(undefined4 *)(iVar4 + 0x130) = *(undefined4 *)(pcVar15 + 0x1d);\n          *(undefined4 *)(iVar4 + 0x188) = *(undefined4 *)(pcVar15 + 5);\n          fVar13 = (float10)FUN_00455600((undefined4 *)(iVar4 + 0xa0));\n          puVar2[2] = (uint)(float)(fVar13 + (float10)3.0);\n          *puVar2 = (uint)*(ushort *)(pcVar15 + 0x23);\n          puVar2[1] = *(uint *)(pcVar15 + 0x25);\n          puVar2[4] = 0x3f800000;\n          uVar10 = *(uint *)(pcVar15 + 0x29);\n          puVar2[6] = uVar10;\n          if (uVar10 == 0xffffffff) {\n            puVar2[7] = 0;\n          }\n          else {\n            puVar2[7] = 1;\n          }\n          uVar10 = *(uint *)(pcVar15 + 0x21);\n          *(uint *)(iVar4 + 0xe8) = uVar10 & 0xffff;\n          if ((uVar10 & 0xffff) == 0) {\n            puVar2[5] = 0x41f00000;\n          }\n          else {\n            puVar2[5] = 0;\n          }\n          *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | 1;\n          iVar4 = FUN_0052c5c0();\n          if ((iVar4 != 0) && (iVar4 = FUN_0052aa70(), iVar4 != 0)) {\n            pcVar14 = local_4e4;\n            for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {\n              pcVar14[0] = '\\0';\n              pcVar14[1] = '\\0';\n              pcVar14[2] = '\\0';\n              pcVar14[3] = '\\0';\n              pcVar14 = pcVar14 + 4;\n            }\n            pcVar14[0] = '\\0';\n            pcVar14[1] = '\\0';\n            pcVar14 = local_4e4;\n            for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {\n              *(undefined4 *)pcVar14 = *(undefined4 *)pcVar15;\n              pcVar15 = pcVar15 + 4;\n              pcVar14 = pcVar14 + 4;\n            }\n            *pcVar14 = *pcVar15;\n            local_4b7 = 0;\n            uVar5 = FUN_0052ab00(DAT_005e02e8);\n            FUN_0052b780(uVar5,0x2e,local_4e4);\n          }\n        }\n        DAT_005e0304 = DAT_005e0304 + 0x2d;\n        break;\n      case '&':\n        iVar4 = FUN_0052aa70();\n        if ((iVar4 != 0) && (9 < DAT_00632f08)) {\n          iVar4 = FUN_00496c00(*(undefined4 *)(pcVar15 + 0x11),0);\n          FUN_00499e70(iVar4,0x59);\n          *(undefined4 *)(iVar4 + 0xa0) = *(undefined4 *)(pcVar15 + 5);\n          *(undefined4 *)(iVar4 + 0xa4) = *(undefined4 *)(pcVar15 + 9);\n          *(undefined4 *)(iVar4 + 0xa8) = *(undefined4 *)(pcVar15 + 0xd);\n          *(undefined4 *)(iVar4 + 200) = *(undefined4 *)(pcVar15 + 1);\n          *(undefined4 *)(iVar4 + 0x188) = *(undefined4 *)(pcVar15 + 0x15);\n          FUN_004034a0(iVar4,*(undefined4 *)(pcVar15 + 0x19),0x80,0,0,0);\n          *(undefined4 *)(iVar4 + 0x14) = 0x3f800000;\n          iVar4 = FUN_0052c5c0();\n          if ((iVar4 != 0) && (iVar4 = FUN_0052aa70(), iVar4 != 0)) {\n            pcVar14 = &local_510;\n            for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {\n              pcVar14[0] = '\\0';\n              pcVar14[1] = '\\0';\n              pcVar14[2] = '\\0';\n              pcVar14[3] = '\\0';\n              pcVar14 = pcVar14 + 4;\n            }\n            pcVar14[0] = '\\0';\n            pcVar14[1] = '\\0';\n            pcVar14 = &local_510;\n            for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {\n              *(undefined4 *)pcVar14 = *(undefined4 *)pcVar15;\n              pcVar15 = pcVar15 + 4;\n              pcVar14 = pcVar14 + 4;\n            }\n            *pcVar14 = *pcVar15;\n            local_4f3 = 0;\n            uVar5 = FUN_0052ab00(DAT_005e02e8);\n            FUN_0052b780(uVar5,0x1e,&local_510);\n          }\n        }\n        DAT_005e0304 = DAT_005e0304 + 0x1d;\n        break;\n      case '*':\n        iVar4 = FUN_0052aa70();\n        if (((iVar4 != 0) && (9 < DAT_00632f08)) &&\n           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1)), iVar4 == 0)) {\n          iVar4 = FUN_00496c00(0x3df,2);\n          *(uint *)(iVar4 + 0x1d0) = *(uint *)(iVar4 + 0x1d0) | 0xf0f;\n          *(undefined4 *)(iVar4 + 0x188) = *(undefined4 *)(pcVar15 + 1);\n          *(uint *)(iVar4 + 0x18c) = (uint)*(ushort *)(pcVar15 + 0x27);\n          *(uint *)(iVar4 + 0xf4) = *(uint *)(pcVar15 + 0x25) & 0xffff;\n          *(int *)(iVar4 + 0xe8) = (int)*(short *)(pcVar15 + 0x29);\n          FUN_004993c0(iVar4,pcVar15 + 5);\n          *(undefined4 *)(iVar4 + 0x128) = *(undefined4 *)(pcVar15 + 0x11);\n          *(undefined4 *)(iVar4 + 300) = *(undefined4 *)(pcVar15 + 0x15);\n          *(undefined4 *)(iVar4 + 0x130) = *(undefined4 *)(pcVar15 + 0x19);\n          *(undefined4 *)(iVar4 + 200) = *(undefined4 *)(pcVar15 + 0x1d);\n          *(undefined4 *)(iVar4 + 0x278) = *(undefined4 *)(pcVar15 + 0x21);\n          local_4a0 = 1;\n          local_4a4 = 8;\n          local_49c = iVar4;\n          uVar5 = FUN_004481e0(", ');\n              }\n              else {\n                uVar5 = FUN_0052adf0(iVar4);\n                uVar5 = FUN_00507b00(', ");\n        uVar10 = 0xffffffff;\n        do {\n          pcVar7 = pcVar14;\n          if (uVar10 == 0) break;\n          uVar10 = uVar10 - 1;\n          pcVar7 = pcVar14 + 1;\n          cVar1 = *pcVar14;\n          pcVar14 = pcVar7;\n        } while (cVar1 != '\\0');\n        uVar10 = ~uVar10;\n        iVar4 = -1;\n        pcVar14 = local_400;\n        do {\n          pcVar12 = pcVar14;\n          if (iVar4 == 0) break;\n          iVar4 = iVar4 + -1;\n          pcVar12 = pcVar14 + 1;\n          cVar1 = *pcVar14;\n          pcVar14 = pcVar12;\n        } while (cVar1 != '\\0');\n        pcVar14 = pcVar7 + -uVar10;\n        pcVar7 = pcVar12 + -1;\n        for (uVar9 = uVar10 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {\n          *(undefined4 *)pcVar7 = *(undefined4 *)pcVar14;\n          pcVar14 = pcVar14 + 4;\n          pcVar7 = pcVar7 + 4;\n        }\n        for (uVar10 = uVar10 & 3; uVar10 != 0; uVar10 = uVar10 - 1) {\n          *pcVar7 = *pcVar14;\n          pcVar14 = pcVar14 + 1;\n          pcVar7 = pcVar7 + 1;\n        }\n        FUN_0052ea80(local_400,1,0,0);\n        FUN_00525340();\n        FUN_00531260(*(undefined4 *)(pcVar15 + 1));\n        FUN_0052e5e0();\n        DAT_005e0304 = DAT_005e0304 + 5;\n        break;\n      case '<':\n        iVar4 = FUN_0052c5c0();\n        if (iVar4 == 0) {\n          bVar3 = DAT_005e0304[2];\n          pcVar15 = DAT_005e0304 + 3;\n          if ((int)((byte)DAT_005e0304[1] & 0x7f) <= DAT_00632f34 + -1) {\n            uVar5 = FUN_0052adf0((byte)DAT_005e0304[1] & 0x7f);\n            if ((bVar3 & 0x40) == 0) {\n              FUN_005363f0(pcVar15,bVar3 & 0xf);\n            }\n            else {\n              FUN_00536620(uVar5,pcVar15,bVar3 & 0xf,bVar3 & 0x20);\n            }\n          }\n        }\n        else {\n          FUN_0052e6e0(DAT_005e0304,0);\n        }\n        uVar10 = 0xffffffff;\n        pcVar15 = DAT_005e0304;\n        do {\n          if (uVar10 == 0) break;\n          uVar10 = uVar10 - 1;\n          cVar1 = *pcVar15;\n          pcVar15 = pcVar15 + 1;\n        } while (cVar1 != '\\0');\n        DAT_005e0304 = DAT_005e0304 + ~uVar10;\n        break;\n      case '=':\n        DAT_00633040 = DAT_00633040 | 1;\n        DAT_005e0304 = pcVar15 + 1;\n        break;\n      case '>':\n        FUN_00529f80();\n        DAT_005e0304 = DAT_005e0304 + 1;\n        break;\n      case '?':\n        FUN_00530270(pcVar15);\n        DAT_005e0304 = DAT_005e0304 + 0x15;\n        break;\n      case '@':\n        iVar4 = FUN_0052aa70();\n        if (iVar4 != 0) {\n          if (pcVar15[1] != -1) {\n            FUN_0052b240(pcVar15[1],*(undefined4 *)(pcVar15 + 5));\n          }\n          if (pcVar15[3] != -1) {\n            FUN_0052b260(pcVar15[3],*(undefined4 *)(pcVar15 + 0xd));\n          }\n          if (pcVar15[2] != -1) {\n            FUN_0052b200(pcVar15[2],*(undefined4 *)(pcVar15 + 9));\n          }\n          if (pcVar15[4] != -1) {\n            FUN_0052b220(pcVar15[4],*(undefined4 *)(pcVar15 + 0x11));\n          }\n        }\n        DAT_005e0304 = DAT_005e0304 + 0x15;\n        break;\n      case 'A':\n        FUN_0052ac80(pcVar15[1],1);\n        DAT_005e0304 = DAT_005e0304 + 2;\n        break;\n      case 'B':\n        iVar6 = 0;\n        iVar4 = 0;\n        if ((DAT_00632f18 == 0) || (DAT_00632f18 == 2)) {\n          iVar4 = 0x400;\n          iVar6 = 0x400;\n        }\n        if ((iVar4 != *(int *)(pcVar15 + 1)) || (iVar6 != *(int *)(pcVar15 + 5))) {\n          uVar5 = FUN_00507b00("]
+004c1170 -> rpman_move
+   strings=['FlagHintDriveGyro']
+005375e0 -> reaper_special_action_logic__FP6OBJECT
+   strings=['CommFlagCapsOn', 'WinCondMetBase', 'WinCondMetEndNow', 'WinCondMetPlayerScore']
+004d4350 -> make_spit__FP6OBJECTP3P3Df
+   strings=['fx_ripper_large_proj', 'fx_ripper_medium_proj']
+004beee0 -> reaper_fire_bow__FP6OBJECT
+   strings=['InvChDropItem', 'fxb_bow_charged']
+004c5810 -> reaper_replenish_basepit_energy__FP6OBJECT
+   strings=['fx_vimp_mana']
+004f5950 -> sonakring_move
+   strings=['FlagHintDriveGyro']
+004bce60 -> reaper_walkrun_go__FP6OBJECT
+   strings=['FXB_Splash']
+004e6ba0 -> rpboat_logic__FP6OBJECT
+   strings=['fx_ground_dusthit']
+0052d280 -> TreeBendCreate
+   strings=['gamespy_shutdown called more than once', 'gamespy_shutdown called without init']
+004ae4c0 -> read_objects_bin_PS2
+   strings=['Dynamic shadow texture']
+0044ed20 -> fx_process_one
+   strings=["Invalid resume for fx '%s'"]
+004d5b50 -> rpboat_tilt__FP6OBJECT
+   strings=['fx_ground_dusthit']
+004add70 -> fx_create_hack_logic
+   strings=['FX_EXTRACTOR_SMOKE', 'FX_EXTRACTOR_SOULS', 'FX_SPELLSHOP_BASE', 'FX_SPELLSHOP_RIPPLE']
+004c0810 -> reaper_fire_sword__FP6OBJECT
+   strings=['fx_hotbits2']
+004801c0 -> object_copy_personality
+   strings=['fxb_shield']
+004b5d10 -> reaperbasebldg_shot
+   strings=['FX_stone_explode_Large']
+00512c80 -> evilreaper_award_item__FP6OBJECT
+   strings=['fx_vimp_mana']
+004810d0 -> projectile_logic
+   strings=['FlagHintDriveGyro']
+004c1f80 -> reaper_update_spell_status__FP6OBJECT
+   strings=['fx_hailstorm_short']
+004e1970 -> rpman_shot
+   strings=['fx_explosion_popup']
+004be850 -> reaper_check_turbo__FP6OBJECT
+   strings=['FXB_Splash']
+00425eb0 -> MemAlloc
+   strings=['SaveIdx', 'savegame\\\\%s\\\\debug.err', 'savegame\\\\SaveGame%d\\\\debug.err']
+0041b660 -> base_add_smartie_to_building__FP6OBJECTi
+   strings=['fxb_build_select']
+004bd7c0 -> reaper_logic
+   strings=['fx_bow_change']
+004aca20 -> sf_arm_followers__FP6OBJECTT0
+   strings=['FXB_swirl']
+00402d60 -> ai_chase_location__FP6OBJECTP3P3DUi
+   strings=['C:\\\\Giants\\\\source\\\\main\\\\ai_move.c', 'goals']
+0053a4b0 -> temp_create_rndr_base__FPUcT0P10ObjectData
+   strings=['Bad Memory Picket Found', 'Crpt end pkt sz/ad %lu/%lX from %s line %d', 'Crpt strt pkt sz/ad %lu/%lX from %s line %d', 'MemVfy: Bad magic %lX from %s line %d']
+004c6a30 -> reaper_firecircle_detonate__FP6OBJECT
+   strings=['FXN_firering']
+004b4570 -> reaperbase_init
+   strings=["Obsolete Base placement detected. Please upgrade all bases to use base templates. Until then base won't work"]
+00496bc0 -> object_allocator__Fi
+   strings=["Warning we've used all the unique id's"]
+00407c40 -> meccbase_init
+   strings=["Obsolete Base placement detected. Please upgrade all bases to use base templates. Until then base won't work"]
+00480540 -> reaper_activate_partysmartie__FP6OBJECT
+   strings=['PhErrNotGround', 'PhErrNotGroundOrWater', 'PhErrNotOnSomething']
+0040b220 -> texture_object_debug_dump
+   strings=['C:\\\\Giants\\\\source\\\\main\\\\blood.c', 'bigblood', 'bloodblob']
+00442f70 -> texture_object_debug_dump
+   strings=['C:\\\\Giants\\\\source\\\\main\\\\flame.c', 'b_flames', 'flame']
+00446ee0 -> texture_object_debug_dump
+   strings=['GiantFont_Eng']
+004361b0 -> rpman_init__FP6OBJECT
+   strings=['C:\\\\Giants\\\\source\\\\main\\\\editor.c', 'EditUndoData']

@@ -16,7 +16,7 @@ apply_name = a clean C identifier (the demangled base, sanitized, de-duplicated)
 Name collisions (>=2 PC funcs wanting the same base) are resolved by keeping the
 highest-confidence one and flagging the losers "COLLISION_REVIEW".
 """
-import csv, os, re, collections
+import csv, os, re, sys, collections
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -43,7 +43,8 @@ def sanitize(name):
 
 # load matches
 matches = []
-with open(os.path.join(HERE, "pc_ps2_matches_full.csv"), encoding="utf-8") as f:
+TAG = sys.argv[1] if len(sys.argv) > 1 else ""
+with open(os.path.join(HERE, f"pc_ps2_matches_full{TAG}.csv"), encoding="utf-8") as f:
     for r in csv.DictReader(f):
         ps2a = int(r["ps2_addr"], 16)
         dem = ps2_sig.get(ps2a, r["ps2_name"])
@@ -76,7 +77,7 @@ def tier_note(conf):
     return "DRAFT"
 
 # emit CSV
-out_csv = os.path.join(HERE, "pc_rename_apply.csv")
+out_csv = os.path.join(HERE, f"pc_rename_apply{TAG}.csv")
 with open(out_csv, "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f)
     w.writerow(["pc_addr", "apply_name", "ps2_demangled", "params", "conf", "tier", "notes"])
@@ -89,7 +90,8 @@ with open(out_csv, "w", newline="", encoding="utf-8") as f:
 
 # emit Ghidra apply script (safe tier only by default)
 safe = [m for m in matches if m["conf"] >= 0.9 and m not in flagged]
-ghp = os.path.join(HERE, "apply_renames_ghidra.py")
+GHIDRA_OUT = "apply_renames_ghidra" if not TAG else f"apply_renames_ghidra{TAG}"
+ghp = os.path.join(HERE, "apply_renames_ghidra.py".replace(".py", f"{TAG}.py"))
 with open(ghp, "w", encoding="utf-8") as f:
     f.write("# Ghidra (Jython) script: apply PS2-derived names to matched PC functions.\n")
     f.write("# Generated from pc_ps2_matches_full.csv, conf>=0.9 only. Safe tier.\n")

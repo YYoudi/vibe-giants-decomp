@@ -15,7 +15,9 @@ import csv, os, re, json, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 PC_EXPORT = os.path.join(REPO, "ghidra_exports")
-MATCHES = os.path.join(HERE, "pc_ps2_matches_full.csv")
+import sys
+TAG = sys.argv[1] if len(sys.argv) > 1 else ""
+MATCHES = os.path.join(HERE, f"pc_ps2_matches_full{TAG}.csv")
 
 STR_RE = re.compile(r'"((?:\\.|[^"\\])*)"')
 def pc_strings(addr):
@@ -67,7 +69,7 @@ def main():
     for pc, name, ss in mismatch[:25]:
         print(f"  {pc} -> {name}  strings={ss}")
 
-    with open(os.path.join(HERE,"verify_report.txt"),"w",encoding="utf-8") as f:
+    with open(os.path.join(HERE,f"verify_report{TAG}.txt"),"w",encoding="utf-8") as f:
         f.write(f"string-semantic agreement: {agree}/{n_checkable}\n\n")
         for pc,name,ss in mismatch:
             f.write(f"{pc} -> {name}\n   strings={ss}\n")
