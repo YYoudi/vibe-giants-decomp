@@ -8,6 +8,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - **Binaire de référence : `GameFiles-VanillaV1/Giants.exe`** — PE32, 1 634 304 octets, daté 30 nov 2000 (v1.0 retail).
   MD5 `330c6a9a8ab0fa4b0173d925e1d5ec27`. Image base `0x400000`, entry `0x547358`.
+- **Cible d'analyse courante : GOG 1.4.0 (build 1.449)** — projet Ghidra `ghidra_projects_gog144/` (2599 fonctions
+  énumérées, wave-2 matching PS2 en cours). Mapping v1.0↔1.449 : `decompiled/v10_1449_ranges.json` +
+  `decompiled/v10_to_v149_map.json` (générés par `scripts/cross_version_map.py`). Le vanilla v1.0 reste le ground
+  truth bit-à-bit pour toute validation de recomp.
 - ⚠️ **Fichiers contaminés** dans `GameFiles-VanillaV1/` (modifiés lors de sessions précédentes — NE PAS utiliser
   comme ground truth) : `Giants_nocd.exe`, `gg_dx7r.dll`, `libgcc_s_dw2-1.dll`, `libstdc++-6.dll`,
   `libwinpthread-1.dll`, `vfsdump_logo512.tga` (dates 2025 = modifiés ; dates 2000 = propres).
@@ -32,15 +36,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 3. **Fallback CLI** (marche même sans outils MCP dans la session) :
    `python scripts/xdbg_call.py <ToolName> '<json-args>'` — lit token/port tout seul depuis `mcp_config.json`.
    Utiliser des `/` dans les chemins JSON (bash mange les `\`).
-4. Debugger statique : Ghidra à `G:\Tools\ghidra_12.1.2_PUBLIC` (analyse batch/headless si besoin).
+4. Debugger statique : Ghidra à `G:\Tools\ghidra_12.1.2_PUBLIC` (analyse batch/headless si besoin ; c'est la même
+   install que REA auto-détecte, voir section REA).
+
+## OUTIL REA — MCP `mcp__rea__*` (lecture statique + ledger d'évidence ; installé/validé 2026-10-12)
+
+**REA = couche LECTURE/ÉVIDENCE statique sur Ghidra headless 12.1.2 + captures runtime contrôlées.**
+Skill : `reverse-engineer-anything` (doc : https://rea.tools/get-started/). Rien à lancer : outils MCP
+`mcp__rea__*` déjà connectés dans la session. `binary_session` = check d'état (doit répondre `{open:false, ...}` au repos).
+
+1. **Boucle statique PE** : `open_binary` (chemin absolu de l'exe, cible PAUSED pas requis — lecture fichier) →
+   `trace_feature` (ancre string → strings → xrefs → procédures conteneuses : cœur du matching PS2 wave-2),
+   `search_procedures` / `search_strings`, `list_procedures`, `analyze_function` (dossier complet avec Evidence),
+   `procedure_pseudo_code` / `procedure_assembly`, `xrefs`, `get_call_graph`, `batch_decompile`, `read_bytes`,
+   `inspect_native_data_type`. `close_binary` en fin d'investigation.
+2. **Évidence** : chaque opération produit un Evidence ID (`ev_*`). Citer les IDs dans les conclusions ; distinguer
+   observed / derived / inferred ; ne jamais présenter du statique comme de l'exécution observée.
+   `get_evidence_bundle` (résumé) et `export_evidence_bundle` (export complet vers un chemin) pour sauver/passer
+   une session — utile comme sauvegarde avant un crash.
+3. **Comparaisons inter-versions** (v1.0 vs GOG 1.449) : `compare_functions` (identity/pseudocode/calls/cfg…),
+   `compare_artifacts`, `find_changed_behavior` — différences exactes, digest-anchored, sans fuzzy matching.
+4. **Limites Windows (attendues, pas des pannes)** : PAS de renames/commentaires via REA
+   (`annotate_native_function` bloqué — le Ghidra P0 Windows refuse la mutation de base) → **les renames restent
+   dans le bridge ghidra-mcp ci-dessous**. Import headless éphémère : pas de persistance d'analyse entre sessions
+   REA. Outils natifs macOS indisponibles (sans objet pour du PE x86).
+
+**Répartition des rôles** : x64dbg = vérité runtime · REA = lecture statique + évidence + comparaisons ·
+bridge ghidra-mcp = renames + projet persistant · analyzeHeadless = passes batch complètes.
 
 ## MÉTHODE (dans l'ordre)
 
 1. **OBSERVER le vrai jeu en runtime** (breakpoints x64dbg sur APIs Win32 / entry du module / strings)
    → jamais deviner quel asset est chargé, quel flow est pris, quelle valeur est passée.
-2. **NOMMER** les fonctions PC vanilla via `ps2_symbols/` (4769 fonctions nommées du binaire PS2 SLUS_201.78,
+2. **NOMMER** les fonctions via `ps2_symbols/` (4769 fonctions nommées du binaire PS2 SLUS_201.78,
    même code source C++). Pipeline de matching string-anchor + call-graph : voir `ps2_symbols/README.md`.
-   `python ps2_symbols/lookup.py <motif>` pour chercher.
+   `python ps2_symbols/lookup.py <motif>` pour chercher. Depuis 2026-10 : les lectures d'ancres, xrefs et
+   decomp du matching passent par REA (`trace_feature`, `analyze_function`… — section REA) ; les renames
+   validés sont appliqués via le bridge ghidra-mcp dans `ghidra_projects_gog144/`.
 3. **Réutiliser les 14 repos d'Amazed** (`RESSOURCES_FOR_AI/git_repos_from_amazed/`) — RE clean-room des formats
    GZP/GTI/GBS/SKN/ANM/.BIN, décompression LZ (`gck-map-extract-objects/lib/fileutils.py` = décompresseur canonique).
 4. **Compléments** : `RESSOURCES_FOR_AI/sent_by_Amazed/` (debug.exe + doc, prototype PS2 ISO 2001, docs
