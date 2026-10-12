@@ -1,0 +1,14 @@
+{
+ "0x4b7c50": {
+  "name": "bin_load_1a0002e5",
+  "v149_va": "0x4b0fc0"
+ },
+ "0x51ebef": {
+  "name": "renderer_load_return_site",
+  "v149_va": "0x518e4f"
+ },
+ "0x53b5a5": {
+  "name": "lzss_decompress_core",
+  "v149_va": "0x539705"
+ }
+}
