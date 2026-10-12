@@ -22,7 +22,9 @@ def norm(a):
     return a.lower().lstrip("0x").lstrip("0").rjust(8, "0")
 
 def load(path):
-    return {norm(r["addr"]): r for r in csv.DictReader(open(path, encoding="utf-8"))}
+    # skip degenerate pseudo-functions (size<=4) left by earlier apply passes
+    return {norm(r["addr"]): r for r in csv.DictReader(open(path, encoding="utf-8"))
+            if int(r["size"]) > 4}
 
 def main():
     v10 = load(os.path.join(REPO, "decompiled", "v10_func_bytes.csv"))
@@ -60,6 +62,38 @@ def main():
             used10.add(a10); used149.add(a149)
     print(f"stage2 head+size: {len(matches)} total")
 
+
+    # stage 3: semantic (relocation-normalized) md5, unique both sides
+    def load_norm(path):
+        d = {}
+        for r in csv.DictReader(open(path, encoding="utf-8")):
+            if r["normmd5"]:
+                d.setdefault(r["normmd5"], []).append(norm(r["addr"]))
+        return d
+    nh10 = load_norm(os.path.join(REPO, "decompiled", "v10_normhash.csv"))
+    before = len(matches)
+    for a149, r in v149.items():
+        if a149 in used149:
+            continue
+        h = None
+        for nr in csv.DictReader(open(os.path.join(REPO, "decompiled", "v149_normhash.csv"), encoding="utf-8")):
+            pass
+    # (load v149 norm into dict first)
+    v149nh = {}
+    for r in csv.DictReader(open(os.path.join(REPO, "decompiled", "v149_normhash.csv"), encoding="utf-8")):
+        if r["normmd5"]:
+            v149nh[norm(r["addr"])] = r["normmd5"]
+    for a149, h in v149nh.items():
+        if a149 in used149:
+            continue
+        cands = nh10.get(h, [])
+        cands = [c for c in cands if c not in used10]
+        if len(cands) == 1:
+            a10 = cands[0]
+            matches[a149] = (a10, "norm")
+            used10.add(a10); used149.add(a149)
+    print(f"stage3 norm: {len(matches)} total (+{len(matches)-before})")
+
     with open(os.path.join(REPO, "decompiled", "v10_v149_bytemap.csv"), "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["v10_addr", "v149_addr", "stage"])
@@ -70,7 +104,7 @@ def main():
     # name sources keyed by v1.0 address (no 0x, 8 hex, as in dump csv)
     names = {}  # v10_addr -> (name, source, conf)
     for a, r in load(os.path.join(REPO, "decompiled", "v10_func_bytes.csv")).items():
-        if not r["name"].startswith("FUN_"):
+        if not r["name"].startswith("FUN_") and int(r["size"]) > 4:
             names[a] = (r["name"], "v10_project", 1.0)
     for r in csv.DictReader(open(os.path.join(REPO, "ps2_symbols", "pc_ps2_matches_full.csv"), encoding="utf-8")):
         a = norm(r["pc_addr"])
@@ -93,7 +127,7 @@ def main():
             rows.append({
                 "pc_addr": a149, "pc_name": f"FUN_{a149.upper()}",
                 "ps2_addr": "0x" + a10, "ps2_name": nm,
-                "conf": conf if stage == "exact" else round(conf * 0.95, 3),
+                "conf": conf if stage == "exact" else round(conf * (0.95 if stage == "head" else 0.85), 3),
                 "tier": f"bytehash-{stage}-{src}", "shared": "",
             })
     out = os.path.join(REPO, "ps2_symbols", "bytehash_names_1449.csv")
