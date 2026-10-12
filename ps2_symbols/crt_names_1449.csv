@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00542f79,FUN_00542f79,,__rt_error_box,0.95,crt-rtc-string,
+0054cd20,FUN_0054cd20,,__rt_error_box_2,0.95,crt-rtc-string,
+0053cb50,FUN_0053cb50,,_initterm_cand,0.5,crt-crt-shape,

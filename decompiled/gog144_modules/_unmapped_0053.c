@@ -15662,6 +15662,10 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 }
 
 /* ===== FUN_0053cb50 @ 0x0053CB50 ===== */
+/* PS2 candidate: _initterm_cand (conf 0.5) */
+
+
+
 int FUN_0053cb50(int param_1,undefined4 param_2,int param_3)
 
 
@@ -16324,7 +16328,7 @@ int FUN_0053d1c0(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
 
   if ((param_1 == 0) || (param_3 == 0)) {
 
-    FUN_00542f79(s_Anim____Skin_00580b6c,s_C__Giants_LIBS_anm_anm_cpp_00580b7c,0x9f1);
+    __rt_error_box(s_Anim____Skin_00580b6c,s_C__Giants_LIBS_anm_anm_cpp_00580b7c,0x9f1);
 
   }
 

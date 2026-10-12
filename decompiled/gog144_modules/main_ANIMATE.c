@@ -56,9 +56,9 @@ void FUN_00404b60(int param_1,int param_2)
 
   if (iVar1 == 0) {
 
-    FUN_00542f79(s_this_had_better_not_be_null____N_00554100,
+    __rt_error_box(s_this_had_better_not_be_null____N_00554100,
 
-                 s_C__Giants_source_main_ANIMATE_CP_00554124,0x3d8);
+                   s_C__Giants_source_main_ANIMATE_CP_00554124,0x3d8);
 
   }
 

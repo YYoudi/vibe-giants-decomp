@@ -925,17 +925,17 @@ LAB_004b1410:
 
       if (*(float *)(DAT_006330e4 + 0x128) < 0.0) {
 
-        FUN_00542f79(s_World_>fogmin_>__0_0f_005605c4,s_C__Giants_source_main_readwrls_c_005602ac,
+        __rt_error_box(s_World_>fogmin_>__0_0f_005605c4,s_C__Giants_source_main_readwrls_c_005602ac,
 
-                     0x288);
+                       0x288);
 
       }
 
       if (*(float *)(DAT_006330e4 + 300) < 0.0) {
 
-        FUN_00542f79(s_World_>fogmax_>__0_0f_005605ac,s_C__Giants_source_main_readwrls_c_005602ac,
+        __rt_error_box(s_World_>fogmax_>__0_0f_005605ac,s_C__Giants_source_main_readwrls_c_005602ac,
 
-                     0x289);
+                       0x289);
 
       }
 
@@ -2441,17 +2441,17 @@ switchD_004b1431_caseD_2c:
 
       if (*(float *)(DAT_006330e4 + 0x140) < 0.0) {
 
-        FUN_00542f79(s_World_>waterfogmin_>__0_0f_00560590,
+        __rt_error_box(s_World_>waterfogmin_>__0_0f_00560590,
 
-                     s_C__Giants_source_main_readwrls_c_005602ac,0x295);
+                       s_C__Giants_source_main_readwrls_c_005602ac,0x295);
 
       }
 
       if (*(float *)(DAT_006330e4 + 0x144) < 0.0) {
 
-        FUN_00542f79(s_World_>waterfogmax_>__0_0f_00560574,
+        __rt_error_box(s_World_>waterfogmax_>__0_0f_00560574,
 
-                     s_C__Giants_source_main_readwrls_c_005602ac,0x296);
+                       s_C__Giants_source_main_readwrls_c_005602ac,0x296);
 
       }
 

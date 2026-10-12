@@ -44,7 +44,9 @@ try:
         name = fn.getName()
         if not name.startswith("FUN_"):
             named += 1
-        res = di.decompileFunction(fn, 25, None)
+        res = di.decompileFunction(fn, 60, None)
+        if not res.decompileCompleted():
+            res = di.decompileFunction(fn, 240, None)  # big-function retry
         c = res.getDecompiledFunction().getC() if res.decompileCompleted() else "// DECOMPILE FAILED\n"
         if not res.decompileCompleted():
             failed += 1

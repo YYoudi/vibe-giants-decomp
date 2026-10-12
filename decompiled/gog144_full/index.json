@@ -217,7 +217,7 @@
  "0x00404B60": {
   "name": "FUN_00404b60",
   "named": false,
-  "len": 1745
+  "len": 1749
  },
  "0x00404D70": {
   "name": "FUN_00404d70",
@@ -1017,7 +1017,7 @@
  "0x00418F00": {
   "name": "FUN_00418f00",
   "named": false,
-  "len": 17368
+  "len": 17370
  },
  "0x0041A090": {
   "name": "FUN_0041a090",
@@ -2817,7 +2817,7 @@
  "0x00449CE0": {
   "name": "FUN_00449ce0",
   "named": false,
-  "len": 20
+  "len": 67219
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -6177,7 +6177,7 @@
  "0x004B0FC0": {
   "name": "bin_load_1a0002e5",
   "named": true,
-  "len": 69764
+  "len": 69780
  },
  "0x004B42D0": {
   "name": "FUN_004b42d0",
@@ -10292,12 +10292,12 @@
  "0x00533280": {
   "name": "FUN_00533280",
   "named": false,
-  "len": 1265
+  "len": 1267
  },
  "0x00533370": {
   "name": "FUN_00533370",
   "named": false,
-  "len": 2227
+  "len": 2231
  },
  "0x00533500": {
   "name": "FUN_00533500",
@@ -10737,7 +10737,7 @@
  "0x0053CB50": {
   "name": "FUN_0053cb50",
   "named": false,
-  "len": 1240
+  "len": 1290
  },
  "0x0053CC20": {
   "name": "FUN_0053cc20",
@@ -10767,7 +10767,7 @@
  "0x0053D1C0": {
   "name": "FUN_0053d1c0",
   "named": false,
-  "len": 1155
+  "len": 1157
  },
  "0x0053D2A0": {
   "name": "FUN_0053d2a0",
@@ -11345,9 +11345,9 @@
   "len": 532
  },
  "0x00542F79": {
-  "name": "FUN_00542f79",
-  "named": false,
-  "len": 2134
+  "name": "__rt_error_box",
+  "named": true,
+  "len": 2136
  },
  "0x00543270": {
   "name": "FUN_00543270",
@@ -11762,12 +11762,12 @@
  "0x00545860": {
   "name": "__amsg_exit",
   "named": true,
-  "len": 286
+  "len": 290
  },
  "0x00545885": {
   "name": "FUN_00545885",
   "named": false,
-  "len": 216
+  "len": 220
  },
  "0x005458A9": {
   "name": "FUN_005458a9",
@@ -11917,7 +11917,7 @@
  "0x00546A8C": {
   "name": "FUN_00546a8c",
   "named": false,
-  "len": 158
+  "len": 162
  },
  "0x00546AA3": {
   "name": "FUN_00546aa3",
@@ -12497,12 +12497,12 @@
  "0x0054CCE7": {
   "name": "FUN_0054cce7",
   "named": false,
-  "len": 254
+  "len": 262
  },
  "0x0054CD20": {
-  "name": "FUN_0054cd20",
-  "named": false,
-  "len": 2260
+  "name": "__rt_error_box_2",
+  "named": true,
+  "len": 2264
  },
  "0x0054CE73": {
   "name": "FUN_0054ce73",

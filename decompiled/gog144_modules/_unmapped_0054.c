@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (40 named) — decompiled, names from PS2 symbols
+ * 351 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -2616,12 +2616,12 @@ undefined4 FUN_00542f27(undefined1 *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00542f79 @ 0x00542F79 ===== */
+/* ===== __rt_error_box @ 0x00542F79 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00542f79(char *param_1,char *param_2)
+void __rt_error_box(char *param_1,char *param_2)
 
 
 
@@ -8554,7 +8554,7 @@ void __cdecl __amsg_exit(int param_1)
 
   }
 
-  FUN_0054cd20(param_1);
+  __rt_error_box_2(param_1);
 
   (*(code *)PTR___exit_00581380)(0xff);
 
@@ -8575,7 +8575,7 @@ void FUN_00545885(undefined4 param_1)
 
   }
 
-  FUN_0054cd20(param_1);
+  __rt_error_box_2(param_1);
 
                     /* WARNING: Subroutine does not return */
 
@@ -10739,7 +10739,7 @@ void FUN_00546a8c(void)
 
 {
 
-  FUN_0054cd20(10);
+  __rt_error_box_2(10);
 
   FUN_00546c09(0x16);
 
@@ -21759,7 +21759,7 @@ void FUN_0054cce7(void)
 
   if ((DAT_00630bac == 1) || ((DAT_00630bac == 0 && (DAT_00581384 == 1)))) {
 
-    FUN_0054cd20(0xfc);
+    __rt_error_box_2(0xfc);
 
     if (DAT_00630d80 != (code *)0x0) {
 
@@ -21767,7 +21767,7 @@ void FUN_0054cce7(void)
 
     }
 
-    FUN_0054cd20(0xff);
+    __rt_error_box_2(0xff);
 
   }
 
@@ -21775,8 +21775,8 @@ void FUN_0054cce7(void)
 
 }
 
-/* ===== FUN_0054cd20 @ 0x0054CD20 ===== */
-void FUN_0054cd20(DWORD param_1)
+/* ===== __rt_error_box_2 @ 0x0054CD20 ===== */
+void __rt_error_box_2(DWORD param_1)
 
 
 

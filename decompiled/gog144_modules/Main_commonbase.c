@@ -568,7 +568,7 @@ LAB_004195d2:
 
     if (iVar8 == 0) {
 
-      FUN_00542f79(s_smartie_005556f4,s_C__Giants_source_Main_commonbase_005556fc,0x697);
+      __rt_error_box(s_smartie_005556f4,s_C__Giants_source_Main_commonbase_005556fc,0x697);
 
     }
 

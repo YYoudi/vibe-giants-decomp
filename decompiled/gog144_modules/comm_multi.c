@@ -52,7 +52,7 @@ void FUN_00533280(int param_1)
 
         if (puVar2 == (undefined4 *)0x0) {
 
-          FUN_00542f79(s_player_0057ff40,s_C__Giants_source_comm_multi_c_0057ff48,0x8ec);
+          __rt_error_box(s_player_0057ff40,s_C__Giants_source_comm_multi_c_0057ff48,0x8ec);
 
           return;
 
@@ -135,7 +135,7 @@ LAB_005333ee:
 
       if (iVar3 == 0) {
 
-        FUN_00542f79(&DAT_0057ff68,s_C__Giants_source_comm_multi_c_0057ff48,0x906);
+        __rt_error_box(&DAT_0057ff68,s_C__Giants_source_comm_multi_c_0057ff48,0x906);
 
       }
 
@@ -161,7 +161,7 @@ LAB_005333ee:
 
     iVar4 = 0;
 
-    FUN_00542f79(&DAT_0057ff68,s_C__Giants_source_comm_multi_c_0057ff48,0x90f);
+    __rt_error_box(&DAT_0057ff68,s_C__Giants_source_comm_multi_c_0057ff48,0x90f);
 
 LAB_00533499:
 
