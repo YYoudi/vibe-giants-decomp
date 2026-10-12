@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (18 named) — decompiled, names from PS2 symbols
+ * 129 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -1356,7 +1356,7 @@ void FUN_00420c10(int param_1)
 
   FUN_00542f27(local_80,pcVar8);
 
-  iVar2 = FUN_00543a11(local_80,&DAT_00555e04);
+  iVar2 = BinFileSeek_2(local_80,&DAT_00555e04);
 
   bVar7 = iVar2 != 0;
 
@@ -6301,7 +6301,7 @@ void FUN_004239d0(void)
 
   FUN_00542f27(local_80,pcVar2,puVar3);
 
-  iVar1 = FUN_00543a11(local_80,&DAT_00555e30);
+  iVar1 = BinFileSeek_2(local_80,&DAT_00555e30);
 
   if (iVar1 != 0) {
 
@@ -6606,7 +6606,7 @@ void FUN_00423af0(void)
 
     FUN_00542f27(auStack_80,pcVar3,puVar4);
 
-    iVar2 = FUN_00543a11(auStack_80,&DAT_00555e04);
+    iVar2 = BinFileSeek_2(auStack_80,&DAT_00555e04);
 
     if (iVar2 != 0) {
 
@@ -8046,6 +8046,10 @@ float10 FUN_00425840(void)
 }
 
 /* ===== FUN_00425850 @ 0x00425850 ===== */
+/* PS2 candidate: verm_ai_cb__FiP6OBJECTPv (conf 0.587) */
+
+
+
 void FUN_00425850(int param_1)
 
 
@@ -8216,8 +8220,8 @@ int FUN_00425b50(int param_1)
 
 }
 
-/* ===== FUN_00425e90 @ 0x00425E90 ===== */
-undefined4 FUN_00425e90(void)
+/* ===== AudioGetMasterVolume__Fv_2 @ 0x00425E90 ===== */
+undefined4 AudioGetMasterVolume__Fv_2(void)
 
 
 
@@ -8227,8 +8231,8 @@ undefined4 FUN_00425e90(void)
 
 }
 
-/* ===== FUN_00425ea0 @ 0x00425EA0 ===== */
-void FUN_00425ea0(undefined4 param_1)
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2 @ 0x00425EA0 ===== */
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2(undefined4 param_1)
 
 
 
@@ -8287,7 +8291,7 @@ void FUN_00425eb0(undefined4 param_1)
 
     FUN_00542f27(local_80,pcVar2,puVar3);
 
-    iVar1 = FUN_00543a11(local_80,&DAT_00556384);
+    iVar1 = BinFileSeek_2(local_80,&DAT_00556384);
 
     if (iVar1 != 0) {
 
@@ -9011,12 +9015,12 @@ LAB_004266c5:
 
 }
 
-/* ===== FUN_00426ed0 @ 0x00426ED0 ===== */
+/* ===== dialog_level_is_base @ 0x00426ED0 ===== */
 /* PS2 candidate: sound_setup_sequence (conf 0.532) */
 
 
 
-bool FUN_00426ed0(void)
+bool dialog_level_is_base(void)
 
 
 
@@ -9126,6 +9130,10 @@ void FUN_00426F40(undefined4 param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00426FA0 @ 0x00426FA0 ===== */
+/* PS2 candidate: dialog_level_set_textentry_mode (conf 0.851) */
+
+
+
 void FUN_00426FA0(void)
 
 
@@ -9145,6 +9153,10 @@ void FUN_00426FA0(void)
 }
 
 /* ===== FUN_00426fd0 @ 0x00426FD0 ===== */
+/* PS2 candidate: dialog_level_pop (conf 0.521) */
+
+
+
 void FUN_00426fd0(int param_1)
 
 
@@ -9300,8 +9312,8 @@ void FUN_00427040(int param_1)
 
 }
 
-/* ===== FUN_004270f0 @ 0x004270F0 ===== */
-void FUN_004270f0(void)
+/* ===== Audio3DTestToneUpdate__Fv @ 0x004270F0 ===== */
+void Audio3DTestToneUpdate__Fv(void)
 
 
 
@@ -9314,6 +9326,10 @@ void FUN_004270f0(void)
 }
 
 /* ===== FUN_00427100 @ 0x00427100 ===== */
+/* PS2 candidate: __main (conf 0.629) */
+
+
+
 void FUN_00427100(void)
 
 
@@ -9335,6 +9351,10 @@ void FUN_00427100(void)
 }
 
 /* ===== FUN_00427120 @ 0x00427120 ===== */
+/* PS2 candidate: ANM_DumpCluster_13 (conf 0.525) */
+
+
+
 void FUN_00427120(void)
 
 
@@ -9360,8 +9380,8 @@ float10 main_dlog_004272e0(void)
 
 }
 
-/* ===== main/dlog_004272f0 @ 0x004272F0 ===== */
-undefined4 main_dlog_004272f0(int param_1)
+/* ===== GetCurrentPos__C11CByteStream_2 @ 0x004272F0 ===== */
+undefined4 GetCurrentPos__C11CByteStream_2(int param_1)
 
 
 
@@ -9371,8 +9391,8 @@ undefined4 main_dlog_004272f0(int param_1)
 
 }
 
-/* ===== main/dlog_00427300 @ 0x00427300 ===== */
-void main_dlog_00427300(int param_1,undefined4 param_2)
+/* ===== MAP_MemGroupSetBase_2 @ 0x00427300 ===== */
+void MAP_MemGroupSetBase_2(int param_1,undefined4 param_2)
 
 
 
@@ -14003,8 +14023,8 @@ void FUN_0042aea0(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0042b010 @ 0x0042B010 ===== */
-void FUN_0042b010(undefined4 param_1)
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3 @ 0x0042B010 ===== */
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(undefined4 param_1)
 
 
 
@@ -14016,8 +14036,8 @@ void FUN_0042b010(undefined4 param_1)
 
 }
 
-/* ===== FUN_0042b020 @ 0x0042B020 ===== */
-void FUN_0042b020(void)
+/* ===== Audio3DTestToneUpdate__Fv_2 @ 0x0042B020 ===== */
+void Audio3DTestToneUpdate__Fv_2(void)
 
 
 
@@ -14029,8 +14049,8 @@ void FUN_0042b020(void)
 
 }
 
-/* ===== FUN_0042b030 @ 0x0042B030 ===== */
-void FUN_0042b030(void)
+/* ===== Audio3DTestToneUpdate__Fv_3 @ 0x0042B030 ===== */
+void Audio3DTestToneUpdate__Fv_3(void)
 
 
 
@@ -14042,8 +14062,8 @@ void FUN_0042b030(void)
 
 }
 
-/* ===== FUN_0042b040 @ 0x0042B040 ===== */
-void FUN_0042b040(undefined4 param_1,undefined4 param_2)
+/* ===== BinFileSeek @ 0x0042B040 ===== */
+void BinFileSeek(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -14154,8 +14174,8 @@ int FUN_0042b060(int param_1,float param_2,int param_3)
 
 }
 
-/* ===== FUN_0042b160 @ 0x0042B160 ===== */
-void FUN_0042b160(undefined4 param_1)
+/* ===== BinFileCreateWrite_2 @ 0x0042B160 ===== */
+void BinFileCreateWrite_2(undefined4 param_1)
 
 
 
@@ -14167,8 +14187,8 @@ void FUN_0042b160(undefined4 param_1)
 
 }
 
-/* ===== FUN_0042b180 @ 0x0042B180 ===== */
-void FUN_0042b180(undefined4 param_1)
+/* ===== BinFileCreateWrite_3 @ 0x0042B180 ===== */
+void BinFileCreateWrite_3(undefined4 param_1)
 
 
 
@@ -14181,6 +14201,10 @@ void FUN_0042b180(undefined4 param_1)
 }
 
 /* ===== FUN_0042b1a0 @ 0x0042B1A0 ===== */
+/* PS2 candidate: reaper_has_bow_3 (conf 0.807) */
+
+
+
 int FUN_0042b1a0(int param_1)
 
 
@@ -15541,7 +15565,7 @@ void FUN_0042c3e0(int param_1,byte param_2,int param_3)
 
   if ((char)uVar19 < '\0') {
 
-    pfVar6 = (float *)FUN_005168e0();
+    pfVar6 = (float *)AudioDataStreamStatus__Fv_5();
 
     local_d8 = *pfVar6 * *(float *)(param_1 + 0xc4);
 
@@ -15621,7 +15645,7 @@ void FUN_0042c3e0(int param_1,byte param_2,int param_3)
 
   else {
 
-    pfVar6 = (float *)FUN_005168e0();
+    pfVar6 = (float *)AudioDataStreamStatus__Fv_5();
 
     fVar3 = *(float *)(param_1 + 0xc4);
 
@@ -15713,7 +15737,7 @@ void FUN_0042c3e0(int param_1,byte param_2,int param_3)
 
     FUN_00515eb0(&uStack_90,&uStack_88);
 
-    FUN_00515e90(uStack_90,0x479c4000);
+    FNT_StringRender__FPcP14FNT_RenderInfo(uStack_90,0x479c4000);
 
     fVar22 = (float10)FUN_00515da0(0);
 
@@ -16553,7 +16577,7 @@ LAB_0042d3f8:
 
   if ((*(byte *)(param_1 + 0xd8) & 2) != 0) {
 
-    FUN_00515e90(uStack_90,uStack_88);
+    FNT_StringRender__FPcP14FNT_RenderInfo(uStack_90,uStack_88);
 
     fVar22 = (float10)FUN_00515da0(1);
 
@@ -16662,7 +16686,7 @@ void FUN_0042d550(void)
 
             FUN_005170f0(fVar3,&local_18,local_c);
 
-            FUN_00516bf0(local_c,local_24);
+            xform_view(local_c,local_24);
 
             *pfVar8 = local_1c;
 
@@ -16736,7 +16760,7 @@ void FUN_0042d550(void)
 
             }
 
-            FUN_00516bf0((int)fVar3 + 0xa0,local_24);
+            xform_view((int)fVar3 + 0xa0,local_24);
 
             *pfVar8 = local_1c -
 
@@ -16748,7 +16772,7 @@ void FUN_0042d550(void)
 
         else {
 
-          FUN_00516bf0((int)fVar3 + 0xa0,local_24);
+          xform_view((int)fVar3 + 0xa0,local_24);
 
           *pfVar8 = local_1c - (float)(**(char **)((int)fVar12 * 0x50 + 0x74 + iVar5) + -0x41);
 
@@ -17292,8 +17316,8 @@ LAB_0042dcd8:
 
 }
 
-/* ===== FUN_0042de50 @ 0x0042DE50 ===== */
-void FUN_0042de50(undefined4 param_1)
+/* ===== shrap_create_water @ 0x0042DE50 ===== */
+void shrap_create_water(undefined4 param_1)
 
 
 
@@ -17385,7 +17409,7 @@ void FUN_0042df60(void)
 
   DAT_006573e8 = main_drawwrld_00435170(200,0x32,2);
 
-  main_drawwrld_00434cc0(DAT_006573e8,0x33c,DAT_006573f4,0xffffffff);
+  sceMpegSetDecodeMode(DAT_006573e8,0x33c,DAT_006573f4,0xffffffff);
 
   return;
 
@@ -17406,8 +17430,8 @@ void FUN_0042dfa0(void)
 
 }
 
-/* ===== FUN_0042dfc0 @ 0x0042DFC0 ===== */
-void FUN_0042dfc0(void)
+/* ===== _cleanup @ 0x0042DFC0 ===== */
+void _cleanup(void)
 
 
 
@@ -17550,7 +17574,7 @@ void FUN_0042e1f0(void)
 
   DAT_006573ec = main_drawwrld_00435170(400,100,2);
 
-  main_drawwrld_00434cc0(DAT_006573ec,0x33c,DAT_006573e4,0xffffffff);
+  sceMpegSetDecodeMode(DAT_006573ec,0x33c,DAT_006573e4,0xffffffff);
 
   return;
 
@@ -17571,8 +17595,8 @@ void FUN_0042e230(void)
 
 }
 
-/* ===== FUN_0042e250 @ 0x0042E250 ===== */
-void FUN_0042e250(void)
+/* ===== _cleanup_2 @ 0x0042E250 ===== */
+void _cleanup_2(void)
 
 
 
@@ -17682,7 +17706,7 @@ void FUN_0042e350(void)
 
   DAT_006573f0 = main_drawwrld_00435170(200,0x32,2);
 
-  main_drawwrld_00434cc0(DAT_006573f0,0x33c,DAT_006573f4,0xffffffff);
+  sceMpegSetDecodeMode(DAT_006573f0,0x33c,DAT_006573f4,0xffffffff);
 
   return;
 
@@ -17703,8 +17727,8 @@ void FUN_0042e380(void)
 
 }
 
-/* ===== FUN_0042e3a0 @ 0x0042E3A0 ===== */
-void FUN_0042e3a0(void)
+/* ===== _cleanup_3 @ 0x0042E3A0 ===== */
+void _cleanup_3(void)
 
 
 
@@ -17745,7 +17769,7 @@ void FUN_0042e3b0(int param_1,undefined4 param_2,undefined4 param_3)
 
   main_drawwrld_00434ce0(DAT_006573f0);
 
-  main_drawwrld_00434cc0(DAT_006573f0,0x33c,param_2,0xffffffff);
+  sceMpegSetDecodeMode(DAT_006573f0,0x33c,param_2,0xffffffff);
 
   main_drawwrld_00435940(DAT_006573f0,local_44,local_5c);
 
@@ -17755,8 +17779,8 @@ void FUN_0042e3b0(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0042e450 @ 0x0042E450 ===== */
-void FUN_0042e450(void)
+/* ===== _cleanup_4 @ 0x0042E450 ===== */
+void _cleanup_4(void)
 
 
 
@@ -18070,7 +18094,7 @@ void FUN_0042e690(int param_1)
 
     FUN_00518b70(param_1,0);
 
-    fVar8 = (float10)FUN_00543e3a();
+    fVar8 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     _DAT_0059acb4 = (float)fVar8;
 

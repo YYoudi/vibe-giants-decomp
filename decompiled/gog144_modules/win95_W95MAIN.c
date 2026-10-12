@@ -108,7 +108,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
   FUN_005178d0(iVar11,pcVar8,iVar7);
 
-  FUN_005179d0(iVar11);
+  ANM_BinderDestroy_2(iVar11);
 
   pcVar17 = pcVar8 + iVar7;
 
@@ -182,7 +182,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
       if (iVar11 == 0) {
 
-        pcVar14 = (char *)FUN_00539000();
+        pcVar14 = (char *)__default_unexpected__Fv();
 
         uVar12 = 0xffffffff;
 

@@ -156,7 +156,7 @@ void read_sfx_bin(undefined4 param_1)
 
             if (iVar2 == 0) {
 
-              FUN_00517930(param_1,*(undefined4 *)(iVar6 + 0x14));
+              sceSifLoadElf(param_1,*(undefined4 *)(iVar6 + 0x14));
 
               uVar3 = FUN_0053a700(0x17,local_20,&PTR_DAT_0055c984,
 

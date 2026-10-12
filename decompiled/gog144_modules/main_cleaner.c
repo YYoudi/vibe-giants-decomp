@@ -308,11 +308,11 @@ void main_cleaner_0040f750(int param_1)
 
   iVar2 = FUN_0042b1d0(param_1);
 
-  FUN_0042b010(iVar2);
+  AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(iVar2);
 
   main_animate_00404b60(param_1,0xffffffff);
 
-  FUN_0042b030();
+  Audio3DTestToneUpdate__Fv_3();
 
   iVar2 = *(int *)(*(int *)(param_1 + 8) + 0x400 + iVar2 * 4);
 

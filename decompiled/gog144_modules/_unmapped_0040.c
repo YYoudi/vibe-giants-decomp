@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (4 named) — decompiled, names from PS2 symbols
+ * 105 functions (18 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -40,8 +40,8 @@ void FUN_00401000(int param_1)
 
 }
 
-/* ===== FUN_004019c0 @ 0x004019C0 ===== */
-void FUN_004019c0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== ai_fly_update_goal @ 0x004019C0 ===== */
+void ai_fly_update_goal(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -508,8 +508,8 @@ LAB_00401f0b:
 
 }
 
-/* ===== FUN_00401f80 @ 0x00401F80 ===== */
-void FUN_00401f80(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== ai_fly_update_goal_2 @ 0x00401F80 ===== */
+void ai_fly_update_goal_2(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -521,8 +521,8 @@ void FUN_00401f80(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_00401fa0 @ 0x00401FA0 ===== */
-void FUN_00401fa0(undefined4 param_1,undefined4 param_2)
+/* ===== ai_move_update_goal @ 0x00401FA0 ===== */
+void ai_move_update_goal(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -534,8 +534,8 @@ void FUN_00401fa0(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00401fc0 @ 0x00401FC0 ===== */
-void FUN_00401fc0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== ai_fly_update_goal_3 @ 0x00401FC0 ===== */
+void ai_fly_update_goal_3(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -666,8 +666,8 @@ undefined4 FUN_00401fe0(int param_1)
 
 }
 
-/* ===== FUN_00402140 @ 0x00402140 ===== */
-void FUN_00402140(int param_1,undefined4 *param_2)
+/* ===== ai_get_goal_location @ 0x00402140 ===== */
+void ai_get_goal_location(int param_1,undefined4 *param_2)
 
 
 
@@ -1435,7 +1435,7 @@ LAB_00403980:
 
   if (iVar2 != 0) {
 
-    uVar1 = FUN_0053c5f0(*(undefined4 *)(iVar2 + 0xc),param_6);
+    uVar1 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(iVar2 + 0xc),param_6);
 
     fVar5 = (float10)FUN_0053be80(iVar2,uVar1);
 
@@ -1851,8 +1851,8 @@ LAB_00403c86:
 
 }
 
-/* ===== FUN_00403e40 @ 0x00403E40 ===== */
-void FUN_00403e40(int param_1,undefined4 param_2)
+/* ===== ObjectUpdateSpeedDist @ 0x00403E40 ===== */
+void ObjectUpdateSpeedDist(int param_1,undefined4 param_2)
 
 
 
@@ -2215,12 +2215,12 @@ LAB_00404137:
 
 }
 
-/* ===== FUN_004041f0 @ 0x004041F0 ===== */
+/* ===== ANM_DumpCluster @ 0x004041F0 ===== */
 /* PS2 candidate: dialog_level_is_base (conf 0.468) */
 
 
 
-void FUN_004041f0(void)
+void ANM_DumpCluster(void)
 
 
 
@@ -2398,6 +2398,10 @@ void FUN_004043a0(int param_1)
 }
 
 /* ===== FUN_004043d0 @ 0x004043D0 ===== */
+/* PS2 candidate: S_maxobj_create_vertex_normals (conf 0.819) */
+
+
+
 void FUN_004043d0(int param_1,int param_2,int param_3)
 
 
@@ -2517,6 +2521,10 @@ void FUN_004043d0(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_00404530 @ 0x00404530 ===== */
+/* PS2 candidate: objdata_create_vertex_normals (conf 0.577) */
+
+
+
 void FUN_00404530(int param_1,undefined4 param_2)
 
 
@@ -2554,6 +2562,10 @@ void FUN_00404530(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00404570 @ 0x00404570 ===== */
+/* PS2 candidate: S_TriCalcGradients (conf 0.605) */
+
+
+
 void FUN_00404570(float *param_1,float *param_2,int param_3,int param_4,int param_5,int param_6)
 
 
@@ -3146,7 +3158,7 @@ LAB_00404e2f:
 
       _DAT_00632dc4 = 0x3e800000;
 
-      FUN_004041f0(DAT_00632a88,0x1e);
+      ANM_DumpCluster(DAT_00632a88,0x1e);
 
     }
 
@@ -4626,8 +4638,8 @@ void FUN_00407a10(int param_1)
 
 }
 
-/* ===== FUN_00407c30 @ 0x00407C30 ===== */
-undefined ** FUN_00407c30(undefined4 param_1,int param_2)
+/* ===== AudioGetSampleName__Fi @ 0x00407C30 ===== */
+undefined ** AudioGetSampleName__Fi(undefined4 param_1,int param_2)
 
 
 
@@ -5251,7 +5263,7 @@ LAB_004089de:
 
         if (iVar4 != 0) {
 
-          FUN_0041a110(iVar3);
+          kabutoai_select_punch_anim__FP6OBJECT(iVar3);
 
         }
 
@@ -6100,6 +6112,10 @@ LAB_004090c8:
 }
 
 /* ===== FUN_00409200 @ 0x00409200 ===== */
+/* PS2 candidate: meccbase_update_icons (conf 0.788) */
+
+
+
 void FUN_00409200(int param_1)
 
 
@@ -6441,6 +6457,10 @@ void FUN_00409200(int param_1)
 }
 
 /* ===== FUN_00409780 @ 0x00409780 ===== */
+/* PS2 candidate: meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset (conf 0.557) */
+
+
+
 void FUN_00409780(int param_1,int param_2,int param_3)
 
 
@@ -6544,7 +6564,7 @@ void FUN_00409930(int param_1,int param_2)
 
       if (iVar3 != 0) {
 
-        FUN_004f4250(iVar1);
+        kabutoai_select_punch_anim__FP6OBJECT_2(iVar1);
 
       }
 
@@ -6928,6 +6948,10 @@ undefined4 FUN_0040a5e0(int param_1,int param_2)
 }
 
 /* ===== FUN_0040a7b0 @ 0x0040A7B0 ===== */
+/* PS2 candidate: meccbase_hide_tentatives (conf 0.64) */
+
+
+
 void FUN_0040a7b0(int param_1)
 
 
@@ -7456,6 +7480,10 @@ void FUN_0040ac70(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_0040acc0 @ 0x0040ACC0 ===== */
+/* PS2 candidate: meccbasepit_get_table_ptr (conf 0.684) */
+
+
+
 undefined4 FUN_0040acc0(int param_1,int param_2)
 
 
@@ -7479,6 +7507,10 @@ undefined4 FUN_0040acc0(int param_1,int param_2)
 }
 
 /* ===== FUN_0040acf0 @ 0x0040ACF0 ===== */
+/* PS2 candidate: meccbasepit_bldg_from_object (conf 0.767) */
+
+
+
 int FUN_0040acf0(int param_1)
 
 
@@ -9247,7 +9279,7 @@ void FUN_0040ce70(void)
 }
 
 /* ===== FUN_0040ce90 @ 0x0040CE90 ===== */
-/* PS2 candidate: camera_cursor_fire (conf 0.476) */
+/* PS2 candidate: camera_cursor_fire (conf 0.551) */
 
 
 
@@ -9272,6 +9304,10 @@ undefined4 FUN_0040ce90(void)
 }
 
 /* ===== FUN_0040cec0 @ 0x0040CEC0 ===== */
+/* PS2 candidate: mecc_zoom_out__FRC10CntrlInputif (conf 0.545) */
+
+
+
 undefined4 FUN_0040cec0(void)
 
 
@@ -9289,6 +9325,10 @@ undefined4 FUN_0040cec0(void)
 }
 
 /* ===== FUN_0040cef0 @ 0x0040CEF0 ===== */
+/* PS2 candidate: mecc_zoom_out__FRC10CntrlInputif_2 (conf 0.545) */
+
+
+
 undefined4 FUN_0040cef0(void)
 
 
@@ -9306,6 +9346,10 @@ undefined4 FUN_0040cef0(void)
 }
 
 /* ===== FUN_0040cf20 @ 0x0040CF20 ===== */
+/* PS2 candidate: camera_is_sniper (conf 0.617) */
+
+
+
 undefined4 FUN_0040cf20(void)
 
 
@@ -9581,8 +9625,8 @@ void FUN_0040d130(int param_1)
 
 }
 
-/* ===== FUN_0040d260 @ 0x0040D260 ===== */
-void FUN_0040d260(undefined4 param_1)
+/* ===== BinFileCreateWrite @ 0x0040D260 ===== */
+void BinFileCreateWrite(undefined4 param_1)
 
 
 
@@ -9783,6 +9827,10 @@ void FUN_0040d370(void)
 }
 
 /* ===== FUN_0040d480 @ 0x0040D480 ===== */
+/* PS2 candidate: camera_get_sniper_factor (conf 0.7) */
+
+
+
 float10 FUN_0040d480(void)
 
 
@@ -9953,8 +10001,8 @@ void FUN_0040d670(void)
 
 }
 
-/* ===== FUN_0040d6a0 @ 0x0040D6A0 ===== */
-undefined4 FUN_0040d6a0(void)
+/* ===== AudioGetMasterVolume__Fv @ 0x0040D6A0 ===== */
+undefined4 AudioGetMasterVolume__Fv(void)
 
 
 
@@ -9965,6 +10013,10 @@ undefined4 FUN_0040d6a0(void)
 }
 
 /* ===== FUN_0040d6b0 @ 0x0040D6B0 ===== */
+/* PS2 candidate: XFGetViewport (conf 0.86) */
+
+
+
 void FUN_0040d6b0(undefined4 *param_1)
 
 
@@ -10032,12 +10084,14 @@ void FUN_0040d6f0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,un
 
 }
 
-/* ===== FUN_0040d740 @ 0x0040D740 ===== */
+/* ===== camera_override_info @ 0x0040D740 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0040d740(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+void camera_override_info
+
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -10084,8 +10138,8 @@ void FUN_0040d790(void)
 
 }
 
-/* ===== FUN_0040d7b0 @ 0x0040D7B0 ===== */
-void FUN_0040d7b0(undefined4 param_1,undefined4 param_2)
+/* ===== camera_override_refpt @ 0x0040D7B0 ===== */
+void camera_override_refpt(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -10138,8 +10192,8 @@ void FUN_0040d7e0(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0040d810 @ 0x0040D810 ===== */
-void FUN_0040d810(undefined4 param_1)
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM @ 0x0040D810 ===== */
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(undefined4 param_1)
 
 
 
@@ -11105,7 +11159,7 @@ void FUN_0040eef0(float param_1)
 }
 
 /* ===== FUN_0040f030 @ 0x0040F030 ===== */
-/* PS2 candidate: charger_set_charge_location__FP6OBJECTi (conf 0.335) */
+/* PS2 candidate: charger_set_charge_location__FP6OBJECTi (conf 0.573) */
 
 
 
@@ -11161,8 +11215,8 @@ void FUN_0040f030(int param_1)
 
 }
 
-/* ===== FUN_0040f380 @ 0x0040F380 ===== */
-void FUN_0040f380(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== ANM_BinderDestroy @ 0x0040F380 ===== */
+void ANM_BinderDestroy(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 

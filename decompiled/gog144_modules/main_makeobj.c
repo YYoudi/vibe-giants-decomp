@@ -86,7 +86,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
       FUN_0051e680(s_Bad_version_of_GB2_file_0055b7c4);
 
-      FUN_0051eaa0();
+      Audio3DTestToneUpdate__Fv_5();
 
       return (undefined4 *)0x0;
 
@@ -110,7 +110,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
         local_14 = puVar10[3];
 
-        iVar4 = FUN_0053A860(&local_20,param_2);
+        iVar4 = match(&local_20,param_2);
 
         if (iVar4 != 0) {
 
@@ -370,7 +370,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
                 FUN_0051ea20(s_index_too_big_in_single_object_d_0055b738);
 
-                FUN_0051eaa0();
+                Audio3DTestToneUpdate__Fv_5();
 
                 puVar6 = local_24;
 
@@ -428,7 +428,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
     FUN_0051ea20(&DAT_00657400);
 
-    FUN_0051eaa0();
+    Audio3DTestToneUpdate__Fv_5();
 
   }
 

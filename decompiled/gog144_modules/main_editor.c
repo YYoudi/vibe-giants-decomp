@@ -916,7 +916,7 @@ LAB_004374a1:
 
                 FUN_0046fb50(iVar10);
 
-                iVar17 = FUN_0046f8b0(iVar10);
+                iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
                 if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
@@ -982,7 +982,7 @@ LAB_004374a1:
 
               FUN_0046fb50(iVar10);
 
-              iVar17 = FUN_0046f8b0(iVar10);
+              iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
               if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
@@ -1036,7 +1036,7 @@ LAB_004374a1:
 
             FUN_0046fb50(iVar10);
 
-            iVar17 = FUN_0046f8b0(iVar10);
+            iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
             if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
@@ -1084,7 +1084,7 @@ LAB_004374a1:
 
               FUN_0046fb50(iVar10);
 
-              iVar17 = FUN_0046f8b0(iVar10);
+              iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
               if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
@@ -1292,7 +1292,7 @@ LAB_004374a1:
 
           if ((*(uint *)(piVar11[0xe] + 0x1c8) & 0x20000000) != 0) {
 
-            FUN_00477f00(piVar11[0xe]);
+            marker_spline_adjust_location(piVar11[0xe]);
 
           }
 
@@ -1302,7 +1302,7 @@ LAB_004374a1:
 
             FUN_0046fb50(iVar10);
 
-            iVar17 = FUN_0046f8b0(iVar10);
+            iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
             if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
@@ -1432,7 +1432,7 @@ LAB_00437d68:
 
           if ((*(uint *)(piVar11[0xe] + 0x1c8) & 0x20000000) != 0) {
 
-            FUN_00477f00(piVar11[0xe]);
+            marker_spline_adjust_location(piVar11[0xe]);
 
           }
 
@@ -1442,7 +1442,7 @@ LAB_00437d68:
 
             FUN_0046fb50(iVar10);
 
-            iVar17 = FUN_0046f8b0(iVar10);
+            iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
             if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
@@ -2629,7 +2629,7 @@ void main_editor_00438350(void)
 
     DAT_0059cd38 = uVar10 + 1;
 
-    local_a4 = FUN_00543a11(s_bld_yy_names_bld_00557054,&DAT_00557068);
+    local_a4 = BinFileSeek_2(s_bld_yy_names_bld_00557054,&DAT_00557068);
 
     if (local_a4 != 0) {
 
@@ -3217,7 +3217,7 @@ void main_editor_00440d90(void)
 
   main_editor_00438350();
 
-  iVar2 = FUN_00543a11(local_208,&DAT_00558550);
+  iVar2 = BinFileSeek_2(local_208,&DAT_00558550);
 
   iVar5 = 0;
 

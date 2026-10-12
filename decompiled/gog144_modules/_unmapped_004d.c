@@ -1,9 +1,13 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (0 named) — decompiled, names from PS2 symbols
+ * 39 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
 /* ===== FUN_004d1790 @ 0x004D1790 ===== */
+/* PS2 candidate: EnemyIsInvalid__FP6OBJECTT0 (conf 0.631) */
+
+
+
 undefined4 FUN_004d1790(int param_1,int param_2)
 
 
@@ -552,7 +556,7 @@ void FUN_004d1bd0(int param_1)
 
       if (((float)(int)local_6c < *(float *)(DAT_00632ed8 + 0x3e4)) ||
 
-         (FUN_004555e0(iVar6,local_44,&local_6c), local_3c < 0.64278)) {
+         (ai_fly_update_goal_4(iVar6,local_44,&local_6c), local_3c < 0.64278)) {
 
         if (pfVar1[0xe] == 0.0) {
 
@@ -870,7 +874,7 @@ LAB_004d2364:
 
       if ((local_78 < pfVar1[2] * 1.1 * pfVar1[2] * 1.1) &&
 
-         (FUN_004555e0(iVar6,local_44,&local_6c), 0.64278 <= local_3c)) {
+         (ai_fly_update_goal_4(iVar6,local_44,&local_6c), 0.64278 <= local_3c)) {
 
         *(undefined4 *)(param_1 + 0xe4) = 0x2c;
 
@@ -1148,7 +1152,7 @@ LAB_004d2a47:
 
       if (((fVar9 < (float10)5.0) || (*pfVar1 < 0.0)) &&
 
-         (FUN_004555e0(iVar6,local_44,&local_6c), 0.64278 <= local_3c)) {
+         (ai_fly_update_goal_4(iVar6,local_44,&local_6c), 0.64278 <= local_3c)) {
 
         *(undefined4 *)(param_1 + 0xe4) = 0x2c;
 
@@ -1624,7 +1628,7 @@ LAB_004d2124:
 
     if (fVar7 != 0.0) {
 
-      FUN_004041f0(param_1 + 0xa0);
+      ANM_DumpCluster(param_1 + 0xa0);
 
       sound_play_obj(0x4ea,param_1);
 
@@ -1662,11 +1666,11 @@ LAB_004d2124:
 
     *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffff7ff;
 
-    FUN_004041f0((undefined4 *)(param_1 + 0xa0));
+    ANM_DumpCluster((undefined4 *)(param_1 + 0xa0));
 
     FUN_00499280(param_1);
 
-    FUN_00499220(param_1);
+    object_stop_movement(param_1);
 
     if (0.0 < *(float *)(param_1 + 0xa8)) {
 
@@ -1718,7 +1722,7 @@ LAB_004d2124:
 
     if (fVar7 != 0.0) {
 
-      FUN_004041f0(param_1 + 0xa0);
+      ANM_DumpCluster(param_1 + 0xa0);
 
       puVar8 = *(undefined4 **)(param_1 + 0x100);
 
@@ -2994,8 +2998,8 @@ undefined4 FUN_004d49c0(int param_1)
 
 }
 
-/* ===== FUN_004d49e0 @ 0x004D49E0 ===== */
-bool FUN_004d49e0(int param_1)
+/* ===== kabutoai_is_punch_anim__FP6OBJECT_2 @ 0x004D49E0 ===== */
+bool kabutoai_is_punch_anim__FP6OBJECT_2(int param_1)
 
 
 
@@ -3279,12 +3283,12 @@ void FUN_004d4db0(int param_1)
 
 }
 
-/* ===== FUN_004d5710 @ 0x004D5710 ===== */
+/* ===== rndstart @ 0x004D5710 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004d5710(void)
+void rndstart(void)
 
 
 
@@ -3690,7 +3694,7 @@ void FUN_004d5b50(int param_1)
 
       FUN_0040d7e0(local_44);
 
-      FUN_0040d810(local_94);
+      AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(local_94);
 
     }
 
@@ -3906,7 +3910,7 @@ LAB_004d5d41:
 
               );
 
-  FUN_004041f0(param_1,iVar3 + 0x60);
+  ANM_DumpCluster(param_1,iVar3 + 0x60);
 
   return;
 
@@ -4306,8 +4310,8 @@ bool FUN_004d7b80(int param_1)
 
 }
 
-/* ===== FUN_004d7c40 @ 0x004D7C40 ===== */
-bool FUN_004d7c40(int param_1)
+/* ===== kabutoai_is_punch_anim__FP6OBJECT_3 @ 0x004D7C40 ===== */
+bool kabutoai_is_punch_anim__FP6OBJECT_3(int param_1)
 
 
 
@@ -4705,6 +4709,10 @@ void FUN_004d8150(int param_1,float param_2)
 }
 
 /* ===== FUN_004d8330 @ 0x004D8330 ===== */
+/* PS2 candidate: rpman_get_thrust__FP6OBJECTfPfT2 (conf 0.898) */
+
+
+
 void FUN_004d8330(int param_1,float param_2,float *param_3,float *param_4)
 
 
@@ -4765,12 +4773,12 @@ void FUN_004d8330(int param_1,float param_2,float *param_3,float *param_4)
 
 }
 
-/* ===== FUN_004d8420 @ 0x004D8420 ===== */
+/* ===== endDisplay__Fv_2 @ 0x004D8420 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004d8420(void)
+void endDisplay__Fv_2(void)
 
 
 

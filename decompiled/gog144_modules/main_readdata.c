@@ -92,7 +92,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d2c = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d2c = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -128,7 +128,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d30 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d30 = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -164,7 +164,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d3c = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d3c = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -200,7 +200,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d40 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d40 = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -236,7 +236,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d44 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d44 = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -272,7 +272,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d48 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d48 = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -308,7 +308,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d38 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d38 = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -344,7 +344,7 @@ void main_readdata_004adfa0(void)
 
         }
 
-        DAT_00632d34 = main_makeobj_004721b0(pcVar5,pcVar6 + 1);
+        DAT_00632d34 = BinFileSeek_5(pcVar5,pcVar6 + 1);
 
         pcVar5 = pcVar7 + 1;
 
@@ -382,7 +382,7 @@ void main_readdata_004adfa0(void)
 
     mem_free_tagged(pcVar4,s_C__Giants_source_main_readdata_c_0055fe50,0x95);
 
-    FUN_005179d0(iVar3);
+    ANM_BinderDestroy_2(iVar3);
 
     return;
 
@@ -390,7 +390,7 @@ void main_readdata_004adfa0(void)
 
   FUN_0051e680(s_Bad_version_for_GameObj_bin_0055fe74);
 
-  FUN_005179d0(iVar3);
+  ANM_BinderDestroy_2(iVar3);
 
   return;
 

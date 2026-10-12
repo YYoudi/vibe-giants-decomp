@@ -32,7 +32,7 @@ undefined4 main_dedicated_00426460(void)
 
     FUN_0051e680(s_Bad_version_for_dedicated_bin_00556424);
 
-    FUN_005179d0(iVar1);
+    ANM_BinderDestroy_2(iVar1);
 
     return 0;
 
@@ -48,7 +48,7 @@ undefined4 main_dedicated_00426460(void)
 
   FUN_005178d0(iVar1,DAT_0058c64c,local_8 + -8);
 
-  FUN_005179d0(iVar1);
+  ANM_BinderDestroy_2(iVar1);
 
   return 1;
 

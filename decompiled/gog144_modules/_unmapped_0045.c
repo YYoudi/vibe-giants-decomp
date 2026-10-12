@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (3 named) — decompiled, names from PS2 symbols
+ * 145 functions (13 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -71,7 +71,7 @@ void FUN_00450af0(void)
 
   
 
-  iVar2 = FUN_00543a11(s_fps_txt_00559d88,&DAT_00558550);
+  iVar2 = BinFileSeek_2(s_fps_txt_00559d88,&DAT_00558550);
 
   if (iVar2 != 0) {
 
@@ -105,7 +105,7 @@ void FUN_00450af0(void)
 
   }
 
-  FUN_0051e670();
+  Audio3DTestToneUpdate__Fv_4();
 
   return;
 
@@ -201,8 +201,8 @@ float10 FUN_00450c90(void)
 
 }
 
-/* ===== FUN_00450cb0 @ 0x00450CB0 ===== */
-undefined4 FUN_00450cb0(void)
+/* ===== AudioGetMasterVolume__Fv_7 @ 0x00450CB0 ===== */
+undefined4 AudioGetMasterVolume__Fv_7(void)
 
 
 
@@ -225,8 +225,8 @@ void FUN_00450cc0(void)
 
 }
 
-/* ===== FUN_00450ce0 @ 0x00450CE0 ===== */
-undefined4 FUN_00450ce0(void)
+/* ===== AudioGetMasterVolume__Fv_4 @ 0x00450CE0 ===== */
+undefined4 AudioGetMasterVolume__Fv_4(void)
 
 
 
@@ -236,8 +236,8 @@ undefined4 FUN_00450ce0(void)
 
 }
 
-/* ===== FUN_00450cf0 @ 0x00450CF0 ===== */
-undefined4 FUN_00450cf0(void)
+/* ===== AudioGetMasterVolume__Fv_5 @ 0x00450CF0 ===== */
+undefined4 AudioGetMasterVolume__Fv_5(void)
 
 
 
@@ -247,8 +247,8 @@ undefined4 FUN_00450cf0(void)
 
 }
 
-/* ===== FUN_00450d00 @ 0x00450D00 ===== */
-undefined4 FUN_00450d00(void)
+/* ===== AudioGetMasterVolume__Fv_6 @ 0x00450D00 ===== */
+undefined4 AudioGetMasterVolume__Fv_6(void)
 
 
 
@@ -616,7 +616,7 @@ void FUN_00451560(float *param_1)
 
   if (*param_1 < 0.0) {
 
-    fVar1 = (float10)FUN_00543e3a();
+    fVar1 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     *param_1 = (float)(fVar1 + (float10)360.0);
 
@@ -626,7 +626,7 @@ void FUN_00451560(float *param_1)
 
   if (360.0 <= *param_1) {
 
-    fVar1 = (float10)FUN_00543e3a();
+    fVar1 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     *param_1 = (float)fVar1;
 
@@ -661,7 +661,7 @@ void FUN_004515b0(float param_1,float param_2,float param_3,float *param_4)
 
     if (360.0 <= param_3) {
 
-      fVar2 = (float10)FUN_00543e3a();
+      fVar2 = (float10)AddHud__4cHudP8cHudIcon_6();
 
       goto LAB_00451603;
 
@@ -671,7 +671,7 @@ void FUN_004515b0(float param_1,float param_2,float param_3,float *param_4)
 
   else {
 
-    fVar2 = (float10)FUN_00543e3a();
+    fVar2 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar2 = fVar2 + (float10)360.0;
 
@@ -685,13 +685,13 @@ LAB_00451603:
 
     if ((float)param_4 < 360.0) goto LAB_00451653;
 
-    fVar2 = (float10)FUN_00543e3a();
+    fVar2 = (float10)AddHud__4cHudP8cHudIcon_6();
 
   }
 
   else {
 
-    fVar2 = (float10)FUN_00543e3a();
+    fVar2 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar2 = fVar2 + (float10)360.0;
 
@@ -767,7 +767,7 @@ LAB_00451653:
 
     }
 
-    fVar2 = (float10)FUN_00543e3a();
+    fVar2 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     *pfVar1 = (float)fVar2;
 
@@ -775,7 +775,7 @@ LAB_00451653:
 
   }
 
-  fVar2 = (float10)FUN_00543e3a();
+  fVar2 = (float10)AddHud__4cHudP8cHudIcon_6();
 
   *pfVar1 = (float)(fVar2 + (float10)360.0);
 
@@ -849,7 +849,7 @@ void FUN_004517e0(float param_1,float param_2,float param_3,float param_4,float 
 
     if (360.0 <= param_2) {
 
-      fVar4 = (float10)FUN_00543e3a();
+      fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
       goto LAB_00451846;
 
@@ -859,7 +859,7 @@ void FUN_004517e0(float param_1,float param_2,float param_3,float param_4,float 
 
   else {
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar4 = fVar4 + (float10)360.0;
 
@@ -873,7 +873,7 @@ LAB_00451846:
 
     if (360.0 <= param_5) {
 
-      fVar4 = (float10)FUN_00543e3a();
+      fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
       goto LAB_00451892;
 
@@ -883,7 +883,7 @@ LAB_00451846:
 
   else {
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar4 = fVar4 + (float10)360.0;
 
@@ -897,7 +897,7 @@ LAB_00451892:
 
     if (360.0 <= (float)param_8) {
 
-      fVar4 = (float10)FUN_00543e3a();
+      fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
       goto LAB_004518de;
 
@@ -907,7 +907,7 @@ LAB_00451892:
 
   else {
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar4 = fVar4 + (float10)360.0;
 
@@ -989,7 +989,7 @@ LAB_004518de:
 
     if (360.0 <= param_3) {
 
-      fVar4 = (float10)FUN_00543e3a();
+      fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
       goto LAB_00451a41;
 
@@ -999,7 +999,7 @@ LAB_004518de:
 
   else {
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar4 = fVar4 + (float10)360.0;
 
@@ -1013,7 +1013,7 @@ LAB_00451a41:
 
     if (360.0 <= param_6) {
 
-      fVar4 = (float10)FUN_00543e3a();
+      fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
       goto LAB_00451a8d;
 
@@ -1023,7 +1023,7 @@ LAB_00451a41:
 
   else {
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar4 = fVar4 + (float10)360.0;
 
@@ -1037,7 +1037,7 @@ LAB_00451a8d:
 
     if (360.0 <= param_2) {
 
-      fVar4 = (float10)FUN_00543e3a();
+      fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
       goto LAB_00451ad9;
 
@@ -1047,7 +1047,7 @@ LAB_00451a8d:
 
   else {
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar4 = fVar4 + (float10)360.0;
 
@@ -1107,13 +1107,13 @@ LAB_00451ad9:
 
     if (param_4 < 360.0) goto LAB_00451c06;
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
   }
 
   else {
 
-    fVar4 = (float10)FUN_00543e3a();
+    fVar4 = (float10)AddHud__4cHudP8cHudIcon_6();
 
     fVar4 = fVar4 + (float10)360.0;
 
@@ -1299,6 +1299,10 @@ void FUN_00452070(int param_1)
 }
 
 /* ===== FUN_00452090 @ 0x00452090 ===== */
+/* PS2 candidate: __main_2 (conf 0.6) */
+
+
+
 void FUN_00452090(int param_1)
 
 
@@ -2252,7 +2256,7 @@ LAB_0045282a:
 
   }
 
-  FUN_0040d260(0x42700000);
+  BinFileCreateWrite(0x42700000);
 
   iVar2 = FUN_004a6160(DAT_00632a88);
 
@@ -2282,7 +2286,7 @@ LAB_0045282a:
 
   }
 
-  FUN_0040d7b0(piVar7,uVar8);
+  camera_override_refpt(piVar7,uVar8);
 
 LAB_00452a14:
 
@@ -2378,6 +2382,10 @@ void FUN_00452a30(int param_1,int param_2)
 }
 
 /* ===== FUN_00452ae0 @ 0x00452AE0 ===== */
+/* PS2 candidate: fx_free_effect__FP9FXLISTTAG (conf 0.726) */
+
+
+
 void FUN_00452ae0(undefined4 *param_1,undefined4 *param_2)
 
 
@@ -2791,6 +2799,10 @@ undefined4 FUN_00452ee0(int param_1)
 }
 
 /* ===== FUN_00452f20 @ 0x00452F20 ===== */
+/* PS2 candidate: IconIsAvailable__Fi (conf 0.521) */
+
+
+
 uint FUN_00452f20(int param_1)
 
 
@@ -3185,7 +3197,7 @@ void FUN_004544f0(void)
 
     else {
 
-      FUN_0041a2b0(DAT_00632bbc,DAT_00632a88);
+      base_giftshop_exit(DAT_00632bbc,DAT_00632a88);
 
     }
 
@@ -3245,7 +3257,7 @@ void FUN_004544f0(void)
 
       else {
 
-        FUN_0041a3a0(DAT_00632a88,DAT_0059d96c);
+        base_partyhouse_exit(DAT_00632a88,DAT_0059d96c);
 
       }
 
@@ -3330,6 +3342,10 @@ void FUN_004544f0(void)
 }
 
 /* ===== FUN_00454a40 @ 0x00454A40 ===== */
+/* PS2 candidate: minishop_icon_is_available (conf 0.703) */
+
+
+
 undefined4 FUN_00454a40(int param_1,int param_2)
 
 
@@ -3588,6 +3604,10 @@ void FUN_00454b10(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_00454d80 @ 0x00454D80 ===== */
+/* PS2 candidate: minishop_update_mecc_icons (conf 0.845) */
+
+
+
 void FUN_00454d80(int param_1,uint param_2)
 
 
@@ -3631,6 +3651,10 @@ void FUN_00454d80(int param_1,uint param_2)
 }
 
 /* ===== FUN_00454dc0 @ 0x00454DC0 ===== */
+/* PS2 candidate: minishop_update_mecc_icons_2 (conf 0.845) */
+
+
+
 void FUN_00454dc0(int param_1,uint param_2)
 
 
@@ -3937,6 +3961,10 @@ void FUN_00455150(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
 }
 
 /* ===== FUN_00455190 @ 0x00455190 ===== */
+/* PS2 candidate: grid_get_conntype (conf 0.534) */
+
+
+
 byte FUN_00455190(int param_1,int param_2)
 
 
@@ -4226,8 +4254,8 @@ int FUN_004551b0(float *param_1,float *param_2,uint *param_3,float *param_4,int 
 
 }
 
-/* ===== FUN_004555e0 @ 0x004555E0 ===== */
-void FUN_004555e0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== ai_fly_update_goal_4 @ 0x004555E0 ===== */
+void ai_fly_update_goal_4(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -4712,8 +4740,8 @@ void FUN_00455b70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
 }
 
-/* ===== FUN_00455bd0 @ 0x00455BD0 ===== */
-void FUN_00455bd0(int param_1,int param_2,float *param_3)
+/* ===== grid_get_point @ 0x00455BD0 ===== */
+void grid_get_point(int param_1,int param_2,float *param_3)
 
 
 
@@ -4973,6 +5001,10 @@ void FUN_00455e70(int param_1)
 }
 
 /* ===== FUN_00455ec0 @ 0x00455EC0 ===== */
+/* PS2 candidate: object_create_gun (conf 0.825) */
+
+
+
 void FUN_00455ec0(int param_1,int param_2)
 
 
@@ -4994,6 +5026,10 @@ void FUN_00455ec0(int param_1,int param_2)
 }
 
 /* ===== FUN_00455ef0 @ 0x00455EF0 ===== */
+/* PS2 candidate: object_create_gun_2 (conf 0.825) */
+
+
+
 void FUN_00455ef0(int param_1,int param_2)
 
 
@@ -5283,8 +5319,8 @@ undefined4 FUN_00456090(int param_1)
 
 }
 
-/* ===== FUN_00456110 @ 0x00456110 ===== */
-void FUN_00456110(int param_1,int *param_2)
+/* ===== herdgen_get_next_marker @ 0x00456110 ===== */
+void herdgen_get_next_marker(int param_1,int *param_2)
 
 
 
@@ -5761,7 +5797,7 @@ LAB_00456e0a:
 
             if ((*(int *)(iVar1 + 4) == 8) && (param_4 < *(float *)(DAT_00632ed8 + 0x9c0))) {
 
-              FUN_00511f80(iVar1,uVar3);
+              vimp_handle_close_area_damage(iVar1,uVar3);
 
             }
 
@@ -6368,7 +6404,7 @@ LAB_004575ee:
 
         } while (cVar1 != '\0');
 
-        FUN_004576d0(DAT_00632d20);
+        AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
         FUN_004576e0();
 
@@ -6424,8 +6460,8 @@ LAB_004576b1:
 
 }
 
-/* ===== FUN_004576d0 @ 0x004576D0 ===== */
-void FUN_004576d0(undefined4 param_1)
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4 @ 0x004576D0 ===== */
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(undefined4 param_1)
 
 
 
@@ -6500,7 +6536,7 @@ void FUN_004576e0(void)
 
   main_texture_005088d0(puVar3,&DAT_0059d9fc,&DAT_0059da00,&DAT_0059da04,&DAT_0059da08);
 
-  FUN_004270f0();
+  Audio3DTestToneUpdate__Fv();
 
   FUN_00426F40(&LAB_004577f0,&LAB_00457970);
 
@@ -6823,6 +6859,10 @@ void FUN_00457f40(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_00457fb0 @ 0x00457FB0 ===== */
+/* PS2 candidate: WeaponIdGetPresent__FP6OBJECT_2 (conf 0.713) */
+
+
+
 undefined4 FUN_00457fb0(int param_1,int param_2)
 
 
@@ -7101,8 +7141,8 @@ void FUN_00458180(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004581e0 @ 0x004581E0 ===== */
-undefined4 FUN_004581e0(int param_1)
+/* ===== WeaponIdGetPresent__FP6OBJECT @ 0x004581E0 ===== */
+undefined4 WeaponIdGetPresent__FP6OBJECT(int param_1)
 
 
 
@@ -7119,6 +7159,10 @@ undefined4 FUN_004581e0(int param_1)
 }
 
 /* ===== FUN_00458200 @ 0x00458200 ===== */
+/* PS2 candidate: WeaponIdCheck__FP6OBJECT (conf 0.744) */
+
+
+
 bool FUN_00458200(int param_1)
 
 
@@ -8202,9 +8246,9 @@ bool FUN_00459540(int param_1,uint *param_2)
 
       if ((iVar3 != 0) &&
 
-         ((iVar3 = FUN_004b8a90(iVar6,uVar1), iVar3 != 0 || (iVar3 = FUN_004b8a60(iVar6), iVar3 < 0)
+         ((iVar3 = reaper_has_bow_2(iVar6,uVar1), iVar3 != 0 ||
 
-          ))) {
+          (iVar3 = FUN_004b8a60(iVar6), iVar3 < 0)))) {
 
         iVar3 = FUN_00458c90(uVar1);
 
@@ -8214,7 +8258,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
         }
 
-        iVar3 = FUN_004b8a90(iVar6,uVar1);
+        iVar3 = reaper_has_bow_2(iVar6,uVar1);
 
         if (iVar3 == 0) {
 
@@ -8264,7 +8308,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
       if (iVar3 != 0) {
 
-        iVar3 = FUN_004b8cd0(iVar6,uVar1);
+        iVar3 = reaper_has_bow(iVar6,uVar1);
 
         if (iVar3 == 0) {
 
@@ -12136,8 +12180,8 @@ byte FUN_0045d290(int param_1)
 
 }
 
-/* ===== FUN_0045d2c0 @ 0x0045D2C0 ===== */
-void FUN_0045d2c0(void)
+/* ===== AddHud__4cHudP8cHudIcon @ 0x0045D2C0 ===== */
+void AddHud__4cHudP8cHudIcon(void)
 
 
 
@@ -13507,9 +13551,11 @@ LAB_0045e648:
 
     if (*(int *)(param_1 + 0x10) == 199) {
 
-      iVar5 = FUN_0053c5f0(*(undefined4 *)(*(int *)(*(int *)(param_1 + 8) + 0x324) + 0x28),
+      iVar5 = AddHud__4cHudP8cHudIcon_4
 
-                           *(undefined4 *)(param_1 + 0x14));
+                        (*(undefined4 *)(*(int *)(*(int *)(param_1 + 8) + 0x324) + 0x28),
+
+                         *(undefined4 *)(param_1 + 0x14));
 
       if ((float)iVar5 <= 1600.0) goto LAB_0045e789;
 
@@ -13629,9 +13675,11 @@ LAB_0045e51d:
 
   if (*(int *)(param_1 + 0x10) == 199) {
 
-    iVar5 = FUN_0053c5f0(*(undefined4 *)(*(int *)(*(int *)(param_1 + 8) + 0x324) + 0x28),
+    iVar5 = AddHud__4cHudP8cHudIcon_4
 
-                         *(undefined4 *)(param_1 + 0x14));
+                      (*(undefined4 *)(*(int *)(*(int *)(param_1 + 8) + 0x324) + 0x28),
+
+                       *(undefined4 *)(param_1 + 0x14));
 
     if (1600.0 <= (float)iVar5) goto LAB_0045e789;
 

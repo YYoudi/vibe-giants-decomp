@@ -95,7 +95,7 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
         FUN_005178d0(iVar3,uVar4,*param_3);
 
-        FUN_005179d0(iVar3);
+        ANM_BinderDestroy_2(iVar3);
 
       }
 

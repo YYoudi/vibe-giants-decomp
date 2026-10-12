@@ -995,7 +995,7 @@ undefined4 FUN_00402270(int param_1)
 
       } while (iVar4 != 0);
 
-      FUN_004a6400(param_1);
+      voBufReset__FP5VoBuf(param_1);
 
     }
 

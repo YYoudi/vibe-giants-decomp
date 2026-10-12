@@ -36,7 +36,7 @@ void reread_globals_bin(void)
 
     FUN_0051e680(s_Bad_version_for_GData_gbn_0055feec);
 
-    FUN_005179d0(iVar1);
+    ANM_BinderDestroy_2(iVar1);
 
     return;
 
@@ -86,7 +86,7 @@ LAB_004ae43b:
 
   FUN_005178d0(iVar1,DAT_00632ee0,local_8 * 4);
 
-  FUN_005179d0(iVar1);
+  ANM_BinderDestroy_2(iVar1);
 
   DAT_00632ed0 = DAT_00632ed0 + 1;
 

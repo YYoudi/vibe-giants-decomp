@@ -38,7 +38,7 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
   for (puVar8 = DAT_005a8844; puVar8 != (undefined4 *)0x0; puVar8 = (undefined4 *)*puVar8) {
 
-    iVar2 = FUN_0053A860(puVar8 + 1,param_1);
+    iVar2 = match(puVar8 + 1,param_1);
 
     if (iVar2 != 0) {
 
@@ -60,9 +60,9 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
     do {
 
-      FUN_00517950(param_2,1);
+      sceSifLoadElf_2(param_2,1);
 
-      FUN_00517950(param_2,1);
+      sceSifLoadElf_2(param_2,1);
 
       FUN_005178d0(param_2,&local_24,1);
 
@@ -138,7 +138,7 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
   puVar8 = puVar4 + local_28 * 9 + 0xb;
 
-  FUN_00517930(param_2,iVar3 + 4);
+  sceSifLoadElf(param_2,iVar3 + 4);
 
   param_1 = (char *)0x0;
 
@@ -821,7 +821,7 @@ LAB_00508353:
 
         FUN_0051ea20(&DAT_00657400);
 
-        FUN_0051eaa0();
+        Audio3DTestToneUpdate__Fv_5();
 
         return;
 
@@ -859,7 +859,7 @@ LAB_00508353:
 
       FUN_0051ea20(&DAT_00657400);
 
-      FUN_0051eaa0();
+      Audio3DTestToneUpdate__Fv_5();
 
       return;
 
@@ -883,7 +883,7 @@ LAB_00508353:
 
           FUN_0051ea20(&DAT_00657400);
 
-          FUN_0051eaa0();
+          Audio3DTestToneUpdate__Fv_5();
 
           return;
 
@@ -901,7 +901,7 @@ LAB_00508353:
 
       FUN_0051ea20(&DAT_00657400);
 
-      FUN_0051eaa0();
+      Audio3DTestToneUpdate__Fv_5();
 
       return;
 
@@ -1213,7 +1213,7 @@ undefined4 * main_texture_00508750(char *param_1)
 
       do {
 
-        iVar2 = FUN_0053A860(param_1,*puVar3);
+        iVar2 = match(param_1,*puVar3);
 
         if (iVar2 != 0) break;
 
@@ -1235,7 +1235,7 @@ undefined4 * main_texture_00508750(char *param_1)
 
   for (; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
 
-    iVar2 = FUN_0053A860(param_1,puVar3[1]);
+    iVar2 = match(param_1,puVar3[1]);
 
     if (iVar2 != 0) {
 
@@ -1536,7 +1536,7 @@ main_texture_005088d0
 
           FUN_0051ea20(&DAT_00657400);
 
-          FUN_0051eaa0();
+          Audio3DTestToneUpdate__Fv_5();
 
           return 0;
 
@@ -1880,7 +1880,7 @@ LAB_00508c6d:
 
     FUN_0051ea20(&DAT_00657400);
 
-    FUN_0051eaa0();
+    Audio3DTestToneUpdate__Fv_5();
 
   }
 

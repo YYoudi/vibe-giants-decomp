@@ -112,7 +112,7 @@ void read_world_list(void)
 
         FUN_0051e680(s_Bad_version_for_worldlist_00560280);
 
-        FUN_005179d0(iVar2);
+        ANM_BinderDestroy_2(iVar2);
 
         return;
 
@@ -128,7 +128,7 @@ void read_world_list(void)
 
       FUN_005178d0(iVar2,uVar3,local_40[0]);
 
-      FUN_005179d0(iVar2);
+      ANM_BinderDestroy_2(iVar2);
 
     }
 
@@ -409,7 +409,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
     FUN_0051e680(&DAT_00657400);
 
-    FUN_005179d0(iVar6);
+    ANM_BinderDestroy_2(iVar6);
 
     return;
 
@@ -417,15 +417,15 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
   FUN_005178d0(iVar6,&local_3a0,0x1c);
 
-  FUN_00517930(iVar6,local_398);
+  sceSifLoadElf(iVar6,local_398);
 
   read_sfx_bin(iVar6);
 
-  FUN_00517930(iVar6,local_39c);
+  sceSifLoadElf(iVar6,local_39c);
 
   main_texture_00507c50(param_1,iVar6,local_3e4);
 
-  FUN_00517930(iVar6,local_390);
+  sceSifLoadElf(iVar6,local_390);
 
   FUN_005178d0(iVar6,&local_3c8,4);
 
@@ -459,7 +459,7 @@ LAB_004b10f8:
 
   if (local_388[0] != 0) {
 
-    FUN_00517930(iVar6,local_388[0]);
+    sceSifLoadElf(iVar6,local_388[0]);
 
     FUN_005178d0(iVar6,&local_404,4);
 
@@ -493,17 +493,17 @@ LAB_004b10f8:
 
   }
 
-  FUN_00517930(iVar6,local_394);
+  sceSifLoadElf(iVar6,local_394);
 
   read_objects_bin_PS2(iVar6,param_1);
 
-  FUN_00517930(iVar6,local_3a0);
+  sceSifLoadElf(iVar6,local_3a0);
 
   FUN_005178d0(iVar6,&local_3dc,4);
 
   if (local_3dc == 0) {
 
-    FUN_005179d0(iVar6);
+    ANM_BinderDestroy_2(iVar6);
 
     return;
 
@@ -939,7 +939,7 @@ LAB_004b1410:
 
       }
 
-      FUN_00515f30();
+      ResetFog__Fv();
 
       fVar17 = local_410;
 
@@ -2153,7 +2153,7 @@ switchD_004b1431_caseD_2d:
 
       do {
 
-        iVar15 = FUN_0053A860(iVar6 + 0x210 + DAT_006330e4,pfVar20);
+        iVar15 = match(iVar6 + 0x210 + DAT_006330e4,pfVar20);
 
         if (iVar15 != 0) break;
 
@@ -2455,7 +2455,7 @@ switchD_004b1431_caseD_2c:
 
       }
 
-      FUN_00515f30();
+      ResetFog__Fv();
 
       fVar17 = local_410;
 
@@ -3537,7 +3537,7 @@ LAB_004b2ac0:
 
   mem_free_tagged(local_3fc[0],s_C__Giants_source_main_readwrls_c_005602ac,0x6c5);
 
-  FUN_005179d0(iVar6);
+  ANM_BinderDestroy_2(iVar6);
 
   iVar6 = (int)local_364 - (int)param_1;
 
@@ -3653,7 +3653,7 @@ LAB_004b2ac0:
 
       }
 
-      FUN_005179d0(iVar6);
+      ANM_BinderDestroy_2(iVar6);
 
       puVar19 = DAT_00632d50;
 
@@ -3665,7 +3665,7 @@ LAB_004b2ac0:
 
       FUN_0051ea20(&DAT_00657400);
 
-      FUN_005179d0(iVar6);
+      ANM_BinderDestroy_2(iVar6);
 
       puVar19 = DAT_00632d50;
 

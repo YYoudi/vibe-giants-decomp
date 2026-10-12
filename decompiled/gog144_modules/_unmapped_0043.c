@@ -998,7 +998,7 @@ void FUN_004319c0(undefined4 *param_1)
 }
 
 /* ===== FUN_00431a00 @ 0x00431A00 ===== */
-/* PS2 candidate: offspring_select_idle_anim__FP6OBJECT (conf 0.461) */
+/* PS2 candidate: get_free_world_ripple__Fv_2 (conf 0.568) */
 
 
 
@@ -1099,6 +1099,10 @@ void FUN_00431a00(undefined4 *param_1,float param_2,float param_3,float param_4,
 }
 
 /* ===== FUN_00431ae0 @ 0x00431AE0 ===== */
+/* PS2 candidate: get_free_world_ripple__Fv (conf 0.606) */
+
+
+
 void FUN_00431ae0(undefined4 *param_1)
 
 
@@ -1370,7 +1374,7 @@ void FUN_00431b80(void)
 
         if ((fVar14 < (float10)90000.0) && (iVar12 = FUN_004a6160(DAT_00632a88), iVar12 != 0)) {
 
-          FUN_004041f0(DAT_00632a88,0x1c);
+          ANM_DumpCluster(DAT_00632a88,0x1c);
 
         }
 
@@ -1445,6 +1449,10 @@ void FUN_00431b80(void)
 }
 
 /* ===== FUN_00431e30 @ 0x00431E30 ===== */
+/* PS2 candidate: world_ripple_xform (conf 0.568) */
+
+
+
 float10 FUN_00431e30(float *param_1)
 
 
@@ -2054,7 +2062,7 @@ void main_drawwrld_00434280(void)
 
   FUN_004319c0(local_25c);
 
-  pfVar2 = (float *)FUN_005168d0();
+  pfVar2 = (float *)AudioDataStreamStatus__Fv_4();
 
   pfVar9 = local_250;
 
@@ -2697,8 +2705,8 @@ void main_drawwrld_00434c30(int param_1)
 
 }
 
-/* ===== main/drawwrld_00434cc0 @ 0x00434CC0 ===== */
-void main_drawwrld_00434cc0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* ===== sceMpegSetDecodeMode @ 0x00434CC0 ===== */
+void sceMpegSetDecodeMode(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -3789,11 +3797,11 @@ void FUN_00436060(void)
 
 {
 
-  FUN_0042dfc0();
+  _cleanup();
 
-  FUN_0042e250();
+  _cleanup_2();
 
-  FUN_0042e3a0();
+  _cleanup_3();
 
   main_drawwrld_00434d40(DAT_0065646c);
 
@@ -3882,6 +3890,10 @@ void FUN_00436110(undefined4 param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00436130 @ 0x00436130 ===== */
+/* PS2 candidate: sceMpegSetImageBuff (conf 0.769) */
+
+
+
 void FUN_00436130(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
@@ -4164,6 +4176,10 @@ int main_editor_004380e0(undefined4 param_1)
 }
 
 /* ===== main/editor_00438230 @ 0x00438230 ===== */
+/* PS2 candidate: object_copy_posdirinfo (conf 0.842) */
+
+
+
 void main_editor_00438230(int param_1,int param_2)
 
 
@@ -5771,6 +5787,10 @@ void main_editor_0043a440(void)
 }
 
 /* ===== main/editor_0043aa00 @ 0x0043AA00 ===== */
+/* PS2 candidate: world_get_pointer_2 (conf 0.575) */
+
+
+
 char * main_editor_0043aa00(int param_1)
 
 
@@ -9745,7 +9765,7 @@ LAB_0043e09d:
 
   main_dlog_00427890(DAT_0059cd80,0,0x3f000000,0x3f800000,0x88000000,local_100);
 
-  iVar5 = FUN_00476DC0();
+  iVar5 = AudioDataStreamStatus__Fv_2();
 
   main_dlog_00427e80();
 
@@ -9854,7 +9874,7 @@ LAB_0043effd:
 
   main_dlog_00427890(DAT_0059cd8c,0,0x3f000000,0x3f800000,0x88000000,local_100);
 
-  iVar4 = FUN_00476DC0();
+  iVar4 = AudioDataStreamStatus__Fv_2();
 
   main_dlog_00427e80(DAT_0059cd8c,1,0x3f000000,0x40400000,0x88000022);
 
@@ -10150,7 +10170,7 @@ LAB_0043e09d:
 
         main_dlog_00427890(DAT_0059cd80,0,0x3f000000,0x3f800000,0x88000000,local_100);
 
-        iVar4 = FUN_00476DC0();
+        iVar4 = AudioDataStreamStatus__Fv_2();
 
         main_dlog_00427e80(DAT_0059cd80,1,0x3f000000,0x40400000,0x88000022);
 

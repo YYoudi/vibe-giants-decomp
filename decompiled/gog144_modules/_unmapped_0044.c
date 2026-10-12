@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (20 named) — decompiled, names from PS2 symbols
+ * 76 functions (24 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -235,7 +235,7 @@ LAB_00440295:
 
   main_dlog_00427890(DAT_0059cd6c,0,0x3f000000,0x3f800000,0x88000000,local_100);
 
-  iVar4 = FUN_00476DC0();
+  iVar4 = AudioDataStreamStatus__Fv_2();
 
   main_dlog_00427e80(DAT_0059cd6c,1,0x3f000000,0x40400000,0x88000022);
 
@@ -304,7 +304,7 @@ void main_editor_004403a0(void)
 
     uVar4 = main_dlog_00428460(DAT_0059cd6c,1);
 
-    FUN_00476DC0();
+    AudioDataStreamStatus__Fv_2();
 
     iVar3 = *(int *)(DAT_0059cbd8 + 0x38);
 
@@ -408,7 +408,7 @@ LAB_00440422:
 
       }
 
-      FUN_00476DC0();
+      AudioDataStreamStatus__Fv_2();
 
       iVar2 = *(int *)(DAT_0059cbd8 + 0x38);
 
@@ -552,7 +552,7 @@ void main_editor_00440640(void)
 
     }
 
-    uVar2 = FUN_00544223(&DAT_0059cd18);
+    uVar2 = ANM_BinderDestroy_3(&DAT_0059cd18);
 
     *(undefined4 *)(iVar4 + 0x174) = uVar2;
 
@@ -646,7 +646,7 @@ LAB_004406b2:
 
       iVar4 = *(int *)(DAT_0059cbd8 + 0x38);
 
-      uVar2 = FUN_00544223(&DAT_0059cd18);
+      uVar2 = ANM_BinderDestroy_3(&DAT_0059cd18);
 
       *(undefined4 *)(iVar4 + 0x174) = uVar2;
 
@@ -1234,6 +1234,10 @@ void FUN_004417a0(void)
 }
 
 /* ===== FUN_004419d0 @ 0x004419D0 ===== */
+/* PS2 candidate: make_explosion_large (conf 0.517) */
+
+
+
 void FUN_004419d0(undefined4 param_1)
 
 
@@ -1322,13 +1326,13 @@ void FUN_004419d0(undefined4 param_1)
 
   main_smoke_004f90e0(param_1,*(undefined4 *)(DAT_00632ed8 + 0x494));
 
-  FUN_0040f380(param_1,*(undefined4 *)(DAT_00632ed8 + 0x498),*(undefined4 *)(DAT_00632ed8 + 0x49c),0
+  ANM_BinderDestroy(param_1,*(undefined4 *)(DAT_00632ed8 + 0x498),
 
-               ,*(undefined4 *)(DAT_00632ed8 + 0x490),*(float *)(DAT_00632ed8 + 0x490) * 2.5,
+                    *(undefined4 *)(DAT_00632ed8 + 0x49c),0,*(undefined4 *)(DAT_00632ed8 + 0x490),
 
-               *(float *)(DAT_00632ed8 + 0x490) * 25.0,0x41c80000,
+                    *(float *)(DAT_00632ed8 + 0x490) * 2.5,*(float *)(DAT_00632ed8 + 0x490) * 25.0,
 
-               *(float *)(DAT_00632ed8 + 0x490) * 60.0,0x442f0000,0x44098000);
+                    0x41c80000,*(float *)(DAT_00632ed8 + 0x490) * 60.0,0x442f0000,0x44098000);
 
   return;
 
@@ -2108,8 +2112,8 @@ void FUN_004431c0(void)
 
 }
 
-/* ===== FUN_004433a0 @ 0x004433A0 ===== */
-void FUN_004433a0(void)
+/* ===== FLK_ReplayFileNameClear @ 0x004433A0 ===== */
+void FLK_ReplayFileNameClear(void)
 
 
 
@@ -2323,7 +2327,7 @@ LAB_00443656:
 
       do {
 
-        iVar5 = FUN_0053A860(param_1,iVar6 + 0x210 + DAT_006330e4);
+        iVar5 = match(param_1,iVar6 + 0x210 + DAT_006330e4);
 
         if (iVar5 != 0) {
 
@@ -2365,7 +2369,7 @@ LAB_00443656:
 
       FUN_005178d0(iVar7,psVar4 + 6,local_98[1] - 0x18);
 
-      FUN_005179d0(iVar7);
+      ANM_BinderDestroy_2(iVar7);
 
       if (DAT_006330e4 != 0) {
 
@@ -2375,7 +2379,7 @@ LAB_00443656:
 
         do {
 
-          iVar5 = FUN_0053A860(param_1,iVar6 + 0x210 + DAT_006330e4);
+          iVar5 = match(param_1,iVar6 + 0x210 + DAT_006330e4);
 
           if (iVar5 != 0) goto LAB_004436f3;
 
@@ -2440,9 +2444,11 @@ void FUN_00443910(undefined4 *param_1,int *param_2)
 
     if (param_2[0x1de] != 0) {
 
-      uVar2 = FUN_0053c5f0(*(undefined4 *)(param_2[0x1de] + 0xc),
+      uVar2 = AddHud__4cHudP8cHudIcon_4
 
-                           *(undefined4 *)(param_2[0x1dd] + 0x20));
+                        (*(undefined4 *)(param_2[0x1de] + 0xc),
+
+                         *(undefined4 *)(param_2[0x1dd] + 0x20));
 
       piVar1 = (int *)param_2[0x1dd];
 
@@ -2484,7 +2490,7 @@ void FUN_00443910(undefined4 *param_1,int *param_2)
 
   if (param_2[0x1df] != 0) {
 
-    uVar2 = FUN_0053c5f0(*(undefined4 *)(param_2[0x1df] + 0xc),param_2[8]);
+    uVar2 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(param_2[0x1df] + 0xc),param_2[8]);
 
     if (*param_2 != 0) {
 
@@ -2855,9 +2861,11 @@ FUN_00443d60(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,
 
         if (*(int *)(iVar5 + 0x308) != 0) {
 
-          uVar3 = FUN_0053c5f0(*(undefined4 *)(*(int *)(iVar5 + 0x308) + 0xc),
+          uVar3 = AddHud__4cHudP8cHudIcon_4
 
-                               *(undefined4 *)(*(int *)(iVar5 + 0x304) + 0x20));
+                            (*(undefined4 *)(*(int *)(iVar5 + 0x308) + 0xc),
+
+                             *(undefined4 *)(*(int *)(iVar5 + 0x304) + 0x20));
 
           piVar2 = *(int **)(iVar5 + 0x304);
 
@@ -3054,7 +3062,7 @@ LAB_00444114:
 
       case 0xf:
 
-        FUN_00446ad0(param_1 + 0x104,*(undefined4 *)(param_1 + 0xac));
+        FNT_RenderInfoProcess__FP14FNT_RenderInfof(param_1 + 0x104,*(undefined4 *)(param_1 + 0xac));
 
         return;
 
@@ -3470,11 +3478,13 @@ undefined4 FUN_004444c0(int param_1)
 
   FUN_00515eb0(&local_190,&local_1e8);
 
-  FUN_00515e90(0x3f800000,local_1e8);
+  FNT_StringRender__FPcP14FNT_RenderInfo(0x3f800000,local_1e8);
 
-  uVar4 = FUN_0053c5f0(*(undefined4 *)(*(int *)(param_1 + 0xb4) + 0xc),
+  uVar4 = AddHud__4cHudP8cHudIcon_4
 
-                       *(undefined4 *)(param_1 + 0xb0));
+                    (*(undefined4 *)(*(int *)(param_1 + 0xb4) + 0xc),*(undefined4 *)(param_1 + 0xb0)
+
+                    );
 
   uVar5 = FUN_0053bef0(*(undefined4 *)(param_1 + 0xb4),uVar4,
 
@@ -3606,7 +3616,7 @@ undefined4 FUN_004444c0(int param_1)
 
         if (piVar8[1] != 0) {
 
-          FUN_0053c5f0(*(undefined4 *)(piVar8[1] + 0xc));
+          AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(piVar8[1] + 0xc));
 
           iVar7 = *(int *)*piVar8;
 
@@ -3666,7 +3676,7 @@ undefined4 FUN_004444c0(int param_1)
 
           }
 
-          uVar5 = FUN_0053c5f0(*(undefined4 *)(piVar9[0x1db] + 0xc),piVar9[3]);
+          uVar5 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(piVar9[0x1db] + 0xc),piVar9[3]);
 
           uVar5 = FUN_0053cb50(piVar9[0x1db],uVar5);
 
@@ -3970,9 +3980,9 @@ LAB_00444d25:
 
       if ((piVar9[-3] != 0) && (piVar9[-1] != 0)) {
 
-        FUN_0042b020();
+        Audio3DTestToneUpdate__Fv_2();
 
-        iVar7 = FUN_0042b160();
+        iVar7 = BinFileCreateWrite_2();
 
         iVar7 = *(int *)(*piVar9 + 0x400 + iVar7 * 4);
 
@@ -4000,7 +4010,7 @@ LAB_00444d25:
 
         }
 
-        FUN_0042b030();
+        Audio3DTestToneUpdate__Fv_3();
 
         if ((*(int *)(param_1 + 0xc0) == 0) && (piVar9[0x1db] != 0)) {
 
@@ -4078,11 +4088,11 @@ LAB_00444d25:
 
   }
 
-  FUN_0042b020();
+  Audio3DTestToneUpdate__Fv_2();
 
   Main_fx_00448170(0,4);
 
-  FUN_0042b030();
+  Audio3DTestToneUpdate__Fv_3();
 
   FUN_004cc810(0,*(undefined4 *)(param_1 + 0xbc));
 
@@ -4094,11 +4104,11 @@ LAB_00444d25:
 
   main_drawwatr_00431700();
 
-  FUN_0042b020();
+  Audio3DTestToneUpdate__Fv_2();
 
   FUN_0042d550();
 
-  FUN_0042b030();
+  Audio3DTestToneUpdate__Fv_3();
 
   if (*(int *)(param_1 + 0xc4) == 0) {
 
@@ -4186,7 +4196,7 @@ LAB_004451e2:
 
   FUN_004433b0();
 
-  FUN_004041f0();
+  ANM_DumpCluster();
 
   FUN_00516220(&local_1f8);
 
@@ -4210,13 +4220,13 @@ LAB_004451e2:
 
     uStack_1cc = 0x3cf5c28f;
 
-    FUN_00446ad0(aiStack_1d4,DAT_006328e0);
+    FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = FUN_004470a0(auStack_148,aiStack_1d4);
+    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
 
     FUN_00446ce0(uVar4);
 
-    uVar4 = FUN_00450cb0();
+    uVar4 = AudioGetMasterVolume__Fv_7();
 
     FUN_00542f27(auStack_148,s_Triangle_second___d_005587a4,uVar4);
 
@@ -4232,9 +4242,9 @@ LAB_004451e2:
 
     uStack_1cc = 0x3cf5c28f;
 
-    FUN_00446ad0(aiStack_1d4,DAT_006328e0);
+    FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = FUN_004470a0(auStack_148,aiStack_1d4);
+    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
 
     FUN_00446ce0(uVar4);
 
@@ -4254,13 +4264,13 @@ LAB_004451e2:
 
     uStack_1cc = 0x3cf5c28f;
 
-    FUN_00446ad0(aiStack_1d4,DAT_006328e0);
+    FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = FUN_004470a0(auStack_148,aiStack_1d4);
+    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
 
     FUN_00446ce0(uVar4);
 
-    uVar4 = FUN_00450ce0();
+    uVar4 = AudioGetMasterVolume__Fv_4();
 
     FUN_00542f27(auStack_148,s_Number_of_Frames___d_00558778,uVar4);
 
@@ -4276,13 +4286,13 @@ LAB_004451e2:
 
     uStack_1cc = 0x3cf5c28f;
 
-    FUN_00446ad0(aiStack_1d4,DAT_006328e0);
+    FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = FUN_004470a0(auStack_148,aiStack_1d4);
+    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
 
     FUN_00446ce0(uVar4);
 
-    uVar4 = FUN_00450d00();
+    uVar4 = AudioGetMasterVolume__Fv_6();
 
     FUN_00542f27(auStack_148,s_Framerate_Min___d_00558764,uVar4);
 
@@ -4298,13 +4308,13 @@ LAB_004451e2:
 
     uStack_1cc = 0x3cf5c28f;
 
-    FUN_00446ad0(aiStack_1d4,DAT_006328e0);
+    FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = FUN_004470a0(auStack_148,aiStack_1d4);
+    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
 
     FUN_00446ce0(uVar4);
 
-    uVar4 = FUN_00450cf0();
+    uVar4 = AudioGetMasterVolume__Fv_5();
 
     FUN_00542f27(auStack_148,s_Framerate_Max___d_00558750,uVar4);
 
@@ -4320,9 +4330,9 @@ LAB_004451e2:
 
     uStack_1cc = 0x3cf5c28f;
 
-    FUN_00446ad0(aiStack_1d4,DAT_006328e0);
+    FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = FUN_004470a0(auStack_148,aiStack_1d4);
+    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
 
     FUN_00446ce0(uVar4);
 
@@ -4332,7 +4342,7 @@ LAB_004451e2:
 
   FUN_00444320(param_1);
 
-  FUN_004a1500();
+  AddHud__4cHudP8cHudIcon_2();
 
   FUN_00518f20();
 
@@ -4346,7 +4356,7 @@ LAB_004451e2:
 
   }
 
-  FUN_00515e90(local_190,local_1e8);
+  FNT_StringRender__FPcP14FNT_RenderInfo(local_190,local_1e8);
 
   return 1;
 
@@ -4686,7 +4696,7 @@ undefined4 FUN_004457d0(int param_1,float param_2)
 
   *(float *)(param_1 + 0xac) = param_2;
 
-  iVar1 = FUN_0053c5f0(*(undefined4 *)(iVar5 + 0xc),fVar3);
+  iVar1 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(iVar5 + 0xc),fVar3);
 
   uVar4 = (uint)(*(int *)(*(int *)(iVar5 + 0xc) + 0x14) <= iVar1);
 
@@ -4698,9 +4708,9 @@ undefined4 FUN_004457d0(int param_1,float param_2)
 
     *(undefined4 *)(param_1 + 0xa8) = 0;
 
-    fVar8 = (float10)FUN_0053c610(*(int *)(iVar5 + 0xc),
+    fVar8 = (float10)ANM_SecsFromTicks(*(int *)(iVar5 + 0xc),
 
-                                  *(undefined4 *)(*(int *)(iVar5 + 0xc) + 0x14));
+                                       *(undefined4 *)(*(int *)(iVar5 + 0xc) + 0x14));
 
     param_2 = 0.0;
 
@@ -5069,7 +5079,7 @@ LAB_00445a50:
 
     if (param_1[0x2d] != 0) {
 
-      iVar11 = FUN_0053c5f0(*(undefined4 *)(param_1[0x2d] + 0xc),param_1[0x2c]);
+      iVar11 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(param_1[0x2d] + 0xc),param_1[0x2c]);
 
       if (iVar11 / *(int *)(*(int *)(param_1[0x2d] + 0xc) + 0x18) < (int)puVar12[2])
 
@@ -5087,7 +5097,7 @@ LAB_00445a50:
 
     if (param_1[0x2d] != 0) {
 
-      iVar11 = FUN_0053c5f0(*(undefined4 *)(param_1[0x2d] + 0xc),param_1[0x2c]);
+      iVar11 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(param_1[0x2d] + 0xc),param_1[0x2c]);
 
       if (iVar11 < (int)puVar12[2]) goto switchD_00445a5c_caseD_5;
 
@@ -5751,7 +5761,7 @@ LAB_00445a50:
 
     if ((param_1[0x2d] == 0) ||
 
-       (iVar11 = FUN_0053c5f0(*(undefined4 *)(param_1[0x2d] + 0xc),param_1[0x2c]),
+       (iVar11 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(param_1[0x2d] + 0xc),param_1[0x2c]),
 
        *(int *)(*(int *)(param_1[0x2d] + 0xc) + 0x10) < iVar11)) goto LAB_00446389;
 
@@ -5820,6 +5830,10 @@ LAB_00446389:
 }
 
 /* ===== FUN_00446620 @ 0x00446620 ===== */
+/* PS2 candidate: FLK_FlickStop (conf 0.885) */
+
+
+
 void FUN_00446620(void)
 
 
@@ -5931,7 +5945,7 @@ int FUN_00446650(char *param_1)
 
     _DAT_0059cdb4 = 0;
 
-    uVar2 = FUN_004fa1e0();
+    uVar2 = AudioDataStreamStatus__Fv_3();
 
     main_status_00500520(uVar2);
 
@@ -5959,7 +5973,7 @@ LAB_00446783:
 
       do {
 
-        iVar5 = FUN_0053A860(param_1,iVar6 + 0x210 + DAT_006330e4);
+        iVar5 = match(param_1,iVar6 + 0x210 + DAT_006330e4);
 
         if (iVar5 != 0) {
 
@@ -6001,7 +6015,7 @@ LAB_00446783:
 
       FUN_005178d0(iVar6,psVar3 + 6,asStack_98[1] - 0x18);
 
-      FUN_005179d0(iVar6);
+      ANM_BinderDestroy_2(iVar6);
 
       pcVar4 = param_1;
 
@@ -6023,7 +6037,7 @@ LAB_00446783:
 
         do {
 
-          iVar5 = FUN_0053A860(param_1,iVar7 + 0x210 + DAT_006330e4);
+          iVar5 = match(param_1,iVar7 + 0x210 + DAT_006330e4);
 
           if (iVar5 != 0) goto LAB_00446830;
 
@@ -6279,6 +6293,10 @@ undefined4 * FUN_00446a00(undefined4 param_1,char *param_2)
 }
 
 /* ===== FUN_00446a90 @ 0x00446A90 ===== */
+/* PS2 candidate: object_stop_movement_2 (conf 0.881) */
+
+
+
 void FUN_00446a90(undefined4 *param_1)
 
 
@@ -6315,8 +6333,8 @@ void FUN_00446a90(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00446ad0 @ 0x00446AD0 ===== */
-void FUN_00446ad0(int param_1,float param_2)
+/* ===== FNT_RenderInfoProcess__FP14FNT_RenderInfof @ 0x00446AD0 ===== */
+void FNT_RenderInfoProcess__FP14FNT_RenderInfof(int param_1,float param_2)
 
 
 
@@ -6682,7 +6700,7 @@ void FUN_00446df0(int param_1,float param_2)
 
           piVar6[1] = (int)piVar6;
 
-          FUN_005402b0(piVar6,*(undefined4 *)(param_1 + 4));
+          MAP_ChunkDestroy(piVar6,*(undefined4 *)(param_1 + 4));
 
         }
 
@@ -6791,8 +6809,8 @@ void FUN_00446ee0(void)
 
 }
 
-/* ===== FUN_00446f50 @ 0x00446F50 ===== */
-void FUN_00446f50(void)
+/* ===== SetupCameraHail__Fv @ 0x00446F50 ===== */
+void SetupCameraHail__Fv(void)
 
 
 
@@ -6946,8 +6964,8 @@ void FUN_00447060(void)
 
 }
 
-/* ===== FUN_004470a0 @ 0x004470A0 ===== */
-undefined4 FUN_004470a0(void)
+/* ===== AudioGetMasterVolume__Fv_3 @ 0x004470A0 ===== */
+undefined4 AudioGetMasterVolume__Fv_3(void)
 
 
 
@@ -6957,8 +6975,8 @@ undefined4 FUN_004470a0(void)
 
 }
 
-/* ===== Main/fx_00447190 @ 0x00447190 ===== */
-bool Main_fx_00447190(void)
+/* ===== dialog_level_is_base_8 @ 0x00447190 ===== */
+bool dialog_level_is_base_8(void)
 
 
 
@@ -10128,7 +10146,7 @@ LAB_0044cee6:
 
           if (**(int **)(iVar11 + 0xf8) != 0) {
 
-            main_tracer_00509dc0();
+            MAP_MemGroupSetBase_3();
 
             *(float *)(*(int *)(iVar11 + 0xf8) + 0xc) = fVar13;
 
@@ -10172,7 +10190,7 @@ LAB_0044cee6:
 
           if (**(int **)(iVar11 + 0xf8) != 0) {
 
-            main_tracer_00509dc0();
+            MAP_MemGroupSetBase_3();
 
             *(float *)(*(int *)(iVar11 + 0xf8) + 0xc) = (float)fVar21;
 
@@ -12816,7 +12834,7 @@ LAB_0044de79:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_004041f0();
+        ANM_DumpCluster();
 
       }
 

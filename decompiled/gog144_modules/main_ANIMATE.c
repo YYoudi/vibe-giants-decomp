@@ -48,7 +48,7 @@ void main_animate_00404b60(int param_1,int param_2)
 
   if (param_2 < 0) {
 
-    param_2 = FUN_0042b160(param_1);
+    param_2 = BinFileCreateWrite_2(param_1);
 
   }
 
@@ -313,7 +313,7 @@ void main_animate_00405240(char *param_1)
 
   for (puVar6 = DAT_005841a4; puVar6 != (undefined4 *)0x0; puVar6 = (undefined4 *)*puVar6) {
 
-    iVar4 = FUN_0053A860(pcVar3,puVar6 + 3);
+    iVar4 = match(pcVar3,puVar6 + 3);
 
     if (iVar4 != 0) {
 
@@ -377,7 +377,7 @@ void main_animate_00405240(char *param_1)
 
     puVar6[2] = 1;
 
-    piVar7 = (int *)FUN_0053bb30(fVar5);
+    piVar7 = (int *)ANM_AnimGetImage_2(fVar5);
 
     DAT_0058419c = DAT_0058419c + *piVar7;
 
@@ -498,7 +498,7 @@ void AnimationCreate(undefined4 *param_1,int param_2,char *param_3)
 
         puVar6 = (undefined4 *)*puVar6) {
 
-      iVar4 = FUN_0053A860(pcVar9,puVar6 + 3);
+      iVar4 = match(pcVar9,puVar6 + 3);
 
       pcVar11 = pcVar9;
 
@@ -564,7 +564,7 @@ void AnimationCreate(undefined4 *param_1,int param_2,char *param_3)
 
       puVar6[2] = 1;
 
-      piVar7 = (int *)FUN_0053bb30(fVar5);
+      piVar7 = (int *)ANM_AnimGetImage_2(fVar5);
 
       DAT_0058419c = DAT_0058419c + *piVar7;
 
@@ -670,7 +670,7 @@ LAB_004056ea:
 
   for (; puVar6 != (undefined4 *)0x0; puVar6 = (undefined4 *)*puVar6) {
 
-    iVar4 = FUN_0053A860(pcVar11,puVar6 + 3);
+    iVar4 = match(pcVar11,puVar6 + 3);
 
     if (iVar4 != 0) {
 
@@ -811,7 +811,7 @@ void main_animate_00405700(char *param_1,undefined4 param_2)
 
   puVar3[2] = 1;
 
-  piVar4 = (int *)FUN_0053bb30(param_2);
+  piVar4 = (int *)ANM_AnimGetImage_2(param_2);
 
   DAT_0058419c = DAT_0058419c + *piVar4;
 
@@ -911,7 +911,7 @@ void main_animate_004057d0(int param_1)
 
               *piVar5 = *piVar4;
 
-              piVar5 = (int *)FUN_0053bb30(iVar3);
+              piVar5 = (int *)ANM_AnimGetImage_2(iVar3);
 
               DAT_0058419c = DAT_0058419c - *piVar5;
 
@@ -975,7 +975,7 @@ void main_animate_004057d0(int param_1)
 
               *piVar5 = *piVar4;
 
-              piVar5 = (int *)FUN_0053bb30(iVar3);
+              piVar5 = (int *)ANM_AnimGetImage_2(iVar3);
 
               DAT_0058419c = DAT_0058419c - *piVar5;
 

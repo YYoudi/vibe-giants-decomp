@@ -611,15 +611,15 @@ void main_makewrld_00473600(float *param_1)
 
           if (*(short *)pbVar2 != 0) {
 
-            FUN_00455bd0(iVar10,iVar8,local_48);
+            grid_get_point(iVar10,iVar8,local_48);
 
             iVar5 = iVar10 + 1;
 
-            FUN_00455bd0(iVar5,iVar8,local_54);
+            grid_get_point(iVar5,iVar8,local_54);
 
-            FUN_00455bd0(iVar10,iVar8 + 1,local_3c);
+            grid_get_point(iVar10,iVar8 + 1,local_3c);
 
-            FUN_00455bd0(iVar5,iVar8 + 1,local_60);
+            grid_get_point(iVar5,iVar8 + 1,local_60);
 
             switch(*pbVar2 & 7) {
 
@@ -1068,7 +1068,7 @@ void gti_terrain_load(undefined4 param_1)
 
       FUN_0051ea20(s_Bad_version_for_world_data_0055b8fc);
 
-      FUN_0051e670();
+      Audio3DTestToneUpdate__Fv_4();
 
       return;
 
@@ -1850,13 +1850,13 @@ void gti_terrain_load(undefined4 param_1)
 
           if (*puVar16 == 0) goto switchD_0047500c_default;
 
-          FUN_00455bd0(iVar20,local_84,local_5c);
+          grid_get_point(iVar20,local_84,local_5c);
 
-          FUN_00455bd0(iVar20 + 1,local_84,local_44);
+          grid_get_point(iVar20 + 1,local_84,local_44);
 
-          FUN_00455bd0(iVar20,local_84 + 1,&local_7c);
+          grid_get_point(iVar20,local_84 + 1,&local_7c);
 
-          FUN_00455bd0(iVar20 + 1,local_84 + 1,local_50);
+          grid_get_point(iVar20 + 1,local_84 + 1,local_50);
 
           switch(*puVar16 & 7) {
 

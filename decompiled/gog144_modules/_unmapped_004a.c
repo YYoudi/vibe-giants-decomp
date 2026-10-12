@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (12 named) — decompiled, names from PS2 symbols
+ * 131 functions (21 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -102,8 +102,8 @@ void main_path_004a0a00(undefined4 *param_1)
 
 }
 
-/* ===== main/path_004a0b00 @ 0x004A0B00 ===== */
-void main_path_004a0b00(int param_1,int param_2)
+/* ===== ObjectTransformIntegrity_2 @ 0x004A0B00 ===== */
+void ObjectTransformIntegrity_2(int param_1,int param_2)
 
 
 
@@ -120,6 +120,10 @@ void main_path_004a0b00(int param_1,int param_2)
 }
 
 /* ===== main/path_004a0b20 @ 0x004A0B20 ===== */
+/* PS2 candidate: path_est__FP5ANODEP9PathPoint (conf 0.53) */
+
+
+
 float10 main_path_004a0b20(uint *param_1,int param_2)
 
 
@@ -141,6 +145,10 @@ float10 main_path_004a0b20(uint *param_1,int param_2)
 }
 
 /* ===== main/path_004a0b70 @ 0x004A0B70 ===== */
+/* PS2 candidate: path_blocked_long__FP9PathPointT0 (conf 0.634) */
+
+
+
 undefined4 main_path_004a0b70(uint param_1,int param_2)
 
 
@@ -507,6 +515,10 @@ LAB_004a0eb3:
 }
 
 /* ===== FUN_004a1250 @ 0x004A1250 ===== */
+/* PS2 candidate: path_flyer_calculate (conf 0.692) */
+
+
+
 void FUN_004a1250(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float param_5
 
                  ,undefined4 param_6,undefined4 param_7,undefined4 param_8)
@@ -526,6 +538,10 @@ void FUN_004a1250(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 }
 
 /* ===== FUN_004a12a0 @ 0x004A12A0 ===== */
+/* PS2 candidate: path_short_calculate (conf 0.636) */
+
+
+
 void FUN_004a12a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 
                  undefined4 param_5,undefined4 param_6,undefined4 param_7)
@@ -545,6 +561,10 @@ void FUN_004a12a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 }
 
 /* ===== FUN_004a12f0 @ 0x004A12F0 ===== */
+/* PS2 candidate: heap_siftup__FPP5ANODEi (conf 0.558) */
+
+
+
 void FUN_004a12f0(int param_1,int param_2)
 
 
@@ -628,8 +648,8 @@ void FUN_004a1330(int param_1)
 
 }
 
-/* ===== FUN_004a13a0 @ 0x004A13A0 ===== */
-void FUN_004a13a0(void)
+/* ===== endDisplay__Fv @ 0x004A13A0 ===== */
+void endDisplay__Fv(void)
 
 
 
@@ -726,6 +746,10 @@ undefined8 FUN_004a14a0(void)
 }
 
 /* ===== FUN_004a14b0 @ 0x004A14B0 ===== */
+/* PS2 candidate: Audio3DTestToneStop__Fv (conf 0.51) */
+
+
+
 void FUN_004a14b0(void)
 
 
@@ -754,8 +778,8 @@ void FUN_004a14b0(void)
 
 }
 
-/* ===== FUN_004a1500 @ 0x004A1500 ===== */
-void FUN_004a1500(void)
+/* ===== AddHud__4cHudP8cHudIcon_2 @ 0x004A1500 ===== */
+void AddHud__4cHudP8cHudIcon_2(void)
 
 
 
@@ -816,8 +840,8 @@ void FUN_004a1740(int param_1)
 
 }
 
-/* ===== FUN_004a1780 @ 0x004A1780 ===== */
-void FUN_004a1780(int param_1)
+/* ===== PhysicsExZeroVelocity @ 0x004A1780 ===== */
+void PhysicsExZeroVelocity(int param_1)
 
 
 
@@ -833,8 +857,8 @@ void FUN_004a1780(int param_1)
 
 }
 
-/* ===== FUN_004a17a0 @ 0x004A17A0 ===== */
-void FUN_004a17a0(int param_1)
+/* ===== PhysicsExZeroForce @ 0x004A17A0 ===== */
+void PhysicsExZeroForce(int param_1)
 
 
 
@@ -874,6 +898,10 @@ void FUN_004a17c0(int param_1,float param_2)
 }
 
 /* ===== FUN_004a17f0 @ 0x004A17F0 ===== */
+/* PS2 candidate: PhysicsExCollisionPlane (conf 0.511) */
+
+
+
 void FUN_004a17f0(int param_1,float *param_2,float *param_3)
 
 
@@ -921,6 +949,10 @@ void FUN_004a17f0(int param_1,float *param_2,float *param_3)
 }
 
 /* ===== FUN_004a18d0 @ 0x004A18D0 ===== */
+/* PS2 candidate: PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D (conf 0.551) */
+
+
+
 void FUN_004a18d0(int param_1,float *param_2,float *param_3,float *param_4,undefined4 param_5,
 
                  float *param_6,int param_7)
@@ -1540,8 +1572,8 @@ void FUN_004a1e30(int param_1)
 
 }
 
-/* ===== FUN_004a2220 @ 0x004A2220 ===== */
-void FUN_004a2220(int param_1)
+/* ===== PhysicsExGroundCollision @ 0x004A2220 ===== */
+void PhysicsExGroundCollision(int param_1)
 
 
 
@@ -1890,6 +1922,10 @@ void FUN_004a26f0(int param_1,float param_2,float param_3,undefined4 param_4,und
 }
 
 /* ===== FUN_004a2850 @ 0x004A2850 ===== */
+/* PS2 candidate: PhysicsExApplyMoveControls (conf 0.657) */
+
+
+
 void FUN_004a2850(float param_1)
 
 
@@ -2128,6 +2164,10 @@ void FUN_004a2930(int param_1,int param_2,int param_3,float param_4,float param_
 }
 
 /* ===== FUN_004a2b90 @ 0x004A2B90 ===== */
+/* PS2 candidate: PhysicsExCalcControledModelSpeeds (conf 0.533) */
+
+
+
 void FUN_004a2b90(int param_1,undefined4 param_2,undefined4 param_3)
 
 
@@ -2280,8 +2320,8 @@ void FUN_004a2c50(undefined4 param_1,int param_2,float param_3)
 
 }
 
-/* ===== FUN_004a2d30 @ 0x004A2D30 ===== */
-void FUN_004a2d30(int param_1)
+/* ===== ObjectTransformIntegrity @ 0x004A2D30 ===== */
+void ObjectTransformIntegrity(int param_1)
 
 
 
@@ -3607,7 +3647,7 @@ void FUN_004a4360(int param_1)
 }
 
 /* ===== FUN_004a4480 @ 0x004A4480 ===== */
-/* PS2 candidate: trajectory_calculate (conf 0.309) */
+/* PS2 candidate: trajectory_calculate (conf 0.592) */
 
 
 
@@ -3650,6 +3690,10 @@ void FUN_004a4480(float *param_1,float *param_2,float *param_3,float *param_4,fl
 }
 
 /* ===== FUN_004a4510 @ 0x004A4510 ===== */
+/* PS2 candidate: piranha_finit (conf 0.608) */
+
+
+
 void FUN_004a4510(void)
 
 
@@ -4178,6 +4222,10 @@ LAB_004a4bf3:
 }
 
 /* ===== FUN_004a4c10 @ 0x004A4C10 ===== */
+/* PS2 candidate: piranha_launch_fx__FP6OBJECT (conf 0.546) */
+
+
+
 void FUN_004a4c10(int param_1)
 
 
@@ -4786,9 +4834,9 @@ LAB_004a5802:
 
       else {
 
-        FUN_004041f0();
+        ANM_DumpCluster();
 
-        FUN_004041f0(0x16);
+        ANM_DumpCluster(0x16);
 
       }
 
@@ -4796,7 +4844,7 @@ LAB_004a5802:
 
     iVar3 = FUN_0052aa70();
 
-    if (((iVar3 != 0) && (DAT_00632ad8 != '\0')) && (iVar3 = FUN_00426ed0(), iVar3 != 0)) {
+    if (((iVar3 != 0) && (DAT_00632ad8 != '\0')) && (iVar3 = dialog_level_is_base(), iVar3 != 0)) {
 
       DAT_00633020 = 0;
 
@@ -5095,7 +5143,7 @@ LAB_004a5ac1:
 
   }
 
-  FUN_0040d740(local_24,local_28,local_10,&local_c);
+  camera_override_info(local_24,local_28,local_10,&local_c);
 
   return;
 
@@ -5173,7 +5221,7 @@ void FUN_004a5d10(void)
 
     if (*(int *)(DAT_00632a88 + 0x170) == 0) {
 
-      FUN_00500f40(*pfVar4);
+      AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5(*pfVar4);
 
       return;
 
@@ -5233,7 +5281,7 @@ void FUN_004a5d10(void)
 
     *pfVar4 = local_4;
 
-    FUN_00500f40(local_4);
+    AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5(local_4);
 
   }
 
@@ -5861,8 +5909,8 @@ undefined4 FUN_004a63a0(int param_1)
 
 }
 
-/* ===== FUN_004a6400 @ 0x004A6400 ===== */
-void FUN_004a6400(int param_1)
+/* ===== voBufReset__FP5VoBuf @ 0x004A6400 ===== */
+void voBufReset__FP5VoBuf(int param_1)
 
 
 
@@ -6953,6 +7001,10 @@ void FUN_004a76e0(int param_1,int param_2,undefined4 *param_3)
 }
 
 /* ===== FUN_004a7790 @ 0x004A7790 ===== */
+/* PS2 candidate: sound_play_player_noparent (conf 0.524) */
+
+
+
 void FUN_004a7790(int param_1)
 
 
@@ -6973,12 +7025,12 @@ void FUN_004a7790(int param_1)
 
 }
 
-/* ===== FUN_004a77c0 @ 0x004A77C0 ===== */
+/* ===== playerobj_zap_movement @ 0x004A77C0 ===== */
 /* PS2 candidate: playerobj_zap_movement (conf 0.325) */
 
 
 
-void FUN_004a77c0(int param_1)
+void playerobj_zap_movement(int param_1)
 
 
 
@@ -7164,8 +7216,8 @@ void FUN_004a7df0(float *param_1,float param_2,undefined4 param_3)
 
 }
 
-/* ===== main/procanim_004a8cc0 @ 0x004A8CC0 ===== */
-void main_procanim_004a8cc0(undefined4 *param_1)
+/* ===== MeccProcAnimsCreate @ 0x004A8CC0 ===== */
+void MeccProcAnimsCreate(undefined4 *param_1)
 
 
 
@@ -7177,8 +7229,8 @@ void main_procanim_004a8cc0(undefined4 *param_1)
 
 }
 
-/* ===== main/procanim_004a8ce0 @ 0x004A8CE0 ===== */
-void main_procanim_004a8ce0(undefined4 *param_1)
+/* ===== MeccProcAnimsCreate_2 @ 0x004A8CE0 ===== */
+void MeccProcAnimsCreate_2(undefined4 *param_1)
 
 
 
@@ -7190,8 +7242,8 @@ void main_procanim_004a8ce0(undefined4 *param_1)
 
 }
 
-/* ===== main/procanim_004a8d00 @ 0x004A8D00 ===== */
-void main_procanim_004a8d00(undefined4 *param_1)
+/* ===== MeccProcAnimsCreate_3 @ 0x004A8D00 ===== */
+void MeccProcAnimsCreate_3(undefined4 *param_1)
 
 
 
@@ -7203,8 +7255,8 @@ void main_procanim_004a8d00(undefined4 *param_1)
 
 }
 
-/* ===== main/procanim_004a8d20 @ 0x004A8D20 ===== */
-void main_procanim_004a8d20(undefined4 *param_1)
+/* ===== MeccProcAnimsCreate_4 @ 0x004A8D20 ===== */
+void MeccProcAnimsCreate_4(undefined4 *param_1)
 
 
 
@@ -9073,7 +9125,7 @@ void FUN_004a9e10(void)
 
   FUN_005178d0(iVar1,puVar2 + 2,local_4 - 8);
 
-  FUN_005179d0(iVar1);
+  ANM_BinderDestroy_2(iVar1);
 
   puVar5 = &DAT_005a2588;
 
@@ -9153,7 +9205,7 @@ void FUN_004a9e10(void)
 
   }
 
-  FUN_0051e670();
+  Audio3DTestToneUpdate__Fv_4();
 
 LAB_004a9ef4:
 
@@ -9180,8 +9232,8 @@ void FUN_004a9f30(float *param_1,int param_2)
 
 }
 
-/* ===== FUN_004a9f80 @ 0x004A9F80 ===== */
-void FUN_004a9f80(void)
+/* ===== ANM_DumpCluster_2 @ 0x004A9F80 ===== */
+void ANM_DumpCluster_2(void)
 
 
 
@@ -9192,6 +9244,10 @@ void FUN_004a9f80(void)
 }
 
 /* ===== FUN_004a9fe0 @ 0x004A9FE0 ===== */
+/* PS2 candidate: ObjectGetWorldRefPoint__FP3P3DiP6OBJECT (conf 0.793) */
+
+
+
 void FUN_004a9fe0(undefined4 param_1,int param_2)
 
 
@@ -9992,6 +10048,10 @@ undefined4 FUN_004aa9d0(int param_1,int param_2)
 }
 
 /* ===== FUN_004aaa80 @ 0x004AAA80 ===== */
+/* PS2 candidate: MortarCollisionValid__FP6OBJECTi (conf 0.62) */
+
+
+
 undefined4 FUN_004aaa80(int param_1,int param_2)
 
 
@@ -10493,6 +10553,10 @@ LAB_004ac24a:
 }
 
 /* ===== FUN_004ac4b0 @ 0x004AC4B0 ===== */
+/* PS2 candidate: face_target (conf 0.504) */
+
+
+
 void FUN_004ac4b0(int param_1,float *param_2,int param_3,float param_4,float param_5)
 
 
@@ -10731,7 +10795,7 @@ bool FUN_004ac760(int param_1)
 
             }
 
-            iVar1 = FUN_004d7c40(param_1);
+            iVar1 = kabutoai_is_punch_anim__FP6OBJECT_3(param_1);
 
             return iVar1 != 0;
 
@@ -10749,7 +10813,7 @@ bool FUN_004ac760(int param_1)
 
             }
 
-            iVar1 = FUN_004d49e0(param_1);
+            iVar1 = kabutoai_is_punch_anim__FP6OBJECT_2(param_1);
 
             return iVar1 != 0;
 
@@ -11303,6 +11367,10 @@ void FUN_004ad190(int param_1,int param_2)
 }
 
 /* ===== FUN_004ad7e0 @ 0x004AD7E0 ===== */
+/* PS2 candidate: reapertrail_logic (conf 0.51) */
+
+
+
 void FUN_004ad7e0(int param_1)
 
 
@@ -11555,6 +11623,10 @@ void FUN_004add70(int param_1)
 }
 
 /* ===== FUN_004ae290 @ 0x004AE290 ===== */
+/* PS2 candidate: releaseMpegBuffers__Fv (conf 0.831) */
+
+
+
 void FUN_004ae290(void)
 
 

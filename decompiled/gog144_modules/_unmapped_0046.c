@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (1 named) — decompiled, names from PS2 symbols
+ * 53 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -163,6 +163,10 @@ int FUN_004650d0(undefined4 param_1,float *param_2,float *param_3,float param_4,
 }
 
 /* ===== FUN_00465230 @ 0x00465230 ===== */
+/* PS2 candidate: ChooseAnim__FP6OBJECTT0PfP10T_AnimInfoUi (conf 0.504) */
+
+
+
 int FUN_00465230(float param_1,undefined4 param_2,float *param_3,int *param_4,uint param_5)
 
 
@@ -346,7 +350,7 @@ float10 FUN_00465350(int param_1,undefined4 param_2,float *param_3,int param_4,i
 
   param_3[2] = (*(float *)(param_4 + 0x130) - fVar1) * fVar2 + param_3[2];
 
-  fVar5 = (float10)FUN_004a9f80(param_3,param_5);
+  fVar5 = (float10)ANM_DumpCluster_2(param_3,param_5);
 
   return fVar5;
 
@@ -1134,7 +1138,7 @@ void FUN_00465f10(int param_1,undefined4 param_2,int param_3,int *param_4)
 
       FUN_0040d7e0(local_44);
 
-      FUN_0040d810(param_1);
+      AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(param_1);
 
       return;
 
@@ -1154,7 +1158,7 @@ void FUN_00465f10(int param_1,undefined4 param_2,int param_3,int *param_4)
 
     }
 
-    FUN_0040d7b0(param_1,*piVar2);
+    camera_override_refpt(param_1,*piVar2);
 
     return;
 
@@ -1282,8 +1286,8 @@ void FUN_004669a0(float param_1,int param_2)
 
 }
 
-/* ===== FUN_00467260 @ 0x00467260 ===== */
-undefined4 FUN_00467260(void)
+/* ===== AudioDataStreamStatus__Fv @ 0x00467260 ===== */
+undefined4 AudioDataStreamStatus__Fv(void)
 
 
 
@@ -1700,6 +1704,10 @@ LAB_00469b54:
 }
 
 /* ===== FUN_0046a480 @ 0x0046A480 ===== */
+/* PS2 candidate: kbos_sizer (conf 0.608) */
+
+
+
 void FUN_0046a480(int param_1,float param_2)
 
 
@@ -1771,11 +1779,13 @@ void FUN_0046a4e0(int param_1,int param_2)
 
   if (*(int *)(param_2 + 0x40) != 0) {
 
-    uVar2 = FUN_0053c5f0(*(int *)(param_2 + 0x40),*(undefined4 *)(param_1 + 0x18));
+    uVar2 = AddHud__4cHudP8cHudIcon_4(*(int *)(param_2 + 0x40),*(undefined4 *)(param_1 + 0x18));
 
     *(undefined4 *)(param_2 + 0x38) = uVar2;
 
-    uVar2 = FUN_0053c5f0(*(undefined4 *)(param_2 + 0x40),*(undefined4 *)(param_1 + 0x14));
+    uVar2 = AddHud__4cHudP8cHudIcon_4
+
+                      (*(undefined4 *)(param_2 + 0x40),*(undefined4 *)(param_1 + 0x14));
 
     *(undefined4 *)(param_2 + 0x3c) = uVar2;
 
@@ -2722,6 +2732,10 @@ void FUN_0046aeb0(int param_1)
 }
 
 /* ===== FUN_0046b3f0 @ 0x0046B3F0 ===== */
+/* PS2 candidate: Init__7PS2Game (conf 0.581) */
+
+
+
 void FUN_0046b3f0(undefined4 param_1,undefined4 param_2)
 
 
@@ -2901,6 +2915,10 @@ int FUN_0046b560(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 }
 
 /* ===== FUN_0046b5e0 @ 0x0046B5E0 ===== */
+/* PS2 candidate: kbos_offspring_create (conf 0.522) */
+
+
+
 int FUN_0046b5e0(undefined4 param_1)
 
 
@@ -3868,7 +3886,7 @@ void FUN_0046e9d0(int param_1,undefined4 *param_2,undefined4 param_3,float param
 }
 
 /* ===== FUN_0046f050 @ 0x0046F050 ===== */
-/* PS2 candidate: lift_update_rider_position__FP6OBJECT (conf 0.492) */
+/* PS2 candidate: lift_update_rider_position__FP6OBJECT (conf 0.596) */
 
 
 
@@ -4100,6 +4118,10 @@ void FUN_0046f2e0(int param_1,int param_2)
 }
 
 /* ===== FUN_0046f540 @ 0x0046F540 ===== */
+/* PS2 candidate: getMenuSelection__7PS2Game (conf 0.703) */
+
+
+
 undefined * FUN_0046f540(int param_1)
 
 
@@ -4183,8 +4205,8 @@ void FUN_0046f7f0(float *param_1)
 
 }
 
-/* ===== FUN_0046f8b0 @ 0x0046F8B0 ===== */
-bool FUN_0046f8b0(int param_1)
+/* ===== kabutoai_is_punch_anim__FP6OBJECT @ 0x0046F8B0 ===== */
+bool kabutoai_is_punch_anim__FP6OBJECT(int param_1)
 
 
 

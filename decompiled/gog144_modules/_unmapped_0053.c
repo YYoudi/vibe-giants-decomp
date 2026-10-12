@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (9 named) — decompiled, names from PS2 symbols
+ * 179 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -1200,7 +1200,7 @@ LAB_005307f3:
 
   }
 
-  uVar8 = FUN_0052aad0();
+  uVar8 = AudioGetMasterVolume__Fv_9();
 
   iVar7 = FUN_0052ab20(uVar8);
 
@@ -1365,7 +1365,7 @@ void FUN_005308b0(undefined4 param_1,int param_2)
 
     }
 
-    uVar2 = FUN_0052aad0();
+    uVar2 = AudioGetMasterVolume__Fv_9();
 
     iVar4 = FUN_0052ab20(uVar2);
 
@@ -1534,7 +1534,7 @@ void rpman_move(int param_1,int param_2)
 
       }
 
-      uVar3 = FUN_0052aad0();
+      uVar3 = AudioGetMasterVolume__Fv_9();
 
       iVar2 = FUN_0052ab20(uVar3);
 
@@ -2155,8 +2155,8 @@ LAB_00531013:
 
 }
 
-/* ===== FUN_005310b0 @ 0x005310B0 ===== */
-void FUN_005310b0(void)
+/* ===== Audio3DTestToneUpdate__Fv_7 @ 0x005310B0 ===== */
+void Audio3DTestToneUpdate__Fv_7(void)
 
 
 
@@ -3119,7 +3119,7 @@ LAB_005319de:
 
       case '\x0f':
 
-        FUN_00525030();
+        Audio3DTestToneUpdate__Fv_6();
 
         DAT_005e0304 = DAT_005e0304 + 1;
 
@@ -3159,7 +3159,7 @@ LAB_005319de:
 
       default:
 
-        iVar4 = FUN_00425e90();
+        iVar4 = AudioGetMasterVolume__Fv_2();
 
         if (iVar4 != 0) {
 
@@ -4349,7 +4349,7 @@ LAB_0053196c:
 
             if (iVar6 == DAT_005def94) {
 
-              iVar6 = FUN_0052aad0();
+              iVar6 = AudioGetMasterVolume__Fv_9();
 
               if (iVar6 == DAT_005def94) {
 
@@ -4588,11 +4588,11 @@ void FUN_00532e20(undefined4 *param_1)
 
     }
 
-    FUN_004041f0(*(undefined4 *)((int)param_1 + 1),*(undefined4 *)((int)param_1 + 5),
+    ANM_DumpCluster(*(undefined4 *)((int)param_1 + 1),*(undefined4 *)((int)param_1 + 5),
 
-                 *(undefined4 *)((int)param_1 + 9),*(undefined4 *)((int)param_1 + 0xd),
+                    *(undefined4 *)((int)param_1 + 9),*(undefined4 *)((int)param_1 + 0xd),
 
-                 *(undefined4 *)((int)param_1 + 0x11),(undefined1 *)((int)param_1 + 0x15));
+                    *(undefined4 *)((int)param_1 + 0x11),(undefined1 *)((int)param_1 + 0x15));
 
   }
 
@@ -4750,11 +4750,11 @@ void FUN_00532f60(undefined4 *param_1)
 
     if (((uVar3 < 0xe) && (*(int *)((int)param_1 + 5) == 0xe)) ||
 
-       ((iVar1 = FUN_0052aad0(), iVar1 == *(int *)((int)param_1 + 1) &&
+       ((iVar1 = AudioGetMasterVolume__Fv_9(), iVar1 == *(int *)((int)param_1 + 1) &&
 
         (*(int *)((int)param_1 + 5) == 0xe)))) {
 
-      iVar1 = FUN_0052aaf0();
+      iVar1 = AudioGetMasterVolume__Fv_10();
 
       if ((*(int *)((int)param_1 + 1) != iVar1) || (DAT_00633238 == 0)) {
 
@@ -9340,6 +9340,10 @@ int FUN_00536050(char *param_1)
 }
 
 /* ===== FUN_00536120 @ 0x00536120 ===== */
+/* PS2 candidate: controlShutdown__Fv_2 (conf 0.611) */
+
+
+
 void FUN_00536120(void)
 
 
@@ -9531,7 +9535,7 @@ void FUN_005362d0(char *param_1,undefined4 param_2)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_00543a11();
+    iVar1 = BinFileSeek_2();
 
     if (iVar1 != 0) {
 
@@ -10379,8 +10383,8 @@ void FUN_00536c60(void)
 
 }
 
-/* ===== FUN_00536ca0 @ 0x00536CA0 ===== */
-undefined4 FUN_00536ca0(void)
+/* ===== AudioGetMasterVolume__Fv_11 @ 0x00536CA0 ===== */
+undefined4 AudioGetMasterVolume__Fv_11(void)
 
 
 
@@ -10746,7 +10750,7 @@ void FUN_005371e0(void)
 
       local_d4 = 0x11;
 
-      local_d3 = FUN_0052aad0();
+      local_d3 = AudioGetMasterVolume__Fv_9();
 
       local_cf = DAT_00632f08;
 
@@ -10800,7 +10804,7 @@ void FUN_005371e0(void)
 
       local_d4 = 0x11;
 
-      local_d3 = FUN_0052aad0();
+      local_d3 = AudioGetMasterVolume__Fv_9();
 
       local_cf = DAT_00632f08;
 
@@ -10848,7 +10852,7 @@ void FUN_005371e0(void)
 
   FUN_004ff470();
 
-  FUN_004270f0();
+  Audio3DTestToneUpdate__Fv();
 
   DAT_00632bb4 = 0;
 
@@ -10975,7 +10979,7 @@ void FUN_00537400(int param_1)
 
     else {
 
-      uVar7 = FUN_0052aad0();
+      uVar7 = AudioGetMasterVolume__Fv_9();
 
       iVar4 = FUN_0052ab20(uVar7);
 
@@ -11186,7 +11190,7 @@ void FUN_005375e0(void)
 
         else {
 
-          uVar5 = FUN_0052aad0();
+          uVar5 = AudioGetMasterVolume__Fv_9();
 
           iVar3 = FUN_0052ab20(uVar5);
 
@@ -11392,7 +11396,7 @@ void FUN_005375e0(void)
 
         local_a90 = 0x11;
 
-        local_a8f = (float)FUN_0052aad0();
+        local_a8f = (float)AudioGetMasterVolume__Fv_9();
 
         local_a8b = DAT_00632f08;
 
@@ -11428,7 +11432,7 @@ void FUN_005375e0(void)
 
     FUN_004ff470();
 
-    FUN_004270f0();
+    Audio3DTestToneUpdate__Fv();
 
     DAT_00632bb4 = 0;
 
@@ -11484,7 +11488,7 @@ void FUN_005375e0(void)
 
           else {
 
-            uVar5 = FUN_0052aad0();
+            uVar5 = AudioGetMasterVolume__Fv_9();
 
             iVar3 = FUN_0052ab20(uVar5);
 
@@ -11616,7 +11620,7 @@ void FUN_005375e0(void)
 
             else {
 
-              uVar5 = FUN_0052aad0();
+              uVar5 = AudioGetMasterVolume__Fv_9();
 
               iVar3 = FUN_0052ab20(uVar5);
 
@@ -11756,7 +11760,7 @@ void FUN_005375e0(void)
 
             else {
 
-              uVar5 = FUN_0052aad0();
+              uVar5 = AudioGetMasterVolume__Fv_9();
 
               iVar3 = FUN_0052ab20(uVar5);
 
@@ -11880,7 +11884,7 @@ LAB_00537c57:
 
           }
 
-          uVar5 = FUN_0052aad0();
+          uVar5 = AudioGetMasterVolume__Fv_9();
 
           iVar3 = FUN_0052ab20(uVar5);
 
@@ -11974,7 +11978,7 @@ LAB_00537c57:
 
         else {
 
-          uVar5 = FUN_0052aad0();
+          uVar5 = AudioGetMasterVolume__Fv_9();
 
           iVar3 = FUN_0052ab20(uVar5);
 
@@ -12474,6 +12478,10 @@ LAB_00538194:
 }
 
 /* ===== FUN_00538540 @ 0x00538540 ===== */
+/* PS2 candidate: __sigtramp (conf 0.644) */
+
+
+
 bool FUN_00538540(undefined4 param_1)
 
 
@@ -12490,8 +12498,8 @@ bool FUN_00538540(undefined4 param_1)
 
 }
 
-/* ===== FUN_005387a0 @ 0x005387A0 ===== */
-void FUN_005387a0(void)
+/* ===== player_display_info @ 0x005387A0 ===== */
+void player_display_info(void)
 
 
 
@@ -12615,7 +12623,7 @@ void stream_00538800(void)
 
     if (DAT_005e2c8c == 0) {
 
-      DAT_005e2c8c = FUN_00544223(local_560);
+      DAT_005e2c8c = ANM_BinderDestroy_3(local_560);
 
     }
 
@@ -12901,9 +12909,9 @@ LAB_00538c5f:
 
               if ((pCVar9 < local_6a0.cFileName) ||
 
-                 ((iVar4 = FUN_0053A860(pCVar9,&DAT_005803fc), iVar4 == 0 &&
+                 ((iVar4 = match(pCVar9,&DAT_005803fc), iVar4 == 0 &&
 
-                  (iVar4 = FUN_0053A860(pCVar9,&DAT_005803f4), iVar4 == 0)))) {
+                  (iVar4 = match(pCVar9,&DAT_005803f4), iVar4 == 0)))) {
 
                 iVar4 = FUN_005393e0(DAT_005e2c78,local_6a0.cFileName);
 
@@ -13144,8 +13152,8 @@ void FUN_00538ff0(int param_1)
 
 }
 
-/* ===== FUN_00539000 @ 0x00539000 ===== */
-undefined4 FUN_00539000(void)
+/* ===== __default_unexpected__Fv @ 0x00539000 ===== */
+undefined4 __default_unexpected__Fv(void)
 
 
 
@@ -13297,6 +13305,10 @@ bool FUN_00539010(void)
 }
 
 /* ===== FUN_00539140 @ 0x00539140 ===== */
+/* PS2 candidate: __sigtramp_2 (conf 0.644) */
+
+
+
 bool FUN_00539140(undefined4 param_1)
 
 
@@ -13428,6 +13440,10 @@ undefined4 * FUN_005393e0(int param_1,char *param_2)
 }
 
 /* ===== Utils/lzss_00539a80 @ 0x00539A80 ===== */
+/* PS2 candidate: object_destroy_all__7PS2Game_2 (conf 0.572) */
+
+
+
 undefined4 Utils_lzss_00539a80(code *param_1)
 
 
@@ -14458,8 +14474,8 @@ bool FUN_0053a830(undefined4 param_1,char *param_2)
 
 }
 
-/* ===== FUN_0053A860 @ 0x0053A860 ===== */
-bool FUN_0053A860(undefined4 param_1,undefined4 param_2)
+/* ===== match @ 0x0053A860 ===== */
+bool match(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -14475,8 +14491,8 @@ bool FUN_0053A860(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053a880 @ 0x0053A880 ===== */
-bool FUN_0053a880(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== matchn @ 0x0053A880 ===== */
+bool matchn(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -14542,6 +14558,10 @@ bool FUN_0053a8a0(byte *param_1,byte *param_2)
 }
 
 /* ===== FUN_0053a900 @ 0x0053A900 ===== */
+/* PS2 candidate: strncpynull (conf 0.593) */
+
+
+
 void FUN_0053a900(undefined1 *param_1,undefined1 *param_2,int param_3,int param_4)
 
 
@@ -14607,7 +14627,7 @@ int FUN_0053ba50(undefined4 param_1,int param_2,int *param_3)
 
   if (param_2 != 0) {
 
-    iVar2 = FUN_00543a11(param_2,&DAT_00555e04);
+    iVar2 = BinFileSeek_2(param_2,&DAT_00555e04);
 
     if (iVar2 == 0) {
 
@@ -14643,7 +14663,7 @@ int FUN_0053ba50(undefined4 param_1,int param_2,int *param_3)
 
   uVar3 = FUN_0053feb0(param_1,param_3);
 
-  iVar2 = FUN_0053fea0(uVar3);
+  iVar2 = GetCurrentPos__C11CByteStream(uVar3);
 
   local_4 = 1;
 
@@ -14657,8 +14677,8 @@ int FUN_0053ba50(undefined4 param_1,int param_2,int *param_3)
 
 }
 
-/* ===== FUN_0053bb30 @ 0x0053BB30 ===== */
-uint FUN_0053bb30(int param_1)
+/* ===== ANM_AnimGetImage_2 @ 0x0053BB30 ===== */
+uint ANM_AnimGetImage_2(int param_1)
 
 
 
@@ -14668,8 +14688,8 @@ uint FUN_0053bb30(int param_1)
 
 }
 
-/* ===== FUN_0053bb40 @ 0x0053BB40 ===== */
-void FUN_0053bb40(void)
+/* ===== AddHud__4cHudP8cHudIcon_3 @ 0x0053BB40 ===== */
+void AddHud__4cHudP8cHudIcon_3(void)
 
 
 
@@ -14682,6 +14702,10 @@ void FUN_0053bb40(void)
 }
 
 /* ===== FUN_0053bb50 @ 0x0053BB50 ===== */
+/* PS2 candidate: ANM_ObjFixPtrs__FP7ANM_ObjP8_MAP_Fix (conf 0.732) */
+
+
+
 void FUN_0053bb50(int param_1,undefined4 param_2)
 
 
@@ -14708,7 +14732,7 @@ void FUN_0053bb50(int param_1,undefined4 param_2)
 
       FUN_005400e0(puVar2,param_2);
 
-      FUN_0053bb40(*puVar2,param_2);
+      AddHud__4cHudP8cHudIcon_3(*puVar2,param_2);
 
       iVar1 = iVar1 + 1;
 
@@ -14761,33 +14785,33 @@ void FUN_0053bbb0(int param_1,int param_2)
 
   param_2 = 1;
 
-  iVar4 = FUN_005404e0(*puVar1,0);
+  iVar4 = NAM_NameFindByHandleIndex_2(*puVar1,0);
 
   while (iVar4 != 0) {
 
-    puVar5 = (undefined4 *)FUN_005404a0(iVar4);
+    puVar5 = (undefined4 *)NAM_NameGetCustom(iVar4);
 
     uVar2 = *puVar5;
 
     FUN_00540530(uVar2,&LAB_00540520,uVar3);
 
-    iVar6 = FUN_005404e0(uVar2,0);
+    iVar6 = NAM_NameFindByHandleIndex_2(uVar2,0);
 
     iVar4 = 1;
 
     while (iVar6 != 0) {
 
-      puVar5 = (undefined4 *)FUN_005404a0(iVar6);
+      puVar5 = (undefined4 *)NAM_NameGetCustom(iVar6);
 
       FUN_0053bb50(*puVar5,uVar3);
 
-      iVar6 = FUN_005404e0(uVar2,iVar4);
+      iVar6 = NAM_NameFindByHandleIndex_2(uVar2,iVar4);
 
       iVar4 = iVar4 + 1;
 
     }
 
-    iVar4 = FUN_005404e0(*puVar1,param_2);
+    iVar4 = NAM_NameFindByHandleIndex_2(*puVar1,param_2);
 
     param_2 = param_2 + 1;
 
@@ -14824,7 +14848,7 @@ int FUN_0053bc90(undefined4 param_1,int param_2,int *param_3)
 
   if (param_2 != 0) {
 
-    iVar2 = FUN_00543a11(param_2,&DAT_00555e04);
+    iVar2 = BinFileSeek_2(param_2,&DAT_00555e04);
 
     if (iVar2 == 0) {
 
@@ -14860,7 +14884,7 @@ int FUN_0053bc90(undefined4 param_1,int param_2,int *param_3)
 
   uVar3 = FUN_0053feb0(param_1,param_3);
 
-  iVar2 = FUN_0053fea0(uVar3);
+  iVar2 = GetCurrentPos__C11CByteStream(uVar3);
 
   local_4 = 1;
 
@@ -14875,6 +14899,10 @@ int FUN_0053bc90(undefined4 param_1,int param_2,int *param_3)
 }
 
 /* ===== FUN_0053bd70 @ 0x0053BD70 ===== */
+/* PS2 candidate: ANM_AnimDestroy (conf 0.823) */
+
+
+
 void FUN_0053bd70(int param_1)
 
 
@@ -14904,6 +14932,10 @@ void FUN_0053bd70(int param_1)
 }
 
 /* ===== FUN_0053bda0 @ 0x0053BDA0 ===== */
+/* PS2 candidate: ANM_NodeGetByIndex (conf 0.529) */
+
+
+
 undefined4 FUN_0053bda0(int param_1,int param_2,undefined4 param_3)
 
 
@@ -14918,13 +14950,13 @@ undefined4 FUN_0053bda0(int param_1,int param_2,undefined4 param_3)
 
   if (param_2 == 0) {
 
-    iVar1 = FUN_005404e0(*(undefined4 *)(param_1 + 0x18),param_3);
+    iVar1 = NAM_NameFindByHandleIndex_2(*(undefined4 *)(param_1 + 0x18),param_3);
 
   }
 
   else {
 
-    iVar1 = FUN_005404c0(*(undefined4 *)(param_1 + 0x14),param_2);
+    iVar1 = NAM_NameFindByHandleIndex(*(undefined4 *)(param_1 + 0x14),param_2);
 
     if (iVar1 == 0) {
 
@@ -14932,9 +14964,9 @@ undefined4 FUN_0053bda0(int param_1,int param_2,undefined4 param_3)
 
     }
 
-    puVar2 = (undefined4 *)FUN_005404a0(iVar1);
+    puVar2 = (undefined4 *)NAM_NameGetCustom(iVar1);
 
-    iVar1 = FUN_005404e0(*puVar2,param_3);
+    iVar1 = NAM_NameFindByHandleIndex_2(*puVar2,param_3);
 
   }
 
@@ -14944,7 +14976,7 @@ undefined4 FUN_0053bda0(int param_1,int param_2,undefined4 param_3)
 
   }
 
-  puVar2 = (undefined4 *)FUN_005404a0(iVar1);
+  puVar2 = (undefined4 *)NAM_NameGetCustom(iVar1);
 
   return *puVar2;
 
@@ -14969,13 +15001,13 @@ undefined4 FUN_0053be00(int param_1,int param_2,undefined4 param_3)
 
   if (param_2 == 0) {
 
-    iVar1 = FUN_005404c0(*(undefined4 *)(param_1 + 0x24),param_3);
+    iVar1 = NAM_NameFindByHandleIndex(*(undefined4 *)(param_1 + 0x24),param_3);
 
   }
 
   else {
 
-    iVar1 = FUN_005404c0(*(undefined4 *)(param_1 + 0x20),param_2);
+    iVar1 = NAM_NameFindByHandleIndex(*(undefined4 *)(param_1 + 0x20),param_2);
 
     if (iVar1 == 0) {
 
@@ -14983,9 +15015,9 @@ undefined4 FUN_0053be00(int param_1,int param_2,undefined4 param_3)
 
     }
 
-    puVar2 = (undefined4 *)FUN_005404a0(iVar1);
+    puVar2 = (undefined4 *)NAM_NameGetCustom(iVar1);
 
-    iVar1 = FUN_005404c0(*puVar2,param_3);
+    iVar1 = NAM_NameFindByHandleIndex(*puVar2,param_3);
 
   }
 
@@ -14995,7 +15027,7 @@ undefined4 FUN_0053be00(int param_1,int param_2,undefined4 param_3)
 
   }
 
-  puVar2 = (undefined4 *)FUN_005404a0(iVar1);
+  puVar2 = (undefined4 *)NAM_NameGetCustom(iVar1);
 
   return *puVar2;
 
@@ -15013,6 +15045,10 @@ uint FUN_0053be60(uint param_1)
 }
 
 /* ===== FUN_0053be80 @ 0x0053BE80 ===== */
+/* PS2 candidate: ANM_CameraGetFOV (conf 0.71) */
+
+
+
 float10 FUN_0053be80(float param_1,undefined4 param_2)
 
 
@@ -15245,8 +15281,8 @@ void FUN_0053bf20(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0053c5f0 @ 0x0053C5F0 ===== */
-void FUN_0053c5f0(void)
+/* ===== AddHud__4cHudP8cHudIcon_4 @ 0x0053C5F0 ===== */
+void AddHud__4cHudP8cHudIcon_4(void)
 
 
 
@@ -15258,8 +15294,8 @@ void FUN_0053c5f0(void)
 
 }
 
-/* ===== FUN_0053c610 @ 0x0053C610 ===== */
-float10 FUN_0053c610(int param_1,int param_2)
+/* ===== ANM_SecsFromTicks @ 0x0053C610 ===== */
+float10 ANM_SecsFromTicks(int param_1,int param_2)
 
 
 
@@ -15272,6 +15308,10 @@ float10 FUN_0053c610(int param_1,int param_2)
 }
 
 /* ===== FUN_0053c640 @ 0x0053C640 ===== */
+/* PS2 candidate: ANM_SecsFromFrames (conf 0.714) */
+
+
+
 float10 FUN_0053c640(int param_1,int param_2)
 
 
@@ -15557,7 +15597,7 @@ LAB_0053ca17:
 
       FUN_0053f650(auStack_10,&DAT_005808cc);
 
-      FUN_0053f9e0(param_1 + 0x78,auStack_20,auStack_10);
+      GEO_QuatMultiply(param_1 + 0x78,auStack_20,auStack_10);
 
     }
 
@@ -15672,7 +15712,7 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 }
 
 /* ===== FUN_0053cb50 @ 0x0053CB50 ===== */
-/* PS2 candidate: _initterm_cand (conf 0.5) */
+/* PS2 candidate: ANM_NodeGetMat (conf 0.555) */
 
 
 
@@ -15767,6 +15807,10 @@ int FUN_0053cb50(int param_1,undefined4 param_2,int param_3)
 }
 
 /* ===== FUN_0053cc20 @ 0x0053CC20 ===== */
+/* PS2 candidate: ANM_BlendedNodeGetMat (conf 0.559) */
+
+
+
 int FUN_0053cc20(int param_1,int param_2,int param_3)
 
 
@@ -16056,7 +16100,7 @@ undefined4 * FUN_0053cec0(int param_1,int param_2,int *param_3)
 
   if (param_2 != 0) {
 
-    iVar2 = FUN_005404c0(*(undefined4 *)(param_1 + 0x20),param_2);
+    iVar2 = NAM_NameFindByHandleIndex(*(undefined4 *)(param_1 + 0x20),param_2);
 
     if (iVar2 == 0) {
 
@@ -16066,7 +16110,7 @@ undefined4 * FUN_0053cec0(int param_1,int param_2,int *param_3)
 
     else {
 
-      puVar3 = (undefined4 *)FUN_005404a0(iVar2);
+      puVar3 = (undefined4 *)NAM_NameGetCustom(iVar2);
 
       local_8 = *puVar3;
 
@@ -16104,7 +16148,7 @@ undefined4 * FUN_0053cec0(int param_1,int param_2,int *param_3)
 
         uVar5 = FUN_005404b0(uVar4);
 
-        iVar2 = FUN_005404c0(local_8,uVar5);
+        iVar2 = NAM_NameFindByHandleIndex(local_8,uVar5);
 
         if (iVar2 == 0) {
 
@@ -16134,7 +16178,7 @@ undefined4 * FUN_0053cec0(int param_1,int param_2,int *param_3)
 
         else {
 
-          piVar6 = (int *)FUN_005404a0(iVar2);
+          piVar6 = (int *)NAM_NameGetCustom(iVar2);
 
           piVar7[1] = *piVar6;
 
@@ -16161,6 +16205,10 @@ undefined4 * FUN_0053cec0(int param_1,int param_2,int *param_3)
 }
 
 /* ===== FUN_0053d050 @ 0x0053D050 ===== */
+/* PS2 candidate: ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i (conf 0.711) */
+
+
+
 void FUN_0053d050(int param_1,int param_2,int param_3)
 
 
@@ -16200,6 +16248,10 @@ void FUN_0053d050(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_0053d0a0 @ 0x0053D0A0 ===== */
+/* PS2 candidate: ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi (conf 0.82) */
+
+
+
 void FUN_0053d0a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 
                  undefined4 param_5,undefined4 param_6)
@@ -16344,7 +16396,7 @@ int FUN_0053d1c0(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
 
   iVar3 = 0;
 
-  iVar1 = FUN_00540490(*(undefined4 *)(param_3 + 0x18));
+  iVar1 = NAM_DictionaryGetTotalNames_3(*(undefined4 *)(param_3 + 0x18));
 
   if (iVar1 != 0) {
 
@@ -16415,17 +16467,21 @@ void FUN_0053d2a0(int param_1)
 
     puVar2 = puVar2 + 1;
 
-    thunk_FUN_0053fc50(uVar1);
+    __get_eh_context(uVar1);
 
   }
 
-  (*(code *)PTR_FUN_00580c90)(param_1);
+  (*(code *)PTR___get_eh_context_00580c90)(param_1);
 
   return;
 
 }
 
 /* ===== FUN_0053d2d0 @ 0x0053D2D0 ===== */
+/* PS2 candidate: ANM_AnimationEvalVertices (conf 0.766) */
+
+
+
 void FUN_0053d2d0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 
                  undefined4 param_5)
@@ -16594,13 +16650,13 @@ byte FUN_0053d3b0(int param_1,int param_2,int param_3,int param_4,undefined4 par
 
       local_58 = 1;
 
-      iVar2 = FUN_005404e0(*(undefined4 *)(*(int *)(param_1 + 4) + 4),0);
+      iVar2 = NAM_NameFindByHandleIndex_2(*(undefined4 *)(*(int *)(param_1 + 4) + 4),0);
 
       while (iVar2 != 0) {
 
         uVar3 = FUN_005404b0(iVar2);
 
-        puVar4 = (undefined4 *)FUN_005404a0(iVar2);
+        puVar4 = (undefined4 *)NAM_NameGetCustom(iVar2);
 
         iVar9 = param_2 + -1;
 
@@ -16612,11 +16668,11 @@ byte FUN_0053d3b0(int param_1,int param_2,int param_3,int param_4,undefined4 par
 
           do {
 
-            iVar2 = FUN_005404c0(*(undefined4 *)(puVar4[-2] + 4),uVar3);
+            iVar2 = NAM_NameFindByHandleIndex(*(undefined4 *)(puVar4[-2] + 4),uVar3);
 
             if (iVar2 == 0) goto LAB_0053d503;
 
-            puVar5 = (undefined4 *)FUN_005404a0(iVar2);
+            puVar5 = (undefined4 *)NAM_NameGetCustom(iVar2);
 
             *puVar4 = *puVar5;
 
@@ -16656,7 +16712,7 @@ byte FUN_0053d3b0(int param_1,int param_2,int param_3,int param_4,undefined4 par
 
 LAB_0053d503:
 
-        iVar2 = FUN_005404e0(*(undefined4 *)(*(int *)(param_1 + 4) + 4),local_58);
+        iVar2 = NAM_NameFindByHandleIndex_2(*(undefined4 *)(*(int *)(param_1 + 4) + 4),local_58);
 
         local_58 = local_58 + 1;
 
@@ -16678,7 +16734,9 @@ LAB_0053d503:
 
         if ((*piVar10 == 0) || (*(int *)(*piVar10 + 0xc) != *(int *)(*piVar11 + 8))) {
 
-          iVar9 = FUN_005404c0(*(undefined4 *)(*piVar11 + 4),*(undefined4 *)(param_3 + 0x1c));
+          iVar9 = NAM_NameFindByHandleIndex
+
+                            (*(undefined4 *)(*piVar11 + 4),*(undefined4 *)(param_3 + 0x1c));
 
           bVar8 = bVar8 & iVar9 != 0;
 
@@ -16688,7 +16746,7 @@ LAB_0053d503:
 
           }
 
-          piVar7 = (int *)FUN_005404a0(iVar9);
+          piVar7 = (int *)NAM_NameGetCustom(iVar9);
 
           *piVar10 = *piVar7;
 
@@ -16803,6 +16861,10 @@ LAB_0053d67c:
 }
 
 /* ===== FUN_0053d6b0 @ 0x0053D6B0 ===== */
+/* PS2 candidate: ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix (conf 0.893) */
+
+
+
 void FUN_0053d6b0(int *param_1,undefined4 param_2)
 
 
@@ -16953,33 +17015,33 @@ void FUN_0053d810(int param_1,int param_2)
 
   param_2 = 1;
 
-  iVar4 = FUN_005404e0(*puVar1,0);
+  iVar4 = NAM_NameFindByHandleIndex_2(*puVar1,0);
 
   while (iVar4 != 0) {
 
-    puVar5 = (undefined4 *)FUN_005404a0(iVar4);
+    puVar5 = (undefined4 *)NAM_NameGetCustom(iVar4);
 
     uVar2 = *puVar5;
 
     FUN_00540530(uVar2,&LAB_00540520,uVar3);
 
-    iVar6 = FUN_005404e0(uVar2,0);
+    iVar6 = NAM_NameFindByHandleIndex_2(uVar2,0);
 
     iVar4 = 1;
 
     while (iVar6 != 0) {
 
-      puVar5 = (undefined4 *)FUN_005404a0(iVar6);
+      puVar5 = (undefined4 *)NAM_NameGetCustom(iVar6);
 
       FUN_0053d700(*puVar5,uVar3);
 
-      iVar6 = FUN_005404e0(uVar2,iVar4);
+      iVar6 = NAM_NameFindByHandleIndex_2(uVar2,iVar4);
 
       iVar4 = iVar4 + 1;
 
     }
 
-    iVar4 = FUN_005404e0(*puVar1,param_2);
+    iVar4 = NAM_NameFindByHandleIndex_2(*puVar1,param_2);
 
     param_2 = param_2 + 1;
 
@@ -17041,6 +17103,10 @@ byte * FUN_0053d8d0(undefined4 param_1,int param_2,byte param_3)
 }
 
 /* ===== FUN_0053d940 @ 0x0053D940 ===== */
+/* PS2 candidate: ObjectUpdateSpeedDist_2 (conf 0.658) */
+
+
+
 void FUN_0053d940(int param_1,undefined4 param_2,undefined4 param_3)
 
 
@@ -17794,6 +17860,10 @@ void FUN_0053dde0(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,und
 }
 
 /* ===== FUN_0053deb0 @ 0x0053DEB0 ===== */
+/* PS2 candidate: quat_to_matrix__FP4QUATPf (conf 0.807) */
+
+
+
 void FUN_0053deb0(undefined4 *param_1,float *param_2)
 
 
@@ -18140,6 +18210,10 @@ void FUN_0053e140(float *param_1,int param_2)
 }
 
 /* ===== FUN_0053e270 @ 0x0053E270 ===== */
+/* PS2 candidate: S_GEO_Vec3Transform_2 (conf 0.752) */
+
+
+
 void FUN_0053e270(float *param_1,float *param_2,int param_3,uint *param_4,uint param_5)
 
 
@@ -18624,6 +18698,10 @@ void FUN_0053e7f0(void)
 }
 
 /* ===== FUN_0053e870 @ 0x0053E870 ===== */
+/* PS2 candidate: GEO_Vec2Sub (conf 0.868) */
+
+
+
 void FUN_0053e870(float *param_1,float *param_2,float *param_3)
 
 
@@ -18641,6 +18719,10 @@ void FUN_0053e870(float *param_1,float *param_2,float *param_3)
 }
 
 /* ===== FUN_0053e8a0 @ 0x0053E8A0 ===== */
+/* PS2 candidate: GEO_Vec2Scale (conf 0.85) */
+
+
+
 void FUN_0053e8a0(float *param_1,float *param_2,float param_3)
 
 
@@ -18658,6 +18740,10 @@ void FUN_0053e8a0(float *param_1,float *param_2,float param_3)
 }
 
 /* ===== FUN_0053e8d0 @ 0x0053E8D0 ===== */
+/* PS2 candidate: distancesq3d1p__FP3P3D (conf 0.766) */
+
+
+
 void FUN_0053e8d0(float *param_1)
 
 
@@ -18673,6 +18759,10 @@ void FUN_0053e8d0(float *param_1)
 }
 
 /* ===== FUN_0053e900 @ 0x0053E900 ===== */
+/* PS2 candidate: GEO_Vec2Cross (conf 0.577) */
+
+
+
 void FUN_0053e900(float *param_1,float *param_2,float *param_3)
 
 
@@ -18759,6 +18849,10 @@ float10 FUN_0053e960(undefined4 param_1,undefined4 param_2)
 }
 
 /* ===== FUN_0053e9c0 @ 0x0053E9C0 ===== */
+/* PS2 candidate: GEO_Vec2Scale_2 (conf 0.775) */
+
+
+
 void FUN_0053e9c0(float *param_1,float *param_2,float param_3)
 
 
@@ -18777,8 +18871,8 @@ void FUN_0053e9c0(float *param_1,float *param_2,float param_3)
 
 }
 
-/* ===== FUN_0053e9f0 @ 0x0053E9F0 ===== */
-void FUN_0053e9f0(int param_1)
+/* ===== GEO_DefaultSpan__FP14GEO_RegionSpan @ 0x0053E9F0 ===== */
+void GEO_DefaultSpan__FP14GEO_RegionSpan(int param_1)
 
 
 
@@ -18875,7 +18969,7 @@ void FUN_0053ea30(int *param_1,int *param_2,undefined **param_3,undefined **para
 
   if (param_3 == (undefined **)0x0) {
 
-    param_3 = &PTR_FUN_00580c50;
+    param_3 = &PTR_GEO_DefaultSpan__FP14GEO_RegionSpan_00580c50;
 
   }
 
@@ -19184,7 +19278,7 @@ void FUN_0053ed40(uint param_1,undefined **param_2,undefined **param_3,undefined
 
   if (param_4 == (undefined **)0x0) {
 
-    param_4 = &PTR_FUN_00580c50;
+    param_4 = &PTR_GEO_DefaultSpan__FP14GEO_RegionSpan_00580c50;
 
   }
 
@@ -19655,6 +19749,10 @@ int FUN_0053f330(float *param_1,int param_2,int param_3,float param_4)
 }
 
 /* ===== FUN_0053f440 @ 0x0053F440 ===== */
+/* PS2 candidate: Det3x3__8geom_Mat (conf 0.525) */
+
+
+
 undefined4 FUN_0053f440(float *param_1,float *param_2,float *param_3,float *param_4)
 
 
@@ -19804,6 +19902,10 @@ undefined4 FUN_0053f440(float *param_1,float *param_2,float *param_3,float *para
 }
 
 /* ===== FUN_0053f5d0 @ 0x0053F5D0 ===== */
+/* PS2 candidate: GEO_QuatInverse (conf 0.541) */
+
+
+
 void FUN_0053f5d0(float *param_1,float *param_2)
 
 
@@ -19922,7 +20024,7 @@ void FUN_0053f6a0(int param_1,float *param_2,float *param_3,float param_4)
 
     else {
 
-      fVar5 = (float10)(*(code *)PTR_FUN_00580c38)(fVar2);
+      fVar5 = (float10)(*(code *)PTR_AddHud__4cHudP8cHudIcon_5_00580c38)(fVar2);
 
       fVar2 = (float)fVar5;
 
@@ -19974,7 +20076,7 @@ void FUN_0053f6a0(int param_1,float *param_2,float *param_3,float param_4)
 
   else {
 
-    fVar5 = (float10)(*(code *)PTR_FUN_00580c38)(-fVar2);
+    fVar5 = (float10)(*(code *)PTR_AddHud__4cHudP8cHudIcon_5_00580c38)(-fVar2);
 
     fVar2 = (float)fVar5;
 
@@ -20016,8 +20118,8 @@ void FUN_0053f6a0(int param_1,float *param_2,float *param_3,float param_4)
 
 }
 
-/* ===== FUN_0053f9e0 @ 0x0053F9E0 ===== */
-void FUN_0053f9e0(float *param_1,float *param_2,float *param_3)
+/* ===== GEO_QuatMultiply @ 0x0053F9E0 ===== */
+void GEO_QuatMultiply(float *param_1,float *param_2,float *param_3)
 
 
 
@@ -20068,6 +20170,10 @@ void FUN_0053f9e0(float *param_1,float *param_2,float *param_3)
 }
 
 /* ===== FUN_0053faa0 @ 0x0053FAA0 ===== */
+/* PS2 candidate: GEO_QuatDivide (conf 0.774) */
+
+
+
 void FUN_0053faa0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
@@ -20080,7 +20186,7 @@ void FUN_0053faa0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   FUN_0053f5d0(local_10,param_3);
 
-  FUN_0053f9e0(param_1,local_10,param_2);
+  GEO_QuatMultiply(param_1,local_10,param_2);
 
   return;
 
@@ -20152,7 +20258,7 @@ void FUN_0053fb40(float *param_1,undefined4 param_2,float param_3,float param_4)
 
   if (fVar2 != (float10)0.0) {
 
-    fVar3 = (float10)(*(code *)PTR_FUN_00580c38)(param_3);
+    fVar3 = (float10)(*(code *)PTR_AddHud__4cHudP8cHudIcon_5_00580c38)(param_3);
 
     fVar1 = (float)(fVar3 * (float10)param_4 * (float10)0.5);
 
@@ -20186,8 +20292,8 @@ void FUN_0053fb40(float *param_1,undefined4 param_2,float param_3,float param_4)
 
 }
 
-/* ===== FUN_0053fc10 @ 0x0053FC10 ===== */
-void FUN_0053fc10(undefined *param_1)
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6 @ 0x0053FC10 ===== */
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6(undefined *param_1)
 
 
 
@@ -20200,6 +20306,10 @@ void FUN_0053fc10(undefined *param_1)
 }
 
 /* ===== FUN_0053fc20 @ 0x0053FC20 ===== */
+/* PS2 candidate: MAP_AllocHook__FUi (conf 0.893) */
+
+
+
 uint FUN_0053fc20(int param_1)
 
 
@@ -20222,8 +20332,8 @@ uint FUN_0053fc20(int param_1)
 
 }
 
-/* ===== FUN_0053fc40 @ 0x0053FC40 ===== */
-void FUN_0053fc40(undefined *param_1)
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7 @ 0x0053FC40 ===== */
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7(undefined *param_1)
 
 
 
@@ -20235,8 +20345,8 @@ void FUN_0053fc40(undefined *param_1)
 
 }
 
-/* ===== FUN_0053fc50 @ 0x0053FC50 ===== */
-void FUN_0053fc50(void)
+/* ===== __get_eh_context @ 0x0053FC50 ===== */
+void __get_eh_context(void)
 
 
 
@@ -20252,8 +20362,8 @@ void FUN_0053fc50(void)
 
 }
 
-/* ===== FUN_0053fc70 @ 0x0053FC70 ===== */
-void FUN_0053fc70(int *param_1,undefined4 param_2)
+/* ===== MAP_SListFixPtrs @ 0x0053FC70 ===== */
+void MAP_SListFixPtrs(int *param_1,undefined4 param_2)
 
 
 
@@ -20278,6 +20388,10 @@ void FUN_0053fc70(int *param_1,undefined4 param_2)
 }
 
 /* ===== FUN_0053fca0 @ 0x0053FCA0 ===== */
+/* PS2 candidate: MAP_MapperInitialize__FP11_MAP_MapperP12_MAP_KeyInit (conf 0.536) */
+
+
+
 void FUN_0053fca0(int param_1,undefined4 *param_2)
 
 
@@ -20463,6 +20577,10 @@ void FUN_0053fd40(undefined4 *param_1,undefined4 param_2,int param_3)
 }
 
 /* ===== FUN_0053fde0 @ 0x0053FDE0 ===== */
+/* PS2 candidate: MAP_MappingGet (conf 0.788) */
+
+
+
 undefined4 FUN_0053fde0(int param_1,uint param_2,uint param_3)
 
 
@@ -20482,6 +20600,10 @@ undefined4 FUN_0053fde0(int param_1,uint param_2,uint param_3)
 }
 
 /* ===== FUN_0053fe20 @ 0x0053FE20 ===== */
+/* PS2 candidate: MAP_MappingFind (conf 0.84) */
+
+
+
 undefined4 FUN_0053fe20(int param_1,int param_2,uint param_3)
 
 
@@ -20515,13 +20637,17 @@ undefined4 FUN_0053fe20(int param_1,int param_2,uint param_3)
 }
 
 /* ===== FUN_0053fe70 @ 0x0053FE70 ===== */
+/* PS2 candidate: MAP_MemGroupFixPtrs (conf 0.672) */
+
+
+
 void FUN_0053fe70(int param_1,undefined4 param_2)
 
 
 
 {
 
-  FUN_0053fc70(param_1 + 0x10,param_2);
+  MAP_SListFixPtrs(param_1 + 0x10,param_2);
 
   FUN_005400e0(param_1 + 0x1c,param_2);
 
@@ -20531,8 +20657,8 @@ void FUN_0053fe70(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053fea0 @ 0x0053FEA0 ===== */
-undefined4 FUN_0053fea0(int param_1)
+/* ===== GetCurrentPos__C11CByteStream @ 0x0053FEA0 ===== */
+undefined4 GetCurrentPos__C11CByteStream(int param_1)
 
 
 
@@ -20594,6 +20720,10 @@ int FUN_0053feb0(undefined4 param_1,int param_2)
 }
 
 /* ===== FUN_0053ff30 @ 0x0053FF30 ===== */
+/* PS2 candidate: MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi (conf 0.851) */
+
+
+
 void FUN_0053ff30(int param_1,undefined4 *param_2,int param_3)
 
 

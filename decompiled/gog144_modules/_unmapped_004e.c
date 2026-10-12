@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (1 named) — decompiled, names from PS2 symbols
+ * 94 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -204,8 +204,8 @@ void FUN_004e1240(int param_1)
 
 }
 
-/* ===== FUN_004e13a0 @ 0x004E13A0 ===== */
-void FUN_004e13a0(int param_1)
+/* ===== rpman_init_firing__FP6OBJECT @ 0x004E13A0 ===== */
+void rpman_init_firing__FP6OBJECT(int param_1)
 
 
 
@@ -234,6 +234,10 @@ void FUN_004e13a0(int param_1)
 }
 
 /* ===== FUN_004e13e0 @ 0x004E13E0 ===== */
+/* PS2 candidate: rpman_setup_firing_parameters__FP6OBJECTi (conf 0.546) */
+
+
+
 void FUN_004e13e0(int param_1,int param_2)
 
 
@@ -941,6 +945,8 @@ undefined4 FUN_004e21f0(int param_1)
 /* ===== FUN_004e2260 @ 0x004E2260 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* PS2 candidate: rpman_verify_bush__FP6OBJECT (conf 0.634) */
+
 
 
 undefined4 FUN_004e2260(int param_1)
@@ -1572,6 +1578,10 @@ void FUN_004e29f0(int param_1)
 }
 
 /* ===== FUN_004e2b10 @ 0x004E2B10 ===== */
+/* PS2 candidate: rpman_spline_return_info__FP6OBJECT (conf 0.715) */
+
+
+
 void FUN_004e2b10(int param_1)
 
 
@@ -2385,6 +2395,8 @@ undefined4 FUN_004e3440(int param_1,int param_2)
 
 /* ===== FUN_004e3530 @ 0x004E3530 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+/* PS2 candidate: rpman_check_los__FP6OBJECTT0 (conf 0.507) */
 
 
 
@@ -4244,6 +4256,10 @@ void FUN_004e4f60(int param_1)
 }
 
 /* ===== FUN_004e5000 @ 0x004E5000 ===== */
+/* PS2 candidate: make_grenade_shot__FP6OBJECTf (conf 0.599) */
+
+
+
 void FUN_004e5000(int param_1,float param_2)
 
 
@@ -4636,9 +4652,9 @@ void FUN_004e5270(int param_1,int param_2,int param_3,int param_4)
 
   }
 
-  FUN_0040f380(local_50,1,0x4ac,0,0x3f666666,0x3f8ccccd,0x41000000,0x40800000,0x41700000,0x442f0000,
+  ANM_BinderDestroy(local_50,1,0x4ac,0,0x3f666666,0x3f8ccccd,0x41000000,0x40800000,0x41700000,
 
-               0x44098000);
+                    0x442f0000,0x44098000);
 
 LAB_004e559b:
 
@@ -5005,9 +5021,9 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       FUN_004a76e0(iVar9,0,local_50);
 
-      FUN_0040f380(local_50,1,0x4ac,0,0x3f666666,0x3f8ccccd,0x41000000,0x40800000,0x41700000,
+      ANM_BinderDestroy(local_50,1,0x4ac,0,0x3f666666,0x3f8ccccd,0x41000000,0x40800000,0x41700000,
 
-                   0x442f0000,0x44098000);
+                        0x442f0000,0x44098000);
 
       iVar9 = *(int *)(iVar9 + 0x274);
 
@@ -6287,7 +6303,7 @@ void FUN_004e6ba0(float param_1,float param_2)
 
   FUN_0053e460(iVar5 + 0x294,-*(float *)(iVar4 + 0x164),*pfVar1,*(undefined4 *)(iVar5 + 200));
 
-  FUN_004041f0(iVar5,iVar4 + 0x178);
+  ANM_DumpCluster(iVar5,iVar4 + 0x178);
 
   if ((*pfVar1 < -10.0) || (10.0 < *pfVar1)) {
 
@@ -6474,6 +6490,10 @@ undefined4 FUN_004e7250(int param_1)
 }
 
 /* ===== FUN_004e7300 @ 0x004E7300 ===== */
+/* PS2 candidate: ObjIsMyArmySpline__FP6OBJECTi (conf 0.511) */
+
+
+
 undefined4 FUN_004e7300(int param_1,int param_2)
 
 
@@ -7501,6 +7521,10 @@ void FUN_004e9ce0(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_004ea350 @ 0x004EA350 ===== */
+/* PS2 candidate: LineOfSight (conf 0.606) */
+
+
+
 void FUN_004ea350(int param_1,int param_2)
 
 
@@ -9028,7 +9052,7 @@ void FUN_004eb850(void)
 
   do {
 
-    iVar2 = FUN_0053A860(iVar3 + 0x1210 + DAT_006330e4,s_start_00561b38);
+    iVar2 = match(iVar3 + 0x1210 + DAT_006330e4,s_start_00561b38);
 
     if (iVar2 != 0) {
 
@@ -9122,7 +9146,7 @@ void FUN_004eb900(void)
 
         do {
 
-          iVar1 = FUN_0053A860(*(int *)(iVar3 + 0x204) + iVar7,local_8 + 0x1210 + iVar4);
+          iVar1 = match(*(int *)(iVar3 + 0x204) + iVar7,local_8 + 0x1210 + iVar4);
 
           iVar3 = DAT_006330e4;
 
@@ -9223,7 +9247,7 @@ undefined4 FUN_004eba40(int param_1,undefined4 param_2)
 
     do {
 
-      iVar1 = FUN_0053A860(iVar3 + 0x1210 + DAT_006330e4,&PTR_DAT_00561b40);
+      iVar1 = match(iVar3 + 0x1210 + DAT_006330e4,&PTR_DAT_00561b40);
 
       if (iVar1 != 0) {
 
@@ -10044,6 +10068,10 @@ void FUN_004ed9e0(int param_1)
 }
 
 /* ===== FUN_004edd70 @ 0x004EDD70 ===== */
+/* PS2 candidate: world_make_reset_callbacks__Fi (conf 0.58) */
+
+
+
 void FUN_004edd70(void)
 
 
@@ -10145,7 +10173,7 @@ void FUN_004eddf0(void)
 
   
 
-  FUN_004433a0();
+  FLK_ReplayFileNameClear();
 
   iVar1 = FUN_0052aa70();
 
@@ -10186,47 +10214,47 @@ void FUN_004ede30(void)
 
   uVar1 = FUN_00497d20(2);
 
-  main_procanim_004a8cc0(uVar1);
+  MeccProcAnimsCreate(uVar1);
 
   uVar1 = FUN_00497d20(0x85);
 
-  main_procanim_004a8cc0(uVar1);
+  MeccProcAnimsCreate(uVar1);
 
   uVar1 = FUN_00497d20(0x248);
 
-  main_procanim_004a8ce0(uVar1);
+  MeccProcAnimsCreate_2(uVar1);
 
   uVar1 = FUN_00497d20(0x270);
 
-  main_procanim_004a8d00(uVar1);
+  MeccProcAnimsCreate_3(uVar1);
 
   uVar1 = FUN_00497d20(0x3b);
 
-  main_procanim_004a8d20(uVar1);
+  MeccProcAnimsCreate_4(uVar1);
 
   uVar1 = FUN_00497d20(0x42f);
 
-  main_procanim_004a8d20(uVar1);
+  MeccProcAnimsCreate_4(uVar1);
 
   uVar1 = FUN_00497d20(0x42e);
 
-  main_procanim_004a8d20(uVar1);
+  MeccProcAnimsCreate_4(uVar1);
 
   uVar1 = FUN_00497d20(0x4ac);
 
-  main_procanim_004a8d20(uVar1);
+  MeccProcAnimsCreate_4(uVar1);
 
   uVar1 = FUN_00497d20(0x4ad);
 
-  main_procanim_004a8d20(uVar1);
+  MeccProcAnimsCreate_4(uVar1);
 
   uVar1 = FUN_00497d20(0x4ab);
 
-  main_procanim_004a8d20(uVar1);
+  MeccProcAnimsCreate_4(uVar1);
 
   uVar1 = FUN_00497d20(0x4aa);
 
-  main_procanim_004a8d20(uVar1);
+  MeccProcAnimsCreate_4(uVar1);
 
   uVar1 = FUN_00497d20(1);
 
@@ -10760,7 +10788,7 @@ float10 FUN_004ee390(float param_1)
 
               *piVar9 = *(int *)(DAT_006330e4 + 0x4ec0);
 
-              iVar5 = FUN_00543a11(s_bld_yy_names_bld_00557054,&DAT_00557068);
+              iVar5 = BinFileSeek_2(s_bld_yy_names_bld_00557054,&DAT_00557068);
 
               if (iVar5 != 0) {
 
@@ -10835,7 +10863,9 @@ void FUN_004ee630(void)
 
     iVar1 = puVar2[3];
 
-    if ((*(int *)(iVar1 + 0x1e0) == 0x5c) && (iVar3 = FUN_0046f8b0(iVar1), iVar3 != 0)) {
+    if ((*(int *)(iVar1 + 0x1e0) == 0x5c) &&
+
+       (iVar3 = kabutoai_is_punch_anim__FP6OBJECT(iVar1), iVar3 != 0)) {
 
       FUN_004ee1c0(iVar1);
 
@@ -10938,7 +10968,7 @@ void FUN_004ee670(int param_1)
 
     if (DAT_005a85fc == 0) {
 
-      uVar3 = FUN_005160a0();
+      uVar3 = AudioGetMasterVolume__Fv_8();
 
       FUN_00515f60(uVar3);
 
@@ -10982,7 +11012,9 @@ void FUN_004ee670(int param_1)
 
       iVar2 = puVar1[3];
 
-      if ((*(int *)(iVar2 + 0x1e0) == 0x5c) && (iVar4 = FUN_0046f8b0(iVar2), iVar4 != 0)) {
+      if ((*(int *)(iVar2 + 0x1e0) == 0x5c) &&
+
+         (iVar4 = kabutoai_is_punch_anim__FP6OBJECT(iVar2), iVar4 != 0)) {
 
         FUN_004ee1c0(iVar2);
 
@@ -11043,7 +11075,7 @@ void FUN_004EE800(void)
 
   }
 
-  FUN_004576d0(iVar1);
+  AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(iVar1);
 
   FUN_004576e0();
 
@@ -11113,7 +11145,7 @@ undefined4 FUN_004ee930(void)
 
   
 
-  FUN_004d5710();
+  rndstart();
 
   FUN_0050ad20();
 
@@ -11129,7 +11161,7 @@ undefined4 FUN_004ee930(void)
 
   }
 
-  main_texture_00507e40();
+  endDisplay__Fv_3();
 
   main_readdata_004adfa0();
 
@@ -11151,7 +11183,7 @@ undefined4 FUN_004ee930(void)
 
   DAT_006330e4 = 0;
 
-  FUN_004041f0();
+  ANM_DumpCluster();
 
   FUN_0052e3d0();
 
@@ -11176,7 +11208,7 @@ void FUN_004ee9c0(void)
 
   FUN_0051f2f0();
 
-  FUN_0052e470();
+  _dmVector_2();
 
   main_setupgam_004eda20();
 
@@ -11202,11 +11234,11 @@ void FUN_004ee9c0(void)
 
   (*DAT_005dd284)();
 
-  FUN_004041f0();
+  ANM_DumpCluster();
 
   main_xform_00517740();
 
-  FUN_005387a0();
+  player_display_info();
 
   FUN_00539160();
 
@@ -11275,9 +11307,9 @@ void FUN_004eea40(undefined4 param_1,undefined1 param_2,undefined4 param_3)
 
     if (-1 < iVar1) {
 
-      FUN_0040f380(param_1,1,iVar1,param_3,0x40a00000,0x41200000,0x41f00000,0x41400000,0x41f00000,
+      ANM_BinderDestroy(param_1,1,iVar1,param_3,0x40a00000,0x41200000,0x41f00000,0x41400000,
 
-                   0x442f0000,0x44098000);
+                        0x41f00000,0x442f0000,0x44098000);
 
     }
 
@@ -11341,6 +11373,10 @@ void FUN_004eebd0(undefined4 param_1)
 }
 
 /* ===== FUN_004eecb0 @ 0x004EECB0 ===== */
+/* PS2 candidate: calc_2pts_to_bbox__FP3P3DT0P4BBOX (conf 0.799) */
+
+
+
 void FUN_004eecb0(float *param_1,float *param_2,float *param_3)
 
 
@@ -11816,8 +11852,8 @@ undefined4 FUN_004ef190(int param_1)
 
 }
 
-/* ===== FUN_004ef2d0 @ 0x004EF2D0 ===== */
-uint FUN_004ef2d0(int param_1)
+/* ===== ANM_AnimGetImage @ 0x004EF2D0 ===== */
+uint ANM_AnimGetImage(int param_1)
 
 
 

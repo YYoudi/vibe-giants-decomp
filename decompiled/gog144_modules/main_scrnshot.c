@@ -80,7 +80,7 @@ void main_scrnshot_004ebae0(void)
 
     do {
 
-      iVar3 = FUN_00544223(auStack_ff);
+      iVar3 = ANM_BinderDestroy_3(auStack_ff);
 
       if (iVar5 < iVar3) {
 
@@ -170,7 +170,7 @@ void main_scrnshot_004ebae0(void)
 
   acStack_13c[1] = s_TRUEVISION_XFILE__00561b44[0x11];
 
-  iVar5 = FUN_00543a11(auStack_138,&DAT_00555e30);
+  iVar5 = BinFileSeek_2(auStack_138,&DAT_00555e30);
 
   if (iVar5 != 0) {
 

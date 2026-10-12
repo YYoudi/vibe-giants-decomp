@@ -95,7 +95,7 @@ void TextPtrInit__Fv(void)
 
     }
 
-    uVar1 = FUN_00539000();
+    uVar1 = __default_unexpected__Fv();
 
     FUN_00542f27(local_100,s_GText_s_bin_0057bcd4,uVar1);
 
@@ -127,7 +127,7 @@ void TextPtrInit__Fv(void)
 
       FUN_005178d0(iVar3,DAT_0057bc90,DAT_0057bc84);
 
-      FUN_005179d0(iVar3);
+      ANM_BinderDestroy_2(iVar3);
 
       DAT_0057bc94 = utils_hash_005391c0(0x76d,4,1);
 

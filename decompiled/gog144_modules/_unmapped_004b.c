@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (9 named) — decompiled, names from PS2 symbols
+ * 90 functions (13 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -111,6 +111,10 @@ switchD_004b095c_caseD_0:
 }
 
 /* ===== FUN_004B09C0 @ 0x004B09C0 ===== */
+/* PS2 candidate: world_get_pointer (conf 0.691) */
+
+
+
 int * FUN_004B09C0(int param_1)
 
 
@@ -150,6 +154,10 @@ int * FUN_004B09C0(int param_1)
 }
 
 /* ===== FUN_004b0a00 @ 0x004B0A00 ===== */
+/* PS2 candidate: world_get_id (conf 0.529) */
+
+
+
 undefined4 FUN_004b0a00(undefined4 param_1)
 
 
@@ -172,7 +180,7 @@ undefined4 FUN_004b0a00(undefined4 param_1)
 
     do {
 
-      iVar1 = FUN_0053A860(*(undefined4 *)(iVar3 + 4 + DAT_00632d28),param_1);
+      iVar1 = match(*(undefined4 *)(iVar3 + 4 + DAT_00632d28),param_1);
 
       if (iVar1 != 0) {
 
@@ -297,6 +305,10 @@ char * world_get_nicename(int param_1)
 }
 
 /* ===== FUN_004B0B40 @ 0x004B0B40 ===== */
+/* PS2 candidate: InitFxDict__Fv (conf 0.55) */
+
+
+
 void FUN_004B0B40(void)
 
 
@@ -341,6 +353,8 @@ void FUN_004B0B40(void)
 
 /* ===== main/readwrls_004b0d80 @ 0x004B0D80 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+/* PS2 candidate: mussys_init__Fv (conf 0.551) */
 
 
 
@@ -392,6 +406,10 @@ float10 main_readwrls_004b0e50(void)
 }
 
 /* ===== main/readwrls_004b0e60 @ 0x004B0E60 ===== */
+/* PS2 candidate: tracer_draw_mecc_balls (conf 0.853) */
+
+
+
 void main_readwrls_004b0e60(undefined4 param_1)
 
 
@@ -411,6 +429,10 @@ void main_readwrls_004b0e60(undefined4 param_1)
 }
 
 /* ===== main/readwrls_004b0ea0 @ 0x004B0EA0 ===== */
+/* PS2 candidate: setup_sun_flares__Fv (conf 0.771) */
+
+
+
 void main_readwrls_004b0ea0(void)
 
 
@@ -596,14 +618,14 @@ LAB_004b454b:
 
 }
 
-/* ===== base_get_required_smarties__FP6OBJECTi @ 0x004B4560 ===== */
+/* ===== AudioGetSampleName__Fi_2 @ 0x004B4560 ===== */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
 /* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
 
 
-char * base_get_required_smarties__FP6OBJECTi(OBJECT *p0,int p1)
+char * AudioGetSampleName__Fi_2(OBJECT *p0,int p1)
 
 
 
@@ -1395,7 +1417,7 @@ LAB_004b5148:
 
       if (iVar4 != 0) {
 
-        FUN_0041a110(iVar3);
+        kabutoai_select_punch_anim__FP6OBJECT(iVar3);
 
       }
 
@@ -1930,6 +1952,10 @@ LAB_004b56d8:
 }
 
 /* ===== FUN_004b5810 @ 0x004B5810 ===== */
+/* PS2 candidate: reaperbase_update_icons (conf 0.547) */
+
+
+
 void FUN_004b5810(int param_1)
 
 
@@ -2185,6 +2211,10 @@ void FUN_004b5810(int param_1)
 }
 
 /* ===== FUN_004b5b30 @ 0x004B5B30 ===== */
+/* PS2 candidate: meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2 (conf 0.557) */
+
+
+
 void FUN_004b5b30(int param_1,int param_2,int param_3)
 
 
@@ -2665,6 +2695,10 @@ undefined4 FUN_004b6630(int param_1,uint param_2)
 }
 
 /* ===== FUN_004b6800 @ 0x004B6800 ===== */
+/* PS2 candidate: meccbase_hide_tentatives_2 (conf 0.64) */
+
+
+
 void FUN_004b6800(int param_1)
 
 
@@ -3530,6 +3564,10 @@ int FUN_004b6f20(int param_1)
 }
 
 /* ===== FUN_004b6f60 @ 0x004B6F60 ===== */
+/* PS2 candidate: meccbasepit_bldg_from_object_2 (conf 0.767) */
+
+
+
 int FUN_004b6f60(int param_1)
 
 
@@ -5368,7 +5406,7 @@ LAB_004b76fe:
 
     *(float *)&param_1->field_0xc8 = pfVar12[3];
 
-    FUN_004a77c0(param_1);
+    playerobj_zap_movement(param_1);
 
     sound_play_3dpos(0x6ea,&param_1->gap_A0);
 
@@ -5454,6 +5492,10 @@ void FUN_004b89d0(int param_1,float *param_2,float *param_3)
 }
 
 /* ===== FUN_004b8a60 @ 0x004B8A60 ===== */
+/* PS2 candidate: reaper_has_bow_5 (conf 0.652) */
+
+
+
 int FUN_004b8a60(int param_1)
 
 
@@ -5488,8 +5530,8 @@ int FUN_004b8a60(int param_1)
 
 }
 
-/* ===== FUN_004b8a90 @ 0x004B8A90 ===== */
-undefined4 FUN_004b8a90(int param_1,int param_2)
+/* ===== reaper_has_bow_2 @ 0x004B8A90 ===== */
+undefined4 reaper_has_bow_2(int param_1,int param_2)
 
 
 
@@ -5645,6 +5687,10 @@ switchD_004b8adc_caseD_3b:
 }
 
 /* ===== FUN_004b8c20 @ 0x004B8C20 ===== */
+/* PS2 candidate: reaper_needs_other (conf 0.803) */
+
+
+
 bool FUN_004b8c20(int param_1,int param_2,int param_3)
 
 
@@ -5699,8 +5745,8 @@ bool FUN_004b8c20(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004b8c90 @ 0x004B8C90 ===== */
-undefined4 FUN_004b8c90(int param_1,int param_2)
+/* ===== reaper_can_use_other__FP6OBJECTi @ 0x004B8C90 ===== */
+undefined4 reaper_can_use_other__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -5734,8 +5780,8 @@ undefined4 FUN_004b8c90(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004b8cd0 @ 0x004B8CD0 ===== */
-undefined4 FUN_004b8cd0(int param_1,int param_2)
+/* ===== reaper_has_bow @ 0x004B8CD0 ===== */
+undefined4 reaper_has_bow(int param_1,int param_2)
 
 
 
@@ -5770,6 +5816,10 @@ undefined4 FUN_004b8cd0(int param_1,int param_2)
 }
 
 /* ===== FUN_004b8d00 @ 0x004B8D00 ===== */
+/* PS2 candidate: reaper_has_bow_6 (conf 0.64) */
+
+
+
 bool FUN_004b8d00(int param_1)
 
 
@@ -6387,6 +6437,10 @@ LAB_004b914c:
 }
 
 /* ===== FUN_004b91d0 @ 0x004B91D0 ===== */
+/* PS2 candidate: reaper_init_items (conf 0.51) */
+
+
+
 void FUN_004b91d0(int param_1)
 
 
@@ -6440,6 +6494,10 @@ void FUN_004b91d0(int param_1)
 }
 
 /* ===== FUN_004b9290 @ 0x004B9290 ===== */
+/* PS2 candidate: reaper_has_bow_4 (conf 0.731) */
+
+
+
 float10 FUN_004b9290(int param_1,int param_2)
 
 
@@ -7780,7 +7838,7 @@ float10 FUN_004ba4f0(int param_1)
 
   }
 
-  FUN_004a17a0(param_1);
+  PhysicsExZeroForce(param_1);
 
   FUN_0050a610(param_1 + 0xa0,puVar1);
 
@@ -7815,6 +7873,10 @@ float10 FUN_004ba4f0(int param_1)
 }
 
 /* ===== FUN_004ba5e0 @ 0x004BA5E0 ===== */
+/* PS2 candidate: reaper_release_shrink (conf 0.618) */
+
+
+
 void FUN_004ba5e0(undefined4 param_1,int *param_2)
 
 
@@ -8377,8 +8439,8 @@ void FUN_004bc3e0(int param_1)
 
 }
 
-/* ===== FUN_004bc550 @ 0x004BC550 ===== */
-undefined4 FUN_004bc550(int param_1)
+/* ===== reaper_is_water_jump__FP6OBJECT @ 0x004BC550 ===== */
+undefined4 reaper_is_water_jump__FP6OBJECT(int param_1)
 
 
 
@@ -8725,7 +8787,7 @@ void FUN_004bca70(int param_1)
 
   }
 
-  iVar1 = FUN_00426ed0();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -8779,7 +8841,7 @@ LAB_004bcb0b:
 
   FUN_0040d7e0(local_44);
 
-  FUN_0040d810(param_1);
+  AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(param_1);
 
   return;
 
@@ -10815,7 +10877,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
   *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x200;
 
-  FUN_0047f330(param_1);
+  mecc_indicate_shots_fired__FP6OBJECT(param_1);
 
   return;
 

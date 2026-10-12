@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (42 named) — decompiled, names from PS2 symbols
+ * 351 functions (80 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -76,13 +76,17 @@ void FUN_00540020(int param_1,int param_2)
 
   } while (param_1 != 0);
 
-  (*(code *)PTR_FUN_00580c90)(param_2,unaff_EDI,unaff_ESI);
+  (*(code *)PTR___get_eh_context_00580c90)(param_2,unaff_EDI,unaff_ESI);
 
   return;
 
 }
 
 /* ===== FUN_005400e0 @ 0x005400E0 ===== */
+/* PS2 candidate: MAP_PtrFix (conf 0.582) */
+
+
+
 undefined4 FUN_005400e0(int *param_1,int *param_2)
 
 
@@ -140,6 +144,10 @@ undefined4 FUN_005400e0(int *param_1,int *param_2)
 }
 
 /* ===== FUN_00540190 @ 0x00540190 ===== */
+/* PS2 candidate: MAP_ChunkPoolCreate (conf 0.721) */
+
+
+
 void FUN_00540190(undefined4 param_1,undefined2 param_2,short param_3)
 
 
@@ -238,6 +246,10 @@ int * FUN_005401e0(int param_1)
 }
 
 /* ===== FUN_00540250 @ 0x00540250 ===== */
+/* PS2 candidate: MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi (conf 0.695) */
+
+
+
 undefined4 FUN_00540250(undefined4 *param_1,int param_2)
 
 
@@ -284,8 +296,8 @@ undefined4 FUN_00540250(undefined4 *param_1,int param_2)
 
 }
 
-/* ===== FUN_005402b0 @ 0x005402B0 ===== */
-undefined4 FUN_005402b0(int param_1,int param_2)
+/* ===== MAP_ChunkDestroy @ 0x005402B0 ===== */
+undefined4 MAP_ChunkDestroy(int param_1,int param_2)
 
 
 
@@ -321,8 +333,8 @@ undefined4 FUN_005402b0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_005402f0 @ 0x005402F0 ===== */
-void FUN_005402f0(undefined4 param_1)
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8 @ 0x005402F0 ===== */
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8(undefined4 param_1)
 
 
 
@@ -403,8 +415,8 @@ void FUN_00540310(undefined4 param_1)
 
 }
 
-/* ===== FUN_005403c0 @ 0x005403C0 ===== */
-bool FUN_005403c0(int *param_1)
+/* ===== LNK_DNodeInDList @ 0x005403C0 ===== */
+bool LNK_DNodeInDList(int *param_1)
 
 
 
@@ -414,8 +426,8 @@ bool FUN_005403c0(int *param_1)
 
 }
 
-/* ===== FUN_00540490 @ 0x00540490 ===== */
-undefined4 FUN_00540490(int param_1)
+/* ===== NAM_DictionaryGetTotalNames_3 @ 0x00540490 ===== */
+undefined4 NAM_DictionaryGetTotalNames_3(int param_1)
 
 
 
@@ -425,8 +437,8 @@ undefined4 FUN_00540490(int param_1)
 
 }
 
-/* ===== FUN_005404a0 @ 0x005404A0 ===== */
-int FUN_005404a0(int param_1)
+/* ===== NAM_NameGetCustom @ 0x005404A0 ===== */
+int NAM_NameGetCustom(int param_1)
 
 
 
@@ -437,6 +449,10 @@ int FUN_005404a0(int param_1)
 }
 
 /* ===== FUN_005404b0 @ 0x005404B0 ===== */
+/* PS2 candidate: NAM_NameGetCustom_2 (conf 0.522) */
+
+
+
 int FUN_005404b0(int param_1)
 
 
@@ -447,8 +463,8 @@ int FUN_005404b0(int param_1)
 
 }
 
-/* ===== FUN_005404c0 @ 0x005404C0 ===== */
-void FUN_005404c0(int param_1,undefined4 param_2)
+/* ===== NAM_NameFindByHandleIndex @ 0x005404C0 ===== */
+void NAM_NameFindByHandleIndex(int param_1,undefined4 param_2)
 
 
 
@@ -460,8 +476,8 @@ void FUN_005404c0(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_005404e0 @ 0x005404E0 ===== */
-void FUN_005404e0(int param_1,undefined4 param_2)
+/* ===== NAM_NameFindByHandleIndex_2 @ 0x005404E0 ===== */
+void NAM_NameFindByHandleIndex_2(int param_1,undefined4 param_2)
 
 
 
@@ -474,6 +490,10 @@ void FUN_005404e0(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00540500 @ 0x00540500 ===== */
+/* PS2 candidate: NAM_NameFindByHandle (conf 0.771) */
+
+
+
 void FUN_00540500(int param_1)
 
 
@@ -750,7 +770,7 @@ void FUN_00540800(int param_1)
 
   PTR_FUN_00580c34 = (&PTR_FUN_00580d78)[param_1];
 
-  PTR_FUN_00580c38 = (&PTR_FUN_00580d84)[param_1];
+  PTR_AddHud__4cHudP8cHudIcon_5_00580c38 = (&PTR_AddHud__4cHudP8cHudIcon_5_00580d84)[param_1];
 
   PTR_FUN_00580c3c = (&PTR_FUN_00580d90)[param_1];
 
@@ -769,6 +789,10 @@ void FUN_00540800(int param_1)
 }
 
 /* ===== FUN_00540ab0 @ 0x00540AB0 ===== */
+/* PS2 candidate: S_TriCalcGradients_2 (conf 0.601) */
+
+
+
 void FUN_00540ab0(float *param_1,float *param_2,int param_3,int param_4,int param_5,int param_6)
 
 
@@ -910,6 +934,10 @@ void FUN_00540ab0(float *param_1,float *param_2,int param_3,int param_4,int para
 }
 
 /* ===== FUN_00541690 @ 0x00541690 ===== */
+/* PS2 candidate: ANM_ClusterApplyMatSingleVertex_2 (conf 0.592) */
+
+
+
 void FUN_00541690(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
@@ -1364,7 +1392,7 @@ float10 FUN_00541c10(float param_1)
 
 {
 
-  FUN_00542d40();
+  ANM_DumpCluster_3();
 
   return (float10)param_1;
 
@@ -1377,7 +1405,7 @@ float10 FUN_00541c50(float param_1)
 
 {
 
-  FUN_00542e00();
+  ANM_DumpCluster_5();
 
   return (float10)param_1;
 
@@ -1390,7 +1418,7 @@ float10 FUN_00541c90(float param_1)
 
 {
 
-  FUN_00542d40();
+  ANM_DumpCluster_3();
 
   return (float10)1.0 / (float10)param_1;
 
@@ -1403,7 +1431,7 @@ float10 FUN_00541cd0(float param_1)
 
 {
 
-  FUN_00542e00();
+  ANM_DumpCluster_5();
 
   return (float10)1.0 / (float10)param_1;
 
@@ -1898,6 +1926,10 @@ void FUN_00541fc0(int param_1,int param_2,int param_3,int param_4,int param_5)
 }
 
 /* ===== FUN_00542130 @ 0x00542130 ===== */
+/* PS2 candidate: S_GEO_Vec4Transform (conf 0.766) */
+
+
+
 void FUN_00542130(float *param_1,float *param_2,int param_3,uint *param_4)
 
 
@@ -2191,8 +2223,8 @@ unkbyte10 FUN_005424d0(float param_1)
 
 }
 
-/* ===== FUN_005424e0 @ 0x005424E0 ===== */
-void FUN_005424e0(void)
+/* ===== AddHud__4cHudP8cHudIcon_5 @ 0x005424E0 ===== */
+void AddHud__4cHudP8cHudIcon_5(void)
 
 
 
@@ -2205,6 +2237,10 @@ void FUN_005424e0(void)
 }
 
 /* ===== FUN_00542a90 @ 0x00542A90 ===== */
+/* PS2 candidate: ANM_ClusterApplyMatSingleVertex (conf 0.756) */
+
+
+
 void FUN_00542a90(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
@@ -2298,6 +2334,10 @@ void FUN_00542a90(int param_1,int param_2,int param_3,int param_4,int param_5)
 }
 
 /* ===== FUN_00542bb0 @ 0x00542BB0 ===== */
+/* PS2 candidate: S_GEO_Vec3Transform (conf 0.77) */
+
+
+
 void FUN_00542bb0(float *param_1,float *param_2,int param_3,uint *param_4)
 
 
@@ -2467,8 +2507,8 @@ float10 FUN_00542d30(float param_1)
 
 }
 
-/* ===== FUN_00542d40 @ 0x00542D40 ===== */
-void FUN_00542d40(void)
+/* ===== ANM_DumpCluster_3 @ 0x00542D40 ===== */
+void ANM_DumpCluster_3(void)
 
 
 
@@ -2478,8 +2518,8 @@ void FUN_00542d40(void)
 
 }
 
-/* ===== FUN_00542e00 @ 0x00542E00 ===== */
-void FUN_00542e00(void)
+/* ===== ANM_DumpCluster_5 @ 0x00542E00 ===== */
+void ANM_DumpCluster_5(void)
 
 
 
@@ -2490,6 +2530,10 @@ void FUN_00542e00(void)
 }
 
 /* ===== FUN_00542eb0 @ 0x00542EB0 ===== */
+/* PS2 candidate: _InitSys (conf 0.516) */
+
+
+
 void FUN_00542eb0(void)
 
 
@@ -2500,14 +2544,14 @@ void FUN_00542eb0(void)
 
   DAT_00630b58 = FUN_00545d1b();
 
-  FUN_00545ccb();
+  _GLOBAL__D_Game_2();
 
   return;
 
 }
 
-/* ===== FUN_00542ec7 @ 0x00542EC7 ===== */
-void FUN_00542ec7(void)
+/* ===== ANM_DumpCluster_4 @ 0x00542EC7 ===== */
+void ANM_DumpCluster_4(void)
 
 
 
@@ -2518,23 +2562,27 @@ void FUN_00542ec7(void)
 }
 
 /* ===== FUN_00542ec8 @ 0x00542EC8 ===== */
+/* PS2 candidate: ANM_DumpCluster_9 (conf 0.777) */
+
+
+
 void FUN_00542ec8(void)
 
 
 
 {
 
-  PTR_FUN_0058138c = &LAB_00545d9e;
+  PTR__dmVector_11_0058138c = &LAB_00545d9e;
 
-  PTR_FUN_00581388 = __cfltcvt;
+  PTR__dmVector_11_00581388 = __cfltcvt;
 
-  PTR_FUN_00581390 = __fassign;
+  PTR__dmVector_11_00581390 = __fassign;
 
-  PTR_FUN_00581394 = FUN_00545d44;
+  PTR__dmVector_11_00581394 = FUN_00545d44;
 
-  PTR_FUN_00581398 = &LAB_00545dec;
+  PTR__dmVector_11_00581398 = &LAB_00545dec;
 
-  PTR_FUN_0058139c = __cfltcvt;
+  PTR__dmVector_11_0058139c = __cfltcvt;
 
   return;
 
@@ -4108,8 +4156,8 @@ undefined4 FUN_005439e0(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 }
 
-/* ===== FUN_00543a11 @ 0x00543A11 ===== */
-void FUN_00543a11(undefined4 param_1,undefined4 param_2)
+/* ===== BinFileSeek_2 @ 0x00543A11 ===== */
+void BinFileSeek_2(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -4744,14 +4792,14 @@ void FUN_00543e00(void)
 
 }
 
-/* ===== FUN_00543e3a @ 0x00543E3A ===== */
-void FUN_00543e3a(void)
+/* ===== AddHud__4cHudP8cHudIcon_6 @ 0x00543E3A ===== */
+void AddHud__4cHudP8cHudIcon_6(void)
 
 
 
 {
 
-  __cintrindisp2();
+  AudioMusicStreamPlay__Fiiii_3();
 
   return;
 
@@ -4843,7 +4891,7 @@ undefined4 FUN_00543e92(int param_1,uint param_2,int param_3,uint param_4)
 
     auStack_e._6_4_ = 0x543ea6;
 
-    in_EAX = FUN_00549b05();
+    in_EAX = ANM_DumpCluster_7();
 
     uVar1 = extraout_ECX;
 
@@ -4939,13 +4987,13 @@ LAB_00543f3c:
 
         if ((param_4 & 0xfffff) != 0 || param_3 != 0) {
 
-          uVar2 = FUN_00549b8e();
+          uVar2 = ANM_DumpCluster_8();
 
           return uVar2;
 
         }
 
-        uVar2 = FUN_00549b8e();
+        uVar2 = ANM_DumpCluster_8();
 
         return uVar2;
 
@@ -4963,7 +5011,7 @@ LAB_00543f3c:
 
         }
 
-        uVar2 = FUN_00549b8e();
+        uVar2 = ANM_DumpCluster_8();
 
         return uVar2;
 
@@ -5312,8 +5360,8 @@ int FUN_00544198(byte *param_1)
 
 }
 
-/* ===== FUN_00544223 @ 0x00544223 ===== */
-void FUN_00544223(undefined4 param_1)
+/* ===== ANM_BinderDestroy_3 @ 0x00544223 ===== */
+void ANM_BinderDestroy_3(undefined4 param_1)
 
 
 
@@ -5501,7 +5549,7 @@ void FUN_005442c3(uint param_1)
 
       local_8 = 0xffffffff;
 
-      FUN_0054432a();
+      _dmVector_4();
 
       if (iVar1 != 0) {
 
@@ -5547,7 +5595,7 @@ void FUN_005442c3(uint param_1)
 
         local_8 = 0xffffffff;
 
-        FUN_00544389();
+        _dmVector_3();
 
         if (iVar1 != 0) {
 
@@ -5583,27 +5631,27 @@ LAB_005443a2:
 
 }
 
-/* ===== FUN_0054432a @ 0x0054432A ===== */
-void FUN_0054432a(void)
+/* ===== _dmVector_4 @ 0x0054432A ===== */
+void _dmVector_4(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
 }
 
-/* ===== FUN_00544389 @ 0x00544389 ===== */
-void FUN_00544389(void)
+/* ===== _dmVector_3 @ 0x00544389 ===== */
+void _dmVector_3(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
@@ -5668,7 +5716,7 @@ void FUN_005443bf(LPVOID param_1)
 
     local_8 = 0xffffffff;
 
-    FUN_00544429();
+    _dmVector_5();
 
     iVar1 = local_20;
 
@@ -5696,7 +5744,7 @@ void FUN_005443bf(LPVOID param_1)
 
     local_8 = 0xffffffff;
 
-    FUN_00544481();
+    _dmVector_6();
 
     iVar1 = local_28;
 
@@ -5720,27 +5768,27 @@ LAB_0054448b:
 
 }
 
-/* ===== FUN_00544429 @ 0x00544429 ===== */
-void FUN_00544429(void)
+/* ===== _dmVector_5 @ 0x00544429 ===== */
+void _dmVector_5(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
 }
 
-/* ===== FUN_00544481 @ 0x00544481 ===== */
-void FUN_00544481(void)
+/* ===== _dmVector_6 @ 0x00544481 ===== */
+void _dmVector_6(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
@@ -5785,7 +5833,7 @@ int FUN_005444a8(int param_1)
 
     if (bVar1) {
 
-      FUN_0054bf4e(0x13);
+      dmaSendN__FUiPviPFv_v(0x13);
 
     }
 
@@ -5968,7 +6016,7 @@ LAB_0054469c:
 
     if (in_FPUControlWord != 0x27f) {
 
-      in_EAX = FUN_00549b05();
+      in_EAX = ANM_DumpCluster_7();
 
       in_ST0 = extraout_ST0;
 
@@ -6696,7 +6744,7 @@ LAB_00544b6c:
 
     if (in_FPUControlWord != 0x27f) {
 
-      in_EAX = FUN_00549b05();
+      in_EAX = ANM_DumpCluster_7();
 
       in_ST0 = extraout_ST0;
 
@@ -6739,13 +6787,7 @@ LAB_00544b6c:
 }
 
 /* ===== __global_unwind2 @ 0x00544B8C ===== */
-/* Library Function - Single Match
-
-    __global_unwind2
-
-   
-
-   Library: Visual Studio */
+/* PS2 candidate: changeInputVolume__FUi_2 (conf 0.631) */
 
 
 
@@ -6831,6 +6873,10 @@ void __local_unwind2(int param_1,int param_2)
 }
 
 /* ===== FUN_00544c62 @ 0x00544C62 ===== */
+/* PS2 candidate: FNT_StringRender__FPcP14FNT_RenderInfo_2 (conf 0.856) */
+
+
+
 void FUN_00544c62(void)
 
 
@@ -6854,6 +6900,10 @@ void FUN_00544c62(void)
 }
 
 /* ===== FUN_00544d41 @ 0x00544D41 ===== */
+/* PS2 candidate: matherr (conf 0.642) */
+
+
+
 void FUN_00544d41(int param_1)
 
 
@@ -6887,8 +6937,8 @@ void FUN_00544d5c(void)
 
 }
 
-/* ===== FUN_00544d89 @ 0x00544D89 ===== */
-void FUN_00544d89(undefined4 param_1)
+/* ===== BinFileCreateWrite_4 @ 0x00544D89 ===== */
+void BinFileCreateWrite_4(undefined4 param_1)
 
 
 
@@ -6942,7 +6992,7 @@ void FUN_00544dab(UINT param_1,int param_2,int param_3)
 
   
 
-  FUN_00544e50();
+  _dmVector_7();
 
   if (DAT_00630b9c == 1) {
 
@@ -6994,14 +7044,14 @@ void FUN_00544dab(UINT param_1,int param_2,int param_3)
 
   }
 
-  FUN_00544e59();
+  _dmVector_8();
 
   return;
 
 }
 
-/* ===== FUN_00544e50 @ 0x00544E50 ===== */
-void FUN_00544e50(void)
+/* ===== _dmVector_7 @ 0x00544E50 ===== */
+void _dmVector_7(void)
 
 
 
@@ -7013,14 +7063,14 @@ void FUN_00544e50(void)
 
 }
 
-/* ===== FUN_00544e59 @ 0x00544E59 ===== */
-void FUN_00544e59(void)
+/* ===== _dmVector_8 @ 0x00544E59 ===== */
+void _dmVector_8(void)
 
 
 
 {
 
-  FUN_0054bf4e(0xd);
+  dmaSendN__FUiPviPFv_v(0xd);
 
   return;
 
@@ -7070,7 +7120,7 @@ HANDLE FUN_00544e7c(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 para
 
   if (lpParameter != (LPVOID)0x0) {
 
-    FUN_0054858d(lpParameter);
+    voBufReset__FP5VoBuf_2(lpParameter);
 
     *(undefined4 *)((int)lpParameter + 4) = 0xffffffff;
 
@@ -7147,9 +7197,9 @@ undefined4 FUN_00544ee7(DWORD *param_1)
 
   *param_1 = DVar2;
 
-  if (PTR_FUN_00580e04 != (undefined *)0x0) {
+  if (PTR_ANM_DumpCluster_4_00580e04 != (undefined *)0x0) {
 
-    (*(code *)PTR_FUN_00580e04)();
+    (*(code *)PTR_ANM_DumpCluster_4_00580e04)();
 
   }
 
@@ -7176,9 +7226,9 @@ void FUN_00544f83(DWORD param_1)
 
   
 
-  if (PTR_FUN_00580e08 != (undefined *)0x0) {
+  if (PTR_ANM_DumpCluster_4_00580e08 != (undefined *)0x0) {
 
-    (*(code *)PTR_FUN_00580e08)();
+    (*(code *)PTR_ANM_DumpCluster_4_00580e08)();
 
   }
 
@@ -7762,7 +7812,7 @@ int FUN_005452a0(int param_1)
 
     if (bVar1) {
 
-      FUN_0054bf4e(0x13);
+      dmaSendN__FUiPviPFv_v(0x13);
 
     }
 
@@ -7928,7 +7978,7 @@ void FUN_005454e8(uint param_1)
 
   if ((0x5810ff < param_1) && (param_1 < 0x581361)) {
 
-    FUN_0054bf4e(((int)(param_1 - 0x581100) >> 5) + 0x1c);
+    dmaSendN__FUiPviPFv_v(((int)(param_1 - 0x581100) >> 5) + 0x1c);
 
     return;
 
@@ -7949,7 +7999,7 @@ void FUN_00545517(int param_1,int param_2)
 
   if (param_1 < 0x14) {
 
-    FUN_0054bf4e(param_1 + 0x1c);
+    dmaSendN__FUiPviPFv_v(param_1 + 0x1c);
 
     return;
 
@@ -8150,7 +8200,7 @@ LAB_00545615:
 
       else {
 
-        FUN_0054bf4e(0x13);
+        dmaSendN__FUiPviPFv_v(0x13);
 
       }
 
@@ -8295,7 +8345,7 @@ LAB_005456ff:
 
     else {
 
-      FUN_0054bf4e(0x13);
+      dmaSendN__FUiPviPFv_v(0x13);
 
     }
 
@@ -8523,7 +8573,7 @@ void entry(void)
 
   uVar3 = FUN_0051c470(pHVar5,uVar6,uVar3,uVar4);
 
-  FUN_00544d89(uVar3);
+  BinFileCreateWrite_4(uVar3);
 
   FUN_0054c4a2(*(undefined4 *)*local_18,local_18);
 
@@ -8532,13 +8582,7 @@ void entry(void)
 }
 
 /* ===== __amsg_exit @ 0x00545860 ===== */
-/* Library Function - Single Match
-
-    __amsg_exit
-
-   
-
-   Library: Visual Studio 2003 Release */
+/* PS2 candidate: _decodeOrSkip_2 (conf 0.51) */
 
 
 
@@ -8563,6 +8607,10 @@ void __cdecl __amsg_exit(int param_1)
 }
 
 /* ===== FUN_00545885 @ 0x00545885 ===== */
+/* PS2 candidate: _decodeOrSkip (conf 0.516) */
+
+
+
 void FUN_00545885(undefined4 param_1)
 
 
@@ -8748,7 +8796,7 @@ int FUN_00545999(void)
 
           }
 
-          FUN_0054bf4e(0x11);
+          dmaSendN__FUiPviPFv_v(0x11);
 
         }
 
@@ -8816,7 +8864,7 @@ int FUN_00545999(void)
 
 LAB_00545aab:
 
-  FUN_0054bf4e(0x12);
+  dmaSendN__FUiPviPFv_v(0x12);
 
   return iVar4;
 
@@ -9024,7 +9072,7 @@ void FUN_00545bf9(uint param_1)
 
     }
 
-    FUN_0054bf4e(0x11);
+    dmaSendN__FUiPviPFv_v(0x11);
 
   }
 
@@ -9098,8 +9146,8 @@ undefined4 FUN_00545c7a(undefined1 *param_1,undefined4 param_2,undefined4 param_
 
 }
 
-/* ===== FUN_00545ccb @ 0x00545CCB ===== */
-void FUN_00545ccb(void)
+/* ===== _GLOBAL_$D$Game_2 @ 0x00545CCB ===== */
+void _GLOBAL__D_Game_2(void)
 
 
 
@@ -9111,12 +9159,12 @@ void FUN_00545ccb(void)
 
 }
 
-/* ===== FUN_00545cdd @ 0x00545CDD ===== */
+/* ===== AudioDataStreamStatus__Fv_7 @ 0x00545CDD ===== */
 /* WARNING: Removing unreachable block (ram,0x00545d12) */
 
 
 
-undefined4 FUN_00545cdd(void)
+undefined4 AudioDataStreamStatus__Fv_7(void)
 
 
 
@@ -9155,7 +9203,7 @@ void FUN_00545d1b(void)
 
   }
 
-  FUN_00545cdd();
+  AudioDataStreamStatus__Fv_7();
 
   return;
 
@@ -9590,6 +9638,10 @@ __cfltcvt(double *arg,char *buffer,size_t sizeInBytes,int format,int precision,i
 }
 
 /* ===== FUN_00546145 @ 0x00546145 ===== */
+/* PS2 candidate: ObjectSetAnim (conf 0.587) */
+
+
+
 void FUN_00546145(char *param_1,int param_2)
 
 
@@ -10184,19 +10236,21 @@ LAB_00546510:
 
           local_c = psVar5;
 
-          (*(code *)PTR_FUN_00581388)(&local_4c,local_24c,(int)(char)bVar9,local_14,local_38);
+          (*(code *)PTR__dmVector_11_00581388)
+
+                    (&local_4c,local_24c,(int)(char)bVar9,local_14,local_38);
 
           uVar3 = local_8 & 0x80;
 
           if ((uVar3 != 0) && (local_14 == 0)) {
 
-            (*(code *)PTR_FUN_00581394)(local_24c);
+            (*(code *)PTR__dmVector_11_00581394)(local_24c);
 
           }
 
           if ((bVar9 == 0x67) && (uVar3 == 0)) {
 
-            (*(code *)PTR_FUN_0058138c)(local_24c);
+            (*(code *)PTR__dmVector_11_0058138c)(local_24c);
 
           }
 
@@ -10733,6 +10787,10 @@ undefined4 FUN_00546a7e(int *param_1)
 }
 
 /* ===== FUN_00546a8c @ 0x00546A8C ===== */
+/* PS2 candidate: _resetGsDmaPackets__Fv (conf 0.679) */
+
+
+
 void FUN_00546a8c(void)
 
 
@@ -10939,7 +10997,7 @@ int FUN_00546b65(int param_1)
 
   }
 
-  FUN_0054bf4e(2);
+  dmaSendN__FUiPviPFv_v(2);
 
   if (param_1 != 1) {
 
@@ -11050,7 +11108,7 @@ LAB_00546c8f:
 
     }
 
-    FUN_0054bf4e(1);
+    dmaSendN__FUiPviPFv_v(1);
 
     return 0;
 
@@ -11060,7 +11118,7 @@ LAB_00546c8f:
 
     if (bVar1) {
 
-      FUN_0054bf4e(1);
+      dmaSendN__FUiPviPFv_v(1);
 
     }
 
@@ -11124,7 +11182,7 @@ LAB_00546d41:
 
   if (bVar1) {
 
-    FUN_0054bf4e(1);
+    dmaSendN__FUiPviPFv_v(1);
 
   }
 
@@ -11999,7 +12057,7 @@ bool FUN_0054736f(uint param_1,double *param_2,uint param_3)
 
   if (((param_1 & 8) != 0) && ((param_3 & 1) != 0)) {
 
-    FUN_0054781e(1);
+    ANM_DumpCluster_6(1);
 
     uVar3 = param_1 & 0x17;
 
@@ -12009,7 +12067,7 @@ bool FUN_0054736f(uint param_1,double *param_2,uint param_3)
 
   if (((param_1 & 4) != 0) && ((param_3 & 4) != 0)) {
 
-    FUN_0054781e(4);
+    ANM_DumpCluster_6(4);
 
     uVar3 = param_1 & 0x1b;
 
@@ -12095,7 +12153,7 @@ bool FUN_0054736f(uint param_1,double *param_2,uint param_3)
 
       if (bVar2) {
 
-        FUN_0054781e(0x10);
+        ANM_DumpCluster_6(0x10);
 
       }
 
@@ -12107,7 +12165,7 @@ bool FUN_0054736f(uint param_1,double *param_2,uint param_3)
 
   }
 
-  FUN_0054781e(8);
+  ANM_DumpCluster_6(8);
 
   uVar3 = param_3 & 0xc00;
 
@@ -12177,7 +12235,7 @@ LAB_00547564:
 
   if (((param_1 & 0x10) != 0) && ((param_3 & 0x20) != 0)) {
 
-    FUN_0054781e(0x20);
+    ANM_DumpCluster_6(0x20);
 
     uVar3 = uVar3 & 0xffffffef;
 
@@ -12238,7 +12296,7 @@ float10 FUN_00547586(undefined4 param_1,undefined4 param_2,undefined4 param_3,un
 
     FUN_005477fb(param_9,0xffff);
 
-    iVar1 = FUN_0054d84b(&local_24);
+    iVar1 = AudioDataStreamStatus__Fv_8(&local_24);
 
     if (iVar1 == 0) {
 
@@ -12292,6 +12350,10 @@ void FUN_0054760e(int param_1)
 }
 
 /* ===== FUN_00547636 @ 0x00547636 ===== */
+/* PS2 candidate: GetOdIcon__FUi (conf 0.804) */
+
+
+
 undefined4 FUN_00547636(int param_1)
 
 
@@ -12626,12 +12688,12 @@ int FUN_005477fb(void)
 
 }
 
-/* ===== FUN_0054781e @ 0x0054781E ===== */
+/* ===== ANM_DumpCluster_6 @ 0x0054781E ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0054781e(void)
+void ANM_DumpCluster_6(void)
 
 
 
@@ -14098,7 +14160,7 @@ LAB_005481e9:
 
   }
 
-  FUN_0054bf4e(2);
+  dmaSendN__FUiPviPFv_v(2);
 
   return puVar4;
 
@@ -14580,7 +14642,7 @@ undefined4 FUN_00548539(void)
 
       if (BVar1 != 0) {
 
-        FUN_0054858d(lpTlsValue);
+        voBufReset__FP5VoBuf_2(lpTlsValue);
 
         DVar2 = GetCurrentThreadId();
 
@@ -14600,8 +14662,8 @@ undefined4 FUN_00548539(void)
 
 }
 
-/* ===== FUN_0054858d @ 0x0054858D ===== */
-void FUN_0054858d(int param_1)
+/* ===== voBufReset__FP5VoBuf_2 @ 0x0054858D ===== */
+void voBufReset__FP5VoBuf_2(int param_1)
 
 
 
@@ -14646,7 +14708,7 @@ DWORD * FUN_005485a0(void)
 
       if (BVar1 != 0) {
 
-        FUN_0054858d(lpTlsValue);
+        voBufReset__FP5VoBuf_2(lpTlsValue);
 
         DVar2 = GetCurrentThreadId();
 
@@ -14739,7 +14801,7 @@ void FUN_00548607(LPVOID param_1)
 
 }
 
-/* ===== __cintrindisp2 @ 0x005486B0 ===== */
+/* ===== AudioMusicStreamPlay__Fiiii_3 @ 0x005486B0 ===== */
 /* Library Function - Single Match
 
     __cintrindisp2
@@ -14750,7 +14812,7 @@ void FUN_00548607(LPVOID param_1)
 
 
 
-void __cintrindisp2(void)
+void AudioMusicStreamPlay__Fiiii_3(void)
 
 
 
@@ -14764,7 +14826,7 @@ void __cintrindisp2(void)
 
 }
 
-/* ===== __cintrindisp1 @ 0x005486EE ===== */
+/* ===== AudioMusicStreamPlay__Fiiii_2 @ 0x005486EE ===== */
 /* Library Function - Single Match
 
     __cintrindisp1
@@ -14775,7 +14837,7 @@ void __cintrindisp2(void)
 
 
 
-void __cintrindisp1(void)
+void AudioMusicStreamPlay__Fiiii_2(void)
 
 
 
@@ -15513,8 +15575,8 @@ unkbyte10 FUN_00549af0(void)
 
 }
 
-/* ===== FUN_00549b05 @ 0x00549B05 ===== */
-void FUN_00549b05(void)
+/* ===== ANM_DumpCluster_7 @ 0x00549B05 ===== */
+void ANM_DumpCluster_7(void)
 
 
 
@@ -15597,8 +15659,8 @@ uint FUN_00549b78(undefined4 param_1,uint param_2)
 
 }
 
-/* ===== FUN_00549b8e @ 0x00549B8E ===== */
-void FUN_00549b8e(void)
+/* ===== ANM_DumpCluster_8 @ 0x00549B8E ===== */
+void ANM_DumpCluster_8(void)
 
 
 
@@ -16507,7 +16569,7 @@ LAB_0054a1c6:
 
               *pcVar12 = '\0';
 
-              (*(code *)PTR_FUN_00581390)(local_11 + -1,local_30,&local_1c8);
+              (*(code *)PTR__dmVector_11_00581390)(local_11 + -1,local_30,&local_1c8);
 
             }
 
@@ -17212,6 +17274,10 @@ uint FUN_0054a86d(undefined4 *param_1)
 }
 
 /* ===== FUN_0054a887 @ 0x0054A887 ===== */
+/* PS2 candidate: MemFree (conf 0.818) */
+
+
+
 void FUN_0054a887(int param_1,undefined4 param_2)
 
 
@@ -17458,7 +17524,7 @@ void FUN_0054aa44(uint *param_1,int param_2)
 
   if ((uVar1 & 4) == 0) {
 
-    iVar2 = FUN_0054d33f(local_1c,&local_10);
+    iVar2 = BinFileSeek_3(local_1c,&local_10);
 
     if (((uVar1 & 2) != 0) || (iVar2 == 1)) {
 
@@ -19896,6 +19962,10 @@ undefined4 FUN_0054be1b(int param_1,int *param_2,byte *param_3,uint param_4)
 }
 
 /* ===== FUN_0054bec4 @ 0x0054BEC4 ===== */
+/* PS2 candidate: ANM_Uninit__Fv (conf 0.77) */
+
+
+
 void FUN_0054bec4(void)
 
 
@@ -19955,7 +20025,7 @@ void FUN_0054beed(int param_1)
 
     }
 
-    FUN_0054bf4e(0x11);
+    dmaSendN__FUiPviPFv_v(0x11);
 
   }
 
@@ -19965,8 +20035,8 @@ void FUN_0054beed(int param_1)
 
 }
 
-/* ===== FUN_0054bf4e @ 0x0054BF4E ===== */
-void FUN_0054bf4e(int param_1)
+/* ===== dmaSendN__FUiPviPFv_v @ 0x0054BF4E ===== */
+void dmaSendN__FUiPviPFv_v(int param_1)
 
 
 
@@ -20562,7 +20632,7 @@ LPVOID FUN_0054c365(int param_1,int param_2)
 
           local_8 = 0xffffffff;
 
-          FUN_0054c3fe();
+          _dmVector_10();
 
           _Size = uVar2;
 
@@ -20598,7 +20668,7 @@ LAB_0054c44d:
 
         local_8 = 0xffffffff;
 
-        FUN_0054c487();
+        _dmVector_9();
 
         _Size = uVar3;
 
@@ -20642,27 +20712,27 @@ LAB_0054c452:
 
 }
 
-/* ===== FUN_0054c3fe @ 0x0054C3FE ===== */
-void FUN_0054c3fe(void)
+/* ===== _dmVector_10 @ 0x0054C3FE ===== */
+void _dmVector_10(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
 }
 
-/* ===== FUN_0054c487 @ 0x0054C487 ===== */
-void FUN_0054c487(void)
+/* ===== _dmVector_9 @ 0x0054C487 ===== */
+void _dmVector_9(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
@@ -21098,7 +21168,7 @@ byte * FUN_0054c857(void)
 
       if ((bVar1 == 0x22) || (bVar1 == 0)) break;
 
-      iVar2 = FUN_0054e9dc(bVar1);
+      iVar2 = BinFileCreateWrite_5(bVar1);
 
       if (iVar2 != 0) {
 
@@ -22302,6 +22372,10 @@ undefined4 FUN_0054d078(int param_1,int param_2)
 }
 
 /* ===== FUN_0054d104 @ 0x0054D104 ===== */
+/* PS2 candidate: DestroyHuds__11cHudManager (conf 0.53) */
+
+
+
 void FUN_0054d104(int param_1,undefined4 *param_2)
 
 
@@ -22330,8 +22404,8 @@ void FUN_0054d104(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0054d11f @ 0x0054D11F ===== */
-void FUN_0054d11f(undefined4 *param_1)
+/* ===== Reset__4List @ 0x0054D11F ===== */
+void Reset__4List(undefined4 *param_1)
 
 
 
@@ -22510,7 +22584,7 @@ LAB_0054d2ff:
 
     }
 
-    FUN_0054d11f(&local_10);
+    Reset__4List(&local_10);
 
   }
 
@@ -22530,7 +22604,7 @@ LAB_0054d2ff:
 
     if (iVar4 < iVar2 - param_3[2]) {
 
-      FUN_0054d11f(&local_10);
+      Reset__4List(&local_10);
 
     }
 
@@ -22540,7 +22614,7 @@ LAB_0054d2ff:
 
         if (*param_3 <= iVar4) {
 
-          FUN_0054d11f(&local_10);
+          Reset__4List(&local_10);
 
           local_10 = local_10 | 0x80000000;
 
@@ -22604,8 +22678,8 @@ LAB_0054d301:
 
 }
 
-/* ===== FUN_0054d33f @ 0x0054D33F ===== */
-void FUN_0054d33f(undefined4 param_1,undefined4 param_2)
+/* ===== BinFileSeek_3 @ 0x0054D33F ===== */
+void BinFileSeek_3(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -22617,8 +22691,8 @@ void FUN_0054d33f(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0054d355 @ 0x0054D355 ===== */
-void FUN_0054d355(undefined4 param_1,undefined4 param_2)
+/* ===== BinFileSeek_4 @ 0x0054D355 ===== */
+void BinFileSeek_4(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -22643,7 +22717,7 @@ void FUN_0054d36b(undefined4 param_1,undefined4 param_2)
 
   FUN_0054de3d(local_10,&param_2,param_2,0,0,0,0);
 
-  FUN_0054d33f(local_10,param_1);
+  BinFileSeek_3(local_10,param_1);
 
   return;
 
@@ -22662,7 +22736,7 @@ void FUN_0054d398(undefined4 param_1,undefined4 param_2)
 
   FUN_0054de3d(local_10,&param_2,param_2,0,0,0,0);
 
-  FUN_0054d355(local_10,param_1);
+  BinFileSeek_4(local_10,param_1);
 
   return;
 
@@ -22994,8 +23068,8 @@ void * __cdecl _memset(void *_Dst,int _Val,size_t _Size)
 
 }
 
-/* ===== FUN_0054d5a8 @ 0x0054D5A8 ===== */
-void FUN_0054d5a8(void)
+/* ===== _dmVector_11 @ 0x0054D5A8 ===== */
+void _dmVector_11(void)
 
 
 
@@ -23202,7 +23276,7 @@ undefined4 FUN_0054d6f6(undefined4 param_1,undefined4 param_2)
 
   if (bVar2) {
 
-    FUN_0054bf4e(0x13);
+    dmaSendN__FUiPviPFv_v(0x13);
 
   }
 
@@ -23358,8 +23432,8 @@ LAB_0054d82e:
 
 }
 
-/* ===== FUN_0054d84b @ 0x0054D84B ===== */
-undefined4 FUN_0054d84b(void)
+/* ===== AudioDataStreamStatus__Fv_8 @ 0x0054D84B ===== */
+undefined4 AudioDataStreamStatus__Fv_8(void)
 
 
 
@@ -23793,7 +23867,9 @@ LAB_0054dbb8:
 
   FUN_005477fb(param_3,0xffff);
 
-  if (((*param_2 != 8) && (DAT_00583bb0 == 0)) && (iVar1 = FUN_0054d84b(param_2), iVar1 != 0)) {
+  if (((*param_2 != 8) && (DAT_00583bb0 == 0)) &&
+
+     (iVar1 = AudioDataStreamStatus__Fv_8(param_2), iVar1 != 0)) {
 
     return;
 
@@ -23895,7 +23971,7 @@ undefined4 FUN_0054dc7f(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   if (bVar2) {
 
-    FUN_0054bf4e(0x13);
+    dmaSendN__FUiPviPFv_v(0x13);
 
   }
 
@@ -25281,7 +25357,7 @@ void FUN_0054e41a(void)
 
     }
 
-    FUN_0054bf4e(0xb);
+    dmaSendN__FUiPviPFv_v(0xb);
 
   }
 
@@ -25330,7 +25406,7 @@ void FUN_0054e448(void)
 
   if (_Str1 == (char *)0x0) {
 
-    FUN_0054bf4e(0xc);
+    dmaSendN__FUiPviPFv_v(0xc);
 
     DVar3 = GetTimeZoneInformation((LPTIME_ZONE_INFORMATION)&DAT_00630df8);
 
@@ -25416,7 +25492,7 @@ LAB_0054e6b9:
 
         FUN_00546ee0(DAT_00630ea4,_Str1);
 
-        FUN_0054bf4e(0xc);
+        dmaSendN__FUiPviPFv_v(0xc);
 
         _strncpy(PTR_DAT_00583c4c,_Str1,3);
 
@@ -25494,7 +25570,7 @@ LAB_0054e6b9:
 
     }
 
-    FUN_0054bf4e(0xc);
+    dmaSendN__FUiPviPFv_v(0xc);
 
   }
 
@@ -25517,7 +25593,7 @@ undefined4 FUN_0054e6cf(undefined4 param_1)
 
   uVar1 = FUN_0054e6f0(param_1);
 
-  FUN_0054bf4e(0xb);
+  dmaSendN__FUiPviPFv_v(0xb);
 
   return uVar1;
 
@@ -25799,8 +25875,8 @@ void FUN_0054e89c(int param_1,int param_2,uint param_3,int param_4,int param_5,i
 
 }
 
-/* ===== FUN_0054e9dc @ 0x0054E9DC ===== */
-void FUN_0054e9dc(undefined4 param_1)
+/* ===== BinFileCreateWrite_5 @ 0x0054E9DC ===== */
+void BinFileCreateWrite_5(undefined4 param_1)
 
 
 
@@ -26104,7 +26180,7 @@ LAB_0054ea45:
 
 LAB_0054ebbc:
 
-  FUN_0054bf4e(0x19);
+  dmaSendN__FUiPviPFv_v(0x19);
 
   return uVar14;
 
@@ -28533,7 +28609,7 @@ byte * FUN_0054fc55(byte *param_1,uint param_2)
 
             local_8 = 0xffffffff;
 
-            FUN_0054fde0();
+            _dmVector_12();
 
             if (local_2c == 0) {
 
@@ -28683,7 +28759,7 @@ byte * FUN_0054fc55(byte *param_1,uint param_2)
 
               local_8 = 0xffffffff;
 
-              FUN_0054ff2e();
+              _dmVector_13();
 
             }
 
@@ -28765,27 +28841,27 @@ byte * FUN_0054fc55(byte *param_1,uint param_2)
 
 }
 
-/* ===== FUN_0054fde0 @ 0x0054FDE0 ===== */
-void FUN_0054fde0(void)
+/* ===== _dmVector_12 @ 0x0054FDE0 ===== */
+void _dmVector_12(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
 }
 
-/* ===== FUN_0054ff2e @ 0x0054FF2E ===== */
-void FUN_0054ff2e(void)
+/* ===== _dmVector_13 @ 0x0054FF2E ===== */
+void _dmVector_13(void)
 
 
 
 {
 
-  FUN_0054bf4e(9);
+  dmaSendN__FUiPviPFv_v(9);
 
   return;
 
@@ -28842,7 +28918,7 @@ byte * FUN_0054ff84(byte *param_1,uint param_2)
 
         if (param_1[1] == 0) {
 
-          FUN_0054bf4e(0x19);
+          dmaSendN__FUiPviPFv_v(0x19);
 
           return (byte *)0x0;
 
@@ -28850,7 +28926,7 @@ byte * FUN_0054ff84(byte *param_1,uint param_2)
 
         if (param_2 == CONCAT11(bVar1,param_1[1])) {
 
-          FUN_0054bf4e(0x19);
+          dmaSendN__FUiPviPFv_v(0x19);
 
           return param_1;
 
@@ -28862,7 +28938,7 @@ byte * FUN_0054ff84(byte *param_1,uint param_2)
 
     }
 
-    FUN_0054bf4e(0x19);
+    dmaSendN__FUiPviPFv_v(0x19);
 
     param_1 = (byte *)(~-(uint)(param_2 != uVar2) & (uint)param_1);
 

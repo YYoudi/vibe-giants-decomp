@@ -11,7 +11,6 @@ pc_addr,name,tokens,str_hit,nb_prefix_match,promoted,evidence
 00403e60,object_animate_process,object animate,0,False,False,
 00405130,loadsave_save__FPCc,loadsave save,0,False,False,
 00406bc0,army_create_rpman__FP6OBJECTP9ArmyOrderifi,army rpman,0,False,False,
-00406dd0,army_process_opcodes__FP6OBJECTPPUci,army opcodes,4,True,True,army
 00407c40,meccbase_init,meccbase,0,False,False,
 00408530,meccbaseitem_move,meccbaseitem,0,True,False,
 00408ec0,meccbaseitem_start_building,meccbaseitem start building,0,False,False,

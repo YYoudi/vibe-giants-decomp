@@ -72,7 +72,7 @@ void main_setupgam_004eda20(void)
 
   main_drawwrld_00435e20();
 
-  FUN_004433a0();
+  FLK_ReplayFileNameClear();
 
   FUN_00446620();
 

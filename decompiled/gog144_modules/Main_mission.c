@@ -58,7 +58,7 @@ void FUN_00490860(void)
 
         FUN_005178d0(iVar1,*(undefined4 *)(iVar4 + 0x457c + DAT_006330e4),uVar2);
 
-        FUN_005179d0(iVar1);
+        ANM_BinderDestroy_2(iVar1);
 
       }
 

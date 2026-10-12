@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (4 named) — decompiled, names from PS2 symbols
+ * 48 functions (6 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -726,8 +726,8 @@ void FUN_004f41f0(undefined4 param_1,int param_2,int param_3,int param_4)
 
 }
 
-/* ===== FUN_004f4250 @ 0x004F4250 ===== */
-void FUN_004f4250(undefined4 param_1)
+/* ===== kabutoai_select_punch_anim__FP6OBJECT_2 @ 0x004F4250 ===== */
+void kabutoai_select_punch_anim__FP6OBJECT_2(undefined4 param_1)
 
 
 
@@ -2531,7 +2531,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
   if ((((*(int *)(param_3 + 0xe4) != 0x41) || (*(int *)(iVar4 + 0xa0) == 0)) ||
 
-      (iVar3 = FUN_004ef2d0(*(int *)(iVar4 + 0xa0)), iVar3 != 0)) &&
+      (iVar3 = ANM_AnimGetImage(*(int *)(iVar4 + 0xa0)), iVar3 != 0)) &&
 
      (((*(int *)(param_3 + 0xe4) != 0x29 && (iVar3 = *(int *)(param_3 + 0xe8), iVar3 != 8)) &&
 
@@ -2762,6 +2762,10 @@ switchD_004f7908_caseD_20:
 }
 
 /* ===== FUN_004f7af0 @ 0x004F7AF0 ===== */
+/* PS2 candidate: smartie_clear_held_object (conf 0.607) */
+
+
+
 void FUN_004f7af0(int param_1)
 
 
@@ -3055,6 +3059,10 @@ void smartie_get_name__FP6OBJECT(OBJECT *p0)
 }
 
 /* ===== FUN_004f8350 @ 0x004F8350 ===== */
+/* PS2 candidate: sceMpegIsEnd (conf 0.604) */
+
+
+
 float10 FUN_004f8350(int param_1)
 
 
@@ -4429,8 +4437,8 @@ LAB_004f9ea2:
 
 }
 
-/* ===== FUN_004fa1e0 @ 0x004FA1E0 ===== */
-undefined4 * FUN_004fa1e0(void)
+/* ===== AudioDataStreamStatus__Fv_3 @ 0x004FA1E0 ===== */
+undefined4 * AudioDataStreamStatus__Fv_3(void)
 
 
 

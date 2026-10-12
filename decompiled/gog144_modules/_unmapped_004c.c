@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (2 named) — decompiled, names from PS2 symbols
+ * 64 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -679,7 +679,7 @@ LAB_004c0926:
 
   if ((uVar9 & 0x2000) != 0) {
 
-    FUN_0047f330(iVar3);
+    mecc_indicate_shots_fired__FP6OBJECT(iVar3);
 
     local_58 = *(float *)(DAT_00632ed8 + 0xaf0);
 
@@ -1903,6 +1903,10 @@ void FUN_004c15f0(OBJECT *param_1,int param_2)
 }
 
 /* ===== FUN_004c1de0 @ 0x004C1DE0 ===== */
+/* PS2 candidate: reaper_can_do_spell_anim__FP6OBJECT (conf 0.706) */
+
+
+
 undefined4 FUN_004c1de0(int param_1)
 
 
@@ -2988,7 +2992,7 @@ LAB_004c4978:
 
   if (*(float *)(iVar5 + 0x90 + iVar8 * 0x28) - *(float *)(iVar7 + 0x24) < 0.025) {
 
-    FUN_004c4b10(param_1,iVar3);
+    fillin_snap__FP6OBJECTP8TimeSnap(param_1,iVar3);
 
     pfVar4 = (float *)(iVar5 + 0x90 + *(int *)(iVar5 + 0x68) * 0x28);
 
@@ -3082,8 +3086,8 @@ LAB_004c4aab:
 
 }
 
-/* ===== FUN_004c4b10 @ 0x004C4B10 ===== */
-void FUN_004c4b10(int param_1,undefined4 *param_2)
+/* ===== fillin_snap__FP6OBJECTP8TimeSnap @ 0x004C4B10 ===== */
+void fillin_snap__FP6OBJECTP8TimeSnap(int param_1,undefined4 *param_2)
 
 
 
@@ -3228,7 +3232,7 @@ LAB_004c4c58:
 
   if (*(float *)(iVar5 + 0x90 + iVar8 * 0x28) - *(float *)(iVar7 + 0x24) < 0.025) {
 
-    FUN_004c4b10(param_1,iVar3);
+    fillin_snap__FP6OBJECTP8TimeSnap(param_1,iVar3);
 
     pfVar4 = (float *)(iVar5 + 0x90 + *(int *)(iVar5 + 0x68) * 0x28);
 
@@ -3613,7 +3617,7 @@ void FUN_004c5130(int param_1)
 
       iVar1 = puVar3[3];
 
-      if (((*(int *)(iVar1 + 4) == 0x3dd) && (iVar5 = FUN_00418460(iVar1), iVar5 != 0)) &&
+      if (((*(int *)(iVar1 + 4) == 0x3dd) && (iVar5 = lzo_assert(iVar1), iVar5 != 0)) &&
 
          ((*(int *)(iVar1 + 0x18c) == 1 || (*(int *)(iVar1 + 0x18c) == *(int *)(param_1 + 0x18c)))))
 
@@ -3740,7 +3744,7 @@ void FUN_004c52d0(int param_1)
 
       (iVar1 = *(int *)(*(int *)(*(int *)(iVar1 + 0xcfc) + 0x100) + 0x580), iVar1 != 0)) &&
 
-     (iVar3 = FUN_00418460(iVar1), iVar3 != 0)) {
+     (iVar3 = lzo_assert(iVar1), iVar3 != 0)) {
 
     FUN_00418630(iVar1,0,local_18);
 
@@ -3893,7 +3897,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
       (iVar7 = *(int *)(*(int *)(*(int *)(iVar7 + 0xcfc) + 0x100) + 0x584), iVar7 != 0)) &&
 
-     (iVar4 = FUN_00418460(iVar7), iVar4 != 0)) {
+     (iVar4 = lzo_assert(iVar7), iVar4 != 0)) {
 
     FUN_00418630(iVar7,0,&local_1c);
 
@@ -3931,7 +3935,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
             (((*(int *)(iVar4 + 0x18c) == 1 || (*(int *)(iVar4 + 0x18c) == *(int *)(iVar3 + 0x18c)))
 
-             && (iVar4 != iVar7)))) && (iVar6 = FUN_00418460(iVar4), iVar6 != 0)) break;
+             && (iVar4 != iVar7)))) && (iVar6 = lzo_assert(iVar4), iVar6 != 0)) break;
 
         puVar9 = (undefined4 *)*puVar9;
 
@@ -3979,7 +3983,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
               ((*(int *)(iVar4 + 0x18c) != 1 && (*(int *)(iVar4 + 0x18c) != *(int *)(iVar3 + 0x18c))
 
-               ))) || ((iVar4 == iVar7 || (iVar6 = FUN_00418460(iVar4), iVar6 == 0))))) {
+               ))) || ((iVar4 == iVar7 || (iVar6 = lzo_assert(iVar4), iVar6 == 0))))) {
 
         puVar9 = (undefined4 *)*puVar9;
 
@@ -3999,7 +4003,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
       *(int *)(iVar3 + 200) = param_1;
 
-      FUN_004a77c0(iVar3);
+      playerobj_zap_movement(iVar3);
 
       iVar7 = FUN_0052e4a0(iVar3);
 
@@ -5111,7 +5115,7 @@ LAB_004c74bd:
 
   if (*(float *)(iVar5 + 0x90 + iVar8 * 0x28) - *(float *)(iVar7 + 0x24) < 0.025) {
 
-    FUN_004c4b10(param_1,iVar3);
+    fillin_snap__FP6OBJECTP8TimeSnap(param_1,iVar3);
 
     pfVar4 = (float *)(iVar5 + 0x90 + *(int *)(iVar5 + 0x68) * 0x28);
 
@@ -5278,7 +5282,7 @@ void FUN_004ca560(int param_1,float *param_2,float param_3,undefined4 param_4,un
 
       if ((*(uint *)(param_1 + 0xe0) & 0x800) != 0) break;
 
-      FUN_004555e0(pfVar2,local_30,&local_54);
+      ai_fly_update_goal_4(pfVar2,local_30,&local_54);
 
       if (local_28 < 0.64278) {
 
@@ -5300,7 +5304,7 @@ void FUN_004ca560(int param_1,float *param_2,float param_3,undefined4 param_4,un
 
         if (((*(uint *)(param_1 + 0xe0) & 0x800) != 0) ||
 
-           ((FUN_004555e0(&local_3c,local_20,&local_50), 0.64278 <= local_18 &&
+           ((ai_fly_update_goal_4(&local_3c,local_20,&local_50), 0.64278 <= local_18 &&
 
             (local_50 < -3.0 == (local_50 == -3.0))))) {
 
@@ -5334,7 +5338,7 @@ LAB_004ca808:
 
         if (((*(uint *)(param_1 + 0xe0) & 0x800) != 0) ||
 
-           ((FUN_004555e0(&local_3c,local_10,&local_4c), 0.64278 <= local_8 &&
+           ((ai_fly_update_goal_4(&local_3c,local_10,&local_4c), 0.64278 <= local_8 &&
 
             (local_4c < -3.0 == (local_4c == -3.0))))) goto LAB_004ca808;
 
@@ -5363,6 +5367,10 @@ LAB_004ca808:
 }
 
 /* ===== FUN_004ca830 @ 0x004CA830 ===== */
+/* PS2 candidate: evilreaper_change_anim__FP6OBJECTii4SDKYf (conf 0.797) */
+
+
+
 void FUN_004ca830(int param_1,int param_2,int param_3,undefined4 param_4,float param_5)
 
 
@@ -5894,7 +5902,7 @@ float10 FUN_004cae90(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  FUN_004a17a0(param_1);
+  PhysicsExZeroForce(param_1);
 
   iVar1 = iVar1 + 0xdcc;
 
@@ -6336,6 +6344,10 @@ void FUN_004cb630(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 }
 
 /* ===== FUN_004cb730 @ 0x004CB730 ===== */
+/* PS2 candidate: evilreaper_fire_bow__FP6OBJECT (conf 0.533) */
+
+
+
 void FUN_004cb730(int param_1)
 
 
@@ -6740,7 +6752,7 @@ void FUN_004cbb90(int param_1)
 
     iVar4 = *(int *)(param_1 + 0x100);
 
-    FUN_004a17a0(param_1);
+    PhysicsExZeroForce(param_1);
 
     iVar4 = iVar4 + 0xdcc;
 
@@ -6881,7 +6893,7 @@ undefined4 FUN_004cbdf0(int param_1)
 
     if (0.0 < *(float *)(param_1 + 0xf0)) {
 
-      FUN_004a17a0(param_1);
+      PhysicsExZeroForce(param_1);
 
       FUN_0050a610(param_1 + 0xa0,iVar1 + 0xdcc);
 
@@ -7016,7 +7028,7 @@ void FUN_004cc810(void)
 
   FUN_00515eb0(&uStack_8,&uStack_4);
 
-  FUN_00515e90(uStack_8,0x46dac000);
+  FNT_StringRender__FPcP14FNT_RenderInfo(uStack_8,0x46dac000);
 
   fVar1 = (float10)FUN_00515da0(0);
 
@@ -7026,7 +7038,7 @@ void FUN_004cc810(void)
 
   FUN_0042a4f0();
 
-  FUN_00515e90(uStack_8,uStack_4);
+  FNT_StringRender__FPcP14FNT_RenderInfo(uStack_8,uStack_4);
 
   fVar1 = (float10)FUN_00515da0(1);
 
@@ -7047,6 +7059,10 @@ void FUN_004cc810(void)
 }
 
 /* ===== FUN_004cc8d0 @ 0x004CC8D0 ===== */
+/* PS2 candidate: controlShutdown__Fv (conf 0.695) */
+
+
+
 void FUN_004cc8d0(void)
 
 
@@ -7282,9 +7298,9 @@ void FUN_004cc900(void)
 
         afStack_1b8[4] = 0.1;
 
-        FUN_00446ad0(&local_1bc,DAT_006328e0);
+        FNT_RenderInfoProcess__FP14FNT_RenderInfof(&local_1bc,DAT_006328e0);
 
-        uVar4 = FUN_004470a0(&local_20c,&local_1bc);
+        uVar4 = AudioGetMasterVolume__Fv_3(&local_20c,&local_1bc);
 
         FUN_00446ce0(uVar4);
 
@@ -7300,7 +7316,7 @@ void FUN_004cc900(void)
 
       aiStack_16c[0] = 0x287;
 
-      aiStack_14c[0] = FUN_0050ae80(DAT_00632a88);
+      aiStack_14c[0] = NAM_DictionaryGetTotalNames_2(DAT_00632a88);
 
       iStack_240 = 1;
 
@@ -7598,7 +7614,7 @@ LAB_004ccbc0:
 
   FUN_00515eb0(&uStack_1c0,&uStack_1c8);
 
-  FUN_00515e90(0x40400000,0x4b989680);
+  FNT_StringRender__FPcP14FNT_RenderInfo(0x40400000,0x4b989680);
 
   iStack_23c = 0;
 
@@ -7764,13 +7780,13 @@ LAB_004ccbc0:
 
           *(uint *)(puVar8 + -0x1bc) = *(uint *)(puVar8 + -0x1bc) | 0x20;
 
-          uVar4 = FUN_0042b040(puVar8 + -0x294,0x461c4000);
+          uVar4 = BinFileSeek(puVar8 + -0x294,0x461c4000);
 
-          FUN_0042b010(uVar4);
+          AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(uVar4);
 
           FUN_0042c3e0(puVar8 + -0x294,0xffff,0xffffffff);
 
-          FUN_0042b030();
+          Audio3DTestToneUpdate__Fv_3();
 
           iVar6 = iStack_214;
 
@@ -7780,7 +7796,7 @@ LAB_004ccbc0:
 
           FUN_00516220(&fStack_1e4);
 
-          uVar4 = FUN_004fa1e0();
+          uVar4 = AudioDataStreamStatus__Fv_3();
 
           FUN_004FE2D0(uVar4,&PTR_DAT_00562510 + *piVar7 * 0x16,0x3e19999a,0x3e4ccccd,&uStack_1d4,
 
@@ -7818,7 +7834,7 @@ LAB_004ccbc0:
 
   FUN_005162b0(auStack_10c);
 
-  FUN_00515e90(uStack_1c0,uStack_1c8);
+  FNT_StringRender__FPcP14FNT_RenderInfo(uStack_1c0,uStack_1c8);
 
   FUN_005160b0(fStack_228,fStack_224,1);
 
@@ -7884,7 +7900,7 @@ LAB_004ccbc0:
 
         if (local_22c != (undefined *)0x0) {
 
-          iVar5 = FUN_004fa1e0();
+          iVar5 = AudioDataStreamStatus__Fv_3();
 
           FUN_004FE2D0(iVar5,&PTR_DAT_00562510 + *(int *)(local_22c + iVar6 * 4) * 0x16,0x3f000000,0
 
@@ -7906,9 +7922,9 @@ LAB_004ccbc0:
 
         afStack_1b8[4] = 1.0 - afStack_1b8[4];
 
-        FUN_00446ad0(&local_1bc,DAT_006328e0);
+        FNT_RenderInfoProcess__FP14FNT_RenderInfof(&local_1bc,DAT_006328e0);
 
-        uVar4 = FUN_004470a0(&local_20c,&local_1bc);
+        uVar4 = AudioGetMasterVolume__Fv_3(&local_20c,&local_1bc);
 
         FUN_00446ce0(uVar4);
 
@@ -8467,7 +8483,7 @@ undefined4 FUN_004cda80(void)
 
           FUN_00451da0();
 
-          FUN_004041f0();
+          ANM_DumpCluster();
 
           if (local_214 == 0) {
 
@@ -8547,7 +8563,7 @@ undefined4 FUN_004cda80(void)
 
     FUN_00435f30();
 
-    iVar5 = FUN_0040d6a0();
+    iVar5 = AudioGetMasterVolume__Fv();
 
     FUN_004a13c0();
 
@@ -8585,7 +8601,7 @@ undefined4 FUN_004cda80(void)
 
         else {
 
-          iVar9 = FUN_0042b180();
+          iVar9 = BinFileCreateWrite_3();
 
           if ((-1 < (char)*(uint *)(iVar8 + 0xd8)) &&
 
@@ -8695,7 +8711,7 @@ undefined4 FUN_004cda80(void)
 
     FUN_00515eb0(&local_218,&local_210);
 
-    FUN_00515e90(local_218,0x46dac000);
+    FNT_StringRender__FPcP14FNT_RenderInfo(local_218,0x46dac000);
 
     fVar11 = (float10)FUN_00515da0();
 
@@ -8705,7 +8721,7 @@ undefined4 FUN_004cda80(void)
 
     FUN_0042a4f0();
 
-    FUN_00515e90();
+    FNT_StringRender__FPcP14FNT_RenderInfo();
 
     fVar11 = (float10)FUN_00515da0();
 
@@ -8775,9 +8791,9 @@ undefined4 FUN_004cda80(void)
 
         if ((*(uint *)(iVar5 + 0xd8) & 0x8000) == 0) {
 
-          if (((DAT_00632a88 != 0) && (iVar8 = FUN_0042b180(), -1 < *(char *)(iVar5 + 0xd8))) &&
+          if (((DAT_00632a88 != 0) && (iVar8 = BinFileCreateWrite_3(), -1 < *(char *)(iVar5 + 0xd8))
 
-             (*(int *)(*(int *)(iVar5 + 8) + 0x400 + iVar8 * 4) != 0)) {
+              ) && (*(int *)(*(int *)(iVar5 + 8) + 0x400 + iVar8 * 4) != 0)) {
 
             FUN_00537120(iVar5,*(int *)(DAT_00632a88 + 0x18c) == *(int *)(iVar5 + 0x18c));
 
@@ -8819,7 +8835,7 @@ undefined4 FUN_004cda80(void)
 
     if (DAT_00633228 == 0) {
 
-      FUN_00515080(DAT_006328f4,DAT_00632a88);
+      MAP_MemGroupSetBase(DAT_006328f4,DAT_00632a88);
 
       FUN_00515580();
 
@@ -8851,7 +8867,7 @@ undefined4 FUN_004cda80(void)
 
   }
 
-  FUN_00446f50();
+  SetupCameraHail__Fv();
 
   FUN_00482350();
 
@@ -9021,7 +9037,7 @@ undefined4 FUN_004cda80(void)
 
       local_200 = 0.0;
 
-      FUN_00402140(iVar5,&local_208);
+      ai_get_goal_location(iVar5,&local_208);
 
       iVar8 = FUN_004eba40(2,iVar5);
 
@@ -9065,7 +9081,7 @@ LAB_004ce6e4:
 
 LAB_004ce7b8:
 
-  FUN_004041f0();
+  ANM_DumpCluster();
 
   FUN_00536700();
 
@@ -9226,6 +9242,10 @@ void FUN_004ce8d0(int param_1)
 }
 
 /* ===== FUN_004cea60 @ 0x004CEA60 ===== */
+/* PS2 candidate: ObjIsMeccBaseWall (conf 0.509) */
+
+
+
 void FUN_004cea60(int param_1)
 
 
@@ -11175,7 +11195,7 @@ LAB_004d135c:
 
       *(uint *)((int)fVar5 + 0x1c8) = *(uint *)((int)fVar5 + 0x1c8) & 0xfffff7ff;
 
-      FUN_004041f0((int)fVar5 + 0xa0);
+      ANM_DumpCluster((int)fVar5 + 0xa0);
 
       iVar11 = object_allocate_type(0xdb,0x11);
 
@@ -11777,7 +11797,7 @@ LAB_004d0695:
 
     if (uVar13 != 0) {
 
-      FUN_004041f0((int)fVar5 + 0xa0);
+      ANM_DumpCluster((int)fVar5 + 0xa0);
 
       sound_play_obj(0x4d3,fVar5);
 

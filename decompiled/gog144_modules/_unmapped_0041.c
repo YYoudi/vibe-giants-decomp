@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (2 named) — decompiled, names from PS2 symbols
+ * 100 functions (7 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2071,7 +2071,7 @@ LAB_004135eb:
 
   else {
 
-    FUN_004a2220(param_1);
+    PhysicsExGroundCollision(param_1);
 
   }
 
@@ -2136,6 +2136,10 @@ LAB_00413703:
 }
 
 /* ===== FUN_00413820 @ 0x00413820 ===== */
+/* PS2 candidate: setMenuSelection__7PS2Gameiiii (conf 0.651) */
+
+
+
 void FUN_00413820(int param_1)
 
 
@@ -2763,7 +2767,7 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
         (local_90 = iVar11, iVar7 = FUN_00412570(iVar11,local_34,local_68), iVar7 != 0)))) {
 
-      FUN_00516f30(iVar11,local_24);
+      xform_p3d_world_mat(iVar11,local_24);
 
       iVar7 = FUN_0042b1a0(iVar11);
 
@@ -2799,13 +2803,13 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
               uVar4 = *(ushort *)(iVar11 + local_88 * 2);
 
-              FUN_00517080(local_24,iVar8,iVar7 + (uint)*(ushort *)(iVar11 + local_78 * 2) * 0xc,
+              xform_p3d_mat33(local_24,iVar8,iVar7 + (uint)*(ushort *)(iVar11 + local_78 * 2) * 0xc,
 
-                           &local_9c);
+                              &local_9c);
 
-              FUN_00517080(local_24,iVar8,iVar7 + (uint)uVar3 * 0xc,&local_58);
+              xform_p3d_mat33(local_24,iVar8,iVar7 + (uint)uVar3 * 0xc,&local_58);
 
-              FUN_00517080(local_24,iVar8,iVar7 + (uint)uVar4 * 0xc,&local_64);
+              xform_p3d_mat33(local_24,iVar8,iVar7 + (uint)uVar4 * 0xc,&local_64);
 
               local_8c = local_60 - local_98;
 
@@ -2969,6 +2973,10 @@ float10 FUN_004143f0(undefined4 param_1)
 }
 
 /* ===== FUN_00414420 @ 0x00414420 ===== */
+/* PS2 candidate: point_in_tri (conf 0.546) */
+
+
+
 uint FUN_00414420(int param_1,float *param_2,int param_3,int param_4,int param_5)
 
 
@@ -3080,6 +3088,10 @@ LAB_0041447d:
 }
 
 /* ===== FUN_00414680 @ 0x00414680 ===== */
+/* PS2 candidate: GetCurrentPos__C11CByteStream_3 (conf 0.518) */
+
+
+
 float10 FUN_00414680(int param_1)
 
 
@@ -3114,6 +3126,10 @@ void FUN_00414690(undefined4 param_1,int param_2)
 }
 
 /* ===== FUN_004146c0 @ 0x004146C0 ===== */
+/* PS2 candidate: collide_find_ground_hit (conf 0.676) */
+
+
+
 void FUN_004146c0(float param_1,float *param_2)
 
 
@@ -3227,6 +3243,10 @@ void FUN_004146c0(float param_1,float *param_2)
 }
 
 /* ===== FUN_00414840 @ 0x00414840 ===== */
+/* PS2 candidate: setMenuSelection__7PS2Gameiiii_2 (conf 0.613) */
+
+
+
 void FUN_00414840(int param_1)
 
 
@@ -3700,13 +3720,13 @@ undefined4 FUN_00414d40(int param_1,int param_2)
 
   iVar8 = FUN_0042b1d0(param_2);
 
-  FUN_0042b010(iVar8);
+  AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(iVar8);
 
   main_animate_00404b60(param_2,0xffffffff);
 
-  FUN_0042b030();
+  Audio3DTestToneUpdate__Fv_3();
 
-  FUN_00516f30(param_2,local_24);
+  xform_p3d_world_mat(param_2,local_24);
 
   iVar8 = *(int *)(*(int *)(param_2 + 8) + 0x400 + iVar8 * 4);
 
@@ -3748,13 +3768,13 @@ undefined4 FUN_00414d40(int param_1,int param_2)
 
         iVar8 = param_2 + 0xa0;
 
-        FUN_00517080(local_24,iVar8,iVar9 + (uint)*(ushort *)(iVar10 + local_58 * 2) * 0xc,&local_74
+        xform_p3d_mat33(local_24,iVar8,iVar9 + (uint)*(ushort *)(iVar10 + local_58 * 2) * 0xc,
 
-                    );
+                        &local_74);
 
-        FUN_00517080(local_24,iVar8,iVar9 + (uint)uVar2 * 0xc,&local_30);
+        xform_p3d_mat33(local_24,iVar8,iVar9 + (uint)uVar2 * 0xc,&local_30);
 
-        FUN_00517080(local_24,iVar8,iVar9 + (uint)uVar3 * 0xc,&local_3c);
+        xform_p3d_mat33(local_24,iVar8,iVar9 + (uint)uVar3 * 0xc,&local_3c);
 
         local_98 = local_38 - local_70;
 
@@ -4710,7 +4730,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
         (local_40 = iVar7, iVar5 = FUN_0049a3c0(&local_58,iVar7 + 0x27c), iVar5 != 0)))) {
 
-      FUN_00516f30(iVar7,local_24);
+      xform_p3d_world_mat(iVar7,local_24);
 
       iVar5 = FUN_0042b1d0(iVar7);
 
@@ -4750,13 +4770,13 @@ void FUN_00415d80(float *param_1,float *param_2)
 
                 local_a0 = (float)(iVar5 + (uint)*(ushort *)(iVar7 + local_7c * 2) * 0xc);
 
-                FUN_00517080(local_24,iVar6,iVar5 + (uint)*(ushort *)(iVar7 + local_70 * 2) * 0xc,
+                xform_p3d_mat33(local_24,iVar6,iVar5 + (uint)*(ushort *)(iVar7 + local_70 * 2) * 0xc
 
-                             &local_8c);
+                                ,&local_8c);
 
-                FUN_00517080(local_24,iVar6,iVar5 + (uint)uVar1 * 0xc,&local_3c);
+                xform_p3d_mat33(local_24,iVar6,iVar5 + (uint)uVar1 * 0xc,&local_3c);
 
-                FUN_00517080(local_24,iVar6,local_a0,&local_30);
+                xform_p3d_mat33(local_24,iVar6,local_a0,&local_30);
 
                 local_a0 = local_2c - local_88;
 
@@ -4946,9 +4966,9 @@ void FUN_004162c0(int param_1)
 
   DAT_00633020 = 0;
 
-  DAT_0065755c = FUN_005160a0();
+  DAT_0065755c = AudioGetMasterVolume__Fv_8();
 
-  iVar1 = FUN_005160a0();
+  iVar1 = AudioGetMasterVolume__Fv_8();
 
   if (7 < iVar1) {
 
@@ -5599,6 +5619,10 @@ void FUN_004177f0(undefined4 param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00417830 @ 0x00417830 ===== */
+/* PS2 candidate: base_get_smartie_building (conf 0.775) */
+
+
+
 undefined4 FUN_00417830(int param_1)
 
 
@@ -5627,8 +5651,8 @@ undefined4 FUN_00417830(int param_1)
 
 }
 
-/* ===== FUN_00417860 @ 0x00417860 ===== */
-undefined4 FUN_00417860(int param_1)
+/* ===== NAM_DictionaryGetTotalNames @ 0x00417860 ===== */
+undefined4 NAM_DictionaryGetTotalNames(int param_1)
 
 
 
@@ -6511,8 +6535,8 @@ LAB_004183f6:
 
 }
 
-/* ===== FUN_00418460 @ 0x00418460 ===== */
-bool FUN_00418460(int param_1)
+/* ===== lzo_assert @ 0x00418460 ===== */
+bool lzo_assert(int param_1)
 
 
 
@@ -6523,6 +6547,10 @@ bool FUN_00418460(int param_1)
 }
 
 /* ===== FUN_00418470 @ 0x00418470 ===== */
+/* PS2 candidate: base_bldg_is_alive_at_all (conf 0.622) */
+
+
+
 bool FUN_00418470(int param_1,int param_2)
 
 
@@ -6546,6 +6574,10 @@ bool FUN_00418470(int param_1,int param_2)
 }
 
 /* ===== FUN_004184a0 @ 0x004184A0 ===== */
+/* PS2 candidate: base_bldg_is_alive_at_all_2 (conf 0.622) */
+
+
+
 bool FUN_004184a0(int param_1,int param_2)
 
 
@@ -7127,6 +7159,10 @@ int FUN_00418950(int param_1)
 }
 
 /* ===== FUN_004189e0 @ 0x004189E0 ===== */
+/* PS2 candidate: base_which_team (conf 0.649) */
+
+
+
 int FUN_004189e0(int param_1)
 
 
@@ -7600,8 +7636,8 @@ void FUN_0041a0d0(undefined4 param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0041a110 @ 0x0041A110 ===== */
-void FUN_0041a110(undefined4 param_1)
+/* ===== kabutoai_select_punch_anim__FP6OBJECT @ 0x0041A110 ===== */
+void kabutoai_select_punch_anim__FP6OBJECT(undefined4 param_1)
 
 
 
@@ -7772,8 +7808,8 @@ void FUN_0041a260(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_0041a2b0 @ 0x0041A2B0 ===== */
-void FUN_0041a2b0(int param_1,int param_2)
+/* ===== base_giftshop_exit @ 0x0041A2B0 ===== */
+void base_giftshop_exit(int param_1,int param_2)
 
 
 
@@ -7857,8 +7893,8 @@ void FUN_0041a340(undefined4 param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0041a3a0 @ 0x0041A3A0 ===== */
-void FUN_0041a3a0(undefined4 param_1,int param_2)
+/* ===== base_partyhouse_exit @ 0x0041A3A0 ===== */
+void base_partyhouse_exit(undefined4 param_1,int param_2)
 
 
 
@@ -9016,7 +9052,7 @@ void FUN_0041b390(int param_1,int param_2)
 
     FUN_00499280(param_1);
 
-    FUN_004d8420();
+    endDisplay__Fv_2();
 
   }
 
@@ -10154,13 +10190,13 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
       if (iVar4 == 0) {
 
-        pcVar5 = (char *)base_get_required_smarties__FP6OBJECTi(p0,iVar2);
+        pcVar5 = (char *)AudioGetSampleName__Fi_2(p0,iVar2);
 
       }
 
       else {
 
-        pcVar5 = (char *)FUN_00407c30();
+        pcVar5 = (char *)AudioGetSampleName__Fi();
 
       }
 
@@ -11562,6 +11598,8 @@ void FUN_0041ee70(int param_1)
 /* ===== FUN_0041f0f0 @ 0x0041F0F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* PS2 candidate: AddHud__4cHudP8cHudIcon_7 (conf 0.82) */
+
 
 
 void FUN_0041f0f0(undefined4 param_1)
@@ -11579,6 +11617,10 @@ void FUN_0041f0f0(undefined4 param_1)
 }
 
 /* ===== FUN_0041f100 @ 0x0041F100 ===== */
+/* PS2 candidate: ANM_DumpCluster_11 (conf 0.658) */
+
+
+
 void FUN_0041f100(int param_1,int param_2)
 
 
@@ -11734,7 +11776,7 @@ void FUN_0041f120(void)
 
   }
 
-  iVar5 = FUN_00426ed0();
+  iVar5 = dialog_level_is_base();
 
   if (iVar5 != 0) {
 
@@ -11742,7 +11784,7 @@ void FUN_0041f120(void)
 
        (((DAT_005dd0e4 >> 0x16 & 1) != 0 || ((DAT_005dd0e4 >> 10 & 1) != 0)))) {
 
-      iVar5 = FUN_005160a0();
+      iVar5 = AudioGetMasterVolume__Fv_8();
 
       FUN_00515f60(iVar5 + -1);
 
@@ -11752,7 +11794,7 @@ void FUN_0041f120(void)
 
        (((DAT_005dd0e4 >> 0x16 & 1) != 0 || ((DAT_005dd0e4 >> 10 & 1) != 0)))) {
 
-      iVar5 = FUN_005160a0();
+      iVar5 = AudioGetMasterVolume__Fv_8();
 
       FUN_00515f60(iVar5 + 1);
 
@@ -11902,7 +11944,7 @@ LAB_0041f398:
 
     do {
 
-      iVar6 = FUN_00426ed0();
+      iVar6 = dialog_level_is_base();
 
       bVar7 = (byte)iVar8;
 
@@ -11964,7 +12006,7 @@ LAB_0041f57d:
 
   do {
 
-    iVar6 = FUN_00426ed0();
+    iVar6 = dialog_level_is_base();
 
     if ((iVar6 != 0) ||
 
@@ -12092,7 +12134,7 @@ LAB_0041f715:
 
   }
 
-  iVar5 = FUN_00426ed0();
+  iVar5 = dialog_level_is_base();
 
   if (iVar5 == 0) {
 

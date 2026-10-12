@@ -123,7 +123,7 @@ LAB_00480200:
 
   *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x800000;
 
-  FUN_004041f0(param_1,0x1d);
+  ANM_DumpCluster(param_1,0x1d);
 
   iVar2 = FUN_0052e4a0(param_1);
 
@@ -210,7 +210,7 @@ LAB_00480357:
 
   *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xff7fffff;
 
-  FUN_004041f0(param_1,0x1d);
+  ANM_DumpCluster(param_1,0x1d);
 
   iVar3 = FUN_0052e4a0(param_1);
 
@@ -796,7 +796,7 @@ void FUN_00480a60(int param_1)
 
   }
 
-  FUN_004041f0(param_1,1);
+  ANM_DumpCluster(param_1,1);
 
   if (*(int *)(iVar1 + 0x1fc) != 0) {
 
@@ -812,7 +812,7 @@ void FUN_00480a60(int param_1)
 
   }
 
-  FUN_004041f0(param_1,10);
+  ANM_DumpCluster(param_1,10);
 
   if (*(int *)(iVar1 + 0x1e4) != 0) {
 
@@ -820,7 +820,7 @@ void FUN_00480a60(int param_1)
 
   }
 
-  FUN_004041f0(param_1,2);
+  ANM_DumpCluster(param_1,2);
 
   if (*(int *)(iVar1 + 0x1e0) != 0) {
 
@@ -850,7 +850,7 @@ void FUN_00480a60(int param_1)
 
   }
 
-  FUN_004041f0(param_1,0x1d);
+  ANM_DumpCluster(param_1,0x1d);
 
   return;
 
@@ -2110,7 +2110,7 @@ void FUN_004824E0(void)
 
     }
 
-    iVar2 = FUN_0051c7a0();
+    iVar2 = dialog_level_is_base_5();
 
     if (iVar2 != 0) {
 
@@ -2118,7 +2118,7 @@ void FUN_004824E0(void)
 
     }
 
-    iVar2 = FUN_0051c5e0();
+    iVar2 = dialog_level_is_base_2();
 
     if (iVar2 != 0) {
 
@@ -2126,7 +2126,7 @@ void FUN_004824E0(void)
 
     }
 
-    iVar2 = FUN_0051c650();
+    iVar2 = dialog_level_is_base_3();
 
     if (iVar2 != 0) {
 
@@ -2134,7 +2134,7 @@ void FUN_004824E0(void)
 
     }
 
-    iVar2 = FUN_0051c740();
+    iVar2 = dialog_level_is_base_4();
 
     if (iVar2 != 0) {
 
@@ -2142,7 +2142,7 @@ void FUN_004824E0(void)
 
     }
 
-    iVar2 = FUN_0051c7d0();
+    iVar2 = dialog_level_is_base_6();
 
     if (iVar2 != 0) {
 
@@ -2150,7 +2150,7 @@ void FUN_004824E0(void)
 
     }
 
-    iVar2 = FUN_0051c8c0();
+    iVar2 = dialog_level_is_base_7();
 
     if (iVar2 != 0) {
 
@@ -2458,7 +2458,7 @@ void FUN_004829d0(void)
 
     if (DAT_0059eeb0 == 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
       FUN_0040d820();
 
@@ -2506,7 +2506,7 @@ void FUN_004829d0(void)
 
       }
 
-      FUN_004041f0();
+      ANM_DumpCluster();
 
       FUN_00518f20();
 
@@ -2603,9 +2603,7 @@ void FUN_00482B60(void)
 
     if ((DAT_006330e4 == 0) ||
 
-       (iVar1 = FUN_0053A860(s_intro_island_0055be84,*(undefined4 *)(DAT_006330e4 + 4)), iVar1 == 0)
-
-       ) {
+       (iVar1 = match(s_intro_island_0055be84,*(undefined4 *)(DAT_006330e4 + 4)), iVar1 == 0)) {
 
       DAT_0059eeb0 = 0;
 
@@ -2677,7 +2675,7 @@ void FUN_00482B60(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    FUN_0040d7b0(DAT_0059ee98,0);
+    camera_override_refpt(DAT_0059ee98,0);
 
     FUN_00423af0();
 
@@ -2725,7 +2723,7 @@ void FUN_00482B60(void)
 
     }
 
-    iVar3 = Main_fx_00447190();
+    iVar3 = dialog_level_is_base_8();
 
     if (iVar3 != 0) {
 
@@ -3571,9 +3569,7 @@ void FUN_00483BA0(void)
 
     if ((DAT_006330e4 == 0) ||
 
-       (iVar1 = FUN_0053A860(s_intro_island_0055be84,*(undefined4 *)(DAT_006330e4 + 4)), iVar1 == 0)
-
-       ) {
+       (iVar1 = match(s_intro_island_0055be84,*(undefined4 *)(DAT_006330e4 + 4)), iVar1 == 0)) {
 
       DAT_0059eeb0 = 0;
 
@@ -3633,7 +3629,7 @@ void FUN_00483BA0(void)
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-  FUN_0040d7b0(DAT_0059ee98,0);
+  camera_override_refpt(DAT_0059ee98,0);
 
   iVar1 = 6;
 
@@ -3667,7 +3663,7 @@ void FUN_00483BA0(void)
 
   }
 
-  iVar2 = Main_fx_00447190();
+  iVar2 = dialog_level_is_base_8();
 
   if (iVar2 != 0) {
 
@@ -3693,7 +3689,7 @@ void FUN_00483BA0(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_0053A860(local_20,&DAT_0063304c);
+      iVar2 = match(local_20,&DAT_0063304c);
 
       if (iVar2 != 0) {
 
@@ -4295,7 +4291,7 @@ void FUN_00484870(void)
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-  FUN_0040d7b0(DAT_0059ee98,0);
+  camera_override_refpt(DAT_0059ee98,0);
 
   local_4 = 0;
 
@@ -4363,7 +4359,7 @@ void FUN_00484870(void)
 
   }
 
-  iVar4 = Main_fx_00447190();
+  iVar4 = dialog_level_is_base_8();
 
   if (iVar4 != 0) {
 
@@ -4403,7 +4399,7 @@ void FUN_00484870(void)
 
           }
 
-          iVar3 = FUN_0053A860(&DAT_00633070,*(undefined4 *)(iVar1 + 4));
+          iVar3 = match(&DAT_00633070,*(undefined4 *)(iVar1 + 4));
 
           iVar1 = iVar5;
 
@@ -4628,7 +4624,7 @@ void FUN_00484b00(void)
 
               DAT_0059eedc = 0;
 
-              FUN_004576d0(DAT_00632d20);
+              AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
               FUN_004576e0();
 
@@ -4798,7 +4794,7 @@ void FUN_004850F0(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    FUN_0040d7b0(DAT_0059ee98,0);
+    camera_override_refpt(DAT_0059ee98,0);
 
     DAT_00632c0c = 1;
 
@@ -4830,7 +4826,7 @@ void FUN_004850F0(void)
 
     }
 
-    iVar2 = Main_fx_00447190();
+    iVar2 = dialog_level_is_base_8();
 
     if (iVar2 != 0) {
 
@@ -5178,7 +5174,7 @@ void FUN_00485840(void)
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-  FUN_0040d7b0(DAT_0059ee98,0);
+  camera_override_refpt(DAT_0059ee98,0);
 
   iVar4 = 0;
 
@@ -5240,7 +5236,7 @@ void FUN_00485840(void)
 
   }
 
-  iVar2 = Main_fx_00447190();
+  iVar2 = dialog_level_is_base_8();
 
   if (iVar2 != 0) {
 
@@ -5280,7 +5276,7 @@ void FUN_00485840(void)
 
           }
 
-          iVar3 = FUN_0053A860(&DAT_00632ee8,*(undefined4 *)(iVar2 + 4));
+          iVar3 = match(&DAT_00632ee8,*(undefined4 *)(iVar2 + 4));
 
           iVar2 = iVar1;
 
@@ -5560,7 +5556,7 @@ void FUN_00485F10(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    FUN_0040d7b0(DAT_0059ee98,0);
+    camera_override_refpt(DAT_0059ee98,0);
 
     DAT_00632c0c = 1;
 
@@ -5592,7 +5588,7 @@ void FUN_00485F10(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -5816,7 +5812,7 @@ void FUN_004862E0(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -5850,7 +5846,7 @@ void FUN_004862E0(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -6038,7 +6034,7 @@ void FUN_00486FC0(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -6072,7 +6068,7 @@ void FUN_00486FC0(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -6183,7 +6179,7 @@ void FUN_00487B70(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -6217,7 +6213,7 @@ void FUN_00487B70(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -6308,7 +6304,7 @@ void FUN_00488740(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    FUN_0040d7b0(DAT_0059ee98,0);
+    camera_override_refpt(DAT_0059ee98,0);
 
     DAT_00632c0c = 1;
 
@@ -6340,7 +6336,7 @@ void FUN_00488740(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -6574,7 +6570,7 @@ void FUN_00488A80(void)
 
           *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-          FUN_0040d7b0(DAT_0059ee98,0);
+          camera_override_refpt(DAT_0059ee98,0);
 
           iVar1 = DAT_0059e28c + 1;
 
@@ -6608,7 +6604,7 @@ void FUN_00488A80(void)
 
           }
 
-          iVar2 = Main_fx_00447190();
+          iVar2 = dialog_level_is_base_8();
 
           if (iVar2 != 0) {
 
@@ -6874,7 +6870,7 @@ void FUN_00489120(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -6960,7 +6956,7 @@ void FUN_00489120(void)
 
       DAT_0059eee4 = 0;
 
-      FUN_004576d0(DAT_00632d20);
+      AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
       FUN_004576e0();
 
@@ -7058,7 +7054,7 @@ void FUN_00489120(void)
 
       DAT_0059eee4 = 1;
 
-      FUN_004576d0(DAT_00632d20);
+      AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
       FUN_004576e0();
 
@@ -7098,7 +7094,7 @@ void FUN_00489120(void)
 
     }
 
-    iVar2 = Main_fx_00447190();
+    iVar2 = dialog_level_is_base_8();
 
     if (iVar2 != 0) {
 
@@ -7227,7 +7223,7 @@ int texture_add_file(int *param_1)
 
     FUN_0051e680(&DAT_00657400);
 
-    FUN_005179d0(iVar2);
+    ANM_BinderDestroy_2(iVar2);
 
     return 0;
 
@@ -7235,7 +7231,7 @@ int texture_add_file(int *param_1)
 
   FUN_005178d0(iVar2,local_11c,0x1c);
 
-  FUN_00517930(iVar2,local_108);
+  sceSifLoadElf(iVar2,local_108);
 
   FUN_005178d0(iVar2,&local_12c,4);
 
@@ -7305,7 +7301,7 @@ int texture_add_file(int *param_1)
 
   }
 
-  FUN_005179d0(iVar2);
+  ANM_BinderDestroy_2(iVar2);
 
   if (0x12 < local_130) {
 
@@ -7550,7 +7546,7 @@ LAB_00489916:
 
     DAT_0059eee4 = 1;
 
-    FUN_004576d0(DAT_00632d20);
+    AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
     FUN_004576e0();
 
@@ -7654,7 +7650,7 @@ LAB_00489916:
 
   DAT_0059eee4 = 1;
 
-  FUN_004576d0(DAT_00632d20);
+  AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
   FUN_004576e0();
 
@@ -7705,7 +7701,7 @@ void FUN_00489ca0(void)
 
     FUN_00492430(DAT_00632d20,DAT_006329d8);
 
-    FUN_004909d0(DAT_006329d8);
+    scenerio_start_index__Fi(DAT_006329d8);
 
     FUN_00491d30(*(undefined4 *)(DAT_00632a88 + 4));
 
@@ -7784,7 +7780,7 @@ void FUN_00489D40(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -7818,7 +7814,7 @@ void FUN_00489D40(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -8152,7 +8148,7 @@ void FUN_0048A7D0(void)
 
   if (iVar1 != 0) {
 
-    FUN_0040d7b0(DAT_0059ee98,0);
+    camera_override_refpt(DAT_0059ee98,0);
 
   }
 
@@ -8186,7 +8182,7 @@ void FUN_0048A7D0(void)
 
   }
 
-  iVar1 = Main_fx_00447190();
+  iVar1 = dialog_level_is_base_8();
 
   if (iVar1 != 0) {
 
@@ -9773,7 +9769,7 @@ void FUN_0048C830(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -9807,7 +9803,7 @@ void FUN_0048C830(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -9878,7 +9874,7 @@ void FUN_0048CA10(void)
 
   case 2:
 
-    iVar3 = FUN_0051c7d0();
+    iVar3 = dialog_level_is_base_6();
 
     FUN_0051c7b0(iVar3 == 0);
 
@@ -9886,7 +9882,7 @@ void FUN_0048CA10(void)
 
   case 3:
 
-    iVar3 = FUN_0051c740();
+    iVar3 = dialog_level_is_base_4();
 
     FUN_0051c700(iVar3 == 0);
 
@@ -9930,7 +9926,7 @@ void FUN_0048CA10(void)
 
   case 6:
 
-    iVar3 = FUN_0051c8c0();
+    iVar3 = dialog_level_is_base_7();
 
     FUN_0051c8a0(iVar3 == 0);
 
@@ -9938,7 +9934,7 @@ void FUN_0048CA10(void)
 
   case 7:
 
-    iVar3 = FUN_0051c7a0();
+    iVar3 = dialog_level_is_base_5();
 
     FUN_0051c770(iVar3 == 0);
 
@@ -9946,7 +9942,7 @@ void FUN_0048CA10(void)
 
   case 8:
 
-    iVar3 = FUN_0051c5e0();
+    iVar3 = dialog_level_is_base_2();
 
     FUN_0051c590(iVar3 == 0);
 
@@ -9954,7 +9950,7 @@ void FUN_0048CA10(void)
 
   case 9:
 
-    iVar3 = FUN_0051c650();
+    iVar3 = dialog_level_is_base_3();
 
     FUN_0051c610(iVar3 == 0);
 
@@ -10183,7 +10179,7 @@ void FUN_0048D4B0(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -10217,7 +10213,7 @@ void FUN_0048D4B0(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -10453,7 +10449,7 @@ void FUN_0048DE30(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -10487,7 +10483,7 @@ void FUN_0048DE30(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -10967,7 +10963,7 @@ void FUN_0048E430(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -11001,7 +10997,7 @@ void FUN_0048E430(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -11469,7 +11465,7 @@ void FUN_0048EA50(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -11503,7 +11499,7 @@ void FUN_0048EA50(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -11634,7 +11630,7 @@ void FUN_0048EC30(void)
 
     }
 
-    FUN_0051e670();
+    Audio3DTestToneUpdate__Fv_4();
 
   }
 
@@ -11733,7 +11729,7 @@ void FUN_0048EE60(void)
 
     if (iVar1 != 0) {
 
-      FUN_0040d7b0(DAT_0059ee98,0);
+      camera_override_refpt(DAT_0059ee98,0);
 
     }
 
@@ -11767,7 +11763,7 @@ void FUN_0048EE60(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -12078,7 +12074,7 @@ void FUN_0048F460(void)
 
     FUN_0048f310();
 
-    FUN_0040d7b0(DAT_0059ee98,0);
+    camera_override_refpt(DAT_0059ee98,0);
 
     DAT_00632c0c = 1;
 
@@ -12110,7 +12106,7 @@ void FUN_0048F460(void)
 
     }
 
-    iVar1 = Main_fx_00447190();
+    iVar1 = dialog_level_is_base_8();
 
     if (iVar1 != 0) {
 
@@ -12337,7 +12333,7 @@ LAB_0048f768:
 
   DAT_006331f8 = 0;
 
-  FUN_004909d0(iVar9);
+  scenerio_start_index__Fi(iVar9);
 
   DAT_006331f8 = uVar3;
 

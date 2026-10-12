@@ -596,7 +596,7 @@ LAB_004a0393:
 
           else if (bVar21) {
 
-            main_path_004a0b00(puVar13,&param_6);
+            ObjectTransformIntegrity_2(puVar13,&param_6);
 
           }
 

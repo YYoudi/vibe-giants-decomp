@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (13 named) — decompiled, names from PS2 symbols
+ * 87 functions (17 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -444,6 +444,10 @@ void FUN_00500490(int *param_1)
 }
 
 /* ===== FUN_005007f0 @ 0x005007F0 ===== */
+/* PS2 candidate: ButtonFakeValue__FPii (conf 0.7) */
+
+
+
 void FUN_005007f0(undefined4 *param_1,undefined4 *param_2)
 
 
@@ -739,7 +743,7 @@ void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
 
   FUN_004a7440(param_2);
 
-  FUN_0042b160(param_2);
+  BinFileCreateWrite_2(param_2);
 
   if (*(int *)(param_2 + 8) != 0) {
 
@@ -765,7 +769,7 @@ void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
 
           object_lock_logic(iVar6);
 
-          FUN_0042b160(iVar6);
+          BinFileCreateWrite_2(iVar6);
 
           if (*(int *)(iVar6 + 8) != 0) {
 
@@ -1114,12 +1118,12 @@ LAB_00500f01:
 
 }
 
-/* ===== FUN_00500f40 @ 0x00500F40 ===== */
+/* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5 @ 0x00500F40 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00500f40(undefined4 param_1)
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5(undefined4 param_1)
 
 
 
@@ -1133,6 +1137,8 @@ void FUN_00500f40(undefined4 param_1)
 
 /* ===== FUN_00500f50 @ 0x00500F50 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+/* PS2 candidate: ANM_DumpCluster_12 (conf 0.537) */
 
 
 
@@ -2825,6 +2831,10 @@ LAB_0050203c:
 }
 
 /* ===== FUN_005025d0 @ 0x005025D0 ===== */
+/* PS2 candidate: teammecc_leader_calc (conf 0.528) */
+
+
+
 void FUN_005025d0(int param_1)
 
 
@@ -4214,13 +4224,13 @@ void FUN_00503970(int param_1,int param_2)
 
       (local_4 - *(float *)(iVar2 + 0xa8) <= 5.0)))) {
 
-    FUN_00401f80(iVar2,&local_c,local_18);
+    ai_fly_update_goal_2(iVar2,&local_c,local_18);
 
   }
 
   else {
 
-    FUN_004019c0(iVar2,&local_c,local_18);
+    ai_fly_update_goal(iVar2,&local_c,local_18);
 
   }
 
@@ -4776,8 +4786,8 @@ void FUN_00504230(int param_1)
 
 }
 
-/* ===== FUN_00504930 @ 0x00504930 ===== */
-void FUN_00504930(int param_1)
+/* ===== teammecc_clear_mode @ 0x00504930 ===== */
+void teammecc_clear_mode(int param_1)
 
 
 
@@ -4952,7 +4962,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
       piVar4[0xb] = 0;
 
-      iVar8 = FUN_00536ca0();
+      iVar8 = AudioGetMasterVolume__Fv_11();
 
       if (piVar4[0xb] != 0) {
 
@@ -6355,7 +6365,7 @@ void mecc_animselect_gm(int param_1,int param_2)
 
   local_40 = iVar7;
 
-  uVar13 = FUN_004581e0(param_1);
+  uVar13 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
   local_38 = FUN_004a8f90(iVar7);
 
@@ -8567,7 +8577,7 @@ LAB_00507665:
 
       *(undefined4 *)(iVar7 + 0x1a8) = 0;
 
-      FUN_004041f0(param_1,9);
+      ANM_DumpCluster(param_1,9);
 
       goto LAB_0050768d;
 
@@ -8595,7 +8605,7 @@ LAB_00507665:
 
     *(undefined4 *)(iVar7 + 0x1a8) = uVar13;
 
-    FUN_004041f0(param_1,9,pcVar21,uVar22,puVar23);
+    ANM_DumpCluster(param_1,9,pcVar21,uVar22,puVar23);
 
   }
 
@@ -8880,8 +8890,8 @@ undefined * TextGetPtrQ(undefined1 *param_1)
 
 }
 
-/* ===== main/texture_00507e40 @ 0x00507E40 ===== */
-void main_texture_00507e40(void)
+/* ===== endDisplay__Fv_3 @ 0x00507E40 ===== */
+void endDisplay__Fv_3(void)
 
 
 
@@ -8896,6 +8906,10 @@ void main_texture_00507e40(void)
 }
 
 /* ===== main/texture_00507f80 @ 0x00507F80 ===== */
+/* PS2 candidate: texture_set_global (conf 0.636) */
+
+
+
 void main_texture_00507f80(void)
 
 
@@ -9008,6 +9022,10 @@ void main_texture_00508860(void)
 }
 
 /* ===== FUN_00508fa0 @ 0x00508FA0 ===== */
+/* PS2 candidate: objspec_has_shot_function_3 (conf 0.554) */
+
+
+
 undefined4 FUN_00508fa0(int param_1)
 
 
@@ -9558,8 +9576,8 @@ void FUN_005095e0(int param_1,int param_2,float param_3)
 
 }
 
-/* ===== FUN_00509b80 @ 0x00509B80 ===== */
-void FUN_00509b80(int param_1)
+/* ===== tracer_add_ref @ 0x00509B80 ===== */
+void tracer_add_ref(int param_1)
 
 
 
@@ -9571,8 +9589,8 @@ void FUN_00509b80(int param_1)
 
 }
 
-/* ===== main/tracer_00509dc0 @ 0x00509DC0 ===== */
-void main_tracer_00509dc0(int param_1,undefined4 param_2)
+/* ===== MAP_MemGroupSetBase_3 @ 0x00509DC0 ===== */
+void MAP_MemGroupSetBase_3(int param_1,undefined4 param_2)
 
 
 
@@ -9812,9 +9830,9 @@ void main_tracer_00509f10
 
   (**(code **)(DAT_0065642c + 8))();
 
-  FUN_00516bf0(param_4,&fStack_ec);
+  xform_view(param_4,&fStack_ec);
 
-  FUN_00516bf0(param_5,&fStack_f8);
+  xform_view(param_5,&fStack_f8);
 
   fVar1 = fStack_e8 - fStack_f4;
 
@@ -10064,6 +10082,10 @@ float10 FUN_0050a490(float *param_1,float *param_2)
 }
 
 /* ===== FUN_0050a4f0 @ 0x0050A4F0 ===== */
+/* PS2 candidate: GetGiantsMemCard__Fv (conf 0.563) */
+
+
+
 float10 FUN_0050a4f0(void)
 
 
@@ -10190,6 +10212,10 @@ void FUN_0050a610(void)
 }
 
 /* ===== FUN_0050a640 @ 0x0050A640 ===== */
+/* PS2 candidate: tri_to_plane__FP3P3DN20P7PLANE3D (conf 0.55) */
+
+
+
 void FUN_0050a640(float *param_1,float *param_2,float *param_3,float *param_4)
 
 
@@ -10609,6 +10635,8 @@ LAB_0050aac5:
 /* ===== FUN_0050ac00 @ 0x0050AC00 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* PS2 candidate: matrix_mult__FPfN20 (conf 0.63) */
+
 
 
 void FUN_0050ac00(float *param_1,float *param_2,undefined4 *param_3)
@@ -10794,8 +10822,8 @@ void FUN_0050ae40(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_0050ae80 @ 0x0050AE80 ===== */
-undefined4 FUN_0050ae80(int param_1)
+/* ===== NAM_DictionaryGetTotalNames_2 @ 0x0050AE80 ===== */
+undefined4 NAM_DictionaryGetTotalNames_2(int param_1)
 
 
 
@@ -11320,6 +11348,10 @@ void FUN_0050c3c0(int param_1)
 }
 
 /* ===== FUN_0050c950 @ 0x0050C950 ===== */
+/* PS2 candidate: turret_count_portables (conf 0.681) */
+
+
+
 void FUN_0050c950(int *param_1,int *param_2,int param_3)
 
 
@@ -11359,6 +11391,10 @@ void FUN_0050c950(int *param_1,int *param_2,int param_3)
 }
 
 /* ===== FUN_0050c9e0 @ 0x0050C9E0 ===== */
+/* PS2 candidate: ANM_BinderDestroy_4 (conf 0.601) */
+
+
+
 void FUN_0050c9e0(undefined4 param_1)
 
 
@@ -12058,7 +12094,7 @@ switchD_0050ca70_caseD_15:
 
     *(undefined1 **)((int)param_1 + 0x16c) = &LAB_0050f430;
 
-    FUN_00401fc0(param_1,*(float *)((int)pfVar1[1] + 0xa8) + pfVar1[5],pfVar3);
+    ai_fly_update_goal_3(param_1,*(float *)((int)pfVar1[1] + 0xa8) + pfVar1[5],pfVar3);
 
     local_10 = (float *)(*(float *)((int)pfVar1[1] + 0xa8) + pfVar1[5]);
 
@@ -13000,7 +13036,7 @@ LAB_0050e133:
 
        ((*(uint *)((int)param_1 + 0xd8) & 0x80000) != 0)) {
 
-      FUN_004041f0(param_1);
+      ANM_DumpCluster(param_1);
 
       FUN_00497510(param_1);
 

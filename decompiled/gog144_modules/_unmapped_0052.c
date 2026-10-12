@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (1 named) — decompiled, names from PS2 symbols
+ * 162 functions (5 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -138,7 +138,7 @@ LAB_005200bb:
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-  FUN_0040d7b0(DAT_0059ee98,0);
+  camera_override_refpt(DAT_0059ee98,0);
 
   FUN_00426F40(&LAB_005207c0,&LAB_00520480);
 
@@ -2024,6 +2024,10 @@ void FUN_00522020(int param_1)
 }
 
 /* ===== FUN_00522130 @ 0x00522130 ===== */
+/* PS2 candidate: kbos_food_value__Fi (conf 0.7) */
+
+
+
 float10 FUN_00522130(int param_1)
 
 
@@ -3240,7 +3244,7 @@ void FUN_005233F0(void)
 
   
 
-  uVar3 = FUN_00539000(s_English_0057e354);
+  uVar3 = __default_unexpected__Fv(s_English_0057e354);
 
   iVar4 = FUN_00545650(uVar3);
 
@@ -4340,7 +4344,7 @@ LAB_00523950:
 
                 (s_MP_screen_0057e074,&DAT_005ddf4c,&DAT_005ddf50,&DAT_005ddf54,&DAT_005ddf58);
 
-      main_dlog_00427300(DAT_005def8c,0);
+      MAP_MemGroupSetBase_2(DAT_005def8c,0);
 
       if (DAT_00632f44 != 0) {
 
@@ -4388,7 +4392,7 @@ LAB_00523950:
 
                           );
 
-        main_dlog_00427300(DAT_005def8c,1);
+        MAP_MemGroupSetBase_2(DAT_005def8c,1);
 
       }
 
@@ -4639,7 +4643,7 @@ void FUN_00524de0(void)
 
   FUN_004ff470();
 
-  FUN_004270f0();
+  Audio3DTestToneUpdate__Fv();
 
   if (DAT_006330e4 != 0) {
 
@@ -4671,12 +4675,12 @@ void FUN_00524de0(void)
 
 }
 
-/* ===== FUN_00525030 @ 0x00525030 ===== */
+/* ===== Audio3DTestToneUpdate__Fv_6 @ 0x00525030 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00525030(void)
+void Audio3DTestToneUpdate__Fv_6(void)
 
 
 
@@ -7350,8 +7354,8 @@ LAB_0052aab8:
 
 }
 
-/* ===== FUN_0052aad0 @ 0x0052AAD0 ===== */
-undefined4 FUN_0052aad0(void)
+/* ===== AudioGetMasterVolume__Fv_9 @ 0x0052AAD0 ===== */
+undefined4 AudioGetMasterVolume__Fv_9(void)
 
 
 
@@ -7378,8 +7382,8 @@ void FUN_0052aae0(int param_1)
 
 }
 
-/* ===== FUN_0052aaf0 @ 0x0052AAF0 ===== */
-undefined4 FUN_0052aaf0(void)
+/* ===== AudioGetMasterVolume__Fv_10 @ 0x0052AAF0 ===== */
+undefined4 AudioGetMasterVolume__Fv_10(void)
 
 
 
@@ -7457,6 +7461,10 @@ undefined1 FUN_0052ab50(int param_1)
 }
 
 /* ===== FUN_0052ab70 @ 0x0052AB70 ===== */
+/* PS2 candidate: ObjectGetWorldRefPoint__FP3P3DiP6OBJECT_2 (conf 0.675) */
+
+
+
 void FUN_0052ab70(int param_1,undefined1 param_2)
 
 
@@ -7616,6 +7624,10 @@ undefined1 FUN_0052aca0(int param_1)
 }
 
 /* ===== FUN_0052adc0 @ 0x0052ADC0 ===== */
+/* PS2 candidate: ObjectGetWorldRefPoint__FP3P3DiP6OBJECT_3 (conf 0.643) */
+
+
+
 void FUN_0052adc0(int param_1,char *param_2)
 
 
@@ -7957,7 +7969,7 @@ void FUN_0052B020(void)
 
           if ((DAT_00633240 != 0) &&
 
-             (iVar2 = FUN_00543a11(s_chatlog_txt_0055e874,&DAT_00556384), iVar2 != 0)) {
+             (iVar2 = BinFileSeek_2(s_chatlog_txt_0055e874,&DAT_00556384), iVar2 != 0)) {
 
             if ((int)piVar7 < 0x5de6dc) {
 
@@ -8286,6 +8298,10 @@ int FUN_0052b320(int param_1)
 }
 
 /* ===== FUN_0052b400 @ 0x0052B400 ===== */
+/* PS2 candidate: base_get_sweep_falloff__Fv (conf 0.563) */
+
+
+
 undefined4 FUN_0052b400(void)
 
 
@@ -9378,6 +9394,10 @@ void FUN_0052c4d0(void)
 }
 
 /* ===== FUN_0052c5c0 @ 0x0052C5C0 ===== */
+/* PS2 candidate: __tfSc (conf 0.76) */
+
+
+
 undefined4 FUN_0052c5c0(void)
 
 
@@ -11692,8 +11712,8 @@ void FUN_0052e3d0(void)
 
 }
 
-/* ===== FUN_0052e470 @ 0x0052E470 ===== */
-void FUN_0052e470(void)
+/* ===== _dmVector_2 @ 0x0052E470 ===== */
+void _dmVector_2(void)
 
 
 
@@ -12477,7 +12497,7 @@ void FUN_0052ea80(char *param_1,undefined4 param_2,byte param_3,undefined4 param
 
   }
 
-  uVar3 = FUN_0052aad0();
+  uVar3 = AudioGetMasterVolume__Fv_9();
 
   iVar2 = FUN_0052ab20(uVar3);
 
@@ -12721,7 +12741,7 @@ void FUN_0052ebd0(int param_1)
 
     else {
 
-      uVar7 = FUN_0052aad0();
+      uVar7 = AudioGetMasterVolume__Fv_9();
 
       iVar4 = FUN_0052ab20(uVar7);
 
@@ -13020,7 +13040,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_0052aad0();
+      iVar1 = AudioGetMasterVolume__Fv_9();
 
       if (DAT_005def94 == iVar1) {
 
@@ -13036,7 +13056,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
             local_18 = 0x4e;
 
-            local_17 = FUN_0052aad0();
+            local_17 = AudioGetMasterVolume__Fv_9();
 
             uStack_13 = (undefined1)uVar2;
 
@@ -13188,7 +13208,7 @@ void FUN_0052f0a0(int param_1)
 
     local_d4 = 0x11;
 
-    local_d3 = FUN_0052aad0();
+    local_d3 = AudioGetMasterVolume__Fv_9();
 
     local_cf = DAT_00632f08;
 
@@ -13570,7 +13590,7 @@ void FUN_0052f3b0(int param_1)
 
       if (iVar1 == DAT_005def94) {
 
-        iVar1 = FUN_0052aad0();
+        iVar1 = AudioGetMasterVolume__Fv_9();
 
         if (iVar1 == DAT_005def94) {
 
@@ -13620,7 +13640,7 @@ void FUN_0052f3b0(int param_1)
 
     }
 
-    iVar1 = FUN_0052aad0();
+    iVar1 = AudioGetMasterVolume__Fv_9();
 
     if (DAT_005def94 == iVar1) {
 
@@ -13758,7 +13778,7 @@ void FUN_0052f5b0(void)
 
   local_108 = 0x4d;
 
-  local_107 = FUN_0052aad0();
+  local_107 = AudioGetMasterVolume__Fv_9();
 
   local_103 = 0;
 
@@ -13772,7 +13792,7 @@ void FUN_0052f5b0(void)
 
       if (iVar2 == DAT_005def94) {
 
-        iVar2 = FUN_0052aad0();
+        iVar2 = AudioGetMasterVolume__Fv_9();
 
         if (iVar2 == DAT_005def94) {
 
@@ -13837,7 +13857,7 @@ void FUN_0052f6a0(undefined4 param_1)
 
     local_b = param_1;
 
-    local_7 = FUN_0052aad0();
+    local_7 = AudioGetMasterVolume__Fv_9();
 
     local_3 = 0;
 
@@ -13897,7 +13917,7 @@ void FUN_0052f710(void)
 
     local_8 = 0x49;
 
-    local_7 = FUN_0052aad0();
+    local_7 = AudioGetMasterVolume__Fv_9();
 
     local_3 = 0;
 
@@ -13932,7 +13952,7 @@ void FUN_0052f750(void)
 
     local_8 = 0x4a;
 
-    local_7 = FUN_0052aad0();
+    local_7 = AudioGetMasterVolume__Fv_9();
 
     local_3 = 0;
 
@@ -14042,7 +14062,7 @@ void FUN_0052f830(void)
 
     local_8 = 0x50;
 
-    local_7 = FUN_0052aad0();
+    local_7 = AudioGetMasterVolume__Fv_9();
 
     local_3 = 0;
 
@@ -14077,7 +14097,7 @@ void FUN_0052f870(void)
 
     local_8 = 0x4b;
 
-    local_7 = FUN_0052aad0();
+    local_7 = AudioGetMasterVolume__Fv_9();
 
     local_3 = 0;
 
@@ -14112,7 +14132,7 @@ void FUN_0052f8b0(void)
 
     local_8 = 0x4c;
 
-    local_7 = FUN_0052aad0();
+    local_7 = AudioGetMasterVolume__Fv_9();
 
     local_3 = 0;
 
@@ -14893,6 +14913,10 @@ void FUN_0052ff70(char *param_1)
 }
 
 /* ===== FUN_0052ffe0 @ 0x0052FFE0 ===== */
+/* PS2 candidate: IconIsKabutoIcon__Fi (conf 0.511) */
+
+
+
 void FUN_0052ffe0(void)
 
 

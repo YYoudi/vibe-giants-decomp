@@ -44,7 +44,7 @@ void main_fx_004470b0(undefined4 param_1)
 
     FUN_0051e680(s_Bad_version_for_Fx_bin_0055885c);
 
-    FUN_005179d0(iVar1);
+    ANM_BinderDestroy_2(iVar1);
 
     return;
 
@@ -60,7 +60,7 @@ void main_fx_004470b0(undefined4 param_1)
 
   FUN_005178d0(iVar1,DAT_0059ce6c,param_1);
 
-  FUN_005179d0(iVar1);
+  ANM_BinderDestroy_2(iVar1);
 
   return;
 
@@ -1130,7 +1130,7 @@ void fx_setupTracer__FP10FXSTACKTAG(undefined4 *p0)
 
         *(undefined4 *)(**(int **)(iVar1 + 0xf8) + 0x38) = 0x3dcccccd;
 
-        FUN_00509b80(**(undefined4 **)(iVar1 + 0xf8));
+        tracer_add_ref(**(undefined4 **)(iVar1 + 0xf8));
 
         return;
 
