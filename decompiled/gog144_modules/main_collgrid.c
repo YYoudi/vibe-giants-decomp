@@ -4,7 +4,7 @@
  */
 
 /* ===== FUN_004101d0 @ 0x004101D0 ===== */
-/* PS2 candidate: collgrid_clear_grid (conf 0.428) */
+/* PS2 candidate: collgrid_clear_grid (conf 0.547) */
 
 
 

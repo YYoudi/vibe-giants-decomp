@@ -4,7 +4,13 @@
  */
 
 /* ===== marker_create_path__FP6OBJECTi @ 0x004776C0 ===== */
-void marker_create_path__FP6OBJECTi(int param_1,int param_2)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void marker_create_path__FP6OBJECTi(OBJECT *p0,int p1)
 
 
 
@@ -58,15 +64,15 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   
 
-  if (param_1 == 0) {
+  if (p0 == (OBJECT *)0x0) {
 
     return;
 
   }
 
-  piVar3 = *(int **)(param_1 + 0x100);
+  piVar3 = *(int **)&p0->field_0x100;
 
-  if (piVar3[0x10] != param_1) {
+  if ((OBJECT *)piVar3[0x10] != p0) {
 
     return;
 
@@ -98,11 +104,11 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
            ((*(uint *)(iVar9 + 0x1c8) & 0x20000000) != 0)) &&
 
-          (*(int *)(iVar9 + 0xe8) == *(int *)(param_1 + 0xe8))) &&
+          (*(int *)(iVar9 + 0xe8) == *(int *)&p0->field_0xe8)) &&
 
          ((-1 < (char)((uint)*(undefined4 *)(iVar9 + 0xd8) >> 8) &&
 
-          (*(int *)(param_1 + 4) == *(int *)(iVar9 + 4))))) {
+          (p0->field_4 == *(dword *)(iVar9 + 4))))) {
 
         local_190[*(int *)(iVar9 + 0x174)] = iVar9;
 
@@ -124,7 +130,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   }
 
-  if ((local_1d0 + 1 == piVar3[0xf]) && (param_2 == 0)) {
+  if ((local_1d0 + 1 == piVar3[0xf]) && (p1 == 0)) {
 
     return;
 
@@ -374,7 +380,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   }
 
-  *(int *)(piVar3[0x11] + -4 + piVar3[0xf] * 4) = param_1;
+  *(OBJECT **)(piVar3[0x11] + -4 + piVar3[0xf] * 4) = p0;
 
   iVar7 = piVar3[1];
 
@@ -580,7 +586,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
       piVar3[3] = piVar3[3] * 1000;
 
-      FUN_00477340(param_1);
+      FUN_00477340(p0);
 
       return;
 

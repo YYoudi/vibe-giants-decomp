@@ -6,7 +6,7 @@
 /* ===== FUN_004f38f0 @ 0x004F38F0 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
-/* PS2 candidate: smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie (conf 0.594) */
+/* PS2 candidate: smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie (conf 0.597) */
 
 
 
@@ -133,7 +133,9 @@ void FUN_004f38f0(int param_1,int param_2)
 }
 
 /* ===== FUN_004f3af0 @ 0x004F3AF0 ===== */
-/* PS2 candidate: smartie_animselect (conf 0.484) */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+/* PS2 candidate: smartie_animselect (conf 0.509) */
 
 
 
@@ -159,7 +161,11 @@ void FUN_004f3af0(int param_1)
 
   int iVar8;
 
-  char *pcVar9;
+  OBJECT *unaff_EDI;
+
+  char *p0;
+
+  char *p1;
 
   
 
@@ -287,29 +293,29 @@ void FUN_004f3af0(int param_1)
 
           if (iVar3 < 0x21) {
 
-            uVar7 = *(undefined4 *)(DAT_006330e4 + 0x50e0);
+            p1 = *(char **)(DAT_006330e4 + 0x50e0);
 
-            pcVar9 = s_BAZ_CT09_00562278;
+            p0 = s_BAZ_CT09_00562278;
 
           }
 
           else if (iVar3 < 0x42) {
 
-            uVar7 = *(undefined4 *)(DAT_006330e4 + 0x50e0);
+            p1 = *(char **)(DAT_006330e4 + 0x50e0);
 
-            pcVar9 = s_GOR_CT09_0056226c;
+            p0 = s_GOR_CT09_0056226c;
 
           }
 
           else {
 
-            uVar7 = *(undefined4 *)(DAT_006330e4 + 0x50e0);
+            p1 = *(char **)(DAT_006330e4 + 0x50e0);
 
-            pcVar9 = s_REG_CT09_00562260;
+            p0 = s_REG_CT09_00562260;
 
           }
 
-          sound_play_stream(pcVar9,uVar7,0);
+          sound_play_stream((int)p0,p1,0,unaff_EDI);
 
           uVar7 = FUN_00507b00(s_SmChGyropadDone_00562250,1,1);
 
@@ -328,7 +334,7 @@ void FUN_004f3af0(int param_1)
 }
 
 /* ===== FUN_004f3de0 @ 0x004F3DE0 ===== */
-/* PS2 candidate: smartie_start_special_building (conf 0.472) */
+/* PS2 candidate: smartie_start_special_building (conf 0.468) */
 
 
 
@@ -560,7 +566,7 @@ void FUN_004f4020(int param_1,undefined4 param_2,int param_3,int param_4,undefin
 }
 
 /* ===== FUN_004f40a0 @ 0x004F40A0 ===== */
-/* PS2 candidate: smartie_from_back_to_partyhouse (conf 0.409) */
+/* PS2 candidate: smartie_from_back_to_partyhouse (conf 0.496) */
 
 
 
@@ -750,9 +756,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
   char *pcVar5;
 
-  undefined1 local_40 [12];
-
-  undefined1 local_34 [16];
+  undefined1 local_40 [28];
 
   undefined4 local_24;
 
@@ -838,7 +842,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
         local_24 = 8;
 
-        uVar3 = fx_get_free_effect__Fv(s_FX_Reaper_bubble_005622ac,0x24,local_34);
+        uVar3 = fx_get_free_effect__Fv();
 
         *(undefined4 *)(iVar4 + 0x3c) = uVar3;
 
@@ -850,7 +854,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
       if (*(int *)(iVar4 + 0xbc) == 0) {
 
-        uVar3 = sound_get_free_sequence__Fv(0x3b6,0x3b5,0,0x3b4,param_1,0,1);
+        uVar3 = sound_get_free_sequence__Fv();
 
         *(undefined4 *)(iVar4 + 0xbc) = uVar3;
 
@@ -925,7 +929,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 }
 
 /* ===== FUN_004f4ed0 @ 0x004F4ED0 ===== */
-/* PS2 candidate: smartie_find_legal_nearby_base__FP6OBJECTT0 (conf 0.453) */
+/* PS2 candidate: smartie_find_legal_nearby_base__FP6OBJECTT0 (conf 0.467) */
 
 
 
@@ -990,7 +994,7 @@ int FUN_004f4ed0(int param_1,int param_2)
 }
 
 /* ===== FUN_004f4fc0 @ 0x004F4FC0 ===== */
-/* PS2 candidate: smartie_escape_reaper_grab (conf 0.425) */
+/* PS2 candidate: smartie_escape_reaper_grab (conf 0.505) */
 
 
 
@@ -1308,7 +1312,7 @@ LAB_004f539d:
 }
 
 /* ===== FUN_004f5410 @ 0x004F5410 ===== */
-/* PS2 candidate: smartie_attach_to_base (conf 0.56) */
+/* PS2 candidate: smartie_attach_to_base (conf 0.598) */
 
 
 
@@ -1600,8 +1604,6 @@ void FUN_004f5710(int param_1,undefined4 param_2)
 
   float local_38;
 
-  undefined1 local_34 [16];
-
   undefined4 local_24;
 
   undefined4 local_20;
@@ -1716,7 +1718,7 @@ void FUN_004f5710(int param_1,undefined4 param_2)
 
       local_24 = 8;
 
-      uVar3 = fx_get_free_effect__Fv(s_FX_Reaper_bubble_005622ac,0x24,local_34);
+      uVar3 = fx_get_free_effect__Fv();
 
       *(undefined4 *)(iVar1 + 0x3c) = uVar3;
 
@@ -1732,7 +1734,7 @@ void FUN_004f5710(int param_1,undefined4 param_2)
 
     if (*(int *)(iVar1 + 0xbc) == 0) {
 
-      uVar3 = sound_get_free_sequence__Fv(0x3b6,0x3b5,0,0x3b4,param_1,0,1);
+      uVar3 = sound_get_free_sequence__Fv();
 
       *(undefined4 *)(iVar1 + 0xbc) = uVar3;
 
@@ -1749,7 +1751,7 @@ void FUN_004f5710(int param_1,undefined4 param_2)
 /* ===== FUN_004f5950 @ 0x004F5950 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: smartie_check_follow__FP6OBJECTf (conf 0.47) */
+/* PS2 candidate: smartie_check_follow__FP6OBJECTf (conf 0.469) */
 
 
 
@@ -1922,7 +1924,7 @@ int FUN_004f5950(int param_1,float param_2)
 }
 
 /* ===== FUN_004f5c10 @ 0x004F5C10 ===== */
-/* PS2 candidate: smartie_board_player__FP6OBJECTT0i (conf 0.603) */
+/* PS2 candidate: smartie_board_player__FP6OBJECTT0i (conf 0.656) */
 
 
 
@@ -2169,7 +2171,7 @@ void FUN_004f5c10(int param_1,int param_2,undefined4 param_3)
 }
 
 /* ===== FUN_004f6090 @ 0x004F6090 ===== */
-/* PS2 candidate: kbos_move (conf 0.456) */
+/* PS2 candidate: meccbaseitem_shot (conf 0.407) */
 
 
 
@@ -2493,7 +2495,7 @@ void FUN_004f75c0(void)
 }
 
 /* ===== FUN_004f7780 @ 0x004F7780 ===== */
-/* PS2 candidate: smartie_shot (conf 0.401) */
+/* PS2 candidate: smartie_shot (conf 0.441) */
 
 
 
@@ -2797,7 +2799,7 @@ void FUN_004f7af0(int param_1)
 }
 
 /* ===== FUN_004f7b50 @ 0x004F7B50 ===== */
-/* PS2 candidate: smartie_make_held_object__FP6OBJECTi (conf 0.585) */
+/* PS2 candidate: smartie_make_held_object__FP6OBJECTi (conf 0.637) */
 
 
 
@@ -2860,7 +2862,13 @@ void FUN_004f7b50(int param_1,undefined4 param_2)
 }
 
 /* ===== smartie_get_name__FP6OBJECT @ 0x004F7C10 ===== */
-void smartie_get_name__FP6OBJECT(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void smartie_get_name__FP6OBJECT(OBJECT *p0)
 
 
 
@@ -2868,27 +2876,29 @@ void smartie_get_name__FP6OBJECT(int param_1)
 
   char cVar1;
 
-  uint uVar2;
+  dword dVar2;
 
-  char *pcVar3;
+  uint uVar3;
 
-  uint uVar4;
+  char *pcVar4;
 
-  char *pcVar5;
+  uint uVar5;
 
-  int iVar6;
+  char *pcVar6;
 
-  uint uVar7;
+  int iVar7;
 
-  undefined1 *puVar8;
+  uint uVar8;
 
-  int iVar9;
+  undefined1 *puVar9;
 
   int iVar10;
 
-  char *pcVar11;
+  int iVar11;
 
   char *pcVar12;
+
+  char *pcVar13;
 
   uint auStack_48 [6];
 
@@ -2896,125 +2906,125 @@ void smartie_get_name__FP6OBJECT(int param_1)
 
   
 
-  iVar9 = *(int *)(param_1 + 4);
+  dVar2 = p0->field_4;
 
-  if (iVar9 == 0xd8) {
+  if (dVar2 == 0xd8) {
 
-    pcVar3 = &DAT_00562310;
-
-  }
-
-  else if (iVar9 == 0x247) {
-
-    pcVar3 = s_Timmy_00562308;
+    pcVar4 = &DAT_00562310;
 
   }
 
-  else if (iVar9 == 0x248) {
+  else if (dVar2 == 0x247) {
 
-    pcVar3 = s_Borjoyzee_0055b3c0;
+    pcVar4 = s_Timmy_00562308;
+
+  }
+
+  else if (dVar2 == 0x248) {
+
+    pcVar4 = s_Borjoyzee_0055b3c0;
 
   }
 
   else {
 
-    if (iVar9 != 0x2e6) {
+    if (dVar2 != 0x2e6) {
 
-      uVar2 = *(uint *)(param_1 + 0x188);
+      uVar3 = p0->field_188;
 
-      pcVar3 = (char *)(*(int *)(param_1 + 0x100) + 0x80);
+      pcVar4 = (char *)(*(int *)&p0->field_0x100 + 0x80);
 
-      puVar8 = local_30;
-
-      iVar9 = 0;
-
-      *pcVar3 = '\0';
+      puVar9 = local_30;
 
       iVar10 = 0;
 
+      *pcVar4 = '\0';
+
+      iVar11 = 0;
+
       do {
 
-        uVar4 = (int)(uVar2 >> 8) >> ((byte)iVar10 & 0x1f) & 3;
+        uVar5 = (int)(uVar3 >> 8) >> ((byte)iVar11 & 0x1f) & 3;
 
-        auStack_48[iVar9] = uVar4;
+        auStack_48[iVar10] = uVar5;
 
-        FUN_00542f27(puVar8,s_SmNameSyl_c_d_005622f8,iVar9 + 0x41,uVar4 + 1);
+        FUN_00542f27(puVar9,s_SmNameSyl_c_d_005622f8,iVar10 + 0x41,uVar5 + 1);
 
-        pcVar5 = (char *)TextGetPtrQ(puVar8);
+        pcVar6 = (char *)TextGetPtrQ(puVar9);
 
-        uVar4 = 0xffffffff;
+        uVar5 = 0xffffffff;
 
-        auStack_48[iVar9 + 3] = (uint)pcVar5;
-
-        do {
-
-          pcVar12 = pcVar5;
-
-          if (uVar4 == 0) break;
-
-          uVar4 = uVar4 - 1;
-
-          pcVar12 = pcVar5 + 1;
-
-          cVar1 = *pcVar5;
-
-          pcVar5 = pcVar12;
-
-        } while (cVar1 != '\0');
-
-        uVar4 = ~uVar4;
-
-        iVar6 = -1;
-
-        pcVar5 = pcVar3;
+        auStack_48[iVar10 + 3] = (uint)pcVar6;
 
         do {
 
-          pcVar11 = pcVar5;
+          pcVar13 = pcVar6;
 
-          if (iVar6 == 0) break;
+          if (uVar5 == 0) break;
 
-          iVar6 = iVar6 + -1;
+          uVar5 = uVar5 - 1;
 
-          pcVar11 = pcVar5 + 1;
+          pcVar13 = pcVar6 + 1;
 
-          cVar1 = *pcVar5;
+          cVar1 = *pcVar6;
 
-          pcVar5 = pcVar11;
+          pcVar6 = pcVar13;
 
         } while (cVar1 != '\0');
 
-        pcVar5 = pcVar12 + -uVar4;
+        uVar5 = ~uVar5;
 
-        pcVar12 = pcVar11 + -1;
+        iVar7 = -1;
 
-        for (uVar7 = uVar4 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+        pcVar6 = pcVar4;
 
-          *(undefined4 *)pcVar12 = *(undefined4 *)pcVar5;
+        do {
 
-          pcVar5 = pcVar5 + 4;
+          pcVar12 = pcVar6;
 
-          pcVar12 = pcVar12 + 4;
+          if (iVar7 == 0) break;
+
+          iVar7 = iVar7 + -1;
+
+          pcVar12 = pcVar6 + 1;
+
+          cVar1 = *pcVar6;
+
+          pcVar6 = pcVar12;
+
+        } while (cVar1 != '\0');
+
+        pcVar6 = pcVar13 + -uVar5;
+
+        pcVar13 = pcVar12 + -1;
+
+        for (uVar8 = uVar5 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+
+          *(undefined4 *)pcVar13 = *(undefined4 *)pcVar6;
+
+          pcVar6 = pcVar6 + 4;
+
+          pcVar13 = pcVar13 + 4;
 
         }
 
-        for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
+        for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
 
-          *pcVar12 = *pcVar5;
+          *pcVar13 = *pcVar6;
 
-          pcVar5 = pcVar5 + 1;
+          pcVar6 = pcVar6 + 1;
 
-          pcVar12 = pcVar12 + 1;
+          pcVar13 = pcVar13 + 1;
 
         }
 
-        iVar10 = iVar10 + 2;
+        iVar11 = iVar11 + 2;
 
-        puVar8 = puVar8 + 0x10;
+        puVar9 = puVar9 + 0x10;
 
-        iVar9 = iVar9 + 1;
+        iVar10 = iVar10 + 1;
 
-        if (5 < iVar10) {
+        if (5 < iVar11) {
 
           return;
 
@@ -3024,19 +3034,19 @@ void smartie_get_name__FP6OBJECT(int param_1)
 
     }
 
-    pcVar3 = &DAT_0055b3bc;
+    pcVar4 = &DAT_0055b3bc;
 
   }
 
-  iVar9 = (*(int *)(param_1 + 0x100) + 0x80) - (int)pcVar3;
+  iVar10 = (*(int *)&p0->field_0x100 + 0x80) - (int)pcVar4;
 
   do {
 
-    cVar1 = *pcVar3;
+    cVar1 = *pcVar4;
 
-    pcVar3[iVar9] = cVar1;
+    pcVar4[iVar10] = cVar1;
 
-    pcVar3 = pcVar3 + 1;
+    pcVar4 = pcVar4 + 1;
 
   } while (cVar1 != '\0');
 
@@ -3056,7 +3066,7 @@ float10 FUN_004f8350(int param_1)
 }
 
 /* ===== FUN_004f8360 @ 0x004F8360 ===== */
-/* PS2 candidate: smokegen_process (conf 0.381) */
+/* PS2 candidate: smokegen_process (conf 0.444) */
 
 
 
@@ -3462,7 +3472,7 @@ void FUN_004f86a0(undefined4 *param_1)
 }
 
 /* ===== FUN_004f8800 @ 0x004F8800 ===== */
-/* PS2 candidate: make_particle__FP6OBJECT (conf 0.361) */
+/* PS2 candidate: make_particle__FP6OBJECT (conf 0.42) */
 
 
 
@@ -3600,7 +3610,7 @@ void FUN_004f90e0(undefined4 param_1,float param_2)
 }
 
 /* ===== FUN_004f9380 @ 0x004F9380 ===== */
-/* PS2 candidate: offspring_logic__FP6OBJECT (conf 0.454) */
+/* PS2 candidate: ripper_medium_move__FP6OBJECT (conf 0.464) */
 
 
 

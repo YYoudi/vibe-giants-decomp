@@ -4,7 +4,7 @@
  */
 
 /* ===== FUN_004e1030 @ 0x004E1030 ===== */
-/* PS2 candidate: rpman_goto_last_loc__FP6OBJECTi (conf 0.316) */
+/* PS2 candidate: rpman_goto_last_loc__FP6OBJECTi (conf 0.354) */
 
 
 
@@ -136,7 +136,7 @@ void FUN_004e10e0(int param_1)
 }
 
 /* ===== FUN_004e1240 @ 0x004E1240 ===== */
-/* PS2 candidate: rpman_jet__FP6OBJECT (conf 0.395) */
+/* PS2 candidate: rpman_jet__FP6OBJECT (conf 0.367) */
 
 
 
@@ -479,7 +479,7 @@ LAB_004e1942:
 }
 
 /* ===== FUN_004e1970 @ 0x004E1970 ===== */
-/* PS2 candidate: rpman_shot (conf 0.421) */
+/* PS2 candidate: rpman_shot (conf 0.462) */
 
 
 
@@ -501,9 +501,7 @@ void FUN_004e1970(float param_1)
 
   float10 fVar6;
 
-  float local_38;
-
-  undefined1 local_34 [4];
+  float local_38 [2];
 
   undefined4 local_30;
 
@@ -537,9 +535,9 @@ void FUN_004e1970(float param_1)
 
     if ((float)piVar1[0xd] <= *(float *)(DAT_00632ed8 + 0xb30) * *(float *)(DAT_00632ed8 + 0xb30)) {
 
-      local_38 = (float)FUN_004d5730(100);
+      local_38[0] = (float)FUN_004d5730(100);
 
-      if (((float)(int)local_38 < param_1) &&
+      if (((float)(int)local_38[0] < param_1) &&
 
          ((float)piVar1[0xd] < (float)piVar1[0x2a] * (float)piVar1[0x2a])) {
 
@@ -579,7 +577,7 @@ void FUN_004e1970(float param_1)
 
           }
 
-          FUN_0050ae40(*(undefined4 *)(iVar3 + 200),&param_1,&local_38);
+          FUN_0050ae40(*(undefined4 *)(iVar3 + 200),&param_1,local_38);
 
           iVar5 = *(int *)(iVar3 + 0x100);
 
@@ -587,7 +585,7 @@ void FUN_004e1970(float param_1)
 
           *(float *)(iVar3 + 0x128) = param_1 * 100.0;
 
-          *(float *)(iVar3 + 300) = local_38 * -100.0;
+          *(float *)(iVar3 + 300) = local_38[0] * -100.0;
 
           uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
@@ -773,7 +771,7 @@ void FUN_004e1970(float param_1)
 
       local_28 = *(undefined4 *)(iVar3 + 0xa8);
 
-      fx_get_free_effect__Fv(s_fx_explosion_popup_00561ae0,8,local_34);
+      fx_get_free_effect__Fv();
 
       FUN_00456ee0(0x31,iVar3,0,(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(DAT_00632ed8 + 0x1094),
 
@@ -1708,7 +1706,7 @@ undefined4 FUN_004e2ba0(int param_1)
 }
 
 /* ===== FUN_004e2ce0 @ 0x004E2CE0 ===== */
-/* PS2 candidate: rpman_find_hide_spot__FP6OBJECTi (conf 0.423) */
+/* PS2 candidate: rpman_find_hide_spot__FP6OBJECTi (conf 0.436) */
 
 
 
@@ -2014,7 +2012,7 @@ void FUN_004e2f60(int param_1,float param_2)
 /* ===== FUN_004e30b0 @ 0x004E30B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: rpman_verify_enemy__FP6OBJECTf (conf 0.461) */
+/* PS2 candidate: rpman_verify_enemy__FP6OBJECTf (conf 0.458) */
 
 
 
@@ -2315,7 +2313,7 @@ LAB_004e33f4:
 /* ===== FUN_004e3440 @ 0x004E3440 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: rpman_smartie_consider__FP6OBJECTT0 (conf 0.37) */
+/* PS2 candidate: rpman_smartie_consider__FP6OBJECTT0 (conf 0.377) */
 
 
 
@@ -2722,7 +2720,7 @@ LAB_004e3903:
 /* ===== FUN_004e3920 @ 0x004E3920 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: rpman_scan_for_enemy__FP6OBJECTfii (conf 0.462) */
+/* PS2 candidate: rpman_scan_for_enemy__FP6OBJECTfii (conf 0.445) */
 
 
 
@@ -3083,7 +3081,7 @@ LAB_004e3e52:
 }
 
 /* ===== FUN_004e3eb0 @ 0x004E3EB0 ===== */
-/* PS2 candidate: rpman_consider_run_chatter__FP6OBJECT (conf 0.398) */
+/* PS2 candidate: rpman_consider_run_chatter__FP6OBJECT (conf 0.431) */
 
 
 
@@ -3126,7 +3124,7 @@ void FUN_004e3eb0(int param_1)
 }
 
 /* ===== FUN_004e3f10 @ 0x004E3F10 ===== */
-/* PS2 candidate: rpman_set_enemy_attack_goal__FP6OBJECTi (conf 0.394) */
+/* PS2 candidate: rpman_set_enemy_attack_goal__FP6OBJECTi (conf 0.441) */
 
 
 
@@ -3937,7 +3935,7 @@ void FUN_004e4a50(int param_1)
 }
 
 /* ===== FUN_004e4bc0 @ 0x004E4BC0 ===== */
-/* PS2 candidate: cleaner_process (conf 0.458) */
+/* PS2 candidate: cleaner_process (conf 0.541) */
 
 
 
@@ -4337,7 +4335,7 @@ LAB_004e50f4:
 }
 
 /* ===== FUN_004e5120 @ 0x004E5120 ===== */
-/* PS2 candidate: rpman_flying_fire__FP6OBJECT (conf 0.4) */
+/* PS2 candidate: rpman_flying_fire__FP6OBJECT (conf 0.437) */
 
 
 
@@ -4442,7 +4440,7 @@ LAB_004e51e4:
 /* ===== FUN_004e5270 @ 0x004E5270 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: fire_bullet_shot__FP6OBJECTT0ii (conf 0.481) */
+/* PS2 candidate: fire_bullet_shot__FP6OBJECTT0ii (conf 0.487) */
 
 
 
@@ -4679,7 +4677,7 @@ LAB_004e559b:
 }
 
 /* ===== FUN_004e5640 @ 0x004E5640 ===== */
-/* PS2 candidate: ripper_control__FP6OBJECT (conf 0.428) */
+/* PS2 candidate: fire_sniper_shot__FP6OBJECTT0 (conf 0.389) */
 
 
 
@@ -5224,7 +5222,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 /* ===== FUN_004e5f70 @ 0x004E5F70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: ripper_small_move__FP6OBJECT (conf 0.44) */
+/* PS2 candidate: rpman_rapid_fire__FP6OBJECTiii (conf 0.463) */
 
 
 
@@ -5364,7 +5362,7 @@ void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
 
     if (piVar2[0x8d] == 0) {
 
-      iVar8 = sound_get_free_sequence__Fv(0x67a,0x679,0,0x678,param_1,0,1);
+      iVar8 = sound_get_free_sequence__Fv();
 
       piVar2[0x8d] = iVar8;
 
@@ -6009,7 +6007,7 @@ LAB_004e6af2:
 }
 
 /* ===== FUN_004e6ba0 @ 0x004E6BA0 ===== */
-/* PS2 candidate: rpboat_logic__FP6OBJECT (conf 0.489) */
+/* PS2 candidate: rpboat_logic__FP6OBJECT (conf 0.534) */
 
 
 
@@ -6042,8 +6040,6 @@ void FUN_004e6ba0(float param_1,float param_2)
   undefined1 local_50 [16];
 
   float local_40;
-
-  undefined1 local_34 [4];
 
   float local_30;
 
@@ -6245,7 +6241,7 @@ void FUN_004e6ba0(float param_1,float param_2)
 
       local_28 = *(undefined4 *)(iVar5 + 0xa8);
 
-      fx_get_free_effect__Fv(s_fx_ground_dusthit_00561450,8,local_34);
+      fx_get_free_effect__Fv();
 
       *(undefined4 *)(iVar4 + 0x174) = 0x3e4ccccd;
 
@@ -6538,7 +6534,7 @@ void FUN_004e7330(int param_1,int param_2)
 }
 
 /* ===== FUN_004e7390 @ 0x004E7390 ===== */
-/* PS2 candidate: rpman_set_smartie_goal__FP6OBJECT (conf 0.337) */
+/* PS2 candidate: rpman_set_smartie_goal__FP6OBJECT (conf 0.346) */
 
 
 
@@ -6587,7 +6583,7 @@ void FUN_004e7390(int param_1)
 }
 
 /* ===== FUN_004e7460 @ 0x004E7460 ===== */
-/* PS2 candidate: rpman_army_goto_firepit__FP6OBJECT (conf 0.386) */
+/* PS2 candidate: rpman_army_goto_firepit__FP6OBJECT (conf 0.433) */
 
 
 
@@ -6714,7 +6710,7 @@ LAB_004e75b4:
 }
 
 /* ===== FUN_004e7970 @ 0x004E7970 ===== */
-/* PS2 candidate: rpman_gib__FP6OBJECTT0 (conf 0.551) */
+/* PS2 candidate: rpman_gib__FP6OBJECTT0 (conf 0.554) */
 
 
 
@@ -6730,25 +6726,9 @@ void FUN_004e7970(int param_1,int param_2)
 
   int iVar3;
 
-  float10 fVar4;
+  undefined4 uVar4;
 
-  undefined4 uVar5;
-
-  float local_40;
-
-  undefined1 local_34 [4];
-
-  undefined4 local_30;
-
-  undefined4 local_2c;
-
-  undefined4 local_28;
-
-  float local_18;
-
-  undefined4 local_14;
-
-  undefined4 local_10;
+  undefined4 local_40;
 
   
 
@@ -6784,21 +6764,9 @@ void FUN_004e7970(int param_1,int param_2)
 
   }
 
-  local_30 = *(undefined4 *)(param_1 + 0xa0);
+  FUN_0050a390(fVar2,local_40);
 
-  local_2c = *(undefined4 *)(param_1 + 0xa4);
-
-  local_28 = *(undefined4 *)(param_1 + 0xa8);
-
-  fVar4 = (float10)FUN_0050a390(fVar2,local_40);
-
-  local_18 = (float)(fVar4 - (float10)90.0);
-
-  local_14 = 0;
-
-  local_10 = 0;
-
-  fx_get_free_effect__Fv(s_fxb_rpman_death_00561124,9,local_34);
+  fx_get_free_effect__Fv();
 
   if ((*(uint *)(param_1 + 0xe0) & 0x1000000) != 0) {
 
@@ -6824,17 +6792,17 @@ void FUN_004e7970(int param_1,int param_2)
 
   if (iVar3 < 0x32) {
 
-    uVar5 = 0x60b;
+    uVar4 = 0x60b;
 
   }
 
   else {
 
-    uVar5 = 0x60c;
+    uVar4 = 0x60c;
 
   }
 
-  FUN_00495840(uVar5,(undefined4 *)(param_1 + 0xa0));
+  FUN_00495840(uVar4,param_1 + 0xa0);
 
   FUN_00497510(param_1);
 
@@ -6843,7 +6811,7 @@ void FUN_004e7970(int param_1,int param_2)
 }
 
 /* ===== FUN_004e7ae0 @ 0x004E7AE0 ===== */
-/* PS2 candidate: rpman_notify_hit (conf 0.404) */
+/* PS2 candidate: rpman_notify_hit (conf 0.439) */
 
 
 
@@ -7578,7 +7546,7 @@ void FUN_004ea350(int param_1,int param_2)
 }
 
 /* ===== FUN_004ea3e0 @ 0x004EA3E0 ===== */
-/* PS2 candidate: barracks_logic (conf 0.419) */
+/* PS2 candidate: barracks_logic (conf 0.477) */
 
 
 
@@ -10027,7 +9995,7 @@ void FUN_004ed910(void)
 }
 
 /* ===== FUN_004ed9e0 @ 0x004ED9E0 ===== */
-/* PS2 candidate: world_reset_callback_add (conf 0.494) */
+/* PS2 candidate: world_reset_callback_add (conf 0.51) */
 
 
 
@@ -10193,7 +10161,7 @@ void FUN_004eddf0(void)
 
   FUN_00490940();
 
-  meccbaseitem_finish_building(0);
+  mission_init(0);
 
   FUN_00507fa0();
 
@@ -10551,16 +10519,6 @@ void FUN_004ee1c0(int param_1)
 
   int iVar6;
 
-  undefined1 local_34 [4];
-
-  undefined4 local_30;
-
-  undefined4 local_2c;
-
-  undefined4 local_28;
-
-  undefined4 local_24;
-
   
 
   if ((DAT_006330e4 != 0) && (*(int *)(DAT_006330e4 + 0x4f6c) != 0)) {
@@ -10603,15 +10561,7 @@ void FUN_004ee1c0(int param_1)
 
   if (*(char *)(DAT_006330e4 + 0x4f40) != '\0') {
 
-    local_30 = *(undefined4 *)(DAT_006330e4 + 0x4f60);
-
-    local_2c = *(undefined4 *)(DAT_006330e4 + 0x4f64);
-
-    local_28 = *(undefined4 *)(DAT_006330e4 + 0x4f68);
-
-    local_24 = 8;
-
-    uVar4 = fx_get_free_effect__Fv(DAT_006330e4 + 0x4f40,0x28,local_34);
+    uVar4 = fx_get_free_effect__Fv();
 
     *(undefined4 *)(DAT_006330e4 + 0x4f6c) = uVar4;
 
@@ -10898,6 +10848,10 @@ void FUN_004ee630(void)
 }
 
 /* ===== FUN_004ee670 @ 0x004EE670 ===== */
+/* PS2 candidate: reaper_logic (conf 0.426) */
+
+
+
 void FUN_004ee670(int param_1)
 
 
@@ -10922,7 +10876,7 @@ void FUN_004ee670(int param_1)
 
   if (*(char *)(DAT_006330e4 + 0x4530) != '\0') {
 
-    fx_get_free_effect__Fv(DAT_006330e4 + 0x4530,0,0);
+    fx_get_free_effect__Fv();
 
   }
 
@@ -11452,7 +11406,7 @@ void FUN_004eecb0(float *param_1,float *param_2,float *param_3)
 }
 
 /* ===== FUN_004eed30 @ 0x004EED30 ===== */
-/* PS2 candidate: line_of_sight_grid (conf 0.333) */
+/* PS2 candidate: line_of_sight_grid (conf 0.341) */
 
 
 

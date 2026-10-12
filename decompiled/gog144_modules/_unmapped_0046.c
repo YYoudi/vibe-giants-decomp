@@ -626,7 +626,7 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 }
 
 /* ===== FUN_00465880 @ 0x00465880 ===== */
-/* PS2 candidate: reaper_update_xhair_status__FP6OBJECT (conf 0.374) */
+/* PS2 candidate: reaper_update_xhair_status__FP6OBJECT (conf 0.376) */
 
 
 
@@ -871,7 +871,7 @@ LAB_00465986:
 }
 
 /* ===== FUN_00465bf0 @ 0x00465BF0 ===== */
-/* PS2 candidate: reaper_collect_food (conf 0.516) */
+/* PS2 candidate: reaper_collect_food (conf 0.513) */
 
 
 
@@ -1167,7 +1167,7 @@ void FUN_00465f10(int param_1,undefined4 param_2,int param_3,int *param_4)
 }
 
 /* ===== FUN_00466980 @ 0x00466980 ===== */
-/* PS2 candidate: kabuto_get_kbos (conf 0.31) */
+/* PS2 candidate: kabuto_get_kbos (conf 0.309) */
 
 
 
@@ -1188,7 +1188,7 @@ undefined4 FUN_00466980(int param_1,int param_2)
 }
 
 /* ===== FUN_004669a0 @ 0x004669A0 ===== */
-/* PS2 candidate: kabuto_create_kbos (conf 0.421) */
+/* PS2 candidate: kabuto_create_kbos (conf 0.438) */
 
 
 
@@ -1476,7 +1476,7 @@ void FUN_004676a0(void)
 }
 
 /* ===== FUN_00469860 @ 0x00469860 ===== */
-/* PS2 candidate: kabutoai_change_anim__FP6OBJECTii4SDKYfi (conf 0.364) */
+/* PS2 candidate: kabutoai_change_anim__FP6OBJECTii4SDKYfi (conf 0.461) */
 
 
 
@@ -1583,6 +1583,10 @@ float10 FUN_00469950(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_004699e0 @ 0x004699E0 ===== */
+/* PS2 candidate: loglauncher_process (conf 0.419) */
+
+
+
 void FUN_004699e0(int param_1)
 
 
@@ -2060,6 +2064,12 @@ void FUN_0046aa30(int param_1,int param_2)
 
   int iVar5;
 
+  char *pcVar6;
+
+  undefined4 uVar7;
+
+  undefined1 *puVar8;
+
   undefined1 local_50 [8];
 
   float local_48;
@@ -2166,7 +2176,7 @@ void FUN_0046aa30(int param_1,int param_2)
 
             local_28 = *(undefined4 *)(param_1 + 0xa8);
 
-            fx_get_free_effect__Fv(s_fx_offspring_foot_impact_0055b4e8,8,local_34);
+            fx_get_free_effect__Fv();
 
             return;
 
@@ -2204,7 +2214,13 @@ LAB_0046ac2e:
 
 LAB_0046ad71:
 
+        puVar8 = local_34;
+
         *(undefined4 *)(iVar5 + 0xbc) = 0x3f800000;
+
+        uVar7 = 0x24;
+
+        pcVar6 = s_fx_ripper_dirt_0055b4d8;
 
         *(undefined4 *)(param_1 + 0xe4) = 0xc;
 
@@ -2214,7 +2230,7 @@ LAB_0046ad71:
 
         local_24 = 8;
 
-        uVar4 = fx_get_free_effect__Fv(s_fx_ripper_dirt_0055b4d8,0x24,local_34);
+        uVar4 = fx_get_free_effect__Fv();
 
         *(undefined4 *)(iVar5 + 0xc0) = uVar4;
 
@@ -2224,7 +2240,7 @@ LAB_0046ad71:
 
              *(uint *)(*(int *)(iVar5 + 0xb0) + 0xd8) | 0x40000000;
 
-        iVar5 = FUN_0052e4a0(param_1);
+        iVar5 = FUN_0052e4a0(param_1,pcVar6,uVar7,puVar8);
 
         if (iVar5 == 0) {
 
@@ -2332,7 +2348,7 @@ LAB_0046ad71:
 
       local_28 = *(undefined4 *)(param_1 + 0xa8);
 
-      fx_get_free_effect__Fv(s_fx_offspring_foot_impact_0055b4e8,8,local_34);
+      fx_get_free_effect__Fv();
 
       return;
 
@@ -2367,7 +2383,7 @@ LAB_0046acf5:
 }
 
 /* ===== FUN_0046aeb0 @ 0x0046AEB0 ===== */
-/* PS2 candidate: kbos_init (conf 0.354) */
+/* PS2 candidate: kbos_init (conf 0.471) */
 
 
 
@@ -2712,7 +2728,7 @@ void FUN_0046b3f0(undefined4 param_1,undefined4 param_2)
 
 {
 
-  FUN_00499970(param_1);
+  object_init_usage(param_1);
 
   FUN_004993c0(param_1,param_2);
 
@@ -2854,7 +2870,7 @@ int FUN_0046b560(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
   *(undefined4 *)(iVar1 + 0xe8) = 1;
 
-  FUN_00499970(iVar1);
+  object_init_usage(iVar1);
 
   FUN_004993c0(iVar1,param_2);
 
@@ -2903,7 +2919,7 @@ int FUN_0046b5e0(undefined4 param_1)
 
     *(undefined4 *)(iVar1 + 0xe8) = 0;
 
-    FUN_00499970(iVar1);
+    object_init_usage(iVar1);
 
     FUN_004993c0(iVar1,param_1);
 
@@ -3120,6 +3136,10 @@ undefined4 FUN_0046b850(int param_1)
 }
 
 /* ===== FUN_0046baf0 @ 0x0046BAF0 ===== */
+/* PS2 candidate: kbos_attach_object (conf 0.388) */
+
+
+
 undefined4 FUN_0046baf0(undefined4 param_1,int param_2,char param_3,byte param_4,int param_5)
 
 
@@ -3249,6 +3269,10 @@ LAB_0046bc13:
 }
 
 /* ===== FUN_0046bc60 @ 0x0046BC60 ===== */
+/* PS2 candidate: kbos_scan_food__FP6OBJECTP14ObjProcessInfo (conf 0.347) */
+
+
+
 undefined4 FUN_0046bc60(float param_1,int *param_2)
 
 
@@ -3712,7 +3736,7 @@ int FUN_0046e830(int param_1,int param_2)
 
   }
 
-  FUN_00499970(iVar2);
+  object_init_usage(iVar2);
 
   FUN_00499310(iVar2,*(undefined4 *)(iVar2 + 0x2a4),*(undefined4 *)(iVar2 + 0x2b4),
 
@@ -4067,7 +4091,7 @@ void FUN_0046f2e0(int param_1,int param_2)
 
   }
 
-  uVar4 = sound_get_free_sequence__Fv(0x660,0x65f,0,0x65e,iVar2,0,1);
+  uVar4 = sound_get_free_sequence__Fv();
 
   *(undefined4 *)(iVar1 + 8) = uVar4;
 

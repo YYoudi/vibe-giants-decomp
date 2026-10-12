@@ -1,0 +1,5 @@
+004961c0 teammecc_clear_mode
+00536620 chat_insert_name
+00507c10 TextGetPtrQ
+00507b40 TextGetPtrRandom
+00492910 mission_init

@@ -1457,7 +1457,7 @@ void FUN_00412730(int param_1,int param_2,int param_3,int param_4,int param_5)
 }
 
 /* ===== FUN_00412df0 @ 0x00412DF0 ===== */
-/* PS2 candidate: collide_objects__FP6OBJECT (conf 0.427) */
+/* PS2 candidate: collide_objects__FP6OBJECT (conf 0.445) */
 
 
 
@@ -2586,7 +2586,7 @@ void FUN_00413c90(int param_1)
 }
 
 /* ===== FUN_00413e40 @ 0x00413E40 ===== */
-/* PS2 candidate: get_floor_z_point (conf 0.59) */
+/* PS2 candidate: get_floor_z_point (conf 0.526) */
 
 
 
@@ -2625,7 +2625,7 @@ float10 FUN_00413e40(undefined4 param_1)
 }
 
 /* ===== FUN_00413e90 @ 0x00413E90 ===== */
-/* PS2 candidate: get_floor_z_point_plat (conf 0.373) */
+/* PS2 candidate: get_floor_z_point_plat (conf 0.366) */
 
 
 
@@ -4099,7 +4099,7 @@ LAB_0041566c:
 }
 
 /* ===== FUN_004156f0 @ 0x004156F0 ===== */
-/* PS2 candidate: collide_objects_kabuto__FP6OBJECTP3P3D (conf 0.369) */
+/* PS2 candidate: collide_objects_kabuto__FP6OBJECTP3P3D (conf 0.376) */
 
 
 
@@ -4540,7 +4540,7 @@ LAB_00415d47:
 }
 
 /* ===== FUN_00415d80 @ 0x00415D80 ===== */
-/* PS2 candidate: collide_camera_check_walls (conf 0.464) */
+/* PS2 candidate: collide_camera_check_walls (conf 0.463) */
 
 
 
@@ -4917,6 +4917,8 @@ void FUN_00416240(int param_1)
 
 /* ===== FUN_004162c0 @ 0x004162C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+/* PS2 candidate: evilreaper_award_item__FP6OBJECT (conf 0.492) */
 
 
 
@@ -6049,7 +6051,7 @@ LAB_00417c0e:
 }
 
 /* ===== FUN_00417f20 @ 0x00417F20 ===== */
-/* PS2 candidate: bldg_get_energy (conf 0.443) */
+/* PS2 candidate: bldg_get_energy (conf 0.414) */
 
 
 
@@ -6086,7 +6088,7 @@ float10 FUN_00417f20(int param_1)
 }
 
 /* ===== FUN_00417f60 @ 0x00417F60 ===== */
-/* PS2 candidate: ObjIsMeccBaseWall (conf 0.44) */
+/* PS2 candidate: ObjIsMeccBaseWall (conf 0.434) */
 
 
 
@@ -6163,7 +6165,7 @@ undefined4 FUN_00417f60(int param_1)
 }
 
 /* ===== FUN_00418010 @ 0x00418010 ===== */
-/* PS2 candidate: bldg_set_energy (conf 0.544) */
+/* PS2 candidate: bldg_set_energy (conf 0.553) */
 
 
 
@@ -6281,7 +6283,7 @@ void FUN_004180a0(int param_1,float param_2)
 }
 
 /* ===== FUN_00418170 @ 0x00418170 ===== */
-/* PS2 candidate: bldg_get_max_energy (conf 0.471) */
+/* PS2 candidate: bldg_get_max_energy (conf 0.469) */
 
 
 
@@ -6706,7 +6708,7 @@ undefined4 FUN_00418540(float param_1,int param_2)
 }
 
 /* ===== FUN_00418630 @ 0x00418630 ===== */
-/* PS2 candidate: bldg_get_refpt_worldloc (conf 0.34) */
+/* PS2 candidate: bldg_get_refpt_worldloc (conf 0.358) */
 
 
 
@@ -6777,7 +6779,7 @@ void FUN_00418630(int param_1,int param_2,undefined4 *param_3)
 }
 
 /* ===== FUN_004186c0 @ 0x004186C0 ===== */
-/* PS2 candidate: bldg_get_refpt_worldlocdir (conf 0.331) */
+/* PS2 candidate: bldg_get_refpt_worldlocdir (conf 0.346) */
 
 
 
@@ -6980,7 +6982,7 @@ void FUN_00418810(int param_1,int param_2,float *param_3,float *param_4)
 }
 
 /* ===== FUN_004188a0 @ 0x004188A0 ===== */
-/* PS2 candidate: base_get_base_building (conf 0.318) */
+/* PS2 candidate: base_get_base_building (conf 0.343) */
 
 
 
@@ -7021,7 +7023,7 @@ undefined4 FUN_004188a0(undefined4 param_1)
 }
 
 /* ===== FUN_004188e0 @ 0x004188E0 ===== */
-/* PS2 candidate: base_has_partyhouse (conf 0.32) */
+/* PS2 candidate: base_has_partyhouse (conf 0.394) */
 
 
 
@@ -7066,7 +7068,7 @@ bool FUN_004188e0(int param_1)
 }
 
 /* ===== FUN_00418950 @ 0x00418950 ===== */
-/* PS2 candidate: base_find_closest (conf 0.405) */
+/* PS2 candidate: base_find_closest (conf 0.421) */
 
 
 
@@ -7347,7 +7349,7 @@ LAB_00418bc3:
 }
 
 /* ===== FUN_00418c80 @ 0x00418C80 ===== */
-/* PS2 candidate: base_bldg_pulsate (conf 0.475) */
+/* PS2 candidate: base_bldg_pulsate (conf 0.473) */
 
 
 
@@ -9195,8 +9197,6 @@ undefined4 FUN_0041b660(int param_1,int param_2)
 
   undefined4 local_38;
 
-  undefined1 local_34 [4];
-
   undefined4 local_30;
 
   undefined4 local_2c;
@@ -9445,7 +9445,7 @@ undefined4 FUN_0041b660(int param_1,int param_2)
 
           local_28 = *(undefined4 *)(iVar4 + 0xa8);
 
-          fx_get_free_effect__Fv(s_fxb_build_select_005557dc,8,local_34);
+          fx_get_free_effect__Fv();
 
           param_2 = 1;
 
@@ -10072,6 +10072,10 @@ switchD_0041bf79_caseD_d:
 }
 
 /* ===== bldg_get_bldg_name @ 0x0041C0C0 ===== */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
 undefined1 * bldg_get_bldg_name(int param_1)
 
 
@@ -10079,6 +10083,8 @@ undefined1 * bldg_get_bldg_name(int param_1)
 {
 
   char cVar1;
+
+  OBJECT *p0;
 
   int iVar2;
 
@@ -10088,15 +10094,13 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   char *pcVar5;
 
-  int iVar6;
+  uint uVar6;
 
   uint uVar7;
 
-  uint uVar8;
+  char *pcVar8;
 
   char *pcVar9;
-
-  char *pcVar10;
 
   undefined4 local_80;
 
@@ -10142,15 +10146,15 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   if (-1 < iVar2) {
 
-    iVar6 = *(int *)(param_1 + 0x274);
+    p0 = *(OBJECT **)(param_1 + 0x274);
 
-    if (iVar6 != 0) {
+    if (p0 != (OBJECT *)0x0) {
 
-      iVar4 = FUN_004a6200(iVar6);
+      iVar4 = FUN_004a6200(p0);
 
       if (iVar4 == 0) {
 
-        pcVar5 = (char *)base_get_required_smarties__FP6OBJECTi(iVar6,iVar2);
+        pcVar5 = (char *)base_get_required_smarties__FP6OBJECTi(p0,iVar2);
 
       }
 
@@ -10166,37 +10170,15 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
       local_7c = DAT_005557f4;
 
-      uVar7 = 0xffffffff;
-
-      do {
-
-        pcVar10 = pcVar5;
-
-        if (uVar7 == 0) break;
-
-        uVar7 = uVar7 - 1;
-
-        pcVar10 = pcVar5 + 1;
-
-        cVar1 = *pcVar5;
-
-        pcVar5 = pcVar10;
-
-      } while (cVar1 != '\0');
-
-      uVar7 = ~uVar7;
-
-      iVar2 = -1;
-
-      pcVar5 = (char *)&local_80;
+      uVar6 = 0xffffffff;
 
       do {
 
         pcVar9 = pcVar5;
 
-        if (iVar2 == 0) break;
+        if (uVar6 == 0) break;
 
-        iVar2 = iVar2 + -1;
+        uVar6 = uVar6 - 1;
 
         pcVar9 = pcVar5 + 1;
 
@@ -10206,27 +10188,49 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
       } while (cVar1 != '\0');
 
-      pcVar5 = pcVar10 + -uVar7;
+      uVar6 = ~uVar6;
 
-      pcVar10 = pcVar9 + -1;
+      iVar2 = -1;
 
-      for (uVar8 = uVar7 >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
+      pcVar5 = (char *)&local_80;
 
-        *(undefined4 *)pcVar10 = *(undefined4 *)pcVar5;
+      do {
+
+        pcVar8 = pcVar5;
+
+        if (iVar2 == 0) break;
+
+        iVar2 = iVar2 + -1;
+
+        pcVar8 = pcVar5 + 1;
+
+        cVar1 = *pcVar5;
+
+        pcVar5 = pcVar8;
+
+      } while (cVar1 != '\0');
+
+      pcVar5 = pcVar9 + -uVar6;
+
+      pcVar9 = pcVar8 + -1;
+
+      for (uVar7 = uVar6 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
+
+        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar5;
 
         pcVar5 = pcVar5 + 4;
 
-        pcVar10 = pcVar10 + 4;
+        pcVar9 = pcVar9 + 4;
 
       }
 
-      for (uVar7 = uVar7 & 3; uVar7 != 0; uVar7 = uVar7 - 1) {
+      for (uVar6 = uVar6 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
 
-        *pcVar10 = *pcVar5;
+        *pcVar9 = *pcVar5;
 
         pcVar5 = pcVar5 + 1;
 
-        pcVar10 = pcVar10 + 1;
+        pcVar9 = pcVar9 + 1;
 
       }
 
@@ -10300,9 +10304,9 @@ switchD_0041c1e2_caseD_3d9:
 
   }
 
-  iVar6 = FUN_004a6220(param_1);
+  iVar4 = FUN_004a6220(param_1);
 
-  if (iVar6 != 0) {
+  if (iVar4 != 0) {
 
     puVar3 = (undefined1 *)FUN_00507b00(*(undefined4 *)(s_collmgrid_005555c0 + iVar2 * 4 + 8));
 
@@ -10778,7 +10782,7 @@ LAB_0041e8bf:
 }
 
 /* ===== FUN_0041e960 @ 0x0041E960 ===== */
-/* PS2 candidate: reaperbasebldg_shot (conf 0.417) */
+/* PS2 candidate: repair_logic (conf 0.45) */
 
 
 

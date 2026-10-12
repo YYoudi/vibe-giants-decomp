@@ -35,7 +35,7 @@ void FUN_00499c80(int param_1)
 }
 
 /* ===== FUN_00499cd0 @ 0x00499CD0 ===== */
-/* PS2 candidate: object_free_all_allocated_data (conf 0.423) */
+/* PS2 candidate: object_free_all_allocated_data (conf 0.468) */
 
 
 
@@ -184,7 +184,7 @@ void FUN_00499e10(int param_1)
 }
 
 /* ===== FUN_00499e70 @ 0x00499E70 ===== */
-/* PS2 candidate: object_change_ospec (conf 0.5) */
+/* PS2 candidate: object_change_ospec (conf 0.549) */
 
 
 

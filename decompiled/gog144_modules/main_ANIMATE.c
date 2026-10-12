@@ -176,6 +176,10 @@ float * FUN_004050d0(float param_1)
 }
 
 /* ===== FUN_00405130 @ 0x00405130 ===== */
+/* PS2 candidate: loadsave_save__FPCc (conf 0.525) */
+
+
+
 void FUN_00405130(undefined4 *param_1,int *param_2)
 
 
@@ -428,6 +432,10 @@ LAB_0040534a:
 }
 
 /* ===== FUN_004053b0 @ 0x004053B0 ===== */
+/* PS2 candidate: AnimationCreate (conf 0.595) */
+
+
+
 void FUN_004053b0(undefined4 *param_1,int param_2,char *param_3)
 
 

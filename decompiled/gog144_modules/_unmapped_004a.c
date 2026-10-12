@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (1 named) — decompiled, names from PS2 symbols
+ * 131 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -764,7 +764,7 @@ void FUN_004a1500(void)
 }
 
 /* ===== FUN_004a1740 @ 0x004A1740 ===== */
-/* PS2 candidate: PhysicsExInit (conf 0.495) */
+/* PS2 candidate: PhysicsExInit (conf 0.605) */
 
 
 
@@ -2208,7 +2208,7 @@ float10 FUN_004a2be0(int param_1)
 }
 
 /* ===== FUN_004a2c50 @ 0x004A2C50 ===== */
-/* PS2 candidate: SphereFitToObject (conf 0.354) */
+/* PS2 candidate: SphereFitToObject (conf 0.368) */
 
 
 
@@ -3528,7 +3528,7 @@ LAB_004a431f:
 }
 
 /* ===== FUN_004a4360 @ 0x004A4360 ===== */
-/* PS2 candidate: PhysicsExApplyLocation (conf 0.326) */
+/* PS2 candidate: PhysicsExApplyLocation (conf 0.382) */
 
 
 
@@ -3683,7 +3683,7 @@ void FUN_004a4510(void)
 /* ===== FUN_004a4550 @ 0x004A4550 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: piranha_go (conf 0.423) */
+/* PS2 candidate: piranha_go (conf 0.444) */
 
 
 
@@ -3862,7 +3862,7 @@ LAB_004a473d:
 }
 
 /* ===== FUN_004a4770 @ 0x004A4770 ===== */
-/* PS2 candidate: piranha_make__FP6OBJECT (conf 0.397) */
+/* PS2 candidate: piranha_make__FP6OBJECT (conf 0.443) */
 
 
 
@@ -3955,7 +3955,7 @@ int FUN_004a4770(int param_1)
 }
 
 /* ===== FUN_004a48a0 @ 0x004A48A0 ===== */
-/* PS2 candidate: piranha_chase_swimmer__FP6OBJECT (conf 0.4) */
+/* PS2 candidate: piranha_chase_swimmer__FP6OBJECT (conf 0.443) */
 
 
 
@@ -4188,15 +4188,11 @@ void FUN_004a4c10(int param_1)
 
   int iVar4;
 
-  char *pcVar5;
-
   undefined4 local_40;
 
   undefined4 local_3c;
 
   undefined4 local_38;
-
-  undefined1 local_34 [4];
 
   undefined4 local_30;
 
@@ -4254,29 +4250,15 @@ void FUN_004a4c10(int param_1)
 
   if (iVar4 != -1) {
 
-    iVar3 = *(int *)(param_1 + 0x274);
+    local_30 = *(undefined4 *)(*(int *)(param_1 + 0x274) + 0xa0);
 
-    local_30 = *(undefined4 *)(iVar3 + 0xa0);
-
-    local_2c = *(undefined4 *)(iVar3 + 0xa4);
+    local_2c = *(undefined4 *)(*(int *)(param_1 + 0x274) + 0xa4);
 
     local_28 = 0;
 
     local_24 = 8;
 
-    if (iVar3 == DAT_00632a88) {
-
-      pcVar5 = s_fx_piranha_attack_0055eb04;
-
-    }
-
-    else {
-
-      pcVar5 = s__piranha_attack_lite_0055eaef + 1;
-
-    }
-
-    uVar2 = fx_get_free_effect__Fv(pcVar5,0x28,local_34);
+    uVar2 = fx_get_free_effect__Fv();
 
     (&DAT_00632960)[iVar4 * 3] = uVar2;
 
@@ -5348,7 +5330,7 @@ void FUN_004a5eb0(void)
 }
 
 /* ===== FUN_004a5f40 @ 0x004A5F40 ===== */
-/* PS2 candidate: player_force_type (conf 0.37) */
+/* PS2 candidate: player_force_type (conf 0.383) */
 
 
 
@@ -5471,7 +5453,7 @@ void FUN_004a5f40(int param_1)
 }
 
 /* ===== FUN_004a6100 @ 0x004A6100 ===== */
-/* PS2 candidate: ObjIsRipper (conf 0.361) */
+/* PS2 candidate: ObjIsRipper (conf 0.368) */
 
 
 
@@ -5492,7 +5474,7 @@ undefined4 FUN_004a6100(int param_1)
 }
 
 /* ===== FUN_004a6120 @ 0x004A6120 ===== */
-/* PS2 candidate: ObjIsJetski (conf 0.502) */
+/* PS2 candidate: ObjIsJetski (conf 0.446) */
 
 
 
@@ -5513,7 +5495,7 @@ undefined4 FUN_004a6120(int param_1)
 }
 
 /* ===== FUN_004a6140 @ 0x004A6140 ===== */
-/* PS2 candidate: ObjIsTurret (conf 0.388) */
+/* PS2 candidate: ObjIsTurret (conf 0.381) */
 
 
 
@@ -5555,7 +5537,7 @@ undefined4 FUN_004a6160(int param_1)
 }
 
 /* ===== FUN_004a6180 @ 0x004A6180 ===== */
-/* PS2 candidate: ObjIsReaper (conf 0.607) */
+/* PS2 candidate: ObjIsReaper (conf 0.59) */
 
 
 
@@ -5614,7 +5596,7 @@ undefined4 FUN_004a61c0(int param_1)
 }
 
 /* ===== FUN_004a61e0 @ 0x004A61E0 ===== */
-/* PS2 candidate: ObjIsPlayer (conf 0.345) */
+/* PS2 candidate: ObjIsPlayer (conf 0.381) */
 
 
 
@@ -5766,7 +5748,7 @@ undefined4 FUN_004a62b0(int param_1)
 }
 
 /* ===== FUN_004a6300 @ 0x004A6300 ===== */
-/* PS2 candidate: ObjIsReaperBldg (conf 0.352) */
+/* PS2 candidate: ObjIsReaperBldg (conf 0.341) */
 
 
 
@@ -6746,7 +6728,7 @@ void FUN_004a7400(int param_1)
 }
 
 /* ===== FUN_004a7440 @ 0x004A7440 ===== */
-/* PS2 candidate: ObjectCalculateTransform (conf 0.461) */
+/* PS2 candidate: ObjectCalculateTransform (conf 0.497) */
 
 
 
@@ -7179,7 +7161,7 @@ void FUN_004a7df0(float *param_1,float param_2,undefined4 param_3)
 }
 
 /* ===== FUN_004a8cc0 @ 0x004A8CC0 ===== */
-void FUN_004a8cc0(undefined4 param_1)
+void FUN_004a8cc0(undefined4 *param_1)
 
 
 
@@ -7192,7 +7174,7 @@ void FUN_004a8cc0(undefined4 param_1)
 }
 
 /* ===== FUN_004a8ce0 @ 0x004A8CE0 ===== */
-void FUN_004a8ce0(undefined4 param_1)
+void FUN_004a8ce0(undefined4 *param_1)
 
 
 
@@ -7205,7 +7187,7 @@ void FUN_004a8ce0(undefined4 param_1)
 }
 
 /* ===== FUN_004a8d00 @ 0x004A8D00 ===== */
-void FUN_004a8d00(undefined4 param_1)
+void FUN_004a8d00(undefined4 *param_1)
 
 
 
@@ -7218,7 +7200,7 @@ void FUN_004a8d00(undefined4 param_1)
 }
 
 /* ===== FUN_004a8d20 @ 0x004A8D20 ===== */
-void FUN_004a8d20(undefined4 param_1)
+void FUN_004a8d20(undefined4 *param_1)
 
 
 
@@ -7342,7 +7324,7 @@ void FUN_004a8d40(int param_1)
 }
 
 /* ===== FUN_004a8f50 @ 0x004A8F50 ===== */
-/* PS2 candidate: PROJ_DefGet (conf 0.507) */
+/* PS2 candidate: PROJ_DefGet (conf 0.51) */
 
 
 
@@ -7399,7 +7381,7 @@ undefined4 FUN_004a8f90(int param_1)
 }
 
 /* ===== FUN_004a8fb0 @ 0x004A8FB0 ===== */
-/* PS2 candidate: IconDefWieldType (conf 0.434) */
+/* PS2 candidate: IconDefWieldType (conf 0.53) */
 
 
 
@@ -7443,7 +7425,7 @@ undefined4 FUN_004a8fe0(int param_1)
 }
 
 /* ===== FUN_004a9010 @ 0x004A9010 ===== */
-/* PS2 candidate: IconDefAmmoIcon (conf 0.466) */
+/* PS2 candidate: IconDefAmmoIcon (conf 0.534) */
 
 
 
@@ -7464,7 +7446,7 @@ undefined4 FUN_004a9010(int param_1)
 }
 
 /* ===== FUN_004a9040 @ 0x004A9040 ===== */
-/* PS2 candidate: IconDefProjectile (conf 0.489) */
+/* PS2 candidate: IconDefProjectile (conf 0.507) */
 
 
 
@@ -7485,7 +7467,7 @@ undefined4 FUN_004a9040(int param_1)
 }
 
 /* ===== FUN_004a9070 @ 0x004A9070 ===== */
-/* PS2 candidate: IconDefMaxAmmo (conf 0.535) */
+/* PS2 candidate: IconDefMaxAmmo (conf 0.443) */
 
 
 
@@ -7506,7 +7488,7 @@ undefined4 FUN_004a9070(int param_1)
 }
 
 /* ===== FUN_004a90a0 @ 0x004A90A0 ===== */
-/* PS2 candidate: IconDefGiveAmmo (conf 0.487) */
+/* PS2 candidate: IconDefGiveAmmo (conf 0.454) */
 
 
 
@@ -9227,7 +9209,7 @@ void FUN_004a9fe0(undefined4 param_1,int param_2)
 }
 
 /* ===== FUN_004aa0b0 @ 0x004AA0B0 ===== */
-/* PS2 candidate: PROJ_CreateBasic (conf 0.405) */
+/* PS2 candidate: PROJ_CreateBasic (conf 0.422) */
 
 
 
@@ -9248,12 +9230,6 @@ int FUN_004aa0b0(int param_1,undefined4 param_2)
   uint *puVar5;
 
   uint *puVar6;
-
-  undefined1 local_34 [20];
-
-  undefined4 local_20;
-
-  int local_1c;
 
   
 
@@ -9323,11 +9299,7 @@ int FUN_004aa0b0(int param_1,undefined4 param_2)
 
   if ((char)puVar3[0x1e] != '\0') {
 
-    local_20 = 0;
-
-    local_1c = iVar2;
-
-    fx_get_free_effect__Fv(puVar3 + 0x1e,4,local_34);
+    fx_get_free_effect__Fv();
 
   }
 
@@ -9380,7 +9352,7 @@ int FUN_004aa0b0(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_004aa230 @ 0x004AA230 ===== */
-/* PS2 candidate: PROJ_Create2 (conf 0.476) */
+/* PS2 candidate: PROJ_Create2 (conf 0.479) */
 
 
 
@@ -9411,6 +9383,12 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
   float *pfVar9;
 
   float10 fVar10;
+
+  undefined4 *puVar11;
+
+  undefined4 uVar12;
+
+  undefined1 *puVar13;
 
   float local_13c;
 
@@ -9578,7 +9556,13 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   }
 
+  puVar11 = puVar7 + 0x36;
+
   if (*(char *)(puVar7 + 0x36) != '\0') {
+
+    puVar13 = local_bc;
+
+    uVar12 = 0x24;
 
     local_a4 = param_3;
 
@@ -9586,9 +9570,9 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     local_ac = 8;
 
-    uVar3 = fx_get_free_effect__Fv(puVar7 + 0x36,0x24,local_bc);
+    uVar3 = fx_get_free_effect__Fv();
 
-    FUN_0044ed20(uVar3,0);
+    FUN_0044ed20(uVar3,0,puVar11,uVar12,puVar13);
 
   }
 
@@ -9661,12 +9645,6 @@ int FUN_004aa550(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
 
   undefined4 *puVar7;
 
-  undefined1 local_34 [20];
-
-  undefined4 local_20;
-
-  int local_1c;
-
   
 
   iVar3 = FUN_004aa0b0(param_1,param_2);
@@ -9717,11 +9695,7 @@ int FUN_004aa550(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
 
   if (*(char *)(param_2 + 0x36) != '\0') {
 
-    local_20 = 0;
-
-    local_1c = iVar3;
-
-    fx_get_free_effect__Fv(param_2 + 0x36,4,local_34);
+    fx_get_free_effect__Fv();
 
   }
 
@@ -10112,6 +10086,10 @@ void FUN_004abd40(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
   char *pcVar6;
 
+  undefined4 uVar7;
+
+  undefined1 *puVar8;
+
   int local_78;
 
   undefined4 local_74;
@@ -10174,7 +10152,7 @@ void FUN_004abd40(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
 LAB_004ac207:
 
-    fx_get_free_effect__Fv(iVar2 + 0xf4,8,local_34);
+    fx_get_free_effect__Fv();
 
     if (((uVar1 & 0x80) != 0) &&
 
@@ -10228,7 +10206,7 @@ LAB_004ac24a:
 
       local_28 = param_4[2];
 
-      fx_get_free_effect__Fv(pcVar6,8,local_34);
+      fx_get_free_effect__Fv();
 
       if (((uVar1 & 0x80) != 0) &&
 
@@ -10328,17 +10306,9 @@ LAB_004ac24a:
 
       *(undefined4 *)(iVar4 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
-      if (iVar3 == 0) {
-
-        pcVar6 = s_fx_repair_spell_ground_0055fd7c;
-
-      }
-
-      else {
+      if (iVar3 != 0) {
 
         *(int *)(iVar4 + 0x274) = iVar3;
-
-        pcVar6 = s_fx_repair_spell_building_0055fd94;
 
       }
 
@@ -10346,7 +10316,7 @@ LAB_004ac24a:
 
       local_50 = iVar4;
 
-      fx_get_free_effect__Fv(pcVar6,4,local_68);
+      fx_get_free_effect__Fv();
 
       iVar3 = FUN_0052e480(param_1);
 
@@ -10368,7 +10338,7 @@ LAB_004ac24a:
 
     local_28 = param_4[2];
 
-    fx_get_free_effect__Fv(iVar2 + 0xf4,8,local_34);
+    fx_get_free_effect__Fv();
 
     if (((uVar1 & 0x80) == 0) ||
 
@@ -10390,15 +10360,21 @@ LAB_004ac24a:
 
       FUN_00499310(iVar3,*param_4,param_4[1],param_4[2]);
 
+      puVar8 = local_34;
+
       *(undefined4 *)(iVar3 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
+
+      uVar7 = 4;
+
+      pcVar6 = s_fx_repair_spell_ground_0055fd7c;
 
       local_20 = 0xffffffff;
 
       local_1c = iVar3;
 
-      fx_get_free_effect__Fv(s_fx_repair_spell_ground_0055fd7c,4,local_34);
+      fx_get_free_effect__Fv();
 
-      iVar4 = FUN_0052e480(param_1);
+      iVar4 = FUN_0052e480(param_1,pcVar6,uVar7,puVar8);
 
       if (iVar4 == 0) {
 
@@ -10442,7 +10418,7 @@ LAB_004ac24a:
 
       local_28 = param_4[2];
 
-      fx_get_free_effect__Fv(pcVar6,8,local_34);
+      fx_get_free_effect__Fv();
 
       if (((uVar1 & 0x80) != 0) &&
 
@@ -10602,7 +10578,7 @@ void FUN_004ac4b0(int param_1,float *param_2,int param_3,float param_4,float par
 }
 
 /* ===== FUN_004ac620 @ 0x004AC620 ===== */
-/* PS2 candidate: align_with_ground (conf 0.355) */
+/* PS2 candidate: align_with_ground (conf 0.56) */
 
 
 
@@ -10995,7 +10971,7 @@ LAB_004ac9df:
 }
 
 /* ===== FUN_004aca20 @ 0x004ACA20 ===== */
-/* PS2 candidate: sf_arm_followers__FP6OBJECTT0 (conf 0.398) */
+/* PS2 candidate: sf_is_valid_target__FP6OBJECT (conf 0.39) */
 
 
 
@@ -11024,16 +11000,6 @@ void FUN_004aca20(int param_1,int param_2)
   undefined4 *puVar9;
 
   undefined4 *local_38;
-
-  undefined1 local_34 [4];
-
-  undefined4 local_30;
-
-  undefined4 local_2c;
-
-  undefined4 local_28;
-
-  undefined4 local_24;
 
   
 
@@ -11179,15 +11145,7 @@ LAB_004acbe1:
 
   }
 
-  local_30 = *(undefined4 *)(iVar3 + 0xa0);
-
-  local_2c = *(undefined4 *)(iVar3 + 0xa4);
-
-  local_28 = *(undefined4 *)(iVar3 + 0xa8);
-
-  local_24 = 8;
-
-  uVar5 = fx_get_free_effect__Fv(s_FXB_swirl_0055fdb0,0x28,local_34);
+  uVar5 = fx_get_free_effect__Fv();
 
   *(undefined4 *)(iVar6 + 0x1c) = uVar5;
 
@@ -11477,7 +11435,7 @@ undefined4 FUN_004adbf0(int param_1,int param_2)
 }
 
 /* ===== FUN_004add50 @ 0x004ADD50 ===== */
-/* PS2 candidate: PROJ_GetCustom (conf 0.526) */
+/* PS2 candidate: PROJ_GetCustom (conf 0.528) */
 
 
 
@@ -11510,12 +11468,6 @@ void FUN_004add70(int param_1)
 
   int iVar1;
 
-  undefined1 local_34 [20];
-
-  undefined4 local_20;
-
-  int local_1c;
-
   
 
   if (*(int *)(param_1 + 0xec) != 0x3f800000) {
@@ -11526,19 +11478,11 @@ void FUN_004add70(int param_1)
 
       if (iVar1 == 0x2df) {
 
-        local_1c = param_1;
+        fx_get_free_effect__Fv();
 
-        local_20 = 0xd;
+        fx_get_free_effect__Fv();
 
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_RIPPLE_0055fe34,4,local_34);
-
-        local_20 = 0xf;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_WINDOW_0055fe20,4,local_34);
-
-        local_20 = 0x10;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_TOP_0055fe0c,4,local_34);
+        fx_get_free_effect__Fv();
 
         *(undefined4 *)(param_1 + 0xec) = 0x3f800000;
 
@@ -11548,23 +11492,13 @@ void FUN_004add70(int param_1)
 
       if (iVar1 == 0x2e0) {
 
-        local_1c = param_1;
+        fx_get_free_effect__Fv();
 
-        local_20 = 0xd;
+        fx_get_free_effect__Fv();
 
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_RIPPLE_0055fe34,4,local_34);
+        fx_get_free_effect__Fv();
 
-        local_20 = 0;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_BASE_0055fdf8,4,local_34);
-
-        local_20 = 0xf;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_WINDOW_0055fe20,4,local_34);
-
-        local_20 = 0x10;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_TOP_0055fe0c,4,local_34);
+        fx_get_free_effect__Fv();
 
         *(undefined4 *)(param_1 + 0xec) = 0x3f800000;
 
@@ -11574,23 +11508,13 @@ void FUN_004add70(int param_1)
 
       if (iVar1 == 0x2e1) {
 
-        local_1c = param_1;
+        fx_get_free_effect__Fv();
 
-        local_20 = 0xd;
+        fx_get_free_effect__Fv();
 
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_RIPPLE_0055fe34,4,local_34);
+        fx_get_free_effect__Fv();
 
-        local_20 = 0;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_BASE_0055fdf8,4,local_34);
-
-        local_20 = 0xf;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_WINDOW_0055fe20,4,local_34);
-
-        local_20 = 0x10;
-
-        fx_get_free_effect__Fv(s_FX_SPELLSHOP_TOP_0055fe0c,4,local_34);
+        fx_get_free_effect__Fv();
 
         *(undefined4 *)(param_1 + 0xec) = 0x3f800000;
 
@@ -11600,15 +11524,9 @@ void FUN_004add70(int param_1)
 
       if (iVar1 == 0x2d9) {
 
-        local_1c = param_1;
+        fx_get_free_effect__Fv();
 
-        local_20 = 0x11;
-
-        fx_get_free_effect__Fv(s_FX_EXTRACTOR_SMOKE_0055fde4,4,local_34);
-
-        local_20 = 0x36;
-
-        fx_get_free_effect__Fv(s_FX_EXTRACTOR_SOULS_0055fdd0,4,local_34);
+        fx_get_free_effect__Fv();
 
         *(undefined4 *)(param_1 + 0xec) = 0x3f800000;
 
@@ -11618,11 +11536,7 @@ void FUN_004add70(int param_1)
 
       if (iVar1 == 0x353) {
 
-        local_1c = param_1;
-
-        local_20 = 6;
-
-        fx_get_free_effect__Fv(s_FX_WATER_BUBBLES_0055fdbc,4,local_34);
+        fx_get_free_effect__Fv();
 
       }
 
@@ -11663,12 +11577,12 @@ void FUN_004ae290(void)
 
 }
 
-/* ===== FUN_004ae4c0 @ 0x004AE4C0 ===== */
+/* ===== read_objects_bin_PS2 @ 0x004AE4C0 ===== */
 /* PS2 candidate: read_worlds_bin_fn_PS2 (conf 0.516) */
 
 
 
-void FUN_004ae4c0(void)
+void read_objects_bin_PS2(void)
 
 
 

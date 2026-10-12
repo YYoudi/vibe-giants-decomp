@@ -39,9 +39,11 @@ void FUN_0049fa90(void)
 }
 
 /* ===== path_world_init__Fv @ 0x0049FD40 ===== */
-void path_world_init__Fv(int *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-                        undefined4 param_5)
+
+
+void path_world_init__Fv(void)
 
 
 
@@ -56,6 +58,16 @@ void path_world_init__Fv(int *param_1,undefined4 *param_2,undefined4 param_3,und
   int iVar4;
 
   int iVar5;
+
+  int *in_stack_00000004;
+
+  undefined4 *in_stack_00000008;
+
+  undefined4 in_stack_0000000c;
+
+  undefined4 in_stack_00000010;
+
+  undefined4 in_stack_00000014;
 
   undefined4 local_3c;
 
@@ -81,29 +93,23 @@ void path_world_init__Fv(int *param_1,undefined4 *param_2,undefined4 param_3,und
 
   undefined4 local_10;
 
-  undefined1 local_c [4];
-
-  undefined1 local_8 [4];
-
-  undefined1 local_4 [4];
-
   
 
-  local_18 = *param_1;
+  local_18 = *in_stack_00000004;
 
-  local_14 = param_1[1];
+  local_14 = in_stack_00000004[1];
 
-  local_10 = param_1[2];
+  local_10 = in_stack_00000004[2];
 
-  FUN_0049fb80(param_1,local_c,local_8,local_4);
+  FUN_0049fb80();
 
-  local_30 = *param_2;
+  local_30 = *in_stack_00000008;
 
-  local_2c = param_2[1];
+  local_2c = in_stack_00000008[1];
 
-  local_28 = param_2[2];
+  local_28 = in_stack_00000008[2];
 
-  FUN_0049fb80(param_2,local_24,local_20,local_1c);
+  FUN_0049fb80(in_stack_00000008,local_24,local_20,local_1c);
 
   if (DAT_005a0cf8 == 0) {
 
@@ -139,7 +145,7 @@ void path_world_init__Fv(int *param_1,undefined4 *param_2,undefined4 param_3,und
 
                                     s_C__Giants_source_main_path_c_0055e99c,0x1fe);
 
-        param_1 = DAT_00632d7c;
+        in_stack_00000004 = DAT_00632d7c;
 
         if (DAT_00632d7c != (int *)0x0) {
 
@@ -147,7 +153,7 @@ void path_world_init__Fv(int *param_1,undefined4 *param_2,undefined4 param_3,und
 
           do {
 
-            iVar2 = param_1[3];
+            iVar2 = in_stack_00000004[3];
 
             if ((*(uint *)(iVar2 + 0x1c8) & 0x200000) != 0) {
 
@@ -177,9 +183,9 @@ void path_world_init__Fv(int *param_1,undefined4 *param_2,undefined4 param_3,und
 
             }
 
-            param_1 = (int *)*param_1;
+            in_stack_00000004 = (int *)*in_stack_00000004;
 
-          } while (param_1 != (int *)0x0);
+          } while (in_stack_00000004 != (int *)0x0);
 
         }
 
@@ -191,7 +197,7 @@ void path_world_init__Fv(int *param_1,undefined4 *param_2,undefined4 param_3,und
 
   DAT_005a0ce8 = 0;
 
-  FUN_0049ff30(&local_18,&local_30,param_3,param_4,param_5);
+  FUN_0049ff30(&local_18,&local_30,in_stack_0000000c,in_stack_00000010,in_stack_00000014);
 
   return;
 

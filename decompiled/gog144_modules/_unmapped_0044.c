@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (0 named) — decompiled, names from PS2 symbols
+ * 76 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1333,7 +1333,7 @@ void FUN_004419d0(undefined4 param_1)
 }
 
 /* ===== FUN_00441d20 @ 0x00441D20 ===== */
-/* PS2 candidate: make_dust_ball (conf 0.364) */
+/* PS2 candidate: make_dust_ball (conf 0.426) */
 
 
 
@@ -1648,7 +1648,7 @@ void FUN_00442330(undefined4 param_1,int param_2)
 }
 
 /* ===== FUN_004429c0 @ 0x004429C0 ===== */
-/* PS2 candidate: scenerio_handle_music__FPv (conf 0.428) */
+/* PS2 candidate: scenerio_handle_music__FPv (conf 0.437) */
 
 
 
@@ -2515,7 +2515,7 @@ void FUN_00443910(undefined4 *param_1,int *param_2)
 }
 
 /* ===== FUN_00443a90 @ 0x00443A90 ===== */
-/* PS2 candidate: FLK_ActorAdd__FP9FLK_FlickiPcii (conf 0.3) */
+/* PS2 candidate: FLK_ActorAdd__FP9FLK_FlickiPcii (conf 0.419) */
 
 
 
@@ -2795,20 +2795,6 @@ FUN_00443d60(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,
 
   int iVar6;
 
-  undefined1 auStack_34 [4];
-
-  undefined4 uStack_30;
-
-  undefined4 uStack_2c;
-
-  undefined4 uStack_28;
-
-  undefined4 uStack_24;
-
-  undefined4 uStack_20;
-
-  int iStack_1c;
-
   
 
   iVar6 = 0;
@@ -2891,27 +2877,15 @@ FUN_00443d60(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,
 
                    *(undefined4 *)(iVar5 + 0x2c4));
 
-      uStack_24 = 4;
-
       if (param_4 != 0) {
 
-        uStack_20 = 0xffffffff;
-
-        iStack_1c = iVar5;
-
-        fx_get_free_effect__Fv(param_3,0x24,auStack_34);
+        fx_get_free_effect__Fv();
 
         return 1;
 
       }
 
-      uStack_30 = *(undefined4 *)(iVar5 + 0xa0);
-
-      uStack_2c = *(undefined4 *)(iVar5 + 0xa4);
-
-      uStack_28 = *(undefined4 *)(iVar5 + 0xa8);
-
-      fx_get_free_effect__Fv(param_3,0x28,auStack_34);
+      fx_get_free_effect__Fv();
 
     }
 
@@ -2967,7 +2941,7 @@ undefined4 FUN_00443f30(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_00443fb0 @ 0x00443FB0 ===== */
-/* PS2 candidate: FLK_ActorOffsetEval__FP9FLK_Actor (conf 0.345) */
+/* PS2 candidate: FLK_ActorOffsetEval__FP9FLK_Actor (conf 0.354) */
 
 
 
@@ -3032,6 +3006,10 @@ void FUN_00443fb0(float param_1)
 }
 
 /* ===== FUN_004440f0 @ 0x004440F0 ===== */
+/* PS2 candidate: FLK_FlickTextProcess__FP9FLK_Flick (conf 0.399) */
+
+
+
 void FUN_004440f0(int param_1)
 
 
@@ -3351,6 +3329,8 @@ void FUN_00444320(void)
 
 /* ===== FUN_004444c0 @ 0x004444C0 ===== */
 /* WARNING: Removing unreachable block (ram,0x004446e1) */
+
+/* PS2 candidate: FLK_FlickRender__FP9FLK_Flick (conf 0.365) */
 
 
 
@@ -4371,6 +4351,10 @@ LAB_004451e2:
 }
 
 /* ===== FUN_00445570 @ 0x00445570 ===== */
+/* PS2 candidate: FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT (conf 0.367) */
+
+
+
 undefined4 FUN_00445570(int param_1,int param_2)
 
 
@@ -4803,7 +4787,9 @@ LAB_004459e7:
 /* ===== FUN_00445a20 @ 0x00445A20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: FLK_FlickProcess__FP9FLK_Flick (conf 0.403) */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+/* PS2 candidate: FLK_FlickProcess__FP9FLK_Flick (conf 0.38) */
 
 
 
@@ -4834,6 +4820,8 @@ undefined4 FUN_00445a20(undefined4 *param_1)
   int iVar10;
 
   int iVar11;
+
+  OBJECT *unaff_ESI;
 
   undefined4 *puVar12;
 
@@ -5671,7 +5659,7 @@ LAB_00445a50:
 
     }
 
-    sound_play_stream(iVar11,*(undefined4 *)(DAT_006330e4 + 0x50e0),0);
+    sound_play_stream(iVar11,*(char **)(DAT_006330e4 + 0x50e0),0,unaff_ESI);
 
     puVar12 = puVar12 + puVar12[1];
 
@@ -6183,7 +6171,7 @@ int FUN_00446890(void)
 }
 
 /* ===== FUN_004469e0 @ 0x004469E0 ===== */
-/* PS2 candidate: sinf (conf 0.31) */
+/* PS2 candidate: FLK_FlickPlaying (conf 0.33) */
 
 
 
@@ -7600,7 +7588,7 @@ LAB_004481cb:
 }
 
 /* ===== FUN_00448750 @ 0x00448750 ===== */
-/* PS2 candidate: fxobj_delete__FP6OBJECTP7FxOspeci (conf 0.364) */
+/* PS2 candidate: fxobj_delete__FP6OBJECTP7FxOspeci (conf 0.376) */
 
 
 
@@ -7674,7 +7662,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
     local_34 = *(undefined4 *)(param_1 + 0x174);
 
-    fx_get_free_effect__Fv(0,0x38,&local_34);
+    fx_get_free_effect__Fv();
 
   }
 
@@ -7741,7 +7729,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_00448920 @ 0x00448920 ===== */
-/* PS2 candidate: fx_delete (conf 0.438) */
+/* PS2 candidate: fx_delete (conf 0.536) */
 
 
 
@@ -7988,12 +7976,14 @@ void FUN_00448c20(int param_1)
 
 }
 
-/* ===== FUN_00448ca0 @ 0x00448CA0 ===== */
+/* ===== fx_createGameLockedObj__FP6FxDataiii @ 0x00448CA0 ===== */
 /* PS2 candidate: fx_createGameLockedObj__FP6FxDataiii (conf 0.489) */
 
 
 
-int FUN_00448ca0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+int fx_createGameLockedObj__FP6FxDataiii
+
+              (int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -8082,7 +8072,7 @@ int FUN_00448ca0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 }
 
 /* ===== FUN_00448e10 @ 0x00448E10 ===== */
-/* PS2 candidate: fx_createObj__FP6FxDatai (conf 0.421) */
+/* PS2 candidate: fx_createObj__FP6FxDatai (conf 0.521) */
 
 
 
@@ -8353,9 +8343,9 @@ LAB_00449042:
 
 
 
-int FUN_00449150(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5,
+int FUN_00449150(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 
-                undefined4 *param_6,undefined4 param_7)
+                int param_5,undefined4 *param_6)
 
 
 
@@ -8369,29 +8359,9 @@ int FUN_00449150(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   undefined4 *puVar4;
 
-  undefined4 local_34;
-
-  undefined4 local_30;
-
-  undefined4 local_2c;
-
-  undefined4 local_28;
-
-  undefined4 local_24;
-
   
 
-  local_30 = *(undefined4 *)(param_1 + 0xa0);
-
-  local_2c = *(undefined4 *)(param_1 + 0xa4);
-
-  local_28 = *(undefined4 *)(param_1 + 0xa8);
-
-  local_34 = param_2;
-
-  local_24 = param_7;
-
-  iVar2 = fx_get_free_effect__Fv(0,0x38,&local_34);
+  iVar2 = fx_get_free_effect__Fv();
 
   if (param_5 == 0) {
 
@@ -8429,7 +8399,7 @@ int FUN_00449150(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   *(undefined4 *)(iVar2 + 0x38) = param_3;
 
-  *(int *)(iVar2 + 0x40) = param_1;
+  *(undefined4 *)(iVar2 + 0x40) = param_1;
 
   if ((*(byte *)(iVar2 + 0x18) & 2) != 0) {
 
@@ -8575,7 +8545,7 @@ void FUN_00449200(int param_1,float param_2)
 
 
 
-void FUN_00449800(int param_1,undefined4 *param_2,undefined4 *param_3)
+void FUN_00449800(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
@@ -8587,7 +8557,7 @@ void FUN_00449800(int param_1,undefined4 *param_2,undefined4 *param_3)
 
   
 
-  if (param_1 == 0) {
+  if (param_1 == (undefined4 *)0x0) {
 
     FUN_00542f27(local_200,s_Failed_to_setup_tracer_rgb_fadin_005598c0,DAT_0059ce5c + 0x20);
 
@@ -8597,7 +8567,7 @@ void FUN_00449800(int param_1,undefined4 *param_2,undefined4 *param_3)
 
   else {
 
-    iVar1 = *(int *)(*(int *)(param_1 + 4) + 0x100);
+    iVar1 = *(int *)(param_1[1] + 0x100);
 
     if ((*(int **)(iVar1 + 0xf8) == (int *)0x0) || (**(int **)(iVar1 + 0xf8) == 0)) {
 
@@ -8634,7 +8604,7 @@ void FUN_00449800(int param_1,undefined4 *param_2,undefined4 *param_3)
 
 /* WARNING: Removing unreachable block (ram,0x0044a94f) */
 
-/* PS2 candidate: fx_processOpCodes__FP6FxDataiP6OBJECT (conf 0.675) */
+/* PS2 candidate: fx_processOpCodes__FP6FxDataiP6OBJECT (conf 0.69) */
 
 
 
@@ -8662,31 +8632,35 @@ undefined4 FUN_00449ce0(void)
 
   int *piVar9;
 
-  int iVar10;
+  char *pcVar10;
 
-  char *pcVar11;
+  int iVar11;
 
   int iVar12;
 
-  int iVar13;
+  float fVar13;
 
-  undefined4 uVar14;
+  float *pfVar14;
 
-  float fVar15;
+  dword dVar15;
 
-  uint uVar16;
+  undefined4 uVar16;
 
   float fVar17;
 
-  float *pfVar18;
+  uint uVar18;
 
   float *pfVar19;
 
-  float10 fVar20;
+  float *p2;
+
+  float *pfVar20;
 
   float10 fVar21;
 
   float10 fVar22;
+
+  float10 fVar23;
 
   int iStack00000008;
 
@@ -8702,17 +8676,21 @@ undefined4 FUN_00449ce0(void)
 
   undefined4 in_stack_0000032c;
 
-  int *in_stack_0000d770;
+  FxData *in_stack_0000d770;
 
   int in_stack_0000d774;
 
   int in_stack_0000d778;
 
+  int iVar24;
+
+  int p9;
+
   
 
   FUN_00543e00();
 
-  pfVar18 = (float *)*in_stack_0000d770;
+  pfVar19 = (float *)in_stack_0000d770->fx_0;
 
   bVar5 = false;
 
@@ -8728,7 +8706,7 @@ undefined4 FUN_00449ce0(void)
 
   if (in_stack_0000d778 != 0) {
 
-    pfVar18 = *(float **)(*(int *)(in_stack_0000d778 + 0x100) + 0x9c);
+    pfVar19 = *(float **)(*(int *)(in_stack_0000d778 + 0x100) + 0x9c);
 
     puStack0000003c = (undefined4 *)FUN_0053a700();
 
@@ -8742,9 +8720,11 @@ undefined4 FUN_00449ce0(void)
 
   do {
 
-    pfVar19 = (float *)((int)pfVar18 + 1);
+    p2 = (float *)((int)pfVar19 + 1);
 
-    switch(*(undefined1 *)pfVar18) {
+    pfVar20 = p2;
+
+    switch(*(undefined1 *)pfVar19) {
 
     case 2:
 
@@ -8756,7 +8736,7 @@ undefined4 FUN_00449ce0(void)
 
     case 3:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -8768,7 +8748,7 @@ undefined4 FUN_00449ce0(void)
 
     case 4:
 
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
+      pfVar20 = (float *)((int)pfVar19 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -8780,7 +8760,7 @@ undefined4 FUN_00449ce0(void)
 
     case 5:
 
-      if (*(float *)((int)pfVar18 + 5) < *pfVar19) {
+      if (*(float *)((int)pfVar19 + 5) < *p2) {
 
         FUN_00542f27();
 
@@ -8792,7 +8772,7 @@ undefined4 FUN_00449ce0(void)
 
       FUN_004d5780();
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      pfVar20 = (float *)((int)pfVar19 + 0x19);
 
       FUN_004d5780();
 
@@ -8848,11 +8828,11 @@ undefined4 FUN_00449ce0(void)
 
         if (!bVar5) {
 
-          uVar16 = *(uint *)(puStack0000003c[1] + 0xe0);
+          uVar18 = *(uint *)(puStack0000003c[1] + 0xe0);
 
-          if (((((uVar16 & 2) == 0) && ((in_stack_0000d770[4] & 0x60000U) == 0)) &&
+          if (((((uVar18 & 2) == 0) && ((in_stack_0000d770->fx_10 & 0x60000) == 0)) &&
 
-              (*(int *)(puStack0000003c[1] + 0x210) == 0)) && ((uVar16 & 0x600) == 0)) {
+              (*(int *)(puStack0000003c[1] + 0x210) == 0)) && ((uVar18 & 0x600) == 0)) {
 
             FUN_00448af0();
 
@@ -8878,11 +8858,11 @@ undefined4 FUN_00449ce0(void)
 
     case 8:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      fVar15 = *(float *)((int)pfVar18 + 5);
+      fVar17 = *(float *)((int)pfVar19 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -8896,17 +8876,17 @@ undefined4 FUN_00449ce0(void)
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = fVar15;
+          *(float *)(iVar11 + 0x14) = fVar17;
 
           FUN_0053e580();
 
-          if (fVar17 != fVar15) {
+          if (fVar13 != fVar17) {
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 8;
 
@@ -8920,13 +8900,13 @@ undefined4 FUN_00449ce0(void)
 
     case 9:
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      fVar17 = (float)fVar20;
+      fVar13 = (float)fVar21;
 
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
+      pfVar20 = (float *)((int)pfVar19 + 0x11);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -8940,17 +8920,17 @@ undefined4 FUN_00449ce0(void)
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = (float)fVar20;
+          *(float *)(iVar11 + 0x14) = (float)fVar21;
 
           FUN_0053e580();
 
-          if (fVar17 != (float)fVar20) {
+          if (fVar13 != (float)fVar21) {
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 8;
 
@@ -8964,17 +8944,17 @@ undefined4 FUN_00449ce0(void)
 
     case 10:
 
-      pcVar7 = (char *)((int)pfVar18 + 5);
+      pcVar7 = (char *)((int)pfVar19 + 5);
 
       do {
 
-        pcVar11 = pcVar7;
+        pcVar10 = pcVar7;
 
-        pcVar7 = pcVar11 + 1;
+        pcVar7 = pcVar10 + 1;
 
-      } while (*pcVar11 != '\0');
+      } while (*pcVar10 != '\0');
 
-      pfVar19 = (float *)(pcVar11 + 5);
+      pfVar20 = (float *)(pcVar10 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -8990,7 +8970,7 @@ undefined4 FUN_00449ce0(void)
 
           piStack0000000c = DAT_0059ce6c;
 
-          iVar12 = 0;
+          iVar11 = 0;
 
           if (0 < DAT_0059ce60) {
 
@@ -8998,13 +8978,13 @@ undefined4 FUN_00449ce0(void)
 
               FUN_0044ead0();
 
-              iVar13 = *piStack0000000c;
+              iVar12 = *piStack0000000c;
 
-              iVar10 = FUN_00545650();
+              iVar24 = FUN_00545650();
 
-              if (iVar10 == 0) {
+              if (iVar24 == 0) {
 
-                if (-1 < iVar13) {
+                if (-1 < iVar12) {
 
                   FUN_00449150();
 
@@ -9014,11 +8994,11 @@ undefined4 FUN_00449ce0(void)
 
               }
 
-              iVar12 = iVar12 + 1;
+              iVar11 = iVar11 + 1;
 
               piStack0000000c = piStack0000000c + 1;
 
-            } while (iVar12 < DAT_0059ce60);
+            } while (iVar11 < DAT_0059ce60);
 
           }
 
@@ -9030,17 +9010,15 @@ undefined4 FUN_00449ce0(void)
 
     case 0xb:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[1] = (int)fVar17;
+          in_stack_0000d770->fx_4 = (dword)*p2;
 
-          in_stack_0000d770[3] = 1;
+          in_stack_0000d770->fx_C = 1;
 
           bVar6 = true;
 
@@ -9062,17 +9040,17 @@ undefined4 FUN_00449ce0(void)
 
     case 0xc:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[1] = (int)(float)fVar20;
+          in_stack_0000d770->fx_4 = (dword)(float)fVar21;
 
-          in_stack_0000d770[3] = 1;
+          in_stack_0000d770->fx_C = 1;
 
           bVar6 = true;
 
@@ -9096,11 +9074,13 @@ undefined4 FUN_00449ce0(void)
 
       do {
 
-        cVar1 = *(char *)pfVar19;
+        cVar1 = *(char *)p2;
 
-        pfVar19 = (float *)((int)pfVar19 + 1);
+        p2 = (float *)((int)p2 + 1);
 
       } while (cVar1 != '\0');
+
+      pfVar20 = p2;
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9130,17 +9110,17 @@ undefined4 FUN_00449ce0(void)
 
               } while ((char)*piVar9 != '\0');
 
-              iVar12 = *(int *)((int)piVar9 + 1);
+              iVar11 = *(int *)((int)piVar9 + 1);
 
-              iVar13 = FUN_00545650();
+              iVar12 = FUN_00545650();
 
-              if (iVar13 == 0) {
+              if (iVar12 == 0) {
 
-                if (-1 < iVar12) {
+                if (-1 < iVar11) {
 
                   *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 1;
 
-                  *(int *)(puStack0000003c[1] + 0x174) = iVar12;
+                  *(int *)(puStack0000003c[1] + 0x174) = iVar11;
 
                   goto LAB_0044e828;
 
@@ -9170,9 +9150,9 @@ undefined4 FUN_00449ce0(void)
 
     case 0xe:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9186,15 +9166,15 @@ undefined4 FUN_00449ce0(void)
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          iVar13 = *(int *)(iVar12 + 0x100);
+          iVar12 = *(int *)(iVar11 + 0x100);
 
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x80;
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x80;
 
 LAB_0044abc9:
 
-          *(float *)(iVar13 + 0xa4) = fVar17;
+          *(float *)(iVar12 + 0xa4) = fVar13;
 
           *(uint *)(puStack0000003c[1] + 0xd8) = *(uint *)(puStack0000003c[1] + 0xd8) & 0xffffffef;
 
@@ -9206,21 +9186,21 @@ LAB_0044abc9:
 
     case 0xf:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      fVar17 = (float)fVar20;
+      fVar13 = (float)fVar21;
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c != (undefined4 *)0x0) {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          iVar13 = *(int *)(iVar12 + 0x100);
+          iVar12 = *(int *)(iVar11 + 0x100);
 
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x80;
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x80;
 
           goto LAB_0044abc9;
 
@@ -9236,17 +9216,17 @@ LAB_0044abc9:
 
     case 0x10:
 
-      pcVar7 = (char *)((int)pfVar18 + 5);
+      pcVar7 = (char *)((int)pfVar19 + 5);
 
       do {
 
-        pcVar11 = pcVar7;
+        pcVar10 = pcVar7;
 
-        pcVar7 = pcVar11 + 1;
+        pcVar7 = pcVar10 + 1;
 
-      } while (*pcVar11 != '\0');
+      } while (*pcVar10 != '\0');
 
-      pfVar19 = (float *)(pcVar11 + 5);
+      pfVar20 = (float *)(pcVar10 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9262,7 +9242,7 @@ LAB_0044abc9:
 
           piStack0000000c = DAT_0059ce6c;
 
-          iVar12 = 0;
+          iVar11 = 0;
 
           if (0 < DAT_0059ce60) {
 
@@ -9270,13 +9250,13 @@ LAB_0044abc9:
 
               FUN_0044ead0();
 
-              iVar13 = *piStack0000000c;
+              iVar12 = *piStack0000000c;
 
-              iVar10 = FUN_00545650();
+              iVar24 = FUN_00545650();
 
-              if (iVar10 == 0) {
+              if (iVar24 == 0) {
 
-                if (-1 < iVar13) {
+                if (-1 < iVar12) {
 
                   FUN_00449150();
 
@@ -9286,11 +9266,11 @@ LAB_0044abc9:
 
               }
 
-              iVar12 = iVar12 + 1;
+              iVar11 = iVar11 + 1;
 
               piStack0000000c = piStack0000000c + 1;
 
-            } while (iVar12 < DAT_0059ce60);
+            } while (iVar11 < DAT_0059ce60);
 
           }
 
@@ -9302,9 +9282,9 @@ LAB_0044abc9:
 
     case 0x11:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9318,11 +9298,11 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x80;
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x80;
 
-          *(float *)(*(int *)(iVar12 + 0x100) + 0x1c) = fVar17;
+          *(float *)(*(int *)(iVar11 + 0x100) + 0x1c) = fVar13;
 
         }
 
@@ -9332,75 +9312,7 @@ LAB_0044abc9:
 
     case 0x12:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
-
-      fVar20 = (float10)FUN_004d5780();
-
-      if ((in_stack_0000d774 == 0) && (!bVar5)) {
-
-        if (puStack0000003c == (undefined4 *)0x0) {
-
-          FUN_00542f27();
-
-          FUN_0051ea20();
-
-        }
-
-        else {
-
-          iVar12 = puStack0000003c[1];
-
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x80;
-
-          *(float *)(*(int *)(iVar12 + 0x100) + 0x1c) = (float)fVar20;
-
-        }
-
-      }
-
-      break;
-
-    case 0x13:
-
-      fVar17 = *pfVar19;
-
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
-
-      pfVar19 = (float *)((int)pfVar18 + 9);
-
-      if ((in_stack_0000d774 == 0) && (!bVar5)) {
-
-        if (puStack0000003c == (undefined4 *)0x0) {
-
-          FUN_00542f27();
-
-          FUN_0051ea20();
-
-        }
-
-        else {
-
-          iVar12 = puStack0000003c[1];
-
-          iVar13 = *(int *)(iVar12 + 0x100);
-
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x80;
-
-          *(float *)(iVar13 + 0xd4) = fVar17;
-
-          *(undefined4 *)(iVar13 + 0xd8) = uVar14;
-
-        }
-
-      }
-
-      break;
-
-    case 0x14:
-
-      fVar20 = (float10)FUN_004d5780();
-
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       fVar21 = (float10)FUN_004d5780();
 
@@ -9416,15 +9328,83 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          iVar13 = *(int *)(iVar12 + 0x100);
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x80;
 
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x80;
+          *(float *)(*(int *)(iVar11 + 0x100) + 0x1c) = (float)fVar21;
 
-          *(float *)(iVar13 + 0xd4) = (float)fVar20;
+        }
 
-          *(float *)(iVar13 + 0xd8) = (float)fVar21;
+      }
+
+      break;
+
+    case 0x13:
+
+      fVar13 = *p2;
+
+      uVar16 = *(undefined4 *)((int)pfVar19 + 5);
+
+      pfVar20 = (float *)((int)pfVar19 + 9);
+
+      if ((in_stack_0000d774 == 0) && (!bVar5)) {
+
+        if (puStack0000003c == (undefined4 *)0x0) {
+
+          FUN_00542f27();
+
+          FUN_0051ea20();
+
+        }
+
+        else {
+
+          iVar11 = puStack0000003c[1];
+
+          iVar12 = *(int *)(iVar11 + 0x100);
+
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x80;
+
+          *(float *)(iVar12 + 0xd4) = fVar13;
+
+          *(undefined4 *)(iVar12 + 0xd8) = uVar16;
+
+        }
+
+      }
+
+      break;
+
+    case 0x14:
+
+      fVar21 = (float10)FUN_004d5780();
+
+      pfVar20 = (float *)((int)pfVar19 + 0x11);
+
+      fVar22 = (float10)FUN_004d5780();
+
+      if ((in_stack_0000d774 == 0) && (!bVar5)) {
+
+        if (puStack0000003c == (undefined4 *)0x0) {
+
+          FUN_00542f27();
+
+          FUN_0051ea20();
+
+        }
+
+        else {
+
+          iVar11 = puStack0000003c[1];
+
+          iVar12 = *(int *)(iVar11 + 0x100);
+
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x80;
+
+          *(float *)(iVar12 + 0xd4) = (float)fVar21;
+
+          *(float *)(iVar12 + 0xd8) = (float)fVar22;
 
         }
 
@@ -9478,7 +9458,7 @@ LAB_0044abc9:
 
     case 0x17:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9508,7 +9488,7 @@ LAB_0044abc9:
 
     case 0x18:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       FUN_004d5780();
 
@@ -9540,9 +9520,7 @@ LAB_0044abc9:
 
     case 0x19:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9556,7 +9534,7 @@ LAB_0044abc9:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xac) = fVar17;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xac) = *p2;
 
           *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x100;
 
@@ -9568,15 +9546,15 @@ LAB_0044abc9:
 
     case 0x1a:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       break;
 
     case 0x1b:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9590,13 +9568,13 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = fVar17;
+          *(float *)(iVar11 + 0x14) = fVar13;
 
           FUN_0053e580();
 
@@ -9608,11 +9586,11 @@ LAB_0044abc9:
 
     case 0x1c:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      fVar17 = (float)fVar20;
+      fVar13 = (float)fVar21;
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9626,13 +9604,13 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = fVar17;
+          *(float *)(iVar11 + 0x14) = fVar13;
 
           FUN_0053e580();
 
@@ -9644,19 +9622,25 @@ LAB_0044abc9:
 
     case 0x1d:
 
+      pfVar19 = p2;
+
       do {
 
-        pfVar18 = pfVar19;
+        pfVar14 = pfVar19;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        pfVar19 = (float *)((int)pfVar14 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar14 != '\0');
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar14 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii();
+        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
+
+                  (in_stack_0000d770,puStack0000003c,(int)p2,*(float *)((int)pfVar14 + 1),-1,-1,-1,
+
+                   -1,0,0);
 
       }
 
@@ -9664,21 +9648,25 @@ LAB_0044abc9:
 
     case 0x1e:
 
+      pfVar19 = p2;
+
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = pfVar19;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        pfVar19 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar20 + 9);
 
-      FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii();
+        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
+
+                  (in_stack_0000d770,puStack0000003c,(int)p2,(float)fVar21,-1,-1,-1,-1,0,0);
 
       }
 
@@ -9694,7 +9682,7 @@ LAB_0044abc9:
 
     case 0x20:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      pfVar20 = (float *)((int)pfVar19 + 0x19);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9730,11 +9718,11 @@ LAB_0044abc9:
 
     case 0x22:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      fVar15 = *(float *)((int)pfVar18 + 5);
+      fVar17 = *(float *)((int)pfVar19 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9748,23 +9736,23 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          if ((*(int **)(iVar12 + 0xf8) == (int *)0x0) || (**(int **)(iVar12 + 0xf8) == 0)) {
+          if ((*(int **)(iVar11 + 0xf8) == (int *)0x0) || (**(int **)(iVar11 + 0xf8) == 0)) {
 
-            fx_setupTracer__FP10FXSTACKTAG();
+            fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
           }
 
-          if (**(int **)(iVar12 + 0xf8) != 0) {
+          if (**(int **)(iVar11 + 0xf8) != 0) {
 
-            *(float *)(**(int **)(iVar12 + 0xf8) + 0x10) = fVar17;
+            *(float *)(**(int **)(iVar11 + 0xf8) + 0x10) = fVar13;
 
-            *(float *)(**(int **)(iVar12 + 0xf8) + 0x14) = fVar15;
+            *(float *)(**(int **)(iVar11 + 0xf8) + 0x14) = fVar17;
 
-            if (fVar15 < fVar17) {
+            if (fVar17 < fVar13) {
 
-              *(float *)(**(int **)(iVar12 + 0xf8) + 0x18) = 1.0 / (fVar17 - fVar15);
+              *(float *)(**(int **)(iVar11 + 0xf8) + 0x18) = 1.0 / (fVar13 - fVar17);
 
             }
 
@@ -9780,7 +9768,7 @@ LAB_0044abc9:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupTracer__FP10FXSTACKTAG();
+        fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
       }
 
@@ -9788,11 +9776,11 @@ LAB_0044abc9:
 
     case 0x24:
 
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
+      pfVar20 = (float *)((int)pfVar19 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        in_stack_0000001c = FUN_00448ca0();
+        in_stack_0000001c = fx_createGameLockedObj__FP6FxDataiii();
 
       }
 
@@ -9800,9 +9788,9 @@ LAB_0044abc9:
 
     case 0x25:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9816,21 +9804,21 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          piVar2 = *(int **)(iVar12 + 0xf8);
+          piVar2 = *(int **)(iVar11 + 0xf8);
 
           if ((piVar2 == (int *)0x0) || (*piVar2 == 0)) {
 
-            fx_setupTracer__FP10FXSTACKTAG();
+            fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
           }
 
-          iVar12 = **(int **)(iVar12 + 0xf8);
+          iVar11 = **(int **)(iVar11 + 0xf8);
 
-          if (iVar12 != 0) {
+          if (iVar11 != 0) {
 
-            *(float *)(iVar12 + 0x3c) = fVar17;
+            *(float *)(iVar11 + 0x3c) = fVar13;
 
           }
 
@@ -9842,9 +9830,9 @@ LAB_0044abc9:
 
     case 0x26:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9858,21 +9846,21 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          piVar2 = *(int **)(iVar12 + 0xf8);
+          piVar2 = *(int **)(iVar11 + 0xf8);
 
           if ((piVar2 == (int *)0x0) || (*piVar2 == 0)) {
 
-            fx_setupTracer__FP10FXSTACKTAG();
+            fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
           }
 
-          iVar12 = **(int **)(iVar12 + 0xf8);
+          iVar11 = **(int **)(iVar11 + 0xf8);
 
-          if (iVar12 != 0) {
+          if (iVar11 != 0) {
 
-            *(float *)(iVar12 + 0x38) = fVar17;
+            *(float *)(iVar11 + 0x38) = fVar13;
 
           }
 
@@ -9884,35 +9872,65 @@ LAB_0044abc9:
 
     case 0x27:
 
-      do {
-
-        pfVar18 = pfVar19;
-
-        pfVar19 = (float *)((int)pfVar18 + 1);
-
-      } while (*(char *)pfVar18 != '\0');
-
-      pfVar19 = (float *)((int)pfVar18 + 9);
-
-      goto joined_r0x0044cec5;
-
-    case 0x28:
+      pfVar19 = p2;
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = pfVar19;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        pfVar19 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      FUN_004d5780();
+      fVar13 = *(float *)((int)pfVar20 + 1);
 
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
+      iVar12 = *(int *)((int)pfVar20 + 5);
+
+      pfVar20 = (float *)((int)pfVar20 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii();
+        iVar11 = -1;
+
+        iVar24 = 0;
+
+        p9 = 0;
+
+LAB_0044cee6:
+
+        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
+
+                  (in_stack_0000d770,puStack0000003c,(int)p2,fVar13,iVar12,iVar12,iVar11,iVar11,
+
+                   iVar24,p9);
+
+      }
+
+      break;
+
+    case 0x28:
+
+      pfVar19 = p2;
+
+      do {
+
+        pfVar14 = pfVar19;
+
+        pfVar19 = (float *)((int)pfVar14 + 1);
+
+      } while (*(char *)pfVar14 != '\0');
+
+      fVar21 = (float10)FUN_004d5780();
+
+      pfVar20 = (float *)((int)pfVar14 + 0x11);
+
+      if ((in_stack_0000d774 == 0) && (!bVar5)) {
+
+        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
+
+                  (in_stack_0000d770,puStack0000003c,(int)p2,(float)fVar21,
+
+                   *(int *)((int)pfVar14 + 9),*(int *)((int)pfVar14 + 0xd),-1,-1,0,0);
 
       }
 
@@ -9920,11 +9938,13 @@ LAB_0044abc9:
 
     case 0x29:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupTextureAnimtion__FP10FXSTACKTAGif();
+        fx_setupTextureAnimtion__FP10FXSTACKTAGif
+
+                  (puStack0000003c,(int)*p2,*(float *)((int)pfVar19 + 5));
 
       }
 
@@ -9932,7 +9952,7 @@ LAB_0044abc9:
 
     case 0x2a:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9944,7 +9964,7 @@ LAB_0044abc9:
 
     case 0x2b:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       FUN_004d5740();
 
@@ -9958,7 +9978,7 @@ LAB_0044abc9:
 
     case 0x2c:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -9982,7 +10002,7 @@ LAB_0044abc9:
 
     case 0x2d:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       FUN_004d5740();
 
@@ -10008,9 +10028,9 @@ LAB_0044abc9:
 
     case 0x2e:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10024,17 +10044,17 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          piVar2 = *(int **)(iVar12 + 0xf8);
+          piVar2 = *(int **)(iVar11 + 0xf8);
 
           if ((piVar2 == (int *)0x0) || (*piVar2 == 0)) {
 
-            fx_setupTracer__FP10FXSTACKTAG();
+            fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
           }
 
-          *(float *)(*(int *)(iVar12 + 0xf8) + 8) = fVar17;
+          *(float *)(*(int *)(iVar11 + 0xf8) + 8) = fVar13;
 
         }
 
@@ -10044,9 +10064,9 @@ LAB_0044abc9:
 
     case 0x2f:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10060,17 +10080,17 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          piVar2 = *(int **)(iVar12 + 0xf8);
+          piVar2 = *(int **)(iVar11 + 0xf8);
 
           if ((piVar2 == (int *)0x0) || (*piVar2 == 0)) {
 
-            fx_setupTracer__FP10FXSTACKTAG();
+            fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
           }
 
-          *(float *)(*(int *)(iVar12 + 0xf8) + 8) = (float)fVar20;
+          *(float *)(*(int *)(iVar11 + 0xf8) + 8) = (float)fVar21;
 
         }
 
@@ -10080,9 +10100,9 @@ LAB_0044abc9:
 
     case 0x30:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10096,21 +10116,21 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          if ((*(int **)(iVar12 + 0xf8) == (int *)0x0) || (**(int **)(iVar12 + 0xf8) == 0)) {
+          if ((*(int **)(iVar11 + 0xf8) == (int *)0x0) || (**(int **)(iVar11 + 0xf8) == 0)) {
 
-            fx_setupTracer__FP10FXSTACKTAG();
+            fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
           }
 
-          if (**(int **)(iVar12 + 0xf8) != 0) {
+          if (**(int **)(iVar11 + 0xf8) != 0) {
 
             FUN_00509dc0();
 
-            *(float *)(*(int *)(iVar12 + 0xf8) + 0xc) = fVar17;
+            *(float *)(*(int *)(iVar11 + 0xf8) + 0xc) = fVar13;
 
-            *(float *)(*(int *)(iVar12 + 0xf8) + 0x10) = fVar17;
+            *(float *)(*(int *)(iVar11 + 0xf8) + 0x10) = fVar13;
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x20000;
 
@@ -10124,9 +10144,9 @@ LAB_0044abc9:
 
     case 0x31:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10140,21 +10160,21 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          if ((*(int **)(iVar12 + 0xf8) == (int *)0x0) || (**(int **)(iVar12 + 0xf8) == 0)) {
+          if ((*(int **)(iVar11 + 0xf8) == (int *)0x0) || (**(int **)(iVar11 + 0xf8) == 0)) {
 
-            fx_setupTracer__FP10FXSTACKTAG();
+            fx_setupTracer__FP10FXSTACKTAG(puStack0000003c);
 
           }
 
-          if (**(int **)(iVar12 + 0xf8) != 0) {
+          if (**(int **)(iVar11 + 0xf8) != 0) {
 
             FUN_00509dc0();
 
-            *(float *)(*(int *)(iVar12 + 0xf8) + 0xc) = (float)fVar20;
+            *(float *)(*(int *)(iVar11 + 0xf8) + 0xc) = (float)fVar21;
 
-            *(float *)(*(int *)(iVar12 + 0xf8) + 0x10) = (float)fVar20;
+            *(float *)(*(int *)(iVar11 + 0xf8) + 0x10) = (float)fVar21;
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x20000;
 
@@ -10168,11 +10188,11 @@ LAB_0044abc9:
 
     case 0x32:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      fVar15 = *(float *)((int)pfVar18 + 9);
+      fVar17 = *(float *)((int)pfVar19 + 9);
 
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
+      pfVar20 = (float *)((int)pfVar19 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10186,15 +10206,15 @@ LAB_0044abc9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(undefined4 *)(iVar12 + 0x30) = *(undefined4 *)((int)pfVar18 + 5);
+          *(undefined4 *)(iVar11 + 0x30) = *(undefined4 *)((int)pfVar19 + 5);
 
 LAB_0044d7d9:
 
-          *(float *)(iVar12 + 0x34) = fVar17;
+          *(float *)(iVar11 + 0x34) = fVar13;
 
-          *(float *)(iVar12 + 0x38) = fVar15;
+          *(float *)(iVar11 + 0x38) = fVar17;
 
           if ((*(uint *)(puStack0000003c[1] + 0xe0) & 0x40000000) == 0) {
 
@@ -10212,25 +10232,25 @@ LAB_0044d7d9:
 
     case 0x33:
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      fVar17 = (float)fVar20;
-
-      fVar20 = (float10)FUN_004d5780();
-
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      fVar13 = (float)fVar21;
 
       fVar21 = (float10)FUN_004d5780();
 
-      fVar15 = (float)fVar21;
+      pfVar20 = (float *)((int)pfVar19 + 0x19);
+
+      fVar22 = (float10)FUN_004d5780();
+
+      fVar17 = (float)fVar22;
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c != (undefined4 *)0x0) {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(iVar12 + 0x30) = (float)fVar20;
+          *(float *)(iVar11 + 0x30) = (float)fVar21;
 
           goto LAB_0044d7d9;
 
@@ -10246,11 +10266,11 @@ LAB_0044d7d9:
 
     case 0x34:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      fVar15 = *(float *)((int)pfVar18 + 5);
+      fVar17 = *(float *)((int)pfVar19 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10264,19 +10284,19 @@ LAB_0044d7d9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = fVar15;
+          *(float *)(iVar11 + 0x14) = fVar17;
 
           FUN_0053e580();
 
-          if (fVar17 != fVar15) {
+          if (fVar13 != fVar17) {
 
-            *(float *)(iVar12 + 0x18) = SQRT(fVar15 - fVar17);
+            *(float *)(iVar11 + 0x18) = SQRT(fVar17 - fVar13);
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x80000;
 
@@ -10290,15 +10310,15 @@ LAB_0044d7d9:
 
     case 0x35:
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      fVar17 = (float)fVar20;
+      fVar13 = (float)fVar21;
 
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
+      pfVar20 = (float *)((int)pfVar19 + 0x11);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      fVar15 = (float)fVar20;
+      fVar17 = (float)fVar21;
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10312,19 +10332,19 @@ LAB_0044d7d9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = fVar15;
+          *(float *)(iVar11 + 0x14) = fVar17;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
           FUN_0053e580();
 
-          if (fVar17 != fVar15) {
+          if (fVar13 != fVar17) {
 
-            *(float *)(iVar12 + 0x18) = SQRT(fVar15 - fVar17);
+            *(float *)(iVar11 + 0x18) = SQRT(fVar17 - fVar13);
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x80000;
 
@@ -10338,11 +10358,11 @@ LAB_0044d7d9:
 
     case 0x36:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      fVar15 = *(float *)((int)pfVar18 + 5);
+      fVar17 = *(float *)((int)pfVar19 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10356,17 +10376,17 @@ LAB_0044d7d9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = fVar15;
+          *(float *)(iVar11 + 0x14) = fVar17;
 
           FUN_0053e580();
 
-          if (fVar17 != fVar15) {
+          if (fVar13 != fVar17) {
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x100000;
 
@@ -10380,13 +10400,13 @@ LAB_0044d7d9:
 
     case 0x37:
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      fVar17 = (float)fVar20;
+      fVar13 = (float)fVar21;
 
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
+      pfVar20 = (float *)((int)pfVar19 + 0x11);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10400,17 +10420,17 @@ LAB_0044d7d9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(puStack0000003c[1] + 0xc4) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xc4) = fVar13;
 
-          *(float *)(iVar12 + 0x10) = fVar17;
+          *(float *)(iVar11 + 0x10) = fVar13;
 
-          *(float *)(iVar12 + 0x14) = (float)fVar20;
+          *(float *)(iVar11 + 0x14) = (float)fVar21;
 
           FUN_0053e580();
 
-          if (fVar17 != (float)fVar20) {
+          if (fVar13 != (float)fVar21) {
 
             *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x100000;
 
@@ -10424,11 +10444,11 @@ LAB_0044d7d9:
 
     case 0x38:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        in_stack_0000001c = fx_setupWeather__Fi();
+        in_stack_0000001c = fx_setupWeather__Fi((int)*p2);
 
       }
 
@@ -10436,13 +10456,11 @@ LAB_0044d7d9:
 
     case 0x39:
 
-      fVar17 = *pfVar19;
+      uVar16 = *(undefined4 *)((int)pfVar19 + 5);
 
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
+      uVar3 = *(undefined4 *)((int)pfVar19 + 9);
 
-      uVar3 = *(undefined4 *)((int)pfVar18 + 9);
-
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
+      pfVar20 = (float *)((int)pfVar19 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10456,7 +10474,7 @@ LAB_0044d7d9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
           if ((*(byte *)(puStack0000003c[1] + 0xe4) & 1) == 0) {
 
@@ -10468,11 +10486,11 @@ LAB_0044d7d9:
 
           else {
 
-            *(float *)(*(int *)(iVar12 + 0x100) + 0x10) = fVar17;
+            *(float *)(*(int *)(iVar11 + 0x100) + 0x10) = *p2;
 
-            *(undefined4 *)(*(int *)(iVar12 + 0x100) + 0x14) = uVar14;
+            *(undefined4 *)(*(int *)(iVar11 + 0x100) + 0x14) = uVar16;
 
-            *(undefined4 *)(*(int *)(iVar12 + 0x100) + 0xc) = uVar3;
+            *(undefined4 *)(*(int *)(iVar11 + 0x100) + 0xc) = uVar3;
 
           }
 
@@ -10484,11 +10502,9 @@ LAB_0044d7d9:
 
     case 0x3a:
 
-      fVar17 = *pfVar19;
+      uVar16 = *(undefined4 *)((int)pfVar19 + 5);
 
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
-
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10502,7 +10518,7 @@ LAB_0044d7d9:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
           if ((*(byte *)(puStack0000003c[1] + 0xe4) & 1) == 0) {
 
@@ -10514,9 +10530,9 @@ LAB_0044d7d9:
 
           else {
 
-            **(float **)(iVar12 + 0x100) = fVar17;
+            **(float **)(iVar11 + 0x100) = *p2;
 
-            *(undefined4 *)(*(int *)(iVar12 + 0x100) + 4) = uVar14;
+            *(undefined4 *)(*(int *)(iVar11 + 0x100) + 4) = uVar16;
 
           }
 
@@ -10540,13 +10556,13 @@ LAB_0044d7d9:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          uVar16 = *(uint *)(iVar12 + 0xe0) | 0x4000000;
+          uVar18 = *(uint *)(iVar11 + 0xe0) | 0x4000000;
 
 LAB_0044b93c:
 
-          *(uint *)(iVar12 + 0xe0) = uVar16;
+          *(uint *)(iVar11 + 0xe0) = uVar18;
 
           *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x80;
 
@@ -10558,9 +10574,9 @@ LAB_0044b93c:
 
     case 0x3c:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10574,9 +10590,9 @@ LAB_0044b93c:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          if ((*(uint *)(iVar12 + 0xe4) & 1) == 0) {
+          if ((*(uint *)(iVar11 + 0xe4) & 1) == 0) {
 
             FUN_00542f27();
 
@@ -10586,9 +10602,9 @@ LAB_0044b93c:
 
           else {
 
-            *(uint *)(iVar12 + 0xe4) = *(uint *)(iVar12 + 0xe4) | 4;
+            *(uint *)(iVar11 + 0xe4) = *(uint *)(iVar11 + 0xe4) | 4;
 
-            *(float *)(*(int *)(*(int *)(iVar12 + 0x100) + 0x100) + 8) = fVar17;
+            *(float *)(*(int *)(*(int *)(iVar11 + 0x100) + 0x100) + 8) = fVar13;
 
           }
 
@@ -10600,7 +10616,7 @@ LAB_0044b93c:
 
     case 0x3d:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      pfVar20 = (float *)((int)pfVar19 + 0x19);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10616,9 +10632,9 @@ LAB_0044b93c:
 
         if (puStack0000003c != (undefined4 *)0x0) {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          uVar16 = *(uint *)(iVar12 + 0xe0) | 0x8000000;
+          uVar18 = *(uint *)(iVar11 + 0xe0) | 0x8000000;
 
           goto LAB_0044b93c;
 
@@ -10638,9 +10654,9 @@ LAB_0044b93c:
 
         if (puStack0000003c != (undefined4 *)0x0) {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          uVar16 = *(uint *)(iVar12 + 0xe0) | 0x10000000;
+          uVar18 = *(uint *)(iVar11 + 0xe0) | 0x10000000;
 
           goto LAB_0044b93c;
 
@@ -10656,11 +10672,11 @@ LAB_0044b93c:
 
     case 0x40:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
+      uVar16 = *(undefined4 *)((int)pfVar19 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10674,17 +10690,17 @@ LAB_0044b93c:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          iVar13 = *(int *)(iVar12 + 0x100);
+          iVar12 = *(int *)(iVar11 + 0x100);
 
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x20000000;
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x20000000;
 
           *(uint *)(puStack0000003c[1] + 0xdc) = *(uint *)(puStack0000003c[1] + 0xdc) | 0x80000;
 
-          *(float *)(iVar13 + 0x80) = fVar17;
+          *(float *)(iVar12 + 0x80) = fVar13;
 
-          *(undefined4 *)(iVar13 + 0x84) = uVar14;
+          *(undefined4 *)(iVar12 + 0x84) = uVar16;
 
         }
 
@@ -10694,7 +10710,7 @@ LAB_0044b93c:
 
     case 0x41:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x25);
+      pfVar20 = (float *)((int)pfVar19 + 0x25);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10706,9 +10722,7 @@ LAB_0044b93c:
 
     case 0x42:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10730,7 +10744,7 @@ LAB_0044b93c:
 
         else {
 
-          *(float *)(*(int *)(*(int *)(puStack0000003c[1] + 0x100) + 0x100) + 0x9c) = fVar17;
+          *(float *)(*(int *)(*(int *)(puStack0000003c[1] + 0x100) + 0x100) + 0x9c) = *p2;
 
         }
 
@@ -10740,19 +10754,19 @@ LAB_0044b93c:
 
     case 0x43:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      fVar15 = *(float *)((int)pfVar18 + 5);
+      fVar17 = *(float *)((int)pfVar19 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      if (((in_stack_0000d774 == 0) && (!bVar5)) && (FUN_00495920(), 0.0 < fVar15)) {
+      if (((in_stack_0000d774 == 0) && (!bVar5)) && (FUN_00495920(), 0.0 < fVar17)) {
 
-        in_stack_0000d770[4] = in_stack_0000d770[4] | 0x2000;
+        in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x2000;
 
-        in_stack_0000d770[0x30] = (int)fVar17;
+        in_stack_0000d770[3].fx_0 = (dword)fVar13;
 
-        in_stack_0000d770[0x31] = (int)fVar15;
+        in_stack_0000d770[3].fx_4 = (dword)fVar17;
 
       }
 
@@ -10760,19 +10774,19 @@ LAB_0044b93c:
 
     case 0x44:
 
-      iVar12 = FUN_004d5740();
+      dVar15 = FUN_004d5740();
 
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
+      pfVar20 = (float *)((int)pfVar19 + 0x11);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      if (((in_stack_0000d774 == 0) && (!bVar5)) && (FUN_00495920(), 0.0 < (float)fVar20)) {
+      if (((in_stack_0000d774 == 0) && (!bVar5)) && (FUN_00495920(), 0.0 < (float)fVar21)) {
 
-        in_stack_0000d770[4] = in_stack_0000d770[4] | 0x2000;
+        in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x2000;
 
-        in_stack_0000d770[0x30] = iVar12;
+        in_stack_0000d770[3].fx_0 = dVar15;
 
-        in_stack_0000d770[0x31] = (int)(float)fVar20;
+        in_stack_0000d770[3].fx_4 = (dword)(float)fVar21;
 
       }
 
@@ -10780,7 +10794,7 @@ LAB_0044b93c:
 
     case 0x45:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10792,11 +10806,15 @@ LAB_0044b93c:
 
     case 0x46:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x15);
+      pfVar20 = (float *)((int)pfVar19 + 0x15);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupVerticleFade__FP10FXSTACKTAGfffff();
+        fx_setupVerticleFade__FP10FXSTACKTAGfffff
+
+                  (puStack0000003c,*p2,*(float *)((int)pfVar19 + 5),*(float *)((int)pfVar19 + 9),
+
+                   *(float *)((int)pfVar19 + 0xd),*(float *)((int)pfVar19 + 0x11));
 
       }
 
@@ -10804,9 +10822,9 @@ LAB_0044b93c:
 
     case 0x47:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10824,7 +10842,7 @@ LAB_0044b93c:
 
           *(uint *)(puStack0000003c[1] + 0xe4) = *(uint *)(puStack0000003c[1] + 0xe4) | 0x800;
 
-          if (fVar17 != 0.0) {
+          if (fVar13 != 0.0) {
 
             *(uint *)(puStack0000003c[1] + 0xe4) = *(uint *)(puStack0000003c[1] + 0xe4) | 0x20000;
 
@@ -10840,7 +10858,7 @@ LAB_0044b93c:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        in_stack_0000d770[4] = in_stack_0000d770[4] | 0x10;
+        in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x10;
 
       }
 
@@ -10860,7 +10878,7 @@ LAB_0044b93c:
 
         else {
 
-          in_stack_0000d770[4] = in_stack_0000d770[4] | 0x40000;
+          in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x40000;
 
           FUN_00470250();
 
@@ -10876,7 +10894,7 @@ LAB_0044b93c:
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[3] = 4;
+          in_stack_0000d770->fx_C = 4;
 
           bVar6 = true;
 
@@ -10898,17 +10916,15 @@ LAB_0044b93c:
 
     case 0x4b:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 != 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          if ((int)fVar17 < 6) {
+          if ((int)*p2 < 6) {
 
-            in_stack_0000d770[(int)fVar17 + 0x11] = (int)pfVar19;
+            (&in_stack_0000d770[1].fx_4)[(int)*p2] = (dword)pfVar20;
 
           }
 
@@ -10936,19 +10952,19 @@ LAB_0044b93c:
 
     case 0x4c:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          if ((int)fVar17 < 6) {
+          if ((int)fVar13 < 6) {
 
-            in_stack_0000d770[3] = 0;
+            in_stack_0000d770->fx_C = 0;
 
-            pfVar19 = (float *)in_stack_0000d770[(int)fVar17 + 0x11];
+            pfVar20 = (float *)(&in_stack_0000d770[1].fx_4)[(int)fVar13];
 
           }
 
@@ -10976,17 +10992,17 @@ LAB_0044b93c:
 
     case 0x4d:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[4] = in_stack_0000d770[4] | 0x60;
+          in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x60;
 
-          in_stack_0000d770[0x17] = (int)fVar17;
+          in_stack_0000d770[1].fx_1C = (dword)fVar13;
 
         }
 
@@ -11004,17 +11020,17 @@ LAB_0044b93c:
 
     case 0x4e:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[4] = in_stack_0000d770[4] | 0xa0;
+          in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0xa0;
 
-          in_stack_0000d770[0x18] = (int)fVar17;
+          in_stack_0000d770[1].fx_20 = (dword)fVar13;
 
         }
 
@@ -11032,17 +11048,17 @@ LAB_0044b93c:
 
     case 0x4f:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[4] = in_stack_0000d770[4] | 0x120;
+          in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x120;
 
-          in_stack_0000d770[0x19] = (int)fVar17;
+          in_stack_0000d770[1].fx_24 = (dword)fVar13;
 
         }
 
@@ -11060,17 +11076,17 @@ LAB_0044b93c:
 
     case 0x50:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[4] = in_stack_0000d770[4] | 0x220;
+          in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x220;
 
-          in_stack_0000d770[0x1a] = (int)fVar17;
+          in_stack_0000d770[1].fx_28 = (dword)fVar13;
 
         }
 
@@ -11088,17 +11104,17 @@ LAB_0044b93c:
 
     case 0x51:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[4] = in_stack_0000d770[4] | 0x420;
+          in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x420;
 
-          in_stack_0000d770[0x1b] = (int)fVar17;
+          in_stack_0000d770[1].fx_2C = (dword)fVar13;
 
         }
 
@@ -11116,17 +11132,17 @@ LAB_0044b93c:
 
     case 0x52:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
-          in_stack_0000d770[4] = in_stack_0000d770[4] | 0x120;
+          in_stack_0000d770->fx_10 = in_stack_0000d770->fx_10 | 0x120;
 
-          in_stack_0000d770[0x1c] = (int)fVar17;
+          in_stack_0000d770[1].fx_30 = (dword)fVar13;
 
         }
 
@@ -11144,7 +11160,7 @@ LAB_0044b93c:
 
     case 0x53:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      pfVar20 = (float *)((int)pfVar19 + 0x19);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11164,7 +11180,7 @@ LAB_0044b93c:
 
           for (; puVar8 != (undefined4 *)0x0; puVar8 = (undefined4 *)*puVar8) {
 
-            if ((int *)**(undefined4 **)(puVar8[3] + 0x100) == in_stack_0000d770) {
+            if ((FxData *)**(int **)(puVar8[3] + 0x100) == in_stack_0000d770) {
 
               FUN_00448750();
 
@@ -11202,11 +11218,11 @@ LAB_0044b93c:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          *(uint *)(iVar12 + 0xe0) = *(uint *)(iVar12 + 0xe0) | 0x400000;
+          *(uint *)(iVar11 + 0xe0) = *(uint *)(iVar11 + 0xe0) | 0x400000;
 
-          *(float **)(*(int *)(iVar12 + 0x100) + 0x9c) = pfVar19;
+          *(float **)(*(int *)(iVar11 + 0x100) + 0x9c) = p2;
 
           bVar5 = true;
 
@@ -11218,27 +11234,31 @@ LAB_0044b93c:
 
     case 0x56:
 
+      pfVar19 = p2;
+
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = pfVar19;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        pfVar19 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
+      fVar13 = *(float *)((int)pfVar20 + 1);
 
-joined_r0x0044cec5:
+      iVar11 = *(int *)((int)pfVar20 + 5);
 
-      if (in_stack_0000d774 == 0) {
+      iVar12 = *(int *)((int)pfVar20 + 9);
 
-joined_r0x0044cc6b:
+      pfVar20 = (float *)((int)pfVar20 + 0xd);
 
-        if (!bVar5) {
+      if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-          fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii();
+        p9 = 0;
 
-        }
+        iVar24 = 1;
+
+        goto LAB_0044cee6;
 
       }
 
@@ -11246,21 +11266,29 @@ joined_r0x0044cc6b:
 
     case 0x57:
 
+      pfVar19 = p2;
+
       do {
 
-        pfVar18 = pfVar19;
+        pfVar14 = pfVar19;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        pfVar19 = (float *)((int)pfVar14 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar14 != '\0');
 
-      FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      pfVar20 = (float *)((int)pfVar14 + 0x19);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii();
+        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
+
+                  (in_stack_0000d770,puStack0000003c,(int)p2,(float)fVar21,
+
+                   *(int *)((int)pfVar14 + 0x11),*(int *)((int)pfVar14 + 0x15),
+
+                   *(int *)((int)pfVar14 + 9),*(int *)((int)pfVar14 + 0xd),1,0);
 
       }
 
@@ -11318,15 +11346,15 @@ joined_r0x0044cc6b:
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = p2;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        p2 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      fVar17 = *(float *)((int)pfVar18 + 1);
+      fVar13 = *(float *)((int)pfVar20 + 1);
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar20 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11350,19 +11378,19 @@ joined_r0x0044cc6b:
 
               FUN_0044ead0();
 
-              iVar12 = *piStack0000000c;
+              iVar11 = *piStack0000000c;
 
-              iVar13 = FUN_00545650();
+              iVar12 = FUN_00545650();
 
-              if (iVar13 == 0) {
+              if (iVar12 == 0) {
 
-                if (-1 < iVar12) {
+                if (-1 < iVar11) {
 
-                  iVar13 = *(int *)(puStack0000003c[1] + 0x100);
+                  iVar12 = *(int *)(puStack0000003c[1] + 0x100);
 
-                  *(float *)(iVar13 + 0x20) = fVar17;
+                  *(float *)(iVar12 + 0x20) = fVar13;
 
-                  *(int *)(iVar13 + 0x24) = iVar12;
+                  *(int *)(iVar12 + 0x24) = iVar11;
 
                   *(uint *)(puStack0000003c[1] + 0xe0) =
 
@@ -11396,33 +11424,61 @@ joined_r0x0044cc6b:
 
     case 0x5b:
 
-      do {
-
-        pfVar18 = pfVar19;
-
-        pfVar19 = (float *)((int)pfVar18 + 1);
-
-      } while (*(char *)pfVar18 != '\0');
-
-      goto joined_r0x0044cc5f;
-
-    case 0x5c:
+      pfVar19 = p2;
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = pfVar19;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        pfVar19 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      FUN_004d5780();
+      fVar13 = *(float *)((int)pfVar20 + 1);
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      iVar11 = *(int *)((int)pfVar20 + 5);
+
+      iVar12 = *(int *)((int)pfVar20 + 9);
+
+      pfVar20 = (float *)((int)pfVar20 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii();
+        p9 = 1;
+
+        iVar24 = 0;
+
+        goto LAB_0044cee6;
+
+      }
+
+      break;
+
+    case 0x5c:
+
+      pfVar19 = p2;
+
+      do {
+
+        pfVar14 = pfVar19;
+
+        pfVar19 = (float *)((int)pfVar14 + 1);
+
+      } while (*(char *)pfVar14 != '\0');
+
+      fVar21 = (float10)FUN_004d5780();
+
+      pfVar20 = (float *)((int)pfVar14 + 0x19);
+
+      if ((in_stack_0000d774 == 0) && (!bVar5)) {
+
+        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
+
+                  (in_stack_0000d770,puStack0000003c,(int)p2,(float)fVar21,
+
+                   *(int *)((int)pfVar14 + 0x11),*(int *)((int)pfVar14 + 0x15),
+
+                   *(int *)((int)pfVar14 + 9),*(int *)((int)pfVar14 + 0xd),0,1);
 
       }
 
@@ -11430,9 +11486,9 @@ joined_r0x0044cc6b:
 
     case 0x5d:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11446,15 +11502,15 @@ joined_r0x0044cc6b:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          iVar13 = *(int *)(iVar12 + 0x100);
+          iVar12 = *(int *)(iVar11 + 0x100);
 
-          *(uint *)(iVar12 + 0xd8) = *(uint *)(iVar12 + 0xd8) & 0xffffffef;
+          *(uint *)(iVar11 + 0xd8) = *(uint *)(iVar11 + 0xd8) & 0xffffffef;
 
-          *(float *)(iVar13 + 0xa4) = fVar17;
+          *(float *)(iVar12 + 0xa4) = fVar13;
 
-          *(float *)(iVar13 + 0xa8) = fVar17;
+          *(float *)(iVar12 + 0xa8) = fVar13;
 
         }
 
@@ -11464,9 +11520,9 @@ joined_r0x0044cc6b:
 
     case 0x5e:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11480,15 +11536,15 @@ joined_r0x0044cc6b:
 
         else {
 
-          iVar12 = puStack0000003c[1];
+          iVar11 = puStack0000003c[1];
 
-          iVar13 = *(int *)(iVar12 + 0x100);
+          iVar12 = *(int *)(iVar11 + 0x100);
 
-          *(uint *)(iVar12 + 0xd8) = *(uint *)(iVar12 + 0xd8) & 0xffffffef;
+          *(uint *)(iVar11 + 0xd8) = *(uint *)(iVar11 + 0xd8) & 0xffffffef;
 
-          *(float *)(iVar13 + 0xa4) = (float)fVar20;
+          *(float *)(iVar12 + 0xa4) = (float)fVar21;
 
-          *(float *)(iVar13 + 0xa8) = (float)fVar20;
+          *(float *)(iVar12 + 0xa8) = (float)fVar21;
 
         }
 
@@ -11498,23 +11554,23 @@ joined_r0x0044cc6b:
 
     case 0x5f:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        iVar12 = puStack0000003c[1];
+        iVar11 = puStack0000003c[1];
 
-        uVar14 = *(undefined4 *)(*(int *)(iVar12 + 0x104) + 8);
+        uVar16 = *(undefined4 *)(*(int *)(iVar11 + 0x104) + 8);
 
-        iVar13 = *(int *)(iVar12 + 0x100);
+        iVar12 = *(int *)(iVar11 + 0x100);
 
-        *(uint *)(iVar12 + 0xd8) = *(uint *)(iVar12 + 0xd8) & 0xffffffef;
+        *(uint *)(iVar11 + 0xd8) = *(uint *)(iVar11 + 0xd8) & 0xffffffef;
 
-        *(float *)(iVar13 + 0xa4) = fVar17;
+        *(float *)(iVar12 + 0xa4) = fVar13;
 
-        *(undefined4 *)(iVar13 + 0xa8) = uVar14;
+        *(undefined4 *)(iVar12 + 0xa8) = uVar16;
 
       }
 
@@ -11522,23 +11578,23 @@ joined_r0x0044cc6b:
 
     case 0x60:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        iVar12 = puStack0000003c[1];
+        iVar11 = puStack0000003c[1];
 
-        uVar14 = *(undefined4 *)(*(int *)(iVar12 + 0x104) + 8);
+        uVar16 = *(undefined4 *)(*(int *)(iVar11 + 0x104) + 8);
 
-        iVar13 = *(int *)(iVar12 + 0x100);
+        iVar12 = *(int *)(iVar11 + 0x100);
 
-        *(uint *)(iVar12 + 0xd8) = *(uint *)(iVar12 + 0xd8) & 0xffffffef;
+        *(uint *)(iVar11 + 0xd8) = *(uint *)(iVar11 + 0xd8) & 0xffffffef;
 
-        *(float *)(iVar13 + 0xa4) = (float)fVar20;
+        *(float *)(iVar12 + 0xa4) = (float)fVar21;
 
-        *(undefined4 *)(iVar13 + 0xa8) = uVar14;
+        *(undefined4 *)(iVar12 + 0xa8) = uVar16;
 
       }
 
@@ -11546,23 +11602,23 @@ joined_r0x0044cc6b:
 
     case 0x61:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        iVar12 = puStack0000003c[1];
+        iVar11 = puStack0000003c[1];
 
-        uVar14 = *(undefined4 *)(*(int *)(iVar12 + 0x104) + 4);
+        uVar16 = *(undefined4 *)(*(int *)(iVar11 + 0x104) + 4);
 
-        iVar13 = *(int *)(iVar12 + 0x100);
+        iVar12 = *(int *)(iVar11 + 0x100);
 
-        *(uint *)(iVar12 + 0xd8) = *(uint *)(iVar12 + 0xd8) & 0xffffffef;
+        *(uint *)(iVar11 + 0xd8) = *(uint *)(iVar11 + 0xd8) & 0xffffffef;
 
-        *(undefined4 *)(iVar13 + 0xa4) = uVar14;
+        *(undefined4 *)(iVar12 + 0xa4) = uVar16;
 
-        *(float *)(iVar13 + 0xa8) = fVar17;
+        *(float *)(iVar12 + 0xa8) = fVar13;
 
       }
 
@@ -11570,23 +11626,23 @@ joined_r0x0044cc6b:
 
     case 0x62:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        iVar12 = puStack0000003c[1];
+        iVar11 = puStack0000003c[1];
 
-        uVar14 = *(undefined4 *)(*(int *)(iVar12 + 0x104) + 4);
+        uVar16 = *(undefined4 *)(*(int *)(iVar11 + 0x104) + 4);
 
-        iVar13 = *(int *)(iVar12 + 0x100);
+        iVar12 = *(int *)(iVar11 + 0x100);
 
-        *(uint *)(iVar12 + 0xd8) = *(uint *)(iVar12 + 0xd8) & 0xffffffef;
+        *(uint *)(iVar11 + 0xd8) = *(uint *)(iVar11 + 0xd8) & 0xffffffef;
 
-        *(undefined4 *)(iVar13 + 0xa4) = uVar14;
+        *(undefined4 *)(iVar12 + 0xa4) = uVar16;
 
-        *(float *)(iVar13 + 0xa8) = (float)fVar20;
+        *(float *)(iVar12 + 0xa8) = (float)fVar21;
 
       }
 
@@ -11594,9 +11650,7 @@ joined_r0x0044cc6b:
 
     case 99:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11610,7 +11664,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xd0) = fVar17;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xd0) = *p2;
 
         }
 
@@ -11620,11 +11674,11 @@ joined_r0x0044cc6b:
 
     case 100:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fVar20 = (float10)FUN_004d5780();
+        fVar21 = (float10)FUN_004d5780();
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
@@ -11636,7 +11690,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xd0) = (float)fVar20;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xd0) = (float)fVar21;
 
         }
 
@@ -11646,9 +11700,7 @@ joined_r0x0044cc6b:
 
     case 0x65:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11662,7 +11714,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xac) = fVar17;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xac) = *p2;
 
           *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x100;
 
@@ -11674,9 +11726,9 @@ joined_r0x0044cc6b:
 
     case 0x66:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11690,7 +11742,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xac) = (float)fVar20;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xac) = (float)fVar21;
 
           *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x100;
 
@@ -11702,9 +11754,7 @@ joined_r0x0044cc6b:
 
     case 0x67:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11718,7 +11768,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xb0) = fVar17;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xb0) = *p2;
 
         }
 
@@ -11728,11 +11778,11 @@ joined_r0x0044cc6b:
 
     case 0x68:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fVar20 = (float10)FUN_004d5780();
+        fVar21 = (float10)FUN_004d5780();
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
@@ -11744,7 +11794,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xb0) = (float)fVar20;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xb0) = (float)fVar21;
 
         }
 
@@ -11754,9 +11804,7 @@ joined_r0x0044cc6b:
 
     case 0x69:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11770,7 +11818,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x28) = fVar17;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x28) = *p2;
 
         }
 
@@ -11780,11 +11828,11 @@ joined_r0x0044cc6b:
 
     case 0x6a:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fVar20 = (float10)FUN_004d5780();
+        fVar21 = (float10)FUN_004d5780();
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
@@ -11796,7 +11844,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x28) = (float)fVar20;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x28) = (float)fVar21;
 
         }
 
@@ -11806,9 +11854,7 @@ joined_r0x0044cc6b:
 
     case 0x6b:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11822,7 +11868,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x2c) = fVar17;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x2c) = *p2;
 
         }
 
@@ -11832,11 +11878,11 @@ joined_r0x0044cc6b:
 
     case 0x6c:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fVar20 = (float10)FUN_004d5780();
+        fVar21 = (float10)FUN_004d5780();
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
@@ -11848,7 +11894,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x2c) = (float)fVar20;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0x2c) = (float)fVar21;
 
         }
 
@@ -11880,9 +11926,7 @@ joined_r0x0044cc6b:
 
     case 0x6e:
 
-      fVar17 = *pfVar19;
-
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11896,11 +11940,11 @@ joined_r0x0044cc6b:
 
         else {
 
-          iVar12 = *(int *)(*(int *)(puStack0000003c[1] + 0x100) + 0x104);
+          iVar11 = *(int *)(*(int *)(puStack0000003c[1] + 0x100) + 0x104);
 
-          iVar13 = *(int *)(iVar12 + 400);
+          iVar12 = *(int *)(iVar11 + 400);
 
-          if (iVar13 < 1) {
+          if (iVar12 < 1) {
 
             FUN_00542f27();
 
@@ -11910,7 +11954,7 @@ joined_r0x0044cc6b:
 
           else {
 
-            *(float *)(iVar12 + 0x164 + iVar13 * 4) = fVar17;
+            *(float *)(iVar11 + 0x164 + iVar12 * 4) = *p2;
 
           }
 
@@ -11922,9 +11966,9 @@ joined_r0x0044cc6b:
 
     case 0x6f:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      fVar20 = (float10)FUN_004d5780();
+      fVar21 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11938,11 +11982,11 @@ joined_r0x0044cc6b:
 
         else {
 
-          iVar12 = *(int *)(*(int *)(puStack0000003c[1] + 0x100) + 0x104);
+          iVar11 = *(int *)(*(int *)(puStack0000003c[1] + 0x100) + 0x104);
 
-          iVar13 = *(int *)(iVar12 + 400);
+          iVar12 = *(int *)(iVar11 + 400);
 
-          if (iVar13 < 1) {
+          if (iVar12 < 1) {
 
             FUN_00542f27();
 
@@ -11952,7 +11996,7 @@ joined_r0x0044cc6b:
 
           else {
 
-            *(float *)(iVar12 + 0x164 + iVar13 * 4) = (float)fVar20;
+            *(float *)(iVar11 + 0x164 + iVar12 * 4) = (float)fVar21;
 
           }
 
@@ -11964,17 +12008,17 @@ joined_r0x0044cc6b:
 
     case 0x70:
 
-      pcVar7 = (char *)((int)pfVar18 + 5);
+      pcVar7 = (char *)((int)pfVar19 + 5);
 
       do {
 
-        pcVar11 = pcVar7;
+        pcVar10 = pcVar7;
 
-        pcVar7 = pcVar11 + 1;
+        pcVar7 = pcVar10 + 1;
 
-      } while (*pcVar11 != '\0');
+      } while (*pcVar10 != '\0');
 
-      pfVar19 = (float *)(pcVar11 + 5);
+      pfVar20 = (float *)(pcVar10 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -11990,7 +12034,7 @@ joined_r0x0044cc6b:
 
           piStack0000000c = DAT_0059ce6c;
 
-          iVar12 = 0;
+          iVar11 = 0;
 
           if (0 < DAT_0059ce60) {
 
@@ -11998,13 +12042,13 @@ joined_r0x0044cc6b:
 
               FUN_0044ead0();
 
-              iVar13 = *piStack0000000c;
+              iVar12 = *piStack0000000c;
 
-              iVar10 = FUN_00545650();
+              iVar24 = FUN_00545650();
 
-              if (iVar10 == 0) {
+              if (iVar24 == 0) {
 
-                if (-1 < iVar13) {
+                if (-1 < iVar12) {
 
                   FUN_00449150();
 
@@ -12014,11 +12058,11 @@ joined_r0x0044cc6b:
 
               }
 
-              iVar12 = iVar12 + 1;
+              iVar11 = iVar11 + 1;
 
               piStack0000000c = piStack0000000c + 1;
 
-            } while (iVar12 < DAT_0059ce60);
+            } while (iVar11 < DAT_0059ce60);
 
           }
 
@@ -12030,39 +12074,61 @@ joined_r0x0044cc6b:
 
     case 0x71:
 
-      do {
-
-        pfVar18 = pfVar19;
-
-        pfVar19 = (float *)((int)pfVar18 + 1);
-
-      } while (*(char *)pfVar18 != '\0');
-
-joined_r0x0044cc5f:
-
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
-
-      if (in_stack_0000d774 != 0) break;
-
-      goto joined_r0x0044cc6b;
-
-    case 0x72:
+      pfVar19 = p2;
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = pfVar19;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        pfVar19 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      FUN_004d5780();
+      fVar13 = *(float *)((int)pfVar20 + 1);
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      iVar11 = *(int *)((int)pfVar20 + 5);
+
+      iVar12 = *(int *)((int)pfVar20 + 9);
+
+      pfVar20 = (float *)((int)pfVar20 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii();
+        p9 = 1;
+
+        iVar24 = 0;
+
+        goto LAB_0044cee6;
+
+      }
+
+      break;
+
+    case 0x72:
+
+      pfVar19 = p2;
+
+      do {
+
+        pfVar14 = pfVar19;
+
+        pfVar19 = (float *)((int)pfVar14 + 1);
+
+      } while (*(char *)pfVar14 != '\0');
+
+      fVar21 = (float10)FUN_004d5780();
+
+      pfVar20 = (float *)((int)pfVar14 + 0x19);
+
+      if ((in_stack_0000d774 == 0) && (!bVar5)) {
+
+        fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
+
+                  (in_stack_0000d770,puStack0000003c,(int)p2,(float)fVar21,
+
+                   *(int *)((int)pfVar14 + 0x11),*(int *)((int)pfVar14 + 0x15),
+
+                   *(int *)((int)pfVar14 + 9),*(int *)((int)pfVar14 + 0xd),0,1);
 
       }
 
@@ -12070,13 +12136,13 @@ joined_r0x0044cc5f:
 
     case 0x73:
 
-      fVar17 = *pfVar19;
+      fVar13 = *p2;
 
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
+      uVar16 = *(undefined4 *)((int)pfVar19 + 5);
 
-      uVar3 = *(undefined4 *)((int)pfVar18 + 9);
+      uVar3 = *(undefined4 *)((int)pfVar19 + 9);
 
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
+      pfVar20 = (float *)((int)pfVar19 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12092,9 +12158,9 @@ joined_r0x0044cc5f:
 
           *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x40000000;
 
-          *(undefined4 *)(puStack0000003c[1] + 200) = uVar14;
+          *(undefined4 *)(puStack0000003c[1] + 200) = uVar16;
 
-          *(float *)(puStack0000003c[1] + 0xcc) = fVar17;
+          *(float *)(puStack0000003c[1] + 0xcc) = fVar13;
 
           *(undefined4 *)(puStack0000003c[1] + 0xd0) = uVar3;
 
@@ -12110,13 +12176,13 @@ LAB_0044d657:
 
     case 0x74:
 
-      fVar20 = (float10)FUN_004d5780();
-
       fVar21 = (float10)FUN_004d5780();
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
-
       fVar22 = (float10)FUN_004d5780();
+
+      pfVar20 = (float *)((int)pfVar19 + 0x19);
+
+      fVar23 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12124,11 +12190,11 @@ LAB_0044d657:
 
           *(uint *)(puStack0000003c[1] + 0xe0) = *(uint *)(puStack0000003c[1] + 0xe0) | 0x40000000;
 
-          *(float *)(puStack0000003c[1] + 200) = (float)fVar21;
+          *(float *)(puStack0000003c[1] + 200) = (float)fVar22;
 
-          *(float *)(puStack0000003c[1] + 0xcc) = (float)fVar20;
+          *(float *)(puStack0000003c[1] + 0xcc) = (float)fVar21;
 
-          *(float *)(puStack0000003c[1] + 0xd0) = (float)fVar22;
+          *(float *)(puStack0000003c[1] + 0xd0) = (float)fVar23;
 
           goto LAB_0044d657;
 
@@ -12146,17 +12212,17 @@ LAB_0044d657:
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = p2;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        p2 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      fVar17 = *(float *)((int)pfVar18 + 1);
+      fVar13 = *(float *)((int)pfVar20 + 1);
 
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
+      uVar16 = *(undefined4 *)((int)pfVar20 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar20 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12170,17 +12236,17 @@ LAB_0044d657:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          iVar13 = FUN_00508750();
+          iVar12 = FUN_00508750();
 
-          *(int *)(iVar12 + 0x90) = iVar13;
+          *(int *)(iVar11 + 0x90) = iVar12;
 
-          *(float *)(iVar12 + 0x94) = fVar17;
+          *(float *)(iVar11 + 0x94) = fVar13;
 
-          *(undefined4 *)(iVar12 + 0x98) = uVar14;
+          *(undefined4 *)(iVar11 + 0x98) = uVar16;
 
-          if (iVar13 == 0) {
+          if (iVar12 == 0) {
 
             FUN_00542f27();
 
@@ -12206,13 +12272,13 @@ LAB_0044d657:
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = p2;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        p2 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar20 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12226,9 +12292,9 @@ LAB_0044d657:
 
         else {
 
-          iVar12 = FUN_00508750();
+          iVar11 = FUN_00508750();
 
-          if (iVar12 != 0) {
+          if (iVar11 != 0) {
 
             FUN_004d5780();
 
@@ -12246,17 +12312,17 @@ LAB_0044d657:
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = p2;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        p2 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      fVar17 = *(float *)((int)pfVar18 + 1);
+      fVar13 = *(float *)((int)pfVar20 + 1);
 
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
+      uVar16 = *(undefined4 *)((int)pfVar20 + 5);
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar20 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12270,17 +12336,17 @@ LAB_0044d657:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          iVar13 = FUN_00508750();
+          iVar12 = FUN_00508750();
 
-          *(int *)(iVar12 + 0x90) = iVar13;
+          *(int *)(iVar11 + 0x90) = iVar12;
 
-          *(float *)(iVar12 + 0x94) = fVar17;
+          *(float *)(iVar11 + 0x94) = fVar13;
 
-          *(undefined4 *)(iVar12 + 0x98) = uVar14;
+          *(undefined4 *)(iVar11 + 0x98) = uVar16;
 
-          if (iVar13 == 0) {
+          if (iVar12 == 0) {
 
             FUN_00542f27();
 
@@ -12308,13 +12374,13 @@ LAB_0044d657:
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = p2;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        p2 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar20 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12328,9 +12394,9 @@ LAB_0044d657:
 
         else {
 
-          iVar12 = FUN_00508750();
+          iVar11 = FUN_00508750();
 
-          if (iVar12 != 0) {
+          if (iVar11 != 0) {
 
             FUN_004d5780();
 
@@ -12346,7 +12412,7 @@ LAB_0044d657:
 
     case 0x79:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       FUN_004d5780();
 
@@ -12362,13 +12428,13 @@ LAB_0044d657:
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = p2;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        p2 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      pfVar19 = (float *)((int)pfVar18 + 0x19);
+      pfVar20 = (float *)((int)pfVar20 + 0x19);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12410,7 +12476,7 @@ LAB_0044d657:
 
     case 0x7c:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x15);
+      pfVar20 = (float *)((int)pfVar19 + 0x15);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12426,11 +12492,11 @@ LAB_0044d657:
 
 LAB_0044de79:
 
-          pfVar19 = (float *)((int)pfVar18 + 0x15);
+          uVar16 = sound_get_free_sequence__Fv();
 
-          uVar14 = sound_get_free_sequence__Fv();
+          *(undefined4 *)(puStack0000003c[1] + 0xe8) = uVar16;
 
-          *(undefined4 *)(puStack0000003c[1] + 0xe8) = uVar14;
+          pfVar20 = (float *)((int)pfVar19 + 0x15);
 
         }
 
@@ -12440,7 +12506,7 @@ LAB_0044de79:
 
     case 0x7d:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x15);
+      pfVar20 = (float *)((int)pfVar19 + 0x15);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12454,7 +12520,7 @@ LAB_0044de79:
 
     case 0x7e:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12478,15 +12544,13 @@ LAB_0044de79:
 
     case 0x7f:
 
-      fVar17 = *pfVar19;
+      uVar16 = *(undefined4 *)((int)pfVar19 + 5);
 
-      uVar14 = *(undefined4 *)((int)pfVar18 + 5);
+      uVar3 = *(undefined4 *)((int)pfVar19 + 9);
 
-      uVar3 = *(undefined4 *)((int)pfVar18 + 9);
+      uVar4 = *(undefined4 *)((int)pfVar19 + 0xd);
 
-      uVar4 = *(undefined4 *)((int)pfVar18 + 0xd);
-
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
+      pfVar20 = (float *)((int)pfVar19 + 0x11);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12500,15 +12564,15 @@ LAB_0044de79:
 
         else {
 
-          iVar12 = *(int *)(puStack0000003c[1] + 0x100);
+          iVar11 = *(int *)(puStack0000003c[1] + 0x100);
 
-          *(float *)(iVar12 + 0xe4) = fVar17;
+          *(float *)(iVar11 + 0xe4) = *p2;
 
-          *(undefined4 *)(iVar12 + 0xe8) = uVar14;
+          *(undefined4 *)(iVar11 + 0xe8) = uVar16;
 
-          *(undefined4 *)(iVar12 + 0xf0) = uVar4;
+          *(undefined4 *)(iVar11 + 0xf0) = uVar4;
 
-          *(undefined4 *)(iVar12 + 0xec) = uVar3;
+          *(undefined4 *)(iVar11 + 0xec) = uVar3;
 
           *(uint *)(puStack0000003c[1] + 0xe4) = *(uint *)(puStack0000003c[1] + 0xe4) | 0x4000;
 
@@ -12520,11 +12584,11 @@ LAB_0044de79:
 
     case 0x80:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        fVar20 = (float10)FUN_004d5780();
+        fVar21 = (float10)FUN_004d5780();
 
         if (puStack0000003c == (undefined4 *)0x0) {
 
@@ -12536,7 +12600,7 @@ LAB_0044de79:
 
         else {
 
-          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xf4) = (float)fVar20;
+          *(float *)(*(int *)(puStack0000003c[1] + 0x100) + 0xf4) = (float)fVar21;
 
           *(uint *)(puStack0000003c[1] + 0xe4) = *(uint *)(puStack0000003c[1] + 0xe4) | 0x8000;
 
@@ -12550,7 +12614,7 @@ LAB_0044de79:
 
     case 0x81:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x15);
+      pfVar20 = (float *)((int)pfVar19 + 0x15);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12566,7 +12630,7 @@ LAB_0044de79:
 
     case 0x82:
 
-      pfVar19 = (float *)((int)pfVar18 + 0x15);
+      pfVar20 = (float *)((int)pfVar19 + 0x15);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12578,9 +12642,9 @@ LAB_0044de79:
 
     case 0x83:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
-      uVar14 = FUN_004d5740();
+      uVar16 = FUN_004d5740();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12594,7 +12658,7 @@ LAB_0044de79:
 
         else {
 
-          *(undefined4 *)(*(int *)(puStack0000003c[1] + 0x100) + 0x108) = uVar14;
+          *(undefined4 *)(*(int *)(puStack0000003c[1] + 0x100) + 0x108) = uVar16;
 
           FUN_00495550();
 
@@ -12654,7 +12718,7 @@ LAB_0044de79:
 
     case 0x87:
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar19 + 9);
 
       FUN_004d5740();
 
@@ -12680,11 +12744,11 @@ LAB_0044de79:
 
     case 0x88:
 
-      fVar20 = (float10)FUN_004d5780();
-
-      pfVar19 = (float *)((int)pfVar18 + 0x11);
-
       fVar21 = (float10)FUN_004d5780();
+
+      pfVar20 = (float *)((int)pfVar19 + 0x11);
+
+      fVar22 = (float10)FUN_004d5780();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12698,11 +12762,11 @@ LAB_0044de79:
 
         else {
 
-          *(float *)(puStack0000003c[1] + 0xec) = (float)fVar20;
+          *(float *)(puStack0000003c[1] + 0xec) = (float)fVar21;
 
           *(uint *)(puStack0000003c[1] + 0xe4) = *(uint *)(puStack0000003c[1] + 0xe4) | 0x80000;
 
-          *(float *)(puStack0000003c[1] + 0xf8) = 1.0 / ((float)fVar21 - (float)fVar20);
+          *(float *)(puStack0000003c[1] + 0xf8) = 1.0 / ((float)fVar22 - (float)fVar21);
 
           *(undefined4 *)(puStack0000003c[1] + 0x184) = 0x3f800000;
 
@@ -12716,13 +12780,13 @@ LAB_0044de79:
 
       do {
 
-        pfVar18 = pfVar19;
+        pfVar20 = p2;
 
-        pfVar19 = (float *)((int)pfVar18 + 1);
+        p2 = (float *)((int)pfVar20 + 1);
 
-      } while (*(char *)pfVar18 != '\0');
+      } while (*(char *)pfVar20 != '\0');
 
-      pfVar19 = (float *)((int)pfVar18 + 9);
+      pfVar20 = (float *)((int)pfVar20 + 9);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12734,7 +12798,7 @@ LAB_0044de79:
 
     case 0x8a:
 
-      pfVar19 = (float *)((int)pfVar18 + 0xd);
+      pfVar20 = (float *)((int)pfVar19 + 0xd);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12746,7 +12810,7 @@ LAB_0044de79:
 
     case 0x8b:
 
-      pfVar19 = (float *)((int)pfVar18 + 5);
+      pfVar20 = (float *)((int)pfVar19 + 5);
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12758,31 +12822,31 @@ LAB_0044de79:
 
 LAB_0044e828:
 
-    pfVar18 = pfVar19;
+    pfVar19 = pfVar20;
 
     if (bVar6) {
 
-      if (in_stack_0000d774 != 0) {
+      if (in_stack_0000d774 == 0) {
 
-        return 0;
+        if (in_stack_0000d778 == 0) {
+
+          in_stack_0000d770->fx_0 = (dword)pfVar20;
+
+        }
+
+        while (puStack0000003c != (undefined4 *)0x0) {
+
+          FUN_00448a40();
+
+          puStack0000003c = puStack00000014;
+
+        }
+
+        return uStack0000008c;
 
       }
 
-      if (in_stack_0000d778 == 0) {
-
-        *in_stack_0000d770 = (int)pfVar19;
-
-      }
-
-      while (puStack0000003c != (undefined4 *)0x0) {
-
-        FUN_00448a40();
-
-        puStack0000003c = puStack00000014;
-
-      }
-
-      return uStack0000008c;
+      return 0;
 
     }
 
@@ -12973,7 +13037,7 @@ void FUN_0044eaf0(undefined4 *param_1)
 }
 
 /* ===== FUN_0044ed20 @ 0x0044ED20 ===== */
-/* PS2 candidate: fx_process_one (conf 0.516) */
+/* PS2 candidate: fx_process_one (conf 0.526) */
 
 
 
@@ -13228,7 +13292,7 @@ LAB_0044efbb:
 }
 
 /* ===== FUN_0044efd0 @ 0x0044EFD0 ===== */
-/* PS2 candidate: fx_process (conf 0.33) */
+/* PS2 candidate: fx_process (conf 0.377) */
 
 
 

@@ -324,11 +324,11 @@ void FUN_00495430(void)
 }
 
 /* ===== sound_get_free_sequence__Fv @ 0x00495F20 ===== */
-int sound_get_free_sequence__Fv
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-              (int param_1,int param_2,int param_3,int param_4,int param_5,int *param_6,uint param_7
 
-              )
+
+int sound_get_free_sequence__Fv(void)
 
 
 
@@ -345,6 +345,20 @@ int sound_get_free_sequence__Fv
   int *piVar5;
 
   bool bVar6;
+
+  int in_stack_00000004;
+
+  int in_stack_00000008;
+
+  int in_stack_0000000c;
+
+  int in_stack_00000010;
+
+  int in_stack_00000014;
+
+  int *in_stack_00000018;
+
+  uint in_stack_0000001c;
 
   
 
@@ -402,21 +416,21 @@ int sound_get_free_sequence__Fv
 
   }
 
-  if ((param_7 & 2) == 0) {
+  if ((in_stack_0000001c & 2) == 0) {
 
-    piVar3[10] = param_5;
+    piVar3[10] = in_stack_00000014;
 
   }
 
   else {
 
-    if (param_5 != 0) {
+    if (in_stack_00000014 != 0) {
 
-      iVar4 = *(int *)(param_5 + 0x210);
+      iVar4 = *(int *)(in_stack_00000014 + 0x210);
 
       while (iVar1 = iVar4, iVar1 != 0) {
 
-        param_5 = iVar1;
+        in_stack_00000014 = iVar1;
 
         iVar4 = *(int *)(iVar1 + 0x210);
 
@@ -424,43 +438,43 @@ int sound_get_free_sequence__Fv
 
     }
 
-    if (param_5 == DAT_00632a88) {
+    if (in_stack_00000014 == DAT_00632a88) {
 
-      param_6 = (int *)0x0;
+      in_stack_00000018 = (int *)0x0;
 
     }
 
     else {
 
-      piVar3[10] = param_5;
+      piVar3[10] = in_stack_00000014;
 
     }
 
   }
 
-  piVar3[2] = param_1;
+  piVar3[2] = in_stack_00000004;
 
-  piVar3[3] = param_2;
+  piVar3[3] = in_stack_00000008;
 
-  piVar3[0xb] = param_5;
+  piVar3[0xb] = in_stack_00000014;
 
-  if ((param_7 & 1) != 0) {
+  if ((in_stack_0000001c & 1) != 0) {
 
-    param_3 = 0x3f800000;
+    in_stack_0000000c = 0x3f800000;
 
   }
 
-  piVar3[8] = param_3;
+  piVar3[8] = in_stack_0000000c;
 
-  piVar3[0x10] = param_7;
+  piVar3[0x10] = in_stack_0000001c;
 
-  piVar3[4] = param_4;
+  piVar3[4] = in_stack_00000010;
 
   piVar3[0x11] = DAT_0055c960;
 
   DAT_0055c960 = DAT_0055c960 + 1;
 
-  if (param_6 == (int *)0x0) {
+  if (in_stack_00000018 == (int *)0x0) {
 
     piVar3[0xf] = 0;
 
@@ -468,11 +482,11 @@ int sound_get_free_sequence__Fv
 
   else {
 
-    piVar3[0xc] = *param_6;
+    piVar3[0xc] = *in_stack_00000018;
 
-    piVar3[0xd] = param_6[1];
+    piVar3[0xd] = in_stack_00000018[1];
 
-    piVar3[0xe] = param_6[2];
+    piVar3[0xe] = in_stack_00000018[2];
 
     piVar3[0xf] = 1;
 

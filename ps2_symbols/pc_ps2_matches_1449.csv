@@ -56,3 +56,8 @@ pc_addr,pc_name,ps2_addr,ps2_name,shared,conf,sample_shared
 004c1170,FUN_004c1170,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
 004f5950,FUN_004f5950,0x001a99a0,reaper_check_enter_jet_ski__FP6OBJECT,1,0.167,FlagHintDriveGyro
 005309e0,FUN_005309e0,0x001c39b8,rpman_move,1,0.167,Borjoyzee
+004895f0,FUN_004895F0,0x001e5b00,texture_add_file,3,1.0,0x1a0002e1 | 0x1a0002e2 | 0x1a0002e3
+005059b0,FUN_005059B0,0x001e3770,mecc_animselect_gm,3,0.752,0xffff03ff | 0xfffe03ff | 0xf9ffffff
+004ae4c0,FUN_004AE4C0,0x001986d8,read_objects_bin_PS2,3,0.727,0x10001 | 0x8000e00 | 0x3c000
+00499970,FUN_00499970,0x00174eb0,object_init_usage,2,0.657,0x3c03fc0 | 0x3c03c00
+00448ca0,FUN_00448CA0,0x0012ddd0,"fx_createGameLockedObj(FxData*, int, int, int)",2,0.523,0x400020 | 0x40000410

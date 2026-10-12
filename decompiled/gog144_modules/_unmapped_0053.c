@@ -2517,7 +2517,9 @@ void FUN_005313e0(void)
 /* ===== FUN_00531470 @ 0x00531470 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: huskdam_move__FP6OBJECT (conf 0.428) */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+/* PS2 candidate: smhatch_move (conf 0.498) */
 
 
 
@@ -2546,6 +2548,8 @@ void FUN_00531470(void)
   uint uVar9;
 
   uint uVar10;
+
+  OBJECT *unaff_EBP;
 
   undefined4 *puVar11;
 
@@ -2588,8 +2592,6 @@ void FUN_00531470(void)
   char local_4e4 [45];
 
   undefined1 local_4b7;
-
-  undefined1 local_4b4 [16];
 
   undefined4 local_4a4;
 
@@ -3109,7 +3111,7 @@ LAB_005319de:
 
       case '\x0e':
 
-        mecc_fire_logic__FP6OBJECT();
+        mecc_fire_logic__FP6OBJECT(unaff_EBP);
 
         DAT_005e0304 = DAT_005e0304 + 1;
 
@@ -3627,7 +3629,7 @@ LAB_005319de:
 
           local_49c = iVar4;
 
-          uVar5 = fx_get_free_effect__Fv(s_FXB_Gyro_0057fef0,0x24,local_4b4);
+          uVar5 = fx_get_free_effect__Fv();
 
           *(undefined4 *)(iVar4 + 0xfc) = uVar5;
 
@@ -5801,11 +5803,15 @@ LAB_00533cde:
 }
 
 /* ===== mecc_fire_logic__FP6OBJECT @ 0x00533D40 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: mapmode_object_is_shown__FP6OBJECT (conf 0.491) */
 
 
 
-void mecc_fire_logic__FP6OBJECT(void)
+void mecc_fire_logic__FP6OBJECT(OBJECT *p0)
 
 
 
@@ -9253,7 +9259,7 @@ void FUN_00535f40(void)
 }
 
 /* ===== FUN_00536050 @ 0x00536050 ===== */
-/* PS2 candidate: atox__FPc (conf 0.503) */
+/* PS2 candidate: atox__FPc (conf 0.506) */
 
 
 
@@ -9505,7 +9511,7 @@ void chat_init(void)
 /* ===== FUN_005362d0 @ 0x005362D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: chat_insert (conf 0.675) */
+/* PS2 candidate: chat_insert (conf 0.58) */
 
 
 
@@ -9753,6 +9759,10 @@ LAB_0053653b:
 }
 
 /* ===== FUN_00536580 @ 0x00536580 ===== */
+/* PS2 candidate: chat_insert_lf (conf 0.375) */
+
+
+
 void FUN_00536580(char *param_1,undefined4 param_2)
 
 
@@ -9804,7 +9814,7 @@ void FUN_00536580(char *param_1,undefined4 param_2)
 }
 
 /* ===== chat_insert_name @ 0x00536620 ===== */
-/* PS2 candidate: chat_insert_name (conf 0.75) */
+/* PS2 candidate: chat_insert_name (conf 0.8) */
 
 
 
@@ -10248,7 +10258,7 @@ LAB_00536aeb:
 }
 
 /* ===== FUN_00536b20 @ 0x00536B20 ===== */
-/* PS2 candidate: multi_draw_health_bar_horizontal__FP6OBJECTff (conf 0.406) */
+/* PS2 candidate: multi_draw_health_bar_horizontal__FP6OBJECTff (conf 0.399) */
 
 
 
@@ -10383,7 +10393,7 @@ undefined4 FUN_00536ca0(void)
 /* ===== FUN_00536cb0 @ 0x00536CB0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: multi_display_player_cursor_info__Fv (conf 0.383) */
+/* PS2 candidate: multi_display_player_cursor_info__Fv (conf 0.38) */
 
 
 
@@ -14304,7 +14314,7 @@ void mem_free_tagged(int *param_1)
 }
 
 /* ===== FUN_0053a700 @ 0x0053A700 ===== */
-/* PS2 candidate: MemAllocMsg (conf 0.689) */
+/* PS2 candidate: MemAllocMsg (conf 0.691) */
 
 
 
@@ -14941,7 +14951,7 @@ undefined4 FUN_0053bda0(int param_1,int param_2,undefined4 param_3)
 }
 
 /* ===== FUN_0053be00 @ 0x0053BE00 ===== */
-/* PS2 candidate: animGetIndexByName__FP12animSkeletonPc (conf 0.675) */
+/* PS2 candidate: animGetIndexByName__FP12animSkeletonPc (conf 0.7) */
 
 
 
@@ -17137,7 +17147,7 @@ void FUN_0053d970(uint *param_1,uint *param_2)
 }
 
 /* ===== FUN_0053d9e0 @ 0x0053D9E0 ===== */
-/* PS2 candidate: GEO_MatIdentity (conf 0.341) */
+/* PS2 candidate: GEO_MatIdentity (conf 0.368) */
 
 
 
@@ -17707,7 +17717,7 @@ void FUN_0053dd90(undefined4 *param_1,undefined4 param_2)
 }
 
 /* ===== FUN_0053dde0 @ 0x0053DDE0 ===== */
-/* PS2 candidate: GEO_MatLookAt (conf 0.352) */
+/* PS2 candidate: GEO_MatLookAt (conf 0.364) */
 
 
 
@@ -18345,7 +18355,7 @@ void FUN_0053e430(undefined4 param_1)
 }
 
 /* ===== FUN_0053e460 @ 0x0053E460 ===== */
-/* PS2 candidate: GEO_MatBuildXYZ (conf 0.44) */
+/* PS2 candidate: GEO_MatBuildXYZ (conf 0.444) */
 
 
 
@@ -18714,7 +18724,7 @@ void FUN_0053e900(float *param_1,float *param_2,float *param_3)
 }
 
 /* ===== FUN_0053e960 @ 0x0053E960 ===== */
-/* PS2 candidate: GEO_Vec3Normalize (conf 0.463) */
+/* PS2 candidate: GEO_Vec3Normalize (conf 0.493) */
 
 
 

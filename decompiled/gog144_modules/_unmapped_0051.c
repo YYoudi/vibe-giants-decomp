@@ -87,11 +87,11 @@ undefined4 FUN_005108f0(int param_1)
 }
 
 /* ===== FUN_00510f50 @ 0x00510F50 ===== */
-/* PS2 candidate: evilreaper_gib__FP6OBJECTT0 (conf 0.364) */
+/* PS2 candidate: evilreaper_gib__FP6OBJECTT0 (conf 0.382) */
 
 
 
-void FUN_00510f50(float *param_1,float *param_2)
+void FUN_00510f50(float param_1,float param_2)
 
 
 
@@ -99,105 +99,75 @@ void FUN_00510f50(float *param_1,float *param_2)
 
   float fVar1;
 
-  float *pfVar2;
+  int iVar2;
 
   int iVar3;
 
-  float *pfVar4;
+  float10 fVar4;
 
-  float10 fVar5;
-
-  undefined4 uVar6;
-
-  undefined1 local_34 [4];
-
-  float local_30;
-
-  float local_2c;
-
-  float local_28;
-
-  float *local_18;
-
-  undefined4 local_14;
-
-  undefined4 local_10;
+  undefined4 uVar5;
 
   
 
-  pfVar2 = param_1;
+  fVar1 = param_1;
 
-  fVar1 = param_1[0x40];
+  iVar3 = *(int *)((int)param_1 + 0x100);
 
-  iVar3 = FUN_0052e480(param_1);
+  iVar2 = FUN_0052e480(param_1);
 
-  if (iVar3 == 0) {
+  if (iVar2 != 0) {
 
-    local_18 = (float *)*param_2;
+    if (param_2 == 0.0) {
 
-  }
-
-  else {
-
-    if (param_2 == (float *)0x0) {
-
-      fVar5 = (float10)FUN_004d5780(0,0x43b40000);
+      fVar4 = (float10)FUN_004d5780(0,0x43b40000);
 
     }
 
     else {
 
-      fVar5 = (float10)FUN_0050a390(param_2[0x2f] - param_2[0x29],param_2[0x2e] - param_2[0x28]);
+      fVar4 = (float10)FUN_0050a390(*(float *)((int)param_2 + 0xbc) -
 
-      fVar5 = fVar5 - (float10)90.0;
+                                    *(float *)((int)param_2 + 0xa4),
+
+                                    *(float *)((int)param_2 + 0xb8) -
+
+                                    *(float *)((int)param_2 + 0xa0));
+
+      fVar4 = fVar4 - (float10)90.0;
 
     }
 
-    param_2 = (float *)(float)fVar5;
+    param_2 = (float)fVar4;
 
-    iVar3 = FUN_0052e4a0(pfVar2);
+    iVar2 = FUN_0052e4a0(fVar1);
 
-    local_18 = param_2;
-
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
 
       param_1 = param_2;
 
-      FUN_00530bd0(pfVar2,1,0,0,0xd,&param_1);
-
-      local_18 = param_2;
+      FUN_00530bd0(fVar1,1,0,0,0xd,&param_1);
 
     }
 
   }
 
-  pfVar4 = pfVar2 + 0x28;
+  iVar2 = (int)fVar1 + 0xa0;
 
-  local_30 = *pfVar4;
+  fx_get_free_effect__Fv();
 
-  local_2c = pfVar2[0x29];
-
-  local_28 = pfVar2[0x2a];
-
-  local_14 = 0;
-
-  local_10 = 0;
-
-  fx_get_free_effect__Fv(s_fxb_vimp_death_0057c000,9,local_34);
-
-  if (*(int *)((int)fVar1 + 0x50) == 0x3f800000) {
+  if (*(int *)(iVar3 + 0x50) == 0x3f800000) {
 
     iVar3 = FUN_004d5730(100);
 
     if (iVar3 < 0x32) {
 
-      uVar6 = 0x607;
+      uVar5 = 0x607;
 
     }
 
     else {
 
-      uVar6 = 0x608;
+      uVar5 = 0x608;
 
     }
 
@@ -209,31 +179,31 @@ void FUN_00510f50(float *param_1,float *param_2)
 
     if (iVar3 < 0x32) {
 
-      uVar6 = 0x60b;
+      uVar5 = 0x60b;
 
     }
 
     else {
 
-      uVar6 = 0x60c;
+      uVar5 = 0x60c;
 
     }
 
   }
 
-  FUN_00495840(uVar6,pfVar4);
+  FUN_00495840(uVar5,iVar2);
 
   iVar3 = FUN_004d5730(100);
 
   if (0x31 < iVar3) {
 
-    FUN_00495840(0x550,pfVar4);
+    FUN_00495840(0x550,iVar2);
 
     return;
 
   }
 
-  FUN_00495840(0x54f,pfVar4);
+  FUN_00495840(0x54f,iVar2);
 
   return;
 
@@ -441,7 +411,7 @@ LAB_005116a3:
 }
 
 /* ===== FUN_005116e0 @ 0x005116E0 ===== */
-/* PS2 candidate: vimp_animselect (conf 0.402) */
+/* PS2 candidate: vimp_animselect (conf 0.455) */
 
 
 
@@ -892,7 +862,7 @@ void FUN_005116e0(int param_1)
 }
 
 /* ===== FUN_00511cf0 @ 0x00511CF0 ===== */
-/* PS2 candidate: vimp_get_wanted_loc__FP6OBJECT (conf 0.349) */
+/* PS2 candidate: vimp_get_wanted_loc__FP6OBJECT (conf 0.423) */
 
 
 
@@ -1749,7 +1719,7 @@ LAB_005127e2:
 }
 
 /* ===== FUN_005129d0 @ 0x005129D0 ===== */
-/* PS2 candidate: create_one_vimp_chunk (conf 0.388) */
+/* PS2 candidate: create_one_vimp_chunk (conf 0.446) */
 
 
 
@@ -1912,12 +1882,6 @@ undefined4 FUN_00512c80(int param_1,undefined4 param_2,undefined4 param_3,undefi
 
   float local_3c;
 
-  undefined1 local_34 [20];
-
-  undefined4 local_20;
-
-  int local_1c;
-
   
 
   fVar1 = *(float *)(DAT_00632ed8 + 0xbd0);
@@ -1974,11 +1938,7 @@ undefined4 FUN_00512c80(int param_1,undefined4 param_2,undefined4 param_3,undefi
 
       FUN_00499e70(iVar4,0x54);
 
-      local_20 = 0xffffffff;
-
-      local_1c = iVar4;
-
-      fx_get_free_effect__Fv(s_fx_vimp_mana_005610ac,4,local_34);
+      fx_get_free_effect__Fv();
 
       return 1;
 
@@ -2619,7 +2579,7 @@ int FUN_00513ee0(int param_1,float *param_2,float *param_3)
 }
 
 /* ===== FUN_00513fa0 @ 0x00513FA0 ===== */
-/* PS2 candidate: wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT (conf 0.432) */
+/* PS2 candidate: wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT (conf 0.476) */
 
 
 
@@ -3292,7 +3252,7 @@ LAB_005148d3:
 }
 
 /* ===== FUN_00514900 @ 0x00514900 ===== */
-/* PS2 candidate: wave_effect_get_player_origin (conf 0.427) */
+/* PS2 candidate: wave_effect_get_player_origin (conf 0.433) */
 
 
 
@@ -3936,7 +3896,7 @@ void FUN_00515080(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00515090 @ 0x00515090 ===== */
-/* PS2 candidate: wave_effect_draw (conf 0.322) */
+/* PS2 candidate: wave_effect_draw (conf 0.341) */
 
 
 
@@ -4448,7 +4408,7 @@ void FUN_00515710(int param_1,undefined4 *param_2,float param_3,float param_4,un
 }
 
 /* ===== FUN_00515890 @ 0x00515890 ===== */
-/* PS2 candidate: drip_make (conf 0.365) */
+/* PS2 candidate: drip_make (conf 0.433) */
 
 
 
@@ -4791,7 +4751,7 @@ float10 FUN_00515da0(void)
 }
 
 /* ===== FUN_00515db0 @ 0x00515DB0 ===== */
-/* PS2 candidate: XFGetCameraOrigin (conf 0.438) */
+/* PS2 candidate: XFGetCameraOrigin (conf 0.442) */
 
 
 
@@ -4806,7 +4766,7 @@ undefined * FUN_00515db0(void)
 }
 
 /* ===== FUN_00515dc0 @ 0x00515DC0 ===== */
-/* PS2 candidate: XFGetCameraAxis (conf 0.39) */
+/* PS2 candidate: XFGetCameraAxis (conf 0.398) */
 
 
 
@@ -5196,7 +5156,7 @@ void FUN_00516260(undefined4 *param_1)
 }
 
 /* ===== FUN_00516290 @ 0x00516290 ===== */
-/* PS2 candidate: Dot__FP3P3DT0 (conf 0.342) */
+/* PS2 candidate: Dot__FP3P3DT0 (conf 0.345) */
 
 
 
@@ -6274,7 +6234,7 @@ void FUN_00517080(float *param_1,float *param_2,float *param_3,float *param_4)
 }
 
 /* ===== FUN_005170f0 @ 0x005170F0 ===== */
-/* PS2 candidate: object_get_ref_point__FP6OBJECTP7f32vec3Ui (conf 0.405) */
+/* PS2 candidate: object_get_ref_point__FP6OBJECTP7f32vec3Ui (conf 0.408) */
 
 
 
@@ -6857,7 +6817,7 @@ uint FUN_005178a0(LPCSTR param_1)
 }
 
 /* ===== FUN_005178d0 @ 0x005178D0 ===== */
-/* PS2 candidate: BinFileRead (conf 0.712) */
+/* PS2 candidate: BinFileRead (conf 0.72) */
 
 
 
@@ -8266,7 +8226,7 @@ void FUN_00518950(void)
 }
 
 /* ===== FUN_00518b70 @ 0x00518B70 ===== */
-/* PS2 candidate: FRateGetSecsframe (conf 0.7) */
+/* PS2 candidate: FRateGetSecsframe (conf 0.712) */
 
 
 
@@ -12237,7 +12197,7 @@ void FUN_0051c370(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 }
 
 /* ===== FUN_0051c470 @ 0x0051C470 ===== */
-int FUN_0051c470(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+int FUN_0051c470(void)
 
 
 
@@ -12265,7 +12225,7 @@ int FUN_0051c470(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefi
 
   ExceptionList = &local_14;
 
-  iVar1 = CheckSaveGameName__Fv(param_1,param_2,param_3,param_4);
+  iVar1 = CheckSaveGameName__Fv();
 
   local_8 = 0xffffffff;
 
@@ -12949,9 +12909,11 @@ LAB_0051cb4e:
 }
 
 /* ===== CheckSaveGameName__Fv @ 0x0051CC20 ===== */
-undefined4
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
-CheckSaveGameName__Fv(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,int param_4)
+
+
+undefined4 CheckSaveGameName__Fv(void)
 
 
 
@@ -12978,6 +12940,10 @@ CheckSaveGameName__Fv(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,in
   undefined4 *puVar8;
 
   _STARTUPINFOA *p_Var9;
+
+  HINSTANCE in_stack_00000004;
+
+  int in_stack_00000010;
 
   undefined4 uVar10;
 
@@ -13041,7 +13007,7 @@ CheckSaveGameName__Fv(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,in
 
   }
 
-  FUN_0051d0d0(param_3);
+  FUN_0051d0d0();
 
   hHandle = CreateMutexA((LPSECURITY_ATTRIBUTES)0x0,0,s_Giants_CK_0057d960);
 
@@ -13161,7 +13127,7 @@ CheckSaveGameName__Fv(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,in
 
   FUN_00540800(uVar10);
 
-  DAT_005dda7c = param_1;
+  DAT_005dda7c = in_stack_00000004;
 
   local_254.cb = 0;
 
@@ -13170,8 +13136,6 @@ CheckSaveGameName__Fv(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,in
   local_254.lpDesktop = (LPSTR)0x0;
 
   local_254.lpTitle = (LPSTR)0x0;
-
-  local_254.dwX = (DWORD)param_1;
 
   local_254.dwY = 0;
 
@@ -13191,9 +13155,9 @@ CheckSaveGameName__Fv(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,in
 
                                    -0x80000000,-0x80000000,-0x80000000,-0x80000000,(HWND)0x0,
 
-                                   (HMENU)0x0,param_1,(LPVOID)0x0);
+                                   (HMENU)0x0,in_stack_00000004,(LPVOID)0x0);
 
-    ShowWindow(DAT_005dda78,param_4);
+    ShowWindow(DAT_005dda78,in_stack_00000010);
 
     if (DAT_005dda78 == (HWND)0x0) {
 
@@ -13209,11 +13173,11 @@ CheckSaveGameName__Fv(HINSTANCE param_1,undefined4 param_2,undefined4 param_3,in
 
       DAT_005ddb54 = FUN_0051c890(DAT_005dda78);
 
-      iVar3 = FUN_0051dc20(param_1,param_3);
+      iVar3 = FUN_0051dc20(in_stack_00000004);
 
       if (iVar3 != 0) {
 
-        hAccTable = LoadAcceleratorsA(param_1,s_AppAccel_0057d8a0);
+        hAccTable = LoadAcceleratorsA(in_stack_00000004,s_AppAccel_0057d8a0);
 
         timeBeginPeriod(1);
 
@@ -15200,7 +15164,7 @@ LAB_0051e90f:
 }
 
 /* ===== FUN_0051ea20 @ 0x0051EA20 ===== */
-/* PS2 candidate: memset (conf 0.651) */
+/* PS2 candidate: memcpy (conf 0.658) */
 
 
 
@@ -15514,7 +15478,7 @@ void FUN_0051f2f0(void)
 /* ===== FUN_0051f470 @ 0x0051F470 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: GiantsInitNewWorld (conf 0.619) */
+/* PS2 candidate: GiantsInitNewWorld (conf 0.633) */
 
 
 

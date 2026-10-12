@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (2 named) — decompiled, names from PS2 symbols
+ * 142 functions (3 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -121,7 +121,7 @@ void FUN_004909d0(undefined4 param_1)
 /* ===== FUN_004909f0 @ 0x004909F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: scenerio_start_mission__Fv (conf 0.442) */
+/* PS2 candidate: scenerio_start_mission__Fv (conf 0.418) */
 
 
 
@@ -163,7 +163,7 @@ void FUN_004909f0(void)
 
   }
 
-  iVar4 = meccbaseitem_finish_building(iVar4 + 0x4558 + DAT_006330e4);
+  iVar4 = mission_init(iVar4 + 0x4558 + DAT_006330e4);
 
   if (iVar4 != 0) {
 
@@ -394,6 +394,10 @@ void FUN_00490d40(void)
 }
 
 /* ===== FUN_00490d70 @ 0x00490D70 ===== */
+/* PS2 candidate: showchat_mission_objective__Fi (conf 0.421) */
+
+
+
 void FUN_00490d70(void)
 
 
@@ -681,7 +685,7 @@ void FUN_00490d70(void)
 /* ===== FUN_00490fe0 @ 0x00490FE0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: scenerio_process__Fv (conf 0.467) */
+/* PS2 candidate: scenerio_process__Fv (conf 0.403) */
 
 
 
@@ -912,7 +916,7 @@ undefined4 FUN_00490fe0(void)
 /* ===== FUN_00491380 @ 0x00491380 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: evilreaper_logic__FP6OBJECT (conf 0.475) */
+/* PS2 candidate: evilreaper_logic__FP6OBJECT (conf 0.502) */
 
 
 
@@ -2235,7 +2239,7 @@ void FUN_00492150(int param_1,int param_2)
 /* ===== FUN_00492290 @ 0x00492290 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: save_mission_continuity__Fv (conf 0.446) */
+/* PS2 candidate: save_mission_continuity__Fv (conf 0.432) */
 
 
 
@@ -2807,14 +2811,14 @@ void FUN_004928a0(void)
 
 }
 
-/* ===== meccbaseitem_finish_building @ 0x00492910 ===== */
+/* ===== mission_init @ 0x00492910 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: mission_init__FPc (conf 0.712) */
 
 
 
-undefined4 meccbaseitem_finish_building(byte *param_1)
+undefined4 mission_init(byte *param_1)
 
 
 
@@ -4782,7 +4786,7 @@ void FUN_00494030(int param_1)
 /* ===== FUN_00494120 @ 0x00494120 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: mission_check_obj_proximity__FP6OBJECT (conf 0.424) */
+/* PS2 candidate: mission_check_obj_proximity__FP6OBJECT (conf 0.443) */
 
 
 
@@ -4987,7 +4991,7 @@ void FUN_00494120(int param_1)
 }
 
 /* ===== FUN_00494400 @ 0x00494400 ===== */
-/* PS2 candidate: mission_unload_mission_objects__Fv (conf 0.546) */
+/* PS2 candidate: mission_unload_mission_objects__Fv (conf 0.47) */
 
 
 
@@ -5661,7 +5665,7 @@ void FUN_00495090(void)
 }
 
 /* ===== FUN_004954e0 @ 0x004954E0 ===== */
-/* PS2 candidate: sound_play_obj (conf 0.353) */
+/* PS2 candidate: sound_play_obj (conf 0.373) */
 
 
 
@@ -5702,7 +5706,7 @@ int FUN_004954e0(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00495550 @ 0x00495550 ===== */
-/* PS2 candidate: sound_play_player (conf 0.705) */
+/* PS2 candidate: sound_play_player (conf 0.713) */
 
 
 
@@ -5894,7 +5898,7 @@ int FUN_00495650(int param_1,int param_2)
 }
 
 /* ===== FUN_00495700 @ 0x00495700 ===== */
-/* PS2 candidate: sound_stop_player (conf 0.421) */
+/* PS2 candidate: sound_stop_player (conf 0.43) */
 
 
 
@@ -5935,7 +5939,7 @@ void FUN_00495700(int param_1,int param_2)
 }
 
 /* ===== FUN_00495750 @ 0x00495750 ===== */
-/* PS2 candidate: sound_stop_obj (conf 0.378) */
+/* PS2 candidate: sound_stop_obj (conf 0.421) */
 
 
 
@@ -6034,7 +6038,7 @@ int FUN_004957d0(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 /* ===== FUN_00495840 @ 0x00495840 ===== */
-/* PS2 candidate: sound_play_3dpos (conf 0.348) */
+/* PS2 candidate: sound_play_3dpos (conf 0.362) */
 
 
 
@@ -6118,7 +6122,7 @@ int FUN_004958b0(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00495920 @ 0x00495920 ===== */
-/* PS2 candidate: sound_play (conf 0.533) */
+/* PS2 candidate: sound_play (conf 0.534) */
 
 
 
@@ -6167,7 +6171,7 @@ int FUN_00495920(int param_1)
 /* ===== FUN_00495990 @ 0x00495990 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: sound_stop (conf 0.345) */
+/* PS2 candidate: sound_stop (conf 0.34) */
 
 
 
@@ -6588,7 +6592,7 @@ LAB_00495d07:
 }
 
 /* ===== FUN_00495e10 @ 0x00495E10 ===== */
-/* PS2 candidate: sound_stop_sequence (conf 0.544) */
+/* PS2 candidate: sound_stop_sequence (conf 0.545) */
 
 
 
@@ -6705,7 +6709,7 @@ void FUN_00495e10(int *param_1)
 }
 
 /* ===== FUN_00495ee0 @ 0x00495EE0 ===== */
-/* PS2 candidate: sound_interrupt_sequence (conf 0.424) */
+/* PS2 candidate: sound_interrupt_sequence (conf 0.482) */
 
 
 
@@ -6754,11 +6758,15 @@ void FUN_00495ee0(int *param_1)
 /* ===== sound_play_stream @ 0x004961C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: sound_play_stream (conf 0.621) */
 
 
 
-undefined4 sound_play_stream(void)
+undefined4 sound_play_stream(int p0,char *p1,uint p2,OBJECT *p3)
 
 
 
@@ -6889,7 +6897,7 @@ void FUN_004967b0(int param_1)
 }
 
 /* ===== FUN_004967e0 @ 0x004967E0 ===== */
-/* PS2 candidate: objanim_select_anim (conf 0.303) */
+/* PS2 candidate: objanim_select_anim (conf 0.399) */
 
 
 
@@ -7002,7 +7010,7 @@ uint FUN_00496bc0(void)
 }
 
 /* ===== FUN_00496c00 @ 0x00496C00 ===== */
-/* PS2 candidate: object_allocate_type (conf 0.628) */
+/* PS2 candidate: object_allocate_type (conf 0.7) */
 
 
 
@@ -7380,7 +7388,7 @@ switchD_00496f0b_caseD_2:
 }
 
 /* ===== FUN_00497150 @ 0x00497150 ===== */
-/* PS2 candidate: object_allocate_type_end (conf 0.35) */
+/* PS2 candidate: object_allocate_type_end (conf 0.387) */
 
 
 
@@ -7672,7 +7680,7 @@ void FUN_004973c0(int param_1)
 }
 
 /* ===== FUN_00497510 @ 0x00497510 ===== */
-/* PS2 candidate: object_destroy (conf 0.456) */
+/* PS2 candidate: object_destroy (conf 0.467) */
 
 
 
@@ -7751,7 +7759,7 @@ void FUN_00497570(int param_1)
 }
 
 /* ===== FUN_004979b0 @ 0x004979B0 ===== */
-/* PS2 candidate: object_copy_posdirinfo (conf 0.321) */
+/* PS2 candidate: object_copy_posdirinfo (conf 0.324) */
 
 
 
@@ -7792,6 +7800,10 @@ void FUN_004979b0(int param_1,int param_2)
 }
 
 /* ===== FUN_00497a50 @ 0x00497A50 ===== */
+/* PS2 candidate: object_copy_activedata (conf 0.337) */
+
+
+
 void FUN_00497a50(int param_1,int param_2)
 
 
@@ -8086,6 +8098,10 @@ undefined4 FUN_00497cd0(int param_1)
 }
 
 /* ===== FUN_00497d20 @ 0x00497D20 ===== */
+/* PS2 candidate: objectset_find (conf 0.519) */
+
+
+
 undefined4 * FUN_00497d20(int param_1)
 
 
@@ -8139,7 +8155,7 @@ undefined4 * FUN_00497d20(int param_1)
 }
 
 /* ===== FUN_00497d70 @ 0x00497D70 ===== */
-/* PS2 candidate: object_find (conf 0.399) */
+/* PS2 candidate: object_find (conf 0.38) */
 
 
 
@@ -8707,7 +8723,9 @@ LAB_00498224:
 /* ===== FUN_004982c0 @ 0x004982C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: mecc_logic (conf 0.6) */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+/* PS2 candidate: mecc_logic (conf 0.605) */
 
 
 
@@ -8719,21 +8737,23 @@ void FUN_004982c0(void)
 
   char *pcVar1;
 
-  int iVar2;
+  OBJECT *pOVar2;
 
-  int iVar3;
+  OBJECT *pOVar3;
 
-  uint uVar4;
+  int iVar4;
 
-  float10 fVar5;
+  uint uVar5;
+
+  float10 fVar6;
 
   
 
-  iVar3 = DAT_00632a88;
+  pOVar2 = DAT_00632a88;
 
-  iVar2 = FUN_0040d6a0();
+  pOVar3 = (OBJECT *)FUN_0040d6a0();
 
-  if (iVar3 != iVar2) {
+  if (pOVar2 != pOVar3) {
 
     return;
 
@@ -8745,9 +8765,9 @@ void FUN_004982c0(void)
 
   }
 
-  iVar3 = FUN_004a6160(&DAT_0059f688);
+  iVar4 = FUN_004a6160(&DAT_0059f688);
 
-  if (iVar3 != 0) {
+  if (iVar4 != 0) {
 
     FUN_004988e0();
 
@@ -8755,43 +8775,43 @@ void FUN_004982c0(void)
 
   }
 
-  iVar3 = FUN_004a6180(&DAT_0059f688);
+  iVar4 = FUN_004a6180(&DAT_0059f688);
 
   pcVar1 = DAT_0059f788;
 
-  if (iVar3 == 0) {
+  if (iVar4 == 0) {
 
     if (DAT_0059f698 == 1) goto LAB_0049841a;
 
-    iVar3 = 1;
+    iVar4 = 1;
 
   }
 
   else {
 
-    iVar3 = FUN_00456050(DAT_00632a88);
+    iVar4 = FUN_00456050(DAT_00632a88);
 
-    if (iVar3 == 0) goto LAB_0049841a;
+    if (iVar4 == 0) goto LAB_0049841a;
 
-    uVar4 = (uint)(*(int *)(iVar3 + 4) == 0x29d);
+    uVar5 = (uint)(*(int *)(iVar4 + 4) == 0x29d);
 
     if ((DAT_0059f894 & 0x100) != 0) {
 
-      FUN_004967e0(&DAT_0059f688,*(undefined4 *)(&DAT_0055caf8 + uVar4 * 4));
+      FUN_004967e0(&DAT_0059f688,*(undefined4 *)(&DAT_0055caf8 + uVar5 * 4));
 
       goto LAB_0049841a;
 
     }
 
-    if (DAT_0059f698 == *(int *)(&DAT_0055caf8 + uVar4 * 4)) {
+    if (DAT_0059f698 == *(int *)(&DAT_0055caf8 + uVar5 * 4)) {
 
-      iVar3 = DAT_0059f698;
+      iVar4 = DAT_0059f698;
 
       if ((DAT_0059f6b8 & 2) != 0) {
 
 LAB_00498377:
 
-        iVar3 = *(int *)(&DAT_0055cae0 + uVar4 * 4);
+        iVar4 = *(int *)(&DAT_0055cae0 + uVar5 * 4);
 
       }
 
@@ -8801,7 +8821,7 @@ LAB_00498377:
 
       if (((DAT_0059f768 & 0x10) != 0) || (*pcVar1 < '\0')) {
 
-        FUN_004967e0(&DAT_0059f688,*(undefined4 *)(&DAT_0055cae8 + uVar4 * 4));
+        FUN_004967e0(&DAT_0059f688,*(undefined4 *)(&DAT_0055cae8 + uVar5 * 4));
 
         goto LAB_0049841a;
 
@@ -8819,25 +8839,25 @@ LAB_00498377:
 
       goto LAB_00498377;
 
-      iVar3 = *(int *)(&DAT_0055caf0 + uVar4 * 4);
+      iVar4 = *(int *)(&DAT_0055caf0 + uVar5 * 4);
 
     }
 
   }
 
-  FUN_00496840(&DAT_0059f688,iVar3);
+  FUN_00496840(&DAT_0059f688,iVar4);
 
 LAB_0049841a:
 
   FUN_004984b0();
 
-  fVar5 = (float10)FUN_00518b70(DAT_00632a88,0);
+  fVar6 = (float10)FUN_00518b70(DAT_00632a88,0);
 
-  FUN_00403e60(&DAT_0059f688,(float)fVar5);
+  FUN_00403e60(&DAT_0059f688,(float)fVar6);
 
-  iVar3 = FUN_004a6160(DAT_00632a88);
+  iVar4 = FUN_004a6160(DAT_00632a88);
 
-  if ((iVar3 != 0) && ((*(uint *)(DAT_00632a88 + 0xe0) & 0x2000000) == 0)) {
+  if ((iVar4 != 0) && ((DAT_00632a88->field_E0 & 0x2000000) == 0)) {
 
     mecc_fire_logic__FP6OBJECT(DAT_00632a88);
 
@@ -8847,9 +8867,9 @@ LAB_0049841a:
 
   if (DAT_0059f990 != 0) {
 
-    fVar5 = (float10)FUN_00518b70(DAT_00632a88,0);
+    fVar6 = (float10)FUN_00518b70(DAT_00632a88,0);
 
-    FUN_00403e60(&DAT_0059f380,(float)fVar5);
+    FUN_00403e60(&DAT_0059f380,(float)fVar6);
 
   }
 
@@ -8860,7 +8880,7 @@ LAB_0049841a:
 /* ===== FUN_004984b0 @ 0x004984B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: kabuto_logic (conf 0.416) */
+/* PS2 candidate: kabuto_logic (conf 0.424) */
 
 
 
@@ -9499,7 +9519,7 @@ undefined4 FUN_00498cd0(int param_1)
 }
 
 /* ===== FUN_00498cf0 @ 0x00498CF0 ===== */
-/* PS2 candidate: create_static_object (conf 0.378) */
+/* PS2 candidate: create_static_object (conf 0.417) */
 
 
 
@@ -9864,7 +9884,7 @@ LAB_004991da:
 }
 
 /* ===== FUN_00499200 @ 0x00499200 ===== */
-/* PS2 candidate: destroy_player_object (conf 0.314) */
+/* PS2 candidate: destroy_player_object (conf 0.322) */
 
 
 
@@ -9922,7 +9942,7 @@ void FUN_00499220(int param_1)
 }
 
 /* ===== FUN_00499280 @ 0x00499280 ===== */
-/* PS2 candidate: object_set_location_fix (conf 0.506) */
+/* PS2 candidate: object_set_location_fix (conf 0.535) */
 
 
 
@@ -9974,7 +9994,7 @@ void FUN_004992d0(int param_1,float param_2,float param_3,float param_4)
 }
 
 /* ===== FUN_00499310 @ 0x00499310 ===== */
-/* PS2 candidate: object_set_location (conf 0.441) */
+/* PS2 candidate: object_set_location (conf 0.459) */
 
 
 
@@ -10017,7 +10037,7 @@ void FUN_00499310(int param_1,float param_2,float param_3,float param_4)
 }
 
 /* ===== FUN_004993c0 @ 0x004993C0 ===== */
-/* PS2 candidate: object_set_location_p3d (conf 0.44) */
+/* PS2 candidate: object_set_location_p3d (conf 0.468) */
 
 
 
@@ -10101,7 +10121,7 @@ void FUN_00499490(int param_1,float param_2,float param_3,float param_4)
 }
 
 /* ===== FUN_00499500 @ 0x00499500 ===== */
-/* PS2 candidate: object_apply_location (conf 0.423) */
+/* PS2 candidate: object_apply_location (conf 0.439) */
 
 
 
@@ -10387,12 +10407,12 @@ LAB_004998d3:
 
 }
 
-/* ===== FUN_00499970 @ 0x00499970 ===== */
+/* ===== object_init_usage @ 0x00499970 ===== */
 /* PS2 candidate: object_init_usage (conf 0.313) */
 
 
 
-void FUN_00499970(int param_1)
+void object_init_usage(int param_1)
 
 
 
@@ -10608,7 +10628,7 @@ void FUN_00499f30(int param_1,int param_2)
 }
 
 /* ===== FUN_00499fa0 @ 0x00499FA0 ===== */
-/* PS2 candidate: object_mty_check_obj (conf 0.416) */
+/* PS2 candidate: object_mty_check_obj (conf 0.42) */
 
 
 
@@ -10851,7 +10871,7 @@ undefined4 FUN_0049a1d0(int param_1)
 }
 
 /* ===== FUN_0049a1f0 @ 0x0049A1F0 ===== */
-/* PS2 candidate: PROJ_ObjectFinalize (conf 0.4) */
+/* PS2 candidate: PROJ_ObjectFinalize (conf 0.401) */
 
 
 
@@ -12081,7 +12101,7 @@ LAB_0049b871:
 }
 
 /* ===== FUN_0049b8a0 @ 0x0049B8A0 ===== */
-/* PS2 candidate: object_setup_specialtype (conf 0.385) */
+/* PS2 candidate: object_setup_specialtype (conf 0.388) */
 
 
 
@@ -12210,7 +12230,7 @@ void FUN_0049b8a0(int param_1)
 }
 
 /* ===== FUN_0049baa0 @ 0x0049BAA0 ===== */
-/* PS2 candidate: object_destroy_specialtype (conf 0.382) */
+/* PS2 candidate: object_destroy_specialtype (conf 0.391) */
 
 
 
@@ -12392,6 +12412,10 @@ void FUN_0049bc50(int param_1)
 }
 
 /* ===== FUN_0049bc90 @ 0x0049BC90 ===== */
+/* PS2 candidate: object_get_ref_world (conf 0.313) */
+
+
+
 void FUN_0049bc90(int param_1,int param_2,undefined4 param_3)
 
 
@@ -13276,7 +13300,7 @@ void FUN_0049de80(int param_1,int param_2)
 }
 
 /* ===== FUN_0049df90 @ 0x0049DF90 ===== */
-/* PS2 candidate: offspring_dive_release_target__FP6OBJECT (conf 0.431) */
+/* PS2 candidate: offspring_dive_release_target__FP6OBJECT (conf 0.394) */
 
 
 
@@ -13523,7 +13547,7 @@ void FUN_0049e350(char *param_1)
 /* ===== FUN_0049e4a0 @ 0x0049E4A0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: lift_logic__FP6OBJECT (conf 0.45) */
+/* PS2 candidate: lift_logic__FP6OBJECT (conf 0.463) */
 
 
 

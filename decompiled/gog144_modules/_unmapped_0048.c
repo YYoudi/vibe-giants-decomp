@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (0 named) — decompiled, names from PS2 symbols
+ * 74 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
 /* ===== FUN_00480150 @ 0x00480150 ===== */
-/* PS2 candidate: mecc_exit_bush (conf 0.472) */
+/* PS2 candidate: mecc_exit_bush (conf 0.499) */
 
 
 
@@ -43,7 +43,7 @@ void FUN_00480150(int param_1)
 }
 
 /* ===== FUN_004801c0 @ 0x004801C0 ===== */
-/* PS2 candidate: mecc_enable_personal_shield (conf 0.36) */
+/* PS2 candidate: mecc_enable_personal_shield (conf 0.538) */
 
 
 
@@ -58,6 +58,12 @@ void FUN_004801c0(int param_1)
   int iVar2;
 
   undefined4 uVar3;
+
+  char *pcVar4;
+
+  undefined4 uVar5;
+
+  undefined1 *puVar6;
 
   undefined1 local_34 [16];
 
@@ -95,17 +101,23 @@ LAB_00480200:
 
   if (iVar2 != 0) {
 
+    puVar6 = local_34;
+
+    uVar5 = 0x24;
+
+    pcVar4 = s_fxb_shield_0055bd38;
+
     local_20 = 1;
 
     local_24 = 8;
 
     local_1c = iVar2;
 
-    uVar3 = fx_get_free_effect__Fv(s_fxb_shield_0055bd38,0x24,local_34);
+    uVar3 = fx_get_free_effect__Fv();
 
     *(undefined4 *)(iVar1 + 0xf8) = uVar3;
 
-    FUN_004034a0(iVar2,1,0x20,0,0,0);
+    FUN_004034a0(iVar2,1,0x20,0,0,0,pcVar4,uVar5,puVar6);
 
   }
 
@@ -121,7 +133,7 @@ LAB_00480200:
 
   }
 
-  uVar3 = sound_get_free_sequence__Fv(0x5c2,0x5c1,0,0x5c0,param_1,0,3);
+  uVar3 = sound_get_free_sequence__Fv();
 
   *(undefined4 *)(iVar1 + 0x1e8) = uVar3;
 
@@ -130,7 +142,7 @@ LAB_00480200:
 }
 
 /* ===== FUN_004802c0 @ 0x004802C0 ===== */
-/* PS2 candidate: mecc_disable_personal_shield (conf 0.375) */
+/* PS2 candidate: mecc_disable_personal_shield (conf 0.543) */
 
 
 
@@ -213,7 +225,7 @@ LAB_00480357:
 }
 
 /* ===== FUN_004803a0 @ 0x004803A0 ===== */
-/* PS2 candidate: mecc_enable_repair_gun (conf 0.34) */
+/* PS2 candidate: mecc_enable_repair_gun (conf 0.579) */
 
 
 
@@ -256,7 +268,7 @@ void FUN_004803a0(int param_1)
 }
 
 /* ===== FUN_00480400 @ 0x00480400 ===== */
-/* PS2 candidate: mecc_disable_repair_gun (conf 0.485) */
+/* PS2 candidate: mecc_disable_repair_gun (conf 0.63) */
 
 
 
@@ -325,7 +337,7 @@ void FUN_00480400(int param_1)
 }
 
 /* ===== FUN_004804d0 @ 0x004804D0 ===== */
-/* PS2 candidate: mecc_repairwand_off (conf 0.37) */
+/* PS2 candidate: mecc_repairwand_off (conf 0.371) */
 
 
 
@@ -372,7 +384,7 @@ void FUN_004804d0(int param_1)
 }
 
 /* ===== FUN_00480540 @ 0x00480540 ===== */
-/* PS2 candidate: reaper_activate_partysmartie__FP6OBJECT (conf 0.357) */
+/* PS2 candidate: mecc_special_weapon_logic__FP6OBJECT (conf 0.417) */
 
 
 
@@ -509,7 +521,7 @@ void FUN_00480540(int param_1)
 }
 
 /* ===== FUN_00480730 @ 0x00480730 ===== */
-/* PS2 candidate: mecc_bush_logic (conf 0.396) */
+/* PS2 candidate: mecc_bush_logic (conf 0.461) */
 
 
 
@@ -750,7 +762,7 @@ LAB_00480988:
 }
 
 /* ===== FUN_00480a60 @ 0x00480A60 ===== */
-/* PS2 candidate: mecc_stop_looping_effects (conf 0.354) */
+/* PS2 candidate: mecc_stop_looping_effects (conf 0.576) */
 
 
 
@@ -1143,7 +1155,7 @@ int FUN_00480f90(undefined4 param_1,int param_2)
 /* ===== FUN_004810d0 @ 0x004810D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: mecc_special_weapon_logic__FP6OBJECT (conf 0.477) */
+/* PS2 candidate: projectile_logic (conf 0.495) */
 
 
 
@@ -2557,6 +2569,8 @@ void FUN_004829d0(void)
 /* ===== FUN_00482b60 @ 0x00482B60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 
 
 void FUN_00482b60(void)
@@ -2570,6 +2584,8 @@ void FUN_00482b60(void)
   uint uVar2;
 
   int iVar3;
+
+  OBJECT *unaff_EBP;
 
   undefined4 *puVar4;
 
@@ -2607,9 +2623,7 @@ void FUN_00482b60(void)
 
     if ((DAT_006330e4 != 0) && (DAT_0059eedc < 1)) {
 
-      DAT_0059eedc = sound_play_stream(s_intro_island_0055be84,
-
-                                       *(undefined4 *)(DAT_006330e4 + 0x50e0),1);
+      DAT_0059eedc = sound_play_stream(0x55be84,*(char **)(DAT_006330e4 + 0x50e0),1,unaff_EBP);
 
     }
 
@@ -3525,6 +3539,8 @@ switchD_004837a3_default:
 /* ===== FUN_00483ba0 @ 0x00483BA0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 
 
 void FUN_00483ba0(void)
@@ -3536,6 +3552,8 @@ void FUN_00483ba0(void)
   int iVar1;
 
   int iVar2;
+
+  OBJECT *unaff_EBX;
 
   undefined4 *puVar3;
 
@@ -3573,9 +3591,7 @@ void FUN_00483ba0(void)
 
     if ((DAT_006330e4 != 0) && (DAT_0059eedc < 1)) {
 
-      DAT_0059eedc = sound_play_stream(s_intro_island_0055be84,
-
-                                       *(undefined4 *)(DAT_006330e4 + 0x50e0),1);
+      DAT_0059eedc = sound_play_stream(0x55be84,*(char **)(DAT_006330e4 + 0x50e0),1,unaff_EBX);
 
     }
 
@@ -6862,7 +6878,7 @@ void FUN_00489120(void)
 
     }
 
-    DAT_0059eae0 = FUN_004895f0(0);
+    DAT_0059eae0 = texture_add_file(0);
 
     if ((DAT_0059eae0 == 0) || (DAT_006331f8 != 0)) {
 
@@ -7140,8 +7156,8 @@ void FUN_00489120(void)
 
 }
 
-/* ===== FUN_004895f0 @ 0x004895F0 ===== */
-int FUN_004895f0(int *param_1)
+/* ===== texture_add_file @ 0x004895F0 ===== */
+int texture_add_file(int *param_1)
 
 
 
@@ -11923,7 +11939,7 @@ void FUN_0048f310(void)
 
   
 
-  iVar2 = FUN_004895f0(&local_8);
+  iVar2 = texture_add_file(&local_8);
 
   iVar4 = 0;
 

@@ -392,7 +392,7 @@ void FUN_004d1b30(int param_1)
 }
 
 /* ===== FUN_004d1bd0 @ 0x004D1BD0 ===== */
-/* PS2 candidate: ripper_medium_move__FP6OBJECT (conf 0.428) */
+/* PS2 candidate: verm_control__FP6OBJECT (conf 0.469) */
 
 
 
@@ -451,8 +451,6 @@ void FUN_004d1bd0(int param_1)
   undefined1 local_44 [8];
 
   float local_3c;
-
-  undefined1 local_34 [4];
 
   undefined4 local_30;
 
@@ -564,7 +562,7 @@ void FUN_004d1bd0(int param_1)
 
           local_24 = 8;
 
-          fVar7 = (float)fx_get_free_effect__Fv(s_fx_ripper_dirt_0055b4d8,0x24,local_34);
+          fVar7 = (float)fx_get_free_effect__Fv();
 
           pfVar1[0xe] = fVar7;
 
@@ -1646,7 +1644,7 @@ LAB_004d2124:
 
     local_28 = *(undefined4 *)(param_1 + 0xa8);
 
-    fx_get_free_effect__Fv(s_fx_ripper_popup_0056137c,8,local_34);
+    fx_get_free_effect__Fv();
 
     if (pfVar1[0xe] != 0.0) {
 
@@ -1698,7 +1696,7 @@ LAB_004d2124:
 
       local_24 = 8;
 
-      fVar4 = (float)fx_get_free_effect__Fv(s_fx_ripper_dirt_0055b4d8,0x24,local_34);
+      fVar4 = (float)fx_get_free_effect__Fv();
 
       pfVar1[0xe] = fVar4;
 
@@ -2078,7 +2076,7 @@ undefined4 FUN_004d3720(int param_1)
 }
 
 /* ===== FUN_004d3ed0 @ 0x004D3ED0 ===== */
-/* PS2 candidate: ripper_animselect (conf 0.422) */
+/* PS2 candidate: ripper_animselect (conf 0.489) */
 
 
 
@@ -2507,7 +2505,7 @@ LAB_004d4031:
 }
 
 /* ===== FUN_004d4350 @ 0x004D4350 ===== */
-/* PS2 candidate: make_spit__FP6OBJECTP3P3Df (conf 0.416) */
+/* PS2 candidate: make_spit__FP6OBJECTP3P3Df (conf 0.437) */
 
 
 
@@ -2527,7 +2525,11 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
   float10 fVar5;
 
-  undefined4 uVar6;
+  char *pcVar6;
+
+  undefined4 uVar7;
+
+  undefined1 *puVar8;
 
   undefined1 local_34 [20];
 
@@ -2539,17 +2541,17 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
   if (*(int *)(param_1 + 4) == 0xe6) {
 
-    uVar6 = 0xe8;
+    uVar7 = 0xe8;
 
   }
 
   else {
 
-    uVar6 = 0x5a;
+    uVar7 = 0x5a;
 
   }
 
-  iVar3 = FUN_00497d70(uVar6);
+  iVar3 = FUN_00497d70(uVar7);
 
   if (iVar3 != 0) {
 
@@ -2561,31 +2563,37 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
       FUN_00497a50(iVar4,iVar3);
 
+      puVar8 = local_34;
+
       local_20 = 0xffffffff;
+
+      uVar7 = 4;
 
       local_1c = iVar4;
 
       if (*(int *)(param_1 + 4) == 0xe6) {
 
+        pcVar6 = s_fx_ripper_large_proj_00561404;
+
         *(undefined4 *)(iVar4 + 0xe8) = 1;
 
-        fx_get_free_effect__Fv(s_fx_ripper_large_proj_00561404,4,local_34);
+        fx_get_free_effect__Fv();
 
-        iVar3 = FUN_004d5730(100);
+        iVar3 = FUN_004d5730(100,pcVar6,uVar7,puVar8);
 
         if (iVar3 < 0x32) {
 
-          uVar6 = 0x4cb;
+          uVar7 = 0x4cb;
 
         }
 
         else {
 
-          uVar6 = 0x4cc;
+          uVar7 = 0x4cc;
 
         }
 
-        FUN_00495840(uVar6,param_1 + 0xa0);
+        FUN_00495840(uVar7,param_1 + 0xa0);
 
         *(undefined4 *)(iVar4 + 0xf4) = 0x636;
 
@@ -2597,25 +2605,27 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
       else {
 
+        pcVar6 = s_fx_ripper_medium_proj_005613ec;
+
         *(undefined4 *)(iVar4 + 0xe8) = 0;
 
-        fx_get_free_effect__Fv(s_fx_ripper_medium_proj_005613ec,4,local_34);
+        fx_get_free_effect__Fv();
 
-        iVar3 = FUN_004d5730(100);
+        iVar3 = FUN_004d5730(100,pcVar6,uVar7,puVar8);
 
         if (iVar3 < 0x32) {
 
-          uVar6 = 0x4e2;
+          uVar7 = 0x4e2;
 
         }
 
         else {
 
-          uVar6 = 0x4e3;
+          uVar7 = 0x4e3;
 
         }
 
-        FUN_00495840(uVar6,param_1 + 0xa0);
+        FUN_00495840(uVar7,param_1 + 0xa0);
 
         *(undefined4 *)(iVar4 + 0xf4) = 0x637;
 
@@ -2633,13 +2643,13 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
       *(undefined4 *)(iVar4 + 0xd0) = 0;
 
-      uVar6 = *(undefined4 *)(param_1 + 0x18c);
+      uVar7 = *(undefined4 *)(param_1 + 0x18c);
 
       *(undefined4 *)(iVar4 + 0x11c) = *(undefined4 *)(iVar4 + 0x194);
 
       *(undefined4 *)(iVar4 + 0x10c) = *(undefined4 *)(iVar4 + 0x194);
 
-      *(undefined4 *)(iVar4 + 0x18c) = uVar6;
+      *(undefined4 *)(iVar4 + 0x18c) = uVar7;
 
       fVar5 = (float10)FUN_0050a520(param_2,iVar4 + 0xa0);
 
@@ -2812,7 +2822,7 @@ void FUN_004d4630(undefined4 *param_1,undefined4 *param_2,float param_3)
 }
 
 /* ===== FUN_004d4760 @ 0x004D4760 ===== */
-/* PS2 candidate: enemy_check_player_grab__FP6OBJECTif (conf 0.489) */
+/* PS2 candidate: enemy_check_player_grab__FP6OBJECTif (conf 0.486) */
 
 
 
@@ -3040,7 +3050,7 @@ void FUN_004d4a20(int param_1)
 }
 
 /* ===== FUN_004d4ae0 @ 0x004D4AE0 ===== */
-/* PS2 candidate: ripnest_move (conf 0.369) */
+/* PS2 candidate: ripnest_move (conf 0.394) */
 
 
 
@@ -3316,7 +3326,7 @@ int FUN_004d5730(int param_1)
 }
 
 /* ===== FUN_004d5740 @ 0x004D5740 ===== */
-/* PS2 candidate: rndintrange (conf 0.534) */
+/* PS2 candidate: rndintrange (conf 0.54) */
 
 
 
@@ -3337,7 +3347,7 @@ int FUN_004d5740(int param_1,int param_2)
 }
 
 /* ===== FUN_004d5760 @ 0x004D5760 ===== */
-/* PS2 candidate: rndfloat (conf 0.383) */
+/* PS2 candidate: rndfloat (conf 0.413) */
 
 
 
@@ -3358,7 +3368,7 @@ float10 FUN_004d5760(float param_1)
 }
 
 /* ===== FUN_004d5780 @ 0x004D5780 ===== */
-/* PS2 candidate: rndfloatrange (conf 0.455) */
+/* PS2 candidate: rndfloatrange (conf 0.672) */
 
 
 
@@ -3527,7 +3537,7 @@ void FUN_004d5910(int param_1,int param_2)
 }
 
 /* ===== FUN_004d59d0 @ 0x004D59D0 ===== */
-/* PS2 candidate: rpboat_ghost_logic__FP6OBJECT (conf 0.398) */
+/* PS2 candidate: rpboat_ghost_logic__FP6OBJECT (conf 0.391) */
 
 
 
@@ -3610,7 +3620,7 @@ void FUN_004d59d0(int param_1)
 }
 
 /* ===== FUN_004d5b50 @ 0x004D5B50 ===== */
-/* PS2 candidate: rpboat_tilt__FP6OBJECT (conf 0.454) */
+/* PS2 candidate: rpboat_tilt__FP6OBJECT (conf 0.453) */
 
 
 
@@ -3644,9 +3654,7 @@ void FUN_004d5b50(int param_1)
 
   undefined4 local_80;
 
-  undefined4 local_7c;
-
-  undefined1 local_78 [4];
+  undefined4 local_7c [2];
 
   undefined4 local_74;
 
@@ -3720,7 +3728,7 @@ void FUN_004d5b50(int param_1)
 
         local_6c = *(undefined4 *)(param_1 + 0xa8);
 
-        fx_get_free_effect__Fv(s_fx_ground_dusthit_00561450,8,local_78);
+        fx_get_free_effect__Fv();
 
         *(undefined4 *)(param_1 + 0xf8) = 0x3e4ccccd;
 
@@ -3818,11 +3826,11 @@ LAB_004d5d41:
 
     local_80 = *(undefined4 *)(param_1 + 0x2a8);
 
-    local_7c = *(undefined4 *)(param_1 + 0x2b8);
+    local_7c[0] = *(undefined4 *)(param_1 + 0x2b8);
 
     FUN_0050a810(&local_90,&local_8c,&local_88);
 
-    FUN_0050a810(&local_84,&local_80,&local_7c);
+    FUN_0050a810(&local_84,&local_80,local_7c);
 
     fVar6 = (float10)FUN_00516290(&local_90,&local_84);
 
@@ -4107,6 +4115,10 @@ void FUN_004d7500(int param_1,int param_2,undefined4 param_3)
 }
 
 /* ===== FUN_004d77e0 @ 0x004D77E0 ===== */
+/* PS2 candidate: charger_do_fx__FP6OBJECTiii (conf 0.418) */
+
+
+
 void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 

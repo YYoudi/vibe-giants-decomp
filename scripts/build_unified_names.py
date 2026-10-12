@@ -70,7 +70,18 @@ def main():
     for r in csv.DictReader(open(os.path.join(PS2, "pc_ps2_matches_full_1449.csv"), encoding="utf-8")):
         cand[norm(r["pc_addr"])].append((float(r["conf"]), f"w2-{r['tier']}", r["ps2_name"]))
 
-    # resolve: keep highest conf per address; log conflicts
+    # resolve: keep highest conf per address; log conflicts.
+    # verified evidence beats transferred names: bump verified addresses.
+    verified = {}
+    vfile = os.path.join(PS2, "verified_names.txt")
+    if os.path.exists(vfile):
+        for line in open(vfile, encoding="utf-8"):
+            parts = line.split()
+            if len(parts) >= 2:
+                verified[norm(parts[0])] = parts[1]
+    for a in list(cand):
+        if a in verified:
+            cand[a] = [(min(1.0, c + 0.05), t + "-verified", verified[a]) for c, t, n in cand[a]]
     rows, conflicts = [], []
     for a, lst in cand.items():
         lst.sort(reverse=True)

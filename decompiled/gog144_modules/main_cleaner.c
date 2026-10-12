@@ -25,7 +25,7 @@ void FUN_0040f390(void)
 /* ===== FUN_0040f3c0 @ 0x0040F3C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: cleaner_go_obj (conf 0.36) */
+/* PS2 candidate: cleaner_go_obj (conf 0.454) */
 
 
 

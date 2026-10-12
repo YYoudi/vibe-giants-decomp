@@ -1148,7 +1148,7 @@ LAB_00508606:
 }
 
 /* ===== FUN_005086e0 @ 0x005086E0 ===== */
-/* PS2 candidate: object_finit_ospec (conf 0.421) */
+/* PS2 candidate: object_finit_ospec (conf 0.438) */
 
 
 

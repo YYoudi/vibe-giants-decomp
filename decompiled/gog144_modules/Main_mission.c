@@ -4,7 +4,7 @@
  */
 
 /* ===== FUN_00490860 @ 0x00490860 ===== */
-/* PS2 candidate: texture_add_file (conf 0.513) */
+/* PS2 candidate: read_worlds_bin_fn_PS2 (conf 0.517) */
 
 
 

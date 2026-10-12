@@ -182,6 +182,10 @@ undefined4 FUN_00420180(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00420260 @ 0x00420260 ===== */
+/* PS2 candidate: player_can_use_ammo__FP6OBJECTi (conf 0.408) */
+
+
+
 undefined4 FUN_00420260(void)
 
 
@@ -8059,7 +8063,7 @@ void FUN_00425850(int param_1)
 }
 
 /* ===== FUN_00425a40 @ 0x00425A40 ===== */
-/* PS2 candidate: kabuto_corpse_create__FP6OBJECTi (conf 0.406) */
+/* PS2 candidate: kabuto_corpse_create__FP6OBJECTi (conf 0.613) */
 
 
 
@@ -8137,7 +8141,7 @@ int FUN_00425a40(int param_1,undefined4 param_2)
 
     }
 
-    FUN_00499970(iVar1);
+    object_init_usage(iVar1);
 
     **(undefined4 **)(iVar1 + 0x100) = 0x41a00000;
 
@@ -8148,7 +8152,7 @@ int FUN_00425a40(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00425b50 @ 0x00425B50 ===== */
-/* PS2 candidate: corpse_create (conf 0.422) */
+/* PS2 candidate: corpse_create (conf 0.502) */
 
 
 
@@ -8237,7 +8241,7 @@ void FUN_00425ea0(undefined4 param_1)
 }
 
 /* ===== FUN_00425eb0 @ 0x00425EB0 ===== */
-/* PS2 candidate: memcpy (conf 0.604) */
+/* PS2 candidate: GetCurrentPtr__C11CByteStream (conf 0.75) */
 
 
 
@@ -9023,7 +9027,7 @@ bool FUN_00426ed0(void)
 }
 
 /* ===== FUN_00426ee0 @ 0x00426EE0 ===== */
-/* PS2 candidate: dialog_level_process (conf 0.306) */
+/* PS2 candidate: dialog_level_process (conf 0.323) */
 
 
 

@@ -4,6 +4,10 @@
  */
 
 /* ===== FUN_005011f0 @ 0x005011F0 ===== */
+/* PS2 candidate: teammecc_create (conf 0.492) */
+
+
+
 void FUN_005011f0(int param_1,int param_2)
 
 

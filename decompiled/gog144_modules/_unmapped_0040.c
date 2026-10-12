@@ -4,7 +4,7 @@
  */
 
 /* ===== FUN_00401000 @ 0x00401000 ===== */
-/* PS2 candidate: ai_clear_move_goal (conf 0.481) */
+/* PS2 candidate: ai_clear_move_goal (conf 0.469) */
 
 
 
@@ -54,7 +54,7 @@ void FUN_004019c0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 }
 
 /* ===== FUN_004019e0 @ 0x004019E0 ===== */
-/* PS2 candidate: ai_do_update_goal__FUiP6OBJECTP3P3Dff (conf 0.311) */
+/* PS2 candidate: ai_do_update_goal__FUiP6OBJECTP3P3Dff (conf 0.314) */
 
 
 
@@ -766,7 +766,7 @@ bool FUN_004021e0(int param_1)
 }
 
 /* ===== FUN_00402240 @ 0x00402240 ===== */
-/* PS2 candidate: ai_goal_process_nopath (conf 0.319) */
+/* PS2 candidate: ai_goal_process_nopath (conf 0.355) */
 
 
 
@@ -787,7 +787,7 @@ void FUN_00402240(undefined4 param_1)
 }
 
 /* ===== FUN_004034a0 @ 0x004034A0 ===== */
-/* PS2 candidate: player_find_weapon_obj_type__FP6OBJECTii (conf 0.353) */
+/* PS2 candidate: ObjectSetAnim (conf 0.75) */
 
 
 
@@ -1551,6 +1551,10 @@ int FUN_00403a70(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_00403b50 @ 0x00403B50 ===== */
+/* PS2 candidate: BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i (conf 0.521) */
+
+
+
 void FUN_00403b50(int param_1)
 
 
@@ -1865,7 +1869,7 @@ void FUN_00403e40(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00403e60 @ 0x00403E60 ===== */
-/* PS2 candidate: object_animate_process (conf 0.39) */
+/* PS2 candidate: object_animate_process (conf 0.407) */
 
 
 
@@ -2934,8 +2938,6 @@ void FUN_00404d70(int param_1,undefined4 param_2,int param_3,int param_4,uint *p
 
   undefined4 uVar9;
 
-  uint local_34;
-
   undefined1 local_30 [16];
 
   uint local_20;
@@ -3166,9 +3168,7 @@ LAB_00404e2f:
 
     FUN_004a76e0(param_1,param_5[7],local_30);
 
-    local_34 = uVar7;
-
-    fx_get_free_effect__Fv(0,0x18,&local_34);
+    fx_get_free_effect__Fv();
 
   }
 
@@ -3178,9 +3178,7 @@ LAB_00404e2f:
 
     local_1c = param_1;
 
-    local_34 = uVar7;
-
-    fx_get_free_effect__Fv(0,0x14,&local_34);
+    fx_get_free_effect__Fv();
 
   }
 
@@ -3189,7 +3187,7 @@ LAB_00404e2f:
 }
 
 /* ===== FUN_00406bc0 @ 0x00406BC0 ===== */
-/* PS2 candidate: army_create_rpman__FP6OBJECTP9ArmyOrderifi (conf 0.475) */
+/* PS2 candidate: army_create_rpman__FP6OBJECTP9ArmyOrderifi (conf 0.491) */
 
 
 
@@ -3338,6 +3336,10 @@ int FUN_00406bc0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,u
 }
 
 /* ===== FUN_00406dd0 @ 0x00406DD0 ===== */
+/* PS2 candidate: army_process_opcodes__FP6OBJECTPPUci (conf 0.505) */
+
+
+
 void FUN_00406dd0(int param_1,int *param_2,int param_3)
 
 
@@ -4443,6 +4445,10 @@ switchD_00406e2f_caseD_1:
 }
 
 /* ===== FUN_004078f0 @ 0x004078F0 ===== */
+/* PS2 candidate: army_create_platoon__FP6OBJECTPcT1 (conf 0.417) */
+
+
+
 void FUN_004078f0(int param_1,undefined4 param_2,undefined4 param_3)
 
 
@@ -4634,7 +4640,7 @@ undefined ** FUN_00407c30(undefined4 param_1,int param_2)
 /* ===== FUN_00407c40 @ 0x00407C40 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: meccbase_init (conf 0.365) */
+/* PS2 candidate: meccbase_init (conf 0.412) */
 
 
 
@@ -4985,7 +4991,7 @@ void FUN_00407c40(int param_1)
 }
 
 /* ===== FUN_00408530 @ 0x00408530 ===== */
-/* PS2 candidate: meccbaseitem_move (conf 0.6) */
+/* PS2 candidate: meccbaseitem_move (conf 0.591) */
 
 
 
@@ -5816,7 +5822,7 @@ LAB_00408df5:
 }
 
 /* ===== FUN_00408ec0 @ 0x00408EC0 ===== */
-/* PS2 candidate: meccbaseitem_start_building (conf 0.405) */
+/* PS2 candidate: meccbaseitem_start_building (conf 0.503) */
 
 
 
@@ -6559,6 +6565,10 @@ void FUN_00409930(int param_1,int param_2)
 }
 
 /* ===== FUN_00409b60 @ 0x00409B60 ===== */
+/* PS2 candidate: reaperbasebldg_shot (conf 0.361) */
+
+
+
 void FUN_00409b60(int param_1,int param_2)
 
 
@@ -6576,6 +6586,12 @@ void FUN_00409b60(int param_1,int param_2)
   int *piVar5;
 
   float10 fVar6;
+
+  char *pcVar7;
+
+  undefined4 uVar8;
+
+  undefined1 *puVar9;
 
   undefined1 local_34 [4];
 
@@ -6693,11 +6709,17 @@ LAB_00409bc6:
 
         local_2c = *(undefined4 *)(iVar4 + 0xa4);
 
+        puVar9 = local_34;
+
         local_28 = *(undefined4 *)(iVar4 + 0xa8);
 
-        fx_get_free_effect__Fv(s_FX_stone_explode_Large_00554f20,8,local_34);
+        uVar8 = 8;
 
-        FUN_004954e0(0x615,param_1);
+        pcVar7 = s_FX_stone_explode_Large_00554f20;
+
+        fx_get_free_effect__Fv();
+
+        FUN_004954e0(0x615,param_1,pcVar7,uVar8,puVar9);
 
         return;
 
@@ -7496,7 +7518,7 @@ int FUN_0040acf0(int param_1)
 }
 
 /* ===== FUN_0040ad30 @ 0x0040AD30 ===== */
-/* PS2 candidate: meccbase_get_max_energy (conf 0.386) */
+/* PS2 candidate: meccbase_get_max_energy (conf 0.408) */
 
 
 
@@ -7726,7 +7748,7 @@ undefined4 FUN_0040aec0(int param_1)
 }
 
 /* ===== FUN_0040afb0 @ 0x0040AFB0 ===== */
-/* PS2 candidate: meccbasepit_create_food (conf 0.439) */
+/* PS2 candidate: meccbasepit_create_food (conf 0.46) */
 
 
 
@@ -7924,7 +7946,7 @@ void FUN_0040b300(void)
 }
 
 /* ===== FUN_0040b350 @ 0x0040B350 ===== */
-/* PS2 candidate: blood_from_point (conf 0.358) */
+/* PS2 candidate: blood_from_point (conf 0.41) */
 
 
 
@@ -8055,7 +8077,7 @@ void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 }
 
 /* ===== FUN_0040b4b0 @ 0x0040B4B0 ===== */
-/* PS2 candidate: blood_from_object (conf 0.362) */
+/* PS2 candidate: blood_from_object (conf 0.406) */
 
 
 
@@ -8554,6 +8576,10 @@ void FUN_0040b8f0(void)
 }
 
 /* ===== FUN_0040bb40 @ 0x0040BB40 ===== */
+/* PS2 candidate: wound_from_object_world (conf 0.318) */
+
+
+
 void FUN_0040bb40(undefined4 param_1,int param_2)
 
 
@@ -8653,7 +8679,7 @@ void FUN_0040bb40(undefined4 param_1,int param_2)
 }
 
 /* ===== FUN_0040bc00 @ 0x0040BC00 ===== */
-/* PS2 candidate: wound_process_single__FP5WOUND (conf 0.393) */
+/* PS2 candidate: wound_process_single__FP5WOUND (conf 0.431) */
 
 
 
@@ -8778,6 +8804,10 @@ void FUN_0040bc00(int param_1)
 }
 
 /* ===== FUN_0040bdc0 @ 0x0040BDC0 ===== */
+/* PS2 candidate: process_wound (conf 0.342) */
+
+
+
 void FUN_0040bdc0(void)
 
 
@@ -8908,14 +8938,6 @@ int FUN_0040c2d0(int param_1,int param_2)
 
   int local_38;
 
-  undefined1 local_34 [16];
-
-  undefined4 local_24;
-
-  undefined4 local_20;
-
-  int local_1c;
-
   
 
   iVar5 = param_2;
@@ -8948,19 +8970,11 @@ int FUN_0040c2d0(int param_1,int param_2)
 
     FUN_00448920(*puVar3);
 
-    local_1c = param_1;
-
-    local_20 = 0;
-
-    local_24 = 8;
-
-    uVar4 = fx_get_free_effect__Fv(s_fx_buoy_red_light_00555054,0x24,local_34);
+    uVar4 = fx_get_free_effect__Fv();
 
     *puVar2 = uVar4;
 
-    local_1c = *(undefined4 *)(param_1 + 0x274);
-
-    uVar4 = fx_get_free_effect__Fv(s_fx_buoy_red_light_00555054,0x24,local_34);
+    uVar4 = fx_get_free_effect__Fv();
 
     *puVar3 = uVar4;
 
@@ -8994,19 +9008,11 @@ int FUN_0040c2d0(int param_1,int param_2)
 
     FUN_00448920(*puVar2);
 
-    local_20 = 0;
-
-    local_24 = 8;
-
-    local_1c = iVar5;
-
-    uVar4 = fx_get_free_effect__Fv(s_fx_buoy_green_light_00555040,0x24,local_34);
+    uVar4 = fx_get_free_effect__Fv();
 
     *puVar1 = uVar4;
 
-    local_1c = *(undefined4 *)(iVar5 + 0x274);
-
-    uVar4 = fx_get_free_effect__Fv(s_fx_buoy_green_light_00555040,0x24,local_34);
+    uVar4 = fx_get_free_effect__Fv();
 
     *puVar2 = uVar4;
 
@@ -9331,6 +9337,10 @@ undefined4 FUN_0040cf20(void)
 }
 
 /* ===== FUN_0040cf70 @ 0x0040CF70 ===== */
+/* PS2 candidate: camera_is_firstp (conf 0.492) */
+
+
+
 undefined4 FUN_0040cf70(void)
 
 
@@ -10052,7 +10062,7 @@ void FUN_0040d740(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 }
 
 /* ===== FUN_0040d790 @ 0x0040D790 ===== */
-/* PS2 candidate: camera_override_done (conf 0.366) */
+/* PS2 candidate: camera_override_done (conf 0.371) */
 
 
 
@@ -10337,7 +10347,7 @@ void FUN_0040d820(void)
 /* ===== FUN_0040db70 @ 0x0040DB70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: SetupCameraDataNormal__FP6OBJECTT0 (conf 0.392) */
+/* PS2 candidate: SetupCameraDataNormal__FP6OBJECTT0 (conf 0.375) */
 
 
 
@@ -10718,6 +10728,12 @@ void FUN_0040e1c0(int param_1)
 
   float fVar2;
 
+  char *pcVar3;
+
+  undefined4 uVar4;
+
+  undefined1 *puVar5;
+
   undefined1 local_34 [4];
 
   undefined1 local_30 [48];
@@ -10736,9 +10752,15 @@ void FUN_0040e1c0(int param_1)
 
       FUN_004a76e0(param_1,2,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      puVar5 = local_34;
 
-      FUN_004954e0(0x48c,param_1);
+      uVar4 = 8;
+
+      pcVar3 = s_fx_charger_dust_005553ec;
+
+      fx_get_free_effect__Fv();
+
+      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10746,9 +10768,15 @@ void FUN_0040e1c0(int param_1)
 
       FUN_004a76e0(param_1,3,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      puVar5 = local_34;
 
-      FUN_004954e0(0x48c,param_1);
+      uVar4 = 8;
+
+      pcVar3 = s_fx_charger_dust_005553ec;
+
+      fx_get_free_effect__Fv();
+
+      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10756,9 +10784,15 @@ void FUN_0040e1c0(int param_1)
 
       FUN_004a76e0(param_1,4,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      puVar5 = local_34;
 
-      FUN_004954e0(0x48c,param_1);
+      uVar4 = 8;
+
+      pcVar3 = s_fx_charger_dust_005553ec;
+
+      fx_get_free_effect__Fv();
+
+      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10768,9 +10802,15 @@ void FUN_0040e1c0(int param_1)
 
 LAB_0040e451:
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      puVar5 = local_34;
 
-      FUN_004954e0(0x48c,param_1);
+      uVar4 = 8;
+
+      pcVar3 = s_fx_charger_dust_005553ec;
+
+      fx_get_free_effect__Fv();
+
+      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
 
       return;
 
@@ -10786,9 +10826,15 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,2,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      puVar5 = local_34;
 
-      FUN_004954e0(0x48c,param_1);
+      uVar4 = 8;
+
+      pcVar3 = s_fx_charger_dust_005553ec;
+
+      fx_get_free_effect__Fv();
+
+      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10796,9 +10842,15 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,3,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      puVar5 = local_34;
 
-      FUN_004954e0(0x48c,param_1);
+      uVar4 = 8;
+
+      pcVar3 = s_fx_charger_dust_005553ec;
+
+      fx_get_free_effect__Fv();
+
+      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10806,9 +10858,15 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,4,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      puVar5 = local_34;
 
-      FUN_004954e0(0x48c,param_1);
+      uVar4 = 8;
+
+      pcVar3 = s_fx_charger_dust_005553ec;
+
+      fx_get_free_effect__Fv();
+
+      FUN_004954e0(0x48c,param_1,pcVar3,uVar4,puVar5);
 
     }
 
@@ -10828,7 +10886,7 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,2,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      fx_get_free_effect__Fv();
 
     }
 
@@ -10836,7 +10894,7 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,3,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      fx_get_free_effect__Fv();
 
     }
 
@@ -10844,7 +10902,7 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,4,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      fx_get_free_effect__Fv();
 
     }
 
@@ -10852,7 +10910,7 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,5,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_dust_005553ec,8,local_34);
+      fx_get_free_effect__Fv();
 
       return;
 
@@ -10866,7 +10924,7 @@ LAB_0040e451:
 
       FUN_004a76e0(param_1,6,local_30);
 
-      fx_get_free_effect__Fv(s_fx_charger_big_dust_005553d8,8,local_34);
+      fx_get_free_effect__Fv();
 
     }
 
@@ -10877,7 +10935,7 @@ LAB_0040e451:
 }
 
 /* ===== FUN_0040ee20 @ 0x0040EE20 ===== */
-/* PS2 candidate: charger_change_anim__FP6OBJECTii4SDKYfi (conf 0.381) */
+/* PS2 candidate: charger_change_anim__FP6OBJECTii4SDKYfi (conf 0.49) */
 
 
 

@@ -4,7 +4,7 @@
  */
 
 /* ===== FUN_00401050 @ 0x00401050 ===== */
-/* PS2 candidate: ai_moveonly_set_goal (conf 0.316) */
+/* PS2 candidate: ai_move_force_goal (conf 0.332) */
 
 
 
@@ -520,7 +520,7 @@ void FUN_004014b0(int param_1,undefined4 *param_2,undefined4 param_3)
 }
 
 /* ===== FUN_00401610 @ 0x00401610 ===== */
-/* PS2 candidate: ai_moveonly_set_goal (conf 0.301) */
+/* PS2 candidate: ai_moveonly_set_goal (conf 0.324) */
 
 
 
@@ -899,7 +899,7 @@ void FUN_00401910(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00402270 @ 0x00402270 ===== */
-/* PS2 candidate: ai_goal_process (conf 0.404) */
+/* PS2 candidate: ai_goal_process (conf 0.45) */
 
 
 
@@ -1351,7 +1351,7 @@ LAB_004026d0:
 
         if (*(int *)(param_1 + 0x224) == 0) {
 
-          iVar5 = path_world_init__Fv(param_1 + 0xa0,iVar4 + 4,5,&local_90,local_78);
+          iVar5 = path_world_init__Fv();
 
           if ((iVar5 == -1) || (local_90 == 0.0)) {
 
@@ -1798,7 +1798,7 @@ void FUN_00402b90(int param_1,undefined4 param_2,undefined4 param_3)
 }
 
 /* ===== FUN_00402d60 @ 0x00402D60 ===== */
-/* PS2 candidate: ai_chase_location__FP6OBJECTP3P3DUi (conf 0.398) */
+/* PS2 candidate: ai_chase_location__FP6OBJECTP3P3DUi (conf 0.418) */
 
 
 

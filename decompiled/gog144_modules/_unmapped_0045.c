@@ -390,7 +390,7 @@ void FUN_00451270(float param_1,float param_2,float param_3,float *param_4)
 }
 
 /* ===== FUN_00451300 @ 0x00451300 ===== */
-/* PS2 candidate: chase_value_time (conf 0.41) */
+/* PS2 candidate: chase_value_time (conf 0.408) */
 
 
 
@@ -600,6 +600,10 @@ void FUN_004513c0(float param_1,float *param_2,float *param_3,float *param_4)
 }
 
 /* ===== FUN_00451560 @ 0x00451560 ===== */
+/* PS2 candidate: diff_rangle__Fff (conf 0.316) */
+
+
+
 void FUN_00451560(float *param_1)
 
 
@@ -633,7 +637,7 @@ void FUN_00451560(float *param_1)
 }
 
 /* ===== FUN_004515b0 @ 0x004515B0 ===== */
-/* PS2 candidate: chase_angle (conf 0.322) */
+/* PS2 candidate: chase_angle (conf 0.317) */
 
 
 
@@ -1774,7 +1778,7 @@ void FUN_00452200(short *param_1,float *param_2,int param_3,int param_4,float pa
 }
 
 /* ===== FUN_00452490 @ 0x00452490 ===== */
-/* PS2 candidate: giftshopview_enable (conf 0.445) */
+/* PS2 candidate: giftshopview_enable (conf 0.524) */
 
 
 
@@ -3123,7 +3127,7 @@ void FUN_004543c0(void)
 }
 
 /* ===== FUN_004544f0 @ 0x004544F0 ===== */
-/* PS2 candidate: giftshop_exit__Fv (conf 0.439) */
+/* PS2 candidate: giftshop_exit__Fv (conf 0.426) */
 
 
 
@@ -3849,7 +3853,7 @@ void FUN_00454e00(int param_1,undefined4 param_2,undefined4 param_3,byte *param_
 }
 
 /* ===== FUN_00455070 @ 0x00455070 ===== */
-/* PS2 candidate: in_fov (conf 0.443) */
+/* PS2 candidate: in_fov (conf 0.452) */
 
 
 
@@ -4236,7 +4240,7 @@ void FUN_004555e0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 }
 
 /* ===== FUN_00455600 @ 0x00455600 ===== */
-/* PS2 candidate: ground_get_z (conf 0.386) */
+/* PS2 candidate: ground_get_z (conf 0.399) */
 
 
 
@@ -4660,7 +4664,7 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 }
 
 /* ===== FUN_00455b70 @ 0x00455B70 ===== */
-/* PS2 candidate: project_cursor_to_object (conf 0.446) */
+/* PS2 candidate: project_cursor_to_object (conf 0.447) */
 
 
 
@@ -4726,7 +4730,7 @@ void FUN_00455bd0(int param_1,int param_2,float *param_3)
 }
 
 /* ===== FUN_00455c80 @ 0x00455C80 ===== */
-/* PS2 candidate: object_create_child (conf 0.43) */
+/* PS2 candidate: object_create_child (conf 0.467) */
 
 
 
@@ -5137,7 +5141,7 @@ int FUN_00455fa0(int param_1)
 }
 
 /* ===== FUN_00456010 @ 0x00456010 ===== */
-/* PS2 candidate: gun_find_left (conf 0.494) */
+/* PS2 candidate: gun_find_left (conf 0.482) */
 
 
 
@@ -5178,7 +5182,7 @@ int FUN_00456010(int param_1)
 }
 
 /* ===== FUN_00456050 @ 0x00456050 ===== */
-/* PS2 candidate: gun_find_right (conf 0.447) */
+/* PS2 candidate: gun_find_right (conf 0.43) */
 
 
 
@@ -5333,7 +5337,7 @@ void FUN_00456110(int param_1,int *param_2)
 }
 
 /* ===== FUN_00456470 @ 0x00456470 ===== */
-/* PS2 candidate: herd_create_one (conf 0.465) */
+/* PS2 candidate: herd_create_one (conf 0.486) */
 
 
 
@@ -5551,7 +5555,7 @@ void FUN_00456900(undefined4 param_1,int param_2,undefined4 param_3,int param_4)
 }
 
 /* ===== FUN_00456a10 @ 0x00456A10 ===== */
-/* PS2 candidate: hurt_pusher (conf 0.404) */
+/* PS2 candidate: hurt_pusher (conf 0.419) */
 
 
 
@@ -5664,7 +5668,7 @@ void FUN_00456a10(int param_1,float param_2,float param_3,int param_4,int param_
 }
 
 /* ===== FUN_00456d00 @ 0x00456D00 ===== */
-/* PS2 candidate: hurt_object_rapid (conf 0.401) */
+/* PS2 candidate: playerobj_lookud (conf 0.412) */
 
 
 
@@ -6584,7 +6588,7 @@ bool FUN_00457a70(int param_1,int param_2)
 }
 
 /* ===== FUN_00457bd0 @ 0x00457BD0 ===== */
-/* PS2 candidate: player_needs_ammo__FP6OBJECTi (conf 0.41) */
+/* PS2 candidate: player_needs_ammo__FP6OBJECTi (conf 0.412) */
 
 
 
@@ -6764,7 +6768,7 @@ void FUN_00457f00(undefined4 param_1,undefined1 param_2)
 }
 
 /* ===== FUN_00457f40 @ 0x00457F40 ===== */
-/* PS2 candidate: WeaponIdSet__FP6OBJECTii (conf 0.373) */
+/* PS2 candidate: WeaponIdSet__FP6OBJECTii (conf 0.378) */
 
 
 
@@ -6887,7 +6891,7 @@ void FUN_00457fe0(int param_1,int param_2)
 }
 
 /* ===== FUN_00458040 @ 0x00458040 ===== */
-/* PS2 candidate: WeaponIdCycleToNext__FP6OBJECTi (conf 0.441) */
+/* PS2 candidate: WeaponIdCycleToNext__FP6OBJECTi (conf 0.452) */
 
 
 
@@ -7024,7 +7028,7 @@ int FUN_00458040(int param_1,int param_2)
 }
 
 /* ===== FUN_00458150 @ 0x00458150 ===== */
-/* PS2 candidate: WeaponIdGetCurrent__FP6OBJECT (conf 0.408) */
+/* PS2 candidate: WeaponIdGetCurrent__FP6OBJECT (conf 0.544) */
 
 
 
@@ -7047,7 +7051,7 @@ undefined4 FUN_00458150(int param_1)
 }
 
 /* ===== FUN_00458180 @ 0x00458180 ===== */
-/* PS2 candidate: WeaponIdSetCurrent__FP6OBJECTi (conf 0.467) */
+/* PS2 candidate: WeaponIdSetCurrent__FP6OBJECTi (conf 0.49) */
 
 
 
@@ -7138,6 +7142,10 @@ bool FUN_00458200(int param_1)
 }
 
 /* ===== FUN_00458230 @ 0x00458230 ===== */
+/* PS2 candidate: WeaponIdSetPresent__FP6OBJECTi (conf 0.374) */
+
+
+
 void FUN_00458230(int param_1)
 
 
@@ -7179,7 +7187,7 @@ void FUN_00458230(int param_1)
 }
 
 /* ===== FUN_004582a0 @ 0x004582A0 ===== */
-/* PS2 candidate: OtherInvIdSet__FP6OBJECTii (conf 0.439) */
+/* PS2 candidate: OtherInvIdSet__FP6OBJECTii (conf 0.42) */
 
 
 
@@ -7200,7 +7208,7 @@ void FUN_004582a0(int param_1,int param_2,undefined4 param_3)
 }
 
 /* ===== FUN_004582d0 @ 0x004582D0 ===== */
-/* PS2 candidate: OtherInvIdGet__FP6OBJECTi (conf 0.49) */
+/* PS2 candidate: OtherInvIdGet__FP6OBJECTi (conf 0.465) */
 
 
 
@@ -7221,7 +7229,7 @@ undefined4 FUN_004582d0(int param_1,int param_2)
 }
 
 /* ===== FUN_00458300 @ 0x00458300 ===== */
-/* PS2 candidate: player_find_weapon_obj_type__FP6OBJECTii (conf 0.316) */
+/* PS2 candidate: player_find_weapon_obj_type__FP6OBJECTii (conf 0.49) */
 
 
 
@@ -7262,7 +7270,7 @@ int FUN_00458300(int param_1,int param_2,int param_3)
 }
 
 /* ===== FUN_00458350 @ 0x00458350 ===== */
-/* PS2 candidate: SpecialWeaponIdSet__FP6OBJECTi (conf 0.553) */
+/* PS2 candidate: SpecialWeaponIdSet__FP6OBJECTi (conf 0.619) */
 
 
 
@@ -7535,7 +7543,7 @@ LAB_00458511:
 }
 
 /* ===== FUN_004586e0 @ 0x004586E0 ===== */
-/* PS2 candidate: SpecialWeaponIdGet__FP6OBJECT (conf 0.459) */
+/* PS2 candidate: SpecialWeaponIdGet__FP6OBJECT (conf 0.46) */
 
 
 
@@ -7562,7 +7570,7 @@ undefined4 FUN_004586e0(int param_1)
 }
 
 /* ===== FUN_00458710 @ 0x00458710 ===== */
-/* PS2 candidate: TeamMemberInitWeapons__FP6OBJECT (conf 0.349) */
+/* PS2 candidate: TeamMemberInitWeapons__FP6OBJECT (conf 0.378) */
 
 
 
@@ -7795,7 +7803,7 @@ void FUN_00458710(int param_1)
 }
 
 /* ===== FUN_00458a10 @ 0x00458A10 ===== */
-/* PS2 candidate: TeamMemberClearWeapons__FP6OBJECT (conf 0.434) */
+/* PS2 candidate: TeamMemberClearWeapons__FP6OBJECT (conf 0.459) */
 
 
 
@@ -8122,7 +8130,7 @@ bool FUN_00458d70(undefined4 param_1)
 }
 
 /* ===== FUN_00459540 @ 0x00459540 ===== */
-/* PS2 candidate: inv_check_pickup (conf 0.428) */
+/* PS2 candidate: inv_check_pickup (conf 0.422) */
 
 
 
@@ -9000,7 +9008,7 @@ LAB_00459ce0:
 }
 
 /* ===== FUN_00459f10 @ 0x00459F10 ===== */
-/* PS2 candidate: inv_remove_item (conf 0.38) */
+/* PS2 candidate: inv_remove_item (conf 0.404) */
 
 
 
@@ -9277,7 +9285,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 }
 
 /* ===== FUN_0045a2b0 @ 0x0045A2B0 ===== */
-/* PS2 candidate: item_get_ammo (conf 0.461) */
+/* PS2 candidate: item_get_ammo (conf 0.457) */
 
 
 
@@ -9478,7 +9486,7 @@ int FUN_0045a2b0(int param_1,undefined4 param_2,int *param_3)
 }
 
 /* ===== FUN_0045a4c0 @ 0x0045A4C0 ===== */
-/* PS2 candidate: item_use_ammo (conf 0.474) */
+/* PS2 candidate: item_use_ammo (conf 0.475) */
 
 
 
@@ -9737,7 +9745,7 @@ void FUN_0045a4c0(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_0045a740 @ 0x0045A740 ===== */
-/* PS2 candidate: item_create_base_pickup (conf 0.607) */
+/* PS2 candidate: item_create_base_pickup (conf 0.625) */
 
 
 
@@ -9818,7 +9826,7 @@ void FUN_0045a740(undefined4 *param_1,undefined4 param_2,int param_3)
 }
 
 /* ===== FUN_0045a820 @ 0x0045A820 ===== */
-/* PS2 candidate: item_drop_item (conf 0.494) */
+/* PS2 candidate: item_drop_item (conf 0.512) */
 
 
 
@@ -10034,7 +10042,7 @@ void FUN_0045a900(int param_1)
 }
 
 /* ===== FUN_0045ab30 @ 0x0045AB30 ===== */
-/* PS2 candidate: item_drop_curweap (conf 0.484) */
+/* PS2 candidate: item_drop_curweap (conf 0.504) */
 
 
 
@@ -10109,7 +10117,7 @@ void FUN_0045ab30(int param_1)
 }
 
 /* ===== FUN_0045ac50 @ 0x0045AC50 ===== */
-/* PS2 candidate: item_drop_all_random (conf 0.407) */
+/* PS2 candidate: item_drop_all_random (conf 0.435) */
 
 
 
@@ -10794,7 +10802,7 @@ void FUN_0045b7a0(undefined4 param_1,int param_2)
 /* ===== FUN_0045b7f0 @ 0x0045B7F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: FootDust (conf 0.334) */
+/* PS2 candidate: FootDust (conf 0.415) */
 
 
 
@@ -10935,11 +10943,15 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 }
 
 /* ===== AttackObject__FP6OBJECTT0P3P3DT2fi @ 0x0045BA70 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
 void AttackObject__FP6OBJECTT0P3P3DT2fi
 
-               (int param_1,int param_2,float *param_3,undefined4 *param_4,float param_5,
-
-               byte param_6)
+               (OBJECT *p0,int p1,undefined4 *p2,undefined4 *p3,float p4,int p5)
 
 
 
@@ -10951,9 +10963,9 @@ void AttackObject__FP6OBJECTT0P3P3DT2fi
 
   int iVar3;
 
-  int iVar4;
+  undefined4 uVar4;
 
-  undefined4 uVar5;
+  OBJECT *pOVar5;
 
   float10 fVar6;
 
@@ -10965,15 +10977,15 @@ void AttackObject__FP6OBJECTT0P3P3DT2fi
 
   float local_30;
 
-  byte local_2c;
+  undefined1 local_2c;
 
   float local_28;
 
-  float local_24;
+  undefined4 local_24;
 
-  float local_20;
+  undefined4 local_20;
 
-  float local_1c;
+  undefined4 local_1c;
 
   undefined4 local_18;
 
@@ -10983,45 +10995,45 @@ void AttackObject__FP6OBJECTT0P3P3DT2fi
 
   undefined4 local_c;
 
-  byte local_4;
+  undefined1 local_4;
 
   
 
-  iVar2 = param_2;
+  iVar2 = p1;
 
-  if (param_2 == 0) {
+  if (p1 == 0) {
 
     return;
 
   }
 
-  iVar3 = FUN_004a61a0(param_1);
+  iVar3 = FUN_004a61a0(p0);
 
-  iVar4 = param_1;
+  pOVar5 = p0;
 
-  if ((iVar3 == 0) && (iVar3 = FUN_004a61c0(param_1), iVar3 == 0)) {
+  if ((iVar3 == 0) && (iVar3 = FUN_004a61c0(p0), iVar3 == 0)) {
 
-    iVar4 = FUN_004a61a0(*(undefined4 *)(param_1 + 0x274));
+    iVar3 = FUN_004a61a0(p0->field_274);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a61c0(*(undefined4 *)(param_1 + 0x274)), iVar4 == 0)) {
+    if ((iVar3 == 0) && (iVar3 = FUN_004a61c0(p0->field_274), iVar3 == 0)) {
 
       return;
 
     }
 
-    iVar4 = *(int *)(param_1 + 0x274);
+    pOVar5 = (OBJECT *)p0->field_274;
 
   }
 
-  if (iVar4 == 0) {
+  if (pOVar5 == (OBJECT *)0x0) {
 
     return;
 
   }
 
-  iVar3 = *(int *)(param_2 + 4);
+  iVar3 = *(int *)(p1 + 4);
 
-  iVar1 = *(int *)(iVar4 + 0x100);
+  iVar1 = *(int *)&pOVar5->field_0x100;
 
   if ((((iVar3 == 0x4b7) && (*(float *)(iVar1 + 0x15c) < 1.0)) ||
 
@@ -11033,15 +11045,15 @@ void AttackObject__FP6OBJECTT0P3P3DT2fi
 
 LAB_0045bb57:
 
-    uVar5 = FUN_00507b00(pcVar7,0x3f000000,0x3e4ccccd,0x3f000000,0x3f800000,0x40a00000,1);
+    uVar4 = FUN_00507b00(pcVar7,0x3f000000,0x3e4ccccd,0x3f000000,0x3f800000,0x40a00000,1);
 
-    FUN_00446f70(uVar5);
+    FUN_00446f70(uVar4);
 
     return;
 
   }
 
-  if ((iVar3 == 0x4fd) && ((~param_6 & 0x40) != 0)) {
+  if ((iVar3 == 0x4fd) && ((~p5 & 0x40U) != 0)) {
 
     pcVar7 = s_Kabutomessage2_0055b2f8;
 
@@ -11049,73 +11061,73 @@ LAB_0045bb57:
 
   }
 
-  iVar3 = FUN_0052e4a0(iVar4);
+  iVar3 = FUN_0052e4a0(pOVar5);
 
-  if (((iVar3 != 0) && (*(int *)(iVar4 + 0x1e0) == 1)) && ((~param_6 & 0x20) != 0)) {
+  if (((iVar3 != 0) && (*(int *)&pOVar5->field_0x1e0 == 1)) && ((~p5 & 0x20U) != 0)) {
 
-    if (param_3 == (float *)0x0) {
+    if (p2 == (undefined4 *)0x0) {
 
-      local_34 = *(float *)(param_2 + 0x188);
+      local_34 = *(float *)(p1 + 0x188);
 
-      local_38 = param_5;
+      local_38 = p4;
 
-      local_2c = param_6;
+      local_2c = (char)p5;
 
-      FUN_00530bd0(iVar4,1,2,1,5,&local_38);
+      FUN_00530bd0(pOVar5,1,2,1,5,&local_38);
 
       goto LAB_0045bd2c;
 
     }
 
-    local_c = *(undefined4 *)(param_2 + 0x188);
+    local_c = *(undefined4 *)(p1 + 0x188);
 
-    local_28 = param_5;
+    local_28 = p4;
 
-    local_24 = *param_3;
+    local_24 = *p2;
 
-    local_20 = param_3[1];
+    local_20 = p2[1];
 
-    local_1c = param_3[2];
+    local_1c = p2[2];
 
-    local_18 = *param_4;
+    local_18 = *p3;
 
-    local_14 = param_4[1];
+    local_14 = p3[1];
 
-    local_10 = param_4[2];
+    local_10 = p3[2];
 
-    local_4 = param_6;
+    local_4 = (char)p5;
 
-    FUN_00530bd0(iVar4,7,2,1,4,&local_28);
+    FUN_00530bd0(pOVar5,7,2,1,4,&local_28);
 
   }
 
-  if (param_3 != (float *)0x0) {
+  if (p2 != (undefined4 *)0x0) {
 
-    if ((~param_6 & 0x10) != 0) {
+    if ((~p5 & 0x10U) != 0) {
 
-      iVar3 = FUN_004a61a0(iVar4);
+      iVar3 = FUN_004a61a0(pOVar5);
 
       if (iVar3 == 0) {
 
-        param_2 = 0x3f800000;
+        p1 = 0x3f800000;
 
       }
 
       else {
 
-        param_2 = *(undefined4 *)(*(int *)(iVar4 + 0x100) + 0x1d0);
+        p1 = *(undefined4 *)(*(int *)&pOVar5->field_0x100 + 0x1d0);
 
       }
 
-      iVar4 = 3;
+      iVar3 = 3;
 
       do {
 
-        local_38 = *param_3;
+        local_38 = (float)*p2;
 
-        local_34 = param_3[1];
+        local_34 = (float)p2[1];
 
-        local_30 = param_3[2];
+        local_30 = (float)p2[2];
 
         fVar6 = (float10)FUN_004d5780(0xc1200000,0x41200000);
 
@@ -11129,27 +11141,27 @@ LAB_0045bb57:
 
         local_30 = (float)(fVar6 + (float10)local_30);
 
-        FUN_00441d20(&local_38,param_2);
+        FUN_00441d20(&local_38,p1);
 
-        iVar4 = iVar4 + -1;
+        iVar3 = iVar3 + -1;
 
-      } while (iVar4 != 0);
+      } while (iVar3 != 0);
 
     }
 
-    FUN_004eea40(param_3,*(undefined1 *)(iVar2 + 0x1f5),0,6);
+    FUN_004eea40(p2,*(undefined1 *)(iVar2 + 0x1f5),0,6);
 
   }
 
 LAB_0045bd2c:
 
-  if ((param_6 & 0xc) == 0) {
+  if ((p5 & 0xcU) == 0) {
 
-    iVar4 = FUN_0052e480(param_1);
+    iVar3 = FUN_0052e480(p0);
 
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
 
-      FUN_00456f80(4,param_5,iVar2,param_1,param_3,0);
+      FUN_00456f80(4,p4,iVar2,p0,p2,0);
 
     }
 
@@ -11157,11 +11169,11 @@ LAB_0045bd2c:
 
   else {
 
-    iVar4 = FUN_0052e480(param_1);
+    iVar3 = FUN_0052e480(p0);
 
-    if (iVar4 != 0) {
+    if (iVar3 != 0) {
 
-      FUN_00456f80(6,param_5,iVar2,param_1,param_3,0);
+      FUN_00456f80(6,p4,iVar2,p0,p2,0);
 
       return;
 
@@ -12155,7 +12167,7 @@ float10 FUN_0045d2e0(int param_1)
 }
 
 /* ===== FUN_0045d300 @ 0x0045D300 ===== */
-/* PS2 candidate: kabuto_init (conf 0.418) */
+/* PS2 candidate: kabuto_init (conf 0.461) */
 
 
 
@@ -12721,11 +12733,13 @@ void FUN_0045dc40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 }
 
 /* ===== FUN_0045dcb0 @ 0x0045DCB0 ===== */
-/* PS2 candidate: marker_process__FP6OBJECT (conf 0.586) */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+/* PS2 candidate: marker_process__FP6OBJECT (conf 0.536) */
 
 
 
-void FUN_0045dcb0(int param_1)
+void FUN_0045dcb0(OBJECT *param_1)
 
 
 
@@ -12749,8 +12763,6 @@ void FUN_0045dcb0(int param_1)
 
   float10 fVar9;
 
-  char *pcVar10;
-
   float local_b8;
 
   int local_b0;
@@ -12763,15 +12775,11 @@ void FUN_0045dcb0(int param_1)
 
   undefined4 local_a0;
 
-  undefined1 local_9c [16];
-
   undefined4 local_8c;
 
   undefined4 local_88;
 
   int local_84;
-
-  undefined1 local_68 [4];
 
   undefined4 local_64;
 
@@ -12781,8 +12789,6 @@ void FUN_0045dcb0(int param_1)
 
   int local_50;
 
-  undefined1 local_34 [16];
-
   undefined4 local_24;
 
   undefined4 local_20;
@@ -12791,7 +12797,7 @@ void FUN_0045dcb0(int param_1)
 
   
 
-  iVar1 = *(int *)(param_1 + 0x100);
+  iVar1 = *(int *)&param_1->field_0x100;
 
   iVar4 = *(int *)(iVar1 + 0x30c);
 
@@ -12877,7 +12883,7 @@ LAB_0045dd27:
 
         local_50 = iVar4;
 
-        fx_get_free_effect__Fv(s_FX_lens_explode_0055b338,8,local_68);
+        fx_get_free_effect__Fv();
 
       }
 
@@ -12999,7 +13005,7 @@ LAB_0045de98:
 
                 if ((piVar6[-3] != 0) &&
 
-                   (fVar9 = (float10)FUN_0050a580(piVar6[-3] + 0xa0,param_1 + 0xa0),
+                   (fVar9 = (float10)FUN_0050a580(piVar6[-3] + 0xa0,&param_1->gap_A0),
 
                    fVar9 < (float10)1000.0)) {
 
@@ -13019,9 +13025,11 @@ LAB_0045de98:
 
                 AttackObject__FP6OBJECTT0P3P3DT2fi
 
-                          (param_1,*(int *)(piVar6[-3] + 0x274),*(int *)(piVar6[-3] + 0x274) + 0xa0,
+                          (param_1,*(int *)(piVar6[-3] + 0x274),
 
-                           param_1 + 0xa0,local_b8,0x50);
+                           (undefined4 *)(*(int *)(piVar6[-3] + 0x274) + 0xa0),&param_1->gap_A0,
+
+                           local_b8,0x50);
 
               }
 
@@ -13099,7 +13107,7 @@ LAB_0045de98:
 
           local_24 = 8;
 
-          iVar7 = fx_get_free_effect__Fv(s_FX_heat_giantwall_0055b388,0x24,local_34);
+          iVar7 = fx_get_free_effect__Fv();
 
           *piVar6 = iVar7;
 
@@ -13137,25 +13145,17 @@ LAB_0045de98:
 
         case 1:
 
-          pcVar10 = s_FX_lens_smoke1_0055b378;
-
           break;
 
         case 2:
-
-          pcVar10 = s_FX_lens_smoke2_0055b368;
 
           break;
 
         case 3:
 
-          pcVar10 = s_FX_lens_smoke3_0055b358;
-
           break;
 
         case 4:
-
-          pcVar10 = s_FX_lens_fire_0055b348;
 
           break;
 
@@ -13165,7 +13165,7 @@ LAB_0045de98:
 
         }
 
-        iVar4 = fx_get_free_effect__Fv(pcVar10,0x24,local_9c);
+        iVar4 = fx_get_free_effect__Fv();
 
         piVar6[-1] = iVar4;
 
@@ -13359,7 +13359,7 @@ LAB_0045e3eb:
 }
 
 /* ===== FUN_0045e440 @ 0x0045E440 ===== */
-/* PS2 candidate: mecc_replenish_basepit_energy__FP6OBJECT (conf 0.467) */
+/* PS2 candidate: laser_ghost__FP6OBJECT (conf 0.495) */
 
 
 
@@ -13776,7 +13776,13 @@ LAB_0045e789:
 }
 
 /* ===== validate_eat__FP6OBJECTT0 @ 0x0045E9B0 ===== */
-undefined4 validate_eat__FP6OBJECTT0(int param_1,float param_2)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+undefined4 validate_eat__FP6OBJECTT0(OBJECT *p0,float p1)
 
 
 
@@ -13794,7 +13800,7 @@ undefined4 validate_eat__FP6OBJECTT0(int param_1,float param_2)
 
   
 
-  iVar1 = *(int *)((int)param_2 + 4);
+  iVar1 = *(int *)((int)p1 + 4);
 
   iVar3 = 0;
 
@@ -13816,11 +13822,11 @@ undefined4 validate_eat__FP6OBJECTT0(int param_1,float param_2)
 
         if (((iVar1 != 0) && (*(int *)(iVar1 + 4) == 0x536)) &&
 
-           ((fVar5 = (float10)FUN_0050a5e0(param_1 + 0xa0,iVar1 + 0xa0), iVar3 == 0 ||
+           ((fVar5 = (float10)FUN_0050a5e0(&p0->gap_A0,iVar1 + 0xa0), iVar3 == 0 ||
 
-            (fVar5 < (float10)param_2)))) {
+            (fVar5 < (float10)p1)))) {
 
-          param_2 = (float)fVar5;
+          p1 = (float)fVar5;
 
           iVar3 = iVar1;
 
@@ -13830,7 +13836,7 @@ undefined4 validate_eat__FP6OBJECTT0(int param_1,float param_2)
 
       } while (piVar4 != (int *)0x0);
 
-      if ((iVar3 != 0) && (param_2 < 1225.0)) {
+      if ((iVar3 != 0) && (p1 < 1225.0)) {
 
         return 1;
 

@@ -58,6 +58,10 @@ void FUN_00496b90(void)
 }
 
 /* ===== FUN_00497450 @ 0x00497450 ===== */
+/* PS2 candidate: object_set_objectset (conf 0.429) */
+
+
+
 void FUN_00497450(int param_1,int param_2)
 
 
@@ -135,7 +139,7 @@ void FUN_00497450(int param_1,int param_2)
 }
 
 /* ===== FUN_004975c0 @ 0x004975C0 ===== */
-/* PS2 candidate: object_list_update (conf 0.381) */
+/* PS2 candidate: object_list_update (conf 0.412) */
 
 
 
@@ -293,6 +297,10 @@ void FUN_004976e0(void)
 }
 
 /* ===== FUN_00497770 @ 0x00497770 ===== */
+/* PS2 candidate: object_copy_personality (conf 0.324) */
+
+
+
 void FUN_00497770(int param_1,int param_2)
 
 
@@ -316,12 +324,6 @@ void FUN_00497770(int param_1,int param_2)
   undefined4 *puVar8;
 
   undefined4 *puVar9;
-
-  int local_34 [5];
-
-  int local_20;
-
-  int local_1c;
 
   
 
@@ -503,15 +505,9 @@ void FUN_00497770(int param_1,int param_2)
 
     }
 
-    local_34[0] = *(int *)(param_2 + 0x2fc);
+    if ((0 < *(int *)(param_2 + 0x2fc)) && (*(int *)(DAT_006330e4 + 0x174) != 0)) {
 
-    if ((0 < local_34[0]) && (*(int *)(DAT_006330e4 + 0x174) != 0)) {
-
-      local_20 = (int)*(char *)(param_2 + 0x2f8);
-
-      local_1c = iVar2;
-
-      fx_get_free_effect__Fv(0,0x14,local_34);
+      fx_get_free_effect__Fv();
 
     }
 

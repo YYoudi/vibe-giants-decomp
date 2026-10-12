@@ -6,7 +6,7 @@
 /* ===== FUN_004361b0 @ 0x004361B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: rpman_init__FP6OBJECT (conf 0.384) */
+/* PS2 candidate: rpman_init__FP6OBJECT (conf 0.381) */
 
 
 

@@ -61,6 +61,10 @@ void FUN_005078e0(void)
 }
 
 /* ===== TextPtrInit__Fv @ 0x00507970 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void TextPtrInit__Fv(void)
 
 

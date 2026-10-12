@@ -2566,7 +2566,7 @@ longlong __ftol(void)
 }
 
 /* ===== FUN_00542f27 @ 0x00542F27 ===== */
-/* PS2 candidate: sprintf (conf 0.696) */
+/* PS2 candidate: memset (conf 0.689) */
 
 
 
@@ -4758,7 +4758,7 @@ void FUN_00543e3a(void)
 }
 
 /* ===== FUN_00543e70 @ 0x00543E70 ===== */
-/* PS2 candidate: powf (conf 0.342) */
+/* PS2 candidate: powf (conf 0.349) */
 
 
 

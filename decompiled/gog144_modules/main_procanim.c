@@ -23,7 +23,11 @@ void FUN_004a8150(int param_1)
 }
 
 /* ===== ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef @ 0x004A8190 ===== */
-void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
 
 
@@ -41,9 +45,7 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
   undefined4 uVar6;
 
-  int *piVar7;
-
-  undefined4 *puVar8;
+  undefined4 *puVar7;
 
   undefined4 local_64;
 
@@ -59,19 +61,19 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
   
 
-  if (param_1 != 0) {
+  if (p0 != (undefined4 *)0x0) {
 
     iVar3 = 0;
 
-    iVar4 = *param_2;
+    iVar4 = *p1;
 
-    piVar7 = param_2;
+    puVar7 = p1;
 
     while (iVar4 != 0) {
 
-      piVar1 = piVar7 + 6;
+      piVar1 = puVar7 + 6;
 
-      piVar7 = piVar7 + 6;
+      puVar7 = puVar7 + 6;
 
       iVar3 = iVar3 + 1;
 
@@ -83,21 +85,19 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
                          s_C__Giants_source_main_procanim_c_0055f4c8,0xc6);
 
-    *(int *)(param_1 + 0x460) = iVar4;
+    p0[0x118] = iVar4;
 
-    if (*param_2 != 0) {
+    if (*p1 != 0) {
 
-      puVar8 = (undefined4 *)(iVar4 + 8);
+      puVar7 = (undefined4 *)(iVar4 + 8);
 
       do {
 
-        iVar4 = *(int *)(param_1 + 8 + param_2[5] * 4);
+        iVar4 = p0[p1[5] + 2];
 
-        if (((iVar4 != 0) &&
+        if (((iVar4 != 0) && (iVar3 = FUN_0053be00(*(undefined4 *)(iVar4 + 0x28),0,*p1), iVar3 != 0)
 
-            (iVar3 = FUN_0053be00(*(undefined4 *)(iVar4 + 0x28),0,*param_2), iVar3 != 0)) &&
-
-           (*(int *)(iVar3 + 0x18) == 0)) {
+            ) && (*(int *)(iVar3 + 0x18) == 0)) {
 
           *(uint *)(iVar4 + 8) = *(uint *)(iVar4 + 8) | 6;
 
@@ -105,47 +105,47 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
           *(uint *)(iVar3 + 8) = *(uint *)(iVar3 + 8) | 0x20;
 
-          *(undefined4 **)(iVar3 + 0x1c) = puVar8 + -2;
+          *(undefined4 **)(iVar3 + 0x1c) = puVar7 + -2;
 
-          puVar8[-2] = 0;
+          puVar7[-2] = 0;
 
-          puVar8[-1] = 0;
+          puVar7[-1] = 0;
 
-          puVar2 = (undefined4 *)param_2[2];
+          puVar2 = (undefined4 *)p1[2];
 
-          *puVar8 = *puVar2;
+          *puVar7 = *puVar2;
 
-          puVar8[1] = puVar2[1];
+          puVar7[1] = puVar2[1];
 
-          puVar8[2] = puVar2[2];
+          puVar7[2] = puVar2[2];
 
-          if (param_2[3] != 0) {
+          if (p1[3] != 0) {
 
-            puVar8[-2] = 1;
+            puVar7[-2] = 1;
 
-            puVar2 = (undefined4 *)param_2[3];
+            puVar2 = (undefined4 *)p1[3];
 
-            puVar8[3] = *puVar2;
+            puVar7[3] = *puVar2;
 
-            puVar8[4] = puVar2[1];
+            puVar7[4] = puVar2[1];
 
-            puVar8[5] = puVar2[2];
+            puVar7[5] = puVar2[2];
 
           }
 
-          if ((param_2[1] != 0) &&
+          if ((p1[1] != 0) &&
 
-             (iVar5 = FUN_0053be00(*(undefined4 *)(iVar4 + 0x28),0,param_2[1]), iVar5 != 0)) {
+             (iVar5 = FUN_0053be00(*(undefined4 *)(iVar4 + 0x28),0,p1[1]), iVar5 != 0)) {
 
             uVar6 = FUN_0053ca70();
 
-            if (param_2[4] == 0) {
+            if (p1[4] == 0) {
 
               FUN_0053ca90(local_44,iVar3,iVar5,*(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x10),uVar6
 
                           );
 
-              puVar2 = (undefined4 *)param_2[2];
+              puVar2 = (undefined4 *)p1[2];
 
               local_58 = 0;
 
@@ -157,9 +157,9 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
               (*(code *)PTR_FUN_00580c28)(local_54,&local_64,1,local_44);
 
-              FUN_0053e960(puVar8,local_54);
+              FUN_0053e960(puVar7,local_54);
 
-              puVar2 = (undefined4 *)param_2[3];
+              puVar2 = (undefined4 *)p1[3];
 
               if (puVar2 != (undefined4 *)0x0) {
 
@@ -171,7 +171,7 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
                 (*(code *)PTR_FUN_00580c28)(local_54,&local_64,1,local_44);
 
-                FUN_0053e960(puVar8 + 3,local_54);
+                FUN_0053e960(puVar7 + 3,local_54);
 
               }
 
@@ -179,7 +179,7 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
             else {
 
-              puVar8[-1] = iVar5;
+              puVar7[-1] = iVar5;
 
             }
 
@@ -187,13 +187,13 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(int param_1,int *param_2)
 
         }
 
-        piVar7 = param_2 + 6;
+        piVar1 = p1 + 6;
 
-        param_2 = param_2 + 6;
+        p1 = p1 + 6;
 
-        puVar8 = puVar8 + 8;
+        puVar7 = puVar7 + 8;
 
-      } while (*piVar7 != 0);
+      } while (*piVar1 != 0);
 
     }
 

@@ -7277,7 +7277,7 @@ int FUN_0052a940(int param_1)
 }
 
 /* ===== FUN_0052aa70 @ 0x0052AA70 ===== */
-/* PS2 candidate: sound_play_obj (conf 0.514) */
+/* PS2 candidate: hurt_object (conf 0.621) */
 
 
 
@@ -11692,7 +11692,7 @@ void FUN_0052e470(void)
 }
 
 /* ===== FUN_0052e480 @ 0x0052E480 ===== */
-/* PS2 candidate: chat_insert (conf 0.7) */
+/* PS2 candidate: fx_create (conf 0.587) */
 
 
 
@@ -11870,6 +11870,10 @@ undefined4 FUN_0052e530(undefined4 param_1)
 }
 
 /* ===== FUN_0052e5b0 @ 0x0052E5B0 ===== */
+/* PS2 candidate: objanim_select_animloop (conf 0.378) */
+
+
+
 int FUN_0052e5b0(int param_1)
 
 

@@ -495,7 +495,7 @@ LAB_004b10f8:
 
   FUN_00517930(iVar6,local_394);
 
-  FUN_004ae4c0(iVar6,param_1);
+  read_objects_bin_PS2(iVar6,param_1);
 
   FUN_00517930(iVar6,local_3a0);
 
