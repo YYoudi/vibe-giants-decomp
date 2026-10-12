@@ -36,13 +36,15 @@ def main():
     claimed = set()
     for r in csv.DictReader(open(os.path.join(PS2, "unified_names_1449.csv"), encoding="utf-8")):
         claimed.add(r["pc_addr"].lower().lstrip("0").rjust(8, "0"))
+    rows, seen_names = [], set()
+    # previously-applied module names are SEEDS for the call-graph spread,
+    # not exclusions — load them as existing rows.
     try:
         for r in csv.DictReader(open(os.path.join(PS2, "module_names_wave.csv"), encoding="utf-8")):
-            claimed.add(r["pc_addr"].lower().lstrip("0").rjust(8, "0"))
+            rows.append(r)
+            seen_names.add(r["ps2_name"])
     except FileNotFoundError:
         pass
-
-    rows, seen_names = [], set()
     def add(a, name, tier):
         if a in claimed or name in seen_names:
             return False
@@ -79,6 +81,38 @@ def main():
             others = sum(v for s, v in votes.items() if s != best)
             if n >= 2 and others == 0:
                 add(a, f"{best}_{a}", "sys-lexicon")
+
+    # 3) call-graph spread: >=3 distinct tagged neighbors of the same module
+    CALL = re.compile(r"FUN_([0-9a-fA-F]{8})\s*\(")
+    callers = collections.defaultdict(set)
+    callees = collections.defaultdict(set)
+    for a, d in funcs.items():
+        for m in CALL.finditer(d["decompiled"]):
+            c = m.group(1).lower()
+            if c != a:
+                callees[a].add(c)
+                callers[c].add(a)
+    def base_mod(name):
+        return name.rsplit("_", 1)[0]
+    for _round in range(2):
+        added = 0
+        rowmap = {r["pc_addr"]: r for r in rows}
+        for a, d in funcs.items():
+            if a in claimed or a in rowmap:
+                continue
+            votes = collections.Counter()
+            for nb in callees.get(a, set()) | callers.get(a, set()):
+                r = rowmap.get(nb)
+                if r and r["tier"].startswith("module"):
+                    votes[base_mod(r["ps2_name"])] += 1
+            if votes:
+                best, n = votes.most_common(1)[0]
+                if n >= 3 and add(a, f"{best}_{a}", "module-2hop"):
+                    rowmap[a] = rows[-1]
+                    added += 1
+        if added == 0:
+            break
+        print(f"  round-2 spread: +{added}")
 
     outp = os.path.join(PS2, "module_names_wave.csv")
     with open(outp, "w", newline="", encoding="utf-8") as f:
