@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (70 named) — decompiled, names from PS2 symbols
+ * 145 functions (74 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -4872,7 +4872,7 @@ LAB_00455d20:
 
     if (param_3 == 0x382) {
 
-      iVar3 = FUN_00458300(param_1,10,0x382);
+      iVar3 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,0x382);
 
       if (iVar3 != 0) {
 
@@ -4886,7 +4886,7 @@ LAB_00455d20:
 
     else if (local_4 == 0x382) {
 
-      iVar3 = FUN_00458300(param_1,10,0x382);
+      iVar3 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,0x382);
 
       if (iVar3 != 0) {
 
@@ -5390,12 +5390,12 @@ void herdgen_get_next_marker(int param_1,int *param_2)
 
 }
 
-/* ===== FUN_00456470 @ 0x00456470 ===== */
+/* ===== herd_create_one @ 0x00456470 ===== */
 /* PS2 candidate: herd_create_one (conf 0.486) */
 
 
 
-int FUN_00456470(int param_1,undefined4 param_2,int param_3)
+int herd_create_one(int param_1,undefined4 param_2,int param_3)
 
 
 
@@ -7114,12 +7114,12 @@ undefined4 WeaponIdGetPresent__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_00458180 @ 0x00458180 ===== */
+/* ===== WeaponIdSetCurrent__FP6OBJECTi @ 0x00458180 ===== */
 /* PS2 candidate: WeaponIdSetCurrent__FP6OBJECTi (conf 0.49) */
 
 
 
-void FUN_00458180(int param_1,int param_2)
+void WeaponIdSetCurrent__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -7296,12 +7296,12 @@ undefined4 FUN_004582d0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00458300 @ 0x00458300 ===== */
+/* ===== player_find_weapon_obj_type__FP6OBJECTii @ 0x00458300 ===== */
 /* PS2 candidate: player_find_weapon_obj_type__FP6OBJECTii (conf 0.49) */
 
 
 
-int FUN_00458300(int param_1,int param_2,int param_3)
+int player_find_weapon_obj_type__FP6OBJECTii(int param_1,int param_2,int param_3)
 
 
 
@@ -7460,7 +7460,7 @@ int SpecialWeaponIdSet__FP6OBJECTi(int param_1,int param_2)
 
     else if (iVar4 == 0x14) {
 
-      FUN_00480150(param_1);
+      mecc_exit_bush(param_1);
 
     }
 
@@ -7514,7 +7514,7 @@ LAB_00458528:
 
   else if (param_2 == 10) {
 
-    uVar5 = FUN_004a9040(10,uVar5);
+    uVar5 = IconDefProjectile(10,uVar5);
 
     iVar7 = FUN_004aa0b0(uVar5);
 
@@ -8671,7 +8671,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
             }
 
-            FUN_004b8e40(param_1,param_3,0xffffffff,param_4,0);
+            reaper_give_other(param_1,param_3,0xffffffff,param_4,0);
 
           }
 
@@ -8871,7 +8871,7 @@ LAB_00459ce0:
 
             reaper_lock_short_3(param_1,param_2);
 
-            FUN_00458180(param_1,param_3);
+            WeaponIdSetCurrent__FP6OBJECTi(param_1,param_3);
 
             local_104 = (undefined4 *)0x0;
 
@@ -10029,7 +10029,7 @@ void item_drop_backheld(int param_1)
 
       (DAT_00632e74 != 0)))) {
 
-    FUN_004d5810(param_1,*(undefined4 *)(param_1 + 0x210));
+    rpboat_unlock_from_boat__FP6OBJECTT0(param_1,*(undefined4 *)(param_1 + 0x210));
 
     return;
 
@@ -10170,7 +10170,7 @@ void item_drop_curweap(int param_1)
 
         }
 
-        FUN_00458180(param_1,0xffffffff);
+        WeaponIdSetCurrent__FP6OBJECTi(param_1,0xffffffff);
 
         FUN_00458040(param_1,1);
 
@@ -10966,7 +10966,7 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 
       GEO_Vec2Cross(&fStack_28,&DAT_0055abbc,&fStack_10);
 
-      FUN_0053e960(&fStack_28,&fStack_28);
+      GEO_Vec3Normalize(&fStack_28,&fStack_28);
 
       GEO_Vec2Cross(&DAT_0055abbc,&fStack_10,&fStack_28);
 
@@ -13424,12 +13424,12 @@ LAB_0045e3eb:
 
 }
 
-/* ===== FUN_0045e440 @ 0x0045E440 ===== */
+/* ===== laser_ghost__FP6OBJECT @ 0x0045E440 ===== */
 /* PS2 candidate: laser_ghost__FP6OBJECT (conf 0.495) */
 
 
 
-void FUN_0045e440(int param_1)
+void laser_ghost__FP6OBJECT(int param_1)
 
 
 

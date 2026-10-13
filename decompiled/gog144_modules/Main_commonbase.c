@@ -62,7 +62,7 @@ void main_commonbase_00418f00(int param_1,undefined4 param_2,int param_3,float *
 
     if (iVar9 != 0) {
 
-      FUN_00408ec0(param_1,iVar9,*param_4);
+      meccbaseitem_start_building(param_1,iVar9,*param_4);
 
 LAB_0041906f:
 
@@ -488,7 +488,7 @@ LAB_004195d2:
 
     if ((DAT_00632a88 != 0) && (fVar4 == *(float *)(DAT_00632a88 + 0x188))) {
 
-      FUN_004162c0(DAT_00632a88);
+      evilreaper_award_item__FP6OBJECT(DAT_00632a88);
 
       return;
 
@@ -536,7 +536,7 @@ LAB_004195d2:
 
     if (iVar9 != 0) {
 
-      FUN_004b54c0(param_1,iVar9,*param_4);
+      reaperbasebldg_start_building(param_1,iVar9,*param_4);
 
       goto LAB_0041906f;
 
@@ -960,7 +960,7 @@ LAB_004195d2:
 
                 *(undefined4 *)(*(int *)(iVar6 + 0x100) + 0x54) = 0;
 
-                FUN_004f40a0(iVar6,iVar8,param_1,iVar9);
+                smartie_from_back_to_partyhouse(iVar6,iVar8,param_1,iVar9);
 
                 break;
 

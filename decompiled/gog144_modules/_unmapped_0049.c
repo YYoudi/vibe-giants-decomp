@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (73 named) — decompiled, names from PS2 symbols
+ * 142 functions (74 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -719,7 +719,7 @@ undefined4 FUN_00490fe0(void)
 
     if (DAT_00632f08 == 0) {
 
-      FUN_00491380();
+      evilreaper_logic__FP6OBJECT();
 
     }
 
@@ -923,14 +923,14 @@ undefined4 FUN_00490fe0(void)
 
 }
 
-/* ===== FUN_00491380 @ 0x00491380 ===== */
+/* ===== evilreaper_logic__FP6OBJECT @ 0x00491380 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: evilreaper_logic__FP6OBJECT (conf 0.502) */
 
 
 
-void FUN_00491380(void)
+void evilreaper_logic__FP6OBJECT(void)
 
 
 
@@ -3134,7 +3134,7 @@ LAB_00492a3a:
 
           *(uint *)(local_134 + 0xd8) = uVar4 | 0x400;
 
-          FUN_004a7440(local_134);
+          ObjectCalculateTransform(local_134);
 
         }
 
@@ -4092,7 +4092,7 @@ LAB_00492a3a:
 
       *(uint *)(iVar6 + 0xd8) = uVar4 | 0x400;
 
-      FUN_004a7440(iVar6);
+      ObjectCalculateTransform(iVar6);
 
       return 1;
 
@@ -5077,7 +5077,7 @@ void FUN_00494400(void)
 
           if (iVar2 != 0) {
 
-            FUN_004d5810(*(undefined4 *)(iVar3 + 0x274),iVar3);
+            rpboat_unlock_from_boat__FP6OBJECTT0(*(undefined4 *)(iVar3 + 0x274),iVar3);
 
           }
 
@@ -9126,7 +9126,7 @@ void FUN_004984b0(void)
 
   local_40 = _DAT_0059f730;
 
-  FUN_004a7440(&DAT_0059f688);
+  ObjectCalculateTransform(&DAT_0059f688);
 
   if (DAT_0059f990 != 0) {
 
@@ -9148,7 +9148,7 @@ void FUN_004984b0(void)
 
     local_40 = _DAT_0059f428;
 
-    FUN_004a7440(&DAT_0059f380);
+    ObjectCalculateTransform(&DAT_0059f380);
 
   }
 
@@ -10425,7 +10425,7 @@ LAB_004998b9:
 
   *(uint *)((int)fVar9 + 0xd8) = uVar10;
 
-  FUN_004a7440(fVar9);
+  ObjectCalculateTransform(fVar9);
 
 LAB_004998d3:
 
@@ -13157,7 +13157,7 @@ undefined4 FUN_0049dbd0(int param_1)
 
   iVar3 = *(int *)(param_1 + 0x100);
 
-  fVar4 = (float10)FUN_0050a400(param_1 + 0xa0,*(int *)(iVar3 + 0x3c) + 0xa0);
+  fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,*(int *)(iVar3 + 0x3c) + 0xa0);
 
   fVar4 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)(param_1 + 200));
 
@@ -13675,7 +13675,7 @@ void FUN_0049e4a0(int param_1)
 
     *(uint *)(DAT_0059f99c + 0xd8) = *(uint *)(DAT_0059f99c + 0xd8) | 0x10;
 
-    FUN_004a7440(DAT_0059f99c);
+    ObjectCalculateTransform(DAT_0059f99c);
 
     iVar1 = main_status_00500520(&DAT_00632900);
 

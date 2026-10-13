@@ -208,7 +208,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor1_0057d768);
 
-      _DAT_0057d6e4 = FUN_00536050(uVar3);
+      _DAT_0057d6e4 = atox__FPc(uVar3);
 
     }
 
@@ -218,7 +218,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor2_0057d75c);
 
-      _DAT_0057d6e8 = FUN_00536050(uVar3);
+      _DAT_0057d6e8 = atox__FPc(uVar3);
 
     }
 
@@ -228,7 +228,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor3_0057d750);
 
-      _DAT_0057d6ec = FUN_00536050(uVar3);
+      _DAT_0057d6ec = atox__FPc(uVar3);
 
     }
 
@@ -238,7 +238,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor4_0057d744);
 
-      _DAT_0057d6f0 = FUN_00536050(uVar3);
+      _DAT_0057d6f0 = atox__FPc(uVar3);
 
     }
 
@@ -248,7 +248,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor5_0057d738);
 
-      _DAT_0057d6f4 = FUN_00536050(uVar3);
+      _DAT_0057d6f4 = atox__FPc(uVar3);
 
     }
 
@@ -258,7 +258,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor6_0057d72c);
 
-      _DAT_0057d6f8 = FUN_00536050(uVar3);
+      _DAT_0057d6f8 = atox__FPc(uVar3);
 
     }
 
@@ -268,7 +268,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor7_0057d720);
 
-      _DAT_0057d6fc = FUN_00536050(uVar3);
+      _DAT_0057d6fc = atox__FPc(uVar3);
 
     }
 
@@ -278,7 +278,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor8_0057d714);
 
-      _DAT_0057d700 = FUN_00536050(uVar3);
+      _DAT_0057d700 = atox__FPc(uVar3);
 
     }
 
@@ -288,7 +288,7 @@ void win95_text_0051adb0(int param_1)
 
       uVar3 = TextGetPtrQ(s_TextColor9_0057d708);
 
-      _DAT_0057d704 = FUN_00536050(uVar3);
+      _DAT_0057d704 = atox__FPc(uVar3);
 
     }
 

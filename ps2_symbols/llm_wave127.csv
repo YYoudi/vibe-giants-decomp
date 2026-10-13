@@ -1,0 +1,34 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004e3530,FUN_004e3530,,rpman_check_los__FP6OBJECTT0,0.9,llm-w127,body-verified
+004a9040,FUN_004a9040,,IconDefProjectile,0.9,llm-w127,body-verified table
+0047c440,FUN_0047c440,,mecc_do_health_grenade_mine2__FP6OBJECT,0.9,llm-w127,body-verified
+00536050,FUN_00536050,,atox__FPc,0.9,llm-w127,body-verified hex parse
+004d5810,FUN_004d5810,,rpboat_unlock_from_boat__FP6OBJECTT0,0.9,llm-w127,body-verified
+004f4fc0,FUN_004f4fc0,,smartie_escape_reaper_grab,0.9,llm-w127,body-verified
+004b8e40,FUN_004b8e40,,reaper_give_other,0.9,llm-w127,body-verified
+004ac4b0,FUN_004ac4b0,,face_target,0.9,llm-w127,body-verified
+00465230,FUN_00465230,,ChooseAnim__FP6OBJECTT0PfP10T_AnimInfoUi,0.9,llm-w127,body-verified
+0050a400,FUN_0050a400,,dirfcalcp3d__FP3P3DT0,0.9,llm-w127,body-verified
+004b54c0,FUN_004b54c0,,reaperbasebldg_start_building,0.9,llm-w127,body-verified
+00408ec0,FUN_00408ec0,,meccbaseitem_start_building,0.9,llm-w127,body-verified
+00491380,FUN_00491380,,evilreaper_logic__FP6OBJECT,0.9,llm-w127,body-verified
+00425b50,FUN_00425b50,,corpse_create,0.9,llm-w127,body-verified
+00480150,FUN_00480150,,mecc_exit_bush,0.9,llm-w127,body-verified
+004a7440,FUN_004a7440,,ObjectCalculateTransform,0.9,llm-w127,body-verified
+004f40a0,FUN_004f40a0,,smartie_from_back_to_partyhouse,0.9,llm-w127,body-verified fields match drop flow
+0052e250,FUN_0052e250,,new_fire__FP6OBJECTiPfT0P3P3Df,0.9,llm-w127,body-verified SOCKET
+004810d0,FUN_004810d0,,projectile_logic,0.9,llm-w127,body-verified
+0045e440,FUN_0045e440,,laser_ghost__FP6OBJECT,0.9,llm-w127,body-verified
+0047c1d0,FUN_0047c1d0,,mecc_do_flare__FP6OBJECT,0.9,llm-w127,body-verified
+0053e960,FUN_0053e960,,GEO_Vec3Normalize,0.9,llm-w127,body-verified via Vec2Scale
+004162c0,FUN_004162c0,,evilreaper_award_item__FP6OBJECT,0.9,llm-w127,body-verified
+00458300,FUN_00458300,,player_find_weapon_obj_type__FP6OBJECTii,0.9,llm-w127,body-verified
+00458180,FUN_00458180,,WeaponIdSetCurrent__FP6OBJECTi,0.9,llm-w127,body-verified
+0040ee20,FUN_0040ee20,,charger_change_anim__FP6OBJECTii4SDKYfi,0.9,llm-w127,body-verified
+004d3ed0,FUN_004d3ed0,,ripper_animselect,0.9,llm-w127,body-verified
+004be020,FUN_004be020,,make_arrow__FP6OBJECTT0P3P3DPUii,0.9,llm-w127,body-verified
+004e5270,FUN_004e5270,,fire_bullet_shot__FP6OBJECTT0ii,0.9,llm-w127,body-verified
+004d4760,FUN_004d4760,,enemy_check_player_grab__FP6OBJECTif,0.9,llm-w127,body-verified
+00456470,FUN_00456470,,herd_create_one,0.9,llm-w127,body-verified
+004bce60,FUN_004bce60,,reaper_walkrun_go__FP6OBJECT,0.9,llm-w127,body-verified
+00406bc0,FUN_00406bc0,,army_create_rpman__FP6OBJECTP9ArmyOrderifi,0.9,llm-w127,body-verified

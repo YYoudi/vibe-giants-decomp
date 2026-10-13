@@ -956,7 +956,7 @@ LAB_004374a1:
 
           if ((*(uint *)(iVar10 + 0x1c8) & 0x20000000) == 0) {
 
-            fVar24 = (float10)FUN_0050a400(&DAT_0059cc04,iVar10 + 0xa0);
+            fVar24 = (float10)dirfcalcp3d__FP3P3DT0(&DAT_0059cc04,iVar10 + 0xa0);
 
             local_78 = (float)fVar24;
 
@@ -1192,7 +1192,7 @@ LAB_004374a1:
 
             }
 
-            fVar24 = (float10)FUN_0050a400(&DAT_0059cc10,piVar11[0xe] + 0xa0);
+            fVar24 = (float10)dirfcalcp3d__FP3P3DT0(&DAT_0059cc10,piVar11[0xe] + 0xa0);
 
             local_74 = (float)fVar24;
 

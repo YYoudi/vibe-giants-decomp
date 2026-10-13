@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (24 named) — decompiled, names from PS2 symbols
+ * 48 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -50,7 +50,7 @@ void smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie(int param_1,int para
 
   if (fVar4 < 0.0) {
 
-    FUN_004f4fc0(param_1);
+    smartie_escape_reaper_grab(param_1);
 
     return;
 
@@ -120,7 +120,7 @@ void smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie(int param_1,int para
 
     else if (fVar5 < (float10)900.0) {
 
-      FUN_004f4fc0(param_1);
+      smartie_escape_reaper_grab(param_1);
 
       return;
 
@@ -559,12 +559,12 @@ void FUN_004f4020(int param_1,undefined4 param_2,int param_3,int param_4,undefin
 
 }
 
-/* ===== FUN_004f40a0 @ 0x004F40A0 ===== */
+/* ===== smartie_from_back_to_partyhouse @ 0x004F40A0 ===== */
 /* PS2 candidate: smartie_from_back_to_partyhouse (conf 0.496) */
 
 
 
-void FUN_004f40a0(int param_1,int param_2,int param_3)
+void smartie_from_back_to_partyhouse(int param_1,int param_2,int param_3)
 
 
 
@@ -989,12 +989,12 @@ int FUN_004f4ed0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004f4fc0 @ 0x004F4FC0 ===== */
+/* ===== smartie_escape_reaper_grab @ 0x004F4FC0 ===== */
 /* PS2 candidate: smartie_escape_reaper_grab (conf 0.505) */
 
 
 
-void FUN_004f4fc0(float param_1)
+void smartie_escape_reaper_grab(float param_1)
 
 
 
@@ -1169,11 +1169,11 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
         if (fVar6 <= (float10)1600.0) {
 
-          fVar6 = (float10)FUN_0050a400(iVar2,iVar1);
+          fVar6 = (float10)dirfcalcp3d__FP3P3DT0(iVar2,iVar1);
 
           main_ai_move_00401910(iVar4,(float)fVar6);
 
-          fVar6 = (float10)FUN_0050a400(iVar1,iVar2);
+          fVar6 = (float10)dirfcalcp3d__FP3P3DT0(iVar1,iVar2);
 
           main_ai_move_00401910(param_1,(float)fVar6);
 
@@ -2547,7 +2547,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
       if (*(int *)(param_3 + 0xe4) == 0x32) {
 
-        FUN_004f4fc0(param_3);
+        smartie_escape_reaper_grab(param_3);
 
         return;
 
@@ -3740,9 +3740,11 @@ void FUN_004f9380(int param_1)
 
         if (fVar4 != 0.0) {
 
-          fVar8 = (float10)FUN_0050a400(param_1 + 0xa0,(int)fVar4 + 0xa0,
+          fVar8 = (float10)dirfcalcp3d__FP3P3DT0
 
-                                        *(undefined4 *)(param_1 + 200));
+                                     (param_1 + 0xa0,(int)fVar4 + 0xa0,
+
+                                      *(undefined4 *)(param_1 + 200));
 
           fVar8 = (float10)FUN_0050a7c0((float)fVar8);
 
@@ -3922,7 +3924,7 @@ void FUN_004f9380(int param_1)
 
        (*(float *)(param_1 + 0xbc) != *(float *)(param_1 + 0xa4))) {
 
-      fVar8 = (float10)FUN_0050a400(param_1 + 0xb8,pfVar2);
+      fVar8 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xb8,pfVar2);
 
       fVar8 = (float10)FUN_00518b70(param_1,0,0x461c4000,(float)fVar8,param_1 + 200);
 
@@ -3938,7 +3940,7 @@ void FUN_004f9380(int param_1)
 
     FUN_00403e60(param_1,(float)fVar8);
 
-    FUN_004a7440(param_1);
+    ObjectCalculateTransform(param_1);
 
     *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x20;
 
@@ -3960,7 +3962,7 @@ void FUN_004f9380(int param_1)
 
     else {
 
-      fVar8 = (float10)FUN_0050a400(param_1 + 0xa0,(int)fVar4 + 0xa0);
+      fVar8 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,(int)fVar4 + 0xa0);
 
       *(float *)(param_1 + 0xf8) = (float)fVar8;
 
@@ -4379,7 +4381,7 @@ LAB_004f9ea2:
 
         else {
 
-          fVar9 = (float10)FUN_0050a400(puVar2,puVar1);
+          fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,puVar1);
 
           fVar9 = (float10)FUN_0050a770((float)fVar9,*(undefined4 *)(iVar6 + 200));
 

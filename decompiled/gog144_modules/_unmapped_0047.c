@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (42 named) — decompiled, names from PS2 symbols
+ * 67 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -364,7 +364,7 @@ void object_lock_logic(int param_1)
 
     if ((char)((uint)*(undefined4 *)(param_1 + 0xdc) >> 8) < '\0') {
 
-      FUN_004a7440(param_1);
+      ObjectCalculateTransform(param_1);
 
       iVar2 = *(int *)(param_1 + 0x214);
 
@@ -3942,7 +3942,7 @@ int FUN_00478160(int param_1,int *param_2)
 
      (*(float *)(param_1 + 0xbc) != *(float *)(param_1 + 0xa4))) {
 
-    fVar4 = (float10)FUN_0050a400(param_1 + 0xb8,pfVar1);
+    fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xb8,pfVar1);
 
     *(float *)(param_1 + 200) = (float)fVar4;
 
@@ -4935,7 +4935,7 @@ void FUN_004791f0(int param_1)
 
     *(int *)(iVar3 + 0x210) = param_1;
 
-    FUN_004a7440(iVar3);
+    ObjectCalculateTransform(iVar3);
 
   }
 
@@ -5216,7 +5216,7 @@ LAB_0047c03e:
 
     uVar7 = IconDefWieldType(*(undefined4 *)(iVar4 + 0x18c),1);
 
-    iVar3 = FUN_00458300(iVar2,0,uVar7);
+    iVar3 = player_find_weapon_obj_type__FP6OBJECTii(iVar2,0,uVar7);
 
     if (iVar3 != 0) {
 
@@ -5226,7 +5226,7 @@ LAB_0047c03e:
 
     uVar7 = IconDefWieldType(*(undefined4 *)(iVar4 + 0x18c),1);
 
-    iVar4 = FUN_00458300(iVar2,1,uVar7);
+    iVar4 = player_find_weapon_obj_type__FP6OBJECTii(iVar2,1,uVar7);
 
     if (iVar4 != 0) {
 
@@ -5324,12 +5324,12 @@ LAB_0047c03e:
 
 }
 
-/* ===== FUN_0047c1d0 @ 0x0047C1D0 ===== */
+/* ===== mecc_do_flare__FP6OBJECT @ 0x0047C1D0 ===== */
 /* PS2 candidate: mecc_do_flare__FP6OBJECT (conf 0.494) */
 
 
 
-void FUN_0047c1d0(int param_1)
+void mecc_do_flare__FP6OBJECT(int param_1)
 
 
 
@@ -5560,7 +5560,7 @@ LAB_0047c40a:
 
   if ((*(uint *)(param_1 + 0xe0) & 0x2000000) != 0) {
 
-    FUN_0047c440(param_1);
+    mecc_do_health_grenade_mine2__FP6OBJECT(param_1);
 
     *(uint *)(iVar2 + 0xd4) = *(uint *)(iVar2 + 0xd4) & 0xfffffff5;
 
@@ -5570,12 +5570,12 @@ LAB_0047c40a:
 
 }
 
-/* ===== FUN_0047c440 @ 0x0047C440 ===== */
+/* ===== mecc_do_health_grenade_mine2__FP6OBJECT @ 0x0047C440 ===== */
 /* PS2 candidate: mecc_do_health_grenade_mine2__FP6OBJECT (conf 0.507) */
 
 
 
-void FUN_0047c440(int param_1)
+void mecc_do_health_grenade_mine2__FP6OBJECT(int param_1)
 
 
 
@@ -5663,7 +5663,7 @@ void FUN_0047c440(int param_1)
 
     *(uint *)(iVar1 + 0xd4) = *(uint *)(iVar1 + 0xd4) & 0xfffffff7;
 
-    uVar5 = FUN_004a9040(*(undefined4 *)(iVar1 + 0x124));
+    uVar5 = IconDefProjectile(*(undefined4 *)(iVar1 + 0x124));
 
     iVar7 = PROJ_DefGet(uVar5);
 
@@ -6382,7 +6382,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x18c) == 0x13) {
 
-        FUN_00458180(iVar7,*(undefined4 *)(iVar5 + 0xfc));
+        WeaponIdSetCurrent__FP6OBJECTi(iVar7,*(undefined4 *)(iVar5 + 0xfc));
 
         *(undefined4 *)(iVar5 + 0xfc) = 0xffffffff;
 
@@ -6408,7 +6408,7 @@ LAB_0047cdb1:
 
     }
 
-    FUN_00458180(iVar7,(int)*(char *)param_4);
+    WeaponIdSetCurrent__FP6OBJECTi(iVar7,(int)*(char *)param_4);
 
     switch(*(undefined1 *)pfVar3) {
 
@@ -6632,7 +6632,7 @@ LAB_0047cdb1:
 
       *(undefined4 *)(iVar5 + 0xfc) = uVar4;
 
-      FUN_00458180(iVar7,0x13);
+      WeaponIdSetCurrent__FP6OBJECTi(iVar7,0x13);
 
       *(uint *)(iVar7 + 0xe0) = *(uint *)(iVar7 + 0xe0) | 0x1000000;
 
@@ -6682,7 +6682,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x18c) == 0x13) {
 
-        FUN_00458180(iVar7,*(undefined4 *)(iVar5 + 0xfc));
+        WeaponIdSetCurrent__FP6OBJECTi(iVar7,*(undefined4 *)(iVar5 + 0xfc));
 
         *(undefined4 *)(iVar5 + 0xfc) = 0xffffffff;
 
@@ -6794,7 +6794,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x18c) == 0x13) {
 
-        FUN_00458180(iVar7,*(undefined4 *)(iVar5 + 0xfc));
+        WeaponIdSetCurrent__FP6OBJECTi(iVar7,*(undefined4 *)(iVar5 + 0xfc));
 
         *(undefined4 *)(iVar5 + 0xfc) = 0xffffffff;
 
@@ -6948,7 +6948,7 @@ LAB_0047d90a:
 
 LAB_0047d6b8:
 
-      FUN_00458180(iVar7,uVar4);
+      WeaponIdSetCurrent__FP6OBJECTi(iVar7,uVar4);
 
       *(undefined4 *)(iVar5 + 0xfc) = 0xffffffff;
 
@@ -7238,7 +7238,7 @@ LAB_0047d6b8:
 
         if (*(int *)(iVar5 + 0x18c) == 0x13) {
 
-          FUN_00458180(iVar7,*(undefined4 *)(iVar5 + 0xfc));
+          WeaponIdSetCurrent__FP6OBJECTi(iVar7,*(undefined4 *)(iVar5 + 0xfc));
 
           *(undefined4 *)(iVar5 + 0xfc) = 0xffffffff;
 
@@ -7848,7 +7848,7 @@ LAB_0047e183:
 
         if (*(int *)(iVar6 + 0x18c) == 0x13) {
 
-          FUN_00458180(param_1,*(undefined4 *)(iVar6 + 0xfc));
+          WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar6 + 0xfc));
 
           *(undefined4 *)(iVar6 + 0xfc) = 0xffffffff;
 
@@ -7914,7 +7914,7 @@ LAB_0047e183:
 
         if (*(int *)(iVar6 + 0x18c) == 0x13) {
 
-          FUN_00458180(param_1,*(undefined4 *)(iVar6 + 0xfc));
+          WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar6 + 0xfc));
 
           *(undefined4 *)(iVar6 + 0xfc) = 0xffffffff;
 
@@ -7938,7 +7938,7 @@ LAB_0047e183:
 
     }
 
-    iVar6 = FUN_004a9040(local_74);
+    iVar6 = IconDefProjectile(local_74);
 
     local_88 = iVar6;
 
@@ -9736,7 +9736,7 @@ void mecc_to_bush(int param_1)
 
   uVar3 = IconDefWieldType(*(undefined4 *)(iVar4 + 0x18c),1);
 
-  iVar4 = FUN_00458300(param_1,10,uVar3);
+  iVar4 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar3);
 
   if (iVar4 != 0) {
 

@@ -1,14 +1,14 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (46 named) — decompiled, names from PS2 symbols
+ * 74 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00480150 @ 0x00480150 ===== */
+/* ===== mecc_exit_bush @ 0x00480150 ===== */
 /* PS2 candidate: mecc_exit_bush (conf 0.499) */
 
 
 
-void FUN_00480150(int param_1)
+void mecc_exit_bush(int param_1)
 
 
 
@@ -97,7 +97,7 @@ LAB_00480200:
 
   uVar3 = IconDefWieldType(0x11,1);
 
-  iVar2 = FUN_00458300(param_1,10,uVar3);
+  iVar2 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar3);
 
   if (iVar2 != 0) {
 
@@ -192,7 +192,7 @@ LAB_004802fd:
 
   uVar2 = IconDefWieldType(0x11,1);
 
-  iVar1 = FUN_00458300(param_1,10,uVar2);
+  iVar1 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar2);
 
   if (iVar1 != 0) {
 
@@ -249,7 +249,7 @@ void mecc_enable_repair_gun(int param_1)
 
     *(undefined4 *)(iVar2 + 0xfc) = uVar1;
 
-    FUN_00458180(param_1,0x13);
+    WeaponIdSetCurrent__FP6OBJECTi(param_1,0x13);
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x1000000;
 
@@ -314,7 +314,7 @@ void mecc_disable_repair_gun(int param_1)
 
     if (*(int *)(iVar2 + 0x18c) == 0x13) {
 
-      FUN_00458180(param_1,*(undefined4 *)(iVar2 + 0xfc));
+      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar2 + 0xfc));
 
       *(undefined4 *)(iVar2 + 0xfc) = 0xffffffff;
 
@@ -587,7 +587,7 @@ void FUN_00480730(int param_1)
 
       uVar4 = IconDefWieldType(0x14,1);
 
-      iVar3 = FUN_00458300(*(undefined4 *)(param_1 + 0x274),10,uVar4);
+      iVar3 = player_find_weapon_obj_type__FP6OBJECTii(*(undefined4 *)(param_1 + 0x274),10,uVar4);
 
       if (iVar3 != 0) {
 
@@ -970,7 +970,7 @@ void mecc_drop_carried_object(int param_1,int param_2)
 
             *(undefined4 *)(*(int *)(iVar4 + 0x100) + 0x54) = 0;
 
-            FUN_004f40a0(iVar4,param_1,*(undefined4 *)(iVar2 + 0xd8),param_2);
+            smartie_from_back_to_partyhouse(iVar4,param_1,*(undefined4 *)(iVar2 + 0xd8),param_2);
 
             break;
 
@@ -1152,14 +1152,14 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_004810d0 @ 0x004810D0 ===== */
+/* ===== projectile_logic @ 0x004810D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: projectile_logic (conf 0.495) */
 
 
 
-void FUN_004810d0(int param_1)
+void projectile_logic(int param_1)
 
 
 
@@ -1283,7 +1283,7 @@ void FUN_004810d0(int param_1)
 
                     if (*(int *)(iVar4 + 0x18c) == 0x13) {
 
-                      FUN_00458180(param_1,*(undefined4 *)(iVar4 + 0xfc));
+                      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar4 + 0xfc));
 
                       *(undefined4 *)(iVar4 + 0xfc) = 0xffffffff;
 
@@ -1467,7 +1467,7 @@ LAB_00481264:
 
                     if (*(int *)(iVar4 + 0x18c) == 0x13) {
 
-                      FUN_00458180(param_1,*(undefined4 *)(iVar4 + 0xfc));
+                      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar4 + 0xfc));
 
                       *(undefined4 *)(iVar4 + 0xfc) = 0xffffffff;
 
@@ -1749,7 +1749,7 @@ void obj_grab_carry(int param_1,int param_2)
 
     if (*(int *)(iVar3 + 0x18c) == 0x13) {
 
-      FUN_00458180(iVar1,*(undefined4 *)(iVar3 + 0xfc));
+      WeaponIdSetCurrent__FP6OBJECTi(iVar1,*(undefined4 *)(iVar3 + 0xfc));
 
       *(undefined4 *)(iVar3 + 0xfc) = 0xffffffff;
 
@@ -1866,7 +1866,7 @@ void obj_ride_mount(int param_1,int param_2,int param_3)
 
     if (*(int *)(iVar1 + 0x18c) == 0x13) {
 
-      FUN_00458180(param_1,*(undefined4 *)(iVar1 + 0xfc));
+      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar1 + 0xfc));
 
       *(undefined4 *)(iVar1 + 0xfc) = 0xffffffff;
 

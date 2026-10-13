@@ -1928,7 +1928,7 @@ void FUN_00402d60(float param_1,undefined4 *param_2,uint param_3)
 
   }
 
-  fVar13 = (float10)FUN_0050a400(pfVar1,puVar9);
+  fVar13 = (float10)dirfcalcp3d__FP3P3DT0(pfVar1,puVar9);
 
   fVar2 = (float)fVar13;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (65 named) — decompiled, names from PS2 symbols
+ * 100 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -1795,11 +1795,11 @@ void collide_objects(int param_1)
 
                         }
 
-                        fVar11 = (float10)FUN_0050a400(pfVar9,iVar5 + 0xa0);
+                        fVar11 = (float10)dirfcalcp3d__FP3P3DT0(pfVar9,iVar5 + 0xa0);
 
                         fVar2 = (float)fVar11;
 
-                        fVar11 = (float10)FUN_0050a400(pfVar9,pfVar8);
+                        fVar11 = (float10)dirfcalcp3d__FP3P3DT0(pfVar9,pfVar8);
 
                         fVar10 = (float10)FUN_0050a770((float)fVar11,fVar2 + local_b0);
 
@@ -3469,7 +3469,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
         -(*(float *)(param_1 + 0x1e8) * *(float *)(param_1 + 0xc4)) <= (float)local_38)))) break;
 
-    fVar8 = (float10)FUN_0050a400();
+    fVar8 = (float10)dirfcalcp3d__FP3P3DT0();
 
     sine_cos_lookup((float)fVar8,&local_30,&local_2c);
 
@@ -4927,7 +4927,7 @@ void FUN_00416240(int param_1)
 
     }
 
-    FUN_004162c0(iVar1);
+    evilreaper_award_item__FP6OBJECT(iVar1);
 
   }
 
@@ -4935,14 +4935,14 @@ void FUN_00416240(int param_1)
 
 }
 
-/* ===== FUN_004162c0 @ 0x004162C0 ===== */
+/* ===== evilreaper_award_item__FP6OBJECT @ 0x004162C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: evilreaper_award_item__FP6OBJECT (conf 0.492) */
 
 
 
-void FUN_004162c0(int param_1)
+void evilreaper_award_item__FP6OBJECT(int param_1)
 
 
 
@@ -7260,7 +7260,7 @@ undefined4 object_spawn_class5(int param_1,float param_2)
 
     *(float *)(iVar3 + 200) = *(float *)((int)fVar2 + 200) - (float)piVar1[7];
 
-    FUN_004a7440(iVar3);
+    ObjectCalculateTransform(iVar3);
 
     ObjectSetAnim(iVar3,1,0x20,0,0,0);
 
@@ -8049,7 +8049,7 @@ void objtype_setup_spell(undefined4 param_1)
 
       }
 
-      FUN_004a7440(iVar1);
+      ObjectCalculateTransform(iVar1);
 
       ObjectSetAnim(iVar1,1,0x20,0,0,0);
 
@@ -8574,7 +8574,7 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   *puVar2 = *(undefined4 *)(iVar4 + 4);
 
-  FUN_004a7440(iVar4);
+  ObjectCalculateTransform(iVar4);
 
   ObjectSetAnim(iVar4,1,0x20,0,0,0);
 
@@ -9100,7 +9100,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     *(float *)(iVar2 + 200) = *(float *)(param_2 + 200) - (float)piVar1[7];
 
-    FUN_004a7440(iVar2);
+    ObjectCalculateTransform(iVar2);
 
     ObjectSetAnim(iVar2,1,0x20,0,0,0);
 

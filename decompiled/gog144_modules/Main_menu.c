@@ -249,7 +249,7 @@ void main_menu_004832f0(void)
 
     FUN_00403e60(DAT_0059ee98,(float)fVar7);
 
-    FUN_004a7440(DAT_0059ee98);
+    ObjectCalculateTransform(DAT_0059ee98);
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x20;
 

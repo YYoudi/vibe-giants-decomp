@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (19 named) — decompiled, names from PS2 symbols
+ * 39 functions (22 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -578,7 +578,7 @@ void verm_control(int param_1)
 
         if (puVar8[3] != 0) {
 
-          fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,iVar6);
+          fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar8[3] + 0xa0,iVar6);
 
           fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)50.0),
 
@@ -662,7 +662,7 @@ LAB_004d2151:
 
         *(undefined1 *)(param_1 + 0x208) = 0;
 
-        fVar9 = (float10)FUN_0050a400(param_1 + 0xa0,&local_68);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,&local_68);
 
         local_70 = (float)fVar9;
 
@@ -818,7 +818,7 @@ LAB_004d2364:
 
         *(undefined1 *)(param_1 + 0x208) = 0;
 
-        fVar9 = (float10)FUN_0050a400(iVar6,&local_68);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(iVar6,&local_68);
 
         local_70 = (float)fVar9;
 
@@ -936,7 +936,7 @@ LAB_004d2364:
 
       *(undefined1 *)(param_1 + 0x208) = 0;
 
-      fVar9 = (float10)FUN_0050a400(iVar6,&local_68);
+      fVar9 = (float10)dirfcalcp3d__FP3P3DT0(iVar6,&local_68);
 
       local_70 = (float)fVar9;
 
@@ -1008,7 +1008,7 @@ LAB_004d2364:
 
     if (puVar8[3] == 0) break;
 
-    fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,iVar6);
+    fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar8[3] + 0xa0,iVar6);
 
     fVar10 = (float10)20.0 + fVar9;
 
@@ -1092,7 +1092,7 @@ LAB_004d2a47:
 
         *(undefined1 *)(param_1 + 0x208) = 0;
 
-        fVar9 = (float10)FUN_0050a400(iVar6,&local_68);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(iVar6,&local_68);
 
         local_70 = (float)fVar9;
 
@@ -1212,7 +1212,7 @@ LAB_004d211b:
 
       else {
 
-        fVar9 = (float10)FUN_0050a400(param_1 + 0xa0,(int)fVar4 + 0xa0);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,(int)fVar4 + 0xa0);
 
         local_78 = (float)fVar9;
 
@@ -1286,7 +1286,7 @@ LAB_004d2d85:
 
       else {
 
-        fVar9 = (float10)FUN_0050a400(param_1 + 0xa0,(int)fVar4 + 0xa0);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,(int)fVar4 + 0xa0);
 
         local_78 = (float)fVar9;
 
@@ -1338,7 +1338,7 @@ LAB_004d2d85:
 
         if (puVar8[3] != 0) {
 
-          fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,param_1 + 0xa0);
+          fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar8[3] + 0xa0,param_1 + 0xa0);
 
           fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)80.0),
 
@@ -1430,7 +1430,7 @@ LAB_004d27a6:
 
       else {
 
-        fVar9 = (float10)FUN_0050a400(param_1 + 0xa0,puVar8);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,puVar8);
 
         local_74 = (float)fVar9;
 
@@ -1528,7 +1528,7 @@ LAB_004d27a6:
 
       else {
 
-        fVar9 = (float10)FUN_0050a400(param_1 + 0xa0,(int)fVar4 + 0xa0);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,(int)fVar4 + 0xa0);
 
         local_70 = (float)fVar9;
 
@@ -1554,7 +1554,7 @@ LAB_004d27a6:
 
         if (puVar8[3] != 0) {
 
-          fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,param_1 + 0xa0);
+          fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar8[3] + 0xa0,param_1 + 0xa0);
 
           fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)20.0),
 
@@ -1716,7 +1716,7 @@ LAB_004d2124:
 
       if (puVar8[3] != 0) {
 
-        fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,param_1 + 0xa0);
+        fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar8[3] + 0xa0,param_1 + 0xa0);
 
         fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)80.0),(float)((float10)80.0 + fVar9)
 
@@ -1928,7 +1928,7 @@ switchD_004d1ccc_caseD_20:
 
   *(undefined1 *)(param_1 + 0x208) = 0;
 
-  fVar9 = (float10)FUN_0050a400(param_1 + 0xa0,&local_5c);
+  fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,&local_5c);
 
   local_70 = (float)fVar9;
 
@@ -1964,7 +1964,7 @@ switchD_004d1ccc_caseD_20:
 
     if (puVar8[3] != 0) {
 
-      fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,param_1 + 0xa0);
+      fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar8[3] + 0xa0,param_1 + 0xa0);
 
       fVar10 = (float10)50.0 + fVar9;
 
@@ -2039,7 +2039,7 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
      (*(float *)(param_1 + 0xbc) != *(float *)(param_1 + 0xa4))) {
 
-    fVar5 = (float10)FUN_0050a400(param_1 + 0xb8,pfVar1);
+    fVar5 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xb8,pfVar1);
 
     fVar5 = (float10)FUN_00518b70(param_1,0,0x461c4000,(float)fVar5,param_1 + 200);
 
@@ -2057,7 +2057,7 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
   FUN_00403e60(param_1,(float)fVar5);
 
-  FUN_004a7440(param_1);
+  ObjectCalculateTransform(param_1);
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x20;
 
@@ -2067,12 +2067,12 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
 }
 
-/* ===== FUN_004d3ed0 @ 0x004D3ED0 ===== */
+/* ===== ripper_animselect @ 0x004D3ED0 ===== */
 /* PS2 candidate: ripper_animselect (conf 0.489) */
 
 
 
-void FUN_004d3ed0(int param_1)
+void ripper_animselect(int param_1)
 
 
 
@@ -2698,7 +2698,7 @@ float10 FUN_004d4580(float param_1,int param_2,float param_3)
 
   else {
 
-    fVar3 = (float10)FUN_0050a400((int)param_1 + 0xa0,param_2);
+    fVar3 = (float10)dirfcalcp3d__FP3P3DT0((int)param_1 + 0xa0,param_2);
 
     param_1 = (float)fVar3;
 
@@ -2759,7 +2759,7 @@ void ai_face_move(undefined4 *param_1,undefined4 *param_2,float param_3)
 
     else {
 
-      fVar5 = (float10)FUN_0050a400((int)param_1 + 0xa0,param_2);
+      fVar5 = (float10)dirfcalcp3d__FP3P3DT0((int)param_1 + 0xa0,param_2);
 
       param_1 = (undefined4 *)(float)fVar5;
 
@@ -2813,12 +2813,12 @@ void ai_face_move(undefined4 *param_1,undefined4 *param_2,float param_3)
 
 }
 
-/* ===== FUN_004d4760 @ 0x004D4760 ===== */
+/* ===== enemy_check_player_grab__FP6OBJECTif @ 0x004D4760 ===== */
 /* PS2 candidate: enemy_check_player_grab__FP6OBJECTif (conf 0.486) */
 
 
 
-int FUN_004d4760(int param_1,undefined4 param_2,float param_3)
+int enemy_check_player_grab__FP6OBJECTif(int param_1,undefined4 param_2,float param_3)
 
 
 
@@ -3382,12 +3382,12 @@ float10 rndfloatrange(float param_1,float param_2)
 
 }
 
-/* ===== FUN_004d5810 @ 0x004D5810 ===== */
+/* ===== rpboat_unlock_from_boat__FP6OBJECTT0 @ 0x004D5810 ===== */
 /* PS2 candidate: rpboat_unlock_from_boat__FP6OBJECTT0 (conf 0.506) */
 
 
 
-void FUN_004d5810(int param_1,int param_2)
+void rpboat_unlock_from_boat__FP6OBJECTT0(int param_1,int param_2)
 
 
 
@@ -3951,7 +3951,7 @@ void reaper_spell_sound_1(int param_1,undefined4 *param_2,undefined4 param_3)
 
     fVar4 = (float10)FUN_0050a490(&local_60,param_2);
 
-    fVar5 = (float10)FUN_0050a400(&local_60,param_2);
+    fVar5 = (float10)dirfcalcp3d__FP3P3DT0(&local_60,param_2);
 
     local_44[0] = 0;
 

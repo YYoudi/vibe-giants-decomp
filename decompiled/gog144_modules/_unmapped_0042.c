@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (93 named) — decompiled, names from PS2 symbols
+ * 129 functions (94 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -8137,7 +8137,7 @@ int kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
 
                    *(undefined4 *)(iVar1 + 0x2c4));
 
-      FUN_004a7440(iVar1);
+      ObjectCalculateTransform(iVar1);
 
       FUN_0049a1f0(iVar1);
 
@@ -8155,12 +8155,12 @@ int kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00425b50 @ 0x00425B50 ===== */
+/* ===== corpse_create @ 0x00425B50 ===== */
 /* PS2 candidate: corpse_create (conf 0.502) */
 
 
 
-int FUN_00425b50(int param_1)
+int corpse_create(int param_1)
 
 
 
@@ -17388,11 +17388,11 @@ void FUN_0042de80(undefined4 param_1,undefined4 *param_2,float param_3,undefined
 
   
 
-  FUN_0053e960(&local_c,param_1);
+  GEO_Vec3Normalize(&local_c,param_1);
 
   GEO_Vec2Cross(&local_18,&local_c,&DAT_005565d4);
 
-  FUN_0053e960(&local_18,&local_18);
+  GEO_Vec3Normalize(&local_18,&local_18);
 
   GEO_Vec2Cross(&local_c,&DAT_005565d4,&local_18);
 
@@ -17541,11 +17541,11 @@ void fx_billboard_matrix(undefined4 *param_1,undefined4 param_2,float param_3,un
 
   fVar2 = (float)(fVar3 * (float10)param_3);
 
-  FUN_0053e960(&local_c,param_2);
+  GEO_Vec3Normalize(&local_c,param_2);
 
   GEO_Vec2Cross(&local_18,&local_c,&DAT_005565e0);
 
-  FUN_0053e960(&local_18,&local_18);
+  GEO_Vec3Normalize(&local_18,&local_18);
 
   GEO_Vec2Cross(&local_c,&DAT_005565e0,&local_18);
 

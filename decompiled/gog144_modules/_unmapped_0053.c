@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (111 named) — decompiled, names from PS2 symbols
+ * 179 functions (113 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -3815,7 +3815,7 @@ LAB_00532b21:
 
           if (iVar6 == 0) {
 
-            iVar6 = FUN_00456470(iVar4,pcVar15 + 5,uVar5);
+            iVar6 = herd_create_one(iVar4,pcVar15 + 5,uVar5);
 
             iVar4 = *(int *)(iVar6 + 0x100);
 
@@ -5021,7 +5021,7 @@ void comm_cam_mode_menu(undefined4 *param_1)
 
       object_copy_posdirinfo(iVar1);
 
-      FUN_004a7440(iVar1);
+      ObjectCalculateTransform(iVar1);
 
       FUN_0049a1f0(iVar1);
 
@@ -5122,7 +5122,7 @@ void mecc_shield_spell(int param_1)
 
     object_copy_posdirinfo(iVar2);
 
-    FUN_004a7440(iVar2);
+    ObjectCalculateTransform(iVar2);
 
     piVar4 = DAT_00632d68;
 
@@ -5291,7 +5291,7 @@ void mecc_cloak_spell(int param_1)
 
     object_copy_posdirinfo(iVar2);
 
-    FUN_004a7440(iVar2);
+    ObjectCalculateTransform(iVar2);
 
     *(undefined4 *)(iVar2 + 0x278) = *(undefined4 *)(param_1 + 5);
 
@@ -9260,12 +9260,12 @@ void FUN_00535f40(void)
 
 }
 
-/* ===== FUN_00536050 @ 0x00536050 ===== */
+/* ===== atox__FPc @ 0x00536050 ===== */
 /* PS2 candidate: atox__FPc (conf 0.506) */
 
 
 
-int FUN_00536050(char *param_1)
+int atox__FPc(char *param_1)
 
 
 
@@ -9456,7 +9456,7 @@ void chat_init(void)
 
     uVar2 = TextGetPtrQ(s_ChatColorSystem_00580248);
 
-    _DAT_006328c4 = FUN_00536050(uVar2);
+    _DAT_006328c4 = atox__FPc(uVar2);
 
   }
 
@@ -9466,7 +9466,7 @@ void chat_init(void)
 
     uVar2 = TextGetPtrQ(s_ChatColorPlayerAll_00580234);
 
-    _DAT_006328c8 = FUN_00536050(uVar2);
+    _DAT_006328c8 = atox__FPc(uVar2);
 
   }
 
@@ -9476,7 +9476,7 @@ void chat_init(void)
 
     uVar2 = TextGetPtrQ(s_ChatColorPlayerTeam_00580220);
 
-    _DAT_006328cc = FUN_00536050(uVar2);
+    _DAT_006328cc = atox__FPc(uVar2);
 
   }
 
@@ -9486,7 +9486,7 @@ void chat_init(void)
 
     uVar2 = TextGetPtrQ(s_ChatColorSmartie_0058020c);
 
-    _DAT_006328d0 = FUN_00536050(uVar2);
+    _DAT_006328d0 = atox__FPc(uVar2);
 
   }
 
@@ -9496,7 +9496,7 @@ void chat_init(void)
 
     uVar2 = TextGetPtrQ(s_ChatColorDisciple_005801f8);
 
-    _DAT_006328d4 = FUN_00536050(uVar2);
+    _DAT_006328d4 = atox__FPc(uVar2);
 
   }
 
@@ -9506,7 +9506,7 @@ void chat_init(void)
 
     uVar2 = TextGetPtrQ(s_ChatColorMission_005801e4);
 
-    _DAT_006328d8 = FUN_00536050(uVar2);
+    _DAT_006328d8 = atox__FPc(uVar2);
 
   }
 
@@ -15557,7 +15557,7 @@ LAB_0053ca17:
 
     GEO_Vec2Sub(&local_b0,param_1 + 0x6c,&local_b0);
 
-    FUN_0053e960(&local_b0,&local_b0);
+    GEO_Vec3Normalize(&local_b0,&local_b0);
 
     uStack_a4 = puVar5[3];
 
@@ -15567,7 +15567,7 @@ LAB_0053ca17:
 
     GEO_Vec2Cross(&uStack_7c,&uStack_a4,&local_b0);
 
-    FUN_0053e960(&uStack_7c,&uStack_7c);
+    GEO_Vec3Normalize(&uStack_7c,&uStack_7c);
 
     GEO_Vec2Cross(&uStack_a4,&local_b0,&uStack_7c);
 
@@ -17841,11 +17841,11 @@ void GEO_MatLookAt(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,un
 
   
 
-  FUN_0053e960(&local_18,param_3);
+  GEO_Vec3Normalize(&local_18,param_3);
 
   GEO_Vec2Cross(&local_24,param_4,param_3);
 
-  FUN_0053e960(&local_24,&local_24);
+  GEO_Vec3Normalize(&local_24,&local_24);
 
   GEO_Vec2Cross(&local_c,&local_18,&local_24);
 
@@ -18841,12 +18841,12 @@ void GEO_Vec2Cross(float *param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_0053e960 @ 0x0053E960 ===== */
+/* ===== GEO_Vec3Normalize @ 0x0053E960 ===== */
 /* PS2 candidate: GEO_Vec3Normalize (conf 0.493) */
 
 
 
-float10 FUN_0053e960(undefined4 param_1,undefined4 param_2)
+float10 GEO_Vec3Normalize(undefined4 param_1,undefined4 param_2)
 
 
 

@@ -50,7 +50,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   
 
-  fVar5 = (float10)FUN_0050a400(param_1 + 0xa0,param_2);
+  fVar5 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,param_2);
 
   local_44[0] = 0;
 

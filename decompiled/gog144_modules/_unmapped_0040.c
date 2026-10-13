@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (61 named) — decompiled, names from PS2 symbols
+ * 105 functions (64 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -3204,12 +3204,14 @@ LAB_00404e2f:
 
 }
 
-/* ===== FUN_00406bc0 @ 0x00406BC0 ===== */
+/* ===== army_create_rpman__FP6OBJECTP9ArmyOrderifi @ 0x00406BC0 ===== */
 /* PS2 candidate: army_create_rpman__FP6OBJECTP9ArmyOrderifi (conf 0.491) */
 
 
 
-int FUN_00406bc0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+int army_create_rpman__FP6OBJECTP9ArmyOrderifi
+
+              (int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 
 
 
@@ -4724,7 +4726,7 @@ void FUN_00407c40(int param_1)
 
     *(float *)(iVar2 + 200) = *(float *)(param_1 + 200) - (float)piVar1[7];
 
-    FUN_004a7440(iVar2);
+    ObjectCalculateTransform(iVar2);
 
     ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
@@ -5105,7 +5107,7 @@ void meccbaseitem_move(float param_1)
 
 LAB_00408880:
 
-        FUN_00408ec0(iVar4,param_1,iVar3);
+        meccbaseitem_start_building(iVar4,param_1,iVar3);
 
         iVar2 = reaper_0052e4a0(param_1);
 
@@ -5847,12 +5849,12 @@ LAB_00408df5:
 
 }
 
-/* ===== FUN_00408ec0 @ 0x00408EC0 ===== */
+/* ===== meccbaseitem_start_building @ 0x00408EC0 ===== */
 /* PS2 candidate: meccbaseitem_start_building (conf 0.503) */
 
 
 
-void FUN_00408ec0(int param_1,int param_2,int param_3)
+void meccbaseitem_start_building(int param_1,int param_2,int param_3)
 
 
 
@@ -8825,7 +8827,7 @@ void FUN_0040bc00(int param_1)
 
               (local_7c,param_1 + 0x14,1,*(int *)(param_1 + 0x38) + 0x294);
 
-    FUN_0050a400(*(int *)(param_1 + 0x38) + 0xa0,local_7c);
+    dirfcalcp3d__FP3P3DT0(*(int *)(param_1 + 0x38) + 0xa0,local_7c);
 
     iVar1 = DAT_00632ed8;
 
@@ -10374,7 +10376,7 @@ void ref_anode_user(void)
 
       local_20 = (float)fVar2;
 
-      fVar2 = (float10)FUN_0050a400(&DAT_005550d4,iVar1 + 0xa0);
+      fVar2 = (float10)dirfcalcp3d__FP3P3DT0(&DAT_005550d4,iVar1 + 0xa0);
 
       local_1c = (float)fVar2;
 
@@ -11016,12 +11018,14 @@ LAB_0040e451:
 
 }
 
-/* ===== FUN_0040ee20 @ 0x0040EE20 ===== */
+/* ===== charger_change_anim__FP6OBJECTii4SDKYfi @ 0x0040EE20 ===== */
 /* PS2 candidate: charger_change_anim__FP6OBJECTii4SDKYfi (conf 0.49) */
 
 
 
-void FUN_0040ee20(int param_1,int param_2,int param_3,undefined4 param_4,float param_5,int param_6)
+void charger_change_anim__FP6OBJECTii4SDKYfi
+
+               (int param_1,int param_2,int param_3,undefined4 param_4,float param_5,int param_6)
 
 
 

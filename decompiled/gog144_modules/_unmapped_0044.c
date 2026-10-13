@@ -1795,7 +1795,7 @@ void obj_scale_pulse(float param_1,undefined4 param_2)
 
   *(undefined1 *)((int)fVar2 + 0x208) = 0;
 
-  fVar4 = (float10)FUN_0050a400((int)fVar2 + 0xa0,param_2);
+  fVar4 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar2 + 0xa0,param_2);
 
   fVar4 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)((int)fVar2 + 200));
 
@@ -3712,7 +3712,7 @@ undefined4 FLK_FlickRender(int param_1)
 
         iStack_178 = 0;
 
-        FUN_0053e960(&iStack_180,&iStack_180);
+        GEO_Vec3Normalize(&iStack_180,&iStack_180);
 
         GEO_Vec2Cross(&iStack_164,&iStack_180,&DAT_005585a8);
 
@@ -8572,7 +8572,7 @@ void fx_orient_ground(int param_1,float param_2)
 
     local_34c = local_2e4;
 
-    FUN_0053e960(&local_354,&local_354);
+    GEO_Vec3Normalize(&local_354,&local_354);
 
     FUN_0053fb40(local_320,&local_354,&local_32c,local_364);
 

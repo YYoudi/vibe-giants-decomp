@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (94 named) — decompiled, names from PS2 symbols
+ * 162 functions (95 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -10289,7 +10289,7 @@ void comm_socket_recv_loop(SOCKET *param_1)
 
         } while (iVar7 < 9);
 
-        FUN_0052e250(param_1,&local_8a4,&local_67c,&local_87c);
+        new_fire__FP6OBJECTiPfT0P3P3Df(param_1,&local_8a4,&local_67c,&local_87c);
 
       }
 
@@ -11410,12 +11410,12 @@ void FUN_0052e1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char 
 
 }
 
-/* ===== FUN_0052e250 @ 0x0052E250 ===== */
+/* ===== new_fire__FP6OBJECTiPfT0P3P3Df @ 0x0052E250 ===== */
 /* PS2 candidate: new_fire__FP6OBJECTiPfT0P3P3Df (conf 0.495) */
 
 
 
-void FUN_0052e250(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
+void new_fire__FP6OBJECTiPfT0P3P3Df(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
 
 
 
@@ -14386,7 +14386,7 @@ LAB_0052fabe:
 
         object_copy_posdirinfo(iVar5);
 
-        FUN_004a7440(iVar5);
+        ObjectCalculateTransform(iVar5);
 
         FUN_0049a1f0(iVar5);
 

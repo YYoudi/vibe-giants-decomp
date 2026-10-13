@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (58 named) — decompiled, names from PS2 symbols
+ * 90 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -702,7 +702,7 @@ void FUN_004b4570(int param_1)
 
     *(float *)(iVar2 + 200) = *(float *)(param_1 + 200) - (float)piVar1[7];
 
-    FUN_004a7440(iVar2);
+    ObjectCalculateTransform(iVar2);
 
     ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
@@ -1247,7 +1247,7 @@ void reaperbasebldg_move(float param_1)
 
 LAB_004b4fe5:
 
-      FUN_004b54c0(iVar4,param_1,iVar3);
+      reaperbasebldg_start_building(iVar4,param_1,iVar3);
 
       iVar2 = reaper_0052e4a0(param_1);
 
@@ -1665,12 +1665,12 @@ switchD_004b4d3a_caseD_6:
 
 }
 
-/* ===== FUN_004b54c0 @ 0x004B54C0 ===== */
+/* ===== reaperbasebldg_start_building @ 0x004B54C0 ===== */
 /* PS2 candidate: reaperbasebldg_start_building (conf 0.503) */
 
 
 
-void FUN_004b54c0(int param_1,int param_2,uint param_3)
+void reaperbasebldg_start_building(int param_1,int param_2,uint param_3)
 
 
 
@@ -4210,7 +4210,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
   case 9:
 
-    FUN_004be020(param_1,0,param_4,param_4 + 3,0x2c);
+    make_arrow__FP6OBJECTT0P3P3DPUii(param_1,0,param_4,param_4 + 3,0x2c);
 
     return;
 
@@ -4938,7 +4938,7 @@ LAB_004b8187:
 
     *(undefined4 *)(iVar7 + 0xf98) = 0;
 
-    FUN_004be020(param_1,uVar5,pfVar11,pfVar11 + 4,0x2f);
+    make_arrow__FP6OBJECTT0P3P3DPUii(param_1,uVar5,pfVar11,pfVar11 + 4,0x2f);
 
     return;
 
@@ -4948,7 +4948,7 @@ LAB_004b8187:
 
 LAB_004b76fe:
 
-    FUN_004be020(param_1,0,param_4,param_4 + 3,uVar5);
+    make_arrow__FP6OBJECTT0P3P3DPUii(param_1,0,param_4,param_4 + 3,uVar5);
 
     return;
 
@@ -4980,7 +4980,7 @@ LAB_004b76fe:
 
     }
 
-    FUN_004be020(iVar7,0,param_4,param_4 + 8,0x30);
+    make_arrow__FP6OBJECTT0P3P3DPUii(iVar7,0,param_4,param_4 + 8,0x30);
 
     return;
 
@@ -6000,12 +6000,12 @@ void FUN_004b8de0(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004b8e40 @ 0x004B8E40 ===== */
+/* ===== reaper_give_other @ 0x004B8E40 ===== */
 /* PS2 candidate: reaper_give_other (conf 0.504) */
 
 
 
-void FUN_004b8e40(int param_1,int param_2,int param_3,int param_4,int param_5)
+void reaper_give_other(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -9051,12 +9051,12 @@ void ai_flight_check(int param_1)
 
 }
 
-/* ===== FUN_004bce60 @ 0x004BCE60 ===== */
+/* ===== reaper_walkrun_go__FP6OBJECT @ 0x004BCE60 ===== */
 /* PS2 candidate: reaper_walkrun_go__FP6OBJECT (conf 0.484) */
 
 
 
-void FUN_004bce60(int param_1)
+void reaper_walkrun_go__FP6OBJECT(int param_1)
 
 
 
@@ -10372,14 +10372,14 @@ void reaper_fire_logic__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004be020 @ 0x004BE020 ===== */
+/* ===== make_arrow__FP6OBJECTT0P3P3DPUii @ 0x004BE020 ===== */
 /* PS2 candidate: make_arrow__FP6OBJECTT0P3P3DPUii (conf 0.489) */
 
 
 
-void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param_4,
+void make_arrow__FP6OBJECTT0P3P3DPUii
 
-                 undefined4 param_5)
+               (int param_1,undefined4 param_2,uint *param_3,undefined4 *param_4,undefined4 param_5)
 
 
 
@@ -10483,7 +10483,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     local_a0 = (float)fVar8;
 
-    fVar8 = (float10)FUN_0050a400(&local_c0,&local_b4);
+    fVar8 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
     local_44 = 0;
 
@@ -10549,7 +10549,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     fVar8 = (float10)FUN_0050a490(&local_c0,&local_b4);
 
-    fVar9 = (float10)FUN_0050a400(&local_c0,&local_b4);
+    fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
     local_88[0] = 0;
 
@@ -10615,7 +10615,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     fVar8 = (float10)FUN_0050a490(&local_c0,&local_b4);
 
-    fVar9 = (float10)FUN_0050a400(&local_c0,&local_b4);
+    fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
     local_88[0] = 0;
 
@@ -10691,7 +10691,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
       fVar8 = (float10)FUN_0050a490(&local_c0,param_3);
 
-      fVar9 = (float10)FUN_0050a400(&local_c0,param_3);
+      fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,param_3);
 
       local_88[0] = 0;
 
@@ -10757,7 +10757,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     fVar8 = (float10)FUN_0050a490(&local_c0,param_3);
 
-    fVar9 = (float10)FUN_0050a400(&local_c0,param_3);
+    fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,param_3);
 
     local_a4 = (uint *)(float)fVar9;
 
@@ -11145,7 +11145,7 @@ void reaper_fire_spell__FP6OBJECTiP3P3DT0i
 
   fVar6 = (float10)FUN_0050a490(&local_60,param_3);
 
-  fVar7 = (float10)FUN_0050a400(&local_60,param_3);
+  fVar7 = (float10)dirfcalcp3d__FP3P3DT0(&local_60,param_3);
 
   local_44[0] = 0;
 
@@ -12052,7 +12052,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
      ((float)puVar9[0x16] < 0.0 != ((float)puVar9[0x16] == 0.0))) {
 
-    FUN_004be020(param_1,uVar6,&local_140,0,puVar9[puVar9[0x36d] * 2 + 0x35c]);
+    make_arrow__FP6OBJECTT0P3P3DPUii(param_1,uVar6,&local_140,0,puVar9[puVar9[0x36d] * 2 + 0x35c]);
 
     puVar9[0x16] = *(uint *)(DAT_00632ed8 + 0x6b0);
 

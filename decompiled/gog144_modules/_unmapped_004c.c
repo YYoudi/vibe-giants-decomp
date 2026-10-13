@@ -731,7 +731,7 @@ LAB_004c0926:
 
               *(float *)(DAT_00632ed8 + 0x1024))) {
 
-            fVar11 = (float10)FUN_0050a400(iVar3 + 0xa0,iVar7 + 0xa0);
+            fVar11 = (float10)dirfcalcp3d__FP3P3DT0(iVar3 + 0xa0,iVar7 + 0xa0);
 
             local_50 = (float)fVar11;
 
@@ -3442,7 +3442,7 @@ void mecc_drop_carried_object_2(int param_1,int param_2)
 
             *(undefined4 *)(*(int *)(iVar4 + 0x100) + 0x54) = 0;
 
-            FUN_004f40a0(iVar4,param_1,*(undefined4 *)(iVar2 + 0xcfc),param_2);
+            smartie_from_back_to_partyhouse(iVar4,param_1,*(undefined4 *)(iVar2 + 0xcfc),param_2);
 
             break;
 
@@ -5272,7 +5272,7 @@ void FUN_004ca560(int param_1,float *param_2,float param_3,undefined4 param_4,un
 
       fVar4 = (float10)rndfloatrange(param_4,param_5);
 
-      fVar5 = (float10)FUN_0050a400(pfVar1,param_2);
+      fVar5 = (float10)dirfcalcp3d__FP3P3DT0(pfVar1,param_2);
 
       fVar5 = (float10)rndfloatrange((float)(fVar5 - (float10)param_3),
 
@@ -5558,7 +5558,7 @@ LAB_004caa99:
 
             if ((!bVar4) && (0.0 < param_2)) {
 
-              fVar9 = (float10)FUN_0050a400(puVar2,puVar1);
+              fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,puVar1);
 
               fVar9 = (float10)FUN_0050a770((float)fVar9,*(undefined4 *)(iVar3 + 0x4c));
 
@@ -6190,7 +6190,7 @@ void sound_obj_seq_bigger(int param_1)
 
       collgrid_collide_d(param_1,param_1 + 0xa0,&local_c);
 
-      fVar4 = (float10)FUN_0050a400(param_1 + 0xa0,&local_c);
+      fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,&local_c);
 
       *(float *)(param_1 + 200) = (float)fVar4;
 
@@ -6309,7 +6309,7 @@ void sound_obj_seq_small(int param_1,undefined4 param_2,undefined4 param_3,undef
 
   fVar2 = (float10)FUN_0050a490(&local_50,param_3);
 
-  fVar3 = (float10)FUN_0050a400(&local_50,param_3);
+  fVar3 = (float10)dirfcalcp3d__FP3P3DT0(&local_50,param_3);
 
   local_44[0] = 0;
 
@@ -6422,7 +6422,7 @@ void evilreaper_fire_bow__FP6OBJECT(int param_1)
 
   fVar3 = (float10)FUN_0050a490(&local_50,&local_5c);
 
-  fVar4 = (float10)FUN_0050a400(&local_50,&local_5c);
+  fVar4 = (float10)dirfcalcp3d__FP3P3DT0(&local_50,&local_5c);
 
   local_44[0] = 0;
 
@@ -6479,7 +6479,7 @@ void FUN_004cb860(int param_1)
 
                                  *(undefined4 *)(DAT_00632ed8 + 0xef4));
 
-  fVar4 = (float10)FUN_0050a400(*(int *)(iVar1 + 0x3c) + 0xa0,param_1 + 0xa0);
+  fVar4 = (float10)dirfcalcp3d__FP3P3DT0(*(int *)(iVar1 + 0x3c) + 0xa0,param_1 + 0xa0);
 
   fVar4 = (float10)rndfloatrange((float)(fVar4 - (float10)*(float *)(DAT_00632ed8 + 0xef8)),
 
@@ -6570,7 +6570,7 @@ void evilreaper_set_new_location__FP6OBJECTi(int param_1,int param_2)
 
     *(int *)(iVar2 + 0xb0) = iVar3;
 
-    fVar5 = (float10)FUN_0050a400(*(int *)(iVar2 + 0x3c) + 0xa0,param_1 + 0xa0);
+    fVar5 = (float10)dirfcalcp3d__FP3P3DT0(*(int *)(iVar2 + 0x3c) + 0xa0,param_1 + 0xa0);
 
     fVar5 = (float10)rndfloatrange((float)(fVar5 - (float10)20.0),(float)((float10)20.0 + fVar5));
 
@@ -6742,7 +6742,7 @@ void physics_reset_a(int param_1)
 
     collgrid_collide_d(param_1,iVar1,&local_18);
 
-    fVar5 = (float10)FUN_0050a400(iVar1,&local_18);
+    fVar5 = (float10)dirfcalcp3d__FP3P3DT0(iVar1,&local_18);
 
     *(float *)(param_1 + 200) = (float)fVar5;
 
@@ -9517,7 +9517,7 @@ LAB_004cec2d:
 
          (*(float *)((int)fVar5 + 0xbc) != *(float *)((int)fVar5 + 0xa4))) {
 
-        fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xb8,pfVar12);
+        fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xb8,pfVar12);
 
         *(float *)((int)fVar5 + 200) = (float)fVar15;
 
@@ -9531,7 +9531,7 @@ LAB_004cec2d:
 
       FUN_00403e60(fVar5,(float)fVar15);
 
-      FUN_004a7440(fVar5);
+      ObjectCalculateTransform(fVar5);
 
       *(uint *)((int)fVar5 + 0xd8) = *(uint *)((int)fVar5 + 0xd8) | 0x20;
 
@@ -9715,7 +9715,7 @@ LAB_004cf690:
 
         else {
 
-          fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,iVar11);
+          fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,iVar11);
 
           param_1 = (float)fVar15;
 
@@ -9981,7 +9981,7 @@ LAB_004cf539:
 
           else {
 
-            fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,iVar11);
+            fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,iVar11);
 
             param_1 = (float)fVar15;
 
@@ -10237,7 +10237,7 @@ LAB_004cf539:
 
       puVar14 = (undefined4 *)(iVar11 + 0x48);
 
-      fVar15 = (float10)FUN_0050a400((undefined4 *)((int)fVar5 + 0xa0),puVar14);
+      fVar15 = (float10)dirfcalcp3d__FP3P3DT0((undefined4 *)((int)fVar5 + 0xa0),puVar14);
 
       *(float *)((int)fVar5 + 200) = (float)fVar15;
 
@@ -10377,7 +10377,7 @@ LAB_004cf982:
 
     }
 
-    fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,DAT_00632a88 + 0xa0);
+    fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,DAT_00632a88 + 0xa0);
 
     *(float *)((int)fVar5 + 200) = (float)fVar15;
 
@@ -10407,7 +10407,7 @@ LAB_004cf982:
 
       local_30 = (float)(fVar15 * (float10)(float)local_4c + (float10)*(float *)(iVar11 + 0x4c));
 
-      fVar15 = (float10)FUN_0050a400(&local_34,(float *)(iVar11 + 0x48));
+      fVar15 = (float10)dirfcalcp3d__FP3P3DT0(&local_34,(float *)(iVar11 + 0x48));
 
       param_1 = (float)fVar15;
 
@@ -10601,7 +10601,7 @@ LAB_004d0a9e:
 
         if ((float)(int)local_44 <= *(float *)(DAT_00632ed8 + 0x98)) {
 
-          fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,pfVar12 + 5);
+          fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,pfVar12 + 5);
 
           fVar2 = *(float *)(DAT_00632ed8 + 0x90) * 0.75;
 
@@ -10789,7 +10789,7 @@ LAB_004d0e26:
 
         ai_face_move(fVar5,&local_34,0);
 
-        fVar15 = (float10)FUN_0050a400((int)fVar3 + 0xa0,(int)fVar5 + 0xa0);
+        fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar3 + 0xa0,(int)fVar5 + 0xa0);
 
         param_1 = (float)fVar15;
 
@@ -10813,7 +10813,9 @@ LAB_004d0e26:
 
       if (iVar11 == 0) {
 
-        fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,(undefined4 *)((int)fVar3 + 0xa0));
+        fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,(undefined4 *)((int)fVar3 + 0xa0))
+
+        ;
 
         param_1 = (float)fVar15;
 
@@ -10981,7 +10983,7 @@ LAB_004d135c:
 
       *(undefined4 *)((int)fVar5 + 0xe4) = 8;
 
-      fVar15 = (float10)FUN_0050a400((int)fVar3 + 0xa0,(int)fVar5 + 0xa0);
+      fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar3 + 0xa0,(int)fVar5 + 0xa0);
 
       fVar15 = (float10)rndfloatrange((float)(fVar15 + (float10)90.0),
 
@@ -11239,7 +11241,7 @@ LAB_004d135c:
 
     *(undefined1 *)((int)fVar5 + 0x208) = 0;
 
-    fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,&local_40);
+    fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,&local_40);
 
     param_1 = (float)fVar15;
 
@@ -11469,7 +11471,7 @@ LAB_004d135c:
 
       else {
 
-        fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,(int)fVar3 + 0xa0);
+        fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,(int)fVar3 + 0xa0);
 
         local_4c = (float *)(float)fVar15;
 
@@ -11619,7 +11621,7 @@ LAB_004d135c:
 
       else {
 
-        fVar15 = (float10)FUN_0050a400((int)fVar5 + 0xa0,puVar14);
+        fVar15 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar5 + 0xa0,puVar14);
 
         local_4c = (float *)(float)fVar15;
 
@@ -11725,7 +11727,7 @@ LAB_004d135c:
 
       if ((local_44 == 7.14662e-44) && (0.6666667 <= *(float *)((int)fVar5 + 0x14))) {
 
-        iVar11 = FUN_004d4760(fVar5,0,0x41000000);
+        iVar11 = enemy_check_player_grab__FP6OBJECTif(fVar5,0,0x41000000);
 
         if ((iVar11 == 0) || (*(int *)(iVar11 + 4) == 1)) {
 

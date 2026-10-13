@@ -58,7 +58,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
     playerobj_eval_refpt(param_1,0,local_5c + 3);
 
-    fVar10 = (float10)FUN_0050a400(local_5c + 3,*(int *)(iVar2 + 0xf28) + 0xa0);
+    fVar10 = (float10)dirfcalcp3d__FP3P3DT0(local_5c + 3,*(int *)(iVar2 + 0xf28) + 0xa0);
 
     fVar11 = (float10)FUN_0050a490(local_5c + 3,*(int *)(iVar2 + 0xf28) + 0xa0);
 

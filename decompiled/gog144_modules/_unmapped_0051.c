@@ -13748,7 +13748,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 0x13) {
 
-      DAT_0059d994 = FUN_00536050(pcVar7);
+      DAT_0059d994 = atox__FPc(pcVar7);
 
       iVar6 = 0x14;
 
@@ -13756,7 +13756,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 0x14) {
 
-      DAT_0059d990 = FUN_00536050(pcVar7);
+      DAT_0059d990 = atox__FPc(pcVar7);
 
       iVar6 = 0;
 

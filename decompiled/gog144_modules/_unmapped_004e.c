@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (50 named) — decompiled, names from PS2 symbols
+ * 94 functions (52 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -1032,7 +1032,7 @@ undefined4 ai_visibility_cull(int param_1)
 
   }
 
-  fVar4 = (float10)FUN_0050a400(puVar2,iVar1,*(undefined4 *)(iVar3 + 0x58));
+  fVar4 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,iVar1,*(undefined4 *)(iVar3 + 0x58));
 
   fVar4 = (float10)FUN_0050a770((float)fVar4);
 
@@ -1691,7 +1691,7 @@ undefined4 ai_ground_snap(int param_1)
 
        (*(float *)(param_1 + 0xbc) != *(float *)(param_1 + 0xa4))) {
 
-      fVar5 = (float10)FUN_0050a400(param_1 + 0xb8,pfVar1);
+      fVar5 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xb8,pfVar1);
 
       fVar5 = (float10)FUN_00518b70(param_1,0,0x461c4000,(float)fVar5,param_1 + 200);
 
@@ -1705,7 +1705,7 @@ undefined4 ai_ground_snap(int param_1)
 
   }
 
-  FUN_004a7440(param_1);
+  ObjectCalculateTransform(param_1);
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x20;
 
@@ -2393,14 +2393,14 @@ undefined4 FUN_004e3440(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004e3530 @ 0x004E3530 ===== */
+/* ===== rpman_check_los__FP6OBJECTT0 @ 0x004E3530 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: rpman_check_los__FP6OBJECTT0 (conf 0.507) */
 
 
 
-undefined4 FUN_004e3530(int param_1,int param_2)
+undefined4 rpman_check_los__FP6OBJECTT0(int param_1,int param_2)
 
 
 
@@ -2838,7 +2838,7 @@ LAB_004e3ad2:
 
                   if ((*(int *)(param_1 + 0xe4) == 0xde) || (*(int *)(param_1 + 0xe4) == 0x23)) {
 
-                    fVar9 = (float10)FUN_0050a400(param_1 + 0xa0,iVar4 + 0xa0);
+                    fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar4 + 0xa0);
 
                     fVar9 = (float10)FUN_0050a770((float)fVar9,*(undefined4 *)(param_1 + 200));
 
@@ -2996,7 +2996,7 @@ LAB_004e3ad2:
 
             if (local_28 == 0) {
 
-              fVar9 = (float10)FUN_0050a400(puVar2,puVar1);
+              fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,puVar1);
 
               fVar9 = (float10)FUN_0050a770((float)fVar9,piVar3[0x16]);
 
@@ -3284,7 +3284,7 @@ LAB_004e409b:
 
   fVar3 = (float10)rndfloatrange(iVar6,iVar2);
 
-  fVar4 = (float10)FUN_0050a400(*piVar1 + 0xa0,param_1 + 0xa0);
+  fVar4 = (float10)dirfcalcp3d__FP3P3DT0(*piVar1 + 0xa0,param_1 + 0xa0);
 
   fVar7 = (float)fVar4;
 
@@ -3361,7 +3361,7 @@ float10 FUN_004e41e0(int param_1,undefined4 param_2)
 
   
 
-  fVar2 = (float10)FUN_0050a400(param_1 + 0xa0,param_2);
+  fVar2 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,param_2);
 
   fVar3 = (float10)FUN_0050a7c0((float)fVar2,*(undefined4 *)(param_1 + 200));
 
@@ -3404,7 +3404,7 @@ undefined4 FUN_004e4280(int param_1,undefined4 param_2)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  fVar5 = (float10)FUN_0050a400(param_1 + 0xa0,param_2);
+  fVar5 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,param_2);
 
   fVar1 = (float)fVar5;
 
@@ -3491,7 +3491,7 @@ void FUN_004e4360(int param_1)
 
   }
 
-  fVar6 = (float10)FUN_0050a400(piVar2[0x11] + 0xa0,*piVar2 + 0xa0);
+  fVar6 = (float10)dirfcalcp3d__FP3P3DT0(piVar2[0x11] + 0xa0,*piVar2 + 0xa0);
 
   fVar1 = (float)fVar6;
 
@@ -4399,7 +4399,7 @@ void FUN_004e5120(int param_1)
 
     if (*piVar2 != 0) {
 
-      fVar4 = (float10)FUN_0050a400(param_1 + 0xa0,*piVar2 + 0xa0);
+      fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,*piVar2 + 0xa0);
 
       fVar4 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)(param_1 + 200));
 
@@ -4411,7 +4411,7 @@ void FUN_004e5120(int param_1)
 
     piVar2[6] = (int)(float)fVar4;
 
-    FUN_004e5270(param_1,*piVar2,1,1);
+    fire_bullet_shot__FP6OBJECTT0ii(param_1,*piVar2,1,1);
 
     *(char *)(piVar2 + 9) = (char)piVar2[9] + -1;
 
@@ -4455,14 +4455,14 @@ LAB_004e51e4:
 
 }
 
-/* ===== FUN_004e5270 @ 0x004E5270 ===== */
+/* ===== fire_bullet_shot__FP6OBJECTT0ii @ 0x004E5270 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: fire_bullet_shot__FP6OBJECTT0ii (conf 0.487) */
 
 
 
-void FUN_004e5270(int param_1,int param_2,int param_3,int param_4)
+void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -4600,7 +4600,7 @@ void FUN_004e5270(int param_1,int param_2,int param_3,int param_4)
 
     }
 
-    fVar4 = (float10)FUN_0050a400(&local_5c,&local_74);
+    fVar4 = (float10)dirfcalcp3d__FP3P3DT0(&local_5c,&local_74);
 
     local_78 = (float)fVar4;
 
@@ -4767,7 +4767,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
     if (*(int *)(param_1 + 0xe8) == 4) {
 
-      fVar13 = (float10)FUN_0050a400(param_1 + 0xa0,iVar9);
+      fVar13 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar9);
 
       fVar2 = (float)fVar13;
 
@@ -4809,7 +4809,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
     else {
 
-      fVar13 = (float10)FUN_0050a400(param_1 + 0xa0,iVar9);
+      fVar13 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar9);
 
       fVar14 = (float10)FUN_0050a7c0((float)fVar13,*(undefined4 *)(param_1 + 200));
 
@@ -4985,11 +4985,11 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       }
 
-      FUN_0050a400(&local_5c,&local_68);
+      dirfcalcp3d__FP3P3DT0(&local_5c,&local_68);
 
       playerobj_eval_refpt(iVar9,2,&local_5c);
 
-      fVar13 = (float10)FUN_0050a400(&local_5c,&local_68);
+      fVar13 = (float10)dirfcalcp3d__FP3P3DT0(&local_5c,&local_68);
 
       fVar14 = (float10)FUN_0050a490(&local_5c,&local_68);
 
@@ -5053,7 +5053,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       if (param_4 == 0.0) {
 
-        FUN_004e5270(param_1,*piVar4,1,1);
+        fire_bullet_shot__FP6OBJECTT0ii(param_1,*piVar4,1,1);
 
       }
 
@@ -5145,9 +5145,9 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
               fVar13 = (float10)distancesq2d__FP3P3DT0(iVar9 + 0xa0,param_1 + 0xa0);
 
-              if ((fVar13 < (float10)param_4) && (iVar11 = FUN_004e3530(param_1,iVar9), iVar11 != 0)
+              if ((fVar13 < (float10)param_4) &&
 
-                 ) {
+                 (iVar11 = rpman_check_los__FP6OBJECTT0(param_1,iVar9), iVar11 != 0)) {
 
                 *piVar6 = iVar9;
 
@@ -5300,7 +5300,7 @@ void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
 
     if (*(int *)(param_1 + 0xe8) == 4) {
 
-      fVar10 = (float10)FUN_0050a400(param_1 + 0xa0,iVar8);
+      fVar10 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar8);
 
       fVar13 = (float)fVar10;
 
@@ -5342,7 +5342,7 @@ void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
 
     else {
 
-      fVar10 = (float10)FUN_0050a400(param_1 + 0xa0,iVar8);
+      fVar10 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar8);
 
       fVar11 = (float10)FUN_0050a7c0((float)fVar10,*(undefined4 *)(param_1 + 200));
 
@@ -5400,13 +5400,13 @@ void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
 
       piVar2[6] = (int)(float)((float10)(float)piVar2[6] - fVar10);
 
-      FUN_004e5270(param_1,*piVar2,0,0);
+      fire_bullet_shot__FP6OBJECTT0ii(param_1,*piVar2,0,0);
 
     }
 
     else {
 
-      FUN_004e5270(param_1,*piVar2,1);
+      fire_bullet_shot__FP6OBJECTT0ii(param_1,*piVar2,1);
 
       fVar10 = (float10)rndfloatrange(piVar2[0x21],piVar2[0x22]);
 
@@ -6115,7 +6115,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
        (*(float *)(iVar5 + 0xbc) != *(float *)(iVar5 + 0xa4))) {
 
-      fVar6 = (float10)FUN_0050a400(iVar5 + 0xb8,pfVar1);
+      fVar6 = (float10)dirfcalcp3d__FP3P3DT0(iVar5 + 0xb8,pfVar1);
 
       fVar2 = (float)fVar6;
 
@@ -6213,7 +6213,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
   }
 
-  FUN_004a7440(iVar5);
+  ObjectCalculateTransform(iVar5);
 
   iVar4 = *(int *)(iVar5 + 0x100);
 
@@ -9765,7 +9765,7 @@ int FUN_004ec1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
     FUN_00499310(iVar2,*puVar1,*(undefined4 *)(iVar3 + 0x40),*(undefined4 *)(iVar3 + 0x44));
 
-    fVar4 = (float10)FUN_0050a400(puVar1,(undefined4 *)(iVar3 + 0x48));
+    fVar4 = (float10)dirfcalcp3d__FP3P3DT0(puVar1,(undefined4 *)(iVar3 + 0x48));
 
     *(float *)(iVar2 + 200) = (float)fVar4;
 
@@ -10577,7 +10577,7 @@ void fx_spawn_checked(int param_1)
 
   }
 
-  FUN_004a7440(param_1);
+  ObjectCalculateTransform(param_1);
 
   fVar1 = *(float *)(param_1 + 0x2ac);
 

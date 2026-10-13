@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (32 named) — decompiled, names from PS2 symbols
+ * 53 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -162,12 +162,14 @@ int ai_spread_select(undefined4 param_1,float *param_2,float *param_3,float para
 
 }
 
-/* ===== FUN_00465230 @ 0x00465230 ===== */
+/* ===== ChooseAnim__FP6OBJECTT0PfP10T_AnimInfoUi @ 0x00465230 ===== */
 /* PS2 candidate: ChooseAnim__FP6OBJECTT0PfP10T_AnimInfoUi (conf 0.504) */
 
 
 
-int FUN_00465230(float param_1,undefined4 param_2,float *param_3,int *param_4,uint param_5)
+int ChooseAnim__FP6OBJECTT0PfP10T_AnimInfoUi
+
+              (float param_1,undefined4 param_2,float *param_3,int *param_4,uint param_5)
 
 
 
@@ -1623,7 +1625,7 @@ void FUN_004699e0(int param_1)
 
   *(int *)(param_1 + 0x274) = DAT_00632a88;
 
-  fVar4 = (float10)FUN_0050a400(param_1 + 0xa0,iVar2 + 0xa0);
+  fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar2 + 0xa0);
 
   fVar5 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)(param_1 + 200));
 
@@ -2754,7 +2756,7 @@ void Init__7PS2Game(undefined4 param_1,undefined4 param_2)
 
   FUN_004993c0(param_1,param_2);
 
-  FUN_004a7440(param_1);
+  ObjectCalculateTransform(param_1);
 
   FUN_0049a1f0(param_1);
 
@@ -2896,7 +2898,7 @@ int object_spawn_init_usage(undefined4 param_1,undefined4 param_2,undefined4 *pa
 
   FUN_004993c0(iVar1,param_2);
 
-  FUN_004a7440(iVar1);
+  ObjectCalculateTransform(iVar1);
 
   FUN_0049a1f0(iVar1);
 
@@ -2949,7 +2951,7 @@ int kbos_offspring_create(undefined4 param_1)
 
     FUN_004993c0(iVar1,param_1);
 
-    FUN_004a7440(iVar1);
+    ObjectCalculateTransform(iVar1);
 
     FUN_0049a1f0(iVar1);
 
@@ -3141,7 +3143,7 @@ undefined4 FUN_0046b850(int param_1)
 
      (*(int *)(*(int *)(param_1 + 0x100) + 0x80) == 0)) {
 
-    fVar2 = (float10)FUN_0050a400(param_1 + 0xa0,DAT_00632a88 + 0xa0);
+    fVar2 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,DAT_00632a88 + 0xa0);
 
     puVar1 = *(uint **)(param_1 + 0x100);
 
@@ -3429,7 +3431,7 @@ undefined4 FUN_0046bc60(float param_1,int *param_2)
 
         if ((*(int *)(iVar5 + 4) != 0x30) || (*(int *)(iVar5 + 0x3c) < 0xb41)) {
 
-          fVar7 = (float10)FUN_0050a400((int)fVar4 + 0xa0,iVar6 + 0xa0);
+          fVar7 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar4 + 0xa0,iVar6 + 0xa0);
 
           param_1 = (float)fVar7;
 
@@ -3768,7 +3770,7 @@ int object_0046e830(int param_1,int param_2)
 
                *(undefined4 *)(iVar2 + 0x2c4));
 
-  FUN_004a7440(iVar2);
+  ObjectCalculateTransform(iVar2);
 
   FUN_0049a1f0(iVar2);
 
@@ -5038,7 +5040,7 @@ LAB_00470010:
 
     puVar2[0x10] = *(uint *)(param_1 + 0xa8);
 
-    FUN_004a7440(param_1);
+    ObjectCalculateTransform(param_1);
 
     puVar2[0x11] = (uint)-*(float *)(param_1 + 0x29c);
 

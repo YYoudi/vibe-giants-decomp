@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (75 named) — decompiled, names from PS2 symbols
+ * 131 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3658,7 +3658,7 @@ void FUN_004a4360(int param_1)
 
     }
 
-    FUN_004a7440(param_1);
+    ObjectCalculateTransform(param_1);
 
   }
 
@@ -4079,7 +4079,7 @@ void FUN_004a48a0(float param_1)
 
     local_28 = (float)fVar6;
 
-    fVar6 = (float10)FUN_0050a400(pfVar1,*(int *)((int)fVar4 + 0x274) + 0xa0);
+    fVar6 = (float10)dirfcalcp3d__FP3P3DT0(pfVar1,*(int *)((int)fVar4 + 0x274) + 0xa0);
 
     local_24 = (float)fVar6;
 
@@ -6809,12 +6809,12 @@ void FUN_004a7400(int param_1)
 
 }
 
-/* ===== FUN_004a7440 @ 0x004A7440 ===== */
+/* ===== ObjectCalculateTransform @ 0x004A7440 ===== */
 /* PS2 candidate: ObjectCalculateTransform (conf 0.497) */
 
 
 
-void FUN_004a7440(int param_1)
+void ObjectCalculateTransform(int param_1)
 
 
 
@@ -7533,12 +7533,12 @@ undefined4 IconDefAmmoIcon(int param_1)
 
 }
 
-/* ===== FUN_004a9040 @ 0x004A9040 ===== */
+/* ===== IconDefProjectile @ 0x004A9040 ===== */
 /* PS2 candidate: IconDefProjectile (conf 0.507) */
 
 
 
-undefined4 FUN_004a9040(int param_1)
+undefined4 IconDefProjectile(int param_1)
 
 
 
@@ -9345,7 +9345,7 @@ int FUN_004aa0b0(int param_1,undefined4 param_2)
 
   *(uint *)(iVar2 + 0x1c8) = *(uint *)(iVar2 + 0x1c8) | 0x600;
 
-  FUN_004a7440(iVar2);
+  ObjectCalculateTransform(iVar2);
 
   puVar1 = *(uint **)(iVar2 + 0x100);
 
@@ -10590,12 +10590,12 @@ LAB_004ac24a:
 
 }
 
-/* ===== FUN_004ac4b0 @ 0x004AC4B0 ===== */
+/* ===== face_target @ 0x004AC4B0 ===== */
 /* PS2 candidate: face_target (conf 0.504) */
 
 
 
-void FUN_004ac4b0(int param_1,float *param_2,int param_3,float param_4,float param_5)
+void face_target(int param_1,float *param_2,int param_3,float param_4,float param_5)
 
 
 
@@ -10647,9 +10647,9 @@ void FUN_004ac4b0(int param_1,float *param_2,int param_3,float param_4,float par
 
   }
 
-  FUN_0053e960(&local_12c,&local_12c);
+  GEO_Vec3Normalize(&local_12c,&local_12c);
 
-  FUN_0053e960(&local_138,&local_138);
+  GEO_Vec3Normalize(&local_138,&local_138);
 
   FUN_00516290(&local_12c,&local_138);
 
@@ -10762,7 +10762,7 @@ void align_with_ground(int param_1,float *param_2,float param_3)
 
   local_130 = local_e4;
 
-  FUN_0053e960(&local_138,&local_138);
+  GEO_Vec3Normalize(&local_138,&local_138);
 
   FUN_0053fb40(local_120,&local_138,&local_12c,local_13c);
 

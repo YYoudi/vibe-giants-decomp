@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (44 named) — decompiled, names from PS2 symbols
+ * 87 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -741,7 +741,7 @@ void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
 
   }
 
-  FUN_004a7440(param_2);
+  ObjectCalculateTransform(param_2);
 
   BinFileCreateWrite_2(param_2);
 
@@ -2672,7 +2672,9 @@ LAB_0050203c:
 
               iVar5 = *(int *)((int)aiStack_180 + iVar11);
 
-              fVar15 = (float10)FUN_0050a400((float *)(iVar5 + 0xa0),(int)fStack_19c + 0xa0);
+              fVar15 = (float10)dirfcalcp3d__FP3P3DT0
+
+                                          ((float *)(iVar5 + 0xa0),(int)fStack_19c + 0xa0);
 
               sine_cos_lookup((float)fVar15 + 180.0,&fStack_184,&fStack_188);
 
@@ -3164,7 +3166,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     }
 
-    fVar11 = (float10)FUN_0050a400(iVar10,&DAT_005a86fc + param_2 * 3);
+    fVar11 = (float10)dirfcalcp3d__FP3P3DT0(iVar10,&DAT_005a86fc + param_2 * 3);
 
     (&DAT_005a87f0)[param_2] = (float)fVar11;
 
@@ -3312,7 +3314,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
   pfVar2 = (float *)(iVar5 + 0xa0);
 
-  fVar11 = (float10)FUN_0050a400(pfVar2,puVar1);
+  fVar11 = (float10)dirfcalcp3d__FP3P3DT0(pfVar2,puVar1);
 
   fVar3 = (float)fVar11;
 
@@ -3472,7 +3474,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     local_8 = *(float *)(iVar5 + 0xa4) - local_2c * *(float *)(iVar5 + 0x10c) * local_24;
 
-    fVar12 = (float10)FUN_0050a400(puVar1,&local_c);
+    fVar12 = (float10)dirfcalcp3d__FP3P3DT0(puVar1,&local_c);
 
     (&DAT_005a87f0)[param_2] = (float)fVar12;
 
@@ -3566,7 +3568,7 @@ LAB_00502fdd:
 
     local_8 = *(float *)(iVar5 + 0xa4) - local_2c * *(float *)(iVar5 + 0x10c) * local_24;
 
-    fVar12 = (float10)FUN_0050a400(puVar1,&local_c);
+    fVar12 = (float10)dirfcalcp3d__FP3P3DT0(puVar1,&local_c);
 
     (&DAT_005a87f0)[param_2] = (float)fVar12;
 
@@ -4059,7 +4061,7 @@ void FUN_005035c0(undefined4 param_1,int param_2)
 
       }
 
-      fVar12 = (float10)FUN_0050a400(iVar10,&DAT_005a86fc + param_2 * 3);
+      fVar12 = (float10)dirfcalcp3d__FP3P3DT0(iVar10,&DAT_005a86fc + param_2 * 3);
 
       (&DAT_005a87f0)[param_2] = (float)fVar12;
 
@@ -4184,7 +4186,7 @@ void teammecc_set_slave_goal__FP6OBJECTi(int param_1,int param_2)
 
       if (fVar6 < (float10)0.0) {
 
-        FUN_00480150(iVar2);
+        mecc_exit_bush(iVar2);
 
       }
 
@@ -4675,7 +4677,7 @@ LAB_00504094:
 
     if (!bVar3) goto LAB_00504212;
 
-    fVar6 = (float10)FUN_0050a400(&local_c,&local_30);
+    fVar6 = (float10)dirfcalcp3d__FP3P3DT0(&local_c,&local_30);
 
     (&DAT_005a87f0)[param_2] = (float)fVar6;
 
@@ -7469,7 +7471,7 @@ LAB_00506a69:
 
               uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
-              iVar7 = FUN_00458300(param_1,10,uVar13);
+              iVar7 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar13);
 
               if ((iVar7 != 0) && (*(int *)(iVar7 + 0x1e0) == 0x4d)) {
 
@@ -7491,7 +7493,7 @@ LAB_005065cf:
 
                 uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
-                iVar7 = FUN_00458300(param_1,10,uVar13);
+                iVar7 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar13);
 
                 if (iVar7 != 0) {
 
@@ -7509,7 +7511,7 @@ LAB_005065cf:
 
                 uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
-                iVar7 = FUN_00458300(param_1,1,uVar13);
+                iVar7 = player_find_weapon_obj_type__FP6OBJECTii(param_1,1,uVar13);
 
                 if (iVar7 != 0) {
 
@@ -7677,7 +7679,7 @@ LAB_00506418:
 
               uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
-              iVar7 = FUN_00458300(param_1,10,uVar13);
+              iVar7 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar13);
 
               if (iVar7 != 0) {
 
@@ -7697,7 +7699,7 @@ LAB_00506418:
 
               uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
-              iVar7 = FUN_00458300(param_1,0,uVar13);
+              iVar7 = player_find_weapon_obj_type__FP6OBJECTii(param_1,0,uVar13);
 
               if (iVar7 != 0) {
 
@@ -9131,7 +9133,7 @@ void FUN_005093e0(float param_1)
 
       fVar5 = (float10)FUN_004d5760(0x42960000);
 
-      fVar6 = (float10)FUN_0050a400(iVar4 + 0xa0,iVar2 + 0xa0);
+      fVar6 = (float10)dirfcalcp3d__FP3P3DT0(iVar4 + 0xa0,iVar2 + 0xa0);
 
       sine_cos_lookup((float)((float10)*(float *)(DAT_00632ed8 + 0x32c) + fVar6),&local_8,&local_4);
 
@@ -9989,12 +9991,12 @@ float10 FUN_0050a390(float param_1,float param_2)
 
 }
 
-/* ===== FUN_0050a400 @ 0x0050A400 ===== */
+/* ===== dirfcalcp3d__FP3P3DT0 @ 0x0050A400 ===== */
 /* PS2 candidate: dirfcalcp3d__FP3P3DT0 (conf 0.503) */
 
 
 
-float10 FUN_0050a400(float *param_1,float *param_2)
+float10 dirfcalcp3d__FP3P3DT0(float *param_1,float *param_2)
 
 
 
@@ -12010,7 +12012,7 @@ LAB_0050d177:
 
         *(undefined4 *)((int)param_1 + 0xe4) = 0x1e;
 
-        fVar13 = (float10)FUN_0050a400((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
+        fVar13 = (float10)dirfcalcp3d__FP3P3DT0((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
 
         fVar7 = (float)((float10)270.0 + fVar13);
 
@@ -12068,7 +12070,7 @@ switchD_0050ca70_caseD_15:
 
     }
 
-    fVar13 = (float10)FUN_0050a400((int)pfVar1[1] + 0xa0,(int)param_1 + 0xa0);
+    fVar13 = (float10)dirfcalcp3d__FP3P3DT0((int)pfVar1[1] + 0xa0,(int)param_1 + 0xa0);
 
     fVar4 = pfVar1[7];
 
@@ -12246,7 +12248,7 @@ switchD_0050ca70_caseD_15:
 
     }
 
-    fVar13 = (float10)FUN_0050a400((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
+    fVar13 = (float10)dirfcalcp3d__FP3P3DT0((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
@@ -12414,7 +12416,7 @@ switchD_0050ca70_caseD_15:
 
         if (iVar9 == 0) {
 
-          FUN_0050a400((int)pfVar1[1] + 0xa0,(float *)((int)param_1 + 0xa0));
+          dirfcalcp3d__FP3P3DT0((int)pfVar1[1] + 0xa0,(float *)((int)param_1 + 0xa0));
 
           fVar13 = (float10)rndfloatrange((*(float *)((int)param_1 + 200) + 180.0) - 100.0,
 
@@ -12672,7 +12674,7 @@ switchD_0050ca70_caseD_15:
 
     }
 
-    fVar13 = (float10)FUN_0050a400((int)pfVar1[1] + 0xa0,(int)param_1 + 0xa0);
+    fVar13 = (float10)dirfcalcp3d__FP3P3DT0((int)pfVar1[1] + 0xa0,(int)param_1 + 0xa0);
 
     if ((*(byte *)((int)param_1 + 0xe0) & 8) == 0) {
 
@@ -12694,7 +12696,7 @@ switchD_0050ca70_caseD_15:
 
     pfVar1[4] = *(float *)((int)param_1 + 0xa8);
 
-    fVar13 = (float10)FUN_0050a400((int)param_1 + 0xa0,pfVar1 + 2);
+    fVar13 = (float10)dirfcalcp3d__FP3P3DT0((int)param_1 + 0xa0,pfVar1 + 2);
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
@@ -13252,7 +13254,7 @@ LAB_0050e133:
 
       if (fVar13 <= (float10)640000.0) {
 
-        fVar13 = (float10)FUN_0050a400(DAT_00632a88 + 0xa0,iVar6);
+        fVar13 = (float10)dirfcalcp3d__FP3P3DT0(DAT_00632a88 + 0xa0,iVar6);
 
         sine_cos_lookup((float)(fVar13 + (float10)40.0),&local_18,&local_14);
 
@@ -13320,7 +13322,7 @@ LAB_0050e133:
 
         }
 
-        fVar13 = (float10)FUN_0050a400(iVar6,pfVar1 + 2);
+        fVar13 = (float10)dirfcalcp3d__FP3P3DT0(iVar6,pfVar1 + 2);
 
         *(undefined1 *)((int)param_1 + 0x208) = 0;
 
@@ -13500,7 +13502,7 @@ LAB_0050e133:
 
     }
 
-    fVar13 = (float10)FUN_0050a400((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
+    fVar13 = (float10)dirfcalcp3d__FP3P3DT0((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
@@ -13942,7 +13944,7 @@ LAB_0050e4da:
 
       *(undefined4 *)(iVar9 + 0x180) = *(undefined4 *)(iVar9 + 0xa8);
 
-      fVar13 = (float10)FUN_0050a400(DAT_00632a88 + 0xa0,(undefined4 *)(iVar9 + 0xa0));
+      fVar13 = (float10)dirfcalcp3d__FP3P3DT0(DAT_00632a88 + 0xa0,(undefined4 *)(iVar9 + 0xa0));
 
       *(float *)((int)param_1 + 200) = (float)fVar13;
 
