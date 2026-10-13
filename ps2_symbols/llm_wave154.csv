@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00435f30,FUN_00435f30,,input_device_poll,0.9,llm-w154,DInput vtable poll callers FLK_FlickRender
+00531340,FUN_00531340,,comm_packet_send,0.9,llm-w154,critsec buffer write sibling of cmd char
+00489ca0,FUN_00489ca0,,reaper_weapon_name_lookup,0.9,llm-w154,name compare loop caller reaper_logic
+00458bf0,FUN_00458bf0,,teammate_copy_weapons,0.9,llm-w154,0x17c array copy class-2 pair
+0053fd40,FUN_0053fd40,,map_struct_finit,0.9,llm-w154,PtrFix+MemGroupFixPtrs family
+0052ddf0,FUN_0052ddf0,,comm_socket_send_loop,0.9,llm-w154,SOCKET+sockaddr sibling of recv_loop

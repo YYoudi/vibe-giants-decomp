@@ -539,7 +539,7 @@ void FUN_00540530(int param_1,code *param_2,undefined4 param_3)
 
   }
 
-  FUN_0053fd40(*puVar1,&DAT_00580ccc,param_3);
+  map_struct_finit(*puVar1,&DAT_00580ccc,param_3);
 
   iVar3 = 0;
 

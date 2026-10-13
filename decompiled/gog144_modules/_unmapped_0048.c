@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (52 named) — decompiled, names from PS2 symbols
+ * 74 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -7668,8 +7668,8 @@ LAB_00489916:
 
 }
 
-/* ===== FUN_00489ca0 @ 0x00489CA0 ===== */
-void FUN_00489ca0(void)
+/* ===== reaper_weapon_name_lookup @ 0x00489CA0 ===== */
+void reaper_weapon_name_lookup(void)
 
 
 

@@ -2155,9 +2155,9 @@
   "len": 1876
  },
  "0x00435F30": {
-  "name": "FUN_00435f30",
-  "named": false,
-  "len": 1450
+  "name": "input_device_poll",
+  "named": true,
+  "len": 1455
  },
  "0x00435FD0": {
   "name": "FUN_00435fd0",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19117
+  "len": 19122
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -3365,9 +3365,9 @@
   "len": 2669
  },
  "0x00458BF0": {
-  "name": "FUN_00458bf0",
-  "named": false,
-  "len": 959
+  "name": "teammate_copy_weapons",
+  "named": true,
+  "len": 968
  },
  "0x00458C90": {
   "name": "FUN_00458c90",
@@ -4500,9 +4500,9 @@
   "len": 4726
  },
  "0x00489CA0": {
-  "name": "FUN_00489ca0",
-  "named": false,
-  "len": 688
+  "name": "reaper_weapon_name_lookup",
+  "named": true,
+  "len": 701
  },
  "0x00489D40": {
   "name": "FUN_00489D40",
@@ -5047,7 +5047,7 @@
  "0x00497A50": {
   "name": "object_copy_activedata",
   "named": true,
-  "len": 2479
+  "len": 2488
  },
  "0x00497BD0": {
   "name": "objobj_type_lookup",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14460
+  "len": 14465
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7527,7 +7527,7 @@
  "0x004EE670": {
   "name": "reaper_logic",
   "named": true,
-  "len": 2042
+  "len": 2055
  },
  "0x004EE800": {
   "name": "FUN_004EE800",
@@ -9887,7 +9887,7 @@
  "0x0052D5B0": {
   "name": "comm_socket_recv_loop",
   "named": true,
-  "len": 7931
+  "len": 7958
  },
  "0x0052DAA0": {
   "name": "gamespy_0052daa0",
@@ -9910,9 +9910,9 @@
   "len": 1620
  },
  "0x0052DDF0": {
-  "name": "FUN_0052ddf0",
-  "named": false,
-  "len": 1750
+  "name": "comm_socket_send_loop",
+  "named": true,
+  "len": 1759
  },
  "0x0052DE90": {
   "name": "comm_socket_sendto",
@@ -10245,9 +10245,9 @@
   "len": 703
  },
  "0x00531340": {
-  "name": "FUN_00531340",
-  "named": false,
-  "len": 884
+  "name": "comm_packet_send",
+  "named": true,
+  "len": 888
  },
  "0x005313E0": {
   "name": "FUN_005313e0",
@@ -11075,9 +11075,9 @@
   "len": 579
  },
  "0x0053FD40": {
-  "name": "FUN_0053fd40",
-  "named": false,
-  "len": 923
+  "name": "map_struct_finit",
+  "named": true,
+  "len": 927
  },
  "0x0053FDE0": {
   "name": "MAP_MappingGet",
@@ -11197,7 +11197,7 @@
  "0x00540530": {
   "name": "FUN_00540530",
   "named": false,
-  "len": 680
+  "len": 684
  },
  "0x005405C0": {
   "name": "cpu_vendor_detect",

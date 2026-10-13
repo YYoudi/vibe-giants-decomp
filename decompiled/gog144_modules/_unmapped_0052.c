@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (105 named) — decompiled, names from PS2 symbols
+ * 162 functions (106 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -10239,15 +10239,15 @@ void comm_socket_recv_loop(SOCKET *param_1)
 
                 FUN_0052e030(param_1,&local_8a4,&local_67c);
 
-                FUN_0052ddf0(param_1,&local_8a4,&local_67c);
+                comm_socket_send_loop(param_1,&local_8a4,&local_67c);
 
                 FUN_0052e0a0(param_1,&local_8a4,&local_67c);
 
-                FUN_0052ddf0(param_1,&local_8a4,&local_67c);
+                comm_socket_send_loop(param_1,&local_8a4,&local_67c);
 
                 FUN_0052e110(param_1,&local_8a4,&local_67c);
 
-                FUN_0052ddf0(param_1,&local_8a4,&local_67c);
+                comm_socket_send_loop(param_1,&local_8a4,&local_67c);
 
                 FUN_0052e180(param_1,&local_8a4,&local_67c);
 
@@ -10675,8 +10675,8 @@ void comm_packet_decode(int param_1,int param_2,int param_3,int param_4)
 
 }
 
-/* ===== FUN_0052ddf0 @ 0x0052DDF0 ===== */
-void FUN_0052ddf0(SOCKET *param_1,sockaddr *param_2,char *param_3)
+/* ===== comm_socket_send_loop @ 0x0052DDF0 ===== */
+void comm_socket_send_loop(SOCKET *param_1,sockaddr *param_2,char *param_3)
 
 
 

@@ -7940,7 +7940,7 @@ void object_copy_activedata(int param_1,int param_2)
 
   } while (param_2 != 0);
 
-  FUN_00458bf0(param_1,iVar1);
+  teammate_copy_weapons(param_1,iVar1);
 
   return;
 

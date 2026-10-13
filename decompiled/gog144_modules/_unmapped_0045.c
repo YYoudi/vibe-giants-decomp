@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (100 named) — decompiled, names from PS2 symbols
+ * 145 functions (101 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -8011,8 +8011,8 @@ void TeamMemberClearWeapons__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_00458bf0 @ 0x00458BF0 ===== */
-void FUN_00458bf0(int param_1,int param_2)
+/* ===== teammate_copy_weapons @ 0x00458BF0 ===== */
+void teammate_copy_weapons(int param_1,int param_2)
 
 
 

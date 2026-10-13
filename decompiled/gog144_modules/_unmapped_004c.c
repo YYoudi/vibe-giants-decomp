@@ -8605,7 +8605,7 @@ undefined4 dev_debug_flags(void)
 
     audio_stream_tied();
 
-    FUN_00435f30();
+    input_device_poll();
 
     iVar5 = AudioGetMasterVolume__Fv();
 

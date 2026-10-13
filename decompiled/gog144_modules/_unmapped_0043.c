@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (62 named) — decompiled, names from PS2 symbols
+ * 74 functions (63 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -3638,8 +3638,8 @@ void dlog_frame_reset(void)
 
 }
 
-/* ===== FUN_00435f30 @ 0x00435F30 ===== */
-void FUN_00435f30(void)
+/* ===== input_device_poll @ 0x00435F30 ===== */
+void input_device_poll(void)
 
 
 

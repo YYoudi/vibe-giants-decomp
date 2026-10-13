@@ -3986,7 +3986,7 @@ LAB_00444d25:
 
   piVar8 = *(int **)(param_1 + 0xa0);
 
-  FUN_00435f30();
+  input_device_poll();
 
   if (iVar12 != 0) {
 

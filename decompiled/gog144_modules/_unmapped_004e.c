@@ -10928,7 +10928,7 @@ void reaper_logic(int param_1)
 
   read_worlds_bin_fn_PS2();
 
-  FUN_00489ca0();
+  reaper_weapon_name_lookup();
 
   savegame_verify_user();
 
