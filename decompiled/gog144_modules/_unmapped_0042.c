@@ -9461,8 +9461,8 @@ undefined4 main_dlog_00427310(undefined4 *param_1)
 
 }
 
-/* ===== dlog_00427570 @ 0x00427570 ===== */
-void dlog_00427570(undefined4 param_1,float param_2)
+/* ===== dlog_numeric_field @ 0x00427570 ===== */
+void dlog_numeric_field(undefined4 param_1,float param_2)
 
 
 

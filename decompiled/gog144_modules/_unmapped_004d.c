@@ -189,7 +189,7 @@ LAB_004d1921:
 
                        *(float *)(iVar2 + 0xa8);
 
-            iVar3 = FUN_004ef070(&local_c,&local_18,2,&DAT_00561374,0);
+            iVar3 = ai_class_filter(&local_c,&local_18,2,&DAT_00561374,0);
 
             if (iVar3 == 0) goto LAB_004d19ce;
 

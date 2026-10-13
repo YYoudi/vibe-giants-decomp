@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (36 named) — decompiled, names from PS2 symbols
+ * 94 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -2278,7 +2278,7 @@ LAB_004e33e5:
 
       }
 
-      iVar3 = FUN_004ef070(&local_c,&local_18,uVar7,&DAT_00561478,0);
+      iVar3 = ai_class_filter(&local_c,&local_18,uVar7,&DAT_00561478,0);
 
       if (iVar3 == 0) goto LAB_004e33e5;
 
@@ -2458,13 +2458,13 @@ undefined4 FUN_004e3530(int param_1,int param_2)
 
         _DAT_00561494 = *(undefined4 *)(*(int *)(param_1 + 0x210) + 4);
 
-        uVar2 = FUN_004ef070(&local_c,&local_18,8,&DAT_00561478,0);
+        uVar2 = ai_class_filter(&local_c,&local_18,8,&DAT_00561478,0);
 
         return uVar2;
 
       }
 
-      uVar2 = FUN_004ef070(&local_c,&local_18,7,&DAT_00561478,0);
+      uVar2 = ai_class_filter(&local_c,&local_18,7,&DAT_00561478,0);
 
       return uVar2;
 
@@ -2539,13 +2539,13 @@ undefined4 FUN_004e3620(float param_1,float param_2,int param_3,int param_4)
 
         _DAT_00561494 = *(undefined4 *)(*(int *)(param_3 + 0x210) + 4);
 
-        uVar2 = FUN_004ef070(&local_18,&local_c,8,&DAT_00561494,0);
+        uVar2 = ai_class_filter(&local_18,&local_c,8,&DAT_00561494,0);
 
         return uVar2;
 
       }
 
-      uVar2 = FUN_004ef070(&local_18,&local_c,7,&DAT_00561478,0);
+      uVar2 = ai_class_filter(&local_18,&local_c,7,&DAT_00561478,0);
 
       return uVar2;
 
@@ -2705,7 +2705,7 @@ void ai_radius_scan(int param_1,float param_2)
 
             }
 
-            iVar4 = FUN_004ef070(&local_c,&local_18,uVar6,&DAT_00561478,0);
+            iVar4 = ai_class_filter(&local_c,&local_18,uVar6,&DAT_00561478,0);
 
             if (iVar4 == 0) goto LAB_004e3903;
 
@@ -3034,7 +3034,7 @@ LAB_004e3ad2:
 
               }
 
-              uVar8 = FUN_004ef070(&local_c,&local_18,uVar10,&DAT_00561478,0);
+              uVar8 = ai_class_filter(&local_c,&local_18,uVar10,&DAT_00561478,0);
 
 LAB_004e3e3c:
 
@@ -5556,7 +5556,7 @@ LAB_004e6651:
 
               }
 
-              iVar9 = FUN_004ef070(&local_c,&local_18,uVar12,&DAT_00561478,0);
+              iVar9 = ai_class_filter(&local_c,&local_18,uVar12,&DAT_00561478,0);
 
               if (iVar9 == 0) goto LAB_004e647b;
 
@@ -5781,7 +5781,7 @@ LAB_004e6792:
 
       }
 
-      iVar5 = FUN_004ef070(&local_c,&local_18,uVar8,&DAT_00561478,0);
+      iVar5 = ai_class_filter(&local_c,&local_18,uVar8,&DAT_00561478,0);
 
       if (iVar5 == 0) goto LAB_004e6792;
 
@@ -7563,7 +7563,7 @@ void FUN_004ea350(int param_1,int param_2)
 
   local_10 = *(float *)(param_2 + 0x1e8) * *(float *)(param_2 + 0xc4) + *(float *)(param_2 + 0xa8);
 
-  FUN_004ef070(&local_c,&local_18,7,&DAT_00561478,0);
+  ai_class_filter(&local_c,&local_18,7,&DAT_00561478,0);
 
   return;
 
@@ -9414,12 +9414,12 @@ undefined4 mission_marker_rect_check(void)
 
 }
 
-/* ===== FUN_004ebe10 @ 0x004EBE10 ===== */
+/* ===== mission_marker_clamp @ 0x004EBE10 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 
 
-undefined4 FUN_004ebe10(float *param_1,float *param_2,float *param_3)
+undefined4 mission_marker_clamp(float *param_1,float *param_2,float *param_3)
 
 
 
@@ -9570,7 +9570,7 @@ undefined4 mission_marker_pos_check(int param_1,undefined4 param_2,float *param_
 
         param_3[1] = ((float)iVar6 + 0.5) * fVar1 + fVar2;
 
-        iVar7 = FUN_004ebe10(uVar4,param_2,param_3);
+        iVar7 = mission_marker_clamp(uVar4,param_2,param_3);
 
         iVar10 = DAT_006330e4;
 
@@ -9598,7 +9598,7 @@ undefined4 mission_marker_pos_check(int param_1,undefined4 param_2,float *param_
 
         param_3[1] = ((float)iVar6 + 0.5) * fVar1 + fVar2;
 
-        iVar7 = FUN_004ebe10(uVar4,param_2,param_3);
+        iVar7 = mission_marker_clamp(uVar4,param_2,param_3);
 
         iVar10 = DAT_006330e4;
 
@@ -9624,7 +9624,7 @@ undefined4 mission_marker_pos_check(int param_1,undefined4 param_2,float *param_
 
         param_3[1] = ((float)param_1 + 0.5) * fVar1 + fVar2;
 
-        iVar7 = FUN_004ebe10(uVar4,param_2,param_3);
+        iVar7 = mission_marker_clamp(uVar4,param_2,param_3);
 
         iVar10 = DAT_006330e4;
 
@@ -9650,7 +9650,7 @@ undefined4 mission_marker_pos_check(int param_1,undefined4 param_2,float *param_
 
         param_3[1] = ((float)local_14 + 0.5) * fVar1 + fVar2;
 
-        iVar7 = FUN_004ebe10(uVar4,param_2,param_3);
+        iVar7 = mission_marker_clamp(uVar4,param_2,param_3);
 
         iVar10 = DAT_006330e4;
 
@@ -11686,8 +11686,10 @@ LAB_004eeeb2:
 
 }
 
-/* ===== FUN_004ef070 @ 0x004EF070 ===== */
-undefined4 FUN_004ef070(undefined4 param_1,undefined4 param_2,int param_3,int param_4,byte param_5)
+/* ===== ai_class_filter @ 0x004EF070 ===== */
+undefined4
+
+ai_class_filter(undefined4 param_1,undefined4 param_2,int param_3,int param_4,byte param_5)
 
 
 

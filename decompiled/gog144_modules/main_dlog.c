@@ -313,7 +313,7 @@ void main_dlog_004273b0(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3[0xd] = 0;
 
-  dlog_00427570(param_1,puVar3);
+  dlog_numeric_field(param_1,puVar3);
 
   return;
 
@@ -412,7 +412,7 @@ void main_dlog_00427490(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3[0xd] = param_7;
 
-  dlog_00427570(param_1,puVar3);
+  dlog_numeric_field(param_1,puVar3);
 
   return;
 
@@ -457,7 +457,7 @@ void main_dlog_00427790(int *param_1,int param_2,int param_3)
 
       piVar1[10] = param_3;
 
-      dlog_00427570(param_1,piVar1);
+      dlog_numeric_field(param_1,piVar1);
 
     }
 
@@ -506,7 +506,7 @@ void main_dlog_004277f0(int *param_1,int param_2,undefined4 param_3)
 
       MemString(8,param_3,piVar1 + 10,s_C__Giants_source_main_dlog_c_00556510,0x203);
 
-      dlog_00427570(param_1,piVar1);
+      dlog_numeric_field(param_1,piVar1);
 
     }
 
@@ -603,7 +603,7 @@ void main_dlog_00427890(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3[0xd] = 0;
 
-  dlog_00427570(param_1,puVar3);
+  dlog_numeric_field(param_1,puVar3);
 
   return;
 

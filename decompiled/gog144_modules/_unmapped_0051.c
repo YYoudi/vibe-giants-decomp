@@ -13235,7 +13235,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
   }
 
-  FUN_00540800(uVar10);
+  crt_math_dispatch_init(uVar10);
 
   DAT_005dda7c = in_stack_00000004;
 

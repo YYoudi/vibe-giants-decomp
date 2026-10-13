@@ -2,7 +2,7 @@
 
 | module | functions | named | file |
 |---|---|---|---|
-| _unmapped_0054 | 351 | 240 | _unmapped_0054.c |
+| _unmapped_0054 | 351 | 241 | _unmapped_0054.c |
 | _unmapped_0051 | 186 | 82 | _unmapped_0051.c |
 | _unmapped_0053 | 179 | 79 | _unmapped_0053.c |
 | _unmapped_0052 | 162 | 90 | _unmapped_0052.c |
@@ -12,7 +12,7 @@
 | _unmapped_0042 | 129 | 88 | _unmapped_0042.c |
 | _unmapped_0040 | 105 | 40 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 48 | _unmapped_0041.c |
-| _unmapped_004e | 94 | 36 | _unmapped_004e.c |
+| _unmapped_004e | 94 | 38 | _unmapped_004e.c |
 | _unmapped_004b | 90 | 30 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 29 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 43 | _unmapped_0044.c |

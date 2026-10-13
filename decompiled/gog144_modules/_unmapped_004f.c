@@ -4399,7 +4399,7 @@ LAB_004f9ea2:
 
                        *(float *)(iVar5 + 0xa8);
 
-            iVar7 = FUN_004ef070(&local_c,&local_18,4,&DAT_00562368,0);
+            iVar7 = ai_class_filter(&local_c,&local_18,4,&DAT_00562368,0);
 
             if (iVar7 != 0) goto LAB_004f9ea2;
 
@@ -5595,7 +5595,7 @@ void status_update_entry(float param_1)
 
     iVar3 = 1;
 
-    iVar4 = FUN_004ef070(local_c,&local_18,1,&local_30,0);
+    iVar4 = ai_class_filter(local_c,&local_18,1,&local_30,0);
 
     if ((iVar4 != 0) && (iVar4 = hud_clipcode_calc(&local_18,&param_1,&local_34), iVar4 == 0)) {
 

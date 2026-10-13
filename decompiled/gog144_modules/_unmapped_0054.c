@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (240 named) — decompiled, names from PS2 symbols
+ * 351 functions (241 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -733,8 +733,8 @@ uint cpu_feature_dispatch(void)
 
 }
 
-/* ===== FUN_00540800 @ 0x00540800 ===== */
-void FUN_00540800(int param_1)
+/* ===== crt_math_dispatch_init @ 0x00540800 ===== */
+void crt_math_dispatch_init(int param_1)
 
 
 

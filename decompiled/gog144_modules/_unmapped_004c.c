@@ -5574,7 +5574,7 @@ LAB_004caa99:
 
                            *(float *)(iVar7 + 0xa8);
 
-                iVar8 = FUN_004ef070(&local_c,&local_18,5,&DAT_005610e8,0);
+                iVar8 = ai_class_filter(&local_c,&local_18,5,&DAT_005610e8,0);
 
                 if (iVar8 != 0) goto LAB_004cab5d;
 
@@ -5843,7 +5843,7 @@ LAB_004cae37:
 
     local_10 = *(float *)(iVar4 + 0x1e8) * *(float *)(iVar4 + 0xc4) + *(float *)(iVar4 + 0xa8);
 
-    iVar4 = FUN_004ef070(&local_c,&local_18,5,&DAT_005610e8,0);
+    iVar4 = ai_class_filter(&local_c,&local_18,5,&DAT_005610e8,0);
 
     if (iVar4 == 0) goto LAB_004cae37;
 
@@ -8083,7 +8083,7 @@ void FUN_004cd5d0(void)
 
   local_28 = *(float *)(DAT_006330e4 + 0x4f68) - local_34 * 1000.0;
 
-  iVar7 = FUN_004ef070(&local_24,&local_30,0,0,1);
+  iVar7 = ai_class_filter(&local_24,&local_30,0,0,1);
 
   if (iVar7 != 0) {
 
