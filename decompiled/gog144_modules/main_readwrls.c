@@ -1437,7 +1437,7 @@ switchD_004b1431_caseD_2d:
 
       }
 
-      uVar10 = FUN_0049bd10(pfVar20);
+      uVar10 = worldanim_find(pfVar20);
 
       puVar19[0x5e] = puVar19[0x28];
 
@@ -2399,7 +2399,7 @@ switchD_004b1431_caseD_2c:
 
       }
 
-      uVar10 = FUN_0049bd10(pfVar20);
+      uVar10 = worldanim_find(pfVar20);
 
       object_change_ospec(puVar19,0x4f);
 

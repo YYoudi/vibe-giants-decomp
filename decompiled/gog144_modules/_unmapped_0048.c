@@ -1245,7 +1245,7 @@ void projectile_logic(int param_1)
 
             if (*(int *)(iVar4 + 0x210) == 0) {
 
-              iVar8 = FUN_004a63a0(param_1);
+              iVar8 = reaper_has_linked_smartie(param_1);
 
               if (iVar8 == 0) {
 

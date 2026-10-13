@@ -7068,7 +7068,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
   case 0x17:
 
-    iVar4 = FUN_004a63a0(param_1);
+    iVar4 = reaper_has_linked_smartie(param_1);
 
     if (iVar4 != 0) {
 

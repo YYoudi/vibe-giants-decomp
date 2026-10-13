@@ -777,11 +777,13 @@ void rpman_shot(float param_1)
 
       fx_get_free_effect__Fv();
 
-      FUN_00456ee0(0x31,iVar3,0,(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(DAT_00632ed8 + 0x1094),
+      line_damage_with_slope
 
-                   *(undefined4 *)(DAT_00632ed8 + 0x1098),*(undefined4 *)(DAT_00632ed8 + 0x109c),
+                (0x31,iVar3,0,(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(DAT_00632ed8 + 0x1094),
 
-                   *(undefined4 *)(DAT_00632ed8 + 0x10a0),*(undefined4 *)(iVar3 + 0x18c));
+                 *(undefined4 *)(DAT_00632ed8 + 0x1098),*(undefined4 *)(DAT_00632ed8 + 0x109c),
+
+                 *(undefined4 *)(DAT_00632ed8 + 0x10a0),*(undefined4 *)(iVar3 + 0x18c));
 
       rpman_gib__FP6OBJECTT0(iVar3,0);
 

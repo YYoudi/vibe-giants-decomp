@@ -1391,7 +1391,7 @@ void make_dust_ball(undefined4 *param_1,float param_2)
 
                   *(undefined4 *)(DAT_00632ed8 + 0x51c),iVar2 + 0x1a4,iVar2 + 0x1a8);
 
-  FUN_0049bc50(iVar2);
+  fx_anim_fallback_process(iVar2);
 
   param_2 = 0.0;
 

@@ -1341,7 +1341,7 @@ void reaper_check_enter_jet_ski__FP6OBJECT(int param_1)
 
                    fVar10 <= (float10)100.0)) && (*(int *)(iVar8 + 0x210) == 0)))) {
 
-          iVar6 = FUN_004a63a0(iVar4);
+          iVar6 = reaper_has_linked_smartie(iVar4);
 
           if (iVar6 == 0) {
 
@@ -3965,7 +3965,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
     }
 
-    iVar4 = FUN_004a63a0(iVar3);
+    iVar4 = reaper_has_linked_smartie(iVar3);
 
     if (iVar4 != 0) {
 

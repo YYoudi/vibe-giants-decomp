@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (118 named) — decompiled, names from PS2 symbols
+ * 131 functions (119 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1905,7 +1905,7 @@ void obj_bone_update(int param_1,float param_2,float param_3,undefined4 param_4,
 
     else {
 
-      FUN_0053fad0(local_98,&DAT_0055ea50,param_1 + 0x144);
+      quat_from_cross(local_98,&DAT_0055ea50,param_1 + 0x144);
 
       quat_to_matrix__FP4QUATPf(local_44,local_98);
 
@@ -5896,8 +5896,8 @@ undefined4 obj_is_pickup_53_model(int param_1)
 
 }
 
-/* ===== FUN_004a63a0 @ 0x004A63A0 ===== */
-undefined4 FUN_004a63a0(int param_1)
+/* ===== reaper_has_linked_smartie @ 0x004A63A0 ===== */
+undefined4 reaper_has_linked_smartie(int param_1)
 
 
 
@@ -11396,11 +11396,13 @@ void sound_3dpos_user(int param_1,int param_2)
 
     iVar2 = *(int *)(*(int *)(param_2 + iVar2 * 4) + 0x100);
 
-    FUN_00456ee0(0x10,param_1,0,*(int *)(param_2 + 0xc) + 0xa0,*(undefined4 *)(iVar2 + 0x90),
+    line_damage_with_slope
 
-                 *(undefined4 *)(iVar2 + 0x98),*(undefined4 *)(iVar2 + 0x8c),
+              (0x10,param_1,0,*(int *)(param_2 + 0xc) + 0xa0,*(undefined4 *)(iVar2 + 0x90),
 
-                 *(undefined4 *)(iVar2 + 0x94),*(undefined4 *)(param_1 + 0x18c));
+               *(undefined4 *)(iVar2 + 0x98),*(undefined4 *)(iVar2 + 0x8c),
+
+               *(undefined4 *)(iVar2 + 0x94),*(undefined4 *)(param_1 + 0x18c));
 
   }
 

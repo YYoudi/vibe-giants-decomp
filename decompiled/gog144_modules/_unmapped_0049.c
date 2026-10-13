@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (119 named) — decompiled, names from PS2 symbols
+ * 142 functions (121 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -12450,8 +12450,8 @@ void object_destroy_specialtype(int param_1)
 
 }
 
-/* ===== FUN_0049bc50 @ 0x0049BC50 ===== */
-void FUN_0049bc50(int param_1)
+/* ===== fx_anim_fallback_process @ 0x0049BC50 ===== */
+void fx_anim_fallback_process(int param_1)
 
 
 
@@ -12512,8 +12512,8 @@ void tracer_calc_falloff__FP6Traceri(int param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0049bd10 @ 0x0049BD10 ===== */
-int FUN_0049bd10(undefined4 param_1)
+/* ===== worldanim_find @ 0x0049BD10 ===== */
+int worldanim_find(undefined4 param_1)
 
 
 

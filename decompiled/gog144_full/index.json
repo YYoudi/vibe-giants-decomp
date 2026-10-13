@@ -2467,7 +2467,7 @@
  "0x00441D20": {
   "name": "make_dust_ball",
   "named": true,
-  "len": 1469
+  "len": 1481
  },
  "0x00442120": {
   "name": "fx_fade_compute",
@@ -3205,9 +3205,9 @@
   "len": 2019
  },
  "0x00456EE0": {
-  "name": "FUN_00456ee0",
-  "named": false,
-  "len": 428
+  "name": "line_damage_with_slope",
+  "named": true,
+  "len": 453
  },
  "0x00456F80": {
   "name": "obj_damage_apply",
@@ -4302,7 +4302,7 @@
  "0x004810D0": {
   "name": "projectile_logic",
   "named": true,
-  "len": 8579
+  "len": 8592
  },
  "0x00481630": {
   "name": "obj_swap_link",
@@ -5305,9 +5305,9 @@
   "len": 2335
  },
  "0x0049BC50": {
-  "name": "FUN_0049bc50",
-  "named": false,
-  "len": 345
+  "name": "fx_anim_fallback_process",
+  "named": true,
+  "len": 357
  },
  "0x0049BC90": {
   "name": "tracer_calc_falloff__FP6Traceri",
@@ -5315,9 +5315,9 @@
   "len": 486
  },
  "0x0049BD10": {
-  "name": "FUN_0049bd10",
-  "named": false,
-  "len": 603
+  "name": "worldanim_find",
+  "named": true,
+  "len": 605
  },
  "0x0049BD90": {
   "name": "collgrid_anim_audio_user",
@@ -5567,7 +5567,7 @@
  "0x004A26F0": {
   "name": "obj_bone_update",
   "named": true,
-  "len": 1557
+  "len": 1560
  },
  "0x004A2850": {
   "name": "PhysicsExApplyMoveControls",
@@ -5775,9 +5775,9 @@
   "len": 307
  },
  "0x004A63A0": {
-  "name": "FUN_004a63a0",
-  "named": false,
-  "len": 584
+  "name": "reaper_has_linked_smartie",
+  "named": true,
+  "len": 597
  },
  "0x004A6400": {
   "name": "voBufReset__FP5VoBuf",
@@ -6067,7 +6067,7 @@
  "0x004AD190": {
   "name": "sound_3dpos_user",
   "named": true,
-  "len": 1391
+  "len": 1413
  },
  "0x004AD7E0": {
   "name": "reapertrail_logic",
@@ -6177,7 +6177,7 @@
  "0x004B0FC0": {
   "name": "bin_load_1a0002e5",
   "named": true,
-  "len": 69974
+  "len": 69978
  },
  "0x004B42D0": {
   "name": "main_readwrls_004b42d0",
@@ -6422,7 +6422,7 @@
  "0x004B95D0": {
   "name": "reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi",
   "named": true,
-  "len": 11796
+  "len": 11809
  },
  "0x004BA1A0": {
   "name": "reaper_xhair_validate__FP6OBJECTPv",
@@ -6622,7 +6622,7 @@
  "0x004C1170": {
   "name": "reaper_check_enter_jet_ski__FP6OBJECT",
   "named": true,
-  "len": 5987
+  "len": 6000
  },
  "0x004C15F0": {
   "name": "reaper_cast_cloak_firecircle",
@@ -6732,7 +6732,7 @@
  "0x004C54D0": {
   "name": "reaper_check_enter_teleport__FP6OBJECT",
   "named": true,
-  "len": 3163
+  "len": 3176
  },
  "0x004C5810": {
   "name": "reaper_replenish_basepit_energy__FP6OBJECT",
@@ -7137,7 +7137,7 @@
  "0x004E1970": {
   "name": "rpman_shot",
   "named": true,
-  "len": 10144
+  "len": 10168
  },
  "0x004E21F0": {
   "name": "FUN_004e21f0",
@@ -7732,7 +7732,7 @@
  "0x004F8E10": {
   "name": "main_smoke_004f8e10",
   "named": true,
-  "len": 3051
+  "len": 3063
  },
  "0x004F90E0": {
   "name": "main/smoke_004f90e0",
@@ -7742,7 +7742,7 @@
  "0x004F9170": {
   "name": "main_smoke_004f9170",
   "named": true,
-  "len": 2022
+  "len": 2034
  },
  "0x004F9380": {
   "name": "ripper_medium_move__FP6OBJECT",
@@ -10790,14 +10790,14 @@
   "len": 3096
  },
  "0x0053D5E0": {
-  "name": "FUN_0053d5e0",
-  "named": false,
-  "len": 186
+  "name": "map_typed_ptr_set",
+  "named": true,
+  "len": 191
  },
  "0x0053D600": {
   "name": "nam_entry_finit",
   "named": true,
-  "len": 882
+  "len": 927
  },
  "0x0053D6B0": {
   "name": "ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix",
@@ -10817,7 +10817,7 @@
  "0x0053D8D0": {
   "name": "map_typed_alloc",
   "named": true,
-  "len": 641
+  "len": 646
  },
  "0x0053D940": {
   "name": "ObjectUpdateSpeedDist",
@@ -11030,9 +11030,9 @@
   "len": 272
  },
  "0x0053FAD0": {
-  "name": "FUN_0053fad0",
-  "named": false,
-  "len": 594
+  "name": "quat_from_cross",
+  "named": true,
+  "len": 597
  },
  "0x0053FB40": {
   "name": "vec_cross_normalize",

@@ -96,7 +96,7 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
   *(undefined4 *)(iVar3 + 0xe4) = 1;
 
-  FUN_0049bc50(param_1);
+  fx_anim_fallback_process(param_1);
 
   param_2 = 1.96182e-44;
 
@@ -227,7 +227,7 @@ void main_smoke_004f9170(int param_1)
 
   *(undefined4 *)(iVar4 + 0xe4) = 1;
 
-  FUN_0049bc50(param_1);
+  fx_anim_fallback_process(param_1);
 
   local_14 = 3;
 

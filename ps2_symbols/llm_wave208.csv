@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0049bd10,FUN_0049bd10,,worldanim_find,0.9,llm-w208,string-proven "Failed to find WorldAnim"
+004a63a0,FUN_004a63a0,,reaper_has_linked_smartie,0.9,llm-w208,type-10 grab links 3 spell callers
+00456ee0,FUN_00456ee0,,line_damage_with_slope,0.9,llm-w208,slope calc + vimp_close_damage delegate
+0049bc50,FUN_0049bc50,,fx_anim_fallback_process,0.9,llm-w208,anim fallback to 1 + animate callers smoke
+0053fad0,FUN_0053fad0,,quat_from_cross,0.9,llm-w208,cross+dot normalize w=Dot caller bone_update
+0053d5e0,FUN_0053d5e0,,map_typed_ptr_set,0.9,llm-w208,005808e0 type table single-field fixup

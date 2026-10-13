@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (127 named) — decompiled, names from PS2 symbols
+ * 145 functions (128 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -5859,10 +5859,12 @@ LAB_00456e0a:
 
 }
 
-/* ===== FUN_00456ee0 @ 0x00456EE0 ===== */
-void FUN_00456ee0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+/* ===== line_damage_with_slope @ 0x00456EE0 ===== */
+void line_damage_with_slope
 
-                 float param_5,float param_6,float param_7,float param_8,undefined4 param_9)
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+               float param_5,float param_6,float param_7,float param_8,undefined4 param_9)
 
 
 

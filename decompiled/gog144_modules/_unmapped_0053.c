@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (159 named) — decompiled, names from PS2 symbols
+ * 179 functions (161 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -16820,8 +16820,8 @@ LAB_0053d503:
 
 }
 
-/* ===== FUN_0053d5e0 @ 0x0053D5E0 ===== */
-void FUN_0053d5e0(byte *param_1)
+/* ===== map_typed_ptr_set @ 0x0053D5E0 ===== */
+void map_typed_ptr_set(byte *param_1)
 
 
 
@@ -16860,9 +16860,9 @@ void nam_entry_finit(int param_1)
 
   if (sVar1 == 2) {
 
-    FUN_0053d5e0(*(undefined4 *)(param_1 + 0x98));
+    map_typed_ptr_set(*(undefined4 *)(param_1 + 0x98));
 
-    FUN_0053d5e0(*(undefined4 *)(param_1 + 0x9c));
+    map_typed_ptr_set(*(undefined4 *)(param_1 + 0x9c));
 
     uVar2 = *(undefined4 *)(param_1 + 0xa0);
 
@@ -16872,7 +16872,7 @@ void nam_entry_finit(int param_1)
 
     if (sVar1 == 1) {
 
-      FUN_0053d5e0(*(undefined4 *)(param_1 + 0x9c));
+      map_typed_ptr_set(*(undefined4 *)(param_1 + 0x9c));
 
       goto LAB_0053d67c;
 
@@ -16880,15 +16880,15 @@ void nam_entry_finit(int param_1)
 
     if (sVar1 != 3) goto LAB_0053d67c;
 
-    FUN_0053d5e0(*(undefined4 *)(param_1 + 0x98));
+    map_typed_ptr_set(*(undefined4 *)(param_1 + 0x98));
 
-    FUN_0053d5e0(*(undefined4 *)(param_1 + 0x9c));
+    map_typed_ptr_set(*(undefined4 *)(param_1 + 0x9c));
 
     uVar2 = *(undefined4 *)(param_1 + 0xa0);
 
   }
 
-  FUN_0053d5e0(uVar2);
+  map_typed_ptr_set(uVar2);
 
 LAB_0053d67c:
 
@@ -16898,11 +16898,11 @@ LAB_0053d67c:
 
   }
 
-  FUN_0053d5e0(*(undefined4 *)(param_1 + 0xf8));
+  map_typed_ptr_set(*(undefined4 *)(param_1 + 0xf8));
 
-  FUN_0053d5e0(*(undefined4 *)(param_1 + 0xfc));
+  map_typed_ptr_set(*(undefined4 *)(param_1 + 0xfc));
 
-  FUN_0053d5e0();
+  map_typed_ptr_set();
 
   return;
 
@@ -17144,7 +17144,7 @@ byte * map_typed_alloc(undefined4 param_1,int param_2,byte param_3)
 
   }
 
-  FUN_0053d5e0(pbVar2);
+  map_typed_ptr_set(pbVar2);
 
   return pbVar2;
 
@@ -20248,8 +20248,8 @@ void GEO_QuatDivide(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0053fad0 @ 0x0053FAD0 ===== */
-void FUN_0053fad0(float *param_1,undefined4 param_2,undefined4 param_3)
+/* ===== quat_from_cross @ 0x0053FAD0 ===== */
+void quat_from_cross(float *param_1,undefined4 param_2,undefined4 param_3)
 
 
 
