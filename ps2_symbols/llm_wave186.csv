@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00458cb0,FUN_00458cb0,,IconDef_wield_eq2,0.9,llm-w186,wield==N predicates callers inv fns
+00458cd0,FUN_00458cd0,,IconDef_wield_eq4,0.9,llm-w186
+00458d50,FUN_00458d50,,IconDef_wield_eq5,0.9,llm-w186
+00458d70,FUN_00458d70,,IconDef_wield_eq3,0.9,llm-w186
+00521310,FUN_00521310,,game_mode_set5_check,0.9,llm-w186,modes 6/7 callers team_assign
+00521330,FUN_00521330,,game_mode_set6_check,0.9,llm-w186,modes 4/5
+0040ce50,FUN_0040ce50,,camera_state_save,0.9,llm-w186,copy 005550b0->00584258 caller dlog_text_render
+0040ce70,FUN_0040ce70,,camera_state_restore,0.9,llm-w186,copy back caller dlog_text_pop

@@ -500,14 +500,14 @@
   "len": 1654
  },
  "0x0040CE50": {
-  "name": "FUN_0040ce50",
-  "named": false,
-  "len": 303
+  "name": "camera_state_save",
+  "named": true,
+  "len": 308
  },
  "0x0040CE70": {
-  "name": "FUN_0040ce70",
-  "named": false,
-  "len": 303
+  "name": "camera_state_restore",
+  "named": true,
+  "len": 311
  },
  "0x0040CE90": {
   "name": "camera_cursor_fire",
@@ -1102,7 +1102,7 @@
  "0x0041A980": {
   "name": "objtype_team_assign",
   "named": true,
-  "len": 3148
+  "len": 3180
  },
  "0x0041AC40": {
   "name": "FUN_0041ac40",
@@ -1342,7 +1342,7 @@
  "0x00426030": {
   "name": "comm_game_setup_big",
   "named": true,
-  "len": 5098
+  "len": 5130
  },
  "0x00426460": {
   "name": "main_dedicated_00426460",
@@ -3032,7 +3032,7 @@
  "0x00452F20": {
   "name": "IconIsAvailable__Fi",
   "named": true,
-  "len": 2725
+  "len": 2733
  },
  "0x004543C0": {
   "name": "fx_time_budget",
@@ -3375,14 +3375,14 @@
   "len": 129
  },
  "0x00458CB0": {
-  "name": "FUN_00458cb0",
-  "named": false,
-  "len": 129
+  "name": "IconDef_wield_eq2",
+  "named": true,
+  "len": 134
  },
  "0x00458CD0": {
-  "name": "FUN_00458cd0",
-  "named": false,
-  "len": 129
+  "name": "IconDef_wield_eq4",
+  "named": true,
+  "len": 134
  },
  "0x00458CF0": {
   "name": "FUN_00458cf0",
@@ -3395,29 +3395,29 @@
   "len": 239
  },
  "0x00458D50": {
-  "name": "FUN_00458d50",
-  "named": false,
-  "len": 129
+  "name": "IconDef_wield_eq5",
+  "named": true,
+  "len": 134
  },
  "0x00458D70": {
-  "name": "FUN_00458d70",
-  "named": false,
-  "len": 129
+  "name": "IconDef_wield_eq3",
+  "named": true,
+  "len": 134
  },
  "0x00459540": {
   "name": "inv_check_pickup",
   "named": true,
-  "len": 5208
+  "len": 5233
  },
  "0x00459930": {
   "name": "inv_award_item",
   "named": true,
-  "len": 7973
+  "len": 8008
  },
  "0x00459F10": {
   "name": "inv_remove_item",
   "named": true,
-  "len": 3772
+  "len": 3792
  },
  "0x0045A2B0": {
   "name": "item_get_ammo",
@@ -3457,7 +3457,7 @@
  "0x0045AE90": {
   "name": "ai_target_classify",
   "named": true,
-  "len": 1652
+  "len": 1676
  },
  "0x0045B2B0": {
   "name": "reaper_spawn_ospec_1",
@@ -3997,12 +3997,12 @@
  "0x004753C0": {
   "name": "dlog_text_render_screen",
   "named": true,
-  "len": 4090
+  "len": 4095
  },
  "0x00475700": {
   "name": "dlog_text_pop_screen",
   "named": true,
-  "len": 653
+  "len": 661
  },
  "0x004757C0": {
   "name": "screen_coord_calc",
@@ -4422,7 +4422,7 @@
  "0x00485300": {
   "name": "comm_00485300",
   "named": true,
-  "len": 2715
+  "len": 2755
  },
  "0x00485840": {
   "name": "menu_mission_list_init",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24290
+  "len": 24300
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -7657,7 +7657,7 @@
  "0x004F5410": {
   "name": "smartie_attach_to_base",
   "named": true,
-  "len": 2998
+  "len": 3006
  },
  "0x004F5630": {
   "name": "reaper_lock_pair_4f",
@@ -9360,14 +9360,14 @@
   "len": 3258
  },
  "0x00521310": {
-  "name": "FUN_00521310",
-  "named": false,
-  "len": 126
+  "name": "game_mode_set5_check",
+  "named": true,
+  "len": 134
  },
  "0x00521330": {
-  "name": "FUN_00521330",
-  "named": false,
-  "len": 126
+  "name": "game_mode_set6_check",
+  "named": true,
+  "len": 134
  },
  "0x00521350": {
   "name": "game_mode_set1_check",
@@ -10447,12 +10447,12 @@
  "0x00537400": {
   "name": "comm_wincond_destroy",
   "named": true,
-  "len": 3345
+  "len": 3353
  },
  "0x005375E0": {
   "name": "FUN_005375e0",
   "named": false,
-  "len": 19526
+  "len": 19542
  },
  "0x00538010": {
   "name": "comm_send_538010",

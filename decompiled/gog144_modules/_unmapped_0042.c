@@ -8469,11 +8469,13 @@ switchD_004260b3_caseD_1:
 
     DAT_00632f1c = game_mode_set1_check(DAT_00632f18);
 
-    iVar1 = FUN_00521330(DAT_00632f18);
+    iVar1 = game_mode_set6_check(DAT_00632f18);
 
     _Source = DAT_0058c650;
 
-    if ((iVar1 == 0) && (iVar1 = FUN_00521310(DAT_00632f18), _Source = DAT_0058c650, iVar1 == 0)) {
+    if ((iVar1 == 0) &&
+
+       (iVar1 = game_mode_set5_check(DAT_00632f18), _Source = DAT_0058c650, iVar1 == 0)) {
 
       DAT_00632ff0 = 0;
 
@@ -8715,7 +8717,7 @@ switchD_004260b3_caseD_18:
 
 switchD_004260b3_caseD_4:
 
-  iVar1 = FUN_00521330(DAT_00632f18);
+  iVar1 = game_mode_set6_check(DAT_00632f18);
 
   if (iVar1 != 0) {
 

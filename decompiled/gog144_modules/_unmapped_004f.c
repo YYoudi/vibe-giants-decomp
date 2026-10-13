@@ -1376,7 +1376,7 @@ void smartie_attach_to_base(int param_1,undefined4 param_2,undefined4 param_3)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_00521330(DAT_00632f18);
+    iVar1 = game_mode_set6_check(DAT_00632f18);
 
     if (iVar1 == 0) goto LAB_004f55b7;
 

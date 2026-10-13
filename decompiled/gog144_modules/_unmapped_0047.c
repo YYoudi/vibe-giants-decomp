@@ -2322,7 +2322,7 @@ void dlog_text_render_screen(void)
 
     _DAT_0059dbf0 = DAT_0059dca4;
 
-    FUN_0040ce50();
+    camera_state_save();
 
     cam_mode_switch(1);
 
@@ -2469,7 +2469,7 @@ void dlog_text_pop_screen(int param_1)
 
   DAT_00632bac = 0;
 
-  FUN_0040ce70();
+  camera_state_restore();
 
   FNT_StringRender__FPcP14FNT_RenderInfo(DAT_0059dc28,DAT_0059dc2c);
 

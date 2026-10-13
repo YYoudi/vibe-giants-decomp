@@ -5033,7 +5033,7 @@ void comm_00485300(void)
 
   if (((iVar4 != 0) && (iVar4 = FUN_00525120(DAT_00632f10), iVar4 != 0)) &&
 
-     (iVar4 = FUN_00521310(DAT_00632f18), iVar4 == 0)) {
+     (iVar4 = game_mode_set5_check(DAT_00632f18), iVar4 == 0)) {
 
     DAT_00632f10 = 0;
 
@@ -5059,19 +5059,19 @@ void comm_00485300(void)
 
   comm_allowjoiners_menu(DAT_00632f1c,uVar2);
 
-  iVar4 = FUN_00521330(DAT_00632f18);
+  iVar4 = game_mode_set6_check(DAT_00632f18);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_00521310(DAT_00632f18), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = game_mode_set5_check(DAT_00632f18), iVar4 == 0)) {
 
     DAT_00632ff0 = 0;
 
   }
 
-  iVar4 = FUN_00521330(DAT_00632f18);
+  iVar4 = game_mode_set6_check(DAT_00632f18);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00521310(DAT_00632f18);
+    iVar4 = game_mode_set5_check(DAT_00632f18);
 
     uVar2 = 0;
 

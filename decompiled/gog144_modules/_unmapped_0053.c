@@ -10943,7 +10943,7 @@ void comm_wincond_destroy(int param_1)
 
        (DAT_00632ff0 != 0)) &&
 
-      ((iVar4 = FUN_00521310(DAT_00632f18), iVar4 != 0 && (DAT_00632ff0 != 0)))) &&
+      ((iVar4 = game_mode_set5_check(DAT_00632f18), iVar4 != 0 && (DAT_00632ff0 != 0)))) &&
 
      (puVar3 = DAT_00632d9c, DAT_00632ff8 == 0)) {
 
@@ -11876,9 +11876,9 @@ void FUN_005375e0(void)
 
       case 4.2039e-45:
 
-        iVar3 = FUN_00521330(DAT_00632f18);
+        iVar3 = game_mode_set6_check(DAT_00632f18);
 
-        if (((iVar3 != 0) && (iVar3 = FUN_00521310(DAT_00632f18), iVar3 == 0)) &&
+        if (((iVar3 != 0) && (iVar3 = game_mode_set5_check(DAT_00632f18), iVar3 == 0)) &&
 
            (piVar7 = DAT_00632d9c, DAT_00632d9c != (int *)0x0)) {
 

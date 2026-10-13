@@ -8351,7 +8351,7 @@ void objtype_team_assign(int param_1)
 
       iVar2 = dialog_level_is_base();
 
-      if ((iVar2 != 0) && (iVar2 = FUN_00521330(DAT_00632f18), iVar2 == 0)) {
+      if ((iVar2 != 0) && (iVar2 = game_mode_set6_check(DAT_00632f18), iVar2 == 0)) {
 
         *(undefined4 *)(param_1 + 0x184) = 0x3f800000;
 
@@ -8395,7 +8395,7 @@ void objtype_team_assign(int param_1)
 
       objtype_setup_combat(param_1,0x19);
 
-      iVar1 = FUN_00521310(DAT_00632f18);
+      iVar1 = game_mode_set5_check(DAT_00632f18);
 
       if (iVar1 != 0) {
 
@@ -8429,7 +8429,7 @@ void objtype_team_assign(int param_1)
 
       iVar2 = dialog_level_is_base();
 
-      if ((iVar2 != 0) && (iVar2 = FUN_00521330(DAT_00632f18), iVar2 == 0)) {
+      if ((iVar2 != 0) && (iVar2 = game_mode_set6_check(DAT_00632f18), iVar2 == 0)) {
 
         *(undefined4 *)(param_1 + 0x184) = 0x3f800000;
 
@@ -8463,7 +8463,7 @@ void objtype_team_assign(int param_1)
 
       objtype_setup_combat(param_1,0xf);
 
-      iVar1 = FUN_00521310(DAT_00632f18);
+      iVar1 = game_mode_set5_check(DAT_00632f18);
 
       if (iVar1 != 0) {
 

@@ -3390,7 +3390,7 @@ LAB_00492a3a:
 
               if (*(int *)(iVar6 + DAT_006330e4) != 0x2c) {
 
-                iVar11 = FUN_00458d70(*(int *)(iVar6 + DAT_006330e4));
+                iVar11 = IconDef_wield_eq3(*(int *)(iVar6 + DAT_006330e4));
 
                 if (iVar11 == 0) {
 
@@ -3398,7 +3398,7 @@ LAB_00492a3a:
 
                   if (iVar11 == 0) {
 
-                    FUN_00458d50(*(undefined4 *)(iVar6 + DAT_006330e4));
+                    IconDef_wield_eq5(*(undefined4 *)(iVar6 + DAT_006330e4));
 
                   }
 

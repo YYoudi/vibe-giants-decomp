@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (87 named) — decompiled, names from PS2 symbols
+ * 105 functions (89 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -9234,8 +9234,8 @@ undefined4 obj_face_target(int param_1,int param_2,float *param_3)
 
 }
 
-/* ===== FUN_0040ce50 @ 0x0040CE50 ===== */
-void FUN_0040ce50(void)
+/* ===== camera_state_save @ 0x0040CE50 ===== */
+void camera_state_save(void)
 
 
 
@@ -9267,8 +9267,8 @@ void FUN_0040ce50(void)
 
 }
 
-/* ===== FUN_0040ce70 @ 0x0040CE70 ===== */
-void FUN_0040ce70(void)
+/* ===== camera_state_restore @ 0x0040CE70 ===== */
+void camera_state_restore(void)
 
 
 
