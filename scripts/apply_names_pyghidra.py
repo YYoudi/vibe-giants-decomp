@@ -42,6 +42,12 @@ def main():
             for r in csv.DictReader(open(csv_path, encoding="utf-8")):
                 va = norm(r["pc_addr"])
                 name = r["ps2_name"].strip()
+                if not name:
+                    # wave CSVs may put the new name in pc_name (ps2_name empty);
+                    # pc_name is otherwise the current FUN_ auto-name, never a target.
+                    cand = r.get("pc_name", "").strip()
+                    if cand and not cand.upper().startswith(("FUN_", "SUB_", "THUNK_")):
+                        name = cand
                 conf = float(r["conf"])
                 addr = af.getAddress("0x" + va)
                 fn = fm.getFunctionContaining(addr)

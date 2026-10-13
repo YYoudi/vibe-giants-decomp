@@ -3965,8 +3965,8 @@ void FUN_00436190(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== main/editor_00437fa0 @ 0x00437FA0 ===== */
-int main_editor_00437fa0(int param_1)
+/* ===== editor_cursor_pick_point @ 0x00437FA0 ===== */
+int editor_cursor_pick_point(int param_1)
 
 
 

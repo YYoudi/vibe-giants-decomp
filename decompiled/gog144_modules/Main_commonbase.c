@@ -1002,7 +1002,7 @@ LAB_004195d2:
 
       }
 
-      FUN_00480dd0();
+      mecc_drop_carried_object();
 
       return;
 

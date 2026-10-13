@@ -152,7 +152,7 @@ void FUN_004361b0(void)
 
       if (puVar15 == (undefined4 *)0x0) {
 
-        iVar10 = main_editor_00437fa0(0);
+        iVar10 = editor_cursor_pick_point(0);
 
         if (iVar10 == 0) {
 
@@ -292,7 +292,7 @@ LAB_004362a7:
 
   if (((DAT_0059cbf0 == 0) && (DAT_0059cbec == 0)) && (!bVar1)) {
 
-    iVar10 = main_editor_00437fa0(1);
+    iVar10 = editor_cursor_pick_point(1);
 
     if ((DAT_0059cbd8 == (int *)0x0) || (DAT_0059cbd8[0xe] == iVar10)) {
 
@@ -2114,7 +2114,7 @@ LAB_00437d68:
 
   }
 
-  iVar10 = main_editor_00437fa0(1);
+  iVar10 = editor_cursor_pick_point(1);
 
   if (DAT_00632ad5 == '\0') {
 
@@ -2148,7 +2148,7 @@ LAB_00437d68:
 
 LAB_0043670e:
 
-  iVar10 = main_editor_00437fa0(1);
+  iVar10 = editor_cursor_pick_point(1);
 
   piVar11 = DAT_0059cbd8;
 

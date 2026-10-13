@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (48 named) — decompiled, names from PS2 symbols
+ * 100 functions (49 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2063,7 +2063,7 @@ LAB_004135eb:
 
       }
 
-      FUN_00413b70(param_1,local_34);
+      object_snap_y_to_ground(param_1,local_34);
 
     }
 
@@ -2371,8 +2371,8 @@ undefined4 obj_slope_move(float param_1,float *param_2)
 
 }
 
-/* ===== FUN_00413b70 @ 0x00413B70 ===== */
-void FUN_00413b70(float param_1,undefined4 *param_2)
+/* ===== object_snap_y_to_ground @ 0x00413B70 ===== */
+void object_snap_y_to_ground(float param_1,undefined4 *param_2)
 
 
 

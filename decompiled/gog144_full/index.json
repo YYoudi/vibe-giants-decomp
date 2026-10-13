@@ -727,7 +727,7 @@
  "0x00412DF0": {
   "name": "FUN_00412df0",
   "named": false,
-  "len": 14063
+  "len": 14074
  },
  "0x00413820": {
   "name": "FUN_00413820",
@@ -750,9 +750,9 @@
   "len": 2153
  },
  "0x00413B70": {
-  "name": "FUN_00413b70",
-  "named": false,
-  "len": 1478
+  "name": "object_snap_y_to_ground",
+  "named": true,
+  "len": 1489
  },
  "0x00413C90": {
   "name": "obj_ground_normal",
@@ -1017,7 +1017,7 @@
  "0x00418F00": {
   "name": "main_commonbase_00418f00",
   "named": true,
-  "len": 17498
+  "len": 17510
  },
  "0x0041A090": {
   "name": "reaper_state_check_a",
@@ -2212,12 +2212,12 @@
  "0x004361B0": {
   "name": "FUN_004361b0",
   "named": false,
-  "len": 42907
+  "len": 42923
  },
  "0x00437FA0": {
-  "name": "main/editor_00437fa0",
+  "name": "editor_cursor_pick_point",
   "named": true,
-  "len": 1327
+  "len": 1331
  },
  "0x004380E0": {
   "name": "object_spawn_42",
@@ -4285,9 +4285,9 @@
   "len": 866
  },
  "0x00480DD0": {
-  "name": "FUN_00480dd0",
-  "named": false,
-  "len": 1457
+  "name": "mecc_drop_carried_object",
+  "named": true,
+  "len": 1469
  },
  "0x00480EF0": {
   "name": "FUN_00480ef0",
@@ -4395,9 +4395,9 @@
   "len": 3020
  },
  "0x004845E0": {
-  "name": "FUN_004845e0",
-  "named": false,
-  "len": 1377
+  "name": "menu_mission_select",
+  "named": true,
+  "len": 1384
  },
  "0x00484870": {
   "name": "mission_cheat_check",

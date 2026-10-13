@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (36 named) — decompiled, names from PS2 symbols
+ * 74 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -909,8 +909,8 @@ void FUN_00480d10(int param_1,int param_2,undefined4 param_3,int param_4)
 
 }
 
-/* ===== FUN_00480dd0 @ 0x00480DD0 ===== */
-void FUN_00480dd0(int param_1,int param_2)
+/* ===== mecc_drop_carried_object @ 0x00480DD0 ===== */
+void mecc_drop_carried_object(int param_1,int param_2)
 
 
 
@@ -4125,12 +4125,12 @@ void savegame_cam_section(void)
 
 }
 
-/* ===== FUN_004845e0 @ 0x004845E0 ===== */
+/* ===== menu_mission_select @ 0x004845E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004845e0(int param_1,int param_2)
+void menu_mission_select(int param_1,int param_2)
 
 
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004845e0,FUN_004845e0,,menu_mission_select,0.9,llm-w101,
+00480dd0,FUN_00480dd0,,mecc_drop_carried_object,0.9,llm-w101,
+00437fa0,FUN_00437fa0,,editor_cursor_pick_point,0.9,llm-w101,
+00413b70,FUN_00413b70,,object_snap_y_to_ground,0.9,llm-w101,
