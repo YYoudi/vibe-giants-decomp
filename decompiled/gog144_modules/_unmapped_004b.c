@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_004b
- * 95 functions (89 named) — decompiled, names from PS2 symbols
+ * 95 functions (93 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004B0900 @ 0x004B0900 ===== */
-bool FUN_004B0900(int param_1,undefined4 param_2,int param_3)
+/* ===== fx_slot_free_check @ 0x004B0900 ===== */
+bool fx_slot_free_check(int param_1,undefined4 param_2,int param_3)
 
 
 
@@ -286,7 +286,7 @@ char * world_get_nicename(int param_1)
 
       crt_sprintf(local_40,&DAT_0055bfe4,(DAT_00632d28 + iVar1 * 0x1439)[1]);
 
-      pcVar2 = (char *)FUN_00507b00(local_40);
+      pcVar2 = (char *)TextGetPtr(local_40);
 
       if (pcVar2 == local_40) {
 
@@ -374,7 +374,7 @@ void main_readwrls_004b0d80(void)
 
   if (_DAT_005a6c28 == 0) {
 
-    FUN_00425eb0(s_Failed_to_load_world_read_task__00560310);
+    savegame_slot_load(s_Failed_to_load_world_read_task__00560310);
 
     _DAT_005a6c24 = 0x3f800000;
 
@@ -588,15 +588,17 @@ void rpboat_lock_to_boat__FP6OBJECTT0(void)
 
           (iVar3 < *(int *)(iVar6 + 0x20))) || (iVar4 < *(int *)(iVar6 + 0x28))) {
 
-        uVar5 = FUN_0049a180(*(undefined4 *)(iVar1 + 0x1e0),(double)*(float *)(iVar1 + 0xa0),
+        uVar5 = objspec_get_movetype_string
 
-                             (double)*(float *)(iVar1 + 0xa4),(double)*(float *)(iVar1 + 0xa8));
+                          (*(undefined4 *)(iVar1 + 0x1e0),(double)*(float *)(iVar1 + 0xa0),
+
+                           (double)*(float *)(iVar1 + 0xa4),(double)*(float *)(iVar1 + 0xa8));
 
         crt_sprintf(auStack_88,s_Object_type__d__movetype__s__is_o_00560628,
 
                     *(undefined4 *)(iVar1 + 4),uVar5);
 
-        FUN_0051ea20(auStack_88);
+        error_msg_show(auStack_88);
 
       }
 
@@ -682,7 +684,7 @@ void reaperbase_init(int param_1)
 
   if (*piVar1 == 0) {
 
-    FUN_0051ea20(s_Obsolete_Base_placement_detected_00554e10);
+    error_msg_show(s_Obsolete_Base_placement_detected_00554e10);
 
     return;
 
@@ -1041,7 +1043,7 @@ void reaperbasebldg_move(float param_1)
 
       iVar4 = *(int *)((int)param_1 + 0x100);
 
-      fVar6 = (float10)FUN_00518b70(0,0);
+      fVar6 = (float10)FRateGetSecsframe(0,0);
 
       fVar6 = (float10)*(float *)(iVar4 + 0x14) - fVar6;
 
@@ -1461,7 +1463,7 @@ LAB_004b5148:
 
     else {
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar6 = fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xfb8) + (float10)pfVar1[2];
 
@@ -1589,7 +1591,7 @@ switchD_004b4d3a_caseD_7:
 
     else {
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar6 = fVar6 * (float10)*(float *)(DAT_00632ed8 + 0x1380) + (float10)pfVar1[2];
 
@@ -1921,7 +1923,7 @@ LAB_004b56d8:
 
       else {
 
-        uVar5 = FUN_00507b00(s_BaseChatRpPHouseDone_00560bf0,1);
+        uVar5 = TextGetPtr(s_BaseChatRpPHouseDone_00560bf0,1);
 
         chat_insert(uVar5);
 
@@ -2931,8 +2933,8 @@ code_r0x004b6504:
 
 }
 
-/* ===== cspec_004b6520 @ 0x004B6520 ===== */
-undefined4 cspec_004b6520(void)
+/* ===== ret_const_x5e0_c32 @ 0x004B6520 ===== */
+undefined4 ret_const_x5e0_c32(void)
 
 
 
@@ -2942,8 +2944,8 @@ undefined4 cspec_004b6520(void)
 
 }
 
-/* ===== cspec_004b6530 @ 0x004B6530 ===== */
-undefined4 cspec_004b6530(void)
+/* ===== ret_const_x18_c74 @ 0x004B6530 ===== */
+undefined4 ret_const_x18_c74(void)
 
 
 
@@ -3637,8 +3639,8 @@ void base_slot0_get(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004b6c00 @ 0x004B6C00 ===== */
-int FUN_004b6c00(int param_1,int *param_2)
+/* ===== smartie_house_scan @ 0x004B6C00 ===== */
+int smartie_house_scan(int param_1,int *param_2)
 
 
 
@@ -3775,8 +3777,8 @@ void food_object_flag_clear(undefined4 param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004b6d20 @ 0x004B6D20 ===== */
-int FUN_004b6d20(undefined4 param_1,int param_2)
+/* ===== smartie_house_get @ 0x004B6D20 ===== */
+int smartie_house_get(undefined4 param_1,int param_2)
 
 
 
@@ -4738,7 +4740,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
   case 0xb:
 
-    FUN_004ec1f0(param_1,param_4,param_4[3]);
+    reaper_summon_spawn(param_1,param_4,param_4[3]);
 
     return;
 
@@ -6455,8 +6457,8 @@ void reaper_item_find_slot(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004b8de0 @ 0x004B8DE0 ===== */
-void FUN_004b8de0(int param_1,int param_2,int param_3)
+/* ===== reaperbase_target_slot_clear @ 0x004B8DE0 ===== */
+void reaperbase_target_slot_clear(int param_1,int param_2,int param_3)
 
 
 
@@ -7562,7 +7564,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(DAT_00632ed8 + 0x14d8);
 
-    fVar11 = (float10)FUN_0050a610(iVar4 + 0xa0,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(iVar4 + 0xa0,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7574,7 +7576,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
-    fVar11 = (float10)FUN_0050a610(param_2 + 0xf4c,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(param_2 + 0xf4c,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7662,7 +7664,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
-    fVar11 = (float10)FUN_0050a610(param_2 + 0xf4c,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(param_2 + 0xf4c,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7682,7 +7684,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(DAT_00632ed8 + 0x14d0);
 
-    fVar11 = (float10)FUN_0050a610(param_2 + 0xf4c,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(param_2 + 0xf4c,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7694,7 +7696,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
-    fVar11 = (float10)FUN_0050a610(param_2 + 0xf4c,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(param_2 + 0xf4c,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7836,7 +7838,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
-    fVar11 = (float10)FUN_0050a610(*(int *)(param_2 + 0xf48) + 0xa0,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(*(int *)(param_2 + 0xf48) + 0xa0,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7954,7 +7956,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
-    fVar11 = (float10)FUN_0050a610(*(int *)(param_2 + 0xf48) + 0xa0,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(*(int *)(param_2 + 0xf48) + 0xa0,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7964,7 +7966,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(DAT_00632ed8 + 0x14cc);
 
-    fVar11 = (float10)FUN_0050a610(param_2 + 0xf4c,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(param_2 + 0xf4c,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7980,7 +7982,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(DAT_00632ed8 + 0x14d4);
 
-    fVar11 = (float10)FUN_0050a610(param_2 + 0xf4c,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(param_2 + 0xf4c,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -7992,7 +7994,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
-    fVar11 = (float10)FUN_0050a610(param_2 + 0xf4c,param_1 + 0xa0);
+    fVar11 = (float10)distancesq3d(param_2 + 0xf4c,param_1 + 0xa0);
 
     fVar12 = (float10)fVar1 * (float10)fVar1;
 
@@ -8045,7 +8047,7 @@ undefined4 reaper_xhair_validate__FP6OBJECTPv(int param_1,int param_2)
 
   
 
-  iVar1 = FUN_004a6220(param_1);
+  iVar1 = ObjIsMeccBldg(param_1);
 
   if ((((iVar1 == 0) && (iVar1 = meccbasepit_bldg_from_object(param_1), iVar1 == 0)) &&
 
@@ -8356,7 +8358,7 @@ float10 physics_reset_b(int param_1)
 
   PhysicsExZeroForce(param_1);
 
-  FUN_0050a610(param_1 + 0xa0,puVar1);
+  distancesq3d(param_1 + 0xa0,puVar1);
 
   if (*(int *)(iVar2 + 8) == 0) {
 
@@ -8510,7 +8512,7 @@ void sound_player_user(undefined4 param_1,int *param_2)
 
       }
 
-      fVar6 = (float10)FUN_00518b70(iVar4,0);
+      fVar6 = (float10)FRateGetSecsframe(iVar4,0);
 
       fVar2 = (float)fVar6;
 
@@ -8667,7 +8669,7 @@ void reaper_firewall_hit(int param_1,undefined4 *param_2,float *param_3,undefine
 
   if ((*(uint *)(param_1 + 0xe0) & param_5) != 0) {
 
-    fVar1 = (float10)FUN_00518b70(*param_2,0);
+    fVar1 = (float10)FRateGetSecsframe(*param_2,0);
 
     fVar1 = (float10)*param_3 - fVar1;
 
@@ -8773,7 +8775,7 @@ void FUN_004ba990(int param_1,float param_2,undefined4 param_3)
 
           ((iVar3 == 0xe5 || ((iVar3 == 0x49 || (iVar3 == 0xe6)))))) || (iVar3 == 0x29a)))) &&
 
-       (fVar4 = (float10)FUN_0050a610(iVar1 + 0xa0,param_1 + 0xa0),
+       (fVar4 = (float10)distancesq3d(iVar1 + 0xa0,param_1 + 0xa0),
 
        fVar4 < (float10)param_2 * (float10)param_2)) {
 
@@ -8981,7 +8983,7 @@ void reaperbase_ai_main_c3(int param_1)
 
   if (iVar4 == 0) {
 
-    fVar19 = (float10)FUN_00518b70(0,0);
+    fVar19 = (float10)FRateGetSecsframe(0,0);
 
     fVar23 = (float)puStack_ac[0x3f9];
 
@@ -9039,7 +9041,7 @@ void reaperbase_ai_main_c3(int param_1)
 
     if (iVar4 != 0) {
 
-      fVar19 = (float10)FUN_00518b70(0,0);
+      fVar19 = (float10)FRateGetSecsframe(0,0);
 
       fVar19 = (float10)_DAT_00560f44 - fVar19;
 
@@ -9105,7 +9107,7 @@ void reaperbase_ai_main_c3(int param_1)
 
       (iVar4 = ObjIsJetski(*(int *)(param_1 + 0x210)), iVar4 != 0)))) {
 
-    fVar19 = (float10)FUN_00518b70(0,0);
+    fVar19 = (float10)FRateGetSecsframe(0,0);
 
     fVar23 = (float)puStack_ac[0x3fa];
 
@@ -9125,11 +9127,11 @@ void reaperbase_ai_main_c3(int param_1)
 
            ((*(int *)(iVar4 + 0x210) == 0 &&
 
-            (fVar19 = (float10)FUN_0050a610(iVar4 + 0xa0,param_1 + 0xa0), fVar19 <= (float10)100.0))
+            (fVar19 = (float10)distancesq3d(iVar4 + 0xa0,param_1 + 0xa0), fVar19 <= (float10)100.0))
 
            )) {
 
-          pcVar6 = (char *)FUN_00507b00(s_FlagHintDriveGyro_0055bccc);
+          pcVar6 = (char *)TextGetPtr(s_FlagHintDriveGyro_0055bccc);
 
           pcVar12 = &DAT_00632c10;
 
@@ -9155,7 +9157,7 @@ void reaperbase_ai_main_c3(int param_1)
 
   }
 
-  fVar19 = (float10)FUN_00518b70(0,0);
+  fVar19 = (float10)FRateGetSecsframe(0,0);
 
   _DAT_00560f40 = (float)((float10)_DAT_00560f40 - fVar19);
 
@@ -9405,7 +9407,7 @@ LAB_004bb195:
 
           }
 
-          uVar9 = FUN_00507b00(pcVar6,1);
+          uVar9 = TextGetPtr(pcVar6,1);
 
           chat_insert(uVar9);
 
@@ -9445,7 +9447,7 @@ LAB_004bb195:
 
     if (param_1 == DAT_00632a88) {
 
-      fVar19 = (float10)FUN_00518b70(0,0);
+      fVar19 = (float10)FRateGetSecsframe(0,0);
 
       fVar23 = (float)puVar15[0x400];
 
@@ -9503,7 +9505,7 @@ LAB_004bb195:
 
     objspec_dispatch_gate(param_1);
 
-    fVar19 = (float10)FUN_00518b70(param_1,0);
+    fVar19 = (float10)FRateGetSecsframe(param_1,0);
 
     object_animate_process(param_1,(float)fVar19);
 
@@ -9563,7 +9565,7 @@ LAB_004bb195:
 
     else {
 
-      fVar19 = (float10)FUN_00518b70(param_1,0);
+      fVar19 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(iVar4 + 0xda8) = (float)((float10)*(float *)(iVar4 + 0xda8) - fVar19);
 
@@ -9805,7 +9807,7 @@ LAB_004bb6cc:
 
           *(undefined4 *)(iVar4 + 0xc) = 0;
 
-          fVar19 = (float10)FUN_0050a610(param_1 + 0xa0,puVar1);
+          fVar19 = (float10)distancesq3d(param_1 + 0xa0,puVar1);
 
           fStack_90 = (float)fVar19;
 
@@ -9865,7 +9867,7 @@ LAB_004bb6cc:
 
               if (-*(float *)(param_1 + 0x1e8) < *(float *)(iVar4 + 0x24)) {
 
-                fVar19 = (float10)FUN_0050a610(param_1 + 0xa0,puVar1);
+                fVar19 = (float10)distancesq3d(param_1 + 0xa0,puVar1);
 
                 fStack_a4 = (float)fVar19;
 
@@ -9899,7 +9901,7 @@ LAB_004bb94e:
 
             if (-*(float *)(param_1 + 0x1e8) < *(float *)(iVar4 + 0x24)) {
 
-              fVar19 = (float10)FUN_0050a610(param_1 + 0xa0,puVar1);
+              fVar19 = (float10)distancesq3d(param_1 + 0xa0,puVar1);
 
               fStack_a4 = (float)fVar19;
 
@@ -9991,7 +9993,7 @@ LAB_004bb94e:
 
           uVar9 = XFGetCameraOrigin(*(int *)(iVar4 + 0xf44) + 0xa0);
 
-          fVar19 = (float10)FUN_0050a610(uVar9);
+          fVar19 = (float10)distancesq3d(uVar9);
 
           bVar18 = fVar19 < (float10)fStack_a0 * (float10)fStack_a0;
 
@@ -10075,7 +10077,7 @@ LAB_004bbb8f:
 
       if (_DAT_00632bc8 < *(float *)(DAT_00632ed8 + 0x7c8)) {
 
-        fVar20 = (float10)FUN_00518b70(0,0);
+        fVar20 = (float10)FRateGetSecsframe(0,0);
 
         fVar19 = (float10)_DAT_00632bc8;
 
@@ -10175,7 +10177,7 @@ LAB_004bbb8f:
 
   if (*(int *)(iVar4 + 0xe2c) != 0) {
 
-    fVar19 = (float10)FUN_00518b70(param_1,0);
+    fVar19 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar19 = (float10)*(float *)(iVar4 + 0xe30) - fVar19;
 
@@ -10247,7 +10249,7 @@ LAB_004bbb8f:
 
     puStack_ac[0x3c8] = 1;
 
-    fVar19 = (float10)FUN_00518b70(param_1,0);
+    fVar19 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar19 = (float10)*(float *)(param_1 + 0x278) -
 
@@ -10285,7 +10287,7 @@ LAB_004bbb8f:
 
           if (iVar13 < 1) {
 
-            FUN_004b8de0(param_1,0x3b,iVar7);
+            reaperbase_target_slot_clear(param_1,0x3b,iVar7);
 
           }
 
@@ -10911,7 +10913,7 @@ void reaper_turbo_towards_moving_target__FP6OBJECT(int param_1)
 
   iVar2 = *(int *)(param_1 + 0x100);
 
-  FUN_0050a610(param_1 + 0xa0,*(int *)(iVar2 + 0xc) + 0xa0);
+  distancesq3d(param_1 + 0xa0,*(int *)(iVar2 + 0xc) + 0xa0);
 
   iVar3 = *(int *)(iVar2 + 0xc);
 
@@ -11127,11 +11129,11 @@ void reaper_set_pitch__FP6OBJECT(int param_1)
 
   }
 
-  fVar2 = (float10)FUN_00518b70(param_1,0,0x461c4000,local_4,param_1 + 0xcc);
+  fVar2 = (float10)FRateGetSecsframe(param_1,0,0x461c4000,local_4,param_1 + 0xcc);
 
   chase_angle((float)(fVar2 * (float10)100.0));
 
-  fVar2 = (float10)FUN_00518b70(param_1,0,0x461c4000,local_8,param_1 + 0xd0);
+  fVar2 = (float10)FRateGetSecsframe(param_1,0,0x461c4000,local_8,param_1 + 0xd0);
 
   chase_angle((float)(fVar2 * (float10)100.0));
 
@@ -11240,7 +11242,7 @@ void ai_flight_check(int param_1)
 
         }
 
-        fVar5 = (float10)FUN_00518b70(param_1,0);
+        fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
         *(float *)(iVar2 + 0x60) = (float)((float10)*(float *)(iVar2 + 0x60) - fVar5);
 
@@ -11351,7 +11353,7 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
     PhysicsExApplyLocation(param_1);
 
-    fVar20 = (float10)FUN_00518b70(param_1,0);
+    fVar20 = (float10)FRateGetSecsframe(param_1,0);
 
     object_animate_process(param_1,(float)fVar20);
 
@@ -11575,7 +11577,7 @@ LAB_004bd2f0:
 
   else {
 
-    fVar20 = (float10)FUN_00518b70(param_1,0);
+    fVar20 = (float10)FRateGetSecsframe(param_1,0);
 
     object_animate_process(param_1,(float)fVar20);
 
@@ -11695,7 +11697,7 @@ LAB_004bd3f4:
 
     uVar17 = puVar5[0x1a];
 
-    fVar20 = (float10)FUN_00518b70(param_1,0);
+    fVar20 = (float10)FRateGetSecsframe(param_1,0);
 
     puVar5[uVar17 * 10 + 0x24] = (uint)(float)(fVar20 + (float10)(float)puVar5[uVar17 * 10 + 0x24]);
 
@@ -11735,7 +11737,7 @@ LAB_004bd3f4:
 
     puVar12[8] = *(uint *)(param_1 + 0x5c);
 
-    fVar20 = (float10)FUN_00518b70(param_1,0);
+    fVar20 = (float10)FRateGetSecsframe(param_1,0);
 
     puVar5[puVar5[0x1a] * 10 + 0x24] = (uint)(float)(fVar20 + (float10)fVar6);
 
@@ -12449,7 +12451,7 @@ void reaper_fire_logic__FP6OBJECT(int param_1)
 
   }
 
-  fVar4 = (float10)FUN_00518b70(param_1,0);
+  fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
   *(float *)(iVar1 + 0xf1c) = (float)((float10)*(float *)(iVar1 + 0xf1c) - fVar4);
 
@@ -13121,7 +13123,7 @@ void fxb_splash_create(int param_1)
 
   puVar1 = *(uint **)(param_1 + 0x100);
 
-  fVar2 = (float10)FUN_00518b70(param_1,0);
+  fVar2 = (float10)FRateGetSecsframe(param_1,0);
 
   fVar2 = (float10)(float)puVar1[0xb] - fVar2;
 
@@ -13149,7 +13151,7 @@ void fxb_splash_create(int param_1)
 
     }
 
-    fVar2 = (float10)FUN_00518b70(param_1,0);
+    fVar2 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar2 = fVar2 * (float10)*(float *)(DAT_00632ed8 + 0x86c) + (float10)(float)puVar1[10];
 
@@ -13201,7 +13203,7 @@ LAB_004be9ad:
 
     if (puVar1[2] != 0) {
 
-      fVar2 = (float10)FUN_00518b70(param_1,0);
+      fVar2 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar2 = ((float10)*(float *)(DAT_00632ed8 + 0xfe0) / (float10)*(float *)(DAT_00632ed8 + 0x748)
 
@@ -13219,7 +13221,7 @@ LAB_004be9ad:
 
       physics_reset_b(param_1);
 
-      fVar2 = (float10)FUN_00518b70(param_1,0);
+      fVar2 = (float10)FRateGetSecsframe(param_1,0);
 
       puVar1[0x13] = (uint)(float)((float10)(float)puVar1[0x13] - fVar2);
 
@@ -13229,7 +13231,7 @@ LAB_004be9ad:
 
   }
 
-  fVar2 = (float10)FUN_00518b70(param_1,0);
+  fVar2 = (float10)FRateGetSecsframe(param_1,0);
 
 LAB_004be9d9:
 
@@ -13777,9 +13779,9 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
   if ((DAT_00632aec != '\0') && (1 < (int)puVar9[0x36d])) {
 
-    uVar4 = FUN_00507b00(s_InvChDropItem_0055a158);
+    uVar4 = TextGetPtr(s_InvChDropItem_0055a158);
 
-    uVar5 = FUN_004a9130(puVar9[puVar9[0x36d] * 2 + 0x35c]);
+    uVar5 = IconDefTextDescription(puVar9[puVar9[0x36d] * 2 + 0x35c]);
 
     crt_sprintf(local_100,uVar4,uVar5);
 
@@ -13869,7 +13871,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
   if ((*(uint *)(param_1 + 0x20c) & 0x2000000) != 0) {
 
-    fVar10 = (float10)FUN_00518b70(param_1,0);
+    fVar10 = (float10)FRateGetSecsframe(param_1,0);
 
     puVar9[0x15] = *(uint *)(DAT_00632ed8 + 0x5c4);
 
@@ -14251,7 +14253,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     if (puVar9[0x3e3] != 0) {
 
-      fVar10 = (float10)FUN_00518b70(param_1,0);
+      fVar10 = (float10)FRateGetSecsframe(param_1,0);
 
       puVar9[0x3e6] = (uint)(float)((float10)(float)puVar9[0x3e6] - fVar10);
 
@@ -14367,7 +14369,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffffff7f;
 
-    fVar10 = (float10)FUN_00518b70(param_1,0);
+    fVar10 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar10 = (float10)(float)puVar9[0x15] - fVar10;
 
@@ -14747,7 +14749,7 @@ void reaper_finish_shrinker(undefined4 param_1,int param_2,int param_3,int param
 
         if (iVar8 == DAT_00632a88) {
 
-          pcVar7 = (char *)FUN_00507b00(s_SpellHintShrink_00561034);
+          pcVar7 = (char *)TextGetPtr(s_SpellHintShrink_00561034);
 
           pcVar9 = &DAT_00632c10;
 

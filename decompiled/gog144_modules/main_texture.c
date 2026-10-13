@@ -673,7 +673,7 @@ LAB_00508282:
 
                         aiStack_1a8[2],piVar9[uVar19 * 9 + 0xb]);
 
-            FUN_0051ea20(&DAT_00657400);
+            error_msg_show(&DAT_00657400);
 
           }
 
@@ -819,7 +819,7 @@ LAB_00508353:
 
         crt_sprintf(&DAT_00657400,s_Only_support_TRUECOLOR_and_COLOR_0057bd6c,*param_1);
 
-        FUN_0051ea20(&DAT_00657400);
+        error_msg_show(&DAT_00657400);
 
         Audio3DTestToneUpdate__Fv_5();
 
@@ -857,7 +857,7 @@ LAB_00508353:
 
       crt_sprintf(&DAT_00657400,s_Don_t_support_paletted_textures__0057be54,*param_1);
 
-      FUN_0051ea20(&DAT_00657400);
+      error_msg_show(&DAT_00657400);
 
       Audio3DTestToneUpdate__Fv_5();
 
@@ -881,7 +881,7 @@ LAB_00508353:
 
                       *param_1);
 
-          FUN_0051ea20(&DAT_00657400);
+          error_msg_show(&DAT_00657400);
 
           Audio3DTestToneUpdate__Fv_5();
 
@@ -899,7 +899,7 @@ LAB_00508353:
 
       crt_sprintf(&DAT_00657400,s_Only_support_black___white_or_si_0057bdf0,uVar5 & 0xff,*param_1);
 
-      FUN_0051ea20(&DAT_00657400);
+      error_msg_show(&DAT_00657400);
 
       Audio3DTestToneUpdate__Fv_5();
 
@@ -967,11 +967,11 @@ LAB_00508123:
 
   crt_sprintf(&DAT_00657400,pcVar20,iVar10);
 
-  FUN_0051ea20(&DAT_00657400);
+  error_msg_show(&DAT_00657400);
 
   crt_sprintf(&DAT_00657400,s_Tex__s_0057bedc,*param_1);
 
-  FUN_00425eb0(&DAT_00657400);
+  savegame_slot_load(&DAT_00657400);
 
   param_1[1] = 0;
 
@@ -1023,7 +1023,7 @@ LAB_00508549:
 
                 piVar9[uVar19 * 9 + 0xb]);
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
   }
 
@@ -1534,7 +1534,7 @@ main_texture_005088d0
 
                      );
 
-          FUN_0051ea20(&DAT_00657400);
+          error_msg_show(&DAT_00657400);
 
           Audio3DTestToneUpdate__Fv_5();
 
@@ -1878,7 +1878,7 @@ LAB_00508c6d:
 
     crt_sprintf(&DAT_00657400,s_Only_support_TRUECOLOR_and_COLOR_0057bd6c,param_1);
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
     Audio3DTestToneUpdate__Fv_5();
 

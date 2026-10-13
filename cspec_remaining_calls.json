@@ -1,0 +1,812 @@
+[
+ {
+  "name": "cspec_00407ae0",
+  "classes": [
+   106
+  ],
+  "fields": [
+   5
+  ],
+  "size": 63,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00407ae0(void)\n\n\n\n{\n\n  return 0x4a28;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0040f370",
+  "classes": [
+   23,
+   42
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0040f370(void)\n\n\n\n{\n\n  return 0x58;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0041a7b0",
+  "classes": [
+   91
+  ],
+  "fields": [
+   2
+  ],
+  "size": 315,
+  "calls": [],
+  "body": "\n\nvoid cspec_0041a7b0(int param_1)\n\n\n\n{\n\n  *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x800;\n\n  if (DAT_00632e74 != 0) {\n\n    *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) & 0xbfffffff;\n\n    return;\n\n  }\n\n  *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40000000;\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0044f1a0",
+  "classes": [
+   78
+  ],
+  "fields": [
+   4
+  ],
+  "size": 420,
+  "calls": [],
+  "body": "\n\nvoid cspec_0044f1a0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4,\n\n                   undefined4 param_5,undefined4 param_6)\n\n\n\n{\n\n  code *pcVar1;\n\n  \n\n  pcVar1 = *(code **)(*(int *)(param_3 + 0x100) + 0xdc);\n\n  if (pcVar1 != (code *)0x0) {\n\n    (*pcVar1)(param_1,param_2,param_3,param_4,param_5,param_6,\n\n              *(undefined4 *)(*(int *)(param_3 + 0x100) + 0xe0));\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004503d0",
+  "classes": [
+   78
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004503d0(void)\n\n\n\n{\n\n  return 0x10c;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00454d70",
+  "classes": [
+   102
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00454d70(void)\n\n\n\n{\n\n  return 0x148;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00456660",
+  "classes": [
+   17
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00456660(void)\n\n\n\n{\n\n  return 0x34;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0045ae60",
+  "classes": [
+   37,
+   105
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0045ae60(void)\n\n\n\n{\n\n  return 0x20;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0045ae70",
+  "classes": [
+   37
+  ],
+  "fields": [
+   11
+  ],
+  "size": 272,
+  "calls": [],
+  "body": "\n\nvoid cspec_0045ae70(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  int *piVar2;\n\n  \n\n  piVar2 = (int *)(*(int *)(param_1 + 0x100) + 0xc);\n\n  iVar1 = *piVar2;\n\n  if ((iVar1 != 0) && ((char)((uint)*(undefined4 *)(iVar1 + 0xd8) >> 8) < '\\0')) {\n\n    *piVar2 = 0;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0045be30",
+  "classes": [
+   1
+  ],
+  "fields": [
+   16
+  ],
+  "size": 1006,
+  "calls": [],
+  "body": "\n\nbool cspec_0045be30(int param_1,int param_2)\n\n\n\n{\n\n  uint uVar1;\n\n  uint uVar2;\n\n  \n\n  if ((param_2 == 0) || (*(int *)(param_2 + 4) == 0x29d)) {\n\n    return true;\n\n  }\n\n  if (*(float *)(param_2 + 0x290) <= *(float *)(param_1 + 0xc4) * 35.0 + *(float *)(param_1 + 0xa8))\n\n  {\n\n    if ((*(float *)(param_1 + 0xc4) * 20.0 + *(float *)(param_1 + 0xa8) <\n\n         *(float *)(param_2 + 0x290)) ||\n\n       (uVar2 = 1, 20.0 < *(float *)(param_2 + 0x154) * *(float *)(param_1 + 0xc4))) {\n\n      uVar2 = 3;\n\n    }\n\n  }\n\n  else {\n\n    uVar2 = 7;\n\n  }\n\n  uVar1 = *(uint *)(param_2 + 0x1cc);\n\n  if ((~uVar1 & 1) == 0) {\n\n    uVar2 = 0;\n\n  }\n\n  else {\n\n    if ((uVar1 & 0x3c00) != 0) {\n\n      uVar2 = uVar2 & 0xfffffffe;\n\n    }\n\n    if ((uVar1 & 0x3c0) != 0) {\n\n      uVar2 = uVar2 & 0xfffffffd;\n\n    }\n\n    if ((uVar1 & 0x3c) != 0) {\n\n      uVar2 = uVar2 & 0xfffffffb;\n\n    }\n\n    if ((~uVar1 & 2) != 0) {\n\n      *(int *)(param_2 + 0x220) = param_1;\n\n      return uVar2 == 0;\n\n    }\n\n  }\n\n  return uVar2 == 0;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00467250",
+  "classes": [
+   1
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00467250(void)\n\n\n\n{\n\n  return 0x358;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046a010",
+  "classes": [
+   4,
+   16
+  ],
+  "fields": [
+   0,
+   11
+  ],
+  "size": 273,
+  "calls": [],
+  "body": "\n\nvoid cspec_0046a010(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  int *piVar2;\n\n  \n\n  piVar2 = (int *)(*(int *)(param_1 + 0x100) + 0x3c);\n\n  iVar1 = *piVar2;\n\n  if ((iVar1 != 0) && ((char)((uint)*(undefined4 *)(iVar1 + 0xd8) >> 8) < '\\0')) {\n\n    *piVar2 = 0;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046a030",
+  "classes": [
+   15
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0046a030(void)\n\n\n\n{\n\n  return 0x6c;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046a370",
+  "classes": [
+   28,
+   47,
+   84,
+   87,
+   89
+  ],
+  "fields": [
+   5
+  ],
+  "size": 58,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0046a370(void)\n\n\n\n{\n\n  return 4;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046a400",
+  "classes": [
+   28
+  ],
+  "fields": [
+   9
+  ],
+  "size": 599,
+  "calls": [],
+  "body": "\n\nvoid cspec_0046a400(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)\n\n\n\n{\n\n  undefined4 uVar1;\n\n  \n\n  if (param_2 == 1) {\n\n    if (*(int *)(param_1 + 0xe8) == 0) {\n\n      uVar1 = *(undefined4 *)(DAT_00632ed8 + 0x1474);\n\n      *(undefined4 *)(param_1 + 0xe4) = 2;\n\n      *(undefined4 *)(param_1 + 0xec) = uVar1;\n\n      return;\n\n    }\n\n    uVar1 = *(undefined4 *)(DAT_00632ed8 + 0x150c);\n\n    *(undefined4 *)(param_1 + 0xe4) = 2;\n\n    *(undefined4 *)(param_1 + 0xec) = uVar1;\n\n  }\n\n  else if (param_2 == 2) {\n\n    func_0x0046a210(param_1,*param_4);\n\n    return;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046a470",
+  "classes": [
+   18,
+   75
+  ],
+  "fields": [
+   5
+  ],
+  "size": 60,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0046a470(void)\n\n\n\n{\n\n  return 200;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046df40",
+  "classes": [
+   76,
+   92
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0046df40(void)\n\n\n\n{\n\n  return 0x70;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046e630",
+  "classes": [
+   76
+  ],
+  "fields": [
+   10
+  ],
+  "size": 197,
+  "calls": [],
+  "body": "\n\nvoid cspec_0046e630(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  \n\n  iVar1 = *(int *)(*(int *)(param_1 + 0x100) + 0x44);\n\n  if (iVar1 != 0) {\n\n    *(undefined4 *)(iVar1 + 0x210) = 0;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046f3c0",
+  "classes": [
+   104
+  ],
+  "fields": [
+   5
+  ],
+  "size": 60,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0046f3c0(void)\n\n\n\n{\n\n  return 0xc;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0046f400",
+  "classes": [
+   104
+  ],
+  "fields": [
+   11
+  ],
+  "size": 183,
+  "calls": [
+   "obj_ptr_clear_if_dead"
+  ],
+  "body": "\n\nvoid cspec_0046f400(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  \n\n  iVar1 = *(int *)(param_1 + 0x100);\n\n  obj_ptr_clear_if_dead(iVar1);\n\n  obj_ptr_clear_if_dead(iVar1 + 4);\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004788d0",
+  "classes": [
+   55,
+   100
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004788d0(void)\n\n\n\n{\n\n  return 0x14;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00480a00",
+  "classes": [
+   2
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00480a00(void)\n\n\n\n{\n\n  return 0x220;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00481bd0",
+  "classes": [
+   96
+  ],
+  "fields": [
+   0
+  ],
+  "size": 132,
+  "calls": [
+   "sound_stop_obj"
+  ],
+  "body": "\n\nvoid cspec_00481bd0(undefined4 param_1)\n\n\n\n{\n\n  sound_stop_obj(0x59a,param_1);\n\n  sound_stop_obj(0x597,param_1);\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00490280",
+  "classes": [
+   5,
+   6,
+   43,
+   57,
+   103
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00490280(void)\n\n\n\n{\n\n  return 0x24;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00496750",
+  "classes": [
+   58,
+   59
+  ],
+  "fields": [
+   0,
+   10
+  ],
+  "size": 492,
+  "calls": [],
+  "body": "\n\nvoid cspec_00496750(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  int iVar2;\n\n  \n\n  iVar1 = *(int *)(param_1 + 0x100);\n\n  if (*(int *)(iVar1 + 0x34) == 0) {\n\n    iVar2 = *(int *)(iVar1 + 0x24);\n\n    if (iVar2 != 0) {\n\n      if (iVar2 != 0) {\n\n        (*DAT_005dd2a8)(iVar2);\n\n      }\n\n      *(undefined4 *)(iVar1 + 0x24) = 0;\n\n    }\n\n  }\n\n  else if (0 < *(int *)(iVar1 + 0x2c)) {\n\n    (*DAT_005dd354)(*(int *)(iVar1 + 0x2c));\n\n    *(undefined4 *)(iVar1 + 0x2c) = 0;\n\n    return;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004967a0",
+  "classes": [
+   58
+  ],
+  "fields": [
+   5
+  ],
+  "size": 60,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004967a0(void)\n\n\n\n{\n\n  return 700;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00499c70",
+  "classes": [
+   54
+  ],
+  "fields": [
+   5
+  ],
+  "size": 60,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00499c70(void)\n\n\n\n{\n\n  return 0xc;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0049e0a0",
+  "classes": [
+   4
+  ],
+  "fields": [
+   5
+  ],
+  "size": 60,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0049e0a0(void)\n\n\n\n{\n\n  return 100;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0049e270",
+  "classes": [
+   4
+  ],
+  "fields": [
+   16
+  ],
+  "size": 202,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0049e270(undefined4 param_1,int param_2)\n\n\n\n{\n\n  if ((param_2 != 0) && (*(int *)(param_2 + 0x1e0) == 0x3c)) {\n\n    *(undefined4 *)(param_2 + 0x220) = param_1;\n\n  }\n\n  return 0;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004a64b0",
+  "classes": [
+   35
+  ],
+  "fields": [
+   2
+  ],
+  "size": 341,
+  "calls": [],
+  "body": "\n\nvoid cspec_004a64b0(int param_1)\n\n\n\n{\n\n  *(float *)(param_1 + 0x184) =\n\n       *(float *)(param_1 + 0x14) /\n\n       **(float **)(*(int *)(param_1 + 8) + 8 + *(int *)(param_1 + 0x10) * 4);\n\n  if ((*(byte *)(param_1 + 0x30) & 2) != 0) {\n\n    *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x8000;\n\n    return;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004a7830",
+  "classes": [
+   19
+  ],
+  "fields": [
+   2
+  ],
+  "size": 396,
+  "calls": [],
+  "body": "\n\nvoid cspec_004a7830(int param_1)\n\n\n\n{\n\n  undefined4 *puVar1;\n\n  \n\n  if ((*(int *)(param_1 + 0x10) == 10) &&\n\n     (puVar1 = DAT_00632d98, (*(byte *)(param_1 + 0x30) & 2) != 0)) {\n\n    for (; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {\n\n      if (*(int *)(puVar1[3] + 0x210) == param_1) {\n\n        *(undefined4 *)(puVar1[3] + 0x210) = 0;\n\n      }\n\n    }\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004a7b50",
+  "classes": [
+   56
+  ],
+  "fields": [
+   2
+  ],
+  "size": 655,
+  "calls": [],
+  "body": "\n\nvoid cspec_004a7b50(int param_1)\n\n\n\n{\n\n  float10 fVar1;\n\n  \n\n  if (0.0 <= *(float *)(param_1 + 0xec)) {\n\n    if (*(float *)(param_1 + 0xec) <= 0.0) {\n\n      if (*(float *)(param_1 + 0xec) == 0.0) {\n\n        *(undefined4 *)(param_1 + 0xec) = 0xbf800000;\n\n        *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40000000;\n\n      }\n\n    }\n\n    else {\n\n      fVar1 = (float10)FUN_00518b70(param_1,0);\n\n      fVar1 = (float10)*(float *)(param_1 + 0xec) - fVar1;\n\n      *(float *)(param_1 + 0xec) = (float)fVar1;\n\n      if (fVar1 < (float10)0.0) {\n\n        *(undefined4 *)(param_1 + 0xec) = 0;\n\n        return;\n\n      }\n\n    }\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004a9f20",
+  "classes": [
+   77
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004a9f20(void)\n\n\n\n{\n\n  return 0x1f8;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004aac50",
+  "classes": [
+   77
+  ],
+  "fields": [
+   4
+  ],
+  "size": 1506,
+  "calls": [],
+  "body": "\n\nvoid cspec_004aac50(undefined4 param_1,float param_2,uint param_3)\n\n\n\n{\n\n  char cVar1;\n\n  uint *puVar2;\n\n  char *pcVar3;\n\n  uint uVar4;\n\n  \n\n  puVar2 = *(uint **)(param_3 + 0x100);\n\n  if (((char)puVar2[0x79] == '\\r') || ((char)puVar2[0x79] == ',')) {\n\n    if (((float)puVar2[0x21] == 0.0) || (0.1 < (float)puVar2[0x21])) {\n\n      puVar2[0x21] = 0x3dcccccd;\n\n    }\n\n    *puVar2 = *puVar2 & 0xfffffffb | 0x20;\n\n    puVar2[0x76] = param_3;\n\n  }\n\n  if ((((char)puVar2[0x79] == '\\f') && (*(int *)(param_3 + 0x210) == 0)) &&\n\n     (param_2 = param_2 + *(float *)(param_3 + 0x278), *(float *)(param_3 + 0x278) = param_2,\n\n     25.0 < param_2)) {\n\n    puVar2[0x21] = 0;\n\n    puVar2[0x27] = 0;\n\n    puVar2[0x23] = uRam005a2db0;\n\n    puVar2[0x24] = uRam005a2db4;\n\n    puVar2[0x25] = uRam005a2db8;\n\n    puVar2[0x26] = uRam005a2dbc;\n\n    uVar4 = 0xffffffff;\n\n    pcVar3 = (char *)0x5a2e18;\n\n    do {\n\n      if (uVar4 == 0) break;\n\n      uVar4 = uVar4 - 1;\n\n      cVar1 = *pcVar3;\n\n      pcVar3 = pcVar3 + 1;\n\n    } while (cVar1 != '\\0');\n\n    if (~uVar4 - 1 < 0x20) {\n\n      pcVar3 = (char *)0x5a2e18;\n\n      do {\n\n        cVar1 = *pcVar3;\n\n        *(char *)((int)(puVar2 + -0x168b49) + (int)pcVar3) = cVar1;\n\n        pcVar3 = pcVar3 + 1;\n\n      } while (cVar1 != '\\0');\n\n      puVar2[0x18] = puVar2[0x18] & 0xffffefff;\n\n      return;\n\n    }\n\n    *(undefined1 *)(puVar2 + 0x3d) = 0;\n\n    FUN_0051ea20(s_Error__fx_name_too_long_for_proj_0055fc9c);\n\n    puVar2[0x18] = puVar2[0x18] & 0xffffefff;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004b6520",
+  "classes": [
+   32,
+   82
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004b6520(void)\n\n\n\n{\n\n  return 0x5e0;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004b6530",
+  "classes": [
+   74,
+   79,
+   83
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004b6530(void)\n\n\n\n{\n\n  return 0x18;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004c4870",
+  "classes": [
+   3
+  ],
+  "fields": [
+   5
+  ],
+  "size": 63,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004c4870(void)\n\n\n\n{\n\n  return 0x1004;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004c6f30",
+  "classes": [
+   25,
+   52,
+   88,
+   101
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004c6f30(void)\n\n\n\n{\n\n  return 0x10;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004c73a0",
+  "classes": [
+   40
+  ],
+  "fields": [
+   9
+  ],
+  "size": 134,
+  "calls": [
+   "object_destroy"
+  ],
+  "body": "\n\nvoid cspec_004c73a0(undefined4 param_1,int param_2)\n\n\n\n{\n\n  if (param_2 == 1) {\n\n    object_destroy(param_1);\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004cc050",
+  "classes": [
+   100
+  ],
+  "fields": [
+   0
+  ],
+  "size": 286,
+  "calls": [],
+  "body": "\n\nvoid cspec_004cc050(int param_1)\n\n\n\n{\n\n  if (*(float *)(param_1 + 0x1c0) <= *(float *)(param_1 + 0x278)) {\n\n    *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40000000;\n\n    *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x8000;\n\n    return;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004cc080",
+  "classes": [
+   99
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004cc080(void)\n\n\n\n{\n\n  return 0xde8;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004d5700",
+  "classes": [
+   36,
+   38,
+   49
+  ],
+  "fields": [
+   5
+  ],
+  "size": 58,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004d5700(void)\n\n\n\n{\n\n  return 8;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004d7610",
+  "classes": [
+   90
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004d7610(void)\n\n\n\n{\n\n  return 0x90;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004d7b40",
+  "classes": [
+   90
+  ],
+  "fields": [
+   11
+  ],
+  "size": 78,
+  "calls": [
+   "obj_ptr_clear_if_dead"
+  ],
+  "body": "\n\nvoid cspec_004d7b40(void)\n\n\n\n{\n\n  obj_ptr_clear_if_dead();\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004d7b60",
+  "classes": [
+   90
+  ],
+  "fields": [
+   10
+  ],
+  "size": 156,
+  "calls": [
+   "object_destroy"
+  ],
+  "body": "\n\nvoid cspec_004d7b60(int param_1)\n\n\n\n{\n\n  if (*(int *)(*(int *)(param_1 + 0x100) + 0x5c) != 0) {\n\n    object_destroy();\n\n    return;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004e75d0",
+  "classes": [
+   51
+  ],
+  "fields": [
+   5
+  ],
+  "size": 62,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004e75d0(void)\n\n\n\n{\n\n  return 0x240;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004e7680",
+  "classes": [
+   52
+  ],
+  "fields": [
+   0
+  ],
+  "size": 1227,
+  "calls": [],
+  "body": "\n\nvoid cspec_004e7680(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  int *piVar2;\n\n  int *piVar3;\n\n  int *piVar4;\n\n  \n\n  piVar3 = (int *)(*(int *)(param_1 + 0x100) + 0x234);\n\n  if (DAT_0059f368 == (int *)0x0) {\n\n    *piVar3 = 0;\n\n    return;\n\n  }\n\n  piVar4 = DAT_0059f368;\n\n  while (piVar4[0x11] != *piVar3) {\n\n    piVar4 = (int *)*piVar4;\n\n    if (piVar4 == (int *)0x0) {\n\n      *piVar3 = 0;\n\n      return;\n\n    }\n\n  }\n\n  iVar1 = piVar4[7];\n\n  if (iVar1 != 0) {\n\n    if (iVar1 != 0) {\n\n      (*DAT_005dd2a8)(iVar1);\n\n    }\n\n    piVar4[7] = 0;\n\n  }\n\n  piVar2 = (int *)piVar4[1];\n\n  piVar4[0x11] = 0;\n\n  if (piVar2 == (int *)0x0) {\n\n    DAT_0059f368 = (int *)*piVar4;\n\n    if (DAT_0059f368 != (int *)0x0) {\n\n      *(undefined4 *)((int)DAT_0059f368 + 4) = 0;\n\n      *piVar4 = (int)DAT_0059f360;\n\n      DAT_0059f360 = piVar4;\n\n      *piVar3 = 0;\n\n      return;\n\n    }\n\n    DAT_0059f36c = (int *)0x0;\n\n    *piVar4 = (int)DAT_0059f360;\n\n    DAT_0059f360 = piVar4;\n\n    *piVar3 = 0;\n\n    return;\n\n  }\n\n  if (*piVar4 == 0) {\n\n    DAT_0059f36c = piVar2;\n\n    *piVar2 = 0;\n\n  }\n\n  else {\n\n    *piVar2 = *piVar4;\n\n    *(int *)(*piVar4 + 4) = piVar4[1];\n\n  }\n\n  *piVar4 = (int)DAT_0059f360;\n\n  DAT_0059f360 = piVar4;\n\n  *piVar3 = 0;\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004ec7c0",
+  "classes": [
+   29,
+   96
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004ec7c0(void)\n\n\n\n{\n\n  return 0x60;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004f82f0",
+  "classes": [
+   66
+  ],
+  "fields": [
+   2
+  ],
+  "size": 519,
+  "calls": [],
+  "body": "\n\nvoid cspec_004f82f0(int param_1)\n\n\n\n{\n\n  float10 fVar1;\n\n  \n\n  if ((*(uint *)(param_1 + 0x1c8) & 0x800000) == 0) {\n\n    *(undefined4 *)(param_1 + 0x278) = 0;\n\n    *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x800000;\n\n  }\n\n  fVar1 = (float10)FUN_00518b70(param_1,0);\n\n  *(float *)(param_1 + 0xec) = (float)((float10)*(float *)(param_1 + 0xec) - fVar1);\n\n  fVar1 = (float10)FUN_00518b70(param_1,0);\n\n  *(float *)(param_1 + 0x278) = (float)(fVar1 + (float10)*(float *)(param_1 + 0x278));\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004f9310",
+  "classes": [
+   24
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004f9310(void)\n\n\n\n{\n\n  return 0x1c;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004f9320",
+  "classes": [
+   24
+  ],
+  "fields": [
+   10
+  ],
+  "size": 164,
+  "calls": [
+   "mem_free_tagged"
+  ],
+  "body": "\n\nvoid cspec_004f9320(int param_1)\n\n\n\n{\n\n  mem_free_tagged(**(undefined4 **)(param_1 + 0x100),s_C__Giants_source_main_smoke_c_00562348,0x299)\n\n  ;\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004fa1a0",
+  "classes": [
+   39,
+   97
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_004fa1a0(void)\n\n\n\n{\n\n  return 0x2c;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_004fa1b0",
+  "classes": [
+   39
+  ],
+  "fields": [
+   11
+  ],
+  "size": 193,
+  "calls": [
+   "obj_ptr_clear_if_dead"
+  ],
+  "body": "\n\nvoid cspec_004fa1b0(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  \n\n  iVar1 = *(int *)(param_1 + 0x100);\n\n  obj_ptr_clear_if_dead(iVar1 + 0x28);\n\n  obj_ptr_clear_if_dead(iVar1 + 0x14);\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_005059a0",
+  "classes": [
+   2
+  ],
+  "fields": [
+   3
+  ],
+  "size": 98,
+  "calls": [
+   "mecc_animselect_gm"
+  ],
+  "body": "\n\nvoid cspec_005059a0(undefined4 param_1)\n\n\n\n{\n\n  mecc_animselect_gm(param_1,1);\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0050a380",
+  "classes": [
+   44,
+   60
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0050a380(void)\n\n\n\n{\n\n  return 0x4c;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0050c610",
+  "classes": [
+   44
+  ],
+  "fields": [
+   11
+  ],
+  "size": 193,
+  "calls": [
+   "obj_ptr_clear_if_dead"
+  ],
+  "body": "\n\nvoid cspec_0050c610(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  \n\n  iVar1 = *(int *)(param_1 + 0x100);\n\n  obj_ptr_clear_if_dead(iVar1 + 0x1c);\n\n  obj_ptr_clear_if_dead(iVar1 + 0x38);\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0050f800",
+  "classes": [
+   25,
+   53,
+   88
+  ],
+  "fields": [
+   11
+  ],
+  "size": 270,
+  "calls": [],
+  "body": "\n\nvoid cspec_0050f800(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  int *piVar2;\n\n  \n\n  piVar2 = (int *)(*(int *)(param_1 + 0x100) + 4);\n\n  iVar1 = *piVar2;\n\n  if ((iVar1 != 0) && ((char)((uint)*(undefined4 *)(iVar1 + 0xd8) >> 8) < '\\0')) {\n\n    *piVar2 = 0;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0050f820",
+  "classes": [
+   53
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_0050f820(void)\n\n\n\n{\n\n  return 0x28;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0050f890",
+  "classes": [
+   53
+  ],
+  "fields": [
+   7
+  ],
+  "size": 172,
+  "calls": [
+   "mem_free_tagged"
+  ],
+  "body": "\n\nvoid cspec_0050f890(void)\n\n\n\n{\n\n  undefined4 in_stack_00000010;\n\n  \n\n  mem_free_tagged(in_stack_00000010,s_C__Giants_source_main_verm_c_0057bfdc,0x470);\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_0050f8b0",
+  "classes": [
+   53
+  ],
+  "fields": [
+   8
+  ],
+  "size": 435,
+  "calls": [],
+  "body": "\n\nvoid cspec_0050f8b0(undefined4 param_1,int param_2,int param_3,undefined4 *param_4)\n\n\n\n{\n\n  int iVar1;\n\n  undefined4 *puVar2;\n\n  \n\n  if (param_3 == 0x28) {\n\n    puVar2 = *(undefined4 **)(param_2 + 0x100);\n\n    for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {\n\n      *puVar2 = *param_4;\n\n      param_4 = param_4 + 1;\n\n      puVar2 = puVar2 + 1;\n\n    }\n\n    FUN_004706d0(param_1,*(int *)(param_2 + 0x100) + 4);\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_005128f0",
+  "classes": [
+   21
+  ],
+  "fields": [
+   10
+  ],
+  "size": 156,
+  "calls": [
+   "object_destroy"
+  ],
+  "body": "\n\nvoid cspec_005128f0(int param_1)\n\n\n\n{\n\n  if (*(int *)(*(int *)(param_1 + 0x100) + 0xa8) != 0) {\n\n    object_destroy();\n\n    return;\n\n  }\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00512910",
+  "classes": [
+   21
+  ],
+  "fields": [
+   11
+  ],
+  "size": 193,
+  "calls": [
+   "obj_ptr_clear_if_dead"
+  ],
+  "body": "\n\nvoid cspec_00512910(int param_1)\n\n\n\n{\n\n  int iVar1;\n\n  \n\n  iVar1 = *(int *)(param_1 + 0x100);\n\n  obj_ptr_clear_if_dead(iVar1 + 0x8c);\n\n  obj_ptr_clear_if_dead(iVar1 + 0x78);\n\n  return;\n\n}\n\n\n\n\n\n"
+ },
+ {
+  "name": "cspec_00512940",
+  "classes": [
+   21
+  ],
+  "fields": [
+   5
+  ],
+  "size": 61,
+  "calls": [],
+  "body": "\n\nundefined4 cspec_00512940(void)\n\n\n\n{\n\n  return 0xd8;\n\n}\n\n\n\n\n\n"
+ }
+]

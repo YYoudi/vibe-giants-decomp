@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (164 named) — decompiled, names from PS2 symbols
+ * 179 functions (168 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -1351,7 +1351,7 @@ void comm_kill_message2(undefined4 param_1,int param_2)
 
     uVar2 = comm_team_name2(param_1);
 
-    uVar2 = FUN_00507b00(s_CommShowConnHTeam_0057e2d8,uVar2);
+    uVar2 = TextGetPtr(s_CommShowConnHTeam_0057e2d8,uVar2);
 
     crt_sprintf(local_2f0,s__s__s_0055c280,uVar2);
 
@@ -2524,14 +2524,14 @@ void comm_wait_send_space(void)
 
 }
 
-/* ===== FUN_00531470 @ 0x00531470 ===== */
+/* ===== comm_msg_dispatch @ 0x00531470 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: smhatch_move (conf 0.498) */
 
 
 
-void FUN_00531470(void)
+void comm_msg_dispatch(void)
 
 
 
@@ -2765,7 +2765,7 @@ void FUN_00531470(void)
 
         comm_chat_ctx_set(*(undefined4 *)pcVar14);
 
-        FUN_0052b4b0(uVar10,pcVar14);
+        comm_player_flags_set_all(uVar10,pcVar14);
 
         pcVar15 = local_520;
 
@@ -2801,7 +2801,7 @@ void FUN_00531470(void)
 
           comm_entergame_msg_2(6);
 
-          iVar4 = FUN_00525140(DAT_00632f14,DAT_00632f14);
+          iVar4 = comm_player_state_count(DAT_00632f14,DAT_00632f14);
 
           if (iVar4 == 0) {
 
@@ -2811,7 +2811,7 @@ void FUN_00531470(void)
 
             uVar5 = comm_0052b430(DAT_00632f14);
 
-            FUN_0052EF00(uVar5);
+            comm_players_state_send(uVar5);
 
           }
 
@@ -2819,7 +2819,7 @@ void FUN_00531470(void)
 
             uVar5 = comm_0052b430(DAT_00632f14);
 
-            FUN_0052EF00(uVar5);
+            comm_players_state_send(uVar5);
 
           }
 
@@ -2837,7 +2837,7 @@ void FUN_00531470(void)
 
           if (iVar4 == 0) {
 
-            FUN_0052ae90(pcVar15[1]);
+            comm_player_slot_clear(pcVar15[1]);
 
           }
 
@@ -2861,13 +2861,13 @@ void FUN_00531470(void)
 
             DAT_005dfed8 = DAT_005dfed8 + 4;
 
-            iVar4 = FUN_0052aca0(pcVar15[1]);
+            iVar4 = comm_player_flag_get(pcVar15[1]);
 
             if (iVar4 == 0) {
 
               uVar5 = comm_player_name3(pcVar15[1]);
 
-              uVar5 = FUN_00507b00(s_MPChLostConn_0057fefc,uVar5);
+              uVar5 = TextGetPtr(s_MPChLostConn_0057fefc,uVar5);
 
             }
 
@@ -2875,7 +2875,7 @@ void FUN_00531470(void)
 
               uVar5 = comm_player_name3(pcVar15[1]);
 
-              uVar5 = FUN_00507b00(s_MPChLeaveGame_0057ff0c,uVar5);
+              uVar5 = TextGetPtr(s_MPChLeaveGame_0057ff0c,uVar5);
 
             }
 
@@ -2885,7 +2885,7 @@ void FUN_00531470(void)
 
             comm_player_flag_set(pcVar15[1],0);
 
-            FUN_0052ae90(pcVar15[1]);
+            comm_player_slot_clear(pcVar15[1]);
 
             comm_player_name_user();
 
@@ -3177,7 +3177,7 @@ LAB_005319de:
 
                       DAT_005e030c & 0xff);
 
-          FUN_00425eb0(local_300);
+          savegame_slot_load(local_300);
 
           iVar4 = 0;
 
@@ -3191,7 +3191,7 @@ LAB_005319de:
 
                           *(undefined1 *)((int)&DAT_005e030c + iVar4));
 
-              FUN_00425eb0(local_300);
+              savegame_slot_load(local_300);
 
               iVar4 = iVar4 + 1;
 
@@ -3279,7 +3279,7 @@ LAB_005319de:
 
       case ')':
 
-        FUN_0052ff70(pcVar15);
+        comm_orders_dispatch(pcVar15);
 
         pcVar14 = DAT_005e0304;
 
@@ -3299,11 +3299,13 @@ LAB_005319de:
 
         if ((iVar4 != 0) && (9 < DAT_00632f08)) {
 
-          FUN_0041ac40((int)*(short *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 3),pcVar15 + 0xc,
+          base_bldg_spawn_process
 
-                       *(undefined4 *)(pcVar15 + 0x18),*(undefined4 *)(pcVar15 + 8),
+                    ((int)*(short *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 3),pcVar15 + 0xc,
 
-                       *(undefined4 *)(pcVar15 + 0x1c),*(undefined4 *)(pcVar15 + 0x20));
+                     *(undefined4 *)(pcVar15 + 0x18),*(undefined4 *)(pcVar15 + 8),
+
+                     *(undefined4 *)(pcVar15 + 0x1c),*(undefined4 *)(pcVar15 + 0x20));
 
         }
 
@@ -3765,7 +3767,7 @@ LAB_00532b21:
 
       case '4':
 
-        FUN_0052b280(pcVar15[1],pcVar15 + 2);
+        comm_scores_send(pcVar15[1],pcVar15 + 2);
 
         DAT_005e0304 = DAT_005e0304 + (uint)(byte)pcVar15[1] * 2 + 2;
 
@@ -3935,7 +3937,7 @@ LAB_00532513:
 
         *(undefined2 *)(pcVar7 + -1) = DAT_0055c728;
 
-        pcVar14 = (char *)FUN_00507b00(s_CommConnected_0057fe5c);
+        pcVar14 = (char *)TextGetPtr(s_CommConnected_0057fe5c);
 
         uVar10 = 0xffffffff;
 
@@ -4153,7 +4155,7 @@ LAB_00532513:
 
         if ((iVar4 != *(int *)(pcVar15 + 1)) || (iVar6 != *(int *)(pcVar15 + 5))) {
 
-          uVar5 = FUN_00507b00(s_CommWeaponBits_0057ff1c,1);
+          uVar5 = TextGetPtr(s_CommWeaponBits_0057ff1c,1);
 
           comm_005363f0(uVar5);
 
@@ -4197,7 +4199,7 @@ LAB_00532513:
 
         }
 
-        uVar5 = FUN_00507b00(pcVar14,1);
+        uVar5 = TextGetPtr(pcVar14,1);
 
         comm_005363f0(uVar5);
 
@@ -4227,7 +4229,7 @@ LAB_00532513:
 
         }
 
-        uVar5 = FUN_00507b00(pcVar14,1);
+        uVar5 = TextGetPtr(pcVar14,1);
 
         comm_005363f0(uVar5);
 
@@ -4305,7 +4307,7 @@ LAB_00532b8b:
 
         }
 
-        uVar5 = FUN_00507b00(pcVar15,1);
+        uVar5 = TextGetPtr(pcVar15,1);
 
         comm_005363f0(uVar5);
 
@@ -4317,7 +4319,7 @@ LAB_00532b8b:
 
         if (*(int *)(pcVar15 + 1) != DAT_005def94) goto LAB_00532b8b;
 
-        FUN_00520D70();
+        dlog_options_state_process();
 
         DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4359,7 +4361,7 @@ LAB_0053196c:
 
               if (iVar6 == DAT_005def94) {
 
-                uVar5 = FUN_00507b00(s_CommFakeHostYouOff_0057fddc);
+                uVar5 = TextGetPtr(s_CommFakeHostYouOff_0057fddc);
 
               }
 
@@ -4367,7 +4369,7 @@ LAB_0053196c:
 
                 uVar5 = comm_player_name3(iVar4);
 
-                uVar5 = FUN_00507b00(s_CommFakeHostOff_0057fdcc,uVar5);
+                uVar5 = TextGetPtr(s_CommFakeHostOff_0057fdcc,uVar5);
 
               }
 
@@ -4397,7 +4399,7 @@ LAB_0053196c:
 
         if (*(int *)(pcVar15 + 1) == DAT_005def94) {
 
-          iVar4 = FUN_00525140(0xffffffff,*(undefined4 *)(pcVar15 + 9));
+          iVar4 = comm_player_state_count(0xffffffff,*(undefined4 *)(pcVar15 + 9));
 
           if ((iVar4 != 0) && (iVar4 = 0, 0 < DAT_00632f34)) {
 
@@ -4515,7 +4517,7 @@ LAB_00531a53:
 
 LAB_00531503:
 
-    uVar5 = FUN_00507b00(pcVar15,1);
+    uVar5 = TextGetPtr(pcVar15,1);
 
     comm_005363f0(uVar5);
 
@@ -4525,7 +4527,7 @@ LAB_00531503:
 
 LAB_0053151e:
 
-  fVar13 = (float10)FUN_00518b70(0,0);
+  fVar13 = (float10)FRateGetSecsframe(0,0);
 
   fVar13 = (float10)_DAT_005e2734 - fVar13;
 
@@ -4649,7 +4651,7 @@ void comm_team_broadcast_draw(int param_1)
 
       if (-1 < iVar2) {
 
-        iVar3 = FUN_00525140(0xffffffff,*(undefined1 *)(param_1 + 1));
+        iVar3 = comm_player_state_count(0xffffffff,*(undefined1 *)(param_1 + 1));
 
         if (iVar3 != 0) {
 
@@ -4770,7 +4772,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
         uVar5 = comm_team_name2(uVar5);
 
-        uVar6 = FUN_00507b00(s_MPChEnterGame_0057fd98);
+        uVar6 = TextGetPtr(s_MPChEnterGame_0057fd98);
 
         crt_sprintf(local_c8,uVar6,uVar4,uVar5);
 
@@ -4928,7 +4930,7 @@ void comm_wincond_team(int param_1)
 
     uVar3 = __ftol();
 
-    uVar3 = FUN_00507b00(s_WinCondTeamWinner_0057ff2c,local_80,uVar3);
+    uVar3 = TextGetPtr(s_WinCondTeamWinner_0057ff2c,local_80,uVar3);
 
     crt_sprintf(&DAT_00632c10,uVar3);
 
@@ -5768,7 +5770,7 @@ LAB_00533cde:
 
         if (iVar4 == 0) {
 
-          FUN_0051ea20(s_no_base__wtf_0057ff70);
+          error_msg_show(s_no_base__wtf_0057ff70);
 
         }
 
@@ -5790,7 +5792,7 @@ LAB_00533cde:
 
       }
 
-      FUN_0051ea20();
+      error_msg_show();
 
       return;
 
@@ -6037,13 +6039,13 @@ void mecc_fire_logic__FP6OBJECT(void)
 
     if ((DAT_006330e4 != 0) && ((DAT_00632ee4 != -1 && (DAT_00633044 != 0)))) {
 
-      FUN_00425eb0(s_________________________0058017c);
+      savegame_slot_load(s_________________________0058017c);
 
-      FUN_00425eb0(s_Sending_object_snapshot_00580164);
+      savegame_slot_load(s_Sending_object_snapshot_00580164);
 
       crt_sprintf(local_100,s__d_static_objects_00580150,*(undefined4 *)(DAT_006330e4 + 0x170));
 
-      FUN_00425eb0(local_100);
+      savegame_slot_load(local_100);
 
       if (0 < *(int *)(DAT_006330e4 + 0x170)) {
 
@@ -6083,9 +6085,9 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               }
 
-              uVar8 = FUN_0049a180(*(undefined4 *)(iVar9 + 0x1e0));
+              uVar8 = objspec_get_movetype_string(*(undefined4 *)(iVar9 + 0x1e0));
 
-              FUN_00425eb0(uVar8);
+              savegame_slot_load(uVar8);
 
             }
 
@@ -6101,7 +6103,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
       }
 
-      FUN_00425eb0(s_Sending_players_0058013c);
+      savegame_slot_load(s_Sending_players_0058013c);
 
       for (puVar13 = DAT_00632d68; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6141,19 +6143,19 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           }
 
-          uVar8 = FUN_0049a180(*(undefined4 *)(iVar6 + 0x1e0));
+          uVar8 = objspec_get_movetype_string(*(undefined4 *)(iVar6 + 0x1e0));
 
           crt_sprintf(local_100,s_sending_player_id__d__type__s_0058011c,
 
                       *(undefined4 *)(iVar6 + 0x188),uVar8);
 
-          FUN_00425eb0(local_100);
+          savegame_slot_load(local_100);
 
         }
 
       }
 
-      FUN_00425eb0(s_Sending_bases_0058010c);
+      savegame_slot_load(s_Sending_bases_0058010c);
 
       for (puVar13 = DAT_00632d9c; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6241,13 +6243,13 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           crt_sprintf(local_100,s_base_objtype__d_005800fc,*(undefined4 *)(iVar6 + 4));
 
-          FUN_00425eb0(local_100);
+          savegame_slot_load(local_100);
 
         }
 
       }
 
-      FUN_00425eb0(s_Sending_base_buildings_005800e0);
+      savegame_slot_load(s_Sending_base_buildings_005800e0);
 
       for (puVar13 = DAT_00632d9c; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6255,9 +6257,9 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         if ((*(int *)(iVar6 + 0x274) != 0) &&
 
-           ((iVar9 = FUN_004a6220(iVar6), iVar9 != 0 || (iVar9 = ObjIsReaperBldg(iVar6), iVar9 != 0)
+           ((iVar9 = ObjIsMeccBldg(iVar6), iVar9 != 0 ||
 
-            ))) {
+            (iVar9 = ObjIsReaperBldg(iVar6), iVar9 != 0)))) {
 
           iVar9 = dialog_level_is_base();
 
@@ -6341,7 +6343,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_20d = (undefined1)((uint)uVar2 >> 0x18);
 
-            iVar9 = FUN_004a6220(iVar6);
+            iVar9 = ObjIsMeccBldg(iVar6);
 
             if (iVar9 == 0) {
 
@@ -6363,13 +6365,13 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           crt_sprintf(local_100,s_base_building_objtype__d_005800c4,*(undefined4 *)(iVar6 + 4));
 
-          FUN_00425eb0(local_100);
+          savegame_slot_load(local_100);
 
         }
 
       }
 
-      FUN_00425eb0(s_Sending_smarties_005800b0);
+      savegame_slot_load(s_Sending_smarties_005800b0);
 
       for (puVar13 = DAT_00632d98; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6385,13 +6387,13 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           crt_sprintf(local_100,s_smartie_objtype__d_0058009c,*(undefined4 *)(iVar6 + 4));
 
-          FUN_00425eb0(local_100);
+          savegame_slot_load(local_100);
 
         }
 
       }
 
-      FUN_00425eb0(s_Sending_vimps_0058008c);
+      savegame_slot_load(s_Sending_vimps_0058008c);
 
       for (puVar13 = DAT_00632d90; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6493,7 +6495,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
       }
 
-      FUN_00425eb0(s_Sending_projectiles_00580074);
+      savegame_slot_load(s_Sending_projectiles_00580074);
 
       for (puVar13 = DAT_00632d68; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6629,7 +6631,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
       }
 
-      FUN_00425eb0(s_Sending_turrets_00580060);
+      savegame_slot_load(s_Sending_turrets_00580060);
 
       for (puVar13 = DAT_00632d68; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6699,7 +6701,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
       }
 
-      FUN_00425eb0(s_Sending_health_snapshot_of_shoot_00580038);
+      savegame_slot_load(s_Sending_health_snapshot_of_shoot_00580038);
 
       for (puVar13 = DAT_00632d68; puVar13 != (undefined4 *)0x0; puVar13 = (undefined4 *)*puVar13) {
 
@@ -6729,7 +6731,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
       }
 
-      FUN_00425eb0(s_Sending_gyros_jetskis_kbos_00580018);
+      savegame_slot_load(s_Sending_gyros_jetskis_kbos_00580018);
 
       puVar13 = DAT_00632d68;
 
@@ -6737,7 +6739,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         if (puVar13 == (undefined4 *)0x0) {
 
-          FUN_00425eb0(s_Sending_player_snapshots_0057fffc);
+          savegame_slot_load(s_Sending_player_snapshots_0057fffc);
 
           puVar13 = DAT_00632d68;
 
@@ -6747,7 +6749,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             if (puVar13 == (undefined4 *)0x0) {
 
-              FUN_00425eb0(s_Sending_GiveItems_0057ffe8);
+              savegame_slot_load(s_Sending_GiveItems_0057ffe8);
 
               for (puVar13 = DAT_00632d68; puVar13 != (undefined4 *)0x0;
 
@@ -6765,11 +6767,11 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               }
 
-              FUN_00425eb0(s_Sending_scores_0057ffd4);
+              savegame_slot_load(s_Sending_scores_0057ffd4);
 
               comm_send_recv_pair(DAT_005e02e8);
 
-              FUN_00425eb0(s_Sending_smartie_counts_0057ffb8);
+              savegame_slot_load(s_Sending_smartie_counts_0057ffb8);
 
               comm_0052b780_user_5(DAT_005e02e8);
 
@@ -6845,7 +6847,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               }
 
-              FUN_00425eb0(s_Sending_completion_marker_0057ff9c);
+              savegame_slot_load(s_Sending_completion_marker_0057ff9c);
 
               local_23a = 0x10;
 
@@ -6853,7 +6855,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               comm_stats_accumulate(DAT_005e02e8,2,&local_23a);
 
-              FUN_00425eb0(s_________________________0058017c);
+              savegame_slot_load(s_________________________0058017c);
 
               return;
 
@@ -8084,7 +8086,7 @@ LAB_00535170:
 
               (double)DAT_00632e6c);
 
-  FUN_00425eb0(local_80);
+  savegame_slot_load(local_80);
 
 LAB_00535351:
 
@@ -9577,11 +9579,11 @@ void chat_insert(char *param_1,undefined4 param_2)
 
   if (iVar1 == 0x19) {
 
-    FUN_00543270(&DAT_00630ee0,&DAT_00630fe0,0x1800);
+    memmove_back(&DAT_00630ee0,&DAT_00630fe0,0x1800);
 
-    FUN_00543270(&DAT_006327e0,&DAT_006327e4,0x60);
+    memmove_back(&DAT_006327e0,&DAT_006327e4,0x60);
 
-    FUN_00543270(&DAT_00632844,&DAT_00632848,0x60);
+    memmove_back(&DAT_00632844,&DAT_00632848,0x60);
 
     DAT_006326e0 = 0;
 
@@ -10219,7 +10221,7 @@ LAB_005369e7:
 
   if ((DAT_00633020 != 0) && (DAT_00633028 == 0)) {
 
-    uVar4 = FUN_00507b00(s_ChatBoxHint_00580264);
+    uVar4 = TextGetPtr(s_ChatBoxHint_00580264);
 
     textrender_draw_buffered(0x1fffff,0,fVar1 * 0.75,0x3e99999a,local_118 - 0.03,uVar4);
 
@@ -10318,7 +10320,7 @@ void multi_draw_health_bar_horizontal__FP6OBJECTff(float param_1,float param_2,f
 
   fVar2 = *(float *)((int)param_1 + 0x1c0);
 
-  iVar7 = FUN_004a6220(param_1);
+  iVar7 = ObjIsMeccBldg(param_1);
 
   if (iVar7 == 0) {
 
@@ -10477,7 +10479,7 @@ void multi_display_player_cursor_info__Fv(void)
 
      (fVar1 = *(float *)(DAT_00632ed8 + 0x1068),
 
-     fVar5 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,DAT_005e2738 + 0xa0),
+     fVar5 = (float10)distancesq3d(DAT_00632a88 + 0xa0,DAT_005e2738 + 0xa0),
 
      fVar5 < (float10)fVar1 * (float10)fVar1)) {
 
@@ -10594,13 +10596,13 @@ LAB_00536fe0:
 
         iVar2 = meccbasepit_bldg_from_object(param_1);
 
-        if ((((iVar2 == 0) && (iVar2 = FUN_004a6220(param_1), iVar2 == 0)) &&
+        if ((((iVar2 == 0) && (iVar2 = ObjIsMeccBldg(param_1), iVar2 == 0)) &&
 
             (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) &&
 
            (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)) {
 
-          puVar3 = (undefined *)FUN_0049a180(*(undefined4 *)((int)param_1 + 0x1e0));
+          puVar3 = (undefined *)objspec_get_movetype_string(*(undefined4 *)((int)param_1 + 0x1e0));
 
         }
 
@@ -10705,7 +10707,7 @@ void base_hint_menu(int param_1,int param_2)
 
   if (param_2 != 0) {
 
-    uVar2 = FUN_00507b00(s_BaseHintHomeBase_00580284,0);
+    uVar2 = TextGetPtr(s_BaseHintHomeBase_00580284,0);
 
     textrender_draw_main(uVar1,&local_c,15.0 / (float)DAT_00632e88,uVar2);
 
@@ -10713,7 +10715,7 @@ void base_hint_menu(int param_1,int param_2)
 
   }
 
-  uVar2 = FUN_00507b00(s_BaseHintEnemyBase_00580270,0);
+  uVar2 = TextGetPtr(s_BaseHintEnemyBase_00580270,0);
 
   textrender_draw_main(uVar1,&local_c,15.0 / (float)DAT_00632e88,uVar2);
 
@@ -10802,7 +10804,7 @@ void comm_entergame_message(void)
 
           uVar4 = comm_team_name2(uVar4);
 
-          uVar5 = FUN_00507b00(s_MPChEnterGame_0057fd98);
+          uVar5 = TextGetPtr(s_MPChEnterGame_0057fd98);
 
           crt_sprintf(local_c8,uVar5,uVar2,uVar4);
 
@@ -10856,7 +10858,7 @@ void comm_entergame_message(void)
 
           uVar4 = comm_team_name2(uVar4);
 
-          uVar5 = FUN_00507b00(s_MPChEnterGame_0057fd98);
+          uVar5 = TextGetPtr(s_MPChEnterGame_0057fd98);
 
           crt_sprintf(local_c8,uVar5,uVar2,uVar4);
 
@@ -10957,9 +10959,9 @@ void comm_wincond_destroy(int param_1)
 
       if ((*(int *)(iVar4 + 0x18c) == *(int *)(param_1 + 0x18c)) &&
 
-         ((iVar5 = FUN_004a6220(iVar4), iVar5 != 0 || (iVar5 = ObjIsReaperBldg(iVar4), iVar5 != 0)))
+         ((iVar5 = ObjIsMeccBldg(iVar4), iVar5 != 0 || (iVar5 = ObjIsReaperBldg(iVar4), iVar5 != 0))
 
-         ) {
+         )) {
 
         iVar5 = ObjIsReaperBldg(iVar4);
 
@@ -10997,7 +10999,7 @@ void comm_wincond_destroy(int param_1)
 
     }
 
-    pcVar6 = (char *)FUN_00507b00(s_WinCondMetDestroy_00580298);
+    pcVar6 = (char *)TextGetPtr(s_WinCondMetDestroy_00580298);
 
     iVar4 = dialog_level_is_base();
 
@@ -11117,14 +11119,14 @@ void comm_wincond_destroy(int param_1)
 
 }
 
-/* ===== FUN_005375e0 @ 0x005375E0 ===== */
+/* ===== comm_voice_update @ 0x005375E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: mecc_is_bush_logic__FP6OBJECT (conf 0.583) */
+/* PS2 candidate: comm_voice_update (conf 0.75) */
 
 
 
-void FUN_005375e0(void)
+void comm_voice_update(void)
 
 
 
@@ -11194,7 +11196,7 @@ void FUN_005375e0(void)
 
   if (0.0 < DAT_00632f30) {
 
-    fVar15 = (float10)FUN_00518b70(0,0);
+    fVar15 = (float10)FRateGetSecsframe(0,0);
 
     fVar16 = (float10)DAT_00632f30;
 
@@ -11208,7 +11210,7 @@ void FUN_005375e0(void)
 
       if (iVar3 != 0) {
 
-        pcVar4 = (char *)FUN_00507b00(s_CommFlagCapsOn_0058030c);
+        pcVar4 = (char *)TextGetPtr(s_CommFlagCapsOn_0058030c);
 
         iVar3 = dialog_level_is_base();
 
@@ -11328,7 +11330,7 @@ void FUN_005375e0(void)
 
   if (DAT_00632fc0 != 0) {
 
-    fVar15 = (float10)FUN_00518b70(0,0);
+    fVar15 = (float10)FRateGetSecsframe(0,0);
 
     fVar16 = (float10)DAT_00633010;
 
@@ -11350,7 +11352,7 @@ void FUN_005375e0(void)
 
   }
 
-  fVar16 = (float10)FUN_00518b70(0,0);
+  fVar16 = (float10)FRateGetSecsframe(0,0);
 
   fVar16 = (float10)_DAT_0057f4bc - fVar16;
 
@@ -11386,7 +11388,7 @@ void FUN_005375e0(void)
 
     }
 
-    fVar16 = (float10)FUN_00518b70(0,0);
+    fVar16 = (float10)FRateGetSecsframe(0,0);
 
     fVar16 = (float10)_DAT_00633018 - fVar16;
 
@@ -11506,7 +11508,7 @@ void FUN_005375e0(void)
 
         if (DAT_00633010 < 0.0 != (DAT_00633010 == 0.0)) {
 
-          pcVar4 = (char *)FUN_00507b00(s_WinCondMetTimer_005802fc);
+          pcVar4 = (char *)TextGetPtr(s_WinCondMetTimer_005802fc);
 
           iVar3 = dialog_level_is_base();
 
@@ -11638,7 +11640,7 @@ void FUN_005375e0(void)
 
               ((float)(int)(&DAT_00632fcc)[(int)fVar13 * 4] == local_a9c)) {
 
-            pcVar4 = (char *)FUN_00507b00(s_WinCondMetPlayerScore_005802e4);
+            pcVar4 = (char *)TextGetPtr(s_WinCondMetPlayerScore_005802e4);
 
             iVar3 = dialog_level_is_base();
 
@@ -11778,7 +11780,7 @@ void FUN_005375e0(void)
 
               ((float)(int)(&DAT_00632fcc)[(int)fVar13 * 4] == local_a9c)) {
 
-            pcVar4 = (char *)FUN_00507b00(s_WinCondMetTeamScore_005802d0);
+            pcVar4 = (char *)TextGetPtr(s_WinCondMetTeamScore_005802d0);
 
             iVar3 = dialog_level_is_base();
 
@@ -11902,7 +11904,7 @@ LAB_00537c57:
 
           if (fVar16 != (float10)local_a98) goto LAB_00537c91;
 
-          pcVar4 = (char *)FUN_00507b00(s_WinCondMetBase_005802c0);
+          pcVar4 = (char *)TextGetPtr(s_WinCondMetBase_005802c0);
 
           iVar3 = dialog_level_is_base();
 
@@ -11996,7 +11998,7 @@ LAB_00537c57:
 
       case 5.60519e-45:
 
-        pcVar4 = (char *)FUN_00507b00(s_WinCondMetEndNow_005802ac);
+        pcVar4 = (char *)TextGetPtr(s_WinCondMetEndNow_005802ac);
 
         iVar3 = dialog_level_is_base();
 
@@ -12290,7 +12292,7 @@ LAB_00537f57:
 
     uVar5 = __ftol();
 
-    uVar5 = FUN_00507b00(s_WinCondTeamWinner_0057ff2c,local_880,uVar5);
+    uVar5 = TextGetPtr(s_WinCondTeamWinner_0057ff2c,local_880,uVar5);
 
     crt_sprintf(&DAT_00632c10,uVar5);
 
@@ -12417,7 +12419,7 @@ undefined4 stream_player_start(undefined4 param_1)
 
   stream_00538800();
 
-  iVar2 = FUN_005393e0(DAT_005e2c78,param_1);
+  iVar2 = fx_table_lookup(DAT_005e2c78,param_1);
 
   if (iVar2 == 0) {
 
@@ -12508,7 +12510,7 @@ LAB_00538194:
 }
 
 /* ===== FUN_00538540 @ 0x00538540 ===== */
-/* PS2 candidate: __sigtramp (conf 0.644) */
+/* PS2 candidate: __sigtramp (conf 0.6) */
 
 
 
@@ -12522,7 +12524,7 @@ bool FUN_00538540(undefined4 param_1)
 
   
 
-  iVar1 = FUN_005393e0(DAT_005e2c74,param_1);
+  iVar1 = fx_table_lookup(DAT_005e2c74,param_1);
 
   return iVar1 != 0;
 
@@ -12727,7 +12729,7 @@ void stream_00538800(void)
 
           DAT_005e2c60 = iVar2;
 
-          iVar4 = FUN_005393e0(DAT_005e2c74,local_6a0.cFileName);
+          iVar4 = fx_table_lookup(DAT_005e2c74,local_6a0.cFileName);
 
           if (iVar4 == 0) {
 
@@ -12749,7 +12751,7 @@ void stream_00538800(void)
 
                ((*(int *)(DAT_005e2c60 + 4) < iVar5 ||
 
-                (iVar5 = FUN_00545650(*(int *)(iVar4 + 4) + 8,DAT_005e2c60 + 8), 0 < iVar5)))) {
+                (iVar5 = fx_name_compare(*(int *)(iVar4 + 4) + 8,DAT_005e2c60 + 8), 0 < iVar5)))) {
 
               *(int *)(iVar4 + 4) = DAT_005e2c60;
 
@@ -12819,7 +12821,7 @@ LAB_00538add:
 
 LAB_00538b60:
 
-              iVar2 = FUN_005393e0(DAT_005e2c70,local_6a0.cFileName);
+              iVar2 = fx_table_lookup(DAT_005e2c70,local_6a0.cFileName);
 
               if (iVar2 == 0) {
 
@@ -12943,7 +12945,7 @@ LAB_00538c5f:
 
                   (iVar4 = match(pCVar9,&DAT_005803f4), iVar4 == 0)))) {
 
-                iVar4 = FUN_005393e0(DAT_005e2c78,local_6a0.cFileName);
+                iVar4 = fx_table_lookup(DAT_005e2c78,local_6a0.cFileName);
 
                 if (iVar4 != 0) break;
 
@@ -13063,7 +13065,7 @@ LAB_00538ddc:
 
                   if ((local_340.cFileName[0] != '.') &&
 
-                     (iVar4 = FUN_005393e0(DAT_005e2c7c,local_340.cFileName), iVar4 == 0)) {
+                     (iVar4 = fx_table_lookup(DAT_005e2c7c,local_340.cFileName), iVar4 == 0)) {
 
                     if (iVar2 == 0) {
 
@@ -13318,11 +13320,11 @@ bool registry_volume_check(void)
 
   }
 
-  iVar4 = FUN_00545650();
+  iVar4 = fx_name_compare();
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00545650();
+    iVar4 = fx_name_compare();
 
     if (iVar4 == 0) {
 
@@ -13339,7 +13341,7 @@ bool registry_volume_check(void)
 }
 
 /* ===== FUN_00539140 @ 0x00539140 ===== */
-/* PS2 candidate: __sigtramp_2 (conf 0.644) */
+/* PS2 candidate: __sigtramp_2 (conf 0.6) */
 
 
 
@@ -13353,7 +13355,7 @@ bool FUN_00539140(undefined4 param_1)
 
   
 
-  iVar1 = FUN_005393e0(DAT_005e2c78,param_1);
+  iVar1 = fx_table_lookup(DAT_005e2c78,param_1);
 
   return iVar1 != 0;
 
@@ -13384,12 +13386,12 @@ void hash_pair_user(void)
 
 }
 
-/* ===== FUN_005393e0 @ 0x005393E0 ===== */
-/* PS2 candidate: strcmp (conf 0.544) */
+/* ===== fx_table_lookup @ 0x005393E0 ===== */
+/* PS2 candidate: fx_table_lookup (conf 0.85) */
 
 
 
-undefined4 * FUN_005393e0(int param_1,char *param_2)
+undefined4 * fx_table_lookup(int param_1,char *param_2)
 
 
 
@@ -13461,7 +13463,7 @@ undefined4 * FUN_005393e0(int param_1,char *param_2)
 
     }
 
-    iVar3 = FUN_00545650(param_2,iVar3);
+    iVar3 = fx_name_compare(param_2,iVar3);
 
     if (iVar3 == 0) break;
 
@@ -13548,7 +13550,7 @@ void savegame_header_init(undefined4 param_1)
 
   if (DAT_005f0164 != 0) {
 
-    FUN_00425eb0();
+    savegame_slot_load();
 
     return;
 
@@ -13641,7 +13643,7 @@ void mem_verify(void)
 
                       piVar1[0xb]);
 
-          FUN_00425eb0(local_c8);
+          savegame_slot_load(local_c8);
 
           DAT_005f0114 = DAT_005f0114 + 1;
 
@@ -13679,7 +13681,7 @@ void mem_verify(void)
 
                         piVar1 + 0x10,piVar1 + 4);
 
-            FUN_00425eb0(local_190);
+            savegame_slot_load(local_190);
 
             puVar2 = PTR_s_0123456789ABCDEF_005804d4;
 
@@ -13725,7 +13727,7 @@ void mem_verify(void)
 
                         piVar1 + 0x10,piVar1 + 4);
 
-            FUN_00425eb0(local_190);
+            savegame_slot_load(local_190);
 
             puVar2 = PTR_s_0123456789ABCDEF_005804d4;
 
@@ -13765,7 +13767,7 @@ void mem_verify(void)
 
       if (bVar7) {
 
-        FUN_00425eb0();
+        savegame_slot_load();
 
       }
 
@@ -13783,7 +13785,7 @@ void mem_verify(void)
 
                   piVar1[0xb]);
 
-      FUN_00425eb0(local_290);
+      savegame_slot_load(local_290);
 
       piVar1 = (int *)piVar1[2];
 
@@ -13797,59 +13799,59 @@ void mem_verify(void)
 
     crt_sprintf(local_290,s_Total___of_allocations____8lu_005807b0,DAT_005f0118);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Max_simultaneous_allocs____8lu_0058078c,DAT_005f0150);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Total_allocated_bytes____8lu_00580768,DAT_005f015c);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Total_allocated_Mb____8_2f_00580748,
 
                 (double)((float)DAT_005f015c * 9.536743e-07));
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Max_simultaneous_bytes____8lu_00580724,DAT_005f0154);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Max_simultaneous_Mb____8_2f_00580704,
 
                 (double)((float)DAT_005f0154 * 9.536743e-07));
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Largest_allocation____8lu_005806e0,DAT_005f0158);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Current_allocated_bytes____8lu_005806bc,DAT_005f0160);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Current_allocated_Mb____8_2f_0058069c,
 
                 (double)((float)DAT_005f0160 * 9.536743e-07));
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Current_allocs____8lu_00580678,DAT_005f0110);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     crt_sprintf(local_290,s_Bad_Pickets____8lu_00580658,DAT_005f0114);
 
-    FUN_00425eb0(local_290);
+    savegame_slot_load(local_290);
 
     if (DAT_005f0110 != 0) {
 
       crt_sprintf(local_290,s_Warning__d_Unfreed_Mallocs_See_D_005805f8,DAT_005f0110);
 
-      FUN_0051ea20(local_290);
+      error_msg_show(local_290);
 
     }
 
@@ -13857,7 +13859,7 @@ void mem_verify(void)
 
       crt_sprintf(local_290,s_Warning__d_Bad_Pickets_See_Debug_00580598,DAT_005f0114);
 
-      FUN_0051ea20(local_290);
+      error_msg_show(local_290);
 
     }
 
@@ -14241,11 +14243,11 @@ void mem_free_tagged(int *param_1)
 
                   param_1[-1]);
 
-      FUN_00425eb0(local_c8);
+      savegame_slot_load(local_c8);
 
       DAT_005f0114 = DAT_005f0114 + 1;
 
-      FUN_0051ea20(s_Bad_Memory_Picket_Found_0058081c);
+      error_msg_show(s_Bad_Memory_Picket_Found_0058081c);
 
       return;
 
@@ -14281,7 +14283,7 @@ void mem_free_tagged(int *param_1)
 
                     param_1 + -8,param_1[-1]);
 
-        FUN_00425eb0(local_190);
+        savegame_slot_load(local_190);
 
         puVar1 = PTR_s_0123456789ABCDEF_005804d4;
 
@@ -14327,7 +14329,7 @@ void mem_free_tagged(int *param_1)
 
                     ,param_1 + -8,param_1[-1]);
 
-        FUN_00425eb0(local_190);
+        savegame_slot_load(local_190);
 
         puVar1 = PTR_s_0123456789ABCDEF_005804d4;
 
@@ -14390,9 +14392,9 @@ int MemAllocMsg(undefined4 param_1,int param_2,undefined4 param_3,undefined4 par
 
                );
 
-    FUN_00425eb0(local_c8);
+    savegame_slot_load(local_c8);
 
-    FUN_0051ea20(local_c8);
+    error_msg_show(local_c8);
 
   }
 
@@ -14445,9 +14447,9 @@ void MemString(undefined4 param_1,char *param_2,int *param_3,undefined4 param_4,
 
                 ,param_5);
 
-    FUN_00425eb0(local_c8);
+    savegame_slot_load(local_c8);
 
-    FUN_0051ea20(local_c8);
+    error_msg_show(local_c8);
 
   }
 
@@ -14519,7 +14521,7 @@ bool match(undefined4 param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_00545650(param_1,param_2);
+  iVar1 = fx_name_compare(param_1,param_2);
 
   return iVar1 == 0;
 
@@ -15016,12 +15018,12 @@ undefined4 ANM_NodeGetByIndex(int param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0053be00 @ 0x0053BE00 ===== */
-/* PS2 candidate: animGetIndexByName__FP12animSkeletonPc (conf 0.7) */
+/* ===== animGetIndexByName @ 0x0053BE00 ===== */
+/* PS2 candidate: animGetIndexByName (conf 0.7) */
 
 
 
-undefined4 FUN_0053be00(int param_1,int param_2,undefined4 param_3)
+undefined4 animGetIndexByName(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -15079,7 +15081,7 @@ uint FUN_0053be60(uint param_1)
 }
 
 /* ===== FUN_0053be80 @ 0x0053BE80 ===== */
-/* PS2 candidate: ANM_CameraGetFOV (conf 0.71) */
+/* PS2 candidate: ANM_CameraGetFOV (conf 0.7) */
 
 
 
@@ -15342,7 +15344,7 @@ float10 ANM_SecsFromTicks(int param_1,int param_2)
 }
 
 /* ===== FUN_0053c640 @ 0x0053C640 ===== */
-/* PS2 candidate: ANM_SecsFromFrames (conf 0.714) */
+/* PS2 candidate: ANM_SecsFromFrames (conf 0.7) */
 
 
 

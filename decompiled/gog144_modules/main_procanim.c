@@ -95,9 +95,11 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
         iVar4 = p0[p1[5] + 2];
 
-        if (((iVar4 != 0) && (iVar3 = FUN_0053be00(*(undefined4 *)(iVar4 + 0x28),0,*p1), iVar3 != 0)
+        if (((iVar4 != 0) &&
 
-            ) && (*(int *)(iVar3 + 0x18) == 0)) {
+            (iVar3 = animGetIndexByName(*(undefined4 *)(iVar4 + 0x28),0,*p1), iVar3 != 0)) &&
+
+           (*(int *)(iVar3 + 0x18) == 0)) {
 
           *(uint *)(iVar4 + 8) = *(uint *)(iVar4 + 8) | 6;
 
@@ -135,7 +137,7 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
           if ((p1[1] != 0) &&
 
-             (iVar5 = FUN_0053be00(*(undefined4 *)(iVar4 + 0x28),0,p1[1]), iVar5 != 0)) {
+             (iVar5 = animGetIndexByName(*(undefined4 *)(iVar4 + 0x28),0,p1[1]), iVar5 != 0)) {
 
             uVar6 = handle_next_get();
 
@@ -274,7 +276,9 @@ void KabutoProcAnimsCreate(int param_1)
 
           *piVar3 = iVar2;
 
-          iVar4 = FUN_0053be00(*(undefined4 *)(iVar1 + 0x28),0,(&PTR_s_l_ankle01_0055f4ac)[iVar2]);
+          iVar4 = animGetIndexByName(*(undefined4 *)(iVar1 + 0x28),0,
+
+                                     (&PTR_s_l_ankle01_0055f4ac)[iVar2]);
 
           piVar3[2] = iVar4;
 

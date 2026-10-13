@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 158 functions (138 named) — decompiled, names from PS2 symbols
+ * 158 functions (141 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -126,8 +126,8 @@ code_r0x004901f6:
 
 }
 
-/* ===== cspec_00490280 @ 0x00490280 ===== */
-undefined4 cspec_00490280(void)
+/* ===== ret_const_x24_c5 @ 0x00490280 ===== */
+undefined4 ret_const_x24_c5(void)
 
 
 
@@ -186,7 +186,7 @@ void explosive_trap_ai_c43(int param_1)
 
       if (0.0 < *(float *)(param_1 + 0x10c)) {
 
-        fVar6 = (float10)FUN_00518b70(param_1,0);
+        fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar6 = (float10)*(float *)(param_1 + 0x10c) - fVar6 * (float10)*(float *)(param_1 + 0x1a0);
 
@@ -200,13 +200,13 @@ void explosive_trap_ai_c43(int param_1)
 
       }
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar1 = (float)(((float10)*(float *)(param_1 + 0x11c) + (float10)*(float *)(param_1 + 0x10c))
 
                       * fVar6 * (float10)0.5);
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(param_1 + 0x108) =
 
@@ -214,7 +214,7 @@ void explosive_trap_ai_c43(int param_1)
 
                   fVar6 * (float10)*(float *)(param_1 + 0x1b8));
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       object_add_location(param_1,fVar1 * fStack_14,-(fVar1 * fStack_18),
 
@@ -222,7 +222,7 @@ void explosive_trap_ai_c43(int param_1)
 
                                   (float10)*(float *)(param_1 + 0x108)) * fVar6 * (float10)0.5));
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(param_1 + 0xcc) =
 
@@ -234,7 +234,7 @@ void explosive_trap_ai_c43(int param_1)
 
     if (iVar4 == 0) {
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar1 = pfVar2[1];
 
@@ -318,7 +318,7 @@ code_r0x004904b2:
 
       }
 
-      fVar6 = (float10)FUN_00518b70(param_1,0);
+      fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar1 = pfVar2[1];
 
@@ -509,12 +509,12 @@ void trap_explosion_death_c43(int param_1,int param_2,undefined4 param_3,undefin
 
 }
 
-/* ===== FUN_004907e0 @ 0x004907E0 ===== */
+/* ===== dlog_audio_options_process @ 0x004907E0 ===== */
 /* PS2 candidate: army_create_ripper__FP6OBJECTP9ArmyOrderi (conf 0.198) */
 
 
 
-void FUN_004907e0(void)
+void dlog_audio_options_process(void)
 
 
 
@@ -838,7 +838,7 @@ void scenario_list_load(int param_1,undefined4 param_2,char *param_3)
 
         do {
 
-          iVar2 = FUN_00545650(iVar5 + 0x2210 + DAT_006330e4,param_3);
+          iVar2 = fx_name_compare(iVar5 + 0x2210 + DAT_006330e4,param_3);
 
           if (iVar2 == 0) {
 
@@ -870,7 +870,7 @@ void scenario_list_load(int param_1,undefined4 param_2,char *param_3)
 
   crt_sprintf(local_200,s_Too_many_scenerios__skipping___d_0055c6e4,0x1b);
 
-  FUN_0051ea20(local_200);
+  error_msg_show(local_200);
 
   return;
 
@@ -958,7 +958,7 @@ void showchat_mission_objective__Fi(void)
 
     uStack0000002a = 0;
 
-    pcVar3 = (char *)FUN_00507b00();
+    pcVar3 = (char *)TextGetPtr();
 
     uVar4 = 0xffffffff;
 
@@ -1034,7 +1034,7 @@ void showchat_mission_objective__Fi(void)
 
     uStack0000002a = 0;
 
-    pcVar3 = (char *)FUN_00507b00();
+    pcVar3 = (char *)TextGetPtr();
 
     uVar4 = 0xffffffff;
 
@@ -1104,7 +1104,7 @@ void showchat_mission_objective__Fi(void)
 
     _strncat(&stack0x00000000,(char *)(DAT_006330e4 + 0x4558 + iVar8),0x1c);
 
-    pcVar3 = (char *)FUN_00507b00();
+    pcVar3 = (char *)TextGetPtr();
 
     iVar5 = crt_file_lock_ops();
 
@@ -1160,7 +1160,7 @@ void showchat_mission_objective__Fi(void)
 
       if (iVar8 == 1) {
 
-        FUN_00507b00();
+        TextGetPtr();
 
         mission_objective_entry_lookup();
 
@@ -1170,7 +1170,7 @@ void showchat_mission_objective__Fi(void)
 
       else if (iVar8 == 2) {
 
-        FUN_00507b00();
+        TextGetPtr();
 
         mission_objective_entry_lookup();
 
@@ -1255,7 +1255,7 @@ undefined4 scenerio_process__Fv(void)
 
           DAT_00632c04 = 1;
 
-          fVar4 = (float10)FUN_00518b70(0,0);
+          fVar4 = (float10)FRateGetSecsframe(0,0);
 
           fVar5 = (float10)_DAT_0059ef08;
 
@@ -1277,7 +1277,7 @@ undefined4 scenerio_process__Fv(void)
 
             }
 
-            fVar5 = (float10)FUN_00518b70(0,0);
+            fVar5 = (float10)FRateGetSecsframe(0,0);
 
             DAT_0059f320 = 1;
 
@@ -1405,7 +1405,7 @@ undefined4 scenerio_process__Fv(void)
 
             *(int *)(DAT_006330e4 + 0x4a60) = *(int *)(DAT_006330e4 + 0x4a60) + 1;
 
-            FUN_004907e0();
+            dlog_audio_options_process();
 
             return 0;
 
@@ -1480,7 +1480,7 @@ void evilreaper_logic__FP6OBJECT(void)
 
   }
 
-  fVar10 = (float10)FUN_00518b70(0,0);
+  fVar10 = (float10)FRateGetSecsframe(0,0);
 
   _DAT_0059f324 = (float)((float10)_DAT_0059f324 - fVar10);
 
@@ -1494,7 +1494,7 @@ void evilreaper_logic__FP6OBJECT(void)
 
     }
 
-    fVar10 = (float10)FUN_00518b70(0,0);
+    fVar10 = (float10)FRateGetSecsframe(0,0);
 
     _DAT_0059f328 = (float)((float10)_DAT_0059f328 - fVar10);
 
@@ -1506,7 +1506,7 @@ void evilreaper_logic__FP6OBJECT(void)
 
     if (DAT_0055c4a8 == 100) {
 
-      fVar10 = (float10)FUN_00518b70(0,0);
+      fVar10 = (float10)FRateGetSecsframe(0,0);
 
       fVar10 = (float10)_DAT_0059f328 - fVar10;
 
@@ -1614,7 +1614,7 @@ LAB_0049153f:
 
 LAB_00491545:
 
-      fVar10 = (float10)FUN_0050a610(iVar9 + 0xa0,DAT_00632a88 + 0xa0);
+      fVar10 = (float10)distancesq3d(iVar9 + 0xa0,DAT_00632a88 + 0xa0);
 
       if (fVar10 <= (float10)fVar1 * (float10)fVar1) {
 
@@ -2064,7 +2064,7 @@ joined_r0x00491a63:
 
       }
 
-      fVar11 = (float10)FUN_00518b70(0,0);
+      fVar11 = (float10)FRateGetSecsframe(0,0);
 
       fVar10 = (float10)_DAT_0059f328;
 
@@ -3114,7 +3114,7 @@ LAB_00492458:
 
         do {
 
-          iVar1 = FUN_00457fb0(DAT_00632a88,iVar9);
+          iVar1 = WeaponIdGetPresent(DAT_00632a88,iVar9);
 
           if ((iVar1 != -1) && (iVar2 = IconDefAmmoIcon(iVar1), iVar2 != -1)) {
 
@@ -3484,7 +3484,7 @@ LAB_00492988:
 
       crt_sprintf(&DAT_00657400,s_Bad_Mission_Version__Mission_Mus_0055c848);
 
-      FUN_0051ea20(&DAT_00657400);
+      error_msg_show(&DAT_00657400);
 
       return 0;
 
@@ -4176,7 +4176,7 @@ LAB_00492a3a:
 
         if (7 < local_12c) {
 
-          FUN_0051ea20(s_Mission_Lock_level_nest_too_deep_0055c824);
+          error_msg_show(s_Mission_Lock_level_nest_too_deep_0055c824);
 
           local_12c = local_12c + -1;
 
@@ -4210,7 +4210,7 @@ LAB_00492a3a:
 
         if (local_12c == 0) {
 
-          FUN_0051ea20(s_Lock_level_underflow_0055c80c);
+          error_msg_show(s_Lock_level_underflow_0055c80c);
 
         }
 
@@ -4536,7 +4536,7 @@ LAB_00492a3a:
 
         crt_sprintf(local_100,s_Mission_Load_Error__last_op____d_0055c7c0,(int)(char)local_135);
 
-        FUN_0051ea20(local_100);
+        error_msg_show(local_100);
 
       }
 
@@ -4935,7 +4935,7 @@ switchD_00493a7f_caseD_1a:
 
           crt_sprintf(local_100,s_Flick_Mission_Load_Error__last_o_0055c884,(int)(char)local_101);
 
-          FUN_0051ea20(local_100);
+          error_msg_show(local_100);
 
         }
 
@@ -4988,9 +4988,9 @@ void voice_event_trigger(int param_1)
 
                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
-    uVar1 = FUN_00507b00(&DAT_0059f060);
+    uVar1 = TextGetPtr(&DAT_0059f060);
 
-    iVar2 = FUN_00545650(&DAT_0059f060,uVar1);
+    iVar2 = fx_name_compare(&DAT_0059f060,uVar1);
 
     if (iVar2 != 0) {
 
@@ -5033,9 +5033,9 @@ void smartie_voice_trigger(void)
 
                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
-    uVar1 = FUN_00507b00(&DAT_0059f060);
+    uVar1 = TextGetPtr(&DAT_0059f060);
 
-    iVar2 = FUN_00545650(&DAT_0059f060,uVar1);
+    iVar2 = fx_name_compare(&DAT_0059f060,uVar1);
 
     if (iVar2 != 0) {
 
@@ -5084,9 +5084,9 @@ void player_voice_timer_update(undefined4 param_1,float param_2)
 
                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
-    uVar1 = FUN_00507b00(&DAT_0059f060);
+    uVar1 = TextGetPtr(&DAT_0059f060);
 
-    iVar2 = FUN_00545650(&DAT_0059f060,uVar1);
+    iVar2 = fx_name_compare(&DAT_0059f060,uVar1);
 
     if (iVar2 != 0) {
 
@@ -5210,7 +5210,7 @@ void story_flick_open(void)
 
   if ((DAT_00632c00 == 0) && (DAT_00632e74 == 0)) {
 
-    fVar2 = (float10)FUN_00518b70(0,0);
+    fVar2 = (float10)FRateGetSecsframe(0,0);
 
     fVar2 = (float10)_DAT_00632bdc - fVar2;
 
@@ -5295,9 +5295,9 @@ void damage_voice_trigger(int param_1)
 
                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
-    uVar1 = FUN_00507b00(&DAT_0059f060);
+    uVar1 = TextGetPtr(&DAT_0059f060);
 
-    iVar2 = FUN_00545650(&DAT_0059f060,uVar1);
+    iVar2 = fx_name_compare(&DAT_0059f060,uVar1);
 
     if (iVar2 != 0) {
 
@@ -5400,7 +5400,7 @@ void mission_check_obj_proximity__FP6OBJECT(int param_1)
 
     }
 
-    fVar7 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,(float *)(param_1 + 0xa0));
+    fVar7 = (float10)distancesq3d(DAT_00632a88 + 0xa0,(float *)(param_1 + 0xa0));
 
     if (fVar7 < (float10)100.0 == (fVar7 == (float10)100.0)) {
 
@@ -5502,9 +5502,9 @@ void mission_check_obj_proximity__FP6OBJECT(int param_1)
 
     crt_sprintf(&DAT_0059f060,&DAT_0055c8ac,iVar4,uVar5);
 
-    uVar5 = FUN_00507b00(&DAT_0059f060);
+    uVar5 = TextGetPtr(&DAT_0059f060);
 
-    iVar4 = FUN_00545650(&DAT_0059f060,uVar5);
+    iVar4 = fx_name_compare(&DAT_0059f060,uVar5);
 
     if (iVar4 != 0) {
 
@@ -5689,7 +5689,7 @@ void comm_sprintf_object_c94(int param_1)
 
   *(uint *)(param_1 + 0xd8) = uVar3;
 
-  fVar6 = (float10)FUN_00518b70(0,0);
+  fVar6 = (float10)FRateGetSecsframe(0,0);
 
   fVar6 = (float10)*(float *)(param_1 + 0xec) - fVar6;
 
@@ -5707,7 +5707,7 @@ void comm_sprintf_object_c94(int param_1)
 
            (fVar1 = *(float *)(param_1 + 0xc4),
 
-           fVar6 = (float10)FUN_0050a610(param_1 + 0xa0,iVar5 + 0xa0),
+           fVar6 = (float10)distancesq3d(param_1 + 0xa0,iVar5 + 0xa0),
 
            fVar6 <= (float10)fVar1 * (float10)fVar1)) && (DAT_00632c00 == 0)) &&
 
@@ -5723,9 +5723,9 @@ void comm_sprintf_object_c94(int param_1)
 
                     + 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
-        uVar4 = FUN_00507b00(&DAT_0059f060);
+        uVar4 = TextGetPtr(&DAT_0059f060);
 
-        iVar5 = FUN_00545650(&DAT_0059f060,uVar4);
+        iVar5 = fx_name_compare(&DAT_0059f060,uVar4);
 
         if (iVar5 != 0) {
 
@@ -6024,7 +6024,7 @@ void mission_type_dispatch(void)
 
   else if (iVar6 == 2) {
 
-    iVar6 = FUN_00457fb0(DAT_00632a88,0);
+    iVar6 = WeaponIdGetPresent(DAT_00632a88,0);
 
     if (-1 < iVar6) {
 
@@ -6040,7 +6040,7 @@ void mission_type_dispatch(void)
 
     }
 
-    iVar6 = FUN_00457fb0(DAT_00632a88,1);
+    iVar6 = WeaponIdGetPresent(DAT_00632a88,1);
 
     if (-1 < iVar6) {
 
@@ -6056,7 +6056,7 @@ void mission_type_dispatch(void)
 
     }
 
-    iVar6 = FUN_00457fb0(DAT_00632a88,2);
+    iVar6 = WeaponIdGetPresent(DAT_00632a88,2);
 
     if (-1 < iVar6) {
 
@@ -6088,7 +6088,7 @@ void mission_type_dispatch(void)
 
     }
 
-    iVar6 = FUN_004582d0(DAT_00632a88,0);
+    iVar6 = OtherInvIdGet(DAT_00632a88,0);
 
     if (-1 < iVar6) {
 
@@ -6104,7 +6104,7 @@ void mission_type_dispatch(void)
 
     }
 
-    iVar6 = FUN_004582d0(DAT_00632a88,1);
+    iVar6 = OtherInvIdGet(DAT_00632a88,1);
 
     if (-1 < iVar6) {
 
@@ -6120,7 +6120,7 @@ void mission_type_dispatch(void)
 
     }
 
-    iVar6 = FUN_004582d0(DAT_00632a88,2);
+    iVar6 = OtherInvIdGet(DAT_00632a88,2);
 
     if (-1 < iVar6) {
 
@@ -6316,7 +6316,7 @@ int sound_play_obj(int param_1,undefined4 param_2)
 
       crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
-      FUN_00425eb0(&DAT_00657400);
+      savegame_slot_load(&DAT_00657400);
 
     }
 
@@ -6377,7 +6377,7 @@ int sound_play_player(int param_1,int param_2)
 
         crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
 
-        FUN_00425eb0(&DAT_00657400);
+        savegame_slot_load(&DAT_00657400);
 
         return 0;
 
@@ -6401,7 +6401,7 @@ int sound_play_player(int param_1,int param_2)
 
       crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
 
-      FUN_00425eb0(&DAT_00657400);
+      savegame_slot_load(&DAT_00657400);
 
       return 0;
 
@@ -6514,7 +6514,7 @@ int sound_play_2(int param_1,int param_2)
 
   crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,iVar1);
 
-  FUN_00425eb0(&DAT_00657400);
+  savegame_slot_load(&DAT_00657400);
 
   return 0;
 
@@ -6648,7 +6648,7 @@ int sound_play_3(int param_1,undefined4 param_2,undefined4 param_3)
 
       crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
-      FUN_00425eb0(&DAT_00657400);
+      savegame_slot_load(&DAT_00657400);
 
     }
 
@@ -6695,7 +6695,7 @@ int sound_play_3dpos(int param_1,undefined4 param_2)
 
       crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
-      FUN_00425eb0(&DAT_00657400);
+      savegame_slot_load(&DAT_00657400);
 
     }
 
@@ -6732,7 +6732,7 @@ int sound_play_4(int param_1,undefined4 param_2)
 
       crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
-      FUN_00425eb0(&DAT_00657400);
+      savegame_slot_load(&DAT_00657400);
 
     }
 
@@ -6779,7 +6779,7 @@ int sound_play(int param_1)
 
       crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
-      FUN_00425eb0(&DAT_00657400);
+      savegame_slot_load(&DAT_00657400);
 
     }
 
@@ -6979,7 +6979,7 @@ LAB_00495a11:
 
       if ((*(byte *)(piVar1 + 0x10) & 1) == 0) {
 
-        fVar4 = (float10)FUN_00518b70(0,0);
+        fVar4 = (float10)FRateGetSecsframe(0,0);
 
         piVar1[8] = (int)(float)((float10)(float)piVar1[8] - fVar4);
 
@@ -7057,7 +7057,7 @@ LAB_00495a11:
 
             crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
 
-            FUN_00425eb0(&DAT_00657400);
+            savegame_slot_load(&DAT_00657400);
 
           }
 
@@ -7075,7 +7075,7 @@ LAB_00495a11:
 
     else {
 
-      fVar4 = (float10)FUN_00518b70(0,0);
+      fVar4 = (float10)FRateGetSecsframe(0,0);
 
       fVar4 = (float10)(float)piVar1[8] - fVar4;
 
@@ -7138,7 +7138,7 @@ void sound_play_checked(int param_1)
 
         crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
-        FUN_00425eb0(&DAT_00657400);
+        savegame_slot_load(&DAT_00657400);
 
       }
 
@@ -7200,7 +7200,7 @@ void sound_play_checked(int param_1)
 
   crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
-  FUN_00425eb0(&DAT_00657400);
+  savegame_slot_load(&DAT_00657400);
 
 LAB_00495d07:
 
@@ -7565,7 +7565,7 @@ void hud_status_overlay_c58(int param_1)
 
       else if ((piVar1 + 0xf != (int *)0x0) &&
 
-              (iVar4 = FUN_00545650(piVar1 + 0xf,0x55c9d8), iVar4 == 0)) {
+              (iVar4 = fx_name_compare(piVar1 + 0xf,0x55c9d8), iVar4 == 0)) {
 
         *(undefined4 *)(param_1 + 0xf8) = 1;
 
@@ -7675,7 +7675,7 @@ void hud_status_overlay_c58(int param_1)
 
           crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar6);
 
-          FUN_00425eb0(&DAT_00657400);
+          savegame_slot_load(&DAT_00657400);
 
         }
 
@@ -7785,7 +7785,7 @@ code_r0x004964e6:
 
       if (0 < piVar1[4]) {
 
-        fVar7 = (float10)FUN_00518b70(0,0);
+        fVar7 = (float10)FRateGetSecsframe(0,0);
 
         fVar7 = (float10)*(float *)(param_1 + 0xec) - fVar7;
 
@@ -7807,7 +7807,7 @@ code_r0x004964e6:
 
               crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar6);
 
-              FUN_00425eb0(&DAT_00657400);
+              savegame_slot_load(&DAT_00657400);
 
             }
 
@@ -7837,7 +7837,7 @@ code_r0x004964e6:
 
     else {
 
-      fVar7 = (float10)FUN_00518b70(0,0);
+      fVar7 = (float10)FRateGetSecsframe(0,0);
 
       fVar7 = (float10)*(float *)(param_1 + 0xec) - fVar7;
 
@@ -7929,8 +7929,8 @@ code_r0x004966b7:
 
 }
 
-/* ===== cspec_00496750 @ 0x00496750 ===== */
-void cspec_00496750(int param_1)
+/* ===== free_res_c58 @ 0x00496750 ===== */
+void free_res_c58(int param_1)
 
 
 
@@ -7976,8 +7976,8 @@ void cspec_00496750(int param_1)
 
 }
 
-/* ===== cspec_004967a0 @ 0x004967A0 ===== */
-undefined4 cspec_004967a0(void)
+/* ===== ret_const_700_c58 @ 0x004967A0 ===== */
+undefined4 ret_const_700_c58(void)
 
 
 
@@ -8278,7 +8278,7 @@ void anim_tick_c19(int param_1)
 
   uStack_4 = 0x43050000;
 
-  fVar2 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,&uStack_c);
+  fVar2 = (float10)distancesq3d(DAT_00632a88 + 0xa0,&uStack_c);
 
   iVar1 = (-(uint)(fVar2 < (float10)16.0) & 9) + 1;
 
@@ -8334,7 +8334,7 @@ uint object_uniqueid_alloc(void)
 
   if (DAT_0059f37c == 0) {
 
-    FUN_0051ea20(s_Warning_we_ve_used_all_the_uniqu_0055ca0c);
+    error_msg_show(s_Warning_we_ve_used_all_the_uniqu_0055ca0c);
 
     DAT_0059f37c = DAT_0059f37c + 1;
 
@@ -9211,7 +9211,7 @@ void object_copy_activedata(int param_1,int param_2)
 
   if (0 < *(int *)(param_2 + 0x1d8)) {
 
-    iVar2 = FUN_00455fa0(param_2);
+    iVar2 = owned_obj_type_find(param_2);
 
     if ((0 < iVar2) && (iVar2 <= *(int *)(param_1 + 0x1d8))) {
 
@@ -9870,7 +9870,7 @@ LAB_00497f67:
 
         do {
 
-          iVar6 = FUN_00457fb0(DAT_00632a88,iVar3);
+          iVar6 = WeaponIdGetPresent(DAT_00632a88,iVar3);
 
           if (iVar6 != -1) goto LAB_00498087;
 
@@ -10188,7 +10188,7 @@ LAB_0049841a:
 
   kabuto_logic();
 
-  fVar5 = (float10)FUN_00518b70(DAT_00632a88,0);
+  fVar5 = (float10)FRateGetSecsframe(DAT_00632a88,0);
 
   object_animate_process(&DAT_0059f688,(float)fVar5);
 
@@ -10204,7 +10204,7 @@ LAB_0049841a:
 
   if (DAT_0059f990 != 0) {
 
-    fVar5 = (float10)FUN_00518b70(DAT_00632a88,0);
+    fVar5 = (float10)FRateGetSecsframe(DAT_00632a88,0);
 
     object_animate_process(&DAT_0059f380,(float)fVar5);
 
@@ -10373,7 +10373,7 @@ void kabuto_logic(void)
 
   local_20 = (local_58 * 5.0 + local_60) * 0.16666667;
 
-  fVar5 = (float10)FUN_0050a610(&local_c,&local_18);
+  fVar5 = (float10)distancesq3d(&local_c,&local_18);
 
   if (fVar5 <= (float10)0.10890001) {
 
@@ -10568,7 +10568,7 @@ LAB_00498ae1:
 
       do {
 
-        iVar5 = FUN_00457fb0(DAT_00632a88,iVar3);
+        iVar5 = WeaponIdGetPresent(DAT_00632a88,iVar3);
 
         if (iVar5 != -1) goto LAB_00498a2c;
 
@@ -11522,7 +11522,7 @@ void object_apply_location(float param_1)
 
   if (*(int *)((int)param_1 + 0x104) == 0) {
 
-    fVar12 = (float10)FUN_00518b70(param_1,0);
+    fVar12 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar3 = (float)fVar12;
 
@@ -11907,8 +11907,8 @@ LAB_00499c49:
 
 }
 
-/* ===== cspec_00499c70 @ 0x00499C70 ===== */
-undefined4 cspec_00499c70(void)
+/* ===== ret_const_xc_c54 @ 0x00499C70 ===== */
+undefined4 ret_const_xc_c54(void)
 
 
 
@@ -12094,8 +12094,8 @@ undefined4 objspec_has_shot_function_2(int param_1)
 
 }
 
-/* ===== FUN_0049a090 @ 0x0049A090 ===== */
-void FUN_0049a090(int param_1)
+/* ===== cspec_update_dispatch @ 0x0049A090 ===== */
+void cspec_update_dispatch(int param_1)
 
 
 
@@ -12208,25 +12208,25 @@ void object_load_ospec(int param_1,undefined4 param_2,undefined4 param_3,int par
 
 }
 
-/* ===== FUN_0049a180 @ 0x0049A180 ===== */
-/* PS2 candidate: objspec_get_movetype_string (conf 0.637) */
+/* ===== objspec_get_movetype_string @ 0x0049A180 ===== */
+/* PS2 candidate: objspec_get_movetype_string (conf 0.65) */
 
 
 
-void FUN_0049a180(void)
+void objspec_get_movetype_string(void)
 
 
 
 {
 
-  FUN_00507b00();
+  TextGetPtr();
 
   return;
 
 }
 
 /* ===== FUN_0049a1d0 @ 0x0049A1D0 ===== */
-/* PS2 candidate: objspec_get_targetflags (conf 0.716) */
+/* PS2 candidate: objspec_get_targetflags (conf 0.7) */
 
 
 
@@ -13658,7 +13658,7 @@ void object_destroy_specialtype(int param_1)
 
     if (*(int *)(param_1 + 0x174) == 0) {
 
-      FUN_00500f80(param_1);
+      destroy_fx_spawn(param_1);
 
       puVar3 = DAT_00632d68;
 
@@ -13716,7 +13716,7 @@ void object_destroy_specialtype(int param_1)
 
       if (*(int *)(param_1 + 0x174) == 0) {
 
-        FUN_00500f80(param_1);
+        destroy_fx_spawn(param_1);
 
         puVar3 = DAT_00632d68;
 
@@ -13879,7 +13879,7 @@ int worldanim_find(undefined4 param_1)
 
   crt_sprintf(&DAT_00657400,s_Failed_to_find_WorldAnim___s__0055e79c,param_1);
 
-  FUN_0051ea20(&DAT_00657400);
+  error_msg_show(&DAT_00657400);
 
   return 0;
 
@@ -14569,11 +14569,11 @@ void kbos_ai_main_c4(float param_1)
 
   }
 
-  fVar9 = (float10)FUN_00518b70(param_1,0);
+  fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
   *(float *)((int)param_1 + 0xfc) = (float)((float10)*(float *)((int)param_1 + 0xfc) - fVar9);
 
-  fVar9 = (float10)FUN_00518b70(param_1,0);
+  fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
   fVar9 = (float10)*(float *)(iVar8 + 0x5c) - fVar9 * (float10)*(float *)(DAT_00632ed8 + 0x1590);
 
@@ -14631,7 +14631,7 @@ void kbos_ai_main_c4(float param_1)
 
   case 0xb:
 
-    fVar9 = (float10)FUN_00518b70(param_1,0);
+    fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar9 = (float10)*(float *)((int)param_1 + 0xec) - fVar9;
 
@@ -14675,7 +14675,7 @@ void kbos_ai_main_c4(float param_1)
 
       }
 
-      fVar9 = (float10)FUN_00518b70(param_1,0);
+      fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar9 = (float10)*(float *)((int)param_1 + 0xf0) - fVar9;
 
@@ -14689,7 +14689,7 @@ void kbos_ai_main_c4(float param_1)
 
         pfVar1 = (float *)((int)param_1 + 0xf4);
 
-        fVar9 = (float10)FUN_00518b70(param_1,0);
+        fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
         *pfVar1 = (float)(fVar9 * (float10)*(int *)((int)param_1 + 0xf8) *
 
@@ -15179,7 +15179,7 @@ LAB_0049d88b:
 
       bbox_center_calc(&fStack_18,*(undefined4 *)(iVar7 + 0x3c));
 
-      fVar9 = (float10)FUN_0050a610(auStack_c,&fStack_18);
+      fVar9 = (float10)distancesq3d(auStack_c,&fStack_18);
 
       fVar3 = (float)(SQRT(fVar9 / ((float10)*(float *)(DAT_00632ed8 + 0x1288) *
 
@@ -15227,7 +15227,7 @@ LAB_0049d88b:
 
     else {
 
-      fVar9 = (float10)FUN_00518b70(param_1,0);
+      fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar9 = (float10)*(float *)(iVar8 + 0x4c) - fVar9;
 
@@ -15241,7 +15241,7 @@ LAB_0049d88b:
 
         bbox_center_calc(auStack_c,*(undefined4 *)(iVar7 + 0x3c));
 
-        fVar9 = (float10)FUN_0050a610(&fStack_18,auStack_c);
+        fVar9 = (float10)distancesq3d(&fStack_18,auStack_c);
 
         trajectory_calculate
 
@@ -15561,7 +15561,7 @@ LAB_0049d773:
 
   case 0x1e:
 
-    fVar9 = (float10)FUN_00518b70(param_1,0);
+    fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar9 = (float10)*(float *)((int)param_1 + 0xec) - fVar9;
 
@@ -15769,7 +15769,7 @@ LAB_0049d7c6:
 
   PhysicsExApplyMoveControls(iVar5);
 
-  fVar9 = (float10)FUN_00518b70(iVar5,0);
+  fVar9 = (float10)FRateGetSecsframe(iVar5,0);
 
   object_animate_process(iVar5,(float)fVar9);
 
@@ -15923,7 +15923,7 @@ void get_floor_z_point_plat_2(int param_1)
 
     {
 
-      fVar6 = (float10)FUN_0050a610(iVar2 + 0x40,iVar3 + 0xa0);
+      fVar6 = (float10)distancesq3d(iVar2 + 0x40,iVar3 + 0xa0);
 
       fVar1 = (float)fVar6;
 
@@ -16095,8 +16095,8 @@ void offspring_dive_release_target__FP6OBJECT(int param_1)
 
 }
 
-/* ===== cspec_0049e0a0 @ 0x0049E0A0 ===== */
-undefined4 cspec_0049e0a0(void)
+/* ===== ret_const_100_c4 @ 0x0049E0A0 ===== */
+undefined4 ret_const_100_c4(void)
 
 
 
@@ -16223,8 +16223,8 @@ void death_handler_c4(int param_1,float param_2,int param_3,undefined4 param_4,u
 
 }
 
-/* ===== cspec_0049e270 @ 0x0049E270 ===== */
-undefined4 cspec_0049e270(undefined4 param_1,int param_2)
+/* ===== death_claim_c4 @ 0x0049E270 ===== */
+undefined4 death_claim_c4(undefined4 param_1,int param_2)
 
 
 
@@ -16461,7 +16461,7 @@ void lift_logic__FP6OBJECT(int param_1)
 
     object_set_location_p3d(DAT_0059f99c,param_1 + 0xa0);
 
-    fVar2 = (float10)FUN_00518b70(0,0);
+    fVar2 = (float10)FRateGetSecsframe(0,0);
 
     object_animate_process(DAT_0059f99c,(float)fVar2);
 
@@ -16871,7 +16871,7 @@ undefined4 chat_log_init(int param_1)
 
             if (DAT_0063325c == 0) {
 
-              uVar4 = FUN_00507b00();
+              uVar4 = TextGetPtr();
 
               crt_sprintf(local_100,uVar4);
 
@@ -16883,7 +16883,7 @@ undefined4 chat_log_init(int param_1)
 
             else {
 
-              uVar4 = FUN_00507b00();
+              uVar4 = TextGetPtr();
 
               crt_sprintf(local_100,uVar4);
 
@@ -17007,7 +17007,7 @@ LAB_0049f8f1:
 
               }
 
-              puVar3 = (undefined1 *)FUN_00507b00(uVar7);
+              puVar3 = (undefined1 *)TextGetPtr(uVar7);
 
               uVar4 = (undefined4)((ulonglong)uVar7 >> 0x20);
 

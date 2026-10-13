@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (321 named) — decompiled, names from PS2 symbols
+ * 351 functions (324 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -756,7 +756,7 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_mesh_build_fvf_verts_2_005565b0 = (&PTR_mesh_build_fvf_verts_00580d0c)[param_1];
 
-  PTR_FUN_005565b4 = (&PTR_LAB_00580d18)[param_1];
+  PTR_hud_trilist_expand_005565b4 = (&PTR_LAB_00580d18)[param_1];
 
   PTR_level_scene_mesh_render_005565b8 = (&PTR_LAB_00580d24)[param_1];
 
@@ -795,7 +795,7 @@ void crt_math_dispatch_init(int param_1)
 }
 
 /* ===== FUN_00540ab0 @ 0x00540AB0 ===== */
-/* PS2 candidate: S_TriCalcGradients_2 (conf 0.601) */
+/* PS2 candidate: S_TriCalcGradients_2 (conf 0.6) */
 
 
 
@@ -2849,8 +2849,8 @@ void __rt_error_box(char *param_1,char *param_2)
 
 }
 
-/* ===== FUN_00543270 @ 0x00543270 ===== */
-undefined4 * FUN_00543270(undefined4 *param_1,undefined4 *param_2,uint param_3)
+/* ===== memmove_back @ 0x00543270 ===== */
+undefined4 * memmove_back(undefined4 *param_1,undefined4 *param_2,uint param_3)
 
 
 
@@ -6910,7 +6910,7 @@ void __get_eh_context(void)
 }
 
 /* ===== FUN_00544d41 @ 0x00544D41 ===== */
-/* PS2 candidate: matherr (conf 0.642) */
+/* PS2 candidate: matherr (conf 0.6) */
 
 
 
@@ -8222,14 +8222,14 @@ LAB_00545615:
 
 }
 
-/* ===== FUN_00545650 @ 0x00545650 ===== */
+/* ===== fx_name_compare @ 0x00545650 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: fx_find (conf 0.571) */
+/* PS2 candidate: fx_name_compare (conf 0.7) */
 
 
 
-char FUN_00545650(byte *param_1,byte *param_2)
+char fx_name_compare(byte *param_1,byte *param_2)
 
 
 
@@ -9670,7 +9670,7 @@ void crt_memmove(char *param_1,int param_2)
 
     sVar1 = _strlen(param_1);
 
-    FUN_00543270(param_1 + param_2,param_1,sVar1 + 1);
+    memmove_back(param_1 + param_2,param_1,sVar1 + 1);
 
   }
 
@@ -18195,7 +18195,7 @@ void __sbh_free_block(uint *param_1,int param_2)
 
           HeapFree(DAT_006579e8,0,(LPVOID)DAT_006579d8[4]);
 
-          FUN_00543270(DAT_006579d8,DAT_006579d8 + 5,
+          memmove_back(DAT_006579d8,DAT_006579d8 + 5,
 
                        (DAT_006579dc * 0x14 - (int)DAT_006579d8) + -0x14 + DAT_006579e0);
 
@@ -22366,7 +22366,7 @@ undefined4 crt_bitarray_test(int param_1,int param_2)
 }
 
 /* ===== FUN_0054d104 @ 0x0054D104 ===== */
-/* PS2 candidate: DestroyHuds__11cHudManager (conf 0.53) */
+/* PS2 candidate: DestroyHuds (conf 0.6) */
 
 
 
@@ -22823,7 +22823,7 @@ void crt_fmt_radix_prefix(char *param_1,int param_2,int param_3)
 
     sVar3 = _strlen(_Str);
 
-    FUN_00543270(pcVar1,_Str,sVar3 + 1);
+    memmove_back(pcVar1,_Str,sVar3 + 1);
 
   }
 
@@ -26937,7 +26937,7 @@ LAB_0054f0ad:
 
       sVar7 = sVar7 + 1;
 
-      FUN_0054f36b(&local_14,&local_20);
+      crt_flt_cvt(&local_14,&local_20);
 
     }
 
@@ -27244,8 +27244,12 @@ int FUN_0054f246(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_0054f36b @ 0x0054F36B ===== */
-void FUN_0054f36b(int *param_1,int *param_2)
+/* ===== crt_flt_cvt @ 0x0054F36B ===== */
+/* PS2 candidate: crt_flt_cvt (conf 0.85) */
+
+
+
+void crt_flt_cvt(int *param_1,int *param_2)
 
 
 
@@ -27632,7 +27636,7 @@ void crt_mant_normalize(undefined2 *param_1,uint param_2,int param_3)
 
         }
 
-        FUN_0054f36b(param_1,ppuVar4);
+        crt_flt_cvt(param_1,ppuVar4);
 
       }
 

@@ -1,0 +1,64 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00407ae0,cspec_00407ae0,,ret_const_x4a28_c106,0.9,cspec-w226,field5 const getter ret=0x4a28 cls=army_opcodes
+0040f370,cspec_0040f370,,ret_const_x58_c23,0.9,cspec-w226,field5 const getter ret=0x58 cls=c23
+004503d0,cspec_004503d0,,ret_const_x10c_c78,0.9,cspec-w226,field5 const getter ret=0x10c cls=c78
+00454d70,cspec_00454d70,,ret_const_x148_c102,0.9,cspec-w226,field5 const getter ret=0x148 cls=c102
+00456660,cspec_00456660,,ret_const_x34_c17,0.9,cspec-w226,field5 const getter ret=0x34 cls=c17
+0045ae60,cspec_0045ae60,,ret_const_x20_c37,0.9,cspec-w226,field5 const getter ret=0x20 cls=c37
+00467250,cspec_00467250,,ret_const_x358_c1,0.9,cspec-w226,field5 const getter ret=0x358 cls=reaper_ai_main
+0046a030,cspec_0046a030,,ret_const_x6c_c15,0.9,cspec-w226,field5 const getter ret=0x6c cls=kabuto_ai
+0046a370,cspec_0046a370,,ret_const_4_c28,0.9,cspec-w226,field5 const getter ret=4 cls=c28
+0046a470,cspec_0046a470,,ret_const_200_c18,0.9,cspec-w226,field5 const getter ret=200 cls=smartie_ai
+0046df40,cspec_0046df40,,ret_const_x70_c76,0.9,cspec-w226,field5 const getter ret=0x70 cls=c76
+0046f3c0,cspec_0046f3c0,,ret_const_xc_c104,0.9,cspec-w226,field5 const getter ret=0xc cls=c104
+004788d0,cspec_004788d0,,ret_const_x14_c55,0.9,cspec-w226,field5 const getter ret=0x14 cls=c55
+00480a00,cspec_00480a00,,ret_const_x220_c2,0.9,cspec-w226,field5 const getter ret=0x220 cls=mecc_ai
+00490280,cspec_00490280,,ret_const_x24_c5,0.9,cspec-w226,field5 const getter ret=0x24 cls=c5
+004967a0,cspec_004967a0,,ret_const_700_c58,0.9,cspec-w226,field5 const getter ret=700 cls=c58
+00499c70,cspec_00499c70,,ret_const_xc_c54,0.9,cspec-w226,field5 const getter ret=0xc cls=c54
+0049e0a0,cspec_0049e0a0,,ret_const_100_c4,0.9,cspec-w226,field5 const getter ret=100 cls=c4
+004a9f20,cspec_004a9f20,,ret_const_x1f8_c77,0.9,cspec-w226,field5 const getter ret=0x1f8 cls=c77
+004b6520,cspec_004b6520,,ret_const_x5e0_c32,0.9,cspec-w226,field5 const getter ret=0x5e0 cls=c32
+004b6530,cspec_004b6530,,ret_const_x18_c74,0.9,cspec-w226,field5 const getter ret=0x18 cls=c74
+004c4870,cspec_004c4870,,ret_const_x1004_c3,0.9,cspec-w226,field5 const getter ret=0x1004 cls=reaper_spellcast
+004c6f30,cspec_004c6f30,,ret_const_x10_c25,0.9,cspec-w226,field5 const getter ret=0x10 cls=c25
+004cc080,cspec_004cc080,,ret_const_xde8_c99,0.9,cspec-w226,field5 const getter ret=0xde8 cls=evilreaper_fly
+004d5700,cspec_004d5700,,ret_const_8_c36,0.9,cspec-w226,field5 const getter ret=8 cls=c36
+004d7610,cspec_004d7610,,ret_const_x90_c90,0.9,cspec-w226,field5 const getter ret=0x90 cls=c90
+004e75d0,cspec_004e75d0,,ret_const_x240_c51,0.9,cspec-w226,field5 const getter ret=0x240 cls=c51
+004ec7c0,cspec_004ec7c0,,ret_const_x60_c29,0.9,cspec-w226,field5 const getter ret=0x60 cls=c29
+004f9310,cspec_004f9310,,ret_const_x1c_c24,0.9,cspec-w226,field5 const getter ret=0x1c cls=c24
+004fa1a0,cspec_004fa1a0,,ret_const_x2c_c39,0.9,cspec-w226,field5 const getter ret=0x2c cls=c39
+0050a380,cspec_0050a380,,ret_const_x4c_c44,0.9,cspec-w226,field5 const getter ret=0x4c cls=turret
+0050f820,cspec_0050f820,,ret_const_x28_c53,0.9,cspec-w226,field5 const getter ret=0x28 cls=c53
+00512940,cspec_00512940,,ret_const_xd8_c21,0.9,cspec-w226,field5 const getter ret=0xd8 cls=evilreaper_herd
+004fa1b0,cspec_004fa1b0,,ptr_clear_if_dead_c39,0.9,cspec-w226,obj_ptr_clear_if_dead field11
+0050c610,cspec_0050c610,,ptr_clear_if_dead_c44,0.9,cspec-w226,obj_ptr_clear_if_dead field11
+00512910,cspec_00512910,,ptr_clear_if_dead_c21,0.9,cspec-w226,obj_ptr_clear_if_dead field11
+0046f400,cspec_0046f400,,ptr_clear_if_dead_c104,0.9,cspec-w226,obj_ptr_clear_if_dead field11
+004d7b40,cspec_004d7b40,,ptr_clear_if_dead_c90,0.9,cspec-w226,obj_ptr_clear_if_dead field11
+004f9320,cspec_004f9320,,free_tagged_c24,0.9,cspec-w226,mem_free_tagged field10
+0050f890,cspec_0050f890,,free_tagged_c53,0.9,cspec-w226,mem_free_tagged field7
+004d7b60,cspec_004d7b60,,destroy_c90,0.9,cspec-w226,object_destroy field10
+005128f0,cspec_005128f0,,destroy_c21,0.9,cspec-w226,object_destroy field10
+004c73a0,cspec_004c73a0,,death_destroy_c40,0.9,cspec-w226,object_destroy field9 death handler
+00481bd0,cspec_00481bd0,,sound_stop_init_c96,0.9,cspec-w226,sound_stop_obj field0 init
+005059a0,cspec_005059a0,,mecc_anim_tick_c2,0.9,cspec-w226,mecc_animselect_gm field3 anim tick
+004aac50,cspec_004aac50,,fx_name_set_c77,0.9,cspec-w226,"fx/proj name copy + rate 0.1 set, err fx_name_too_long (f4)"
+004e7680,cspec_004e7680,,tracked_node_free_c52,0.9,cspec-w226,"find node by key obj+0x234, vdel node[7], unlink, pool free (f0)"
+0045be30,cspec_0045be30,,reaper_target_range_check_c1,0.9,cspec-w226,"range tiers 20/35*scale vs tgt+0x290, mask by tgt+0x1cc weapon bits (f16)"
+004a7b50,cspec_004a7b50,,timer_countdown_tick_c56,0.9,cspec-w226,"+0xec -= dt via FUN_00518b70, clamp 0, flag 0x40000000 (f2)"
+0046a400,cspec_0046a400,,death_state_set_c28,0.9,cspec-w226,"f9: set +0xe4=2 +0xec=cfg timer (DAT_632ed8+0x1474/0x150c), cause2->0046a210"
+004f82f0,cspec_004f82f0,,dual_timer_tick_c66,0.9,cspec-w226,"once flag 0x800000 + hp=0, then +0xec-=dt and +0x278+=dt (f2)"
+00496750,cspec_00496750,,free_res_c58,0.9,cspec-w226,vdel obj+0x24 or DAT_005dd354(obj+0x2c) resource free (f0/f10)
+0050f8b0,cspec_0050f8b0,,msg28_copy10_c53,0.9,cspec-w226,"msg 0x28: copy 10 dwords payload into obj, FUN_004706d0 refresh (f8)"
+0044f1a0,cspec_0044f1a0,,death_vcall_fwd_c78,0.9,cspec-w226,forward args to obj+0xdc virtual with 7th=+0xe0 (f4)
+004a7830,cspec_004a7830,,death_clear_owners_c19,0.9,cspec-w226,state==10: walk DAT_632d98 list clear child+0x210 owner links to me
+004a64b0,cspec_004a64b0,,anim_speed_calc_c35,0.9,cspec-w226,"+0x184 = +0x14 / table[state][0], flag 0x8000 (f2)"
+0041a7b0,cspec_0041a7b0,,flag_state_tick_c91,0.9,cspec-w226,"set +0x1c8|=0x800, +0xd8 bit per DAT_632e74 (f2)"
+004cc050,cspec_004cc050,,health_full_check_c100,0.9,cspec-w226,hp+0x278>=max+0x1c0 -> flags 0x40000000|0x8000 (f0)
+0046a010,cspec_0046a010,,ptr_clear_if_dead_off3c_c4,0.9,cspec-w226,clear obj+0x3c if target dead bit 0x8000 (f0/f11)
+0045ae70,cspec_0045ae70,,ptr_clear_if_dead_offc_c37,0.9,cspec-w226,clear obj+0xc if target dead bit 0x8000 (f11)
+0050f800,cspec_0050f800,,ptr_clear_if_dead_off4_c25,0.9,cspec-w226,clear obj+4 if target dead bit 0x8000 (f11)
+0049e270,cspec_0049e270,,death_claim_c4,0.9,cspec-w226,"death f16: if tgt class 0x3c, claim tgt+0x220=me"
+0046e630,cspec_0046e630,,child_owner_clear_c76,0.9,cspec-w226,clear child obj+0x44 -> +0x210 owner link (f10)

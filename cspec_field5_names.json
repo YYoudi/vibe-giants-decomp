@@ -1,0 +1,299 @@
+[
+ {
+  "pc_addr": "00407ae0",
+  "pc_name": "cspec_00407ae0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x4a28_c106",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x4a28 cls=army_opcodes"
+ },
+ {
+  "pc_addr": "0040f370",
+  "pc_name": "cspec_0040f370",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x58_c23",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x58 cls=c23"
+ },
+ {
+  "pc_addr": "004503d0",
+  "pc_name": "cspec_004503d0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x10c_c78",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x10c cls=c78"
+ },
+ {
+  "pc_addr": "00454d70",
+  "pc_name": "cspec_00454d70",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x148_c102",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x148 cls=c102"
+ },
+ {
+  "pc_addr": "00456660",
+  "pc_name": "cspec_00456660",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x34_c17",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x34 cls=c17"
+ },
+ {
+  "pc_addr": "0045ae60",
+  "pc_name": "cspec_0045ae60",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x20_c37",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x20 cls=c37"
+ },
+ {
+  "pc_addr": "00467250",
+  "pc_name": "cspec_00467250",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x358_c1",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x358 cls=reaper_ai_main"
+ },
+ {
+  "pc_addr": "0046a030",
+  "pc_name": "cspec_0046a030",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x6c_c15",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x6c cls=kabuto_ai"
+ },
+ {
+  "pc_addr": "0046a370",
+  "pc_name": "cspec_0046a370",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_4_c28",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=4 cls=c28"
+ },
+ {
+  "pc_addr": "0046a470",
+  "pc_name": "cspec_0046a470",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_200_c18",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=200 cls=smartie_ai"
+ },
+ {
+  "pc_addr": "0046df40",
+  "pc_name": "cspec_0046df40",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x70_c76",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x70 cls=c76"
+ },
+ {
+  "pc_addr": "0046f3c0",
+  "pc_name": "cspec_0046f3c0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_xc_c104",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0xc cls=c104"
+ },
+ {
+  "pc_addr": "004788d0",
+  "pc_name": "cspec_004788d0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x14_c55",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x14 cls=c55"
+ },
+ {
+  "pc_addr": "00480a00",
+  "pc_name": "cspec_00480a00",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x220_c2",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x220 cls=mecc_ai"
+ },
+ {
+  "pc_addr": "00490280",
+  "pc_name": "cspec_00490280",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x24_c5",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x24 cls=c5"
+ },
+ {
+  "pc_addr": "004967a0",
+  "pc_name": "cspec_004967a0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_700_c58",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=700 cls=c58"
+ },
+ {
+  "pc_addr": "00499c70",
+  "pc_name": "cspec_00499c70",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_xc_c54",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0xc cls=c54"
+ },
+ {
+  "pc_addr": "0049e0a0",
+  "pc_name": "cspec_0049e0a0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_100_c4",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=100 cls=c4"
+ },
+ {
+  "pc_addr": "004a9f20",
+  "pc_name": "cspec_004a9f20",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x1f8_c77",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x1f8 cls=c77"
+ },
+ {
+  "pc_addr": "004b6520",
+  "pc_name": "cspec_004b6520",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x5e0_c32",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x5e0 cls=c32"
+ },
+ {
+  "pc_addr": "004b6530",
+  "pc_name": "cspec_004b6530",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x18_c74",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x18 cls=c74"
+ },
+ {
+  "pc_addr": "004c4870",
+  "pc_name": "cspec_004c4870",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x1004_c3",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x1004 cls=reaper_spellcast"
+ },
+ {
+  "pc_addr": "004c6f30",
+  "pc_name": "cspec_004c6f30",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x10_c25",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x10 cls=c25"
+ },
+ {
+  "pc_addr": "004cc080",
+  "pc_name": "cspec_004cc080",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_xde8_c99",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0xde8 cls=evilreaper_fly"
+ },
+ {
+  "pc_addr": "004d5700",
+  "pc_name": "cspec_004d5700",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_8_c36",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=8 cls=c36"
+ },
+ {
+  "pc_addr": "004d7610",
+  "pc_name": "cspec_004d7610",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x90_c90",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x90 cls=c90"
+ },
+ {
+  "pc_addr": "004e75d0",
+  "pc_name": "cspec_004e75d0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x240_c51",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x240 cls=c51"
+ },
+ {
+  "pc_addr": "004ec7c0",
+  "pc_name": "cspec_004ec7c0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x60_c29",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x60 cls=c29"
+ },
+ {
+  "pc_addr": "004f9310",
+  "pc_name": "cspec_004f9310",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x1c_c24",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x1c cls=c24"
+ },
+ {
+  "pc_addr": "004fa1a0",
+  "pc_name": "cspec_004fa1a0",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x2c_c39",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x2c cls=c39"
+ },
+ {
+  "pc_addr": "0050a380",
+  "pc_name": "cspec_0050a380",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x4c_c44",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x4c cls=turret"
+ },
+ {
+  "pc_addr": "0050f820",
+  "pc_name": "cspec_0050f820",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_x28_c53",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0x28 cls=c53"
+ },
+ {
+  "pc_addr": "00512940",
+  "pc_name": "cspec_00512940",
+  "ps2_addr": "",
+  "ps2_name": "ret_const_xd8_c21",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "field5 const getter ret=0xd8 cls=evilreaper_herd"
+ }
+]

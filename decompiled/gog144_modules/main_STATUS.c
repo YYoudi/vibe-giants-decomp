@@ -74,7 +74,7 @@ int main_status_00500520(int *param_1)
 
           crt_sprintf(&DAT_00657400,s_Error__missing_objdata_in_status_0057a6dc,*puVar5);
 
-          FUN_0051ea20(&DAT_00657400);
+          error_msg_show(&DAT_00657400);
 
         }
 

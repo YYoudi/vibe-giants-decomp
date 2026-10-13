@@ -42,7 +42,7 @@ void read_worlds_bin_fn_PS2(void)
 
         crt_sprintf(local_180,s_Mission___s__Can_t_be_found_0055c6bc,local_100);
 
-        FUN_0051ea20(local_180);
+        error_msg_show(local_180);
 
       }
 

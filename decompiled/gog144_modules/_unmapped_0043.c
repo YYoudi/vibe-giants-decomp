@@ -1372,7 +1372,7 @@ void kabutoai_select_target__FP6OBJECT(void)
 
         pfVar11 = local_10;
 
-        fVar14 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,local_20);
+        fVar14 = (float10)distancesq3d(DAT_00632a88 + 0xa0,local_20);
 
         if ((fVar14 < (float10)90000.0) && (iVar12 = ObjIsMecc(DAT_00632a88), iVar12 != 0)) {
 
@@ -5914,7 +5914,7 @@ LAB_0043aac5:
 
   uVar11 = *(undefined4 *)(iVar1 + 0x1e0);
 
-  uVar4 = FUN_0049a180();
+  uVar4 = objspec_get_movetype_string();
 
   uVar10 = CONCAT44(uVar11,uVar4);
 

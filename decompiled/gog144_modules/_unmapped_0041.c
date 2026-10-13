@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 102 functions (90 named) — decompiled, names from PS2 symbols
+ * 102 functions (94 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2287,7 +2287,7 @@ undefined4 obj_slope_move(float param_1,float *param_2)
 
   if ((param_2[2] < 0.64278) && (0.0 < *(float *)((int)param_1 + 0x1bc))) {
 
-    fVar9 = (float10)FUN_00518b70(param_1,0);
+    fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar1 = *param_2;
 
@@ -2295,7 +2295,7 @@ undefined4 obj_slope_move(float param_1,float *param_2)
 
     fVar3 = *param_2;
 
-    fVar10 = (float10)FUN_00518b70(param_1,0);
+    fVar10 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar4 = param_2[1];
 
@@ -2527,9 +2527,9 @@ void obj_ground_normal(int param_1)
 
         (local_14 < 0.64278)) && (0.0 < *(float *)(param_1 + 0x1bc))) {
 
-      fVar4 = (float10)FUN_00518b70(param_1,0);
+      fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
-      fVar5 = (float10)FUN_00518b70(param_1,0);
+      fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
       *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x10000000;
 
@@ -5930,7 +5930,7 @@ undefined4 obj_maxspeed_lookup(float param_1,float param_2)
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_004a6220(param_1);
+    iVar4 = ObjIsMeccBldg(param_1);
 
     if (iVar4 != 0) goto LAB_004178ce;
 
@@ -6052,7 +6052,7 @@ LAB_00417980:
 
     if (iVar4 == 0) {
 
-      iVar4 = FUN_004a6220(iVar3);
+      iVar4 = ObjIsMeccBldg(iVar3);
 
       if (iVar4 == 0) {
 
@@ -6205,7 +6205,7 @@ LAB_00417aef:
 
     if (iVar5 != 0) goto LAB_00417b5a;
 
-    iVar5 = FUN_004a6220(iVar4);
+    iVar5 = ObjIsMeccBldg(iVar4);
 
     if (iVar5 == 0) {
 
@@ -6275,7 +6275,7 @@ LAB_00417ba7:
 
       if (iVar5 == 0) {
 
-        iVar5 = FUN_004a6220(iVar4);
+        iVar5 = ObjIsMeccBldg(iVar4);
 
         if (iVar5 == 0) {
 
@@ -6375,7 +6375,7 @@ undefined4 bldg_get_max_energy(int param_1)
 
   iVar4 = meccbasepit_bldg_from_object(param_1);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_004a6220(param_1), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = ObjIsMeccBldg(param_1), iVar4 == 0)) {
 
     iVar4 = reaperbase_bldg_from_object(param_1);
 
@@ -6450,7 +6450,7 @@ float10 bldg_set_energy(int param_1,float param_2)
 
   if ((iVar2 == 0) && (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
-    iVar2 = FUN_004a6220(param_1);
+    iVar2 = ObjIsMeccBldg(param_1);
 
     if (((iVar2 != 0) || (iVar2 = ObjIsReaperBldg(param_1), iVar2 != 0)) && (pfVar1 != (float *)0x0)
 
@@ -6568,7 +6568,7 @@ float10 bldg_get_max_energy(undefined4 param_1)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6220(param_1);
+    iVar1 = ObjIsMeccBldg(param_1);
 
     if (iVar1 == 0) {
 
@@ -6647,7 +6647,7 @@ undefined4 bldg_anim_select(float param_1,int param_2)
 
     iVar5 = meccbasepit_bldg_from_object(uVar2);
 
-    if ((iVar5 == 0) && (iVar5 = FUN_004a6220(uVar2), iVar5 == 0)) {
+    if ((iVar5 == 0) && (iVar5 = ObjIsMeccBldg(uVar2), iVar5 == 0)) {
 
       iVar5 = reaperbase_bldg_from_object(uVar2);
 
@@ -6716,7 +6716,7 @@ undefined4 base_slot_active_check(float param_1,int param_2)
 
   iVar3 = meccbasepit_bldg_from_object(iVar4);
 
-  if ((iVar3 == 0) && (iVar3 = FUN_004a6220(iVar4), iVar3 == 0)) {
+  if ((iVar3 == 0) && (iVar3 = ObjIsMeccBldg(iVar4), iVar3 == 0)) {
 
     iVar3 = reaperbase_bldg_from_object(iVar4);
 
@@ -6944,7 +6944,7 @@ undefined4 base_slot_ready_check(float param_1,int param_2)
 
     iVar5 = meccbasepit_bldg_from_object(uVar2);
 
-    if ((iVar5 == 0) && (iVar5 = FUN_004a6220(uVar2), iVar5 == 0)) {
+    if ((iVar5 == 0) && (iVar5 = ObjIsMeccBldg(uVar2), iVar5 == 0)) {
 
       iVar5 = reaperbase_bldg_from_object(uVar2);
 
@@ -7193,8 +7193,8 @@ void FUN_00418770(int param_1,int param_2,float *param_3)
 
 }
 
-/* ===== FUN_00418810 @ 0x00418810 ===== */
-void FUN_00418810(int param_1,int param_2,float *param_3,float *param_4)
+/* ===== slot_matrix_get @ 0x00418810 ===== */
+void slot_matrix_get(int param_1,int param_2,float *param_3,float *param_4)
 
 
 
@@ -7644,7 +7644,7 @@ void base_bldg_pulsate(int param_1)
 
   
 
-  fVar1 = (float10)FUN_00518b70(param_1,0);
+  fVar1 = (float10)FRateGetSecsframe(param_1,0);
 
   fVar1 = fVar1 * (float10)*(float *)(param_1 + 0xf8) + (float10)*(float *)(param_1 + 0x184);
 
@@ -7713,7 +7713,7 @@ void collgrid_query_obj(int param_1,int param_2)
 
     iVar4 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a6220(param_1), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = ObjIsMeccBldg(param_1), iVar4 == 0)) {
 
       iVar4 = reaperbase_bldg_from_object(param_1);
 
@@ -7747,7 +7747,7 @@ void collgrid_query_obj(int param_1,int param_2)
 
     if ((iVar4 == 0) && (iVar4 = reaperbase_bldg_from_object(param_1), iVar4 == 0)) {
 
-      iVar4 = FUN_004a6220(param_1);
+      iVar4 = ObjIsMeccBldg(param_1);
 
       if ((((iVar4 != 0) || (iVar4 = ObjIsReaperBldg(param_1), iVar4 != 0)) &&
 
@@ -8402,8 +8402,8 @@ LAB_0041a787:
 
 }
 
-/* ===== cspec_0041a7b0 @ 0x0041A7B0 ===== */
-void cspec_0041a7b0(int param_1)
+/* ===== flag_state_tick_c91 @ 0x0041A7B0 ===== */
+void flag_state_tick_c91(int param_1)
 
 
 
@@ -8482,7 +8482,7 @@ void objtype_setup_combat(int param_1,float param_2)
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6220(iVar2);
+    iVar3 = ObjIsMeccBldg(iVar2);
 
     if (iVar3 != 0) goto LAB_0041a8b7;
 
@@ -8528,7 +8528,7 @@ LAB_0041a8bd:
 
     if (iVar3 == 0) {
 
-      iVar3 = FUN_004a6220(iVar2);
+      iVar3 = ObjIsMeccBldg(iVar2);
 
       if (iVar3 == 0) {
 
@@ -8741,14 +8741,16 @@ void objtype_team_assign(int param_1)
 
 }
 
-/* ===== FUN_0041ac40 @ 0x0041AC40 ===== */
-/* PS2 candidate: buoy_process__FP6OBJECT (conf 0.383) */
+/* ===== base_bldg_spawn_process @ 0x0041AC40 ===== */
+/* PS2 candidate: base_bldg_spawn_process (conf 0.6) */
 
 
 
-void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+void base_bldg_spawn_process
 
-                 undefined4 param_5,float param_6,undefined4 param_7)
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+               undefined4 param_5,float param_6,undefined4 param_7)
 
 
 
@@ -8794,7 +8796,7 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   if ((iVar4 == 0) && (iVar4 = reaperbase_bldg_from_object(iVar3), iVar4 == 0)) {
 
-    iVar4 = FUN_004a6220(iVar3);
+    iVar4 = ObjIsMeccBldg(iVar3);
 
     if ((((iVar4 != 0) || (iVar4 = ObjIsReaperBldg(iVar3), iVar4 != 0)) && (pfVar1 != (float *)0x0))
 
@@ -8947,7 +8949,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   iVar7 = *(int *)(param_1 + 0x100);
 
-  iVar5 = FUN_004a6220(iVar4);
+  iVar5 = ObjIsMeccBldg(iVar4);
 
   if (iVar5 == 0) {
 
@@ -9111,7 +9113,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   if ((iVar7 == 0) && (iVar7 = reaperbase_bldg_from_object(iVar4), iVar7 == 0)) {
 
-    iVar7 = FUN_004a6220(iVar4);
+    iVar7 = ObjIsMeccBldg(iVar4);
 
     if ((((iVar7 != 0) || (iVar7 = ObjIsReaperBldg(iVar4), iVar7 != 0)) && (pfVar2 != (float *)0x0))
 
@@ -9137,7 +9139,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   ObjectSetAnim(iVar4,1,0x84,0,0,0);
 
-  iVar7 = FUN_004a6220(iVar4);
+  iVar7 = ObjIsMeccBldg(iVar4);
 
   if (iVar7 == 0) {
 
@@ -9147,7 +9149,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
     iVar5 = meccbasepit_bldg_from_object(iVar4);
 
-    if ((iVar5 == 0) && (iVar5 = FUN_004a6220(iVar4), iVar5 == 0)) {
+    if ((iVar5 == 0) && (iVar5 = ObjIsMeccBldg(iVar4), iVar5 == 0)) {
 
       iVar5 = reaperbase_bldg_from_object(iVar4);
 
@@ -9207,7 +9209,7 @@ LAB_0041b204:
 
   iVar5 = meccbasepit_bldg_from_object(iVar4);
 
-  if ((iVar5 == 0) && (iVar5 = FUN_004a6220(iVar4), iVar5 == 0)) {
+  if ((iVar5 == 0) && (iVar5 = ObjIsMeccBldg(iVar4), iVar5 == 0)) {
 
     iVar5 = reaperbase_bldg_from_object(iVar4);
 
@@ -10422,7 +10424,7 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   if (iVar2 != 0) {
 
-    puVar3 = (undefined1 *)FUN_00507b00(s_BaseBldgMeccBase_0055581c);
+    puVar3 = (undefined1 *)TextGetPtr(s_BaseBldgMeccBase_0055581c);
 
     return puVar3;
 
@@ -10432,13 +10434,13 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   if (iVar2 != 0) {
 
-    puVar3 = (undefined1 *)FUN_00507b00(s_BaseBldgReaperBase_00555808);
+    puVar3 = (undefined1 *)TextGetPtr(s_BaseBldgReaperBase_00555808);
 
     return puVar3;
 
   }
 
-  iVar2 = FUN_004a6220(param_1);
+  iVar2 = ObjIsMeccBldg(param_1);
 
   if (iVar2 == 0) {
 
@@ -10542,7 +10544,7 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
       }
 
-      puVar3 = (undefined1 *)FUN_00507b00(&local_80);
+      puVar3 = (undefined1 *)TextGetPtr(&local_80);
 
       return puVar3;
 
@@ -10612,17 +10614,17 @@ switchD_0041c1e2_caseD_3d9:
 
   }
 
-  iVar4 = FUN_004a6220(param_1);
+  iVar4 = ObjIsMeccBldg(param_1);
 
   if (iVar4 != 0) {
 
-    puVar3 = (undefined1 *)FUN_00507b00(*(undefined4 *)(s_collmgrid_005555c0 + iVar2 * 4 + 8));
+    puVar3 = (undefined1 *)TextGetPtr(*(undefined4 *)(s_collmgrid_005555c0 + iVar2 * 4 + 8));
 
     return puVar3;
 
   }
 
-  puVar3 = (undefined1 *)FUN_00507b00(*(undefined4 *)(iVar2 * 4 + 0x5555e8));
+  puVar3 = (undefined1 *)TextGetPtr(*(undefined4 *)(iVar2 * 4 + 0x5555e8));
 
   return puVar3;
 
@@ -10705,7 +10707,7 @@ int objtype_setup_reaper(float param_1)
 
   if (iVar6 == 0) {
 
-    iVar6 = FUN_004a6220(iVar4);
+    iVar6 = ObjIsMeccBldg(iVar4);
 
     if (iVar6 != 0) goto LAB_0041e52a;
 
@@ -10751,7 +10753,7 @@ LAB_0041e530:
 
     if (iVar6 == 0) {
 
-      iVar6 = FUN_004a6220(iVar4);
+      iVar6 = ObjIsMeccBldg(iVar4);
 
       if (iVar6 == 0) {
 
@@ -10896,7 +10898,7 @@ void bldg_get_max_energy_generic(float param_1)
 
   iVar2 = meccbasepit_bldg_from_object(param_1);
 
-  if ((iVar2 == 0) && (iVar2 = FUN_004a6220(param_1), iVar2 == 0)) {
+  if ((iVar2 == 0) && (iVar2 = ObjIsMeccBldg(param_1), iVar2 == 0)) {
 
     iVar2 = reaperbase_bldg_from_object(param_1);
 
@@ -10938,7 +10940,7 @@ LAB_0041e779:
 
   }
 
-  iVar2 = FUN_004a6220(iVar3);
+  iVar2 = ObjIsMeccBldg(iVar3);
 
   if ((iVar2 == 0) && (iVar3 = ObjIsReaperBldg(iVar3), iVar3 == 0)) {
 
@@ -11023,7 +11025,7 @@ void obj_group_spread(float param_1)
 
         iVar3 = meccbasepit_bldg_from_object(iVar4);
 
-        if ((iVar3 == 0) && (iVar3 = FUN_004a6220(iVar4), iVar3 == 0)) {
+        if ((iVar3 == 0) && (iVar3 = ObjIsMeccBldg(iVar4), iVar3 == 0)) {
 
           iVar3 = reaperbase_bldg_from_object(iVar4);
 
@@ -11057,7 +11059,7 @@ LAB_0041e8bf:
 
         if ((iVar3 == 0) && (iVar3 = reaperbase_bldg_from_object(iVar4), iVar3 == 0)) {
 
-          iVar3 = FUN_004a6220(iVar4);
+          iVar3 = ObjIsMeccBldg(iVar4);
 
           if (((iVar3 != 0) || (iVar4 = ObjIsReaperBldg(iVar4), iVar4 != 0)) &&
 
@@ -11184,7 +11186,7 @@ void repair_logic(float param_1)
 
           iVar4 = meccbasepit_bldg_from_object(iVar2);
 
-          if ((iVar4 == 0) && (iVar4 = FUN_004a6220(iVar2), iVar4 == 0)) {
+          if ((iVar4 == 0) && (iVar4 = ObjIsMeccBldg(iVar2), iVar4 == 0)) {
 
             iVar4 = reaperbase_bldg_from_object(iVar2);
 
@@ -11357,7 +11359,7 @@ LAB_0041eb75:
 }
 
 /* ===== FUN_0041ebb0 @ 0x0041EBB0 ===== */
-/* PS2 candidate: do_building_move__FP6OBJECT (conf 0.492) */
+/* PS2 candidate: do_building_move (conf 0.5) */
 
 
 
@@ -11379,7 +11381,7 @@ void FUN_0041ebb0(int param_1)
 
     iVar1 = puVar2[3];
 
-    iVar3 = FUN_004a6220(iVar1);
+    iVar3 = ObjIsMeccBldg(iVar1);
 
     if ((iVar3 != 0) && (*(int *)(iVar1 + 0x274) == param_1)) {
 
@@ -11464,7 +11466,7 @@ void objtype_setup_rpman(int param_1,float param_2,int param_3)
 
         iVar5 = meccbasepit_bldg_from_object(iVar6);
 
-        if ((iVar5 == 0) && (iVar5 = FUN_004a6220(iVar6), iVar5 == 0)) {
+        if ((iVar5 == 0) && (iVar5 = ObjIsMeccBldg(iVar6), iVar5 == 0)) {
 
           iVar5 = reaperbase_bldg_from_object(iVar6);
 
@@ -11580,7 +11582,7 @@ LAB_0041ecb2:
 
         iVar4 = meccbasepit_bldg_from_object(iVar6);
 
-        if ((iVar4 == 0) && (iVar4 = FUN_004a6220(iVar6), iVar4 == 0)) {
+        if ((iVar4 == 0) && (iVar4 = ObjIsMeccBldg(iVar6), iVar4 == 0)) {
 
           iVar4 = reaperbase_bldg_from_object(iVar6);
 
@@ -11624,7 +11626,7 @@ LAB_0041edda:
 
     iVar6 = puVar2[3];
 
-    iVar3 = FUN_004a6220(iVar6);
+    iVar3 = ObjIsMeccBldg(iVar6);
 
     if ((iVar3 != 0) && (*(int *)(iVar6 + 0x274) == param_1)) {
 
@@ -11638,7 +11640,7 @@ LAB_0041edda:
 
     iVar6 = puVar1[3];
 
-    iVar3 = FUN_004a6220(iVar6);
+    iVar3 = ObjIsMeccBldg(iVar6);
 
     if ((iVar3 != 0) && (*(int *)(iVar6 + 0x274) == param_1)) {
 
@@ -11867,14 +11869,14 @@ void objtype_setup_kabuto(int param_1)
 
 }
 
-/* ===== FUN_0041f0f0 @ 0x0041F0F0 ===== */
+/* ===== hud_add_icon @ 0x0041F0F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: AddHud__4cHudP8cHudIcon_7 (conf 0.82) */
+/* PS2 candidate: hud_add_icon (conf 0.8) */
 
 
 
-void FUN_0041f0f0(undefined4 param_1)
+void hud_add_icon(undefined4 param_1)
 
 
 
@@ -12086,7 +12088,7 @@ void hud_status_main(void)
 
   if ((0.0 < _DAT_00633024) && (iVar5 = FLK_FlickPlaying(), iVar5 == 0)) {
 
-    fVar11 = (float10)FUN_00518b70(0,0);
+    fVar11 = (float10)FRateGetSecsframe(0,0);
 
     fVar11 = (float10)_DAT_00633024 - fVar11;
 
@@ -12506,7 +12508,7 @@ LAB_0041f715:
 
     _DAT_0058c5f0 = (float)(extraout_ST0_00 - (float10)iVar5);
 
-    FUN_0041f8f0(puVar10,iVar5,DAT_00632b20 >> 8 & 0xff,DAT_00632b24 & 0xff);
+    input_byte_channel_write(puVar10,iVar5,DAT_00632b20 >> 8 & 0xff,DAT_00632b24 & 0xff);
 
   }
 
@@ -12516,7 +12518,7 @@ LAB_0041f715:
 
     _DAT_0058c5f4 = (float)(extraout_ST0_01 - (float10)iVar5);
 
-    FUN_0041f8f0(puVar10,iVar5,DAT_00632b20 >> 0x10 & 0xff,DAT_00632b24 >> 8 & 0xff);
+    input_byte_channel_write(puVar10,iVar5,DAT_00632b20 >> 0x10 & 0xff,DAT_00632b24 >> 8 & 0xff);
 
     return;
 
@@ -12528,8 +12530,8 @@ LAB_0041f715:
 
 }
 
-/* ===== FUN_0041f8f0 @ 0x0041F8F0 ===== */
-void FUN_0041f8f0(undefined1 *param_1,int param_2,undefined4 param_3,int param_4)
+/* ===== input_byte_channel_write @ 0x0041F8F0 ===== */
+void input_byte_channel_write(undefined1 *param_1,int param_2,undefined4 param_3,int param_4)
 
 
 

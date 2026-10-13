@@ -76,7 +76,7 @@ LAB_0041906f:
 
       crt_sprintf(local_80,s_Error_on_DPlay_StartMeccBldg_ind_00555780,*param_4,param_4[1]);
 
-      FUN_0051ea20(local_80);
+      error_msg_show(local_80);
 
       return;
 
@@ -98,7 +98,7 @@ LAB_0041906f:
 
       if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
-        iVar8 = FUN_004a6220(param_1);
+        iVar8 = ObjIsMeccBldg(param_1);
 
         if ((((iVar8 != 0) || (iVar8 = ObjIsReaperBldg(param_1), iVar8 != 0)) &&
 
@@ -244,7 +244,7 @@ LAB_0041906f:
 
         if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
-          iVar8 = FUN_004a6220(param_1);
+          iVar8 = ObjIsMeccBldg(param_1);
 
           if ((((iVar8 != 0) || (iVar8 = ObjIsReaperBldg(param_1), iVar8 != 0)) &&
 
@@ -310,7 +310,7 @@ LAB_0041906f:
 
     iVar8 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar8 == 0) && (iVar8 = FUN_004a6220(param_1), iVar8 == 0)) {
+    if ((iVar8 == 0) && (iVar8 = ObjIsMeccBldg(param_1), iVar8 == 0)) {
 
       iVar8 = reaperbase_bldg_from_object(param_1);
 
@@ -398,7 +398,7 @@ LAB_0041927a:
 
     if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
-      iVar8 = FUN_004a6220(param_1);
+      iVar8 = ObjIsMeccBldg(param_1);
 
       if ((((iVar8 != 0) || (iVar8 = ObjIsReaperBldg(param_1), iVar8 != 0)) &&
 
@@ -438,7 +438,7 @@ LAB_004195d2:
 
   case 3:
 
-    iVar8 = FUN_004a6220(param_1);
+    iVar8 = ObjIsMeccBldg(param_1);
 
     if (iVar8 != 0) {
 
@@ -548,7 +548,7 @@ LAB_004195d2:
 
       crt_sprintf(local_80,s_Error_on_DPlay_StartReaperBldg_i_00555720,*param_4,param_4[1]);
 
-      FUN_0051ea20(local_80);
+      error_msg_show(local_80);
 
       return;
 

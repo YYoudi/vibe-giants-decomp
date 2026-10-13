@@ -279,7 +279,7 @@ void main_dlog_004273b0(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   if ((param_5 & 0x2000000) != 0) {
 
-    uVar4 = FUN_00507b00(param_6);
+    uVar4 = TextGetPtr(param_6);
 
   }
 
@@ -378,7 +378,7 @@ void main_dlog_00427490(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   if ((param_5 & 0x2000000) != 0) {
 
-    uVar4 = FUN_00507b00(param_6);
+    uVar4 = TextGetPtr(param_6);
 
   }
 
@@ -579,7 +579,7 @@ void main_dlog_00427890(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   if ((param_5 & 0x2000000) != 0) {
 
-    uVar4 = FUN_00507b00(param_6);
+    uVar4 = TextGetPtr(param_6);
 
   }
 
@@ -642,7 +642,7 @@ void main_dlog_00427970(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   if (((uint)param_5 & 0x2000000) != 0) {
 
-    uVar3 = FUN_00507b00(param_6);
+    uVar3 = TextGetPtr(param_6);
 
   }
 
@@ -765,7 +765,7 @@ void main_dlog_00427bb0(undefined4 *param_1,float param_2,float param_3,undefine
 
   if (((uint)param_5 & 0x2000000) != 0) {
 
-    uVar4 = FUN_00507b00(param_6);
+    uVar4 = TextGetPtr(param_6);
 
   }
 
@@ -884,7 +884,7 @@ void main_dlog_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   if (((uint)param_5 & 0x2000000) != 0) {
 
-    uVar4 = FUN_00507b00(param_6);
+    uVar4 = TextGetPtr(param_6);
 
   }
 
@@ -1403,7 +1403,7 @@ void main_dlog_00428290(int *param_1,int param_2,undefined4 param_3,undefined4 p
 
   
 
-  pcVar5 = (char *)FUN_00507b00(param_3);
+  pcVar5 = (char *)TextGetPtr(param_3);
 
   param_1 = (int *)*param_1;
 
@@ -1516,7 +1516,7 @@ void main_dlog_00428340(int *param_1,int param_2,undefined4 param_3)
 
   
 
-  pcVar5 = (char *)FUN_00507b00(param_3);
+  pcVar5 = (char *)TextGetPtr(param_3);
 
   param_1 = (int *)*param_1;
 

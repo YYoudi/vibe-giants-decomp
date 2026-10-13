@@ -178,7 +178,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
       acStack_5c4[(int)(pcVar9 + (iStack_5d4 - (int)pcVar14))] = '\0';
 
-      iVar11 = FUN_00545650(pcVar1,s_legal_0057dc3c);
+      iVar11 = fx_name_compare(pcVar1,s_legal_0057dc3c);
 
       if (iVar11 == 0) {
 

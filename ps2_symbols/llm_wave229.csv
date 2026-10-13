@@ -1,0 +1,15 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004ec1f0,004ec1f0,,reaper_summon_spawn,0.9,w229,"mission_marker_pos_check -> allocate type 0x4b + fx_create, owner +0x274; callers reaper_animselect/lock_pair"
+004d1a00,004d1a00,,injured_target_scan,0.9,w229,"walk DAT_632d6c list: skip dead 0x8000/flags 0x4000c000, hp<max, dist<param2^2; callers smartie_move/verm_control"
+0042e260,0042e260,,impact_spark_orient,0.9,w229,matrix mul (slot+5)*0x44 stride -> hud_spark_quad_orient; caller obj_impact_effects
+00401fe0,00401fe0,,ai_goal_valid_check,0.9,w229,"goal flags 0x400/0x20/0x800 +0x14, ABS pos check vs +0x104; callers ai_goal_skip_locked_a/b"
+0052ff70,0052ff70,,comm_orders_dispatch,0.9,w229,"msg subtypes 0x1c=obj_group_spread 0x29=repair_logic, match owner +0x188; caller comm_msg_dispatch"
+00529c00,00529c00,,comm_session_state_pack,0.9,w229,pack (f0c<<8|f10)<<8|f18)<<8|world + flag bits f1c/f20/f38; callers GiantsInitNewWorld/comm_00529e00
+00475350,00475350,,mecc_bubble_show,0.9,w229,fx_create + FUN_0041a1c0 on base dialog else dlog_text_render_screen; caller mecc_ai_main
+0050a610,0050a610,,distancesq3d,0.9,w229,68 callers; trivial P3D dist2 (promoted)
+0049a180,0049a180,,objspec_get_movetype_string,0.9,w229,returns TextGetPtr string (shape confirmed)
+004a9130,004a9130,,IconDefTextDescription,0.9,w229,calls TextGetPtr; callers inv_award_item/item_drop_*
+0053be00,0053be00,,animGetIndexByName,0.9,w229,NAM_NameGetCustom/Find calls; 11 anim callers
+00457fb0,00457fb0,,WeaponIdGetPresent,0.9,w229,9 callers inventory/shop family
+004582d0,004582d0,,OtherInvIdGet,0.9,w229,12 callers inventory/shop family
+0051bea0,0051bea0,,ConvertFwdSlashToBckSlsh,0.9,w229,pure path helper

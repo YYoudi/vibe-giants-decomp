@@ -368,7 +368,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
               else {
 
-                FUN_0051ea20(s_index_too_big_in_single_object_d_0055b738);
+                error_msg_show(s_index_too_big_in_single_object_d_0055b738);
 
                 Audio3DTestToneUpdate__Fv_5();
 
@@ -426,7 +426,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
     crt_sprintf(&DAT_00657400,s_Missing_object__s_in_GB2_0055b7a8,param_2);
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
     Audio3DTestToneUpdate__Fv_5();
 
@@ -547,7 +547,7 @@ undefined4 * object_clone_objectset(undefined4 param_1)
 
   if (*local_a4 != -0x55feff42) {
 
-    FUN_0051ea20(s_Old_gbs_binary_detected_0055b848);
+    error_msg_show(s_Old_gbs_binary_detected_0055b848);
 
     return (undefined4 *)0x0;
 

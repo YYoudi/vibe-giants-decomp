@@ -753,7 +753,7 @@ void main_makewrld_00473600(float *param_1)
 
             default:
 
-              FUN_0051ea20(s_Bad_landscape_topology_in_bump_m_0055b898);
+              error_msg_show(s_Bad_landscape_topology_in_bump_m_0055b898);
 
             }
 
@@ -1066,7 +1066,7 @@ void gti_terrain_load(undefined4 param_1)
 
     if ((iVar11 != -0x6b69affe) && (iVar11 != -0x6b69affd)) {
 
-      FUN_0051ea20(s_Bad_version_for_world_data_0055b8fc);
+      error_msg_show(s_Bad_version_for_world_data_0055b8fc);
 
       Audio3DTestToneUpdate__Fv_4();
 

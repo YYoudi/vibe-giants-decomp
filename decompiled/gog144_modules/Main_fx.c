@@ -299,7 +299,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
       uVar3 = XFGetCameraOrigin(&local_250);
 
-      fVar11 = (float10)FUN_0050a610(uVar3);
+      fVar11 = (float10)distancesq3d(uVar3);
 
       if (fVar11 <= (float10)local_258 * (float10)local_258) {
 
@@ -323,7 +323,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
             iVar9 = *(int *)((int)piVar7 + 1);
 
-            iVar5 = FUN_00545650(piVar4,in_stack_00000004);
+            iVar5 = fx_name_compare(piVar4,in_stack_00000004);
 
             if (iVar5 == 0) goto LAB_00448378;
 
@@ -365,7 +365,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
         iVar9 = *(int *)((int)piVar7 + 1);
 
-        iVar5 = FUN_00545650(piVar4,local_240);
+        iVar5 = fx_name_compare(piVar4,local_240);
 
         if (iVar5 == 0) {
 
@@ -405,7 +405,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
         iVar9 = *(int *)((int)piVar7 + 1);
 
-        iVar5 = FUN_00545650(piVar4,in_stack_00000004);
+        iVar5 = fx_name_compare(piVar4,in_stack_00000004);
 
         if (iVar5 == 0) goto LAB_00448378;
 
@@ -487,7 +487,7 @@ LAB_0044831d:
 
         iVar9 = *(int *)((int)piVar7 + 1);
 
-        iVar5 = FUN_00545650(piVar4,local_240);
+        iVar5 = fx_name_compare(piVar4,local_240);
 
         if (iVar5 == 0) {
 
@@ -521,7 +521,7 @@ LAB_00448378:
 
     uVar3 = XFGetCameraOrigin(&local_250);
 
-    fVar11 = (float10)FUN_0050a610(uVar3);
+    fVar11 = (float10)distancesq3d(uVar3);
 
     if ((float10)local_258 * (float10)local_258 < fVar11) goto LAB_004482f1;
 
@@ -765,7 +765,7 @@ LAB_0044838a:
 
   crt_sprintf(local_200,s_fx_create_failed_to_find___s__00558c54,in_stack_00000004);
 
-  FUN_0051ea20(local_200);
+  error_msg_show(local_200);
 
   return (undefined4 *)0x0;
 
@@ -881,7 +881,7 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
     crt_sprintf(local_200,s_Failed_to_emit_particle_for_fx___00559708,DAT_0059ce5c + 0x20);
 
-    FUN_0051ea20(local_200);
+    error_msg_show(local_200);
 
     return;
 
@@ -907,7 +907,7 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
       iVar7 = *(int *)((int)piVar3 + 1);
 
-      iVar4 = FUN_00545650(piVar8,param_3);
+      iVar4 = fx_name_compare(piVar8,param_3);
 
       if (iVar4 == 0) {
 
@@ -941,7 +941,7 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
                        );
 
-            FUN_0051ea20(local_200);
+            error_msg_show(local_200);
 
             return;
 
@@ -1053,7 +1053,7 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
   crt_sprintf(local_200,s_Failed_to_emit_particle_for_fx___00559790,DAT_0059ce5c + 0x20,param_3);
 
-  FUN_0051ea20(local_200);
+  error_msg_show(local_200);
 
   return;
 
@@ -1082,7 +1082,7 @@ void fx_setupTracer__FP10FXSTACKTAG(int param_1)
 
     crt_sprintf(local_200,s_Failed_to_setup_tracer_fx___s____005597cc,DAT_0059ce5c + 0x20);
 
-    FUN_0051ea20(local_200);
+    error_msg_show(local_200);
 
   }
 
@@ -1173,7 +1173,7 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(int param_1,int param_2,undefined
 
     crt_sprintf(local_200,s_Failed_to_setup_texture_animatio_00559a00,DAT_0059ce5c + 0x20);
 
-    FUN_0051ea20(local_200);
+    error_msg_show(local_200);
 
   }
 
@@ -1340,7 +1340,7 @@ void fx_setupVerticleFade__FP10FXSTACKTAGfffff
 
   crt_sprintf(local_200,pcVar6,DAT_0059ce5c + 0x20);
 
-  FUN_0051ea20(local_200);
+  error_msg_show(local_200);
 
   return;
 

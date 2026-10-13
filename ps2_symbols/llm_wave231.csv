@@ -1,0 +1,13 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0049a090,0049a090,,cspec_update_dispatch,0.9,w231,class<0x6b: call field2 handler at 0x55cb00+class*0x44+8 (jumptable warning ok); CONFIRMS spec table in BSS
+0052b280,0052b280,,comm_scores_send,0.9,w231,"ushort list clamp 0-999 -> DAT_5ddee8, pkt 0x5c; caller comm_msg_dispatch"
+00518fa0,00518fa0,,input_bindings_clear,0.9,w231,zero 6 arrays of 8 dwords DAT_5dd0c0..160; caller input_key_bind
+0042b4e0,0042b4e0,,hud_trilist_expand,0.9,w231,ushort idx -> 6 floats from 0xc-stride arrays; caller status_hud_render
+00455fa0,00455fa0,,owned_obj_type_find,0.9,w231,"find non-dead obj owner==p1 (+0x210), +0x218==0, type in +0x1dc list"
+0051b810,0051b810,,textrender_text_draw_len,0.9,w231,strlen + textrender_text_draw wrapper
+0042eee0,0042eee0,,spline_waypoint_push,0.9,w231,"push P3D pair (pos DAT_59acb8 / val DAT_59afb8), max 0x40; caller rpman_init"
+0040b2c0,0040b2c0,,objlist_flag_partition,0.9,w231,split DAT_632da8 list by byte&1 into DAT_632dac; caller game_loop_run
+004d4930,004d4930,,smartie_injured_pet_find,0.9,w231,"find obj owner==p1, hp<max, flags ok; caller smartie_move"
+00457d50,00457d50,,invspec_freeslot_find,0.9,w231,scan +0x180..+0x18b empty slot or +0x60 default; caller inv_award_item
+004e9ce0,004e9ce0,,bldg_spawn_state_tick,0.9,w231,"state +0xe4 1/2/3, owner->slot array, cfg+0xf4c timer, anims 0x30/0x20/0x21"
+0052ae90,0052ae90,,comm_player_slot_clear,0.9,w231,clear 8 dwords DAT_5ddfc0+idx*0x20 + status bytes DAT_5de290/2a4/df60

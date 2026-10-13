@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 120 functions (107 named) — decompiled, names from PS2 symbols
+ * 120 functions (111 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -549,12 +549,12 @@ void ai_fly_update_goal_3(undefined4 param_1,undefined4 param_2,undefined4 param
 
 }
 
-/* ===== FUN_00401fe0 @ 0x00401FE0 ===== */
+/* ===== ai_goal_valid_check @ 0x00401FE0 ===== */
 /* PS2 candidate: ai_goal_complete (conf 0.353) */
 
 
 
-undefined4 FUN_00401fe0(int param_1)
+undefined4 ai_goal_valid_check(int param_1)
 
 
 
@@ -708,7 +708,7 @@ uint ai_goal_skip_locked_b(int param_1)
 
   
 
-  iVar2 = FUN_00401fe0(param_1);
+  iVar2 = ai_goal_valid_check(param_1);
 
   while (((iVar2 != 0 && (piVar1 = *(int **)(param_1 + 0x168), piVar1 != (int *)0x0)) &&
 
@@ -720,7 +720,7 @@ uint ai_goal_skip_locked_b(int param_1)
 
     DAT_00584194 = piVar1;
 
-    iVar2 = FUN_00401fe0(param_1);
+    iVar2 = ai_goal_valid_check(param_1);
 
   }
 
@@ -747,7 +747,7 @@ bool ai_goal_skip_locked_a(int param_1)
 
   
 
-  iVar2 = FUN_00401fe0(param_1);
+  iVar2 = ai_goal_valid_check(param_1);
 
   while (((iVar2 != 0 && (piVar1 = *(int **)(param_1 + 0x168), piVar1 != (int *)0x0)) &&
 
@@ -759,7 +759,7 @@ bool ai_goal_skip_locked_a(int param_1)
 
     DAT_00584194 = piVar1;
 
-    iVar2 = FUN_00401fe0(param_1);
+    iVar2 = ai_goal_valid_check(param_1);
 
   }
 
@@ -821,7 +821,7 @@ void ObjectSetAnim(int param_1,int param_2,uint param_3,undefined4 param_4,undef
 
                 *(undefined4 *)(param_1 + 4));
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
     return;
 
@@ -964,7 +964,7 @@ void anim_select_check(int param_1,int param_2)
 
                 *(undefined4 *)(param_1 + 4));
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
     return;
 
@@ -1109,7 +1109,7 @@ void anim_select_check2(int param_1,int param_2)
 
                 *(undefined4 *)(param_1 + 4));
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
     return;
 
@@ -1246,7 +1246,7 @@ undefined4 ref_get_anode(int param_1,int param_2,int param_3)
 
         if (*(int *)(param_1 + 0x28) != 0) {
 
-          uVar2 = FUN_0053be00(*(int *)(param_1 + 0x28),0,iVar1);
+          uVar2 = animGetIndexByName(*(int *)(param_1 + 0x28),0,iVar1);
 
           *(undefined4 *)(*(int *)(param_1 + 0x54) + param_3 * 4) = uVar2;
 
@@ -1262,7 +1262,7 @@ undefined4 ref_get_anode(int param_1,int param_2,int param_3)
 
     }
 
-    FUN_0051ea20(s_Error__ref_get_anode____no_refna_005540a0);
+    error_msg_show(s_Error__ref_get_anode____no_refna_005540a0);
 
   }
 
@@ -1351,7 +1351,7 @@ ref_get_anode2(undefined4 param_1,float *param_2,int param_3,int param_4,int par
 
      (iVar2 = *(int *)(*(int *)(iVar2 + 0x454) + param_5 * 4), iVar2 == 0)) {
 
-    FUN_0051ea20(s_Error__ref_get_anode____no_refna_005540a0);
+    error_msg_show(s_Error__ref_get_anode____no_refna_005540a0);
 
     return 0;
 
@@ -1367,7 +1367,7 @@ ref_get_anode2(undefined4 param_1,float *param_2,int param_3,int param_4,int par
 
     else {
 
-      uVar1 = FUN_0053be00(*(int *)(iVar4 + 0x28),0,iVar2);
+      uVar1 = animGetIndexByName(*(int *)(iVar4 + 0x28),0,iVar2);
 
     }
 
@@ -1603,7 +1603,7 @@ void BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i(int param_1
 
                   *(undefined4 *)(param_1 + 4),**(undefined4 **)(param_1 + 8));
 
-      FUN_00425eb0(&DAT_00657400);
+      savegame_slot_load(&DAT_00657400);
 
       iVar6 = *(int *)(*(int *)(param_1 + 8) + 0x450);
 
@@ -1635,7 +1635,7 @@ void BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i(int param_1
 
                  (iVar6 = *(int *)(*(int *)(iVar6 + 0x454) + iVar3 * 4), iVar6 == 0)) {
 
-                FUN_0051ea20(s_Error__ref_get_anode____no_refna_005540a0);
+                error_msg_show(s_Error__ref_get_anode____no_refna_005540a0);
 
                 goto LAB_00403d93;
 
@@ -1651,7 +1651,7 @@ void BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i(int param_1
 
                 }
 
-                uVar4 = FUN_0053be00(*(int *)(local_70[0] + 0x28),0,iVar6);
+                uVar4 = animGetIndexByName(*(int *)(local_70[0] + 0x28),0,iVar6);
 
                 *(undefined4 *)(*(int *)(local_70[0] + 0x54) + iVar3 * 4) = uVar4;
 
@@ -1745,7 +1745,7 @@ LAB_00403d93:
 
                   if ((iVar2 == 0) || (iVar2 = *(int *)(iVar2 + iVar6 * 4), iVar2 == 0)) {
 
-                    FUN_0051ea20(s_Error__ref_get_anode____no_refna_005540a0);
+                    error_msg_show(s_Error__ref_get_anode____no_refna_005540a0);
 
                     goto LAB_00403c86;
 
@@ -1761,7 +1761,7 @@ LAB_00403d93:
 
                     }
 
-                    uVar4 = FUN_0053be00(*(int *)(iVar1 + 0x28),0,iVar2);
+                    uVar4 = animGetIndexByName(*(int *)(iVar1 + 0x28),0,iVar2);
 
                     *(undefined4 *)(*(int *)(iVar1 + 0x54) + iVar6 * 4) = uVar4;
 
@@ -2366,8 +2366,8 @@ void collgrid_collision_test(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004043a0 @ 0x004043A0 ===== */
-void FUN_004043a0(int param_1)
+/* ===== hud_radar_collide_sweep @ 0x004043A0 ===== */
+void hud_radar_collide_sweep(int param_1)
 
 
 
@@ -2568,7 +2568,7 @@ void objdata_create_vertex_normals(int param_1,undefined4 param_2)
 }
 
 /* ===== FUN_00404570 @ 0x00404570 ===== */
-/* PS2 candidate: S_TriCalcGradients (conf 0.605) */
+/* PS2 candidate: S_TriCalcGradients (conf 0.6) */
 
 
 
@@ -3050,37 +3050,37 @@ LAB_00404e2f:
 
     if ((puVar4 == (undefined4 *)0x0) ||
 
-       ((((iVar5 = FUN_00545650(*puVar4,s_B_smartbrick_0055416c), iVar5 != 0 &&
+       ((((iVar5 = fx_name_compare(*puVar4,s_B_smartbrick_0055416c), iVar5 != 0 &&
 
-          (iVar5 = FUN_00545650(*puVar4,s_D_B_smartbrick_0055415c), iVar5 != 0)) &&
+          (iVar5 = fx_name_compare(*puVar4,s_D_B_smartbrick_0055415c), iVar5 != 0)) &&
 
-         (iVar5 = FUN_00545650(*puVar4,s_s_stony2_00554150), iVar5 != 0)) &&
+         (iVar5 = fx_name_compare(*puVar4,s_s_stony2_00554150), iVar5 != 0)) &&
 
-        (iVar5 = FUN_00545650(*puVar4,s_s_stony_00554148), iVar5 != 0)))) {
+        (iVar5 = fx_name_compare(*puVar4,s_s_stony_00554148), iVar5 != 0)))) {
 
       puVar4 = (undefined4 *)obj_material_names(param_1);
 
       if ((puVar4 == (undefined4 *)0x0) ||
 
-         (((iVar5 = FUN_00545650(*puVar4,s_Wood_tile_005541d4), iVar5 != 0 &&
+         (((iVar5 = fx_name_compare(*puVar4,s_Wood_tile_005541d4), iVar5 != 0 &&
 
-           (iVar5 = FUN_00545650(*puVar4,s_Wood_rings_005541c8), iVar5 != 0)) &&
+           (iVar5 = fx_name_compare(*puVar4,s_Wood_rings_005541c8), iVar5 != 0)) &&
 
-          (iVar5 = FUN_00545650(*puVar4,s_sm_thatch_005541bc), iVar5 != 0)))) {
+          (iVar5 = fx_name_compare(*puVar4,s_sm_thatch_005541bc), iVar5 != 0)))) {
 
         puVar4 = (undefined4 *)obj_material_names(param_1);
 
         if ((puVar4 == (undefined4 *)0x0) ||
 
-           (((iVar5 = FUN_00545650(*puVar4,s_Metal_005541b4), iVar5 != 0 &&
+           (((iVar5 = fx_name_compare(*puVar4,s_Metal_005541b4), iVar5 != 0 &&
 
-             (iVar5 = FUN_00545650(*puVar4,s_D_metal_005541ac), iVar5 != 0)) &&
+             (iVar5 = fx_name_compare(*puVar4,s_D_metal_005541ac), iVar5 != 0)) &&
 
-            ((iVar5 = FUN_00545650(*puVar4,s_rusted_metal_0055419c), iVar5 != 0 &&
+            ((iVar5 = fx_name_compare(*puVar4,s_rusted_metal_0055419c), iVar5 != 0 &&
 
-             ((iVar5 = FUN_00545650(*puVar4,s_Rusted_metal_stripe_00554188), iVar5 != 0 &&
+             ((iVar5 = fx_name_compare(*puVar4,s_Rusted_metal_stripe_00554188), iVar5 != 0 &&
 
-              (iVar5 = FUN_00545650(*puVar4,s_floor1_tile_0055417c), iVar5 != 0)))))))) {
+              (iVar5 = fx_name_compare(*puVar4,s_floor1_tile_0055417c), iVar5 != 0)))))))) {
 
           uVar7 = param_5[2];
 
@@ -3136,7 +3136,7 @@ LAB_00404e2f:
 
     if ((uVar2 & 0x10000) == 0) {
 
-      FUN_0042e260(param_1,0);
+      impact_spark_orient(param_1,0);
 
       fVar8 = (float10)obj_scale_flag_get(param_1);
 
@@ -3146,7 +3146,7 @@ LAB_00404e2f:
 
     else {
 
-      FUN_0042e260(param_1,1);
+      impact_spark_orient(param_1,1);
 
       fVar8 = (float10)obj_scale_flag_get(param_1);
 
@@ -3156,7 +3156,7 @@ LAB_00404e2f:
 
     FootDust(param_1,uVar9,1,(float)fVar8);
 
-    fVar8 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,param_1 + 0xa0);
+    fVar8 = (float10)distancesq3d(DAT_00632a88 + 0xa0,param_1 + 0xa0);
 
     if ((fVar8 < (float10)90000.0) && (iVar5 = ObjIsMecc(DAT_00632a88), iVar5 != 0)) {
 
@@ -3249,7 +3249,7 @@ void army_opcodes_object_c106(int param_1)
 
           crt_sprintf(auStack_100,s_Failed_to_open_army___s__00554368,auStack_12c);
 
-          FUN_0051ea20(auStack_100);
+          error_msg_show(auStack_100);
 
         }
 
@@ -3287,7 +3287,7 @@ void army_opcodes_object_c106(int param_1)
 
             crt_sprintf(auStack_100,s_Bad_Version_for_army___s__0055434c,auStack_12c);
 
-            FUN_0051ea20(auStack_100);
+            error_msg_show(auStack_100);
 
             ANM_BinderDestroy_2(iVar3);
 
@@ -3315,7 +3315,7 @@ void army_opcodes_object_c106(int param_1)
 
       if (*(int *)(param_1 + 0xf4) != 0) {
 
-        fVar4 = (float10)FUN_00518b70(param_1,0);
+        fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar4 = (float10)*(float *)(param_1 + 0xf8) - fVar4;
 
@@ -3353,7 +3353,7 @@ void army_opcodes_object_c106(int param_1)
 
       }
 
-      fVar4 = (float10)FUN_00518b70(param_1,0);
+      fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(param_1 + 0xec) = (float)(fVar4 + (float10)*(float *)(param_1 + 0xec));
 
@@ -3375,7 +3375,7 @@ void army_opcodes_object_c106(int param_1)
 
       if (*(int *)(param_1 + 0xf4) != 0) {
 
-        fVar4 = (float10)FUN_00518b70(param_1,0);
+        fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar4 = (float10)*(float *)(param_1 + 0xf8) - fVar4;
 
@@ -3823,7 +3823,7 @@ LAB_004072d1:
 
 LAB_0040737a:
 
-            FUN_0051ea20(pcVar25);
+            error_msg_show(pcVar25);
 
           }
 
@@ -3851,7 +3851,7 @@ LAB_0040737a:
 
           else {
 
-            FUN_0051ea20(s_Army_Error__too_many_alive_order_005543d4);
+            error_msg_show(s_Army_Error__too_many_alive_order_005543d4);
 
             pfVar18 = DAT_005841b4;
 
@@ -4085,7 +4085,7 @@ LAB_00407799:
 
                 if (iVar11 + 0x1650 + iVar9 != 0) {
 
-                  FUN_00543270(iVar11 + 0x1650 + iVar9,iVar11 + 0x1758 + iVar9,
+                  memmove_back(iVar11 + 0x1650 + iVar9,iVar11 + 0x1758 + iVar9,
 
                                *(int *)(iVar11 + 0x49e0) * 0x108 + (iVar22 + 1) * -0x108);
 
@@ -4475,7 +4475,7 @@ LAB_00407550:
 
             crt_sprintf(local_400,s_Army_bin_has_too_many_labels__d__00554480,5);
 
-            FUN_0051ea20(local_400);
+            error_msg_show(local_400);
 
             pfVar18 = DAT_005841b4;
 
@@ -4655,7 +4655,7 @@ LAB_00407699:
 
         crt_sprintf(local_200,s_Army_Bld_System_got_unknown_opco_00554390,uVar10);
 
-        FUN_0051ea20(local_200);
+        error_msg_show(local_200);
 
         pfVar18 = DAT_005841b4;
 
@@ -4746,7 +4746,7 @@ void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined
 
         DAT_005841b4 = (int *)((int)piVar5 + 5);
 
-        iVar6 = FUN_00545650(piVar4,param_2);
+        iVar6 = fx_name_compare(piVar4,param_2);
 
       } while ((iVar6 != 0) && (iVar7 = iVar7 + 1, piVar4 = DAT_005841b4, iVar7 < iVar2));
 
@@ -4756,7 +4756,7 @@ void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined
 
       crt_sprintf(local_80,s_Army_Bld_System_got_unknown_plat_005544b0,param_2);
 
-      FUN_0051ea20(local_80);
+      error_msg_show(local_80);
 
       iVar8 = DAT_005841a8;
 
@@ -4776,7 +4776,7 @@ void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined
 
   crt_sprintf(local_80,s_Army_Bld_System_Has_No_Platoons___005544e0);
 
-  FUN_0051ea20(local_80);
+  error_msg_show(local_80);
 
   return;
 
@@ -4803,7 +4803,7 @@ void army_order_entry_init(int param_1)
 
   if (0x13 < *(int *)(iVar1 + 0x164c)) {
 
-    FUN_0051ea20();
+    error_msg_show();
 
     return;
 
@@ -4849,7 +4849,7 @@ void army_order_entry_init(int param_1)
 
   if (iVar2 != 0x12) {
 
-    FUN_0051ea20();
+    error_msg_show();
 
     return;
 
@@ -4863,8 +4863,8 @@ void army_order_entry_init(int param_1)
 
 }
 
-/* ===== cspec_00407ae0 @ 0x00407AE0 ===== */
-undefined4 cspec_00407ae0(void)
+/* ===== ret_const_x4a28_c106 @ 0x00407AE0 ===== */
+undefined4 ret_const_x4a28_c106(void)
 
 
 
@@ -5032,7 +5032,7 @@ void meccbase_init(int param_1)
 
   if (*piVar1 == 0) {
 
-    FUN_0051ea20(s_Obsolete_Base_placement_detected_00554e10);
+    error_msg_show(s_Obsolete_Base_placement_detected_00554e10);
 
     return;
 
@@ -5647,7 +5647,7 @@ LAB_004089de:
 
       else {
 
-        fVar6 = (float10)FUN_00518b70(param_1,0);
+        fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar6 = fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xfb8) + (float10)pfVar1[2];
 
@@ -5819,7 +5819,7 @@ LAB_00408b1e:
 
       else {
 
-        fVar6 = (float10)FUN_00518b70(param_1,0);
+        fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar6 = fVar6 * (float10)*(float *)(DAT_00632ed8 + 0x1380) + (float10)pfVar1[2];
 
@@ -5929,7 +5929,7 @@ LAB_0040878e:
 
         if ((*(int *)(piVar5[3] + 4) == 0x3df) &&
 
-           (fVar6 = (float10)FUN_0050a610(local_c,piVar5[3] + 0xa0), fVar6 <= (float10)225.0)) {
+           (fVar6 = (float10)distancesq3d(local_c,piVar5[3] + 0xa0), fVar6 <= (float10)225.0)) {
 
           return;
 
@@ -5947,7 +5947,7 @@ LAB_0040878e:
 
     iVar4 = *(int *)((int)param_1 + 0x100);
 
-    fVar6 = (float10)FUN_00518b70(0,0);
+    fVar6 = (float10)FRateGetSecsframe(0,0);
 
     fVar6 = (float10)*(float *)(iVar4 + 0x14) - fVar6;
 
@@ -6153,7 +6153,7 @@ LAB_00408e3a:
 
       if ((*(int *)(piVar5[3] + 4) == 0x3df) &&
 
-         (fVar6 = (float10)FUN_0050a610(local_c,piVar5[3] + 0xa0), fVar6 <= (float10)225.0)) {
+         (fVar6 = (float10)distancesq3d(local_c,piVar5[3] + 0xa0), fVar6 <= (float10)225.0)) {
 
         return;
 
@@ -6421,7 +6421,7 @@ LAB_004090c8:
 
       else {
 
-        uVar5 = FUN_00507b00(s_BaseChatMCPHouseDone_00554ed4,1);
+        uVar5 = TextGetPtr(s_BaseChatMCPHouseDone_00554ed4,1);
 
         chat_insert(uVar5);
 
@@ -7584,7 +7584,7 @@ code_r0x00409d7b:
 
           teammecc_clear_mode(uVar18,uVar12,0);
 
-          uVar12 = FUN_00507b00(s_McChEnemyShieldDown_00554f38,1);
+          uVar12 = TextGetPtr(s_McChEnemyShieldDown_00554f38,1);
 
           chat_insert(uVar12);
 
@@ -8761,8 +8761,8 @@ void meccbasepit_create_food(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0040b1d0 @ 0x0040B1D0 ===== */
-int FUN_0040b1d0(int param_1,int param_2)
+/* ===== meccbasepit_food_take @ 0x0040B1D0 ===== */
+int meccbasepit_food_take(int param_1,int param_2)
 
 
 
@@ -8794,8 +8794,8 @@ int FUN_0040b1d0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0040b2c0 @ 0x0040B2C0 ===== */
-void FUN_0040b2c0(void)
+/* ===== objlist_flag_partition @ 0x0040B2C0 ===== */
+void objlist_flag_partition(void)
 
 
 
@@ -9211,7 +9211,7 @@ void particles_decay_update(void)
 
     pfVar1 = (float *)(piVar4 + 2);
 
-    fVar9 = (float10)FUN_00518b70(0,pfVar1);
+    fVar9 = (float10)FRateGetSecsframe(0,pfVar1);
 
     fVar2 = (float)fVar9;
 
@@ -9293,7 +9293,7 @@ LAB_0040b74d:
 
     if ((*(byte *)(piVar4 + 10) & 4) != 0) {
 
-      fVar9 = (float10)FUN_00518b70(0,pfVar1);
+      fVar9 = (float10)FRateGetSecsframe(0,pfVar1);
 
       fVar3 = (float)piVar4[0xc];
 
@@ -9658,7 +9658,7 @@ void wound_process_single__FP5WOUND(int param_1)
 
   
 
-  fVar4 = (float10)FUN_00518b70(*(undefined4 *)(param_1 + 0x38),0);
+  fVar4 = (float10)FRateGetSecsframe(*(undefined4 *)(param_1 + 0x38),0);
 
   iVar1 = *(int *)(param_1 + 0x38);
 
@@ -9674,7 +9674,7 @@ void wound_process_single__FP5WOUND(int param_1)
 
   if ((*(byte *)(param_1 + 0x3c) & 1) == 0) {
 
-    fVar4 = (float10)FUN_00518b70(iVar1,0);
+    fVar4 = (float10)FRateGetSecsframe(iVar1,0);
 
     fVar4 = (float10)*(float *)(param_1 + 0x40) - fVar4;
 
@@ -9698,7 +9698,7 @@ void wound_process_single__FP5WOUND(int param_1)
 
   else {
 
-    fVar4 = (float10)FUN_00518b70(iVar1,0);
+    fVar4 = (float10)FRateGetSecsframe(iVar1,0);
 
     fVar4 = (float10)*(float *)(param_1 + 0x40) - fVar4;
 
@@ -9933,7 +9933,7 @@ void missing_smartie_ai_c20(int param_1)
 
   iVar1 = DAT_00632a88 + 0xa0;
 
-  fVar6 = (float10)FUN_0050a610(iVar1,iVar5);
+  fVar6 = (float10)distancesq3d(iVar1,iVar5);
 
   fVar2 = (float)fVar6;
 
@@ -12719,7 +12719,7 @@ void charger_ai_main_c42(int param_1)
 
     if (*(int *)(param_1 + 0xe4) != 0xc) {
 
-      fVar7 = (float10)FUN_00518b70(param_1,0);
+      fVar7 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar7 = (float10)*(float *)(param_1 + 0xfc) - fVar7;
 
@@ -12745,11 +12745,11 @@ void charger_ai_main_c42(int param_1)
 
        (float10)fVar2 * (float10)fVar2 <= fVar7)) {
 
-      fVar7 = (float10)FUN_00518b70(param_1,0);
+      fVar7 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(param_1 + 0xf0) = (float)((float10)*(float *)(param_1 + 0xf0) - fVar7);
 
-      fVar7 = (float10)FUN_00518b70(param_1,0);
+      fVar7 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar7 = (float10)*(float *)(param_1 + 0xec) - fVar7;
 
@@ -12783,7 +12783,7 @@ void charger_ai_main_c42(int param_1)
 
     fVar1 = *(float *)(param_1 + 0x194);
 
-    fVar7 = (float10)FUN_00518b70(param_1,0);
+    fVar7 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar7 = fVar7 * (float10)*(int *)(param_1 + 0xf8) *
 
@@ -12883,7 +12883,7 @@ LAB_0040eb02:
 
     if (0.0 < *(float *)(param_1 + 0xf0)) {
 
-      fVar7 = (float10)FUN_00518b70(param_1,0);
+      fVar7 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(param_1 + 0xf0) = (float)((float10)*(float *)(param_1 + 0xf0) - fVar7);
 
@@ -13007,7 +13007,7 @@ LAB_0040ecd4:
 
   PhysicsExApplyMoveControls(param_1);
 
-  fVar7 = (float10)FUN_00518b70(param_1,0);
+  fVar7 = (float10)FRateGetSecsframe(param_1,0);
 
   object_animate_process(param_1,(float)fVar7);
 
@@ -13398,8 +13398,8 @@ undefined4 charger_death_handler_c42(int param_1,int param_2)
 
 }
 
-/* ===== cspec_0040f370 @ 0x0040F370 ===== */
-undefined4 cspec_0040f370(void)
+/* ===== ret_const_x58_c23 @ 0x0040F370 ===== */
+undefined4 ret_const_x58_c23(void)
 
 
 
@@ -13469,7 +13469,7 @@ void critter_wander_ai_c65(int param_1)
 
   case 0:
 
-    fVar5 = (float10)FUN_00518b70(param_1,0);
+    fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar5 = (float10)*(float *)(param_1 + 0xec) - fVar5;
 
@@ -13543,9 +13543,9 @@ void critter_wander_ai_c65(int param_1)
 
     }
 
-    fVar5 = (float10)FUN_00518b70(param_1,0,0x42480000,*(undefined4 *)(param_1 + 0x164),
+    fVar5 = (float10)FRateGetSecsframe(param_1,0,0x42480000,*(undefined4 *)(param_1 + 0x164),
 
-                                  param_1 + 0xa8);
+                                       param_1 + 0xa8);
 
     FUN_00451270((float)(fVar5 * (float10)10.0));
 
@@ -13585,11 +13585,11 @@ void critter_wander_ai_c65(int param_1)
 
   case 3:
 
-    fVar5 = (float10)FUN_00518b70(param_1,0);
+    fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
     *(float *)(param_1 + 0xec) = (float)((float10)*(float *)(param_1 + 0xec) - fVar5);
 
-    fVar5 = (float10)FUN_00518b70(param_1,0);
+    fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar5 = (float10)*(float *)(param_1 + 0xfc) - fVar5;
 
@@ -13597,11 +13597,11 @@ void critter_wander_ai_c65(int param_1)
 
     if (fVar5 < (float10)0.0) {
 
-      fVar5 = (float10)FUN_00518b70(param_1,0);
+      fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(param_1 + 0xf8) = (float)((float10)*(float *)(param_1 + 0xf8) - fVar5);
 
-      fVar5 = (float10)FUN_00518b70(param_1,0);
+      fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar5 = (float10)*(float *)(param_1 + 0xa8) - fVar5 * (float10)*(float *)(param_1 + 0xf4);
 
@@ -13645,7 +13645,7 @@ void critter_wander_ai_c65(int param_1)
 
         iVar4 = *(int *)(param_1 + 0x274);
 
-        fVar5 = (float10)FUN_00518b70(param_1,0);
+        fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
         *(float *)(*(int *)(param_1 + 0x274) + 0xa8) =
 
@@ -13653,7 +13653,7 @@ void critter_wander_ai_c65(int param_1)
 
                     );
 
-        fVar5 = (float10)FUN_00518b70(param_1,0);
+        fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
         _DAT_00584310 =
 
@@ -13663,7 +13663,7 @@ void critter_wander_ai_c65(int param_1)
 
           iVar4 = *(int *)(param_1 + 0x274);
 
-          fVar5 = (float10)FUN_00518b70(param_1,0);
+          fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
           *(float *)(iVar4 + 0x184) =
 
@@ -13783,7 +13783,7 @@ void critter_wander_ai_c65(int param_1)
 
     }
 
-    fVar5 = (float10)FUN_00518b70(param_1,0);
+    fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar5 = (float10)*(float *)(param_1 + 0xec) - fVar5;
 

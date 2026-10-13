@@ -1,0 +1,18 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00521980,00521980,,fx_slot_find_free,0.9,w230,scan fx dict slots via fx_slot_free_check; callers comm_00485300/comm_game_setup_menu
+004b0900,004b0900,,fx_slot_free_check,0.9,w230,slot/state check for fx dict; callers comm_00485300/menu_mission_list_init
+004a7400,004a7400,,smartie_vvel_avg_move,0.9,w230,"object_add_location(0,0,(+0x118 + +0x108)*dt*0.5); caller smartie_ai_main"
+004b6c00,004b6c00,,smartie_house_scan,0.9,w230,nearest type 0x353 with (0xe0&0x3f)!=0x3f capacity; caller smartie_ai_main
+00443110,00443110,,game_timerlist_update,0.9,w230,"walk DAT_59cda4 timer list: entry[1]-=dt, sub-floats *= per-entry mult; caller game_loop_run"
+00519f20,00519f20,,registry_enum_key_create,0.9,w230,RegEnumKeyExA + RegCreateKeyExA KEY_ALL_ACCESS
+004c6f40,004c6f40,,type58_death_cleanup,0.9,w230,"obj type 0x58: walk DAT_632da0, sound_stop_sequence + object_destroy"
+00418810,00418810,,slot_matrix_get,0.9,w230,"validate slot < +0x2d8 via +0x454 table, matrix mul from +0x294; callers lift_logic/smartie_ai_main"
+004fa490,004fa490,,shopmenu_slot_text_draw,0.9,w230,slot stride 0x24 render via textrender_glyph_quad; caller ShopMenuSlotCollision
+00465070,00465070,,comm_pos_send,0.9,w230,gate check then send pos 0xa0/a4/a8 + +0xc8
+0047c8c0,0047c8c0,,mecc_chat_send_25,0.9,w230,"wrap comm_chat_send_1(3,1,0,0x25); caller mecc_animselect_gm"
+0040b1d0,0040b1d0,,meccbasepit_food_take,0.9,w230,"pit slot +0x52c: empty->create_food, timer<1->0, else take; caller meccbaseitem_shot"
+004698f0,004698f0,,trajectory_throw_calc,0.9,w230,"distancesq3d+powf+trajectory_calculate, v=dist*0.1"
+004043a0,004043a0,,hud_radar_collide_sweep,0.9,w230,loop PTR collgrid_collision_test per slot; caller status_hud_render
+00500f80,00500f80,,destroy_fx_spawn,0.9,w230,fx_create + if type==2 FUN_00501170; caller object_destroy_specialtype
+0045da90,0045da90,,fx_owner_remap,0.9,w230,fx_create + remap owner +0x320/0x324 old->new; caller kbos_death_handler_c75
+00501050,00501050,,teammecc_leader_tick,0.9,w230,if type==2 teammecc_leader_calc; caller game_loop_run

@@ -148,7 +148,7 @@ void comm_comm_00520490(void)
 
         render_scene_begin();
 
-        FUN_00428810(DAT_005def88);
+        dlog_widgets_draw(DAT_005def88);
 
         render_scene_end();
 
@@ -158,7 +158,7 @@ void comm_comm_00520490(void)
 
         render_scene_begin();
 
-        FUN_00428810(DAT_005def88);
+        dlog_widgets_draw(DAT_005def88);
 
         render_scene_end();
 
@@ -307,7 +307,7 @@ void comm_comm_00529e00(void)
 
     uStack_130 = 0x529e4f;
 
-    FUN_0051ea20();
+    error_msg_show();
 
     return;
 
@@ -337,7 +337,7 @@ void comm_comm_00529e00(void)
 
   if (iVar1 != 0) {
 
-    FUN_0051ea20(s_could_not_get_session_desc_in_se_0057e920);
+    error_msg_show(s_could_not_get_session_desc_in_se_0057e920);
 
     mem_free_tagged(puVar2,s_C__Giants_source_comm_comm_cpp_0057ded4,0x10e6);
 
@@ -351,7 +351,7 @@ void comm_comm_00529e00(void)
 
   uStack_124 = 0;
 
-  FUN_00529C00(&uStack_130,&stack0xfffffed4,&piStack_128,&uStack_124);
+  comm_session_state_pack(&uStack_130,&stack0xfffffed4,&piStack_128,&uStack_124);
 
   puVar2[0x10] = &uStack_130;
 
@@ -367,13 +367,13 @@ void comm_comm_00529e00(void)
 
   if (iVar1 == -0x7ff8ffa9) {
 
-    FUN_0051ea20(s_Invalid_Params_in_SetSessionDesc_0057e8e8);
+    error_msg_show(s_Invalid_Params_in_SetSessionDesc_0057e8e8);
 
   }
 
   else if (iVar1 == 0) goto LAB_00529f64;
 
-  FUN_0051ea20(s_trouble_in_SetSessionDesc_in_set_0057e8b8);
+  error_msg_show(s_trouble_in_SetSessionDesc_in_set_0057e8b8);
 
 LAB_00529f64:
 
@@ -420,7 +420,7 @@ void comm_comm_00529f80(void)
 
     if (iVar1 != -0x7fea7f00) {
 
-      FUN_0051ea20(s_tried_to_get_req_d_size_for_get__0057e9e8);
+      error_msg_show(s_tried_to_get_req_d_size_for_get__0057e9e8);
 
       return;
 
@@ -448,7 +448,7 @@ void comm_comm_00529f80(void)
 
     if (iVar1 != 0) {
 
-      FUN_0051ea20(s_could_not_get_session_desc_in_ge_0057e9b8);
+      error_msg_show(s_could_not_get_session_desc_in_ge_0057e9b8);
 
       mem_free_tagged(puVar2,s_C__Giants_source_comm_comm_cpp_0057ded4,0x1119);
 
@@ -503,7 +503,7 @@ undefined4 comm_comm_0052acc0(LPSTR param_1)
 
   if (iVar1 != -0x7fea7f00) {
 
-    FUN_0051ea20(s_tried_to_get_req_d_size_for_clie_0057ea80);
+    error_msg_show(s_tried_to_get_req_d_size_for_clie_0057ea80);
 
     return 0;
 
@@ -531,7 +531,7 @@ undefined4 comm_comm_0052acc0(LPSTR param_1)
 
   if (iVar1 != 0) {
 
-    FUN_0051ea20(s_could_not_get_client_info_0057ea54);
+    error_msg_show(s_could_not_get_client_info_0057ea54);
 
     mem_free_tagged(puVar2,s_C__Giants_source_comm_comm_cpp_0057ded4,0x1233);
 

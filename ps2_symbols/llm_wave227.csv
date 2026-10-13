@@ -1,0 +1,54 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00531470,?,,comm_msg_dispatch,0.9,w227,"net pkt switch: comm_cam_mode/team_broadcast/fakehost, PROJ_CreateBasic, world_ripple; buf ptr DAT_5e0304 advance; cand smhatch_move REJECTED"
+005375e0,?,,comm_voice_update,0.75,w227,"voice/chat slot loop x5, CommFlagCapsOn, ""<name"" 0x81 marker build, volume check; cand mecc_is_bush_logic REJECTED"
+00525140,?,,comm_player_state_count,0.6,w227,"count players state 3 in slot table DAT_5ddf60, max DAT_632f34"
+004a59a0,?,,baseview_cam_move,0.6,w227,move obj DAT_632a88 at ±1600*dt per dir from session update; cand PS2BaseViewTextRender REJECTED
+00518b70,?,,FRateGetSecsframe,0.85,w227,"dt=DAT_6328e0 * slow-zone mult; zones list DAT_5dcfa8 (radius,team+0x18c check)"
+0054f36b,?,,crt_flt_cvt,0.85,w227,float->decimal core; callers crt_fltout/crt_mant_normalize; callees crt_add64/mant_shl/shr
+0051ea20,?,,error_msg_show,0.7,w227,AudioGetMasterVolume!=0 -> error_screen_show; cand memcpy REJECTED
+005393e0,?,,fx_table_lookup,0.85,w227,strncpy64 upper-sum hash -> bucket chain walk; called by TextGetPtr family
+00545650,?,,fx_name_compare,0.7,w227,case-insensitive compare used by fx_table_lookup chain walk
+00538540,?,,__sigtramp,0.6,w227,CRT signal trampoline
+00539140,?,,__sigtramp_2,0.6,w227,CRT signal trampoline variant
+00544d41,?,,matherr,0.6,w227,CRT math error hook
+0041f0f0,?,,hud_add_icon,0.8,w227,"AddHud(cHud*,cHudIcon*) cand 0.82"
+0049a1d0,?,,objspec_get_targetflags,0.7,w227,caller multi_display_player_cursor_info
+004e2b10,?,,rpman_spline_return_info,0.7,w227,callees ground_height_at/playerobj_eval_refpt; caller rpman_ai_main
+0053c640,?,,ANM_SecsFromFrames,0.7,w227,frames->seconds helper; caller obj_proximity_update
+00457fb0,?,,WeaponIdGetPresent,0.7,w227,callers ShopMenuSlotCollision/giftshopview_enable/inv_award_item
+004a6220,?,,ObjIsMeccBldg,0.8,w227,callers MortarCollisionValid/ai_target_classify/base_slot_active_check
+0053be80,?,,ANM_CameraGetFOV,0.7,w227,callees crt_stream_seek; callers FLK_FlickRender/ref_get_anode2
+00454a40,?,,minishop_icon_is_available,0.7,w227,caller IconIsAvailable
+0046f540,?,,getMenuSelection,0.7,w227,PS2Game::getMenuSelection; caller wredit_ai_menu
+0053be00,?,,animGetIndexByName,0.7,w227,animSkeleton name lookup; callers BasicUsrAnmApply/FLK_FlickProcess/KabutoProcAnimsCreate
+00507b00,?,,TextGetPtr,0.85,w227,confirmed: returns char* for string id (cspec fx_name_set call site)
+005007f0,?,,ButtonFakeValue,0.65,w227,caller mecc_get_thrust
+0040d480,?,,camera_get_sniper_factor,0.7,w227,callers obj_alpha_fade_update/obj_turn_update/player_pitch_update
+0051bea0,?,,ConvertFwdSlashToBckSlsh,0.7,w227,path slash convert; caller flick_text_layout
+0052ab70,?,,ObjectGetWorldRefPoint,0.7,w227,caller comm_team_broadcast_menu
+0049a180,?,,objspec_get_movetype_string,0.65,w227,callers bldg_comm_status/mecc_fire_logic/rpboat_lock_to_boat
+0050a610,?,,distancesq3d,0.7,w227,P3D squared distance; callers FLK_ObjectInFlick/PROJ_Create2/ai_proximity_scan
+00404570,?,,S_TriCalcGradients,0.6,w227,rasterizer triangle gradient calc (island)
+00540ab0,?,,S_TriCalcGradients_2,0.6,w227,rasterizer gradient calc variant (island)
+004f8350,?,,sceMpegIsEnd,0.6,w227,movie end check; caller status_hud_render
+004a9130,?,,IconDefTextDescription,0.6,w227,callers inv_award_item/item_drop_*
+00425850,?,,verm_ai_cb,0.65,w227,vermin AI callback; callers kabutoai_death_handler_c1/reaper_ai_main/reaper_collect_food
+0052b400,?,,base_get_sweep_falloff,0.6,w227,caller rpman_move
+0054d104,?,,DestroyHuds,0.6,w227,cHudManager::DestroyHuds; caller list_reset_54
+0041ebb0,?,,do_building_move,0.5,w227,cand 0.492; callees meccbaseitem_move; caller objtype_setup_kabuto
+004582d0,?,,OtherInvIdGet,0.5,w227,cand 0.465; shop/inventory callers
+00452ae0,?,,fx_free_effect,0.7,w227,FXLISTTAG free; caller mecc_fire_logic
+00425eb0,?,,cbytestream_get_current_ptr,0.65,w227,CByteStream::GetCurrentPtr cand 0.75; used in comm_msg_dispatch loop
+004a2d60,?,,obj_collpts_world_test,0.65,w227,"per-node matrix xform + collgrid queries, results to +0x224..; cand smartie_move REJECTED"
+00467270,?,,kabuto_laser_texture_init,0.85,w227,kabuto.c: radial laser_texture_data 128x128 procedural gen
+0041ac40,?,,base_bldg_spawn_process,0.6,w227,object_allocate + meccbasepit/reaperbase bldg checks + ObjIsMeccBldg; cand buoy_process weak
+00428f70,?,,dlog_list_measure,0.6,w227,"team compare, list count via +0x28 chain, colors; callees dlog_screen_user_2/text_draw_wrap"
+00428810,?,,dlog_widgets_draw,0.65,w227,"widget list iter, dlog_text_draw_wrap per item, 
+ split; caller comm_comm_00520490"
+0042d8a0,?,,world_marker_3d_draw,0.65,w227,0x3f/0x5f blip loop stride 0x38 + model matrix; callers alpha_queue_push/render_view_xform
+004fff10,?,,menu_poly_hittest_process,0.6,w227,"clear 0x3c00 item bits, ranges +0x34/+0x40; callers menu_dlog_callback_a/b"
+00520d70,?,,dlog_options_state_process,0.6,w227,dialog_level_pop + comm_change_options_menu state machine
+004d1840,?,,smartie_target_filter,0.7,w227,"skip pickups 4a/53 unless max_energy, ids 0x24e/250/251/3ea; caller smartie_move"
+004e6670,?,,rpman_target_scan,0.7,w227,"radius^2 vs cfg+4000, pickup checks; caller rpman_ai_main"
+0048a7d0,?,,dlog_levellist_build,0.55,w227,vtable list build + 4-int key dedup; dialog_level callees
+004850f0,?,,dlog_levellist_open,0.55,w227,"dialog desc reset (cb LAB_004829c0/00485780), fx on base, state 6 check"

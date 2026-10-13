@@ -99,7 +99,7 @@ void main_collgrid_00410200(int param_1)
 
   }
 
-  iVar3 = FUN_004a6220();
+  iVar3 = ObjIsMeccBldg();
 
   if (((iVar3 != 0) || (iVar3 = ObjIsReaperBldg(), iVar3 != 0)) &&
 
@@ -762,7 +762,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
     if (*(char *)((int)fVar17 + (int)puVar7) != '\0') {
 
-      FUN_0051ea20();
+      error_msg_show();
 
     }
 
@@ -800,7 +800,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         if (*(char *)((int)puVar12 + local_14) != '\0') {
 
-          FUN_0051ea20();
+          error_msg_show();
 
         }
 

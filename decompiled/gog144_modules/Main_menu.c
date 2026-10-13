@@ -219,7 +219,7 @@ void main_menu_004832f0(void)
 
   if (((iVar3 == 0) || (DAT_00633044 == 0)) || (DAT_00632f08 < 0xd)) {
 
-    FUN_00531470();
+    comm_msg_dispatch();
 
     fx_process(1);
 
@@ -245,7 +245,7 @@ void main_menu_004832f0(void)
 
     objspec_dispatch_gate(DAT_0059ee98);
 
-    fVar7 = (float10)FUN_00518b70(0,0);
+    fVar7 = (float10)FRateGetSecsframe(0,0);
 
     object_animate_process(DAT_0059ee98,(float)fVar7);
 

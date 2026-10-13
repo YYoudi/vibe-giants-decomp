@@ -214,7 +214,7 @@ void read_sfx_bin(undefined4 param_1)
 
                 crt_sprintf(&DAT_00657400,s_Failed_binread__s_0055c970,iVar6);
 
-                FUN_00425eb0(&DAT_00657400);
+                savegame_slot_load(&DAT_00657400);
 
               }
 

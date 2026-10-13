@@ -967,7 +967,7 @@ undefined4 ai_goal_process(undefined4 *param_1)
 
     bVar2 = false;
 
-    iVar4 = FUN_00401fe0(param_1);
+    iVar4 = ai_goal_valid_check(param_1);
 
     if (iVar4 != 0) {
 
@@ -991,7 +991,7 @@ undefined4 ai_goal_process(undefined4 *param_1)
 
         DAT_00584194 = puVar7;
 
-        iVar4 = FUN_00401fe0(param_1);
+        iVar4 = ai_goal_valid_check(param_1);
 
       } while (iVar4 != 0);
 
@@ -1045,7 +1045,7 @@ LAB_00402316:
 
       *(undefined1 *)((int)param_1 + 0x20a) = 0x20;
 
-      fVar10 = (float10)FUN_00518b70(param_1,0);
+      fVar10 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(iVar4 + 0x18) = (float)((float10)*(float *)(iVar4 + 0x18) - fVar10);
 
@@ -1998,11 +1998,11 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
     {
 
-      fVar13 = (float10)FUN_00518b70(iVar5,0);
+      fVar13 = (float10)FRateGetSecsframe(iVar5,0);
 
       if ((float10)(float)param_2 < fVar13 * (float10)*(float *)(iVar5 + 0x10c)) {
 
-        FUN_00518b70(iVar5,0);
+        FRateGetSecsframe(iVar5,0);
 
       }
 

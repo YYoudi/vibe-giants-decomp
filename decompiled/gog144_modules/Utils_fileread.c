@@ -59,13 +59,13 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
   DAT_005e2c68 = 1;
 
-  iVar3 = FUN_005393e0(DAT_005e2c74,param_1);
+  iVar3 = fx_table_lookup(DAT_005e2c74,param_1);
 
   if (iVar3 == 0) {
 
     crt_sprintf(&DAT_00657400,s_ZipRead_fail___s_005803d4,param_1);
 
-    FUN_00425eb0(&DAT_00657400);
+    savegame_slot_load(&DAT_00657400);
 
     error_screen_show(&DAT_00657400);
 

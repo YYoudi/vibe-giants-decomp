@@ -1,0 +1,110 @@
+[
+ {
+  "pc_addr": "004fa1b0",
+  "pc_name": "cspec_004fa1b0",
+  "ps2_addr": "",
+  "ps2_name": "ptr_clear_if_dead_c39",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "obj_ptr_clear_if_dead field11"
+ },
+ {
+  "pc_addr": "0050c610",
+  "pc_name": "cspec_0050c610",
+  "ps2_addr": "",
+  "ps2_name": "ptr_clear_if_dead_c44",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "obj_ptr_clear_if_dead field11"
+ },
+ {
+  "pc_addr": "00512910",
+  "pc_name": "cspec_00512910",
+  "ps2_addr": "",
+  "ps2_name": "ptr_clear_if_dead_c21",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "obj_ptr_clear_if_dead field11"
+ },
+ {
+  "pc_addr": "0046f400",
+  "pc_name": "cspec_0046f400",
+  "ps2_addr": "",
+  "ps2_name": "ptr_clear_if_dead_c104",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "obj_ptr_clear_if_dead field11"
+ },
+ {
+  "pc_addr": "004d7b40",
+  "pc_name": "cspec_004d7b40",
+  "ps2_addr": "",
+  "ps2_name": "ptr_clear_if_dead_c90",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "obj_ptr_clear_if_dead field11"
+ },
+ {
+  "pc_addr": "004f9320",
+  "pc_name": "cspec_004f9320",
+  "ps2_addr": "",
+  "ps2_name": "free_tagged_c24",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "mem_free_tagged field10"
+ },
+ {
+  "pc_addr": "0050f890",
+  "pc_name": "cspec_0050f890",
+  "ps2_addr": "",
+  "ps2_name": "free_tagged_c53",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "mem_free_tagged field7"
+ },
+ {
+  "pc_addr": "004d7b60",
+  "pc_name": "cspec_004d7b60",
+  "ps2_addr": "",
+  "ps2_name": "destroy_c90",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "object_destroy field10"
+ },
+ {
+  "pc_addr": "005128f0",
+  "pc_name": "cspec_005128f0",
+  "ps2_addr": "",
+  "ps2_name": "destroy_c21",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "object_destroy field10"
+ },
+ {
+  "pc_addr": "004c73a0",
+  "pc_name": "cspec_004c73a0",
+  "ps2_addr": "",
+  "ps2_name": "death_destroy_c40",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "object_destroy field9 death handler"
+ },
+ {
+  "pc_addr": "00481bd0",
+  "pc_name": "cspec_00481bd0",
+  "ps2_addr": "",
+  "ps2_name": "sound_stop_init_c96",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "sound_stop_obj field0 init"
+ },
+ {
+  "pc_addr": "005059a0",
+  "pc_name": "cspec_005059a0",
+  "ps2_addr": "",
+  "ps2_name": "mecc_anim_tick_c2",
+  "conf": "0.9",
+  "tier": "cspec-w226",
+  "shared": "mecc_animselect_gm field3 anim tick"
+ }
+]

@@ -701,7 +701,7 @@ LAB_004b1410:
 
                   (int)pfVar20 - (int)local_3fc[0]);
 
-      FUN_0051ea20(&DAT_00657400);
+      error_msg_show(&DAT_00657400);
 
       mem_free_tagged(local_40c,s_C__Giants_source_main_readwrls_c_005602ac,0x6a1);
 
@@ -1003,7 +1003,7 @@ LAB_004b1410:
 
         crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpObj_0056052c,fVar17);
 
-        FUN_00425eb0(&DAT_00657400);
+        savegame_slot_load(&DAT_00657400);
 
         iVar6 = object_allocate_type(0x406,0);
 
@@ -1025,7 +1025,7 @@ LAB_004b1410:
 
       if (0x3ff < local_414) {
 
-        FUN_0051ea20(s_Too_many_objects_for_world_00560510);
+        error_msg_show(s_Too_many_objects_for_world_00560510);
 
         local_414 = iVar14 + -1;
 
@@ -1243,7 +1243,7 @@ LAB_004b1410:
 
     case 7.14662e-44:
 
-      FUN_0051ea20(s_Obsolete_garden_opcode_005604c0);
+      error_msg_show(s_Obsolete_garden_opcode_005604c0);
 
       fVar17 = local_410;
 
@@ -1327,7 +1327,7 @@ LAB_004b1410:
 
     case 7.70714e-44:
 
-      FUN_0051ea20(s_Obsolete_mesh_single_opcode_005604a4);
+      error_msg_show(s_Obsolete_mesh_single_opcode_005604a4);
 
       fVar17 = local_410;
 
@@ -1339,7 +1339,7 @@ LAB_004b1410:
 
     case 7.84727e-44:
 
-      FUN_0051ea20(s_Obsolete_mesh_group_opcode_00560488);
+      error_msg_show(s_Obsolete_mesh_group_opcode_00560488);
 
       fVar17 = local_410;
 
@@ -1515,7 +1515,7 @@ switchD_004b1431_caseD_2d:
 
         crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpAre_00560460,fVar17);
 
-        FUN_0051ea20(&DAT_00657400);
+        error_msg_show(&DAT_00657400);
 
         iVar6 = DAT_00632d54 + 8;
 
@@ -1525,7 +1525,7 @@ switchD_004b1431_caseD_2d:
 
       if (0x3ff < local_414) {
 
-        FUN_0051ea20(s_Too_many_objects_for_world_00560510);
+        error_msg_show(s_Too_many_objects_for_world_00560510);
 
         local_414 = iVar14 + -1;
 
@@ -1637,7 +1637,7 @@ switchD_004b1431_caseD_2d:
 
         crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpSmo_0056042c,fVar17);
 
-        FUN_0051ea20(&DAT_00657400);
+        error_msg_show(&DAT_00657400);
 
         iVar6 = DAT_00632d54 + 8;
 
@@ -1647,7 +1647,7 @@ switchD_004b1431_caseD_2d:
 
       if (0x3ff < local_414) {
 
-        FUN_0051ea20(s_Too_many_objects_for_world_00560510);
+        error_msg_show(s_Too_many_objects_for_world_00560510);
 
         local_414 = iVar14 + -1;
 
@@ -1809,7 +1809,7 @@ switchD_004b1431_caseD_2d:
 
       if (0x1f < *(int *)(puVar19[0x5c] + 8)) {
 
-        FUN_0051ea20(s_Too_many_points_in_point_list_fo_005604d8);
+        error_msg_show(s_Too_many_points_in_point_list_fo_005604d8);
 
         *(int *)(puVar19[0x5c] + 8) = *(int *)(puVar19[0x5c] + 8) + -1;
 
@@ -1859,7 +1859,7 @@ switchD_004b1431_caseD_2d:
 
       if (0 < *(int *)(DAT_006330e4 + 0x208)) {
 
-        FUN_0051ea20(s_WorldAnims_after_references__00560408);
+        error_msg_show(s_WorldAnims_after_references__00560408);
 
       }
 
@@ -1867,7 +1867,7 @@ switchD_004b1431_caseD_2d:
 
       if (0x1f < (int)local_418) {
 
-        FUN_0051ea20(s_Too_many_animations_for_a_world_005603e8);
+        error_msg_show(s_Too_many_animations_for_a_world_005603e8);
 
         pcVar26 = pcVar26 + -1;
 
@@ -1941,7 +1941,7 @@ switchD_004b1431_caseD_2d:
 
       if (7 < local_408) {
 
-        FUN_0051ea20(s_Lock_level_nest_too_deep_005603c4);
+        error_msg_show(s_Lock_level_nest_too_deep_005603c4);
 
         local_408 = local_408 + -1;
 
@@ -1997,7 +1997,7 @@ switchD_004b1431_caseD_2d:
 
         crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpLoc_0056039c,fVar17);
 
-        FUN_0051ea20(&DAT_00657400);
+        error_msg_show(&DAT_00657400);
 
         iVar6 = DAT_00632d54 + 8;
 
@@ -2007,7 +2007,7 @@ switchD_004b1431_caseD_2d:
 
       if (0x3ff < local_414) {
 
-        FUN_0051ea20(s_Too_many_objects_for_world_00560510);
+        error_msg_show(s_Too_many_objects_for_world_00560510);
 
         local_414 = iVar14 + -1;
 
@@ -2077,7 +2077,7 @@ switchD_004b1431_caseD_2d:
 
       if (local_408 == 0) {
 
-        FUN_0051ea20(s_Lock_level_underflow_0055c80c);
+        error_msg_show(s_Lock_level_underflow_0055c80c);
 
         fVar17 = local_410;
 
@@ -2167,7 +2167,7 @@ switchD_004b1431_caseD_2d:
 
         crt_sprintf(&DAT_00657400,s_Error__Flick__s_not_in_world_fli_0055c7e4,pfVar20);
 
-        FUN_0051ea20(&DAT_00657400);
+        error_msg_show(&DAT_00657400);
 
         fVar17 = local_410;
 
@@ -2235,7 +2235,7 @@ switchD_004b1431_caseD_2c:
 
       if (0x7f < local_400) {
 
-        FUN_0051ea20(s_Too_many_flicks_for_world_00560380);
+        error_msg_show(s_Too_many_flicks_for_world_00560380);
 
         local_400 = iVar14 + -1;
 
@@ -3663,7 +3663,7 @@ LAB_004b2ac0:
 
       crt_sprintf(&DAT_00657400,s_Bad_version_for__s_0055c138,local_364);
 
-      FUN_0051ea20(&DAT_00657400);
+      error_msg_show(&DAT_00657400);
 
       ANM_BinderDestroy_2(iVar6);
 

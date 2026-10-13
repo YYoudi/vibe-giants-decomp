@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 195 functions (178 named) — decompiled, names from PS2 symbols
+ * 195 functions (184 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2186,7 +2186,7 @@ void evilreaper_speed_dist(int param_1)
 
   if (iVar3 == 0) goto LAB_005127e2;
 
-  fVar4 = (float10)FUN_00518b70(param_1,0);
+  fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
   fVar4 = (float10)*(float *)(iVar1 + 0x54) - fVar4;
 
@@ -2240,7 +2240,7 @@ LAB_005127e2:
 
   if (*(float *)(iVar1 + 0x50) < *(float *)(iVar1 + 0x4c)) {
 
-    fVar4 = (float10)FUN_00518b70(param_1,0);
+    fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar4 = fVar4 * (float10)0.5 + (float10)*(float *)(iVar1 + 0x50);
 
@@ -2322,8 +2322,8 @@ LAB_005127e2:
 
 }
 
-/* ===== cspec_005128f0 @ 0x005128F0 ===== */
-void cspec_005128f0(int param_1)
+/* ===== destroy_c21 @ 0x005128F0 ===== */
+void destroy_c21(int param_1)
 
 
 
@@ -2341,8 +2341,8 @@ void cspec_005128f0(int param_1)
 
 }
 
-/* ===== cspec_00512910 @ 0x00512910 ===== */
-void cspec_00512910(int param_1)
+/* ===== ptr_clear_if_dead_c21 @ 0x00512910 ===== */
+void ptr_clear_if_dead_c21(int param_1)
 
 
 
@@ -2362,8 +2362,8 @@ void cspec_00512910(int param_1)
 
 }
 
-/* ===== cspec_00512940 @ 0x00512940 ===== */
-undefined4 cspec_00512940(void)
+/* ===== ret_const_xd8_c21 @ 0x00512940 ===== */
+undefined4 ret_const_xd8_c21(void)
 
 
 
@@ -2765,7 +2765,7 @@ void reaper_minion_ai_c84(int param_1)
 
       afStack_78[0] = *(float *)(DAT_00632ed8 + 0xba8) * afStack_78[0];
 
-      fVar8 = (float10)FUN_00518b70(param_1,0);
+      fVar8 = (float10)FRateGetSecsframe(param_1,0);
 
       object_add_location(param_1,(float)(fVar8 * (float10)fStack_7c),
 
@@ -2851,7 +2851,7 @@ void reaper_minion_ai_c84(int param_1)
 
         puVar1 = (undefined4 *)(iVar7 + 0xa0);
 
-        fVar8 = (float10)FUN_0050a610(puVar1,(undefined4 *)(param_1 + 0xa0));
+        fVar8 = (float10)distancesq3d(puVar1,(undefined4 *)(param_1 + 0xa0));
 
         if (fVar8 < (float10)fVar2 * (float10)fVar2) {
 
@@ -3000,11 +3000,11 @@ void reaper_fx_emitter_c80(int param_1)
 
   
 
-  fVar6 = (float10)FUN_00518b70(param_1,0);
+  fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
   if ((*(byte *)(param_1 + 0xe0) & 1) != 0) {
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
     if (0.0 < *(float *)(param_1 + 0xec)) {
 
@@ -4295,7 +4295,7 @@ int wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT(int *param_1,int pa
 
         iVar7 = *param_1;
 
-        fVar10 = (float10)FUN_00518b70(param_2,0);
+        fVar10 = (float10)FRateGetSecsframe(param_2,0);
 
         fVar11 = (float10)rndfloatrange(0,0x41000000);
 
@@ -4612,7 +4612,7 @@ void wave_effect_get_player_origin
 
     if (*(int *)(param_2 + 0x104) == 0) {
 
-      fVar4 = (float10)FUN_00518b70(param_2,0);
+      fVar4 = (float10)FRateGetSecsframe(param_2,0);
 
       if (fVar4 <= (float10)0.0001) {
 
@@ -5961,7 +5961,7 @@ void drip_system_init(int param_1,undefined4 param_2,undefined4 param_3)
 
   fVar3 = (float10)distance3d__FP3P3DT0(param_1 + 0xac,param_1 + 0xa0);
 
-  fVar4 = (float10)FUN_00518b70(param_1,0);
+  fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
   drip_make(param_1,param_2,(float)((float10)(float)fVar3 / fVar4),ABS(*(float *)(param_1 + 0x114)),
 
@@ -8604,7 +8604,7 @@ char * di_error_name(int param_1)
 
     if (param_1 == 0) {
 
-      pcVar1 = (char *)FUN_00507b00();
+      pcVar1 = (char *)TextGetPtr();
 
       return pcVar1;
 
@@ -9676,12 +9676,12 @@ void time_frame_update(void)
 
 }
 
-/* ===== FUN_00518b70 @ 0x00518B70 ===== */
-/* PS2 candidate: FRateGetSecsframe (conf 0.712) */
+/* ===== FRateGetSecsframe @ 0x00518B70 ===== */
+/* PS2 candidate: FRateGetSecsframe (conf 0.85) */
 
 
 
-float10 FUN_00518b70(int param_1,int param_2)
+float10 FRateGetSecsframe(int param_1,int param_2)
 
 
 
@@ -9925,12 +9925,12 @@ undefined4 fps_display(void)
 
 }
 
-/* ===== FUN_00518FA0 @ 0x00518FA0 ===== */
+/* ===== input_bindings_clear @ 0x00518FA0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00518FA0(void)
+void input_bindings_clear(void)
 
 
 
@@ -11017,8 +11017,8 @@ void reg_close_key(void)
 
 }
 
-/* ===== FUN_00519F20 @ 0x00519F20 ===== */
-int FUN_00519F20(DWORD *param_1,DWORD param_2,LPCSTR param_3)
+/* ===== registry_enum_key_create @ 0x00519F20 ===== */
+int registry_enum_key_create(DWORD *param_1,DWORD param_2,LPCSTR param_3)
 
 
 
@@ -12257,7 +12257,7 @@ void textrender_texture_alloc(int param_1)
 
         crt_sprintf(&DAT_00657400,s_TextRender_Fail_on__d_0057d7c0,param_1);
 
-        FUN_00425eb0(&DAT_00657400);
+        savegame_slot_load(&DAT_00657400);
 
         local_1c = 0;
 
@@ -12305,7 +12305,7 @@ void textrender_texture_alloc(int param_1)
 
       if (0x80 - DAT_005dd378 < (int)(uint)(byte)(&DAT_005dd3c1)[param_1 * 5]) {
 
-        FUN_00425eb0(s_Text_Texture_table_is_full__0057d7a4);
+        savegame_slot_load(s_Text_Texture_table_is_full__0057d7a4);
 
         DAT_005dd378 = 0;
 
@@ -12627,10 +12627,12 @@ void textrender_char_vertex
 
 }
 
-/* ===== FUN_0051b810 @ 0x0051B810 ===== */
-void FUN_0051b810(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+/* ===== textrender_text_draw_len @ 0x0051B810 ===== */
+void textrender_text_draw_len
 
-                 undefined4 param_5,char *param_6)
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+               undefined4 param_5,char *param_6)
 
 
 
@@ -13246,12 +13248,12 @@ float10 textrender_draw_large(float param_1,byte *param_2)
 
 }
 
-/* ===== FUN_0051bea0 @ 0x0051BEA0 ===== */
-/* PS2 candidate: ConvertFwdSlashToBckSlsh__FPc (conf 0.694) */
+/* ===== ConvertFwdSlashToBckSlsh @ 0x0051BEA0 ===== */
+/* PS2 candidate: ConvertFwdSlashToBckSlsh (conf 0.7) */
 
 
 
-float10 FUN_0051bea0(float param_1,char *param_2)
+float10 ConvertFwdSlashToBckSlsh(float param_1,char *param_2)
 
 
 
@@ -13627,7 +13629,7 @@ void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_
 
   _DAT_005dd91c = error_screen_exit;
 
-  _DAT_005dd920 = FUN_00425eb0;
+  _DAT_005dd920 = savegame_slot_load;
 
   _DAT_005dd924 = map_scratch_clear;
 
@@ -13645,7 +13647,7 @@ void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_
 
   _DAT_005dd940 = texture_destroy;
 
-  _DAT_005dd944 = FUN_00507b00;
+  _DAT_005dd944 = TextGetPtr;
 
   _DAT_005dd948 = XFGetViewportExt;
 
@@ -13663,7 +13665,7 @@ void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_
 
   _DAT_005dd964 = &LAB_0051c350;
 
-  _DAT_005dd968 = FUN_0051ea20;
+  _DAT_005dd968 = error_msg_show;
 
   *param_1 = 0x2775;
 
@@ -15836,7 +15838,7 @@ undefined4 startup_options_init(undefined4 param_1,undefined4 param_2)
 
         if (!bVar9) {
 
-          uVar2 = FUN_00507b00(s_ErrFailedGFX_0057dba0);
+          uVar2 = TextGetPtr(s_ErrFailedGFX_0057dba0);
 
           crt_sprintf(local_64,uVar2,&DAT_005dda88);
 
@@ -16044,7 +16046,7 @@ LAB_0051ded4:
 
   if (iVar1 == 0) {
 
-    uVar2 = FUN_00507b00(s_ErrFailedSND_0057db80);
+    uVar2 = TextGetPtr(s_ErrFailedSND_0057db80);
 
     crt_sprintf(local_64,uVar2,&DAT_005ddae0);
 
@@ -16448,7 +16450,7 @@ LAB_0051e225:
 
   }
 
-  FUN_004907e0();
+  dlog_audio_options_process();
 
   return 1;
 
@@ -16500,7 +16502,7 @@ void error_screen_show(LPCSTR param_1)
 
   pCVar2 = param_1;
 
-  FUN_00425eb0(param_1);
+  savegame_slot_load(param_1);
 
   if ((((DAT_00632f08 < 3) || (0xb < DAT_00632f08)) || (DAT_00632f08 == 6)) && (DAT_005ddb94 == 0))
 
@@ -16686,12 +16688,12 @@ LAB_0051e90f:
 
 }
 
-/* ===== FUN_0051ea20 @ 0x0051EA20 ===== */
-/* PS2 candidate: memcpy (conf 0.658) */
+/* ===== error_msg_show @ 0x0051EA20 ===== */
+/* PS2 candidate: error_msg_show (conf 0.7) */
 
 
 
-void FUN_0051ea20(void)
+void error_msg_show(void)
 
 
 
@@ -16892,7 +16894,7 @@ void gamespy_shutdown(void)
 
           if (DAT_005defa0 == 0) {
 
-            FUN_0051ea20(s_gamespy_shutdown_called_without_i_0057dd30);
+            error_msg_show(s_gamespy_shutdown_called_without_i_0057dd30);
 
           }
 
@@ -16914,7 +16916,7 @@ void gamespy_shutdown(void)
 
         else {
 
-          FUN_0051ea20(s_gamespy_shutdown_called_more_tha_0057dd58);
+          error_msg_show(s_gamespy_shutdown_called_more_tha_0057dd58);
 
         }
 
@@ -17103,7 +17105,7 @@ void GiantsInitNewWorld(void)
 
     if (iVar3 < 0) {
 
-      uVar2 = FUN_00507b00(s_DPlayInitFail_0057ddc0);
+      uVar2 = TextGetPtr(s_DPlayInitFail_0057ddc0);
 
       crt_sprintf(local_1f4,uVar2,iVar3);
 
@@ -17177,7 +17179,7 @@ void GiantsInitNewWorld(void)
 
     }
 
-    uVar2 = FUN_00507b00(s_DPlayInitFail_0057ddc0);
+    uVar2 = TextGetPtr(s_DPlayInitFail_0057ddc0);
 
     crt_sprintf(local_1f4,uVar2,HVar1);
 
@@ -17299,7 +17301,7 @@ LAB_0051f6a4:
 
     uStack_240 = 0;
 
-    FUN_00529C00(&uStack_24c,&uStack_248,&uStack_244,&uStack_240);
+    comm_session_state_pack(&uStack_24c,&uStack_248,&uStack_244,&uStack_240);
 
     puStack_1fc = &uStack_24c;
 
@@ -17331,7 +17333,7 @@ LAB_0051f6a4:
 
           else {
 
-            FUN_0051ea20(s_Error_starting_Gamespy_query_soc_0057dd80);
+            error_msg_show(s_Error_starting_Gamespy_query_soc_0057dd80);
 
           }
 
@@ -17355,7 +17357,7 @@ LAB_0051f6a4:
 
     }
 
-    uVar2 = FUN_00507b00(s_DPlayHostFail_0057ddb0);
+    uVar2 = TextGetPtr(s_DPlayHostFail_0057ddb0);
 
     crt_sprintf(local_1f4,uVar2,iVar3);
 
@@ -17798,7 +17800,7 @@ void comm_tcpip_menu(void)
 
   if (DAT_00632f68 != '\0') {
 
-    pbVar3 = (byte *)FUN_00507b00(s_WN_None_0057dddc);
+    pbVar3 = (byte *)TextGetPtr(s_WN_None_0057dddc);
 
     pbVar6 = (byte *)&DAT_00632f68;
 
@@ -17840,7 +17842,7 @@ LAB_0051fe04:
 
   }
 
-  pcVar5 = (char *)FUN_00507b00(s_WN_None_0057dddc);
+  pcVar5 = (char *)TextGetPtr(s_WN_None_0057dddc);
 
   pcVar7 = &DAT_00632f68;
 

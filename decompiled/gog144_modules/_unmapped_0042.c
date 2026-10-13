@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 132 functions (118 named) — decompiled, names from PS2 symbols
+ * 132 functions (125 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -395,7 +395,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
       }
 
-      iVar1 = FUN_00457fb0(DAT_00632a88,1);
+      iVar1 = WeaponIdGetPresent(DAT_00632a88,1);
 
       if (iVar1 == -1) {
 
@@ -419,7 +419,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
       }
 
-      iVar1 = FUN_00457fb0(DAT_00632a88,2);
+      iVar1 = WeaponIdGetPresent(DAT_00632a88,2);
 
       if (iVar1 == -1) {
 
@@ -441,7 +441,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
     }
 
-    iVar1 = FUN_00457fb0(DAT_00632a88,3);
+    iVar1 = WeaponIdGetPresent(DAT_00632a88,3);
 
     if (iVar1 == -1) {
 
@@ -605,7 +605,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
     }
 
-    iVar1 = FUN_004582d0(DAT_00632a88,0);
+    iVar1 = OtherInvIdGet(DAT_00632a88,0);
 
     if (iVar1 == -1) {
 
@@ -643,7 +643,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
     }
 
-    iVar1 = FUN_004582d0(DAT_00632a88,2);
+    iVar1 = OtherInvIdGet(DAT_00632a88,2);
 
     if (iVar1 == -1) {
 
@@ -691,7 +691,7 @@ LAB_00420491:
 
     }
 
-    iVar1 = FUN_004582d0(DAT_00632a88,1);
+    iVar1 = OtherInvIdGet(DAT_00632a88,1);
 
     if (iVar1 == -1) {
 
@@ -715,7 +715,7 @@ LAB_00420491:
 
   }
 
-  DAT_00555a20 = FUN_004582d0(DAT_00632a88,uVar3);
+  DAT_00555a20 = OtherInvIdGet(DAT_00632a88,uVar3);
 
   DAT_00632aec = 0;
 
@@ -2402,7 +2402,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpDropSpell_00555df4);
+    uVar1 = TextGetPtr(s_InpDropSpell_00555df4);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2420,7 +2420,7 @@ void input_mapping_init(int param_1)
 
     (&DAT_00584379)[iVar2 * 2] = 3;
 
-    uVar1 = FUN_00507b00(s_InpSelectSpell_00555de0);
+    uVar1 = TextGetPtr(s_InpSelectSpell_00555de0);
 
     crt_sprintf(&DAT_00586dd0,&DAT_00555df0,uVar1);
 
@@ -2438,7 +2438,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSelectSpellBkwd_00555dcc);
+    uVar1 = TextGetPtr(s_InpSelectSpellBkwd_00555dcc);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2468,7 +2468,7 @@ void input_mapping_init(int param_1)
 
     } while ((char)iVar2 == '\0');
 
-    uVar1 = FUN_00507b00(s_InpSelectSpellFwd_00555db8);
+    uVar1 = TextGetPtr(s_InpSelectSpellFwd_00555db8);
 
     crt_sprintf(&DAT_00586dd0 + iVar4 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2498,7 +2498,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpJump_00555db0);
+    uVar1 = TextGetPtr(s_InpJump_00555db0);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2528,7 +2528,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpHealth_00555da4);
+    uVar1 = TextGetPtr(s_InpHealth_00555da4);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2558,7 +2558,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpMine_00555d9c);
+    uVar1 = TextGetPtr(s_InpMine_00555d9c);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2588,7 +2588,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpFlare_00555d90);
+    uVar1 = TextGetPtr(s_InpFlare_00555d90);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2618,7 +2618,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpCastSpell_00555d80);
+    uVar1 = TextGetPtr(s_InpCastSpell_00555d80);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2648,7 +2648,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSelectSpell1_00555d70);
+    uVar1 = TextGetPtr(s_InpSelectSpell1_00555d70);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2678,7 +2678,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSelectSpell2_00555d60);
+    uVar1 = TextGetPtr(s_InpSelectSpell2_00555d60);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2708,7 +2708,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSelectSpell3_00555d50);
+    uVar1 = TextGetPtr(s_InpSelectSpell3_00555d50);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2738,7 +2738,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSelectSpell4_00555d40);
+    uVar1 = TextGetPtr(s_InpSelectSpell4_00555d40);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2768,7 +2768,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSelectSpell5_00555d30);
+    uVar1 = TextGetPtr(s_InpSelectSpell5_00555d30);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2798,7 +2798,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpCycleWeaponFwd_00555d1c);
+    uVar1 = TextGetPtr(s_InpCycleWeaponFwd_00555d1c);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2828,7 +2828,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpCycleWeaponBkwd_00555d08);
+    uVar1 = TextGetPtr(s_InpCycleWeaponBkwd_00555d08);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2858,7 +2858,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpFire_00555d00);
+    uVar1 = TextGetPtr(s_InpFire_00555d00);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2888,7 +2888,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpTurbo_00555cf4);
+    uVar1 = TextGetPtr(s_InpTurbo_00555cf4);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2918,7 +2918,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpJetSkiCameraMode_00555ce0);
+    uVar1 = TextGetPtr(s_InpJetSkiCameraMode_00555ce0);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2948,7 +2948,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpJetSkiFire_00555cd0);
+    uVar1 = TextGetPtr(s_InpJetSkiFire_00555cd0);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -2978,7 +2978,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpJetSkiTurbo_00555cc0);
+    uVar1 = TextGetPtr(s_InpJetSkiTurbo_00555cc0);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -3008,7 +3008,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpJetSkiForward_00555cac);
+    uVar1 = TextGetPtr(s_InpJetSkiForward_00555cac);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -3038,7 +3038,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpJetSkiLeft_00555c9c);
+    uVar1 = TextGetPtr(s_InpJetSkiLeft_00555c9c);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -3068,7 +3068,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpJetSkiRight_00555c8c);
+    uVar1 = TextGetPtr(s_InpJetSkiRight_00555c8c);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -3086,73 +3086,73 @@ void input_mapping_init(int param_1)
 
     (&DAT_00584379)[iVar2 * 2] = 1;
 
-    uVar1 = FUN_00507b00(s_InpSniperZoomSnap_00555c78);
+    uVar1 = TextGetPtr(s_InpSniperZoomSnap_00555c78);
 
     crt_sprintf(&DAT_00587dd0,&DAT_00555df0,uVar1);
 
     DAT_005843b9 = 1;
 
-    uVar1 = FUN_00507b00(s_InpSniperZoomInc_00555c64);
+    uVar1 = TextGetPtr(s_InpSniperZoomInc_00555c64);
 
     crt_sprintf(&DAT_00587e50,&DAT_00555df0,uVar1);
 
     DAT_005843bb = 3;
 
-    uVar1 = FUN_00507b00(s_InpToggle1stPerson_00555c50);
+    uVar1 = TextGetPtr(s_InpToggle1stPerson_00555c50);
 
     crt_sprintf(&DAT_00587ed0,&DAT_00555df0,uVar1);
 
     DAT_005843bd = 3;
 
-    uVar1 = FUN_00507b00(s_InpMapMode_00555c44);
+    uVar1 = TextGetPtr(s_InpMapMode_00555c44);
 
     crt_sprintf(&DAT_00587f50,&DAT_00555df0,uVar1);
 
     DAT_005843bf = 3;
 
-    uVar1 = FUN_00507b00(s_InpRunFwd_00555c38);
+    uVar1 = TextGetPtr(s_InpRunFwd_00555c38);
 
     crt_sprintf(&DAT_00587fd0,&DAT_00555df0,uVar1);
 
     DAT_005843c1 = 1;
 
-    uVar1 = FUN_00507b00(s_InpRunBkwd_00555c2c);
+    uVar1 = TextGetPtr(s_InpRunBkwd_00555c2c);
 
     crt_sprintf(&DAT_00588050,&DAT_00555df0,uVar1);
 
     DAT_005843c3 = 1;
 
-    uVar1 = FUN_00507b00(s_InpSideLeft_00555c20);
+    uVar1 = TextGetPtr(s_InpSideLeft_00555c20);
 
     crt_sprintf(&DAT_005880d0,&DAT_00555df0,uVar1);
 
     DAT_005843c5 = 1;
 
-    uVar1 = FUN_00507b00(s_InpSideRight_00555c10);
+    uVar1 = TextGetPtr(s_InpSideRight_00555c10);
 
     crt_sprintf(&DAT_00588150,&DAT_00555df0,uVar1);
 
     DAT_005843c7 = 1;
 
-    uVar1 = FUN_00507b00(s_InpEscape2_00555c04);
+    uVar1 = TextGetPtr(s_InpEscape2_00555c04);
 
     crt_sprintf(&DAT_005882d0,&DAT_00555df0,uVar1);
 
     DAT_005843cd = 3;
 
-    uVar1 = FUN_00507b00(s_InpChatAll_00555bf8);
+    uVar1 = TextGetPtr(s_InpChatAll_00555bf8);
 
     crt_sprintf(&DAT_005881d0,&DAT_00555df0,uVar1);
 
     DAT_005843c9 = 3;
 
-    uVar1 = FUN_00507b00(s_InpChatTeam_00555bec);
+    uVar1 = TextGetPtr(s_InpChatTeam_00555bec);
 
     crt_sprintf(&DAT_00588250,&DAT_00555df0,uVar1);
 
     DAT_005843cb = 3;
 
-    uVar1 = FUN_00507b00(s_InpDropCurWeapon_00555bd8);
+    uVar1 = TextGetPtr(s_InpDropCurWeapon_00555bd8);
 
     crt_sprintf(&DAT_00588350,&DAT_00555df0,uVar1);
 
@@ -3170,7 +3170,7 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpActivatePartyHouse_00555bc0);
+    uVar1 = TextGetPtr(s_InpActivatePartyHouse_00555bc0);
 
     crt_sprintf(&DAT_00586dd0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -3892,7 +3892,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpDiscipleMode_00555bb0);
+  uVar1 = TextGetPtr(s_InpDiscipleMode_00555bb0);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -3928,7 +3928,7 @@ LAB_00421d1e:
 
   }
 
-  uVar1 = FUN_00507b00(s_InpFire_00555d00);
+  uVar1 = TextGetPtr(s_InpFire_00555d00);
 
   crt_sprintf(&DAT_005883d0,&DAT_00555df0,uVar1);
 
@@ -3946,7 +3946,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpDiscAttack_00555ba0);
+  uVar1 = TextGetPtr(s_InpDiscAttack_00555ba0);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -3976,7 +3976,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpDiscRecall_00555b90);
+  uVar1 = TextGetPtr(s_InpDiscRecall_00555b90);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4006,7 +4006,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpDiscGoto_00555b84);
+  uVar1 = TextGetPtr(s_InpDiscGoto_00555b84);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4036,7 +4036,7 @@ LAB_00421d1e:
 
   } while ((char)iVar2 == '\0');
 
-  uVar1 = FUN_00507b00(s_InpGyroCameraMode_00555b70);
+  uVar1 = TextGetPtr(s_InpGyroCameraMode_00555b70);
 
   crt_sprintf(&DAT_005883d0 + iVar4 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4066,7 +4066,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpActivateBackItem_00555b5c);
+  uVar1 = TextGetPtr(s_InpActivateBackItem_00555b5c);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4096,7 +4096,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpActivatePartyHouse_00555bc0);
+  uVar1 = TextGetPtr(s_InpActivatePartyHouse_00555bc0);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4126,7 +4126,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpWeaponCycleWepFwd_00555b44);
+  uVar1 = TextGetPtr(s_InpWeaponCycleWepFwd_00555b44);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4156,7 +4156,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpWeaponCycleWepBkwd_00555b2c);
+  uVar1 = TextGetPtr(s_InpWeaponCycleWepBkwd_00555b2c);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4186,7 +4186,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpThrust_00555b20);
+  uVar1 = TextGetPtr(s_InpThrust_00555b20);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4216,7 +4216,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpNitro_00555b14);
+  uVar1 = TextGetPtr(s_InpNitro_00555b14);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4246,7 +4246,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpHealth_00555da4);
+  uVar1 = TextGetPtr(s_InpHealth_00555da4);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4276,7 +4276,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpGrenade_00555b08);
+  uVar1 = TextGetPtr(s_InpGrenade_00555b08);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4306,7 +4306,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpMine_00555d9c);
+  uVar1 = TextGetPtr(s_InpMine_00555d9c);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4336,7 +4336,7 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  uVar1 = FUN_00507b00(s_InpFlare_00555d90);
+  uVar1 = TextGetPtr(s_InpFlare_00555d90);
 
   crt_sprintf(&DAT_005883d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -4354,73 +4354,73 @@ LAB_00421d1e:
 
   (&DAT_005843d1)[iVar2 * 2] = 3;
 
-  uVar1 = FUN_00507b00(s_InpSniperZoomSnap_00555c78);
+  uVar1 = TextGetPtr(s_InpSniperZoomSnap_00555c78);
 
   crt_sprintf(&DAT_005893d0,&DAT_00555df0,uVar1);
 
   DAT_00584411 = (DAT_00633104 != 0) * '\x02' + '\x01';
 
-  uVar1 = FUN_00507b00(s_InpSniperZoomInc_00555c64);
+  uVar1 = TextGetPtr(s_InpSniperZoomInc_00555c64);
 
   crt_sprintf(&DAT_00589450,&DAT_00555df0,uVar1);
 
   DAT_00584413 = 3;
 
-  uVar1 = FUN_00507b00(s_InpToggle1stPerson_00555c50);
+  uVar1 = TextGetPtr(s_InpToggle1stPerson_00555c50);
 
   crt_sprintf(&DAT_005894d0,&DAT_00555df0,uVar1);
 
   DAT_00584415 = 3;
 
-  uVar1 = FUN_00507b00(s_InpMapMode_00555c44);
+  uVar1 = TextGetPtr(s_InpMapMode_00555c44);
 
   crt_sprintf(&DAT_00589550,&DAT_00555df0,uVar1);
 
   DAT_00584417 = 3;
 
-  uVar1 = FUN_00507b00(s_InpRunFwd_00555c38);
+  uVar1 = TextGetPtr(s_InpRunFwd_00555c38);
 
   crt_sprintf(&DAT_005895d0,&DAT_00555df0,uVar1);
 
   DAT_00584419 = 1;
 
-  uVar1 = FUN_00507b00(s_InpRunBkwd_00555c2c);
+  uVar1 = TextGetPtr(s_InpRunBkwd_00555c2c);
 
   crt_sprintf(&DAT_00589650,&DAT_00555df0,uVar1);
 
   DAT_0058441b = 1;
 
-  uVar1 = FUN_00507b00(s_InpSideLeft_00555c20);
+  uVar1 = TextGetPtr(s_InpSideLeft_00555c20);
 
   crt_sprintf(&DAT_005896d0,&DAT_00555df0,uVar1);
 
   DAT_0058441d = 1;
 
-  uVar1 = FUN_00507b00(s_InpSideRight_00555c10);
+  uVar1 = TextGetPtr(s_InpSideRight_00555c10);
 
   crt_sprintf(&DAT_00589750,&DAT_00555df0,uVar1);
 
   DAT_0058441f = 1;
 
-  uVar1 = FUN_00507b00(s_InpEscape2_00555c04);
+  uVar1 = TextGetPtr(s_InpEscape2_00555c04);
 
   crt_sprintf(&DAT_005898d0,&DAT_00555df0,uVar1);
 
   DAT_00584425 = 3;
 
-  uVar1 = FUN_00507b00(s_InpDropCurWeapon_00555bd8);
+  uVar1 = TextGetPtr(s_InpDropCurWeapon_00555bd8);
 
   crt_sprintf(&DAT_00589950,&DAT_00555df0,uVar1);
 
   DAT_00584427 = 3;
 
-  uVar1 = FUN_00507b00(s_InpChatAll_00555bf8);
+  uVar1 = TextGetPtr(s_InpChatAll_00555bf8);
 
   crt_sprintf(&DAT_005897d0,&DAT_00555df0,uVar1);
 
   DAT_00584421 = 3;
 
-  uVar1 = FUN_00507b00(s_InpChatTeam_00555bec);
+  uVar1 = TextGetPtr(s_InpChatTeam_00555bec);
 
   crt_sprintf(&DAT_00589850,&DAT_00555df0,uVar1);
 
@@ -5116,7 +5116,7 @@ LAB_004228ea:
 
     }
 
-    uVar1 = FUN_00507b00(s_InpSpecialCamera_00555af4);
+    uVar1 = TextGetPtr(s_InpSpecialCamera_00555af4);
 
     crt_sprintf(&DAT_005899d0,&DAT_00555df0,uVar1);
 
@@ -5134,7 +5134,7 @@ LAB_004228ea:
 
     } while ((char)iVar2 == '\0');
 
-    uVar1 = FUN_00507b00(s_InpOffspringMode_00555ae0);
+    uVar1 = TextGetPtr(s_InpOffspringMode_00555ae0);
 
     crt_sprintf(&DAT_005899d0 + iVar4 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5164,7 +5164,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpAttack_00555ad4);
+    uVar1 = TextGetPtr(s_InpAttack_00555ad4);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5194,7 +5194,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpGrab_00555acc);
+    uVar1 = TextGetPtr(s_InpGrab_00555acc);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5224,7 +5224,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpAdrenaline_00555abc);
+    uVar1 = TextGetPtr(s_InpAdrenaline_00555abc);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5254,7 +5254,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpLayEgg_00555ab0);
+    uVar1 = TextGetPtr(s_InpLayEgg_00555ab0);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5284,7 +5284,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSummonOffsping_00555a9c);
+    uVar1 = TextGetPtr(s_InpSummonOffsping_00555a9c);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5314,7 +5314,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpUseSpike_00555a90);
+    uVar1 = TextGetPtr(s_InpUseSpike_00555a90);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5344,7 +5344,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpRoar1_00555a84);
+    uVar1 = TextGetPtr(s_InpRoar1_00555a84);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5374,7 +5374,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpRoar2_00555a78);
+    uVar1 = TextGetPtr(s_InpRoar2_00555a78);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5404,7 +5404,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpRoar3_00555a6c);
+    uVar1 = TextGetPtr(s_InpRoar3_00555a6c);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5434,7 +5434,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpCheat_00555a60);
+    uVar1 = TextGetPtr(s_InpCheat_00555a60);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5464,7 +5464,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpCheat_Grow_00555a50);
+    uVar1 = TextGetPtr(s_InpCheat_Grow_00555a50);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5494,7 +5494,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpSprint_00555a44);
+    uVar1 = TextGetPtr(s_InpSprint_00555a44);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5524,7 +5524,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpKbJump_00555a38);
+    uVar1 = TextGetPtr(s_InpKbJump_00555a38);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5554,7 +5554,7 @@ LAB_004228ea:
 
     } while ((uVar3 & 1) == 0);
 
-    uVar1 = FUN_00507b00(s_InpBurn_00555a30);
+    uVar1 = TextGetPtr(s_InpBurn_00555a30);
 
     crt_sprintf(&DAT_005899d0 + iVar2 * 0x80,&DAT_00555df0,uVar1);
 
@@ -5572,73 +5572,73 @@ LAB_004228ea:
 
     (&DAT_00584429)[iVar2 * 2] = 3;
 
-    uVar1 = FUN_00507b00(s_InpMapMode_00555c44);
+    uVar1 = TextGetPtr(s_InpMapMode_00555c44);
 
     crt_sprintf(&DAT_0058ab50,&DAT_00555df0,uVar1);
 
     DAT_0058446f = 3;
 
-    uVar1 = FUN_00507b00(s_InpRunFwd_00555c38);
+    uVar1 = TextGetPtr(s_InpRunFwd_00555c38);
 
     crt_sprintf(&DAT_0058abd0,&DAT_00555df0,uVar1);
 
     DAT_00584471 = 1;
 
-    uVar1 = FUN_00507b00(s_InpRunBkwd_00555c2c);
+    uVar1 = TextGetPtr(s_InpRunBkwd_00555c2c);
 
     crt_sprintf(&DAT_0058ac50,&DAT_00555df0,uVar1);
 
     DAT_00584473 = 1;
 
-    uVar1 = FUN_00507b00(s_InpSideLeft_00555c20);
+    uVar1 = TextGetPtr(s_InpSideLeft_00555c20);
 
     crt_sprintf(&DAT_0058acd0,&DAT_00555df0,uVar1);
 
     DAT_00584475 = 1;
 
-    uVar1 = FUN_00507b00(s_InpSideRight_00555c10);
+    uVar1 = TextGetPtr(s_InpSideRight_00555c10);
 
     crt_sprintf(&DAT_0058ad50,&DAT_00555df0,uVar1);
 
     DAT_00584477 = 1;
 
-    uVar1 = FUN_00507b00(s_InpEscape2_00555c04);
+    uVar1 = TextGetPtr(s_InpEscape2_00555c04);
 
     crt_sprintf(&DAT_0058aed0,&DAT_00555df0,uVar1);
 
     DAT_0058447d = 3;
 
-    uVar1 = FUN_00507b00(s_InpChatAll_00555bf8);
+    uVar1 = TextGetPtr(s_InpChatAll_00555bf8);
 
     crt_sprintf(&DAT_0058add0,&DAT_00555df0,uVar1);
 
     DAT_00584479 = 3;
 
-    uVar1 = FUN_00507b00(s_InpChatTeam_00555bec);
+    uVar1 = TextGetPtr(s_InpChatTeam_00555bec);
 
     crt_sprintf(&DAT_0058ae50,&DAT_00555df0,uVar1);
 
     DAT_0058447b = 3;
 
-    uVar1 = FUN_00507b00(s_InpToggle1stPerson_00555c50);
+    uVar1 = TextGetPtr(s_InpToggle1stPerson_00555c50);
 
     crt_sprintf(&DAT_0058aad0,&DAT_00555df0,uVar1);
 
     DAT_0058446d = 3;
 
-    uVar1 = FUN_00507b00(s_InpSniperZoomSnap_00555c78);
+    uVar1 = TextGetPtr(s_InpSniperZoomSnap_00555c78);
 
     crt_sprintf(&DAT_0058a9d0,&DAT_00555df0,uVar1);
 
     DAT_00584469 = 1;
 
-    uVar1 = FUN_00507b00(s_InpSniperZoomInc_00555c64);
+    uVar1 = TextGetPtr(s_InpSniperZoomInc_00555c64);
 
     crt_sprintf(&DAT_0058aa50,&DAT_00555df0,uVar1);
 
     DAT_0058446b = 3;
 
-    uVar1 = FUN_00507b00(s_InpMapMode_00555c44);
+    uVar1 = TextGetPtr(s_InpMapMode_00555c44);
 
     crt_sprintf(&DAT_0058ab50,&DAT_00555df0,uVar1);
 
@@ -5911,7 +5911,7 @@ void FUN_00423760(int param_1,int param_2)
 
   (&DAT_00584378)[(param_1 * 0x2c + param_2) * 2] = 0xff;
 
-  FUN_00518FA0();
+  input_bindings_clear();
 
   return;
 
@@ -6202,7 +6202,7 @@ LAB_004239b5:
 
         (&DAT_00584378)[(param_1 * 0x2c + iVar4) * 2] = 0xff;
 
-        FUN_00518FA0();
+        input_bindings_clear();
 
         return;
 
@@ -6216,7 +6216,7 @@ LAB_004239b5:
 
     if (0x2b < iVar4) {
 
-      FUN_00518FA0();
+      input_bindings_clear();
 
       return;
 
@@ -6663,7 +6663,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005562b8);
 
-  puVar1 = (undefined1 *)FUN_00507b00(local_94);
+  puVar1 = (undefined1 *)TextGetPtr(local_94);
 
   if (puVar1 == local_94) {
 
@@ -6679,7 +6679,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005562ac);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6695,7 +6695,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005562a8);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6711,7 +6711,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005562a4);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6727,7 +6727,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005562a0);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6743,7 +6743,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055629c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6759,7 +6759,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556298);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6775,7 +6775,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556294);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6791,7 +6791,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556290);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6807,7 +6807,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055628c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6823,7 +6823,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556288);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6839,7 +6839,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556284);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6855,7 +6855,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556280);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6871,7 +6871,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055627c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6887,7 +6887,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556278);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6903,7 +6903,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556274);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6919,7 +6919,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556270);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6935,7 +6935,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055626c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6951,7 +6951,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556268);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6967,7 +6967,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556264);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6983,7 +6983,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556260);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -6999,7 +6999,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055625c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7015,7 +7015,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556258);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7031,7 +7031,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556254);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7047,7 +7047,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556250);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7063,7 +7063,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055624c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7079,7 +7079,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556248);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7095,7 +7095,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556244);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7111,7 +7111,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556240);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7127,7 +7127,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055623c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7143,7 +7143,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556238);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7159,7 +7159,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556234);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7175,7 +7175,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556230);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7191,7 +7191,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055622c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7207,7 +7207,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556228);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7223,7 +7223,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556224);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7239,7 +7239,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556220);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7255,7 +7255,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055621c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7271,7 +7271,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556218);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7285,7 +7285,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584bec = 0xe;
 
-  uVar3 = FUN_00507b00(s_InpBSPACE_0055620c);
+  uVar3 = TextGetPtr(s_InpBSPACE_0055620c);
 
   crt_sprintf(&DAT_00584bf0,&DAT_00555df0,uVar3);
 
@@ -7293,7 +7293,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584c14 = 0xf;
 
-  uVar3 = FUN_00507b00(s_InpTAB_00556204);
+  uVar3 = TextGetPtr(s_InpTAB_00556204);
 
   crt_sprintf(&DAT_00584c18,&DAT_00555df0,uVar3);
 
@@ -7301,7 +7301,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584c3c = 0x1a;
 
-  uVar3 = FUN_00507b00(s_InpCAPS_005561fc);
+  uVar3 = TextGetPtr(s_InpCAPS_005561fc);
 
   crt_sprintf(&DAT_00584c40,&DAT_00555df0,uVar3);
 
@@ -7309,7 +7309,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584c64 = 10;
 
-  uVar3 = FUN_00507b00(s_InpLSHIFT_005561f0);
+  uVar3 = TextGetPtr(s_InpLSHIFT_005561f0);
 
   crt_sprintf(&DAT_00584c68,&DAT_00555df0,uVar3);
 
@@ -7317,7 +7317,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584c8c = 0x1d;
 
-  uVar3 = FUN_00507b00(s_InpLCTRL_005561e4);
+  uVar3 = TextGetPtr(s_InpLCTRL_005561e4);
 
   crt_sprintf(&DAT_00584c90,&DAT_00555df0,uVar3);
 
@@ -7325,7 +7325,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584cb4 = 0x18;
 
-  uVar3 = FUN_00507b00(s_InpLALT_005561dc);
+  uVar3 = TextGetPtr(s_InpLALT_005561dc);
 
   crt_sprintf(&DAT_00584cb8,&DAT_00555df0,uVar3);
 
@@ -7333,7 +7333,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584cdc = 0x19;
 
-  uVar3 = FUN_00507b00(s_InpSPACE_005561d0);
+  uVar3 = TextGetPtr(s_InpSPACE_005561d0);
 
   crt_sprintf(&DAT_00584ce0,&DAT_00555df0,uVar3);
 
@@ -7341,7 +7341,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584d04 = 0x16;
 
-  uVar3 = FUN_00507b00(s_InpRSHIFT_005561c4);
+  uVar3 = TextGetPtr(s_InpRSHIFT_005561c4);
 
   crt_sprintf(&DAT_00584d08,&DAT_00555df0,uVar3);
 
@@ -7349,7 +7349,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584d2c = 0x1c;
 
-  uVar3 = FUN_00507b00(s_InpENTER_005561b8);
+  uVar3 = TextGetPtr(s_InpENTER_005561b8);
 
   crt_sprintf(&DAT_00584d30,&DAT_00555df0,uVar3);
 
@@ -7359,7 +7359,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005561b4);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7375,7 +7375,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005561b0);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7391,7 +7391,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_005561ac);
 
-  puVar1 = (undefined1 *)FUN_00507b00(local_94);
+  puVar1 = (undefined1 *)TextGetPtr(local_94);
 
   if (puVar1 == local_94) {
 
@@ -7405,7 +7405,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584dcc = 0x12;
 
-  uVar3 = FUN_00507b00(s_InpINSERT_005561a0);
+  uVar3 = TextGetPtr(s_InpINSERT_005561a0);
 
   crt_sprintf(&DAT_00584dd0,&DAT_00555df0,uVar3);
 
@@ -7413,7 +7413,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584df4 = 7;
 
-  uVar3 = FUN_00507b00(s_InpHOME_00556198);
+  uVar3 = TextGetPtr(s_InpHOME_00556198);
 
   crt_sprintf(&DAT_00584df8,&DAT_00555df0,uVar3);
 
@@ -7421,7 +7421,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584e1c = 9;
 
-  uVar3 = FUN_00507b00(s_InpPAGEUP_0055618c);
+  uVar3 = TextGetPtr(s_InpPAGEUP_0055618c);
 
   crt_sprintf(&DAT_00584e20,&DAT_00555df0,uVar3);
 
@@ -7429,7 +7429,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584e44 = 0x13;
 
-  uVar3 = FUN_00507b00(s_InpDELETE_00556180);
+  uVar3 = TextGetPtr(s_InpDELETE_00556180);
 
   crt_sprintf(&DAT_00584e48,&DAT_00555df0,uVar3);
 
@@ -7437,7 +7437,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584e6c = 0xf;
 
-  uVar3 = FUN_00507b00(s_InpEND_00556178);
+  uVar3 = TextGetPtr(s_InpEND_00556178);
 
   crt_sprintf(&DAT_00584e70,&DAT_00555df0,uVar3);
 
@@ -7445,7 +7445,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584e94 = 0x11;
 
-  uVar3 = FUN_00507b00(s_InpPAGEDOWN_0055616c);
+  uVar3 = TextGetPtr(s_InpPAGEDOWN_0055616c);
 
   crt_sprintf(&DAT_00584e98,&DAT_00555df0,uVar3);
 
@@ -7453,7 +7453,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584ebc = 8;
 
-  uVar3 = FUN_00507b00(s_InpUP_00556164);
+  uVar3 = TextGetPtr(s_InpUP_00556164);
 
   crt_sprintf(&DAT_00584ec0,&DAT_00555df0,uVar3);
 
@@ -7461,7 +7461,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584ee4 = 0x10;
 
-  uVar3 = FUN_00507b00(s_InpDOWN_0055615c);
+  uVar3 = TextGetPtr(s_InpDOWN_0055615c);
 
   crt_sprintf(&DAT_00584ee8,&DAT_00555df0,uVar3);
 
@@ -7469,7 +7469,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584f0c = 0xb;
 
-  uVar3 = FUN_00507b00(s_InpLEFT_00556154);
+  uVar3 = TextGetPtr(s_InpLEFT_00556154);
 
   crt_sprintf(&DAT_00584f10,&DAT_00555df0,uVar3);
 
@@ -7477,7 +7477,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584f34 = 0xd;
 
-  uVar3 = FUN_00507b00(s_InpRIGHT_00556148);
+  uVar3 = TextGetPtr(s_InpRIGHT_00556148);
 
   crt_sprintf(&DAT_00584f38,&DAT_00555df0,uVar3);
 
@@ -7485,7 +7485,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584f5c = 5;
 
-  uVar3 = FUN_00507b00(s_InpNUMLOCK_0055613c);
+  uVar3 = TextGetPtr(s_InpNUMLOCK_0055613c);
 
   crt_sprintf(&DAT_00584f60,&DAT_00555df0,uVar3);
 
@@ -7493,7 +7493,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584f84 = 0x15;
 
-  uVar3 = FUN_00507b00(s_InpPAD__00556134);
+  uVar3 = TextGetPtr(s_InpPAD__00556134);
 
   crt_sprintf(&DAT_00584f88,&DAT_00555df0,uVar3);
 
@@ -7501,7 +7501,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584fac = 0x17;
 
-  uVar3 = FUN_00507b00(s_InpPAD__0055612c);
+  uVar3 = TextGetPtr(s_InpPAD__0055612c);
 
   crt_sprintf(&DAT_00584fb0,&DAT_00555df0,uVar3);
 
@@ -7509,7 +7509,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584fd4 = 10;
 
-  uVar3 = FUN_00507b00(s_InpPAD__00556124);
+  uVar3 = TextGetPtr(s_InpPAD__00556124);
 
   crt_sprintf(&DAT_00584fd8,&DAT_00555df0,uVar3);
 
@@ -7517,7 +7517,7 @@ void input_keyname_lookup(void)
 
   _DAT_00584ffc = 7;
 
-  uVar3 = FUN_00507b00(s_InpPAD7_0055611c);
+  uVar3 = TextGetPtr(s_InpPAD7_0055611c);
 
   crt_sprintf(&DAT_00585000,&DAT_00555df0,uVar3);
 
@@ -7525,7 +7525,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585024 = 8;
 
-  uVar3 = FUN_00507b00(s_InpPAD8_00556114);
+  uVar3 = TextGetPtr(s_InpPAD8_00556114);
 
   crt_sprintf(&DAT_00585028,&DAT_00555df0,uVar3);
 
@@ -7533,7 +7533,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058504c = 9;
 
-  uVar3 = FUN_00507b00(s_InpPAD9_0055610c);
+  uVar3 = TextGetPtr(s_InpPAD9_0055610c);
 
   crt_sprintf(&DAT_00585050,&DAT_00555df0,uVar3);
 
@@ -7541,7 +7541,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585074 = 0xe;
 
-  uVar3 = FUN_00507b00(s_InpPAD__00556104);
+  uVar3 = TextGetPtr(s_InpPAD__00556104);
 
   crt_sprintf(&DAT_00585078,&DAT_00555df0,uVar3);
 
@@ -7549,7 +7549,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058509c = 0xb;
 
-  uVar3 = FUN_00507b00(s_InpPAD4_005560fc);
+  uVar3 = TextGetPtr(s_InpPAD4_005560fc);
 
   crt_sprintf(&DAT_005850a0,&DAT_00555df0,uVar3);
 
@@ -7557,7 +7557,7 @@ void input_keyname_lookup(void)
 
   _DAT_005850c4 = 0xc;
 
-  uVar3 = FUN_00507b00(s_InpPAD5_005560f4);
+  uVar3 = TextGetPtr(s_InpPAD5_005560f4);
 
   crt_sprintf(&DAT_005850c8,&DAT_00555df0,uVar3);
 
@@ -7565,7 +7565,7 @@ void input_keyname_lookup(void)
 
   _DAT_005850ec = 0xd;
 
-  uVar3 = FUN_00507b00(s_InpPAD6_005560ec);
+  uVar3 = TextGetPtr(s_InpPAD6_005560ec);
 
   crt_sprintf(&DAT_005850f0,&DAT_00555df0,uVar3);
 
@@ -7573,7 +7573,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585114 = 0xf;
 
-  uVar3 = FUN_00507b00(s_InpPAD1_005560e4);
+  uVar3 = TextGetPtr(s_InpPAD1_005560e4);
 
   crt_sprintf(&DAT_00585118,&DAT_00555df0,uVar3);
 
@@ -7581,7 +7581,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058513c = 0x10;
 
-  uVar3 = FUN_00507b00(s_InpPAD2_005560dc);
+  uVar3 = TextGetPtr(s_InpPAD2_005560dc);
 
   crt_sprintf(&DAT_00585140,&DAT_00555df0,uVar3);
 
@@ -7589,7 +7589,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585164 = 0x11;
 
-  uVar3 = FUN_00507b00(s_InpPAD3_005560d4);
+  uVar3 = TextGetPtr(s_InpPAD3_005560d4);
 
   crt_sprintf(&DAT_00585168,&DAT_00555df0,uVar3);
 
@@ -7597,7 +7597,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058518c = 0x12;
 
-  uVar3 = FUN_00507b00(s_InpPAD0_005560cc);
+  uVar3 = TextGetPtr(s_InpPAD0_005560cc);
 
   crt_sprintf(&DAT_00585190,&DAT_00555df0,uVar3);
 
@@ -7605,7 +7605,7 @@ void input_keyname_lookup(void)
 
   _DAT_005851b4 = 0x13;
 
-  uVar3 = FUN_00507b00(s_InpPAD__005560c4);
+  uVar3 = TextGetPtr(s_InpPAD__005560c4);
 
   crt_sprintf(&DAT_005851b8,&DAT_00555df0,uVar3);
 
@@ -7613,7 +7613,7 @@ void input_keyname_lookup(void)
 
   _DAT_005851dc = 0x1c;
 
-  uVar3 = FUN_00507b00(s_InpPADENTER_005560b8);
+  uVar3 = TextGetPtr(s_InpPADENTER_005560b8);
 
   crt_sprintf(&DAT_005851e0,&DAT_00555df0,uVar3);
 
@@ -7621,7 +7621,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585204 = 0x1b;
 
-  uVar3 = FUN_00507b00(s_InpF1_005560b0);
+  uVar3 = TextGetPtr(s_InpF1_005560b0);
 
   crt_sprintf(&DAT_00585208,&DAT_00555df0,uVar3);
 
@@ -7629,7 +7629,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058522c = 0x1c;
 
-  uVar3 = FUN_00507b00(s_InpF2_005560a8);
+  uVar3 = TextGetPtr(s_InpF2_005560a8);
 
   crt_sprintf(&DAT_00585230,&DAT_00555df0,uVar3);
 
@@ -7637,7 +7637,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585254 = 0x1d;
 
-  uVar3 = FUN_00507b00(s_InpF3_005560a0);
+  uVar3 = TextGetPtr(s_InpF3_005560a0);
 
   crt_sprintf(&DAT_00585258,&DAT_00555df0,uVar3);
 
@@ -7645,7 +7645,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058527c = 0x1e;
 
-  uVar3 = FUN_00507b00(s_InpF4_00556098);
+  uVar3 = TextGetPtr(s_InpF4_00556098);
 
   crt_sprintf(&DAT_00585280,&DAT_00555df0,uVar3);
 
@@ -7653,7 +7653,7 @@ void input_keyname_lookup(void)
 
   _DAT_005852a4 = 0x1f;
 
-  uVar3 = FUN_00507b00(s_InpF5_00556090);
+  uVar3 = TextGetPtr(s_InpF5_00556090);
 
   crt_sprintf(&DAT_005852a8,&DAT_00555df0,uVar3);
 
@@ -7661,7 +7661,7 @@ void input_keyname_lookup(void)
 
   _DAT_005852cc = 0;
 
-  uVar3 = FUN_00507b00(s_InpF6_00556088);
+  uVar3 = TextGetPtr(s_InpF6_00556088);
 
   crt_sprintf(&DAT_005852d0,&DAT_00555df0,uVar3);
 
@@ -7669,7 +7669,7 @@ void input_keyname_lookup(void)
 
   _DAT_005852f4 = 1;
 
-  uVar3 = FUN_00507b00(s_InpF7_00556080);
+  uVar3 = TextGetPtr(s_InpF7_00556080);
 
   crt_sprintf(&DAT_005852f8,&DAT_00555df0,uVar3);
 
@@ -7677,7 +7677,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058531c = 2;
 
-  uVar3 = FUN_00507b00(s_InpF8_00556078);
+  uVar3 = TextGetPtr(s_InpF8_00556078);
 
   crt_sprintf(&DAT_00585320,&DAT_00555df0,uVar3);
 
@@ -7685,7 +7685,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585344 = 3;
 
-  uVar3 = FUN_00507b00(s_InpF9_00556070);
+  uVar3 = TextGetPtr(s_InpF9_00556070);
 
   crt_sprintf(&DAT_00585348,&DAT_00555df0,uVar3);
 
@@ -7693,7 +7693,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058536c = 4;
 
-  uVar3 = FUN_00507b00(s_InpF10_00556068);
+  uVar3 = TextGetPtr(s_InpF10_00556068);
 
   crt_sprintf(&DAT_00585370,&DAT_00555df0,uVar3);
 
@@ -7701,7 +7701,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585394 = 0x17;
 
-  uVar3 = FUN_00507b00(s_InpF11_00556060);
+  uVar3 = TextGetPtr(s_InpF11_00556060);
 
   crt_sprintf(&DAT_00585398,&DAT_00555df0,uVar3);
 
@@ -7709,7 +7709,7 @@ void input_keyname_lookup(void)
 
   _DAT_005853bc = 0x18;
 
-  uVar3 = FUN_00507b00(s_InpF12_00556058);
+  uVar3 = TextGetPtr(s_InpF12_00556058);
 
   crt_sprintf(&DAT_005853c0,&DAT_00555df0,uVar3);
 
@@ -7717,7 +7717,7 @@ void input_keyname_lookup(void)
 
   _DAT_005853e4 = 0xffffffff;
 
-  uVar3 = FUN_00507b00(s_InpSYSRQ_0055604c);
+  uVar3 = TextGetPtr(s_InpSYSRQ_0055604c);
 
   crt_sprintf(&DAT_005853e8,&DAT_00555df0,uVar3);
 
@@ -7725,7 +7725,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058540c = 6;
 
-  uVar3 = FUN_00507b00(s_InpSRCLCK_00556040);
+  uVar3 = TextGetPtr(s_InpSRCLCK_00556040);
 
   crt_sprintf(&DAT_00585410,&DAT_00555df0,uVar3);
 
@@ -7733,7 +7733,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585434 = 1;
 
-  uVar3 = FUN_00507b00(s_InpESC_00556038);
+  uVar3 = TextGetPtr(s_InpESC_00556038);
 
   crt_sprintf(&DAT_00585438,&DAT_00555df0,uVar3);
 
@@ -7741,7 +7741,7 @@ void input_keyname_lookup(void)
 
   _DAT_0058545c = 0xffffffff;
 
-  uVar3 = FUN_00507b00(s_InpBREAK_0055602c);
+  uVar3 = TextGetPtr(s_InpBREAK_0055602c);
 
   crt_sprintf(&DAT_00585460,&DAT_00555df0,uVar3);
 
@@ -7749,7 +7749,7 @@ void input_keyname_lookup(void)
 
   _DAT_00585484 = 0x1d;
 
-  uVar3 = FUN_00507b00(s_InpRCTRL_00556020);
+  uVar3 = TextGetPtr(s_InpRCTRL_00556020);
 
   crt_sprintf(&DAT_00585488,&DAT_00555df0,uVar3);
 
@@ -7757,7 +7757,7 @@ void input_keyname_lookup(void)
 
   _DAT_005854ac = 0x18;
 
-  uVar3 = FUN_00507b00(s_InpRALT_00556018);
+  uVar3 = TextGetPtr(s_InpRALT_00556018);
 
   crt_sprintf(&DAT_005854b0,&DAT_00555df0,uVar3);
 
@@ -7767,7 +7767,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556014);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7783,7 +7783,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556010);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7799,7 +7799,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_0055600c);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7815,7 +7815,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556008);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7831,7 +7831,7 @@ void input_keyname_lookup(void)
 
   crt_sprintf(local_94,s_Inp_s_005562b0,&DAT_00556004);
 
-  puVar2 = (undefined *)FUN_00507b00(local_94);
+  puVar2 = (undefined *)TextGetPtr(local_94);
 
   if (puVar2 == local_94) {
 
@@ -7841,43 +7841,43 @@ void input_keyname_lookup(void)
 
   crt_sprintf(&DAT_00585578,&DAT_00555df0,puVar2);
 
-  uVar3 = FUN_00507b00(s_InpLMouseButton_00555ff4);
+  uVar3 = TextGetPtr(s_InpLMouseButton_00555ff4);
 
   crt_sprintf(&DAT_005855a0,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpRMouseButton_00555fe4);
+  uVar3 = TextGetPtr(s_InpRMouseButton_00555fe4);
 
   crt_sprintf(&DAT_005855c8,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpCMouseButton_00555fd4);
+  uVar3 = TextGetPtr(s_InpCMouseButton_00555fd4);
 
   crt_sprintf(&DAT_005855f0,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpAuxMouseButton1_00555fc0);
+  uVar3 = TextGetPtr(s_InpAuxMouseButton1_00555fc0);
 
   crt_sprintf(&DAT_00585618,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpAuxMouseButton2_00555fac);
+  uVar3 = TextGetPtr(s_InpAuxMouseButton2_00555fac);
 
   crt_sprintf(&DAT_00585640,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpAuxMouseButton3_00555f98);
+  uVar3 = TextGetPtr(s_InpAuxMouseButton3_00555f98);
 
   crt_sprintf(&DAT_00585668,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpAuxMouseButton4_00555f84);
+  uVar3 = TextGetPtr(s_InpAuxMouseButton4_00555f84);
 
   crt_sprintf(&DAT_00585690,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpAuxMouseButton5_00555f70);
+  uVar3 = TextGetPtr(s_InpAuxMouseButton5_00555f70);
 
   crt_sprintf(&DAT_005856b8,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpScrollFwd_00555f60);
+  uVar3 = TextGetPtr(s_InpScrollFwd_00555f60);
 
   crt_sprintf(&DAT_005856e0,&DAT_00555df0,uVar3);
 
-  uVar3 = FUN_00507b00(s_InpScrollBkwd_00555f50);
+  uVar3 = TextGetPtr(s_InpScrollBkwd_00555f50);
 
   crt_sprintf(&DAT_00585708,&DAT_00555df0,uVar3);
 
@@ -7889,7 +7889,7 @@ void input_keyname_lookup(void)
 
     crt_sprintf(local_80,s_InpJoyButton_00555f40);
 
-    uVar3 = FUN_00507b00(local_80,iVar6 + -0x6e);
+    uVar3 = TextGetPtr(local_80,iVar6 + -0x6e);
 
     crt_sprintf(puVar2,s__s__d_00555f38,uVar3);
 
@@ -7951,7 +7951,7 @@ LAB_00425765:
 
     }
 
-    uVar3 = FUN_00507b00(local_80,iVar6);
+    uVar3 = TextGetPtr(local_80,iVar6);
 
     crt_sprintf(puVar2,s__s__d_00555f38,uVar3);
 
@@ -8046,7 +8046,7 @@ float10 FUN_00425840(void)
 }
 
 /* ===== FUN_00425850 @ 0x00425850 ===== */
-/* PS2 candidate: verm_ai_cb__FiP6OBJECTPv (conf 0.587) */
+/* PS2 candidate: verm_ai_cb (conf 0.65) */
 
 
 
@@ -8115,7 +8115,7 @@ void reaperbase_harass_ai_c89(float param_1)
 
     if (*(int *)((int)param_1 + 0x210) == 0) {
 
-      fVar8 = (float10)FUN_00518b70(param_1,0);
+      fVar8 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar1 = *pfVar2;
 
@@ -8475,7 +8475,7 @@ void generic_walker_ai_c45(int param_1)
 
       if (*(int *)(param_1 + 0x274) != 0) {
 
-        fVar6 = (float10)FUN_00518b70(param_1,0);
+        fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar6 = (float10)*(float *)(param_1 + 0xf0) - fVar6;
 
@@ -8507,7 +8507,7 @@ void generic_walker_ai_c45(int param_1)
 
         iVar4 = *(int *)(param_1 + 0x274);
 
-        fVar6 = (float10)FUN_00518b70(param_1,0);
+        fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
         pfVar1 = (float *)(param_1 + 0xa0);
 
@@ -8533,7 +8533,7 @@ void generic_walker_ai_c45(int param_1)
 
         objspec_dispatch_gate(param_1);
 
-        fVar6 = (float10)FUN_00518b70(param_1,0);
+        fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
         object_animate_process(param_1,(float)fVar6);
 
@@ -8589,12 +8589,12 @@ void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2(undefined4 p0)
 
 }
 
-/* ===== FUN_00425eb0 @ 0x00425EB0 ===== */
-/* PS2 candidate: GetCurrentPtr__C11CByteStream (conf 0.75) */
+/* ===== savegame_slot_load @ 0x00425EB0 ===== */
+/* PS2 candidate: cbytestream_get_current_ptr (conf 0.65) */
 
 
 
-void FUN_00425eb0(undefined4 param_1)
+void savegame_slot_load(undefined4 param_1)
 
 
 
@@ -9392,7 +9392,7 @@ void dialog_level_process(void)
 
     comm_heartbeat_send();
 
-    FUN_00531470();
+    comm_msg_dispatch();
 
     if (DAT_00556498 != -1) {
 
@@ -9452,7 +9452,7 @@ void dlog_push_level(undefined4 param_1,undefined4 param_2)
 
   if (9 < DAT_00556498) {
 
-    FUN_00425eb0(s_FOverflow_of_dialog_level_stack_005564a3 + 1);
+    savegame_slot_load(s_FOverflow_of_dialog_level_stack_005564a3 + 1);
 
     DAT_00556498 = DAT_00556498 + -1;
 
@@ -9491,7 +9491,7 @@ void dialog_level_set_textentry_mode(void)
 
     (&DAT_0059ab90)[DAT_00556498 * 5] = 1;
 
-    FUN_0041f0f0(1);
+    hud_add_icon(1);
 
   }
 
@@ -9512,7 +9512,7 @@ void dialog_level_pop(int param_1)
 
   if (DAT_00556498 < 0) {
 
-    FUN_00425eb0(s_Underflow_of_dialog_level_stack_005564c4);
+    savegame_slot_load(s_Underflow_of_dialog_level_stack_005564c4);
 
     DAT_00556498 = 0;
 
@@ -9520,7 +9520,7 @@ void dialog_level_pop(int param_1)
 
   else if ((&DAT_0059ab80)[DAT_00556498 * 5] != param_1) {
 
-    FUN_00425eb0();
+    savegame_slot_load();
 
     return;
 
@@ -9530,7 +9530,7 @@ void dialog_level_pop(int param_1)
 
   if (-1 < DAT_00556498) {
 
-    FUN_0041f0f0((&DAT_0059ab90)[DAT_00556498 * 5]);
+    hud_add_icon((&DAT_0059ab90)[DAT_00556498 * 5]);
 
     return;
 
@@ -9538,7 +9538,7 @@ void dialog_level_pop(int param_1)
 
   time_get_ms();
 
-  FUN_0041f0f0(0);
+  hud_add_icon(0);
 
   return;
 
@@ -9587,7 +9587,7 @@ void dlog_swap_check(int param_1)
 
       if (DAT_00556498 < iVar1) {
 
-        FUN_00425eb0(s_Swap_mismatch_005564f4);
+        savegame_slot_load(s_Swap_mismatch_005564f4);
 
         return;
 
@@ -9653,7 +9653,7 @@ void dlog_swap_check(int param_1)
 
   }
 
-  FUN_00425eb0(s_Swap_mismatch_005564f4);
+  savegame_slot_load(s_Swap_mismatch_005564f4);
 
   return;
 
@@ -10905,8 +10905,12 @@ void wredit_004287c0(int *param_1,int param_2,int param_3,int param_4)
 
 }
 
-/* ===== FUN_00428810 @ 0x00428810 ===== */
-void FUN_00428810(undefined4 *param_1)
+/* ===== dlog_widgets_draw @ 0x00428810 ===== */
+/* PS2 candidate: dlog_widgets_draw (conf 0.65) */
+
+
+
+void dlog_widgets_draw(undefined4 *param_1)
 
 
 
@@ -11118,7 +11122,7 @@ void FUN_00428810(undefined4 *param_1)
 
         case 3:
 
-          FUN_00428f70(param_1,puVar7);
+          dlog_list_measure(param_1,puVar7);
 
           break;
 
@@ -11355,8 +11359,12 @@ void dlog_rect_vtable_draw(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00428f70 @ 0x00428F70 ===== */
-void FUN_00428f70(float param_1,float param_2)
+/* ===== dlog_list_measure @ 0x00428F70 ===== */
+/* PS2 candidate: dlog_list_measure (conf 0.6) */
+
+
+
+void dlog_list_measure(float param_1,float param_2)
 
 
 
@@ -11818,7 +11826,7 @@ LAB_00429420:
 
     }
 
-    iVar6 = FUN_00545650(*(undefined4 *)(&DAT_0059ac48)[iVar8]);
+    iVar6 = fx_name_compare(*(undefined4 *)(&DAT_0059ac48)[iVar8]);
 
     if (iVar6 == 0) {
 
@@ -12634,7 +12642,7 @@ LAB_00429b07:
 
             } while (cVar2 != '\0');
 
-            FUN_00543270(pcVar8 + 1,pcVar8,~uVar11 - 1);
+            memmove_back(pcVar8 + 1,pcVar8,~uVar11 - 1);
 
             *(char *)(*(int *)(iVar7 + 0x30) + *(int *)(iVar7 + 0x28)) = cVar3;
 
@@ -14982,8 +14990,8 @@ void mesh_build_fvf_verts_2(undefined4 *param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0042b4e0 @ 0x0042B4E0 ===== */
-void FUN_0042b4e0(undefined4 *param_1,int param_2,int param_3)
+/* ===== hud_trilist_expand @ 0x0042B4E0 ===== */
+void hud_trilist_expand(undefined4 *param_1,int param_2,int param_3)
 
 
 
@@ -16084,7 +16092,7 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
     local_104 = iVar15;
 
-    FUN_004043a0(iVar2);
+    hud_radar_collide_sweep(iVar2);
 
     if ((iVar15 == 0) || ((*(uint *)(iVar2 + 4) & 0x20000000) == 0)) {
 
@@ -16588,7 +16596,7 @@ LAB_0042cb13:
 
                                   (DAT_00656450,*(undefined4 *)(iVar15 + 0x8c),iVar2,param_3);
 
-                (*(code *)PTR_FUN_005565b4)(uVar7);
+                (*(code *)PTR_hud_trilist_expand_005565b4)(uVar7);
 
                 (**(code **)(DAT_00656450 + 0x18))(DAT_00656450,-*(int *)(iVar15 + 0x88));
 
@@ -17189,7 +17197,7 @@ void render_view_xform(void)
 
           if (iVar5 == -1) {
 
-            FUN_0042d8a0(iVar4);
+            world_marker_3d_draw(iVar4);
 
           }
 
@@ -17211,7 +17219,7 @@ void render_view_xform(void)
 
         else if (iVar5 == -1) {
 
-          FUN_0042d8a0(iVar4);
+          world_marker_3d_draw(iVar4);
 
         }
 
@@ -17235,8 +17243,12 @@ void render_view_xform(void)
 
 }
 
-/* ===== FUN_0042d8a0 @ 0x0042D8A0 ===== */
-void FUN_0042d8a0(int param_1)
+/* ===== world_marker_3d_draw @ 0x0042D8A0 ===== */
+/* PS2 candidate: world_marker_3d_draw (conf 0.65) */
+
+
+
+void world_marker_3d_draw(int param_1)
 
 
 
@@ -17607,9 +17619,9 @@ LAB_0042dcd8:
 
             else if (iVar6 == -1) {
 
-              FUN_0042d8a0(param_1);
+              world_marker_3d_draw(param_1);
 
-              FUN_00425eb0(s_Overflow_alpha_queue_00556628);
+              savegame_slot_load(s_Overflow_alpha_queue_00556628);
 
             }
 
@@ -17617,7 +17629,7 @@ LAB_0042dcd8:
 
               status_hud_render(param_1,6,iVar6);
 
-              FUN_00425eb0(s_Overflow_alpha_queue_00556628);
+              savegame_slot_load(s_Overflow_alpha_queue_00556628);
 
             }
 
@@ -17625,7 +17637,7 @@ LAB_0042dcd8:
 
           else if (iVar6 == -1) {
 
-            FUN_0042d8a0(param_1);
+            world_marker_3d_draw(param_1);
 
           }
 
@@ -17667,9 +17679,9 @@ LAB_0042dcd8:
 
       else {
 
-        FUN_0042d8a0(param_1);
+        world_marker_3d_draw(param_1);
 
-        FUN_00425eb0(s_Overflow_alpha_queue_00556628);
+        savegame_slot_load(s_Overflow_alpha_queue_00556628);
 
       }
 
@@ -17677,7 +17689,7 @@ LAB_0042dcd8:
 
     else {
 
-      FUN_0042d8a0(param_1);
+      world_marker_3d_draw(param_1);
 
     }
 
@@ -17985,8 +17997,8 @@ void dlog_free_global_2(void)
 
 }
 
-/* ===== FUN_0042e260 @ 0x0042E260 ===== */
-void FUN_0042e260(int param_1,int param_2)
+/* ===== impact_spark_orient @ 0x0042E260 ===== */
+void impact_spark_orient(int param_1,int param_2)
 
 
 
@@ -18471,7 +18483,7 @@ void rp_spark_hud_setup(int param_1)
 
     hud_spark_quad_orient(&local_f0,&local_fc,*(undefined4 *)(param_1 + 0xc4),local_44);
 
-    FUN_00518b70(param_1,0);
+    FRateGetSecsframe(param_1,0);
 
     fVar8 = (float10)AddHud__4cHudP8cHudIcon_6();
 
@@ -18674,7 +18686,7 @@ void texture_object_debug_dump(void)
 
         (**(code **)(DAT_00656428 + 8))(DAT_00656428,0x40324,iVar1,iVar3 << 0x18);
 
-        fVar7 = (float10)FUN_00518b70(iVar6,0);
+        fVar7 = (float10)FRateGetSecsframe(iVar6,0);
 
         fVar7 = fVar7 * (float10)*(float *)(DAT_00632ed8 + 0x360) + (float10)DAT_0059b7b0;
 
@@ -18995,8 +19007,8 @@ void dlog_quad_transform(float *param_1,float param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0042eee0 @ 0x0042EEE0 ===== */
-void FUN_0042eee0(undefined4 *param_1,undefined4 *param_2)
+/* ===== spline_waypoint_push @ 0x0042EEE0 ===== */
+void spline_waypoint_push(undefined4 *param_1,undefined4 *param_2)
 
 
 

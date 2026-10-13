@@ -1,16 +1,18 @@
 /* Giants 1.449 — module Main/kabuto
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/kabuto.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00467270 @ 0x00467270 ===== */
+/* ===== kabuto_laser_texture_init @ 0x00467270 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* PS2 candidate: smartie_move (conf 0.167) */
+/* PS2 candidate: kabuto_laser_texture_init (conf 0.85) */
 
 
 
-undefined4 * FUN_00467270(undefined4 param_1,int param_2,int param_3,undefined4 param_4)
+undefined4 *
+
+kabuto_laser_texture_init(undefined4 param_1,int param_2,int param_3,undefined4 param_4)
 
 
 

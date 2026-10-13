@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 84 functions (75 named) — decompiled, names from PS2 symbols
+ * 84 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -34,8 +34,8 @@ void sound_player_voice(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00465070 @ 0x00465070 ===== */
-void FUN_00465070(int param_1)
+/* ===== comm_pos_send @ 0x00465070 ===== */
+void comm_pos_send(int param_1)
 
 
 
@@ -623,7 +623,7 @@ void reaper_eat_finish(undefined4 param_1,int param_2,undefined4 param_3,undefin
 
   *(undefined4 *)(param_2 + 0x218) = 0xffffffff;
 
-  FUN_0050a610(param_6 + 0xa0,param_3);
+  distancesq3d(param_6 + 0xa0,param_3);
 
   fVar2 = (float10)powf();
 
@@ -822,7 +822,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
       *(undefined4 *)(param_2 + 0x218) = 0xffffffff;
 
-      FUN_0050a610(iVar4 + 0xa0,&local_38);
+      distancesq3d(iVar4 + 0xa0,&local_38);
 
       fVar5 = (float10)powf();
 
@@ -1481,7 +1481,7 @@ void kabutoai_death_handler_c1(int param_1,int param_2,undefined4 param_3,float 
 
       *(undefined4 *)(iVar12 + 0x218) = 0xffffffff;
 
-      FUN_0050a610(iVar13 + 0xa0,pfVar8);
+      distancesq3d(iVar13 + 0xa0,pfVar8);
 
       fVar15 = (float10)powf();
 
@@ -2294,7 +2294,7 @@ void reaper_death_broadcaster_c1
 
       while ((iVar7 != 0 && (!bVar5))) {
 
-        iVar7 = FUN_00545650(puVar6[1],param_6);
+        iVar7 = fx_name_compare(puVar6[1],param_6);
 
         if (iVar7 == 0) {
 
@@ -2582,8 +2582,8 @@ code_r0x00466d6b:
 
 }
 
-/* ===== cspec_00467250 @ 0x00467250 ===== */
-undefined4 cspec_00467250(void)
+/* ===== ret_const_x358_c1 @ 0x00467250 ===== */
+undefined4 ret_const_x358_c1(void)
 
 
 
@@ -3269,7 +3269,7 @@ void kabuto_ai_main_c15(float param_1)
 
 LAB_004680a8:
 
-      fVar11 = (float10)FUN_00518b70(param_1,0);
+      fVar11 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar11 = (float10)*(float *)((int)param_1 + 0xf0) - fVar11;
 
@@ -3281,7 +3281,7 @@ LAB_004680a8:
 
         iVar6 = *(int *)((int)param_1 + 0x274) + 0xa0;
 
-        FUN_0050a610((int)param_1 + 0xa0,iVar6);
+        distancesq3d((int)param_1 + 0xa0,iVar6);
 
         fVar11 = (float10)powf();
 
@@ -3335,7 +3335,7 @@ LAB_004680a8:
 
     if (iVar8 == 0xa8) {
 
-      fVar11 = (float10)FUN_00518b70(param_1,0);
+      fVar11 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar11 = (float10)*(float *)((int)param_1 + 0xf0) - fVar11;
 
@@ -3347,7 +3347,7 @@ LAB_004680a8:
 
         iVar6 = *(int *)((int)param_1 + 0x274) + 0xa0;
 
-        FUN_0050a610((int)param_1 + 0xa0,iVar6);
+        distancesq3d((int)param_1 + 0xa0,iVar6);
 
         fVar11 = (float10)powf();
 
@@ -3401,7 +3401,7 @@ LAB_004680a8:
 
       iVar6 = *(int *)((int)param_1 + 0x274) + 0xa0;
 
-      FUN_0050a610((int)param_1 + 0xa0,iVar6);
+      distancesq3d((int)param_1 + 0xa0,iVar6);
 
       fVar11 = (float10)powf();
 
@@ -3535,7 +3535,7 @@ LAB_004680a8:
 
     }
 
-    fVar11 = (float10)FUN_00518b70(param_1,0);
+    fVar11 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar11 = (float10)*(float *)((int)param_1 + 0xf0) - fVar11;
 
@@ -3655,7 +3655,7 @@ LAB_004683d5:
 
       sound_play_obj(0x442,param_1);
 
-      FUN_004698f0(param_1,*(int *)((int)param_1 + 0x274) + 0xa0);
+      trajectory_throw_calc(param_1,*(int *)((int)param_1 + 0x274) + 0xa0);
 
       uVar9 = rndintrange(*(undefined4 *)(DAT_00632ed8 + 0x1408),
 
@@ -3765,7 +3765,7 @@ LAB_004683d5:
 
         iVar6 = *(int *)((int)param_1 + 0x274) + 0xa0;
 
-        FUN_0050a610((int)param_1 + 0xa0,iVar6);
+        distancesq3d((int)param_1 + 0xa0,iVar6);
 
         fVar11 = (float10)powf();
 
@@ -4219,7 +4219,7 @@ LAB_00468372:
 
     }
 
-    fVar11 = (float10)FUN_00518b70(param_1,0);
+    fVar11 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar11 = (float10)*(float *)((int)param_1 + 0xf0) - fVar11;
 
@@ -4739,7 +4739,7 @@ LAB_004695c8:
 
   PhysicsExApplyMoveControls(iVar4);
 
-  fVar11 = (float10)FUN_00518b70(iVar4,0);
+  fVar11 = (float10)FRateGetSecsframe(iVar4,0);
 
   object_animate_process(iVar4,(float)fVar11);
 
@@ -4800,8 +4800,8 @@ void kabutoai_change_anim__FP6OBJECTii4SDKYfi
 
 }
 
-/* ===== FUN_004698f0 @ 0x004698F0 ===== */
-float10 FUN_004698f0(int param_1,undefined4 param_2)
+/* ===== trajectory_throw_calc @ 0x004698F0 ===== */
+float10 trajectory_throw_calc(int param_1,undefined4 param_2)
 
 
 
@@ -4815,7 +4815,7 @@ float10 FUN_004698f0(int param_1,undefined4 param_2)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  FUN_0050a610(param_1 + 0xa0,param_2);
+  distancesq3d(param_1 + 0xa0,param_2);
 
   fVar2 = (float10)powf();
 
@@ -5241,8 +5241,8 @@ undefined4 kabuto_dmg_normalize_c15(int param_1,int param_2)
 
 }
 
-/* ===== cspec_0046a010 @ 0x0046A010 ===== */
-void cspec_0046a010(int param_1)
+/* ===== ptr_clear_if_dead_off3c_c4 @ 0x0046A010 ===== */
+void ptr_clear_if_dead_off3c_c4(int param_1)
 
 
 
@@ -5268,8 +5268,8 @@ void cspec_0046a010(int param_1)
 
 }
 
-/* ===== cspec_0046a030 @ 0x0046A030 ===== */
-undefined4 cspec_0046a030(void)
+/* ===== ret_const_x6c_c15 @ 0x0046A030 ===== */
+undefined4 ret_const_x6c_c15(void)
 
 
 
@@ -5346,7 +5346,7 @@ void reaperbase_defender_ai_c28(int param_1)
 
       }
 
-      fVar4 = (float10)FUN_00518b70(param_1,0);
+      fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar4 = (float10)*(float *)(param_1 + 0xec) - fVar4;
 
@@ -5372,7 +5372,7 @@ void reaperbase_defender_ai_c28(int param_1)
 
     if ((*(int *)(param_1 + 0x274) != 0) && (*(int *)(*(int *)(param_1 + 0x274) + 0x210) == 0)) {
 
-      fVar4 = (float10)FUN_00518b70(param_1,0);
+      fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
       fVar4 = (float10)*(float *)(param_1 + 0xf0) - fVar4;
 
@@ -5382,7 +5382,7 @@ void reaperbase_defender_ai_c28(int param_1)
 
         iVar3 = *(int *)(param_1 + 0x274);
 
-        fVar4 = (float10)FUN_00518b70(param_1,0);
+        fVar4 = (float10)FRateGetSecsframe(param_1,0);
 
         *(float *)(iVar3 + 0xa8) =
 
@@ -5432,8 +5432,8 @@ void reaperbase_defender_ai_c28(int param_1)
 
 }
 
-/* ===== cspec_0046a370 @ 0x0046A370 ===== */
-undefined4 cspec_0046a370(void)
+/* ===== ret_const_4_c28 @ 0x0046A370 ===== */
+undefined4 ret_const_4_c28(void)
 
 
 
@@ -5488,8 +5488,8 @@ void reaperbase_3dpos_c28(int param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== cspec_0046a400 @ 0x0046A400 ===== */
-void cspec_0046a400(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== death_state_set_c28 @ 0x0046A400 ===== */
+void death_state_set_c28(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -5533,8 +5533,8 @@ void cspec_0046a400(int param_1,int param_2,undefined4 param_3,undefined4 *param
 
 }
 
-/* ===== cspec_0046a470 @ 0x0046A470 ===== */
-undefined4 cspec_0046a470(void)
+/* ===== ret_const_200_c18 @ 0x0046A470 ===== */
+undefined4 ret_const_200_c18(void)
 
 
 
@@ -6955,8 +6955,8 @@ undefined4 FUN_0046b7f0(int param_1,uint param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0046b850 @ 0x0046B850 ===== */
-undefined4 FUN_0046b850(int param_1)
+/* ===== injured_seek_state_set @ 0x0046B850 ===== */
+undefined4 injured_seek_state_set(int param_1)
 
 
 
@@ -7860,9 +7860,9 @@ void kbos_ai_main_c75(int param_1)
 
       fStack_138 = *(float *)(*(int *)(param_1 + 0x100) + 0x84) * 0.5;
 
-      fVar9 = (float10)FUN_00518b70(param_1,0);
+      fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
-      fVar10 = (float10)FUN_00518b70(param_1,0);
+      fVar10 = (float10)FRateGetSecsframe(param_1,0);
 
       *(float *)(param_1 + 0xa0) =
 
@@ -7904,7 +7904,7 @@ void kbos_ai_main_c75(int param_1)
 
       if (*(float *)(iVar4 + 0xc) < *(float *)(iVar4 + 8)) {
 
-        fVar9 = (float10)FUN_00518b70(param_1,0);
+        fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar9 = fVar9 * (float10)0.1 + (float10)*(float *)(iVar4 + 0xc);
 
@@ -7936,7 +7936,7 @@ void kbos_ai_main_c75(int param_1)
 
     }
 
-    fVar9 = (float10)FUN_00518b70(param_1,0,iVar4);
+    fVar9 = (float10)FRateGetSecsframe(param_1,0,iVar4);
 
     func_0x0046a560(param_1,afStack_180,(float)fVar9);
 
@@ -7974,7 +7974,7 @@ void kbos_ai_main_c75(int param_1)
 
           (iVar5 = dialog_level_is_base(), iVar5 != 0)) && (*(float *)(iVar4 + 8) < 1.0)) {
 
-        fVar9 = (float10)FUN_00518b70(param_1,0);
+        fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar9 = (float10)*(float *)(iVar4 + 0xac) - fVar9;
 
@@ -8014,7 +8014,7 @@ void kbos_ai_main_c75(int param_1)
 
       if (*(float *)(iVar4 + 0xc) < *(float *)(iVar4 + 8)) {
 
-        fVar9 = (float10)FUN_00518b70(param_1,0);
+        fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
         fVar9 = fVar9 * (float10)0.1 + (float10)*(float *)(iVar4 + 0xc);
 
@@ -8142,7 +8142,7 @@ LAB_0046c6ed:
 
             *(undefined4 *)(iVar4 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
-            FUN_0045da90(*(undefined4 *)(param_1 + 0x274),param_1,iVar4);
+            fx_owner_remap(*(undefined4 *)(param_1 + 0x274),param_1,iVar4);
 
             uVar11 = object_allocate_type(0x2eb,0x80000000);
 
@@ -8380,7 +8380,7 @@ LAB_0046cbbd:
 
         if ((iVar4 == 0) || (iVar4 = obj_3dsound_scan(param_1,afStack_180), iVar4 == 0)) {
 
-          fVar9 = (float10)FUN_00518b70(param_1,0);
+          fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
           fVar9 = (float10)*(float *)(param_1 + 0xf0) - fVar9;
 
@@ -8456,7 +8456,7 @@ LAB_0046cbb7:
 
         if (puVar1[0x2d] == 0) {
 
-          fVar9 = (float10)FUN_00518b70(param_1,0);
+          fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
           fVar9 = (float10)(float)puVar1[0x2f] - fVar9;
 
@@ -8518,7 +8518,7 @@ LAB_0046cbb7:
 
         else {
 
-          fVar9 = (float10)FUN_00518b70(param_1,0);
+          fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
           fVar9 = (float10)(float)puVar1[0x2f] - fVar9;
 
@@ -8698,7 +8698,7 @@ LAB_0046d399:
 
           bbox_center_calc(auStack_c0,puVar1[4]);
 
-          fVar9 = (float10)FUN_0050a610(auStack_cc,auStack_c0);
+          fVar9 = (float10)distancesq3d(auStack_cc,auStack_c0);
 
           fStack_13c = (float)fVar9;
 
@@ -9176,7 +9176,7 @@ LAB_0046d703:
 
         if (*(float *)(param_1 + 0x1c0) <= *(float *)(param_1 + 0x1c0)) {
 
-          fVar9 = (float10)FUN_00518b70(param_1,0);
+          fVar9 = (float10)FRateGetSecsframe(param_1,0);
 
           fVar9 = (float10)*(float *)(param_1 + 0xec) - fVar9;
 
@@ -9335,7 +9335,7 @@ void kbos_death_handler_c75(int param_1,undefined4 param_2,undefined4 param_3,un
 
       *(undefined4 *)(iVar8 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
-      FUN_0045da90(*(undefined4 *)(param_1 + 0x274),param_1,iVar8);
+      fx_owner_remap(*(undefined4 *)(param_1 + 0x274),param_1,iVar8);
 
       uVar6 = object_allocate_type(0x2eb,0x80000000);
 
@@ -9543,8 +9543,8 @@ void kbos_death_handler_c75(int param_1,undefined4 param_2,undefined4 param_3,un
 
 }
 
-/* ===== cspec_0046df40 @ 0x0046DF40 ===== */
-undefined4 cspec_0046df40(void)
+/* ===== ret_const_x70_c76 @ 0x0046DF40 ===== */
+undefined4 ret_const_x70_c76(void)
 
 
 
@@ -9850,11 +9850,11 @@ void projectile_motion_c76(int param_1)
 
   if (((~puVar2[0x10] & 2) != 0) && (iVar4 = fx_create(param_1), iVar4 == 0)) {
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
     fStack_d0 = (float)fVar6;
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
     *(float *)(param_1 + 0xa0) =
 
@@ -9890,11 +9890,11 @@ void projectile_motion_c76(int param_1)
 
     *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
     GEO_MatFromQuat_2(auStack_44,(float)(fVar6 * (float10)12.566371));
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
     GEO_MatFromQuat_3(auStack_88,(float)(fVar6 * (float10)3.1415927));
 
@@ -9936,9 +9936,9 @@ void projectile_motion_c76(int param_1)
 
     trajectory_calculate(param_1 + 0x128,param_1 + 0xa0,puVar2 + 0x14,&uStack_f0,puVar2[0x1a]);
 
-    FUN_00518b70(param_1,0);
+    FRateGetSecsframe(param_1,0);
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar1 = (float)puVar2[0x1a];
 
@@ -9950,7 +9950,7 @@ void projectile_motion_c76(int param_1)
 
     }
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
     fVar1 = (float)puVar2[0x1b];
 
@@ -10024,7 +10024,7 @@ code_r0x0046e56a:
 
   obj_velocity_normalize(param_1,1,0,0,0);
 
-  fVar6 = (float10)FUN_00518b70(param_1,0);
+  fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
   object_animate_process(param_1,(float)fVar6);
 
@@ -10032,11 +10032,11 @@ code_r0x0046e56a:
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
 
-  fVar6 = (float10)FUN_00518b70(param_1,0);
+  fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
   GEO_MatFromQuat_2(auStack_44,(float)(fVar6 * (float10)12.566371));
 
-  fVar6 = (float10)FUN_00518b70(param_1,0);
+  fVar6 = (float10)FRateGetSecsframe(param_1,0);
 
   GEO_MatFromQuat_3(auStack_cc,(float)(fVar6 * (float10)3.1415927));
 
@@ -10052,8 +10052,8 @@ code_r0x0046e613:
 
 }
 
-/* ===== cspec_0046e630 @ 0x0046E630 ===== */
-void cspec_0046e630(int param_1)
+/* ===== child_owner_clear_c76 @ 0x0046E630 ===== */
+void child_owner_clear_c76(int param_1)
 
 
 
@@ -10560,13 +10560,13 @@ LAB_0046ec90:
 
         playerobj_eval_refpt(piVar7[1],1,&uStack_18);
 
-        fVar8 = (float10)FUN_0050a610(iVar4 + 0xa0,&uStack_18);
+        fVar8 = (float10)distancesq3d(iVar4 + 0xa0,&uStack_18);
 
         if (fVar8 < (float10)100.0 == (fVar8 == (float10)100.0)) {
 
           playerobj_eval_refpt(*piVar7,1,&uStack_18);
 
-          fVar8 = (float10)FUN_0050a610(iVar4 + 0xa0,&uStack_18);
+          fVar8 = (float10)distancesq3d(iVar4 + 0xa0,&uStack_18);
 
           piVar6 = param_1;
 
@@ -10644,11 +10644,13 @@ LAB_0046ed2d:
 
     case 2:
 
-      FUN_004a7400(piVar7[1]);
+      smartie_vvel_avg_move(piVar7[1]);
 
       *(undefined4 *)(piVar7[1] + 0xf4) = *(undefined4 *)(piVar7[1] + 200);
 
-      fVar8 = (float10)FUN_00518b70(0,0,0x461c4000,*(undefined4 *)(iVar3 + 0xf4),piVar7[1] + 200);
+      fVar8 = (float10)FRateGetSecsframe(0,0,0x461c4000,*(undefined4 *)(iVar3 + 0xf4),
+
+                                         piVar7[1] + 200);
 
       chase_angle((float)(fVar8 * (float10)*(float *)(iVar3 + 0xf8)));
 
@@ -10676,11 +10678,13 @@ LAB_0046efd0:
 
     case 3:
 
-      FUN_004a7400(piVar7[1]);
+      smartie_vvel_avg_move(piVar7[1]);
 
       *(undefined4 *)(piVar7[1] + 0xf4) = *(undefined4 *)(piVar7[1] + 200);
 
-      fVar8 = (float10)FUN_00518b70(0,0,0x461c4000,*(undefined4 *)(iVar3 + 0xf4),piVar7[1] + 200);
+      fVar8 = (float10)FRateGetSecsframe(0,0,0x461c4000,*(undefined4 *)(iVar3 + 0xf4),
+
+                                         piVar7[1] + 200);
 
       chase_angle((float)(fVar8 * (float10)*(float *)(iVar3 + 0xf8)));
 
@@ -10720,7 +10724,7 @@ LAB_0046efd0:
 
             playerobj_eval_refpt(piVar7[1],1,&uStack_18);
 
-            fVar8 = (float10)FUN_0050a610(iVar4 + 0xa0,&uStack_18);
+            fVar8 = (float10)distancesq3d(iVar4 + 0xa0,&uStack_18);
 
             if (fVar8 < (float10)100.0 != (fVar8 == (float10)100.0)) {
 
@@ -10732,7 +10736,7 @@ LAB_0046efd0:
 
             playerobj_eval_refpt(iVar3,1,&uStack_18);
 
-            fVar8 = (float10)FUN_0050a610(iVar4 + 0xa0,&uStack_18);
+            fVar8 = (float10)distancesq3d(iVar4 + 0xa0,&uStack_18);
 
             piVar6 = param_1;
 
@@ -10762,7 +10766,7 @@ LAB_0046efd0:
 
     case 5:
 
-      fVar8 = (float10)FUN_00518b70(0,0);
+      fVar8 = (float10)FRateGetSecsframe(0,0);
 
       fVar8 = (float10)*(float *)(iVar3 + 0xec) - fVar8;
 
@@ -11014,8 +11018,8 @@ void sound_sequence_alloc(int param_1,int param_2)
 
 }
 
-/* ===== cspec_0046f3c0 @ 0x0046F3C0 ===== */
-undefined4 cspec_0046f3c0(void)
+/* ===== ret_const_xc_c104 @ 0x0046F3C0 ===== */
+undefined4 ret_const_xc_c104(void)
 
 
 
@@ -11060,8 +11064,8 @@ void destroy_only_c104(int param_1)
 
 }
 
-/* ===== cspec_0046f400 @ 0x0046F400 ===== */
-void cspec_0046f400(int param_1)
+/* ===== ptr_clear_if_dead_c104 @ 0x0046F400 ===== */
+void ptr_clear_if_dead_c104(int param_1)
 
 
 
@@ -11179,7 +11183,7 @@ void reaperbase_sound_loop_c104(int param_1,int param_2,undefined4 param_3,int *
 }
 
 /* ===== FUN_0046f540 @ 0x0046F540 ===== */
-/* PS2 candidate: getMenuSelection__7PS2Game (conf 0.703) */
+/* PS2 candidate: getMenuSelection (conf 0.7) */
 
 
 

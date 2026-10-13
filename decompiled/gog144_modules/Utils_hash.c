@@ -137,7 +137,7 @@ int * utils_hash_00539230(int *param_1,char *param_2)
 
     }
 
-    iVar4 = FUN_00545650(param_2,iVar4);
+    iVar4 = fx_name_compare(param_2,iVar4);
 
     if (iVar4 == 0) {
 

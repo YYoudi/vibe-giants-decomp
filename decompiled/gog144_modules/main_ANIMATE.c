@@ -244,9 +244,9 @@ void loadsave_save__FPCc(undefined4 *param_1,int *param_2)
 
                     iVar6,iVar3 + 0x28);
 
-        FUN_00425eb0(&DAT_00657400);
+        savegame_slot_load(&DAT_00657400);
 
-        FUN_0051ea20(&DAT_00657400);
+        error_msg_show(&DAT_00657400);
 
         if ((int)param_1[4] < iVar6) {
 
@@ -421,9 +421,9 @@ LAB_0040534a:
 
   crt_sprintf(&DAT_00657400,s_AnimationCreateF_read_animdata_z_005541e8,pcVar3);
 
-  FUN_00425eb0(&DAT_00657400);
+  savegame_slot_load(&DAT_00657400);
 
-  FUN_0051ea20(&DAT_00657400);
+  error_msg_show(&DAT_00657400);
 
   _DAT_00000008 = _DAT_00000008 | 1;
 
@@ -484,7 +484,7 @@ void AnimationCreate(undefined4 *param_1,int param_2,char *param_3)
 
     crt_sprintf(&DAT_00657400,s_LOD_not_defined_for_ObjSet__d_fo_005542f0,*param_1,param_2);
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
     return;
 
@@ -624,7 +624,7 @@ LAB_004056ea:
 
                         iVar4);
 
-            FUN_00425eb0(&DAT_00657400);
+            savegame_slot_load(&DAT_00657400);
 
             goto LAB_004056ea;
 
@@ -656,13 +656,13 @@ LAB_004056ea:
 
     crt_sprintf(&DAT_00657400,s_AnimationCreateF_read_animdata_z_005541e8,pcVar11);
 
-    FUN_00425eb0(&DAT_00657400);
+    savegame_slot_load(&DAT_00657400);
 
-    FUN_0051ea20(&DAT_00657400);
+    error_msg_show(&DAT_00657400);
 
     crt_sprintf(&DAT_00657400,s_Failed_to_create_animation___s___005542c0,pcVar11,*puVar3);
 
-    FUN_00425eb0(&DAT_00657400);
+    savegame_slot_load(&DAT_00657400);
 
     return;
 
@@ -732,9 +732,9 @@ LAB_00405497:
 
   crt_sprintf(&DAT_00657400,s_AnimationCreateF_read_animdata_z_005541e8,pcVar11);
 
-  FUN_00425eb0(&DAT_00657400);
+  savegame_slot_load(&DAT_00657400);
 
-  FUN_0051ea20(&DAT_00657400);
+  error_msg_show(&DAT_00657400);
 
   pfVar10 = (float *)0x0;
 

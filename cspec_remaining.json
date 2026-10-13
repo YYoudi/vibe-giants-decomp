@@ -1,0 +1,725 @@
+{
+ "cspec_00407ae0": {
+  "addr": "0x00407AE0",
+  "size": 63,
+  "classes": [
+   106
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0040f370": {
+  "addr": "0x0040F370",
+  "size": 61,
+  "classes": [
+   23,
+   42
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_0041a7b0": {
+  "addr": "0x0041A7B0",
+  "size": 315,
+  "classes": [
+   91
+  ],
+  "fields": [
+   2
+  ],
+  "nrefs": 1
+ },
+ "cspec_0044f1a0": {
+  "addr": "0x0044F1A0",
+  "size": 420,
+  "classes": [
+   78
+  ],
+  "fields": [
+   4
+  ],
+  "nrefs": 1
+ },
+ "cspec_004503d0": {
+  "addr": "0x004503D0",
+  "size": 62,
+  "classes": [
+   78
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_00454d70": {
+  "addr": "0x00454D70",
+  "size": 62,
+  "classes": [
+   102
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_00456660": {
+  "addr": "0x00456660",
+  "size": 61,
+  "classes": [
+   17
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0045ae60": {
+  "addr": "0x0045AE60",
+  "size": 61,
+  "classes": [
+   37,
+   105
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_0045ae70": {
+  "addr": "0x0045AE70",
+  "size": 272,
+  "classes": [
+   37
+  ],
+  "fields": [
+   11
+  ],
+  "nrefs": 1
+ },
+ "cspec_0045be30": {
+  "addr": "0x0045BE30",
+  "size": 1006,
+  "classes": [
+   1
+  ],
+  "fields": [
+   16
+  ],
+  "nrefs": 1
+ },
+ "cspec_00467250": {
+  "addr": "0x00467250",
+  "size": 62,
+  "classes": [
+   1
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0046a010": {
+  "addr": "0x0046A010",
+  "size": 273,
+  "classes": [
+   4,
+   16
+  ],
+  "fields": [
+   0,
+   11
+  ],
+  "nrefs": 2
+ },
+ "cspec_0046a030": {
+  "addr": "0x0046A030",
+  "size": 61,
+  "classes": [
+   15
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0046a370": {
+  "addr": "0x0046A370",
+  "size": 58,
+  "classes": [
+   28,
+   47,
+   84,
+   87,
+   89
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 5
+ },
+ "cspec_0046a400": {
+  "addr": "0x0046A400",
+  "size": 599,
+  "classes": [
+   28
+  ],
+  "fields": [
+   9
+  ],
+  "nrefs": 1
+ },
+ "cspec_0046a470": {
+  "addr": "0x0046A470",
+  "size": 60,
+  "classes": [
+   18,
+   75
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_0046df40": {
+  "addr": "0x0046DF40",
+  "size": 61,
+  "classes": [
+   76,
+   92
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_0046e630": {
+  "addr": "0x0046E630",
+  "size": 197,
+  "classes": [
+   76
+  ],
+  "fields": [
+   10
+  ],
+  "nrefs": 1
+ },
+ "cspec_0046f3c0": {
+  "addr": "0x0046F3C0",
+  "size": 60,
+  "classes": [
+   104
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0046f400": {
+  "addr": "0x0046F400",
+  "size": 183,
+  "classes": [
+   104
+  ],
+  "fields": [
+   11
+  ],
+  "nrefs": 1
+ },
+ "cspec_004788d0": {
+  "addr": "0x004788D0",
+  "size": 61,
+  "classes": [
+   55,
+   100
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_00480a00": {
+  "addr": "0x00480A00",
+  "size": 62,
+  "classes": [
+   2
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_00481bd0": {
+  "addr": "0x00481BD0",
+  "size": 132,
+  "classes": [
+   96
+  ],
+  "fields": [
+   0
+  ],
+  "nrefs": 1
+ },
+ "cspec_00490280": {
+  "addr": "0x00490280",
+  "size": 61,
+  "classes": [
+   5,
+   6,
+   43,
+   57,
+   103
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 5
+ },
+ "cspec_00496750": {
+  "addr": "0x00496750",
+  "size": 492,
+  "classes": [
+   58,
+   59
+  ],
+  "fields": [
+   0,
+   10
+  ],
+  "nrefs": 2
+ },
+ "cspec_004967a0": {
+  "addr": "0x004967A0",
+  "size": 60,
+  "classes": [
+   58
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_00499c70": {
+  "addr": "0x00499C70",
+  "size": 60,
+  "classes": [
+   54
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0049e0a0": {
+  "addr": "0x0049E0A0",
+  "size": 60,
+  "classes": [
+   4
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0049e270": {
+  "addr": "0x0049E270",
+  "size": 202,
+  "classes": [
+   4
+  ],
+  "fields": [
+   16
+  ],
+  "nrefs": 1
+ },
+ "cspec_004a64b0": {
+  "addr": "0x004A64B0",
+  "size": 341,
+  "classes": [
+   35
+  ],
+  "fields": [
+   2
+  ],
+  "nrefs": 1
+ },
+ "cspec_004a7830": {
+  "addr": "0x004A7830",
+  "size": 396,
+  "classes": [
+   19
+  ],
+  "fields": [
+   2
+  ],
+  "nrefs": 1
+ },
+ "cspec_004a7b50": {
+  "addr": "0x004A7B50",
+  "size": 655,
+  "classes": [
+   56
+  ],
+  "fields": [
+   2
+  ],
+  "nrefs": 1
+ },
+ "cspec_004a9f20": {
+  "addr": "0x004A9F20",
+  "size": 62,
+  "classes": [
+   77
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_004aac50": {
+  "addr": "0x004AAC50",
+  "size": 1506,
+  "classes": [
+   77
+  ],
+  "fields": [
+   4
+  ],
+  "nrefs": 1
+ },
+ "cspec_004b6520": {
+  "addr": "0x004B6520",
+  "size": 62,
+  "classes": [
+   32,
+   82
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_004b6530": {
+  "addr": "0x004B6530",
+  "size": 61,
+  "classes": [
+   74,
+   79,
+   83
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 3
+ },
+ "cspec_004c4870": {
+  "addr": "0x004C4870",
+  "size": 63,
+  "classes": [
+   3
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_004c6f30": {
+  "addr": "0x004C6F30",
+  "size": 61,
+  "classes": [
+   25,
+   52,
+   88,
+   101
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 4
+ },
+ "cspec_004c73a0": {
+  "addr": "0x004C73A0",
+  "size": 134,
+  "classes": [
+   40
+  ],
+  "fields": [
+   9
+  ],
+  "nrefs": 1
+ },
+ "cspec_004cc050": {
+  "addr": "0x004CC050",
+  "size": 286,
+  "classes": [
+   100
+  ],
+  "fields": [
+   0
+  ],
+  "nrefs": 1
+ },
+ "cspec_004cc080": {
+  "addr": "0x004CC080",
+  "size": 62,
+  "classes": [
+   99
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_004d5700": {
+  "addr": "0x004D5700",
+  "size": 58,
+  "classes": [
+   36,
+   38,
+   49
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 3
+ },
+ "cspec_004d7610": {
+  "addr": "0x004D7610",
+  "size": 61,
+  "classes": [
+   90
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_004d7b40": {
+  "addr": "0x004D7B40",
+  "size": 78,
+  "classes": [
+   90
+  ],
+  "fields": [
+   11
+  ],
+  "nrefs": 1
+ },
+ "cspec_004d7b60": {
+  "addr": "0x004D7B60",
+  "size": 156,
+  "classes": [
+   90
+  ],
+  "fields": [
+   10
+  ],
+  "nrefs": 1
+ },
+ "cspec_004e75d0": {
+  "addr": "0x004E75D0",
+  "size": 62,
+  "classes": [
+   51
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_004e7680": {
+  "addr": "0x004E7680",
+  "size": 1227,
+  "classes": [
+   52
+  ],
+  "fields": [
+   0
+  ],
+  "nrefs": 1
+ },
+ "cspec_004ec7c0": {
+  "addr": "0x004EC7C0",
+  "size": 61,
+  "classes": [
+   29,
+   96
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_004f82f0": {
+  "addr": "0x004F82F0",
+  "size": 519,
+  "classes": [
+   66
+  ],
+  "fields": [
+   2
+  ],
+  "nrefs": 1
+ },
+ "cspec_004f9310": {
+  "addr": "0x004F9310",
+  "size": 61,
+  "classes": [
+   24
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_004f9320": {
+  "addr": "0x004F9320",
+  "size": 164,
+  "classes": [
+   24
+  ],
+  "fields": [
+   10
+  ],
+  "nrefs": 1
+ },
+ "cspec_004fa1a0": {
+  "addr": "0x004FA1A0",
+  "size": 61,
+  "classes": [
+   39,
+   97
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_004fa1b0": {
+  "addr": "0x004FA1B0",
+  "size": 193,
+  "classes": [
+   39
+  ],
+  "fields": [
+   11
+  ],
+  "nrefs": 1
+ },
+ "cspec_005059a0": {
+  "addr": "0x005059A0",
+  "size": 98,
+  "classes": [
+   2
+  ],
+  "fields": [
+   3
+  ],
+  "nrefs": 1
+ },
+ "cspec_0050a380": {
+  "addr": "0x0050A380",
+  "size": 61,
+  "classes": [
+   44,
+   60
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 2
+ },
+ "cspec_0050c610": {
+  "addr": "0x0050C610",
+  "size": 193,
+  "classes": [
+   44
+  ],
+  "fields": [
+   11
+  ],
+  "nrefs": 1
+ },
+ "cspec_0050f800": {
+  "addr": "0x0050F800",
+  "size": 270,
+  "classes": [
+   25,
+   53,
+   88
+  ],
+  "fields": [
+   11
+  ],
+  "nrefs": 3
+ },
+ "cspec_0050f820": {
+  "addr": "0x0050F820",
+  "size": 61,
+  "classes": [
+   53
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ },
+ "cspec_0050f890": {
+  "addr": "0x0050F890",
+  "size": 172,
+  "classes": [
+   53
+  ],
+  "fields": [
+   7
+  ],
+  "nrefs": 1
+ },
+ "cspec_0050f8b0": {
+  "addr": "0x0050F8B0",
+  "size": 435,
+  "classes": [
+   53
+  ],
+  "fields": [
+   8
+  ],
+  "nrefs": 1
+ },
+ "cspec_005128f0": {
+  "addr": "0x005128F0",
+  "size": 156,
+  "classes": [
+   21
+  ],
+  "fields": [
+   10
+  ],
+  "nrefs": 1
+ },
+ "cspec_00512910": {
+  "addr": "0x00512910",
+  "size": 193,
+  "classes": [
+   21
+  ],
+  "fields": [
+   11
+  ],
+  "nrefs": 1
+ },
+ "cspec_00512940": {
+  "addr": "0x00512940",
+  "size": 61,
+  "classes": [
+   21
+  ],
+  "fields": [
+   5
+  ],
+  "nrefs": 1
+ }
+}

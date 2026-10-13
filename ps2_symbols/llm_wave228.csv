@@ -1,0 +1,22 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00489d40,00489d40,,dlog_page_1b_open,0.9,w228,mission dialog page 0x1b; push LAB_0048a140; callers mission_load_full/mission_state_dispatch
+004862e0,004862e0,,dlog_page_18_open,0.9,w228,mission dialog page 0x18; push LAB_004864d0
+00486fc0,00486fc0,,dlog_page_19_open,0.9,w228,mission dialog page 0x19; push LAB_004871b0
+00487b70,00487b70,,dlog_page_1a_open,0.9,w228,mission dialog page 0x1a; push LAB_00487d60
+0048de30,0048de30,,dlog_page_29_open,0.9,w228,mission dialog page 0x29
+0048e430,0048e430,,dlog_page_28_open,0.9,w228,mission dialog page 0x28
+0048d4b0,0048d4b0,,dlog_page_1d_open,0.9,w228,mission dialog page 0x1d; push LAB_0048d830
+0048ee60,0048ee60,,dlog_page_1f_open,0.9,w228,mission dialog page 0x1f; push LAB_0048f160
+00488740,00488740,,dlog_page_26_open,0.9,w228,mission dialog page 0x26; push LAB_004889f0; caller mission_load_world2
+0048ea50,0048ea50,,dlog_page_1e_open,0.9,w228,mission dialog page 0x1e; push LAB_0048ed70; callers menu_handlers_*
+0048c830,0048c830,,dlog_page_1c_open,0.9,w228,mission dialog page 0x1c; push LAB_0048cda0; caller mission_state_dispatch
+0048f460,0048f460,,dlog_page_27_open,0.9,w228,mission dialog page 0x27; push LAB_0048f840; caller menu_dlog_callback_a
+004850f0,004850f0,,dlog_page_15_open,0.9,w228,mission dialog page 0x15; push LAB_004855a0 (replaces dlog_levellist_open guess)
+0048a7d0,0048a7d0,,dlog_page_23_open,0.9,w228,mission dialog page 0x23; push LAB_0048b7b0; 4.3KB
+004829d0,004829d0,,dlog_page_process,0.9,w228,shared dialog page process callback; caller dev_debug_flags
+00489f50,00489f50,,dlog_page_close_a,0.9,w228,camera_override_done+dialog_level_pop+FLK_FlickPlaying
+0048ec30,0048ec30,,dlog_page_close_b,0.9,w228,camera_override_done+dialog_level_pop+main_fx
+004907e0,004907e0,,dlog_audio_options_process,0.9,w228,"AudioSetSpeakerConfig, gamespy_host_game, intro island world select; callers menu_dlog/scenerio_process/startup_options_init"
+0052ef00,0052ef00,,comm_players_state_send,0.9,w228,"pkt 0x31 build: player_active, flags byte, comm_player_state_count; callers comm_00521620/comm_msg_dispatch"
+00425eb0,00425eb0,,savegame_slot_load,0.9,w228,SaveIdx keymap + savegame_%d path + BinFileSeek + file read; candidate GetCurrentPtr REJECTED
+00543270,00543270,,memmove_back,0.9,w228,backward-copy memmove variant; existing memmove name taken

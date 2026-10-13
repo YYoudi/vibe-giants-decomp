@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052aca0,0052aca0,,comm_player_flag_get,0.9,w232,"DAT_5ddf38[idx], idx<0x14 (20 players)"
+0052b4b0,0052b4b0,,comm_player_flags_set_all,0.9,w232,fill DAT_5ddf60[0x14] from param
+004b8de0,004b8de0,,reaperbase_target_slot_clear,0.9,w232,"2x {id,val} slots at +0xd98: find or clear; caller reaperbase_ai_main_c3"
+0046b850,0046b850,,injured_seek_state_set,0.9,w232,"hp<max, no +0x7c/+0x80 targets: dir to view obj, flags |=8, timer 5.0, state 0x13"
+0041f8f0,0041f8f0,,input_byte_channel_write,0.9,w232,"clamp +-128 byte into channel 1-4 of struct, sign by param_4"
+0045d290,0045d290,,reaper_spec_byte_get,0.9,w232,class==1 && spec[0]&1: return spec[0x228]; caller game_loop_run
+004b6d20,004b6d20,,smartie_house_get,0.9,w232,idx-th type 0x353 object from DAT_632d68 list

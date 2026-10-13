@@ -630,13 +630,13 @@ switchD_004364b2_caseD_0:
 
       local_64 = (float)fVar24;
 
-      FUN_0042eee0(&DAT_0059cc1c,&local_60);
+      spline_waypoint_push(&DAT_0059cc1c,&local_60);
 
-      FUN_0042eee0(&local_60,&local_54);
+      spline_waypoint_push(&local_60,&local_54);
 
-      FUN_0042eee0(&local_54,&local_6c);
+      spline_waypoint_push(&local_54,&local_6c);
 
-      FUN_0042eee0(&local_6c,&DAT_0059cc1c);
+      spline_waypoint_push(&local_6c,&DAT_0059cc1c);
 
       for (puVar15 = DAT_00632d68; puVar16 = DAT_00632d68, puVar15 != (undefined4 *)0x0;
 
@@ -1590,7 +1590,7 @@ LAB_00437d68:
 
       DAT_0059cc40 = uVar14;
 
-      FUN_00543270(&DAT_0059cc40,&DAT_0059cc48,0xc0);
+      memmove_back(&DAT_0059cc40,&DAT_0059cc48,0xc0);
 
       _DAT_0059cd00 = uVar14;
 
@@ -1808,7 +1808,7 @@ LAB_00437d68:
 
       _DAT_0059cd00 = uVar14;
 
-      FUN_00543270(&DAT_0059cc48,&DAT_0059cc40,0xc0);
+      memmove_back(&DAT_0059cc48,&DAT_0059cc40,0xc0);
 
       DAT_0059cc40 = uVar14;
 
@@ -1992,7 +1992,7 @@ LAB_00437d68:
 
       DAT_0059cd04 = (int *)0x0;
 
-      FUN_00543270(&DAT_0059cc48,&DAT_0059cc40,0xc0);
+      memmove_back(&DAT_0059cc48,&DAT_0059cc40,0xc0);
 
       if ((_DAT_0059cd00 & 2) != 0) {
 
@@ -2376,7 +2376,7 @@ LAB_004368ab:
 
       DAT_0059cd04 = (int *)0x0;
 
-      FUN_00543270(&DAT_0059cc48,&DAT_0059cc40,0xc0);
+      memmove_back(&DAT_0059cc48,&DAT_0059cc40,0xc0);
 
       if ((_DAT_0059cd00 & 2) != 0) {
 
@@ -2675,7 +2675,7 @@ LAB_004384e0:
 
               crt_sprintf(&DAT_00657400,s__s_is_too_long_00557030,local_a0);
 
-              FUN_0051ea20(&DAT_00657400);
+              error_msg_show(&DAT_00657400);
 
             }
 
@@ -2705,7 +2705,7 @@ LAB_004384e0:
 
             crt_sprintf(&DAT_00657400,s__s_is_too_long_00557030,local_a0);
 
-            FUN_0051ea20(&DAT_00657400);
+            error_msg_show(&DAT_00657400);
 
           }
 
@@ -2986,7 +2986,7 @@ void main_editor_0043a590(void)
 
       DAT_0059cd04 = (undefined4 *)0x0;
 
-      FUN_00543270(&DAT_0059cc48,&DAT_0059cc40,0xc0);
+      memmove_back(&DAT_0059cc48,&DAT_0059cc40,0xc0);
 
       if ((_DAT_0059cd00 & 2) != 0) {
 
@@ -3114,7 +3114,7 @@ void main_editor_0043a590(void)
 
         DAT_0059cd04 = (undefined4 *)0x0;
 
-        FUN_00543270(&DAT_0059cc48,&DAT_0059cc40,0xc0);
+        memmove_back(&DAT_0059cc48,&DAT_0059cc40,0xc0);
 
         if ((_DAT_0059cd00 & 2) != 0) {
 

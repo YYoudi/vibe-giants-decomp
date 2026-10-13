@@ -56,7 +56,7 @@ void teammecc_create(int param_1,int param_2)
 
         puVar1 = (undefined4 *)(param_1 + 0xa0);
 
-        fVar5 = (float10)FUN_0050a610(puVar1,(undefined4 *)(iVar4 + 0x18));
+        fVar5 = (float10)distancesq3d(puVar1,(undefined4 *)(iVar4 + 0x18));
 
         if ((float10)*(float *)(DAT_00632ed8 + 0x1020) * (float10)*(float *)(DAT_00632ed8 + 0x1020)
 

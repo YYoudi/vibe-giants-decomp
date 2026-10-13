@@ -1,0 +1,2566 @@
+[
+ {
+  "addr": "0x0042F4C0",
+  "len": 195,
+  "n_ncal": 1,
+  "ncal": [
+   "dlog_alpha_blend"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00495060",
+  "len": 432,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "meccprocanimscreate_004ede30"
+  ]
+ },
+ {
+  "addr": "0x0054530F",
+  "len": 1191,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_lcmapstring"
+  ],
+  "n_clr": 3,
+  "clr": [
+   "crt_lock_5452a0",
+   "crt_file_lock_ops",
+   "fx_name_compare"
+  ]
+ },
+ {
+  "addr": "0x004FA490",
+  "len": 852,
+  "n_ncal": 1,
+  "ncal": [
+   "textrender_glyph_quad"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "ShopMenuSlotCollision__Fi"
+  ]
+ },
+ {
+  "addr": "0x00452AE0",
+  "len": 205,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "mecc_fire_logic__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x0050C3C0",
+  "len": 505,
+  "n_ncal": 1,
+  "ncal": [
+   "ObjectSetAnim"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00544D41",
+  "len": 185,
+  "n_ncal": 1,
+  "ncal": [
+   "__local_unwind2"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0045B610",
+  "len": 596,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004A7400",
+  "len": 324,
+  "n_ncal": 2,
+  "ncal": [
+   "object_add_location",
+   "FRateGetSecsframe"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x004BA2F0",
+  "len": 634,
+  "n_ncal": 1,
+  "ncal": [
+   "ObjIsJetski"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "reaperbase_ai_main_c3"
+  ]
+ },
+ {
+  "addr": "0x00465070",
+  "len": 533,
+  "n_ncal": 2,
+  "ncal": [
+   "comm_send_gate_check",
+   "comm_chat_send_2"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004A7BE0",
+  "len": 269,
+  "n_ncal": 1,
+  "ncal": [
+   "__ftol"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "ai_chase_location__FP6OBJECTP3P3DUi"
+  ]
+ },
+ {
+  "addr": "0x00529C00",
+  "len": 1032,
+  "n_ncal": 2,
+  "ncal": [
+   "world_get_pointer",
+   "__ftol"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "GiantsInitNewWorld",
+   "comm_comm_00529e00"
+  ]
+ },
+ {
+  "addr": "0x004E7250",
+  "len": 668,
+  "n_ncal": 1,
+  "ncal": [
+   "__ftol"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004C6F40",
+  "len": 919,
+  "n_ncal": 2,
+  "ncal": [
+   "sound_stop_sequence",
+   "object_destroy"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00425EB0",
+  "len": 859,
+  "n_ncal": 5,
+  "ncal": [
+   "keymap_0051a100",
+   "crt_sprintf",
+   "editor_0054384c",
+   "BinFileSeek_2",
+   "crt_file_free_init"
+  ],
+  "n_clr": 33,
+  "clr": [
+   "BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i",
+   "loadsave_save__FPCc",
+   "main_animate_00405240",
+   "AnimationCreate"
+  ]
+ },
+ {
+  "addr": "0x0049B810",
+  "len": 1355,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "game_loop_run"
+  ]
+ },
+ {
+  "addr": "0x00536C60",
+  "len": 310,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "object_list_update"
+  ]
+ },
+ {
+  "addr": "0x0051B810",
+  "len": 487,
+  "n_ncal": 1,
+  "ncal": [
+   "textrender_text_draw"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004A9130",
+  "len": 332,
+  "n_ncal": 1,
+  "ncal": [
+   "TextGetPtr"
+  ],
+  "n_clr": 4,
+  "clr": [
+   "inv_award_item",
+   "item_drop_backheld",
+   "item_drop_curweap",
+   "reaper_fire_bow__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x0054FB96",
+  "len": 583,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_comparestring_user"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_realloc_strcpy"
+  ]
+ },
+ {
+  "addr": "0x00544517",
+  "len": 1193,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_lcmapstring"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_lock_simple"
+  ]
+ },
+ {
+  "addr": "0x005007F0",
+  "len": 294,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "mecc_get_thrust__FP6OBJECTfPfT2_2"
+  ]
+ },
+ {
+  "addr": "0x00456090",
+  "len": 701,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "teammecc_get_attackloc"
+  ]
+ },
+ {
+  "addr": "0x004EA810",
+  "len": 827,
+  "n_ncal": 2,
+  "ncal": [
+   "ObjectSetAnim",
+   "obj_ptr_clear_if_dead"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004E7330",
+  "len": 593,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00427100",
+  "len": 201,
+  "n_ncal": 2,
+  "ncal": [
+   "cursor_texture_draw",
+   "status_draw_sub"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "dlog_widgets_draw",
+   "dev_debug_flags"
+  ]
+ },
+ {
+  "addr": "0x004907E0",
+  "len": 833,
+  "n_ncal": 8,
+  "ncal": [
+   "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4",
+   "mission_texture_audio",
+   "world_get_pointer",
+   "InitFxDict__Fv",
+   "comm_disconnect_sleep",
+   "gamespy_host_game"
+  ],
+  "n_clr": 4,
+  "clr": [
+   "menu_dlog_callback_a",
+   "scenerio_process__Fv",
+   "startup_options_init",
+   "gamespy_host_game"
+  ]
+ },
+ {
+  "addr": "0x0047C8C0",
+  "len": 345,
+  "n_ncal": 1,
+  "ncal": [
+   "comm_chat_send_1"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "mecc_animselect_gm"
+  ]
+ },
+ {
+  "addr": "0x005108F0",
+  "len": 1100,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "evilreaper_ai_main_c21",
+   "vimp_animselect"
+  ]
+ },
+ {
+  "addr": "0x00540AB0",
+  "len": 2768,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004B8DE0",
+  "len": 638,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "reaperbase_ai_main_c3"
+  ]
+ },
+ {
+  "addr": "0x0054D5A8",
+  "len": 67,
+  "n_ncal": 1,
+  "ncal": [
+   "__amsg_exit"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "_output",
+   "_input"
+  ]
+ },
+ {
+  "addr": "0x004961E0",
+  "len": 416,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "FLK_FlickProcess"
+  ]
+ },
+ {
+  "addr": "0x0045DA90",
+  "len": 470,
+  "n_ncal": 1,
+  "ncal": [
+   "fx_create"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "kbos_death_handler_c75"
+  ]
+ },
+ {
+  "addr": "0x00544E50",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_lock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_lock_vector"
+  ]
+ },
+ {
+  "addr": "0x00501090",
+  "len": 604,
+  "n_ncal": 1,
+  "ncal": [
+   "FRateGetSecsframe"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "mecc_ai_main",
+   "dev_debug_flags"
+  ]
+ },
+ {
+  "addr": "0x004862E0",
+  "len": 2106,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00521980",
+  "len": 396,
+  "n_ncal": 1,
+  "ncal": [
+   "InitFxDict__Fv"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "comm_00485300",
+   "comm_game_setup_menu"
+  ]
+ },
+ {
+  "addr": "0x0046B850",
+  "len": 613,
+  "n_ncal": 1,
+  "ncal": [
+   "dirfcalcp3d__FP3P3DT0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00404200",
+  "len": 318,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "make_particle__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x0052E470",
+  "len": 109,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "shutdown_blood_cleanup"
+  ]
+ },
+ {
+  "addr": "0x0054FF2E",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "realloc"
+  ]
+ },
+ {
+  "addr": "0x00519CA0",
+  "len": 442,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0051B9C0",
+  "len": 434,
+  "n_ncal": 1,
+  "ncal": [
+   "textrender_text_draw"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "dlog_widgets_draw",
+   "wredit_text_fade"
+  ]
+ },
+ {
+  "addr": "0x00448C20",
+  "len": 790,
+  "n_ncal": 1,
+  "ncal": [
+   "fx_processOpCodes"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "reaper_ability_3dsound",
+   "fxn_firering"
+  ]
+ },
+ {
+  "addr": "0x004676A0",
+  "len": 525,
+  "n_ncal": 1,
+  "ncal": [
+   "obj_skinning_eval"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "dev_debug_flags"
+  ]
+ },
+ {
+  "addr": "0x004E7160",
+  "len": 1152,
+  "n_ncal": 1,
+  "ncal": [
+   "ObjectSetAnim"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00418810",
+  "len": 856,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_matrix_mul"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x00500F80",
+  "len": 228,
+  "n_ncal": 1,
+  "ncal": [
+   "fx_create"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "object_destroy_specialtype"
+  ]
+ },
+ {
+  "addr": "0x0049A1D0",
+  "len": 231,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "multi_display_player_cursor_info__Fv"
+  ]
+ },
+ {
+  "addr": "0x0053BE60",
+  "len": 105,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "ref_get_anode2",
+   "FLK_FlickProcess"
+  ]
+ },
+ {
+  "addr": "0x0049A030",
+  "len": 485,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 4,
+  "clr": [
+   "flick_file_load_state",
+   "load_mission_continuity__Fii",
+   "comm_entergame_message",
+   "comm_voice_update"
+  ]
+ },
+ {
+  "addr": "0x0054F246",
+  "len": 1676,
+  "n_ncal": 8,
+  "ncal": [
+   "crt_chkstk_probe",
+   "crt_validate_osfhnd",
+   "_write_lk",
+   "_errno",
+   "__doserrno",
+   "_memset"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_openfile"
+  ]
+ },
+ {
+  "addr": "0x0051EA90",
+  "len": 85,
+  "n_ncal": 1,
+  "ncal": [
+   "error_screen_show"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "dinput_init"
+  ]
+ },
+ {
+  "addr": "0x0040ABF0",
+  "len": 651,
+  "n_ncal": 1,
+  "ncal": [
+   "base_slot_active_check"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x00490D40",
+  "len": 443,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "hud_audio_dlog_screen"
+  ]
+ },
+ {
+  "addr": "0x00543270",
+  "len": 9437,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 9,
+  "clr": [
+   "army_process_opcodes__FP6OBJECTPPUci",
+   "dlog_screen_user_big",
+   "rpman_init__FP6OBJECT",
+   "main_editor_0043a590"
+  ]
+ },
+ {
+  "addr": "0x0049A090",
+  "len": 431,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "obj_velocity_commit"
+  ]
+ },
+ {
+  "addr": "0x004D4930",
+  "len": 457,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "smartie_move"
+  ]
+ },
+ {
+  "addr": "0x004698F0",
+  "len": 381,
+  "n_ncal": 2,
+  "ncal": [
+   "trajectory_calculate",
+   "powf"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0040D480",
+  "len": 227,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 3,
+  "clr": [
+   "obj_turn_update",
+   "obj_alpha_fade_update",
+   "player_pitch_update"
+  ]
+ },
+ {
+  "addr": "0x004138C0",
+  "len": 713,
+  "n_ncal": 2,
+  "ncal": [
+   "get_floor_z_point_plat",
+   "physics_vec_math"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "ai_chase_location__FP6OBJECTP3P3DUi"
+  ]
+ },
+ {
+  "addr": "0x0040AB60",
+  "len": 546,
+  "n_ncal": 1,
+  "ncal": [
+   "base_slot_active_check"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "bldg_slot_action_dispatch"
+  ]
+ },
+ {
+  "addr": "0x004BA990",
+  "len": 1030,
+  "n_ncal": 4,
+  "ncal": [
+   "playerobj_lookud",
+   "ObjIsMecc",
+   "ObjIsReaper",
+   "fx_create"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "reaperbase_ai_main_c3"
+  ]
+ },
+ {
+  "addr": "0x0041EBB0",
+  "len": 437,
+  "n_ncal": 2,
+  "ncal": [
+   "meccbaseitem_move",
+   "ObjIsMeccBldg"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "objtype_setup_kabuto"
+  ]
+ },
+ {
+  "addr": "0x004E21F0",
+  "len": 548,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004FA780",
+  "len": 308,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0051BEA0",
+  "len": 428,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "flick_text_layout"
+  ]
+ },
+ {
+  "addr": "0x00528720",
+  "len": 387,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0052E1F0",
+  "len": 528,
+  "n_ncal": 2,
+  "ncal": [
+   "comm_socket_sendto",
+   "crt_sprintf"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "comm_socket_recv_loop"
+  ]
+ },
+ {
+  "addr": "0x00539140",
+  "len": 188,
+  "n_ncal": 1,
+  "ncal": [
+   "fx_table_lookup"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "game_files_check"
+  ]
+ },
+ {
+  "addr": "0x0053D120",
+  "len": 1152,
+  "n_ncal": 3,
+  "ncal": [
+   "ANM_BlendedNodeGetMat",
+   "ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i",
+   "ANM_ClusterApplyMatSingleVertex"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0053BE80",
+  "len": 713,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_stream_seek"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "ref_get_anode2",
+   "FLK_FlickRender"
+  ]
+ },
+ {
+  "addr": "0x0040AC70",
+  "len": 364,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 5,
+  "clr": [
+   "smartie_ai_main",
+   "reaper_lock_pair_4f",
+   "fx_reaper_bubble_create",
+   "smartie_board_player__FP6OBJECTT0i"
+  ]
+ },
+ {
+  "addr": "0x00425840",
+  "len": 162,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "game_options_verify"
+  ]
+ },
+ {
+  "addr": "0x004EB8F0",
+  "len": 292,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "base_spells_setup"
+  ]
+ },
+ {
+  "addr": "0x00519D30",
+  "len": 1227,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "hud_status_main"
+  ]
+ },
+ {
+  "addr": "0x004CC7A0",
+  "len": 276,
+  "n_ncal": 1,
+  "ncal": [
+   "obj_yaw_turn"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "reaper_lock_short_5"
+  ]
+ },
+ {
+  "addr": "0x00423760",
+  "len": 424,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0054D104",
+  "len": 350,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "list_reset_54"
+  ]
+ },
+ {
+  "addr": "0x0053BE00",
+  "len": 671,
+  "n_ncal": 2,
+  "ncal": [
+   "NAM_NameGetCustom",
+   "NAM_NameFindByHandleIndex"
+  ],
+  "n_clr": 11,
+  "clr": [
+   "ref_get_anode",
+   "ref_get_anode2",
+   "BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i",
+   "flick_slot_lookup_handle"
+  ]
+ },
+ {
+  "addr": "0x0053DC10",
+  "len": 492,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 7,
+  "clr": [
+   "dlog_entry_render_quads",
+   "lift_update_rider_position__FP6OBJECT",
+   "mecc_ai_main",
+   "SphereFitToObject"
+  ]
+ },
+ {
+  "addr": "0x00443110",
+  "len": 1059,
+  "n_ncal": 1,
+  "ncal": [
+   "FRateGetSecsframe"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "game_loop_run"
+  ]
+ },
+ {
+  "addr": "0x00499200",
+  "len": 189,
+  "n_ncal": 2,
+  "ncal": [
+   "object_destroy",
+   "object_destroy_specialtype"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "teammecc_toggle",
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x00476EB0",
+  "len": 1406,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "wredit_menu_cleanup_2"
+  ]
+ },
+ {
+  "addr": "0x00488740",
+  "len": 1797,
+  "n_ncal": 10,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "main_fx_004470b0",
+   "dialog_level_is_base_8"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "mission_load_world2"
+  ]
+ },
+ {
+  "addr": "0x00501100",
+  "len": 682,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "mecc_ai_main"
+  ]
+ },
+ {
+  "addr": "0x0053C640",
+  "len": 245,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "obj_proximity_update"
+  ]
+ },
+ {
+  "addr": "0x0053D330",
+  "len": 955,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "main_animate_00404b60"
+  ]
+ },
+ {
+  "addr": "0x004A2650",
+  "len": 821,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "obj_anim_flags_update"
+  ]
+ },
+ {
+  "addr": "0x004489E0",
+  "len": 505,
+  "n_ncal": 1,
+  "ncal": [
+   "object_set_location_p3d"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "piranha_launch_fx__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x00486FC0",
+  "len": 2081,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00418770",
+  "len": 907,
+  "n_ncal": 2,
+  "ncal": [
+   "atand2pos",
+   "crt_matrix_mul"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "lift_logic__FP6OBJECT",
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x0048EE60",
+  "len": 2015,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00497C90",
+  "len": 364,
+  "n_ncal": 1,
+  "ncal": [
+   "main_00508840"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004582D0",
+  "len": 262,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 12,
+  "clr": [
+   "menu_player_join_check",
+   "giftshopview_enable",
+   "inv_check_pickup",
+   "inv_award_item"
+  ]
+ },
+ {
+  "addr": "0x0054C487",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "_malloc"
+  ]
+ },
+ {
+  "addr": "0x0052EF00",
+  "len": 2173,
+  "n_ncal": 8,
+  "ncal": [
+   "comm_player_state_count",
+   "dialog_level_is_base",
+   "AudioGetMasterVolume__Fv_9",
+   "comm_player_active_get",
+   "comm_player_team_get",
+   "comm_0052b780"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "comm_00521620",
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x004F8350",
+  "len": 147,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "status_hud_render"
+  ]
+ },
+ {
+  "addr": "0x00518FA0",
+  "len": 909,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "input_key_bind"
+  ]
+ },
+ {
+  "addr": "0x00451270",
+  "len": 661,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0048EA50",
+  "len": 2015,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "menu_handlers_lookup",
+   "menu_handlers_exec"
+  ]
+ },
+ {
+  "addr": "0x00501070",
+  "len": 250,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "SetupCameraDataNormal__FP6OBJECTT0"
+  ]
+ },
+ {
+  "addr": "0x0051C540",
+  "len": 166,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "mission_load_full"
+  ]
+ },
+ {
+  "addr": "0x00538FF0",
+  "len": 112,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "gfx_d3d_0051d0d0"
+  ]
+ },
+ {
+  "addr": "0x00475350",
+  "len": 483,
+  "n_ncal": 3,
+  "ncal": [
+   "dlog_text_render_screen",
+   "dialog_level_is_base",
+   "fx_create"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "mecc_ai_main"
+  ]
+ },
+ {
+  "addr": "0x0054CEA8",
+  "len": 130,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_stream_flags_set"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "_GLOBAL_$D$Game_2"
+  ]
+ },
+ {
+  "addr": "0x0041A1C0",
+  "len": 171,
+  "n_ncal": 1,
+  "ncal": [
+   "comm_chat_send_1"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00544E59",
+  "len": 65,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_lock_vector"
+  ]
+ },
+ {
+  "addr": "0x00528780",
+  "len": 717,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00538540",
+  "len": 186,
+  "n_ncal": 1,
+  "ncal": [
+   "fx_table_lookup"
+  ],
+  "n_clr": 4,
+  "clr": [
+   "loadsave_save__FPCc",
+   "game_files_check",
+   "main_texture_005080a0",
+   "main_texture_005088d0"
+  ]
+ },
+ {
+  "addr": "0x004706D0",
+  "len": 303,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "msg28_copy10_c53"
+  ]
+ },
+ {
+  "addr": "0x0042A460",
+  "len": 1042,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "dlog_list_navigate_sound"
+  ]
+ },
+ {
+  "addr": "0x004EC1F0",
+  "len": 1358,
+  "n_ncal": 5,
+  "ncal": [
+   "object_allocate_type",
+   "object_set_location",
+   "mission_marker_pos_check",
+   "dirfcalcp3d__FP3P3DT0",
+   "fx_create"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "reaper_animselect",
+   "reaper_lock_pair"
+  ]
+ },
+ {
+  "addr": "0x0050A610",
+  "len": 108,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 68,
+  "clr": [
+   "obj_impact_effects",
+   "meccbaseitem_move",
+   "kabutoai_select_target__FP6OBJECT",
+   "scenerio_handle_music__FPv"
+  ]
+ },
+ {
+  "addr": "0x0052FF70",
+  "len": 707,
+  "n_ncal": 3,
+  "ncal": [
+   "bldg_get_max_energy_generic",
+   "obj_group_spread",
+   "repair_logic"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x0054D6CD",
+  "len": 193,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "_flsbuf",
+   "crt_initio"
+  ]
+ },
+ {
+  "addr": "0x00544389",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_malloc_ext"
+  ]
+ },
+ {
+  "addr": "0x004A73A0",
+  "len": 556,
+  "n_ncal": 1,
+  "ncal": [
+   "FRateGetSecsframe"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x00519CF0",
+  "len": 511,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 12,
+  "clr": [
+   "dlog_screen_user_big",
+   "wredit_flick_list",
+   "wredit_menu_6",
+   "wredit_ai_menu3"
+  ]
+ },
+ {
+  "addr": "0x0046B420",
+  "len": 203,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0051C7E0",
+  "len": 224,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "dialog_0048ca10"
+  ]
+ },
+ {
+  "addr": "0x004184D0",
+  "len": 245,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x004E2B10",
+  "len": 799,
+  "n_ncal": 2,
+  "ncal": [
+   "ground_height_at",
+   "playerobj_eval_refpt"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004EC7D0",
+  "len": 1432,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "intro_assets_check"
+  ]
+ },
+ {
+  "addr": "0x0042E260",
+  "len": 1247,
+  "n_ncal": 5,
+  "ncal": [
+   "hud_spark_quad_orient",
+   "main/drawwrld_00434ce0",
+   "dlog_level_free_if",
+   "dlog_entry_render_quads",
+   "crt_matrix_mul"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "obj_impact_effects"
+  ]
+ },
+ {
+  "addr": "0x0054C3FE",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "_malloc"
+  ]
+ },
+ {
+  "addr": "0x0054E3A0",
+  "len": 1323,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00457D50",
+  "len": 452,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "inv_award_item"
+  ]
+ },
+ {
+  "addr": "0x0051AD50",
+  "len": 120,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_vobuf_alloc"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "main/readwrls_004b0d80"
+  ]
+ },
+ {
+  "addr": "0x004782F0",
+  "len": 611,
+  "n_ncal": 1,
+  "ncal": [
+   "object_destroy"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "rpman_init__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x00544123",
+  "len": 798,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_getstringtype"
+  ],
+  "n_clr": 10,
+  "clr": [
+   "player_defaults_load_all",
+   "cmdline_parse",
+   "crt_strspn",
+   "crt_scanf_float2"
+  ]
+ },
+ {
+  "addr": "0x00544481",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_free_ext"
+  ]
+ },
+ {
+  "addr": "0x00489F50",
+  "len": 1990,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_done",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004471a0",
+   "mission_00447fd0",
+   "menu_mission_launch"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004959D0",
+  "len": 234,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "wredit_00439490"
+  ]
+ },
+ {
+  "addr": "0x004B6C00",
+  "len": 1146,
+  "n_ncal": 1,
+  "ncal": [
+   "distancesq2d__FP3P3DT0"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x00404570",
+  "len": 2731,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "collgrid_collide_b"
+  ]
+ },
+ {
+  "addr": "0x00517830",
+  "len": 886,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "hurt_pusher_2"
+  ]
+ },
+ {
+  "addr": "0x004D7C60",
+  "len": 1516,
+  "n_ncal": 2,
+  "ncal": [
+   "ObjectSetAnim",
+   "rpman_notify_hit"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "sf_is_valid_target__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x0042B4E0",
+  "len": 1347,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "status_hud_render"
+  ]
+ },
+ {
+  "addr": "0x00500100",
+  "len": 168,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "mission_state_dispatch"
+  ]
+ },
+ {
+  "addr": "0x0052B400",
+  "len": 259,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "rpman_move"
+  ]
+ },
+ {
+  "addr": "0x0052C5C0",
+  "len": 202,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 47,
+  "clr": [
+   "main_commonbase_00418f00",
+   "comm_00426540",
+   "mecc_ai_main",
+   "object_spawn_class"
+  ]
+ },
+ {
+  "addr": "0x00544065",
+  "len": 211,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "crt_pow_main"
+  ]
+ },
+ {
+  "addr": "0x00452030",
+  "len": 139,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "dialog_0048ca10"
+  ]
+ },
+ {
+  "addr": "0x0048C830",
+  "len": 2024,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "mission_state_dispatch"
+  ]
+ },
+ {
+  "addr": "0x004F4020",
+  "len": 761,
+  "n_ncal": 1,
+  "ncal": [
+   "comm_chat_send_1"
+  ],
+  "n_clr": 2,
+  "clr": [
+   "mecc_special_weapon_logic__FP6OBJECT",
+   "reaperbase_ai_main_c3"
+  ]
+ },
+ {
+  "addr": "0x00454A40",
+  "len": 1504,
+  "n_ncal": 2,
+  "ncal": [
+   "ObjIsReaper",
+   "dialog_level_is_base"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "IconIsAvailable__Fi"
+  ]
+ },
+ {
+  "addr": "0x004180A0",
+  "len": 1008,
+  "n_ncal": 2,
+  "ncal": [
+   "meccbasepit_bldg_from_object",
+   "reaperbase_bldg_from_object"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "main_commonbase_00418f00"
+  ]
+ },
+ {
+  "addr": "0x00501170",
+  "len": 859,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0040D6E0",
+  "len": 73,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "evilreaper_award_item__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x0052AB70",
+  "len": 222,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "comm_team_broadcast_menu",
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x004A17C0",
+  "len": 205,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "ai_flight_check"
+  ]
+ },
+ {
+  "addr": "0x00544EE7",
+  "len": 754,
+  "n_ncal": 3,
+  "ncal": [
+   "ANM_DumpCluster_4",
+   "crt_ptd_free_alloc",
+   "__amsg_exit"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00515F20",
+  "len": 95,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00489D40",
+  "len": 2275,
+  "n_ncal": 13,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 8,
+  "clr": [
+   "mission_load_full",
+   "mission_state_dispatch",
+   "dialog_0048ca10",
+   "menu_state_dispatch_2"
+  ]
+ },
+ {
+  "addr": "0x00494F90",
+  "len": 191,
+  "n_ncal": 1,
+  "ncal": [
+   "dialog_level_is_base"
+  ],
+  "n_clr": 3,
+  "clr": [
+   "mecc_ai_main",
+   "reaper_mecc_combat_c3",
+   "mecc_death_handler_c2"
+  ]
+ },
+ {
+  "addr": "0x00525380",
+  "len": 743,
+  "n_ncal": 1,
+  "ncal": [
+   "TextGetPtr"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "comm_progress_display"
+  ]
+ },
+ {
+  "addr": "0x0049A180",
+  "len": 132,
+  "n_ncal": 1,
+  "ncal": [
+   "TextGetPtr"
+  ],
+  "n_clr": 5,
+  "clr": [
+   "wredit_obj_info",
+   "rpboat_lock_to_boat__FP6OBJECTT0",
+   "teammecc_setup_enemies__FP6OBJECTi",
+   "mecc_fire_logic__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x00457FB0",
+  "len": 268,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 9,
+  "clr": [
+   "menu_player_join_check",
+   "giftshopview_enable",
+   "inv_award_item",
+   "mecc_calculate_mass__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x00500F50",
+  "len": 316,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "comm_game_session_update"
+  ]
+ },
+ {
+  "addr": "0x00495090",
+  "len": 234,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "main_setupgam_004eda20"
+  ]
+ },
+ {
+  "addr": "0x0054D12B",
+  "len": 230,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "list_reset_54"
+  ]
+ },
+ {
+  "addr": "0x00455FA0",
+  "len": 806,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "object_copy_activedata"
+  ]
+ },
+ {
+  "addr": "0x0045ECA0",
+  "len": 354,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "ShopMenuSlotCollision__Fi"
+  ]
+ },
+ {
+  "addr": "0x004D1A00",
+  "len": 1575,
+  "n_ncal": 2,
+  "ncal": [
+   "ObjIsMecc",
+   "ObjIsPlayer"
+  ],
+  "n_clr": 4,
+  "clr": [
+   "smartie_move",
+   "verm_control",
+   "death_handler_c23",
+   "death_handler_c47"
+  ]
+ },
+ {
+  "addr": "0x00544429",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_free_ext"
+  ]
+ },
+ {
+  "addr": "0x0054CF50",
+  "len": 912,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "crt_stream_flags_set"
+  ]
+ },
+ {
+  "addr": "0x0041F8F0",
+  "len": 548,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "hud_status_main"
+  ]
+ },
+ {
+  "addr": "0x0052ACA0",
+  "len": 151,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x0054E3E0",
+  "len": 1318,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0049A0C0",
+  "len": 431,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "objspec_dispatch_gate"
+  ]
+ },
+ {
+  "addr": "0x00496200",
+  "len": 430,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "hud_icon_timed"
+  ]
+ },
+ {
+  "addr": "0x0049DE80",
+  "len": 1281,
+  "n_ncal": 3,
+  "ncal": [
+   "ai_move_force_goal",
+   "distancesq2d__FP3P3DT0",
+   "normalize__FPfN20"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0040D6D0",
+  "len": 73,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "evilreaper_award_item__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x004C5B10",
+  "len": 846,
+  "n_ncal": 4,
+  "ncal": [
+   "bldg_get_refpt_worldloc",
+   "ObjIsJetski",
+   "base_slot9_get",
+   "fx_create"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "reaperbase_ai_main_c3"
+  ]
+ },
+ {
+  "addr": "0x0042B220",
+  "len": 723,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "hurt_pusher_2"
+  ]
+ },
+ {
+  "addr": "0x0040B300",
+  "len": 635,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "mission_unload_mission_objects__Fv",
+   "main_setupgam_004eda20"
+  ]
+ },
+ {
+  "addr": "0x0045D290",
+  "len": 271,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "game_loop_run"
+  ]
+ },
+ {
+  "addr": "0x00469950",
+  "len": 474,
+  "n_ncal": 2,
+  "ncal": [
+   "playerobj_turn",
+   "__ftol"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0046B450",
+  "len": 201,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "save_mission_continuity__Fv"
+  ]
+ },
+ {
+  "addr": "0x00501050",
+  "len": 159,
+  "n_ncal": 1,
+  "ncal": [
+   "teammecc_leader_calc"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "game_loop_run"
+  ]
+ },
+ {
+  "addr": "0x0052B4B0",
+  "len": 409,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x004177A0",
+  "len": 480,
+  "n_ncal": 2,
+  "ncal": [
+   "meccbasepit_bldg_from_object",
+   "reaperbase_bldg_from_object"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x0049DBD0",
+  "len": 1763,
+  "n_ncal": 5,
+  "ncal": [
+   "sound_play_obj",
+   "crt_rand_scaled",
+   "dirfcalcp3d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "playerobj_turn"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004FA720",
+  "len": 586,
+  "n_ncal": 1,
+  "ncal": [
+   "hurt_pusher_2"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "ShopMenuSlotCollision__Fi"
+  ]
+ },
+ {
+  "addr": "0x0054FDE0",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "realloc"
+  ]
+ },
+ {
+  "addr": "0x004B6D20",
+  "len": 421,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "smartie_ai_main"
+  ]
+ },
+ {
+  "addr": "0x004829D0",
+  "len": 1687,
+  "n_ncal": 13,
+  "ncal": [
+   "ANM_DumpCluster",
+   "camera_override_done",
+   "camera_override_refpt",
+   "ref_anode_user",
+   "dlog_widgets_draw",
+   "main_drawobj_0042d490"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "dev_debug_flags"
+  ]
+ },
+ {
+  "addr": "0x0053A830",
+  "len": 390,
+  "n_ncal": 1,
+  "ncal": [
+   "crt_file_lock_ops"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "gfx_d3d_0051d0d0"
+  ]
+ },
+ {
+  "addr": "0x00494FE0",
+  "len": 587,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "menu_state_dispatch_2",
+   "reaper_logic"
+  ]
+ },
+ {
+  "addr": "0x0052DBB0",
+  "len": 1439,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "new_fire__FP6OBJECTiPfT0P3P3Df"
+  ]
+ },
+ {
+  "addr": "0x0048EC30",
+  "len": 1440,
+  "n_ncal": 10,
+  "ncal": [
+   "camera_override_done",
+   "dialog_level_pop",
+   "main_fx_004471a0",
+   "mission_00447fd0",
+   "defaults_reset_menu",
+   "menu_mission_launch"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0052AE90",
+  "len": 401,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x00519F20",
+  "len": 927,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "mission_intro_load",
+   "savegame_cam_section"
+  ]
+ },
+ {
+  "addr": "0x004B0900",
+  "len": 1244,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 5,
+  "clr": [
+   "comm_00485300",
+   "menu_mission_list_init",
+   "mission_mpworld_load",
+   "comm_game_setup_menu"
+  ]
+ },
+ {
+  "addr": "0x004E9CE0",
+  "len": 794,
+  "n_ncal": 1,
+  "ncal": [
+   "ObjectSetAnim"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00425850",
+  "len": 240,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 7,
+  "clr": [
+   "reaper_spawn_ospec_1",
+   "reaper_spawn_ospec_2",
+   "reaper_lock_user_3",
+   "reaper_eat_finish"
+  ]
+ },
+ {
+  "addr": "0x0046B7F0",
+  "len": 493,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x004E3730",
+  "len": 666,
+  "n_ncal": 1,
+  "ncal": [
+   "distancesq2d__FP3P3DT0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0042EEE0",
+  "len": 470,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "rpman_init__FP6OBJECT"
+  ]
+ },
+ {
+  "addr": "0x0048F460",
+  "len": 1849,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "main_fx_004470b0",
+   "dialog_level_is_base_8"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "menu_dlog_callback_a"
+  ]
+ },
+ {
+  "addr": "0x0040B2C0",
+  "len": 460,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "game_loop_run"
+  ]
+ },
+ {
+  "addr": "0x0040B1D0",
+  "len": 382,
+  "n_ncal": 1,
+  "ncal": [
+   "meccbasepit_create_food"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "meccbaseitem_shot"
+  ]
+ },
+ {
+  "addr": "0x0048DE30",
+  "len": 2029,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0054432A",
+  "len": 63,
+  "n_ncal": 1,
+  "ncal": [
+   "_unlock"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "crt_malloc_ext"
+  ]
+ },
+ {
+  "addr": "0x00494FB0",
+  "len": 203,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 2,
+  "clr": [
+   "menu_state_dispatch_2",
+   "reaper_logic"
+  ]
+ },
+ {
+  "addr": "0x00455F20",
+  "len": 774,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "object_copy_activedata"
+  ]
+ },
+ {
+  "addr": "0x0052B280",
+  "len": 1105,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "comm_msg_dispatch"
+  ]
+ },
+ {
+  "addr": "0x004EE800",
+  "len": 378,
+  "n_ncal": 6,
+  "ncal": [
+   "FLK_FlickStop",
+   "gameover_menu",
+   "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4",
+   "mission_texture_audio",
+   "InitFxDict__Fv",
+   "dialog_level_is_base"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "game_loop_run"
+  ]
+ },
+ {
+  "addr": "0x0046F540",
+  "len": 257,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "wredit_ai_menu"
+  ]
+ },
+ {
+  "addr": "0x00413880",
+  "len": 257,
+  "n_ncal": 0,
+  "ncal": [],
+  "n_clr": 1,
+  "clr": [
+   "ai_chase_location__FP6OBJECTP3P3DUi"
+  ]
+ },
+ {
+  "addr": "0x0048E430",
+  "len": 2029,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x00401FE0",
+  "len": 2046,
+  "n_ncal": 2,
+  "ncal": [
+   "distancesq2d__FP3P3DT0",
+   "diff_angle"
+  ],
+  "n_clr": 3,
+  "clr": [
+   "ai_goal_skip_locked_b",
+   "ai_goal_skip_locked_a",
+   "ai_goal_process"
+  ]
+ },
+ {
+  "addr": "0x004043A0",
+  "len": 358,
+  "n_ncal": 1,
+  "ncal": [
+   "collgrid_collision_test"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "status_hud_render"
+  ]
+ },
+ {
+  "addr": "0x00452090",
+  "len": 221,
+  "n_ncal": 1,
+  "ncal": [
+   "drawwrld_scene_link"
+  ],
+  "n_clr": 1,
+  "clr": [
+   "menu_audio_setup"
+  ]
+ },
+ {
+  "addr": "0x00487B70",
+  "len": 2106,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ },
+ {
+  "addr": "0x0048D4B0",
+  "len": 2017,
+  "n_ncal": 11,
+  "ncal": [
+   "camera_override_refpt",
+   "dlog_push_level",
+   "dialog_level_set_textentry_mode",
+   "dialog_level_pop",
+   "FLK_FlickPlaying",
+   "main_fx_004470b0"
+  ],
+  "n_clr": 0,
+  "clr": []
+ }
+]
