@@ -895,7 +895,7 @@ void fx_weather_system(void)
 
       GEO_MatIdentity(auStack_44);
 
-      FUN_005162b0(auStack_40);
+      view_matrix_reset(auStack_40);
 
       render_scene_begin();
 
@@ -1148,7 +1148,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     FUN_00516220(auStack_50);
 
-    FUN_005162b0(auStack_40);
+    view_matrix_reset(auStack_40);
 
     render_projection_set((float)fVar6,fVar10,1);
 
@@ -2473,7 +2473,7 @@ void dlog_text_pop_screen(int param_1)
 
   FNT_StringRender__FPcP14FNT_RenderInfo(DAT_0059dc28,DAT_0059dc2c);
 
-  FUN_005162b0(&DAT_0059dc40);
+  view_matrix_reset(&DAT_0059dc40);
 
   render_projection_set(DAT_0059dc20,DAT_0059dc24,1);
 

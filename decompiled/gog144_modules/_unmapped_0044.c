@@ -3508,7 +3508,7 @@ undefined4 FLK_FlickRender(int param_1)
 
   FUN_0053d970(auStack_c8,uVar5);
 
-  FUN_005162b0(auStack_c4);
+  view_matrix_reset(auStack_c4);
 
   puVar6 = (undefined4 *)XFGetCameraOrigin();
 
@@ -3854,7 +3854,7 @@ undefined4 FLK_FlickRender(int param_1)
 
             FUN_0053d970(auStack_148,auStack_44);
 
-            FUN_005162b0(auStack_144);
+            view_matrix_reset(auStack_144);
 
             render_scene_begin();
 
@@ -3962,7 +3962,7 @@ LAB_00444d25:
 
   XFSetViewportRegion(0,fStack_1f4 - fVar2,local_1f8 + local_1f8,fVar2 + fVar2);
 
-  FUN_005162b0(auStack_c4);
+  view_matrix_reset(auStack_c4);
 
   fVar14 = (float10)FUN_0053be80(*(undefined4 *)(param_1 + 0xb4),uVar4);
 
@@ -4136,7 +4136,7 @@ LAB_00444d25:
 
   if (DAT_00632c0c != 0) {
 
-    FUN_005162b0();
+    view_matrix_reset();
 
     xfmat_mult_a();
 

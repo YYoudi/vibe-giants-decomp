@@ -5205,7 +5205,7 @@ void dlog_pop_user(void)
 
   camera_override_done();
 
-  FUN_005162b0(&DAT_00584330);
+  view_matrix_reset(&DAT_00584330);
 
   render_projection_set(DAT_00584370,DAT_00584328,1);
 

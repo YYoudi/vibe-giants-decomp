@@ -10352,7 +10352,7 @@ void ref_anode_user(void)
 
       if (DAT_005550ec != 0) {
 
-        FUN_005162b0(&DAT_005550f4);
+        view_matrix_reset(&DAT_005550f4);
 
         return;
 
@@ -10402,7 +10402,7 @@ void ref_anode_user(void)
 
       if (DAT_005550ec != 0) {
 
-        FUN_005162b0(&DAT_005550f4);
+        view_matrix_reset(&DAT_005550f4);
 
         return;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (139 named) — decompiled, names from PS2 symbols
+ * 186 functions (142 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5208,12 +5208,12 @@ float10 Dot__FP3P3DT0(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_005162b0 @ 0x005162B0 ===== */
+/* ===== view_matrix_reset @ 0x005162B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_005162b0(undefined4 *param_1)
+void view_matrix_reset(undefined4 *param_1)
 
 
 
@@ -12484,8 +12484,8 @@ bool dialog_level_is_base_3(void)
 
 }
 
-/* ===== FUN_0051c660 @ 0x0051C660 ===== */
-void FUN_0051c660(int param_1)
+/* ===== audio_music_mode_gate @ 0x0051C660 ===== */
+void audio_music_mode_gate(int param_1)
 
 
 
@@ -12693,8 +12693,8 @@ undefined4 FUN_0051c7e0(void)
 
 }
 
-/* ===== FUN_0051c810 @ 0x0051C810 ===== */
-void FUN_0051c810(int param_1)
+/* ===== audio_music_mode_gate_2 @ 0x0051C810 ===== */
+void audio_music_mode_gate_2(int param_1)
 
 
 

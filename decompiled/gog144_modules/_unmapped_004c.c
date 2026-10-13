@@ -7762,7 +7762,7 @@ LAB_004ccbc0:
 
         if (iVar6 < 0) {
 
-          FUN_005162b0(&DAT_005a6c44);
+          view_matrix_reset(&DAT_005a6c44);
 
           render_projection_set(0x42700000,(float)piStack_244 / fStack_238,0);
 
@@ -7872,7 +7872,7 @@ LAB_004ccbc0:
 
   FUN_00516220(&fStack_1e4);
 
-  FUN_005162b0(auStack_10c);
+  view_matrix_reset(auStack_10c);
 
   FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_1c0,puStack_1c8);
 
@@ -8515,7 +8515,7 @@ undefined4 dev_debug_flags(void)
 
           GEO_MatIdentity();
 
-          FUN_005162b0(auStack_16c);
+          view_matrix_reset(auStack_16c);
 
           xfmat_mult_b();
 
@@ -8561,7 +8561,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_00516220(local_1e0,iVar5,uVar13);
 
-    FUN_005162b0();
+    view_matrix_reset();
 
     render_projection_set(local_210,local_1e4,1);
 

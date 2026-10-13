@@ -2321,7 +2321,7 @@ void game_options_verify(void)
 
       }
 
-      FUN_0051c810(uVar3);
+      audio_music_mode_gate_2(uVar3);
 
       FUN_0051c770((_DAT_0059eeb4 & 2) != 0);
 
@@ -2357,7 +2357,7 @@ void game_options_verify(void)
 
       }
 
-      FUN_0051c660(uVar3);
+      audio_music_mode_gate(uVar3);
 
       if ((_DAT_0059eeb4 & 0x800) == 0) {
 
@@ -2423,7 +2423,7 @@ void game_options_verify(void)
 
   else if (DAT_00656420 != 0) {
 
-    FUN_0051c810(0);
+    audio_music_mode_gate_2(0);
 
     FUN_0051c770(0);
 
@@ -2437,7 +2437,7 @@ void game_options_verify(void)
 
     FUN_0051c8a0(0);
 
-    FUN_0051c660(0);
+    audio_music_mode_gate(0);
 
     DAT_00633150 = 0;
 
@@ -9914,7 +9914,7 @@ void dialog_0048ca10(void)
 
     }
 
-    FUN_0051c810(iVar3);
+    audio_music_mode_gate_2(iVar3);
 
     break;
 
@@ -9932,7 +9932,7 @@ void dialog_0048ca10(void)
 
     }
 
-    FUN_0051c660(iVar3);
+    audio_music_mode_gate(iVar3);
 
     break;
 

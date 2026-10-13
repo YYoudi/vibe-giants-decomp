@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (277 named) — decompiled, names from PS2 symbols
+ * 351 functions (279 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -2584,7 +2584,7 @@ void crt_printf_hooks_init(void)
 
   PTR_FUN_0054D5A8_00581390 = __fassign;
 
-  PTR_FUN_0054D5A8_00581394 = FUN_00545d44;
+  PTR_FUN_0054D5A8_00581394 = crt_strtol_scan;
 
   PTR_FUN_0054D5A8_00581398 = &LAB_00545dec;
 
@@ -6597,14 +6597,14 @@ undefined4 FUN_00544a37(int param_1,undefined4 param_2,int param_3)
 
   }
 
-  FUN_00544a64(param_1,param_2,param_3,uVar1);
+  crt_ulltoa(param_1,param_2,param_3,uVar1);
 
   return param_2;
 
 }
 
-/* ===== FUN_00544a64 @ 0x00544A64 ===== */
-void FUN_00544a64(uint param_1,char *param_2,uint param_3,int param_4)
+/* ===== crt_ulltoa @ 0x00544A64 ===== */
+void crt_ulltoa(uint param_1,char *param_2,uint param_3,int param_4)
 
 
 
@@ -9217,8 +9217,8 @@ void crt_cpu_features_check(void)
 
 }
 
-/* ===== FUN_00545d44 @ 0x00545D44 ===== */
-void FUN_00545d44(char *param_1)
+/* ===== crt_strtol_scan @ 0x00545D44 ===== */
+void crt_strtol_scan(char *param_1)
 
 
 
