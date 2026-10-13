@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (40 named) — decompiled, names from PS2 symbols
+ * 145 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1504,10 +1504,10 @@ LAB_004521d9:
 
 }
 
-/* ===== FUN_00452200 @ 0x00452200 ===== */
-void FUN_00452200(short *param_1,float *param_2,int param_3,int param_4,float param_5,float param_6,
+/* ===== fx_arc_math @ 0x00452200 ===== */
+void fx_arc_math(short *param_1,float *param_2,int param_3,int param_4,float param_5,float param_6,
 
-                 int param_7,float param_8,float param_9)
+                int param_7,float param_8,float param_9)
 
 
 
@@ -4304,8 +4304,8 @@ float10 FUN_00455600(float param_1)
 
 }
 
-/* ===== FUN_00455630 @ 0x00455630 ===== */
-int FUN_00455630(float *param_1,float param_2,float *param_3,float *param_4,undefined4 param_5,
+/* ===== fx_shape_gen @ 0x00455630 ===== */
+int fx_shape_gen(float *param_1,float param_2,float *param_3,float *param_4,undefined4 param_5,
 
                 float *param_6)
 
@@ -4510,7 +4510,7 @@ void FUN_00455890(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   local_14 = -(local_34 * local_24);
 
-  FUN_00455630(param_1,param_2,local_c,&local_18,local_c,param_3);
+  fx_shape_gen(param_1,param_2,local_c,&local_18,local_c,param_3);
 
   return;
 

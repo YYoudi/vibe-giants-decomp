@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23292
+  "len": 23304
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -3000,9 +3000,9 @@
   "len": 1314
  },
  "0x00452200": {
-  "name": "FUN_00452200",
-  "named": false,
-  "len": 4507
+  "name": "fx_arc_math",
+  "named": true,
+  "len": 4505
  },
  "0x00452490": {
   "name": "FUN_00452490",
@@ -3100,8 +3100,8 @@
   "len": 212
  },
  "0x00455630": {
-  "name": "FUN_00455630",
-  "named": false,
+  "name": "fx_shape_gen",
+  "named": true,
   "len": 2452
  },
  "0x00455890": {
@@ -3652,7 +3652,7 @@
  "0x00467270": {
   "name": "FUN_00467270",
   "named": false,
-  "len": 3514
+  "len": 3512
  },
  "0x00467510": {
   "name": "FUN_00467510",
@@ -3845,14 +3845,14 @@
   "len": 1842
  },
  "0x0046FF90": {
-  "name": "FUN_0046ff90",
-  "named": false,
-  "len": 3421
+  "name": "obj_ai_recognize",
+  "named": true,
+  "len": 3425
  },
  "0x00470220": {
   "name": "FUN_00470220",
   "named": false,
-  "len": 349
+  "len": 353
  },
  "0x00470250": {
   "name": "main_linkage_00470250",
@@ -4520,9 +4520,9 @@
   "len": 4257
  },
  "0x0048AB30": {
-  "name": "FUN_0048ab30",
-  "named": false,
-  "len": 3893
+  "name": "menu_slot_layout",
+  "named": true,
+  "len": 3897
  },
  "0x0048ADB0": {
   "name": "mission_state_dispatch",

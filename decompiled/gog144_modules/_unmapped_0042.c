@@ -16231,7 +16231,7 @@ LAB_0042cb13:
 
                     FUN_0046fe30(iStack_10c,auStack_84);
 
-                    FUN_0046ff90(iVar8,0);
+                    obj_ai_recognize(iVar8,0);
 
                   }
 
@@ -16327,7 +16327,7 @@ LAB_0042cb13:
 
                     FUN_0046fe30(iVar8,&DAT_0059ac8c);
 
-                    FUN_0046ff90(iVar8,0);
+                    obj_ai_recognize(iVar8,0);
 
                   }
 
@@ -16597,7 +16597,7 @@ LAB_0042d3f8:
 
       FUN_0046fe30(DAT_006330b4,auStack_84);
 
-      FUN_0046ff90(DAT_006330b4,0);
+      obj_ai_recognize(DAT_006330b4,0);
 
     }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (13 named) — decompiled, names from PS2 symbols
+ * 53 functions (14 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -4883,12 +4883,12 @@ LAB_0046fee0:
 
 }
 
-/* ===== FUN_0046ff90 @ 0x0046FF90 ===== */
+/* ===== obj_ai_recognize @ 0x0046FF90 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0046ff90(uint param_1,int param_2)
+void obj_ai_recognize(uint param_1,int param_2)
 
 
 

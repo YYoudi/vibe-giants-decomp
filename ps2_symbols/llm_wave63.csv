@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0046ff90,FUN_0046FF90,,obj_ai_recognize,0.9,llm-read34,
+00452200,FUN_00452200,,fx_arc_math,0.9,llm-read34,
+0048ab30,FUN_0048AB30,,menu_slot_layout,0.9,llm-read34,
+00455630,FUN_00455630,,fx_shape_gen,0.9,llm-read34,

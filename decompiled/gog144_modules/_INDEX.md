@@ -6,7 +6,7 @@
 | _unmapped_0051 | 186 | 68 | _unmapped_0051.c |
 | _unmapped_0053 | 179 | 67 | _unmapped_0053.c |
 | _unmapped_0052 | 162 | 85 | _unmapped_0052.c |
-| _unmapped_0045 | 145 | 40 | _unmapped_0045.c |
+| _unmapped_0045 | 145 | 42 | _unmapped_0045.c |
 | _unmapped_0049 | 142 | 48 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 38 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 74 | _unmapped_0042.c |
@@ -17,10 +17,10 @@
 | _unmapped_0050 | 87 | 26 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 37 | _unmapped_0044.c |
 | _unmapped_0043 | 74 | 57 | _unmapped_0043.c |
-| _unmapped_0048 | 74 | 28 | _unmapped_0048.c |
+| _unmapped_0048 | 74 | 29 | _unmapped_0048.c |
 | _unmapped_0047 | 67 | 27 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 27 | _unmapped_004c.c |
-| _unmapped_0046 | 53 | 13 | _unmapped_0046.c |
+| _unmapped_0046 | 53 | 14 | _unmapped_0046.c |
 | _unmapped_004f | 48 | 12 | _unmapped_004f.c |
 | _unmapped_004d | 39 | 11 | _unmapped_004d.c |
 | main/dlog | 19 | 19 | main_dlog.c |

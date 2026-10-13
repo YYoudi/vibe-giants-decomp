@@ -22,7 +22,7 @@ void FUN_00470220(undefined4 param_1)
 
     if (*(int *)(puVar1[3] + 0x1e0) == 0x5c) {
 
-      FUN_0046ff90(puVar1[3],param_1);
+      obj_ai_recognize(puVar1[3],param_1);
 
     }
 
