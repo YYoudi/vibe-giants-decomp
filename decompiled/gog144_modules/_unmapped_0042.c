@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (79 named) — decompiled, names from PS2 symbols
+ * 129 functions (80 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -13481,7 +13481,7 @@ void dlog_alpha_quad_build(float *param_1,float *param_2)
 
       if ((DAT_0059ac78 & 8) != 0) {
 
-        FUN_0042ab70(pfVar7,pfVar10);
+        dlog_alpha8_copy(pfVar7,pfVar10);
 
         pfVar9 = pfVar10;
 
@@ -13682,8 +13682,8 @@ LAB_0042ab3d:
 
 }
 
-/* ===== FUN_0042ab70 @ 0x0042AB70 ===== */
-void FUN_0042ab70(undefined4 *param_1,undefined4 *param_2)
+/* ===== dlog_alpha8_copy @ 0x0042AB70 ===== */
+void dlog_alpha8_copy(undefined4 *param_1,undefined4 *param_2)
 
 
 
@@ -17689,7 +17689,7 @@ void FUN_0042e260(int param_1,int param_2)
 
   
 
-  (*(code *)PTR_FUN_00580c18)
+  (*(code *)PTR_crt_matrix_mul_00580c18)
 
             (local_88,param_1 + 0x294,(param_2 + 5) * 0x44 + *(int *)(param_1 + 0x2dc));
 
@@ -18138,13 +18138,13 @@ void rp_spark_hud_setup(int param_1)
 
     FUN_0053dd90(local_cc,_DAT_0059acb4 * 6.2831855);
 
-    (*(code *)PTR_FUN_00580c18)(auStack_88,local_44,local_cc);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_88,local_44,local_cc);
 
     FUN_004360d0(auStack_88,&local_e4);
 
     FUN_0053dd90(local_cc,_DAT_0059acb4 * -6.2831855);
 
-    (*(code *)PTR_FUN_00580c18)(auStack_88,local_44,local_cc);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_88,local_44,local_cc);
 
     FUN_004360d0(auStack_88,&local_e4);
 
@@ -18497,7 +18497,7 @@ void FUN_0042ec90(float *param_1,float param_2,float param_3)
 
   } while (iVar2 < 0x20);
 
-  FUN_00516d80(8,afStack_1c0);
+  verts_transform(8,afStack_1c0);
 
   pbVar4 = &DAT_005566cd;
 
@@ -18628,7 +18628,7 @@ void FUN_0042ed90(float *param_1,float param_2,undefined4 param_3)
 
     afStack_70[1] = fVar7;
 
-    FUN_00516d80(2,afStack_70);
+    verts_transform(2,afStack_70);
 
     uStack_14 = 0x3d4ccccd;
 
@@ -18817,7 +18817,7 @@ void dlog_alpha_big_render(void)
 
         } while (iVar4 != 0);
 
-        FUN_00516d80(2,auStack_268);
+        verts_transform(2,auStack_268);
 
         uStack_20c = 0x3d4ccccd;
 
@@ -18887,7 +18887,7 @@ void dlog_alpha_big_render(void)
 
         } while (iVar5 != 0);
 
-        FUN_00516d80(3,auStack_268);
+        verts_transform(3,auStack_268);
 
         status_bar_update3(auStack_268,&uStack_230,&uStack_1f8);
 
@@ -19003,7 +19003,7 @@ void dlog_alpha_big_render(void)
 
         } while ((int)uVar6 < 8);
 
-        FUN_00516d80(8,auStack_1c0);
+        verts_transform(8,auStack_1c0);
 
         pbVar11 = &DAT_005566cd;
 

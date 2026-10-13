@@ -1401,7 +1401,7 @@ ref_get_anode2(undefined4 param_1,float *param_2,int param_3,int param_4,int par
 
   }
 
-  (*(code *)PTR_FUN_00580c18)(local_88,param_3 + 0x294,iVar4);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,param_3 + 0x294,iVar4);
 
   uVar3 = 1;
 
@@ -1837,7 +1837,7 @@ LAB_00403c86:
 
         iVar6 = iVar6 * 0x44 + *(int *)(param_1 + 0x2dc);
 
-        (*(code *)PTR_FUN_00580c18)(iVar6,iVar6,piVar8 + 1);
+        (*(code *)PTR_crt_matrix_mul_00580c18)(iVar6,iVar6,piVar8 + 1);
 
       }
 

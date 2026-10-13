@@ -1787,7 +1787,7 @@ void makewrld_big(void)
 
       uStack_154 = 7;
 
-      (*(code *)PTR_FUN_00580c18)(auStack_110,&uStack_154,auStack_cc);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
       FUN_0053d970(&DAT_00656980 + iVar6,auStack_110);
 
@@ -1799,7 +1799,7 @@ void makewrld_big(void)
 
       uStack_154 = 7;
 
-      (*(code *)PTR_FUN_00580c18)(auStack_110,&uStack_154,auStack_cc);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
       FUN_0053d970(&DAT_00657080 + iVar6,auStack_110);
 
@@ -1811,7 +1811,7 @@ void makewrld_big(void)
 
       uStack_154 = 7;
 
-      (*(code *)PTR_FUN_00580c18)(auStack_110,&uStack_154,auStack_cc);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
       FUN_0053d970(&DAT_00656dc0 + iVar6,auStack_110);
 
@@ -1823,7 +1823,7 @@ void makewrld_big(void)
 
       uStack_154 = 7;
 
-      (*(code *)PTR_FUN_00580c18)(auStack_110,&uStack_154,auStack_cc);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
       FUN_0053d970(&DAT_00656700 + iVar6,auStack_110);
 
@@ -1839,7 +1839,7 @@ void makewrld_big(void)
 
       uStack_154 = 7;
 
-      (*(code *)PTR_FUN_00580c18)(auStack_110,&uStack_154,auStack_cc);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
       FUN_0053d970(&DAT_00656560,auStack_110);
 
@@ -3286,7 +3286,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   FUN_0053dc10(auStack_e4,&fStack_18c);
 
-  (*(code *)PTR_FUN_00580c18)(pbVar1,auStack_e4,pbVar1);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(pbVar1,auStack_e4,pbVar1);
 
   fStack_180 = 1.0 / (param_3[3] - *param_3);
 
@@ -3296,7 +3296,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   FUN_0053dca0(auStack_e4,&fStack_180);
 
-  (*(code *)PTR_FUN_00580c18)(pbVar1,auStack_e4,pbVar1);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(pbVar1,auStack_e4,pbVar1);
 
   fStack_174 = *param_3;
 

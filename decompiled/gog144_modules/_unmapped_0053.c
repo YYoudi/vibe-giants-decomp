@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (70 named) — decompiled, names from PS2 symbols
+ * 179 functions (71 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -15699,7 +15699,7 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 
     FUN_0053dfd0(puVar1,uVar4);
 
-    (*(code *)PTR_FUN_00580c18)(puVar2,puVar1,puVar6);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(puVar2,puVar1,puVar6);
 
     puVar3 = puVar2;
 
@@ -15794,7 +15794,7 @@ int FUN_0053cb50(int param_1,undefined4 param_2,int param_3)
 
           FUN_0053dfd0(local_c4,puVar1);
 
-          (*(code *)PTR_FUN_00580c18)(param_1 + 0x24,iVar2 + 0x24,local_c4);
+          (*(code *)PTR_crt_matrix_mul_00580c18)(param_1 + 0x24,iVar2 + 0x24,local_c4);
 
         }
 
@@ -16053,7 +16053,7 @@ LAB_0053cd8a:
 
         FUN_0053dfd0(auStack_344,puVar3);
 
-        (*(code *)PTR_FUN_00580c18)(iVar5 + 0x24,iVar1 + 0x24,auStack_344);
+        (*(code *)PTR_crt_matrix_mul_00580c18)(iVar5 + 0x24,iVar1 + 0x24,auStack_344);
 
       }
 
@@ -17255,8 +17255,8 @@ void FUN_0053d9e0(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0053da00 @ 0x0053DA00 ===== */
-void FUN_0053da00(float *param_1,float *param_2,float *param_3)
+/* ===== crt_matrix_mul @ 0x0053DA00 ===== */
+void crt_matrix_mul(float *param_1,float *param_2,float *param_3)
 
 
 
@@ -18413,7 +18413,7 @@ void FUN_0053e410(undefined4 param_1)
 
 {
 
-  (*(code *)PTR_FUN_00580c18)(&DAT_005f0198,&DAT_005f0198,param_1);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(&DAT_005f0198,&DAT_005f0198,param_1);
 
   return;
 
@@ -18432,7 +18432,7 @@ void FUN_0053e430(undefined4 param_1)
 
   FUN_0053dc10(local_44,param_1);
 
-  (*(code *)PTR_FUN_00580c18)(&DAT_005f0198,&DAT_005f0198,local_44);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(&DAT_005f0198,&DAT_005f0198,local_44);
 
   return;
 

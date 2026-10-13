@@ -1901,7 +1901,7 @@ void FUN_004a26f0(int param_1,float param_2,float param_3,undefined4 param_4,und
 
       FUN_0053deb0(local_44,local_98);
 
-      (*(code *)PTR_FUN_00580c18)(local_88,local_44,param_1 + 0x294);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_44,param_1 + 0x294);
 
     }
 
@@ -2318,7 +2318,7 @@ void FUN_004a2c50(undefined4 param_1,int param_2,float param_3)
 
     FUN_0053dc10(local_44,&local_a0);
 
-    (*(code *)PTR_FUN_00580c18)(param_1,local_44,local_88);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(param_1,local_44,local_88);
 
   }
 
@@ -2584,7 +2584,7 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
     FUN_0053dc10(afStack_228,&fStack_258);
 
-    (*(code *)PTR_FUN_00580c18)(auStack_154,afStack_228,afStack_29c);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_154,afStack_228,afStack_29c);
 
   }
 
@@ -2592,9 +2592,9 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
   FUN_0053d970(auStack_110,auStack_cc);
 
-  (*(code *)PTR_FUN_00580c18)(auStack_1e4,auStack_cc,param_2 + 0x294);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_1e4,auStack_cc,param_2 + 0x294);
 
-  (*(code *)PTR_FUN_00580c18)(auStack_198,local_88,auStack_154);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_198,local_88,auStack_154);
 
   FUN_0053d970(auStack_44,auStack_198);
 
@@ -6919,7 +6919,9 @@ float10 FUN_004a7630(int param_1,int param_2)
 
   
 
-  (*(code *)PTR_FUN_00580c18)(local_44,param_1 + 0x294,param_2 * 0x44 + *(int *)(param_1 + 0x2dc));
+  (*(code *)PTR_crt_matrix_mul_00580c18)
+
+            (local_44,param_1 + 0x294,param_2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
   if ((-(float10)fStack_3c == (float10)0.0) && (-(float10)fStack_2c == (float10)0.0)) {
 
@@ -9578,7 +9580,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     FUN_0053dd40(local_88,0xbfc90fdb);
 
-    (*(code *)PTR_FUN_00580c18)(local_100,local_44,local_88);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_100,local_44,local_88);
 
     FUN_00499310(iVar2,uStack_f0,uStack_e0,uStack_d0);
 
@@ -10647,9 +10649,9 @@ void FUN_004ac4b0(int param_1,float *param_2,int param_3,float param_4,float par
 
     FUN_0053dbb0(local_44,local_110,param_1 + 0x294);
 
-    (*(code *)PTR_FUN_00580c18)(local_cc,local_88,local_110);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_cc,local_88,local_110);
 
-    (*(code *)PTR_FUN_00580c18)(param_1 + 0x294,local_44,local_cc);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(param_1 + 0x294,local_44,local_cc);
 
     return;
 
@@ -10744,9 +10746,9 @@ void FUN_004ac620(int param_1,float *param_2,float param_3)
 
   FUN_0053deb0(local_cc,local_120);
 
-  (*(code *)PTR_FUN_00580c18)(local_88,local_cc,local_110);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_cc,local_110);
 
-  (*(code *)PTR_FUN_00580c18)(param_1 + 0x294,local_44,local_88);
+  (*(code *)PTR_crt_matrix_mul_00580c18)(param_1 + 0x294,local_44,local_88);
 
   return;
 
@@ -12812,7 +12814,7 @@ LAB_004aed0a:
 
                 (*(code *)PTR_crt_matrix_copy_init_00580c1c)();
 
-                (*(code *)PTR_FUN_00580c18)();
+                (*(code *)PTR_crt_matrix_mul_00580c18)();
 
                 *(undefined4 *)(puVar10[0x117] + uStack00000008) = uVar11;
 

@@ -4062,7 +4062,9 @@ void reaper_spell_sound_2(int param_1,int param_2,undefined4 param_3)
 
   if (*(int *)(param_1 + 0x274) != 0) {
 
-    (*(code *)PTR_FUN_00580c18)(local_44,param_1 + 0x294,*(int *)(param_1 + 0x2dc) + 0x88);
+    (*(code *)PTR_crt_matrix_mul_00580c18)
+
+              (local_44,param_1 + 0x294,*(int *)(param_1 + 0x2dc) + 0x88);
 
     FUN_004a76e0(param_1,2,&uStack_50);
 

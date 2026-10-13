@@ -2470,7 +2470,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
       uVar2 = FUN_0053cb50(param_2[0x1de],uVar2,piVar1[6]);
 
-      (*(code *)PTR_FUN_00580c18)(local_88,local_88,uVar2);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_88,uVar2);
 
     }
 
@@ -2478,7 +2478,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
   if (param_2[0x1f6] != 0) {
 
-    (*(code *)PTR_FUN_00580c18)(local_88,local_88,param_2 + 0x1f7);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_88,param_2 + 0x1f7);
 
   }
 
@@ -2494,7 +2494,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
     FUN_0053dc50(auStack_44,fStack_8c);
 
-    (*(code *)PTR_FUN_00580c18)(local_88,local_88,auStack_44);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_88,auStack_44);
 
   }
 
@@ -2512,7 +2512,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
     (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,uVar2);
 
-    (*(code *)PTR_FUN_00580c18)(local_88,local_88,auStack_44);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_88,auStack_44);
 
   }
 
@@ -2887,7 +2887,7 @@ hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int p
 
           uVar3 = FUN_0053cb50(*(undefined4 *)(iVar5 + 0x308),uVar3,piVar2[6]);
 
-          (*(code *)PTR_FUN_00580c18)(iVar6,iVar6,uVar3);
+          (*(code *)PTR_crt_matrix_mul_00580c18)(iVar6,iVar6,uVar3);
 
         }
 
@@ -3642,7 +3642,7 @@ undefined4 FUN_004444c0(int param_1)
 
           uVar5 = FUN_0053cb50(piVar8[1]);
 
-          (*(code *)PTR_FUN_00580c18)(piVar9,piVar9,uVar5);
+          (*(code *)PTR_crt_matrix_mul_00580c18)(piVar9,piVar9,uVar5);
 
         }
 
@@ -3694,7 +3694,7 @@ undefined4 FUN_004444c0(int param_1)
 
           uVar5 = FUN_0053cb50(piVar9[0x1db],uVar5);
 
-          (*(code *)PTR_FUN_00580c18)(aiStack_1d4,piVar11,uVar5);
+          (*(code *)PTR_crt_matrix_mul_00580c18)(aiStack_1d4,piVar11,uVar5);
 
           piVar11 = aiStack_1d4;
 
@@ -8578,9 +8578,9 @@ void fx_orient_ground(int param_1,float param_2)
 
     FUN_0053deb0(local_2cc,local_320);
 
-    (*(code *)PTR_FUN_00580c18)(local_244,local_2cc,local_310);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_244,local_2cc,local_310);
 
-    (*(code *)PTR_FUN_00580c18)(*(int *)(param_1 + 4) + 0x294,local_288,local_244);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(*(int *)(param_1 + 4) + 0x294,local_288,local_244);
 
     FUN_00499310(*(undefined4 *)(param_1 + 4),fVar3,fVar2,local_338 + param_2);
 

@@ -1372,11 +1372,11 @@ void FUN_00467510(int param_1)
 
     FUN_0053dd90(local_110,(float)fVar10);
 
-    (*(code *)PTR_FUN_00580c18)(local_154,local_154,local_110);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_154,local_154,local_110);
 
     FUN_0053dde0(auStack_88,param_1 + 0x2c,param_1 + 0x38,&local_178);
 
-    (*(code *)PTR_FUN_00580c18)(auStack_cc,auStack_88,local_154);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_cc,auStack_88,local_154);
 
     FUN_0053d970(auStack_44,auStack_cc);
 
@@ -3752,7 +3752,7 @@ int object_0046e830(int param_1,int param_2)
 
   else {
 
-    (*(code *)PTR_FUN_00580c18)
+    (*(code *)PTR_crt_matrix_mul_00580c18)
 
               (iVar2 + 0x294,iVar3 + 0x294,
 
@@ -4012,7 +4012,7 @@ void FUN_0046f050(int param_1)
 
                      ) * 0.017453292);
 
-        (*(code *)PTR_FUN_00580c18)(local_cc,local_110,local_88);
+        (*(code *)PTR_crt_matrix_mul_00580c18)(local_cc,local_110,local_88);
 
         local_170 = -local_170;
 
@@ -4022,7 +4022,7 @@ void FUN_0046f050(int param_1)
 
         FUN_0053dc10(auStack_44,&local_170);
 
-        (*(code *)PTR_FUN_00580c18)(auStack_154,auStack_44,local_cc);
+        (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_154,auStack_44,local_cc);
 
         *pfVar1 = fStack_144 + *pfVar1;
 

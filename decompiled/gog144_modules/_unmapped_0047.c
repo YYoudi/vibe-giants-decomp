@@ -344,7 +344,9 @@ void object_lock_logic(int param_1)
 
       }
 
-      (*(code *)PTR_FUN_00580c18)(local_1cc,iVar3 + 0x294,iVar2 * 0x44 + *(int *)(iVar3 + 0x2dc));
+      (*(code *)PTR_crt_matrix_mul_00580c18)
+
+                (local_1cc,iVar3 + 0x294,iVar2 * 0x44 + *(int *)(iVar3 + 0x2dc));
 
     }
 
@@ -358,7 +360,7 @@ void object_lock_logic(int param_1)
 
     FUN_0053dc50(local_188,local_1d0);
 
-    (*(code *)PTR_FUN_00580c18)(local_1cc,local_1cc,local_188);
+    (*(code *)PTR_crt_matrix_mul_00580c18)(local_1cc,local_1cc,local_188);
 
     if ((char)((uint)*(undefined4 *)(param_1 + 0xdc) >> 8) < '\0') {
 
@@ -398,7 +400,7 @@ void object_lock_logic(int param_1)
 
                   (local_188,iVar2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
-        (*(code *)PTR_FUN_00580c18)(auStack_144,local_1cc,local_188);
+        (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_144,local_1cc,local_188);
 
         *(undefined4 *)(param_1 + 0x2a4) = uStack_134;
 
@@ -456,7 +458,7 @@ LAB_00470793:
 
                   (local_188,iVar2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
-        (*(code *)PTR_FUN_00580c18)(param_1 + 0x294,local_1cc,local_188);
+        (*(code *)PTR_crt_matrix_mul_00580c18)(param_1 + 0x294,local_1cc,local_188);
 
       }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (44 named) — decompiled, names from PS2 symbols
+ * 100 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2033,7 +2033,7 @@ LAB_004135eb:
 
     else {
 
-      FUN_00413c90(param_1,&local_50);
+      obj_ground_normal(param_1,&local_50);
 
     }
 
@@ -2045,7 +2045,7 @@ LAB_004135eb:
 
       if (!bVar3) {
 
-        FUN_00413c90(param_1,local_34);
+        obj_ground_normal(param_1,local_34);
 
         goto LAB_00413703;
 
@@ -2474,8 +2474,8 @@ void FUN_00413b70(float param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00413c90 @ 0x00413C90 ===== */
-void FUN_00413c90(int param_1)
+/* ===== obj_ground_normal @ 0x00413C90 ===== */
+void obj_ground_normal(int param_1)
 
 
 
@@ -6792,7 +6792,7 @@ void FUN_00418630(int param_1,int param_2,undefined4 *param_3)
 
     else {
 
-      (*(code *)PTR_FUN_00580c18)
+      (*(code *)PTR_crt_matrix_mul_00580c18)
 
                 (local_44,param_1 + 0x294,param_2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
@@ -6867,7 +6867,7 @@ void FUN_004186c0(int param_1,int param_2,undefined4 *param_3,float *param_4)
 
     else {
 
-      (*(code *)PTR_FUN_00580c18)
+      (*(code *)PTR_crt_matrix_mul_00580c18)
 
                 (local_44,param_1 + 0x294,param_2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
@@ -6936,7 +6936,7 @@ void FUN_00418770(int param_1,int param_2,float *param_3)
 
     else {
 
-      (*(code *)PTR_FUN_00580c18)
+      (*(code *)PTR_crt_matrix_mul_00580c18)
 
                 (local_44,param_1 + 0x294,param_2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
@@ -6997,7 +6997,7 @@ void FUN_00418810(int param_1,int param_2,float *param_3,float *param_4)
 
     else {
 
-      (*(code *)PTR_FUN_00580c18)
+      (*(code *)PTR_crt_matrix_mul_00580c18)
 
                 (local_44,param_1 + 0x294,param_2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
@@ -7310,7 +7310,9 @@ undefined4 object_spawn_class5(int param_1,float param_2)
 
         else {
 
-          (*(code *)PTR_FUN_00580c18)(local_44,iVar3 + 0x294,*(int *)(iVar3 + 0x2dc) + 0x1dc);
+          (*(code *)PTR_crt_matrix_mul_00580c18)
+
+                    (local_44,iVar3 + 0x294,*(int *)(iVar3 + 0x2dc) + 0x1dc);
 
         }
 
@@ -8075,7 +8077,9 @@ void objtype_setup_spell(undefined4 param_1)
 
         else {
 
-          (*(code *)PTR_FUN_00580c18)(local_88,iVar1 + 0x294,*(int *)(iVar1 + 0x2dc) + 0x88);
+          (*(code *)PTR_crt_matrix_mul_00580c18)
+
+                    (local_88,iVar1 + 0x294,*(int *)(iVar1 + 0x2dc) + 0x88);
 
         }
 
@@ -8129,7 +8133,9 @@ void objtype_setup_spell(undefined4 param_1)
 
         else {
 
-          (*(code *)PTR_FUN_00580c18)(auStack_44,iVar1 + 0x294,*(int *)(iVar1 + 0x2dc) + 0x220);
+          (*(code *)PTR_crt_matrix_mul_00580c18)
+
+                    (auStack_44,iVar1 + 0x294,*(int *)(iVar1 + 0x2dc) + 0x220);
 
         }
 
@@ -8604,7 +8610,9 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
     else {
 
-      (*(code *)PTR_FUN_00580c18)(local_44,iVar4 + 0x294,*(int *)(iVar4 + 0x2dc) + 0x220);
+      (*(code *)PTR_crt_matrix_mul_00580c18)(local_44,iVar4 + 0x294,*(int *)(iVar4 + 0x2dc) + 0x220)
+
+      ;
 
     }
 
@@ -9120,7 +9128,9 @@ void objtype_setup_vimp(int param_1,int param_2)
 
       else {
 
-        (*(code *)PTR_FUN_00580c18)(local_44,iVar2 + 0x294,*(int *)(iVar2 + 0x2dc) + 0x198);
+        (*(code *)PTR_crt_matrix_mul_00580c18)
+
+                  (local_44,iVar2 + 0x294,*(int *)(iVar2 + 0x2dc) + 0x198);
 
       }
 

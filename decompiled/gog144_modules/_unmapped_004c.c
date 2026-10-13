@@ -229,7 +229,9 @@ void FUN_004c03a0(int param_1,undefined4 param_2)
 
         iVar4 = FUN_00456050(param_1);
 
-        (*(code *)PTR_FUN_00580c18)(local_44,iVar4 + 0x294,*(undefined4 *)(iVar4 + 0x2dc));
+        (*(code *)PTR_crt_matrix_mul_00580c18)
+
+                  (local_44,iVar4 + 0x294,*(undefined4 *)(iVar4 + 0x2dc));
 
         fStack_5c = -*(float *)(param_1 + 0x29c);
 
@@ -7780,9 +7782,9 @@ LAB_004ccbc0:
 
           FUN_0053dd90(auStack_44,DAT_005a84e0);
 
-          (*(code *)PTR_FUN_00580c18)(puVar8,auStack_cc,auStack_88);
+          (*(code *)PTR_crt_matrix_mul_00580c18)(puVar8,auStack_cc,auStack_88);
 
-          (*(code *)PTR_FUN_00580c18)(puVar8,auStack_44,puVar8);
+          (*(code *)PTR_crt_matrix_mul_00580c18)(puVar8,auStack_44,puVar8);
 
           *(uint *)(puVar8 + -0x1bc) = *(uint *)(puVar8 + -0x1bc) | 0x20;
 

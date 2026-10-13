@@ -762,7 +762,7 @@ void FUN_00540800(int param_1)
 
   PTR_crt_matrix_copy_init_00580c1c = (&PTR_crt_matrix_copy_init_00580d30)[param_1];
 
-  PTR_FUN_00580c18 = (&PTR_FUN_00580d3c)[param_1];
+  PTR_crt_matrix_mul_00580c18 = (&PTR_crt_matrix_mul_00580d3c)[param_1];
 
   PTR_FUN_00580c20 = (&PTR_FUN_00580d48)[param_1];
 

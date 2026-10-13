@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00516d80,FUN_00516D80,,verts_transform,0.9,llm-read48,
+00413c90,FUN_00413C90,,obj_ground_normal,0.9,llm-read48,
+0042ab70,FUN_0042AB70,,dlog_alpha8_copy,0.9,llm-read48,
+0053da00,FUN_0053DA00,,crt_matrix_mul,0.9,llm-read48,
