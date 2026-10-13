@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (43 named) — decompiled, names from PS2 symbols
+ * 90 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -5682,12 +5682,12 @@ switchD_004b8adc_caseD_3b:
 
 }
 
-/* ===== FUN_004b8c20 @ 0x004B8C20 ===== */
+/* ===== reaper_needs_other @ 0x004B8C20 ===== */
 /* PS2 candidate: reaper_needs_other (conf 0.803) */
 
 
 
-bool FUN_004b8c20(int param_1,int param_2,int param_3)
+bool reaper_needs_other(int param_1,int param_2,int param_3)
 
 
 

@@ -3860,7 +3860,7 @@ void FUN_004f9380(int param_1)
 
       if ((fVar4 != 0.0) && (*(int *)((int)fVar4 + 0x1e0) == 0x61)) {
 
-        FUN_004782d0(fVar4);
+        formation_notify_death(fVar4);
 
       }
 

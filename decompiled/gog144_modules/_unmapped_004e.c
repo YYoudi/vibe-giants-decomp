@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (40 named) — decompiled, names from PS2 symbols
+ * 94 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -11372,12 +11372,12 @@ void smoke_object_spawn(undefined4 param_1)
 
 }
 
-/* ===== FUN_004eecb0 @ 0x004EECB0 ===== */
+/* ===== calc_2pts_to_bbox__FP3P3DT0P4BBOX @ 0x004EECB0 ===== */
 /* PS2 candidate: calc_2pts_to_bbox__FP3P3DT0P4BBOX (conf 0.799) */
 
 
 
-void FUN_004eecb0(float *param_1,float *param_2,float *param_3)
+void calc_2pts_to_bbox__FP3P3DT0P4BBOX(float *param_1,float *param_2,float *param_3)
 
 
 
@@ -11713,7 +11713,7 @@ ai_class_filter(undefined4 param_1,undefined4 param_2,int param_3,int param_4,by
 
   }
 
-  FUN_004eecb0(param_1,param_2,local_18);
+  calc_2pts_to_bbox__FP3P3DT0P4BBOX(param_1,param_2,local_18);
 
   puVar1 = DAT_00632d7c;
 

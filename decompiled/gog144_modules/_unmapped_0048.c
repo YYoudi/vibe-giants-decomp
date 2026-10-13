@@ -2236,9 +2236,9 @@ void game_options_load(void)
 
     (**(code **)(DAT_00656420 + 0x6c))(DAT_00656420,auStack_10,auStack_20);
 
-    FUN_0051a190(s_VideoDevGuid_0055bde4,auStack_20,0x10);
+    reg_set_value(s_VideoDevGuid_0055bde4,auStack_20,0x10);
 
-    FUN_0051a190(s_VideoDrvGuid_0055bdd4,auStack_10,0x10);
+    reg_set_value(s_VideoDrvGuid_0055bdd4,auStack_10,0x10);
 
     comm_0051a130(s_GameOptionsVersion_0055bdc0,1);
 

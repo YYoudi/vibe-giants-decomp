@@ -8391,7 +8391,7 @@ void objtype_team_assign(int param_1)
 
         FUN_0045a740(iVar2 + 0x5d0,0x13,0xffffffff);
 
-        FUN_00409200(param_1);
+        meccbase_update_icons(param_1);
 
         return;
 
@@ -8399,7 +8399,7 @@ void objtype_team_assign(int param_1)
 
     }
 
-    FUN_00409200(param_1);
+    meccbase_update_icons(param_1);
 
     return;
 
@@ -8759,7 +8759,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
     }
 
-    FUN_00409200(param_1);
+    meccbase_update_icons(param_1);
 
   }
 
@@ -10533,7 +10533,7 @@ LAB_0041e5bd:
 
   else {
 
-    FUN_00409200();
+    meccbase_update_icons();
 
   }
 

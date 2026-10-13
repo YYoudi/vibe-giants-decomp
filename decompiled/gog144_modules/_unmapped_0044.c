@@ -3486,7 +3486,7 @@ undefined4 FLK_FlickRender(int param_1)
 
   local_1dc = (float)fVar14;
 
-  FUN_00516260();
+  XFGetViewport_2();
 
   FUN_005163e0(local_84);
 
@@ -6480,7 +6480,7 @@ void FUN_00446be0(undefined4 param_1,undefined4 param_2,float *param_3)
 
   
 
-  FUN_00516260(local_10);
+  XFGetViewport_2(local_10);
 
   fVar3 = (float10)textrender_draw_min(param_3[3],param_2);
 

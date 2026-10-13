@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (56 named) — decompiled, names from PS2 symbols
+ * 145 functions (57 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -7254,12 +7254,12 @@ void FUN_00458230(int param_1)
 
 }
 
-/* ===== FUN_004582a0 @ 0x004582A0 ===== */
+/* ===== WeaponIdSetSlot__FP6OBJECTi @ 0x004582A0 ===== */
 /* PS2 candidate: OtherInvIdSet__FP6OBJECTii (conf 0.42) */
 
 
 
-void FUN_004582a0(int param_1,int param_2,undefined4 param_3)
+void WeaponIdSetSlot__FP6OBJECTi(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -7862,7 +7862,7 @@ void FUN_00458710(int param_1)
 
   }
 
-  FUN_004582a0(iVar3,2,0xffffffff);
+  WeaponIdSetSlot__FP6OBJECTi(iVar3,2,0xffffffff);
 
   FUN_00458350(iVar3,0xffffffff);
 
@@ -8318,7 +8318,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
         uVar7 = FUN_004a9070(uVar1);
 
-        iVar3 = FUN_004b8c20(iVar6,uVar1,uVar7);
+        iVar3 = reaper_needs_other(iVar6,uVar1,uVar7);
 
         if (iVar3 == 0) {
 
@@ -8793,7 +8793,7 @@ LAB_00459ce0:
 
             param_2 = iVar3;
 
-            FUN_004582a0(param_1,param_2,param_3);
+            WeaponIdSetSlot__FP6OBJECTi(param_1,param_2,param_3);
 
             if (param_4 < 0) {
 
@@ -9140,7 +9140,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
         case 0:
 
-          FUN_004582a0(param_1,param_2,0xffffffff);
+          WeaponIdSetSlot__FP6OBJECTi(param_1,param_2,0xffffffff);
 
           break;
 
@@ -9152,7 +9152,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
           if (iVar5 < 1) {
 
-            FUN_004582a0(param_1,param_2,0xffffffff);
+            WeaponIdSetSlot__FP6OBJECTi(param_1,param_2,0xffffffff);
 
             *(undefined4 *)(iVar2 + 0x14c) = 0;
 
@@ -9170,7 +9170,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
           if (iVar5 < 1) {
 
-            FUN_004582a0(param_1,param_2,0xffffffff);
+            WeaponIdSetSlot__FP6OBJECTi(param_1,param_2,0xffffffff);
 
             *(undefined4 *)(iVar2 + 0x150) = 0;
 
@@ -9188,7 +9188,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
           if (iVar5 < 1) {
 
-            FUN_004582a0(param_1,param_2,0xffffffff);
+            WeaponIdSetSlot__FP6OBJECTi(param_1,param_2,0xffffffff);
 
             *(undefined4 *)(iVar2 + 0x154) = 0;
 
@@ -9680,7 +9680,7 @@ void FUN_0045a4c0(int param_1,undefined4 param_2)
 
           if (iVar3 == 8) {
 
-            FUN_004582a0(param_1,iVar2,0xffffffff);
+            WeaponIdSetSlot__FP6OBJECTi(param_1,iVar2,0xffffffff);
 
           }
 
@@ -9712,7 +9712,7 @@ void FUN_0045a4c0(int param_1,undefined4 param_2)
 
           if (iVar3 == 9) {
 
-            FUN_004582a0(param_1,iVar2,0xffffffff);
+            WeaponIdSetSlot__FP6OBJECTi(param_1,iVar2,0xffffffff);
 
           }
 
@@ -9792,7 +9792,7 @@ void FUN_0045a4c0(int param_1,undefined4 param_2)
 
           if (iVar3 == 0x40) {
 
-            FUN_004582a0(param_1,iVar2,0xffffffff);
+            WeaponIdSetSlot__FP6OBJECTi(param_1,iVar2,0xffffffff);
 
           }
 

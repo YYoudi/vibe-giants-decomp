@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (91 named) — decompiled, names from PS2 symbols
+ * 179 functions (93 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -18870,12 +18870,12 @@ float10 FUN_0053e960(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053e9c0 @ 0x0053E9C0 ===== */
+/* ===== GEO_Vec4Scale @ 0x0053E9C0 ===== */
 /* PS2 candidate: GEO_Vec2Scale_2 (conf 0.775) */
 
 
 
-void FUN_0053e9c0(float *param_1,float *param_2,float param_3)
+void GEO_Vec4Scale(float *param_1,float *param_2,float param_3)
 
 
 
@@ -20612,12 +20612,12 @@ void FUN_0053fd40(undefined4 *param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== FUN_0053fde0 @ 0x0053FDE0 ===== */
+/* ===== MAP_MappingGet @ 0x0053FDE0 ===== */
 /* PS2 candidate: MAP_MappingGet (conf 0.788) */
 
 
 
-undefined4 FUN_0053fde0(int param_1,uint param_2,uint param_3)
+undefined4 MAP_MappingGet(int param_1,uint param_2,uint param_3)
 
 
 

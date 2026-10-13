@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (46 named) — decompiled, names from PS2 symbols
+ * 105 functions (47 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -6111,7 +6111,7 @@ LAB_004090c8:
 
       }
 
-      FUN_00409200(iVar1);
+      meccbase_update_icons(iVar1);
 
     }
 
@@ -6121,12 +6121,12 @@ LAB_004090c8:
 
 }
 
-/* ===== FUN_00409200 @ 0x00409200 ===== */
+/* ===== meccbase_update_icons @ 0x00409200 ===== */
 /* PS2 candidate: meccbase_update_icons (conf 0.788) */
 
 
 
-void FUN_00409200(int param_1)
+void meccbase_update_icons(int param_1)
 
 
 
@@ -6820,7 +6820,7 @@ void FUN_0040a550(int param_1,int param_2)
 
     *(int *)(*(int *)(param_1 + 0x100) + 0x20) = param_2;
 
-    FUN_00409200(iVar1);
+    meccbase_update_icons(iVar1);
 
   }
 

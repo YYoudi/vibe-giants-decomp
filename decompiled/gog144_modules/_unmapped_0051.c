@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (85 named) — decompiled, names from PS2 symbols
+ * 186 functions (87 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5162,12 +5162,12 @@ void FUN_00516220(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00516260 @ 0x00516260 ===== */
+/* ===== XFGetViewport_2 @ 0x00516260 ===== */
 /* PS2 candidate: XFGetViewport_2 (conf 0.776) */
 
 
 
-void FUN_00516260(undefined4 *param_1)
+void XFGetViewport_2(undefined4 *param_1)
 
 
 
@@ -9895,12 +9895,12 @@ void FUN_0051a160(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 }
 
-/* ===== FUN_0051a190 @ 0x0051A190 ===== */
+/* ===== reg_set_value @ 0x0051A190 ===== */
 /* PS2 candidate: player_display_info_2 (conf 0.827) */
 
 
 
-void FUN_0051a190(LPCSTR param_1,BYTE *param_2,DWORD param_3)
+void reg_set_value(LPCSTR param_1,BYTE *param_2,DWORD param_3)
 
 
 

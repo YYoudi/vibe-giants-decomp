@@ -1,0 +1,14 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b8c20,FUN_004b8c20,,reaper_needs_other,0.9,llm-w114,body-verified
+004eecb0,FUN_004eecb0,,calc_2pts_to_bbox__FP3P3DT0P4BBOX,0.9,llm-w114,body-verified min/max
+004ca830,FUN_004ca830,,evilreaper_change_anim__FP6OBJECTii4SDKYf,0.9,llm-w114,body-verified
+004a9fe0,FUN_004a9fe0,,ObjectGetWorldRefPoint__FP3P3DiP6OBJECT,0.9,llm-w114,body-verified eval_refpt
+0049a060,FUN_0049a060,,objspec_has_shot_function_2,0.9,llm-w114,body-verified table variant
+0053fde0,FUN_0053fde0,,MAP_MappingGet,0.9,llm-w114,body-verified 2D lookup
+00409200,FUN_00409200,,meccbase_update_icons,0.9,llm-w114,body-verified 26 slots
+004582a0,FUN_004582a0,,WeaponIdSetSlot__FP6OBJECTi,0.9,llm-w114,body-verified slot set
+004782d0,FUN_004782d0,,formation_notify_death,0.9,llm-w114,body-verified count dec
+0053e9c0,FUN_0053e9c0,,GEO_Vec4Scale,0.9,llm-w114,body-verified 4-comp scale
+00516260,FUN_00516260,,XFGetViewport_2,0.9,llm-w114,body-verified 4-comp variant
+00542ec8,FUN_00542ec8,,crt_printf_hooks_init,0.9,llm-w114,body-verified __cfltcvt fptrs (rejected ANM_DumpCluster)
+0051a190,FUN_0051a190,,reg_set_value,0.9,llm-w114,body-verified RegSetValueExA (rejected player_display_info)

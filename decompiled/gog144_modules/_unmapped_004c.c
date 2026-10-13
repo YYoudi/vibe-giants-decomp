@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (41 named) — decompiled, names from PS2 symbols
+ * 64 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -5372,12 +5372,14 @@ LAB_004ca808:
 
 }
 
-/* ===== FUN_004ca830 @ 0x004CA830 ===== */
+/* ===== evilreaper_change_anim__FP6OBJECTii4SDKYf @ 0x004CA830 ===== */
 /* PS2 candidate: evilreaper_change_anim__FP6OBJECTii4SDKYf (conf 0.797) */
 
 
 
-void FUN_004ca830(int param_1,int param_2,int param_3,undefined4 param_4,float param_5)
+void evilreaper_change_anim__FP6OBJECTii4SDKYf
+
+               (int param_1,int param_2,int param_3,undefined4 param_4,float param_5)
 
 
 
@@ -6214,7 +6216,7 @@ void sound_obj_seq_bigger(int param_1)
 
       *(undefined4 *)(iVar1 + 0xde0) = uVar2;
 
-      FUN_004ca830(param_1,0x5a,1,0,0);
+      evilreaper_change_anim__FP6OBJECTii4SDKYf(param_1,0x5a,1,0,0);
 
       sound_play_obj(0x38f,param_1);
 
@@ -7620,7 +7622,7 @@ LAB_004ccbc0:
 
   fStack_224 = (float)fVar13;
 
-  FUN_00516260(&fStack_1e4);
+  XFGetViewport_2(&fStack_1e4);
 
   FUN_005163e0(auStack_10c);
 
@@ -8423,7 +8425,7 @@ undefined4 dev_debug_flags(void)
 
     local_200 = pfVar6[2];
 
-    FUN_00516260();
+    XFGetViewport_2();
 
     FUN_005163e0(&local_1c0);
 

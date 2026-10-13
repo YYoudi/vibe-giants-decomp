@@ -661,7 +661,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
 LAB_00420491:
 
-      FUN_004582a0(DAT_00632a88,uVar3,0xffffffff);
+      WeaponIdSetSlot__FP6OBJECTi(DAT_00632a88,uVar3,0xffffffff);
 
       DAT_00632aec = 0;
 

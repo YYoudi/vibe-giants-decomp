@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (51 named) — decompiled, names from PS2 symbols
+ * 131 functions (52 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3084,7 +3084,7 @@ LAB_004a3a06:
 
       fVar15 = (float10)FUN_0053e8d0(&fStack_2d8);
 
-      FUN_0053e9c0((float *)(param_1 + 0x144),&fStack_2d8,(float)((float10)1.0 / fVar15));
+      GEO_Vec4Scale((float *)(param_1 + 0x144),&fStack_2d8,(float)((float10)1.0 / fVar15));
 
       *(float *)(param_1 + 0x140) =
 
@@ -3122,7 +3122,7 @@ LAB_004a3a06:
 
       fVar15 = (float10)FUN_0053e8d0(&fStack_2d8);
 
-      FUN_0053e9c0(&fStack_2d8,&fStack_2d8,(float)((float10)1.0 / fVar15));
+      GEO_Vec4Scale(&fStack_2d8,&fStack_2d8,(float)((float10)1.0 / fVar15));
 
       (*(code *)PTR_FUN_00580c20)(param_1 + 0x254,afStack_2c8 + 3,1,auStack_154);
 
@@ -3136,7 +3136,7 @@ LAB_004a3a06:
 
       (*(code *)PTR_FUN_00580c20)((float *)(param_1 + 0x260),afStack_2c8 + 3,1,auStack_154);
 
-      uVar13 = FUN_0049a060(param_1,param_2);
+      uVar13 = objspec_has_shot_function_2(param_1,param_2);
 
       if ((uVar13 & 1) == 0) {
 
@@ -3571,7 +3571,7 @@ LAB_004a431f:
 
     if ((**(byte **)(param_1 + 0x104) & 0x96) != 0) {
 
-      FUN_0049a060(param_1,0);
+      objspec_has_shot_function_2(param_1,0);
 
     }
 
@@ -9261,12 +9261,12 @@ void ANM_DumpCluster_2(void)
 
 }
 
-/* ===== FUN_004a9fe0 @ 0x004A9FE0 ===== */
+/* ===== ObjectGetWorldRefPoint__FP3P3DiP6OBJECT @ 0x004A9FE0 ===== */
 /* PS2 candidate: ObjectGetWorldRefPoint__FP3P3DiP6OBJECT (conf 0.793) */
 
 
 
-void FUN_004a9fe0(undefined4 param_1,int param_2)
+void ObjectGetWorldRefPoint__FP3P3DiP6OBJECT(undefined4 param_1,int param_2)
 
 
 

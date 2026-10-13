@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (58 named) — decompiled, names from PS2 symbols
+ * 142 functions (59 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -10733,12 +10733,12 @@ void FUN_0049a030(int param_1)
 
 }
 
-/* ===== FUN_0049a060 @ 0x0049A060 ===== */
+/* ===== objspec_has_shot_function_2 @ 0x0049A060 ===== */
 /* PS2 candidate: objspec_has_shot_function_2 (conf 0.79) */
 
 
 
-undefined4 FUN_0049a060(int param_1)
+undefined4 objspec_has_shot_function_2(int param_1)
 
 
 

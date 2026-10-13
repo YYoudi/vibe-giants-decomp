@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (34 named) — decompiled, names from PS2 symbols
+ * 67 functions (35 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1128,7 +1128,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     puVar9 = auStack_50;
 
-    FUN_00516260(puVar9);
+    XFGetViewport_2(puVar9);
 
     puVar8 = auStack_40;
 
@@ -4027,12 +4027,12 @@ void FUN_00478260(int param_1)
 
 }
 
-/* ===== FUN_004782d0 @ 0x004782D0 ===== */
+/* ===== formation_notify_death @ 0x004782D0 ===== */
 /* PS2 candidate: formation_notify_death (conf 0.776) */
 
 
 
-void FUN_004782d0(int param_1)
+void formation_notify_death(int param_1)
 
 
 
@@ -5625,7 +5625,7 @@ void FUN_0047c440(int param_1)
 
       if (iVar4 == 0) {
 
-        FUN_004582a0(param_1,iVar7,0xffffffff);
+        WeaponIdSetSlot__FP6OBJECTi(param_1,iVar7,0xffffffff);
 
         break;
 

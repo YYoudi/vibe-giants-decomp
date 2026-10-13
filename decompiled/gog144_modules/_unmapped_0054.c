@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (248 named) — decompiled, names from PS2 symbols
+ * 351 functions (249 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -487,7 +487,7 @@ void NAM_NameFindByHandleIndex_2(int param_1,undefined4 param_2)
 
 {
 
-  FUN_0053fde0(*(undefined4 *)(param_1 + 4),param_2,0);
+  MAP_MappingGet(*(undefined4 *)(param_1 + 4),param_2,0);
 
   return;
 
@@ -543,7 +543,7 @@ void FUN_00540530(int param_1,code *param_2,undefined4 param_3)
 
   iVar3 = 0;
 
-  iVar2 = FUN_0053fde0(*puVar1,0,0);
+  iVar2 = MAP_MappingGet(*puVar1,0,0);
 
   while (iVar2 != 0) {
 
@@ -555,7 +555,7 @@ void FUN_00540530(int param_1,code *param_2,undefined4 param_3)
 
     iVar3 = iVar3 + 1;
 
-    iVar2 = FUN_0053fde0(*puVar1,iVar3,0);
+    iVar2 = MAP_MappingGet(*puVar1,iVar3,0);
 
   }
 
@@ -2544,7 +2544,7 @@ void FUN_00542eb0(void)
 
 {
 
-  FUN_00542ec8();
+  crt_printf_hooks_init();
 
   DAT_00630b58 = crt_cpu_features_check();
 
@@ -2565,12 +2565,12 @@ void ANM_DumpCluster_4(void)
 
 }
 
-/* ===== FUN_00542ec8 @ 0x00542EC8 ===== */
+/* ===== crt_printf_hooks_init @ 0x00542EC8 ===== */
 /* PS2 candidate: ANM_DumpCluster_9 (conf 0.777) */
 
 
 
-void FUN_00542ec8(void)
+void crt_printf_hooks_init(void)
 
 
 
