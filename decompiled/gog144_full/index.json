@@ -4525,9 +4525,9 @@
   "len": 3893
  },
  "0x0048ADB0": {
-  "name": "FUN_0048adb0",
-  "named": false,
-  "len": 9764
+  "name": "mission_state_dispatch",
+  "named": true,
+  "len": 9774
  },
  "0x0048BED0": {
   "name": "FUN_0048bed0",
@@ -4537,7 +4537,7 @@
  "0x0048BFB0": {
   "name": "FUN_0048bfb0",
   "named": false,
-  "len": 6099
+  "len": 6109
  },
  "0x0048C830": {
   "name": "FUN_0048C830",
@@ -7395,9 +7395,9 @@
   "len": 4305
  },
  "0x004EB7C0": {
-  "name": "FUN_004eb7c0",
-  "named": false,
-  "len": 15310
+  "name": "game_mode_update",
+  "named": true,
+  "len": 15314
  },
  "0x004EB850": {
   "name": "FUN_004eb850",
@@ -9562,7 +9562,7 @@
  "0x00528620": {
   "name": "gamespy_statechange2",
   "named": true,
-  "len": 1025
+  "len": 1029
  },
  "0x00528720": {
   "name": "FUN_00528720",

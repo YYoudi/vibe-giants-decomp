@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (24 named) — decompiled, names from PS2 symbols
+ * 74 functions (25 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -8633,12 +8633,12 @@ LAB_0048ad0f:
 
 }
 
-/* ===== FUN_0048adb0 @ 0x0048ADB0 ===== */
+/* ===== mission_state_dispatch @ 0x0048ADB0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0048adb0(int param_1)
+void mission_state_dispatch(int param_1)
 
 
 
@@ -9474,7 +9474,7 @@ void FUN_0048bfb0(int param_1,int param_2,int param_3)
 
     }
 
-    FUN_0048adb0(uVar10);
+    mission_state_dispatch(uVar10);
 
     bVar1 = false;
 

@@ -5125,7 +5125,7 @@ void gamespy_statechange2(void)
 
   if ((DAT_00633238 == 0) || (DAT_00632f44 == 0)) {
 
-    FUN_004eb7c0();
+    game_mode_update();
 
   }
 
