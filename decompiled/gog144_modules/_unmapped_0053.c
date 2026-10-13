@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (66 named) — decompiled, names from PS2 symbols
+ * 179 functions (67 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -4153,7 +4153,7 @@ LAB_00532513:
 
         }
 
-        FUN_00452b00(*(undefined4 *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 5),1);
+        fx_emitter_flags_setup(*(undefined4 *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 5),1);
 
         DAT_005e0304 = DAT_005e0304 + 9;
 
@@ -18918,8 +18918,8 @@ void GEO_DefaultSpan__FP14GEO_RegionSpan(undefined4 *p0)
 
 }
 
-/* ===== FUN_0053ea30 @ 0x0053EA30 ===== */
-void FUN_0053ea30(int *param_1,int *param_2,undefined **param_3,undefined **param_4,int *param_5)
+/* ===== crt_matrix_ops @ 0x0053EA30 ===== */
+void crt_matrix_ops(int *param_1,int *param_2,undefined **param_3,undefined **param_4,int *param_5)
 
 
 

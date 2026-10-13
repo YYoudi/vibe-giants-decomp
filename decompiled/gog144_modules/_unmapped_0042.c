@@ -8639,7 +8639,7 @@ switchD_004260b3_caseD_1:
 
     DAT_0058c650 = piVar4 + 4;
 
-    FUN_00452b00(*_Source,piVar4[3],1);
+    fx_emitter_flags_setup(*_Source,piVar4[3],1);
 
     DAT_0059d99c = 1;
 

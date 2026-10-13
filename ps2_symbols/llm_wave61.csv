@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a3ee0,FUN_004A3EE0,,obj_visibility_test,0.9,llm-read32,
+00452b00,FUN_00452B00,,fx_emitter_flags_setup,0.9,llm-read32,
+004e26e0,FUN_004E26E0,,ai_damage_update,0.9,llm-read32,
+0053ea30,FUN_0053EA30,,crt_matrix_ops,0.9,llm-read32,

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (39 named) — decompiled, names from PS2 symbols
+ * 145 functions (40 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -2383,7 +2383,7 @@ void FUN_00452a30(int param_1,int param_2)
 
     if (param_1 != 0) {
 
-      FUN_00452b00(DAT_0059d988,DAT_0059d98c,0);
+      fx_emitter_flags_setup(DAT_0059d988,DAT_0059d98c,0);
 
       DAT_0059d99c = 1;
 
@@ -2416,12 +2416,12 @@ void FUN_00452ae0(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00452b00 @ 0x00452B00 ===== */
+/* ===== fx_emitter_flags_setup @ 0x00452B00 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00452b00(uint param_1,uint param_2,int param_3)
+void fx_emitter_flags_setup(uint param_1,uint param_2,int param_3)
 
 
 

@@ -2270,7 +2270,7 @@ void audio_stream_tied(void)
 
   }
 
-  FUN_0053ea30(*piVar6,auStack_80,&PTR_LAB_00556e88);
+  crt_matrix_ops(*piVar6,auStack_80,&PTR_LAB_00556e88);
 
   FUN_00432950();
 
@@ -3366,7 +3366,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   if (2 < iVar4) {
 
-    FUN_0053ea30(iVar4,auStack_40,&PTR_LAB_00556f1c,0,&local_190);
+    crt_matrix_ops(iVar4,auStack_40,&PTR_LAB_00556f1c,0,&local_190);
 
   }
 

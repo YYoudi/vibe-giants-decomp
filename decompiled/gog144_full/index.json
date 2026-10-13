@@ -1342,7 +1342,7 @@
  "0x00426030": {
   "name": "comm_game_setup_big",
   "named": true,
-  "len": 5052
+  "len": 5062
  },
  "0x00426460": {
   "name": "main_dedicated_00426460",
@@ -2067,7 +2067,7 @@
  "0x00434280": {
   "name": "audio_stream_tied",
   "named": true,
-  "len": 4509
+  "len": 4511
  },
  "0x00434620": {
   "name": "main/drawwrld_00434620",
@@ -2137,7 +2137,7 @@
  "0x00435940": {
   "name": "dlog_entry_render_quads",
   "named": true,
-  "len": 3076
+  "len": 3078
  },
  "0x00435BC0": {
   "name": "fx_blob_shadow",
@@ -3012,7 +3012,7 @@
  "0x00452A30": {
   "name": "FUN_00452a30",
   "named": false,
-  "len": 1035
+  "len": 1045
  },
  "0x00452AE0": {
   "name": "FUN_00452ae0",
@@ -3020,9 +3020,9 @@
   "len": 205
  },
  "0x00452B00": {
-  "name": "FUN_00452b00",
-  "named": false,
-  "len": 3875
+  "name": "fx_emitter_flags_setup",
+  "named": true,
+  "len": 3885
  },
  "0x00452EE0": {
   "name": "FUN_00452ee0",
@@ -5610,14 +5610,14 @@
   "len": 395
  },
  "0x004A3EE0": {
-  "name": "FUN_004a3ee0",
-  "named": false,
-  "len": 4100
+  "name": "obj_visibility_test",
+  "named": true,
+  "len": 4107
  },
  "0x004A4210": {
   "name": "FUN_004a4210",
   "named": false,
-  "len": 1771
+  "len": 1778
  },
  "0x004A4360": {
   "name": "FUN_004a4360",
@@ -7160,9 +7160,9 @@
   "len": 3198
  },
  "0x004E26E0": {
-  "name": "FUN_004e26e0",
-  "named": false,
-  "len": 3832
+  "name": "ai_damage_update",
+  "named": true,
+  "len": 3836
  },
  "0x004E29F0": {
   "name": "FUN_004e29f0",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36330
+  "len": 36340
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10980,9 +10980,9 @@
   "len": 414
  },
  "0x0053EA30": {
-  "name": "FUN_0053ea30",
-  "named": false,
-  "len": 4302
+  "name": "crt_matrix_ops",
+  "named": true,
+  "len": 4304
  },
  "0x0053ED40": {
   "name": "crt_loader_walk",
