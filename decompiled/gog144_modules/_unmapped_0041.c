@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (45 named) — decompiled, names from PS2 symbols
+ * 100 functions (46 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -11994,7 +11994,7 @@ LAB_0041f57d:
 
         else if (uVar9 < 0x100) {
 
-          iVar6 = FUN_0041fed0(uVar9,iVar6);
+          iVar6 = input_keystate_test(uVar9,iVar6);
 
           goto LAB_0041f57d;
 
@@ -12042,7 +12042,7 @@ LAB_0041f57d:
 
       else {
 
-        iVar6 = FUN_0041fed0(bVar7,iVar6);
+        iVar6 = input_keystate_test(bVar7,iVar6);
 
       }
 
@@ -12064,11 +12064,11 @@ LAB_0041f57d:
 
   } while (iVar6 < 0xc);
 
-  iVar5 = FUN_0041fed0(0xf0,1);
+  iVar5 = input_keystate_test(0xf0,1);
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_0041fed0(0xf2,1);
+    iVar5 = input_keystate_test(0xf2,1);
 
     DAT_0058c5e4 = -(uint)(iVar5 != 0);
 
@@ -12080,11 +12080,11 @@ LAB_0041f57d:
 
   }
 
-  iVar5 = FUN_0041fed0(0xf3,1);
+  iVar5 = input_keystate_test(0xf3,1);
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_0041fed0(0xf1,1);
+    iVar5 = input_keystate_test(0xf1,1);
 
     DAT_0058c5e8 = -(uint)(iVar5 != 0);
 
@@ -12430,7 +12430,9 @@ void hud_status_global_reset(void)
 
   if (((DAT_00633104 != 0) && ((uVar3 >> 1 & 1) == 0)) &&
 
-     (iVar2 = FUN_0041fed0(0x7a,3), uVar3 = DAT_005dd120, uVar4 = DAT_005dd0f8, iVar2 != 0)) {
+     (iVar2 = input_keystate_test(0x7a,3), uVar3 = DAT_005dd120, uVar4 = DAT_005dd0f8, iVar2 != 0))
+
+  {
 
     DAT_00632aa4._3_1_ = 1;
 
@@ -12652,8 +12654,8 @@ LAB_0041fe47:
 
 }
 
-/* ===== FUN_0041fed0 @ 0x0041FED0 ===== */
-undefined4 FUN_0041fed0(int param_1,undefined4 param_2)
+/* ===== input_keystate_test @ 0x0041FED0 ===== */
+undefined4 input_keystate_test(int param_1,undefined4 param_2)
 
 
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00444320,FUN_00444320,,wredit_text_fade,0.9,llm-read50,
+0047df10,FUN_0047DF10,,audio_listener_pan,0.9,llm-read50,
+0041fed0,FUN_0041FED0,,input_keystate_test,0.9,llm-read50,
+0052de90,FUN_0052DE90,,comm_socket_sendto,0.9,llm-read50,

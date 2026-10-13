@@ -1187,7 +1187,7 @@
  "0x0041F120": {
   "name": "hud_status_main",
   "named": true,
-  "len": 8742
+  "len": 8784
  },
  "0x0041F8F0": {
   "name": "FUN_0041f8f0",
@@ -1197,12 +1197,12 @@
  "0x0041F960": {
   "name": "hud_status_global_reset",
   "named": true,
-  "len": 5234
+  "len": 5244
  },
  "0x0041FED0": {
-  "name": "FUN_0041fed0",
-  "named": false,
-  "len": 2528
+  "name": "input_keystate_test",
+  "named": true,
+  "len": 2535
  },
  "0x00420090": {
   "name": "FUN_00420090",
@@ -1232,22 +1232,22 @@
  "0x00420890": {
   "name": "FUN_00420890",
   "named": false,
-  "len": 707
+  "len": 714
  },
  "0x00420930": {
   "name": "FUN_00420930",
   "named": false,
-  "len": 707
+  "len": 714
  },
  "0x004209D0": {
   "name": "FUN_004209d0",
   "named": false,
-  "len": 707
+  "len": 714
  },
  "0x00420A70": {
   "name": "FUN_00420a70",
   "named": false,
-  "len": 707
+  "len": 714
  },
  "0x00420B10": {
   "name": "FUN_00420b10",
@@ -2565,14 +2565,14 @@
   "len": 2869
  },
  "0x00444320": {
-  "name": "FUN_00444320",
-  "named": false,
-  "len": 2155
+  "name": "wredit_text_fade",
+  "named": true,
+  "len": 2159
  },
  "0x004444C0": {
   "name": "FUN_004444c0",
   "named": false,
-  "len": 18740
+  "len": 18744
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -4195,9 +4195,9 @@
   "len": 22846
  },
  "0x0047DF10": {
-  "name": "FUN_0047df10",
-  "named": false,
-  "len": 1610
+  "name": "audio_listener_pan",
+  "named": true,
+  "len": 1616
  },
  "0x0047E0B0": {
   "name": "mecc_fire_logic__FP6OBJECT",
@@ -9915,39 +9915,39 @@
   "len": 1751
  },
  "0x0052DE90": {
-  "name": "FUN_0052de90",
-  "named": false,
-  "len": 4527
+  "name": "comm_socket_sendto",
+  "named": true,
+  "len": 4539
  },
  "0x0052E030": {
   "name": "FUN_0052e030",
   "named": false,
-  "len": 589
+  "len": 595
  },
  "0x0052E0A0": {
   "name": "FUN_0052e0a0",
   "named": false,
-  "len": 590
+  "len": 596
  },
  "0x0052E110": {
   "name": "FUN_0052e110",
   "named": false,
-  "len": 590
+  "len": 596
  },
  "0x0052E180": {
   "name": "FUN_0052e180",
   "named": false,
-  "len": 590
+  "len": 596
  },
  "0x0052E1F0": {
   "name": "FUN_0052e1f0",
   "named": false,
-  "len": 523
+  "len": 529
  },
  "0x0052E250": {
   "name": "FUN_0052e250",
   "named": false,
-  "len": 2965
+  "len": 2977
  },
  "0x0052E3D0": {
   "name": "FUN_0052e3d0",

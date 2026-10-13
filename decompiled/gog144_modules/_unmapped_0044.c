@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (41 named) — decompiled, names from PS2 symbols
+ * 76 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -3212,12 +3212,12 @@ switchD_0044412a_caseD_18:
 
 }
 
-/* ===== FUN_00444320 @ 0x00444320 ===== */
+/* ===== wredit_text_fade @ 0x00444320 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00444320(void)
+void wredit_text_fade(void)
 
 
 
@@ -4368,7 +4368,7 @@ LAB_004451e2:
 
   FUN_004440f0();
 
-  FUN_00444320(param_1);
+  wredit_text_fade(param_1);
 
   AddHud__4cHudP8cHudIcon_2();
 

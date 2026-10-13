@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (28 named) — decompiled, names from PS2 symbols
+ * 67 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -7488,8 +7488,8 @@ LAB_0047de23:
 
 }
 
-/* ===== FUN_0047df10 @ 0x0047DF10 ===== */
-int FUN_0047df10(float param_1,float param_2,float param_3,code *param_4,undefined4 param_5)
+/* ===== audio_listener_pan @ 0x0047DF10 ===== */
+int audio_listener_pan(float param_1,float param_2,float param_3,code *param_4,undefined4 param_5)
 
 
 

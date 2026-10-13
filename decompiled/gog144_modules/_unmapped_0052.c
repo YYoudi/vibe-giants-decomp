@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (85 named) — decompiled, names from PS2 symbols
+ * 162 functions (86 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -10818,8 +10818,8 @@ void FUN_0052ddf0(SOCKET *param_1,sockaddr *param_2,char *param_3)
 
 }
 
-/* ===== FUN_0052de90 @ 0x0052DE90 ===== */
-void FUN_0052de90(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
+/* ===== comm_socket_sendto @ 0x0052DE90 ===== */
+void comm_socket_sendto(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
 
 
 
@@ -10953,7 +10953,7 @@ void FUN_0052de90(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
 
     *pcVar8 = '\0';
 
-    FUN_0052de90(param_1,param_2,param_3,param_4);
+    comm_socket_sendto(param_1,param_2,param_3,param_4);
 
     uVar4 = 0xffffffff;
 
@@ -11224,7 +11224,7 @@ void FUN_0052e030(int param_1,undefined4 param_2,undefined4 param_3)
 
   (**(code **)(param_1 + 200))(&local_578,0x578,uVar1);
 
-  FUN_0052de90(param_1,param_2,param_3,&local_578);
+  comm_socket_sendto(param_1,param_2,param_3,&local_578);
 
   return;
 
@@ -11269,7 +11269,7 @@ void FUN_0052e0a0(int param_1,undefined4 param_2,undefined4 param_3)
 
   (**(code **)(param_1 + 0xcc))(&local_578,0x578,uVar1);
 
-  FUN_0052de90(param_1,param_2,param_3,&local_578);
+  comm_socket_sendto(param_1,param_2,param_3,&local_578);
 
   return;
 
@@ -11314,7 +11314,7 @@ void FUN_0052e110(int param_1,undefined4 param_2,undefined4 param_3)
 
   (**(code **)(param_1 + 0xd0))(&local_578,0x578,uVar1);
 
-  FUN_0052de90(param_1,param_2,param_3,&local_578);
+  comm_socket_sendto(param_1,param_2,param_3,&local_578);
 
   return;
 
@@ -11359,7 +11359,7 @@ void FUN_0052e180(int param_1,undefined4 param_2,undefined4 param_3)
 
   (**(code **)(param_1 + 0xd4))(&local_578,0x578,uVar1);
 
-  FUN_0052de90(param_1,param_2,param_3,&local_578);
+  comm_socket_sendto(param_1,param_2,param_3,&local_578);
 
   return;
 
@@ -11402,7 +11402,7 @@ void FUN_0052e1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char 
 
     FUN_00542f27(local_578,s__echo__s_0057f268,param_4);
 
-    FUN_0052de90(param_1,param_2,param_3,local_578);
+    comm_socket_sendto(param_1,param_2,param_3,local_578);
 
   }
 
@@ -11509,13 +11509,13 @@ void FUN_0052e250(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
 
     FUN_00542f27(local_1c8,s__validate__s_0057f27c,local_c8);
 
-    FUN_0052de90(param_1,param_2,param_3,local_1c8);
+    comm_socket_sendto(param_1,param_2,param_3,local_1c8);
 
   }
 
   FUN_00542f27(local_1c8,s__final__0057f274);
 
-  FUN_0052de90(param_1,param_2,param_3,local_1c8);
+  comm_socket_sendto(param_1,param_2,param_3,local_1c8);
 
   iVar5 = -1;
 

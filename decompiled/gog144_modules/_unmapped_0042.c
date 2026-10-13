@@ -903,7 +903,7 @@ undefined4 FUN_00420890(void)
 
   else {
 
-    iVar2 = FUN_0041fed0(bVar1,iVar2);
+    iVar2 = input_keystate_test(bVar1,iVar2);
 
   }
 
@@ -976,7 +976,7 @@ undefined4 FUN_00420930(void)
 
   else {
 
-    iVar2 = FUN_0041fed0(bVar1,iVar2);
+    iVar2 = input_keystate_test(bVar1,iVar2);
 
   }
 
@@ -1049,7 +1049,7 @@ undefined4 FUN_004209d0(void)
 
   else {
 
-    iVar2 = FUN_0041fed0(bVar1,iVar2);
+    iVar2 = input_keystate_test(bVar1,iVar2);
 
   }
 
@@ -1122,7 +1122,7 @@ undefined4 FUN_00420a70(void)
 
   else {
 
-    iVar2 = FUN_0041fed0(bVar1,iVar2);
+    iVar2 = input_keystate_test(bVar1,iVar2);
 
   }
 
