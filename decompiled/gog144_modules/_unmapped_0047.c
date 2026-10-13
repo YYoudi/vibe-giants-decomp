@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (39 named) — decompiled, names from PS2 symbols
+ * 67 functions (40 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1569,12 +1569,12 @@ void FUN_00471a60(int param_1)
 
 }
 
-/* ===== FUN_00471dc0 @ 0x00471DC0 ===== */
+/* ===== render_error_dialog_check @ 0x00471DC0 ===== */
 /* PS2 candidate: __main_3 (conf 0.574) */
 
 
 
-void FUN_00471dc0(void)
+void render_error_dialog_check(void)
 
 
 
@@ -2296,7 +2296,7 @@ void dlog_text_render_screen(void)
 
     else {
 
-      FUN_00480a60(DAT_00632a88);
+      mecc_stop_looping_effects(DAT_00632a88);
 
     }
 
@@ -6750,7 +6750,7 @@ LAB_0047cdb1:
 
     ObjectSetAnim(iVar7,0xd3,0x21,0,0,0);
 
-    FUN_00480a60(iVar7);
+    mecc_stop_looping_effects(iVar7);
 
     iVar6 = reaper_0052e4a0(iVar5);
 
@@ -6898,7 +6898,7 @@ LAB_0047d90a:
 
     *(uint *)(iVar5 + 0xe0) = *(uint *)(iVar5 + 0xe0) | (uint)(fVar10 != 1.4013e-45) * 2 + 2;
 
-    FUN_00480a60(iVar7);
+    mecc_stop_looping_effects(iVar7);
 
     iVar6 = reaper_0052e4a0(iVar5);
 
@@ -7194,7 +7194,7 @@ LAB_0047d6b8:
 
       ObjectSetAnim(iVar7,0xd3,0x21,0,0,0);
 
-      FUN_00480a60(iVar7);
+      mecc_stop_looping_effects(iVar7);
 
       iVar6 = reaper_0052e4a0(iVar5);
 
@@ -7346,7 +7346,7 @@ LAB_0047d5b2:
 
     *(uint *)(iVar5 + 0xe0) = *(uint *)(iVar5 + 0xe0) | (uint)(fVar10 != 1.4013e-45) * 2 + 2;
 
-    FUN_00480a60(iVar7);
+    mecc_stop_looping_effects(iVar7);
 
     iVar6 = reaper_0052e4a0(iVar5);
 
@@ -8620,7 +8620,7 @@ LAB_0047eacc:
 
         if ((fVar16 <= (float10)(float)local_90 * (float10)(float)local_90) &&
 
-           (iVar11 = FUN_004adbf0(iVar6,param_1[99]), iVar11 != 0)) {
+           (iVar11 = repairgun_target_valid__FP6OBJECTi(iVar6,param_1[99]), iVar11 != 0)) {
 
           iVar11 = FUN_004a6220(iVar6);
 

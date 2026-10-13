@@ -823,9 +823,9 @@ void main_makewrld_00473600(float *param_1)
 
           pfVar11[2] = fVar7 * pfVar11[2];
 
-          FUN_0053e900(&local_30,pfVar11,&local_c);
+          GEO_Vec2Cross(&local_30,pfVar11,&local_c);
 
-          FUN_0053e900(&local_24,&local_30,pfVar11);
+          GEO_Vec2Cross(&local_24,&local_30,pfVar11);
 
           fVar6 = local_24 * local_24 + local_20 * local_20 + local_1c * local_1c;
 

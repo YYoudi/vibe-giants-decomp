@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (43 named) — decompiled, names from PS2 symbols
+ * 74 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -224,12 +224,12 @@ LAB_00480357:
 
 }
 
-/* ===== FUN_004803a0 @ 0x004803A0 ===== */
+/* ===== mecc_enable_repair_gun @ 0x004803A0 ===== */
 /* PS2 candidate: mecc_enable_repair_gun (conf 0.579) */
 
 
 
-void FUN_004803a0(int param_1)
+void mecc_enable_repair_gun(int param_1)
 
 
 
@@ -514,7 +514,7 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
   uVar5 = FUN_00507b00(pcVar7,1);
 
-  FUN_005362d0(uVar5);
+  chat_insert(uVar5);
 
   return;
 
@@ -761,12 +761,12 @@ LAB_00480988:
 
 }
 
-/* ===== FUN_00480a60 @ 0x00480A60 ===== */
+/* ===== mecc_stop_looping_effects @ 0x00480A60 ===== */
 /* PS2 candidate: mecc_stop_looping_effects (conf 0.576) */
 
 
 
-void FUN_00480a60(int param_1)
+void mecc_stop_looping_effects(int param_1)
 
 
 
@@ -1261,7 +1261,7 @@ void FUN_004810d0(int param_1)
 
                   ObjectSetAnim(param_1,0xd3,0x21,0,0,0);
 
-                  FUN_00480a60(param_1);
+                  mecc_stop_looping_effects(param_1);
 
                   iVar8 = reaper_0052e4a0(iVar4);
 
@@ -1421,7 +1421,7 @@ LAB_00481264:
 
                   *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | (uint)(iVar8 != 1) * 2 + 2;
 
-                  FUN_00480a60(param_1);
+                  mecc_stop_looping_effects(param_1);
 
                   iVar5 = reaper_0052e4a0(iVar4);
 
@@ -1705,7 +1705,7 @@ void obj_grab_carry(int param_1,int param_2)
 
   ObjectSetAnim(param_1,0xd3,0x21,0,0,0);
 
-  FUN_00480a60(iVar1);
+  mecc_stop_looping_effects(iVar1);
 
   iVar2 = reaper_0052e4a0(iVar3);
 
@@ -1820,7 +1820,7 @@ void obj_ride_mount(int param_1,int param_2,int param_3)
 
   *(uint *)(param_2 + 0xe0) = *(uint *)(param_2 + 0xe0) | (uint)(param_3 != 1) * 2 + 2;
 
-  FUN_00480a60(param_1);
+  mecc_stop_looping_effects(param_1);
 
   iVar1 = reaper_0052e4a0(param_2);
 
@@ -2090,7 +2090,7 @@ void game_options_load(void)
 
     _DAT_0059eeb4 = uVar1;
 
-    iVar2 = FUN_0051c870();
+    iVar2 = AudioMusicStreamLinkStatusGet__Fv();
 
     if (iVar2 == 2) {
 
@@ -2100,7 +2100,7 @@ void game_options_load(void)
 
     else {
 
-      iVar2 = FUN_0051c870();
+      iVar2 = AudioMusicStreamLinkStatusGet__Fv();
 
       if (iVar2 == 1) {
 
@@ -2158,7 +2158,7 @@ void game_options_load(void)
 
     }
 
-    iVar2 = FUN_0051c6c0();
+    iVar2 = AudioMusicStreamLinkStatusGet__Fv_2();
 
     if (iVar2 == 2) {
 
@@ -2168,7 +2168,7 @@ void game_options_load(void)
 
     else {
 
-      iVar2 = FUN_0051c6c0();
+      iVar2 = AudioMusicStreamLinkStatusGet__Fv_2();
 
       if (iVar2 == 1) {
 
@@ -5766,7 +5766,7 @@ void FUN_004862E0(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -5990,7 +5990,7 @@ void FUN_00486FC0(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -6135,7 +6135,7 @@ void FUN_00487B70(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -6828,7 +6828,7 @@ void mission_menu_load(void)
 
   if (iVar1 == 0) {
 
-    pcVar5 = FUN_00471dc0;
+    pcVar5 = render_error_dialog_check;
 
   }
 
@@ -7738,7 +7738,7 @@ void FUN_00489D40(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -8100,7 +8100,7 @@ void FUN_0048A7D0(void)
 
   if (iVar1 == 0) {
 
-    pcVar8 = FUN_00471dc0;
+    pcVar8 = render_error_dialog_check;
 
   }
 
@@ -9731,7 +9731,7 @@ void FUN_0048C830(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -9896,7 +9896,7 @@ void dialog_0048ca10(void)
 
   case 4:
 
-    iVar3 = FUN_0051c870();
+    iVar3 = AudioMusicStreamLinkStatusGet__Fv();
 
     iVar3 = iVar3 + 1;
 
@@ -9914,7 +9914,7 @@ void dialog_0048ca10(void)
 
   case 5:
 
-    iVar3 = FUN_0051c6c0();
+    iVar3 = AudioMusicStreamLinkStatusGet__Fv_2();
 
     iVar3 = iVar3 + 1;
 
@@ -10141,7 +10141,7 @@ void FUN_0048D4B0(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -10411,7 +10411,7 @@ void FUN_0048DE30(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -10925,7 +10925,7 @@ void FUN_0048E430(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -11427,7 +11427,7 @@ void FUN_0048EA50(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -11691,7 +11691,7 @@ void FUN_0048EE60(void)
 
   if (iVar1 == 0) {
 
-    pcVar3 = FUN_00471dc0;
+    pcVar3 = render_error_dialog_check;
 
   }
 
@@ -12048,7 +12048,7 @@ void FUN_0048F460(void)
 
   
 
-  dlog_push_level(&LAB_0048f840,FUN_00471dc0);
+  dlog_push_level(&LAB_0048f840,render_error_dialog_check);
 
   dialog_level_set_textentry_mode();
 

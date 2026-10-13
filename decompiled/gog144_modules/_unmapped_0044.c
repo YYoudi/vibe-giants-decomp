@@ -3714,7 +3714,7 @@ undefined4 FLK_FlickRender(int param_1)
 
         FUN_0053e960(&iStack_180,&iStack_180);
 
-        FUN_0053e900(&iStack_164,&iStack_180,&DAT_005585a8);
+        GEO_Vec2Cross(&iStack_164,&iStack_180,&DAT_005585a8);
 
         piVar9[0x1e0] = iStack_164;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (63 named) — decompiled, names from PS2 symbols
+ * 131 functions (64 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -4959,9 +4959,11 @@ void FUN_004a59a0(void)
 
                                              (float10)-1600.0));
 
-        FUN_00499490(DAT_00632a88,
+        object_add_location_2
 
-                     (float)(fVar3 * (float10)local_28 * (float10)local_18 * (float10)1600.0));
+                  (DAT_00632a88,
+
+                   (float)(fVar3 * (float10)local_28 * (float10)local_18 * (float10)1600.0));
 
       }
 
@@ -4983,9 +4985,11 @@ void FUN_004a59a0(void)
 
                                              (float10)1600.0));
 
-        FUN_00499490(DAT_00632a88,
+        object_add_location_2
 
-                     (float)(fVar3 * (float10)local_28 * (float10)local_14 * (float10)1600.0));
+                  (DAT_00632a88,
+
+                   (float)(fVar3 * (float10)local_28 * (float10)local_14 * (float10)1600.0));
 
       }
 
@@ -11427,12 +11431,12 @@ void FUN_004ad7e0(int param_1)
 
 }
 
-/* ===== FUN_004adbf0 @ 0x004ADBF0 ===== */
+/* ===== repairgun_target_valid__FP6OBJECTi @ 0x004ADBF0 ===== */
 /* PS2 candidate: repairgun_target_valid__FP6OBJECTi (conf 0.572) */
 
 
 
-undefined4 FUN_004adbf0(int param_1,int param_2)
+undefined4 repairgun_target_valid__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -12942,7 +12946,7 @@ LAB_004af232:
 
   puVar10 = in_stack_00000020 + iStack00000014 * 0xc1 + 2;
 
-  FUN_004973c0();
+  object_stop_movement_2();
 
   iVar21 = *(int *)(iVar20 + (int)piVar9);
 

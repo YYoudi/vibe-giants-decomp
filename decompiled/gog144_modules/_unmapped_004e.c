@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (44 named) — decompiled, names from PS2 symbols
+ * 94 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -10069,12 +10069,12 @@ void FUN_004ed9e0(int param_1)
 
 }
 
-/* ===== FUN_004edd70 @ 0x004EDD70 ===== */
+/* ===== world_make_reset_callbacks__Fi @ 0x004EDD70 ===== */
 /* PS2 candidate: world_make_reset_callbacks__Fi (conf 0.58) */
 
 
 
-void FUN_004edd70(void)
+void world_make_reset_callbacks__Fi(void)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (39 named) — decompiled, names from PS2 symbols
+ * 87 functions (40 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -7637,7 +7637,7 @@ LAB_005063fa:
 
                   if ((uVar9 & 0x1000000) == 0) {
 
-                    FUN_004803a0(param_1);
+                    mecc_enable_repair_gun(param_1);
 
                   }
 
@@ -7811,7 +7811,7 @@ LAB_005067ce:
 
       if ((iVar3 != 0x30) && (iVar3 == 0x2e)) {
 
-        FUN_00480a60(param_1);
+        mecc_stop_looping_effects(param_1);
 
         if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
 
@@ -10073,12 +10073,12 @@ float10 FUN_0050a490(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0050a4f0 @ 0x0050A4F0 ===== */
+/* ===== math_atan2_deg @ 0x0050A4F0 ===== */
 /* PS2 candidate: GetGiantsMemCard__Fv (conf 0.563) */
 
 
 
-float10 FUN_0050a4f0(void)
+float10 math_atan2_deg(void)
 
 
 

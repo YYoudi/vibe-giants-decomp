@@ -1783,7 +1783,7 @@ void collide_objects(int param_1)
 
                         if (ABS(fVar11) <= (float10)1.0) {
 
-                          fVar11 = (float10)FUN_0050a4f0((float)fVar11);
+                          fVar11 = (float10)math_atan2_deg((float)fVar11);
 
                           local_b0 = (float)fVar11;
 
@@ -2412,7 +2412,7 @@ void object_snap_y_to_ground(float param_1,undefined4 *param_2)
 
   local_4 = (float)fVar4;
 
-  fVar4 = (float10)FUN_00431e30(&local_c);
+  fVar4 = (float10)world_ripple_xform(&local_c);
 
   if (fVar4 < (float10)-61.1) {
 
@@ -5002,7 +5002,7 @@ void FUN_004162c0(int param_1)
 
   else {
 
-    FUN_00480a60();
+    mecc_stop_looping_effects();
 
     *(uint *)(param_1 + 0x20c) = *(uint *)(param_1 + 0x20c) & 0xfffffbff;
 

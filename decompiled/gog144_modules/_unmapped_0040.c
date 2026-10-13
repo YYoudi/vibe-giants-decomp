@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (53 named) — decompiled, names from PS2 symbols
+ * 105 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -2522,12 +2522,12 @@ void S_maxobj_create_vertex_normals(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00404530 @ 0x00404530 ===== */
+/* ===== objdata_create_vertex_normals @ 0x00404530 ===== */
 /* PS2 candidate: objdata_create_vertex_normals (conf 0.577) */
 
 
 
-void FUN_00404530(int param_1,undefined4 param_2)
+void objdata_create_vertex_normals(int param_1,undefined4 param_2)
 
 
 
@@ -6091,7 +6091,7 @@ LAB_004090c8:
 
         uVar5 = FUN_00507b00(s_BaseChatMCPHouseDone_00554ed4,1);
 
-        FUN_005362d0(uVar5);
+        chat_insert(uVar5);
 
       }
 
@@ -11178,12 +11178,12 @@ void ai_nearest_55_scan(float param_1)
 
 }
 
-/* ===== FUN_0040f030 @ 0x0040F030 ===== */
+/* ===== charger_set_charge_location__FP6OBJECTi @ 0x0040F030 ===== */
 /* PS2 candidate: charger_set_charge_location__FP6OBJECTi (conf 0.573) */
 
 
 
-void FUN_0040f030(int param_1)
+void charger_set_charge_location__FP6OBJECTi(int param_1)
 
 
 

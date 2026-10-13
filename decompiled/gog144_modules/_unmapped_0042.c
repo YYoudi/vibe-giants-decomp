@@ -9084,7 +9084,7 @@ void FUN_00426f20(void)
 
   if (DAT_00556498 == -1) {
 
-    FUN_00471dc0();
+    render_error_dialog_check();
 
     return;
 
@@ -15757,7 +15757,7 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
     }
 
-    FUN_00404530(iVar2,uVar7);
+    objdata_create_vertex_normals(iVar2,uVar7);
 
     local_100 = 1;
 
@@ -17390,11 +17390,11 @@ void FUN_0042de80(undefined4 param_1,undefined4 *param_2,float param_3,undefined
 
   FUN_0053e960(&local_c,param_1);
 
-  FUN_0053e900(&local_18,&local_c,&DAT_005565d4);
+  GEO_Vec2Cross(&local_18,&local_c,&DAT_005565d4);
 
   FUN_0053e960(&local_18,&local_18);
 
-  FUN_0053e900(&local_c,&DAT_005565d4,&local_18);
+  GEO_Vec2Cross(&local_c,&DAT_005565d4,&local_18);
 
   param_4[1] = local_18 * param_3;
 
@@ -17543,11 +17543,11 @@ void fx_billboard_matrix(undefined4 *param_1,undefined4 param_2,float param_3,un
 
   FUN_0053e960(&local_c,param_2);
 
-  FUN_0053e900(&local_18,&local_c,&DAT_005565e0);
+  GEO_Vec2Cross(&local_18,&local_c,&DAT_005565e0);
 
   FUN_0053e960(&local_18,&local_18);
 
-  FUN_0053e900(&local_c,&DAT_005565e0,&local_18);
+  GEO_Vec2Cross(&local_c,&DAT_005565e0,&local_18);
 
   param_4[1] = local_18 * fVar1;
 

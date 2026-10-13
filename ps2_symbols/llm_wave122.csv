@@ -1,0 +1,20 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+005362d0,FUN_005362d0,,chat_insert,0.9,llm-w122,body-verified
+004edd70,FUN_004edd70,,world_make_reset_callbacks__Fi,0.9,llm-w122,body-verified
+004803a0,FUN_004803a0,,mecc_enable_repair_gun,0.9,llm-w122,body-verified
+0053e900,FUN_0053e900,,GEO_Vec2Cross,0.9,llm-w122,body-verified cross
+00404530,FUN_00404530,,objdata_create_vertex_normals,0.9,llm-w122,body-verified
+0051c370,FUN_0051c370,,_lmcGetClientPtr,0.9,llm-w122,body-verified fptr table install
+00480a60,FUN_00480a60,,mecc_stop_looping_effects,0.9,llm-w122,body-verified
+0049bfe0,FUN_0049bfe0,,collide_line_tri_hit,0.9,llm-w122,body-verified
+00499490,FUN_00499490,,object_add_location_2,0.9,llm-w122,body-verified variant
+0040f030,FUN_0040f030,,charger_set_charge_location__FP6OBJECTi,0.9,llm-w122,body-verified
+004adbf0,FUN_004adbf0,,repairgun_target_valid__FP6OBJECTi,0.9,llm-w122,body-verified
+0051c870,FUN_0051c870,,AudioMusicStreamLinkStatusGet__Fv,0.9,llm-w122,body-verified
+0051c6c0,FUN_0051c6c0,,AudioMusicStreamLinkStatusGet__Fv_2,0.9,llm-w122,body-verified variant
+00431e30,FUN_00431e30,,world_ripple_xform,0.9,llm-w122,body-verified ripple family
+00431a00,FUN_00431a00,,get_free_world_ripple__Fv_2,0.9,llm-w122,body-verified variant
+004973c0,FUN_004973c0,,object_stop_movement_2,0.9,llm-w122,body-verified variant
+00517a60,FUN_00517a60,,di_error_trace,0.9,llm-w122,body-verified (rejected AudioMusicStreamResume)
+00471dc0,FUN_00471dc0,,render_error_dialog_check,0.9,llm-w122,body-verified Render Error str (rejected __main)
+0050a4f0,FUN_0050a4f0,,math_atan2_deg,0.9,llm-w122,body-verified rad->deg (rejected GetGiantsMemCard)

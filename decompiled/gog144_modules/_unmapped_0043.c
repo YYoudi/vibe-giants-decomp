@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (59 named) — decompiled, names from PS2 symbols
+ * 74 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -997,12 +997,14 @@ void FUN_004319c0(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00431a00 @ 0x00431A00 ===== */
+/* ===== get_free_world_ripple__Fv_2 @ 0x00431A00 ===== */
 /* PS2 candidate: get_free_world_ripple__Fv_2 (conf 0.568) */
 
 
 
-void FUN_00431a00(undefined4 *param_1,float param_2,float param_3,float param_4,float param_5)
+void get_free_world_ripple__Fv_2
+
+               (undefined4 *param_1,float param_2,float param_3,float param_4,float param_5)
 
 
 
@@ -1448,12 +1450,12 @@ void FUN_00431b80(void)
 
 }
 
-/* ===== FUN_00431e30 @ 0x00431E30 ===== */
+/* ===== world_ripple_xform @ 0x00431E30 ===== */
 /* PS2 candidate: world_ripple_xform (conf 0.568) */
 
 
 
-float10 FUN_00431e30(float *param_1)
+float10 world_ripple_xform(float *param_1)
 
 
 
@@ -2507,7 +2509,7 @@ bool main_drawwrld_00434880(float *param_1,float param_2,float param_3,float *pa
 
     local_4 = *param_4;
 
-    fVar3 = (float10)FUN_00431e30(&local_c);
+    fVar3 = (float10)world_ripple_xform(&local_c);
 
     param_1[2] = (float)fVar3;
 

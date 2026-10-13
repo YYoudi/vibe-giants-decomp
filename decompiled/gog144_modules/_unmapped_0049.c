@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (62 named) — decompiled, names from PS2 symbols
+ * 142 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -518,9 +518,9 @@ void FUN_00490d70(void)
 
     }
 
-    FUN_005362d0();
+    chat_insert();
 
-    FUN_005362d0();
+    chat_insert();
 
     in_stack_00000028 = '\v';
 
@@ -594,7 +594,7 @@ void FUN_00490d70(void)
 
     }
 
-    FUN_005362d0();
+    chat_insert();
 
     _strncat(&stack0x00000000,(char *)(DAT_006330e4 + 0x4558 + iVar8),0x1c);
 
@@ -4486,7 +4486,7 @@ void FUN_00493bd0(int param_1)
 
     if (iVar2 != 0) {
 
-      FUN_005362d0(uVar1,6);
+      chat_insert(uVar1,6);
 
     }
 
@@ -4531,7 +4531,7 @@ void FUN_00493c90(void)
 
     if (iVar2 != 0) {
 
-      FUN_005362d0(uVar1,6);
+      chat_insert(uVar1,6);
 
     }
 
@@ -4582,7 +4582,7 @@ void FUN_00493d60(undefined4 param_1,float param_2)
 
     if (iVar2 != 0) {
 
-      FUN_005362d0(uVar1,6);
+      chat_insert(uVar1,6);
 
     }
 
@@ -4793,7 +4793,7 @@ void FUN_00494030(int param_1)
 
     if (iVar2 != 0) {
 
-      FUN_005362d0(uVar1,6);
+      chat_insert(uVar1,6);
 
     }
 
@@ -5000,7 +5000,7 @@ void FUN_00494120(int param_1)
 
     if (iVar4 != 0) {
 
-      FUN_005362d0(uVar5,6);
+      chat_insert(uVar5,6);
 
     }
 
@@ -7642,12 +7642,12 @@ LAB_00497282:
 
 }
 
-/* ===== FUN_004973c0 @ 0x004973C0 ===== */
+/* ===== object_stop_movement_2 @ 0x004973C0 ===== */
 /* PS2 candidate: object_stop_movement_3 (conf 0.565) */
 
 
 
-void FUN_004973c0(int param_1)
+void object_stop_movement_2(int param_1)
 
 
 
@@ -10117,12 +10117,12 @@ void FUN_004993c0(int param_1,float *param_2)
 
 }
 
-/* ===== FUN_00499490 @ 0x00499490 ===== */
+/* ===== object_add_location_2 @ 0x00499490 ===== */
 /* PS2 candidate: object_add_location_2 (conf 0.573) */
 
 
 
-void FUN_00499490(int param_1,float param_2,float param_3,float param_4)
+void object_add_location_2(int param_1,float param_2,float param_3,float param_4)
 
 
 
@@ -12640,11 +12640,13 @@ int collgrid_anim_audio_user
 
         iVar2 = *(int *)(iVar1 + 0x14);
 
-        iVar3 = FUN_0049bfe0(param_1,&local_18,iVar2 + (uint)*(ushort *)(iVar3 + local_28 * 2) * 0xc
+        iVar3 = collide_line_tri_hit
 
-                             ,iVar2 + (uint)*(ushort *)(iVar3 + local_2c * 2) * 0xc,
+                          (param_1,&local_18,iVar2 + (uint)*(ushort *)(iVar3 + local_28 * 2) * 0xc,
 
-                             iVar2 + (uint)*(ushort *)(iVar3 + local_30 * 2) * 0xc,&local_c);
+                           iVar2 + (uint)*(ushort *)(iVar3 + local_2c * 2) * 0xc,
+
+                           iVar2 + (uint)*(ushort *)(iVar3 + local_30 * 2) * 0xc,&local_c);
 
         if (iVar3 != 0) {
 
@@ -12747,14 +12749,16 @@ int FUN_0049bf60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefi
 
 }
 
-/* ===== FUN_0049bfe0 @ 0x0049BFE0 ===== */
+/* ===== collide_line_tri_hit @ 0x0049BFE0 ===== */
 /* PS2 candidate: collide_line_tri_hit (conf 0.573) */
 
 
 
-int FUN_0049bfe0(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,
+int collide_line_tri_hit
 
-                float *param_6)
+              (float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,
+
+              float *param_6)
 
 
 
@@ -12933,7 +12937,7 @@ undefined4 FUN_0049c1d0(undefined4 param_1,undefined4 param_2,int param_3,int pa
 
     case 5:
 
-      iVar2 = FUN_0049bfe0(param_1,param_2,local_24,local_30,local_18,param_2);
+      iVar2 = collide_line_tri_hit(param_1,param_2,local_24,local_30,local_18,param_2);
 
       if (iVar2 != 0) {
 
@@ -12951,7 +12955,7 @@ undefined4 FUN_0049c1d0(undefined4 param_1,undefined4 param_2,int param_3,int pa
 
     case 6:
 
-      iVar2 = FUN_0049bfe0(param_1,param_2,local_18,local_c,local_30,param_2);
+      iVar2 = collide_line_tri_hit(param_1,param_2,local_18,local_c,local_30,param_2);
 
       if (iVar2 != 0) {
 
@@ -12973,7 +12977,7 @@ undefined4 FUN_0049c1d0(undefined4 param_1,undefined4 param_2,int param_3,int pa
 
     }
 
-    iVar2 = FUN_0049bfe0(param_1,param_2,puVar3,puVar4,puVar5,param_2);
+    iVar2 = collide_line_tri_hit(param_1,param_2,puVar3,puVar4,puVar5,param_2);
 
     if (iVar2 != 0) {
 
@@ -13703,7 +13707,7 @@ void FUN_0049e4a0(int param_1)
 
       else {
 
-        FUN_00480a60(DAT_00632a88);
+        mecc_stop_looping_effects(DAT_00632a88);
 
       }
 

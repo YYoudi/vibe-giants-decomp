@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (103 named) — decompiled, names from PS2 symbols
+ * 179 functions (105 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -1198,7 +1198,7 @@ LAB_005307f3:
 
   if (iVar7 == 0) {
 
-    FUN_005362d0(local_300,1);
+    chat_insert(local_300,1);
 
     return;
 
@@ -1363,7 +1363,7 @@ void comm_kill_message2(undefined4 param_1,int param_2)
 
     if (iVar4 == 0) {
 
-      FUN_005362d0(local_2c8,1);
+      chat_insert(local_2c8,1);
 
       return;
 
@@ -1532,7 +1532,7 @@ void rpman_move(int param_1,int param_2)
 
       if (iVar2 == 0) {
 
-        FUN_005362d0(local_2c8,1);
+        chat_insert(local_2c8,1);
 
         return;
 
@@ -9514,14 +9514,14 @@ void chat_init(void)
 
 }
 
-/* ===== FUN_005362d0 @ 0x005362D0 ===== */
+/* ===== chat_insert @ 0x005362D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: chat_insert (conf 0.58) */
 
 
 
-void FUN_005362d0(char *param_1,undefined4 param_2)
+void chat_insert(char *param_1,undefined4 param_2)
 
 
 
@@ -9686,7 +9686,7 @@ void comm_005363f0(char *param_1,undefined4 param_2)
 
               *pcVar5 = '\0';
 
-              FUN_005362d0(pcVar6,param_2);
+              chat_insert(pcVar6,param_2);
 
               pcVar6 = pcVar5 + 1;
 
@@ -9722,7 +9722,7 @@ LAB_00536519:
 
         *pcVar7 = '\0';
 
-        FUN_005362d0(pcVar6,param_2);
+        chat_insert(pcVar6,param_2);
 
         pcVar6 = pcVar7 + 1;
 
@@ -9734,7 +9734,7 @@ LAB_00536519:
 
         *pcVar5 = '\0';
 
-        FUN_005362d0(pcVar6,param_2);
+        chat_insert(pcVar6,param_2);
 
         pcVar6 = pcVar5 + 1;
 
@@ -9756,7 +9756,7 @@ LAB_0053653b:
 
   if (*pcVar6 != '\0') {
 
-    FUN_005362d0(pcVar6,param_2);
+    chat_insert(pcVar6,param_2);
 
   }
 
@@ -9805,7 +9805,7 @@ void FUN_00536580(char *param_1,undefined4 param_2)
 
     local_900[((int)_Str - (int)_Source) - 1] = '\0';
 
-    FUN_005362d0(local_900,param_2);
+    chat_insert(local_900,param_2);
 
     pcVar1 = _strchr(_Str,10);
 
@@ -9813,7 +9813,7 @@ void FUN_00536580(char *param_1,undefined4 param_2)
 
   }
 
-  FUN_005362d0(_Source,param_2);
+  chat_insert(_Source,param_2);
 
   return;
 
@@ -10985,7 +10985,7 @@ void comm_wincond_destroy(int param_1)
 
     if (iVar4 == 0) {
 
-      FUN_005362d0(pcVar6,1);
+      chat_insert(pcVar6,1);
 
     }
 
@@ -11196,7 +11196,7 @@ void FUN_005375e0(void)
 
         if (iVar3 == 0) {
 
-          FUN_005362d0(pcVar4,1);
+          chat_insert(pcVar4,1);
 
         }
 
@@ -11494,7 +11494,7 @@ void FUN_005375e0(void)
 
           if (iVar3 == 0) {
 
-            FUN_005362d0(pcVar4,1);
+            chat_insert(pcVar4,1);
 
           }
 
@@ -11626,7 +11626,7 @@ void FUN_005375e0(void)
 
             if (iVar3 == 0) {
 
-              FUN_005362d0(pcVar4,1);
+              chat_insert(pcVar4,1);
 
             }
 
@@ -11766,7 +11766,7 @@ void FUN_005375e0(void)
 
             if (iVar3 == 0) {
 
-              FUN_005362d0(pcVar4,1);
+              chat_insert(pcVar4,1);
 
             }
 
@@ -11890,7 +11890,7 @@ LAB_00537c57:
 
           if (iVar3 == 0) {
 
-            FUN_005362d0(pcVar4,1);
+            chat_insert(pcVar4,1);
 
             goto LAB_00537dfb;
 
@@ -11984,7 +11984,7 @@ LAB_00537c57:
 
         if (iVar3 == 0) {
 
-          FUN_005362d0(pcVar4,1);
+          chat_insert(pcVar4,1);
 
         }
 
@@ -15565,11 +15565,11 @@ LAB_0053ca17:
 
     uStack_9c = puVar5[0xb];
 
-    FUN_0053e900(&uStack_7c,&uStack_a4,&local_b0);
+    GEO_Vec2Cross(&uStack_7c,&uStack_a4,&local_b0);
 
     FUN_0053e960(&uStack_7c,&uStack_7c);
 
-    FUN_0053e900(&uStack_a4,&local_b0,&uStack_7c);
+    GEO_Vec2Cross(&uStack_a4,&local_b0,&uStack_7c);
 
     uStack_60 = uStack_7c;
 
@@ -17843,11 +17843,11 @@ void GEO_MatLookAt(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,un
 
   FUN_0053e960(&local_18,param_3);
 
-  FUN_0053e900(&local_24,param_4,param_3);
+  GEO_Vec2Cross(&local_24,param_4,param_3);
 
   FUN_0053e960(&local_24,&local_24);
 
-  FUN_0053e900(&local_c,&local_18,&local_24);
+  GEO_Vec2Cross(&local_c,&local_18,&local_24);
 
   param_1[9] = local_1c;
 
@@ -18786,12 +18786,12 @@ void distancesq3d1p__FP3P3D(float *param_1)
 
 }
 
-/* ===== FUN_0053e900 @ 0x0053E900 ===== */
+/* ===== GEO_Vec2Cross @ 0x0053E900 ===== */
 /* PS2 candidate: GEO_Vec2Cross (conf 0.577) */
 
 
 
-void FUN_0053e900(float *param_1,float *param_2,float *param_3)
+void GEO_Vec2Cross(float *param_1,float *param_2,float *param_3)
 
 
 
@@ -20239,7 +20239,7 @@ void FUN_0053fad0(float *param_1,undefined4 param_2,undefined4 param_3)
 
   
 
-  FUN_0053e900(param_1,param_2,param_3);
+  GEO_Vec2Cross(param_1,param_2,param_3);
 
   fVar1 = (float10)FUN_00516290(param_2,param_3);
 
@@ -20276,7 +20276,7 @@ void FUN_0053fb40(float *param_1,undefined4 param_2,float param_3,float param_4)
 
   
 
-  FUN_0053e900(param_1,param_2,param_3);
+  GEO_Vec2Cross(param_1,param_2,param_3);
 
   fVar2 = (float10)FUN_00516290(param_2,param_3);
 

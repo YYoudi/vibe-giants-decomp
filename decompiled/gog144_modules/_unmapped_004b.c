@@ -1923,7 +1923,7 @@ LAB_004b56d8:
 
         uVar5 = FUN_00507b00(s_BaseChatRpPHouseDone_00560bf0,1);
 
-        FUN_005362d0(uVar5);
+        chat_insert(uVar5);
 
       }
 
@@ -11564,7 +11564,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     crt_sprintf(local_100,uVar4,uVar5);
 
-    FUN_005362d0(local_100,1);
+    chat_insert(local_100,1);
 
     iVar3 = *(int *)(param_1 + 0x100);
 

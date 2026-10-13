@@ -4627,7 +4627,7 @@ void gamespy_host_game(void)
 
   else {
 
-    FUN_00480a60(DAT_00632a88);
+    mecc_stop_looping_effects(DAT_00632a88);
 
   }
 
@@ -12503,7 +12503,7 @@ void comm_audio_volume_user(char *param_1,undefined4 param_2,byte param_3,undefi
 
   if (iVar2 == 0) {
 
-    FUN_005362d0(param_1,param_2);
+    chat_insert(param_1,param_2);
 
     return;
 
@@ -12747,7 +12747,7 @@ void comm_team_broadcast_menu(int param_1)
 
     if (iVar4 == 0) {
 
-      FUN_005362d0(local_280,1);
+      chat_insert(local_280,1);
 
     }
 

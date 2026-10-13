@@ -2070,7 +2070,7 @@ LAB_0045294e:
 
   else {
 
-    FUN_00480a60();
+    mecc_stop_looping_effects();
 
     mecc_disable_repair_gun(DAT_00632a88);
 
@@ -4170,19 +4170,19 @@ int physics_vec_math(float *param_1,float *param_2,uint *param_3,float *param_4,
 
   if ((DAT_00632b90 != 0) && (param_5 != 0)) {
 
-    fVar14 = (float10)FUN_00431e30(&local_18);
+    fVar14 = (float10)world_ripple_xform(&local_18);
 
     local_10 = (float)fVar14;
 
-    fVar14 = (float10)FUN_00431e30(&local_24);
+    fVar14 = (float10)world_ripple_xform(&local_24);
 
     local_1c = (float)fVar14;
 
-    fVar14 = (float10)FUN_00431e30(&local_30);
+    fVar14 = (float10)world_ripple_xform(&local_30);
 
     local_28 = (float)fVar14;
 
-    fVar14 = (float10)FUN_00431e30(&local_c);
+    fVar14 = (float10)world_ripple_xform(&local_c);
 
     local_4 = (float)fVar14;
 
@@ -9067,7 +9067,7 @@ LAB_00459ce0:
 
     crt_sprintf(local_100,uVar6,uVar7);
 
-    FUN_005362d0(local_100,1);
+    chat_insert(local_100,1);
 
   }
 
@@ -10091,7 +10091,7 @@ void item_drop_backheld(int param_1)
 
         crt_sprintf(local_100,uVar4,uVar5);
 
-        FUN_005362d0(local_100,1);
+        chat_insert(local_100,1);
 
       }
 
@@ -10150,7 +10150,7 @@ void item_drop_curweap(int param_1)
 
           crt_sprintf(local_100,uVar2,uVar3);
 
-          FUN_005362d0(local_100,1);
+          chat_insert(local_100,1);
 
         }
 
@@ -10964,11 +10964,11 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 
       param_2 = *(float *)(*(int *)((int)fVar1 + 0x104) + 0x24) * 0.01;
 
-      FUN_0053e900(&fStack_28,&DAT_0055abbc,&fStack_10);
+      GEO_Vec2Cross(&fStack_28,&DAT_0055abbc,&fStack_10);
 
       FUN_0053e960(&fStack_28,&fStack_28);
 
-      FUN_0053e900(&DAT_0055abbc,&fStack_10,&fStack_28);
+      GEO_Vec2Cross(&DAT_0055abbc,&fStack_10,&fStack_28);
 
       fVar3 = (float10)rndfloatrange(0,0x43b40000);
 

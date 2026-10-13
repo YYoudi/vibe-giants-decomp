@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (96 named) — decompiled, names from PS2 symbols
+ * 186 functions (100 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -7010,12 +7010,12 @@ void tracer_set_text(LPCSTR param_1)
 
 }
 
-/* ===== FUN_00517a60 @ 0x00517A60 ===== */
+/* ===== di_error_trace @ 0x00517A60 ===== */
 /* PS2 candidate: AudioMusicStreamResume__Fv (conf 0.579) */
 
 
 
-void FUN_00517a60(undefined4 param_1)
+void di_error_trace(undefined4 param_1)
 
 
 
@@ -8472,7 +8472,7 @@ LAB_00518e60:
 
   }
 
-  FUN_0051c370(&local_208,&local_20c,&local_204);
+  _lmcGetClientPtr(&local_208,&local_20c,&local_204);
 
   (*DAT_005dcfb0)(local_208,local_20c,local_204);
 
@@ -8684,7 +8684,7 @@ undefined4 dinput_init(void)
 
   if (DAT_005ddb7c != 0) {
 
-    FUN_00517a60();
+    di_error_trace();
 
     return 0;
 
@@ -8700,7 +8700,7 @@ undefined4 dinput_init(void)
 
       HStack_714.unused = 0x51919b;
 
-      FUN_00517a60();
+      di_error_trace();
 
       FUN_0051EA90();
 
@@ -8720,7 +8720,7 @@ undefined4 dinput_init(void)
 
       pHStack_71c = (HWND)0x5191d4;
 
-      FUN_00517a60();
+      di_error_trace();
 
       pHStack_718 = (HWND)0x5191dc;
 
@@ -8746,7 +8746,7 @@ undefined4 dinput_init(void)
 
       uStack_728 = 0x519211;
 
-      FUN_00517a60();
+      di_error_trace();
 
       ppHStack_724 = (HWND *)0x519219;
 
@@ -8774,7 +8774,7 @@ undefined4 dinput_init(void)
 
       HStack_714.unused = 0x51926c;
 
-      FUN_00517a60();
+      di_error_trace();
 
       FUN_0051EA90();
 
@@ -8794,7 +8794,7 @@ undefined4 dinput_init(void)
 
       pHStack_71c = (HWND)0x5192a5;
 
-      FUN_00517a60();
+      di_error_trace();
 
       pHStack_718 = (HWND)0x5192ad;
 
@@ -8820,7 +8820,7 @@ undefined4 dinput_init(void)
 
       uStack_728 = 0x5192e2;
 
-      FUN_00517a60();
+      di_error_trace();
 
       ppHStack_724 = (HWND *)0x5192ea;
 
@@ -8844,7 +8844,7 @@ undefined4 dinput_init(void)
 
     if (DAT_005ddb7c != 0) {
 
-      FUN_00517a60(s_DIKey_SetProperty__s_0057ca20);
+      di_error_trace(s_DIKey_SetProperty__s_0057ca20);
 
       FUN_0051EA90();
 
@@ -9096,7 +9096,7 @@ undefined4 dinput_key_poll(void)
 
       else if (DAT_005ddb7c != 0) {
 
-        FUN_00517a60(s_DIKey_GetDeviceData__s_0057caf4);
+        di_error_trace(s_DIKey_GetDeviceData__s_0057caf4);
 
         return 0;
 
@@ -10675,7 +10675,7 @@ LAB_0051a310:
 
   _DAT_005dd368 = 1;
 
-  FUN_0051c370(&local_208,&local_20c,&local_204);
+  _lmcGetClientPtr(&local_208,&local_20c,&local_204);
 
   (*DAT_005dd364)(local_208,local_20c,local_204);
 
@@ -12231,14 +12231,14 @@ void textrender_draw_main(uint param_1,undefined4 *param_2,float param_3,byte *p
 
 }
 
-/* ===== FUN_0051c370 @ 0x0051C370 ===== */
+/* ===== _lmcGetClientPtr @ 0x0051C370 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: _lmcGetClientPtr (conf 0.576) */
 
 
 
-void FUN_0051c370(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
@@ -12523,12 +12523,12 @@ void FUN_0051c660(int param_1)
 
 }
 
-/* ===== FUN_0051c6c0 @ 0x0051C6C0 ===== */
+/* ===== AudioMusicStreamLinkStatusGet__Fv_2 @ 0x0051C6C0 ===== */
 /* PS2 candidate: AudioMusicStreamLinkStatusGet__Fv (conf 0.568) */
 
 
 
-char FUN_0051c6c0(void)
+char AudioMusicStreamLinkStatusGet__Fv_2(void)
 
 
 
@@ -12732,12 +12732,12 @@ void FUN_0051c810(int param_1)
 
 }
 
-/* ===== FUN_0051c870 @ 0x0051C870 ===== */
+/* ===== AudioMusicStreamLinkStatusGet__Fv @ 0x0051C870 ===== */
 /* PS2 candidate: AudioMusicStreamLinkStatusGet__Fv_2 (conf 0.568) */
 
 
 
-char FUN_0051c870(void)
+char AudioMusicStreamLinkStatusGet__Fv(void)
 
 
 
