@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (41 named) — decompiled, names from PS2 symbols
+ * 67 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -3356,7 +3356,7 @@ void marker_spline_adjust_buoy(int param_1)
 
                  fVar6 * *(float *)(iVar3 + 0xfc) + *(float *)(iVar3 + 0xa4);
 
-            fVar10 = (float10)FUN_00413e40(*(int *)(iVar4 + 0x54) + 0xa0);
+            fVar10 = (float10)get_floor_z_point(*(int *)(iVar4 + 0x54) + 0xa0);
 
             *(float *)(*(int *)(iVar4 + 0x54) + 0xa8) = (float)fVar10;
 
@@ -3388,7 +3388,7 @@ void marker_spline_adjust_buoy(int param_1)
 
                  *(float *)(iVar3 + 0xa4) - fVar6 * *(float *)(iVar3 + 0xfc);
 
-            fVar10 = (float10)FUN_00413e40(*(int *)(iVar4 + 0x58) + 0xa0);
+            fVar10 = (float10)get_floor_z_point(*(int *)(iVar4 + 0x58) + 0xa0);
 
             *(float *)(*(int *)(iVar4 + 0x58) + 0xa8) = (float)fVar10;
 
@@ -5214,7 +5214,7 @@ LAB_0047c03e:
 
     *(uint *)(iVar2 + 0xe0) = *(uint *)(iVar2 + 0xe0) & 0xfffbffff;
 
-    uVar7 = FUN_004a8fb0(*(undefined4 *)(iVar4 + 0x18c),1);
+    uVar7 = IconDefWieldType(*(undefined4 *)(iVar4 + 0x18c),1);
 
     iVar3 = FUN_00458300(iVar2,0,uVar7);
 
@@ -5224,7 +5224,7 @@ LAB_0047c03e:
 
     }
 
-    uVar7 = FUN_004a8fb0(*(undefined4 *)(iVar4 + 0x18c),1);
+    uVar7 = IconDefWieldType(*(undefined4 *)(iVar4 + 0x18c),1);
 
     iVar4 = FUN_00458300(iVar2,1,uVar7);
 
@@ -5667,7 +5667,7 @@ void FUN_0047c440(int param_1)
 
     iVar7 = FUN_004a8f50(uVar5);
 
-    iVar4 = FUN_004add50(uVar5);
+    iVar4 = PROJ_GetCustom(uVar5);
 
     local_10 = &LAB_0047c620;
 
@@ -6964,7 +6964,7 @@ LAB_0047d6b8:
 
     if (iVar5 != 0) {
 
-      FUN_00452490(0,uVar4);
+      giftshopview_enable(0,uVar4);
 
       fVar9 = (float10)FUN_004a7630(uVar4,0);
 
@@ -7748,7 +7748,7 @@ void mecc_fire_logic__FP6OBJECT(int *param_1)
 
         if (0 < *(int *)(iVar6 + 0xf4)) {
 
-          iVar11 = FUN_004add50(1);
+          iVar11 = PROJ_GetCustom(1);
 
           puVar14 = &LAB_0047c620;
 
@@ -7968,7 +7968,7 @@ LAB_0047e183:
 
     if ((iVar7 != 0) && ((iVar6 != 4 || (0.0 < *(float *)(iVar3 + 0x110))))) {
 
-      iVar6 = FUN_004add50(local_88);
+      iVar6 = PROJ_GetCustom(local_88);
 
       local_58 = (code *)&LAB_0047c620;
 
@@ -9106,12 +9106,12 @@ uint mecc_in_gyro(int param_1)
 
 }
 
-/* ===== FUN_0047f740 @ 0x0047F740 ===== */
+/* ===== mecc_jet @ 0x0047F740 ===== */
 /* PS2 candidate: mecc_jet (conf 0.525) */
 
 
 
-void FUN_0047f740(float param_1)
+void mecc_jet(float param_1)
 
 
 
@@ -9734,7 +9734,7 @@ void mecc_to_bush(int param_1)
 
   *(uint *)(iVar2 + 0xd8) = *(uint *)(iVar2 + 0xd8) | 0x400000;
 
-  uVar3 = FUN_004a8fb0(*(undefined4 *)(iVar4 + 0x18c),1);
+  uVar3 = IconDefWieldType(*(undefined4 *)(iVar4 + 0x18c),1);
 
   iVar4 = FUN_00458300(param_1,10,uVar3);
 

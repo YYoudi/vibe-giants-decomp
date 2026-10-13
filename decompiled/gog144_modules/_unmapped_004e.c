@@ -3565,7 +3565,7 @@ LAB_004e4520:
 
   *(float *)(param_1 + 0xa4) = *(float *)(piVar2[0x11] + 0xa4) - fVar4 * local_4;
 
-  fVar6 = (float10)FUN_00413e40((float *)(param_1 + 0xa0));
+  fVar6 = (float10)get_floor_z_point((float *)(param_1 + 0xa0));
 
   *(float *)(param_1 + 0xa8) = (float)fVar6;
 
@@ -9461,7 +9461,7 @@ undefined4 mission_marker_clamp(float *param_1,float *param_2,float *param_3)
 
   param_2[1] = fVar1 * local_8[0] + param_3[1];
 
-  fVar5 = (float10)FUN_00413e40(param_2);
+  fVar5 = (float10)get_floor_z_point(param_2);
 
   fVar1 = (float)fVar5;
 
@@ -11026,7 +11026,7 @@ void FUN_004ee670(int param_1)
 
   }
 
-  FUN_004b4450();
+  rpboat_lock_to_boat__FP6OBJECTT0();
 
   FUN_00494fb0();
 

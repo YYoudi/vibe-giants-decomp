@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (63 named) — decompiled, names from PS2 symbols
+ * 100 functions (64 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2589,12 +2589,12 @@ void obj_ground_normal(int param_1)
 
 }
 
-/* ===== FUN_00413e40 @ 0x00413E40 ===== */
+/* ===== get_floor_z_point @ 0x00413E40 ===== */
 /* PS2 candidate: get_floor_z_point (conf 0.526) */
 
 
 
-float10 FUN_00413e40(undefined4 param_1)
+float10 get_floor_z_point(undefined4 param_1)
 
 
 

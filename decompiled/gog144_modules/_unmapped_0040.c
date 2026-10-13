@@ -10675,7 +10675,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
     }
 
-    fVar9 = (float10)FUN_00413e40(&local_24);
+    fVar9 = (float10)get_floor_z_point(&local_24);
 
     if (fVar9 < (float10)0.0) {
 

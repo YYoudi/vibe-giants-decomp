@@ -1,0 +1,19 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a2b90,FUN_004a2b90,,PhysicsExCalcControledModelSpeeds,0.9,llm-w125,body-verified
+004a8fb0,FUN_004a8fb0,,IconDefWieldType,0.9,llm-w125,body-verified table
+0053bda0,FUN_0053bda0,,ANM_NodeGetByIndex,0.9,llm-w125,body-verified
+005025d0,FUN_005025d0,,teammecc_leader_calc,0.9,llm-w125,body-verified
+004add50,FUN_004add50,,PROJ_GetCustom,0.9,llm-w125,body-verified proj table
+0044ed20,FUN_0044ed20,,fx_process_one,0.9,llm-w125,body-verified
+00413e40,FUN_00413e40,,get_floor_z_point,0.9,llm-w125,body-verified
+0053f440,FUN_0053f440,,Det3x3__8geom_Mat,0.9,llm-w125,body-verified det
+004b4450,FUN_004b4450,,rpboat_lock_to_boat__FP6OBJECTT0,0.9,llm-w125,body-verified
+0047f740,FUN_0047f740,,mecc_jet,0.9,llm-w125,body-verified
+00405130,FUN_00405130,,loadsave_save__FPCc,0.9,llm-w125,body-verified
+004a7790,FUN_004a7790,,sound_play_player_noparent,0.9,llm-w125,body-verified
+00452490,FUN_00452490,,giftshopview_enable,0.9,llm-w125,body-verified
+0046b5e0,FUN_0046b5e0,,kbos_offspring_create,0.9,llm-w125,body-verified 0x2e9/0x4b
+00457bd0,FUN_00457bd0,,player_needs_ammo__FP6OBJECTi,0.9,llm-w125,body-verified
+00452f20,FUN_00452f20,,IconIsAvailable__Fi,0.9,llm-w125,body-verified
+00448e10,FUN_00448e10,,fx_createObj__FP6FxDatai,0.9,llm-w125,PS2 callee of fx_processOpCodes
+00427120,FUN_00427120,,menu_preview_scale_init,0.9,llm-w125,body-verified screen half (rejected ANM_DumpCluster)

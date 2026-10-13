@@ -392,7 +392,7 @@ void FUN_004f3de0(int param_1,int param_2,int param_3,int param_4,float *param_5
 
   }
 
-  local_24 = FUN_004a8fb0(iVar2,1);
+  local_24 = IconDefWieldType(iVar2,1);
 
   iVar2 = object_allocate_type(local_24,0x80000000);
 
@@ -1052,7 +1052,7 @@ void FUN_004f4fc0(float param_1)
 
     *(uint *)((int)fVar3 + 0xe0) = *(uint *)((int)fVar3 + 0xe0) | 0x11;
 
-    fVar4 = (float10)FUN_00413e40((int)fVar3 + 0xa0);
+    fVar4 = (float10)get_floor_z_point((int)fVar3 + 0xa0);
 
     *(float *)((int)fVar3 + 0xa8) = (float)fVar4;
 
@@ -1193,7 +1193,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x11;
 
-      fVar6 = (float10)FUN_00413e40(param_1 + 0xa0);
+      fVar6 = (float10)get_floor_z_point(param_1 + 0xa0);
 
       *(float *)(param_1 + 0xa8) = (float)fVar6;
 

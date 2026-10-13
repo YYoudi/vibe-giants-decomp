@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (31 named) — decompiled, names from PS2 symbols
+ * 53 functions (32 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -1268,7 +1268,7 @@ void kabuto_create_kbos(float param_1,int param_2)
 
   if (param_2 == 0) {
 
-    iVar3 = FUN_0046b5e0(local_14 + 2);
+    iVar3 = kbos_offspring_create(local_14 + 2);
 
     *(int *)(iVar1 + 800) = iVar3;
 
@@ -1276,7 +1276,7 @@ void kabuto_create_kbos(float param_1,int param_2)
 
   else {
 
-    iVar3 = FUN_0046b5e0(local_14 + 2);
+    iVar3 = kbos_offspring_create(local_14 + 2);
 
     *(int *)(iVar1 + 0x324) = iVar3;
 
@@ -2922,12 +2922,12 @@ int object_spawn_init_usage(undefined4 param_1,undefined4 param_2,undefined4 *pa
 
 }
 
-/* ===== FUN_0046b5e0 @ 0x0046B5E0 ===== */
+/* ===== kbos_offspring_create @ 0x0046B5E0 ===== */
 /* PS2 candidate: kbos_offspring_create (conf 0.522) */
 
 
 
-int FUN_0046b5e0(undefined4 param_1)
+int kbos_offspring_create(undefined4 param_1)
 
 
 

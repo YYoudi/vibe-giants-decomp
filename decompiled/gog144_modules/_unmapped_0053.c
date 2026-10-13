@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (109 named) — decompiled, names from PS2 symbols
+ * 179 functions (111 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -14947,12 +14947,12 @@ void ANM_AnimDestroy(int param_1)
 
 }
 
-/* ===== FUN_0053bda0 @ 0x0053BDA0 ===== */
+/* ===== ANM_NodeGetByIndex @ 0x0053BDA0 ===== */
 /* PS2 candidate: ANM_NodeGetByIndex (conf 0.529) */
 
 
 
-undefined4 FUN_0053bda0(int param_1,int param_2,undefined4 param_3)
+undefined4 ANM_NodeGetByIndex(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -16434,7 +16434,7 @@ int editor_anim_skin(int param_1,undefined4 param_2,int param_3,undefined4 param
 
     piVar4 = (int *)(iVar3 + 0x18);
 
-    iVar2 = FUN_0053bda0(param_3,0,0);
+    iVar2 = ANM_NodeGetByIndex(param_3,0,0);
 
     iVar1 = 1;
 
@@ -16452,7 +16452,7 @@ int editor_anim_skin(int param_1,undefined4 param_2,int param_3,undefined4 param
 
       }
 
-      iVar2 = FUN_0053bda0(param_3,0,iVar1);
+      iVar2 = ANM_NodeGetByIndex(param_3,0,iVar1);
 
       iVar1 = iVar1 + 1;
 
@@ -19782,12 +19782,12 @@ int geom_clip_poly_plane(float *param_1,int param_2,int param_3,float param_4)
 
 }
 
-/* ===== FUN_0053f440 @ 0x0053F440 ===== */
+/* ===== Det3x3__8geom_Mat @ 0x0053F440 ===== */
 /* PS2 candidate: Det3x3__8geom_Mat (conf 0.525) */
 
 
 
-undefined4 FUN_0053f440(float *param_1,float *param_2,float *param_3,float *param_4)
+undefined4 Det3x3__8geom_Mat(float *param_1,float *param_2,float *param_3,float *param_4)
 
 
 

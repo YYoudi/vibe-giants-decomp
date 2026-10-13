@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/ANIMATE
- * 8 functions (7 named) — decompiled, names from PS2 symbols
+ * 8 functions (8 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/ANIMATE.c(pp) (assert-string evidence)
  */
 
@@ -175,12 +175,12 @@ float * main_animate_004050d0(float param_1)
 
 }
 
-/* ===== FUN_00405130 @ 0x00405130 ===== */
+/* ===== loadsave_save__FPCc @ 0x00405130 ===== */
 /* PS2 candidate: loadsave_save__FPCc (conf 0.525) */
 
 
 
-void FUN_00405130(undefined4 *param_1,int *param_2)
+void loadsave_save__FPCc(undefined4 *param_1,int *param_2)
 
 
 
@@ -224,7 +224,7 @@ void FUN_00405130(undefined4 *param_1,int *param_2)
 
       iVar6 = 0;
 
-      iVar4 = FUN_0053bda0(iVar3,0,0);
+      iVar4 = ANM_NodeGetByIndex(iVar3,0,0);
 
       iVar1 = 1;
 
@@ -232,7 +232,7 @@ void FUN_00405130(undefined4 *param_1,int *param_2)
 
         iVar6 = iVar6 + *(int *)(iVar4 + 0xc);
 
-        iVar4 = FUN_0053bda0(iVar3,0,iVar1);
+        iVar4 = ANM_NodeGetByIndex(iVar3,0,iVar1);
 
         iVar1 = iVar1 + 1;
 

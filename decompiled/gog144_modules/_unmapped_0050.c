@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (43 named) — decompiled, names from PS2 symbols
+ * 87 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -1293,7 +1293,7 @@ void FUN_00501050(int param_1)
 
   if ((param_1 != 0) && (*(int *)(param_1 + 4) == 2)) {
 
-    FUN_005025d0();
+    teammecc_leader_calc();
 
     return;
 
@@ -2822,12 +2822,12 @@ LAB_0050203c:
 
 }
 
-/* ===== FUN_005025d0 @ 0x005025D0 ===== */
+/* ===== teammecc_leader_calc @ 0x005025D0 ===== */
 /* PS2 candidate: teammecc_leader_calc (conf 0.528) */
 
 
 
-void FUN_005025d0(int param_1)
+void teammecc_leader_calc(int param_1)
 
 
 
@@ -4118,7 +4118,7 @@ void teammecc_set_slave_goal__FP6OBJECTi(int param_1,int param_2)
 
   if (*(float *)(iVar2 + 0x1c0) <= *(float *)(iVar2 + 0x278)) {
 
-    FUN_004a7790(iVar2);
+    sound_play_player_noparent(iVar2);
 
     return;
 
@@ -7467,7 +7467,7 @@ LAB_00506a69:
 
               local_88 = 0x1f;
 
-              uVar13 = FUN_004a8fb0(*(undefined4 *)(iVar14 + 0x18c),1);
+              uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
               iVar7 = FUN_00458300(param_1,10,uVar13);
 
@@ -7489,7 +7489,7 @@ LAB_005065cf:
 
               if ((*(float *)(param_1 + 0x18) < 0.3) && (0.3 <= *(float *)(param_1 + 0x14))) {
 
-                uVar13 = FUN_004a8fb0(*(undefined4 *)(iVar14 + 0x18c),1);
+                uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
                 iVar7 = FUN_00458300(param_1,10,uVar13);
 
@@ -7507,7 +7507,7 @@ LAB_005065cf:
 
                  (2.5666666 <= *(float *)(param_1 + 0x14))) {
 
-                uVar13 = FUN_004a8fb0(*(undefined4 *)(iVar14 + 0x18c),1);
+                uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
                 iVar7 = FUN_00458300(param_1,1,uVar13);
 
@@ -7675,7 +7675,7 @@ LAB_00506418:
 
                (0.21433334 <= *(float *)(param_1 + 0x14))) {
 
-              uVar13 = FUN_004a8fb0(*(undefined4 *)(iVar14 + 0x18c),1);
+              uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
               iVar7 = FUN_00458300(param_1,10,uVar13);
 
@@ -7695,7 +7695,7 @@ LAB_00506418:
 
                (0.76666665 <= *(float *)(param_1 + 0x14))) {
 
-              uVar13 = FUN_004a8fb0(*(undefined4 *)(iVar14 + 0x18c),1);
+              uVar13 = IconDefWieldType(*(undefined4 *)(iVar14 + 0x18c),1);
 
               iVar7 = FUN_00458300(param_1,0,uVar13);
 
@@ -8401,11 +8401,11 @@ LAB_005073b6:
 
                   if (local_50 != (undefined *)0x0) {
 
-                    uVar13 = FUN_004a8fb0(local_40,0);
+                    uVar13 = IconDefWieldType(local_40,0);
 
                     *(undefined4 *)(local_50 + 8) = uVar13;
 
-                    uVar13 = FUN_004a8fb0(iVar15,1);
+                    uVar13 = IconDefWieldType(iVar15,1);
 
                     *(undefined4 *)(local_50 + 0x28) = uVar13;
 
@@ -11972,7 +11972,7 @@ LAB_0050d177:
 
     if ((0 < (int)pfVar1[9]) && (iVar9 = crt_rand_scaled(100), iVar9 < 0x19)) {
 
-      fVar13 = (float10)FUN_00413e40((int)param_1 + 0xa0);
+      fVar13 = (float10)get_floor_z_point((int)param_1 + 0xa0);
 
       if ((float10)0.0 < fVar13) {
 

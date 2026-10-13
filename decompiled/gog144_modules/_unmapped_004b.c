@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (56 named) — decompiled, names from PS2 symbols
+ * 90 functions (57 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -537,12 +537,12 @@ void game_state_camera_init(void)
 
 }
 
-/* ===== FUN_004b4450 @ 0x004B4450 ===== */
+/* ===== rpboat_lock_to_boat__FP6OBJECTT0 @ 0x004B4450 ===== */
 /* PS2 candidate: rpboat_lock_to_boat__FP6OBJECTT0 (conf 0.525) */
 
 
 
-void FUN_004b4450(void)
+void rpboat_lock_to_boat__FP6OBJECTT0(void)
 
 
 
@@ -5244,7 +5244,7 @@ LAB_004b76fe:
 
     if (iVar7 != 0) {
 
-      FUN_00452490(0,uVar5);
+      giftshopview_enable(0,uVar5);
 
       fVar14 = (float10)FUN_004a7630(uVar5,0);
 
@@ -9242,9 +9242,9 @@ void FUN_004bce60(int param_1)
 
     }
 
-    FUN_004a2b90(param_1,*(undefined4 *)(DAT_00632ed8 + 0x720),*(undefined4 *)(DAT_00632ed8 + 0x724)
+    PhysicsExCalcControledModelSpeeds
 
-                );
+              (param_1,*(undefined4 *)(DAT_00632ed8 + 0x720),*(undefined4 *)(DAT_00632ed8 + 0x724));
 
     if ((*(char *)(param_1 + 0x20a) == '\0') && (*(char *)(param_1 + 0x20b) == '\0')) {
 
@@ -9775,7 +9775,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
       }
 
-      uVar6 = FUN_004a8fb0(puVar2[puVar2[0x36d] * 2 + 0x35c],1);
+      uVar6 = IconDefWieldType(puVar2[puVar2[0x36d] * 2 + 0x35c],1);
 
       FUN_00455c80(iVar4,1,uVar6);
 
@@ -9841,7 +9841,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
     *puVar7 = *puVar7 & 0xfffffffe;
 
-    uVar6 = FUN_004a8fb0(puVar2[puVar2[0x36d] * 2 + 0x35c],1);
+    uVar6 = IconDefWieldType(puVar2[puVar2[0x36d] * 2 + 0x35c],1);
 
     FUN_00455c80(iVar4,1,uVar6);
 
@@ -9982,7 +9982,7 @@ void reaper_select_bow(uint param_1)
 
     {
 
-      uVar4 = FUN_004a8fb0(puVar1[puVar1[0x36d] * 2 + 0x35c],1);
+      uVar4 = IconDefWieldType(puVar1[puVar1[0x36d] * 2 + 0x35c],1);
 
       FUN_00455c80(uVar3,1,uVar4);
 

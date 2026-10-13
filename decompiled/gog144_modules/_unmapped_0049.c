@@ -2718,7 +2718,7 @@ LAB_00492458:
 
         else {
 
-          uVar5 = FUN_004a8fb0(*(undefined4 *)(iVar1 + 0xd70 + *(int *)(iVar1 + 0xdb4) * 8),1);
+          uVar5 = IconDefWieldType(*(undefined4 *)(iVar1 + 0xd70 + *(int *)(iVar1 + 0xdb4) * 8),1);
 
           FUN_00455c80(DAT_00632a88,1,uVar5);
 
@@ -4038,7 +4038,7 @@ LAB_00492a3a:
 
     } while (!bVar17);
 
-    FUN_004b4450();
+    rpboat_lock_to_boat__FP6OBJECTT0();
 
     *(undefined4 *)(DAT_00632a88 + 0x278) = 0;
 
@@ -13430,7 +13430,7 @@ void FUN_0049df90(int param_1)
 
     local_8 = *(float *)(DAT_00632ed8 + 0x1588) * local_8 + *(float *)(param_1 + 0x2b4);
 
-    fVar2 = (float10)FUN_00413e40(&local_c);
+    fVar2 = (float10)get_floor_z_point(&local_c);
 
     local_4 = (float)fVar2;
 
@@ -13784,7 +13784,7 @@ bool FUN_0049e670(int param_1,int param_2,int *param_3,int param_4)
 
   }
 
-  iVar4 = FUN_004a8fb0(param_2,1);
+  iVar4 = IconDefWieldType(param_2,1);
 
   iVar6 = 0;
 

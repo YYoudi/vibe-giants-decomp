@@ -856,7 +856,7 @@ LAB_004a079b:
 
         pfVar17[-1] = fVar12;
 
-        fVar22 = (float10)FUN_00413e40(pfVar17 + -2);
+        fVar22 = (float10)get_floor_z_point(pfVar17 + -2);
 
         *pfVar17 = (float)fVar22;
 

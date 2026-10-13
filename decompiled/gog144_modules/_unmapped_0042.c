@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (92 named) — decompiled, names from PS2 symbols
+ * 129 functions (93 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -9362,12 +9362,12 @@ void FUN_00427100(void)
 
 }
 
-/* ===== FUN_00427120 @ 0x00427120 ===== */
+/* ===== menu_preview_scale_init @ 0x00427120 ===== */
 /* PS2 candidate: ANM_DumpCluster_13 (conf 0.525) */
 
 
 
-void FUN_00427120(void)
+void menu_preview_scale_init(void)
 
 
 

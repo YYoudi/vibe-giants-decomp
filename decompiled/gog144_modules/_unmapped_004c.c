@@ -205,7 +205,7 @@ void reaper_finish_cloak(int param_1,undefined4 param_2)
 
     iVar4 = FUN_004a8f50(0x2c);
 
-    iVar5 = FUN_004add50(0x2c);
+    iVar5 = PROJ_GetCustom(0x2c);
 
     pcVar6 = FUN_004ba1a0;
 
@@ -3570,7 +3570,7 @@ void FUN_004c50b0(int param_1,int param_2)
 
   }
 
-  FUN_00452490(param_2,0);
+  giftshopview_enable(param_2,0);
 
   *(undefined1 *)(param_1 + 0x208) = 0;
 
@@ -3675,7 +3675,7 @@ void lzo_checked_alloc(int param_1)
 
             }
 
-            FUN_00452490(iVar1,0);
+            giftshopview_enable(iVar1,0);
 
             *(undefined1 *)(param_1 + 0x208) = 0;
 
@@ -4370,7 +4370,7 @@ void reaper_lock_user_2(int param_1)
 
                 if (iVar5 != 0) {
 
-                  FUN_00452490(0,iVar4);
+                  giftshopview_enable(0,iVar4);
 
                   fVar6 = (float10)FUN_004a7630(iVar4,0);
 
@@ -4447,7 +4447,7 @@ void FUN_004c5d80(int param_1,int param_2,undefined4 param_3,int param_4)
 
   if ((iVar2 == 0) || (*(int *)(iVar1 + 0x5bc + param_4 * 4) == 0)) {
 
-    FUN_00452490(param_3,0);
+    giftshopview_enable(param_3,0);
 
     FUN_00418630(param_3,param_4 * 2 + 0xb,local_c);
 
@@ -5284,7 +5284,7 @@ void FUN_004ca560(int param_1,float *param_2,float param_3,undefined4 param_4,un
 
       pfVar2[1] = param_2[1] - local_58 * (float)fVar4;
 
-      fVar4 = (float10)FUN_00413e40(pfVar2);
+      fVar4 = (float10)get_floor_z_point(pfVar2);
 
       pfVar2[2] = (float)fVar4;
 
@@ -5306,7 +5306,7 @@ void FUN_004ca560(int param_1,float *param_2,float param_3,undefined4 param_4,un
 
         local_38 = local_44 * *(float *)(DAT_006330e4 + 0x1c0) + pfVar2[1];
 
-        fVar4 = (float10)FUN_00413e40(&local_3c);
+        fVar4 = (float10)get_floor_z_point(&local_3c);
 
         local_34 = (float)fVar4;
 
@@ -5340,7 +5340,7 @@ LAB_004ca808:
 
         local_38 = local_44 * *(float *)(DAT_006330e4 + 0x1c0) + pfVar2[1];
 
-        fVar4 = (float10)FUN_00413e40(&local_3c);
+        fVar4 = (float10)get_floor_z_point(&local_3c);
 
         local_34 = (float)fVar4;
 
@@ -7390,7 +7390,7 @@ void FUN_004cc900(void)
 
     do {
 
-      iVar2 = FUN_004a8fb0(*(undefined4 *)(iVar6 + 0xd78 + iVar5 * 8),1);
+      iVar2 = IconDefWieldType(*(undefined4 *)(iVar6 + 0xd78 + iVar5 * 8),1);
 
       *piVar7 = iVar2;
 

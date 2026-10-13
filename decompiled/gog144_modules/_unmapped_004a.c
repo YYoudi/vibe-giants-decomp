@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (67 named) — decompiled, names from PS2 symbols
+ * 131 functions (71 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1434,7 +1434,7 @@ void obj_geom_process(int param_1)
 
       if ((local_4 == local_20) && (local_8 == local_24)) break;
 
-      iVar7 = FUN_0053f440(&local_44,local_38,local_1c,&DAT_0055ea40);
+      iVar7 = Det3x3__8geom_Mat(&local_44,local_38,local_1c,&DAT_0055ea40);
 
       if (iVar7 != 0) {
 
@@ -2175,12 +2175,12 @@ void obj_velocity_normalize(int param_1,int param_2,int param_3,float param_4,fl
 
 }
 
-/* ===== FUN_004a2b90 @ 0x004A2B90 ===== */
+/* ===== PhysicsExCalcControledModelSpeeds @ 0x004A2B90 ===== */
 /* PS2 candidate: PhysicsExCalcControledModelSpeeds (conf 0.533) */
 
 
 
-void FUN_004a2b90(int param_1,undefined4 param_2,undefined4 param_3)
+void PhysicsExCalcControledModelSpeeds(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -4006,7 +4006,7 @@ int FUN_004a4770(int param_1)
 
     *(float *)(iVar5 + 0xa4) = local_4 * 20.0 + fVar3;
 
-    fVar6 = (float10)FUN_00413e40(pfVar2);
+    fVar6 = (float10)get_floor_z_point(pfVar2);
 
     if (fVar6 < (float10)-2.0) {
 
@@ -4149,11 +4149,11 @@ void FUN_004a48a0(float param_1)
 
     }
 
-    fVar6 = (float10)FUN_00413e40(&local_18);
+    fVar6 = (float10)get_floor_z_point(&local_18);
 
-    if ((fVar6 < (float10)-2.0) && (fVar6 = (float10)FUN_00413e40(&local_c), fVar6 < (float10)-2.0))
+    if ((fVar6 < (float10)-2.0) &&
 
-    goto LAB_004a49ca;
+       (fVar6 = (float10)get_floor_z_point(&local_c), fVar6 < (float10)-2.0)) goto LAB_004a49ca;
 
   }
 
@@ -4207,7 +4207,7 @@ void FUN_004a48a0(float param_1)
 
     local_14 = *(float *)(*(int *)((int)fVar4 + 0x274) + 0xa4) - local_2c * local_28;
 
-    fVar6 = (float10)FUN_00413e40(&local_18);
+    fVar6 = (float10)get_floor_z_point(&local_18);
 
     if (fVar6 < (float10)-2.0) {
 
@@ -4814,7 +4814,7 @@ LAB_004a5802:
 
     if (DAT_00632ae7 != '\0') {
 
-      FUN_00452490(0,0);
+      giftshopview_enable(0,0);
 
     }
 
@@ -7032,12 +7032,12 @@ void playerobj_eval_refpt(int param_1,int param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_004a7790 @ 0x004A7790 ===== */
+/* ===== sound_play_player_noparent @ 0x004A7790 ===== */
 /* PS2 candidate: sound_play_player_noparent (conf 0.524) */
 
 
 
-void FUN_004a7790(int param_1)
+void sound_play_player_noparent(int param_1)
 
 
 
@@ -7468,12 +7468,12 @@ undefined4 FUN_004a8f90(int param_1)
 
 }
 
-/* ===== FUN_004a8fb0 @ 0x004A8FB0 ===== */
+/* ===== IconDefWieldType @ 0x004A8FB0 ===== */
 /* PS2 candidate: IconDefWieldType (conf 0.53) */
 
 
 
-undefined4 FUN_004a8fb0(int param_1,int param_2)
+undefined4 IconDefWieldType(int param_1,int param_2)
 
 
 
@@ -9664,7 +9664,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     uVar3 = fx_get_free_effect__Fv();
 
-    FUN_0044ed20(uVar3,0,puVar11,uVar12,puVar13);
+    fx_process_one(uVar3,0,puVar11,uVar12,puVar13);
 
   }
 
@@ -11544,12 +11544,12 @@ undefined4 repairgun_target_valid__FP6OBJECTi(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004add50 @ 0x004ADD50 ===== */
+/* ===== PROJ_GetCustom @ 0x004ADD50 ===== */
 /* PS2 candidate: PROJ_GetCustom (conf 0.528) */
 
 
 
-undefined * FUN_004add50(int param_1)
+undefined * PROJ_GetCustom(int param_1)
 
 
 
@@ -11852,7 +11852,7 @@ void read_objects_bin_PS2(void)
 
       crt_sprintf();
 
-      FUN_00405130();
+      loadsave_save__FPCc();
 
       cVar1 = *pcVar27;
 

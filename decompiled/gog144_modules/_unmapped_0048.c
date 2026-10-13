@@ -95,7 +95,7 @@ void mecc_enable_personal_shield(int param_1)
 
 LAB_00480200:
 
-  uVar3 = FUN_004a8fb0(0x11,1);
+  uVar3 = IconDefWieldType(0x11,1);
 
   iVar2 = FUN_00458300(param_1,10,uVar3);
 
@@ -190,7 +190,7 @@ LAB_004802fd:
 
   }
 
-  uVar2 = FUN_004a8fb0(0x11,1);
+  uVar2 = IconDefWieldType(0x11,1);
 
   iVar1 = FUN_00458300(param_1,10,uVar2);
 
@@ -585,7 +585,7 @@ void FUN_00480730(int param_1)
 
        (FUN_00497510(param_1), *(int *)(param_1 + 0x274) != 0)) {
 
-      uVar4 = FUN_004a8fb0(0x14,1);
+      uVar4 = IconDefWieldType(0x14,1);
 
       iVar3 = FUN_00458300(*(undefined4 *)(param_1 + 0x274),10,uVar4);
 
@@ -885,7 +885,7 @@ void FUN_00480d10(int param_1,int param_2,undefined4 param_3,int param_4)
 
   }
 
-  FUN_00452490(param_3,0);
+  giftshopview_enable(param_3,0);
 
   FUN_00418630(param_3,param_4 * 2 + 0xb,local_c);
 
@@ -1029,7 +1029,7 @@ void FUN_00480ef0(int param_1,int param_2)
 
   }
 
-  FUN_00452490(param_2,0);
+  giftshopview_enable(param_2,0);
 
   *(undefined1 *)(param_1 + 0x208) = 0;
 

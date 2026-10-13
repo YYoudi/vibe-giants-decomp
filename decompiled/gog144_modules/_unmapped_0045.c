@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (66 named) — decompiled, names from PS2 symbols
+ * 145 functions (69 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1797,12 +1797,12 @@ void fx_arc_math(short *param_1,float *param_2,int param_3,int param_4,float par
 
 }
 
-/* ===== FUN_00452490 @ 0x00452490 ===== */
+/* ===== giftshopview_enable @ 0x00452490 ===== */
 /* PS2 candidate: giftshopview_enable (conf 0.524) */
 
 
 
-void FUN_00452490(int *param_1,int *param_2)
+void giftshopview_enable(int *param_1,int *param_2)
 
 
 
@@ -2814,12 +2814,12 @@ undefined4 FUN_00452ee0(int param_1)
 
 }
 
-/* ===== FUN_00452f20 @ 0x00452F20 ===== */
+/* ===== IconIsAvailable__Fi @ 0x00452F20 ===== */
 /* PS2 candidate: IconIsAvailable__Fi (conf 0.521) */
 
 
 
-uint FUN_00452f20(int param_1)
+uint IconIsAvailable__Fi(int param_1)
 
 
 
@@ -6647,12 +6647,12 @@ bool FUN_00457a70(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00457bd0 @ 0x00457BD0 ===== */
+/* ===== player_needs_ammo__FP6OBJECTi @ 0x00457BD0 ===== */
 /* PS2 candidate: player_needs_ammo__FP6OBJECTi (conf 0.412) */
 
 
 
-bool FUN_00457bd0(int param_1,undefined4 param_2)
+bool player_needs_ammo__FP6OBJECTi(int param_1,undefined4 param_2)
 
 
 
@@ -7232,11 +7232,11 @@ void FUN_00458230(int param_1)
 
              (*(int *)(param_1 + 0x100) + 0x17c + *(int *)(*(int *)(param_1 + 0x100) + 0x60) * 4);
 
-    uVar2 = FUN_004a8fb0(uVar1,0);
+    uVar2 = IconDefWieldType(uVar1,0);
 
     FUN_00455c80(param_1,0,uVar2);
 
-    uVar2 = FUN_004a8fb0(uVar1,1);
+    uVar2 = IconDefWieldType(uVar1,1);
 
     FUN_00455c80(param_1,1,uVar2);
 
@@ -7384,7 +7384,7 @@ int SpecialWeaponIdSet__FP6OBJECTi(int param_1,int param_2)
 
   if (iVar4 == param_2) {
 
-    iVar3 = FUN_004a8fb0(iVar4,1);
+    iVar3 = IconDefWieldType(iVar4,1);
 
     if (iVar3 < 1) {
 
@@ -7420,9 +7420,9 @@ int SpecialWeaponIdSet__FP6OBJECTi(int param_1,int param_2)
 
   }
 
-  iVar4 = FUN_004a8fb0(iVar4,1);
+  iVar4 = IconDefWieldType(iVar4,1);
 
-  local_8 = FUN_004a8fb0(param_2,1);
+  local_8 = IconDefWieldType(param_2,1);
 
   *(uint *)(param_1 + 0xdc) = *(uint *)(param_1 + 0xdc) & 0xffbfffff;
 
@@ -7542,7 +7542,7 @@ LAB_0045863f:
 
     *(uint *)(iVar7 + 0xd8) = *(uint *)(iVar7 + 0xd8) | 0x400000;
 
-    uVar5 = FUN_004a8fb0(0x13,1,0x20);
+    uVar5 = IconDefWieldType(0x13,1,0x20);
 
     iVar7 = object_allocate_type_end(uVar5);
 
@@ -7552,7 +7552,7 @@ LAB_0045863f:
 
   else if (((param_2 == 0x11) || (param_2 == 0x12)) || (param_2 == 0x14)) {
 
-    uVar5 = FUN_004a8fb0(param_2,1,0x20);
+    uVar5 = IconDefWieldType(param_2,1,0x20);
 
     iVar7 = object_allocate_type_end(uVar5);
 
@@ -8420,7 +8420,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
     uVar5 = IconDefAmmoIcon(uVar1);
 
-    iVar3 = FUN_00457bd0(iVar6,uVar5);
+    iVar3 = player_needs_ammo__FP6OBJECTi(iVar6,uVar5);
 
     if (iVar3 == 0) {
 
@@ -8436,7 +8436,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
   iVar4 = FUN_00458cd0(uVar1);
 
-  if ((iVar4 != 0) && (iVar4 = FUN_00457bd0(iVar6,uVar1), iVar4 == 0)) {
+  if ((iVar4 != 0) && (iVar4 = player_needs_ammo__FP6OBJECTi(iVar6,uVar1), iVar4 == 0)) {
 
     return false;
 

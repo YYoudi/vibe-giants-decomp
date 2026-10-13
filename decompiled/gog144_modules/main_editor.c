@@ -622,11 +622,11 @@ switchD_004364b2_caseD_0:
 
       local_68 = DAT_0059cc20;
 
-      fVar24 = (float10)FUN_00413e40(&local_60);
+      fVar24 = (float10)get_floor_z_point(&local_60);
 
       local_58 = (float)fVar24;
 
-      fVar24 = (float10)FUN_00413e40(&local_6c);
+      fVar24 = (float10)get_floor_z_point(&local_6c);
 
       local_64 = (float)fVar24;
 
@@ -1276,7 +1276,7 @@ LAB_004374a1:
 
           *(uint *)(iVar10 + 0x1c8) = uVar14 & 0xfffffff7;
 
-          fVar24 = (float10)FUN_00413e40(iVar10 + 0xa0);
+          fVar24 = (float10)get_floor_z_point(iVar10 + 0xa0);
 
           *(uint *)(iVar10 + 0x1c8) = uVar14;
 
@@ -1350,7 +1350,7 @@ LAB_004374a1:
 
           *(uint *)(iVar10 + 0x1c8) = uVar14 & 0xfffffff7;
 
-          fVar24 = (float10)FUN_00413e40(iVar10 + 0xa0);
+          fVar24 = (float10)get_floor_z_point(iVar10 + 0xa0);
 
           *(uint *)(iVar10 + 0x1c8) = uVar14;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (51 named) — decompiled, names from PS2 symbols
+ * 76 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1235,7 +1235,7 @@ void wredit_spawn_object(void)
 
   FUN_0049b8a0(DAT_00632a88);
 
-  FUN_00452490(0,0);
+  giftshopview_enable(0,0);
 
   return;
 
@@ -8133,12 +8133,12 @@ int fx_createGameLockedObj__FP6FxDataiii
 
 }
 
-/* ===== FUN_00448e10 @ 0x00448E10 ===== */
+/* ===== fx_createObj__FP6FxDatai @ 0x00448E10 ===== */
 /* PS2 candidate: fx_createObj__FP6FxDatai (conf 0.521) */
 
 
 
-int FUN_00448e10(int param_1,undefined4 param_2,int param_3,float param_4,float param_5)
+int fx_createObj__FP6FxDatai(int param_1,undefined4 param_2,int param_3,float param_4,float param_5)
 
 
 
@@ -8465,7 +8465,7 @@ int fx_alloc_effect(undefined4 param_1,undefined4 param_2,undefined4 param_3,und
 
   if ((*(byte *)(iVar2 + 0x18) & 2) != 0) {
 
-    FUN_0044ed20(iVar2,0);
+    fx_process_one(iVar2,0);
 
   }
 
@@ -8792,7 +8792,7 @@ undefined4 fx_processOpCodes(void)
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        in_stack_0000001c = FUN_00448e10();
+        in_stack_0000001c = fx_createObj__FP6FxDatai();
 
       }
 
@@ -12770,7 +12770,7 @@ LAB_0044de79:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        in_stack_0000001c = FUN_00448e10();
+        in_stack_0000001c = fx_createObj__FP6FxDatai();
 
       }
 
@@ -13004,12 +13004,12 @@ void fx_goto_processing(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0044ed20 @ 0x0044ED20 ===== */
+/* ===== fx_process_one @ 0x0044ED20 ===== */
 /* PS2 candidate: fx_process_one (conf 0.526) */
 
 
 
-int FUN_0044ed20(int *param_1,int param_2)
+int fx_process_one(int *param_1,int param_2)
 
 
 
@@ -13274,7 +13274,7 @@ void FUN_0044efd0(undefined4 param_1)
 
   
 
-  for (iVar1 = DAT_0059ce64; iVar1 != 0; iVar1 = FUN_0044ed20(iVar1,param_1)) {
+  for (iVar1 = DAT_0059ce64; iVar1 != 0; iVar1 = fx_process_one(iVar1,param_1)) {
 
   }
 

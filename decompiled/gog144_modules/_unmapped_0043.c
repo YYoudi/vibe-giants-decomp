@@ -9283,7 +9283,7 @@ void wredit_ai_menu(void)
 
         FUN_0049b8a0();
 
-        FUN_00452490();
+        giftshopview_enable();
 
         return;
 
