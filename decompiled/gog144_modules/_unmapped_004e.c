@@ -6341,7 +6341,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
       (iVar5 = obj_face_target(*(int *)(iVar3 + 0x194),iVar5,local_5c), iVar5 != 0)) &&
 
-     (iVar5 = FUN_0040c480(*(undefined4 *)(iVar3 + 0x194),local_5c), iVar5 != 0)) {
+     (iVar5 = point_between_pair_test(*(undefined4 *)(iVar3 + 0x194),local_5c), iVar5 != 0)) {
 
     *(int *)(iVar3 + 0x184) = *(int *)(iVar3 + 0x184) + 1;
 

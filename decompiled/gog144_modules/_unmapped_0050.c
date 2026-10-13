@@ -431,7 +431,9 @@ void FUN_00500490(int *param_1)
 
     for (iVar3 = ((undefined4 *)param_1[6])[1]; iVar3 != 0; iVar3 = iVar3 + -1) {
 
-      FUN_004fa380(param_1,*puVar4,0,0x3f800000,0x3f800000,(float)iVar1 * 0.5,(float)iVar2 * 0.5);
+      textrender_glyph_quad
+
+                (param_1,*puVar4,0,0x3f800000,0x3f800000,(float)iVar1 * 0.5,(float)iVar2 * 0.5);
 
       puVar4 = puVar4 + 1;
 
@@ -600,11 +602,13 @@ void status_draw_sub(int param_1)
 
 LAB_00500958:
 
-      FUN_004fa380(param_1,*puVar14,0,0x3f800000,0x3f800000,
+      textrender_glyph_quad
 
-                   (fVar8 - (fVar1 - fVar2) / (float)(iVar11 * 2)) * fVar9,
+                (param_1,*puVar14,0,0x3f800000,0x3f800000,
 
-                   (fVar10 - (fVar3 - fVar4) / (float)(iVar5 * 2)) * fVar7);
+                 (fVar8 - (fVar1 - fVar2) / (float)(iVar11 * 2)) * fVar9,
+
+                 (fVar10 - (fVar3 - fVar4) / (float)(iVar5 * 2)) * fVar7);
 
       puVar14 = puVar14 + 1;
 
@@ -650,9 +654,11 @@ LAB_005009d6:
 
   for (iVar12 = *(int *)(*(int *)(param_1 + 0x18) + 0x94); iVar12 != 0; iVar12 = iVar12 + -1) {
 
-    FUN_004fa380(param_1,*puVar14,0,0x3f800000,0x3f800000,(float)iVar11 * fVar8,
+    textrender_glyph_quad
 
-                 fVar10 * (float)iVar5);
+              (param_1,*puVar14,0,0x3f800000,0x3f800000,(float)iVar11 * fVar8,fVar10 * (float)iVar5)
+
+    ;
 
     puVar14 = puVar14 + 1;
 

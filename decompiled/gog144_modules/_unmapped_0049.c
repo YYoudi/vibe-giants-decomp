@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (102 named) — decompiled, names from PS2 symbols
+ * 142 functions (103 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -8471,7 +8471,7 @@ void weapon_id_inventory_update(void)
 
     if (iVar2 != 0) {
 
-      FUN_004981c0(&DAT_0059f380);
+      obj_weapon_animselect(&DAT_0059f380);
 
       return;
 
@@ -8659,8 +8659,8 @@ LAB_00497f49:
 
 }
 
-/* ===== FUN_004981c0 @ 0x004981C0 ===== */
-void FUN_004981c0(int param_1)
+/* ===== obj_weapon_animselect @ 0x004981C0 ===== */
+void obj_weapon_animselect(int param_1)
 
 
 

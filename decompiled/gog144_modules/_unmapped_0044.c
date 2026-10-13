@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (64 named) — decompiled, names from PS2 symbols
+ * 76 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -3094,7 +3094,7 @@ LAB_00444114:
 
         uVar2 = FUN_00507b00(iVar3);
 
-        FUN_00446ce0(*(undefined4 *)(param_1 + 0xf8),uVar2,param_1 + 0x104);
+        flick_text_layout(*(undefined4 *)(param_1 + 0xf8),uVar2,param_1 + 0x104);
 
         puVar6 = puVar6 + puVar6[1];
 
@@ -4242,7 +4242,7 @@ LAB_004451e2:
 
     uVar4 = AudioGetMasterVolume__Fv_3();
 
-    FUN_00446ce0(uVar4,uVar15);
+    flick_text_layout(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_7();
 
@@ -4266,7 +4266,7 @@ LAB_004451e2:
 
     uVar4 = AudioGetMasterVolume__Fv_3();
 
-    FUN_00446ce0(uVar4,uVar15);
+    flick_text_layout(uVar4,uVar15);
 
     uVar4 = FUN_00450cc0();
 
@@ -4290,7 +4290,7 @@ LAB_004451e2:
 
     uVar4 = AudioGetMasterVolume__Fv_3();
 
-    FUN_00446ce0(uVar4,uVar15);
+    flick_text_layout(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_4();
 
@@ -4314,7 +4314,7 @@ LAB_004451e2:
 
     uVar4 = AudioGetMasterVolume__Fv_3();
 
-    FUN_00446ce0(uVar4,uVar15);
+    flick_text_layout(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_6();
 
@@ -4338,7 +4338,7 @@ LAB_004451e2:
 
     uVar4 = AudioGetMasterVolume__Fv_3();
 
-    FUN_00446ce0(uVar4,uVar15);
+    flick_text_layout(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_5();
 
@@ -4362,7 +4362,7 @@ LAB_004451e2:
 
     uVar4 = AudioGetMasterVolume__Fv_3();
 
-    FUN_00446ce0(uVar4,uVar15);
+    flick_text_layout(uVar4,uVar15);
 
   }
 
@@ -6544,8 +6544,8 @@ void FUN_00446be0(undefined4 param_1,undefined4 param_2,float *param_3)
 
 }
 
-/* ===== FUN_00446ce0 @ 0x00446CE0 ===== */
-void FUN_00446ce0(undefined4 param_1,char *param_2,float *param_3)
+/* ===== flick_text_layout @ 0x00446CE0 ===== */
+void flick_text_layout(undefined4 param_1,char *param_2,float *param_3)
 
 
 
@@ -6752,7 +6752,7 @@ void map_chunk_destroy(int param_1,float param_2)
 
         }
 
-        FUN_00446ce0(*(undefined4 *)(param_1 + 8),iVar3,piVar1);
+        flick_text_layout(*(undefined4 *)(param_1 + 8),iVar3,piVar1);
 
         piVar6[6] = local_24;
 

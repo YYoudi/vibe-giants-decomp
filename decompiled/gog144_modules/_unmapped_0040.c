@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (76 named) — decompiled, names from PS2 symbols
+ * 105 functions (77 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -9078,8 +9078,8 @@ int buoy_set_lights(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0040c480 @ 0x0040C480 ===== */
-undefined4 FUN_0040c480(int param_1,undefined4 param_2)
+/* ===== point_between_pair_test @ 0x0040C480 ===== */
+undefined4 point_between_pair_test(int param_1,undefined4 param_2)
 
 
 

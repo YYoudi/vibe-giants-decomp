@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004292b0,FUN_004292b0,,hud_write_quad_vertices,0.9,llm-w138,body-verified 4 verts stride 7
+004fa380,FUN_004fa380,,textrender_glyph_quad,0.9,llm-w138,body-verified glyph quad layout
+004fded0,FUN_004fded0,,textrender_string_draw,0.9,llm-w138,body-verified glyph loop
+00446ce0,FUN_00446ce0,,flick_text_layout,0.9,llm-w138,body-verified multiline layout
+004888f0,FUN_004888f0,,menu_mission_teardown,0.9,llm-w138,body-verified deselect+destroy
+0040c480,FUN_0040c480,,point_between_pair_test,0.9,llm-w138,body-verified normalize/dot range
+0046b6f0,FUN_0046b6f0,,kbos_offspring_process,0.9,llm-w138,body-verified model 0x2e9
+004981c0,FUN_004981c0,,obj_weapon_animselect,0.9,llm-w138,body-verified model 0x29d anim ids

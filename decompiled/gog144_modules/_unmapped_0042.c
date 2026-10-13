@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (97 named) — decompiled, names from PS2 symbols
+ * 129 functions (98 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -10709,7 +10709,7 @@ void FUN_00428810(undefined4 *param_1)
 
           if ((*(byte *)(puVar7 + 3) & 0x10) != 0) {
 
-            FUN_004292b0(0xf0f0f,puVar7[7],puVar7[6],puVar7[8],puVar7[9]);
+            hud_write_quad_vertices(0xf0f0f,puVar7[7],puVar7[6],puVar7[8],puVar7[9]);
 
           }
 
@@ -11133,7 +11133,7 @@ void FUN_00428f70(float param_1,float param_2)
 
     }
 
-    FUN_004292b0(uVar13,fVar2 - 0.01,uVar9,fVar1 + 0.01,fVar14);
+    hud_write_quad_vertices(uVar13,fVar2 - 0.01,uVar9,fVar1 + 0.01,fVar14);
 
   }
 
@@ -11167,9 +11167,11 @@ LAB_004291b7:
 
           fVar12 = (float10)crt_fabs(local_8);
 
-          FUN_004292b0(0x101010,param_2 - 0.01,param_1,param_2 + *(float *)(iVar5 + 0x38) + 0.01,
+          hud_write_quad_vertices
 
-                       (float)(fVar12 + (float10)param_1));
+                    (0x101010,param_2 - 0.01,param_1,param_2 + *(float *)(iVar5 + 0x38) + 0.01,
+
+                     (float)(fVar12 + (float10)param_1));
 
         }
 
@@ -11319,8 +11321,8 @@ LAB_004291b7:
 
 }
 
-/* ===== FUN_004292b0 @ 0x004292B0 ===== */
-void FUN_004292b0(float param_1)
+/* ===== hud_write_quad_vertices @ 0x004292B0 ===== */
+void hud_write_quad_vertices(float param_1)
 
 
 

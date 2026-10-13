@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (38 named) — decompiled, names from PS2 symbols
+ * 53 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -3020,8 +3020,8 @@ undefined4 FUN_0046b640(int param_1,uint *param_2)
 
 }
 
-/* ===== FUN_0046b6f0 @ 0x0046B6F0 ===== */
-undefined4 FUN_0046b6f0(int param_1,uint *param_2,undefined4 param_3)
+/* ===== kbos_offspring_process @ 0x0046B6F0 ===== */
+undefined4 kbos_offspring_process(int param_1,uint *param_2,undefined4 param_3)
 
 
 

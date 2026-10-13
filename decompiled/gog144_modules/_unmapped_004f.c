@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (35 named) — decompiled, names from PS2 symbols
+ * 48 functions (37 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -4609,10 +4609,12 @@ void terrain_mesh_query(int param_1,int *param_2,int param_3)
 
 }
 
-/* ===== FUN_004fa380 @ 0x004FA380 ===== */
-void FUN_004fa380(int param_1,int param_2,undefined4 param_3,float param_4,float param_5,
+/* ===== textrender_glyph_quad @ 0x004FA380 ===== */
+void textrender_glyph_quad
 
-                 float param_6,float param_7)
+               (int param_1,int param_2,undefined4 param_3,float param_4,float param_5,float param_6
+
+               ,float param_7)
 
 
 
@@ -4729,9 +4731,11 @@ void FUN_004fa490(int param_1,int param_2,int param_3,undefined4 param_4,undefin
 
   do {
 
-    FUN_004fa380(param_1,*puVar4,param_4,param_5,param_6,(float)iVar2 * param_7,
+    textrender_glyph_quad
 
-                 (float)iVar3 * param_8);
+              (param_1,*puVar4,param_4,param_5,param_6,(float)iVar2 * param_7,(float)iVar3 * param_8
+
+              );
 
     puVar4 = puVar4 + 1;
 
@@ -5107,9 +5111,9 @@ float10 text_num_parse(int param_1,undefined4 param_2,int param_3,int param_4,fl
 
 LAB_004fde16:
 
-      FUN_004fa380(param_1,*puVar11,0,param_5,param_6,(float)iVar10 * param_7,(float)iVar2 * param_8
+      textrender_glyph_quad
 
-                  );
+                (param_1,*puVar11,0,param_5,param_6,(float)iVar10 * param_7,(float)iVar2 * param_8);
 
       puVar11 = puVar11 + 1;
 
@@ -5157,8 +5161,8 @@ LAB_004fde80:
 
 }
 
-/* ===== FUN_004fded0 @ 0x004FDED0 ===== */
-int FUN_004fded0(int param_1,int param_2,float param_3,float param_4,undefined4 param_5)
+/* ===== textrender_string_draw @ 0x004FDED0 ===== */
+int textrender_string_draw(int param_1,int param_2,float param_3,float param_4,undefined4 param_5)
 
 
 
@@ -5210,9 +5214,11 @@ int FUN_004fded0(int param_1,int param_2,float param_3,float param_4,undefined4 
 
   do {
 
-    FUN_004fa380(param_1,*puVar6,0,0x3f800000,0x3f800000,(float)iVar5 * param_3,
+    textrender_glyph_quad
 
-                 (float)iVar1 * param_4);
+              (param_1,*puVar6,0,0x3f800000,0x3f800000,(float)iVar5 * param_3,(float)iVar1 * param_4
+
+              );
 
     puVar6 = puVar6 + 1;
 
@@ -5311,7 +5317,9 @@ int FUN_004fdfd0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,f
 
   do {
 
-    FUN_004fa380(param_1,*puVar5,0,param_3,param_4,(float)iVar4 * param_5,(float)iVar1 * param_6);
+    textrender_glyph_quad
+
+              (param_1,*puVar5,0,param_3,param_4,(float)iVar4 * param_5,(float)iVar1 * param_6);
 
     puVar5 = puVar5 + 1;
 
@@ -5418,7 +5426,9 @@ int terrain_uv_sample(int param_1,int param_2,float param_3,float param_4,float 
 
   do {
 
-    FUN_004fa380(param_1,*puVar5,0,param_3,param_4,(float)iVar1 * param_5,param_6 * (float)iVar2);
+    textrender_glyph_quad
+
+              (param_1,*puVar5,0,param_3,param_4,(float)iVar1 * param_5,param_6 * (float)iVar2);
 
     puVar5 = puVar5 + 1;
 
@@ -5629,7 +5639,7 @@ void status_update_entry(float param_1)
 
 LAB_004ff830:
 
-          FUN_004fa380(&DAT_00632900,*puVar5,0,0x3f000000,0x3f000000,local_28,fVar2);
+          textrender_glyph_quad(&DAT_00632900,*puVar5,0,0x3f000000,0x3f000000,local_28,fVar2);
 
           puVar5 = puVar5 + 1;
 
@@ -5691,7 +5701,7 @@ LAB_004ff830:
 
 LAB_004ff8e2:
 
-        FUN_004fa380(&DAT_00632900,*puVar5,0,0x3f800000,0x3f800000,local_2c,fVar2);
+        textrender_glyph_quad(&DAT_00632900,*puVar5,0,0x3f800000,0x3f800000,local_2c,fVar2);
 
         puVar5 = puVar5 + 1;
 

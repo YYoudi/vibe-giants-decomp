@@ -170,7 +170,9 @@ int main_status_00500520(int *param_1)
 
     for (iVar6 = ((undefined4 *)param_1[6])[1]; iVar6 != 0; iVar6 = iVar6 + -1) {
 
-      FUN_004fa380(param_1,*puVar5,0,0x3f800000,0x3f800000,(float)iVar2 * 0.5,(float)iVar1 * 0.5);
+      textrender_glyph_quad
+
+                (param_1,*puVar5,0,0x3f800000,0x3f800000,(float)iVar2 * 0.5,(float)iVar1 * 0.5);
 
       puVar5 = puVar5 + 1;
 

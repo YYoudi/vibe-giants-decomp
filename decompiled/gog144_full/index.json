@@ -490,9 +490,9 @@
   "len": 1556
  },
  "0x0040C480": {
-  "name": "FUN_0040c480",
-  "named": false,
-  "len": 974
+  "name": "point_between_pair_test",
+  "named": true,
+  "len": 985
  },
  "0x0040C580": {
   "name": "obj_face_target",
@@ -1617,7 +1617,7 @@
  "0x00428810": {
   "name": "FUN_00428810",
   "named": false,
-  "len": 4007
+  "len": 4018
  },
  "0x00428B20": {
   "name": "dlog_rect_vtable_draw",
@@ -1627,12 +1627,12 @@
  "0x00428F70": {
   "name": "FUN_00428f70",
   "named": false,
-  "len": 4994
+  "len": 5036
  },
  "0x004292B0": {
-  "name": "FUN_004292b0",
-  "named": false,
-  "len": 737
+  "name": "hud_write_quad_vertices",
+  "named": true,
+  "len": 748
  },
  "0x004293D0": {
   "name": "texture_alloc_429",
@@ -2562,7 +2562,7 @@
  "0x004440F0": {
   "name": "FLK_FlickTextProcess__FP9FLK_Flick",
   "named": true,
-  "len": 2891
+  "len": 2896
  },
  "0x00444320": {
   "name": "wredit_text_fade",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19038
+  "len": 19068
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -2635,14 +2635,14 @@
   "len": 1001
  },
  "0x00446CE0": {
-  "name": "FUN_00446ce0",
-  "named": false,
-  "len": 1624
+  "name": "flick_text_layout",
+  "named": true,
+  "len": 1629
  },
  "0x00446DF0": {
   "name": "map_chunk_destroy",
   "named": true,
-  "len": 1624
+  "len": 1629
  },
  "0x00446EE0": {
   "name": "texture_object_debug_dump_3",
@@ -3750,9 +3750,9 @@
   "len": 797
  },
  "0x0046B6F0": {
-  "name": "FUN_0046b6f0",
-  "named": false,
-  "len": 1112
+  "name": "kbos_offspring_process",
+  "named": true,
+  "len": 1122
  },
  "0x0046B7F0": {
   "name": "FUN_0046b7f0",
@@ -4470,9 +4470,9 @@
   "len": 1797
  },
  "0x004888F0": {
-  "name": "FUN_004888f0",
-  "named": false,
-  "len": 1144
+  "name": "menu_mission_teardown",
+  "named": true,
+  "len": 1153
  },
  "0x00488A80": {
   "name": "mission_load_world2",
@@ -5082,12 +5082,12 @@
  "0x00497DE0": {
   "name": "weapon_id_inventory_update",
   "named": true,
-  "len": 5488
+  "len": 5497
  },
  "0x004981C0": {
-  "name": "FUN_004981c0",
-  "named": false,
-  "len": 1249
+  "name": "obj_weapon_animselect",
+  "named": true,
+  "len": 1258
  },
  "0x004982C0": {
   "name": "mecc_logic",
@@ -6877,7 +6877,7 @@
  "0x004CC900": {
   "name": "ShopMenuSlotCollision__Fi",
   "named": true,
-  "len": 15440
+  "len": 15477
  },
  "0x004CD5D0": {
   "name": "lens_effects_process__Fv",
@@ -7327,7 +7327,7 @@
  "0x004E6BA0": {
   "name": "rpboat_logic__FP6OBJECT",
   "named": true,
-  "len": 6525
+  "len": 6536
  },
  "0x004E7160": {
   "name": "FUN_004e7160",
@@ -7775,14 +7775,14 @@
   "len": 2622
  },
  "0x004FA380": {
-  "name": "FUN_004fa380",
-  "named": false,
-  "len": 1588
+  "name": "textrender_glyph_quad",
+  "named": true,
+  "len": 1612
  },
  "0x004FA490": {
   "name": "FUN_004fa490",
   "named": false,
-  "len": 830
+  "len": 852
  },
  "0x004FA520": {
   "name": "hurt_pusher_2",
@@ -7802,22 +7802,22 @@
  "0x004FDD00": {
   "name": "text_num_parse",
   "named": true,
-  "len": 2585
+  "len": 2592
  },
  "0x004FDED0": {
-  "name": "FUN_004fded0",
-  "named": false,
-  "len": 1482
+  "name": "textrender_string_draw",
+  "named": true,
+  "len": 1514
  },
  "0x004FDFD0": {
   "name": "FUN_004fdfd0",
   "named": false,
-  "len": 1346
+  "len": 1371
  },
  "0x004FE0F0": {
   "name": "terrain_uv_sample",
   "named": true,
-  "len": 1615
+  "len": 1640
  },
  "0x004FE2D0": {
   "name": "mission_004fe2d0",
@@ -7832,7 +7832,7 @@
  "0x004FF6A0": {
   "name": "status_update_entry",
   "named": true,
-  "len": 3806
+  "len": 3824
  },
  "0x004FFE50": {
   "name": "FUN_004ffe50",
@@ -7872,12 +7872,12 @@
  "0x00500490": {
   "name": "FUN_00500490",
   "named": false,
-  "len": 633
+  "len": 660
  },
  "0x00500520": {
   "name": "main_status_00500520",
   "named": true,
-  "len": 2846
+  "len": 2873
  },
  "0x005007F0": {
   "name": "FUN_005007f0",
@@ -7892,7 +7892,7 @@
  "0x00500890": {
   "name": "status_draw_sub",
   "named": true,
-  "len": 2507
+  "len": 2542
  },
  "0x00500A60": {
   "name": "item_create_base_pickup_2",

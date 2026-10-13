@@ -7340,7 +7340,7 @@ void ShopMenuSlotCollision__Fi(void)
 
         uVar4 = AudioGetMasterVolume__Fv_3();
 
-        FUN_00446ce0(uVar4,pfVar9,puVar14);
+        flick_text_layout(uVar4,pfVar9,puVar14);
 
         return;
 
@@ -7946,11 +7946,13 @@ LAB_004ccbc0:
 
                            0x3f000000,0,&fStack_224,&fStack_228);
 
-          FUN_004fa380(iVar5,&PTR_s_infinity_005744c8,0,0x3f800000,0x3f800000,
+          textrender_glyph_quad
 
-                       (float)*(int *)(iVar5 + 0x24) * fStack_224,
+                    (iVar5,&PTR_s_infinity_005744c8,0,0x3f800000,0x3f800000,
 
-                       (float)*(int *)(iVar5 + 0x28) * fStack_228);
+                     (float)*(int *)(iVar5 + 0x24) * fStack_224,
+
+                     (float)*(int *)(iVar5 + 0x28) * fStack_228);
 
           hurt_pusher_2(iVar5,&PTR_s_infinity_005744c8);
 
@@ -7970,7 +7972,7 @@ LAB_004ccbc0:
 
         uVar4 = AudioGetMasterVolume__Fv_3();
 
-        FUN_00446ce0(uVar4,pfVar9,puVar14);
+        flick_text_layout(uVar4,pfVar9,puVar14);
 
       }
 
