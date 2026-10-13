@@ -891,7 +891,7 @@ void fx_weather_system(void)
 
       XFSetViewportRegion(0,0,(float)iVar11,(float)iVar5);
 
-      FUN_00515de0(&DAT_0055b640,&DAT_0055b64c);
+      render_projection_reset(&DAT_0055b640,&DAT_0055b64c);
 
       GEO_MatIdentity(auStack_44);
 

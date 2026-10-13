@@ -3846,9 +3846,9 @@ undefined4 FLK_FlickRender(int param_1)
 
             (**(code **)(DAT_00656420 + 0xa0))(DAT_00656420,0,0,fStack_1e4,fVar2,0);
 
-            FUN_00515de0(piVar9 + 0x20d,piVar9 + 0x210);
+            render_projection_reset(piVar9 + 0x20d,piVar9 + 0x210);
 
-            FUN_00515de0();
+            render_projection_reset();
 
             (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,piVar9 + 0x1df);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (265 named) — decompiled, names from PS2 symbols
+ * 351 functions (266 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -9450,14 +9450,14 @@ int FUN_00545f65(undefined8 *param_1,int param_2,int param_3)
 
   FUN_0054d3c5((uint)(local_14 == 0x2d) + param_2,local_10 + param_3,&local_14);
 
-  FUN_00545fba(param_2,param_3,&local_14,0);
+  crt_fmt_pad_zero(param_2,param_3,&local_14,0);
 
   return param_2;
 
 }
 
-/* ===== FUN_00545fba @ 0x00545FBA ===== */
-undefined1 * FUN_00545fba(undefined1 *param_1,size_t param_2,int *param_3,char param_4)
+/* ===== crt_fmt_pad_zero @ 0x00545FBA ===== */
+undefined1 * crt_fmt_pad_zero(undefined1 *param_1,size_t param_2,int *param_3,char param_4)
 
 
 
@@ -9590,7 +9590,7 @@ void FUN_00546061(undefined8 *param_1,int param_2,int param_3,undefined4 param_4
 
     }
 
-    FUN_00545fba(param_2,param_3,&local_14,1);
+    crt_fmt_pad_zero(param_2,param_3,&local_14,1);
 
   }
 

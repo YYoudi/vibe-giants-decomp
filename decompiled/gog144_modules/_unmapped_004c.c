@@ -8511,7 +8511,7 @@ undefined4 dev_debug_flags(void)
 
           iVar5 = *(int *)(*(int *)(iVar9 + 8) + 8 + *(int *)(iVar9 + 0x10) * 4);
 
-          FUN_00515de0(iVar5 + 0xc,iVar5 + 0x18);
+          render_projection_reset(iVar5 + 0xc,iVar5 + 0x18);
 
           GEO_MatIdentity();
 

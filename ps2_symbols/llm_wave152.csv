@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004aa9d0,FUN_004aa9d0,,obj_targetable_by_player_4,0.9,llm-w152,same root-walk + flag predicate variant
+00515de0,FUN_00515de0,,render_projection_reset,0.9,llm-w152,zeroes 0057c140 proj matrix callers FLK_FlickRender
+00452a30,FUN_00452a30,,icon_slots_reset,0.9,llm-w152,32 slots -1 fill callers comm_game_setup
+00545fba,FUN_00545fba,,crt_fmt_pad_zero,0.9,llm-w152,printf pad helper callers crt fmt fns

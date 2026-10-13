@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (98 named) — decompiled, names from PS2 symbols
+ * 145 functions (99 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -2312,8 +2312,8 @@ LAB_00452a14:
 
 }
 
-/* ===== FUN_00452a30 @ 0x00452A30 ===== */
-void FUN_00452a30(int param_1,int param_2)
+/* ===== icon_slots_reset @ 0x00452A30 ===== */
+void icon_slots_reset(int param_1,int param_2)
 
 
 
@@ -6216,7 +6216,7 @@ void comm_options_defaults(void)
 
   keymap_0051a100(s__BaseComplete_00559f33 + 1,&DAT_00632ff0);
 
-  FUN_00452a30(1,0);
+  icon_slots_reset(1,0);
 
   if (DAT_00633238 != 0) {
 
@@ -6384,7 +6384,7 @@ void mission_load_full(int param_1)
 
 LAB_004575ee:
 
-      FUN_00452a30(1,uVar5);
+      icon_slots_reset(1,uVar5);
 
     }
 

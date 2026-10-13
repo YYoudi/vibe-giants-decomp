@@ -8429,7 +8429,7 @@ undefined4 comm_game_setup_big(void)
 
   DAT_0058c654 = 0;
 
-  FUN_00452a30(1,1);
+  icon_slots_reset(1,1);
 
   _Source = DAT_0058c650;
 
