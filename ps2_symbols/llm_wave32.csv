@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004296c0,FUN_004296C0,,menu_sound_select_big,0.9,llm-read15,
+0042a3e0,FUN_0042A3E0,,menu_sound_select_small,0.9,llm-read15,
+0042e350,FUN_0042E350,,drawwrld_mpeg_helper,0.9,llm-read15,
+00432f30,FUN_00432F30,,drawwrld_scene_link,0.9,llm-read15,

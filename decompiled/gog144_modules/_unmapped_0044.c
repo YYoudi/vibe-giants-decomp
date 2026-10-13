@@ -22,7 +22,7 @@ void wredit_menu_cleanup_1(void)
 
   
 
-  FUN_004296c0(DAT_0059cd7c);
+  dlog_list_navigate_sound(DAT_0059cd7c);
 
   if ((DAT_00632aa4._3_1_ == '\0') && (DAT_00632aad == '\0')) {
 
@@ -292,7 +292,7 @@ void wredit_menu_cleanup_2(void)
 
   
 
-  FUN_004296c0(DAT_0059cd6c);
+  dlog_list_navigate_sound(DAT_0059cd6c);
 
   if ((DAT_00632aa4._3_1_ == '\0') && (DAT_00632aad == '\0')) {
 
@@ -532,7 +532,7 @@ void wredit_menu_cleanup_3(void)
 
   
 
-  FUN_004296c0(DAT_0059cd70);
+  dlog_list_navigate_sound(DAT_0059cd70);
 
   if ((DAT_00632aa4._3_1_ == '\0') && (DAT_00632aad == '\0')) {
 

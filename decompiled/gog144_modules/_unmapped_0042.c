@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (62 named) — decompiled, names from PS2 symbols
+ * 129 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -11659,8 +11659,8 @@ void cursor_texture_draw(void)
 
 }
 
-/* ===== FUN_004296c0 @ 0x004296C0 ===== */
-void FUN_004296c0(int *param_1)
+/* ===== dlog_list_navigate_sound @ 0x004296C0 ===== */
+void dlog_list_navigate_sound(int *param_1)
 
 
 
@@ -11876,7 +11876,7 @@ LAB_00429782:
 
           if (((char)DAT_00632aa4 != '\0') || (DAT_00632aa0._2_1_ != '\0')) {
 
-            FUN_0042a3e0(param_1);
+            dlog_list_cleanup_sound(param_1);
 
             return;
 
@@ -12929,8 +12929,8 @@ int FUN_0042a280(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_0042a3e0 @ 0x0042A3E0 ===== */
-void FUN_0042a3e0(int *param_1)
+/* ===== dlog_list_cleanup_sound @ 0x0042A3E0 ===== */
+void dlog_list_cleanup_sound(int *param_1)
 
 
 
@@ -17721,8 +17721,8 @@ void FUN_0042e260(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0042e350 @ 0x0042E350 ===== */
-void FUN_0042e350(void)
+/* ===== drawwrld_mpeg_helper @ 0x0042E350 ===== */
+void drawwrld_mpeg_helper(void)
 
 
 

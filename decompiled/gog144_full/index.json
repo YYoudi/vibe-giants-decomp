@@ -1650,9 +1650,9 @@
   "len": 1063
  },
  "0x004296C0": {
-  "name": "FUN_004296c0",
-  "named": false,
-  "len": 4379
+  "name": "dlog_list_navigate_sound",
+  "named": true,
+  "len": 4402
  },
  "0x00429990": {
   "name": "dlog_screen_user_big",
@@ -1670,9 +1670,9 @@
   "len": 1247
  },
  "0x0042A3E0": {
-  "name": "FUN_0042a3e0",
-  "named": false,
-  "len": 969
+  "name": "dlog_list_cleanup_sound",
+  "named": true,
+  "len": 980
  },
  "0x0042A460": {
   "name": "FUN_0042a460",
@@ -1880,9 +1880,9 @@
   "len": 1227
  },
  "0x0042E350": {
-  "name": "FUN_0042e350",
-  "named": false,
-  "len": 171
+  "name": "drawwrld_mpeg_helper",
+  "named": true,
+  "len": 179
  },
  "0x0042E380": {
   "name": "drawwrld_helper_c",
@@ -2060,9 +2060,9 @@
   "len": 1532
  },
  "0x00432F30": {
-  "name": "main/drawwrld_00432f30",
+  "name": "drawwrld_scene_link",
   "named": true,
-  "len": 166
+  "len": 163
  },
  "0x00434280": {
   "name": "audio_stream_tied",
@@ -2142,7 +2142,7 @@
  "0x00435BC0": {
   "name": "fx_blob_shadow",
   "named": true,
-  "len": 979
+  "len": 987
  },
  "0x00435C90": {
   "name": "dlog_frame_reset",
@@ -2327,7 +2327,7 @@
  "0x0043BF40": {
   "name": "wredit_flick_list",
   "named": true,
-  "len": 5729
+  "len": 5741
  },
  "0x0043C420": {
   "name": "wredit_flick_list3",
@@ -2342,7 +2342,7 @@
  "0x0043C760": {
   "name": "wredit_menu_6",
   "named": true,
-  "len": 4059
+  "len": 4071
  },
  "0x0043CAA0": {
   "name": "wredit_menu_7",
@@ -2362,7 +2362,7 @@
  "0x0043F120": {
   "name": "wredit_ai_menu3",
   "named": true,
-  "len": 1491
+  "len": 1503
  },
  "0x0043F220": {
   "name": "wredit_ai_menu2",
@@ -2377,7 +2377,7 @@
  "0x0043FA90": {
   "name": "main/editor_0043fa90",
   "named": true,
-  "len": 1797
+  "len": 1809
  },
  "0x0043FBC0": {
   "name": "wredit_marker_info2",
@@ -2387,7 +2387,7 @@
  "0x0043FD00": {
   "name": "main/editor_0043fd00",
   "named": true,
-  "len": 2221
+  "len": 2233
  },
  "0x0043FE90": {
   "name": "wredit_trigger_menu",
@@ -2397,7 +2397,7 @@
  "0x004400B0": {
   "name": "wredit_menu_cleanup_1",
   "named": true,
-  "len": 2026
+  "len": 2038
  },
  "0x00440230": {
   "name": "wredit_marker_menu3",
@@ -2407,7 +2407,7 @@
  "0x004403A0": {
   "name": "wredit_menu_cleanup_2",
   "named": true,
-  "len": 1968
+  "len": 1980
  },
  "0x00440500": {
   "name": "wredit_marker_info3",
@@ -2417,7 +2417,7 @@
  "0x00440640": {
   "name": "wredit_menu_cleanup_3",
   "named": true,
-  "len": 1795
+  "len": 1807
  },
  "0x00440770": {
   "name": "wredit_minishop_icons",
@@ -2972,7 +2972,7 @@
  "0x00452090": {
   "name": "FUN_00452090",
   "named": false,
-  "len": 224
+  "len": 221
  },
  "0x004520B0": {
   "name": "FUN_004520b0",
@@ -9127,7 +9127,7 @@
  "0x0051C590": {
   "name": "FUN_0051c590",
   "named": false,
-  "len": 399
+  "len": 393
  },
  "0x0051C5E0": {
   "name": "dialog_level_is_base_2",
@@ -9232,7 +9232,7 @@
  "0x0051C8D0": {
   "name": "FUN_0051c8d0",
   "named": false,
-  "len": 1604
+  "len": 1601
  },
  "0x0051C9F0": {
   "name": "FUN_0051C9F0",
@@ -9252,7 +9252,7 @@
  "0x0051DC20": {
   "name": "startup_options_init",
   "named": true,
-  "len": 10706
+  "len": 10700
  },
  "0x0051E670": {
   "name": "Audio3DTestToneUpdate__Fv_4",

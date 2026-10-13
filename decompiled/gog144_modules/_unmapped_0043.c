@@ -1938,8 +1938,8 @@ void FUN_00432950(void)
 
 }
 
-/* ===== main/drawwrld_00432f30 @ 0x00432F30 ===== */
-void main_drawwrld_00432f30(void)
+/* ===== drawwrld_scene_link @ 0x00432F30 ===== */
+void drawwrld_scene_link(void)
 
 
 
@@ -3415,7 +3415,7 @@ void fx_blob_shadow(void)
 
   fx_kabuto_footprint();
 
-  FUN_0042e350();
+  drawwrld_mpeg_helper();
 
   DAT_006565e4 = main_texture_00508750(s_b_shadow_00556fd4);
 
@@ -7700,7 +7700,7 @@ void wredit_flick_list(void)
 
   
 
-  FUN_004296c0(DAT_0059cd60);
+  dlog_list_navigate_sound(DAT_0059cd60);
 
   if ((DAT_00632aa4._3_1_ != '\0') || (DAT_00632aad != '\0')) {
 
@@ -8423,7 +8423,7 @@ void wredit_menu_6(void)
 
   
 
-  FUN_004296c0(DAT_0059cd64);
+  dlog_list_navigate_sound(DAT_0059cd64);
 
   if ((DAT_00632aa4._3_1_ == '\0') && (DAT_00632aad == '\0')) {
 
@@ -9929,7 +9929,7 @@ void wredit_ai_menu3(void)
 
   
 
-  FUN_004296c0(DAT_0059cd68);
+  dlog_list_navigate_sound(DAT_0059cd68);
 
   if ((DAT_00632aa4._3_1_ == '\0') && (DAT_00632aad == '\0')) {
 
@@ -10554,7 +10554,7 @@ void main_editor_0043fa90(void)
 
   
 
-  FUN_004296c0(DAT_0059cd74);
+  dlog_list_navigate_sound(DAT_0059cd74);
 
   if ((DAT_00632aa4._3_1_ == '\0') && (DAT_00632aad == '\0')) {
 
@@ -10786,7 +10786,7 @@ void main_editor_0043fd00(void)
 
   
 
-  FUN_004296c0(DAT_0059cd78);
+  dlog_list_navigate_sound(DAT_0059cd78);
 
   if ((DAT_00632aa4._3_1_ == '\0') && (DAT_00632aad == '\0')) {
 

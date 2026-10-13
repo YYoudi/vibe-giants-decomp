@@ -1329,7 +1329,7 @@ void FUN_00452090(int param_1)
 
     DAT_006331ac = (uint)(param_1 == 0);
 
-    main_drawwrld_00432f30();
+    drawwrld_scene_link();
 
     return;
 

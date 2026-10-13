@@ -12380,7 +12380,7 @@ void FUN_0051c590(int param_1)
 
       DAT_006331ac = (uint)(param_1 == 0);
 
-      main_drawwrld_00432f30();
+      drawwrld_scene_link();
 
       return;
 
@@ -12392,7 +12392,7 @@ void FUN_0051c590(int param_1)
 
     DAT_006331ac = 1;
 
-    main_drawwrld_00432f30();
+    drawwrld_scene_link();
 
     return;
 
@@ -12835,7 +12835,7 @@ LAB_0051c927:
 
 LAB_0051c935:
 
-      main_drawwrld_00432f30();
+      drawwrld_scene_link();
 
     }
 
@@ -14795,7 +14795,7 @@ LAB_0051e04a:
 
 LAB_0051e058:
 
-          main_drawwrld_00432f30();
+          drawwrld_scene_link();
 
         }
 
@@ -14911,7 +14911,7 @@ LAB_0051e167:
 
 LAB_0051e175:
 
-      main_drawwrld_00432f30();
+      drawwrld_scene_link();
 
     }
 
