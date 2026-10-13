@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (76 named) — decompiled, names from PS2 symbols
+ * 179 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -8088,12 +8088,12 @@ LAB_00535351:
 
 }
 
-/* ===== FUN_00535390 @ 0x00535390 ===== */
+/* ===== comm_heartbeat_send @ 0x00535390 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00535390(void)
+void comm_heartbeat_send(void)
 
 
 
@@ -15589,7 +15589,7 @@ LAB_0053ca17:
 
     local_64 = 1;
 
-    FUN_0053e140(auStack_20,&local_64);
+    crt_bbox_center(auStack_20,&local_64);
 
     iVar4 = *(int *)(param_1 + 0x9c);
 
@@ -18134,8 +18134,8 @@ void FUN_0053e090(int param_1,int param_2,int param_3,float param_4)
 
 }
 
-/* ===== FUN_0053e140 @ 0x0053E140 ===== */
-void FUN_0053e140(float *param_1,int param_2)
+/* ===== crt_bbox_center @ 0x0053E140 ===== */
+void crt_bbox_center(float *param_1,int param_2)
 
 
 

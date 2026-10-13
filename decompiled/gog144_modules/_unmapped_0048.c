@@ -4101,7 +4101,7 @@ void savegame_cam_section(void)
 
     comm_0051a130(s_CamMode_00555a28,1);
 
-    FUN_0040d130(1);
+    cam_mode_switch(1);
 
     local_4 = 0;
 

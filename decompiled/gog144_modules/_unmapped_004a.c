@@ -4406,7 +4406,7 @@ void comm_game_session_update(void)
 
   if (DAT_00632af4 != '\0') {
 
-    FUN_0040d130(0xffffffff);
+    cam_mode_switch(0xffffffff);
 
   }
 
@@ -4414,7 +4414,7 @@ void comm_game_session_update(void)
 
      (iVar3 = FUN_0040cf70(), iVar3 != 0)) {
 
-    FUN_0040d130(1);
+    cam_mode_switch(1);
 
   }
 

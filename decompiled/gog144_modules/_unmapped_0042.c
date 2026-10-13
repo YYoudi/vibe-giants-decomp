@@ -766,7 +766,7 @@ void FUN_00420780(int param_1,undefined4 param_2)
 
       if (iVar1 == 0) {
 
-        FUN_0040d130(1);
+        cam_mode_switch(1);
 
         comm_0051a130();
 
@@ -774,7 +774,7 @@ void FUN_00420780(int param_1,undefined4 param_2)
 
       }
 
-      FUN_0040d130(2);
+      cam_mode_switch(2);
 
       comm_0051a130();
 
@@ -9051,7 +9051,7 @@ void FUN_00426ee0(void)
 
   if (DAT_00556498 != -1) {
 
-    FUN_00535390();
+    comm_heartbeat_send();
 
     FUN_00531470();
 

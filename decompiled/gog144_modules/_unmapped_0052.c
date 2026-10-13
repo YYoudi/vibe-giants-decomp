@@ -14350,7 +14350,7 @@ LAB_0052fabe:
 
         mission_0051a0c0(s_CamMode_00555a28,&param_1);
 
-        FUN_0040d130(param_1);
+        cam_mode_switch(param_1);
 
       }
 

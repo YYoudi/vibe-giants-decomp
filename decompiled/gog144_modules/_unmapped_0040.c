@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (39 named) — decompiled, names from PS2 symbols
+ * 105 functions (40 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -9540,12 +9540,12 @@ int cam_target_get(void)
 
 }
 
-/* ===== FUN_0040d130 @ 0x0040D130 ===== */
+/* ===== cam_mode_switch @ 0x0040D130 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0040d130(int param_1)
+void cam_mode_switch(int param_1)
 
 
 

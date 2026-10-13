@@ -1509,7 +1509,7 @@ void FUN_00471a60(int param_1)
 
             ANM_DumpCluster();
 
-            FUN_00535390();
+            comm_heartbeat_send();
 
             if (DAT_00632a88 != 0) {
 
@@ -2322,7 +2322,7 @@ void dlog_text_render_screen(void)
 
     FUN_0040ce50();
 
-    FUN_0040d130(1);
+    cam_mode_switch(1);
 
     fVar9 = (float10)FUN_00515d90();
 

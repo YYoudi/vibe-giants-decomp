@@ -2524,7 +2524,7 @@ LAB_00492458:
 
         }
 
-        FUN_0040d130(1);
+        cam_mode_switch(1);
 
       }
 
@@ -2900,7 +2900,7 @@ undefined4 mission_init(char *p0)
 
     mission_0051a0c0(s_CamMode_00555a28,local_124);
 
-    FUN_0040d130(local_124[0]);
+    cam_mode_switch(local_124[0]);
 
     iVar14 = 0;
 

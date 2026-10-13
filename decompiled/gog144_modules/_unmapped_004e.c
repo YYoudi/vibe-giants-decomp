@@ -10343,7 +10343,7 @@ void object_spawn_copy(void)
 
   }
 
-  FUN_0040d130(1);
+  cam_mode_switch(1);
 
   *(undefined4 *)(DAT_00632a88 + 0x18c) = 1;
 

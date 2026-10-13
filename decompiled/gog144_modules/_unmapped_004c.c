@@ -7812,7 +7812,7 @@ LAB_004ccbc0:
 
           fVar1 = *(float *)(iStack_1c4 + (int)piVar7) * 0.7;
 
-          FUN_004fe0f0(uVar4,iVar6,fVar1,fVar1,uStack_1d4,uStack_1cc,0);
+          terrain_uv_sample(uVar4,iVar6,fVar1,fVar1,uStack_1d4,uStack_1cc,0);
 
           iVar6 = iStack_214;
 

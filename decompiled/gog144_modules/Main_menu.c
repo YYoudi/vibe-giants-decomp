@@ -227,7 +227,7 @@ void main_menu_004832f0(void)
 
     object_list_update();
 
-    FUN_00535390();
+    comm_heartbeat_send();
 
   }
 
