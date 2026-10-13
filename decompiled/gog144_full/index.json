@@ -3810,8 +3810,8 @@
   "len": 257
  },
  "0x0046F7F0": {
-  "name": "FUN_0046f7f0",
-  "named": false,
+  "name": "vec3_clamp01",
+  "named": true,
   "len": 563
  },
  "0x0046F8B0": {
@@ -3977,12 +3977,12 @@
  "0x00474440": {
   "name": "gti_terrain_load",
   "named": true,
-  "len": 22896
+  "len": 22924
  },
  "0x004751D0": {
-  "name": "FUN_004751d0",
-  "named": false,
-  "len": 663
+  "name": "world_edge_quadrant",
+  "named": true,
+  "len": 670
  },
  "0x00475290": {
   "name": "FUN_00475290",
@@ -4357,7 +4357,7 @@
  "0x00482E90": {
   "name": "menu_handlers_lookup",
   "named": true,
-  "len": 4025
+  "len": 4031
  },
  "0x00483200": {
   "name": "main_menu_00483200",
@@ -4377,7 +4377,7 @@
  "0x004835F0": {
   "name": "menu_handlers_exec",
   "named": true,
-  "len": 4086
+  "len": 4092
  },
  "0x00483BA0": {
   "name": "mission_intro_load",
@@ -4497,7 +4497,7 @@
  "0x004897D0": {
   "name": "mission_menu_load2",
   "named": true,
-  "len": 4720
+  "len": 4726
  },
  "0x00489CA0": {
   "name": "FUN_00489ca0",
@@ -4567,7 +4567,7 @@
  "0x0048E010": {
   "name": "menu_dlog_callback_a",
   "named": true,
-  "len": 4631
+  "len": 4637
  },
  "0x0048E430": {
   "name": "FUN_0048E430",
@@ -4577,7 +4577,7 @@
  "0x0048E610": {
   "name": "menu_dlog_callback_b",
   "named": true,
-  "len": 4622
+  "len": 4628
  },
  "0x0048EA50": {
   "name": "FUN_0048EA50",
@@ -7835,14 +7835,14 @@
   "len": 3824
  },
  "0x004FFE50": {
-  "name": "FUN_004ffe50",
-  "named": false,
-  "len": 933
+  "name": "point_left_of_line",
+  "named": true,
+  "len": 939
  },
  "0x004FFF10": {
   "name": "FUN_004fff10",
   "named": false,
-  "len": 2675
+  "len": 2687
  },
  "0x00500100": {
   "name": "FUN_00500100",
@@ -7850,9 +7850,9 @@
   "len": 168
  },
  "0x00500120": {
-  "name": "FUN_00500120",
-  "named": false,
-  "len": 776
+  "name": "menu_preview_clamp",
+  "named": true,
+  "len": 782
  },
  "0x00500220": {
   "name": "status_subobj_init",
@@ -7912,7 +7912,7 @@
  "0x00500E20": {
   "name": "status_draw_panel",
   "named": true,
-  "len": 1260
+  "len": 1266
  },
  "0x00500F40": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5",
@@ -12592,12 +12592,12 @@
  "0x0054D43C": {
   "name": "crt_mbtowc_helper",
   "named": true,
-  "len": 585
+  "len": 589
  },
  "0x0054D498": {
-  "name": "FUN_0054d498",
-  "named": false,
-  "len": 969
+  "name": "crt_dbl_classify",
+  "named": true,
+  "len": 973
  },
  "0x0054D550": {
   "name": "_memset",

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (56 named) — decompiled, names from PS2 symbols
+ * 67 functions (57 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1988,8 +1988,8 @@ undefined4 landscape_bump_check(int param_1,int param_2,int param_3,int param_4,
 
 }
 
-/* ===== FUN_004751d0 @ 0x004751D0 ===== */
-undefined4 FUN_004751d0(float *param_1)
+/* ===== world_edge_quadrant @ 0x004751D0 ===== */
+undefined4 world_edge_quadrant(float *param_1)
 
 
 

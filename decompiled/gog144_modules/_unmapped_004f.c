@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (38 named) — decompiled, names from PS2 symbols
+ * 48 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -5749,8 +5749,8 @@ LAB_004ff8e2:
 
 }
 
-/* ===== FUN_004ffe50 @ 0x004FFE50 ===== */
-bool FUN_004ffe50(float param_1,float param_2,int param_3,int param_4,int param_5)
+/* ===== point_left_of_line @ 0x004FFE50 ===== */
+bool point_left_of_line(float param_1,float param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -5913,9 +5913,9 @@ int FUN_004fff10(int *param_1,int param_2,int param_3)
 
         while (iVar4 != 0) {
 
-          iVar4 = FUN_004ffe50(fVar1,fVar2,local_c * 0x38 + iVar8,param_3 * 0x38 + iVar8,
+          iVar4 = point_left_of_line(fVar1,fVar2,local_c * 0x38 + iVar8,param_3 * 0x38 + iVar8,
 
-                               local_10 * 0x38 + iVar8);
+                                     local_10 * 0x38 + iVar8);
 
           if (iVar4 != 0) {
 

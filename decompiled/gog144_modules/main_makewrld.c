@@ -1916,9 +1916,9 @@ LAB_00475069:
 
             calc_tri_weighted_plane(puVar8,puVar13,puVar9,&local_30);
 
-            sVar1 = FUN_004751d0(local_70);
+            sVar1 = world_edge_quadrant(local_70);
 
-            sVar2 = FUN_004751d0(&local_30);
+            sVar2 = world_edge_quadrant(&local_30);
 
             goto LAB_00475102;
 
@@ -1944,9 +1944,9 @@ LAB_00475069:
 
           calc_tri_weighted_plane(puVar8,puVar13,puVar9,local_70);
 
-          sVar1 = FUN_004751d0(local_70);
+          sVar1 = world_edge_quadrant(local_70);
 
-          sVar2 = FUN_004751d0(0);
+          sVar2 = world_edge_quadrant(0);
 
 LAB_00475102:
 

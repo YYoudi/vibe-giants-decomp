@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (61 named) — decompiled, names from PS2 symbols
+ * 87 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -14,8 +14,8 @@ undefined4 FUN_00500100(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00500120 @ 0x00500120 ===== */
-void FUN_00500120(float *param_1,int param_2,int param_3)
+/* ===== menu_preview_clamp @ 0x00500120 ===== */
+void menu_preview_clamp(float *param_1,int param_2,int param_3)
 
 
 
@@ -1070,7 +1070,7 @@ void status_draw_panel(void)
 
         }
 
-        FUN_00500120(&DAT_0063292c,DAT_00632924,DAT_00632928);
+        menu_preview_clamp(&DAT_0063292c,DAT_00632924,DAT_00632928);
 
         FUN_004fff10(&DAT_00632900,iVar1,0xffffffff);
 

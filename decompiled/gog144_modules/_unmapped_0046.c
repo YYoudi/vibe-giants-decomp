@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (39 named) — decompiled, names from PS2 symbols
+ * 53 functions (40 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -4156,8 +4156,8 @@ undefined * FUN_0046f540(int param_1)
 
 }
 
-/* ===== FUN_0046f7f0 @ 0x0046F7F0 ===== */
-void FUN_0046f7f0(float *param_1)
+/* ===== vec3_clamp01 @ 0x0046F7F0 ===== */
+void vec3_clamp01(float *param_1)
 
 
 
@@ -4628,7 +4628,7 @@ void obj_orient_set(int param_1,uint *param_2)
 
   local_10[3] = param_2[3];
 
-  FUN_0046f7f0(local_10);
+  vec3_clamp01(local_10);
 
   *puVar2 = *puVar2 | 0xc;
 
@@ -4789,7 +4789,7 @@ void obj_orient_flags(int param_1,uint *param_2)
 
   puVar2[5] = param_2[3];
 
-  FUN_0046f7f0(puVar2 + 2);
+  vec3_clamp01(puVar2 + 2);
 
   puVar3 = *(uint **)(param_1 + 0x100);
 

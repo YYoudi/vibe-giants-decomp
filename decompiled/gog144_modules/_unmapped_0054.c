@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (264 named) — decompiled, names from PS2 symbols
+ * 351 functions (265 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -22852,7 +22852,7 @@ int * crt_mbtowc_helper(undefined4 param_1,undefined4 param_2,int *param_3,int p
 
   
 
-  FUN_0054d498(&local_10,&param_1);
+  crt_dbl_classify(&local_10,&param_1);
 
   iVar3 = crt_fltout(local_10,uStack_c,uStack_8,0x11,0,&local_2c);
 
@@ -22874,8 +22874,8 @@ int * crt_mbtowc_helper(undefined4 param_1,undefined4 param_2,int *param_3,int p
 
 }
 
-/* ===== FUN_0054d498 @ 0x0054D498 ===== */
-void FUN_0054d498(uint *param_1,uint *param_2)
+/* ===== crt_dbl_classify @ 0x0054D498 ===== */
+void crt_dbl_classify(uint *param_1,uint *param_2)
 
 
 
