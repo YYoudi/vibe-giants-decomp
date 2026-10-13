@@ -1769,7 +1769,7 @@ void makewrld_big(void)
 
       uStack_88 = 0x21;
 
-      FUN_0053d970(auStack_44,&uStack_88);
+      GEO_MatTranspose(auStack_44,&uStack_88);
 
       (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_cc,auStack_44);
 
@@ -1791,7 +1791,7 @@ void makewrld_big(void)
 
       (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
-      FUN_0053d970(&DAT_00656980 + iVar6,auStack_110);
+      GEO_MatTranspose(&DAT_00656980 + iVar6,auStack_110);
 
       iVar4 = *(int *)((int)&DAT_00556e44 + iVar7);
 
@@ -1803,7 +1803,7 @@ void makewrld_big(void)
 
       (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
-      FUN_0053d970(&DAT_00657080 + iVar6,auStack_110);
+      GEO_MatTranspose(&DAT_00657080 + iVar6,auStack_110);
 
       iVar4 = *(int *)((int)&DAT_00556e44 + iVar7);
 
@@ -1815,7 +1815,7 @@ void makewrld_big(void)
 
       (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
-      FUN_0053d970(&DAT_00656dc0 + iVar6,auStack_110);
+      GEO_MatTranspose(&DAT_00656dc0 + iVar6,auStack_110);
 
       iVar4 = *(int *)((int)&DAT_00556e44 + iVar7);
 
@@ -1827,7 +1827,7 @@ void makewrld_big(void)
 
       (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
-      FUN_0053d970(&DAT_00656700 + iVar6,auStack_110);
+      GEO_MatTranspose(&DAT_00656700 + iVar6,auStack_110);
 
       iVar4 = *(int *)((int)&DAT_00556e20 + iVar7);
 
@@ -1843,7 +1843,7 @@ void makewrld_big(void)
 
       (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,&uStack_154,auStack_cc);
 
-      FUN_0053d970(&DAT_00656560,auStack_110);
+      GEO_MatTranspose(&DAT_00656560,auStack_110);
 
       afStack_140[1] = 0.0;
 

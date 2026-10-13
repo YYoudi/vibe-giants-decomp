@@ -10651,7 +10651,7 @@ void FUN_00428810(undefined4 *param_1)
 
             if ((uVar10 & 4) == 0) {
 
-              FUN_0051b970(local_14,0,puVar7[0xc],puVar7[7],puVar7[6],puVar7[10]);
+              dlog_text_draw_wrap(local_14,0,puVar7[0xc],puVar7[7],puVar7[6],puVar7[10]);
 
             }
 
@@ -10715,9 +10715,9 @@ void FUN_00428810(undefined4 *param_1)
 
           }
 
-          FUN_0051b970((-(uint)(iVar8 != -1) & 0x7f7e80) + 0x808080,0,puVar7[0xd],puVar7[7],
+          dlog_text_draw_wrap((-(uint)(iVar8 != -1) & 0x7f7e80) + 0x808080,0,puVar7[0xd],puVar7[7],
 
-                       puVar7[6],puVar7[10]);
+                              puVar7[6],puVar7[10]);
 
           if ((iVar8 != -1) && (uVar10 = __ftol(), (uVar10 & 1) != 0)) {
 
@@ -10735,9 +10735,9 @@ void FUN_00428810(undefined4 *param_1)
 
             fVar15 = (float10)textrender_draw_cached(puVar7[0xd],puVar7[10],puVar7[0xc]);
 
-            FUN_0051b970(0xffff00,0,puVar7[0xd],(float)(fVar15 + (float10)(float)puVar7[7]),
+            dlog_text_draw_wrap(0xffff00,0,puVar7[0xd],(float)(fVar15 + (float10)(float)puVar7[7]),
 
-                         fVar2 * 0.1 + fVar3,puVar13);
+                                fVar2 * 0.1 + fVar3,puVar13);
 
           }
 
@@ -11008,11 +11008,11 @@ void dlog_rect_vtable_draw(int param_1,int param_2)
 
   fVar10 = (float10)FUN_0051bc70(param_2);
 
-  FUN_0051b970(fVar9,0,param_2,fVar4 + fVar5 + fVar5 + 0.005,
+  dlog_text_draw_wrap(fVar9,0,param_2,fVar4 + fVar5 + fVar5 + 0.005,
 
-               (float)((float10)((fVar3 + fVar2) * 0.5) - fVar10 * (float10)0.5),
+                      (float)((float10)((fVar3 + fVar2) * 0.5) - fVar10 * (float10)0.5),
 
-               *(undefined4 *)(iVar6 + 0x2c));
+                      *(undefined4 *)(iVar6 + 0x2c));
 
   return;
 
@@ -11193,7 +11193,7 @@ LAB_004291b7:
 
         }
 
-        FUN_0051b970(iVar8,0,local_8,local_4,param_1,puVar3 + 4);
+        dlog_text_draw_wrap(iVar8,0,local_8,local_4,param_1,puVar3 + 4);
 
         fVar12 = (float10)crt_fabs(local_8);
 
@@ -11309,7 +11309,7 @@ LAB_004291b7:
 
         }
 
-        FUN_0051b970(uVar9,0,local_8,param_2,*(undefined4 *)(iVar5 + 0x18),piVar10 + 4);
+        dlog_text_draw_wrap(uVar9,0,local_8,param_2,*(undefined4 *)(iVar5 + 0x18),piVar10 + 4);
 
         return;
 
@@ -15799,7 +15799,7 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
       if ((*(int *)(param_1 + 0x204) == 0) ||
 
-         (iVar15 = FUN_00513ac0(param_1,iVar2,param_3), iVar15 == 0)) {
+         (iVar15 = mesh_node_name_check(param_1,iVar2,param_3), iVar15 == 0)) {
 
         iVar15 = param_3 * 0x50 + iVar2;
 
@@ -17224,7 +17224,7 @@ void alpha_queue_push(int param_1)
 
       if ((*(int *)(param_1 + 0x204) == 0) ||
 
-         (iVar4 = FUN_00513ac0(param_1,iVar3,iVar6), iVar4 == 0)) {
+         (iVar4 = mesh_node_name_check(param_1,iVar3,iVar6), iVar4 == 0)) {
 
         iVar5 = *(int *)(iVar6 * 0x50 + 0x90 + iVar3);
 
@@ -17947,7 +17947,7 @@ void animate_core_caller(int param_1,undefined4 param_2,int param_3,undefined4 p
 
   main_animate_00404b60(param_1,iVar6);
 
-  FUN_0053d970(local_44,param_4);
+  GEO_MatTranspose(local_44,param_4);
 
   (**(code **)(DAT_00656420 + 0x18))(DAT_00656420,local_40);
 

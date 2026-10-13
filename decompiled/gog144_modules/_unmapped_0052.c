@@ -9046,7 +9046,7 @@ void comm_net_stats_dump(void)
 
                     piVar7[-0x16],pcVar4);
 
-        FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,local_1cc,local_1c8);
+        dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,local_1cc,local_1c8);
 
         local_1cc = local_1cc - 0.025;
 
@@ -9068,27 +9068,27 @@ void comm_net_stats_dump(void)
 
   if (DAT_00633100 == 100) {
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f19999a,s__________Aggregate_Info__________0057ee00)
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f19999a,
 
-    ;
+                        s__________Aggregate_Info__________0057ee00);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f23d70b,s_Guaranteed__0057edf4);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f23d70b,s_Guaranteed__0057edf4);
 
     crt_sprintf(local_1c8,s_S_s___4d__B_s___5d__St___6d__Bt__0057eda8,DAT_005dde50,DAT_005dde54,
 
                 DAT_005dde40,DAT_005dde44,DAT_005dde58,DAT_005dde5c);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f2a3d71,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f2a3d71,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f347ae2,s_Non_Guaranteed__0057ed98);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f347ae2,s_Non_Guaranteed__0057ed98);
 
     crt_sprintf(local_1c8,s_S_s___4d__B_s___5d__St___6d__Bt__0057eda8,DAT_005dde70,DAT_005dde74,
 
                 DAT_005dde60,DAT_005dde64,DAT_005dde78,DAT_005dde7c);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f3ae148,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f3ae148,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f451eb9,s_Total_Sends__0057ed88);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f451eb9,s_Total_Sends__0057ed88);
 
     crt_sprintf(local_1c8,s_S_s___4d__B_s___5d__St___6d__Bt__0057ed54,DAT_005dde70 + DAT_005dde50,
 
@@ -9096,15 +9096,15 @@ void comm_net_stats_dump(void)
 
     ;
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f4b851f,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f4b851f,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f55c290,s_Total_Receives__0057ed44);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f55c290,s_Total_Receives__0057ed44);
 
     crt_sprintf(local_1c8,s_R_s___4d__B_s___5d__Rt___6d__Bt__0057ecf8,DAT_005dde90,DAT_005dde94,
 
                 DAT_005dde80,DAT_005dde84,DAT_005dde98,DAT_005dde9c);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f5c28f6,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f5c28f6,local_1c8);
 
     return;
 
@@ -9116,61 +9116,61 @@ void comm_net_stats_dump(void)
 
       crt_sprintf(local_1c8,s________Client________0057eb24);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3ecccccd,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3ecccccd,local_1c8);
 
       crt_sprintf(local_1c8,s_ping_ms____4d__BPS___5d__Peak_BP_0057ec88,DAT_005de684,DAT_005de688,
 
                   DAT_005de68c,DAT_005de6d8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3ed9999a,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3ed9999a,local_1c8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3eee147b,s_Guaranteed__0057edf4);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3eee147b,s_Guaranteed__0057edf4);
 
       crt_sprintf(local_1c8,s_Bytes_Sent___7d__Bytes_Rec___7d__0057ec38,DAT_005de690,DAT_005de6c8,
 
                   DAT_005de694,DAT_005de6cc);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3efae148,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3efae148,local_1c8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f07ae15,s_Non_Guaranteed__0057ed98);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f07ae15,s_Non_Guaranteed__0057ed98);
 
       crt_sprintf(local_1c8,s_Bytes_Sent___7d__Bytes_Rec___7d__0057ec38,DAT_005de698,DAT_005de6d0,
 
                   DAT_005de69c,DAT_005de6d4);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f0e147b,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f0e147b,local_1c8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f1851ec,s_Packet_Loss__0057ec28);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f1851ec,s_Packet_Loss__0057ec28);
 
       crt_sprintf(local_1c8,s_Bytes_Retried___7d__Bytes_Droppe_0057ebc8,DAT_005de6a0,DAT_005de6a8,
 
                   DAT_005de6a4,DAT_005de6ac);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f1eb852,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f1eb852,local_1c8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f28f5c3,s_Priority_High__0057ebb8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f28f5c3,s_Priority_High__0057ebb8);
 
       crt_sprintf(local_1c8,s_Msgs_Sent___4d__Msgs_Timed_Out___0057eb90,DAT_005de6b0,DAT_005de6b4);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f2f5c29,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f2f5c29,local_1c8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f39999a,s_Priority_Medium__0057eb7c);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f39999a,s_Priority_Medium__0057eb7c);
 
       crt_sprintf(local_1c8,s_Msgs_Sent___4d__Msgs_Timed_Out___0057eb90,DAT_005de6b8,DAT_005de6bc);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f400000,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f400000,local_1c8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f4a3d71,s_Priority_Low__0057eb6c);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f4a3d71,s_Priority_Low__0057eb6c);
 
       crt_sprintf(local_1c8,s_Msgs_Sent___4d__Msgs_Timed_Out___0057eb90,DAT_005de6c0,DAT_005de6c4);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f50a3d7,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f50a3d7,local_1c8);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f5ae148,s_Send_Queue__0057eb60);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f5ae148,s_Send_Queue__0057eb60);
 
       crt_sprintf(local_1c8,s_Num_Msgs___4d__Num_Bytes___4d_0057eb3c,DAT_005de6e0,DAT_005de6e4);
 
-      FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f6147ae,local_1c8);
+      dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f6147ae,local_1c8);
 
     }
 
@@ -9218,7 +9218,7 @@ void comm_net_stats_dump(void)
 
     crt_sprintf(local_1c8,s________Client__d__name____s______0057eccc,iVar2,pcVar6);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3ecccccd,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3ecccccd,local_1c8);
 
     crt_sprintf(local_1c8,s_ping_ms____4d__BPS___5d__Peak_BP_0057ec88,(&DAT_005de684)[iVar2 * 0x1c],
 
@@ -9226,9 +9226,9 @@ void comm_net_stats_dump(void)
 
                 (&DAT_005de6d8)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3ed9999a,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3ed9999a,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3eee147b,s_Guaranteed__0057edf4);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3eee147b,s_Guaranteed__0057edf4);
 
     crt_sprintf(local_1c8,s_Bytes_Sent___7d__Bytes_Rec___7d__0057ec38,(&DAT_005de690)[iVar2 * 0x1c],
 
@@ -9236,9 +9236,9 @@ void comm_net_stats_dump(void)
 
                 (&DAT_005de6cc)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3efae148,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3efae148,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f07ae15,s_Non_Guaranteed__0057ed98);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f07ae15,s_Non_Guaranteed__0057ed98);
 
     crt_sprintf(local_1c8,s_Bytes_Sent___7d__Bytes_Rec___7d__0057ec38,(&DAT_005de698)[iVar2 * 0x1c],
 
@@ -9246,9 +9246,9 @@ void comm_net_stats_dump(void)
 
                 (&DAT_005de6d4)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f0e147b,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f0e147b,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f1851ec,s_Packet_Loss__0057ec28);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f1851ec,s_Packet_Loss__0057ec28);
 
     crt_sprintf(local_1c8,s_Bytes_Retried___7d__Bytes_Droppe_0057ebc8,(&DAT_005de6a0)[iVar2 * 0x1c],
 
@@ -9256,39 +9256,39 @@ void comm_net_stats_dump(void)
 
                 (&DAT_005de6ac)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f1eb852,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f1eb852,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f28f5c3,s_Priority_High__0057ebb8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f28f5c3,s_Priority_High__0057ebb8);
 
     crt_sprintf(local_1c8,s_Msgs_Sent___4d__Msgs_Timed_Out___0057eb90,(&DAT_005de6b0)[iVar2 * 0x1c],
 
                 (&DAT_005de6b4)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f2f5c29,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f2f5c29,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f39999a,s_Priority_Medium__0057eb7c);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f39999a,s_Priority_Medium__0057eb7c);
 
     crt_sprintf(local_1c8,s_Msgs_Sent___4d__Msgs_Timed_Out___0057eb90,(&DAT_005de6b8)[iVar2 * 0x1c],
 
                 (&DAT_005de6bc)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f400000,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f400000,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f4a3d71,s_Priority_Low__0057eb6c);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f4a3d71,s_Priority_Low__0057eb6c);
 
     crt_sprintf(local_1c8,s_Msgs_Sent___4d__Msgs_Timed_Out___0057eb90,(&DAT_005de6c0)[iVar2 * 0x1c],
 
                 (&DAT_005de6c4)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f50a3d7,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f50a3d7,local_1c8);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f5ae148,s_Send_Queue__0057eb60);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3c23d70a,0x3f5ae148,s_Send_Queue__0057eb60);
 
     crt_sprintf(local_1c8,s_Num_Msgs___4d__Num_Bytes___4d_0057eb3c,(&DAT_005de6e0)[iVar2 * 0x1c],
 
                 (&DAT_005de6e4)[iVar2 * 0x1c]);
 
-    FUN_0051b970(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f6147ae,local_1c8);
+    dlog_text_draw_wrap(0xf0f0f0,0,fVar1,0x3d23d70a,0x3f6147ae,local_1c8);
 
     return;
 

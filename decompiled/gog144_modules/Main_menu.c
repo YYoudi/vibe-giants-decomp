@@ -239,7 +239,7 @@ void main_menu_004832f0(void)
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) & 0xffffffbf;
 
-  FUN_004a6420(DAT_0059ee98);
+  obj_velocity_commit(DAT_0059ee98);
 
   if ((*(byte *)(DAT_0059ee98 + 0xd8) & 0x40) == 0) {
 

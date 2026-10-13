@@ -10942,7 +10942,7 @@ void reaper_logic(int param_1)
 
       iVar2 = puVar1[3];
 
-      FUN_004a6420(iVar2);
+      obj_velocity_commit(iVar2);
 
       if (DAT_00632a88 == 0) {
 

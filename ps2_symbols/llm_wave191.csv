@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00530430,FUN_00530430,,comm_death_packet_build,0.9,llm-w191,base-mode packet w/ player ids 0x188 callers mecc death/shot
+00446f70,FUN_00446f70,,attack_fx_spawn,0.9,llm-w191,MAP alloc + 13 floats + scale callers AttackObject
+004a6420,FUN_004a6420,,obj_velocity_commit,0.9,llm-w191,0x108->0x11c copy + dispatch after 0x208 compare
+00513ac0,FUN_00513ac0,,mesh_node_name_check,0.9,llm-w191,str_eq vs node names bitmask callers hud
+00499f30,FUN_00499f30,,object_copy_ospec,0.9,llm-w191,per-class 0055cb14 dispatch + sub100 copy
+0053d970,FUN_0053d970,,GEO_MatTranspose,0.9,llm-w191,17-dword transpose + 0x10 flag swap
+0054f58b,FUN_0054f58b,,crt_mant_normalize,0.9,llm-w191,mantissa renorm callers strtod/fltout
+0051b970,FUN_0051b970,,dlog_text_draw_wrap,0.9,llm-w191,width-scale wrap draw callers dlog vtable

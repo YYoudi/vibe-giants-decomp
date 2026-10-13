@@ -3861,9 +3861,11 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
       }
 
-      FUN_00530430(fVar8,uVar2,iVar3,*(int *)(uVar2 + 0x18c) + -1,param_4,local_38,0x3f800000,
+      comm_death_packet_build
 
-                   0x3f800000);
+                (fVar8,uVar2,iVar3,*(int *)(uVar2 + 0x18c) + -1,param_4,local_38,0x3f800000,
+
+                 0x3f800000);
 
     }
 

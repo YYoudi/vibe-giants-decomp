@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (150 named) — decompiled, names from PS2 symbols
+ * 179 functions (152 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -488,10 +488,12 @@ void comm_send_big(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00530430 @ 0x00530430 ===== */
-void FUN_00530430(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
+/* ===== comm_death_packet_build @ 0x00530430 ===== */
+void comm_death_packet_build
 
-                 undefined4 param_6,undefined4 param_7,undefined4 param_8)
+               (int param_1,int param_2,int param_3,int param_4,undefined4 param_5,
+
+               undefined4 param_6,undefined4 param_7,undefined4 param_8)
 
 
 
@@ -10065,7 +10067,7 @@ void mecc_get_thrust__FP6OBJECTfPfT2_2(int param_1)
 
     }
 
-    FUN_0051b970(0x1fffff,0,fVar1,0x3dcccccd,0x3f733333,local_100);
+    dlog_text_draw_wrap(0x1fffff,0,fVar1,0x3dcccccd,0x3f733333,local_100);
 
     uVar5 = __ftol();
 
@@ -10087,19 +10089,19 @@ void mecc_get_thrust__FP6OBJECTfPfT2_2(int param_1)
 
       local_104 = (float)(fVar12 + (float10)0.1);
 
-      FUN_0051b970(0x1fffff,0,fVar1,local_104,local_110,puVar10);
+      dlog_text_draw_wrap(0x1fffff,0,fVar1,local_104,local_110,puVar10);
 
     }
 
     if ((bVar3) && (uVar5 = __ftol(), (uVar5 & 1) != 0)) {
 
-      FUN_0051b970(0xf0f01f,0,fVar1,0x3f68f5c3,0x3f733333,&DAT_00556010);
+      dlog_text_draw_wrap(0xf0f01f,0,fVar1,0x3f68f5c3,0x3f733333,&DAT_00556010);
 
     }
 
     if ((local_108 != 0) && (uVar5 = __ftol(), (uVar5 & 1) == 0)) {
 
-      FUN_0051b970(0xf0f01f,0,fVar1,0x3d8f5c29,0x3f733333,&DAT_00556014);
+      dlog_text_draw_wrap(0xf0f01f,0,fVar1,0x3d8f5c29,0x3f733333,&DAT_00556014);
 
     }
 
@@ -10239,9 +10241,9 @@ LAB_005369e7:
 
 LAB_00536aeb:
 
-          FUN_0051b970(*(undefined4 *)(&DAT_006328c0 + (&DAT_00632844)[iVar11] * 4),0,fVar13,
+          dlog_text_draw_wrap(*(undefined4 *)(&DAT_006328c0 + (&DAT_00632844)[iVar11] * 4),0,fVar13,
 
-                       local_114,local_118,pcVar9);
+                              local_114,local_118,pcVar9);
 
         }
 
@@ -17167,8 +17169,8 @@ void ObjectUpdateSpeedDist(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0053d970 @ 0x0053D970 ===== */
-void FUN_0053d970(uint *param_1,uint *param_2)
+/* ===== GEO_MatTranspose @ 0x0053D970 ===== */
+void GEO_MatTranspose(uint *param_1,uint *param_2)
 
 
 

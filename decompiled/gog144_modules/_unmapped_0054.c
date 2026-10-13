@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (301 named) — decompiled, names from PS2 symbols
+ * 351 functions (302 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -24883,7 +24883,7 @@ LAB_0054e1b5:
 
       if (-0x1451 < iVar4) {
 
-        FUN_0054f58b(&local_44,iVar4,param_4);
+        crt_mant_normalize(&local_44,iVar4,param_4);
 
         param_3 = (byte *)CONCAT22(uStack_40,uStack_42);
 
@@ -26927,7 +26927,7 @@ LAB_0054f0ad:
 
                    0x10);
 
-    FUN_0054f58b(&local_14,-(int)sVar7,1);
+    crt_mant_normalize(&local_14,-(int)sVar7,1);
 
     if (0x3ffe < CONCAT11(cStack_9,local_a)) {
 
@@ -27553,8 +27553,8 @@ LAB_0054f56b:
 
 }
 
-/* ===== FUN_0054f58b @ 0x0054F58B ===== */
-void FUN_0054f58b(undefined2 *param_1,uint param_2,int param_3)
+/* ===== crt_mant_normalize @ 0x0054F58B ===== */
+void crt_mant_normalize(undefined2 *param_1,uint param_2,int param_3)
 
 
 

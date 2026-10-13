@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (69 named) — decompiled, names from PS2 symbols
+ * 76 functions (70 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -3506,7 +3506,7 @@ undefined4 FLK_FlickRender(int param_1)
 
                        *(undefined4 *)(*(int *)(param_1 + 0xb8) + 4));
 
-  FUN_0053d970(auStack_c8,uVar5);
+  GEO_MatTranspose(auStack_c8,uVar5);
 
   view_matrix_reset(auStack_c4);
 
@@ -3562,7 +3562,7 @@ undefined4 FLK_FlickRender(int param_1)
 
     *(uint *)(iVar12 + 0xd8) = *(uint *)(iVar12 + 0xd8) & 0xffffffbf;
 
-    FUN_004a6420();
+    obj_velocity_commit();
 
     if ((*(byte *)(iVar12 + 0xd8) & 0x40) != 0) {
 
@@ -3852,7 +3852,7 @@ undefined4 FLK_FlickRender(int param_1)
 
             (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,piVar9 + 0x1df);
 
-            FUN_0053d970(auStack_148,auStack_44);
+            GEO_MatTranspose(auStack_148,auStack_44);
 
             view_matrix_reset(auStack_144);
 
@@ -6856,10 +6856,10 @@ void SetupCameraHail__Fv(void)
 
 }
 
-/* ===== FUN_00446f70 @ 0x00446F70 ===== */
-void FUN_00446f70(int param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5,
+/* ===== attack_fx_spawn @ 0x00446F70 ===== */
+void attack_fx_spawn(int param_1,undefined4 param_2,undefined4 param_3,int param_4,
 
-                 float param_6,int param_7)
+                    undefined4 param_5,float param_6,int param_7)
 
 
 
@@ -7347,7 +7347,7 @@ void object_lock_apply(int param_1,byte param_2)
 
       *(uint *)(iVar1 + 0xd8) = *(uint *)(iVar1 + 0xd8) & 0xffffffbf;
 
-      FUN_004a6420(iVar1);
+      obj_velocity_commit(iVar1);
 
       object_apply_location(iVar1);
 

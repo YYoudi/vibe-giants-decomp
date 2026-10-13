@@ -11121,7 +11121,7 @@ LAB_0045bb57:
 
     uVar5 = FUN_00507b00(pcVar7,0x3f000000,0x3e4ccccd,0x3f000000,0x3f800000,0x40a00000,1);
 
-    FUN_00446f70(uVar5);
+    attack_fx_spawn(uVar5);
 
     return;
 
@@ -13918,7 +13918,7 @@ undefined4 validate_eat__FP6OBJECTT0(int param_1,float param_2)
 
                          0x40a00000,1);
 
-    FUN_00446f70(uVar2);
+    attack_fx_spawn(uVar2);
 
   }
 

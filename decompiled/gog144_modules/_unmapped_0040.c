@@ -1431,7 +1431,7 @@ LAB_00403980:
 
   (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,local_88);
 
-  FUN_0053d970(param_1,auStack_44);
+  GEO_MatTranspose(param_1,auStack_44);
 
   iVar2 = FUN_0053be60(iVar2);
 

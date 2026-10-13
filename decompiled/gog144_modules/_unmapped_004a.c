@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (116 named) — decompiled, names from PS2 symbols
+ * 131 functions (117 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -2598,13 +2598,13 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
   (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_cc,auStack_154);
 
-  FUN_0053d970(auStack_110,auStack_cc);
+  GEO_MatTranspose(auStack_110,auStack_cc);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_1e4,auStack_cc,param_2 + 0x294);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_198,local_88,auStack_154);
 
-  FUN_0053d970(auStack_44,auStack_198);
+  GEO_MatTranspose(auStack_44,auStack_198);
 
   fStack_2dc = 0.99;
 
@@ -5954,8 +5954,8 @@ void voBufReset__FP5VoBuf(undefined4 *p0)
 
 }
 
-/* ===== FUN_004a6420 @ 0x004A6420 ===== */
-void FUN_004a6420(int param_1)
+/* ===== obj_velocity_commit @ 0x004A6420 ===== */
+void obj_velocity_commit(int param_1)
 
 
 

@@ -1439,7 +1439,7 @@ void game_loop_run(int param_1)
 
               *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) & 0xffffffbf;
 
-              FUN_004a6420(iVar3);
+              obj_velocity_commit(iVar3);
 
               if (DAT_00632a88 == 0) {
 
@@ -5312,9 +5312,11 @@ LAB_0047c03e:
 
       }
 
-      FUN_00530430(iVar4,iVar2,iVar3,*(int *)(iVar2 + 0x18c) + -1,param_5,param_1,0x3f800000,
+      comm_death_packet_build
 
-                   0x3f800000);
+                (iVar4,iVar2,iVar3,*(int *)(iVar2 + 0x18c) + -1,param_5,param_1,0x3f800000,
+
+                 0x3f800000);
 
     }
 

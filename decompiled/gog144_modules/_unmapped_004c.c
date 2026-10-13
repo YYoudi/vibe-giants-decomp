@@ -7274,7 +7274,7 @@ void ShopMenuSlotCollision__Fi(void)
 
     (*(code *)PTR_crt_matrix_copy_init_00580c1c)(&local_1bc,&local_1bc);
 
-    FUN_0053d970(&DAT_005a6c40,&local_1bc);
+    GEO_MatTranspose(&DAT_005a6c40,&local_1bc);
 
     DAT_005a84dc = 1;
 
@@ -8865,7 +8865,7 @@ undefined4 dev_debug_flags(void)
 
     if (iVar5 != 0) {
 
-      FUN_0051b970(0x1fffff,0,0x3d2aaaab,0x3dcccccd,0x3f4ccccd,iVar5);
+      dlog_text_draw_wrap(0x1fffff,0,0x3d2aaaab,0x3dcccccd,0x3f4ccccd,iVar5);
 
     }
 
@@ -9127,7 +9127,7 @@ LAB_004ce6e4:
 
   }
 
-  FUN_0051b970(0xffffff,0,0x3d1a6b51,0x3dcccccd,0x3dcccccd,puVar16);
+  dlog_text_draw_wrap(0xffffff,0,0x3d1a6b51,0x3dcccccd,0x3dcccccd,puVar16);
 
 LAB_004ce7b8:
 

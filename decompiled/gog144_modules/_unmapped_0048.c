@@ -1962,7 +1962,7 @@ void FUN_00482350(void)
 
   if (((DAT_00633104 == 0) && (DAT_00632c0c != 0)) && (DAT_0059e8e0 != '\0')) {
 
-    FUN_0051b970(0xffffff,0,0x3d088889,0x3c23d70a,0x3f75c28f,&DAT_0059e8e0);
+    dlog_text_draw_wrap(0xffffff,0,0x3d088889,0x3c23d70a,0x3f75c28f,&DAT_0059e8e0);
 
   }
 
@@ -2508,7 +2508,7 @@ void FUN_004829d0(void)
 
       if (((DAT_00633104 == 0) && (DAT_00632c0c != 0)) && (DAT_0059e8e0 != '\0')) {
 
-        FUN_0051b970(0xffffff,0,0x3d088889,0x3c23d70a,0x3f75c28f,&DAT_0059e8e0);
+        dlog_text_draw_wrap(0xffffff,0,0x3d088889,0x3c23d70a,0x3f75c28f,&DAT_0059e8e0);
 
       }
 
@@ -2552,7 +2552,7 @@ void FUN_004829d0(void)
 
       if (((DAT_00633104 == 0) && (DAT_00632c0c != 0)) && (DAT_0059e8e0 != '\0')) {
 
-        FUN_0051b970(0xffffff,0,0x3d088889,0x3c23d70a,0x3f75c28f,&DAT_0059e8e0);
+        dlog_text_draw_wrap(0xffffff,0,0x3d088889,0x3c23d70a,0x3f75c28f,&DAT_0059e8e0);
 
         return;
 
@@ -12353,7 +12353,7 @@ LAB_0048f768:
 
     iVar9 = puVar10[3];
 
-    FUN_004a6420(iVar9);
+    obj_velocity_commit(iVar9);
 
     if (DAT_00632a88 == 0) break;
 

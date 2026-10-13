@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (113 named) — decompiled, names from PS2 symbols
+ * 142 functions (114 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -7890,7 +7890,7 @@ void object_copy_activedata(int param_1,int param_2)
 
   *(undefined4 *)(param_1 + 0xe4) = *(undefined4 *)(param_2 + 0xe4);
 
-  FUN_00499f30(param_1,param_2);
+  object_copy_ospec(param_1,param_2);
 
   *(undefined4 *)(param_1 + 0xec) = *(undefined4 *)(param_2 + 0xec);
 
@@ -10592,8 +10592,8 @@ LAB_00499c49:
 
 }
 
-/* ===== FUN_00499f30 @ 0x00499F30 ===== */
-void FUN_00499f30(int param_1,int param_2)
+/* ===== object_copy_ospec @ 0x00499F30 ===== */
+void object_copy_ospec(int param_1,int param_2)
 
 
 

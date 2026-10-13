@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (157 named) — decompiled, names from PS2 symbols
+ * 186 functions (159 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2325,8 +2325,8 @@ undefined4 hud_parse_format_codes_2(int param_1)
 
 }
 
-/* ===== FUN_00513ac0 @ 0x00513AC0 ===== */
-undefined4 FUN_00513ac0(int param_1,int param_2,int param_3)
+/* ===== mesh_node_name_check @ 0x00513AC0 ===== */
+undefined4 mesh_node_name_check(int param_1,int param_2,int param_3)
 
 
 
@@ -11366,14 +11366,14 @@ void textrender_draw_small
 
 }
 
-/* ===== FUN_0051b970 @ 0x0051B970 ===== */
+/* ===== dlog_text_draw_wrap @ 0x0051B970 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051b970(undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,
+void dlog_text_draw_wrap(undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,
 
-                 float param_5,char *param_6)
+                        float param_5,char *param_6)
 
 
 

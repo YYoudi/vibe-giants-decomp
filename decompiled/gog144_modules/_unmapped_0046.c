@@ -1380,7 +1380,7 @@ void obj_skinning_eval(int param_1)
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_cc,auStack_88,local_154);
 
-    FUN_0053d970(auStack_44,auStack_cc);
+    GEO_MatTranspose(auStack_44,auStack_cc);
 
     (**(code **)(DAT_00656420 + 0x18))(DAT_00656420,auStack_40);
 

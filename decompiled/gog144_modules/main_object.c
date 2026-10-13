@@ -417,7 +417,7 @@ void object_copy_personality(int param_1,int param_2)
 
     main_objspec_00499da0(param_1);
 
-    FUN_00499f30(param_1,param_2);
+    object_copy_ospec(param_1,param_2);
 
     puVar4 = (undefined4 *)(param_1 + 0x10);
 

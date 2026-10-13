@@ -888,7 +888,7 @@ void FUN_00500c00(float param_1,float param_2,float param_3,undefined4 param_4)
 
   FUN_0053e3f0(local_88);
 
-  FUN_0053d970(auStack_44,local_88);
+  GEO_MatTranspose(auStack_44,local_88);
 
   view_matrix_reset(auStack_40);
 
