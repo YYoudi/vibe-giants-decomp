@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (6 named) — decompiled, names from PS2 symbols
+ * 94 functions (7 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -9941,8 +9941,8 @@ undefined4 perf_options_menu(void)
 
 }
 
-/* ===== FUN_004ed910 @ 0x004ED910 ===== */
-void FUN_004ed910(void)
+/* ===== water_fx_test @ 0x004ED910 ===== */
+void water_fx_test(void)
 
 
 
@@ -10448,7 +10448,7 @@ void FUN_004ee080(void)
 
   *(undefined2 *)(iVar2 + 0x4ebe) = 0xa1;
 
-  FUN_004ed910();
+  water_fx_test();
 
   DAT_006328f4 = game_water_00513be0(0x50,0x50);
 
@@ -11087,7 +11087,7 @@ void FUN_004EE800(void)
 
   if (iVar2 < iVar1) {
 
-    FUN_00450D10();
+    gameover_menu();
 
     return;
 
@@ -11205,7 +11205,7 @@ undefined4 FUN_004ee930(void)
 
   FUN_0052e3d0();
 
-  FUN_004a9e10();
+  weapondefs_load();
 
   return 1;
 

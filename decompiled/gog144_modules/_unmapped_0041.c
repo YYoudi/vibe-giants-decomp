@@ -4976,7 +4976,7 @@ void FUN_004162c0(int param_1)
 
   }
 
-  FUN_00426F40(&LAB_00416630,&LAB_00416b40);
+  dlog_push_level(&LAB_00416630,&LAB_00416b40);
 
   FUN_00426FA0();
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (36 named) — decompiled, names from PS2 symbols
+ * 186 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -8024,7 +8024,7 @@ void FUN_00518670(undefined4 param_1,HMODULE param_2)
 
           iVar3 = lstrlenA(&local_190);
 
-          FUN_005187f0(&local_190 + iVar3,local_19c.dwLowDateTime,local_19c.dwHighDateTime);
+          datetime_format(&local_190 + iVar3,local_19c.dwLowDateTime,local_19c.dwHighDateTime);
 
         }
 
@@ -8046,8 +8046,8 @@ void FUN_00518670(undefined4 param_1,HMODULE param_2)
 
 }
 
-/* ===== FUN_005187f0 @ 0x005187F0 ===== */
-void FUN_005187f0(LPSTR param_1)
+/* ===== datetime_format @ 0x005187F0 ===== */
+void datetime_format(LPSTR param_1)
 
 
 
@@ -9023,8 +9023,8 @@ bool FUN_00519750(void)
 
 }
 
-/* ===== FUN_00519930 @ 0x00519930 ===== */
-undefined4 FUN_00519930(void)
+/* ===== dinput_key_poll @ 0x00519930 ===== */
+undefined4 dinput_key_poll(void)
 
 
 
@@ -10703,8 +10703,8 @@ void FUN_0051ad80(char *param_1,size_t param_2)
 
 }
 
-/* ===== FUN_0051b1c0 @ 0x0051B1C0 ===== */
-void FUN_0051b1c0(int param_1)
+/* ===== textrender_texture_alloc @ 0x0051B1C0 ===== */
+void textrender_texture_alloc(int param_1)
 
 
 
@@ -11029,7 +11029,7 @@ void FUN_0051b500(uint param_1,undefined4 param_2,float param_3,undefined4 param
 
   while (bVar2 != 0) {
 
-    FUN_0051b1c0(bVar2);
+    textrender_texture_alloc(bVar2);
 
     pbVar1 = pbVar9 + 1;
 
@@ -11300,7 +11300,7 @@ void FUN_0051b850(uint param_1,undefined4 param_2,float param_3,float param_4,fl
 
   fVar3 = (float)DAT_005dd394;
 
-  FUN_0051b1c0(param_6);
+  textrender_texture_alloc(param_6);
 
   iVar1 = param_6 * 5;
 
@@ -11465,7 +11465,7 @@ void FUN_0051ba00(undefined4 param_1,undefined4 param_2,float param_3,float para
 
   while (bVar2 != 0) {
 
-    FUN_0051b1c0(bVar2);
+    textrender_texture_alloc(bVar2);
 
     pbVar1 = pbVar7 + 1;
 
@@ -11553,7 +11553,7 @@ float10 FUN_0051bc10(float param_1,int param_2)
 
   fVar1 = (param_1 / _DAT_005dd8c4) * (float)DAT_00632e88;
 
-  FUN_0051b1c0(param_2);
+  textrender_texture_alloc(param_2);
 
   if (param_2 * 5 == -0x5dd3c0) {
 
@@ -11617,7 +11617,7 @@ float10 FUN_0051bc90(float param_1,byte *param_2,int param_3)
 
   while (bVar2 != 0) {
 
-    FUN_0051b1c0(bVar2);
+    textrender_texture_alloc(bVar2);
 
     pbVar1 = pbVar5 + 1;
 
@@ -11712,7 +11712,7 @@ float10 FUN_0051BD30(float param_1,byte *param_2)
 
   while (bVar2 != 0) {
 
-    FUN_0051b1c0(bVar2);
+    textrender_texture_alloc(bVar2);
 
     pbVar1 = pbVar6 + 1;
 
@@ -11799,7 +11799,7 @@ float10 FUN_0051bde0(float param_1,byte *param_2)
 
   while (bVar2 != 0) {
 
-    FUN_0051b1c0(bVar2);
+    textrender_texture_alloc(bVar2);
 
     pbVar1 = pbVar5 + 1;
 
@@ -11999,7 +11999,7 @@ void FUN_0051bed0(uint param_1,undefined4 *param_2,float param_3,byte *param_4,i
 
   while (bVar3 != 0) {
 
-    FUN_0051b1c0(bVar3);
+    textrender_texture_alloc(bVar3);
 
     pbVar1 = pbVar21 + 1;
 
@@ -13305,7 +13305,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
             if (((DAT_0057d7fc == 1) && (DAT_005ddb50 != 0)) && (DAT_005ddb4c != 0)) {
 
-              FUN_00519930();
+              dinput_key_poll();
 
               FUN_00518950();
 
@@ -14130,7 +14130,7 @@ LAB_0051d956:
 
                       DAT_00633240 = 1;
 
-                      FUN_0049f510();
+                      chat_log_close();
 
                     }
 
@@ -14234,7 +14234,7 @@ LAB_0051daf3:
 
                           *param_1 = '\0';
 
-                          FUN_0049e350(pcVar7);
+                          cmdline_parse(pcVar7);
 
                           *param_1 = cVar2;
 
@@ -15191,7 +15191,7 @@ void error_screen_show(LPCSTR param_1)
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
-        FUN_00519930();
+        dinput_key_poll();
 
         FUN_00519a50();
 
@@ -16361,7 +16361,7 @@ void comm_tcpip_menu(void)
 
   camera_override_refpt(DAT_0059ee98,0);
 
-  FUN_00426F40(&LAB_0051fe70,&LAB_0051fe60);
+  dlog_push_level(&LAB_0051fe70,&LAB_0051fe60);
 
   FUN_00426FA0();
 

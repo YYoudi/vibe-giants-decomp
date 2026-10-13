@@ -3835,13 +3835,13 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
       if (iVar4 == 0) {
 
-        FUN_00530520(fVar8,uVar2,param_1);
+        comm_kill_message(fVar8,uVar2,param_1);
 
       }
 
       else {
 
-        FUN_005308b0(*(int *)((int)fVar8 + 0x18c) + -1,uVar2,0x30);
+        comm_kill_message2(*(int *)((int)fVar8 + 0x18c) + -1,uVar2,0x30);
 
         fVar8 = 0.0;
 
@@ -8831,9 +8831,9 @@ void FUN_004bca70(int param_1)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_00403890(local_44,&param_1,iVar2,*(undefined4 *)(iVar2 + 0x10),10,
+    iVar1 = ref_get_anode2(local_44,&param_1,iVar2,*(undefined4 *)(iVar2 + 0x10),10,
 
-                         *(undefined4 *)(iVar2 + 0x14));
+                           *(undefined4 *)(iVar2 + 0x14));
 
     if (iVar1 != 0) goto LAB_004bcb0b;
 
@@ -8857,7 +8857,7 @@ void FUN_004bca70(int param_1)
 
   }
 
-  FUN_00403890(local_44,&param_1,iVar2,uVar3,uVar4,uVar5);
+  ref_get_anode2(local_44,&param_1,iVar2,uVar3,uVar4,uVar5);
 
 LAB_004bcb0b:
 

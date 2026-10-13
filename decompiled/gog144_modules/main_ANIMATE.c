@@ -630,7 +630,7 @@ LAB_004056ea:
 
           }
 
-          fVar5 = (float)FUN_0053d1c0(pfVar10[10],0,iVar1,0);
+          fVar5 = (float)editor_anim_skin(pfVar10[10],0,iVar1,0);
 
           *pfVar12 = fVar5;
 

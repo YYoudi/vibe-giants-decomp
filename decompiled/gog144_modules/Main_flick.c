@@ -52,7 +52,7 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
         (**(code **)(DAT_00656420 + 0xb4))(DAT_00656420,*piVar6);
 
-        FUN_00540020(*param_1,*piVar6);
+        map_memfree(*param_1,*piVar6);
 
         *piVar6 = 0;
 
@@ -94,11 +94,11 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
       }
 
-      FUN_00540020(*param_1,param_1[0x28]);
+      map_memfree(*param_1,param_1[0x28]);
 
-      FUN_00540020(*param_1,param_1[0x27]);
+      map_memfree(*param_1,param_1[0x27]);
 
-      FUN_00540020(*param_1,param_1[0x29]);
+      map_memfree(*param_1,param_1[0x29]);
 
       FUN_0053ff60(*param_1);
 
@@ -120,7 +120,7 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
       if (iVar4 != 0) {
 
-        FUN_00540020(*param_1,*(undefined4 *)(iVar4 + 0x54));
+        map_memfree(*param_1,*(undefined4 *)(iVar4 + 0x54));
 
         iVar7 = 0;
 

@@ -358,7 +358,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
             (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
-            FUN_00519930();
+            dinput_key_poll();
 
             FUN_00519a50();
 
@@ -444,7 +444,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
           } while (DAT_006328e8 - fVar3 < 0.01);
 
-          FUN_00519930();
+          dinput_key_poll();
 
           FUN_00519a50();
 

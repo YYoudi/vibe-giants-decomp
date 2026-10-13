@@ -2004,7 +2004,7 @@ void FUN_004f5c10(int param_1,int param_2,undefined4 param_3)
 
     pcVar7[1] = DAT_0055592a;
 
-    uVar4 = FUN_0052aed0(param_2);
+    uVar4 = comm_player_name4(param_2);
 
     uVar4 = TextGetPtrRandom(s_SmChKidnapped_005622dc,uVar4);
 
@@ -4036,7 +4036,7 @@ void FUN_004f9380(int param_1)
 
         }
 
-        FUN_004036f0(param_1,uVar10);
+        anim_select_check2(param_1,uVar10);
 
         *(undefined4 *)(param_1 + 0xe4) = 0x66;
 

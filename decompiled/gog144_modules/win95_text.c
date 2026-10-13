@@ -192,7 +192,7 @@ void win95_text_0051adb0(int param_1)
 
     while (cVar1 != '\0') {
 
-      FUN_0051b1c0(cVar1);
+      textrender_texture_alloc(cVar1);
 
       pcVar2 = puVar5 + 1;
 

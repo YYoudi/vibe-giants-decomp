@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (20 named) — decompiled, names from PS2 symbols
+ * 142 functions (27 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -281,8 +281,8 @@ void FUN_004909f0(void)
 
 }
 
-/* ===== FUN_00490c50 @ 0x00490C50 ===== */
-void FUN_00490c50(int param_1,undefined4 param_2,char *param_3)
+/* ===== scenario_list_load @ 0x00490C50 ===== */
+void scenario_list_load(int param_1,undefined4 param_2,char *param_3)
 
 
 
@@ -4100,8 +4100,8 @@ LAB_00492a3a:
 
 }
 
-/* ===== FUN_00493960 @ 0x00493960 ===== */
-void FUN_00493960(byte *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+/* ===== mission_flick_load @ 0x00493960 ===== */
+void mission_flick_load(byte *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
 
 
 
@@ -5310,7 +5310,7 @@ void FUN_00494890(void)
 
   main_dlog_00428340(DAT_0059f354,1,s_FailNo_0055c944);
 
-  FUN_00426F40(&LAB_00494940,&LAB_00494bb0);
+  dlog_push_level(&LAB_00494940,&LAB_00494bb0);
 
   FUN_00426FA0();
 
@@ -6382,7 +6382,7 @@ LAB_00495a11:
 
       if ((float)piVar1[8] <= 0.0) {
 
-        FUN_00495c70(piVar1);
+        sound_play_checked(piVar1);
 
       }
 
@@ -6488,8 +6488,8 @@ LAB_00495a11:
 
 }
 
-/* ===== FUN_00495c70 @ 0x00495C70 ===== */
-void FUN_00495c70(int param_1)
+/* ===== sound_play_checked @ 0x00495C70 ===== */
+void sound_play_checked(int param_1)
 
 
 
@@ -6755,7 +6755,7 @@ void FUN_00495ee0(int *param_1)
 
     if (piVar1[0x11] == *param_1) {
 
-      FUN_00495c70(piVar1);
+      sound_play_checked(piVar1);
 
       *param_1 = 0;
 
@@ -6935,7 +6935,7 @@ void FUN_004967e0(int param_1,int param_2)
 
      (*(int *)(*(int *)(param_1 + 8) + 8 + param_2 * 4) != 0)) {
 
-    FUN_004036f0();
+    anim_select_check2();
 
     return;
 
@@ -6975,7 +6975,7 @@ void FUN_00496840(int param_1,int param_2)
 
      (*(int *)(*(int *)(param_1 + 8) + 8 + param_2 * 4) != 0)) {
 
-    FUN_004035d0();
+    anim_select_check();
 
     return;
 
@@ -7006,12 +7006,12 @@ undefined4 FUN_00496b10(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00496bc0 @ 0x00496BC0 ===== */
+/* ===== object_uniqueid_alloc @ 0x00496BC0 ===== */
 /* PS2 candidate: object_allocator__Fi (conf 0.375) */
 
 
 
-uint FUN_00496bc0(void)
+uint object_uniqueid_alloc(void)
 
 
 
@@ -7110,7 +7110,7 @@ undefined4 * object_allocate_type(int param_1,uint param_2)
 
     } while (iVar4 != 0);
 
-    uVar3 = FUN_00496bc0();
+    uVar3 = object_uniqueid_alloc();
 
     puVar1[0x62] = uVar3;
 
@@ -7488,7 +7488,7 @@ undefined4 * object_allocate_type_end(int param_1,uint param_2)
 
     } while (iVar4 != 0);
 
-    uVar3 = FUN_00496bc0();
+    uVar3 = object_uniqueid_alloc();
 
     puVar1[0x62] = uVar3;
 
@@ -7954,8 +7954,8 @@ void FUN_00497a50(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00497bd0 @ 0x00497BD0 ===== */
-void FUN_00497bd0(int param_1,int param_2)
+/* ===== objobj_type_lookup @ 0x00497BD0 ===== */
+void objobj_type_lookup(int param_1,int param_2)
 
 
 
@@ -13509,12 +13509,12 @@ void options_defaults(void)
 
 }
 
-/* ===== FUN_0049e350 @ 0x0049E350 ===== */
+/* ===== cmdline_parse @ 0x0049E350 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0049e350(char *param_1)
+void cmdline_parse(char *param_1)
 
 
 
@@ -13655,7 +13655,7 @@ void FUN_0049e4a0(int param_1)
 
      ((param_1 == 0 || ((DAT_00632bbc != 0 && (3 < *(int *)(param_1 + 0xe4))))))) {
 
-    FUN_00426F40(&LAB_0049f2d0,&LAB_0049f050);
+    dlog_push_level(&LAB_0049f2d0,&LAB_0049f050);
 
     FUN_00426FA0();
 
@@ -13911,8 +13911,8 @@ void FUN_0049f1c0(void)
 
 }
 
-/* ===== FUN_0049f510 @ 0x0049F510 ===== */
-void FUN_0049f510(void)
+/* ===== chat_log_close @ 0x0049F510 ===== */
+void chat_log_close(void)
 
 
 
@@ -14127,7 +14127,7 @@ LAB_0049f8f1:
 
           if (iVar2 != 0) {
 
-            FUN_0052f5b0();
+            comm_fakehost_toggle();
 
             return 1;
 

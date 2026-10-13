@@ -1134,7 +1134,7 @@ void FUN_00465f10(int param_1,undefined4 param_2,int param_3,int *param_4)
 
       param_1 = 0;
 
-      FUN_00403890(local_44,&param_1,iVar1,1,7,0);
+      ref_get_anode2(local_44,&param_1,iVar1,1,7,0);
 
       FUN_0040d7e0(local_44);
 

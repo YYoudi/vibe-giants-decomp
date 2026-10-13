@@ -364,7 +364,7 @@ LAB_00436453:
 
       FUN_004959C0();
 
-      FUN_00426F40(&LAB_00438ef0,&LAB_00438dd0);
+      dlog_push_level(&LAB_00438ef0,&LAB_00438dd0);
 
       DAT_00632ab0 = 0;
 
@@ -386,7 +386,7 @@ LAB_00436453:
 
 switchD_004364b2_caseD_1:
 
-        main_editor_00439df0();
+        wredit_group_select();
 
         return;
 
@@ -394,7 +394,7 @@ switchD_004364b2_caseD_1:
 
 switchD_004364b2_caseD_2:
 
-        main_editor_0043a440();
+        wredit_object_select();
 
         return;
 
@@ -442,7 +442,7 @@ switchD_004364b2_caseD_7:
 
 switchD_004364b2_caseD_8:
 
-        main_editor_00440230();
+        wredit_marker_menu3();
 
         return;
 
@@ -490,7 +490,7 @@ switchD_004364b2_caseD_c:
 
     FUN_004959C0();
 
-    FUN_00426F40(&LAB_00438ef0,&LAB_00438dd0);
+    dlog_push_level(&LAB_00438ef0,&LAB_00438dd0);
 
     DAT_00632ab0 = 0;
 
@@ -2844,7 +2844,7 @@ void main_editor_0043a590(void)
 
     FUN_004959C0();
 
-    FUN_00426F40(&LAB_00438ef0,&LAB_00438dd0);
+    dlog_push_level(&LAB_00438ef0,&LAB_00438dd0);
 
     DAT_00632ab0 = 0;
 
@@ -2866,13 +2866,13 @@ void main_editor_0043a590(void)
 
     case 1:
 
-      main_editor_00439df0();
+      wredit_group_select();
 
       return;
 
     case 2:
 
-      main_editor_0043a440();
+      wredit_object_select();
 
       return;
 
@@ -2908,7 +2908,7 @@ void main_editor_0043a590(void)
 
     case 8:
 
-      main_editor_00440230();
+      wredit_marker_menu3();
 
       return;
 
@@ -3401,7 +3401,7 @@ void main_editor_00440d90(void)
 
         do {
 
-          main_editor_00440770(iVar2,*(undefined4 *)(iVar6 + iVar7 * 4),0);
+          wredit_minishop_icons(iVar2,*(undefined4 *)(iVar6 + iVar7 * 4),0);
 
           iVar7 = iVar7 + 1;
 

@@ -7774,7 +7774,7 @@ LAB_004ccbc0:
 
           if (*(int *)(puVar8 + -0x290) == 0) {
 
-            FUN_00497bd0(iVar5,puVar8 + -0x294);
+            objobj_type_lookup(iVar5,puVar8 + -0x294);
 
           }
 
@@ -7782,7 +7782,7 @@ LAB_004ccbc0:
 
             FUN_00499cd0(puVar8 + -0x294);
 
-            FUN_00497bd0(iVar5,puVar8 + -0x294);
+            objobj_type_lookup(iVar5,puVar8 + -0x294);
 
           }
 
@@ -8841,7 +8841,7 @@ undefined4 dev_debug_flags(void)
 
               ) && (*(int *)(*(int *)(iVar5 + 8) + 0x400 + iVar9 * 4) != 0)) {
 
-            FUN_00537120(iVar5,*(int *)(DAT_00632a88 + 0x18c) == *(int *)(iVar5 + 0x18c));
+            base_hint_menu(iVar5,*(int *)(DAT_00632a88 + 0x18c) == *(int *)(iVar5 + 0x18c));
 
           }
 
@@ -9653,7 +9653,7 @@ LAB_004cf690:
 
         else if (*(int *)((int)fVar5 + 0x10) != 0x32) {
 
-          FUN_004036f0(fVar5,0x32);
+          anim_select_check2(fVar5,0x32);
 
         }
 
@@ -10117,7 +10117,7 @@ LAB_004cf539:
 
         else if (*(int *)((int)fVar5 + 0x10) != 0x32) {
 
-          FUN_004036f0(fVar5,0x32);
+          anim_select_check2(fVar5,0x32);
 
         }
 

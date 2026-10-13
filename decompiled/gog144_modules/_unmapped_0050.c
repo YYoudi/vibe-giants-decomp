@@ -11552,7 +11552,7 @@ void FUN_0050ca00(float param_1)
 
       *(undefined4 *)((int)param_1 + 0xec) = 0x40800000;
 
-      FUN_004036f0(param_1,1);
+      anim_select_check2(param_1,1);
 
       *(uint *)((int)param_1 + 0x30) = *(uint *)((int)param_1 + 0x30) | 4;
 
@@ -12846,7 +12846,7 @@ switchD_0050ca70_caseD_15:
 
       *(undefined4 *)(iVar9 + 0xec) = 0x40800000;
 
-      FUN_004036f0(iVar9,10);
+      anim_select_check2(iVar9,10);
 
       sound_play_obj(0x52d,iVar9);
 
@@ -13926,7 +13926,7 @@ LAB_0050e4da:
 
       *(undefined4 *)((int)param_1 + 0xe4) = 0x3e;
 
-      FUN_004036f0(param_1,1);
+      anim_select_check2(param_1,1);
 
       *(uint *)((int)param_1 + 0x30) = *(uint *)((int)param_1 + 0x30) | 4;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (24 named) — decompiled, names from PS2 symbols
+ * 76 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -158,8 +158,8 @@ LAB_00440165:
 
 }
 
-/* ===== main/editor_00440230 @ 0x00440230 ===== */
-void main_editor_00440230(void)
+/* ===== wredit_marker_menu3 @ 0x00440230 ===== */
+void wredit_marker_menu3(void)
 
 
 
@@ -662,8 +662,8 @@ LAB_004406b2:
 
 }
 
-/* ===== main/editor_00440770 @ 0x00440770 ===== */
-void main_editor_00440770(undefined4 param_1,int param_2,int param_3)
+/* ===== wredit_minishop_icons @ 0x00440770 ===== */
+void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
 
 
@@ -975,7 +975,7 @@ LAB_00440ccd:
 
             && ((*(uint *)(iVar5 + 0xdc) & 0x20000000) != 0)) && (*(int *)(iVar5 + 4) != 0xf0)) {
 
-          main_editor_00440770();
+          wredit_minishop_icons();
 
         }
 
@@ -1314,7 +1314,7 @@ void FUN_004419d0(undefined4 param_1)
 
   object_change_ospec(iVar3,0x10);
 
-  FUN_004036f0(iVar3,1);
+  anim_select_check2(iVar3,1);
 
   FUN_004993c0(iVar3,param_1);
 
@@ -2589,7 +2589,7 @@ LAB_00443ac3:
 
       if (param_5 < 0) {
 
-        FUN_00497bd0(0,piVar5 + 3);
+        objobj_type_lookup(0,piVar5 + 3);
 
         piVar5[0x34] = 0x3f800000;
 
@@ -2597,7 +2597,7 @@ LAB_00443ac3:
 
       else {
 
-        FUN_00497bd0(param_5,piVar5 + 3);
+        objobj_type_lookup(param_5,piVar5 + 3);
 
       }
 
@@ -2643,7 +2643,7 @@ LAB_00443ac3:
 
           if (iVar1 != 0) {
 
-            uVar2 = FUN_0053d1c0(param_2,param_3,iVar1,0);
+            uVar2 = editor_anim_skin(param_2,param_3,iVar1,0);
 
             *puVar9 = uVar2;
 
@@ -2843,7 +2843,7 @@ FUN_00443d60(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,
 
       *(int *)(iVar5 + 0x30c) = param_4;
 
-      FUN_00497bd0(0,iVar5);
+      objobj_type_lookup(0,iVar5);
 
       *(undefined4 *)(iVar5 + 0xc4) = 0x3f800000;
 
@@ -5399,7 +5399,7 @@ LAB_00445a50:
 
         (**(code **)(DAT_00656420 + 0xb4))(DAT_00656420,*(int *)(iVar10 + 0x2ec));
 
-        FUN_00540020(*param_1,*(undefined4 *)(iVar10 + 0x2ec));
+        map_memfree(*param_1,*(undefined4 *)(iVar10 + 0x2ec));
 
         *(undefined4 *)(iVar10 + 0x2ec) = 0;
 
@@ -7904,8 +7904,8 @@ void FUN_004489e0(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00448af0 @ 0x00448AF0 ===== */
-void FUN_00448af0(int param_1,float param_2,float param_3,float param_4)
+/* ===== fx_lifespan_setup @ 0x00448AF0 ===== */
+void fx_lifespan_setup(int param_1,float param_2,float param_3,float param_4)
 
 
 
@@ -8465,8 +8465,8 @@ int FUN_00449150(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefi
 
 }
 
-/* ===== FUN_00449200 @ 0x00449200 ===== */
-void FUN_00449200(int param_1,float param_2)
+/* ===== fx_orient_ground @ 0x00449200 ===== */
+void fx_orient_ground(int param_1,float param_2)
 
 
 
@@ -8806,7 +8806,7 @@ undefined4 FUN_00449ce0(void)
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_00448af0();
+        fx_lifespan_setup();
 
       }
 
@@ -8832,7 +8832,7 @@ undefined4 FUN_00449ce0(void)
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_00448af0();
+        fx_lifespan_setup();
 
       }
 
@@ -8888,7 +8888,7 @@ undefined4 FUN_00449ce0(void)
 
               (*(int *)(puStack0000003c[1] + 0x210) == 0)) && ((uVar18 & 0x600) == 0)) {
 
-            FUN_00448af0();
+            fx_lifespan_setup();
 
           }
 
@@ -12478,7 +12478,7 @@ LAB_0044d657:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_00449200();
+        fx_orient_ground();
 
       }
 

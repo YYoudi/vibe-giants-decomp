@@ -2494,13 +2494,13 @@ LAB_004d4031:
 
     if (bVar3) {
 
-      FUN_004035d0();
+      anim_select_check();
 
       return;
 
     }
 
-    FUN_004036f0(param_1,iVar4);
+    anim_select_check2(param_1,iVar4);
 
   }
 
@@ -3502,7 +3502,7 @@ void FUN_004d5910(int param_1,int param_2)
 
   FUN_004c4880(param_1);
 
-  FUN_004035d0(param_1,0x91);
+  anim_select_check(param_1,0x91);
 
   if (*(int *)(param_2 + 0x1e0) != 0x5a) {
 
@@ -3696,7 +3696,7 @@ void FUN_004d5b50(int param_1)
 
     if ((char)((uint)*(undefined4 *)(DAT_00632a88 + 0x20c) >> 8) < '\0') {
 
-      FUN_00403890(local_44,&local_94,param_1,*(undefined4 *)(param_1 + 0x10),4,0);
+      ref_get_anode2(local_44,&local_94,param_1,*(undefined4 *)(param_1 + 0x10),4,0);
 
       FUN_0040d7e0(local_44);
 

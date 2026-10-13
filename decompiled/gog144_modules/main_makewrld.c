@@ -2016,7 +2016,7 @@ switchD_0047500c_default:
 
           iStack_24 = iVar20;
 
-          iVar11 = main_makewrld_00473ff0();
+          iVar11 = landscape_bump_check();
 
           if (iVar11 == 0) {
 
@@ -2058,7 +2058,7 @@ switchD_0047500c_default:
 
                   iStack_28 = iVar15;
 
-                  iVar3 = main_makewrld_00473ff0();
+                  iVar3 = landscape_bump_check();
 
                   iVar11 = DAT_006330e4;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (20 named) — decompiled, names from PS2 symbols
+ * 105 functions (24 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -931,12 +931,12 @@ void FUN_004034a0(int param_1,int param_2,uint param_3,undefined4 param_4,undefi
 
 }
 
-/* ===== FUN_004035d0 @ 0x004035D0 ===== */
+/* ===== anim_select_check @ 0x004035D0 ===== */
 /* PS2 candidate: ObjectSetBasicAnimLoop (conf 0.3) */
 
 
 
-void FUN_004035d0(int param_1,int param_2)
+void anim_select_check(int param_1,int param_2)
 
 
 
@@ -1076,12 +1076,12 @@ void FUN_004035d0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004036f0 @ 0x004036F0 ===== */
+/* ===== anim_select_check2 @ 0x004036F0 ===== */
 /* PS2 candidate: ObjectSetBasicAnimNoLoop (conf 0.301) */
 
 
 
-void FUN_004036f0(int param_1,int param_2)
+void anim_select_check2(int param_1,int param_2)
 
 
 
@@ -1221,8 +1221,8 @@ void FUN_004036f0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00403810 @ 0x00403810 ===== */
-undefined4 FUN_00403810(int param_1,int param_2,int param_3)
+/* ===== ref_get_anode @ 0x00403810 ===== */
+undefined4 ref_get_anode(int param_1,int param_2,int param_3)
 
 
 
@@ -1268,12 +1268,12 @@ undefined4 FUN_00403810(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00403890 @ 0x00403890 ===== */
+/* ===== ref_get_anode2 @ 0x00403890 ===== */
 undefined4
 
-FUN_00403890(undefined4 param_1,float *param_2,int param_3,int param_4,int param_5,
+ref_get_anode2(undefined4 param_1,float *param_2,int param_3,int param_4,int param_5,
 
-            undefined4 param_6)
+              undefined4 param_6)
 
 
 
@@ -10292,9 +10292,9 @@ void FUN_0040d820(void)
 
     if ((-1 < DAT_005550b4) && ((*(uint *)(iVar1 + 0xd8) & 0x8000) == 0)) {
 
-      FUN_00403890(&DAT_005550f0,&DAT_00555134,iVar1,*(undefined4 *)(iVar1 + 0x10),DAT_005550b4,
+      ref_get_anode2(&DAT_005550f0,&DAT_00555134,iVar1,*(undefined4 *)(iVar1 + 0x10),DAT_005550b4,
 
-                   *(undefined4 *)(iVar1 + 0x14));
+                     *(undefined4 *)(iVar1 + 0x14));
 
       DAT_005550ec = 1;
 

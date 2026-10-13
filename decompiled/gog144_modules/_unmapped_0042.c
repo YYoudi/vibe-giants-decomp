@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (39 named) — decompiled, names from PS2 symbols
+ * 129 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -9100,8 +9100,8 @@ void FUN_00426f20(void)
 
 }
 
-/* ===== FUN_00426F40 @ 0x00426F40 ===== */
-void FUN_00426F40(undefined4 param_1,undefined4 param_2)
+/* ===== dlog_push_level @ 0x00426F40 ===== */
+void dlog_push_level(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -9205,8 +9205,8 @@ void FUN_00426fd0(int param_1)
 
 }
 
-/* ===== FUN_00427040 @ 0x00427040 ===== */
-void FUN_00427040(int param_1)
+/* ===== dlog_swap_check @ 0x00427040 ===== */
+void dlog_swap_check(int param_1)
 
 
 
@@ -11497,8 +11497,8 @@ LAB_00429420:
 
 }
 
-/* ===== FUN_00429510 @ 0x00429510 ===== */
-void FUN_00429510(undefined4 *param_1)
+/* ===== comm_player_actions_menu @ 0x00429510 ===== */
+void comm_player_actions_menu(undefined4 *param_1)
 
 
 

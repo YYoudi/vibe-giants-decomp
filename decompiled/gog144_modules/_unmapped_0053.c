@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (27 named) — decompiled, names from PS2 symbols
+ * 179 functions (32 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -609,8 +609,8 @@ void FUN_00530430(int param_1,int param_2,int param_3,int param_4,undefined4 par
 
 }
 
-/* ===== FUN_00530520 @ 0x00530520 ===== */
-void FUN_00530520(int param_1,int param_2,int param_3)
+/* ===== comm_kill_message @ 0x00530520 ===== */
+void comm_kill_message(int param_1,int param_2,int param_3)
 
 
 
@@ -670,9 +670,9 @@ void FUN_00530520(int param_1,int param_2,int param_3)
 
   uVar12 = *(uint *)(param_2 + 0x188) & 0xff;
 
-  pcVar3 = (char *)FUN_0052adf0(uVar10);
+  pcVar3 = (char *)comm_player_name3(uVar10);
 
-  pcVar4 = (char *)FUN_0052adf0(uVar12);
+  pcVar4 = (char *)comm_player_name3(uVar12);
 
   if (uVar10 == uVar12) {
 
@@ -1304,8 +1304,8 @@ LAB_005307f3:
 
 }
 
-/* ===== FUN_005308b0 @ 0x005308B0 ===== */
-void FUN_005308b0(undefined4 param_1,int param_2)
+/* ===== comm_kill_message2 @ 0x005308B0 ===== */
+void comm_kill_message2(undefined4 param_1,int param_2)
 
 
 
@@ -1343,13 +1343,13 @@ void FUN_005308b0(undefined4 param_1,int param_2)
 
     uVar6 = *(uint *)(param_2 + 0x188);
 
-    uVar2 = FUN_0052ab90(param_1);
+    uVar2 = comm_team_name2(param_1);
 
     uVar2 = FUN_00507b00(s_CommShowConnHTeam_0057e2d8,uVar2);
 
     FUN_00542f27(local_2f0,s__s__s_0055c280,uVar2);
 
-    uVar2 = FUN_0052adf0(uVar6 & 0xff);
+    uVar2 = comm_player_name3(uVar6 & 0xff);
 
     uVar3 = TextGetPtrRandom(s_MPChKilled_0057fe38);
 
@@ -1510,7 +1510,7 @@ void rpman_move(int param_1,int param_2)
 
     if (param_2 <= iVar2) {
 
-      uVar3 = FUN_0052adf0(*(uint *)(param_1 + 0x188) & 0xff);
+      uVar3 = comm_player_name3(*(uint *)(param_1 + 0x188) & 0xff);
 
       pcVar8 = s_Borjoyzee_0055b3c0;
 
@@ -2697,7 +2697,7 @@ void FUN_00531470(void)
 
       }
 
-      FUN_0052B020();
+      comm_chatlog_write();
 
     }
 
@@ -2741,7 +2741,7 @@ void FUN_00531470(void)
 
         }
 
-        FUN_005371e0();
+        comm_entergame_message();
 
         return;
 
@@ -2863,7 +2863,7 @@ void FUN_00531470(void)
 
             if (iVar4 == 0) {
 
-              uVar5 = FUN_0052adf0(pcVar15[1]);
+              uVar5 = comm_player_name3(pcVar15[1]);
 
               uVar5 = FUN_00507b00(s_MPChLostConn_0057fefc,uVar5);
 
@@ -2871,7 +2871,7 @@ void FUN_00531470(void)
 
             else {
 
-              uVar5 = FUN_0052adf0(pcVar15[1]);
+              uVar5 = comm_player_name3(pcVar15[1]);
 
               uVar5 = FUN_00507b00(s_MPChLeaveGame_0057ff0c,uVar5);
 
@@ -3147,7 +3147,7 @@ LAB_005319de:
 
       case '\x12':
 
-        FUN_0052ebd0(pcVar15);
+        comm_team_broadcast_menu(pcVar15);
 
         goto LAB_00532b21;
 
@@ -3895,7 +3895,7 @@ LAB_00532513:
 
         goto LAB_00532b8b;
 
-        pcVar7 = (char *)FUN_0052adf0(iVar4);
+        pcVar7 = (char *)comm_player_name3(iVar4);
 
         pcVar14 = local_400;
 
@@ -4023,7 +4023,7 @@ LAB_00532513:
 
           if ((int)((byte)DAT_005e0304[1] & 0x7f) <= DAT_00632f34 + -1) {
 
-            uVar5 = FUN_0052adf0((byte)DAT_005e0304[1] & 0x7f);
+            uVar5 = comm_player_name3((byte)DAT_005e0304[1] & 0x7f);
 
             if ((bVar3 & 0x40) == 0) {
 
@@ -4259,7 +4259,7 @@ LAB_00532b8b:
 
           if (iVar6 == *(int *)(pcVar15 + 1)) {
 
-            FUN_00521150(iVar4,0);
+            comm_player_name(iVar4,0);
 
             goto LAB_005319de;
 
@@ -4363,7 +4363,7 @@ LAB_0053196c:
 
               else {
 
-                uVar5 = FUN_0052adf0(iVar4);
+                uVar5 = comm_player_name3(iVar4);
 
                 uVar5 = FUN_00507b00(s_CommFakeHostOff_0057fdcc,uVar5);
 
@@ -4673,7 +4673,7 @@ void FUN_00532e90(int param_1)
 
               local_1 = 0;
 
-              FUN_0052ebd0(&local_8);
+              comm_team_broadcast_menu(&local_8);
 
               FUN_0052b780(0,8,&local_8);
 
@@ -4762,11 +4762,11 @@ void FUN_00532f60(undefined4 *param_1)
 
       if ((*(int *)((int)param_1 + 1) != iVar1) || (DAT_00633238 == 0)) {
 
-        uVar4 = FUN_0052adf0(uVar2);
+        uVar4 = comm_player_name3(uVar2);
 
         uVar5 = FUN_0052ab50(uVar2);
 
-        uVar5 = FUN_0052ab90(uVar5);
+        uVar5 = comm_team_name2(uVar5);
 
         uVar6 = FUN_00507b00(s_MPChEnterGame_0057fd98);
 
@@ -4908,7 +4908,7 @@ void FUN_00533140(int param_1)
 
   if (0 < *(int *)(param_1 + 1)) {
 
-    pcVar2 = (char *)FUN_0052ab90(*(int *)(param_1 + 1));
+    pcVar2 = (char *)comm_team_name2(*(int *)(param_1 + 1));
 
     pcVar4 = local_80;
 
@@ -10612,7 +10612,7 @@ LAB_00536fe0:
 
     uVar6 = *(uint *)((int)param_1 + 0x188) & 0xff;
 
-    puVar3 = (undefined *)FUN_0052adf0(uVar6);
+    puVar3 = (undefined *)comm_player_name3(uVar6);
 
     uVar5 = FUN_0052ab50(uVar6);
 
@@ -10658,8 +10658,8 @@ LAB_00537079:
 
 }
 
-/* ===== FUN_00537120 @ 0x00537120 ===== */
-void FUN_00537120(int param_1,int param_2)
+/* ===== base_hint_menu @ 0x00537120 ===== */
+void base_hint_menu(int param_1,int param_2)
 
 
 
@@ -10703,8 +10703,8 @@ void FUN_00537120(int param_1,int param_2)
 
 }
 
-/* ===== FUN_005371e0 @ 0x005371E0 ===== */
-void FUN_005371e0(void)
+/* ===== comm_entergame_message @ 0x005371E0 ===== */
+void comm_entergame_message(void)
 
 
 
@@ -10778,11 +10778,11 @@ void FUN_005371e0(void)
 
         if ((DAT_00632f08 == 0xe) && (DAT_00633238 == 0)) {
 
-          uVar2 = FUN_0052adf0(0);
+          uVar2 = comm_player_name3(0);
 
           uVar4 = FUN_0052ab50(0);
 
-          uVar4 = FUN_0052ab90(uVar4);
+          uVar4 = comm_team_name2(uVar4);
 
           uVar5 = FUN_00507b00(s_MPChEnterGame_0057fd98);
 
@@ -10832,11 +10832,11 @@ void FUN_005371e0(void)
 
         if ((DAT_00632f08 == 0xe) && (DAT_00633238 == 0)) {
 
-          uVar2 = FUN_0052adf0(0);
+          uVar2 = comm_player_name3(0);
 
           uVar4 = FUN_0052ab50(0);
 
-          uVar4 = FUN_0052ab90(uVar4);
+          uVar4 = comm_team_name2(uVar4);
 
           uVar5 = FUN_00507b00(s_MPChEnterGame_0057fd98);
 
@@ -12250,7 +12250,7 @@ LAB_00537f57:
 
   if (0 < (int)fVar13) {
 
-    pcVar10 = (char *)FUN_0052ab90(fVar13);
+    pcVar10 = (char *)comm_team_name2(fVar13);
 
     pcVar4 = local_880;
 
@@ -14935,7 +14935,7 @@ void FUN_0053bd70(int param_1)
 
   if ((uVar1 & 1) != 0) {
 
-    FUN_00540020(uVar2,uVar1 & 0xfffffffe);
+    map_memfree(uVar2,uVar1 & 0xfffffffe);
 
   }
 
@@ -16383,8 +16383,8 @@ void FUN_0053d120(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
 }
 
-/* ===== FUN_0053d1c0 @ 0x0053D1C0 ===== */
-int FUN_0053d1c0(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
+/* ===== editor_anim_skin @ 0x0053D1C0 ===== */
+int editor_anim_skin(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
 
 
 
@@ -20797,7 +20797,7 @@ void FUN_0053ff60(int param_1)
 
     while( true ) {
 
-      FUN_00540020(param_1,puVar1 + 3);
+      map_memfree(param_1,puVar1 + 3);
 
       if (puVar2 == (uint *)(param_1 + 0x10U)) break;
 

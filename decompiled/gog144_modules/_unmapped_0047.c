@@ -1753,8 +1753,8 @@ switchD_00473e6b_default:
 
 }
 
-/* ===== main/makewrld_00473ff0 @ 0x00473FF0 ===== */
-undefined4 main_makewrld_00473ff0(int param_1,int param_2,int param_3,int param_4,int param_5)
+/* ===== landscape_bump_check @ 0x00473FF0 ===== */
+undefined4 landscape_bump_check(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -2300,7 +2300,7 @@ void FUN_004753c0(void)
 
     DAT_00633020 = 0;
 
-    FUN_00426F40(&LAB_00475b40,&LAB_00476150);
+    dlog_push_level(&LAB_00475b40,&LAB_00476150);
 
     DAT_0059dbf4 = (float)*(int *)(DAT_006330e4 + 0x1d8) * *(float *)(DAT_006330e4 + 0x1c0) * 0.5 +
 
@@ -5282,13 +5282,13 @@ LAB_0047c03e:
 
       if (iVar5 == 0) {
 
-        FUN_00530520(iVar4,iVar2,param_1);
+        comm_kill_message(iVar4,iVar2,param_1);
 
       }
 
       else {
 
-        FUN_005308b0(*(int *)(iVar4 + 0x18c) + -1,iVar2,0x30);
+        comm_kill_message2(*(int *)(iVar4 + 0x18c) + -1,iVar2,0x30);
 
         iVar4 = 0;
 
@@ -9221,11 +9221,11 @@ void FUN_0047f740(float param_1)
 
       param_1 = 0.0;
 
-      iVar6 = FUN_00403890(local_44,&param_1,fVar5,*(undefined4 *)((int)fVar5 + 0x10),0xe,0);
+      iVar6 = ref_get_anode2(local_44,&param_1,fVar5,*(undefined4 *)((int)fVar5 + 0x10),0xe,0);
 
       if (iVar6 == 0) {
 
-        FUN_00403890(local_44,&param_1,fVar5,1,0xe,0);
+        ref_get_anode2(local_44,&param_1,fVar5,1,0xe,0);
 
       }
 

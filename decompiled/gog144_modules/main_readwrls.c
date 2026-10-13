@@ -2533,7 +2533,7 @@ switchD_004b1431_caseD_2c:
 
       MemString(0x1a,(int)pfVar21 + 6,&local_3e0,s_C__Giants_source_main_readwrls_c_005602ac,0x372);
 
-      FUN_00490c50(uVar4,uVar10,local_3e0);
+      scenario_list_load(uVar4,uVar10,local_3e0);
 
       mem_free_tagged(local_3e0,s_C__Giants_source_main_readwrls_c_005602ac,0x375);
 

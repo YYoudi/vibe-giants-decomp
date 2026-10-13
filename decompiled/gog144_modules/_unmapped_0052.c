@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (19 named) — decompiled, names from PS2 symbols
+ * 162 functions (37 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -140,7 +140,7 @@ LAB_005200bb:
 
   camera_override_refpt(DAT_0059ee98,0);
 
-  FUN_00426F40(&LAB_005207c0,&LAB_00520480);
+  dlog_push_level(&LAB_005207c0,&LAB_00520480);
 
   DAT_005def88 = main_dlog_00427150();
 
@@ -695,8 +695,8 @@ void comm_damage_teams_menu(void)
 
 }
 
-/* ===== FUN_00521150 @ 0x00521150 ===== */
-void FUN_00521150(int param_1,int param_2)
+/* ===== comm_player_name @ 0x00521150 ===== */
+void comm_player_name(int param_1,int param_2)
 
 
 
@@ -1309,7 +1309,7 @@ LAB_00521787:
 
   }
 
-  FUN_00528ee0();
+  comm_team_status();
 
   return;
 
@@ -1540,8 +1540,8 @@ void FUN_00521980(int *param_1)
 
 }
 
-/* ===== FUN_005219d0 @ 0x005219D0 ===== */
-void FUN_005219d0(int param_1,int param_2,int param_3)
+/* ===== comm_team_name @ 0x005219D0 ===== */
+void comm_team_name(int param_1,int param_2,int param_3)
 
 
 
@@ -1700,8 +1700,8 @@ void FUN_00521b40(undefined4 param_1)
 
 }
 
-/* ===== FUN_00521c20 @ 0x00521C20 ===== */
-void FUN_00521c20(int param_1,int param_2)
+/* ===== comm_allowjoiners_menu @ 0x00521C20 ===== */
+void comm_allowjoiners_menu(int param_1,int param_2)
 
 
 
@@ -1751,8 +1751,8 @@ void FUN_00521c20(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00521cf0 @ 0x00521CF0 ===== */
-void FUN_00521cf0(int param_1)
+/* ===== comm_damagemates_menu @ 0x00521CF0 ===== */
+void comm_damagemates_menu(int param_1)
 
 
 
@@ -1808,8 +1808,8 @@ void FUN_00521cf0(int param_1)
 
 }
 
-/* ===== FUN_00521dd0 @ 0x00521DD0 ===== */
-void FUN_00521dd0(int param_1,int param_2)
+/* ===== comm_capture_points_menu @ 0x00521DD0 ===== */
+void comm_capture_points_menu(int param_1,int param_2)
 
 
 
@@ -1881,8 +1881,8 @@ void FUN_00521dd0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00521ed0 @ 0x00521ED0 ===== */
-void FUN_00521ed0(int param_1,int param_2)
+/* ===== comm_capture_time_menu @ 0x00521ED0 ===== */
+void comm_capture_time_menu(int param_1,int param_2)
 
 
 
@@ -2050,8 +2050,8 @@ float10 FUN_00522130(int param_1)
 
 }
 
-/* ===== FUN_00522170 @ 0x00522170 ===== */
-void FUN_00522170(int param_1)
+/* ===== comm_difficulty_menu @ 0x00522170 ===== */
+void comm_difficulty_menu(int param_1)
 
 
 
@@ -2194,8 +2194,8 @@ void FUN_00522260(int param_1)
 
 }
 
-/* ===== FUN_00522360 @ 0x00522360 ===== */
-void FUN_00522360(int param_1)
+/* ===== comm_playerscore_menu @ 0x00522360 ===== */
+void comm_playerscore_menu(int param_1)
 
 
 
@@ -2271,8 +2271,8 @@ void FUN_00522360(int param_1)
 
 }
 
-/* ===== FUN_00522470 @ 0x00522470 ===== */
-void FUN_00522470(int param_1)
+/* ===== comm_teamscore_menu @ 0x00522470 ===== */
+void comm_teamscore_menu(int param_1)
 
 
 
@@ -2444,8 +2444,8 @@ void FUN_005226b0(void)
 
 }
 
-/* ===== FUN_00522720 @ 0x00522720 ===== */
-void FUN_00522720(int param_1)
+/* ===== comm_version_check @ 0x00522720 ===== */
+void comm_version_check(int param_1)
 
 
 
@@ -3123,13 +3123,13 @@ void comm_game_setup_menu(void)
 
     }
 
-    FUN_00521dd0(DAT_00632f28,uVar8);
+    comm_capture_points_menu(DAT_00632f28,uVar8);
 
-    FUN_00521ed0(DAT_00632f2c,1);
+    comm_capture_time_menu(DAT_00632f2c,1);
 
     FUN_00522020(DAT_00632f3c);
 
-    FUN_00522170(DAT_00632f40);
+    comm_difficulty_menu(DAT_00632f40);
 
     if (((DAT_005def80 == 5) && (DAT_00632f44 == 0)) || (DAT_00632f08 < 0xe)) {
 
@@ -3147,9 +3147,9 @@ void comm_game_setup_menu(void)
 
     FUN_00522260(DAT_00632fcc);
 
-    FUN_00522360(DAT_00632fdc);
+    comm_playerscore_menu(DAT_00632fdc);
 
-    FUN_00522470(DAT_00632fec);
+    comm_teamscore_menu(DAT_00632fec);
 
     if (((DAT_00632f18 == 4) || (DAT_00632f18 == 5)) || ((DAT_00632f18 == 6 || (DAT_00632f18 == 7)))
 
@@ -3276,7 +3276,7 @@ void comm_show_conn_menu(void)
 
     }
 
-    FUN_00426F40(&LAB_00525460,&LAB_00524d90);
+    dlog_push_level(&LAB_00525460,&LAB_00524d90);
 
     FUN_00426FA0();
 
@@ -4332,7 +4332,7 @@ LAB_00523950:
 
     DAT_005def40 = 0;
 
-    FUN_00528820();
+    comm_player_name2();
 
     _DAT_005def48 = 0x3f400000;
 
@@ -5267,8 +5267,8 @@ undefined4 FUN_00528780(void)
 
 }
 
-/* ===== FUN_00528820 @ 0x00528820 ===== */
-void FUN_00528820(void)
+/* ===== comm_player_name2 @ 0x00528820 ===== */
+void comm_player_name2(void)
 
 
 
@@ -5663,7 +5663,7 @@ LAB_00528c3a:
 
                      ((param_1 != DAT_005def5c) - 1 & 0x282792) + 0xa0a0a0);
 
-  FUN_005219d0(DAT_005def4c,cVar2,0);
+  comm_team_name(DAT_005def4c,cVar2,0);
 
   if (iVar6 < 0) {
 
@@ -5723,12 +5723,12 @@ LAB_00528c3a:
 
 }
 
-/* ===== FUN_00528ee0 @ 0x00528EE0 ===== */
+/* ===== comm_team_status @ 0x00528EE0 ===== */
 /* WARNING (jumptable): Unable to track spacebase fully for stack */
 
 
 
-void FUN_00528ee0(void)
+void comm_team_status(void)
 
 
 
@@ -7113,7 +7113,7 @@ void FUN_0052a050(int param_1)
 
       }
 
-      FUN_00521dd0(DAT_00632f28,uVar4);
+      comm_capture_points_menu(DAT_00632f28,uVar4);
 
     }
 
@@ -7125,13 +7125,13 @@ void FUN_0052a050(int param_1)
 
     if (DAT_00632f40 != local_1a4) {
 
-      FUN_00522170(DAT_00632f40);
+      comm_difficulty_menu(DAT_00632f40);
 
     }
 
     if (DAT_00633038 != local_ac) {
 
-      FUN_00522720(DAT_00633038);
+      comm_version_check(DAT_00633038);
 
     }
 
@@ -7493,8 +7493,8 @@ void FUN_0052ab70(int param_1,undefined1 param_2)
 
 }
 
-/* ===== FUN_0052ab90 @ 0x0052AB90 ===== */
-void FUN_0052ab90(undefined4 param_1)
+/* ===== comm_team_name2 @ 0x0052AB90 ===== */
+void comm_team_name2(undefined4 param_1)
 
 
 
@@ -7658,12 +7658,12 @@ void FUN_0052adc0(int param_1,char *param_2)
 
 }
 
-/* ===== FUN_0052adf0 @ 0x0052ADF0 ===== */
+/* ===== comm_player_name3 @ 0x0052ADF0 ===== */
 /* PS2 candidate: smartie_check_follow__FP6OBJECTf (conf 0.598) */
 
 
 
-char * FUN_0052adf0(int param_1)
+char * comm_player_name3(int param_1)
 
 
 
@@ -7754,12 +7754,12 @@ void FUN_0052ae90(int param_1)
 
 }
 
-/* ===== FUN_0052aed0 @ 0x0052AED0 ===== */
+/* ===== comm_player_name4 @ 0x0052AED0 ===== */
 /* WARNING: Removing unreachable block (ram,0x0052aee9) */
 
 
 
-char * FUN_0052aed0(int param_1)
+char * comm_player_name4(int param_1)
 
 
 
@@ -7896,8 +7896,8 @@ void FUN_0052b000(int param_1)
 
 }
 
-/* ===== FUN_0052B020 @ 0x0052B020 ===== */
-void FUN_0052B020(void)
+/* ===== comm_chatlog_write @ 0x0052B020 ===== */
+void comm_chatlog_write(void)
 
 
 
@@ -12065,7 +12065,7 @@ void FUN_0052e5e0(void)
 
           local_ff = (undefined1)iVar2;
 
-          pcVar3 = (char *)FUN_0052adf0(iVar2);
+          pcVar3 = (char *)comm_player_name3(iVar2);
 
           _strncpy(local_fe,pcVar3,_Count);
 
@@ -12150,7 +12150,7 @@ void FUN_0052e6e0(char *param_1,int param_2)
 
     if ((int)((byte)param_1[1] & 0x7f) <= DAT_00632f34 + -1) {
 
-      pcVar6 = (char *)FUN_0052adf0((byte)param_1[1] & 0x7f);
+      pcVar6 = (char *)comm_player_name3((byte)param_1[1] & 0x7f);
 
       if ((bVar2 & 0x40) != 0) {
 
@@ -12368,7 +12368,7 @@ LAB_0052e7e9:
 
       if ((int)((byte)local_200[1] & 0x7f) <= DAT_00632f34 + -1) {
 
-        pcVar6 = (char *)FUN_0052adf0((byte)local_200[1] & 0x7f);
+        pcVar6 = (char *)comm_player_name3((byte)local_200[1] & 0x7f);
 
         if ((local_200[2] & 0x40U) == 0) {
 
@@ -12648,7 +12648,7 @@ void FUN_0052eb60(undefined4 param_1,undefined1 param_2)
 
       local_1 = 0;
 
-      FUN_0052ebd0(&local_8);
+      comm_team_broadcast_menu(&local_8);
 
       FUN_0052b780(0,8,&local_8);
 
@@ -12660,8 +12660,8 @@ void FUN_0052eb60(undefined4 param_1,undefined1 param_2)
 
 }
 
-/* ===== FUN_0052ebd0 @ 0x0052EBD0 ===== */
-void FUN_0052ebd0(int param_1)
+/* ===== comm_team_broadcast_menu @ 0x0052EBD0 ===== */
+void comm_team_broadcast_menu(int param_1)
 
 
 
@@ -12721,7 +12721,7 @@ void FUN_0052ebd0(int param_1)
 
     DAT_00632f14 = (uint)*(byte *)(param_1 + 1);
 
-    FUN_005219d0(0xffffffff,*(undefined1 *)(param_1 + 1),0);
+    comm_team_name(0xffffffff,*(undefined1 *)(param_1 + 1),0);
 
   }
 
@@ -12735,9 +12735,9 @@ void FUN_0052ebd0(int param_1)
 
   if (iVar4 != 0) {
 
-    uVar7 = FUN_0052ab90(*(undefined1 *)(param_1 + 1));
+    uVar7 = comm_team_name2(*(undefined1 *)(param_1 + 1));
 
-    uVar7 = FUN_0052adf0(uVar3,uVar7);
+    uVar7 = comm_player_name3(uVar3,uVar7);
 
     uVar7 = FUN_00507b00(s_CommChgTeamBroadcast_0057fd80,uVar7);
 
@@ -13128,7 +13128,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
             uStack_11 = 0;
 
-            FUN_0052ebd0(&local_18);
+            comm_team_broadcast_menu(&local_18);
 
             FUN_0052b780(0,8,&local_18);
 
@@ -13165,11 +13165,11 @@ void FUN_0052f040(undefined4 param_1)
 
   
 
-  uVar1 = FUN_0052adf0(param_1);
+  uVar1 = comm_player_name3(param_1);
 
   uVar2 = FUN_0052ab50(param_1);
 
-  uVar2 = FUN_0052ab90(uVar2);
+  uVar2 = comm_team_name2(uVar2);
 
   uVar3 = FUN_00507b00(s_MPChEnterGame_0057fd98);
 
@@ -13240,11 +13240,11 @@ void FUN_0052f0a0(int param_1)
 
       if ((DAT_00632f08 == 0xe) && (DAT_00633238 == 0)) {
 
-        uVar1 = FUN_0052adf0(0);
+        uVar1 = comm_player_name3(0);
 
         uVar3 = FUN_0052ab50(0);
 
-        uVar3 = FUN_0052ab90(uVar3);
+        uVar3 = comm_team_name2(uVar3);
 
         uVar4 = FUN_00507b00(s_MPChEnterGame_0057fd98);
 
@@ -13612,7 +13612,7 @@ void comm_fakehost_menu(int param_1)
 
         else {
 
-          uVar2 = FUN_0052adf0(iVar3);
+          uVar2 = comm_player_name3(iVar3);
 
           uVar2 = FUN_00507b00(s_CommFakeHostOff_0057fdcc,uVar2);
 
@@ -13656,7 +13656,7 @@ void comm_fakehost_menu(int param_1)
 
     if (DAT_005def94 == iVar1) {
 
-      uVar2 = FUN_0052adf0(iVar3);
+      uVar2 = comm_player_name3(iVar3);
 
       uVar2 = FUN_00507b00(s_CommFakeHostYouOn_0057fdb8,uVar2);
 
@@ -13664,7 +13664,7 @@ void comm_fakehost_menu(int param_1)
 
     else {
 
-      uVar2 = FUN_0052adf0(iVar3);
+      uVar2 = comm_player_name3(iVar3);
 
       uVar2 = FUN_00507b00(s_CommFakeHostOn_0057fda8,uVar2);
 
@@ -13713,7 +13713,7 @@ void FUN_0052f510(undefined4 param_1)
 
       if (iVar2 != 0) {
 
-        uVar3 = FUN_0052adf0(iVar1);
+        uVar3 = comm_player_name3(iVar1);
 
         iVar2 = FUN_00545650(uVar3,param_1);
 
@@ -13757,8 +13757,8 @@ void FUN_0052f510(undefined4 param_1)
 
 }
 
-/* ===== FUN_0052f5b0 @ 0x0052F5B0 ===== */
-void FUN_0052f5b0(void)
+/* ===== comm_fakehost_toggle @ 0x0052F5B0 ===== */
+void comm_fakehost_toggle(void)
 
 
 
@@ -13814,7 +13814,7 @@ void FUN_0052f5b0(void)
 
         else {
 
-          uVar3 = FUN_0052adf0(iVar1);
+          uVar3 = comm_player_name3(iVar1);
 
           uVar3 = FUN_00507b00(s_CommFakeHostOff_0057fdcc,uVar3);
 

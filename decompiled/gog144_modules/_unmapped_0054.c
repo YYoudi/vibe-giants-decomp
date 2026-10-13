@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (164 named) — decompiled, names from PS2 symbols
+ * 351 functions (166 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00540020 @ 0x00540020 ===== */
-void FUN_00540020(int param_1,int param_2)
+/* ===== map_memfree @ 0x00540020 ===== */
+void map_memfree(int param_1,int param_2)
 
 
 
@@ -2546,7 +2546,7 @@ void FUN_00542eb0(void)
 
   FUN_00542ec8();
 
-  DAT_00630b58 = FUN_00545d1b();
+  DAT_00630b58 = crt_cpu_features_check();
 
   _GLOBAL__D_Game_2();
 
@@ -9180,8 +9180,8 @@ undefined4 AudioDataStreamStatus__Fv_7(void)
 
 }
 
-/* ===== FUN_00545d1b @ 0x00545D1B ===== */
-void FUN_00545d1b(void)
+/* ===== crt_cpu_features_check @ 0x00545D1B ===== */
+void crt_cpu_features_check(void)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (23 named) — decompiled, names from PS2 symbols
+ * 131 functions (24 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -5468,7 +5468,7 @@ void FUN_004a5f40(int param_1)
 
       FUN_0049b8a0(DAT_00632a88);
 
-      FUN_004035d0(DAT_00632a88,1);
+      anim_select_check(DAT_00632a88,1);
 
       *(uint *)(DAT_00632a88 + 0x1c8) = *(uint *)(DAT_00632a88 + 0x1c8) | 1;
 
@@ -9086,12 +9086,12 @@ LAB_004a991b:
 
 }
 
-/* ===== FUN_004a9e10 @ 0x004A9E10 ===== */
+/* ===== weapondefs_load @ 0x004A9E10 ===== */
 /* PS2 candidate: mussys_loadScore__FP9mus_Score (conf 0.511) */
 
 
 
-void FUN_004a9e10(void)
+void weapondefs_load(void)
 
 
 

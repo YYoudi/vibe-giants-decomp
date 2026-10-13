@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (14 named) — decompiled, names from PS2 symbols
+ * 145 functions (16 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -274,14 +274,14 @@ undefined4 AudioGetMasterVolume__Fv_6(void)
 
 }
 
-/* ===== FUN_00450D10 @ 0x00450D10 ===== */
-void FUN_00450D10(void)
+/* ===== gameover_menu @ 0x00450D10 ===== */
+void gameover_menu(void)
 
 
 
 {
 
-  FUN_00426F40(&LAB_00450db0,&LAB_00450e60);
+  dlog_push_level(&LAB_00450db0,&LAB_00450e60);
 
   FUN_00426FA0();
 
@@ -1882,7 +1882,7 @@ void FUN_00452490(int *param_1,int *param_2)
 
   }
 
-  FUN_00426F40(&LAB_00454820,&LAB_00454360);
+  dlog_push_level(&LAB_00454820,&LAB_00454360);
 
   FUN_00426FA0();
 
@@ -6224,12 +6224,12 @@ void comm_options_defaults(void)
 
 }
 
-/* ===== FUN_00457440 @ 0x00457440 ===== */
+/* ===== level_config_load @ 0x00457440 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00457440(void)
+void level_config_load(void)
 
 
 
@@ -6286,7 +6286,7 @@ void FUN_004574d0(void)
 
        (((DAT_00633160 == 0 && (DAT_00633248 == 0)) && (DAT_00633104 == 0)))) {
 
-      FUN_00483BA0();
+      mission_intro_load();
 
       return;
 
@@ -6452,7 +6452,7 @@ LAB_004575ee:
 
       if (iVar2 != 0) {
 
-        FUN_00488A80();
+        mission_load_world2();
 
         DAT_00632f08 = 0;
 
@@ -6558,7 +6558,7 @@ void FUN_004576e0(void)
 
   Audio3DTestToneUpdate__Fv();
 
-  FUN_00426F40(&LAB_004577f0,&LAB_00457970);
+  dlog_push_level(&LAB_004577f0,&LAB_00457970);
 
   return;
 
@@ -12295,7 +12295,7 @@ undefined4 FUN_0045d300(uint *param_1)
 
           if (iVar5 != 0) {
 
-            iVar4 = FUN_00403810(iVar5,puVar3[2],*piVar7);
+            iVar4 = ref_get_anode(iVar5,puVar3[2],*piVar7);
 
             piVar7[3] = iVar4;
 
