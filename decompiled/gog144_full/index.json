@@ -1187,7 +1187,7 @@
  "0x0041F120": {
   "name": "hud_status_main",
   "named": true,
-  "len": 8732
+  "len": 8742
  },
  "0x0041F8F0": {
   "name": "FUN_0041f8f0",
@@ -1220,9 +1220,9 @@
   "len": 285
  },
  "0x00420280": {
-  "name": "FUN_00420280",
-  "named": false,
-  "len": 6235
+  "name": "menu_player_join_check",
+  "named": true,
+  "len": 6245
  },
  "0x00420780": {
   "name": "FUN_00420780",
@@ -1780,9 +1780,9 @@
   "len": 2644
  },
  "0x0042BB10": {
-  "name": "FUN_0042bb10",
-  "named": false,
-  "len": 3080
+  "name": "level_scene_mesh_uv",
+  "named": true,
+  "len": 3094
  },
  "0x0042BFB0": {
   "name": "FUN_0042bfb0",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23276
+  "len": 23292
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -4535,9 +4535,9 @@
   "len": 990
  },
  "0x0048BFB0": {
-  "name": "FUN_0048bfb0",
-  "named": false,
-  "len": 6109
+  "name": "menu_slot_bounds_check",
+  "named": true,
+  "len": 6119
  },
  "0x0048C830": {
   "name": "FUN_0048C830",
@@ -9867,7 +9867,7 @@
  "0x0052D1C0": {
   "name": "FUN_0052d1c0",
   "named": false,
-  "len": 445
+  "len": 454
  },
  "0x0052D220": {
   "name": "gamespy_statechange3",
@@ -9885,9 +9885,9 @@
   "len": 4308
  },
  "0x0052D5B0": {
-  "name": "FUN_0052d5b0",
-  "named": false,
-  "len": 7906
+  "name": "comm_socket_recv_loop",
+  "named": true,
+  "len": 7915
  },
  "0x0052DAA0": {
   "name": "gamespy_0052daa0",

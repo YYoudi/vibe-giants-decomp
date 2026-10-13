@@ -12086,7 +12086,7 @@ LAB_0041f57d:
 
   }
 
-  FUN_00420280(DAT_0058c5e8,DAT_0058c5e4,uVar3,uVar12);
+  menu_player_join_check(DAT_0058c5e8,DAT_0058c5e4,uVar3,uVar12);
 
   if (DAT_005dd22c == -0x17) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (67 named) — decompiled, names from PS2 symbols
+ * 129 functions (69 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -212,8 +212,8 @@ undefined4 FUN_00420260(void)
 
 }
 
-/* ===== FUN_00420280 @ 0x00420280 ===== */
-void FUN_00420280(int param_1,int param_2,int param_3,int param_4)
+/* ===== menu_player_join_check @ 0x00420280 ===== */
+void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -14907,10 +14907,10 @@ void level_scene_mesh_render(undefined4 *param_1,int param_2,undefined4 *param_3
 
 }
 
-/* ===== FUN_0042bb10 @ 0x0042BB10 ===== */
-void FUN_0042bb10(undefined4 *param_1,int param_2,int param_3,undefined4 *param_4,
+/* ===== level_scene_mesh_uv @ 0x0042BB10 ===== */
+void level_scene_mesh_uv(undefined4 *param_1,int param_2,int param_3,undefined4 *param_4,
 
-                 undefined4 *param_5,undefined4 param_6,int param_7)
+                        undefined4 *param_5,undefined4 param_6,int param_7)
 
 
 
@@ -16377,7 +16377,7 @@ LAB_0042cb13:
 
                   uVar7 = (**(code **)(DAT_00656454 + 0x10))();
 
-                  (*(code *)PTR_FUN_005565bc)(uVar7);
+                  (*(code *)PTR_level_scene_mesh_uv_005565bc)(uVar7);
 
                 }
 
