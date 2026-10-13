@@ -1,14 +1,14 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (104 named) — decompiled, names from PS2 symbols
+ * 129 functions (105 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00420090 @ 0x00420090 ===== */
+/* ===== key_to_bitmask @ 0x00420090 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-bool FUN_00420090(uint param_1,undefined4 param_2)
+bool key_to_bitmask(uint param_1,undefined4 param_2)
 
 
 
@@ -897,7 +897,7 @@ undefined4 FUN_00420890(void)
 
   else if (bVar1 < 0x6f) {
 
-    iVar2 = FUN_00420090(bVar1,iVar2);
+    iVar2 = key_to_bitmask(bVar1,iVar2);
 
   }
 
@@ -970,7 +970,7 @@ undefined4 FUN_00420930(void)
 
   else if (bVar1 < 0x6f) {
 
-    iVar2 = FUN_00420090(bVar1,iVar2);
+    iVar2 = key_to_bitmask(bVar1,iVar2);
 
   }
 
@@ -1043,7 +1043,7 @@ undefined4 FUN_004209d0(void)
 
   else if (bVar1 < 0x6f) {
 
-    iVar2 = FUN_00420090(bVar1,iVar2);
+    iVar2 = key_to_bitmask(bVar1,iVar2);
 
   }
 
@@ -1116,7 +1116,7 @@ undefined4 FUN_00420a70(void)
 
   else if (bVar1 < 0x6f) {
 
-    iVar2 = FUN_00420090(bVar1,iVar2);
+    iVar2 = key_to_bitmask(bVar1,iVar2);
 
   }
 

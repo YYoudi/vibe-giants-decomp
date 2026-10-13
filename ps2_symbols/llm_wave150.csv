@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00420090,FUN_00420090,,key_to_bitmask,0.9,llm-w150,scancode->bit switch callers hud dispatchers
+00517770,FUN_00517770,,hud_world_to_screen_2,0.9,llm-w150,viewport+proj m00 near hud_screen_project
+0053e6c0,FUN_0053e6c0,,vec2_normalize,0.9,llm-w150,sqrt(x2+y2) normalize caller fx_processOpCodes

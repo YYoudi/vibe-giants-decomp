@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (130 named) — decompiled, names from PS2 symbols
+ * 186 functions (131 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -6755,12 +6755,12 @@ LAB_00517681:
 
 }
 
-/* ===== FUN_00517770 @ 0x00517770 ===== */
+/* ===== hud_world_to_screen_2 @ 0x00517770 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00517770(float *param_1,float *param_2)
+void hud_world_to_screen_2(float *param_1,float *param_2)
 
 
 

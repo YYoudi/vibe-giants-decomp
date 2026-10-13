@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (127 named) — decompiled, names from PS2 symbols
+ * 179 functions (128 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -18612,8 +18612,8 @@ void crt_euler_to_quat(uint *param_1,float param_2,float param_3,float param_4,f
 
 }
 
-/* ===== FUN_0053e6c0 @ 0x0053E6C0 ===== */
-void FUN_0053e6c0(int param_1,float *param_2,float *param_3,float *param_4)
+/* ===== vec2_normalize @ 0x0053E6C0 ===== */
+void vec2_normalize(int param_1,float *param_2,float *param_3,float *param_4)
 
 
 

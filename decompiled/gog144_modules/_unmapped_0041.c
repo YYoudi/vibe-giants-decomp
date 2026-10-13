@@ -11986,7 +11986,7 @@ LAB_0041f57d:
 
         else if (uVar9 == 0x6e || bVar1 < 0x6e) {
 
-          iVar6 = FUN_00420090(uVar9,iVar6);
+          iVar6 = key_to_bitmask(uVar9,iVar6);
 
           if (iVar6 != 0) {
 
@@ -12040,7 +12040,7 @@ LAB_0041f57d:
 
       else if (bVar7 < 0x6f) {
 
-        iVar6 = FUN_00420090(bVar7,iVar6);
+        iVar6 = key_to_bitmask(bVar7,iVar6);
 
       }
 

@@ -10232,7 +10232,7 @@ LAB_0044d7d9:
 
           if ((*(uint *)(puStack0000003c[1] + 0xe0) & 0x40000000) == 0) {
 
-            FUN_0053e6c0();
+            vec2_normalize();
 
           }
 

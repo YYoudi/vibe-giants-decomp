@@ -1187,7 +1187,7 @@
  "0x0041F120": {
   "name": "hud_status_main",
   "named": true,
-  "len": 8855
+  "len": 8859
  },
  "0x0041F8F0": {
   "name": "FUN_0041f8f0",
@@ -1205,9 +1205,9 @@
   "len": 2535
  },
  "0x00420090": {
-  "name": "FUN_00420090",
-  "named": false,
-  "len": 1033
+  "name": "key_to_bitmask",
+  "named": true,
+  "len": 1035
  },
  "0x00420180": {
   "name": "input_key_state_check",
@@ -1232,22 +1232,22 @@
  "0x00420890": {
   "name": "FUN_00420890",
   "named": false,
-  "len": 718
+  "len": 720
  },
  "0x00420930": {
   "name": "FUN_00420930",
   "named": false,
-  "len": 718
+  "len": 720
  },
  "0x004209D0": {
   "name": "FUN_004209d0",
   "named": false,
-  "len": 718
+  "len": 720
  },
  "0x00420A70": {
   "name": "FUN_00420a70",
   "named": false,
-  "len": 718
+  "len": 720
  },
  "0x00420B10": {
   "name": "mission_objective_entry_lookup",
@@ -2817,7 +2817,7 @@
  "0x00449CE0": {
   "name": "fx_processOpCodes",
   "named": true,
-  "len": 67517
+  "len": 67519
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -8730,9 +8730,9 @@
   "len": 308
  },
  "0x00517770": {
-  "name": "FUN_00517770",
-  "named": false,
-  "len": 738
+  "name": "hud_world_to_screen_2",
+  "named": true,
+  "len": 747
  },
  "0x00517830": {
   "name": "FUN_00517830",
@@ -10930,9 +10930,9 @@
   "len": 1704
  },
  "0x0053E6C0": {
-  "name": "FUN_0053e6c0",
-  "named": false,
-  "len": 1025
+  "name": "vec2_normalize",
+  "named": true,
+  "len": 1027
  },
  "0x0053E780": {
   "name": "FUN_0053e780",
