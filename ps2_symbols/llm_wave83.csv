@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00456f80,FUN_00456F80,,obj_damage_apply,0.9,llm-read54,
+0048d690,FUN_0048D690,,menu_state_dispatch_2,0.9,llm-read54,
+004e22d0,FUN_004E22D0,,ai_visibility_cull,0.9,llm-read54,
+0052fd50,FUN_0052FD50,,comm_obj_sync,0.9,llm-read54,

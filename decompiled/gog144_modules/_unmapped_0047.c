@@ -8638,7 +8638,7 @@ LAB_0047eacc:
 
               }
 
-              FUN_00456f80(0x12,-fVar9,iVar6,0,iVar6 + 0xa0,0);
+              obj_damage_apply(0x12,-fVar9,iVar6,0,iVar6 + 0xa0,0);
 
             }
 

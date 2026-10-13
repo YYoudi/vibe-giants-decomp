@@ -1103,7 +1103,7 @@ LAB_00465d63:
 
     if (iVar3 != 0) {
 
-      FUN_00456f80(7,0x461c4000,fVar2,fVar4,0,0);
+      obj_damage_apply(7,0x461c4000,fVar2,fVar4,0,0);
 
     }
 

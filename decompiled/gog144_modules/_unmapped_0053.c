@@ -6375,7 +6375,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         {
 
-          FUN_0052fd50(iVar6);
+          comm_obj_sync(iVar6);
 
           FUN_00542f27(local_100,s_smartie_objtype__d_0058009c,*(undefined4 *)(iVar6 + 4));
 

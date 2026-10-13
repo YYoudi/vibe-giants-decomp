@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (86 named) — decompiled, names from PS2 symbols
+ * 162 functions (87 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -12985,7 +12985,7 @@ LAB_0052edc5:
 
   if ((iVar4 == 0) || (iVar4 = FUN_0052aa80(iVar9), iVar4 != 0)) {
 
-    FUN_00456f80(0x13,0x461c4000,iVar9,0,0,0);
+    obj_damage_apply(0x13,0x461c4000,iVar9,0,0,0);
 
   }
 
@@ -14618,8 +14618,8 @@ void comm_0052b780_user_7(int param_1)
 
 }
 
-/* ===== FUN_0052fd50 @ 0x0052FD50 ===== */
-void FUN_0052fd50(int param_1)
+/* ===== comm_obj_sync @ 0x0052FD50 ===== */
+void comm_obj_sync(int param_1)
 
 
 

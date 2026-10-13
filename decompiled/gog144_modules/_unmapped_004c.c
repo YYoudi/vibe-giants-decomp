@@ -837,7 +837,7 @@ LAB_004c0b9c:
 
         }
 
-        FUN_00456f80(0x17,uVar8,iVar5,iVar3,0,0);
+        obj_damage_apply(0x17,uVar8,iVar5,iVar3,0,0);
 
         *(uint *)(iVar3 + 0xe0) = *(uint *)(iVar3 + 0xe0) | 0x400;
 
@@ -11697,7 +11697,7 @@ LAB_004d135c:
 
          local_48 < *(float *)(DAT_00632ed8 + 0x118) * *(float *)(DAT_00632ed8 + 0x118))) {
 
-        FUN_00456f80(2,*(undefined4 *)(DAT_00632ed8 + 0x3dc),fVar3,fVar5,0,0);
+        obj_damage_apply(2,*(undefined4 *)(DAT_00632ed8 + 0x3dc),fVar3,fVar5,0,0);
 
       }
 
@@ -11779,7 +11779,7 @@ LAB_004d0695:
 
       *(float *)(iVar11 + 0x130) = *(float *)(DAT_00632ed8 + 0x130) * *(float *)((int)fVar5 + 0xc4);
 
-      FUN_00456f80(2,*(undefined4 *)(DAT_00632ed8 + 1000),iVar11,fVar5,0,0);
+      obj_damage_apply(2,*(undefined4 *)(DAT_00632ed8 + 1000),iVar11,fVar5,0,0);
 
     }
 

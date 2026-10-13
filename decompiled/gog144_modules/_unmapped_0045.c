@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (44 named) — decompiled, names from PS2 symbols
+ * 145 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -5738,7 +5738,7 @@ void FUN_00456d00(undefined4 param_1,undefined4 param_2,undefined4 param_3,float
 
   fVar1 = (float10)FUN_00518b70(param_1,0);
 
-  FUN_00456f80(param_3,(float)(fVar1 * (float10)param_4),param_1,param_2,param_5,param_6);
+  obj_damage_apply(param_3,(float)(fVar1 * (float10)param_4),param_1,param_2,param_5,param_6);
 
   return;
 
@@ -5831,7 +5831,7 @@ LAB_00456e0a:
 
               }
 
-              FUN_00456f80(param_1,param_2,iVar1,uVar3,uVar4,0);
+              obj_damage_apply(param_1,param_2,iVar1,uVar3,uVar4,0);
 
             }
 
@@ -5876,14 +5876,14 @@ void FUN_00456ee0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
 }
 
-/* ===== FUN_00456f80 @ 0x00456F80 ===== */
+/* ===== obj_damage_apply @ 0x00456F80 ===== */
 /* PS2 candidate: hurt_object (conf 0.457) */
 
 
 
-void FUN_00456f80(int param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,
+void obj_damage_apply(int param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,
 
-                 undefined4 param_6)
+                     undefined4 param_6)
 
 
 
@@ -10822,7 +10822,7 @@ void reaper_lock_short_5(undefined4 param_1,int param_2,float param_3,int param_
 
      (iVar1 = FUN_0052e480(param_1), iVar1 != 0)) {
 
-    FUN_00456f80(2,0x41a00000,param_2,param_1,0,0);
+    obj_damage_apply(2,0x41a00000,param_2,param_1,0,0);
 
   }
 
@@ -11223,7 +11223,7 @@ LAB_0045bd2c:
 
     if (iVar4 != 0) {
 
-      FUN_00456f80(4,param_5,iVar2,param_1,param_3,0);
+      obj_damage_apply(4,param_5,iVar2,param_1,param_3,0);
 
     }
 
@@ -11235,7 +11235,7 @@ LAB_0045bd2c:
 
     if (iVar4 != 0) {
 
-      FUN_00456f80(6,param_5,iVar2,param_1,param_3,0);
+      obj_damage_apply(6,param_5,iVar2,param_1,param_3,0);
 
       return;
 
@@ -11278,7 +11278,7 @@ undefined4 FUN_0045bd90(int param_1,float param_2,byte param_3)
 
         }
 
-        FUN_00456f80(0xb,param_2,iVar1,param_1,0,0);
+        obj_damage_apply(0xb,param_2,iVar1,param_1,0,0);
 
       }
 

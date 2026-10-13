@@ -1590,7 +1590,7 @@ LAB_004d27a6:
 
         if (local_6c < *(float *)(DAT_00632ed8 + 0xd8) * *(float *)(DAT_00632ed8 + 0xd8)) {
 
-          FUN_00456f80(2,*(undefined4 *)(DAT_00632ed8 + 1000),fVar4,param_1,0,0);
+          obj_damage_apply(2,*(undefined4 *)(DAT_00632ed8 + 1000),fVar4,param_1,0,0);
 
         }
 

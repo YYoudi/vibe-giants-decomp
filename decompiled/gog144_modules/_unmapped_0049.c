@@ -13406,9 +13406,9 @@ void FUN_0049df90(int param_1)
 
     *(undefined4 *)(param_1 + 0x274) = 0;
 
-    FUN_00456f80(0x15,*(undefined4 *)(DAT_00632ed8 + 0x1294),*(undefined4 *)(iVar1 + 0x3c),param_1,0
+    obj_damage_apply(0x15,*(undefined4 *)(DAT_00632ed8 + 0x1294),*(undefined4 *)(iVar1 + 0x3c),
 
-                 ,0);
+                     param_1,0,0);
 
     local_c = -*(float *)(param_1 + 0x29c);
 
