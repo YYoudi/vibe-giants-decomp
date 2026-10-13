@@ -4176,108 +4176,90 @@ int main_editor_004380e0(undefined4 param_1)
 }
 
 /* ===== main/editor_00438230 @ 0x00438230 ===== */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
 /* PS2 candidate: object_copy_posdirinfo (conf 0.842) */
 
 
 
-void main_editor_00438230(OBJECT *obj)
+void main_editor_00438230(int param_1,int param_2)
 
 
 
 {
 
-  int in_stack_00000008;
+  *(undefined4 *)(param_2 + 4) = *(undefined4 *)(param_1 + 0xa0);
 
-  
+  *(undefined4 *)(param_2 + 8) = *(undefined4 *)(param_1 + 0xa4);
 
-  *(dword *)(in_stack_00000008 + 4) = obj->gap_A0;
+  *(undefined4 *)(param_2 + 0xc) = *(undefined4 *)(param_1 + 0xa8);
 
-  *(undefined4 *)(in_stack_00000008 + 8) = *(undefined4 *)&obj->field_0xa4;
+  *(undefined4 *)(param_2 + 0x10) = *(undefined4 *)(param_1 + 200);
 
-  *(undefined4 *)(in_stack_00000008 + 0xc) = *(undefined4 *)&obj->field_0xa8;
+  *(undefined4 *)(param_2 + 0x14) = *(undefined4 *)(param_1 + 0xcc);
 
-  *(undefined4 *)(in_stack_00000008 + 0x10) = *(undefined4 *)&obj->field_0xc8;
+  *(undefined4 *)(param_2 + 0x18) = *(undefined4 *)(param_1 + 0xd0);
 
-  *(undefined4 *)(in_stack_00000008 + 0x14) = *(undefined4 *)&obj->field_0xcc;
+  *(undefined4 *)(param_2 + 0x1c) = *(undefined4 *)(param_1 + 0xc4);
 
-  *(undefined4 *)(in_stack_00000008 + 0x18) = *(undefined4 *)&obj->field_0xd0;
+  *(undefined4 *)(param_2 + 0x20) = *(undefined4 *)(param_1 + 0x1d4);
 
-  *(undefined4 *)(in_stack_00000008 + 0x1c) = *(undefined4 *)&obj->field_0xc4;
+  *(undefined4 *)(param_2 + 0x2c) = *(undefined4 *)(param_1 + 0xe8);
 
-  *(dword *)(in_stack_00000008 + 0x20) = obj->acc_popup_pre_logic;
+  *(undefined4 *)(param_2 + 0x30) = *(undefined4 *)(param_1 + 0x174);
 
-  *(undefined4 *)(in_stack_00000008 + 0x2c) = *(undefined4 *)&obj->field_0xe8;
+  *(undefined4 *)(param_2 + 0x24) = *(undefined4 *)(param_1 + 0xf8);
 
-  *(dword *)(in_stack_00000008 + 0x30) = obj->acc_grenade_do_bounce;
+  *(undefined4 *)(param_2 + 0x28) = *(undefined4 *)(param_1 + 0xfc);
 
-  *(dword *)(in_stack_00000008 + 0x24) = obj->acc_minishop_use_icon;
+  *(undefined4 *)(param_2 + 0x34) = *(undefined4 *)(param_1 + 4);
 
-  *(dword *)(in_stack_00000008 + 0x28) = obj->gap_FC;
-
-  *(dword *)(in_stack_00000008 + 0x34) = obj->field_4;
-
-  *(OBJECT **)(in_stack_00000008 + 0x38) = obj;
+  *(int *)(param_2 + 0x38) = param_1;
 
   return;
 
 }
 
 /* ===== main/editor_004382b0 @ 0x004382B0 ===== */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
-OBJECT * main_editor_004382b0(OBJECT *obj)
+int main_editor_004382b0(int param_1,int param_2)
 
 
 
 {
 
-  int in_stack_00000008;
+  if (*(int *)(param_1 + 4) != *(int *)(param_2 + 0x34)) {
 
-  
+    FUN_00497510(param_1);
 
-  if (obj->field_4 != *(dword *)(in_stack_00000008 + 0x34)) {
-
-    FUN_00497510(obj);
-
-    obj = (OBJECT *)main_editor_004380e0(*(undefined4 *)(in_stack_00000008 + 0x34));
+    param_1 = main_editor_004380e0(*(undefined4 *)(param_2 + 0x34));
 
   }
 
-  obj->gap_A0 = *(dword *)(in_stack_00000008 + 4);
+  *(undefined4 *)(param_1 + 0xa0) = *(undefined4 *)(param_2 + 4);
 
-  *(undefined4 *)&obj->field_0xa4 = *(undefined4 *)(in_stack_00000008 + 8);
+  *(undefined4 *)(param_1 + 0xa4) = *(undefined4 *)(param_2 + 8);
 
-  *(undefined4 *)&obj->field_0xa8 = *(undefined4 *)(in_stack_00000008 + 0xc);
+  *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(param_2 + 0xc);
 
-  *(undefined4 *)&obj->field_0xc8 = *(undefined4 *)(in_stack_00000008 + 0x10);
+  *(undefined4 *)(param_1 + 200) = *(undefined4 *)(param_2 + 0x10);
 
-  *(undefined4 *)&obj->field_0xcc = *(undefined4 *)(in_stack_00000008 + 0x14);
+  *(undefined4 *)(param_1 + 0xcc) = *(undefined4 *)(param_2 + 0x14);
 
-  *(undefined4 *)&obj->field_0xd0 = *(undefined4 *)(in_stack_00000008 + 0x18);
+  *(undefined4 *)(param_1 + 0xd0) = *(undefined4 *)(param_2 + 0x18);
 
-  *(undefined4 *)&obj->field_0xc4 = *(undefined4 *)(in_stack_00000008 + 0x1c);
+  *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(param_2 + 0x1c);
 
-  obj->acc_popup_pre_logic = *(dword *)(in_stack_00000008 + 0x20);
+  *(undefined4 *)(param_1 + 0x1d4) = *(undefined4 *)(param_2 + 0x20);
 
-  *(undefined4 *)&obj->field_0xe8 = *(undefined4 *)(in_stack_00000008 + 0x2c);
+  *(undefined4 *)(param_1 + 0xe8) = *(undefined4 *)(param_2 + 0x2c);
 
-  obj->acc_grenade_do_bounce = *(dword *)(in_stack_00000008 + 0x30);
+  *(undefined4 *)(param_1 + 0x174) = *(undefined4 *)(param_2 + 0x30);
 
-  obj->acc_minishop_use_icon = *(dword *)(in_stack_00000008 + 0x24);
+  *(undefined4 *)(param_1 + 0xf8) = *(undefined4 *)(param_2 + 0x24);
 
-  obj->gap_FC = *(dword *)(in_stack_00000008 + 0x28);
+  *(undefined4 *)(param_1 + 0xfc) = *(undefined4 *)(param_2 + 0x28);
 
-  FUN_00499280(obj);
+  FUN_00499280(param_1);
 
-  return obj;
+  return param_1;
 
 }
 
@@ -7073,17 +7055,11 @@ code_r0x0043b744:
 }
 
 /* ===== wredit_menu_5 @ 0x0043B770 ===== */
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
 void wredit_menu_5(int param_1)
 
 
 
 {
-
-  OBJECT *obj;
 
   undefined *puVar1;
 
@@ -7101,11 +7077,7 @@ void wredit_menu_5(int param_1)
 
   int iVar8;
 
-  OBJECT *pOVar9;
-
-  char *pcVar10;
-
-  undefined1 *puVar11;
+  char *pcVar9;
 
   undefined1 auStack_100 [256];
 
@@ -7221,17 +7193,17 @@ void wredit_menu_5(int param_1)
 
       if (DAT_0059cbd8 == 0) {
 
-        pcVar10 = s_New_Object_Group_Selection_00557178;
+        pcVar9 = s_New_Object_Group_Selection_00557178;
 
       }
 
       else {
 
-        pcVar10 = s_Modify_Object_Type___Group_0055715c;
+        pcVar9 = s_Modify_Object_Type___Group_0055715c;
 
       }
 
-      main_dlog_004273b0(DAT_0059cd50,0,0x3f000000,0x3f800000,0x88000000,pcVar10);
+      main_dlog_004273b0(DAT_0059cd50,0,0x3f000000,0x3f800000,0x88000000,pcVar9);
 
       main_dlog_00427e80(DAT_0059cd50,1,0x3f000000,0x40400000,0x88000022);
 
@@ -7269,7 +7241,7 @@ void wredit_menu_5(int param_1)
 
         iVar5 = DAT_0059cd2c + 4 + DAT_0059cd3c * 0x24;
 
-        pcVar10 = s_New_Object_of_Group__s_00557144;
+        pcVar9 = s_New_Object_of_Group__s_00557144;
 
       }
 
@@ -7277,11 +7249,11 @@ void wredit_menu_5(int param_1)
 
         iVar5 = DAT_0059cd2c + 4 + DAT_0059cd3c * 0x24;
 
-        pcVar10 = s_Modify_Object_of_Group__s_00557128;
+        pcVar9 = s_Modify_Object_of_Group__s_00557128;
 
       }
 
-      FUN_00542f27(auStack_100,pcVar10,iVar5);
+      FUN_00542f27(auStack_100,pcVar9,iVar5);
 
       main_dlog_00427890(DAT_0059cd54,0,0x3f000000,0x3f800000,0x88000000,auStack_100);
 
@@ -7291,33 +7263,33 @@ void wredit_menu_5(int param_1)
 
       iVar5 = 0;
 
-      iVar7 = 0;
+      iVar6 = 0;
 
       if (0 < DAT_0059cd34) {
 
-        iVar6 = 0;
+        iVar7 = 0;
 
         do {
 
-          iVar2 = FUN_00497d70(*(undefined4 *)(iVar6 + DAT_0059cd30));
+          iVar2 = FUN_00497d70(*(undefined4 *)(iVar7 + DAT_0059cd30));
 
           if (*(byte *)(iVar2 + 0x1f6) == DAT_0059cd3c) {
 
-            main_dlog_00428140(DAT_0059cd54,1,iVar6 + 4 + DAT_0059cd30,iVar8);
+            main_dlog_00428140(DAT_0059cd54,1,iVar7 + 4 + DAT_0059cd30,iVar8);
 
-            if (*(int *)(iVar6 + DAT_0059cd30) == DAT_0059cd40) {
+            if (*(int *)(iVar7 + DAT_0059cd30) == DAT_0059cd40) {
 
-              iVar5 = iVar7;
+              iVar5 = iVar6;
 
             }
 
-            iVar7 = iVar7 + 1;
+            iVar6 = iVar6 + 1;
 
           }
 
           iVar8 = iVar8 + 1;
 
-          iVar6 = iVar6 + 0x24;
+          iVar7 = iVar7 + 0x24;
 
         } while (iVar8 < DAT_0059cd34);
 
@@ -7353,11 +7325,11 @@ void wredit_menu_5(int param_1)
 
       else {
 
-        obj = *(OBJECT **)(DAT_0059cbd8 + 0x38);
+        iVar5 = *(int *)(DAT_0059cbd8 + 0x38);
 
         DAT_0059cd60 = main_dlog_00427150();
 
-        uVar3 = main_editor_0043aa00(obj->field_4);
+        uVar3 = main_editor_0043aa00(*(undefined4 *)(iVar5 + 4));
 
         FUN_00542f27(auStack_100,s_Flick_exclusions_on_Object__s_005574cc,uVar3);
 
@@ -7367,7 +7339,7 @@ void wredit_menu_5(int param_1)
 
         wredit_00428050(DAT_0059cd60,1,0x14);
 
-        iVar5 = 0;
+        iVar6 = 0;
 
         iVar7 = 0;
 
@@ -7375,19 +7347,11 @@ void wredit_menu_5(int param_1)
 
           if (*(char *)(iVar8 + 0x210 + DAT_006330e4) != '\0') {
 
-            puVar11 = auStack_100;
+            iVar6 = iVar6 + 1;
 
-            iVar5 = iVar5 + 1;
+            wredit_flick_list2(iVar5,iVar6,iVar7,auStack_100);
 
-            pOVar9 = obj;
-
-            iVar6 = iVar5;
-
-            iVar2 = iVar7;
-
-            wredit_flick_list2(obj);
-
-            main_dlog_00428140(DAT_0059cd60,1,auStack_100,iVar7,pOVar9,iVar6,iVar2,puVar11);
+            main_dlog_00428140(DAT_0059cd60,1,auStack_100,iVar7);
 
           }
 
@@ -7397,7 +7361,7 @@ void wredit_menu_5(int param_1)
 
         } while (iVar8 < 0x1000);
 
-        if (iVar5 == 0) {
+        if (iVar6 == 0) {
 
           main_dlog_00428140(DAT_0059cd60,1,s__No_Flicks_for_World__005574b4,0xffffffff);
 
@@ -7458,13 +7422,7 @@ void wredit_menu_5(int param_1)
 }
 
 /* ===== wredit_flick_list2 @ 0x0043BCC0 ===== */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
-void wredit_flick_list2(OBJECT *obj)
+void wredit_flick_list2(int param_1,undefined4 param_2,int param_3,undefined4 param_4)
 
 
 
@@ -7476,31 +7434,29 @@ void wredit_flick_list2(OBJECT *obj)
 
   uint uVar3;
 
-  int in_stack_0000000c;
-
   
 
-  bVar2 = (byte)in_stack_0000000c;
+  bVar2 = (byte)param_3;
 
-  if (in_stack_0000000c < 0x20) {
+  if (param_3 < 0x20) {
 
-    uVar1 = *(uint *)&obj->field_0x2e8;
+    uVar1 = *(uint *)(param_1 + 0x2e8);
 
     uVar3 = 1 << (bVar2 & 0x1f);
 
   }
 
-  else if (in_stack_0000000c < 0x40) {
+  else if (param_3 < 0x40) {
 
     uVar1 = 1 << (bVar2 - 0x20 & 0x1f);
 
-    uVar3 = obj->field_2EC;
+    uVar3 = *(uint *)(param_1 + 0x2ec);
 
   }
 
   else {
 
-    if (in_stack_0000000c < 0x60) {
+    if (param_3 < 0x60) {
 
       bVar2 = bVar2 - 0x40;
 
@@ -7508,7 +7464,7 @@ void wredit_flick_list2(OBJECT *obj)
 
     else {
 
-      if (0x7f < in_stack_0000000c) goto LAB_0043bd4f;
+      if (0x7f < param_3) goto LAB_0043bd4f;
 
       bVar2 = bVar2 + 0xa0;
 
@@ -7516,13 +7472,13 @@ void wredit_flick_list2(OBJECT *obj)
 
     uVar1 = 1 << (bVar2 & 0x1f);
 
-    uVar3 = obj->field_2F0;
+    uVar3 = *(uint *)(param_1 + 0x2f0);
 
   }
 
   if ((uVar1 & uVar3) != 0) {
 
-    FUN_00542f27();
+    FUN_00542f27(param_4,s__d___Out____s_005574fc,param_2,param_3 * 0x20 + 0x210 + DAT_006330e4);
 
     return;
 
@@ -7530,7 +7486,7 @@ void wredit_flick_list2(OBJECT *obj)
 
 LAB_0043bd4f:
 
-  FUN_00542f27();
+  FUN_00542f27(param_4,s__d___In____s_005574ec,param_2,param_3 * 0x20 + 0x210 + DAT_006330e4);
 
   return;
 
@@ -7716,10 +7672,6 @@ LAB_0043bed3:
 }
 
 /* ===== wredit_flick_list @ 0x0043BF40 ===== */
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
 void wredit_flick_list(void)
 
 
@@ -7732,21 +7684,17 @@ void wredit_flick_list(void)
 
   int iVar3;
 
-  byte bVar4;
+  int iVar4;
 
   byte bVar5;
 
-  uint uVar6;
+  byte bVar6;
 
   uint uVar7;
 
-  int iVar8;
-
-  OBJECT *obj;
+  uint uVar8;
 
   char *pcVar9;
-
-  undefined1 *puVar10;
 
   undefined1 local_c8 [200];
 
@@ -7862,119 +7810,115 @@ void wredit_flick_list(void)
 
   if (DAT_00632aa8 == '\0') {
 
-    if ((DAT_00632aaa == '\0') || (iVar2 = main_dlog_00427310(DAT_0059cd60), iVar2 != 1))
+    if ((DAT_00632aaa == '\0') || (iVar3 = main_dlog_00427310(DAT_0059cd60), iVar3 != 1))
 
     goto LAB_0043c17b;
 
-    iVar2 = wredit_00428460(DAT_0059cd60,1);
+    iVar3 = wredit_00428460(DAT_0059cd60,1);
 
-    iVar8 = iVar2 + 1;
+    iVar4 = wredit_00428670(DAT_0059cd60,1,iVar3);
 
-    iVar3 = wredit_00428670(DAT_0059cd60,1,iVar2);
+    if (iVar4 < 0) goto LAB_0043c17b;
 
-    if (iVar3 < 0) goto LAB_0043c17b;
+    iVar2 = *(int *)(DAT_0059cbd8 + 0x38);
 
-    obj = *(OBJECT **)(DAT_0059cbd8 + 0x38);
+    bVar6 = (byte)iVar4;
 
-    bVar5 = (byte)iVar3;
+    if (iVar4 < 0x20) {
 
-    if (iVar3 < 0x20) {
-
-      *(uint *)&obj->field_0x2e8 = *(uint *)&obj->field_0x2e8 ^ 1 << (bVar5 & 0x1f);
+      *(uint *)(iVar2 + 0x2e8) = *(uint *)(iVar2 + 0x2e8) ^ 1 << (bVar6 & 0x1f);
 
     }
 
-    else if (iVar3 < 0x40) {
+    else if (iVar4 < 0x40) {
 
-      obj->field_2EC = obj->field_2EC ^ 1 << (bVar5 - 0x20 & 0x1f);
+      *(uint *)(iVar2 + 0x2ec) = *(uint *)(iVar2 + 0x2ec) ^ 1 << (bVar6 - 0x20 & 0x1f);
 
     }
 
     else {
 
-      if (iVar3 < 0x60) {
+      if (iVar4 < 0x60) {
 
-        bVar5 = bVar5 - 0x40;
+        bVar6 = bVar6 - 0x40;
 
       }
 
       else {
 
-        if (0x7f < iVar3) goto LAB_0043c158;
+        if (0x7f < iVar4) goto LAB_0043c158;
 
-        bVar5 = bVar5 + 0xa0;
+        bVar6 = bVar6 + 0xa0;
 
       }
 
-      obj->field_2F0 = obj->field_2F0 ^ 1 << (bVar5 & 0x1f);
+      *(uint *)(iVar2 + 0x2f0) = *(uint *)(iVar2 + 0x2f0) ^ 1 << (bVar6 & 0x1f);
 
     }
 
 LAB_0043c158:
 
-    puVar10 = local_c8;
+    wredit_flick_list2(iVar2,iVar3 + 1,iVar4,local_c8);
 
-    wredit_flick_list2(obj);
-
-    main_dlog_004286c0(DAT_0059cd60,1,iVar2,local_c8,obj,iVar8,iVar3,puVar10);
+    main_dlog_004286c0(DAT_0059cd60,1,iVar3,local_c8);
 
     goto LAB_0043c17b;
 
   }
 
-  iVar2 = wredit_00428460(DAT_0059cd60,1);
+  iVar3 = wredit_00428460(DAT_0059cd60,1);
 
-  iVar3 = wredit_00428670(DAT_0059cd60,1,iVar2);
+  iVar4 = wredit_00428670(DAT_0059cd60,1,iVar3);
 
-  if (iVar3 < 0) goto LAB_0043c17b;
+  if (iVar4 < 0) goto LAB_0043c17b;
 
-  iVar8 = *(int *)(DAT_0059cbd8 + 0x38);
+  iVar2 = *(int *)(DAT_0059cbd8 + 0x38);
 
-  bVar5 = (byte)iVar3;
+  bVar6 = (byte)iVar4;
 
-  if (iVar3 < 0x20) {
+  if (iVar4 < 0x20) {
 
-    *(uint *)(iVar8 + 0x2e8) = *(uint *)(iVar8 + 0x2e8) ^ 1 << (bVar5 & 0x1f);
+    *(uint *)(iVar2 + 0x2e8) = *(uint *)(iVar2 + 0x2e8) ^ 1 << (bVar6 & 0x1f);
 
   }
 
-  else if (iVar3 < 0x40) {
+  else if (iVar4 < 0x40) {
 
-    *(uint *)(iVar8 + 0x2ec) = *(uint *)(iVar8 + 0x2ec) ^ 1 << (bVar5 - 0x20 & 0x1f);
+    *(uint *)(iVar2 + 0x2ec) = *(uint *)(iVar2 + 0x2ec) ^ 1 << (bVar6 - 0x20 & 0x1f);
 
   }
 
   else {
 
-    if (iVar3 < 0x60) {
+    if (iVar4 < 0x60) {
 
-      bVar4 = bVar5 - 0x40;
+      bVar5 = bVar6 - 0x40;
 
     }
 
     else {
 
-      if (0x7f < iVar3) goto LAB_0043c004;
+      if (0x7f < iVar4) goto LAB_0043c004;
 
-      bVar4 = bVar5 + 0xa0;
+      bVar5 = bVar6 + 0xa0;
 
     }
 
-    *(uint *)(iVar8 + 0x2f0) = *(uint *)(iVar8 + 0x2f0) ^ 1 << (bVar4 & 0x1f);
+    *(uint *)(iVar2 + 0x2f0) = *(uint *)(iVar2 + 0x2f0) ^ 1 << (bVar5 & 0x1f);
 
   }
 
 LAB_0043c004:
 
-  if (iVar3 < 0x20) {
+  if (iVar4 < 0x20) {
 
-    uVar6 = 1 << (bVar5 & 0x1f);
+    uVar7 = 1 << (bVar6 & 0x1f);
 
-    uVar7 = *(uint *)(iVar8 + 0x2e8);
+    uVar8 = *(uint *)(iVar2 + 0x2e8);
 
 LAB_0043c056:
 
-    if ((uVar7 & uVar6) == 0) goto LAB_0043c075;
+    if ((uVar8 & uVar7) == 0) goto LAB_0043c075;
 
     pcVar9 = s__d___Out____s_005574fc;
 
@@ -7982,33 +7926,33 @@ LAB_0043c056:
 
   else {
 
-    if (iVar3 < 0x40) {
+    if (iVar4 < 0x40) {
 
-      uVar7 = 1 << (bVar5 - 0x20 & 0x1f);
+      uVar8 = 1 << (bVar6 - 0x20 & 0x1f);
 
-      uVar6 = *(uint *)(iVar8 + 0x2ec);
+      uVar7 = *(uint *)(iVar2 + 0x2ec);
 
       goto LAB_0043c056;
 
     }
 
-    if (iVar3 < 0x60) {
+    if (iVar4 < 0x60) {
 
-      bVar5 = bVar5 - 0x40;
+      bVar6 = bVar6 - 0x40;
 
 LAB_0043c049:
 
-      uVar7 = 1 << (bVar5 & 0x1f);
+      uVar8 = 1 << (bVar6 & 0x1f);
 
-      uVar6 = *(uint *)(iVar8 + 0x2f0);
+      uVar7 = *(uint *)(iVar2 + 0x2f0);
 
       goto LAB_0043c056;
 
     }
 
-    if (iVar3 < 0x80) {
+    if (iVar4 < 0x80) {
 
-      bVar5 = bVar5 + 0xa0;
+      bVar6 = bVar6 + 0xa0;
 
       goto LAB_0043c049;
 
@@ -8020,9 +7964,9 @@ LAB_0043c075:
 
   }
 
-  FUN_00542f27(local_c8,pcVar9,iVar2 + 1,iVar3 * 0x20 + 0x210 + DAT_006330e4);
+  FUN_00542f27(local_c8,pcVar9,iVar3 + 1,iVar4 * 0x20 + 0x210 + DAT_006330e4);
 
-  main_dlog_004286c0(DAT_0059cd60,1,iVar2,local_c8);
+  main_dlog_004286c0(DAT_0059cd60,1,iVar3,local_c8);
 
 LAB_0043c17b:
 
@@ -8048,13 +7992,13 @@ LAB_0043c17b:
 
     }
 
-    iVar2 = (int)&DAT_0059cbb4 - (int)pcVar9;
+    iVar3 = (int)&DAT_0059cbb4 - (int)pcVar9;
 
     do {
 
       cVar1 = *pcVar9;
 
-      pcVar9[iVar2] = cVar1;
+      pcVar9[iVar3] = cVar1;
 
       pcVar9 = pcVar9 + 1;
 
@@ -8066,35 +8010,35 @@ LAB_0043c17b:
 
   }
 
-  iVar2 = (int)*DAT_0059cd48;
+  iVar3 = (int)*DAT_0059cd48;
 
-  if (iVar2 != 0) {
+  if (iVar3 != 0) {
 
     DAT_0059cd48 = DAT_0059cd48 + 1;
 
-    if ((iVar2 < 0x31) || (0x39 < iVar2)) {
+    if ((iVar3 < 0x31) || (0x39 < iVar3)) {
 
-      if ((iVar2 < 0x41) || (0x5a < iVar2)) {
+      if ((iVar3 < 0x41) || (0x5a < iVar3)) {
 
-        if (iVar2 < 0x61) {
-
-          return;
-
-        }
-
-        if (0x7a < iVar2) {
+        if (iVar3 < 0x61) {
 
           return;
 
         }
 
-        iVar2 = iVar2 + -0x57;
+        if (0x7a < iVar3) {
+
+          return;
+
+        }
+
+        iVar3 = iVar3 + -0x57;
 
       }
 
       else {
 
-        iVar2 = iVar2 + -0x37;
+        iVar3 = iVar3 + -0x37;
 
       }
 
@@ -8102,13 +8046,13 @@ LAB_0043c17b:
 
     else {
 
-      iVar2 = iVar2 + -0x30;
+      iVar3 = iVar3 + -0x30;
 
     }
 
-    if (iVar2 != 0) {
+    if (iVar3 != 0) {
 
-      wredit_flick_list3(iVar2);
+      wredit_flick_list3(iVar3);
 
     }
 
@@ -8758,10 +8702,6 @@ void wredit_menu_6(void)
 }
 
 /* ===== wredit_menu_7 @ 0x0043CAA0 ===== */
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
 void wredit_menu_7(int param_1)
 
 
@@ -8769,8 +8709,6 @@ void wredit_menu_7(int param_1)
 {
 
   undefined4 *puVar1;
-
-  OBJECT *obj;
 
   int iVar2;
 
@@ -8786,11 +8724,7 @@ void wredit_menu_7(int param_1)
 
   int iVar8;
 
-  OBJECT *pOVar9;
-
-  char *pcVar10;
-
-  undefined1 *puVar11;
+  char *pcVar9;
 
   undefined1 auStack_100 [256];
 
@@ -8810,27 +8744,27 @@ void wredit_menu_7(int param_1)
 
   if (-1 < iVar2) {
 
-    iVar7 = *(int *)(DAT_0059cbd8 + 0x38);
+    iVar6 = *(int *)(DAT_0059cbd8 + 0x38);
 
     for (puVar1 = DAT_00632d68; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
-      iVar6 = puVar1[3];
+      iVar7 = puVar1[3];
 
-      if ((*(int *)(iVar6 + 0x210) == iVar7) && (*(int *)(iVar6 + 0x218) == DAT_0059cc34)) {
+      if ((*(int *)(iVar7 + 0x210) == iVar6) && (*(int *)(iVar7 + 0x218) == DAT_0059cc34)) {
 
-        if (*(int *)(iVar6 + 4) != DAT_0059cc30) {
+        if (*(int *)(iVar7 + 4) != DAT_0059cc30) {
 
-          *(undefined4 *)(iVar6 + 0x210) = 0;
+          *(undefined4 *)(iVar7 + 0x210) = 0;
 
-          FUN_00497510(iVar6);
+          FUN_00497510(iVar7);
 
-          iVar2 = FUN_00499030(iVar7,DAT_0059cc30,iVar2,DAT_0059cc34,0);
+          iVar2 = FUN_00499030(iVar6,DAT_0059cc30,iVar2,DAT_0059cc34,0);
 
           goto LAB_0043cb30;
 
         }
 
-        *(int *)(iVar6 + 0x214) = iVar2;
+        *(int *)(iVar7 + 0x214) = iVar2;
 
         goto LAB_0043cb4c;
 
@@ -8838,7 +8772,7 @@ void wredit_menu_7(int param_1)
 
     }
 
-    iVar2 = FUN_00499030(iVar7,DAT_0059cc30,iVar2,DAT_0059cc34,0);
+    iVar2 = FUN_00499030(iVar6,DAT_0059cc30,iVar2,DAT_0059cc34,0);
 
 LAB_0043cb30:
 
@@ -8922,17 +8856,17 @@ LAB_0043cb4c:
 
       if (DAT_0059cbd8 == 0) {
 
-        pcVar10 = s_New_Object_Group_Selection_00557178;
+        pcVar9 = s_New_Object_Group_Selection_00557178;
 
       }
 
       else {
 
-        pcVar10 = s_Modify_Object_Type___Group_0055715c;
+        pcVar9 = s_Modify_Object_Type___Group_0055715c;
 
       }
 
-      main_dlog_004273b0(DAT_0059cd50,0,0x3f000000,0x3f800000,0x88000000,pcVar10);
+      main_dlog_004273b0(DAT_0059cd50,0,0x3f000000,0x3f800000,0x88000000,pcVar9);
 
       main_dlog_00427e80(DAT_0059cd50,1,0x3f000000,0x40400000,0x88000022);
 
@@ -8972,7 +8906,7 @@ LAB_0043cb4c:
 
         iVar2 = DAT_0059cd2c + 4 + DAT_0059cd3c * 0x24;
 
-        pcVar10 = s_New_Object_of_Group__s_00557144;
+        pcVar9 = s_New_Object_of_Group__s_00557144;
 
       }
 
@@ -8980,11 +8914,11 @@ LAB_0043cb4c:
 
         iVar2 = DAT_0059cd2c + 4 + DAT_0059cd3c * 0x24;
 
-        pcVar10 = s_Modify_Object_of_Group__s_00557128;
+        pcVar9 = s_Modify_Object_of_Group__s_00557128;
 
       }
 
-      FUN_00542f27(auStack_100,pcVar10,iVar2);
+      FUN_00542f27(auStack_100,pcVar9,iVar2);
 
       main_dlog_00427890(DAT_0059cd54,0,0x3f000000,0x3f800000,0x88000000,auStack_100);
 
@@ -8994,33 +8928,33 @@ LAB_0043cb4c:
 
       iVar2 = 0;
 
-      iVar7 = 0;
+      iVar6 = 0;
 
       if (0 < DAT_0059cd34) {
 
-        iVar6 = 0;
+        iVar7 = 0;
 
         do {
 
-          iVar4 = FUN_00497d70(*(undefined4 *)(iVar6 + DAT_0059cd30));
+          iVar4 = FUN_00497d70(*(undefined4 *)(iVar7 + DAT_0059cd30));
 
           if (*(byte *)(iVar4 + 0x1f6) == DAT_0059cd3c) {
 
-            main_dlog_00428140(DAT_0059cd54,1,iVar6 + 4 + DAT_0059cd30,iVar8);
+            main_dlog_00428140(DAT_0059cd54,1,iVar7 + 4 + DAT_0059cd30,iVar8);
 
-            if (*(int *)(iVar6 + DAT_0059cd30) == DAT_0059cd40) {
+            if (*(int *)(iVar7 + DAT_0059cd30) == DAT_0059cd40) {
 
-              iVar2 = iVar7;
+              iVar2 = iVar6;
 
             }
 
-            iVar7 = iVar7 + 1;
+            iVar6 = iVar6 + 1;
 
           }
 
           iVar8 = iVar8 + 1;
 
-          iVar6 = iVar6 + 0x24;
+          iVar7 = iVar7 + 0x24;
 
         } while (iVar8 < DAT_0059cd34);
 
@@ -9056,11 +8990,11 @@ LAB_0043cb4c:
 
       }
 
-      obj = *(OBJECT **)(DAT_0059cbd8 + 0x38);
+      iVar2 = *(int *)(DAT_0059cbd8 + 0x38);
 
       DAT_0059cd60 = main_dlog_00427150();
 
-      uVar5 = main_editor_0043aa00(obj->field_4);
+      uVar5 = main_editor_0043aa00(*(undefined4 *)(iVar2 + 4));
 
       FUN_00542f27(auStack_100,s_Flick_exclusions_on_Object__s_005574cc,uVar5);
 
@@ -9070,7 +9004,7 @@ LAB_0043cb4c:
 
       wredit_00428050(DAT_0059cd60,1,0x14);
 
-      iVar2 = 0;
+      iVar6 = 0;
 
       iVar7 = 0;
 
@@ -9078,19 +9012,11 @@ LAB_0043cb4c:
 
         if (*(char *)(iVar8 + 0x210 + DAT_006330e4) != '\0') {
 
-          puVar11 = auStack_100;
+          iVar6 = iVar6 + 1;
 
-          iVar2 = iVar2 + 1;
+          wredit_flick_list2(iVar2,iVar6,iVar7,auStack_100);
 
-          pOVar9 = obj;
-
-          iVar6 = iVar2;
-
-          iVar4 = iVar7;
-
-          wredit_flick_list2(obj);
-
-          main_dlog_00428140(DAT_0059cd60,1,auStack_100,iVar7,pOVar9,iVar6,iVar4,puVar11);
+          main_dlog_00428140(DAT_0059cd60,1,auStack_100,iVar7);
 
         }
 
@@ -9100,7 +9026,7 @@ LAB_0043cb4c:
 
       } while (iVar8 < 0x1000);
 
-      if (iVar2 == 0) {
+      if (iVar6 == 0) {
 
         main_dlog_00428140(DAT_0059cd60,1,s__No_Flicks_for_World__005574b4,0xffffffff);
 

@@ -4619,7 +4619,7 @@ void gamespy_host_game(void)
 
     if (iVar1 != 0) {
 
-      FUN_004c4880(DAT_00632a88);
+      obj_snap_variant_a(DAT_00632a88);
 
     }
 
@@ -14228,13 +14228,9 @@ void FUN_0052f8f0(int param_1)
 /* ===== cam_mode_toggle @ 0x0052F980 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
 
-
-void cam_mode_toggle(OBJECT *obj)
+void cam_mode_toggle(int param_1,int param_2)
 
 
 
@@ -14244,19 +14240,19 @@ void cam_mode_toggle(OBJECT *obj)
 
   undefined4 *puVar2;
 
-  OBJECT *obj_00;
-
   int iVar3;
 
-  dword in_stack_00000008;
+  int iVar4;
+
+  int iVar5;
 
   undefined1 local_18;
 
-  dword local_17;
+  undefined4 local_17;
 
-  dword local_13;
+  int local_13;
 
-  dword local_f;
+  undefined4 local_f;
 
   undefined4 local_b;
 
@@ -14266,49 +14262,49 @@ void cam_mode_toggle(OBJECT *obj)
 
   
 
-  obj_00 = obj;
+  iVar5 = param_1;
 
-  obj->field_278 = 0;
+  *(undefined4 *)(param_1 + 0x278) = 0;
 
-  obj->acc_popup_pre_logic = 0;
+  *(undefined4 *)(param_1 + 0x1d4) = 0;
 
-  *(undefined4 *)&obj->field_0xcc = 0;
+  *(undefined4 *)(param_1 + 0xcc) = 0;
 
-  *(undefined4 *)&obj->field_0x210 = 0;
+  *(undefined4 *)(param_1 + 0x210) = 0;
 
-  *(undefined4 *)&obj->field_0x108 = 0;
+  *(undefined4 *)(param_1 + 0x108) = 0;
 
-  obj->field_184 = 0;
+  *(undefined4 *)(param_1 + 0x184) = 0;
 
-  obj->gap_128 = 0;
+  *(undefined4 *)(param_1 + 0x128) = 0;
 
-  *(undefined4 *)&obj->field_0x12c = 0;
+  *(undefined4 *)(param_1 + 300) = 0;
 
-  *(undefined4 *)&obj->field_0x130 = 0;
+  *(undefined4 *)(param_1 + 0x130) = 0;
 
-  obj->acc_army_platoon_base_attack = 0;
+  *(undefined4 *)(param_1 + 0x134) = 0;
 
-  obj->acc_TargetCenter = 0;
+  *(undefined4 *)(param_1 + 0x138) = 0;
 
-  obj->acc_TargetCenter = 0;
+  *(undefined4 *)(param_1 + 0x13c) = 0;
 
-  *(uint *)&obj->field_0xd8 = *(uint *)&obj->field_0xd8 & 0xbfffffff;
+  *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) & 0xbfffffff;
 
-  iVar3 = FUN_004a6160(obj);
+  iVar3 = FUN_004a6160(param_1);
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6180(obj_00);
+    iVar3 = FUN_004a6180(iVar5);
 
     puVar2 = DAT_00632d68;
 
     if (iVar3 != 0) {
 
-      puVar1 = *(uint **)&obj_00->field_0x100;
+      puVar1 = *(uint **)(iVar5 + 0x100);
 
-      *(uint *)&obj_00->field_0xc4 = puVar1[0x3eb];
+      *(uint *)(iVar5 + 0xc4) = puVar1[0x3eb];
 
-      iVar3 = FUN_00456050(obj_00);
+      iVar3 = FUN_00456050(iVar5);
 
       if (iVar3 != 0) {
 
@@ -14328,15 +14324,15 @@ void cam_mode_toggle(OBJECT *obj)
 
   else {
 
-    iVar3 = *(int *)&obj_00->field_0x100;
+    iVar3 = *(int *)(iVar5 + 0x100);
 
     FUN_00448920(*(undefined4 *)(iVar3 + 0xf4));
 
     *(undefined4 *)(iVar3 + 0xf4) = 0;
 
-    FUN_0047bdf0(obj_00);
+    FUN_0047bdf0(iVar5);
 
-    obj_00->field_E0 = obj_00->field_E0 & 0xffbfffff;
+    *(uint *)(iVar5 + 0xe0) = *(uint *)(iVar5 + 0xe0) & 0xffbfffff;
 
     *(undefined4 *)(iVar3 + 0x208) = 0;
 
@@ -14350,71 +14346,73 @@ void cam_mode_toggle(OBJECT *obj)
 
 LAB_0052fabe:
 
-      if (obj_00 == DAT_00632a88) {
+      if (iVar5 == DAT_00632a88) {
 
-        mission_0051a0c0(s_CamMode_00555a28,&obj);
+        mission_0051a0c0(s_CamMode_00555a28,&param_1);
 
-        FUN_0040d130(obj);
-
-      }
-
-      if ((obj_00->field_4 != in_stack_00000008) && (in_stack_00000008 != 0)) {
-
-        iVar3 = FUN_004a6160(obj_00);
-
-        if (iVar3 != 0) {
-
-          *(undefined4 *)(*(int *)&obj_00->field_0x100 + 0xd8) = 0;
-
-        }
-
-        iVar3 = FUN_004a6180(obj_00);
-
-        if (iVar3 != 0) {
-
-          *(undefined4 *)(*(int *)&obj_00->field_0x100 + 0xcfc) = 0;
-
-        }
-
-        FUN_004990c0(in_stack_00000008,obj_00->field_188);
+        FUN_0040d130(param_1);
 
       }
 
-      iVar3 = FUN_0052aa70();
+      iVar3 = param_2;
 
-      if ((iVar3 != 0) && (iVar3 = FUN_0052aa80(obj_00), iVar3 != 0)) {
+      if ((*(int *)(iVar5 + 4) != param_2) && (param_2 != 0)) {
 
-        FUN_004ea8c0(obj_00);
+        iVar4 = FUN_004a6160(iVar5);
 
-        FUN_00499280(obj_00);
+        if (iVar4 != 0) {
 
-        FUN_004a7440(obj_00);
+          *(undefined4 *)(*(int *)(iVar5 + 0x100) + 0xd8) = 0;
 
-        FUN_0049a1f0(obj_00);
+        }
+
+        iVar4 = FUN_004a6180(iVar5);
+
+        if (iVar4 != 0) {
+
+          *(undefined4 *)(*(int *)(iVar5 + 0x100) + 0xcfc) = 0;
+
+        }
+
+        FUN_004990c0(iVar3,*(undefined4 *)(iVar5 + 0x188));
+
+      }
+
+      iVar4 = FUN_0052aa70();
+
+      if ((iVar4 != 0) && (iVar4 = FUN_0052aa80(iVar5), iVar4 != 0)) {
+
+        FUN_004ea8c0(iVar5);
+
+        FUN_00499280(iVar5);
+
+        FUN_004a7440(iVar5);
+
+        FUN_0049a1f0(iVar5);
 
         _DAT_00632b60 = 0;
 
-        local_17 = obj_00->field_188;
+        local_17 = *(undefined4 *)(iVar5 + 0x188);
 
-        local_f = obj_00->gap_A0;
+        local_f = *(undefined4 *)(iVar5 + 0xa0);
 
-        local_b = *(undefined4 *)&obj_00->field_0xa4;
+        local_b = *(undefined4 *)(iVar5 + 0xa4);
 
-        local_7 = *(undefined4 *)&obj_00->field_0xa8;
+        local_7 = *(undefined4 *)(iVar5 + 0xa8);
 
         local_18 = 0x17;
 
-        local_13 = in_stack_00000008;
+        local_13 = iVar3;
 
         local_3 = 0;
 
-        iVar3 = FUN_0052aa70();
+        iVar5 = FUN_0052aa70();
 
-        if (iVar3 != 0) {
+        if (iVar5 != 0) {
 
-          iVar3 = FUN_0052c5c0();
+          iVar5 = FUN_0052c5c0();
 
-          if (iVar3 != 0) {
+          if (iVar5 != 0) {
 
             comm_0052b780(0,0x16,&local_18);
 
@@ -14434,7 +14432,7 @@ LAB_0052fabe:
 
     iVar3 = puVar2[3];
 
-    if ((*(int *)(iVar3 + 0x1e0) == 0x59) && (*(OBJECT **)(iVar3 + 0x210) == obj_00)) {
+    if ((*(int *)(iVar3 + 0x1e0) == 0x59) && (*(int *)(iVar3 + 0x210) == iVar5)) {
 
       *(undefined4 *)(iVar3 + 0x210) = 0;
 
@@ -14442,7 +14440,7 @@ LAB_0052fabe:
 
       *(undefined4 *)(iVar3 + 0x214) = 0;
 
-      if (obj_00->acc_grenade_do_bounce != 0) {
+      if (*(int *)(iVar5 + 0x174) != 0) {
 
         FUN_00497510(iVar3);
 
@@ -14621,13 +14619,7 @@ void FUN_0052fce0(int param_1)
 }
 
 /* ===== FUN_0052fd50 @ 0x0052FD50 ===== */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
-void FUN_0052fd50(OBJECT *obj)
+void FUN_0052fd50(int param_1)
 
 
 
@@ -14667,31 +14659,33 @@ void FUN_0052fd50(OBJECT *obj)
 
   if (iVar4 != 0) {
 
-    if (((obj->field_E0 & 8) != 0) && (obj->field_274 == 0)) {
+    if (((*(uint *)(param_1 + 0xe0) & 8) != 0) && (*(int *)(param_1 + 0x274) == 0)) {
 
-      obj->field_E0 = obj->field_E0 & 0xfffffff7;
+      *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfffffff7;
 
     }
 
-    local_14._1_3_ = (undefined3)obj->field_188;
+    local_14._1_3_ = (undefined3)*(undefined4 *)(param_1 + 0x188);
 
-    bVar3 = (byte)(obj->field_188 >> 0x18);
+    bVar3 = (byte)((uint)*(undefined4 *)(param_1 + 0x188) >> 0x18);
 
-    if ((obj->field_E0 & 8) != 0) {
+    if ((*(byte *)(param_1 + 0xe0) & 8) != 0) {
 
-      local_14 = CONCAT31(local_14._1_3_,(char)(obj->field_4 >> 0x18));
+      local_14 = CONCAT31(local_14._1_3_,(char)((uint)*(undefined4 *)(param_1 + 4) >> 0x18));
 
-      local_18 = CONCAT31((int3)obj->field_4,(*(int *)&obj->field_0xe8 == 10) * '\b' + ' ');
+      local_18 = CONCAT31((int3)*(undefined4 *)(param_1 + 4),
 
-      uVar1 = *(undefined4 *)(obj->field_274 + 0x188);
+                          (*(int *)(param_1 + 0xe8) == 10) * '\b' + ' ');
+
+      uVar1 = *(undefined4 *)(*(int *)(param_1 + 0x274) + 0x188);
 
       local_10._1_3_ = (undefined3)uVar1;
 
       local_10 = CONCAT31(local_10._1_3_,bVar3);
 
-      uVar2 = *(undefined4 *)(*(int *)&obj->field_0x100 + 0x18);
+      uVar2 = *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x18);
 
-      uStack_7 = obj->gap_E4 == 0x37;
+      uStack_7 = *(int *)(param_1 + 0xe4) == 0x37;
 
       local_c._1_3_ = (undefined3)uVar2;
 
@@ -14711,27 +14705,29 @@ void FUN_0052fd50(OBJECT *obj)
 
     }
 
-    iVar4 = *(int *)&obj->field_0x100;
+    iVar4 = *(int *)(param_1 + 0x100);
 
     local_8 = 0;
 
     uStack_7 = 0;
 
-    local_18 = CONCAT31((int3)obj->field_4,0x1a);
+    local_18 = CONCAT31((int3)*(undefined4 *)(param_1 + 4),0x1a);
 
-    local_14 = CONCAT31(local_14._1_3_,(char)(obj->field_4 >> 0x18));
+    local_14 = CONCAT31(local_14._1_3_,(char)((uint)*(undefined4 *)(param_1 + 4) >> 0x18));
 
     local_10 = (uint)bVar3;
 
     local_c = 0;
 
-    if ((*(int *)&obj->field_0x210 == 0) ||
+    if ((*(int *)(param_1 + 0x210) == 0) ||
 
-       (iVar5 = FUN_004a6160(*(int *)&obj->field_0x210), iVar5 == 0)) {
+       (iVar5 = FUN_004a6160(*(int *)(param_1 + 0x210)), iVar5 == 0)) {
 
-      if ((obj->field_274 != 0) && (iVar5 = FUN_004a6180(obj->field_274), iVar5 != 0)) {
+      if ((*(int *)(param_1 + 0x274) != 0) &&
 
-        local_c = *(uint *)(obj->field_274 + 0x188);
+         (iVar5 = FUN_004a6180(*(int *)(param_1 + 0x274)), iVar5 != 0)) {
+
+        local_c = *(uint *)(*(int *)(param_1 + 0x274) + 0x188);
 
         local_10._1_3_ = (undefined3)local_c;
 
@@ -14743,7 +14739,7 @@ void FUN_0052fd50(OBJECT *obj)
 
     else {
 
-      local_c = *(uint *)(*(int *)&obj->field_0x210 + 0x188);
+      local_c = *(uint *)(*(int *)(param_1 + 0x210) + 0x188);
 
       local_10._1_3_ = (undefined3)local_c;
 

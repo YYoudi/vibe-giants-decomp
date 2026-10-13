@@ -4,13 +4,7 @@
  */
 
 /* ===== reaper_finish_slow_follow__FP6OBJECTPUi @ 0x004C0010 ===== */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
-void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
+void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
 
 
@@ -22,7 +16,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
   int iVar3;
 
-  OBJECT *pOVar4;
+  int iVar4;
 
   int iVar5;
 
@@ -54,21 +48,21 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
   
 
-  pOVar4 = p0;
+  iVar4 = (int)param_1;
 
-  iVar2 = *(int *)&p0->field_0x100;
+  iVar2 = *(int *)((int)param_1 + 0x100);
 
-  p0->field_E0 = p0->field_E0 & 0xfffdffff;
+  *(uint *)((int)param_1 + 0xe0) = *(uint *)((int)param_1 + 0xe0) & 0xfffdffff;
 
   if (*(int *)(iVar2 + 0xf28) != 0) {
 
-    FUN_004a76e0(p0,0,local_5c + 3);
+    FUN_004a76e0(param_1,0,local_5c + 3);
 
     fVar10 = (float10)FUN_0050a400(local_5c + 3,*(int *)(iVar2 + 0xf28) + 0xa0);
 
     fVar11 = (float10)FUN_0050a490(local_5c + 3,*(int *)(iVar2 + 0xf28) + 0xa0);
 
-    p0 = (OBJECT *)((float)fVar10 - 90.0);
+    param_1 = (float)fVar10 - 90.0;
 
     iVar5 = FUN_004a8f50(0x12);
 
@@ -78,7 +72,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
       do {
 
-        FUN_0053e460(local_44,(float)fVar11,0,p0);
+        FUN_0053e460(local_44,(float)fVar11,0,param_1);
 
         local_34 = local_5c[3];
 
@@ -90,7 +84,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
         if (iVar5 == 1) {
 
-          local_5c[1] = FUN_004aa550(0x14,pOVar4->field_18C,pOVar4,0xfffffffe,local_44,
+          local_5c[1] = FUN_004aa550(0x14,*(undefined4 *)(iVar4 + 0x18c),iVar4,0xfffffffe,local_44,
 
                                      *(undefined4 *)(iVar2 + 0xf28));
 
@@ -98,7 +92,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
         else {
 
-          iVar6 = FUN_004aa550(0x12,pOVar4->field_18C,pOVar4,0xfffffffe,local_44,
+          iVar6 = FUN_004aa550(0x12,*(undefined4 *)(iVar4 + 0x18c),iVar4,0xfffffffe,local_44,
 
                                *(undefined4 *)(iVar2 + 0xf28));
 
@@ -106,21 +100,21 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
         }
 
-        iVar6 = FUN_0052e480(pOVar4);
+        iVar6 = FUN_0052e480(iVar4);
 
         if (iVar6 == 0) {
 
-          *(uint *)(local_5c[iVar5] + 0x188) = p1[iVar5];
+          *(undefined4 *)(local_5c[iVar5] + 0x188) = *(undefined4 *)(param_2 + iVar5 * 4);
 
         }
 
         piVar9 = local_5c + iVar5;
 
-        p0 = (OBJECT *)((float)p0 + 90.0);
+        param_1 = param_1 + 90.0;
 
         iVar5 = iVar5 + 1;
 
-        *(OBJECT **)(*piVar9 + 0x274) = pOVar4;
+        *(int *)(*piVar9 + 0x274) = iVar4;
 
       } while (iVar5 < 3);
 
@@ -166,7 +160,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
       } while (iVar8 < 3);
 
-      iVar8 = reaper_0052e4a0(pOVar4);
+      iVar8 = reaper_0052e4a0(iVar4);
 
       if (iVar8 != 0) {
 
@@ -176,11 +170,11 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
         local_5c[2] = *(int *)(iVar6 + 0x188);
 
-        reaper_00530bd0(pOVar4,0,3,0,0x1e,local_5c);
+        reaper_00530bd0(iVar4,0,3,0,0x1e,local_5c);
 
       }
 
-      sound_play_player(0x3a8,pOVar4);
+      sound_play_player(0x3a8,iVar4);
 
     }
 

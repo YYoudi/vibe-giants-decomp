@@ -4,93 +4,77 @@
  */
 
 /* ===== teammecc_create @ 0x005011F0 ===== */
-/* WARNING: Unknown calling convention -- yet parameter storage is locked */
-
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
 /* PS2 candidate: teammecc_create (conf 0.542) */
 
 
 
-void teammecc_create(OBJECT *obj)
+void teammecc_create(int param_1,int param_2)
 
 
 
 {
 
-  dword *pdVar1;
+  undefined4 *puVar1;
 
-  undefined4 *puVar2;
+  int iVar2;
 
-  dword dVar3;
-
-  OBJECT *obj_00;
+  int iVar3;
 
   int iVar4;
 
   float10 fVar5;
 
-  int in_stack_00000008;
-
-  OBJECT *pOVar6;
-
-  OBJECT *pOVar7;
-
-  OBJECT *pOVar8;
-
-  OBJECT *pOVar9;
-
   
 
-  if ((obj != (OBJECT *)0x0) && (obj->field_4 == 2)) {
+  if ((param_1 != 0) && (*(int *)(param_1 + 4) == 2)) {
 
-    if (obj->field_170 == 0) {
+    if (*(int *)(param_1 + 0x170) == 0) {
 
-      obj->acc_grenade_do_bounce = 0;
+      *(undefined4 *)(param_1 + 0x174) = 0;
 
-      puVar2 = (undefined4 *)
+      puVar1 = (undefined4 *)
 
                FUN_0053a700(0xd,0x138,&DAT_0057b5dc,s_C__Giants_source_main_teammecc_c_0057b5e4,
 
                             0x19d);
 
-      obj->field_170 = (dword)puVar2;
+      *(undefined4 **)(param_1 + 0x170) = puVar1;
 
       for (iVar4 = 0x4e; iVar4 != 0; iVar4 = iVar4 + -1) {
 
-        *puVar2 = 0;
+        *puVar1 = 0;
 
-        puVar2 = puVar2 + 1;
+        puVar1 = puVar1 + 1;
 
       }
 
-      *(undefined4 *)obj->field_170 = 1;
+      **(undefined4 **)(param_1 + 0x170) = 1;
 
-      if (((obj->field_4 == 2) && (dVar3 = obj->field_170, dVar3 != 0)) &&
+      if (((*(int *)(param_1 + 4) == 2) && (iVar4 = *(int *)(param_1 + 0x170), iVar4 != 0)) &&
 
-         (obj->acc_grenade_do_bounce == 0)) {
+         (*(int *)(param_1 + 0x174) == 0)) {
 
-        pdVar1 = &obj->gap_A0;
+        puVar1 = (undefined4 *)(param_1 + 0xa0);
 
-        fVar5 = (float10)FUN_0050a610(pdVar1,(dword *)(dVar3 + 0x18));
+        fVar5 = (float10)FUN_0050a610(puVar1,(undefined4 *)(iVar4 + 0x18));
 
         if ((float10)*(float *)(DAT_00632ed8 + 0x1020) * (float10)*(float *)(DAT_00632ed8 + 0x1020)
 
             < fVar5) {
 
-          *(undefined4 *)(dVar3 + 0x14) = *(undefined4 *)&obj->field_0xc8;
+          *(undefined4 *)(iVar4 + 0x14) = *(undefined4 *)(param_1 + 200);
 
-          *(dword *)(dVar3 + 8) = *pdVar1;
+          *(undefined4 *)(iVar4 + 8) = *puVar1;
 
-          *(undefined4 *)(dVar3 + 0xc) = *(undefined4 *)&obj->field_0xa4;
+          *(undefined4 *)(iVar4 + 0xc) = *(undefined4 *)(param_1 + 0xa4);
 
-          *(undefined4 *)(dVar3 + 0x10) = *(undefined4 *)&obj->field_0xa8;
+          *(undefined4 *)(iVar4 + 0x10) = *(undefined4 *)(param_1 + 0xa8);
 
-          *(dword *)(dVar3 + 0x18) = *pdVar1;
+          *(undefined4 *)(iVar4 + 0x18) = *puVar1;
 
-          *(undefined4 *)(dVar3 + 0x1c) = *(undefined4 *)&obj->field_0xa4;
+          *(undefined4 *)(iVar4 + 0x1c) = *(undefined4 *)(param_1 + 0xa4);
 
-          *(undefined4 *)(dVar3 + 0x20) = *(undefined4 *)&obj->field_0xa8;
+          *(undefined4 *)(iVar4 + 0x20) = *(undefined4 *)(param_1 + 0xa8);
 
         }
 
@@ -98,61 +82,53 @@ void teammecc_create(OBJECT *obj)
 
     }
 
-    dVar3 = FUN_00500fb0(obj);
+    iVar4 = FUN_00500fb0(param_1);
 
-    iVar4 = dVar3 - 1;
+    iVar2 = iVar4 + -1;
 
-    if (0 < in_stack_00000008) {
+    if (0 < param_2) {
 
       do {
 
-        obj_00 = (OBJECT *)object_allocate_type(obj->field_4,0x13);
+        iVar3 = object_allocate_type(*(undefined4 *)(param_1 + 4),0x13);
 
-        pOVar8 = obj_00;
+        object_copy_personality(iVar3,param_1);
 
-        pOVar9 = obj;
+        FUN_00497a50(iVar3,param_1);
 
-        object_copy_personality(obj_00);
+        *(undefined4 *)(*(int *)(iVar3 + 0x100) + 200) = 0;
 
-        pOVar6 = obj_00;
+        *(undefined4 *)(iVar3 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
-        pOVar7 = obj;
+        *(undefined4 *)(iVar3 + 0x170) = *(undefined4 *)(param_1 + 0x170);
 
-        FUN_00497a50(obj_00);
+        *(int *)(iVar3 + 0x174) = iVar4;
 
-        *(undefined4 *)(*(int *)&obj_00->field_0x100 + 200) = 0;
+        FUN_00502660(param_1,0,iVar4,iVar3 + 0xa0,iVar3 + 200);
 
-        obj_00->field_18C = obj->field_18C;
+        FUN_00499280(iVar3);
 
-        obj_00->field_170 = obj->field_170;
+        *(undefined4 *)(iVar3 + 0xec) = 0;
 
-        obj_00->acc_grenade_do_bounce = dVar3;
+        *(undefined1 **)(iVar3 + 0x16c) = &LAB_005013f0;
 
-        FUN_00502660(obj,0,dVar3,&obj_00->gap_A0,&obj_00->field_0xc8,pOVar6,pOVar7,pOVar8,pOVar9);
+        FUN_00413820(iVar3);
 
-        FUN_00499280(obj_00);
+        FUN_0049b8a0(iVar3);
 
-        *(undefined4 *)&obj_00->field_0xec = 0;
+        iVar4 = iVar4 + 1;
 
-        obj_00->field_16C = (dword)&LAB_005013f0;
+        *(uint *)(iVar3 + 0x1c8) = *(uint *)(iVar3 + 0x1c8) | 1;
 
-        FUN_00413820(obj_00);
+        *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x10000000;
 
-        FUN_0049b8a0(obj_00);
-
-        dVar3 = dVar3 + 1;
-
-        obj_00->acc_grenade_do_stopped = obj_00->acc_grenade_do_stopped | 1;
-
-        *(uint *)&obj_00->field_0xd8 = *(uint *)&obj_00->field_0xd8 | 0x10000000;
-
-      } while ((int)((-1 - iVar4) + dVar3) < in_stack_00000008);
+      } while ((-1 - iVar2) + iVar4 < param_2);
 
     }
 
-    *(int *)(obj->field_170 + 4) = iVar4 + in_stack_00000008;
+    *(int *)(*(int *)(param_1 + 0x170) + 4) = iVar2 + param_2;
 
-    teammecc_set_mode(obj,2,0);
+    teammecc_set_mode(param_1,2,0);
 
   }
 

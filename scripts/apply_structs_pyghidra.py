@@ -27,11 +27,23 @@ from ghidra.program.model.data import StructureDataType, DWordDataType, ByteData
 
 def main():
     layout = []
+    seen_off = set()
     for r in csv.DictReader(open(os.path.join(REPO, "ps2_symbols", "OBJECT_LAYOUT.csv"), encoding="utf-8")):
         off = r["offset"]
         if off.startswith("0x-"):       # negative offset (vtable-adjacent header) — skip
             continue
-        layout.append((int(off, 16), int(r["width"]), int(r["nfuncs"]), r["accessors"]))
+        o = int(off, 16)
+        layout.append((o, int(r["width"]), int(r["nfuncs"]), r["accessors"]))
+        seen_off.add(o)
+    # merge PC-mined offsets (cross-usage evidence) not covered by the PS2 pass
+    pcfile = os.path.join(REPO, "decompiled", "object_fields_pc.csv")
+    if os.path.exists(pcfile):
+        for r in csv.DictReader(open(pcfile, encoding="utf-8")):
+            o = int(r["offset"], 16)
+            if o not in seen_off:
+                layout.append((o, 4, int(r["pc_funcs"]), r["examples"]))
+                seen_off.add(o)
+        print(f"merged PC-mined offsets: {len(seen_off)} total")
     layout.sort()
     print(f"OBJECT mined fields: {len(layout)} (non-negative offsets)")
 

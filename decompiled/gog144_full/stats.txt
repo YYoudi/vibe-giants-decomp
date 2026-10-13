@@ -1,1 +1,1 @@
-total_nonthunk=2576 done=2576 failed=0 named=828 (32.1%) skipped_gt_maxva=0 va_range=0x401000..0x55001B
+total_nonthunk=2576 done=2576 failed=0 named=846 (32.8%) skipped_gt_maxva=0 va_range=0x401000..0x55001B

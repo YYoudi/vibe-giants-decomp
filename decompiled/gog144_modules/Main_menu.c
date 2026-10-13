@@ -87,10 +87,6 @@ void main_menu_00483200(int param_1,int param_2)
 }
 
 /* ===== main_menu_004832f0 @ 0x004832F0 ===== */
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
 void main_menu_004832f0(void)
 
 
@@ -241,11 +237,11 @@ void main_menu_004832f0(void)
 
   }
 
-  *(uint *)&DAT_0059ee98->field_0xd8 = *(uint *)&DAT_0059ee98->field_0xd8 & 0xffffffbf;
+  *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) & 0xffffffbf;
 
   FUN_004a6420(DAT_0059ee98);
 
-  if ((DAT_0059ee98->field_0xd8 & 0x40) == 0) {
+  if ((*(byte *)(DAT_0059ee98 + 0xd8) & 0x40) == 0) {
 
     FUN_004967b0(DAT_0059ee98);
 
@@ -255,7 +251,7 @@ void main_menu_004832f0(void)
 
     FUN_004a7440(DAT_0059ee98);
 
-    *(uint *)&DAT_0059ee98->field_0xd8 = *(uint *)&DAT_0059ee98->field_0xd8 | 0x20;
+    *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x20;
 
   }
 
