@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (28 named) — decompiled, names from PS2 symbols
+ * 145 functions (32 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3508,8 +3508,8 @@ undefined4 FUN_00454a40(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00454b10 @ 0x00454B10 ===== */
-void FUN_00454b10(int param_1,int param_2,int param_3)
+/* ===== reaper_bldg_check @ 0x00454B10 ===== */
+void reaper_bldg_check(int param_1,int param_2,int param_3)
 
 
 
@@ -3713,8 +3713,8 @@ void FUN_00454dc0(int param_1,uint param_2)
 
 }
 
-/* ===== FUN_00454e00 @ 0x00454E00 ===== */
-void FUN_00454e00(int param_1,undefined4 param_2,undefined4 param_3,byte *param_4)
+/* ===== reaper_spell_big @ 0x00454E00 ===== */
+void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *param_4)
 
 
 
@@ -3840,7 +3840,7 @@ void FUN_00454e00(int param_1,undefined4 param_2,undefined4 param_3,byte *param_
 
     if (iVar3 != 0) {
 
-      FUN_00454b10(param_1,1,*param_4);
+      reaper_bldg_check(param_1,1,*param_4);
 
       return;
 
@@ -3860,7 +3860,7 @@ void FUN_00454e00(int param_1,undefined4 param_2,undefined4 param_3,byte *param_
 
     if (iVar3 != 0) {
 
-      FUN_00454b10(param_1,0,*param_4);
+      reaper_bldg_check(param_1,0,*param_4);
 
       return;
 
@@ -5537,8 +5537,8 @@ int FUN_00456470(int param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== FUN_00456900 @ 0x00456900 ===== */
-void FUN_00456900(undefined4 param_1,int param_2,undefined4 param_3,int param_4)
+/* ===== reaper_spell_small @ 0x00456900 ===== */
+void reaper_spell_small(undefined4 param_1,int param_2,undefined4 param_3,int param_4)
 
 
 
@@ -11298,8 +11298,8 @@ undefined4 FUN_0045bd90(int param_1,float param_2,byte param_3)
 
 }
 
-/* ===== FUN_0045bf10 @ 0x0045BF10 ===== */
-void FUN_0045bf10(int param_1,int param_2,float *param_3)
+/* ===== reaper_spell_user @ 0x0045BF10 ===== */
+void reaper_spell_user(int param_1,int param_2,float *param_3)
 
 
 

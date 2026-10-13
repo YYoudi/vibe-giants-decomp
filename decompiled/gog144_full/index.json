@@ -3050,9 +3050,9 @@
   "len": 1497
  },
  "0x00454B10": {
-  "name": "FUN_00454b10",
-  "named": false,
-  "len": 1172
+  "name": "reaper_bldg_check",
+  "named": true,
+  "len": 1177
  },
  "0x00454D80": {
   "name": "FUN_00454d80",
@@ -3065,9 +3065,9 @@
   "len": 478
  },
  "0x00454E00": {
-  "name": "FUN_00454e00",
-  "named": false,
-  "len": 2590
+  "name": "reaper_spell_big",
+  "named": true,
+  "len": 2604
  },
  "0x00455070": {
   "name": "FUN_00455070",
@@ -3185,9 +3185,9 @@
   "len": 2737
  },
  "0x00456900": {
-  "name": "FUN_00456900",
-  "named": false,
-  "len": 889
+  "name": "reaper_spell_small",
+  "named": true,
+  "len": 895
  },
  "0x00456A10": {
   "name": "FUN_00456a10",
@@ -3500,9 +3500,9 @@
   "len": 773
  },
  "0x0045BF10": {
-  "name": "FUN_0045bf10",
-  "named": false,
-  "len": 1269
+  "name": "reaper_spell_user",
+  "named": true,
+  "len": 1274
  },
  "0x0045C3E0": {
   "name": "obj_lod_lerp_update",
@@ -6747,7 +6747,7 @@
  "0x004C5BF0": {
   "name": "reaper_lock_user_2",
   "named": true,
-  "len": 2261
+  "len": 2265
  },
  "0x004C5D80": {
   "name": "FUN_004c5d80",

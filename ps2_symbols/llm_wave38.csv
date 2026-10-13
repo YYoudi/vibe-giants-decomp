@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00454b10,FUN_00454B10,,reaper_bldg_check,0.9,llm-read21,
+00454e00,FUN_00454E00,,reaper_spell_big,0.9,llm-read21,
+00456900,FUN_00456900,,reaper_spell_small,0.9,llm-read21,
+0045bf10,FUN_0045BF10,,reaper_spell_user,0.9,llm-read21,

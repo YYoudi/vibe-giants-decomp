@@ -4386,7 +4386,7 @@ void reaper_lock_user_2(int param_1)
 
                 FUN_00530f10(iVar4,0,1,0,1,&param_1);
 
-                FUN_00454e00(iVar4,1,4,&param_1);
+                reaper_spell_big(iVar4,1,4,&param_1);
 
               }
 
