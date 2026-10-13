@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (70 named) — decompiled, names from PS2 symbols
+ * 100 functions (71 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -7054,12 +7054,12 @@ undefined4 FUN_004188a0(undefined4 param_1)
 
 }
 
-/* ===== FUN_004188e0 @ 0x004188E0 ===== */
+/* ===== base_has_partyhouse @ 0x004188E0 ===== */
 /* PS2 candidate: base_has_partyhouse (conf 0.394) */
 
 
 
-bool FUN_004188e0(int param_1)
+bool base_has_partyhouse(int param_1)
 
 
 
@@ -7120,7 +7120,7 @@ int base_find_closest(int param_1)
 
   
 
-  iVar2 = FUN_004a61e0(param_1);
+  iVar2 = ObjIsPlayer(param_1);
 
   puVar1 = DAT_00632d9c;
 

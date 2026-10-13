@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (90 named) — decompiled, names from PS2 symbols
+ * 145 functions (92 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1906,7 +1906,7 @@ void giftshopview_enable(int *param_1,int *param_2)
 
   else {
 
-    DAT_00656404 = FUN_004188e0(DAT_00632bbc);
+    DAT_00656404 = base_has_partyhouse(DAT_00632bbc);
 
   }
 
@@ -4283,12 +4283,12 @@ void ai_fly_update_goal_4(undefined4 param_1,undefined4 param_2,undefined4 param
 
 }
 
-/* ===== FUN_00455600 @ 0x00455600 ===== */
+/* ===== ground_get_z @ 0x00455600 ===== */
 /* PS2 candidate: ground_get_z (conf 0.399) */
 
 
 
-float10 FUN_00455600(float param_1)
+float10 ground_get_z(float param_1)
 
 
 
@@ -4516,14 +4516,16 @@ void project_cursor_to_ground(undefined4 param_1,undefined4 param_2,undefined4 p
 
 }
 
-/* ===== FUN_00455920 @ 0x00455920 ===== */
+/* ===== project_vector_to_object @ 0x00455920 ===== */
 /* PS2 candidate: project_vector_to_object (conf 0.398) */
 
 
 
-int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,float *param_5,
+int project_vector_to_object
 
-                float *param_6)
+              (code *param_1,undefined4 param_2,int *param_3,float *param_4,float *param_5,
+
+              float *param_6)
 
 
 
@@ -4744,7 +4746,7 @@ void project_cursor_to_object
 
   local_4 = puVar1[2];
 
-  puVar1 = (undefined4 *)FUN_00515dc0(2);
+  puVar1 = (undefined4 *)XFGetCameraAxis(2);
 
   local_18 = *puVar1;
 
@@ -4752,7 +4754,7 @@ void project_cursor_to_object
 
   local_10 = puVar1[2];
 
-  FUN_00455920(param_1,param_2,param_3,param_4,&local_c,&local_18);
+  project_vector_to_object(param_1,param_2,param_3,param_4,&local_c,&local_18);
 
   return;
 
@@ -9865,7 +9867,7 @@ void item_create_base_pickup(undefined4 *param_1,undefined4 param_2,int param_3)
 
   *(undefined4 *)(iVar2 + 0xa8) = param_1[2];
 
-  fVar3 = (float10)FUN_00455600((undefined4 *)(iVar2 + 0xa0));
+  fVar3 = (float10)ground_get_z((undefined4 *)(iVar2 + 0xa0));
 
   if ((float10)*(float *)(iVar2 + 0xa8) < fVar3) {
 
@@ -12937,7 +12939,7 @@ LAB_0045dd27:
 
           *(float *)(iVar7 + 0xc4) = *(float *)(iVar7 + 0xc4) * 3.0;
 
-          fVar9 = (float10)FUN_00455600((undefined4 *)(iVar4 + 0xa0));
+          fVar9 = (float10)ground_get_z((undefined4 *)(iVar4 + 0xa0));
 
           object_set_location(iVar7,*(undefined4 *)(iVar4 + 0xa0),*(undefined4 *)(iVar4 + 0xa4),
 
@@ -13733,7 +13735,7 @@ LAB_0045e789:
 
   if ((DAT_00632a88 == param_1) && (*(char *)(iVar4 + 0x228) != '\0')) {
 
-    pfVar7 = (float *)FUN_00515dc0(2);
+    pfVar7 = (float *)XFGetCameraAxis(2);
 
     *(float *)(iVar5 + 0x38) = *pfVar7;
 

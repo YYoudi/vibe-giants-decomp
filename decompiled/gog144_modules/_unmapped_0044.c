@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (57 named) — decompiled, names from PS2 symbols
+ * 76 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1233,7 +1233,7 @@ void wredit_spawn_object(void)
 
   DAT_00632a88 = object_allocate_type(2,0x80000000);
 
-  FUN_0049b8a0(DAT_00632a88);
+  object_setup_specialtype(DAT_00632a88);
 
   giftshopview_enable(0,0);
 
@@ -1718,7 +1718,7 @@ undefined4 scenerio_handle_music__FPv(float param_1)
 
         if (((((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0) &&
 
-             (iVar4 = FUN_004a61e0(iVar1), iVar4 != 0)) && (*(int *)(iVar1 + 0x210) == 0)) &&
+             (iVar4 = ObjIsPlayer(iVar1), iVar4 != 0)) && (*(int *)(iVar1 + 0x210) == 0)) &&
 
            (fVar7 = (float10)FUN_0050a610(iVar1 + 0xa0,iVar3 + 0xa0), fVar7 <= (float10)param_1)) {
 
@@ -1858,9 +1858,7 @@ void sound_3dpos_play(int param_1)
 
     iVar1 = puVar2[3];
 
-    if (((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0) && (iVar4 = FUN_004a61e0(iVar1), iVar4 != 0))
-
-    {
+    if (((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0) && (iVar4 = ObjIsPlayer(iVar1), iVar4 != 0)) {
 
       fVar5 = (float10)FUN_0050a610(iVar1 + 0xa0,param_1 + 0xa0);
 
@@ -3027,12 +3025,12 @@ void FUN_00443fb0(float param_1)
 
 }
 
-/* ===== FUN_004440f0 @ 0x004440F0 ===== */
+/* ===== FLK_FlickTextProcess__FP9FLK_Flick @ 0x004440F0 ===== */
 /* PS2 candidate: FLK_FlickTextProcess__FP9FLK_Flick (conf 0.399) */
 
 
 
-void FUN_004440f0(int param_1)
+void FLK_FlickTextProcess__FP9FLK_Flick(int param_1)
 
 
 
@@ -4368,7 +4366,7 @@ LAB_004451e2:
 
   }
 
-  FUN_004440f0();
+  FLK_FlickTextProcess__FP9FLK_Flick();
 
   wredit_text_fade(param_1);
 

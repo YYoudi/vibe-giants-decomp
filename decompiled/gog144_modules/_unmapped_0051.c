@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (110 named) — decompiled, names from PS2 symbols
+ * 186 functions (112 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -86,12 +86,12 @@ undefined4 FUN_005108f0(int param_1)
 
 }
 
-/* ===== FUN_00510f50 @ 0x00510F50 ===== */
+/* ===== evilreaper_gib__FP6OBJECTT0 @ 0x00510F50 ===== */
 /* PS2 candidate: evilreaper_gib__FP6OBJECTT0 (conf 0.382) */
 
 
 
-void FUN_00510f50(float param_1,float param_2)
+void evilreaper_gib__FP6OBJECTT0(float param_1,float param_2)
 
 
 
@@ -457,7 +457,7 @@ void vimp_animselect(int param_1)
 
       if (*(int *)(param_1 + 0x10) != 0x49) {
 
-        FUN_004967e0(param_1,0x49);
+        objanim_select_anim(param_1,0x49);
 
         return;
 
@@ -477,7 +477,7 @@ void vimp_animselect(int param_1)
 
       if (iVar3 == 5) {
 
-        FUN_004967e0(param_1,0x34);
+        objanim_select_anim(param_1,0x34);
 
         return;
 
@@ -493,7 +493,7 @@ void vimp_animselect(int param_1)
 
           if (iVar2 < 0x21) {
 
-            FUN_004967e0(param_1,0x20);
+            objanim_select_anim(param_1,0x20);
 
             return;
 
@@ -501,13 +501,13 @@ void vimp_animselect(int param_1)
 
           if (iVar2 < 0x42) {
 
-            FUN_004967e0(param_1,0x45);
+            objanim_select_anim(param_1,0x45);
 
             return;
 
           }
 
-          FUN_004967e0(param_1,0x46);
+          objanim_select_anim(param_1,0x46);
 
           return;
 
@@ -527,7 +527,7 @@ void vimp_animselect(int param_1)
 
         if (iVar3 == 3) {
 
-          FUN_004967e0(param_1,0x22);
+          objanim_select_anim(param_1,0x22);
 
           return;
 
@@ -4779,12 +4779,12 @@ undefined * XFGetCameraOrigin(void)
 
 }
 
-/* ===== FUN_00515dc0 @ 0x00515DC0 ===== */
+/* ===== XFGetCameraAxis @ 0x00515DC0 ===== */
 /* PS2 candidate: XFGetCameraAxis (conf 0.398) */
 
 
 
-undefined * FUN_00515dc0(int param_1)
+undefined * XFGetCameraAxis(int param_1)
 
 
 

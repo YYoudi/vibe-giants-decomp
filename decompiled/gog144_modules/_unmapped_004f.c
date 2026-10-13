@@ -1348,7 +1348,7 @@ void smartie_attach_to_base(int param_1,undefined4 param_2,undefined4 param_3)
 
   *(undefined4 *)(param_1 + 0x278) = 0;
 
-  iVar1 = FUN_004188e0(param_3);
+  iVar1 = base_has_partyhouse(param_3);
 
   if (iVar1 == 0) {
 

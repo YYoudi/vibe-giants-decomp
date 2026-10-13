@@ -6932,7 +6932,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     local_54 = pfVar5[2];
 
-    pfVar5 = (float *)FUN_00515dc0(2);
+    pfVar5 = (float *)XFGetCameraAxis(2);
 
     local_50 = *pfVar5;
 
@@ -7124,7 +7124,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     local_54 = (float)uStack_14;
 
-    iVar4 = FUN_00455920(0,param_1,SQRT((float)fVar11),&local_68,&local_5c,&local_50);
+    iVar4 = project_vector_to_object(0,param_1,SQRT((float)fVar11),&local_68,&local_5c,&local_50);
 
     if (iVar4 != 0) {
 
@@ -7226,7 +7226,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     local_54 = pfVar5[2];
 
-    pfVar5 = (float *)FUN_00515dc0(2);
+    pfVar5 = (float *)XFGetCameraAxis(2);
 
     local_50 = *pfVar5;
 
@@ -7342,7 +7342,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     local_60 = pfVar5[2];
 
-    pfVar5 = (float *)FUN_00515dc0(2);
+    pfVar5 = (float *)XFGetCameraAxis(2);
 
     local_50 = *pfVar5;
 
@@ -8513,7 +8513,7 @@ int audio_listener_update(undefined4 param_1,float param_2,float param_3,float p
 
   fVar3 = pfVar14[2];
 
-  pfVar14 = (float *)FUN_00515dc0(2);
+  pfVar14 = (float *)XFGetCameraAxis(2);
 
   fVar4 = *pfVar14;
 
@@ -8663,7 +8663,7 @@ void FUN_004bc880(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 
   uStack_48 = uStack_14;
 
-  FUN_00455920(param_2,param_3,param_4,param_5,&uStack_50,&fStack_5c);
+  project_vector_to_object(param_2,param_3,param_4,param_5,&uStack_50,&fStack_5c);
 
   return;
 
@@ -9132,7 +9132,7 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
     FUN_004a1bd0(param_1);
 
-    FUN_004a4360(param_1);
+    PhysicsExApplyLocation(param_1);
 
     fVar20 = (float10)FUN_00518b70(param_1,0);
 
@@ -11880,7 +11880,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
         if ((iVar3 != 0) &&
 
-           ((((((iVar3 = FUN_004a61e0(uVar6), iVar3 != 0 ||
+           ((((((iVar3 = ObjIsPlayer(uVar6), iVar3 != 0 ||
 
                 (iVar3 = *(int *)(uVar6 + 4), iVar3 == 0x29a)) || (iVar3 == 8)) ||
 

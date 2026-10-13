@@ -1,0 +1,24 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004967e0,FUN_004967e0,,objanim_select_anim,0.9,llm-w133,body-verified
+00455600,FUN_00455600,,ground_get_z,0.9,llm-w133,body-verified
+004440f0,FUN_004440f0,,FLK_FlickTextProcess__FP9FLK_Flick,0.9,llm-w133,body-verified flick
+00515dc0,FUN_00515dc0,,XFGetCameraAxis,0.9,llm-w133,body-verified axes ptr
+00455920,FUN_00455920,,project_vector_to_object,0.9,llm-w133,body-verified family
+004d4ae0,FUN_004d4ae0,,ripnest_move,0.9,llm-w133,body-verified
+0049df90,FUN_0049df90,,offspring_dive_release_target__FP6OBJECT,0.9,llm-w133,body-verified
+004188e0,FUN_004188e0,,base_has_partyhouse,0.9,llm-w133,body-verified bldg preds
+004ca890,FUN_004ca890,,evilreaper_scan_for_enemy__FP6OBJECTf,0.9,llm-w133,body-verified
+004d59d0,FUN_004d59d0,,rpboat_ghost_logic__FP6OBJECT,0.9,llm-w133,body-verified
+0049baa0,FUN_0049baa0,,object_destroy_specialtype,0.9,llm-w133,body-verified
+004aca20,FUN_004aca20,,sf_is_valid_target__FP6OBJECT,0.9,llm-w133,body-verified
+004e5640,FUN_004e5640,,fire_sniper_shot__FP6OBJECTT0,0.9,llm-w133,body-verified
+004791f0,FUN_004791f0,,MeccPhysicsExApplyLocation__FP6OBJECT,0.9,llm-w133,body-verified
+0049b8a0,FUN_0049b8a0,,object_setup_specialtype,0.9,llm-w133,body-verified model 0x54
+0046baf0,FUN_0046baf0,,kbos_attach_object,0.9,llm-w133,body-verified
+004789e0,FUN_004789e0,,getfirelockandgun__FP6OBJECTUcPP6OBJECTPi,0.9,llm-w133,body-verified
+0050af50,FUN_0050af50,,TurretFire__FP6OBJECTiT0P3P3D,0.9,llm-w133,body-verified
+004a5f40,FUN_004a5f40,,player_force_type,0.9,llm-w133,body-verified
+00510f50,FUN_00510f50,,evilreaper_gib__FP6OBJECTT0,0.9,llm-w133,body-verified
+004a4360,FUN_004a4360,,PhysicsExApplyLocation,0.9,llm-w133,body-verified
+004a61e0,FUN_004a61e0,,ObjIsPlayer,0.9,llm-w133,body-verified flag 0x1c8&1
+00536b20,FUN_00536b20,,multi_draw_health_bar_horizontal__FP6OBJECTff,0.9,llm-w133,body-verified HUD bar

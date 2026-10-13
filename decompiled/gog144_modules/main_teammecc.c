@@ -114,7 +114,7 @@ void teammecc_create(int param_1,int param_2)
 
         setMenuSelection__7PS2Gameiiii(iVar3);
 
-        FUN_0049b8a0(iVar3);
+        object_setup_specialtype(iVar3);
 
         iVar4 = iVar4 + 1;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (26 named) — decompiled, names from PS2 symbols
+ * 39 functions (28 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -274,7 +274,7 @@ void FUN_004d1a00(int param_1,float param_2)
 
             (*(float *)(iVar2 + 0x278) < *(float *)(iVar2 + 0x1c0))) &&
 
-           ((iVar3 = FUN_004a61e0(iVar2), iVar3 != 0 || (*(int *)(iVar2 + 0x1e0) == 0x55)))) &&
+           ((iVar3 = ObjIsPlayer(iVar2), iVar3 != 0 || (*(int *)(iVar2 + 0x1e0) == 0x55)))) &&
 
           (*(int *)(iVar2 + 4) != 0)) &&
 
@@ -3043,12 +3043,12 @@ void FUN_004d4a20(int param_1)
 
 }
 
-/* ===== FUN_004d4ae0 @ 0x004D4AE0 ===== */
+/* ===== ripnest_move @ 0x004D4AE0 ===== */
 /* PS2 candidate: ripnest_move (conf 0.394) */
 
 
 
-void FUN_004d4ae0(int param_1)
+void ripnest_move(int param_1)
 
 
 
@@ -3530,12 +3530,12 @@ void object_attach_target(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004d59d0 @ 0x004D59D0 ===== */
+/* ===== rpboat_ghost_logic__FP6OBJECT @ 0x004D59D0 ===== */
 /* PS2 candidate: rpboat_ghost_logic__FP6OBJECT (conf 0.391) */
 
 
 
-void FUN_004d59d0(int param_1)
+void rpboat_ghost_logic__FP6OBJECT(int param_1)
 
 
 
@@ -3581,7 +3581,7 @@ void FUN_004d59d0(int param_1)
 
               (float10)*(float *)(param_1 + 0xa8));
 
-  FUN_004a4360(param_1);
+  PhysicsExApplyLocation(param_1);
 
   *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffffbff;
 

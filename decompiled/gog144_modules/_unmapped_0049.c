@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (91 named) — decompiled, names from PS2 symbols
+ * 142 functions (95 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -1038,7 +1038,7 @@ void evilreaper_logic__FP6OBJECT(void)
 
 LAB_00491511:
 
-      iVar7 = FUN_004a61e0(uVar6);
+      iVar7 = ObjIsPlayer(uVar6);
 
       if (iVar7 == 0) {
 
@@ -1076,7 +1076,7 @@ LAB_0049153f:
 
         if (iVar7 != 0x23f) goto LAB_0049156a;
 
-        iVar7 = FUN_004a61e0(*(undefined4 *)(*(int *)(iVar9 + 0x100) + 0x28));
+        iVar7 = ObjIsPlayer(*(undefined4 *)(*(int *)(iVar9 + 0x100) + 0x28));
 
         if (iVar7 != 0) {
 
@@ -1092,7 +1092,7 @@ LAB_0049153f:
 
       }
 
-      iVar7 = FUN_004a61e0(*(undefined4 *)(*(int *)(iVar9 + 0x100) + 0x3c));
+      iVar7 = ObjIsPlayer(*(undefined4 *)(*(int *)(iVar9 + 0x100) + 0x3c));
 
       if (iVar7 != 0) {
 
@@ -2492,7 +2492,7 @@ LAB_00492458:
 
   }
 
-  FUN_004a5f40(iVar1);
+  player_force_type(iVar1);
 
   if ((((param_1 != 0) && (param_1 != 0xc)) && (param_1 != 5)) || (param_2 != (int *)0x0)) {
 
@@ -6912,12 +6912,12 @@ void FUN_004967b0(int param_1)
 
 }
 
-/* ===== FUN_004967e0 @ 0x004967E0 ===== */
+/* ===== objanim_select_anim @ 0x004967E0 ===== */
 /* PS2 candidate: objanim_select_anim (conf 0.399) */
 
 
 
-void FUN_004967e0(int param_1,int param_2)
+void objanim_select_anim(int param_1,int param_2)
 
 
 
@@ -8653,7 +8653,7 @@ LAB_00498087:
 
 LAB_00497f49:
 
-  FUN_004967e0(&DAT_0059f380,uVar4);
+  objanim_select_anim(&DAT_0059f380,uVar4);
 
   return;
 
@@ -8692,7 +8692,7 @@ void FUN_004981c0(int param_1)
 
   if ((*(uint *)(param_1 + 0x20c) & 0x100) != 0) {
 
-    FUN_004967e0(param_1,*(undefined4 *)(&DAT_0055caf8 + uVar4 * 4));
+    objanim_select_anim(param_1,*(undefined4 *)(&DAT_0055caf8 + uVar4 * 4));
 
     return;
 
@@ -8708,7 +8708,7 @@ void FUN_004981c0(int param_1)
 
     if (((*(uint *)(param_1 + 0xe0) & 0x10) != 0) || (*pcVar1 < '\0')) {
 
-      FUN_004967e0(param_1,*(undefined4 *)(&DAT_0055cae8 + uVar4 * 4));
+      objanim_select_anim(param_1,*(undefined4 *)(&DAT_0055cae8 + uVar4 * 4));
 
       return;
 
@@ -8716,7 +8716,7 @@ void FUN_004981c0(int param_1)
 
     if ((*(uint *)(param_1 + 0xe0) & 0x8000000) != 0) {
 
-      FUN_004967e0(param_1,0x18);
+      objanim_select_anim(param_1,0x18);
 
       return;
 
@@ -8817,7 +8817,7 @@ void FUN_004982c0(void)
 
     if ((DAT_0059f894 & 0x100) != 0) {
 
-      FUN_004967e0(&DAT_0059f688,*(undefined4 *)(&DAT_0055caf8 + uVar4 * 4));
+      objanim_select_anim(&DAT_0059f688,*(undefined4 *)(&DAT_0055caf8 + uVar4 * 4));
 
       goto LAB_0049841a;
 
@@ -8841,7 +8841,7 @@ LAB_00498377:
 
       if (((DAT_0059f768 & 0x10) != 0) || (*pcVar1 < '\0')) {
 
-        FUN_004967e0(&DAT_0059f688,*(undefined4 *)(&DAT_0055cae8 + uVar4 * 4));
+        objanim_select_anim(&DAT_0059f688,*(undefined4 *)(&DAT_0055cae8 + uVar4 * 4));
 
         goto LAB_0049841a;
 
@@ -8849,7 +8849,7 @@ LAB_00498377:
 
       if ((DAT_0059f768 & 0x8000000) != 0) {
 
-        FUN_004967e0(&DAT_0059f688,0x18);
+        objanim_select_anim(&DAT_0059f688,0x18);
 
         goto LAB_0049841a;
 
@@ -9179,7 +9179,7 @@ void weapon_id_check_big(int param_1)
 
   if ((*(uint *)(DAT_00632a88 + 0xe0) & 0x40000) != 0) {
 
-    FUN_004967e0(param_1,0x24);
+    objanim_select_anim(param_1,0x24);
 
     return;
 
@@ -9209,7 +9209,7 @@ LAB_00498ae1:
 
       iVar2 = FUN_004a8f90(uVar1);
 
-      FUN_004967e0(param_1,*(undefined4 *)(&DAT_0055cad0 + iVar2 * 4));
+      objanim_select_anim(param_1,*(undefined4 *)(&DAT_0055cad0 + iVar2 * 4));
 
       return;
 
@@ -9341,7 +9341,7 @@ LAB_00498a2c:
 
   iVar2 = FUN_004a8f90(uVar1);
 
-  FUN_004967e0(param_1,(&DAT_0055cab0)[iVar2]);
+  objanim_select_anim(param_1,(&DAT_0055cab0)[iVar2]);
 
   return;
 
@@ -9827,7 +9827,7 @@ void object_spawn_from_linkage(int param_1,uint param_2)
 
         *(uint *)(iVar1 + 0x188) = param_2;
 
-        FUN_0049b8a0(iVar1);
+        object_setup_specialtype(iVar1);
 
         FUN_00497520(iVar1);
 
@@ -9851,7 +9851,7 @@ LAB_004991da:
 
       if (*(int *)(iVar1 + 4) == param_1) goto LAB_004991da;
 
-      FUN_0049baa0(iVar1);
+      object_destroy_specialtype(iVar1);
 
       object_free_all_allocated_data(iVar1);
 
@@ -9865,7 +9865,7 @@ LAB_004991da:
 
       *(undefined4 *)(iVar1 + 0xe0) = 0;
 
-      FUN_0049b8a0(iVar1);
+      object_setup_specialtype(iVar1);
 
       *(uint *)(iVar1 + 0xdc) = *(uint *)(iVar1 + 0xdc) | 0x80000000;
 
@@ -9918,7 +9918,7 @@ void FUN_00499200(undefined4 param_1)
 
 {
 
-  FUN_0049baa0(param_1);
+  object_destroy_specialtype(param_1);
 
   object_destroy(param_1);
 
@@ -12164,12 +12164,12 @@ LAB_0049b871:
 
 }
 
-/* ===== FUN_0049b8a0 @ 0x0049B8A0 ===== */
+/* ===== object_setup_specialtype @ 0x0049B8A0 ===== */
 /* PS2 candidate: object_setup_specialtype (conf 0.388) */
 
 
 
-void FUN_0049b8a0(int param_1)
+void object_setup_specialtype(int param_1)
 
 
 
@@ -12293,12 +12293,12 @@ void FUN_0049b8a0(int param_1)
 
 }
 
-/* ===== FUN_0049baa0 @ 0x0049BAA0 ===== */
+/* ===== object_destroy_specialtype @ 0x0049BAA0 ===== */
 /* PS2 candidate: object_destroy_specialtype (conf 0.391) */
 
 
 
-void FUN_0049baa0(int param_1)
+void object_destroy_specialtype(int param_1)
 
 
 
@@ -13264,7 +13264,7 @@ void FUN_0049dd90(int param_1)
 
     iVar3 = puVar4[3];
 
-    iVar5 = FUN_004a61e0(iVar3);
+    iVar5 = ObjIsPlayer(iVar3);
 
     if ((((iVar5 != 0) || (*(int *)(iVar3 + 0x1e0) == 0x55)) &&
 
@@ -13381,12 +13381,12 @@ void FUN_0049de80(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0049df90 @ 0x0049DF90 ===== */
+/* ===== offspring_dive_release_target__FP6OBJECT @ 0x0049DF90 ===== */
 /* PS2 candidate: offspring_dive_release_target__FP6OBJECT (conf 0.394) */
 
 
 
-void FUN_0049df90(int param_1)
+void offspring_dive_release_target__FP6OBJECT(int param_1)
 
 
 
@@ -13408,7 +13408,7 @@ void FUN_0049df90(int param_1)
 
   if (*(int *)(param_1 + 0x274) != 0) {
 
-    FUN_0046baf0(param_1,*(int *)(param_1 + 0x274),0,1);
+    kbos_attach_object(param_1,*(int *)(param_1 + 0x274),0,1);
 
     *(undefined4 *)(iVar1 + 0x3c) = *(undefined4 *)(param_1 + 0x274);
 

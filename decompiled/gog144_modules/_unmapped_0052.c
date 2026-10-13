@@ -12923,7 +12923,7 @@ LAB_0052edc5:
 
     iVar9 = puVar2[3];
 
-    iVar8 = FUN_004a61e0(iVar9);
+    iVar8 = ObjIsPlayer(iVar9);
 
     if ((iVar8 != 0) && ((*(uint *)(iVar9 + 0x188) & 0xff) == uVar3)) break;
 

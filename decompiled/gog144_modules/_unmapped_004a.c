@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (86 named) — decompiled, names from PS2 symbols
+ * 131 functions (90 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3591,12 +3591,12 @@ LAB_004a431f:
 
 }
 
-/* ===== FUN_004a4360 @ 0x004A4360 ===== */
+/* ===== PhysicsExApplyLocation @ 0x004A4360 ===== */
 /* PS2 candidate: PhysicsExApplyLocation (conf 0.382) */
 
 
 
-void FUN_004a4360(int param_1)
+void PhysicsExApplyLocation(int param_1)
 
 
 
@@ -5407,12 +5407,12 @@ void FUN_004a5eb0(void)
 
 }
 
-/* ===== FUN_004a5f40 @ 0x004A5F40 ===== */
+/* ===== player_force_type @ 0x004A5F40 ===== */
 /* PS2 candidate: player_force_type (conf 0.383) */
 
 
 
-void FUN_004a5f40(int param_1)
+void player_force_type(int param_1)
 
 
 
@@ -5440,7 +5440,7 @@ void FUN_004a5f40(int param_1)
 
     }
 
-    FUN_0049baa0(DAT_00632a88);
+    object_destroy_specialtype(DAT_00632a88);
 
     object_free_all_allocated_data(DAT_00632a88);
 
@@ -5488,7 +5488,7 @@ void FUN_004a5f40(int param_1)
 
       object_copy_posdirinfo(DAT_00632a88);
 
-      FUN_0049b8a0(DAT_00632a88);
+      object_setup_specialtype(DAT_00632a88);
 
       anim_select_check(DAT_00632a88,1);
 
@@ -5673,12 +5673,12 @@ undefined4 FUN_004a61c0(int param_1)
 
 }
 
-/* ===== FUN_004a61e0 @ 0x004A61E0 ===== */
+/* ===== ObjIsPlayer @ 0x004A61E0 ===== */
 /* PS2 candidate: ObjIsPlayer (conf 0.381) */
 
 
 
-undefined4 FUN_004a61e0(int param_1)
+undefined4 ObjIsPlayer(int param_1)
 
 
 
@@ -9888,7 +9888,7 @@ bool obj_targetable_by_player(int param_1,int param_2)
 
   iVar2 = dialog_level_is_base();
 
-  if (((((iVar2 == 0) || (DAT_00632f20 == 0)) || (iVar2 = FUN_004a61e0(param_1), iVar2 == 0)) &&
+  if (((((iVar2 == 0) || (DAT_00632f20 == 0)) || (iVar2 = ObjIsPlayer(param_1), iVar2 == 0)) &&
 
       (((iVar2 = FUN_004a6220(param_1), iVar2 == 0 && (iVar2 = FUN_004a6300(param_1), iVar2 == 0))
 
@@ -10065,7 +10065,7 @@ undefined4 FUN_004aa9d0(int param_1,int param_2)
 
     iVar2 = dialog_level_is_base();
 
-    if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = FUN_004a61e0(param_1), iVar2 != 0)) ||
+    if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = ObjIsPlayer(param_1), iVar2 != 0)) ||
 
          ((iVar2 = FUN_004a6220(param_1), iVar2 != 0 || (iVar2 = FUN_004a6300(param_1), iVar2 != 0))
 
@@ -10118,7 +10118,7 @@ undefined4 MortarCollisionValid__FP6OBJECTi(int param_1,int param_2)
 
     iVar2 = dialog_level_is_base();
 
-    if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = FUN_004a61e0(param_1), iVar2 != 0)) ||
+    if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = ObjIsPlayer(param_1), iVar2 != 0)) ||
 
          ((iVar2 = FUN_004a6220(param_1), iVar2 != 0 || (iVar2 = FUN_004a6300(param_1), iVar2 != 0))
 
@@ -10126,7 +10126,7 @@ undefined4 MortarCollisionValid__FP6OBJECTi(int param_1,int param_2)
 
        (((*(int *)(param_1 + 4) != 0x325 || (*(int *)(param_1 + 0xe4) != 1)) &&
 
-        ((iVar2 = FUN_004a61e0(param_1), iVar2 == 0 || (*(int *)(param_1 + 0x18c) != param_2)))))) {
+        ((iVar2 = ObjIsPlayer(param_1), iVar2 == 0 || (*(int *)(param_1 + 0x18c) != param_2)))))) {
 
       return 1;
 
@@ -10574,7 +10574,7 @@ LAB_004ac24a:
 
     uVar5 = FUN_0052e5b0(*param_4);
 
-    FUN_004aca20(param_1,uVar5);
+    sf_is_valid_target__FP6OBJECT(param_1,uVar5);
 
     return;
 
@@ -11076,12 +11076,12 @@ LAB_004ac9df:
 
 }
 
-/* ===== FUN_004aca20 @ 0x004ACA20 ===== */
+/* ===== sf_is_valid_target__FP6OBJECT @ 0x004ACA20 ===== */
 /* PS2 candidate: sf_is_valid_target__FP6OBJECT (conf 0.39) */
 
 
 
-void FUN_004aca20(int param_1,int param_2)
+void sf_is_valid_target__FP6OBJECT(int param_1,int param_2)
 
 
 

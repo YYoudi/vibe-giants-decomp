@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (114 named) — decompiled, names from PS2 symbols
+ * 179 functions (115 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -2937,7 +2937,7 @@ void FUN_00531470(void)
 
                 if ((*(byte *)(iVar4 + 0x1c8) & 1) != 0) {
 
-                  FUN_0049baa0(iVar4);
+                  object_destroy_specialtype(iVar4);
 
                   object_destroy(iVar4);
 
@@ -3423,7 +3423,7 @@ LAB_005319de:
 
           *(undefined4 *)(iVar4 + 0x188) = *(undefined4 *)(pcVar15 + 5);
 
-          fVar13 = (float10)FUN_00455600((undefined4 *)(iVar4 + 0xa0));
+          fVar13 = (float10)ground_get_z((undefined4 *)(iVar4 + 0xa0));
 
           puVar2[2] = (uint)(float)(fVar13 + (float10)3.0);
 
@@ -5661,7 +5661,7 @@ LAB_00533b86:
 
              (*(int *)(iVar3 + 0x188) == *(int *)(param_1 + 0x1d))) {
 
-            FUN_0046baf0(iVar5,iVar3,1,*(undefined1 *)(param_1 + 0x21),0);
+            kbos_attach_object(iVar5,iVar3,1,*(undefined1 *)(param_1 + 0x21),0);
 
             break;
 
@@ -5683,7 +5683,7 @@ LAB_00533b86:
 
              (*(int *)(iVar3 + 0x188) == *(int *)(param_1 + 0x25))) {
 
-            FUN_0046baf0(iVar5,iVar3,1,*(undefined1 *)(param_1 + 0x29),0);
+            kbos_attach_object(iVar5,iVar3,1,*(undefined1 *)(param_1 + 0x29),0);
 
             break;
 
@@ -10269,12 +10269,12 @@ LAB_00536aeb:
 
 }
 
-/* ===== FUN_00536b20 @ 0x00536B20 ===== */
+/* ===== multi_draw_health_bar_horizontal__FP6OBJECTff @ 0x00536B20 ===== */
 /* PS2 candidate: multi_draw_health_bar_horizontal__FP6OBJECTff (conf 0.399) */
 
 
 
-void FUN_00536b20(float param_1,float param_2,float param_3)
+void multi_draw_health_bar_horizontal__FP6OBJECTff(float param_1,float param_2,float param_3)
 
 
 
@@ -10493,7 +10493,7 @@ void FUN_00536cb0(void)
 
          ((((iVar2 != 0x447 && (iVar2 != 0x486)) && (iVar2 != 0x2f7)) && (iVar2 != 0x353)))))))) {
 
-      FUN_00536b20(DAT_005e2738,0,-(15.0 / (float)DAT_00632e88));
+      multi_draw_health_bar_horizontal__FP6OBJECTff(DAT_005e2738,0,-(15.0 / (float)DAT_00632e88));
 
     }
 
@@ -10606,7 +10606,7 @@ LAB_00536fe0:
 
     }
 
-    iVar2 = FUN_004a61e0(param_1);
+    iVar2 = ObjIsPlayer(param_1);
 
     if ((iVar2 == 0) || (*(int *)((int)param_1 + 0x174) != 0)) goto LAB_00537079;
 
@@ -10638,7 +10638,7 @@ LAB_00537079:
 
   fVar1 = (float)DAT_00632e88;
 
-  iVar2 = FUN_004a61e0(param_1);
+  iVar2 = ObjIsPlayer(param_1);
 
   param_1 = 15.0 / fVar1;
 

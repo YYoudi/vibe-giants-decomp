@@ -10663,7 +10663,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
     if ((*(byte *)(iVar4 + 0xd8) & 0x10) != 0) break;
 
-    iVar8 = FUN_004a61e0(iVar4);
+    iVar8 = ObjIsPlayer(iVar4);
 
     if (((iVar8 != 0) && (*(float *)(iVar4 + 0x1c0) <= *(float *)(iVar4 + 0x278))) &&
 
@@ -11134,7 +11134,7 @@ void ai_nearest_55_scan(float param_1)
 
     iVar2 = piVar4[3];
 
-    iVar3 = FUN_004a61e0(iVar2);
+    iVar3 = ObjIsPlayer(iVar2);
 
     if (((((iVar3 != 0) || (*(int *)(iVar2 + 0x1e0) == 0x55)) &&
 

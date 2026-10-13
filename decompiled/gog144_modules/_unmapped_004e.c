@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (64 named) — decompiled, names from PS2 symbols
+ * 94 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -2806,7 +2806,7 @@ void rpman_scan_for_enemy__FP6OBJECTfii(int param_1,float param_2,int param_3,in
 
         iVar4 = local_20[3];
 
-        iVar6 = FUN_004a61e0(iVar4);
+        iVar6 = ObjIsPlayer(iVar4);
 
         if (((iVar6 == 0) && (*(int *)(iVar4 + 0x1e0) != 0x55)) &&
 
@@ -4568,7 +4568,7 @@ void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int par
 
     }
 
-    iVar3 = FUN_004a61e0(param_2);
+    iVar3 = ObjIsPlayer(param_2);
 
     if (iVar3 != 0) {
 
@@ -4694,12 +4694,12 @@ LAB_004e559b:
 
 }
 
-/* ===== FUN_004e5640 @ 0x004E5640 ===== */
+/* ===== fire_sniper_shot__FP6OBJECTT0 @ 0x004E5640 ===== */
 /* PS2 candidate: fire_sniper_shot__FP6OBJECTT0 (conf 0.389) */
 
 
 
-void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
+void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float param_4)
 
 
 
@@ -4901,7 +4901,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
         if ((iVar10 == 0) && (iVar10 = FUN_004a62b0(iVar11), iVar10 == 0)) {
 
-          iVar10 = FUN_004a61e0(iVar11);
+          iVar10 = ObjIsPlayer(iVar11);
 
           if (iVar10 != 0) {
 
@@ -4961,7 +4961,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       }
 
-      iVar11 = FUN_004a61e0(iVar11);
+      iVar11 = ObjIsPlayer(iVar11);
 
       if (iVar11 != 0) {
 
@@ -8147,7 +8147,7 @@ LAB_004eac20:
 
     }
 
-    FUN_0049baa0(iVar6);
+    object_destroy_specialtype(iVar6);
 
     object_copy_personality(iVar6,iVar3);
 
@@ -8157,7 +8157,7 @@ LAB_004eac20:
 
     DAT_00633108 = 1;
 
-    FUN_0049b8a0(iVar6);
+    object_setup_specialtype(iVar6);
 
     *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) | 1;
 
@@ -8413,7 +8413,7 @@ LAB_004eb000:
 
     }
 
-    FUN_0049baa0(iVar6);
+    object_destroy_specialtype(iVar6);
 
     object_copy_personality(iVar6,iVar3);
 
@@ -8423,7 +8423,7 @@ LAB_004eb000:
 
     DAT_00633108 = 1;
 
-    FUN_0049b8a0(iVar6);
+    object_setup_specialtype(iVar6);
 
     *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) | 1;
 
@@ -8629,7 +8629,7 @@ LAB_004eb3e0:
 
   }
 
-  FUN_0049baa0(iVar6);
+  object_destroy_specialtype(iVar6);
 
   object_copy_personality(iVar6,iVar3);
 
@@ -8639,7 +8639,7 @@ LAB_004eb3e0:
 
   DAT_00633108 = 1;
 
-  FUN_0049b8a0(iVar6);
+  object_setup_specialtype(iVar6);
 
   *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) | 1;
 

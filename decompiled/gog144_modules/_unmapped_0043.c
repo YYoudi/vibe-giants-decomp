@@ -985,7 +985,7 @@ void FUN_004319c0(undefined4 *param_1)
 
   
 
-  puVar2 = (undefined4 *)FUN_00515dc0(2);
+  puVar2 = (undefined4 *)XFGetCameraAxis(2);
 
   uVar1 = puVar2[1];
 
@@ -9281,7 +9281,7 @@ void wredit_ai_menu(void)
 
         DAT_00632a88 = object_allocate_type(3,0x80000000);
 
-        FUN_0049b8a0();
+        object_setup_specialtype();
 
         giftshopview_enable();
 

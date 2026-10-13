@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (36 named) — decompiled, names from PS2 symbols
+ * 53 functions (37 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -708,7 +708,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
       local_3c = pfVar2[2];
 
-      pfVar2 = (float *)FUN_00515dc0(2);
+      pfVar2 = (float *)XFGetCameraAxis(2);
 
       local_2c = *pfVar2;
 
@@ -844,7 +844,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
   local_24 = pfVar2[2];
 
-  pfVar2 = (float *)FUN_00515dc0(2);
+  pfVar2 = (float *)XFGetCameraAxis(2);
 
   local_44 = *pfVar2 * 50000.0 + local_2c;
 
@@ -1264,7 +1264,7 @@ void kabuto_create_kbos(float param_1,int param_2)
 
   local_8 = local_14[0] * 50.0 + *(float *)(iVar2 + 0xa4);
 
-  fVar4 = (float10)FUN_00455600(local_14 + 2);
+  fVar4 = (float10)ground_get_z(local_14 + 2);
 
   local_4 = (float)fVar4;
 
@@ -3165,12 +3165,12 @@ undefined4 FUN_0046b850(int param_1)
 
 }
 
-/* ===== FUN_0046baf0 @ 0x0046BAF0 ===== */
+/* ===== kbos_attach_object @ 0x0046BAF0 ===== */
 /* PS2 candidate: kbos_attach_object (conf 0.388) */
 
 
 
-undefined4 FUN_0046baf0(undefined4 param_1,int param_2,char param_3,byte param_4,int param_5)
+undefined4 kbos_attach_object(undefined4 param_1,int param_2,char param_3,byte param_4,int param_5)
 
 
 

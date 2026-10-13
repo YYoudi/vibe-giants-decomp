@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (50 named) — decompiled, names from PS2 symbols
+ * 87 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -10904,14 +10904,14 @@ int FUN_0050ae90(int param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0050af50 @ 0x0050AF50 ===== */
+/* ===== TurretFire__FP6OBJECTiT0P3P3D @ 0x0050AF50 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: TurretFire__FP6OBJECTiT0P3P3D (conf 0.384) */
 
 
 
-void FUN_0050af50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4)
+void TurretFire__FP6OBJECTiT0P3P3D(int param_1,undefined4 param_2,int param_3,undefined4 *param_4)
 
 
 
@@ -11590,7 +11590,7 @@ void kabutoai_move(float param_1)
 
         if (((((*(uint *)((int)fVar7 + 0xd8) & 0x4000c000) == 0) &&
 
-             (iVar6 = FUN_004a61e0(fVar7), iVar6 != 0)) &&
+             (iVar6 = ObjIsPlayer(fVar7), iVar6 != 0)) &&
 
             (*(float *)((int)fVar7 + 0x278) < *(float *)((int)fVar7 + 0x1c0))) &&
 
@@ -11740,7 +11740,7 @@ LAB_0050e1a4:
 
         if (((((*(uint *)(iVar6 + 0xd8) & 0x4000c000) == 0) &&
 
-             (iVar8 = FUN_004a61e0(iVar6), iVar8 != 0)) &&
+             (iVar8 = ObjIsPlayer(iVar6), iVar8 != 0)) &&
 
             (*(float *)(iVar6 + 0x278) < *(float *)(iVar6 + 0x1c0))) &&
 
@@ -11810,7 +11810,7 @@ LAB_0050e1a4:
 
         if (((((*(uint *)(iVar6 + 0xd8) & 0x4000c000) == 0) &&
 
-             (iVar8 = FUN_004a61e0(iVar6), iVar8 != 0)) &&
+             (iVar8 = ObjIsPlayer(iVar6), iVar8 != 0)) &&
 
             (*(float *)(iVar6 + 0x278) < *(float *)(iVar6 + 0x1c0))) &&
 
@@ -11904,7 +11904,7 @@ LAB_0050d177:
 
         if (((((*(uint *)(iVar6 + 0xd8) & 0x4000c000) == 0) &&
 
-             (iVar8 = FUN_004a61e0(iVar6), iVar8 != 0)) &&
+             (iVar8 = ObjIsPlayer(iVar6), iVar8 != 0)) &&
 
             (*(float *)(iVar6 + 0x278) < *(float *)(iVar6 + 0x1c0))) &&
 
@@ -13050,7 +13050,7 @@ LAB_0050e133:
 
         if ((((*(uint *)(iVar9 + 0xd8) & 0x4000c000) == 0) &&
 
-            (iVar6 = FUN_004a61e0(iVar9), iVar6 != 0)) &&
+            (iVar6 = ObjIsPlayer(iVar9), iVar6 != 0)) &&
 
            (fVar13 = (float10)FUN_0050a610(iVar9 + 0xa0,(int)param_1 + 0xa0), fVar13 < (float10)25.0
 
@@ -13398,7 +13398,7 @@ LAB_0050e133:
 
           if ((((*(uint *)(iVar6 + 0xd8) & 0x4000c000) == 0) &&
 
-              (iVar8 = FUN_004a61e0(iVar6), iVar8 != 0)) &&
+              (iVar8 = ObjIsPlayer(iVar6), iVar8 != 0)) &&
 
              ((*(float *)(iVar6 + 0x278) < *(float *)(iVar6 + 0x1c0) &&
 
@@ -13632,17 +13632,15 @@ LAB_0050e133:
 
       iVar6 = puVar10[3];
 
-      if ((((*(uint *)(iVar6 + 0xd8) & 0x4000c000) == 0) &&
+      if ((((*(uint *)(iVar6 + 0xd8) & 0x4000c000) == 0) && (iVar8 = ObjIsPlayer(iVar6), iVar8 != 0)
 
-          (iVar8 = FUN_004a61e0(iVar6), iVar8 != 0)) &&
+          ) && ((*(float *)(iVar6 + 0x278) < *(float *)(iVar6 + 0x1c0) &&
 
-         ((*(float *)(iVar6 + 0x278) < *(float *)(iVar6 + 0x1c0) &&
+                ((*(int *)(iVar6 + 0x210) == 0 &&
 
-          ((*(int *)(iVar6 + 0x210) == 0 &&
+                 (fVar13 = (float10)distancesq2d__FP3P3DT0(iVar6 + 0xa0,iVar9 + 0xa0),
 
-           (fVar13 = (float10)distancesq2d__FP3P3DT0(iVar6 + 0xa0,iVar9 + 0xa0),
-
-           fVar13 <= (float10)param_1)))))) {
+                 fVar13 <= (float10)param_1)))))) {
 
         param_1 = (float)fVar13;
 
@@ -13790,7 +13788,7 @@ LAB_0050efca:
 
         if ((((*(uint *)(iVar9 + 0xd8) & 0x4000c000) == 0) &&
 
-            (iVar6 = FUN_004a61e0(iVar9), iVar6 != 0)) &&
+            (iVar6 = ObjIsPlayer(iVar9), iVar6 != 0)) &&
 
            (fVar13 = (float10)FUN_0050a610(iVar9 + 0xa0,(int)param_1 + 0xa0), fVar13 < (float10)25.0
 

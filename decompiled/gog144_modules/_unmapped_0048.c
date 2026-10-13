@@ -719,7 +719,7 @@ LAB_0048097d:
 
   }
 
-  FUN_004967e0(param_1,uVar4);
+  objanim_select_anim(param_1,uVar4);
 
 LAB_00480988:
 

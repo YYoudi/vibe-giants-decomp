@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (54 named) — decompiled, names from PS2 symbols
+ * 64 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -247,7 +247,7 @@ void reaper_finish_cloak(int param_1,undefined4 param_2)
 
         uStack_48 = uStack_14;
 
-        FUN_00455920(pcVar6,iVar3,uVar1,puVar2 + 0x393,&uStack_50,&fStack_5c);
+        project_vector_to_object(pcVar6,iVar3,uVar1,puVar2 + 0x393,&uStack_50,&fStack_5c);
 
       }
 
@@ -4102,7 +4102,7 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
   if (iVar1 != 0) {
 
-    iVar5 = FUN_004188e0(iVar1);
+    iVar5 = base_has_partyhouse(iVar1);
 
     if (iVar5 == 0) {
 
@@ -5435,12 +5435,12 @@ void evilreaper_change_anim__FP6OBJECTii4SDKYf
 
 }
 
-/* ===== FUN_004ca890 @ 0x004CA890 ===== */
+/* ===== evilreaper_scan_for_enemy__FP6OBJECTf @ 0x004CA890 ===== */
 /* PS2 candidate: evilreaper_scan_for_enemy__FP6OBJECTf (conf 0.392) */
 
 
 
-void FUN_004ca890(float param_1,float param_2)
+void evilreaper_scan_for_enemy__FP6OBJECTf(float param_1,float param_2)
 
 
 
@@ -5518,7 +5518,7 @@ void FUN_004ca890(float param_1,float param_2)
 
       iVar7 = puVar5[3];
 
-      iVar8 = FUN_004a61e0(iVar7);
+      iVar8 = ObjIsPlayer(iVar7);
 
       if (((((iVar8 != 0) || (*(int *)(iVar7 + 0x1e0) == 0x55)) &&
 
@@ -5739,7 +5739,7 @@ void evilreaper_verify_enemy__FP6OBJECTf(int param_1,float param_2)
 
       (*(float *)(iVar4 + 0x1c0) <= *(float *)(iVar4 + 0x278))) ||
 
-     (iVar4 = FUN_004a61e0(iVar4), iVar4 == 0)) {
+     (iVar4 = ObjIsPlayer(iVar4), iVar4 == 0)) {
 
 LAB_004cacea:
 
@@ -5793,7 +5793,7 @@ LAB_004cace3:
 
     iVar4 = *(int *)(iVar1 + 0x3c);
 
-    FUN_004ca890(param_1,param_2);
+    evilreaper_scan_for_enemy__FP6OBJECTf(param_1,param_2);
 
     iVar2 = *(int *)(iVar1 + 0x3c);
 
@@ -8117,7 +8117,7 @@ void lens_effects_process__Fv(void)
 
   if (iVar7 != 0) {
 
-    pfVar6 = (float *)FUN_00515dc0(2);
+    pfVar6 = (float *)XFGetCameraAxis(2);
 
     fVar3 = local_3c * *pfVar6 + local_38 * pfVar6[1] + local_34 * pfVar6[2];
 

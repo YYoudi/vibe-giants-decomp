@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (51 named) — decompiled, names from PS2 symbols
+ * 67 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -4182,12 +4182,14 @@ void mecc_play_weapon_select_snd(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004789e0 @ 0x004789E0 ===== */
+/* ===== getfirelockandgun__FP6OBJECTUcPP6OBJECTPi @ 0x004789E0 ===== */
 /* PS2 candidate: getfirelockandgun__FP6OBJECTUcPP6OBJECTPi (conf 0.386) */
 
 
 
-void FUN_004789e0(int param_1,char param_2,int *param_3,undefined4 *param_4)
+void getfirelockandgun__FP6OBJECTUcPP6OBJECTPi
+
+               (int param_1,char param_2,int *param_3,undefined4 *param_4)
 
 
 
@@ -4362,7 +4364,7 @@ int new_fire__FP6OBJECTiPfT0P3P3Df
 
   }
 
-  FUN_004789e0(param_1,uVar2,&param_2,&local_48);
+  getfirelockandgun__FP6OBJECTUcPP6OBJECTPi(param_1,uVar2,&param_2,&local_48);
 
   cVar6 = (char)uVar2;
 
@@ -4410,7 +4412,7 @@ int new_fire__FP6OBJECTiPfT0P3P3Df
 
       else if (iVar4 == 0) {
 
-        pfVar3 = (float *)FUN_00515dc0(2);
+        pfVar3 = (float *)XFGetCameraAxis(2);
 
         local_3c = *pfVar3;
 
@@ -4844,12 +4846,12 @@ void mecc_calculate_mass__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004791f0 @ 0x004791F0 ===== */
+/* ===== MeccPhysicsExApplyLocation__FP6OBJECT @ 0x004791F0 ===== */
 /* PS2 candidate: MeccPhysicsExApplyLocation__FP6OBJECT (conf 0.389) */
 
 
 
-void FUN_004791f0(int param_1)
+void MeccPhysicsExApplyLocation__FP6OBJECT(int param_1)
 
 
 
@@ -4913,7 +4915,7 @@ void FUN_004791f0(int param_1)
 
     }
 
-    FUN_004a4360(iVar3);
+    PhysicsExApplyLocation(iVar3);
 
     for (; iVar6 != 0; iVar6 = iVar6 + -1) {
 
@@ -4927,7 +4929,7 @@ void FUN_004791f0(int param_1)
 
   else {
 
-    FUN_004a4360(iVar3);
+    PhysicsExApplyLocation(iVar3);
 
   }
 
@@ -6578,7 +6580,7 @@ LAB_0047cdb1:
 
     }
 
-    FUN_004789e0(iVar7,*(undefined1 *)(pfVar3 + 5),&param_1,&param_4);
+    getfirelockandgun__FP6OBJECTUcPP6OBJECTPi(iVar7,*(undefined1 *)(pfVar3 + 5),&param_1,&param_4);
 
     iVar5 = PROJ_Create2(*(undefined1 *)(pfVar3 + 5),*(undefined4 *)(iVar7 + 0x18c),param_1,param_4,
 
@@ -7541,7 +7543,7 @@ int audio_listener_pan(float param_1,float param_2,float param_3,code *param_4,u
 
   fVar3 = pfVar14[2];
 
-  pfVar14 = (float *)FUN_00515dc0(2);
+  pfVar14 = (float *)XFGetCameraAxis(2);
 
   fVar4 = *pfVar14;
 
@@ -8016,7 +8018,7 @@ LAB_0047e183:
 
           local_48 = pfVar8[2];
 
-          pfVar8 = (float *)FUN_00515dc0(2);
+          pfVar8 = (float *)XFGetCameraAxis(2);
 
           piVar15 = local_90;
 
@@ -9718,9 +9720,9 @@ void mecc_to_bush(int param_1)
 
   *(undefined4 *)(iVar2 + 200) = *(undefined4 *)(param_1 + 200);
 
-  FUN_004967e0(param_1,0x2e);
+  objanim_select_anim(param_1,0x2e);
 
-  FUN_004967e0(iVar2,0x2e);
+  objanim_select_anim(iVar2,0x2e);
 
   *(int *)(param_1 + 0x274) = iVar2;
 

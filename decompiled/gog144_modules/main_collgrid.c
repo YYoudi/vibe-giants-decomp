@@ -1323,7 +1323,7 @@ void main_collgrid_00411140(int param_1)
 
                     }
 
-                    fVar18 = (float10)FUN_00455600();
+                    fVar18 = (float10)ground_get_z();
 
                     local_88 = (float)fVar18;
 
@@ -1884,7 +1884,7 @@ void main_collgrid_00411a10(int param_1)
 
                     }
 
-                    FUN_00455600();
+                    ground_get_z();
 
                     uVar10 = iVar8 - iVar6;
 
