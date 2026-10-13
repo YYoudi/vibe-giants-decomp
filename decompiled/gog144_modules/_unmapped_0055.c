@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0055
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0055.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0055001b @ 0x0055001B ===== */
-undefined4 FUN_0055001b(char *param_1)
+/* ===== crt_strdup @ 0x0055001B ===== */
+undefined4 crt_strdup(char *param_1)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (70 named) — decompiled, names from PS2 symbols
+ * 74 functions (72 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -3813,8 +3813,8 @@ void cleanup_00436060(void)
 
 }
 
-/* ===== FUN_00436090 @ 0x00436090 ===== */
-void FUN_00436090(uint param_1,int param_2,undefined4 param_3)
+/* ===== iface_set2_56498 @ 0x00436090 ===== */
+void iface_set2_56498(uint param_1,int param_2,undefined4 param_3)
 
 
 
@@ -3855,8 +3855,8 @@ void iface_set_56498(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004360f0 @ 0x004360F0 ===== */
-void FUN_004360f0(undefined4 param_1)
+/* ===== iface_set2_56494 @ 0x004360F0 ===== */
+void iface_set2_56494(undefined4 param_1)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (135 named) — decompiled, names from PS2 symbols
+ * 162 functions (137 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -13345,8 +13345,8 @@ void comm_0052b780_user_1(int param_1)
 
 }
 
-/* ===== FUN_0052f210 @ 0x0052F210 ===== */
-void FUN_0052f210(void)
+/* ===== comm_dp_packet_send_b @ 0x0052F210 ===== */
+void comm_dp_packet_send_b(void)
 
 
 
@@ -14763,8 +14763,8 @@ void comm_obj_sync(int param_1)
 
 }
 
-/* ===== FUN_0052fed0 @ 0x0052FED0 ===== */
-void FUN_0052fed0(void)
+/* ===== comm_dp_packet_send_a @ 0x0052FED0 ===== */
+void comm_dp_packet_send_a(void)
 
 
 

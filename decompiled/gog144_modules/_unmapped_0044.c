@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (71 named) — decompiled, names from PS2 symbols
+ * 76 functions (72 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -2133,8 +2133,8 @@ void FLK_ReplayFileNameClear(void)
 
 }
 
-/* ===== FUN_004433b0 @ 0x004433B0 ===== */
-void FUN_004433b0(float *param_1)
+/* ===== frustum_planes_build @ 0x004433B0 ===== */
+void frustum_planes_build(float *param_1)
 
 
 
@@ -3502,9 +3502,9 @@ undefined4 FLK_FlickRender(int param_1)
 
                     );
 
-  uVar5 = FUN_0053bef0(*(undefined4 *)(param_1 + 0xb4),uVar4,
+  uVar5 = flick_node_mat_get(*(undefined4 *)(param_1 + 0xb4),uVar4,
 
-                       *(undefined4 *)(*(int *)(param_1 + 0xb8) + 4));
+                             *(undefined4 *)(*(int *)(param_1 + 0xb8) + 4));
 
   GEO_MatTranspose(auStack_c8,uVar5);
 
@@ -4034,7 +4034,7 @@ LAB_00444d25:
 
           if ((iVar7 == 0) || ((*(char *)(iVar7 + 0x1e) < '\0' && (DAT_006331c0 != 0)))) {
 
-            FUN_004360f0();
+            iface_set2_56494();
 
             iface_set_56494(piVar9 + 0x1df,piVar9 + 0x20d);
 
@@ -4042,7 +4042,7 @@ LAB_00444d25:
 
           else {
 
-            FUN_00436090(0x23234,iVar7,0xa0a0a0);
+            iface_set2_56498(0x23234,iVar7,0xa0a0a0);
 
             iface_set_56498(piVar9 + 0x1df,piVar9 + 0x20d);
 
@@ -4180,7 +4180,7 @@ LAB_00445182:
 
   }
 
-  FUN_004433b0();
+  frustum_planes_build();
 
   pfVar1 = (float *)(param_1 + 0xd8);
 
@@ -4212,7 +4212,7 @@ LAB_00445182:
 
 LAB_004451e2:
 
-  FUN_004433b0();
+  frustum_planes_build();
 
   ANM_DumpCluster();
 
@@ -6935,7 +6935,7 @@ void attack_fx_spawn(int param_1,undefined4 param_2,undefined4 param_3,int param
 
   local_4 = 0xffff;
 
-  piVar2 = (int *)FUN_005401e0(*(undefined4 *)(DAT_00656464 + 4));
+  piVar2 = (int *)map_chunk_entry_alloc(*(undefined4 *)(DAT_00656464 + 4));
 
   piVar4 = local_34;
 

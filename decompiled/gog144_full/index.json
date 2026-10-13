@@ -1912,7 +1912,7 @@
  "0x0042E690": {
   "name": "rp_spark_hud_setup",
   "named": true,
-  "len": 3726
+  "len": 3738
  },
  "0x0042EA60": {
   "name": "texture_object_debug_dump",
@@ -2170,9 +2170,9 @@
   "len": 197
  },
  "0x00436090": {
-  "name": "FUN_00436090",
-  "named": false,
-  "len": 361
+  "name": "iface_set2_56498",
+  "named": true,
+  "len": 365
  },
  "0x004360D0": {
   "name": "iface_set_56498",
@@ -2180,9 +2180,9 @@
   "len": 142
  },
  "0x004360F0": {
-  "name": "FUN_004360f0",
-  "named": false,
-  "len": 252
+  "name": "iface_set2_56494",
+  "named": true,
+  "len": 256
  },
  "0x00436110": {
   "name": "iface_set_56494",
@@ -2515,9 +2515,9 @@
   "len": 80
  },
  "0x004433B0": {
-  "name": "FUN_004433b0",
-  "named": false,
-  "len": 961
+  "name": "frustum_planes_build",
+  "named": true,
+  "len": 969
  },
  "0x00443480": {
   "name": "flick_file_load",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19209
+  "len": 19245
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -2657,7 +2657,7 @@
  "0x00446F70": {
   "name": "attack_fx_spawn",
   "named": true,
-  "len": 1388
+  "len": 1397
  },
  "0x00447060": {
   "name": "gfx_interfaces_release",
@@ -10030,9 +10030,9 @@
   "len": 861
  },
  "0x0052F210": {
-  "name": "FUN_0052f210",
-  "named": false,
-  "len": 251
+  "name": "comm_dp_packet_send_b",
+  "named": true,
+  "len": 260
  },
  "0x0052F240": {
   "name": "comm_0052b780_user_2",
@@ -10140,9 +10140,9 @@
   "len": 2635
  },
  "0x0052FED0": {
-  "name": "FUN_0052fed0",
-  "named": false,
-  "len": 315
+  "name": "comm_dp_packet_send_a",
+  "named": true,
+  "len": 324
  },
  "0x0052FF00": {
   "name": "comm_0052b780_user_8",
@@ -10695,9 +10695,9 @@
   "len": 713
  },
  "0x0053BEF0": {
-  "name": "FUN_0053bef0",
-  "named": false,
-  "len": 255
+  "name": "flick_node_mat_get",
+  "named": true,
+  "len": 261
  },
  "0x0053BF20": {
   "name": "crt_stream_seek",
@@ -11135,9 +11135,9 @@
   "len": 646
  },
  "0x005401E0": {
-  "name": "FUN_005401e0",
-  "named": false,
-  "len": 823
+  "name": "map_chunk_entry_alloc",
+  "named": true,
+  "len": 832
  },
  "0x00540250": {
   "name": "MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi",
@@ -12852,7 +12852,7 @@
  "0x0054FBEE": {
   "name": "FUN_0054fbee",
   "named": false,
-  "len": 772
+  "len": 770
  },
  "0x0054FC55": {
   "name": "realloc",
@@ -12875,8 +12875,8 @@
   "len": 941
  },
  "0x0055001B": {
-  "name": "FUN_0055001b",
-  "named": false,
-  "len": 328
+  "name": "crt_strdup",
+  "named": true,
+  "len": 326
  }
 }

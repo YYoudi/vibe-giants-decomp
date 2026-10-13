@@ -18142,7 +18142,7 @@ void rp_spark_hud_setup(int param_1)
 
     iVar2 = __ftol();
 
-    FUN_00436090(0x134,DAT_0059acb0,iVar2 << 0x18);
+    iface_set2_56498(0x134,DAT_0059acb0,iVar2 << 0x18);
 
     GEO_MatFromQuat_2(local_cc,_DAT_0059acb4 * 6.2831855);
 
@@ -18250,7 +18250,7 @@ LAB_0042e978:
 
     if (iVar2 != 0) {
 
-      FUN_00436090(uVar7,iVar2);
+      iface_set2_56498(uVar7,iVar2);
 
       iface_set_56498(local_cc,iVar6);
 
@@ -18258,7 +18258,7 @@ LAB_0042e978:
 
     }
 
-    FUN_004360f0(uVar4);
+    iface_set2_56494(uVar4);
 
     iface_set_56494(local_cc,iVar6);
 

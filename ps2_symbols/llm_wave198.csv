@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0055001b,FUN_0055001b,,crt_strdup,0.9,llm-w198,malloc+strlen+strcpy
+004360f0,FUN_004360f0,,iface_set2_56494,0.9,llm-w198,second setter quartet twin
+00436090,FUN_00436090,,iface_set2_56498,0.9,llm-w198,DInput twin
+005401e0,FUN_005401e0,,map_chunk_entry_alloc,0.9,llm-w198,ChunksAlloc+link caller attack_fx_spawn
+0053bef0,FUN_0053bef0,,flick_node_mat_get,0.9,llm-w198,ANM_NodeGetMat wrapper caller FLK
+0052fed0,FUN_0052fed0,,comm_dp_packet_send_a,0.9,llm-w198,dp_send+is_base MP packet
+0052f210,FUN_0052f210,,comm_dp_packet_send_b,0.9,llm-w198,twin
+004433b0,FUN_004433b0,,frustum_planes_build,0.9,llm-w198,near/far 0057c0c0-c4 planes caller FLK

@@ -2,10 +2,10 @@
 
 | module | functions | named | file |
 |---|---|---|---|
-| _unmapped_0054 | 351 | 315 | _unmapped_0054.c |
+| _unmapped_0054 | 351 | 316 | _unmapped_0054.c |
 | _unmapped_0051 | 186 | 165 | _unmapped_0051.c |
-| _unmapped_0053 | 179 | 154 | _unmapped_0053.c |
-| _unmapped_0052 | 162 | 135 | _unmapped_0052.c |
+| _unmapped_0053 | 179 | 155 | _unmapped_0053.c |
+| _unmapped_0052 | 162 | 137 | _unmapped_0052.c |
 | _unmapped_0045 | 145 | 118 | _unmapped_0045.c |
 | _unmapped_0049 | 142 | 116 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 118 | _unmapped_004a.c |
@@ -15,8 +15,8 @@
 | _unmapped_004e | 94 | 76 | _unmapped_004e.c |
 | _unmapped_004b | 90 | 79 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 71 | _unmapped_0050.c |
-| _unmapped_0044 | 76 | 71 | _unmapped_0044.c |
-| _unmapped_0043 | 74 | 70 | _unmapped_0043.c |
+| _unmapped_0044 | 76 | 72 | _unmapped_0044.c |
+| _unmapped_0043 | 74 | 72 | _unmapped_0043.c |
 | _unmapped_0048 | 74 | 56 | _unmapped_0048.c |
 | _unmapped_0047 | 67 | 58 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 58 | _unmapped_004c.c |
@@ -64,7 +64,7 @@
 | Main/commonbase | 1 | 1 | Main_commonbase.c |
 | Main/flick | 1 | 1 | Main_flick.c |
 | Main/kabuto | 1 | 0 | Main_kabuto.c |
-| _unmapped_0055 | 1 | 0 | _unmapped_0055.c |
+| _unmapped_0055 | 1 | 1 | _unmapped_0055.c |
 | main/STATUS | 1 | 1 | main_STATUS.c |
 | main/flame | 1 | 1 | main_flame.c |
 | main/marker | 1 | 1 | main_marker.c |
