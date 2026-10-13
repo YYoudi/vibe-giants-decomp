@@ -8833,7 +8833,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_004a5eb0();
 
-    FUN_0040b8f0();
+    particle_lifespan_render();
 
     status_update_3obj();
 

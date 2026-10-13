@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004bc640,FUN_004BC640,,audio_listener_update,0.9,llm-read45,
+004235a0,FUN_004235A0,,input_key_scan,0.9,llm-read45,
+0040b8f0,FUN_0040B8F0,,particle_lifespan_render,0.9,llm-read45,
+004f9d20,FUN_004F9D20,,obj_shadow_cast,0.9,llm-read45,

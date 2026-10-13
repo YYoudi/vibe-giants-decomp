@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (29 named) — decompiled, names from PS2 symbols
+ * 90 functions (30 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -8460,8 +8460,8 @@ undefined4 reaper_is_water_jump__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004bc640 @ 0x004BC640 ===== */
-int FUN_004bc640(undefined4 param_1,float param_2,float param_3,float param_4)
+/* ===== audio_listener_update @ 0x004BC640 ===== */
+int audio_listener_update(undefined4 param_1,float param_2,float param_3,float param_4)
 
 
 

@@ -450,9 +450,9 @@
   "len": 3653
  },
  "0x0040B8F0": {
-  "name": "FUN_0040b8f0",
-  "named": false,
-  "len": 1942
+  "name": "particle_lifespan_render",
+  "named": true,
+  "len": 1954
  },
  "0x0040BAB0": {
   "name": "main_blood_0040bab0",
@@ -1265,9 +1265,9 @@
   "len": 183
  },
  "0x004235A0": {
-  "name": "FUN_004235a0",
-  "named": false,
-  "len": 1968
+  "name": "input_key_scan",
+  "named": true,
+  "len": 1970
  },
  "0x00423760": {
   "name": "FUN_00423760",
@@ -6485,9 +6485,9 @@
   "len": 239
  },
  "0x004BC640": {
-  "name": "FUN_004bc640",
-  "named": false,
-  "len": 1676
+  "name": "audio_listener_update",
+  "named": true,
+  "len": 1685
  },
  "0x004BC800": {
   "name": "FUN_004bc800",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14204
+  "len": 14216
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7747,7 +7747,7 @@
  "0x004F9380": {
   "name": "FUN_004f9380",
   "named": false,
-  "len": 9026
+  "len": 9035
  },
  "0x004F9B50": {
   "name": "FUN_004f9b50",
@@ -7760,9 +7760,9 @@
   "len": 1361
  },
  "0x004F9D20": {
-  "name": "FUN_004f9d20",
-  "named": false,
-  "len": 2218
+  "name": "obj_shadow_cast",
+  "named": true,
+  "len": 2221
  },
  "0x004FA1E0": {
   "name": "AudioDataStreamStatus__Fv_3",

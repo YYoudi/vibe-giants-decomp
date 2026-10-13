@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (13 named) — decompiled, names from PS2 symbols
+ * 48 functions (14 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -3732,7 +3732,7 @@ void FUN_004f9380(int param_1)
 
       if (*(float *)(param_1 + 0x18) < 1.0666667) {
 
-        fVar4 = (float)FUN_004f9d20(param_1,0x43160000);
+        fVar4 = (float)obj_shadow_cast(param_1,0x43160000);
 
         pfVar2[10] = fVar4;
 
@@ -3878,7 +3878,7 @@ void FUN_004f9380(int param_1)
 
     if (pfVar2[7] != 0.0) {
 
-      fVar4 = (float)FUN_004f9d20(param_1,0x43160000);
+      fVar4 = (float)obj_shadow_cast(param_1,0x43160000);
 
       pfVar2[10] = fVar4;
 
@@ -3946,7 +3946,7 @@ void FUN_004f9380(int param_1)
 
   case 0x65:
 
-    fVar4 = (float)FUN_004f9d20(param_1,0x43160000);
+    fVar4 = (float)obj_shadow_cast(param_1,0x43160000);
 
     pfVar2[10] = fVar4;
 
@@ -4276,8 +4276,8 @@ void sound_play_pair(undefined4 param_1,float param_2,int param_3,undefined4 par
 
 }
 
-/* ===== FUN_004f9d20 @ 0x004F9D20 ===== */
-int FUN_004f9d20(int *param_1,float param_2)
+/* ===== obj_shadow_cast @ 0x004F9D20 ===== */
+int obj_shadow_cast(int *param_1,float param_2)
 
 
 

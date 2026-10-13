@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (77 named) — decompiled, names from PS2 symbols
+ * 129 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -5697,8 +5697,8 @@ int FUN_00423470(uint param_1)
 
 }
 
-/* ===== FUN_004235a0 @ 0x004235A0 ===== */
-undefined4 FUN_004235a0(int *param_1)
+/* ===== input_key_scan @ 0x004235A0 ===== */
+undefined4 input_key_scan(int *param_1)
 
 
 
