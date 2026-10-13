@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 63 functions (61 named) — decompiled, names from PS2 symbols
+ * 63 functions (63 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -1282,7 +1282,7 @@ LAB_004f453b:
 
     uVar4 = base_get_base_building(uVar4);
 
-    FUN_00418770(uVar4,*(undefined4 *)(iVar2 + 0x28),param_1 + 200);
+    mat_facing_angle_get(uVar4,*(undefined4 *)(iVar2 + 0x28),param_1 + 200);
 
     *(undefined4 *)(param_1 + 0xe4) = 0x21;
 
@@ -5820,12 +5820,12 @@ void dual_timer_tick_c66(int param_1)
 
 }
 
-/* ===== FUN_004f8350 @ 0x004F8350 ===== */
+/* ===== objspec_float_deref_get @ 0x004F8350 ===== */
 /* PS2 candidate: sceMpegIsEnd (conf 0.6) */
 
 
 
-float10 FUN_004f8350(int param_1)
+float10 objspec_float_deref_get(int param_1)
 
 
 
@@ -7991,9 +7991,9 @@ void hurt_pusher_2(int param_1,float param_2)
 
       (**(code **)(DAT_00656428 + 8))(DAT_00656428,uVar12,iVar3,uVar10);
 
-      FUN_00517830(iVar1,uVar2,iVar5);
+      meshrows_vtable_copy(iVar1,uVar2,iVar5);
 
-      FUN_0042b220(*(undefined4 *)(iVar6 + 0x84));
+      tokenstream_vtable_play(*(undefined4 *)(iVar6 + 0x84));
 
     }
 
@@ -8009,8 +8009,8 @@ void hurt_pusher_2(int param_1,float param_2)
 
 }
 
-/* ===== FUN_004fa720 @ 0x004FA720 ===== */
-void FUN_004fa720(int param_1,int param_2,int param_3)
+/* ===== shopmenu_slot_entries_push @ 0x004FA720 ===== */
+void shopmenu_slot_entries_push(int param_1,int param_2,int param_3)
 
 
 

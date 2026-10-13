@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 75 functions (72 named) — decompiled, names from PS2 symbols
+ * 75 functions (75 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -226,8 +226,8 @@ undefined4 map_entry_lookup(int param_1,int *param_2)
 
 }
 
-/* ===== FUN_004706d0 @ 0x004706D0 ===== */
-int FUN_004706d0(int param_1,int *param_2)
+/* ===== anm_slot_record_get @ 0x004706D0 ===== */
+int anm_slot_record_get(int param_1,int *param_2)
 
 
 
@@ -1002,7 +1002,7 @@ void ambient_bird_ai_c68(float param_1)
 
   if (*(int *)((int)fVar2 + 0xe4) == 1) {
 
-    FUN_004a73a0(fVar2);
+    vvel_decay_tick(fVar2);
 
   }
 
@@ -1635,7 +1635,7 @@ undefined4 hud_audio_dlog_screen(void)
 
       }
 
-      FUN_00490d40();
+      reset_vcall_5dd31c();
 
       if (DAT_00632b98 != 0) {
 
@@ -1938,7 +1938,7 @@ void game_loop_run(int param_1)
 
           mecc_logic();
 
-          FUN_0049b810();
+          owner_squad_process();
 
           for (puVar1 = DAT_00632d68; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
@@ -2636,7 +2636,7 @@ void mecc_bubble_show(int param_1)
 
       if (iVar1 == 0) {
 
-        FUN_0041a1c0(param_1,DAT_00632bbc);
+        comm_msg1a_id_send(param_1,DAT_00632bbc);
 
         return;
 
@@ -3338,8 +3338,8 @@ undefined4 showchat_mission_objective__Fi(int p0)
 
 }
 
-/* ===== FUN_00476eb0 @ 0x00476EB0 ===== */
-void FUN_00476eb0(int param_1)
+/* ===== seq_index_assign @ 0x00476EB0 ===== */
+void seq_index_assign(int param_1)
 
 
 
@@ -4576,8 +4576,8 @@ void formation_notify_death(int param_1)
 
 }
 
-/* ===== FUN_004782f0 @ 0x004782F0 ===== */
-void FUN_004782f0(int param_1)
+/* ===== destroy_by_id_c33_c27 @ 0x004782F0 ===== */
+void destroy_by_id_c33_c27(int param_1)
 
 
 
@@ -6558,7 +6558,7 @@ LAB_00479a50:
 
         uVar7 = TextGetPtr(s_AIMeccPrefix_0055bcbc);
 
-        FUN_00501100(uVar7);
+        pet_command_set(uVar7);
 
       }
 
@@ -6594,7 +6594,7 @@ LAB_00479a50:
 
         uVar7 = TextGetPtr(s_AIMeccPrefix_0055bcbc);
 
-        FUN_00501100(uVar7);
+        pet_command_set(uVar7);
 
         if (puVar3[0x84] != 0) {
 
@@ -7288,7 +7288,7 @@ LAB_00479c1b:
 
     puVar3[0x10] = *(float *)(DAT_00632ed8 + 0x3f8) + *(float *)(DAT_00632ed8 + 0x10);
 
-    iVar4 = FUN_00494f90();
+    iVar4 = cutscene_active_check();
 
     if (iVar4 != 0) {
 
@@ -8472,7 +8472,7 @@ LAB_0047b93a:
 
     quat_to_matrix__FP4QUATPf(auStack_cc,auStack_164);
 
-    FUN_0053dc10(auStack_154,&fStack_1c4);
+    mat_identity_translation(auStack_154,&fStack_1c4);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_110,auStack_154,auStack_1a8);
 

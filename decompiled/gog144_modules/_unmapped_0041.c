@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 102 functions (96 named) — decompiled, names from PS2 symbols
+ * 102 functions (102 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2176,8 +2176,8 @@ void setMenuSelection__7PS2Gameiiii(int param_1)
 
 }
 
-/* ===== FUN_00413880 @ 0x00413880 ===== */
-undefined4 FUN_00413880(int param_1)
+/* ===== slope_walkable_check @ 0x00413880 ===== */
+undefined4 slope_walkable_check(int param_1)
 
 
 
@@ -5012,11 +5012,11 @@ void evilreaper_award_item__FP6OBJECT(int param_1)
 
   XFGetViewport(&DAT_00657510);
 
-  fVar2 = (float10)FUN_0040d6d0();
+  fVar2 = (float10)cam_cfg_val_5550e0_get();
 
   DAT_0065751c = (float)fVar2;
 
-  fVar2 = (float10)FUN_0040d6e0();
+  fVar2 = (float10)cam_cfg_val_5550e4_get();
 
   DAT_00657520 = (float)fVar2;
 
@@ -5783,8 +5783,8 @@ code_r0x0041776a:
 
 }
 
-/* ===== FUN_004177a0 @ 0x004177A0 ===== */
-int FUN_004177a0(int param_1)
+/* ===== team_base_find @ 0x004177A0 ===== */
+int team_base_find(int param_1)
 
 
 
@@ -5839,7 +5839,7 @@ void bldg_slot_action_dispatch(undefined4 param_1,undefined4 param_2)
 
   if (iVar1 != 0) {
 
-    FUN_0040ab60(param_1,param_2);
+    base_slot_tasks_clear(param_1,param_2);
 
     return;
 
@@ -6841,8 +6841,8 @@ bool base_bldg_is_alive_at_all(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004184d0 @ 0x004184D0 ===== */
-undefined4 FUN_004184d0(int param_1,int param_2)
+/* ===== slot_member_alive @ 0x004184D0 ===== */
+undefined4 slot_member_alive(int param_1,int param_2)
 
 
 
@@ -7130,8 +7130,8 @@ void bldg_get_refpt_worldlocdir(int param_1,int param_2,undefined4 *param_3,floa
 
 }
 
-/* ===== FUN_00418770 @ 0x00418770 ===== */
-void FUN_00418770(int param_1,int param_2,float *param_3)
+/* ===== mat_facing_angle_get @ 0x00418770 ===== */
+void mat_facing_angle_get(int param_1,int param_2,float *param_3)
 
 
 
@@ -7963,8 +7963,8 @@ LAB_0041a192:
 
 }
 
-/* ===== FUN_0041a1c0 @ 0x0041A1C0 ===== */
-void FUN_0041a1c0(int param_1,undefined4 param_2)
+/* ===== comm_msg1a_id_send @ 0x0041A1C0 ===== */
+void comm_msg1a_id_send(int param_1,undefined4 param_2)
 
 
 
@@ -11358,12 +11358,12 @@ LAB_0041eb75:
 
 }
 
-/* ===== FUN_0041ebb0 @ 0x0041EBB0 ===== */
+/* ===== meccbase_items_move_owned @ 0x0041EBB0 ===== */
 /* PS2 candidate: do_building_move (conf 0.5) */
 
 
 
-void FUN_0041ebb0(int param_1)
+void meccbase_items_move_owned(int param_1)
 
 
 
@@ -11857,9 +11857,9 @@ void objtype_setup_kabuto(int param_1)
 
     obj_group_spread(param_1);
 
-    FUN_0041ebb0(param_1);
+    meccbase_items_move_owned(param_1);
 
-    FUN_0041ebb0(param_1);
+    meccbase_items_move_owned(param_1);
 
     return;
 
@@ -12012,7 +12012,7 @@ void hud_status_main(void)
 
   } while (iVar5 < 0x1a);
 
-  FUN_00519d30();
+  strbuf_block_copy();
 
   DAT_00632aed = (byte)(DAT_005dd0f8 >> 8) & 1;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 95 functions (94 named) — decompiled, names from PS2 symbols
+ * 95 functions (95 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -8131,8 +8131,8 @@ undefined4 reaper_xhair_validate__FP6OBJECTPv(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004ba2f0 @ 0x004BA2F0 ===== */
-undefined4 FUN_004ba2f0(int param_1,int param_2,int param_3)
+/* ===== reaperbase_dock_valid_check @ 0x004BA2F0 ===== */
+undefined4 reaperbase_dock_valid_check(int param_1,int param_2,int param_3)
 
 
 
@@ -9793,7 +9793,9 @@ LAB_004bb6cc:
 
             (*(int *)(iVar4 + 0xd3c + *(int *)(iVar4 + 0xdb0) * 0xc) == 0x17)) &&
 
-           (iVar7 = FUN_004ba2f0(param_1,iVar4,*(int *)(iVar4 + 0xdb0)), iVar7 != 0)) {
+           (iVar7 = reaperbase_dock_valid_check(param_1,iVar4,*(int *)(iVar4 + 0xdb0)), iVar7 != 0))
+
+        {
 
           uVar9 = reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi
 
@@ -9927,7 +9929,9 @@ LAB_004bb94e:
 
         if ((*(float *)(iVar4 + 0xda8) < 0.0 != (*(float *)(iVar4 + 0xda8) == 0.0)) &&
 
-           (iVar7 = FUN_004ba2f0(param_1,iVar4,*(undefined4 *)(iVar4 + 0xdb0)), iVar7 != 0)) {
+           (iVar7 = reaperbase_dock_valid_check(param_1,iVar4,*(undefined4 *)(iVar4 + 0xdb0)),
+
+           iVar7 != 0)) {
 
           uVar9 = reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi
 
@@ -11238,7 +11242,7 @@ void ai_flight_check(int param_1)
 
         if ((*(int *)(iVar2 + 0xf20) == 0) || (*(int *)(iVar2 + 0xf24) != 0)) {
 
-          FUN_004a17c0(*(undefined4 *)(param_1 + 0x104),*(undefined4 *)(iVar2 + 0x60));
+          nearest_dist_record(*(undefined4 *)(param_1 + 0x104),*(undefined4 *)(iVar2 + 0x60));
 
           *(float *)(*(int *)(param_1 + 0x104) + 0x20) =
 

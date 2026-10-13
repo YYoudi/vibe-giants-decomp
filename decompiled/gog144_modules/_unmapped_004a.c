@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 149 functions (145 named) — decompiled, names from PS2 symbols
+ * 149 functions (149 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -888,8 +888,8 @@ void PhysicsExZeroForce(int param_1)
 
 }
 
-/* ===== FUN_004a17c0 @ 0x004A17C0 ===== */
-void FUN_004a17c0(int param_1,float param_2)
+/* ===== nearest_dist_record @ 0x004A17C0 ===== */
+void nearest_dist_record(int param_1,float param_2)
 
 
 
@@ -1779,10 +1779,10 @@ void obj_move_clamped(float param_1,float *param_2,float param_3)
 
 }
 
-/* ===== FUN_004a2650 @ 0x004A2650 ===== */
-void FUN_004a2650(float *param_1,float *param_2,float *param_3,float *param_4,float param_5,
+/* ===== vec_move_toward @ 0x004A2650 ===== */
+void vec_move_toward(float *param_1,float *param_2,float *param_3,float *param_4,float param_5,
 
-                 float param_6,float param_7)
+                    float param_6,float param_7)
 
 
 
@@ -2324,7 +2324,7 @@ void SphereFitToObject(undefined4 param_1,int param_2,float param_3)
 
     local_9c = *(undefined4 *)(param_2 + 0xa4);
 
-    FUN_0053dc10(local_44,&local_a0);
+    mat_identity_translation(local_44,&local_a0);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(param_1,local_44,local_88);
 
@@ -2590,7 +2590,7 @@ undefined4 obj_collpts_world_test(int param_1,int param_2)
 
     fStack_254 = *(float *)(param_1 + 0xa4);
 
-    FUN_0053dc10(afStack_228,&fStack_258);
+    mat_identity_translation(afStack_228,&fStack_258);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_154,afStack_228,afStack_29c);
 
@@ -5356,7 +5356,7 @@ LAB_004a5802:
 
       if (*(int *)(DAT_00632a88 + 0x18c) + -1 < 2) {
 
-        FUN_00500f50(DAT_006330cc,DAT_006330c4);
+        axis_deltas_set(DAT_006330cc,DAT_006330c4);
 
         rpman_init__FP6OBJECT();
 
@@ -5364,7 +5364,7 @@ LAB_004a5802:
 
       }
 
-      FUN_00500f50(DAT_006330d0,DAT_006330c4);
+      axis_deltas_set(DAT_006330d0,DAT_006330c4);
 
     }
 
@@ -6716,7 +6716,7 @@ void obj_turn_update(int param_1)
 
     fVar1 = (float10)FRateGetSecsframe(param_1,0);
 
-    fVar2 = (float10)FUN_0040d480();
+    fVar2 = (float10)camera_zoom_factor_get();
 
     fVar1 = (float10)(int)*(char *)(param_1 + 0x209) * (float10)0.03125 *
 
@@ -6799,7 +6799,7 @@ void obj_alpha_fade_update(float param_1)
 
   }
 
-  fVar4 = (float10)FUN_0040d480();
+  fVar4 = (float10)camera_zoom_factor_get();
 
   fVar1 = (float)((float10)(int)*(char *)((int)param_1 + 0x208) * (float10)0.03125 * fVar4);
 
@@ -6988,7 +6988,7 @@ void player_pitch_update(int param_1)
 
     fVar1 = (float10)FRateGetSecsframe(param_1,0);
 
-    fVar2 = (float10)FUN_0040d480();
+    fVar2 = (float10)camera_zoom_factor_get();
 
     fVar1 = (float10)(int)*(char *)(param_1 + 0x209) * (float10)0.03125 *
 
@@ -7504,8 +7504,8 @@ void orbit_phase_object_c12(int param_1)
 
 }
 
-/* ===== FUN_004a73a0 @ 0x004A73A0 ===== */
-void FUN_004a73a0(int param_1)
+/* ===== vvel_decay_tick @ 0x004A73A0 ===== */
+void vvel_decay_tick(int param_1)
 
 
 
@@ -8173,8 +8173,8 @@ void timer_countdown_tick_c56(int param_1)
 
 }
 
-/* ===== FUN_004a7be0 @ 0x004A7BE0 ===== */
-char FUN_004a7be0(void)
+/* ===== float_sign3 @ 0x004A7BE0 ===== */
+char float_sign3(void)
 
 
 
@@ -11759,9 +11759,9 @@ code_r0x004aafc8:
 
     }
 
-    fVar14 = (float10)FUN_004a2650(&fStack_b4,0,puVar3 + 0x6e,(int)param_1 + 0xa0,puVar3[0x1a],
+    fVar14 = (float10)vec_move_toward(&fStack_b4,0,puVar3 + 0x6e,(int)param_1 + 0xa0,puVar3[0x1a],
 
-                                   puVar3[0x1b],puVar3[0x1c]);
+                                      puVar3[0x1b],puVar3[0x1c]);
 
     if (fVar14 == (float10)0.0) {
 

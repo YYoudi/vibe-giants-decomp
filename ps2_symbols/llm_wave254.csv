@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054f246,0054f246,,crt_chsize,0.9,w254,_lseek + SetEndOfFile + errno 0xd (CRT _chsize)
+00544517,00544517,,crt_tolower_mb,0.9,w254,tolower with MBCS handling via ctype table 0x580eac
+0054530f,0054530f,,crt_toupper_mb,0.9,w254,toupper with MBCS handling (+0x20 A-Z)
+0053a830,0053a830,,crt_file_lock_ok,0.9,w254,strlen + crt_file_lock_ops == 0 bool
+00544123,00544123,,crt_ctype_mb_check,0.9,w254,ctype table check via crt_getstringtype fallback; callers cmdline_parse/defaults

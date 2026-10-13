@@ -1966,7 +1966,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
       param_2 = (undefined4 *)(float)(fVar13 * (float10)0.025);
 
-      uVar6 = FUN_004a7be0(param_2,0x3727c5ac,0x3e4ccccd);
+      uVar6 = float_sign3(param_2,0x3727c5ac,0x3e4ccccd);
 
       *(undefined1 *)(iVar5 + 0x208) = uVar6;
 
@@ -1986,7 +1986,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
     fVar13 = (float10)playerobj_turn(fVar2,*(undefined4 *)(iVar5 + 200));
 
-    cVar7 = FUN_004a7be0((float)(fVar13 * (float10)0.025),0x3727c5ac,0x3e4ccccd);
+    cVar7 = float_sign3((float)(fVar13 * (float10)0.025),0x3727c5ac,0x3e4ccccd);
 
     *(char *)(iVar5 + 0x208) = cVar7;
 
@@ -2054,7 +2054,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
     param_1 = (float)(fVar13 * (float10)0.025);
 
-    uVar6 = FUN_004a7be0(param_1,0x3727c5ac,0x3e4ccccd);
+    uVar6 = float_sign3(param_1,0x3727c5ac,0x3e4ccccd);
 
     *(undefined1 *)(iVar5 + 0x208) = uVar6;
 
@@ -2086,7 +2086,7 @@ LAB_00403218:
 
   }
 
-  if ((-1 < (int)param_3) && (iVar10 = FUN_00413880(iVar5), iVar10 != 0)) {
+  if ((-1 < (int)param_3) && (iVar10 = slope_walkable_check(iVar5), iVar10 != 0)) {
 
     param_3 = -1;
 

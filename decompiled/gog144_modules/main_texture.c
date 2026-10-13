@@ -581,7 +581,7 @@ LAB_005080c7:
 
       crt_sprintf(auStack_12c,s__s_dds_0057bed4,*param_1);
 
-      iVar10 = FUN_00538540(auStack_12c);
+      iVar10 = fx_name_exists(auStack_12c);
 
       if ((iVar10 != 0) && ((DAT_00632e94 & 0x2000) != 0)) {
 
@@ -1444,7 +1444,7 @@ main_texture_005088d0
 
   crt_sprintf(auStack_64,s__s_tga_0057be84,param_1);
 
-  iVar3 = FUN_00538540(auStack_64);
+  iVar3 = fx_name_exists(auStack_64);
 
   if (iVar3 == 0) {
 

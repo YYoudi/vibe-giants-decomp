@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0049de80,0049de80,,ai_standoff_goal_calc,0.9,w253,target beyond cfg+0xd00 radius: goal = target + radius*normalize(dir)
+00544ee7,00544ee7,,crt_thread_start,0.9,w253,"CRT thread routine: TlsSetValue ptd, thread id, vtable init, ptd free on exit"
+0053be80,0053be80,,anm_cam_stream_value_read,0.9,w253,"stream seek +0xf8 block, vtable read float +0xec (ANM_CameraGetFOV cand)"
+004fa720,004fa720,,shopmenu_slot_entries_push,0.9,w253,"iterate slot entries stride 0x24, hurt_pusher_2 each"

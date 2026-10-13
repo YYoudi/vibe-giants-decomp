@@ -1632,7 +1632,7 @@ LAB_00437d68:
 
             if (*(int *)(piVar11[0xe] + 0x1e0) == 0x61) {
 
-              FUN_004782f0(piVar11[0xe]);
+              destroy_by_id_c33_c27(piVar11[0xe]);
 
             }
 
@@ -1848,7 +1848,7 @@ LAB_00437d68:
 
             if (*(int *)(piVar11[0xe] + 0x1e0) == 0x61) {
 
-              FUN_004782f0(piVar11[0xe]);
+              destroy_by_id_c33_c27(piVar11[0xe]);
 
             }
 
@@ -2066,7 +2066,7 @@ LAB_00437d68:
 
           if (*(int *)(piVar20[0xe] + 0x1e0) == 0x61) {
 
-            FUN_004782f0(piVar20[0xe]);
+            destroy_by_id_c33_c27(piVar20[0xe]);
 
           }
 

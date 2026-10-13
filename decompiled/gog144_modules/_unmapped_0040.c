@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 120 functions (113 named) — decompiled, names from PS2 symbols
+ * 120 functions (120 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -584,7 +584,7 @@ undefined4 ai_goal_valid_check(int param_1)
 
       if ((uVar2 & 0x20) == 0) {
 
-        if (((uVar2 & 0x800) != 0) && (iVar5 = FUN_00413880(param_1), iVar5 == 0)) {
+        if (((uVar2 & 0x800) != 0) && (iVar5 = slope_walkable_check(param_1), iVar5 == 0)) {
 
           return 1;
 
@@ -1433,13 +1433,13 @@ LAB_00403980:
 
   GEO_MatTranspose(param_1,auStack_44);
 
-  iVar2 = FUN_0053be60(iVar2);
+  iVar2 = anm_id_mask(iVar2);
 
   if (iVar2 != 0) {
 
     uVar1 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(iVar2 + 0xc),param_6);
 
-    fVar5 = (float10)FUN_0053be80(iVar2,uVar1);
+    fVar5 = (float10)anm_cam_stream_value_read(iVar2,uVar1);
 
     fVar5 = (float10)fptan(fVar5 * (float10)0.5);
 
@@ -2567,12 +2567,14 @@ void objdata_create_vertex_normals(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00404570 @ 0x00404570 ===== */
+/* ===== S_TriCalcGradients @ 0x00404570 ===== */
 /* PS2 candidate: S_TriCalcGradients (conf 0.6) */
 
 
 
-void FUN_00404570(float *param_1,float *param_2,int param_3,int param_4,int param_5,int param_6)
+void S_TriCalcGradients(float *param_1,float *param_2,int param_3,int param_4,int param_5,
+
+                       int param_6)
 
 
 
@@ -2813,7 +2815,7 @@ void collgrid_collide_b(int param_1,int param_2,int param_3,int param_4)
 
   while (iVar7 != 0) {
 
-    (*(code *)PTR_FUN_00554060)(&local_18,&local_c,iVar5,param_3,param_1,param_2);
+    (*(code *)PTR_S_TriCalcGradients_00554060)(&local_18,&local_c,iVar5,param_3,param_1,param_2);
 
     *(float *)(iVar3 + param_3 * 0xc) = local_18 + *(float *)(iVar3 + param_3 * 0xc);
 
@@ -8240,8 +8242,8 @@ LAB_0040ab0e:
 
 }
 
-/* ===== FUN_0040ab60 @ 0x0040AB60 ===== */
-void FUN_0040ab60(int param_1,int param_2)
+/* ===== base_slot_tasks_clear @ 0x0040AB60 ===== */
+void base_slot_tasks_clear(int param_1,int param_2)
 
 
 
@@ -8328,8 +8330,8 @@ int base_slot13_get_owner(int param_1)
 
 }
 
-/* ===== FUN_0040abf0 @ 0x0040ABF0 ===== */
-undefined4 FUN_0040abf0(int param_1,int *param_2)
+/* ===== master_flagslot_claim @ 0x0040ABF0 ===== */
+undefined4 master_flagslot_claim(int param_1,int *param_2)
 
 
 
@@ -8843,8 +8845,8 @@ void objlist_flag_partition(void)
 
 }
 
-/* ===== FUN_0040b300 @ 0x0040B300 ===== */
-void FUN_0040b300(void)
+/* ===== objlist_flagall_partition @ 0x0040B300 ===== */
+void objlist_flagall_partition(void)
 
 
 
@@ -11402,12 +11404,12 @@ void sound_player_voice_mecc(void)
 
 }
 
-/* ===== FUN_0040d480 @ 0x0040D480 ===== */
+/* ===== camera_zoom_factor_get @ 0x0040D480 ===== */
 /* PS2 candidate: camera_get_sniper_factor (conf 0.7) */
 
 
 
-float10 FUN_0040d480(void)
+float10 camera_zoom_factor_get(void)
 
 
 
@@ -11613,8 +11615,8 @@ void XFGetViewport(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0040d6d0 @ 0x0040D6D0 ===== */
-float10 FUN_0040d6d0(void)
+/* ===== cam_cfg_val_5550e0_get @ 0x0040D6D0 ===== */
+float10 cam_cfg_val_5550e0_get(void)
 
 
 
@@ -11624,8 +11626,8 @@ float10 FUN_0040d6d0(void)
 
 }
 
-/* ===== FUN_0040d6e0 @ 0x0040D6E0 ===== */
-float10 FUN_0040d6e0(void)
+/* ===== cam_cfg_val_5550e4_get @ 0x0040D6E0 ===== */
+float10 cam_cfg_val_5550e4_get(void)
 
 
 
@@ -12099,9 +12101,9 @@ void SetupCameraDataNormal__FP6OBJECTT0(undefined4 param_1,float param_2)
 
   if ((((*(int **)((int)param_2 + 0x170) != (int *)0x0) && (**(int **)((int)param_2 + 0x170) == 1))
 
-      && (iVar7 = FUN_00501070(param_2), 0 < iVar7)) && (DAT_005550b8 == 0)) {
+      && (iVar7 = carried_obj_id_get(param_2), 0 < iVar7)) && (DAT_005550b8 == 0)) {
 
-    local_28 = FUN_00501070(param_2);
+    local_28 = carried_obj_id_get(param_2);
 
     if (local_28 < 2) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 132 functions (128 named) — decompiled, names from PS2 symbols
+ * 132 functions (132 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -8030,12 +8030,12 @@ void sfx_volume_set_clamped(float param_1)
 
 }
 
-/* ===== FUN_00425840 @ 0x00425840 ===== */
+/* ===== game_cfg_val_555a1c_get @ 0x00425840 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_00425840(void)
+float10 game_cfg_val_555a1c_get(void)
 
 
 
@@ -11012,9 +11012,11 @@ void dlog_widgets_draw(undefined4 *param_1)
 
                   if (0 < (int)pcVar11 - (int)pcVar12) {
 
-                    FUN_0051b9c0(local_14,0,puVar7[0xc],puVar7[7],local_10,pcVar12,
+                    textrender_draw_y_aspect
 
-                                 (int)pcVar11 - (int)pcVar12);
+                              (local_14,0,puVar7[0xc],puVar7[7],local_10,pcVar12,
+
+                               (int)pcVar11 - (int)pcVar12);
 
                   }
 
@@ -11036,9 +11038,11 @@ void dlog_widgets_draw(undefined4 *param_1)
 
               if (0 < (int)pcVar11 - (int)pcVar12) {
 
-                FUN_0051b9c0(local_14,0,puVar7[0xc],puVar7[7],local_10,pcVar12,
+                textrender_draw_y_aspect
 
-                             (int)pcVar11 - (int)pcVar12);
+                          (local_14,0,puVar7[0xc],puVar7[7],local_10,pcVar12,
+
+                           (int)pcVar11 - (int)pcVar12);
 
               }
 
@@ -12235,7 +12239,7 @@ LAB_00429782:
 
           if ((DAT_00632aa0._3_1_ != '\0') || (DAT_00632aa0._1_1_ != '\0')) {
 
-            FUN_0042a460(param_1);
+            dlog_navlist_walk(param_1);
 
             return;
 
@@ -13361,8 +13365,8 @@ LAB_0042a410:
 
 }
 
-/* ===== FUN_0042a460 @ 0x0042A460 ===== */
-void FUN_0042a460(int *param_1)
+/* ===== dlog_navlist_walk @ 0x0042A460 ===== */
+void dlog_navlist_walk(int *param_1)
 
 
 
@@ -14681,8 +14685,8 @@ int main_0042b1d0(int param_1)
 
 }
 
-/* ===== FUN_0042b220 @ 0x0042B220 ===== */
-void FUN_0042b220(ushort *param_1)
+/* ===== tokenstream_vtable_play @ 0x0042B220 ===== */
+void tokenstream_vtable_play(ushort *param_1)
 
 
 
@@ -16280,7 +16284,7 @@ LAB_0042c9ed:
 
             uVar19 = 0x22;
 
-            FUN_004f8350(param_1);
+            objspec_float_deref_get(param_1);
 
             uVar16 = __ftol();
 
@@ -19563,8 +19567,10 @@ void dlog_fade_control(void)
 
 }
 
-/* ===== FUN_0042f4c0 @ 0x0042F4C0 ===== */
-void FUN_0042f4c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* ===== dlog_alpha_blend_full @ 0x0042F4C0 ===== */
+void dlog_alpha_blend_full
+
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 

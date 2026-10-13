@@ -10421,7 +10421,7 @@ LAB_004df304:
 
             goto LAB_004ded23;
 
-            FUN_004e7160(param_1,1);
+            anim_flagid_select(param_1,1);
 
             param_1[0x39] = 0xd;
 
@@ -10429,7 +10429,7 @@ LAB_004df304:
 
           else {
 
-            FUN_004e7160(param_1,1);
+            anim_flagid_select(param_1,1);
 
 LAB_004db788:
 
@@ -11909,7 +11909,7 @@ LAB_004dfe3e:
 
           if (piVar15[0x4d] != 0) {
 
-            FUN_004e2b10(param_1);
+            rpman_return_refpt_eval(param_1);
 
           }
 
@@ -11941,7 +11941,7 @@ LAB_004dfea8:
 
 LAB_004dfe9f:
 
-                FUN_004e2b10(param_1);
+                rpman_return_refpt_eval(param_1);
 
                 goto LAB_004dfea8;
 
@@ -13667,7 +13667,7 @@ LAB_004e0779:
 
       case 0x52:
 
-        FUN_004e7160(param_1,0);
+        anim_flagid_select(param_1,0);
 
         turn_target_state_set(param_1,(float)param_1[0x32] + 70.0);
 
@@ -14761,7 +14761,7 @@ LAB_004decf7:
 
 LAB_004ded0d:
 
-          FUN_004e7160(param_1,1);
+          anim_flagid_select(param_1,1);
 
           rpman_shot(param_1);
 
@@ -14875,7 +14875,7 @@ LAB_004dc268:
 
         if (fVar17 == (float10)0.0) {
 
-          FUN_004e7160(param_1,1);
+          anim_flagid_select(param_1,1);
 
           ai_rand_anim_select(param_1,0,0);
 
@@ -14887,7 +14887,7 @@ LAB_004dc268:
 
 LAB_004ded23:
 
-          FUN_004e7160(param_1,0);
+          anim_flagid_select(param_1,0);
 
         }
 

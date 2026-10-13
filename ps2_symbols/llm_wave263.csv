@@ -1,0 +1,16 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0051c540,0051c540,,net_host_flags_set,0.9,w263,DAT_6331c4=1; if no DAT_5ddb54 set DAT_5ddb58/5dda80; caller mission_load_full
+004706d0,004706d0,,anm_slot_record_get,0.9,w263,"slot<0: base-0x308+slot*0x308 record, return *entry; caller msg28_copy10_c53"
+00496200,00496200,,vcall_5dd350_timer_get,0.9,w263,"virtual call DAT_5dd350() if DAT_633204==0, float ret"
+004961e0,004961e0,,vcall_5dd34c_get,0.9,w263,virtual call DAT_5dd34c() if DAT_633204==0
+00495060,00495060,,vcall_5dd298_setupgam,0.9,w263,virtual call DAT_5dd298() guard +8==0 && DAT_633208==0
+00495090,00495090,,vcall_5dd31c_setupgam,0.9,w263,virtual call DAT_5dd31c(); caller main_setupgame
+004959d0,004959d0,,vcall_5dd28c_wredit,0.9,w263,virtual call DAT_5dd28c(); caller wredit_00439490
+00497c90,00497c90,,objparts_iter_main_call,0.9,w263,"count +0x68, parts +0x90 stride 0x14: main_00508840 each"
+004e7160,004e7160,,anim_flagid_select,0.9,w263,"flags 0x200/0x100 -> ids 0x91/0x9c/0x52 scaled +0xc4, +0x1a8 from +0x1ac"
+00519d30,00519d30,,strbuf_block_copy,0.9,w263,copy PTR_DAT_57ca1c block -> DAT_5dd24c + second copy; caller hud_status_main
+0042a460,0042a460,,dlog_navlist_walk,0.9,w263,"match [2]==param[2], skip type3+bit; caller dlog_list_navigate_sound"
+0042b220,0042b220,,tokenstream_vtable_play,0.9,w263,ushort tokens: vtable DAT_65643c off 0x20/0x24/0x28 by flags 0x8000/0x4000
+004ec7d0,004ec7d0,,defaults_bytes_init,0.9,w263,init 26B struct defaults 1/4/1/0x13/0xd2/199/0xc9; caller intro_assets_check
+0054cf50,0054cf50,,crt_flagmap_xlate,0.9,w263,"CRT bit remap (0x10->1, 8->4, 4->8, 2->0x10, 1->0x20, 0x300/0x30000 groups)"
+00544065,00544065,,crt_round_stub,0.9,w263,ROUND(f)==f check no-op stub

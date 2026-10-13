@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a7be0,004a7be0,,float_sign3,0.9,w250,sign wrapper via ftol: -1/0/1 of float result
+00413880,00413880,,slope_walkable_check,0.9,w250,"ground +0x1bc>=0, +0x224==0, slope +0x14c<0.64278"
+00452090,00452090,,scene_link_toggle_check,0.9,w250,param==DAT_6331ac -> toggle + drawwrld_scene_link
+0052ab70,0052ab70,,comm_player_ready_set,0.9,w250,DAT_5de2a4[idx]=param (cand ObjectGetWorldRefPoint REJECTED)

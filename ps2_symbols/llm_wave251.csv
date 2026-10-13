@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0041a1c0,0041a1c0,,comm_msg1a_id_send,0.9,w251,"comm_chat_send_1(param2,0,1,0,0x1a,&obj+0x188 id); caller mecc_bubble_show"
+0051ea90,0051ea90,,error_screen_dinput,0.9,w251,error_screen_show(DAT_5dd970 fixed msg); caller dinput_init
+00525380,00525380,,progress_text_pick,0.9,w251,switch ids -> TextGetPtr per branch; caller comm_progress_display

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0053dc10,0053dc10,,mat_identity_translation,0.9,w246,"copy 17-dword identity from DAT_580b98, set translation col, mark type 0x10"
+00499200,00499200,,object_destroy_full,0.9,w246,object_destroy_specialtype + object_destroy
+00538540,00538540,,fx_name_exists,0.9,w246,"fx_table_lookup(DAT_5e2c74,name) != 0"
+00494f90,00494f90,,cutscene_active_check,0.9,w246,DAT_5c9f320 set && not base dialog; callers mecc/reaper combat AI

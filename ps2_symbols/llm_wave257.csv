@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0049b810,0049b810,,owner_squad_process,0.9,w257,owner or class 0x3e with owner: iterate owner list entries in global list; caller game_loop_run
+00476eb0,00476eb0,,seq_index_assign,0.9,w257,max +0x174 among same flag/type + 1; class 0x60 special; caller wredit_menu_cleanup_2
+00501100,00501100,,pet_command_set,0.9,w257,"shift string into pet +0x34, timer 5.0 or clear on -; caller mecc_ai_main"

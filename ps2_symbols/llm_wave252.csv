@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004ea810,004ea810,,bldg_slots_clear_tick,0.9,w252,"6+1 slots clear_if_dead, count, empty->anim 0x20, state 1->2/3 (twin 004e9ce0)"
+004e2b10,004e2b10,,rpman_return_refpt_eval,0.9,w252,playerobj_eval_refpt + ground_height_at -> z +0xa8 (+0x1d4 off); w227 cand CONFIRMED
+0040b300,0040b300,,objlist_flagall_partition,0.9,w252,flag bit1 all DAT_632da8 then partition to DAT_632dac; callers mission_unload/setupgame
+00418770,00418770,,mat_facing_angle_get,0.9,w252,"slot or model matrix -> atand2pos(-z,-x)+90 facing angle"

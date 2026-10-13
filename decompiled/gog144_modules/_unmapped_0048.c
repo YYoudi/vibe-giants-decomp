@@ -2434,7 +2434,7 @@ void reaper_artillery_ai_c95(int param_1)
 
   fStack_44 = *(float *)(param_1 + 0xa8);
 
-  FUN_004a73a0(param_1);
+  vvel_decay_tick(param_1);
 
   smartie_vvel_avg_move(param_1);
 
@@ -2782,7 +2782,7 @@ void menu_audio_setup(int param_1)
 
       }
 
-      FUN_00452090(uVar2);
+      scene_link_toggle_check(uVar2);
 
       option_set_6331b0((~DAT_00632e94 & 0x40) == 0);
 
@@ -3164,7 +3164,7 @@ void game_options_verify(void)
 
     if (DAT_0058c5d0 == 0) {
 
-      fVar2 = (float10)FUN_00425840();
+      fVar2 = (float10)game_cfg_val_555a1c_get();
 
       fStack_c = (float)fVar2;
 
@@ -3253,7 +3253,7 @@ void dlog_page_process(void)
 
       DAT_0063291c = DAT_0055bdb8;
 
-      FUN_004fa720(&DAT_00632900,DAT_0055bdb8,0xffffffff);
+      shopmenu_slot_entries_push(&DAT_00632900,DAT_0055bdb8,0xffffffff);
 
       status_draw_sub(&DAT_00632900);
 
@@ -3303,7 +3303,7 @@ void dlog_page_process(void)
 
       }
 
-      FUN_004fa720(&DAT_00632900,DAT_0063291c,0xffffffff);
+      shopmenu_slot_entries_push(&DAT_00632900,DAT_0063291c,0xffffffff);
 
       status_draw_sub(&DAT_00632900);
 
@@ -4539,7 +4539,7 @@ LAB_00483e92:
 
     else {
 
-      uVar3 = FUN_00544123((int)DAT_0063304c,8);
+      uVar3 = crt_ctype_mb_check((int)DAT_0063304c,8);
 
     }
 
@@ -4587,7 +4587,7 @@ LAB_00483e92:
 
     else {
 
-      uVar3 = FUN_00544123((int)*pcVar4,8);
+      uVar3 = crt_ctype_mb_check((int)*pcVar4,8);
 
     }
 
@@ -9799,7 +9799,7 @@ LAB_0048b04f:
 
       if ((0xb < DAT_0059ee9c) && (DAT_0059ee9c < 0x13)) {
 
-        FUN_00500100(&DAT_00632900,DAT_0063291c,param_1 + 4);
+        shopmenu_slot_dword_get(&DAT_00632900,DAT_0063291c,param_1 + 4);
 
         DAT_0059ef04 = __ftol();
 
@@ -9819,7 +9819,7 @@ LAB_0048b04f:
 
       }
 
-      FUN_00500100(&DAT_00632900,DAT_0063291c,param_1 + 4);
+      shopmenu_slot_dword_get(&DAT_00632900,DAT_0063291c,param_1 + 4);
 
       DAT_0059ef04 = __ftol();
 
@@ -9953,7 +9953,7 @@ LAB_0048b390:
 
       if ((DAT_0059ee9c < 0x13) || (0x19 < DAT_0059ee9c)) {
 
-        FUN_00500100(&DAT_00632900,DAT_0063291c,param_1 + 4);
+        shopmenu_slot_dword_get(&DAT_00632900,DAT_0063291c,param_1 + 4);
 
         DAT_0059ef00 = __ftol();
 
@@ -9961,7 +9961,7 @@ LAB_0048b390:
 
       }
 
-      FUN_00500100(&DAT_00632900,DAT_0063291c,param_1 + 4);
+      shopmenu_slot_dword_get(&DAT_00632900,DAT_0063291c,param_1 + 4);
 
       DAT_0059ef00 = __ftol();
 
@@ -10641,7 +10641,7 @@ void dialog_0048ca10(void)
 
   case 1:
 
-    FUN_00452030();
+    draw_mode_cycle();
 
     break;
 
@@ -10667,7 +10667,7 @@ void dialog_0048ca10(void)
 
     iVar3 = iVar3 + 1;
 
-    iVar1 = FUN_0051c7e0();
+    iVar1 = render_flags_mode_get();
 
     if (iVar1 < iVar3) {
 
@@ -10685,7 +10685,7 @@ void dialog_0048ca10(void)
 
     iVar3 = iVar3 + 1;
 
-    iVar1 = FUN_0051c7e0();
+    iVar1 = render_flags_mode_get();
 
     if (iVar1 < iVar3) {
 
@@ -11055,7 +11055,7 @@ void menu_state_dispatch_2(void)
 
     (*DAT_005dd2d4)(1,iVar3 == 0);
 
-    FUN_00494fb0();
+    vtable_grid_5dd308_set();
 
     break;
 
@@ -11065,7 +11065,7 @@ void menu_state_dispatch_2(void)
 
     (*DAT_005dd2d4)(2,iVar3 == 0);
 
-    FUN_00494fe0();
+    vtable_flagged_dispatch();
 
     break;
 

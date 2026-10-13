@@ -3286,7 +3286,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   uStack_184 = 0;
 
-  FUN_0053dc10(auStack_e4,&fStack_18c);
+  mat_identity_translation(auStack_e4,&fStack_18c);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(pbVar1,auStack_e4,pbVar1);
 
@@ -4771,7 +4771,7 @@ void wredit_00439490(void)
 
   DAT_0059cd90 = 0;
 
-  FUN_004959d0();
+  vcall_5dd28c_wredit();
 
   return;
 
@@ -9663,7 +9663,7 @@ void wredit_ai_menu(void)
 
                 main_dlog_00427e80(DAT_0059cd68,1,0x3f000000,0x40e00000,0x88000022);
 
-                uVar6 = FUN_0046f540(iVar1);
+                uVar6 = getMenuSelection(iVar1);
 
                 crt_sprintf(local_100,s_Current_light_is____s_00557620,uVar6);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (328 named) — decompiled, names from PS2 symbols
+ * 351 functions (351 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -750,7 +750,7 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_S_maxobj_create_vertex_normals_0055405c = (&PTR_LAB_00580ce8)[param_1];
 
-  PTR_FUN_00554060 = (&PTR_FUN_00580cf4)[param_1];
+  PTR_S_TriCalcGradients_00554060 = (&PTR_S_TriCalcGradients_2_00580cf4)[param_1];
 
   PTR_collgrid_collide_b_00554064 = (&PTR_LAB_00580d00)[param_1];
 
@@ -794,12 +794,14 @@ void crt_math_dispatch_init(int param_1)
 
 }
 
-/* ===== FUN_00540ab0 @ 0x00540AB0 ===== */
+/* ===== S_TriCalcGradients_2 @ 0x00540AB0 ===== */
 /* PS2 candidate: S_TriCalcGradients_2 (conf 0.6) */
 
 
 
-void FUN_00540ab0(float *param_1,float *param_2,int param_3,int param_4,int param_5,int param_6)
+void S_TriCalcGradients_2
+
+               (float *param_1,float *param_2,int param_3,int param_4,int param_5,int param_6)
 
 
 
@@ -2578,17 +2580,17 @@ void crt_printf_hooks_init(void)
 
 {
 
-  PTR_FUN_0054D5A8_0058138c = &LAB_00545d9e;
+  PTR_crt_amsg_exit_2_0058138c = &LAB_00545d9e;
 
-  PTR_FUN_0054D5A8_00581388 = __cfltcvt;
+  PTR_crt_amsg_exit_2_00581388 = __cfltcvt;
 
-  PTR_FUN_0054D5A8_00581390 = __fassign;
+  PTR_crt_amsg_exit_2_00581390 = __fassign;
 
-  PTR_FUN_0054D5A8_00581394 = crt_strtol_scan;
+  PTR_crt_amsg_exit_2_00581394 = crt_strtol_scan;
 
-  PTR_FUN_0054D5A8_00581398 = &LAB_00545dec;
+  PTR_crt_amsg_exit_2_00581398 = &LAB_00545dec;
 
-  PTR_FUN_0054D5A8_0058139c = __cfltcvt;
+  PTR_crt_amsg_exit_2_0058139c = __cfltcvt;
 
   return;
 
@@ -4961,7 +4963,7 @@ LAB_00543f3c:
 
           auStack_e._6_4_ = 0x544047;
 
-          fVar5 = (float10)FUN_00544065();
+          fVar5 = (float10)crt_round_stub();
 
           fVar5 = -fVar5;
 
@@ -5011,7 +5013,7 @@ LAB_00543f3c:
 
       auStack_e._6_4_ = 0x543fed;
 
-      uVar2 = FUN_00544065();
+      uVar2 = crt_round_stub();
 
       if ((param_4 & 0x80000000) == 0) {
 
@@ -5087,12 +5089,12 @@ LAB_00543f0a:
 
 }
 
-/* ===== FUN_00544065 @ 0x00544065 ===== */
+/* ===== crt_round_stub @ 0x00544065 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00544065(void)
+void crt_round_stub(void)
 
 
 
@@ -5226,8 +5228,8 @@ LAB_00544115:
 
 }
 
-/* ===== FUN_00544123 @ 0x00544123 ===== */
-uint FUN_00544123(int param_1,uint param_2)
+/* ===== crt_ctype_mb_check @ 0x00544123 ===== */
+uint crt_ctype_mb_check(int param_1,uint param_2)
 
 
 
@@ -5312,7 +5314,7 @@ int crt_strspn(byte *param_1)
 
     else {
 
-      uVar1 = FUN_00544123(*param_1,8);
+      uVar1 = crt_ctype_mb_check(*param_1,8);
 
     }
 
@@ -5346,7 +5348,7 @@ int crt_strspn(byte *param_1)
 
     else {
 
-      uVar2 = FUN_00544123(uVar4,4);
+      uVar2 = crt_ctype_mb_check(uVar4,4);
 
     }
 
@@ -5414,7 +5416,7 @@ float10 crt_scanf_float2(byte *param_1)
 
     else {
 
-      uVar1 = FUN_00544123(*param_1,8);
+      uVar1 = crt_ctype_mb_check(*param_1,8);
 
     }
 
@@ -5559,7 +5561,7 @@ void crt_malloc_ext(uint param_1)
 
       local_8 = 0xffffffff;
 
-      FUN_0054432A();
+      crt_lock_malloc_ext();
 
       if (iVar1 != 0) {
 
@@ -5605,7 +5607,7 @@ void crt_malloc_ext(uint param_1)
 
         local_8 = 0xffffffff;
 
-        FUN_00544389();
+        crt_unlock_malloc_ext();
 
         if (iVar1 != 0) {
 
@@ -5641,8 +5643,8 @@ LAB_005443a2:
 
 }
 
-/* ===== FUN_0054432A @ 0x0054432A ===== */
-void FUN_0054432A(void)
+/* ===== crt_lock_malloc_ext @ 0x0054432A ===== */
+void crt_lock_malloc_ext(void)
 
 
 
@@ -5654,8 +5656,8 @@ void FUN_0054432A(void)
 
 }
 
-/* ===== FUN_00544389 @ 0x00544389 ===== */
-void FUN_00544389(void)
+/* ===== crt_unlock_malloc_ext @ 0x00544389 ===== */
+void crt_unlock_malloc_ext(void)
 
 
 
@@ -5726,7 +5728,7 @@ void crt_free_ext(LPVOID param_1)
 
     local_8 = 0xffffffff;
 
-    FUN_00544429();
+    crt_lock_free_ext();
 
     iVar1 = local_20;
 
@@ -5754,7 +5756,7 @@ void crt_free_ext(LPVOID param_1)
 
     local_8 = 0xffffffff;
 
-    FUN_00544481();
+    crt_unlock_free_ext();
 
     iVar1 = local_28;
 
@@ -5778,8 +5780,8 @@ LAB_0054448b:
 
 }
 
-/* ===== FUN_00544429 @ 0x00544429 ===== */
-void FUN_00544429(void)
+/* ===== crt_lock_free_ext @ 0x00544429 ===== */
+void crt_lock_free_ext(void)
 
 
 
@@ -5791,8 +5793,8 @@ void FUN_00544429(void)
 
 }
 
-/* ===== FUN_00544481 @ 0x00544481 ===== */
-void FUN_00544481(void)
+/* ===== crt_unlock_free_ext @ 0x00544481 ===== */
+void crt_unlock_free_ext(void)
 
 
 
@@ -5839,7 +5841,7 @@ int crt_lock_simple(int param_1)
 
     }
 
-    param_1 = FUN_00544517(param_1);
+    param_1 = crt_tolower_mb(param_1);
 
     if (bVar1) {
 
@@ -5859,8 +5861,8 @@ int crt_lock_simple(int param_1)
 
 }
 
-/* ===== FUN_00544517 @ 0x00544517 ===== */
-uint FUN_00544517(uint param_1)
+/* ===== crt_tolower_mb @ 0x00544517 ===== */
+uint crt_tolower_mb(uint param_1)
 
 
 
@@ -5902,7 +5904,7 @@ uint FUN_00544517(uint param_1)
 
       else {
 
-        uVar2 = FUN_00544123(param_1,2);
+        uVar2 = crt_ctype_mb_check(param_1,2);
 
       }
 
@@ -6909,12 +6911,12 @@ void __get_eh_context(void)
 
 }
 
-/* ===== FUN_00544d41 @ 0x00544D41 ===== */
+/* ===== matherr @ 0x00544D41 ===== */
 /* PS2 candidate: matherr (conf 0.6) */
 
 
 
-void FUN_00544d41(int param_1)
+void matherr(int param_1)
 
 
 
@@ -7002,7 +7004,7 @@ void crt_lock_vector(UINT param_1,int param_2,int param_3)
 
   
 
-  FUN_00544E50();
+  crt_lock_vector_lock();
 
   if (DAT_00630b9c == 1) {
 
@@ -7054,14 +7056,14 @@ void crt_lock_vector(UINT param_1,int param_2,int param_3)
 
   }
 
-  FUN_00544E59();
+  crt_lock_vector_unlock();
 
   return;
 
 }
 
-/* ===== FUN_00544E50 @ 0x00544E50 ===== */
-void FUN_00544E50(void)
+/* ===== crt_lock_vector_lock @ 0x00544E50 ===== */
+void crt_lock_vector_lock(void)
 
 
 
@@ -7073,8 +7075,8 @@ void FUN_00544E50(void)
 
 }
 
-/* ===== FUN_00544E59 @ 0x00544E59 ===== */
-void FUN_00544E59(void)
+/* ===== crt_lock_vector_unlock @ 0x00544E59 ===== */
+void crt_lock_vector_unlock(void)
 
 
 
@@ -7138,7 +7140,7 @@ HANDLE crt_vobuf_alloc(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 p
 
     p0[0x13] = param_4;
 
-    pvVar1 = CreateThread(param_1,param_2,FUN_00544ee7,p0,param_5,param_6);
+    pvVar1 = CreateThread(param_1,param_2,crt_thread_start,p0,param_5,param_6);
 
     if (pvVar1 != (HANDLE)0x0) {
 
@@ -7162,8 +7164,8 @@ HANDLE crt_vobuf_alloc(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 p
 
 }
 
-/* ===== FUN_00544ee7 @ 0x00544EE7 ===== */
-undefined4 FUN_00544ee7(DWORD *param_1)
+/* ===== crt_thread_start @ 0x00544EE7 ===== */
+undefined4 crt_thread_start(DWORD *param_1)
 
 
 
@@ -7316,7 +7318,7 @@ uint crt_errno_big(byte *param_1,int *param_2,uint param_3,uint param_4)
 
     else {
 
-      uVar2 = FUN_00544123(bVar6,8);
+      uVar2 = crt_ctype_mb_check(bVar6,8);
 
     }
 
@@ -7400,7 +7402,7 @@ LAB_00545091:
 
     else {
 
-      uVar3 = FUN_00544123(uVar7,4);
+      uVar3 = crt_ctype_mb_check(uVar7,4);
 
     }
 
@@ -7414,7 +7416,7 @@ LAB_00545091:
 
       else {
 
-        uVar7 = FUN_00544123(uVar7,0x103);
+        uVar7 = crt_ctype_mb_check(uVar7,0x103);
 
       }
 
@@ -7529,7 +7531,7 @@ uint crt_char_class(int param_1)
 
   if (1 < DAT_005810b8) {
 
-    uVar1 = FUN_00544123(param_1,8);
+    uVar1 = crt_ctype_mb_check(param_1,8);
 
     return uVar1;
 
@@ -7818,7 +7820,7 @@ int crt_lock_5452a0(int param_1)
 
     }
 
-    param_1 = FUN_0054530f(param_1);
+    param_1 = crt_toupper_mb(param_1);
 
     if (bVar1) {
 
@@ -7838,8 +7840,8 @@ int crt_lock_5452a0(int param_1)
 
 }
 
-/* ===== FUN_0054530f @ 0x0054530F ===== */
-uint FUN_0054530f(uint param_1)
+/* ===== crt_toupper_mb @ 0x0054530F ===== */
+uint crt_toupper_mb(uint param_1)
 
 
 
@@ -7883,7 +7885,7 @@ uint FUN_0054530f(uint param_1)
 
       else {
 
-        uVar2 = FUN_00544123(param_1,1);
+        uVar2 = crt_ctype_mb_check(param_1,1);
 
       }
 
@@ -8168,9 +8170,9 @@ LAB_0054559f:
 
         param_2 = param_2 + 1;
 
-        uVar7 = FUN_0054530f(uVar7,uVar5);
+        uVar7 = crt_toupper_mb(uVar7,uVar5);
 
-        uVar5 = FUN_0054530f();
+        uVar5 = crt_toupper_mb();
 
         bVar8 = uVar5 < uVar7;
 
@@ -8333,9 +8335,9 @@ char fx_name_compare(byte *param_1,byte *param_2)
 
       } while (bVar5 == bVar4);
 
-      bVar4 = FUN_0054530f(bVar4,bVar5);
+      bVar4 = crt_toupper_mb(bVar4,bVar5);
 
-      bVar5 = FUN_0054530f();
+      bVar5 = crt_toupper_mb();
 
     } while (bVar4 == bVar5);
 
@@ -9254,7 +9256,7 @@ void crt_strtol_scan(char *param_1)
 
       else {
 
-        uVar4 = FUN_00544123((int)*param_1,4);
+        uVar4 = crt_ctype_mb_check((int)*param_1,4);
 
       }
 
@@ -9739,7 +9741,7 @@ LAB_00546276:
 
        (((piVar4 != (int *)&DAT_00581120 && (piVar4 != (int *)&DAT_00581140)) ||
 
-        (iVar5 = FUN_0054d6cd(uVar2), iVar5 == 0)))) {
+        (iVar5 = crt_fd_flag_40(uVar2), iVar5 == 0)))) {
 
       crt_stream_release(piVar4);
 
@@ -10250,7 +10252,7 @@ LAB_00546510:
 
           local_c = psVar5;
 
-          (*(code *)PTR_FUN_0054D5A8_00581388)
+          (*(code *)PTR_crt_amsg_exit_2_00581388)
 
                     (&local_4c,local_24c,(int)(char)bVar9,local_14,local_38);
 
@@ -10258,13 +10260,13 @@ LAB_00546510:
 
           if ((uVar3 != 0) && (local_14 == 0)) {
 
-            (*(code *)PTR_FUN_0054D5A8_00581394)(local_24c);
+            (*(code *)PTR_crt_amsg_exit_2_00581394)(local_24c);
 
           }
 
           if ((bVar9 == 0x67) && (uVar3 == 0)) {
 
-            (*(code *)PTR_FUN_0054D5A8_0058138c)(local_24c);
+            (*(code *)PTR_crt_amsg_exit_2_0058138c)(local_24c);
 
           }
 
@@ -14397,7 +14399,7 @@ undefined4 crt_initio(undefined4 *param_1)
 
   
 
-  iVar2 = FUN_0054d6cd(param_1[4]);
+  iVar2 = crt_fd_flag_40(param_1[4]);
 
   if (iVar2 == 0) {
 
@@ -16077,7 +16079,7 @@ LAB_0054a81d:
 
     else {
 
-      uVar4 = FUN_00544123(bVar1,8);
+      uVar4 = crt_ctype_mb_check(bVar1,8);
 
     }
 
@@ -16145,7 +16147,7 @@ LAB_0054a81d:
 
         else {
 
-          uVar7 = FUN_00544123(uVar4,4);
+          uVar7 = crt_ctype_mb_check(uVar4,4);
 
         }
 
@@ -16413,7 +16415,7 @@ LAB_0054a090:
 
             else {
 
-              uVar7 = FUN_00544123(local_18,4);
+              uVar7 = crt_ctype_mb_check(local_18,4);
 
             }
 
@@ -16457,7 +16459,7 @@ LAB_0054a090:
 
               else {
 
-                uVar7 = FUN_00544123(uVar4,4);
+                uVar7 = crt_ctype_mb_check(uVar4,4);
 
               }
 
@@ -16525,7 +16527,7 @@ LAB_0054a1b7:
 
               else {
 
-                uVar7 = FUN_00544123(uVar4,4);
+                uVar7 = crt_ctype_mb_check(uVar4,4);
 
               }
 
@@ -16563,7 +16565,7 @@ LAB_0054a1c6:
 
               *pcVar12 = '\0';
 
-              (*(code *)PTR_FUN_0054D5A8_00581390)(local_11 + -1,local_30,&local_1c8);
+              (*(code *)PTR_crt_amsg_exit_2_00581390)(local_11 + -1,local_30,&local_1c8);
 
             }
 
@@ -16913,7 +16915,7 @@ LAB_0054a559:
 
               else {
 
-                uVar8 = FUN_00544123(local_18,4);
+                uVar8 = crt_ctype_mb_check(local_18,4);
 
               }
 
@@ -16957,7 +16959,7 @@ LAB_0054a6f8:
 
             else {
 
-              uVar8 = FUN_00544123(local_18,0x80);
+              uVar8 = crt_ctype_mb_check(local_18,0x80);
 
             }
 
@@ -17007,7 +17009,7 @@ LAB_0054a72e:
 
               else {
 
-                uVar8 = FUN_00544123(local_18,4);
+                uVar8 = crt_ctype_mb_check(local_18,4);
 
               }
 
@@ -17051,7 +17053,7 @@ LAB_0054a614:
 
             else {
 
-              uVar8 = FUN_00544123(local_18,0x80);
+              uVar8 = crt_ctype_mb_check(local_18,0x80);
 
             }
 
@@ -17218,7 +17220,7 @@ uint crt_scanf_hexchar(uint param_1)
 
   else {
 
-    uVar1 = FUN_00544123(param_1,4);
+    uVar1 = crt_ctype_mb_check(param_1,4);
 
   }
 
@@ -20626,7 +20628,7 @@ LPVOID _malloc(int param_1,int param_2)
 
           local_8 = 0xffffffff;
 
-          FUN_0054C3FE();
+          crt_unlock_malloc_2();
 
           _Size = uVar2;
 
@@ -20662,7 +20664,7 @@ LAB_0054c44d:
 
         local_8 = 0xffffffff;
 
-        FUN_0054C487();
+        crt_unlock_malloc();
 
         _Size = uVar3;
 
@@ -20706,8 +20708,8 @@ LAB_0054c452:
 
 }
 
-/* ===== FUN_0054C3FE @ 0x0054C3FE ===== */
-void FUN_0054C3FE(void)
+/* ===== crt_unlock_malloc_2 @ 0x0054C3FE ===== */
+void crt_unlock_malloc_2(void)
 
 
 
@@ -20719,8 +20721,8 @@ void FUN_0054C3FE(void)
 
 }
 
-/* ===== FUN_0054C487 @ 0x0054C487 ===== */
-void FUN_0054C487(void)
+/* ===== crt_unlock_malloc @ 0x0054C487 ===== */
+void crt_unlock_malloc(void)
 
 
 
@@ -22007,7 +22009,7 @@ uint crt_stream_flags_set(uint param_1,uint param_2)
 
   uVar1 = uVar1 & ~param_2 | param_1 & param_2;
 
-  FUN_0054cf50(uVar1);
+  crt_flagmap_xlate(uVar1);
 
   return uVar1;
 
@@ -22123,8 +22125,8 @@ uint crt_flags_map(uint param_1)
 
 }
 
-/* ===== FUN_0054cf50 @ 0x0054CF50 ===== */
-uint FUN_0054cf50(uint param_1)
+/* ===== crt_flagmap_xlate @ 0x0054CF50 ===== */
+uint crt_flagmap_xlate(uint param_1)
 
 
 
@@ -22365,12 +22367,12 @@ undefined4 crt_bitarray_test(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0054d104 @ 0x0054D104 ===== */
+/* ===== DestroyHuds @ 0x0054D104 ===== */
 /* PS2 candidate: DestroyHuds (conf 0.6) */
 
 
 
-void FUN_0054d104(int param_1,undefined4 *param_2)
+void DestroyHuds(int param_1,undefined4 *param_2)
 
 
 
@@ -22584,7 +22586,7 @@ LAB_0054d2ff:
 
   else {
 
-    FUN_0054d104(local_1c,&local_10);
+    DestroyHuds(local_1c,&local_10);
 
     iVar2 = crt_bitarray_test(&local_10,param_3[2]);
 
@@ -22632,7 +22634,7 @@ LAB_0054d2ff:
 
       }
 
-      FUN_0054d104(&local_10,local_1c);
+      DestroyHuds(&local_10,local_1c);
 
       crt_bitarray_set(&local_10,iVar2 - iVar4);
 
@@ -23062,8 +23064,8 @@ void * __cdecl _memset(void *_Dst,int _Val,size_t _Size)
 
 }
 
-/* ===== FUN_0054D5A8 @ 0x0054D5A8 ===== */
-void FUN_0054D5A8(void)
+/* ===== crt_amsg_exit_2 @ 0x0054D5A8 ===== */
+void crt_amsg_exit_2(void)
 
 
 
@@ -23224,8 +23226,8 @@ void crt_stream_release(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0054d6cd @ 0x0054D6CD ===== */
-byte FUN_0054d6cd(uint param_1)
+/* ===== crt_fd_flag_40 @ 0x0054D6CD ===== */
+byte crt_fd_flag_40(uint param_1)
 
 
 
@@ -23722,7 +23724,7 @@ LAB_0054d97c:
 
           if ((((iVar7 != 0) || (param_3._3_1_ != '\x1a')) ||
 
-              (iVar7 = FUN_0054f246(uVar3,local_14), iVar7 != -1)) &&
+              (iVar7 = crt_chsize(uVar3,local_14), iVar7 != -1)) &&
 
              (iVar7 = _lseek(uVar3,0,0), iVar7 != -1)) goto LAB_0054daf6;
 
@@ -24437,7 +24439,7 @@ LAB_0054dec0:
 
       else {
 
-        uVar2 = FUN_00544123(bVar6,4);
+        uVar2 = crt_ctype_mb_check(bVar6,4);
 
       }
 
@@ -24513,7 +24515,7 @@ LAB_0054dec0:
 
       else {
 
-        uVar2 = FUN_00544123(bVar6,4);
+        uVar2 = crt_ctype_mb_check(bVar6,4);
 
       }
 
@@ -24591,7 +24593,7 @@ LAB_0054df1e:
 
     else {
 
-      uVar2 = FUN_00544123(bVar6,4);
+      uVar2 = crt_ctype_mb_check(bVar6,4);
 
     }
 
@@ -24747,7 +24749,7 @@ LAB_0054e136:
 
   else {
 
-    uVar2 = FUN_00544123(bVar6,4);
+    uVar2 = crt_ctype_mb_check(bVar6,4);
 
   }
 
@@ -24781,7 +24783,7 @@ LAB_0054e180:
 
     else {
 
-      uVar2 = FUN_00544123(bVar6,4);
+      uVar2 = crt_ctype_mb_check(bVar6,4);
 
     }
 
@@ -27103,8 +27105,8 @@ LAB_0054f23d:
 
 }
 
-/* ===== FUN_0054f246 @ 0x0054F246 ===== */
-int FUN_0054f246(undefined4 param_1,int param_2)
+/* ===== crt_chsize @ 0x0054F246 ===== */
+int crt_chsize(undefined4 param_1,int param_2)
 
 
 
@@ -28242,7 +28244,7 @@ undefined4 crt_realloc_strcpy(char *param_1,int param_2)
 
   piVar3 = DAT_00630b7c;
 
-  iVar2 = FUN_0054fb96(param_1,(int)pcVar1 - (int)param_1);
+  iVar2 = crt_env_find(param_1,(int)pcVar1 - (int)param_1);
 
   if ((iVar2 < 0) || (*piVar3 == 0)) {
 
@@ -28332,8 +28334,8 @@ LAB_0054fb43:
 
 }
 
-/* ===== FUN_0054fb96 @ 0x0054FB96 ===== */
-int FUN_0054fb96(uchar *param_1,size_t param_2)
+/* ===== crt_env_find @ 0x0054FB96 ===== */
+int crt_env_find(uchar *param_1,size_t param_2)
 
 
 
@@ -28609,7 +28611,7 @@ byte * realloc(byte *param_1,uint param_2)
 
             local_8 = 0xffffffff;
 
-            FUN_0054FDE0();
+            crt_lock_realloc();
 
             if (local_2c == 0) {
 
@@ -28759,7 +28761,7 @@ byte * realloc(byte *param_1,uint param_2)
 
               local_8 = 0xffffffff;
 
-              FUN_0054FF2E();
+              crt_unlock_realloc();
 
             }
 
@@ -28841,8 +28843,8 @@ byte * realloc(byte *param_1,uint param_2)
 
 }
 
-/* ===== FUN_0054FDE0 @ 0x0054FDE0 ===== */
-void FUN_0054FDE0(void)
+/* ===== crt_lock_realloc @ 0x0054FDE0 ===== */
+void crt_lock_realloc(void)
 
 
 
@@ -28854,8 +28856,8 @@ void FUN_0054FDE0(void)
 
 }
 
-/* ===== FUN_0054FF2E @ 0x0054FF2E ===== */
-void FUN_0054FF2E(void)
+/* ===== crt_unlock_realloc @ 0x0054FF2E ===== */
+void crt_unlock_realloc(void)
 
 
 

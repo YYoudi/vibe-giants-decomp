@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0040d480,0040d480,,camera_zoom_factor_get,0.9,w248,DAT_632adf: table DAT_5553c0[DAT_5550c4] else 1.0 (sniper/zoom factor)
+0040abf0,0040abf0,,master_flagslot_claim,0.9,w248,"first clear bit of 12 at master+0xe0, set it, return 0x47+i"
+0040ab60,0040ab60,,base_slot_tasks_clear,0.9,w248,base_slot_active_check: clear +0x370 entries ==param (12x2)
+004a73a0,004a73a0,,vvel_decay_tick,0.9,w248,"no owner/flags: +0x108 -= dt*+0x1b8, clamp 0 (gravity decay)"

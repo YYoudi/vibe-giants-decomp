@@ -312,7 +312,7 @@ void wredit_menu_cleanup_2(void)
 
     *(undefined4 *)(iVar3 + 0xe8) = uVar4;
 
-    FUN_00476eb0(iVar3);
+    seq_index_assign(iVar3);
 
   }
 
@@ -416,7 +416,7 @@ LAB_00440422:
 
       *(undefined4 *)(iVar2 + 0x174) = 0;
 
-      FUN_00476eb0(iVar2);
+      seq_index_assign(iVar2);
 
       wredit_00439490();
 
@@ -4204,9 +4204,11 @@ void wredit_text_fade(void)
 
           fVar8 = (float10)textrender_draw_cached(uVar3,local_200,(int)pcVar5 - (int)local_200);
 
-          FUN_0051b9c0(0xffffffff,0,uVar3,(float)((float10)0.5 - fVar8 * (float10)0.5),local_214,
+          textrender_draw_y_aspect
 
-                       local_200,(int)pcVar5 - (int)local_200);
+                    (0xffffffff,0,uVar3,(float)((float10)0.5 - fVar8 * (float10)0.5),local_214,
+
+                     local_200,(int)pcVar5 - (int)local_200);
 
         }
 
@@ -4863,7 +4865,7 @@ LAB_00444d25:
 
   view_matrix_reset(auStack_c4);
 
-  fVar14 = (float10)FUN_0053be80(*(undefined4 *)(param_1 + 0xb4),uVar4);
+  fVar14 = (float10)anm_cam_stream_value_read(*(undefined4 *)(param_1 + 0xb4),uVar4);
 
   fVar14 = (float10)fptan(fVar14 * (float10)0.5);
 
@@ -5589,7 +5591,7 @@ undefined4 hud_icon_timed(int param_1,float param_2)
 
   if (((DAT_0059cdb0 != 0) && (DAT_00633130 == 0)) && (DAT_0063312c == 0)) {
 
-    fVar8 = (float10)FUN_00496200();
+    fVar8 = (float10)vcall_5dd350_timer_get();
 
     fVar3 = (float)(((float10)_DAT_0059cdb4 + (float10)*(float *)(param_1 + 0xb0) + (float10)param_2
 
@@ -5940,7 +5942,7 @@ LAB_00445a50:
 
       else {
 
-        uVar9 = FUN_0053be60(iVar10);
+        uVar9 = anm_id_mask(iVar10);
 
         param_1[0x2d] = uVar9;
 
@@ -6742,7 +6744,7 @@ LAB_00446389:
 
   }
 
-  FUN_004961e0(iVar11,*(undefined4 *)(DAT_006330e4 + 0x50e0),0);
+  vcall_5dd34c_get(iVar11,*(undefined4 *)(DAT_006330e4 + 0x50e0),0);
 
   DAT_0059cdb0 = 1;
 

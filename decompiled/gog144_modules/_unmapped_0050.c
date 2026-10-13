@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0050
- * 103 functions (97 named) — decompiled, names from PS2 symbols
+ * 103 functions (103 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00500100 @ 0x00500100 ===== */
-undefined4 FUN_00500100(int param_1,int param_2,int param_3)
+/* ===== shopmenu_slot_dword_get @ 0x00500100 ===== */
+undefined4 shopmenu_slot_dword_get(int param_1,int param_2,int param_3)
 
 
 
@@ -445,12 +445,12 @@ void mission_screen_update_frame(int *param_1)
 
 }
 
-/* ===== FUN_005007f0 @ 0x005007F0 ===== */
+/* ===== ButtonFakeValue @ 0x005007F0 ===== */
 /* PS2 candidate: ButtonFakeValue (conf 0.65) */
 
 
 
-void FUN_005007f0(undefined4 *param_1,undefined4 *param_2)
+void ButtonFakeValue(undefined4 *param_1,undefined4 *param_2)
 
 
 
@@ -1143,14 +1143,14 @@ void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5(undefined4 p0)
 
 }
 
-/* ===== FUN_00500f50 @ 0x00500F50 ===== */
+/* ===== axis_deltas_set @ 0x00500F50 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: ANM_DumpCluster_12 (conf 0.537) */
 
 
 
-void FUN_00500f50(int param_1,int param_2)
+void axis_deltas_set(int param_1,int param_2)
 
 
 
@@ -1309,12 +1309,12 @@ void teammecc_leader_tick(int param_1)
 
 }
 
-/* ===== FUN_00501070 @ 0x00501070 ===== */
+/* ===== carried_obj_id_get @ 0x00501070 ===== */
 /* PS2 candidate: item_drop_curweap (conf 0.395) */
 
 
 
-int FUN_00501070(int param_1)
+int carried_obj_id_get(int param_1)
 
 
 
@@ -1385,8 +1385,8 @@ undefined1 * player_pet_follow_tick(void)
 
 }
 
-/* ===== FUN_00501100 @ 0x00501100 ===== */
-void FUN_00501100(char *param_1)
+/* ===== pet_command_set @ 0x00501100 ===== */
+void pet_command_set(char *param_1)
 
 
 
@@ -1475,7 +1475,7 @@ void destroy_group_same170(int param_1)
 
          ((iVar2 != param_1 && (*(int *)(iVar2 + 0x170) == *(int *)(param_1 + 0x170))))) {
 
-        FUN_00499200(iVar2);
+        object_destroy_full(iVar2);
 
       }
 
@@ -1645,7 +1645,7 @@ void teammecc_toggle(int param_1)
 
             && (iVar3 != param_1)) && (*(int *)(iVar3 + 0x170) == *(int *)(param_1 + 0x170))) {
 
-          FUN_00499200(iVar3);
+          object_destroy_full(iVar3);
 
         }
 
@@ -3418,7 +3418,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     DAT_005a8800 = DAT_005a8800 | 1 << (bVar9 & 0x1f);
 
-    FUN_00456090(iVar4);
+    teammecc_target_state_query(iVar4);
 
     fVar11 = (float10)distancesq2d__FP3P3DT0(puVar1,pfVar2);
 
@@ -4861,7 +4861,7 @@ void mecc_death_handler_c2
 
 LAB_00504487:
 
-    iVar10 = FUN_00494f90();
+    iVar10 = cutscene_active_check();
 
     if (iVar10 == 0) {
 
@@ -13304,8 +13304,8 @@ void TurretExit(int param_1)
 
 }
 
-/* ===== FUN_0050c3c0 @ 0x0050C3C0 ===== */
-void FUN_0050c3c0(int param_1)
+/* ===== anim_oneshot_select @ 0x0050C3C0 ===== */
+void anim_oneshot_select(int param_1)
 
 
 
@@ -16731,7 +16731,7 @@ void msg28_copy10_c53(undefined4 param_1,int param_2,int param_3,undefined4 *par
 
     }
 
-    FUN_004706d0(param_1,*(int *)(param_2 + 0x100) + 4);
+    anm_slot_record_get(param_1,*(int *)(param_2 + 0x100) + 4);
 
   }
 

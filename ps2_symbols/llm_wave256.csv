@@ -1,0 +1,11 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00544481,00544481,,crt_unlock_free_ext,0.9,w256,_unlock wrapper; caller crt_free_ext
+00544389,00544389,,crt_unlock_malloc_ext,0.9,w256,_unlock wrapper; caller crt_malloc_ext
+0054c487,0054c487,,crt_unlock_malloc,0.9,w256,_unlock wrapper; caller _malloc
+00544e50,00544e50,,crt_lock_vector_lock,0.9,w256,_lock wrapper; caller crt_lock_vector
+00544e59,00544e59,,crt_lock_vector_unlock,0.9,w256,_unlock wrapper; caller crt_lock_vector
+0054ff2e,0054ff2e,,crt_unlock_realloc,0.9,w256,_unlock wrapper; caller realloc
+0054fde0,0054fde0,,crt_lock_realloc,0.9,w256,_lock wrapper; caller realloc
+0054c3fe,0054c3fe,,crt_unlock_malloc_2,0.9,w256,_unlock wrapper; caller _malloc (second site)
+0054432a,0054432a,,crt_lock_malloc_ext,0.9,w256,_lock wrapper; caller crt_malloc_ext
+00544429,00544429,,crt_lock_free_ext,0.9,w256,_lock wrapper; caller crt_free_ext

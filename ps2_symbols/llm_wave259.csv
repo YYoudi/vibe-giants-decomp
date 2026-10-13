@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a2650,004a2650,,vec_move_toward,0.9,w259,"delta normalize, magnitude clamp [p5,p6]*p7 scale"
+00538ff0,00538ff0,,fx_table_ptr_set,0.9,w259,DAT_5e2c8c = param (fx table registry setter)
+004a17c0,004a17c0,,nearest_dist_record,0.9,w259,keep min positive float at +0x2c
+00501070,00501070,,carried_obj_id_get,0.9,w259,+0x170 obj: [0]==1 -> [1]; cand item_drop_curweap REJECTED
+0050c3c0,0050c3c0,,anim_oneshot_select,0.9,w259,"flag 0x20: anim 0xb/0xc by bit, clear; else flag&2 -> anim 1,0x21"

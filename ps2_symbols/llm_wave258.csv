@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00456090,00456090,,teammecc_target_state_query,0.9,w258,"owned obj on DAT_632d80: carried 0->2, types 0x16/0x313->1, 0x311->3"
+004184d0,004184d0,,slot_member_alive,0.9,w258,slot param2 (stride 0x1c +0x20): hp>0 -> 1
+0042f4c0,0042f4c0,,dlog_alpha_blend_full,0.9,w258,"dlog_alpha_blend(1.0,1.0,...) full-alpha wrapper"

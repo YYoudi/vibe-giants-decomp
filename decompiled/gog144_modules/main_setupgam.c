@@ -228,7 +228,7 @@ void main_setupgam_004eda20(void)
 
   if (DAT_006330e4 != 0) {
 
-    FUN_00495090();
+    vcall_5dd31c_setupgam();
 
     if (*(int *)(DAT_006330e4 + 0x170) != 0) {
 
@@ -266,7 +266,7 @@ void main_setupgam_004eda20(void)
 
   main_readwrls_004b4330();
 
-  FUN_0040b300();
+  objlist_flagall_partition();
 
   main_texture_00507fa0();
 

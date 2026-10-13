@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 195 functions (189 named) — decompiled, names from PS2 symbols
+ * 195 functions (195 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -8167,8 +8167,8 @@ void hud_world_to_screen_2(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_00517830 @ 0x00517830 ===== */
-undefined4 FUN_00517830(int param_1,int param_2,int param_3)
+/* ===== meshrows_vtable_copy @ 0x00517830 ===== */
+undefined4 meshrows_vtable_copy(int param_1,int param_2,int param_3)
 
 
 
@@ -10081,7 +10081,7 @@ undefined4 dinput_init(void)
 
       di_error_trace();
 
-      FUN_0051EA90();
+      error_screen_dinput();
 
       return 1;
 
@@ -10103,7 +10103,7 @@ undefined4 dinput_init(void)
 
       pHStack_718 = (HWND)0x5191dc;
 
-      FUN_0051EA90();
+      error_screen_dinput();
 
       return 1;
 
@@ -10129,7 +10129,7 @@ undefined4 dinput_init(void)
 
       ppHStack_724 = (HWND *)0x519219;
 
-      FUN_0051EA90();
+      error_screen_dinput();
 
       return 1;
 
@@ -10155,7 +10155,7 @@ undefined4 dinput_init(void)
 
       di_error_trace();
 
-      FUN_0051EA90();
+      error_screen_dinput();
 
       return 1;
 
@@ -10177,7 +10177,7 @@ undefined4 dinput_init(void)
 
       pHStack_718 = (HWND)0x5192ad;
 
-      FUN_0051EA90();
+      error_screen_dinput();
 
       return 1;
 
@@ -10203,7 +10203,7 @@ undefined4 dinput_init(void)
 
       ppHStack_724 = (HWND *)0x5192ea;
 
-      FUN_0051EA90();
+      error_screen_dinput();
 
       return 1;
 
@@ -10225,7 +10225,7 @@ undefined4 dinput_init(void)
 
       di_error_trace(s_DIKey_SetProperty__s_0057ca20);
 
-      FUN_0051EA90();
+      error_screen_dinput();
 
       return 1;
 
@@ -10810,8 +10810,8 @@ undefined4 * strbuf_current_get(void)
 
 }
 
-/* ===== FUN_00519d30 @ 0x00519D30 ===== */
-undefined4 * FUN_00519d30(void)
+/* ===== strbuf_block_copy @ 0x00519D30 ===== */
+undefined4 * strbuf_block_copy(void)
 
 
 
@@ -12790,14 +12790,16 @@ void dlog_text_draw_wrap(undefined4 param_1,undefined4 param_2,float param_3,und
 
 }
 
-/* ===== FUN_0051b9c0 @ 0x0051B9C0 ===== */
+/* ===== textrender_draw_y_aspect @ 0x0051B9C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051b9c0(undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,
+void textrender_draw_y_aspect
 
-                 float param_5,undefined4 param_6,undefined4 param_7)
+               (undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,float param_5
+
+               ,undefined4 param_6,undefined4 param_7)
 
 
 
@@ -13728,8 +13730,8 @@ int localization_check(void)
 
 }
 
-/* ===== FUN_0051c540 @ 0x0051C540 ===== */
-bool FUN_0051c540(void)
+/* ===== net_host_flags_set @ 0x0051C540 ===== */
+bool net_host_flags_set(void)
 
 
 
@@ -14047,8 +14049,8 @@ bool dialog_level_is_base_6(void)
 
 }
 
-/* ===== FUN_0051c7e0 @ 0x0051C7E0 ===== */
-undefined4 FUN_0051c7e0(void)
+/* ===== render_flags_mode_get @ 0x0051C7E0 ===== */
+undefined4 render_flags_mode_get(void)
 
 
 
@@ -15149,11 +15151,11 @@ void gfx_d3d_0051d0d0(char *param_1)
 
       if (iVar3 == 4) {
 
-        iVar4 = FUN_0053a830(pcVar7,&DAT_0057db6c);
+        iVar4 = crt_file_lock_ok(pcVar7,&DAT_0057db6c);
 
         if (iVar4 == 0) {
 
-          iVar4 = FUN_0053a830(pcVar7,&DAT_0057db64);
+          iVar4 = crt_file_lock_ok(pcVar7,&DAT_0057db64);
 
           if (iVar4 == 0) goto LAB_0051d50a;
 
@@ -15175,19 +15177,21 @@ void gfx_d3d_0051d0d0(char *param_1)
 
 LAB_0051d50a:
 
-        if ((iVar3 == 8) && (iVar4 = FUN_0053a830(pcVar7,s__GFXPath_0057db58), iVar4 != 0)) {
+        if ((iVar3 == 8) && (iVar4 = crt_file_lock_ok(pcVar7,s__GFXPath_0057db58), iVar4 != 0)) {
 
           iVar6 = 2;
 
         }
 
-        else if ((iVar3 == 4) && (iVar4 = FUN_0053a830(pcVar7,&DAT_0057db50), iVar4 != 0)) {
+        else if ((iVar3 == 4) && (iVar4 = crt_file_lock_ok(pcVar7,&DAT_0057db50), iVar4 != 0)) {
 
           iVar6 = 3;
 
         }
 
-        else if ((iVar3 == 8) && (iVar4 = FUN_0053a830(pcVar7,s__SNDPath_0057db44), iVar4 != 0)) {
+        else if ((iVar3 == 8) && (iVar4 = crt_file_lock_ok(pcVar7,s__SNDPath_0057db44), iVar4 != 0))
+
+        {
 
           iVar6 = 4;
 
@@ -15195,11 +15199,11 @@ LAB_0051d50a:
 
         else if (iVar3 == 7) {
 
-          iVar4 = FUN_0053a830(pcVar7,s__debwin_0057db3c);
+          iVar4 = crt_file_lock_ok(pcVar7,s__debwin_0057db3c);
 
           if (iVar4 == 0) {
 
-            iVar4 = FUN_0053a830(pcVar7,s__deberr_0057db34);
+            iVar4 = crt_file_lock_ok(pcVar7,s__deberr_0057db34);
 
             if (iVar4 == 0) goto LAB_0051d5b9;
 
@@ -15219,19 +15223,23 @@ LAB_0051d50a:
 
 LAB_0051d5b9:
 
-          if ((iVar3 == 9) && (iVar4 = FUN_0053a830(pcVar7,s__noswitch_0057db28), iVar4 != 0)) {
+          if ((iVar3 == 9) && (iVar4 = crt_file_lock_ok(pcVar7,s__noswitch_0057db28), iVar4 != 0)) {
 
             _DAT_005ddb8c = 1;
 
           }
 
-          else if ((iVar3 == 6) && (iVar4 = FUN_0053a830(pcVar7,s__lobby_0057db20), iVar4 != 0)) {
+          else if ((iVar3 == 6) && (iVar4 = crt_file_lock_ok(pcVar7,s__lobby_0057db20), iVar4 != 0))
+
+          {
 
             DAT_0063317c = 1;
 
           }
 
-          else if ((iVar3 == 5) && (iVar4 = FUN_0053a830(pcVar7,s__name_0057db18), iVar4 != 0)) {
+          else if ((iVar3 == 5) && (iVar4 = crt_file_lock_ok(pcVar7,s__name_0057db18), iVar4 != 0))
+
+          {
 
             iVar6 = 7;
 
@@ -15239,9 +15247,9 @@ LAB_0051d5b9:
 
           }
 
-          else if ((iVar3 == 9) && (iVar4 = FUN_0053a830(pcVar7,s__gametype_0057db0c), iVar4 != 0))
+          else if ((iVar3 == 9) &&
 
-          {
+                  (iVar4 = crt_file_lock_ok(pcVar7,s__gametype_0057db0c), iVar4 != 0)) {
 
             iVar6 = 5;
 
@@ -15251,7 +15259,7 @@ LAB_0051d5b9:
 
           else if ((iVar3 == 0xb) &&
 
-                  (iVar4 = FUN_0053a830(pcVar7,s__maxplayers_0057db00), iVar4 != 0)) {
+                  (iVar4 = crt_file_lock_ok(pcVar7,s__maxplayers_0057db00), iVar4 != 0)) {
 
             iVar6 = 6;
 
@@ -15261,15 +15269,15 @@ LAB_0051d5b9:
 
           else if (iVar3 == 5) {
 
-            iVar4 = FUN_0053a830(pcVar7,s__host_0057daf8);
+            iVar4 = crt_file_lock_ok(pcVar7,s__host_0057daf8);
 
             if (iVar4 == 0) {
 
-              iVar4 = FUN_0053a830(pcVar7,s__join_0057daf0);
+              iVar4 = crt_file_lock_ok(pcVar7,s__join_0057daf0);
 
               if (iVar4 == 0) {
 
-                iVar4 = FUN_0053a830(pcVar7,s__port_0057dae8);
+                iVar4 = crt_file_lock_ok(pcVar7,s__port_0057dae8);
 
                 if (iVar4 == 0) goto LAB_0051d6f3;
 
@@ -15299,7 +15307,7 @@ LAB_0051d5b9:
 
 LAB_0051d6f3:
 
-            if ((iVar3 == 6) && (iVar4 = FUN_0053a830(pcVar7,s__world_0057dae0), iVar4 != 0)) {
+            if ((iVar3 == 6) && (iVar4 = crt_file_lock_ok(pcVar7,s__world_0057dae0), iVar4 != 0)) {
 
               iVar6 = 0xb;
 
@@ -15309,7 +15317,7 @@ LAB_0051d6f3:
 
             else if ((iVar3 == 10) &&
 
-                    (iVar4 = FUN_0053a830(pcVar7,s__baselevel_0057dad4), iVar4 != 0)) {
+                    (iVar4 = crt_file_lock_ok(pcVar7,s__baselevel_0057dad4), iVar4 != 0)) {
 
               iVar6 = 0xc;
 
@@ -15319,11 +15327,11 @@ LAB_0051d6f3:
 
             else if (iVar3 == 9) {
 
-              iVar4 = FUN_0053a830(pcVar7,s__gameteam_0057dac8);
+              iVar4 = crt_file_lock_ok(pcVar7,s__gameteam_0057dac8);
 
               if (iVar4 == 0) {
 
-                iVar4 = FUN_0053a830(pcVar7,s__location_0057dabc);
+                iVar4 = crt_file_lock_ok(pcVar7,s__location_0057dabc);
 
                 if (iVar4 == 0) goto LAB_0051d79f;
 
@@ -15349,7 +15357,7 @@ LAB_0051d79f:
 
               if ((iVar3 == 0xe) &&
 
-                 (iVar4 = FUN_0053a830(pcVar7,s__highbandwidth_0057daac), iVar4 != 0)) {
+                 (iVar4 = crt_file_lock_ok(pcVar7,s__highbandwidth_0057daac), iVar4 != 0)) {
 
                 DAT_00633210 = 1;
 
@@ -15357,11 +15365,11 @@ LAB_0051d79f:
 
               else if (iVar3 == 10) {
 
-                iVar4 = FUN_0053a830(pcVar7,s__nogamespy_0057daa0);
+                iVar4 = crt_file_lock_ok(pcVar7,s__nogamespy_0057daa0);
 
                 if (iVar4 == 0) {
 
-                  iVar4 = FUN_0053a830(pcVar7,s__nodxerror_0057da94);
+                  iVar4 = crt_file_lock_ok(pcVar7,s__nodxerror_0057da94);
 
                   if (iVar4 == 0) goto LAB_0051d811;
 
@@ -15381,9 +15389,9 @@ LAB_0051d79f:
 
 LAB_0051d811:
 
-                if ((iVar3 == 8) && (iVar4 = FUN_0053a830(pcVar7,s__nosnd3d_0057da88), iVar4 != 0))
+                if ((iVar3 == 8) &&
 
-                {
+                   (iVar4 = crt_file_lock_ok(pcVar7,s__nosnd3d_0057da88), iVar4 != 0)) {
 
                   DAT_005dda70 = DAT_005dda70 & 0xfffffffe;
 
@@ -15391,11 +15399,11 @@ LAB_0051d811:
 
                 else if (iVar3 == 6) {
 
-                  iVar4 = FUN_0053a830(pcVar7,s__snd3d_0057da80);
+                  iVar4 = crt_file_lock_ok(pcVar7,s__snd3d_0057da80);
 
                   if (iVar4 == 0) {
 
-                    iVar4 = FUN_0053a830(pcVar7,s__noeax_0057da78);
+                    iVar4 = crt_file_lock_ok(pcVar7,s__noeax_0057da78);
 
                     if (iVar4 == 0) goto LAB_0051d87a;
 
@@ -15417,7 +15425,7 @@ LAB_0051d87a:
 
                   if ((iVar3 == 9) &&
 
-                     (iVar4 = FUN_0053a830(pcVar7,s__noeaxman_0057da6c), iVar4 != 0)) {
+                     (iVar4 = crt_file_lock_ok(pcVar7,s__noeaxman_0057da6c), iVar4 != 0)) {
 
                     DAT_005dda70 = DAT_005dda70 & 0xfffffffb;
 
@@ -15425,7 +15433,7 @@ LAB_0051d87a:
 
                   else if ((iVar3 == 8) &&
 
-                          (iVar4 = FUN_0053a830(pcVar7,s__noaudio_0057da60), iVar4 != 0)) {
+                          (iVar4 = crt_file_lock_ok(pcVar7,s__noaudio_0057da60), iVar4 != 0)) {
 
                     DAT_006331fc = 1;
 
@@ -15433,7 +15441,7 @@ LAB_0051d87a:
 
                   else if ((iVar3 == 9) &&
 
-                          (iVar4 = FUN_0053a830(pcVar7,s__nostream_0057da54), iVar4 != 0)) {
+                          (iVar4 = crt_file_lock_ok(pcVar7,s__nostream_0057da54), iVar4 != 0)) {
 
                     DAT_00633204 = 1;
 
@@ -15441,15 +15449,15 @@ LAB_0051d87a:
 
                   else if (iVar3 == 7) {
 
-                    iVar4 = FUN_0053a830(pcVar7,s__noplay_0057da4c);
+                    iVar4 = crt_file_lock_ok(pcVar7,s__noplay_0057da4c);
 
                     if (iVar4 == 0) {
 
-                      iVar4 = FUN_0053a830(pcVar7,s__noload_0057da44);
+                      iVar4 = crt_file_lock_ok(pcVar7,s__noload_0057da44);
 
                       if (iVar4 == 0) {
 
-                        iVar4 = FUN_0053a830(pcVar7,s__voodoo_0057da3c);
+                        iVar4 = crt_file_lock_ok(pcVar7,s__voodoo_0057da3c);
 
                         if (iVar4 == 0) goto LAB_0051d956;
 
@@ -15479,7 +15487,7 @@ LAB_0051d956:
 
                     if ((iVar3 == 10) &&
 
-                       (iVar4 = FUN_0053a830(pcVar7,s__dedicated_0057da30), iVar4 != 0)) {
+                       (iVar4 = crt_file_lock_ok(pcVar7,s__dedicated_0057da30), iVar4 != 0)) {
 
                       iVar6 = 0x12;
 
@@ -15487,7 +15495,7 @@ LAB_0051d956:
 
                     else if ((iVar3 == 7) &&
 
-                            (iVar4 = FUN_0053a830(pcVar7,s__nophff_0057da28), iVar4 != 0)) {
+                            (iVar4 = crt_file_lock_ok(pcVar7,s__nophff_0057da28), iVar4 != 0)) {
 
                       DAT_00633250 = 1;
 
@@ -15495,7 +15503,9 @@ LAB_0051d956:
 
                     else if ((iVar3 == 0xe) &&
 
-                            (iVar4 = FUN_0053a830(pcVar7,s__autodesignate_0057da18), iVar4 != 0)) {
+                            (iVar4 = crt_file_lock_ok(pcVar7,s__autodesignate_0057da18), iVar4 != 0)
+
+                            ) {
 
                       DAT_0063325c = 1;
 
@@ -15503,7 +15513,7 @@ LAB_0051d956:
 
                     else if ((iVar3 == 8) &&
 
-                            (iVar4 = FUN_0053a830(pcVar7,s__novimps_0057da0c), iVar4 != 0)) {
+                            (iVar4 = crt_file_lock_ok(pcVar7,s__novimps_0057da0c), iVar4 != 0)) {
 
                       _DAT_0063323c = 1;
 
@@ -15511,7 +15521,7 @@ LAB_0051d956:
 
                     else if ((iVar3 == 7) &&
 
-                            (iVar4 = FUN_0053a830(pcVar7,s__bbwait_0057da04), iVar4 != 0)) {
+                            (iVar4 = crt_file_lock_ok(pcVar7,s__bbwait_0057da04), iVar4 != 0)) {
 
                       DAT_00633258 = 1;
 
@@ -15519,7 +15529,7 @@ LAB_0051d956:
 
                     else if ((iVar3 == 9) &&
 
-                            (iVar4 = FUN_0053a830(pcVar7,s__pmarkers_0057d9f8), iVar4 != 0)) {
+                            (iVar4 = crt_file_lock_ok(pcVar7,s__pmarkers_0057d9f8), iVar4 != 0)) {
 
                       iVar6 = 0xf;
 
@@ -15527,7 +15537,7 @@ LAB_0051d956:
 
                     else if ((iVar3 == 10) &&
 
-                            (iVar4 = FUN_0053a830(pcVar7,s__gamegauge_0057d9ec), iVar4 != 0)) {
+                            (iVar4 = crt_file_lock_ok(pcVar7,s__gamegauge_0057d9ec), iVar4 != 0)) {
 
                       DAT_00633248 = 1;
 
@@ -15535,7 +15545,7 @@ LAB_0051d956:
 
                     else if ((iVar3 == 8) &&
 
-                            (iVar4 = FUN_0053a830(pcVar7,s__logchat_0057d9e0), iVar4 != 0)) {
+                            (iVar4 = crt_file_lock_ok(pcVar7,s__logchat_0057d9e0), iVar4 != 0)) {
 
                       DAT_00633240 = 1;
 
@@ -15545,15 +15555,15 @@ LAB_0051d956:
 
                     else if (iVar3 == 9) {
 
-                      iVar4 = FUN_0053a830(pcVar7,s__amd3dnow_0057d9d4);
+                      iVar4 = crt_file_lock_ok(pcVar7,s__amd3dnow_0057d9d4);
 
                       if (iVar4 == 0) {
 
-                        iVar4 = FUN_0053a830(pcVar7,s__intelsse_0057d9c8);
+                        iVar4 = crt_file_lock_ok(pcVar7,s__intelsse_0057d9c8);
 
                         if (iVar4 == 0) {
 
-                          iVar4 = FUN_0053a830(pcVar7,s__nocpuext_0057d9bc);
+                          iVar4 = crt_file_lock_ok(pcVar7,s__nocpuext_0057d9bc);
 
                           if (iVar4 == 0) goto LAB_0051daf3;
 
@@ -15583,7 +15593,7 @@ LAB_0051daf3:
 
                       if ((iVar3 == 5) &&
 
-                         (iVar4 = FUN_0053a830(pcVar7,s__font_0057d9b4), iVar4 != 0)) {
+                         (iVar4 = crt_file_lock_ok(pcVar7,s__font_0057d9b4), iVar4 != 0)) {
 
                         iVar6 = 0x10;
 
@@ -15591,7 +15601,7 @@ LAB_0051daf3:
 
                       else if ((iVar3 == 7) &&
 
-                              (iVar4 = FUN_0053a830(pcVar7,s__mspeed_0057d9ac), iVar4 != 0)) {
+                              (iVar4 = crt_file_lock_ok(pcVar7,s__mspeed_0057d9ac), iVar4 != 0)) {
 
                         iVar6 = 0x11;
 
@@ -15599,9 +15609,9 @@ LAB_0051daf3:
 
                       else if ((iVar3 == 0x10) &&
 
-                              (iVar4 = FUN_0053a830(pcVar7,s__noforcefeedback_0057d998), iVar4 != 0)
+                              (iVar4 = crt_file_lock_ok(pcVar7,s__noforcefeedback_0057d998),
 
-                              ) {
+                              iVar4 != 0)) {
 
                         _DAT_00633360 = 1;
 
@@ -15609,7 +15619,7 @@ LAB_0051daf3:
 
                       else if ((iVar3 == 9) &&
 
-                              (iVar4 = FUN_0053a830(pcVar7,s__safemode_0057d98c), iVar4 != 0)) {
+                              (iVar4 = crt_file_lock_ok(pcVar7,s__safemode_0057d98c), iVar4 != 0)) {
 
                         DAT_005dda70 = DAT_005dda70 & 0xfffffff8;
 
@@ -15627,7 +15637,9 @@ LAB_0051daf3:
 
                       else if ((iVar3 == 10) &&
 
-                              (iVar3 = FUN_0053a830(pcVar7,s__5footclip_0057d980), iVar3 != 0)) {
+                              (iVar3 = crt_file_lock_ok(pcVar7,s__5footclip_0057d980), iVar3 != 0))
+
+                      {
 
                         DAT_00633224 = 1;
 
@@ -15635,7 +15647,7 @@ LAB_0051daf3:
 
                       else {
 
-                        iVar3 = FUN_0053a830(pcVar7,s__lang_0057d978);
+                        iVar3 = crt_file_lock_ok(pcVar7,s__lang_0057d978);
 
                         if (iVar3 == 0) {
 
@@ -15653,7 +15665,7 @@ LAB_0051daf3:
 
                           uVar5 = crt_errno_set3(pcVar7 + 5,0,0x10);
 
-                          FUN_00538ff0(uVar5);
+                          fx_table_ptr_set(uVar5);
 
                         }
 
@@ -16759,8 +16771,8 @@ void dbg_error_printf(LPCSTR param_1)
 
 }
 
-/* ===== FUN_0051EA90 @ 0x0051EA90 ===== */
-void FUN_0051EA90(void)
+/* ===== error_screen_dinput @ 0x0051EA90 ===== */
+void error_screen_dinput(void)
 
 
 

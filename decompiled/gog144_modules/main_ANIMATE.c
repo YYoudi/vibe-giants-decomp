@@ -204,7 +204,7 @@ void loadsave_save__FPCc(undefined4 *param_1,int *param_2)
 
   piVar2 = param_2;
 
-  iVar3 = FUN_00538540(param_2);
+  iVar3 = fx_name_exists(param_2);
 
   if (iVar3 != 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (171 named) — decompiled, names from PS2 symbols
+ * 179 functions (179 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -1512,7 +1512,7 @@ void rpman_move(int param_1,int param_2)
 
   if ((param_1 != 0) && (0 < param_2)) {
 
-    iVar2 = FUN_0052b400();
+    iVar2 = base_get_sweep_falloff();
 
     if (param_2 <= iVar2) {
 
@@ -2789,7 +2789,7 @@ void comm_msg_dispatch(void)
 
           do {
 
-            FUN_0052ab70(iVar4,pcVar14[iVar4 + uVar10 * 5]);
+            comm_player_ready_set(iVar4,pcVar14[iVar4 + uVar10 * 5]);
 
             iVar4 = iVar4 + 1;
 
@@ -3085,7 +3085,7 @@ LAB_005319de:
 
           if (iVar4 != 0) {
 
-            FUN_00499200(iVar4);
+            object_destroy_full(iVar4);
 
             pcVar14 = DAT_005e0304;
 
@@ -6785,7 +6785,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                   local_248 = CONCAT31(local_248._1_3_,0x42);
 
-                  FUN_00452ae0((int)&local_248 + 1,(int)&local_244 + 1);
+                  fx_free_effect((int)&local_248 + 1,(int)&local_244 + 1);
 
                   uStack_23f = 0;
 
@@ -10209,7 +10209,7 @@ LAB_005369e7:
 
   status_draw_small();
 
-  FUN_005007f0(&local_114,&local_118);
+  ButtonFakeValue(&local_114,&local_118);
 
   if (param_1 != 0) {
 
@@ -10483,7 +10483,7 @@ void multi_display_player_cursor_info__Fv(void)
 
      fVar5 < (float10)fVar1 * (float10)fVar1)) {
 
-    uVar4 = FUN_0049a1d0(DAT_005e2738);
+    uVar4 = objspec_get_targetflags(DAT_005e2738);
 
     if ((uVar4 & 2) != 0) {
 
@@ -10491,7 +10491,7 @@ void multi_display_player_cursor_info__Fv(void)
 
     }
 
-    uVar4 = FUN_0049a1d0(DAT_005e2738);
+    uVar4 = objspec_get_targetflags(DAT_005e2738);
 
     if (((((((uVar4 & 1) != 0) || (iVar2 = *(int *)(DAT_005e2738 + 4), iVar2 == 0x4b7)) ||
 
@@ -12509,12 +12509,12 @@ LAB_00538194:
 
 }
 
-/* ===== FUN_00538540 @ 0x00538540 ===== */
+/* ===== fx_name_exists @ 0x00538540 ===== */
 /* PS2 candidate: __sigtramp (conf 0.6) */
 
 
 
-bool FUN_00538540(undefined4 param_1)
+bool fx_name_exists(undefined4 param_1)
 
 
 
@@ -13167,8 +13167,8 @@ LAB_00538dc5:
 
 }
 
-/* ===== FUN_00538ff0 @ 0x00538FF0 ===== */
-void FUN_00538ff0(int param_1)
+/* ===== fx_table_ptr_set @ 0x00538FF0 ===== */
+void fx_table_ptr_set(int param_1)
 
 
 
@@ -13340,12 +13340,12 @@ bool registry_volume_check(void)
 
 }
 
-/* ===== FUN_00539140 @ 0x00539140 ===== */
+/* ===== fx_name_exists_2 @ 0x00539140 ===== */
 /* PS2 candidate: __sigtramp_2 (conf 0.6) */
 
 
 
-bool FUN_00539140(undefined4 param_1)
+bool fx_name_exists_2(undefined4 param_1)
 
 
 
@@ -14471,8 +14471,8 @@ void MemString(undefined4 param_1,char *param_2,int *param_3,undefined4 param_4,
 
 }
 
-/* ===== FUN_0053a830 @ 0x0053A830 ===== */
-bool FUN_0053a830(undefined4 param_1,char *param_2)
+/* ===== crt_file_lock_ok @ 0x0053A830 ===== */
+bool crt_file_lock_ok(undefined4 param_1,char *param_2)
 
 
 
@@ -15069,8 +15069,8 @@ undefined4 animGetIndexByName(int param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0053be60 @ 0x0053BE60 ===== */
-uint FUN_0053be60(uint param_1)
+/* ===== anm_id_mask @ 0x0053BE60 ===== */
+uint anm_id_mask(uint param_1)
 
 
 
@@ -15080,12 +15080,12 @@ uint FUN_0053be60(uint param_1)
 
 }
 
-/* ===== FUN_0053be80 @ 0x0053BE80 ===== */
+/* ===== anm_cam_stream_value_read @ 0x0053BE80 ===== */
 /* PS2 candidate: ANM_CameraGetFOV (conf 0.7) */
 
 
 
-float10 FUN_0053be80(float param_1,undefined4 param_2)
+float10 anm_cam_stream_value_read(float param_1,undefined4 param_2)
 
 
 
@@ -15343,12 +15343,12 @@ float10 ANM_SecsFromTicks(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0053c640 @ 0x0053C640 ===== */
+/* ===== ANM_SecsFromFrames @ 0x0053C640 ===== */
 /* PS2 candidate: ANM_SecsFromFrames (conf 0.7) */
 
 
 
-float10 FUN_0053c640(int param_1,int param_2)
+float10 ANM_SecsFromFrames(int param_1,int param_2)
 
 
 
@@ -17591,12 +17591,12 @@ void GEO_MatCopy(uint *param_1,uint *param_2,uint *param_3)
 
 }
 
-/* ===== FUN_0053dc10 @ 0x0053DC10 ===== */
+/* ===== mat_identity_translation @ 0x0053DC10 ===== */
 /* PS2 candidate: GEO_MatTranslation (conf 0.316) */
 
 
 
-void FUN_0053dc10(undefined4 *param_1,undefined4 *param_2)
+void mat_identity_translation(undefined4 *param_1,undefined4 *param_2)
 
 
 
@@ -18474,7 +18474,7 @@ void mat0198_identity_scale_apply(undefined4 param_1)
 
   
 
-  FUN_0053dc10(local_44,param_1);
+  mat_identity_translation(local_44,param_1);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(&DAT_005f0198,&DAT_005f0198,local_44);
 

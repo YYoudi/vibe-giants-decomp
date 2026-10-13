@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054d5a8,0054d5a8,,crt_amsg_exit_2,0.9,w255,__amsg_exit(2) init failure stub
+0054d6cd,0054d6cd,,crt_fd_flag_40,0.9,w255,"fd table bit 0x40 check (DAT_6578c0 table, 0x24 stride)"
+0054fb96,0054fb96,,crt_env_find,0.9,w255,env table search by name until = or NUL (CRT getenv internal)
+00539140,00539140,,fx_name_exists_2,0.9,w255,fx_table_lookup(DAT_5e2c78) != 0 (second table)

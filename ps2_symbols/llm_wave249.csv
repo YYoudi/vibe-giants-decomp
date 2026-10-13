@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004ba2f0,004ba2f0,,reaperbase_dock_valid_check,0.9,w249,owner not reaper/0x4c/jetski + cfg +0xd3c slot check
+004782f0,004782f0,,destroy_by_id_c33_c27,0.9,w249,destroy class 0x33 (spec+0x134) or 0x27 (spec+0x14) matching id; caller rpman_init
+004cc7a0,004cc7a0,,yaw_turn_spec_once,0.9,w249,flag 4: obj_yaw_turn to spec +0xb8/bc then clear flag

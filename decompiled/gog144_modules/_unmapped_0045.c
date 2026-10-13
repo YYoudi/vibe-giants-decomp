@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 166 functions (161 named) — decompiled, names from PS2 symbols
+ * 166 functions (166 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1968,8 +1968,8 @@ undefined4 render_scene_end(void)
 
 }
 
-/* ===== FUN_00452030 @ 0x00452030 ===== */
-void FUN_00452030(void)
+/* ===== draw_mode_cycle @ 0x00452030 ===== */
+void draw_mode_cycle(void)
 
 
 
@@ -2013,12 +2013,12 @@ void option_set_633190(int param_1)
 
 }
 
-/* ===== FUN_00452090 @ 0x00452090 ===== */
+/* ===== scene_link_toggle_check @ 0x00452090 ===== */
 /* PS2 candidate: __main_2 (conf 0.6) */
 
 
 
-void FUN_00452090(int param_1)
+void scene_link_toggle_check(int param_1)
 
 
 
@@ -3096,12 +3096,12 @@ void icon_slots_reset(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00452ae0 @ 0x00452AE0 ===== */
+/* ===== fx_free_effect @ 0x00452AE0 ===== */
 /* PS2 candidate: fx_free_effect (conf 0.7) */
 
 
 
-void FUN_00452ae0(undefined4 *param_1,undefined4 *param_2)
+void fx_free_effect(undefined4 *param_1,undefined4 *param_2)
 
 
 
@@ -3570,7 +3570,7 @@ uint IconIsAvailable__Fi(int param_1)
 
 LAB_00452f80:
 
-      uVar2 = FUN_00454a40(DAT_0059d970,param_1);
+      uVar2 = minishop_icon_is_available(DAT_0059d970,param_1);
 
       return uVar2;
 
@@ -4056,12 +4056,12 @@ void giftshop_exit__Fv(void)
 
 }
 
-/* ===== FUN_00454a40 @ 0x00454A40 ===== */
+/* ===== minishop_icon_is_available @ 0x00454A40 ===== */
 /* PS2 candidate: minishop_icon_is_available (conf 0.7) */
 
 
 
-undefined4 FUN_00454a40(int param_1,int param_2)
+undefined4 minishop_icon_is_available(int param_1,int param_2)
 
 
 
@@ -6137,8 +6137,8 @@ int gun_find_right(int param_1)
 
 }
 
-/* ===== FUN_00456090 @ 0x00456090 ===== */
-undefined4 FUN_00456090(int param_1)
+/* ===== teammecc_target_state_query @ 0x00456090 ===== */
+undefined4 teammecc_target_state_query(int param_1)
 
 
 
@@ -7725,7 +7725,7 @@ LAB_004575ee:
 
     if (param_1 == 0xb) {
 
-      iVar2 = FUN_0051c540();
+      iVar2 = net_host_flags_set();
 
       if (iVar2 != 0) {
 
@@ -7777,7 +7777,7 @@ LAB_004575ee:
 
       }
 
-      iVar2 = FUN_0051c540();
+      iVar2 = net_host_flags_set();
 
       if (iVar2 != 0) {
 
@@ -12587,7 +12587,7 @@ void reaper_lock_short_5(undefined4 param_1,int param_2,float param_3,int param_
 
     if (*(int *)(param_2 + 0x1e0) == 99) {
 
-      FUN_004cc7a0(param_2);
+      yaw_turn_spec_once(param_2);
 
     }
 

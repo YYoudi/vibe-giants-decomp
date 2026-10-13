@@ -1,0 +1,20 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00490d40,00490d40,,reset_vcall_5dd31c,0.9,w264,"DAT_55c4a8=100, clear DAT_5c9f324/328, vcall DAT_5dd31c (cand __get_eh_context REJECTED)"
+00494fb0,00494fb0,,vtable_grid_5dd308_set,0.9,w264,"DAT_5dd308(0), query DAT_5dd2e0(1), re-set with grid DAT_6330e4+4"
+004eb8f0,004eb8f0,,vcall_5a8598_spells_hook,0.9,w264,vcall DAT_5a8598() if set; caller base_spells_setup
+004f8350,004f8350,,objspec_float_deref_get,0.9,w264,return *(float*)spec+0 (cand sceMpegIsEnd REJECTED); caller status_hud_render
+00500f50,00500f50,,axis_deltas_set,0.9,w264,"DAT_562c08|=2, DAT_5624b8=p1, 5624c0=-p2 (cand ANM_DumpCluster_12 REJECTED)"
+00404570,00404570,,S_TriCalcGradients,0.9,w264,PS2 anchor 0.605; island raster gradient calc
+00540ab0,00540ab0,,S_TriCalcGradients_2,0.9,w264,PS2 anchor 0.601; twin variant
+00452ae0,00452ae0,,fx_free_effect,0.9,w264,FXLISTTAG free; caller mecc_fire_logic (cand 0.726)
+00454a40,00454a40,,minishop_icon_is_available,0.9,w264,caller IconIsAvailable; ObjIsReaper + base dialog (cand 0.703)
+0046f540,0046f540,,getMenuSelection,0.9,w264,PS2Game::getMenuSelection; caller wredit_ai_menu (cand 0.703)
+0049a1d0,0049a1d0,,objspec_get_targetflags,0.9,w264,caller multi_display_player_cursor_info (cand 0.716)
+005007f0,005007f0,,ButtonFakeValue,0.9,w264,caller mecc_get_thrust (cand 0.7)
+0052b400,0052b400,,base_get_sweep_falloff,0.9,w264,caller rpman_move (cand 0.563)
+0053c640,0053c640,,ANM_SecsFromFrames,0.9,w264,frames->seconds; caller obj_proximity_update (cand 0.714)
+0054d104,0054d104,,DestroyHuds,0.9,w264,cHudManager::DestroyHuds; caller list_reset_54 (cand 0.53)
+00544d41,00544d41,,matherr,0.9,w264,CRT math error hook (cand 0.642)
+0053be60,0053be60,,anm_id_mask,0.9,w264,if short +4 != 1 mask lsb off id
+00517830,00517830,,meshrows_vtable_copy,0.9,w264,vtable DAT_65643c alloc + copy 7-dword rows dest 0x38/src 0x0e
+00494fe0,00494fe0,,vtable_flagged_dispatch,0.9,w264,"DAT_5dd2fc(-1)/DAT_5dd2e0(2) query; flagged objs -> DAT_5dd2f4(1,obj,+0x27c,+0x288)"

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 109 functions (104 named) — decompiled, names from PS2 symbols
+ * 109 functions (109 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -1579,12 +1579,12 @@ void smartie_claim_targets(int param_1)
 
 }
 
-/* ===== FUN_004e2b10 @ 0x004E2B10 ===== */
+/* ===== rpman_return_refpt_eval @ 0x004E2B10 ===== */
 /* PS2 candidate: rpman_spline_return_info (conf 0.7) */
 
 
 
-void FUN_004e2b10(int param_1)
+void rpman_return_refpt_eval(int param_1)
 
 
 
@@ -5866,9 +5866,9 @@ void obj_proximity_update(int param_1)
 
     if ((*(byte *)(param_1 + 0x30) & 2) == 0) {
 
-      fVar3 = (float10)FUN_0053c640(*(undefined4 *)(*(int *)(*(int *)(param_1 + 8) + 0x2a0) + 0x28),
+      fVar3 = (float10)ANM_SecsFromFrames(*(undefined4 *)
 
-                                    0x96);
+                                           (*(int *)(*(int *)(param_1 + 8) + 0x2a0) + 0x28),0x96);
 
       fVar3 = (float10)1.0 - (float10)*(float *)(param_1 + 0x14) / fVar3;
 
@@ -6379,8 +6379,8 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
 }
 
-/* ===== FUN_004e7160 @ 0x004E7160 ===== */
-void FUN_004e7160(int param_1,int param_2)
+/* ===== anim_flagid_select @ 0x004E7160 ===== */
+void anim_flagid_select(int param_1,int param_2)
 
 
 
@@ -10047,8 +10047,8 @@ code_r0x004ea7ae:
 
 }
 
-/* ===== FUN_004ea810 @ 0x004EA810 ===== */
-void FUN_004ea810(int param_1)
+/* ===== bldg_slots_clear_tick @ 0x004EA810 ===== */
+void bldg_slots_clear_tick(int param_1)
 
 
 
@@ -11355,8 +11355,8 @@ void match_start_entry(void)
 
 }
 
-/* ===== FUN_004eb8f0 @ 0x004EB8F0 ===== */
-void FUN_004eb8f0(void)
+/* ===== vcall_5a8598_spells_hook @ 0x004EB8F0 ===== */
+void vcall_5a8598_spells_hook(void)
 
 
 
@@ -12307,8 +12307,8 @@ undefined4 ret_const_x60_c29(void)
 
 }
 
-/* ===== FUN_004ec7d0 @ 0x004EC7D0 ===== */
-void FUN_004ec7d0(undefined4 *param_1)
+/* ===== defaults_bytes_init @ 0x004EC7D0 ===== */
+void defaults_bytes_init(undefined4 *param_1)
 
 
 
@@ -12818,7 +12818,7 @@ void meccprocanimscreate_004ede30(void)
 
       if (*(int *)(DAT_00632dbc + 4 + iVar2) != 0) {
 
-        FUN_00495060(DAT_00632dbc + iVar2);
+        vcall_5dd298_setupgam(DAT_00632dbc + iVar2);
 
       }
 
@@ -13009,7 +13009,7 @@ void base_spells_setup(void)
 
   }
 
-  FUN_004eb8f0();
+  vcall_5a8598_spells_hook();
 
   return;
 
@@ -13558,9 +13558,9 @@ void reaper_logic(int param_1)
 
   rpboat_lock_to_boat__FP6OBJECTT0();
 
-  FUN_00494fb0();
+  vtable_grid_5dd308_set();
 
-  FUN_00494fe0();
+  vtable_flagged_dispatch();
 
   DAT_00632e40 = 0;
 
@@ -13630,15 +13630,15 @@ undefined4 game_files_check(void)
 
   stream_00538800();
 
-  iVar1 = FUN_00538540(s_world_gb2_005620f8);
+  iVar1 = fx_name_exists(s_world_gb2_005620f8);
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_00539140(s_w_intro_bin_005620ec);
+    iVar1 = fx_name_exists_2(s_w_intro_bin_005620ec);
 
     if (iVar1 != 0) {
 
-      iVar1 = FUN_00538540(s_story1_gti_005620e0);
+      iVar1 = fx_name_exists(s_story1_gti_005620e0);
 
       if (iVar1 != 0) {
 
@@ -13683,7 +13683,7 @@ undefined4 intro_assets_check(void)
 
   DAT_006330e4 = 0;
 
-  FUN_004ec7d0(&DAT_00632b20);
+  defaults_bytes_init(&DAT_00632b20);
 
   iVar1 = game_files_check();
 
@@ -13740,7 +13740,7 @@ void shutdown_blood_cleanup(void)
 
   gamespy_shutdown();
 
-  FUN_0052E470();
+  comm_critsec_delete();
 
   main_setupgam_004eda20();
 
@@ -15270,7 +15270,7 @@ void smartie_ai_main(int param_1)
 
     obj_scale_compute(param_1);
 
-    FUN_004a73a0(param_1);
+    vvel_decay_tick(param_1);
 
     smartie_vvel_avg_move(param_1);
 
@@ -15818,7 +15818,7 @@ LAB_004f12f8:
 
         (iVar6 = base_bldg_is_alive_at_all(uVar7,0xd), iVar6 != 0)) &&
 
-       (iVar6 = FUN_004184d0(uVar7,0xd), iVar6 == 0)) {
+       (iVar6 = slot_member_alive(uVar7,0xd), iVar6 == 0)) {
 
       *(undefined4 *)(iVar11 + 0x24) = 0xffffffff;
 
@@ -15888,7 +15888,7 @@ LAB_004f12f8:
 
           (iVar6 = base_bldg_is_alive_at_all(uVar7,0xd), iVar6 != 0)) &&
 
-         (iVar6 = FUN_004184d0(uVar7,0xd), iVar6 == 0)) {
+         (iVar6 = slot_member_alive(uVar7,0xd), iVar6 == 0)) {
 
         *(undefined4 *)(iVar11 + 0x24) = 0xffffffff;
 
@@ -16254,7 +16254,7 @@ LAB_004f17e7:
 
     }
 
-    iVar11 = FUN_004177a0(*(undefined4 *)(param_1 + 0x18c));
+    iVar11 = team_base_find(*(undefined4 *)(param_1 + 0x18c));
 
     if (iVar11 == 0) break;
 
@@ -16484,7 +16484,7 @@ LAB_004f19e6:
 
             uVar7 = base_get_base_building(uVar7);
 
-            FUN_00418770(uVar7,*(undefined4 *)(iVar11 + 0x28),param_1 + 200);
+            mat_facing_angle_get(uVar7,*(undefined4 *)(iVar11 + 0x28),param_1 + 200);
 
             *(undefined4 *)(param_1 + 0xe4) = 0x21;
 
@@ -17106,7 +17106,7 @@ LAB_004f32da:
 
             (iVar4 = base_bldg_is_alive_at_all(uVar7,0xd), iVar4 != 0)) &&
 
-           (iVar4 = FUN_004184d0(uVar7,0xd), iVar4 == 0)) {
+           (iVar4 = slot_member_alive(uVar7,0xd), iVar4 == 0)) {
 
           *(undefined4 *)(iVar6 + 0x24) = 0xffffffff;
 
@@ -17430,7 +17430,7 @@ LAB_004f32da:
 
           else {
 
-            iVar6 = FUN_0040abf0(param_1,iVar11 + 0x28);
+            iVar6 = master_flagslot_claim(param_1,iVar11 + 0x28);
 
             *(int *)(iVar11 + 0x2c) = iVar6;
 
@@ -17488,7 +17488,7 @@ LAB_004f32da:
 
                                         *(undefined4 *)(iVar11 + 0x28),param_1 + 200);
 
-              FUN_00418770(uVar7);
+              mat_facing_angle_get(uVar7);
 
               ObjectSetAnim(param_1,0x5a,0x21,0,0,0x3f2aaaab);
 
@@ -17502,7 +17502,7 @@ LAB_004f32da:
 
                                  *(undefined4 *)(iVar11 + 0x28),param_1 + 200);
 
-              FUN_00418770(uVar7);
+              mat_facing_angle_get(uVar7);
 
               smartie_make_held_object__FP6OBJECTi(param_1,0x2f2);
 
@@ -17620,7 +17620,7 @@ LAB_004f289a:
 
              (iVar6 = base_bldg_is_alive_at_all(uVar7,0xd), iVar6 != 0)) &&
 
-            (iVar6 = FUN_004184d0(uVar7,0xd), iVar6 == 0)) {
+            (iVar6 = slot_member_alive(uVar7,0xd), iVar6 == 0)) {
 
       *(undefined4 *)(iVar11 + 0x24) = 0xffffffff;
 
@@ -18208,7 +18208,7 @@ LAB_004f35c0:
 
 LAB_004f0b0c:
 
-        iVar6 = FUN_004177a0(*(undefined4 *)(param_1 + 0x18c));
+        iVar6 = team_base_find(*(undefined4 *)(param_1 + 0x18c));
 
         if (iVar6 == 0) break;
 
@@ -19046,7 +19046,7 @@ LAB_004f0e47:
 
   obj_scale_compute(param_1);
 
-  FUN_004a73a0(param_1);
+  vvel_decay_tick(param_1);
 
   smartie_vvel_avg_move(param_1);
 

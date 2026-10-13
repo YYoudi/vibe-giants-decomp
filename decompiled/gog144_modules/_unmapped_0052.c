@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (157 named) — decompiled, names from PS2 symbols
+ * 162 functions (162 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -5039,8 +5039,8 @@ void dlog_user_525340(void)
 
 }
 
-/* ===== FUN_00525380 @ 0x00525380 ===== */
-void FUN_00525380(int param_1)
+/* ===== progress_text_pick @ 0x00525380 ===== */
+void progress_text_pick(int param_1)
 
 
 
@@ -5621,7 +5621,7 @@ LAB_00528c3a:
 
   }
 
-  puVar7 = (undefined1 *)FUN_00525380();
+  puVar7 = (undefined1 *)progress_text_pick();
 
   if (((cVar12 == '\x04') || (cVar12 == '\b')) && (param_1 == DAT_005def5c)) {
 
@@ -7480,12 +7480,12 @@ undefined1 comm_0052ab50(int param_1)
 
 }
 
-/* ===== FUN_0052ab70 @ 0x0052AB70 ===== */
+/* ===== comm_player_ready_set @ 0x0052AB70 ===== */
 /* PS2 candidate: ObjectGetWorldRefPoint (conf 0.7) */
 
 
 
-void FUN_0052ab70(int param_1,undefined1 param_2)
+void comm_player_ready_set(int param_1,undefined1 param_2)
 
 
 
@@ -8317,12 +8317,12 @@ int comm_stats_packet_build(int param_1)
 
 }
 
-/* ===== FUN_0052b400 @ 0x0052B400 ===== */
+/* ===== base_get_sweep_falloff @ 0x0052B400 ===== */
 /* PS2 candidate: base_get_sweep_falloff (conf 0.6) */
 
 
 
-undefined4 FUN_0052b400(void)
+undefined4 base_get_sweep_falloff(void)
 
 
 
@@ -10263,7 +10263,7 @@ void comm_socket_recv_loop(SOCKET *param_1)
 
               case 6:
 
-                FUN_0052e1f0(param_1,&local_8a4,&local_67c,pcVar6);
+                comm_echo_send(param_1,&local_8a4,&local_67c,pcVar6);
 
                 break;
 
@@ -11373,8 +11373,8 @@ void comm_packet_logfmt_4(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0052e1f0 @ 0x0052E1F0 ===== */
-void FUN_0052e1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)
+/* ===== comm_echo_send @ 0x0052E1F0 ===== */
+void comm_echo_send(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)
 
 
 
@@ -11732,8 +11732,8 @@ void comm_critsec_init(void)
 
 }
 
-/* ===== FUN_0052E470 @ 0x0052E470 ===== */
-void FUN_0052E470(void)
+/* ===== comm_critsec_delete @ 0x0052E470 ===== */
+void comm_critsec_delete(void)
 
 
 
@@ -12733,7 +12733,7 @@ void comm_team_broadcast_menu(int param_1)
 
   }
 
-  FUN_0052ab70(uVar3,*(undefined1 *)(param_1 + 1));
+  comm_player_ready_set(uVar3,*(undefined1 *)(param_1 + 1));
 
   if ((((DAT_00632f08 < 0xe) || (uVar5 == *(byte *)(param_1 + 1))) || (*(byte *)(param_1 + 1) == 0))
 

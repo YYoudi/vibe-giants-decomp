@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052e1f0,0052e1f0,,comm_echo_send,0.9,w247,"sprintf ""\echo %s"" + comm_socket_sendto, len<0x547; caller comm_socket_recv_loop"
+004177a0,004177a0,,team_base_find,0.9,w247,walk DAT_632d9c: meccbasepit/reaperbase bldg with team +0x18c==param
+0051b9c0,0051b9c0,,textrender_draw_y_aspect,0.9,w247,textrender_text_draw with y += x/aspect*DAT_5dd394; callers dlog_widgets_draw/wredit_text_fade
+0041ebb0,0041ebb0,,meccbase_items_move_owned,0.9,w247,"walk list, ObjIsMeccBldg owner==param -> meccbaseitem_move (cand do_building_move REJECTED)"

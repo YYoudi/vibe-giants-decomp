@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 87 functions (86 named) — decompiled, names from PS2 symbols
+ * 87 functions (87 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -2521,7 +2521,7 @@ LAB_004c24e1:
 
   }
 
-  if ((bVar3) && (iVar4 = FUN_00494f90(), iVar4 == 0)) {
+  if ((bVar3) && (iVar4 = cutscene_active_check(), iVar4 == 0)) {
 
     *(float *)(param_3 + 0x278) = param_2 + *(float *)(param_3 + 0x278);
 
@@ -13910,8 +13910,8 @@ void destroy_only_c99(int param_1)
 
 }
 
-/* ===== FUN_004cc7a0 @ 0x004CC7A0 ===== */
-void FUN_004cc7a0(int param_1)
+/* ===== yaw_turn_spec_once @ 0x004CC7A0 ===== */
+void yaw_turn_spec_once(int param_1)
 
 
 
@@ -14671,7 +14671,7 @@ LAB_004ccbc0:
 
                        (float)DAT_00632928);
 
-            FUN_004fa720(&DAT_00632900,0x24,2);
+            shopmenu_slot_entries_push(&DAT_00632900,0x24,2);
 
           }
 
@@ -14729,7 +14729,7 @@ LAB_004ccbc0:
 
                                 (local_1fc[3] - local_1fc[0]) * (local_1fc[3] - local_1fc[0])));
 
-          FUN_0053dc10(auStack_cc,&local_20c);
+          mat_identity_translation(auStack_cc,&local_20c);
 
           GEO_MatFromQuat_2(auStack_44,DAT_005a84e0);
 

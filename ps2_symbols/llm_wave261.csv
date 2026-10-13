@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0040d6d0,0040d6d0,,cam_cfg_val_5550e0_get,0.9,w261,return DAT_5550e0 (camera cfg float)
+0040d6e0,0040d6e0,,cam_cfg_val_5550e4_get,0.9,w261,return DAT_5550e4 (camera cfg float)
+00425840,00425840,,game_cfg_val_555a1c_get,0.9,w261,return DAT_555a1c; caller game_options_verify

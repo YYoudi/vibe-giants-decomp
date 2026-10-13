@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 84 functions (83 named) — decompiled, names from PS2 symbols
+ * 84 functions (84 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -2046,7 +2046,7 @@ void reaper_death_broadcaster_c1
 
   fVar2 = *(float *)(param_3 + 0x1c0);
 
-  iVar7 = FUN_00494f90();
+  iVar7 = cutscene_active_check();
 
   if (iVar7 != 0) {
 
@@ -5812,11 +5812,11 @@ void obj_anim_flags_update(uint param_1,float *param_2)
 
   if ((uVar2 & 4) != 0) {
 
-    fVar4 = (float10)FUN_004a2650(&local_c,&param_1,puVar1 + 5,uVar3 + 0xa0,
+    fVar4 = (float10)vec_move_toward(&local_c,&param_1,puVar1 + 5,uVar3 + 0xa0,
 
-                                  (float)puVar1[0x24] * (float)puVar1[0x21],
+                                     (float)puVar1[0x24] * (float)puVar1[0x21],
 
-                                  (float)puVar1[0x22] * (float)puVar1[0x24],0x3f800000);
+                                     (float)puVar1[0x22] * (float)puVar1[0x24],0x3f800000);
 
     puVar1[0xd] = (uint)(float)fVar4;
 
@@ -10899,7 +10899,7 @@ void lift_update_rider_position__FP6OBJECT(int param_1)
 
         local_168 = *(float *)(iVar6 + 0xa8) - local_164;
 
-        FUN_0053dc10(local_88,&local_170);
+        mat_identity_translation(local_88,&local_170);
 
         GEO_MatFromQuat_2(local_110,
 
@@ -10915,7 +10915,7 @@ void lift_update_rider_position__FP6OBJECT(int param_1)
 
         local_168 = -local_168;
 
-        FUN_0053dc10(auStack_44,&local_170);
+        mat_identity_translation(auStack_44,&local_170);
 
         (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_154,auStack_44,local_cc);
 
@@ -11182,12 +11182,12 @@ void reaperbase_sound_loop_c104(int param_1,int param_2,undefined4 param_3,int *
 
 }
 
-/* ===== FUN_0046f540 @ 0x0046F540 ===== */
+/* ===== getMenuSelection @ 0x0046F540 ===== */
 /* PS2 candidate: getMenuSelection (conf 0.7) */
 
 
 
-undefined * FUN_0046f540(int param_1)
+undefined * getMenuSelection(int param_1)
 
 
 

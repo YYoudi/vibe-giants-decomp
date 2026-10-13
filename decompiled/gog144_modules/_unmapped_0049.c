@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 158 functions (144 named) — decompiled, names from PS2 symbols
+ * 158 functions (158 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -876,14 +876,14 @@ void scenario_list_load(int param_1,undefined4 param_2,char *param_3)
 
 }
 
-/* ===== FUN_00490d40 @ 0x00490D40 ===== */
+/* ===== reset_vcall_5dd31c @ 0x00490D40 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: __get_eh_context_2 (conf 0.861) */
 
 
 
-void FUN_00490d40(void)
+void reset_vcall_5dd31c(void)
 
 
 
@@ -5545,7 +5545,7 @@ void mission_unload_mission_objects__Fv(void)
 
       wound_list_cleanup();
 
-      FUN_0040b300();
+      objlist_flagall_partition();
 
       object_list_update();
 
@@ -6148,8 +6148,8 @@ void mission_type_dispatch(void)
 
 }
 
-/* ===== FUN_00494f90 @ 0x00494F90 ===== */
-undefined4 FUN_00494f90(void)
+/* ===== cutscene_active_check @ 0x00494F90 ===== */
+undefined4 cutscene_active_check(void)
 
 
 
@@ -6175,8 +6175,8 @@ undefined4 FUN_00494f90(void)
 
 }
 
-/* ===== FUN_00494fb0 @ 0x00494FB0 ===== */
-void FUN_00494fb0(void)
+/* ===== vtable_grid_5dd308_set @ 0x00494FB0 ===== */
+void vtable_grid_5dd308_set(void)
 
 
 
@@ -6200,8 +6200,8 @@ void FUN_00494fb0(void)
 
 }
 
-/* ===== FUN_00494fe0 @ 0x00494FE0 ===== */
-void FUN_00494fe0(void)
+/* ===== vtable_flagged_dispatch @ 0x00494FE0 ===== */
+void vtable_flagged_dispatch(void)
 
 
 
@@ -6243,12 +6243,12 @@ void FUN_00494fe0(void)
 
 }
 
-/* ===== FUN_00495060 @ 0x00495060 ===== */
+/* ===== vcall_5dd298_setupgam @ 0x00495060 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00495060(int param_1)
+void vcall_5dd298_setupgam(int param_1)
 
 
 
@@ -6270,8 +6270,8 @@ void FUN_00495060(int param_1)
 
 }
 
-/* ===== FUN_00495090 @ 0x00495090 ===== */
-void FUN_00495090(void)
+/* ===== vcall_5dd31c_setupgam @ 0x00495090 ===== */
+void vcall_5dd31c_setupgam(void)
 
 
 
@@ -6845,8 +6845,8 @@ void wredit_004959c0(void)
 
 }
 
-/* ===== FUN_004959d0 @ 0x004959D0 ===== */
-void FUN_004959d0(void)
+/* ===== vcall_5dd28c_wredit @ 0x004959D0 ===== */
+void vcall_5dd28c_wredit(void)
 
 
 
@@ -7411,12 +7411,12 @@ undefined4 teammecc_clear_mode(void)
 
 }
 
-/* ===== FUN_004961e0 @ 0x004961E0 ===== */
+/* ===== vcall_5dd34c_get @ 0x004961E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_004961e0(void)
+undefined4 vcall_5dd34c_get(void)
 
 
 
@@ -7442,12 +7442,12 @@ undefined4 FUN_004961e0(void)
 
 }
 
-/* ===== FUN_00496200 @ 0x00496200 ===== */
+/* ===== vcall_5dd350_timer_get @ 0x00496200 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_00496200(void)
+float10 vcall_5dd350_timer_get(void)
 
 
 
@@ -9352,8 +9352,8 @@ LAB_00497c25:
 
 }
 
-/* ===== FUN_00497c90 @ 0x00497C90 ===== */
-void FUN_00497c90(int param_1)
+/* ===== objparts_iter_main_call @ 0x00497C90 ===== */
+void objparts_iter_main_call(int param_1)
 
 
 
@@ -11224,12 +11224,12 @@ LAB_004991da:
 
 }
 
-/* ===== FUN_00499200 @ 0x00499200 ===== */
+/* ===== object_destroy_full @ 0x00499200 ===== */
 /* PS2 candidate: destroy_player_object (conf 0.322) */
 
 
 
-void FUN_00499200(undefined4 param_1)
+void object_destroy_full(undefined4 param_1)
 
 
 
@@ -12225,12 +12225,12 @@ void objspec_get_movetype_string(void)
 
 }
 
-/* ===== FUN_0049a1d0 @ 0x0049A1D0 ===== */
+/* ===== objspec_get_targetflags @ 0x0049A1D0 ===== */
 /* PS2 candidate: objspec_get_targetflags (conf 0.7) */
 
 
 
-undefined4 FUN_0049a1d0(int param_1)
+undefined4 objspec_get_targetflags(int param_1)
 
 
 
@@ -13391,8 +13391,8 @@ void sine_cosine_table_gen(int param_1)
 
 }
 
-/* ===== FUN_0049b810 @ 0x0049B810 ===== */
-void FUN_0049b810(void)
+/* ===== owner_squad_process @ 0x0049B810 ===== */
+void owner_squad_process(void)
 
 
 
@@ -14859,7 +14859,7 @@ LAB_0049cbcb:
 
       if (iVar7 != 0) break;
 
-      FUN_0049de80(param_1,1);
+      ai_standoff_goal_calc(param_1,1);
 
       ai_goal_process(param_1);
 
@@ -14891,7 +14891,7 @@ LAB_0049cd57:
 
       *(float *)((int)param_1 + 0xf0) = (float)fVar9;
 
-      FUN_0049de80(param_1,0);
+      ai_standoff_goal_calc(param_1,0);
 
       break;
 
@@ -15097,7 +15097,7 @@ LAB_0049cc43:
 
       *(float *)((int)param_1 + 0xf0) = (float)fVar9;
 
-      FUN_0049de80(param_1,0);
+      ai_standoff_goal_calc(param_1,0);
 
       if ((*(int *)((int)param_1 + 0x10) != 0x48) &&
 
@@ -15951,12 +15951,12 @@ void get_floor_z_point_plat_2(int param_1)
 
 }
 
-/* ===== FUN_0049de80 @ 0x0049DE80 ===== */
+/* ===== ai_standoff_goal_calc @ 0x0049DE80 ===== */
 /* PS2 candidate: offspring_set_chase_location__FP6OBJECTi (conf 0.441) */
 
 
 
-void FUN_0049de80(int param_1,int param_2)
+void ai_standoff_goal_calc(int param_1,int param_2)
 
 
 
@@ -16374,7 +16374,7 @@ void cmdline_parse(char *param_1)
 
     else {
 
-      uVar2 = FUN_00544123((int)*pcVar3,4);
+      uVar2 = crt_ctype_mb_check((int)*pcVar3,4);
 
     }
 
@@ -16509,7 +16509,7 @@ void lift_logic__FP6OBJECT(int param_1)
 
         camera_override_refpt(DAT_0059f998,10);
 
-        FUN_00418770(DAT_0059f998,10,&DAT_0059f994);
+        mat_facing_angle_get(DAT_0059f998,10,&DAT_0059f994);
 
       }
 
