@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (153 named) — decompiled, names from PS2 symbols
+ * 186 functions (154 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -12597,8 +12597,8 @@ bool dialog_level_is_base_4(void)
 
 }
 
-/* ===== FUN_0051c750 @ 0x0051C750 ===== */
-undefined4 FUN_0051c750(void)
+/* ===== audio_option_get_d @ 0x0051C750 ===== */
+undefined4 audio_option_get_d(void)
 
 
 

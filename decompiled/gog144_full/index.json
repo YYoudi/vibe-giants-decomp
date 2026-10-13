@@ -727,7 +727,7 @@
  "0x00412DF0": {
   "name": "collide_objects",
   "named": true,
-  "len": 14184
+  "len": 14185
  },
  "0x00413820": {
   "name": "setMenuSelection__7PS2Gameiiii",
@@ -807,7 +807,7 @@
  "0x00414990": {
   "name": "collgrid_collide_d",
   "named": true,
-  "len": 3905
+  "len": 3906
  },
  "0x00414D40": {
   "name": "obj_animate_pose_update",
@@ -1102,7 +1102,7 @@
  "0x0041A980": {
   "name": "objtype_team_assign",
   "named": true,
-  "len": 3140
+  "len": 3148
  },
  "0x0041AC40": {
   "name": "FUN_0041ac40",
@@ -3492,7 +3492,7 @@
  "0x0045BA70": {
   "name": "AttackObject__FP6OBJECTT0P3P3DT2fi",
   "named": true,
-  "len": 3504
+  "len": 3506
  },
  "0x0045BD90": {
   "name": "FUN_0045bd90",
@@ -3772,7 +3772,7 @@
  "0x0046BC60": {
   "name": "kbos_scan_food__FP6OBJECTP14ObjProcessInfo",
   "named": true,
-  "len": 4815
+  "len": 4811
  },
  "0x0046C060": {
   "name": "obj_3dsound_scan",
@@ -4132,7 +4132,7 @@
  "0x00479100": {
   "name": "mecc_calculate_mass__FP6OBJECT",
   "named": true,
-  "len": 1419
+  "len": 1434
  },
  "0x004791F0": {
   "name": "MeccPhysicsExApplyLocation__FP6OBJECT",
@@ -5725,9 +5725,9 @@
   "len": 192
  },
  "0x004A61C0": {
-  "name": "FUN_004a61c0",
-  "named": false,
-  "len": 146
+  "name": "obj_is_type0f",
+  "named": true,
+  "len": 147
  },
  "0x004A61E0": {
   "name": "ObjIsPlayer",
@@ -5910,9 +5910,9 @@
   "len": 222
  },
  "0x004A8F70": {
-  "name": "FUN_004a8f70",
-  "named": false,
-  "len": 173
+  "name": "IconDef_entry_ptr",
+  "named": true,
+  "len": 178
  },
  "0x004A8F90": {
   "name": "IconDef_valid_check",
@@ -8200,9 +8200,9 @@
   "len": 196
  },
  "0x0050A500": {
-  "name": "FUN_0050a500",
-  "named": false,
-  "len": 149
+  "name": "vec2_len",
+  "named": true,
+  "len": 145
  },
  "0x0050A520": {
   "name": "distance2d__FP3P3DT0",
@@ -9175,9 +9175,9 @@
   "len": 76
  },
  "0x0051C750": {
-  "name": "FUN_0051c750",
-  "named": false,
-  "len": 141
+  "name": "audio_option_get_d",
+  "named": true,
+  "len": 147
  },
  "0x0051C770": {
   "name": "audio_option_set_c",
@@ -9530,9 +9530,9 @@
   "len": 639
  },
  "0x005250E0": {
-  "name": "FUN_005250e0",
-  "named": false,
-  "len": 144
+  "name": "game_mode_set4_check",
+  "named": true,
+  "len": 152
  },
  "0x00525100": {
   "name": "FUN_00525100",
@@ -9760,14 +9760,14 @@
   "len": 2315
  },
  "0x0052B200": {
-  "name": "FUN_0052b200",
-  "named": false,
+  "name": "comm_qos_set",
+  "named": true,
   "len": 181
  },
  "0x0052B220": {
-  "name": "FUN_0052b220",
-  "named": false,
-  "len": 161
+  "name": "comm_ping_set",
+  "named": true,
+  "len": 162
  },
  "0x0052B240": {
   "name": "FUN_0052b240",
@@ -10172,7 +10172,7 @@
  "0x00530270": {
   "name": "comm_send_big",
   "named": true,
-  "len": 3979
+  "len": 3981
  },
  "0x00530430": {
   "name": "FUN_00530430",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36753
+  "len": 36762
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10362,7 +10362,7 @@
  "0x00535F40": {
   "name": "comm_session_init",
   "named": true,
-  "len": 1155
+  "len": 1163
  },
  "0x00536050": {
   "name": "atox__FPc",
@@ -11637,7 +11637,7 @@
  "0x00544D5C": {
   "name": "crt_initterm",
   "named": true,
-  "len": 246
+  "len": 258
  },
  "0x00544D89": {
   "name": "BinFileCreateWrite_4",
@@ -11652,7 +11652,7 @@
  "0x00544DAB": {
   "name": "crt_lock_vector",
   "named": true,
-  "len": 1047
+  "len": 1059
  },
  "0x00544E50": {
   "name": "FUN_00544E50",
@@ -11665,9 +11665,9 @@
   "len": 65
  },
  "0x00544E62": {
-  "name": "FUN_00544e62",
-  "named": false,
-  "len": 223
+  "name": "crt_run_init_array",
+  "named": true,
+  "len": 229
  },
  "0x00544E7C": {
   "name": "crt_vobuf_alloc",

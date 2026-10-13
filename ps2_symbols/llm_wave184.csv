@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052b220,FUN_0052b220,,comm_ping_set,0.9,llm-w184,ping table setter pair of getter
+0052b200,FUN_0052b200,,comm_qos_set,0.9,llm-w184,qos table setter
+0050a500,FUN_0050a500,,vec2_len,0.9,llm-w184,2D sqrt caller kbos_scan_food
+004a8f70,FUN_004a8f70,,IconDef_entry_ptr,0.9,llm-w184,0x4c entry ptr caller mecc_calculate_mass
+004a61c0,FUN_004a61c0,,obj_is_type0f,0.9,llm-w184,type 0xf predicate callers collide/attack
+005250e0,FUN_005250e0,,game_mode_set4_check,0.9,llm-w184,mode 0/2-4 4th set predicate
+00544e62,FUN_00544e62,,crt_run_init_array,0.9,llm-w184,fptr array loop callers initterm
+0051c750,FUN_0051c750,,audio_option_get_d,0.9,llm-w184,4th options getter variant

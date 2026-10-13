@@ -366,7 +366,7 @@ void comm_send_big(undefined4 *param_1)
 
         }
 
-        FUN_0052b200(uVar3,(float)fVar6);
+        comm_qos_set(uVar3,(float)fVar6);
 
       }
 
@@ -384,9 +384,9 @@ void comm_send_big(undefined4 *param_1)
 
         fVar6 = (float10)comm_ping_get(*(char *)(param_1 + 1));
 
-        FUN_0052b220(*(undefined1 *)(param_1 + 1),
+        comm_ping_set(*(undefined1 *)(param_1 + 1),
 
-                     (float)(fVar6 + (float10)*(float *)((int)param_1 + 0x11)));
+                      (float)(fVar6 + (float10)*(float *)((int)param_1 + 0x11)));
 
       }
 
@@ -2803,7 +2803,7 @@ void FUN_00531470(void)
 
           if (iVar4 == 0) {
 
-            iVar4 = FUN_005250e0(DAT_00632f10);
+            iVar4 = game_mode_set4_check(DAT_00632f10);
 
             DAT_00632f14 = 2 - (uint)(iVar4 != 0);
 
@@ -4111,13 +4111,13 @@ LAB_00532513:
 
           if (pcVar15[2] != -1) {
 
-            FUN_0052b200(pcVar15[2],*(undefined4 *)(pcVar15 + 9));
+            comm_qos_set(pcVar15[2],*(undefined4 *)(pcVar15 + 9));
 
           }
 
           if (pcVar15[4] != -1) {
 
-            FUN_0052b220(pcVar15[4],*(undefined4 *)(pcVar15 + 0x11));
+            comm_ping_set(pcVar15[4],*(undefined4 *)(pcVar15 + 0x11));
 
           }
 
@@ -9190,7 +9190,7 @@ void comm_session_init(void)
 
     }
 
-    iVar2 = FUN_005250e0(DAT_00632f10);
+    iVar2 = game_mode_set4_check(DAT_00632f10);
 
     DAT_00632f14 = 2 - (uint)(iVar2 != 0);
 

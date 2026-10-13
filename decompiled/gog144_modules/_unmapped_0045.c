@@ -11085,11 +11085,11 @@ void AttackObject__FP6OBJECTT0P3P3DT2fi
 
   iVar4 = param_1;
 
-  if ((iVar3 == 0) && (iVar3 = FUN_004a61c0(param_1), iVar3 == 0)) {
+  if ((iVar3 == 0) && (iVar3 = obj_is_type0f(param_1), iVar3 == 0)) {
 
     iVar4 = ObjIsKabuto(*(undefined4 *)(param_1 + 0x274));
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a61c0(*(undefined4 *)(param_1 + 0x274)), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = obj_is_type0f(*(undefined4 *)(param_1 + 0x274)), iVar4 == 0)) {
 
       return;
 

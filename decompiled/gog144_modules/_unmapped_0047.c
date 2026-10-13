@@ -4786,13 +4786,13 @@ void mecc_calculate_mass__FP6OBJECT(int param_1)
 
     uVar3 = FUN_004582d0(param_1,iVar7);
 
-    iVar4 = FUN_004a8f70(uVar3);
+    iVar4 = IconDef_entry_ptr(uVar3);
 
     iVar4 = *(int *)(iVar4 + 0x18);
 
     uVar3 = FUN_00457fb0(param_1,iVar7);
 
-    iVar5 = FUN_004a8f70(uVar3);
+    iVar5 = IconDef_entry_ptr(uVar3);
 
     iVar6 = iVar6 + iVar4 + *(int *)(iVar5 + 0x18);
 
@@ -4806,7 +4806,7 @@ void mecc_calculate_mass__FP6OBJECT(int param_1)
 
     uVar3 = SpecialWeaponIdGet__FP6OBJECT(param_1);
 
-    iVar7 = FUN_004a8f70(uVar3);
+    iVar7 = IconDef_entry_ptr(uVar3);
 
     iVar6 = iVar6 + *(int *)(iVar7 + 0x18);
 

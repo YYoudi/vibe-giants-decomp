@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (294 named) — decompiled, names from PS2 symbols
+ * 351 functions (295 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -6935,9 +6935,9 @@ void crt_initterm(void)
 
   }
 
-  FUN_00544e62(&DAT_00554008,&DAT_00554014);
+  crt_run_init_array(&DAT_00554008,&DAT_00554014);
 
-  FUN_00544e62(&DAT_00554000,&DAT_00554004);
+  crt_run_init_array(&DAT_00554000,&DAT_00554004);
 
   return;
 
@@ -7034,11 +7034,11 @@ void crt_lock_vector(UINT param_1,int param_2,int param_3)
 
     }
 
-    FUN_00544e62(&DAT_00554018,&DAT_00554020);
+    crt_run_init_array(&DAT_00554018,&DAT_00554020);
 
   }
 
-  FUN_00544e62(&DAT_00554024,&DAT_00554028);
+  crt_run_init_array(&DAT_00554024,&DAT_00554028);
 
   if (param_3 == 0) {
 
@@ -7082,8 +7082,8 @@ void FUN_00544E59(void)
 
 }
 
-/* ===== FUN_00544e62 @ 0x00544E62 ===== */
-void FUN_00544e62(undefined4 *param_1,undefined4 *param_2)
+/* ===== crt_run_init_array @ 0x00544E62 ===== */
+void crt_run_init_array(undefined4 *param_1,undefined4 *param_2)
 
 
 

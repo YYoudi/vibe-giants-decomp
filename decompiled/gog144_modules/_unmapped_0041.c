@@ -1593,7 +1593,7 @@ void collide_objects(int param_1)
 
     iVar5 = ObjIsKabuto(param_1);
 
-    if ((iVar5 == 0) && (iVar5 = FUN_004a61c0(param_1), iVar5 == 0)) {
+    if ((iVar5 == 0) && (iVar5 = obj_is_type0f(param_1), iVar5 == 0)) {
 
       local_88 = 0;
 
@@ -3505,7 +3505,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
         (((local_34 = iVar6, iVar5 = ObjIsKabuto(), iVar5 == 0 &&
 
-          (iVar5 = FUN_004a61c0(), iVar5 == 0)) || ((*(byte *)(iVar6 + 0x1cc) & 1) == 0)))) &&
+          (iVar5 = obj_is_type0f(), iVar5 == 0)) || ((*(byte *)(iVar6 + 0x1cc) & 1) == 0)))) &&
 
        (((param_1 != iVar6 && (*(int *)(iVar6 + 8) != 0)) && (*(int *)(iVar6 + 0x210) != param_1))))
 
@@ -8335,7 +8335,7 @@ void objtype_team_assign(int param_1)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_005250e0(DAT_00632f10);
+    iVar1 = game_mode_set4_check(DAT_00632f10);
 
     if (iVar1 == 0) {
 

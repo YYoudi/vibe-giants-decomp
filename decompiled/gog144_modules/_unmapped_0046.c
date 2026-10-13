@@ -3375,7 +3375,7 @@ undefined4 kbos_scan_food__FP6OBJECTP14ObjProcessInfo(float param_1,int *param_2
 
           local_8 = *(float *)(iVar2 + 0xa4) - *(float *)((int)fVar4 + 0xa4);
 
-          fVar7 = (float10)FUN_0050a500(&local_c);
+          fVar7 = (float10)vec2_len(&local_c);
 
           param_1 = (float)fVar7;
 
