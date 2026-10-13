@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (114 named) — decompiled, names from PS2 symbols
+ * 129 functions (115 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -17483,8 +17483,8 @@ void dlog_free_global_1(void)
 
 }
 
-/* ===== FUN_0042dfd0 @ 0x0042DFD0 ===== */
-void FUN_0042dfd0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== repair_fx_billboard_draw @ 0x0042DFD0 ===== */
+void repair_fx_billboard_draw(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 

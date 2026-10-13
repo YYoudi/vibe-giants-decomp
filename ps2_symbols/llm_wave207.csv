@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004c4fd0,FUN_004c4fd0,,reaper_fx_at_bldg_a,0.9,llm-w207,slot getter+refpt+fx_create callees
+004c4df0,FUN_004c4df0,,reaper_fx_at_bldg_b,0.9,llm-w207,twin with slot9or1
+00497dc0,FUN_00497dc0,,obj_ptr_clear_if_dead,0.9,llm-w207,dying-flag null guard callers wound/wredit
+0042dfd0,FUN_0042dfd0,,repair_fx_billboard_draw,0.9,llm-w207,billboard_matrix + draw submit caller repair_spell_fx
+0054fbee,FUN_0054fbee,,crt_strbuf_grow,0.9,llm-w207,malloc+strdup grow caller realloc_strcpy

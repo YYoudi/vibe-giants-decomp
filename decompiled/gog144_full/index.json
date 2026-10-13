@@ -482,7 +482,7 @@
  "0x0040BE30": {
   "name": "wound_list_cleanup",
   "named": true,
-  "len": 725
+  "len": 734
  },
  "0x0040C2D0": {
   "name": "buoy_set_lights",
@@ -1850,9 +1850,9 @@
   "len": 89
  },
  "0x0042DFD0": {
-  "name": "FUN_0042dfd0",
-  "named": false,
-  "len": 367
+  "name": "repair_fx_billboard_draw",
+  "named": true,
+  "len": 379
  },
  "0x0042E030": {
   "name": "fx_billboard_matrix",
@@ -2842,7 +2842,7 @@
  "0x0044EFF0": {
   "name": "wredit_obj_cleanup",
   "named": true,
-  "len": 2615
+  "len": 2633
  },
  "0x00450AA0": {
   "name": "render_stats_reset",
@@ -5075,9 +5075,9 @@
   "len": 614
  },
  "0x00497DC0": {
-  "name": "FUN_00497dc0",
-  "named": false,
-  "len": 170
+  "name": "obj_ptr_clear_if_dead",
+  "named": true,
+  "len": 179
  },
  "0x00497DE0": {
   "name": "weapon_id_inventory_update",
@@ -5212,7 +5212,7 @@
  "0x00499FA0": {
   "name": "object_mty_check_obj",
   "named": true,
-  "len": 752
+  "len": 788
  },
  "0x0049A030": {
   "name": "FUN_0049a030",
@@ -6037,7 +6037,7 @@
  "0x004ABD40": {
   "name": "repair_spell_fx",
   "named": true,
-  "len": 6817
+  "len": 6853
  },
  "0x004AC4B0": {
   "name": "face_target",
@@ -6700,9 +6700,9 @@
   "len": 3805
  },
  "0x004C4DF0": {
-  "name": "FUN_004c4df0",
-  "named": false,
-  "len": 822
+  "name": "reaper_fx_at_bldg_b",
+  "named": true,
+  "len": 829
  },
  "0x004C4EC0": {
   "name": "mecc_drop_carried_object_2",
@@ -6710,9 +6710,9 @@
   "len": 1416
  },
  "0x004C4FD0": {
-  "name": "FUN_004c4fd0",
-  "named": false,
-  "len": 984
+  "name": "reaper_fx_at_bldg_a",
+  "named": true,
+  "len": 991
  },
  "0x004C50B0": {
   "name": "obj_give_carried_item_2",
@@ -7387,7 +7387,7 @@
  "0x004EA810": {
   "name": "FUN_004ea810",
   "named": false,
-  "len": 800
+  "len": 827
  },
  "0x004EA8C0": {
   "name": "comm_packet_big",
@@ -12842,7 +12842,7 @@
  "0x0054FA0F": {
   "name": "crt_realloc_strcpy",
   "named": true,
-  "len": 2394
+  "len": 2397
  },
  "0x0054FB96": {
   "name": "FUN_0054fb96",
@@ -12850,9 +12850,9 @@
   "len": 583
  },
  "0x0054FBEE": {
-  "name": "FUN_0054fbee",
-  "named": false,
-  "len": 770
+  "name": "crt_strbuf_grow",
+  "named": true,
+  "len": 773
  },
  "0x0054FC55": {
   "name": "realloc",

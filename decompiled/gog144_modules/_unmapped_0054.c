@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (320 named) — decompiled, names from PS2 symbols
+ * 351 functions (321 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -28182,7 +28182,7 @@ undefined4 crt_realloc_strcpy(char *param_1,int param_2)
 
   if (DAT_00630b7c == DAT_00630b80) {
 
-    DAT_00630b7c = (int *)FUN_0054fbee(DAT_00630b7c);
+    DAT_00630b7c = (int *)crt_strbuf_grow(DAT_00630b7c);
 
   }
 
@@ -28371,8 +28371,8 @@ int FUN_0054fb96(uchar *param_1,size_t param_2)
 
 }
 
-/* ===== FUN_0054fbee @ 0x0054FBEE ===== */
-undefined4 * FUN_0054fbee(int *param_1)
+/* ===== crt_strbuf_grow @ 0x0054FBEE ===== */
+undefined4 * crt_strbuf_grow(int *param_1)
 
 
 

@@ -8931,7 +8931,7 @@ void wound_list_cleanup(void)
 
   for (puVar1 = DAT_00632db0; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
-    FUN_00497dc0(puVar1 + 0xe);
+    obj_ptr_clear_if_dead(puVar1 + 0xe);
 
     if (puVar1[0xe] == 0) {
 

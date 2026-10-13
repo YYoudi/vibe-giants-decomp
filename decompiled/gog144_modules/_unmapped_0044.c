@@ -13309,9 +13309,9 @@ void wredit_obj_cleanup(void)
 
   do {
 
-    if ((piVar3[0x10] == 0) || (FUN_00497dc0(piVar3 + 0x10), piVar3[0x10] != 0)) {
+    if ((piVar3[0x10] == 0) || (obj_ptr_clear_if_dead(piVar3 + 0x10), piVar3[0x10] != 0)) {
 
-      if ((piVar3[0x11] == 0) || (FUN_00497dc0(piVar3 + 0x11), piVar3[0x11] != 0))
+      if ((piVar3[0x11] == 0) || (obj_ptr_clear_if_dead(piVar3 + 0x11), piVar3[0x11] != 0))
 
       goto LAB_0044f153;
 

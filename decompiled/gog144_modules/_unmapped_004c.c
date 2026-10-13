@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (59 named) — decompiled, names from PS2 symbols
+ * 64 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -3338,8 +3338,8 @@ LAB_004c4d8b:
 
 }
 
-/* ===== FUN_004c4df0 @ 0x004C4DF0 ===== */
-void FUN_004c4df0(int param_1)
+/* ===== reaper_fx_at_bldg_b @ 0x004C4DF0 ===== */
+void reaper_fx_at_bldg_b(int param_1)
 
 
 
@@ -3472,8 +3472,8 @@ void mecc_drop_carried_object_2(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004c4fd0 @ 0x004C4FD0 ===== */
-void FUN_004c4fd0(int param_1)
+/* ===== reaper_fx_at_bldg_a @ 0x004C4FD0 ===== */
+void reaper_fx_at_bldg_a(int param_1)
 
 
 

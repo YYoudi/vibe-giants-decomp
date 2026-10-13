@@ -7795,7 +7795,7 @@ void FUN_004ea810(int param_1)
 
   do {
 
-    FUN_00497dc0(piVar3);
+    obj_ptr_clear_if_dead(piVar3);
 
     if (*piVar3 != 0) {
 
@@ -7817,7 +7817,7 @@ void FUN_004ea810(int param_1)
 
       *(undefined4 *)(param_1 + 0xe4) = 3;
 
-      FUN_00497dc0(piVar1 + 6);
+      obj_ptr_clear_if_dead(piVar1 + 6);
 
       return;
 
@@ -7827,7 +7827,7 @@ void FUN_004ea810(int param_1)
 
   }
 
-  FUN_00497dc0(piVar1 + 6);
+  obj_ptr_clear_if_dead(piVar1 + 6);
 
   return;
 

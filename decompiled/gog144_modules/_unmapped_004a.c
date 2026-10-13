@@ -10266,7 +10266,7 @@ LAB_004ac207:
 
 LAB_004ac241:
 
-      FUN_0042dfd0(param_4,param_1 + 0x128,0x41200000);
+      repair_fx_billboard_draw(param_4,param_1 + 0x128,0x41200000);
 
     }
 
@@ -10318,7 +10318,7 @@ LAB_004ac24a:
 
          (ground_height_at(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
 
-        FUN_0042dfd0(param_4,&local_74,0x41200000);
+        repair_fx_billboard_draw(param_4,&local_74,0x41200000);
 
       }
 
@@ -10530,7 +10530,7 @@ LAB_004ac24a:
 
          (ground_height_at(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
 
-        FUN_0042dfd0(param_4,&local_74,0x41200000);
+        repair_fx_billboard_draw(param_4,&local_74,0x41200000);
 
       }
 

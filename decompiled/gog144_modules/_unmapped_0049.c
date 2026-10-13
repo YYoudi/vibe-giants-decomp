@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (118 named) — decompiled, names from PS2 symbols
+ * 142 functions (119 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -8237,8 +8237,8 @@ undefined4 * object_find(int param_1)
 
 }
 
-/* ===== FUN_00497dc0 @ 0x00497DC0 ===== */
-void FUN_00497dc0(int *param_1)
+/* ===== obj_ptr_clear_if_dead @ 0x00497DC0 ===== */
+void obj_ptr_clear_if_dead(int *param_1)
 
 
 
@@ -10684,15 +10684,15 @@ void object_mty_check_obj(int param_1)
 
   }
 
-  FUN_00497dc0(param_1 + 0x274);
+  obj_ptr_clear_if_dead(param_1 + 0x274);
 
 LAB_00499fe3:
 
-  FUN_00497dc0(param_1 + 0x210);
+  obj_ptr_clear_if_dead(param_1 + 0x210);
 
-  FUN_00497dc0(param_1 + 0x220);
+  obj_ptr_clear_if_dead(param_1 + 0x220);
 
-  FUN_00497dc0(param_1 + 0x224);
+  obj_ptr_clear_if_dead(param_1 + 0x224);
 
   if ((*(int *)(param_1 + 0x1e0) < 0x6b) &&
 
