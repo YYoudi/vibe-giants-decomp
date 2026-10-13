@@ -1136,9 +1136,9 @@ undefined4 hud_audio_dlog_screen(void)
 
     view_matrix_get(puVar8);
 
-    fVar6 = (float10)FUN_00515d90();
+    fVar6 = (float10)render_get_fov();
 
-    fVar7 = (float10)FUN_00515da0();
+    fVar7 = (float10)render_get_aspect();
 
     fVar10 = (float)fVar7;
 
@@ -1451,7 +1451,7 @@ void game_loop_run(int param_1)
 
                 if ((*(uint *)(iVar3 + 0xd8) & 0x40) == 0) {
 
-                  FUN_004967b0(iVar3);
+                  objspec_dispatch_gate(iVar3);
 
                   fVar4 = (float10)FUN_00518b70(iVar3,0);
 
@@ -2326,11 +2326,11 @@ void dlog_text_render_screen(void)
 
     cam_mode_switch(1);
 
-    fVar9 = (float10)FUN_00515d90();
+    fVar9 = (float10)render_get_fov();
 
     DAT_0059dc20 = (float)fVar9;
 
-    fVar9 = (float10)FUN_00515da0();
+    fVar9 = (float10)render_get_aspect();
 
     DAT_0059dc24 = (float)fVar9;
 
@@ -5078,7 +5078,7 @@ void mecc_do_death(float param_1,float param_2,int param_3,int param_4,float par
 
      ) {
 
-    FUN_0050c2a0(iVar2);
+    turret_exit_all_team(iVar2);
 
   }
 
@@ -5112,7 +5112,7 @@ void mecc_do_death(float param_1,float param_2,int param_3,int param_4,float par
 
   if ((DAT_00632f08 == 0) && (*(int *)(iVar2 + 0x174) == 0)) {
 
-    FUN_004a54a0();
+    hud_feed_buffer_clear();
 
     DAT_00632c00 = 1;
 

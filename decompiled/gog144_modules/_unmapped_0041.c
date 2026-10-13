@@ -5120,11 +5120,11 @@ LAB_00416450:
 
   }
 
-  fVar2 = (float10)FUN_00515d90();
+  fVar2 = (float10)render_get_fov();
 
   DAT_00584370 = (float)fVar2;
 
-  fVar2 = (float10)FUN_00515da0();
+  fVar2 = (float10)render_get_aspect();
 
   DAT_00584328 = (float)fVar2;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (159 named) — decompiled, names from PS2 symbols
+ * 186 functions (161 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -4728,12 +4728,12 @@ void object_spawn_class3(undefined4 param_1)
 
 }
 
-/* ===== FUN_00515d90 @ 0x00515D90 ===== */
+/* ===== render_get_fov @ 0x00515D90 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_00515d90(void)
+float10 render_get_fov(void)
 
 
 
@@ -4743,12 +4743,12 @@ float10 FUN_00515d90(void)
 
 }
 
-/* ===== FUN_00515da0 @ 0x00515DA0 ===== */
+/* ===== render_get_aspect @ 0x00515DA0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_00515da0(void)
+float10 render_get_aspect(void)
 
 
 

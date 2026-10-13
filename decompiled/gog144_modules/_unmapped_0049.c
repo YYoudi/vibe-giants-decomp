@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (115 named) — decompiled, names from PS2 symbols
+ * 142 functions (116 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -438,7 +438,7 @@ void showchat_mission_objective__Fi(void)
 
   
 
-  FUN_00543e00();
+  crt_chkstk_probe();
 
   if ((DAT_00632f08 == 0) && (in_stack_0000102c < 0x1a)) {
 
@@ -745,7 +745,7 @@ undefined4 scenerio_process__Fv(void)
 
            (*(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4520 + DAT_006330e4) == 2)) {
 
-          FUN_004a54a0();
+          hud_feed_buffer_clear();
 
           DAT_00632c04 = 1;
 
@@ -4665,7 +4665,7 @@ void voice_quota_check(void)
 
   if ((*(int *)(DAT_006330e4 + 0x4a68) < *(int *)(DAT_006330e4 + 0x4a6c)) && (DAT_00632c04 == 0)) {
 
-    FUN_004a54a0();
+    hud_feed_buffer_clear();
 
     _DAT_00632b60 = _DAT_00632b60 + DAT_006328e0;
 
@@ -6893,8 +6893,8 @@ void ambient_streams_stopped__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004967b0 @ 0x004967B0 ===== */
-void FUN_004967b0(int param_1)
+/* ===== objspec_dispatch_gate @ 0x004967B0 ===== */
+void objspec_dispatch_gate(int param_1)
 
 
 

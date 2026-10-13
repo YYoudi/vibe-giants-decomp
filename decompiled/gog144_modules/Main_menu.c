@@ -243,7 +243,7 @@ void main_menu_004832f0(void)
 
   if ((*(byte *)(DAT_0059ee98 + 0xd8) & 0x40) == 0) {
 
-    FUN_004967b0(DAT_0059ee98);
+    objspec_dispatch_gate(DAT_0059ee98);
 
     fVar7 = (float10)FUN_00518b70(0,0);
 

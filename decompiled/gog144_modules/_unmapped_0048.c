@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (54 named) — decompiled, names from PS2 symbols
+ * 74 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -1916,8 +1916,8 @@ void obj_ride_mount(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00482310 @ 0x00482310 ===== */
-int FUN_00482310(int param_1)
+/* ===== mine_find_of_owner @ 0x00482310 ===== */
+int mine_find_of_owner(int param_1)
 
 
 
@@ -12359,7 +12359,7 @@ LAB_0048f768:
 
     if (((*(uint *)(iVar9 + 0xd8) & 0xc000) == 0) && ((*(uint *)(iVar9 + 0xd8) & 0x40) == 0)) {
 
-      FUN_004967b0(iVar9);
+      objspec_dispatch_gate(iVar9);
 
       fVar12 = (float10)FUN_00518b70(iVar9,0);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (29 named) — decompiled, names from PS2 symbols
+ * 39 functions (30 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -2051,7 +2051,7 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
 
-  FUN_004967b0(param_1);
+  objspec_dispatch_gate(param_1);
 
   fVar5 = (float10)FUN_00518b70(param_1,0);
 
@@ -2971,8 +2971,8 @@ int FUN_004d4930(int param_1)
 
 }
 
-/* ===== FUN_004d49c0 @ 0x004D49C0 ===== */
-undefined4 FUN_004d49c0(int param_1)
+/* ===== target_not_player_check @ 0x004D49C0 ===== */
+undefined4 target_not_player_check(int param_1)
 
 
 

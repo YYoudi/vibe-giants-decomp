@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (304 named) — decompiled, names from PS2 symbols
+ * 351 functions (306 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -2771,7 +2771,7 @@ void __rt_error_box(char *param_1,char *param_2)
 
     _strlen(local_220);
 
-    FUN_00544a37();
+    crt_itoa_wrapper();
 
     strcpy_2();
 
@@ -4769,12 +4769,12 @@ int __cdecl _rand(void)
 
 }
 
-/* ===== FUN_00543e00 @ 0x00543E00 ===== */
+/* ===== crt_chkstk_probe @ 0x00543E00 ===== */
 /* WARNING: Unable to track spacebase fully for stack */
 
 
 
-void FUN_00543e00(void)
+void crt_chkstk_probe(void)
 
 
 
@@ -6576,8 +6576,8 @@ undefined4 ___timet_from_ft(FILETIME *param_1)
 
 }
 
-/* ===== FUN_00544a37 @ 0x00544A37 ===== */
-undefined4 FUN_00544a37(int param_1,undefined4 param_2,int param_3)
+/* ===== crt_itoa_wrapper @ 0x00544A37 ===== */
+undefined4 crt_itoa_wrapper(int param_1,undefined4 param_2,int param_3)
 
 
 
@@ -17412,7 +17412,7 @@ BOOL crt_getstringtype(DWORD param_1,LPCSTR param_2,int param_3,LPWORD param_4,U
 
         local_8 = 0;
 
-        FUN_00543e00();
+        crt_chkstk_probe();
 
         local_1c = &stack0xffffffc8;
 
@@ -17643,7 +17643,7 @@ int crt_heap_select(void)
 
   
 
-  FUN_00543e00();
+  crt_chkstk_probe();
 
   local_9c = 0x94;
 
@@ -20137,7 +20137,7 @@ int crt_lcmapstring(LCID param_1,uint param_2,LPCSTR param_3,int param_4,LPWSTR 
 
       local_8 = 0;
 
-      FUN_00543e00();
+      crt_chkstk_probe();
 
       local_8 = 0xffffffff;
 
@@ -20155,7 +20155,7 @@ int crt_lcmapstring(LCID param_1,uint param_2,LPCSTR param_3,int param_4,LPWSTR 
 
             local_8 = 1;
 
-            FUN_00543e00();
+            crt_chkstk_probe();
 
             local_8 = 0xffffffff;
 
@@ -27136,7 +27136,7 @@ int FUN_0054f246(undefined4 param_1,int param_2)
 
   
 
-  FUN_00543e00();
+  crt_chkstk_probe();
 
   iVar7 = 0;
 
@@ -28079,7 +28079,7 @@ int crt_comparestring(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte 
 
       local_8 = 0;
 
-      FUN_00543e00();
+      crt_chkstk_probe();
 
       local_8 = 0xffffffff;
 
@@ -28099,7 +28099,7 @@ int crt_comparestring(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte 
 
           local_24 = iVar2;
 
-          FUN_00543e00();
+          crt_chkstk_probe();
 
           local_8 = 0xffffffff;
 

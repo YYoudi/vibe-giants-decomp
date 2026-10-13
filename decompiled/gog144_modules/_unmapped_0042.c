@@ -15773,9 +15773,9 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
     FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_90,(undefined4 *)0x479c4000);
 
-    fVar22 = (float10)FUN_00515da0(0);
+    fVar22 = (float10)render_get_aspect(0);
 
-    fVar22 = (float10)FUN_00515d90((float)fVar22);
+    fVar22 = (float10)render_get_fov((float)fVar22);
 
     render_projection_set((float)fVar22);
 
@@ -16617,9 +16617,9 @@ LAB_0042d3f8:
 
     FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_90,puStack_88);
 
-    fVar22 = (float10)FUN_00515da0(1);
+    fVar22 = (float10)render_get_aspect(1);
 
-    fVar22 = (float10)FUN_00515d90((float)fVar22);
+    fVar22 = (float10)render_get_fov((float)fVar22);
 
     render_projection_set((float)fVar22);
 

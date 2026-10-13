@@ -3657,7 +3657,7 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   if (((iVar3 != 0) || (param_1 == -1)) && ((*puVar6 & 0x200) != 0)) {
 
-    FUN_0050c2a0(uVar2);
+    turret_exit_all_team(uVar2);
 
     *puVar6 = *puVar6 & 0xfffffdff;
 
@@ -3785,7 +3785,7 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   if (DAT_00632f08 == 0) {
 
-    FUN_004a54a0();
+    hud_feed_buffer_clear();
 
     DAT_00632c00 = 1;
 
@@ -7424,7 +7424,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
         }
 
-        iVar4 = FUN_004d49c0(*(undefined4 *)(param_2 + 0xf48));
+        iVar4 = target_not_player_check(*(undefined4 *)(param_2 + 0xf48));
 
         if (iVar4 == 0) {
 

@@ -3940,7 +3940,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
     *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
 
-    FUN_004967b0(param_1);
+    objspec_dispatch_gate(param_1);
 
     fVar8 = (float10)FUN_00518b70(param_1,0);
 
@@ -5047,7 +5047,7 @@ float10 text_num_parse(int param_1,undefined4 param_2,int param_3,int param_4,fl
 
   iVar4 = *(int *)(*(int *)(param_1 + 0x18) + 0xd8);
 
-  FUN_00544a37(param_2,&local_c,10);
+  crt_itoa_wrapper(param_2,&local_c,10);
 
   if (local_c == '-') {
 
@@ -5530,7 +5530,7 @@ void comm_game_objects_release(void)
 
   if ((DAT_00632bac != 0) && (DAT_00632a88 != 0)) {
 
-    FUN_0050c2a0(DAT_00632a88);
+    turret_exit_all_team(DAT_00632a88);
 
   }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (117 named) — decompiled, names from PS2 symbols
+ * 131 functions (118 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -4344,8 +4344,8 @@ void piranha_launch_fx__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004a54a0 @ 0x004A54A0 ===== */
-void FUN_004a54a0(void)
+/* ===== hud_feed_buffer_clear @ 0x004A54A0 ===== */
+void hud_feed_buffer_clear(void)
 
 
 
@@ -4504,7 +4504,7 @@ void comm_game_session_update(void)
 
     }
 
-    FUN_004a54a0();
+    hud_feed_buffer_clear();
 
     goto LAB_004a5802;
 
@@ -4512,7 +4512,7 @@ void comm_game_session_update(void)
 
   if (DAT_00632aa4._3_1_ != '\0') {
 
-    FUN_004a54a0();
+    hud_feed_buffer_clear();
 
     goto LAB_004a5802;
 
@@ -10847,7 +10847,7 @@ bool kabuto_punch_check(int param_1)
 
           if (iVar1 != 0) {
 
-            iVar1 = FUN_004d49c0(param_1);
+            iVar1 = target_not_player_check(param_1);
 
             if (iVar1 == 0) {
 
@@ -11010,7 +11010,7 @@ void reaper_ability_3dsound(int param_1)
 
             if (iVar3 != 0) {
 
-              iVar3 = FUN_004d49c0(*(undefined4 *)(iVar4 + 0xc));
+              iVar3 = target_not_player_check(*(undefined4 *)(iVar4 + 0xc));
 
               if (iVar3 != 0) {
 
@@ -11133,9 +11133,11 @@ void sf_is_valid_target__FP6OBJECT(int param_1,int param_2)
 
          (*(int *)(iVar3 + 4) != 0x29a)) &&
 
-        ((iVar4 = ObjIsRipper(iVar3), iVar4 == 0 || (iVar4 = FUN_004d49c0(iVar3), iVar4 == 0))))))))
+        ((iVar4 = ObjIsRipper(iVar3), iVar4 == 0 ||
 
-     || (iVar4 = ObjIsJetski(*(undefined4 *)(iVar3 + 0x210)), iVar4 != 0)) {
+         (iVar4 = target_not_player_check(iVar3), iVar4 == 0)))))))) ||
+
+     (iVar4 = ObjIsJetski(*(undefined4 *)(iVar3 + 0x210)), iVar4 != 0)) {
 
     *(undefined4 *)(iVar6 + 0x14) = 1;
 
@@ -11223,7 +11225,7 @@ LAB_004acbe1:
 
           iVar4 = ObjIsRipper(iVar3);
 
-          if ((iVar4 == 0) || (iVar4 = FUN_004d49c0(iVar3), iVar4 == 0)) {
+          if ((iVar4 == 0) || (iVar4 = target_not_player_check(iVar3), iVar4 == 0)) {
 
             if (*(int *)(iVar3 + 4) == 0x232) goto LAB_004acbe1;
 
@@ -11790,7 +11792,7 @@ void read_objects_bin_PS2(void)
 
   
 
-  FUN_00543e00();
+  crt_chkstk_probe();
 
   BinFileRead();
 

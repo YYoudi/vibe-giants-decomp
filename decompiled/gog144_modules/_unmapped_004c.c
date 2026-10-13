@@ -7062,9 +7062,9 @@ void dome_render_text(void)
 
   FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_8,(undefined4 *)0x46dac000);
 
-  fVar1 = (float10)FUN_00515da0(0);
+  fVar1 = (float10)render_get_aspect(0);
 
-  fVar1 = (float10)FUN_00515d90((float)fVar1);
+  fVar1 = (float10)render_get_fov((float)fVar1);
 
   render_projection_set((float)fVar1);
 
@@ -7072,9 +7072,9 @@ void dome_render_text(void)
 
   FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_8,puStack_4);
 
-  fVar1 = (float10)FUN_00515da0(1);
+  fVar1 = (float10)render_get_aspect(1);
 
-  fVar1 = (float10)FUN_00515d90((float)fVar1);
+  fVar1 = (float10)render_get_fov((float)fVar1);
 
   render_projection_set((float)fVar1);
 
@@ -7320,7 +7320,7 @@ void ShopMenuSlotCollision__Fi(void)
 
         uVar4 = __ftol(&local_20c,10);
 
-        FUN_00544a37(uVar4);
+        crt_itoa_wrapper(uVar4);
 
         object_stop_movement(&local_1bc);
 
@@ -7524,7 +7524,7 @@ void ShopMenuSlotCollision__Fi(void)
 
           iVar6 = mecc_in_gyro(DAT_00632a88);
 
-          if ((iVar6 == 0) || (iVar6 = FUN_00482310(DAT_00632a88), iVar6 == 0)) {
+          if ((iVar6 == 0) || (iVar6 = mine_find_of_owner(DAT_00632a88), iVar6 == 0)) {
 
             *piVar10 = -1;
 
@@ -7618,7 +7618,7 @@ void ShopMenuSlotCollision__Fi(void)
 
     iVar6 = mecc_in_gyro(DAT_00632a88);
 
-    if ((iVar6 != 0) && (iVar6 = FUN_00482310(DAT_00632a88), iVar6 != 0)) {
+    if ((iVar6 != 0) && (iVar6 = mine_find_of_owner(DAT_00632a88), iVar6 != 0)) {
 
       *piVar10 = *(int *)(iVar6 + 0xf4);
 
@@ -7638,11 +7638,11 @@ void ShopMenuSlotCollision__Fi(void)
 
 LAB_004ccbc0:
 
-  fVar13 = (float10)FUN_00515d90();
+  fVar13 = (float10)render_get_fov();
 
   fStack_228 = (float)fVar13;
 
-  fVar13 = (float10)FUN_00515da0();
+  fVar13 = (float10)render_get_aspect();
 
   fStack_224 = (float)fVar13;
 
@@ -7896,7 +7896,7 @@ LAB_004ccbc0:
 
       iVar5 = aiStack_14c[iVar6];
 
-      FUN_00544a37(iVar5,&local_20c,10);
+      crt_itoa_wrapper(iVar5,&local_20c,10);
 
       object_stop_movement(&local_1bc);
 
@@ -8459,11 +8459,11 @@ undefined4 dev_debug_flags(void)
 
     view_matrix_get(&local_1c0);
 
-    fVar12 = (float10)FUN_00515d90();
+    fVar12 = (float10)render_get_fov();
 
     local_210 = (undefined4 *)(float)fVar12;
 
-    fVar12 = (float10)FUN_00515da0();
+    fVar12 = (float10)render_get_aspect();
 
     local_1e4 = (float)fVar12;
 
@@ -8761,9 +8761,9 @@ undefined4 dev_debug_flags(void)
 
     FNT_StringRender__FPcP14FNT_RenderInfo(local_218,(undefined4 *)0x46dac000);
 
-    fVar12 = (float10)FUN_00515da0();
+    fVar12 = (float10)render_get_aspect();
 
-    FUN_00515d90((float)fVar12);
+    render_get_fov((float)fVar12);
 
     render_projection_set();
 
@@ -8771,9 +8771,9 @@ undefined4 dev_debug_flags(void)
 
     FNT_StringRender__FPcP14FNT_RenderInfo(local_218,local_210);
 
-    fVar12 = (float10)FUN_00515da0();
+    fVar12 = (float10)render_get_aspect();
 
-    FUN_00515d90((float)fVar12);
+    render_get_fov((float)fVar12);
 
     render_projection_set();
 
@@ -9557,7 +9557,7 @@ LAB_004cec2d:
 
       *(uint *)((int)fVar5 + 0xd8) = *(uint *)((int)fVar5 + 0xd8) | 0x40;
 
-      FUN_004967b0(fVar5);
+      objspec_dispatch_gate(fVar5);
 
       fVar15 = (float10)FUN_00518b70(fVar5,0);
 

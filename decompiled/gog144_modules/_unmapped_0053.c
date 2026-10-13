@@ -7279,7 +7279,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                     uStack_1fc = uStack_1fc | 2;
 
-                    iVar9 = FUN_00482310(iVar6);
+                    iVar9 = mine_find_of_owner(iVar6);
 
                     if (iVar9 != 0) {
 

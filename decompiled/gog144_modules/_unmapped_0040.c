@@ -1443,7 +1443,7 @@ LAB_00403980:
 
     fVar5 = (float10)fptan(fVar5 * (float10)0.5);
 
-    fVar6 = (float10)FUN_00515da0();
+    fVar6 = (float10)render_get_aspect();
 
     fVar5 = (float10)fpatan((float10)(float)fVar5 / fVar6,(float10)1);
 

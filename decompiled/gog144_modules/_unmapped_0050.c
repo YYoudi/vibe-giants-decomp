@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (70 named) — decompiled, names from PS2 symbols
+ * 87 functions (71 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -11176,8 +11176,8 @@ void reaper_ability_playersound5(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0050c2a0 @ 0x0050C2A0 ===== */
-void FUN_0050c2a0(int param_1)
+/* ===== turret_exit_all_team @ 0x0050C2A0 ===== */
+void turret_exit_all_team(int param_1)
 
 
 

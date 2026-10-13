@@ -9481,7 +9481,7 @@ int item_get_ammo(int param_1,undefined4 param_2,int *param_3)
 
     if (iVar1 != 0) {
 
-      iVar1 = FUN_00482310(param_1);
+      iVar1 = mine_find_of_owner(param_1);
 
       if ((iVar1 != 0) && (0 < *(int *)(iVar1 + 0xe8))) {
 
@@ -9604,7 +9604,7 @@ void item_use_ammo(int param_1,undefined4 param_2)
 
       iVar2 = mecc_in_gyro(param_1);
 
-      if ((((iVar2 != 0) && (iVar2 = FUN_00482310(param_1), iVar2 != 0)) &&
+      if ((((iVar2 != 0) && (iVar2 = mine_find_of_owner(param_1), iVar2 != 0)) &&
 
           (0 < *(int *)(iVar2 + 0xe8))) &&
 

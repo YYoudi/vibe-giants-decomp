@@ -280,7 +280,7 @@ uint main_path_0049ff30(undefined4 param_1,undefined4 param_2,undefined4 *param_
 
   
 
-  FUN_00543e00();
+  crt_chkstk_probe();
 
   iVar7 = main_path_004a0b70(in_stack_00001334,in_stack_00001338);
 

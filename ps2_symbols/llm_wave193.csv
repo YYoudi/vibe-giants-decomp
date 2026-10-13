@@ -1,0 +1,10 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00515da0,FUN_00515da0,,render_get_aspect,0.9,llm-w193,returns 0057c0bc set by render_projection_set
+00515d90,FUN_00515d90,,render_get_fov,0.9,llm-w193,returns 0057c0b8 the fov store
+004967b0,FUN_004967b0,,objspec_dispatch_gate,0.9,llm-w193,gated per-class dispatch via 0055cb0c
+00544a37,FUN_00544a37,,crt_itoa_wrapper,0.9,llm-w193,sign+radix wrapper over crt_ulltoa
+0050c2a0,FUN_0050c2a0,,turret_exit_all_team,0.9,llm-w193,type 0x2c team walk -> TurretExit
+00482310,FUN_00482310,,mine_find_of_owner,0.9,llm-w193,model 0x3df owner walk callers item ammo
+004d49c0,FUN_004d49c0,,target_not_player_check,0.9,llm-w193,type != 100/0x65 player types
+00543e00,FUN_00543e00,,crt_chkstk_probe,0.9,llm-w193,stack probe loop 0xfff/0x1000
+004a54a0,FUN_004a54a0,,hud_feed_buffer_clear,0.9,llm-w193,clears 00632fac-b8 + hud refresh callers death

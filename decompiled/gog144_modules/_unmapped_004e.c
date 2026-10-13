@@ -10952,7 +10952,7 @@ void reaper_logic(int param_1)
 
       if (((*(uint *)(iVar2 + 0xd8) & 0xc000) == 0) && ((*(uint *)(iVar2 + 0xd8) & 0x40) == 0)) {
 
-        FUN_004967b0(iVar2);
+        objspec_dispatch_gate(iVar2);
 
         fVar5 = (float10)FUN_00518b70(iVar2,0);
 

@@ -3480,11 +3480,11 @@ undefined4 FLK_FlickRender(int param_1)
 
   }
 
-  fVar14 = (float10)FUN_00515d90();
+  fVar14 = (float10)render_get_fov();
 
   local_18c = (float)fVar14;
 
-  fVar14 = (float10)FUN_00515da0();
+  fVar14 = (float10)render_get_aspect();
 
   local_1dc = (float)fVar14;
 
@@ -3568,7 +3568,7 @@ undefined4 FLK_FlickRender(int param_1)
 
       object_apply_location();
 
-      FUN_004967b0(iVar12);
+      objspec_dispatch_gate(iVar12);
 
     }
 
@@ -8744,7 +8744,7 @@ undefined4 fx_processOpCodes(void)
 
   
 
-  FUN_00543e00();
+  crt_chkstk_probe();
 
   pfVar18 = (float *)*in_stack_0000d770;
 
