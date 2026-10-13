@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00485f10,FUN_00485F10,,menu_dialog_spawn_obj,0.9,llm-read4,
+00486110,FUN_00486110,,menu_dialog_teardown,0.9,llm-read4,
+00447fd0,FUN_00447FD0,,objects_free_by_ospec,0.9,llm-read4,
+0051a0c0,FUN_0051A0C0,,registry_read_dword,0.9,llm-read4,

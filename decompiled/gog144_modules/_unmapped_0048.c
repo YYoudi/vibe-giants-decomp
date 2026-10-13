@@ -2273,7 +2273,7 @@ void game_options_verify(void)
 
   
 
-  mission_0051a0c0(s_GameOptionsVersion_0055bdc0,&local_4);
+  registry_read_dword(s_GameOptionsVersion_0055bdc0,&local_4);
 
   if (local_4 != 1) {
 
@@ -2289,7 +2289,7 @@ void game_options_verify(void)
 
   if (iVar1 == 0) {
 
-    mission_0051a0c0(s_GameOptions_0055be30,&DAT_0059eeb4);
+    registry_read_dword(s_GameOptions_0055be30,&DAT_0059eeb4);
 
     if (DAT_00656420 != 0) {
 
@@ -2387,11 +2387,11 @@ void game_options_verify(void)
 
     }
 
-    mission_0051a0c0(s_VideoWidth_0055be0c,&DAT_006331c8);
+    registry_read_dword(s_VideoWidth_0055be0c,&DAT_006331c8);
 
-    mission_0051a0c0(s_VideoHeight_0055be00,&DAT_006331cc);
+    registry_read_dword(s_VideoHeight_0055be00,&DAT_006331cc);
 
-    mission_0051a0c0(s_VideoDepth_0055bdf4,&DAT_006331d0);
+    registry_read_dword(s_VideoDepth_0055bdf4,&DAT_006331d0);
 
     FUN_0051a160(s_VideoDevGuid_0055bde4,&DAT_006331e8,0x10);
 
@@ -2681,9 +2681,9 @@ void menu_mission_launch(void)
 
     local_4 = 0;
 
-    mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
+    registry_read_dword(s_MissionCheat_0055be64,&local_4);
 
-    mission_0051a0c0(s_DevNoMissionLoad_0055be50,&DAT_006331f8);
+    registry_read_dword(s_DevNoMissionLoad_0055be50,&DAT_006331f8);
 
     uVar2 = -(uint)(DAT_00633104 != 0) & 0xfffffffd;
 
@@ -2874,7 +2874,7 @@ void menu_handlers_lookup(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -3044,7 +3044,7 @@ LAB_00482fd8:
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -3278,7 +3278,7 @@ void menu_handlers_exec(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -3466,7 +3466,7 @@ LAB_00483738:
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -3977,7 +3977,7 @@ void savegame_cam_section(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -4071,7 +4071,7 @@ void savegame_cam_section(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -4291,7 +4291,7 @@ void mission_cheat_check(void)
 
   local_4 = 0;
 
-  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
+  registry_read_dword(s_MissionCheat_0055be64,&local_4);
 
   iVar4 = 0;
 
@@ -4536,7 +4536,7 @@ void mission_load_cheat(void)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -4560,7 +4560,7 @@ void mission_load_cheat(void)
 
   local_4 = 0;
 
-  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
+  registry_read_dword(s_MissionCheat_0055be64,&local_4);
 
   iVar8 = FUN_004B0B40();
 
@@ -4689,7 +4689,7 @@ undefined4 mission_load_world(int param_1)
 
   local_4 = 0;
 
-  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
+  registry_read_dword(s_MissionCheat_0055be64,&local_4);
 
   iVar1 = FUN_004B0B40();
 
@@ -4967,7 +4967,7 @@ void comm_00485300(void)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -5405,7 +5405,7 @@ void mission_mpworld_load(void)
 
   iVar9 = 0;
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -5505,12 +5505,12 @@ void mission_mpworld_load(void)
 
 }
 
-/* ===== dlog_00485f10 @ 0x00485F10 ===== */
+/* ===== menu_dialog_spawn_obj @ 0x00485F10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void dlog_00485f10(void)
+void menu_dialog_spawn_obj(void)
 
 
 
@@ -5608,7 +5608,7 @@ void dlog_00485f10(void)
 
     if (DAT_0063315c != 0) {
 
-      main_00486110();
+      menu_dialog_teardown();
 
     }
 
@@ -5636,12 +5636,12 @@ void dlog_00485f10(void)
 
 }
 
-/* ===== main_00486110 @ 0x00486110 ===== */
+/* ===== menu_dialog_teardown @ 0x00486110 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void main_00486110(void)
+void menu_dialog_teardown(void)
 
 
 
@@ -5699,7 +5699,7 @@ void main_00486110(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -6439,7 +6439,7 @@ void FUN_004888f0(void)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -6504,7 +6504,7 @@ void mission_load_world2(void)
 
   local_4 = 0;
 
-  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
+  registry_read_dword(s_MissionCheat_0055be64,&local_4);
 
   if (local_4 == 0) {
 
@@ -6624,7 +6624,7 @@ void mission_load_world2(void)
 
           DAT_0055bdb0 = iVar1;
 
-          mission_0051a0c0(s_LoadWorld_0055bfec,&DAT_0059ee9c);
+          registry_read_dword(s_LoadWorld_0055bfec,&DAT_0059ee9c);
 
           iVar1 = DAT_00632918;
 
@@ -6741,7 +6741,7 @@ void mission_load_world3(void)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -6920,7 +6920,7 @@ void mission_menu_load(void)
 
       }
 
-      mission_00447fd0(0,2);
+      objects_free_by_ospec(0,2);
 
       if (DAT_0059eec0 != 0) {
 
@@ -7010,7 +7010,7 @@ void mission_menu_load(void)
 
       }
 
-      mission_00447fd0(0,2);
+      objects_free_by_ospec(0,2);
 
       if (DAT_0059eec0 != 0) {
 
@@ -7114,7 +7114,7 @@ void mission_menu_load(void)
 
     DAT_0055bdb0 = iVar1;
 
-    mission_0051a0c0(s_LoadMission_0055c12c,&DAT_0059ee9c);
+    registry_read_dword(s_LoadMission_0055c12c,&DAT_0059ee9c);
 
     iVar1 = DAT_00632918;
 
@@ -7245,7 +7245,7 @@ int texture_add_file(int *param_1)
 
   local_124 = 0;
 
-  mission_0051a0c0(s_MissionCheat_0055be64,&local_124);
+  registry_read_dword(s_MissionCheat_0055be64,&local_124);
 
   uVar3 = (&DAT_00633384)[DAT_00632d20];
 
@@ -7390,7 +7390,7 @@ void mission_menu_load2(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -7502,7 +7502,7 @@ LAB_00489916:
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -7606,7 +7606,7 @@ LAB_00489916:
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -7937,7 +7937,7 @@ void FUN_00489F50(void)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -8920,7 +8920,7 @@ LAB_0048b04f:
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10010,7 +10010,7 @@ void dialog_0048ca10(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10080,7 +10080,7 @@ void dialog_0048ca10(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10350,7 +10350,7 @@ void FUN_0048d690(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10600,7 +10600,7 @@ void main_0048e010(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10752,7 +10752,7 @@ LAB_0048e1b4:
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10846,7 +10846,7 @@ LAB_0048e1b4:
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -11114,7 +11114,7 @@ void main_0048e610(void)
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -11262,7 +11262,7 @@ LAB_0048e7be:
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -11352,7 +11352,7 @@ LAB_0048e7be:
 
     }
 
-    mission_00447fd0(0,2);
+    objects_free_by_ospec(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -11606,7 +11606,7 @@ void FUN_0048EC30(void)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -11870,7 +11870,7 @@ void FUN_0048f040(void)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -12229,7 +12229,7 @@ void FUN_0048f620(int param_1)
 
   }
 
-  mission_00447fd0(0,2);
+  objects_free_by_ospec(0,2);
 
   if (DAT_0059eec0 != 0) {
 

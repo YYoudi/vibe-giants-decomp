@@ -14348,7 +14348,7 @@ LAB_0052fabe:
 
       if (iVar5 == DAT_00632a88) {
 
-        mission_0051a0c0(s_CamMode_00555a28,&param_1);
+        registry_read_dword(s_CamMode_00555a28,&param_1);
 
         FUN_0040d130(param_1);
 

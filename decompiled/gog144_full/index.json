@@ -1287,7 +1287,7 @@
  "0x00423AF0": {
   "name": "keymap_load",
   "named": true,
-  "len": 4095
+  "len": 4098
  },
  "0x00423E20": {
   "name": "input_keyname_lookup",
@@ -1847,7 +1847,7 @@
  "0x0042DFC0": {
   "name": "dlog_free_global_1",
   "named": true,
-  "len": 88
+  "len": 89
  },
  "0x0042DFD0": {
   "name": "FUN_0042dfd0",
@@ -1872,7 +1872,7 @@
  "0x0042E250": {
   "name": "dlog_free_global_2",
   "named": true,
-  "len": 88
+  "len": 89
  },
  "0x0042E260": {
   "name": "FUN_0042e260",
@@ -1892,7 +1892,7 @@
  "0x0042E3A0": {
   "name": "dlog_free_global_3",
   "named": true,
-  "len": 88
+  "len": 89
  },
  "0x0042E3B0": {
   "name": "FUN_0042e3b0",
@@ -2112,12 +2112,12 @@
  "0x00434D10": {
   "name": "dlog_level_free_if",
   "named": true,
-  "len": 284
+  "len": 285
  },
  "0x00434D40": {
-  "name": "dlog_level_free",
+  "name": "cleanup_00434d40",
   "named": true,
-  "len": 2593
+  "len": 2594
  },
  "0x00434F80": {
   "name": "main/drawwrld_00434f80",
@@ -2127,7 +2127,7 @@
  "0x004350C0": {
   "name": "dlog_entry_update",
   "named": true,
-  "len": 1705
+  "len": 1706
  },
  "0x00435170": {
   "name": "main_drawwrld_00435170",
@@ -2137,7 +2137,7 @@
  "0x00435940": {
   "name": "main/drawwrld_00435940",
   "named": true,
-  "len": 3074
+  "len": 3075
  },
  "0x00435BC0": {
   "name": "fx_blob_shadow",
@@ -2162,12 +2162,12 @@
  "0x00435FD0": {
   "name": "FUN_00435fd0",
   "named": false,
-  "len": 1111
+  "len": 1115
  },
  "0x00436060": {
-  "name": "dlog_cleanup_all",
+  "name": "cleanup_00436060",
   "named": true,
-  "len": 195
+  "len": 197
  },
  "0x00436090": {
   "name": "FUN_00436090",
@@ -2602,7 +2602,7 @@
  "0x00446890": {
   "name": "FUN_00446890",
   "named": false,
-  "len": 1517
+  "len": 1522
  },
  "0x004469E0": {
   "name": "FUN_004469e0",
@@ -2720,9 +2720,9 @@
   "len": 263
  },
  "0x00447FD0": {
-  "name": "mission_00447fd0",
+  "name": "objects_free_by_ospec",
   "named": true,
-  "len": 2029
+  "len": 2034
  },
  "0x00448100": {
   "name": "Main/fx_00448100",
@@ -3232,7 +3232,7 @@
  "0x00457440": {
   "name": "level_config_load",
   "named": true,
-  "len": 626
+  "len": 629
  },
  "0x004574D0": {
   "name": "options_defplayer",
@@ -4342,7 +4342,7 @@
  "0x00482700": {
   "name": "game_options_verify",
   "named": true,
-  "len": 2700
+  "len": 2715
  },
  "0x004829D0": {
   "name": "FUN_004829d0",
@@ -4352,17 +4352,17 @@
  "0x00482B60": {
   "name": "menu_mission_launch",
   "named": true,
-  "len": 3551
+  "len": 3557
  },
  "0x00482E90": {
   "name": "menu_handlers_lookup",
   "named": true,
-  "len": 3971
+  "len": 3981
  },
  "0x00483200": {
   "name": "main_menu_00483200",
   "named": true,
-  "len": 1313
+  "len": 1318
  },
  "0x004832F0": {
   "name": "main_menu_004832f0",
@@ -4377,7 +4377,7 @@
  "0x004835F0": {
   "name": "menu_handlers_exec",
   "named": true,
-  "len": 4030
+  "len": 4040
  },
  "0x00483BA0": {
   "name": "mission_intro_load",
@@ -4392,7 +4392,7 @@
  "0x00484340": {
   "name": "savegame_cam_section",
   "named": true,
-  "len": 2993
+  "len": 3003
  },
  "0x004845E0": {
   "name": "FUN_004845e0",
@@ -4402,17 +4402,17 @@
  "0x00484870": {
   "name": "mission_cheat_check",
   "named": true,
-  "len": 3180
+  "len": 3183
  },
  "0x00484B00": {
   "name": "mission_load_cheat",
   "named": true,
-  "len": 2557
+  "len": 2565
  },
  "0x00485020": {
   "name": "mission_load_world",
   "named": true,
-  "len": 1018
+  "len": 1021
  },
  "0x004850F0": {
   "name": "FUN_004850F0",
@@ -4422,7 +4422,7 @@
  "0x00485300": {
   "name": "comm_00485300",
   "named": true,
-  "len": 2668
+  "len": 2673
  },
  "0x00485840": {
   "name": "FUN_00485840",
@@ -4432,17 +4432,17 @@
  "0x00485B00": {
   "name": "mission_mpworld_load",
   "named": true,
-  "len": 2216
+  "len": 2221
  },
  "0x00485F10": {
-  "name": "dlog_00485f10",
+  "name": "menu_dialog_spawn_obj",
   "named": true,
-  "len": 2069
+  "len": 2084
  },
  "0x00486110": {
-  "name": "main_00486110",
+  "name": "menu_dialog_teardown",
   "named": true,
-  "len": 1372
+  "len": 1384
  },
  "0x004862E0": {
   "name": "FUN_004862E0",
@@ -4472,32 +4472,32 @@
  "0x004888F0": {
   "name": "FUN_004888f0",
   "named": false,
-  "len": 1134
+  "len": 1139
  },
  "0x00488A80": {
   "name": "mission_load_world2",
   "named": true,
-  "len": 3167
+  "len": 3173
  },
  "0x00488D00": {
   "name": "mission_load_world3",
   "named": true,
-  "len": 1576
+  "len": 1581
  },
  "0x00489120": {
   "name": "mission_menu_load",
   "named": true,
-  "len": 5368
+  "len": 5381
  },
  "0x004895F0": {
   "name": "texture_add_file",
   "named": true,
-  "len": 2210
+  "len": 2213
  },
  "0x004897D0": {
   "name": "mission_menu_load2",
   "named": true,
-  "len": 4648
+  "len": 4663
  },
  "0x00489CA0": {
   "name": "FUN_00489ca0",
@@ -4512,7 +4512,7 @@
  "0x00489F50": {
   "name": "FUN_00489F50",
   "named": false,
-  "len": 1978
+  "len": 1983
  },
  "0x0048A7D0": {
   "name": "FUN_0048A7D0",
@@ -4527,7 +4527,7 @@
  "0x0048ADB0": {
   "name": "mission_state_dispatch",
   "named": true,
-  "len": 9774
+  "len": 9779
  },
  "0x0048BED0": {
   "name": "FUN_0048bed0",
@@ -4547,7 +4547,7 @@
  "0x0048CA10": {
   "name": "dialog_0048ca10",
   "named": true,
-  "len": 3204
+  "len": 3214
  },
  "0x0048D4B0": {
   "name": "FUN_0048D4B0",
@@ -4557,7 +4557,7 @@
  "0x0048D690": {
   "name": "FUN_0048d690",
   "named": false,
-  "len": 1530
+  "len": 1535
  },
  "0x0048DE30": {
   "name": "FUN_0048DE30",
@@ -4567,7 +4567,7 @@
  "0x0048E010": {
   "name": "main_0048e010",
   "named": true,
-  "len": 4544
+  "len": 4559
  },
  "0x0048E430": {
   "name": "FUN_0048E430",
@@ -4577,7 +4577,7 @@
  "0x0048E610": {
   "name": "main_0048e610",
   "named": true,
-  "len": 4508
+  "len": 4523
  },
  "0x0048EA50": {
   "name": "FUN_0048EA50",
@@ -4587,7 +4587,7 @@
  "0x0048EC30": {
   "name": "FUN_0048EC30",
   "named": false,
-  "len": 1428
+  "len": 1433
  },
  "0x0048EE60": {
   "name": "FUN_0048EE60",
@@ -4597,7 +4597,7 @@
  "0x0048F040": {
   "name": "FUN_0048f040",
   "named": false,
-  "len": 1242
+  "len": 1247
  },
  "0x0048F310": {
   "name": "story_script_scan",
@@ -4612,7 +4612,7 @@
  "0x0048F620": {
   "name": "FUN_0048f620",
   "named": false,
-  "len": 2817
+  "len": 2822
  },
  "0x004907E0": {
   "name": "FUN_004907e0",
@@ -4682,7 +4682,7 @@
  "0x00491E30": {
   "name": "savegame_load",
   "named": true,
-  "len": 1259
+  "len": 1262
  },
  "0x00491F10": {
   "name": "savegame_verify",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24065
+  "len": 24068
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -5367,7 +5367,7 @@
  "0x0049E290": {
   "name": "options_defaults",
   "named": true,
-  "len": 775
+  "len": 784
  },
  "0x0049E350": {
   "name": "cmdline_parse",
@@ -5397,7 +5397,7 @@
  "0x0049F5A0": {
   "name": "chat_log_init",
   "named": true,
-  "len": 5205
+  "len": 5208
  },
  "0x0049FA90": {
   "name": "main_path_0049fa90",
@@ -8955,9 +8955,9 @@
   "len": 422
  },
  "0x0051A0C0": {
-  "name": "mission_0051a0c0",
+  "name": "registry_read_dword",
   "named": true,
-  "len": 373
+  "len": 376
  },
  "0x0051A100": {
   "name": "keymap_0051a100",
@@ -10122,7 +10122,7 @@
  "0x0052F980": {
   "name": "cam_mode_toggle",
   "named": true,
-  "len": 3618
+  "len": 3621
  },
  "0x0052FBF0": {
   "name": "FUN_0052fbf0",

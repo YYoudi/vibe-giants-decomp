@@ -4052,7 +4052,7 @@ LAB_00444d25:
 
   FUN_00435fd0();
 
-  dlog_cleanup_all();
+  cleanup_00436060();
 
   for (puVar6 = DAT_00632d84; puVar3 = DAT_00632d68, puVar6 != (undefined4 *)0x0;
 
@@ -6166,7 +6166,7 @@ int FUN_00446890(void)
 
       }
 
-      mission_00447fd0(0,4);
+      objects_free_by_ospec(0,4);
 
       for (puVar1 = DAT_00632d84; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
@@ -7376,8 +7376,8 @@ bool Main_fx_00447fa0(int param_1,byte param_2)
 
 }
 
-/* ===== mission_00447fd0 @ 0x00447FD0 ===== */
-void mission_00447fd0(int param_1,uint param_2)
+/* ===== objects_free_by_ospec @ 0x00447FD0 ===== */
+void objects_free_by_ospec(int param_1,uint param_2)
 
 
 

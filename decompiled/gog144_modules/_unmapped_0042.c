@@ -6560,7 +6560,7 @@ void keymap_load(void)
 
   iStack_84 = -1;
 
-  mission_0051a0c0(s_KeyVersion_00555ef0,&iStack_84);
+  registry_read_dword(s_KeyVersion_00555ef0,&iStack_84);
 
   if (iStack_84 == 0x36) {
 
@@ -17461,7 +17461,7 @@ void dlog_free_global_1(void)
 
 {
 
-  dlog_level_free(DAT_006573e8);
+  cleanup_00434d40(DAT_006573e8);
 
   return;
 
@@ -17626,7 +17626,7 @@ void dlog_free_global_2(void)
 
 {
 
-  dlog_level_free(DAT_006573ec);
+  cleanup_00434d40(DAT_006573ec);
 
   return;
 
@@ -17758,7 +17758,7 @@ void dlog_free_global_3(void)
 
 {
 
-  dlog_level_free(DAT_006573f0);
+  cleanup_00434d40(DAT_006573f0);
 
   return;
 

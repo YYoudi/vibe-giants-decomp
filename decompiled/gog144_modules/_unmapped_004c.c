@@ -8693,7 +8693,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_00435fd0();
 
-    dlog_cleanup_all();
+    cleanup_00436060();
 
     pcVar10 = s_InDome_005611d0;
 
