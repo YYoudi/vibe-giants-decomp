@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (29 named) — decompiled, names from PS2 symbols
+ * 64 functions (30 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -3377,8 +3377,8 @@ void FUN_004c4df0(int param_1)
 
 }
 
-/* ===== FUN_004c4ec0 @ 0x004C4EC0 ===== */
-void FUN_004c4ec0(int param_1,int param_2)
+/* ===== mecc_drop_carried_object_2 @ 0x004C4EC0 ===== */
+void mecc_drop_carried_object_2(int param_1,int param_2)
 
 
 
@@ -3499,7 +3499,7 @@ void FUN_004c4fd0(int param_1)
 
         if (iVar2 != 0) {
 
-          FUN_004c4ec0(param_1,iVar3);
+          mecc_drop_carried_object_2(param_1,iVar3);
 
           return;
 

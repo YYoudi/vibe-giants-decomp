@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (40 named) — decompiled, names from PS2 symbols
+ * 74 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -5099,12 +5099,12 @@ LAB_00485528:
 
 }
 
-/* ===== FUN_00485840 @ 0x00485840 ===== */
+/* ===== menu_mission_list_init @ 0x00485840 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00485840(void)
+void menu_mission_list_init(void)
 
 
 

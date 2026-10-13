@@ -2188,7 +2188,7 @@ void audio_stream_tied(void)
 
     piVar6 = local_210 + (~uVar7 & 1) * 0x32;
 
-    iVar5 = FUN_0053f330(local_208 + (~uVar7 & 1) * 0x32,piVar8 + 2,&local_284,*piVar8);
+    iVar5 = geom_clip_poly_plane(local_208 + (~uVar7 & 1) * 0x32,piVar8 + 2,&local_284,*piVar8);
 
     uVar7 = uVar7 + 1;
 
@@ -3354,13 +3354,13 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   _DAT_00556f7c = (float)*(int *)(DAT_006330e4 + 0x2c);
 
-  uVar3 = FUN_0053f330(auStack_a0,auStack_144,&DAT_00556f40,4);
+  uVar3 = geom_clip_poly_plane(auStack_a0,auStack_144,&DAT_00556f40,4);
 
-  uVar3 = FUN_0053f330(auStack_144,auStack_a0,&DAT_00556f50,uVar3);
+  uVar3 = geom_clip_poly_plane(auStack_144,auStack_a0,&DAT_00556f50,uVar3);
 
-  uVar3 = FUN_0053f330(auStack_a0,auStack_144,&DAT_00556f60,uVar3);
+  uVar3 = geom_clip_poly_plane(auStack_a0,auStack_144,&DAT_00556f60,uVar3);
 
-  iVar4 = FUN_0053f330(auStack_144,auStack_a0,&DAT_00556f70,uVar3);
+  iVar4 = geom_clip_poly_plane(auStack_144,auStack_a0,&DAT_00556f70,uVar3);
 
   FUN_0053f2e0(auStack_40,auStack_144,iVar4);
 

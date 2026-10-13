@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0042b3d0,FUN_0042b3d0,,mesh_build_fvf_verts_2,0.9,llm-w104,
+004e3620,FUN_004e3620,,ai_los_clear_to_target,0.9,llm-w104,
+00485840,FUN_00485840,,menu_mission_list_init,0.9,llm-w104,
+004c4ec0,FUN_004c4ec0,,mecc_drop_carried_object_2,0.9,llm-w104,
+0053f330,FUN_0053f330,,geom_clip_poly_plane,0.9,llm-w104,

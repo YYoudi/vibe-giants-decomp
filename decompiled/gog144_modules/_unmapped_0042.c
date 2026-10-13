@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (88 named) — decompiled, names from PS2 symbols
+ * 129 functions (89 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -14522,8 +14522,8 @@ void level_scene_mesh_uv2(int param_1,int param_2,float param_3,float param_4)
 
 }
 
-/* ===== FUN_0042b3d0 @ 0x0042B3D0 ===== */
-void FUN_0042b3d0(undefined4 *param_1,int param_2,int param_3)
+/* ===== mesh_build_fvf_verts_2 @ 0x0042B3D0 ===== */
+void mesh_build_fvf_verts_2(undefined4 *param_1,int param_2,int param_3)
 
 
 
@@ -16513,7 +16513,7 @@ LAB_0042cb13:
 
                               (DAT_0065644c,*(undefined4 *)(iVar15 + 0x8c),iVar2,param_3);
 
-            (*(code *)PTR_FUN_005565b0)(uVar7);
+            (*(code *)PTR_mesh_build_fvf_verts_2_005565b0)(uVar7);
 
             (**(code **)(DAT_0065644c + 0x18))(DAT_0065644c,-*(int *)(iVar15 + 0x88));
 
@@ -17963,7 +17963,7 @@ void animate_core_caller(int param_1,undefined4 param_2,int param_3,undefined4 p
 
         uVar3 = (**(code **)(DAT_0065644c + 0x10))(DAT_0065644c,piVar4[1],iVar7,iVar6);
 
-        (*(code *)PTR_FUN_005565b0)(uVar3);
+        (*(code *)PTR_mesh_build_fvf_verts_2_005565b0)(uVar3);
 
         (**(code **)(DAT_0065644c + 0x18))(DAT_0065644c,-*piVar4);
 

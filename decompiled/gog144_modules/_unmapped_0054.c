@@ -754,7 +754,7 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_collgrid_collide_b_00554064 = (&PTR_LAB_00580d00)[param_1];
 
-  PTR_FUN_005565b0 = (&PTR_mesh_build_fvf_verts_00580d0c)[param_1];
+  PTR_mesh_build_fvf_verts_2_005565b0 = (&PTR_mesh_build_fvf_verts_00580d0c)[param_1];
 
   PTR_FUN_005565b4 = (&PTR_LAB_00580d18)[param_1];
 

@@ -996,7 +996,7 @@ LAB_004195d2:
 
       if (iVar9 == 0) {
 
-        FUN_004c4ec0(uVar7,iVar8);
+        mecc_drop_carried_object_2(uVar7,iVar8);
 
         return;
 

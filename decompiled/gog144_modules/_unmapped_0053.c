@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (79 named) — decompiled, names from PS2 symbols
+ * 179 functions (80 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -19671,8 +19671,8 @@ void FUN_0053f2e0(int param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== FUN_0053f330 @ 0x0053F330 ===== */
-int FUN_0053f330(float *param_1,int param_2,int param_3,float param_4)
+/* ===== geom_clip_poly_plane @ 0x0053F330 ===== */
+int geom_clip_poly_plane(float *param_1,int param_2,int param_3,float param_4)
 
 
 
