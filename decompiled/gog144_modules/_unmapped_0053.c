@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (119 named) — decompiled, names from PS2 symbols
+ * 179 functions (120 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -9930,12 +9930,12 @@ void chat_insert_name(char *param_1,char *param_2,undefined4 param_3,int param_4
 
 }
 
-/* ===== FUN_00536700 @ 0x00536700 ===== */
+/* ===== mecc_get_thrust__FP6OBJECTfPfT2_2 @ 0x00536700 ===== */
 /* PS2 candidate: mecc_get_thrust__FP6OBJECTfPfT2 (conf 0.303) */
 
 
 
-void FUN_00536700(int param_1)
+void mecc_get_thrust__FP6OBJECTfPfT2_2(int param_1)
 
 
 

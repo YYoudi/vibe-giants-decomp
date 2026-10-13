@@ -50,13 +50,13 @@ void rpman_goto_last_loc__FP6OBJECTi(int param_1,int param_2)
 
   if (param_2 != 0) {
 
-    FUN_00401050(param_1,&local_c);
+    ai_move_force_goal(param_1,&local_c);
 
     return;
 
   }
 
-  FUN_00401610(param_1,&local_c);
+  ai_moveonly_set_goal(param_1,&local_c);
 
   return;
 
@@ -1695,7 +1695,7 @@ undefined4 ai_ground_snap(int param_1)
 
       fVar5 = (float10)FUN_00518b70(param_1,0,0x461c4000,(float)fVar5,param_1 + 200);
 
-      FUN_004515b0((float)(fVar5 * (float10)30.0));
+      chase_angle((float)(fVar5 * (float10)30.0));
 
     }
 
@@ -2361,7 +2361,7 @@ undefined4 rpman_smartie_consider__FP6OBJECTT0(int param_1,int param_2)
 
     if (fVar3 < (float10)90000.0) {
 
-      FUN_00401610(param_1,piVar1);
+      ai_moveonly_set_goal(param_1,piVar1);
 
       ai_goal_process(param_1);
 
@@ -3222,13 +3222,13 @@ void rpman_set_enemy_attack_goal__FP6OBJECTi(int param_1,int param_2)
 
     if (piVar1[0x36] == 0) {
 
-      FUN_00401610(param_1,&local_c);
+      ai_moveonly_set_goal(param_1,&local_c);
 
     }
 
     else {
 
-      FUN_00401050(param_1,&local_c);
+      ai_move_force_goal(param_1,&local_c);
 
     }
 
@@ -3324,13 +3324,13 @@ LAB_004e409b:
 
   if (piVar1[0x36] == 0) {
 
-    FUN_00401610(param_1,&local_c);
+    ai_moveonly_set_goal(param_1,&local_c);
 
   }
 
   else {
 
-    FUN_00401050(param_1,&local_c);
+    ai_move_force_goal(param_1,&local_c);
 
   }
 
@@ -6299,13 +6299,13 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
                                 (float *)(iVar4 + 0x164));
 
-  FUN_004515b0((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe04)));
+  chase_angle((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe04)));
 
   pfVar1 = (float *)(iVar4 + 0x168);
 
   fVar6 = (float10)FUN_00518b70(iVar5,0,0x461c4000,*(undefined4 *)(iVar4 + 0x170),pfVar1);
 
-  FUN_004515b0((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
+  chase_angle((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
 
   GEO_MatBuildXYZ(iVar5 + 0x294,-*(float *)(iVar4 + 0x164),*pfVar1,*(undefined4 *)(iVar5 + 200));
 
@@ -6586,7 +6586,7 @@ void rpman_set_smartie_goal__FP6OBJECT(int param_1)
 
     if ((float10)100.0 <= fVar2) {
 
-      FUN_00401610(param_1,*(int *)(iVar1 + 0x1ec) + 0xa0);
+      ai_moveonly_set_goal(param_1,*(int *)(iVar1 + 0x1ec) + 0xa0);
 
       *(undefined4 *)(param_1 + 0xec) = 0x3fc00000;
 
@@ -6596,7 +6596,7 @@ void rpman_set_smartie_goal__FP6OBJECT(int param_1)
 
   }
 
-  FUN_00401610(param_1,*(int *)(*(int *)(*(int *)(iVar1 + 0x134) + 0x100) + 0x18) + 0xa0);
+  ai_moveonly_set_goal(param_1,*(int *)(*(int *)(*(int *)(iVar1 + 0x134) + 0x100) + 0x18) + 0xa0);
 
   *(undefined4 *)(param_1 + 0xec) = 0x40980000;
 
@@ -6683,7 +6683,7 @@ void rpman_army_goto_firepit__FP6OBJECT(int param_1)
 
   *(undefined1 **)(param_1 + 0x16c) = &LAB_004cb930;
 
-  FUN_00401610(param_1,&local_c);
+  ai_moveonly_set_goal(param_1,&local_c);
 
   iVar2 = crt_rand_scaled(100);
 
@@ -7714,7 +7714,7 @@ void barracks_logic(float param_1)
 
   ai_clear_move_goal(iVar6);
 
-  FUN_00401610(iVar6,local_c);
+  ai_moveonly_set_goal(iVar6,local_c);
 
   if ((*(uint *)(iVar6 + 0xe0) & 0x200) == 0) {
 
@@ -10282,7 +10282,7 @@ void meccprocanimscreate_004ede30(void)
 
              DAT_006330e4 + 0x130);
 
-  FUN_00446ee0();
+  texture_object_debug_dump_3();
 
   iVar3 = 0;
 
@@ -11183,7 +11183,7 @@ undefined4 intro_assets_check(void)
 
   object_allocate_init();
 
-  FUN_0040b220();
+  blood_init();
 
   main_blood_0040bab0();
 

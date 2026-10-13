@@ -2,29 +2,29 @@
 
 | module | functions | named | file |
 |---|---|---|---|
-| _unmapped_0054 | 351 | 262 | _unmapped_0054.c |
+| _unmapped_0054 | 351 | 263 | _unmapped_0054.c |
 | _unmapped_0051 | 186 | 114 | _unmapped_0051.c |
-| _unmapped_0053 | 179 | 119 | _unmapped_0053.c |
-| _unmapped_0052 | 162 | 97 | _unmapped_0052.c |
-| _unmapped_0045 | 145 | 95 | _unmapped_0045.c |
-| _unmapped_0049 | 142 | 98 | _unmapped_0049.c |
+| _unmapped_0053 | 179 | 120 | _unmapped_0053.c |
+| _unmapped_0052 | 162 | 98 | _unmapped_0052.c |
+| _unmapped_0045 | 145 | 97 | _unmapped_0045.c |
+| _unmapped_0049 | 142 | 100 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 94 | _unmapped_004a.c |
-| _unmapped_0042 | 129 | 95 | _unmapped_0042.c |
-| _unmapped_0040 | 105 | 75 | _unmapped_0040.c |
+| _unmapped_0042 | 129 | 97 | _unmapped_0042.c |
+| _unmapped_0040 | 105 | 76 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 76 | _unmapped_0041.c |
 | _unmapped_004e | 94 | 72 | _unmapped_004e.c |
 | _unmapped_004b | 90 | 69 | _unmapped_004b.c |
-| _unmapped_0050 | 87 | 58 | _unmapped_0050.c |
-| _unmapped_0044 | 76 | 62 | _unmapped_0044.c |
+| _unmapped_0050 | 87 | 60 | _unmapped_0050.c |
+| _unmapped_0044 | 76 | 64 | _unmapped_0044.c |
 | _unmapped_0043 | 74 | 62 | _unmapped_0043.c |
 | _unmapped_0048 | 74 | 50 | _unmapped_0048.c |
 | _unmapped_0047 | 67 | 53 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 55 | _unmapped_004c.c |
 | _unmapped_0046 | 53 | 38 | _unmapped_0046.c |
-| _unmapped_004f | 48 | 34 | _unmapped_004f.c |
+| _unmapped_004f | 48 | 35 | _unmapped_004f.c |
 | _unmapped_004d | 39 | 28 | _unmapped_004d.c |
 | main/dlog | 19 | 19 | main_dlog.c |
-| main/ai_move | 15 | 13 | main_ai_move.c |
+| main/ai_move | 15 | 15 | main_ai_move.c |
 | Main/fx | 9 | 9 | Main_fx.c |
 | main/ANIMATE | 8 | 8 | main_ANIMATE.c |
 | main/texture | 8 | 8 | main_texture.c |
@@ -35,7 +35,7 @@
 | main/drawwrld | 5 | 5 | main_drawwrld.c |
 | main/objspec | 5 | 5 | main_objspec.c |
 | comm/comm | 4 | 4 | comm_comm.c |
-| main/blood | 4 | 3 | main_blood.c |
+| main/blood | 4 | 4 | main_blood.c |
 | main/noise | 4 | 4 | main_noise.c |
 | main/path | 4 | 4 | main_path.c |
 | main/readwrls | 4 | 4 | main_readwrls.c |
@@ -66,7 +66,7 @@
 | Main/kabuto | 1 | 0 | Main_kabuto.c |
 | _unmapped_0055 | 1 | 0 | _unmapped_0055.c |
 | main/STATUS | 1 | 1 | main_STATUS.c |
-| main/flame | 1 | 0 | main_flame.c |
+| main/flame | 1 | 1 | main_flame.c |
 | main/marker | 1 | 1 | main_marker.c |
 | main/readdata | 1 | 1 | main_readdata.c |
 | main/readobjs | 1 | 1 | main_readobjs.c |
@@ -77,4 +77,4 @@
 | main/teammecc | 1 | 1 | main_teammecc.c |
 | main/verm | 1 | 1 | main_verm.c |
 | main/xform | 1 | 1 | main_xform.c |
-| win95/W95MAIN | 1 | 0 | win95_W95MAIN.c |
+| win95/W95MAIN | 1 | 1 | win95_W95MAIN.c |

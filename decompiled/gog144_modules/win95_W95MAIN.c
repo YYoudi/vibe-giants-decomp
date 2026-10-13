@@ -1,14 +1,14 @@
 /* Giants 1.449 — module win95/W95MAIN
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\win95/W95MAIN.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0051eac0 @ 0x0051EAC0 ===== */
+/* ===== loglauncher_process_2 @ 0x0051EAC0 ===== */
 /* PS2 candidate: loglauncher_process (conf 0.271) */
 
 
 
-undefined4 FUN_0051eac0(undefined4 param_1)
+undefined4 loglauncher_process_2(undefined4 param_1)
 
 
 

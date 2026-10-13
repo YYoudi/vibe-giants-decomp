@@ -1,0 +1,21 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0040b220,FUN_0040b220,,blood_init,0.9,llm-w136,string-proven bigblood main/blood.c (rejected texture_object_debug_dump)
+00401050,FUN_00401050,,ai_move_force_goal,0.9,llm-w136,body-verified+module match
+004469e0,FUN_004469e0,,FLK_FlickPlaying,0.9,llm-w136,body-verified
+0050a520,FUN_0050a520,,distance2d__FP3P3DT0,0.9,llm-w136,body-verified
+004979b0,FUN_004979b0,,object_copy_posdirinfo_2,0.9,llm-w136,body-verified variant
+00401610,FUN_00401610,,ai_moveonly_set_goal,0.9,llm-w136,body-verified
+00426ee0,FUN_00426ee0,,dialog_level_process,0.9,llm-w136,body-verified dlog dispatch
+0040bb40,FUN_0040bb40,,wound_from_object_world,0.9,llm-w136,body-verified
+004515b0,FUN_004515b0,,chase_angle,0.9,llm-w136,body-verified clamped chase
+00451560,FUN_00451560,,diff_rangle__Fff,0.9,llm-w136,body-verified
+0050ae90,FUN_0050ae90,,TurretShoot__FP15TurretCommShootP6OBJECTT1,0.9,llm-w136,body-verified
+0049dd90,FUN_0049dd90,,get_floor_z_point_plat_2,0.9,llm-w136,body-verified variant
+00536700,FUN_00536700,,mecc_get_thrust__FP6OBJECTfPfT2_2,0.9,llm-w136,body-verified variant
+004fa520,FUN_004fa520,,hurt_pusher_2,0.9,llm-w136,body-verified variant
+0051eac0,FUN_0051eac0,,loglauncher_process_2,0.9,llm-w136,body-verified variant
+0052a050,FUN_0052a050,,showchat_mission_objective__Fi_2,0.9,llm-w136,body-verified variant
+0042ea60,FUN_0042ea60,,texture_object_debug_dump,0.9,llm-w136,body-verified dev_debug caller
+00442f70,FUN_00442f70,,texture_object_debug_dump_2,0.9,llm-w136,body-verified variant
+00446ee0,FUN_00446ee0,,texture_object_debug_dump_3,0.9,llm-w136,body-verified variant
+0054ff84,FUN_0054ff84,,crt_strchr,0.9,llm-w136,body-verified locale strchr (rejected kbos_move var)

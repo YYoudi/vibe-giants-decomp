@@ -586,7 +586,7 @@ void verm_control(int param_1)
 
           puVar8[1] = (float)fVar9;
 
-          FUN_00451560(puVar8 + 1);
+          diff_rangle__Fff(puVar8 + 1);
 
           fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
@@ -654,7 +654,7 @@ LAB_004d2151:
 
       local_64 = local_64 - local_7c * pfVar1[2];
 
-      fVar9 = (float10)FUN_0050a520(param_1 + 0xa0,&local_68);
+      fVar9 = (float10)distance2d__FP3P3DT0(param_1 + 0xa0,&local_68);
 
       local_6c = (float)fVar9;
 
@@ -810,7 +810,7 @@ LAB_004d2364:
 
       local_64 = local_64 - local_7c * pfVar1[2];
 
-      fVar9 = (float10)FUN_0050a520(iVar6,&local_68);
+      fVar9 = (float10)distance2d__FP3P3DT0(iVar6,&local_68);
 
       local_6c = (float)fVar9;
 
@@ -928,7 +928,7 @@ LAB_004d2364:
 
     local_64 = local_64 - local_7c * pfVar1[2];
 
-    fVar9 = (float10)FUN_0050a520(iVar6,&local_68);
+    fVar9 = (float10)distance2d__FP3P3DT0(iVar6,&local_68);
 
     local_6c = (float)fVar9;
 
@@ -1084,7 +1084,7 @@ LAB_004d2a47:
 
       local_64 = local_64 - local_7c * pfVar1[2];
 
-      fVar9 = (float10)FUN_0050a520(iVar6,&local_68);
+      fVar9 = (float10)distance2d__FP3P3DT0(iVar6,&local_68);
 
       local_6c = (float)fVar9;
 
@@ -1346,7 +1346,7 @@ LAB_004d2d85:
 
           puVar8[1] = (float)fVar9;
 
-          FUN_00451560(puVar8 + 1);
+          diff_rangle__Fff(puVar8 + 1);
 
           fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
@@ -1562,7 +1562,7 @@ LAB_004d27a6:
 
           puVar8[1] = (float)fVar9;
 
-          FUN_00451560(puVar8 + 1);
+          diff_rangle__Fff(puVar8 + 1);
 
           fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
@@ -1664,7 +1664,7 @@ LAB_004d2124:
 
       iVar6 = object_allocate_type(0xdb,0x11);
 
-      FUN_004979b0(iVar6,param_1);
+      object_copy_posdirinfo_2(iVar6,param_1);
 
       *(undefined4 *)(iVar6 + 0xc4) = *(undefined4 *)(param_1 + 0xc4);
 
@@ -1724,7 +1724,7 @@ LAB_004d2124:
 
         puVar8[1] = (float)fVar9;
 
-        FUN_00451560(puVar8 + 1);
+        diff_rangle__Fff(puVar8 + 1);
 
         fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
@@ -1976,7 +1976,7 @@ LAB_004d27e4:
 
       puVar8[1] = (float)fVar9;
 
-      FUN_00451560(puVar8 + 1);
+      diff_rangle__Fff(puVar8 + 1);
 
       fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
@@ -2043,7 +2043,7 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
     fVar5 = (float10)FUN_00518b70(param_1,0,0x461c4000,(float)fVar5,param_1 + 200);
 
-    FUN_004515b0((float)(fVar5 * (float10)30.0));
+    chase_angle((float)(fVar5 * (float10)30.0));
 
   }
 
@@ -2645,7 +2645,7 @@ void make_spit__FP6OBJECTP3P3Df(int param_1,int param_2,float param_3)
 
       *(undefined4 *)(iVar4 + 0x18c) = uVar7;
 
-      fVar5 = (float10)FUN_0050a520(param_2,iVar4 + 0xa0);
+      fVar5 = (float10)distance2d__FP3P3DT0(param_2,iVar4 + 0xa0);
 
       fVar1 = (float)(fVar5 / (float10)*(float *)(iVar4 + 0x10c));
 
@@ -2747,7 +2747,7 @@ void ai_face_move(undefined4 *param_1,undefined4 *param_2,float param_3)
 
   iVar2 = (int)param_1;
 
-  fVar4 = (float10)FUN_0050a520((int)param_1 + 0xa0,param_2);
+  fVar4 = (float10)distance2d__FP3P3DT0((int)param_1 + 0xa0,param_2);
 
   if ((float10)param_3 <= fVar4) {
 
@@ -3090,7 +3090,7 @@ void ripnest_move(int param_1)
 
     iVar4 = object_allocate_type(0xdb,0x11);
 
-    FUN_004979b0(iVar4,param_1);
+    object_copy_posdirinfo_2(iVar4,param_1);
 
     *(undefined4 *)(iVar4 + 0xe4) = 0;
 
@@ -3597,13 +3597,13 @@ void rpboat_ghost_logic__FP6OBJECT(int param_1)
 
                                 (float *)(iVar2 + 0x40));
 
-  FUN_004515b0((float)(fVar3 * (float10)*(float *)(DAT_00632ed8 + 0xe04)));
+  chase_angle((float)(fVar3 * (float10)*(float *)(DAT_00632ed8 + 0xe04)));
 
   fVar3 = (float10)FUN_00518b70(param_1,0,0x461c4000,*(undefined4 *)(iVar2 + 0x4c),
 
                                 (undefined4 *)(iVar2 + 0x44));
 
-  FUN_004515b0((float)(fVar3 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
+  chase_angle((float)(fVar3 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
 
   GEO_MatBuildXYZ(param_1 + 0x294,-*(float *)(iVar2 + 0x40),*(undefined4 *)(iVar2 + 0x44),
 
@@ -3840,7 +3840,7 @@ LAB_004d5d41:
 
     fVar6 = (float10)FUN_00518b70(param_1,0,0x461c4000,*(undefined4 *)(iVar3 + 0x48),pfVar1);
 
-    FUN_004515b0((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe04)));
+    chase_angle((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe04)));
 
   }
 
@@ -3862,7 +3862,7 @@ LAB_004d5d41:
 
     }
 
-    FUN_004515b0((float)fVar6);
+    chase_angle((float)fVar6);
 
     if (*(float *)(iVar3 + 0x48) < 0.0) {
 
@@ -3894,7 +3894,7 @@ LAB_004d5d41:
 
                                 (undefined4 *)(iVar3 + 0x44));
 
-  FUN_004515b0((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
+  chase_angle((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
 
   GEO_MatBuildXYZ(param_1 + 0x294,-*pfVar1,*(undefined4 *)(iVar3 + 0x44),
 

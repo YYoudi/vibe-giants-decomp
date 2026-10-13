@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (34 named) — decompiled, names from PS2 symbols
+ * 48 functions (35 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -2699,7 +2699,7 @@ switchD_004f7908_caseD_20:
 
         hurt_pusher(param_1,param_2,param_2,param_3,param_4,param_5);
 
-        FUN_0040bb40(param_3,param_5);
+        wound_from_object_world(param_3,param_5);
 
         iVar4 = crt_rand_scaled(0x3c);
 
@@ -3930,7 +3930,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
       fVar8 = (float10)FUN_00518b70(param_1,0,0x461c4000,(float)fVar8,param_1 + 200);
 
-      FUN_004515b0((float)(fVar8 * (float10)30.0));
+      chase_angle((float)(fVar8 * (float10)30.0));
 
     }
 
@@ -3976,7 +3976,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
     fVar8 = (float10)FUN_00518b70(param_1,0,0x461c4000,*(undefined4 *)(param_1 + 0xf8),pfVar1);
 
-    FUN_004515b0((float)(fVar8 * (float10)*(float *)(param_1 + 0x1a8)));
+    chase_angle((float)(fVar8 * (float10)*(float *)(param_1 + 0x1a8)));
 
     fVar8 = (float10)playerobj_turn(*(undefined4 *)(param_1 + 0xf8),*pfVar1);
 
@@ -4262,7 +4262,7 @@ void sound_play_pair(undefined4 param_1,float param_2,int param_3,undefined4 par
 
   sound_play_obj(uVar3,param_3);
 
-  FUN_0040bb40(param_3,param_5);
+  wound_from_object_world(param_3,param_5);
 
   *(undefined4 *)(iVar1 + 0x10) = 0x41200000;
 
@@ -4743,12 +4743,12 @@ void FUN_004fa490(int param_1,int param_2,int param_3,undefined4 param_4,undefin
 
 }
 
-/* ===== FUN_004fa520 @ 0x004FA520 ===== */
+/* ===== hurt_pusher_2 @ 0x004FA520 ===== */
 /* PS2 candidate: hurt_pusher (conf 0.292) */
 
 
 
-void FUN_004fa520(int param_1,float param_2)
+void hurt_pusher_2(int param_1,float param_2)
 
 
 
@@ -4963,7 +4963,7 @@ void FUN_004fa720(int param_1,int param_2,int param_3)
 
   do {
 
-    FUN_004fa520(param_1,*puVar2);
+    hurt_pusher_2(param_1,*puVar2);
 
     puVar2 = puVar2 + 1;
 
@@ -5131,7 +5131,7 @@ LAB_004fde16:
 
 LAB_004fde80:
 
-      FUN_004fa520(param_1,*puVar11);
+      hurt_pusher_2(param_1,*puVar11);
 
       puVar11 = puVar11 + 1;
 
@@ -5248,7 +5248,7 @@ LAB_004fdf63:
 
   do {
 
-    FUN_004fa520(param_1,*puVar6);
+    hurt_pusher_2(param_1,*puVar6);
 
     puVar6 = puVar6 + 1;
 
@@ -5345,7 +5345,7 @@ LAB_004fe060:
 
   do {
 
-    FUN_004fa520(param_1,*puVar5);
+    hurt_pusher_2(param_1,*puVar5);
 
     puVar5 = puVar5 + 1;
 
@@ -5452,7 +5452,7 @@ LAB_004fe1c0:
 
   do {
 
-    FUN_004fa520(param_1,*puVar5);
+    hurt_pusher_2(param_1,*puVar5);
 
     puVar5 = puVar5 + 1;
 
@@ -5659,7 +5659,7 @@ LAB_004ff830:
 
         do {
 
-          FUN_004fa520(&DAT_00632900,*puVar5);
+          hurt_pusher_2(&DAT_00632900,*puVar5);
 
           puVar5 = puVar5 + 1;
 
@@ -5721,7 +5721,7 @@ LAB_004ff8e2:
 
       do {
 
-        FUN_004fa520(&DAT_00632900,*puVar5);
+        hurt_pusher_2(&DAT_00632900,*puVar5);
 
         puVar5 = puVar5 + 1;
 

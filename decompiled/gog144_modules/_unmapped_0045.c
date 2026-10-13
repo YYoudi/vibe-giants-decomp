@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (95 named) — decompiled, names from PS2 symbols
+ * 145 functions (97 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -615,12 +615,12 @@ void vec_lerp_approach(float param_1,float *param_2,float *param_3,float *param_
 
 }
 
-/* ===== FUN_00451560 @ 0x00451560 ===== */
+/* ===== diff_rangle__Fff @ 0x00451560 ===== */
 /* PS2 candidate: diff_rangle__Fff (conf 0.316) */
 
 
 
-void FUN_00451560(float *param_1)
+void diff_rangle__Fff(float *param_1)
 
 
 
@@ -652,12 +652,12 @@ void FUN_00451560(float *param_1)
 
 }
 
-/* ===== FUN_004515b0 @ 0x004515B0 ===== */
+/* ===== chase_angle @ 0x004515B0 ===== */
 /* PS2 candidate: chase_angle (conf 0.317) */
 
 
 
-void FUN_004515b0(float param_1,float param_2,float param_3,float *param_4)
+void chase_angle(float param_1,float param_2,float param_3,float *param_4)
 
 
 
@@ -989,7 +989,7 @@ LAB_004518de:
 
   }
 
-  FUN_00451560(&param_8);
+  diff_rangle__Fff(&param_8);
 
   pfVar3 = param_9;
 
@@ -1107,7 +1107,7 @@ LAB_00451ad9:
 
   }
 
-  FUN_00451560(&param_2);
+  diff_rangle__Fff(&param_2);
 
   pfVar2 = param_10;
 
@@ -1139,9 +1139,9 @@ LAB_00451ad9:
 
 LAB_00451c06:
 
-  FUN_00451560(&param_5);
+  diff_rangle__Fff(&param_5);
 
-  FUN_00451560(&param_2);
+  diff_rangle__Fff(&param_2);
 
   param_3 = param_3 - param_5;
 
@@ -1177,7 +1177,7 @@ LAB_00451c06:
 
   }
 
-  FUN_00451560(&param_2);
+  diff_rangle__Fff(&param_2);
 
   *pfVar2 = param_2;
 

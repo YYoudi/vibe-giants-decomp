@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (95 named) — decompiled, names from PS2 symbols
+ * 129 functions (97 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -9038,12 +9038,12 @@ bool dialog_level_is_base(void)
 
 }
 
-/* ===== FUN_00426ee0 @ 0x00426EE0 ===== */
+/* ===== dialog_level_process @ 0x00426EE0 ===== */
 /* PS2 candidate: dialog_level_process (conf 0.323) */
 
 
 
-void FUN_00426ee0(void)
+void dialog_level_process(void)
 
 
 
@@ -18264,12 +18264,12 @@ LAB_0042e978:
 
 }
 
-/* ===== FUN_0042ea60 @ 0x0042EA60 ===== */
+/* ===== texture_object_debug_dump @ 0x0042EA60 ===== */
 /* PS2 candidate: texture_object_debug_dump (conf 0.333) */
 
 
 
-void FUN_0042ea60(void)
+void texture_object_debug_dump(void)
 
 
 

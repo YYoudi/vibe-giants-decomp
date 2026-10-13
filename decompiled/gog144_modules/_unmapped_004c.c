@@ -703,7 +703,7 @@ LAB_004c0926:
 
            ((*(int *)(iVar7 + 0x210) != iVar3 && (*(int *)(iVar7 + 0x274) != iVar3)))) {
 
-          fVar11 = (float10)FUN_0050a520(iVar3 + 0xa0,iVar7 + 0xa0);
+          fVar11 = (float10)distance2d__FP3P3DT0(iVar3 + 0xa0,iVar7 + 0xa0);
 
           param_1 = (float)(fVar11 - (float10)*(float *)(iVar7 + 0x154));
 
@@ -6606,7 +6606,7 @@ void evilreaper_set_new_location__FP6OBJECTi(int param_1,int param_2)
 
     *(undefined1 **)(param_1 + 0x16c) = &LAB_004cb930;
 
-    FUN_00401610(param_1,&local_c);
+    ai_moveonly_set_goal(param_1,&local_c);
 
   }
 
@@ -7952,7 +7952,7 @@ LAB_004ccbc0:
 
                        (float)*(int *)(iVar5 + 0x28) * fStack_228);
 
-          FUN_004fa520(iVar5,&PTR_s_infinity_005744c8);
+          hurt_pusher_2(iVar5,&PTR_s_infinity_005744c8);
 
         }
 
@@ -8049,7 +8049,7 @@ void lens_effects_process__Fv(void)
 
   puVar1 = (uint *)(DAT_006330e4 + 0x4f70);
 
-  iVar4 = FUN_004469e0();
+  iVar4 = FLK_FlickPlaying();
 
   iVar10 = 0;
 
@@ -8873,7 +8873,7 @@ undefined4 dev_debug_flags(void)
 
     status_timer_update();
 
-    FUN_0042ea60();
+    texture_object_debug_dump();
 
     if (DAT_00633228 == 0) {
 
@@ -9127,7 +9127,7 @@ LAB_004ce7b8:
 
   ANM_DumpCluster();
 
-  FUN_00536700();
+  mecc_get_thrust__FP6OBJECTfPfT2_2();
 
   iVar5 = fps_display();
 
@@ -10267,7 +10267,7 @@ LAB_004cf539:
 
       *(float *)((int)fVar5 + 200) = (float)fVar15;
 
-      FUN_00401050(fVar5,puVar14);
+      ai_move_force_goal(fVar5,puVar14);
 
       *puVar14 = *(undefined4 *)((int)fVar5 + 0xa0);
 
@@ -10639,7 +10639,7 @@ LAB_004d0a9e:
 
             pfVar12[1] = (float)fVar15;
 
-            FUN_00451560(pfVar12 + 1);
+            diff_rangle__Fff(pfVar12 + 1);
 
           }
 
@@ -10753,7 +10753,7 @@ LAB_004d0e26:
 
       local_44 = *(float *)(DAT_00632ed8 + 0xb0) * 0.25;
 
-      fVar15 = (float10)FUN_0050a520((int)fVar5 + 0xa0,&local_40);
+      fVar15 = (float10)distance2d__FP3P3DT0((int)fVar5 + 0xa0,&local_40);
 
       param_1 = (float)fVar15;
 
@@ -11017,7 +11017,7 @@ LAB_004d135c:
 
       pfVar12[1] = (float)fVar15;
 
-      FUN_00451560(pfVar12 + 1);
+      diff_rangle__Fff(pfVar12 + 1);
 
       break;
 
@@ -11247,7 +11247,7 @@ LAB_004d135c:
 
       iVar11 = object_allocate_type(0xdb,0x11);
 
-      FUN_004979b0(iVar11,fVar5);
+      object_copy_posdirinfo_2(iVar11,fVar5);
 
       *(undefined4 *)(iVar11 + 0xc4) = *(undefined4 *)((int)fVar5 + 0xc4);
 
@@ -11405,7 +11405,7 @@ LAB_004d135c:
 
       local_2c = *(undefined4 *)((int)fVar3 + 0xa8);
 
-      fVar15 = (float10)FUN_0050a520((int)fVar5 + 0xa0,&local_34);
+      fVar15 = (float10)distance2d__FP3P3DT0((int)fVar5 + 0xa0,&local_34);
 
       local_48 = (float)fVar15;
 

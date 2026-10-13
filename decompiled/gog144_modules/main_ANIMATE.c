@@ -66,7 +66,7 @@ void main_animate_00404b60(int param_1,int param_2)
 
   iVar3 = FUN_00403a70(param_1,param_2,&local_70);
 
-  iVar4 = FUN_004469e0();
+  iVar4 = FLK_FlickPlaying();
 
   if (iVar4 == 0) {
 

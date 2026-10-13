@@ -13347,7 +13347,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
                 if (((DAT_0063315c == 0) && (DAT_00633160 == 0)) && (DAT_0063317c == 0)) {
 
-                  FUN_0051eac0(s_outros_bin_0057d894);
+                  loglauncher_process_2(s_outros_bin_0057d894);
 
                 }
 
@@ -15067,7 +15067,7 @@ LAB_0051e225:
 
   if (((DAT_0063315c == 0) && (DAT_00633160 == 0)) && (DAT_0063317c == 0)) {
 
-    FUN_0051eac0(s_intros_bin_0057db74);
+    loglauncher_process_2(s_intros_bin_0057db74);
 
   }
 

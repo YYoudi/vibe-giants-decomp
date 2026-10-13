@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (58 named) — decompiled, names from PS2 symbols
+ * 87 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -503,7 +503,7 @@ void status_draw_small(void)
 
     }
 
-    FUN_004fa520(&DAT_00632900,*(undefined4 *)(*(int *)(DAT_00632918 + 0xb4) + iVar1 * 4));
+    hurt_pusher_2(&DAT_00632900,*(undefined4 *)(*(int *)(DAT_00632918 + 0xb4) + iVar1 * 4));
 
   }
 
@@ -630,7 +630,7 @@ LAB_00500958:
 
     do {
 
-      FUN_004fa520(param_1,*puVar14);
+      hurt_pusher_2(param_1,*puVar14);
 
       puVar14 = puVar14 + 1;
 
@@ -662,7 +662,7 @@ LAB_005009d6:
 
   for (iVar11 = *(int *)(*(int *)(param_1 + 0x18) + 0x94); iVar11 != 0; iVar11 = iVar11 + -1) {
 
-    FUN_004fa520(param_1,*puVar14);
+    hurt_pusher_2(param_1,*puVar14);
 
     puVar14 = puVar14 + 1;
 
@@ -1108,7 +1108,7 @@ LAB_00500f01:
 
   for (iVar3 = *(int *)(DAT_00632918 + iVar1 * 0x24 + 4); iVar3 != 0; iVar3 = iVar3 + -1) {
 
-    FUN_004fa520(&DAT_00632900,*puVar2);
+    hurt_pusher_2(&DAT_00632900,*puVar2);
 
     puVar2 = puVar2 + 1;
 
@@ -4216,7 +4216,7 @@ void teammecc_set_slave_goal__FP6OBJECTi(int param_1,int param_2)
 
   local_4 = (float)(&DAT_005a8704)[param_2 * 3];
 
-  FUN_00451560(&local_18);
+  diff_rangle__Fff(&local_18);
 
   if ((((*(int *)(param_1 + 0x224) == 0) || (local_c != *(float *)(iVar2 + 0xa0))) ||
 
@@ -10113,12 +10113,12 @@ float10 FUN_0050a500(float *param_1)
 
 }
 
-/* ===== FUN_0050a520 @ 0x0050A520 ===== */
+/* ===== distance2d__FP3P3DT0 @ 0x0050A520 ===== */
 /* PS2 candidate: distance2d__FP3P3DT0 (conf 0.327) */
 
 
 
-float10 FUN_0050a520(float *param_1,float *param_2)
+float10 distance2d__FP3P3DT0(float *param_1,float *param_2)
 
 
 
@@ -10353,9 +10353,9 @@ float10 playerobj_turn(float param_1,float param_2)
 
   
 
-  FUN_00451560(&param_1);
+  diff_rangle__Fff(&param_1);
 
-  FUN_00451560(&param_2);
+  diff_rangle__Fff(&param_2);
 
   fVar1 = (float10)param_1 - (float10)param_2;
 
@@ -10833,12 +10833,12 @@ undefined4 NAM_DictionaryGetTotalNames_2(int param_1)
 
 }
 
-/* ===== FUN_0050ae90 @ 0x0050AE90 ===== */
+/* ===== TurretShoot__FP15TurretCommShootP6OBJECTT1 @ 0x0050AE90 ===== */
 /* PS2 candidate: TurretShoot__FP15TurretCommShootP6OBJECTT1 (conf 0.315) */
 
 
 
-int FUN_0050ae90(int param_1,int param_2,undefined4 param_3)
+int TurretShoot__FP15TurretCommShootP6OBJECTT1(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -11041,7 +11041,7 @@ void TurretFire__FP6OBJECTiT0P3P3D(int param_1,undefined4 param_2,int param_3,un
 
       }
 
-      iVar3 = FUN_0050ae90(&local_24,iVar2,param_3);
+      iVar3 = TurretShoot__FP15TurretCommShootP6OBJECTT1(&local_24,iVar2,param_3);
 
       if (iVar3 != 0) {
 
@@ -11684,7 +11684,7 @@ LAB_0050e1a4:
 
       pfVar1[4] = *(float *)(iVar9 + 0x180);
 
-      FUN_00401610(iVar9,pfVar1 + 2);
+      ai_moveonly_set_goal(iVar9,pfVar1 + 2);
 
       *(undefined4 *)(iVar9 + 0xe4) = 0xc;
 
@@ -12326,7 +12326,7 @@ switchD_0050ca70_caseD_15:
 
       *(undefined4 *)(iVar9 + 0x18c) = uVar15;
 
-      fVar13 = (float10)FUN_0050a520((int)fVar4 + 0xa0,iVar9 + 0xa0);
+      fVar13 = (float10)distance2d__FP3P3DT0((int)fVar4 + 0xa0,iVar9 + 0xa0);
 
       fVar7 = (float)(fVar13 / (float10)*(float *)(iVar9 + 0x10c));
 
@@ -12804,7 +12804,7 @@ switchD_0050ca70_caseD_15:
 
       }
 
-      FUN_004979b0(iVar9,param_1);
+      object_copy_posdirinfo_2(iVar9,param_1);
 
       object_copy_posdirinfo(iVar9);
 
@@ -13938,7 +13938,7 @@ LAB_0050e4da:
 
       puVar10 = *(undefined4 **)(iVar9 + 0x100);
 
-      FUN_004979b0(iVar9,param_1);
+      object_copy_posdirinfo_2(iVar9,param_1);
 
       object_copy_posdirinfo(iVar9);
 
@@ -13972,7 +13972,7 @@ LAB_0050e4da:
 
       }
 
-      FUN_004979b0(iVar9,param_1);
+      object_copy_posdirinfo_2(iVar9,param_1);
 
       object_copy_posdirinfo(iVar9);
 
@@ -13996,7 +13996,7 @@ LAB_0050e4da:
 
         }
 
-        FUN_004979b0(iVar6,param_1);
+        object_copy_posdirinfo_2(iVar6,param_1);
 
         object_change_ospec(iVar6,0x32);
 

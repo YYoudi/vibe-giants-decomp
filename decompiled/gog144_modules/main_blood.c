@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/blood
- * 4 functions (3 named) — decompiled, names from PS2 symbols
+ * 4 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/blood.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_0040b220 @ 0x0040B220 ===== */
+/* ===== blood_init @ 0x0040B220 ===== */
 /* PS2 candidate: texture_object_debug_dump (conf 0.333) */
 
 
 
-void FUN_0040b220(void)
+void blood_init(void)
 
 
 

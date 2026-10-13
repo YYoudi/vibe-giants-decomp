@@ -2599,7 +2599,7 @@ void menu_mission_launch(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -3563,7 +3563,7 @@ void mission_intro_load(void)
 
   DAT_0063306c = 0;
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -5768,7 +5768,7 @@ void FUN_004862E0(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -5812,7 +5812,7 @@ void FUN_004862E0(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -5992,7 +5992,7 @@ void FUN_00486FC0(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -6036,7 +6036,7 @@ void FUN_00486FC0(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -6137,7 +6137,7 @@ void FUN_00487B70(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -6181,7 +6181,7 @@ void FUN_00487B70(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -6830,7 +6830,7 @@ void mission_menu_load(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -6874,7 +6874,7 @@ void mission_menu_load(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -7740,7 +7740,7 @@ void FUN_00489D40(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -7784,7 +7784,7 @@ void FUN_00489D40(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -7840,7 +7840,7 @@ void FUN_00489D40(void)
 
     DAT_0059dd48 = 1;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 == 0) {
 
@@ -8043,7 +8043,7 @@ void FUN_00489F50(void)
 
   case 10:
 
-    iVar3 = FUN_004469e0();
+    iVar3 = FLK_FlickPlaying();
 
     if (iVar3 == 0) {
 
@@ -8102,7 +8102,7 @@ void FUN_0048A7D0(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -8152,7 +8152,7 @@ void FUN_0048A7D0(void)
 
   *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 != 0) {
 
@@ -9733,7 +9733,7 @@ void FUN_0048C830(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -9777,7 +9777,7 @@ void FUN_0048C830(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -10143,7 +10143,7 @@ void FUN_0048D4B0(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -10187,7 +10187,7 @@ void FUN_0048D4B0(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -10413,7 +10413,7 @@ void FUN_0048DE30(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -10457,7 +10457,7 @@ void FUN_0048DE30(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -10927,7 +10927,7 @@ void FUN_0048E430(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -10971,7 +10971,7 @@ void FUN_0048E430(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -11429,7 +11429,7 @@ void FUN_0048EA50(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -11473,7 +11473,7 @@ void FUN_0048EA50(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 
@@ -11693,7 +11693,7 @@ void FUN_0048EE60(void)
 
   
 
-  iVar1 = FUN_004469e0();
+  iVar1 = FLK_FlickPlaying();
 
   if (iVar1 == 0) {
 
@@ -11737,7 +11737,7 @@ void FUN_0048EE60(void)
 
     *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x40000000;
 
-    iVar1 = FUN_004469e0();
+    iVar1 = FLK_FlickPlaying();
 
     if (iVar1 != 0) {
 

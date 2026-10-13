@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (97 named) — decompiled, names from PS2 symbols
+ * 162 functions (98 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -6604,12 +6604,12 @@ void FUN_00529d10(uint param_1,uint param_2,uint param_3,uint param_4)
 
 }
 
-/* ===== FUN_0052a050 @ 0x0052A050 ===== */
+/* ===== showchat_mission_objective__Fi_2 @ 0x0052A050 ===== */
 /* PS2 candidate: showchat_mission_objective__Fi (conf 0.333) */
 
 
 
-void FUN_0052a050(int param_1)
+void showchat_mission_objective__Fi_2(int param_1)
 
 
 

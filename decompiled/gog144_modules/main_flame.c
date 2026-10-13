@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/flame
- * 1 functions (0 named) — decompiled, names from PS2 symbols
+ * 1 functions (1 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/flame.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00442f70 @ 0x00442F70 ===== */
+/* ===== texture_object_debug_dump_2 @ 0x00442F70 ===== */
 /* PS2 candidate: texture_object_debug_dump (conf 0.333) */
 
 
 
-void FUN_00442f70(undefined4 *param_1,float param_2)
+void texture_object_debug_dump_2(undefined4 *param_1,float param_2)
 
 
 

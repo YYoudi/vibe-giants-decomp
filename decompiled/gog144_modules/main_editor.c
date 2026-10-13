@@ -580,7 +580,7 @@ switchD_004364b2_caseD_0:
 
         project_cursor_to_ground(&local_60,0x447a0000,&local_70);
 
-        fVar24 = (float10)FUN_0050a520(&local_60,*(int *)(iVar10 + 0x100) + 4);
+        fVar24 = (float10)distance2d__FP3P3DT0(&local_60,*(int *)(iVar10 + 0x100) + 4);
 
         **(float **)(iVar10 + 0x100) = (float)fVar24;
 
@@ -960,7 +960,7 @@ LAB_004374a1:
 
             local_78 = (float)fVar24;
 
-            fVar24 = (float10)FUN_0050a520(piVar11[0xe] + 0xa0,&DAT_0059cc04);
+            fVar24 = (float10)distance2d__FP3P3DT0(piVar11[0xe] + 0xa0,&DAT_0059cc04);
 
             local_80 = (float)fVar24;
 
@@ -1196,7 +1196,7 @@ LAB_004374a1:
 
             local_74 = (float)fVar24;
 
-            fVar24 = (float10)FUN_0050a520(piVar11[0xe] + 0xa0,&DAT_0059cc10);
+            fVar24 = (float10)distance2d__FP3P3DT0(piVar11[0xe] + 0xa0,&DAT_0059cc10);
 
             local_7c = (int *)(float)(((float10)*(float *)(piVar11[0xe] + 0xc4) / (float10)local_70)
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (62 named) — decompiled, names from PS2 symbols
+ * 76 functions (64 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -5799,7 +5799,7 @@ switchD_00445a5c_caseD_5:
 
     if (DAT_00632c0c != 0) {
 
-      FUN_00426ee0();
+      dialog_level_process();
 
       if (DAT_0059ce54 == 0) {
 
@@ -5975,7 +5975,7 @@ int flick_file_load_state(char *param_1)
 
     FUN_005155c0();
 
-    FUN_00446ee0();
+    texture_object_debug_dump_3();
 
     auStack_80[0] = 0;
 
@@ -6210,12 +6210,12 @@ int flick_objects_reload(void)
 
 }
 
-/* ===== FUN_004469e0 @ 0x004469E0 ===== */
+/* ===== FLK_FlickPlaying @ 0x004469E0 ===== */
 /* PS2 candidate: FLK_FlickPlaying (conf 0.33) */
 
 
 
-undefined4 FUN_004469e0(void)
+undefined4 FLK_FlickPlaying(void)
 
 
 
@@ -6778,12 +6778,12 @@ void map_chunk_destroy(int param_1,float param_2)
 
 }
 
-/* ===== FUN_00446ee0 @ 0x00446EE0 ===== */
+/* ===== texture_object_debug_dump_3 @ 0x00446EE0 ===== */
 /* PS2 candidate: texture_object_debug_dump (conf 0.333) */
 
 
 
-void FUN_00446ee0(void)
+void texture_object_debug_dump_3(void)
 
 
 
@@ -10816,7 +10816,7 @@ LAB_0044b93c:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_00442f70();
+        texture_object_debug_dump_2();
 
       }
 

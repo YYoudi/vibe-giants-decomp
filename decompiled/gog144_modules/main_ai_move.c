@@ -1,14 +1,14 @@
 /* Giants 1.449 — module main/ai_move
- * 15 functions (13 named) — decompiled, names from PS2 symbols
+ * 15 functions (15 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/ai_move.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00401050 @ 0x00401050 ===== */
+/* ===== ai_move_force_goal @ 0x00401050 ===== */
 /* PS2 candidate: ai_move_force_goal (conf 0.332) */
 
 
 
-void FUN_00401050(int param_1,undefined4 *param_2)
+void ai_move_force_goal(int param_1,undefined4 *param_2)
 
 
 
@@ -519,12 +519,12 @@ void main_ai_move_004014b0(int param_1,undefined4 *param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_00401610 @ 0x00401610 ===== */
+/* ===== ai_moveonly_set_goal @ 0x00401610 ===== */
 /* PS2 candidate: ai_moveonly_set_goal (conf 0.324) */
 
 
 
-void FUN_00401610(int param_1,undefined4 *param_2)
+void ai_moveonly_set_goal(int param_1,undefined4 *param_2)
 
 
 
@@ -1878,7 +1878,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
   param_1 = (float)(int)cVar7;
 
-  fVar13 = (float10)FUN_0050a520(pfVar1,param_2);
+  fVar13 = (float10)distance2d__FP3P3DT0(pfVar1,param_2);
 
   param_2 = (undefined4 *)(float)fVar13;
 
@@ -1958,7 +1958,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
       *(float *)(iVar5 + 0x158) = (float)param_2;
 
-      FUN_00451560((float *)(iVar5 + 0x158));
+      diff_rangle__Fff((float *)(iVar5 + 0x158));
 
       *(uint *)(iVar5 + 0xd8) = *(uint *)(iVar5 + 0xd8) | 0x1000000;
 
@@ -1980,7 +1980,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
     *(float *)(iVar5 + 0x158) = fVar2;
 
-    FUN_00451560((float *)(iVar5 + 0x158));
+    diff_rangle__Fff((float *)(iVar5 + 0x158));
 
     *(uint *)(iVar5 + 0xd8) = *(uint *)(iVar5 + 0xd8) | 0x1000000;
 
@@ -2046,7 +2046,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
     *(float *)(iVar5 + 0x158) = param_1;
 
-    FUN_00451560((float *)(iVar5 + 0x158));
+    diff_rangle__Fff((float *)(iVar5 + 0x158));
 
     *(uint *)(iVar5 + 0xd8) = *(uint *)(iVar5 + 0xd8) | 0x1000000;
 

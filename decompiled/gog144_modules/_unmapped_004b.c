@@ -8912,11 +8912,11 @@ void reaper_set_pitch__FP6OBJECT(int param_1)
 
   fVar2 = (float10)FUN_00518b70(param_1,0,0x461c4000,local_4,param_1 + 0xcc);
 
-  FUN_004515b0((float)(fVar2 * (float10)100.0));
+  chase_angle((float)(fVar2 * (float10)100.0));
 
   fVar2 = (float10)FUN_00518b70(param_1,0,0x461c4000,local_8,param_1 + 0xd0);
 
-  FUN_004515b0((float)(fVar2 * (float10)100.0));
+  chase_angle((float)(fVar2 * (float10)100.0));
 
   return;
 

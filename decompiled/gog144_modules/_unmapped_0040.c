@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (75 named) — decompiled, names from PS2 symbols
+ * 105 functions (76 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -370,7 +370,7 @@ LAB_00401cd9:
 
             puVar2[5] = 0x20;
 
-            FUN_00401610(param_2,pfVar1);
+            ai_moveonly_set_goal(param_2,pfVar1);
 
             return;
 
@@ -504,7 +504,7 @@ LAB_00401f0b:
 
   puVar2[4] = param_4;
 
-  FUN_00401610(param_2,param_3);
+  ai_moveonly_set_goal(param_2,param_3);
 
   return;
 
@@ -8625,12 +8625,12 @@ void particle_lifespan_render(void)
 
 }
 
-/* ===== FUN_0040bb40 @ 0x0040BB40 ===== */
+/* ===== wound_from_object_world @ 0x0040BB40 ===== */
 /* PS2 candidate: wound_from_object_world (conf 0.318) */
 
 
 
-void FUN_0040bb40(undefined4 param_1,int param_2)
+void wound_from_object_world(undefined4 param_1,int param_2)
 
 
 
@@ -10374,7 +10374,7 @@ void ref_anode_user(void)
 
       }
 
-      fVar2 = (float10)FUN_0050a520(iVar1 + 0xa0,&DAT_005550d4);
+      fVar2 = (float10)distance2d__FP3P3DT0(iVar1 + 0xa0,&DAT_005550d4);
 
       local_20 = (float)fVar2;
 
@@ -11241,7 +11241,7 @@ void charger_set_charge_location__FP6OBJECTi(int param_1)
 
   local_4 = fVar2 + fVar2 + *(float *)(param_1 + 0xa8);
 
-  FUN_00401050(param_1,&local_c);
+  ai_move_force_goal(param_1,&local_c);
 
   return;
 

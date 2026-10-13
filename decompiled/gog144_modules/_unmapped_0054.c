@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (262 named) — decompiled, names from PS2 symbols
+ * 351 functions (263 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -28158,7 +28158,7 @@ undefined4 crt_realloc_strcpy(char *param_1,int param_2)
 
   }
 
-  pcVar1 = (char *)FUN_0054ff84(param_1,0x3d);
+  pcVar1 = (char *)crt_strchr(param_1,0x3d);
 
   if (pcVar1 == (char *)0x0) {
 
@@ -28857,12 +28857,12 @@ void FUN_0054FF2E(void)
 
 }
 
-/* ===== FUN_0054ff84 @ 0x0054FF84 ===== */
+/* ===== crt_strchr @ 0x0054FF84 ===== */
 /* PS2 candidate: kbos_move (conf 0.324) */
 
 
 
-byte * FUN_0054ff84(byte *param_1,uint param_2)
+byte * crt_strchr(byte *param_1,uint param_2)
 
 
 

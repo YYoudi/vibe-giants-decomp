@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (98 named) — decompiled, names from PS2 symbols
+ * 142 functions (100 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -7782,12 +7782,12 @@ void FUN_00497570(int param_1)
 
 }
 
-/* ===== FUN_004979b0 @ 0x004979B0 ===== */
+/* ===== object_copy_posdirinfo_2 @ 0x004979B0 ===== */
 /* PS2 candidate: object_copy_posdirinfo (conf 0.324) */
 
 
 
-void FUN_004979b0(int param_1,int param_2)
+void object_copy_posdirinfo_2(int param_1,int param_2)
 
 
 
@@ -13229,8 +13229,8 @@ undefined4 FUN_0049dbd0(int param_1)
 
 }
 
-/* ===== FUN_0049dd90 @ 0x0049DD90 ===== */
-void FUN_0049dd90(int param_1)
+/* ===== get_floor_z_point_plat_2 @ 0x0049DD90 ===== */
+void get_floor_z_point_plat_2(int param_1)
 
 
 
@@ -13361,7 +13361,7 @@ void FUN_0049de80(int param_1,int param_2)
 
     local_4 = *(float *)(DAT_00632ed8 + 0xd00) * local_10 + *(float *)(iVar3 + 0x48);
 
-    FUN_00401050(param_1,&local_c);
+    ai_move_force_goal(param_1,&local_c);
 
     return;
 
@@ -13369,13 +13369,13 @@ void FUN_0049de80(int param_1,int param_2)
 
   if (param_2 != 0) {
 
-    FUN_00401050(param_1,*(int *)(iVar3 + 0x3c) + 0xa0);
+    ai_move_force_goal(param_1,*(int *)(iVar3 + 0x3c) + 0xa0);
 
     return;
 
   }
 
-  FUN_00401050(param_1,*(int *)(iVar3 + 0x3c) + 0xa0);
+  ai_move_force_goal(param_1,*(int *)(iVar3 + 0x3c) + 0xa0);
 
   return;
 

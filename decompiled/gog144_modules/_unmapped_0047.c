@@ -1156,7 +1156,7 @@ undefined4 hud_audio_dlog_screen(void)
 
   if (DAT_006330dc == 0) {
 
-    iVar2 = FUN_004469e0();
+    iVar2 = FLK_FlickPlaying();
 
     if (iVar2 != 0) {
 
@@ -1188,7 +1188,7 @@ undefined4 hud_audio_dlog_screen(void)
 
       if (iVar2 != 0) {
 
-        iVar2 = FUN_004469e0();
+        iVar2 = FLK_FlickPlaying();
 
         if (iVar2 != 0) {
 
@@ -1196,17 +1196,17 @@ undefined4 hud_audio_dlog_screen(void)
 
         }
 
-        FUN_00426ee0();
+        dialog_level_process();
 
         return 1;
 
       }
 
-      iVar2 = FUN_004469e0();
+      iVar2 = FLK_FlickPlaying();
 
       if (iVar2 == 0) {
 
-        FUN_00426ee0();
+        dialog_level_process();
 
       }
 
@@ -1262,7 +1262,7 @@ undefined4 hud_audio_dlog_screen(void)
 
 LAB_00471872:
 
-  FUN_00426ee0();
+  dialog_level_process();
 
   if (DAT_006330e0 == 0) {
 
@@ -1321,7 +1321,7 @@ void game_loop_run(int param_1)
 
   if ((DAT_00633044 != 0) && ((param_1 == 0 || (DAT_00632e40 == 0)))) {
 
-    if ((DAT_00632b98 != 0) && (iVar3 = FUN_004469e0(), iVar3 == 0)) {
+    if ((DAT_00632b98 != 0) && (iVar3 = FLK_FlickPlaying(), iVar3 == 0)) {
 
       DAT_00632b8c = 1;
 
@@ -1329,7 +1329,7 @@ void game_loop_run(int param_1)
 
     }
 
-    if ((DAT_00633248 != 0) && (iVar3 = FUN_004469e0(), iVar3 == 0)) {
+    if ((DAT_00633248 != 0) && (iVar3 = FLK_FlickPlaying(), iVar3 == 0)) {
 
       fps_log_write();
 

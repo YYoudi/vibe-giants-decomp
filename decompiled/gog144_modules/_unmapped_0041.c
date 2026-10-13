@@ -1733,7 +1733,7 @@ void collide_objects(int param_1)
 
                   pfVar8 = (float *)(param_1 + 0xa0);
 
-                  fVar11 = (float10)FUN_0050a520(pfVar8,iVar5 + 0xa0);
+                  fVar11 = (float10)distance2d__FP3P3DT0(pfVar8,iVar5 + 0xa0);
 
                   fVar2 = (float)fVar11;
 
@@ -1815,7 +1815,7 @@ void collide_objects(int param_1)
 
                         sine_cos_lookup(fVar2 + local_b0,&local_54,&local_a0);
 
-                        fVar11 = (float10)FUN_0050a520(pfVar9,pfVar8);
+                        fVar11 = (float10)distance2d__FP3P3DT0(pfVar9,pfVar8);
 
                         local_b8 = 1;
 
@@ -4355,7 +4355,7 @@ LAB_00415d68:
 
           }
 
-          fVar12 = (float10)FUN_0050a520(pfVar8,iVar1 + 0xa0);
+          fVar12 = (float10)distance2d__FP3P3DT0(pfVar8,iVar1 + 0xa0);
 
           if ((*(float *)(iVar1 + 0x154) + pfVar8[4]) - (float)fVar12 < 0.0) goto LAB_00415d68;
 
@@ -4371,7 +4371,7 @@ LAB_00415d68:
 
           local_90 = pfVar8[1] - (*(float *)(param_1 + 0xa4) - *(float *)(param_1 + 0xb0));
 
-          fVar13 = (float10)FUN_0050a520(&local_94,iVar1 + 0xa0);
+          fVar13 = (float10)distance2d__FP3P3DT0(&local_94,iVar1 + 0xa0);
 
         } while (fVar13 < (float10)(float)fVar12);
 
@@ -11822,7 +11822,7 @@ void hud_status_main(void)
 
   }
 
-  if ((0.0 < _DAT_00633024) && (iVar5 = FUN_004469e0(), iVar5 == 0)) {
+  if ((0.0 < _DAT_00633024) && (iVar5 = FLK_FlickPlaying(), iVar5 == 0)) {
 
     fVar11 = (float10)FUN_00518b70(0,0);
 
@@ -11850,7 +11850,7 @@ void hud_status_main(void)
 
 LAB_0041f398:
 
-    iVar5 = FUN_004469e0();
+    iVar5 = FLK_FlickPlaying();
 
     if ((iVar5 == 0) &&
 
