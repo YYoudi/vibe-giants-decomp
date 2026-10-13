@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (99 named) — decompiled, names from PS2 symbols
+ * 131 functions (102 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -601,8 +601,8 @@ void heap_siftup__FPP5ANODEi(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004a1330 @ 0x004A1330 ===== */
-void FUN_004a1330(int param_1)
+/* ===== path_node_push @ 0x004A1330 ===== */
+void path_node_push(int param_1)
 
 
 
@@ -1127,8 +1127,8 @@ void PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D
 
 }
 
-/* ===== FUN_004a1bd0 @ 0x004A1BD0 ===== */
-void FUN_004a1bd0(int param_1)
+/* ===== obj_speed_sq_calc @ 0x004A1BD0 ===== */
+void obj_speed_sq_calc(int param_1)
 
 
 
@@ -7164,8 +7164,8 @@ char FUN_004a7cb0(void)
 
 }
 
-/* ===== FUN_004a7d70 @ 0x004A7D70 ===== */
-char FUN_004a7d70(float param_1)
+/* ===== math_clamp_sign @ 0x004A7D70 ===== */
+char math_clamp_sign(float param_1)
 
 
 

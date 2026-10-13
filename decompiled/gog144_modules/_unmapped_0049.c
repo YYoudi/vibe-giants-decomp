@@ -5035,7 +5035,7 @@ void mission_unload_mission_objects__Fv(void)
 
     if (puVar1 == (undefined4 *)0x0) {
 
-      FUN_0040be30();
+      wound_list_cleanup();
 
       FUN_0040b300();
 

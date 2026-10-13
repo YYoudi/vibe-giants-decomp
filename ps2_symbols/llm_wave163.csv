@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a7d70,FUN_004a7d70,,math_clamp_sign,0.9,llm-w163,clamp+-1+ftol sign caller ai_goal_process
+004a1bd0,FUN_004a1bd0,,obj_speed_sq_calc,0.9,llm-w163,velocity sq magnitude caller reaper_walkrun_go
+0040be30,FUN_0040be30,,wound_list_cleanup,0.9,llm-w163,walks 00632db0 wound list caller mission_unload
+004a1330,FUN_004a1330,,path_node_push,0.9,llm-w163,array push 005a0ce4 caller main_path
+0054f724,FUN_0054f724,,crt_wctomb_loop,0.9,llm-w163,wide->multibyte loop CRT
+0054ddcf,FUN_0054ddcf,,crt_free_impl,0.9,llm-w163,free primitive caller MemFree

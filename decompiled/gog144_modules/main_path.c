@@ -600,7 +600,7 @@ LAB_004a0393:
 
           else {
 
-            FUN_004a1330(puVar13);
+            path_node_push(puVar13);
 
           }
 
@@ -704,7 +704,7 @@ LAB_004a069f:
 
 LAB_004a0693:
 
-            FUN_004a1330(puVar13);
+            path_node_push(puVar13);
 
             iVar7 = DAT_005a0cf0;
 

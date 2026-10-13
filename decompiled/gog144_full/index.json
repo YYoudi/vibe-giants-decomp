@@ -102,7 +102,7 @@
  "0x00402270": {
   "name": "ai_goal_process",
   "named": true,
-  "len": 9158
+  "len": 9164
  },
  "0x004029A0": {
   "name": "main_ai_move_004029a0",
@@ -480,9 +480,9 @@
   "len": 722
  },
  "0x0040BE30": {
-  "name": "FUN_0040be30",
-  "named": false,
-  "len": 719
+  "name": "wound_list_cleanup",
+  "named": true,
+  "len": 725
  },
  "0x0040C2D0": {
   "name": "buoy_set_lights",
@@ -4772,7 +4772,7 @@
  "0x00494400": {
   "name": "mission_unload_mission_objects__Fv",
   "named": true,
-  "len": 1316
+  "len": 1322
  },
  "0x004944D0": {
   "name": "mission_trigger_name",
@@ -5422,7 +5422,7 @@
  "0x0049FF30": {
   "name": "main_path_0049ff30",
   "named": true,
-  "len": 15639
+  "len": 15643
  },
  "0x004A0A00": {
   "name": "main/path_004a0a00",
@@ -5470,9 +5470,9 @@
   "len": 480
  },
  "0x004A1330": {
-  "name": "FUN_004a1330",
-  "named": false,
-  "len": 698
+  "name": "path_node_push",
+  "named": true,
+  "len": 700
  },
  "0x004A13A0": {
   "name": "endDisplay__Fv",
@@ -5530,9 +5530,9 @@
   "len": 3126
  },
  "0x004A1BD0": {
-  "name": "FUN_004a1bd0",
-  "named": false,
-  "len": 602
+  "name": "obj_speed_sq_calc",
+  "named": true,
+  "len": 607
  },
  "0x004A1C50": {
   "name": "obj_vel_reset",
@@ -5855,9 +5855,9 @@
   "len": 270
  },
  "0x004A7D70": {
-  "name": "FUN_004a7d70",
-  "named": false,
-  "len": 367
+  "name": "math_clamp_sign",
+  "named": true,
+  "len": 370
  },
  "0x004A7DF0": {
   "name": "FUN_004a7df0",
@@ -6522,7 +6522,7 @@
  "0x004BCE60": {
   "name": "reaper_walkrun_go__FP6OBJECT",
   "named": true,
-  "len": 12742
+  "len": 12747
  },
  "0x004BD7C0": {
   "name": "reaper_change_bow__FP6OBJECT",
@@ -12282,7 +12282,7 @@
  "0x0054A887": {
   "name": "MemFree",
   "named": true,
-  "len": 179
+  "len": 180
  },
  "0x0054A89E": {
   "name": "crt_scanf_skipws",
@@ -12680,9 +12680,9 @@
   "len": 431
  },
  "0x0054DDCF": {
-  "name": "FUN_0054ddcf",
-  "named": false,
-  "len": 871
+  "name": "crt_free_impl",
+  "named": true,
+  "len": 872
  },
  "0x0054DE3D": {
   "name": "crt_strtod_core",
@@ -12817,7 +12817,7 @@
  "0x0054F607": {
   "name": "FUN_0054f607",
   "named": false,
-  "len": 758
+  "len": 760
  },
  "0x0054F684": {
   "name": "crt_errno_user2",
@@ -12830,9 +12830,9 @@
   "len": 422
  },
  "0x0054F724": {
-  "name": "FUN_0054f724",
-  "named": false,
-  "len": 796
+  "name": "crt_wctomb_loop",
+  "named": true,
+  "len": 799
  },
  "0x0054F792": {
   "name": "crt_comparestring",
@@ -12842,7 +12842,7 @@
  "0x0054FA0F": {
   "name": "crt_realloc_strcpy",
   "named": true,
-  "len": 2391
+  "len": 2394
  },
  "0x0054FB96": {
   "name": "FUN_0054fb96",

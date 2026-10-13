@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (80 named) — decompiled, names from PS2 symbols
+ * 105 functions (81 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -8914,8 +8914,8 @@ void process_wound(void)
 
 }
 
-/* ===== FUN_0040be30 @ 0x0040BE30 ===== */
-void FUN_0040be30(void)
+/* ===== wound_list_cleanup @ 0x0040BE30 ===== */
+void wound_list_cleanup(void)
 
 
 

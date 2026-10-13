@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (274 named) — decompiled, names from PS2 symbols
+ * 351 functions (276 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -17276,7 +17276,7 @@ void MemFree(int param_1,undefined4 param_2)
 
   if (param_1 != -1) {
 
-    FUN_0054ddcf(param_1,param_2);
+    crt_free_impl(param_1,param_2);
 
   }
 
@@ -24117,8 +24117,8 @@ longlong __allshl(void)
 
 }
 
-/* ===== FUN_0054ddcf @ 0x0054DDCF ===== */
-uint FUN_0054ddcf(uint param_1,int *param_2)
+/* ===== crt_free_impl @ 0x0054DDCF ===== */
+uint crt_free_impl(uint param_1,int *param_2)
 
 
 
@@ -27661,9 +27661,9 @@ int FUN_0054f607(uchar *param_1)
 
       ((DAT_00630b7c != (int *)0x0 ||
 
-       (((DAT_00630b84 != 0 && (iVar1 = FUN_0054f724(), iVar1 == 0)) && (DAT_00630b7c != (int *)0x0)
+       (((DAT_00630b84 != 0 && (iVar1 = crt_wctomb_loop(), iVar1 == 0)) &&
 
-        ))))) && (piVar3 = DAT_00630b7c, param_1 != (uchar *)0x0)) {
+        (DAT_00630b7c != (int *)0x0)))))) && (piVar3 = DAT_00630b7c, param_1 != (uchar *)0x0)) {
 
     _MaxCount = _strlen((char *)param_1);
 
@@ -27771,8 +27771,8 @@ int __cdecl crt_comparestring_user(uchar *_Str1,uchar *_Str2,size_t _MaxCount)
 
 }
 
-/* ===== FUN_0054f724 @ 0x0054F724 ===== */
-undefined4 FUN_0054f724(void)
+/* ===== crt_wctomb_loop @ 0x0054F724 ===== */
+undefined4 crt_wctomb_loop(void)
 
 
 
@@ -28220,7 +28220,7 @@ undefined4 crt_realloc_strcpy(char *param_1,int param_2)
 
     else {
 
-      iVar2 = FUN_0054f724();
+      iVar2 = crt_wctomb_loop();
 
       if (iVar2 != 0) {
 

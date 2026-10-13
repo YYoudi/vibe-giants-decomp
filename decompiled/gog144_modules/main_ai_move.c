@@ -1037,7 +1037,7 @@ LAB_00402316:
 
         param_1[0x36] = param_1[0x36] | 0x1000000;
 
-        uVar3 = FUN_004a7d70((float)(fVar10 * (float10)0.05));
+        uVar3 = math_clamp_sign((float)(fVar10 * (float10)0.05));
 
         *(undefined1 *)(param_1 + 0x82) = uVar3;
 
@@ -1075,7 +1075,7 @@ LAB_00402316:
 
         param_1[0x36] = param_1[0x36] | 0x1000000;
 
-        uVar3 = FUN_004a7d70((float)(fVar10 * (float10)0.05));
+        uVar3 = math_clamp_sign((float)(fVar10 * (float10)0.05));
 
         *(undefined1 *)(param_1 + 0x82) = uVar3;
 

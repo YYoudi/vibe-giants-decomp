@@ -9130,7 +9130,7 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
     obj_vel_reset(param_1);
 
-    FUN_004a1bd0(param_1);
+    obj_speed_sq_calc(param_1);
 
     PhysicsExApplyLocation(param_1);
 
