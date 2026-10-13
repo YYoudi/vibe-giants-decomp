@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00434d40,FUN_00434D40,,dlog_level_free,0.9,llm-read3,
+00434d10,FUN_00434D10,,dlog_level_free_if,0.9,llm-read3,
+0042dfc0,FUN_0042DFC0,,dlog_free_global_1,0.9,llm-read3,
+0042e250,FUN_0042E250,,dlog_free_global_2,0.9,llm-read3,
+0042e3a0,FUN_0042E3A0,,dlog_free_global_3,0.9,llm-read3,
+00436060,FUN_00436060,,dlog_cleanup_all,0.9,llm-read3,
+00434730,FUN_00434730,,dlog_entry_draw,0.9,llm-read3,
+004350c0,FUN_004350C0,,dlog_entry_update,0.9,llm-read3,

@@ -176,19 +176,19 @@ void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
 
   }
 
-  main_005435a5((double)(fVar2 * 0.2 + 0.5));
+  collgrid_005435a5((double)(fVar2 * 0.2 + 0.5));
 
   iVar8 = __ftol();
 
-  main_005435a5((double)(local_68 * 0.2 + 0.5));
+  collgrid_005435a5((double)(local_68 * 0.2 + 0.5));
 
   iVar9 = __ftol();
 
-  main_005435a5((double)(local_6c * 0.2 + 0.5));
+  collgrid_005435a5((double)(local_6c * 0.2 + 0.5));
 
   iVar10 = __ftol();
 
-  main_005435a5((double)(local_64 * 0.2 + 0.5));
+  collgrid_005435a5((double)(local_64 * 0.2 + 0.5));
 
   uVar7 = __ftol();
 
@@ -306,11 +306,11 @@ void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
 
     if (local_6c <= local_68) {
 
-      main_005435a5((double)(local_6c * 0.2 + 0.5));
+      collgrid_005435a5((double)(local_6c * 0.2 + 0.5));
 
       iVar11 = __ftol();
 
-      main_005435a5((double)(local_68 * 0.2 + 0.5));
+      collgrid_005435a5((double)(local_68 * 0.2 + 0.5));
 
       iVar12 = __ftol();
 
@@ -318,11 +318,11 @@ void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
 
     else {
 
-      main_005435a5((double)(local_68 * 0.2 + 0.5));
+      collgrid_005435a5((double)(local_68 * 0.2 + 0.5));
 
       iVar11 = __ftol();
 
-      main_005435a5((double)(local_6c * 0.2 + 0.5));
+      collgrid_005435a5((double)(local_6c * 0.2 + 0.5));
 
       iVar12 = __ftol();
 
@@ -419,19 +419,19 @@ uint FUN_00412180(int param_1,int param_2,int param_3)
 
       fVar4 = *(float *)(param_1 + 0x154);
 
-      main_005435a5((double)((fVar3 - fVar4) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar3 - fVar4) * 0.2 + 0.5));
 
       iVar5 = __ftol();
 
-      main_005435a5((double)((fVar3 + fVar4) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar3 + fVar4) * 0.2 + 0.5));
 
       iVar6 = __ftol();
 
-      main_005435a5((double)((fVar2 - fVar4) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar2 - fVar4) * 0.2 + 0.5));
 
       iVar7 = __ftol();
 
-      main_005435a5((double)((fVar2 + fVar4) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar2 + fVar4) * 0.2 + 0.5));
 
       iVar8 = __ftol();
 
@@ -767,11 +767,11 @@ void FUN_004125f0(int param_1,float *param_2,float *param_3)
 
     iVar2 = (int)*(short *)(pcVar1 + 7);
 
-    main_005435a5((double)(*param_2 * 0.2 + 0.5));
+    collgrid_005435a5((double)(*param_2 * 0.2 + 0.5));
 
     iVar3 = __ftol();
 
-    main_005435a5((double)(param_2[1] * 0.2 + 0.5));
+    collgrid_005435a5((double)(param_2[1] * 0.2 + 0.5));
 
     iVar4 = __ftol();
 
@@ -894,19 +894,19 @@ void collgrid_collide_walk(int param_1,int param_2,int param_3,int param_4,int p
 
       fVar5 = *(float *)(param_1 + 0x154);
 
-      main_005435a5((double)((fVar4 - fVar5) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar4 - fVar5) * 0.2 + 0.5));
 
       iVar6 = __ftol();
 
-      main_005435a5((double)((fVar4 + fVar5) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar4 + fVar5) * 0.2 + 0.5));
 
       iVar7 = __ftol();
 
-      main_005435a5((double)((fVar3 - fVar5) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar3 - fVar5) * 0.2 + 0.5));
 
       iVar8 = __ftol();
 
-      main_005435a5((double)((fVar3 + fVar5) * 0.2 + 0.5));
+      collgrid_005435a5((double)((fVar3 + fVar5) * 0.2 + 0.5));
 
       iVar9 = __ftol();
 
@@ -2731,11 +2731,11 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
   local_b8 = -61.1;
 
-  main_005435a5((double)(*param_1 * 0.2 + 0.5));
+  collgrid_005435a5((double)(*param_1 * 0.2 + 0.5));
 
   local_34 = __ftol();
 
-  main_005435a5((double)(param_1[1] * 0.2 + 0.5));
+  collgrid_005435a5((double)(param_1[1] * 0.2 + 0.5));
 
   local_68 = __ftol();
 
@@ -2787,7 +2787,7 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
           local_80 = 0xffff;
 
-          iVar8 = main_00430e10(&local_70,&local_80,&local_78,&local_74,&local_88);
+          iVar8 = collgrid_00430e10(&local_70,&local_80,&local_78,&local_74,&local_88);
 
           if (iVar8 != 0) {
 
@@ -2925,7 +2925,7 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
               }
 
-              iVar10 = main_00430e10(&local_70,&local_80,&local_78,&local_74,&local_88);
+              iVar10 = collgrid_00430e10(&local_70,&local_80,&local_78,&local_74,&local_88);
 
               iVar11 = local_90;
 
@@ -3511,11 +3511,11 @@ void FUN_00414990(int param_1,float *param_2,float *param_3)
 
     {
 
-      main_005435a5((double)(*param_3 * 0.2 + 0.5));
+      collgrid_005435a5((double)(*param_3 * 0.2 + 0.5));
 
       iVar6 = __ftol();
 
-      main_005435a5((double)(param_3[1] * 0.2 + 0.5));
+      collgrid_005435a5((double)(param_3[1] * 0.2 + 0.5));
 
       iVar5 = __ftol();
 
@@ -3523,11 +3523,11 @@ void FUN_00414990(int param_1,float *param_2,float *param_3)
 
       while (iVar7 != 0) {
 
-        main_005435a5((double)(*param_2 * 0.2 + 0.5));
+        collgrid_005435a5((double)(*param_2 * 0.2 + 0.5));
 
         local_28 = __ftol();
 
-        main_005435a5((double)(param_2[1] * 0.2 + 0.5));
+        collgrid_005435a5((double)(param_2[1] * 0.2 + 0.5));
 
         iVar7 = __ftol();
 
@@ -3595,11 +3595,11 @@ LAB_00414c70:
 
         param_3[1] = (param_3[1] - param_2[1]) * fVar2 + param_2[1];
 
-        main_005435a5((double)(*param_3 * 0.2 + 0.5));
+        collgrid_005435a5((double)(*param_3 * 0.2 + 0.5));
 
         iVar6 = __ftol();
 
-        main_005435a5((double)(param_3[1] * 0.2 + 0.5));
+        collgrid_005435a5((double)(param_3[1] * 0.2 + 0.5));
 
         iVar5 = __ftol();
 
@@ -3754,7 +3754,7 @@ undefined4 obj_animate_pose_update(int param_1,int param_2)
 
       local_54 = 0xffff;
 
-      iVar9 = main_00430e10(&local_44,&local_54,&local_58,&local_40,&local_4c);
+      iVar9 = collgrid_00430e10(&local_44,&local_54,&local_58,&local_40,&local_4c);
 
       while (iVar9 != 0) {
 
@@ -4094,7 +4094,7 @@ LAB_00415478:
 
 LAB_0041566c:
 
-        iVar9 = main_00430e10(&local_44,&local_54,&local_58,&local_40,&local_4c);
+        iVar9 = collgrid_00430e10(&local_44,&local_54,&local_58,&local_40,&local_4c);
 
         iVar8 = local_50;
 
@@ -4754,7 +4754,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
             local_80 = 0xffff;
 
-            iVar6 = main_00430e10(&local_6c,&local_80,&local_70,&local_74,&local_7c);
+            iVar6 = collgrid_00430e10(&local_6c,&local_80,&local_70,&local_74,&local_7c);
 
             if (iVar6 != 0) {
 
@@ -4862,7 +4862,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
                 }
 
-                iVar8 = main_00430e10(&local_6c,&local_80,&local_70,&local_74,&local_7c);
+                iVar8 = collgrid_00430e10(&local_6c,&local_80,&local_70,&local_74,&local_7c);
 
                 iVar7 = local_40;
 

@@ -311,21 +311,21 @@ void main_collgrid_00410200(int param_1)
 
     local_260[0] = 5;
 
-    main_005435a5((double)((local_278[1] - (float)local_28c) * 0.2 + 0.5));
+    collgrid_005435a5((double)((local_278[1] - (float)local_28c) * 0.2 + 0.5));
 
     fVar5 = (float)__ftol();
 
-    main_005435a5((double)((local_278[1] + (float)local_28c) * 0.2 + 0.5));
+    collgrid_005435a5((double)((local_278[1] + (float)local_28c) * 0.2 + 0.5));
 
     iVar3 = __ftol();
 
     local_284 = iVar3;
 
-    main_005435a5((double)((local_278[0] - (float)local_28c) * 0.2 + 0.5));
+    collgrid_005435a5((double)((local_278[0] - (float)local_28c) * 0.2 + 0.5));
 
     fVar6 = (float)__ftol();
 
-    main_005435a5((double)((local_278[0] + (float)local_28c) * 0.2 + 0.5));
+    collgrid_005435a5((double)((local_278[0] + (float)local_28c) * 0.2 + 0.5));
 
     local_25b = __ftol();
 
@@ -359,11 +359,11 @@ void main_collgrid_00410200(int param_1)
 
         local_288 = fVar6;
 
-        main_005435a5((double)((local_278[0] - local_280) * 0.2 + 0.5));
+        collgrid_005435a5((double)((local_278[0] - local_280) * 0.2 + 0.5));
 
         fVar6 = (float)__ftol();
 
-        main_005435a5((double)((local_280 + local_278[0]) * 0.2 + 0.5));
+        collgrid_005435a5((double)((local_280 + local_278[0]) * 0.2 + 0.5));
 
         local_27c = __ftol();
 
@@ -520,17 +520,17 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
   local_18 = iVar9;
 
-  main_005435a5((double)*(float *)(iVar9 + 0x44));
+  collgrid_005435a5((double)*(float *)(iVar9 + 0x44));
 
   iVar4 = __ftol();
 
   local_10 = iVar4;
 
-  main_005435a5((double)*(float *)(iVar9 + 0x50));
+  collgrid_005435a5((double)*(float *)(iVar9 + 0x50));
 
   iVar5 = __ftol();
 
-  main_005435a5((double)(*(float *)(iVar9 + 0x4c) * 0.25));
+  collgrid_005435a5((double)(*(float *)(iVar9 + 0x4c) * 0.25));
 
   iVar6 = __ftol();
 
@@ -538,7 +538,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
   iVar13 = iVar5 + 1;
 
-  main_005435a5((double)(*(float *)(iVar9 + 0x58) * 0.25));
+  collgrid_005435a5((double)(*(float *)(iVar9 + 0x58) * 0.25));
 
   iVar4 = __ftol();
 
@@ -578,7 +578,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
       local_20 = 0xffff;
 
-      iVar4 = main_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
+      iVar4 = collgrid_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
 
       while (iVar4 != 0) {
 
@@ -652,7 +652,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         }
 
-        main_005435a5((double)fVar17);
+        collgrid_005435a5((double)fVar17);
 
         iVar8 = __ftol();
 
@@ -660,7 +660,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         iVar8 = iVar8 - local_10;
 
-        main_005435a5((double)local_44);
+        collgrid_005435a5((double)local_44);
 
         iVar4 = __ftol();
 
@@ -668,13 +668,13 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         local_c = iVar4;
 
-        main_005435a5((double)(local_48 * 0.25));
+        collgrid_005435a5((double)(local_48 * 0.25));
 
         iVar9 = __ftol();
 
         iVar9 = iVar9 - iVar6;
 
-        main_005435a5((double)(local_40 * 0.25));
+        collgrid_005435a5((double)(local_40 * 0.25));
 
         iVar10 = __ftol();
 
@@ -718,7 +718,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         }
 
-        iVar4 = main_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
+        iVar4 = collgrid_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
 
         iVar9 = local_18;
 
@@ -1013,25 +1013,25 @@ void main_collgrid_00411140(int param_1)
 
   if (local_20[0] != local_20[3]) {
 
-    main_005435a5((double)(local_20[0] * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_20[0] * 0.2 + 0.5));
 
     iVar9 = __ftol();
 
     local_68 = iVar9;
 
-    main_005435a5((double)(local_20[1] * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_20[1] * 0.2 + 0.5));
 
     iVar10 = __ftol();
 
     local_4c = iVar10;
 
-    main_005435a5((double)(local_20[3] * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_20[3] * 0.2 + 0.5));
 
     iVar11 = __ftol();
 
     local_58 = iVar11;
 
-    main_005435a5((double)(local_10 * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_10 * 0.2 + 0.5));
 
     local_44 = __ftol();
 
@@ -1091,7 +1091,7 @@ void main_collgrid_00411140(int param_1)
 
         local_40 = 0xffff;
 
-        iVar10 = main_00430e10(&local_48,&local_40,&local_50,&local_38,&local_54);
+        iVar10 = collgrid_00430e10(&local_48,&local_40,&local_50,&local_38,&local_54);
 
         fVar6 = local_b8;
 
@@ -1291,11 +1291,11 @@ void main_collgrid_00411140(int param_1)
 
                   }
 
-                  main_005435a5((double)local_28);
+                  collgrid_005435a5((double)local_28);
 
                   iVar10 = __ftol();
 
-                  main_005435a5((double)(local_9c * 0.2 + 0.5));
+                  collgrid_005435a5((double)(local_9c * 0.2 + 0.5));
 
                   iVar11 = __ftol();
 
@@ -1425,7 +1425,7 @@ void main_collgrid_00411140(int param_1)
 
           }
 
-          iVar10 = main_00430e10(&local_48,&local_40,&local_50,&local_38,&local_54);
+          iVar10 = collgrid_00430e10(&local_48,&local_40,&local_50,&local_38,&local_54);
 
           iVar9 = local_7c;
 
@@ -1578,21 +1578,21 @@ void main_collgrid_00411a10(int param_1)
 
   if (local_2c[0] != local_2c[3]) {
 
-    main_005435a5((double)(local_2c[0] * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_2c[0] * 0.2 + 0.5));
 
     iVar6 = __ftol();
 
-    main_005435a5((double)(local_2c[1] * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_2c[1] * 0.2 + 0.5));
 
     iVar7 = __ftol();
 
     local_68 = iVar7;
 
-    main_005435a5((double)(local_2c[3] * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_2c[3] * 0.2 + 0.5));
 
     iVar8 = __ftol();
 
-    main_005435a5((double)(local_1c * 0.2 + 0.5));
+    collgrid_005435a5((double)(local_1c * 0.2 + 0.5));
 
     local_50 = __ftol();
 
@@ -1654,7 +1654,7 @@ void main_collgrid_00411a10(int param_1)
 
         local_4c = 0xffff;
 
-        iVar8 = main_00430e10(&local_38,&local_4c,&local_3c,&local_54,&local_48);
+        iVar8 = collgrid_00430e10(&local_38,&local_4c,&local_3c,&local_54,&local_48);
 
         fVar3 = local_a4;
 
@@ -1854,11 +1854,11 @@ void main_collgrid_00411a10(int param_1)
 
                   }
 
-                  main_005435a5((double)local_74);
+                  collgrid_005435a5((double)local_74);
 
                   iVar7 = __ftol();
 
-                  main_005435a5((double)(local_88 * 0.2 + 0.5));
+                  collgrid_005435a5((double)(local_88 * 0.2 + 0.5));
 
                   iVar8 = __ftol();
 
@@ -1918,7 +1918,7 @@ void main_collgrid_00411a10(int param_1)
 
           }
 
-          iVar8 = main_00430e10(&local_38,&local_4c,&local_3c,&local_54,&local_48);
+          iVar8 = collgrid_00430e10(&local_38,&local_4c,&local_3c,&local_54,&local_48);
 
           iVar7 = local_6c;
 

@@ -2628,7 +2628,7 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
         iStack_2a4 = 0;
 
-        iVar10 = main_00430e10(afStack_240 + 3,&uStack_244,&iStack_22c,&iStack_24c,&iStack_248);
+        iVar10 = collgrid_00430e10(afStack_240 + 3,&uStack_244,&iStack_22c,&iStack_24c,&iStack_248);
 
         while (iVar10 != 0) {
 
@@ -3048,7 +3048,9 @@ LAB_004a3a06:
 
           }
 
-          iVar10 = main_00430e10(afStack_240 + 3,&uStack_244,&iStack_22c,&iStack_24c,&iStack_248);
+          iVar10 = collgrid_00430e10(afStack_240 + 3,&uStack_244,&iStack_22c,&iStack_24c,&iStack_248
+
+                                    );
 
           iVar9 = iStack_230;
 

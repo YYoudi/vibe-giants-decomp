@@ -11657,12 +11657,12 @@ float10 FUN_0051bc90(float param_1,byte *param_2,int param_3)
 
 }
 
-/* ===== main_0051bd30 @ 0x0051BD30 ===== */
+/* ===== dlog_0051bd30 @ 0x0051BD30 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 main_0051bd30(float param_1,byte *param_2)
+float10 dlog_0051bd30(float param_1,byte *param_2)
 
 
 

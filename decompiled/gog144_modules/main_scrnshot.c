@@ -198,7 +198,7 @@ void main_scrnshot_004ebae0(void)
 
     FUN_00543a24(auStack_154,0x1a,1,iVar5);
 
-    main_0054384c(iVar5);
+    editor_0054384c(iVar5);
 
     mem_free_tagged(iVar1,s_C__Giants_source_main_scrnshot_c_00561b80,0xa7);
 

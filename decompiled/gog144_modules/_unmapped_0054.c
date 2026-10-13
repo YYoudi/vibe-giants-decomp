@@ -3448,8 +3448,8 @@ switchD_005432a5_caseD_0:
 
 }
 
-/* ===== main_005435a5 @ 0x005435A5 ===== */
-float10 main_005435a5(double param_1)
+/* ===== collgrid_005435a5 @ 0x005435A5 ===== */
+float10 collgrid_005435a5(double param_1)
 
 
 
@@ -3885,8 +3885,8 @@ char * __cdecl _strchr(char *_Str,int _Val)
 
 }
 
-/* ===== main_0054384c @ 0x0054384C ===== */
-undefined4 main_0054384c(int param_1)
+/* ===== editor_0054384c @ 0x0054384C ===== */
+undefined4 editor_0054384c(int param_1)
 
 
 

@@ -2312,7 +2312,7 @@ void FUN_00404230(int param_1,int param_2)
 
         local_10 = 0xffff;
 
-        iVar5 = main_00430e10(&local_c,&local_10,&local_14,&local_18,&param_2);
+        iVar5 = collgrid_00430e10(&local_c,&local_10,&local_14,&local_18,&param_2);
 
         while (iVar5 != 0) {
 
@@ -2340,7 +2340,7 @@ void FUN_00404230(int param_1,int param_2)
 
                       (pfVar2[1] - pfVar1[1]) * (*pfVar3 - *pfVar1);
 
-          iVar5 = main_00430e10(&local_c,&local_10,&local_14,&local_18,&param_2);
+          iVar5 = collgrid_00430e10(&local_c,&local_10,&local_14,&local_18,&param_2);
 
           pfVar7 = pfVar7 + 3;
 
@@ -2803,7 +2803,7 @@ void FUN_004047c0(int param_1,int param_2,int param_3,int param_4)
 
   local_1c = iVar8;
 
-  iVar7 = main_00430e10(&local_20,&local_24,&param_3,&param_1,&param_2);
+  iVar7 = collgrid_00430e10(&local_20,&local_24,&param_3,&param_1,&param_2);
 
   while (iVar7 != 0) {
 
@@ -2847,7 +2847,7 @@ void FUN_004047c0(int param_1,int param_2,int param_3,int param_4)
 
     *(float *)(iVar4 + 8 + param_2 * 0xc) = fStack_4 + *(float *)(iVar4 + 8 + param_2 * 0xc);
 
-    iVar7 = main_00430e10(&local_20,&local_24,&param_3,&param_1,&param_2);
+    iVar7 = collgrid_00430e10(&local_20,&local_24,&param_3,&param_1,&param_2);
 
   }
 

@@ -1364,7 +1364,7 @@ void input_mapping_init(int param_1)
 
     FUN_005438c9(local_1e0,0x160,1,iVar2);
 
-    main_0054384c(iVar2);
+    editor_0054384c(iVar2);
 
   }
 
@@ -6307,7 +6307,7 @@ void keymap_save(void)
 
     FUN_00543a24(&DAT_00584378,0x160,1,iVar1);
 
-    main_0054384c(iVar1);
+    editor_0054384c(iVar1);
 
   }
 
@@ -6612,7 +6612,7 @@ void keymap_load(void)
 
       FUN_005438c9(&DAT_00584378,0x160,1,iVar2);
 
-      main_0054384c(iVar2);
+      editor_0054384c(iVar2);
 
     }
 
@@ -8305,7 +8305,7 @@ void FUN_00425eb0(undefined4 param_1)
 
       FUN_00543b5d(iVar1,&DAT_00556380,param_1);
 
-      main_0054384c(iVar1);
+      editor_0054384c(iVar1);
 
       DAT_0058c644 = DAT_0058c644 + 1;
 
@@ -9461,8 +9461,8 @@ undefined4 main_dlog_00427310(undefined4 *param_1)
 
 }
 
-/* ===== main_00427570 @ 0x00427570 ===== */
-void main_00427570(undefined4 param_1,float param_2)
+/* ===== dlog_00427570 @ 0x00427570 ===== */
+void dlog_00427570(undefined4 param_1,float param_2)
 
 
 
@@ -9496,7 +9496,7 @@ void main_00427570(undefined4 param_1,float param_2)
 
     fVar7 = (float10)FUN_0051bc00(*(undefined4 *)((int)param_2 + 0x30));
 
-    fVar6 = (float10)main_0051bd30(*(undefined4 *)((int)param_2 + 0x30),
+    fVar6 = (float10)dlog_0051bd30(*(undefined4 *)((int)param_2 + 0x30),
 
                                    *(undefined4 *)((int)param_2 + 0x28));
 
@@ -9566,7 +9566,7 @@ void main_00427570(undefined4 param_1,float param_2)
 
   local_c = (float)fVar7;
 
-  main_004276a0(*(undefined4 *)(iVar3 + 0xc),*(undefined4 *)(iVar3 + 0x10),
+  dlog_004276a0(*(undefined4 *)(iVar3 + 0xc),*(undefined4 *)(iVar3 + 0x10),
 
                 *(undefined4 *)(iVar3 + 0x14),param_2,local_c,&local_4,&local_8);
 
@@ -9582,8 +9582,8 @@ void main_00427570(undefined4 param_1,float param_2)
 
 }
 
-/* ===== main_004276a0 @ 0x004276A0 ===== */
-void main_004276a0(uint param_1,float param_2,float param_3,float param_4,float param_5,
+/* ===== dlog_004276a0 @ 0x004276A0 ===== */
+void dlog_004276a0(uint param_1,float param_2,float param_3,float param_4,float param_5,
 
                   float *param_6,float *param_7)
 
@@ -9759,11 +9759,11 @@ void main_dlog_00427ac0(int *param_1,float param_2)
 
       fVar5 = (float10)FUN_0051bc00(piVar3[0xd]);
 
-      fVar6 = (float10)main_0051bd30(piVar3[0xd],piVar3[10]);
+      fVar6 = (float10)dlog_0051bd30(piVar3[0xd],piVar3[10]);
 
       param_1 = (int *)(float)fVar6;
 
-      fVar6 = (float10)main_0051bd30(piVar3[0xd],&DAT_005562b8);
+      fVar6 = (float10)dlog_0051bd30(piVar3[0xd],&DAT_005562b8);
 
       if ((float10)(float)param_1 < fVar6 * (float10)piVar3[0xb]) {
 
@@ -9771,7 +9771,7 @@ void main_dlog_00427ac0(int *param_1,float param_2)
 
       }
 
-      main_004276a0(piVar3[3],piVar3[4],piVar3[5],param_1,(float)fVar5,&local_4,&param_2);
+      dlog_004276a0(piVar3[3],piVar3[4],piVar3[5],param_1,(float)fVar5,&local_4,&param_2);
 
       piVar3[9] = (int)(param_2 + (float)fVar5);
 
@@ -9920,7 +9920,7 @@ void main_dlog_00427f00(undefined4 param_1,float param_2)
 
   for (; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
-    fVar5 = (float10)main_0051bd30(local_c,puVar1 + 4);
+    fVar5 = (float10)dlog_0051bd30(local_c,puVar1 + 4);
 
     if ((float10)param_2 < fVar5) {
 
@@ -9984,7 +9984,7 @@ void main_dlog_00427f00(undefined4 param_1,float param_2)
 
   *(float *)(iVar3 + 0x38) = param_2;
 
-  main_004276a0(*(undefined4 *)(iVar3 + 0xc),*(undefined4 *)(iVar3 + 0x10),
+  dlog_004276a0(*(undefined4 *)(iVar3 + 0xc),*(undefined4 *)(iVar3 + 0x10),
 
                 *(undefined4 *)(iVar3 + 0x14),local_c,(float)fVar5,&local_4,&param_2);
 
@@ -11181,7 +11181,7 @@ LAB_004291b7:
 
           fVar14 = *(float *)(iVar5 + 0x38);
 
-          fVar12 = (float10)main_0051bd30(local_8,puVar3 + 4);
+          fVar12 = (float10)dlog_0051bd30(local_8,puVar3 + 4);
 
           local_4 = (float)((float10)(fVar14 * 0.5 + param_2) - fVar12 * (float10)0.5);
 
@@ -11297,7 +11297,7 @@ LAB_004291b7:
 
           fVar1 = *(float *)((int)param_2 + 0x1c);
 
-          fVar12 = (float10)main_0051bd30(local_8,piVar10 + 4);
+          fVar12 = (float10)dlog_0051bd30(local_8,piVar10 + 4);
 
           param_2 = (float)((float10)(fVar14 * 0.5 + fVar1) - fVar12 * (float10)0.5);
 
@@ -12039,11 +12039,11 @@ void FUN_00429990(undefined4 param_1,float param_2)
 
         local_c = (float)fVar15;
 
-        fVar15 = (float10)main_0051bd30(*(undefined4 *)((int)param_2 + 0x34),
+        fVar15 = (float10)dlog_0051bd30(*(undefined4 *)((int)param_2 + 0x34),
 
                                         *(undefined4 *)((int)param_2 + 0x28));
 
-        fVar14 = (float10)main_0051bd30(*(undefined4 *)((int)param_2 + 0x34),&DAT_005562b8);
+        fVar14 = (float10)dlog_0051bd30(*(undefined4 *)((int)param_2 + 0x34),&DAT_005562b8);
 
         fVar14 = fVar14 * (float10)*(int *)((int)param_2 + 0x2c);
 
@@ -12055,7 +12055,7 @@ void FUN_00429990(undefined4 param_1,float param_2)
 
         }
 
-        main_004276a0(*(undefined4 *)(iVar7 + 0xc),*(undefined4 *)(iVar7 + 0x10),
+        dlog_004276a0(*(undefined4 *)(iVar7 + 0xc),*(undefined4 *)(iVar7 + 0x10),
 
                       *(undefined4 *)(iVar7 + 0x14),param_2,local_c,&local_8,&local_10);
 
@@ -12191,13 +12191,13 @@ LAB_00429b07:
 
           local_c = (float)fVar15;
 
-          fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),
+          fVar15 = (float10)dlog_0051bd30(*(undefined4 *)(iVar7 + 0x34),
 
                                           *(undefined4 *)(iVar7 + 0x28));
 
           param_2 = (float)fVar15;
 
-          fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
+          fVar15 = (float10)dlog_0051bd30(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
 
           fVar15 = fVar15 * (float10)*(int *)(iVar7 + 0x2c);
 
@@ -12207,7 +12207,7 @@ LAB_00429b07:
 
           }
 
-          main_004276a0(*(undefined4 *)(iVar7 + 0xc),*(undefined4 *)(iVar7 + 0x10),
+          dlog_004276a0(*(undefined4 *)(iVar7 + 0xc),*(undefined4 *)(iVar7 + 0x10),
 
                         *(undefined4 *)(iVar7 + 0x14),param_2,local_c,&local_10,&local_8);
 
@@ -12327,11 +12327,11 @@ LAB_00429c6f:
 
     local_c = (float)fVar15;
 
-    fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),*(undefined4 *)(iVar7 + 0x28));
+    fVar15 = (float10)dlog_0051bd30(*(undefined4 *)(iVar7 + 0x34),*(undefined4 *)(iVar7 + 0x28));
 
     param_2 = (float)fVar15;
 
-    fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
+    fVar15 = (float10)dlog_0051bd30(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
 
     fVar15 = fVar15 * (float10)*(int *)(iVar7 + 0x2c);
 
@@ -12341,7 +12341,7 @@ LAB_00429c6f:
 
     }
 
-    main_004276a0(*(undefined4 *)(iVar7 + 0xc),*(undefined4 *)(iVar7 + 0x10),
+    dlog_004276a0(*(undefined4 *)(iVar7 + 0xc),*(undefined4 *)(iVar7 + 0x10),
 
                   *(undefined4 *)(iVar7 + 0x14),param_2,local_c,&local_10,&local_8);
 
@@ -17454,14 +17454,14 @@ void FUN_0042dfa0(void)
 
 }
 
-/* ===== _cleanup @ 0x0042DFC0 ===== */
-void _cleanup(void)
+/* ===== dlog_free_global_1 @ 0x0042DFC0 ===== */
+void dlog_free_global_1(void)
 
 
 
 {
 
-  cleanup_00434d40(DAT_006573e8);
+  dlog_level_free(DAT_006573e8);
 
   return;
 
@@ -17486,7 +17486,7 @@ void FUN_0042dfd0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   main_drawwrld_00435940(DAT_006573e8,local_44,local_5c);
 
-  main_drawwrld_00434d10(DAT_006573e8);
+  dlog_level_free_if(DAT_006573e8);
 
   return;
 
@@ -17619,14 +17619,14 @@ void FUN_0042e230(void)
 
 }
 
-/* ===== _cleanup_2 @ 0x0042E250 ===== */
-void _cleanup_2(void)
+/* ===== dlog_free_global_2 @ 0x0042E250 ===== */
+void dlog_free_global_2(void)
 
 
 
 {
 
-  cleanup_00434d40(DAT_006573ec);
+  dlog_level_free(DAT_006573ec);
 
   return;
 
@@ -17715,7 +17715,7 @@ void FUN_0042e260(int param_1,int param_2)
 
   main_drawwrld_00435940(DAT_006573ec,auStack_44,&uStack_a0);
 
-  main_drawwrld_00434d10(DAT_006573ec);
+  dlog_level_free_if(DAT_006573ec);
 
   return;
 
@@ -17751,14 +17751,14 @@ void FUN_0042e380(void)
 
 }
 
-/* ===== _cleanup_3 @ 0x0042E3A0 ===== */
-void _cleanup_3(void)
+/* ===== dlog_free_global_3 @ 0x0042E3A0 ===== */
+void dlog_free_global_3(void)
 
 
 
 {
 
-  cleanup_00434d40(DAT_006573f0);
+  dlog_level_free(DAT_006573f0);
 
   return;
 
@@ -17797,7 +17797,7 @@ void FUN_0042e3b0(int param_1,undefined4 param_2,undefined4 param_3)
 
   main_drawwrld_00435940(DAT_006573f0,local_44,local_5c);
 
-  main_drawwrld_00434d10(DAT_006573f0);
+  dlog_level_free_if(DAT_006573f0);
 
   return;
 

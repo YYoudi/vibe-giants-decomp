@@ -10810,7 +10810,7 @@ float10 editor_dump_objnames(float param_1)
 
                 }
 
-                main_0054384c(iVar5);
+                editor_0054384c(iVar5);
 
               }
 

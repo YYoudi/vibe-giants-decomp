@@ -5893,7 +5893,7 @@ int FUN_004fff10(int *param_1,int param_2,int param_3)
 
         local_8 = 0xffff;
 
-        iVar4 = main_00430e10(&local_4,&local_8,&local_c,&local_10,&param_3);
+        iVar4 = collgrid_00430e10(&local_4,&local_8,&local_c,&local_10,&param_3);
 
         while (iVar4 != 0) {
 
@@ -5915,7 +5915,7 @@ int FUN_004fff10(int *param_1,int param_2,int param_3)
 
           }
 
-          iVar4 = main_00430e10(&local_4,&local_8,&local_c,&local_10,&param_3);
+          iVar4 = collgrid_00430e10(&local_4,&local_8,&local_c,&local_10,&param_3);
 
         }
 

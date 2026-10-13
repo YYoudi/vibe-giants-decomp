@@ -101,7 +101,7 @@ void FUN_00450af0(void)
 
     }
 
-    main_0054384c(iVar2);
+    editor_0054384c(iVar2);
 
   }
 

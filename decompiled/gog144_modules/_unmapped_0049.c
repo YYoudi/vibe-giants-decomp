@@ -1889,7 +1889,7 @@ void savegame_load(void)
 
       FUN_005438c9(&DAT_00633380,0x23084,1,iVar1);
 
-      main_0054384c(iVar1);
+      editor_0054384c(iVar1);
 
     }
 
@@ -1960,7 +1960,7 @@ void savegame_verify(void)
 
     FUN_00543a24(&DAT_00633380,0x23084,1,iVar1);
 
-    main_0054384c(iVar1);
+    editor_0054384c(iVar1);
 
   }
 
@@ -12620,7 +12620,7 @@ int FUN_0049bd90(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,unde
 
       local_24 = 0xffff;
 
-      iVar2 = main_00430e10(&local_20,&local_24,&local_28,&local_2c,&local_30);
+      iVar2 = collgrid_00430e10(&local_20,&local_24,&local_28,&local_2c,&local_30);
 
       iVar3 = local_1c;
 
@@ -12654,7 +12654,7 @@ int FUN_0049bd90(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,unde
 
         }
 
-        iVar2 = main_00430e10(&local_20,&local_24,&local_28,&local_2c,&local_30);
+        iVar2 = collgrid_00430e10(&local_20,&local_24,&local_28,&local_2c,&local_30);
 
         iVar3 = local_1c;
 
@@ -13908,7 +13908,7 @@ void chat_log_close(void)
 
       FUN_00543b5d(iVar1,s_____________Log_chat_toggled_OFF_0055e81c,(double)DAT_006328e8);
 
-      main_0054384c(iVar1);
+      editor_0054384c(iVar1);
 
     }
 
@@ -13922,7 +13922,7 @@ void chat_log_close(void)
 
       FUN_00543b5d(iVar1,s_____________Log_chat_toggled_ON_a_0055e848,(double)DAT_006328e8);
 
-      main_0054384c(iVar1);
+      editor_0054384c(iVar1);
 
       return;
 
@@ -14233,7 +14233,7 @@ LAB_0049f8f1:
 
             FUN_00543b5d(iVar2,s_____________Log_chat_toggled_OFF_0055e81c,(double)DAT_006328e8);
 
-            main_0054384c(iVar2);
+            editor_0054384c(iVar2);
 
             return 1;
 
@@ -14249,7 +14249,7 @@ LAB_0049f8f1:
 
             FUN_00543b5d(iVar2,s_____________Log_chat_toggled_ON_a_0055e848,(double)DAT_006328e8);
 
-            main_0054384c(iVar2);
+            editor_0054384c(iVar2);
 
             return 1;
 

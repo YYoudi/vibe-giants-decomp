@@ -9537,7 +9537,7 @@ void FUN_005362d0(char *param_1,undefined4 param_2)
 
       FUN_00543b5d(iVar1,s__1_2f___s_00580258,(double)DAT_006328e8,param_1);
 
-      main_0054384c(iVar1);
+      editor_0054384c(iVar1);
 
     }
 
@@ -9640,7 +9640,7 @@ void comm_005363f0(char *param_1,undefined4 param_2)
 
   fVar2 = (float)fVar8;
 
-  fVar8 = (float10)main_0051bd30(fVar2,local_12c);
+  fVar8 = (float10)dlog_0051bd30(fVar2,local_12c);
 
   if ((float10)0.6 < fVar8) {
 
@@ -9736,7 +9736,7 @@ LAB_00536519:
 
 LAB_0053653b:
 
-      fVar8 = (float10)main_0051bd30(fVar2,pcVar6);
+      fVar8 = (float10)dlog_0051bd30(fVar2,pcVar6);
 
     } while ((float10)0.6 < fVar8);
 
@@ -10017,7 +10017,7 @@ void FUN_00536700(int param_1)
 
     local_1 = 0;
 
-    fVar12 = (float10)main_0051bd30(fVar13,local_100);
+    fVar12 = (float10)dlog_0051bd30(fVar13,local_100);
 
     if ((float10)0.76 < fVar12) {
 
@@ -10043,7 +10043,7 @@ void FUN_00536700(int param_1)
 
         local_100[~uVar5 - 2] = '\0';
 
-        fVar12 = (float10)main_0051bd30(fVar13,local_100);
+        fVar12 = (float10)dlog_0051bd30(fVar13,local_100);
 
       } while ((float10)0.76 < fVar12);
 
@@ -14651,7 +14651,7 @@ int FUN_0053ba50(undefined4 param_1,int param_2,int *param_3)
 
       FUN_005438c9(param_3 + 2,local_10 + -8,1,iVar2);
 
-      main_0054384c(iVar2);
+      editor_0054384c(iVar2);
 
       bVar1 = 1;
 
@@ -14872,7 +14872,7 @@ int FUN_0053bc90(undefined4 param_1,int param_2,int *param_3)
 
       FUN_005438c9(param_3 + 2,local_10 + -8,1,iVar2);
 
-      main_0054384c(iVar2);
+      editor_0054384c(iVar2);
 
       bVar1 = 1;
 

@@ -5505,12 +5505,12 @@ void mission_mpworld_load(void)
 
 }
 
-/* ===== main_00485f10 @ 0x00485F10 ===== */
+/* ===== dlog_00485f10 @ 0x00485F10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void main_00485f10(void)
+void dlog_00485f10(void)
 
 
 

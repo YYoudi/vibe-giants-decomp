@@ -8019,7 +8019,7 @@ void comm_chatlog_write(void)
 
                          iVar6,pcVar4);
 
-            main_0054384c(iVar2);
+            editor_0054384c(iVar2);
 
           }
 

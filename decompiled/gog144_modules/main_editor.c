@@ -2753,7 +2753,7 @@ LAB_004384e0:
 
       }
 
-      main_0054384c(local_a4);
+      editor_0054384c(local_a4);
 
     }
 
@@ -3413,7 +3413,7 @@ void main_editor_00440d90(void)
 
   FUN_00543b5d(iVar2,s_ObjEditEnd_005583cc);
 
-  main_0054384c(iVar2);
+  editor_0054384c(iVar2);
 
   return;
 

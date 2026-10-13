@@ -4052,7 +4052,7 @@ LAB_00444d25:
 
   FUN_00435fd0();
 
-  cleanup_00436060();
+  dlog_cleanup_all();
 
   for (puVar6 = DAT_00632d84; puVar3 = DAT_00632d68, puVar6 != (undefined4 *)0x0;
 

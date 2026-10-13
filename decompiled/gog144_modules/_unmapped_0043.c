@@ -630,10 +630,10 @@ void FUN_00430b20(int param_1,undefined4 *param_2,int *param_3,undefined4 *param
 
 }
 
-/* ===== main_00430e10 @ 0x00430E10 ===== */
+/* ===== collgrid_00430e10 @ 0x00430E10 ===== */
 undefined4
 
-main_00430e10(undefined4 *param_1,ushort *param_2,uint *param_3,uint *param_4,uint *param_5)
+collgrid_00430e10(undefined4 *param_1,ushort *param_2,uint *param_3,uint *param_4,uint *param_5)
 
 
 
@@ -2363,8 +2363,8 @@ void main_drawwrld_00434620(int param_1,float *param_2)
 
 }
 
-/* ===== main/drawwrld_00434730 @ 0x00434730 ===== */
-void main_drawwrld_00434730(uint *param_1,int param_2)
+/* ===== dlog_entry_draw @ 0x00434730 ===== */
+void dlog_entry_draw(uint *param_1,int param_2)
 
 
 
@@ -2755,8 +2755,8 @@ void main_drawwrld_00434ce0(byte *param_1)
 
 }
 
-/* ===== main/drawwrld_00434d10 @ 0x00434D10 ===== */
-void main_drawwrld_00434d10(byte *param_1)
+/* ===== dlog_level_free_if @ 0x00434D10 ===== */
+void dlog_level_free_if(byte *param_1)
 
 
 
@@ -2764,7 +2764,7 @@ void main_drawwrld_00434d10(byte *param_1)
 
   if ((*param_1 & 1) != 0) {
 
-    cleanup_00434d40(param_1);
+    dlog_level_free(param_1);
 
     (**(code **)(*(int *)(param_1 + 0x30) + 0x2c))(*(int *)(param_1 + 0x30));
 
@@ -2776,8 +2776,8 @@ void main_drawwrld_00434d10(byte *param_1)
 
 }
 
-/* ===== cleanup_00434d40 @ 0x00434D40 ===== */
-void cleanup_00434d40(uint *param_1)
+/* ===== dlog_level_free @ 0x00434D40 ===== */
+void dlog_level_free(uint *param_1)
 
 
 
@@ -2861,7 +2861,7 @@ void cleanup_00434d40(uint *param_1)
 
         else {
 
-          main_drawwrld_00434730(param_1,aiStack_18);
+          dlog_entry_draw(param_1,aiStack_18);
 
           piVar5 = piVar3;
 
@@ -2899,7 +2899,7 @@ void cleanup_00434d40(uint *param_1)
 
         piVar3[3] = ((uVar1 << 8 | uVar1) << 8 | uVar1) << 8 | uVar1;
 
-        main_drawwrld_00434730(param_1,piVar3);
+        dlog_entry_draw(param_1,piVar3);
 
         piVar3 = piVar3 + 6;
 
@@ -2919,7 +2919,7 @@ void cleanup_00434d40(uint *param_1)
 
   }
 
-  main_drawwrld_00434730(param_1,piVar5);
+  dlog_entry_draw(param_1,piVar5);
 
 LAB_00434f2e:
 
@@ -3102,8 +3102,8 @@ LAB_00435071:
 
 }
 
-/* ===== main/drawwrld_004350c0 @ 0x004350C0 ===== */
-void main_drawwrld_004350c0(byte *param_1)
+/* ===== dlog_entry_update @ 0x004350C0 ===== */
+void dlog_entry_update(byte *param_1)
 
 
 
@@ -3161,7 +3161,7 @@ void main_drawwrld_004350c0(byte *param_1)
 
       else {
 
-        cleanup_00434d40(param_1);
+        dlog_level_free(param_1);
 
         puVar4 = puVar2;
 
@@ -3370,11 +3370,11 @@ void main_drawwrld_00435940(byte *param_1,undefined4 param_2,float *param_3)
 
   }
 
-  main_drawwrld_004350c0(param_1);
+  dlog_entry_update(param_1);
 
   if ((*param_1 & 1) != 0) {
 
-    cleanup_00434d40(param_1);
+    dlog_level_free(param_1);
 
     uVar3 = (**(code **)(*(int *)(param_1 + 0x30) + 0x10))
 
@@ -3726,7 +3726,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_00656498 & 1) != 0) {
 
-    cleanup_00434d40(DAT_00656498);
+    dlog_level_free(DAT_00656498);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3742,7 +3742,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_00656494 & 1) != 0) {
 
-    cleanup_00434d40(DAT_00656494);
+    dlog_level_free(DAT_00656494);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3758,7 +3758,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_0065646c & 1) != 0) {
 
-    cleanup_00434d40(DAT_0065646c);
+    dlog_level_free(DAT_0065646c);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3774,7 +3774,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_00656544 & 1) != 0) {
 
-    cleanup_00434d40(DAT_00656544);
+    dlog_level_free(DAT_00656544);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3790,22 +3790,22 @@ void FUN_00435fd0(void)
 
 }
 
-/* ===== cleanup_00436060 @ 0x00436060 ===== */
-void cleanup_00436060(void)
+/* ===== dlog_cleanup_all @ 0x00436060 ===== */
+void dlog_cleanup_all(void)
 
 
 
 {
 
-  _cleanup();
+  dlog_free_global_1();
 
-  _cleanup_2();
+  dlog_free_global_2();
 
-  _cleanup_3();
+  dlog_free_global_3();
 
-  cleanup_00434d40(DAT_0065646c);
+  dlog_level_free(DAT_0065646c);
 
-  cleanup_00434d40(DAT_00656544);
+  dlog_level_free(DAT_00656544);
 
   return;
 
