@@ -1181,7 +1181,7 @@ LAB_004026d0:
 
             )) && (local_90 != 0.0)) {
 
-          FUN_004125f0(local_90,iVar5,&local_88);
+          collgrid_query_mid(local_90,iVar5,&local_88);
 
           puVar7 = (undefined4 *)main_ai_move_004033d0();
 

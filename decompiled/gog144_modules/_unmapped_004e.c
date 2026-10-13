@@ -11240,7 +11240,7 @@ void shutdown_blood_cleanup(void)
 
   player_display_info();
 
-  FUN_00539160();
+  hash_pair_user();
 
   main_dedicated_00426510();
 

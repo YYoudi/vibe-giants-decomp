@@ -1049,7 +1049,7 @@ void FUN_004b4ca0(float param_1)
 
       if (fVar6 < (float10)0.0 != (fVar6 == (float10)0.0)) {
 
-        FUN_00418cf0(param_1,1);
+        collgrid_query_obj(param_1,1);
 
       }
 
@@ -1253,7 +1253,7 @@ LAB_004b4fe5:
 
       if (iVar2 != 0) {
 
-        FUN_0041a0d0(iVar4,param_1,iVar3);
+        reaper_state_check_b(iVar4,param_1,iVar3);
 
       }
 
@@ -1443,7 +1443,7 @@ LAB_004b5148:
 
     }
 
-    FUN_0041a130(iVar3);
+    reaper_state_check_c(iVar3);
 
     pfVar1[1] = *pfVar1;
 
@@ -1651,7 +1651,7 @@ switchD_004b4d3a_caseD_7:
 
   if ((iVar4 != 0) && ((*pfVar1 != pfVar1[1] || (pfVar1[2] != pfVar1[3])))) {
 
-    FUN_0041a130(param_1);
+    reaper_state_check_c(param_1);
 
     pfVar1[1] = *pfVar1;
 

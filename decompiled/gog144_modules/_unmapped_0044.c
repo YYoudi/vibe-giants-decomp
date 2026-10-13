@@ -4905,7 +4905,7 @@ LAB_00445a50:
 
       if (piVar1[2] == 0) {
 
-        iVar11 = FUN_0053ba50(0,0,iVar11);
+        iVar11 = bistream_tell_user(0,0,iVar11);
 
         if (iVar11 != 0) {
 

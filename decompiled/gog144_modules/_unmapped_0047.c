@@ -1096,7 +1096,7 @@ undefined4 hud_audio_dlog_screen(void)
 
   hud_status_main();
 
-  FUN_005387c0();
+  lzss_compress_387c();
 
   if (DAT_00633044 == 0) {
 
@@ -2447,7 +2447,7 @@ void dlog_text_pop_screen(int param_1)
 
     if ((iVar1 != 0) && (DAT_00632bac != 0)) {
 
-      FUN_0041a1f0(DAT_00632a88,DAT_00632bbc);
+      reaper_state_check_d(DAT_00632a88,DAT_00632bbc);
 
       *(undefined4 *)(*(int *)(DAT_00632bbc + 0x100) + 0x570) = 0;
 

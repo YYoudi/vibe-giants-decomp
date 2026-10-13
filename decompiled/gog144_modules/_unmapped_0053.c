@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (41 named) — decompiled, names from PS2 symbols
+ * 179 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -74,7 +74,7 @@ void FUN_00530010(undefined1 param_1,undefined4 param_2,int param_3,int param_4,
 
     else {
 
-      FUN_005354c0();
+      comm_0052b430_user_big();
 
     }
 
@@ -134,8 +134,8 @@ LAB_005300f8:
 
 }
 
-/* ===== FUN_00530180 @ 0x00530180 ===== */
-void FUN_00530180(int param_1)
+/* ===== comm_send_recv_pair @ 0x00530180 ===== */
+void comm_send_recv_pair(int param_1)
 
 
 
@@ -253,8 +253,8 @@ void FUN_00530180(int param_1)
 
 }
 
-/* ===== FUN_00530270 @ 0x00530270 ===== */
-void FUN_00530270(undefined4 *param_1)
+/* ===== comm_send_big @ 0x00530270 ===== */
+void comm_send_big(undefined4 *param_1)
 
 
 
@@ -595,7 +595,7 @@ void FUN_00530430(int param_1,int param_2,int param_3,int param_4,undefined4 par
 
     if (iVar1 != 0) {
 
-      FUN_00530270(local_18);
+      comm_send_big(local_18);
 
       return;
 
@@ -1642,8 +1642,8 @@ void rpman_move(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00530b10 @ 0x00530B10 ===== */
-void FUN_00530b10(int param_1)
+/* ===== comm_send_small_a @ 0x00530B10 ===== */
+void comm_send_small_a(int param_1)
 
 
 
@@ -1689,8 +1689,8 @@ void FUN_00530b10(int param_1)
 
 }
 
-/* ===== FUN_00530b70 @ 0x00530B70 ===== */
-void FUN_00530b70(int param_1)
+/* ===== comm_send_small_b @ 0x00530B70 ===== */
+void comm_send_small_b(int param_1)
 
 
 
@@ -1817,7 +1817,7 @@ void reaper_00530bd0(int param_1,int param_2,int param_3,int param_4,undefined1 
 
     else {
 
-      FUN_005354c0();
+      comm_0052b430_user_big();
 
     }
 
@@ -1956,7 +1956,7 @@ void FUN_00530d70(int param_1,int param_2,int param_3,int param_4,undefined1 par
 
     else {
 
-      FUN_005354c0();
+      comm_0052b430_user_big();
 
     }
 
@@ -2095,7 +2095,7 @@ void FUN_00530f10(int param_1,int param_2,int param_3,int param_4,undefined1 par
 
     else {
 
-      FUN_005354c0();
+      comm_0052b430_user_big();
 
     }
 
@@ -2269,8 +2269,8 @@ void FUN_005310c0(uint param_1,char *param_2)
 
 }
 
-/* ===== FUN_005311b0 @ 0x005311B0 ===== */
-void FUN_005311b0(undefined4 param_1)
+/* ===== comm_0052ab20_user @ 0x005311B0 ===== */
+void comm_0052ab20_user(undefined4 param_1)
 
 
 
@@ -2839,7 +2839,7 @@ void FUN_00531470(void)
 
             if (0x3ff < (int)(DAT_005dfed8 + -0x5dfed5)) {
 
-              FUN_005359a0();
+              comm_0052b430_user_bigger();
 
             }
 
@@ -3201,7 +3201,7 @@ LAB_005319de:
 
       case '\x17':
 
-        FUN_005331b0(pcVar15);
+        comm_cam_mode_menu(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x15;
 
@@ -3641,7 +3641,7 @@ LAB_005319de:
 
       case '+':
 
-        FUN_00533500(pcVar15);
+        mecc_shield_spell(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x24;
 
@@ -3649,7 +3649,7 @@ LAB_005319de:
 
       case ',':
 
-        FUN_00533700(pcVar15);
+        mecc_cloak_spell(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x26;
 
@@ -3665,7 +3665,7 @@ LAB_005319de:
 
       case '.':
 
-        FUN_005330c0(pcVar15);
+        comm_scorelimit_menu_user(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x15;
 
@@ -3675,7 +3675,7 @@ LAB_005319de:
 
         comm_0052b780_user_1(uVar10);
 
-        FUN_00530180(uVar10);
+        comm_send_recv_pair(uVar10);
 
         DAT_005e0304 = DAT_005e0304 + 1;
 
@@ -4081,7 +4081,7 @@ LAB_00532513:
 
       case '?':
 
-        FUN_00530270(pcVar15);
+        comm_send_big(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x15;
 
@@ -4818,8 +4818,8 @@ void comm_entergame_msg3(undefined4 *param_1)
 
 }
 
-/* ===== FUN_005330c0 @ 0x005330C0 ===== */
-void FUN_005330c0(int param_1)
+/* ===== comm_scorelimit_menu_user @ 0x005330C0 ===== */
+void comm_scorelimit_menu_user(int param_1)
 
 
 
@@ -4934,8 +4934,8 @@ void comm_wincond_team(int param_1)
 
 }
 
-/* ===== FUN_005331b0 @ 0x005331B0 ===== */
-void FUN_005331b0(undefined4 *param_1)
+/* ===== comm_cam_mode_menu @ 0x005331B0 ===== */
+void comm_cam_mode_menu(undefined4 *param_1)
 
 
 
@@ -5029,8 +5029,8 @@ void FUN_005331b0(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00533500 @ 0x00533500 ===== */
-void FUN_00533500(int param_1)
+/* ===== mecc_shield_spell @ 0x00533500 ===== */
+void mecc_shield_spell(int param_1)
 
 
 
@@ -5236,8 +5236,8 @@ LAB_0053369f:
 
 }
 
-/* ===== FUN_00533700 @ 0x00533700 ===== */
-void FUN_00533700(int param_1)
+/* ===== mecc_cloak_spell @ 0x00533700 ===== */
+void mecc_cloak_spell(int param_1)
 
 
 
@@ -6761,7 +6761,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               FUN_00425eb0(s_Sending_scores_0057ffd4);
 
-              FUN_00530180(DAT_005e02e8);
+              comm_send_recv_pair(DAT_005e02e8);
 
               FUN_00425eb0(s_Sending_smartie_counts_0057ffb8);
 
@@ -6803,7 +6803,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               uVar8 = FUN_0052ab00(DAT_005e02e8);
 
-              FUN_00534ec0(uVar8);
+              comm_send_helper(uVar8);
 
               iVar6 = comm_00426540();
 
@@ -7659,8 +7659,8 @@ LAB_005347d1:
 
 }
 
-/* ===== FUN_00534ec0 @ 0x00534EC0 ===== */
-void FUN_00534ec0(int param_1)
+/* ===== comm_send_helper @ 0x00534EC0 ===== */
+void comm_send_helper(int param_1)
 
 
 
@@ -7737,7 +7737,7 @@ void FUN_00534f10(int param_1)
 
       if (0x3ff < (int)((int)DAT_005df2c0 + -0x5df2a6)) {
 
-        FUN_005359a0();
+        comm_0052b430_user_bigger();
 
       }
 
@@ -7912,7 +7912,7 @@ void FUN_00535010(int param_1,int param_2)
 
         else {
 
-          FUN_005354c0();
+          comm_0052b430_user_big();
 
         }
 
@@ -8008,7 +8008,7 @@ LAB_005352a9:
 
         else {
 
-          FUN_005354c0();
+          comm_0052b430_user_big();
 
         }
 
@@ -8181,7 +8181,7 @@ void FUN_00535390(void)
 
     else {
 
-      FUN_005354c0();
+      comm_0052b430_user_big();
 
     }
 
@@ -8197,12 +8197,12 @@ LAB_005354a5:
 
 }
 
-/* ===== FUN_005354c0 @ 0x005354C0 ===== */
+/* ===== comm_0052b430_user_big @ 0x005354C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_005354c0(void)
+void comm_0052b430_user_big(void)
 
 
 
@@ -8644,12 +8644,12 @@ LAB_00535948:
 
 }
 
-/* ===== FUN_005359a0 @ 0x005359A0 ===== */
+/* ===== comm_0052b430_user_bigger @ 0x005359A0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_005359a0(void)
+void comm_0052b430_user_bigger(void)
 
 
 
@@ -10459,7 +10459,7 @@ void FUN_00536cb0(void)
 
     if ((uVar4 & 2) != 0) {
 
-      FUN_00536f60(DAT_005e2738);
+      bldg_comm_status(DAT_005e2738);
 
     }
 
@@ -10491,12 +10491,12 @@ void FUN_00536cb0(void)
 
 }
 
-/* ===== FUN_00536f60 @ 0x00536F60 ===== */
+/* ===== bldg_comm_status @ 0x00536F60 ===== */
 /* PS2 candidate: projectile_logic (conf 0.391) */
 
 
 
-void FUN_00536f60(float param_1)
+void bldg_comm_status(float param_1)
 
 
 
@@ -12282,12 +12282,12 @@ LAB_00537c91:
 
 }
 
-/* ===== FUN_00538010 @ 0x00538010 ===== */
+/* ===== comm_send_538010 @ 0x00538010 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00538010(void)
+void comm_send_538010(void)
 
 
 
@@ -12517,12 +12517,12 @@ void player_display_info(void)
 
 }
 
-/* ===== FUN_005387c0 @ 0x005387C0 ===== */
+/* ===== lzss_compress_387c @ 0x005387C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_005387c0(void)
+void lzss_compress_387c(void)
 
 
 
@@ -13329,8 +13329,8 @@ bool FUN_00539140(undefined4 param_1)
 
 }
 
-/* ===== FUN_00539160 @ 0x00539160 ===== */
-void FUN_00539160(void)
+/* ===== hash_pair_user @ 0x00539160 ===== */
+void hash_pair_user(void)
 
 
 
@@ -14604,8 +14604,8 @@ void FUN_0053a900(undefined1 *param_1,undefined1 *param_2,int param_3,int param_
 
 }
 
-/* ===== FUN_0053ba50 @ 0x0053BA50 ===== */
-int FUN_0053ba50(undefined4 param_1,int param_2,int *param_3)
+/* ===== bistream_tell_user @ 0x0053BA50 ===== */
+int bistream_tell_user(undefined4 param_1,int param_2,int *param_3)
 
 
 
@@ -14750,8 +14750,8 @@ void FUN_0053bb50(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053bbb0 @ 0x0053BBB0 ===== */
-void FUN_0053bbb0(int param_1,int param_2)
+/* ===== nam_name_lookup @ 0x0053BBB0 ===== */
+void nam_name_lookup(int param_1,int param_2)
 
 
 
@@ -14825,8 +14825,8 @@ void FUN_0053bbb0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0053bc90 @ 0x0053BC90 ===== */
-int FUN_0053bc90(undefined4 param_1,int param_2,int *param_3)
+/* ===== bistream_tell_user2 @ 0x0053BC90 ===== */
+int bistream_tell_user2(undefined4 param_1,int param_2,int *param_3)
 
 
 
@@ -14894,7 +14894,7 @@ int FUN_0053bc90(undefined4 param_1,int param_2,int *param_3)
 
   local_8 = param_3;
 
-  FUN_0053bbb0(iVar2,&local_8);
+  nam_name_lookup(iVar2,&local_8);
 
   *(uint *)(iVar2 + 8) = (uint)bVar1 | (uint)param_3;
 

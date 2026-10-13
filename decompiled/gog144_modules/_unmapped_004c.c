@@ -3505,7 +3505,7 @@ void FUN_004c4fd0(int param_1)
 
         if (iVar2 != 0) {
 
-          FUN_0041a3c0(uVar1,param_1,iVar3);
+          reaper_state_check_i(uVar1,param_1,iVar3);
 
           return;
 
@@ -3637,7 +3637,7 @@ void lzo_checked_alloc(int param_1)
 
             if (iVar5 != 0) {
 
-              FUN_0041a2f0(uVar2,param_1,iVar1);
+              reaper_state_check_g(uVar2,param_1,iVar1);
 
             }
 
@@ -4528,7 +4528,7 @@ void FUN_004c5e10(int param_1)
 
             if (iVar3 != 0) {
 
-              FUN_0041a220(uVar1,param_1,1);
+              reaper_state_check_e(uVar1,param_1,1);
 
               return;
 
@@ -4556,7 +4556,7 @@ void FUN_004c5e10(int param_1)
 
         if (iVar3 != 0) {
 
-          FUN_0041a220(uVar1,param_1,0);
+          reaper_state_check_e(uVar1,param_1,0);
 
           return;
 

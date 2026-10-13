@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (29 named) — decompiled, names from PS2 symbols
+ * 105 functions (31 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -5109,7 +5109,7 @@ LAB_00408880:
 
         }
 
-        FUN_0041a090(iVar4,param_1,iVar3);
+        reaper_state_check_a(iVar4,param_1,iVar3);
 
         return;
 
@@ -5295,7 +5295,7 @@ LAB_004089de:
 
       }
 
-      FUN_0041a130(iVar3);
+      reaper_state_check_c(iVar3);
 
       pfVar1[1] = *pfVar1;
 
@@ -5453,7 +5453,7 @@ LAB_00408b1e:
 
       }
 
-      FUN_0041a130(iVar3);
+      reaper_state_check_c(iVar3);
 
       pfVar1[1] = *pfVar1;
 
@@ -5527,7 +5527,7 @@ LAB_00408b1e:
 
       }
 
-      FUN_0041a130(param_1);
+      reaper_state_check_c(param_1);
 
       pfVar1[1] = *pfVar1;
 
@@ -5621,7 +5621,7 @@ LAB_0040878e:
 
     if (fVar6 < (float10)0.0 != (fVar6 == (float10)0.0)) {
 
-      FUN_00418cf0(param_1,1);
+      collgrid_query_obj(param_1,1);
 
     }
 
@@ -9646,8 +9646,8 @@ void BinFileCreateWrite(undefined4 param_1)
 
 }
 
-/* ===== FUN_0040d280 @ 0x0040D280 ===== */
-void FUN_0040d280(void)
+/* ===== sound_player_voice_smartie @ 0x0040D280 ===== */
+void sound_player_voice_smartie(void)
 
 
 
@@ -9739,8 +9739,8 @@ void FUN_0040d280(void)
 
 }
 
-/* ===== FUN_0040d370 @ 0x0040D370 ===== */
-void FUN_0040d370(void)
+/* ===== sound_player_voice_mecc @ 0x0040D370 ===== */
+void sound_player_voice_mecc(void)
 
 
 

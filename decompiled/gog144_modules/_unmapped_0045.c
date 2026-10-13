@@ -3205,7 +3205,7 @@ void FUN_004544f0(void)
 
       if (iVar1 != 0) {
 
-        FUN_0041a260(DAT_00632bbc,DAT_00632a88);
+        reaper_state_check_f(DAT_00632bbc,DAT_00632a88);
 
       }
 
@@ -3265,7 +3265,7 @@ void FUN_004544f0(void)
 
         if (iVar1 != 0) {
 
-          FUN_0041a340(DAT_00632bbc,DAT_00632a88,DAT_0059d96c);
+          reaper_state_check_h(DAT_00632bbc,DAT_00632a88,DAT_0059d96c);
 
         }
 

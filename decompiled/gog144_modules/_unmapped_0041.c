@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (15 named) — decompiled, names from PS2 symbols
+ * 100 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -362,8 +362,8 @@ void collgrid_collide_c(undefined4 param_1,undefined4 *param_2,int *param_3)
 
 }
 
-/* ===== FUN_00412180 @ 0x00412180 ===== */
-uint FUN_00412180(int param_1,int param_2,int param_3)
+/* ===== collgrid_collide_walk_big @ 0x00412180 ===== */
+uint collgrid_collide_walk_big(int param_1,int param_2,int param_3)
 
 
 
@@ -683,8 +683,8 @@ LAB_00412348:
 
 }
 
-/* ===== FUN_00412570 @ 0x00412570 ===== */
-byte FUN_00412570(int param_1,int param_2,int param_3)
+/* ===== collgrid_query_small @ 0x00412570 ===== */
+byte collgrid_query_small(int param_1,int param_2,int param_3)
 
 
 
@@ -722,8 +722,8 @@ byte FUN_00412570(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004125f0 @ 0x004125F0 ===== */
-void FUN_004125f0(int param_1,float *param_2,float *param_3)
+/* ===== collgrid_query_mid @ 0x004125F0 ===== */
+void collgrid_query_mid(int param_1,float *param_2,float *param_3)
 
 
 
@@ -2765,7 +2765,7 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
        ((*(float *)(iVar11 + 0x280) <= param_1[1] + 0.5 &&
 
-        (local_90 = iVar11, iVar7 = FUN_00412570(iVar11,local_34,local_68), iVar7 != 0)))) {
+        (local_90 = iVar11, iVar7 = collgrid_query_small(iVar11,local_34,local_68), iVar7 != 0)))) {
 
       xform_p3d_world_mat(iVar11,local_24);
 
@@ -3519,7 +3519,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
       iVar5 = __ftol();
 
-      iVar7 = FUN_00412180(local_34,iVar6,iVar5);
+      iVar7 = collgrid_collide_walk_big(local_34,iVar6,iVar5);
 
       while (iVar7 != 0) {
 
@@ -3603,7 +3603,7 @@ LAB_00414c70:
 
         iVar5 = __ftol();
 
-        iVar7 = FUN_00412180(local_34,iVar6,iVar5);
+        iVar7 = collgrid_collide_walk_big(local_34,iVar6,iVar5);
 
       }
 
@@ -5215,8 +5215,8 @@ void dlog_pop_user(void)
 
 }
 
-/* ===== FUN_00416990 @ 0x00416990 ===== */
-void FUN_00416990(int param_1,int param_2,int param_3,int param_4)
+/* ===== reaper_lock_short @ 0x00416990 ===== */
+void reaper_lock_short(int param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -7425,8 +7425,8 @@ void FUN_00418c80(int param_1)
 
 }
 
-/* ===== FUN_00418cf0 @ 0x00418CF0 ===== */
-void FUN_00418cf0(int param_1,int param_2)
+/* ===== collgrid_query_obj @ 0x00418CF0 ===== */
+void collgrid_query_obj(int param_1,int param_2)
 
 
 
@@ -7534,7 +7534,7 @@ void FUN_00418cf0(int param_1,int param_2)
 
         {
 
-          FUN_00418cf0(iVar4,0);
+          collgrid_query_obj(iVar4,0);
 
           break;
 
@@ -7590,8 +7590,8 @@ void FUN_00418cf0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0041a090 @ 0x0041A090 ===== */
-void FUN_0041a090(undefined4 param_1,int param_2,undefined4 param_3)
+/* ===== reaper_state_check_a @ 0x0041A090 ===== */
+void reaper_state_check_a(undefined4 param_1,int param_2,undefined4 param_3)
 
 
 
@@ -7613,8 +7613,8 @@ void FUN_0041a090(undefined4 param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0041a0d0 @ 0x0041A0D0 ===== */
-void FUN_0041a0d0(undefined4 param_1,int param_2,undefined4 param_3)
+/* ===== reaper_state_check_b @ 0x0041A0D0 ===== */
+void reaper_state_check_b(undefined4 param_1,int param_2,undefined4 param_3)
 
 
 
@@ -7649,8 +7649,8 @@ void kabutoai_select_punch_anim__FP6OBJECT(undefined4 param_1)
 
 }
 
-/* ===== FUN_0041a130 @ 0x0041A130 ===== */
-void FUN_0041a130(int param_1)
+/* ===== reaper_state_check_c @ 0x0041A130 ===== */
+void reaper_state_check_c(int param_1)
 
 
 
@@ -7733,8 +7733,8 @@ void FUN_0041a1c0(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0041a1f0 @ 0x0041A1F0 ===== */
-void FUN_0041a1f0(undefined4 param_1,undefined4 param_2)
+/* ===== reaper_state_check_d @ 0x0041A1F0 ===== */
+void reaper_state_check_d(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -7752,8 +7752,8 @@ void FUN_0041a1f0(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0041a220 @ 0x0041A220 ===== */
-void FUN_0041a220(undefined4 param_1,int param_2,undefined4 param_3)
+/* ===== reaper_state_check_e @ 0x0041A220 ===== */
+void reaper_state_check_e(undefined4 param_1,int param_2,undefined4 param_3)
 
 
 
@@ -7779,8 +7779,8 @@ void FUN_0041a220(undefined4 param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0041a260 @ 0x0041A260 ===== */
-void FUN_0041a260(undefined4 param_1,int param_2)
+/* ===== reaper_state_check_f @ 0x0041A260 ===== */
+void reaper_state_check_f(undefined4 param_1,int param_2)
 
 
 
@@ -7837,8 +7837,8 @@ void base_giftshop_exit(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0041a2f0 @ 0x0041A2F0 ===== */
-void FUN_0041a2f0(undefined4 param_1,int param_2,int param_3)
+/* ===== reaper_state_check_g @ 0x0041A2F0 ===== */
+void reaper_state_check_g(undefined4 param_1,int param_2,int param_3)
 
 
 
@@ -7864,8 +7864,8 @@ void FUN_0041a2f0(undefined4 param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0041a340 @ 0x0041A340 ===== */
-void FUN_0041a340(undefined4 param_1,int param_2,int param_3)
+/* ===== reaper_state_check_h @ 0x0041A340 ===== */
+void reaper_state_check_h(undefined4 param_1,int param_2,int param_3)
 
 
 
@@ -7906,8 +7906,8 @@ void base_partyhouse_exit(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_0041a3c0 @ 0x0041A3C0 ===== */
-void FUN_0041a3c0(undefined4 param_1,int param_2,int param_3)
+/* ===== reaper_state_check_i @ 0x0041A3C0 ===== */
+void reaper_state_check_i(undefined4 param_1,int param_2,int param_3)
 
 
 
@@ -11435,7 +11435,7 @@ void FUN_0041ee70(int param_1)
 
               FUN_00416a30(param_1,iVar1);
 
-              FUN_00416990(param_1,iVar1,iVar2,0);
+              reaper_lock_short(param_1,iVar1,iVar2,0);
 
               iVar1 = iVar1 + 1;
 
@@ -11457,7 +11457,7 @@ void FUN_0041ee70(int param_1)
 
               FUN_00416a30(param_1,iVar1);
 
-              FUN_00416990(param_1,iVar1,iVar2,0);
+              reaper_lock_short(param_1,iVar1,iVar2,0);
 
               iVar1 = iVar1 + 1;
 
@@ -11493,7 +11493,7 @@ void FUN_0041ee70(int param_1)
 
             }
 
-            FUN_00416990(param_1,iVar1,iVar2,0);
+            reaper_lock_short(param_1,iVar1,iVar2,0);
 
             iVar1 = iVar1 + 1;
 
@@ -11529,7 +11529,7 @@ void FUN_0041ee70(int param_1)
 
           }
 
-          FUN_00416990(param_1,iVar1,iVar2,0);
+          reaper_lock_short(param_1,iVar1,iVar2,0);
 
           iVar1 = iVar1 + 1;
 
@@ -11565,7 +11565,7 @@ void FUN_0041ee70(int param_1)
 
         }
 
-        FUN_00416990(param_1,iVar1,iVar2,0);
+        reaper_lock_short(param_1,iVar1,iVar2,0);
 
         iVar1 = iVar1 + 1;
 

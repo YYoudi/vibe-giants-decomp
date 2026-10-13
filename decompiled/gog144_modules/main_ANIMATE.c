@@ -214,7 +214,7 @@ void FUN_00405130(undefined4 *param_1,int *param_2)
 
     DAT_005841a0 = DAT_005841a0 + *param_2;
 
-    iVar3 = FUN_0053bc90(0,0,param_2);
+    iVar3 = bistream_tell_user2(0,0,param_2);
 
     param_1[0x1b] = iVar3;
 
@@ -333,7 +333,7 @@ void main_animate_00405240(char *param_1)
 
   if (param_1 != (char *)0x0) {
 
-    fVar5 = (float)FUN_0053ba50(0,0,local_4);
+    fVar5 = (float)bistream_tell_user(0,0,local_4);
 
     uVar9 = 0xffffffff;
 
@@ -520,7 +520,7 @@ void AnimationCreate(undefined4 *param_1,int param_2,char *param_3)
 
     if (local_c != 0) {
 
-      fVar5 = (float)FUN_0053ba50(0,0,local_8);
+      fVar5 = (float)bistream_tell_user(0,0,local_8);
 
       uVar8 = 0xffffffff;
 
@@ -690,7 +690,7 @@ LAB_004056ea:
 
   if (param_3 != (char *)0x0) {
 
-    fVar5 = (float)FUN_0053ba50(0,0,param_1);
+    fVar5 = (float)bistream_tell_user(0,0,param_1);
 
     main_animate_00405700(pcVar11,fVar5);
 

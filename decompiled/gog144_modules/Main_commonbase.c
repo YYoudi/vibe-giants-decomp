@@ -86,7 +86,7 @@ LAB_0041906f:
 
   case 2:
 
-    FUN_00418cf0(param_1,1);
+    collgrid_query_obj(param_1,1);
 
     pfVar3 = *(float **)(param_1 + 0x100);
 

@@ -1466,7 +1466,7 @@ LAB_004f54ef:
 
   }
 
-  FUN_00416990(uVar4,uVar3,param_1,1);
+  reaper_lock_short(uVar4,uVar3,param_1,1);
 
 LAB_004f55b7:
 
