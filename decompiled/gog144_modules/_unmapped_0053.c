@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (39 named) — decompiled, names from PS2 symbols
+ * 179 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -2875,13 +2875,13 @@ void FUN_00531470(void)
 
             FUN_00542f27(local_480,uVar5);
 
-            FUN_0052ea80(local_480,1,0,0);
+            comm_audio_volume_user(local_480,1,0,0);
 
             FUN_0052ac80(pcVar15[1],0);
 
             FUN_0052ae90(pcVar15[1]);
 
-            FUN_0052e5e0();
+            comm_player_name_user();
 
           }
 
@@ -2903,7 +2903,7 @@ void FUN_00531470(void)
 
                   uVar5 = FUN_0052ab00(iVar4);
 
-                  FUN_0052f350(0,uVar5);
+                  comm_fakehost_menu_user(0,uVar5);
 
                   break;
 
@@ -3031,7 +3031,7 @@ LAB_005319de:
 
       case '\b':
 
-        FUN_00532e20(pcVar15);
+        anm_dump_52(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x35;
 
@@ -3693,7 +3693,7 @@ LAB_005319de:
 
       case '1':
 
-        FUN_00532e90(pcVar15);
+        comm_team_broadcast_draw(pcVar15);
 
 LAB_00532b21:
 
@@ -3995,13 +3995,13 @@ LAB_00532513:
 
         }
 
-        FUN_0052ea80(local_400,1,0,0);
+        comm_audio_volume_user(local_400,1,0,0);
 
         FUN_00525340();
 
         FUN_00531260(*(undefined4 *)(pcVar15 + 1));
 
-        FUN_0052e5e0();
+        comm_player_name_user();
 
         DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4401,7 +4401,7 @@ LAB_0053196c:
 
               if (iVar6 == *(int *)(pcVar15 + 5)) {
 
-                FUN_0052eb60(iVar4,*(undefined4 *)(pcVar15 + 9));
+                comm_team_broadcast_send(iVar4,*(undefined4 *)(pcVar15 + 9));
 
                 goto LAB_00531a53;
 
@@ -4539,8 +4539,8 @@ LAB_0053151e:
 
 }
 
-/* ===== FUN_00532e20 @ 0x00532E20 ===== */
-void FUN_00532e20(undefined4 *param_1)
+/* ===== anm_dump_52 @ 0x00532E20 ===== */
+void anm_dump_52(undefined4 *param_1)
 
 
 
@@ -4600,8 +4600,8 @@ void FUN_00532e20(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00532e90 @ 0x00532E90 ===== */
-void FUN_00532e90(int param_1)
+/* ===== comm_team_broadcast_draw @ 0x00532E90 ===== */
+void comm_team_broadcast_draw(int param_1)
 
 
 
@@ -6815,7 +6815,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                     uVar8 = FUN_0052ab00(DAT_005e02e8);
 
-                    FUN_0052f350(0,uVar8);
+                    comm_fakehost_menu_user(0,uVar8);
 
                   }
 
@@ -6825,7 +6825,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                   uVar8 = FUN_0052ab00(DAT_005e02e8,DAT_005def94);
 
-                  FUN_0052f350(uVar8);
+                  comm_fakehost_menu_user(uVar8);
 
                 }
 
@@ -6835,7 +6835,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                 uVar8 = FUN_0052ab00(DAT_005e02e8);
 
-                FUN_0052ea80(&DAT_00633260,1,0,uVar8);
+                comm_audio_volume_user(&DAT_00633260,1,0,uVar8);
 
               }
 

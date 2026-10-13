@@ -1,0 +1,13 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052eb60,FUN_0052EB60,,comm_team_broadcast_send,0.9,llm-52,
+0052e5e0,FUN_0052E5E0,,comm_player_name_user,0.9,llm-52,
+0052ea80,FUN_0052EA80,,comm_audio_volume_user,0.9,llm-52,
+0052f350,FUN_0052F350,,comm_fakehost_menu_user,0.9,llm-52,
+0052f510,FUN_0052F510,,comm_fakehost_player,0.9,llm-52,
+0052f6a0,FUN_0052F6A0,,comm_audio_vol_a,0.9,llm-52,
+0052f710,FUN_0052F710,,comm_audio_vol_b,0.9,llm-52,
+0052f750,FUN_0052F750,,comm_audio_vol_c,0.9,llm-52,
+0052f830,FUN_0052F830,,comm_audio_vol_d,0.9,llm-52,
+0052f8b0,FUN_0052F8B0,,comm_audio_vol_e,0.9,llm-52,
+00532e20,FUN_00532E20,,anm_dump_52,0.9,llm-52,
+00532e90,FUN_00532E90,,comm_team_broadcast_draw,0.9,llm-52,

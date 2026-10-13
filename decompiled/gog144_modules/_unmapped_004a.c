@@ -4480,7 +4480,7 @@ void FUN_004A54E0(void)
 
         }
 
-        FUN_0052ea80(DAT_00632fb8,uVar9,uVar10,0);
+        comm_audio_volume_user(DAT_00632fb8,uVar9,uVar10,0);
 
       }
 

@@ -11211,7 +11211,7 @@ LAB_0045bb57:
 
     }
 
-    FUN_004eea40(param_3,*(undefined1 *)(iVar2 + 0x1f5),0,6);
+    anm_binder_free(param_3,*(undefined1 *)(iVar2 + 0x1f5),0,6);
 
   }
 

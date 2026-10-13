@@ -22,15 +22,18 @@ for f in ["unified_names_1449.csv", "crt_llm_names.csv", "crt_llm_names2.csv", "
 
 funcs = {}
 claimed = set()
-for cf in ["unified_names_1449.csv", "module_names_wave.csv", "module_bands.csv", "bsim_wave.csv",
-           "system_wave2.csv", "crt_llm_names.csv", "crt_llm_names2.csv", "llm_strings_wave.csv",
-           "llm_strings_wave2.csv", "llm_wave4.csv", "callpat_wave.csv"]:
+for cf in glob.glob(os.path.join(PS2, "*.csv")):
     try:
-        for r in csv.DictReader(open(os.path.join(PS2, cf), encoding="utf-8")):
-            claimed.add(norm(r["pc_addr"]))
-    except FileNotFoundError:
+        for r in csv.DictReader(open(cf, encoding="utf-8")):
+            if "pc_addr" in r and r.get("pc_addr"):
+                claimed.add(norm(r["pc_addr"]))
+    except (FileNotFoundError, KeyError, ValueError):
         pass
 for f in glob.glob(os.path.join(EXP, "*.json")):
+    d = json.load(open(f, encoding="utf-8"))
+    if d["address"] not in claimed:
+        funcs[d["address"]] = d
+
     d = json.load(open(f, encoding="utf-8"))
     if d["address"] not in claimed:
         funcs[d["address"]] = d

@@ -922,7 +922,7 @@ LAB_004374a1:
 
                   FUN_004ee150();
 
-                  FUN_004ee1c0(iVar10);
+                  fx_spawn_checked(iVar10);
 
                   *(undefined4 *)(DAT_006330e4 + 0x4f3c) = 1;
 
@@ -988,7 +988,7 @@ LAB_004374a1:
 
                 FUN_004ee150();
 
-                FUN_004ee1c0(iVar10);
+                fx_spawn_checked(iVar10);
 
                 *(undefined4 *)(DAT_006330e4 + 0x4f3c) = 1;
 
@@ -1042,7 +1042,7 @@ LAB_004374a1:
 
               FUN_004ee150();
 
-              FUN_004ee1c0(iVar10);
+              fx_spawn_checked(iVar10);
 
               *(undefined4 *)(DAT_006330e4 + 0x4f3c) = 1;
 
@@ -1090,7 +1090,7 @@ LAB_004374a1:
 
                 FUN_004ee150();
 
-                FUN_004ee1c0(iVar10);
+                fx_spawn_checked(iVar10);
 
                 *(undefined4 *)(DAT_006330e4 + 0x4f3c) = 1;
 
@@ -1308,7 +1308,7 @@ LAB_004374a1:
 
               FUN_004ee150();
 
-              FUN_004ee1c0(iVar10);
+              fx_spawn_checked(iVar10);
 
               *(undefined4 *)(DAT_006330e4 + 0x4f3c) = 1;
 
@@ -1448,7 +1448,7 @@ LAB_00437d68:
 
               FUN_004ee150();
 
-              FUN_004ee1c0(iVar10);
+              fx_spawn_checked(iVar10);
 
               *(undefined4 *)(DAT_006330e4 + 0x4f3c) = 1;
 

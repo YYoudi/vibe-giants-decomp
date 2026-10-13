@@ -9645,7 +9645,7 @@ void FUN_00498cf0(int param_1,int param_2)
 
       if (*(int *)(iVar3 + 0x1e0) == 0x16) {
 
-        FUN_004ce8d0(iVar3);
+        object_spawn_4c(iVar3);
 
         return;
 
@@ -14101,7 +14101,7 @@ LAB_0049f8f1:
 
           if (iVar2 == 0) {
 
-            FUN_0052f510();
+            comm_fakehost_player();
 
             return 1;
 
@@ -14169,7 +14169,7 @@ LAB_0049f8f1:
 
             if (DAT_005def94 == iVar2) {
 
-              FUN_0052f830();
+              comm_audio_vol_d();
 
             }
 
@@ -14215,7 +14215,7 @@ LAB_0049f8f1:
 
             if (DAT_005def94 == iVar2) {
 
-              FUN_0052f750();
+              comm_audio_vol_c();
 
               return 1;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (60 named) — decompiled, names from PS2 symbols
+ * 162 functions (70 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -303,7 +303,7 @@ void gamespy_send_statechange(void)
 
   if ((DAT_005def80 == 5) && (DAT_00632f44 == 0)) {
 
-    FUN_0052f8b0();
+    comm_audio_vol_e();
 
     return;
 
@@ -611,7 +611,7 @@ void comm_damage_teams_menu(void)
 
   if ((DAT_005def80 == 5) && (DAT_00632f44 == 0)) {
 
-    FUN_0052f710();
+    comm_audio_vol_b();
 
     return;
 
@@ -728,13 +728,13 @@ void comm_player_name(int param_1,int param_2)
 
     if (param_1 < 0) {
 
-      FUN_0052f6a0(0);
+      comm_audio_vol_a(0);
 
       return;
 
     }
 
-    FUN_0052f6a0((&DAT_005ddf60)[param_1]);
+    comm_audio_vol_a((&DAT_005ddf60)[param_1]);
 
   }
 
@@ -892,7 +892,7 @@ void comm_player_name(int param_1,int param_2)
 
         }
 
-        FUN_0052ea80(local_200,1,0,0);
+        comm_audio_volume_user(local_200,1,0,0);
 
         sound_play(0x65a);
 
@@ -6011,7 +6011,7 @@ void comm_change_options_menu(void)
 
     } while (cVar1 != '\0');
 
-    FUN_0052ea80(local_128,1,0,0);
+    comm_audio_volume_user(local_128,1,0,0);
 
   }
 
@@ -6045,7 +6045,7 @@ void comm_change_options_menu(void)
 
     } while (cVar1 != '\0');
 
-    FUN_0052ea80(local_128,1,0,0);
+    comm_audio_volume_user(local_128,1,0,0);
 
   }
 
@@ -6079,7 +6079,7 @@ void comm_change_options_menu(void)
 
     } while (cVar1 != '\0');
 
-    FUN_0052ea80(local_128,1,0,0);
+    comm_audio_volume_user(local_128,1,0,0);
 
   }
 
@@ -6115,7 +6115,7 @@ void comm_change_options_menu(void)
 
     }
 
-    FUN_0052ea80(local_128,1,0,0);
+    comm_audio_volume_user(local_128,1,0,0);
 
   }
 
@@ -6131,7 +6131,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6141,7 +6141,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6169,7 +6169,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6199,7 +6199,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6209,7 +6209,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6221,7 +6221,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6245,7 +6245,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6255,7 +6255,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6265,7 +6265,7 @@ void comm_change_options_menu(void)
 
       FUN_00542f27(local_128,uVar2);
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -6331,7 +6331,7 @@ void comm_change_options_menu(void)
 
       }
 
-      FUN_0052ea80(local_128,1,0,0);
+      comm_audio_volume_user(local_128,1,0,0);
 
     }
 
@@ -7951,7 +7951,7 @@ void comm_chatlog_write(void)
 
           if ((DAT_005def80 == 5) && (DAT_00632f44 == 0)) {
 
-            FUN_0052f6a0(((int)piVar7 < 0x5de6dc) - 1 & uVar1);
+            comm_audio_vol_a(((int)piVar7 < 0x5de6dc) - 1 & uVar1);
 
           }
 
@@ -11954,8 +11954,8 @@ int FUN_0052e5b0(int param_1)
 
 }
 
-/* ===== FUN_0052e5e0 @ 0x0052E5E0 ===== */
-void FUN_0052e5e0(void)
+/* ===== comm_player_name_user @ 0x0052E5E0 ===== */
+void comm_player_name_user(void)
 
 
 
@@ -12470,8 +12470,8 @@ LAB_0052e7e9:
 
 }
 
-/* ===== FUN_0052ea80 @ 0x0052EA80 ===== */
-void FUN_0052ea80(char *param_1,undefined4 param_2,byte param_3,undefined4 param_4)
+/* ===== comm_audio_volume_user @ 0x0052EA80 ===== */
+void comm_audio_volume_user(char *param_1,undefined4 param_2,byte param_3,undefined4 param_4)
 
 
 
@@ -12605,8 +12605,8 @@ void FUN_0052ea80(char *param_1,undefined4 param_2,byte param_3,undefined4 param
 
 }
 
-/* ===== FUN_0052eb60 @ 0x0052EB60 ===== */
-void FUN_0052eb60(undefined4 param_1,undefined1 param_2)
+/* ===== comm_team_broadcast_send @ 0x0052EB60 ===== */
+void comm_team_broadcast_send(undefined4 param_1,undefined1 param_2)
 
 
 
@@ -13526,8 +13526,8 @@ void FUN_0052f300(int param_1)
 
 }
 
-/* ===== FUN_0052f350 @ 0x0052F350 ===== */
-void FUN_0052f350(int param_1,undefined4 param_2)
+/* ===== comm_fakehost_menu_user @ 0x0052F350 ===== */
+void comm_fakehost_menu_user(int param_1,undefined4 param_2)
 
 
 
@@ -13682,8 +13682,8 @@ void comm_fakehost_menu(int param_1)
 
 }
 
-/* ===== FUN_0052f510 @ 0x0052F510 ===== */
-void FUN_0052f510(undefined4 param_1)
+/* ===== comm_fakehost_player @ 0x0052F510 ===== */
+void comm_fakehost_player(undefined4 param_1)
 
 
 
@@ -13842,8 +13842,8 @@ void comm_fakehost_toggle(void)
 
 }
 
-/* ===== FUN_0052f6a0 @ 0x0052F6A0 ===== */
-void FUN_0052f6a0(undefined4 param_1)
+/* ===== comm_audio_vol_a @ 0x0052F6A0 ===== */
+void comm_audio_vol_a(undefined4 param_1)
 
 
 
@@ -13906,8 +13906,8 @@ void FUN_0052f6e0(undefined4 param_1)
 
 }
 
-/* ===== FUN_0052f710 @ 0x0052F710 ===== */
-void FUN_0052f710(void)
+/* ===== comm_audio_vol_b @ 0x0052F710 ===== */
+void comm_audio_vol_b(void)
 
 
 
@@ -13941,8 +13941,8 @@ void FUN_0052f710(void)
 
 }
 
-/* ===== FUN_0052f750 @ 0x0052F750 ===== */
-void FUN_0052f750(void)
+/* ===== comm_audio_vol_c @ 0x0052F750 ===== */
+void comm_audio_vol_c(void)
 
 
 
@@ -14051,8 +14051,8 @@ void comm_player_marker_menu(void)
 
 }
 
-/* ===== FUN_0052f830 @ 0x0052F830 ===== */
-void FUN_0052f830(void)
+/* ===== comm_audio_vol_d @ 0x0052F830 ===== */
+void comm_audio_vol_d(void)
 
 
 
@@ -14121,8 +14121,8 @@ void FUN_0052f870(void)
 
 }
 
-/* ===== FUN_0052f8b0 @ 0x0052F8B0 ===== */
-void FUN_0052f8b0(void)
+/* ===== comm_audio_vol_e @ 0x0052F8B0 ===== */
+void comm_audio_vol_e(void)
 
 
 

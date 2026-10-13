@@ -1,0 +1,13 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004c5130,FUN_004C5130,,lzo_checked_alloc,0.9,llm-4c,
+004c52d0,FUN_004C52D0,,lzo_spawn_checked,0.9,llm-4c,
+004caf60,FUN_004CAF60,,sound_obj_seq_big,0.9,llm-4c,
+004cb220,FUN_004CB220,,sound_obj_seq_bigger,0.9,llm-4c,
+004cb630,FUN_004CB630,,sound_obj_seq_small,0.9,llm-4c,
+004ce8d0,FUN_004CE8D0,,object_spawn_4c,0.9,llm-4c,
+004e2450,FUN_004E2450,,ai_move_pair_caller,0.9,llm-4c,
+004eddf0,FUN_004EDDF0,,flk_replay_reset,0.9,llm-4c,
+004edf90,FUN_004EDF90,,object_spawn_copy,0.9,llm-4c,
+004ee1c0,FUN_004EE1C0,,fx_spawn_checked,0.9,llm-4c,
+004ee630,FUN_004EE630,,kabutoai_punch_user,0.9,llm-4c,
+004eea40,FUN_004EEA40,,anm_binder_free,0.9,llm-4c,

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (19 named) — decompiled, names from PS2 symbols
+ * 64 functions (25 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -3578,8 +3578,8 @@ void FUN_004c50b0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004c5130 @ 0x004C5130 ===== */
-void FUN_004c5130(int param_1)
+/* ===== lzo_checked_alloc @ 0x004C5130 ===== */
+void lzo_checked_alloc(int param_1)
 
 
 
@@ -3695,12 +3695,12 @@ LAB_004c52ae:
 
 }
 
-/* ===== FUN_004c52d0 @ 0x004C52D0 ===== */
+/* ===== lzo_spawn_checked @ 0x004C52D0 ===== */
 /* PS2 candidate: base_startup__Fi (conf 0.335) */
 
 
 
-void FUN_004c52d0(int param_1)
+void lzo_spawn_checked(int param_1)
 
 
 
@@ -5934,8 +5934,8 @@ float10 physics_reset_c(int param_1)
 
 }
 
-/* ===== FUN_004caf60 @ 0x004CAF60 ===== */
-void FUN_004caf60(int param_1)
+/* ===== sound_obj_seq_big @ 0x004CAF60 ===== */
+void sound_obj_seq_big(int param_1)
 
 
 
@@ -6077,8 +6077,8 @@ void FUN_004caf60(int param_1)
 
 }
 
-/* ===== FUN_004cb220 @ 0x004CB220 ===== */
-void FUN_004cb220(int param_1)
+/* ===== sound_obj_seq_bigger @ 0x004CB220 ===== */
+void sound_obj_seq_bigger(int param_1)
 
 
 
@@ -6264,8 +6264,8 @@ void FUN_004cb220(int param_1)
 
 }
 
-/* ===== FUN_004cb630 @ 0x004CB630 ===== */
-void FUN_004cb630(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* ===== sound_obj_seq_small @ 0x004CB630 ===== */
+void sound_obj_seq_small(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -9134,8 +9134,8 @@ void comm_004ce880(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004ce8d0 @ 0x004CE8D0 ===== */
-void FUN_004ce8d0(int param_1)
+/* ===== object_spawn_4c @ 0x004CE8D0 ===== */
+void object_spawn_4c(int param_1)
 
 
 

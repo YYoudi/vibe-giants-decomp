@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (11 named) — decompiled, names from PS2 symbols
+ * 94 functions (17 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -1092,8 +1092,8 @@ LAB_004e23f6:
 
 }
 
-/* ===== FUN_004e2450 @ 0x004E2450 ===== */
-undefined4 FUN_004e2450(int param_1)
+/* ===== ai_move_pair_caller @ 0x004E2450 ===== */
+undefined4 ai_move_pair_caller(int param_1)
 
 
 
@@ -10160,8 +10160,8 @@ void FUN_004edd70(void)
 
 }
 
-/* ===== FUN_004eddf0 @ 0x004EDDF0 ===== */
-void FUN_004eddf0(void)
+/* ===== flk_replay_reset @ 0x004EDDF0 ===== */
+void flk_replay_reset(void)
 
 
 
@@ -10304,12 +10304,12 @@ void meccprocanimscreate_004ede30(void)
 
 }
 
-/* ===== FUN_004edf90 @ 0x004EDF90 ===== */
+/* ===== object_spawn_copy @ 0x004EDF90 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004edf90(void)
+void object_spawn_copy(void)
 
 
 
@@ -10528,8 +10528,8 @@ void FUN_004ee150(void)
 
 }
 
-/* ===== FUN_004ee1c0 @ 0x004EE1C0 ===== */
-void FUN_004ee1c0(int param_1)
+/* ===== fx_spawn_checked @ 0x004EE1C0 ===== */
+void fx_spawn_checked(int param_1)
 
 
 
@@ -10844,8 +10844,8 @@ float10 editor_dump_objnames(float param_1)
 
 }
 
-/* ===== FUN_004ee630 @ 0x004EE630 ===== */
-void FUN_004ee630(void)
+/* ===== kabutoai_punch_user @ 0x004EE630 ===== */
+void kabutoai_punch_user(void)
 
 
 
@@ -10867,7 +10867,7 @@ void FUN_004ee630(void)
 
        (iVar3 = kabutoai_is_punch_anim__FP6OBJECT(iVar1), iVar3 != 0)) {
 
-      FUN_004ee1c0(iVar1);
+      fx_spawn_checked(iVar1);
 
     }
 
@@ -11016,7 +11016,7 @@ void FUN_004ee670(int param_1)
 
          (iVar4 = kabutoai_is_punch_anim__FP6OBJECT(iVar2), iVar4 != 0)) {
 
-        FUN_004ee1c0(iVar2);
+        fx_spawn_checked(iVar2);
 
       }
 
@@ -11248,8 +11248,8 @@ void main_004ee9c0(void)
 
 }
 
-/* ===== FUN_004eea40 @ 0x004EEA40 ===== */
-void FUN_004eea40(undefined4 param_1,undefined1 param_2,undefined4 param_3)
+/* ===== anm_binder_free @ 0x004EEA40 ===== */
+void anm_binder_free(undefined4 param_1,undefined1 param_2,undefined4 param_3)
 
 
 

@@ -2014,7 +2014,7 @@ void FUN_004f5c10(int param_1,int param_2,undefined4 param_3)
 
     FUN_00542f27(local_100 + (~uVar5 - 1),uVar4);
 
-    FUN_0052ea80(local_100,4,0,0);
+    comm_audio_volume_user(local_100,4,0,0);
 
   }
 

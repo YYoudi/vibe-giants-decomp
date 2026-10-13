@@ -60,10 +60,7 @@ STRNAMES = {
 def emit(rows, fname, tier_base):
     claimed = set()
     used = set()
-    for f in ["unified_names_1449.csv", "module_names_wave.csv", "module_bands.csv",
-              "bsim_wave.csv", "system_wave2.csv", "crt_llm_names.csv", "crt_llm_names2.csv",
-              "llm_strings_wave.csv", "llm_strings_wave2.csv", "llm_wave4.csv",
-              "callpat_wave.csv", "crt_llm_names2.csv"]:
+    for f in glob.glob(os.path.join(PS2, "*.csv")):
         try:
             for r in csv.DictReader(open(os.path.join(PS2, f), encoding="utf-8")):
                 claimed.add(norm(r["pc_addr"]))
