@@ -69,9 +69,25 @@ def main():
         trusted.setdefault(a, r["ps2_name"])
 
     promoted, report = [], []
+    cand_rows = []
     for r in csv.DictReader(open(os.path.join(PS2, "unified_names_1449.csv"), encoding="utf-8")):
         if float(r["conf"]) >= 0.9:
             continue                      # already renamed
+        cand_rows.append({"pc_addr": r["pc_addr"], "ps2_name": r["ps2_name"]})
+    # also audit BSim comment-tier candidates (real PS2 names, sim 0.5-0.9)
+    try:
+        seen_c = {r["pc_addr"] for r in cand_rows}
+        for r in csv.DictReader(open(os.path.join(PS2, "bsim_wave.csv"), encoding="utf-8")):
+            if float(r["conf"]) >= 0.9:
+                continue
+            a = norm(r["pc_addr"])
+            if a in seen_c:
+                continue
+            seen_c.add(a)
+            cand_rows.append({"pc_addr": r["pc_addr"], "ps2_name": r["ps2_name"]})
+    except FileNotFoundError:
+        pass
+    for r in cand_rows:
         a = norm(r["pc_addr"])
         if a not in funcs:
             continue

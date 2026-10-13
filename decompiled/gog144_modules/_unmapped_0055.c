@@ -26,7 +26,7 @@ undefined4 FUN_0055001b(char *param_1)
 
     if (pvVar2 != (void *)0x0) {
 
-      uVar3 = FUN_00546ee0(pvVar2,param_1);
+      uVar3 = strcpy(pvVar2,param_1);
 
       return uVar3;
 

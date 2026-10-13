@@ -26,3 +26,5 @@
 004e7970 rpman_gib__FP6OBJECTT0
 005011f0 teammecc_create
 00406dd0 army_process_opcodes__FP6OBJECTPPUci
+004a4c10 piranha_launch_fx__FP6OBJECT
+00426fd0 dialog_level_pop

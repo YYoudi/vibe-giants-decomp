@@ -11342,12 +11342,12 @@
  "0x00542F27": {
   "name": "FUN_00542f27",
   "named": false,
-  "len": 531
+  "len": 521
  },
  "0x00542F79": {
   "name": "__rt_error_box",
   "named": true,
-  "len": 2136
+  "len": 2047
  },
  "0x00543270": {
   "name": "FUN_00543270",
@@ -11357,7 +11357,7 @@
  "0x005435A5": {
   "name": "FUN_005435a5",
   "named": false,
-  "len": 894
+  "len": 874
  },
  "0x00543680": {
   "name": "_strncpy",
@@ -11377,7 +11377,7 @@
  "0x0054387D": {
   "name": "__fclose_lk",
   "named": true,
-  "len": 600
+  "len": 588
  },
  "0x005438C9": {
   "name": "FUN_005438c9",
@@ -11387,12 +11387,12 @@
  "0x005438F8": {
   "name": "FUN_005438f8",
   "named": false,
-  "len": 1916
+  "len": 1899
  },
  "0x005439E0": {
   "name": "FUN_005439e0",
   "named": false,
-  "len": 299
+  "len": 296
  },
  "0x00543A11": {
   "name": "BinFileSeek_2",
@@ -11407,17 +11407,17 @@
  "0x00543A53": {
   "name": "FUN_00543a53",
   "named": false,
-  "len": 1789
+  "len": 1767
  },
  "0x00543B5D": {
   "name": "FUN_00543b5d",
   "named": false,
-  "len": 316
+  "len": 305
  },
  "0x00543B99": {
   "name": "FUN_00543b99",
   "named": false,
-  "len": 296
+  "len": 294
  },
  "0x00543BC3": {
   "name": "FUN_00543bc3",
@@ -11442,12 +11442,12 @@
  "0x00543DC7": {
   "name": "FUN_00543dc7",
   "named": false,
-  "len": 151
+  "len": 147
  },
  "0x00543DD4": {
   "name": "_rand",
   "named": true,
-  "len": 378
+  "len": 374
  },
  "0x00543E00": {
   "name": "FUN_00543e00",
@@ -11467,7 +11467,7 @@
  "0x00543E92": {
   "name": "FUN_00543e92",
   "named": false,
-  "len": 3325
+  "len": 3323
  },
  "0x00544065": {
   "name": "FUN_00544065",
@@ -11477,17 +11477,17 @@
  "0x0054408D": {
   "name": "FUN_0054408d",
   "named": false,
-  "len": 313
+  "len": 307
  },
  "0x005440C1": {
   "name": "FUN_005440c1",
   "named": false,
-  "len": 913
+  "len": 908
  },
  "0x00544123": {
   "name": "FUN_00544123",
   "named": false,
-  "len": 793
+  "len": 798
  },
  "0x00544198": {
   "name": "FUN_00544198",
@@ -11502,7 +11502,7 @@
  "0x0054422E": {
   "name": "FUN_0054422e",
   "named": false,
-  "len": 581
+  "len": 584
  },
  "0x00544285": {
   "name": "_malloc",
@@ -11517,7 +11517,7 @@
  "0x005442C3": {
   "name": "FUN_005442c3",
   "named": false,
-  "len": 1430
+  "len": 1427
  },
  "0x0054432A": {
   "name": "_dmVector_4",
@@ -11532,7 +11532,7 @@
  "0x005443BF": {
   "name": "FUN_005443bf",
   "named": false,
-  "len": 1232
+  "len": 1242
  },
  "0x00544429": {
   "name": "_dmVector_5",
@@ -11547,12 +11547,12 @@
  "0x005444A8": {
   "name": "FUN_005444a8",
   "named": false,
-  "len": 572
+  "len": 565
  },
  "0x00544517": {
   "name": "FUN_00544517",
   "named": false,
-  "len": 1190
+  "len": 1193
  },
  "0x005445F0": {
   "name": "FUN_005445f0",
@@ -11572,27 +11572,27 @@
  "0x005447E3": {
   "name": "FUN_005447e3",
   "named": false,
-  "len": 411
+  "len": 406
  },
  "0x0054481E": {
   "name": "FUN_0054481e",
   "named": false,
-  "len": 1174
+  "len": 1150
  },
  "0x005448EB": {
   "name": "FUN_005448eb",
   "named": false,
-  "len": 1134
+  "len": 1110
  },
  "0x005449B3": {
   "name": "FUN_005449b3",
   "named": false,
-  "len": 254
+  "len": 248
  },
  "0x005449D3": {
   "name": "___timet_from_ft",
   "named": true,
-  "len": 724
+  "len": 726
  },
  "0x00544A37": {
   "name": "FUN_00544a37",
@@ -11657,7 +11657,7 @@
  "0x00544E50": {
   "name": "_dmVector_7",
   "named": true,
-  "len": 69
+  "len": 62
  },
  "0x00544E59": {
   "name": "_dmVector_8",
@@ -11672,7 +11672,7 @@
  "0x00544E7C": {
   "name": "FUN_00544e7c",
   "named": false,
-  "len": 828
+  "len": 826
  },
  "0x00544EE7": {
   "name": "FUN_00544ee7",
@@ -11682,7 +11682,7 @@
  "0x00544F83": {
   "name": "FUN_00544f83",
   "named": false,
-  "len": 368
+  "len": 361
  },
  "0x00544FB5": {
   "name": "FUN_00544fb5",
@@ -11692,7 +11692,7 @@
  "0x00544FCC": {
   "name": "FUN_00544fcc",
   "named": false,
-  "len": 3161
+  "len": 3155
  },
  "0x005451D1": {
   "name": "FUN_005451d1",
@@ -11712,22 +11712,22 @@
  "0x005452A0": {
   "name": "FUN_005452a0",
   "named": false,
-  "len": 571
+  "len": 564
  },
  "0x0054530F": {
   "name": "FUN_0054530f",
   "named": false,
-  "len": 1188
+  "len": 1191
  },
  "0x00545496": {
   "name": "FUN_00545496",
   "named": false,
-  "len": 252
+  "len": 245
  },
  "0x005454C5": {
   "name": "FUN_005454c5",
   "named": false,
-  "len": 208
+  "len": 201
  },
  "0x005454E8": {
   "name": "FUN_005454e8",
@@ -11742,12 +11742,12 @@
  "0x00545540": {
   "name": "FUN_00545540",
   "named": false,
-  "len": 2611
+  "len": 2604
  },
  "0x00545650": {
   "name": "FUN_00545650",
   "named": false,
-  "len": 1705
+  "len": 1698
  },
  "0x00545720": {
   "name": "_strncmp",
@@ -11757,7 +11757,7 @@
  "0x00545758": {
   "name": "entry",
   "named": true,
-  "len": 1533
+  "len": 1531
  },
  "0x00545860": {
   "name": "__amsg_exit",
@@ -11772,37 +11772,37 @@
  "0x005458A9": {
   "name": "FUN_005458a9",
   "named": false,
-  "len": 331
+  "len": 320
  },
  "0x005458EA": {
   "name": "FUN_005458ea",
   "named": false,
-  "len": 1234
+  "len": 1228
  },
  "0x00545999": {
   "name": "FUN_00545999",
   "named": false,
-  "len": 1812
+  "len": 1798
  },
  "0x00545ABC": {
   "name": "FUN_00545abc",
   "named": false,
-  "len": 878
+  "len": 870
  },
  "0x00545B38": {
   "name": "FUN_00545b38",
   "named": false,
-  "len": 952
+  "len": 944
  },
  "0x00545BB7": {
   "name": "FUN_00545bb7",
   "named": false,
-  "len": 445
+  "len": 437
  },
  "0x00545BF9": {
   "name": "FUN_00545bf9",
   "named": false,
-  "len": 542
+  "len": 535
  },
  "0x00545C58": {
   "name": "FUN_00545c58",
@@ -11812,7 +11812,7 @@
  "0x00545C7A": {
   "name": "FUN_00545c7a",
   "named": false,
-  "len": 497
+  "len": 487
  },
  "0x00545CCB": {
   "name": "_GLOBAL_$D$Game_2",
@@ -11847,7 +11847,7 @@
  "0x00545EA3": {
   "name": "FUN_00545ea3",
   "named": false,
-  "len": 1064
+  "len": 1058
  },
  "0x00545F65": {
   "name": "FUN_00545f65",
@@ -11875,84 +11875,84 @@
   "len": 256
  },
  "0x0054616A": {
-  "name": "FUN_0054616a",
-  "named": false,
-  "len": 1713
+  "name": "_flsbuf",
+  "named": true,
+  "len": 1696
  },
  "0x00546282": {
-  "name": "FUN_00546282",
-  "named": false,
-  "len": 12734
+  "name": "_output",
+  "named": true,
+  "len": 12728
  },
  "0x005469C3": {
-  "name": "FUN_005469c3",
-  "named": false,
-  "len": 453
+  "name": "_outchar",
+  "named": true,
+  "len": 444
  },
  "0x005469F8": {
-  "name": "FUN_005469f8",
-  "named": false,
-  "len": 262
+  "name": "_write_multi_char",
+  "named": true,
+  "len": 263
  },
  "0x00546A29": {
-  "name": "FUN_00546a29",
-  "named": false,
-  "len": 330
+  "name": "_write_string",
+  "named": true,
+  "len": 327
  },
  "0x00546A61": {
-  "name": "FUN_00546a61",
-  "named": false,
-  "len": 121
+  "name": "crt_va_arg4",
+  "named": true,
+  "len": 120
  },
  "0x00546A6E": {
-  "name": "FUN_00546a6e",
-  "named": false,
-  "len": 121
+  "name": "crt_va_arg8",
+  "named": true,
+  "len": 120
  },
  "0x00546A7E": {
-  "name": "FUN_00546a7e",
-  "named": false,
+  "name": "crt_va_arg_w",
+  "named": true,
   "len": 163
  },
  "0x00546A8C": {
   "name": "FUN_00546a8c",
   "named": false,
-  "len": 222
+  "len": 215
  },
  "0x00546AA3": {
-  "name": "FUN_00546aa3",
-  "named": false,
-  "len": 255
+  "name": "fclose",
+  "named": true,
+  "len": 245
  },
  "0x00546AD2": {
-  "name": "FUN_00546ad2",
-  "named": false,
-  "len": 297
+  "name": "_fclose_lk",
+  "named": true,
+  "len": 289
  },
  "0x00546B00": {
-  "name": "FUN_00546b00",
-  "named": false,
-  "len": 613
+  "name": "_flush",
+  "named": true,
+  "len": 601
  },
  "0x00546B65": {
-  "name": "FUN_00546b65",
-  "named": false,
-  "len": 1091
+  "name": "_fcloseall",
+  "named": true,
+  "len": 1078
  },
  "0x00546C09": {
-  "name": "FUN_00546c09",
-  "named": false,
-  "len": 2468
+  "name": "raise",
+  "named": true,
+  "len": 2451
  },
  "0x00546D8B": {
-  "name": "FUN_00546d8b",
-  "named": false,
-  "len": 512
+  "name": "crt_siglookup",
+  "named": true,
+  "len": 513
  },
  "0x00546DC8": {
-  "name": "FUN_00546dc8",
-  "named": false,
-  "len": 865
+  "name": "__crtMessageBoxA",
+  "named": true,
+  "len": 869
  },
  "0x00546E60": {
   "name": "_strlen",
@@ -11960,44 +11960,44 @@
   "len": 1007
  },
  "0x00546EE0": {
-  "name": "FUN_00546ee0",
-  "named": false,
-  "len": 1127
+  "name": "strcpy",
+  "named": true,
+  "len": 1121
  },
  "0x00546EF0": {
-  "name": "FUN_00546ef0",
-  "named": false,
-  "len": 2072
+  "name": "strcpy_2",
+  "named": true,
+  "len": 2068
  },
  "0x00546FD0": {
-  "name": "FUN_00546fd0",
-  "named": false,
-  "len": 366
+  "name": "_ftol2",
+  "named": true,
+  "len": 356
  },
  "0x00547024": {
-  "name": "FUN_00547024",
-  "named": false,
-  "len": 534
+  "name": "_ftol2_r",
+  "named": true,
+  "len": 541
  },
  "0x005470BC": {
-  "name": "FUN_005470bc",
-  "named": false,
-  "len": 3840
+  "name": "crt_fpe_raise",
+  "named": true,
+  "len": 3839
  },
  "0x0054736F": {
-  "name": "FUN_0054736f",
-  "named": false,
-  "len": 3106
+  "name": "crt_fpe_checkmask",
+  "named": true,
+  "len": 3108
  },
  "0x00547586": {
-  "name": "FUN_00547586",
-  "named": false,
-  "len": 1010
+  "name": "crt_fpe_dispatch",
+  "named": true,
+  "len": 1026
  },
  "0x0054760E": {
-  "name": "FUN_0054760e",
-  "named": false,
-  "len": 304
+  "name": "crt_matherr_flag",
+  "named": true,
+  "len": 296
  },
  "0x00547636": {
   "name": "FUN_00547636",
@@ -12005,9 +12005,9 @@
   "len": 376
  },
  "0x0054765B": {
-  "name": "FUN_0054765b",
-  "named": false,
-  "len": 436
+  "name": "crt_fpe_sigcode",
+  "named": true,
+  "len": 439
  },
  "0x00547688": {
   "name": "__frnd",
@@ -12015,34 +12015,34 @@
   "len": 267
  },
  "0x0054769A": {
-  "name": "FUN_0054769a",
-  "named": false,
-  "len": 225
+  "name": "crt_ldexp10",
+  "named": true,
+  "len": 224
  },
  "0x005476C3": {
-  "name": "FUN_005476c3",
-  "named": false,
-  "len": 500
+  "name": "_fpclass",
+  "named": true,
+  "len": 496
  },
  "0x0054771D": {
-  "name": "FUN_0054771d",
-  "named": false,
-  "len": 1911
+  "name": "crt_frexp",
+  "named": true,
+  "len": 1886
  },
  "0x005477DE": {
-  "name": "FUN_005477de",
-  "named": false,
-  "len": 100
+  "name": "crt_fnstsw",
+  "named": true,
+  "len": 98
  },
  "0x005477EC": {
-  "name": "FUN_005477ec",
-  "named": false,
-  "len": 100
+  "name": "crt_fnstsw2",
+  "named": true,
+  "len": 99
  },
  "0x005477FB": {
-  "name": "FUN_005477fb",
-  "named": false,
-  "len": 102
+  "name": "crt_fnstcw",
+  "named": true,
+  "len": 100
  },
  "0x0054781E": {
   "name": "ANM_DumpCluster_6",
@@ -12050,14 +12050,14 @@
   "len": 141
  },
  "0x00547874": {
-  "name": "FUN_00547874",
-  "named": false,
-  "len": 486
+  "name": "_close",
+  "named": true,
+  "len": 469
  },
  "0x005478D1": {
-  "name": "FUN_005478d1",
-  "named": false,
-  "len": 830
+  "name": "_close_lk",
+  "named": true,
+  "len": 825
  },
  "0x00547954": {
   "name": "__freebuf",
@@ -12065,73 +12065,73 @@
   "len": 419
  },
  "0x0054797F": {
-  "name": "FUN_0054797f",
-  "named": false,
-  "len": 1400
+  "name": "_filbuf",
+  "named": true,
+  "len": 1388
  },
  "0x00547A5B": {
-  "name": "FUN_00547a5b",
-  "named": false,
-  "len": 540
+  "name": "_read",
+  "named": true,
+  "len": 521
  },
  "0x00547AC0": {
-  "name": "FUN_00547ac0",
-  "named": false,
-  "len": 3725
+  "name": "_read_lk",
+  "named": true,
+  "len": 3711
  },
  "0x00547CA0": {
-  "name": "FUN_00547ca0",
-  "named": false,
-  "len": 9437
+  "name": "memmove",
+  "named": true,
+  "len": 9432
  },
  "0x00547FD5": {
-  "name": "FUN_00547fd5",
-  "named": false,
-  "len": 2538
+  "name": "_sopen",
+  "named": true,
+  "len": 2532
  },
  "0x00548145": {
-  "name": "FUN_00548145",
-  "named": false,
-  "len": 1456
+  "name": "crt_allocosfhnd",
+  "named": true,
+  "len": 1452
  },
  "0x0054820D": {
-  "name": "FUN_0054820d",
-  "named": false,
-  "len": 540
+  "name": "_write",
+  "named": true,
+  "len": 523
  },
  "0x00548272": {
-  "name": "FUN_00548272",
-  "named": false,
-  "len": 2651
+  "name": "_write_lk",
+  "named": true,
+  "len": 2630
  },
  "0x005483FD": {
-  "name": "FUN_005483fd",
-  "named": false,
-  "len": 1073
+  "name": "crt_initio",
+  "named": true,
+  "len": 1071
  },
  "0x0054848A": {
-  "name": "FUN_0054848a",
-  "named": false,
-  "len": 318
+  "name": "_freebuf",
+  "named": true,
+  "len": 308
  },
  "0x005484B4": {
-  "name": "FUN_005484b4",
-  "named": false,
-  "len": 780
+  "name": "_dosmaperr",
+  "named": true,
+  "len": 752
  },
  "0x00548527": {
-  "name": "FUN_00548527",
-  "named": false,
-  "len": 102
+  "name": "_errno",
+  "named": true,
+  "len": 92
  },
  "0x00548530": {
-  "name": "FUN_00548530",
-  "named": false,
-  "len": 104
+  "name": "__doserrno",
+  "named": true,
+  "len": 98
  },
  "0x00548539": {
-  "name": "FUN_00548539",
-  "named": false,
+  "name": "crt_tls_init",
+  "named": true,
   "len": 556
  },
  "0x0054858D": {
@@ -12140,44 +12140,44 @@
   "len": 157
  },
  "0x005485A0": {
-  "name": "FUN_005485a0",
-  "named": false,
-  "len": 683
+  "name": "__getptd",
+  "named": true,
+  "len": 679
  },
  "0x00548607": {
-  "name": "FUN_00548607",
-  "named": false,
-  "len": 1106
+  "name": "__freeptd",
+  "named": true,
+  "len": 1103
  },
  "0x005486B0": {
   "name": "AudioMusicStreamPlay__Fiiii_3",
   "named": true,
-  "len": 195
+  "len": 199
  },
  "0x005486EE": {
   "name": "AudioMusicStreamPlay__Fiiii_2",
   "named": true,
-  "len": 195
+  "len": 199
  },
  "0x0054872B": {
   "name": "__ctrandisp2",
   "named": true,
-  "len": 372
+  "len": 375
  },
  "0x00548773": {
-  "name": "FUN_00548773",
-  "named": false,
-  "len": 2044
+  "name": "crt_fpe_handler",
+  "named": true,
+  "len": 2047
  },
  "0x0054877A": {
-  "name": "FUN_0054877a",
-  "named": false,
-  "len": 1971
+  "name": "crt_fpe_handler2",
+  "named": true,
+  "len": 1975
  },
  "0x005488AB": {
   "name": "__ctrandisp1",
   "named": true,
-  "len": 238
+  "len": 241
  },
  "0x005488DE": {
   "name": "__fload",
@@ -12195,19 +12195,19 @@
   "len": 1622
  },
  "0x005492F6": {
-  "name": "FUN_005492f6",
-  "named": false,
-  "len": 2452
+  "name": "crt_fmod10",
+  "named": true,
+  "len": 2450
  },
  "0x005494FC": {
-  "name": "FUN_005494fc",
-  "named": false,
-  "len": 546
+  "name": "fmod",
+  "named": true,
+  "len": 534
  },
  "0x00549A90": {
-  "name": "FUN_00549a90",
-  "named": false,
-  "len": 117
+  "name": "crt_frndint",
+  "named": true,
+  "len": 116
  },
  "0x00549AA7": {
   "name": "__startOneArgErrorHandling",
@@ -12215,9 +12215,9 @@
   "len": 236
  },
  "0x00549AF0": {
-  "name": "FUN_00549af0",
-  "named": false,
-  "len": 224
+  "name": "crt_exp2",
+  "named": true,
+  "len": 220
  },
  "0x00549B05": {
   "name": "ANM_DumpCluster_7",
@@ -12252,31 +12252,31 @@
  "0x00549BD9": {
   "name": "FUN_00549bd9",
   "named": false,
-  "len": 653
+  "len": 652
  },
  "0x00549C7C": {
-  "name": "FUN_00549c7c",
-  "named": false,
-  "len": 1690
+  "name": "crt_pow_special",
+  "named": true,
+  "len": 1694
  },
  "0x00549DAC": {
-  "name": "FUN_00549dac",
-  "named": false,
-  "len": 492
+  "name": "crt_isodd_int",
+  "named": true,
+  "len": 493
  },
  "0x00549E11": {
-  "name": "FUN_00549e11",
-  "named": false,
-  "len": 19436
+  "name": "_input",
+  "named": true,
+  "len": 19533
  },
  "0x0054A836": {
-  "name": "FUN_0054a836",
-  "named": false,
-  "len": 291
+  "name": "crt_scanf_hexchar",
+  "named": true,
+  "len": 296
  },
  "0x0054A86D": {
-  "name": "FUN_0054a86d",
-  "named": false,
+  "name": "crt_scanf_getchar",
+  "named": true,
   "len": 328
  },
  "0x0054A887": {
@@ -12285,14 +12285,14 @@
   "len": 184
  },
  "0x0054A89E": {
-  "name": "FUN_0054a89e",
-  "named": false,
-  "len": 259
+  "name": "crt_scanf_skipws",
+  "named": true,
+  "len": 268
  },
  "0x0054A8C2": {
-  "name": "FUN_0054a8c2",
-  "named": false,
-  "len": 2023
+  "name": "crt_getstringtype",
+  "named": true,
+  "len": 2033
  },
  "0x0054AA10": {
   "name": "__allmul",
@@ -12300,9 +12300,9 @@
   "len": 468
  },
  "0x0054AA44": {
-  "name": "FUN_0054aa44",
-  "named": false,
-  "len": 714
+  "name": "crt_scanf_float",
+  "named": true,
+  "len": 717
  },
  "0x0054AAC3": {
   "name": "FUN_0054aac3",
@@ -12310,94 +12310,94 @@
   "len": 217
  },
  "0x0054AADE": {
-  "name": "FUN_0054aade",
-  "named": false,
-  "len": 430
+  "name": "crt_subsystem_ver",
+  "named": true,
+  "len": 435
  },
  "0x0054AB0B": {
-  "name": "FUN_0054ab0b",
-  "named": false,
-  "len": 2431
+  "name": "crt_heap_select",
+  "named": true,
+  "len": 2439
  },
  "0x0054AC53": {
-  "name": "FUN_0054ac53",
-  "named": false,
-  "len": 483
+  "name": "_heap_init",
+  "named": true,
+  "len": 490
  },
  "0x0054ACB0": {
-  "name": "FUN_0054acb0",
-  "named": false,
+  "name": "crt_sbh_init",
+  "named": true,
   "len": 304
  },
  "0x0054ACF8": {
-  "name": "FUN_0054acf8",
-  "named": false,
-  "len": 304
+  "name": "__sbh_find_block",
+  "named": true,
+  "len": 308
  },
  "0x0054AD23": {
-  "name": "FUN_0054ad23",
-  "named": false,
-  "len": 5649
+  "name": "__sbh_free_block",
+  "named": true,
+  "len": 5653
  },
  "0x0054B04C": {
-  "name": "FUN_0054b04c",
-  "named": false,
-  "len": 4935
+  "name": "__sbh_alloc_block",
+  "named": true,
+  "len": 4962
  },
  "0x0054B355": {
-  "name": "FUN_0054b355",
-  "named": false,
-  "len": 922
+  "name": "__sbh_alloc_new_region",
+  "named": true,
+  "len": 932
  },
  "0x0054B406": {
-  "name": "FUN_0054b406",
-  "named": false,
-  "len": 1749
+  "name": "__sbh_alloc_new_group",
+  "named": true,
+  "len": 1758
  },
  "0x0054B501": {
-  "name": "FUN_0054b501",
-  "named": false,
-  "len": 5536
+  "name": "__sbh_resize_block",
+  "named": true,
+  "len": 5542
  },
  "0x0054B7F7": {
-  "name": "FUN_0054b7f7",
-  "named": false,
-  "len": 1961
+  "name": "crt_sbh_alloc_heap",
+  "named": true,
+  "len": 1967
  },
  "0x0054B93B": {
-  "name": "FUN_0054b93b",
-  "named": false,
-  "len": 414
+  "name": "crt_sbh_free_heap",
+  "named": true,
+  "len": 419
  },
  "0x0054B991": {
-  "name": "FUN_0054b991",
-  "named": false,
-  "len": 1497
+  "name": "crt_sbh_decommit_pages",
+  "named": true,
+  "len": 1512
  },
  "0x0054BA53": {
-  "name": "FUN_0054ba53",
-  "named": false,
-  "len": 600
+  "name": "crt_sbh_addr_lookup",
+  "named": true,
+  "len": 607
  },
  "0x0054BAAA": {
-  "name": "FUN_0054baaa",
-  "named": false,
-  "len": 382
+  "name": "crt_sbh_decommit_page",
+  "named": true,
+  "len": 401
  },
  "0x0054BAEF": {
-  "name": "FUN_0054baef",
-  "named": false,
-  "len": 3808
+  "name": "crt_heap_alloc_sbh",
+  "named": true,
+  "len": 3834
  },
  "0x0054BCF7": {
-  "name": "FUN_0054bcf7",
-  "named": false,
-  "len": 2672
+  "name": "crt_sbh_carve_block",
+  "named": true,
+  "len": 2679
  },
  "0x0054BE1B": {
-  "name": "FUN_0054be1b",
-  "named": false,
-  "len": 1269
+  "name": "crt_sbh_adjust_block",
+  "named": true,
+  "len": 1277
  },
  "0x0054BEC4": {
   "name": "FUN_0054bec4",
@@ -12405,9 +12405,9 @@
   "len": 371
  },
  "0x0054BEED": {
-  "name": "FUN_0054beed",
-  "named": false,
-  "len": 635
+  "name": "_lock",
+  "named": true,
+  "len": 621
  },
  "0x0054BF4E": {
   "name": "dmaSendN__FUiPviPFv_v",
@@ -12415,19 +12415,19 @@
   "len": 143
  },
  "0x0054BF63": {
-  "name": "FUN_0054bf63",
-  "named": false,
-  "len": 3066
+  "name": "crt_lcmapstring",
+  "named": true,
+  "len": 3071
  },
  "0x0054C187": {
-  "name": "FUN_0054c187",
-  "named": false,
-  "len": 314
+  "name": "crt_strnlen",
+  "named": true,
+  "len": 313
  },
  "0x0054C1B2": {
-  "name": "FUN_0054c1b2",
-  "named": false,
-  "len": 1104
+  "name": "__loctotime_t",
+  "named": true,
+  "len": 1106
  },
  "0x0054C280": {
   "name": "__aulldiv",
@@ -12442,7 +12442,7 @@
  "0x0054C365": {
   "name": "FUN_0054c365",
   "named": false,
-  "len": 1925
+  "len": 1922
  },
  "0x0054C3FE": {
   "name": "_dmVector_10",
@@ -12457,7 +12457,7 @@
  "0x0054C4A2": {
   "name": "FUN_0054c4a2",
   "named": false,
-  "len": 2126
+  "len": 2122
  },
  "0x0054C5E0": {
   "name": "FUN_0054c5e0",
@@ -12477,7 +12477,7 @@
  "0x0054C8AF": {
   "name": "FUN_0054c8af",
   "named": false,
-  "len": 1022
+  "len": 1016
  },
  "0x0054C968": {
   "name": "FUN_0054c968",
@@ -12492,7 +12492,7 @@
  "0x0054CBB5": {
   "name": "FUN_0054cbb5",
   "named": false,
-  "len": 2296
+  "len": 2291
  },
  "0x0054CCE7": {
   "name": "FUN_0054cce7",
@@ -12502,7 +12502,7 @@
  "0x0054CD20": {
   "name": "__rt_error_box_2",
   "named": true,
-  "len": 2264
+  "len": 2244
  },
  "0x0054CE73": {
   "name": "FUN_0054ce73",
@@ -12592,7 +12592,7 @@
  "0x0054D43C": {
   "name": "FUN_0054d43c",
   "named": false,
-  "len": 588
+  "len": 582
  },
  "0x0054D498": {
   "name": "FUN_0054d498",
@@ -12612,12 +12612,12 @@
  "0x0054D5B1": {
   "name": "FUN_0054d5b1",
   "named": false,
-  "len": 540
+  "len": 532
  },
  "0x0054D616": {
   "name": "FUN_0054d616",
   "named": false,
-  "len": 722
+  "len": 714
  },
  "0x0054D689": {
   "name": "FUN_0054d689",
@@ -12632,17 +12632,17 @@
  "0x0054D6F6": {
   "name": "FUN_0054d6f6",
   "named": false,
-  "len": 469
+  "len": 462
  },
  "0x0054D74F": {
   "name": "FUN_0054d74f",
   "named": false,
-  "len": 685
+  "len": 679
  },
  "0x0054D7B8": {
   "name": "FUN_0054d7b8",
   "named": false,
-  "len": 997
+  "len": 983
  },
  "0x0054D84B": {
   "name": "AudioDataStreamStatus__Fv_8",
@@ -12652,27 +12652,27 @@
  "0x0054D84E": {
   "name": "FUN_0054d84e",
   "named": false,
-  "len": 4228
+  "len": 4198
  },
  "0x0054DB1D": {
   "name": "FUN_0054db1d",
   "named": false,
-  "len": 1249
+  "len": 1257
  },
  "0x0054DBED": {
   "name": "FUN_0054dbed",
   "named": false,
-  "len": 810
+  "len": 806
  },
  "0x0054DC7F": {
   "name": "FUN_0054dc7f",
   "named": false,
-  "len": 496
+  "len": 489
  },
  "0x0054DCDC": {
   "name": "FUN_0054dcdc",
   "named": false,
-  "len": 1347
+  "len": 1341
  },
  "0x0054DDB0": {
   "name": "__allshl",
@@ -12707,17 +12707,17 @@
  "0x0054E41A": {
   "name": "FUN_0054e41a",
   "named": false,
-  "len": 238
+  "len": 231
  },
  "0x0054E448": {
   "name": "FUN_0054e448",
   "named": false,
-  "len": 3267
+  "len": 3254
  },
  "0x0054E6CF": {
   "name": "FUN_0054e6cf",
   "named": false,
-  "len": 186
+  "len": 179
  },
  "0x0054E6F0": {
   "name": "FUN_0054e6f0",
@@ -12742,7 +12742,7 @@
  "0x0054EA1E": {
   "name": "FUN_0054ea1e",
   "named": false,
-  "len": 3541
+  "len": 3534
  },
  "0x0054EBCB": {
   "name": "FUN_0054ebcb",
@@ -12762,7 +12762,7 @@
  "0x0054EC71": {
   "name": "FUN_0054ec71",
   "named": false,
-  "len": 2860
+  "len": 2871
  },
  "0x0054EDF6": {
   "name": "FUN_0054edf6",
@@ -12797,12 +12797,12 @@
  "0x0054EFB3": {
   "name": "FUN_0054efb3",
   "named": false,
-  "len": 5226
+  "len": 5214
  },
  "0x0054F246": {
   "name": "FUN_0054f246",
   "named": false,
-  "len": 1702
+  "len": 1683
  },
  "0x0054F36B": {
   "name": "FUN_0054f36b",
@@ -12822,7 +12822,7 @@
  "0x0054F684": {
   "name": "FUN_0054f684",
   "named": false,
-  "len": 579
+  "len": 573
  },
  "0x0054F6E5": {
   "name": "__mbsnbicoll",
@@ -12837,12 +12837,12 @@
  "0x0054F792": {
   "name": "FUN_0054f792",
   "named": false,
-  "len": 4536
+  "len": 4534
  },
  "0x0054FA0F": {
   "name": "FUN_0054fa0f",
   "named": false,
-  "len": 2403
+  "len": 2397
  },
  "0x0054FB96": {
   "name": "FUN_0054fb96",
@@ -12857,7 +12857,7 @@
  "0x0054FC55": {
   "name": "FUN_0054fc55",
   "named": false,
-  "len": 6401
+  "len": 6433
  },
  "0x0054FDE0": {
   "name": "_dmVector_12",
@@ -12872,11 +12872,11 @@
  "0x0054FF84": {
   "name": "FUN_0054ff84",
   "named": false,
-  "len": 992
+  "len": 985
  },
  "0x0055001B": {
   "name": "FUN_0055001b",
   "named": false,
-  "len": 334
+  "len": 328
  }
 }
