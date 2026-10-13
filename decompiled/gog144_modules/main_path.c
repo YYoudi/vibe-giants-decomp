@@ -1155,11 +1155,11 @@ void main_path_004a0f40(int param_1,undefined4 param_2,float *param_3,float *par
 
   _DAT_0059f9f0 = fVar1;
 
-  collgrid_005435a5((double)(fVar1 * 0.2 + 0.5));
+  crt_dbl_round((double)(fVar1 * 0.2 + 0.5));
 
   DAT_005a0cc8 = __ftol();
 
-  collgrid_005435a5((double)(_DAT_0059f9ec * 0.2 + 0.5));
+  crt_dbl_round((double)(_DAT_0059f9ec * 0.2 + 0.5));
 
   DAT_005a0cc4 = __ftol();
 
@@ -1181,19 +1181,19 @@ void main_path_004a0f40(int param_1,undefined4 param_2,float *param_3,float *par
 
   }
 
-  collgrid_005435a5((double)((*param_3 - fVar1) * 0.2 + 0.5));
+  crt_dbl_round((double)((*param_3 - fVar1) * 0.2 + 0.5));
 
   iVar6 = __ftol();
 
-  collgrid_005435a5((double)((param_3[1] - fVar2) * 0.2 + 0.5));
+  crt_dbl_round((double)((param_3[1] - fVar2) * 0.2 + 0.5));
 
   iVar3 = __ftol();
 
-  collgrid_005435a5((double)((*param_4 - fVar1) * 0.2 + 0.5));
+  crt_dbl_round((double)((*param_4 - fVar1) * 0.2 + 0.5));
 
   iVar4 = __ftol();
 
-  collgrid_005435a5((double)((param_4[1] - fVar2) * 0.2 + 0.5));
+  crt_dbl_round((double)((param_4[1] - fVar2) * 0.2 + 0.5));
 
   iVar5 = __ftol();
 

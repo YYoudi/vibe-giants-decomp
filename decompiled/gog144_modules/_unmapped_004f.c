@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (8 named) — decompiled, names from PS2 symbols
+ * 48 functions (9 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -4179,10 +4179,10 @@ void FUN_004f9b50(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004f9c10 @ 0x004F9C10 ===== */
-void FUN_004f9c10(undefined4 param_1,float param_2,int param_3,undefined4 param_4,undefined4 param_5
+/* ===== sound_play_pair @ 0x004F9C10 ===== */
+void sound_play_pair(undefined4 param_1,float param_2,int param_3,undefined4 param_4,
 
-                 )
+                    undefined4 param_5)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (26 named) — decompiled, names from PS2 symbols
+ * 105 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -2259,8 +2259,8 @@ float10 FUN_00404200(int param_1)
 
 }
 
-/* ===== FUN_00404230 @ 0x00404230 ===== */
-void FUN_00404230(int param_1,int param_2)
+/* ===== collgrid_collide_a @ 0x00404230 ===== */
+void collgrid_collide_a(int param_1,int param_2)
 
 
 
@@ -2383,7 +2383,7 @@ void FUN_004043a0(int param_1)
 
       do {
 
-        (*(code *)PTR_FUN_00554058)(param_1,iVar2);
+        (*(code *)PTR_collgrid_collide_a_00554058)(param_1,iVar2);
 
         iVar2 = iVar2 + 1;
 
@@ -2704,8 +2704,8 @@ void FUN_00404570(float *param_1,float *param_2,int param_3,int param_4,int para
 
 }
 
-/* ===== FUN_004047c0 @ 0x004047C0 ===== */
-void FUN_004047c0(int param_1,int param_2,int param_3,int param_4)
+/* ===== collgrid_collide_b @ 0x004047C0 ===== */
+void collgrid_collide_b(int param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -6826,8 +6826,8 @@ void FUN_0040a550(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0040a5e0 @ 0x0040A5E0 ===== */
-undefined4 FUN_0040a5e0(int param_1,int param_2)
+/* ===== object_spawn_class4 @ 0x0040A5E0 ===== */
+undefined4 object_spawn_class4(int param_1,int param_2)
 
 
 

@@ -6176,7 +6176,7 @@ void sound_obj_seq_bigger(int param_1)
 
                    &local_c);
 
-      FUN_00414990(param_1,param_1 + 0xa0,&local_c);
+      collgrid_collide_d(param_1,param_1 + 0xa0,&local_c);
 
       fVar4 = (float10)FUN_0050a400(param_1 + 0xa0,&local_c);
 
@@ -6570,7 +6570,7 @@ void FUN_004cb960(int param_1,int param_2)
 
     local_4 = *(undefined4 *)(*(int *)(iVar2 + 0x3c) + 0xa8);
 
-    FUN_00414990(param_1,param_1 + 0xa0,&local_c);
+    collgrid_collide_d(param_1,param_1 + 0xa0,&local_c);
 
     *(undefined1 **)(param_1 + 0x16c) = &LAB_004cb930;
 
@@ -6728,7 +6728,7 @@ void physics_reset_a(int param_1)
 
     iVar1 = param_1 + 0xa0;
 
-    FUN_00414990(param_1,iVar1,&local_18);
+    collgrid_collide_d(param_1,iVar1,&local_18);
 
     fVar5 = (float10)FUN_0050a400(iVar1,&local_18);
 

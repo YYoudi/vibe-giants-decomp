@@ -16289,7 +16289,7 @@ LAB_0042cb13:
 
               else {
 
-                (*(code *)PTR_FUN_00554064)(iVar2,param_3,DAT_00656458,DAT_0065645c);
+                (*(code *)PTR_collgrid_collide_b_00554064)(iVar2,param_3,DAT_00656458,DAT_0065645c);
 
                 iVar8 = iStack_10c;
 

@@ -746,13 +746,13 @@ void FUN_00540800(int param_1)
 
   }
 
-  PTR_FUN_00554058 = (&PTR_LAB_00580cdc)[param_1];
+  PTR_collgrid_collide_a_00554058 = (&PTR_LAB_00580cdc)[param_1];
 
   PTR_FUN_0055405c = (&PTR_LAB_00580ce8)[param_1];
 
   PTR_FUN_00554060 = (&PTR_FUN_00580cf4)[param_1];
 
-  PTR_FUN_00554064 = (&PTR_LAB_00580d00)[param_1];
+  PTR_collgrid_collide_b_00554064 = (&PTR_LAB_00580d00)[param_1];
 
   PTR_FUN_005565b0 = (&PTR_FUN_00580d0c)[param_1];
 
@@ -3448,8 +3448,8 @@ switchD_005432a5_caseD_0:
 
 }
 
-/* ===== collgrid_005435a5 @ 0x005435A5 ===== */
-float10 collgrid_005435a5(double param_1)
+/* ===== crt_dbl_round @ 0x005435A5 ===== */
+float10 crt_dbl_round(double param_1)
 
 
 

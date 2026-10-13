@@ -30,7 +30,7 @@ for f in glob.glob(os.path.join(EXP, "*.json")):
     if d["name"].startswith("FUN_") and d["address"] not in claimed and a < 0x546000:
         strs = STR.findall(d["decompiled"])
         score = sum(len(s) for s in strs)
-        if score >= 20:
+        if score >= 6:
             rank.append((score, d["address"], len(strs)))
 rank.sort(reverse=True)
 print(f"unnamed funcs with rich strings: {len(rank)}")

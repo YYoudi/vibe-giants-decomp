@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (11 named) — decompiled, names from PS2 symbols
+ * 100 functions (13 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
-/* ===== main/collgrid_00410720 @ 0x00410720 ===== */
-void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
+/* ===== collgrid_collide_c @ 0x00410720 ===== */
+void collgrid_collide_c(undefined4 param_1,undefined4 *param_2,int *param_3)
 
 
 
@@ -176,19 +176,19 @@ void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
 
   }
 
-  collgrid_005435a5((double)(fVar2 * 0.2 + 0.5));
+  crt_dbl_round((double)(fVar2 * 0.2 + 0.5));
 
   iVar8 = __ftol();
 
-  collgrid_005435a5((double)(local_68 * 0.2 + 0.5));
+  crt_dbl_round((double)(local_68 * 0.2 + 0.5));
 
   iVar9 = __ftol();
 
-  collgrid_005435a5((double)(local_6c * 0.2 + 0.5));
+  crt_dbl_round((double)(local_6c * 0.2 + 0.5));
 
   iVar10 = __ftol();
 
-  collgrid_005435a5((double)(local_64 * 0.2 + 0.5));
+  crt_dbl_round((double)(local_64 * 0.2 + 0.5));
 
   uVar7 = __ftol();
 
@@ -306,11 +306,11 @@ void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
 
     if (local_6c <= local_68) {
 
-      collgrid_005435a5((double)(local_6c * 0.2 + 0.5));
+      crt_dbl_round((double)(local_6c * 0.2 + 0.5));
 
       iVar11 = __ftol();
 
-      collgrid_005435a5((double)(local_68 * 0.2 + 0.5));
+      crt_dbl_round((double)(local_68 * 0.2 + 0.5));
 
       iVar12 = __ftol();
 
@@ -318,11 +318,11 @@ void main_collgrid_00410720(undefined4 param_1,undefined4 *param_2,int *param_3)
 
     else {
 
-      collgrid_005435a5((double)(local_68 * 0.2 + 0.5));
+      crt_dbl_round((double)(local_68 * 0.2 + 0.5));
 
       iVar11 = __ftol();
 
-      collgrid_005435a5((double)(local_6c * 0.2 + 0.5));
+      crt_dbl_round((double)(local_6c * 0.2 + 0.5));
 
       iVar12 = __ftol();
 
@@ -419,19 +419,19 @@ uint FUN_00412180(int param_1,int param_2,int param_3)
 
       fVar4 = *(float *)(param_1 + 0x154);
 
-      collgrid_005435a5((double)((fVar3 - fVar4) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar3 - fVar4) * 0.2 + 0.5));
 
       iVar5 = __ftol();
 
-      collgrid_005435a5((double)((fVar3 + fVar4) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar3 + fVar4) * 0.2 + 0.5));
 
       iVar6 = __ftol();
 
-      collgrid_005435a5((double)((fVar2 - fVar4) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar2 - fVar4) * 0.2 + 0.5));
 
       iVar7 = __ftol();
 
-      collgrid_005435a5((double)((fVar2 + fVar4) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar2 + fVar4) * 0.2 + 0.5));
 
       iVar8 = __ftol();
 
@@ -767,11 +767,11 @@ void FUN_004125f0(int param_1,float *param_2,float *param_3)
 
     iVar2 = (int)*(short *)(pcVar1 + 7);
 
-    collgrid_005435a5((double)(*param_2 * 0.2 + 0.5));
+    crt_dbl_round((double)(*param_2 * 0.2 + 0.5));
 
     iVar3 = __ftol();
 
-    collgrid_005435a5((double)(param_2[1] * 0.2 + 0.5));
+    crt_dbl_round((double)(param_2[1] * 0.2 + 0.5));
 
     iVar4 = __ftol();
 
@@ -894,19 +894,19 @@ void collgrid_collide_walk(int param_1,int param_2,int param_3,int param_4,int p
 
       fVar5 = *(float *)(param_1 + 0x154);
 
-      collgrid_005435a5((double)((fVar4 - fVar5) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar4 - fVar5) * 0.2 + 0.5));
 
       iVar6 = __ftol();
 
-      collgrid_005435a5((double)((fVar4 + fVar5) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar4 + fVar5) * 0.2 + 0.5));
 
       iVar7 = __ftol();
 
-      collgrid_005435a5((double)((fVar3 - fVar5) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar3 - fVar5) * 0.2 + 0.5));
 
       iVar8 = __ftol();
 
-      collgrid_005435a5((double)((fVar3 + fVar5) * 0.2 + 0.5));
+      crt_dbl_round((double)((fVar3 + fVar5) * 0.2 + 0.5));
 
       iVar9 = __ftol();
 
@@ -2731,11 +2731,11 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
   local_b8 = -61.1;
 
-  collgrid_005435a5((double)(*param_1 * 0.2 + 0.5));
+  crt_dbl_round((double)(*param_1 * 0.2 + 0.5));
 
   local_34 = __ftol();
 
-  collgrid_005435a5((double)(param_1[1] * 0.2 + 0.5));
+  crt_dbl_round((double)(param_1[1] * 0.2 + 0.5));
 
   local_68 = __ftol();
 
@@ -3376,8 +3376,8 @@ void FUN_004148a0(int param_1)
 
 }
 
-/* ===== FUN_00414990 @ 0x00414990 ===== */
-void FUN_00414990(int param_1,float *param_2,float *param_3)
+/* ===== collgrid_collide_d @ 0x00414990 ===== */
+void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
 
 
@@ -3511,11 +3511,11 @@ void FUN_00414990(int param_1,float *param_2,float *param_3)
 
     {
 
-      collgrid_005435a5((double)(*param_3 * 0.2 + 0.5));
+      crt_dbl_round((double)(*param_3 * 0.2 + 0.5));
 
       iVar6 = __ftol();
 
-      collgrid_005435a5((double)(param_3[1] * 0.2 + 0.5));
+      crt_dbl_round((double)(param_3[1] * 0.2 + 0.5));
 
       iVar5 = __ftol();
 
@@ -3523,11 +3523,11 @@ void FUN_00414990(int param_1,float *param_2,float *param_3)
 
       while (iVar7 != 0) {
 
-        collgrid_005435a5((double)(*param_2 * 0.2 + 0.5));
+        crt_dbl_round((double)(*param_2 * 0.2 + 0.5));
 
         local_28 = __ftol();
 
-        collgrid_005435a5((double)(param_2[1] * 0.2 + 0.5));
+        crt_dbl_round((double)(param_2[1] * 0.2 + 0.5));
 
         iVar7 = __ftol();
 
@@ -3595,11 +3595,11 @@ LAB_00414c70:
 
         param_3[1] = (param_3[1] - param_2[1]) * fVar2 + param_2[1];
 
-        collgrid_005435a5((double)(*param_3 * 0.2 + 0.5));
+        crt_dbl_round((double)(*param_3 * 0.2 + 0.5));
 
         iVar6 = __ftol();
 
-        collgrid_005435a5((double)(param_3[1] * 0.2 + 0.5));
+        crt_dbl_round((double)(param_3[1] * 0.2 + 0.5));
 
         iVar5 = __ftol();
 
@@ -5283,7 +5283,7 @@ void FUN_00416a30(undefined4 param_1,undefined4 param_2)
 
   if (iVar1 != 0) {
 
-    FUN_0040a5e0(param_1,param_2);
+    object_spawn_class4(param_1,param_2);
 
     return;
 
@@ -7179,12 +7179,12 @@ int FUN_004189e0(int param_1)
 
 }
 
-/* ===== FUN_00418a00 @ 0x00418A00 ===== */
+/* ===== object_spawn_class5 @ 0x00418A00 ===== */
 /* PS2 candidate: playergroup_claim_base (conf 0.381) */
 
 
 
-undefined4 FUN_00418a00(int param_1,float param_2)
+undefined4 object_spawn_class5(int param_1,float param_2)
 
 
 
@@ -8632,7 +8632,7 @@ LAB_0041ae31:
 
   }
 
-  FUN_00418a00(param_5,iVar3);
+  object_spawn_class5(param_5,iVar3);
 
   return;
 
@@ -9267,7 +9267,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
   else {
 
-    FUN_0040a5e0();
+    object_spawn_class4();
 
   }
 
@@ -10968,7 +10968,7 @@ LAB_0041ea62:
 
           if (iVar4 == 0) goto LAB_0041eb12;
 
-          FUN_0040a5e0(iVar1,iVar5);
+          object_spawn_class4(iVar1,iVar5);
 
 LAB_0041eb17:
 
@@ -11014,7 +11014,7 @@ LAB_0041eb12:
 
             else {
 
-              FUN_0040a5e0();
+              object_spawn_class4();
 
             }
 
@@ -11034,7 +11034,7 @@ LAB_0041eae1:
 
           else {
 
-            FUN_0040a5e0();
+            object_spawn_class4();
 
           }
 
@@ -11236,7 +11236,7 @@ LAB_0041ecb2:
 
     else {
 
-      FUN_0040a5e0();
+      object_spawn_class4();
 
     }
 
@@ -11489,7 +11489,7 @@ void FUN_0041ee70(int param_1)
 
             else {
 
-              FUN_0040a5e0();
+              object_spawn_class4();
 
             }
 
@@ -11525,7 +11525,7 @@ void FUN_0041ee70(int param_1)
 
           else {
 
-            FUN_0040a5e0();
+            object_spawn_class4();
 
           }
 
@@ -11561,7 +11561,7 @@ void FUN_0041ee70(int param_1)
 
         else {
 
-          FUN_0040a5e0();
+          object_spawn_class4();
 
         }
 

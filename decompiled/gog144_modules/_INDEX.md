@@ -10,8 +10,8 @@
 | _unmapped_0049 | 142 | 45 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 30 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 53 | _unmapped_0042.c |
-| _unmapped_0040 | 105 | 26 | _unmapped_0040.c |
-| _unmapped_0041 | 100 | 11 | _unmapped_0041.c |
+| _unmapped_0040 | 105 | 29 | _unmapped_0040.c |
+| _unmapped_0041 | 100 | 13 | _unmapped_0041.c |
 | _unmapped_004e | 94 | 17 | _unmapped_004e.c |
 | _unmapped_004b | 90 | 21 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 24 | _unmapped_0050.c |
@@ -21,7 +21,7 @@
 | _unmapped_0047 | 67 | 25 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 25 | _unmapped_004c.c |
 | _unmapped_0046 | 53 | 10 | _unmapped_0046.c |
-| _unmapped_004f | 48 | 8 | _unmapped_004f.c |
+| _unmapped_004f | 48 | 9 | _unmapped_004f.c |
 | _unmapped_004d | 39 | 4 | _unmapped_004d.c |
 | main/dlog | 19 | 19 | main_dlog.c |
 | main/ai_move | 15 | 11 | main_ai_move.c |

@@ -556,7 +556,7 @@ LAB_004195d2:
 
   case 10:
 
-    FUN_00418a00(*param_4,param_1);
+    object_spawn_class5(*param_4,param_1);
 
     return;
 
@@ -584,7 +584,7 @@ LAB_004195d2:
 
     else {
 
-      FUN_0040a5e0();
+      object_spawn_class4();
 
     }
 
