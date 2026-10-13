@@ -101,9 +101,10 @@ def main():
               "llm_strings_wave.csv", "llm_strings_wave2.csv", "llm_wave4.csv"]:
         try:
             for r in csv.DictReader(open(os.path.join(PS2, f), encoding="utf-8")):
-                if float(r["conf"]) >= 0.9:
-                    named[norm(r["pc_addr"])] = r["ps2_name"]
-        except FileNotFoundError:
+                if "ps2_name" in r and "conf" in r and r.get("pc_addr"):
+                    if float(r["conf"]) >= 0.9:
+                        named[norm(r["pc_addr"])] = r["ps2_name"]
+        except (FileNotFoundError, KeyError, ValueError):
             pass
         except FileNotFoundError:
             pass
