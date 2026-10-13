@@ -5007,7 +5007,7 @@ void comm_cam_mode_menu(undefined4 *param_1)
 
       }
 
-      cam_mode_toggle(iVar1,*(undefined4 *)((int)param_1 + 5));
+      cam_mode_full(iVar1,*(undefined4 *)((int)param_1 + 5));
 
       *(undefined4 *)(iVar1 + 0xa0) = *(undefined4 *)((int)param_1 + 9);
 

@@ -3647,12 +3647,12 @@ void FUN_00514cb0(int param_1)
 
 }
 
-/* ===== elevation_texture_load @ 0x00514D60 ===== */
+/* ===== terrain_elevation_gen @ 0x00514D60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void elevation_texture_load(int param_1,uint param_2,float param_3,float param_4)
+void terrain_elevation_gen(int param_1,uint param_2,float param_3,float param_4)
 
 
 
@@ -4232,7 +4232,7 @@ void FUN_00515090(int param_1)
 
     } while (local_f0 < 1.0);
 
-    elevation_texture_load(param_1,iVar3,local_cc,local_c8);
+    terrain_elevation_gen(param_1,iVar3,local_cc,local_c8);
 
   }
 

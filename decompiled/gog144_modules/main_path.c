@@ -538,9 +538,7 @@ switchD_004a0274_default:
 
       do {
 
-        iVar10 = main_path_004a0d00(uVar14,uVar15,bVar6,param_3[iVar7],&param_24,&param_25,&param_26
-
-                                   );
+        iVar10 = grid_dir_walk(uVar14,uVar15,bVar6,param_3[iVar7],&param_24,&param_25,&param_26);
 
         if (iVar10 == 0) {
 

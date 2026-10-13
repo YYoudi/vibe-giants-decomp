@@ -3570,9 +3570,9 @@
   "len": 1031
  },
  "0x0045EA90": {
-  "name": "FUN_0045ea90",
-  "named": false,
-  "len": 1794
+  "name": "vec_bounds_calc",
+  "named": true,
+  "len": 1800
  },
  "0x0045ECA0": {
   "name": "FUN_0045eca0",
@@ -5422,7 +5422,7 @@
  "0x0049FF30": {
   "name": "main_path_0049ff30",
   "named": true,
-  "len": 15671
+  "len": 15629
  },
  "0x004A0A00": {
   "name": "main/path_004a0a00",
@@ -5442,12 +5442,12 @@
  "0x004A0B70": {
   "name": "main/path_004a0b70",
   "named": true,
-  "len": 1880
+  "len": 1860
  },
  "0x004A0D00": {
-  "name": "main/path_004a0d00",
+  "name": "grid_dir_walk",
   "named": true,
-  "len": 2514
+  "len": 2504
  },
  "0x004A0F40": {
   "name": "main_path_004a0f40",
@@ -8475,9 +8475,9 @@
   "len": 1215
  },
  "0x00514D60": {
-  "name": "elevation_texture_load",
+  "name": "terrain_elevation_gen",
   "named": true,
-  "len": 3997
+  "len": 3996
  },
  "0x00515080": {
   "name": "MAP_MemGroupSetBase",
@@ -8487,7 +8487,7 @@
  "0x00515090": {
   "name": "FUN_00515090",
   "named": false,
-  "len": 5729
+  "len": 5728
  },
  "0x00515580": {
   "name": "FUN_00515580",
@@ -10120,9 +10120,9 @@
   "len": 810
  },
  "0x0052F980": {
-  "name": "cam_mode_toggle",
+  "name": "cam_mode_full",
   "named": true,
-  "len": 3634
+  "len": 3632
  },
  "0x0052FBF0": {
   "name": "comm_0052b780_user_6",
@@ -10287,7 +10287,7 @@
  "0x005331B0": {
   "name": "comm_cam_mode_menu",
   "named": true,
-  "len": 1409
+  "len": 1407
  },
  "0x00533280": {
   "name": "comm_multi_00533280",

@@ -14225,12 +14225,12 @@ void comm_0052b780_user_5(int param_1)
 
 }
 
-/* ===== cam_mode_toggle @ 0x0052F980 ===== */
+/* ===== cam_mode_full @ 0x0052F980 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cam_mode_toggle(int param_1,int param_2)
+void cam_mode_full(int param_1,int param_2)
 
 
 

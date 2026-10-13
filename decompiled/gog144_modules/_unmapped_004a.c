@@ -219,7 +219,7 @@ undefined4 main_path_004a0b70(uint param_1,int param_2)
 
       iVar6 = iVar6 + -1;
 
-      iVar2 = main_path_004a0d00(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1);
+      iVar2 = grid_dir_walk(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1);
 
       if (iVar2 != 0) {
 
@@ -231,7 +231,7 @@ undefined4 main_path_004a0b70(uint param_1,int param_2)
 
       if ((-1 < iVar5) &&
 
-         (iVar3 = main_path_004a0d00(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1),
+         (iVar3 = grid_dir_walk(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1),
 
          iVar2 = iVar4 + iVar1, iVar3 != 0)) {
 
@@ -259,13 +259,13 @@ undefined4 main_path_004a0b70(uint param_1,int param_2)
 
         iVar4 = iVar4 + -1;
 
-        iVar2 = main_path_004a0d00(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1);
+        iVar2 = grid_dir_walk(local_8,local_c,param_1,param_2,&local_8,&local_c,&param_1);
 
         if ((iVar2 != 0) ||
 
            ((iVar2 = iVar6, -1 < iVar5 &&
 
-            (iVar3 = main_path_004a0d00(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1),
+            (iVar3 = grid_dir_walk(local_8,local_c,param_1,local_4,&local_8,&local_c,&param_1),
 
             iVar2 = iVar6 + iVar1, iVar3 != 0)))) break;
 
@@ -289,12 +289,12 @@ undefined4 main_path_004a0b70(uint param_1,int param_2)
 
 }
 
-/* ===== main/path_004a0d00 @ 0x004A0D00 ===== */
+/* ===== grid_dir_walk @ 0x004A0D00 ===== */
 undefined1
 
-main_path_004a0d00(int param_1,int param_2,int param_3,int param_4,int *param_5,int *param_6,
+grid_dir_walk(int param_1,int param_2,int param_3,int param_4,int *param_5,int *param_6,int *param_7
 
-                  int *param_7)
+             )
 
 
 

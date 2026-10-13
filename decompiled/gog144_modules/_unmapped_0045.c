@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (42 named) — decompiled, names from PS2 symbols
+ * 145 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -13912,10 +13912,10 @@ undefined4 validate_eat__FP6OBJECTT0(int param_1,float param_2)
 
 }
 
-/* ===== FUN_0045ea90 @ 0x0045EA90 ===== */
-void FUN_0045ea90(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,
+/* ===== vec_bounds_calc @ 0x0045EA90 ===== */
+void vec_bounds_calc(float *param_1,float *param_2,float *param_3,float *param_4,float *param_5,
 
-                 float param_6)
+                    float param_6)
 
 
 
