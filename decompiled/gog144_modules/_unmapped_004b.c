@@ -3847,7 +3847,7 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
       }
 
-      iVar4 = FUN_00521370(DAT_00632f18);
+      iVar4 = game_mode_set2_check(DAT_00632f18);
 
       if (iVar4 == 0) {
 

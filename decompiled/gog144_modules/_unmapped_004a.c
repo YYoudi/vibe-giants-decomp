@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (111 named) — decompiled, names from PS2 symbols
+ * 131 functions (112 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -7449,8 +7449,8 @@ undefined * FUN_004a8f70(int param_1)
 
 }
 
-/* ===== FUN_004a8f90 @ 0x004A8F90 ===== */
-undefined4 FUN_004a8f90(int param_1)
+/* ===== IconDef_valid_check @ 0x004A8F90 ===== */
+undefined4 IconDef_valid_check(int param_1)
 
 
 
@@ -12804,7 +12804,7 @@ LAB_004aed0a:
 
           do {
 
-            FUN_0053ca70();
+            handle_next_get();
 
             if (puVar10[*(int *)(&stack0x00000ca8 + iVar21 * 4) + 2] == 0) {
 

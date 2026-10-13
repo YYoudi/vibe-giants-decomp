@@ -2905,7 +2905,7 @@ LAB_00452f80:
 
       }
 
-      if (((DAT_0059d99c != 0) && (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)) &&
+      if (((DAT_0059d99c != 0) && (iVar1 = game_mode_set3_check(DAT_00632f18), iVar1 == 0)) &&
 
          (iVar1 = FUN_00521330(DAT_00632f18), iVar1 == 0)) {
 
@@ -12525,7 +12525,7 @@ LAB_0045d736:
 
   else {
 
-    iVar5 = FUN_005213a0(DAT_00632f18);
+    iVar5 = game_mode_set3_check(DAT_00632f18);
 
     if (iVar5 == 0) goto LAB_0045d6d4;
 

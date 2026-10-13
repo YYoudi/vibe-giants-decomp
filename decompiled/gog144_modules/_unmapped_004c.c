@@ -3365,7 +3365,7 @@ void FUN_004c4df0(int param_1)
 
       ((iVar1 = dialog_level_is_base(), iVar1 == 0 ||
 
-       (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)))) &&
+       (iVar1 = game_mode_set3_check(DAT_00632f18), iVar1 == 0)))) &&
 
      ((iVar2 = *(int *)(iVar2 + 0xcfc), iVar2 != 0 && (iVar2 = FUN_004b6e20(iVar2), iVar2 != 0)))) {
 

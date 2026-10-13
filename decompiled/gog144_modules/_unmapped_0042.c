@@ -8467,7 +8467,7 @@ switchD_004260b3_caseD_1:
 
     DAT_0058c650 = DAT_0058c650 + 1;
 
-    DAT_00632f1c = FUN_00521350(DAT_00632f18);
+    DAT_00632f1c = game_mode_set1_check(DAT_00632f18);
 
     iVar1 = FUN_00521330(DAT_00632f18);
 

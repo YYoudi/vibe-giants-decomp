@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (147 named) — decompiled, names from PS2 symbols
+ * 179 functions (148 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -9224,7 +9224,7 @@ void comm_session_init(void)
 
   }
 
-  DAT_00632f1c = FUN_00521350(DAT_00632f18);
+  DAT_00632f1c = game_mode_set1_check(DAT_00632f18);
 
   DAT_00632f20 = 0;
 
@@ -12156,7 +12156,7 @@ switchD_0053793e_default:
 
   iVar8 = comm_00426540();
 
-  if (((iVar8 != 0) && (iVar8 = FUN_00521350(DAT_00632f18), iVar8 == 0)) &&
+  if (((iVar8 != 0) && (iVar8 = game_mode_set1_check(DAT_00632f18), iVar8 == 0)) &&
 
      (iVar8 = FUN_0051f2d0(), iVar8 < 2)) {
 
@@ -15651,8 +15651,8 @@ LAB_0053ca5a:
 
 }
 
-/* ===== FUN_0053ca70 @ 0x0053CA70 ===== */
-int FUN_0053ca70(void)
+/* ===== handle_next_get @ 0x0053CA70 ===== */
+int handle_next_get(void)
 
 
 

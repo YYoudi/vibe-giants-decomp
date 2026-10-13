@@ -5298,7 +5298,7 @@ LAB_0047c03e:
 
       }
 
-      iVar5 = FUN_00521370(DAT_00632f18);
+      iVar5 = game_mode_set2_check(DAT_00632f18);
 
       if (iVar5 == 0) {
 

@@ -1395,7 +1395,7 @@ ref_get_anode2(undefined4 param_1,float *param_2,int param_3,int param_4,int par
 
   else {
 
-    uVar1 = FUN_0053ca70();
+    uVar1 = handle_next_get();
 
     iVar4 = ANM_NodeGetMat(iVar2,*(undefined4 *)(*(int *)(iVar2 + 0xc) + 0x10),uVar1);
 
@@ -2115,7 +2115,7 @@ void object_animate_process(int *param_1,float param_2)
 
   }
 
-  iVar7 = FUN_0053ca70();
+  iVar7 = handle_next_get();
 
   param_1[3] = iVar7;
 

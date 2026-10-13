@@ -7362,7 +7362,7 @@ LAB_00418bc3:
 
     reaper_00530bd0(fVar2,0,1,0,10,&param_2);
 
-    iVar3 = FUN_00521370(DAT_00632f18);
+    iVar3 = game_mode_set2_check(DAT_00632f18);
 
     if (iVar3 != 0) {
 
@@ -8347,7 +8347,7 @@ void objtype_team_assign(int param_1)
 
     iVar1 = dialog_level_is_base();
 
-    if ((iVar1 == 0) || (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)) {
+    if ((iVar1 == 0) || (iVar1 = game_mode_set3_check(DAT_00632f18), iVar1 == 0)) {
 
       iVar2 = dialog_level_is_base();
 
@@ -8425,7 +8425,7 @@ void objtype_team_assign(int param_1)
 
     iVar1 = dialog_level_is_base();
 
-    if ((iVar1 == 0) || (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)) {
+    if ((iVar1 == 0) || (iVar1 = game_mode_set3_check(DAT_00632f18), iVar1 == 0)) {
 
       iVar2 = dialog_level_is_base();
 

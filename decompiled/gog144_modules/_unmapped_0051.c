@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (150 named) — decompiled, names from PS2 symbols
+ * 186 functions (153 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -12372,8 +12372,8 @@ bool FUN_0051c540(void)
 
 }
 
-/* ===== FUN_0051c570 @ 0x0051C570 ===== */
-undefined4 FUN_0051c570(void)
+/* ===== audio_option_get_a @ 0x0051C570 ===== */
+undefined4 audio_option_get_a(void)
 
 
 
@@ -12435,8 +12435,8 @@ bool dialog_level_is_base_2(void)
 
 }
 
-/* ===== FUN_0051c5f0 @ 0x0051C5F0 ===== */
-undefined4 FUN_0051c5f0(void)
+/* ===== audio_option_get_c @ 0x0051C5F0 ===== */
+undefined4 audio_option_get_c(void)
 
 
 
@@ -12548,8 +12548,8 @@ char AudioMusicStreamLinkStatusGet__Fv_2(void)
 
 }
 
-/* ===== FUN_0051c6e0 @ 0x0051C6E0 ===== */
-undefined4 FUN_0051c6e0(void)
+/* ===== audio_option_get_b @ 0x0051C6E0 ===== */
+undefined4 audio_option_get_b(void)
 
 
 

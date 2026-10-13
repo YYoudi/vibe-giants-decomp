@@ -5029,7 +5029,7 @@ void comm_00485300(void)
 
   comm_gametype_menu(DAT_00632f18);
 
-  iVar4 = FUN_005213a0(DAT_00632f18);
+  iVar4 = game_mode_set3_check(DAT_00632f18);
 
   if (((iVar4 != 0) && (iVar4 = FUN_00525120(DAT_00632f10), iVar4 != 0)) &&
 
@@ -5053,9 +5053,9 @@ void comm_00485300(void)
 
   }
 
-  DAT_00632f1c = FUN_00521350(DAT_00632f18);
+  DAT_00632f1c = game_mode_set1_check(DAT_00632f18);
 
-  uVar2 = FUN_00521350(DAT_00632f18);
+  uVar2 = game_mode_set1_check(DAT_00632f18);
 
   comm_allowjoiners_menu(DAT_00632f1c,uVar2);
 
@@ -5087,7 +5087,7 @@ LAB_00485528:
 
   comm_capture_time_menu(DAT_00632f2c,1);
 
-  uVar2 = FUN_00521370(DAT_00632f18);
+  uVar2 = game_mode_set2_check(DAT_00632f18);
 
   comm_capture_points_menu(DAT_00632f28,uVar2);
 

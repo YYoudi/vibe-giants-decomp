@@ -4758,7 +4758,7 @@ undefined4 hud_icon_timed(int param_1,float param_2)
 
     do {
 
-      uVar2 = FUN_0053ca70();
+      uVar2 = handle_next_get();
 
       *puVar6 = uVar2;
 
@@ -4810,7 +4810,7 @@ LAB_004459e7:
 
       pfVar7[-0x1b6] = pfVar7[-2];
 
-      fVar3 = (float)FUN_0053ca70();
+      fVar3 = (float)handle_next_get();
 
       pfVar7[-0x214] = fVar3;
 

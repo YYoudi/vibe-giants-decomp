@@ -8513,7 +8513,7 @@ LAB_00497f67:
 
         uVar4 = WeaponIdGetPresent__FP6OBJECT(&DAT_0059f380);
 
-        iVar2 = FUN_004a8f90(uVar4);
+        iVar2 = IconDef_valid_check(uVar4);
 
         uVar4 = *(undefined4 *)(&DAT_0055cad0 + iVar2 * 4);
 
@@ -8525,7 +8525,7 @@ LAB_00497f67:
 
         uVar4 = WeaponIdGetPresent__FP6OBJECT(&DAT_0059f380);
 
-        iVar2 = FUN_004a8f90(uVar4);
+        iVar2 = IconDef_valid_check(uVar4);
 
         iVar2 = (&DAT_0055cac0)[iVar2];
 
@@ -8587,7 +8587,7 @@ LAB_00497f79:
 
     uVar4 = WeaponIdGetPresent__FP6OBJECT(&DAT_0059f380);
 
-    iVar2 = FUN_004a8f90(uVar4);
+    iVar2 = IconDef_valid_check(uVar4);
 
     iVar2 = *(int *)(&DAT_0055caa0 + iVar2 * 4);
 
@@ -8625,7 +8625,7 @@ LAB_00498087:
 
           uVar4 = WeaponIdGetPresent__FP6OBJECT(&DAT_0059f380);
 
-          iVar2 = FUN_004a8f90(uVar4);
+          iVar2 = IconDef_valid_check(uVar4);
 
           DAT_0059f390 = 0xffffffff;
 
@@ -8649,7 +8649,7 @@ LAB_00498087:
 
   uVar4 = WeaponIdGetPresent__FP6OBJECT(&DAT_0059f380);
 
-  iVar2 = FUN_004a8f90(uVar4);
+  iVar2 = IconDef_valid_check(uVar4);
 
   uVar4 = (&DAT_0055cab0)[iVar2];
 
@@ -9209,7 +9209,7 @@ LAB_00498ae1:
 
       uVar1 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
-      iVar2 = FUN_004a8f90(uVar1);
+      iVar2 = IconDef_valid_check(uVar1);
 
       objanim_select_anim(param_1,*(undefined4 *)(&DAT_0055cad0 + iVar2 * 4));
 
@@ -9223,7 +9223,7 @@ LAB_00498ae1:
 
       uVar1 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
-      iVar2 = FUN_004a8f90(uVar1);
+      iVar2 = IconDef_valid_check(uVar1);
 
       iVar2 = (&DAT_0055cac0)[iVar2];
 
@@ -9285,7 +9285,7 @@ LAB_0049891f:
 
   uVar1 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
-  iVar2 = FUN_004a8f90(uVar1);
+  iVar2 = IconDef_valid_check(uVar1);
 
   anim_select_user(param_1,*(undefined4 *)(&DAT_0055caa0 + iVar2 * 4));
 
@@ -9313,7 +9313,7 @@ LAB_00498a2c:
 
             uVar1 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
-            iVar2 = FUN_004a8f90(uVar1);
+            iVar2 = IconDef_valid_check(uVar1);
 
             uVar1 = (&DAT_0055cab0)[iVar2];
 
@@ -9341,7 +9341,7 @@ LAB_00498a2c:
 
   uVar1 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
-  iVar2 = FUN_004a8f90(uVar1);
+  iVar2 = IconDef_valid_check(uVar1);
 
   objanim_select_anim(param_1,(&DAT_0055cab0)[iVar2]);
 

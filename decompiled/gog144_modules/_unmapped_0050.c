@@ -6371,7 +6371,7 @@ void mecc_animselect_gm(int param_1,int param_2)
 
   uVar13 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
-  local_38 = FUN_004a8f90(iVar7);
+  local_38 = IconDef_valid_check(iVar7);
 
   iVar7 = dialog_level_is_base();
 
@@ -6383,7 +6383,7 @@ void mecc_animselect_gm(int param_1,int param_2)
 
   else {
 
-    local_4c = FUN_004a8f90(uVar13);
+    local_4c = IconDef_valid_check(uVar13);
 
   }
 

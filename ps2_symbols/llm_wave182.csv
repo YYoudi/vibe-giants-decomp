@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00521350,FUN_00521350,,game_mode_set1_check,0.9,llm-w182,mode id set predicates callers comm
+00521370,FUN_00521370,,game_mode_set2_check,0.9,llm-w182,mode 2/3/5/7
+005213a0,FUN_005213a0,,game_mode_set3_check,0.9,llm-w182,mode 1/3/6/7
+0051c570,FUN_0051c570,,audio_option_get_a,0.9,llm-w182,getter twins of option setters
+0051c6e0,FUN_0051c6e0,,audio_option_get_b,0.9,llm-w182,flags 0x40
+0051c5f0,FUN_0051c5f0,,audio_option_get_c,0.9,llm-w182,flags 4
+004a8f90,FUN_004a8f90,,IconDef_valid_check,0.9,llm-w182,0x4c table valid callers weapon fns
+0053ca70,FUN_0053ca70,,handle_next_get,0.9,llm-w182,005f0184 counter 5 callers

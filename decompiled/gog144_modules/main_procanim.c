@@ -137,7 +137,7 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
              (iVar5 = FUN_0053be00(*(undefined4 *)(iVar4 + 0x28),0,p1[1]), iVar5 != 0)) {
 
-            uVar6 = FUN_0053ca70();
+            uVar6 = handle_next_get();
 
             if (p1[4] == 0) {
 
