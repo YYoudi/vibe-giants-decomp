@@ -3442,7 +3442,7 @@
  "0x0045A900": {
   "name": "FUN_0045a900",
   "named": false,
-  "len": 2448
+  "len": 2450
  },
  "0x0045AB30": {
   "name": "FUN_0045ab30",
@@ -4657,7 +4657,7 @@
  "0x00490D70": {
   "name": "FUN_00490d70",
   "named": false,
-  "len": 3849
+  "len": 3854
  },
  "0x00490FE0": {
   "name": "FUN_00490fe0",
@@ -5397,7 +5397,7 @@
  "0x0049F5A0": {
   "name": "chat_log_init",
   "named": true,
-  "len": 5307
+  "len": 5317
  },
  "0x0049FA90": {
   "name": "main_path_0049fa90",
@@ -7625,9 +7625,9 @@
   "len": 925
  },
  "0x004F41F0": {
-  "name": "FUN_004f41f0",
-  "named": false,
-  "len": 373
+  "name": "reaper_lock_4f",
+  "named": true,
+  "len": 375
  },
  "0x004F4250": {
   "name": "kabutoai_select_punch_anim__FP6OBJECT_2",
@@ -7660,9 +7660,9 @@
   "len": 2843
  },
  "0x004F5630": {
-  "name": "FUN_004f5630",
-  "named": false,
-  "len": 1244
+  "name": "reaper_lock_pair_4f",
+  "named": true,
+  "len": 1251
  },
  "0x004F5710": {
   "name": "fx_reaper_bubble_create",
@@ -9622,7 +9622,7 @@
  "0x0052A050": {
   "name": "FUN_0052a050",
   "named": false,
-  "len": 9464
+  "len": 9469
  },
  "0x0052A940": {
   "name": "comm_server_heartbeat",
@@ -10497,7 +10497,7 @@
  "0x00538800": {
   "name": "stream_00538800",
   "named": true,
-  "len": 9854
+  "len": 9864
  },
  "0x00538FF0": {
   "name": "FUN_00538ff0",
@@ -10617,7 +10617,7 @@
  "0x0053A830": {
   "name": "FUN_0053a830",
   "named": false,
-  "len": 385
+  "len": 390
  },
  "0x0053A860": {
   "name": "match",
@@ -10627,7 +10627,7 @@
  "0x0053A880": {
   "name": "matchn",
   "named": true,
-  "len": 173
+  "len": 178
  },
  "0x0053A8A0": {
   "name": "FUN_0053a8a0",
@@ -10967,7 +10967,7 @@
  "0x0053E960": {
   "name": "FUN_0053e960",
   "named": false,
-  "len": 421
+  "len": 425
  },
  "0x0053E9C0": {
   "name": "FUN_0053e9c0",
@@ -11157,7 +11157,7 @@
  "0x00540310": {
   "name": "FUN_00540310",
   "named": false,
-  "len": 978
+  "len": 982
  },
  "0x005403C0": {
   "name": "LNK_DNodeInDList",
@@ -11347,7 +11347,7 @@
  "0x00542F79": {
   "name": "__rt_error_box",
   "named": true,
-  "len": 2053
+  "len": 2055
  },
  "0x00543270": {
   "name": "FUN_00543270",
@@ -11740,9 +11740,9 @@
   "len": 208
  },
  "0x00545540": {
-  "name": "FUN_00545540",
-  "named": false,
-  "len": 2590
+  "name": "crt_file_lock_big",
+  "named": true,
+  "len": 2595
  },
  "0x00545650": {
   "name": "FUN_00545650",
@@ -11757,7 +11757,7 @@
  "0x00545758": {
   "name": "entry",
   "named": true,
-  "len": 1534
+  "len": 1549
  },
  "0x00545860": {
   "name": "__amsg_exit",
@@ -11770,39 +11770,39 @@
   "len": 271
  },
  "0x005458A9": {
-  "name": "FUN_005458a9",
-  "named": false,
-  "len": 328
+  "name": "crt_file_freebuf",
+  "named": true,
+  "len": 332
  },
  "0x005458EA": {
-  "name": "FUN_005458ea",
-  "named": false,
-  "len": 1232
+  "name": "crt_file_flush",
+  "named": true,
+  "len": 1234
  },
  "0x00545999": {
-  "name": "FUN_00545999",
-  "named": false,
-  "len": 1770
+  "name": "crt_file_lock_2big",
+  "named": true,
+  "len": 1779
  },
  "0x00545ABC": {
-  "name": "FUN_00545abc",
-  "named": false,
-  "len": 870
+  "name": "crt_errno_dos_set",
+  "named": true,
+  "len": 875
  },
  "0x00545B38": {
-  "name": "FUN_00545b38",
-  "named": false,
-  "len": 944
+  "name": "crt_doserrno_set",
+  "named": true,
+  "len": 948
  },
  "0x00545BB7": {
-  "name": "FUN_00545bb7",
-  "named": false,
-  "len": 437
+  "name": "crt_osfhnd_get",
+  "named": true,
+  "len": 439
  },
  "0x00545BF9": {
-  "name": "FUN_00545bf9",
-  "named": false,
-  "len": 521
+  "name": "crt_file_lock_3",
+  "named": true,
+  "len": 524
  },
  "0x00545C58": {
   "name": "FUN_00545c58",
@@ -11810,9 +11810,9 @@
   "len": 200
  },
  "0x00545C7A": {
-  "name": "FUN_00545c7a",
-  "named": false,
-  "len": 487
+  "name": "crt_flsbuf_write",
+  "named": true,
+  "len": 491
  },
  "0x00545CCB": {
   "name": "_GLOBAL_$D$Game_2",
@@ -12052,12 +12052,12 @@
  "0x00547874": {
   "name": "_close",
   "named": true,
-  "len": 469
+  "len": 472
  },
  "0x005478D1": {
   "name": "_close_lk",
   "named": true,
-  "len": 825
+  "len": 837
  },
  "0x00547954": {
   "name": "__freebuf",
@@ -12072,7 +12072,7 @@
  "0x00547A5B": {
   "name": "_read",
   "named": true,
-  "len": 521
+  "len": 524
  },
  "0x00547AC0": {
   "name": "_read_lk",
@@ -12097,7 +12097,7 @@
  "0x0054820D": {
   "name": "_write",
   "named": true,
-  "len": 523
+  "len": 526
  },
  "0x00548272": {
   "name": "_write_lk",
@@ -12470,14 +12470,14 @@
   "len": 3144
  },
  "0x0054C857": {
-  "name": "FUN_0054c857",
-  "named": false,
-  "len": 762
+  "name": "bin_file_create_54",
+  "named": true,
+  "len": 768
  },
  "0x0054C8AF": {
-  "name": "FUN_0054c8af",
-  "named": false,
-  "len": 1016
+  "name": "bin_file_copy_str",
+  "named": true,
+  "len": 1021
  },
  "0x0054C968": {
   "name": "FUN_0054c968",
@@ -12490,9 +12490,9 @@
   "len": 3855
  },
  "0x0054CBB5": {
-  "name": "FUN_0054cbb5",
-  "named": false,
-  "len": 2291
+  "name": "bin_file_memmove",
+  "named": true,
+  "len": 2295
  },
  "0x0054CCE7": {
   "name": "FUN_0054cce7",
@@ -12560,19 +12560,19 @@
   "len": 869
  },
  "0x0054D1D3": {
-  "name": "FUN_0054d1d3",
-  "named": false,
-  "len": 1901
+  "name": "list_reset_54",
+  "named": true,
+  "len": 1902
  },
  "0x0054D33F": {
   "name": "BinFileSeek_3",
   "named": true,
-  "len": 130
+  "len": 131
  },
  "0x0054D355": {
   "name": "BinFileSeek_4",
   "named": true,
-  "len": 130
+  "len": 131
  },
  "0x0054D36B": {
   "name": "FUN_0054d36b",
@@ -12612,12 +12612,12 @@
  "0x0054D5B1": {
   "name": "FUN_0054d5b1",
   "named": false,
-  "len": 526
+  "len": 529
  },
  "0x0054D616": {
   "name": "_lseek",
   "named": true,
-  "len": 708
+  "len": 710
  },
  "0x0054D689": {
   "name": "FUN_0054d689",
@@ -12642,7 +12642,7 @@
  "0x0054D7B8": {
   "name": "FUN_0054d7b8",
   "named": false,
-  "len": 983
+  "len": 988
  },
  "0x0054D84B": {
   "name": "AudioDataStreamStatus__Fv_8",
@@ -12652,7 +12652,7 @@
  "0x0054D84E": {
   "name": "crt_openfile",
   "named": true,
-  "len": 4186
+  "len": 4197
  },
  "0x0054DB1D": {
   "name": "crt_fpe_signal",
@@ -12802,7 +12802,7 @@
  "0x0054F246": {
   "name": "FUN_0054f246",
   "named": false,
-  "len": 1659
+  "len": 1661
  },
  "0x0054F36B": {
   "name": "FUN_0054f36b",

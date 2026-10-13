@@ -600,7 +600,7 @@ void FUN_00490d70(void)
 
     pcVar3 = (char *)FUN_00507b00();
 
-    iVar5 = FUN_00545540();
+    iVar5 = crt_file_lock_big();
 
     if (iVar5 != 0) {
 
@@ -14101,7 +14101,7 @@ LAB_0049f8f1:
 
           }
 
-          iVar2 = FUN_00545540(param_1,s_newhost_0055e8a0);
+          iVar2 = crt_file_lock_big(param_1,s_newhost_0055e8a0);
 
           if (iVar2 == 0) {
 
@@ -14121,7 +14121,7 @@ LAB_0049f8f1:
 
           }
 
-          iVar2 = FUN_00545540(param_1,s_message_0055e88c);
+          iVar2 = crt_file_lock_big(param_1,s_message_0055e88c);
 
           if (iVar2 == 0) {
 

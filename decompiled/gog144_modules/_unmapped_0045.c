@@ -10061,7 +10061,7 @@ void FUN_0045a900(int param_1)
 
         }
 
-        FUN_004f41f0(iVar2,param_1,0,0);
+        reaper_lock_4f(iVar2,param_1,0,0);
 
         return;
 

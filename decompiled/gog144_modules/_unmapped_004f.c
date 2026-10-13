@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (10 named) — decompiled, names from PS2 symbols
+ * 48 functions (12 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -687,8 +687,8 @@ LAB_004f4192:
 
 }
 
-/* ===== FUN_004f41f0 @ 0x004F41F0 ===== */
-void FUN_004f41f0(undefined4 param_1,int param_2,int param_3,int param_4)
+/* ===== reaper_lock_4f @ 0x004F41F0 ===== */
+void reaper_lock_4f(undefined4 param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -1500,8 +1500,8 @@ LAB_004f55b7:
 
 }
 
-/* ===== FUN_004f5630 @ 0x004F5630 ===== */
-void FUN_004f5630(int param_1)
+/* ===== reaper_lock_pair_4f @ 0x004F5630 ===== */
+void reaper_lock_pair_4f(int param_1)
 
 
 

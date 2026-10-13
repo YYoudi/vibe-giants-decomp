@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (202 named) — decompiled, names from PS2 symbols
+ * 351 functions (215 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -391,7 +391,7 @@ void FUN_00540310(undefined4 param_1)
 
     }
 
-    FUN_00545c7a(iVar1,param_1,&stack0x00000008);
+    crt_flsbuf_write(iVar1,param_1,&stack0x00000008);
 
     OutputDebugStringA((LPCSTR)&DAT_00630a30);
 
@@ -2705,7 +2705,7 @@ void __rt_error_box(char *param_1,char *param_2)
 
     if ((_DAT_0058114c & 0x10c) == 0) {
 
-      FUN_005458ea();
+      crt_file_flush();
 
     }
 
@@ -8015,12 +8015,12 @@ void crt_file_unlock_2(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00545540 @ 0x00545540 ===== */
+/* ===== crt_file_lock_big @ 0x00545540 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_00545540(byte *param_1,char *param_2,int param_3)
+undefined4 crt_file_lock_big(byte *param_1,char *param_2,int param_3)
 
 
 
@@ -8545,11 +8545,11 @@ void entry(void)
 
   DAT_006579f0 = GetCommandLineA();
 
-  DAT_00630ba4 = FUN_0054cbb5();
+  DAT_00630ba4 = bin_file_memmove();
 
   FUN_0054c968();
 
-  FUN_0054c8af();
+  bin_file_copy_str();
 
   FUN_00544d5c();
 
@@ -8557,7 +8557,7 @@ void entry(void)
 
   GetStartupInfoA(&local_60);
 
-  uVar3 = FUN_0054c857();
+  uVar3 = bin_file_create_54();
 
   if ((local_60.dwFlags & 1) == 0) {
 
@@ -8635,8 +8635,8 @@ void FUN_00545885(undefined4 param_1)
 
 }
 
-/* ===== FUN_005458a9 @ 0x005458A9 ===== */
-undefined4 FUN_005458a9(undefined4 param_1)
+/* ===== crt_file_freebuf @ 0x005458A9 ===== */
+undefined4 crt_file_freebuf(undefined4 param_1)
 
 
 
@@ -8662,12 +8662,12 @@ undefined4 FUN_005458a9(undefined4 param_1)
 
 }
 
-/* ===== FUN_005458ea @ 0x005458EA ===== */
+/* ===== crt_file_flush @ 0x005458EA ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_005458ea(FILE *param_1,int *param_2,uint param_3,uint param_4)
+undefined4 crt_file_flush(FILE *param_1,int *param_2,uint param_3,uint param_4)
 
 
 
@@ -8751,8 +8751,8 @@ LAB_0054598a:
 
 }
 
-/* ===== FUN_00545999 @ 0x00545999 ===== */
-int FUN_00545999(void)
+/* ===== crt_file_lock_2big @ 0x00545999 ===== */
+int crt_file_lock_2big(void)
 
 
 
@@ -8862,7 +8862,7 @@ int FUN_00545999(void)
 
     iVar4 = local_8 << 5;
 
-    FUN_00545bf9(iVar4);
+    crt_file_lock_3(iVar4);
 
   }
 
@@ -8874,8 +8874,8 @@ LAB_00545aab:
 
 }
 
-/* ===== FUN_00545abc @ 0x00545ABC ===== */
-undefined4 FUN_00545abc(uint param_1,HANDLE param_2)
+/* ===== crt_errno_dos_set @ 0x00545ABC ===== */
+undefined4 crt_errno_dos_set(uint param_1,HANDLE param_2)
 
 
 
@@ -8943,8 +8943,8 @@ LAB_00545b15:
 
 }
 
-/* ===== FUN_00545b38 @ 0x00545B38 ===== */
-undefined4 FUN_00545b38(uint param_1)
+/* ===== crt_doserrno_set @ 0x00545B38 ===== */
+undefined4 crt_doserrno_set(uint param_1)
 
 
 
@@ -9016,8 +9016,8 @@ LAB_00545b94:
 
 }
 
-/* ===== FUN_00545bb7 @ 0x00545BB7 ===== */
-undefined4 FUN_00545bb7(uint param_1)
+/* ===== crt_osfhnd_get @ 0x00545BB7 ===== */
+undefined4 crt_osfhnd_get(uint param_1)
 
 
 
@@ -9047,8 +9047,8 @@ undefined4 FUN_00545bb7(uint param_1)
 
 }
 
-/* ===== FUN_00545bf9 @ 0x00545BF9 ===== */
-void FUN_00545bf9(uint param_1)
+/* ===== crt_file_lock_3 @ 0x00545BF9 ===== */
+void crt_file_lock_3(uint param_1)
 
 
 
@@ -9103,8 +9103,8 @@ void FUN_00545c58(uint param_1)
 
 }
 
-/* ===== FUN_00545c7a @ 0x00545C7A ===== */
-undefined4 FUN_00545c7a(undefined1 *param_1,undefined4 param_2,undefined4 param_3)
+/* ===== crt_flsbuf_write @ 0x00545C7A ===== */
+undefined4 crt_flsbuf_write(undefined1 *param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -12698,7 +12698,7 @@ undefined4 _close(uint param_1)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    FUN_00545bf9(param_1);
+    crt_file_lock_3(param_1);
 
     uVar1 = _close_lk(param_1);
 
@@ -12741,21 +12741,21 @@ undefined4 _close_lk(uint param_1)
 
   
 
-  iVar1 = FUN_00545bb7(param_1);
+  iVar1 = crt_osfhnd_get(param_1);
 
   if (iVar1 != -1) {
 
     if ((param_1 == 1) || (param_1 == 2)) {
 
-      iVar1 = FUN_00545bb7(2);
+      iVar1 = crt_osfhnd_get(2);
 
-      iVar2 = FUN_00545bb7(1);
+      iVar2 = crt_osfhnd_get(1);
 
       if (iVar2 == iVar1) goto LAB_0054791f;
 
     }
 
-    hObject = (HANDLE)FUN_00545bb7(param_1);
+    hObject = (HANDLE)crt_osfhnd_get(param_1);
 
     BVar3 = CloseHandle(hObject);
 
@@ -12775,7 +12775,7 @@ LAB_0054791f:
 
 LAB_00547921:
 
-  FUN_00545b38(param_1);
+  crt_doserrno_set(param_1);
 
   *(undefined1 *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) = 0;
 
@@ -12950,7 +12950,7 @@ undefined4 _read(uint param_1,undefined4 param_2,undefined4 param_3)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    FUN_00545bf9(param_1);
+    crt_file_lock_3(param_1);
 
     uVar1 = _read_lk(param_1,param_2,param_3);
 
@@ -14161,7 +14161,7 @@ undefined4 _write(uint param_1,undefined4 param_2,undefined4 param_3)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    FUN_00545bf9(param_1);
+    crt_file_lock_3(param_1);
 
     uVar1 = _write_lk(param_1,param_2,param_3);
 
@@ -21115,8 +21115,8 @@ LAB_0054c7bf:
 
 }
 
-/* ===== FUN_0054c857 @ 0x0054C857 ===== */
-byte * FUN_0054c857(void)
+/* ===== bin_file_create_54 @ 0x0054C857 ===== */
+byte * bin_file_create_54(void)
 
 
 
@@ -21190,8 +21190,8 @@ LAB_0054c894:
 
 }
 
-/* ===== FUN_0054c8af @ 0x0054C8AF ===== */
-void FUN_0054c8af(void)
+/* ===== bin_file_copy_str @ 0x0054C8AF ===== */
+void bin_file_copy_str(void)
 
 
 
@@ -21637,8 +21637,8 @@ LAB_0054caac:
 
 }
 
-/* ===== FUN_0054cbb5 @ 0x0054CBB5 ===== */
-LPSTR FUN_0054cbb5(void)
+/* ===== bin_file_memmove @ 0x0054CBB5 ===== */
+LPSTR bin_file_memmove(void)
 
 
 
@@ -22515,8 +22515,8 @@ void FUN_0054d146(uint *param_1,uint param_2)
 
 }
 
-/* ===== FUN_0054d1d3 @ 0x0054D1D3 ===== */
-undefined4 FUN_0054d1d3(ushort *param_1,uint *param_2,int *param_3)
+/* ===== list_reset_54 @ 0x0054D1D3 ===== */
+undefined4 list_reset_54(ushort *param_1,uint *param_2,int *param_3)
 
 
 
@@ -22671,7 +22671,7 @@ void BinFileSeek_3(undefined4 param_1,undefined4 param_2)
 
 {
 
-  FUN_0054d1d3(param_1,param_2,&DAT_00583b80);
+  list_reset_54(param_1,param_2,&DAT_00583b80);
 
   return;
 
@@ -22684,7 +22684,7 @@ void BinFileSeek_4(undefined4 param_1,undefined4 param_2)
 
 {
 
-  FUN_0054d1d3(param_1,param_2,&DAT_00583b98);
+  list_reset_54(param_1,param_2,&DAT_00583b98);
 
   return;
 
@@ -23084,7 +23084,7 @@ undefined4 FUN_0054d5b1(uint param_1,undefined4 param_2,undefined4 param_3)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    FUN_00545bf9(param_1);
+    crt_file_lock_3(param_1);
 
     uVar1 = _lseek(param_1,param_2,param_3);
 
@@ -23125,7 +23125,7 @@ DWORD _lseek(uint param_1,LONG param_2,DWORD param_3)
 
   
 
-  hFile = (HANDLE)FUN_00545bb7(param_1);
+  hFile = (HANDLE)crt_osfhnd_get(param_1);
 
   if (hFile == (HANDLE)0xffffffff) {
 
@@ -23374,11 +23374,11 @@ LAB_0054d839:
 
   if ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + iVar5) & 1) == 0) goto LAB_0054d839;
 
-  FUN_00545bf9(param_1);
+  crt_file_lock_3(param_1);
 
   if ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + iVar5) & 1) != 0) {
 
-    hFile = (HANDLE)FUN_00545bb7(param_1);
+    hFile = (HANDLE)crt_osfhnd_get(param_1);
 
     BVar1 = FlushFileBuffers(hFile);
 
@@ -23650,7 +23650,7 @@ LAB_0054d97c:
 
   }
 
-  uVar3 = FUN_00545999();
+  uVar3 = crt_file_lock_2big();
 
   if (uVar3 == 0xffffffff) {
 
@@ -23686,7 +23686,7 @@ LAB_0054d97c:
 
       }
 
-      FUN_00545abc(uVar3,hFile);
+      crt_errno_dos_set(uVar3,hFile);
 
       iVar8 = (uVar3 & 0x1f) * 0x24;
 
@@ -27156,7 +27156,7 @@ int FUN_0054f246(undefined4 param_1,int param_2)
 
         uStackY_24 = 0x54f31f;
 
-        hFile = (HANDLE)FUN_00545bb7();
+        hFile = (HANDLE)crt_osfhnd_get();
 
         BVar4 = SetEndOfFile(hFile);
 
