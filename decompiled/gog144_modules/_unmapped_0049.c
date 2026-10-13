@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (79 named) — decompiled, names from PS2 symbols
+ * 142 functions (81 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -2504,7 +2504,7 @@ LAB_00492458:
 
       if (iVar1 != 0) {
 
-        FUN_0045d300(DAT_00632a88);
+        kabuto_init(DAT_00632a88);
 
         reaper_ability_playersound4(DAT_00632a88,DAT_0059f280,1);
 
@@ -2574,7 +2574,7 @@ LAB_00492458:
 
         iVar1 = *(int *)(DAT_00632a88 + 0x100);
 
-        FUN_00458a10(DAT_00632a88);
+        TeamMemberClearWeapons__FP6OBJECT(DAT_00632a88);
 
         uVar5 = DAT_0059f2c4;
 
@@ -2614,7 +2614,7 @@ LAB_00492458:
 
             param_2 = (int *)0x0;
 
-            FUN_0045a2b0(DAT_00632a88,iVar2,&param_2);
+            item_get_ammo(DAT_00632a88,iVar2,&param_2);
 
             if (param_2 != (int *)0x0) {
 
@@ -2630,13 +2630,13 @@ LAB_00492458:
 
               }
 
-              iVar4 = FUN_004a90a0(iVar1);
+              iVar4 = IconDefGiveAmmo(iVar1);
 
               if (iVar3 < iVar4) {
 
                 *param_2 = 0;
 
-                uVar5 = FUN_004a90a0(iVar1,1);
+                uVar5 = IconDefGiveAmmo(iVar1,1);
 
                 inv_award_item(DAT_00632a88,0xffffffff,iVar2,uVar5);
 
@@ -2698,7 +2698,7 @@ LAB_00492458:
 
         *(undefined4 *)(iVar1 + 0xda4) = DAT_0059f2e8;
 
-        uVar5 = FUN_004a90a0(0x2c,0);
+        uVar5 = IconDefGiveAmmo(0x2c,0);
 
         reaper_set_bow(DAT_00632a88,0x2c,0,uVar5);
 
@@ -2730,7 +2730,7 @@ LAB_00492458:
 
         do {
 
-          if ((piVar7[-1] != -1) && (iVar9 = FUN_004a90a0(piVar7[-1]), *piVar7 < iVar9)) {
+          if ((piVar7[-1] != -1) && (iVar9 = IconDefGiveAmmo(piVar7[-1]), *piVar7 < iVar9)) {
 
             *piVar7 = iVar9;
 
@@ -2746,9 +2746,9 @@ LAB_00492458:
 
         do {
 
-          if ((-1 < *piVar8) && (iVar9 = FUN_004a90a0(*piVar8), piVar8[1] < iVar9)) {
+          if ((-1 < *piVar8) && (iVar9 = IconDefGiveAmmo(*piVar8), piVar8[1] < iVar9)) {
 
-            iVar9 = FUN_004a90a0(*piVar8);
+            iVar9 = IconDefGiveAmmo(*piVar8);
 
             piVar8[1] = iVar9;
 
@@ -3110,9 +3110,9 @@ LAB_00492a3a:
 
           }
 
-          FUN_00499310(local_134,*(undefined4 *)(local_134 + 0xa0),*(undefined4 *)(local_134 + 0xa4)
+          object_set_location(local_134,*(undefined4 *)(local_134 + 0xa0),
 
-                       ,*(undefined4 *)(local_134 + 0xa8));
+                              *(undefined4 *)(local_134 + 0xa4),*(undefined4 *)(local_134 + 0xa8));
 
           uVar4 = *(uint *)(local_134 + 0xd8);
 
@@ -3412,7 +3412,7 @@ LAB_00492a3a:
 
                       if (0 < iVar11) {
 
-                        uVar7 = FUN_004a90a0(*(undefined4 *)(iVar6 + DAT_006330e4),1);
+                        uVar7 = IconDefGiveAmmo(*(undefined4 *)(iVar6 + DAT_006330e4),1);
 
                         reaper_set_bow(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4),iVar11,
 
@@ -3426,7 +3426,7 @@ LAB_00492a3a:
 
                       uVar7 = IconDefAmmoIcon(*(undefined4 *)(iVar6 + DAT_006330e4));
 
-                      uVar7 = FUN_004a90a0(uVar7);
+                      uVar7 = IconDefGiveAmmo(uVar7);
 
                       uVar7 = IconDefAmmoIcon(*(undefined4 *)(iVar6 + DAT_006330e4),uVar7);
 
@@ -4070,7 +4070,7 @@ LAB_00492a3a:
 
       *(undefined4 *)(iVar6 + 0xe8) = 10;
 
-      FUN_00499310(iVar6,0x453a4000,0x42800000,0xc0000000);
+      object_set_location(iVar6,0x453a4000,0x42800000,0xc0000000);
 
       uVar4 = *(uint *)(iVar6 + 0xd8);
 
@@ -5469,7 +5469,7 @@ void mission_type_dispatch(void)
 
     }
 
-    iVar6 = FUN_004586e0(DAT_00632a88);
+    iVar6 = SpecialWeaponIdGet__FP6OBJECT(DAT_00632a88);
 
     if (-1 < iVar6) {
 
@@ -10017,12 +10017,12 @@ void object_add_location(int param_1,float param_2,float param_3,float param_4)
 
 }
 
-/* ===== FUN_00499310 @ 0x00499310 ===== */
+/* ===== object_set_location @ 0x00499310 ===== */
 /* PS2 candidate: object_set_location (conf 0.459) */
 
 
 
-void FUN_00499310(int param_1,float param_2,float param_3,float param_4)
+void object_set_location(int param_1,float param_2,float param_3,float param_4)
 
 
 
@@ -12350,7 +12350,7 @@ void FUN_0049baa0(int param_1)
 
     }
 
-    FUN_00458a10(param_1);
+    TeamMemberClearWeapons__FP6OBJECT(param_1);
 
     item_drop_backheld(param_1);
 
@@ -13628,14 +13628,14 @@ void cmdline_parse(char *param_1)
 
 }
 
-/* ===== FUN_0049e4a0 @ 0x0049E4A0 ===== */
+/* ===== lift_logic__FP6OBJECT @ 0x0049E4A0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: lift_logic__FP6OBJECT (conf 0.463) */
 
 
 
-void FUN_0049e4a0(int param_1)
+void lift_logic__FP6OBJECT(int param_1)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (22 named) — decompiled, names from PS2 symbols
+ * 39 functions (23 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -3589,7 +3589,7 @@ void FUN_004d59d0(int param_1)
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
 
-  FUN_004d5b50(param_1);
+  rpboat_tilt__FP6OBJECT(param_1);
 
   fVar3 = (float10)FUN_00518b70(param_1,0,0x461c4000,*(undefined4 *)(iVar2 + 0x48),
 
@@ -3611,12 +3611,12 @@ void FUN_004d59d0(int param_1)
 
 }
 
-/* ===== FUN_004d5b50 @ 0x004D5B50 ===== */
+/* ===== rpboat_tilt__FP6OBJECT @ 0x004D5B50 ===== */
 /* PS2 candidate: rpboat_tilt__FP6OBJECT (conf 0.453) */
 
 
 
-void FUN_004d5b50(int param_1)
+void rpboat_tilt__FP6OBJECT(int param_1)
 
 
 

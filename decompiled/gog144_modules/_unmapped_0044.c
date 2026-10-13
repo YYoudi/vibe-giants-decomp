@@ -2893,9 +2893,9 @@ hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int p
 
       }
 
-      FUN_00499310(iVar5,*(undefined4 *)(iVar5 + 0x2a4),*(undefined4 *)(iVar5 + 0x2b4),
+      object_set_location(iVar5,*(undefined4 *)(iVar5 + 0x2a4),*(undefined4 *)(iVar5 + 0x2b4),
 
-                   *(undefined4 *)(iVar5 + 0x2c4));
+                          *(undefined4 *)(iVar5 + 0x2c4));
 
       if (param_4 != 0) {
 
@@ -3249,7 +3249,7 @@ void wredit_text_fade(void)
 
   if (DAT_0059ce38 != (char *)0x0) {
 
-    fVar8 = (float10)FUN_0051bc00(DAT_0059ce4c);
+    fVar8 = (float10)crt_fabs(DAT_0059ce4c);
 
     fVar1 = (float)fVar8;
 
@@ -6484,7 +6484,7 @@ void FUN_00446be0(undefined4 param_1,undefined4 param_2,float *param_3)
 
   fVar3 = (float10)textrender_draw_min(param_3[3],param_2);
 
-  fVar4 = (float10)FUN_0051bc00(param_3[3],param_2);
+  fVar4 = (float10)crt_fabs(param_3[3],param_2);
 
   fVar1 = *param_3;
 
@@ -8206,9 +8206,9 @@ int fx_createObj__FP6FxDatai(int param_1,undefined4 param_2,int param_3,float pa
 
           *(undefined4 *)(iVar4 + 0x2c4) = *(undefined4 *)(param_1 + 0x1c);
 
-          FUN_00499310(iVar4,*(undefined4 *)(param_1 + 0x14),*(undefined4 *)(param_1 + 0x18),
+          object_set_location(iVar4,*(undefined4 *)(param_1 + 0x14),*(undefined4 *)(param_1 + 0x18),
 
-                       *(undefined4 *)(param_1 + 0x1c));
+                              *(undefined4 *)(param_1 + 0x1c));
 
         }
 
@@ -8256,7 +8256,7 @@ int fx_createObj__FP6FxDatai(int param_1,undefined4 param_2,int param_3,float pa
 
           *(undefined4 *)(iVar4 + 0x2c4) = local_4;
 
-          FUN_00499310(iVar4,local_c,local_8,local_4);
+          object_set_location(iVar4,local_c,local_8,local_4);
 
         }
 
@@ -8582,7 +8582,7 @@ void fx_orient_ground(int param_1,float param_2)
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(*(int *)(param_1 + 4) + 0x294,local_288,local_244);
 
-    FUN_00499310(*(undefined4 *)(param_1 + 4),fVar3,fVar2,local_338 + param_2);
+    object_set_location(*(undefined4 *)(param_1 + 4),fVar3,fVar2,local_338 + param_2);
 
     *(float *)(*(int *)(param_1 + 4) + 0x2a4) = fVar3;
 

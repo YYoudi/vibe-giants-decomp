@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (77 named) — decompiled, names from PS2 symbols
+ * 145 functions (83 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1960,7 +1960,7 @@ LAB_0045289f:
 
         else {
 
-          iVar5 = FUN_004a90a0(piVar7[-1]);
+          iVar5 = IconDefGiveAmmo(piVar7[-1]);
 
           if (*piVar7 < iVar5) goto LAB_0045289f;
 
@@ -2032,7 +2032,7 @@ LAB_0045289f:
 
 LAB_0045294e:
 
-                iVar3 = FUN_004a90a0(iVar3);
+                iVar3 = IconDefGiveAmmo(iVar3);
 
                 piVar7[1] = iVar3;
 
@@ -2042,7 +2042,7 @@ LAB_0045294e:
 
             else {
 
-              iVar3 = FUN_004a90a0(iVar3);
+              iVar3 = IconDefGiveAmmo(iVar3);
 
               if (piVar7[1] < iVar3) {
 
@@ -2108,7 +2108,7 @@ LAB_0045294e:
 
           param_1 = (int *)0x0;
 
-          FUN_0045a2b0(DAT_00632a88,iVar5,&param_1);
+          item_get_ammo(DAT_00632a88,iVar5,&param_1);
 
           if (param_1 != (int *)0x0) {
 
@@ -2124,13 +2124,13 @@ LAB_0045294e:
 
             }
 
-            iVar4 = FUN_004a90a0(iVar3);
+            iVar4 = IconDefGiveAmmo(iVar3);
 
             if (iVar6 < iVar4) {
 
               *param_1 = 0;
 
-              uVar8 = FUN_004a90a0(iVar3,1);
+              uVar8 = IconDefGiveAmmo(iVar3,1);
 
               inv_award_item(DAT_00632a88,0xffffffff,iVar5,uVar8);
 
@@ -2188,7 +2188,7 @@ LAB_0045276d:
 
           param_2 = (int *)0x0;
 
-          FUN_0045a2b0(DAT_00632a88,iVar3,&param_2);
+          item_get_ammo(DAT_00632a88,iVar3,&param_2);
 
           if (param_2 != (int *)0x0) {
 
@@ -2204,7 +2204,7 @@ LAB_0045276d:
 
             }
 
-            iVar6 = FUN_004a90a0(iVar3);
+            iVar6 = IconDefGiveAmmo(iVar3);
 
             if (iVar5 < iVar6) {
 
@@ -2214,13 +2214,13 @@ LAB_0045276d:
 
                 if (0x13 < DAT_0059d97c) goto LAB_0045282a;
 
-                uVar8 = FUN_004a90a0(9,1);
+                uVar8 = IconDefGiveAmmo(9,1);
 
               }
 
               else {
 
-                uVar8 = FUN_004a90a0(iVar3,1);
+                uVar8 = IconDefGiveAmmo(iVar3,1);
 
               }
 
@@ -3892,12 +3892,12 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
 }
 
-/* ===== FUN_00455070 @ 0x00455070 ===== */
+/* ===== in_fov @ 0x00455070 ===== */
 /* PS2 candidate: in_fov (conf 0.452) */
 
 
 
-undefined4 FUN_00455070(int param_1,int param_2,float param_3)
+undefined4 in_fov(int param_1,int param_2,float param_3)
 
 
 
@@ -6954,12 +6954,12 @@ void reaper_lock_short_3(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00458040 @ 0x00458040 ===== */
+/* ===== WeaponIdCycleToNext__FP6OBJECTi @ 0x00458040 ===== */
 /* PS2 candidate: WeaponIdCycleToNext__FP6OBJECTi (conf 0.452) */
 
 
 
-int FUN_00458040(int param_1,int param_2)
+int WeaponIdCycleToNext__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -7610,12 +7610,12 @@ LAB_00458511:
 
 }
 
-/* ===== FUN_004586e0 @ 0x004586E0 ===== */
+/* ===== SpecialWeaponIdGet__FP6OBJECT @ 0x004586E0 ===== */
 /* PS2 candidate: SpecialWeaponIdGet__FP6OBJECT (conf 0.46) */
 
 
 
-undefined4 FUN_004586e0(int param_1)
+undefined4 SpecialWeaponIdGet__FP6OBJECT(int param_1)
 
 
 
@@ -7870,12 +7870,12 @@ void FUN_00458710(int param_1)
 
 }
 
-/* ===== FUN_00458a10 @ 0x00458A10 ===== */
+/* ===== TeamMemberClearWeapons__FP6OBJECT @ 0x00458A10 ===== */
 /* PS2 candidate: TeamMemberClearWeapons__FP6OBJECT (conf 0.459) */
 
 
 
-void FUN_00458a10(int param_1)
+void TeamMemberClearWeapons__FP6OBJECT(int param_1)
 
 
 
@@ -8348,7 +8348,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
         else {
 
-          iVar3 = FUN_004a90a0();
+          iVar3 = IconDefGiveAmmo();
 
           param_2 = (uint *)(float)iVar3;
 
@@ -8667,7 +8667,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
             if (param_4 < 0) {
 
-              param_4 = FUN_004a90a0(param_3);
+              param_4 = IconDefGiveAmmo(param_3);
 
             }
 
@@ -8681,7 +8681,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
           if (param_4 < 0) {
 
-            param_4 = FUN_004a90a0(param_3);
+            param_4 = IconDefGiveAmmo(param_3);
 
           }
 
@@ -8701,7 +8701,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
         if (param_4 < 0) {
 
-          param_4 = FUN_004a90a0(param_3);
+          param_4 = IconDefGiveAmmo(param_3);
 
         }
 
@@ -8797,7 +8797,7 @@ LAB_00459ce0:
 
             if (param_4 < 0) {
 
-              param_4 = FUN_004a90a0(param_3);
+              param_4 = IconDefGiveAmmo(param_3);
 
             }
 
@@ -8875,7 +8875,7 @@ LAB_00459ce0:
 
             local_104 = (undefined4 *)0x0;
 
-            FUN_0045a2b0(param_1,param_3,&local_104);
+            item_get_ammo(param_1,param_3,&local_104);
 
             if (local_104 != (undefined4 *)0x0) {
 
@@ -8913,7 +8913,7 @@ LAB_00459ce0:
 
             if (param_4 < 0) {
 
-              param_4 = FUN_004a90a0(param_3);
+              param_4 = IconDefGiveAmmo(param_3);
 
             }
 
@@ -8929,7 +8929,7 @@ LAB_00459ce0:
 
         if (param_4 < 0) {
 
-          param_4 = FUN_004a90a0(param_3);
+          param_4 = IconDefGiveAmmo(param_3);
 
         }
 
@@ -9132,7 +9132,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
         if (param_4 < 0) {
 
-          iVar5 = FUN_004a90a0(uVar4);
+          iVar5 = IconDefGiveAmmo(uVar4);
 
         }
 
@@ -9206,7 +9206,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
       param_2 = (undefined4 *)0x0;
 
-      FUN_0045a2b0(param_1,uVar4,&param_2);
+      item_get_ammo(param_1,uVar4,&param_2);
 
       if (param_2 != (undefined4 *)0x0) {
 
@@ -9216,7 +9216,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
       FUN_00457f40(param_1,iVar5,0xffffffff);
 
-      FUN_00458040(param_1,1);
+      WeaponIdCycleToNext__FP6OBJECTi(param_1,1);
 
       return;
 
@@ -9228,7 +9228,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
     if (param_4 < 0) {
 
-      param_4 = FUN_004a90a0(uVar4);
+      param_4 = IconDefGiveAmmo(uVar4);
 
     }
 
@@ -9352,12 +9352,12 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
 }
 
-/* ===== FUN_0045a2b0 @ 0x0045A2B0 ===== */
+/* ===== item_get_ammo @ 0x0045A2B0 ===== */
 /* PS2 candidate: item_get_ammo (conf 0.457) */
 
 
 
-int FUN_0045a2b0(int param_1,undefined4 param_2,int *param_3)
+int item_get_ammo(int param_1,undefined4 param_2,int *param_3)
 
 
 
@@ -10077,7 +10077,7 @@ void item_drop_backheld(int param_1)
 
   if ((*(uint *)(param_1 + 0xdc) & 0x400000) != 0) {
 
-    iVar2 = FUN_004586e0(param_1);
+    iVar2 = SpecialWeaponIdGet__FP6OBJECT(param_1);
 
     iVar3 = ObjIsMecc(param_1);
 
@@ -10158,9 +10158,9 @@ void item_drop_curweap(int param_1)
 
         local_104 = (undefined4 *)0x0;
 
-        uVar2 = FUN_0045a2b0(param_1,iVar1,&local_104,*(float *)(param_1 + 0x29c) * -30.0,
+        uVar2 = item_get_ammo(param_1,iVar1,&local_104,*(float *)(param_1 + 0x29c) * -30.0,
 
-                             *(float *)(param_1 + 0x2ac) * -30.0,0x41700000,0x41f00000);
+                              *(float *)(param_1 + 0x2ac) * -30.0,0x41700000,0x41f00000);
 
         item_drop_item(param_1,iVar1,uVar2);
 
@@ -10172,7 +10172,7 @@ void item_drop_curweap(int param_1)
 
         WeaponIdSetCurrent__FP6OBJECTi(param_1,0xffffffff);
 
-        FUN_00458040(param_1,1);
+        WeaponIdCycleToNext__FP6OBJECTi(param_1,1);
 
       }
 
@@ -10243,7 +10243,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
                          ,0x41f00000);
 
-      uVar4 = FUN_0045a2b0(puVar2,uVar4);
+      uVar4 = item_get_ammo(puVar2,uVar4);
 
       uVar4 = WeaponIdGetPresent__FP6OBJECT(puVar2,uVar4);
 
@@ -10281,7 +10281,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
                              0x41280000,0x41f00000);
 
-        uVar4 = FUN_0045a2b0(puVar2,uVar4);
+        uVar4 = item_get_ammo(puVar2,uVar4);
 
         uVar4 = FUN_004582d0(puVar2,iVar3,uVar4);
 
@@ -10299,7 +10299,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
     } while (iVar3 < 3);
 
-    iVar3 = FUN_004586e0(puVar2);
+    iVar3 = SpecialWeaponIdGet__FP6OBJECT(puVar2);
 
     if (-1 < iVar3) {
 
@@ -10313,9 +10313,11 @@ void FUN_0045ac50(undefined4 *param_1)
 
       fVar7 = (float10)FUN_0050ade0(fVar1);
 
-      uVar4 = FUN_004586e0(puVar2,1,(float)fVar6 * 6.0,(float)(fVar7 * (float10)6.0),0x41280000,
+      uVar4 = SpecialWeaponIdGet__FP6OBJECT
 
-                           0x41f00000);
+                        (puVar2,1,(float)fVar6 * 6.0,(float)(fVar7 * (float10)6.0),0x41280000,
+
+                         0x41f00000);
 
       item_drop_item(puVar2,uVar4);
 
@@ -12236,12 +12238,12 @@ float10 FUN_0045d2e0(int param_1)
 
 }
 
-/* ===== FUN_0045d300 @ 0x0045D300 ===== */
+/* ===== kabuto_init @ 0x0045D300 ===== */
 /* PS2 candidate: kabuto_init (conf 0.461) */
 
 
 
-undefined4 FUN_0045d300(uint *param_1)
+undefined4 kabuto_init(uint *param_1)
 
 
 
@@ -12937,9 +12939,9 @@ LAB_0045dd27:
 
           fVar9 = (float10)FUN_00455600((undefined4 *)(iVar4 + 0xa0));
 
-          FUN_00499310(iVar7,*(undefined4 *)(iVar4 + 0xa0),*(undefined4 *)(iVar4 + 0xa4),
+          object_set_location(iVar7,*(undefined4 *)(iVar4 + 0xa0),*(undefined4 *)(iVar4 + 0xa4),
 
-                       (float)fVar9);
+                              (float)fVar9);
 
         }
 

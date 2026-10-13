@@ -5440,7 +5440,7 @@ void comm_team_broadcast(int param_1)
 
     }
 
-    iVar4 = FUN_0045d300(iVar3);
+    iVar4 = kabuto_init(iVar3);
 
     if (iVar4 != 0) {
 
@@ -9989,7 +9989,7 @@ void FUN_00536700(int param_1)
 
   fVar1 = (float)fVar12;
 
-  fVar12 = (float10)FUN_0051bc00(fVar1);
+  fVar12 = (float10)crt_fabs(fVar1);
 
   pcVar8 = DAT_00632fb8;
 

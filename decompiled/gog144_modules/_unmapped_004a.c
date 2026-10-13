@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (79 named) — decompiled, names from PS2 symbols
+ * 131 functions (80 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -7575,12 +7575,12 @@ undefined4 FUN_004a9070(int param_1)
 
 }
 
-/* ===== FUN_004a90a0 @ 0x004A90A0 ===== */
+/* ===== IconDefGiveAmmo @ 0x004A90A0 ===== */
 /* PS2 candidate: IconDefGiveAmmo (conf 0.454) */
 
 
 
-undefined4 FUN_004a90a0(int param_1)
+undefined4 IconDefGiveAmmo(int param_1)
 
 
 
@@ -9598,7 +9598,7 @@ int PROJ_Create2(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_100,local_44,local_88);
 
-    FUN_00499310(iVar2,uStack_f0,uStack_e0,uStack_d0);
+    object_set_location(iVar2,uStack_f0,uStack_e0,uStack_d0);
 
     uVar1 = *(uint *)(iVar2 + 0xd8);
 
@@ -9759,7 +9759,7 @@ int PROJ_Create3(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
 
   *(undefined4 *)(iVar1 + 0x1d0) = param_6;
 
-  FUN_00499310(iVar3,param_5[4],param_5[8],param_5[0xc]);
+  object_set_location(iVar3,param_5[4],param_5[8],param_5[0xc]);
 
   uVar2 = *(uint *)(iVar3 + 0xd8);
 
@@ -10404,7 +10404,7 @@ LAB_004ac24a:
 
       object_change_ospec(iVar4,0x28);
 
-      FUN_00499310(iVar4,*param_4,param_4[1],param_4[2]);
+      object_set_location(iVar4,*param_4,param_4[1],param_4[2]);
 
       *(undefined4 *)(iVar4 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
@@ -10460,7 +10460,7 @@ LAB_004ac24a:
 
       object_change_ospec(iVar3,0x28);
 
-      FUN_00499310(iVar3,*param_4,param_4[1],param_4[2]);
+      object_set_location(iVar3,*param_4,param_4[1],param_4[2]);
 
       puVar8 = local_34;
 

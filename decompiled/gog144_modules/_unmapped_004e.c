@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (54 named) — decompiled, names from PS2 symbols
+ * 94 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -482,12 +482,12 @@ LAB_004e1942:
 
 }
 
-/* ===== FUN_004e1970 @ 0x004E1970 ===== */
+/* ===== rpman_shot @ 0x004E1970 ===== */
 /* PS2 candidate: rpman_shot (conf 0.462) */
 
 
 
-void FUN_004e1970(float param_1)
+void rpman_shot(float param_1)
 
 
 
@@ -2019,14 +2019,14 @@ void ai_d7_pairing(int param_1,float param_2)
 
 }
 
-/* ===== FUN_004e30b0 @ 0x004E30B0 ===== */
+/* ===== rpman_verify_enemy__FP6OBJECTf @ 0x004E30B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: rpman_verify_enemy__FP6OBJECTf (conf 0.458) */
 
 
 
-undefined4 FUN_004e30b0(int param_1,float param_2)
+undefined4 rpman_verify_enemy__FP6OBJECTf(int param_1,float param_2)
 
 
 
@@ -9763,7 +9763,7 @@ int FUN_004ec1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
     *(undefined4 *)(iVar3 + 0x44) = local_4;
 
-    FUN_00499310(iVar2,*puVar1,*(undefined4 *)(iVar3 + 0x40),*(undefined4 *)(iVar3 + 0x44));
+    object_set_location(iVar2,*puVar1,*(undefined4 *)(iVar3 + 0x40),*(undefined4 *)(iVar3 + 0x44));
 
     fVar4 = (float10)dirfcalcp3d__FP3P3DT0(puVar1,(undefined4 *)(iVar3 + 0x48));
 

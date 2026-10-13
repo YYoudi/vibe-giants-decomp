@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (103 named) — decompiled, names from PS2 symbols
+ * 186 functions (105 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -412,12 +412,12 @@ LAB_005116a3:
 
 }
 
-/* ===== FUN_005116e0 @ 0x005116E0 ===== */
+/* ===== vimp_animselect @ 0x005116E0 ===== */
 /* PS2 candidate: vimp_animselect (conf 0.455) */
 
 
 
-void FUN_005116e0(int param_1)
+void vimp_animselect(int param_1)
 
 
 
@@ -11551,12 +11551,12 @@ void textrender_draw_buffered
 
 }
 
-/* ===== FUN_0051bc00 @ 0x0051BC00 ===== */
+/* ===== crt_fabs @ 0x0051BC00 ===== */
 /* PS2 candidate: lift_logic__FP6OBJECT (conf 0.459) */
 
 
 
-float10 FUN_0051bc00(float param_1)
+float10 crt_fabs(float param_1)
 
 
 

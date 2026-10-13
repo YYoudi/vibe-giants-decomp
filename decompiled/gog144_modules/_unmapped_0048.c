@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (48 named) — decompiled, names from PS2 symbols
+ * 74 functions (49 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -522,12 +522,12 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_00480730 @ 0x00480730 ===== */
+/* ===== mecc_bush_logic @ 0x00480730 ===== */
 /* PS2 candidate: mecc_bush_logic (conf 0.461) */
 
 
 
-void FUN_00480730(int param_1)
+void mecc_bush_logic(int param_1)
 
 
 
@@ -942,7 +942,7 @@ void mecc_drop_carried_object(int param_1,int param_2)
 
       (iVar5 == *(int *)(param_1 + 0x188))) || (iVar5 = FUN_0052e5b0(iVar5), iVar5 == 0)) {
 
-    FUN_0049e4a0(param_2);
+    lift_logic__FP6OBJECT(param_2);
 
     FUN_00418630(param_2,0xb,local_c);
 

@@ -1839,7 +1839,7 @@ int smartie_check_follow__FP6OBJECTf(int param_1,float param_2)
 
             (((iVar4 = ObjIsMecc(iVar2), iVar4 == 0 || ((*(uint *)(iVar2 + 0xdc) & 0x400000) == 0))
 
-             || (iVar4 = FUN_004586e0(iVar2), iVar4 != 10)))) &&
+             || (iVar4 = SpecialWeaponIdGet__FP6OBJECT(iVar2), iVar4 != 10)))) &&
 
            (((iVar4 = ObjIsReaper(iVar2), iVar4 == 0 ||
 

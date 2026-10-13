@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (45 named) — decompiled, names from PS2 symbols
+ * 67 functions (47 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -476,7 +476,9 @@ LAB_00470793:
 
     *(float *)(param_1 + 0x2c4) = fVar1;
 
-    FUN_00499310(param_1,*(undefined4 *)(param_1 + 0x2a4),*(undefined4 *)(param_1 + 0x2b4),fVar1);
+    object_set_location(param_1,*(undefined4 *)(param_1 + 0x2a4),*(undefined4 *)(param_1 + 0x2b4),
+
+                        fVar1);
 
   }
 
@@ -3410,15 +3412,15 @@ void marker_spline_adjust_buoy(int param_1)
 
             iVar3 = *(int *)(iVar4 + 0x54);
 
-            FUN_00499310(iVar3,*(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(iVar3 + 0xa4),
+            object_set_location(iVar3,*(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(iVar3 + 0xa4),
 
-                         *(undefined4 *)(iVar3 + 0xa8));
+                                *(undefined4 *)(iVar3 + 0xa8));
 
             iVar3 = *(int *)(iVar4 + 0x58);
 
-            FUN_00499310(iVar3,*(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(iVar3 + 0xa4),
+            object_set_location(iVar3,*(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(iVar3 + 0xa4),
 
-                         *(undefined4 *)(iVar3 + 0xa8));
+                                *(undefined4 *)(iVar3 + 0xa8));
 
             iVar8 = iVar8 + 2;
 
@@ -4794,11 +4796,11 @@ void mecc_calculate_mass__FP6OBJECT(int param_1)
 
   } while (iVar7 < 3);
 
-  iVar7 = FUN_004586e0(param_1);
+  iVar7 = SpecialWeaponIdGet__FP6OBJECT(param_1);
 
   if (0 < iVar7) {
 
-    uVar3 = FUN_004586e0(param_1);
+    uVar3 = SpecialWeaponIdGet__FP6OBJECT(param_1);
 
     iVar7 = FUN_004a8f70(uVar3);
 
@@ -5027,12 +5029,12 @@ void reset_scale__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_0047be20 @ 0x0047BE20 ===== */
+/* ===== mecc_do_death @ 0x0047BE20 ===== */
 /* PS2 candidate: mecc_do_death (conf 0.461) */
 
 
 
-void FUN_0047be20(float param_1,float param_2,int param_3,int param_4,float param_5)
+void mecc_do_death(float param_1,float param_2,int param_3,int param_4,float param_5)
 
 
 
@@ -5381,7 +5383,7 @@ void mecc_do_flare__FP6OBJECT(int param_1)
 
     }
 
-    iVar2 = FUN_0045a2b0(param_1,0x40,0);
+    iVar2 = item_get_ammo(param_1,0x40,0);
 
     if (0 < iVar2) {
 
@@ -5677,9 +5679,9 @@ void mecc_do_health_grenade_mine2__FP6OBJECT(int param_1)
 
     }
 
-    if ((iVar7 != 0) && (iVar7 = FUN_0045a2b0(param_1,*(undefined4 *)(iVar1 + 0x124),0), 0 < iVar7))
+    if ((iVar7 != 0) && (iVar7 = item_get_ammo(param_1,*(undefined4 *)(iVar1 + 0x124),0), 0 < iVar7)
 
-    {
+       ) {
 
       if (*(int *)(iVar1 + 0x124) == 9) {
 
@@ -6318,7 +6320,7 @@ LAB_0047cdb1:
 
     if (*(float *)(iVar7 + 0x278) < *(float *)(iVar7 + 0x1c0)) {
 
-      FUN_0047be20(0xffffffff,0,iVar7,0,0,0);
+      mecc_do_death(0xffffffff,0,iVar7,0,0,0);
 
       for (puVar2 = DAT_00632d68; puVar2 != (undefined4 *)0x0; puVar2 = (undefined4 *)*puVar2) {
 
@@ -6972,9 +6974,9 @@ LAB_0047d6b8:
 
       playerobj_eval_refpt(iVar7,0,(undefined4 *)(iVar7 + 0xa0));
 
-      FUN_00499310(iVar7,*(undefined4 *)(iVar7 + 0xa0),*(undefined4 *)(iVar7 + 0xa4),
+      object_set_location(iVar7,*(undefined4 *)(iVar7 + 0xa0),*(undefined4 *)(iVar7 + 0xa4),
 
-                   *(undefined4 *)(iVar7 + 0xa8));
+                          *(undefined4 *)(iVar7 + 0xa8));
 
       *(undefined1 *)(iVar7 + 0x20a) = 0;
 
@@ -7866,7 +7868,7 @@ LAB_0047e183:
 
       }
 
-      FUN_00458040(param_1,1);
+      WeaponIdCycleToNext__FP6OBJECTi(param_1,1);
 
       param_1[0x83] = param_1[0x83] & 0xfffffffe;
 
@@ -7932,7 +7934,7 @@ LAB_0047e183:
 
       }
 
-      FUN_00458040(param_1,0);
+      WeaponIdCycleToNext__FP6OBJECTi(param_1,0);
 
       param_1[0x83] = param_1[0x83] & 0xfffffffe;
 
@@ -8202,7 +8204,7 @@ LAB_0047e84d:
 
       }
 
-      iVar6 = FUN_0045a2b0(param_1,local_74,0);
+      iVar6 = item_get_ammo(param_1,local_74,0);
 
       if (iVar6 < 1) {
 
@@ -8306,7 +8308,7 @@ LAB_0047e84d:
 
             (((*(byte *)(param_1 + 0x83) & 0x30) == 0 &&
 
-             ((local_84 != 0 && (iVar6 = FUN_0045a2b0(param_1,local_74,0), 0 < iVar6)))))) {
+             ((local_84 != 0 && (iVar6 = item_get_ammo(param_1,local_74,0), 0 < iVar6)))))) {
 
       XFGetViewportExt(&local_54,&local_44,&local_98,&local_80);
 
@@ -8394,9 +8396,9 @@ LAB_0047eba7:
 
           *(undefined4 *)(iVar3 + 0x114) = 1;
 
-          iVar6 = FUN_00455070(param_1,*(undefined4 *)(iVar3 + 0x11c),
+          iVar6 = in_fov(param_1,*(undefined4 *)(iVar3 + 0x11c),
 
-                               *(undefined4 *)(DAT_00632ed8 + 0x8f8));
+                         *(undefined4 *)(DAT_00632ed8 + 0x8f8));
 
           if (iVar6 == 0) {
 
@@ -8474,7 +8476,7 @@ LAB_0047eba7:
 
   else {
 
-    iVar6 = FUN_0045a2b0(param_1,local_74,0);
+    iVar6 = item_get_ammo(param_1,local_74,0);
 
     if (iVar6 < 1) {
 
@@ -8849,12 +8851,12 @@ void mecc_indicate_shots_fired__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_0047f370 @ 0x0047F370 ===== */
+/* ===== mecc_calc_thrust_for_height @ 0x0047F370 ===== */
 /* PS2 candidate: mecc_calc_thrust_for_height (conf 0.453) */
 
 
 
-void FUN_0047f370(int param_1,float param_2)
+void mecc_calc_thrust_for_height(int param_1,float param_2)
 
 
 
@@ -9257,7 +9259,7 @@ void mecc_jet(float param_1)
 
       param_1 = (float)fVar11;
 
-      iVar6 = FUN_004586e0(fVar5);
+      iVar6 = SpecialWeaponIdGet__FP6OBJECT(fVar5);
 
       fVar1 = param_1;
 
@@ -9519,7 +9521,7 @@ void mecc_jet(float param_1)
 
     }
 
-    iVar6 = FUN_004586e0(fVar5);
+    iVar6 = SpecialWeaponIdGet__FP6OBJECT(fVar5);
 
     if (iVar6 == 0x12) {
 
@@ -9583,7 +9585,7 @@ void mecc_jet(float param_1)
 
           if (*(int *)(iVar2 + 0x1e4) == 0) {
 
-            FUN_004586e0(fVar5);
+            SpecialWeaponIdGet__FP6OBJECT(fVar5);
 
             uVar8 = sound_get_free_sequence__Fv();
 

@@ -702,7 +702,7 @@ void main_dlog_00427970(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   puVar4[0xb] = param_7;
 
-  fVar7 = (float10)FUN_0051bc00(param_6);
+  fVar7 = (float10)crt_fabs(param_6);
 
   fVar8 = (float10)dlog_0051bd30(puVar4[0xd],puVar4[10]);
 
@@ -831,7 +831,7 @@ void main_dlog_00427bb0(undefined4 *param_1,float param_2,float param_3,undefine
 
   param_5 = param_6 * 0.128;
 
-  fVar8 = (float10)FUN_0051bc00(param_6);
+  fVar8 = (float10)crt_fabs(param_6);
 
   fVar9 = (float10)dlog_0051bd30(fVar3,*puVar7);
 
@@ -938,7 +938,7 @@ void main_dlog_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   uVar4 = param_6;
 
-  fVar8 = (float10)FUN_0051bc00(param_6);
+  fVar8 = (float10)crt_fabs(param_6);
 
   param_6 = (float)fVar8;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (67 named) — decompiled, names from PS2 symbols
+ * 100 functions (68 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -4559,12 +4559,12 @@ LAB_00415d47:
 
 }
 
-/* ===== FUN_00415d80 @ 0x00415D80 ===== */
+/* ===== collide_camera_check_walls @ 0x00415D80 ===== */
 /* PS2 candidate: collide_camera_check_walls (conf 0.463) */
 
 
 
-void FUN_00415d80(float *param_1,float *param_2)
+void collide_camera_check_walls(float *param_1,float *param_2)
 
 
 

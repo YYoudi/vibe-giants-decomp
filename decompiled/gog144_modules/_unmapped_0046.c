@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (34 named) — decompiled, names from PS2 symbols
+ * 53 functions (35 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -1487,12 +1487,14 @@ void FUN_004676a0(void)
 
 }
 
-/* ===== FUN_00469860 @ 0x00469860 ===== */
+/* ===== kabutoai_change_anim__FP6OBJECTii4SDKYfi @ 0x00469860 ===== */
 /* PS2 candidate: kabutoai_change_anim__FP6OBJECTii4SDKYfi (conf 0.461) */
 
 
 
-void FUN_00469860(int param_1,int param_2,int param_3,undefined4 param_4,float param_5,int param_6)
+void kabutoai_change_anim__FP6OBJECTii4SDKYfi
+
+               (int param_1,int param_2,int param_3,undefined4 param_4,float param_5,int param_6)
 
 
 
@@ -3766,9 +3768,9 @@ int object_0046e830(int param_1,int param_2)
 
   object_init_usage(iVar2);
 
-  FUN_00499310(iVar2,*(undefined4 *)(iVar2 + 0x2a4),*(undefined4 *)(iVar2 + 0x2b4),
+  object_set_location(iVar2,*(undefined4 *)(iVar2 + 0x2a4),*(undefined4 *)(iVar2 + 0x2b4),
 
-               *(undefined4 *)(iVar2 + 0x2c4));
+                      *(undefined4 *)(iVar2 + 0x2c4));
 
   ObjectCalculateTransform(iVar2);
 

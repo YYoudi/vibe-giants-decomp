@@ -1,0 +1,26 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0049e4a0,FUN_0049e4a0,,lift_logic__FP6OBJECT,0.9,llm-w129,body-verified
+00415d80,FUN_00415d80,,collide_camera_check_walls,0.9,llm-w129,body-verified
+004e1970,FUN_004e1970,,rpman_shot,0.9,llm-w129,body-verified
+004b6fa0,FUN_004b6fa0,,mecc_shot,0.9,llm-w129,body-verified
+00480730,FUN_00480730,,mecc_bush_logic,0.9,llm-w129,body-verified
+0047be20,FUN_0047be20,,mecc_do_death,0.9,llm-w129,body-verified
+00469860,FUN_00469860,,kabutoai_change_anim__FP6OBJECTii4SDKYfi,0.9,llm-w129,body-verified
+0045d300,FUN_0045d300,,kabuto_init,0.9,llm-w129,body-verified
+004586e0,FUN_004586e0,,SpecialWeaponIdGet__FP6OBJECT,0.9,llm-w129,body-verified
+0040afb0,FUN_0040afb0,,meccbasepit_create_food,0.9,llm-w129,body-verified
+00499310,FUN_00499310,,object_set_location,0.9,llm-w129,body-verified
+00458a10,FUN_00458a10,,TeamMemberClearWeapons__FP6OBJECT,0.9,llm-w129,body-verified
+005093e0,FUN_005093e0,,ripper_control__FP6OBJECT,0.9,llm-w129,body-verified
+004e30b0,FUN_004e30b0,,rpman_verify_enemy__FP6OBJECTf,0.9,llm-w129,body-verified
+004ca560,FUN_004ca560,,evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1,0.9,llm-w129,body-verified
+0045a2b0,FUN_0045a2b0,,item_get_ammo,0.9,llm-w129,body-verified
+005116e0,FUN_005116e0,,vimp_animselect,0.9,llm-w129,body-verified
+004a90a0,FUN_004a90a0,,IconDefGiveAmmo,0.9,llm-w129,body-verified
+004d5b50,FUN_004d5b50,,rpboat_tilt__FP6OBJECT,0.9,llm-w129,body-verified
+0047f370,FUN_0047f370,,mecc_calc_thrust_for_height,0.9,llm-w129,body-verified
+004cba90,FUN_004cba90,,evilreaper_find_turbo_marker__FP6OBJECTP3P3Di,0.9,llm-w129,body-verified
+004b95d0,FUN_004b95d0,,reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi,0.9,llm-w129,body-verified
+00458040,FUN_00458040,,WeaponIdCycleToNext__FP6OBJECTi,0.9,llm-w129,body-verified
+00455070,FUN_00455070,,in_fov,0.9,llm-w129,body-verified
+0051bc00,FUN_0051bc00,,crt_fabs,0.9,llm-w129,body-verified identity (rejected lift_logic var)

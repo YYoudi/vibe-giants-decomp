@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (46 named) — decompiled, names from PS2 symbols
+ * 64 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -3414,7 +3414,7 @@ void mecc_drop_carried_object_2(int param_1,int param_2)
 
       (iVar5 == *(int *)(param_1 + 0x188))) || (iVar5 = FUN_0052e5b0(iVar5), iVar5 == 0)) {
 
-    FUN_0049e4a0(param_2);
+    lift_logic__FP6OBJECT(param_2);
 
     FUN_00418630(param_2,0xb,local_c);
 
@@ -4116,15 +4116,19 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
           fVar9 = (float10)fsin((float10)DAT_006328e8 * (float10)5.0);
 
-          FUN_00499310(*(undefined4 *)(iVar7 + 0xcf4),
+          object_set_location(*(undefined4 *)(iVar7 + 0xcf4),
 
-                       (float)((float10)local_4c * (float10)param_1 + fVar8 * (float10)local_58),
+                              (float)((float10)local_4c * (float10)param_1 +
 
-                       (float)((float10)local_48 * (float10)param_1 + (float10)local_54 * fVar8),
+                                     fVar8 * (float10)local_58),
 
-                       (float)((float10)local_44 * (float10)param_1 +
+                              (float)((float10)local_48 * (float10)param_1 +
 
-                               fVar8 * (float10)local_50 + fVar9 + (float10)3.0));
+                                     (float10)local_54 * fVar8),
+
+                              (float)((float10)local_44 * (float10)param_1 +
+
+                                      fVar8 * (float10)local_50 + fVar9 + (float10)3.0));
 
           fVar8 = (float10)FUN_00518b70(fVar3,0);
 
@@ -4378,9 +4382,9 @@ void reaper_lock_user_2(int param_1)
 
                   playerobj_eval_refpt(iVar3,0,(undefined4 *)(iVar3 + 0xa0));
 
-                  FUN_00499310(iVar3,*(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(iVar3 + 0xa4),
+                  object_set_location(iVar3,*(undefined4 *)(iVar3 + 0xa0),
 
-                               *(undefined4 *)(iVar3 + 0xa8));
+                                      *(undefined4 *)(iVar3 + 0xa4),*(undefined4 *)(iVar3 + 0xa8));
 
                   *(undefined1 *)(iVar3 + 0x20a) = 0;
 
@@ -5199,14 +5203,16 @@ LAB_004c75eb:
 
 }
 
-/* ===== FUN_004ca560 @ 0x004CA560 ===== */
+/* ===== evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1 @ 0x004CA560 ===== */
 /* PS2 candidate: evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1 (conf 0.457) */
 
 
 
-void FUN_004ca560(int param_1,float *param_2,float param_3,undefined4 param_4,undefined4 param_5,
+void evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1
 
-                 float *param_6)
+               (int param_1,float *param_2,float param_3,undefined4 param_4,undefined4 param_5,
+
+               float *param_6)
 
 
 
@@ -5262,7 +5268,9 @@ void FUN_004ca560(int param_1,float *param_2,float param_3,undefined4 param_4,un
 
   if ((*(int *)(param_1 + 0xe8) != 2) ||
 
-     (iVar3 = FUN_004cba90(param_1,param_6,*(undefined4 *)(DAT_00632ed8 + 0x121c)), iVar3 == 0)) {
+     (iVar3 = evilreaper_find_turbo_marker__FP6OBJECTP3P3Di
+
+                        (param_1,param_6,*(undefined4 *)(DAT_00632ed8 + 0x121c)), iVar3 == 0)) {
 
     param_6 = (float *)0x0;
 
@@ -6182,11 +6190,13 @@ void sound_obj_seq_bigger(int param_1)
 
       iVar3 = *(int *)(param_1 + 0x100);
 
-      FUN_004ca560(param_1,*(int *)(iVar3 + 0x3c) + 0xa0,0x41a00000,
+      evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1
 
-                   *(undefined4 *)(DAT_00632ed8 + 0xe7c),*(undefined4 *)(DAT_00632ed8 + 0xe80),
+                (param_1,*(int *)(iVar3 + 0x3c) + 0xa0,0x41a00000,
 
-                   &local_c);
+                 *(undefined4 *)(DAT_00632ed8 + 0xe7c),*(undefined4 *)(DAT_00632ed8 + 0xe80),
+
+                 &local_c);
 
       collgrid_collide_d(param_1,param_1 + 0xa0,&local_c);
 
@@ -6594,12 +6604,14 @@ void evilreaper_set_new_location__FP6OBJECTi(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004cba90 @ 0x004CBA90 ===== */
+/* ===== evilreaper_find_turbo_marker__FP6OBJECTP3P3Di @ 0x004CBA90 ===== */
 /* PS2 candidate: evilreaper_find_turbo_marker__FP6OBJECTP3P3Di (conf 0.452) */
 
 
 
-undefined4 FUN_004cba90(int param_1,undefined4 *param_2,float param_3)
+undefined4
+
+evilreaper_find_turbo_marker__FP6OBJECTP3P3Di(int param_1,undefined4 *param_2,float param_3)
 
 
 
@@ -6736,7 +6748,9 @@ void physics_reset_a(int param_1)
 
     }
 
-    FUN_004ca560(param_1,iVar1 + 0xa0,0x41a00000,uVar6,uVar3,&local_18);
+    evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1
+
+              (param_1,iVar1 + 0xa0,0x41a00000,uVar6,uVar3,&local_18);
 
     iVar1 = param_1 + 0xa0;
 
@@ -7522,7 +7536,7 @@ void FUN_004cc900(void)
 
         else {
 
-          iVar6 = FUN_0045a2b0(DAT_00632a88,iVar6,0);
+          iVar6 = item_get_ammo(DAT_00632a88,iVar6,0);
 
           *piVar10 = iVar6;
 
@@ -7566,7 +7580,7 @@ void FUN_004cc900(void)
 
         *piVar7 = iVar5;
 
-        iVar6 = FUN_0045a2b0(DAT_00632a88,iVar6,0);
+        iVar6 = item_get_ammo(DAT_00632a88,iVar6,0);
 
         *piVar10 = iVar6;
 

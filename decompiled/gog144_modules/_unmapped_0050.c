@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (47 named) — decompiled, names from PS2 symbols
+ * 87 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -4388,7 +4388,7 @@ LAB_00503c4b:
 
   else {
 
-    FUN_0047f370(iVar2,local_4);
+    mecc_calc_thrust_for_height(iVar2,local_4);
 
   }
 
@@ -9038,12 +9038,12 @@ undefined4 objspec_get_movetype(int param_1)
 
 }
 
-/* ===== FUN_005093e0 @ 0x005093E0 ===== */
+/* ===== ripper_control__FP6OBJECT @ 0x005093E0 ===== */
 /* PS2 candidate: ripper_control__FP6OBJECT (conf 0.458) */
 
 
 
-void FUN_005093e0(float param_1)
+void ripper_control__FP6OBJECT(float param_1)
 
 
 

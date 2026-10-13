@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (65 named) — decompiled, names from PS2 symbols
+ * 105 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -3239,7 +3239,7 @@ int army_create_rpman__FP6OBJECTP9ArmyOrderifi
 
   playerobj_eval_refpt(param_1,0,puVar1);
 
-  FUN_00499310(iVar3,*puVar1,*(undefined4 *)(iVar3 + 0xa4),*(undefined4 *)(iVar3 + 0xa8));
+  object_set_location(iVar3,*puVar1,*(undefined4 *)(iVar3 + 0xa4),*(undefined4 *)(iVar3 + 0xa8));
 
   *(undefined4 *)(iVar2 + 0x48) = *puVar1;
 
@@ -7795,12 +7795,12 @@ undefined4 FUN_0040aec0(int param_1)
 
 }
 
-/* ===== FUN_0040afb0 @ 0x0040AFB0 ===== */
+/* ===== meccbasepit_create_food @ 0x0040AFB0 ===== */
 /* PS2 candidate: meccbasepit_create_food (conf 0.46) */
 
 
 
-void FUN_0040afb0(int param_1,int param_2)
+void meccbasepit_create_food(int param_1,int param_2)
 
 
 
@@ -7873,7 +7873,7 @@ int FUN_0040b1d0(int param_1,int param_2)
 
   if (iVar1 == 0) {
 
-    FUN_0040afb0(param_1,param_2);
+    meccbasepit_create_food(param_1,param_2);
 
     return 0;
 
@@ -10767,7 +10767,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   local_1c = *(float *)(iVar4 + 0x1e8) * *(float *)(iVar4 + 0xc4) + *(float *)(iVar4 + 0xa8);
 
-  FUN_00415d80(&DAT_005550d4,&local_24);
+  collide_camera_check_walls(&DAT_005550d4,&local_24);
 
   iVar7 = ObjIsReaper(iVar4);
 

@@ -469,7 +469,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
       }
 
-      iVar1 = FUN_004586e0(DAT_00632a88);
+      iVar1 = SpecialWeaponIdGet__FP6OBJECT(DAT_00632a88);
 
       if (iVar1 == -1) {
 
@@ -489,7 +489,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
       }
 
-      DAT_00555a20 = FUN_004586e0(DAT_00632a88);
+      DAT_00555a20 = SpecialWeaponIdGet__FP6OBJECT(DAT_00632a88);
 
     }
 
@@ -8133,9 +8133,9 @@ int kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
 
       *(uint *)(iVar1 + 0xd8) = *(uint *)(iVar1 + 0xd8) | 0x10000;
 
-      FUN_00499310(iVar1,*(undefined4 *)(iVar1 + 0x2a4),*(undefined4 *)(iVar1 + 0x2b4),
+      object_set_location(iVar1,*(undefined4 *)(iVar1 + 0x2a4),*(undefined4 *)(iVar1 + 0x2b4),
 
-                   *(undefined4 *)(iVar1 + 0x2c4));
+                          *(undefined4 *)(iVar1 + 0x2c4));
 
       ObjectCalculateTransform(iVar1);
 
@@ -9494,7 +9494,7 @@ void dlog_numeric_field(undefined4 param_1,float param_2)
 
   if ((*(byte *)((int)param_2 + 0xc) & 4) == 0) {
 
-    fVar7 = (float10)FUN_0051bc00(*(undefined4 *)((int)param_2 + 0x30));
+    fVar7 = (float10)crt_fabs(*(undefined4 *)((int)param_2 + 0x30));
 
     fVar6 = (float10)dlog_0051bd30(*(undefined4 *)((int)param_2 + 0x30),
 
@@ -9560,7 +9560,7 @@ void dlog_numeric_field(undefined4 param_1,float param_2)
 
     }
 
-    fVar7 = (float10)FUN_0051bc00(*(undefined4 *)(iVar3 + 0x30));
+    fVar7 = (float10)crt_fabs(*(undefined4 *)(iVar3 + 0x30));
 
     fVar7 = fVar7 * (float10)(int)local_c;
 
@@ -9613,7 +9613,7 @@ void dlog_004276a0(uint param_1,float param_2,float param_3,float param_4,float 
 
   }
 
-  fVar3 = (float10)FUN_0051bc00(param_1);
+  fVar3 = (float10)crt_fabs(param_1);
 
   if ((int)uVar2 < 0) {
 
@@ -9759,7 +9759,7 @@ void dlog_screen_user_1(int *param_1,float param_2)
 
     if (piVar3 != (int *)0x0) {
 
-      fVar5 = (float10)FUN_0051bc00(piVar3[0xd]);
+      fVar5 = (float10)crt_fabs(piVar3[0xd]);
 
       fVar6 = (float10)dlog_0051bd30(piVar3[0xd],piVar3[10]);
 
@@ -9972,13 +9972,13 @@ void dlog_screen_user_2(undefined4 param_1,float param_2)
 
   if ((char)uVar2 < '\0') {
 
-    fVar5 = (float10)FUN_0051bc00(fVar4);
+    fVar5 = (float10)crt_fabs(fVar4);
 
   }
 
   else {
 
-    fVar5 = (float10)FUN_0051bc00(fVar4);
+    fVar5 = (float10)crt_fabs(fVar4);
 
     fVar5 = fVar5 * (float10)local_8;
 
@@ -10677,7 +10677,7 @@ void FUN_00428810(undefined4 *param_1)
 
                   pcVar12 = pcVar11 + 1;
 
-                  fVar15 = (float10)FUN_0051bc00(puVar7[0xc]);
+                  fVar15 = (float10)crt_fabs(puVar7[0xc]);
 
                   local_10 = (float)(fVar15 + (float10)local_10);
 
@@ -11119,7 +11119,7 @@ void FUN_00428f70(float param_1,float param_2)
 
       }
 
-      fVar12 = (float10)FUN_0051bc00(local_8);
+      fVar12 = (float10)crt_fabs(local_8);
 
       uVar9 = *(undefined4 *)((int)param_2 + 0x18);
 
@@ -11165,7 +11165,7 @@ LAB_004291b7:
 
         else if (*(int *)(iVar5 + 0x2c) == iVar7) {
 
-          fVar12 = (float10)FUN_0051bc00(local_8);
+          fVar12 = (float10)crt_fabs(local_8);
 
           FUN_004292b0(0x101010,param_2 - 0.01,param_1,param_2 + *(float *)(iVar5 + 0x38) + 0.01,
 
@@ -11191,7 +11191,7 @@ LAB_004291b7:
 
         FUN_0051b970(iVar8,0,local_8,local_4,param_1,puVar3 + 4);
 
-        fVar12 = (float10)FUN_0051bc00(local_8);
+        fVar12 = (float10)crt_fabs(local_8);
 
         param_1 = (float)(fVar12 + (float10)param_1);
 
@@ -12037,7 +12037,7 @@ void dlog_screen_user_big(undefined4 param_1,float param_2)
 
         } while (cVar3 != '\0');
 
-        fVar15 = (float10)FUN_0051bc00(*(undefined4 *)((int)param_2 + 0x34));
+        fVar15 = (float10)crt_fabs(*(undefined4 *)((int)param_2 + 0x34));
 
         local_c = (float)fVar15;
 
@@ -12189,7 +12189,7 @@ LAB_00429b07:
 
           } while (cVar3 != '\0');
 
-          fVar15 = (float10)FUN_0051bc00(*(undefined4 *)(iVar7 + 0x34));
+          fVar15 = (float10)crt_fabs(*(undefined4 *)(iVar7 + 0x34));
 
           local_c = (float)fVar15;
 
@@ -12325,7 +12325,7 @@ LAB_00429c6f:
 
     wredit_00519c70();
 
-    fVar15 = (float10)FUN_0051bc00(*(undefined4 *)(iVar7 + 0x34));
+    fVar15 = (float10)crt_fabs(*(undefined4 *)(iVar7 + 0x34));
 
     local_c = (float)fVar15;
 
@@ -12542,7 +12542,7 @@ void hud_screen_text_render(int param_1,int param_2)
 
     }
 
-    FUN_0051bc00(param_2);
+    crt_fabs(param_2);
 
     uVar10 = __ftol();
 
@@ -12554,7 +12554,7 @@ void hud_screen_text_render(int param_1,int param_2)
 
   if (((char)*(uint *)(iVar8 + 0xc) < '\0') && (DAT_00632aaa != '\0')) {
 
-    FUN_0051bc00(param_2);
+    crt_fabs(param_2);
 
     uVar10 = __ftol();
 
@@ -12744,7 +12744,7 @@ LAB_0042a10b:
 
       if (((bVar5) && (fVar6 < *(float *)(iVar8 + 0x20) != (fVar6 == *(float *)(iVar8 + 0x20)))) &&
 
-         (fVar14 = (float10)FUN_0051bc00(param_2),
+         (fVar14 = (float10)crt_fabs(param_2),
 
          (float10)fVar7 <= fVar14 * (float10)iVar13 + (float10)*(float *)(iVar8 + 0x18))) {
 
@@ -12889,13 +12889,13 @@ int dlog_wrap_text(undefined4 param_1,int param_2)
 
          (fVar3 <= *(float *)(iVar4 + 0x38) + *(float *)(iVar4 + 0x1c) + 0.0117)) {
 
-        FUN_0051bc00(param_2);
+        crt_fabs(param_2);
 
       }
 
       else {
 
-        FUN_0051bc00(param_2);
+        crt_fabs(param_2);
 
       }
 
@@ -12903,7 +12903,7 @@ int dlog_wrap_text(undefined4 param_1,int param_2)
 
     else {
 
-      FUN_0051bc00(param_2);
+      crt_fabs(param_2);
 
     }
 
@@ -12911,7 +12911,7 @@ int dlog_wrap_text(undefined4 param_1,int param_2)
 
   else {
 
-    FUN_0051bc00(param_2);
+    crt_fabs(param_2);
 
   }
 

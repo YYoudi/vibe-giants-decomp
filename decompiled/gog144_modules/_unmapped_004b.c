@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (63 named) — decompiled, names from PS2 symbols
+ * 90 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3608,12 +3608,12 @@ int meccbasepit_bldg_from_object(int param_1)
 
 }
 
-/* ===== FUN_004b6fa0 @ 0x004B6FA0 ===== */
+/* ===== mecc_shot @ 0x004B6FA0 ===== */
 /* PS2 candidate: mecc_shot (conf 0.462) */
 
 
 
-void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
+void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
 
 
@@ -5252,9 +5252,9 @@ LAB_004b76fe:
 
       playerobj_eval_refpt(param_1,0,(undefined4 *)(param_1 + 0xa0));
 
-      FUN_00499310(param_1,*(undefined4 *)(param_1 + 0xa0),*(undefined4 *)(param_1 + 0xa4),
+      object_set_location(param_1,*(undefined4 *)(param_1 + 0xa0),*(undefined4 *)(param_1 + 0xa4),
 
-                   *(undefined4 *)(param_1 + 0xa8));
+                          *(undefined4 *)(param_1 + 0xa8));
 
       *(undefined1 *)(param_1 + 0x20a) = 0;
 
@@ -5414,7 +5414,7 @@ LAB_004b76fe:
 
     if (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0)) {
 
-      FUN_004b6fa0(0xffffffff,0,param_1,0,0,0);
+      mecc_shot(0xffffffff,0,param_1,0,0,0);
 
       *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40000000;
 
@@ -5881,7 +5881,7 @@ void FUN_004b8d30(int param_1,int param_2,int param_3)
 
           if (param_3 < 0) {
 
-            param_3 = FUN_004a90a0(param_2);
+            param_3 = IconDefGiveAmmo(param_2);
 
           }
 
@@ -6323,7 +6323,7 @@ void reaper_set_bow(int param_1,int param_2,int param_3,int param_4,int param_5)
 
   if (param_4 == -1) {
 
-    param_4 = FUN_004a90a0(param_2);
+    param_4 = IconDefGiveAmmo(param_2);
 
   }
 
@@ -6555,7 +6555,7 @@ void FUN_004b92d0(int param_1,int param_2,int param_3)
 
       if (param_3 < 0) {
 
-        param_3 = FUN_004a90a0(param_2);
+        param_3 = IconDefGiveAmmo(param_2);
 
       }
 
@@ -6608,7 +6608,7 @@ void reaper_give_all_spell_energy(int param_1,int param_2)
 
       if (param_2 < 0) {
 
-        iVar1 = FUN_004a90a0(pfVar2[-1]);
+        iVar1 = IconDefGiveAmmo(pfVar2[-1]);
 
       }
 
@@ -6819,7 +6819,7 @@ switchD_004b943e_caseD_1a:
 
       if (param_4 < 0) {
 
-        param_4 = FUN_004a90a0(param_2);
+        param_4 = IconDefGiveAmmo(param_2);
 
       }
 
@@ -6847,12 +6847,14 @@ switchD_004b943e_caseD_1a:
 
 }
 
-/* ===== FUN_004b95d0 @ 0x004B95D0 ===== */
+/* ===== reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi @ 0x004B95D0 ===== */
 /* PS2 candidate: reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi (conf 0.452) */
 
 
 
-undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
+undefined4
+
+reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param_2,int param_3)
 
 
 
@@ -11888,7 +11890,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
               ((*(int *)(uVar6 + 4) == 0x23f || (*(int *)(uVar6 + 4) == 0x2e9)))))) &&
 
-            (iVar3 = FUN_00455070(param_1,uVar6,puVar9[0x3e2]), iVar3 != 0)))) {
+            (iVar3 = in_fov(param_1,uVar6,puVar9[0x3e2]), iVar3 != 0)))) {
 
           local_158 = *(undefined4 *)(param_1 + 0xa0);
 
@@ -12004,7 +12006,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
       puVar9[999] = 1;
 
-      iVar3 = FUN_00455070(param_1,puVar9[0x3e3],*(undefined4 *)(DAT_00632ed8 + 0x8e0));
+      iVar3 = in_fov(param_1,puVar9[0x3e3],*(undefined4 *)(DAT_00632ed8 + 0x8e0));
 
       if (iVar3 != 0) {
 
@@ -12701,7 +12703,7 @@ void reaper_finish_hail__FP6OBJECT(int param_1)
 
         *(undefined4 *)(iVar4 + 0x2c4) = 0x43610000;
 
-        FUN_00499310(iVar4,*(undefined4 *)(iVar4 + 0x2a4),uVar2,0x43610000);
+        object_set_location(iVar4,*(undefined4 *)(iVar4 + 0x2a4),uVar2,0x43610000);
 
         *(int *)(iVar4 + 0x274) = iVar3;
 
