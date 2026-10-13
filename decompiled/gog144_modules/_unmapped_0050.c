@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (71 named) — decompiled, names from PS2 symbols
+ * 87 functions (72 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -809,8 +809,8 @@ void item_create_base_pickup_2(undefined4 param_1,int param_2,int param_3,float 
 
 }
 
-/* ===== FUN_00500c00 @ 0x00500C00 ===== */
-void FUN_00500c00(float param_1,float param_2,float param_3,undefined4 param_4)
+/* ===== render_billboard_matrix @ 0x00500C00 ===== */
+void render_billboard_matrix(float param_1,float param_2,float param_3,undefined4 param_4)
 
 
 

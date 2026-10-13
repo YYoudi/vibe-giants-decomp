@@ -872,7 +872,7 @@
  "0x004177F0": {
   "name": "bldg_slot_action_dispatch",
   "named": true,
-  "len": 348
+  "len": 350
  },
  "0x00417830": {
   "name": "base_get_smartie_building",
@@ -4617,7 +4617,7 @@
  "0x004907E0": {
   "name": "FUN_004907e0",
   "named": false,
-  "len": 824
+  "len": 833
  },
  "0x00490860": {
   "name": "read_worlds_bin_fn_PS2",
@@ -6255,9 +6255,9 @@
   "len": 4305
  },
  "0x004B6BB0": {
-  "name": "FUN_004b6bb0",
-  "named": false,
-  "len": 559
+  "name": "base_slot0_get",
+  "named": true,
+  "len": 561
  },
  "0x004B6C00": {
   "name": "FUN_004b6c00",
@@ -6495,8 +6495,8 @@
   "len": 614
  },
  "0x004BC880": {
-  "name": "FUN_004bc880",
-  "named": false,
+  "name": "obj_aim_calc",
+  "named": true,
   "len": 892
  },
  "0x004BC930": {
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14544
+  "len": 14553
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7280,9 +7280,9 @@
   "len": 3080
  },
  "0x004E4E70": {
-  "name": "FUN_004e4e70",
-  "named": false,
-  "len": 1268
+  "name": "rpman_hurt_anim",
+  "named": true,
+  "len": 1271
  },
  "0x004E4F60": {
   "name": "FUN_004e4f60",
@@ -7900,9 +7900,9 @@
   "len": 2089
  },
  "0x00500C00": {
-  "name": "FUN_00500c00",
-  "named": false,
-  "len": 1260
+  "name": "render_billboard_matrix",
+  "named": true,
+  "len": 1271
  },
  "0x00500CF0": {
   "name": "status_team_lookup",
@@ -8490,9 +8490,9 @@
   "len": 5900
  },
  "0x00515580": {
-  "name": "FUN_00515580",
-  "named": false,
-  "len": 508
+  "name": "wave_effects_draw_all",
+  "named": true,
+  "len": 517
  },
  "0x005155C0": {
   "name": "flick_ctx_reset",
@@ -9295,9 +9295,9 @@
   "len": 9709
  },
  "0x0051F2A0": {
-  "name": "FUN_0051f2a0",
-  "named": false,
-  "len": 180
+  "name": "comm_disconnect_sleep",
+  "named": true,
+  "len": 189
  },
  "0x0051F2D0": {
   "name": "comm_active_player_count",

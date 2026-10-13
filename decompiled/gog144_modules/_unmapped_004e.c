@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (76 named) — decompiled, names from PS2 symbols
+ * 94 functions (77 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -4135,8 +4135,8 @@ void cleaner_process(float param_1,int param_2)
 
 }
 
-/* ===== FUN_004e4e70 @ 0x004E4E70 ===== */
-void FUN_004e4e70(int param_1,int param_2)
+/* ===== rpman_hurt_anim @ 0x004E4E70 ===== */
+void rpman_hurt_anim(int param_1,int param_2)
 
 
 

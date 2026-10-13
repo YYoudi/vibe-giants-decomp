@@ -8885,7 +8885,7 @@ undefined4 dev_debug_flags(void)
 
       MAP_MemGroupSetBase(DAT_006328f4,DAT_00632a88);
 
-      FUN_00515580();
+      wave_effects_draw_all();
 
     }
 

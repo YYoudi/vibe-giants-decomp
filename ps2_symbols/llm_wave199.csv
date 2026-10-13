@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00500c00,FUN_00500c00,,render_billboard_matrix,0.9,llm-w199,LookAt+Transpose+view_reset
+0051f2a0,FUN_0051f2a0,,comm_disconnect_sleep,0.9,llm-w199,Sleep(500)+comm callees MP branch
+00515580,FUN_00515580,,wave_effects_draw_all,0.9,llm-w199,walks 006328f8 wave list caller dev_debug
+004e4e70,FUN_004e4e70,,rpman_hurt_anim,0.9,llm-w199,ObjectSetAnim+damage_response+rand
+004bc880,FUN_004bc880,,obj_aim_calc,0.9,llm-w199,gun_find+normalize+project_vector
+004b6bb0,FUN_004b6bb0,,base_slot0_get,0.9,llm-w199,slot 0/1 getter caller slot_action_dispatch

@@ -5620,7 +5620,7 @@ void bldg_slot_action_dispatch(undefined4 param_1,undefined4 param_2)
 
   if (iVar1 != 0) {
 
-    FUN_004b6bb0(param_1,param_2);
+    base_slot0_get(param_1,param_2);
 
   }
 

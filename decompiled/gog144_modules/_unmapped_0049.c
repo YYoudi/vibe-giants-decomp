@@ -28,7 +28,7 @@ void FUN_004907e0(void)
 
   if (iVar1 != 0) {
 
-    FUN_0051f2a0();
+    comm_disconnect_sleep();
 
     gamespy_host_game();
 

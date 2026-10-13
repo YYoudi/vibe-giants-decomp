@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (165 named) — decompiled, names from PS2 symbols
+ * 186 functions (167 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -4242,8 +4242,8 @@ void wave_effect_draw(int param_1)
 
 }
 
-/* ===== FUN_00515580 @ 0x00515580 ===== */
-void FUN_00515580(void)
+/* ===== wave_effects_draw_all @ 0x00515580 ===== */
+void wave_effects_draw_all(void)
 
 
 
@@ -15412,8 +15412,8 @@ void Audio3DTestToneUpdate__Fv_5(void)
 
 }
 
-/* ===== FUN_0051f2a0 @ 0x0051F2A0 ===== */
-void FUN_0051f2a0(void)
+/* ===== comm_disconnect_sleep @ 0x0051F2A0 ===== */
+void comm_disconnect_sleep(void)
 
 
 
