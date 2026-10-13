@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (112 named) — decompiled, names from PS2 symbols
+ * 129 functions (113 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -7971,12 +7971,12 @@ LAB_00425765:
 
 }
 
-/* ===== FUN_004257c0 @ 0x004257C0 ===== */
+/* ===== sfx_volume_set_clamped @ 0x004257C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004257c0(float param_1)
+void sfx_volume_set_clamped(float param_1)
 
 
 

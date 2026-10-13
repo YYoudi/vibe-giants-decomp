@@ -2059,7 +2059,7 @@ void menu_audio_setup(int param_1)
 
   DAT_0063322c = 0;
 
-  FUN_004257c0();
+  sfx_volume_set_clamped();
 
   return;
 
@@ -2415,7 +2415,7 @@ void game_options_verify(void)
 
       keymap_0051a100(s_MSpeed_0055be3c,&fStack_c);
 
-      FUN_004257c0(fStack_c);
+      sfx_volume_set_clamped(fStack_c);
 
     }
 

@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+005445f0,FUN_005445f0,,crt_pow_special1,0.9,llm-w196,exponent-extract+fixup callers in_fov/sincos_init
+00544ac0,FUN_00544ac0,,crt_pow_special2,0.9,llm-w196,twin caller math_atan2_deg
+0054ebcb,FUN_0054ebcb,,crt_codepage_init,0.9,llm-w196,GetACP/GetOEMCP caller crt_lock
+0053ca90,FUN_0053ca90,,anm_affine_mats_build,0.9,llm-w196,affine+mat_init_copy callers ProcAnimsCreate
+004257c0,FUN_004257c0,,sfx_volume_set_clamped,0.9,llm-w196,clamp01 -> 00555a1c + (1-x)*20 range
+0045d2e0,FUN_0045d2e0,,obj_scale_flag_get,0.9,llm-w196,flag ? 0x1d0 : 1.0 callers impact/camera/wave
+0054ee12,FUN_0054ee12,,crt_add64,0.9,llm-w196,64-bit add helper callers bitarray/add
+00549b1c,FUN_00549b1c,,crt_fp_status_map,0.9,llm-w196,FPU status 0x80000->7/1 callers anm_dump

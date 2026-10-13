@@ -10102,7 +10102,7 @@ float10 math_atan2_deg(void)
 
   
 
-  fVar1 = (float10)FUN_00544ac0();
+  fVar1 = (float10)crt_pow_special2();
 
   return fVar1 * (float10)57.295776;
 
@@ -10740,7 +10740,7 @@ void math_sincos_table_init(void)
 
   do {
 
-    fVar2 = (float10)FUN_005445f0();
+    fVar2 = (float10)crt_pow_special1();
 
     (&DAT_005cc878)[iVar1] = (float)fVar2;
 

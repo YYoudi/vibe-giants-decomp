@@ -2673,7 +2673,7 @@ int wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT(int *param_1,int pa
 
         if (iVar7 == 1) {
 
-          fVar10 = (float10)FUN_0045d2e0(param_2);
+          fVar10 = (float10)obj_scale_flag_get(param_2);
 
           fVar1 = (float)fVar10;
 
@@ -13710,7 +13710,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
       fVar8 = (float10)crt_scanf_float2(pcVar7);
 
-      FUN_004257c0((float)fVar8);
+      sfx_volume_set_clamped((float)fVar8);
 
       iVar6 = 0;
 

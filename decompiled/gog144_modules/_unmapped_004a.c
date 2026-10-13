@@ -10657,7 +10657,7 @@ void face_target(int param_1,float *param_2,int param_3,float param_4,float para
 
   Dot__FP3P3DT0(&local_12c,&local_138);
 
-  fVar1 = (float10)FUN_005445f0();
+  fVar1 = (float10)crt_pow_special1();
 
   if (fVar1 != (float10)0.0) {
 

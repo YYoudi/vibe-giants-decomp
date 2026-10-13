@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (117 named) — decompiled, names from PS2 symbols
+ * 145 functions (118 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3939,7 +3939,7 @@ undefined4 in_fov(int param_1,int param_2,float param_3)
 
     Dot__FP3P3DT0(&local_c,&local_18);
 
-    fVar1 = (float10)FUN_005445f0();
+    fVar1 = (float10)crt_pow_special1();
 
     if ((float10)57.339447 * fVar1 < (float10)param_3 * (float10)0.5) {
 
@@ -12225,8 +12225,8 @@ void AddHud__4cHudP8cHudIcon(void)
 
 }
 
-/* ===== FUN_0045d2e0 @ 0x0045D2E0 ===== */
-float10 FUN_0045d2e0(int param_1)
+/* ===== obj_scale_flag_get @ 0x0045D2E0 ===== */
+float10 obj_scale_flag_get(int param_1)
 
 
 

@@ -3138,7 +3138,7 @@ LAB_00404e2f:
 
       FUN_0042e260(param_1,0);
 
-      fVar8 = (float10)FUN_0045d2e0(param_1);
+      fVar8 = (float10)obj_scale_flag_get(param_1);
 
       uVar9 = 8;
 
@@ -3148,7 +3148,7 @@ LAB_00404e2f:
 
       FUN_0042e260(param_1,1);
 
-      fVar8 = (float10)FUN_0045d2e0(param_1);
+      fVar8 = (float10)obj_scale_flag_get(param_1);
 
       uVar9 = 9;
 
@@ -10583,7 +10583,7 @@ void SetupCameraDataNormal__FP6OBJECTT0(undefined4 param_1,float param_2)
 
   if ((DAT_00632a88 != 0) && (*(int *)(DAT_00632a88 + 0x1e0) == 1)) {
 
-    fVar9 = (float10)FUN_0045d2e0(DAT_00632a88);
+    fVar9 = (float10)obj_scale_flag_get(DAT_00632a88);
 
     local_4c = (float)((float10)local_4c * fVar9);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (309 named) — decompiled, names from PS2 symbols
+ * 351 functions (314 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -2236,7 +2236,7 @@ void AddHud__4cHudP8cHudIcon_5(void)
 
 {
 
-  FUN_005445f0();
+  crt_pow_special1();
 
   return;
 
@@ -5958,8 +5958,8 @@ uint FUN_00544517(uint param_1)
 
 }
 
-/* ===== FUN_005445f0 @ 0x005445F0 ===== */
-void FUN_005445f0(void)
+/* ===== crt_pow_special1 @ 0x005445F0 ===== */
+void crt_pow_special1(void)
 
 
 
@@ -6006,7 +6006,7 @@ float10 anm_dump_ext(int param_1,uint param_2)
 
     if (((in_EAX & 0xfffff) != 0) || (fVar1 = _DAT_00581640, param_1 != 0)) {
 
-      fVar1 = (float10)FUN_00549b1c();
+      fVar1 = (float10)crt_fp_status_map();
 
     }
 
@@ -6686,8 +6686,8 @@ void crt_ulltoa(uint param_1,char *param_2,uint param_3,int param_4)
 
 }
 
-/* ===== FUN_00544ac0 @ 0x00544AC0 ===== */
-void FUN_00544ac0(void)
+/* ===== crt_pow_special2 @ 0x00544AC0 ===== */
+void crt_pow_special2(void)
 
 
 
@@ -6734,7 +6734,7 @@ float10 anm_dump_544add(int param_1,uint param_2)
 
     if (((in_EAX & 0xfffff) != 0) || (fVar1 = _DAT_00581640, param_1 != 0)) {
 
-      fVar1 = (float10)FUN_00549b1c();
+      fVar1 = (float10)crt_fp_status_map();
 
     }
 
@@ -15580,8 +15580,8 @@ void ANM_DumpCluster_7(void)
 
 }
 
-/* ===== FUN_00549b1c @ 0x00549B1C ===== */
-undefined4 FUN_00549b1c(void)
+/* ===== crt_fp_status_map @ 0x00549B1C ===== */
+undefined4 crt_fp_status_map(void)
 
 
 
@@ -22278,7 +22278,7 @@ void crt_bitarray_clear(int param_1,int param_2)
 
   puVar3 = (undefined4 *)(param_1 + (param_2 / 0x20) * 4);
 
-  iVar1 = FUN_0054ee12(*puVar3,1 << (0x1fU - (char)(param_2 % 0x20) & 0x1f),puVar3);
+  iVar1 = crt_add64(*puVar3,1 << (0x1fU - (char)(param_2 % 0x20) & 0x1f),puVar3);
 
   iVar2 = param_2 / 0x20 + -1;
 
@@ -22294,7 +22294,7 @@ void crt_bitarray_clear(int param_1,int param_2)
 
       }
 
-      iVar1 = FUN_0054ee12(*puVar3,1,puVar3);
+      iVar1 = crt_add64(*puVar3,1,puVar3);
 
       iVar2 = iVar2 + -1;
 
@@ -25966,7 +25966,7 @@ undefined4 crt_lock_54ea1e(undefined4 param_1)
 
   _lock(0x19);
 
-  CodePage = FUN_0054ebcb(param_1);
+  CodePage = crt_codepage_init(param_1);
 
   if (CodePage != DAT_0065767c) {
 
@@ -26184,8 +26184,8 @@ LAB_0054ebbc:
 
 }
 
-/* ===== FUN_0054ebcb @ 0x0054EBCB ===== */
-int FUN_0054ebcb(int param_1)
+/* ===== crt_codepage_init @ 0x0054EBCB ===== */
+int crt_codepage_init(int param_1)
 
 
 
@@ -26529,8 +26529,8 @@ void crt_once_init(void)
 
 }
 
-/* ===== FUN_0054ee12 @ 0x0054EE12 ===== */
-undefined4 FUN_0054ee12(uint param_1,uint param_2,uint *param_3)
+/* ===== crt_add64 @ 0x0054EE12 ===== */
+undefined4 crt_add64(uint param_1,uint param_2,uint *param_3)
 
 
 
@@ -26579,11 +26579,11 @@ void ___add_12(undefined4 *param_1,undefined4 *param_2)
 
   
 
-  iVar1 = FUN_0054ee12(*param_1,*param_2,param_1);
+  iVar1 = crt_add64(*param_1,*param_2,param_1);
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0054ee12(param_1[1],1,param_1 + 1);
+    iVar1 = crt_add64(param_1[1],1,param_1 + 1);
 
     if (iVar1 != 0) {
 
@@ -26593,7 +26593,7 @@ void ___add_12(undefined4 *param_1,undefined4 *param_2)
 
   }
 
-  iVar1 = FUN_0054ee12(param_1[1],param_2[1],param_1 + 1);
+  iVar1 = crt_add64(param_1[1],param_2[1],param_1 + 1);
 
   if (iVar1 != 0) {
 
@@ -26601,7 +26601,7 @@ void ___add_12(undefined4 *param_1,undefined4 *param_2)
 
   }
 
-  FUN_0054ee12(param_1[2],param_2[2],param_1 + 2);
+  crt_add64(param_1[2],param_2[2],param_1 + 2);
 
   return;
 
@@ -27371,9 +27371,9 @@ LAB_0054f40e:
 
           do {
 
-            iVar7 = FUN_0054ee12(*(undefined4 *)(local_8 + -2),(uint)*local_c * (uint)*local_10,
+            iVar7 = crt_add64(*(undefined4 *)(local_8 + -2),(uint)*local_c * (uint)*local_10,
 
-                                 local_8 + -2);
+                              local_8 + -2);
 
             if (iVar7 != 0) {
 

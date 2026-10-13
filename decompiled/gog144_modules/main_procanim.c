@@ -141,9 +141,9 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
             if (p1[4] == 0) {
 
-              FUN_0053ca90(local_44,iVar3,iVar5,*(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x10),uVar6
+              anm_affine_mats_build
 
-                          );
+                        (local_44,iVar3,iVar5,*(undefined4 *)(*(int *)(iVar4 + 0x28) + 0x10),uVar6);
 
               puVar2 = (undefined4 *)p1[2];
 
