@@ -8448,9 +8448,9 @@ void comm_0052b430_user_big(void)
 
           if (1 < (int)(DAT_005e2310 + -0x5e2314)) {
 
-            FUN_0052b630(*(undefined4 *)(local_24 + local_20),DAT_005e2310 + -0x5e2314,&DAT_005e2314
+            comm_dp_recv_setup(*(undefined4 *)(local_24 + local_20),DAT_005e2310 + -0x5e2314,
 
-                        );
+                               &DAT_005e2314);
 
           }
 
@@ -8564,7 +8564,7 @@ void comm_0052b430_user_big(void)
 
                     DAT_005df6c8 = DAT_005df6c8 + 1;
 
-                    FUN_0052b630(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+                    comm_dp_recv_setup(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
 
                     pbVar4 = &DAT_005df6cc;
 
@@ -8614,7 +8614,7 @@ void comm_0052b430_user_big(void)
 
             DAT_005df6c8 = DAT_005df6c8 + 1;
 
-            FUN_0052b630(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+            comm_dp_recv_setup(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
 
             pbVar4 = DAT_005df2c0;
 
@@ -8945,9 +8945,9 @@ void comm_0052b430_user_bigger(void)
 
               if (1 < (int)(DAT_005e2310 + -0x5e2314)) {
 
-                FUN_0052b630(*(undefined4 *)(local_24 + local_20),DAT_005e2310 + -0x5e2314,
+                comm_dp_recv_setup(*(undefined4 *)(local_24 + local_20),DAT_005e2310 + -0x5e2314,
 
-                             &DAT_005e2314);
+                                   &DAT_005e2314);
 
               }
 
@@ -9063,7 +9063,9 @@ void comm_0052b430_user_bigger(void)
 
                         DAT_005df6c8 = DAT_005df6c8 + 1;
 
-                        FUN_0052b630(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+                        comm_dp_recv_setup(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc
+
+                                          );
 
                         pbVar4 = &DAT_005df6cc;
 
@@ -9113,7 +9115,7 @@ void comm_0052b430_user_bigger(void)
 
                 DAT_005df6c8 = DAT_005df6c8 + 1;
 
-                FUN_0052b630(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+                comm_dp_recv_setup(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
 
                 pbVar4 = DAT_005df2c0;
 

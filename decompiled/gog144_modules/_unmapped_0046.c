@@ -122,7 +122,7 @@ int ai_spread_select(undefined4 param_1,float *param_2,float *param_3,float para
 
     iVar4 = puVar5[3];
 
-    iVar10 = FUN_0045ae90(param_1,iVar4,7);
+    iVar10 = ai_target_classify(param_1,iVar4,7);
 
     if ((iVar10 != 0) && ((*(uint *)(iVar4 + 0xd8) & 0x4000c000) == 0)) {
 

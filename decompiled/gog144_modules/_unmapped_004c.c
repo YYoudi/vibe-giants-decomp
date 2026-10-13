@@ -7038,7 +7038,7 @@ void dome_render_text(void)
 
   FUN_005160b0((float)fVar1);
 
-  FUN_0042a4f0();
+  dlog_scene_submit();
 
   FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_8,puStack_4);
 
@@ -8729,7 +8729,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_005160b0();
 
-    FUN_0042a4f0();
+    dlog_scene_submit();
 
     FNT_StringRender__FPcP14FNT_RenderInfo(local_218,local_210);
 

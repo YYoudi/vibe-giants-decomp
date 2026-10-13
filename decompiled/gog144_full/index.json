@@ -1680,9 +1680,9 @@
   "len": 1042
  },
  "0x0042A4F0": {
-  "name": "FUN_0042a4f0",
-  "named": false,
-  "len": 1540
+  "name": "dlog_scene_submit",
+  "named": true,
+  "len": 1545
  },
  "0x0042A640": {
   "name": "dlog_alpha_quad_build",
@@ -3455,9 +3455,9 @@
   "len": 2371
  },
  "0x0045AE90": {
-  "name": "FUN_0045ae90",
-  "named": false,
-  "len": 1595
+  "name": "ai_target_classify",
+  "named": true,
+  "len": 1601
  },
  "0x0045B2B0": {
   "name": "reaper_spawn_ospec_1",
@@ -3592,7 +3592,7 @@
  "0x004650D0": {
   "name": "ai_spread_select",
   "named": true,
-  "len": 1326
+  "len": 1332
  },
  "0x00465230": {
   "name": "FUN_00465230",
@@ -6867,7 +6867,7 @@
  "0x004CC810": {
   "name": "dome_render_text",
   "named": true,
-  "len": 836
+  "len": 841
  },
  "0x004CC8D0": {
   "name": "FUN_004cc8d0",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14221
+  "len": 14226
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7185,9 +7185,9 @@
   "len": 4259
  },
  "0x004E2F60": {
-  "name": "FUN_004e2f60",
-  "named": false,
-  "len": 1599
+  "name": "ai_d7_pairing",
+  "named": true,
+  "len": 1600
  },
  "0x004E30B0": {
   "name": "FUN_004e30b0",
@@ -9825,9 +9825,9 @@
   "len": 529
  },
  "0x0052B630": {
-  "name": "FUN_0052b630",
-  "named": false,
-  "len": 1776
+  "name": "comm_dp_recv_setup",
+  "named": true,
+  "len": 1782
  },
  "0x0052B780": {
   "name": "comm_0052b780",
@@ -9837,7 +9837,7 @@
  "0x0052B860": {
   "name": "FUN_0052b860",
   "named": false,
-  "len": 416
+  "len": 422
  },
  "0x0052B8C0": {
   "name": "comm_dp_send",
@@ -9847,7 +9847,7 @@
  "0x0052BA30": {
   "name": "FUN_0052ba30",
   "named": false,
-  "len": 612
+  "len": 624
  },
  "0x0052BAB0": {
   "name": "comm_net_stats_dump",
@@ -10352,12 +10352,12 @@
  "0x005354C0": {
   "name": "comm_0052b430_user_big",
   "named": true,
-  "len": 8626
+  "len": 8651
  },
  "0x005359A0": {
   "name": "comm_0052b430_user_bigger",
   "named": true,
-  "len": 10361
+  "len": 10429
  },
  "0x00535F40": {
   "name": "FUN_00535f40",

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (89 named) — decompiled, names from PS2 symbols
+ * 162 functions (90 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -8560,12 +8560,12 @@ void FUN_0052b5a0(undefined4 param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0052b630 @ 0x0052B630 ===== */
+/* ===== comm_dp_recv_setup @ 0x0052B630 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 
 
-void FUN_0052b630(int *param_1)
+void comm_dp_recv_setup(int *param_1)
 
 
 
@@ -8781,7 +8781,7 @@ void FUN_0052b860(int param_1,undefined4 param_2,undefined4 param_3)
 
       if (((iVar1 != 0) && (iVar1 != DAT_005def5c)) && (iVar1 != param_1)) {
 
-        FUN_0052b630(iVar1,param_2,param_3);
+        comm_dp_recv_setup(iVar1,param_2,param_3);
 
       }
 
@@ -8919,7 +8919,7 @@ void FUN_0052ba30(undefined4 param_1,undefined4 param_2)
 
     if (DAT_005ddfb4 != 0) {
 
-      FUN_0052b630(DAT_005ddfb4,param_1,param_2);
+      comm_dp_recv_setup(DAT_005ddfb4,param_1,param_2);
 
     }
 
@@ -8937,7 +8937,7 @@ void FUN_0052ba30(undefined4 param_1,undefined4 param_2)
 
         if (((iVar1 != 0) && (iVar1 != DAT_005def5c)) && (iVar1 != iVar2)) {
 
-          FUN_0052b630(iVar1,param_1,param_2);
+          comm_dp_recv_setup(iVar1,param_1,param_2);
 
         }
 

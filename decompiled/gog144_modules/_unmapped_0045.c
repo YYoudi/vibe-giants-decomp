@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (46 named) — decompiled, names from PS2 symbols
+ * 145 functions (47 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -10321,8 +10321,8 @@ void FUN_0045ac50(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0045ae90 @ 0x0045AE90 ===== */
-byte FUN_0045ae90(int param_1,int param_2,byte param_3)
+/* ===== ai_target_classify @ 0x0045AE90 ===== */
+byte ai_target_classify(int param_1,int param_2,byte param_3)
 
 
 
