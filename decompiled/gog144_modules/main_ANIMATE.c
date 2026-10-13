@@ -64,7 +64,7 @@ void main_animate_00404b60(int param_1,int param_2)
 
   uVar2 = *(undefined4 *)(iVar1 + 0x14);
 
-  iVar3 = FUN_00403a70(param_1,param_2,&local_70);
+  iVar3 = anm_apply_nodes(param_1,param_2,&local_70);
 
   iVar4 = FLK_FlickPlaying();
 

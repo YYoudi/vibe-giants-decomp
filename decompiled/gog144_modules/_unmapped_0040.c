@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (77 named) — decompiled, names from PS2 symbols
+ * 105 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -1455,8 +1455,8 @@ LAB_00403980:
 
 }
 
-/* ===== FUN_00403a70 @ 0x00403A70 ===== */
-int FUN_00403a70(int param_1,int param_2,int param_3)
+/* ===== anm_apply_nodes @ 0x00403A70 ===== */
+int anm_apply_nodes(int param_1,int param_2,int param_3)
 
 
 
@@ -1593,7 +1593,7 @@ void BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i(int param_1
 
   if ((*(int *)(param_1 + 0x10) != 0xfe) && (*(int *)(param_1 + 8) != 0)) {
 
-    iVar3 = FUN_00403a70(param_1,0,local_70);
+    iVar3 = anm_apply_nodes(param_1,0,local_70);
 
     local_7c = *(int *)(param_1 + 0x2d8);
 
@@ -8817,7 +8817,7 @@ void wound_process_single__FP5WOUND(int param_1)
 
   }
 
-  iVar1 = FUN_00403a70(*(undefined4 *)(param_1 + 0x38),0,local_70);
+  iVar1 = anm_apply_nodes(*(undefined4 *)(param_1 + 0x38),0,local_70);
 
   if (iVar1 != 0) {
 

@@ -155,14 +155,14 @@
   "len": 2816
  },
  "0x00403A70": {
-  "name": "FUN_00403a70",
-  "named": false,
-  "len": 1226
+  "name": "anm_apply_nodes",
+  "named": true,
+  "len": 1229
  },
  "0x00403B50": {
   "name": "BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i",
   "named": true,
-  "len": 5816
+  "len": 5819
  },
  "0x00403E40": {
   "name": "ObjectUpdateSpeedDist",
@@ -217,7 +217,7 @@
  "0x00404B60": {
   "name": "main_animate_00404b60",
   "named": true,
-  "len": 1783
+  "len": 1786
  },
  "0x00404D70": {
   "name": "obj_impact_effects",
@@ -472,7 +472,7 @@
  "0x0040BC00": {
   "name": "wound_process_single__FP5WOUND",
   "named": true,
-  "len": 2512
+  "len": 2515
  },
  "0x0040BDC0": {
   "name": "process_wound",
@@ -2067,7 +2067,7 @@
  "0x00434280": {
   "name": "audio_stream_tied",
   "named": true,
-  "len": 4529
+  "len": 4542
  },
  "0x00434620": {
   "name": "main/drawwrld_00434620",
@@ -2517,7 +2517,7 @@
  "0x004433B0": {
   "name": "FUN_004433b0",
   "named": false,
-  "len": 939
+  "len": 961
  },
  "0x00443480": {
   "name": "flick_file_load",
@@ -2625,9 +2625,9 @@
   "len": 328
  },
  "0x00446B00": {
-  "name": "FUN_00446b00",
-  "named": false,
-  "len": 1093
+  "name": "flick_actor_set_rect",
+  "named": true,
+  "len": 1101
  },
  "0x00446BE0": {
   "name": "flick_text_measure",
@@ -3222,7 +3222,7 @@
  "0x004571A0": {
   "name": "FUN_004571a0",
   "named": false,
-  "len": 1102
+  "len": 1105
  },
  "0x00457270": {
   "name": "comm_options_defaults",
@@ -3917,7 +3917,7 @@
  "0x00471780": {
   "name": "hud_audio_dlog_screen",
   "named": true,
-  "len": 3293
+  "len": 3306
  },
  "0x00471A60": {
   "name": "game_loop_run",
@@ -4085,14 +4085,14 @@
   "len": 2185
  },
  "0x00478080": {
-  "name": "FUN_00478080",
-  "named": false,
-  "len": 1160
+  "name": "ai_move_ground_common",
+  "named": true,
+  "len": 1170
  },
  "0x00478160": {
   "name": "ai_move_ground_step",
   "named": true,
-  "len": 1202
+  "len": 1211
  },
  "0x00478260": {
   "name": "formation_update_info",
@@ -5480,9 +5480,9 @@
   "len": 181
  },
  "0x004A13C0": {
-  "name": "FUN_004a13c0",
-  "named": false,
-  "len": 805
+  "name": "audio_register_sound_name",
+  "named": true,
+  "len": 818
  },
  "0x004A14A0": {
   "name": "FUN_004a14a0",
@@ -6015,9 +6015,9 @@
   "len": 1227
  },
  "0x004AA8F0": {
-  "name": "FUN_004aa8f0",
-  "named": false,
-  "len": 1073
+  "name": "obj_targetable_by_player_3",
+  "named": true,
+  "len": 1087
  },
  "0x004AA9D0": {
   "name": "FUN_004aa9d0",
@@ -6862,12 +6862,12 @@
  "0x004CC7E0": {
   "name": "ai_island_init",
   "named": true,
-  "len": 172
+  "len": 185
  },
  "0x004CC810": {
   "name": "dome_render_text",
   "named": true,
-  "len": 870
+  "len": 883
  },
  "0x004CC8D0": {
   "name": "controlShutdown__Fv",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14398
+  "len": 14437
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -6912,7 +6912,7 @@
  "0x004CEAA0": {
   "name": "smartie_move",
   "named": true,
-  "len": 54177
+  "len": 54186
  },
  "0x004D1790": {
   "name": "EnemyIsInvalid__FP6OBJECTT0",
@@ -7250,9 +7250,9 @@
   "len": 2452
  },
  "0x004E45A0": {
-  "name": "FUN_004e45a0",
-  "named": false,
-  "len": 782
+  "name": "rpman_set_anim_flags",
+  "named": true,
+  "len": 790
  },
  "0x004E4680": {
   "name": "ai_rand_anim_select",
@@ -7327,7 +7327,7 @@
  "0x004E6BA0": {
   "name": "rpboat_logic__FP6OBJECT",
   "named": true,
-  "len": 6536
+  "len": 6545
  },
  "0x004E7160": {
   "name": "FUN_004e7160",

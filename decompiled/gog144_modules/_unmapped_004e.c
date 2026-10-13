@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (73 named) — decompiled, names from PS2 symbols
+ * 94 functions (74 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -3577,8 +3577,8 @@ LAB_004e4520:
 
 }
 
-/* ===== FUN_004e45a0 @ 0x004E45A0 ===== */
-void FUN_004e45a0(int param_1)
+/* ===== rpman_set_anim_flags @ 0x004E45A0 ===== */
+void rpman_set_anim_flags(int param_1)
 
 
 
@@ -6085,7 +6085,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
   *(float *)(iVar3 + 0x13c) = (float)fVar6;
 
-  FUN_00478080(*(undefined4 *)(iVar3 + 0x134),(float)fVar6,uVar9,pfVar1);
+  ai_move_ground_common(*(undefined4 *)(iVar3 + 0x134),(float)fVar6,uVar9,pfVar1);
 
   FUN_00414690(pfVar1,local_50);
 

@@ -6103,7 +6103,7 @@ int FUN_004571a0(int param_1,int *param_2,int param_3)
 
     xformobj_world_local(param_1,param_3,local_94);
 
-    uVar1 = FUN_00403a70(param_1,0,local_70);
+    uVar1 = anm_apply_nodes(param_1,0,local_70);
 
     nam_lookup_full(local_70,uVar1,local_94,1,*(undefined4 *)(param_1 + 0xc));
 

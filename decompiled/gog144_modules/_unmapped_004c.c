@@ -7021,7 +7021,7 @@ void ai_island_init(void)
 
 {
 
-  FUN_004a13c0(s_AIsland_005611c7 + 1);
+  audio_register_sound_name(s_AIsland_005611c7 + 1);
 
   if (0 < DAT_00633244) {
 
@@ -7050,7 +7050,7 @@ void dome_render_text(void)
 
   
 
-  FUN_004a13c0(s_InDome_005611d0);
+  audio_register_sound_name(s_InDome_005611d0);
 
   (**(code **)(DAT_00656420 + 0x18))(DAT_00656420,&DAT_00561138);
 
@@ -8595,7 +8595,7 @@ undefined4 dev_debug_flags(void)
 
   if (iVar5 == 0) {
 
-    FUN_004a13c0();
+    audio_register_sound_name();
 
     if (0 < DAT_00633244) {
 
@@ -8609,7 +8609,7 @@ undefined4 dev_debug_flags(void)
 
     iVar5 = AudioGetMasterVolume__Fv();
 
-    FUN_004a13c0();
+    audio_register_sound_name();
 
     for (piVar11 = DAT_00632d68; piVar4 = DAT_00632d68, piVar11 != (int *)0x0;
 
@@ -8737,7 +8737,7 @@ undefined4 dev_debug_flags(void)
 
     pcVar10 = s_InDome_005611d0;
 
-    FUN_004a13c0();
+    audio_register_sound_name();
 
     uVar15 = CONCAT44(pcVar10,&DAT_00561138);
 
@@ -9535,7 +9535,7 @@ LAB_004cec2d:
 
       *(float *)(iVar11 + 0x2c) = (float)fVar15;
 
-      FUN_00478080(iVar10,param_1,param_1,pfVar12);
+      ai_move_ground_common(iVar10,param_1,param_1,pfVar12);
 
       FUN_00414690(pfVar12,local_1c);
 

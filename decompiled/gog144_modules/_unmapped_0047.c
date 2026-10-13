@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (55 named) — decompiled, names from PS2 symbols
+ * 67 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1092,7 +1092,7 @@ undefined4 hud_audio_dlog_screen(void)
 
   endDisplay__Fv();
 
-  FUN_004a13c0(&DAT_0055b720);
+  audio_register_sound_name(&DAT_0055b720);
 
   if (DAT_00633128 == 0) {
 
@@ -3812,8 +3812,10 @@ void marker_spline_rotate_tangent(int param_1,float param_2,int param_3)
 
 }
 
-/* ===== FUN_00478080 @ 0x00478080 ===== */
-undefined4 FUN_00478080(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* ===== ai_move_ground_common @ 0x00478080 ===== */
+undefined4
+
+ai_move_ground_common(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -3924,7 +3926,7 @@ int ai_move_ground_step(int param_1,int *param_2)
 
   param_2[2] = (int)(float)fVar4;
 
-  iVar2 = FUN_00478080(*param_2,(float)fVar4,iVar2,pfVar1);
+  iVar2 = ai_move_ground_common(*param_2,(float)fVar4,iVar2,pfVar1);
 
   FUN_00414690(pfVar1,local_1c);
 

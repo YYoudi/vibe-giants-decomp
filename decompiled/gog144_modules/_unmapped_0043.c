@@ -2260,7 +2260,7 @@ void audio_stream_tied(void)
 
   FUN_0053f2e0(auStack_80,piVar6 + 2,*piVar6);
 
-  FUN_004a13c0(&DAT_00556fc4);
+  audio_register_sound_name(&DAT_00556fc4);
 
   if (DAT_00632ba8 == 0) {
 

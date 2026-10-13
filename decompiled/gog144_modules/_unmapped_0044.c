@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (66 named) — decompiled, names from PS2 symbols
+ * 76 functions (67 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -2188,9 +2188,11 @@ void FUN_004433b0(float *param_1)
 
     (**(code **)(DAT_0065642c + 8))(DAT_0065642c,0x42380,0,iVar1 << 0x18);
 
-    FUN_00446b00(auStack_e0,DAT_0057c0c0 * -1.0,DAT_0057c0c0,DAT_0057c0c0 + DAT_0057c0c0,
+    flick_actor_set_rect
 
-                 DAT_0057c0c0 + DAT_0057c0c0);
+              (auStack_e0,DAT_0057c0c0 * -1.0,DAT_0057c0c0,DAT_0057c0c0 + DAT_0057c0c0,
+
+               DAT_0057c0c0 + DAT_0057c0c0);
 
   }
 
@@ -6384,8 +6386,8 @@ void FNT_RenderInfoProcess__FP14FNT_RenderInfof(undefined4 *p0,float p1)
 
 }
 
-/* ===== FUN_00446b00 @ 0x00446B00 ===== */
-void FUN_00446b00(int param_1,float param_2,float param_3,float param_4,float param_5)
+/* ===== flick_actor_set_rect @ 0x00446B00 ===== */
+void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,float param_5)
 
 
 

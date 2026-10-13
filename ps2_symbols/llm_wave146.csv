@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004aa8f0,FUN_004aa8f0,,obj_targetable_by_player_3,0.9,llm-w146,identical predicate chain variant
+004e45a0,FUN_004e45a0,,rpman_set_anim_flags,0.9,llm-w146,flags 0xe0 -> ObjectSetAnim dispatch
+004a13c0,FUN_004a13c0,,audio_register_sound_name,0.9,llm-w146,16-channel bitmask + 0x10 name slots
+00478080,FUN_00478080,,ai_move_ground_common,0.9,llm-w146,shared primitive callers smartie_move/ground_step/rpboat
+00403a70,FUN_00403a70,,anm_apply_nodes,0.9,llm-w146,node loop 0xfe skip callers BasicUsrAnmApply
+00446b00,FUN_00446b00,,flick_actor_set_rect,0.9,llm-w146,actor rect/extents fields flick region
