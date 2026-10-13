@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (98 named) — decompiled, names from PS2 symbols
+ * 162 functions (99 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -2023,12 +2023,12 @@ void comm_smartie_diff_dlog(int param_1)
 
 }
 
-/* ===== FUN_00522130 @ 0x00522130 ===== */
+/* ===== kbos_food_value__Fi @ 0x00522130 ===== */
 /* PS2 candidate: kbos_food_value__Fi (conf 0.7) */
 
 
 
-float10 FUN_00522130(int param_1)
+float10 kbos_food_value__Fi(int param_1)
 
 
 

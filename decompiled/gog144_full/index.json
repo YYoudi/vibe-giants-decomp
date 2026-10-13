@@ -3922,7 +3922,7 @@
  "0x00471A60": {
   "name": "game_loop_run",
   "named": true,
-  "len": 4760
+  "len": 4758
  },
  "0x00471DC0": {
   "name": "render_error_dialog_check",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "kbos_move",
   "named": true,
-  "len": 23433
+  "len": 23440
  },
  "0x0047DF10": {
   "name": "audio_listener_pan",
@@ -5090,9 +5090,9 @@
   "len": 1249
  },
  "0x004982C0": {
-  "name": "FUN_004982c0",
-  "named": false,
-  "len": 2250
+  "name": "mecc_logic",
+  "named": true,
+  "len": 2248
  },
  "0x004984B0": {
   "name": "kabuto_logic",
@@ -5335,9 +5335,9 @@
   "len": 1870
  },
  "0x0049C1D0": {
-  "name": "FUN_0049c1d0",
-  "named": false,
-  "len": 1997
+  "name": "collide_line_grid",
+  "named": true,
+  "len": 2002
  },
  "0x0049C550": {
   "name": "collide_wall_block",
@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "reaper_animselect",
   "named": true,
-  "len": 24919
+  "len": 24926
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -6737,7 +6737,7 @@
  "0x004C5810": {
   "name": "reaper_replenish_basepit_energy__FP6OBJECT",
   "named": true,
-  "len": 4391
+  "len": 4398
  },
  "0x004C5B10": {
   "name": "FUN_004c5b10",
@@ -7567,7 +7567,7 @@
  "0x004EED30": {
   "name": "line_of_sight_grid",
   "named": true,
-  "len": 3496
+  "len": 3516
  },
  "0x004EF070": {
   "name": "ai_class_filter",
@@ -9455,9 +9455,9 @@
   "len": 960
  },
  "0x00522130": {
-  "name": "FUN_00522130",
-  "named": false,
-  "len": 324
+  "name": "kbos_food_value__Fi",
+  "named": true,
+  "len": 331
  },
  "0x00522170": {
   "name": "comm_difficulty_menu",
@@ -10750,19 +10750,19 @@
   "len": 2301
  },
  "0x0053D050": {
-  "name": "FUN_0053d050",
-  "named": false,
-  "len": 550
+  "name": "ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i",
+  "named": true,
+  "len": 588
  },
  "0x0053D0A0": {
   "name": "ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi",
   "named": true,
-  "len": 841
+  "len": 879
  },
  "0x0053D120": {
   "name": "FUN_0053d120",
   "named": false,
-  "len": 1114
+  "len": 1152
  },
  "0x0053D1C0": {
   "name": "editor_anim_skin",

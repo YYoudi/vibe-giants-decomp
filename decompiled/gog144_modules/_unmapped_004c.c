@@ -4204,7 +4204,7 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
                 else {
 
-                  fVar8 = (float10)FUN_00522130(DAT_00632f40);
+                  fVar8 = (float10)kbos_food_value__Fi(DAT_00632f40);
 
                 }
 

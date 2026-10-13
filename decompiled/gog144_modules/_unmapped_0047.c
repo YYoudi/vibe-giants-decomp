@@ -1471,7 +1471,7 @@ void game_loop_run(int param_1)
 
           object_spawn_class3(0);
 
-          FUN_004982c0();
+          mecc_logic();
 
           FUN_0049b810();
 
@@ -6560,7 +6560,7 @@ LAB_0047cdb1:
 
     else {
 
-      fVar9 = (float10)FUN_00522130(DAT_00632f40);
+      fVar9 = (float10)kbos_food_value__Fi(DAT_00632f40);
 
     }
 

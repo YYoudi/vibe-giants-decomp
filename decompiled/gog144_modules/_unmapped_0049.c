@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (100 named) — decompiled, names from PS2 symbols
+ * 142 functions (102 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -8744,14 +8744,14 @@ LAB_00498224:
 
 }
 
-/* ===== FUN_004982c0 @ 0x004982C0 ===== */
+/* ===== mecc_logic @ 0x004982C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: mecc_logic (conf 0.605) */
 
 
 
-void FUN_004982c0(void)
+void mecc_logic(void)
 
 
 
@@ -12850,12 +12850,12 @@ int collide_line_tri_hit
 
 }
 
-/* ===== FUN_0049c1d0 @ 0x0049C1D0 ===== */
+/* ===== collide_line_grid @ 0x0049C1D0 ===== */
 /* PS2 candidate: collide_line_grid (conf 0.602) */
 
 
 
-undefined4 FUN_0049c1d0(undefined4 param_1,undefined4 param_2,int param_3,int param_4)
+undefined4 collide_line_grid(undefined4 param_1,undefined4 param_2,int param_3,int param_4)
 
 
 

@@ -11552,7 +11552,7 @@ undefined4 line_of_sight_grid(float *param_1,float *param_2)
 
         local_20 = local_20 - *(float *)(DAT_006330e4 + 0x1c0);
 
-        iVar2 = FUN_0049c1d0(pfVar1,&local_c,param_1,local_28);
+        iVar2 = collide_line_grid(pfVar1,&local_c,param_1,local_28);
 
         if (iVar2 != 0) {
 
@@ -11578,7 +11578,7 @@ undefined4 line_of_sight_grid(float *param_1,float *param_2)
 
 LAB_004eefe9:
 
-          iVar2 = FUN_0049c1d0(pfVar1,&local_c,iVar2 + (int)param_1,local_28);
+          iVar2 = collide_line_grid(pfVar1,&local_c,iVar2 + (int)param_1,local_28);
 
           if (iVar2 != 0) {
 
@@ -11630,7 +11630,7 @@ LAB_004eefe9:
 
         local_24 = local_24 - *(float *)(DAT_006330e4 + 0x1c0);
 
-        iVar2 = FUN_0049c1d0(pfVar1,&local_c,param_1,local_28);
+        iVar2 = collide_line_grid(pfVar1,&local_c,param_1,local_28);
 
         if (iVar2 != 0) {
 
@@ -11656,7 +11656,7 @@ LAB_004eefe9:
 
 LAB_004eeeb2:
 
-          iVar2 = FUN_0049c1d0(pfVar1,&local_c,param_1,iVar2 + local_28);
+          iVar2 = collide_line_grid(pfVar1,&local_c,param_1,iVar2 + local_28);
 
           if (iVar2 != 0) {
 

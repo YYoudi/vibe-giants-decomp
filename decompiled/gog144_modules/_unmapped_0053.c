@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (120 named) — decompiled, names from PS2 symbols
+ * 179 functions (121 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -16226,12 +16226,12 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
 }
 
-/* ===== FUN_0053d050 @ 0x0053D050 ===== */
+/* ===== ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i @ 0x0053D050 ===== */
 /* PS2 candidate: ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i (conf 0.711) */
 
 
 
-void FUN_0053d050(int param_1,int param_2,int param_3)
+void ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i(int param_1,int param_2,int param_3)
 
 
 
@@ -16294,7 +16294,7 @@ void ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi
 
   if (*(int *)(*(int *)(param_1 + 4) + 8) != 0) {
 
-    FUN_0053d050(*(int *)(param_1 + 4),param_3,param_4);
+    ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i(*(int *)(param_1 + 4),param_3,param_4);
 
   }
 
@@ -16349,7 +16349,7 @@ void FUN_0053d120(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
   if (*(int *)(*(int *)(iVar1 + 4) + 8) != 0) {
 
-    FUN_0053d050(*(int *)(iVar1 + 4),param_3,param_4);
+    ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i(*(int *)(iVar1 + 4),param_3,param_4);
 
   }
 

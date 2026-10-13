@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0049c1d0,FUN_0049c1d0,,collide_line_grid,0.9,promote-flywheel2,"c=0.602;cal=['collide_line_tri_hit', 'grid_get_point'];clr=['line_of_sight_grid']"
+004982c0,FUN_004982c0,,mecc_logic,0.9,promote-flywheel2,"c=0.605;cal=['kabuto_logic', 'mecc_fire_logic__FP6OBJECT'];clr=[]"
+0053d050,FUN_0053d050,,ANM_ObjZeroWeightedVertices__FP7ANM_ObjP8GEO_Vec4i,0.9,promote-flywheel2,c=0.711;cal=[];clr=['ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi']
+00522130,FUN_00522130,,kbos_food_value__Fi,0.9,promote-flywheel2,c=0.7;cal=[];clr=['kbos_move']

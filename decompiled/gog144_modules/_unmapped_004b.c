@@ -4290,7 +4290,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     else {
 
-      fVar14 = (float10)FUN_00522130(DAT_00632f40);
+      fVar14 = (float10)kbos_food_value__Fi(DAT_00632f40);
 
     }
 
