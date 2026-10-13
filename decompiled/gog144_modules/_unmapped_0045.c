@@ -6214,7 +6214,7 @@ void comm_options_defaults(void)
 
   if (DAT_00633238 != 0) {
 
-    comm_00426030();
+    comm_game_setup_big();
 
     return;
 

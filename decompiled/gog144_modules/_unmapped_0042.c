@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (66 named) — decompiled, names from PS2 symbols
+ * 129 functions (67 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -8374,12 +8374,12 @@ void keymap_slot_load(void)
 
 }
 
-/* ===== comm_00426030 @ 0x00426030 ===== */
+/* ===== comm_game_setup_big @ 0x00426030 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 comm_00426030(void)
+undefined4 comm_game_setup_big(void)
 
 
 
@@ -11380,8 +11380,8 @@ void FUN_004292b0(float param_1)
 
 }
 
-/* ===== FUN_004293d0 @ 0x004293D0 ===== */
-void FUN_004293d0(undefined4 param_1,float param_2,float param_3)
+/* ===== texture_alloc_429 @ 0x004293D0 ===== */
+void texture_alloc_429(undefined4 param_1,float param_2,float param_3)
 
 
 
@@ -11574,7 +11574,7 @@ void comm_player_actions_menu(undefined4 *param_1)
 
       }
 
-      FUN_004293d0(pcVar1,uVar2,fVar3);
+      texture_alloc_429(pcVar1,uVar2,fVar3);
 
     }
 

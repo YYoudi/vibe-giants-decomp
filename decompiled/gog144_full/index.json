@@ -1340,9 +1340,9 @@
   "len": 903
  },
  "0x00426030": {
-  "name": "comm_00426030",
+  "name": "comm_game_setup_big",
   "named": true,
-  "len": 5046
+  "len": 5052
  },
  "0x00426460": {
   "name": "main_dedicated_00426460",
@@ -1635,14 +1635,14 @@
   "len": 737
  },
  "0x004293D0": {
-  "name": "FUN_004293d0",
-  "named": false,
-  "len": 1755
+  "name": "texture_alloc_429",
+  "named": true,
+  "len": 1760
  },
  "0x00429510": {
   "name": "comm_player_actions_menu",
   "named": true,
-  "len": 1080
+  "len": 1085
  },
  "0x004295C0": {
   "name": "cursor_texture_draw",
@@ -3227,7 +3227,7 @@
  "0x00457270": {
   "name": "comm_options_defaults",
   "named": true,
-  "len": 1717
+  "len": 1723
  },
  "0x00457440": {
   "name": "level_config_load",
