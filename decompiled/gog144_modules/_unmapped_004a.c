@@ -7415,8 +7415,8 @@ LAB_004a70b2:
 
 }
 
-/* ===== cspec_004a7240 @ 0x004A7240 ===== */
-void cspec_004a7240(int param_1)
+/* ===== orbit_phase_object_c12 @ 0x004A7240 ===== */
+void orbit_phase_object_c12(int param_1)
 
 
 

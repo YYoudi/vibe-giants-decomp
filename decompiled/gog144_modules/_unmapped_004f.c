@@ -7248,8 +7248,8 @@ LAB_004f9ea2:
 
 }
 
-/* ===== cspec_004f9ee0 @ 0x004F9EE0 ===== */
-void cspec_004f9ee0(int param_1)
+/* ===== scale_watch_ai_c73 @ 0x004F9EE0 ===== */
+void scale_watch_ai_c73(int param_1)
 
 
 

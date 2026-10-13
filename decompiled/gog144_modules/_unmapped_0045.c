@@ -85,8 +85,8 @@ void cspec_004503e0(int param_1)
 
 }
 
-/* ===== cspec_004504d0 @ 0x004504D0 ===== */
-void cspec_004504d0(int param_1)
+/* ===== linkage_ground_snap_c79 @ 0x004504D0 ===== */
+void linkage_ground_snap_c79(int param_1)
 
 
 
@@ -4318,8 +4318,8 @@ void reaper_bldg_check(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== cspec_00454be0 @ 0x00454BE0 ===== */
-void cspec_00454be0(float param_1)
+/* ===== mecc_sorcha_cutscene_c102 @ 0x00454BE0 ===== */
+void mecc_sorcha_cutscene_c102(float param_1)
 
 
 

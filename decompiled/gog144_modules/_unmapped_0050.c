@@ -10645,8 +10645,8 @@ void view_xform_user(undefined4 param_1,undefined4 param_2,float param_3,undefin
 
 }
 
-/* ===== cspec_0050a1c0 @ 0x0050A1C0 ===== */
-void cspec_0050a1c0(int param_1)
+/* ===== kabuto_melee_lunge_c60 @ 0x0050A1C0 ===== */
+void kabuto_melee_lunge_c60(int param_1)
 
 
 
@@ -13341,8 +13341,8 @@ void FUN_0050c3c0(int param_1)
 
 }
 
-/* ===== cspec_0050c430 @ 0x0050C430 ===== */
-void cspec_0050c430(undefined4 param_1,float param_2,int param_3,int param_4)
+/* ===== turret_death_handler2_c44 @ 0x0050C430 ===== */
+void turret_death_handler2_c44(undefined4 param_1,float param_2,int param_3,int param_4)
 
 
 

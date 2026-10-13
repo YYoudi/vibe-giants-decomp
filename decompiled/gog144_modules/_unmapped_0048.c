@@ -2508,10 +2508,10 @@ code_r0x00482056:
 
 }
 
-/* ===== cspec_004820f0 @ 0x004820F0 ===== */
-void cspec_004820f0(undefined4 param_1,float param_2,int param_3,undefined4 param_4,
+/* ===== smartie_swap_capture_c95 @ 0x004820F0 ===== */
+void smartie_swap_capture_c95
 
-                   undefined4 *param_5)
+               (undefined4 param_1,float param_2,int param_3,undefined4 param_4,undefined4 *param_5)
 
 
 

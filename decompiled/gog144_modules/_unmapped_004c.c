@@ -7615,8 +7615,8 @@ void firewall_create_fire__FP6OBJECTT0Uifffi
 
 }
 
-/* ===== cspec_004c6450 @ 0x004C6450 ===== */
-void cspec_004c6450(int param_1)
+/* ===== ground_patrol_ai_c86 @ 0x004C6450 ===== */
+void ground_patrol_ai_c86(int param_1)
 
 
 
@@ -7730,8 +7730,8 @@ void cspec_004c6450(int param_1)
 
 }
 
-/* ===== cspec_004c6610 @ 0x004C6610 ===== */
-void cspec_004c6610(int param_1)
+/* ===== reaperbase_attacker_ai_c87 @ 0x004C6610 ===== */
+void reaperbase_attacker_ai_c87(int param_1)
 
 
 

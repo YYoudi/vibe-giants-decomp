@@ -1,0 +1,25 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0050a1c0,cspec_0050a1c0,,kabuto_melee_lunge_c60,0.9,cspec-w222,Vec2Cross+Vec3Normalize+ObjIsKabuto (lunge vector)
+004c6610,cspec_004c6610,,reaperbase_attacker_ai_c87,0.9,cspec-w222,ObjIsReaperBldg+damage+interrupt seq
+004820f0,cspec_004820f0,,smartie_swap_capture_c95,0.9,cspec-w222,obj_swap_link+damage+quad sounds
+00496870,cspec_00496870,,ripper_anim_init_c7,0.9,cspec-w222,anim_select pair+obj_is_type0f
+0046a040,cspec_0046a040,,reaperbase_defender_ai_c28,0.9,cspec-w222,base gate+fx+eval_refpt
+00454be0,cspec_00454be0,,mecc_sorcha_cutscene_c102,0.9,cspec-w222,ObjectSetAnim+fx only (cutscene actor)
+004c6450,cspec_004c6450,,ground_patrol_ai_c86,0.9,cspec-w222,collide_line+ground_height+add_location
+004ea650,cspec_004ea650,,barracks_death_handler_c103,0.9,cspec-w222,allocate+destroy+sounds field4
+00441fc0,cspec_00441fc0,,crt_pow_f2xm1_c71,0.9,cspec-w222,f2xm1+fscale+ROUND math handler
+00441e60,cspec_00441e60,,crt_pow_f2xm1_c63,0.9,cspec-w222,twin math handler
+0046e680,cspec_0046e680,,reaperbase_anim_loop_c76,0.9,cspec-w222,animloop+reaper helpers field9
+004d7620,cspec_004d7620,,reaper_death_cleanup_c90,0.9,cspec-w222,camera_override+gun_find+destroy field4
+00425870,cspec_00425870,,reaperbase_harass_ai_c89,0.9,cspec-w222,base gate+dist+fx harass
+00490680,cspec_00490680,,trap_explosion_death_c43,0.9,cspec-w222,make_explosion_large field9
+0050c430,cspec_0050c430,,turret_death_handler2_c44,0.9,cspec-w222,TurretExit field4
+0046f6a0,cspec_0046f6a0,,recognize_scan_ai_c92,0.9,cspec-w222,obj_ai_recognize only
+004f9ee0,cspec_004f9ee0,,scale_watch_ai_c73,0.9,cspec-w222,obj_scale_compute+faction checks
+004ef2e0,cspec_004ef2e0,,voice_emitter_death_c61,0.9,cspec-w222,voice_event+fx field4 (0x3d family)
+00494520,cspec_00494520,,comm_sprintf_object_c94,0.9,cspec-w222,chat_insert+sprintf comm object
+004a7240,cspec_004a7240,,orbit_phase_object_c12,0.9,cspec-w222,sine_cos+add_location orbit
+0046f560,cspec_0046f560,,recognize_state_ai_c92,0.9,cspec-w222,obj_ai_recognize field10
+0046df50,cspec_0046df50,,reaperbase_free_handler_c75,0.9,cspec-w222,fx free+reaper helpers field16
+00490120,cspec_00490120,,smoke_explosion_death_c6,0.9,cspec-w222,smoke spawn+explosion field9
+004504d0,cspec_004504d0,,linkage_ground_snap_c79,0.9,cspec-w222,main_linkage+ground snap+dirfcalc

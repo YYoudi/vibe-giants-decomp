@@ -3,8 +3,8 @@
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
-/* ===== cspec_00490120 @ 0x00490120 ===== */
-void cspec_00490120(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== smoke_explosion_death_c6 @ 0x00490120 ===== */
+void smoke_explosion_death_c6(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -398,8 +398,8 @@ code_r0x004904b2:
 
 }
 
-/* ===== cspec_00490680 @ 0x00490680 ===== */
-void cspec_00490680(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== trap_explosion_death_c43 @ 0x00490680 ===== */
+void trap_explosion_death_c43(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -5650,12 +5650,12 @@ char * mission_trigger_name(int param_1)
 
 }
 
-/* ===== cspec_00494520 @ 0x00494520 ===== */
+/* ===== comm_sprintf_object_c94 @ 0x00494520 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_00494520(int param_1)
+void comm_sprintf_object_c94(int param_1)
 
 
 
@@ -8073,8 +8073,8 @@ void anim_select_user(int param_1,int param_2)
 
 }
 
-/* ===== cspec_00496870 @ 0x00496870 ===== */
-void cspec_00496870(int param_1)
+/* ===== ripper_anim_init_c7 @ 0x00496870 ===== */
+void ripper_anim_init_c7(int param_1)
 
 
 

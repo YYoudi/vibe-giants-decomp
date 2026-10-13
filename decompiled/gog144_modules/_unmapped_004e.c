@@ -9930,8 +9930,8 @@ LAB_004ea5de:
 
 }
 
-/* ===== cspec_004ea650 @ 0x004EA650 ===== */
-void cspec_004ea650(undefined4 param_1,float param_2,int param_3)
+/* ===== barracks_death_handler_c103 @ 0x004EA650 ===== */
+void barracks_death_handler_c103(undefined4 param_1,float param_2,int param_3)
 
 
 
@@ -14422,8 +14422,10 @@ uint ANM_AnimGetImage(int param_1)
 
 }
 
-/* ===== cspec_004ef2e0 @ 0x004EF2E0 ===== */
-void cspec_004ef2e0(undefined4 param_1,float param_2,int param_3,undefined4 param_4,int param_5)
+/* ===== voice_emitter_death_c61 @ 0x004EF2E0 ===== */
+void voice_emitter_death_c61
+
+               (undefined4 param_1,float param_2,int param_3,undefined4 param_4,int param_5)
 
 
 

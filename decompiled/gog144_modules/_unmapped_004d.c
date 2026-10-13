@@ -6838,8 +6838,8 @@ undefined4 cspec_004d7610(void)
 
 }
 
-/* ===== cspec_004d7620 @ 0x004D7620 ===== */
-void cspec_004d7620(undefined4 param_1,float param_2,int param_3,int param_4)
+/* ===== reaper_death_cleanup_c90 @ 0x004D7620 ===== */
+void reaper_death_cleanup_c90(undefined4 param_1,float param_2,int param_3,int param_4)
 
 
 

@@ -5279,8 +5279,8 @@ undefined4 cspec_0046a030(void)
 
 }
 
-/* ===== cspec_0046a040 @ 0x0046A040 ===== */
-void cspec_0046a040(int param_1)
+/* ===== reaperbase_defender_ai_c28 @ 0x0046A040 ===== */
+void reaperbase_defender_ai_c28(int param_1)
 
 
 
@@ -9554,8 +9554,8 @@ undefined4 cspec_0046df40(void)
 
 }
 
-/* ===== cspec_0046df50 @ 0x0046DF50 ===== */
-undefined4 cspec_0046df50(int param_1,int param_2)
+/* ===== reaperbase_free_handler_c75 @ 0x0046DF50 ===== */
+undefined4 reaperbase_free_handler_c75(int param_1,int param_2)
 
 
 
@@ -10098,8 +10098,8 @@ void cspec_0046e650(int param_1)
 
 }
 
-/* ===== cspec_0046e680 @ 0x0046E680 ===== */
-void cspec_0046e680(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== reaperbase_anim_loop_c76 @ 0x0046E680 ===== */
+void reaperbase_anim_loop_c76(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -11205,8 +11205,8 @@ undefined * FUN_0046f540(int param_1)
 
 }
 
-/* ===== cspec_0046f560 @ 0x0046F560 ===== */
-void cspec_0046f560(int param_1)
+/* ===== recognize_state_ai_c92 @ 0x0046F560 ===== */
+void recognize_state_ai_c92(int param_1)
 
 
 
@@ -11326,8 +11326,8 @@ code_r0x0046f5e0:
 
 }
 
-/* ===== cspec_0046f6a0 @ 0x0046F6A0 ===== */
-void cspec_0046f6a0(int param_1)
+/* ===== recognize_scan_ai_c92 @ 0x0046F6A0 ===== */
+void recognize_scan_ai_c92(int param_1)
 
 
 

@@ -1515,8 +1515,8 @@ void make_dust_ball(undefined4 *param_1,float param_2)
 
 }
 
-/* ===== cspec_00441e60 @ 0x00441E60 ===== */
-void cspec_00441e60(int param_1)
+/* ===== crt_pow_f2xm1_c63 @ 0x00441E60 ===== */
+void crt_pow_f2xm1_c63(int param_1)
 
 
 
@@ -1618,8 +1618,8 @@ void cspec_00441e60(int param_1)
 
 }
 
-/* ===== cspec_00441fc0 @ 0x00441FC0 ===== */
-void cspec_00441fc0(int param_1)
+/* ===== crt_pow_f2xm1_c71 @ 0x00441FC0 ===== */
+void crt_pow_f2xm1_c71(int param_1)
 
 
 

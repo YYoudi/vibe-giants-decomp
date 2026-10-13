@@ -8066,8 +8066,8 @@ void FUN_00425850(int param_1)
 
 }
 
-/* ===== cspec_00425870 @ 0x00425870 ===== */
-void cspec_00425870(float param_1)
+/* ===== reaperbase_harass_ai_c89 @ 0x00425870 ===== */
+void reaperbase_harass_ai_c89(float param_1)
 
 
 
