@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (47 named) — decompiled, names from PS2 symbols
+ * 145 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3065,8 +3065,8 @@ switchD_0045302d_caseD_4:
 
 }
 
-/* ===== FUN_004543c0 @ 0x004543C0 ===== */
-void FUN_004543c0(void)
+/* ===== fx_time_budget @ 0x004543C0 ===== */
+void fx_time_budget(void)
 
 
 

@@ -535,14 +535,14 @@
   "len": 495
  },
  "0x0040CFE0": {
-  "name": "FUN_0040cfe0",
-  "named": false,
-  "len": 1359
+  "name": "cam_target_get",
+  "named": true,
+  "len": 1361
  },
  "0x0040D130": {
   "name": "FUN_0040d130",
   "named": false,
-  "len": 1357
+  "len": 1365
  },
  "0x0040D260": {
   "name": "BinFileCreateWrite",
@@ -567,12 +567,12 @@
  "0x0040D4A0": {
   "name": "speaker_config_apply",
   "named": true,
-  "len": 1792
+  "len": 1794
  },
  "0x0040D670": {
   "name": "FUN_0040d670",
   "named": false,
-  "len": 305
+  "len": 307
  },
  "0x0040D6A0": {
   "name": "AudioGetMasterVolume__Fv",
@@ -627,12 +627,12 @@
  "0x0040D820": {
   "name": "ref_anode_user",
   "named": true,
-  "len": 3234
+  "len": 3236
  },
  "0x0040DB70": {
   "name": "FUN_0040db70",
   "named": false,
-  "len": 6227
+  "len": 6229
  },
  "0x0040E1C0": {
   "name": "charger_dust_fx",
@@ -3035,9 +3035,9 @@
   "len": 2702
  },
  "0x004543C0": {
-  "name": "FUN_004543c0",
-  "named": false,
-  "len": 1390
+  "name": "fx_time_budget",
+  "named": true,
+  "len": 1392
  },
  "0x004544F0": {
   "name": "FUN_004544f0",
@@ -5790,9 +5790,9 @@
   "len": 1070
  },
  "0x004A6730": {
-  "name": "FUN_004a6730",
-  "named": false,
-  "len": 1444
+  "name": "obj_turn_update",
+  "named": true,
+  "len": 1447
  },
  "0x004A6860": {
   "name": "obj_alpha_fade_update",
@@ -6907,7 +6907,7 @@
  "0x004CEA60": {
   "name": "FUN_004cea60",
   "named": false,
-  "len": 311
+  "len": 314
  },
  "0x004CEAA0": {
   "name": "FUN_004ceaa0",
@@ -7905,14 +7905,14 @@
   "len": 1250
  },
  "0x00500CF0": {
-  "name": "FUN_00500cf0",
-  "named": false,
-  "len": 1680
+  "name": "status_team_lookup",
+  "named": true,
+  "len": 1686
  },
  "0x00500E20": {
   "name": "status_draw_panel",
   "named": true,
-  "len": 1258
+  "len": 1264
  },
  "0x00500F40": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5",
@@ -8342,7 +8342,7 @@
  "0x0050C9E0": {
   "name": "FUN_0050c9e0",
   "named": false,
-  "len": 171
+  "len": 174
  },
  "0x0050CA00": {
   "name": "FUN_0050ca00",

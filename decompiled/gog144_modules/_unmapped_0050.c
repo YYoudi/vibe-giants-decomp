@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (28 named) — decompiled, names from PS2 symbols
+ * 87 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -890,8 +890,8 @@ void FUN_00500c00(float param_1,float param_2,float param_3,undefined4 param_4)
 
 }
 
-/* ===== FUN_00500cf0 @ 0x00500CF0 ===== */
-void FUN_00500cf0(int param_1)
+/* ===== status_team_lookup @ 0x00500CF0 ===== */
+void status_team_lookup(int param_1)
 
 
 
@@ -1060,7 +1060,7 @@ void status_draw_panel(void)
 
           DAT_00632bcc = &DAT_005a865c;
 
-          FUN_00500cf0(iVar1);
+          status_team_lookup(iVar1);
 
         }
 
@@ -11389,7 +11389,7 @@ void FUN_0050c9e0(undefined4 param_1)
 
   FUN_0050ca00(param_1);
 
-  FUN_004a6730(param_1);
+  obj_turn_update(param_1);
 
   return;
 

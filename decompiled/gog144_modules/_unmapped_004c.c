@@ -9274,7 +9274,7 @@ void FUN_004cea60(int param_1)
 
   if ((((iVar1 != 0x14) && (iVar1 != 0x67)) && (iVar1 != 0x68)) && (iVar1 != 0x6c)) {
 
-    FUN_004a6730(param_1);
+    obj_turn_update(param_1);
 
   }
 

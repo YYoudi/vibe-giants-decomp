@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (38 named) — decompiled, names from PS2 symbols
+ * 105 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -9435,8 +9435,8 @@ undefined4 FUN_0040cf70(void)
 
 }
 
-/* ===== FUN_0040cfe0 @ 0x0040CFE0 ===== */
-int FUN_0040cfe0(void)
+/* ===== cam_target_get @ 0x0040CFE0 ===== */
+int cam_target_get(void)
 
 
 
@@ -9569,7 +9569,7 @@ void FUN_0040d130(int param_1)
 
     if ((DAT_005550d0 != 0) && (-1 < (char)((uint)*(undefined4 *)(DAT_005550d0 + 0xd8) >> 8))) {
 
-      iVar1 = FUN_0040cfe0();
+      iVar1 = cam_target_get();
 
       *(undefined4 *)(DAT_005550d0 + 0xd4) = *(undefined4 *)(iVar1 + 0x14);
 
@@ -9585,7 +9585,7 @@ void FUN_0040d130(int param_1)
 
     if ((DAT_005550d0 != 0) && (-1 < (char)((uint)*(undefined4 *)(DAT_005550d0 + 0xd8) >> 8))) {
 
-      iVar1 = FUN_0040cfe0();
+      iVar1 = cam_target_get();
 
       *(undefined4 *)(DAT_005550d0 + 0xd4) = *(undefined4 *)(iVar1 + 0x14);
 
@@ -9617,7 +9617,7 @@ void FUN_0040d130(int param_1)
 
     if ((DAT_005550d0 != 0) && (-1 < (char)((uint)*(undefined4 *)(DAT_005550d0 + 0xd8) >> 8))) {
 
-      iVar1 = FUN_0040cfe0();
+      iVar1 = cam_target_get();
 
       *(undefined4 *)(DAT_005550d0 + 0xd4) = *(undefined4 *)(iVar1 + 0x14);
 
@@ -9625,7 +9625,7 @@ void FUN_0040d130(int param_1)
 
   }
 
-  iVar1 = FUN_0040cfe0();
+  iVar1 = cam_target_get();
 
   _DAT_005550c0 = 0;
 
@@ -9874,7 +9874,7 @@ void speaker_config_apply(void)
 
   
 
-  iVar1 = FUN_0040cfe0();
+  iVar1 = cam_target_get();
 
   if (DAT_00555134 != 0.0) {
 
@@ -10001,7 +10001,7 @@ void FUN_0040d670(void)
 
   
 
-  iVar1 = FUN_0040cfe0();
+  iVar1 = cam_target_get();
 
   _DAT_005550c0 = 0;
 
@@ -10290,7 +10290,7 @@ void ref_anode_user(void)
 
     if (DAT_00632e48 != 0) {
 
-      FUN_0040cfe0();
+      cam_target_get();
 
       _DAT_005550e8 = 0;
 
@@ -10489,7 +10489,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   iVar4 = (int)param_2;
 
-  pfVar6 = (float *)FUN_0040cfe0();
+  pfVar6 = (float *)cam_target_get();
 
   if (DAT_00632bc4 == 0) {
 
