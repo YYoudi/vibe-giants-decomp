@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (143 named) — decompiled, names from PS2 symbols
+ * 179 functions (144 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -15625,7 +15625,7 @@ LAB_0053ca17:
 
       }
 
-      FUN_0053f650(auStack_10,&DAT_005808cc);
+      quat_from_angle(auStack_10,&DAT_005808cc);
 
       GEO_QuatMultiply(param_1 + 0x78,auStack_20,auStack_10);
 
@@ -20004,8 +20004,8 @@ void GEO_QuatInverse(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0053f650 @ 0x0053F650 ===== */
-void FUN_0053f650(float *param_1,float *param_2)
+/* ===== quat_from_angle @ 0x0053F650 ===== */
+void quat_from_angle(float *param_1,float *param_2)
 
 
 

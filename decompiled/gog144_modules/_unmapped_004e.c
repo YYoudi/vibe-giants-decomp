@@ -2116,7 +2116,7 @@ undefined4 rpman_verify_enemy__FP6OBJECTf(int param_1,float param_2)
 
     iVar3 = FUN_004a6240(*piVar2);
 
-    if ((iVar3 == 0) && (iVar3 = FUN_004a62b0(*piVar2), iVar3 == 0)) {
+    if ((iVar3 == 0) && (iVar3 = obj_is_pickup_53(*piVar2), iVar3 == 0)) {
 
       iVar3 = *piVar2;
 
@@ -2250,7 +2250,7 @@ LAB_004e33e5:
 
     iVar4 = FUN_004a6240(iVar3);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a62b0(iVar3), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = obj_is_pickup_53(iVar3), iVar4 == 0)) {
 
       local_c = *(undefined4 *)(param_1 + 0xa0);
 
@@ -2436,7 +2436,7 @@ undefined4 rpman_check_los__FP6OBJECTT0(int param_1,int param_2)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a62b0(param_2);
+    iVar1 = obj_is_pickup_53(param_2);
 
     if (iVar1 == 0) {
 
@@ -2517,7 +2517,7 @@ undefined4 ai_los_clear_to_target(float param_1,float param_2,int param_3,int pa
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a62b0(param_4);
+    iVar1 = obj_is_pickup_53(param_4);
 
     if (iVar1 == 0) {
 
@@ -2677,7 +2677,7 @@ void ai_radius_scan(int param_1,float param_2)
 
           iVar4 = FUN_004a6240(iVar2);
 
-          if ((iVar4 == 0) && (iVar4 = FUN_004a62b0(iVar2), iVar4 == 0)) {
+          if ((iVar4 == 0) && (iVar4 = obj_is_pickup_53(iVar2), iVar4 == 0)) {
 
             local_c = *(undefined4 *)(param_1 + 0xa0);
 
@@ -2832,7 +2832,7 @@ LAB_004e3a00:
 
               iVar6 = FUN_004a6240(iVar4);
 
-              if ((iVar6 == 0) && (iVar6 = FUN_004a62b0(iVar4), iVar6 == 0)) {
+              if ((iVar6 == 0) && (iVar6 = obj_is_pickup_53(iVar4), iVar6 == 0)) {
 
                 iVar6 = ObjIsTurret(*piVar3);
 
@@ -3008,7 +3008,7 @@ LAB_004e3ad2:
 
               iVar6 = FUN_004a6240(iVar4);
 
-              if ((iVar6 != 0) || (iVar6 = FUN_004a62b0(iVar4), iVar6 != 0)) goto LAB_004e3e42;
+              if ((iVar6 != 0) || (iVar6 = obj_is_pickup_53(iVar4), iVar6 != 0)) goto LAB_004e3e42;
 
               local_c = *puVar2;
 
@@ -3256,7 +3256,7 @@ void rpman_set_enemy_attack_goal__FP6OBJECTi(int param_1,int param_2)
 
   iVar2 = FUN_004a6240(*piVar1);
 
-  if ((iVar2 == 0) && (iVar2 = FUN_004a62b0(*piVar1), iVar2 == 0)) {
+  if ((iVar2 == 0) && (iVar2 = obj_is_pickup_53(*piVar1), iVar2 == 0)) {
 
     if ((*(uint *)(param_1 + 0xe0) & 0x40000) == 0) {
 
@@ -4316,7 +4316,7 @@ void make_grenade_shot__FP6OBJECTf(int param_1,float param_2)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a62b0(*piVar1);
+      iVar2 = obj_is_pickup_53(*piVar1);
 
       if (iVar2 != 0) goto LAB_004e5064;
 
@@ -4550,7 +4550,7 @@ void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int par
 
       iVar3 = FUN_004a6240(param_2);
 
-      if ((iVar3 != 0) || (iVar3 = FUN_004a62b0(param_2), iVar3 != 0)) {
+      if ((iVar3 != 0) || (iVar3 = obj_is_pickup_53(param_2), iVar3 != 0)) {
 
         iVar3 = FUN_004a6320(param_2);
 
@@ -4903,7 +4903,7 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
         iVar10 = FUN_004a6240(iVar11);
 
-        if ((iVar10 == 0) && (iVar10 = FUN_004a62b0(iVar11), iVar10 == 0)) {
+        if ((iVar10 == 0) && (iVar10 = obj_is_pickup_53(iVar11), iVar10 == 0)) {
 
           iVar10 = ObjIsPlayer(iVar11);
 
@@ -5183,7 +5183,7 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
       iVar9 = FUN_004a6240(*piVar4);
 
-      if ((iVar9 != 0) || (iVar9 = FUN_004a62b0(*piVar4), iVar9 != 0)) {
+      if ((iVar9 != 0) || (iVar9 = obj_is_pickup_53(*piVar4), iVar9 != 0)) {
 
         iVar9 = crt_rand_scaled(100);
 
@@ -5530,7 +5530,7 @@ LAB_004e6651:
 
             iVar9 = FUN_004a6240(iVar8);
 
-            if ((iVar9 == 0) && (iVar9 = FUN_004a62b0(iVar8), iVar9 == 0)) {
+            if ((iVar9 == 0) && (iVar9 = obj_is_pickup_53(iVar8), iVar9 == 0)) {
 
               local_c = *(undefined4 *)(param_1 + 0xa0);
 
@@ -5600,7 +5600,7 @@ LAB_004e647b:
 
   iVar8 = FUN_004a6240(*piVar2);
 
-  if ((iVar8 == 0) && (iVar8 = FUN_004a62b0(*piVar2), iVar8 == 0)) {
+  if ((iVar8 == 0) && (iVar8 = obj_is_pickup_53(*piVar2), iVar8 == 0)) {
 
     if ((piVar2[0x6e] & 8U) == 0) goto LAB_004e6651;
 
@@ -5757,7 +5757,7 @@ LAB_004e6792:
 
     iVar4 = FUN_004a6240(iVar5);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a62b0(iVar5), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = obj_is_pickup_53(iVar5), iVar4 == 0)) {
 
       local_c = *(undefined4 *)(param_1 + 0xa0);
 
@@ -7203,7 +7203,7 @@ LAB_004e7bdc:
 
     iVar5 = FUN_004a6240(*piVar1);
 
-    if (((iVar5 != 0) || (iVar5 = FUN_004a62b0(*piVar1), iVar5 != 0)) &&
+    if (((iVar5 != 0) || (iVar5 = obj_is_pickup_53(*piVar1), iVar5 != 0)) &&
 
        (iVar5 = ObjIsTurret(*piVar1), iVar5 == 0)) {
 
@@ -7259,7 +7259,7 @@ LAB_004e7ce8:
 
     iVar5 = FUN_004a6240(*piVar1);
 
-    if (((iVar5 == 0) && (iVar5 = FUN_004a62b0(*piVar1), iVar5 == 0)) ||
+    if (((iVar5 == 0) && (iVar5 = obj_is_pickup_53(*piVar1), iVar5 == 0)) ||
 
        (*(int *)((int)param_1 + 0xe8) != 0x66)) {
 
@@ -7353,7 +7353,7 @@ LAB_004e7ee7:
 
 LAB_004e7fcb:
 
-              iVar10 = FUN_004a62b0(iVar10);
+              iVar10 = obj_is_pickup_53(iVar10);
 
               if (iVar10 != 0) goto LAB_004e7fd7;
 

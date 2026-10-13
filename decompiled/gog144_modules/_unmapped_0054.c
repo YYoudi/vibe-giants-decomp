@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (282 named) — decompiled, names from PS2 symbols
+ * 351 functions (283 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -22210,8 +22210,8 @@ uint FUN_0054cf50(uint param_1)
 
 }
 
-/* ===== FUN_0054cfd9 @ 0x0054CFD9 ===== */
-undefined4 FUN_0054cfd9(int param_1,int param_2)
+/* ===== crt_bitarray_test_2 @ 0x0054CFD9 ===== */
+undefined4 crt_bitarray_test_2(int param_1,int param_2)
 
 
 
@@ -22333,7 +22333,7 @@ undefined4 crt_bitarray_test(int param_1,int param_2)
 
   if (((*puVar1 & 1 << (bVar3 & 0x1f)) != 0) &&
 
-     (iVar2 = FUN_0054cfd9(param_1,param_2 + 1), iVar2 == 0)) {
+     (iVar2 = crt_bitarray_test_2(param_1,param_2 + 1), iVar2 == 0)) {
 
     local_8 = crt_bitarray_clear(param_1,param_2 + -1);
 

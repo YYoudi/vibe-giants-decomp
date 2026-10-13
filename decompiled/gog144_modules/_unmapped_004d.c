@@ -131,7 +131,7 @@ void FUN_004d1840(int param_1,int *param_2)
 
         iVar3 = FUN_004a6240(iVar2);
 
-        if ((iVar3 == 0) && (iVar3 = FUN_004a62b0(iVar2), iVar3 == 0)) {
+        if ((iVar3 == 0) && (iVar3 = obj_is_pickup_53(iVar2), iVar3 == 0)) {
 
           if ((*(int *)(iVar2 + 0x1e0) == 0x2c) &&
 

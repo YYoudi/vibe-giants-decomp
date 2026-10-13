@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054cfd9,FUN_0054cfd9,,crt_bitarray_test_2,0.9,llm-w171,bit test variant
+0053f650,FUN_0053f650,,quat_from_angle,0.9,llm-w171,half-angle sin build caller ANM_NodeGetAffine
+004a62b0,FUN_004a62b0,,obj_is_pickup_53,0.9,llm-w171,type 0x53 + model excl + 0x2c owner 5 AI callers

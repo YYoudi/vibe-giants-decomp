@@ -5755,9 +5755,9 @@
   "len": 227
  },
  "0x004A62B0": {
-  "name": "FUN_004a62b0",
-  "named": false,
-  "len": 416
+  "name": "obj_is_pickup_53",
+  "named": true,
+  "len": 420
  },
  "0x004A6300": {
   "name": "ObjIsReaperBldg",
@@ -6922,7 +6922,7 @@
  "0x004D1840": {
   "name": "FUN_004d1840",
   "named": false,
-  "len": 2536
+  "len": 2540
  },
  "0x004D1A00": {
   "name": "FUN_004d1a00",
@@ -7192,7 +7192,7 @@
  "0x004E30B0": {
   "name": "rpman_verify_enemy__FP6OBJECTf",
   "named": true,
-  "len": 4734
+  "len": 4742
  },
  "0x004E3440": {
   "name": "rpman_smartie_consider__FP6OBJECTT0",
@@ -7202,12 +7202,12 @@
  "0x004E3530": {
   "name": "rpman_check_los__FP6OBJECTT0",
   "named": true,
-  "len": 1341
+  "len": 1345
  },
  "0x004E3620": {
   "name": "ai_los_clear_to_target",
   "named": true,
-  "len": 1299
+  "len": 1303
  },
  "0x004E3730": {
   "name": "FUN_004e3730",
@@ -7217,12 +7217,12 @@
  "0x004E37C0": {
   "name": "ai_radius_scan",
   "named": true,
-  "len": 1979
+  "len": 1983
  },
  "0x004E3920": {
   "name": "rpman_scan_for_enemy__FP6OBJECTfii",
   "named": true,
-  "len": 7472
+  "len": 7480
  },
  "0x004E3EB0": {
   "name": "rpman_consider_run_chatter__FP6OBJECT",
@@ -7232,7 +7232,7 @@
  "0x004E3F10": {
   "name": "rpman_set_enemy_attack_goal__FP6OBJECTi",
   "named": true,
-  "len": 3129
+  "len": 3133
  },
  "0x004E41E0": {
   "name": "FUN_004e41e0",
@@ -7292,7 +7292,7 @@
  "0x004E5000": {
   "name": "make_grenade_shot__FP6OBJECTf",
   "named": true,
-  "len": 1390
+  "len": 1394
  },
  "0x004E5120": {
   "name": "rpman_flying_fire__FP6OBJECT",
@@ -7302,22 +7302,22 @@
  "0x004E5270": {
   "name": "fire_bullet_shot__FP6OBJECTT0ii",
   "named": true,
-  "len": 4215
+  "len": 4219
  },
  "0x004E5640": {
   "name": "fire_sniper_shot__FP6OBJECTT0",
   "named": true,
-  "len": 10278
+  "len": 10286
  },
  "0x004E5F70": {
   "name": "rpman_rapid_fire__FP6OBJECTiii",
   "named": true,
-  "len": 8000
+  "len": 8008
  },
  "0x004E6670": {
   "name": "FUN_004e6670",
   "named": false,
-  "len": 2504
+  "len": 2508
  },
  "0x004E6880": {
   "name": "obj_proximity_update",
@@ -7367,7 +7367,7 @@
  "0x004E7AE0": {
   "name": "rpman_notify_hit",
   "named": true,
-  "len": 11953
+  "len": 11965
  },
  "0x004E9CE0": {
   "name": "FUN_004e9ce0",
@@ -10722,7 +10722,7 @@
  "0x0053C660": {
   "name": "ANM_NodeGetAffine",
   "named": true,
-  "len": 5358
+  "len": 5361
  },
  "0x0053CA70": {
   "name": "FUN_0053ca70",
@@ -11010,9 +11010,9 @@
   "len": 578
  },
  "0x0053F650": {
-  "name": "FUN_0053f650",
-  "named": false,
-  "len": 446
+  "name": "quat_from_angle",
+  "named": true,
+  "len": 449
  },
  "0x0053F6A0": {
   "name": "crt_quat_slerp",
@@ -12525,9 +12525,9 @@
   "len": 912
  },
  "0x0054CFD9": {
-  "name": "FUN_0054cfd9",
-  "named": false,
-  "len": 491
+  "name": "crt_bitarray_test_2",
+  "named": true,
+  "len": 498
  },
  "0x0054D022": {
   "name": "crt_bitarray_clear",
@@ -12537,7 +12537,7 @@
  "0x0054D078": {
   "name": "crt_bitarray_test",
   "named": true,
-  "len": 754
+  "len": 761
  },
  "0x0054D104": {
   "name": "FUN_0054d104",
