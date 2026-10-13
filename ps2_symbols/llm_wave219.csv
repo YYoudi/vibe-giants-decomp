@@ -1,0 +1,2 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+050c640,cspec_0050c640,,turret_death_handler_c44,0.9,cspec-pass2,turretx2+cls44f9

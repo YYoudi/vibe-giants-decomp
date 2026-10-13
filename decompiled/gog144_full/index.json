@@ -9405,9 +9405,9 @@
   "len": 193
  },
  "0x0050C640": {
-  "name": "cspec_0050c640",
+  "name": "turret_death_handler_c44",
   "named": true,
-  "len": 3160
+  "len": 3170
  },
  "0x0050C950": {
   "name": "turret_count_portables",

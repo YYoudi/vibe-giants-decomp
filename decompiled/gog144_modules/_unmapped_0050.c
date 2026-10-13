@@ -13477,12 +13477,12 @@ void cspec_0050c610(int param_1)
 
 }
 
-/* ===== cspec_0050c640 @ 0x0050C640 ===== */
+/* ===== turret_death_handler_c44 @ 0x0050C640 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_0050c640(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+void turret_death_handler_c44(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
