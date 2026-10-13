@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (67 named) — decompiled, names from PS2 symbols
+ * 76 functions (68 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -2237,7 +2237,7 @@ flick_file_load(int param_1,undefined4 param_2,char *param_3,undefined4 param_4,
 
   iVar7 = 0;
 
-  uVar1 = FUN_0053feb0(0,0);
+  uVar1 = map_group_fix(0,0);
 
   puVar2 = (undefined4 *)map_chunk_alloc(uVar1,0x140,1);
 
@@ -2917,8 +2917,8 @@ hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int p
 
 }
 
-/* ===== FUN_00443f30 @ 0x00443F30 ===== */
-undefined4 FUN_00443f30(int param_1,int param_2,int param_3)
+/* ===== flick_slot_lookup_handle_2 @ 0x00443F30 ===== */
+undefined4 flick_slot_lookup_handle_2(int param_1,int param_2,int param_3)
 
 
 
@@ -5197,7 +5197,7 @@ LAB_00445a50:
 
     if (puVar12[3] == 0) {
 
-      FUN_00443f30(param_1,puVar12[2],0);
+      flick_slot_lookup_handle_2(param_1,puVar12[2],0);
 
       puVar12 = puVar12 + puVar12[1];
 
@@ -5205,7 +5205,7 @@ LAB_00445a50:
 
     else {
 
-      FUN_00443f30(param_1,puVar12[2],puVar12[3] + iVar4);
+      flick_slot_lookup_handle_2(param_1,puVar12[2],puVar12[3] + iVar4);
 
       puVar12 = puVar12 + puVar12[1];
 
@@ -6258,7 +6258,7 @@ undefined4 * FUN_00446a00(undefined4 param_1,char *param_2)
 
   
 
-  uVar3 = FUN_0053feb0(0,0);
+  uVar3 = map_group_fix(0,0);
 
   puVar4 = (undefined4 *)map_chunk_alloc(uVar3,0x110,1);
 
@@ -6813,7 +6813,7 @@ void texture_object_debug_dump_3(void)
 
   if (DAT_00656464 == (undefined4 *)0x0) {
 
-    uVar3 = FUN_0053feb0(0,0);
+    uVar3 = map_group_fix(0,0);
 
     puVar4 = (undefined4 *)map_chunk_alloc(uVar3,0x14,1);
 

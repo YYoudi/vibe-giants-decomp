@@ -152,7 +152,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   }
 
-  iVar7 = FUN_0053feb0(0,0);
+  iVar7 = map_group_fix(0,0);
 
   *piVar3 = iVar7;
 

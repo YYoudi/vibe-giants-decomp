@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (135 named) — decompiled, names from PS2 symbols
+ * 179 functions (136 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -66,7 +66,7 @@ void comm_chat_send_3(undefined1 param_1,undefined4 param_2,int param_3,int para
 
       if (1 < (int)DAT_005e2310 + -0x5e2314) {
 
-        FUN_0052ba30((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
+        comm_chat_send_common((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
 
       }
 
@@ -1809,7 +1809,7 @@ void reaper_00530bd0(int param_1,int param_2,int param_3,int param_4,undefined1 
 
       if (1 < (int)DAT_005e2310 + -0x5e2314) {
 
-        FUN_0052ba30((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
+        comm_chat_send_common((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
 
       }
 
@@ -1948,7 +1948,7 @@ void comm_chat_send_1(int param_1,int param_2,int param_3,int param_4,undefined1
 
       if (1 < (int)DAT_005e2310 + -0x5e2314) {
 
-        FUN_0052ba30((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
+        comm_chat_send_common((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
 
       }
 
@@ -2087,7 +2087,7 @@ void comm_chat_send_2(int param_1,int param_2,int param_3,int param_4,undefined1
 
       if (1 < (int)DAT_005e2310 + -0x5e2314) {
 
-        FUN_0052ba30((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
+        comm_chat_send_common((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
 
       }
 
@@ -7904,7 +7904,7 @@ void comm_chat_dispatch(int param_1,int param_2)
 
           if (1 < (int)DAT_005e2310 + -0x5e2314) {
 
-            FUN_0052ba30((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
+            comm_chat_send_common((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
 
           }
 
@@ -8000,7 +8000,7 @@ LAB_005352a9:
 
           if (1 < (int)DAT_005e2310 + -0x5e2314) {
 
-            FUN_0052ba30((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
+            comm_chat_send_common((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
 
           }
 
@@ -8173,7 +8173,7 @@ void comm_heartbeat_send(void)
 
       if (1 < (int)DAT_005e2310 + -0x5e2314) {
 
-        FUN_0052ba30((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
+        comm_chat_send_common((undefined1 *)((int)DAT_005e2310 + -0x5e2314),&DAT_005e2314);
 
       }
 
@@ -8737,7 +8737,7 @@ void comm_0052b430_user_bigger(void)
 
       if (1 < (int)(DAT_005e2310 + -0x5e2314)) {
 
-        FUN_0052ba30(DAT_005e2310 + -0x5e2314,&DAT_005e2314);
+        comm_chat_send_common(DAT_005e2310 + -0x5e2314,&DAT_005e2314);
 
       }
 
@@ -14689,7 +14689,7 @@ int bistream_tell_user(undefined4 param_1,int param_2,int *param_3)
 
   }
 
-  uVar3 = FUN_0053feb0(param_1,param_3);
+  uVar3 = map_group_fix(param_1,param_3);
 
   iVar2 = GetCurrentPos__C11CByteStream(uVar3);
 
@@ -14910,7 +14910,7 @@ int bistream_tell_user2(undefined4 param_1,int param_2,int *param_3)
 
   }
 
-  uVar3 = FUN_0053feb0(param_1,param_3);
+  uVar3 = map_group_fix(param_1,param_3);
 
   iVar2 = GetCurrentPos__C11CByteStream(uVar3);
 
@@ -20722,8 +20722,8 @@ undefined4 GetCurrentPos__C11CByteStream(int param_1)
 
 }
 
-/* ===== FUN_0053feb0 @ 0x0053FEB0 ===== */
-int FUN_0053feb0(undefined4 param_1,int param_2)
+/* ===== map_group_fix @ 0x0053FEB0 ===== */
+int map_group_fix(undefined4 param_1,int param_2)
 
 
 

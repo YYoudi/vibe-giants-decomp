@@ -2522,7 +2522,7 @@
  "0x00443480": {
   "name": "flick_file_load",
   "named": true,
-  "len": 3111
+  "len": 3112
  },
  "0x00443740": {
   "name": "main_flick_00443740",
@@ -2550,9 +2550,9 @@
   "len": 2188
  },
  "0x00443F30": {
-  "name": "FUN_00443f30",
-  "named": false,
-  "len": 683
+  "name": "flick_slot_lookup_handle_2",
+  "named": true,
+  "len": 697
  },
  "0x00443FB0": {
   "name": "FLK_ActorOffsetEval__FP9FLK_Actor",
@@ -2587,7 +2587,7 @@
  "0x00445A20": {
   "name": "FLK_FlickProcess",
   "named": true,
-  "len": 14860
+  "len": 14888
  },
  "0x00446620": {
   "name": "FLK_FlickStop",
@@ -2612,7 +2612,7 @@
  "0x00446A00": {
   "name": "FUN_00446a00",
   "named": false,
-  "len": 1006
+  "len": 1007
  },
  "0x00446A90": {
   "name": "object_stop_movement",
@@ -2647,7 +2647,7 @@
  "0x00446EE0": {
   "name": "texture_object_debug_dump_3",
   "named": true,
-  "len": 769
+  "len": 770
  },
  "0x00446F50": {
   "name": "SetupCameraHail__Fv",
@@ -4067,7 +4067,7 @@
  "0x004776C0": {
   "name": "marker_create_path__FP6OBJECTi",
   "named": true,
-  "len": 10114
+  "len": 10115
  },
  "0x00477DA0": {
   "name": "marker_spline_adjust_scale",
@@ -9845,9 +9845,9 @@
   "len": 1438
  },
  "0x0052BA30": {
-  "name": "FUN_0052ba30",
-  "named": false,
-  "len": 624
+  "name": "comm_chat_send_common",
+  "named": true,
+  "len": 633
  },
  "0x0052BAB0": {
   "name": "comm_net_stats_dump",
@@ -10162,7 +10162,7 @@
  "0x00530010": {
   "name": "comm_chat_send_3",
   "named": true,
-  "len": 2339
+  "len": 2348
  },
  "0x00530180": {
   "name": "comm_send_recv_pair",
@@ -10207,17 +10207,17 @@
  "0x00530BD0": {
   "name": "reaper_00530bd0",
   "named": true,
-  "len": 2445
+  "len": 2454
  },
  "0x00530D70": {
   "name": "comm_chat_send_1",
   "named": true,
-  "len": 2403
+  "len": 2412
  },
  "0x00530F10": {
   "name": "comm_chat_send_2",
   "named": true,
-  "len": 2395
+  "len": 2404
  },
  "0x005310B0": {
   "name": "Audio3DTestToneUpdate__Fv_7",
@@ -10342,12 +10342,12 @@
  "0x00535010": {
   "name": "comm_chat_dispatch",
   "named": true,
-  "len": 5359
+  "len": 5377
  },
  "0x00535390": {
   "name": "comm_heartbeat_send",
   "named": true,
-  "len": 1521
+  "len": 1530
  },
  "0x005354C0": {
   "name": "comm_0052b430_user_big",
@@ -10357,7 +10357,7 @@
  "0x005359A0": {
   "name": "comm_0052b430_user_bigger",
   "named": true,
-  "len": 10583
+  "len": 10592
  },
  "0x00535F40": {
   "name": "comm_session_init",
@@ -10642,7 +10642,7 @@
  "0x0053BA50": {
   "name": "bistream_tell_user",
   "named": true,
-  "len": 976
+  "len": 977
  },
  "0x0053BB30": {
   "name": "ANM_AnimGetImage_2",
@@ -10667,7 +10667,7 @@
  "0x0053BC90": {
   "name": "bistream_tell_user2",
   "named": true,
-  "len": 974
+  "len": 975
  },
  "0x0053BD70": {
   "name": "ANM_AnimDestroy",
@@ -11100,9 +11100,9 @@
   "len": 110
  },
  "0x0053FEB0": {
-  "name": "FUN_0053feb0",
-  "named": false,
-  "len": 694
+  "name": "map_group_fix",
+  "named": true,
+  "len": 695
  },
  "0x0053FF30": {
   "name": "MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi",
@@ -11132,7 +11132,7 @@
  "0x00540190": {
   "name": "MAP_ChunkPoolCreate",
   "named": true,
-  "len": 645
+  "len": 646
  },
  "0x005401E0": {
   "name": "FUN_005401e0",
@@ -11842,7 +11842,7 @@
  "0x00545E42": {
   "name": "FUN_00545e42",
   "named": false,
-  "len": 373
+  "len": 395
  },
  "0x00545EA3": {
   "name": "crt_printf_fmt_e",
@@ -11852,7 +11852,7 @@
  "0x00545F65": {
   "name": "FUN_00545f65",
   "named": false,
-  "len": 344
+  "len": 352
  },
  "0x00545FBA": {
   "name": "crt_fmt_pad_zero",
@@ -11862,7 +11862,7 @@
  "0x00546061": {
   "name": "crt_fmt_g",
   "named": true,
-  "len": 772
+  "len": 780
  },
  "0x005460F4": {
   "name": "__cfltcvt",
@@ -12585,9 +12585,9 @@
   "len": 213
  },
  "0x0054D3C5": {
-  "name": "FUN_0054d3c5",
-  "named": false,
-  "len": 1016
+  "name": "crt_fmt_radix_prefix",
+  "named": true,
+  "len": 1024
  },
  "0x0054D43C": {
   "name": "crt_mbtowc_helper",

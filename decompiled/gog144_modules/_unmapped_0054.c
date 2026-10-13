@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (273 named) — decompiled, names from PS2 symbols
+ * 351 functions (274 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -162,7 +162,7 @@ void MAP_ChunkPoolCreate(undefined4 param_1,undefined2 param_2,short param_3)
 
   
 
-  uVar2 = FUN_0053feb0(param_1,0);
+  uVar2 = map_group_fix(param_1,0);
 
   puVar3 = (undefined4 *)map_chunk_alloc(uVar2,0x1c,1);
 
@@ -9336,7 +9336,9 @@ int FUN_00545e42(undefined8 *param_1,int param_2,int param_3,undefined4 param_4)
 
   crt_mbtowc_helper(*param_1,local_14,local_2c);
 
-  FUN_0054d3c5((uint)(0 < param_3) + param_2 + (uint)(local_14[0] == 0x2d),param_3 + 1,local_14);
+  crt_fmt_radix_prefix
+
+            ((uint)(0 < param_3) + param_2 + (uint)(local_14[0] == 0x2d),param_3 + 1,local_14);
 
   crt_printf_fmt_e(param_2,param_3,param_4,local_14,0);
 
@@ -9448,7 +9450,7 @@ int FUN_00545f65(undefined8 *param_1,int param_2,int param_3)
 
   crt_mbtowc_helper(*param_1,&local_14,local_2c);
 
-  FUN_0054d3c5((uint)(local_14 == 0x2d) + param_2,local_10 + param_3,&local_14);
+  crt_fmt_radix_prefix((uint)(local_14 == 0x2d) + param_2,local_10 + param_3,&local_14);
 
   crt_fmt_pad_zero(param_2,param_3,&local_14,0);
 
@@ -9564,7 +9566,7 @@ void crt_fmt_g(undefined8 *param_1,int param_2,int param_3,undefined4 param_4)
 
   pcVar2 = (char *)((uint)(local_14 == 0x2d) + param_2);
 
-  FUN_0054d3c5(pcVar2,param_3,&local_14);
+  crt_fmt_radix_prefix(pcVar2,param_3,&local_14);
 
   local_10 = local_10 + -1;
 
@@ -22730,8 +22732,8 @@ void binfile_seek_strtod2(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0054d3c5 @ 0x0054D3C5 ===== */
-void FUN_0054d3c5(char *param_1,int param_2,int param_3)
+/* ===== crt_fmt_radix_prefix @ 0x0054D3C5 ===== */
+void crt_fmt_radix_prefix(char *param_1,int param_2,int param_3)
 
 
 
