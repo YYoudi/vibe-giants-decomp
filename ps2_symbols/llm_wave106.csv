@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00445a20,FUN_00445a20,,FLK_FlickProcess,0.9,llm-w106,
+00412df0,FUN_00412df0,,collide_objects,0.9,llm-w106,
+00502890,FUN_00502890,,teammecc_get_attackloc,0.9,llm-w106,
+004d1bd0,FUN_004d1bd0,,verm_control,0.9,llm-w106,
+0050ca00,FUN_0050ca00,,kabutoai_move,0.9,llm-w106,
+0050c9e0,FUN_0050c9e0,,kabutoai_move_turn,0.9,llm-w106,

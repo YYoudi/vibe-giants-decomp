@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (29 named) — decompiled, names from PS2 symbols
+ * 87 functions (32 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -2484,7 +2484,7 @@ LAB_0050203c:
 
         if (((DAT_005a8800 & uVar13) == 0) &&
 
-           (FUN_00502890(param_1,iVar11), (uVar13 & DAT_005a8800) != 0)) {
+           (teammecc_get_attackloc(param_1,iVar11), (uVar13 & DAT_005a8800) != 0)) {
 
           uStack_190 = uStack_190 - 1;
 
@@ -3043,12 +3043,12 @@ void FUN_00502750(int param_1,float *param_2,undefined4 param_3,undefined4 param
 
 }
 
-/* ===== FUN_00502890 @ 0x00502890 ===== */
+/* ===== teammecc_get_attackloc @ 0x00502890 ===== */
 /* PS2 candidate: teammecc_get_attackloc__FP6OBJECTi (conf 0.454) */
 
 
 
-void FUN_00502890(float param_1,int param_2)
+void teammecc_get_attackloc(float param_1,int param_2)
 
 
 
@@ -11376,18 +11376,18 @@ void FUN_0050c950(int *param_1,int *param_2,int param_3)
 
 }
 
-/* ===== FUN_0050c9e0 @ 0x0050C9E0 ===== */
+/* ===== kabutoai_move_turn @ 0x0050C9E0 ===== */
 /* PS2 candidate: ANM_BinderDestroy_4 (conf 0.601) */
 
 
 
-void FUN_0050c9e0(undefined4 param_1)
+void kabutoai_move_turn(undefined4 param_1)
 
 
 
 {
 
-  FUN_0050ca00(param_1);
+  kabutoai_move(param_1);
 
   obj_turn_update(param_1);
 
@@ -11395,14 +11395,14 @@ void FUN_0050c9e0(undefined4 param_1)
 
 }
 
-/* ===== FUN_0050ca00 @ 0x0050CA00 ===== */
+/* ===== kabutoai_move @ 0x0050CA00 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: kabutoai_move (conf 0.489) */
 
 
 
-void FUN_0050ca00(float param_1)
+void kabutoai_move(float param_1)
 
 
 

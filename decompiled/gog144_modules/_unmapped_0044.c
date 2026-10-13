@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (46 named) — decompiled, names from PS2 symbols
+ * 76 functions (47 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -4824,14 +4824,14 @@ LAB_004459e7:
 
 }
 
-/* ===== FUN_00445a20 @ 0x00445A20 ===== */
+/* ===== FLK_FlickProcess @ 0x00445A20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: FLK_FlickProcess__FP9FLK_Flick (conf 0.38) */
 
 
 
-undefined4 FUN_00445a20(undefined4 *param_1)
+undefined4 FLK_FlickProcess(undefined4 *param_1)
 
 
 
@@ -6120,7 +6120,7 @@ int flick_objects_reload(void)
 
       if ((DAT_00632aa4._3_1_ == '\0') || (DAT_00632c0c != 0)) {
 
-        DAT_005585b4 = FUN_00445a20(DAT_0059ce54);
+        DAT_005585b4 = FLK_FlickProcess(DAT_0059ce54);
 
         if (DAT_005585b4 == 0) {
 

@@ -10329,7 +10329,7 @@ LAB_004997cf:
 
     }
 
-    FUN_00412df0(fVar9);
+    collide_objects(fVar9);
 
   }
 

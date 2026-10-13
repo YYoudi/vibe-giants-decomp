@@ -10451,7 +10451,7 @@ LAB_004cf982:
 
     if (*(int *)((int)fVar5 + 4) == 0x49) {
 
-      FUN_004d1bd0(fVar5);
+      verm_control(fVar5);
 
       iVar10 = *(int *)((int)fVar5 + 0xe4);
 

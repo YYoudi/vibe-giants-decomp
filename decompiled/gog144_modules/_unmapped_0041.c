@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (49 named) — decompiled, names from PS2 symbols
+ * 100 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -1456,12 +1456,12 @@ void collgrid_collide_walk(int param_1,int param_2,int param_3,int param_4,int p
 
 }
 
-/* ===== FUN_00412df0 @ 0x00412DF0 ===== */
+/* ===== collide_objects @ 0x00412DF0 ===== */
 /* PS2 candidate: collide_objects__FP6OBJECT (conf 0.445) */
 
 
 
-void FUN_00412df0(int param_1)
+void collide_objects(int param_1)
 
 
 

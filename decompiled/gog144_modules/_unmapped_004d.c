@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (14 named) — decompiled, names from PS2 symbols
+ * 39 functions (15 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -395,12 +395,12 @@ void FUN_004d1b30(int param_1)
 
 }
 
-/* ===== FUN_004d1bd0 @ 0x004D1BD0 ===== */
+/* ===== verm_control @ 0x004D1BD0 ===== */
 /* PS2 candidate: verm_control__FP6OBJECT (conf 0.469) */
 
 
 
-void FUN_004d1bd0(int param_1)
+void verm_control(int param_1)
 
 
 

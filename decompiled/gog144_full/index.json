@@ -725,9 +725,9 @@
   "len": 11053
  },
  "0x00412DF0": {
-  "name": "FUN_00412df0",
-  "named": false,
-  "len": 14074
+  "name": "collide_objects",
+  "named": true,
+  "len": 14077
  },
  "0x00413820": {
   "name": "FUN_00413820",
@@ -2585,9 +2585,9 @@
   "len": 2844
  },
  "0x00445A20": {
-  "name": "FUN_00445a20",
-  "named": false,
-  "len": 14742
+  "name": "FLK_FlickProcess",
+  "named": true,
+  "len": 14746
  },
  "0x00446620": {
   "name": "FUN_00446620",
@@ -2602,7 +2602,7 @@
  "0x00446890": {
   "name": "flick_objects_reload",
   "named": true,
-  "len": 1536
+  "len": 1540
  },
  "0x004469E0": {
   "name": "FUN_004469e0",
@@ -5172,7 +5172,7 @@
  "0x00499500": {
   "name": "FUN_00499500",
   "named": false,
-  "len": 5404
+  "len": 5407
  },
  "0x00499970": {
   "name": "object_init_usage",
@@ -6935,8 +6935,8 @@
   "len": 803
  },
  "0x004D1BD0": {
-  "name": "FUN_004d1bd0",
-  "named": false,
+  "name": "verm_control",
+  "named": true,
   "len": 31293
  },
  "0x004D3720": {
@@ -7987,7 +7987,7 @@
  "0x00501740": {
   "name": "teammecc_setup_enemies__FP6OBJECTi",
   "named": true,
-  "len": 22827
+  "len": 22837
  },
  "0x005025D0": {
   "name": "FUN_005025d0",
@@ -8005,9 +8005,9 @@
   "len": 1639
  },
  "0x00502890": {
-  "name": "FUN_00502890",
-  "named": false,
-  "len": 14261
+  "name": "teammecc_get_attackloc",
+  "named": true,
+  "len": 14271
  },
  "0x005035C0": {
   "name": "FUN_005035c0",
@@ -8340,14 +8340,14 @@
   "len": 515
  },
  "0x0050C9E0": {
-  "name": "FUN_0050c9e0",
-  "named": false,
-  "len": 174
+  "name": "kabutoai_move_turn",
+  "named": true,
+  "len": 181
  },
  "0x0050CA00": {
-  "name": "FUN_0050ca00",
-  "named": false,
-  "len": 50006
+  "name": "kabutoai_move",
+  "named": true,
+  "len": 50007
  },
  "0x0050F830": {
   "name": "main_verm_0050f830",
