@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (15 named) — decompiled, names from PS2 symbols
+ * 53 functions (16 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -356,12 +356,12 @@ float10 anim_dump_related(int param_1,undefined4 param_2,float *param_3,int para
 
 }
 
-/* ===== FUN_004654c0 @ 0x004654C0 ===== */
+/* ===== fx_rect_interp @ 0x004654C0 ===== */
 undefined4
 
-FUN_004654c0(undefined4 param_1,int param_2,int param_3,int param_4,float param_5,float *param_6,
+fx_rect_interp(undefined4 param_1,int param_2,int param_3,int param_4,float param_5,float *param_6,
 
-            undefined4 *param_7,float param_8)
+              undefined4 *param_7,float param_8)
 
 
 

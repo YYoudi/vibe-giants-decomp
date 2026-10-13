@@ -8,7 +8,7 @@
 | _unmapped_0052 | 162 | 85 | _unmapped_0052.c |
 | _unmapped_0045 | 145 | 43 | _unmapped_0045.c |
 | _unmapped_0049 | 142 | 48 | _unmapped_0049.c |
-| _unmapped_004a | 131 | 39 | _unmapped_004a.c |
+| _unmapped_004a | 131 | 40 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 77 | _unmapped_0042.c |
 | _unmapped_0040 | 105 | 34 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 42 | _unmapped_0041.c |
@@ -17,12 +17,12 @@
 | _unmapped_0050 | 87 | 27 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 39 | _unmapped_0044.c |
 | _unmapped_0043 | 74 | 57 | _unmapped_0043.c |
-| _unmapped_0048 | 74 | 31 | _unmapped_0048.c |
+| _unmapped_0048 | 74 | 32 | _unmapped_0048.c |
 | _unmapped_0047 | 67 | 27 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 28 | _unmapped_004c.c |
-| _unmapped_0046 | 53 | 15 | _unmapped_0046.c |
+| _unmapped_0046 | 53 | 16 | _unmapped_0046.c |
 | _unmapped_004f | 48 | 12 | _unmapped_004f.c |
-| _unmapped_004d | 39 | 11 | _unmapped_004d.c |
+| _unmapped_004d | 39 | 12 | _unmapped_004d.c |
 | main/dlog | 19 | 19 | main_dlog.c |
 | main/ai_move | 15 | 11 | main_ai_move.c |
 | Main/fx | 9 | 8 | Main_fx.c |

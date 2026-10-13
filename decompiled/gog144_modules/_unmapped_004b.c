@@ -9124,7 +9124,7 @@ void FUN_004bce60(int param_1)
 
     fVar6 = *(float *)(param_1 + 0x130);
 
-    FUN_004a1c50(param_1);
+    obj_vel_reset(param_1);
 
     FUN_004a1bd0(param_1);
 

@@ -3605,9 +3605,9 @@
   "len": 1909
  },
  "0x004654C0": {
-  "name": "FUN_004654c0",
-  "named": false,
-  "len": 2286
+  "name": "fx_rect_interp",
+  "named": true,
+  "len": 2290
  },
  "0x004656B0": {
   "name": "reaper_lock_user_3",
@@ -4315,9 +4315,9 @@
   "len": 1933
  },
  "0x004819F0": {
-  "name": "FUN_004819f0",
-  "named": false,
-  "len": 1934
+  "name": "obj_ride_mount",
+  "named": true,
+  "len": 1936
  },
  "0x00482310": {
   "name": "FUN_00482310",
@@ -5535,9 +5535,9 @@
   "len": 602
  },
  "0x004A1C50": {
-  "name": "FUN_004a1c50",
-  "named": false,
-  "len": 2956
+  "name": "obj_vel_reset",
+  "named": true,
+  "len": 2957
  },
  "0x004A1E30": {
   "name": "obj_geom_process",
@@ -6522,7 +6522,7 @@
  "0x004BCE60": {
   "name": "FUN_004bce60",
   "named": false,
-  "len": 12587
+  "len": 12588
  },
  "0x004BD7C0": {
   "name": "reaper_change_bow__FP6OBJECT",
@@ -7085,9 +7085,9 @@
   "len": 3190
  },
  "0x004D8150": {
-  "name": "FUN_004d8150",
-  "named": false,
-  "len": 1568
+  "name": "ai_accel_update",
+  "named": true,
+  "len": 1571
  },
  "0x004D8330": {
   "name": "FUN_004d8330",
@@ -10302,7 +10302,7 @@
  "0x00533500": {
   "name": "mecc_shield_spell",
   "named": true,
-  "len": 3398
+  "len": 3400
  },
  "0x00533700": {
   "name": "mecc_cloak_spell",

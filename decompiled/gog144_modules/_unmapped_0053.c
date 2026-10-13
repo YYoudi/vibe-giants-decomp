@@ -5178,7 +5178,7 @@ LAB_00533630:
 
             }
 
-            FUN_004819f0(iVar2,iVar1,uVar6);
+            obj_ride_mount(iVar2,iVar1,uVar6);
 
           }
 
