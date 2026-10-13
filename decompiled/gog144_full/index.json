@@ -12817,7 +12817,7 @@
  "0x0054F607": {
   "name": "FUN_0054f607",
   "named": false,
-  "len": 748
+  "len": 758
  },
  "0x0054F684": {
   "name": "crt_errno_user2",
@@ -12825,14 +12825,14 @@
   "len": 576
  },
  "0x0054F6E5": {
-  "name": "__mbsnbicoll",
+  "name": "crt_comparestring_user",
   "named": true,
-  "len": 412
+  "len": 422
  },
  "0x0054F724": {
   "name": "FUN_0054f724",
   "named": false,
-  "len": 790
+  "len": 796
  },
  "0x0054F792": {
   "name": "crt_comparestring",
@@ -12840,14 +12840,14 @@
   "len": 4544
  },
  "0x0054FA0F": {
-  "name": "FUN_0054fa0f",
-  "named": false,
-  "len": 2387
+  "name": "crt_realloc_strcpy",
+  "named": true,
+  "len": 2393
  },
  "0x0054FB96": {
   "name": "FUN_0054fb96",
   "named": false,
-  "len": 573
+  "len": 583
  },
  "0x0054FBEE": {
   "name": "FUN_0054fbee",

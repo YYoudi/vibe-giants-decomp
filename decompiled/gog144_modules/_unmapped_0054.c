@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (231 named) — decompiled, names from PS2 symbols
+ * 351 functions (232 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -27669,7 +27669,7 @@ int FUN_0054f607(uchar *param_1)
 
       if (((_MaxCount < sVar2) && (((uchar *)*piVar3)[_MaxCount] == '=')) &&
 
-         (iVar1 = __mbsnbicoll((uchar *)*piVar3,param_1,_MaxCount), iVar1 == 0)) {
+         (iVar1 = crt_comparestring_user((uchar *)*piVar3,param_1,_MaxCount), iVar1 == 0)) {
 
         return *piVar3 + 1 + _MaxCount;
 
@@ -27728,7 +27728,7 @@ int crt_errno_user2(uint param_1,int param_2)
 
 }
 
-/* ===== __mbsnbicoll @ 0x0054F6E5 ===== */
+/* ===== crt_comparestring_user @ 0x0054F6E5 ===== */
 /* Library Function - Single Match
 
     __mbsnbicoll
@@ -27739,7 +27739,7 @@ int crt_errno_user2(uint param_1,int param_2)
 
 
 
-int __cdecl __mbsnbicoll(uchar *_Str1,uchar *_Str2,size_t _MaxCount)
+int __cdecl crt_comparestring_user(uchar *_Str1,uchar *_Str2,size_t _MaxCount)
 
 
 
@@ -27806,7 +27806,7 @@ undefined4 FUN_0054f724(void)
 
                                     (LPBOOL)0x0), iVar1 == 0)) break;
 
-    FUN_0054fa0f(lpMultiByteStr,0);
+    crt_realloc_strcpy(lpMultiByteStr,0);
 
     lpWideCharStr = (LPCWSTR)puVar2[1];
 
@@ -28127,8 +28127,8 @@ int crt_comparestring(LCID param_1,DWORD param_2,byte *param_3,int param_4,byte 
 
 }
 
-/* ===== FUN_0054fa0f @ 0x0054FA0F ===== */
-undefined4 FUN_0054fa0f(char *param_1,int param_2)
+/* ===== crt_realloc_strcpy @ 0x0054FA0F ===== */
+undefined4 crt_realloc_strcpy(char *param_1,int param_2)
 
 
 
@@ -28347,7 +28347,7 @@ int FUN_0054fb96(uchar *param_1,size_t param_2)
 
     }
 
-    iVar1 = __mbsnbicoll(param_1,_Str2,param_2);
+    iVar1 = crt_comparestring_user(param_1,_Str2,param_2);
 
     if ((iVar1 == 0) &&
 
