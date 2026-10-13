@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00542d30,FUN_00542d30,,crt_sqrt,0.9,llm-w188,7B fpu wrappers
+00542d10,FUN_00542d10,,crt_cos,0.9,llm-w188
+005424d0,FUN_005424d0,,crt_sin,0.9,llm-w188
+00541d10,FUN_00541d10,,crt_atan2,0.9,llm-w188,fpatan wrapper
+00542d20,FUN_00542d20,,cosec,0.9,llm-w188,1/sin
+00452050,FUN_00452050,,option_set_633194,0.9,llm-w188,raw option setter family
+0052aae0,FUN_0052aae0,,comm_local_player_set,0.9,llm-w188,sets 005def5c the local player idx
+0052b420,FUN_0052b420,,comm_chat_ctx_set,0.9,llm-w188,sets 005ddfb4 chat ctx ptr

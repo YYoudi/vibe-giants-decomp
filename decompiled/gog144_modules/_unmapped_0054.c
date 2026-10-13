@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (295 named) — decompiled, names from PS2 symbols
+ * 351 functions (300 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -770,21 +770,21 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_S_GEO_Vec4Transform_00580c28 = (&PTR_S_GEO_Vec4Transform_00580d60)[param_1];
 
-  PTR_FUN_00580c30 = (&PTR_FUN_00580d6c)[param_1];
+  PTR_crt_sin_00580c30 = (&PTR_crt_sin_00580d6c)[param_1];
 
-  PTR_FUN_00580c34 = (&PTR_FUN_00580d78)[param_1];
+  PTR_crt_cos_00580c34 = (&PTR_crt_cos_00580d78)[param_1];
 
   PTR_AddHud__4cHudP8cHudIcon_5_00580c38 = (&PTR_AddHud__4cHudP8cHudIcon_5_00580d84)[param_1];
 
-  PTR_FUN_00580c3c = (&PTR_FUN_00580d90)[param_1];
+  PTR_cosec_00580c3c = (&PTR_cosec_00580d90)[param_1];
 
   PTR_LAB_00580c40 = (&PTR_LAB_00580d9c)[param_1];
 
-  PTR_FUN_00580c44 = (&PTR_FUN_00580da8)[param_1];
+  PTR_crt_sqrt_00580c44 = (&PTR_crt_sqrt_00580da8)[param_1];
 
   PTR_LAB_00580c48 = (&PTR_LAB_00580db4)[param_1];
 
-  PTR_FUN_00580c4c = (&PTR_FUN_00580dc0)[param_1];
+  PTR_crt_atan2_00580c4c = (&PTR_crt_atan2_00580dc0)[param_1];
 
   PTR_ANM_ClusterApplyMatSingleVertex_0058096c =
 
@@ -1443,8 +1443,8 @@ float10 anm_dump_d(float param_1)
 
 }
 
-/* ===== FUN_00541d10 @ 0x00541D10 ===== */
-unkbyte10 FUN_00541d10(float param_1,float param_2)
+/* ===== crt_atan2 @ 0x00541D10 ===== */
+unkbyte10 crt_atan2(float param_1,float param_2)
 
 
 
@@ -2212,8 +2212,8 @@ void S_GEO_Vec4Transform(float *param_1,float *param_2,int param_3,uint *param_4
 
 }
 
-/* ===== FUN_005424d0 @ 0x005424D0 ===== */
-unkbyte10 FUN_005424d0(float param_1)
+/* ===== crt_sin @ 0x005424D0 ===== */
+unkbyte10 crt_sin(float param_1)
 
 
 
@@ -2468,8 +2468,8 @@ void S_GEO_Vec3Transform(float *param_1,float *param_2,int param_3,uint *param_4
 
 }
 
-/* ===== FUN_00542d10 @ 0x00542D10 ===== */
-unkbyte10 FUN_00542d10(float param_1)
+/* ===== crt_cos @ 0x00542D10 ===== */
+unkbyte10 crt_cos(float param_1)
 
 
 
@@ -2485,8 +2485,8 @@ unkbyte10 FUN_00542d10(float param_1)
 
 }
 
-/* ===== FUN_00542d20 @ 0x00542D20 ===== */
-float10 FUN_00542d20(float param_1)
+/* ===== cosec @ 0x00542D20 ===== */
+float10 cosec(float param_1)
 
 
 
@@ -2502,8 +2502,8 @@ float10 FUN_00542d20(float param_1)
 
 }
 
-/* ===== FUN_00542d30 @ 0x00542D30 ===== */
-float10 FUN_00542d30(float param_1)
+/* ===== crt_sqrt @ 0x00542D30 ===== */
+float10 crt_sqrt(float param_1)
 
 
 

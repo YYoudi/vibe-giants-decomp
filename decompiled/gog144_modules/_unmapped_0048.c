@@ -2029,7 +2029,7 @@ void menu_audio_setup(int param_1)
 
       FUN_004520d0((~DAT_00632e94 & 0x40) == 0);
 
-      FUN_00452050(1);
+      option_set_633194(1);
 
       audio_link_option_set(1);
 

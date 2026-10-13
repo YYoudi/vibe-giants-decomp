@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (127 named) — decompiled, names from PS2 symbols
+ * 162 functions (129 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -7373,8 +7373,8 @@ undefined4 AudioGetMasterVolume__Fv_9(void)
 
 }
 
-/* ===== FUN_0052aae0 @ 0x0052AAE0 ===== */
-void FUN_0052aae0(int param_1)
+/* ===== comm_local_player_set @ 0x0052AAE0 ===== */
+void comm_local_player_set(int param_1)
 
 
 
@@ -8334,8 +8334,8 @@ undefined4 FUN_0052b400(void)
 
 }
 
-/* ===== FUN_0052b420 @ 0x0052B420 ===== */
-void FUN_0052b420(int param_1)
+/* ===== comm_chat_ctx_set @ 0x0052B420 ===== */
+void comm_chat_ctx_set(int param_1)
 
 
 

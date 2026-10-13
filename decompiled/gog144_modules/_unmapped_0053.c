@@ -2761,7 +2761,7 @@ void FUN_00531470(void)
 
         DAT_005e0304 = pcVar15 + uVar10 * 6 + 2;
 
-        FUN_0052b420(*(undefined4 *)pcVar14);
+        comm_chat_ctx_set(*(undefined4 *)pcVar14);
 
         FUN_0052b4b0(uVar10,pcVar14);
 
@@ -4167,7 +4167,7 @@ LAB_00532513:
 
       case 'C':
 
-        FUN_0052aae0(*(undefined4 *)(pcVar15 + 1));
+        comm_local_player_set(*(undefined4 *)(pcVar15 + 1));
 
         pcVar14 = DAT_005e0304;
 
@@ -17755,9 +17755,9 @@ void GEO_MatFromQuat_3(undefined4 *param_1,undefined4 param_2)
 
   }
 
-  fVar4 = (float10)(*(code *)PTR_FUN_00580c30)(param_2);
+  fVar4 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_2);
 
-  fVar5 = (float10)(*(code *)PTR_FUN_00580c34)(param_2);
+  fVar5 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_2);
 
   param_1[6] = (float)fVar5;
 
@@ -17806,9 +17806,9 @@ void GEO_MatFromQuat_2(undefined4 *param_1,undefined4 param_2)
 
   }
 
-  fVar4 = (float10)(*(code *)PTR_FUN_00580c30)(param_2);
+  fVar4 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_2);
 
-  fVar5 = (float10)(*(code *)PTR_FUN_00580c34)(param_2);
+  fVar5 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_2);
 
   param_1[1] = (float)fVar5;
 
@@ -18185,7 +18185,7 @@ void crt_bbox_center(float *param_1,int param_2)
 
   if (0.0 < fVar3) {
 
-    fVar5 = (float10)(*(code *)PTR_FUN_00580c44)(fVar3 + 1.0);
+    fVar5 = (float10)(*(code *)PTR_crt_sqrt_00580c44)(fVar3 + 1.0);
 
     param_1[3] = (float)((float10)0.5 * fVar5);
 
@@ -18219,7 +18219,7 @@ void crt_bbox_center(float *param_1,int param_2)
 
   iVar2 = *(int *)(&DAT_00580c08 + iVar1 * 4);
 
-  fVar5 = (float10)(*(code *)PTR_FUN_00580c44)
+  fVar5 = (float10)(*(code *)PTR_crt_sqrt_00580c44)
 
                              ((*(float *)(param_2 + 4 + uVar4 * 0x14) -
 
@@ -18495,27 +18495,27 @@ void GEO_MatBuildXYZ(uint *param_1,float param_2,float param_3,float param_4)
 
   
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c30)(param_2 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_2 * 0.017453292);
 
   fVar1 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c34)(param_2 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_2 * 0.017453292);
 
   fVar2 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c30)(param_3 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_3 * 0.017453292);
 
   fVar3 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c34)(param_3 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_3 * 0.017453292);
 
   fVar4 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c30)(param_4 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_4 * 0.017453292);
 
   fVar5 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c34)(param_4 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_4 * 0.017453292);
 
   param_1[9] = (uint)fVar3;
 
@@ -18570,27 +18570,27 @@ void crt_euler_to_quat(uint *param_1,float param_2,float param_3,float param_4,f
 
   
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c30)(param_2 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_2 * 0.017453292);
 
   fVar1 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c34)(param_2 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_2 * 0.017453292);
 
   fVar2 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c30)(param_3 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_3 * 0.017453292);
 
   fVar3 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c34)(param_3 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_3 * 0.017453292);
 
   fVar4 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c30)(param_4 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_sin_00580c30)(param_4 * 0.017453292);
 
   fVar5 = (float)fVar6;
 
-  fVar6 = (float10)(*(code *)PTR_FUN_00580c34)(param_4 * 0.017453292);
+  fVar6 = (float10)(*(code *)PTR_crt_cos_00580c34)(param_4 * 0.017453292);
 
   param_1[1] = (uint)(float)((float10)fVar4 * fVar6 * (float10)param_5);
 
@@ -18637,7 +18637,7 @@ void vec2_normalize(int param_1,float *param_2,float *param_3,float *param_4)
 
   
 
-  fVar1 = (float10)(*(code *)PTR_FUN_00580c44)
+  fVar1 = (float10)(*(code *)PTR_crt_sqrt_00580c44)
 
                              (*(float *)(param_1 + 8) * *(float *)(param_1 + 8) +
 
@@ -18694,7 +18694,7 @@ float10 math_angle_wrap(float param_1,float param_2)
 
   }
 
-  fVar1 = (float10)(*(code *)PTR_FUN_00580c4c)(param_1,param_2);
+  fVar1 = (float10)(*(code *)PTR_crt_atan2_00580c4c)(param_1,param_2);
 
   fVar1 = fVar1 * (float10)57.295776;
 
@@ -18794,7 +18794,7 @@ void distancesq3d1p__FP3P3D(float *param_1)
 
 {
 
-  (*(code *)PTR_FUN_00580c44)
+  (*(code *)PTR_crt_sqrt_00580c44)
 
             (param_1[2] * param_1[2] + param_1[1] * param_1[1] + *param_1 * *param_1);
 
@@ -20019,7 +20019,7 @@ void quat_from_angle(float *param_1,float *param_2)
 
   fVar1 = param_2[3];
 
-  fVar2 = (float10)(*(code *)PTR_FUN_00580c30)(fVar1 * 0.5);
+  fVar2 = (float10)(*(code *)PTR_crt_sin_00580c30)(fVar1 * 0.5);
 
   *param_1 = (float)(fVar2 * (float10)*param_2);
 
@@ -20027,7 +20027,7 @@ void quat_from_angle(float *param_1,float *param_2)
 
   param_1[2] = (float)(fVar2 * (float10)param_2[2]);
 
-  fVar2 = (float10)(*(code *)PTR_FUN_00580c34)(fVar1 * 0.5);
+  fVar2 = (float10)(*(code *)PTR_crt_cos_00580c34)(fVar1 * 0.5);
 
   param_1[3] = (float)fVar2;
 
@@ -20078,13 +20078,13 @@ void crt_quat_slerp(int param_1,float *param_2,float *param_3,float param_4)
 
       fVar2 = (float)fVar5;
 
-      fVar6 = (float10)(*(code *)PTR_FUN_00580c3c)(fVar2);
+      fVar6 = (float10)(*(code *)PTR_cosec_00580c3c)(fVar2);
 
-      fVar5 = (float10)(*(code *)PTR_FUN_00580c30)((1.0 - param_4) * fVar2);
+      fVar5 = (float10)(*(code *)PTR_crt_sin_00580c30)((1.0 - param_4) * fVar2);
 
       local_4 = (float)(fVar5 * (float10)(float)fVar6);
 
-      fVar5 = (float10)(*(code *)PTR_FUN_00580c30)(fVar2 * param_4);
+      fVar5 = (float10)(*(code *)PTR_crt_sin_00580c30)(fVar2 * param_4);
 
       fVar5 = fVar5 * (float10)(float)fVar6;
 
@@ -20130,13 +20130,13 @@ void crt_quat_slerp(int param_1,float *param_2,float *param_3,float param_4)
 
     fVar2 = (float)fVar5;
 
-    fVar6 = (float10)(*(code *)PTR_FUN_00580c3c)(fVar2);
+    fVar6 = (float10)(*(code *)PTR_cosec_00580c3c)(fVar2);
 
-    fVar5 = (float10)(*(code *)PTR_FUN_00580c30)((1.0 - param_4) * fVar2);
+    fVar5 = (float10)(*(code *)PTR_crt_sin_00580c30)((1.0 - param_4) * fVar2);
 
     local_4 = (float)(fVar5 * (float10)(float)fVar6);
 
-    fVar5 = (float10)(*(code *)PTR_FUN_00580c30)(fVar2 * param_4);
+    fVar5 = (float10)(*(code *)PTR_crt_sin_00580c30)(fVar2 * param_4);
 
     fVar5 = fVar5 * (float10)(float)fVar6;
 
@@ -20261,7 +20261,7 @@ void FUN_0053fad0(float *param_1,undefined4 param_2,undefined4 param_3)
 
   param_1[3] = (float)fVar1;
 
-  fVar1 = (float10)(*(code *)PTR_FUN_00580c44)((float)((fVar1 + (float10)1.0) * (float10)0.5));
+  fVar1 = (float10)(*(code *)PTR_crt_sqrt_00580c44)((float)((fVar1 + (float10)1.0) * (float10)0.5));
 
   fVar2 = (float10)1.0 / (fVar1 + fVar1);
 
@@ -20304,7 +20304,7 @@ void vec_cross_normalize(float *param_1,undefined4 param_2,float param_3,float p
 
   }
 
-  fVar2 = (float10)(*(code *)PTR_FUN_00580c44)(1.0 - param_3 * param_3);
+  fVar2 = (float10)(*(code *)PTR_crt_sqrt_00580c44)(1.0 - param_3 * param_3);
 
   if (fVar2 != (float10)0.0) {
 
@@ -20312,7 +20312,7 @@ void vec_cross_normalize(float *param_1,undefined4 param_2,float param_3,float p
 
     fVar1 = (float)(fVar3 * (float10)param_4 * (float10)0.5);
 
-    fVar3 = (float10)(*(code *)PTR_FUN_00580c30)(fVar1);
+    fVar3 = (float10)(*(code *)PTR_crt_sin_00580c30)(fVar1);
 
     fVar3 = fVar3 / (float10)(float)fVar2;
 
@@ -20322,7 +20322,7 @@ void vec_cross_normalize(float *param_1,undefined4 param_2,float param_3,float p
 
     param_1[2] = (float)(fVar3 * (float10)param_1[2]);
 
-    fVar2 = (float10)(*(code *)PTR_FUN_00580c34)(fVar1);
+    fVar2 = (float10)(*(code *)PTR_crt_cos_00580c34)(fVar1);
 
     param_1[3] = (float)fVar2;
 

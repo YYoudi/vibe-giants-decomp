@@ -2960,9 +2960,9 @@
   "len": 139
  },
  "0x00452050": {
-  "name": "FUN_00452050",
-  "named": false,
-  "len": 95
+  "name": "option_set_633194",
+  "named": true,
+  "len": 100
  },
  "0x00452070": {
   "name": "FUN_00452070",
@@ -4332,7 +4332,7 @@
  "0x00482390": {
   "name": "menu_audio_setup",
   "named": true,
-  "len": 1218
+  "len": 1223
  },
  "0x004824E0": {
   "name": "game_options_load",
@@ -9645,9 +9645,9 @@
   "len": 161
  },
  "0x0052AAE0": {
-  "name": "FUN_0052aae0",
-  "named": false,
-  "len": 112
+  "name": "comm_local_player_set",
+  "named": true,
+  "len": 121
  },
  "0x0052AAF0": {
   "name": "AudioGetMasterVolume__Fv_10",
@@ -9795,9 +9795,9 @@
   "len": 259
  },
  "0x0052B420": {
-  "name": "FUN_0052b420",
-  "named": false,
-  "len": 112
+  "name": "comm_chat_ctx_set",
+  "named": true,
+  "len": 117
  },
  "0x0052B430": {
   "name": "comm_0052b430",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36858
+  "len": 36872
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10862,12 +10862,12 @@
  "0x0053DD40": {
   "name": "GEO_MatFromQuat_3",
   "named": true,
-  "len": 629
+  "len": 637
  },
  "0x0053DD90": {
   "name": "GEO_MatFromQuat_2",
   "named": true,
-  "len": 626
+  "len": 634
  },
  "0x0053DDE0": {
   "name": "GEO_MatLookAt",
@@ -10892,7 +10892,7 @@
  "0x0053E140": {
   "name": "crt_bbox_center",
   "named": true,
-  "len": 2013
+  "len": 2023
  },
  "0x0053E270": {
   "name": "S_GEO_Vec3Transform_2",
@@ -10922,22 +10922,22 @@
  "0x0053E460": {
   "name": "GEO_MatBuildXYZ",
   "named": true,
-  "len": 1605
+  "len": 1629
  },
  "0x0053E580": {
   "name": "crt_euler_to_quat",
   "named": true,
-  "len": 1704
+  "len": 1728
  },
  "0x0053E6C0": {
   "name": "vec2_normalize",
   "named": true,
-  "len": 1080
+  "len": 1085
  },
  "0x0053E780": {
   "name": "math_angle_wrap",
   "named": true,
-  "len": 427
+  "len": 433
  },
  "0x0053E7F0": {
   "name": "math_sqrt_table_init",
@@ -10957,7 +10957,7 @@
  "0x0053E8D0": {
   "name": "distancesq3d1p__FP3P3D",
   "named": true,
-  "len": 247
+  "len": 252
  },
  "0x0053E900": {
   "name": "GEO_Vec2Cross",
@@ -11012,12 +11012,12 @@
  "0x0053F650": {
   "name": "quat_from_angle",
   "named": true,
-  "len": 449
+  "len": 457
  },
  "0x0053F6A0": {
   "name": "crt_quat_slerp",
   "named": true,
-  "len": 2222
+  "len": 2242
  },
  "0x0053F9E0": {
   "name": "GEO_QuatMultiply",
@@ -11032,12 +11032,12 @@
  "0x0053FAD0": {
   "name": "FUN_0053fad0",
   "named": false,
-  "len": 589
+  "len": 594
  },
  "0x0053FB40": {
   "name": "vec_cross_normalize",
   "named": true,
-  "len": 1053
+  "len": 1066
  },
  "0x0053FC10": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6",
@@ -11212,7 +11212,7 @@
  "0x00540800": {
   "name": "crt_math_dispatch_init",
   "named": true,
-  "len": 1607
+  "len": 1649
  },
  "0x00540AB0": {
   "name": "FUN_00540ab0",
@@ -11250,9 +11250,9 @@
   "len": 114
  },
  "0x00541D10": {
-  "name": "FUN_00541d10",
-  "named": false,
-  "len": 157
+  "name": "crt_atan2",
+  "named": true,
+  "len": 154
  },
  "0x00541D20": {
   "name": "crt_matrix_invert",
@@ -11275,9 +11275,9 @@
   "len": 5386
  },
  "0x005424D0": {
-  "name": "FUN_005424d0",
-  "named": false,
-  "len": 124
+  "name": "crt_sin",
+  "named": true,
+  "len": 119
  },
  "0x005424E0": {
   "name": "AddHud__4cHudP8cHudIcon_5",
@@ -11295,19 +11295,19 @@
   "len": 2171
  },
  "0x00542D10": {
-  "name": "FUN_00542d10",
-  "named": false,
-  "len": 124
+  "name": "crt_cos",
+  "named": true,
+  "len": 119
  },
  "0x00542D20": {
-  "name": "FUN_00542d20",
-  "named": false,
-  "len": 147
+  "name": "cosec",
+  "named": true,
+  "len": 140
  },
  "0x00542D30": {
-  "name": "FUN_00542d30",
-  "named": false,
-  "len": 83
+  "name": "crt_sqrt",
+  "named": true,
+  "len": 79
  },
  "0x00542D40": {
   "name": "ANM_DumpCluster_3",
