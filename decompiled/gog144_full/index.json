@@ -1102,7 +1102,7 @@
  "0x0041A980": {
   "name": "objtype_team_assign",
   "named": true,
-  "len": 3180
+  "len": 3188
  },
  "0x0041AC40": {
   "name": "FUN_0041ac40",
@@ -4422,7 +4422,7 @@
  "0x00485300": {
   "name": "comm_00485300",
   "named": true,
-  "len": 2755
+  "len": 2763
  },
  "0x00485840": {
   "name": "menu_mission_list_init",
@@ -7500,9 +7500,9 @@
   "len": 812
  },
  "0x004EE0F0": {
-  "name": "FUN_004ee0f0",
-  "named": false,
-  "len": 397
+  "name": "base_spells_setup",
+  "named": true,
+  "len": 402
  },
  "0x004EE150": {
   "name": "world_fx_release",
@@ -8510,9 +8510,9 @@
   "len": 3267
  },
  "0x00515B20": {
-  "name": "FUN_00515b20",
-  "named": false,
-  "len": 681
+  "name": "drip_system_init",
+  "named": true,
+  "len": 685
  },
  "0x00515BA0": {
   "name": "object_spawn_class3",
@@ -9535,14 +9535,14 @@
   "len": 152
  },
  "0x00525100": {
-  "name": "FUN_00525100",
-  "named": false,
-  "len": 144
+  "name": "game_mode_set9_check",
+  "named": true,
+  "len": 152
  },
  "0x00525120": {
-  "name": "FUN_00525120",
-  "named": false,
-  "len": 124
+  "name": "game_mode_set8_check",
+  "named": true,
+  "len": 132
  },
  "0x00525140": {
   "name": "FUN_00525140",
@@ -9750,9 +9750,9 @@
   "len": 155
  },
  "0x0052B000": {
-  "name": "FUN_0052b000",
-  "named": false,
-  "len": 154
+  "name": "comm_player_timeout_set",
+  "named": true,
+  "len": 165
  },
  "0x0052B020": {
   "name": "comm_chatlog_write",
@@ -9770,9 +9770,9 @@
   "len": 162
  },
  "0x0052B240": {
-  "name": "FUN_0052b240",
-  "named": false,
-  "len": 173
+  "name": "comm_stat_b_set",
+  "named": true,
+  "len": 176
  },
  "0x0052B260": {
   "name": "FUN_0052b260",
@@ -10172,7 +10172,7 @@
  "0x00530270": {
   "name": "comm_send_big",
   "named": true,
-  "len": 3996
+  "len": 3999
  },
  "0x00530430": {
   "name": "comm_death_packet_build",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36872
+  "len": 36875
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10272,7 +10272,7 @@
  "0x00532F60": {
   "name": "comm_entergame_msg_3",
   "named": true,
-  "len": 2068
+  "len": 2079
  },
  "0x005330C0": {
   "name": "comm_scorelimit_menu_user",

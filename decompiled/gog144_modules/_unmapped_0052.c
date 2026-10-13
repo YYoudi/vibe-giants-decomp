@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (137 named) — decompiled, names from PS2 symbols
+ * 162 functions (141 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -4785,8 +4785,8 @@ undefined4 game_mode_set4_check(int param_1)
 
 }
 
-/* ===== FUN_00525100 @ 0x00525100 ===== */
-undefined4 FUN_00525100(int param_1)
+/* ===== game_mode_set9_check @ 0x00525100 ===== */
+undefined4 game_mode_set9_check(int param_1)
 
 
 
@@ -4802,8 +4802,8 @@ undefined4 FUN_00525100(int param_1)
 
 }
 
-/* ===== FUN_00525120 @ 0x00525120 ===== */
-undefined4 FUN_00525120(int param_1)
+/* ===== game_mode_set8_check @ 0x00525120 ===== */
+undefined4 game_mode_set8_check(int param_1)
 
 
 
@@ -7879,8 +7879,8 @@ float10 comm_stat_a_get(int param_1)
 
 }
 
-/* ===== FUN_0052b000 @ 0x0052B000 ===== */
-void FUN_0052b000(int param_1)
+/* ===== comm_player_timeout_set @ 0x0052B000 ===== */
+void comm_player_timeout_set(int param_1)
 
 
 
@@ -8075,8 +8075,8 @@ void comm_ping_set(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0052b240 @ 0x0052B240 ===== */
-void FUN_0052b240(int param_1,undefined4 param_2)
+/* ===== comm_stat_b_set @ 0x0052B240 ===== */
+void comm_stat_b_set(int param_1,undefined4 param_2)
 
 
 

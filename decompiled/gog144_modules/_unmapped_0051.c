@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (167 named) — decompiled, names from PS2 symbols
+ * 186 functions (168 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -4590,12 +4590,12 @@ void drip_make(int param_1,float *param_2,float param_3,float param_4,float para
 
 }
 
-/* ===== FUN_00515b20 @ 0x00515B20 ===== */
+/* ===== drip_system_init @ 0x00515B20 ===== */
 /* PS2 candidate: object_water_ripple (conf 0.473) */
 
 
 
-void FUN_00515b20(int param_1,undefined4 param_2,undefined4 param_3)
+void drip_system_init(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 

@@ -8417,7 +8417,7 @@ void objtype_team_assign(int param_1)
 
   }
 
-  iVar1 = FUN_00525100(DAT_00632f10);
+  iVar1 = game_mode_set9_check(DAT_00632f10);
 
   if (iVar1 != 0) {
 

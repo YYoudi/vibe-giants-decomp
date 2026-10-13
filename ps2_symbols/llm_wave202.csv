@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052b240,FUN_0052b240,,comm_stat_b_set,0.9,llm-w202,005ddda0 setter pairs stat_b_get
+0052b000,FUN_0052b000,,comm_player_timeout_set,0.9,llm-w202,005de6ec time+60 caller entergame_msg
+00525120,FUN_00525120,,game_mode_set8_check,0.9,llm-w202,modes 3-5 caller comm_00485300
+00525100,FUN_00525100,,game_mode_set9_check,0.9,llm-w202,modes 1-3/5 caller team_assign
+00515b20,FUN_00515b20,,drip_system_init,0.9,llm-w202,camera block + drip_make callee
+004ee0f0,FUN_004ee0f0,,base_spells_setup,0.9,llm-w202,static_object + setup_spell loop

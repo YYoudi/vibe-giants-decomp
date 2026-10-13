@@ -334,7 +334,7 @@ void comm_send_big(undefined4 *param_1)
 
         }
 
-        FUN_0052b240(uVar3,(float)fVar6);
+        comm_stat_b_set(uVar3,(float)fVar6);
 
       }
 
@@ -4101,7 +4101,7 @@ LAB_00532513:
 
           if (pcVar15[1] != -1) {
 
-            FUN_0052b240(pcVar15[1],*(undefined4 *)(pcVar15 + 5));
+            comm_stat_b_set(pcVar15[1],*(undefined4 *)(pcVar15 + 5));
 
           }
 
@@ -4812,7 +4812,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
         }
 
-        FUN_0052b000(uVar2);
+        comm_player_timeout_set(uVar2);
 
       }
 

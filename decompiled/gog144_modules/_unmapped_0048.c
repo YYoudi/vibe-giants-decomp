@@ -5031,7 +5031,7 @@ void comm_00485300(void)
 
   iVar4 = game_mode_set3_check(DAT_00632f18);
 
-  if (((iVar4 != 0) && (iVar4 = FUN_00525120(DAT_00632f10), iVar4 != 0)) &&
+  if (((iVar4 != 0) && (iVar4 = game_mode_set8_check(DAT_00632f10), iVar4 != 0)) &&
 
      (iVar4 = game_mode_set5_check(DAT_00632f18), iVar4 == 0)) {
 

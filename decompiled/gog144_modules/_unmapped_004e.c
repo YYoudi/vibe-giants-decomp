@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (77 named) — decompiled, names from PS2 symbols
+ * 94 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -10450,8 +10450,8 @@ void env_water_texture(void)
 
 }
 
-/* ===== FUN_004ee0f0 @ 0x004EE0F0 ===== */
-void FUN_004ee0f0(void)
+/* ===== base_spells_setup @ 0x004EE0F0 ===== */
+void base_spells_setup(void)
 
 
 
