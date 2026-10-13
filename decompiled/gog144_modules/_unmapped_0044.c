@@ -6274,7 +6274,7 @@ undefined4 * FUN_00446a00(undefined4 param_1,char *param_2)
 
       iVar7 = iVar8 + -1;
 
-      iVar5 = FUN_005444a8(iVar7);
+      iVar5 = crt_lock_simple(iVar7);
 
       iVar6 = 0;
 

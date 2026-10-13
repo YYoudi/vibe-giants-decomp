@@ -1,0 +1,13 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00543b99,FUN_00543B99,,crt_dosmaperr_user,0.9,llm-read32,
+00543dc7,FUN_00543DC7,,crt_getptd_user,0.9,llm-read32,
+00543e92,FUN_00543E92,,crt_pow_main,0.9,llm-read32,
+0054408d,FUN_0054408D,,crt_scanf_entry,0.9,llm-read32,
+005440c1,FUN_005440C1,,crt_scanf_getchar2,0.9,llm-read32,
+0054422e,FUN_0054422E,,crt_scanf_float2,0.9,llm-read32,
+005442c3,FUN_005442C3,,crt_malloc_ext,0.9,llm-read32,
+005443bf,FUN_005443BF,,crt_free_ext,0.9,llm-read32,
+005444a8,FUN_005444A8,,crt_lock_simple,0.9,llm-read32,
+0054460d,FUN_0054460D,,anm_dump_ext,0.9,llm-read32,
+005447e3,FUN_005447E3,,crt_flsbuf_ext,0.9,llm-read32,
+0054481e,FUN_0054481E,,crt_strcpy_ext,0.9,llm-read32,

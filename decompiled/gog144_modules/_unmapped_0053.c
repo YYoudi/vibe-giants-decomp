@@ -14189,7 +14189,7 @@ void mem_free_tagged(int *param_1)
 
     if (DAT_005f0168 == 0) {
 
-      FUN_005443bf(param_1[-1] + -0x10 + (int)param_1);
+      crt_free_ext(param_1[-1] + -0x10 + (int)param_1);
 
       return;
 
@@ -14331,7 +14331,7 @@ void mem_free_tagged(int *param_1)
 
     param_1[-0xc] = 0x33abcdef;
 
-    FUN_005443bf(param_1[-0xd] + -0x40 + (int)param_1);
+    crt_free_ext(param_1[-0xd] + -0x40 + (int)param_1);
 
   }
 
@@ -20363,7 +20363,7 @@ void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7(undefined *p0)
 
 {
 
-  PTR_FUN_00580c8c = p0;
+  PTR_crt_free_ext_00580c8c = p0;
 
   return;
 
@@ -20380,7 +20380,7 @@ void __get_eh_context(void)
 
                     /* WARNING: Treating indirect jump as call */
 
-  (*(code *)PTR_FUN_00580c8c)();
+  (*(code *)PTR_crt_free_ext_00580c8c)();
 
   return;
 

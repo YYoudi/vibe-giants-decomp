@@ -104,7 +104,7 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
       if (iVar1 != 0) {
 
-        FUN_005443bf(iVar1);
+        crt_free_ext(iVar1);
 
       }
 

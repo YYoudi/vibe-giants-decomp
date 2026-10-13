@@ -8368,7 +8368,7 @@ void keymap_slot_load(void)
 
   FUN_00542f27(local_80,pcVar1,puVar2);
 
-  FUN_00543b99(local_80);
+  crt_dosmaperr_user(local_80);
 
   return;
 

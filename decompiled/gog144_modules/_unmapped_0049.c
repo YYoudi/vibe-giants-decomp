@@ -13586,11 +13586,11 @@ void cmdline_parse(char *param_1)
 
       param_1 = (char *)0x0;
 
-      iVar1 = FUN_0054408d(pcVar3,s__dx_dx_d_0055c288,&param_1,&local_8,&local_4);
+      iVar1 = crt_scanf_entry(pcVar3,s__dx_dx_d_0055c288,&param_1,&local_8,&local_4);
 
       if (iVar1 == 0) {
 
-        FUN_0054408d(pcVar3,s__dX_dX_d_0055e7bc,&param_1,&local_8,&local_4);
+        crt_scanf_entry(pcVar3,s__dX_dX_d_0055e7bc,&param_1,&local_8,&local_4);
 
       }
 

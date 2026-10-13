@@ -10429,7 +10429,7 @@ void gamespy_0052db50(SOCKET *param_1)
 
   if (param_1 != &DAT_0057f0d8) {
 
-    FUN_005443bf(param_1);
+    crt_free_ext(param_1);
 
   }
 

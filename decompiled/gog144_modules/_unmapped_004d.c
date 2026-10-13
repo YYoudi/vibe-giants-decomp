@@ -3302,7 +3302,7 @@ void rndstart(void)
 
   _DAT_00632950 = DVar1 & 0x7fff;
 
-  FUN_00543dc7(_DAT_00632950);
+  crt_getptd_user(_DAT_00632950);
 
   return;
 

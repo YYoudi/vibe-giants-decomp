@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (178 named) — decompiled, names from PS2 symbols
+ * 351 functions (190 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -3959,7 +3959,7 @@ undefined4 __fclose_lk(FILE *param_1)
 
     else if (param_1->_tmpfname != (char *)0x0) {
 
-      FUN_005443bf(param_1->_tmpfname);
+      crt_free_ext(param_1->_tmpfname);
 
       param_1->_tmpfname = (char *)0x0;
 
@@ -4354,8 +4354,8 @@ undefined4 crt_file_free_init(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00543b99 @ 0x00543B99 ===== */
-undefined4 FUN_00543b99(LPCSTR param_1)
+/* ===== crt_dosmaperr_user @ 0x00543B99 ===== */
+undefined4 crt_dosmaperr_user(LPCSTR param_1)
 
 
 
@@ -4711,8 +4711,8 @@ char * __cdecl _strrchr(char *_Str,int _Ch)
 
 }
 
-/* ===== FUN_00543dc7 @ 0x00543DC7 ===== */
-void FUN_00543dc7(undefined4 param_1)
+/* ===== crt_getptd_user @ 0x00543DC7 ===== */
+void crt_getptd_user(undefined4 param_1)
 
 
 
@@ -4826,14 +4826,14 @@ void FUN_00543e70(void)
 
   
 
-  FUN_00543e92((double)in_ST1,(double)in_ST0);
+  crt_pow_main((double)in_ST1,(double)in_ST0);
 
   return;
 
 }
 
-/* ===== FUN_00543e92 @ 0x00543E92 ===== */
-undefined4 FUN_00543e92(int param_1,uint param_2,int param_3,uint param_4)
+/* ===== crt_pow_main @ 0x00543E92 ===== */
+undefined4 crt_pow_main(int param_1,uint param_2,int param_3,uint param_4)
 
 
 
@@ -5106,8 +5106,8 @@ void FUN_00544065(void)
 
 }
 
-/* ===== FUN_0054408d @ 0x0054408D ===== */
-void FUN_0054408d(char *param_1,undefined4 param_2)
+/* ===== crt_scanf_entry @ 0x0054408D ===== */
+void crt_scanf_entry(char *param_1,undefined4 param_2)
 
 
 
@@ -5137,8 +5137,8 @@ void FUN_0054408d(char *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_005440c1 @ 0x005440C1 ===== */
-char * FUN_005440c1(char *param_1,int param_2,undefined4 *param_3)
+/* ===== crt_scanf_getchar2 @ 0x005440C1 ===== */
+char * crt_scanf_getchar2(char *param_1,int param_2,undefined4 *param_3)
 
 
 
@@ -5377,8 +5377,8 @@ void ANM_BinderDestroy_3(undefined4 param_1)
 
 }
 
-/* ===== FUN_0054422e @ 0x0054422E ===== */
-float10 FUN_0054422e(byte *param_1)
+/* ===== crt_scanf_float2 @ 0x0054422E ===== */
+float10 crt_scanf_float2(byte *param_1)
 
 
 
@@ -5484,7 +5484,7 @@ void * __cdecl __nh_malloc(size_t _Size,int _NhFlag)
 
     do {
 
-      pvVar1 = (void *)FUN_005442c3(_Size);
+      pvVar1 = (void *)crt_malloc_ext(_Size);
 
       if (pvVar1 != (void *)0x0) {
 
@@ -5508,8 +5508,8 @@ void * __cdecl __nh_malloc(size_t _Size,int _NhFlag)
 
 }
 
-/* ===== FUN_005442c3 @ 0x005442C3 ===== */
-void FUN_005442c3(uint param_1)
+/* ===== crt_malloc_ext @ 0x005442C3 ===== */
+void crt_malloc_ext(uint param_1)
 
 
 
@@ -5661,8 +5661,8 @@ void FUN_00544389(void)
 
 }
 
-/* ===== FUN_005443bf @ 0x005443BF ===== */
-void FUN_005443bf(LPVOID param_1)
+/* ===== crt_free_ext @ 0x005443BF ===== */
+void crt_free_ext(LPVOID param_1)
 
 
 
@@ -5798,8 +5798,8 @@ void FUN_00544481(void)
 
 }
 
-/* ===== FUN_005444a8 @ 0x005444A8 ===== */
-int FUN_005444a8(int param_1)
+/* ===== crt_lock_simple @ 0x005444A8 ===== */
+int crt_lock_simple(int param_1)
 
 
 
@@ -5965,18 +5965,18 @@ void FUN_005445f0(void)
 
   FUN_00549b78((double)in_ST0);
 
-  FUN_0054460d();
+  anm_dump_ext();
 
   return;
 
 }
 
-/* ===== FUN_0054460d @ 0x0054460D ===== */
+/* ===== anm_dump_ext @ 0x0054460D ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_0054460d(int param_1,uint param_2)
+float10 anm_dump_ext(int param_1,uint param_2)
 
 
 
@@ -6277,8 +6277,8 @@ LAB_0054477a:
 
 }
 
-/* ===== FUN_005447e3 @ 0x005447E3 ===== */
-uint FUN_005447e3(uint param_1,int *param_2)
+/* ===== crt_flsbuf_ext @ 0x005447E3 ===== */
+uint crt_flsbuf_ext(uint param_1,int *param_2)
 
 
 
@@ -6318,8 +6318,8 @@ uint FUN_005447e3(uint param_1,int *param_2)
 
 }
 
-/* ===== FUN_0054481e @ 0x0054481E ===== */
-HANDLE FUN_0054481e(LPCSTR param_1,uint *param_2)
+/* ===== crt_strcpy_ext @ 0x0054481E ===== */
+HANDLE crt_strcpy_ext(LPCSTR param_1,uint *param_2)
 
 
 
@@ -7144,7 +7144,7 @@ HANDLE FUN_00544e7c(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 para
 
   }
 
-  FUN_005443bf(p0);
+  crt_free_ext(p0);
 
   if (DVar2 != 0) {
 
@@ -7472,7 +7472,7 @@ LAB_0054513d:
 
       }
 
-      iVar4 = FUN_005444a8((int)(char)bVar6);
+      iVar4 = crt_lock_simple((int)(char)bVar6);
 
       uVar7 = iVar4 - 0x37;
 
@@ -12816,7 +12816,7 @@ void __cdecl __freebuf(FILE *_File)
 
   if (((_File->_flag & 0x83U) != 0) && ((_File->_flag & 8U) != 0)) {
 
-    FUN_005443bf(_File->_base);
+    crt_free_ext(_File->_base);
 
     *(ushort *)&_File->_flag = (ushort)_File->_flag & 0xfbf7;
 
@@ -14729,47 +14729,47 @@ void __freeptd(LPVOID param_1)
 
       if (*(int *)((int)param_1 + 0x24) != 0) {
 
-        FUN_005443bf(*(int *)((int)param_1 + 0x24));
+        crt_free_ext(*(int *)((int)param_1 + 0x24));
 
       }
 
       if (*(int *)((int)param_1 + 0x28) != 0) {
 
-        FUN_005443bf(*(int *)((int)param_1 + 0x28));
+        crt_free_ext(*(int *)((int)param_1 + 0x28));
 
       }
 
       if (*(int *)((int)param_1 + 0x30) != 0) {
 
-        FUN_005443bf(*(int *)((int)param_1 + 0x30));
+        crt_free_ext(*(int *)((int)param_1 + 0x30));
 
       }
 
       if (*(int *)((int)param_1 + 0x38) != 0) {
 
-        FUN_005443bf(*(int *)((int)param_1 + 0x38));
+        crt_free_ext(*(int *)((int)param_1 + 0x38));
 
       }
 
       if (*(int *)((int)param_1 + 0x40) != 0) {
 
-        FUN_005443bf(*(int *)((int)param_1 + 0x40));
+        crt_free_ext(*(int *)((int)param_1 + 0x40));
 
       }
 
       if (*(int *)((int)param_1 + 0x44) != 0) {
 
-        FUN_005443bf(*(int *)((int)param_1 + 0x44));
+        crt_free_ext(*(int *)((int)param_1 + 0x44));
 
       }
 
       if (*(undefined **)((int)param_1 + 0x50) != &DAT_00583a40) {
 
-        FUN_005443bf(*(undefined **)((int)param_1 + 0x50));
+        crt_free_ext(*(undefined **)((int)param_1 + 0x50));
 
       }
 
-      FUN_005443bf(param_1);
+      crt_free_ext(param_1);
 
     }
 
@@ -20007,7 +20007,7 @@ void _lock(int param_1)
 
     else {
 
-      FUN_005443bf();
+      crt_free_ext();
 
     }
 
@@ -21273,7 +21273,7 @@ void FUN_0054c8af(void)
 
   }
 
-  FUN_005443bf(DAT_00630ba4);
+  crt_free_ext(DAT_00630ba4);
 
   DAT_00630ba4 = (char *)0x0;
 
@@ -21724,7 +21724,7 @@ LAB_0054cc0c:
 
          local_8 = pCVar6, iVar5 == 0)) {
 
-        FUN_005443bf(pCVar6);
+        crt_free_ext(pCVar6);
 
         local_8 = (LPSTR)0x0;
 
@@ -25472,7 +25472,7 @@ LAB_0054e6b9:
 
        ((DAT_00630ea4 == (char *)0x0 || (iVar4 = _strcmp(_Str1,DAT_00630ea4), iVar4 != 0)))) {
 
-      FUN_005443bf(DAT_00630ea4);
+      crt_free_ext(DAT_00630ea4);
 
       sVar5 = _strlen(_Str1);
 
@@ -28272,7 +28272,7 @@ undefined4 FUN_0054fa0f(char *param_1,int param_2)
 
     piVar5 = piVar3 + iVar2;
 
-    FUN_005443bf(piVar3[iVar2]);
+    crt_free_ext(piVar3[iVar2]);
 
     for (; *piVar5 != 0; piVar5 = piVar5 + 1) {
 
@@ -28310,7 +28310,7 @@ LAB_0054fb43:
 
       ;
 
-      FUN_005443bf(lpName);
+      crt_free_ext(lpName);
 
     }
 
@@ -28499,7 +28499,7 @@ byte * realloc(byte *param_1,uint param_2)
 
       ExceptionList = &local_14;
 
-      FUN_005443bf(param_1);
+      crt_free_ext(param_1);
 
     }
 

@@ -1337,7 +1337,7 @@
  "0x00425F60": {
   "name": "keymap_slot_load",
   "named": true,
-  "len": 897
+  "len": 903
  },
  "0x00426030": {
   "name": "comm_00426030",
@@ -2237,7 +2237,7 @@
  "0x00438350": {
   "name": "main_editor_00438350",
   "named": true,
-  "len": 5053
+  "len": 5065
  },
  "0x00438770": {
   "name": "wredit_menu_main",
@@ -2377,7 +2377,7 @@
  "0x0043FA90": {
   "name": "main/editor_0043fa90",
   "named": true,
-  "len": 1809
+  "len": 1817
  },
  "0x0043FBC0": {
   "name": "wredit_marker_info2",
@@ -2387,7 +2387,7 @@
  "0x0043FD00": {
   "name": "main/editor_0043fd00",
   "named": true,
-  "len": 2233
+  "len": 2241
  },
  "0x0043FE90": {
   "name": "wredit_trigger_menu",
@@ -2612,7 +2612,7 @@
  "0x00446A00": {
   "name": "FUN_00446a00",
   "named": false,
-  "len": 1000
+  "len": 1003
  },
  "0x00446A90": {
   "name": "FUN_00446a90",
@@ -3257,7 +3257,7 @@
  "0x004576E0": {
   "name": "mission_texture_audio",
   "named": true,
-  "len": 1174
+  "len": 1185
  },
  "0x00457A70": {
   "name": "FUN_00457a70",
@@ -5372,7 +5372,7 @@
  "0x0049E350": {
   "name": "cmdline_parse",
   "named": true,
-  "len": 1430
+  "len": 1436
  },
  "0x0049E4A0": {
   "name": "FUN_0049e4a0",
@@ -7007,7 +7007,7 @@
  "0x004D5710": {
   "name": "rndstart",
   "named": true,
-  "len": 245
+  "len": 248
  },
  "0x004D5730": {
   "name": "crt_rand_scaled",
@@ -7422,7 +7422,7 @@
  "0x004EBAE0": {
   "name": "main_scrnshot_004ebae0",
   "named": true,
-  "len": 3340
+  "len": 3348
  },
  "0x004EBCE0": {
   "name": "FUN_004ebce0",
@@ -7517,7 +7517,7 @@
  "0x004EE390": {
   "name": "editor_dump_objnames",
   "named": true,
-  "len": 3463
+  "len": 3472
  },
  "0x004EE630": {
   "name": "kabutoai_punch_user",
@@ -9247,7 +9247,7 @@
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
   "named": true,
-  "len": 15511
+  "len": 15515
  },
  "0x0051DC20": {
   "name": "startup_options_init",
@@ -11052,12 +11052,12 @@
  "0x0053FC40": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7",
   "named": true,
-  "len": 193
+  "len": 202
  },
  "0x0053FC50": {
   "name": "__get_eh_context",
   "named": true,
-  "len": 250
+  "len": 259
  },
  "0x0053FC70": {
   "name": "MAP_SListFixPtrs",
@@ -11415,9 +11415,9 @@
   "len": 311
  },
  "0x00543B99": {
-  "name": "FUN_00543b99",
-  "named": false,
-  "len": 294
+  "name": "crt_dosmaperr_user",
+  "named": true,
+  "len": 300
  },
  "0x00543BC3": {
   "name": "FUN_00543bc3",
@@ -11440,9 +11440,9 @@
   "len": 782
  },
  "0x00543DC7": {
-  "name": "FUN_00543dc7",
-  "named": false,
-  "len": 147
+  "name": "crt_getptd_user",
+  "named": true,
+  "len": 150
  },
  "0x00543DD4": {
   "name": "_rand",
@@ -11465,8 +11465,8 @@
   "len": 180
  },
  "0x00543E92": {
-  "name": "FUN_00543e92",
-  "named": false,
+  "name": "crt_pow_main",
+  "named": true,
   "len": 3323
  },
  "0x00544065": {
@@ -11475,14 +11475,14 @@
   "len": 211
  },
  "0x0054408D": {
-  "name": "FUN_0054408d",
-  "named": false,
-  "len": 307
+  "name": "crt_scanf_entry",
+  "named": true,
+  "len": 310
  },
  "0x005440C1": {
-  "name": "FUN_005440c1",
-  "named": false,
-  "len": 908
+  "name": "crt_scanf_getchar2",
+  "named": true,
+  "len": 914
  },
  "0x00544123": {
   "name": "FUN_00544123",
@@ -11500,9 +11500,9 @@
   "len": 95
  },
  "0x0054422E": {
-  "name": "FUN_0054422e",
-  "named": false,
-  "len": 584
+  "name": "crt_scanf_float2",
+  "named": true,
+  "len": 588
  },
  "0x00544285": {
   "name": "_malloc",
@@ -11512,12 +11512,12 @@
  "0x00544297": {
   "name": "__nh_malloc",
   "named": true,
-  "len": 513
+  "len": 515
  },
  "0x005442C3": {
-  "name": "FUN_005442c3",
-  "named": false,
-  "len": 1429
+  "name": "crt_malloc_ext",
+  "named": true,
+  "len": 1431
  },
  "0x0054432A": {
   "name": "FUN_0054432A",
@@ -11530,8 +11530,8 @@
   "len": 63
  },
  "0x005443BF": {
-  "name": "FUN_005443bf",
-  "named": false,
+  "name": "crt_free_ext",
+  "named": true,
   "len": 1244
  },
  "0x00544429": {
@@ -11545,9 +11545,9 @@
   "len": 63
  },
  "0x005444A8": {
-  "name": "FUN_005444a8",
-  "named": false,
-  "len": 551
+  "name": "crt_lock_simple",
+  "named": true,
+  "len": 554
  },
  "0x00544517": {
   "name": "FUN_00544517",
@@ -11560,8 +11560,8 @@
   "len": 123
  },
  "0x0054460D": {
-  "name": "FUN_0054460d",
-  "named": false,
+  "name": "anm_dump_ext",
+  "named": true,
   "len": 1216
  },
  "0x005446C0": {
@@ -11570,14 +11570,14 @@
   "len": 2783
  },
  "0x005447E3": {
-  "name": "FUN_005447e3",
-  "named": false,
-  "len": 406
+  "name": "crt_flsbuf_ext",
+  "named": true,
+  "len": 408
  },
  "0x0054481E": {
-  "name": "FUN_0054481e",
-  "named": false,
-  "len": 1150
+  "name": "crt_strcpy_ext",
+  "named": true,
+  "len": 1152
  },
  "0x005448EB": {
   "name": "FUN_005448eb",
@@ -11692,7 +11692,7 @@
  "0x00544FCC": {
   "name": "FUN_00544fcc",
   "named": false,
-  "len": 3155
+  "len": 3158
  },
  "0x005451D1": {
   "name": "FUN_005451d1",

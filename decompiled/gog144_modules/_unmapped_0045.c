@@ -6538,15 +6538,15 @@ void mission_texture_audio(void)
 
   if ((iVar1 == 0) ||
 
-     (((iVar2 = FUN_005444a8((int)**(char **)(iVar1 + 4)), puVar3 = PTR_s_kabuto_loading_0055a0b0,
+     (((iVar2 = crt_lock_simple((int)**(char **)(iVar1 + 4)), puVar3 = PTR_s_kabuto_loading_0055a0b0
 
-       iVar2 != 0x4b &&
+       , iVar2 != 0x4b &&
 
-       (iVar2 = FUN_005444a8((int)**(char **)(iVar1 + 4)), puVar3 = PTR_s_reaper_loading_0055a0ac,
+       (iVar2 = crt_lock_simple((int)**(char **)(iVar1 + 4)), puVar3 = PTR_s_reaper_loading_0055a0ac
 
-       iVar2 != 0x52)) &&
+       , iVar2 != 0x52)) &&
 
-      (iVar1 = FUN_005444a8((int)**(char **)(iVar1 + 4)), puVar3 = PTR_s_giants_loading_0055a0b4,
+      (iVar1 = crt_lock_simple((int)**(char **)(iVar1 + 4)), puVar3 = PTR_s_giants_loading_0055a0b4,
 
       iVar1 != 0x49)))) {
 

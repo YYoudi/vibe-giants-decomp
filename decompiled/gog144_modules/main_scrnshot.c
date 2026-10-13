@@ -74,7 +74,7 @@ void main_scrnshot_004ebae0(void)
 
   iVar5 = 0;
 
-  iVar2 = FUN_0054481e(s_GIANT__TGA_00561b68,auStack_118);
+  iVar2 = crt_strcpy_ext(s_GIANT__TGA_00561b68,auStack_118);
 
   if (iVar2 != -1) {
 
@@ -182,11 +182,11 @@ void main_scrnshot_004ebae0(void)
 
       do {
 
-        FUN_005447e3(puVar7[1],iVar5);
+        crt_flsbuf_ext(puVar7[1],iVar5);
 
-        FUN_005447e3(*puVar7,iVar5);
+        crt_flsbuf_ext(*puVar7,iVar5);
 
-        FUN_005447e3(puVar7[-1],iVar5);
+        crt_flsbuf_ext(puVar7[-1],iVar5);
 
         puVar7 = puVar7 + 3;
 

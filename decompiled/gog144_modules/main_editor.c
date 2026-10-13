@@ -2635,7 +2635,7 @@ void main_editor_00438350(void)
 
 LAB_004384e0:
 
-      iVar3 = FUN_005440c1(local_a0,0x50,local_a4);
+      iVar3 = crt_scanf_getchar2(local_a0,0x50,local_a4);
 
       uVar6 = 0xffffffff;
 
@@ -2661,13 +2661,13 @@ LAB_004384e0:
 
         local_a8 = 0;
 
-        FUN_0054408d(iVar3,s__define_ObjObj_s__d_00557040,local_50,&local_a8);
+        crt_scanf_entry(iVar3,s__define_ObjObj_s__d_00557040,local_50,&local_a8);
 
         if (local_a8 == 0) {
 
           local_a8 = -1;
 
-          FUN_0054408d(iVar3,s__define_ObjGroup_s__d_00557018,local_50,&local_a8);
+          crt_scanf_entry(iVar3,s__define_ObjGroup_s__d_00557018,local_50,&local_a8);
 
           if ((-1 < local_a8) && (local_a8 <= (int)uVar10)) {
 

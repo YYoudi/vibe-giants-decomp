@@ -10574,7 +10574,7 @@ void main_editor_0043fa90(void)
 
     }
 
-    fVar4 = (float10)FUN_0054422e(&DAT_0059cd18);
+    fVar4 = (float10)crt_scanf_float2(&DAT_0059cd18);
 
     *(float *)(iVar3 + 0xf8) = (float)fVar4;
 
@@ -10668,7 +10668,7 @@ LAB_0043fb02:
 
       iVar3 = *(int *)(DAT_0059cbd8 + 0x38);
 
-      fVar4 = (float10)FUN_0054422e(&DAT_0059cd18);
+      fVar4 = (float10)crt_scanf_float2(&DAT_0059cd18);
 
       *(float *)(iVar3 + 0xf8) = (float)fVar4;
 
@@ -10806,7 +10806,7 @@ void main_editor_0043fd00(void)
 
     }
 
-    fVar4 = (float10)FUN_0054422e(&DAT_0059cd18);
+    fVar4 = (float10)crt_scanf_float2(&DAT_0059cd18);
 
     *(float *)(iVar3 + 0xfc) = (float)fVar4;
 
@@ -10916,7 +10916,7 @@ LAB_0043fd98:
 
       iVar3 = *(int *)(DAT_0059cbd8 + 0x38);
 
-      fVar4 = (float10)FUN_0054422e(&DAT_0059cd18);
+      fVar4 = (float10)crt_scanf_float2(&DAT_0059cd18);
 
       *(float *)(iVar3 + 0xfc) = (float)fVar4;
 

@@ -10792,11 +10792,11 @@ float10 editor_dump_objnames(float param_1)
 
               if (iVar5 != 0) {
 
-                while (iVar7 = FUN_005440c1(auStack_50,0x50,iVar5), iVar7 != 0) {
+                while (iVar7 = crt_scanf_getchar2(auStack_50,0x50,iVar5), iVar7 != 0) {
 
                   iStack_a8 = 0;
 
-                  FUN_0054408d(iVar7,s__define_ObjData_s__d_0056204c,auStack_a0,&iStack_a8);
+                  crt_scanf_entry(iVar7,s__define_ObjData_s__d_0056204c,auStack_a0,&iStack_a8);
 
                   if ((iStack_a8 != 0) && (*piVar2 == iStack_a8)) {
 

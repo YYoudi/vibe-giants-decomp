@@ -9221,7 +9221,7 @@ void weapondefs_load(void)
 
 LAB_004a9ef4:
 
-  FUN_005443bf(puVar2);
+  crt_free_ext(puVar2);
 
   return;
 

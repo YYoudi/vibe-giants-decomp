@@ -13690,7 +13690,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 0x11) {
 
-      fVar8 = (float10)FUN_0054422e(pcVar7);
+      fVar8 = (float10)crt_scanf_float2(pcVar7);
 
       FUN_004257c0((float)fVar8);
 
