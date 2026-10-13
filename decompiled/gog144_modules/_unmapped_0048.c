@@ -7699,7 +7699,7 @@ void FUN_00489ca0(void)
 
     DAT_006329d8 = iVar3;
 
-    FUN_00492150(DAT_00632d20,iVar3);
+    level_config_lookup(DAT_00632d20,iVar3);
 
     FUN_00492430(DAT_00632d20,DAT_006329d8);
 
@@ -12331,7 +12331,7 @@ LAB_0048f768:
 
   }
 
-  FUN_00492150(DAT_00632d20,iVar9);
+  level_config_lookup(DAT_00632d20,iVar9);
 
   FUN_00492430(DAT_00632d20,iVar9);
 

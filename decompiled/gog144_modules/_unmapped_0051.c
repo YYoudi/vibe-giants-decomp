@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (79 named) — decompiled, names from PS2 symbols
+ * 186 functions (80 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5722,12 +5722,12 @@ uint FUN_005168f0(float *param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_00516a20 @ 0x00516A20 ===== */
+/* ===== hud_screen_project4 @ 0x00516A20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00516a20(float *param_1)
+void hud_screen_project4(float *param_1)
 
 
 
@@ -12063,7 +12063,7 @@ void textrender_draw_main(uint param_1,undefined4 *param_2,float param_3,byte *p
 
   local_70 = param_2[2];
 
-  FUN_00516a20(&local_78);
+  hud_screen_project4(&local_78);
 
   if (uVar19 < 4) {
 

@@ -8683,7 +8683,7 @@ undefined4 dev_debug_flags(void)
 
               uStack_1b8 = *(undefined4 *)(iVar5 + 0xa8);
 
-              FUN_00516a20(&local_1c0,puVar14,uVar13);
+              hud_screen_project4(&local_1c0,puVar14,uVar13);
 
               textrender_draw_main();
 
@@ -8839,7 +8839,7 @@ undefined4 dev_debug_flags(void)
 
     status_update_3obj();
 
-    main_tracer_00509dd0();
+    status_timer_update();
 
     FUN_0042ea60();
 

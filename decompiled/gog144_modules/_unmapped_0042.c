@@ -16303,7 +16303,7 @@ LAB_0042cb13:
 
                 if (local_98 == 0) {
 
-                  FUN_0046fa10(iStack_10c,&fStack_68);
+                  obj_5c_mount_check(iStack_10c,&fStack_68);
 
                   fStack_74 = -fStack_68;
 

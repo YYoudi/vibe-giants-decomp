@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00516a20,FUN_00516A20,,hud_screen_project4,0.9,llm-read65,
+0046fa10,FUN_0046FA10,,obj_5c_mount_check,0.9,llm-read65,
+00509dd0,FUN_00509DD0,,status_timer_update,0.9,llm-read65,
+00492150,FUN_00492150,,level_config_lookup,0.9,llm-read65,

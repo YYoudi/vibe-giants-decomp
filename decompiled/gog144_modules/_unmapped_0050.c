@@ -9590,8 +9590,8 @@ void MAP_MemGroupSetBase_3(int param_1,undefined4 param_2)
 
 }
 
-/* ===== main/tracer_00509dd0 @ 0x00509DD0 ===== */
-void main_tracer_00509dd0(void)
+/* ===== status_timer_update @ 0x00509DD0 ===== */
+void status_timer_update(void)
 
 
 

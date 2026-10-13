@@ -1709,7 +1709,7 @@ void makewrld_big(void)
 
       if ((*(int *)(DAT_006330e4 + 0x4f3c) != 0) && (DAT_006330b4 != 0)) {
 
-        FUN_0046fa10(DAT_006330b4,&fStack_170);
+        obj_5c_mount_check(DAT_006330b4,&fStack_170);
 
         fStack_164 = -fStack_170;
 
