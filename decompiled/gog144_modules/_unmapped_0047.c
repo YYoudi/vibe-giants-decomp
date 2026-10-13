@@ -208,7 +208,7 @@ undefined4 FUN_00470670(int param_1,int *param_2)
 
   if (local_c[0] != 0) {
 
-    iVar1 = FUN_0053fe20(*(undefined4 *)(param_1 + 0xc),local_c,0);
+    iVar1 = MAP_MappingFind(*(undefined4 *)(param_1 + 0xc),local_c,0);
 
     if ((iVar1 != 0) && (iVar1 = (uint)*(ushort *)(iVar1 + 2) + iVar1, iVar1 != 0)) {
 

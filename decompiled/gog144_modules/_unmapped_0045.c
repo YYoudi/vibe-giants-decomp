@@ -8689,7 +8689,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
           if (-1 < iVar2) {
 
-            FUN_004b9080(param_1,param_3,iVar2,param_4,0);
+            reaper_set_bow(param_1,param_3,iVar2,param_4,0);
 
           }
 

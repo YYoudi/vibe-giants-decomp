@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (82 named) — decompiled, names from PS2 symbols
+ * 179 functions (83 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -20629,12 +20629,12 @@ undefined4 FUN_0053fde0(int param_1,uint param_2,uint param_3)
 
 }
 
-/* ===== FUN_0053fe20 @ 0x0053FE20 ===== */
+/* ===== MAP_MappingFind @ 0x0053FE20 ===== */
 /* PS2 candidate: MAP_MappingFind (conf 0.84) */
 
 
 
-undefined4 FUN_0053fe20(int param_1,int param_2,uint param_3)
+undefined4 MAP_MappingFind(int param_1,int param_2,uint param_3)
 
 
 

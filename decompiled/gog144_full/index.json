@@ -3412,7 +3412,7 @@
  "0x00459930": {
   "name": "inv_award_item",
   "named": true,
-  "len": 7837
+  "len": 7839
  },
  "0x00459F10": {
   "name": "FUN_00459f10",
@@ -3887,7 +3887,7 @@
  "0x00470670": {
   "name": "FUN_00470670",
   "named": false,
-  "len": 409
+  "len": 412
  },
  "0x004706D0": {
   "name": "FUN_004706d0",
@@ -4707,7 +4707,7 @@
  "0x00492430": {
   "name": "load_mission_continuity__Fii",
   "named": true,
-  "len": 5661
+  "len": 5663
  },
  "0x004928A0": {
   "name": "savegame_verify_user",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24137
+  "len": 24142
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -5297,7 +5297,7 @@
  "0x0049B8A0": {
   "name": "FUN_0049b8a0",
   "named": false,
-  "len": 2711
+  "len": 2713
  },
  "0x0049BAA0": {
   "name": "FUN_0049baa0",
@@ -6317,7 +6317,7 @@
  "0x004B6FA0": {
   "name": "FUN_004b6fa0",
   "named": false,
-  "len": 5282
+  "len": 5287
  },
  "0x004B7450": {
   "name": "reaper_animselect",
@@ -6385,9 +6385,9 @@
   "len": 2159
  },
  "0x004B9080": {
-  "name": "FUN_004b9080",
-  "named": false,
-  "len": 827
+  "name": "reaper_set_bow",
+  "named": true,
+  "len": 829
  },
  "0x004B9120": {
   "name": "reaper_cycle_weapon__FP6OBJECTi",
@@ -6562,7 +6562,7 @@
  "0x004BEEE0": {
   "name": "reaper_fire_bow__FP6OBJECT",
   "named": true,
-  "len": 11657
+  "len": 11662
  },
  "0x004BF8C0": {
   "name": "fxb_firewall_create",
@@ -11085,9 +11085,9 @@
   "len": 344
  },
  "0x0053FE20": {
-  "name": "FUN_0053fe20",
-  "named": false,
-  "len": 500
+  "name": "MAP_MappingFind",
+  "named": true,
+  "len": 503
  },
  "0x0053FE70": {
   "name": "MAP_MemGroupFixPtrs",
@@ -11127,7 +11127,7 @@
  "0x005400E0": {
   "name": "MAP_PtrFix",
   "named": true,
-  "len": 808
+  "len": 814
  },
  "0x00540190": {
   "name": "FUN_00540190",
@@ -11182,7 +11182,7 @@
  "0x005404C0": {
   "name": "NAM_NameFindByHandleIndex",
   "named": true,
-  "len": 144
+  "len": 147
  },
  "0x005404E0": {
   "name": "NAM_NameFindByHandleIndex_2",
@@ -11192,7 +11192,7 @@
  "0x00540500": {
   "name": "NAM_NameFindByHandle",
   "named": true,
-  "len": 187
+  "len": 190
  },
  "0x00540530": {
   "name": "FUN_00540530",

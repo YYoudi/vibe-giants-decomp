@@ -117,7 +117,7 @@ undefined4 MAP_PtrFix(int *param_1,int *param_2)
 
   local_c[0] = param_1;
 
-  iVar1 = FUN_0053fe20(*(undefined4 *)(*param_2 + 4),local_c,0);
+  iVar1 = MAP_MappingFind(*(undefined4 *)(*param_2 + 4),local_c,0);
 
   piVar2 = (int *)((uint)*(ushort *)(iVar1 + 2) + iVar1);
 
@@ -125,7 +125,7 @@ undefined4 MAP_PtrFix(int *param_1,int *param_2)
 
   piVar2 = (int *)((piVar2[1] - *piVar2) + (int)param_1);
 
-  iVar1 = FUN_0053fe20(*(undefined4 *)(*param_2 + 4),local_c,0);
+  iVar1 = MAP_MappingFind(*(undefined4 *)(*param_2 + 4),local_c,0);
 
   if (iVar1 != 0) {
 
@@ -474,7 +474,7 @@ void NAM_NameFindByHandleIndex(int param_1,undefined4 param_2)
 
 {
 
-  FUN_0053fe20(*(undefined4 *)(param_1 + 4),param_2,0);
+  MAP_MappingFind(*(undefined4 *)(param_1 + 4),param_2,0);
 
   return;
 
@@ -504,7 +504,7 @@ void NAM_NameFindByHandle(int param_1)
 
 {
 
-  FUN_0053fe20(*(undefined4 *)(param_1 + 4),&stack0x00000008,1);
+  MAP_MappingFind(*(undefined4 *)(param_1 + 4),&stack0x00000008,1);
 
   return;
 

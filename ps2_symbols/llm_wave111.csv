@@ -1,0 +1,3 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b9080,FUN_004b9080,,reaper_set_bow,0.9,promote-auto,c=0.488;callee-family
+0053fe20,FUN_0053fe20,,MAP_MappingFind,0.9,promote-auto,c=0.84;caller-family

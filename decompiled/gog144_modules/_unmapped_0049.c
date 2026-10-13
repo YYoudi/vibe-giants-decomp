@@ -2700,7 +2700,7 @@ LAB_00492458:
 
         uVar5 = FUN_004a90a0(0x2c,0);
 
-        FUN_004b9080(DAT_00632a88,0x2c,0,uVar5);
+        reaper_set_bow(DAT_00632a88,0x2c,0,uVar5);
 
         *(undefined4 *)(iVar1 + 0xcec) = 0;
 
@@ -3414,9 +3414,9 @@ LAB_00492a3a:
 
                         uVar7 = FUN_004a90a0(*(undefined4 *)(iVar6 + DAT_006330e4),1);
 
-                        FUN_004b9080(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4),iVar11,uVar7
+                        reaper_set_bow(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4),iVar11,
 
-                                    );
+                                       uVar7);
 
                       }
 
@@ -12275,7 +12275,7 @@ void FUN_0049b8a0(int param_1)
 
     FUN_004b91d0(param_1);
 
-    FUN_004b9080(param_1,0x2c,0,0xffffffff,0);
+    reaper_set_bow(param_1,0x2c,0,0xffffffff,0);
 
     FUN_00455c80(param_1,1,0x29d);
 

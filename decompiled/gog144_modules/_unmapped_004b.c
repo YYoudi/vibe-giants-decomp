@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (42 named) — decompiled, names from PS2 symbols
+ * 90 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3889,9 +3889,9 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
                    0x41f00000);
 
-      FUN_004b9080(uVar2,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),0xffffffff,0,1
+      reaper_set_bow(uVar2,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),0xffffffff,0
 
-                  );
+                     ,1);
 
       *(uint *)(uVar2 + 0x20c) = *(uint *)(uVar2 + 0x20c) & 0xffffff3f;
 
@@ -6274,12 +6274,12 @@ switchD_004b8f22_caseD_3b:
 
 }
 
-/* ===== FUN_004b9080 @ 0x004B9080 ===== */
+/* ===== reaper_set_bow @ 0x004B9080 ===== */
 /* PS2 candidate: reaper_set_bow (conf 0.488) */
 
 
 
-void FUN_004b9080(int param_1,int param_2,int param_3,int param_4,int param_5)
+void reaper_set_bow(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -11576,9 +11576,9 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
                  0x41f00000);
 
-    FUN_004b9080(param_1,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),0xffffffff,0,1
+    reaper_set_bow(param_1,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),0xffffffff,0
 
-                );
+                   ,1);
 
     *(uint *)(param_1 + 0x20c) = *(uint *)(param_1 + 0x20c) & 0xffffff3f;
 
