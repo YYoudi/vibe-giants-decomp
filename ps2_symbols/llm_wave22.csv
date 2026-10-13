@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004d8440,FUN_004D8440,,ai_damage_response,0.9,llm-read8,
+004d5730,FUN_004D5730,,crt_rand_scaled,0.9,llm-read8,
+004d8ce0,FUN_004D8CE0,,ai_anim_play,0.9,llm-read8,
+0041f120,FUN_0041F120,,hud_status_main,0.9,llm-read8,
+0042f8e0,FUN_0042F8E0,,status_bar_update3,0.9,llm-read8,
+0049aa20,FUN_0049AA20,,sine_cosine_table_gen,0.9,llm-read8,
+004a6c00,FUN_004A6C00,,obj_scale_compute,0.9,llm-read8,
+0050ae40,FUN_0050AE40,,sine_cos_lookup,0.9,llm-read8,

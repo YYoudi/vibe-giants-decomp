@@ -964,7 +964,7 @@ LAB_004374a1:
 
             local_80 = (float)fVar24;
 
-            FUN_0050ae40(local_78 + (float)local_7c,&local_74,&local_70);
+            sine_cos_lookup(local_78 + (float)local_7c,&local_74,&local_70);
 
             *(float *)(piVar11[0xe] + 0xa0) = local_74 * local_80 + _DAT_0059cc04;
 
@@ -1202,7 +1202,7 @@ LAB_004374a1:
 
                                      * fVar24);
 
-            FUN_0050ae40(local_74,&local_78,&local_80);
+            sine_cos_lookup(local_74,&local_78,&local_80);
 
             *(float *)(piVar11[0xe] + 0xa0) = local_78 * (float)local_7c + _DAT_0059cc10;
 

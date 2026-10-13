@@ -1094,7 +1094,7 @@ undefined4 hud_audio_dlog_screen(void)
 
   }
 
-  FUN_0041f120();
+  hud_status_main();
 
   FUN_005387c0();
 
@@ -4430,11 +4430,11 @@ LAB_00478d28:
 
       }
 
-      FUN_0050ae40(*(undefined4 *)((int)fVar1 + 200),&local_3c,&local_38);
+      sine_cos_lookup(*(undefined4 *)((int)fVar1 + 200),&local_3c,&local_38);
 
       local_38 = -local_38;
 
-      FUN_0050ae40(param_5,&local_4c,&param_1);
+      sine_cos_lookup(param_5,&local_4c,&param_1);
 
       local_3c = param_1 * local_3c;
 
@@ -4460,13 +4460,13 @@ LAB_00478c22:
 
       fVar8 = (float10)FUN_004d5760(0x43b40000,&local_3c,&local_38);
 
-      FUN_0050ae40((float)fVar8);
+      sine_cos_lookup((float)fVar8);
 
       local_38 = -local_38;
 
       fVar8 = (float10)FUN_004d5760(0x43b40000,&param_3,&param_6);
 
-      FUN_0050ae40((float)fVar8);
+      sine_cos_lookup((float)fVar8);
 
       local_3c = param_6 * local_3c;
 
@@ -4687,7 +4687,7 @@ void sound_player_sequence(int param_1,undefined4 param_2)
 
   case 0x2a:
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if (iVar3 < 0x32) {
 
@@ -5108,7 +5108,7 @@ void FUN_0047be20(float param_1,float param_2,int param_3,int param_4,float para
 
     sound_play_player(0x5e2,iVar2);
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if (iVar3 < 0x14) {
 
@@ -5770,7 +5770,7 @@ void sound_player_voice2(int param_1,int param_2,float param_3)
 
          param_3 + *(float *)(*(int *)(param_1 + 0x100) + 0x4c);
 
-    iVar1 = FUN_004d5730(100);
+    iVar1 = crt_rand_scaled(100);
 
     if (iVar1 < 0x32) {
 
@@ -6498,7 +6498,7 @@ LAB_0047cdb1:
 
       FUN_00497510(iVar5);
 
-      iVar5 = FUN_004d5730(100);
+      iVar5 = crt_rand_scaled(100);
 
       if (iVar5 < 0x32) {
 
@@ -8302,9 +8302,9 @@ LAB_0047e84d:
 
       FUN_0040d6f0(&local_54,&local_44,&local_98,&local_80);
 
-      FUN_0050ae40(local_54,&local_8c,&local_58);
+      sine_cos_lookup(local_54,&local_8c,&local_58);
 
-      FUN_0050ae40(local_44,&local_94,&local_90);
+      sine_cos_lookup(local_44,&local_94,&local_90);
 
       local_70 = (float)local_90 * local_8c * 2000.0 + local_80;
 

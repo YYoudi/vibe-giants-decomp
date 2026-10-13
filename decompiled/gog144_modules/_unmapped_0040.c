@@ -3259,7 +3259,7 @@ int FUN_00406bc0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,u
 
   case 1:
 
-    iVar5 = FUN_004d5730(*(undefined4 *)(param_2 + 0x88));
+    iVar5 = crt_rand_scaled(*(undefined4 *)(param_2 + 0x88));
 
     *(float *)(iVar3 + 0xf8) = (float)*(int *)(param_2 + 0x38 + iVar5 * 4);
 
@@ -7820,7 +7820,7 @@ void FUN_0040afb0(int param_1,int param_2)
 
   }
 
-  iVar3 = FUN_004d5730(100);
+  iVar3 = crt_rand_scaled(100);
 
   if (iVar3 < 0x32) {
 
@@ -8088,7 +8088,7 @@ void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 
       fVar6 = (float10)FUN_004d5780(param_6,param_7);
 
-      FUN_0050ae40((float)fVar5,&local_8,&local_4);
+      sine_cos_lookup((float)fVar5,&local_8,&local_4);
 
       piVar3[8] = (int)(local_8 * (float)fVar6);
 
@@ -8603,9 +8603,9 @@ void FUN_0040b8f0(void)
 
       FUN_00517370(puVar1,afStack_38);
 
-      FUN_0042f8e0(afStack_e0,afStack_a8,afStack_70);
+      status_bar_update3(afStack_e0,afStack_a8,afStack_70);
 
-      FUN_0042f8e0(afStack_e0,afStack_70,afStack_38);
+      status_bar_update3(afStack_e0,afStack_70,afStack_38);
 
     }
 
@@ -10302,9 +10302,9 @@ void ref_anode_user(void)
 
       DAT_005550dc = *(float *)(iVar1 + 0xa8) + 1500.0;
 
-      FUN_0050ae40(DAT_005550e0,&local_20,&local_1c);
+      sine_cos_lookup(DAT_005550e0,&local_20,&local_1c);
 
-      FUN_0050ae40(DAT_005550e4,&local_28,&local_24);
+      sine_cos_lookup(DAT_005550e4,&local_28,&local_24);
 
       local_c = local_24 * local_20;
 
@@ -10342,9 +10342,9 @@ void ref_anode_user(void)
 
       }
 
-      FUN_0050ae40(DAT_005550e0,&local_1c,&local_20);
+      sine_cos_lookup(DAT_005550e0,&local_1c,&local_20);
 
-      FUN_0050ae40(DAT_005550e4,&local_24,&local_28);
+      sine_cos_lookup(DAT_005550e4,&local_24,&local_28);
 
     }
 
@@ -10392,9 +10392,9 @@ void ref_anode_user(void)
 
       }
 
-      FUN_0050ae40(local_1c,&local_1c,&local_20);
+      sine_cos_lookup(local_1c,&local_1c,&local_20);
 
-      FUN_0050ae40(DAT_005550e4,&local_24,&local_28);
+      sine_cos_lookup(DAT_005550e4,&local_24,&local_28);
 
     }
 
@@ -10623,9 +10623,9 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
     }
 
-    FUN_0050ae40(uVar5,&local_3c,&local_38);
+    sine_cos_lookup(uVar5,&local_3c,&local_38);
 
-    FUN_0050ae40(local_40,&local_34,&local_2c);
+    sine_cos_lookup(local_40,&local_34,&local_2c);
 
     local_18 = local_2c * local_3c;
 

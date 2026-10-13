@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (6 named) — decompiled, names from PS2 symbols
+ * 39 functions (9 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -552,7 +552,7 @@ void FUN_004d1bd0(int param_1)
 
     if (fVar4 != 0.0) {
 
-      local_6c = (float)FUN_004d5730(100);
+      local_6c = (float)crt_rand_scaled(100);
 
       if (((float)(int)local_6c < *(float *)(DAT_00632ed8 + 0x3e4)) ||
 
@@ -650,7 +650,7 @@ LAB_004d2151:
 
       local_60 = *(undefined4 *)((int)fVar4 + 0xa8);
 
-      FUN_0050ae40(pfVar1[1],&local_80,&local_7c);
+      sine_cos_lookup(pfVar1[1],&local_80,&local_7c);
 
       local_68 = local_80 * pfVar1[2] + local_68;
 
@@ -718,7 +718,7 @@ LAB_004d2151:
 
       if (pfVar1[2] * 1.1 * pfVar1[2] * 1.1 <= local_78) break;
 
-      local_6c = (float)FUN_004d5730(100);
+      local_6c = (float)crt_rand_scaled(100);
 
 LAB_004d286e:
 
@@ -804,7 +804,7 @@ LAB_004d2364:
 
       local_60 = *(undefined4 *)((int)fVar4 + 0xa8);
 
-      FUN_0050ae40(pfVar1[1],&local_80,&local_7c);
+      sine_cos_lookup(pfVar1[1],&local_80,&local_7c);
 
       iVar6 = param_1 + 0xa0;
 
@@ -924,7 +924,7 @@ LAB_004d2364:
 
     local_60 = *(undefined4 *)((int)fVar4 + 0xa8);
 
-    FUN_0050ae40(pfVar1[1],&local_80,&local_7c);
+    sine_cos_lookup(pfVar1[1],&local_80,&local_7c);
 
     iVar6 = param_1 + 0xa0;
 
@@ -998,13 +998,13 @@ LAB_004d2364:
 
       if (((float10)5.0 <= fVar9) && (0.0 <= *pfVar1)) break;
 
-      local_6c = (float)FUN_004d5730(100);
+      local_6c = (float)crt_rand_scaled(100);
 
       goto LAB_004d286e;
 
     }
 
-    local_6c = (float)FUN_004d5730(100);
+    local_6c = (float)crt_rand_scaled(100);
 
     if ((float)(int)local_6c < *(float *)(DAT_00632ed8 + 0xdc)) goto LAB_004d27a6;
 
@@ -1080,7 +1080,7 @@ LAB_004d2a47:
 
       local_60 = *(undefined4 *)((int)fVar4 + 0xa8);
 
-      FUN_0050ae40(pfVar1[1],&local_80,&local_7c);
+      sine_cos_lookup(pfVar1[1],&local_80,&local_7c);
 
       iVar6 = param_1 + 0xa0;
 
@@ -1328,7 +1328,7 @@ LAB_004d2d85:
 
       }
 
-      local_6c = (float)FUN_004d5730(100);
+      local_6c = (float)crt_rand_scaled(100);
 
       if ((float)(int)local_6c < *(float *)(DAT_00632ed8 + 0xe8)) {
 
@@ -1366,7 +1366,7 @@ LAB_004d2d85:
 
         }
 
-        local_6c = (float)FUN_004d5730(100);
+        local_6c = (float)crt_rand_scaled(100);
 
         if (*(float *)(DAT_00632ed8 + 0x3e4) <= (float)(int)local_6c) {
 
@@ -2268,7 +2268,7 @@ LAB_004d41e1:
 
     else {
 
-      iVar5 = FUN_004d5730(100);
+      iVar5 = crt_rand_scaled(100);
 
       iVar4 = (iVar5 < 0x33) + 0x28;
 
@@ -2320,7 +2320,7 @@ LAB_004d41e1:
 
     if ((iVar2 == 0x28) || (iVar2 == 0x29)) goto LAB_004d41e1;
 
-    iVar5 = FUN_004d5730(100);
+    iVar5 = crt_rand_scaled(100);
 
     iVar4 = (iVar5 < 0x33) + 0x28;
 
@@ -2426,7 +2426,7 @@ LAB_004d3f6e:
 
     if ((iVar2 == 0x31) || (iVar2 == 0x34)) goto LAB_004d41e1;
 
-    iVar5 = FUN_004d5730(100);
+    iVar5 = crt_rand_scaled(100);
 
     bVar3 = false;
 
@@ -2458,7 +2458,7 @@ LAB_004d3f6e:
 
     }
 
-    iVar5 = FUN_004d5730(100);
+    iVar5 = crt_rand_scaled(100);
 
     iVar4 = ((iVar5 < 0x33) - 1 & 0xfffffffd) + 0x30;
 
@@ -2583,7 +2583,7 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
         fx_get_free_effect__Fv();
 
-        iVar3 = FUN_004d5730(100,pcVar6,uVar7,puVar8);
+        iVar3 = crt_rand_scaled(100,pcVar6,uVar7,puVar8);
 
         if (iVar3 < 0x32) {
 
@@ -2615,7 +2615,7 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
         fx_get_free_effect__Fv();
 
-        iVar3 = FUN_004d5730(100,pcVar6,uVar7,puVar8);
+        iVar3 = crt_rand_scaled(100,pcVar6,uVar7,puVar8);
 
         if (iVar3 < 0x32) {
 
@@ -3308,12 +3308,12 @@ void rndstart(void)
 
 }
 
-/* ===== FUN_004d5730 @ 0x004D5730 ===== */
+/* ===== crt_rand_scaled @ 0x004D5730 ===== */
 /* PS2 candidate: rndint (conf 0.75) */
 
 
 
-int FUN_004d5730(int param_1)
+int crt_rand_scaled(int param_1)
 
 
 
@@ -4507,7 +4507,7 @@ void FUN_004d7e10(int param_1)
 
     if ((*(uint *)(param_1 + 0xe0) & 0x200) != 0) {
 
-      FUN_004d8440(param_1,1,0,0);
+      ai_damage_response(param_1,1,0,0);
 
       *(undefined4 *)(param_1 + 0xe4) = 0x51;
 
@@ -4517,7 +4517,7 @@ void FUN_004d7e10(int param_1)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x8004000;
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if (iVar3 < 0x33) {
 
@@ -4583,7 +4583,7 @@ LAB_004d7f5f:
 
     ;
 
-    FUN_0050ae40((float)fVar5,&local_8,&local_4);
+    sine_cos_lookup((float)fVar5,&local_8,&local_4);
 
     iVar2 = *(int *)(iVar3 + 0x1ec);
 
@@ -4794,8 +4794,8 @@ void endDisplay__Fv_2(void)
 
 }
 
-/* ===== FUN_004d8440 @ 0x004D8440 ===== */
-void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
+/* ===== ai_damage_response @ 0x004D8440 ===== */
+void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -4825,7 +4825,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
     if ((uVar1 & 0x200) != 0) {
 
-      FUN_004d8ce0(param_1,0x8d,1,0,0,param_4);
+      ai_anim_play(param_1,0x8d,1,0,0,param_4);
 
       return;
 
@@ -4833,79 +4833,79 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
     if ((uVar1 & 0x100) == 0) {
 
-      iVar3 = FUN_004d5730(100);
+      iVar3 = crt_rand_scaled(100);
 
       if ((iVar3 < 100) && (*(int *)(param_1 + 0xe8) != 2)) {
 
         *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x8000;
 
-        iVar3 = FUN_004d5730(100);
+        iVar3 = crt_rand_scaled(100);
 
         if (0x31 < iVar3) {
 
-          FUN_004d8ce0(param_1,0xa1,1,0,0,param_4);
+          ai_anim_play(param_1,0xa1,1,0,0,param_4);
 
           return;
 
         }
 
-        FUN_004d8ce0(param_1,0xa0,1,0,0,param_4);
+        ai_anim_play(param_1,0xa0,1,0,0,param_4);
 
         return;
 
       }
 
-      iVar3 = FUN_004d5730(100);
+      iVar3 = crt_rand_scaled(100);
 
       if ((0x20 < iVar3) && (*(int *)(param_1 + 0xe8) != 2)) {
 
         if (0x42 < iVar3) {
 
-          FUN_004d8ce0(param_1,0x9f,1,0,0,param_4);
+          ai_anim_play(param_1,0x9f,1,0,0,param_4);
 
           return;
 
         }
 
-        FUN_004d8ce0(param_1,0x9e,1,0,0,param_4);
+        ai_anim_play(param_1,0x9e,1,0,0,param_4);
 
         return;
 
       }
 
-      FUN_004d8ce0(param_1,0x4a,1,0,0,param_4);
+      ai_anim_play(param_1,0x4a,1,0,0,param_4);
 
       return;
 
     }
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if ((iVar3 < 0x32) && (*(int *)(param_1 + 0xe8) != 2)) {
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x8000;
 
-      iVar3 = FUN_004d5730(100);
+      iVar3 = crt_rand_scaled(100);
 
       if (0x31 < iVar3) {
 
-        FUN_004d8ce0(param_1,0x79,1,0,0,param_4);
+        ai_anim_play(param_1,0x79,1,0,0,param_4);
 
         return;
 
       }
 
-      FUN_004d8ce0(param_1,0x78,1,0,0,param_4);
+      ai_anim_play(param_1,0x78,1,0,0,param_4);
 
       return;
 
     }
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if (iVar3 < 0x19) {
 
-      FUN_004d8ce0(param_1,0x75,1,0,0,param_4);
+      ai_anim_play(param_1,0x75,1,0,0,param_4);
 
       return;
 
@@ -4915,19 +4915,19 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
       if (0x4a < iVar3) {
 
-        FUN_004d8ce0(param_1,0x9f,1,0,0,param_4);
+        ai_anim_play(param_1,0x9f,1,0,0,param_4);
 
         return;
 
       }
 
-      FUN_004d8ce0(param_1,0x9e,1,0,0,param_4);
+      ai_anim_play(param_1,0x9e,1,0,0,param_4);
 
       return;
 
     }
 
-    FUN_004d8ce0(param_1,0x76,1,0,0,param_4);
+    ai_anim_play(param_1,0x76,1,0,0,param_4);
 
     return;
 
@@ -5003,7 +5003,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
       if (*(int *)(param_1 + 0xe8) == 2) {
 
-        iVar2 = FUN_004d5730(3);
+        iVar2 = crt_rand_scaled(3);
 
         if (iVar2 == 0) {
 
@@ -5043,7 +5043,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
       if (cVar4 < '\0') {
 
-        iVar2 = FUN_004d5730(100);
+        iVar2 = crt_rand_scaled(100);
 
         if (iVar2 < 0x32) {
 
@@ -5061,7 +5061,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
       else {
 
-        iVar2 = FUN_004d5730(100);
+        iVar2 = crt_rand_scaled(100);
 
         if (iVar2 < 0x32) {
 
@@ -5085,7 +5085,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
       if (cVar4 < '\0') {
 
-        iVar2 = FUN_004d5730(100);
+        iVar2 = crt_rand_scaled(100);
 
         if (iVar2 < 0x32) {
 
@@ -5111,7 +5111,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
       else {
 
-        iVar2 = FUN_004d5730(100);
+        iVar2 = crt_rand_scaled(100);
 
         if (iVar2 < 0x19) {
 
@@ -5251,7 +5251,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
       if ((uVar1 & 0x200) != 0) {
 
-        FUN_004d8440(param_1,1);
+        ai_damage_response(param_1,1);
 
         goto LAB_004d8a77;
 
@@ -5273,7 +5273,7 @@ void FUN_004d8440(int param_1,int param_2,int param_3,int param_4)
 
 LAB_004d8a6e:
 
-      FUN_004d8ce0(param_1,uVar6,1,0,0,0);
+      ai_anim_play(param_1,uVar6,1,0,0,0);
 
       goto LAB_004d8a77;
 
@@ -5331,8 +5331,8 @@ LAB_004d8a77:
 
 }
 
-/* ===== FUN_004d8ce0 @ 0x004D8CE0 ===== */
-void FUN_004d8ce0(int param_1,int param_2,int param_3,undefined4 param_4,float param_5,int param_6)
+/* ===== ai_anim_play @ 0x004D8CE0 ===== */
+void ai_anim_play(int param_1,int param_2,int param_3,undefined4 param_4,float param_5,int param_6)
 
 
 

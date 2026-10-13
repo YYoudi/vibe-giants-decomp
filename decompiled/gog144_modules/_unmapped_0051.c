@@ -157,7 +157,7 @@ void FUN_00510f50(float param_1,float param_2)
 
   if (*(int *)(iVar3 + 0x50) == 0x3f800000) {
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if (iVar3 < 0x32) {
 
@@ -175,7 +175,7 @@ void FUN_00510f50(float param_1,float param_2)
 
   else {
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if (iVar3 < 0x32) {
 
@@ -193,7 +193,7 @@ void FUN_00510f50(float param_1,float param_2)
 
   sound_play_3dpos(uVar5,iVar2);
 
-  iVar3 = FUN_004d5730(100);
+  iVar3 = crt_rand_scaled(100);
 
   if (0x31 < iVar3) {
 
@@ -487,7 +487,7 @@ void FUN_005116e0(int param_1)
 
         if (((iVar2 != 0x20) && (iVar2 != 0x45)) && (iVar2 != 0x46)) {
 
-          iVar2 = FUN_004d5730(100);
+          iVar2 = crt_rand_scaled(100);
 
           if (iVar2 < 0x21) {
 
@@ -741,7 +741,7 @@ void FUN_005116e0(int param_1)
 
               }
 
-              iVar2 = FUN_004d5730(100);
+              iVar2 = crt_rand_scaled(100);
 
               if (*(int *)(param_1 + 0x10) == 0x23) {
 
@@ -906,7 +906,7 @@ void FUN_00511cf0(int param_1)
 
   fVar5 = (float10)FUN_004d5780(0,0x43b40000);
 
-  FUN_0050ae40((float)fVar5,&local_28,&local_2c);
+  sine_cos_lookup((float)fVar5,&local_28,&local_2c);
 
   fVar5 = (float10)FUN_004d5780(0,*(undefined4 *)
 
@@ -4550,7 +4550,7 @@ void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float p
 
           fVar8 = (float10)FUN_004d5760(0x43b40000);
 
-          FUN_0050ae40((float)fVar8,&param_6,&param_7);
+          sine_cos_lookup((float)fVar8,&param_6,&param_7);
 
           iVar4 = object_allocate_type(0x89,uVar3);
 
@@ -6224,11 +6224,11 @@ void FUN_00516f60(undefined4 param_1,float param_2,undefined4 param_3,float para
 
   
 
-  FUN_0050ae40(-param_2,&param_2,&local_14);
+  sine_cos_lookup(-param_2,&param_2,&local_14);
 
-  FUN_0050ae40(param_1,&local_4,&local_8);
+  sine_cos_lookup(param_1,&local_4,&local_8);
 
-  FUN_0050ae40(param_3,&local_10,&local_c);
+  sine_cos_lookup(param_3,&local_10,&local_c);
 
   *param_5 = local_c * local_8 * param_4;
 
@@ -12252,7 +12252,7 @@ void FUN_0051c370(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
   _DAT_005dd948 = FUN_0040d6f0;
 
-  _DAT_005dd94c = FUN_0050ae40;
+  _DAT_005dd94c = sine_cos_lookup;
 
   _DAT_005dd950 = &LAB_00518930;
 
@@ -15205,7 +15205,7 @@ void error_screen_show(LPCSTR param_1)
 
         FUN_00519a50();
 
-        FUN_0041f120();
+        hud_status_main();
 
         if (DAT_00632aa8 != '\0') goto LAB_0051e90f;
 

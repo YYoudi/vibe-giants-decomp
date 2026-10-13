@@ -2094,9 +2094,9 @@ void FUN_004431c0(void)
 
         FUN_00517370(puVar1,afStack_38);
 
-        FUN_0042f8e0(afStack_e0,afStack_a8,afStack_70);
+        status_bar_update3(afStack_e0,afStack_a8,afStack_70);
 
-        FUN_0042f8e0(afStack_e0,afStack_70,afStack_38);
+        status_bar_update3(afStack_e0,afStack_70,afStack_38);
 
         iVar4 = iVar4 + 1;
 
@@ -2979,11 +2979,11 @@ void FUN_00443fb0(float param_1)
 
   *(undefined4 *)((int)param_1 + 0x7d8) = 1;
 
-  FUN_0050ae40(-*(float *)((int)param_1 + 0x830),&param_1,&local_14);
+  sine_cos_lookup(-*(float *)((int)param_1 + 0x830),&param_1,&local_14);
 
-  FUN_0050ae40(*(undefined4 *)((int)fVar1 + 0x82c),&local_4,&local_8);
+  sine_cos_lookup(*(undefined4 *)((int)fVar1 + 0x82c),&local_4,&local_8);
 
-  FUN_0050ae40(*(undefined4 *)((int)fVar1 + 0x834),&local_10,&local_c);
+  sine_cos_lookup(*(undefined4 *)((int)fVar1 + 0x834),&local_10,&local_c);
 
   *(float *)((int)fVar1 + 0x7e0) = local_c * local_8;
 
@@ -4002,7 +4002,7 @@ LAB_00444d25:
 
           if (*piVar8 == 0) {
 
-            FUN_0049aa20();
+            sine_cosine_table_gen();
 
           }
 
@@ -4064,7 +4064,7 @@ LAB_00444d25:
 
         && ((piVar8 != DAT_00632a88 && ((int *)piVar8[0x84] != DAT_00632a88)))) &&
 
-       (FUN_0049aa20(), -1 < (char)piVar8[0x36])) {
+       (sine_cosine_table_gen(), -1 < (char)piVar8[0x36])) {
 
       alpha_queue_push();
 
@@ -4084,7 +4084,9 @@ LAB_00444d25:
 
          (((piVar8[0x61] != 0x3f800000 && (piVar8 != DAT_00632a88)) &&
 
-          ((int *)piVar8[0x84] != DAT_00632a88)))))) && (FUN_0049aa20(), -1 < (char)piVar8[0x36])) {
+          ((int *)piVar8[0x84] != DAT_00632a88)))))) &&
+
+       (sine_cosine_table_gen(), -1 < (char)piVar8[0x36])) {
 
       alpha_queue_push();
 
@@ -6441,9 +6443,9 @@ void FUN_00446b00(int param_1,float param_2,float param_3,float param_4,float pa
 
   }
 
-  FUN_0042f8e0(param_1,iVar3,iVar2);
+  status_bar_update3(param_1,iVar3,iVar2);
 
-  FUN_0042f8e0(param_1,iVar2,iVar1);
+  status_bar_update3(param_1,iVar2,iVar1);
 
   return;
 

@@ -283,7 +283,7 @@ void FUN_004f3af0(int param_1)
 
            (*(int *)(iVar3 + 0x18c) == *(int *)(DAT_00632a88 + 0x18c))) {
 
-          iVar3 = FUN_004d5730(100);
+          iVar3 = crt_rand_scaled(100);
 
           if (iVar3 < 0x21) {
 
@@ -906,7 +906,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
   }
 
-  iVar4 = FUN_004d5730(100);
+  iVar4 = crt_rand_scaled(100);
 
   if (iVar4 < 0x32) {
 
@@ -1024,7 +1024,7 @@ void FUN_004f4fc0(float param_1)
 
   *(undefined4 *)((int)param_1 + 0xe4) = 4;
 
-  FUN_0050ae40(*(float *)(iVar1 + 200) + 180.0,&param_1,&local_4);
+  sine_cos_lookup(*(float *)(iVar1 + 200) + 180.0,&param_1,&local_4);
 
   *(float *)((int)fVar3 + 0x128) = param_1 * 30.0;
 
@@ -1129,7 +1129,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
   *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffff7ff | 0x20000;
 
-  FUN_0050ae40(*(float *)(param_2 + 200) + 180.0,&local_8,&local_4);
+  sine_cos_lookup(*(float *)(param_2 + 200) + 180.0,&local_8,&local_4);
 
   iVar4 = *(int *)(param_1 + 0xe8);
 
@@ -1273,7 +1273,7 @@ LAB_004f5334:
 
 LAB_004f539d:
 
-  iVar5 = FUN_004d5730(100);
+  iVar5 = crt_rand_scaled(100);
 
   if (iVar5 < 0x19) {
 
@@ -2209,9 +2209,9 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
         if (((0x5c < *(int *)(param_1 + 0x10)) && (*(int *)(param_1 + 0x10) < 0x60)) &&
 
-           (iVar3 = FUN_004d5730(100), 0x20 < iVar3)) {
+           (iVar3 = crt_rand_scaled(100), 0x20 < iVar3)) {
 
-          iVar3 = FUN_004d5730(100);
+          iVar3 = crt_rand_scaled(100);
 
           return (0x42 < iVar3) + 0x5e;
 
@@ -2239,7 +2239,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
          ) {
 
-        iVar3 = FUN_004d5730(100);
+        iVar3 = crt_rand_scaled(100);
 
         return ((0x31 < iVar3) - 1 & 0xe) + 0x31;
 
@@ -2289,7 +2289,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
         iVar1 = (*(int *)(*(int *)(iVar3 + 0x30) + 4) == 0x2f6) + 0x3d;
 
-        iVar3 = FUN_004d5730(100);
+        iVar3 = crt_rand_scaled(100);
 
         if (iVar3 < 0x32) {
 
@@ -2325,7 +2325,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
         }
 
-        iVar1 = FUN_004d5730(100);
+        iVar1 = crt_rand_scaled(100);
 
         if (0x4f < iVar1) {
 
@@ -2681,7 +2681,7 @@ switchD_004f7908_caseD_20:
 
           FUN_004034a0(param_3,uVar6,0,0,0,0x3ecccccd);
 
-          iVar4 = FUN_004d5730(100);
+          iVar4 = crt_rand_scaled(100);
 
           if (iVar4 < 0x32) {
 
@@ -2701,7 +2701,7 @@ switchD_004f7908_caseD_20:
 
         FUN_0040bb40(param_3,param_5);
 
-        iVar4 = FUN_004d5730(0x3c);
+        iVar4 = crt_rand_scaled(0x3c);
 
         if (iVar4 < 10) {
 
@@ -3316,7 +3316,7 @@ LAB_004f85c8:
 
   }
 
-  FUN_0050ae40(param_1,piVar3 + 5,piVar3 + 6);
+  sine_cos_lookup(param_1,piVar3 + 5,piVar3 + 6);
 
   fVar9 = (float10)FUN_004d5780(-(float)puVar4[0x11],puVar4[0x11]);
 
@@ -4002,7 +4002,7 @@ void FUN_004f9380(int param_1)
 
       if ((pfVar2[10] == 0.0) && (fVar8 < (float10)0.0 != (fVar8 == (float10)0.0))) {
 
-        iVar5 = FUN_004d5730(100);
+        iVar5 = crt_rand_scaled(100);
 
         if (iVar5 < 0x32) {
 
@@ -4208,7 +4208,7 @@ void sound_play_pair(undefined4 param_1,float param_2,int param_3,undefined4 par
 
     if (*(int *)(param_3 + 0xe4) != 0x14) {
 
-      iVar2 = FUN_004d5730(100);
+      iVar2 = crt_rand_scaled(100);
 
       if (iVar2 < 0x32) {
 
@@ -4240,7 +4240,7 @@ void sound_play_pair(undefined4 param_1,float param_2,int param_3,undefined4 par
 
   }
 
-  iVar2 = FUN_004d5730(100);
+  iVar2 = crt_rand_scaled(100);
 
   if (iVar2 < 0x32) {
 

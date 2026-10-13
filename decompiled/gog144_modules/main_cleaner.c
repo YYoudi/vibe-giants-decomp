@@ -185,7 +185,7 @@ void cleaner_go_obj(void)
 
             fVar12 = (float10)FUN_004d5760(0x43b40000);
 
-            FUN_0050ae40((float)fVar12,&local_14,&local_10);
+            sine_cos_lookup((float)fVar12,&local_14,&local_10);
 
             *(float *)(iVar9 + 0xa0) = local_14 * fVar4 + *(float *)(iVar7 + 0xa0);
 

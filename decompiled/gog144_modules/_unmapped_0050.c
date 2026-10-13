@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (24 named) — decompiled, names from PS2 symbols
+ * 87 functions (25 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -747,7 +747,7 @@ void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
 
   if (*(int *)(param_2 + 8) != 0) {
 
-    FUN_0049aa20(param_2);
+    sine_cosine_table_gen(param_2);
 
     status_hud_render(param_2,1,0xffffffff);
 
@@ -773,7 +773,7 @@ void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
 
           if (*(int *)(iVar6 + 8) != 0) {
 
-            FUN_0049aa20(iVar6);
+            sine_cosine_table_gen(iVar6);
 
             status_hud_render(iVar6,1,0xffffffff);
 
@@ -1798,7 +1798,7 @@ void teammecc_setup_enemies__FP6OBJECTi(int param_1)
 
       case 6:
 
-        iVar3 = FUN_004d5730(0x46);
+        iVar3 = crt_rand_scaled(0x46);
 
         if (iVar3 < 10) {
 
@@ -1860,7 +1860,7 @@ void teammecc_setup_enemies__FP6OBJECTi(int param_1)
 
       case 2:
 
-        iVar3 = FUN_004d5730(100);
+        iVar3 = crt_rand_scaled(100);
 
         if (iVar3 < 0x14) {
 
@@ -2056,7 +2056,7 @@ switchD_00501829_caseD_3:
 
               if (_DAT_0057a774 < 0.0) {
 
-                iVar3 = FUN_004d5730(100);
+                iVar3 = crt_rand_scaled(100);
 
                 if (iVar3 < 0x21) {
 
@@ -2094,7 +2094,7 @@ switchD_00501829_caseD_3:
 
               if (_DAT_0057a774 < 0.0) {
 
-                iVar3 = FUN_004d5730(100);
+                iVar3 = crt_rand_scaled(100);
 
                 if (iVar3 < 5) {
 
@@ -2106,7 +2106,7 @@ switchD_00501829_caseD_3:
 
                 else {
 
-                  iVar3 = FUN_004d5730(0x5a);
+                  iVar3 = crt_rand_scaled(0x5a);
 
                   if (iVar3 < 10) {
 
@@ -2672,7 +2672,7 @@ LAB_0050203c:
 
               fVar15 = (float10)FUN_0050a400((float *)(iVar5 + 0xa0),(int)fStack_19c + 0xa0);
 
-              FUN_0050ae40((float)fVar15 + 180.0,&fStack_184,&fStack_188);
+              sine_cos_lookup((float)fVar15 + 180.0,&fStack_184,&fStack_188);
 
               fVar2 = *(float *)(iVar5 + 0x1f8) * *(float *)(iVar5 + 0xc4) +
 
@@ -2928,7 +2928,7 @@ void FUN_00502660(float param_1,undefined4 param_2,float param_3,float *param_4,
 
   }
 
-  FUN_0050ae40(*(undefined4 *)(iVar1 + 0x14),&local_4,&param_3);
+  sine_cos_lookup(*(undefined4 *)(iVar1 + 0x14),&local_4,&param_3);
 
   *pfVar3 = local_4 * (float)param_4 + param_3 * param_1 + *(float *)(iVar1 + 8);
 
@@ -2995,7 +2995,7 @@ void FUN_00502750(int param_1,float *param_2,undefined4 param_3,undefined4 param
 
       fVar6 = (float10)FUN_004d5780(param_3,param_4);
 
-      FUN_0050ae40((float)fVar5,&local_8,&local_4);
+      sine_cos_lookup((float)fVar5,&local_8,&local_4);
 
       pfVar1 = (float *)(&DAT_005a86fc + param_1 * 3);
 
@@ -3230,7 +3230,7 @@ void FUN_00502890(float param_1,int param_2)
 
     *(float *)(iVar4 + 0xd4) = (float)fVar11;
 
-    iVar10 = FUN_004d5730(100);
+    iVar10 = crt_rand_scaled(100);
 
     *(uint *)(iVar4 + 0xe4) = (*(int *)(DAT_00632ed8 + 0x1050) < iVar10) + 1;
 
@@ -3240,7 +3240,7 @@ void FUN_00502890(float param_1,int param_2)
 
     *(float *)(iVar4 + 0xec) = (float)fVar11;
 
-    iVar10 = FUN_004d5730(100);
+    iVar10 = crt_rand_scaled(100);
 
     if (iVar10 < 0x33) {
 
@@ -3332,7 +3332,7 @@ void FUN_00502890(float param_1,int param_2)
 
     }
 
-    FUN_0050ae40(fVar3,&local_34,&local_30);
+    sine_cos_lookup(fVar3,&local_34,&local_30);
 
     (&DAT_005a86fc)[param_2 * 3] = local_34 * local_38 + *pfVar2;
 
@@ -3388,7 +3388,7 @@ void FUN_00502890(float param_1,int param_2)
 
     }
 
-    FUN_0050ae40(fVar3,&local_34,&local_30);
+    sine_cos_lookup(fVar3,&local_34,&local_30);
 
     (&DAT_005a86fc)[param_2 * 3] = local_34 * local_38 + *pfVar2;
 
@@ -3458,7 +3458,7 @@ void FUN_00502890(float param_1,int param_2)
 
     local_24 = (float)(SQRT(fVar11) * (float10)0.0033333334);
 
-    FUN_0050ae40(*(undefined4 *)(iVar5 + 200),&local_28,&local_2c);
+    sine_cos_lookup(*(undefined4 *)(iVar5 + 200),&local_28,&local_2c);
 
     local_4 = *(undefined4 *)(iVar5 + 0xa8);
 
@@ -3476,7 +3476,7 @@ void FUN_00502890(float param_1,int param_2)
 
        ((float)fVar11 < local_40 * local_40)) {
 
-      iVar10 = FUN_004d5730(100);
+      iVar10 = crt_rand_scaled(100);
 
       if (0x50 < iVar10) {
 
@@ -3516,7 +3516,7 @@ LAB_00502fdd:
 
     if (fVar11 < (float10)0.0) {
 
-      iVar10 = FUN_004d5730(100);
+      iVar10 = crt_rand_scaled(100);
 
       if (iVar10 < 0x1e) {
 
@@ -3552,7 +3552,7 @@ LAB_00502fdd:
 
     local_24 = (float)(SQRT(fVar11) * (float10)0.0033333334);
 
-    FUN_0050ae40(*(undefined4 *)(iVar5 + 200),&local_28,&local_2c);
+    sine_cos_lookup(*(undefined4 *)(iVar5 + 200),&local_28,&local_2c);
 
     local_4 = *(undefined4 *)(iVar5 + 0xa8);
 
@@ -3570,7 +3570,7 @@ LAB_00502fdd:
 
        ((float)fVar11 < local_40 * local_40)) {
 
-      iVar10 = FUN_004d5730(100);
+      iVar10 = crt_rand_scaled(100);
 
       if (0x50 < iVar10) {
 
@@ -3678,7 +3678,7 @@ LAB_00503425:
 
     DAT_005a8800 = DAT_005a8800 | 1 << (bVar9 & 0x1f);
 
-    iVar10 = FUN_004d5730(100);
+    iVar10 = crt_rand_scaled(100);
 
     if (iVar10 < 0x51) {
 
@@ -3748,7 +3748,7 @@ LAB_00503502:
 
          ((local_20 == 0x7c || (local_20 == 0x5e)))))))) {
 
-      iVar10 = FUN_004d5730(100);
+      iVar10 = crt_rand_scaled(100);
 
       if (0x5a < iVar10) {
 
@@ -4013,7 +4013,7 @@ void FUN_005035c0(undefined4 param_1,int param_2)
 
         }
 
-        FUN_0050ae40(fVar2,&local_8,&local_4);
+        sine_cos_lookup(fVar2,&local_8,&local_4);
 
         *pfVar1 = local_8 * 7.0 + *pfVar1;
 
@@ -5090,7 +5090,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
             if (iVar8 == 0) {
 
-              iVar8 = FUN_004d5730(100);
+              iVar8 = crt_rand_scaled(100);
 
               if (iVar8 < 0x21) {
 
@@ -5412,7 +5412,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
             if (iVar8 == 0) {
 
-              iVar8 = FUN_004d5730(100);
+              iVar8 = crt_rand_scaled(100);
 
               if (iVar8 < 0x21) {
 
@@ -6036,7 +6036,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
           if (iVar8 == 0) {
 
-            iVar8 = FUN_004d5730(100);
+            iVar8 = crt_rand_scaled(100);
 
             if (iVar8 < 0x21) {
 
@@ -6745,7 +6745,7 @@ LAB_005075ef:
 
       if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
 
-        iVar14 = FUN_004d5730(100);
+        iVar14 = crt_rand_scaled(100);
 
         if (iVar14 < 10) {
 
@@ -7025,7 +7025,7 @@ LAB_00506e0c:
 
 LAB_00506ce5:
 
-                          iVar14 = FUN_004d5730(100);
+                          iVar14 = crt_rand_scaled(100);
 
                           local_84 = 0x21;
 
@@ -7047,7 +7047,7 @@ LAB_00506ce5:
 
 LAB_00506d40:
 
-                          iVar14 = FUN_004d5730(100);
+                          iVar14 = crt_rand_scaled(100);
 
                           local_84 = 0x21;
 
@@ -7075,7 +7075,7 @@ LAB_00506d64:
 
                           if (iVar3 == 0x66) {
 
-                            iVar14 = FUN_004d5730(100);
+                            iVar14 = crt_rand_scaled(100);
 
                             local_84 = 0x21;
 
@@ -7161,7 +7161,7 @@ LAB_00506963:
 
                         if (iVar3 == 0x60) {
 
-                          iVar7 = FUN_004d5730(100);
+                          iVar7 = crt_rand_scaled(100);
 
                           bVar18 = SBORROW4(iVar7,0x32);
 
@@ -7191,7 +7191,7 @@ LAB_00506b41:
 
                           if (iVar3 == 0x72) {
 
-                            iVar14 = FUN_004d5730(100);
+                            iVar14 = crt_rand_scaled(100);
 
                             local_84 = 0x21;
 
@@ -7241,7 +7241,7 @@ LAB_00506b41:
 
                             }
 
-                            iVar14 = FUN_004d5730(100);
+                            iVar14 = crt_rand_scaled(100);
 
                             bVar18 = SBORROW4(iVar14,0x14);
 
@@ -7253,7 +7253,7 @@ LAB_00506b41:
 
                           }
 
-                          iVar14 = FUN_004d5730(100);
+                          iVar14 = crt_rand_scaled(100);
 
                           local_84 = 0x21;
 
@@ -7283,7 +7283,7 @@ LAB_00506b41:
 
                       }
 
-                      iVar14 = FUN_004d5730(100);
+                      iVar14 = crt_rand_scaled(100);
 
                       if (iVar14 < 0x3d) {
 
@@ -7347,7 +7347,7 @@ LAB_00506c5e:
 
                   if (iVar3 == 0x6c) {
 
-                    if ((uVar8 != 0) && (iVar14 = FUN_004d5730(100), 0x50 < iVar14)) {
+                    if ((uVar8 != 0) && (iVar14 = crt_rand_scaled(100), 0x50 < iVar14)) {
 
 LAB_00506a99:
 
@@ -7391,7 +7391,7 @@ LAB_00506a69:
 
                 if (0 < iVar7) goto LAB_00506977;
 
-                iVar14 = FUN_004d5730(100);
+                iVar14 = crt_rand_scaled(100);
 
                 if (iVar14 < 0x3a) {
 
@@ -8035,7 +8035,7 @@ LAB_0050698f:
 
               else if ((local_6c & 0x80000) != 0) {
 
-                iVar14 = FUN_004d5730(100);
+                iVar14 = crt_rand_scaled(100);
 
                 if (iVar14 < 10) {
 
@@ -8199,7 +8199,7 @@ LAB_0050747e:
 
               else if ((local_6c & 0x80000) != 0) {
 
-                iVar14 = FUN_004d5730(100);
+                iVar14 = crt_rand_scaled(100);
 
                 if (iVar14 < 8) {
 
@@ -8289,7 +8289,7 @@ LAB_005073b6:
 
                       if ((char)(local_6c >> 8) < '\0') {
 
-                        iVar15 = FUN_004d5730(800);
+                        iVar15 = crt_rand_scaled(800);
 
                         if (iVar2 == 0x1c) {
 
@@ -9127,7 +9127,7 @@ void FUN_005093e0(float param_1)
 
       fVar6 = (float10)FUN_0050a400(iVar4 + 0xa0,iVar2 + 0xa0);
 
-      FUN_0050ae40((float)((float10)*(float *)(DAT_00632ed8 + 0x32c) + fVar6),&local_8,&local_4);
+      sine_cos_lookup((float)((float10)*(float *)(DAT_00632ed8 + 0x32c) + fVar6),&local_8,&local_4);
 
       if ((*(uint *)(iVar2 + 0xd8) & 0x80000) == 0) {
 
@@ -9228,9 +9228,9 @@ void FUN_005095e0(int param_1,int param_2,float param_3)
 
     if (cVar4 == 'a') {
 
-      FUN_0050ae40(*(float *)(DAT_00632ed8 + 0x338) * *(float *)(param_1 + 0xf0) * 360.0,&fStack_14,
+      sine_cos_lookup(*(float *)(DAT_00632ed8 + 0x338) * *(float *)(param_1 + 0xf0) * 360.0,
 
-                   &param_3);
+                      &fStack_14,&param_3);
 
       if (0 < local_10) {
 
@@ -9276,9 +9276,9 @@ void FUN_005095e0(int param_1,int param_2,float param_3)
 
     else if (cVar4 == 'c') {
 
-      FUN_0050ae40(*(float *)(DAT_00632ed8 + 0x34c) * *(float *)(param_1 + 0xf0) * 360.0,&fStack_14,
+      sine_cos_lookup(*(float *)(DAT_00632ed8 + 0x34c) * *(float *)(param_1 + 0xf0) * 360.0,
 
-                   &param_3);
+                      &fStack_14,&param_3);
 
       if (0 < local_10) {
 
@@ -9324,9 +9324,9 @@ void FUN_005095e0(int param_1,int param_2,float param_3)
 
     else if (cVar4 == 'd') {
 
-      FUN_0050ae40(*(float *)(DAT_00632ed8 + 0x350) * *(float *)(param_1 + 0xf0) * 360.0,&fStack_14,
+      sine_cos_lookup(*(float *)(DAT_00632ed8 + 0x350) * *(float *)(param_1 + 0xf0) * 360.0,
 
-                   &param_3);
+                      &fStack_14,&param_3);
 
       if (0 < local_10) {
 
@@ -9376,9 +9376,9 @@ void FUN_005095e0(int param_1,int param_2,float param_3)
 
       if (cVar4 == '1') {
 
-        FUN_0050ae40(*(float *)(DAT_00632ed8 + 0x33c) * *(float *)(param_1 + 0xf0) * 360.0,
+        sine_cos_lookup(*(float *)(DAT_00632ed8 + 0x33c) * *(float *)(param_1 + 0xf0) * 360.0,
 
-                     &fStack_14,&param_3);
+                        &fStack_14,&param_3);
 
         if (0 < local_10) {
 
@@ -9930,13 +9930,13 @@ void view_xform_user(undefined4 param_1,undefined4 param_2,float param_3,undefin
 
   puStack_118 = auStack_a8;
 
-  FUN_0042f8e0(afStack_e0);
+  status_bar_update3(afStack_e0);
 
-  FUN_0042f8e0(auStack_a8,auStack_38,auStack_70);
+  status_bar_update3(auStack_a8,auStack_38,auStack_70);
 
-  FUN_0042f8e0(afStack_e0,auStack_70,auStack_a8);
+  status_bar_update3(afStack_e0,auStack_70,auStack_a8);
 
-  FUN_0042f8e0(auStack_a8,auStack_70,auStack_38);
+  status_bar_update3(auStack_a8,auStack_70,auStack_38);
 
   return;
 
@@ -10783,12 +10783,12 @@ float10 FUN_0050ae10(void)
 
 }
 
-/* ===== FUN_0050ae40 @ 0x0050AE40 ===== */
+/* ===== sine_cos_lookup @ 0x0050AE40 ===== */
 /* PS2 candidate: calc_sincosd__FfPfT1 (conf 0.564) */
 
 
 
-void FUN_0050ae40(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
+void sine_cos_lookup(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
@@ -11624,7 +11624,7 @@ LAB_0050d17f:
 
     if (fVar13 < (float10)0.0) {
 
-      iVar6 = FUN_004d5730(100);
+      iVar6 = crt_rand_scaled(100);
 
       fVar7 = (float)iVar6;
 
@@ -11662,7 +11662,7 @@ LAB_0050e1a4:
 
       fVar12 = (float10)FUN_004d5760(0x41f00000);
 
-      FUN_0050ae40((float)fVar13,&local_18,&local_14);
+      sine_cos_lookup((float)fVar13,&local_18,&local_14);
 
       pfVar1[2] = local_18 * (float)fVar12 + *(float *)(iVar9 + 0x178);
 
@@ -11674,11 +11674,11 @@ LAB_0050e1a4:
 
       *(undefined4 *)(iVar9 + 0xe4) = 0xc;
 
-      iVar6 = FUN_004d5730(100);
+      iVar6 = crt_rand_scaled(100);
 
       if (iVar6 < 10) {
 
-        iVar6 = FUN_004d5730(100);
+        iVar6 = crt_rand_scaled(100);
 
         sound_play_obj((0x31 < iVar6) + 0x536,iVar9);
 
@@ -11964,7 +11964,7 @@ LAB_0050d177:
 
     }
 
-    if ((0 < (int)pfVar1[9]) && (iVar9 = FUN_004d5730(100), iVar9 < 0x19)) {
+    if ((0 < (int)pfVar1[9]) && (iVar9 = crt_rand_scaled(100), iVar9 < 0x19)) {
 
       fVar13 = (float10)FUN_00413e40((int)param_1 + 0xa0);
 
@@ -12066,7 +12066,7 @@ switchD_0050ca70_caseD_15:
 
     fVar4 = pfVar1[7];
 
-    FUN_0050ae40((float)fVar13,&local_18,&local_14);
+    sine_cos_lookup((float)fVar13,&local_18,&local_14);
 
     fVar7 = pfVar1[1];
 
@@ -12274,7 +12274,7 @@ switchD_0050ca70_caseD_15:
 
     if ((fVar13 < (float10)0.0) && ((float)local_c < 2.0)) {
 
-      iVar9 = FUN_004d5730(100);
+      iVar9 = crt_rand_scaled(100);
 
       if (iVar9 < 0x32) {
 
@@ -12364,7 +12364,7 @@ switchD_0050ca70_caseD_15:
 
              *(float *)(iVar6 + 0xa8);
 
-        FUN_0050ae40(*(undefined4 *)(iVar6 + 200),&local_4,&local_8);
+        sine_cos_lookup(*(undefined4 *)(iVar6 + 200),&local_4,&local_8);
 
         iVar8 = (int)local_c + 1;
 
@@ -12416,7 +12416,7 @@ switchD_0050ca70_caseD_15:
 
           fVar12 = (float10)FUN_004d5780(0x42c80000,0x43610000);
 
-          FUN_0050ae40((float)fVar13,&local_18,&local_14);
+          sine_cos_lookup((float)fVar13,&local_18,&local_14);
 
           fVar13 = (float10)FUN_004d5780(0x41700000,0x41c80000);
 
@@ -12446,7 +12446,7 @@ switchD_0050ca70_caseD_15:
 
         *(float *)((int)param_1 + 0xec) = (float)fVar13;
 
-        iVar9 = FUN_004d5730(100);
+        iVar9 = crt_rand_scaled(100);
 
         if (iVar9 < 0x32) {
 
@@ -12680,7 +12680,7 @@ switchD_0050ca70_caseD_15:
 
     }
 
-    FUN_0050ae40((float)fVar13,&local_18,&local_14);
+    sine_cos_lookup((float)fVar13,&local_18,&local_14);
 
     pfVar1[2] = local_18 * 40.0 + *(float *)(DAT_00632a88 + 0xa0);
 
@@ -12852,7 +12852,7 @@ switchD_0050ca70_caseD_15:
 
       *(undefined4 *)((int)param_1 + 0xec) = 0x3f800000;
 
-      if (((int)pfVar1[9] < 1) || (iVar9 = FUN_004d5730(100), 0x18 < iVar9)) {
+      if (((int)pfVar1[9] < 1) || (iVar9 = crt_rand_scaled(100), 0x18 < iVar9)) {
 
         *(undefined4 *)((int)param_1 + 0xe4) = 0x22;
 
@@ -13248,7 +13248,7 @@ LAB_0050e133:
 
         fVar13 = (float10)FUN_0050a400(DAT_00632a88 + 0xa0,iVar6);
 
-        FUN_0050ae40((float)(fVar13 + (float10)40.0),&local_18,&local_14);
+        sine_cos_lookup((float)(fVar13 + (float10)40.0),&local_18,&local_14);
 
         pfVar1[2] = local_18 * 40.0 + *(float *)(DAT_00632a88 + 0xa0);
 

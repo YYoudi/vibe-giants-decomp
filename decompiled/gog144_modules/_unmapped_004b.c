@@ -732,7 +732,7 @@ void FUN_004b4570(int param_1)
 
         if ((piVar6 == (int *)&DAT_00560a30) || (piVar6 == (int *)&DAT_00560770)) {
 
-          FUN_0050ae40(pfVar5[3],&local_14,&local_10);
+          sine_cos_lookup(pfVar5[3],&local_14,&local_10);
 
           *pfVar5 = local_14 * 70.0 + *pfVar5;
 
@@ -3757,7 +3757,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   if (param_1 != -1) {
 
-    iVar3 = FUN_004d5730(100);
+    iVar3 = crt_rand_scaled(100);
 
     if (iVar3 < 0x32) {
 
@@ -4238,7 +4238,7 @@ void FUN_004b7450(int param_1,undefined4 param_2,undefined4 param_3,float *param
 
     }
 
-    iVar7 = FUN_004d5730(100);
+    iVar7 = crt_rand_scaled(100);
 
     if (iVar7 < 0x32) {
 
@@ -9276,7 +9276,7 @@ void FUN_004bce60(int param_1)
 
         fx_get_free_effect__Fv();
 
-        iVar10 = FUN_004d5730(100,pcVar21,uVar11,puVar22);
+        iVar10 = crt_rand_scaled(100,pcVar21,uVar11,puVar22);
 
         if (iVar10 < 0x32) {
 

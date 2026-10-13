@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (46 named) — decompiled, names from PS2 symbols
+ * 142 functions (47 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -1150,7 +1150,7 @@ LAB_0049156a:
 
     if (iVar9 == 0) {
 
-      iVar9 = FUN_004d5730(100);
+      iVar9 = crt_rand_scaled(100);
 
       iVar9 = ((0x31 < iVar9) - 1 & 0xd) + 1;
 
@@ -1158,7 +1158,7 @@ LAB_0049156a:
 
     else {
 
-      iVar9 = FUN_004d5730(100);
+      iVar9 = crt_rand_scaled(100);
 
       if (iVar9 < 0x21) {
 
@@ -1480,7 +1480,7 @@ LAB_00491945:
 
         if (iVar9 == 0) {
 
-          iVar9 = FUN_004d5730(100);
+          iVar9 = crt_rand_scaled(100);
 
           iVar9 = ((0x31 < iVar9) - 1 & 0xd) + 1;
 
@@ -1488,7 +1488,7 @@ LAB_00491945:
 
         else {
 
-          iVar9 = FUN_004d5730(100);
+          iVar9 = crt_rand_scaled(100);
 
           if (iVar9 < 0x21) {
 
@@ -1570,7 +1570,7 @@ joined_r0x00491a63:
 
         _DAT_0059f328 = (float)fVar10;
 
-        iVar9 = FUN_004d5730(100);
+        iVar9 = crt_rand_scaled(100);
 
         iVar9 = (0x31 < iVar9) + 0xb;
 
@@ -9084,9 +9084,9 @@ void FUN_004984b0(void)
 
   }
 
-  FUN_0050ae40(local_70,&local_1c,&local_30);
+  sine_cos_lookup(local_70,&local_1c,&local_30);
 
-  FUN_0050ae40(local_74,&local_78,&local_88);
+  sine_cos_lookup(local_74,&local_78,&local_88);
 
   local_84 = local_88 * local_1c;
 
@@ -9394,7 +9394,7 @@ void vimp_death_fx(int param_1)
 
     }
 
-    FUN_0049aa20(param_1);
+    sine_cosine_table_gen(param_1);
 
     alpha_queue_push(param_1);
 
@@ -9446,13 +9446,13 @@ void vimp_death_fx(int param_1)
 
   if ((iVar1 == 0) || (DAT_00632adf == '\0')) {
 
-    FUN_0049aa20(&DAT_0059f688);
+    sine_cosine_table_gen(&DAT_0059f688);
 
     alpha_queue_push(&DAT_0059f688);
 
     if (DAT_0059f990 != 0) {
 
-      FUN_0049aa20(&DAT_0059f380);
+      sine_cosine_table_gen(&DAT_0059f380);
 
       alpha_queue_push();
 
@@ -11592,8 +11592,8 @@ undefined4 FUN_0049a950(float *param_1,float *param_2,float *param_3,float param
 
 }
 
-/* ===== FUN_0049aa20 @ 0x0049AA20 ===== */
-void FUN_0049aa20(int param_1)
+/* ===== sine_cosine_table_gen @ 0x0049AA20 ===== */
+void sine_cosine_table_gen(int param_1)
 
 
 
@@ -11785,7 +11785,7 @@ void FUN_0049aa20(int param_1)
 
       local_d4 = *(float *)(param_1 + 0xc4);
 
-      FUN_0050ae40(*(undefined4 *)(param_1 + 0xd0),&local_d8,&local_dc);
+      sine_cos_lookup(*(undefined4 *)(param_1 + 0xd0),&local_d8,&local_dc);
 
       local_18 = local_dc * local_d4;
 
@@ -13159,7 +13159,7 @@ undefined4 FUN_0049dbd0(int param_1)
 
     if (fVar1 < *(float *)(DAT_00632ed8 + 0xd04) * *(float *)(DAT_00632ed8 + 0xd04)) {
 
-      iVar3 = FUN_004d5730(100);
+      iVar3 = crt_rand_scaled(100);
 
       if (iVar3 < 0x32) {
 

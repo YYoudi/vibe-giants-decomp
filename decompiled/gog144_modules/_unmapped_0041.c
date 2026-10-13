@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (13 named) — decompiled, names from PS2 symbols
+ * 100 functions (14 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -1813,7 +1813,7 @@ void FUN_00412df0(int param_1)
 
                         }
 
-                        FUN_0050ae40(fVar2 + local_b0,&local_54,&local_a0);
+                        sine_cos_lookup(fVar2 + local_b0,&local_54,&local_a0);
 
                         fVar11 = (float10)FUN_0050a520(pfVar9,pfVar8);
 
@@ -3471,7 +3471,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
     fVar8 = (float10)FUN_0050a400();
 
-    FUN_0050ae40((float)fVar8,&local_30,&local_2c);
+    sine_cos_lookup((float)fVar8,&local_30,&local_2c);
 
     *param_3 = local_30 * *(float *)(DAT_006330e4 + 0x1c0) * 0.25 + *param_3;
 
@@ -11629,14 +11629,14 @@ void FUN_0041f100(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0041f120 @ 0x0041F120 ===== */
+/* ===== hud_status_main @ 0x0041F120 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: turret_process (conf 0.469) */
 
 
 
-void FUN_0041f120(void)
+void hud_status_main(void)
 
 
 

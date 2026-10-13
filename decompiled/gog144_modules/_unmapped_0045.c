@@ -4500,9 +4500,9 @@ void FUN_00455890(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   FUN_0040d6f0(&local_30,&local_2c,local_1c,local_c);
 
-  FUN_0050ae40(local_30,&local_28,&local_24);
+  sine_cos_lookup(local_30,&local_28,&local_24);
 
-  FUN_0050ae40(local_2c,&local_20,&local_34);
+  sine_cos_lookup(local_2c,&local_20,&local_34);
 
   local_18 = local_34 * local_28;
 
@@ -5455,7 +5455,7 @@ int FUN_00456470(int param_1,undefined4 param_2,int param_3)
 
     if (*(int *)(iVar2 + 0xe8) == 1) {
 
-      iVar3 = FUN_004d5730(100);
+      iVar3 = crt_rand_scaled(100);
 
       if (iVar3 < 0x21) {
 
@@ -10968,7 +10968,7 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 
       fVar1 = (float)fVar4;
 
-      FUN_0050ae40((float)fVar3,&param_3,&param_1);
+      sine_cos_lookup((float)fVar3,&param_3,&param_1);
 
       fStack_40 = (param_3 * _DAT_0055abbc + fStack_28 * param_1) * fVar1 * param_2 + fStack_40;
 

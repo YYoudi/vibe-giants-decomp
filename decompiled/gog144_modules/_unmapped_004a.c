@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (33 named) — decompiled, names from PS2 symbols
+ * 131 functions (34 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3982,7 +3982,7 @@ int FUN_004a4770(int param_1)
 
     *(float *)(iVar5 + 200) = (float)fVar6;
 
-    FUN_0050ae40((float)fVar6,&local_8,&local_4);
+    sine_cos_lookup((float)fVar6,&local_8,&local_4);
 
     *pfVar2 = *pfVar1 - local_8 * 20.0;
 
@@ -4093,7 +4093,7 @@ void FUN_004a48a0(float param_1)
 
     }
 
-    FUN_0050ae40(local_24,&param_1,&local_2c);
+    sine_cos_lookup(local_24,&param_1,&local_2c);
 
     fVar6 = (float10)FUN_00518b70(fVar4,0);
 
@@ -4187,7 +4187,7 @@ void FUN_004a48a0(float param_1)
 
     }
 
-    FUN_0050ae40((float)fVar6,&param_1,&local_2c);
+    sine_cos_lookup((float)fVar6,&param_1,&local_2c);
 
     local_18 = param_1 * local_28 + *(float *)(*(int *)((int)fVar4 + 0x274) + 0xa0);
 
@@ -4931,7 +4931,7 @@ void FUN_004a59a0(void)
 
     if (DAT_00632af7 != '\0') {
 
-      FUN_0050ae40(*(undefined4 *)(DAT_00632a88 + 200),&local_18,&local_14);
+      sine_cos_lookup(*(undefined4 *)(DAT_00632a88 + 200),&local_18,&local_14);
 
       if (*(char *)(DAT_00632a88 + 0x20a) != '\0') {
 
@@ -4989,7 +4989,7 @@ void FUN_004a59a0(void)
 
   FUN_0040d6f0(&local_24,&local_28,&local_10,&local_c);
 
-  FUN_0050ae40(local_24,&local_1c,&local_20);
+  sine_cos_lookup(local_24,&local_1c,&local_20);
 
   if (DAT_00632af7 == '\0') {
 
@@ -6050,7 +6050,7 @@ void FUN_004a6730(int param_1)
 
   }
 
-  FUN_004a6c00(param_1);
+  obj_scale_compute(param_1);
 
   if ((*(uint *)(param_1 + 0xd8) & 0x10) == 0) {
 
@@ -6326,12 +6326,12 @@ void FUN_004a6b60(int param_1)
 
 }
 
-/* ===== FUN_004a6c00 @ 0x004A6C00 ===== */
+/* ===== obj_scale_compute @ 0x004A6C00 ===== */
 /* PS2 candidate: playerobj_walkrun (conf 0.474) */
 
 
 
-void FUN_004a6c00(float param_1)
+void obj_scale_compute(float param_1)
 
 
 
@@ -6361,7 +6361,7 @@ void FUN_004a6c00(float param_1)
 
   iVar4 = (int)param_1;
 
-  FUN_0050ae40(*(undefined4 *)((int)param_1 + 200),&local_8,&local_4);
+  sine_cos_lookup(*(undefined4 *)((int)param_1 + 200),&local_8,&local_4);
 
   fVar3 = (float)(int)*(char *)((int)param_1 + 0x20a) * 0.03125;
 
@@ -6824,11 +6824,11 @@ void FUN_004a7440(int param_1)
 
     fVar1 = *(float *)(param_1 + 0xc4);
 
-    FUN_0050ae40(-*(float *)(param_1 + 0xcc),&local_18,&local_14);
+    sine_cos_lookup(-*(float *)(param_1 + 0xcc),&local_18,&local_14);
 
-    FUN_0050ae40(*(undefined4 *)(param_1 + 0xd0),&local_4,&local_8);
+    sine_cos_lookup(*(undefined4 *)(param_1 + 0xd0),&local_4,&local_8);
 
-    FUN_0050ae40(*(undefined4 *)(param_1 + 200),&local_10,&local_c);
+    sine_cos_lookup(*(undefined4 *)(param_1 + 200),&local_10,&local_c);
 
     *(float *)(param_1 + 0x298) = local_c * local_8 * fVar1;
 
@@ -7208,11 +7208,11 @@ void FUN_004a7df0(float *param_1,float param_2,undefined4 param_3)
 
   pfVar1 = param_1 + 1;
 
-  FUN_0050ae40(param_2,param_1,pfVar1);
+  sine_cos_lookup(param_2,param_1,pfVar1);
 
   *pfVar1 = -*pfVar1;
 
-  FUN_0050ae40(param_3,&param_2,&param_1);
+  sine_cos_lookup(param_3,&param_2,&param_1);
 
   pfVar2[2] = param_2;
 

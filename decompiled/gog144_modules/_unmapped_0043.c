@@ -1076,7 +1076,7 @@ void FUN_00431a00(undefined4 *param_1,float param_2,float param_3,float param_4,
 
   (&DAT_0059cabc)[iVar4 * 8] = (param_2 * param_3) / (param_4 - param_5);
 
-  iVar2 = FUN_004d5730(100);
+  iVar2 = crt_rand_scaled(100);
 
   if (iVar2 < 0x32) {
 
@@ -1177,7 +1177,7 @@ void FUN_00431ae0(undefined4 *param_1)
 
   }
 
-  iVar5 = FUN_004d5730(100);
+  iVar5 = crt_rand_scaled(100);
 
   if (0x31 < iVar5) {
 
@@ -1320,7 +1320,7 @@ void FUN_00431b80(void)
 
     (&DAT_0059cabc)[iVar12 * 8] = (fVar4 * fVar3) / (fVar2 - fVar1);
 
-    iVar7 = FUN_004d5730(100);
+    iVar7 = crt_rand_scaled(100);
 
     if (iVar7 < 0x32) {
 

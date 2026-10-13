@@ -480,7 +480,7 @@ void FUN_00480540(int param_1)
 
         }
 
-        FUN_0050ae40(*(undefined4 *)(param_1 + 200),&local_14,&local_10);
+        sine_cos_lookup(*(undefined4 *)(param_1 + 200),&local_14,&local_10);
 
         local_4 = *(undefined4 *)(param_1 + 0xa8);
 
@@ -701,7 +701,7 @@ LAB_0048097d:
 
        (*(float *)(iVar1 + 0x114) == 0.0)) {
 
-      if (((*(byte *)(param_1 + 0x30) & 2) == 0) || (iVar3 = FUN_004d5730(100), iVar3 < 0x42))
+      if (((*(byte *)(param_1 + 0x30) & 2) == 0) || (iVar3 = crt_rand_scaled(100), iVar3 < 0x42))
 
       goto LAB_00480988;
 

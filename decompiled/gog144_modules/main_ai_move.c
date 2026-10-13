@@ -2090,7 +2090,7 @@ LAB_00403218:
 
       iVar10 = param_3;
 
-      FUN_0050ae40((float)(int)param_3 * 90.0 + fVar2,&param_1,&param_2);
+      sine_cos_lookup((float)(int)param_3 * 90.0 + fVar2,&param_1,&param_2);
 
       fStack_28 = param_1 * *(float *)(DAT_006330e4 + 0x1c0) * 0.5 + *pfVar1;
 

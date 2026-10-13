@@ -362,7 +362,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
             FUN_00519a50();
 
-            FUN_0041f120();
+            hud_status_main();
 
             if (((DAT_00632aa8 != '\0') || (DAT_00632aab != '\0')) ||
 
@@ -448,7 +448,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
           FUN_00519a50();
 
-          FUN_0041f120();
+          hud_status_main();
 
         } while ((((DAT_00632aa8 == '\0') && (DAT_00632aab == '\0')) && (DAT_00632aae == '\0')) &&
 

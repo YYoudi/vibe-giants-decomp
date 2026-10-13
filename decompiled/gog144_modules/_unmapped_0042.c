@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (60 named) — decompiled, names from PS2 symbols
+ * 129 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -15673,7 +15673,7 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
     fVar3 = *(float *)(param_1 + 0xc4);
 
-    FUN_0050ae40(*(undefined4 *)(param_1 + 0xd0),&local_11c,&local_114);
+    sine_cos_lookup(*(undefined4 *)(param_1 + 0xd0),&local_11c,&local_114);
 
     local_24 = local_114 * fVar3;
 
@@ -17143,29 +17143,29 @@ void FUN_0042d8a0(int param_1)
 
   (**(code **)(DAT_0065642c + 8))(DAT_0065642c,0x60100,0,0x80ffffff);
 
-  FUN_0042f8e0(local_1c0,&local_188,&local_150);
+  status_bar_update3(local_1c0,&local_188,&local_150);
 
-  FUN_0042f8e0(local_1c0,&local_150,&local_118);
+  status_bar_update3(local_1c0,&local_150,&local_118);
 
-  FUN_0042f8e0(local_1c0,&local_118,&local_e0);
+  status_bar_update3(local_1c0,&local_118,&local_e0);
 
-  FUN_0042f8e0(&local_e0,&local_118,&local_38);
+  status_bar_update3(&local_e0,&local_118,&local_38);
 
-  FUN_0042f8e0(&local_118,&local_150,&local_70);
+  status_bar_update3(&local_118,&local_150,&local_70);
 
-  FUN_0042f8e0(&local_118,&local_70,&local_38);
+  status_bar_update3(&local_118,&local_70,&local_38);
 
-  FUN_0042f8e0(&local_188,&local_70,&local_150);
+  status_bar_update3(&local_188,&local_70,&local_150);
 
-  FUN_0042f8e0(&local_188,&local_a8,&local_70);
+  status_bar_update3(&local_188,&local_a8,&local_70);
 
-  FUN_0042f8e0(&local_a8,&local_38,&local_70);
+  status_bar_update3(&local_a8,&local_38,&local_70);
 
-  FUN_0042f8e0(&local_a8,&local_e0,&local_38);
+  status_bar_update3(&local_a8,&local_e0,&local_38);
 
-  FUN_0042f8e0(local_1c0,&local_a8,&local_188);
+  status_bar_update3(local_1c0,&local_a8,&local_188);
 
-  FUN_0042f8e0(local_1c0,&local_e0,&local_a8);
+  status_bar_update3(local_1c0,&local_e0,&local_a8);
 
   *(uint *)(param_1 + 0xdc) = *(uint *)(param_1 + 0xdc) & 0xfffff9ff;
 
@@ -18497,9 +18497,9 @@ void FUN_0042ec90(float *param_1,float param_2,float param_3)
 
   do {
 
-    FUN_0042f8e0(afStack_1c0 + (uint)pbVar4[-1] * 0xe,afStack_1c0 + (uint)*pbVar4 * 0xe,
+    status_bar_update3(afStack_1c0 + (uint)pbVar4[-1] * 0xe,afStack_1c0 + (uint)*pbVar4 * 0xe,
 
-                 afStack_1c0 + (uint)pbVar4[1] * 0xe);
+                       afStack_1c0 + (uint)pbVar4[1] * 0xe);
 
     pbVar4 = pbVar4 + 3;
 
@@ -18574,7 +18574,7 @@ void FUN_0042ed90(float *param_1,float param_2,undefined4 param_3)
 
     local_98 = local_98 + 18.0;
 
-    FUN_0050ae40(local_98,&local_78,&local_74);
+    sine_cos_lookup(local_98,&local_78,&local_74);
 
     fVar1 = param_1[2];
 
@@ -18881,9 +18881,9 @@ void FUN_0042ef80(void)
 
         FUN_00516d80(3,auStack_268);
 
-        FUN_0042f8e0(auStack_268,&uStack_230,&uStack_1f8);
+        status_bar_update3(auStack_268,&uStack_230,&uStack_1f8);
 
-        FUN_0042f8e0(auStack_268,&uStack_1f8,&uStack_230);
+        status_bar_update3(auStack_268,&uStack_1f8,&uStack_230);
 
         iVar7 = iVar7 + 1;
 
@@ -19003,9 +19003,11 @@ void FUN_0042ef80(void)
 
         do {
 
-          FUN_0042f8e0(auStack_1c0 + (uint)pbVar11[-1] * 0xe,auStack_1c0 + (uint)*pbVar11 * 0xe,
+          status_bar_update3(auStack_1c0 + (uint)pbVar11[-1] * 0xe,
 
-                       auStack_1c0 + (uint)pbVar11[1] * 0xe);
+                             auStack_1c0 + (uint)*pbVar11 * 0xe,auStack_1c0 + (uint)pbVar11[1] * 0xe
+
+                            );
 
           pbVar11 = pbVar11 + 3;
 
@@ -19402,8 +19404,8 @@ void FUN_0042f4f0(undefined4 param_1,undefined4 param_2,int param_3,int param_4,
 
 }
 
-/* ===== FUN_0042f8e0 @ 0x0042F8E0 ===== */
-void FUN_0042f8e0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
+/* ===== status_bar_update3 @ 0x0042F8E0 ===== */
+void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
