@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (66 named) — decompiled, names from PS2 symbols
+ * 100 functions (67 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -5195,7 +5195,7 @@ void dlog_pop_user(void)
 
   if (DAT_00657564 != 0) {
 
-    FUN_00497510(DAT_00657564);
+    object_destroy(DAT_00657564);
 
   }
 
@@ -7256,7 +7256,7 @@ undefined4 object_spawn_class5(int param_1,float param_2)
 
     local_48 = *(float *)((int)fVar2 + 0xa8) - (float)piVar1[6];
 
-    FUN_004993c0(iVar3,&local_50);
+    object_set_location_p3d(iVar3,&local_50);
 
     *(float *)(iVar3 + 200) = *(float *)((int)fVar2 + 200) - (float)piVar1[7];
 
@@ -7330,7 +7330,7 @@ undefined4 object_spawn_class5(int param_1,float param_2)
 
       param_2 = (float)(fVar8 + (float10)90.0);
 
-      FUN_004993c0(fVar4,&local_50);
+      object_set_location_p3d(fVar4,&local_50);
 
       *(float *)((int)fVar4 + 200) = param_2;
 
@@ -7388,12 +7388,12 @@ LAB_00418bc3:
 
 }
 
-/* ===== FUN_00418c80 @ 0x00418C80 ===== */
+/* ===== base_bldg_pulsate @ 0x00418C80 ===== */
 /* PS2 candidate: base_bldg_pulsate (conf 0.473) */
 
 
 
-void FUN_00418c80(int param_1)
+void base_bldg_pulsate(int param_1)
 
 
 
@@ -8097,7 +8097,7 @@ void objtype_setup_spell(undefined4 param_1)
 
       *(float *)(iVar4 + 200) = (float)(fVar10 + (float10)90.0);
 
-      FUN_004993c0(iVar4,&local_94);
+      object_set_location_p3d(iVar4,&local_94);
 
       puVar2 = *(undefined4 **)(iVar4 + 0x100);
 
@@ -8202,7 +8202,7 @@ void objtype_setup_combat(int param_1,float param_2)
 
   *(int *)(iVar3 + 0x20) = iVar2;
 
-  FUN_004993c0(iVar2,iVar3 + 0x24);
+  object_set_location_p3d(iVar2,iVar3 + 0x24);
 
   *(undefined4 *)(iVar2 + 200) = *(undefined4 *)(iVar3 + 0x30);
 
@@ -8522,7 +8522,7 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   *(undefined4 *)(iVar3 + 200) = param_4;
 
-  FUN_004993c0(iVar3,param_3);
+  object_set_location_p3d(iVar3,param_3);
 
   pfVar1 = *(float **)(iVar3 + 0x100);
 
@@ -8837,7 +8837,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   *(undefined4 *)(iVar4 + 0x278) = param_8;
 
-  FUN_004993c0(iVar4,param_5);
+  object_set_location_p3d(iVar4,param_5);
 
   pfVar2 = *(float **)(iVar4 + 0x100);
 
@@ -9096,7 +9096,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     local_48 = *(float *)(param_2 + 0xa8) - (float)piVar1[6];
 
-    FUN_004993c0(iVar2,&local_50);
+    object_set_location_p3d(iVar2,&local_50);
 
     *(float *)(iVar2 + 200) = *(float *)(param_2 + 200) - (float)piVar1[7];
 
@@ -9146,11 +9146,11 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     fVar6 = (float10)FUN_0050a390(-local_2c,-local_44[2]);
 
-    FUN_004993c0(param_1,&local_50);
+    object_set_location_p3d(param_1,&local_50);
 
     *(float *)(param_1 + 200) = (float)(fVar6 + (float10)90.0);
 
-    FUN_00497510(iVar2);
+    object_destroy(iVar2);
 
   }
 
@@ -9758,7 +9758,7 @@ LAB_0041bba6:
 
         if ((local_8 != 0) && (*(int *)(iVar3 + 0x274) != 0)) {
 
-          FUN_00401000(iVar3);
+          ai_clear_move_goal(iVar3);
 
           smartie_clear_held_object(iVar3);
 
@@ -9882,7 +9882,7 @@ LAB_0041bdd7:
 
     local_c = piVar7;
 
-    FUN_00401000(iVar4);
+    ai_clear_move_goal(iVar4);
 
     smartie_clear_held_object(iVar4);
 
@@ -10425,7 +10425,7 @@ int objtype_setup_reaper(float param_1)
 
   *(int *)(iVar6 + 0x20) = iVar4;
 
-  FUN_004993c0(iVar4,iVar6 + 0x24);
+  object_set_location_p3d(iVar4,iVar6 + 0x24);
 
   *(undefined4 *)(iVar4 + 200) = *(undefined4 *)(iVar6 + 0x30);
 
@@ -10567,7 +10567,7 @@ LAB_0041e5bd:
 
           *(undefined4 *)(iVar6 + 0xe4) = 0x1e;
 
-          FUN_00401000(iVar6);
+          ai_clear_move_goal(iVar6);
 
           *(undefined4 *)(*(int *)(iVar6 + 0x100) + 0x28) = 0xffffffff;
 
@@ -11080,7 +11080,7 @@ LAB_0041eb75:
 
     }
 
-    FUN_00497510(iVar2);
+    object_destroy(iVar2);
 
     DAT_00657678 = 1;
 
@@ -11276,7 +11276,7 @@ LAB_0041ecb2:
 
   }
 
-  FUN_00497510(iVar3);
+  object_destroy(iVar3);
 
   iVar6 = *(int *)(param_1 + 0x100);
 
@@ -11587,7 +11587,7 @@ void objtype_setup_kabuto(int param_1)
 
     }
 
-    FUN_00497510(iVar2);
+    object_destroy(iVar2);
 
     obj_group_spread(param_1);
 

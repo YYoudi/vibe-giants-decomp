@@ -94,7 +94,7 @@ void main_demo_004267a0(void)
 
                       }
 
-                      FUN_00497510(iVar4);
+                      object_destroy(iVar4);
 
                     }
 
@@ -294,7 +294,7 @@ void main_demo_004267a0(void)
 
           }
 
-          FUN_00497510(iVar4);
+          object_destroy(iVar4);
 
         }
 
@@ -393,7 +393,7 @@ undefined4 main_demo_00426c10(void)
 
             }
 
-            FUN_00497510(iVar6);
+            object_destroy(iVar6);
 
           }
 
@@ -505,7 +505,7 @@ undefined4 main_demo_00426c10(void)
 
                 }
 
-                FUN_00497510(iVar6);
+                object_destroy(iVar6);
 
               }
 

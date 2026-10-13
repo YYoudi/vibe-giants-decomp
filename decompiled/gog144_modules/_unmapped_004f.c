@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (26 named) — decompiled, names from PS2 symbols
+ * 48 functions (30 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -175,7 +175,7 @@ void smartie_animselect(int param_1)
 
   *(undefined4 *)(iVar3 + 0x18c) = *(undefined4 *)(param_1 + 0x20);
 
-  FUN_004993c0(iVar3,param_1);
+  object_set_location_p3d(iVar3,param_1);
 
   *(undefined4 *)(iVar3 + 200) = *(undefined4 *)(param_1 + 0xc);
 
@@ -243,7 +243,7 @@ void smartie_animselect(int param_1)
 
         *(undefined4 *)(*(int *)(iVar8 + 0x30) + 0x210) = 0;
 
-        FUN_00497510(*(undefined4 *)(iVar8 + 0x30));
+        object_destroy(*(undefined4 *)(iVar8 + 0x30));
 
         *(undefined4 *)(iVar8 + 0x30) = 0;
 
@@ -327,12 +327,14 @@ void smartie_animselect(int param_1)
 
 }
 
-/* ===== FUN_004f3de0 @ 0x004F3DE0 ===== */
+/* ===== smartie_start_special_building @ 0x004F3DE0 ===== */
 /* PS2 candidate: smartie_start_special_building (conf 0.468) */
 
 
 
-void FUN_004f3de0(int param_1,int param_2,int param_3,int param_4,float *param_5,undefined4 param_6)
+void smartie_start_special_building
+
+               (int param_1,int param_2,int param_3,int param_4,float *param_5,undefined4 param_6)
 
 
 
@@ -762,7 +764,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  FUN_00401000(param_1);
+  ai_clear_move_goal(param_1);
 
   *(undefined4 *)(param_1 + 0x274) = param_2;
 
@@ -818,7 +820,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
         playerobj_eval_refpt(*(undefined4 *)(param_1 + 0x274),0xb,local_40);
 
-        FUN_004993c0(param_1,local_40);
+        object_set_location_p3d(param_1,local_40);
 
         *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x20;
 
@@ -874,7 +876,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
     playerobj_eval_refpt(*(undefined4 *)(param_1 + 0x274),10,local_40);
 
-    FUN_004993c0(param_1,local_40);
+    object_set_location_p3d(param_1,local_40);
 
     sound_play_player(0x5e6,*(undefined4 *)(param_1 + 0x274));
 
@@ -922,12 +924,12 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== FUN_004f4ed0 @ 0x004F4ED0 ===== */
+/* ===== smartie_find_legal_nearby_base__FP6OBJECTT0 @ 0x004F4ED0 ===== */
 /* PS2 candidate: smartie_find_legal_nearby_base__FP6OBJECTT0 (conf 0.467) */
 
 
 
-int FUN_004f4ed0(int param_1,int param_2)
+int smartie_find_legal_nearby_base__FP6OBJECTT0(int param_1,int param_2)
 
 
 
@@ -1042,7 +1044,7 @@ void smartie_escape_reaper_grab(float param_1)
 
   if (*(int *)(iVar2 + 0xbc) != 0) {
 
-    FUN_00495ee0(iVar2 + 0xbc);
+    sound_interrupt_sequence(iVar2 + 0xbc);
 
   }
 
@@ -1107,7 +1109,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
     *(undefined4 *)(*(int *)(iVar5 + 0x30) + 0x210) = 0;
 
-    FUN_00497510(*(undefined4 *)(iVar5 + 0x30));
+    object_destroy(*(undefined4 *)(iVar5 + 0x30));
 
     *(undefined4 *)(iVar5 + 0x30) = 0;
 
@@ -1233,7 +1235,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
     if (*(int *)(iVar5 + 0xbc) != 0) {
 
-      FUN_00495ee0(iVar5 + 0xbc);
+      sound_interrupt_sequence(iVar5 + 0xbc);
 
     }
 
@@ -1525,7 +1527,7 @@ void reaper_lock_pair_4f(int param_1)
 
       *(undefined4 *)(*(int *)(iVar1 + 0x30) + 0x210) = 0;
 
-      FUN_00497510(*(undefined4 *)(iVar1 + 0x30));
+      object_destroy(*(undefined4 *)(iVar1 + 0x30));
 
       *(undefined4 *)(iVar1 + 0x30) = 0;
 
@@ -1543,7 +1545,7 @@ void reaper_lock_pair_4f(int param_1)
 
     FUN_004177f0(*(undefined4 *)(param_1 + 0x274),param_1);
 
-    FUN_00401000(param_1);
+    ai_clear_move_goal(param_1);
 
     iVar2 = meccbasepit_bldg_from_object(*(undefined4 *)(param_1 + 0x274));
 
@@ -1620,7 +1622,7 @@ void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
         *(undefined4 *)(*(int *)(iVar1 + 0x30) + 0x210) = 0;
 
-        FUN_00497510(*(undefined4 *)(iVar1 + 0x30));
+        object_destroy(*(undefined4 *)(iVar1 + 0x30));
 
         *(undefined4 *)(iVar1 + 0x30) = 0;
 
@@ -1638,7 +1640,7 @@ void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
       FUN_004177f0(*(undefined4 *)(param_1 + 0x274),param_1);
 
-      FUN_00401000(param_1);
+      ai_clear_move_goal(param_1);
 
       iVar2 = meccbasepit_bldg_from_object(*(undefined4 *)(param_1 + 0x274));
 
@@ -1702,7 +1704,7 @@ void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
     *(undefined4 *)(param_1 + 0xe4) = 0x32;
 
-    FUN_004993c0(param_1,&local_40);
+    object_set_location_p3d(param_1,&local_40);
 
     *(float *)(param_1 + 200) = *(float *)(*(int *)(param_1 + 0x274) + 200) + 180.0;
 
@@ -1744,14 +1746,14 @@ void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004f5950 @ 0x004F5950 ===== */
+/* ===== smartie_check_follow__FP6OBJECTf @ 0x004F5950 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: smartie_check_follow__FP6OBJECTf (conf 0.469) */
 
 
 
-int FUN_004f5950(int param_1,float param_2)
+int smartie_check_follow__FP6OBJECTf(int param_1,float param_2)
 
 
 
@@ -2080,7 +2082,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
       *(undefined4 *)(*(int *)(iVar2 + 0x30) + 0x210) = 0;
 
-      FUN_00497510(*(undefined4 *)(iVar2 + 0x30));
+      object_destroy(*(undefined4 *)(iVar2 + 0x30));
 
       *(undefined4 *)(iVar2 + 0x30) = 0;
 
@@ -2098,7 +2100,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
     FUN_004177f0(*(undefined4 *)(param_1 + 0x274),param_1);
 
-    FUN_00401000(param_1);
+    ai_clear_move_goal(param_1);
 
     iVar6 = meccbasepit_bldg_from_object(*(undefined4 *)(param_1 + 0x274));
 
@@ -2333,7 +2335,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
             *(undefined4 *)(*(int *)(iVar3 + 0x30) + 0x210) = 0;
 
-            FUN_00497510(*(undefined4 *)(iVar3 + 0x30));
+            object_destroy(*(undefined4 *)(iVar3 + 0x30));
 
             *(undefined4 *)(iVar3 + 0x30) = 0;
 
@@ -2515,7 +2517,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
   if (param_1 == 3) {
 
-    FUN_00497510(param_3);
+    object_destroy(param_3);
 
     return;
 
@@ -2597,7 +2599,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
               FUN_004177f0(iVar4,param_3);
 
-              FUN_00401000(param_3);
+              ai_clear_move_goal(param_3);
 
               break;
 
@@ -2629,7 +2631,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
               }
 
-              FUN_00401000(param_3);
+              ai_clear_move_goal(param_3);
 
             }
 
@@ -2653,7 +2655,7 @@ switchD_004f7908_caseD_20:
 
             }
 
-            FUN_00497510(param_3);
+            object_destroy(param_3);
 
           }
 
@@ -2774,7 +2776,7 @@ void smartie_clear_held_object(int param_1)
 
     *(undefined4 *)(*(int *)(iVar1 + 0x30) + 0x210) = 0;
 
-    FUN_00497510(*(undefined4 *)(iVar1 + 0x30));
+    object_destroy(*(undefined4 *)(iVar1 + 0x30));
 
     *(undefined4 *)(iVar1 + 0x30) = 0;
 
@@ -3188,7 +3190,7 @@ void FUN_004f8360(float param_1)
 
         }
 
-        FUN_00497510(param_1);
+        object_destroy(param_1);
 
       }
 
@@ -3455,7 +3457,7 @@ void obj_sound_cleanup(undefined4 *param_1)
 
   if (*(float *)(iVar3 + 0xec) < 0.0) {
 
-    FUN_00497510(iVar3);
+    object_destroy(iVar3);
 
     *(undefined4 *)(iVar3 + 0xec) = 0;
 
@@ -3496,7 +3498,7 @@ int FUN_004f8800(float param_1)
 
   pfVar2 = *(float **)(iVar4 + 0x100);
 
-  FUN_004993c0(iVar4,(int)param_1 + 0xa0);
+  object_set_location_p3d(iVar4,(int)param_1 + 0xa0);
 
   fVar5 = (float10)rndfloatrange(*(undefined4 *)(iVar1 + 0x28),*(undefined4 *)(iVar1 + 0x2c));
 
@@ -3603,12 +3605,12 @@ void main_smoke_004f90e0(undefined4 param_1,float param_2)
 
 }
 
-/* ===== FUN_004f9380 @ 0x004F9380 ===== */
+/* ===== ripper_medium_move__FP6OBJECT @ 0x004F9380 ===== */
 /* PS2 candidate: ripper_medium_move__FP6OBJECT (conf 0.464) */
 
 
 
-void FUN_004f9380(int param_1)
+void ripper_medium_move__FP6OBJECT(int param_1)
 
 
 

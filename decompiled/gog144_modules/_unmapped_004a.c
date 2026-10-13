@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (78 named) — decompiled, names from PS2 symbols
+ * 131 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -4215,7 +4215,7 @@ LAB_004a49ca:
 
       bVar3 = true;
 
-      FUN_004993c0(fVar4,&local_18);
+      object_set_location_p3d(fVar4,&local_18);
 
     }
 
@@ -5442,7 +5442,7 @@ void FUN_004a5f40(int param_1)
 
     FUN_0049baa0(DAT_00632a88);
 
-    FUN_00499cd0(DAT_00632a88);
+    object_free_all_allocated_data(DAT_00632a88);
 
     iVar2 = FUN_00497d70(param_1);
 
@@ -9443,12 +9443,12 @@ int FUN_004aa0b0(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004aa230 @ 0x004AA230 ===== */
+/* ===== PROJ_Create2 @ 0x004AA230 ===== */
 /* PS2 candidate: PROJ_Create2 (conf 0.479) */
 
 
 
-int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+int PROJ_Create2(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 
                 undefined4 param_5,float *param_6)
 
@@ -9644,7 +9644,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     trajectory_calculate(iVar2 + 0x128,&local_13c,param_6,&local_124,local_12c);
 
-    FUN_004993c0(iVar2,&local_13c);
+    object_set_location_p3d(iVar2,&local_13c);
 
   }
 
@@ -10268,7 +10268,7 @@ LAB_004ac241:
 
 LAB_004ac24a:
 
-    FUN_00497510(param_1);
+    object_destroy(param_1);
 
     return;
 
@@ -10332,7 +10332,7 @@ LAB_004ac24a:
 
     }
 
-    FUN_00497510(param_1);
+    object_destroy(param_1);
 
     return;
 
@@ -10538,7 +10538,7 @@ LAB_004ac24a:
 
         sound_play_3dpos(local_78,param_4);
 
-        FUN_00497510(param_1);
+        object_destroy(param_1);
 
         return;
 
@@ -10546,7 +10546,7 @@ LAB_004ac24a:
 
       sound_play_3dpos(iVar3,param_4);
 
-      FUN_00497510(param_1);
+      object_destroy(param_1);
 
       return;
 

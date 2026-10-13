@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (102 named) — decompiled, names from PS2 symbols
+ * 186 functions (103 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -465,7 +465,7 @@ void FUN_005116e0(int param_1)
 
       if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
 
-        FUN_00497510(param_1);
+        object_destroy(param_1);
 
         return;
 
@@ -2580,12 +2580,12 @@ int FUN_00513ee0(int param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_00513fa0 @ 0x00513FA0 ===== */
+/* ===== wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT @ 0x00513FA0 ===== */
 /* PS2 candidate: wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT (conf 0.476) */
 
 
 
-int FUN_00513fa0(int *param_1,int param_2)
+int wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT(int *param_1,int param_2)
 
 
 
@@ -3976,7 +3976,9 @@ void FUN_00515090(int param_1)
 
   local_b0 = param_1;
 
-  iVar2 = FUN_00513fa0(&local_b0,*(undefined4 *)(param_1 + 0x48));
+  iVar2 = wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT
+
+                    (&local_b0,*(undefined4 *)(param_1 + 0x48));
 
   if ((local_c != 0.0) || (*(float *)(param_1 + 0x40) < 0.0 == (*(float *)(param_1 + 0x40) == 0.0)))
 
@@ -16387,7 +16389,7 @@ void comm_tcpip_menu(void)
 
   if (DAT_0059ee98 != 0) {
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
   }
 

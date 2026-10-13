@@ -4229,7 +4229,7 @@ int main_editor_004382b0(int param_1,int param_2)
 
   if (*(int *)(param_1 + 4) != *(int *)(param_2 + 0x34)) {
 
-    FUN_00497510(param_1);
+    object_destroy(param_1);
 
     param_1 = object_spawn_42(*(undefined4 *)(param_2 + 0x34));
 
@@ -8758,7 +8758,7 @@ void wredit_menu_7(int param_1)
 
           *(undefined4 *)(iVar7 + 0x210) = 0;
 
-          FUN_00497510(iVar7);
+          object_destroy(iVar7);
 
           iVar2 = object_spawn_small(iVar6,DAT_0059cc30,iVar2,DAT_0059cc34,0);
 

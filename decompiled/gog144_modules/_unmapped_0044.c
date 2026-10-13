@@ -1215,7 +1215,7 @@ void wredit_spawn_object(void)
 
     DAT_00632e7c = 0;
 
-    FUN_00497510(DAT_00632a88);
+    object_destroy(DAT_00632a88);
 
     DAT_00632a88 = DAT_0059cbb0;
 
@@ -1227,7 +1227,7 @@ void wredit_spawn_object(void)
 
   }
 
-  FUN_00497510(DAT_00632a88);
+  object_destroy(DAT_00632a88);
 
   DAT_00632a88 = DAT_0059cbb0;
 
@@ -1274,7 +1274,7 @@ void make_explosion_large(undefined4 param_1)
 
   *puVar2 = *(undefined4 *)(DAT_00632ed8 + 0x434);
 
-  FUN_004993c0(iVar3,param_1);
+  object_set_location_p3d(iVar3,param_1);
 
   if (0.0 < (float)puVar2[2]) {
 
@@ -1304,7 +1304,7 @@ void make_explosion_large(undefined4 param_1)
 
   *puVar2 = *(undefined4 *)(DAT_00632ed8 + 0x448);
 
-  FUN_004993c0(iVar3,param_1);
+  object_set_location_p3d(iVar3,param_1);
 
   if (0.0 < (float)puVar2[2]) {
 
@@ -1324,7 +1324,7 @@ void make_explosion_large(undefined4 param_1)
 
   anim_select_check2(iVar3,1);
 
-  FUN_004993c0(iVar3,param_1);
+  object_set_location_p3d(iVar3,param_1);
 
   *(uint *)(iVar3 + 0x30) = *(uint *)(iVar3 + 0x30) & 0xfffffffe;
 
@@ -1866,7 +1866,7 @@ void sound_3dpos_play(int param_1)
 
       if (fVar5 < (float10)25.0) {
 
-        FUN_00497510(param_1);
+        object_destroy(param_1);
 
         fVar3 = *(float *)(iVar1 + 0x278) - 1.0;
 
@@ -6182,7 +6182,7 @@ int flick_objects_reload(void)
 
       for (puVar1 = DAT_00632d84; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
-        FUN_00497510(puVar1[3]);
+        object_destroy(puVar1[3]);
 
       }
 
@@ -7433,7 +7433,7 @@ void mission_00447fd0(int param_1,uint param_2)
 
        ((param_1 != 0 || ((*(uint *)(iVar1 + 0xe4) & uVar5) != 0)))) {
 
-      FUN_00497510(iVar1);
+      object_destroy(iVar1);
 
     }
 
@@ -7732,7 +7732,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
     if (*(int *)(param_1 + 0xe8) != 0) {
 
-      FUN_00495ee0(param_1 + 0xe8);
+      sound_interrupt_sequence(param_1 + 0xe8);
 
     }
 
@@ -7772,7 +7772,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
     *(float *)(param_1 + 0x2c4) = local_38;
 
-    FUN_004993c0(param_1,&local_40);
+    object_set_location_p3d(param_1,&local_40);
 
     *(undefined4 *)(param_2 + 8) = 0;
 
@@ -7784,7 +7784,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
   }
 
-  FUN_00497510(param_1);
+  object_destroy(param_1);
 
   return;
 
@@ -7900,7 +7900,7 @@ void FUN_004489e0(int param_1,undefined4 *param_2)
 
       if (**(int **)(puVar1[3] + 0x100) == param_1 + 8) {
 
-        FUN_004993c0(puVar1[3],param_2);
+        object_set_location_p3d(puVar1[3],param_2);
 
       }
 
@@ -8264,7 +8264,7 @@ int fx_createObj__FP6FxDatai(int param_1,undefined4 param_2,int param_3,float pa
 
       }
 
-      FUN_004993c0(iVar4,*(int *)(param_1 + 0x3c) + 0xa0);
+      object_set_location_p3d(iVar4,*(int *)(param_1 + 0x3c) + 0xa0);
 
       iVar5 = *(int *)(param_1 + 0x3c);
 
@@ -12500,7 +12500,7 @@ LAB_0044de79:
 
         else {
 
-          FUN_00495ee0();
+          sound_interrupt_sequence();
 
         }
 

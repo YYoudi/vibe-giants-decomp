@@ -9069,7 +9069,7 @@ void FUN_00426ee0(void)
 
   }
 
-  FUN_00471a60(1);
+  game_loop_run(1);
 
   return;
 

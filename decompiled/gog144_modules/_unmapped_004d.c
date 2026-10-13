@@ -389,7 +389,7 @@ void FUN_004d1b30(int param_1)
 
   }
 
-  FUN_00497510(param_1);
+  object_destroy(param_1);
 
   return;
 
@@ -1906,7 +1906,7 @@ LAB_004d288a:
 
     }
 
-    FUN_00497510(param_1);
+    object_destroy(param_1);
 
   }
 
@@ -3124,7 +3124,7 @@ void FUN_004d4ae0(int param_1)
 
       *(float *)(iVar4 + 0xc4) = (float)fVar6;
 
-      FUN_004993c0(iVar4,(undefined4 *)(param_1 + 0xa0));
+      object_set_location_p3d(iVar4,(undefined4 *)(param_1 + 0xa0));
 
       fVar6 = (float10)FUN_004d5760(0x43b40000);
 
@@ -3241,7 +3241,7 @@ void FUN_004d4db0(int param_1)
 
     if ((*(int *)(param_1 + 0x10) == 0xc) && (uVar3 != 0)) {
 
-      FUN_00497510(param_1);
+      object_destroy(param_1);
 
       return;
 
@@ -3949,7 +3949,7 @@ void reaper_spell_sound_1(int param_1,undefined4 *param_2,undefined4 param_3)
 
     playerobj_eval_refpt(param_1,2,&local_60);
 
-    fVar4 = (float10)FUN_0050a490(&local_60,param_2);
+    fVar4 = (float10)dirucalcp3d__FP3P3DT0(&local_60,param_2);
 
     fVar5 = (float10)dirfcalcp3d__FP3P3DT0(&local_60,param_2);
 

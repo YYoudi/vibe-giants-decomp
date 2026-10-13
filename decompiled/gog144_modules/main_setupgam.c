@@ -240,7 +240,7 @@ void main_setupgam_004eda20(void)
 
         do {
 
-          FUN_00499cd0(*(int *)(DAT_006330e4 + 0x174) + iVar2);
+          object_free_all_allocated_data(*(int *)(DAT_006330e4 + 0x174) + iVar2);
 
           iVar4 = iVar4 + 1;
 

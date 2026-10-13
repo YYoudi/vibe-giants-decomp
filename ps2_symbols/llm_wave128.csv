@@ -1,0 +1,26 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00495ee0,FUN_00495ee0,,sound_interrupt_sequence,0.9,llm-w128,body-verified
+00456010,FUN_00456010,,gun_find_left,0.9,llm-w128,body-verified
+00471a60,FUN_00471a60,,game_loop_run,0.9,llm-w128,body-verified
+005035c0,FUN_005035c0,,teammecc_get_hideloc__FP6OBJECTi,0.9,llm-w128,body-verified
+004aa230,FUN_004aa230,,PROJ_Create2,0.9,llm-w128,body-verified
+004ea3e0,FUN_004ea3e0,,barracks_logic,0.9,llm-w128,body-verified
+00513fa0,FUN_00513fa0,,wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT,0.9,llm-w128,body-verified
+0045a4c0,FUN_0045a4c0,,item_use_ammo,0.9,llm-w128,body-verified
+00418c80,FUN_00418c80,,base_bldg_pulsate,0.9,llm-w128,body-verified
+0046aeb0,FUN_0046aeb0,,kbos_init,0.9,llm-w128,body-verified
+00494400,FUN_00494400,,mission_unload_mission_objects__Fv,0.9,llm-w128,body-verified
+0050a490,FUN_0050a490,,dirucalcp3d__FP3P3DT0,0.9,llm-w128,body-verified
+004f5950,FUN_004f5950,,smartie_check_follow__FP6OBJECTf,0.9,llm-w128,body-verified
+00401000,FUN_00401000,,ai_clear_move_goal,0.9,llm-w128,body-verified
+004f3de0,FUN_004f3de0,,smartie_start_special_building,0.9,llm-w128,body-verified
+00499cd0,FUN_00499cd0,,object_free_all_allocated_data,0.9,llm-w128,body-verified
+004993c0,FUN_004993c0,,object_set_location_p3d,0.9,llm-w128,body-verified
+004f4ed0,FUN_004f4ed0,,smartie_find_legal_nearby_base__FP6OBJECTT0,0.9,llm-w128,body-verified
+00497510,FUN_00497510,,object_destroy,0.9,llm-w128,body-verified
+00455c80,FUN_00455c80,,object_create_child,0.9,llm-w128,body-verified
+004ba1a0,FUN_004ba1a0,,reaper_xhair_validate__FP6OBJECTPv,0.9,llm-w128,body-verified
+004f9380,FUN_004f9380,,ripper_medium_move__FP6OBJECT,0.9,llm-w128,body-verified
+004e5f70,FUN_004e5f70,,rpman_rapid_fire__FP6OBJECTiii,0.9,llm-w128,body-verified
+0052d1c0,FUN_0052d1c0,,gamespy_process_queries,0.9,llm-w128,string-proven shutdown msg (rejected marker_follow_path)
+00494890,FUN_00494890,,dlog_mission_fail_menu,0.9,llm-w128,string-proven FailTitle/FailYes (rejected buoy_process)

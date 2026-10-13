@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (44 named) — decompiled, names from PS2 symbols
+ * 67 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1296,12 +1296,12 @@ LAB_00471872:
 
 }
 
-/* ===== FUN_00471a60 @ 0x00471A60 ===== */
+/* ===== game_loop_run @ 0x00471A60 ===== */
 /* PS2 candidate: game_loop_run (conf 0.48) */
 
 
 
-void FUN_00471a60(int param_1)
+void game_loop_run(int param_1)
 
 
 
@@ -3428,13 +3428,13 @@ void marker_spline_adjust_buoy(int param_1)
 
             if (iVar5 != 0) {
 
-              FUN_00497510(iVar5);
+              object_destroy(iVar5);
 
             }
 
             if (*(int *)(iVar4 + 0x58) != 0) {
 
-              FUN_00497510(*(int *)(iVar4 + 0x58));
+              object_destroy(*(int *)(iVar4 + 0x58));
 
             }
 
@@ -4091,7 +4091,7 @@ LAB_0047832a:
 
       if (iVar2 == param_1) {
 
-        FUN_00497510(iVar1);
+        object_destroy(iVar1);
 
       }
 
@@ -4245,7 +4245,7 @@ void FUN_004789e0(int param_1,char param_2,int *param_3,undefined4 *param_4)
 
     else {
 
-      iVar4 = FUN_00456010();
+      iVar4 = gun_find_left();
 
       *param_4 = 1;
 
@@ -4500,7 +4500,7 @@ LAB_00478c22:
 
   if (uVar2 == 0x2d) {
 
-    iVar4 = FUN_004aa230(0x2d,*(undefined4 *)((int)fVar1 + 0x18c),fVar1,10,0,&local_30);
+    iVar4 = PROJ_Create2(0x2d,*(undefined4 *)((int)fVar1 + 0x18c),fVar1,10,0,&local_30);
 
 LAB_00478e0d:
 
@@ -4550,7 +4550,7 @@ LAB_00478e0d:
 
   else {
 
-    iVar4 = FUN_004aa230(uVar7,*(undefined4 *)((int)fVar1 + 0x18c),param_2,local_48,param_4,
+    iVar4 = PROJ_Create2(uVar7,*(undefined4 *)((int)fVar1 + 0x18c),param_2,local_48,param_4,
 
                          &local_30);
 
@@ -5220,7 +5220,7 @@ LAB_0047c03e:
 
     if (iVar3 != 0) {
 
-      FUN_00497510(iVar3);
+      object_destroy(iVar3);
 
     }
 
@@ -5230,7 +5230,7 @@ LAB_0047c03e:
 
     if (iVar4 != 0) {
 
-      FUN_00497510(iVar4);
+      object_destroy(iVar4);
 
     }
 
@@ -5403,7 +5403,7 @@ void mecc_do_flare__FP6OBJECT(int param_1)
 
       if (iVar2 != 0) {
 
-        FUN_0045a4c0(param_1,0x40);
+        item_use_ammo(param_1,0x40);
 
       }
 
@@ -5699,7 +5699,7 @@ void mecc_do_health_grenade_mine2__FP6OBJECT(int param_1)
 
       if (iVar7 != 0) {
 
-        FUN_0045a4c0(iVar3,*(undefined4 *)(iVar1 + 0x124));
+        item_use_ammo(iVar3,*(undefined4 *)(iVar1 + 0x124));
 
       }
 
@@ -5772,7 +5772,7 @@ void sound_player_voice2(int param_1,int param_2,float param_3)
 
     FUN_00493d60(param_1,param_3);
 
-    FUN_00497510(param_2);
+    object_destroy(param_2);
 
     *(float *)(*(int *)(param_1 + 0x100) + 0x4c) =
 
@@ -6374,7 +6374,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x1ec) != 0) {
 
-        FUN_00495ee0(iVar5 + 0x1ec);
+        sound_interrupt_sequence(iVar5 + 0x1ec);
 
       }
 
@@ -6504,7 +6504,7 @@ LAB_0047cdb1:
 
     if (iVar5 != 0) {
 
-      FUN_00497510(iVar5);
+      object_destroy(iVar5);
 
       iVar5 = crt_rand_scaled(100);
 
@@ -6578,7 +6578,7 @@ LAB_0047cdb1:
 
     FUN_004789e0(iVar7,*(undefined1 *)(pfVar3 + 5),&param_1,&param_4);
 
-    iVar5 = FUN_004aa230(*(undefined1 *)(pfVar3 + 5),*(undefined4 *)(iVar7 + 0x18c),param_1,param_4,
+    iVar5 = PROJ_Create2(*(undefined1 *)(pfVar3 + 5),*(undefined4 *)(iVar7 + 0x18c),param_1,param_4,
 
                          uVar4,pfVar3);
 
@@ -6674,7 +6674,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x1ec) != 0) {
 
-        FUN_00495ee0(iVar5 + 0x1ec);
+        sound_interrupt_sequence(iVar5 + 0x1ec);
 
       }
 
@@ -6786,7 +6786,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x1ec) != 0) {
 
-        FUN_00495ee0(iVar5 + 0x1ec);
+        sound_interrupt_sequence(iVar5 + 0x1ec);
 
       }
 
@@ -6936,7 +6936,7 @@ LAB_0047d90a:
 
     if (*(int *)(iVar5 + 0x1ec) != 0) {
 
-      FUN_00495ee0(iVar5 + 0x1ec);
+      sound_interrupt_sequence(iVar5 + 0x1ec);
 
     }
 
@@ -7078,7 +7078,7 @@ LAB_0047d6b8:
 
     if (*(int *)(iVar5 + 0x1ec) != 0) {
 
-      FUN_00495ee0(iVar5 + 0x1ec);
+      sound_interrupt_sequence(iVar5 + 0x1ec);
 
     }
 
@@ -7092,7 +7092,7 @@ LAB_0047d6b8:
 
     pfVar3 = param_4;
 
-    FUN_004993c0(iVar7,param_4);
+    object_set_location_p3d(iVar7,param_4);
 
     *(float *)(iVar7 + 200) = pfVar3[3];
 
@@ -7230,7 +7230,7 @@ LAB_0047d6b8:
 
         if (*(int *)(iVar5 + 0x1ec) != 0) {
 
-          FUN_00495ee0(iVar5 + 0x1ec);
+          sound_interrupt_sequence(iVar5 + 0x1ec);
 
         }
 
@@ -7384,7 +7384,7 @@ LAB_0047d5b2:
 
     if (*(int *)(iVar5 + 0x1ec) != 0) {
 
-      FUN_00495ee0(iVar5 + 0x1ec);
+      sound_interrupt_sequence(iVar5 + 0x1ec);
 
     }
 
@@ -7840,7 +7840,7 @@ LAB_0047e183:
 
         if (*(int *)(iVar6 + 0x1ec) != 0) {
 
-          FUN_00495ee0(iVar6 + 0x1ec);
+          sound_interrupt_sequence(iVar6 + 0x1ec);
 
         }
 
@@ -7906,7 +7906,7 @@ LAB_0047e183:
 
         if (*(int *)(iVar6 + 0x1ec) != 0) {
 
-          FUN_00495ee0(iVar6 + 0x1ec);
+          sound_interrupt_sequence(iVar6 + 0x1ec);
 
         }
 
@@ -8292,7 +8292,7 @@ LAB_0047e84d:
 
       if (*(int *)(iVar6 + 0x1ec) != 0) {
 
-        FUN_00495ee0(iVar6 + 0x1ec);
+        sound_interrupt_sequence(iVar6 + 0x1ec);
 
       }
 
@@ -8328,7 +8328,7 @@ LAB_0047e84d:
 
       if (iVar6 != 0) {
 
-        FUN_0045a4c0(param_1,uVar10);
+        item_use_ammo(param_1,uVar10);
 
       }
 
@@ -8360,7 +8360,7 @@ LAB_0047e84d:
 
     if ((uVar12 & 0x100) == 0) {
 
-      if ((param_1[0x5d] < 1) || (fVar9 = (float)FUN_00456010(param_1), fVar9 == 0.0))
+      if ((param_1[0x5d] < 1) || (fVar9 = (float)gun_find_left(param_1), fVar9 == 0.0))
 
       goto LAB_0047ea17;
 
@@ -8564,7 +8564,7 @@ LAB_0047eacc:
 
       if (iVar6 != 0) {
 
-        FUN_0045a4c0(param_1,local_74);
+        item_use_ammo(param_1,local_74);
 
       }
 
@@ -8726,7 +8726,7 @@ LAB_0047ec06:
 
     if (*(int *)(iVar6 + 0x1ec) != 0) {
 
-      FUN_00495ee0(iVar6 + 0x1ec);
+      sound_interrupt_sequence(iVar6 + 0x1ec);
 
     }
 
@@ -9601,7 +9601,7 @@ void mecc_jet(float param_1)
 
           if (*(int *)(iVar2 + 0x1e4) != 0) {
 
-            FUN_00495ee0(iVar2 + 0x1e4);
+            sound_interrupt_sequence(iVar2 + 0x1e4);
 
           }
 
@@ -9744,7 +9744,7 @@ void mecc_to_bush(int param_1)
 
   }
 
-  iVar4 = FUN_00456010(param_1);
+  iVar4 = gun_find_left(param_1);
 
   if (iVar4 != 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (62 named) — decompiled, names from PS2 symbols
+ * 90 functions (63 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -698,7 +698,7 @@ void FUN_004b4570(int param_1)
 
     local_4 = *(float *)(param_1 + 0xa8) - (float)piVar1[6];
 
-    FUN_004993c0(iVar2,&local_c);
+    object_set_location_p3d(iVar2,&local_c);
 
     *(float *)(iVar2 + 200) = *(float *)(param_1 + 200) - (float)piVar1[7];
 
@@ -752,7 +752,7 @@ void FUN_004b4570(int param_1)
 
     FUN_004186c0(iVar2,0,&local_c,&local_18);
 
-    FUN_004993c0(iVar3,&local_c);
+    object_set_location_p3d(iVar3,&local_c);
 
     *(undefined4 *)(iVar3 + 200) = local_18;
 
@@ -762,7 +762,7 @@ void FUN_004b4570(int param_1)
 
     FUN_004186c0(iVar2,0xe,&local_c,&local_18);
 
-    FUN_004993c0(iVar3,&local_c);
+    object_set_location_p3d(iVar3,&local_c);
 
     *(undefined4 *)(iVar3 + 200) = local_18;
 
@@ -772,7 +772,7 @@ void FUN_004b4570(int param_1)
 
     FUN_004186c0(iVar2,0xf,&local_c,&local_18);
 
-    FUN_004993c0(iVar3,&local_c);
+    object_set_location_p3d(iVar3,&local_c);
 
     *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x10;
 
@@ -782,7 +782,7 @@ void FUN_004b4570(int param_1)
 
     FUN_00418630(iVar2,0x14,piVar1 + 0x174);
 
-    FUN_00497510(iVar2);
+    object_destroy(iVar2);
 
     piVar6 = piVar1 + 0xdc;
 
@@ -1275,7 +1275,7 @@ switchD_004b4d3a_caseD_1:
 
     }
 
-    FUN_00418c80(param_1);
+    base_bldg_pulsate(param_1);
 
     return;
 
@@ -1547,7 +1547,7 @@ switchD_004b4d3a_caseD_5:
 
       *(undefined4 *)((int)param_1 + 0x184) = 0x3f800000;
 
-      FUN_00497510(param_1);
+      object_destroy(param_1);
 
       return;
 
@@ -1734,7 +1734,7 @@ void reaperbasebldg_start_building(int param_1,int param_2,uint param_3)
 
           *(undefined4 *)(iVar2 + 0xe4) = 0x1e;
 
-          FUN_00401000(iVar2);
+          ai_clear_move_goal(iVar2);
 
           *(undefined4 *)(*(int *)(iVar2 + 0x100) + 0x28) = 0xffffffff;
 
@@ -2422,7 +2422,7 @@ LAB_004b5db6:
 
     } while (iVar6 != 0);
 
-    FUN_00497510(iVar2);
+    object_destroy(iVar2);
 
     if ((*(int *)(iVar2 + 4) == 0x4a8) && (piVar5 = DAT_00632d9c, DAT_00632d9c != (int *)0x0)) {
 
@@ -2460,7 +2460,7 @@ LAB_004b5db6:
 
       } while (iVar3 != 0);
 
-      FUN_00497510(iVar6);
+      object_destroy(iVar6);
 
       if (param_2 == 0) {
 
@@ -2598,7 +2598,7 @@ undefined4 object_spawn_4b(int param_1,uint param_2)
 
       }
 
-      FUN_00497510(*piVar4);
+      object_destroy(*piVar4);
 
       *piVar4 = 0;
 
@@ -2636,7 +2636,7 @@ undefined4 object_spawn_4b(int param_1,uint param_2)
 
     iVar3 = object_allocate_type((&DAT_005606b0)[param_2 * 0x16],0x80000000);
 
-    FUN_004993c0(iVar3,&local_c);
+    object_set_location_p3d(iVar3,&local_c);
 
     *(undefined4 *)(iVar3 + 200) = uVar2;
 
@@ -3042,7 +3042,7 @@ LAB_004b6b5e:
 
         *(undefined4 *)(*(int *)(iVar1 + 0x370 + iVar3 * 8) + 0xe4) = 0x1e;
 
-        FUN_00401000(*(undefined4 *)(iVar1 + 0x370 + iVar3 * 8));
+        ai_clear_move_goal(*(undefined4 *)(iVar1 + 0x370 + iVar3 * 8));
 
         *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x370 + iVar3 * 8) + 0x100) + 0x28) = 0xffffffff;
 
@@ -4234,7 +4234,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     if (iVar7 != 0) {
 
-      FUN_00497510(iVar7);
+      object_destroy(iVar7);
 
     }
 
@@ -4570,13 +4570,13 @@ LAB_004b8187:
 
       *(undefined4 *)(iVar7 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
-      FUN_00455c80(iVar7,1,0x29d);
+      object_create_child(iVar7,1,0x29d);
 
       object_change_ospec(iVar7,0x55);
 
       *(float *)(iVar7 + 0xf4) = fVar10;
 
-      FUN_004993c0(iVar7,pfVar11);
+      object_set_location_p3d(iVar7,pfVar11);
 
       *(uint *)(iVar7 + 0x1c8) = *(uint *)(iVar7 + 0x1c8) | 0x20000;
 
@@ -5318,7 +5318,7 @@ LAB_004b76fe:
 
       fVar10 = (float)object_allocate_type(0x434,0x80000000);
 
-      FUN_004993c0(fVar10,&local_40);
+      object_set_location_p3d(fVar10,&local_40);
 
       *(float **)((int)fVar10 + 200) = param_4;
 
@@ -5398,7 +5398,7 @@ LAB_004b76fe:
 
     pfVar11 = param_4;
 
-    FUN_004993c0(param_1,param_4);
+    object_set_location_p3d(param_1,param_4);
 
     *(float *)(param_1 + 200) = pfVar11[3];
 
@@ -6950,7 +6950,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
       iVar7 = puVar10[3];
 
-      iVar6 = FUN_004ba1a0(iVar7,param_1);
+      iVar6 = reaper_xhair_validate__FP6OBJECTPv(iVar7,param_1);
 
       if (((iVar6 != 0) && ((*(uint *)(iVar7 + 0xd8) & 0x4000c000) == 0)) &&
 
@@ -7250,7 +7250,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
         iVar7 = puVar10[3];
 
-        iVar6 = FUN_004ba1a0(iVar7,param_1);
+        iVar6 = reaper_xhair_validate__FP6OBJECTPv(iVar7,param_1);
 
         if (((iVar6 != 0) && ((*(uint *)(iVar7 + 0xd8) & 0x4000c000) == 0)) &&
 
@@ -7360,7 +7360,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
       iVar7 = puVar10[3];
 
-      iVar6 = FUN_004ba1a0(iVar7,param_1);
+      iVar6 = reaper_xhair_validate__FP6OBJECTPv(iVar7,param_1);
 
       if ((((iVar6 != 0) && ((*(uint *)(iVar7 + 0xd8) & 0x4000c000) == 0)) &&
 
@@ -7496,12 +7496,12 @@ switchD_004b9600_caseD_1a:
 
 }
 
-/* ===== FUN_004ba1a0 @ 0x004BA1A0 ===== */
+/* ===== reaper_xhair_validate__FP6OBJECTPv @ 0x004BA1A0 ===== */
 /* PS2 candidate: reaper_xhair_validate__FP6OBJECTPv (conf 0.466) */
 
 
 
-undefined4 FUN_004ba1a0(int param_1,int param_2)
+undefined4 reaper_xhair_validate__FP6OBJECTPv(int param_1,int param_2)
 
 
 
@@ -8188,7 +8188,7 @@ void FUN_004ba920(int param_1)
 
   pbVar1 = *(byte **)(param_1 + 0x100);
 
-  FUN_00495ee0(pbVar1 + 0xff0);
+  sound_interrupt_sequence(pbVar1 + 0xff0);
 
   fx_delete(*(undefined4 *)(pbVar1 + 0xe34));
 
@@ -8529,7 +8529,7 @@ int audio_listener_update(undefined4 param_1,float param_2,float param_3,float p
 
     iVar7 = puVar8[3];
 
-    iVar15 = FUN_004ba1a0(iVar7,param_1);
+    iVar15 = reaper_xhair_validate__FP6OBJECTPv(iVar7,param_1);
 
     if ((((iVar15 != 0) && ((*(uint *)(iVar7 + 0xd8) & 0x4000c000) == 0)) &&
 
@@ -8710,7 +8710,7 @@ void FUN_004bc930(int param_1)
 
     *(undefined4 *)(iVar2 + 0xf40) = 1;
 
-    iVar3 = FUN_004ba1a0(*(undefined4 *)(iVar2 + 0xc),param_1);
+    iVar3 = reaper_xhair_validate__FP6OBJECTPv(*(undefined4 *)(iVar2 + 0xc),param_1);
 
     if ((iVar3 != 0) && ((*(uint *)(*(int *)(iVar2 + 0xc) + 0x1c8) & 0x400000) != 0)) {
 
@@ -8884,7 +8884,7 @@ void FUN_004bcb30(int param_1)
 
     if ((iVar1 == 0x4c) || (iVar1 == 0x31)) {
 
-      fVar2 = (float10)FUN_0050a490(param_1 + 0xb8,param_1 + 0xa0);
+      fVar2 = (float10)dirucalcp3d__FP3P3DT0(param_1 + 0xb8,param_1 + 0xa0);
 
       local_4 = (float)fVar2;
 
@@ -8892,7 +8892,7 @@ void FUN_004bcb30(int param_1)
 
     else if (iVar1 == 0x36) {
 
-      fVar2 = (float10)FUN_0050a490(param_1 + 0xb8,param_1 + 0xa0);
+      fVar2 = (float10)dirucalcp3d__FP3P3DT0(param_1 + 0xb8,param_1 + 0xa0);
 
       local_8 = (float)fVar2;
 
@@ -8900,7 +8900,7 @@ void FUN_004bcb30(int param_1)
 
     else if (iVar1 == 0x37) {
 
-      fVar2 = (float10)FUN_0050a490(param_1 + 0xb8,param_1 + 0xa0);
+      fVar2 = (float10)dirucalcp3d__FP3P3DT0(param_1 + 0xb8,param_1 + 0xa0);
 
       local_8 = (float)-fVar2;
 
@@ -9777,7 +9777,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
       uVar6 = IconDefWieldType(puVar2[puVar2[0x36d] * 2 + 0x35c],1);
 
-      FUN_00455c80(iVar4,1,uVar6);
+      object_create_child(iVar4,1,uVar6);
 
       iVar5 = FUN_00456050(iVar4);
 
@@ -9843,7 +9843,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
     uVar6 = IconDefWieldType(puVar2[puVar2[0x36d] * 2 + 0x35c],1);
 
-    FUN_00455c80(iVar4,1,uVar6);
+    object_create_child(iVar4,1,uVar6);
 
   }
 
@@ -9984,7 +9984,7 @@ void reaper_select_bow(uint param_1)
 
       uVar4 = IconDefWieldType(puVar1[puVar1[0x36d] * 2 + 0x35c],1);
 
-      FUN_00455c80(uVar3,1,uVar4);
+      object_create_child(uVar3,1,uVar4);
 
       iVar5 = FUN_00456050(uVar3);
 
@@ -10101,7 +10101,7 @@ void reaper_select_sword(int param_1)
 
      ((*(float *)(param_1 + 0x1c0) <= *(float *)(param_1 + 0x278) || ((uVar3 & 0x4000000) != 0)))) {
 
-    FUN_00455c80(param_1,1,0x29d);
+    object_create_child(param_1,1,0x29d);
 
     iVar4 = FUN_00456050(param_1);
 
@@ -10479,7 +10479,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     local_ac = param_3[2];
 
-    fVar8 = (float10)FUN_0050a490(&local_c0,&local_b4);
+    fVar8 = (float10)dirucalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
     local_a0 = (float)fVar8;
 
@@ -10547,7 +10547,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     local_ac = param_3[2];
 
-    fVar8 = (float10)FUN_0050a490(&local_c0,&local_b4);
+    fVar8 = (float10)dirucalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
     fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
@@ -10613,7 +10613,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     local_ac = param_3[2];
 
-    fVar8 = (float10)FUN_0050a490(&local_c0,&local_b4);
+    fVar8 = (float10)dirucalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
     fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,&local_b4);
 
@@ -10689,7 +10689,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
       playerobj_eval_refpt(uVar4,0,&local_c0);
 
-      fVar8 = (float10)FUN_0050a490(&local_c0,param_3);
+      fVar8 = (float10)dirucalcp3d__FP3P3DT0(&local_c0,param_3);
 
       fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,param_3);
 
@@ -10755,7 +10755,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     playerobj_eval_refpt(uVar4,0,&local_c0);
 
-    fVar8 = (float10)FUN_0050a490(&local_c0,param_3);
+    fVar8 = (float10)dirucalcp3d__FP3P3DT0(&local_c0,param_3);
 
     fVar9 = (float10)dirfcalcp3d__FP3P3DT0(&local_c0,param_3);
 
@@ -10954,7 +10954,7 @@ void fxb_splash_create(int param_1)
 
      (*(float *)(param_1 + 0x1c0) <= *(float *)(param_1 + 0x278))) {
 
-    FUN_00495ee0(puVar1 + 0x3fb);
+    sound_interrupt_sequence(puVar1 + 0x3fb);
 
     *(undefined4 *)(*(int *)(param_1 + 0x104) + 4) = *(undefined4 *)(DAT_00632ed8 + 0x704);
 
@@ -11143,7 +11143,7 @@ void reaper_fire_spell__FP6OBJECTiP3P3DT0i
 
   }
 
-  fVar6 = (float10)FUN_0050a490(&local_60,param_3);
+  fVar6 = (float10)dirucalcp3d__FP3P3DT0(&local_60,param_3);
 
   fVar7 = (float10)dirfcalcp3d__FP3P3DT0(&local_60,param_3);
 
@@ -11271,7 +11271,7 @@ LAB_004beb61:
 
 LAB_004bead4:
 
-  iVar1 = FUN_004aa230(0x2c,*(undefined4 *)(param_1 + 0x18c),param_1,0,param_4,param_3);
+  iVar1 = PROJ_Create2(0x2c,*(undefined4 *)(param_1 + 0x18c),param_1,0,param_4,param_3);
 
   sound_play_player(0x3a1,param_1);
 
@@ -11357,7 +11357,7 @@ LAB_004bec45:
 
 LAB_004bebc5:
 
-  iVar1 = FUN_004aa230(0x32,*(undefined4 *)(param_1 + 0x18c),param_1,1,param_4,param_3);
+  iVar1 = PROJ_Create2(0x32,*(undefined4 *)(param_1 + 0x18c),param_1,1,param_4,param_3);
 
 switchD_004bed16_caseD_28:
 
@@ -11874,7 +11874,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
         uVar6 = local_160[3];
 
-        iVar3 = FUN_004ba1a0(uVar6,param_1);
+        iVar3 = reaper_xhair_validate__FP6OBJECTPv(uVar6,param_1);
 
         if ((iVar3 != 0) &&
 
@@ -12273,7 +12273,7 @@ void fxb_firewall_create(int param_1,int *param_2,int *param_3,uint param_4,unde
 
   xformobj_p3d_world(*piVar2,&local_4c,local_40);
 
-  FUN_004993c0(iVar4,local_40);
+  object_set_location_p3d(iVar4,local_40);
 
   *(undefined4 *)(iVar4 + 200) = *(undefined4 *)(*piVar2 + 200);
 
@@ -12313,7 +12313,7 @@ void fxb_firewall_create(int param_1,int *param_2,int *param_3,uint param_4,unde
 
   if (iVar4 == *(int *)(DAT_00632ed8 + 0x780)) {
 
-    FUN_00497510(*piVar2);
+    object_destroy(*piVar2);
 
     *piVar2 = 0;
 
@@ -12378,7 +12378,7 @@ void reaper_cast_firewall
 
   object_change_ospec(*param_2,0x56);
 
-  FUN_004993c0(*param_2,param_3);
+  object_set_location_p3d(*param_2,param_3);
 
   *(undefined4 *)(*param_2 + 200) = param_6;
 

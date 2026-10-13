@@ -1,14 +1,14 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (64 named) — decompiled, names from PS2 symbols
+ * 105 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00401000 @ 0x00401000 ===== */
+/* ===== ai_clear_move_goal @ 0x00401000 ===== */
 /* PS2 candidate: ai_clear_move_goal (conf 0.469) */
 
 
 
-void FUN_00401000(int param_1)
+void ai_clear_move_goal(int param_1)
 
 
 
@@ -3172,13 +3172,13 @@ LAB_00404e2f:
 
   if ((uVar2 & 0x10) != 0) {
 
-    FUN_00455c80(param_1,0,uVar7);
+    object_create_child(param_1,0,uVar7);
 
   }
 
   if ((uVar2 & 0x20) != 0) {
 
-    FUN_00455c80(param_1,1,uVar7);
+    object_create_child(param_1,1,uVar7);
 
   }
 
@@ -4722,7 +4722,7 @@ void FUN_00407c40(int param_1)
 
     local_4 = *(float *)(param_1 + 0xa8) - (float)piVar1[6];
 
-    FUN_004993c0(iVar2,&local_c);
+    object_set_location_p3d(iVar2,&local_c);
 
     *(float *)(iVar2 + 200) = *(float *)(param_1 + 200) - (float)piVar1[7];
 
@@ -4766,7 +4766,7 @@ void FUN_00407c40(int param_1)
 
     FUN_004186c0(iVar2,0,&local_c,&local_10);
 
-    FUN_004993c0(iVar3,&local_c);
+    object_set_location_p3d(iVar3,&local_c);
 
     *(undefined4 *)(iVar3 + 200) = local_10;
 
@@ -4776,7 +4776,7 @@ void FUN_00407c40(int param_1)
 
     FUN_00418630(iVar2,0x14,piVar1 + 0x174);
 
-    FUN_00497510(iVar2);
+    object_destroy(iVar2);
 
     piVar4 = piVar1 + 0xdc;
 
@@ -5135,7 +5135,7 @@ switchD_004085cd_caseD_1:
 
       }
 
-      FUN_00418c80(param_1);
+      base_bldg_pulsate(param_1);
 
       return;
 
@@ -5717,7 +5717,7 @@ switchD_004085cd_caseD_5:
 
       *(undefined4 *)((int)param_1 + 0x184) = 0x3f800000;
 
-      FUN_00497510(param_1);
+      object_destroy(param_1);
 
       return;
 
@@ -5908,7 +5908,7 @@ void meccbaseitem_start_building(int param_1,int param_2,int param_3)
 
           *(undefined4 *)(iVar3 + 0xe4) = 0x1e;
 
-          FUN_00401000(iVar3);
+          ai_clear_move_goal(iVar3);
 
           *(undefined4 *)(*(int *)(iVar3 + 0x100) + 0x28) = 0xffffffff;
 
@@ -6699,7 +6699,7 @@ LAB_00409bc6:
 
     } while (iVar4 != 0);
 
-    FUN_00497510(param_1);
+    object_destroy(param_1);
 
     if ((*(int *)(param_1 + 4) == 0x3d7) && (piVar3 = DAT_00632d9c, DAT_00632d9c != (int *)0x0)) {
 
@@ -6737,7 +6737,7 @@ LAB_00409bc6:
 
       } while (iVar2 != 0);
 
-      FUN_00497510(iVar4);
+      object_destroy(iVar4);
 
       if (param_2 == 0) {
 
@@ -6873,7 +6873,7 @@ undefined4 object_spawn_class4(int param_1,int param_2)
 
       }
 
-      FUN_00497510(*piVar3);
+      object_destroy(*piVar3);
 
       *piVar3 = 0;
 
@@ -6903,7 +6903,7 @@ undefined4 object_spawn_class4(int param_1,int param_2)
 
     iVar2 = object_allocate_type((&DAT_00554560)[param_2 * 0x16],0x80000000);
 
-    FUN_004993c0(iVar2,&local_c);
+    object_set_location_p3d(iVar2,&local_c);
 
     *(undefined4 *)(iVar2 + 200) = uVar1;
 
@@ -7309,7 +7309,7 @@ LAB_0040ab0e:
 
         *(undefined4 *)(*(int *)(iVar1 + 0x370 + iVar3 * 8) + 0xe4) = 0x1e;
 
-        FUN_00401000(*(undefined4 *)(iVar1 + 0x370 + iVar3 * 8));
+        ai_clear_move_goal(*(undefined4 *)(iVar1 + 0x370 + iVar3 * 8));
 
         *(undefined4 *)(*(int *)(*(int *)(iVar1 + 0x370 + iVar3 * 8) + 0x100) + 0x28) = 0xffffffff;
 
@@ -7824,7 +7824,7 @@ void FUN_0040afb0(int param_1,int param_2)
 
   if (iVar3 != 0) {
 
-    FUN_00497510(iVar3);
+    object_destroy(iVar3);
 
   }
 

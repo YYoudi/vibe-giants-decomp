@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (74 named) — decompiled, names from PS2 symbols
+ * 142 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -112,7 +112,7 @@ void scenerio_start_index__Fi(int p0)
 
 {
 
-  FUN_00494400();
+  mission_unload_mission_objects__Fv();
 
   *(int *)(DAT_006330e4 + 0x4a60) = p0;
 
@@ -851,7 +851,7 @@ undefined4 FUN_00490fe0(void)
 
         if (*(int *)(DAT_006330e4 + 0x4a60) < 0x1b) {
 
-          FUN_00494400();
+          mission_unload_mission_objects__Fv();
 
           iVar3 = *(int *)(DAT_006330e4 + 0x4a60) * 0x30;
 
@@ -2712,7 +2712,7 @@ LAB_00492458:
 
         if (DAT_0059f2f0 < 1) {
 
-          FUN_00455c80(DAT_00632a88,1,0x29d);
+          object_create_child(DAT_00632a88,1,0x29d);
 
         }
 
@@ -2720,7 +2720,7 @@ LAB_00492458:
 
           uVar5 = IconDefWieldType(*(undefined4 *)(iVar1 + 0xd70 + *(int *)(iVar1 + 0xdb4) * 8),1);
 
-          FUN_00455c80(DAT_00632a88,1,uVar5);
+          object_create_child(DAT_00632a88,1,uVar5);
 
         }
 
@@ -3274,7 +3274,7 @@ LAB_00492a3a:
 
           }
 
-          FUN_00497510(iVar14);
+          object_destroy(iVar14);
 
         }
 
@@ -3926,7 +3926,7 @@ LAB_00492a3a:
 
             if (*(int *)(puVar10[3] + 4) == 0x434) {
 
-              FUN_00497510(puVar10[3]);
+              object_destroy(puVar10[3]);
 
             }
 
@@ -4671,7 +4671,7 @@ void FUN_00493f20(void)
 
     if (5.0 < _DAT_00632b60) {
 
-      FUN_00494890();
+      dlog_mission_fail_menu();
 
       return;
 
@@ -4738,7 +4738,7 @@ void story_flick_open(void)
 
       }
 
-      FUN_00494890();
+      dlog_mission_fail_menu();
 
       return;
 
@@ -5010,12 +5010,12 @@ void FUN_00494120(int param_1)
 
 }
 
-/* ===== FUN_00494400 @ 0x00494400 ===== */
+/* ===== mission_unload_mission_objects__Fv @ 0x00494400 ===== */
 /* PS2 candidate: mission_unload_mission_objects__Fv (conf 0.47) */
 
 
 
-void FUN_00494400(void)
+void mission_unload_mission_objects__Fv(void)
 
 
 
@@ -5059,7 +5059,7 @@ void FUN_00494400(void)
 
       if (iVar2 == 8) {
 
-        FUN_00497510();
+        object_destroy();
 
         iVar3 = *(int *)(iVar3 + 0x274);
 
@@ -5099,7 +5099,7 @@ void FUN_00494400(void)
 
 LAB_00494493:
 
-      FUN_00497510(iVar3);
+      object_destroy(iVar3);
 
     }
 
@@ -5239,7 +5239,7 @@ LAB_004947ed:
 
       iVar2 = *(int *)(DAT_006330e4 + 0x4a60);
 
-      FUN_00494400();
+      mission_unload_mission_objects__Fv();
 
       *(int *)(DAT_006330e4 + 0x4a60) = iVar2 + -1;
 
@@ -5289,14 +5289,14 @@ LAB_004947ed:
 
 }
 
-/* ===== FUN_00494890 @ 0x00494890 ===== */
+/* ===== dlog_mission_fail_menu @ 0x00494890 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: buoy_process__FP6OBJECT (conf 0.473) */
 
 
 
-void FUN_00494890(void)
+void dlog_mission_fail_menu(void)
 
 
 
@@ -5535,7 +5535,7 @@ void mission_type_dispatch(void)
 
   }
 
-  FUN_00497510(DAT_00632a88);
+  object_destroy(DAT_00632a88);
 
   DAT_00632a88 = DAT_0059ef0c;
 
@@ -6728,12 +6728,12 @@ void sound_stop_sequence(int *param_1)
 
 }
 
-/* ===== FUN_00495ee0 @ 0x00495EE0 ===== */
+/* ===== sound_interrupt_sequence @ 0x00495EE0 ===== */
 /* PS2 candidate: sound_interrupt_sequence (conf 0.482) */
 
 
 
-void FUN_00495ee0(int *param_1)
+void sound_interrupt_sequence(int *param_1)
 
 
 
@@ -7703,12 +7703,12 @@ void object_stop_movement_2(int param_1)
 
 }
 
-/* ===== FUN_00497510 @ 0x00497510 ===== */
+/* ===== object_destroy @ 0x00497510 ===== */
 /* PS2 candidate: object_destroy (conf 0.467) */
 
 
 
-void FUN_00497510(int param_1)
+void object_destroy(int param_1)
 
 
 
@@ -9853,7 +9853,7 @@ LAB_004991da:
 
       FUN_0049baa0(iVar1);
 
-      FUN_00499cd0(iVar1);
+      object_free_all_allocated_data(iVar1);
 
       iVar2 = FUN_00497d70(param_1);
 
@@ -9920,7 +9920,7 @@ void FUN_00499200(undefined4 param_1)
 
   FUN_0049baa0(param_1);
 
-  FUN_00497510(param_1);
+  object_destroy(param_1);
 
   return;
 
@@ -10060,12 +10060,12 @@ void FUN_00499310(int param_1,float param_2,float param_3,float param_4)
 
 }
 
-/* ===== FUN_004993c0 @ 0x004993C0 ===== */
+/* ===== object_set_location_p3d @ 0x004993C0 ===== */
 /* PS2 candidate: object_set_location_p3d (conf 0.468) */
 
 
 
-void FUN_004993c0(int param_1,float *param_2)
+void object_set_location_p3d(int param_1,float *param_2)
 
 
 
@@ -12193,7 +12193,7 @@ void FUN_0049b8a0(int param_1)
 
     *(undefined4 *)(iVar2 + 0x218) = 2;
 
-    FUN_004993c0(iVar2,param_1 + 0xa0);
+    object_set_location_p3d(iVar2,param_1 + 0xa0);
 
     *(undefined4 *)(iVar2 + 200) = *(undefined4 *)(param_1 + 200);
 
@@ -12215,7 +12215,7 @@ void FUN_0049b8a0(int param_1)
 
     *(undefined4 *)(iVar2 + 0x218) = 2;
 
-    FUN_004993c0(iVar2,param_1 + 0xa0);
+    object_set_location_p3d(iVar2,param_1 + 0xa0);
 
     *(undefined4 *)(iVar2 + 200) = *(undefined4 *)(param_1 + 200);
 
@@ -12281,7 +12281,7 @@ void FUN_0049b8a0(int param_1)
 
     reaper_set_bow(param_1,0x2c,0,0xffffffff,0);
 
-    FUN_00455c80(param_1,1,0x29d);
+    object_create_child(param_1,1,0x29d);
 
     *(undefined4 *)(iVar1 + 0xdb4) = 0;
 
@@ -12344,7 +12344,7 @@ void FUN_0049baa0(int param_1)
 
          (((iVar2 = *(int *)(iVar1 + 4), iVar2 == 0x54 || (iVar2 == 0x55)) || (iVar2 == 0x30d)))) {
 
-        FUN_00497510(iVar1);
+        object_destroy(iVar1);
 
       }
 
@@ -12402,13 +12402,13 @@ void FUN_0049baa0(int param_1)
 
            ((*(int *)(iVar4 + 4) == 0x1f || (*(int *)(iVar4 + 4) == 0x25)))) {
 
-          FUN_00497510(iVar4);
+          object_destroy(iVar4);
 
         }
 
         if ((*(int *)(iVar4 + 0x1e0) == 0x3e) && (*(int *)(iVar4 + 0x274) == param_1)) {
 
-          FUN_00497510(iVar4);
+          object_destroy(iVar4);
 
         }
 
@@ -12426,7 +12426,7 @@ void FUN_0049baa0(int param_1)
 
       if (iVar4 != 0) {
 
-        FUN_00497510(iVar4);
+        object_destroy(iVar4);
 
       }
 
@@ -12434,7 +12434,7 @@ void FUN_0049baa0(int param_1)
 
       if (iVar4 != 0) {
 
-        FUN_00497510();
+        object_destroy();
 
         return;
 
@@ -13667,7 +13667,7 @@ void FUN_0049e4a0(int param_1)
 
     *(undefined4 *)(DAT_0059f99c + 200) = *(undefined4 *)(param_1 + 200);
 
-    FUN_004993c0(DAT_0059f99c,param_1 + 0xa0);
+    object_set_location_p3d(DAT_0059f99c,param_1 + 0xa0);
 
     fVar2 = (float10)FUN_00518b70(0,0);
 
@@ -13891,7 +13891,7 @@ void partyhouse_exit_dlog(void)
 
     *(undefined4 *)(DAT_0059f99c + 0x184) = 0x3f800000;
 
-    FUN_00497510(DAT_0059f99c);
+    object_destroy(DAT_0059f99c);
 
     DAT_0059f99c = 0;
 

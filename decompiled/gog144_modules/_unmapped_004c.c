@@ -60,7 +60,7 @@ void fxb_firecircle_create(int param_1,undefined4 param_2,undefined4 param_3,und
 
   *(int *)(iVar2 + 0x274) = param_1;
 
-  FUN_004993c0(iVar2,param_2);
+  object_set_location_p3d(iVar2,param_2);
 
   puVar1 = *(undefined4 **)(iVar2 + 0x100);
 
@@ -104,7 +104,7 @@ void fxb_firecircle_create(int param_1,undefined4 param_2,undefined4 param_3,und
 
   }
 
-  FUN_004993c0(puVar1[1],param_2);
+  object_set_location_p3d(puVar1[1],param_2);
 
   *(undefined4 *)(puVar1[1] + 0xc4) = 0x40a00000;
 
@@ -207,7 +207,7 @@ void reaper_finish_cloak(int param_1,undefined4 param_2)
 
     iVar5 = PROJ_GetCustom(0x2c);
 
-    pcVar6 = FUN_004ba1a0;
+    pcVar6 = reaper_xhair_validate__FP6OBJECTPv;
 
     iVar3 = param_1;
 
@@ -382,13 +382,13 @@ void reaper_create_fake_reaper__FP6OBJECTP3P3Dfi(float *param_1,float *param_2)
 
       *(undefined4 *)(iVar3 + 0x18c) = *(undefined4 *)(iVar2 + 0x18c);
 
-      FUN_00455c80(iVar3,1,0x29d);
+      object_create_child(iVar3,1,0x29d);
 
       object_change_ospec(iVar3,0x55);
 
       *(float *)(iVar3 + 0xf4) = (float)fVar5;
 
-      FUN_004993c0(iVar3,&local_58);
+      object_set_location_p3d(iVar3,&local_58);
 
       *(uint *)(iVar3 + 0x1c8) = *(uint *)(iVar3 + 0x1c8) | 0x20000;
 
@@ -994,7 +994,7 @@ void reaper_tornado_create(int param_1,undefined4 *param_2,undefined4 param_3,un
 
   }
 
-  FUN_004993c0(iVar1,param_2);
+  object_set_location_p3d(iVar1,param_2);
 
   *(uint *)(iVar1 + 0xd8) = *(uint *)(iVar1 + 0xd8) | 0x40000000;
 
@@ -2447,7 +2447,7 @@ void FUN_004c26d0(int param_1,undefined4 *param_2)
 
       }
 
-      FUN_004993c0(iVar1,param_1 + 0xa0);
+      object_set_location_p3d(iVar1,param_1 + 0xa0);
 
       *(undefined4 *)(iVar1 + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
@@ -2469,7 +2469,7 @@ void FUN_004c26d0(int param_1,undefined4 *param_2)
 
       *(uint *)(iVar1 + 0x1c8) = *(uint *)(iVar1 + 0x1c8) | 0xe00;
 
-      FUN_00455c80(iVar1,1,0x29d);
+      object_create_child(iVar1,1,0x29d);
 
       iVar2 = FUN_00456050(iVar1);
 
@@ -3070,13 +3070,13 @@ LAB_004c4aab:
 
   if (*(int *)(iVar5 + 0xfec) != 0) {
 
-    FUN_00495ee0(iVar5 + 0xfec);
+    sound_interrupt_sequence(iVar5 + 0xfec);
 
   }
 
   if (*(int *)(iVar5 + 0xff0) != 0) {
 
-    FUN_00495ee0(iVar5 + 0xff0);
+    sound_interrupt_sequence(iVar5 + 0xff0);
 
   }
 
@@ -3310,13 +3310,13 @@ LAB_004c4d8b:
 
   if (*(int *)(iVar5 + 0xfec) != 0) {
 
-    FUN_00495ee0(iVar5 + 0xfec);
+    sound_interrupt_sequence(iVar5 + 0xfec);
 
   }
 
   if (*(int *)(iVar5 + 0xff0) != 0) {
 
-    FUN_00495ee0(iVar5 + 0xff0);
+    sound_interrupt_sequence(iVar5 + 0xff0);
 
   }
 
@@ -3418,7 +3418,7 @@ void mecc_drop_carried_object_2(int param_1,int param_2)
 
     FUN_00418630(param_2,0xb,local_c);
 
-    FUN_004993c0(param_1,local_c);
+    object_set_location_p3d(param_1,local_c);
 
     *(undefined1 *)(param_1 + 0x208) = 0;
 
@@ -3816,7 +3816,7 @@ void lzo_spawn_checked(int param_1)
 
       iVar3 = object_allocate_type(0x434,0x80000000);
 
-      FUN_004993c0(iVar3,&local_28);
+      object_set_location_p3d(iVar3,&local_28);
 
       *(int *)(iVar3 + 200) = param_1;
 
@@ -4007,7 +4007,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
       sound_play_player(0x6ea,iVar3);
 
-      FUN_004993c0(iVar3,&local_1c);
+      object_set_location_p3d(iVar3,&local_1c);
 
       *(int *)(iVar3 + 200) = param_1;
 
@@ -4134,7 +4134,7 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
           if ((float10)3.0 <= fVar8) {
 
-            FUN_00497510(*(undefined4 *)(iVar7 + 0xcf4));
+            object_destroy(*(undefined4 *)(iVar7 + 0xcf4));
 
             *(undefined4 *)(iVar7 + 0xcf4) = 0;
 
@@ -4451,7 +4451,7 @@ void FUN_004c5d80(int param_1,int param_2,undefined4 param_3,int param_4)
 
     FUN_00418630(param_3,param_4 * 2 + 0xb,local_c);
 
-    FUN_004993c0(param_2,local_c);
+    object_set_location_p3d(param_2,local_c);
 
     *(undefined1 *)(param_2 + 0x20a) = 0;
 
@@ -4905,7 +4905,7 @@ void fxn_firering(int param_1)
 
   *puVar1 = 0;
 
-  FUN_00497510(puVar1[1]);
+  object_destroy(puVar1[1]);
 
   *(undefined4 *)(param_1 + 0xe0) = 1;
 
@@ -4919,7 +4919,7 @@ void fxn_firering(int param_1)
 
     *puVar2 = *puVar2 | 4;
 
-    FUN_00495ee0(puVar1 + 3);
+    sound_interrupt_sequence(puVar1 + 3);
 
     return;
 
@@ -4927,7 +4927,7 @@ void fxn_firering(int param_1)
 
   *(uint *)(*(int *)(param_1 + 0x274) + 0xe0) = *(uint *)(*(int *)(param_1 + 0x274) + 0xe0) | 0x40;
 
-  FUN_00495ee0(puVar1 + 3);
+  sound_interrupt_sequence(puVar1 + 3);
 
   return;
 
@@ -4988,9 +4988,9 @@ void FUN_004c6f40(int param_1)
 
       sound_stop_sequence(piVar2 + 3);
 
-      FUN_00497510(piVar2[1]);
+      object_destroy(piVar2[1]);
 
-      FUN_00497510(param_1);
+      object_destroy(param_1);
 
     }
 
@@ -6307,7 +6307,7 @@ void sound_obj_seq_small(int param_1,undefined4 param_2,undefined4 param_3,undef
 
   playerobj_eval_refpt(param_1,0,&local_50);
 
-  fVar2 = (float10)FUN_0050a490(&local_50,param_3);
+  fVar2 = (float10)dirucalcp3d__FP3P3DT0(&local_50,param_3);
 
   fVar3 = (float10)dirfcalcp3d__FP3P3DT0(&local_50,param_3);
 
@@ -6420,7 +6420,7 @@ void evilreaper_fire_bow__FP6OBJECT(int param_1)
 
   }
 
-  fVar3 = (float10)FUN_0050a490(&local_50,&local_5c);
+  fVar3 = (float10)dirucalcp3d__FP3P3DT0(&local_50,&local_5c);
 
   fVar4 = (float10)dirfcalcp3d__FP3P3DT0(&local_50,&local_5c);
 
@@ -6857,7 +6857,7 @@ undefined4 physics_reset_d(int param_1)
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfffffffb;
 
-      FUN_00495ee0(iVar1 + 0xde0);
+      sound_interrupt_sequence(iVar1 + 0xde0);
 
       *(undefined4 *)(param_1 + 0x128) = 0;
 
@@ -7087,7 +7087,7 @@ void controlShutdown__Fv(void)
 
     if (*piVar1 != 0) {
 
-      FUN_00499cd0(piVar1 + -1);
+      object_free_all_allocated_data(piVar1 + -1);
 
     }
 
@@ -7750,7 +7750,7 @@ LAB_004ccbc0:
 
           else if (*(int *)(puVar8 + -0x290) != iVar5) {
 
-            FUN_00499cd0(puVar8 + -0x294);
+            object_free_all_allocated_data(puVar8 + -0x294);
 
             objobj_type_lookup(iVar5,puVar8 + -0x294);
 
@@ -9243,7 +9243,7 @@ void object_spawn_4c(int param_1)
 
         } while ((iVar5 != 0) && (local_18 = local_18 + 1, local_18 < 10));
 
-        FUN_004993c0(iVar4,&local_c);
+        object_set_location_p3d(iVar4,&local_c);
 
       }
 

@@ -221,7 +221,7 @@ void object_list_update(void)
 
     if ((char)((uint)piVar4[0x36] >> 8) < '\0') {
 
-      FUN_00499cd0(piVar4);
+      object_free_all_allocated_data(piVar4);
 
       main_linkage_00470480(piVar4);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (52 named) — decompiled, names from PS2 symbols
+ * 94 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -46,7 +46,7 @@ void FUN_004e1030(int param_1,int param_2)
 
   local_4 = *(undefined4 *)(iVar1 + 0x30);
 
-  FUN_00401000(param_1);
+  ai_clear_move_goal(param_1);
 
   if (param_2 != 0) {
 
@@ -4344,7 +4344,7 @@ LAB_004e5064:
 
 LAB_004e50f4:
 
-  iVar2 = FUN_004aa230(0x28,*(undefined4 *)(param_1 + 0x18c),param_1,7,0,&local_c);
+  iVar2 = PROJ_Create2(0x28,*(undefined4 *)(param_1 + 0x18c),param_1,7,0,&local_c);
 
   *(int *)(iVar2 + 0x274) = param_1;
 
@@ -4604,7 +4604,7 @@ void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int par
 
     local_78 = (float)fVar4;
 
-    fVar4 = (float10)FUN_0050a490(&local_5c,&local_74);
+    fVar4 = (float10)dirucalcp3d__FP3P3DT0(&local_5c,&local_74);
 
     local_44[0] = 0;
 
@@ -4991,7 +4991,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       fVar13 = (float10)dirfcalcp3d__FP3P3DT0(&local_5c,&local_68);
 
-      fVar14 = (float10)FUN_0050a490(&local_5c,&local_68);
+      fVar14 = (float10)dirucalcp3d__FP3P3DT0(&local_5c,&local_68);
 
       local_44[0] = 0;
 
@@ -5237,14 +5237,14 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
 }
 
-/* ===== FUN_004e5f70 @ 0x004E5F70 ===== */
+/* ===== rpman_rapid_fire__FP6OBJECTiii @ 0x004E5F70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: rpman_rapid_fire__FP6OBJECTiii (conf 0.463) */
 
 
 
-void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
+void rpman_rapid_fire__FP6OBJECTiii(int param_1,int param_2,int param_3,float param_4)
 
 
 
@@ -6826,7 +6826,7 @@ void rpman_gib__FP6OBJECTT0(int param_1,int param_2)
 
   sound_play_3dpos(uVar4,param_1 + 0xa0);
 
-  FUN_00497510(param_1);
+  object_destroy(param_1);
 
   return;
 
@@ -7571,12 +7571,12 @@ void LineOfSight(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004ea3e0 @ 0x004EA3E0 ===== */
+/* ===== barracks_logic @ 0x004EA3E0 ===== */
 /* PS2 candidate: barracks_logic (conf 0.477) */
 
 
 
-void FUN_004ea3e0(float param_1)
+void barracks_logic(float param_1)
 
 
 
@@ -7708,7 +7708,7 @@ void FUN_004ea3e0(float param_1)
 
   playerobj_eval_refpt(iVar3,iVar4 + 6,local_c);
 
-  FUN_00401000(iVar6);
+  ai_clear_move_goal(iVar6);
 
   FUN_00401610(iVar6,local_c);
 
@@ -10514,7 +10514,7 @@ void FUN_004ee150(void)
 
       if (iVar1 != 0) {
 
-        FUN_00497510(iVar1);
+        object_destroy(iVar1);
 
         *(undefined4 *)(iVar2 + 0x4f78 + DAT_006330e4) = 0;
 
@@ -10565,7 +10565,7 @@ void fx_spawn_checked(int param_1)
 
       if (iVar6 != 0) {
 
-        FUN_00497510(iVar6);
+        object_destroy(iVar6);
 
         *(undefined4 *)(iVar5 + 0x4f78 + DAT_006330e4) = 0;
 
@@ -10623,7 +10623,9 @@ void fx_spawn_checked(int param_1)
 
         }
 
-        FUN_004993c0(*(undefined4 *)(iVar6 + 0x4f78 + DAT_006330e4),DAT_006330e4 + 0x4f60);
+        object_set_location_p3d
+
+                  (*(undefined4 *)(iVar6 + 0x4f78 + DAT_006330e4),DAT_006330e4 + 0x4f60);
 
         iVar5 = *(int *)(iVar6 + 0x4f78 + DAT_006330e4);
 
@@ -11358,7 +11360,7 @@ void smoke_object_spawn(undefined4 param_1)
 
   **(undefined4 **)(iVar2 + 0x100) = 0x3f800000;
 
-  FUN_004993c0(iVar2,param_1);
+  object_set_location_p3d(iVar2,param_1);
 
   uVar1 = *(undefined4 *)(*(int *)(iVar2 + 0x100) + 0x10);
 

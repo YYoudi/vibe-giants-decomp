@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (74 named) — decompiled, names from PS2 symbols
+ * 145 functions (77 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -4775,12 +4775,12 @@ void grid_get_point(int param_1,int param_2,float *param_3)
 
 }
 
-/* ===== FUN_00455c80 @ 0x00455C80 ===== */
+/* ===== object_create_child @ 0x00455C80 ===== */
 /* PS2 candidate: object_create_child (conf 0.467) */
 
 
 
-void FUN_00455c80(int param_1,int param_2,int param_3)
+void object_create_child(int param_1,int param_2,int param_3)
 
 
 
@@ -4914,7 +4914,7 @@ joined_r0x00455cee:
 
     if (iVar3 != 0) {
 
-      FUN_00497510(iVar3);
+      object_destroy(iVar3);
 
     }
 
@@ -4967,7 +4967,7 @@ void FUN_00455e20(int param_1)
 
   }
 
-  FUN_00497510();
+  object_destroy();
 
   return;
 
@@ -5012,7 +5012,7 @@ void FUN_00455e70(int param_1)
 
   }
 
-  FUN_00497510();
+  object_destroy();
 
   return;
 
@@ -5037,7 +5037,7 @@ void object_create_gun_2(int param_1,int param_2)
 
   }
 
-  FUN_00455c80(param_1,1,param_2);
+  object_create_child(param_1,1,param_2);
 
   return;
 
@@ -5062,7 +5062,7 @@ void object_create_gun(int param_1,int param_2)
 
   }
 
-  FUN_00455c80(param_1,0,param_2);
+  object_create_child(param_1,0,param_2);
 
   return;
 
@@ -5194,12 +5194,12 @@ int FUN_00455fa0(int param_1)
 
 }
 
-/* ===== FUN_00456010 @ 0x00456010 ===== */
+/* ===== gun_find_left @ 0x00456010 ===== */
 /* PS2 candidate: gun_find_left (conf 0.482) */
 
 
 
-int FUN_00456010(int param_1)
+int gun_find_left(int param_1)
 
 
 
@@ -5431,7 +5431,7 @@ int herd_create_one(int param_1,undefined4 param_2,int param_3)
 
   *(int *)(iVar2 + 0x274) = param_1;
 
-  FUN_004993c0(iVar2,param_2);
+  object_set_location_p3d(iVar2,param_2);
 
   *(undefined4 *)(iVar2 + 0x15c) = *(undefined4 *)(iVar2 + 0xa0);
 
@@ -5971,7 +5971,7 @@ void obj_damage_apply(int param_1,undefined4 param_2,int param_3,int param_4,und
 
     if (((param_4 != 0) && (param_1 == 0)) && (*(int *)(param_4 + 0x1e0) == 6)) {
 
-      FUN_00497510(param_4);
+      object_destroy(param_4);
 
     }
 
@@ -6038,7 +6038,7 @@ void FUN_00457100(int param_1,undefined4 param_2,int param_3,int param_4,undefin
 
   if (((param_4 != 0) && (param_1 == 0)) && (*(int *)(param_4 + 0x1e0) == 6)) {
 
-    FUN_00497510(param_4);
+    object_destroy(param_4);
 
   }
 
@@ -7234,11 +7234,11 @@ void FUN_00458230(int param_1)
 
     uVar2 = IconDefWieldType(uVar1,0);
 
-    FUN_00455c80(param_1,0,uVar2);
+    object_create_child(param_1,0,uVar2);
 
     uVar2 = IconDefWieldType(uVar1,1);
 
-    FUN_00455c80(param_1,1,uVar2);
+    object_create_child(param_1,1,uVar2);
 
     if (*(int *)(param_1 + 0x1e0) == 2) {
 
@@ -7442,7 +7442,7 @@ int SpecialWeaponIdSet__FP6OBJECTi(int param_1,int param_2)
 
         *(undefined4 *)(iVar1 + 0x210) = 0;
 
-        FUN_00497510(iVar1);
+        object_destroy(iVar1);
 
         break;
 
@@ -7604,7 +7604,7 @@ LAB_00458511:
 
   *(undefined4 *)(iVar4 + 0x210) = 0;
 
-  FUN_00497510(iVar4);
+  object_destroy(iVar4);
 
   goto LAB_00458528;
 
@@ -9553,12 +9553,12 @@ int FUN_0045a2b0(int param_1,undefined4 param_2,int *param_3)
 
 }
 
-/* ===== FUN_0045a4c0 @ 0x0045A4C0 ===== */
+/* ===== item_use_ammo @ 0x0045A4C0 ===== */
 /* PS2 candidate: item_use_ammo (conf 0.475) */
 
 
 
-void FUN_0045a4c0(int param_1,undefined4 param_2)
+void item_use_ammo(int param_1,undefined4 param_2)
 
 
 
@@ -10867,7 +10867,7 @@ void reaper_lock_short_6(undefined4 param_1,int param_2)
 
   }
 
-  FUN_00497510(iVar2);
+  object_destroy(iVar2);
 
   return;
 
@@ -13709,7 +13709,7 @@ LAB_0045e51d:
 
   if (*(int *)(iVar4 + 0x32c) != 0) {
 
-    FUN_00497510(*(int *)(iVar4 + 0x32c));
+    object_destroy(*(int *)(iVar4 + 0x32c));
 
     *(undefined4 *)(iVar4 + 0x32c) = 0;
 

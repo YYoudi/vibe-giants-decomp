@@ -204,7 +204,7 @@ LAB_004802fd:
 
   }
 
-  FUN_00495ee0(iVar3 + 0x1e8);
+  sound_interrupt_sequence(iVar3 + 0x1e8);
 
 LAB_00480357:
 
@@ -306,7 +306,7 @@ void mecc_disable_repair_gun(int param_1)
 
     if (*(int *)(iVar2 + 0x1ec) != 0) {
 
-      FUN_00495ee0(iVar2 + 0x1ec);
+      sound_interrupt_sequence(iVar2 + 0x1ec);
 
     }
 
@@ -373,7 +373,7 @@ void FUN_004804d0(int param_1)
 
   if (*(int *)(iVar1 + 0x1ec) != 0) {
 
-    FUN_00495ee0(iVar1 + 0x1ec);
+    sound_interrupt_sequence(iVar1 + 0x1ec);
 
   }
 
@@ -466,9 +466,11 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
         if ((iVar6 == 0) || (iVar6 = FUN_0052c5c0(), iVar6 != 0)) {
 
-          FUN_004f3de0(iVar2,*(undefined4 *)(iVar3 + 0x54),iVar1,param_1,param_1 + 0xa0,
+          smartie_start_special_building
 
-                       *(float *)(param_1 + 200) + 180.0);
+                    (iVar2,*(undefined4 *)(iVar3 + 0x54),iVar1,param_1,param_1 + 0xa0,
+
+                     *(float *)(param_1 + 200) + 180.0);
 
         }
 
@@ -488,7 +490,7 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
         local_8 = *(float *)(param_1 + 0xa4) - local_10 * -20.0;
 
-        FUN_004993c0(param_1,&local_c);
+        object_set_location_p3d(param_1,&local_c);
 
         return;
 
@@ -583,7 +585,7 @@ void FUN_00480730(int param_1)
 
     if (((*(byte *)(param_1 + 0x30) & 2) != 0) &&
 
-       (FUN_00497510(param_1), *(int *)(param_1 + 0x274) != 0)) {
+       (object_destroy(param_1), *(int *)(param_1 + 0x274) != 0)) {
 
       uVar4 = IconDefWieldType(0x14,1);
 
@@ -889,7 +891,7 @@ void FUN_00480d10(int param_1,int param_2,undefined4 param_3,int param_4)
 
   FUN_00418630(param_3,param_4 * 2 + 0xb,local_c);
 
-  FUN_004993c0(param_2,local_c);
+  object_set_location_p3d(param_2,local_c);
 
   *(undefined1 *)(param_2 + 0x208) = 0;
 
@@ -944,7 +946,7 @@ void mecc_drop_carried_object(int param_1,int param_2)
 
     FUN_00418630(param_2,0xb,local_c);
 
-    FUN_004993c0(param_1,local_c);
+    object_set_location_p3d(param_1,local_c);
 
     *(undefined1 *)(param_1 + 0x208) = 0;
 
@@ -1098,7 +1100,7 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
   *(uint *)(iVar1 + 0x1d0) = *(uint *)(iVar1 + 0x1d0) | 0xf0f;
 
-  FUN_004993c0(iVar1,&local_c);
+  object_set_location_p3d(iVar1,&local_c);
 
   *(undefined4 *)(iVar1 + 200) = local_18;
 
@@ -1459,7 +1461,7 @@ LAB_00481264:
 
                     if (*(int *)(iVar4 + 0x1ec) != 0) {
 
-                      FUN_00495ee0(iVar4 + 0x1ec);
+                      sound_interrupt_sequence(iVar4 + 0x1ec);
 
                     }
 
@@ -1741,7 +1743,7 @@ void obj_grab_carry(int param_1,int param_2)
 
     if (*(int *)(iVar3 + 0x1ec) != 0) {
 
-      FUN_00495ee0(iVar3 + 0x1ec);
+      sound_interrupt_sequence(iVar3 + 0x1ec);
 
     }
 
@@ -1858,7 +1860,7 @@ void obj_ride_mount(int param_1,int param_2,int param_3)
 
     if (*(int *)(iVar1 + 0x1ec) != 0) {
 
-      FUN_00495ee0(iVar1 + 0x1ec);
+      sound_interrupt_sequence(iVar1 + 0x1ec);
 
     }
 
@@ -2663,7 +2665,7 @@ void menu_mission_launch(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -2838,7 +2840,7 @@ void menu_handlers_lookup(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -3008,7 +3010,7 @@ LAB_00482fd8:
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -3242,7 +3244,7 @@ void menu_handlers_exec(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -3430,7 +3432,7 @@ LAB_00483738:
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -3615,7 +3617,7 @@ void mission_intro_load(void)
 
   if (DAT_0059ee98 != 0) {
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
   }
 
@@ -3941,7 +3943,7 @@ void savegame_cam_section(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -4035,7 +4037,7 @@ void savegame_cam_section(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -4277,7 +4279,7 @@ void mission_cheat_check(void)
 
   if (DAT_0059ee98 != 0) {
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
   }
 
@@ -4498,7 +4500,7 @@ void mission_load_cheat(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   iVar5 = 0;
 
@@ -4780,7 +4782,7 @@ void FUN_004850F0(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -4931,7 +4933,7 @@ void comm_00485300(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -5160,7 +5162,7 @@ void menu_mission_list_init(void)
 
   if (DAT_0059ee98 != 0) {
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
   }
 
@@ -5367,7 +5369,7 @@ void mission_mpworld_load(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -5542,7 +5544,7 @@ void dlog_00485f10(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -5663,7 +5665,7 @@ void menu_dialog_teardown(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -5796,7 +5798,7 @@ void FUN_004862E0(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -6020,7 +6022,7 @@ void FUN_00486FC0(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -6165,7 +6167,7 @@ void FUN_00487B70(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -6296,7 +6298,7 @@ void FUN_00488740(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -6403,7 +6405,7 @@ void FUN_004888f0(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -6562,7 +6564,7 @@ void mission_load_world2(void)
 
           if (DAT_0059ee98 != 0) {
 
-            FUN_00497510(DAT_0059ee98);
+            object_destroy(DAT_0059ee98);
 
           }
 
@@ -6705,7 +6707,7 @@ void menu_load_world3(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -6858,7 +6860,7 @@ void mission_menu_load(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -6884,7 +6886,7 @@ void mission_menu_load(void)
 
       FUN_0040d790();
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
       DAT_0059ee98 = 0;
 
@@ -6974,7 +6976,7 @@ void mission_menu_load(void)
 
       FUN_0040d790();
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
       DAT_0059ee98 = 0;
 
@@ -7354,7 +7356,7 @@ void mission_menu_load2(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -7466,7 +7468,7 @@ LAB_00489916:
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -7570,7 +7572,7 @@ LAB_00489916:
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -7768,7 +7770,7 @@ void FUN_00489D40(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -7901,7 +7903,7 @@ void FUN_00489F50(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -8136,7 +8138,7 @@ void FUN_0048A7D0(void)
 
   if (DAT_0059ee98 != 0) {
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
   }
 
@@ -8884,7 +8886,7 @@ LAB_0048b04f:
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -9761,7 +9763,7 @@ void FUN_0048C830(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -9974,7 +9976,7 @@ void dialog_0048ca10(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -10044,7 +10046,7 @@ void dialog_0048ca10(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -10171,7 +10173,7 @@ void FUN_0048D4B0(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -10314,7 +10316,7 @@ void menu_state_dispatch_2(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -10441,7 +10443,7 @@ void FUN_0048DE30(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -10564,7 +10566,7 @@ void menu_dlog_callback_a(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -10716,7 +10718,7 @@ LAB_0048e1b4:
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -10810,7 +10812,7 @@ LAB_0048e1b4:
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -10955,7 +10957,7 @@ void FUN_0048E430(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -11078,7 +11080,7 @@ void menu_dlog_callback_b(void)
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -11226,7 +11228,7 @@ LAB_0048e7be:
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -11316,7 +11318,7 @@ LAB_0048e7be:
 
     FUN_0040d790();
 
-    FUN_00497510(DAT_0059ee98);
+    object_destroy(DAT_0059ee98);
 
     DAT_0059ee98 = 0;
 
@@ -11457,7 +11459,7 @@ void FUN_0048EA50(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -11570,7 +11572,7 @@ void FUN_0048EC30(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -11721,7 +11723,7 @@ void FUN_0048EE60(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -11834,7 +11836,7 @@ void menu_deleted_player(void)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 
@@ -12068,7 +12070,7 @@ void FUN_0048F460(void)
 
     if (DAT_0059ee98 != 0) {
 
-      FUN_00497510(DAT_0059ee98);
+      object_destroy(DAT_0059ee98);
 
     }
 
@@ -12193,7 +12195,7 @@ void menu_gameplay_teardown(int param_1)
 
   FUN_0040d790();
 
-  FUN_00497510(DAT_0059ee98);
+  object_destroy(DAT_0059ee98);
 
   DAT_0059ee98 = 0;
 

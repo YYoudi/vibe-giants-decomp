@@ -1636,7 +1636,7 @@ LAB_00437d68:
 
             }
 
-            FUN_00497510(piVar11[0xe]);
+            object_destroy(piVar11[0xe]);
 
           }
 
@@ -1852,7 +1852,7 @@ LAB_00437d68:
 
             }
 
-            FUN_00497510(piVar11[0xe]);
+            object_destroy(piVar11[0xe]);
 
           }
 
@@ -2070,7 +2070,7 @@ LAB_00437d68:
 
           }
 
-          FUN_00497510(piVar20[0xe]);
+          object_destroy(piVar20[0xe]);
 
         }
 
@@ -3098,7 +3098,7 @@ void main_editor_0043a590(void)
 
         } while (puVar5 != (undefined4 *)0x0);
 
-        FUN_00497510(DAT_0059cbd8[0xe]);
+        object_destroy(DAT_0059cbd8[0xe]);
 
         while (puVar5 = DAT_0059cd04, puVar5 != (undefined4 *)0x0) {
 

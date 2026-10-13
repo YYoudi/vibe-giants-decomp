@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (45 named) — decompiled, names from PS2 symbols
+ * 87 functions (47 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -2724,7 +2724,7 @@ LAB_0050203c:
 
         if ((DAT_005a8800 & 1 << ((byte)iVar11 & 0x1f)) == 0) {
 
-          FUN_005035c0(param_1,iVar11);
+          teammecc_get_hideloc__FP6OBJECTi(param_1,iVar11);
 
         }
 
@@ -3234,7 +3234,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     }
 
-    fVar11 = (float10)FUN_0050a490(&local_c,&local_18);
+    fVar11 = (float10)dirucalcp3d__FP3P3DT0(&local_c,&local_18);
 
     *(float *)(iVar4 + 0xd4) = (float)fVar11;
 
@@ -3818,12 +3818,12 @@ LAB_00503502:
 
 }
 
-/* ===== FUN_005035c0 @ 0x005035C0 ===== */
+/* ===== teammecc_get_hideloc__FP6OBJECTi @ 0x005035C0 ===== */
 /* PS2 candidate: teammecc_get_hideloc__FP6OBJECTi (conf 0.479) */
 
 
 
-void FUN_005035c0(undefined4 param_1,int param_2)
+void teammecc_get_hideloc__FP6OBJECTi(undefined4 param_1,int param_2)
 
 
 
@@ -4278,9 +4278,9 @@ LAB_00503c98:
 
         if (fVar6 <= (float10)5.0) goto LAB_00503c4b;
 
-        FUN_00401000(iVar2);
+        ai_clear_move_goal(iVar2);
 
-        FUN_004993c0(iVar2,&local_c);
+        object_set_location_p3d(iVar2,&local_c);
 
       }
 
@@ -4671,7 +4671,7 @@ LAB_00504094:
 
     }
 
-    fVar6 = (float10)FUN_0050a490(&local_c,&local_30);
+    fVar6 = (float10)dirucalcp3d__FP3P3DT0(&local_c,&local_30);
 
     *(float *)(iVar1 + 0xd4) = (float)fVar6;
 
@@ -7711,7 +7711,7 @@ LAB_00506418:
 
                 *(undefined4 *)(iVar7 + 0x210) = 0;
 
-                FUN_00497510(iVar7);
+                object_destroy(iVar7);
 
                 iVar14 = fx_create(param_1);
 
@@ -10042,12 +10042,12 @@ float10 dirfcalcp3d__FP3P3DT0(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0050a490 @ 0x0050A490 ===== */
+/* ===== dirucalcp3d__FP3P3DT0 @ 0x0050A490 ===== */
 /* PS2 candidate: dirucalcp3d__FP3P3DT0 (conf 0.469) */
 
 
 
-float10 FUN_0050a490(float *param_1,float *param_2)
+float10 dirucalcp3d__FP3P3DT0(float *param_1,float *param_2)
 
 
 
@@ -10850,7 +10850,7 @@ int FUN_0050ae90(int param_1,int param_2,undefined4 param_3)
 
   
 
-  iVar5 = FUN_004aa230(*(undefined1 *)(param_1 + 0x20),*(undefined4 *)(param_1 + 0x1c),param_2,
+  iVar5 = PROJ_Create2(*(undefined1 *)(param_1 + 0x20),*(undefined4 *)(param_1 + 0x1c),param_2,
 
                        *(undefined4 *)(param_1 + 0x18),param_3,param_1);
 
@@ -11540,7 +11540,7 @@ void kabutoai_move(float param_1)
 
   case 10:
 
-    FUN_00401000(param_1);
+    ai_clear_move_goal(param_1);
 
     fVar13 = (float10)rndfloatrange(0x3f800000,0x40400000);
 
@@ -11858,7 +11858,7 @@ joined_r0x0050d01d:
 
 LAB_0050d177:
 
-    FUN_00401000(iVar9);
+    ai_clear_move_goal(iVar9);
 
     goto LAB_0050d17f;
 
@@ -12164,7 +12164,7 @@ switchD_0050ca70_caseD_15:
 
     if (fVar13 < (float10)(fVar4 + 10.0) * (float10)(fVar4 + 10.0)) {
 
-      FUN_00401000(param_1);
+      ai_clear_move_goal(param_1);
 
       *(undefined4 *)((int)param_1 + 0xe4) = 0x17;
 
@@ -13032,7 +13032,7 @@ LAB_0050e133:
 
       ANM_DumpCluster(param_1);
 
-      FUN_00497510(param_1);
+      object_destroy(param_1);
 
     }
 
@@ -13064,7 +13064,7 @@ LAB_0050e133:
 
           sound_play_obj(0x63b,param_1);
 
-          FUN_00497510(param_1);
+          object_destroy(param_1);
 
         }
 
@@ -13770,7 +13770,7 @@ LAB_0050efca:
 
       if (fVar13 < (float10)0.0) {
 
-        FUN_00497510(param_1);
+        object_destroy(param_1);
 
       }
 
@@ -13804,7 +13804,7 @@ LAB_0050efca:
 
           sound_play_obj(0x63b,param_1);
 
-          FUN_00497510(param_1);
+          object_destroy(param_1);
 
         }
 
@@ -14034,7 +14034,7 @@ LAB_0050e4da:
 
       sound_play_3dpos(0x52c,(int)param_1 + 0xa0);
 
-      FUN_00497510(param_1);
+      object_destroy(param_1);
 
       return;
 

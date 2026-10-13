@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/objspec
- * 5 functions (4 named) — decompiled, names from PS2 symbols
+ * 5 functions (5 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/objspec.c(pp) (assert-string evidence)
  */
 
@@ -34,12 +34,12 @@ void main_objspec_00499c80(int param_1)
 
 }
 
-/* ===== FUN_00499cd0 @ 0x00499CD0 ===== */
+/* ===== object_free_all_allocated_data @ 0x00499CD0 ===== */
 /* PS2 candidate: object_free_all_allocated_data (conf 0.468) */
 
 
 
-void FUN_00499cd0(int param_1)
+void object_free_all_allocated_data(int param_1)
 
 
 

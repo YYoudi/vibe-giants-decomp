@@ -34,7 +34,7 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
   object_change_ospec(iVar3,0x18);
 
-  FUN_004993c0(iVar3,param_1 + 0xa0);
+  object_set_location_p3d(iVar3,param_1 + 0xa0);
 
   *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x40000000;
 
@@ -108,7 +108,7 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
     iVar2 = *(int *)(iVar5 + 0x100);
 
-    FUN_004993c0(iVar5,local_c);
+    object_set_location_p3d(iVar5,local_c);
 
     fVar1 = (float)puVar4[0xb];
 
@@ -169,7 +169,7 @@ void main_smoke_004f9170(int param_1)
 
   object_change_ospec(iVar4,0x18);
 
-  FUN_004993c0(iVar4,param_1 + 0xa0);
+  object_set_location_p3d(iVar4,param_1 + 0xa0);
 
   *(uint *)(iVar4 + 0xd8) = *(uint *)(iVar4 + 0xd8) | 0x40000000;
 
@@ -239,7 +239,7 @@ void main_smoke_004f9170(int param_1)
 
     iVar2 = *(int *)(iVar6 + 0x100);
 
-    FUN_004993c0(iVar6,local_c);
+    object_set_location_p3d(iVar6,local_c);
 
     fVar1 = (float)puVar5[0xb];
 

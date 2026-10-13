@@ -64,7 +64,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   local_58 = -(*(float *)(DAT_00632ed8 + 0x1554) * local_1c) + local_64;
 
-  iVar2 = FUN_004aa230(0x30,*(undefined4 *)(param_1 + 0x18c),param_1,0,0,&local_60);
+  iVar2 = PROJ_Create2(0x30,*(undefined4 *)(param_1 + 0x18c),param_1,0,0,&local_60);
 
   *(int *)(iVar2 + 0x274) = param_1;
 

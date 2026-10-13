@@ -2627,7 +2627,7 @@ void FUN_00531470(void)
 
   if (DAT_00633040 == 0) {
 
-    FUN_0052d1c0();
+    gamespy_process_queries();
 
     iVar4 = FUN_0052c5c0();
 
@@ -2939,13 +2939,13 @@ void FUN_00531470(void)
 
                   FUN_0049baa0(iVar4);
 
-                  FUN_00497510(iVar4);
+                  object_destroy(iVar4);
 
                 }
 
                 if ((*(int *)(iVar4 + 0x1e0) == 4) || (*(int *)(iVar4 + 0x1e0) == 0x4b)) {
 
-                  FUN_00497510(iVar4);
+                  object_destroy(iVar4);
 
                 }
 
@@ -3367,7 +3367,7 @@ LAB_005319de:
 
         if (iVar4 != 0) {
 
-          FUN_00497510(iVar4);
+          object_destroy(iVar4);
 
           pcVar14 = DAT_005e0304;
 
@@ -3615,7 +3615,7 @@ LAB_005319de:
 
           *(int *)(iVar4 + 0xe8) = (int)*(short *)(pcVar15 + 0x29);
 
-          FUN_004993c0(iVar4,pcVar15 + 5);
+          object_set_location_p3d(iVar4,pcVar15 + 5);
 
           *(undefined4 *)(iVar4 + 0x128) = *(undefined4 *)(pcVar15 + 0x11);
 
@@ -3783,7 +3783,7 @@ LAB_00532b21:
 
           *(undefined4 *)(iVar4 + 0x18c) = *(undefined4 *)(pcVar15 + 0x25);
 
-          FUN_004993c0(iVar4,pcVar15 + 5);
+          object_set_location_p3d(iVar4,pcVar15 + 5);
 
           *(undefined4 *)(iVar4 + 0x128) = *(undefined4 *)(pcVar15 + 0x11);
 

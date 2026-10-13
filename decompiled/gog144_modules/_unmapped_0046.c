@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (33 named) — decompiled, names from PS2 symbols
+ * 53 functions (34 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -2402,12 +2402,12 @@ LAB_0046acf5:
 
 }
 
-/* ===== FUN_0046aeb0 @ 0x0046AEB0 ===== */
+/* ===== kbos_init @ 0x0046AEB0 ===== */
 /* PS2 candidate: kbos_init (conf 0.471) */
 
 
 
-void FUN_0046aeb0(int param_1)
+void kbos_init(int param_1)
 
 
 
@@ -2754,13 +2754,13 @@ void Init__7PS2Game(undefined4 param_1,undefined4 param_2)
 
   object_init_usage(param_1);
 
-  FUN_004993c0(param_1,param_2);
+  object_set_location_p3d(param_1,param_2);
 
   ObjectCalculateTransform(param_1);
 
   FUN_0049a1f0(param_1);
 
-  FUN_0046aeb0(param_1);
+  kbos_init(param_1);
 
   return;
 
@@ -2896,13 +2896,13 @@ int object_spawn_init_usage(undefined4 param_1,undefined4 param_2,undefined4 *pa
 
   object_init_usage(iVar1);
 
-  FUN_004993c0(iVar1,param_2);
+  object_set_location_p3d(iVar1,param_2);
 
   ObjectCalculateTransform(iVar1);
 
   FUN_0049a1f0(iVar1);
 
-  FUN_0046aeb0(iVar1);
+  kbos_init(iVar1);
 
   if (param_3 != (undefined4 *)0x0) {
 
@@ -2949,13 +2949,13 @@ int kbos_offspring_create(undefined4 param_1)
 
     object_init_usage(iVar1);
 
-    FUN_004993c0(iVar1,param_1);
+    object_set_location_p3d(iVar1,param_1);
 
     ObjectCalculateTransform(iVar1);
 
     FUN_0049a1f0(iVar1);
 
-    FUN_0046aeb0(iVar1);
+    kbos_init(iVar1);
 
   }
 
@@ -3501,7 +3501,7 @@ undefined4 FUN_0046bc60(float param_1,int *param_2)
 
         }
 
-        FUN_00497510(iVar6);
+        object_destroy(iVar6);
 
         iVar5 = *(int *)((int)fVar4 + 0x100);
 

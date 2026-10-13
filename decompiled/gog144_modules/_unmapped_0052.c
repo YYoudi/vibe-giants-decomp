@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (95 named) — decompiled, names from PS2 symbols
+ * 162 functions (96 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -130,7 +130,7 @@ LAB_005200bb:
 
   if (DAT_0059ee98 != 0) {
 
-    FUN_00497510();
+    object_destroy();
 
   }
 
@@ -9432,12 +9432,12 @@ undefined4 FUN_0052c5c0(void)
 
 }
 
-/* ===== FUN_0052d1c0 @ 0x0052D1C0 ===== */
+/* ===== gamespy_process_queries @ 0x0052D1C0 ===== */
 /* PS2 candidate: marker_follow_path (conf 0.475) */
 
 
 
-void FUN_0052d1c0(void)
+void gamespy_process_queries(void)
 
 
 
@@ -14442,7 +14442,7 @@ LAB_0052fabe:
 
       if (*(int *)(iVar5 + 0x174) != 0) {
 
-        FUN_00497510(iVar3);
+        object_destroy(iVar3);
 
       }
 

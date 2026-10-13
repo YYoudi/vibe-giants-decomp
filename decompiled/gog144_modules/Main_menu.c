@@ -233,7 +233,7 @@ void main_menu_004832f0(void)
 
   else {
 
-    FUN_00471a60(0);
+    game_loop_run(0);
 
   }
 
