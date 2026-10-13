@@ -75,15 +75,15 @@ void fps_log_write(void)
 
   if (iVar2 != 0) {
 
-    FUN_00543b5d(iVar2,s__3_2f_Giants_v_1_3f_00559d70,
+    crt_file_free_init(iVar2,s__3_2f_Giants_v_1_3f_00559d70,
 
-                 (double)((float)DAT_0059ce7c / (DAT_006328e8 - _DAT_0059ce88)),0x60000000,
+                       (double)((float)DAT_0059ce7c / (DAT_006328e8 - _DAT_0059ce88)),0x60000000,
 
-                 0x3ff66666);
+                       0x3ff66666);
 
-    FUN_00543b5d(iVar2,s__d_Min_00559d68,DAT_0059d7f8);
+    crt_file_free_init(iVar2,s__d_Min_00559d68,DAT_0059d7f8);
 
-    FUN_00543b5d(iVar2,s__d_Max_00559d60,DAT_0059ce84);
+    crt_file_free_init(iVar2,s__d_Max_00559d60,DAT_0059ce84);
 
     iVar3 = 0;
 
@@ -95,7 +95,7 @@ void fps_log_write(void)
 
         iVar3 = iVar3 + 1;
 
-        FUN_00543b5d(iVar2,s__d_Second__d_00559d50,*puVar1,iVar3);
+        crt_file_free_init(iVar2,s__d_Second__d_00559d50,*puVar1,iVar3);
 
       } while (iVar3 < DAT_0059ce78);
 

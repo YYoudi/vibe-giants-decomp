@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (174 named) — decompiled, names from PS2 symbols
+ * 351 functions (178 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -403,13 +403,13 @@ void FUN_00540310(undefined4 param_1)
 
     if (DAT_00630b44 != 0) {
 
-      FUN_00543b5d(DAT_00630b44,&DAT_00555df0,&DAT_00630a30);
+      crt_file_free_init(DAT_00630b44,&DAT_00555df0,&DAT_00630a30);
 
     }
 
     if (DAT_00630b50 != 0) {
 
-      FUN_00543b5d(DAT_00630b48,&DAT_00555df0,&DAT_00630a30);
+      crt_file_free_init(DAT_00630b48,&DAT_00555df0,&DAT_00630a30);
 
     }
 
@@ -2709,7 +2709,7 @@ void __rt_error_box(char *param_1,char *param_2)
 
     }
 
-    FUN_00543b5d();
+    crt_file_free_init();
 
     fclose();
 
@@ -3986,7 +3986,7 @@ undefined4 FUN_005438c9(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   FUN_00545496(param_4);
 
-  uVar1 = FUN_005438f8(param_1,param_2,param_3,param_4);
+  uVar1 = crt_file_read_buf(param_1,param_2,param_3,param_4);
 
   FUN_005454e8(param_4);
 
@@ -3994,8 +3994,8 @@ undefined4 FUN_005438c9(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 }
 
-/* ===== FUN_005438f8 @ 0x005438F8 ===== */
-uint FUN_005438f8(undefined1 *param_1,uint param_2,uint param_3,int *param_4)
+/* ===== crt_file_read_buf @ 0x005438F8 ===== */
+uint crt_file_read_buf(undefined1 *param_1,uint param_2,uint param_3,int *param_4)
 
 
 
@@ -4131,8 +4131,8 @@ LAB_005439d4:
 
 }
 
-/* ===== FUN_005439e0 @ 0x005439E0 ===== */
-undefined4 FUN_005439e0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== crt_file_open_alloc @ 0x005439E0 ===== */
+undefined4 crt_file_open_alloc(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -4167,7 +4167,7 @@ void BinFileSeek_2(undefined4 param_1,undefined4 param_2)
 
 {
 
-  FUN_005439e0(param_1,param_2,0x40);
+  crt_file_open_alloc(param_1,param_2,0x40);
 
   return;
 
@@ -4186,7 +4186,7 @@ undefined4 FUN_00543a24(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   FUN_00545496(param_4);
 
-  uVar1 = FUN_00543a53(param_1,param_2,param_3,param_4);
+  uVar1 = crt_file_flush_write(param_1,param_2,param_3,param_4);
 
   FUN_005454e8(param_4);
 
@@ -4194,8 +4194,8 @@ undefined4 FUN_00543a24(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 }
 
-/* ===== FUN_00543a53 @ 0x00543A53 ===== */
-uint FUN_00543a53(char *param_1,uint param_2,uint param_3,int *param_4)
+/* ===== crt_file_flush_write @ 0x00543A53 ===== */
+uint crt_file_flush_write(char *param_1,uint param_2,uint param_3,int *param_4)
 
 
 
@@ -4327,8 +4327,8 @@ LAB_00543b0b:
 
 }
 
-/* ===== FUN_00543b5d @ 0x00543B5D ===== */
-undefined4 FUN_00543b5d(undefined4 param_1,undefined4 param_2)
+/* ===== crt_file_free_init @ 0x00543B5D ===== */
+undefined4 crt_file_free_init(undefined4 param_1,undefined4 param_2)
 
 
 

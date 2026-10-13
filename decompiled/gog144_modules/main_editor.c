@@ -3231,23 +3231,15 @@ void main_editor_00440d90(void)
 
   }
 
-  FUN_00543b5d(iVar2,s___This_file_may_be_generated_by_g_005584f8);
+  crt_file_free_init(iVar2,s___This_file_may_be_generated_by_g_005584f8);
 
-  FUN_00543b5d(iVar2,s___Objects_sorted_from_location___005584c4,
+  crt_file_free_init(iVar2,s___Objects_sorted_from_location___005584c4,
 
-               (double)*(float *)(DAT_00632a88 + 0xa0),(double)*(float *)(DAT_00632a88 + 0xa4),
+                     (double)*(float *)(DAT_00632a88 + 0xa0),(double)*(float *)(DAT_00632a88 + 0xa4)
 
-               (double)*(float *)(DAT_00632a88 + 0xa8));
+                     ,(double)*(float *)(DAT_00632a88 + 0xa8));
 
-  FUN_00543b5d(iVar2,s_ObjEditStart_005584b4);
-
-  __ftol();
-
-  uVar3 = __ftol();
-
-  __ftol(uVar3);
-
-  FUN_00543b5d();
+  crt_file_free_init(iVar2,s_ObjEditStart_005584b4);
 
   __ftol();
 
@@ -3255,55 +3247,67 @@ void main_editor_00440d90(void)
 
   __ftol(uVar3);
 
-  FUN_00543b5d();
+  crt_file_free_init();
 
-  FUN_00543b5d(iVar2,s_bumpclampvalue__f_0055846c,(double)*(float *)(DAT_006330e4 + 0x4f38));
+  __ftol();
 
-  FUN_00543b5d(iVar2,s_DisableScenerios__d_00558454,*(undefined4 *)(DAT_006330e4 + 0x4e88));
+  uVar3 = __ftol();
 
-  FUN_00543b5d(iVar2,s_WaterColor__f__f__f__f__f__f__f___00558400,
+  __ftol(uVar3);
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x50a2) * 0.003921569),
+  crt_file_free_init();
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x50a1) * 0.003921569),
+  crt_file_free_init(iVar2,s_bumpclampvalue__f_0055846c,(double)*(float *)(DAT_006330e4 + 0x4f38));
 
-               (double)((float)(*(uint *)(DAT_006330e4 + 0x50a0) & 0xff) * 0.003921569),
+  crt_file_free_init(iVar2,s_DisableScenerios__d_00558454,*(undefined4 *)(DAT_006330e4 + 0x4e88));
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x508e) * 0.003921569),
+  crt_file_free_init(iVar2,s_WaterColor__f__f__f__f__f__f__f___00558400,
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x508d) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x50a2) * 0.003921569),
 
-               (double)((float)(*(uint *)(DAT_006330e4 + 0x508c) & 0xff) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x50a1) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x5092) * 0.003921569),
+                     (double)((float)(*(uint *)(DAT_006330e4 + 0x50a0) & 0xff) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x5091) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x508e) * 0.003921569),
 
-               (double)((float)(*(uint *)(DAT_006330e4 + 0x5090) & 0xff) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x508d) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x5096) * 0.003921569),
+                     (double)((float)(*(uint *)(DAT_006330e4 + 0x508c) & 0xff) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x5095) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x5092) * 0.003921569),
 
-               (double)((float)(*(uint *)(DAT_006330e4 + 0x5094) & 0xff) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x5091) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x509a) * 0.003921569),
+                     (double)((float)(*(uint *)(DAT_006330e4 + 0x5090) & 0xff) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x5099) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x5096) * 0.003921569),
 
-               (double)((float)(*(uint *)(DAT_006330e4 + 0x5098) & 0xff) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x5095) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x509e) * 0.003921569),
+                     (double)((float)(*(uint *)(DAT_006330e4 + 0x5094) & 0xff) * 0.003921569),
 
-               (double)((float)*(byte *)(DAT_006330e4 + 0x509d) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x509a) * 0.003921569),
 
-               (double)((float)(*(uint *)(DAT_006330e4 + 0x509c) & 0xff) * 0.003921569),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x5099) * 0.003921569),
 
-               (double)*(float *)(DAT_006330e4 + 0x50a4),(double)*(float *)(DAT_006330e4 + 0x50a8),
+                     (double)((float)(*(uint *)(DAT_006330e4 + 0x5098) & 0xff) * 0.003921569),
 
-               (double)*(float *)(DAT_006330e4 + 0x50ac),(double)*(float *)(DAT_006330e4 + 0x50b0),
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x509e) * 0.003921569),
 
-               (double)*(float *)(DAT_006330e4 + 0x50b4));
+                     (double)((float)*(byte *)(DAT_006330e4 + 0x509d) * 0.003921569),
+
+                     (double)((float)(*(uint *)(DAT_006330e4 + 0x509c) & 0xff) * 0.003921569),
+
+                     (double)*(float *)(DAT_006330e4 + 0x50a4),
+
+                     (double)*(float *)(DAT_006330e4 + 0x50a8),
+
+                     (double)*(float *)(DAT_006330e4 + 0x50ac),
+
+                     (double)*(float *)(DAT_006330e4 + 0x50b0),
+
+                     (double)*(float *)(DAT_006330e4 + 0x50b4));
 
   iVar6 = 0;
 
@@ -3311,13 +3315,13 @@ void main_editor_00440d90(void)
 
     if (*(char *)(iVar6 + 0x2210 + DAT_006330e4) == '\0') {
 
-      FUN_00543b5d(iVar2,&DAT_00558214);
+      crt_file_free_init(iVar2,&DAT_00558214);
 
       break;
 
     }
 
-    FUN_00543b5d(iVar2,s_Mission__s_005583f4);
+    crt_file_free_init(iVar2,s_Mission__s_005583f4);
 
     iVar6 = iVar6 + 0x118;
 
@@ -3333,9 +3337,9 @@ void main_editor_00440d90(void)
 
     if (iVar1 != 0) {
 
-      FUN_00543b5d(iVar2,s_Scenerio__d__d__s_005583e0,iVar1,*(undefined4 *)(iVar7 + 0x4554 + iVar6),
+      crt_file_free_init(iVar2,s_Scenerio__d__d__s_005583e0,iVar1,
 
-                   iVar7 + 0x4558 + iVar6);
+                         *(undefined4 *)(iVar7 + 0x4554 + iVar6),iVar7 + 0x4558 + iVar6);
 
       iVar6 = DAT_006330e4;
 
@@ -3345,7 +3349,7 @@ void main_editor_00440d90(void)
 
   } while (iVar7 < 0x510);
 
-  FUN_00543b5d(iVar2,&DAT_00558214);
+  crt_file_free_init(iVar2,&DAT_00558214);
 
   iVar6 = 0;
 
@@ -3411,7 +3415,7 @@ void main_editor_00440d90(void)
 
   }
 
-  FUN_00543b5d(iVar2,s_ObjEditEnd_005583cc);
+  crt_file_free_init(iVar2,s_ObjEditEnd_005583cc);
 
   editor_0054384c(iVar2);
 

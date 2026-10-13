@@ -2793,7 +2793,7 @@ void FUN_00531470(void)
 
         if ((DAT_00632f44 == 0) && (DAT_00632f08 < 6)) {
 
-          comm_entergame_msg2(6);
+          comm_entergame_msg_2(6);
 
           iVar4 = FUN_00525140(DAT_00632f14,DAT_00632f14);
 
@@ -3135,7 +3135,7 @@ LAB_005319de:
 
       case '\x11':
 
-        comm_entergame_msg3(pcVar15);
+        comm_entergame_msg_3(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 9;
 
@@ -3887,7 +3887,7 @@ LAB_00532513:
 
         if ((iVar4 == 0) ||
 
-           (iVar4 = comm_server_ping(*(undefined4 *)(pcVar15 + 1)), pcVar14 = DAT_005e0304,
+           (iVar4 = comm_server_heartbeat(*(undefined4 *)(pcVar15 + 1)), pcVar14 = DAT_005e0304,
 
            iVar4 < 1)) goto LAB_00532b8b;
 
@@ -4689,8 +4689,8 @@ void comm_team_broadcast_draw(int param_1)
 
 }
 
-/* ===== comm_entergame_msg3 @ 0x00532F60 ===== */
-void comm_entergame_msg3(undefined4 *param_1)
+/* ===== comm_entergame_msg_3 @ 0x00532F60 ===== */
+void comm_entergame_msg_3(undefined4 *param_1)
 
 
 
@@ -9535,7 +9535,7 @@ void FUN_005362d0(char *param_1,undefined4 param_2)
 
     if (iVar1 != 0) {
 
-      FUN_00543b5d(iVar1,s__1_2f___s_00580258,(double)DAT_006328e8,param_1);
+      crt_file_free_init(iVar1,s__1_2f___s_00580258,(double)DAT_006328e8,param_1);
 
       editor_0054384c(iVar1);
 
@@ -11384,7 +11384,7 @@ void FUN_005375e0(void)
 
       }
 
-      comm_entergame_msg2(6);
+      comm_entergame_msg_2(6);
 
     }
 
@@ -11422,7 +11422,7 @@ void FUN_005375e0(void)
 
           if ((DAT_00632f08 == 1.96182e-44) && (DAT_00633238 == 0)) {
 
-            comm_entergame_msg(0);
+            comm_entergame_msg_1(0);
 
           }
 

@@ -10383,8 +10383,8 @@ void object_spawn_copy(void)
 
 }
 
-/* ===== env_texture_load @ 0x004EE080 ===== */
-void env_texture_load(void)
+/* ===== env_water_texture @ 0x004EE080 ===== */
+void env_water_texture(void)
 
 
 

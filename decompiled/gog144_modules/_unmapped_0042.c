@@ -8303,7 +8303,7 @@ void FUN_00425eb0(undefined4 param_1)
 
     if (iVar1 != 0) {
 
-      FUN_00543b5d(iVar1,&DAT_00556380,param_1);
+      crt_file_free_init(iVar1,&DAT_00556380,param_1);
 
       editor_0054384c(iVar1);
 

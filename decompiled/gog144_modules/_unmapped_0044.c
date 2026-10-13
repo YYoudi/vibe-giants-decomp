@@ -733,19 +733,21 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
     if ((*(float *)(param_2 + 0xcc) == 0.0) && (*(float *)(param_2 + 0xd0) == 0.0)) {
 
-      FUN_00543b5d();
+      crt_file_free_init();
 
     }
 
     else {
 
-      FUN_00543b5d(param_1,s_Object___12s__8_2f__8_2f__7_2f___00558328,DAT_0059cd30 + iVar5 * 9 + 1,
+      crt_file_free_init(param_1,s_Object___12s__8_2f__8_2f__7_2f___00558328,
 
-                   (double)*(float *)(param_2 + 0xa0),(double)*(float *)(param_2 + 0xa4),
+                         DAT_0059cd30 + iVar5 * 9 + 1,(double)*(float *)(param_2 + 0xa0),
 
-                   (double)*(float *)(param_2 + 0xa8),(double)*(float *)(param_2 + 200),
+                         (double)*(float *)(param_2 + 0xa4),(double)*(float *)(param_2 + 0xa8),
 
-                   (double)*(float *)(param_2 + 0xcc),(double)*(float *)(param_2 + 0xd0));
+                         (double)*(float *)(param_2 + 200),(double)*(float *)(param_2 + 0xcc),
+
+                         (double)*(float *)(param_2 + 0xd0));
 
     }
 
@@ -753,13 +755,15 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
   else {
 
-    FUN_00543b5d(param_1,s__sLockStart___12s__d__d_005583b0,local_70,DAT_0059cd30 + iVar5 * 9 + 1,
+    crt_file_free_init(param_1,s__sLockStart___12s__d__d_005583b0,local_70,
 
-                 *(undefined4 *)(param_2 + 0x214),*(undefined4 *)(param_2 + 0x218));
+                       DAT_0059cd30 + iVar5 * 9 + 1,*(undefined4 *)(param_2 + 0x214),
+
+                       *(undefined4 *)(param_2 + 0x218));
 
     if ((char)((uint)*(undefined4 *)(param_2 + 0xdc) >> 8) < '\0') {
 
-      FUN_00543b5d();
+      crt_file_free_init();
 
     }
 
@@ -767,25 +771,25 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
   if (*(int *)(param_2 + 0xc4) != 0x3f800000) {
 
-    FUN_00543b5d();
+    crt_file_free_init();
 
   }
 
   if (*(int *)(param_2 + 0xe8) != 0) {
 
-    FUN_00543b5d(param_1,s__s_AIMode__d_00558304,local_70,*(int *)(param_2 + 0xe8));
+    crt_file_free_init(param_1,s__s_AIMode__d_00558304,local_70,*(int *)(param_2 + 0xe8));
 
   }
 
   if (*(int *)(param_2 + 0x174) != 0) {
 
-    FUN_00543b5d(param_1,s__s_TeamId__d_005582f4,local_70,*(int *)(param_2 + 0x174));
+    crt_file_free_init(param_1,s__s_TeamId__d_005582f4,local_70,*(int *)(param_2 + 0x174));
 
   }
 
   if ((*(float *)(param_2 + 0xf8) != 0.0) || (*(float *)(param_2 + 0xfc) != 0.0)) {
 
-    FUN_00543b5d();
+    crt_file_free_init();
 
   }
 
@@ -793,7 +797,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
   if (uVar2 != 0) {
 
-    FUN_00543b5d(param_1,s__s_TriggerType__d_005582c0,local_70,uVar2);
+    crt_file_free_init(param_1,s__s_TriggerType__d_005582c0,local_70,uVar2);
 
   }
 
@@ -801,29 +805,31 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
     iVar5 = *(int *)(param_2 + 0x100);
 
-    FUN_00543b5d(param_1,s__s_SplineKeyTime__d_005582a8,local_70,*(undefined4 *)(iVar5 + 0x50));
+    crt_file_free_init(param_1,s__s_SplineKeyTime__d_005582a8,local_70,*(undefined4 *)(iVar5 + 0x50)
+
+                      );
 
     if ((*(float *)(iVar5 + 0x18) != 0.0) || (*(float *)(iVar5 + 0x1c) != 0.0)) {
 
-      FUN_00543b5d();
+      crt_file_free_init();
 
     }
 
     if ((*(int *)(iVar5 + 0x10) != 0x3f800000) || (*(int *)(iVar5 + 0x14) != 0x3f800000)) {
 
-      FUN_00543b5d();
+      crt_file_free_init();
 
     }
 
     if (*(int *)(iVar5 + 0x48) != 0) {
 
-      FUN_00543b5d();
+      crt_file_free_init();
 
     }
 
     if (*(int *)(iVar5 + 0x4c) != 0) {
 
-      FUN_00543b5d();
+      crt_file_free_init();
 
     }
 
@@ -833,7 +839,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
      (iVar5 = *(int *)(*(int *)(param_2 + 0x100) + 0x60), iVar5 != 0)) {
 
-    FUN_00543b5d(param_1,s__s_SplineStartID__d_00558234,local_70,iVar5);
+    crt_file_free_init(param_1,s__s_SplineStartID__d_00558234,local_70,iVar5);
 
   }
 
@@ -841,7 +847,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
      (iVar5 = *(int *)(*(int *)(param_2 + 0x100) + 0xc), iVar5 != 0)) {
 
-    FUN_00543b5d(param_1,s__s_SplineStartID__d_00558234,local_70,iVar5);
+    crt_file_free_init(param_1,s__s_SplineStartID__d_00558234,local_70,iVar5);
 
   }
 
@@ -849,7 +855,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
     piVar1 = *(int **)(param_2 + 0x100);
 
-    FUN_00543b5d(param_1,s__s_MinishopRIcons__d_0055821c,local_70,*piVar1);
+    crt_file_free_init(param_1,s__s_MinishopRIcons__d_0055821c,local_70,*piVar1);
 
     local_88 = 0;
 
@@ -857,7 +863,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
       do {
 
-        FUN_00543b5d();
+        crt_file_free_init();
 
         local_88 = local_88 + 1;
 
@@ -865,9 +871,9 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
     }
 
-    FUN_00543b5d(param_1,&DAT_00558214);
+    crt_file_free_init(param_1,&DAT_00558214);
 
-    FUN_00543b5d(param_1,s__s_MinishopMIcons__d_005581fc,local_70,piVar1[0x29]);
+    crt_file_free_init(param_1,s__s_MinishopMIcons__d_005581fc,local_70,piVar1[0x29]);
 
     local_88 = 0;
 
@@ -875,7 +881,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
       do {
 
-        FUN_00543b5d();
+        crt_file_free_init();
 
         local_88 = local_88 + 1;
 
@@ -883,7 +889,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
     }
 
-    FUN_00543b5d(param_1,&DAT_00558214);
+    crt_file_free_init(param_1,&DAT_00558214);
 
   }
 
@@ -891,13 +897,13 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
     FUN_0046f8d0(param_2,local_80);
 
-    FUN_00543b5d();
+    crt_file_free_init();
 
   }
 
   if (*(int *)(param_2 + 0x1e0) == 0x34) {
 
-    FUN_00543b5d();
+    crt_file_free_init();
 
   }
 
@@ -917,7 +923,9 @@ LAB_00440cda:
 
       if ((uVar2 & uVar3) != 0) {
 
-        FUN_00543b5d(param_1,s__s_FlickUsed__s_005581a8,local_70,local_84 + 0x210 + DAT_006330e4);
+        crt_file_free_init(param_1,s__s_FlickUsed__s_005581a8,local_70,
+
+                           local_84 + 0x210 + DAT_006330e4);
 
       }
 
@@ -983,7 +991,7 @@ LAB_00440ccd:
 
       if (0 < param_3) {
 
-        FUN_00543b5d();
+        crt_file_free_init();
 
       }
 

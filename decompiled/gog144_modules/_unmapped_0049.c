@@ -13916,7 +13916,7 @@ void chat_log_close(void)
 
     if (iVar1 != 0) {
 
-      FUN_00543b5d(iVar1,s_____________Log_chat_toggled_OFF_0055e81c,(double)DAT_006328e8);
+      crt_file_free_init(iVar1,s_____________Log_chat_toggled_OFF_0055e81c,(double)DAT_006328e8);
 
       editor_0054384c(iVar1);
 
@@ -13930,7 +13930,7 @@ void chat_log_close(void)
 
     if (iVar1 != 0) {
 
-      FUN_00543b5d(iVar1,s_____________Log_chat_toggled_ON_a_0055e848,(double)DAT_006328e8);
+      crt_file_free_init(iVar1,s_____________Log_chat_toggled_ON_a_0055e848,(double)DAT_006328e8);
 
       editor_0054384c(iVar1);
 
@@ -14241,7 +14241,9 @@ LAB_0049f8f1:
 
           if (iVar2 != 0) {
 
-            FUN_00543b5d(iVar2,s_____________Log_chat_toggled_OFF_0055e81c,(double)DAT_006328e8);
+            crt_file_free_init(iVar2,s_____________Log_chat_toggled_OFF_0055e81c,
+
+                               (double)DAT_006328e8);
 
             editor_0054384c(iVar2);
 
@@ -14257,7 +14259,9 @@ LAB_0049f8f1:
 
           if (iVar2 != 0) {
 
-            FUN_00543b5d(iVar2,s_____________Log_chat_toggled_ON_a_0055e848,(double)DAT_006328e8);
+            crt_file_free_init(iVar2,s_____________Log_chat_toggled_ON_a_0055e848,
+
+                               (double)DAT_006328e8);
 
             editor_0054384c(iVar2);
 

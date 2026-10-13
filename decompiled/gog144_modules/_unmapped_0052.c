@@ -1657,8 +1657,8 @@ switchD_00521a33_default:
 
 }
 
-/* ===== comm_maxplayers_menu @ 0x00521B40 ===== */
-void comm_maxplayers_menu(undefined4 param_1)
+/* ===== comm_maxplayers_dlog @ 0x00521B40 ===== */
+void comm_maxplayers_dlog(undefined4 param_1)
 
 
 
@@ -1956,8 +1956,8 @@ void comm_capture_time_menu(int param_1,int param_2)
 
 }
 
-/* ===== comm_smartie_diff_menu @ 0x00522020 ===== */
-void comm_smartie_diff_menu(int param_1)
+/* ===== comm_smartie_diff_dlog @ 0x00522020 ===== */
+void comm_smartie_diff_dlog(int param_1)
 
 
 
@@ -2117,8 +2117,8 @@ void comm_difficulty_menu(int param_1)
 
 }
 
-/* ===== comm_timelimit_menu @ 0x00522260 ===== */
-void comm_timelimit_menu(int param_1)
+/* ===== comm_timelimit_dlog @ 0x00522260 ===== */
+void comm_timelimit_dlog(int param_1)
 
 
 
@@ -3127,7 +3127,7 @@ void comm_game_setup_menu(void)
 
     comm_capture_time_menu(DAT_00632f2c,1);
 
-    comm_smartie_diff_menu(DAT_00632f3c);
+    comm_smartie_diff_dlog(DAT_00632f3c);
 
     comm_difficulty_menu(DAT_00632f40);
 
@@ -3145,7 +3145,7 @@ void comm_game_setup_menu(void)
 
     comm_00427860(DAT_005def8c,0x19d,(-(uint)bVar2 & 0x282792) + 0xa0a0a0);
 
-    comm_timelimit_menu(DAT_00632fcc);
+    comm_timelimit_dlog(DAT_00632fcc);
 
     comm_playerscore_menu(DAT_00632fdc);
 
@@ -4705,7 +4705,7 @@ void comm_entergame_msg4(void)
 
   if (DAT_00632f08 == 10) {
 
-    comm_entergame_msg2(0xc);
+    comm_entergame_msg_2(0xc);
 
   }
 
@@ -5159,7 +5159,7 @@ void gamespy_statechange2(void)
 
   DAT_005dde9c = 0;
 
-  comm_entergame_msg2(0xe);
+  comm_entergame_msg_2(0xe);
 
   if (((DAT_00632f44 != 0) && (DAT_0063317c == 0)) && (DAT_00633184 == 0)) {
 
@@ -7119,7 +7119,7 @@ void FUN_0052a050(int param_1)
 
     if (DAT_00632f3c != local_1a8) {
 
-      comm_smartie_diff_menu(DAT_00632f3c);
+      comm_smartie_diff_dlog(DAT_00632f3c);
 
     }
 
@@ -7147,7 +7147,7 @@ void FUN_0052a050(int param_1)
 
       }
 
-      comm_maxplayers_menu(DAT_00632f34);
+      comm_maxplayers_dlog(DAT_00632f34);
 
     }
 
@@ -7179,8 +7179,8 @@ void FUN_0052a050(int param_1)
 
 }
 
-/* ===== comm_server_ping @ 0x0052A940 ===== */
-int comm_server_ping(int param_1)
+/* ===== comm_server_heartbeat @ 0x0052A940 ===== */
+int comm_server_heartbeat(int param_1)
 
 
 
@@ -8015,9 +8015,9 @@ void comm_chatlog_write(void)
 
             }
 
-            FUN_00543b5d(iVar2,s_____________Time__5_2f__player___0057ead8,(double)DAT_006328e8,
+            crt_file_free_init(iVar2,s_____________Time__5_2f__player___0057ead8,
 
-                         iVar6,pcVar4);
+                               (double)DAT_006328e8,iVar6,pcVar4);
 
             editor_0054384c(iVar2);
 
@@ -13148,8 +13148,8 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== comm_entergame_msg @ 0x0052F040 ===== */
-void comm_entergame_msg(undefined4 param_1)
+/* ===== comm_entergame_msg_1 @ 0x0052F040 ===== */
+void comm_entergame_msg_1(undefined4 param_1)
 
 
 
@@ -13181,8 +13181,8 @@ void comm_entergame_msg(undefined4 param_1)
 
 }
 
-/* ===== comm_entergame_msg2 @ 0x0052F0A0 ===== */
-void comm_entergame_msg2(int param_1)
+/* ===== comm_entergame_msg_2 @ 0x0052F0A0 ===== */
+void comm_entergame_msg_2(int param_1)
 
 
 
