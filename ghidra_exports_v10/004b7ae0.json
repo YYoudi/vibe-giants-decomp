@@ -1,0 +1,1 @@
+{"address": "004b7ae0", "name": "FUN_004b7ae0", "decompiled": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nfloat10 FUN_004b7ae0(void)\n\n{\n  return (float10)_DAT_005a5c9c;\n}"}

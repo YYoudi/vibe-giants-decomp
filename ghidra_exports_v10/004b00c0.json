@@ -1,0 +1,1 @@
+{"address": "004b00c0", "name": "FUN_004b00c0", "decompiled": "undefined4 FUN_004b00c0(int param_1,int param_2)\n\n{\n  if (((-2 < param_1) && (param_1 < 0x4b)) && (param_1 = param_1 * 0x4c, param_1 != -0x59ffbc)) {\n    if (param_2 != 0) {\n      return *(undefined4 *)(&DAT_0059ffc0 + param_1);\n    }\n    return *(undefined4 *)(&DAT_0059ffc4 + param_1);\n  }\n  return 0;\n}"}

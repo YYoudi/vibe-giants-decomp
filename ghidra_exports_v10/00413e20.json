@@ -1,0 +1,1 @@
+{"address": "00413e20", "name": "FUN_00413e20", "decompiled": "undefined4 FUN_00413e20(int param_1)\n\n{\n  if (((*(float *)(param_1 + 0x1bc) < 0.0 == (*(float *)(param_1 + 0x1bc) == 0.0)) &&\n      (*(int *)(param_1 + 0x224) == 0)) && (*(float *)(param_1 + 0x14c) < 0.64278)) {\n    return 1;\n  }\n  return 0;\n}"}

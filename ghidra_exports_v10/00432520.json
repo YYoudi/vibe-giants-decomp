@@ -1,0 +1,1 @@
+{"address": "00432520", "name": "FUN_00432520", "decompiled": "void FUN_00432520(void)\n\n{\n  DAT_006552a4 = FUN_0050e3c0(\"Kabuto_footprint\");\n  DAT_006552ac = FUN_00438f00(400,100,2);\n  FUN_00438a30(DAT_006552ac,0x33c,DAT_006552a4,0xffffffff);\n  return;\n}"}

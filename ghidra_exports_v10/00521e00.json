@@ -1,0 +1,1 @@
+{"address": "00521e00", "name": "FUN_00521e00", "decompiled": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nundefined4 FUN_00521e00(void)\n\n{\n  if (((DAT_00631880 == 0) && ((_DAT_006314f4 & 0x40) != 0)) && ((_DAT_006314f4 & 0x4000) != 0)) {\n    return 1;\n  }\n  return 0;\n}"}

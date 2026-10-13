@@ -1,0 +1,1 @@
+{"address": "005463f3", "name": "FUN_005463f3", "decompiled": "void FUN_005463f3(void)\n\n{\n  if (PTR_FUN_00581fa8 != (undefined *)0x0) {\n    (*(code *)PTR_FUN_00581fa8)();\n  }\n  FUN_005464f9(&DAT_00555008,&DAT_00555014);\n  FUN_005464f9(&DAT_00555000,&DAT_00555004);\n  return;\n}"}

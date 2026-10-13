@@ -1,0 +1,1 @@
+{"address": "004aeca0", "name": "FUN_004aeca0", "decompiled": "char FUN_004aeca0(void)\n\n{\n  char cVar1;\n  float10 extraout_ST0;\n  \n  cVar1 = __ftol();\n  if ((cVar1 == '\\0') && (extraout_ST0 != (float10)0.0)) {\n    if (extraout_ST0 < (float10)0.0) {\n      return -1;\n    }\n    return '\\x01';\n  }\n  return cVar1;\n}"}

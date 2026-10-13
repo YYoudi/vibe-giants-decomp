@@ -1,0 +1,1 @@
+{"address": "00496050", "name": "FUN_00496050", "decompiled": "void FUN_00496050(void)\n\n{\n  int iVar1;\n  \n  if (((DAT_00631254 == 0) && (DAT_00631380 == 4)) &&\n     (iVar1 = *(int *)(DAT_006316ec + 0x4a64) + -1, iVar1 == 1)) {\n    DAT_00631254 = iVar1;\n    FUN_0044a150(\"story5_get_food_1\");\n  }\n  return;\n}"}

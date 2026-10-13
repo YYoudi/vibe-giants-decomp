@@ -1,0 +1,1 @@
+{"address": "0053a3a0", "name": "FUN_0053a3a0", "decompiled": "bool FUN_0053a3a0(undefined4 param_1)\n\n{\n  int iVar1;\n  \n  iVar1 = FUN_0053b280(DAT_005e12b0,param_1);\n  return iVar1 != 0;\n}"}

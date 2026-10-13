@@ -1,0 +1,1 @@
+{"address": "00506a60", "name": "FUN_00506a60", "decompiled": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_00506a60(int param_1,int param_2)\n\n{\n  DAT_00565be8 = DAT_00565be8 | 2;\n  _DAT_00565498 = (float)param_1;\n  _DAT_005654a0 = (float)-param_2;\n  return;\n}"}

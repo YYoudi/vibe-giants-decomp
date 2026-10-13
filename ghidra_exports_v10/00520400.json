@@ -1,0 +1,1 @@
+{"address": "00520400", "name": "FUN_00520400", "decompiled": "void FUN_00520400(char *param_1,size_t param_2)\n\n{\n  if (0x3f < param_2) {\n    param_2 = 0x3f;\n  }\n  _strncpy(&DAT_005dc898,param_1,param_2);\n  (&DAT_005dc898)[param_2] = 0;\n  return;\n}"}

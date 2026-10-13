@@ -1,0 +1,1 @@
+{"address": "0045b040", "name": "FUN_0045b040", "decompiled": "bool FUN_0045b040(int param_1)\n\n{\n  int iVar1;\n  \n  if (*(int *)(param_1 + 0x1e0) == 2) {\n    iVar1 = *(int *)(param_1 + 0x100);\n    return *(int *)(iVar1 + 0x60) == *(int *)(iVar1 + 0x180 + *(int *)(iVar1 + 100) * 4);\n  }\n  return true;\n}"}

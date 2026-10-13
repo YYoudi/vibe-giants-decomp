@@ -1,0 +1,1 @@
+{"address": "0054ad9e", "name": "__cintrindisp1", "decompiled": "/* Library Function - Single Match\n    __cintrindisp1\n   \n   Library: Visual Studio */\n\nvoid __cintrindisp1(void)\n\n{\n  __trandisp1();\n  FUN_0054ae2a();\n  return;\n}"}

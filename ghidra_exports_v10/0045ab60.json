@@ -1,0 +1,1 @@
+{"address": "0045ab60", "name": "FUN_0045ab60", "decompiled": "undefined4 FUN_0045ab60(int param_1)\n\n{\n  int iVar1;\n  \n  iVar1 = 0x184;\n  while ((*(int *)(param_1 + 0x1e0) != 2 || (-1 < *(int *)(iVar1 + *(int *)(param_1 + 0x100))))) {\n    iVar1 = iVar1 + 4;\n    if (399 < iVar1) {\n      return 0;\n    }\n  }\n  return 1;\n}"}

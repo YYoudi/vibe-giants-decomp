@@ -1,0 +1,1 @@
+{"address": "004a7430", "name": "FUN_004a7430", "decompiled": "void FUN_004a7430(int param_1,float param_2)\n\n{\n  if ((param_2 < *(float *)(param_1 + 0x2c)) || (*(float *)(param_1 + 0x2c) == 0.0)) {\n    *(float *)(param_1 + 0x2c) = param_2;\n  }\n  return;\n}"}

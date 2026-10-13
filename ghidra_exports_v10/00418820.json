@@ -1,0 +1,1 @@
+{"address": "00418820", "name": "FUN_00418820", "decompiled": "bool FUN_00418820(int param_1)\n\n{\n  return param_1 != 0;\n}"}

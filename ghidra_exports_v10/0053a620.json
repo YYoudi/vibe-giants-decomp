@@ -1,0 +1,1 @@
+{"address": "0053a620", "name": "FUN_0053a620", "decompiled": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_0053a620(void)\n\n{\n  if ((DAT_005e12c4 != 0) && (_DAT_005e12a4 = _DAT_005e12a4 - _DAT_00630f24, _DAT_005e12a4 <= 0.0))\n  {\n    gzp_close_free();\n    DAT_005e12c4 = 0;\n  }\n  return;\n}"}

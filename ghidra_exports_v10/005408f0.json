@@ -1,0 +1,1 @@
+{"address": "005408f0", "name": "FUN_005408f0", "decompiled": "void FUN_005408f0(void)\n\n{\n  uint uVar1;\n  \n  uVar1 = 0;\n  do {\n    (&DAT_0060f058)[uVar1] = (uint)SQRT((float)((uVar1 | 0x3f8000) << 8)) & 0x7fffff;\n    (&DAT_005ef058)[uVar1] = (uint)SQRT((float)((uVar1 | 0x400000) << 8)) & 0x7fffff;\n    uVar1 = uVar1 + 1;\n  } while (uVar1 < 0x8000);\n  return;\n}"}

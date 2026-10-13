@@ -1,0 +1,10 @@
+G:\VibeRE\GiantsRE\scripts\ps2_fix_and_dump.py:52: DeprecationWarning: open_program() is deprecated, use open_project() and program_context() or program_loader() instead.
+  with pyghidra.open_program(ELF,
+ELF printable strings: 3037
+symtab functions: 4769
+disassembled 2439 new function starts
+running analyzeAll (this takes a few minutes)...
+analysis done; total instructions: 335548
+functions with string refs: 253 (546 refs)
+wrote G:\VibeRE\GiantsRE\ps2_symbols\ps2_string_refs.json
+save skipped: java.io.IOException: Unable to lock due to active transaction

@@ -1,0 +1,1 @@
+{"address": "004d4160", "name": "FUN_004d4160", "decompiled": "void FUN_004d4160(int param_1,undefined4 param_2)\n\n{\n  if (param_1 / 0xe10 != 0) {\n    FUN_00544b47(param_2,\"%d:%02d:%02d\",param_1 / 0xe10);\n    return;\n  }\n  FUN_00544b47(param_2,\"%d:%02d\",(param_1 % 0xe10) / 0x3c,(param_1 % 0xe10) % 0x3c);\n  return;\n}"}

@@ -1,0 +1,1 @@
+{"address": "00549288", "name": "__frnd", "decompiled": "/* Library Function - Single Match\n    __frnd\n   \n   Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release,\n   Visual Studio 2019 Release */\n\nfloat10 __frnd(double param_1)\n\n{\n  return (float10)ROUND(param_1);\n}"}

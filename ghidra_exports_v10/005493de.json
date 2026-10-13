@@ -1,0 +1,1 @@
+{"address": "005493de", "name": "FUN_005493de", "decompiled": "int FUN_005493de(void)\n\n{\n  short in_FPUStatusWord;\n  \n  return (int)in_FPUStatusWord;\n}"}

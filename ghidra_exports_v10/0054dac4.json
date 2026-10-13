@@ -1,0 +1,1 @@
+{"address": "0054dac4", "name": "FUN_0054dac4", "decompiled": "void FUN_0054dac4(void)\n\n{\n  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_00584a64);\n  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_00584a54);\n  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_00584a44);\n  InitializeCriticalSection((LPCRITICAL_SECTION)PTR_DAT_00584a24);\n  return;\n}"}

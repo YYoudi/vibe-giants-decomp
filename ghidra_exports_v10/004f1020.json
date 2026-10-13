@@ -1,0 +1,1 @@
+{"address": "004f1020", "name": "FUN_004f1020", "decompiled": "void FUN_004f1020(void)\n\n{\n  if (DAT_005a7608 != (code *)0x0) {\n                    /* WARNING: Could not recover jumptable at 0x004f1029. Too many branches */\n                    /* WARNING: Treating indirect jump as call */\n    (*DAT_005a7608)();\n    return;\n  }\n  return;\n}"}

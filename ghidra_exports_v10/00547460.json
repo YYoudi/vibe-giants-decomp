@@ -1,0 +1,1 @@
+{"address": "00547460", "name": "__amsg_exit", "decompiled": "/* Library Function - Single Match\n    __amsg_exit\n   \n   Library: Visual Studio 2003 Release */\n\nvoid __cdecl __amsg_exit(int param_1)\n\n{\n  if (DAT_0062f1ec == 1) {\n    FUN_0054e8e7();\n  }\n  FUN_0054e920(param_1);\n  (*(code *)PTR___exit_00582530)(0xff);\n  return;\n}"}

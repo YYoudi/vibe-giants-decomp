@@ -1,0 +1,1 @@
+{"address": "0052fac0", "name": "FUN_0052fac0", "decompiled": "int FUN_0052fac0(int param_1)\n\n{\n  if (param_1 == 1) {\n    return 0x70ff;\n  }\n  if (param_1 == 2) {\n    return 0x20ff20;\n  }\n  return (-(uint)(param_1 != 3) & 0xcfaf) + 0xff3050;\n}"}

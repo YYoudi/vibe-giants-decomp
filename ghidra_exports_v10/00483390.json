@@ -1,0 +1,1 @@
+{"address": "00483390", "name": "FUN_00483390", "decompiled": "void FUN_00483390(void)\n\n{\n  if ((DAT_0063126c != 0) && (DAT_0059d940 != '\\0')) {\n    FUN_00520fd0(0xffffff,0,0x3d088889,0x3c23d70a,0x3f75c28f,&DAT_0059d940);\n  }\n  return;\n}"}

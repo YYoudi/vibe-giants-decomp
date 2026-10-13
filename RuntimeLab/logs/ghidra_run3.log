@@ -1,0 +1,135 @@
+INFO  Using log config file: jar:file:/G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (769 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (4766 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-emotionengine-reloaded\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    G:\VibeRE\GiantsRE\scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-lx-loader\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Opening existing project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessAnalyzer)  
+INFO  Opening project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: G:\VibeRE\GiantsRE\ghidra_projects\GiantsRE (HeadlessAnalyzer)  
+INFO  IMPORTING: file:///G:/VibeRE/GiantsRE/GameFiles-VanillaV1/Giants.exe (HeadlessAnalyzer)  
+INFO  Using Loader: Portable Executable (PE) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:32:default:windows (ProgramLoader)  
+INFO  Using Library Search Path: [., C:\WINDOWS\SysWOW64, C:\Program Files\Java\jdk-23\bin, C:\WINDOWS\Sun\Java\bin, C:\WINDOWS\system32, C:\WINDOWS, C:\Users\Judi\bin, C:\Program Files\Git\mingw64\bin, C:\Program Files\Git\usr\local\bin, C:\Program Files\Git\usr\bin, C:\Program Files\Python311\Scripts, C:\Program Files\Python311, C:\Program Files\Common Files\Oracle\Java\javapath, C:\Program Files (x86)\Razer Chroma SDK\bin, C:\Program Files\Razer Chroma SDK\bin, C:\Program Files (x86)\Razer\ChromaBroadcast\bin, C:\Program Files\Razer\ChromaBroadcast\bin, C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler, C:\Program Files\Oculus\Support\oculus-runtime, C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler, C:\Windows\system32, C:\Windows, C:\Windows\System32\Wbem, C:\Windows\System32\WindowsPowerShell\v1.0, C:\Windows\System32\OpenSSH, C:\Program Files\dotnet, C:\Program Files (x86)\Tailscale IPN, C:\Users\Judi\AppData\Local\Microsoft\WindowsApps, C:\Program Files\Git\cmd, C:\Program Files\Microsoft SQL Server\120\Tools\Binn, C:\Program Files\Tailscale, C:\WINDOWS\System32\Wbem, C:\WINDOWS\System32\WindowsPowerShell\v1.0, C:\WINDOWS\System32\OpenSSH, C:\Program Files\nodejs, C:\Program Files\CMake\bin, G:\PathExecutables, D:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin, G:\WSL\Docker\Docker\resources\bin, C:\Program Files (x86)\QuickTime\QTSystem, C:\Program Files\PowerToys\DSCModules, C:\Program Files\Kyber, C:\Program Files\GitHub CLI, C:\Users\Judi\.unsloth\studio\bin, C:\Users\Judi\.cargo\bin, C:\Users\Judi\AppData\Local\Programs\Python\Python312\Scripts, C:\Users\Judi\AppData\Local\Programs\Python\Python312, C:\Users\Judi\.local\bin, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\bin, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\libnvvp, C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common, C:\Progra, D:\Users\Judi\AppData\Local\Programs\Microsoft VS Code\bin, C:\Program Files\JetBrains\PyCharm 2023.3.4\bin, C:\Users\Judi\AppData\Local\Microsoft\WinGet\Links, C:\Users\Judi\AppData\Local\Programs\Ollama, C:\Users\Judi\AppData\Roaming\npm, C:\Users\Judi\.cache\lm-studio\bin, C:\Program Files\JetBrains\PyCharm 2024.3.5\bin, D:\Users\Judi\AppData\Local\Programs\Kiro\bin, C:\Users\Judi\AppData\Local\Programs\Antigravity\bin, C:\Users\Judi\AppData\Local\Programs\Zed\bin, D:\Program Files\ZCode\resources\tools\ripgrep, D:\Program Files\ZCode\resources\tools\ugrep, C:\Program Files\Git\usr\bin\vendor_perl, C:\Program Files\Git\usr\bin\core_perl] (ProgramLoader)  
+INFO  TLS callbacks at 100057bc (TLSDirectory)  
+WARN  Invalid or missing function at 100ca39c (ExportDataDirectory)  
+WARN  Invalid or missing function at 10048b18 (ExportDataDirectory)  
+INFO  Additional info:
+Loading file:///G:/VibeRE/GiantsRE/GameFiles-VanillaV1/Giants.exe?MD5=330c6a9a8ab0fa4b0173d925e1d5ec27...
+------------------------------------------------
+
+Searching 54 paths for library ADVAPI32.DLL...
+Loading file:///C:/Windows/SysWOW64/advapi32.dll?MD5=e05908f79c914e9f6915632c7a37dd91...
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\advapi32.exports
+WARNING: Existing exports file may not be an exact match.
+Library not saved to project.
+------------------------------------------------
+
+Searching 54 paths for library DINPUT.DLL...
+Loading file:///C:/Windows/SysWOW64/dinput.dll?MD5=6940250083d43fede2f664ff73f38e38...
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\dinput.exports
+Library not saved to project.
+------------------------------------------------
+
+Searching 54 paths for library GDI32.DLL...
+Loading file:///C:/Windows/SysWOW64/gdi32.dll?MD5=37002dbb23f87dae9ebd7dd7b5051995...
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\gdi32.exports
+WARNING: Existing exports file may not be an exact match.
+Library not saved to project.
+------------------------------------------------
+
+Searching 54 paths for library KERNEL32.DLL...
+Loading file:///C:/Windows/SysWOW64/kernel32.dll?MD5=2d8ecc5a2aade7639ca790ef2e8e6e36...
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\kernel32.exports
+WARNING: Existing exports file may not be an exact match.
+Library not saved to project.
+------------------------------------------------
+
+Searching 54 paths for library OLE32.DLL...
+Loading file:///C:/Windows/SysWOW64/ole32.dll?MD5=bba0731f1f2c4d80e9f44654ddc7bb32...
+[ole32.dll]: failed to create WEVTResource at 10138740: Failed to resolve data length for WEVTResource
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\ole32.exports
+WARNING: Existing exports file may not be an exact match.
+Library not saved to project.
+------------------------------------------------
+
+Searching 54 paths for library USER32.DLL...
+Loading file:///C:/Windows/SysWOW64/user32.dll?MD5=f20db7901b5acab93edf2366986a6fd3...
+[user32.dll]: failed to create WEVTResource at 100e7a70: Failed to resolve data length for WEVTResource
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\user32.exports
+WARNING: Existing exports file may not be an exact match.
+Library not saved to project.
+------------------------------------------------
+
+Searching 54 paths for library WINMM.DLL...
+Loading file:///C:/Windows/SysWOW64/winmm.dll?MD5=24eeb922d2c2d7c5da92dd2da0314762...
+[winmm.dll]: failed to create WEVTResource at 1002b310: Failed to resolve data length for WEVTResource
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\winmm.exports
+WARNING: Existing exports file may not be an exact match.
+Library not saved to project.
+------------------------------------------------
+
+Searching 54 paths for library WS2_32.DLL...
+Loading file:///C:/Windows/SysWOW64/ws2_32.dll?MD5=96230aca8fc1c7d9bfbe3dc92127347a...
+[ws2_32.dll]: failed to create WEVTResource at 100534b8: Failed to resolve data length for WEVTResource
+Using existing exports file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\ws2_32.exports
+WARNING: Existing exports file may not be an exact match.
+Library not saved to project.
+------------------------------------------------
+
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\kernel32.exports
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\user32.exports
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\gdi32.exports
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\advapi32.exports
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\ole32.exports
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\dinput.exports
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\winmm.exports
+Applying C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\symbols\win32\ws2_32.exports
+Linking the External Programs of 'Giants.exe' to imported libraries...
+  [KERNEL32.DLL] -> not found in project
+  [USER32.DLL] -> not found in project
+  [GDI32.DLL] -> not found in project
+  [ADVAPI32.DLL] -> not found in project
+  [OLE32.DLL] -> not found in project
+  [DINPUT.DLL] -> not found in project
+  [WINMM.DLL] -> not found in project
+  [WS2_32.DLL] -> not found in project
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+ERROR REPORT: Found conflicting program file in project: /Giants.exe (HeadlessAnalyzer)  
+ERROR REPORT: Import failed for file: file:///G:/VibeRE/GiantsRE/GameFiles-VanillaV1/Giants.exe (HeadlessAnalyzer)  

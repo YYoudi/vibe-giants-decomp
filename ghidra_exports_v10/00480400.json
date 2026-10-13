@@ -1,0 +1,1 @@
+{"address": "00480400", "name": "FUN_00480400", "decompiled": "void FUN_00480400(int param_1)\n\n{\n  DAT_006311a0 = param_1;\n  DAT_006311a4 = DAT_00630f28;\n  DAT_006311a8 = *(undefined4 *)(param_1 + 0xa0);\n  DAT_006311ac = *(undefined4 *)(param_1 + 0xa4);\n  DAT_006311b0 = *(undefined4 *)(param_1 + 0xa8);\n  return;\n}"}

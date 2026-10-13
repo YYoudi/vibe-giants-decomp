@@ -1,0 +1,1 @@
+{"address": "005444d0", "name": "FUN_005444d0", "decompiled": "unkbyte10 FUN_005444d0(float param_1)\n\n{\n  unkbyte10 Var1;\n  \n  Var1 = fcos((float10)param_1);\n  return Var1;\n}"}

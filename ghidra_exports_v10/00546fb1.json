@@ -1,0 +1,1 @@
+{"address": "00546fb1", "name": "FUN_00546fb1", "decompiled": "uint FUN_00546fb1(int param_1)\n\n{\n  uint uVar1;\n  \n  if (1 < DAT_00582268) {\n    uVar1 = FUN_00545d3d(param_1,8);\n    return uVar1;\n  }\n  return (byte)PTR_DAT_0058205c[param_1 * 2] & 8;\n}"}

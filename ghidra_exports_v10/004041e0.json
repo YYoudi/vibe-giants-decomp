@@ -1,0 +1,1 @@
+{"address": "004041e0", "name": "FUN_004041e0", "decompiled": "float10 FUN_004041e0(int param_1)\n\n{\n  float *pfVar1;\n  \n  if (*(int *)(param_1 + 0x10) == 0xfe) {\n    return (float10)0.0;\n  }\n  pfVar1 = *(float **)(*(int *)(param_1 + 8) + 8 + *(int *)(param_1 + 0x10) * 4);\n  if (pfVar1 == (float *)0x0) {\n    return (float10)0.0;\n  }\n  return (float10)*pfVar1;\n}"}

@@ -1,0 +1,1 @@
+{"address": "0054db4e", "name": "FUN_0054db4e", "decompiled": "void FUN_0054db4e(int param_1)\n\n{\n  LeaveCriticalSection(*(LPCRITICAL_SECTION *)(&DAT_00584a20 + param_1 * 4));\n  return;\n}"}

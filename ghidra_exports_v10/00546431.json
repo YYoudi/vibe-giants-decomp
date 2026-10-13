@@ -1,0 +1,1 @@
+{"address": "00546431", "name": "__exit", "decompiled": "/* Library Function - Single Match\n    __exit\n   \n   Library: Visual Studio 2003 Release */\n\nvoid __cdecl __exit(int _Code)\n\n{\n  FUN_00546442(_Code,1,0);\n  return;\n}"}

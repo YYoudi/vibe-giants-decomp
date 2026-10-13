@@ -1,0 +1,1 @@
+{"address": "005486d2", "name": "FUN_005486d2", "decompiled": "int FUN_005486d2(int param_1)\n\n{\n  int iVar1;\n  \n  iVar1 = FUN_00548700(param_1);\n  if (iVar1 != 0) {\n    return -1;\n  }\n  if ((*(byte *)(param_1 + 0xd) & 0x40) != 0) {\n    iVar1 = FUN_0054f3b8(*(undefined4 *)(param_1 + 0x10));\n    return -(uint)(iVar1 != 0);\n  }\n  return 0;\n}"}

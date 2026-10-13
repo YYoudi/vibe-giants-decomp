@@ -1,0 +1,1 @@
+{"address": "0051bb80", "name": "FUN_0051bb80", "decompiled": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n/* PS2 candidate: kbos_attach_object (conf 0.377) */\n\nfloat10 FUN_0051bb80(void)\n\n{\n  return (float10)_DAT_0057e318;\n}"}

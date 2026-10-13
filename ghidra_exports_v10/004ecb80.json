@@ -1,0 +1,1 @@
+{"address": "004ecb80", "name": "FUN_004ecb80", "decompiled": "undefined4 FUN_004ecb80(int param_1,int param_2)\n\n{\n  if ((*(int *)(param_1 + 4) == 0x48a) && (*(int *)(param_1 + 0xe8) == param_2)) {\n    return 1;\n  }\n  return 0;\n}"}

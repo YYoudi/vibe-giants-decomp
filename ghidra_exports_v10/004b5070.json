@@ -1,0 +1,1 @@
+{"address": "004b5070", "name": "FUN_004b5070", "decompiled": "void FUN_004b5070(void)\n\n{\n  mem_free_tagged(DAT_00631540,\"C:\\\\Giants\\\\Source\\\\main\\\\readgbls.c\",0x44);\n  mem_free_tagged(DAT_00631538,\"C:\\\\Giants\\\\Source\\\\main\\\\readgbls.c\",0x45);\n  DAT_00631538 = 0;\n  DAT_00631540 = 0;\n  return;\n}"}

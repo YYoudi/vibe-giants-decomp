@@ -1,0 +1,1 @@
+{"address": "0040f2e0", "name": "FUN_0040f2e0", "decompiled": "void FUN_0040f2e0(void)\n\n{\n  if (DAT_005854d0 != 0) {\n    mem_free_tagged(DAT_005854d0,\"C:\\\\Giants\\\\Source\\\\main\\\\cleaner.c\",0x30);\n    DAT_005854d0 = 0;\n  }\n  return;\n}"}

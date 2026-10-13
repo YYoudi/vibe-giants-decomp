@@ -1,0 +1,1 @@
+{"address": "00471df0", "name": "FUN_00471df0", "decompiled": "undefined * FUN_00471df0(int param_1)\n\n{\n  uint uVar1;\n  \n  uVar1 = *(uint *)(param_1 + 0xe8);\n  if (4 < uVar1) {\n    uVar1 = 0;\n  }\n  return (&PTR_s_Illegal_0055d618)[uVar1];\n}"}

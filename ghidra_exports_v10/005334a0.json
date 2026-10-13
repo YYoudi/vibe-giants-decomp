@@ -1,0 +1,1 @@
+{"address": "005334a0", "name": "FUN_005334a0", "decompiled": "void FUN_005334a0(void)\n\n{\n  int iVar1;\n  undefined4 uStack_4;\n  \n  iVar1 = FUN_0052f960();\n  if (iVar1 != 0) {\n    iVar1 = FUN_00530950();\n    if (iVar1 != 0) {\n      uStack_4 = (uint)CONCAT12(0x13,(undefined2)uStack_4);\n      FUN_00530040(0,2,(int)&uStack_4 + 2);\n    }\n  }\n  return;\n}"}

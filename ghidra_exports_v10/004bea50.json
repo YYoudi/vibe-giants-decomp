@@ -1,0 +1,1 @@
+{"address": "004bea50", "name": "FUN_004bea50", "decompiled": "int FUN_004bea50(int param_1)\n\n{\n  int iVar1;\n  int *piVar2;\n  \n  iVar1 = 0;\n  piVar2 = (int *)(*(int *)(param_1 + 0x100) + 0xd78);\n  do {\n    if (*piVar2 == -1) {\n      return iVar1;\n    }\n    iVar1 = iVar1 + 1;\n    piVar2 = piVar2 + 2;\n  } while (iVar1 < 4);\n  return -1;\n}"}

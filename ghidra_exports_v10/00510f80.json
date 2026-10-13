@@ -1,0 +1,1 @@
+{"address": "00510f80", "name": "FUN_00510f80", "decompiled": "float10 FUN_00510f80(void)\n\n{\n  uint uVar1;\n  \n  uVar1 = __ftol();\n  return (float10)(float)(&DAT_005cb8e8)[uVar1 & 0x3fff];\n}"}

@@ -1,0 +1,1 @@
+{"address": "00498c50", "name": "FUN_00498c50", "decompiled": "void FUN_00498c50(void)\n\n{\n  DAT_0059e3b8 = FUN_0042c010();\n  DAT_0059e098 = 0;\n  FUN_0042c830(DAT_0059e3b8,1,0x3f000000,0x40400000,0x88000002,&DAT_0059e098,0x100);\n  FUN_0042be00(&LAB_00498ca0,&LAB_00498db0);\n  return;\n}"}

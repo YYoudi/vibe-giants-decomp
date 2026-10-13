@@ -1,0 +1,1 @@
+{"address": "0052fc60", "name": "FUN_0052fc60", "decompiled": "undefined4 FUN_0052fc60(int param_1)\n\n{\n  if (param_1 < 0) {\n    return 0;\n  }\n  return (&DAT_005dccc8)[param_1];\n}"}

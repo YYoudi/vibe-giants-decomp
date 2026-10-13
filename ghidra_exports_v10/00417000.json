@@ -1,0 +1,1 @@
+{"address": "00417000", "name": "FUN_00417000", "decompiled": "void FUN_00417000(undefined4 param_1,undefined4 param_2)\n\n{\n  int iVar1;\n  \n  iVar1 = FUN_004ad290(param_1);\n  if (iVar1 != 0) {\n    FUN_0040a2f0(param_1,param_2);\n    return;\n  }\n  FUN_004bcbf0(param_1,param_2);\n  return;\n}"}

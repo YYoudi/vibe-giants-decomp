@@ -1,0 +1,1 @@
+{"address": "00545b20", "name": "FUN_00545b20", "decompiled": "void FUN_00545b20(void)\n\n{\n  float10 in_ST0;\n  float10 in_ST1;\n  \n  FUN_00545b42((double)in_ST1,(double)in_ST0);\n  return;\n}"}

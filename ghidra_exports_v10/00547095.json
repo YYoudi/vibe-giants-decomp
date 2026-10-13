@@ -1,0 +1,1 @@
+{"address": "00547095", "name": "FUN_00547095", "decompiled": "void FUN_00547095(uint param_1)\n\n{\n  if ((0x5822a7 < param_1) && (param_1 < 0x582509)) {\n    FUN_0054daed(((int)(param_1 - 0x5822a8) >> 5) + 0x1c);\n    return;\n  }\n  EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x20));\n  return;\n}"}

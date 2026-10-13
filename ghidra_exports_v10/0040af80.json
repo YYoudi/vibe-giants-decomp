@@ -1,0 +1,1 @@
+{"address": "0040af80", "name": "FUN_0040af80", "decompiled": "void FUN_0040af80(void)\n\n{\n  mem_free_tagged(DAT_00585374,\"C:\\\\Giants\\\\Source\\\\main\\\\blood.c\",0x31);\n  DAT_00585374 = 0;\n  DAT_00631408 = 0;\n  DAT_0063140c = 0;\n  return;\n}"}

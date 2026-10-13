@@ -1,0 +1,1 @@
+{"address": "00472190", "name": "FUN_00472190", "decompiled": "bool FUN_00472190(int param_1)\n\n{\n  return *(int *)(param_1 + 0xe8) == 1;\n}"}

@@ -1,0 +1,1 @@
+{"address": "00479650", "name": "FUN_00479650", "decompiled": "undefined4 FUN_00479650(int param_1)\n\n{\n  if ((0 < param_1) && (param_1 < 0x1c)) {\n    return *(undefined4 *)(\"MissionObjective\" + param_1 * 4 + 0x10);\n  }\n  return 0xffffff;\n}"}

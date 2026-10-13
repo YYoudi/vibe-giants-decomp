@@ -1,0 +1,1 @@
+{"address": "0053df70", "name": "FUN_0053df70", "decompiled": "uint FUN_0053df70(uint param_1)\n\n{\n  return param_1 & ~-(uint)(*(short *)(param_1 + 4) != 1);\n}"}

@@ -1,0 +1,1 @@
+{"address": "0053e780", "name": "FUN_0053e780", "decompiled": "float10 FUN_0053e780(int param_1,int param_2)\n\n{\n  return (float10)(param_2 - *(int *)(param_1 + 0x10) / *(int *)(param_1 + 0x18)) /\n         (float10)*(int *)(param_1 + 0x1c);\n}"}

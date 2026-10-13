@@ -1,0 +1,1 @@
+{"address": "0045af90", "name": "FUN_0045af90", "decompiled": "undefined4 FUN_0045af90(int param_1)\n\n{\n  if (*(int *)(param_1 + 0x1e0) == 2) {\n    return *(undefined4 *)\n            (*(int *)(param_1 + 0x100) + 0x180 + *(int *)(*(int *)(param_1 + 0x100) + 100) * 4);\n  }\n  return 0;\n}"}

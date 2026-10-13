@@ -1,0 +1,1 @@
+{"address": "00445260", "name": "FUN_00445260", "decompiled": "void FUN_00445260(undefined4 param_1,undefined4 param_2,int param_3)\n\n{\n  undefined *puVar1;\n  undefined1 local_100 [256];\n  \n  puVar1 = &DAT_00557ad0;\n  if (param_3 == 0) {\n    puVar1 = &DAT_00557574;\n  }\n  FUN_00544b47(local_100,param_2,puVar1);\n  FUN_0042d0a0(param_1,1,local_100);\n  return;\n}"}

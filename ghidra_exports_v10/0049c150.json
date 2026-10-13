@@ -1,0 +1,1 @@
+{"address": "0049c150", "name": "FUN_0049c150", "decompiled": "uint FUN_0049c150(void)\n\n{\n  uint uVar1;\n  \n  DAT_0059e3e4 = DAT_0059e3e4 + 1;\n  if (DAT_0059e3e4 == 0) {\n    FUN_00523aa0(\"Warning we've used all the unique id's\");\n    DAT_0059e3e4 = DAT_0059e3e4 + 1;\n  }\n  uVar1 = FUN_0052fdb0();\n  return uVar1 | DAT_0059e3e4 << 8;\n}"}

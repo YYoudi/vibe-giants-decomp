@@ -1,0 +1,1 @@
+{"address": "00547485", "name": "FUN_00547485", "decompiled": "void FUN_00547485(undefined4 param_1)\n\n{\n  if (DAT_0062f1ec == 1) {\n    FUN_0054e8e7();\n  }\n  FUN_0054e920(param_1);\n                    /* WARNING: Subroutine does not return */\n  ExitProcess(0xff);\n}"}

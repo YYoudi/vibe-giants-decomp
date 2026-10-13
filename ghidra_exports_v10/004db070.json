@@ -1,0 +1,1 @@
+{"address": "004db070", "name": "FUN_004db070", "decompiled": "int FUN_004db070(int param_1)\n\n{\n  int iVar1;\n  \n  iVar1 = _rand();\n  return iVar1 * param_1 >> 0xf;\n}"}

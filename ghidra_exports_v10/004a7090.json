@@ -1,0 +1,1 @@
+{"address": "004a7090", "name": "FUN_004a7090", "decompiled": "undefined8 FUN_004a7090(void)\n\n{\n  undefined8 uVar1;\n  \n  uVar1 = rdtsc();\n  return uVar1;\n}"}

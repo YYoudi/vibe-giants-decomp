@@ -1,0 +1,1 @@
+{"address": "0054c1e5", "name": "__fload_withFB", "decompiled": "/* Library Function - Single Match\n    __fload_withFB\n   \n   Library: Visual Studio */\n\nuint __fload_withFB(void)\n\n{\n  uint uVar1;\n  int in_EDX;\n  \n  uVar1 = *(uint *)(in_EDX + 4) & 0x7ff00000;\n  if (uVar1 != 0x7ff00000) {\n    return uVar1;\n  }\n  return *(uint *)(in_EDX + 4);\n}"}

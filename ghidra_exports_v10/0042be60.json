@@ -1,0 +1,1 @@
+{"address": "0042be60", "name": "FUN_0042be60", "decompiled": "void FUN_0042be60(void)\n\n{\n  if (DAT_005586b8 != -1) {\n    (&DAT_0059a690)[DAT_005586b8 * 5] = 1;\n    FUN_0041f3d0(1);\n  }\n  return;\n}"}

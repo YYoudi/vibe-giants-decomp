@@ -1,0 +1,1 @@
+{"address": "0054920e", "name": "FUN_0054920e", "decompiled": "void FUN_0054920e(int param_1)\n\n{\n  undefined4 *puVar1;\n  \n  if (param_1 == 1) {\n    puVar1 = (undefined4 *)FUN_0054abd2();\n    *puVar1 = 0x21;\n  }\n  else if ((1 < param_1) && (param_1 < 4)) {\n    puVar1 = (undefined4 *)FUN_0054abd2();\n    *puVar1 = 0x22;\n    return;\n  }\n  return;\n}"}

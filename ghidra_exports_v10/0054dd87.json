@@ -1,0 +1,1 @@
+{"address": "0054dd87", "name": "FUN_0054dd87", "decompiled": "int FUN_0054dd87(char *param_1,int param_2)\n\n{\n  char *pcVar1;\n  int iVar2;\n  \n  iVar2 = param_2;\n  for (pcVar1 = param_1; (iVar2 != 0 && (iVar2 = iVar2 + -1, *pcVar1 != '\\0')); pcVar1 = pcVar1 + 1)\n  {\n  }\n  if (*pcVar1 != '\\0') {\n    return param_2;\n  }\n  return (int)pcVar1 - (int)param_1;\n}"}

@@ -1,0 +1,148 @@
+
+#  GiantsRE .gitignore
+#  Keep this repo LEAN and PUBLIC-SAFE: only the AI-generated source, the
+#  tracker, build config and docs. No game binaries, no big tooling, no secrets.
+# =============================================================================
+# ─── BUILD ARTIFACTS (CMake / MinGW / MSVC) ───────────────────────────────────
+# ─── CLAUDE CODE LOCAL STATE (skills in .claude/commands/ ARE published) ─────
+# ─── EDITOR / OS ─────────────────────────────────────────────────────────────
+# ─── GAME FILES & COPYRIGHTED BINARIES (1.5 GB+, do NOT distribute) ───────────
+# ─── GHIDRA PROJECT & GENERATED EXPORTS (huge, regenerable from the .exe) ─────
+# ─── INSTALLER / MISC LOGS ───────────────────────────────────────────────────
+# ─── ONE-OFF WORKFLOW / CYCLE SCRATCH (kept locally, not published) ──────────
+# ─── PYTHON ──────────────────────────────────────────────────────────────────
+# ─── RE-AGENT SESSION / PROGRESS SCRATCH ─────────────────────────────────────
+# ─── SECRETS & MACHINE-LOCAL CONFIG ──────────────────────────────────────────
+# ─── THIRD-PARTY CLONED REPOS (never publish, they belong upstream) ───────────
+# curated version lives in src/). Keep locally, don't publish the bulk.
+# NOTE: RE-TRACKER.json (1.7 MB) IS published — it documents RE progress.
+# Only the text/CSV symbol artifacts in ps2_symbols/ are committed.
+# Per-function re-agent output dumps (1526 generated .cpp, regenerable; the
+# PS2 prototype ELF — copyrighted binary, derived from the ISO above.
+# re-agent.yaml contains a real LLM API key — NEVER commit it.
+*.a
+*.bak
+*.dll
+*.egg
+*.egg-info/
+*.exe
+*.exp
+*.gbak
+*.gpr
+*.ilk
+*.lib
+*.o
+*.obj
+*.pdb
+*.py[cod]
+*.rep
+*.swo
+*.swp
+*.tmp
+*~
+.cache/
+.claude/
+.claude/settings.local.json
+.DS_Store
+.env
+.idea/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.vscode/
+/auto-re-agent/
+/batch_decompile_cycle*.json
+/batch_decompile_cycle*.py
+/build/
+/build32/
+/CMakeFiles/
+/cycle*_named.json
+/discover_*.py
+/fix_errors.py
+/flesh_batch*.json
+/flesh_batch1.json
+/flesh_out_*.py
+/GameFiles/
+/generate_*_batch.py
+/generate_stubs_cycle*.py
+/ghidra_exports/
+/ghidra_projects/
+/ghidra-ai-bridge/
+/inject_cycle*.py
+/ps2_symbols/SLUS_201.78
+/rebatch_cycle*.py
+/reports/
+/re-result-*.txt
+/RESSOURCES_FOR_AI/
+/update_tracker_cycle*.py
+__pycache__/
+build_recomp/*.map
+CLAUDE.md
+cmake_install.cmake
+CMakeCache.txt
+CMakeUserPresets.json
+dist/
+extracted/
+GameFiles-VanillaV1/
+ghidra-bridge.yaml
+giants_trace.log
+InstallationLog.txt
+Makefile
+re-agent.yaml
+re-agent.yaml.*
+re-agent-progress.json
+re-agent-progress.tmp
+recomp_*.png
+recomp_logo3d*.png
+recomp_terrain*.png
+recomp_test/
+shots/
+Thumbs.db
+undef.txt
+vanilla_decompiled/
+venv/
+# ─── RUNTIME LAB: working copy of the game + heavy captures ───────────────────
+# GameFiles copy, Procmon PML/CSV dumps, minidumps. Small filtered logs
+# (*_summary.txt, *.jsonl) in RuntimeLab/logs/ ARE published.
+/RuntimeLab/GiantsWork/
+/RuntimeLab/logs/*.pml
+/RuntimeLab/logs/*.csv
+/RuntimeLab/logs/*.dmp
+/RuntimeLab/logs/xdbg_boot_raw.log
+/RuntimeLab/menu_build/
+
+/RuntimeLab/mb_A/
+/RuntimeLab/mb_B/
+/RuntimeLab/gog141/
+/decompiled/gog144_full/all_decompiled.c
+/.zcode/
+
+# ===== ↑ 以上同步自 .gitignore（「从 .gitignore 同步」只重写以上部分）=====
+.git/
+.hg/
+.svn/
+node_modules/
+bower_components/
+jspm_packages/
+site-packages/
+coverage/
+htmlcov/
+lcov-report/
+cmakefiles/
+cmake-build-*/
+bazel-*/
+pods/
+deriveddata/
+storybook-static/
+playwright-report/
+test-results/
+allure-results/
+allure-report/
+cdk.out/
+*.dist-info/
+eggs/
+pip-wheel-metadata/
+wheels/
+# ----- ↑ 以上为 ZCode 默认排除规则（自定义规则请写在本行下方，不会被同步/恢复改动）-----
+# 自定义规则写在下方（本行提示可删除）

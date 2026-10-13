@@ -1,0 +1,1 @@
+{"address": "0051d570", "name": "FUN_0051d570", "decompiled": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */\n\nvoid FUN_0051d570(void)\n\n{\n  if (DAT_005dbfd4 != 0) {\n    mem_free_tagged(DAT_005dbfd4,\"@IC:\\\\Giants\\\\Source\\\\main\\\\xform.c\" + 2,0x4e9);\n  }\n  _DAT_005dbfd0 = 0;\n  DAT_005dbfd4 = 0;\n  return;\n}"}

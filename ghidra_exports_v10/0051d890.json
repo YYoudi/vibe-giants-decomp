@@ -1,0 +1,1 @@
+{"address": "0051d890", "name": "FUN_0051d890", "decompiled": "void FUN_0051d890(LPCSTR param_1)\n\n{\n  CHAR local_100 [256];\n  \n  local_100[0] = '\\0';\n  wvsprintfA(local_100,param_1,&stack0x00000008);\n  lstrcatA(local_100,&DAT_0057e458);\n  lstrcpyA(&DAT_005dc938,local_100);\n  return;\n}"}

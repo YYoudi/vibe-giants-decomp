@@ -1,0 +1,1 @@
+{"address": "00546a8c", "name": "__global_unwind2", "decompiled": "/* Library Function - Single Match\n    __global_unwind2\n   \n   Library: Visual Studio */\n\nvoid __global_unwind2(PVOID param_1)\n\n{\n  RtlUnwind(param_1,(PVOID)0x546aa4,(PEXCEPTION_RECORD)0x0,(PVOID)0x0);\n  return;\n}"}

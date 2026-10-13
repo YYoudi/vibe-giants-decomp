@@ -1,0 +1,1 @@
+{"address": "00544ae8", "name": "FUN_00544ae8", "decompiled": "void FUN_00544ae8(void)\n\n{\n  PTR_FUN_0058253c = &LAB_0054799e;\n  PTR_FUN_00582538 = __cfltcvt;\n  PTR_FUN_00582540 = __fassign;\n  PTR_FUN_00582544 = FUN_00547944;\n  PTR_FUN_00582548 = &LAB_005479ec;\n  PTR_FUN_0058254c = __cfltcvt;\n  return;\n}"}

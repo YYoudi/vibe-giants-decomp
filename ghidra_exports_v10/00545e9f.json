@@ -1,0 +1,1 @@
+{"address": "00545e9f", "name": "_malloc", "decompiled": "/* Library Function - Single Match\n    _malloc\n   \n   Library: Visual Studio 2003 Release */\n\nvoid * __cdecl _malloc(size_t _Size)\n\n{\n  void *pvVar1;\n  \n  pvVar1 = __nh_malloc(_Size,DAT_0062f21c);\n  return pvVar1;\n}"}

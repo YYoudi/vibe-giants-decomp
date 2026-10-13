@@ -1,0 +1,1 @@
+{"address": "0053ebb0", "name": "FUN_0053ebb0", "decompiled": "int FUN_0053ebb0(void)\n\n{\n  DAT_005ee7c4 = DAT_005ee7c4 + 1;\n  if (DAT_005ee7c4 == 0) {\n    DAT_005ee7c4 = 1;\n    return 1;\n  }\n  return DAT_005ee7c4;\n}"}

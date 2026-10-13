@@ -1,0 +1,1 @@
+{"address": "0045fda0", "name": "FUN_0045fda0", "decompiled": "void FUN_0045fda0(void)\n\n{\n  __ftol();\n  return;\n}"}

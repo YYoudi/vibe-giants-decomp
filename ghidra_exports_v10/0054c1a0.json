@@ -1,0 +1,1 @@
+{"address": "0054c1a0", "name": "FUN_0054c1a0", "decompiled": "unkbyte10 FUN_0054c1a0(void)\n\n{\n  float10 in_ST0;\n  float10 fVar1;\n  unkbyte10 Var2;\n  \n  fVar1 = (float10)f2xm1(-(ROUND(in_ST0) - in_ST0));\n  Var2 = fscale((float10)1 + fVar1,ROUND(in_ST0));\n  return Var2;\n}"}

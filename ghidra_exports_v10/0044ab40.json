@@ -1,0 +1,1 @@
+{"address": "0044ab40", "name": "FUN_0044ab40", "decompiled": "void FUN_0044ab40(void)\n\n{\n  if (DAT_00654984 != (undefined4 *)0x0) {\n    FUN_00542060(*DAT_00654984);\n    DAT_00654984 = (undefined4 *)0x0;\n  }\n  if (DAT_00654988 != (undefined4 *)0x0) {\n    FUN_00542060(*DAT_00654988);\n    DAT_00654988 = (undefined4 *)0x0;\n  }\n  return;\n}"}

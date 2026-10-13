@@ -1,0 +1,1 @@
+{"address": "0051bfb0", "name": "FUN_0051bfb0", "decompiled": "void FUN_0051bfb0(float param_1,float param_2,float param_3,float param_4)\n\n{\n  DAT_005dbf7c = param_3 * 0.5;\n  DAT_005dbf80 = param_4 * 0.5;\n  DAT_005dbf84 = DAT_005dbf7c + param_1;\n  DAT_005dbf88 = DAT_005dbf80 + param_2;\n  (**(code **)(DAT_00654940 + 0x3c))(DAT_00654940,&DAT_005dbf7c);\n  return;\n}"}

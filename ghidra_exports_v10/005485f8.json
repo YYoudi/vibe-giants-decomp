@@ -1,0 +1,1 @@
+{"address": "005485f8", "name": "FUN_005485f8", "decompiled": "void FUN_005485f8(undefined4 param_1,int param_2,undefined4 param_3,int *param_4)\n\n{\n  do {\n    if (param_2 < 1) {\n      return;\n    }\n    param_2 = param_2 + -1;\n    FUN_005485c3(param_1,param_3,param_4);\n  } while (*param_4 != -1);\n  return;\n}"}

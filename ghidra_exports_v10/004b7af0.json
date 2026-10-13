@@ -1,0 +1,1 @@
+{"address": "004b7af0", "name": "FUN_004b7af0", "decompiled": "void FUN_004b7af0(undefined4 param_1)\n\n{\n  undefined1 local_100 [256];\n  \n  FUN_00544b47(local_100,\"W_%s.bin\",param_1);\n  bin_load_1a0002e5(local_100,0x3f800000,0);\n  return;\n}"}

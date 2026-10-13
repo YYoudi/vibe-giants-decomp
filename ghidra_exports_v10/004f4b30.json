@@ -1,0 +1,1 @@
+{"address": "004f4b30", "name": "FUN_004f4b30", "decompiled": "uint FUN_004f4b30(int param_1)\n\n{\n  return *(uint *)(param_1 + 0xe0) & 2;\n}"}

@@ -1,0 +1,1 @@
+{"address": "0044ba80", "name": "FUN_0044ba80", "decompiled": "bool FUN_0044ba80(int param_1,byte param_2)\n\n{\n  uint uVar1;\n  \n  uVar1 = 0;\n  if ((param_2 & 2) != 0) {\n    uVar1 = 0x400;\n  }\n  if ((param_2 & 4) != 0) {\n    uVar1 = uVar1 | 0x1000;\n  }\n  return (*(uint *)(param_1 + 0xe4) & uVar1) != 0;\n}"}

@@ -14,7 +14,6 @@ pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
 004ee080,FUN_004EE080,,env_texture_load,0.9,llm-strings3,
 00514d60,FUN_00514D60,,elevation_texture_load,0.9,llm-strings3,
 00515f60,FUN_00515F60,,farclip_config,0.9,llm-strings3,
-00518670,FUN_00518670,,filedate_log,0.9,llm-strings3,
 00518d30,FUN_00518D30,,gg_dll_name,0.9,llm-strings3,
 00518f20,FUN_00518F20,,fps_display,0.9,llm-strings3,
 005217b0,FUN_005217B0,,comm_worldname_menu,0.9,llm-strings3,

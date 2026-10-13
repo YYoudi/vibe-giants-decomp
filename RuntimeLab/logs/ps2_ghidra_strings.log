@@ -1,0 +1,185 @@
+INFO  Using log config file: jar:file:/G:/Tools/ghidra_12.1.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\application.log (LoggingInitialization)  
+INFO  Loading user preferences: C:\Users\Judi\AppData\Roaming\ghidra\ghidra_12.1.2_PUBLIC\preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (1006 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: SHA1PRNG (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Headless startup complete (2752 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 60 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger-rmi-trace\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\MicrosoftCodeAnalyzer\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BytePatterns\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\DecompilerDependent\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FileFormats\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\GnuDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Debug\Debugger\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-emotionengine-reloaded\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Base\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\8051\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\FunctionID\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\BSim\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PyGhidra\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\VersionTracking\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\PDB\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SystemEmulation\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\Decompiler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\SwiftDemangler\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Features\WildcardAssembler\ghidra_scripts
+    G:\VibeRE\GiantsRE\scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\PIC\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\DATA\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\Atmel\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Processors\JVM\ghidra_scripts
+    G:\Tools\ghidra_12.1.2_PUBLIC\Ghidra\Extensions\ghidra-lx-loader\ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating project: G:\VibeRE\GiantsRE\ghidra_projects\PS2 (HeadlessAnalyzer)  
+INFO  Creating project: G:\VibeRE\GiantsRE\ghidra_projects\PS2 (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: G:\VibeRE\GiantsRE\ghidra_projects\PS2 (HeadlessAnalyzer)  
+INFO  IMPORTING: file:///G:/VibeRE/GiantsRE/ps2_symbols/SLUS_201.78 (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (ProgramLoader)  
+INFO  Using Language/Compiler: r5900:LE:32:default:default (ProgramLoader)  
+INFO  Using Library Search Path: [., C:\WINDOWS\SysWOW64, C:\Program Files\Java\jdk-23\bin, C:\WINDOWS\Sun\Java\bin, C:\WINDOWS\system32, C:\WINDOWS, C:\Users\Judi\bin, C:\Program Files\Git\mingw64\bin, C:\Program Files\Git\usr\local\bin, C:\Program Files\Git\usr\bin, C:\Program Files\Python311\Scripts, C:\Program Files\Python311, C:\Program Files\Common Files\Oracle\Java\javapath, C:\Program Files (x86)\Razer Chroma SDK\bin, C:\Program Files\Razer Chroma SDK\bin, C:\Program Files (x86)\Razer\ChromaBroadcast\bin, C:\Program Files\Razer\ChromaBroadcast\bin, C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64_win\compiler, C:\Program Files\Oculus\Support\oculus-runtime, C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler, C:\Windows\system32, C:\Windows, C:\Windows\System32\Wbem, C:\Windows\System32\WindowsPowerShell\v1.0, C:\Windows\System32\OpenSSH, C:\Program Files\dotnet, C:\Program Files (x86)\Tailscale IPN, C:\Users\Judi\AppData\Local\Microsoft\WindowsApps, C:\Program Files\Git\cmd, C:\Program Files\Microsoft SQL Server\120\Tools\Binn, C:\Program Files\Tailscale, C:\WINDOWS\System32\Wbem, C:\WINDOWS\System32\WindowsPowerShell\v1.0, C:\WINDOWS\System32\OpenSSH, C:\Program Files\CMake\bin, G:\PathExecutables, D:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin, G:\WSL\Docker\Docker\resources\bin, C:\Program Files (x86)\QuickTime\QTSystem, C:\Program Files\PowerToys\DSCModules, C:\Program Files\Kyber, C:\Program Files\GitHub CLI, C:\Program Files\nodejs, C:\Users\Judi\.unsloth\studio\bin, C:\Users\Judi\.cargo\bin, C:\Users\Judi\AppData\Local\Programs\Python\Python312\Scripts, C:\Users\Judi\AppData\Local\Programs\Python\Python312, C:\Users\Judi\.local\bin, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\libnvvp, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\bin, C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.0\libnvvp, C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common, C:\Progra, D:\Users\Judi\AppData\Local\Programs\Microsoft VS Code\bin, C:\Program Files\JetBrains\PyCharm 2023.3.4\bin, C:\Users\Judi\AppData\Local\Microsoft\WinGet\Links, C:\Users\Judi\AppData\Local\Programs\Ollama, C:\Users\Judi\.cache\lm-studio\bin, C:\Program Files\JetBrains\PyCharm 2024.3.5\bin, D:\Users\Judi\AppData\Local\Programs\Kiro\bin, C:\Users\Judi\AppData\Local\Programs\Antigravity\bin, C:\Users\Judi\AppData\Local\Programs\Zed\bin, C:\Users\Judi\AppData\Roaming\npm, D:\Program Files\ZCode\resources\tools\ripgrep, D:\Program Files\ZCode\resources\tools\ugrep, C:\Program Files\Git\usr\bin\vendor_perl, C:\Program Files\Git\usr\bin\core_perl] (ProgramLoader)  
+INFO  Additional info:
+Loading file:///G:/VibeRE/GiantsRE/ps2_symbols/SLUS_201.78?MD5=a6a5d985a3408ee43fa0f651ef994397...
+Skipping section [.vudata] with invalid size 0x0
+Skipping section [.vubss] with invalid size 0x0
+_mips_gp0_value=0x39c7f0
+Failed to add language defined memory block due to conflict: rom0: start_address=0x1FC00000, uninitialized, length=0x4000000
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file:///G:/VibeRE/GiantsRE/ps2_symbols/SLUS_201.78 (HeadlessAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x0.56835.35.0' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x0.56835.65.8' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x0.56835.90.9' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x1000.3356991339.2418.2' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x1800.3356991339.3276.3' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x2000.3356991339.4096.4' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x2800.3356991339.4745.5' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x3000.3356991339.5752.6' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x3800.3356991339.6565.7' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x800.3356991339.1657.1' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+WARN  DVP overlay block '.DVP.overlay..0x800.98780699.767.10' is not byte-mapped, skipping (DvpOverlayLabelSyncAnalyzer)  
+INFO  DVP Overlay Label Sync: No overlay blocks found to process (DvpOverlayLabelSyncAnalyzer)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0cc (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0cc (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0cc (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0dc (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0e0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0e0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0e8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0f0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0f8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e100 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e108 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e110 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0c8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0cc (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0d8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0dc (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0e0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0e4 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0e8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0f0 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e0f8 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e100 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e108 (DecompileCallback)  
+WARN  Decompiling 00244f60: Unable to read bytes at ram:0040e110 (DecompileCallback)  
+INFO  Packed database cache: C:\Users\Judi\AppData\Local\ghidra\packed-db-cache (PackedDatabaseCache)  
+INFO  Applied data type archive: generic_clib (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              0.844 secs
+    Apply Data Archives                        0.504 secs
+    Call Convention ID                         3.456 secs
+    Call-Fixup Installer                       0.021 secs
+    Create Address Tables                      0.191 secs
+    Create Address Tables - One Time           1.394 secs
+    Create Function                            0.000 secs
+    DVP Overlay Label Sync                     0.001 secs
+    Data Reference                             0.323 secs
+    Decompiler Switch Analysis                12.939 secs
+    Demangler GNU                              0.900 secs
+    Disassemble Entry Points                   6.187 secs
+    Disassemble Entry Points - One Time        0.016 secs
+    Embedded Media                             0.114 secs
+    External Entry References                  0.026 secs
+    Function ID                                0.051 secs
+    Function Start Search                      0.137 secs
+    MIPS-R5900 Constant Reference Analyzer    14.894 secs
+    MIPS-R5900 Unaligned Instruction Fix       0.755 secs
+    Non-Returning Functions - Discovered       0.938 secs
+    Non-Returning Functions - Known            0.037 secs
+    Reference                                  0.493 secs
+    STABS                                      1.014 secs
+    Shared Return Calls                        0.315 secs
+    Stack                                     10.746 secs
+    Subroutine References                      0.555 secs
+-----------------------------------------------------
+     Total Time   56 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file:///G:/VibeRE/GiantsRE/ps2_symbols/SLUS_201.78 (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ps2_dump_string_refs.java 'G:\VibeRE\GiantsRE\ps2_symbols\ps2_string_refs.json'  (HeadlessAnalyzer)  
+ps2_dump_string_refs.java:39: error: method getReferenceIterator in interface ghidra.program.model.symbol.ReferenceManager cannot be applied to given types;
+        var rit = currentProgram.getReferenceManager().getReferenceIterator();
+                                                      ^
+  required: ghidra.program.model.address.Address
+  found:    no arguments
+  reason: actual and formal argument lists differ in length
+skipping G:\VibeRE\GiantsRE\scripts\ps2_dump_string_refs.java
+ERROR REPORT SCRIPT ERROR: ps2_dump_string_refs.java : The class could not be found. It must be the public class of the .java file: ps2_dump_string_refs not found by 75f92b7 [1] (HeadlessAnalyzer) ghidra.app.script.GhidraScriptLoadException: The class could not be found. It must be the public class of the .java file: ps2_dump_string_refs not found by 75f92b7 [1]
+	at ghidra.app.script.JavaScriptProvider.getScriptInstance(JavaScriptProvider.java:114)
+	at ghidra.app.util.headless.HeadlessAnalyzer.runScriptsList(HeadlessAnalyzer.java:927)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1097)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1595)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1755)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1696)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1780)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:464)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:199)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+Caused by: java.lang.ClassNotFoundException: ps2_dump_string_refs not found by 75f92b7 [1]
+	at org.apache.felix.framework.BundleWiringImpl.findClassOrResourceByDelegation(BundleWiringImpl.java:1591)
+	at org.apache.felix.framework.BundleWiringImpl.access$300(BundleWiringImpl.java:79)
+	at org.apache.felix.framework.BundleWiringImpl$BundleClassLoader.loadClass(BundleWiringImpl.java:1976)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:528)
+	at org.apache.felix.framework.Felix.loadBundleClass(Felix.java:2116)
+	at org.apache.felix.framework.BundleImpl.loadClass(BundleImpl.java:986)
+	at ghidra.app.script.JavaScriptProvider.loadClass(JavaScriptProvider.java:166)
+	at ghidra.app.script.JavaScriptProvider.getScriptInstance(JavaScriptProvider.java:97)
+	... 10 more
+ 
+INFO  ANALYZING changes made by post scripts: file:///G:/VibeRE/GiantsRE/ps2_symbols/SLUS_201.78 (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file:///G:/VibeRE/GiantsRE/ps2_symbols/SLUS_201.78 (HeadlessAnalyzer)  
+INFO  /SLUS_201.78: file created (Judi) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /SLUS_201.78 (PS2:/SLUS_201.78) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

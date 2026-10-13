@@ -1,0 +1,1 @@
+{"address": "0051d7b0", "name": "FUN_0051d7b0", "decompiled": "void FUN_0051d7b0(HANDLE param_1,LONG param_2)\n\n{\n  SetFilePointer(param_1,param_2,(PLONG)0x0,0);\n  return;\n}"}

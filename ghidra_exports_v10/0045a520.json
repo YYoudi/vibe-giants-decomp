@@ -1,0 +1,1 @@
+{"address": "0045a520", "name": "FUN_0045a520", "decompiled": "void FUN_0045a520(undefined4 param_1)\n\n{\n  DAT_0059ca4c = param_1;\n  return;\n}"}

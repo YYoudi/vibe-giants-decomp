@@ -1,0 +1,1 @@
+{"address": "00491510", "name": "FUN_00491510", "decompiled": "void FUN_00491510(void)\n\n{\n  int iVar1;\n  int iVar2;\n  \n  iVar1 = 0;\n  do {\n    iVar2 = iVar1 + 0x30;\n    *(undefined4 *)(iVar1 + 0x4554 + DAT_006316ec) = 0;\n    iVar1 = iVar2;\n  } while (iVar2 < 0x510);\n  *(undefined4 *)(DAT_006316ec + 0x4a64) = 0;\n  return;\n}"}

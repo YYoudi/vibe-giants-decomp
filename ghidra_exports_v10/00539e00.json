@@ -1,0 +1,1 @@
+{"address": "00539e00", "name": "FUN_00539e00", "decompiled": "void FUN_00539e00(void)\n\n{\n  WSADATA local_190;\n  \n  WSAStartup(0x101,&local_190);\n  return;\n}"}

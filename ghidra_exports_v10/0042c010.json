@@ -1,0 +1,1 @@
+{"address": "0042c010", "name": "FUN_0042c010", "decompiled": "void FUN_0042c010(void)\n\n{\n  undefined4 *puVar1;\n  \n  puVar1 = (undefined4 *)\n           mem_alloc_tagged(8,0xc,&DAT_00558728,\"C:\\\\Giants\\\\Source\\\\main\\\\dlog.c\",0x8e);\n  *puVar1 = 0;\n  puVar1[1] = 0;\n  puVar1[2] = 0;\n  puVar1[2] = 0xffffffff;\n  return;\n}"}

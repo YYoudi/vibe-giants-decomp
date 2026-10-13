@@ -1,0 +1,1 @@
+{"address": "00414990", "name": "FUN_00414990", "decompiled": "float10 FUN_00414990(undefined4 param_1)\n\n{\n  undefined1 local_1c [16];\n  float local_c [2];\n  undefined1 local_4 [4];\n  \n  FUN_00458080(param_1,local_1c,local_4,local_c,1);\n  return (float10)local_c[0];\n}"}

@@ -1,0 +1,1 @@
+{"address": "005207e0", "name": "FUN_005207e0", "decompiled": "void FUN_005207e0(void)\n\n{\n  if (DAT_005dc8d8 != 0) {\n    GdiFlush();\n    DeleteObject(DAT_005dc338);\n    DeleteObject(DAT_005dc894);\n    DeleteDC(DAT_005dc890);\n    mem_free_tagged(DAT_005dc364,\"C:\\\\Giants\\\\Source\\\\win95\\\\text.c\",0x104);\n    DAT_005dc8d8 = 0;\n  }\n  return;\n}"}

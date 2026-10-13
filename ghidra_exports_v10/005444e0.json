@@ -1,0 +1,1 @@
+{"address": "005444e0", "name": "FUN_005444e0", "decompiled": "float10 FUN_005444e0(float param_1)\n\n{\n  float10 fVar1;\n  \n  fVar1 = (float10)fsin((float10)param_1);\n  return (float10)1.0 / fVar1;\n}"}

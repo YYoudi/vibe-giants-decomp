@@ -1,0 +1,1 @@
+{"address": "0054c8b0", "name": "FUN_0054c8b0", "decompiled": "undefined4 FUN_0054c8b0(undefined4 param_1)\n\n{\n  DAT_006558a0 = HeapAlloc(DAT_006558a8,0,0x140);\n  if (DAT_006558a0 == (LPVOID)0x0) {\n    return 0;\n  }\n  DAT_00655898 = 0;\n  DAT_0065589c = 0;\n  DAT_00655894 = DAT_006558a0;\n  DAT_006558a4 = param_1;\n  DAT_0065588c = 0x10;\n  return 1;\n}"}

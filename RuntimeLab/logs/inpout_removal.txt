@@ -1,0 +1,20 @@
+=== stop ===        
+
+SERVICE_NAME: InpOutx64 
+        TYPE               : 1  KERNEL_DRIVER  
+        STATE              : 1  STOPPED 
+        WIN32_EXIT_CODE    : 0  (0x0)
+        SERVICE_EXIT_CODE  : 0  (0x0)
+        CHECKPOINT         : 0x0
+        WAIT_HINT          : 0x0
+=== delete svc === 
+[SC] DeleteService r‚ussite(s)
+=== takeown ===    
+
+Op‚ration r‚ussieÿ: le fichier (ou dossier)ÿ: "C:\Windows\System32\drivers\inpoutx64.sys" appartient d‚sormais … l'utilisateur "PC-Y\Judi".
+Administrators: Le mappage entre les noms de compte et les ID de s‚curit‚ n'a pas ‚t‚ effectu‚.
+0 fichiers correctement trait‚sÿ; ‚chec du traitement de 1 fichiers
+fichier trait‚ÿ: C:\Windows\System32\drivers\inpoutx64.sys
+1 fichiers correctement trait‚sÿ; ‚chec du traitement de 0 fichiers
+=== delete file ===
+=== done ===       

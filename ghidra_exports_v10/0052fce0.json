@@ -1,0 +1,1 @@
+{"address": "0052fce0", "name": "FUN_0052fce0", "decompiled": "void FUN_0052fce0(int param_1,int param_2)\n\n{\n  if (-1 < param_1) {\n    if (999 < param_2) {\n      (&DAT_005dcdd0)[param_1] = 999;\n      return;\n    }\n    if (param_2 < 0) {\n      param_2 = 0;\n    }\n    (&DAT_005dcdd0)[param_1] = param_2;\n  }\n  return;\n}"}

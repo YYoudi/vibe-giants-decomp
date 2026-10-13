@@ -1,0 +1,1 @@
+{"address": "004a7410", "name": "FUN_004a7410", "decompiled": "void FUN_004a7410(int param_1)\n\n{\n  int iVar1;\n  \n  iVar1 = *(int *)(param_1 + 0x104);\n  *(undefined4 *)(iVar1 + 0x20) = 0;\n  *(undefined4 *)(iVar1 + 0x1c) = 0;\n  *(undefined4 *)(iVar1 + 0x18) = 0;\n  return;\n}"}

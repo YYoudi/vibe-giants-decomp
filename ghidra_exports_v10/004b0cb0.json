@@ -1,0 +1,1 @@
+{"address": "004b0cb0", "name": "FUN_004b0cb0", "decompiled": "void FUN_004b0cb0(float *param_1,int param_2)\n\n{\n  *param_1 = (*(float *)(param_2 + 0x288) + *(float *)(param_2 + 0x27c)) * 0.5;\n  param_1[1] = (*(float *)(param_2 + 0x28c) + *(float *)(param_2 + 0x280)) * 0.5;\n  param_1[2] = (*(float *)(param_2 + 0x290) + *(float *)(param_2 + 0x284)) * 0.5;\n  return;\n}"}

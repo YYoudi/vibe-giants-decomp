@@ -1,0 +1,1 @@
+{"address": "00435d00", "name": "FUN_00435d00", "decompiled": "void FUN_00435d00(undefined4 *param_1)\n\n{\n  undefined4 uVar1;\n  undefined4 *puVar2;\n  \n  puVar2 = (undefined4 *)FUN_0051bbb0(2);\n  uVar1 = puVar2[1];\n  *param_1 = *puVar2;\n  param_1[1] = uVar1;\n  return;\n}"}

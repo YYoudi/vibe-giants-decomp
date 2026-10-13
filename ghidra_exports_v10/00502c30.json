@@ -1,0 +1,1 @@
+{"address": "00502c30", "name": "FUN_00502c30", "decompiled": "/* PS2 candidate: SpecialWeaponIdSet__FP6OBJECTi (conf 0.435) */\n\nvoid FUN_00502c30(void)\n\n{\n  int in_EAX;\n  char unaff_BH;\n  char in_CF;\n  \n  *(char *)(in_EAX + 0xffffff) = (*(char *)(in_EAX + 0xffffff) - unaff_BH) - in_CF;\n  return;\n}"}

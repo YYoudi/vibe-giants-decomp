@@ -1,0 +1,1 @@
+{"address": "0051f840", "name": "FUN_0051f840", "decompiled": "void FUN_0051f840(LPCSTR param_1,LPBYTE param_2,DWORD param_3)\n\n{\n  RegQueryValueExA(DAT_005dc248,param_1,(LPDWORD)0x0,(LPDWORD)0x0,param_2,&param_3);\n  return;\n}"}

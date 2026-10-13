@@ -1,0 +1,1 @@
+{"address": "00438a80", "name": "FUN_00438a80", "decompiled": "void FUN_00438a80(byte *param_1)\n\n{\n  if ((*param_1 & 1) != 0) {\n    FUN_00438ab0(param_1);\n    (**(code **)(*(int *)(param_1 + 0x30) + 0x20))(*(int *)(param_1 + 0x30),0,0);\n    (**(code **)(*(int *)(param_1 + 0x30) + 8))(*(int *)(param_1 + 0x30));\n  }\n  return;\n}"}

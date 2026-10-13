@@ -1,0 +1,1 @@
+{"address": "0053a600", "name": "FUN_0053a600", "decompiled": "void FUN_0053a600(void)\n\n{\n  if (DAT_005e12c4 != 0) {\n    gzp_close_free();\n  }\n  DAT_005e12c4 = 0;\n  return;\n}"}

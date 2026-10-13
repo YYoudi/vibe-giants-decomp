@@ -1,0 +1,1 @@
+{"address": "00540ab0", "name": "FUN_00540ab0", "decompiled": "void FUN_00540ab0(float *param_1,float *param_2,float param_3)\n\n{\n  *param_1 = param_3 * *param_2;\n  param_1[1] = param_3 * param_2[1];\n  param_1[2] = param_3 * param_2[2];\n  param_1[3] = param_3 * param_2[3];\n  return;\n}"}

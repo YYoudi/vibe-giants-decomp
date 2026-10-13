@@ -1,0 +1,1 @@
+{"address": "0051d810", "name": "FUN_0051d810", "decompiled": "DWORD FUN_0051d810(HANDLE param_1)\n\n{\n  DWORD lDistanceToMove;\n  DWORD DVar1;\n  \n  lDistanceToMove = SetFilePointer(param_1,0,(PLONG)0x0,1);\n  SetFilePointer(param_1,0,(PLONG)0x0,2);\n  DVar1 = SetFilePointer(param_1,0,(PLONG)0x0,1);\n  SetFilePointer(param_1,lDistanceToMove,(PLONG)0x0,0);\n  return DVar1;\n}"}

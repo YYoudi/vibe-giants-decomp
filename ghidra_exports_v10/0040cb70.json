@@ -1,0 +1,1 @@
+{"address": "0040cb70", "name": "FUN_0040cb70", "decompiled": "void FUN_0040cb70(void)\n\n{\n  int iVar1;\n  undefined4 *puVar2;\n  undefined4 *puVar3;\n  \n  puVar2 = &DAT_00585408;\n  puVar3 = &DAT_00556180;\n  for (iVar1 = 0x22; iVar1 != 0; iVar1 = iVar1 + -1) {\n    *puVar3 = *puVar2;\n    puVar2 = puVar2 + 1;\n    puVar3 = puVar3 + 1;\n  }\n  return;\n}"}

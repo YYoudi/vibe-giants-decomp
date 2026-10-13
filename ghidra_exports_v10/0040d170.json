@@ -1,0 +1,1 @@
+{"address": "0040d170", "name": "FUN_0040d170", "decompiled": "float10 FUN_0040d170(void)\n\n{\n  if (DAT_0063113f != '\\0') {\n    return (float10)*(float *)(&DAT_00556490 + DAT_00556194 * 4);\n  }\n  return (float10)1.0;\n}"}

@@ -1,0 +1,13 @@
+  200 (failed=0 named=34) elapsed=5s
+  400 (failed=0 named=80) elapsed=15s
+  600 (failed=0 named=173) elapsed=53s
+  800 (failed=0 named=194) elapsed=56s
+  1000 (failed=0 named=218) elapsed=63s
+  1200 (failed=0 named=247) elapsed=66s
+  1400 (failed=0 named=268) elapsed=76s
+  1600 (failed=0 named=281) elapsed=80s
+  1800 (failed=0 named=312) elapsed=86s
+  2000 (failed=0 named=322) elapsed=91s
+  2200 (failed=0 named=344) elapsed=97s
+  2400 (failed=0 named=365) elapsed=99s
+DONE total_nonthunk=2576 done=2576 failed=0 named=386 (15.0%) skipped_gt_maxva=0 va_range=0x401000..0x55001B

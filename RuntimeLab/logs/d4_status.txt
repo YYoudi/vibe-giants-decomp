@@ -1,0 +1,26 @@
+[1787783253] daemon start (waiting engine scratch)
+[1787783261] pinput click+enter
+[1787783296] pinput click+enter
+[1787783331] pinput click+enter
+[1787783367] pinput click+enter
+[1787783402] pinput click+enter
+[1787783437] pinput click+enter
+[1787783473] pinput click+enter
+[1787783508] pinput click+enter
+[1787783543] pinput click+enter
+[1787783579] pinput click+enter
+[1787783586] daemon start (waiting engine scratch)
+[1787783593] scratch from engine: 0x38e0000
+[1787783596] pinput click+enter
+[1787783629] pinput click+enter
+[1787783663] pinput click+enter
+[1787783695] pinput click+enter
+[1787783728] pinput click+enter
+[1787783761] pinput click+enter
+[1787783794] pinput click+enter
+[1787783827] pinput click+enter
+[1787783860] pinput click+enter
+[1787783893] pinput click+enter
+[1787783926] pinput click+enter
+[1787783959] pinput click+enter
+[1787783992] pinput click+enter

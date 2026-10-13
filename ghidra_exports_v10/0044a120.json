@@ -1,0 +1,1 @@
+{"address": "0044a120", "name": "FUN_0044a120", "decompiled": "void FUN_0044a120(void)\n\n{\n  if (DAT_0059c954 != 0) {\n    while (DAT_0055a754 == 0) {\n      DAT_0055a754 = 1;\n      DAT_0055a754 = FUN_0044a370();\n    }\n  }\n  return;\n}"}

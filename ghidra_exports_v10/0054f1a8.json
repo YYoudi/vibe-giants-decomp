@@ -1,0 +1,1 @@
+{"address": "0054f1a8", "name": "FUN_0054f1a8", "decompiled": "void FUN_0054f1a8(void)\n\n{\n  __amsg_exit(2);\n  return;\n}"}

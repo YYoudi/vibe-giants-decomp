@@ -1,0 +1,1 @@
+{"address": "0054c157", "name": "__startOneArgErrorHandling", "decompiled": "/* Library Function - Single Match\n    __startOneArgErrorHandling\n   \n   Library: Visual Studio */\n\nfloat10 __startOneArgErrorHandling(void)\n\n{\n  float10 in_ST0;\n  \n  FUN_0054f8dd();\n  return (float10)(double)in_ST0;\n}"}

@@ -1,0 +1,1 @@
+{"address": "004db0c0", "name": "FUN_004db0c0", "decompiled": "float10 FUN_004db0c0(float param_1,float param_2)\n\n{\n  int iVar1;\n  \n  iVar1 = _rand();\n  return ((float10)param_2 - (float10)param_1) * (float10)iVar1 * (float10)3.0517578e-05 +\n         (float10)param_1;\n}"}

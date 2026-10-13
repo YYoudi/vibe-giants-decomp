@@ -1,0 +1,1 @@
+{"address": "0049d320", "name": "FUN_0049d320", "decompiled": "void FUN_0049d320(int *param_1)\n\n{\n  if ((*param_1 != 0) && ((char)((uint)*(undefined4 *)(*param_1 + 0xd8) >> 8) < '\\0')) {\n    *param_1 = 0;\n  }\n  return;\n}"}

@@ -1,0 +1,1 @@
+{"address": "0051f870", "name": "FUN_0051f870", "decompiled": "void FUN_0051f870(LPCSTR param_1,BYTE *param_2,DWORD param_3)\n\n{\n  if (DAT_005dc248 != (HKEY)0x0) {\n    RegSetValueExA(DAT_005dc248,param_1,0,3,param_2,param_3);\n  }\n  return;\n}"}

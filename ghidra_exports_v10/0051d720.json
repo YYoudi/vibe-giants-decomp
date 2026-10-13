@@ -1,0 +1,1 @@
+{"address": "0051d720", "name": "FUN_0051d720", "decompiled": "uint FUN_0051d720(LPCSTR param_1)\n\n{\n  HANDLE pvVar1;\n  \n  pvVar1 = CreateFileA(param_1,0x40000000,0,(LPSECURITY_ATTRIBUTES)0x0,2,0x80,(HANDLE)0x0);\n  return -(uint)(pvVar1 != (HANDLE)0xffffffff) & (uint)pvVar1;\n}"}

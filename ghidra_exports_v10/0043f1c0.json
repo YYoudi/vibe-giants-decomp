@@ -1,0 +1,1 @@
+{"address": "0043f1c0", "name": "FUN_0043f1c0", "decompiled": "char * FUN_0043f1c0(int param_1,int param_2)\n\n{\n  if ((param_2 != 0xff) && (-1 < param_2)) {\n    return *(char **)(*(int *)(*(int *)(param_1 + 8) + 0x454) + param_2 * 4);\n  }\n  return \"(0,0,0)\";\n}"}

@@ -1,0 +1,1 @@
+{"address": "004d20f0", "name": "FUN_004d20f0", "decompiled": "void FUN_004d20f0(void)\n\n{\n  int *piVar1;\n  \n  piVar1 = &DAT_005a5d04;\n  do {\n    if (*piVar1 != 0) {\n      FUN_0049f1f0(piVar1 + -1);\n    }\n    *piVar1 = 0;\n    piVar1 = piVar1 + 0xc1;\n  } while ((int)piVar1 < 0x5a7524);\n  return;\n}"}

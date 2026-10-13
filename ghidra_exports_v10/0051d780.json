@@ -1,0 +1,1 @@
+{"address": "0051d780", "name": "FUN_0051d780", "decompiled": "DWORD FUN_0051d780(HANDLE param_1,LPCVOID param_2,DWORD param_3)\n\n{\n  WriteFile(param_1,param_2,param_3,&param_3,(LPOVERLAPPED)0x0);\n  return param_3;\n}"}

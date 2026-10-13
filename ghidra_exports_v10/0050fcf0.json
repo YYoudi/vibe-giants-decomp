@@ -1,0 +1,1 @@
+{"address": "0050fcf0", "name": "FUN_0050fcf0", "decompiled": "void FUN_0050fcf0(int param_1)\n\n{\n  *(int *)(param_1 + 0x40) = *(int *)(param_1 + 0x40) + 1;\n  return;\n}"}

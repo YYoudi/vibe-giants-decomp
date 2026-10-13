@@ -1,0 +1,1 @@
+{"address": "00543410", "name": "FUN_00543410", "decompiled": "float10 FUN_00543410(float param_1)\n\n{\n  FUN_00544960();\n  return (float10)1.0 / (float10)param_1;\n}"}

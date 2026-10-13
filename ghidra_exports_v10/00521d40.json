@@ -1,0 +1,1 @@
+{"address": "00521d40", "name": "FUN_00521d40", "decompiled": "bool FUN_00521d40(void)\n\n{\n  return DAT_006317e4 == 0;\n}"}

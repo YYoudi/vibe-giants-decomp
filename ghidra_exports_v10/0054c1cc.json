@@ -1,0 +1,1 @@
+{"address": "0054c1cc", "name": "FUN_0054c1cc", "decompiled": "undefined4 FUN_0054c1cc(void)\n\n{\n  uint in_EAX;\n  \n  if ((in_EAX & 0x80000) != 0) {\n    return 7;\n  }\n  return 1;\n}"}
