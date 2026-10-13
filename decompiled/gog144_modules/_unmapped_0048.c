@@ -2323,7 +2323,7 @@ void game_options_verify(void)
 
       audio_music_mode_gate_2(uVar3);
 
-      FUN_0051c770((_DAT_0059eeb4 & 2) != 0);
+      audio_option_set_c((_DAT_0059eeb4 & 2) != 0);
 
       audio_option_gate((_DAT_0059eeb4 & 4) != 0);
 
@@ -2425,7 +2425,7 @@ void game_options_verify(void)
 
     audio_music_mode_gate_2(0);
 
-    FUN_0051c770(0);
+    audio_option_set_c(0);
 
     audio_option_gate(0);
 
@@ -9948,7 +9948,7 @@ void dialog_0048ca10(void)
 
     iVar3 = dialog_level_is_base_5();
 
-    FUN_0051c770(iVar3 == 0);
+    audio_option_set_c(iVar3 == 0);
 
     break;
 

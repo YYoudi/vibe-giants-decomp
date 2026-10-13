@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054ee91,FUN_0054ee91,,crt_mant_shl,0.9,llm-w178,64-bit shift left callers strtod/fltout
+0054eebf,FUN_0054eebf,,crt_mant_shr,0.9,llm-w178,64-bit shift right
+0051c770,FUN_0051c770,,audio_option_set_c,0.9,llm-w178,options setter triplet
+0040d7e0,FUN_0040d7e0,,camera_override_begin,0.9,llm-w178,sets 005550b4/ec pairs override_done
+00544d5c,FUN_00544d5c,,crt_initterm,0.9,llm-w178,registered init calls caller entry
+00543d65,FUN_00543d65,,crt_memswap,0.9,llm-w178,swap loop callers qsort pair

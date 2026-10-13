@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (286 named) — decompiled, names from PS2 symbols
+ * 351 functions (290 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -4446,7 +4446,7 @@ LAB_00543c02:
 
   if (8 < uVar2) {
 
-    FUN_00543d65((uVar2 >> 1) * param_3 + uVar3,uVar3,param_3);
+    crt_memswap((uVar2 >> 1) * param_3 + uVar3,uVar3,param_3);
 
     uVar2 = param_3 + uVar5;
 
@@ -4486,13 +4486,13 @@ LAB_00543c71:
 
   if (local_c <= uVar2) {
 
-    FUN_00543d65(local_c,uVar2,param_3);
+    crt_memswap(local_c,uVar2,param_3);
 
     goto LAB_00543c59;
 
   }
 
-  FUN_00543d65(uVar3,uVar2,param_3);
+  crt_memswap(uVar3,uVar2,param_3);
 
   uVar1 = local_c;
 
@@ -4595,7 +4595,7 @@ void crt_qsort_part(uint param_1,uint param_2,int param_3,code *param_4)
 
     }
 
-    FUN_00543d65(uVar2,param_2,param_3);
+    crt_memswap(uVar2,param_2,param_3);
 
   }
 
@@ -4603,8 +4603,8 @@ void crt_qsort_part(uint param_1,uint param_2,int param_3,code *param_4)
 
 }
 
-/* ===== FUN_00543d65 @ 0x00543D65 ===== */
-void FUN_00543d65(undefined1 *param_1,undefined1 *param_2,int param_3)
+/* ===== crt_memswap @ 0x00543D65 ===== */
+void crt_memswap(undefined1 *param_1,undefined1 *param_2,int param_3)
 
 
 
@@ -6922,8 +6922,8 @@ void FUN_00544d41(int param_1)
 
 }
 
-/* ===== FUN_00544d5c @ 0x00544D5C ===== */
-void FUN_00544d5c(void)
+/* ===== crt_initterm @ 0x00544D5C ===== */
+void crt_initterm(void)
 
 
 
@@ -8553,7 +8553,7 @@ void entry(void)
 
   bin_file_copy_str();
 
-  FUN_00544d5c();
+  crt_initterm();
 
   local_60.dwFlags = 0;
 
@@ -26603,8 +26603,8 @@ void ___add_12(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0054ee91 @ 0x0054EE91 ===== */
-void FUN_0054ee91(uint *param_1)
+/* ===== crt_mant_shl @ 0x0054EE91 ===== */
+void crt_mant_shl(uint *param_1)
 
 
 
@@ -26630,8 +26630,8 @@ void FUN_0054ee91(uint *param_1)
 
 }
 
-/* ===== FUN_0054eebf @ 0x0054EEBF ===== */
-void FUN_0054eebf(uint *param_1)
+/* ===== crt_mant_shr @ 0x0054EEBF ===== */
+void crt_mant_shr(uint *param_1)
 
 
 
@@ -26694,13 +26694,13 @@ void crt_strtod_mantissa(char *param_1,int param_2,uint *param_3)
 
       local_c = puVar1[2];
 
-      FUN_0054ee91(puVar1);
+      crt_mant_shl(puVar1);
 
-      FUN_0054ee91(puVar1);
+      crt_mant_shl(puVar1);
 
       ___add_12(puVar1,&local_14);
 
-      FUN_0054ee91(puVar1);
+      crt_mant_shl(puVar1);
 
       local_10 = 0;
 
@@ -26732,7 +26732,7 @@ void crt_strtod_mantissa(char *param_1,int param_2,uint *param_3)
 
   while ((puVar1[2] & 0x8000) == 0) {
 
-    FUN_0054ee91(puVar1);
+    crt_mant_shl(puVar1);
 
     local_8 = local_8 + 0xffff;
 
@@ -26959,7 +26959,7 @@ LAB_0054f0ad:
 
       do {
 
-        FUN_0054ee91(&local_14);
+        crt_mant_shl(&local_14);
 
         param_6 = (short *)((int)param_6 + -1);
 
@@ -26971,7 +26971,7 @@ LAB_0054f0ad:
 
         for (uVar4 = -iVar8 & 0xff; uVar4 != 0; uVar4 = uVar4 - 1) {
 
-          FUN_0054eebf(&local_14);
+          crt_mant_shr(&local_14);
 
         }
 
@@ -26993,13 +26993,13 @@ LAB_0054f0ad:
 
           param_3 = CONCAT13(cStack_9,CONCAT12(local_a,uStack_c));
 
-          FUN_0054ee91(&local_14);
+          crt_mant_shl(&local_14);
 
-          FUN_0054ee91(&local_14);
+          crt_mant_shl(&local_14);
 
           ___add_12(&local_14,&param_1);
 
-          FUN_0054ee91(&local_14);
+          crt_mant_shl(&local_14);
 
           cVar3 = cStack_9;
 
@@ -27417,7 +27417,7 @@ LAB_0054f4c2:
 
             }
 
-            FUN_0054eebf(&local_28);
+            crt_mant_shr(&local_28);
 
             iVar7 = iVar7 + -1;
 
@@ -27439,7 +27439,7 @@ LAB_0054f4c2:
 
           if ((bStack_1d & 0x80) != 0) break;
 
-          FUN_0054ee91(&local_28);
+          crt_mant_shl(&local_28);
 
           param_1._0_2_ = (ushort)param_1 - 1;
 

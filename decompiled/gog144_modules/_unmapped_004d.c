@@ -3682,7 +3682,7 @@ void rpboat_tilt__FP6OBJECT(int param_1)
 
       ref_get_anode2(local_44,&local_94,param_1,*(undefined4 *)(param_1 + 0x10),4,0);
 
-      FUN_0040d7e0(local_44);
+      camera_override_begin(local_44);
 
       AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(local_94);
 

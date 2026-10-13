@@ -8841,7 +8841,7 @@ void audio_anode_check(int param_1)
 
 LAB_004bcb0b:
 
-  FUN_0040d7e0(local_44);
+  camera_override_begin(local_44);
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(param_1);
 

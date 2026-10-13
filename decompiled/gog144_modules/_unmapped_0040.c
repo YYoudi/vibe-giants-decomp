@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (84 named) — decompiled, names from PS2 symbols
+ * 105 functions (85 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -10185,8 +10185,8 @@ void camera_override_refpt(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0040d7e0 @ 0x0040D7E0 ===== */
-void FUN_0040d7e0(undefined4 *param_1)
+/* ===== camera_override_begin @ 0x0040D7E0 ===== */
+void camera_override_begin(undefined4 *param_1)
 
 
 

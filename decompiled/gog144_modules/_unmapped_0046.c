@@ -1140,7 +1140,7 @@ void camera_ref_anode(int param_1,undefined4 param_2,int param_3,int *param_4)
 
       ref_get_anode2(local_44,&param_1,iVar1,1,7,0);
 
-      FUN_0040d7e0(local_44);
+      camera_override_begin(local_44);
 
       AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(param_1);
 
