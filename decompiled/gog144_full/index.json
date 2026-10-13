@@ -752,7 +752,7 @@
  "0x00413B70": {
   "name": "object_snap_y_to_ground",
   "named": true,
-  "len": 1495
+  "len": 1503
  },
  "0x00413C90": {
   "name": "obj_ground_normal",
@@ -4342,7 +4342,7 @@
  "0x00482700": {
   "name": "game_options_verify",
   "named": true,
-  "len": 2764
+  "len": 2788
  },
  "0x004829D0": {
   "name": "FUN_004829d0",
@@ -4547,7 +4547,7 @@
  "0x0048CA10": {
   "name": "dialog_0048ca10",
   "named": true,
-  "len": 3298
+  "len": 3310
  },
  "0x0048D4B0": {
   "name": "FUN_0048D4B0",
@@ -8240,9 +8240,9 @@
   "len": 1076
  },
  "0x0050A730": {
-  "name": "FUN_0050a730",
-  "named": false,
-  "len": 287
+  "name": "terrain_plane_height",
+  "named": true,
+  "len": 295
  },
  "0x0050A770": {
   "name": "diff_angle",
@@ -9140,9 +9140,9 @@
   "len": 171
  },
  "0x0051C610": {
-  "name": "FUN_0051c610",
-  "named": false,
-  "len": 231
+  "name": "audio_option_set_a",
+  "named": true,
+  "len": 237
  },
  "0x0051C650": {
   "name": "dialog_level_is_base_3",
@@ -9165,9 +9165,9 @@
   "len": 174
  },
  "0x0051C700": {
-  "name": "FUN_0051c700",
-  "named": false,
-  "len": 234
+  "name": "audio_option_set_b",
+  "named": true,
+  "len": 240
  },
  "0x0051C740": {
   "name": "dialog_level_is_base_4",
@@ -12742,7 +12742,7 @@
  "0x0054EA1E": {
   "name": "crt_lock_54ea1e",
   "named": true,
-  "len": 3533
+  "len": 3535
  },
  "0x0054EBCB": {
   "name": "FUN_0054ebcb",
@@ -12750,9 +12750,9 @@
   "len": 720
  },
  "0x0054EC15": {
-  "name": "FUN_0054ec15",
-  "named": false,
-  "len": 267
+  "name": "crt_errno_map",
+  "named": true,
+  "len": 268
  },
  "0x0054EC48": {
   "name": "FUN_0054ec48",

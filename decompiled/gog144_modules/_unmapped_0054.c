@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (285 named) — decompiled, names from PS2 symbols
+ * 351 functions (286 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -26036,7 +26036,7 @@ LAB_0054ea5b:
 
       DAT_0065767c = CodePage;
 
-      DAT_006578a4 = FUN_0054ec15(CodePage);
+      DAT_006578a4 = crt_errno_map(CodePage);
 
       DAT_00657680 = *(undefined4 *)(iVar12 + 0x583cec);
 
@@ -26134,7 +26134,7 @@ code_r0x0054ea6a:
 
       } while (uVar8 < 0xff);
 
-      DAT_006578a4 = FUN_0054ec15(CodePage);
+      DAT_006578a4 = crt_errno_map(CodePage);
 
       DAT_0065768c = 1;
 
@@ -26235,8 +26235,8 @@ int FUN_0054ebcb(int param_1)
 
 }
 
-/* ===== FUN_0054ec15 @ 0x0054EC15 ===== */
-undefined4 FUN_0054ec15(int param_1)
+/* ===== crt_errno_map @ 0x0054EC15 ===== */
+undefined4 crt_errno_map(int param_1)
 
 
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054ec15,FUN_0054ec15,,crt_errno_map,0.9,llm-w176,doserrno->errno table caller crt_lock
+0051c610,FUN_0051c610,,audio_option_set_a,0.9,llm-w176,options flags twins callers game_options
+0051c700,FUN_0051c700,,audio_option_set_b,0.9,llm-w176,options flags twins
+0050a730,FUN_0050a730,,terrain_plane_height,0.9,llm-w176,plane height formula caller object_snap_y_to_ground

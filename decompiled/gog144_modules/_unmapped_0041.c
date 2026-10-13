@@ -2408,7 +2408,7 @@ void object_snap_y_to_ground(float param_1,undefined4 *param_2)
 
   local_4 = *(float *)((int)param_1 + 0xa8);
 
-  fVar4 = (float10)FUN_0050a730(param_2,local_c,local_8);
+  fVar4 = (float10)terrain_plane_height(param_2,local_c,local_8);
 
   local_4 = (float)fVar4;
 

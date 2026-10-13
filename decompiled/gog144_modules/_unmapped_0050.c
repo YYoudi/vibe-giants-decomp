@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (63 named) — decompiled, names from PS2 symbols
+ * 87 functions (64 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -10286,8 +10286,8 @@ void tri_to_plane__FP3P3DN20P7PLANE3D(float *param_1,float *param_2,float *param
 
 }
 
-/* ===== FUN_0050a730 @ 0x0050A730 ===== */
-float10 FUN_0050a730(float *param_1,float param_2,float param_3)
+/* ===== terrain_plane_height @ 0x0050A730 ===== */
+float10 terrain_plane_height(float *param_1,float param_2,float param_3)
 
 
 
