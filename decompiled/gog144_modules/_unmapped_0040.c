@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (43 named) — decompiled, names from PS2 symbols
+ * 105 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -7559,12 +7559,12 @@ int meccbasepit_bldg_from_object(int param_1)
 
 }
 
-/* ===== FUN_0040ad30 @ 0x0040AD30 ===== */
+/* ===== meccbase_get_max_energy @ 0x0040AD30 ===== */
 /* PS2 candidate: meccbase_get_max_energy (conf 0.408) */
 
 
 
-float10 FUN_0040ad30(int param_1)
+float10 meccbase_get_max_energy(int param_1)
 
 
 

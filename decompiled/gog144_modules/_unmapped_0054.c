@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (244 named) — decompiled, names from PS2 symbols
+ * 351 functions (245 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -82,12 +82,12 @@ void map_memfree(int param_1,int param_2)
 
 }
 
-/* ===== FUN_005400e0 @ 0x005400E0 ===== */
+/* ===== MAP_PtrFix @ 0x005400E0 ===== */
 /* PS2 candidate: MAP_PtrFix (conf 0.582) */
 
 
 
-undefined4 FUN_005400e0(int *param_1,int *param_2)
+undefined4 MAP_PtrFix(int *param_1,int *param_2)
 
 
 
@@ -525,11 +525,11 @@ void FUN_00540530(int param_1,code *param_2,undefined4 param_3)
 
   
 
-  FUN_005400e0(param_1,param_3);
+  MAP_PtrFix(param_1,param_3);
 
   puVar1 = (undefined4 *)(param_1 + 4);
 
-  FUN_005400e0(puVar1,param_3);
+  MAP_PtrFix(puVar1,param_3);
 
   PTR_LAB_00580cd0 = &LAB_00540440;
 

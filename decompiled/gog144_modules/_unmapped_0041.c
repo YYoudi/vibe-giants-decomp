@@ -5701,7 +5701,7 @@ undefined4 obj_maxspeed_lookup(float param_1,float param_2)
 
 LAB_004178c6:
 
-      fVar6 = (float10)FUN_004b6d60(param_1);
+      fVar6 = (float10)reaperbase_get_max_energy(param_1);
 
       goto LAB_004178d4;
 
@@ -5719,7 +5719,7 @@ LAB_004178c6:
 
 LAB_004178ce:
 
-    fVar6 = (float10)FUN_0040ad30(param_1);
+    fVar6 = (float10)meccbase_get_max_energy(param_1);
 
 LAB_004178d4:
 
@@ -6148,7 +6148,7 @@ undefined4 bldg_get_max_energy(int param_1)
 
     else {
 
-      fVar5 = (float10)FUN_004b6d60(param_1);
+      fVar5 = (float10)reaperbase_get_max_energy(param_1);
 
     }
 
@@ -6156,7 +6156,7 @@ undefined4 bldg_get_max_energy(int param_1)
 
   else {
 
-    fVar5 = (float10)FUN_0040ad30(param_1);
+    fVar5 = (float10)meccbase_get_max_energy(param_1);
 
   }
 
@@ -6345,7 +6345,7 @@ float10 bldg_get_max_energy(undefined4 param_1)
 
       }
 
-      fVar2 = (float10)FUN_004b6d60(param_1);
+      fVar2 = (float10)reaperbase_get_max_energy(param_1);
 
       return fVar2;
 
@@ -6353,7 +6353,7 @@ float10 bldg_get_max_energy(undefined4 param_1)
 
   }
 
-  fVar2 = (float10)FUN_0040ad30(param_1);
+  fVar2 = (float10)meccbase_get_max_energy(param_1);
 
   return fVar2;
 
@@ -6418,7 +6418,7 @@ undefined4 FUN_004181d0(float param_1,int param_2)
 
       else {
 
-        fVar6 = (float10)FUN_004b6d60(uVar2);
+        fVar6 = (float10)reaperbase_get_max_energy(uVar2);
 
       }
 
@@ -6426,7 +6426,7 @@ undefined4 FUN_004181d0(float param_1,int param_2)
 
     else {
 
-      fVar6 = (float10)FUN_0040ad30(uVar2);
+      fVar6 = (float10)meccbase_get_max_energy(uVar2);
 
     }
 
@@ -6487,13 +6487,13 @@ undefined4 FUN_00418380(float param_1,int param_2)
 
     }
 
-    fVar6 = (float10)FUN_004b6d60(iVar4);
+    fVar6 = (float10)reaperbase_get_max_energy(iVar4);
 
   }
 
   else {
 
-    fVar6 = (float10)FUN_0040ad30(iVar4);
+    fVar6 = (float10)meccbase_get_max_energy(iVar4);
 
   }
 
@@ -6715,7 +6715,7 @@ undefined4 FUN_00418540(float param_1,int param_2)
 
       else {
 
-        fVar6 = (float10)FUN_004b6d60(uVar2);
+        fVar6 = (float10)reaperbase_get_max_energy(uVar2);
 
       }
 
@@ -6723,7 +6723,7 @@ undefined4 FUN_00418540(float param_1,int param_2)
 
     else {
 
-      fVar6 = (float10)FUN_0040ad30(uVar2);
+      fVar6 = (float10)meccbase_get_max_energy(uVar2);
 
     }
 
@@ -7484,7 +7484,7 @@ void collgrid_query_obj(int param_1,int param_2)
 
       else {
 
-        fVar6 = (float10)FUN_004b6d60(param_1);
+        fVar6 = (float10)reaperbase_get_max_energy(param_1);
 
       }
 
@@ -7492,7 +7492,7 @@ void collgrid_query_obj(int param_1,int param_2)
 
     else {
 
-      fVar6 = (float10)FUN_0040ad30(param_1);
+      fVar6 = (float10)meccbase_get_max_energy(param_1);
 
     }
 
@@ -8228,7 +8228,7 @@ void objtype_setup_combat(int param_1,float param_2)
 
 LAB_0041a8af:
 
-      fVar4 = (float10)FUN_004b6d60(iVar2);
+      fVar4 = (float10)reaperbase_get_max_energy(iVar2);
 
       goto LAB_0041a8bd;
 
@@ -8246,7 +8246,7 @@ LAB_0041a8af:
 
 LAB_0041a8b7:
 
-    fVar4 = (float10)FUN_0040ad30(iVar2);
+    fVar4 = (float10)meccbase_get_max_energy(iVar2);
 
 LAB_0041a8bd:
 
@@ -8889,7 +8889,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
       if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar4), iVar5 != 0)) {
 
-        fVar9 = (float10)FUN_004b6d60(iVar4);
+        fVar9 = (float10)reaperbase_get_max_energy(iVar4);
 
         goto LAB_0041b204;
 
@@ -8901,7 +8901,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
     else {
 
-      fVar9 = (float10)FUN_0040ad30(iVar4);
+      fVar9 = (float10)meccbase_get_max_energy(iVar4);
 
 LAB_0041b204:
 
@@ -8949,7 +8949,7 @@ LAB_0041b204:
 
     if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar4), iVar5 != 0)) {
 
-      fVar9 = (float10)FUN_004b6d60(iVar4);
+      fVar9 = (float10)reaperbase_get_max_energy(iVar4);
 
       goto LAB_0041b12c;
 
@@ -8961,7 +8961,7 @@ LAB_0041b204:
 
   else {
 
-    fVar9 = (float10)FUN_0040ad30(iVar4);
+    fVar9 = (float10)meccbase_get_max_energy(iVar4);
 
 LAB_0041b12c:
 
@@ -10451,7 +10451,7 @@ int objtype_setup_reaper(float param_1)
 
 LAB_0041e522:
 
-      fVar8 = (float10)FUN_004b6d60(iVar4);
+      fVar8 = (float10)reaperbase_get_max_energy(iVar4);
 
       goto LAB_0041e530;
 
@@ -10469,7 +10469,7 @@ LAB_0041e522:
 
 LAB_0041e52a:
 
-    fVar8 = (float10)FUN_0040ad30(iVar4);
+    fVar8 = (float10)meccbase_get_max_energy(iVar4);
 
 LAB_0041e530:
 
@@ -10644,13 +10644,13 @@ void FUN_0041e720(float param_1)
 
     }
 
-    fVar4 = (float10)FUN_004b6d60(param_1);
+    fVar4 = (float10)reaperbase_get_max_energy(param_1);
 
   }
 
   else {
 
-    fVar4 = (float10)FUN_0040ad30(param_1);
+    fVar4 = (float10)meccbase_get_max_energy(param_1);
 
   }
 
@@ -10765,7 +10765,7 @@ void obj_group_spread(float param_1)
 
           if ((iVar3 != 0) || (iVar3 = FUN_004a6300(iVar4), iVar3 != 0)) {
 
-            fVar6 = (float10)FUN_004b6d60(iVar4);
+            fVar6 = (float10)reaperbase_get_max_energy(iVar4);
 
             goto LAB_0041e8bf;
 
@@ -10777,7 +10777,7 @@ void obj_group_spread(float param_1)
 
         else {
 
-          fVar6 = (float10)FUN_0040ad30(iVar4);
+          fVar6 = (float10)meccbase_get_max_energy(iVar4);
 
 LAB_0041e8bf:
 
@@ -10926,7 +10926,7 @@ void FUN_0041e960(float param_1)
 
             if ((iVar4 != 0) || (iVar4 = FUN_004a6300(iVar2), iVar4 != 0)) {
 
-              fVar7 = (float10)FUN_004b6d60(iVar2);
+              fVar7 = (float10)reaperbase_get_max_energy(iVar2);
 
               goto LAB_0041ea62;
 
@@ -10938,7 +10938,7 @@ void FUN_0041e960(float param_1)
 
           else {
 
-            fVar7 = (float10)FUN_0040ad30(iVar2);
+            fVar7 = (float10)meccbase_get_max_energy(iVar2);
 
 LAB_0041ea62:
 
@@ -11206,7 +11206,7 @@ void objtype_setup_rpman(int param_1,float param_2,int param_3)
 
           if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar6), iVar5 != 0)) {
 
-            fVar8 = (float10)FUN_004b6d60(iVar6);
+            fVar8 = (float10)reaperbase_get_max_energy(iVar6);
 
             goto LAB_0041ecb2;
 
@@ -11218,7 +11218,7 @@ void objtype_setup_rpman(int param_1,float param_2,int param_3)
 
         else {
 
-          fVar8 = (float10)FUN_0040ad30(iVar6);
+          fVar8 = (float10)meccbase_get_max_energy(iVar6);
 
 LAB_0041ecb2:
 
@@ -11322,7 +11322,7 @@ LAB_0041ecb2:
 
           if ((iVar4 != 0) || (iVar4 = FUN_004a6300(iVar6), iVar4 != 0)) {
 
-            fVar8 = (float10)FUN_004b6d60(iVar6);
+            fVar8 = (float10)reaperbase_get_max_energy(iVar6);
 
             goto LAB_0041edda;
 
@@ -11334,7 +11334,7 @@ LAB_0041ecb2:
 
         else {
 
-          fVar8 = (float10)FUN_0040ad30(iVar6);
+          fVar8 = (float10)meccbase_get_max_energy(iVar6);
 
 LAB_0041edda:
 

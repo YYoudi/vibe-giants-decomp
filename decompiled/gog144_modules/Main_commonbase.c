@@ -316,7 +316,7 @@ LAB_0041906f:
 
       if ((iVar8 != 0) || (iVar8 = FUN_004a6300(param_1), iVar8 != 0)) {
 
-        fVar11 = (float10)FUN_004b6d60(param_1);
+        fVar11 = (float10)reaperbase_get_max_energy(param_1);
 
         goto LAB_0041927a;
 
@@ -328,7 +328,7 @@ LAB_0041906f:
 
     else {
 
-      fVar11 = (float10)FUN_0040ad30(param_1);
+      fVar11 = (float10)meccbase_get_max_energy(param_1);
 
 LAB_0041927a:
 

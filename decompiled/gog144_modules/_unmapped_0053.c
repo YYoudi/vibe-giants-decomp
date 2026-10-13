@@ -10947,7 +10947,7 @@ void comm_wincond_destroy(int param_1)
 
           iVar5 = meccbasepit_bldg_from_object(iVar4);
 
-          fVar12 = (float10)FUN_0040ad30(iVar4);
+          fVar12 = (float10)meccbase_get_max_energy(iVar4);
 
           fVar1 = *(float *)(DAT_00632ed8 + 0xb80);
 
@@ -10957,7 +10957,7 @@ void comm_wincond_destroy(int param_1)
 
           iVar5 = meccbasepit_bldg_from_object();
 
-          fVar12 = (float10)FUN_004b6d60(iVar4);
+          fVar12 = (float10)reaperbase_get_max_energy(iVar4);
 
           fVar1 = *(float *)(DAT_00632ed8 + 0xb80);
 
@@ -14709,7 +14709,7 @@ void AddHud__4cHudP8cHudIcon_3(void)
 
 {
 
-  FUN_005400e0();
+  MAP_PtrFix();
 
   return;
 
@@ -14732,9 +14732,9 @@ void FUN_0053bb50(int param_1,undefined4 param_2)
 
   
 
-  FUN_005400e0(param_1 + 4,param_2);
+  MAP_PtrFix(param_1 + 4,param_2);
 
-  FUN_005400e0(param_1 + 8,param_2);
+  MAP_PtrFix(param_1 + 8,param_2);
 
   iVar1 = 0;
 
@@ -14744,7 +14744,7 @@ void FUN_0053bb50(int param_1,undefined4 param_2)
 
     do {
 
-      FUN_005400e0(puVar2,param_2);
+      MAP_PtrFix(puVar2,param_2);
 
       AddHud__4cHudP8cHudIcon_3(*puVar2,param_2);
 
@@ -14783,15 +14783,15 @@ void nam_name_lookup(int param_1,int param_2)
 
   uVar3 = param_2;
 
-  FUN_005400e0(param_1 + 0xc,param_2);
+  MAP_PtrFix(param_1 + 0xc,param_2);
 
-  FUN_005400e0((undefined4 *)(param_1 + 0x10),param_2);
+  MAP_PtrFix((undefined4 *)(param_1 + 0x10),param_2);
 
   puVar1 = (undefined4 *)(param_1 + 0x14);
 
-  FUN_005400e0(puVar1,param_2);
+  MAP_PtrFix(puVar1,param_2);
 
-  FUN_005400e0(param_1 + 0x18,param_2);
+  MAP_PtrFix(param_1 + 0x18,param_2);
 
   FUN_00540530(*(undefined4 *)(param_1 + 0x10),0,param_2);
 
@@ -16895,7 +16895,7 @@ void FUN_0053d6b0(int *param_1,undefined4 param_2)
 
   
 
-  FUN_005400e0(param_1,param_2);
+  MAP_PtrFix(param_1,param_2);
 
   iVar1 = *param_1;
 
@@ -16905,7 +16905,7 @@ void FUN_0053d6b0(int *param_1,undefined4 param_2)
 
     do {
 
-      FUN_005400e0(iVar2,param_2);
+      MAP_PtrFix(iVar2,param_2);
 
       uVar3 = uVar3 + 1;
 
@@ -16932,11 +16932,11 @@ void FUN_0053d700(undefined4 *param_1,int param_2)
 
   *param_1 = 0;
 
-  FUN_005400e0(param_1 + 3,param_2);
+  MAP_PtrFix(param_1 + 3,param_2);
 
-  FUN_005400e0(param_1 + 4,param_2);
+  MAP_PtrFix(param_1 + 4,param_2);
 
-  FUN_005400e0(param_1 + 5,param_2);
+  MAP_PtrFix(param_1 + 5,param_2);
 
   sVar1 = *(short *)((int)param_1 + 6);
 
@@ -17019,13 +17019,13 @@ void nam_lookup_variant(int param_1,int param_2)
 
   uVar3 = param_2;
 
-  FUN_005400e0(param_1 + 0xc,param_2);
+  MAP_PtrFix(param_1 + 0xc,param_2);
 
   puVar1 = (undefined4 *)(param_1 + 0x20);
 
-  FUN_005400e0(puVar1,param_2);
+  MAP_PtrFix(puVar1,param_2);
 
-  FUN_005400e0(param_1 + 0x24,param_2);
+  MAP_PtrFix(param_1 + 0x24,param_2);
 
   FUN_00540530(*puVar1,&LAB_00540520,param_2);
 
@@ -20407,7 +20407,7 @@ void MAP_SListFixPtrs(int *param_1,undefined4 param_2)
 
   do {
 
-    FUN_005400e0(piVar1,param_2);
+    MAP_PtrFix(piVar1,param_2);
 
     piVar1 = (int *)*piVar1;
 
@@ -20558,13 +20558,13 @@ void FUN_0053fd40(undefined4 *param_1,undefined4 param_2,int param_3)
 
   puVar1 = param_1;
 
-  FUN_005400e0(param_1,param_3);
+  MAP_PtrFix(param_1,param_3);
 
-  FUN_005400e0(param_1 + 5,param_3);
+  MAP_PtrFix(param_1 + 5,param_3);
 
   piVar3 = param_1 + 9;
 
-  FUN_005400e0(piVar3,param_3);
+  MAP_PtrFix(piVar3,param_3);
 
   MAP_MemGroupFixPtrs(*param_1,param_3);
 
@@ -20576,13 +20576,13 @@ void FUN_0053fd40(undefined4 *param_1,undefined4 param_2,int param_3)
 
     do {
 
-      FUN_005400e0(piVar3,param_3);
+      MAP_PtrFix(piVar3,param_3);
 
       iVar4 = *piVar3;
 
       for (iVar2 = puVar1[7]; iVar2 != 0; iVar2 = iVar2 + -1) {
 
-        FUN_005400e0(iVar4,param_3);
+        MAP_PtrFix(iVar4,param_3);
 
         iVar4 = iVar4 + 4;
 
@@ -20679,9 +20679,9 @@ void MAP_MemGroupFixPtrs(int param_1,undefined4 param_2)
 
   MAP_SListFixPtrs(param_1 + 0x10,param_2);
 
-  FUN_005400e0(param_1 + 0x1c,param_2);
+  MAP_PtrFix(param_1 + 0x1c,param_2);
 
-  FUN_005400e0(param_1 + 0xc,param_2);
+  MAP_PtrFix(param_1 + 0xc,param_2);
 
   return;
 

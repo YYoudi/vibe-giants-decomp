@@ -375,9 +375,9 @@
   "len": 468
  },
  "0x0040AD30": {
-  "name": "FUN_0040ad30",
-  "named": false,
-  "len": 827
+  "name": "meccbase_get_max_energy",
+  "named": true,
+  "len": 838
  },
  "0x0040ADB0": {
   "name": "FUN_0040adb0",
@@ -887,7 +887,7 @@
  "0x00417880": {
   "name": "obj_maxspeed_lookup",
   "named": true,
-  "len": 2565
+  "len": 2589
  },
  "0x00417A50": {
   "name": "obj_speed_clamp",
@@ -902,7 +902,7 @@
  "0x00417F60": {
   "name": "bldg_get_max_energy",
   "named": true,
-  "len": 1020
+  "len": 1044
  },
  "0x00418010": {
   "name": "bldg_set_energy",
@@ -917,17 +917,17 @@
  "0x00418170": {
   "name": "bldg_get_max_energy",
   "named": true,
-  "len": 622
+  "len": 646
  },
  "0x004181D0": {
   "name": "FUN_004181d0",
   "named": false,
-  "len": 1110
+  "len": 1134
  },
  "0x00418380": {
   "name": "FUN_00418380",
   "named": false,
-  "len": 1189
+  "len": 1213
  },
  "0x00418460": {
   "name": "lzo_assert",
@@ -957,7 +957,7 @@
  "0x00418540": {
   "name": "FUN_00418540",
   "named": false,
-  "len": 1245
+  "len": 1269
  },
  "0x00418630": {
   "name": "FUN_00418630",
@@ -1012,12 +1012,12 @@
  "0x00418CF0": {
   "name": "collgrid_query_obj",
   "named": true,
-  "len": 2895
+  "len": 2919
  },
  "0x00418F00": {
   "name": "main_commonbase_00418f00",
   "named": true,
-  "len": 18044
+  "len": 18068
  },
  "0x0041A090": {
   "name": "reaper_state_check_a",
@@ -1097,7 +1097,7 @@
  "0x0041A7F0": {
   "name": "objtype_setup_combat",
   "named": true,
-  "len": 2071
+  "len": 2095
  },
  "0x0041A980": {
   "name": "objtype_team_assign",
@@ -1112,7 +1112,7 @@
  "0x0041AE70": {
   "name": "objtype_setup_mecc",
   "named": true,
-  "len": 5625
+  "len": 5673
  },
  "0x0041B390": {
   "name": "objtype_setup_vimp",
@@ -1142,22 +1142,22 @@
  "0x0041E440": {
   "name": "objtype_setup_reaper",
   "named": true,
-  "len": 3596
+  "len": 3620
  },
  "0x0041E720": {
   "name": "FUN_0041e720",
   "named": false,
-  "len": 1158
+  "len": 1182
  },
  "0x0041E810": {
   "name": "obj_group_spread",
   "named": true,
-  "len": 1842
+  "len": 1866
  },
  "0x0041E960": {
   "name": "FUN_0041e960",
   "named": false,
-  "len": 3765
+  "len": 3789
  },
  "0x0041EBB0": {
   "name": "FUN_0041ebb0",
@@ -1167,7 +1167,7 @@
  "0x0041EBF0": {
   "name": "objtype_setup_rpman",
   "named": true,
-  "len": 3702
+  "len": 3750
  },
  "0x0041EE70": {
   "name": "objtype_setup_kabuto",
@@ -6275,9 +6275,9 @@
   "len": 421
  },
  "0x004B6D60": {
-  "name": "FUN_004b6d60",
-  "named": false,
-  "len": 828
+  "name": "reaperbase_get_max_energy",
+  "named": true,
+  "len": 841
  },
  "0x004B6DE0": {
   "name": "FUN_004b6de0",
@@ -6387,12 +6387,12 @@
  "0x004B9080": {
   "name": "FUN_004b9080",
   "named": false,
-  "len": 808
+  "len": 827
  },
  "0x004B9120": {
-  "name": "FUN_004b9120",
-  "named": false,
-  "len": 1141
+  "name": "reaper_cycle_weapon__FP6OBJECTi",
+  "named": true,
+  "len": 1160
  },
  "0x004B91D0": {
   "name": "FUN_004b91d0",
@@ -6540,9 +6540,9 @@
   "len": 2071
  },
  "0x004BDDB0": {
-  "name": "FUN_004bddb0",
-  "named": false,
-  "len": 2868
+  "name": "reaper_fire_logic__FP6OBJECT",
+  "named": true,
+  "len": 2922
  },
  "0x004BE020": {
   "name": "FUN_004be020",
@@ -10447,7 +10447,7 @@
  "0x00537400": {
   "name": "comm_wincond_destroy",
   "named": true,
-  "len": 3269
+  "len": 3293
  },
  "0x005375E0": {
   "name": "FUN_005375e0",
@@ -10652,17 +10652,17 @@
  "0x0053BB40": {
   "name": "AddHud__4cHudP8cHudIcon_3",
   "named": true,
-  "len": 80
+  "len": 78
  },
  "0x0053BB50": {
   "name": "FUN_0053bb50",
   "named": false,
-  "len": 570
+  "len": 564
  },
  "0x0053BBB0": {
   "name": "nam_name_lookup",
   "named": true,
-  "len": 1113
+  "len": 1105
  },
  "0x0053BC90": {
   "name": "bistream_tell_user2",
@@ -10802,17 +10802,17 @@
  "0x0053D6B0": {
   "name": "FUN_0053d6b0",
   "named": false,
-  "len": 492
+  "len": 488
  },
  "0x0053D700": {
   "name": "FUN_0053d700",
   "named": false,
-  "len": 1050
+  "len": 1044
  },
  "0x0053D810": {
   "name": "nam_lookup_variant",
   "named": true,
-  "len": 999
+  "len": 993
  },
  "0x0053D8D0": {
   "name": "FUN_0053d8d0",
@@ -11062,7 +11062,7 @@
  "0x0053FC70": {
   "name": "MAP_SListFixPtrs",
   "named": true,
-  "len": 225
+  "len": 223
  },
  "0x0053FCA0": {
   "name": "FUN_0053fca0",
@@ -11077,7 +11077,7 @@
  "0x0053FD40": {
   "name": "FUN_0053fd40",
   "named": false,
-  "len": 893
+  "len": 883
  },
  "0x0053FDE0": {
   "name": "FUN_0053fde0",
@@ -11092,7 +11092,7 @@
  "0x0053FE70": {
   "name": "MAP_MemGroupFixPtrs",
   "named": true,
-  "len": 264
+  "len": 260
  },
  "0x0053FEA0": {
   "name": "GetCurrentPos__C11CByteStream",
@@ -11125,9 +11125,9 @@
   "len": 1090
  },
  "0x005400E0": {
-  "name": "FUN_005400e0",
-  "named": false,
-  "len": 810
+  "name": "MAP_PtrFix",
+  "named": true,
+  "len": 808
  },
  "0x00540190": {
   "name": "FUN_00540190",
@@ -11197,7 +11197,7 @@
  "0x00540530": {
   "name": "FUN_00540530",
   "named": false,
-  "len": 680
+  "len": 676
  },
  "0x005405C0": {
   "name": "cpu_vendor_detect",

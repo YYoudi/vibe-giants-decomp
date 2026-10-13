@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b6d60,FUN_004b6d60,,reaperbase_get_max_energy,0.9,promote-auto,"c=0.408;callee=['reaperbase_bldg_from_object'];caller=['bldg_get_max_energy', 'bldg_get_max_energy'];mod="
+004b9120,FUN_004b9120,,reaper_cycle_weapon__FP6OBJECTi,0.9,promote-auto,"c=0.344;callee=['reaper_change_bow__FP6OBJECT', 'reaper_select_sword'];caller=[];mod="
+005400e0,FUN_005400e0,,MAP_PtrFix,0.9,promote-auto,"c=0.582;callee=[];caller=['MAP_SListFixPtrs', 'MAP_MemGroupFixPtrs'];mod="
+0040ad30,FUN_0040ad30,,meccbase_get_max_energy,0.9,promote-auto,"c=0.408;callee=[];caller=['bldg_get_max_energy', 'bldg_get_max_energy'];mod="
+004bddb0,FUN_004bddb0,,reaper_fire_logic__FP6OBJECT,0.9,promote-auto,"c=0.383;callee=['reaper_fire_bow__FP6OBJECT', 'reaper_fire_sword__FP6OBJECT'];caller=[];mod="

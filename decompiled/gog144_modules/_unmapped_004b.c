@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (39 named) — decompiled, names from PS2 symbols
+ * 90 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3300,12 +3300,12 @@ int FUN_004b6d20(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_004b6d60 @ 0x004B6D60 ===== */
+/* ===== reaperbase_get_max_energy @ 0x004B6D60 ===== */
 /* PS2 candidate: reaperbase_get_max_energy (conf 0.408) */
 
 
 
-float10 FUN_004b6d60(int param_1)
+float10 reaperbase_get_max_energy(int param_1)
 
 
 
@@ -6315,7 +6315,7 @@ void FUN_004b9080(int param_1,int param_2,int param_3,int param_4,int param_5)
 
     } while (iVar2 != 0);
 
-    FUN_004b9120(param_1,1);
+    reaper_cycle_weapon__FP6OBJECTi(param_1,1);
 
     return;
 
@@ -6343,12 +6343,12 @@ void FUN_004b9080(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 }
 
-/* ===== FUN_004b9120 @ 0x004B9120 ===== */
+/* ===== reaper_cycle_weapon__FP6OBJECTi @ 0x004B9120 ===== */
 /* PS2 candidate: reaper_cycle_weapon__FP6OBJECTi (conf 0.344) */
 
 
 
-void FUN_004b9120(int param_1,int param_2)
+void reaper_cycle_weapon__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -10199,14 +10199,14 @@ void reaper_select_sword(int param_1)
 
 }
 
-/* ===== FUN_004bddb0 @ 0x004BDDB0 ===== */
+/* ===== reaper_fire_logic__FP6OBJECT @ 0x004BDDB0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: reaper_fire_logic__FP6OBJECT (conf 0.383) */
 
 
 
-void FUN_004bddb0(int param_1)
+void reaper_fire_logic__FP6OBJECT(int param_1)
 
 
 
@@ -10236,13 +10236,13 @@ void FUN_004bddb0(int param_1)
 
   if ((*(byte *)(param_1 + 0x20c) & 0x40) != 0) {
 
-    FUN_004b9120(param_1,1);
+    reaper_cycle_weapon__FP6OBJECTi(param_1,1);
 
   }
 
   if (*(char *)(param_1 + 0x20c) < '\0') {
 
-    FUN_004b9120(param_1,0);
+    reaper_cycle_weapon__FP6OBJECTi(param_1,0);
 
   }
 
