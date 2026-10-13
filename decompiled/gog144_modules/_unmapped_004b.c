@@ -428,12 +428,12 @@ void main_readwrls_004b0e60(undefined4 param_1)
 
 }
 
-/* ===== main/readwrls_004b0ea0 @ 0x004B0EA0 ===== */
+/* ===== game_state_camera_init @ 0x004B0EA0 ===== */
 /* PS2 candidate: setup_sun_flares__Fv (conf 0.771) */
 
 
 
-void main_readwrls_004b0ea0(void)
+void game_state_camera_init(void)
 
 
 

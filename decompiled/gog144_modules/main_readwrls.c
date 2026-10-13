@@ -3,8 +3,8 @@
  * Original source: C:\Giants\source\main/readwrls.c(pp) (assert-string evidence)
  */
 
-/* ===== read_world_list @ 0x004B0B70 ===== */
-void read_world_list(void)
+/* ===== worldlist_bin_load @ 0x004B0B70 ===== */
+void worldlist_bin_load(void)
 
 
 
@@ -601,7 +601,7 @@ LAB_004b10f8:
 
   *(undefined4 *)(DAT_006330e4 + 0x4e94) = 0xbd4ccccd;
 
-  main_readwrls_004b0ea0();
+  game_state_camera_init();
 
   local_400 = 0;
 
@@ -3851,7 +3851,7 @@ void main_readwrls_004b4330(void)
 
     *(undefined4 *)(DAT_006330e4 + 0x50) = 0;
 
-    main_readobjs_004b0540();
+    readobjs_load_object();
 
     main_noise_00495430();
 

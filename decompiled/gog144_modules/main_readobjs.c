@@ -3,8 +3,8 @@
  * Original source: C:\Giants\source\main/readobjs.c(pp) (assert-string evidence)
  */
 
-/* ===== main_readobjs_004b0540 @ 0x004B0540 ===== */
-void main_readobjs_004b0540(void)
+/* ===== readobjs_load_object @ 0x004B0540 ===== */
+void readobjs_load_object(void)
 
 
 

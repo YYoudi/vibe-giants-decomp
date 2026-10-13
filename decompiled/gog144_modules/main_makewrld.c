@@ -20,7 +20,7 @@ void main_makewrld_00472e40(void)
 
   if (DAT_006330e4 != 0) {
 
-    main_readobjs_004b0540();
+    readobjs_load_object();
 
     main_noise_00495430();
 

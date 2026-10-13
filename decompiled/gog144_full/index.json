@@ -3952,7 +3952,7 @@
  "0x00472E40": {
   "name": "main_makewrld_00472e40",
   "named": true,
-  "len": 9862
+  "len": 9860
  },
  "0x00473570": {
   "name": "main/makewrld_00473570",
@@ -6115,9 +6115,9 @@
   "len": 49763
  },
  "0x004B0540": {
-  "name": "main_readobjs_004b0540",
+  "name": "readobjs_load_object",
   "named": true,
-  "len": 5324
+  "len": 5322
  },
  "0x004B0900": {
   "name": "FUN_004B0900",
@@ -6150,9 +6150,9 @@
   "len": 407
  },
  "0x004B0B70": {
-  "name": "read_world_list",
+  "name": "worldlist_bin_load",
   "named": true,
-  "len": 3780
+  "len": 3783
  },
  "0x004B0D80": {
   "name": "main/readwrls_004b0d80",
@@ -6170,7 +6170,7 @@
   "len": 269
  },
  "0x004B0EA0": {
-  "name": "main/readwrls_004b0ea0",
+  "name": "game_state_camera_init",
   "named": true,
   "len": 2205
  },
@@ -6187,7 +6187,7 @@
  "0x004B4330": {
   "name": "main_readwrls_004b4330",
   "named": true,
-  "len": 1466
+  "len": 1464
  },
  "0x004B4450": {
   "name": "FUN_004b4450",
@@ -7472,7 +7472,7 @@
  "0x004EDA20": {
   "name": "main_setupgam_004eda20",
   "named": true,
-  "len": 4315
+  "len": 4313
  },
  "0x004EDD70": {
   "name": "FUN_004edd70",
@@ -7542,7 +7542,7 @@
  "0x004EE930": {
   "name": "intro_assets_check",
   "named": true,
-  "len": 597
+  "len": 600
  },
  "0x004EE9C0": {
   "name": "shutdown_blood_cleanup",

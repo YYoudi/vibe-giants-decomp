@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b0540,FUN_004B0540,,readobjs_load_object,0.9,llm-read14,
+004b0b70,FUN_004B0B70,,worldlist_bin_load,0.9,llm-read14,
+004b0ea0,FUN_004B0EA0,,game_state_camera_init,0.9,llm-read14,

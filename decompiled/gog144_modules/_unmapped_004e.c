@@ -11167,7 +11167,7 @@ undefined4 intro_assets_check(void)
 
   reread_globals_bin();
 
-  read_world_list();
+  worldlist_bin_load();
 
   main_readwrls_004b0e60(s_Intro_00562064);
 

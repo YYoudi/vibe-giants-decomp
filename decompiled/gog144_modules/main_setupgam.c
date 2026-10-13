@@ -210,7 +210,7 @@ void main_setupgam_004eda20(void)
 
   main_object_004976e0();
 
-  main_readobjs_004b0540();
+  readobjs_load_object();
 
   main_fx_004471a0();
 
