@@ -5186,12 +5186,12 @@ code_r0x00469ccd:
 
 }
 
-/* ===== cspec_00469f00 @ 0x00469F00 ===== */
+/* ===== kabuto_dmg_normalize_c15 @ 0x00469F00 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 
 
-undefined4 cspec_00469f00(int param_1,int param_2)
+undefined4 kabuto_dmg_normalize_c15(int param_1,int param_2)
 
 
 
@@ -11081,8 +11081,8 @@ void cspec_0046f400(int param_1)
 
 }
 
-/* ===== cspec_0046f420 @ 0x0046F420 ===== */
-void cspec_0046f420(int param_1,int param_2,undefined4 param_3,int *param_4)
+/* ===== reaperbase_sound_loop_c104 @ 0x0046F420 ===== */
+void reaperbase_sound_loop_c104(int param_1,int param_2,undefined4 param_3,int *param_4)
 
 
 

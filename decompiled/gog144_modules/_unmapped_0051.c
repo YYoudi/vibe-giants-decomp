@@ -2514,8 +2514,8 @@ int create_one_vimp_chunk
 
 }
 
-/* ===== cspec_00512bf0 @ 0x00512BF0 ===== */
-void cspec_00512bf0(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== destroy_only_stub_c80 @ 0x00512BF0 ===== */
+void destroy_only_stub_c80(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
 
 
 

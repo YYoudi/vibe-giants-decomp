@@ -4757,8 +4757,8 @@ LAB_004a537b:
 
 }
 
-/* ===== cspec_004a53b0 @ 0x004A53B0 ===== */
-void cspec_004a53b0(int param_1)
+/* ===== piranha_init_anim_c93 @ 0x004A53B0 ===== */
+void piranha_init_anim_c93(int param_1)
 
 
 
@@ -6530,8 +6530,8 @@ void cspec_004a64b0(int param_1)
 
 }
 
-/* ===== cspec_004a64e0 @ 0x004A64E0 ===== */
-void cspec_004a64e0(int param_1)
+/* ===== ground_offset_init_c33 @ 0x004A64E0 ===== */
+void ground_offset_init_c33(int param_1)
 
 
 
@@ -6599,8 +6599,8 @@ void cspec_004a64e0(int param_1)
 
 }
 
-/* ===== cspec_004a65f0 @ 0x004A65F0 ===== */
-void cspec_004a65f0(int param_1)
+/* ===== ospec_change_init_c27 @ 0x004A65F0 ===== */
+void ospec_change_init_c27(int param_1)
 
 
 
@@ -7890,8 +7890,8 @@ void cspec_004a7830(int param_1)
 
 }
 
-/* ===== cspec_004a7870 @ 0x004A7870 ===== */
-void cspec_004a7870(int param_1)
+/* ===== orbit_drift_object_c50 @ 0x004A7870 ===== */
+void orbit_drift_object_c50(int param_1)
 
 
 
@@ -8037,8 +8037,8 @@ void cspec_004a7a20(int param_1)
 
 }
 
-/* ===== cspec_004a7a70 @ 0x004A7A70 ===== */
-void cspec_004a7a70(int param_1)
+/* ===== dirfcalc_ground_snap_c54 @ 0x004A7A70 ===== */
+void dirfcalc_ground_snap_c54(int param_1)
 
 
 

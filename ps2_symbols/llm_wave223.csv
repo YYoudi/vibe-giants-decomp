@@ -1,0 +1,24 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a7870,cspec_004a7870,,orbit_drift_object_c50,0.9,cspec-w223,add_location pair orbit
+00480bc0,cspec_00480bc0,,spawner_init_c9,0.9,cspec-w223,allocate+p3d set field2
+00407b30,cspec_00407b30,,army_death_handler_c106,0.9,cspec-w223,fx+allocate+destroy field4
+004a7a70,cspec_004a7a70,,dirfcalc_ground_snap_c54,0.9,cspec-w223,dirfcalc+ground snap+copy
+004d7a20,cspec_004d7a20,,reaperbase_demolish_ai_c90,0.9,cspec-w223,ReaperBldg/Turret checks+damage field16
+004f8130,cspec_004f8130,,smartie_spawn_anim_c38,0.9,cspec-w223,anim_select_user+allocate field9
+0045d980,cspec_0045d980,,reaper_list_free_c1,0.9,cspec-w223,LNK_DNodeInDList+mem_free field10
+0050f460,cspec_0050f460,,anim_check_tick_c53,0.9,cspec-w223,anim_select_check field3
+004a64e0,cspec_004a64e0,,ground_offset_init_c33,0.9,cspec-w223,ground snap+copy+set field2
+0046f420,cspec_0046f420,,reaperbase_sound_loop_c104,0.9,cspec-w223,sequence alloc+animloop field9
+004503e0,cspec_004503e0,,mesh_free_handler_c78,0.9,cspec-w223,mem_free_tagged field10
+004fa030,cspec_004fa030,,anim_only_tick_c39,0.9,cspec-w223,ObjectSetAnim only field3
+00480bb0,cspec_00480bb0,,reaper_sounds_free_c3,0.9,cspec-w223,fx_delete+sound stops field0
+004787f0,cspec_004787f0,,ground_walker_move_c100,0.9,cspec-w223,ai_move_ground_step+animate
+0045d880,cspec_0045d880,,reaper_ptr_clear_c1,0.9,cspec-w223,obj_ptr_clear field11
+004c60c0,cspec_004c60c0,,reaper_ptr_clear_c3,0.9,cspec-w223,obj_ptr_clear field11
+0045a1f0,cspec_0045a1f0,,smartie_loot_death_c37,0.9,cspec-w223,inv_award+animloop destroy field9
+00469f00,cspec_00469f00,,kabuto_dmg_normalize_c15,0.9,cspec-w223,normalize+damage field16
+004a65f0,cspec_004a65f0,,ospec_change_init_c27,0.9,cspec-w223,change_ospec+ground+copy field2
+00425c00,cspec_00425c00,,harass_atan_death_c89,0.9,cspec-w223,atand2pos+fx destroy field4
+004a53b0,cspec_004a53b0,,piranha_init_anim_c93,0.9,cspec-w223,anim+rand+fx field3
+00441c50,cspec_00441c50,,destroy_only_stub_c55,0.9,cspec-w223,object_destroy only
+00512bf0,cspec_00512bf0,,destroy_only_stub_c80,0.9,cspec-w223,object_destroy only

@@ -919,8 +919,8 @@ void mecc_stop_looping_effects(int param_1)
 
 }
 
-/* ===== cspec_00480bb0 @ 0x00480BB0 ===== */
-void cspec_00480bb0(int param_1)
+/* ===== reaper_sounds_free_c3 @ 0x00480BB0 ===== */
+void reaper_sounds_free_c3(int param_1)
 
 
 
@@ -1010,8 +1010,8 @@ void cspec_00480bb0(int param_1)
 
 }
 
-/* ===== cspec_00480bc0 @ 0x00480BC0 ===== */
-void cspec_00480bc0(float param_1)
+/* ===== spawner_init_c9 @ 0x00480BC0 ===== */
+void spawner_init_c9(float param_1)
 
 
 

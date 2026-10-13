@@ -4988,8 +4988,8 @@ void spawnling_ai_c97(int param_1)
 
 }
 
-/* ===== cspec_004787f0 @ 0x004787F0 ===== */
-void cspec_004787f0(int param_1)
+/* ===== ground_walker_move_c100 @ 0x004787F0 ===== */
+void ground_walker_move_c100(int param_1)
 
 
 

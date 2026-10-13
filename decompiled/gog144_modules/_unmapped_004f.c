@@ -5614,8 +5614,8 @@ void smartie_spawner_ai_c38(int param_1)
 
 }
 
-/* ===== cspec_004f8130 @ 0x004F8130 ===== */
-void cspec_004f8130(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== smartie_spawn_anim_c38 @ 0x004F8130 ===== */
+void smartie_spawn_anim_c38(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -7343,8 +7343,8 @@ void scale_watch_ai_c73(int param_1)
 
 }
 
-/* ===== cspec_004fa030 @ 0x004FA030 ===== */
-void cspec_004fa030(int param_1)
+/* ===== anim_only_tick_c39 @ 0x004FA030 ===== */
+void anim_only_tick_c39(int param_1)
 
 
 

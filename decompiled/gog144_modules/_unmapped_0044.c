@@ -1381,8 +1381,8 @@ void cspec_00441c00(int param_1)
 
 }
 
-/* ===== cspec_00441c50 @ 0x00441C50 ===== */
-void cspec_00441c50(int param_1)
+/* ===== destroy_only_stub_c55 @ 0x00441C50 ===== */
+void destroy_only_stub_c55(int param_1)
 
 
 

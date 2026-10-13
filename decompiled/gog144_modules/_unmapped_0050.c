@@ -16359,8 +16359,8 @@ LAB_0050e4da:
 
 }
 
-/* ===== cspec_0050f460 @ 0x0050F460 ===== */
-void cspec_0050f460(int param_1)
+/* ===== anim_check_tick_c53 @ 0x0050F460 ===== */
+void anim_check_tick_c53(int param_1)
 
 
 

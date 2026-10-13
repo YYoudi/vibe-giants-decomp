@@ -14,8 +14,8 @@ undefined4 cspec_004503d0(void)
 
 }
 
-/* ===== cspec_004503e0 @ 0x004503E0 ===== */
-void cspec_004503e0(int param_1)
+/* ===== mesh_free_handler_c78 @ 0x004503E0 ===== */
+void mesh_free_handler_c78(int param_1)
 
 
 
@@ -11066,8 +11066,8 @@ void inv_remove_item(int param_1,undefined4 *param_2,undefined4 param_3,int para
 
 }
 
-/* ===== cspec_0045a1f0 @ 0x0045A1F0 ===== */
-void cspec_0045a1f0(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== smartie_loot_death_c37 @ 0x0045A1F0 ===== */
+void smartie_loot_death_c37(int param_1,int param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -14529,8 +14529,8 @@ LAB_0045d769:
 
 }
 
-/* ===== cspec_0045d880 @ 0x0045D880 ===== */
-void cspec_0045d880(int param_1)
+/* ===== reaper_ptr_clear_c1 @ 0x0045D880 ===== */
+void reaper_ptr_clear_c1(int param_1)
 
 
 
@@ -14622,8 +14622,8 @@ void cspec_0045d880(int param_1)
 
 }
 
-/* ===== cspec_0045d980 @ 0x0045D980 ===== */
-void cspec_0045d980(int param_1)
+/* ===== reaper_list_free_c1 @ 0x0045D980 ===== */
+void reaper_list_free_c1(int param_1)
 
 
 

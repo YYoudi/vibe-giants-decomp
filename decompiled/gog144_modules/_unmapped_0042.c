@@ -8349,8 +8349,8 @@ int corpse_create(int param_1)
 
 }
 
-/* ===== cspec_00425c00 @ 0x00425C00 ===== */
-void cspec_00425c00(int param_1,float param_2,int param_3)
+/* ===== harass_atan_death_c89 @ 0x00425C00 ===== */
+void harass_atan_death_c89(int param_1,float param_2,int param_3)
 
 
 

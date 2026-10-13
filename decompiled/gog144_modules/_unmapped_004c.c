@@ -7246,8 +7246,8 @@ void cspec_004c6090(int param_1)
 
 }
 
-/* ===== cspec_004c60c0 @ 0x004C60C0 ===== */
-void cspec_004c60c0(int param_1)
+/* ===== reaper_ptr_clear_c3 @ 0x004C60C0 ===== */
+void reaper_ptr_clear_c3(int param_1)
 
 
 

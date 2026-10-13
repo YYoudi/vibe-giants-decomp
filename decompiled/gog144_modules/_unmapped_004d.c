@@ -7114,8 +7114,8 @@ void charger_do_fx__FP6OBJECTiii
 
 }
 
-/* ===== cspec_004d7a20 @ 0x004D7A20 ===== */
-undefined4 cspec_004d7a20(int param_1,int param_2)
+/* ===== reaperbase_demolish_ai_c90 @ 0x004D7A20 ===== */
+undefined4 reaperbase_demolish_ai_c90(int param_1,int param_2)
 
 
 

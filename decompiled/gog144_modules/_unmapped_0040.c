@@ -4897,8 +4897,8 @@ void cspec_00407af0(void)
 
 }
 
-/* ===== cspec_00407b30 @ 0x00407B30 ===== */
-void cspec_00407b30(undefined4 param_1,float param_2,int param_3,int param_4)
+/* ===== army_death_handler_c106 @ 0x00407B30 ===== */
+void army_death_handler_c106(undefined4 param_1,float param_2,int param_3,int param_4)
 
 
 
