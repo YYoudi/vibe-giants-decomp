@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (149 named) — decompiled, names from PS2 symbols
+ * 186 functions (150 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -10700,8 +10700,8 @@ void FUN_0051ad50(undefined4 param_1)
 
 }
 
-/* ===== FUN_0051ad80 @ 0x0051AD80 ===== */
-void FUN_0051ad80(char *param_1,size_t param_2)
+/* ===== render_driver_name_set @ 0x0051AD80 ===== */
+void render_driver_name_set(char *param_1,size_t param_2)
 
 
 
@@ -13692,7 +13692,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 0x10) {
 
-      FUN_0051ad80(pcVar7,(int)param_1 - (int)pcVar7);
+      render_driver_name_set(pcVar7,(int)param_1 - (int)pcVar7);
 
       iVar6 = 0;
 

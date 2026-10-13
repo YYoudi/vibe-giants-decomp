@@ -352,7 +352,7 @@
  "0x0040ABB0": {
   "name": "base_slot13_get_owner",
   "named": true,
-  "len": 340
+  "len": 358
  },
  "0x0040ABF0": {
   "name": "FUN_0040abf0",
@@ -950,9 +950,9 @@
   "len": 245
  },
  "0x00418510": {
-  "name": "FUN_00418510",
-  "named": false,
-  "len": 240
+  "name": "base_slot_built_check",
+  "named": true,
+  "len": 249
  },
  "0x00418540": {
   "name": "base_slot_ready_check",
@@ -1172,7 +1172,7 @@
  "0x0041EE70": {
   "name": "objtype_setup_kabuto",
   "named": true,
-  "len": 3532
+  "len": 3541
  },
  "0x0041F0F0": {
   "name": "FUN_0041f0f0",
@@ -6307,7 +6307,7 @@
  "0x004B6F20": {
   "name": "base_slot8_get",
   "named": true,
-  "len": 331
+  "len": 349
  },
  "0x004B6F60": {
   "name": "meccbasepit_bldg_from_object",
@@ -7592,7 +7592,7 @@
  "0x004EF560": {
   "name": "ai_anim_select_mode",
   "named": true,
-  "len": 2323
+  "len": 2332
  },
  "0x004F38F0": {
   "name": "smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie",
@@ -7657,7 +7657,7 @@
  "0x004F5410": {
   "name": "smartie_attach_to_base",
   "named": true,
-  "len": 2944
+  "len": 2998
  },
  "0x004F5630": {
   "name": "reaper_lock_pair_4f",
@@ -9010,9 +9010,9 @@
   "len": 120
  },
  "0x0051AD80": {
-  "name": "FUN_0051ad80",
-  "named": false,
-  "len": 200
+  "name": "render_driver_name_set",
+  "named": true,
+  "len": 210
  },
  "0x0051ADB0": {
   "name": "win95_text_0051adb0",
@@ -9247,7 +9247,7 @@
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
   "named": true,
-  "len": 15497
+  "len": 15507
  },
  "0x0051DC20": {
   "name": "startup_options_init",

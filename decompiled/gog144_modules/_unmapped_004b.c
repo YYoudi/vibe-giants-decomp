@@ -3545,7 +3545,7 @@ int base_slot8_get(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00418510(param_1,8);
+  iVar2 = base_slot_built_check(param_1,8);
 
   if (iVar2 != 0) {
 
@@ -3553,7 +3553,7 @@ int base_slot8_get(int param_1)
 
   }
 
-  iVar2 = FUN_00418510(param_1,0);
+  iVar2 = base_slot_built_check(param_1,0);
 
   if (iVar2 != 0) {
 

@@ -11939,7 +11939,7 @@ int ai_anim_select_mode(int param_1,int param_2)
 
 LAB_004ef5b0:
 
-      iVar2 = FUN_00418510(uVar1,uVar3);
+      iVar2 = base_slot_built_check(uVar1,uVar3);
 
       return (-(uint)(iVar2 != 0) & 0xfffffffe) + 1;
 

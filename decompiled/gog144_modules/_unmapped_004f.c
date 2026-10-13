@@ -1400,7 +1400,7 @@ LAB_004f5569:
 
       if (iVar1 == 0) goto LAB_004f55b7;
 
-      iVar1 = FUN_00418510(param_3,9);
+      iVar1 = base_slot_built_check(param_3,9);
 
       if (iVar1 != 0) goto LAB_004f55b7;
 
@@ -1410,13 +1410,13 @@ LAB_004f5569:
 
     else {
 
-      iVar1 = FUN_00418510(param_3,8);
+      iVar1 = base_slot_built_check(param_3,8);
 
       if (iVar1 != 0) goto LAB_004f5569;
 
     }
 
-    iVar1 = FUN_00418510(param_3,uVar3);
+    iVar1 = base_slot_built_check(param_3,uVar3);
 
     if (iVar1 == 0) {
 
@@ -1440,7 +1440,7 @@ LAB_004f54ef:
 
       if (iVar1 == 0) goto LAB_004f55b7;
 
-      iVar1 = FUN_00418510(param_3,0xe);
+      iVar1 = base_slot_built_check(param_3,0xe);
 
       if (iVar1 != 0) goto LAB_004f55b7;
 
@@ -1450,7 +1450,7 @@ LAB_004f54ef:
 
     else {
 
-      iVar1 = FUN_00418510(param_3,0xd);
+      iVar1 = base_slot_built_check(param_3,0xd);
 
       if (iVar1 != 0) goto LAB_004f54ef;
 
@@ -1458,7 +1458,7 @@ LAB_004f54ef:
 
     }
 
-    iVar1 = FUN_00418510(param_3,uVar3);
+    iVar1 = base_slot_built_check(param_3,uVar3);
 
     if (iVar1 == 0) {
 

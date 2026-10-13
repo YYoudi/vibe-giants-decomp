@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (81 named) — decompiled, names from PS2 symbols
+ * 100 functions (82 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -6635,8 +6635,8 @@ undefined4 FUN_004184d0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00418510 @ 0x00418510 ===== */
-undefined4 FUN_00418510(int param_1,int param_2)
+/* ===== base_slot_built_check @ 0x00418510 ===== */
+undefined4 base_slot_built_check(int param_1,int param_2)
 
 
 
@@ -11435,7 +11435,7 @@ void objtype_setup_kabuto(int param_1)
 
             if ((*(int *)(iVar2 + 0xe4) == 0) || (*(int *)(*(int *)(iVar2 + 0xe4) + 0xe4) < 2)) {
 
-              iVar2 = FUN_00418510(param_1,9);
+              iVar2 = base_slot_built_check(param_1,9);
 
               if (iVar2 == 0) {
 
