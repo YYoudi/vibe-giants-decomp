@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (38 named) — decompiled, names from PS2 symbols
+ * 74 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -2942,7 +2942,7 @@ void menu_handlers_lookup(void)
 
 LAB_00482fd8:
 
-    FUN_004834d0(iVar3,0,1,0);
+    menu_mission_set_clamped(iVar3,0,1,0);
 
   }
 
@@ -2952,7 +2952,7 @@ LAB_00482fd8:
 
   if (-1 < iVar3) {
 
-    FUN_004834d0(iVar3,1,1,0);
+    menu_mission_set_clamped(iVar3,1,1,0);
 
   }
 
@@ -3128,12 +3128,12 @@ switchD_00483043_default:
 
 }
 
-/* ===== FUN_004834d0 @ 0x004834D0 ===== */
+/* ===== menu_mission_set_clamped @ 0x004834D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004834d0(int param_1,int param_2,int param_3,int param_4)
+void menu_mission_set_clamped(int param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -3346,7 +3346,7 @@ void menu_handlers_exec(void)
 
 LAB_00483738:
 
-    FUN_004834d0(iVar4,0,1,0);
+    menu_mission_set_clamped(iVar4,0,1,0);
 
   }
 
@@ -3356,7 +3356,7 @@ LAB_00483738:
 
   if (-1 < iVar4) {
 
-    FUN_004834d0(iVar4,1,1,0);
+    menu_mission_set_clamped(iVar4,1,1,0);
 
   }
 
@@ -7452,7 +7452,7 @@ void mission_menu_load2(void)
 
   }
 
-  FUN_004834d0(iVar4,0,1,0);
+  menu_mission_set_clamped(iVar4,0,1,0);
 
 LAB_00489916:
 
@@ -7460,7 +7460,7 @@ LAB_00489916:
 
   iVar4 = FUN_004fff10(&DAT_00632900,DAT_0063291c,0xffffffff);
 
-  if ((-1 < iVar4) && (FUN_004834d0(iVar4,1,1,0), DAT_00632aaa != '\0')) {
+  if ((-1 < iVar4) && (menu_mission_set_clamped(iVar4,1,1,0), DAT_00632aaa != '\0')) {
 
     dialog_level_pop(mission_menu_load2);
 
@@ -10702,7 +10702,7 @@ void menu_dlog_callback_a(void)
 
   }
 
-  FUN_004834d0(iVar3,0,1,0);
+  menu_mission_set_clamped(iVar3,0,1,0);
 
 LAB_0048e1b4:
 
@@ -10710,7 +10710,7 @@ LAB_0048e1b4:
 
   iVar3 = FUN_004fff10(&DAT_00632900,DAT_0063291c,0xffffffff);
 
-  if ((-1 < iVar3) && (FUN_004834d0(iVar3,1,1,0), DAT_00632aaa != '\0')) {
+  if ((-1 < iVar3) && (menu_mission_set_clamped(iVar3,1,1,0), DAT_00632aaa != '\0')) {
 
     dialog_level_pop(menu_dlog_callback_a);
 
@@ -11212,7 +11212,7 @@ void menu_dlog_callback_b(void)
 
   }
 
-  FUN_004834d0(iVar3,0,1,0);
+  menu_mission_set_clamped(iVar3,0,1,0);
 
 LAB_0048e7be:
 
@@ -11220,7 +11220,7 @@ LAB_0048e7be:
 
   iVar3 = FUN_004fff10(&DAT_00632900,DAT_0063291c,0xffffffff);
 
-  if ((-1 < iVar3) && (FUN_004834d0(iVar3,1,1,0), DAT_00632aaa != '\0')) {
+  if ((-1 < iVar3) && (menu_mission_set_clamped(iVar3,1,1,0), DAT_00632aaa != '\0')) {
 
     dialog_level_pop(menu_dlog_callback_b);
 

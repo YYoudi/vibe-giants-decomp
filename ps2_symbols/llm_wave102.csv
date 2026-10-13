@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00516f60,FUN_00516f60,,math_euler_to_matrix,0.9,llm-w102,
+004d3720,FUN_004d3720,,obj_follow_owner_refpt,0.9,llm-w102,
+004e29f0,FUN_004e29f0,,smartie_claim_targets,0.9,llm-w102,
+004834d0,FUN_004834d0,,menu_mission_set_clamped,0.9,llm-w102,
+004aa6d0,FUN_004aa6d0,,obj_targetable_by_player,0.9,llm-w102,

@@ -9889,7 +9889,7 @@ LAB_004cf539:
 
     case 0x68:
 
-      FUN_004d3720(fVar5);
+      obj_follow_owner_refpt(fVar5);
 
       if (*(int *)(iVar11 + 0x40) == 0) {
 
@@ -10139,7 +10139,7 @@ LAB_004cf539:
 
     case 0x67:
 
-      iVar10 = FUN_004d3720(fVar5);
+      iVar10 = obj_follow_owner_refpt(fVar5);
 
       if (iVar10 == *(int *)(iVar11 + 0x3c)) {
 

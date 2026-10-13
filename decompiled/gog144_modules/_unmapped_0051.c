@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (82 named) — decompiled, names from PS2 symbols
+ * 186 functions (83 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -6197,16 +6197,20 @@ void xform_p3d_world_mat(int param_1,undefined4 param_2)
 
 {
 
-  FUN_00516f60(*(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xcc),
+  math_euler_to_matrix
 
-               *(undefined4 *)(param_1 + 200),*(undefined4 *)(param_1 + 0xc4),param_2);
+            (*(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xcc),
+
+             *(undefined4 *)(param_1 + 200),*(undefined4 *)(param_1 + 0xc4),param_2);
 
   return;
 
 }
 
-/* ===== FUN_00516f60 @ 0x00516F60 ===== */
-void FUN_00516f60(undefined4 param_1,float param_2,undefined4 param_3,float param_4,float *param_5)
+/* ===== math_euler_to_matrix @ 0x00516F60 ===== */
+void math_euler_to_matrix
+
+               (undefined4 param_1,float param_2,undefined4 param_3,float param_4,float *param_5)
 
 
 
@@ -6328,9 +6332,11 @@ void FUN_005170f0(int param_1,float *param_2,float *param_3)
 
   }
 
-  FUN_00516f60(*(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xcc),
+  math_euler_to_matrix
 
-               *(undefined4 *)(param_1 + 200),*(undefined4 *)(param_1 + 0xc4),&local_24);
+            (*(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xcc),
+
+             *(undefined4 *)(param_1 + 200),*(undefined4 *)(param_1 + 0xc4),&local_24);
 
   *param_3 = local_24 * *param_2 + local_20 * param_2[1] + local_1c * param_2[2] +
 
@@ -6413,9 +6419,11 @@ void FUN_00517220(int param_1,float *param_2,float *param_3)
 
   fVar3 = param_2[2] - *(float *)(param_1 + 0xa8);
 
-  FUN_00516f60(*(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xcc),
+  math_euler_to_matrix
 
-               *(undefined4 *)(param_1 + 200),1.0 / *(float *)(param_1 + 0xc4),&local_44);
+            (*(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xcc),
+
+             *(undefined4 *)(param_1 + 200),1.0 / *(float *)(param_1 + 0xc4),&local_44);
 
   *param_3 = local_44 * fVar1 + local_38 * fVar2 + local_2c * fVar3;
 
@@ -6611,7 +6619,7 @@ void textrender_3d_project
 
   
 
-  FUN_00516f60(param_3,param_2,param_1,param_4,&local_24);
+  math_euler_to_matrix(param_3,param_2,param_1,param_4,&local_24);
 
   if (0 < param_6) {
 

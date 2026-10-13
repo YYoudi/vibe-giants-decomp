@@ -4357,7 +4357,7 @@
  "0x00482E90": {
   "name": "menu_handlers_lookup",
   "named": true,
-  "len": 3981
+  "len": 4005
  },
  "0x00483200": {
   "name": "main_menu_00483200",
@@ -4370,14 +4370,14 @@
   "len": 2880
  },
  "0x004834D0": {
-  "name": "FUN_004834d0",
-  "named": false,
-  "len": 1258
+  "name": "menu_mission_set_clamped",
+  "named": true,
+  "len": 1270
  },
  "0x004835F0": {
   "name": "menu_handlers_exec",
   "named": true,
-  "len": 4042
+  "len": 4066
  },
  "0x00483BA0": {
   "name": "mission_intro_load",
@@ -4497,7 +4497,7 @@
  "0x004897D0": {
   "name": "mission_menu_load2",
   "named": true,
-  "len": 4669
+  "len": 4693
  },
  "0x00489CA0": {
   "name": "FUN_00489ca0",
@@ -4567,7 +4567,7 @@
  "0x0048E010": {
   "name": "menu_dlog_callback_a",
   "named": true,
-  "len": 4577
+  "len": 4601
  },
  "0x0048E430": {
   "name": "FUN_0048E430",
@@ -4577,7 +4577,7 @@
  "0x0048E610": {
   "name": "menu_dlog_callback_b",
   "named": true,
-  "len": 4574
+  "len": 4598
  },
  "0x0048EA50": {
   "name": "FUN_0048EA50",
@@ -6005,9 +6005,9 @@
   "len": 1957
  },
  "0x004AA6D0": {
-  "name": "FUN_004aa6d0",
-  "named": false,
-  "len": 1295
+  "name": "obj_targetable_by_player",
+  "named": true,
+  "len": 1307
  },
  "0x004AA7F0": {
   "name": "FUN_004aa7f0",
@@ -6912,7 +6912,7 @@
  "0x004CEAA0": {
   "name": "FUN_004ceaa0",
   "named": false,
-  "len": 53764
+  "len": 53784
  },
  "0x004D1790": {
   "name": "FUN_004d1790",
@@ -6940,9 +6940,9 @@
   "len": 31293
  },
  "0x004D3720": {
-  "name": "FUN_004d3720",
-  "named": false,
-  "len": 1258
+  "name": "obj_follow_owner_refpt",
+  "named": true,
+  "len": 1268
  },
  "0x004D3ED0": {
   "name": "FUN_004d3ed0",
@@ -7165,9 +7165,9 @@
   "len": 3836
  },
  "0x004E29F0": {
-  "name": "FUN_004e29f0",
-  "named": false,
-  "len": 1315
+  "name": "smartie_claim_targets",
+  "named": true,
+  "len": 1324
  },
  "0x004E2B10": {
   "name": "FUN_004e2b10",
@@ -8692,12 +8692,12 @@
  "0x00516F30": {
   "name": "xform_p3d_world_mat",
   "named": true,
-  "len": 251
+  "len": 271
  },
  "0x00516F60": {
-  "name": "FUN_00516f60",
-  "named": false,
-  "len": 901
+  "name": "math_euler_to_matrix",
+  "named": true,
+  "len": 926
  },
  "0x00517080": {
   "name": "xform_p3d_mat33",
@@ -8707,12 +8707,12 @@
  "0x005170F0": {
   "name": "FUN_005170f0",
   "named": false,
-  "len": 1582
+  "len": 1602
  },
  "0x00517220": {
   "name": "FUN_00517220",
   "named": false,
-  "len": 1429
+  "len": 1449
  },
  "0x00517370": {
   "name": "hud_screen_project",
@@ -8722,7 +8722,7 @@
  "0x00517510": {
   "name": "textrender_3d_project",
   "named": true,
-  "len": 3189
+  "len": 3197
  },
  "0x00517740": {
   "name": "main_xform_00517740",
