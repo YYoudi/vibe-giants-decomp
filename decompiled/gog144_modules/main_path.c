@@ -101,7 +101,7 @@ void path_world_init__Fv(void)
 
   local_10 = in_stack_00000004[2];
 
-  main_path_0049fb80();
+  terrain_grid_lookup();
 
   local_30 = *in_stack_00000008;
 
@@ -109,7 +109,7 @@ void path_world_init__Fv(void)
 
   local_28 = in_stack_00000008[2];
 
-  main_path_0049fb80(in_stack_00000008,local_24,local_20,local_1c);
+  terrain_grid_lookup(in_stack_00000008,local_24,local_20,local_1c);
 
   if (DAT_005a0cf8 == 0) {
 
@@ -175,9 +175,9 @@ void path_world_init__Fv(void)
 
               FUN_005170f0(iVar2,&local_3c,iVar1 + 0x18);
 
-              main_path_0049fb80(iVar1,iVar1 + 0xc,iVar1 + 0x10,iVar1 + 0x14);
+              terrain_grid_lookup(iVar1,iVar1 + 0xc,iVar1 + 0x10,iVar1 + 0x14);
 
-              main_path_0049fb80(iVar1 + 0x18,iVar1 + 0x24,iVar1 + 0x28,iVar1 + 0x2c);
+              terrain_grid_lookup(iVar1 + 0x18,iVar1 + 0x24,iVar1 + 0x28,iVar1 + 0x2c);
 
               iVar5 = iVar5 + 0x30;
 

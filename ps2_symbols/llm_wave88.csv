@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a26f0,FUN_004A26F0,,obj_bone_update,0.9,llm-read59,
+0049fb80,FUN_0049FB80,,terrain_grid_lookup,0.9,llm-read59,
+004e47c0,FUN_004E47C0,,ai_idle_anim_select,0.9,llm-read59,
+005137c0,FUN_005137C0,,flk_actor_update,0.9,llm-read59,

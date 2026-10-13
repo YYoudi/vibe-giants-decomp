@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (42 named) — decompiled, names from PS2 symbols
+ * 131 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1834,10 +1834,10 @@ void FUN_004a2650(float *param_1,float *param_2,float *param_3,float *param_4,fl
 
 }
 
-/* ===== FUN_004a26f0 @ 0x004A26F0 ===== */
-void FUN_004a26f0(int param_1,float param_2,float param_3,undefined4 param_4,undefined4 param_5,
+/* ===== obj_bone_update @ 0x004A26F0 ===== */
+void obj_bone_update(int param_1,float param_2,float param_3,undefined4 param_4,undefined4 param_5,
 
-                 int param_6)
+                    int param_6)
 
 
 
@@ -1992,7 +1992,7 @@ void FUN_004a2850(float param_1)
 
   }
 
-  FUN_004a26f0(iVar4,local_8,local_8,param_1,*puVar1,uVar2 & 0x10);
+  obj_bone_update(iVar4,local_8,local_8,param_1,*puVar1,uVar2 & 0x10);
 
   return;
 

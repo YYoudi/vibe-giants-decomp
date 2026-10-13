@@ -14380,8 +14380,8 @@ void main_path_0049fb00(undefined4 param_1,int *param_2,int *param_3)
 
 }
 
-/* ===== main/path_0049fb80 @ 0x0049FB80 ===== */
-void main_path_0049fb80(float *param_1,int *param_2,int *param_3,undefined1 *param_4)
+/* ===== terrain_grid_lookup @ 0x0049FB80 ===== */
+void terrain_grid_lookup(float *param_1,int *param_2,int *param_3,undefined1 *param_4)
 
 
 

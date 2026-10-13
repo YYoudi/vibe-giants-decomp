@@ -9296,21 +9296,21 @@ void FUN_004bce60(int param_1)
 
       if ((char)((uint)*(undefined4 *)(param_1 + 0xe0) >> 8) < '\0') {
 
-        FUN_004a26f0(param_1,*(undefined4 *)(DAT_00632ed8 + 0x80c),
+        obj_bone_update(param_1,*(undefined4 *)(DAT_00632ed8 + 0x80c),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x80c),*(undefined4 *)(DAT_00632ed8 + 0x810),
+                        *(undefined4 *)(DAT_00632ed8 + 0x80c),*(undefined4 *)(DAT_00632ed8 + 0x810),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x814),1);
+                        *(undefined4 *)(DAT_00632ed8 + 0x814),1);
 
       }
 
       else {
 
-        FUN_004a26f0(param_1,*(undefined4 *)(DAT_00632ed8 + 0x818),
+        obj_bone_update(param_1,*(undefined4 *)(DAT_00632ed8 + 0x818),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x818),*(undefined4 *)(DAT_00632ed8 + 0x81c),
+                        *(undefined4 *)(DAT_00632ed8 + 0x818),*(undefined4 *)(DAT_00632ed8 + 0x81c),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x820),1);
+                        *(undefined4 *)(DAT_00632ed8 + 0x820),1);
 
       }
 
@@ -9322,21 +9322,21 @@ void FUN_004bce60(int param_1)
 
       if (puVar5[0x38b] == 0) {
 
-        FUN_004a26f0(param_1,*(undefined4 *)(DAT_00632ed8 + 0x728),
+        obj_bone_update(param_1,*(undefined4 *)(DAT_00632ed8 + 0x728),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x728),*(undefined4 *)(DAT_00632ed8 + 0x72c),
+                        *(undefined4 *)(DAT_00632ed8 + 0x728),*(undefined4 *)(DAT_00632ed8 + 0x72c),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x730),*(uint *)(param_1 + 0xd8) & 0x10);
+                        *(undefined4 *)(DAT_00632ed8 + 0x730),*(uint *)(param_1 + 0xd8) & 0x10);
 
       }
 
       else {
 
-        FUN_004a26f0(param_1,*(undefined4 *)(DAT_00632ed8 + 0x740),
+        obj_bone_update(param_1,*(undefined4 *)(DAT_00632ed8 + 0x740),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x740),*(undefined4 *)(DAT_00632ed8 + 0x738),
+                        *(undefined4 *)(DAT_00632ed8 + 0x740),*(undefined4 *)(DAT_00632ed8 + 0x738),
 
-                     *(undefined4 *)(DAT_00632ed8 + 0x73c),*(uint *)(param_1 + 0xd8) & 0x10);
+                        *(undefined4 *)(DAT_00632ed8 + 0x73c),*(uint *)(param_1 + 0xd8) & 0x10);
 
       }
 

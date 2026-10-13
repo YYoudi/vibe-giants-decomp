@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (78 named) — decompiled, names from PS2 symbols
+ * 186 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -1950,8 +1950,8 @@ undefined4 vimp_mana_effect(int param_1,undefined4 param_2,undefined4 param_3,un
 
 }
 
-/* ===== FUN_005137c0 @ 0x005137C0 ===== */
-void FUN_005137c0(int param_1)
+/* ===== flk_actor_update @ 0x005137C0 ===== */
+void flk_actor_update(int param_1)
 
 
 

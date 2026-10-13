@@ -1535,7 +1535,7 @@ void FUN_00471a60(int param_1)
 
                   if ((*(int *)(iVar3 + 0x204) != 0) && ((*(uint *)(iVar3 + 0xd8) & 0xc000) == 0)) {
 
-                    FUN_005137c0(iVar3);
+                    flk_actor_update(iVar3);
 
                   }
 
