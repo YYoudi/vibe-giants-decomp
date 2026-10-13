@@ -362,8 +362,8 @@ void collgrid_collide_c(undefined4 param_1,undefined4 *param_2,int *param_3)
 
 }
 
-/* ===== collgrid_collide_walk_big @ 0x00412180 ===== */
-uint collgrid_collide_walk_big(int param_1,int param_2,int param_3)
+/* ===== collgrid_collide_resolve @ 0x00412180 ===== */
+uint collgrid_collide_resolve(int param_1,int param_2,int param_3)
 
 
 
@@ -722,8 +722,8 @@ byte collgrid_query_small(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== collgrid_query_mid @ 0x004125F0 ===== */
-void collgrid_query_mid(int param_1,float *param_2,float *param_3)
+/* ===== collgrid_pos_query_dlog @ 0x004125F0 ===== */
+void collgrid_pos_query_dlog(int param_1,float *param_2,float *param_3)
 
 
 
@@ -3519,7 +3519,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
       iVar5 = __ftol();
 
-      iVar7 = collgrid_collide_walk_big(local_34,iVar6,iVar5);
+      iVar7 = collgrid_collide_resolve(local_34,iVar6,iVar5);
 
       while (iVar7 != 0) {
 
@@ -3603,7 +3603,7 @@ LAB_00414c70:
 
         iVar5 = __ftol();
 
-        iVar7 = collgrid_collide_walk_big(local_34,iVar6,iVar5);
+        iVar7 = collgrid_collide_resolve(local_34,iVar6,iVar5);
 
       }
 

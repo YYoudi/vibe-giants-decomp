@@ -2259,8 +2259,8 @@ float10 FUN_00404200(int param_1)
 
 }
 
-/* ===== collgrid_collide_a @ 0x00404230 ===== */
-void collgrid_collide_a(int param_1,int param_2)
+/* ===== collgrid_collision_test @ 0x00404230 ===== */
+void collgrid_collision_test(int param_1,int param_2)
 
 
 
@@ -2383,7 +2383,7 @@ void FUN_004043a0(int param_1)
 
       do {
 
-        (*(code *)PTR_collgrid_collide_a_00554058)(param_1,iVar2);
+        (*(code *)PTR_collgrid_collision_test_00554058)(param_1,iVar2);
 
         iVar2 = iVar2 + 1;
 

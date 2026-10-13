@@ -746,7 +746,7 @@ void FUN_00540800(int param_1)
 
   }
 
-  PTR_collgrid_collide_a_00554058 = (&PTR_LAB_00580cdc)[param_1];
+  PTR_collgrid_collision_test_00554058 = (&PTR_LAB_00580cdc)[param_1];
 
   PTR_FUN_0055405c = (&PTR_LAB_00580ce8)[param_1];
 
