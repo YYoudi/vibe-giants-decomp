@@ -158,9 +158,9 @@ int main_status_00500520(int *param_1)
 
     terrain_mesh_query(param_1,0,0xffffffff);
 
-    FUN_00500300(param_1);
+    mission_screen_icon_bounds_calc(param_1);
 
-    FUN_005003d0(param_1);
+    mission_screen_slot_bounds_merge(param_1);
 
     iVar2 = param_1[9];
 

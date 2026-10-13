@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (72 named) — decompiled, names from PS2 symbols
+ * 87 functions (74 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -174,8 +174,8 @@ void status_subobj_init(int param_1)
 
 }
 
-/* ===== FUN_00500300 @ 0x00500300 ===== */
-void FUN_00500300(int param_1)
+/* ===== mission_screen_icon_bounds_calc @ 0x00500300 ===== */
+void mission_screen_icon_bounds_calc(int param_1)
 
 
 
@@ -279,8 +279,8 @@ void FUN_00500300(int param_1)
 
 }
 
-/* ===== FUN_005003d0 @ 0x005003D0 ===== */
-void FUN_005003d0(int param_1)
+/* ===== mission_screen_slot_bounds_merge @ 0x005003D0 ===== */
+void mission_screen_slot_bounds_merge(int param_1)
 
 
 
@@ -419,9 +419,9 @@ void FUN_00500490(int *param_1)
 
     terrain_mesh_query(param_1,0,0xffffffff);
 
-    FUN_00500300(param_1);
+    mission_screen_icon_bounds_calc(param_1);
 
-    FUN_005003d0(param_1);
+    mission_screen_slot_bounds_merge(param_1);
 
     iVar1 = param_1[9];
 

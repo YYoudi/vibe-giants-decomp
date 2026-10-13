@@ -1,0 +1,22 @@
+{
+ "0x00500300": [
+  {
+   "args": [
+    "0x632900 (6498560)\n[state] PAUSED at 0x500300 (giants) | push edi",
+    "0xEBC8834 (247236660)\n[state] PAUSED at 0x500300 (giants) | push edi",
+    "0xCE540000 (3461611520)\n[state] PAUSED at 0x500300 (giants) | push edi"
+   ],
+   "ret": "0x5006AB (5244587)\n[state] PAUSED at 0x500300 (giants) | push edi"
+  }
+ ],
+ "0x005003D0": [
+  {
+   "args": [
+    "0x632900 (6498560)\n[state] PAUSED at 0x5003D0 (giants) | mov eax,dword ptr ss:[esp+4]",
+    "0x4153A355 (1096000341)\n[state] PAUSED at 0x5003D0 (giants) | mov eax,dword ptr ss:[esp+4]",
+    "0x57 (87)\n[state] PAUSED at 0x5003D0 (giants) | mov eax,dword ptr ss:[esp+4]"
+   ],
+   "ret": "0x5006B1 (5244593)\n[state] PAUSED at 0x5003D0 (giants) | mov eax,dword ptr ss:[esp+4]"
+  }
+ ]
+}

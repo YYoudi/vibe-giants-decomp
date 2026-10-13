@@ -1,0 +1,3 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00500300,FUN_00500300,,mission_screen_icon_bounds_calc,0.9,runtime-w213,BP hit runtime: arg=DAT_00632900 ret 0x5006AB; vertex min/max via 0x50/0x38 mesh strides
+005003d0,FUN_005003d0,,mission_screen_slot_bounds_merge,0.9,runtime-w213,BP hit runtime: arg=DAT_00632900 ret 0x5006B1; per-slot 0x24 bounds merge

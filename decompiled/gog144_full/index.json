@@ -7860,24 +7860,24 @@
   "len": 1462
  },
  "0x00500300": {
-  "name": "FUN_00500300",
-  "named": false,
-  "len": 1387
+  "name": "mission_screen_icon_bounds_calc",
+  "named": true,
+  "len": 1406
  },
  "0x005003D0": {
-  "name": "FUN_005003d0",
-  "named": false,
-  "len": 1565
+  "name": "mission_screen_slot_bounds_merge",
+  "named": true,
+  "len": 1585
  },
  "0x00500490": {
   "name": "FUN_00500490",
   "named": false,
-  "len": 660
+  "len": 699
  },
  "0x00500520": {
   "name": "main_status_00500520",
   "named": true,
-  "len": 2877
+  "len": 2916
  },
  "0x005007F0": {
   "name": "FUN_005007f0",
