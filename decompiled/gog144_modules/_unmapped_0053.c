@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (129 named) — decompiled, names from PS2 symbols
+ * 179 functions (130 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -16045,7 +16045,7 @@ LAB_0053cd8a:
 
         }
 
-        FUN_0053e090(auStack_370,puVar3,puVar4,piVar2[-1]);
+        anm_node_mat_blend(auStack_370,puVar3,puVar4,piVar2[-1]);
 
         puVar3 = auStack_370;
 
@@ -18089,8 +18089,8 @@ void anm_mat_init_copy(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0053e090 @ 0x0053E090 ===== */
-void FUN_0053e090(int param_1,int param_2,int param_3,float param_4)
+/* ===== anm_node_mat_blend @ 0x0053E090 ===== */
+void anm_node_mat_blend(int param_1,int param_2,int param_3,float param_4)
 
 
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b8d30,FUN_004b8d30,,reaper_item_find_slot,0.9,llm-w153,0xd3c inventory scan callers inv_award_item
+0053e090,FUN_0053e090,,anm_node_mat_blend,0.9,llm-w153,mat lerp caller ANM_BlendedNodeGetMat
+00451cf0,FUN_00451cf0,,render_scene_begin,0.9,llm-w153,one-time GFX upcalls callers FLK_FlickRender
+0046b640,FUN_0046b640,,kbos_offspring_process_2,0.9,llm-w153,structural twin of 0046b6f0

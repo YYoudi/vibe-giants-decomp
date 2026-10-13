@@ -740,7 +740,7 @@ switchD_004711dd_default:
 
         xfmat_mult_b();
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         ai_island_init(0,0);
 
@@ -897,7 +897,7 @@ void fx_weather_system(void)
 
       FUN_005162b0(auStack_40);
 
-      FUN_00451cf0();
+      render_scene_begin();
 
       iVar12 = DAT_006330e4;
 
@@ -1246,7 +1246,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     }
 
-    FUN_00451cf0();
+    render_scene_begin();
 
     FUN_00426f20();
 
@@ -1284,7 +1284,7 @@ LAB_00471872:
 
   }
 
-  FUN_00451cf0();
+  render_scene_begin();
 
   FUN_00426f20();
 

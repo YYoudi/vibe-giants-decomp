@@ -8519,7 +8519,7 @@ undefined4 dev_debug_flags(void)
 
           xfmat_mult_b();
 
-          FUN_00451cf0();
+          render_scene_begin();
 
           (**(code **)(DAT_00656420 + 0x14))();
 
@@ -8565,7 +8565,7 @@ undefined4 dev_debug_flags(void)
 
     render_projection_set(local_210,local_1e4,1);
 
-    FUN_00451cf0();
+    render_scene_begin();
 
   }
 

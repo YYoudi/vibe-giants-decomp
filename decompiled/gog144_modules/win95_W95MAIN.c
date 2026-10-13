@@ -292,7 +292,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         fStack_5dc = (float)piVar16[-1] / (float)DAT_00632e84;
 
@@ -334,7 +334,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
             (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-            FUN_00451cf0();
+            render_scene_begin();
 
             fStack_5dc = (float)piVar16[-1] / (float)DAT_00632e84;
 
@@ -376,7 +376,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         fStack_5dc = (float)piVar16[-1] / (float)DAT_00632e84;
 
@@ -402,7 +402,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         fStack_5dc = (float)piVar16[-1] / (float)DAT_00632e84;
 
@@ -482,7 +482,7 @@ LAB_0051f08e:
 
           (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-          FUN_00451cf0();
+          render_scene_begin();
 
           fStack_5dc = (float)piVar16[-1] / (float)DAT_00632e84;
 
@@ -514,7 +514,7 @@ LAB_0051f1b8:
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         fStack_5dc = (float)piVar16[-1] / (float)DAT_00632e84;
 

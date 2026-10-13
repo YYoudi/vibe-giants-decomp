@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (99 named) — decompiled, names from PS2 symbols
+ * 145 functions (100 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1185,8 +1185,8 @@ LAB_00451c06:
 
 }
 
-/* ===== FUN_00451cf0 @ 0x00451CF0 ===== */
-undefined4 FUN_00451cf0(void)
+/* ===== render_scene_begin @ 0x00451CF0 ===== */
+undefined4 render_scene_begin(void)
 
 
 
@@ -8659,7 +8659,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
             if (iVar2 != 0) {
 
-              FUN_004b8d30(param_1,param_3,0xffffffff);
+              reaper_item_find_slot(param_1,param_3,0xffffffff);
 
             }
 

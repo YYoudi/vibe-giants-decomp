@@ -15137,7 +15137,7 @@ void error_screen_show(LPCSTR param_1)
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         xfmat_mult_b();
 

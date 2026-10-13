@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19105
+  "len": 19117
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -2935,9 +2935,9 @@
   "len": 4817
  },
  "0x00451CF0": {
-  "name": "FUN_00451cf0",
-  "named": false,
-  "len": 753
+  "name": "render_scene_begin",
+  "named": true,
+  "len": 759
  },
  "0x00451DA0": {
   "name": "FUN_00451da0",
@@ -3412,7 +3412,7 @@
  "0x00459930": {
   "name": "inv_award_item",
   "named": true,
-  "len": 7959
+  "len": 7968
  },
  "0x00459F10": {
   "name": "inv_remove_item",
@@ -3745,9 +3745,9 @@
   "len": 478
  },
  "0x0046B640": {
-  "name": "FUN_0046b640",
-  "named": false,
-  "len": 797
+  "name": "kbos_offspring_process_2",
+  "named": true,
+  "len": 809
  },
  "0x0046B6F0": {
   "name": "kbos_offspring_process",
@@ -3907,17 +3907,17 @@
  "0x00471130": {
   "name": "water_draw_dump",
   "named": true,
-  "len": 3345
+  "len": 3351
  },
  "0x00471420": {
   "name": "fx_weather_system",
   "named": true,
-  "len": 4836
+  "len": 4842
  },
  "0x00471780": {
   "name": "hud_audio_dlog_screen",
   "named": true,
-  "len": 3306
+  "len": 3318
  },
  "0x00471A60": {
   "name": "game_loop_run",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24249
+  "len": 24258
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -6365,9 +6365,9 @@
   "len": 339
  },
  "0x004B8D30": {
-  "name": "FUN_004b8d30",
-  "named": false,
-  "len": 1063
+  "name": "reaper_item_find_slot",
+  "named": true,
+  "len": 1072
  },
  "0x004B8DE0": {
   "name": "FUN_004b8de0",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14448
+  "len": 14460
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -9262,7 +9262,7 @@
  "0x0051E680": {
   "name": "error_screen_show",
   "named": true,
-  "len": 3866
+  "len": 3872
  },
  "0x0051EA20": {
   "name": "FUN_0051ea20",
@@ -9292,7 +9292,7 @@
  "0x0051EAC0": {
   "name": "loglauncher_process_2",
   "named": true,
-  "len": 9643
+  "len": 9679
  },
  "0x0051F2A0": {
   "name": "FUN_0051f2a0",
@@ -9337,7 +9337,7 @@
  "0x00520490": {
   "name": "comm_comm_00520490",
   "named": true,
-  "len": 4470
+  "len": 4482
  },
  "0x00520B90": {
   "name": "gamespy_send_statechange",
@@ -10742,7 +10742,7 @@
  "0x0053CC20": {
   "name": "ANM_BlendedNodeGetMat",
   "named": true,
-  "len": 3806
+  "len": 3812
  },
  "0x0053CEC0": {
   "name": "nam_lookup_by_handle",
@@ -10885,9 +10885,9 @@
   "len": 1449
  },
  "0x0053E090": {
-  "name": "FUN_0053e090",
-  "named": false,
-  "len": 918
+  "name": "anm_node_mat_blend",
+  "named": true,
+  "len": 924
  },
  "0x0053E140": {
   "name": "crt_bbox_center",

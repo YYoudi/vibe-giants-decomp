@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (69 named) — decompiled, names from PS2 symbols
+ * 90 functions (70 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -5846,8 +5846,8 @@ bool reaper_has_bow_3(int param_1)
 
 }
 
-/* ===== FUN_004b8d30 @ 0x004B8D30 ===== */
-void FUN_004b8d30(int param_1,int param_2,int param_3)
+/* ===== reaper_item_find_slot @ 0x004B8D30 ===== */
+void reaper_item_find_slot(int param_1,int param_2,int param_3)
 
 
 

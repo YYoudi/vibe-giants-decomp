@@ -3444,7 +3444,7 @@ LAB_00492a3a:
 
                   if (iVar11 == 0) {
 
-                    FUN_004b8d30();
+                    reaper_item_find_slot();
 
                   }
 

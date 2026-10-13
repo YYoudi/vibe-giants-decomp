@@ -146,7 +146,7 @@ void comm_comm_00520490(void)
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         FUN_00428810(DAT_005def88);
 
@@ -156,7 +156,7 @@ void comm_comm_00520490(void)
 
         (**(code **)(DAT_00656420 + 0x98))(DAT_00656420,0);
 
-        FUN_00451cf0();
+        render_scene_begin();
 
         FUN_00428810(DAT_005def88);
 

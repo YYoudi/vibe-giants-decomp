@@ -3856,7 +3856,7 @@ undefined4 FLK_FlickRender(int param_1)
 
             FUN_005162b0(auStack_144);
 
-            FUN_00451cf0();
+            render_scene_begin();
 
             (**(code **)(DAT_00656420 + 0x14))(DAT_00656420);
 
@@ -3974,7 +3974,7 @@ LAB_00444d25:
 
   xfmat_mult_b();
 
-  FUN_00451cf0();
+  render_scene_begin();
 
   main_drawobj_0042d490();
 
