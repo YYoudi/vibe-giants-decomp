@@ -1175,7 +1175,7 @@ undefined4 ai_move_pair_caller(int param_1)
 
       if ((*(int *)(iVar2 + 4) == 0xd7) && (*(int *)(iVar3 + 0x134) == *(int *)(iVar1 + 0x134))) {
 
-        main_ai_move_00401160(iVar2,iVar3 + 8,*(undefined4 *)(iVar3 + 0x14));
+        ai_move_goals_free(iVar2,iVar3 + 8,*(undefined4 *)(iVar3 + 0x14));
 
         if ((*(uint *)(iVar2 + 0xe0) & 0x200) == 0) {
 

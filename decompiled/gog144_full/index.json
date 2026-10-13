@@ -10,9 +10,9 @@
   "len": 1531
  },
  "0x00401160": {
-  "name": "main_ai_move_00401160",
+  "name": "ai_move_goals_free",
   "named": true,
-  "len": 2353
+  "len": 2350
  },
  "0x00401310": {
   "name": "main_ai_move_00401310",
@@ -95,9 +95,9 @@
   "len": 441
  },
  "0x00402240": {
-  "name": "FUN_00402240",
-  "named": false,
-  "len": 190
+  "name": "ai_move_goals_reinit",
+  "named": true,
+  "len": 198
  },
  "0x00402270": {
   "name": "FUN_00402270",
@@ -7157,7 +7157,7 @@
  "0x004E2450": {
   "name": "ai_move_pair_caller",
   "named": true,
-  "len": 3201
+  "len": 3198
  },
  "0x004E26E0": {
   "name": "FUN_004e26e0",
@@ -8017,7 +8017,7 @@
  "0x00503970": {
   "name": "FUN_00503970",
   "named": false,
-  "len": 7985
+  "len": 7993
  },
  "0x00504050": {
   "name": "FUN_00504050",

@@ -102,8 +102,8 @@ void FUN_00401050(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== main_ai_move_00401160 @ 0x00401160 ===== */
-void main_ai_move_00401160(int param_1,undefined4 *param_2,undefined4 param_3)
+/* ===== ai_move_goals_free @ 0x00401160 ===== */
+void ai_move_goals_free(int param_1,undefined4 *param_2,undefined4 param_3)
 
 
 

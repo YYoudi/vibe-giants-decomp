@@ -4286,7 +4286,7 @@ LAB_00503c4b:
 
       main_ai_move_00401310(iVar2,&local_c,local_18);
 
-      iVar5 = FUN_00402240(iVar2);
+      iVar5 = ai_move_goals_reinit(iVar2);
 
       if (iVar5 == -1) {
 

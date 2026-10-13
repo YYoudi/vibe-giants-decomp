@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (31 named) — decompiled, names from PS2 symbols
+ * 105 functions (32 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -765,12 +765,12 @@ bool FUN_004021e0(int param_1)
 
 }
 
-/* ===== FUN_00402240 @ 0x00402240 ===== */
+/* ===== ai_move_goals_reinit @ 0x00402240 ===== */
 /* PS2 candidate: ai_goal_process_nopath (conf 0.355) */
 
 
 
-void FUN_00402240(undefined4 param_1)
+void ai_move_goals_reinit(undefined4 param_1)
 
 
 
