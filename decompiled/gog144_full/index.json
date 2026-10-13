@@ -955,9 +955,9 @@
   "len": 240
  },
  "0x00418540": {
-  "name": "FUN_00418540",
-  "named": false,
-  "len": 1272
+  "name": "base_slot_ready_check",
+  "named": true,
+  "len": 1281
  },
  "0x00418630": {
   "name": "bldg_get_refpt_worldloc",
@@ -1925,9 +1925,9 @@
   "len": 781
  },
  "0x0042EC90": {
-  "name": "FUN_0042ec90",
-  "named": false,
-  "len": 1141
+  "name": "dlog_text_verts_build",
+  "named": true,
+  "len": 1150
  },
  "0x0042ED90": {
   "name": "dlog_quad_transform",
@@ -1947,7 +1947,7 @@
  "0x0042EF80": {
   "name": "dlog_alpha_big_render",
   "named": true,
-  "len": 5629
+  "len": 5638
  },
  "0x0042F310": {
   "name": "dlog_fade_control",
@@ -7657,7 +7657,7 @@
  "0x004F5410": {
   "name": "smartie_attach_to_base",
   "named": true,
-  "len": 2908
+  "len": 2944
  },
  "0x004F5630": {
   "name": "reaper_lock_pair_4f",
@@ -9855,9 +9855,9 @@
   "len": 8957
  },
  "0x0052C4D0": {
-  "name": "FUN_0052c4d0",
-  "named": false,
-  "len": 1174
+  "name": "comm_rate_second_tick",
+  "named": true,
+  "len": 1183
  },
  "0x0052C5C0": {
   "name": "FUN_0052c5c0",
@@ -10225,9 +10225,9 @@
   "len": 164
  },
  "0x005310C0": {
-  "name": "FUN_005310c0",
-  "named": false,
-  "len": 1310
+  "name": "comm_process_command_char",
+  "named": true,
+  "len": 1323
  },
  "0x005311B0": {
   "name": "comm_0052ab20_user",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36733
+  "len": 36742
  },
  "0x00532E20": {
   "name": "anm_dump_52",

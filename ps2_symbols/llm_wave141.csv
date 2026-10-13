@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0042ec90,FUN_0042ec90,,dlog_text_verts_build,0.9,llm-w141,caller dlog_alpha_big_render font table
+00418540,FUN_00418540,,base_slot_ready_check,0.9,llm-w141,caller smartie_attach_to_base slot state
+005310c0,FUN_005310c0,,comm_process_command_char,0.9,llm-w141,chat commands A/=/Q + critsec buffer
+0052c4d0,FUN_0052c4d0,,comm_rate_second_tick,0.9,llm-w141,per-second rate counters reset

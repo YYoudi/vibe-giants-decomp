@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (99 named) — decompiled, names from PS2 symbols
+ * 162 functions (100 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -9298,12 +9298,12 @@ void comm_net_stats_dump(void)
 
 }
 
-/* ===== FUN_0052c4d0 @ 0x0052C4D0 ===== */
+/* ===== comm_rate_second_tick @ 0x0052C4D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0052c4d0(void)
+void comm_rate_second_tick(void)
 
 
 

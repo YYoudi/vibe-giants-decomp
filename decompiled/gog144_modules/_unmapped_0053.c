@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (124 named) — decompiled, names from PS2 symbols
+ * 179 functions (125 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -2176,8 +2176,8 @@ void Audio3DTestToneUpdate__Fv_7(void)
 
 }
 
-/* ===== FUN_005310c0 @ 0x005310C0 ===== */
-void FUN_005310c0(uint param_1,char *param_2)
+/* ===== comm_process_command_char @ 0x005310C0 ===== */
+void comm_process_command_char(uint param_1,char *param_2)
 
 
 
@@ -2701,7 +2701,7 @@ void FUN_00531470(void)
 
     }
 
-    FUN_0052c4d0();
+    comm_rate_second_tick();
 
     if (DAT_005e02e0 == 0) {
 

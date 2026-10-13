@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (100 named) — decompiled, names from PS2 symbols
+ * 129 functions (101 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -18448,8 +18448,8 @@ void FUN_0042ebf0(float param_1,float param_2,float param_3,float param_4,float 
 
 }
 
-/* ===== FUN_0042ec90 @ 0x0042EC90 ===== */
-void FUN_0042ec90(float *param_1,float param_2,float param_3)
+/* ===== dlog_text_verts_build @ 0x0042EC90 ===== */
+void dlog_text_verts_build(float *param_1,float param_2,float param_3)
 
 
 
@@ -18919,7 +18919,7 @@ void dlog_alpha_big_render(void)
 
       do {
 
-        FUN_0042ec90(puVar8,0x3e800000,iVar10,0x3dcccccd);
+        dlog_text_verts_build(puVar8,0x3e800000,iVar10,0x3dcccccd);
 
         iVar7 = iVar7 + 1;
 

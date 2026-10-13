@@ -1390,13 +1390,13 @@ void smartie_attach_to_base(int param_1,undefined4 param_2,undefined4 param_3)
 
     if (iVar1 == 0) goto LAB_004f55b7;
 
-    iVar1 = FUN_00418540(param_3,0);
+    iVar1 = base_slot_ready_check(param_3,0);
 
     if (iVar1 == 0) {
 
 LAB_004f5569:
 
-      iVar1 = FUN_00418540(param_3,1);
+      iVar1 = base_slot_ready_check(param_3,1);
 
       if (iVar1 == 0) goto LAB_004f55b7;
 
@@ -1430,13 +1430,13 @@ LAB_004f5569:
 
   else {
 
-    iVar1 = FUN_00418540(param_3,0);
+    iVar1 = base_slot_ready_check(param_3,0);
 
     if (iVar1 == 0) {
 
 LAB_004f54ef:
 
-      iVar1 = FUN_00418540(param_3,1);
+      iVar1 = base_slot_ready_check(param_3,1);
 
       if (iVar1 == 0) goto LAB_004f55b7;
 
