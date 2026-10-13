@@ -1451,7 +1451,7 @@ LAB_004b5148:
 
   case 4:
 
-    iVar4 = FUN_00418380(iVar4,10);
+    iVar4 = base_slot_active_check(iVar4,10);
 
     if (iVar4 == 0) {
 
@@ -1579,7 +1579,7 @@ switchD_004b4d3a_caseD_7:
 
   case 9:
 
-    iVar4 = FUN_00418380(iVar4,10);
+    iVar4 = base_slot_active_check(iVar4,10);
 
     if (iVar4 == 0) {
 
@@ -1990,11 +1990,11 @@ void reaperbase_update_icons(int param_1)
 
   } while (iVar4 != 0);
 
-  iVar4 = FUN_00418380(param_1,0);
+  iVar4 = base_slot_active_check(param_1,0);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_00418380(param_1,8), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = base_slot_active_check(param_1,8), iVar4 == 0)) {
 
-    iVar4 = FUN_00418380(param_1,0);
+    iVar4 = base_slot_active_check(param_1,0);
 
     if (iVar4 != 0) {
 
@@ -2012,25 +2012,25 @@ void reaperbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,8);
+  iVar4 = base_slot_active_check(param_1,8);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,0);
+    iVar4 = base_slot_active_check(param_1,0);
 
-    if (((((iVar4 != 0) && (iVar4 = FUN_00418380(param_1,0xc), iVar4 != 0)) &&
+    if (((((iVar4 != 0) && (iVar4 = base_slot_active_check(param_1,0xc), iVar4 != 0)) &&
 
-         (iVar4 = FUN_00418380(param_1,0xd), iVar4 != 0)) &&
+         (iVar4 = base_slot_active_check(param_1,0xd), iVar4 != 0)) &&
 
-        ((iVar4 = FUN_00418380(param_1,0xe), iVar4 != 0 &&
+        ((iVar4 = base_slot_active_check(param_1,0xe), iVar4 != 0 &&
 
-         (iVar4 = FUN_00418380(param_1,0xf), iVar4 != 0)))) &&
+         (iVar4 = base_slot_active_check(param_1,0xf), iVar4 != 0)))) &&
 
-       ((iVar4 = FUN_00418380(param_1,0xb), iVar4 != 0 &&
+       ((iVar4 = base_slot_active_check(param_1,0xb), iVar4 != 0 &&
 
-        ((iVar4 = FUN_00418380(param_1,10), iVar4 != 0 &&
+        ((iVar4 = base_slot_active_check(param_1,10), iVar4 != 0 &&
 
-         (iVar4 = FUN_00418380(param_1,9), iVar4 != 0)))))) {
+         (iVar4 = base_slot_active_check(param_1,9), iVar4 != 0)))))) {
 
       *(undefined4 *)(iVar1 + 0x114) = 1;
 
@@ -2050,11 +2050,11 @@ void reaperbase_update_icons(int param_1)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  iVar3 = FUN_00418380(param_1,10);
+  iVar3 = base_slot_active_check(param_1,10);
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_00418380(param_1,2);
+    iVar3 = base_slot_active_check(param_1,2);
 
     if ((iVar3 == 0) && (iVar3 = base_bldg_is_alive_at_all_2(param_1,10), iVar3 == 0)) {
 
@@ -2070,11 +2070,11 @@ void reaperbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,2);
+  iVar4 = base_slot_active_check(param_1,2);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_00418380(param_1,10), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = base_slot_active_check(param_1,10), iVar4 == 0)) {
 
-    iVar4 = FUN_00418380(param_1,2);
+    iVar4 = base_slot_active_check(param_1,2);
 
     if (iVar4 != 0) {
 
@@ -2092,7 +2092,7 @@ void reaperbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,9);
+  iVar4 = base_slot_active_check(param_1,9);
 
   if (iVar4 == 0) {
 
@@ -2102,11 +2102,11 @@ void reaperbase_update_icons(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_00418380(param_1,0xc);
+  iVar4 = base_slot_active_check(param_1,0xc);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,4);
+    iVar4 = base_slot_active_check(param_1,4);
 
     if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xc), iVar4 == 0)) {
 
@@ -2124,11 +2124,11 @@ void reaperbase_update_icons(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_00418380(param_1,0xd);
+  iVar4 = base_slot_active_check(param_1,0xd);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,5);
+    iVar4 = base_slot_active_check(param_1,5);
 
     if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xd), iVar4 == 0)) {
 
@@ -2146,11 +2146,11 @@ void reaperbase_update_icons(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_00418380(param_1,0xe);
+  iVar4 = base_slot_active_check(param_1,0xe);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,6);
+    iVar4 = base_slot_active_check(param_1,6);
 
     if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xe), iVar4 == 0)) {
 
@@ -2168,11 +2168,11 @@ void reaperbase_update_icons(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_00418380(param_1,0xf);
+  iVar4 = base_slot_active_check(param_1,0xf);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,7);
+    iVar4 = base_slot_active_check(param_1,7);
 
     if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xf), iVar4 == 0)) {
 
@@ -2190,11 +2190,11 @@ void reaperbase_update_icons(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_00418380(param_1,0xb);
+  iVar4 = base_slot_active_check(param_1,0xb);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,3);
+    iVar4 = base_slot_active_check(param_1,3);
 
     if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xb), iVar4 == 0)) {
 
@@ -2846,7 +2846,7 @@ undefined4 objtype_anim_scan_2(int param_1,int param_2,undefined4 *param_3)
 
   }
 
-  iVar2 = FUN_00418380(param_1,0);
+  iVar2 = base_slot_active_check(param_1,0);
 
   if (iVar2 == 0) {
 
@@ -3087,7 +3087,7 @@ void FUN_004b6bb0(int param_1,int param_2)
 
   iVar3 = *(int *)(param_1 + 0x100);
 
-  iVar1 = FUN_00418380(param_1,0);
+  iVar1 = base_slot_active_check(param_1,0);
 
   iVar1 = (-(uint)(iVar1 != 0) & 2) + 1;
 
@@ -3378,7 +3378,7 @@ undefined4 FUN_004b6de0(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00418380(param_1,0xb);
+  iVar2 = base_slot_active_check(param_1,0xb);
 
   if (iVar2 != 0) {
 
@@ -3386,7 +3386,7 @@ undefined4 FUN_004b6de0(int param_1)
 
   }
 
-  iVar2 = FUN_00418380(param_1,3);
+  iVar2 = base_slot_active_check(param_1,3);
 
   if (iVar2 != 0) {
 
@@ -3483,7 +3483,7 @@ undefined4 FUN_004b6eb0(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00418380(param_1,10);
+  iVar2 = base_slot_active_check(param_1,10);
 
   if (iVar2 != 0) {
 
@@ -3491,7 +3491,7 @@ undefined4 FUN_004b6eb0(int param_1)
 
   }
 
-  iVar2 = FUN_00418380(param_1,2);
+  iVar2 = base_slot_active_check(param_1,2);
 
   if (iVar2 != 0) {
 
@@ -3518,7 +3518,7 @@ undefined4 FUN_004b6ef0(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00418380(param_1,8);
+  iVar2 = base_slot_active_check(param_1,8);
 
   if (iVar2 != 0) {
 

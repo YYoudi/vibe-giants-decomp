@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00420780,FUN_00420780,,hud_key_command_dispatch,0.9,llm-w145,caller hud_status_main key switch
+0042de80,FUN_0042de80,,hud_spark_quad_orient,0.9,llm-w145,caller rp_spark_hud_setup GEO quad build
+00450bb0,FUN_00450bb0,,render_stats_update,0.9,llm-w145,caller FLK_FlickRender FPS/polycount counters
+00529b20,FUN_00529b20,,comm_stats_init,0.9,llm-w145,caller GiantsInitNewWorld zeros 2x0x14 stat blocks
+0052b320,FUN_0052b320,,comm_stats_packet_build,0.9,llm-w145,iterates net stat block 23-uint packet
+00418380,FUN_00418380,,base_slot_active_check,0.9,llm-w145,faction predicates on building slot
+004e4280,FUN_004e4280,,rpman_turn_towards,0.9,llm-w145,dirfcalc + playerobj_turn chase

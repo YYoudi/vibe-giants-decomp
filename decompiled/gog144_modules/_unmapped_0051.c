@@ -15790,7 +15790,7 @@ void GiantsInitNewWorld(void)
 
         , -1 < HVar1)))) {
 
-      FUN_00529b20();
+      comm_stats_init();
 
       DAT_00633040 = 0;
 

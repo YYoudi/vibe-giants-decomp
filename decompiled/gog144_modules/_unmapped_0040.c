@@ -5311,7 +5311,7 @@ LAB_004089de:
 
     case 4:
 
-      iVar4 = FUN_00418380(iVar4,0xf);
+      iVar4 = base_slot_active_check(iVar4,0xf);
 
       if (iVar4 == 0) {
 
@@ -5483,7 +5483,7 @@ LAB_00408b1e:
 
     case 9:
 
-      iVar4 = FUN_00418380(iVar4,0xf);
+      iVar4 = base_slot_active_check(iVar4,0xf);
 
       if (iVar4 == 0) {
 
@@ -6164,11 +6164,11 @@ void meccbase_update_icons(int param_1)
 
   } while (iVar4 != 0);
 
-  iVar4 = FUN_00418380(param_1,0);
+  iVar4 = base_slot_active_check(param_1,0);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_00418380(param_1,0xd), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = base_slot_active_check(param_1,0xd), iVar4 == 0)) {
 
-    iVar4 = FUN_00418380(param_1,0);
+    iVar4 = base_slot_active_check(param_1,0);
 
     if (iVar4 != 0) {
 
@@ -6186,35 +6186,35 @@ void meccbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,0xd);
+  iVar4 = base_slot_active_check(param_1,0xd);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,0);
+    iVar4 = base_slot_active_check(param_1,0);
 
-    if (((((((iVar4 != 0) && (iVar4 = FUN_00418380(param_1,0x11), iVar4 != 0)) &&
+    if (((((((iVar4 != 0) && (iVar4 = base_slot_active_check(param_1,0x11), iVar4 != 0)) &&
 
-           (iVar4 = FUN_00418380(param_1,0x12), iVar4 != 0)) &&
+           (iVar4 = base_slot_active_check(param_1,0x12), iVar4 != 0)) &&
 
-          ((iVar4 = FUN_00418380(param_1,0x13), iVar4 != 0 &&
+          ((iVar4 = base_slot_active_check(param_1,0x13), iVar4 != 0 &&
 
-           (iVar4 = FUN_00418380(param_1,0x14), iVar4 != 0)))) &&
+           (iVar4 = base_slot_active_check(param_1,0x14), iVar4 != 0)))) &&
 
-         (iVar4 = FUN_00418380(param_1,0x15), iVar4 != 0)) &&
+         (iVar4 = base_slot_active_check(param_1,0x15), iVar4 != 0)) &&
 
-        (((iVar4 = FUN_00418380(param_1,0x16), iVar4 != 0 &&
+        (((iVar4 = base_slot_active_check(param_1,0x16), iVar4 != 0 &&
 
-          (iVar4 = FUN_00418380(param_1,0x17), iVar4 != 0)) &&
+          (iVar4 = base_slot_active_check(param_1,0x17), iVar4 != 0)) &&
 
-         ((iVar4 = FUN_00418380(param_1,0x18), iVar4 != 0 &&
+         ((iVar4 = base_slot_active_check(param_1,0x18), iVar4 != 0 &&
 
-          (((iVar4 = FUN_00418380(param_1,0x19), iVar4 != 0 &&
+          (((iVar4 = base_slot_active_check(param_1,0x19), iVar4 != 0 &&
 
-            (iVar4 = FUN_00418380(param_1,0x10), iVar4 != 0)) &&
+            (iVar4 = base_slot_active_check(param_1,0x10), iVar4 != 0)) &&
 
-           (iVar4 = FUN_00418380(param_1,0xf), iVar4 != 0)))))))) &&
+           (iVar4 = base_slot_active_check(param_1,0xf), iVar4 != 0)))))))) &&
 
-       (iVar4 = FUN_00418380(param_1,0xe), iVar4 != 0)) {
+       (iVar4 = base_slot_active_check(param_1,0xe), iVar4 != 0)) {
 
       *(undefined4 *)(iVar1 + 0x1a0) = 1;
 
@@ -6234,11 +6234,11 @@ void meccbase_update_icons(int param_1)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  iVar3 = FUN_00418380(param_1,0xf);
+  iVar3 = base_slot_active_check(param_1,0xf);
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_00418380(param_1,2);
+    iVar3 = base_slot_active_check(param_1,2);
 
     if ((iVar3 == 0) && (iVar3 = base_bldg_is_alive_at_all_2(param_1,0xf), iVar3 == 0)) {
 
@@ -6254,11 +6254,11 @@ void meccbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,2);
+  iVar4 = base_slot_active_check(param_1,2);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_00418380(param_1,0xf), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = base_slot_active_check(param_1,0xf), iVar4 == 0)) {
 
-    iVar4 = FUN_00418380(param_1,2);
+    iVar4 = base_slot_active_check(param_1,2);
 
     if (iVar4 != 0) {
 
@@ -6276,7 +6276,7 @@ void meccbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,0xe);
+  iVar4 = base_slot_active_check(param_1,0xe);
 
   if (iVar4 == 0) {
 
@@ -6284,35 +6284,35 @@ void meccbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,0x11);
+  iVar4 = base_slot_active_check(param_1,0x11);
 
-  if (((iVar4 == 0) || (iVar4 = FUN_00418380(param_1,0x12), iVar4 == 0)) ||
+  if (((iVar4 == 0) || (iVar4 = base_slot_active_check(param_1,0x12), iVar4 == 0)) ||
 
-     (iVar4 = FUN_00418380(param_1,0x13), iVar4 == 0)) {
+     (iVar4 = base_slot_active_check(param_1,0x13), iVar4 == 0)) {
 
-    iVar4 = FUN_00418380(param_1,4);
+    iVar4 = base_slot_active_check(param_1,4);
 
     if ((((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x11), iVar4 == 0)) ||
 
-        ((iVar4 = FUN_00418380(param_1,5), iVar4 == 0 &&
+        ((iVar4 = base_slot_active_check(param_1,5), iVar4 == 0 &&
 
          (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x12), iVar4 == 0)))) ||
 
-       ((iVar4 = FUN_00418380(param_1,6), iVar4 == 0 &&
+       ((iVar4 = base_slot_active_check(param_1,6), iVar4 == 0 &&
 
         (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x13), iVar4 == 0)))) {
 
-      iVar4 = FUN_00418380(param_1,0x11);
+      iVar4 = base_slot_active_check(param_1,0x11);
 
-      if ((((iVar4 == 0) && (iVar4 = FUN_00418380(param_1,0x12), iVar4 == 0)) &&
+      if ((((iVar4 == 0) && (iVar4 = base_slot_active_check(param_1,0x12), iVar4 == 0)) &&
 
-          (iVar4 = FUN_00418380(param_1,0x13), iVar4 == 0)) &&
+          (iVar4 = base_slot_active_check(param_1,0x13), iVar4 == 0)) &&
 
-         (((iVar4 = FUN_00418380(param_1,4), iVar4 == 0 ||
+         (((iVar4 = base_slot_active_check(param_1,4), iVar4 == 0 ||
 
-           (iVar4 = FUN_00418380(param_1,5), iVar4 == 0)) ||
+           (iVar4 = base_slot_active_check(param_1,5), iVar4 == 0)) ||
 
-          (iVar4 = FUN_00418380(param_1,6), iVar4 == 0)))) {
+          (iVar4 = base_slot_active_check(param_1,6), iVar4 == 0)))) {
 
         *(undefined4 *)(iVar1 + 0xa4) = 1;
 
@@ -6336,25 +6336,25 @@ void meccbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,0x14);
+  iVar4 = base_slot_active_check(param_1,0x14);
 
-  if ((iVar4 == 0) || (iVar4 = FUN_00418380(param_1,0x15), iVar4 == 0)) {
+  if ((iVar4 == 0) || (iVar4 = base_slot_active_check(param_1,0x15), iVar4 == 0)) {
 
-    iVar4 = FUN_00418380(param_1,7);
+    iVar4 = base_slot_active_check(param_1,7);
 
     if (((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x14), iVar4 == 0)) ||
 
-       ((iVar4 = FUN_00418380(param_1,8), iVar4 == 0 &&
+       ((iVar4 = base_slot_active_check(param_1,8), iVar4 == 0 &&
 
         (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x15), iVar4 == 0)))) {
 
-      iVar4 = FUN_00418380(param_1,0x14);
+      iVar4 = base_slot_active_check(param_1,0x14);
 
-      if (((iVar4 == 0) && (iVar4 = FUN_00418380(param_1,0x15), iVar4 == 0)) &&
+      if (((iVar4 == 0) && (iVar4 = base_slot_active_check(param_1,0x15), iVar4 == 0)) &&
 
-         ((iVar4 = FUN_00418380(param_1,7), iVar4 == 0 ||
+         ((iVar4 = base_slot_active_check(param_1,7), iVar4 == 0 ||
 
-          (iVar4 = FUN_00418380(param_1,8), iVar4 == 0)))) {
+          (iVar4 = base_slot_active_check(param_1,8), iVar4 == 0)))) {
 
         *(undefined4 *)(iVar1 + 0xf8) = 1;
 
@@ -6374,35 +6374,35 @@ void meccbase_update_icons(int param_1)
 
   }
 
-  iVar4 = FUN_00418380(param_1,0x16);
+  iVar4 = base_slot_active_check(param_1,0x16);
 
-  if (((iVar4 == 0) || (iVar4 = FUN_00418380(param_1,0x17), iVar4 == 0)) ||
+  if (((iVar4 == 0) || (iVar4 = base_slot_active_check(param_1,0x17), iVar4 == 0)) ||
 
-     (iVar4 = FUN_00418380(param_1,0x18), iVar4 == 0)) {
+     (iVar4 = base_slot_active_check(param_1,0x18), iVar4 == 0)) {
 
-    iVar4 = FUN_00418380(param_1,9);
+    iVar4 = base_slot_active_check(param_1,9);
 
     if ((((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x16), iVar4 == 0)) ||
 
-        ((iVar4 = FUN_00418380(param_1,10), iVar4 == 0 &&
+        ((iVar4 = base_slot_active_check(param_1,10), iVar4 == 0 &&
 
          (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x17), iVar4 == 0)))) ||
 
-       ((iVar4 = FUN_00418380(param_1,0xb), iVar4 == 0 &&
+       ((iVar4 = base_slot_active_check(param_1,0xb), iVar4 == 0 &&
 
         (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x18), iVar4 == 0)))) {
 
-      iVar4 = FUN_00418380(param_1,0x16);
+      iVar4 = base_slot_active_check(param_1,0x16);
 
-      if ((((iVar4 == 0) && (iVar4 = FUN_00418380(param_1,0x17), iVar4 == 0)) &&
+      if ((((iVar4 == 0) && (iVar4 = base_slot_active_check(param_1,0x17), iVar4 == 0)) &&
 
-          (iVar4 = FUN_00418380(param_1,0x18), iVar4 == 0)) &&
+          (iVar4 = base_slot_active_check(param_1,0x18), iVar4 == 0)) &&
 
-         (((iVar4 = FUN_00418380(param_1,9), iVar4 == 0 ||
+         (((iVar4 = base_slot_active_check(param_1,9), iVar4 == 0 ||
 
-           (iVar4 = FUN_00418380(param_1,10), iVar4 == 0)) ||
+           (iVar4 = base_slot_active_check(param_1,10), iVar4 == 0)) ||
 
-          (iVar4 = FUN_00418380(param_1,0xb), iVar4 == 0)))) {
+          (iVar4 = base_slot_active_check(param_1,0xb), iVar4 == 0)))) {
 
         *(undefined4 *)(iVar1 + 0x130) = 1;
 
@@ -6428,11 +6428,11 @@ void meccbase_update_icons(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_00418380(param_1,0x19);
+  iVar4 = base_slot_active_check(param_1,0x19);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,0xc);
+    iVar4 = base_slot_active_check(param_1,0xc);
 
     if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x19), iVar4 == 0)) {
 
@@ -6450,11 +6450,11 @@ void meccbase_update_icons(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_00418380(param_1,0x10);
+  iVar4 = base_slot_active_check(param_1,0x10);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_00418380(param_1,3);
+    iVar4 = base_slot_active_check(param_1,3);
 
     if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x10), iVar4 == 0)) {
 
@@ -7113,7 +7113,7 @@ undefined4 objtype_anim_scan(int param_1,int param_2,undefined4 *param_3)
 
   }
 
-  iVar2 = FUN_00418380(param_1,0);
+  iVar2 = base_slot_active_check(param_1,0);
 
   if (iVar2 == 0) {
 
@@ -7354,7 +7354,7 @@ void FUN_0040ab60(int param_1,int param_2)
 
   iVar3 = *(int *)(param_1 + 0x100);
 
-  iVar1 = FUN_00418380(param_1,0);
+  iVar1 = base_slot_active_check(param_1,0);
 
   iVar1 = (iVar1 != 0) + 1;
 
@@ -7440,7 +7440,7 @@ undefined4 FUN_0040abf0(int param_1,int *param_2)
 
   iVar1 = *(int *)(*(int *)(param_1 + 0x274) + 0x100);
 
-  iVar2 = FUN_00418380(*(int *)(param_1 + 0x274),0);
+  iVar2 = base_slot_active_check(*(int *)(param_1 + 0x274),0);
 
   if ((iVar2 != 0) && (iVar1 = *(int *)(iVar1 + 0x20), (*(uint *)(iVar1 + 0xe0) & 0xfff) != 0xfff))
 
@@ -7713,7 +7713,7 @@ undefined4 FUN_0040ae40(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00418380(param_1,0xf);
+  iVar2 = base_slot_active_check(param_1,0xf);
 
   if (iVar2 != 0) {
 
@@ -7721,7 +7721,7 @@ undefined4 FUN_0040ae40(int param_1)
 
   }
 
-  iVar2 = FUN_00418380(param_1,2);
+  iVar2 = base_slot_active_check(param_1,2);
 
   if (iVar2 != 0) {
 
@@ -7748,7 +7748,7 @@ undefined4 FUN_0040ae80(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00418380(param_1,0x10);
+  iVar2 = base_slot_active_check(param_1,0x10);
 
   if (iVar2 != 0) {
 
@@ -7756,7 +7756,7 @@ undefined4 FUN_0040ae80(int param_1)
 
   }
 
-  iVar2 = FUN_00418380(param_1,3);
+  iVar2 = base_slot_active_check(param_1,3);
 
   if (iVar2 != 0) {
 
@@ -7783,7 +7783,7 @@ undefined4 FUN_0040aec0(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_00418380(param_1,0xd);
+  iVar2 = base_slot_active_check(param_1,0xd);
 
   if (iVar2 != 0) {
 

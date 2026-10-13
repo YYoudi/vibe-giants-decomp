@@ -4380,7 +4380,7 @@ LAB_004451e2:
 
   if (DAT_00633248 != 0) {
 
-    FUN_00450bb0();
+    render_stats_update();
 
   }
 

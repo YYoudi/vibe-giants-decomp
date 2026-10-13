@@ -2663,7 +2663,7 @@ void FUN_00531470(void)
 
         local_510 = '4';
 
-        bVar3 = FUN_0052b320(local_50f + 1);
+        bVar3 = comm_stats_packet_build(local_50f + 1);
 
         local_50f[0] = bVar3;
 

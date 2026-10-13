@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (101 named) — decompiled, names from PS2 symbols
+ * 129 functions (103 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -725,8 +725,8 @@ LAB_00420491:
 
 }
 
-/* ===== FUN_00420780 @ 0x00420780 ===== */
-void FUN_00420780(int param_1,undefined4 param_2)
+/* ===== hud_key_command_dispatch @ 0x00420780 ===== */
+void hud_key_command_dispatch(int param_1,undefined4 param_2)
 
 
 
@@ -17369,8 +17369,8 @@ void shrap_create_water(undefined4 param_1)
 
 }
 
-/* ===== FUN_0042de80 @ 0x0042DE80 ===== */
-void FUN_0042de80(undefined4 param_1,undefined4 *param_2,float param_3,undefined4 *param_4)
+/* ===== hud_spark_quad_orient @ 0x0042DE80 ===== */
+void hud_spark_quad_orient(undefined4 param_1,undefined4 *param_2,float param_3,undefined4 *param_4)
 
 
 
@@ -17711,7 +17711,7 @@ void FUN_0042e260(int param_1,int param_2)
 
   uStack_b0 = uStack_58;
 
-  FUN_0042de80(&uStack_ac,&uStack_b8,*(undefined4 *)(param_1 + 0xc4),auStack_44);
+  hud_spark_quad_orient(&uStack_ac,&uStack_b8,*(undefined4 *)(param_1 + 0xc4),auStack_44);
 
   uStack_a0 = 0xc1000000;
 
@@ -18130,7 +18130,7 @@ void rp_spark_hud_setup(int param_1)
 
     local_f4 = *(undefined4 *)(param_1 + 0x2c4);
 
-    FUN_0042de80(&local_f0,&local_fc,*(undefined4 *)(param_1 + 0xc4),local_44);
+    hud_spark_quad_orient(&local_f0,&local_fc,*(undefined4 *)(param_1 + 0xc4),local_44);
 
     FUN_00518b70(param_1,0);
 
@@ -18172,7 +18172,7 @@ void rp_spark_hud_setup(int param_1)
 
   local_e8 = *(undefined4 *)(param_1 + 0x2c4);
 
-  FUN_0042de80(&local_fc,&local_f0,*(undefined4 *)(param_1 + 0xc4),local_cc);
+  hud_spark_quad_orient(&local_fc,&local_f0,*(undefined4 *)(param_1 + 0xc4),local_cc);
 
   if (iVar2 != 0) {
 

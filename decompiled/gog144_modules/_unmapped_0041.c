@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (79 named) — decompiled, names from PS2 symbols
+ * 100 functions (80 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -6444,8 +6444,8 @@ undefined4 FUN_004181d0(float param_1,int param_2)
 
 }
 
-/* ===== FUN_00418380 @ 0x00418380 ===== */
-undefined4 FUN_00418380(float param_1,int param_2)
+/* ===== base_slot_active_check @ 0x00418380 ===== */
+undefined4 base_slot_active_check(float param_1,int param_2)
 
 
 
@@ -12052,7 +12052,7 @@ LAB_0041f57d:
 
       if (iVar6 != 0) {
 
-        FUN_00420780(puVar10,iVar8);
+        hud_key_command_dispatch(puVar10,iVar8);
 
       }
 
@@ -12108,7 +12108,7 @@ LAB_0041f57d:
 
 LAB_0041f6ee:
 
-    FUN_00420780(puVar10,uVar12);
+    hud_key_command_dispatch(puVar10,uVar12);
 
   }
 
@@ -12134,7 +12134,7 @@ LAB_0041f6ee:
 
   }
 
-  FUN_00420780(puVar10,uVar12);
+  hud_key_command_dispatch(puVar10,uVar12);
 
 LAB_0041f715:
 
