@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (18 named) — decompiled, names from PS2 symbols
+ * 145 functions (27 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -52,12 +52,12 @@ void FUN_00450aa0(void)
 
 }
 
-/* ===== FUN_00450af0 @ 0x00450AF0 ===== */
+/* ===== fps_log_write @ 0x00450AF0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00450af0(void)
+void fps_log_write(void)
 
 
 
@@ -828,10 +828,10 @@ void FUN_00451780(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_004517e0 @ 0x004517E0 ===== */
-void FUN_004517e0(float param_1,float param_2,float param_3,float param_4,float param_5,
+/* ===== hud_render_icons @ 0x004517E0 ===== */
+void hud_render_icons(float param_1,float param_2,float param_3,float param_4,float param_5,
 
-                 float param_6,float param_7,float *param_8,float *param_9,float *param_10)
+                     float param_6,float param_7,float *param_8,float *param_9,float *param_10)
 
 
 
@@ -1395,8 +1395,8 @@ void FUN_00452110(int param_1)
 
 }
 
-/* ===== FUN_00452130 @ 0x00452130 ===== */
-void FUN_00452130(undefined4 param_1)
+/* ===== options_menu_apply @ 0x00452130 ===== */
+void options_menu_apply(undefined4 param_1)
 
 
 
@@ -2252,7 +2252,7 @@ LAB_0045282a:
 
     if (DAT_00632e7c != 0) {
 
-      FUN_004417a0();
+      wredit_spawn_object();
 
       return;
 
@@ -3349,7 +3349,7 @@ void FUN_004544f0(void)
 
   }
 
-  FUN_004417a0();
+  wredit_spawn_object();
 
   sound_play(0x674);
 
@@ -5744,10 +5744,10 @@ void FUN_00456d00(undefined4 param_1,undefined4 param_2,undefined4 param_3,float
 
 }
 
-/* ===== FUN_00456d40 @ 0x00456D40 ===== */
-void FUN_00456d40(undefined4 param_1,float param_2,int param_3,float param_4,float param_5,
+/* ===== vimp_close_damage @ 0x00456D40 ===== */
+void vimp_close_damage(undefined4 param_1,float param_2,int param_3,float param_4,float param_5,
 
-                 float param_6,float param_7,float param_8,float param_9,int param_10)
+                      float param_6,float param_7,float param_8,float param_9,int param_10)
 
 
 
@@ -5868,9 +5868,9 @@ void FUN_00456ee0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   fVar1 = (param_7 - param_8) / (param_5 - param_6);
 
-  FUN_00456d40(param_1,param_2,param_3,param_4,param_5,param_6,param_7,fVar1,
+  vimp_close_damage(param_1,param_2,param_3,param_4,param_5,param_6,param_7,fVar1,
 
-               param_7 - fVar1 * param_5,param_9);
+                    param_7 - fVar1 * param_5,param_9);
 
   return;
 
@@ -6302,8 +6302,8 @@ void options_defplayer(void)
 
 }
 
-/* ===== FUN_00457550 @ 0x00457550 ===== */
-void FUN_00457550(void)
+/* ===== menu_keymap_screen @ 0x00457550 ===== */
+void menu_keymap_screen(void)
 
 
 
@@ -6323,7 +6323,7 @@ void FUN_00457550(void)
 
   if (DAT_0063315c != 0) {
 
-    FUN_004575d0(0xd);
+    mission_load_full(0xd);
 
     return;
 
@@ -6331,7 +6331,7 @@ void FUN_00457550(void)
 
   if (DAT_00633160 != 0) {
 
-    FUN_004575d0(0xc);
+    mission_load_full(0xc);
 
     return;
 
@@ -6339,20 +6339,20 @@ void FUN_00457550(void)
 
   if (DAT_00633248 != 0) {
 
-    FUN_004575d0(0xf);
+    mission_load_full(0xf);
 
     return;
 
   }
 
-  FUN_004575d0(0xb);
+  mission_load_full(0xb);
 
   return;
 
 }
 
-/* ===== FUN_004575d0 @ 0x004575D0 ===== */
-void FUN_004575d0(int param_1)
+/* ===== mission_load_full @ 0x004575D0 ===== */
+void mission_load_full(int param_1)
 
 
 
@@ -10432,10 +10432,12 @@ LAB_0045af46:
 
 }
 
-/* ===== FUN_0045b2b0 @ 0x0045B2B0 ===== */
-void FUN_0045b2b0(undefined4 param_1,int param_2,undefined4 *param_3,int param_4,float param_5,
+/* ===== reaper_spawn_ospec_1 @ 0x0045B2B0 ===== */
+void reaper_spawn_ospec_1
 
-                 float param_6)
+               (undefined4 param_1,int param_2,undefined4 *param_3,int param_4,float param_5,
+
+               float param_6)
 
 
 
@@ -10555,8 +10557,8 @@ void FUN_0045b2b0(undefined4 param_1,int param_2,undefined4 *param_3,int param_4
 
 }
 
-/* ===== FUN_0045b440 @ 0x0045B440 ===== */
-void FUN_0045b440(undefined4 param_1,int param_2,int param_3,float param_4,float param_5)
+/* ===== reaper_spawn_ospec_2 @ 0x0045B440 ===== */
+void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param_4,float param_5)
 
 
 
@@ -12110,8 +12112,8 @@ void FUN_0045c3e0(int param_1)
 
 }
 
-/* ===== FUN_0045d190 @ 0x0045D190 ===== */
-void FUN_0045d190(int param_1,byte param_2,undefined4 param_3)
+/* ===== reaper_ability_playersound4 @ 0x0045D190 ===== */
+void reaper_ability_playersound4(int param_1,byte param_2,undefined4 param_3)
 
 
 

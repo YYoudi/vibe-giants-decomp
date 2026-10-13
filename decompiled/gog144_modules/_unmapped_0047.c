@@ -1152,7 +1152,7 @@ undefined4 FUN_00471780(void)
 
     if (iVar2 != 0) {
 
-      iVar2 = FUN_00446890();
+      iVar2 = flick_objects_reload();
 
       if (iVar2 == 0) {
 
@@ -1323,7 +1323,7 @@ void FUN_00471a60(int param_1)
 
     if ((DAT_00633248 != 0) && (iVar3 = FUN_004469e0(), iVar3 == 0)) {
 
-      FUN_00450af0();
+      fps_log_write();
 
     }
 

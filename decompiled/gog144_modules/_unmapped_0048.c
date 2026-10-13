@@ -2470,7 +2470,7 @@ void FUN_004829d0(void)
 
         if (DAT_0059eed8 == 0) {
 
-          Main_fx_00448170(0,2);
+          alpha_queue_push_3(0,2);
 
         }
 
@@ -2522,7 +2522,7 @@ void FUN_004829d0(void)
 
         if (DAT_0059eed8 == 0) {
 
-          Main_fx_00448170(0,2);
+          alpha_queue_push_3(0,2);
 
         }
 
@@ -3084,7 +3084,7 @@ LAB_00482fd8:
 
 LAB_004831b4:
 
-    FUN_004575d0(uVar6);
+    mission_load_full(uVar6);
 
   }
 
@@ -3516,7 +3516,7 @@ LAB_00483738:
 
   else {
 
-    FUN_004575d0(DAT_0059ee9c + 0xb);
+    mission_load_full(DAT_0059ee9c + 0xb);
 
   }
 
@@ -3892,7 +3892,7 @@ LAB_00483f92:
 
   level_config_load();
 
-  FUN_00457550();
+  menu_keymap_screen();
 
   keymap_slot_load();
 
@@ -6662,7 +6662,7 @@ void mission_load_world2(void)
 
     }
 
-    FUN_00457550();
+    menu_keymap_screen();
 
     return;
 
@@ -7412,7 +7412,7 @@ void mission_menu_load2(void)
 
     _DAT_00632ac8 = DAT_00632ac0;
 
-    FUN_00457550();
+    menu_keymap_screen();
 
     if (DAT_0063315c != 0) {
 
@@ -8692,7 +8692,7 @@ void mission_state_dispatch(int param_1)
 
     _DAT_006331f4 = puVar1[3];
 
-    FUN_00452130(DAT_006331d4);
+    options_menu_apply(DAT_006331d4);
 
     iVar4 = DAT_0063291c;
 
@@ -8842,7 +8842,7 @@ void mission_state_dispatch(int param_1)
 
     _DAT_006331f4 = puVar1[3];
 
-    FUN_00452130(DAT_006331d4);
+    options_menu_apply(DAT_006331d4);
 
 LAB_0048b04f:
 

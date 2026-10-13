@@ -15702,7 +15702,7 @@ void FUN_0051f470(void)
 
       DAT_0063317c = 0;
 
-      FUN_00457550();
+      menu_keymap_screen();
 
       return;
 
@@ -16034,7 +16034,7 @@ LAB_0051f868:
 
   DAT_0063317c = 0;
 
-  FUN_00457550();
+  menu_keymap_screen();
 
   return;
 

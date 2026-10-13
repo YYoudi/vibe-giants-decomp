@@ -255,7 +255,7 @@ void main_menu_004832f0(void)
 
   }
 
-  Main_fx_00447f20(0,2);
+  object_lock_apply(0,2);
 
   if (DAT_00632a88 == 0) {
 

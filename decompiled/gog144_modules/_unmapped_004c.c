@@ -8739,7 +8739,7 @@ undefined4 dev_debug_flags(void)
 
     }
 
-    Main_fx_00448100();
+    alpha_queue_push_2();
 
     FUN_004cd5d0();
 

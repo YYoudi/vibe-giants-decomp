@@ -10976,7 +10976,7 @@ void FUN_004ee670(int param_1)
 
     else {
 
-      FUN_00457550();
+      menu_keymap_screen();
 
       DAT_00561f74 = 0;
 

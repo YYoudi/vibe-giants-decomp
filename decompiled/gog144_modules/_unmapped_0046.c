@@ -868,7 +868,7 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
 LAB_00465986:
 
-  FUN_0045b2b0(param_1,param_2,&local_38,iVar4,param_5,param_6);
+  reaper_spawn_ospec_1(param_1,param_2,&local_38,iVar4,param_5,param_6);
 
   return;
 

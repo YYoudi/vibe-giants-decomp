@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (28 named) — decompiled, names from PS2 symbols
+ * 76 functions (35 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
-/* ===== main/editor_004400b0 @ 0x004400B0 ===== */
-void main_editor_004400b0(void)
+/* ===== wredit_menu_cleanup_1 @ 0x004400B0 ===== */
+void wredit_menu_cleanup_1(void)
 
 
 
@@ -273,8 +273,8 @@ LAB_00440295:
 
 }
 
-/* ===== main/editor_004403a0 @ 0x004403A0 ===== */
-void main_editor_004403a0(void)
+/* ===== wredit_menu_cleanup_2 @ 0x004403A0 ===== */
+void wredit_menu_cleanup_2(void)
 
 
 
@@ -515,8 +515,8 @@ LAB_0044055b:
 
 }
 
-/* ===== main/editor_00440640 @ 0x00440640 ===== */
-void main_editor_00440640(void)
+/* ===== wredit_menu_cleanup_3 @ 0x00440640 ===== */
+void wredit_menu_cleanup_3(void)
 
 
 
@@ -1178,8 +1178,8 @@ void wredit_00441580(undefined4 param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== FUN_004417a0 @ 0x004417A0 ===== */
-void FUN_004417a0(void)
+/* ===== wredit_spawn_object @ 0x004417A0 ===== */
+void wredit_spawn_object(void)
 
 
 
@@ -2409,8 +2409,8 @@ LAB_004436f3:
 
 }
 
-/* ===== FUN_00443910 @ 0x00443910 ===== */
-void FUN_00443910(undefined4 *param_1,int *param_2)
+/* ===== hud_icon_add @ 0x00443910 ===== */
+void hud_icon_add(undefined4 *param_1,int *param_2)
 
 
 
@@ -2440,7 +2440,7 @@ void FUN_00443910(undefined4 *param_1,int *param_2)
 
   else {
 
-    FUN_00443910(local_88,param_2[0x1dd]);
+    hud_icon_add(local_88,param_2[0x1dd]);
 
     if (param_2[0x1de] != 0) {
 
@@ -2782,10 +2782,10 @@ undefined4 FUN_00443c50(int param_1,int param_2,int param_3,int param_4,int para
 
 }
 
-/* ===== FUN_00443d60 @ 0x00443D60 ===== */
+/* ===== hud_icon_for_object @ 0x00443D60 ===== */
 undefined4
 
-FUN_00443d60(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,int param_6)
+hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,int param_6)
 
 
 
@@ -2857,7 +2857,7 @@ FUN_00443d60(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,
 
         iVar6 = iVar5 + 0x294;
 
-        FUN_00443910(iVar6,*(int *)(iVar5 + 0x304));
+        hud_icon_add(iVar6,*(int *)(iVar5 + 0x304));
 
         if (*(int *)(iVar5 + 0x308) != 0) {
 
@@ -3616,7 +3616,7 @@ undefined4 FUN_004444c0(int param_1)
 
         piVar9 = piVar8 + -0x1c;
 
-        FUN_00443910(piVar9,*piVar8);
+        hud_icon_add(piVar9,*piVar8);
 
         if (piVar8[1] != 0) {
 
@@ -3650,7 +3650,7 @@ undefined4 FUN_004444c0(int param_1)
 
   FUN_0044efd0();
 
-  Main_fx_00447f20(1,4);
+  object_lock_apply(1,4);
 
   sound_play_5(0);
 
@@ -3670,7 +3670,7 @@ undefined4 FUN_004444c0(int param_1)
 
         piVar11 = piVar9 + 0xa3;
 
-        FUN_00443910(piVar11,piVar8);
+        hud_icon_add(piVar11,piVar8);
 
         if (piVar9[0x1db] != 0) {
 
@@ -4094,7 +4094,7 @@ LAB_00444d25:
 
   Audio3DTestToneUpdate__Fv_2();
 
-  Main_fx_00448170(0,4);
+  alpha_queue_push_3(0,4);
 
   Audio3DTestToneUpdate__Fv_3();
 
@@ -4631,12 +4631,12 @@ switchD_0044559d_caseD_2:
 
 }
 
-/* ===== FUN_004457d0 @ 0x004457D0 ===== */
+/* ===== hud_icon_timed @ 0x004457D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_004457d0(int param_1,float param_2)
+undefined4 hud_icon_timed(int param_1,float param_2)
 
 
 
@@ -5593,7 +5593,7 @@ LAB_00445a50:
 
     }
 
-    FUN_00443d60(param_1,puVar12[2],iVar10,puVar12[4],puVar12[5],iVar11);
+    hud_icon_for_object(param_1,puVar12[2],iVar10,puVar12[4],puVar12[5],iVar11);
 
     puVar12 = puVar12 + puVar12[1];
 
@@ -5783,7 +5783,7 @@ switchD_00445a5c_caseD_5:
 
     param_1[0x22] = puVar12;
 
-    FUN_004457d0(param_1,uVar7);
+    hud_icon_timed(param_1,uVar7);
 
     if (DAT_00632c0c != 0) {
 
@@ -5858,7 +5858,7 @@ void FUN_00446620(void)
 
       DAT_005585b4 = 1;
 
-      DAT_005585b4 = FUN_00446890();
+      DAT_005585b4 = flick_objects_reload();
 
     }
 
@@ -5911,7 +5911,7 @@ int flk_file_open2(char *param_1)
 
       DAT_005585b4 = 1;
 
-      DAT_005585b4 = FUN_00446890();
+      DAT_005585b4 = flick_objects_reload();
 
     }
 
@@ -6087,12 +6087,12 @@ LAB_00446830:
 
 }
 
-/* ===== FUN_00446890 @ 0x00446890 ===== */
+/* ===== flick_objects_reload @ 0x00446890 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-int FUN_00446890(void)
+int flick_objects_reload(void)
 
 
 
@@ -6150,7 +6150,7 @@ int FUN_00446890(void)
 
           DAT_005585b4 = 1;
 
-          DAT_005585b4 = FUN_00446890();
+          DAT_005585b4 = flick_objects_reload();
 
         }
 
@@ -6651,8 +6651,8 @@ void FUN_00446ce0(undefined4 param_1,char *param_2,float *param_3)
 
 }
 
-/* ===== FUN_00446df0 @ 0x00446DF0 ===== */
-void FUN_00446df0(int param_1,float param_2)
+/* ===== map_chunk_destroy @ 0x00446DF0 ===== */
+void map_chunk_destroy(int param_1,float param_2)
 
 
 
@@ -6836,7 +6836,7 @@ void SetupCameraHail__Fv(void)
 
 {
 
-  FUN_00446df0(DAT_00656464,DAT_006328e0);
+  map_chunk_destroy(DAT_00656464,DAT_006328e0);
 
   return;
 
@@ -7292,8 +7292,8 @@ void fx_weather_fog_setup2
 
 }
 
-/* ===== Main/fx_00447f20 @ 0x00447F20 ===== */
-void Main_fx_00447f20(int param_1,byte param_2)
+/* ===== object_lock_apply @ 0x00447F20 ===== */
+void object_lock_apply(int param_1,byte param_2)
 
 
 
@@ -7535,8 +7535,8 @@ void mission_00447fd0(int param_1,uint param_2)
 
 }
 
-/* ===== Main/fx_00448100 @ 0x00448100 ===== */
-void Main_fx_00448100(void)
+/* ===== alpha_queue_push_2 @ 0x00448100 ===== */
+void alpha_queue_push_2(void)
 
 
 
@@ -7570,8 +7570,8 @@ void Main_fx_00448100(void)
 
 }
 
-/* ===== Main/fx_00448170 @ 0x00448170 ===== */
-void Main_fx_00448170(int param_1,byte param_2)
+/* ===== alpha_queue_push_3 @ 0x00448170 ===== */
+void alpha_queue_push_3(int param_1,byte param_2)
 
 
 
@@ -8388,14 +8388,14 @@ LAB_00449042:
 
 }
 
-/* ===== FUN_00449150 @ 0x00449150 ===== */
+/* ===== fx_alloc_effect @ 0x00449150 ===== */
 /* PS2 candidate: fx_refLock__FP6OBJECTiiiiP7GEO_Mati (conf 0.407) */
 
 
 
-int FUN_00449150(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+int fx_alloc_effect(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 
-                int param_5,undefined4 *param_6)
+                   int param_5,undefined4 *param_6)
 
 
 
@@ -9026,7 +9026,7 @@ undefined4 FUN_00449ce0(void)
 
                 if (-1 < iVar13) {
 
-                  FUN_00449150();
+                  fx_alloc_effect();
 
                 }
 
@@ -9298,7 +9298,7 @@ LAB_0044abc9:
 
                 if (-1 < iVar13) {
 
-                  FUN_00449150();
+                  fx_alloc_effect();
 
                 }
 
@@ -12026,7 +12026,7 @@ joined_r0x0044cc6b:
 
                 if (-1 < iVar13) {
 
-                  FUN_00449150();
+                  fx_alloc_effect();
 
                 }
 

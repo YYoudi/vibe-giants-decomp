@@ -4663,7 +4663,7 @@ void gamespy_host_game(void)
 
        ) {
 
-      FUN_00457550();
+      menu_keymap_screen();
 
       return;
 

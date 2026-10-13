@@ -2502,7 +2502,7 @@ LAB_00492458:
 
         FUN_0045d300(DAT_00632a88);
 
-        FUN_0045d190(DAT_00632a88,DAT_0059f280,1);
+        reaper_ability_playersound4(DAT_00632a88,DAT_0059f280,1);
 
         if (DAT_0059f284 != 0) {
 
@@ -13418,9 +13418,11 @@ void FUN_0049df90(int param_1)
 
     local_4 = (float)fVar2;
 
-    FUN_0045b2b0(param_1,*(undefined4 *)(iVar1 + 0x3c),&local_c,0,
+    reaper_spawn_ospec_1
 
-                 *(undefined4 *)(DAT_00632ed8 + 0x1550),0x3f800000);
+              (param_1,*(undefined4 *)(iVar1 + 0x3c),&local_c,0,
+
+               *(undefined4 *)(DAT_00632ed8 + 0x1550),0x3f800000);
 
     sound_play_obj(0x689,param_1);
 

@@ -230,7 +230,7 @@ void comm_comm_00520490(void)
 
         DAT_005def88 = 0;
 
-        FUN_00457550();
+        menu_keymap_screen();
 
         return;
 
