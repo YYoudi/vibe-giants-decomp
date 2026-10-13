@@ -2478,7 +2478,7 @@ void FUN_004f75c0(void)
 
         ((iVar5 != DAT_006330d0 || (iVar6 != DAT_006330d4)))) || (iVar7 != DAT_006330d8)) {
 
-      FUN_0052f8f0(0);
+      comm_0052b780_user_5(0);
 
     }
 

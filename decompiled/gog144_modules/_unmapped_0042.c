@@ -8731,9 +8731,9 @@ switchD_004260b3_caseD_4:
 
         comm_comm_00529e00();
 
-        FUN_0052f170(0);
+        comm_0052b780_user_1(0);
 
-        FUN_0052f2a0(0);
+        comm_0052b780_user_3(0);
 
         gamespy_statechange3();
 
@@ -8753,9 +8753,9 @@ switchD_004260b3_caseD_4:
 
   comm_comm_00529e00();
 
-  FUN_0052f170(0);
+  comm_0052b780_user_1(0);
 
-  FUN_0052f2a0(0);
+  comm_0052b780_user_3(0);
 
   gamespy_statechange3();
 

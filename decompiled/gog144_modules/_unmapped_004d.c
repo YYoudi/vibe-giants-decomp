@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (4 named) — decompiled, names from PS2 symbols
+ * 39 functions (6 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -3916,8 +3916,8 @@ LAB_004d5d41:
 
 }
 
-/* ===== FUN_004d73b0 @ 0x004D73B0 ===== */
-void FUN_004d73b0(int param_1,undefined4 *param_2,undefined4 param_3)
+/* ===== reaper_spell_sound_1 @ 0x004D73B0 ===== */
+void reaper_spell_sound_1(int param_1,undefined4 *param_2,undefined4 param_3)
 
 
 
@@ -4027,8 +4027,8 @@ void FUN_004d73b0(int param_1,undefined4 *param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004d7500 @ 0x004D7500 ===== */
-void FUN_004d7500(int param_1,int param_2,undefined4 param_3)
+/* ===== reaper_spell_sound_2 @ 0x004D7500 ===== */
+void reaper_spell_sound_2(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -4183,7 +4183,7 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
     uVar4 = FUN_0052e5b0(param_4[1]);
 
-    FUN_004d7500(param_1,uVar4,*puVar3);
+    reaper_spell_sound_2(param_1,uVar4,*puVar3);
 
     return;
 
@@ -4261,7 +4261,7 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
   case 6:
 
-    FUN_004d73b0(param_1,param_4,param_4[3]);
+    reaper_spell_sound_1(param_1,param_4,param_4[3]);
 
     return;
 

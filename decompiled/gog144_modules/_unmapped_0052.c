@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (70 named) — decompiled, names from PS2 symbols
+ * 162 functions (84 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -389,7 +389,7 @@ void gamespy_send_statechange(void)
 
   DAT_00632f30 = (float)DAT_00632f2c * 60.0;
 
-  FUN_0052f2a0(0);
+  comm_0052b780_user_3(0);
 
   if (((DAT_00632f44 != 0) && (DAT_0063317c == 0)) && (DAT_00633184 == 0)) {
 
@@ -436,7 +436,7 @@ void FUN_00520D70(void)
 
   if ((DAT_005def80 == 5) && (DAT_00632f44 == 0)) {
 
-    FUN_0052f870();
+    comm_audio_vol_f();
 
     if (0xd < DAT_00632f08) {
 
@@ -512,7 +512,7 @@ void FUN_00520D70(void)
 
     }
 
-    FUN_0052f170(0);
+    comm_0052b780_user_1(0);
 
     sound_play(0x65a);
 
@@ -546,7 +546,7 @@ LAB_00520ebe:
 
         if (DAT_00632f44 != 0) {
 
-          FUN_0052f240();
+          comm_0052b780_user_2();
 
           Sleep(500);
 
@@ -556,7 +556,7 @@ LAB_00520ebe:
 
         }
 
-        FUN_0052f270();
+        comm_0052b430_user();
 
         Sleep(500);
 
@@ -2417,8 +2417,8 @@ void comm_base_status_menu(int param_1,int param_2)
 
 }
 
-/* ===== FUN_005226b0 @ 0x005226B0 ===== */
-void FUN_005226b0(void)
+/* ===== comm_gametype_pop @ 0x005226B0 ===== */
+void comm_gametype_pop(void)
 
 
 
@@ -3167,7 +3167,7 @@ void comm_game_setup_menu(void)
 
     comm_base_status_menu(DAT_00632ff0,uVar8);
 
-    FUN_005226b0(DAT_00633000);
+    comm_gametype_pop(DAT_00633000);
 
     iVar5 = FUN_004B09C0(DAT_00632ee4);
 
@@ -4696,8 +4696,8 @@ void Audio3DTestToneUpdate__Fv_6(void)
 
 }
 
-/* ===== FUN_00525040 @ 0x00525040 ===== */
-void FUN_00525040(void)
+/* ===== comm_entergame_msg4 @ 0x00525040 ===== */
+void comm_entergame_msg4(void)
 
 
 
@@ -4713,8 +4713,8 @@ void FUN_00525040(void)
 
 }
 
-/* ===== FUN_00525060 @ 0x00525060 ===== */
-void FUN_00525060(void)
+/* ===== dlog_user_525060 @ 0x00525060 ===== */
+void dlog_user_525060(void)
 
 
 
@@ -5010,8 +5010,8 @@ LAB_0052532a:
 
 }
 
-/* ===== FUN_00525340 @ 0x00525340 ===== */
-void FUN_00525340(void)
+/* ===== dlog_user_525340 @ 0x00525340 ===== */
+void dlog_user_525340(void)
 
 
 
@@ -13264,8 +13264,8 @@ void comm_entergame_msg2(int param_1)
 
 }
 
-/* ===== FUN_0052f170 @ 0x0052F170 ===== */
-void FUN_0052f170(int param_1)
+/* ===== comm_0052b780_user_1 @ 0x0052F170 ===== */
+void comm_0052b780_user_1(int param_1)
 
 
 
@@ -13372,8 +13372,8 @@ void FUN_0052f210(void)
 
 }
 
-/* ===== FUN_0052f240 @ 0x0052F240 ===== */
-void FUN_0052f240(void)
+/* ===== comm_0052b780_user_2 @ 0x0052F240 ===== */
+void comm_0052b780_user_2(void)
 
 
 
@@ -13397,8 +13397,8 @@ void FUN_0052f240(void)
 
 }
 
-/* ===== FUN_0052f270 @ 0x0052F270 ===== */
-void FUN_0052f270(void)
+/* ===== comm_0052b430_user @ 0x0052F270 ===== */
+void comm_0052b430_user(void)
 
 
 
@@ -13436,8 +13436,8 @@ void FUN_0052f270(void)
 
 }
 
-/* ===== FUN_0052f2a0 @ 0x0052F2A0 ===== */
-void FUN_0052f2a0(int param_1)
+/* ===== comm_0052b780_user_3 @ 0x0052F2A0 ===== */
+void comm_0052b780_user_3(int param_1)
 
 
 
@@ -13483,8 +13483,8 @@ void FUN_0052f2a0(int param_1)
 
 }
 
-/* ===== FUN_0052f300 @ 0x0052F300 ===== */
-void FUN_0052f300(int param_1)
+/* ===== comm_0052b780_user_4 @ 0x0052F300 ===== */
+void comm_0052b780_user_4(int param_1)
 
 
 
@@ -14086,8 +14086,8 @@ void comm_audio_vol_d(void)
 
 }
 
-/* ===== FUN_0052f870 @ 0x0052F870 ===== */
-void FUN_0052f870(void)
+/* ===== comm_audio_vol_f @ 0x0052F870 ===== */
+void comm_audio_vol_f(void)
 
 
 
@@ -14156,8 +14156,8 @@ void comm_audio_vol_e(void)
 
 }
 
-/* ===== FUN_0052f8f0 @ 0x0052F8F0 ===== */
-void FUN_0052f8f0(int param_1)
+/* ===== comm_0052b780_user_5 @ 0x0052F8F0 ===== */
+void comm_0052b780_user_5(int param_1)
 
 
 
@@ -14382,7 +14382,7 @@ LAB_0052fabe:
 
       if ((iVar4 != 0) && (iVar4 = FUN_0052aa80(iVar5), iVar4 != 0)) {
 
-        FUN_004ea8c0(iVar5);
+        comm_packet_big(iVar5);
 
         FUN_00499280(iVar5);
 
@@ -14456,8 +14456,8 @@ LAB_0052fabe:
 
 }
 
-/* ===== FUN_0052fbf0 @ 0x0052FBF0 ===== */
-void FUN_0052fbf0(int param_1,int param_2)
+/* ===== comm_0052b780_user_6 @ 0x0052FBF0 ===== */
+void comm_0052b780_user_6(int param_1,int param_2)
 
 
 
@@ -14565,8 +14565,8 @@ void FUN_0052fbf0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0052fce0 @ 0x0052FCE0 ===== */
-void FUN_0052fce0(int param_1)
+/* ===== comm_0052b780_user_7 @ 0x0052FCE0 ===== */
+void comm_0052b780_user_7(int param_1)
 
 
 
@@ -14798,8 +14798,8 @@ void FUN_0052fed0(void)
 
 }
 
-/* ===== FUN_0052ff00 @ 0x0052FF00 ===== */
-void FUN_0052ff00(undefined4 *param_1,uint param_2)
+/* ===== comm_0052b780_user_8 @ 0x0052FF00 ===== */
+void comm_0052b780_user_8(undefined4 *param_1,uint param_2)
 
 
 

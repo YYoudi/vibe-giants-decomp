@@ -13357,7 +13357,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
         anim_dump_user();
 
-        main_004ee9c0();
+        shutdown_blood_cleanup();
 
         if (DAT_005ddb80 != 0) {
 
@@ -14331,7 +14331,7 @@ undefined4 startup_options_init(undefined4 param_1,undefined4 param_2)
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8(error_screen_show);
 
-  iVar1 = FUN_004ee930();
+  iVar1 = intro_assets_check();
 
   if (iVar1 == 0) {
 
@@ -15391,7 +15391,7 @@ void FUN_0051f2a0(void)
 
   if (DAT_00632f44 != 0) {
 
-    FUN_0052f240();
+    comm_0052b780_user_2();
 
     Sleep(500);
 
@@ -15399,7 +15399,7 @@ void FUN_0051f2a0(void)
 
   }
 
-  FUN_0052f270();
+  comm_0052b430_user();
 
   Sleep(500);
 
@@ -15461,13 +15461,13 @@ void gamespy_shutdown(void)
 
     if (DAT_00632f44 == 0) {
 
-      FUN_0052f270();
+      comm_0052b430_user();
 
     }
 
     else {
 
-      FUN_0052f240();
+      comm_0052b780_user_2();
 
     }
 

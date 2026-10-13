@@ -3127,7 +3127,7 @@ LAB_005319de:
 
       case '\x10':
 
-        FUN_00525040();
+        comm_entergame_msg4();
 
         DAT_005e0304 = DAT_005e0304 + 1;
 
@@ -3149,7 +3149,7 @@ LAB_005319de:
 
       case '\x13':
 
-        FUN_00525060();
+        dlog_user_525060();
 
       case '\x16':
 
@@ -3673,7 +3673,7 @@ LAB_005319de:
 
       case '/':
 
-        FUN_0052f170(uVar10);
+        comm_0052b780_user_1(uVar10);
 
         FUN_00530180(uVar10);
 
@@ -3997,7 +3997,7 @@ LAB_00532513:
 
         comm_audio_volume_user(local_400,1,0,0);
 
-        FUN_00525340();
+        dlog_user_525340();
 
         FUN_00531260(*(undefined4 *)(pcVar15 + 1));
 
@@ -4285,7 +4285,7 @@ LAB_00532b8b:
 
         DAT_00633250 = (uint)(DAT_00633250 == 0);
 
-        FUN_0052f300(0);
+        comm_0052b780_user_4(0);
 
         if (DAT_00633250 == 0) {
 
@@ -6753,7 +6753,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                 {
 
-                  FUN_0052fbf0(iVar6,1);
+                  comm_0052b780_user_6(iVar6,1);
 
                 }
 
@@ -6765,7 +6765,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               FUN_00425eb0(s_Sending_smartie_counts_0057ffb8);
 
-              FUN_0052f8f0(DAT_005e02e8);
+              comm_0052b780_user_5(DAT_005e02e8);
 
               if (DAT_0059d99c != 0) {
 
@@ -6799,7 +6799,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               uVar8 = FUN_0052ab00(DAT_005e02e8);
 
-              FUN_0052f300(uVar8);
+              comm_0052b780_user_4(uVar8);
 
               uVar8 = FUN_0052ab00(DAT_005e02e8);
 
@@ -12317,7 +12317,7 @@ void FUN_00538010(void)
 
   } while ((int)puVar1 < 0x633018);
 
-  FUN_0052f170(0);
+  comm_0052b780_user_1(0);
 
   _DAT_0057f4bc = 0x41700000;
 

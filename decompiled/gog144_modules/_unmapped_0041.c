@@ -9287,7 +9287,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
     reaper_00530bd0(param_1,0,0,2,0x25,&param_2);
 
-    FUN_0052f8f0(0);
+    comm_0052b780_user_5(0);
 
   }
 
@@ -9684,7 +9684,7 @@ LAB_0041bba6:
 
     reaper_00530bd0(param_1,0,0,2,0x25,&local_c);
 
-    FUN_0052f8f0(0);
+    comm_0052b780_user_5(0);
 
   }
 

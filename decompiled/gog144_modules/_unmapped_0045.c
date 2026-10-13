@@ -9881,7 +9881,7 @@ void FUN_0045a740(undefined4 *param_1,undefined4 param_2,int param_3)
 
   if (DAT_00632f08 != 0) {
 
-    FUN_0052fbf0(iVar2,0);
+    comm_0052b780_user_6(iVar2,0);
 
   }
 
@@ -9960,7 +9960,7 @@ int FUN_0045a820(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   if (iVar4 != 0) {
 
-    FUN_0052fbf0(iVar3,0);
+    comm_0052b780_user_6(iVar3,0);
 
   }
 

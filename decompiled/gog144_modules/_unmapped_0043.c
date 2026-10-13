@@ -1092,7 +1092,7 @@ void FUN_00431a00(undefined4 *param_1,float param_2,float param_3,float param_4,
 
   sound_play_3dpos(uVar5,param_1);
 
-  FUN_0052ff00(&DAT_0059caa0 + iVar4 * 8,0x20);
+  comm_0052b780_user_8(&DAT_0059caa0 + iVar4 * 8,0x20);
 
   return;
 
@@ -1336,7 +1336,7 @@ void FUN_00431b80(void)
 
     sound_play_3dpos(uVar15,&local_c);
 
-    FUN_0052ff00(&DAT_0059caa0 + iVar12 * 8,0x20);
+    comm_0052b780_user_8(&DAT_0059caa0 + iVar12 * 8,0x20);
 
   }
 

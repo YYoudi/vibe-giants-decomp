@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (17 named) — decompiled, names from PS2 symbols
+ * 94 functions (20 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -7827,8 +7827,8 @@ void FUN_004ea810(int param_1)
 
 }
 
-/* ===== FUN_004ea8c0 @ 0x004EA8C0 ===== */
-void FUN_004ea8c0(int param_1)
+/* ===== comm_packet_big @ 0x004EA8C0 ===== */
+void comm_packet_big(int param_1)
 
 
 
@@ -8159,7 +8159,7 @@ LAB_004eac20:
 
     *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) | 1;
 
-    FUN_0052fce0(iVar6);
+    comm_0052b780_user_7(iVar6);
 
     iVar3 = comm_0052ab50(*(uint *)(iVar6 + 0x188) & 0xff);
 
@@ -8425,7 +8425,7 @@ LAB_004eb000:
 
     *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) | 1;
 
-    FUN_0052fce0(iVar6);
+    comm_0052b780_user_7(iVar6);
 
     iVar3 = comm_0052ab50(*(uint *)(iVar6 + 0x188) & 0xff);
 
@@ -8641,7 +8641,7 @@ LAB_004eb3e0:
 
   *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) | 1;
 
-  FUN_0052fce0(iVar6);
+  comm_0052b780_user_7(iVar6);
 
   iVar3 = comm_0052ab50(*(uint *)(iVar6 + 0x188) & 0xff);
 
@@ -11134,8 +11134,8 @@ undefined4 game_files_check(void)
 
 }
 
-/* ===== FUN_004ee930 @ 0x004EE930 ===== */
-undefined4 FUN_004ee930(void)
+/* ===== intro_assets_check @ 0x004EE930 ===== */
+undefined4 intro_assets_check(void)
 
 
 
@@ -11193,8 +11193,8 @@ undefined4 FUN_004ee930(void)
 
 }
 
-/* ===== main_004ee9c0 @ 0x004EE9C0 ===== */
-void main_004ee9c0(void)
+/* ===== shutdown_blood_cleanup @ 0x004EE9C0 ===== */
+void shutdown_blood_cleanup(void)
 
 
 
@@ -11327,8 +11327,8 @@ switchD_004eea65_default:
 
 }
 
-/* ===== FUN_004eebd0 @ 0x004EEBD0 ===== */
-void FUN_004eebd0(undefined4 param_1)
+/* ===== smoke_object_spawn @ 0x004EEBD0 ===== */
+void smoke_object_spawn(undefined4 param_1)
 
 
 
