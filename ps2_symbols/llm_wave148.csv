@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00493c90,FUN_00493c90,,smartie_voice_trigger,0.9,llm-w148,gate+counter pattern caller smartie_lock_to_player
+00496e80,FUN_00496e80,,object_render_flags_calc,0.9,llm-w148,status bits + per-type switch caller allocate_type
+00516310,FUN_00516310,,camera_matrix_from_quat,0.9,llm-w148,writes 5dcf1c camera matrix caller view_matrix_build
+0053dfd0,FUN_0053dfd0,,anm_mat_init_copy,0.9,llm-w148,identity const copy or mat copy callers ANM_NodeGetMat
+00493bd0,FUN_00493bd0,,voice_event_trigger,0.9,llm-w148,sibling gate+0x4a68 counter pattern

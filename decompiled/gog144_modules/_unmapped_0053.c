@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (126 named) — decompiled, names from PS2 symbols
+ * 179 functions (127 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -15689,7 +15689,7 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 
   uVar4 = ANM_NodeGetAffine(param_3,param_4,param_5);
 
-  FUN_0053dfd0(local_cc,uVar4);
+  anm_mat_init_copy(local_cc,uVar4);
 
   puVar3 = local_cc;
 
@@ -15705,7 +15705,7 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 
     uVar4 = ANM_NodeGetAffine(iVar5,param_4,param_5);
 
-    FUN_0053dfd0(puVar1,uVar4);
+    anm_mat_init_copy(puVar1,uVar4);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(puVar2,puVar1,puVar6);
 
@@ -15794,13 +15794,13 @@ int ANM_NodeGetMat(int param_1,undefined4 param_2,int param_3)
 
         if (iVar2 == 0) {
 
-          FUN_0053dfd0(param_1 + 0x24,puVar1);
+          anm_mat_init_copy(param_1 + 0x24,puVar1);
 
         }
 
         else {
 
-          FUN_0053dfd0(local_c4,puVar1);
+          anm_mat_init_copy(local_c4,puVar1);
 
           (*(code *)PTR_crt_matrix_mul_00580c18)(param_1 + 0x24,iVar2 + 0x24,local_c4);
 
@@ -16053,13 +16053,13 @@ LAB_0053cd8a:
 
       if (iVar1 == 0) {
 
-        FUN_0053dfd0(iVar5 + 0x24,puVar3);
+        anm_mat_init_copy(iVar5 + 0x24,puVar3);
 
       }
 
       else {
 
-        FUN_0053dfd0(auStack_344,puVar3);
+        anm_mat_init_copy(auStack_344,puVar3);
 
         (*(code *)PTR_crt_matrix_mul_00580c18)(iVar5 + 0x24,iVar1 + 0x24,auStack_344);
 
@@ -17972,8 +17972,8 @@ void quat_to_matrix__FP4QUATPf(undefined4 *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0053dfd0 @ 0x0053DFD0 ===== */
-void FUN_0053dfd0(undefined4 *param_1,undefined4 *param_2)
+/* ===== anm_mat_init_copy @ 0x0053DFD0 ===== */
+void anm_mat_init_copy(undefined4 *param_1,undefined4 *param_2)
 
 
 

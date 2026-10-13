@@ -4725,14 +4725,14 @@
   "len": 4200
  },
  "0x00493BD0": {
-  "name": "FUN_00493bd0",
-  "named": false,
-  "len": 857
+  "name": "voice_event_trigger",
+  "named": true,
+  "len": 864
  },
  "0x00493C90": {
-  "name": "FUN_00493c90",
-  "named": false,
-  "len": 786
+  "name": "smartie_voice_trigger",
+  "named": true,
+  "len": 795
  },
  "0x00493D60": {
   "name": "player_voice_timer_update",
@@ -4987,17 +4987,17 @@
  "0x00496C00": {
   "name": "object_allocate_type",
   "named": true,
-  "len": 3352
+  "len": 3376
  },
  "0x00496E80": {
-  "name": "FUN_00496e80",
-  "named": false,
-  "len": 1443
+  "name": "object_render_flags_calc",
+  "named": true,
+  "len": 1455
  },
  "0x00497150": {
   "name": "object_allocate_type_end",
   "named": true,
-  "len": 3361
+  "len": 3385
  },
  "0x004973C0": {
   "name": "object_stop_movement_2",
@@ -7637,7 +7637,7 @@
  "0x004F4C00": {
   "name": "smartie_lock_to_player",
   "named": true,
-  "len": 3482
+  "len": 3491
  },
  "0x004F4ED0": {
   "name": "smartie_find_legal_nearby_base__FP6OBJECTT0",
@@ -8612,12 +8612,12 @@
  "0x005162B0": {
   "name": "FUN_005162b0",
   "named": false,
-  "len": 518
+  "len": 529
  },
  "0x00516310": {
-  "name": "FUN_00516310",
-  "named": false,
-  "len": 897
+  "name": "camera_matrix_from_quat",
+  "named": true,
+  "len": 908
  },
  "0x005163E0": {
   "name": "FUN_005163e0",
@@ -8627,7 +8627,7 @@
  "0x00516420": {
   "name": "view_matrix_build",
   "named": true,
-  "len": 1897
+  "len": 1908
  },
  "0x00516630": {
   "name": "XFMatMult",
@@ -10732,17 +10732,17 @@
  "0x0053CA90": {
   "name": "FUN_0053ca90",
   "named": false,
-  "len": 1001
+  "len": 1011
  },
  "0x0053CB50": {
   "name": "ANM_NodeGetMat",
   "named": true,
-  "len": 1310
+  "len": 1320
  },
  "0x0053CC20": {
   "name": "ANM_BlendedNodeGetMat",
   "named": true,
-  "len": 3796
+  "len": 3806
  },
  "0x0053CEC0": {
   "name": "nam_lookup_by_handle",
@@ -10880,9 +10880,9 @@
   "len": 1088
  },
  "0x0053DFD0": {
-  "name": "FUN_0053dfd0",
-  "named": false,
-  "len": 1444
+  "name": "anm_mat_init_copy",
+  "named": true,
+  "len": 1449
  },
  "0x0053E090": {
   "name": "FUN_0053e090",

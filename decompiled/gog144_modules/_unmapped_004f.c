@@ -884,7 +884,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
   if (*(int *)(param_1 + 0x274) == DAT_00632a88) {
 
-    FUN_00493c90(param_1);
+    smartie_voice_trigger(param_1);
 
     if ((param_3 != 0) && (*(int *)(param_1 + 4) == 0xb)) {
 

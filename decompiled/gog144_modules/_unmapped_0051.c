@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (129 named) — decompiled, names from PS2 symbols
+ * 186 functions (130 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5245,18 +5245,18 @@ void FUN_005162b0(undefined4 *param_1)
 
   _DAT_0057c138 = -_DAT_0057c138;
 
-  FUN_00516310();
+  camera_matrix_from_quat();
 
   return;
 
 }
 
-/* ===== FUN_00516310 @ 0x00516310 ===== */
+/* ===== camera_matrix_from_quat @ 0x00516310 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00516310(float *param_1)
+void camera_matrix_from_quat(float *param_1)
 
 
 
@@ -5436,7 +5436,7 @@ void view_matrix_build(float *param_1,float *param_2,float *param_3)
 
        -(_DAT_0057c108 * *param_1 + _DAT_0057c118 * param_1[1] + _DAT_0057c128 * param_1[2]);
 
-  FUN_00516310(&DAT_0057c100);
+  camera_matrix_from_quat(&DAT_0057c100);
 
   return;
 

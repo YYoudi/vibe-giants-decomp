@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (106 named) — decompiled, names from PS2 symbols
+ * 142 functions (109 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -4445,12 +4445,12 @@ switchD_00493a7f_caseD_1a:
 
 }
 
-/* ===== FUN_00493bd0 @ 0x00493BD0 ===== */
+/* ===== voice_event_trigger @ 0x00493BD0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00493bd0(int param_1)
+void voice_event_trigger(int param_1)
 
 
 
@@ -4496,12 +4496,12 @@ void FUN_00493bd0(int param_1)
 
 }
 
-/* ===== FUN_00493c90 @ 0x00493C90 ===== */
+/* ===== smartie_voice_trigger @ 0x00493C90 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00493c90(void)
+void smartie_voice_trigger(void)
 
 
 
@@ -7166,13 +7166,13 @@ LAB_00496d41:
 
   if (param_2 == 0x80000000) {
 
-    param_2 = FUN_00496e80(puVar1);
+    param_2 = object_render_flags_calc(puVar1);
 
   }
 
   if (param_2 == 0x80000000) {
 
-    param_2 = FUN_00496e80(puVar1);
+    param_2 = object_render_flags_calc(puVar1);
 
   }
 
@@ -7264,8 +7264,8 @@ LAB_00496d41:
 
 }
 
-/* ===== FUN_00496e80 @ 0x00496E80 ===== */
-uint FUN_00496e80(int param_1)
+/* ===== object_render_flags_calc @ 0x00496E80 ===== */
+uint object_render_flags_calc(int param_1)
 
 
 
@@ -7544,13 +7544,13 @@ LAB_00497282:
 
   if (param_2 == 0x80000000) {
 
-    param_2 = FUN_00496e80(puVar1);
+    param_2 = object_render_flags_calc(puVar1);
 
   }
 
   if (param_2 == 0x80000000) {
 
-    param_2 = FUN_00496e80(puVar1);
+    param_2 = object_render_flags_calc(puVar1);
 
   }
 

@@ -17,8 +17,12 @@ def main():
     body_len = 520
     args = sys.argv[1:]
     skip = set()
+    skipfile = os.path.join(REPO, "ps2_symbols", "unclaimed_skip.txt")
+    if os.path.exists(skipfile):
+        skip = {norm(x.strip()) for x in open(skipfile, encoding="utf-8")
+                if x.strip() and not x.startswith("#")}
     if "--skip" in args:
-        skip = {norm(x) for x in args[args.index("--skip") + 1].split(",")}
+        skip |= {norm(x) for x in args[args.index("--skip") + 1].split(",")}
     if "--body-len" in args:
         body_len = int(args[args.index("--body-len") + 1])
 
