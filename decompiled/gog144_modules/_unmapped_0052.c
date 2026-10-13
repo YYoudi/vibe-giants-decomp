@@ -14890,7 +14890,7 @@ void FUN_0052ff70(char *param_1)
 
         if (cVar1 == '\x1c') {
 
-          FUN_0041e810();
+          obj_group_spread();
 
           return;
 

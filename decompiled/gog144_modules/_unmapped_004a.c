@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (43 named) — decompiled, names from PS2 symbols
+ * 131 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3484,8 +3484,8 @@ int obj_visibility_test(float param_1)
 
 }
 
-/* ===== FUN_004a4210 @ 0x004A4210 ===== */
-void FUN_004a4210(int param_1,undefined4 param_2)
+/* ===== obj_move_to_target @ 0x004A4210 ===== */
+void obj_move_to_target(int param_1,undefined4 param_2)
 
 
 
@@ -3620,7 +3620,7 @@ void FUN_004a4360(int param_1)
 
   if (*(int *)(param_1 + 0x210) == 0) {
 
-    FUN_004a4210(param_1,&local_c);
+    obj_move_to_target(param_1,&local_c);
 
     fVar2 = *(float *)(param_1 + 0xa8) - *(float *)(param_1 + 0x1d4) * *(float *)(param_1 + 0xc4);
 

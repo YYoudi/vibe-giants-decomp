@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a4210,FUN_004A4210,,obj_move_to_target,0.9,llm-read61,
+0042ed90,FUN_0042ED90,,dlog_quad_transform,0.9,llm-read61,
+0041e810,FUN_0041E810,,obj_group_spread,0.9,llm-read61,
+00482390,FUN_00482390,,menu_audio_setup,0.9,llm-read61,

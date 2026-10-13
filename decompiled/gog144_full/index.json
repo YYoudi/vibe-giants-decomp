@@ -1150,14 +1150,14 @@
   "len": 1096
  },
  "0x0041E810": {
-  "name": "FUN_0041e810",
-  "named": false,
-  "len": 1745
+  "name": "obj_group_spread",
+  "named": true,
+  "len": 1749
  },
  "0x0041E960": {
   "name": "FUN_0041e960",
   "named": false,
-  "len": 3539
+  "len": 3543
  },
  "0x0041EBB0": {
   "name": "FUN_0041ebb0",
@@ -1172,7 +1172,7 @@
  "0x0041EE70": {
   "name": "objtype_setup_kabuto",
   "named": true,
-  "len": 3435
+  "len": 3459
  },
  "0x0041F0F0": {
   "name": "FUN_0041f0f0",
@@ -1930,9 +1930,9 @@
   "len": 1141
  },
  "0x0042ED90": {
-  "name": "FUN_0042ed90",
-  "named": false,
-  "len": 1621
+  "name": "dlog_quad_transform",
+  "named": true,
+  "len": 1628
  },
  "0x0042EEE0": {
   "name": "FUN_0042eee0",
@@ -1947,7 +1947,7 @@
  "0x0042EF80": {
   "name": "dlog_alpha_big_render",
   "named": true,
-  "len": 5622
+  "len": 5629
  },
  "0x0042F310": {
   "name": "dlog_fade_control",
@@ -4330,9 +4330,9 @@
   "len": 212
  },
  "0x00482390": {
-  "name": "FUN_00482390",
-  "named": false,
-  "len": 1195
+  "name": "menu_audio_setup",
+  "named": true,
+  "len": 1199
  },
  "0x004824E0": {
   "name": "game_options_load",
@@ -4342,7 +4342,7 @@
  "0x00482700": {
   "name": "game_options_verify",
   "named": true,
-  "len": 2700
+  "len": 2704
  },
  "0x004829D0": {
   "name": "FUN_004829d0",
@@ -4557,7 +4557,7 @@
  "0x0048D690": {
   "name": "menu_state_dispatch_2",
   "named": true,
-  "len": 1539
+  "len": 1543
  },
  "0x0048DE30": {
   "name": "FUN_0048DE30",
@@ -5367,7 +5367,7 @@
  "0x0049E290": {
   "name": "options_defaults",
   "named": true,
-  "len": 775
+  "len": 779
  },
  "0x0049E350": {
   "name": "cmdline_parse",
@@ -5615,14 +5615,14 @@
   "len": 4107
  },
  "0x004A4210": {
-  "name": "FUN_004a4210",
-  "named": false,
-  "len": 1778
+  "name": "obj_move_to_target",
+  "named": true,
+  "len": 1784
  },
  "0x004A4360": {
   "name": "FUN_004a4360",
   "named": false,
-  "len": 1265
+  "len": 1271
  },
  "0x004A4480": {
   "name": "FUN_004a4480",
@@ -10152,7 +10152,7 @@
  "0x0052FF70": {
   "name": "FUN_0052ff70",
   "named": false,
-  "len": 688
+  "len": 692
  },
  "0x0052FFE0": {
   "name": "FUN_0052ffe0",

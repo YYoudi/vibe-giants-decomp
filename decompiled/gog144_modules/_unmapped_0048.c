@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (34 named) — decompiled, names from PS2 symbols
+ * 74 functions (35 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -1964,8 +1964,8 @@ void FUN_00482350(void)
 
 }
 
-/* ===== FUN_00482390 @ 0x00482390 ===== */
-void FUN_00482390(int param_1)
+/* ===== menu_audio_setup @ 0x00482390 ===== */
+void menu_audio_setup(int param_1)
 
 
 
@@ -2277,7 +2277,7 @@ void game_options_verify(void)
 
   if (local_4 != 1) {
 
-    FUN_00482390(2);
+    menu_audio_setup(2);
 
     return;
 
@@ -10304,7 +10304,7 @@ void menu_state_dispatch_2(void)
 
   case 5:
 
-    FUN_00482390(0);
+    menu_audio_setup(0);
 
     break;
 

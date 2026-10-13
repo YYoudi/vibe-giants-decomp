@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (47 named) — decompiled, names from PS2 symbols
+ * 100 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -10700,8 +10700,8 @@ LAB_0041e779:
 
 }
 
-/* ===== FUN_0041e810 @ 0x0041E810 ===== */
-void FUN_0041e810(float param_1)
+/* ===== obj_group_spread @ 0x0041E810 ===== */
+void obj_group_spread(float param_1)
 
 
 
@@ -11082,7 +11082,7 @@ LAB_0041eb75:
 
     DAT_00657678 = 1;
 
-    FUN_0041e810(iVar1);
+    obj_group_spread(iVar1);
 
   }
 
@@ -11439,7 +11439,7 @@ void objtype_setup_kabuto(int param_1)
 
             *(int *)(iVar2 + 0x274) = param_1;
 
-            FUN_0041e810(param_1);
+            obj_group_spread(param_1);
 
             iVar1 = 7;
 
@@ -11461,7 +11461,7 @@ void objtype_setup_kabuto(int param_1)
 
             *(int *)(iVar2 + 0x274) = param_1;
 
-            FUN_0041e810(param_1);
+            obj_group_spread(param_1);
 
             iVar1 = 4;
 
@@ -11485,7 +11485,7 @@ void objtype_setup_kabuto(int param_1)
 
           *(int *)(iVar2 + 0x274) = param_1;
 
-          FUN_0041e810(param_1);
+          obj_group_spread(param_1);
 
           iVar1 = 0x16;
 
@@ -11521,7 +11521,7 @@ void objtype_setup_kabuto(int param_1)
 
         *(int *)(iVar2 + 0x274) = param_1;
 
-        FUN_0041e810(param_1);
+        obj_group_spread(param_1);
 
         iVar1 = 0x14;
 
@@ -11557,7 +11557,7 @@ void objtype_setup_kabuto(int param_1)
 
       *(int *)(iVar2 + 0x274) = param_1;
 
-      FUN_0041e810(param_1);
+      obj_group_spread(param_1);
 
       iVar1 = 0x11;
 
@@ -11587,7 +11587,7 @@ void objtype_setup_kabuto(int param_1)
 
     FUN_00497510(iVar2);
 
-    FUN_0041e810(param_1);
+    obj_group_spread(param_1);
 
     FUN_0041ebb0(param_1);
 

@@ -13475,7 +13475,7 @@ void options_defaults(void)
 
   if (local_40[0] != '\0') {
 
-    FUN_00482390(2);
+    menu_audio_setup(2);
 
     FUN_00519fe0(local_40);
 
