@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (190 named) — decompiled, names from PS2 symbols
+ * 351 functions (202 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -3900,11 +3900,11 @@ undefined4 editor_0054384c(int param_1)
 
   if ((*(byte *)(param_1 + 0xc) & 0x40) == 0) {
 
-    FUN_00545496(param_1);
+    crt_file_lock(param_1);
 
     uVar1 = __fclose_lk(param_1);
 
-    FUN_005454e8(param_1);
+    crt_file_unlock(param_1);
 
   }
 
@@ -3984,11 +3984,11 @@ undefined4 FUN_005438c9(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   
 
-  FUN_00545496(param_4);
+  crt_file_lock(param_4);
 
   uVar1 = crt_file_read_buf(param_1,param_2,param_3,param_4);
 
-  FUN_005454e8(param_4);
+  crt_file_unlock(param_4);
 
   return uVar1;
 
@@ -4154,7 +4154,7 @@ undefined4 crt_file_open_alloc(undefined4 param_1,undefined4 param_2,undefined4 
 
   uVar2 = _sopen(param_1,param_2,param_3,iVar1);
 
-  FUN_005454e8(iVar1);
+  crt_file_unlock(iVar1);
 
   return uVar2;
 
@@ -4184,11 +4184,11 @@ undefined4 FUN_00543a24(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   
 
-  FUN_00545496(param_4);
+  crt_file_lock(param_4);
 
   uVar1 = crt_file_flush_write(param_1,param_2,param_3,param_4);
 
-  FUN_005454e8(param_4);
+  crt_file_unlock(param_4);
 
   return uVar1;
 
@@ -4340,7 +4340,7 @@ undefined4 crt_file_free_init(undefined4 param_1,undefined4 param_2)
 
   
 
-  FUN_00545496(param_1);
+  crt_file_lock(param_1);
 
   uVar1 = crt_initio(param_1);
 
@@ -4348,7 +4348,7 @@ undefined4 crt_file_free_init(undefined4 param_1,undefined4 param_2)
 
   _freebuf(uVar1,param_1);
 
-  FUN_005454e8(param_1);
+  crt_file_unlock(param_1);
 
   return uVar2;
 
@@ -5160,7 +5160,7 @@ char * crt_scanf_getchar2(char *param_1,int param_2,undefined4 *param_3)
 
   else {
 
-    FUN_00545496(param_3);
+    crt_file_lock(param_3);
 
     pcVar3 = param_1;
 
@@ -5212,7 +5212,7 @@ char * crt_scanf_getchar2(char *param_1,int param_2,undefined4 *param_3)
 
 LAB_00544115:
 
-    FUN_005454e8(param_3);
+    crt_file_unlock(param_3);
 
   }
 
@@ -6290,7 +6290,7 @@ uint crt_flsbuf_ext(uint param_1,int *param_2)
 
   
 
-  FUN_00545496(param_2);
+  crt_file_lock(param_2);
 
   piVar1 = param_2 + 1;
 
@@ -6312,7 +6312,7 @@ uint crt_flsbuf_ext(uint param_1,int *param_2)
 
   }
 
-  FUN_005454e8(param_2);
+  crt_file_unlock(param_2);
 
   return uVar2;
 
@@ -6403,8 +6403,8 @@ LAB_0054485c:
 
 }
 
-/* ===== FUN_005448eb @ 0x005448EB ===== */
-undefined4 FUN_005448eb(HANDLE param_1,uint *param_2)
+/* ===== crt_strcpy_errno @ 0x005448EB ===== */
+undefined4 crt_strcpy_errno(HANDLE param_1,uint *param_2)
 
 
 
@@ -6488,8 +6488,8 @@ LAB_00544925:
 
 }
 
-/* ===== FUN_005449b3 @ 0x005449B3 ===== */
-undefined4 FUN_005449b3(HANDLE param_1)
+/* ===== crt_errno_user @ 0x005449B3 ===== */
+undefined4 crt_errno_user(HANDLE param_1)
 
 
 
@@ -6693,18 +6693,18 @@ void FUN_00544ac0(void)
 
   FUN_00549b78((double)in_ST0);
 
-  FUN_00544add();
+  anm_dump_544add();
 
   return;
 
 }
 
-/* ===== FUN_00544add @ 0x00544ADD ===== */
+/* ===== anm_dump_544add @ 0x00544ADD ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_00544add(int param_1,uint param_2)
+float10 anm_dump_544add(int param_1,uint param_2)
 
 
 
@@ -6948,7 +6948,7 @@ void BinFileCreateWrite_4(undefined4 param_1)
 
 {
 
-  FUN_00544dab(param_1,0,0);
+  crt_lock_vector(param_1,0,0);
 
   return;
 
@@ -6971,18 +6971,18 @@ void __cdecl __exit(int _Code)
 
 {
 
-  FUN_00544dab(_Code,1,0);
+  crt_lock_vector(_Code,1,0);
 
   return;
 
 }
 
-/* ===== FUN_00544dab @ 0x00544DAB ===== */
+/* ===== crt_lock_vector @ 0x00544DAB ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00544dab(UINT param_1,int param_2,int param_3)
+void crt_lock_vector(UINT param_1,int param_2,int param_3)
 
 
 
@@ -7101,10 +7101,10 @@ void FUN_00544e62(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00544e7c @ 0x00544E7C ===== */
-HANDLE FUN_00544e7c(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 param_3,
+/* ===== crt_vobuf_alloc @ 0x00544E7C ===== */
+HANDLE crt_vobuf_alloc(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 param_3,
 
-                   undefined4 param_4,DWORD param_5,LPDWORD param_6)
+                      undefined4 param_4,DWORD param_5,LPDWORD param_6)
 
 
 
@@ -7211,7 +7211,7 @@ undefined4 FUN_00544ee7(DWORD *param_1)
 
   uVar3 = (*(code *)param_1[0x12])(param_1[0x13]);
 
-  FUN_00544f83(uVar3);
+  crt_ptd_free_alloc(uVar3);
 
   ExceptionList = local_14;
 
@@ -7219,8 +7219,8 @@ undefined4 FUN_00544ee7(DWORD *param_1)
 
 }
 
-/* ===== FUN_00544f83 @ 0x00544F83 ===== */
-void FUN_00544f83(DWORD param_1)
+/* ===== crt_ptd_free_alloc @ 0x00544F83 ===== */
+void crt_ptd_free_alloc(DWORD param_1)
 
 
 
@@ -7259,14 +7259,14 @@ void FUN_00544fb5(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
 
-  FUN_00544fcc(param_1,param_2,param_3,0);
+  crt_errno_big(param_1,param_2,param_3,0);
 
   return;
 
 }
 
-/* ===== FUN_00544fcc @ 0x00544FCC ===== */
-uint FUN_00544fcc(byte *param_1,int *param_2,uint param_3,uint param_4)
+/* ===== crt_errno_big @ 0x00544FCC ===== */
+uint crt_errno_big(byte *param_1,int *param_2,uint param_3,uint param_4)
 
 
 
@@ -7777,8 +7777,8 @@ LAB_00545293:
 
 }
 
-/* ===== FUN_005452a0 @ 0x005452A0 ===== */
-int FUN_005452a0(int param_1)
+/* ===== crt_lock_5452a0 @ 0x005452A0 ===== */
+int crt_lock_5452a0(int param_1)
 
 
 
@@ -7931,8 +7931,8 @@ uint FUN_0054530f(uint param_1)
 
 }
 
-/* ===== FUN_00545496 @ 0x00545496 ===== */
-void FUN_00545496(uint param_1)
+/* ===== crt_file_lock @ 0x00545496 ===== */
+void crt_file_lock(uint param_1)
 
 
 
@@ -7952,8 +7952,8 @@ void FUN_00545496(uint param_1)
 
 }
 
-/* ===== FUN_005454c5 @ 0x005454C5 ===== */
-void FUN_005454c5(int param_1,int param_2)
+/* ===== crt_file_lock_2 @ 0x005454C5 ===== */
+void crt_file_lock_2(int param_1,int param_2)
 
 
 
@@ -7973,8 +7973,8 @@ void FUN_005454c5(int param_1,int param_2)
 
 }
 
-/* ===== FUN_005454e8 @ 0x005454E8 ===== */
-void FUN_005454e8(uint param_1)
+/* ===== crt_file_unlock @ 0x005454E8 ===== */
+void crt_file_unlock(uint param_1)
 
 
 
@@ -7994,8 +7994,8 @@ void FUN_005454e8(uint param_1)
 
 }
 
-/* ===== FUN_00545517 @ 0x00545517 ===== */
-void FUN_00545517(int param_1,int param_2)
+/* ===== crt_file_unlock_2 @ 0x00545517 ===== */
+void crt_file_unlock_2(int param_1,int param_2)
 
 
 
@@ -8648,7 +8648,7 @@ undefined4 FUN_005458a9(undefined4 param_1)
 
   
 
-  FUN_005454c5(1,&DAT_00581120);
+  crt_file_lock_2(1,&DAT_00581120);
 
   uVar1 = crt_initio(&DAT_00581120);
 
@@ -8656,7 +8656,7 @@ undefined4 FUN_005458a9(undefined4 param_1)
 
   _freebuf(uVar1,&DAT_00581120);
 
-  FUN_00545517(1,&DAT_00581120);
+  crt_file_unlock_2(1,&DAT_00581120);
 
   return uVar2;
 
@@ -8689,7 +8689,7 @@ undefined4 FUN_005458ea(FILE *param_1,int *param_2,uint param_3,uint param_4)
 
   param_4 = param_4 & 0xfffffffe;
 
-  FUN_00545496(param_1);
+  crt_file_lock(param_1);
 
   _flush(param_1);
 
@@ -8745,7 +8745,7 @@ undefined4 FUN_005458ea(FILE *param_1,int *param_2,uint param_3,uint param_4)
 
 LAB_0054598a:
 
-  FUN_005454e8(param_1);
+  crt_file_unlock(param_1);
 
   return local_8;
 
@@ -9232,7 +9232,7 @@ void FUN_00545d44(char *param_1)
 
   
 
-  iVar3 = FUN_005452a0((int)*param_1);
+  iVar3 = crt_lock_5452a0((int)*param_1);
 
   if (iVar3 != 0x65) {
 
@@ -10832,11 +10832,11 @@ undefined4 fclose(int param_1)
 
   }
 
-  FUN_00545496(param_1);
+  crt_file_lock(param_1);
 
   uVar1 = _fclose_lk(param_1);
 
-  FUN_005454e8(param_1);
+  crt_file_unlock(param_1);
 
   return uVar1;
 
@@ -10961,7 +10961,7 @@ int _fcloseall(int param_1)
 
       if ((iVar1 != 0) && ((*(byte *)(iVar1 + 0xc) & 0x83) != 0)) {
 
-        FUN_005454c5(iVar3,iVar1);
+        crt_file_lock_2(iVar3,iVar1);
 
         iVar1 = *(int *)(DAT_006579f4 + iVar3 * 4);
 
@@ -10993,7 +10993,7 @@ int _fcloseall(int param_1)
 
         }
 
-        FUN_00545517(iVar3,*(undefined4 *)(DAT_006579f4 + iVar3 * 4));
+        crt_file_unlock_2(iVar3,*(undefined4 *)(DAT_006579f4 + iVar3 * 4));
 
       }
 
@@ -14116,7 +14116,7 @@ LAB_005481e9:
 
       if ((*(byte *)(iVar1 + 0xc) & 0x83) == 0) {
 
-        FUN_005454c5(iVar3,iVar1);
+        crt_file_lock_2(iVar3,iVar1);
 
         iVar1 = *(int *)(DAT_006579f4 + iVar3 * 4);
 
@@ -14128,7 +14128,7 @@ LAB_005481e9:
 
         }
 
-        FUN_00545517(iVar3,iVar1);
+        crt_file_unlock_2(iVar3,iVar1);
 
       }
 

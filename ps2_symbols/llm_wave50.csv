@@ -1,0 +1,13 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+005448eb,FUN_005448EB,,crt_strcpy_errno,0.9,llm-read33,
+005449b3,FUN_005449B3,,crt_errno_user,0.9,llm-read33,
+00544add,FUN_00544ADD,,anm_dump_544add,0.9,llm-read33,
+00544dab,FUN_00544DAB,,crt_lock_vector,0.9,llm-read33,
+00544e7c,FUN_00544E7C,,crt_vobuf_alloc,0.9,llm-read33,
+00544f83,FUN_00544F83,,crt_ptd_free_alloc,0.9,llm-read33,
+00544fcc,FUN_00544FCC,,crt_errno_big,0.9,llm-read33,
+005452a0,FUN_005452A0,,crt_lock_5452a0,0.9,llm-read33,
+00545496,FUN_00545496,,crt_file_lock,0.9,llm-read33,
+005454c5,FUN_005454C5,,crt_file_lock_2,0.9,llm-read33,
+005454e8,FUN_005454E8,,crt_file_unlock,0.9,llm-read33,
+00545517,FUN_00545517,,crt_file_unlock_2,0.9,llm-read33,

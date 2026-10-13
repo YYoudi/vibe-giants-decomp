@@ -88,11 +88,11 @@ void main_scrnshot_004ebae0(void)
 
       }
 
-      iVar3 = FUN_005448eb(iVar2,auStack_118);
+      iVar3 = crt_strcpy_errno(iVar2,auStack_118);
 
     } while (iVar3 == 0);
 
-    FUN_005449b3(iVar2);
+    crt_errno_user(iVar2);
 
   }
 

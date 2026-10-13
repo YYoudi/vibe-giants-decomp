@@ -9277,7 +9277,7 @@ int FUN_00536050(char *param_1)
 
   
 
-  if ((*param_1 == '0') && (iVar2 = FUN_005452a0((int)param_1[1]), iVar2 == 0x78)) {
+  if ((*param_1 == '0') && (iVar2 = crt_lock_5452a0((int)param_1[1]), iVar2 == 0x78)) {
 
     param_1 = param_1 + 2;
 
@@ -9287,15 +9287,15 @@ int FUN_00536050(char *param_1)
 
   while (((cVar1 = *param_1, '/' < cVar1 && (cVar1 < ':')) ||
 
-         ((iVar3 = FUN_005452a0((int)cVar1), 0x60 < iVar3 &&
+         ((iVar3 = crt_lock_5452a0((int)cVar1), 0x60 < iVar3 &&
 
-          (iVar3 = FUN_005452a0((int)*param_1), iVar3 < 0x67))))) {
+          (iVar3 = crt_lock_5452a0((int)*param_1), iVar3 < 0x67))))) {
 
     cVar1 = *param_1;
 
     if ((cVar1 < '0') || ('9' < cVar1)) {
 
-      iVar3 = FUN_005452a0((int)cVar1);
+      iVar3 = crt_lock_5452a0((int)cVar1);
 
       aiStack_50[iVar2] = iVar3 + -0x57;
 

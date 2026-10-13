@@ -10678,7 +10678,7 @@ void FUN_0051ad50(undefined4 param_1)
 
 {
 
-  FUN_00544e7c(0,0,&LAB_0051ad70,param_1,0,&param_1);
+  crt_vobuf_alloc(0,0,&LAB_0051ad70,param_1,0,&param_1);
 
   return;
 
