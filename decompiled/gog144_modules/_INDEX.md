@@ -2,7 +2,7 @@
 
 | module | functions | named | file |
 |---|---|---|---|
-| _unmapped_0054 | 351 | 269 | _unmapped_0054.c |
+| _unmapped_0054 | 351 | 271 | _unmapped_0054.c |
 | _unmapped_0051 | 186 | 135 | _unmapped_0051.c |
 | _unmapped_0053 | 179 | 134 | _unmapped_0053.c |
 | _unmapped_0052 | 162 | 106 | _unmapped_0052.c |
@@ -10,11 +10,11 @@
 | _unmapped_0049 | 142 | 109 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 99 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 110 | _unmapped_0042.c |
-| _unmapped_0040 | 105 | 79 | _unmapped_0040.c |
+| _unmapped_0040 | 105 | 80 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 81 | _unmapped_0041.c |
 | _unmapped_004e | 94 | 74 | _unmapped_004e.c |
-| _unmapped_004b | 90 | 70 | _unmapped_004b.c |
-| _unmapped_0050 | 87 | 62 | _unmapped_0050.c |
+| _unmapped_004b | 90 | 71 | _unmapped_004b.c |
+| _unmapped_0050 | 87 | 63 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 67 | _unmapped_0044.c |
 | _unmapped_0043 | 74 | 63 | _unmapped_0043.c |
 | _unmapped_0048 | 74 | 53 | _unmapped_0048.c |

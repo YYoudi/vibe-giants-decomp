@@ -602,7 +602,7 @@ LAB_004195d2:
 
       if (iVar9 != 0) {
 
-        FUN_004b65a0(iVar8,fVar4);
+        base_slot_state_check(iVar8,fVar4);
 
       }
 
@@ -610,7 +610,7 @@ LAB_004195d2:
 
     else {
 
-      FUN_0040a550(iVar8,fVar4);
+      base_slot_state_check_2(iVar8,fVar4);
 
     }
 

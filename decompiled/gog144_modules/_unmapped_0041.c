@@ -5240,7 +5240,7 @@ void reaper_lock_short(int param_1,int param_2,int param_3,int param_4)
 
     if (iVar1 != 0) {
 
-      FUN_004b65a0(param_3,param_2);
+      base_slot_state_check(param_3,param_2);
 
     }
 
@@ -5248,7 +5248,7 @@ void reaper_lock_short(int param_1,int param_2,int param_3,int param_4)
 
   else {
 
-    FUN_0040a550(param_3,param_2);
+    base_slot_state_check_2(param_3,param_2);
 
   }
 
@@ -9469,7 +9469,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
           if (iVar5 != 0) {
 
-            FUN_004b65a0(iVar4,iVar2);
+            base_slot_state_check(iVar4,iVar2);
 
           }
 
@@ -9477,7 +9477,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
         else {
 
-          FUN_0040a550(iVar4,iVar2);
+          base_slot_state_check_2(iVar4,iVar2);
 
         }
 
@@ -11008,7 +11008,7 @@ LAB_0041eb17:
 
 LAB_0041eb6c:
 
-              FUN_004b65a0(iVar2,iVar5);
+              base_slot_state_check(iVar2,iVar5);
 
             }
 
@@ -11016,7 +11016,7 @@ LAB_0041eb6c:
 
           else {
 
-            FUN_0040a550(iVar2,iVar5);
+            base_slot_state_check_2(iVar2,iVar5);
 
           }
 
@@ -11078,7 +11078,7 @@ LAB_0041eae1:
 
           }
 
-          FUN_0040a550(iVar2,iVar3);
+          base_slot_state_check_2(iVar2,iVar3);
 
         }
 
@@ -11274,7 +11274,7 @@ LAB_0041ecb2:
 
       if (iVar6 != 0) {
 
-        FUN_004b65a0(iVar3,param_2);
+        base_slot_state_check(iVar3,param_2);
 
       }
 
@@ -11282,7 +11282,7 @@ LAB_0041ecb2:
 
     else {
 
-      FUN_0040a550(iVar3,param_2);
+      base_slot_state_check_2(iVar3,param_2);
 
     }
 

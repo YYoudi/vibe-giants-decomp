@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b65a0,FUN_004b65a0,,base_slot_state_check,0.9,llm-w158,twin pair slot 0x1c state+dist 5 named callers
+0040a550,FUN_0040a550,,base_slot_state_check_2,0.9,llm-w158,structural twin
+0050ad20,FUN_0050ad20,,math_sincos_table_init,0.9,llm-w158,fills 16K table 2pi/16384 caller intro_assets_check
+0054d146,FUN_0054d146,,crt_bitarray_set,0.9,llm-w158,0x20-bit word set caller list_reset
+0054d078,FUN_0054d078,,crt_bitarray_test,0.9,llm-w158,bit test twin

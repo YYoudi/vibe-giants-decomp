@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (269 named) — decompiled, names from PS2 symbols
+ * 351 functions (271 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -22302,8 +22302,8 @@ void FUN_0054d022(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0054d078 @ 0x0054D078 ===== */
-undefined4 FUN_0054d078(int param_1,int param_2)
+/* ===== crt_bitarray_test @ 0x0054D078 ===== */
+undefined4 crt_bitarray_test(int param_1,int param_2)
 
 
 
@@ -22440,8 +22440,8 @@ undefined4 FUN_0054d12b(int *param_1)
 
 }
 
-/* ===== FUN_0054d146 @ 0x0054D146 ===== */
-void FUN_0054d146(uint *param_1,uint param_2)
+/* ===== crt_bitarray_set @ 0x0054D146 ===== */
+void crt_bitarray_set(uint *param_1,uint param_2)
 
 
 
@@ -22580,7 +22580,7 @@ LAB_0054d2ff:
 
     FUN_0054d104(local_1c,&local_10);
 
-    iVar2 = FUN_0054d078(&local_10,param_3[2]);
+    iVar2 = crt_bitarray_test(&local_10,param_3[2]);
 
     if (iVar2 != 0) {
 
@@ -22606,7 +22606,7 @@ LAB_0054d2ff:
 
           local_10 = local_10 | 0x80000000;
 
-          FUN_0054d146(&local_10,param_3[3]);
+          crt_bitarray_set(&local_10,param_3[3]);
 
           iVar4 = param_3[5] + *param_3;
 
@@ -22620,7 +22620,7 @@ LAB_0054d2ff:
 
         iVar4 = param_3[5] + iVar4;
 
-        FUN_0054d146(&local_10,param_3[3]);
+        crt_bitarray_set(&local_10,param_3[3]);
 
         goto LAB_0054d2ff;
 
@@ -22628,11 +22628,11 @@ LAB_0054d2ff:
 
       FUN_0054d104(&local_10,local_1c);
 
-      FUN_0054d146(&local_10,iVar2 - iVar4);
+      crt_bitarray_set(&local_10,iVar2 - iVar4);
 
-      FUN_0054d078(&local_10,param_3[2]);
+      crt_bitarray_test(&local_10,param_3[2]);
 
-      FUN_0054d146(&local_10,param_3[3] + 1);
+      crt_bitarray_set(&local_10,param_3[3] + 1);
 
     }
 

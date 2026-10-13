@@ -11155,7 +11155,7 @@ undefined4 intro_assets_check(void)
 
   rndstart();
 
-  FUN_0050ad20();
+  math_sincos_table_init();
 
   DAT_006330e4 = 0;
 

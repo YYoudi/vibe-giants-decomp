@@ -325,9 +325,9 @@
   "len": 2595
  },
  "0x0040A550": {
-  "name": "FUN_0040a550",
-  "named": false,
-  "len": 770
+  "name": "base_slot_state_check_2",
+  "named": true,
+  "len": 781
  },
  "0x0040A5E0": {
   "name": "object_spawn_class4",
@@ -842,7 +842,7 @@
  "0x00416990": {
   "name": "reaper_lock_short",
   "named": true,
-  "len": 726
+  "len": 746
  },
  "0x00416A30": {
   "name": "FUN_00416a30",
@@ -1017,7 +1017,7 @@
  "0x00418F00": {
   "name": "main_commonbase_00418f00",
   "named": true,
-  "len": 18453
+  "len": 18473
  },
  "0x0041A090": {
   "name": "reaper_state_check_a",
@@ -1122,7 +1122,7 @@
  "0x0041B660": {
   "name": "fxb_build_select",
   "named": true,
-  "len": 5003
+  "len": 5023
  },
  "0x0041BA60": {
   "name": "reaper_big_update",
@@ -1157,7 +1157,7 @@
  "0x0041E960": {
   "name": "repair_logic",
   "named": true,
-  "len": 3802
+  "len": 3833
  },
  "0x0041EBB0": {
   "name": "FUN_0041ebb0",
@@ -1167,7 +1167,7 @@
  "0x0041EBF0": {
   "name": "objtype_setup_rpman",
   "named": true,
-  "len": 3768
+  "len": 3788
  },
  "0x0041EE70": {
   "name": "objtype_setup_kabuto",
@@ -6235,9 +6235,9 @@
   "len": 3239
  },
  "0x004B65A0": {
-  "name": "FUN_004b65a0",
-  "named": false,
-  "len": 772
+  "name": "base_slot_state_check",
+  "named": true,
+  "len": 781
  },
  "0x004B6630": {
   "name": "object_spawn_4b",
@@ -7542,7 +7542,7 @@
  "0x004EE930": {
   "name": "intro_assets_check",
   "named": true,
-  "len": 603
+  "len": 613
  },
  "0x004EE9C0": {
   "name": "shutdown_blood_cleanup",
@@ -8275,9 +8275,9 @@
   "len": 1297
  },
  "0x0050AD20": {
-  "name": "FUN_0050ad20",
-  "named": false,
-  "len": 765
+  "name": "math_sincos_table_init",
+  "named": true,
+  "len": 775
  },
  "0x0050ADB0": {
   "name": "FUN_0050adb0",
@@ -12535,9 +12535,9 @@
   "len": 568
  },
  "0x0054D078": {
-  "name": "FUN_0054d078",
-  "named": false,
-  "len": 743
+  "name": "crt_bitarray_test",
+  "named": true,
+  "len": 748
  },
  "0x0054D104": {
   "name": "FUN_0054d104",
@@ -12555,14 +12555,14 @@
   "len": 230
  },
  "0x0054D146": {
-  "name": "FUN_0054d146",
-  "named": false,
-  "len": 869
+  "name": "crt_bitarray_set",
+  "named": true,
+  "len": 873
  },
  "0x0054D1D3": {
   "name": "list_reset_54",
   "named": true,
-  "len": 1902
+  "len": 1928
  },
  "0x0054D33F": {
   "name": "BinFileSeek_3",
