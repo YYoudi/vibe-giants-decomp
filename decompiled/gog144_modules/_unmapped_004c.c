@@ -2039,7 +2039,7 @@ void FUN_004c1ee0(int param_1)
 
 LAB_004c1f61:
 
-  fx_reaper_bubble(*(undefined4 *)(iVar1 + 0xea4),param_1);
+  fx_reaper_bubble_create(*(undefined4 *)(iVar1 + 0xea4),param_1);
 
 LAB_004c1f71:
 
@@ -8757,7 +8757,7 @@ undefined4 dev_debug_flags(void)
 
         if ((-1 < *(char *)(puVar2[3] + 0xd8)) && (iVar5 = FUN_004a6160(), iVar5 != 0)) {
 
-          FUN_004ff6a0();
+          status_update_entry();
 
         }
 
@@ -8767,7 +8767,7 @@ undefined4 dev_debug_flags(void)
 
         if ((-1 < *(char *)(puVar3[3] + 0xd8)) && (iVar5 = FUN_004a6180(), iVar5 != 0)) {
 
-          FUN_004ff6a0();
+          status_update_entry();
 
         }
 
@@ -8777,7 +8777,7 @@ undefined4 dev_debug_flags(void)
 
         if ((-1 < *(char *)(puVar2[3] + 0xd8)) && (iVar5 = FUN_004a61a0(), iVar5 != 0)) {
 
-          FUN_004ff6a0();
+          status_update_entry();
 
         }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (9 named) — decompiled, names from PS2 symbols
+ * 48 functions (10 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -1575,12 +1575,12 @@ void FUN_004f5630(int param_1)
 
 }
 
-/* ===== fx_reaper_bubble @ 0x004F5710 ===== */
+/* ===== fx_reaper_bubble_create @ 0x004F5710 ===== */
 /* PS2 candidate: smartie_reaper_grab (conf 0.374) */
 
 
 
-void fx_reaper_bubble(int param_1,undefined4 param_2)
+void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
 
 
@@ -5520,12 +5520,12 @@ void FUN_004ff470(void)
 
 }
 
-/* ===== FUN_004ff6a0 @ 0x004FF6A0 ===== */
+/* ===== status_update_entry @ 0x004FF6A0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004ff6a0(float param_1)
+void status_update_entry(float param_1)
 
 
 

@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "FUN_004b7450",
   "named": false,
-  "len": 24254
+  "len": 24261
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -6642,7 +6642,7 @@
  "0x004C1EE0": {
   "name": "FUN_004c1ee0",
   "named": false,
-  "len": 913
+  "len": 920
  },
  "0x004C1F80": {
   "name": "FUN_004c1f80",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14072
+  "len": 14093
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7665,9 +7665,9 @@
   "len": 1244
  },
  "0x004F5710": {
-  "name": "fx_reaper_bubble",
+  "name": "fx_reaper_bubble_create",
   "named": true,
-  "len": 3287
+  "len": 3294
  },
  "0x004F5950": {
   "name": "FUN_004f5950",
@@ -7830,9 +7830,9 @@
   "len": 373
  },
  "0x004FF6A0": {
-  "name": "FUN_004ff6a0",
-  "named": false,
-  "len": 3788
+  "name": "status_update_entry",
+  "named": true,
+  "len": 3795
  },
  "0x004FFE50": {
   "name": "FUN_004ffe50",

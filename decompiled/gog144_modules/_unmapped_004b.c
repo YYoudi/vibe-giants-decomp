@@ -4710,7 +4710,7 @@ LAB_004b8187:
 
       }
 
-      fx_reaper_bubble(*(undefined4 *)(iVar7 + 0xea4),param_1);
+      fx_reaper_bubble_create(*(undefined4 *)(iVar7 + 0xea4),param_1);
 
     }
 
