@@ -1912,7 +1912,7 @@
  "0x0042E690": {
   "name": "rp_spark_hud_setup",
   "named": true,
-  "len": 3738
+  "len": 3742
  },
  "0x0042EA60": {
   "name": "texture_object_debug_dump",
@@ -1940,9 +1940,9 @@
   "len": 470
  },
  "0x0042EF40": {
-  "name": "FUN_0042ef40",
-  "named": false,
-  "len": 462
+  "name": "rpman_point_add",
+  "named": true,
+  "len": 465
  },
  "0x0042EF80": {
   "name": "dlog_alpha_big_render",
@@ -2200,9 +2200,9 @@
   "len": 142
  },
  "0x00436170": {
-  "name": "FUN_00436170",
-  "named": false,
-  "len": 252
+  "name": "iface_set2_56544",
+  "named": true,
+  "len": 256
  },
  "0x00436190": {
   "name": "iface_set_56544",
@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "rpman_init__FP6OBJECT",
   "named": true,
-  "len": 43293
+  "len": 43296
  },
  "0x00437FA0": {
   "name": "editor_cursor_pick_point",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19245
+  "len": 19247
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -2817,12 +2817,12 @@
  "0x00449CE0": {
   "name": "fx_processOpCodes",
   "named": true,
-  "len": 67527
+  "len": 67539
  },
  "0x0044EAD0": {
-  "name": "FUN_0044ead0",
-  "named": false,
-  "len": 277
+  "name": "fx_read_cstring",
+  "named": true,
+  "len": 280
  },
  "0x0044EAF0": {
   "name": "fx_goto_processing",
@@ -2860,9 +2860,9 @@
   "len": 977
  },
  "0x00450C90": {
-  "name": "FUN_00450c90",
-  "named": false,
-  "len": 212
+  "name": "render_fps_get",
+  "named": true,
+  "len": 214
  },
  "0x00450CB0": {
   "name": "AudioGetMasterVolume__Fv_7",
@@ -2965,9 +2965,9 @@
   "len": 100
  },
  "0x00452070": {
-  "name": "FUN_00452070",
-  "named": false,
-  "len": 95
+  "name": "option_set_633190",
+  "named": true,
+  "len": 100
  },
  "0x00452090": {
   "name": "FUN_00452090",
@@ -2975,14 +2975,14 @@
   "len": 221
  },
  "0x004520B0": {
-  "name": "FUN_004520b0",
-  "named": false,
-  "len": 95
+  "name": "option_set_63319c",
+  "named": true,
+  "len": 100
  },
  "0x004520D0": {
-  "name": "FUN_004520d0",
-  "named": false,
-  "len": 95
+  "name": "option_set_6331b0",
+  "named": true,
+  "len": 100
  },
  "0x004520F0": {
   "name": "option_set_6331b4",
@@ -4332,7 +4332,7 @@
  "0x00482390": {
   "name": "menu_audio_setup",
   "named": true,
-  "len": 1233
+  "len": 1258
  },
  "0x004824E0": {
   "name": "game_options_load",

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (72 named) — decompiled, names from PS2 symbols
+ * 76 functions (73 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -4222,7 +4222,7 @@ LAB_004451e2:
 
   if (DAT_00633248 != 0) {
 
-    fVar14 = (float10)FUN_00450c90();
+    fVar14 = (float10)render_fps_get();
 
     crt_sprintf(auStack_148,s_Framerate_Average___3_2f_005587b8,(double)fVar14);
 
@@ -9030,7 +9030,7 @@ undefined4 fx_processOpCodes(void)
 
             do {
 
-              FUN_0044ead0();
+              fx_read_cstring();
 
               iVar13 = *piStack0000000c;
 
@@ -9302,7 +9302,7 @@ LAB_0044abc9:
 
             do {
 
-              FUN_0044ead0();
+              fx_read_cstring();
 
               iVar13 = *piStack0000000c;
 
@@ -11382,7 +11382,7 @@ joined_r0x0044cc6b:
 
             do {
 
-              FUN_0044ead0();
+              fx_read_cstring();
 
               iVar12 = *piStack0000000c;
 
@@ -12030,7 +12030,7 @@ joined_r0x0044cc6b:
 
             do {
 
-              FUN_0044ead0();
+              fx_read_cstring();
 
               iVar13 = *piStack0000000c;
 
@@ -12824,8 +12824,8 @@ LAB_0044e828:
 
 }
 
-/* ===== FUN_0044ead0 @ 0x0044EAD0 ===== */
-void FUN_0044ead0(undefined4 *param_1,undefined4 *param_2)
+/* ===== fx_read_cstring @ 0x0044EAD0 ===== */
+void fx_read_cstring(undefined4 *param_1,undefined4 *param_2)
 
 
 

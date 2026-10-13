@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004520d0,FUN_004520d0,,option_set_6331b0,0.9,llm-w205,raw option setters menu_audio trio
+004520b0,FUN_004520b0,,option_set_63319c,0.9,llm-w205
+00452070,FUN_00452070,,option_set_633190,0.9,llm-w205
+00450c90,FUN_00450c90,,render_fps_get,0.9,llm-w205,0059ce7c frames / elapsed pairs stats_update
+0044ead0,FUN_0044ead0,,fx_read_cstring,0.9,llm-w205,reads NUL string from opcode stream caller fx_vm
+00436170,FUN_00436170,,iface_set2_56544,0.9,llm-w205,third twin of iface setters
+0042ef40,FUN_0042ef40,,rpman_point_add,0.9,llm-w205,8x0xc point table fill caller rpman_init

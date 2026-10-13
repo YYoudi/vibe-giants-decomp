@@ -2009,9 +2009,9 @@ void menu_audio_setup(int param_1)
 
       DAT_00632e94 = (**(code **)(DAT_00656420 + 0xc4))(DAT_00656420,7);
 
-      FUN_00452070((~DAT_00632e94 & 2) == 0);
+      option_set_633190((~DAT_00632e94 & 2) == 0);
 
-      FUN_004520b0((~DAT_00632e94 & 4) == 0);
+      option_set_63319c((~DAT_00632e94 & 4) == 0);
 
       if (((~DAT_00632e94 & 2) == 0) && (-1 < (char)(~DAT_00632e94 >> 8))) {
 
@@ -2027,7 +2027,7 @@ void menu_audio_setup(int param_1)
 
       FUN_00452090(uVar2);
 
-      FUN_004520d0((~DAT_00632e94 & 0x40) == 0);
+      option_set_6331b0((~DAT_00632e94 & 0x40) == 0);
 
       option_set_633194(1);
 
@@ -2041,13 +2041,13 @@ void menu_audio_setup(int param_1)
 
       if (bVar1) {
 
-        FUN_004520d0(1);
+        option_set_6331b0(1);
 
       }
 
       else {
 
-        FUN_004520d0(0);
+        option_set_6331b0(0);
 
       }
 

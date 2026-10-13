@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (123 named) — decompiled, names from PS2 symbols
+ * 145 functions (127 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -186,12 +186,12 @@ void render_stats_update(void)
 
 }
 
-/* ===== FUN_00450c90 @ 0x00450C90 ===== */
+/* ===== render_fps_get @ 0x00450C90 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_00450c90(void)
+float10 render_fps_get(void)
 
 
 
@@ -1301,8 +1301,8 @@ void option_set_633194(int param_1)
 
 }
 
-/* ===== FUN_00452070 @ 0x00452070 ===== */
-void FUN_00452070(int param_1)
+/* ===== option_set_633190 @ 0x00452070 ===== */
+void option_set_633190(int param_1)
 
 
 
@@ -1339,8 +1339,8 @@ void FUN_00452090(int param_1)
 
 }
 
-/* ===== FUN_004520b0 @ 0x004520B0 ===== */
-void FUN_004520b0(int param_1)
+/* ===== option_set_63319c @ 0x004520B0 ===== */
+void option_set_63319c(int param_1)
 
 
 
@@ -1352,8 +1352,8 @@ void FUN_004520b0(int param_1)
 
 }
 
-/* ===== FUN_004520d0 @ 0x004520D0 ===== */
-void FUN_004520d0(int param_1)
+/* ===== option_set_6331b0 @ 0x004520D0 ===== */
+void option_set_6331b0(int param_1)
 
 
 

@@ -602,7 +602,7 @@ switchD_004364b2_caseD_0:
 
     }
 
-    FUN_0042ef40(*(undefined4 **)(iVar10 + 0x100) + 1,**(undefined4 **)(iVar10 + 0x100));
+    rpman_point_add(*(undefined4 **)(iVar10 + 0x100) + 1,**(undefined4 **)(iVar10 + 0x100));
 
     return;
 
