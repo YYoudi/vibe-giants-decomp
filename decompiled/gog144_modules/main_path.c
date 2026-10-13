@@ -1175,7 +1175,7 @@ void main_path_004a0f40(int param_1,undefined4 param_2,float *param_3,float *par
 
         (iVar6 != param_1)) && (*(int *)(iVar6 + 0x210) != param_1)) {
 
-      FUN_00412730(iVar6,DAT_005a0cc8,DAT_005a0cc4,0x40,DAT_005a0cec);
+      collgrid_collide_walk(iVar6,DAT_005a0cc8,DAT_005a0cc4,0x40,DAT_005a0cec);
 
     }
 

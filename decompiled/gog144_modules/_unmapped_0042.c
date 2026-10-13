@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (52 named) — decompiled, names from PS2 symbols
+ * 129 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -15394,12 +15394,12 @@ void FUN_0042c1b0(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0042c3e0 @ 0x0042C3E0 ===== */
+/* ===== status_hud_render @ 0x0042C3E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0042c3e0(int param_1,byte param_2,int param_3)
+void status_hud_render(int param_1,byte param_2,int param_3)
 
 
 
@@ -16844,7 +16844,7 @@ void render_view_xform(void)
 
           else {
 
-            FUN_0042c3e0(iVar4,6,iVar5);
+            status_hud_render(iVar4,6,iVar5);
 
           }
 
@@ -16866,7 +16866,7 @@ void render_view_xform(void)
 
         else {
 
-          FUN_0042c3e0(iVar4,6,iVar5);
+          status_hud_render(iVar4,6,iVar5);
 
         }
 
@@ -17262,7 +17262,7 @@ LAB_0042dcd8:
 
             else {
 
-              FUN_0042c3e0(param_1,6,iVar6);
+              status_hud_render(param_1,6,iVar6);
 
               FUN_00425eb0(s_Overflow_alpha_queue_00556628);
 
@@ -17278,7 +17278,7 @@ LAB_0042dcd8:
 
           else {
 
-            FUN_0042c3e0(param_1,6,iVar6);
+            status_hud_render(param_1,6,iVar6);
 
           }
 
@@ -17332,7 +17332,7 @@ LAB_0042dcd8:
 
   if (bVar2) {
 
-    FUN_0042c3e0(param_1,1,0xffffffff);
+    status_hud_render(param_1,1,0xffffffff);
 
   }
 
@@ -17349,7 +17349,7 @@ void shrap_create_water(undefined4 param_1)
 
   FUN_0042b060(param_1,0,0);
 
-  FUN_0042c3e0(param_1,0xffff,0xffffffff);
+  status_hud_render(param_1,0xffff,0xffffffff);
 
   return;
 

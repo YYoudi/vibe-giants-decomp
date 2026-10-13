@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00412730,FUN_00412730,,collgrid_collide_walk,0.9,llm-read,
+00414d40,FUN_00414D40,,obj_animate_pose_update,0.9,llm-read,
+0042c3e0,FUN_0042C3E0,,status_hud_render,0.9,llm-read,

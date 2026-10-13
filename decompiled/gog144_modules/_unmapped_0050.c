@@ -749,9 +749,9 @@ void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
 
     FUN_0049aa20(param_2);
 
-    FUN_0042c3e0(param_2,1,0xffffffff);
+    status_hud_render(param_2,1,0xffffffff);
 
-    FUN_0042c3e0(param_2,6,0xffffffff);
+    status_hud_render(param_2,6,0xffffffff);
 
   }
 
@@ -775,9 +775,9 @@ void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
 
             FUN_0049aa20(iVar6);
 
-            FUN_0042c3e0(iVar6,1,0xffffffff);
+            status_hud_render(iVar6,1,0xffffffff);
 
-            FUN_0042c3e0(iVar6,6,0xffffffff);
+            status_hud_render(iVar6,6,0xffffffff);
 
           }
 

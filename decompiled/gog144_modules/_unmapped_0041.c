@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (9 named) — decompiled, names from PS2 symbols
+ * 100 functions (11 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -827,8 +827,8 @@ void FUN_004125f0(int param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_00412730 @ 0x00412730 ===== */
-void FUN_00412730(int param_1,int param_2,int param_3,int param_4,int param_5)
+/* ===== collgrid_collide_walk @ 0x00412730 ===== */
+void collgrid_collide_walk(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -1933,7 +1933,7 @@ void FUN_00412df0(int param_1)
 
                 else {
 
-                  local_b8 = FUN_00414d40(param_1,iVar5);
+                  local_b8 = obj_animate_pose_update(param_1,iVar5);
 
                 }
 
@@ -3615,8 +3615,8 @@ LAB_00414c70:
 
 }
 
-/* ===== FUN_00414d40 @ 0x00414D40 ===== */
-undefined4 FUN_00414d40(int param_1,int param_2)
+/* ===== obj_animate_pose_update @ 0x00414D40 ===== */
+undefined4 obj_animate_pose_update(int param_1,int param_2)
 
 
 

@@ -7786,7 +7786,7 @@ LAB_004ccbc0:
 
           AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(uVar4);
 
-          FUN_0042c3e0(puVar8 + -0x294,0xffff,0xffffffff);
+          status_hud_render(puVar8 + -0x294,0xffff,0xffffffff);
 
           Audio3DTestToneUpdate__Fv_3();
 
@@ -9113,8 +9113,8 @@ LAB_004ce7b8:
 
 }
 
-/* ===== comm_004ce880 @ 0x004CE880 ===== */
-void comm_004ce880(int param_1,undefined4 param_2)
+/* ===== time_format_hms @ 0x004CE880 ===== */
+void time_format_hms(int param_1,undefined4 param_2)
 
 
 
