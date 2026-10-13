@@ -832,12 +832,12 @@
  "0x004162C0": {
   "name": "FUN_004162c0",
   "named": false,
-  "len": 2798
+  "len": 2802
  },
  "0x00416550": {
   "name": "dlog_pop_user",
   "named": true,
-  "len": 839
+  "len": 843
  },
  "0x00416990": {
   "name": "reaper_lock_short",
@@ -1187,7 +1187,7 @@
  "0x0041F120": {
   "name": "hud_status_main",
   "named": true,
-  "len": 8784
+  "len": 8792
  },
  "0x0041F8F0": {
   "name": "FUN_0041f8f0",
@@ -2120,9 +2120,9 @@
   "len": 2594
  },
  "0x00434F80": {
-  "name": "main/drawwrld_00434f80",
+  "name": "drawwrld_cell_cull",
   "named": true,
-  "len": 2864
+  "len": 2860
  },
  "0x004350C0": {
   "name": "dlog_entry_update",
@@ -2132,12 +2132,12 @@
  "0x00435170": {
   "name": "main_drawwrld_00435170",
   "named": true,
-  "len": 1735
+  "len": 1731
  },
  "0x00435940": {
   "name": "dlog_entry_render_quads",
   "named": true,
-  "len": 3117
+  "len": 3113
  },
  "0x00435BC0": {
   "name": "fx_blob_shadow",
@@ -2817,7 +2817,7 @@
  "0x00449CE0": {
   "name": "FUN_00449ce0",
   "named": false,
-  "len": 67384
+  "len": 67429
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "FUN_0047caa0",
   "named": false,
-  "len": 22846
+  "len": 22850
  },
  "0x0047DF10": {
   "name": "audio_listener_pan",
@@ -4295,9 +4295,9 @@
   "len": 788
  },
  "0x00480F90": {
-  "name": "FUN_00480f90",
-  "named": false,
-  "len": 1352
+  "name": "menu_fx_spawn",
+  "named": true,
+  "len": 1353
  },
  "0x004810D0": {
   "name": "FUN_004810d0",
@@ -7527,7 +7527,7 @@
  "0x004EE670": {
   "name": "FUN_004ee670",
   "named": false,
-  "len": 1974
+  "len": 1978
  },
  "0x004EE800": {
   "name": "FUN_004EE800",
@@ -8367,7 +8367,7 @@
  "0x00511410": {
   "name": "herdgen_marker_user",
   "named": true,
-  "len": 3501
+  "len": 3512
  },
  "0x005116E0": {
   "name": "FUN_005116e0",
@@ -8377,7 +8377,7 @@
  "0x00511CF0": {
   "name": "FUN_00511cf0",
   "named": false,
-  "len": 3307
+  "len": 3318
  },
  "0x00511F80": {
   "name": "vimp_handle_close_area_damage",
@@ -8562,7 +8562,7 @@
  "0x00515ED0": {
   "name": "AudioMusicStreamPlay__Fiiii",
   "named": true,
-  "len": 200
+  "len": 204
  },
  "0x00515F20": {
   "name": "FUN_00515f20",
@@ -8575,9 +8575,9 @@
   "len": 301
  },
  "0x00515F60": {
-  "name": "farclip_config",
+  "name": "render_farclip_set",
   "named": true,
-  "len": 1270
+  "len": 1274
  },
  "0x005160A0": {
   "name": "AudioGetMasterVolume__Fv_8",
@@ -10925,9 +10925,9 @@
   "len": 1602
  },
  "0x0053E580": {
-  "name": "FUN_0053e580",
-  "named": false,
-  "len": 1699
+  "name": "crt_euler_to_quat",
+  "named": true,
+  "len": 1704
  },
  "0x0053E6C0": {
   "name": "FUN_0053e6c0",

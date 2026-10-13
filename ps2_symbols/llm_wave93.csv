@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00515f60,FUN_00515F60,,render_farclip_set,0.9,llm-read64,
+00434f80,FUN_00434F80,,drawwrld_cell_cull,0.9,llm-read64,
+00480f90,FUN_00480F90,,menu_fx_spawn,0.9,llm-read64,
+0053e580,FUN_0053E580,,crt_euler_to_quat,0.9,llm-read64,

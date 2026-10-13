@@ -10970,7 +10970,7 @@ void FUN_004ee670(int param_1)
 
       uVar3 = AudioGetMasterVolume__Fv_8();
 
-      farclip_config(uVar3);
+      render_farclip_set(uVar3);
 
     }
 

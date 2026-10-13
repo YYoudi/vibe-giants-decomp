@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (75 named) — decompiled, names from PS2 symbols
+ * 179 functions (76 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -18521,8 +18521,8 @@ void FUN_0053e460(uint *param_1,float param_2,float param_3,float param_4)
 
 }
 
-/* ===== FUN_0053e580 @ 0x0053E580 ===== */
-void FUN_0053e580(uint *param_1,float param_2,float param_3,float param_4,float param_5)
+/* ===== crt_euler_to_quat @ 0x0053E580 ===== */
+void crt_euler_to_quat(uint *param_1,float param_2,float param_3,float param_4,float param_5)
 
 
 

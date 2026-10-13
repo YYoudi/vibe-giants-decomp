@@ -581,7 +581,7 @@ uint * main_drawwrld_00435170(int param_1,uint param_2,uint param_3)
 
   puVar3[0x1f] = 0;
 
-  main_drawwrld_00434f80(puVar3,0,0);
+  drawwrld_cell_cull(puVar3,0,0);
 
   *(undefined4 *)(puVar3[7] + 4) = 0x33c;
 

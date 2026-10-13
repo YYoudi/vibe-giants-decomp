@@ -8936,7 +8936,7 @@ undefined4 FUN_00449ce0(void)
 
           *(float *)(iVar12 + 0x14) = fVar15;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
           if (fVar17 != fVar15) {
 
@@ -8980,7 +8980,7 @@ undefined4 FUN_00449ce0(void)
 
           *(float *)(iVar12 + 0x14) = (float)fVar20;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
           if (fVar17 != (float)fVar20) {
 
@@ -9630,7 +9630,7 @@ LAB_0044abc9:
 
           *(float *)(iVar12 + 0x14) = fVar17;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
         }
 
@@ -9666,7 +9666,7 @@ LAB_0044abc9:
 
           *(float *)(iVar12 + 0x14) = fVar17;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
         }
 
@@ -10304,7 +10304,7 @@ LAB_0044d7d9:
 
           *(float *)(iVar12 + 0x14) = fVar15;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
           if (fVar17 != fVar15) {
 
@@ -10352,7 +10352,7 @@ LAB_0044d7d9:
 
           *(float *)(iVar12 + 0x10) = fVar17;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
           if (fVar17 != fVar15) {
 
@@ -10396,7 +10396,7 @@ LAB_0044d7d9:
 
           *(float *)(iVar12 + 0x14) = fVar15;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
           if (fVar17 != fVar15) {
 
@@ -10440,7 +10440,7 @@ LAB_0044d7d9:
 
           *(float *)(iVar12 + 0x14) = (float)fVar20;
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
           if (fVar17 != (float)fVar20) {
 
@@ -12132,7 +12132,7 @@ joined_r0x0044cc5f:
 
 LAB_0044d657:
 
-          FUN_0053e580();
+          crt_euler_to_quat();
 
         }
 

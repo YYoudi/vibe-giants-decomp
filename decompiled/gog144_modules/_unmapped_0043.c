@@ -2955,8 +2955,8 @@ LAB_00434f2e:
 
 }
 
-/* ===== main/drawwrld_00434f80 @ 0x00434F80 ===== */
-void main_drawwrld_00434f80(int param_1,int param_2,int param_3)
+/* ===== drawwrld_cell_cull @ 0x00434F80 ===== */
+void drawwrld_cell_cull(int param_1,int param_2,int param_3)
 
 
 
@@ -3382,7 +3382,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
     *(undefined4 *)(param_1 + 0x10) = uVar3;
 
-    main_drawwrld_00434f80(param_1,0,0);
+    drawwrld_cell_cull(param_1,0,0);
 
   }
 

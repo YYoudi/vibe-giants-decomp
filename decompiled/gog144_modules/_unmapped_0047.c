@@ -6726,7 +6726,7 @@ LAB_0047cdb1:
 
     if (iVar5 == 0) {
 
-      iVar5 = FUN_00480f90(iVar7,0);
+      iVar5 = menu_fx_spawn(iVar7,0);
 
       *(undefined4 *)(iVar5 + 0x18c) = *(undefined4 *)(iVar7 + 0x18c);
 
@@ -6854,7 +6854,7 @@ LAB_0047d90a:
 
       if (iVar5 == 0) {
 
-        iVar5 = FUN_00480f90(iVar7,uVar4);
+        iVar5 = menu_fx_spawn(iVar7,uVar4);
 
       }
 
@@ -6876,7 +6876,7 @@ LAB_0047d90a:
 
     if (iVar5 == 0) {
 
-      iVar5 = FUN_00480f90(iVar7,0);
+      iVar5 = menu_fx_spawn(iVar7,0);
 
       *(undefined4 *)(iVar5 + 0x18c) = *(undefined4 *)(iVar7 + 0x18c);
 
@@ -7474,7 +7474,7 @@ LAB_0047de23:
 
     if ((iVar5 != 0) && (iVar5 = FUN_0052e5b0(*param_4), iVar5 != 0)) {
 
-      iVar5 = FUN_00480f90(iVar7,iVar5);
+      iVar5 = menu_fx_spawn(iVar7,iVar5);
 
       *(undefined4 *)(iVar5 + 0x18c) = *(undefined4 *)(iVar7 + 0x18c);
 

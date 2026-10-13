@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (35 named) — decompiled, names from PS2 symbols
+ * 74 functions (36 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -1049,12 +1049,12 @@ void FUN_00480ef0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00480f90 @ 0x00480F90 ===== */
+/* ===== menu_fx_spawn @ 0x00480F90 ===== */
 /* PS2 candidate: object_setup_specialtype (conf 0.411) */
 
 
 
-int FUN_00480f90(undefined4 param_1,int param_2)
+int menu_fx_spawn(undefined4 param_1,int param_2)
 
 
 

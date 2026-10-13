@@ -362,9 +362,9 @@ LAB_00511547:
 
     FUN_00414690(puVar1,local_1c);
 
-    FUN_0053e580(*(int *)(iVar6 + 0xa8) + 0x294,0,0,0,*(undefined4 *)(*(int *)(iVar6 + 0xa8) + 0xc4)
+    crt_euler_to_quat(*(int *)(iVar6 + 0xa8) + 0x294,0,0,0,
 
-                );
+                      *(undefined4 *)(*(int *)(iVar6 + 0xa8) + 0xc4));
 
     iVar3 = *(int *)(iVar6 + 0xa8);
 
@@ -1008,9 +1008,9 @@ void FUN_00511cf0(int param_1)
 
     FUN_00414690(puVar1,local_1c);
 
-    FUN_0053e580(*(int *)(iVar4 + 0xa8) + 0x294,0,0,0,*(undefined4 *)(*(int *)(iVar4 + 0xa8) + 0xc4)
+    crt_euler_to_quat(*(int *)(iVar4 + 0xa8) + 0x294,0,0,0,
 
-                );
+                      *(undefined4 *)(*(int *)(iVar4 + 0xa8) + 0xc4));
 
     iVar2 = *(int *)(iVar4 + 0xa8);
 
@@ -4905,7 +4905,7 @@ void AudioMusicStreamPlay__Fiiii(int p0,int p1,int p2,int p3)
 
   __ftol();
 
-  farclip_config();
+  render_farclip_set();
 
   return;
 
@@ -4947,12 +4947,12 @@ void ResetFog__Fv(void)
 
 }
 
-/* ===== farclip_config @ 0x00515F60 ===== */
+/* ===== render_farclip_set @ 0x00515F60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void farclip_config(int param_1)
+void render_farclip_set(int param_1)
 
 
 

@@ -4972,7 +4972,7 @@ void FUN_004162c0(int param_1)
 
   if (7 < iVar1) {
 
-    farclip_config(7);
+    render_farclip_set(7);
 
   }
 
@@ -5167,7 +5167,7 @@ void dlog_pop_user(void)
 
   *(undefined4 *)(iVar3 + 0x56c) = 0;
 
-  farclip_config(DAT_0065755c);
+  render_farclip_set(DAT_0065755c);
 
   dialog_level_pop(&LAB_00416630);
 
@@ -11792,7 +11792,7 @@ void hud_status_main(void)
 
       iVar5 = AudioGetMasterVolume__Fv_8();
 
-      farclip_config(iVar5 + -1);
+      render_farclip_set(iVar5 + -1);
 
     }
 
@@ -11802,7 +11802,7 @@ void hud_status_main(void)
 
       iVar5 = AudioGetMasterVolume__Fv_8();
 
-      farclip_config(iVar5 + 1);
+      render_farclip_set(iVar5 + 1);
 
     }
 
