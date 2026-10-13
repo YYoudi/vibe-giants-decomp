@@ -1416,9 +1416,9 @@ LAB_00437d68:
 
             local_70 = (float)fVar24;
 
-            FUN_0050a8f0(-local_74,local_70,0,local_48);
+            math_sincos_lut(-local_74,local_70,0,local_48);
 
-            FUN_0050a8f0(0,0,*(undefined4 *)(piVar11[0xe] + 200),local_24);
+            math_sincos_lut(0,0,*(undefined4 *)(piVar11[0xe] + 200),local_24);
 
             matrix_mult__FPfN20(local_24,local_48,local_48);
 

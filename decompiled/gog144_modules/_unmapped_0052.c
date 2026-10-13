@@ -14910,7 +14910,7 @@ void FUN_0052ff70(char *param_1)
 
         }
 
-        FUN_0041e720();
+        bldg_get_max_energy_generic();
 
         return;
 

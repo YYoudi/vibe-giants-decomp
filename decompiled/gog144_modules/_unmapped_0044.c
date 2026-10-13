@@ -4128,7 +4128,7 @@ LAB_00444d25:
 
   if (*(int *)(param_1 + 0xc4) == 0) {
 
-    FUN_004cd990();
+    render_fog_color_set();
 
   }
 

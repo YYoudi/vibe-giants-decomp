@@ -1130,9 +1130,9 @@
   "len": 6888
  },
  "0x0041BF50": {
-  "name": "FUN_0041bf50",
-  "named": false,
-  "len": 1345
+  "name": "bldg_part_model_id",
+  "named": true,
+  "len": 1351
  },
  "0x0041C0C0": {
   "name": "bldg_get_bldg_name",
@@ -1145,9 +1145,9 @@
   "len": 3665
  },
  "0x0041E720": {
-  "name": "FUN_0041e720",
-  "named": false,
-  "len": 1188
+  "name": "bldg_get_max_energy_generic",
+  "named": true,
+  "len": 1203
  },
  "0x0041E810": {
   "name": "obj_group_spread",
@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "rpman_init__FP6OBJECT",
   "named": true,
-  "len": 43221
+  "len": 43227
  },
  "0x00437FA0": {
   "name": "editor_cursor_pick_point",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19068
+  "len": 19076
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -4530,9 +4530,9 @@
   "len": 9796
  },
  "0x0048BED0": {
-  "name": "FUN_0048bed0",
-  "named": false,
-  "len": 990
+  "name": "menu_map_set_clamped",
+  "named": true,
+  "len": 998
  },
  "0x0048BFB0": {
   "name": "menu_slot_bounds_check",
@@ -6885,14 +6885,14 @@
   "len": 4957
  },
  "0x004CD990": {
-  "name": "FUN_004cd990",
-  "named": false,
-  "len": 1063
+  "name": "render_fog_color_set",
+  "named": true,
+  "len": 1071
  },
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14390
+  "len": 14398
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -8260,9 +8260,9 @@
   "len": 479
  },
  "0x0050A8F0": {
-  "name": "FUN_0050a8f0",
-  "named": false,
-  "len": 1199
+  "name": "math_sincos_lut",
+  "named": true,
+  "len": 1202
  },
  "0x0050A9E0": {
   "name": "vec_to_angles",
@@ -10152,7 +10152,7 @@
  "0x0052FF70": {
   "name": "FUN_0052ff70",
   "named": false,
-  "len": 692
+  "len": 707
  },
  "0x0052FFE0": {
   "name": "IconIsKabutoIcon__Fi",

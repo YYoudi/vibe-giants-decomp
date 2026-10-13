@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (77 named) — decompiled, names from PS2 symbols
+ * 100 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -9960,8 +9960,8 @@ LAB_0041bf20:
 
 }
 
-/* ===== FUN_0041bf50 @ 0x0041BF50 ===== */
-undefined4 FUN_0041bf50(undefined4 param_1,undefined4 param_2)
+/* ===== bldg_part_model_id @ 0x0041BF50 ===== */
+undefined4 bldg_part_model_id(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -10613,8 +10613,8 @@ LAB_0041e5bd:
 
 }
 
-/* ===== FUN_0041e720 @ 0x0041E720 ===== */
-void FUN_0041e720(float param_1)
+/* ===== bldg_get_max_energy_generic @ 0x0041E720 ===== */
+void bldg_get_max_energy_generic(float param_1)
 
 
 

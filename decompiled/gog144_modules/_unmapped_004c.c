@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (55 named) — decompiled, names from PS2 symbols
+ * 64 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -8275,12 +8275,12 @@ LAB_004cd778:
 
 }
 
-/* ===== FUN_004cd990 @ 0x004CD990 ===== */
+/* ===== render_fog_color_set @ 0x004CD990 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004cd990(void)
+void render_fog_color_set(void)
 
 
 
@@ -8885,7 +8885,7 @@ undefined4 dev_debug_flags(void)
 
     }
 
-    FUN_004cd990();
+    render_fog_color_set();
 
     FUN_004676a0();
 

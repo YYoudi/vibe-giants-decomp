@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0050a8f0,FUN_0050a8f0,,math_sincos_lut,0.9,llm-w144,16384-entry trig LUT pair + caller rpman_init
+0041e720,FUN_0041e720,,bldg_get_max_energy_generic,0.9,llm-w144,calls both faction max_energy getters default 50
+004cd990,FUN_004cd990,,render_fog_color_set,0.9,llm-w144,1/255 RGBA compose + GFX upcall callers FLK_FlickRender
+0041bf50,FUN_0041bf50,,bldg_part_model_id,0.9,llm-w144,slot->model 0x21-0x29 switch
+0048bed0,FUN_0048bed0,,menu_map_set_clamped,0.9,llm-w144,mission idx MP range 9-11 + preview +0x10
