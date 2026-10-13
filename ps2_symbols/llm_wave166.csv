@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0053e7f0,FUN_0053e7f0,,math_sqrt_table_init,0.9,llm-w166,two sqrt bit-pattern tables caller CheckSaveGameName
+0053dbb0,FUN_0053dbb0,,GEO_MatCopy,0.9,llm-w166,0x11 dword mat copy callers fx_orient_ground
+00432950,FUN_00432950,,audio_streams_update_all,0.9,llm-w166,iterates 00656680 stream objects
+00432270,FUN_00432270,,audio_stream_update_one,0.9,llm-w166,same tables per-stream vtable
+004b92d0,FUN_004b92d0,,reaper_item_count,0.9,llm-w166,0xd3c scan caller mission_init

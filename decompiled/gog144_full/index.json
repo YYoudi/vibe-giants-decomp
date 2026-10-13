@@ -2035,9 +2035,9 @@
   "len": 1589
  },
  "0x00432270": {
-  "name": "FUN_00432270",
-  "named": false,
-  "len": 481
+  "name": "audio_stream_update_one",
+  "named": true,
+  "len": 492
  },
  "0x00432400": {
   "name": "makewrld_big",
@@ -2045,14 +2045,14 @@
   "len": 6360
  },
  "0x00432950": {
-  "name": "FUN_00432950",
-  "named": false,
-  "len": 468
+  "name": "audio_streams_update_all",
+  "named": true,
+  "len": 480
  },
  "0x004329B0": {
   "name": "main_drawwrld_004329b0",
   "named": true,
-  "len": 6564
+  "len": 6575
  },
  "0x00432E10": {
   "name": "main_drawwrld_00432e10",
@@ -2067,7 +2067,7 @@
  "0x00434280": {
   "name": "audio_stream_tied",
   "named": true,
-  "len": 4542
+  "len": 4566
  },
  "0x00434620": {
   "name": "main/drawwrld_00434620",
@@ -2787,7 +2787,7 @@
  "0x00449200": {
   "name": "fx_orient_ground",
   "named": true,
-  "len": 2045
+  "len": 2044
  },
  "0x00449400": {
   "name": "fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24263
+  "len": 24290
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -6042,12 +6042,12 @@
  "0x004AC4B0": {
   "name": "face_target",
   "named": true,
-  "len": 1487
+  "len": 1486
  },
  "0x004AC620": {
   "name": "align_with_ground",
   "named": true,
-  "len": 1382
+  "len": 1381
  },
  "0x004AC760": {
   "name": "kabuto_punch_check",
@@ -6405,9 +6405,9 @@
   "len": 452
  },
  "0x004B92D0": {
-  "name": "FUN_004b92d0",
-  "named": false,
-  "len": 553
+  "name": "reaper_item_count",
+  "named": true,
+  "len": 558
  },
  "0x004B9330": {
   "name": "reaper_give_all_spell_energy",
@@ -9242,7 +9242,7 @@
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
   "named": true,
-  "len": 6136
+  "len": 6144
  },
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
@@ -10840,9 +10840,9 @@
   "len": 3005
  },
  "0x0053DBB0": {
-  "name": "FUN_0053dbb0",
-  "named": false,
-  "len": 805
+  "name": "GEO_MatCopy",
+  "named": true,
+  "len": 804
  },
  "0x0053DC10": {
   "name": "FUN_0053dc10",
@@ -10940,9 +10940,9 @@
   "len": 427
  },
  "0x0053E7F0": {
-  "name": "FUN_0053e7f0",
-  "named": false,
-  "len": 316
+  "name": "math_sqrt_table_init",
+  "named": true,
+  "len": 324
  },
  "0x0053E870": {
   "name": "GEO_Vec2Sub",

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (138 named) — decompiled, names from PS2 symbols
+ * 179 functions (140 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -17504,8 +17504,8 @@ void crt_matrix_mul(float *param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_0053dbb0 @ 0x0053DBB0 ===== */
-void FUN_0053dbb0(uint *param_1,uint *param_2,uint *param_3)
+/* ===== GEO_MatCopy @ 0x0053DBB0 ===== */
+void GEO_MatCopy(uint *param_1,uint *param_2,uint *param_3)
 
 
 
@@ -18712,8 +18712,8 @@ float10 math_angle_wrap(float param_1,float param_2)
 
 }
 
-/* ===== FUN_0053e7f0 @ 0x0053E7F0 ===== */
-void FUN_0053e7f0(void)
+/* ===== math_sqrt_table_init @ 0x0053E7F0 ===== */
+void math_sqrt_table_init(void)
 
 
 

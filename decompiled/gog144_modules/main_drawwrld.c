@@ -202,7 +202,7 @@ void main_drawwrld_004329b0(void)
 
     for (iVar4 = 9; iVar4 != 0; iVar4 = iVar4 + -1) {
 
-      *puVar5 = FUN_00432270;
+      *puVar5 = audio_stream_update_one;
 
       puVar5 = puVar5 + 1;
 

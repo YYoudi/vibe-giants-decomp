@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (64 named) — decompiled, names from PS2 symbols
+ * 74 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -1545,8 +1545,8 @@ float10 world_ripple_xform(float *param_1)
 
 }
 
-/* ===== FUN_00432270 @ 0x00432270 ===== */
-void FUN_00432270(int param_1)
+/* ===== audio_stream_update_one @ 0x00432270 ===== */
+void audio_stream_update_one(int param_1)
 
 
 
@@ -1903,8 +1903,8 @@ void makewrld_big(void)
 
 }
 
-/* ===== FUN_00432950 @ 0x00432950 ===== */
-void FUN_00432950(void)
+/* ===== audio_streams_update_all @ 0x00432950 ===== */
+void audio_streams_update_all(void)
 
 
 
@@ -2266,7 +2266,7 @@ void audio_stream_tied(void)
 
     crt_loader_walk(piVar6[1],*piVar6,auStack_80,&PTR_LAB_00556e68,0,0);
 
-    FUN_00432950();
+    audio_streams_update_all();
 
     return;
 
@@ -2274,7 +2274,7 @@ void audio_stream_tied(void)
 
   crt_matrix_ops(*piVar6,auStack_80,&PTR_LAB_00556e88);
 
-  FUN_00432950();
+  audio_streams_update_all();
 
   return;
 

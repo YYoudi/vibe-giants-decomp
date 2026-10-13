@@ -10673,7 +10673,7 @@ void face_target(int param_1,float *param_2,int param_3,float param_4,float para
 
     quat_to_matrix__FP4QUATPf(local_88,local_120);
 
-    FUN_0053dbb0(local_44,local_110,param_1 + 0x294);
+    GEO_MatCopy(local_44,local_110,param_1 + 0x294);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_cc,local_88,local_110);
 
@@ -10758,7 +10758,7 @@ void align_with_ground(int param_1,float *param_2,float param_3)
 
   local_124 = param_2[2];
 
-  FUN_0053dbb0(local_44,local_110,param_1 + 0x294);
+  GEO_MatCopy(local_44,local_110,param_1 + 0x294);
 
   local_138 = local_104;
 

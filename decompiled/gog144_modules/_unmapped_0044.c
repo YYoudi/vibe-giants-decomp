@@ -8566,7 +8566,7 @@ void fx_orient_ground(int param_1,float param_2)
 
     local_324 = local_340;
 
-    FUN_0053dbb0(local_288,local_310,iVar1 + 0x294);
+    GEO_MatCopy(local_288,local_310,iVar1 + 0x294);
 
     local_354 = local_304;
 

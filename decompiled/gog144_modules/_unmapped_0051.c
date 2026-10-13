@@ -13215,7 +13215,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7(&LAB_0051cc00);
 
-  FUN_0053e7f0();
+  math_sqrt_table_init();
 
   if ((DAT_00633214 == 0) && (DAT_00633220 == 0)) {
 

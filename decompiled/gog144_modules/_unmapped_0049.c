@@ -3450,7 +3450,9 @@ LAB_00492a3a:
 
                   else {
 
-                    FUN_004b92d0(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4),0xffffffff);
+                    reaper_item_count(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4),0xffffffff)
+
+                    ;
 
                   }
 
