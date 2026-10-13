@@ -1347,7 +1347,7 @@ void FUN_004c1170(int param_1)
 
               if (iVar6 == 0) {
 
-                FUN_004d5910(iVar4,iVar8);
+                object_attach_target(iVar4,iVar8);
 
               }
 

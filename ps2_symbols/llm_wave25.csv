@@ -1,0 +1,3 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004d5910,FUN_004D5910,,object_attach_target,0.9,llm-read11,
+004e6880,FUN_004E6880,,obj_proximity_update,0.9,llm-read11,

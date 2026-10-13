@@ -3962,7 +3962,7 @@ LAB_00492a3a:
 
           FUN_004baa70(DAT_00632a88);
 
-          FUN_004d5910(DAT_00632a88,iVar6);
+          object_attach_target(DAT_00632a88,iVar6);
 
         }
 

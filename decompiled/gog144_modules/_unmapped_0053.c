@@ -5355,7 +5355,7 @@ LAB_005337eb:
 
            (*(int *)(iVar1 + 0x188) == *(int *)(param_1 + 0xe))) {
 
-          FUN_004d5910(iVar2,iVar1);
+          object_attach_target(iVar2,iVar1);
 
           FUN_00497570(iVar2);
 

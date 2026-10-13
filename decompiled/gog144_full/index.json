@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24065
+  "len": 24073
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "FUN_004b7450",
   "named": false,
-  "len": 24246
+  "len": 24254
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -6622,7 +6622,7 @@
  "0x004C1170": {
   "name": "FUN_004c1170",
   "named": false,
-  "len": 5870
+  "len": 5878
  },
  "0x004C15F0": {
   "name": "reaper_cast_cloak_firecircle",
@@ -7035,9 +7035,9 @@
   "len": 1064
  },
  "0x004D5910": {
-  "name": "FUN_004d5910",
-  "named": false,
-  "len": 1052
+  "name": "object_attach_target",
+  "named": true,
+  "len": 1060
  },
  "0x004D59D0": {
   "name": "FUN_004d59d0",
@@ -7320,9 +7320,9 @@
   "len": 2490
  },
  "0x004E6880": {
-  "name": "FUN_004e6880",
-  "named": false,
-  "len": 3840
+  "name": "obj_proximity_update",
+  "named": true,
+  "len": 3848
  },
  "0x004E6BA0": {
   "name": "FUN_004e6ba0",
@@ -10307,7 +10307,7 @@
  "0x00533700": {
   "name": "FUN_00533700",
   "named": false,
-  "len": 2807
+  "len": 2815
  },
  "0x005338E0": {
   "name": "FUN_005338e0",

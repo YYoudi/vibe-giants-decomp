@@ -4990,7 +4990,7 @@ LAB_004b76fe:
 
     if (iVar7 != 0) {
 
-      FUN_004d5910(param_1,iVar7);
+      object_attach_target(param_1,iVar7);
 
       return;
 

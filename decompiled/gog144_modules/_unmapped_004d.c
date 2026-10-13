@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (9 named) — decompiled, names from PS2 symbols
+ * 39 functions (10 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -3467,12 +3467,12 @@ void FUN_004d5810(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004d5910 @ 0x004D5910 ===== */
+/* ===== object_attach_target @ 0x004D5910 ===== */
 /* PS2 candidate: rpboat_lock_to_boat__FP6OBJECTT0 (conf 0.406) */
 
 
 
-void FUN_004d5910(int param_1,int param_2)
+void object_attach_target(int param_1,int param_2)
 
 
 
