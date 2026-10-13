@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (106 named) — decompiled, names from PS2 symbols
+ * 131 functions (108 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -5846,8 +5846,8 @@ undefined4 ObjIsReaperBldg(int param_1)
 
 }
 
-/* ===== FUN_004a6320 @ 0x004A6320 ===== */
-undefined4 FUN_004a6320(int param_1)
+/* ===== obj_is_pickup_4a_model @ 0x004A6320 ===== */
+undefined4 obj_is_pickup_4a_model(int param_1)
 
 
 
@@ -5871,8 +5871,8 @@ undefined4 FUN_004a6320(int param_1)
 
 }
 
-/* ===== FUN_004a6360 @ 0x004A6360 ===== */
-undefined4 FUN_004a6360(int param_1)
+/* ===== obj_is_pickup_53_model @ 0x004A6360 ===== */
+undefined4 obj_is_pickup_53_model(int param_1)
 
 
 

@@ -1134,7 +1134,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     puVar8 = auStack_40;
 
-    FUN_005163e0(puVar8);
+    view_matrix_get(puVar8);
 
     fVar6 = (float10)FUN_00515d90();
 
@@ -1146,7 +1146,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     water_draw_dump();
 
-    FUN_00516220(auStack_50);
+    XFSetViewport(auStack_50);
 
     view_matrix_reset(auStack_40);
 
@@ -2334,7 +2334,7 @@ void dlog_text_render_screen(void)
 
     DAT_0059dc24 = (float)fVar9;
 
-    FUN_005163e0(&DAT_0059dc40);
+    view_matrix_get(&DAT_0059dc40);
 
     render_get_clip_nearfar(&DAT_0059dc28,&DAT_0059dc2c);
 

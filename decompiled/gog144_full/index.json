@@ -832,7 +832,7 @@
  "0x004162C0": {
   "name": "evilreaper_award_item__FP6OBJECT",
   "named": true,
-  "len": 2913
+  "len": 2916
  },
  "0x00416550": {
   "name": "dlog_pop_user",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19157
+  "len": 19162
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -3917,7 +3917,7 @@
  "0x00471780": {
   "name": "hud_audio_dlog_screen",
   "named": true,
-  "len": 3331
+  "len": 3335
  },
  "0x00471A60": {
   "name": "game_loop_run",
@@ -3997,7 +3997,7 @@
  "0x004753C0": {
   "name": "dlog_text_render_screen",
   "named": true,
-  "len": 4087
+  "len": 4090
  },
  "0x00475700": {
   "name": "dlog_text_pop_screen",
@@ -5765,14 +5765,14 @@
   "len": 203
  },
  "0x004A6320": {
-  "name": "FUN_004a6320",
-  "named": false,
-  "len": 297
+  "name": "obj_is_pickup_4a_model",
+  "named": true,
+  "len": 307
  },
  "0x004A6360": {
-  "name": "FUN_004a6360",
-  "named": false,
-  "len": 297
+  "name": "obj_is_pickup_53_model",
+  "named": true,
+  "len": 307
  },
  "0x004A63A0": {
   "name": "FUN_004a63a0",
@@ -6877,7 +6877,7 @@
  "0x004CC900": {
   "name": "ShopMenuSlotCollision__Fi",
   "named": true,
-  "len": 15516
+  "len": 15521
  },
  "0x004CD5D0": {
   "name": "lens_effects_process__Fv",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14505
+  "len": 14509
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7222,7 +7222,7 @@
  "0x004E3920": {
   "name": "rpman_scan_for_enemy__FP6OBJECTfii",
   "named": true,
-  "len": 7488
+  "len": 7528
  },
  "0x004E3EB0": {
   "name": "rpman_consider_run_chatter__FP6OBJECT",
@@ -7232,7 +7232,7 @@
  "0x004E3F10": {
   "name": "rpman_set_enemy_attack_goal__FP6OBJECTi",
   "named": true,
-  "len": 3137
+  "len": 3157
  },
  "0x004E41E0": {
   "name": "FUN_004e41e0",
@@ -7302,17 +7302,17 @@
  "0x004E5270": {
   "name": "fire_bullet_shot__FP6OBJECTT0ii",
   "named": true,
-  "len": 4223
+  "len": 4243
  },
  "0x004E5640": {
   "name": "fire_sniper_shot__FP6OBJECTT0",
   "named": true,
-  "len": 10294
+  "len": 10334
  },
  "0x004E5F70": {
   "name": "rpman_rapid_fire__FP6OBJECTiii",
   "named": true,
-  "len": 8016
+  "len": 8036
  },
  "0x004E6670": {
   "name": "FUN_004e6670",
@@ -8595,9 +8595,9 @@
   "len": 380
  },
  "0x00516220": {
-  "name": "FUN_00516220",
-  "named": false,
-  "len": 248
+  "name": "XFSetViewport",
+  "named": true,
+  "len": 249
  },
  "0x00516260": {
   "name": "XFGetViewport_2",
@@ -8620,9 +8620,9 @@
   "len": 908
  },
  "0x005163E0": {
-  "name": "FUN_005163e0",
-  "named": false,
-  "len": 462
+  "name": "view_matrix_get",
+  "named": true,
+  "len": 465
  },
  "0x00516420": {
   "name": "view_matrix_build",
@@ -12460,8 +12460,8 @@
   "len": 2119
  },
  "0x0054C5E0": {
-  "name": "FUN_0054c5e0",
-  "named": false,
+  "name": "crt_ptd_find",
+  "named": true,
   "len": 385
  },
  "0x0054C61A": {

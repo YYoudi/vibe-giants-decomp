@@ -2870,9 +2870,9 @@ LAB_004e3ad2:
 
                     iVar6 = ObjIsTurret(iVar4);
 
-                    if (((iVar6 != 0) && (iVar6 = FUN_004a6360(*piVar3), iVar6 == 0)) &&
+                    if (((iVar6 != 0) && (iVar6 = obj_is_pickup_53_model(*piVar3), iVar6 == 0)) &&
 
-                       (iVar6 = FUN_004a6320(*piVar3), iVar6 == 0)) {
+                       (iVar6 = obj_is_pickup_4a_model(*piVar3), iVar6 == 0)) {
 
                       param_2 = param_2 * 0.5;
 
@@ -2900,9 +2900,9 @@ LAB_004e3ad2:
 
           else {
 
-            iVar6 = FUN_004a6320(iVar4);
+            iVar6 = obj_is_pickup_4a_model(iVar4);
 
-            if (((iVar6 != 0) || (iVar6 = FUN_004a6360(iVar4), iVar6 != 0)) &&
+            if (((iVar6 != 0) || (iVar6 = obj_is_pickup_53_model(iVar4), iVar6 != 0)) &&
 
                (iVar6 = bldg_get_max_energy(iVar4), iVar6 == 0)) {
 
@@ -3292,9 +3292,9 @@ LAB_004e409b:
 
   fVar7 = (float)fVar4;
 
-  iVar2 = FUN_004a6320(*piVar1);
+  iVar2 = obj_is_pickup_4a_model(*piVar1);
 
-  if ((iVar2 == 0) && (iVar2 = FUN_004a6360(*piVar1), iVar2 == 0)) {
+  if ((iVar2 == 0) && (iVar2 = obj_is_pickup_53_model(*piVar1), iVar2 == 0)) {
 
     fVar8 = fVar7 + 70.0;
 
@@ -4552,9 +4552,9 @@ void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int par
 
       if ((iVar3 != 0) || (iVar3 = obj_is_pickup_53(param_2), iVar3 != 0)) {
 
-        iVar3 = FUN_004a6320(param_2);
+        iVar3 = obj_is_pickup_4a_model(param_2);
 
-        if ((iVar3 == 0) && (iVar3 = FUN_004a6360(param_2), iVar3 == 0)) {
+        if ((iVar3 == 0) && (iVar3 = obj_is_pickup_53_model(param_2), iVar3 == 0)) {
 
           local_6c = local_6c + 2.0;
 
@@ -4917,9 +4917,9 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
         else {
 
-          iVar10 = FUN_004a6320(iVar11);
+          iVar10 = obj_is_pickup_4a_model(iVar11);
 
-          if ((iVar10 == 0) && (iVar10 = FUN_004a6360(iVar11), iVar10 == 0)) {
+          if ((iVar10 == 0) && (iVar10 = obj_is_pickup_53_model(iVar11), iVar10 == 0)) {
 
             local_60 = local_60 + 2.0;
 
@@ -5189,9 +5189,9 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
         if ((iVar9 < piVar4[0x70]) &&
 
-           ((iVar9 = FUN_004a6320(*piVar4), iVar9 == 0 &&
+           ((iVar9 = obj_is_pickup_4a_model(*piVar4), iVar9 == 0 &&
 
-            (iVar9 = FUN_004a6360(*piVar4), iVar9 == 0)))) {
+            (iVar9 = obj_is_pickup_53_model(*piVar4), iVar9 == 0)))) {
 
           *(undefined4 *)(param_1 + 0xe4) = 0xce;
 
@@ -5644,9 +5644,9 @@ LAB_004e6589:
 
   if (iVar8 < piVar2[0x70]) {
 
-    iVar8 = FUN_004a6320(*piVar2);
+    iVar8 = obj_is_pickup_4a_model(*piVar2);
 
-    if ((iVar8 == 0) && (iVar8 = FUN_004a6360(*piVar2), iVar8 == 0)) {
+    if ((iVar8 == 0) && (iVar8 = obj_is_pickup_53_model(*piVar2), iVar8 == 0)) {
 
       *(undefined4 *)(param_1 + 0xe4) = 0xce;
 

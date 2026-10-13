@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (284 named) — decompiled, names from PS2 symbols
+ * 351 functions (285 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -20755,7 +20755,7 @@ LONG __initptd(undefined4 param_1,_EXCEPTION_POINTERS *param_2)
 
   iVar4 = __getptd();
 
-  piVar5 = (int *)FUN_0054c5e0(param_1,*(undefined4 *)(iVar4 + 0x50));
+  piVar5 = (int *)crt_ptd_find(param_1,*(undefined4 *)(iVar4 + 0x50));
 
   if ((piVar5 == (int *)0x0) || (pcVar1 = (code *)piVar5[2], pcVar1 == (code *)0x0)) {
 
@@ -20871,8 +20871,8 @@ LONG __initptd(undefined4 param_1,_EXCEPTION_POINTERS *param_2)
 
 }
 
-/* ===== FUN_0054c5e0 @ 0x0054C5E0 ===== */
-int * FUN_0054c5e0(int param_1,int *param_2)
+/* ===== crt_ptd_find @ 0x0054C5E0 ===== */
+int * crt_ptd_find(int param_1,int *param_2)
 
 
 

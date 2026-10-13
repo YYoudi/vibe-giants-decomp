@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00516220,FUN_00516220,,XFSetViewport,0.9,llm-w175,writes 5dcf0c-18 + GFX upcall 4 callers
+005163e0,FUN_005163e0,,view_matrix_get,0.9,llm-w175,copies 0057c100 view matrix 5 callers
+004a6320,FUN_004a6320,,obj_is_pickup_4a_model,0.9,llm-w175,type 0x4a model allowlist 5 AI callers
+004a6360,FUN_004a6360,,obj_is_pickup_53_model,0.9,llm-w175,type 0x53 model allowlist
+0054c5e0,FUN_0054c5e0,,crt_ptd_find,0.9,llm-w175,thread data scan caller __initptd

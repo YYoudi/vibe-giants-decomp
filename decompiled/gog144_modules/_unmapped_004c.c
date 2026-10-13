@@ -7648,7 +7648,7 @@ LAB_004ccbc0:
 
   XFGetViewport_2(&fStack_1e4);
 
-  FUN_005163e0(auStack_10c);
+  view_matrix_get(auStack_10c);
 
   render_get_clip_nearfar(&pcStack_1c0,&puStack_1c8);
 
@@ -7836,7 +7836,7 @@ LAB_004ccbc0:
 
         else {
 
-          FUN_00516220(&fStack_1e4);
+          XFSetViewport(&fStack_1e4);
 
           uVar4 = AudioDataStreamStatus__Fv_3();
 
@@ -7872,7 +7872,7 @@ LAB_004ccbc0:
 
   }
 
-  FUN_00516220(&fStack_1e4);
+  XFSetViewport(&fStack_1e4);
 
   view_matrix_reset(auStack_10c);
 
@@ -8457,7 +8457,7 @@ undefined4 dev_debug_flags(void)
 
     XFGetViewport_2();
 
-    FUN_005163e0(&local_1c0);
+    view_matrix_get(&local_1c0);
 
     fVar12 = (float10)FUN_00515d90();
 
@@ -8561,7 +8561,7 @@ undefined4 dev_debug_flags(void)
 
     (**(code **)(DAT_00656420 + 0x8c))();
 
-    FUN_00516220(local_1e0,iVar5,uVar13);
+    XFSetViewport(local_1e0,iVar5,uVar13);
 
     view_matrix_reset();
 

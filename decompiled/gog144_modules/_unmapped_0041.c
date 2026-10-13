@@ -5128,7 +5128,7 @@ LAB_00416450:
 
   DAT_00584328 = (float)fVar2;
 
-  FUN_005163e0();
+  view_matrix_get();
 
   return;
 

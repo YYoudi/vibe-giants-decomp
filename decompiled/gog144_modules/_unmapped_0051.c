@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (144 named) — decompiled, names from PS2 symbols
+ * 186 functions (146 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5145,8 +5145,8 @@ void XFSetViewportRegion(float param_1,float param_2,float param_3,float param_4
 
 }
 
-/* ===== FUN_00516220 @ 0x00516220 ===== */
-void FUN_00516220(undefined4 *param_1)
+/* ===== XFSetViewport @ 0x00516220 ===== */
+void XFSetViewport(undefined4 *param_1)
 
 
 
@@ -5302,8 +5302,8 @@ void camera_matrix_from_quat(float *param_1)
 
 }
 
-/* ===== FUN_005163e0 @ 0x005163E0 ===== */
-void FUN_005163e0(undefined4 *param_1)
+/* ===== view_matrix_get @ 0x005163E0 ===== */
+void view_matrix_get(undefined4 *param_1)
 
 
 

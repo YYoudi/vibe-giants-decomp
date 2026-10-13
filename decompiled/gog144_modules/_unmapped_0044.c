@@ -3490,7 +3490,7 @@ undefined4 FLK_FlickRender(int param_1)
 
   XFGetViewport_2();
 
-  FUN_005163e0(local_84);
+  view_matrix_get(local_84);
 
   render_get_clip_nearfar(&local_190,&local_1e8);
 
@@ -3946,7 +3946,7 @@ LAB_00444d25:
 
   fVar2 = (float)iVar12;
 
-  FUN_00516220();
+  XFSetViewport();
 
   (**(code **)(DAT_00656420 + 0x9c))
 
@@ -4216,7 +4216,7 @@ LAB_004451e2:
 
   ANM_DumpCluster();
 
-  FUN_00516220(&local_1f8);
+  XFSetViewport(&local_1f8);
 
   render_projection_set(local_18c,local_1dc,1);
 
