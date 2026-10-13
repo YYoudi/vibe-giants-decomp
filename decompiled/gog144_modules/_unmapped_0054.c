@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (314 named) — decompiled, names from PS2 symbols
+ * 351 functions (315 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -5969,7 +5969,7 @@ void crt_pow_special1(void)
 
   
 
-  FUN_00549b78((double)in_ST0);
+  crt_pow_exp_check((double)in_ST0);
 
   anm_dump_ext();
 
@@ -6697,7 +6697,7 @@ void crt_pow_special2(void)
 
   
 
-  FUN_00549b78((double)in_ST0);
+  crt_pow_exp_check((double)in_ST0);
 
   anm_dump_544add();
 
@@ -15636,8 +15636,8 @@ uint __fload_withFB(void)
 
 }
 
-/* ===== FUN_00549b78 @ 0x00549B78 ===== */
-uint FUN_00549b78(undefined4 param_1,uint param_2)
+/* ===== crt_pow_exp_check @ 0x00549B78 ===== */
+uint crt_pow_exp_check(undefined4 param_1,uint param_2)
 
 
 

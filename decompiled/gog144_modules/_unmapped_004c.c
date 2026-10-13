@@ -11119,7 +11119,7 @@ LAB_004d135c:
 
     case 0x5e:
 
-      FUN_004d1b30(fVar5);
+      smartie_mana_timer(fVar5);
 
     }
 
@@ -11961,7 +11961,7 @@ LAB_004d0695:
 
   case 0x5e:
 
-    FUN_004d1b30(fVar5);
+    smartie_mana_timer(fVar5);
 
   }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (153 named) — decompiled, names from PS2 symbols
+ * 179 functions (154 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -201,7 +201,7 @@ void comm_send_recv_pair(int param_1)
 
         local_18 = (uint)(ushort)local_18;
 
-        fVar5 = (float10)FUN_0052afc0(iVar2);
+        fVar5 = (float10)comm_stat_b_get(iVar2);
 
         local_14._1_3_ = SUB43((float)fVar5,0);
 
@@ -217,7 +217,7 @@ void comm_send_recv_pair(int param_1)
 
         local_18 = CONCAT13((char)iVar2,(undefined3)local_18);
 
-        fVar5 = (float10)FUN_0052afe0(iVar2);
+        fVar5 = (float10)comm_stat_a_get(iVar2);
 
         local_c._1_3_ = SUB43((float)fVar5,0);
 
@@ -316,7 +316,7 @@ void comm_send_big(undefined4 *param_1)
 
             (*(char *)((int)param_1 + 2) == *(char *)(param_1 + 1))))) {
 
-          fVar6 = (float10)FUN_0052afc0(cVar2);
+          fVar6 = (float10)comm_stat_b_get(cVar2);
 
           fVar6 = fVar6 - (float10)*(float *)((int)param_1 + 5);
 
@@ -326,7 +326,7 @@ void comm_send_big(undefined4 *param_1)
 
         else {
 
-          fVar6 = (float10)FUN_0052afc0(cVar2);
+          fVar6 = (float10)comm_stat_b_get(cVar2);
 
           fVar6 = fVar6 + (float10)*(float *)((int)param_1 + 5);
 
@@ -372,7 +372,7 @@ void comm_send_big(undefined4 *param_1)
 
       if (*(char *)((int)param_1 + 3) != -1) {
 
-        fVar6 = (float10)FUN_0052afe0(*(char *)((int)param_1 + 3));
+        fVar6 = (float10)comm_stat_a_get(*(char *)((int)param_1 + 3));
 
         FUN_0052b260(*(undefined1 *)((int)param_1 + 3),
 
@@ -432,7 +432,7 @@ void comm_send_big(undefined4 *param_1)
 
       if (local_18._1_1_ != -1) {
 
-        fVar6 = (float10)FUN_0052afc0(local_18._1_1_);
+        fVar6 = (float10)comm_stat_b_get(local_18._1_1_);
 
         fVar1 = (float)fVar6;
 
@@ -458,7 +458,7 @@ void comm_send_big(undefined4 *param_1)
 
       if (local_18._3_1_ != -1) {
 
-        fVar6 = (float10)FUN_0052afe0(local_18._3_1_);
+        fVar6 = (float10)comm_stat_a_get(local_18._3_1_);
 
         local_c._1_3_ = SUB43((float)fVar6,0);
 
@@ -2477,8 +2477,8 @@ void comm_packet_send(undefined4 param_1)
 
 }
 
-/* ===== FUN_005313e0 @ 0x005313E0 ===== */
-void FUN_005313e0(void)
+/* ===== comm_wait_send_space @ 0x005313E0 ===== */
+void comm_wait_send_space(void)
 
 
 
@@ -11620,9 +11620,9 @@ void FUN_005375e0(void)
 
               if ((iVar6 != 0) &&
 
-                 (fVar16 = (float10)FUN_0052afc0(iVar8), (float10)local_a9c < fVar16)) {
+                 (fVar16 = (float10)comm_stat_b_get(iVar8), (float10)local_a9c < fVar16)) {
 
-                fVar16 = (float10)FUN_0052afc0(iVar8);
+                fVar16 = (float10)comm_stat_b_get(iVar8);
 
                 local_a9c = (float)fVar16;
 

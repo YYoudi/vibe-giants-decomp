@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (31 named) — decompiled, names from PS2 symbols
+ * 39 functions (32 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -328,8 +328,8 @@ void FUN_004d1a00(int param_1,float param_2)
 
 }
 
-/* ===== FUN_004d1b30 @ 0x004D1B30 ===== */
-void FUN_004d1b30(int param_1)
+/* ===== smartie_mana_timer @ 0x004D1B30 ===== */
+void smartie_mana_timer(int param_1)
 
 
 

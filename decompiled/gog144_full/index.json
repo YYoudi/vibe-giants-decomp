@@ -1477,7 +1477,7 @@
  "0x004276A0": {
   "name": "dlog_004276a0",
   "named": true,
-  "len": 1170
+  "len": 1175
  },
  "0x00427790": {
   "name": "main_dlog_00427790",
@@ -1617,12 +1617,12 @@
  "0x00428810": {
   "name": "FUN_00428810",
   "named": false,
-  "len": 4053
+  "len": 4058
  },
  "0x00428B20": {
   "name": "dlog_rect_vtable_draw",
   "named": true,
-  "len": 3260
+  "len": 3265
  },
  "0x00428F70": {
   "name": "FUN_00428f70",
@@ -1732,7 +1732,7 @@
  "0x0042B060": {
   "name": "obj_in_render_range",
   "named": true,
-  "len": 1612
+  "len": 1620
  },
  "0x0042B160": {
   "name": "BinFileCreateWrite_2",
@@ -1907,7 +1907,7 @@
  "0x0042E460": {
   "name": "animate_core_caller",
   "named": true,
-  "len": 3238
+  "len": 3246
  },
  "0x0042E690": {
   "name": "rp_spark_hud_setup",
@@ -2597,12 +2597,12 @@
  "0x00446650": {
   "name": "flick_file_load_state",
   "named": true,
-  "len": 2959
+  "len": 2962
  },
  "0x00446890": {
   "name": "flick_objects_reload",
   "named": true,
-  "len": 1542
+  "len": 1545
  },
  "0x004469E0": {
   "name": "FLK_FlickPlaying",
@@ -6912,7 +6912,7 @@
  "0x004CEAA0": {
   "name": "smartie_move",
   "named": true,
-  "len": 54231
+  "len": 54243
  },
  "0x004D1790": {
   "name": "EnemyIsInvalid__FP6OBJECTT0",
@@ -6930,9 +6930,9 @@
   "len": 1575
  },
  "0x004D1B30": {
-  "name": "FUN_004d1b30",
-  "named": false,
-  "len": 805
+  "name": "smartie_mana_timer",
+  "named": true,
+  "len": 811
  },
  "0x004D1BD0": {
   "name": "verm_control",
@@ -8495,9 +8495,9 @@
   "len": 508
  },
  "0x005155C0": {
-  "name": "FUN_005155c0",
-  "named": false,
-  "len": 242
+  "name": "flick_ctx_reset",
+  "named": true,
+  "len": 245
  },
  "0x00515710": {
   "name": "object_spawn_class2",
@@ -8540,9 +8540,9 @@
   "len": 148
  },
  "0x00515DD0": {
-  "name": "FUN_00515dd0",
-  "named": false,
-  "len": 162
+  "name": "render_get_cam_right",
+  "named": true,
+  "len": 170
  },
  "0x00515DE0": {
   "name": "render_projection_reset",
@@ -9075,9 +9075,9 @@
   "len": 465
  },
  "0x0051BC70": {
-  "name": "FUN_0051bc70",
-  "named": false,
-  "len": 216
+  "name": "dlog_x_scale_calc",
+  "named": true,
+  "len": 221
  },
  "0x0051BC90": {
   "name": "textrender_draw_cached",
@@ -9740,14 +9740,14 @@
   "len": 172
  },
  "0x0052AFC0": {
-  "name": "FUN_0052afc0",
-  "named": false,
-  "len": 152
+  "name": "comm_stat_b_get",
+  "named": true,
+  "len": 155
  },
  "0x0052AFE0": {
-  "name": "FUN_0052afe0",
-  "named": false,
-  "len": 152
+  "name": "comm_stat_a_get",
+  "named": true,
+  "len": 155
  },
  "0x0052B000": {
   "name": "FUN_0052b000",
@@ -10167,12 +10167,12 @@
  "0x00530180": {
   "name": "comm_send_recv_pair",
   "named": true,
-  "len": 1922
+  "len": 1928
  },
  "0x00530270": {
   "name": "comm_send_big",
   "named": true,
-  "len": 3981
+  "len": 3996
  },
  "0x00530430": {
   "name": "comm_death_packet_build",
@@ -10250,9 +10250,9 @@
   "len": 888
  },
  "0x005313E0": {
-  "name": "FUN_005313e0",
-  "named": false,
-  "len": 650
+  "name": "comm_wait_send_space",
+  "named": true,
+  "len": 658
  },
  "0x00531470": {
   "name": "FUN_00531470",
@@ -10452,7 +10452,7 @@
  "0x005375E0": {
   "name": "FUN_005375e0",
   "named": false,
-  "len": 19582
+  "len": 19588
  },
  "0x00538010": {
   "name": "comm_send_538010",
@@ -11557,7 +11557,7 @@
  "0x005445F0": {
   "name": "crt_pow_special1",
   "named": true,
-  "len": 127
+  "len": 132
  },
  "0x0054460D": {
   "name": "anm_dump_ext",
@@ -11607,7 +11607,7 @@
  "0x00544AC0": {
   "name": "crt_pow_special2",
   "named": true,
-  "len": 130
+  "len": 135
  },
  "0x00544ADD": {
   "name": "anm_dump_544add",
@@ -12235,9 +12235,9 @@
   "len": 300
  },
  "0x00549B78": {
-  "name": "FUN_00549b78",
-  "named": false,
-  "len": 169
+  "name": "crt_pow_exp_check",
+  "named": true,
+  "len": 174
  },
  "0x00549B8E": {
   "name": "ANM_DumpCluster_8",

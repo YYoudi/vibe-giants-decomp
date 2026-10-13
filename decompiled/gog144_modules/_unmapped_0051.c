@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (162 named) — decompiled, names from PS2 symbols
+ * 186 functions (165 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -4283,8 +4283,8 @@ void FUN_00515580(void)
 
 }
 
-/* ===== FUN_005155c0 @ 0x005155C0 ===== */
-void FUN_005155c0(void)
+/* ===== flick_ctx_reset @ 0x005155C0 ===== */
+void flick_ctx_reset(void)
 
 
 
@@ -4788,12 +4788,12 @@ undefined * XFGetCameraAxis(int param_1)
 
 }
 
-/* ===== FUN_00515dd0 @ 0x00515DD0 ===== */
+/* ===== render_get_cam_right @ 0x00515DD0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_00515dd0(void)
+float10 render_get_cam_right(void)
 
 
 
@@ -11599,12 +11599,12 @@ float10 textrender_draw_min(float param_1,int param_2)
 
 }
 
-/* ===== FUN_0051bc70 @ 0x0051BC70 ===== */
+/* ===== dlog_x_scale_calc @ 0x0051BC70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_0051bc70(float param_1)
+float10 dlog_x_scale_calc(float param_1)
 
 
 

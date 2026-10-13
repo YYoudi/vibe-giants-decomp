@@ -9643,7 +9643,7 @@ void dlog_004276a0(uint param_1,float param_2,float param_3,float param_4,float 
 
     if ((uVar2 & 0x40000000) != 0) {
 
-      fVar3 = (float10)FUN_0051bc70(param_1);
+      fVar3 = (float10)dlog_x_scale_calc(param_1);
 
       *param_7 = (float)((float10)param_3 - fVar3);
 
@@ -10761,7 +10761,7 @@ void FUN_00428810(undefined4 *param_1)
 
           fVar5 = (float)puVar7[6];
 
-          fVar15 = (float10)FUN_0051bc70(local_8);
+          fVar15 = (float10)dlog_x_scale_calc(local_8);
 
           iVar14 = puVar7[10];
 
@@ -11006,7 +11006,7 @@ void dlog_rect_vtable_draw(int param_1,int param_2)
 
   }
 
-  fVar10 = (float10)FUN_0051bc70(param_2);
+  fVar10 = (float10)dlog_x_scale_calc(param_2);
 
   dlog_text_draw_wrap(fVar9,0,param_2,fVar4 + fVar5 + fVar5 + 0.005,
 
@@ -14152,7 +14152,7 @@ int obj_in_render_range(int param_1,float param_2,int param_3)
 
     fVar7 = (float10)distance3d__FP3P3DT0(param_1 + 0xa0,uVar3);
 
-    fVar8 = (float10)FUN_00515dd0();
+    fVar8 = (float10)render_get_cam_right();
 
     iVar5 = 0;
 
@@ -17881,7 +17881,7 @@ void animate_core_caller(int param_1,undefined4 param_2,int param_3,undefined4 p
 
       fVar1 = *(float *)(param_1 + 0x1f0);
 
-      fVar11 = (float10)FUN_00515dd0();
+      fVar11 = (float10)render_get_cam_right();
 
       iVar5 = 0;
 

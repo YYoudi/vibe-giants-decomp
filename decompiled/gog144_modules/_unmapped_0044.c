@@ -5975,7 +5975,7 @@ int flick_file_load_state(char *param_1)
 
     main_status_00500520(uVar2);
 
-    FUN_005155c0();
+    flick_ctx_reset();
 
     texture_object_debug_dump_3();
 
@@ -6188,7 +6188,7 @@ int flick_objects_reload(void)
 
       }
 
-      FUN_005155c0();
+      flick_ctx_reset();
 
       object_list_update();
 

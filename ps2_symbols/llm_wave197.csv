@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00549b78,FUN_00549b78,,crt_pow_exp_check,0.9,llm-w197,exponent mask check callers both pow specials
+0052afe0,FUN_0052afe0,,comm_stat_a_get,0.9,llm-w197,005dddf0 table getter callers comm send
+0052afc0,FUN_0052afc0,,comm_stat_b_get,0.9,llm-w197,005ddda0 table getter
+00515dd0,FUN_00515dd0,,render_get_cam_right,0.9,llm-w197,returns 005dcf4c axis[3] callers render_range
+0051bc70,FUN_0051bc70,,dlog_x_scale_calc,0.9,llm-w197,x/res*scale callers dlog draw
+005155c0,FUN_005155c0,,flick_ctx_reset,0.9,llm-w197,zeroes 0x8c ctx + sets 005dcf08 flag
+004d1b30,FUN_004d1b30,,smartie_mana_timer,0.9,llm-w197,timer 0xec + vimp_mana + destroy caller smartie_move
+005313e0,FUN_005313e0,,comm_wait_send_space,0.9,llm-w197,critsec+Sleep buffer wait base mode
