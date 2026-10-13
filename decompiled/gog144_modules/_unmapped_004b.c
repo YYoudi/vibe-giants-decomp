@@ -9256,7 +9256,7 @@ void FUN_004bce60(int param_1)
 
     }
 
-    FUN_004a2240(param_1,uVar11);
+    obj_gravity_apply(param_1,uVar11);
 
     if ((**(byte **)(param_1 + 0x104) & 0x40) != 0) {
 

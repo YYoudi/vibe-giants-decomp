@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0044eff0,FUN_0044EFF0,,wredit_obj_cleanup,0.9,llm-read47,
+0042a9c0,FUN_0042A9C0,,dlog_alpha4_copy,0.9,llm-read47,
+004a2240,FUN_004A2240,,obj_gravity_apply,0.9,llm-read47,
+0053f6a0,FUN_0053F6A0,,crt_quat_slerp,0.9,llm-read47,

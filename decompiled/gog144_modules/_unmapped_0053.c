@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (69 named) — decompiled, names from PS2 symbols
+ * 179 functions (70 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -18116,7 +18116,7 @@ void FUN_0053e090(int param_1,int param_2,int param_3,float param_4)
 
   } while (iVar5 != 0);
 
-  FUN_0053f6a0(param_1 + 0xc,param_2 + 0xc,param_3 + 0xc,param_4);
+  crt_quat_slerp(param_1 + 0xc,param_2 + 0xc,param_3 + 0xc,param_4);
 
   if ((((uint)*pfVar1 ^ *(uint *)(param_2 + 0x28)) & 8) != 0) {
 
@@ -20001,8 +20001,8 @@ void FUN_0053f650(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0053f6a0 @ 0x0053F6A0 ===== */
-void FUN_0053f6a0(int param_1,float *param_2,float *param_3,float param_4)
+/* ===== crt_quat_slerp @ 0x0053F6A0 ===== */
+void crt_quat_slerp(int param_1,float *param_2,float *param_3,float param_4)
 
 
 

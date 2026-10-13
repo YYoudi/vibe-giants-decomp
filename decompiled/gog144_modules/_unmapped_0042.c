@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (78 named) — decompiled, names from PS2 symbols
+ * 129 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -13469,7 +13469,7 @@ void dlog_alpha_quad_build(float *param_1,float *param_2)
 
       if ((DAT_0059ac78 & 4) != 0) {
 
-        FUN_0042a9c0(pfVar9,pfVar10);
+        dlog_alpha4_copy(pfVar9,pfVar10);
 
         pfVar7 = pfVar10;
 
@@ -13547,8 +13547,8 @@ void dlog_alpha_quad_build(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0042a9c0 @ 0x0042A9C0 ===== */
-void FUN_0042a9c0(undefined4 *param_1,undefined4 *param_2)
+/* ===== dlog_alpha4_copy @ 0x0042A9C0 ===== */
+void dlog_alpha4_copy(undefined4 *param_1,undefined4 *param_2)
 
 
 

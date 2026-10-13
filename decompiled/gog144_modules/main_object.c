@@ -201,7 +201,7 @@ void object_list_update(void)
 
   } while (!bVar3);
 
-  FUN_0044eff0();
+  wredit_obj_cleanup();
 
   FUN_00536c60();
 

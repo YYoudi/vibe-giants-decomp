@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (40 named) — decompiled, names from PS2 symbols
+ * 131 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1591,8 +1591,8 @@ void PhysicsExGroundCollision(int param_1)
 
 }
 
-/* ===== FUN_004a2240 @ 0x004A2240 ===== */
-void FUN_004a2240(int param_1,int param_2)
+/* ===== obj_gravity_apply @ 0x004A2240 ===== */
+void obj_gravity_apply(int param_1,int param_2)
 
 
 
