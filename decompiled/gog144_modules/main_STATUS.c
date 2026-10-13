@@ -66,7 +66,7 @@ int main_status_00500520(int *param_1)
 
       do {
 
-        uVar3 = FUN_00497cd0(*puVar5);
+        uVar3 = objectset_find_2(*puVar5);
 
         *(undefined4 *)(iVar2 + param_1[2]) = uVar3;
 

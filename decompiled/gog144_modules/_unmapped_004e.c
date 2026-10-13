@@ -2114,7 +2114,7 @@ undefined4 rpman_verify_enemy__FP6OBJECTf(int param_1,float param_2)
 
   if (*piVar2 != 0) {
 
-    iVar3 = FUN_004a6240(*piVar2);
+    iVar3 = obj_is_pickup_4a(*piVar2);
 
     if ((iVar3 == 0) && (iVar3 = obj_is_pickup_53(*piVar2), iVar3 == 0)) {
 
@@ -2248,7 +2248,7 @@ LAB_004e33e5:
 
   else {
 
-    iVar4 = FUN_004a6240(iVar3);
+    iVar4 = obj_is_pickup_4a(iVar3);
 
     if ((iVar4 == 0) && (iVar4 = obj_is_pickup_53(iVar3), iVar4 == 0)) {
 
@@ -2432,7 +2432,7 @@ undefined4 rpman_check_los__FP6OBJECTT0(int param_1,int param_2)
 
   }
 
-  iVar1 = FUN_004a6240(param_2);
+  iVar1 = obj_is_pickup_4a(param_2);
 
   if (iVar1 == 0) {
 
@@ -2513,7 +2513,7 @@ undefined4 ai_los_clear_to_target(float param_1,float param_2,int param_3,int pa
 
   }
 
-  iVar1 = FUN_004a6240(param_4);
+  iVar1 = obj_is_pickup_4a(param_4);
 
   if (iVar1 == 0) {
 
@@ -2675,7 +2675,7 @@ void ai_radius_scan(int param_1,float param_2)
 
         if (fVar5 < (float10)local_20) {
 
-          iVar4 = FUN_004a6240(iVar2);
+          iVar4 = obj_is_pickup_4a(iVar2);
 
           if ((iVar4 == 0) && (iVar4 = obj_is_pickup_53(iVar2), iVar4 == 0)) {
 
@@ -2830,7 +2830,7 @@ LAB_004e3a00:
 
             if (param_4 != 0) {
 
-              iVar6 = FUN_004a6240(iVar4);
+              iVar6 = obj_is_pickup_4a(iVar4);
 
               if ((iVar6 == 0) && (iVar6 = obj_is_pickup_53(iVar4), iVar6 == 0)) {
 
@@ -3006,7 +3006,7 @@ LAB_004e3ad2:
 
               if ((float10)*(float *)(DAT_00632ed8 + 0xa9c) < fVar9) goto LAB_004e3e52;
 
-              iVar6 = FUN_004a6240(iVar4);
+              iVar6 = obj_is_pickup_4a(iVar4);
 
               if ((iVar6 != 0) || (iVar6 = obj_is_pickup_53(iVar4), iVar6 != 0)) goto LAB_004e3e42;
 
@@ -3254,7 +3254,7 @@ void rpman_set_enemy_attack_goal__FP6OBJECTi(int param_1,int param_2)
 
   }
 
-  iVar2 = FUN_004a6240(*piVar1);
+  iVar2 = obj_is_pickup_4a(*piVar1);
 
   if ((iVar2 == 0) && (iVar2 = obj_is_pickup_53(*piVar1), iVar2 == 0)) {
 
@@ -4312,7 +4312,7 @@ void make_grenade_shot__FP6OBJECTf(int param_1,float param_2)
 
     local_4 = *(float *)(iVar2 + 0xa8);
 
-    iVar2 = FUN_004a6240(*piVar1);
+    iVar2 = obj_is_pickup_4a(*piVar1);
 
     if (iVar2 == 0) {
 
@@ -4548,7 +4548,7 @@ void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int par
 
       local_6c = *(float *)(param_2 + 0xa8);
 
-      iVar3 = FUN_004a6240(param_2);
+      iVar3 = obj_is_pickup_4a(param_2);
 
       if ((iVar3 != 0) || (iVar3 = obj_is_pickup_53(param_2), iVar3 != 0)) {
 
@@ -4901,7 +4901,7 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
         local_60 = *(float *)(iVar11 + 0xa8);
 
-        iVar10 = FUN_004a6240(iVar11);
+        iVar10 = obj_is_pickup_4a(iVar11);
 
         if ((iVar10 == 0) && (iVar10 = obj_is_pickup_53(iVar11), iVar10 == 0)) {
 
@@ -5181,7 +5181,7 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
       }
 
-      iVar9 = FUN_004a6240(*piVar4);
+      iVar9 = obj_is_pickup_4a(*piVar4);
 
       if ((iVar9 != 0) || (iVar9 = obj_is_pickup_53(*piVar4), iVar9 != 0)) {
 
@@ -5528,7 +5528,7 @@ LAB_004e6651:
 
           if (fVar10 < (float10)param_4) {
 
-            iVar9 = FUN_004a6240(iVar8);
+            iVar9 = obj_is_pickup_4a(iVar8);
 
             if ((iVar9 == 0) && (iVar9 = obj_is_pickup_53(iVar8), iVar9 == 0)) {
 
@@ -5598,7 +5598,7 @@ LAB_004e647b:
 
   }
 
-  iVar8 = FUN_004a6240(*piVar2);
+  iVar8 = obj_is_pickup_4a(*piVar2);
 
   if ((iVar8 == 0) && (iVar8 = obj_is_pickup_53(*piVar2), iVar8 == 0)) {
 
@@ -5755,7 +5755,7 @@ LAB_004e6792:
 
   else {
 
-    iVar4 = FUN_004a6240(iVar5);
+    iVar4 = obj_is_pickup_4a(iVar5);
 
     if ((iVar4 == 0) && (iVar4 = obj_is_pickup_53(iVar5), iVar4 == 0)) {
 
@@ -7201,7 +7201,7 @@ LAB_004e7bdc:
 
   else {
 
-    iVar5 = FUN_004a6240(*piVar1);
+    iVar5 = obj_is_pickup_4a(*piVar1);
 
     if (((iVar5 != 0) || (iVar5 = obj_is_pickup_53(*piVar1), iVar5 != 0)) &&
 
@@ -7257,7 +7257,7 @@ LAB_004e7ce8:
 
     }
 
-    iVar5 = FUN_004a6240(*piVar1);
+    iVar5 = obj_is_pickup_4a(*piVar1);
 
     if (((iVar5 == 0) && (iVar5 = obj_is_pickup_53(*piVar1), iVar5 == 0)) ||
 
@@ -7345,7 +7345,7 @@ LAB_004e7ee7:
 
             }
 
-            iVar10 = FUN_004a6240(*piVar1);
+            iVar10 = obj_is_pickup_4a(*piVar1);
 
             if (iVar10 == 0) {
 
@@ -7425,7 +7425,7 @@ LAB_004e7fae:
 
             }
 
-            iVar10 = FUN_004a6240(*piVar1);
+            iVar10 = obj_is_pickup_4a(*piVar1);
 
             if (iVar10 == 0) {
 

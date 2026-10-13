@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (110 named) — decompiled, names from PS2 symbols
+ * 142 functions (111 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -8070,8 +8070,8 @@ void FUN_00497c90(int param_1)
 
 }
 
-/* ===== FUN_00497cd0 @ 0x00497CD0 ===== */
-undefined4 FUN_00497cd0(int param_1)
+/* ===== objectset_find_2 @ 0x00497CD0 ===== */
+undefined4 objectset_find_2(int param_1)
 
 
 

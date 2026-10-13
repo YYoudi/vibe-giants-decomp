@@ -129,7 +129,7 @@ void FUN_004d1840(int param_1,int *param_2)
 
       if (*(int *)(param_1 + 0xe8) == 100) {
 
-        iVar3 = FUN_004a6240(iVar2);
+        iVar3 = obj_is_pickup_4a(iVar2);
 
         if ((iVar3 == 0) && (iVar3 = obj_is_pickup_53(iVar2), iVar3 == 0)) {
 

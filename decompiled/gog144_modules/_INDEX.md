@@ -7,8 +7,8 @@
 | _unmapped_0053 | 179 | 146 | _unmapped_0053.c |
 | _unmapped_0052 | 162 | 113 | _unmapped_0052.c |
 | _unmapped_0045 | 145 | 104 | _unmapped_0045.c |
-| _unmapped_0049 | 142 | 110 | _unmapped_0049.c |
-| _unmapped_004a | 131 | 105 | _unmapped_004a.c |
+| _unmapped_0049 | 142 | 111 | _unmapped_0049.c |
+| _unmapped_004a | 131 | 106 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 110 | _unmapped_0042.c |
 | _unmapped_0040 | 105 | 81 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 81 | _unmapped_0041.c |

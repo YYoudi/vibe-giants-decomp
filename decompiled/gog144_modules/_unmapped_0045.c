@@ -285,7 +285,7 @@ void gameover_menu(void)
 
   dialog_level_set_textentry_mode();
 
-  DAT_0059d804 = FUN_00497cd0(0x127);
+  DAT_0059d804 = objectset_find_2(0x127);
 
   DAT_0059d808 = main_dlog_00427150();
 
