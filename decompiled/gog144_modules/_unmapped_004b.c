@@ -2498,8 +2498,10 @@ LAB_004b5db6:
 
 }
 
-/* ===== cspec_004b5f00 @ 0x004B5F00 ===== */
-void cspec_004b5f00(undefined4 param_1,float param_2,int param_3,int param_4,float *param_5)
+/* ===== reaperbase_death_handler_c83 @ 0x004B5F00 ===== */
+void reaperbase_death_handler_c83
+
+               (undefined4 param_1,float param_2,int param_3,int param_4,float *param_5)
 
 
 
@@ -8848,12 +8850,12 @@ void reaper_init__FP6OBJECT(int param_1)
 
 }
 
-/* ===== cspec_004bab60 @ 0x004BAB60 ===== */
+/* ===== reaperbase_ai_main_c3 @ 0x004BAB60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_004bab60(int param_1)
+void reaperbase_ai_main_c3(int param_1)
 
 
 

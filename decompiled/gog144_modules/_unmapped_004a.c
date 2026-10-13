@@ -4344,8 +4344,8 @@ void piranha_launch_fx__FP6OBJECT(int param_1)
 
 }
 
-/* ===== cspec_004a4d30 @ 0x004A4D30 ===== */
-void cspec_004a4d30(float param_1)
+/* ===== piranha_ai_main_c93 @ 0x004A4D30 ===== */
+void piranha_ai_main_c93(float param_1)
 
 
 
@@ -11416,8 +11416,8 @@ void cspec_004aac50(undefined4 param_1,float param_2,uint param_3)
 
 }
 
-/* ===== cspec_004aad80 @ 0x004AAD80 ===== */
-void cspec_004aad80(float param_1)
+/* ===== combat_ai_main_c77 @ 0x004AAD80 ===== */
+void combat_ai_main_c77(float param_1)
 
 
 

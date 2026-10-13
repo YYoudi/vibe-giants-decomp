@@ -7679,8 +7679,8 @@ LAB_004e8053:
 
 }
 
-/* ===== cspec_004e8410 @ 0x004E8410 ===== */
-void cspec_004e8410(float param_1,float param_2,float param_3,float param_4,int param_5)
+/* ===== death_handler_c51 @ 0x004E8410 ===== */
+void death_handler_c51(float param_1,float param_2,float param_3,float param_4,int param_5)
 
 
 

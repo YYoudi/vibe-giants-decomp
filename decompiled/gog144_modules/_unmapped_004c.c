@@ -7914,8 +7914,10 @@ void cspec_004c6840(int param_1,int param_2)
 
 }
 
-/* ===== cspec_004c68d0 @ 0x004C68D0 ===== */
-void cspec_004c68d0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== reaperbase_death_handler_c88 @ 0x004C68D0 ===== */
+void reaperbase_death_handler_c88
+
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -8944,8 +8946,8 @@ LAB_004c75eb:
 
 }
 
-/* ===== cspec_004c7610 @ 0x004C7610 ===== */
-void cspec_004c7610(int param_1)
+/* ===== evilreaper_ai_main_c99 @ 0x004C7610 ===== */
+void evilreaper_ai_main_c99(int param_1)
 
 
 

@@ -6711,8 +6711,8 @@ void cspec_00456670(int param_1)
 
 }
 
-/* ===== cspec_004566a0 @ 0x004566A0 ===== */
-void cspec_004566a0(undefined4 param_1,int param_2,undefined4 param_3,int *param_4)
+/* ===== herd_death_handler_c17 @ 0x004566A0 ===== */
+void herd_death_handler_c17(undefined4 param_1,int param_2,undefined4 param_3,int *param_4)
 
 
 

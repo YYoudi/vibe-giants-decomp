@@ -1174,8 +1174,8 @@ void camera_ref_anode(int param_1,undefined4 param_2,int param_3,int *param_4)
 
 }
 
-/* ===== cspec_00465fb0 @ 0x00465FB0 ===== */
-void cspec_00465fb0(int param_1,int param_2,undefined4 param_3,float *param_4)
+/* ===== kabutoai_death_handler_c1 @ 0x00465FB0 ===== */
+void kabutoai_death_handler_c1(int param_1,int param_2,undefined4 param_3,float *param_4)
 
 
 
@@ -7023,8 +7023,8 @@ void cspec_0046b8d0(int param_1)
 
 }
 
-/* ===== cspec_0046b930 @ 0x0046B930 ===== */
-void cspec_0046b930(int param_1,float param_2,int param_3,uint param_4,undefined4 param_5)
+/* ===== death_handler_c75 @ 0x0046B930 ===== */
+void death_handler_c75(int param_1,float param_2,int param_3,uint param_4,undefined4 param_5)
 
 
 
@@ -7695,8 +7695,8 @@ undefined4 obj_3dsound_scan(int param_1,int param_2)
 
 }
 
-/* ===== cspec_0046c2b0 @ 0x0046C2B0 ===== */
-void cspec_0046c2b0(int param_1)
+/* ===== kbos_ai_main_c75 @ 0x0046C2B0 ===== */
+void kbos_ai_main_c75(int param_1)
 
 
 
@@ -9234,8 +9234,8 @@ LAB_0046d703:
 
 }
 
-/* ===== cspec_0046daf0 @ 0x0046DAF0 ===== */
-void cspec_0046daf0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== kbos_death_handler_c75 @ 0x0046DAF0 ===== */
+void kbos_death_handler_c75(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 
 

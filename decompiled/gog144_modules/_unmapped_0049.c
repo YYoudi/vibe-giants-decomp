@@ -14460,8 +14460,8 @@ undefined4 collide_wall_block(float *param_1,float *param_2,float param_3)
 
 }
 
-/* ===== cspec_0049c670 @ 0x0049C670 ===== */
-void cspec_0049c670(float param_1)
+/* ===== kbos_ai_main_c4 @ 0x0049C670 ===== */
+void kbos_ai_main_c4(float param_1)
 
 
 
@@ -16106,8 +16106,8 @@ undefined4 cspec_0049e0a0(void)
 
 }
 
-/* ===== cspec_0049e0b0 @ 0x0049E0B0 ===== */
-void cspec_0049e0b0(int param_1,float param_2,int param_3,undefined4 param_4,undefined4 param_5)
+/* ===== death_handler_c4 @ 0x0049E0B0 ===== */
+void death_handler_c4(int param_1,float param_2,int param_3,undefined4 param_4,undefined4 param_5)
 
 
 

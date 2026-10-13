@@ -2067,8 +2067,8 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
 }
 
-/* ===== cspec_004d3840 @ 0x004D3840 ===== */
-void cspec_004d3840(undefined4 param_1,float param_2,int param_3,int param_4)
+/* ===== death_handler_c23 @ 0x004D3840 ===== */
+void death_handler_c23(undefined4 param_1,float param_2,int param_3,int param_4)
 
 
 
@@ -3807,8 +3807,8 @@ void cspec_004d4c80(int param_1)
 
 }
 
-/* ===== cspec_004d4cf0 @ 0x004D4CF0 ===== */
-void cspec_004d4cf0(undefined4 param_1,float param_2,int param_3)
+/* ===== death_handler_c47 @ 0x004D4CF0 ===== */
+void death_handler_c47(undefined4 param_1,float param_2,int param_3)
 
 
 
@@ -4465,8 +4465,8 @@ LAB_004d5429:
 
 }
 
-/* ===== cspec_004d55f0 @ 0x004D55F0 ===== */
-void cspec_004d55f0(undefined4 param_1,float param_2,int param_3)
+/* ===== death_handler_c49 @ 0x004D55F0 ===== */
+void death_handler_c49(undefined4 param_1,float param_2,int param_3)
 
 
 

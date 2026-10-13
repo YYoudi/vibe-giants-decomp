@@ -1,0 +1,2857 @@
+[
+ {
+  "name": "cspec_004d8d60",
+  "size": 153143,
+  "classes": [
+   51
+  ],
+  "fields": [
+   2
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_0045ece0",
+  "size": 131343,
+  "classes": [
+   1
+  ],
+  "fields": [
+   2
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_004ef730",
+  "size": 89012,
+  "classes": [
+   18
+  ],
+  "fields": [
+   2
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_004c2d20",
+  "size": 61544,
+  "classes": [
+   3
+  ],
+  "fields": [
+   3
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_004c7610",
+  "size": 56846,
+  "classes": [
+   99
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsMecc",
+   "ObjIsReaper",
+   "ObjectSetAnim",
+   "PhysicsExApplyLocation",
+   "PhysicsExApplyMoveControls",
+   "PhysicsExCalcControledModelSpeeds",
+   "PhysicsExZeroForce",
+   "ai_clear_move_goal",
+   "ai_fly_update_goal_4",
+   "ai_get_goal_location",
+   "ai_goal_process",
+   "ai_move_update_goal",
+   "ai_moveonly_set_goal",
+   "collgrid_collide_d",
+   "crt_rand_scaled",
+   "dirfcalcp3d__FP3P3DT0",
+   "evilreaper_change_anim__FP6OBJECTii4SDKYf",
+   "evilreaper_find_turbo_marker__FP6OBJECTP3P3Di",
+   "evilreaper_fire_bow__FP6OBJECT",
+   "evilreaper_scan_for_enemy__FP6OBJECTf",
+   "evilreaper_select_firewall_loc__FP6OBJECT",
+   "evilreaper_set_new_location__FP6OBJECTi",
+   "evilreaper_verify_enemy__FP6OBJECTf",
+   "fx_delete",
+   "fx_get_free_effect__Fv",
+   "fxb_firecircle_create",
+   "get_floor_z_point",
+   "ground_height_at",
+   "normalize__FPfN20",
+   "obj_alpha_fade_update",
+   "obj_damage_apply",
+   "obj_gravity_apply",
+   "obj_vel_reset",
+   "obj_yaw_turn",
+   "object_animate_process",
+   "object_copy_posdirinfo",
+   "object_spawn_small",
+   "physics_reset_a",
+   "physics_reset_c",
+   "physics_reset_d",
+   "player_pitch_update",
+   "playerobj_turn",
+   "powf",
+   "reaper_create_fake_reaper__FP6OBJECTP3P3Dfi",
+   "reaper_firewall_hit",
+   "reaper_init_trails",
+   "rndfloatrange",
+   "rndintrange",
+   "sine_cos_lookup",
+   "sound_get_free_sequence__Fv",
+   "sound_interrupt_sequence",
+   "sound_obj_seq_big",
+   "sound_obj_seq_bigger",
+   "sound_obj_seq_small",
+   "sound_play_obj",
+   "sound_play_player",
+   "sound_player_user",
+   "trajectory_calculate",
+   "vimp_mana_effect"
+  ]
+ },
+ {
+  "name": "cspec_00479430",
+  "size": 52882,
+  "classes": [
+   2
+  ],
+  "fields": [
+   2
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_004676e0",
+  "size": 40601,
+  "classes": [
+   15
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "PhysicsExApplyLocation",
+   "PhysicsExApplyMoveControls",
+   "PhysicsExZeroForce",
+   "ai_clear_move_goal",
+   "ai_goal_process",
+   "ai_move_force_goal",
+   "crt_rand_scaled",
+   "dirfcalcp3d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "kabutoai_change_anim__FP6OBJECTii4SDKYfi",
+   "loglauncher_process",
+   "normalize__FPfN20",
+   "obj_alpha_fade_update",
+   "obj_damage_apply",
+   "obj_gravity_apply",
+   "obj_vel_reset",
+   "object_allocate_type",
+   "object_animate_process",
+   "object_change_ospec",
+   "object_set_location",
+   "player_pitch_update",
+   "playerobj_eval_refpt",
+   "playerobj_turn",
+   "powf",
+   "reaper_lock_short_5",
+   "rndfloatrange",
+   "rndintrange",
+   "sound_play_obj",
+   "sound_stop_obj",
+   "terrain_query_z",
+   "voice_event_trigger"
+  ]
+ },
+ {
+  "name": "cspec_004bab60",
+  "size": 33490,
+  "classes": [
+   3
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "CONCAT11",
+   "IconDefWieldType",
+   "MemAllocMsg",
+   "ObjIsJetski",
+   "ObjIsReaper",
+   "ObjectSetAnim",
+   "PROJ_DefGet",
+   "XFGetCameraAxis",
+   "XFGetCameraOrigin",
+   "XFGetViewportExt",
+   "ai_flight_check",
+   "ai_proximity_scan",
+   "audio_anode_check",
+   "base_find_closest",
+   "cam_mode_full",
+   "camera_cursor_fire",
+   "camera_is_sniper",
+   "chat_insert",
+   "comm_chat_send_2",
+   "comm_send_gate_check",
+   "dialog_level_is_base",
+   "distance3d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "drip_system_init",
+   "fx_create",
+   "fx_delete",
+   "fx_get_free_effect__Fv",
+   "fx_logic",
+   "fx_shape_gen",
+   "fxb_splash_create",
+   "get_floor_z_point",
+   "gun_find_right",
+   "hud_screen_project4",
+   "hud_world_to_screen_2",
+   "lzo_checked_alloc",
+   "lzo_spawn_checked",
+   "main_path_0049fb00",
+   "mem_free_tagged",
+   "obj_aim_calc",
+   "obj_alpha_fade_update",
+   "obj_damage_apply",
+   "object_animate_process",
+   "object_create_child",
+   "object_set_location_p3d",
+   "object_spawn_class5",
+   "objspec_dispatch_gate",
+   "player_pitch_update",
+   "playerobj_eval_refpt",
+   "powf",
+   "project_cursor_to_ground",
+   "project_cursor_to_object",
+   "reaper_0052e4a0",
+   "reaper_can_use_other__FP6OBJECTi",
+   "reaper_check_enter_jet_ski__FP6OBJECT",
+   "reaper_check_enter_teleport__FP6OBJECT",
+   "reaper_finish_hail__FP6OBJECT",
+   "reaper_fire_logic__FP6OBJECT",
+   "reaper_firewall_hit",
+   "reaper_fx_at_bldg_a",
+   "reaper_fx_at_bldg_b",
+   "reaper_init__FP6OBJECT",
+   "reaper_is_water_jump__FP6OBJECT",
+   "reaper_lock_pair",
+   "reaper_lock_user",
+   "reaper_lock_user_2",
+   "reaper_replenish_basepit_energy__FP6OBJECT",
+   "reaper_set_pitch__FP6OBJECT",
+   "reaper_stop_looping_effects",
+   "reaper_turbo_towards_moving_target__FP6OBJECT",
+   "reaper_walkrun_go__FP6OBJECT",
+   "reaper_xhair_validate__FP6OBJECTPv",
+   "sine_cos_lookup",
+   "sound_play",
+   "sound_play_player",
+   "sound_player_user",
+   "tracer_aim_fire",
+   "turret_exit_all_team",
+   "voice_quota_check",
+   "weapon_id_inventory_update",
+   "world_ripple_xform"
+  ]
+ },
+ {
+  "name": "cspec_0046c2b0",
+  "size": 29347,
+  "classes": [
+   75
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectCalculateTransform",
+   "ObjectGetWorldRefPoint__FP3P3DiP6OBJECT",
+   "PROJ_ObjectFinalize",
+   "PhysicsExApplyLocation",
+   "bbox_center_calc",
+   "blood_from_point",
+   "crt_rand_scaled",
+   "dialog_level_is_base",
+   "distance2d__FP3P3DT0",
+   "func_0x0046a560",
+   "func_0x0046da60",
+   "fx_create",
+   "fx_delete",
+   "fx_get_free_effect__Fv",
+   "gfx_d3d_0046aa30",
+   "ground_height_at",
+   "hud_icon_add_2",
+   "kbos_attach_object",
+   "kbos_init",
+   "kbos_scan_food__FP6OBJECTP14ObjProcessInfo",
+   "kbos_sizer",
+   "obj_3dsound_scan",
+   "obj_anim_flags_update",
+   "obj_bone_update",
+   "obj_damage_apply",
+   "obj_sub100_transform",
+   "obj_velocity_normalize",
+   "object_allocate_type",
+   "object_animate_process",
+   "object_change_ospec",
+   "object_destroy",
+   "object_init_usage",
+   "object_set_location_p3d",
+   "playerobj_eval_refpt",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaper_lock_short_2",
+   "rndfloat",
+   "rndfloatrange",
+   "sine_cos_lookup",
+   "sound_play_obj",
+   "terrain_query_z",
+   "trajectory_calculate",
+   "vec3_len"
+  ]
+ },
+ {
+  "name": "cspec_0049c670",
+  "size": 27447,
+  "classes": [
+   4
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "PROJ_Create2",
+   "PhysicsExApplyLocation",
+   "PhysicsExApplyMoveControls",
+   "PhysicsExZeroForce",
+   "ai_clear_move_goal",
+   "ai_goal_process",
+   "ai_move_force_goal",
+   "bbox_center_calc",
+   "crt_rand_scaled",
+   "diff_rangle__Fff",
+   "distancesq2d__FP3P3DT0",
+   "get_floor_z_point_plat_2",
+   "kbos_attach_object",
+   "normalize__FPfN20",
+   "obj_alpha_fade_update",
+   "obj_damage_apply",
+   "obj_gravity_apply",
+   "obj_vel_reset",
+   "object_allocate_type",
+   "object_animate_process",
+   "offspring_dive_release_target__FP6OBJECT",
+   "player_pitch_update",
+   "playerobj_eval_refpt",
+   "playerobj_turn",
+   "rndfloatrange",
+   "sine_cos_lookup",
+   "sound_play_obj",
+   "trajectory_calculate"
+  ]
+ },
+ {
+  "name": "cspec_004d5f20",
+  "size": 27152,
+  "classes": [
+   90
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "Dot__FP3P3DT0",
+   "GEO_MatIdentity",
+   "ObjectSetAnim",
+   "PhysicsExApplyLocation",
+   "PhysicsExCalcControledModelSpeeds",
+   "PhysicsExZeroForce",
+   "SphereFitToObject",
+   "XFGetCameraAxis",
+   "XFGetViewportExt",
+   "comm_chat_send_2",
+   "comm_send_gate_check",
+   "comm_send_gate_check_2",
+   "crt_pow_special1",
+   "crt_rand_scaled",
+   "distancesq2d__FP3P3DT0",
+   "drip_system_init",
+   "func_0x004d72d0",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "normalize__FPfN20",
+   "obj_alpha_fade_update",
+   "obj_bone_update",
+   "obj_damage_apply",
+   "obj_gravity_apply",
+   "obj_speed_sq_calc",
+   "obj_vel_reset",
+   "object_allocate_type",
+   "object_animate_process",
+   "player_pitch_update",
+   "playerobj_lookud",
+   "reaper_spell_sound_1",
+   "reaper_spell_sound_2",
+   "rndfloatrange",
+   "rpboat_ghost_logic__FP6OBJECT",
+   "rpboat_tilt__FP6OBJECT",
+   "sound_play_2",
+   "sound_play_obj",
+   "sound_play_player",
+   "sound_stop_obj",
+   "sound_stop_player"
+  ]
+ },
+ {
+  "name": "cspec_0044f1e0",
+  "size": 27028,
+  "classes": [
+   78
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "GEO_MatFromQuat_3",
+   "GEO_MatLookAt",
+   "MAP_MemGroupSetBase_3",
+   "ObjectCalculateTransform",
+   "ObjectSetAnim",
+   "PhysicsExGroundCollision",
+   "XFGetViewportExt",
+   "crt_euler_to_quat",
+   "func_0x00447b30",
+   "func_0x00449a80",
+   "func_0x00509c80",
+   "fx_get_free_effect__Fv",
+   "fx_process_one",
+   "fxobj_delete__FP6OBJECTP7FxOspeci",
+   "mpeg_mode_set",
+   "normalize__FPfN20",
+   "obj_gravity_apply",
+   "obj_move_clamped",
+   "obj_vel_reset",
+   "object_animate_process",
+   "ripper_control__FP6OBJECT",
+   "rndfloatrange",
+   "rndintrange",
+   "vec2_normalize",
+   "xformobj_p3d_world"
+  ]
+ },
+ {
+  "name": "cspec_004f6330",
+  "size": 23167,
+  "classes": [
+   18
+  ],
+  "fields": [
+   3
+  ],
+  "callees": [
+   "ObjIsMecc",
+   "ObjIsReaper",
+   "ObjectSetAnim",
+   "ObjectUpdateSpeedDist",
+   "TextGetPtrRandom",
+   "anim_select_user",
+   "chat_insert_name",
+   "crt_rand_scaled",
+   "fx_create",
+   "meccbaseitem_shot",
+   "meccbasepit_bldg_from_object",
+   "obj_damage_apply",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaperbase_bldg_from_object",
+   "rndfloatrange",
+   "sine_cos_lookup",
+   "sound_play_obj",
+   "sound_play_player",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_0050b120",
+  "size": 21887,
+  "classes": [
+   44
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "Dot__FP3P3DT0",
+   "GEO_Vec3Normalize",
+   "ObjIsKabuto",
+   "ObjIsMecc",
+   "ObjIsReaper",
+   "PROJ_DefGet",
+   "TurretExit",
+   "ai_class_filter",
+   "audio_listener_pan",
+   "bldg_get_refpt_worldloc",
+   "camera_override_refpt",
+   "comm_chat_send_2",
+   "comm_send_gate_check",
+   "comm_send_gate_check_2",
+   "dialog_level_is_base",
+   "distance3d__FP3P3DT0",
+   "fx_create",
+   "math_cos_lut_read",
+   "math_sincos_pair",
+   "object_spawn_small",
+   "playerobj_eval_refpt",
+   "project_vector_to_object",
+   "reaper_00530bd0",
+   "sine_cos_lookup",
+   "sound_play_obj",
+   "sound_play_player",
+   "sound_stop_obj",
+   "sound_stop_player"
+  ]
+ },
+ {
+  "name": "cspec_0050f8f0",
+  "size": 20439,
+  "classes": [
+   21
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "PhysicsExApplyLocation",
+   "PhysicsExCalcControledModelSpeeds",
+   "PhysicsExZeroForce",
+   "anim_select_check",
+   "chase_angle",
+   "comm_chat_send_2",
+   "crt_rand_scaled",
+   "dirfcalcp3d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "drip_system_init",
+   "evilreaper_ai_big",
+   "evilreaper_speed_dist",
+   "fx_create",
+   "herdgen_get_next_marker",
+   "math_sign_of",
+   "obj_alpha_fade_update",
+   "obj_bone_update",
+   "obj_damage_apply",
+   "obj_gravity_apply",
+   "obj_proximity_flags",
+   "obj_vel_reset",
+   "object_animate_process",
+   "object_destroy",
+   "object_find",
+   "player_pitch_update",
+   "playerobj_turn",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "ripper_control__FP6OBJECT",
+   "rndfloatrange",
+   "sound_play_obj",
+   "sound_stop_obj",
+   "vimp_animselect",
+   "vimp_get_wanted_loc__FP6OBJECT"
+  ]
+ },
+ {
+  "name": "cspec_004aad80",
+  "size": 19392,
+  "classes": [
+   77
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "GEO_MatBuildXYZ",
+   "GEO_MatFromQuat_3",
+   "GEO_MatLookAt",
+   "ObjIsMecc",
+   "ObjIsPlayer",
+   "ObjIsReaper",
+   "ObjIsReaperBldg",
+   "ObjectCalculateTransform",
+   "ObjectSetAnim",
+   "PhysicsExGroundCollision",
+   "collide_line_bbox",
+   "comm_send_gate_check",
+   "dirfcalcp3d__FP3P3DT0",
+   "dirucalcp3d__FP3P3DT0",
+   "func_0x0049c3a0",
+   "func_0x004a23f0",
+   "func_0x004c2350",
+   "func_0x00511fc0",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "los_line_check",
+   "mecc_in_gyro",
+   "meccbasepit_bldg_from_object",
+   "obj_damage_apply",
+   "obj_gravity_apply",
+   "obj_move_clamped",
+   "obj_vel_reset",
+   "obj_velocity_normalize",
+   "object_animate_process",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaperbase_bldg_from_object",
+   "repair_spell_fx",
+   "rndfloatrange"
+  ]
+ },
+ {
+  "name": "cspec_004e8410",
+  "size": 16468,
+  "classes": [
+   51
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjIsPlayer",
+   "ObjIsReaper",
+   "ObjectSetAnim",
+   "ai_d7_pairing",
+   "crt_rand_scaled",
+   "death_pose_setup",
+   "dirfcalcp3d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "formation_notify_death",
+   "func_0x004e76d0",
+   "func_0x0050c990",
+   "fx_get_free_effect__Fv",
+   "get_floor_z_point",
+   "rndfloatrange",
+   "rndintrange",
+   "rpman_gib__FP6OBJECTT0",
+   "rpman_notify_hit",
+   "sine_cos_lookup",
+   "smartie_unlock_from_player",
+   "sound_play_obj",
+   "sound_stop_obj",
+   "sound_stop_sequence",
+   "wound_from_object_world"
+  ]
+ },
+ {
+  "name": "cspec_004f42b0",
+  "size": 11340,
+  "classes": [
+   18
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "ObjIsMecc",
+   "ObjIsReaper",
+   "ObjectSetAnim",
+   "ai_clear_move_goal",
+   "ai_moveonly_set_goal",
+   "base_get_base_building",
+   "bldg_get_refpt_worldlocdir",
+   "bldg_slot_action_dispatch",
+   "distancesq2d__FP3P3DT0",
+   "ground_get_z",
+   "item_pickup_valid_check",
+   "meccbasepit_bldg_from_object",
+   "meccbasepit_create_food",
+   "objanim_select_animloop",
+   "object_destroy",
+   "object_set_location_p3d",
+   "objtype_setup_vimp",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaper_lock_pair_4f",
+   "reaperbase_bldg_from_object",
+   "rndfloatrange",
+   "smartie_animselect",
+   "smartie_attach_to_base",
+   "smartie_lock_to_player",
+   "smartie_make_held_object__FP6OBJECTi",
+   "smartie_shot",
+   "smartie_unlock_from_player"
+  ]
+ },
+ {
+  "name": "cspec_00465fb0",
+  "size": 10887,
+  "classes": [
+   1
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "CONCAT22",
+   "ObjIsKabuto",
+   "ObjIsReaper",
+   "ObjectSetAnim",
+   "anm_binder_free",
+   "fx_create",
+   "kabuto_corpse_create__FP6OBJECTi",
+   "kabuto_init",
+   "make_dust_ball",
+   "obj_children_flag_clear",
+   "obj_damage_apply",
+   "obj_lod_lerp_update",
+   "objanim_select_animloop",
+   "object_0046e830",
+   "object_destroy",
+   "object_spawn_init_usage",
+   "playerobj_turn",
+   "powf",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaper_collect_food",
+   "reaper_lock_short_5",
+   "reaper_ospec_init",
+   "reaper_ospec_ptr48_set",
+   "reaper_spell_user",
+   "rndfloatrange",
+   "smartie_release_to_bldg",
+   "sound_play_obj",
+   "sound_play_player",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_00409d10",
+  "size": 10363,
+  "classes": [
+   74
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "atand2pos",
+   "bldg_get_energy",
+   "bldg_get_max_energy",
+   "chat_insert",
+   "crt_rand_scaled",
+   "dialog_level_is_base",
+   "func_0x00409800",
+   "func_0x00409a00",
+   "func_0x00417c30",
+   "func_0x00493e60",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "game_mode_set5_check",
+   "game_mode_set6_check",
+   "kabutoai_select_punch_anim__FP6OBJECT_2",
+   "meccbase_update_icons",
+   "meccbasepit_bldg_from_object",
+   "obj_maxspeed_lookup",
+   "object_set_objectset",
+   "objectset_find",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaperbase_bldg_from_object",
+   "reaperbasebldg_shot",
+   "rndfloatrange",
+   "sound_play_obj",
+   "teammecc_clear_mode"
+  ]
+ },
+ {
+  "name": "cspec_0040e5f0",
+  "size": 9284,
+  "classes": [
+   42
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "PhysicsExApplyLocation",
+   "PhysicsExApplyMoveControls",
+   "PhysicsExZeroForce",
+   "ai_clear_move_goal",
+   "ai_goal_process",
+   "ai_move_update_goal",
+   "ai_nearest_55_scan",
+   "charger_change_anim__FP6OBJECTii4SDKYfi",
+   "charger_dust_fx",
+   "charger_set_charge_location__FP6OBJECTi",
+   "crt_rand_scaled",
+   "dirfcalcp3d__FP3P3DT0",
+   "distance2d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "fx_get_free_effect__Fv",
+   "obj_alpha_fade_update",
+   "obj_gravity_apply",
+   "obj_vel_reset",
+   "object_allocate_type",
+   "object_animate_process",
+   "player_pitch_update",
+   "playerobj_turn",
+   "rndfloatrange",
+   "sine_cos_lookup",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_004d4f00",
+  "size": 9078,
+  "classes": [
+   49
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "anim_select_check",
+   "anim_select_check2",
+   "crt_rand_scaled",
+   "func_0x004f8900",
+   "main_smoke_004f90e0",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_copy_posdirinfo",
+   "object_copy_posdirinfo_2",
+   "object_destroy",
+   "playerobj_eval_refpt",
+   "rndfloatrange",
+   "setMenuSelection__7PS2Gameiiii",
+   "sine_cos_lookup"
+  ]
+ },
+ {
+  "name": "cspec_00466ab0",
+  "size": 8877,
+  "classes": [
+   1
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjIsTurret",
+   "anm_apply_nodes",
+   "comm_kill_message",
+   "comm_kill_message2",
+   "crt_rand_scaled",
+   "crt_sprintf",
+   "func_0x0045c010",
+   "func_0x0046c230",
+   "fx_create",
+   "game_mode_set2_check",
+   "hud_feed_buffer_clear",
+   "hurt_pusher",
+   "nam_lookup_full",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_play_player",
+   "sound_stop_obj",
+   "str_copy_to_static",
+   "xformobj_p3d_world",
+   "xformobj_world_local"
+  ]
+ },
+ {
+  "name": "cspec_004d3840",
+  "size": 8733,
+  "classes": [
+   23
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjIsKabuto",
+   "ObjIsRipper",
+   "blood_from_object",
+   "crt_rand_scaled",
+   "distancesq2d__FP3P3DT0",
+   "formation_notify_death",
+   "fx_delete",
+   "fx_get_free_effect__Fv",
+   "math_sin_lut_read_a",
+   "math_sin_lut_read_b",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_destroy",
+   "rndfloatrange",
+   "sound_play_3dpos",
+   "sound_play_obj",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_0048fa50",
+  "size": 8521,
+  "classes": [
+   6,
+   57
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "atand2pos",
+   "collide_line_bbox",
+   "crt_rand_scaled",
+   "func_0x0042e170",
+   "func_0x00441840",
+   "func_0x004418d0",
+   "func_0x00456be0",
+   "func_0x00456f40",
+   "func_0x0049c3a0",
+   "func_0x004d4a70",
+   "func_0x004eec80",
+   "fx_create",
+   "los_line_check",
+   "make_explosion_large",
+   "object_add_location",
+   "object_destroy",
+   "object_set_location",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sine_cos_lookup",
+   "smoke_object_spawn",
+   "sound_play_3dpos",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_0040fad0",
+  "size": 8212,
+  "classes": [
+   65
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "anim_select_check",
+   "blood_from_point",
+   "crt_rand_scaled",
+   "dirfcalcp3d__FP3P3DT0",
+   "ground_get_z",
+   "obj_alpha_fade_update",
+   "obj_scale_compute",
+   "object_destroy",
+   "playerobj_turn",
+   "rndfloat",
+   "rndfloatrange",
+   "sound_play_obj",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_004e91e0",
+  "size": 8077,
+  "classes": [
+   98
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "ai_clear_move_goal",
+   "ai_moveonly_set_goal",
+   "distancesq2d__FP3P3DT0",
+   "func_0x004e9860",
+   "func_0x004e9960",
+   "obj_health_ratio_update",
+   "playerobj_eval_refpt",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_004a4d30",
+  "size": 8038,
+  "classes": [
+   93
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "crt_rand_scaled",
+   "distancesq2d__FP3P3DT0",
+   "fx_create",
+   "get_floor_z_point",
+   "obj_damage_apply",
+   "object_destroy",
+   "object_set_location_p3d",
+   "piranha_chase_swimmer__FP6OBJECT",
+   "piranha_launch_fx__FP6OBJECT",
+   "piranha_make__FP6OBJECT",
+   "rndfloatrange",
+   "sine_cos_lookup"
+  ]
+ },
+ {
+  "name": "cspec_00458f60",
+  "size": 7942,
+  "classes": [
+   37
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsKabuto",
+   "ObjectCalculateTransform",
+   "chat_insert",
+   "collide_bbox_bbox",
+   "collide_line_bbox",
+   "func_0x00457da0",
+   "func_0x00458d90",
+   "fx_create",
+   "ground_get_z",
+   "inv_award_item",
+   "inv_check_pickup",
+   "los_line_check",
+   "objanim_select_animloop",
+   "object_animate_process",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_play_player"
+  ]
+ },
+ {
+  "name": "cspec_004b5f00",
+  "size": 7331,
+  "classes": [
+   83
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "atand2pos",
+   "bldg_get_energy",
+   "bldg_get_max_energy",
+   "collgrid_clear_grid",
+   "dialog_level_is_base",
+   "func_0x00409800",
+   "func_0x00417c30",
+   "func_0x004b5bb0",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "game_mode_set5_check",
+   "game_mode_set6_check",
+   "kabutoai_anim_update",
+   "obj_maxspeed_lookup",
+   "object_set_objectset",
+   "objectset_find",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaperbase_bldg_from_object",
+   "reaperbase_update_icons",
+   "reaperbasebldg_shot_2",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_004e9d90",
+  "size": 7022,
+  "classes": [
+   103
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "LineOfSight",
+   "ObjIsKabuto",
+   "ObjIsMecc",
+   "ObjIsPlayer",
+   "ObjectSetAnim",
+   "ai_anim_play",
+   "ai_clear_move_goal",
+   "ai_move_force_goal",
+   "barracks_logic",
+   "dirfcalcp3d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "object_allocate_type",
+   "object_animate_process",
+   "object_set_location",
+   "playerobj_eval_refpt",
+   "tracer_entry_angle"
+  ]
+ },
+ {
+  "name": "cspec_00504370",
+  "size": 6878,
+  "classes": [
+   2
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ANM_DumpCluster",
+   "ObjIsMecc",
+   "ObjIsTurret",
+   "TextGetPtrRandom",
+   "chat_insert_name",
+   "crt_rand_scaled",
+   "dialog_level_is_base",
+   "fx_create",
+   "hurt_pusher",
+   "mecc_disable_personal_shield",
+   "mecc_do_death",
+   "mecc_in_gyro",
+   "obj_damage_apply",
+   "rndfloatrange",
+   "sound_play_player",
+   "teammecc_clear_mode"
+  ]
+ },
+ {
+  "name": "cspec_0046ea90",
+  "size": 6758,
+  "classes": [
+   104
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsMecc",
+   "ObjIsReaper",
+   "ObjectSetAnim",
+   "chase_angle",
+   "fx_create",
+   "get_floor_z_point",
+   "lift_update_rider_position__FP6OBJECT",
+   "object_allocate_type",
+   "object_animate_process",
+   "object_set_location",
+   "playerobj_eval_refpt",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_get_free_sequence__Fv",
+   "sound_interrupt_sequence",
+   "sound_sequence_alloc"
+  ]
+ },
+ {
+  "name": "cspec_004cc090",
+  "size": 6608,
+  "classes": [
+   99
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjIsKabuto",
+   "ObjectSetAnim",
+   "crt_rand_scaled",
+   "func_0x004cc610",
+   "fx_get_free_effect__Fv",
+   "get_floor_z_point",
+   "math_sin_lut_read_a",
+   "math_sin_lut_read_b",
+   "object_allocate_type",
+   "object_change_ospec",
+   "reaper_release_shrink",
+   "rndfloatrange",
+   "sine_cos_lookup",
+   "sound_play_obj",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_005109e0",
+  "size": 6495,
+  "classes": [
+   21
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "CONCAT31",
+   "Dot__FP3P3DT0",
+   "comm_chat_send_2",
+   "crt_euler_to_quat",
+   "crt_rand_scaled",
+   "evilreaper_gib__FP6OBJECTT0",
+   "fx_create",
+   "ground_get_z",
+   "ground_height_at",
+   "herdgen_marker_user",
+   "normalize__FPfN20",
+   "object_destroy",
+   "object_find",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "rndfloatrange",
+   "sound_play_3dpos",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_00442490",
+  "size": 6459,
+  "classes": [
+   36
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "crt_rand_scaled",
+   "distancesq2d__FP3P3DT0",
+   "fx_create",
+   "obj_scale_pulse",
+   "obj_turn_update",
+   "object_destroy",
+   "rndfloatrange",
+   "scenerio_handle_music__FPv",
+   "sound_3dpos_play",
+   "sound_play_obj",
+   "terrain_query_z"
+  ]
+ },
+ {
+  "name": "cspec_00496240",
+  "size": 6439,
+  "classes": [
+   58
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "crt_rand_scaled",
+   "crt_sprintf",
+   "distance3d__FP3P3DT0",
+   "rndfloatrange",
+   "rndintrange"
+  ]
+ },
+ {
+  "name": "cspec_00512de0",
+  "size": 6208,
+  "classes": [
+   84
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsReaper",
+   "distancesq2d__FP3P3DT0",
+   "func_0x004c5720",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "ground_height_at",
+   "normalize__FPfN20",
+   "object_add_location",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_00478340",
+  "size": 6175,
+  "classes": [
+   97
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ai_move_ground_step",
+   "anim_select_check",
+   "func_0x00478710",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_set_location",
+   "object_spawn_small",
+   "playerobj_eval_refpt"
+  ]
+ },
+ {
+  "name": "cspec_0046e170",
+  "size": 6168,
+  "classes": [
+   76
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "GEO_MatFromQuat_2",
+   "GEO_MatFromQuat_3",
+   "PhysicsExApplyLocation",
+   "PhysicsExZeroForce",
+   "comm_chat_send_2",
+   "comm_send_gate_check",
+   "comm_send_gate_check_2",
+   "fx_create",
+   "obj_gravity_apply",
+   "obj_vel_reset",
+   "obj_velocity_normalize",
+   "object_animate_process",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "trajectory_calculate"
+  ]
+ },
+ {
+  "name": "cspec_00513320",
+  "size": 6049,
+  "classes": [
+   80
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "fx_create",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "terrain_query_z"
+  ]
+ },
+ {
+  "name": "cspec_004f7d20",
+  "size": 5944,
+  "classes": [
+   38
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "MemAllocMsg",
+   "ObjectSetAnim",
+   "anim_select_user",
+   "dialog_level_is_base",
+   "func_0x00521fe0",
+   "fx_create",
+   "mem_free_tagged",
+   "object_allocate_type",
+   "object_set_location_p3d",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "rndfloatrange",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_0040c710",
+  "size": 5765,
+  "classes": [
+   105
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "Dot__FP3P3DT0",
+   "ObjectSetAnim",
+   "distancesq2d__FP3P3DT0",
+   "func_0x0040cbe0",
+   "func_0x004d57b0",
+   "fx_get_free_effect__Fv",
+   "normalize__FPfN20",
+   "obj_face_target",
+   "object_allocate_type",
+   "object_animate_process",
+   "sound_play_3dpos",
+   "sound_play_player",
+   "voice_quota_check"
+  ]
+ },
+ {
+  "name": "cspec_00481bf0",
+  "size": 5647,
+  "classes": [
+   95
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ANM_DumpCluster",
+   "ObjIsMecc",
+   "bldg_get_refpt_worldlocdir",
+   "distancesq2d__FP3P3DT0",
+   "fx_create",
+   "fx_delete",
+   "fx_get_free_effect__Fv",
+   "obj_damage_apply",
+   "obj_scale_compute",
+   "object_apply_location",
+   "sound_play_obj",
+   "sound_play_player"
+  ]
+ },
+ {
+  "name": "cspec_004c6b20",
+  "size": 5500,
+  "classes": [
+   88
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsReaper",
+   "dialog_level_is_base",
+   "fx_create",
+   "fx_delete",
+   "fxn_firering",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_stop_sequence"
+  ]
+ },
+ {
+  "name": "cspec_00490290",
+  "size": 5316,
+  "classes": [
+   43
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "collide_bbox_bbox",
+   "func_0x00456f40",
+   "fx_create",
+   "los_line_check",
+   "make_explosion_large",
+   "object_add_location",
+   "object_destroy",
+   "reaper_00530bd0",
+   "sine_cos_lookup"
+  ]
+ },
+ {
+  "name": "cspec_0046daf0",
+  "size": 5229,
+  "classes": [
+   75
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "ObjectCalculateTransform",
+   "ObjectSetAnim",
+   "PROJ_ObjectFinalize",
+   "fx_delete",
+   "fx_get_free_effect__Fv",
+   "kbos_attach_object",
+   "kbos_init",
+   "obj_sub100_transform",
+   "objanim_select_animloop",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_destroy",
+   "object_init_usage",
+   "object_set_location_p3d",
+   "reaper_0052e4a0",
+   "reaper_00530bd0"
+  ]
+ },
+ {
+  "name": "cspec_00508fc0",
+  "size": 5197,
+  "classes": [
+   8
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ANM_DumpCluster",
+   "ObjIsMecc",
+   "ObjectSetAnim",
+   "distance3d__FP3P3DT0",
+   "distancesq2d__FP3P3DT0",
+   "fx_create",
+   "obj_damage_apply",
+   "object_copy_posdirinfo",
+   "object_destroy",
+   "playerobj_eval_refpt",
+   "sound_get_free_sequence__Fv",
+   "sound_interrupt_sequence"
+  ]
+ },
+ {
+  "name": "cspec_00456180",
+  "size": 5182,
+  "classes": [
+   17
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "MemAllocMsg",
+   "dialog_level_is_base",
+   "fx_create",
+   "get_floor_z_point",
+   "herd_create_one",
+   "object_destroy",
+   "rndfloatrange"
+  ]
+ },
+ {
+  "name": "cspec_00470a10",
+  "size": 4691,
+  "classes": [
+   67
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "chase_angle",
+   "diff_rangle__Fff",
+   "dirfcalcp3d__FP3P3DT0",
+   "distance2d__FP3P3DT0",
+   "fx_shape_gen",
+   "object_spawn_small",
+   "sine_cos_lookup",
+   "sound_play_obj",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_00405980",
+  "size": 4041,
+  "classes": [
+   106
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ANM_BinderDestroy_2",
+   "BinFileRead",
+   "MemAllocMsg",
+   "army_process_opcodes__FP6OBJECTPPUci",
+   "crt_sprintf",
+   "func_0x00405cd0",
+   "rndfloatrange",
+   "stream_player_start"
+  ]
+ },
+ {
+  "name": "cspec_004c7020",
+  "size": 4003,
+  "classes": [
+   40
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsReaperBldg",
+   "bldg_get_energy",
+   "fx_create",
+   "meccbase_get_max_energy",
+   "obj_damage_apply",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "reaperbase_get_max_energy"
+  ]
+ },
+ {
+  "name": "cspec_005110c0",
+  "size": 3968,
+  "classes": [
+   21
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "create_one_vimp_chunk",
+   "crt_rand_scaled",
+   "evilreaper_gib__FP6OBJECTT0",
+   "fx_create",
+   "hurt_pusher",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_spell_small",
+   "sound_play_3dpos",
+   "sound_play_obj",
+   "wound_from_object_world"
+  ]
+ },
+ {
+  "name": "cspec_004ec440",
+  "size": 3966,
+  "classes": [
+   29
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "PhysicsExApplyLocation",
+   "PhysicsExApplyMoveControls",
+   "PhysicsExZeroForce",
+   "ai_goal_process",
+   "ai_move_force_goal",
+   "fx_create",
+   "main_seamonst_004ec2c0",
+   "obj_alpha_fade_update",
+   "obj_gravity_apply",
+   "obj_vel_reset",
+   "object_animate_process",
+   "object_destroy",
+   "player_pitch_update"
+  ]
+ },
+ {
+  "name": "cspec_00469be0",
+  "size": 3346,
+  "classes": [
+   15
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "crt_rand_scaled",
+   "sound_play_3dpos",
+   "sound_play_player",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_00417530",
+  "size": 3285,
+  "classes": [
+   32,
+   82
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "dialog_level_is_base",
+   "func_0x00408190",
+   "func_0x004b4ab0",
+   "fx_create",
+   "meccbasepit_bldg_from_object",
+   "reaper_00530bd0",
+   "reaperbase_bldg_from_object"
+  ]
+ },
+ {
+  "name": "cspec_0050c640",
+  "size": 3160,
+  "classes": [
+   44
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "TurretExit",
+   "TurretShoot__FP15TurretCommShootP6OBJECTT1",
+   "fx_get_free_effect__Fv",
+   "math_sincos_pair",
+   "objanim_select_animloop",
+   "object_destroy",
+   "reaper_ability_playersound5",
+   "sound_play_3dpos"
+  ]
+ },
+ {
+  "name": "cspec_00450fa0",
+  "size": 3078,
+  "classes": [
+   52
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsMecc",
+   "anim_select_check2",
+   "distancesq2d__FP3P3DT0"
+  ]
+ },
+ {
+  "name": "cspec_004e9aa0",
+  "size": 2990,
+  "classes": [
+   98
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjIsRipper",
+   "ai_d7_pairing",
+   "distancesq2d__FP3P3DT0",
+   "fx_get_free_effect__Fv",
+   "object_destroy",
+   "sound_play_3dpos",
+   "sound_play_obj",
+   "voice_event_trigger"
+  ]
+ },
+ {
+  "name": "cspec_004c2430",
+  "size": 2953,
+  "classes": [
+   3
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjIsJetski",
+   "ObjIsReaper",
+   "ObjIsTurret",
+   "crt_rand_scaled",
+   "dialog_level_is_base",
+   "fx_create",
+   "fx_delete",
+   "gun_find_right",
+   "hurt_pusher",
+   "mecc_shot",
+   "obj_damage_apply",
+   "sound_interrupt_sequence",
+   "sound_play_player"
+  ]
+ },
+ {
+  "name": "cspec_00470f10",
+  "size": 2901,
+  "classes": [
+   68
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "crt_rand_scaled",
+   "func_0x004eeb00",
+   "object_add_location",
+   "object_destroy",
+   "sine_cos_lookup",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_0040beb0",
+  "size": 2900,
+  "classes": [
+   20
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "dirfcalcp3d__FP3P3DT0",
+   "distance2d__FP3P3DT0",
+   "fx_create",
+   "math_sign_of",
+   "obj_turn_update",
+   "playerobj_eval_refpt",
+   "playerobj_turn"
+  ]
+ },
+ {
+  "name": "cspec_0050f5a0",
+  "size": 2825,
+  "classes": [
+   53
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ANM_DumpCluster",
+   "blood_from_object",
+   "crt_rand_scaled",
+   "object_destroy",
+   "object_stop_movement",
+   "sound_play_3dpos",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_004508a0",
+  "size": 2774,
+  "classes": [
+   5
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "distancesq2d__FP3P3DT0",
+   "fx_get_free_effect__Fv",
+   "fx_processOpCodes",
+   "sound_play_obj",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_00450620",
+  "size": 2667,
+  "classes": [
+   60,
+   101
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjIsKabuto",
+   "func_0x004e76d0",
+   "fx_get_free_effect__Fv",
+   "object_allocate_type",
+   "object_destroy",
+   "object_set_location"
+  ]
+ },
+ {
+  "name": "cspec_004566a0",
+  "size": 2622,
+  "classes": [
+   17
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "func_0x00512950",
+   "ground_get_z",
+   "herd_create_one",
+   "objanim_select_animloop"
+  ]
+ },
+ {
+  "name": "cspec_00442cb0",
+  "size": 2611,
+  "classes": [
+   36
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ANM_DumpCluster",
+   "blood_from_object",
+   "crt_rand_scaled",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_copy_posdirinfo",
+   "object_copy_posdirinfo_2",
+   "object_stop_movement",
+   "rndfloat",
+   "rndfloatrange",
+   "sound_play_3dpos"
+  ]
+ },
+ {
+  "name": "cspec_00425ca0",
+  "size": 2586,
+  "classes": [
+   45
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectCalculateTransform",
+   "ai_move_ground_common",
+   "crt_rand_scaled",
+   "dirfcalcp3d__FP3P3DT0",
+   "object_animate_process",
+   "object_destroy",
+   "objspec_dispatch_gate",
+   "rndfloatrange",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_0050a1c0",
+  "size": 2552,
+  "classes": [
+   60
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "GEO_Vec2Cross",
+   "GEO_Vec3Normalize",
+   "ObjIsKabuto",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_004c6610",
+  "size": 2471,
+  "classes": [
+   87
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsKabuto",
+   "ObjIsReaperBldg",
+   "fx_create",
+   "obj_damage_apply",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_interrupt_sequence",
+   "sound_play_player",
+   "sound_stop_player"
+  ]
+ },
+ {
+  "name": "cspec_004820f0",
+  "size": 2422,
+  "classes": [
+   95
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "obj_damage_apply",
+   "obj_swap_link",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "sound_play_3dpos",
+   "sound_play_obj",
+   "sound_play_player",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_00496870",
+  "size": 2336,
+  "classes": [
+   7
+  ],
+  "fields": [
+   3
+  ],
+  "callees": [
+   "ObjIsKabuto",
+   "ObjectSetAnim",
+   "anim_select_check",
+   "anim_select_check2",
+   "crt_rand_scaled",
+   "obj_is_type0f"
+  ]
+ },
+ {
+  "name": "cspec_0046a040",
+  "size": 2278,
+  "classes": [
+   28
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "dialog_level_is_base",
+   "func_0x0046a210",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "playerobj_eval_refpt",
+   "reaper_00530bd0"
+  ]
+ },
+ {
+  "name": "cspec_00454be0",
+  "size": 2258,
+  "classes": [
+   102
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "CONCAT31",
+   "ObjectSetAnim",
+   "fx_create",
+   "reaper_00530bd0"
+  ]
+ },
+ {
+  "name": "cspec_0046b930",
+  "size": 2245,
+  "classes": [
+   75
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "blood_from_object",
+   "crt_rand_scaled",
+   "fx_create",
+   "fx_delete",
+   "hurt_pusher",
+   "sound_play_3dpos",
+   "sound_play_obj",
+   "wound_from_object_world"
+  ]
+ },
+ {
+  "name": "cspec_004c6450",
+  "size": 2117,
+  "classes": [
+   86
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "collide_line_bbox",
+   "dialog_level_is_base",
+   "fx_create",
+   "ground_height_at",
+   "object_add_location",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_004ea650",
+  "size": 2101,
+  "classes": [
+   103
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "crt_rand_scaled",
+   "fx_get_free_effect__Fv",
+   "object_allocate_type",
+   "object_destroy",
+   "sound_play_3dpos",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_00441fc0",
+  "size": 2087,
+  "classes": [
+   71
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ROUND",
+   "f2xm1",
+   "fscale",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_00441e60",
+  "size": 2081,
+  "classes": [
+   63
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ROUND",
+   "f2xm1",
+   "fscale",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_0046e680",
+  "size": 2075,
+  "classes": [
+   76
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "objanim_select_animloop",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0"
+  ]
+ },
+ {
+  "name": "cspec_004d7620",
+  "size": 2066,
+  "classes": [
+   90
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "camera_override_done",
+   "gun_find_right",
+   "object_destroy",
+   "playerobj_eval_refpt",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_play_obj",
+   "sound_stop_obj"
+  ]
+ },
+ {
+  "name": "cspec_0049e0b0",
+  "size": 2026,
+  "classes": [
+   4
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "blood_from_object",
+   "crt_rand_scaled",
+   "offspring_dive_release_target__FP6OBJECT",
+   "sound_play_3dpos",
+   "sound_play_obj",
+   "wound_from_object_world"
+  ]
+ },
+ {
+  "name": "cspec_00425870",
+  "size": 2018,
+  "classes": [
+   89
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsReaper",
+   "dialog_level_is_base",
+   "distancesq2d__FP3P3DT0",
+   "func_0x004c5720",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_00490680",
+  "size": 1895,
+  "classes": [
+   43
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "func_0x00456f40",
+   "fx_create",
+   "make_explosion_large",
+   "object_copy_posdirinfo",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_0050c430",
+  "size": 1878,
+  "classes": [
+   44
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "TurretExit",
+   "dialog_level_is_base",
+   "fx_create",
+   "fx_get_free_effect__Fv",
+   "object_destroy",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_play_3dpos"
+  ]
+ },
+ {
+  "name": "cspec_0046f6a0",
+  "size": 1833,
+  "classes": [
+   92
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "obj_ai_recognize"
+  ]
+ },
+ {
+  "name": "cspec_004f9ee0",
+  "size": 1806,
+  "classes": [
+   73
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjIsMecc",
+   "ObjIsReaper",
+   "obj_scale_compute",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_004ef2e0",
+  "size": 1805,
+  "classes": [
+   61
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "fx_get_free_effect__Fv",
+   "object_destroy",
+   "sound_play_3dpos",
+   "voice_event_trigger"
+  ]
+ },
+ {
+  "name": "cspec_00494520",
+  "size": 1735,
+  "classes": [
+   94
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "chat_insert",
+   "crt_sprintf"
+  ]
+ },
+ {
+  "name": "cspec_004a7240",
+  "size": 1732,
+  "classes": [
+   12
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "object_add_location",
+   "object_destroy",
+   "sine_cos_lookup"
+  ]
+ },
+ {
+  "name": "cspec_0046f560",
+  "size": 1666,
+  "classes": [
+   92
+  ],
+  "fields": [
+   10
+  ],
+  "callees": [
+   "obj_ai_recognize"
+  ]
+ },
+ {
+  "name": "cspec_0046df50",
+  "size": 1665,
+  "classes": [
+   75
+  ],
+  "fields": [
+   16
+  ],
+  "callees": [
+   "fx_get_free_effect__Fv",
+   "reaper_0052e4a0",
+   "reaper_00530bd0"
+  ]
+ },
+ {
+  "name": "cspec_0040f1e0",
+  "size": 1643,
+  "classes": [
+   42
+  ],
+  "fields": [
+   16
+  ],
+  "callees": [
+   "charger_change_anim__FP6OBJECTii4SDKYfi",
+   "normalize__FPfN20",
+   "obj_damage_apply"
+  ]
+ },
+ {
+  "name": "cspec_004c68d0",
+  "size": 1593,
+  "classes": [
+   88
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "ObjIsReaper",
+   "fx_delete",
+   "fxn_firering",
+   "objanim_select_animloop",
+   "object_destroy",
+   "sound_stop_sequence"
+  ]
+ },
+ {
+  "name": "cspec_00490120",
+  "size": 1592,
+  "classes": [
+   6
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "func_0x0042e170",
+   "func_0x00441840",
+   "func_0x004418d0",
+   "func_0x004d4a70",
+   "func_0x004eec80",
+   "make_explosion_large",
+   "object_copy_posdirinfo",
+   "object_destroy",
+   "smoke_object_spawn"
+  ]
+ },
+ {
+  "name": "cspec_004504d0",
+  "size": 1546,
+  "classes": [
+   79
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "dirfcalcp3d__FP3P3DT0",
+   "func_0x00404c90",
+   "get_floor_z_point",
+   "main_linkage_00470250",
+   "object_copy_posdirinfo"
+  ]
+ },
+ {
+  "name": "cspec_004aac50",
+  "size": 1506,
+  "classes": [
+   77
+  ],
+  "fields": [
+   4
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_004a7870",
+  "size": 1462,
+  "classes": [
+   50
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "object_add_location",
+   "object_add_location_2",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_00480bc0",
+  "size": 1406,
+  "classes": [
+   9
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "object_allocate_type",
+   "object_set_location_p3d"
+  ]
+ },
+ {
+  "name": "cspec_00407b30",
+  "size": 1391,
+  "classes": [
+   106
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "func_0x0046e140",
+   "fx_get_free_effect__Fv",
+   "object_allocate_type",
+   "object_destroy",
+   "object_set_location"
+  ]
+ },
+ {
+  "name": "cspec_004a7a70",
+  "size": 1371,
+  "classes": [
+   54
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "dirfcalcp3d__FP3P3DT0",
+   "func_0x00404c90",
+   "get_floor_z_point",
+   "object_copy_posdirinfo"
+  ]
+ },
+ {
+  "name": "cspec_004d7a20",
+  "size": 1351,
+  "classes": [
+   90
+  ],
+  "fields": [
+   16
+  ],
+  "callees": [
+   "ObjIsReaperBldg",
+   "ObjIsTurret",
+   "crt_rand_scaled",
+   "dialog_level_is_base",
+   "func_0x0049a1a0",
+   "fx_create",
+   "obj_damage_apply",
+   "sound_play_2",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_004f8130",
+  "size": 1341,
+  "classes": [
+   38
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "anim_select_user",
+   "object_allocate_type",
+   "object_set_location_p3d"
+  ]
+ },
+ {
+  "name": "cspec_0045d980",
+  "size": 1311,
+  "classes": [
+   1
+  ],
+  "fields": [
+   10
+  ],
+  "callees": [
+   "LNK_DNodeInDList",
+   "main_00508840",
+   "mem_free_tagged",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_0050f460",
+  "size": 1305,
+  "classes": [
+   53
+  ],
+  "fields": [
+   3
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "anim_select_check"
+  ]
+ },
+ {
+  "name": "cspec_004a64e0",
+  "size": 1298,
+  "classes": [
+   33
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "get_floor_z_point",
+   "object_add_location",
+   "object_copy_posdirinfo"
+  ]
+ },
+ {
+  "name": "cspec_0046f420",
+  "size": 1263,
+  "classes": [
+   104
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "objanim_select_animloop",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_get_free_sequence__Fv",
+   "sound_sequence_alloc"
+  ]
+ },
+ {
+  "name": "cspec_004503e0",
+  "size": 1259,
+  "classes": [
+   78
+  ],
+  "fields": [
+   10
+  ],
+  "callees": [
+   "func_0x00509b90",
+   "mem_free_tagged"
+  ]
+ },
+ {
+  "name": "cspec_004fa030",
+  "size": 1258,
+  "classes": [
+   39
+  ],
+  "fields": [
+   3
+  ],
+  "callees": [
+   "ObjectSetAnim"
+  ]
+ },
+ {
+  "name": "cspec_004d55f0",
+  "size": 1257,
+  "classes": [
+   49
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "blood_from_object",
+   "main_smoke_004f90e0",
+   "object_allocate_type",
+   "object_change_ospec",
+   "object_copy_posdirinfo_2",
+   "object_destroy",
+   "sound_play_3dpos"
+  ]
+ },
+ {
+  "name": "cspec_004e7680",
+  "size": 1227,
+  "classes": [
+   52
+  ],
+  "fields": [
+   0
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_00480bb0",
+  "size": 1206,
+  "classes": [
+   3
+  ],
+  "fields": [
+   0
+  ],
+  "callees": [
+   "ANM_DumpCluster",
+   "fx_delete",
+   "reaper_0052e4a0",
+   "reaper_00530bd0",
+   "sound_stop_player",
+   "sound_stop_sequence"
+  ]
+ },
+ {
+  "name": "cspec_004787f0",
+  "size": 1201,
+  "classes": [
+   100
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "ObjectCalculateTransform",
+   "ai_move_ground_step",
+   "object_animate_process",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_0045d880",
+  "size": 1193,
+  "classes": [
+   1
+  ],
+  "fields": [
+   11
+  ],
+  "callees": [
+   "obj_ptr_clear_if_dead"
+  ]
+ },
+ {
+  "name": "cspec_004c60c0",
+  "size": 1103,
+  "classes": [
+   3
+  ],
+  "fields": [
+   11
+  ],
+  "callees": [
+   "obj_ptr_clear_if_dead"
+  ]
+ },
+ {
+  "name": "cspec_0045a1f0",
+  "size": 1072,
+  "classes": [
+   37
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "func_0x00458d90",
+   "inv_award_item",
+   "objanim_select_animloop",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_00469f00",
+  "size": 1048,
+  "classes": [
+   15
+  ],
+  "fields": [
+   16
+  ],
+  "callees": [
+   "normalize__FPfN20",
+   "obj_damage_apply"
+  ]
+ },
+ {
+  "name": "cspec_0040f0f0",
+  "size": 1036,
+  "classes": [
+   42
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "blood_from_object",
+   "charger_change_anim__FP6OBJECTii4SDKYfi",
+   "crt_rand_scaled",
+   "sound_play_obj"
+  ]
+ },
+ {
+  "name": "cspec_0045be30",
+  "size": 1006,
+  "classes": [
+   1
+  ],
+  "fields": [
+   16
+  ],
+  "callees": []
+ },
+ {
+  "name": "cspec_004a65f0",
+  "size": 967,
+  "classes": [
+   27
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "get_floor_z_point",
+   "object_add_location",
+   "object_change_ospec",
+   "object_copy_posdirinfo"
+  ]
+ },
+ {
+  "name": "cspec_00425c00",
+  "size": 959,
+  "classes": [
+   89
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "atand2pos",
+   "fx_get_free_effect__Fv",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_004d4cf0",
+  "size": 952,
+  "classes": [
+   47
+  ],
+  "fields": [
+   4
+  ],
+  "callees": [
+   "blood_from_object",
+   "object_allocate_type",
+   "object_copy_posdirinfo_2",
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_004a53b0",
+  "size": 893,
+  "classes": [
+   93
+  ],
+  "fields": [
+   3
+  ],
+  "callees": [
+   "ObjectSetAnim",
+   "crt_rand_scaled",
+   "fx_get_free_effect__Fv"
+  ]
+ },
+ {
+  "name": "cspec_00441c50",
+  "size": 867,
+  "classes": [
+   55
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_00512bf0",
+  "size": 844,
+  "classes": [
+   80
+  ],
+  "fields": [
+   9
+  ],
+  "callees": [
+   "object_destroy"
+  ]
+ },
+ {
+  "name": "cspec_00515ce0",
+  "size": 808,
+  "classes": [
+   41
+  ],
+  "fields": [
+   2
+  ],
+  "callees": [
+   "func_0x00496fe0",
+   "obj_turn_update",
+   "object_copy_posdirinfo",
+   "object_destroy",
+   "rndfloatrange"
+  ]
+ },
+ {
+  "name": "cspec_0046e070",
+  "size": 803,
+  "classes": [
+   76
+  ],
+  "fields": [
+   16
+  ],
+  "callees": [
+   "fx_create",
+   "reaper_0052e4a0",
+   "reaper_00530bd0"
+  ]
+ }
+]

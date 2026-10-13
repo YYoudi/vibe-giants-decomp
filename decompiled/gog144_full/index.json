@@ -345,9 +345,9 @@
   "len": 2595
  },
  "0x00409D10": {
-  "name": "cspec_00409d10",
+  "name": "smartie_worker_ai_main_c74",
   "named": true,
-  "len": 10363
+  "len": 10392
  },
  "0x0040A550": {
   "name": "base_slot_state_check_2",
@@ -690,9 +690,9 @@
   "len": 3256
  },
  "0x0040E5F0": {
-  "name": "cspec_0040e5f0",
+  "name": "charger_ai_main_c42",
   "named": true,
-  "len": 9284
+  "len": 9289
  },
  "0x0040EE20": {
   "name": "charger_change_anim__FP6OBJECTii4SDKYfi",
@@ -710,14 +710,14 @@
   "len": 1033
  },
  "0x0040F0F0": {
-  "name": "cspec_0040f0f0",
+  "name": "death_handler_c42",
   "named": true,
-  "len": 1036
+  "len": 1039
  },
  "0x0040F1E0": {
-  "name": "cspec_0040f1e0",
+  "name": "charger_death_handler_c42",
   "named": true,
-  "len": 1643
+  "len": 1654
  },
  "0x0040F370": {
   "name": "cspec_0040f370",
@@ -2620,9 +2620,9 @@
   "len": 608
  },
  "0x00442CB0": {
-  "name": "cspec_00442cb0",
+  "name": "death_handler_c36",
   "named": true,
-  "len": 2611
+  "len": 2614
  },
  "0x00442EC0": {
   "name": "sound_3dpos_play",
@@ -3390,9 +3390,9 @@
   "len": 231
  },
  "0x004566A0": {
-  "name": "cspec_004566a0",
+  "name": "herd_death_handler_c17",
   "named": true,
-  "len": 2622
+  "len": 2630
  },
  "0x00456900": {
   "name": "reaper_spell_small",
@@ -3885,9 +3885,9 @@
   "len": 793
  },
  "0x00465FB0": {
-  "name": "cspec_00465fb0",
+  "name": "kabutoai_death_handler_c1",
   "named": true,
-  "len": 10887
+  "len": 10898
  },
  "0x00466980": {
   "name": "teammecc_get_slavecount",
@@ -4085,9 +4085,9 @@
   "len": 393
  },
  "0x0046B930": {
-  "name": "cspec_0046b930",
+  "name": "death_handler_c75",
   "named": true,
-  "len": 2245
+  "len": 2248
  },
  "0x0046BAF0": {
   "name": "kbos_attach_object",
@@ -4105,14 +4105,14 @@
   "len": 2146
  },
  "0x0046C2B0": {
-  "name": "cspec_0046c2b0",
+  "name": "kbos_ai_main_c75",
   "named": true,
-  "len": 29347
+  "len": 29349
  },
  "0x0046DAF0": {
-  "name": "cspec_0046daf0",
+  "name": "kbos_death_handler_c75",
   "named": true,
-  "len": 5229
+  "len": 5237
  },
  "0x0046DF40": {
   "name": "cspec_0046df40",
@@ -5900,9 +5900,9 @@
   "len": 1612
  },
  "0x0049C670": {
-  "name": "cspec_0049c670",
+  "name": "kbos_ai_main_c4",
   "named": true,
-  "len": 27447
+  "len": 27448
  },
  "0x0049DBD0": {
   "name": "FUN_0049dbd0",
@@ -5930,9 +5930,9 @@
   "len": 60
  },
  "0x0049E0B0": {
-  "name": "cspec_0049e0b0",
+  "name": "death_handler_c4",
   "named": true,
-  "len": 2026
+  "len": 2028
  },
  "0x0049E270": {
   "name": "cspec_0049e270",
@@ -6230,9 +6230,9 @@
   "len": 1389
  },
  "0x004A4D30": {
-  "name": "cspec_004a4d30",
+  "name": "piranha_ai_main_c93",
   "named": true,
-  "len": 8038
+  "len": 8043
  },
  "0x004A53B0": {
   "name": "cspec_004a53b0",
@@ -6695,9 +6695,9 @@
   "len": 1506
  },
  "0x004AAD80": {
-  "name": "cspec_004aad80",
+  "name": "combat_ai_main_c77",
   "named": true,
-  "len": 19392
+  "len": 19396
  },
  "0x004ABD40": {
   "name": "repair_spell_fx",
@@ -6900,9 +6900,9 @@
   "len": 3239
  },
  "0x004B5F00": {
-  "name": "cspec_004b5f00",
+  "name": "reaperbase_death_handler_c83",
   "named": true,
-  "len": 7331
+  "len": 7362
  },
  "0x004B6520": {
   "name": "cspec_004b6520",
@@ -7160,9 +7160,9 @@
   "len": 1179
  },
  "0x004BAB60": {
-  "name": "cspec_004bab60",
+  "name": "reaperbase_ai_main_c3",
   "named": true,
-  "len": 33490
+  "len": 33497
  },
  "0x004BC3E0": {
   "name": "reaper_lock_user",
@@ -7520,9 +7520,9 @@
   "len": 651
  },
  "0x004C68D0": {
-  "name": "cspec_004c68d0",
+  "name": "reaperbase_death_handler_c88",
   "named": true,
-  "len": 1593
+  "len": 1624
  },
  "0x004C6A30": {
   "name": "fxn_firering",
@@ -7560,9 +7560,9 @@
   "len": 3570
  },
  "0x004C7610": {
-  "name": "cspec_004c7610",
+  "name": "evilreaper_ai_main_c99",
   "named": true,
-  "len": 56846
+  "len": 56854
  },
  "0x004CA560": {
   "name": "evilreaper_get_turbo_loc__FP6OBJECTP3P3DfffT1",
@@ -7750,9 +7750,9 @@
   "len": 1319
  },
  "0x004D3840": {
-  "name": "cspec_004d3840",
+  "name": "death_handler_c23",
   "named": true,
-  "len": 8733
+  "len": 8736
  },
  "0x004D3ED0": {
   "name": "ripper_animselect",
@@ -7820,9 +7820,9 @@
   "len": 501
  },
  "0x004D4CF0": {
-  "name": "cspec_004d4cf0",
+  "name": "death_handler_c47",
   "named": true,
-  "len": 952
+  "len": 955
  },
  "0x004D4DB0": {
   "name": "obj_state_machine_update",
@@ -7840,9 +7840,9 @@
   "len": 9078
  },
  "0x004D55F0": {
-  "name": "cspec_004d55f0",
+  "name": "death_handler_c49",
   "named": true,
-  "len": 1257
+  "len": 1260
  },
  "0x004D5700": {
   "name": "cspec_004d5700",
@@ -8270,9 +8270,9 @@
   "len": 11981
  },
  "0x004E8410": {
-  "name": "cspec_004e8410",
+  "name": "death_handler_c51",
   "named": true,
-  "len": 16468
+  "len": 16471
  },
  "0x004E91E0": {
   "name": "cspec_004e91e0",
@@ -8590,9 +8590,9 @@
   "len": 130
  },
  "0x004F42B0": {
-  "name": "cspec_004f42b0",
+  "name": "reaperbase_death_handler_c18",
   "named": true,
-  "len": 11340
+  "len": 11354
  },
  "0x004F4C00": {
   "name": "smartie_lock_to_player",
@@ -8645,9 +8645,9 @@
   "len": 3567
  },
  "0x004F6330": {
-  "name": "cspec_004f6330",
+  "name": "smartie_attack_handler_c18",
   "named": true,
-  "len": 23167
+  "len": 23179
  },
  "0x004F75C0": {
   "name": "comm_stats_reset",
@@ -9060,9 +9060,9 @@
   "len": 1190
  },
  "0x00504370": {
-  "name": "cspec_00504370",
+  "name": "mecc_death_handler_c2",
   "named": true,
-  "len": 6878
+  "len": 6898
  },
  "0x00504930": {
   "name": "teammecc_clear_mode",
@@ -9430,9 +9430,9 @@
   "len": 1305
  },
  "0x0050F5A0": {
-  "name": "cspec_0050f5a0",
+  "name": "death_handler_c53",
   "named": true,
-  "len": 2825
+  "len": 2828
  },
  "0x0050F800": {
   "name": "cspec_0050f800",
@@ -9460,9 +9460,9 @@
   "len": 435
  },
  "0x0050F8F0": {
-  "name": "cspec_0050f8f0",
+  "name": "evilreaper_ai_main_c21",
   "named": true,
-  "len": 20439
+  "len": 20447
  },
  "0x005108F0": {
   "name": "FUN_005108f0",
@@ -9480,9 +9480,9 @@
   "len": 1441
  },
  "0x005110C0": {
-  "name": "cspec_005110c0",
+  "name": "death_handler_c21",
   "named": true,
-  "len": 3968
+  "len": 3971
  },
  "0x00511410": {
   "name": "herdgen_marker_user",

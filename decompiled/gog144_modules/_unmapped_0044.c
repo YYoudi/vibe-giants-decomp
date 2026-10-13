@@ -2599,8 +2599,8 @@ void cspec_00442c30(int param_1)
 
 }
 
-/* ===== cspec_00442cb0 @ 0x00442CB0 ===== */
-void cspec_00442cb0(undefined4 param_1,float param_2,int param_3)
+/* ===== death_handler_c36 @ 0x00442CB0 ===== */
+void death_handler_c36(undefined4 param_1,float param_2,int param_3)
 
 
 

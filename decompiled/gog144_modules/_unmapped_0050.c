@@ -4796,14 +4796,16 @@ void mecc_smoking_fx_update(int param_1)
 
 }
 
-/* ===== cspec_00504370 @ 0x00504370 ===== */
+/* ===== mecc_death_handler_c2 @ 0x00504370 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_00504370(int param_1,float param_2,int param_3,int param_4,undefined4 param_5,
+void mecc_death_handler_c2
 
-                   undefined4 param_6)
+               (int param_1,float param_2,int param_3,int param_4,undefined4 param_5,
+
+               undefined4 param_6)
 
 
 
@@ -16484,8 +16486,8 @@ switchD_0050f47b_caseD_1:
 
 }
 
-/* ===== cspec_0050f5a0 @ 0x0050F5A0 ===== */
-void cspec_0050f5a0(int param_1,float param_2,int param_3,int param_4)
+/* ===== death_handler_c53 @ 0x0050F5A0 ===== */
+void death_handler_c53(int param_1,float param_2,int param_3,int param_4)
 
 
 
@@ -16737,8 +16739,8 @@ void cspec_0050f8b0(undefined4 param_1,int param_2,int param_3,undefined4 *param
 
 }
 
-/* ===== cspec_0050f8f0 @ 0x0050F8F0 ===== */
-void cspec_0050f8f0(float param_1)
+/* ===== evilreaper_ai_main_c21 @ 0x0050F8F0 ===== */
+void evilreaper_ai_main_c21(float param_1)
 
 
 

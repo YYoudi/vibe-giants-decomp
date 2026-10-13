@@ -596,8 +596,8 @@ void evilreaper_gib__FP6OBJECTT0(float param_1,float param_2)
 
 }
 
-/* ===== cspec_005110c0 @ 0x005110C0 ===== */
-void cspec_005110c0(int param_1,float param_2,int param_3,undefined4 param_4,undefined4 param_5)
+/* ===== death_handler_c21 @ 0x005110C0 ===== */
+void death_handler_c21(int param_1,float param_2,int param_3,undefined4 param_4,undefined4 param_5)
 
 
 

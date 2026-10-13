@@ -7101,8 +7101,10 @@ LAB_00409bc6:
 
 }
 
-/* ===== cspec_00409d10 @ 0x00409D10 ===== */
-void cspec_00409d10(undefined4 param_1,float param_2,int param_3,int param_4,float *param_5)
+/* ===== smartie_worker_ai_main_c74 @ 0x00409D10 ===== */
+void smartie_worker_ai_main_c74
+
+               (undefined4 param_1,float param_2,int param_3,int param_4,float *param_5)
 
 
 
@@ -12572,8 +12574,8 @@ LAB_0040e451:
 
 }
 
-/* ===== cspec_0040e5f0 @ 0x0040E5F0 ===== */
-void cspec_0040e5f0(int param_1)
+/* ===== charger_ai_main_c42 @ 0x0040E5F0 ===== */
+void charger_ai_main_c42(int param_1)
 
 
 
@@ -13244,8 +13246,8 @@ void charger_set_charge_location__FP6OBJECTi(int param_1)
 
 }
 
-/* ===== cspec_0040f0f0 @ 0x0040F0F0 ===== */
-void cspec_0040f0f0(int param_1,float param_2,int param_3)
+/* ===== death_handler_c42 @ 0x0040F0F0 ===== */
+void death_handler_c42(int param_1,float param_2,int param_3)
 
 
 
@@ -13311,12 +13313,12 @@ void cspec_0040f0f0(int param_1,float param_2,int param_3)
 
 }
 
-/* ===== cspec_0040f1e0 @ 0x0040F1E0 ===== */
+/* ===== charger_death_handler_c42 @ 0x0040F1E0 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 
 
-undefined4 cspec_0040f1e0(int param_1,int param_2)
+undefined4 charger_death_handler_c42(int param_1,int param_2)
 
 
 

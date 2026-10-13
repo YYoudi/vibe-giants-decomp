@@ -735,8 +735,8 @@ void kabutoai_select_punch_anim__FP6OBJECT_2(undefined4 param_1)
 
 }
 
-/* ===== cspec_004f42b0 @ 0x004F42B0 ===== */
-void cspec_004f42b0(int param_1,int param_2,undefined4 param_3,short *param_4)
+/* ===== reaperbase_death_handler_c18 @ 0x004F42B0 ===== */
+void reaperbase_death_handler_c18(int param_1,int param_2,undefined4 param_3,short *param_4)
 
 
 
@@ -3060,8 +3060,8 @@ int meccbaseitem_shot(int param_1,undefined4 param_2)
 
 }
 
-/* ===== cspec_004f6330 @ 0x004F6330 ===== */
-void cspec_004f6330(int param_1)
+/* ===== smartie_attack_handler_c18 @ 0x004F6330 ===== */
+void smartie_attack_handler_c18(int param_1)
 
 
 
