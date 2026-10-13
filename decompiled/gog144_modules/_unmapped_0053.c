@@ -5576,7 +5576,7 @@ LAB_00533a8f:
 
       *(undefined4 *)(iVar4 + 0x15c) = *(undefined4 *)(param_1 + 0x8d);
 
-      FUN_0045c3e0(iVar3);
+      obj_lod_lerp_update(iVar3);
 
       *(undefined4 *)(iVar3 + 0x278) = *(undefined4 *)(param_1 + 0x91);
 

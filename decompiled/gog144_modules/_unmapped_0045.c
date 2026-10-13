@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (27 named) — decompiled, names from PS2 symbols
+ * 145 functions (28 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -11373,8 +11373,8 @@ void FUN_0045bf10(int param_1,int param_2,float *param_3)
 
 }
 
-/* ===== FUN_0045c3e0 @ 0x0045C3E0 ===== */
-void FUN_0045c3e0(int param_1)
+/* ===== obj_lod_lerp_update @ 0x0045C3E0 ===== */
+void obj_lod_lerp_update(int param_1)
 
 
 
@@ -12058,7 +12058,7 @@ void FUN_0045c3e0(int param_1)
 
       *(float *)(iVar3 + 0x330) = fVar2;
 
-      FUN_004148a0(param_1);
+      obj_sub100_transform(param_1);
 
       if (*(float *)(iVar3 + 0x158) < 1.0) {
 
@@ -12155,7 +12155,7 @@ void reaper_ability_playersound4(int param_1,byte param_2,undefined4 param_3)
 
       *(float *)(iVar4 + 0x15c) = fVar1;
 
-      FUN_0045c3e0(param_1);
+      obj_lod_lerp_update(param_1);
 
     }
 
@@ -12493,7 +12493,7 @@ LAB_0045d6d4:
 
     *(undefined4 *)(uVar6 + 0x15c) = 0;
 
-    FUN_0045c3e0(puVar3);
+    obj_lod_lerp_update(puVar3);
 
     iVar5 = reaper_0052e4a0(puVar3);
 
@@ -12535,7 +12535,7 @@ LAB_0045d736:
 
     *(undefined4 *)(uVar6 + 0x15c) = 0x40400000;
 
-    FUN_0045c3e0(puVar3);
+    obj_lod_lerp_update(puVar3);
 
     iVar5 = reaper_0052e4a0(puVar3);
 
@@ -12603,7 +12603,7 @@ LAB_0045d769:
 
     ;
 
-    FUN_0045c3e0(puVar3);
+    obj_lod_lerp_update(puVar3);
 
   }
 

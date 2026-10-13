@@ -1746,7 +1746,7 @@ void FUN_0046a480(int param_1,float param_2)
 
     *(float *)(param_1 + 0xc4) = param_2 * *(float *)(iVar2 + 0xc4);
 
-    FUN_004148a0(param_1);
+    obj_sub100_transform(param_1);
 
   }
 
@@ -2625,7 +2625,7 @@ void FUN_0046aeb0(int param_1)
 
       *(float *)(param_1 + 0xc4) = *(float *)(iVar4 + 0xc4) * 0.2;
 
-      FUN_004148a0(param_1);
+      obj_sub100_transform(param_1);
 
     }
 
@@ -2661,7 +2661,7 @@ void FUN_0046aeb0(int param_1)
 
         *(float *)(param_1 + 0xc4) = *(float *)(iVar5 + 0xc4) * 0.5;
 
-        FUN_004148a0(param_1);
+        obj_sub100_transform(param_1);
 
       }
 
@@ -2689,7 +2689,7 @@ void FUN_0046aeb0(int param_1)
 
       *(float *)(param_1 + 0xc4) = *(float *)(iVar5 + 0xc4) * 0.5;
 
-      FUN_004148a0(param_1);
+      obj_sub100_transform(param_1);
 
     }
 
@@ -2725,7 +2725,7 @@ void FUN_0046aeb0(int param_1)
 
     *(undefined4 *)(param_1 + 0xc4) = *(undefined4 *)(iVar4 + 0xc4);
 
-    FUN_004148a0(param_1);
+    obj_sub100_transform(param_1);
 
   }
 
@@ -2859,7 +2859,7 @@ undefined4 FUN_0046b480(int param_1,undefined4 param_2,char param_3)
 
         *(float *)(param_1 + 0xc4) = fVar1 * *(float *)(iVar4 + 0xc4);
 
-        FUN_004148a0(param_1);
+        obj_sub100_transform(param_1);
 
         return 1;
 

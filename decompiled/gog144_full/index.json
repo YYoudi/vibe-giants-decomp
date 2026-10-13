@@ -797,12 +797,12 @@
  "0x00414840": {
   "name": "FUN_00414840",
   "named": false,
-  "len": 608
+  "len": 616
  },
  "0x004148A0": {
-  "name": "FUN_004148a0",
-  "named": false,
-  "len": 1139
+  "name": "obj_sub100_transform",
+  "named": true,
+  "len": 1147
  },
  "0x00414990": {
   "name": "collgrid_collide_d",
@@ -3505,14 +3505,14 @@
   "len": 1269
  },
  "0x0045C3E0": {
-  "name": "FUN_0045c3e0",
-  "named": false,
-  "len": 15700
+  "name": "obj_lod_lerp_update",
+  "named": true,
+  "len": 15715
  },
  "0x0045D190": {
   "name": "reaper_ability_playersound4",
   "named": true,
-  "len": 834
+  "len": 841
  },
  "0x0045D290": {
   "name": "FUN_0045d290",
@@ -3532,7 +3532,7 @@
  "0x0045D300": {
   "name": "FUN_0045d300",
   "named": false,
-  "len": 6210
+  "len": 6231
  },
  "0x0045DA90": {
   "name": "FUN_0045da90",
@@ -3687,7 +3687,7 @@
  "0x0046A480": {
   "name": "FUN_0046a480",
   "named": false,
-  "len": 565
+  "len": 573
  },
  "0x0046A4E0": {
   "name": "hud_icon_add_2",
@@ -3712,7 +3712,7 @@
  "0x0046AEB0": {
   "name": "FUN_0046aeb0",
   "named": false,
-  "len": 6426
+  "len": 6458
  },
  "0x0046B3F0": {
   "name": "FUN_0046b3f0",
@@ -3732,7 +3732,7 @@
  "0x0046B480": {
   "name": "FUN_0046b480",
   "named": false,
-  "len": 1125
+  "len": 1133
  },
  "0x0046B560": {
   "name": "object_spawn_init_usage",
@@ -10312,7 +10312,7 @@
  "0x005338E0": {
   "name": "FUN_005338e0",
   "named": false,
-  "len": 3359
+  "len": 3366
  },
  "0x00533B00": {
   "name": "FUN_00533b00",

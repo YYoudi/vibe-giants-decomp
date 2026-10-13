@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (14 named) — decompiled, names from PS2 symbols
+ * 100 functions (15 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -3267,7 +3267,7 @@ void FUN_00414840(int param_1)
 
   
 
-  FUN_004148a0(param_1);
+  obj_sub100_transform(param_1);
 
   FUN_004551b0(param_1 + 0xa0,&local_1c,local_4,local_c,1);
 
@@ -3285,8 +3285,8 @@ void FUN_00414840(int param_1)
 
 }
 
-/* ===== FUN_004148a0 @ 0x004148A0 ===== */
-void FUN_004148a0(int param_1)
+/* ===== obj_sub100_transform @ 0x004148A0 ===== */
+void obj_sub100_transform(int param_1)
 
 
 
