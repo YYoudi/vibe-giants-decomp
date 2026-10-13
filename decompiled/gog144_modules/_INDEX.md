@@ -3,9 +3,9 @@
 | module | functions | named | file |
 |---|---|---|---|
 | _unmapped_0054 | 351 | 263 | _unmapped_0054.c |
-| _unmapped_0051 | 186 | 116 | _unmapped_0051.c |
+| _unmapped_0051 | 186 | 129 | _unmapped_0051.c |
 | _unmapped_0053 | 179 | 125 | _unmapped_0053.c |
-| _unmapped_0052 | 162 | 101 | _unmapped_0052.c |
+| _unmapped_0052 | 162 | 102 | _unmapped_0052.c |
 | _unmapped_0045 | 145 | 97 | _unmapped_0045.c |
 | _unmapped_0049 | 142 | 105 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 95 | _unmapped_004a.c |

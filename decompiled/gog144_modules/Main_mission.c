@@ -48,7 +48,7 @@ void read_worlds_bin_fn_PS2(void)
 
       else {
 
-        uVar2 = FUN_00517990(iVar1);
+        uVar2 = binfile_seek(iVar1);
 
         uVar3 = MemAllocMsg(0x16,uVar2,s_mission_data_0055c68c,
 

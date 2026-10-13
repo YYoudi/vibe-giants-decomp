@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (116 named) — decompiled, names from PS2 symbols
+ * 186 functions (129 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -6857,8 +6857,8 @@ undefined4 FUN_00517830(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_005178a0 @ 0x005178A0 ===== */
-uint FUN_005178a0(LPCSTR param_1)
+/* ===== binfile_create_open @ 0x005178A0 ===== */
+uint binfile_create_open(LPCSTR param_1)
 
 
 
@@ -6891,8 +6891,8 @@ DWORD BinFileRead(HANDLE param_1,LPVOID param_2,DWORD param_3)
 
 }
 
-/* ===== FUN_00517900 @ 0x00517900 ===== */
-DWORD FUN_00517900(HANDLE param_1,LPCVOID param_2,DWORD param_3)
+/* ===== binfile_write @ 0x00517900 ===== */
+DWORD binfile_write(HANDLE param_1,LPCVOID param_2,DWORD param_3)
 
 
 
@@ -6947,8 +6947,8 @@ void binfile_seek_cur(HANDLE param_1)
 
 }
 
-/* ===== FUN_00517990 @ 0x00517990 ===== */
-DWORD FUN_00517990(HANDLE param_1)
+/* ===== binfile_seek @ 0x00517990 ===== */
+DWORD binfile_seek(HANDLE param_1)
 
 
 
@@ -8103,12 +8103,12 @@ void datetime_format(LPSTR param_1)
 
 }
 
-/* ===== FUN_00518890 @ 0x00518890 ===== */
+/* ===== time_get_ms @ 0x00518890 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00518890(void)
+void time_get_ms(void)
 
 
 
@@ -9609,8 +9609,8 @@ LAB_00519e83:
 
 }
 
-/* ===== FUN_00519ed0 @ 0x00519ED0 ===== */
-void FUN_00519ed0(void)
+/* ===== reg_close_key @ 0x00519ED0 ===== */
+void reg_close_key(void)
 
 
 
@@ -9730,8 +9730,8 @@ void reg_open_key(LPCSTR param_1)
 
 }
 
-/* ===== FUN_0051a030 @ 0x0051A030 ===== */
-void FUN_0051a030(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
+/* ===== reg_query_value_2 @ 0x0051A030 ===== */
+void reg_query_value_2(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 
 
@@ -9757,8 +9757,8 @@ void FUN_0051a030(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 }
 
-/* ===== FUN_0051a060 @ 0x0051A060 ===== */
-void FUN_0051a060(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
+/* ===== reg_query_value_3 @ 0x0051A060 ===== */
+void reg_query_value_3(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 
 
@@ -9774,8 +9774,8 @@ void FUN_0051a060(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 }
 
-/* ===== FUN_0051a090 @ 0x0051A090 ===== */
-void FUN_0051a090(LPCSTR param_1,BYTE *param_2)
+/* ===== reg_set_value_2 @ 0x0051A090 ===== */
+void reg_set_value_2(LPCSTR param_1,BYTE *param_2)
 
 
 
@@ -9888,8 +9888,8 @@ void comm_0051a130(LPCSTR param_1)
 
 }
 
-/* ===== FUN_0051a160 @ 0x0051A160 ===== */
-void FUN_0051a160(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
+/* ===== reg_query_value_4 @ 0x0051A160 ===== */
+void reg_query_value_4(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 
 
@@ -9922,8 +9922,8 @@ void reg_set_value(LPCSTR param_1,BYTE *param_2,DWORD param_3)
 
 }
 
-/* ===== FUN_0051a1c0 @ 0x0051A1C0 ===== */
-void FUN_0051a1c0(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
+/* ===== reg_query_value_5 @ 0x0051A1C0 ===== */
+void reg_query_value_5(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 
 
@@ -9949,8 +9949,8 @@ void FUN_0051a1c0(LPCSTR param_1,LPBYTE param_2,DWORD param_3)
 
 }
 
-/* ===== FUN_0051a1f0 @ 0x0051A1F0 ===== */
-void FUN_0051a1f0(LPCSTR param_1,BYTE *param_2)
+/* ===== reg_set_value_3 @ 0x0051A1F0 ===== */
+void reg_set_value_3(LPCSTR param_1,BYTE *param_2)
 
 
 
@@ -9990,8 +9990,8 @@ void FUN_0051a1f0(LPCSTR param_1,BYTE *param_2)
 
 }
 
-/* ===== FUN_0051a220 @ 0x0051A220 ===== */
-void FUN_0051a220(LPCSTR param_1,LPBYTE param_2)
+/* ===== reg_query_value_6 @ 0x0051A220 ===== */
+void reg_query_value_6(LPCSTR param_1,LPBYTE param_2)
 
 
 
@@ -10013,8 +10013,8 @@ void FUN_0051a220(LPCSTR param_1,LPBYTE param_2)
 
 }
 
-/* ===== FUN_0051a250 @ 0x0051A250 ===== */
-void FUN_0051a250(LPCSTR param_1)
+/* ===== reg_set_value_4 @ 0x0051A250 ===== */
+void reg_set_value_4(LPCSTR param_1)
 
 
 
@@ -14749,7 +14749,7 @@ LAB_0051ded4:
 
       iVar1 = 0x51dfb7;
 
-      FUN_0051a1c0(s_DefPlayer_0055a07c,local_64,0x40);
+      reg_query_value_5(s_DefPlayer_0055a07c,local_64,0x40);
 
       if (local_64[0] != '\0') {
 
@@ -14759,7 +14759,7 @@ LAB_0051ded4:
 
         game_options_verify();
 
-        FUN_00519ed0();
+        reg_close_key();
 
         goto LAB_0051e225;
 
@@ -14873,7 +14873,7 @@ LAB_0051e096:
 
       AudioMusicStreamPlay__Fiiii(0,iVar1,iVar4,iVar3);
 
-      FUN_00519ed0();
+      reg_close_key();
 
       goto LAB_0051e225;
 
@@ -15037,7 +15037,7 @@ LAB_0051e225:
 
   filecopy_dirs();
 
-  FUN_0051a1c0(s_DefPlayer_0055a07c,local_64,0x40);
+  reg_query_value_5(s_DefPlayer_0055a07c,local_64,0x40);
 
   if (local_64[0] != '\0') {
 
@@ -15061,7 +15061,7 @@ LAB_0051e225:
 
   }
 
-  FUN_00519ed0();
+  reg_close_key();
 
   menu_preview_scale_init();
 
@@ -16405,7 +16405,7 @@ void comm_tcpip_menu(void)
 
   DAT_005def84 = main_dlog_00427150();
 
-  FUN_0051a030(s_IPAddress_0057de38,&DAT_00632f68,0x40);
+  reg_query_value_2(s_IPAddress_0057de38,&DAT_00632f68,0x40);
 
   main_dlog_00427bb0(DAT_005def84,3,0x3f000000,0x3f333333,0x2a000000,s_ButtonSearch_0057de28);
 

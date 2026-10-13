@@ -8899,7 +8899,7 @@ void dlog_objname_menu(void)
 
               if (piVar5 != (int *)0x0) {
 
-                FUN_00517900(DAT_005999c4,piVar5,100);
+                binfile_write(DAT_005999c4,piVar5,100);
 
               }
 
@@ -9011,7 +9011,7 @@ LAB_004266c5:
 
         piVar5[1] = 1;
 
-        FUN_00517900(DAT_005999c4,piVar5,100);
+        binfile_write(DAT_005999c4,piVar5,100);
 
       }
 
@@ -9197,7 +9197,7 @@ void dialog_level_pop(int param_1)
 
   }
 
-  FUN_00518890();
+  time_get_ms();
 
   FUN_0041f0f0(0);
 

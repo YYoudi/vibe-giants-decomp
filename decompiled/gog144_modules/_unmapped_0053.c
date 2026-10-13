@@ -12485,7 +12485,7 @@ LAB_00538152:
 
 LAB_00538194:
 
-  uVar4 = FUN_005178a0(local_200);
+  uVar4 = binfile_create_open(local_200);
 
   return uVar4;
 
@@ -12627,13 +12627,13 @@ void stream_00538800(void)
 
     filecopy_dirs();
 
-    FUN_0051a1c0(s_DestDir_0057cb14,&DAT_005e2a60,0x100);
+    reg_query_value_5(s_DestDir_0057cb14,&DAT_005e2a60,0x100);
 
-    FUN_0051a1c0(s_SrcDir_0057cb0c,&DAT_005e2b60,0x100);
+    reg_query_value_5(s_SrcDir_0057cb0c,&DAT_005e2b60,0x100);
 
-    FUN_0051a1c0(s_Language_0058044c,local_560,0x20);
+    reg_query_value_5(s_Language_0058044c,local_560,0x20);
 
-    FUN_00519ed0();
+    reg_close_key();
 
     if (DAT_005e2c8c == 0) {
 

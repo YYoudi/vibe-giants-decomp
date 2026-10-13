@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (101 named) — decompiled, names from PS2 symbols
+ * 162 functions (102 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -104,7 +104,7 @@ LAB_005200bb:
 
       }
 
-      FUN_0051a090(s_IPAddress_0057de38,&DAT_00632f68);
+      reg_set_value_2(s_IPAddress_0057de38,&DAT_00632f68);
 
     }
 
@@ -122,7 +122,7 @@ LAB_005200bb:
 
     crt_sprintf(auStack_300,&DAT_00557088,DAT_00632fa8);
 
-    FUN_0051a090(s_IPPort_0057deb8,auStack_300);
+    reg_set_value_2(s_IPPort_0057deb8,auStack_300);
 
   }
 
@@ -1032,7 +1032,7 @@ void comm_session_menu(char *param_1,int param_2)
 
   if (param_2 != 0) {
 
-    FUN_0051a090(s_SessionName_0055a018,&DAT_00632f48);
+    reg_set_value_2(s_SessionName_0055a018,&DAT_00632f48);
 
   }
 
@@ -11633,8 +11633,8 @@ void new_fire__FP6OBJECTiPfT0P3P3Df(SOCKET *param_1,sockaddr *param_2,char *para
 
 }
 
-/* ===== FUN_0052e3d0 @ 0x0052E3D0 ===== */
-void FUN_0052e3d0(void)
+/* ===== comm_critsec_init @ 0x0052E3D0 ===== */
+void comm_critsec_init(void)
 
 
 

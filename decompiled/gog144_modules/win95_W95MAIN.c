@@ -100,7 +100,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
   }
 
-  iVar7 = FUN_00517990(iVar11);
+  iVar7 = binfile_seek(iVar11);
 
   pcVar8 = (char *)MemAllocMsg(0x13,iVar7 + 1,s_intro_0057dc44,
 

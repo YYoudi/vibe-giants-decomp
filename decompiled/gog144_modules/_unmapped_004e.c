@@ -11042,7 +11042,7 @@ void reaper_logic(int param_1)
 
   DAT_00633014 = 0;
 
-  FUN_00518890();
+  time_get_ms();
 
   return;
 
@@ -11193,7 +11193,7 @@ undefined4 intro_assets_check(void)
 
   ANM_DumpCluster();
 
-  FUN_0052e3d0();
+  comm_critsec_init();
 
   weapondefs_load();
 

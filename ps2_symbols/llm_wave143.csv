@@ -1,0 +1,15 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+005178a0,FUN_005178a0,,binfile_create_open,0.9,llm-w143,thin CreateFileA wrapper
+00517900,FUN_00517900,,binfile_write,0.9,llm-w143,thin WriteFile wrapper
+00517990,FUN_00517990,,binfile_seek,0.9,llm-w143,thin SetFilePointer wrapper
+00518890,FUN_00518890,,time_get_ms,0.9,llm-w143,thin timeGetTime wrapper
+00519ed0,FUN_00519ed0,,reg_close_key,0.9,llm-w143,thin RegCloseKey wrapper
+0051a030,FUN_0051a030,,reg_query_value_2,0.9,llm-w143,thin RegQueryValueExA
+0051a060,FUN_0051a060,,reg_query_value_3,0.9,llm-w143,thin RegQueryValueExA
+0051a160,FUN_0051a160,,reg_query_value_4,0.9,llm-w143,thin RegQueryValueExA
+0051a1c0,FUN_0051a1c0,,reg_query_value_5,0.9,llm-w143,thin RegQueryValueExA
+0051a220,FUN_0051a220,,reg_query_value_6,0.9,llm-w143,thin RegQueryValueExA
+0051a090,FUN_0051a090,,reg_set_value_2,0.9,llm-w143,thin RegSetValueExA
+0051a1f0,FUN_0051a1f0,,reg_set_value_3,0.9,llm-w143,thin RegSetValueExA
+0051a250,FUN_0051a250,,reg_set_value_4,0.9,llm-w143,thin RegSetValueExA
+0052e3d0,FUN_0052e3d0,,comm_critsec_init,0.9,llm-w143,thin InitializeCriticalSection comm region

@@ -2399,9 +2399,9 @@ void game_options_verify(void)
 
     mission_0051a0c0(s_VideoDepth_0055bdf4,&DAT_006331d0);
 
-    FUN_0051a160(s_VideoDevGuid_0055bde4,&DAT_006331e8,0x10);
+    reg_query_value_4(s_VideoDevGuid_0055bde4,&DAT_006331e8,0x10);
 
-    FUN_0051a160(s_VideoDrvGuid_0055bdd4,&DAT_006331d8,0x10);
+    reg_query_value_4(s_VideoDrvGuid_0055bdd4,&DAT_006331d8,0x10);
 
     DAT_0063322c = _DAT_0059eeb4 & 0x1000;
 
@@ -3840,7 +3840,7 @@ LAB_00483e92:
 
   }
 
-  FUN_0051a1c0(s_DefPlayer_0055a07c,local_40,0x40);
+  reg_query_value_5(s_DefPlayer_0055a07c,local_40,0x40);
 
   reg_open_key(&DAT_0063304c);
 
@@ -3894,7 +3894,7 @@ LAB_00483f92:
 
   }
 
-  FUN_0051a1f0(s_DefPlayer_0055a07c,&DAT_0063304c);
+  reg_set_value_3(s_DefPlayer_0055a07c,&DAT_0063304c);
 
   level_config_load();
 
@@ -4111,13 +4111,13 @@ void savegame_cam_section(void)
 
     local_4 = 0;
 
-    FUN_0051a220(s_SaveIdx_00555edc,&local_4);
+    reg_query_value_6(s_SaveIdx_00555edc,&local_4);
 
     comm_0051a130(s_SaveIdx_00555edc,local_4);
 
     local_4 = local_4 + 1;
 
-    FUN_0051a250(s_SaveIdx_00555edc,local_4);
+    reg_set_value_4(s_SaveIdx_00555edc,local_4);
 
   }
 
@@ -4604,7 +4604,7 @@ void mission_load_cheat(void)
 
           } while (cVar1 != '\0');
 
-          FUN_0051a090(s_WorldName_0055a068,&DAT_00633070);
+          reg_set_value_2(s_WorldName_0055a068,&DAT_00633070);
 
           if (DAT_00632bd0 == 0) {
 
@@ -5471,7 +5471,7 @@ void mission_mpworld_load(void)
 
           } while (cVar1 != '\0');
 
-          FUN_0051a090(s_MPWorldName_0055a05c,&DAT_00632ee8);
+          reg_set_value_2(s_MPWorldName_0055a05c,&DAT_00632ee8);
 
           DAT_00632ee4 = iVar8;
 

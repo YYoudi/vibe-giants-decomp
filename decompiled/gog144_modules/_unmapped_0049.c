@@ -13479,7 +13479,7 @@ void options_defaults(void)
 
   filecopy_dirs();
 
-  FUN_0051a1c0(s_DefPlayer_0055a07c,local_40,0x40);
+  reg_query_value_5(s_DefPlayer_0055a07c,local_40,0x40);
 
   if (local_40[0] != '\0') {
 
@@ -13493,13 +13493,13 @@ void options_defaults(void)
 
     mission_0051a0c0(s_VideoDepth_0055bdf4,&DAT_006331d0);
 
-    FUN_0051a160(s_VideoDevGuid_0055bde4,&DAT_006331e8,0x10);
+    reg_query_value_4(s_VideoDevGuid_0055bde4,&DAT_006331e8,0x10);
 
-    FUN_0051a160(s_VideoDrvGuid_0055bdd4,&DAT_006331d8,0x10);
+    reg_query_value_4(s_VideoDrvGuid_0055bdd4,&DAT_006331d8,0x10);
 
   }
 
-  FUN_00519ed0();
+  reg_close_key();
 
   return;
 

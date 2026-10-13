@@ -79,11 +79,11 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
       crt_sprintf(local_200,s__s__s_0058031c,s_Bin_Override_00580324,iVar3 + 0x10);
 
-      iVar3 = FUN_005178a0(local_200);
+      iVar3 = binfile_create_open(local_200);
 
       if (iVar3 != 0) {
 
-        uVar4 = FUN_00517990(iVar3);
+        uVar4 = binfile_seek(iVar3);
 
         *param_3 = uVar4;
 

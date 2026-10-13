@@ -1362,7 +1362,7 @@
  "0x00426570": {
   "name": "dlog_objname_menu",
   "named": true,
-  "len": 3937
+  "len": 3939
  },
  "0x004267A0": {
   "name": "main_demo_004267a0",
@@ -1402,7 +1402,7 @@
  "0x00426FD0": {
   "name": "dialog_level_pop",
   "named": true,
-  "len": 506
+  "len": 505
  },
  "0x00427040": {
   "name": "dlog_swap_check",
@@ -3227,17 +3227,17 @@
  "0x00457270": {
   "name": "comm_options_defaults",
   "named": true,
-  "len": 1723
+  "len": 1728
  },
  "0x00457440": {
   "name": "level_config_load",
   "named": true,
-  "len": 647
+  "len": 657
  },
  "0x004574D0": {
   "name": "defaults_reset_menu",
   "named": true,
-  "len": 455
+  "len": 460
  },
  "0x00457550": {
   "name": "menu_keymap_screen",
@@ -4342,7 +4342,7 @@
  "0x00482700": {
   "name": "game_options_verify",
   "named": true,
-  "len": 2704
+  "len": 2714
  },
  "0x004829D0": {
   "name": "FUN_004829d0",
@@ -4387,12 +4387,12 @@
  "0x00483E50": {
   "name": "player_defaults_load_all",
   "named": true,
-  "len": 2270
+  "len": 2278
  },
  "0x00484340": {
   "name": "savegame_cam_section",
   "named": true,
-  "len": 3040
+  "len": 3048
  },
  "0x004845E0": {
   "name": "menu_mission_select",
@@ -4407,7 +4407,7 @@
  "0x00484B00": {
   "name": "mission_load_cheat",
   "named": true,
-  "len": 2578
+  "len": 2581
  },
  "0x00485020": {
   "name": "mission_load_world",
@@ -4432,7 +4432,7 @@
  "0x00485B00": {
   "name": "mission_mpworld_load",
   "named": true,
-  "len": 2233
+  "len": 2236
  },
  "0x00485F10": {
   "name": "dlog_00485f10",
@@ -5367,7 +5367,7 @@
  "0x0049E290": {
   "name": "options_defaults",
   "named": true,
-  "len": 779
+  "len": 795
  },
  "0x0049E350": {
   "name": "cmdline_parse",
@@ -7527,7 +7527,7 @@
  "0x004EE670": {
   "name": "reaper_logic",
   "named": true,
-  "len": 2043
+  "len": 2042
  },
  "0x004EE800": {
   "name": "FUN_004EE800",
@@ -7542,7 +7542,7 @@
  "0x004EE930": {
   "name": "intro_assets_check",
   "named": true,
-  "len": 598
+  "len": 603
  },
  "0x004EE9C0": {
   "name": "shutdown_blood_cleanup",
@@ -8740,9 +8740,9 @@
   "len": 886
  },
  "0x005178A0": {
-  "name": "FUN_005178a0",
-  "named": false,
-  "len": 223
+  "name": "binfile_create_open",
+  "named": true,
+  "len": 230
  },
  "0x005178D0": {
   "name": "BinFileRead",
@@ -8750,9 +8750,9 @@
   "len": 208
  },
  "0x00517900": {
-  "name": "FUN_00517900",
-  "named": false,
-  "len": 163
+  "name": "binfile_write",
+  "named": true,
+  "len": 164
  },
  "0x00517930": {
   "name": "sceSifLoadElf",
@@ -8770,8 +8770,8 @@
   "len": 165
  },
  "0x00517990": {
-  "name": "FUN_00517990",
-  "named": false,
+  "name": "binfile_seek",
+  "named": true,
   "len": 323
  },
  "0x005179D0": {
@@ -8820,9 +8820,9 @@
   "len": 655
  },
  "0x00518890": {
-  "name": "FUN_00518890",
-  "named": false,
-  "len": 555
+  "name": "time_get_ms",
+  "named": true,
+  "len": 554
  },
  "0x00518950": {
   "name": "time_frame_update",
@@ -8925,9 +8925,9 @@
   "len": 1472
  },
  "0x00519ED0": {
-  "name": "FUN_00519ed0",
-  "named": false,
-  "len": 327
+  "name": "reg_close_key",
+  "named": true,
+  "len": 328
  },
  "0x00519F20": {
   "name": "FUN_00519F20",
@@ -8940,19 +8940,19 @@
   "len": 375
  },
  "0x0051A030": {
-  "name": "FUN_0051a030",
-  "named": false,
-  "len": 319
+  "name": "reg_query_value_2",
+  "named": true,
+  "len": 324
  },
  "0x0051A060": {
-  "name": "FUN_0051a060",
-  "named": false,
-  "len": 216
+  "name": "reg_query_value_3",
+  "named": true,
+  "len": 221
  },
  "0x0051A090": {
-  "name": "FUN_0051a090",
-  "named": false,
-  "len": 422
+  "name": "reg_set_value_2",
+  "named": true,
+  "len": 425
  },
  "0x0051A0C0": {
   "name": "mission_0051a0c0",
@@ -8970,9 +8970,9 @@
   "len": 166
  },
  "0x0051A160": {
-  "name": "FUN_0051a160",
-  "named": false,
-  "len": 173
+  "name": "reg_query_value_4",
+  "named": true,
+  "len": 178
  },
  "0x0051A190": {
   "name": "reg_set_value",
@@ -8980,24 +8980,24 @@
   "len": 250
  },
  "0x0051A1C0": {
-  "name": "FUN_0051a1c0",
-  "named": false,
-  "len": 319
+  "name": "reg_query_value_5",
+  "named": true,
+  "len": 324
  },
  "0x0051A1F0": {
-  "name": "FUN_0051a1f0",
-  "named": false,
-  "len": 422
+  "name": "reg_set_value_3",
+  "named": true,
+  "len": 425
  },
  "0x0051A220": {
-  "name": "FUN_0051a220",
-  "named": false,
-  "len": 242
+  "name": "reg_query_value_6",
+  "named": true,
+  "len": 247
  },
  "0x0051A250": {
-  "name": "FUN_0051a250",
-  "named": false,
-  "len": 165
+  "name": "reg_set_value_4",
+  "named": true,
+  "len": 168
  },
  "0x0051A280": {
   "name": "stream_0051a280",
@@ -9252,7 +9252,7 @@
  "0x0051DC20": {
   "name": "startup_options_init",
   "named": true,
-  "len": 10718
+  "len": 10731
  },
  "0x0051E670": {
   "name": "Audio3DTestToneUpdate__Fv_4",
@@ -9327,12 +9327,12 @@
  "0x0051FC90": {
   "name": "comm_tcpip_menu",
   "named": true,
-  "len": 2128
+  "len": 2133
  },
  "0x00520050": {
   "name": "comm_client_connect_menu",
   "named": true,
-  "len": 4688
+  "len": 4694
  },
  "0x00520490": {
   "name": "comm_comm_00520490",
@@ -9387,7 +9387,7 @@
  "0x005213D0": {
   "name": "comm_session_menu",
   "named": true,
-  "len": 797
+  "len": 800
  },
  "0x005214B0": {
   "name": "comm_gtype_name",
@@ -9950,9 +9950,9 @@
   "len": 2998
  },
  "0x0052E3D0": {
-  "name": "FUN_0052e3d0",
-  "named": false,
-  "len": 1150
+  "name": "comm_critsec_init",
+  "named": true,
+  "len": 1155
  },
  "0x0052E470": {
   "name": "FUN_0052E470",
@@ -10467,7 +10467,7 @@
  "0x005380E0": {
   "name": "stream_player_start",
   "named": true,
-  "len": 1291
+  "len": 1298
  },
  "0x00538540": {
   "name": "FUN_00538540",
@@ -10482,7 +10482,7 @@
  "0x00538580": {
   "name": "vfs_fileread_load",
   "named": true,
-  "len": 3146
+  "len": 3153
  },
  "0x005387A0": {
   "name": "player_display_info",
@@ -10497,7 +10497,7 @@
  "0x00538800": {
   "name": "stream_00538800",
   "named": true,
-  "len": 9854
+  "len": 9870
  },
  "0x00538FF0": {
   "name": "FUN_00538ff0",

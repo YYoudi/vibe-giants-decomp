@@ -6166,7 +6166,7 @@ void comm_options_defaults(void)
 
   if (DAT_0063315c == 0) {
 
-    FUN_0051a060(s_SessionName_0055a018,&DAT_00632f48,0x20);
+    reg_query_value_3(s_SessionName_0055a018,&DAT_00632f48,0x20);
 
   }
 
@@ -6251,9 +6251,9 @@ void level_config_load(void)
 
   if (DAT_00633158 == 0) {
 
-    FUN_0051a030(s_WorldName_0055a068,&DAT_00633070,0x20);
+    reg_query_value_2(s_WorldName_0055a068,&DAT_00633070,0x20);
 
-    FUN_0051a030(s_MPWorldName_0055a05c,&DAT_00632ee8,0x20);
+    reg_query_value_2(s_MPWorldName_0055a05c,&DAT_00632ee8,0x20);
 
   }
 
@@ -6286,7 +6286,7 @@ void defaults_reset_menu(void)
 
   if (DAT_00633154 == 0) {
 
-    FUN_0051a1c0(s_DefPlayer_0055a07c,&DAT_0063304c,0x20);
+    reg_query_value_5(s_DefPlayer_0055a07c,&DAT_0063304c,0x20);
 
     if ((((DAT_00633154 == 0) && (DAT_0063317c == 0)) && (DAT_0063315c == 0)) &&
 
