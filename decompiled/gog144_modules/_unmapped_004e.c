@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (21 named) — decompiled, names from PS2 symbols
+ * 94 functions (23 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -9001,12 +9001,12 @@ LAB_004eb621:
 
 }
 
-/* ===== FUN_004eb850 @ 0x004EB850 ===== */
+/* ===== match_start_entry @ 0x004EB850 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004eb850(void)
+void match_start_entry(void)
 
 
 
@@ -9095,8 +9095,8 @@ void FUN_004eb8f0(void)
 
 }
 
-/* ===== FUN_004eb900 @ 0x004EB900 ===== */
-void FUN_004eb900(void)
+/* ===== match_start_big @ 0x004EB900 ===== */
+void match_start_big(void)
 
 
 
@@ -10400,7 +10400,7 @@ void env_water_texture(void)
 
   
 
-  FUN_004eb850();
+  match_start_entry();
 
   fx_blob_shadow();
 

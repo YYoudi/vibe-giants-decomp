@@ -1403,7 +1403,7 @@ void FUN_00471a60(int param_1)
 
           weapon_id_inventory_update();
 
-          FUN_004eb900();
+          match_start_big();
 
           for (puVar1 = DAT_00632d70; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
