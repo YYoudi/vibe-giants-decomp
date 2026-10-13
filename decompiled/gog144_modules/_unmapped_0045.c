@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (103 named) — decompiled, names from PS2 symbols
+ * 145 functions (104 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -799,8 +799,8 @@ LAB_00451653:
 
 }
 
-/* ===== FUN_00451780 @ 0x00451780 ===== */
-void FUN_00451780(float *param_1,float *param_2)
+/* ===== angle_wrap_180 @ 0x00451780 ===== */
+void angle_wrap_180(float *param_1,float *param_2)
 
 
 
@@ -963,7 +963,7 @@ LAB_004518de:
 
   param_5 = local_8 - (float)param_8;
 
-  FUN_00451780(&param_5,&param_8);
+  angle_wrap_180(&param_5,&param_8);
 
   if ((float)param_8 <= local_8) {
 
@@ -1075,7 +1075,7 @@ LAB_00451ad9:
 
   param_3 = (float)param_8 - param_5;
 
-  FUN_00451780(&param_3,&param_5);
+  angle_wrap_180(&param_3,&param_5);
 
   fVar4 = (float10)FUN_00518b70(0,0);
 
@@ -1083,7 +1083,7 @@ LAB_00451ad9:
 
   param_3 = param_5 - param_2;
 
-  FUN_00451780(&param_3,&param_2);
+  angle_wrap_180(&param_3,&param_2);
 
   if (param_2 <= param_5) {
 
@@ -1145,7 +1145,7 @@ LAB_00451c06:
 
   param_3 = param_3 - param_5;
 
-  FUN_00451780(&param_3,&param_5);
+  angle_wrap_180(&param_3,&param_5);
 
   fVar4 = (float10)FUN_00518b70(0,0);
 
@@ -1153,7 +1153,7 @@ LAB_00451c06:
 
   param_3 = param_5 - param_2;
 
-  FUN_00451780(&param_3,&param_2);
+  angle_wrap_180(&param_3,&param_2);
 
   if (param_2 <= param_5) {
 

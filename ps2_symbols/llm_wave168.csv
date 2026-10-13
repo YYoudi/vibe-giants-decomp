@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004ff470,FUN_004ff470,,comm_game_objects_release,0.9,llm-w168,per-mode destroys callers gamespy_host
+0054d022,FUN_0054d022,,crt_bitarray_clear,0.9,llm-w168,bit clear companion of test
+00545f65,FUN_00545f65,,crt_fmt_f,0.9,llm-w168,%f third sibling of e/g callers __cfltcvt
+0053a8a0,FUN_0053a8a0,,str_eq,0.9,llm-w168,byte compare used by format parsers
+00451780,FUN_00451780,,angle_wrap_180,0.9,llm-w168,+/-180 wrap caller hud_render_icons

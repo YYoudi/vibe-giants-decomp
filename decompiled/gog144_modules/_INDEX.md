@@ -2,11 +2,11 @@
 
 | module | functions | named | file |
 |---|---|---|---|
-| _unmapped_0054 | 351 | 279 | _unmapped_0054.c |
+| _unmapped_0054 | 351 | 281 | _unmapped_0054.c |
 | _unmapped_0051 | 186 | 142 | _unmapped_0051.c |
-| _unmapped_0053 | 179 | 140 | _unmapped_0053.c |
+| _unmapped_0053 | 179 | 141 | _unmapped_0053.c |
 | _unmapped_0052 | 162 | 112 | _unmapped_0052.c |
-| _unmapped_0045 | 145 | 103 | _unmapped_0045.c |
+| _unmapped_0045 | 145 | 104 | _unmapped_0045.c |
 | _unmapped_0049 | 142 | 109 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 102 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 110 | _unmapped_0042.c |
@@ -21,7 +21,7 @@
 | _unmapped_0047 | 67 | 58 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 56 | _unmapped_004c.c |
 | _unmapped_0046 | 53 | 41 | _unmapped_0046.c |
-| _unmapped_004f | 48 | 39 | _unmapped_004f.c |
+| _unmapped_004f | 48 | 40 | _unmapped_004f.c |
 | _unmapped_004d | 39 | 28 | _unmapped_004d.c |
 | main/dlog | 19 | 19 | main_dlog.c |
 | main/ai_move | 15 | 15 | main_ai_move.c |

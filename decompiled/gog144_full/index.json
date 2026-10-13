@@ -2925,14 +2925,14 @@
   "len": 1939
  },
  "0x00451780": {
-  "name": "FUN_00451780",
-  "named": false,
-  "len": 287
+  "name": "angle_wrap_180",
+  "named": true,
+  "len": 289
  },
  "0x004517E0": {
   "name": "hud_render_icons",
   "named": true,
-  "len": 4817
+  "len": 4827
  },
  "0x00451CF0": {
   "name": "render_scene_begin",
@@ -7825,9 +7825,9 @@
   "len": 450
  },
  "0x004FF470": {
-  "name": "FUN_004ff470",
-  "named": false,
-  "len": 378
+  "name": "comm_game_objects_release",
+  "named": true,
+  "len": 391
  },
  "0x004FF6A0": {
   "name": "status_update_entry",
@@ -8412,7 +8412,7 @@
  "0x005137C0": {
   "name": "flk_actor_update",
   "named": true,
-  "len": 2298
+  "len": 2292
  },
  "0x00513920": {
   "name": "mesh_node_calc_bounds",
@@ -8422,17 +8422,17 @@
  "0x00513A20": {
   "name": "hud_parse_format_codes_2",
   "named": true,
-  "len": 1238
+  "len": 1232
  },
  "0x00513AC0": {
   "name": "FUN_00513ac0",
   "named": false,
-  "len": 1293
+  "len": 1276
  },
  "0x00513B60": {
   "name": "hud_parse_format_codes_3",
   "named": true,
-  "len": 1131
+  "len": 1125
  },
  "0x00513BE0": {
   "name": "game_water_00513be0",
@@ -9512,7 +9512,7 @@
  "0x00524DE0": {
   "name": "gamespy_host_game",
   "named": true,
-  "len": 2888
+  "len": 2901
  },
  "0x00525030": {
   "name": "Audio3DTestToneUpdate__Fv_6",
@@ -10442,7 +10442,7 @@
  "0x005371E0": {
   "name": "comm_entergame_message",
   "named": true,
-  "len": 2433
+  "len": 2446
  },
  "0x00537400": {
   "name": "comm_wincond_destroy",
@@ -10452,7 +10452,7 @@
  "0x005375E0": {
   "name": "FUN_005375e0",
   "named": false,
-  "len": 19493
+  "len": 19506
  },
  "0x00538010": {
   "name": "comm_send_538010",
@@ -10630,9 +10630,9 @@
   "len": 178
  },
  "0x0053A8A0": {
-  "name": "FUN_0053a8a0",
-  "named": false,
-  "len": 501
+  "name": "str_eq",
+  "named": true,
+  "len": 495
  },
  "0x0053A900": {
   "name": "strncpynull",
@@ -11850,9 +11850,9 @@
   "len": 1061
  },
  "0x00545F65": {
-  "name": "FUN_00545f65",
-  "named": false,
-  "len": 352
+  "name": "crt_fmt_f",
+  "named": true,
+  "len": 349
  },
  "0x00545FBA": {
   "name": "crt_fmt_pad_zero",
@@ -11867,7 +11867,7 @@
  "0x005460F4": {
   "name": "__cfltcvt",
   "named": true,
-  "len": 550
+  "len": 547
  },
  "0x00546145": {
   "name": "crt_memmove",
@@ -12530,14 +12530,14 @@
   "len": 491
  },
  "0x0054D022": {
-  "name": "FUN_0054d022",
-  "named": false,
-  "len": 568
+  "name": "crt_bitarray_clear",
+  "named": true,
+  "len": 574
  },
  "0x0054D078": {
   "name": "crt_bitarray_test",
   "named": true,
-  "len": 748
+  "len": 754
  },
  "0x0054D104": {
   "name": "FUN_0054d104",

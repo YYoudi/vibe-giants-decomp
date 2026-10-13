@@ -2017,7 +2017,7 @@ void flk_actor_update(int param_1)
 
         do {
 
-          iVar3 = FUN_0053a8a0(pcVar7,*puVar6);
+          iVar3 = str_eq(pcVar7,*puVar6);
 
           if (iVar3 != 0) break;
 
@@ -2285,7 +2285,7 @@ undefined4 hud_parse_format_codes_2(int param_1)
 
       if (((1 << (bVar5 & 0x1f) & uVar2) != 0) &&
 
-         (iVar3 = FUN_0053a8a0(pcVar7,s_world_0057c050), iVar3 != 0)) {
+         (iVar3 = str_eq(pcVar7,s_world_0057c050), iVar3 != 0)) {
 
         return 0;
 
@@ -2394,9 +2394,7 @@ undefined4 FUN_00513ac0(int param_1,int param_2,int param_3)
 
       if (((1 << (bVar5 & 0x1f) & uVar2) != 0) &&
 
-         (iVar3 = FUN_0053a8a0(pcVar7,*(undefined4 *)(param_3 * 0x50 + 0x74 + param_2)), iVar3 != 0)
-
-         ) {
+         (iVar3 = str_eq(pcVar7,*(undefined4 *)(param_3 * 0x50 + 0x74 + param_2)), iVar3 != 0)) {
 
         return 0;
 
@@ -2461,7 +2459,7 @@ undefined4 hud_parse_format_codes_3(int param_1,int param_2,int param_3)
 
     do {
 
-      iVar2 = FUN_0053a8a0(pcVar4,*(undefined4 *)(param_3 * 0x50 + 0x74 + param_2));
+      iVar2 = str_eq(pcVar4,*(undefined4 *)(param_3 * 0x50 + 0x74 + param_2));
 
       if (iVar2 != 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (279 named) — decompiled, names from PS2 symbols
+ * 351 functions (281 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -9433,8 +9433,8 @@ undefined1 * crt_printf_fmt_e(undefined1 *param_1,int param_2,int param_3,int *p
 
 }
 
-/* ===== FUN_00545f65 @ 0x00545F65 ===== */
-int FUN_00545f65(undefined8 *param_1,int param_2,int param_3)
+/* ===== crt_fmt_f @ 0x00545F65 ===== */
+int crt_fmt_f(undefined8 *param_1,int param_2,int param_3)
 
 
 
@@ -9633,7 +9633,7 @@ __cfltcvt(double *arg,char *buffer,size_t sizeInBytes,int format,int precision,i
 
     if (sizeInBytes == 0x66) {
 
-      eVar1 = FUN_00545f65(arg,buffer,format);
+      eVar1 = crt_fmt_f(arg,buffer,format);
 
       return eVar1;
 
@@ -22257,8 +22257,8 @@ undefined4 FUN_0054cfd9(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0054d022 @ 0x0054D022 ===== */
-void FUN_0054d022(int param_1,int param_2)
+/* ===== crt_bitarray_clear @ 0x0054D022 ===== */
+void crt_bitarray_clear(int param_1,int param_2)
 
 
 
@@ -22335,7 +22335,7 @@ undefined4 crt_bitarray_test(int param_1,int param_2)
 
      (iVar2 = FUN_0054cfd9(param_1,param_2 + 1), iVar2 == 0)) {
 
-    local_8 = FUN_0054d022(param_1,param_2 + -1);
+    local_8 = crt_bitarray_clear(param_1,param_2 + -1);
 
   }
 

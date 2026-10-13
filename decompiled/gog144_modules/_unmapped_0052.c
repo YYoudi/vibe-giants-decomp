@@ -4643,7 +4643,7 @@ void gamespy_host_game(void)
 
   comm_options_defaults();
 
-  FUN_004ff470();
+  comm_game_objects_release();
 
   Audio3DTestToneUpdate__Fv();
 

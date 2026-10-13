@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (140 named) — decompiled, names from PS2 symbols
+ * 179 functions (141 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -10872,7 +10872,7 @@ void comm_entergame_message(void)
 
   }
 
-  FUN_004ff470();
+  comm_game_objects_release();
 
   Audio3DTestToneUpdate__Fv();
 
@@ -11454,7 +11454,7 @@ void FUN_005375e0(void)
 
     }
 
-    FUN_004ff470();
+    comm_game_objects_release();
 
     Audio3DTestToneUpdate__Fv();
 
@@ -14536,8 +14536,8 @@ bool matchn(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0053a8a0 @ 0x0053A8A0 ===== */
-bool FUN_0053a8a0(byte *param_1,byte *param_2)
+/* ===== str_eq @ 0x0053A8A0 ===== */
+bool str_eq(byte *param_1,byte *param_2)
 
 
 
