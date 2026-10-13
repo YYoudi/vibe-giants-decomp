@@ -5146,7 +5146,7 @@ LAB_00533630:
 
     if ((*(byte *)(param_1 + 0xc) & 1) != 0) {
 
-      FUN_0047fff0(iVar2);
+      mecc_to_bush(iVar2);
 
     }
 
@@ -7269,7 +7269,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                   uStack_203 = uVar8;
 
-                  iVar9 = FUN_0047f730(iVar6);
+                  iVar9 = mecc_in_gyro(iVar6);
 
                   if (iVar9 != 0) {
 
@@ -16162,7 +16162,7 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
                            CONCAT22((short)((uint)iVar2 >> 0x10),*(undefined2 *)(iVar2 + 8)));
 
-        uVar5 = FUN_005404b0(uVar4);
+        uVar5 = NAM_NameGetCustom(uVar4);
 
         iVar2 = NAM_NameFindByHandleIndex(local_8,uVar5);
 
@@ -16172,7 +16172,7 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
           if (param_2 == 0) {
 
-            uVar4 = FUN_005404b0(uVar4,param_1 + 0x4c);
+            uVar4 = NAM_NameGetCustom(uVar4,param_1 + 0x4c);
 
             FUN_00540310(s_Error_binding___The_SKN___s__ref_00580a70,*(int *)(iVar1 + 4) + 0x28,
 
@@ -16182,7 +16182,7 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
           else {
 
-            uVar4 = FUN_005404b0(uVar4,param_1 + 0x4c,param_2);
+            uVar4 = NAM_NameGetCustom(uVar4,param_1 + 0x4c,param_2);
 
             FUN_00540310(s_Error_binding___The_SKN___s__ref_00580ae0,*(int *)(iVar1 + 4) + 0x28,
 
@@ -16670,7 +16670,7 @@ byte nam_lookup_full(int param_1,int param_2,int param_3,int param_4,undefined4 
 
       while (iVar2 != 0) {
 
-        uVar3 = FUN_005404b0(iVar2);
+        uVar3 = NAM_NameGetCustom(iVar2);
 
         puVar4 = (undefined4 *)NAM_NameGetCustom(iVar2);
 

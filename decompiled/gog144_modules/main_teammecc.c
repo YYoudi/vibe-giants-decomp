@@ -104,7 +104,7 @@ void teammecc_create(int param_1,int param_2)
 
         *(int *)(iVar3 + 0x174) = iVar4;
 
-        FUN_00502660(param_1,0,iVar4,iVar3 + 0xa0,iVar3 + 200);
+        teammecc_get_wantloc_formation(param_1,0,iVar4,iVar3 + 0xa0,iVar3 + 200);
 
         FUN_00499280(iVar3);
 

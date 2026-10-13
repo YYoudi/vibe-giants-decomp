@@ -1,0 +1,18 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052e480,FUN_0052e480,,fx_create,0.9,promote-auto,"nm=3;c=0.587;callers=['fxb_firewall_create', 'fxb_firecircle_create', 'reaper_tornado_create']"
+004019e0,FUN_004019e0,,ai_do_update_goal__FUiP6OBJECTP3P3Dff,0.9,promote-auto,"nm=3;c=0.314;callers=['ai_fly_update_goal', 'ai_fly_update_goal_2', 'ai_move_update_goal']"
+00502660,FUN_00502660,,teammecc_get_wantloc_formation,0.9,promote-auto,"nm=2;c=0.613;callers=['teammecc_create', 'teammecc_setup_enemies__FP6OBJECTi']"
+0047fff0,FUN_0047fff0,,mecc_to_bush,0.9,promote-auto,"nm=2;c=0.603;callers=['mecc_animselect_gm', 'mecc_shield_spell']"
+00455190,FUN_00455190,,grid_get_conntype,0.9,promote-auto,"nm=2;c=0.534;callers=['terrain_grid_lookup', 'grid_dir_walk']"
+005404b0,FUN_005404b0,,NAM_NameGetCustom,0.9,promote-auto,"nm=2;c=0.522;callers=['nam_lookup_by_handle', 'nam_lookup_full']"
+0047f730,FUN_0047f730,,mecc_in_gyro,0.9,promote-auto,"nm=2;c=0.508;callers=['mecc_animselect_gm', 'mecc_fire_logic__FP6OBJECT']"
+004baa70,FUN_004baa70,,reaper_init__FP6OBJECT,0.9,promote-auto,"nm=2;c=0.494;callers=['mission_init', 'reaper_animselect']"
+004c0550,FUN_004c0550,,reaper_create_fake_reaper__FP6OBJECTP3P3Dfi,0.9,promote-auto,"nm=2;c=0.44;callers=['reaper_animselect', 'reaper_finish_teleport']"
+004b09c0,FUN_004B09C0,,world_get_pointer,0.9,promote-auto,nm=1;c=0.691;callers=['mission_load_world']
+004146c0,FUN_004146c0,,collide_find_ground_hit,0.9,promote-auto,nm=1;c=0.676;callers=['obj_ground_normal']
+004f7b50,FUN_004f7b50,,smartie_make_held_object__FP6OBJECTi,0.9,promote-auto,nm=1;c=0.637;callers=['smartie_unlock_from_player']
+00477340,FUN_00477340,,marker_spline_adjust_buoy,0.9,promote-auto,nm=1;c=0.631;callers=['marker_create_path__FP6OBJECTi']
+00480400,FUN_00480400,,mecc_disable_repair_gun,0.9,promote-auto,nm=1;c=0.63;callers=['mecc_animselect_gm']
+00492430,FUN_00492430,,load_mission_continuity__Fii,0.9,promote-auto,nm=1;c=0.605;callers=['mission_init']
+00478ad0,FUN_00478ad0,,new_fire__FP6OBJECTiPfT0P3P3Df,0.9,promote-auto,nm=1;c=0.605;callers=['mecc_fire_logic__FP6OBJECT']
+00455890,FUN_00455890,,project_cursor_to_ground,0.9,promote-auto,nm=1;c=0.602;callers=['editor_cursor_pick_point']

@@ -113,7 +113,7 @@ void FUN_00510f50(float param_1,float param_2)
 
   iVar3 = *(int *)((int)param_1 + 0x100);
 
-  iVar2 = FUN_0052e480(param_1);
+  iVar2 = fx_create(param_1);
 
   if (iVar2 != 0) {
 
@@ -256,7 +256,7 @@ void herdgen_marker_user(float param_1,float *param_2,undefined4 param_3)
 
   iVar2 = *(int *)((int)param_1 + 0x100);
 
-  iVar6 = FUN_0052e480(param_1);
+  iVar6 = fx_create(param_1);
 
   if (iVar6 == 0) {
 
@@ -569,9 +569,7 @@ void FUN_005116e0(int param_1)
 
           }
 
-          if (((*(byte *)(param_1 + 0x30) & 2) != 0) && (iVar3 = FUN_0052e480(param_1), iVar3 != 0))
-
-          {
+          if (((*(byte *)(param_1 + 0x30) & 2) != 0) && (iVar3 = fx_create(param_1), iVar3 != 0)) {
 
             iVar3 = *(int *)(iVar2 + 0xd4);
 
@@ -609,7 +607,7 @@ void FUN_005116e0(int param_1)
 
               *(undefined4 *)(iVar2 + 0xb8) = 3;
 
-              iVar2 = FUN_0052e480(param_1);
+              iVar2 = fx_create(param_1);
 
               if (iVar2 == 0) {
 
@@ -681,7 +679,7 @@ void FUN_005116e0(int param_1)
 
                 iVar3 = *(int *)(*(int *)(param_1 + 0x274) + 0x100);
 
-                iVar4 = FUN_0052e480(param_1);
+                iVar4 = fx_create(param_1);
 
                 if (iVar4 != 0) {
 
@@ -1096,7 +1094,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  iVar3 = FUN_0052e480(param_1);
+  iVar3 = fx_create(param_1);
 
   if (((iVar3 != 0) && ((**(byte **)(iVar2 + 0x104) & 0x40) == 0)) &&
 
@@ -1140,7 +1138,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
           *(undefined4 *)(iVar4 + 0xb8) = 3;
 
-          iVar4 = FUN_0052e480(iVar2);
+          iVar4 = fx_create(iVar2);
 
           if (iVar4 == 0) {
 
@@ -1194,7 +1192,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
             *(undefined4 *)(iVar4 + 0xb8) = 3;
 
-            iVar4 = FUN_0052e480(iVar2);
+            iVar4 = fx_create(iVar2);
 
             if (iVar4 == 0) {
 
@@ -1246,7 +1244,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
               *(int *)(iVar3 + 0x78) = iVar4;
 
-              iVar5 = FUN_0052e480(iVar2);
+              iVar5 = fx_create(iVar2);
 
               if (iVar5 == 0) {
 
@@ -1322,7 +1320,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
               *(undefined4 *)(iVar4 + 0x78) = 0;
 
-              iVar3 = FUN_0052e480(iVar2);
+              iVar3 = fx_create(iVar2);
 
               if (iVar3 == 0) {
 
@@ -1578,7 +1576,7 @@ void evilreaper_speed_dist(int param_1)
 
   }
 
-  iVar3 = FUN_0052e480(param_1);
+  iVar3 = fx_create(param_1);
 
   if (iVar3 == 0) goto LAB_005127e2;
 

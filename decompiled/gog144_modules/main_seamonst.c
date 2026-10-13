@@ -68,7 +68,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   *(int *)(iVar2 + 0x274) = param_1;
 
-  iVar3 = FUN_0052e480(param_1);
+  iVar3 = fx_create(param_1);
 
   if (iVar3 == 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (41 named) — decompiled, names from PS2 symbols
+ * 74 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -77,7 +77,7 @@ void mecc_enable_personal_shield(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_0052e480(param_1);
+  iVar2 = fx_create(param_1);
 
   if (iVar2 == 0) {
 
@@ -168,7 +168,7 @@ void FUN_004802c0(int param_1)
 
   }
 
-  iVar1 = FUN_0052e480(param_1);
+  iVar1 = fx_create(param_1);
 
   if (iVar1 == 0) {
 
@@ -267,12 +267,12 @@ void FUN_004803a0(int param_1)
 
 }
 
-/* ===== FUN_00480400 @ 0x00480400 ===== */
+/* ===== mecc_disable_repair_gun @ 0x00480400 ===== */
 /* PS2 candidate: mecc_disable_repair_gun (conf 0.63) */
 
 
 
-void FUN_00480400(int param_1)
+void mecc_disable_repair_gun(int param_1)
 
 
 
@@ -875,7 +875,7 @@ void FUN_00480d10(int param_1,int param_2,undefined4 param_3,int param_4)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_0052e480(param_1);
+  iVar2 = fx_create(param_1);
 
   if ((((iVar2 != 0) && (iVar3 = *(int *)(iVar1 + 0x5bc + param_4 * 4), iVar3 != 0)) &&
 
@@ -934,7 +934,7 @@ void mecc_drop_carried_object(int param_1,int param_2)
 
   iVar2 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_0052e480(param_2);
+  iVar4 = fx_create(param_2);
 
   if ((((iVar4 == 0) || (iVar5 = *(int *)(iVar1 + 0x10), iVar5 == 0)) ||
 
@@ -1007,7 +1007,7 @@ void FUN_00480ef0(int param_1,int param_2)
 
   iVar1 = *(int *)(param_2 + 0x100);
 
-  if ((DAT_00632bbc == 0) || (iVar3 = FUN_0052e480(DAT_00632bbc), iVar3 == 0)) {
+  if ((DAT_00632bbc == 0) || (iVar3 = fx_create(DAT_00632bbc), iVar3 == 0)) {
 
     bVar2 = false;
 
@@ -1197,7 +1197,7 @@ void FUN_004810d0(int param_1)
 
   
 
-  iVar4 = FUN_0052e480(param_1);
+  iVar4 = fx_create(param_1);
 
   if ((((iVar4 != 0) && (*(int *)(param_1 + 0x1e0) == 2)) &&
 
@@ -4303,7 +4303,7 @@ void mission_cheat_check(void)
 
     do {
 
-      iVar2 = FUN_004B09C0(iVar5);
+      iVar2 = world_get_pointer(iVar5);
 
       if ((iVar2 != 0) && (((*(byte *)(iVar2 + 8) & 1) == 0 || (local_4 != 0)))) {
 
@@ -4385,7 +4385,7 @@ void mission_cheat_check(void)
 
       do {
 
-        iVar1 = FUN_004B09C0(iVar2);
+        iVar1 = world_get_pointer(iVar2);
 
         if (iVar1 != 0) {
 
@@ -4570,7 +4570,7 @@ void mission_load_cheat(void)
 
     do {
 
-      iVar2 = FUN_004B09C0(iVar7);
+      iVar2 = world_get_pointer(iVar7);
 
       if (iVar2 != 0) {
 
@@ -4699,7 +4699,7 @@ undefined4 mission_load_world(int param_1)
 
     do {
 
-      iVar2 = FUN_004B09C0(iVar4);
+      iVar2 = world_get_pointer(iVar4);
 
       if (iVar2 != 0) {
 
@@ -5033,7 +5033,7 @@ void comm_00485300(void)
 
     comm_00521620(0);
 
-    iVar4 = FUN_004B09C0(DAT_00632ee4);
+    iVar4 = world_get_pointer(DAT_00632ee4);
 
     if ((iVar4 != 0) && (iVar4 = FUN_004B0900(DAT_00632ee4,DAT_00632f10,DAT_00632f44), iVar4 == 0))
 
@@ -5260,7 +5260,7 @@ void menu_mission_list_init(void)
 
       do {
 
-        iVar2 = FUN_004B09C0(iVar5);
+        iVar2 = world_get_pointer(iVar5);
 
         if (iVar2 != 0) {
 
@@ -5435,7 +5435,7 @@ void mission_mpworld_load(void)
 
     do {
 
-      iVar2 = FUN_004B09C0(iVar8);
+      iVar2 = world_get_pointer(iVar8);
 
       if (iVar2 != 0) {
 
@@ -6763,7 +6763,7 @@ void menu_load_world3(void)
 
   _DAT_00632ac8 = DAT_00632ac0;
 
-  iVar6 = FUN_004B09C0(DAT_0059ee9c + -1);
+  iVar6 = world_get_pointer(DAT_0059ee9c + -1);
 
   pcVar3 = *(char **)(iVar6 + 4);
 
@@ -7701,7 +7701,7 @@ void FUN_00489ca0(void)
 
     level_config_lookup(DAT_00632d20,iVar3);
 
-    FUN_00492430(DAT_00632d20,DAT_006329d8);
+    load_mission_continuity__Fii(DAT_00632d20,DAT_006329d8);
 
     scenerio_start_index__Fi(DAT_006329d8);
 
@@ -12333,7 +12333,7 @@ LAB_0048f768:
 
   level_config_lookup(DAT_00632d20,iVar9);
 
-  FUN_00492430(DAT_00632d20,iVar9);
+  load_mission_continuity__Fii(DAT_00632d20,iVar9);
 
   uVar3 = DAT_006331f8;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (49 named) — decompiled, names from PS2 symbols
+ * 145 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -2072,7 +2072,7 @@ LAB_0045294e:
 
     FUN_00480a60();
 
-    FUN_00480400(DAT_00632a88);
+    mecc_disable_repair_gun(DAT_00632a88);
 
     if ((DAT_0059d984 == 0) && (piVar1 == (int *)0x0)) {
 
@@ -3197,7 +3197,7 @@ void FUN_004544f0(void)
 
       (DAT_00632a88 != 0)) && (DAT_00632bbc != 0)) {
 
-    iVar1 = FUN_0052e480(DAT_00632bbc);
+    iVar1 = fx_create(DAT_00632bbc);
 
     if (iVar1 == 0) {
 
@@ -3257,7 +3257,7 @@ void FUN_004544f0(void)
 
     if ((*(int *)(DAT_0059d96c + 4) == 0x3da) || (*(int *)(DAT_0059d96c + 4) == 0x3dd)) {
 
-      iVar1 = FUN_0052e480(DAT_00632bbc);
+      iVar1 = fx_create(DAT_00632bbc);
 
       if (iVar1 == 0) {
 
@@ -3559,7 +3559,7 @@ void reaper_bldg_check(int param_1,int param_2,int param_3)
 
     piVar1[iVar3 + 0x3e] = *(int *)(DAT_00632ed8 + 0x374);
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (iVar3 != 0) {
 
@@ -3599,7 +3599,7 @@ void reaper_bldg_check(int param_1,int param_2,int param_3)
 
     piVar1[iVar3 + 0x15] = *(int *)(DAT_00632ed8 + 0x374);
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (iVar3 != 0) {
 
@@ -3740,7 +3740,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
   case 1:
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (((iVar3 != 0) && (*(int *)(param_1 + 0x274) == 0)) &&
 
@@ -3836,7 +3836,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
   case 2:
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (iVar3 != 0) {
 
@@ -3856,7 +3856,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
   case 4:
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (iVar3 != 0) {
 
@@ -3976,12 +3976,12 @@ void FUN_00455150(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_00455190 @ 0x00455190 ===== */
+/* ===== grid_get_conntype @ 0x00455190 ===== */
 /* PS2 candidate: grid_get_conntype (conf 0.534) */
 
 
 
-byte FUN_00455190(int param_1,int param_2)
+byte grid_get_conntype(int param_1,int param_2)
 
 
 
@@ -4463,12 +4463,12 @@ LAB_004556f2:
 
 }
 
-/* ===== FUN_00455890 @ 0x00455890 ===== */
+/* ===== project_cursor_to_ground @ 0x00455890 ===== */
 /* PS2 candidate: project_cursor_to_ground (conf 0.602) */
 
 
 
-void FUN_00455890(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void project_cursor_to_ground(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -6406,7 +6406,7 @@ LAB_004575ee:
 
         DAT_00632d20 = 0;
 
-        iVar2 = FUN_004B09C0(0);
+        iVar2 = world_get_pointer(0);
 
         pcVar3 = *(char **)(iVar2 + 4);
 
@@ -6538,7 +6538,7 @@ void mission_texture_audio(void)
 
   DAT_0059da08 = 0;
 
-  iVar1 = FUN_004B09C0(DAT_0059d9f0);
+  iVar1 = world_get_pointer(DAT_0059d9f0);
 
   if ((iVar1 == 0) ||
 
@@ -7466,7 +7466,7 @@ int FUN_00458350(int param_1,int param_2)
 
     else if (iVar4 == 0x13) {
 
-      FUN_00480400(param_1);
+      mecc_disable_repair_gun(param_1);
 
       for (piVar6 = DAT_00632d80; piVar2 = DAT_00632d80, piVar6 != (int *)0x0;
 
@@ -8855,7 +8855,7 @@ LAB_00459ce0:
 
         else {
 
-          FUN_00480400(param_1);
+          mecc_disable_repair_gun(param_1);
 
           iVar2 = FUN_00457a70(param_1,param_3);
 
@@ -9473,7 +9473,7 @@ int FUN_0045a2b0(int param_1,undefined4 param_2,int *param_3)
 
     }
 
-    iVar1 = FUN_0047f730(param_1);
+    iVar1 = mecc_in_gyro(param_1);
 
     if (iVar1 != 0) {
 
@@ -9598,7 +9598,7 @@ void FUN_0045a4c0(int param_1,undefined4 param_2)
 
     default:
 
-      iVar2 = FUN_0047f730(param_1);
+      iVar2 = mecc_in_gyro(param_1);
 
       if ((((iVar2 != 0) && (iVar2 = FUN_00482310(param_1), iVar2 != 0)) &&
 
@@ -9999,7 +9999,7 @@ void FUN_0045a900(int param_1)
 
   iVar2 = FUN_004a6160(param_1);
 
-  if ((iVar2 != 0) && (iVar2 = FUN_0047f730(param_1), iVar2 != 0)) {
+  if ((iVar2 != 0) && (iVar2 = mecc_in_gyro(param_1), iVar2 != 0)) {
 
     obj_swap_link(param_1);
 
@@ -10824,7 +10824,7 @@ void reaper_lock_short_5(undefined4 param_1,int param_2,float param_3,int param_
 
   if (((param_4 < 2) && ((*(byte *)(param_2 + 0x1c8) & 1) != 0)) &&
 
-     (iVar1 = FUN_0052e480(param_1), iVar1 != 0)) {
+     (iVar1 = fx_create(param_1), iVar1 != 0)) {
 
     obj_damage_apply(2,0x41a00000,param_2,param_1,0,0);
 
@@ -11223,7 +11223,7 @@ LAB_0045bd2c:
 
   if ((param_6 & 0xc) == 0) {
 
-    iVar4 = FUN_0052e480(param_1);
+    iVar4 = fx_create(param_1);
 
     if (iVar4 != 0) {
 
@@ -11235,7 +11235,7 @@ LAB_0045bd2c:
 
   else {
 
-    iVar4 = FUN_0052e480(param_1);
+    iVar4 = fx_create(param_1);
 
     if (iVar4 != 0) {
 
@@ -11272,7 +11272,7 @@ undefined4 FUN_0045bd90(int param_1,float param_2,byte param_3)
 
       param_2 = *(float *)(DAT_00632ed8 + 0x119c);
 
-      iVar2 = FUN_0052e480(param_1);
+      iVar2 = fx_create(param_1);
 
       if (iVar2 != 0) {
 
@@ -12628,7 +12628,7 @@ void FUN_0045da90(int param_1,int param_2,int param_3)
 
   if (((param_1 != 0) && (param_2 != 0)) && (param_3 != 0)) {
 
-    iVar1 = FUN_0052e480(param_1);
+    iVar1 = fx_create(param_1);
 
     if (iVar1 != 0) {
 
@@ -13017,7 +13017,7 @@ LAB_0045dd27:
 
       }
 
-      iVar7 = FUN_0052e480(param_1);
+      iVar7 = fx_create(param_1);
 
       if (iVar7 != 0) {
 

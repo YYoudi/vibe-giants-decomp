@@ -694,7 +694,7 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
   if (param_3 == 0) {
 
-    iVar4 = FUN_00455890(&local_38,0x459c4000,&param_3);
+    iVar4 = project_cursor_to_ground(&local_38,0x459c4000,&param_3);
 
     if (iVar4 == 0) {
 
@@ -1099,7 +1099,7 @@ LAB_00465d63:
 
     }
 
-    iVar3 = FUN_0052e480(fVar4);
+    iVar3 = fx_create(fVar4);
 
     if (iVar3 != 0) {
 

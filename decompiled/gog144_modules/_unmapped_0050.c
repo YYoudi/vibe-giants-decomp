@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (33 named) — decompiled, names from PS2 symbols
+ * 87 functions (34 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -1173,7 +1173,7 @@ void FUN_00500f80(int param_1)
 
   if (param_1 != 0) {
 
-    iVar1 = FUN_0052e480(param_1);
+    iVar1 = fx_create(param_1);
 
     if ((iVar1 != 0) && (*(int *)(param_1 + 4) == 2)) {
 
@@ -1251,7 +1251,7 @@ void FUN_00501000(int param_1)
 
   if (param_1 != 0) {
 
-    iVar1 = FUN_0052e480(param_1);
+    iVar1 = fx_create(param_1);
 
     if ((iVar1 != 0) && (*(int *)(param_1 + 4) == 2)) {
 
@@ -1564,7 +1564,9 @@ void obj_path_follow(int param_1)
 
           (*(float *)(iVar2 + 0x278) < *(float *)(iVar2 + 0x1c0))))) {
 
-        FUN_00502660(param_1,0,*(undefined4 *)(iVar2 + 0x174),iVar2 + 0xa0,iVar2 + 200);
+        teammecc_get_wantloc_formation
+
+                  (param_1,0,*(undefined4 *)(iVar2 + 0x174),iVar2 + 0xa0,iVar2 + 200);
 
         FUN_00499280(iVar2);
 
@@ -2748,7 +2750,7 @@ LAB_0050203c:
 
           DAT_005a8800 = DAT_005a8800 | uVar13;
 
-          FUN_00502660(param_1,0,iVar11 + 1,puVar10,&fStack_188);
+          teammecc_get_wantloc_formation(param_1,0,iVar11 + 1,puVar10,&fStack_188);
 
           fStack_19c = 1.0;
 
@@ -2873,12 +2875,14 @@ void FUN_005025d0(int param_1)
 
 }
 
-/* ===== FUN_00502660 @ 0x00502660 ===== */
+/* ===== teammecc_get_wantloc_formation @ 0x00502660 ===== */
 /* PS2 candidate: teammecc_get_wantloc_formation (conf 0.396) */
 
 
 
-void FUN_00502660(float param_1,undefined4 param_2,float param_3,float *param_4,undefined4 *param_5)
+void teammecc_get_wantloc_formation
+
+               (float param_1,undefined4 param_2,float param_3,float *param_4,undefined4 *param_5)
 
 
 
@@ -4160,7 +4164,7 @@ void teammecc_set_slave_goal__FP6OBJECTi(int param_1,int param_2)
 
       if ((*(uint *)(param_1 + 0xe0) & 0x2000000) != 0) {
 
-        FUN_0047fff0(iVar2);
+        mecc_to_bush(iVar2);
 
         *(undefined4 *)(iVar3 + 0x34) = 0;
 
@@ -4962,7 +4966,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
            ))) || (*(char *)(iVar8 + 0x1f5) != '\0')) {
 
-        iVar8 = FUN_00455890(&local_c,0x47435000,&param_2);
+        iVar8 = project_cursor_to_ground(&local_c,0x47435000,&param_2);
 
         if (iVar8 == 0) {
 
@@ -5852,7 +5856,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
       piVar4[0xb] = 0;
 
-      iVar8 = FUN_00455890(&local_c,0x47435000,&param_2);
+      iVar8 = project_cursor_to_ground(&local_c,0x47435000,&param_2);
 
       param_2 = *(float *)(DAT_00632ed8 + 0x1068);
 
@@ -6739,7 +6743,7 @@ LAB_005075ef:
 
     }
 
-    iVar7 = FUN_0047f730(param_1);
+    iVar7 = mecc_in_gyro(param_1);
 
     if (iVar7 != 0) {
 
@@ -6789,7 +6793,7 @@ LAB_005075ef:
 
         fVar20 = (float10)FUN_0050a550(param_1 + 0x128);
 
-        if ((fVar20 < (float10)(float)fVar19) && (iVar14 = FUN_0052e480(param_1), iVar14 != 0)) {
+        if ((fVar20 < (float10)(float)fVar19) && (iVar14 = fx_create(param_1), iVar14 != 0)) {
 
           if (*(float *)(DAT_00632ed8 + 0xb68) < fVar1 ==
 
@@ -7599,7 +7603,7 @@ LAB_005065cf:
 
               if (iVar7 == 0x14) {
 
-                FUN_0047fff0(param_1);
+                mecc_to_bush(param_1);
 
 LAB_005063fa:
 
@@ -7637,7 +7641,7 @@ LAB_005063fa:
 
                   else {
 
-                    FUN_00480400();
+                    mecc_disable_repair_gun();
 
                   }
 
@@ -7705,7 +7709,7 @@ LAB_00506418:
 
                 FUN_00497510(iVar7);
 
-                iVar14 = FUN_0052e480(param_1);
+                iVar14 = fx_create(param_1);
 
                 if (iVar14 != 0) {
 
@@ -7905,7 +7909,7 @@ LAB_0050698f:
 
                      (*(float *)(DAT_00632ed8 + 0x66c) == fVar1)), cVar16 != '\0')) &&
 
-          (iVar14 = FUN_0052e480(param_1), iVar14 != 0)) && (*(int *)(param_1 + 0x174) == 0)) {
+          (iVar14 = fx_create(param_1), iVar14 != 0)) && (*(int *)(param_1 + 0x174) == 0)) {
 
         obj_damage_apply(0x1a,(fVar1 - *(float *)(DAT_00632ed8 + 0x66c)) *
 
@@ -11464,7 +11468,7 @@ void kabutoai_move(float param_1)
 
   }
 
-  iVar6 = FUN_0052e480(param_1);
+  iVar6 = fx_create(param_1);
 
   if (iVar6 == 0) {
 

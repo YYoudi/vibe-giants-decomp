@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (55 named) — decompiled, names from PS2 symbols
+ * 142 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -46,7 +46,7 @@ void FUN_004907e0(void)
 
     do {
 
-      iVar1 = FUN_004B09C0(iVar4);
+      iVar1 = world_get_pointer(iVar4);
 
       if ((iVar1 != 0) &&
 
@@ -2425,12 +2425,12 @@ void FUN_00492290(void)
 
 }
 
-/* ===== FUN_00492430 @ 0x00492430 ===== */
+/* ===== load_mission_continuity__Fii @ 0x00492430 ===== */
 /* PS2 candidate: load_mission_continuity__Fii (conf 0.605) */
 
 
 
-void FUN_00492430(int param_1,int *param_2)
+void load_mission_continuity__Fii(int param_1,int *param_2)
 
 
 
@@ -3252,7 +3252,7 @@ LAB_00492a3a:
 
         }
 
-        FUN_00492430(DAT_00632d20,local_13c);
+        load_mission_continuity__Fii(DAT_00632d20,local_13c);
 
         break;
 
@@ -3962,7 +3962,7 @@ LAB_00492a3a:
 
           *(uint *)(iVar6 + 0xd8) = *(uint *)(iVar6 + 0xd8) | 0x400;
 
-          FUN_004baa70(DAT_00632a88);
+          reaper_init__FP6OBJECT(DAT_00632a88);
 
           object_attach_target(DAT_00632a88,iVar6);
 
@@ -5235,7 +5235,7 @@ void ambient_streams_handler(void)
 
 LAB_004947ed:
 
-      FUN_00492430(DAT_00632d20,*(int *)(DAT_006330e4 + 0x4a60) + -1);
+      load_mission_continuity__Fii(DAT_00632d20,*(int *)(DAT_006330e4 + 0x4a60) + -1);
 
       iVar2 = *(int *)(DAT_006330e4 + 0x4a60);
 
@@ -9386,7 +9386,7 @@ void vimp_death_fx(int param_1)
 
     else {
 
-      iVar1 = FUN_0047f730(*(undefined4 *)(param_1 + 0x210));
+      iVar1 = mecc_in_gyro(*(undefined4 *)(param_1 + 0x210));
 
     }
 
@@ -9414,7 +9414,7 @@ void vimp_death_fx(int param_1)
 
     }
 
-    iVar1 = FUN_0047f730(param_1);
+    iVar1 = mecc_in_gyro(param_1);
 
     if (iVar1 != 0) {
 
@@ -13851,7 +13851,7 @@ void partyhouse_exit_dlog(void)
 
   if (((DAT_0059f998 != 0) && (DAT_00632a88 != 0)) && (DAT_00632bbc != 0)) {
 
-    iVar1 = FUN_0052e480(DAT_0059f998);
+    iVar1 = fx_create(DAT_0059f998);
 
     if (iVar1 == 0) {
 
@@ -14423,7 +14423,7 @@ void terrain_grid_lookup(float *param_1,int *param_2,int *param_3,undefined1 *pa
 
   iVar4 = __ftol();
 
-  uVar5 = FUN_00455190(iVar3,iVar4);
+  uVar5 = grid_get_conntype(iVar3,iVar4);
 
   switch(uVar5) {
 

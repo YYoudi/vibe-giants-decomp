@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (42 named) — decompiled, names from PS2 symbols
+ * 105 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -47,18 +47,20 @@ void ai_fly_update_goal(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 {
 
-  FUN_004019e0(5,param_1,param_2,param_3,0);
+  ai_do_update_goal__FUiP6OBJECTP3P3Dff(5,param_1,param_2,param_3,0);
 
   return;
 
 }
 
-/* ===== FUN_004019e0 @ 0x004019E0 ===== */
+/* ===== ai_do_update_goal__FUiP6OBJECTP3P3Dff @ 0x004019E0 ===== */
 /* PS2 candidate: ai_do_update_goal__FUiP6OBJECTP3P3Dff (conf 0.314) */
 
 
 
-void FUN_004019e0(byte param_1,int param_2,float *param_3,undefined4 param_4,undefined4 param_5)
+void ai_do_update_goal__FUiP6OBJECTP3P3Dff
+
+               (byte param_1,int param_2,float *param_3,undefined4 param_4,undefined4 param_5)
 
 
 
@@ -515,7 +517,7 @@ void ai_fly_update_goal_2(undefined4 param_1,undefined4 param_2,undefined4 param
 
 {
 
-  FUN_004019e0(1,param_1,param_2,param_3,0);
+  ai_do_update_goal__FUiP6OBJECTP3P3Dff(1,param_1,param_2,param_3,0);
 
   return;
 
@@ -528,7 +530,7 @@ void ai_move_update_goal(undefined4 param_1,undefined4 param_2)
 
 {
 
-  FUN_004019e0(0,param_1,param_2,0,0);
+  ai_do_update_goal__FUiP6OBJECTP3P3Dff(0,param_1,param_2,0,0);
 
   return;
 
@@ -541,7 +543,7 @@ void ai_fly_update_goal_3(undefined4 param_1,undefined4 param_2,undefined4 param
 
 {
 
-  FUN_004019e0(2,param_1,param_3,0,param_2);
+  ai_do_update_goal__FUiP6OBJECTP3P3Dff(2,param_1,param_3,0,param_2);
 
   return;
 
@@ -5063,7 +5065,7 @@ void FUN_00408530(float param_1)
 
   }
 
-  iVar2 = FUN_0052e480(param_1);
+  iVar2 = fx_create(param_1);
 
   if (iVar2 != 0) {
 
@@ -6075,7 +6077,7 @@ LAB_004090c8:
 
          (iVar3 != 0xd)) {
 
-        if ((iVar3 == 0) && (iVar6 = FUN_0052e480(iVar6), iVar6 != 0)) {
+        if ((iVar3 == 0) && (iVar6 = fx_create(iVar6), iVar6 != 0)) {
 
           FUN_0045a740(iVar2 + 0x5c4,0x13,0xffffffff);
 
@@ -9458,7 +9460,7 @@ int cam_target_get(void)
 
     if (iVar3 == 2) {
 
-      iVar1 = FUN_0047f730(DAT_005550d0);
+      iVar1 = mecc_in_gyro(DAT_005550d0);
 
       if (iVar1 != 0) {
 

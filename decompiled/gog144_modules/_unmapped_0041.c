@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (50 named) — decompiled, names from PS2 symbols
+ * 100 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2571,7 +2571,7 @@ void obj_ground_normal(int param_1)
 
     if ((char)((uint)*(undefined4 *)(param_1 + 0x1c8) >> 8) < '\0') {
 
-      FUN_004146c0(param_1,pfVar1);
+      collide_find_ground_hit(param_1,pfVar1);
 
       *(uint *)(param_1 + 0xdc) = *(uint *)(param_1 + 0xdc) | 0x800;
 
@@ -3125,12 +3125,12 @@ void FUN_00414690(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_004146c0 @ 0x004146C0 ===== */
+/* ===== collide_find_ground_hit @ 0x004146C0 ===== */
 /* PS2 candidate: collide_find_ground_hit (conf 0.676) */
 
 
 
-void FUN_004146c0(float param_1,float *param_2)
+void collide_find_ground_hit(float param_1,float *param_2)
 
 
 
@@ -4911,7 +4911,7 @@ void FUN_00416240(int param_1)
 
     if (iVar2 != 0) {
 
-      iVar2 = FUN_0052e480(DAT_00632bbc);
+      iVar2 = fx_create(DAT_00632bbc);
 
       if (iVar2 == 0) {
 
@@ -10547,7 +10547,7 @@ LAB_0041e5bd:
 
   }
 
-  iVar6 = FUN_0052e480(iVar3);
+  iVar6 = fx_create(iVar3);
 
   if (iVar6 != 0) {
 

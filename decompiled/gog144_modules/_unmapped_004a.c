@@ -428,7 +428,7 @@ grid_dir_walk(int param_1,int param_2,int param_3,int param_4,int *param_5,int *
 
   }
 
-  uVar1 = FUN_00455190(param_1,param_2);
+  uVar1 = grid_get_conntype(param_1,param_2);
 
   switch(uVar1) {
 
@@ -9662,7 +9662,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     if (iVar4 != 0) {
 
-      iVar4 = FUN_0047f730(*(undefined4 *)(iVar5 + 0x1d0));
+      iVar4 = mecc_in_gyro(*(undefined4 *)(iVar5 + 0x1d0));
 
       if ((iVar4 != 0) && (DAT_00632d70 != (int *)0x0)) {
 
@@ -9783,7 +9783,7 @@ int FUN_004aa550(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
 
     if (iVar4 != 0) {
 
-      iVar4 = FUN_0047f730(*(undefined4 *)(iVar1 + 0x1d0));
+      iVar4 = mecc_in_gyro(*(undefined4 *)(iVar1 + 0x1d0));
 
       if ((iVar4 != 0) && (DAT_00632d70 != (int *)0x0)) {
 
@@ -10376,7 +10376,7 @@ LAB_004ac24a:
 
   case 8:
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (iVar3 == 0) {
 
@@ -10404,7 +10404,7 @@ LAB_004ac24a:
 
       fx_get_free_effect__Fv();
 
-      iVar3 = FUN_0052e480(param_1);
+      iVar3 = fx_create(param_1);
 
       if (iVar3 == 0) {
 
@@ -10434,7 +10434,7 @@ LAB_004ac24a:
 
   case 9:
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (iVar3 == 0) {
 
@@ -10460,7 +10460,7 @@ LAB_004ac24a:
 
       fx_get_free_effect__Fv();
 
-      iVar4 = FUN_0052e480(param_1,pcVar6,uVar7,puVar8);
+      iVar4 = fx_create(param_1,pcVar6,uVar7,puVar8);
 
       if (iVar4 == 0) {
 

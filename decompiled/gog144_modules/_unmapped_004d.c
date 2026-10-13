@@ -3682,7 +3682,7 @@ void FUN_004d5b50(int param_1)
 
   }
 
-  iVar5 = FUN_0052e480(iVar5);
+  iVar5 = fx_create(iVar5);
 
   if (((iVar5 != 0) && (*(int *)(param_1 + 0x274) != 0)) &&
 
@@ -3991,7 +3991,7 @@ void reaper_spell_sound_1(int param_1,undefined4 *param_2,undefined4 param_3)
 
     *(int *)(iVar1 + 0x274) = iVar3;
 
-    iVar2 = FUN_0052e480(iVar3);
+    iVar2 = fx_create(iVar3);
 
     if (iVar2 == 0) {
 
@@ -4088,7 +4088,7 @@ void reaper_spell_sound_2(int param_1,int param_2,undefined4 param_3)
 
     *(int *)(iVar1 + 0x274) = iVar3;
 
-    iVar2 = FUN_0052e480(iVar3);
+    iVar2 = fx_create(iVar3);
 
     if (iVar2 == 0) {
 
@@ -4191,7 +4191,7 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
   case 4:
 
-    iVar6 = FUN_0052e480(param_1);
+    iVar6 = fx_create(param_1);
 
     if ((((iVar6 != 0) && (*(int *)(iVar2 + 0x274) == 0)) &&
 

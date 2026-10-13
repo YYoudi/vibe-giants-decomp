@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (243 named) — decompiled, names from PS2 symbols
+ * 351 functions (244 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -452,12 +452,12 @@ int NAM_NameGetCustom(int param_1)
 
 }
 
-/* ===== FUN_005404b0 @ 0x005404B0 ===== */
+/* ===== NAM_NameGetCustom @ 0x005404B0 ===== */
 /* PS2 candidate: NAM_NameGetCustom_2 (conf 0.522) */
 
 
 
-int FUN_005404b0(int param_1)
+int NAM_NameGetCustom(int param_1)
 
 
 

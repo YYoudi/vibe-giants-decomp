@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (18 named) — decompiled, names from PS2 symbols
+ * 48 functions (19 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -604,7 +604,7 @@ void FUN_004f40a0(int param_1,int param_2,int param_3)
 
   *(undefined4 *)(param_1 + 0xe4) = 0x37;
 
-  FUN_004f7b50(param_1,0x2f2);
+  smartie_make_held_object__FP6OBJECTi(param_1,0x2f2);
 
   FUN_004034a0(param_1,0x41,0x20,0,0,0x3f2aaaab);
 
@@ -1153,7 +1153,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
     *(undefined4 *)(param_1 + 0xe4) = 0x52;
 
-    FUN_004f7b50(param_1,0x2f2);
+    smartie_make_held_object__FP6OBJECTi(param_1,0x2f2);
 
     for (puVar3 = DAT_00632d98; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
 
@@ -1249,7 +1249,7 @@ LAB_004f5334:
 
   *(float *)(param_1 + 0xc4) = *(float *)(iVar5 + 0x50) + *(float *)(param_1 + 0xc4);
 
-  iVar4 = FUN_0052e480(param_2);
+  iVar4 = fx_create(param_2);
 
   if (((iVar4 != 0) && (*(int *)(iVar5 + 0x54) == 0)) && (*(int *)(param_1 + 4) == 0xb)) {
 
@@ -1366,7 +1366,7 @@ void FUN_004f5410(int param_1,undefined4 param_2,undefined4 param_3)
 
   *(undefined4 *)(iVar2 + 0x24) = 0xffffffff;
 
-  iVar1 = FUN_0052e480(param_3);
+  iVar1 = fx_create(param_3);
 
   if (iVar1 == 0) goto LAB_004f55b7;
 
@@ -1881,7 +1881,7 @@ int FUN_004f5950(int param_1,float param_2)
 
            (iVar4 = FUN_004a6120(*(int *)(iVar2 + 0x210)), iVar4 == 0)) &&
 
-          ((iVar4 = FUN_004a6160(iVar2), iVar4 == 0 || (iVar4 = FUN_0047f730(iVar2), iVar4 == 0)))))
+          ((iVar4 = FUN_004a6160(iVar2), iVar4 == 0 || (iVar4 = mecc_in_gyro(iVar2), iVar4 == 0)))))
 
          ) {
 
@@ -2535,7 +2535,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
     if (iVar3 == 10) {
 
-      if (((param_1 == 7) && (iVar4 = FUN_0052e480(param_3), iVar4 != 0)) &&
+      if (((param_1 == 7) && (iVar4 = fx_create(param_3), iVar4 != 0)) &&
 
          (*(int *)(param_3 + 0x274) != 0)) {
 
@@ -2798,12 +2798,12 @@ void FUN_004f7af0(int param_1)
 
 }
 
-/* ===== FUN_004f7b50 @ 0x004F7B50 ===== */
+/* ===== smartie_make_held_object__FP6OBJECTi @ 0x004F7B50 ===== */
 /* PS2 candidate: smartie_make_held_object__FP6OBJECTi (conf 0.637) */
 
 
 
-void FUN_004f7b50(int param_1,undefined4 param_2)
+void smartie_make_held_object__FP6OBJECTi(int param_1,undefined4 param_2)
 
 
 
@@ -3818,7 +3818,7 @@ void FUN_004f9380(int param_1)
 
       sound_play_obj(0x511,param_1);
 
-      iVar5 = FUN_0052e480(param_1);
+      iVar5 = fx_create(param_1);
 
       if (iVar5 != 0) {
 

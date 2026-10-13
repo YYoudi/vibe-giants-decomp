@@ -580,7 +580,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
       piVar3[3] = piVar3[3] * 1000;
 
-      FUN_00477340(param_1);
+      marker_spline_adjust_buoy(param_1);
 
       return;
 

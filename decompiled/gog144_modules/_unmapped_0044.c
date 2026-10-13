@@ -1595,9 +1595,9 @@ void object_spawn_menu_wredit(undefined4 param_1,int param_2)
 
   iVar4 = param_2;
 
-  iVar5 = FUN_0052e480(param_2);
+  iVar5 = fx_create(param_2);
 
-  if (((iVar5 != 0) && (iVar5 = FUN_0052e480(param_2), iVar5 != 0)) &&
+  if (((iVar5 != 0) && (iVar5 = fx_create(param_2), iVar5 != 0)) &&
 
      (param_2 = *(int *)(*(int *)(param_2 + 0x170) + 4) + -1, 0 < param_2)) {
 

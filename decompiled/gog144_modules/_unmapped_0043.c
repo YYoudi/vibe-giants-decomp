@@ -1254,7 +1254,7 @@ void FUN_00431b80(void)
 
   if (DAT_00632ae2 != '\0') {
 
-    FUN_00455890(&local_c,0x459c4000,&local_10);
+    project_cursor_to_ground(&local_c,0x459c4000,&local_10);
 
     fVar1 = *(float *)(DAT_00632ed8 + 0x4ac);
 
@@ -4008,7 +4008,7 @@ int editor_cursor_pick_point(int param_1)
 
   }
 
-  FUN_00455890(local_c,0x447a0000,local_1c);
+  project_cursor_to_ground(local_c,0x447a0000,local_1c);
 
   puVar3 = DAT_00632d68;
 
@@ -4075,7 +4075,7 @@ int object_spawn_42(undefined4 param_1)
 
   iVar3 = object_allocate_type(param_1,0x80000000);
 
-  FUN_00455890(iVar3 + 0xa0,0x447a0000,&param_1);
+  project_cursor_to_ground(iVar3 + 0xa0,0x447a0000,&param_1);
 
   FUN_00499280(iVar3);
 
@@ -6607,7 +6607,7 @@ switchD_0043b245_caseD_c:
 
           *(undefined4 *)(iVar1 + 0xf8) = 0;
 
-          FUN_00477340(iVar1);
+          marker_spline_adjust_buoy(iVar1);
 
           return;
 
@@ -6615,7 +6615,7 @@ switchD_0043b245_caseD_c:
 
         *(undefined4 *)(iVar1 + 0xf8) = 0x3f800000;
 
-        FUN_00477340(iVar1);
+        marker_spline_adjust_buoy(iVar1);
 
         return;
 
@@ -10814,7 +10814,7 @@ void wredit_obj_update(void)
 
       if (*(int *)(iVar3 + 4) == 0x44a) {
 
-        FUN_00477340();
+        marker_spline_adjust_buoy();
 
       }
 
@@ -10924,7 +10924,7 @@ LAB_0043fd98:
 
         if (*(int *)(iVar3 + 4) == 0x44a) {
 
-          FUN_00477340();
+          marker_spline_adjust_buoy();
 
           wredit_00439490();
 

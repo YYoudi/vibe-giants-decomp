@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (30 named) — decompiled, names from PS2 symbols
+ * 67 functions (34 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -2165,7 +2165,7 @@ void FUN_00475350(int param_1)
 
     if (iVar1 != 0) {
 
-      iVar1 = FUN_0052e480(DAT_00632bbc);
+      iVar1 = fx_create(DAT_00632bbc);
 
       if (iVar1 == 0) {
 
@@ -3265,12 +3265,12 @@ void showchat_mission_objective__Fi_2(int p0)
 
 }
 
-/* ===== FUN_00477340 @ 0x00477340 ===== */
+/* ===== marker_spline_adjust_buoy @ 0x00477340 ===== */
 /* PS2 candidate: marker_spline_adjust_buoy (conf 0.6) */
 
 
 
-void FUN_00477340(int param_1)
+void marker_spline_adjust_buoy(int param_1)
 
 
 
@@ -3670,7 +3670,7 @@ LAB_00477eaf:
 
   }
 
-  FUN_00477340(*(undefined4 *)(iVar1 + 0x40));
+  marker_spline_adjust_buoy(*(undefined4 *)(iVar1 + 0x40));
 
   return;
 
@@ -3804,7 +3804,7 @@ void FUN_00477f20(int param_1,float param_2,int param_3)
 
   }
 
-  FUN_00477340(*(undefined4 *)(iVar1 + 0x40));
+  marker_spline_adjust_buoy(*(undefined4 *)(iVar1 + 0x40));
 
   return;
 
@@ -4271,12 +4271,14 @@ void FUN_004789e0(int param_1,char param_2,int *param_3,undefined4 *param_4)
 
 }
 
-/* ===== FUN_00478ad0 @ 0x00478AD0 ===== */
+/* ===== new_fire__FP6OBJECTiPfT0P3P3Df @ 0x00478AD0 ===== */
 /* PS2 candidate: new_fire__FP6OBJECTiPfT0P3P3Df (conf 0.605) */
 
 
 
-int FUN_00478ad0(float param_1,uint param_2,float *param_3,int param_4,float *param_5,float param_6)
+int new_fire__FP6OBJECTiPfT0P3P3Df
+
+              (float param_1,uint param_2,float *param_3,int param_4,float *param_5,float param_6)
 
 
 
@@ -4390,7 +4392,7 @@ int FUN_00478ad0(float param_1,uint param_2,float *param_3,int param_4,float *pa
 
     }
 
-    iVar4 = FUN_00455890(&local_30,param_6,local_40);
+    iVar4 = project_cursor_to_ground(&local_30,param_6,local_40);
 
     if (*(int *)((int)fVar1 + 0x174) == 0) {
 
@@ -5066,9 +5068,9 @@ void FUN_0047be20(float param_1,float param_2,int param_3,int param_4,float para
 
   bVar6 = param_1 == -NAN;
 
-  if (((*(byte *)(iVar2 + 0xe0) & 0x20) != 0) &&
+  if (((*(byte *)(iVar2 + 0xe0) & 0x20) != 0) && ((iVar3 = fx_create(iVar2), iVar3 != 0 || (bVar6)))
 
-     ((iVar3 = FUN_0052e480(iVar2), iVar3 != 0 || (bVar6)))) {
+     ) {
 
     FUN_0050c2a0(iVar2);
 
@@ -5160,7 +5162,7 @@ void FUN_0047be20(float param_1,float param_2,int param_3,int param_4,float para
 
   if (param_1 == 7.00649e-45) {
 
-    iVar3 = FUN_0052e480(iVar2);
+    iVar3 = fx_create(iVar2);
 
     if (iVar3 != 0) {
 
@@ -5206,7 +5208,7 @@ LAB_0047bfbd:
 
 LAB_0047c03e:
 
-  iVar3 = FUN_0052e480(iVar2);
+  iVar3 = fx_create(iVar2);
 
   if ((iVar3 != 0) || (bVar6)) {
 
@@ -5397,7 +5399,7 @@ void FUN_0047c1d0(int param_1)
 
       local_48 = local_1c * -1000.0 + local_54;
 
-      iVar2 = FUN_00478ad0(param_1,0x2d,iVar2 + 0x38,0,&local_50,0x447a0000);
+      iVar2 = new_fire__FP6OBJECTiPfT0P3P3Df(param_1,0x2d,iVar2 + 0x38,0,&local_50,0x447a0000);
 
       if (iVar2 != 0) {
 
@@ -5693,7 +5695,7 @@ void FUN_0047c440(int param_1)
 
       uVar6 = project_cursor_to_object(local_10,*(undefined4 *)(iVar3 + 0x18c),param_1,local_c);
 
-      iVar7 = FUN_00478ad0(iVar3,uVar5,0,uVar6,local_c,param_1);
+      iVar7 = new_fire__FP6OBJECTiPfT0P3P3Df(iVar3,uVar5,0,uVar6,local_c,param_1);
 
       if (iVar7 != 0) {
 
@@ -6464,7 +6466,7 @@ LAB_0047cdb1:
 
   case 0xb:
 
-    FUN_0047fff0(iVar7);
+    mecc_to_bush(iVar7);
 
     return;
 
@@ -6958,7 +6960,7 @@ LAB_0047d6b8:
 
     uVar4 = FUN_0052e5b0(*param_4);
 
-    iVar5 = FUN_0052e480(iVar7);
+    iVar5 = fx_create(iVar7);
 
     if (iVar5 != 0) {
 
@@ -6984,7 +6986,7 @@ LAB_0047d6b8:
 
     }
 
-    iVar5 = FUN_0052e480(uVar4);
+    iVar5 = fx_create(uVar4);
 
     if (iVar5 == 0) {
 
@@ -7700,7 +7702,7 @@ void mecc_fire_logic__FP6OBJECT(int *param_1)
 
   iVar3 = param_1[0x40];
 
-  iVar6 = FUN_0052e480(param_1);
+  iVar6 = fx_create(param_1);
 
   if (iVar6 == 0) {
 
@@ -7756,13 +7758,13 @@ void mecc_fire_logic__FP6OBJECT(int *param_1)
 
           }
 
-          FUN_00455890(&local_80,0x44898000,&local_94);
+          project_cursor_to_ground(&local_80,0x44898000,&local_94);
 
           _DAT_00632ba4 = (uint)((float)local_94 < 1100.0);
 
           uVar10 = project_cursor_to_object(puVar14,param_1[99],local_94,&local_70);
 
-          FUN_00478ad0(param_1,1,0,uVar10,&local_70,0x43fa0000);
+          new_fire__FP6OBJECTiPfT0P3P3Df(param_1,1,0,uVar10,&local_70,0x43fa0000);
 
           *(int *)(iVar6 + 0xf4) = *(int *)(iVar6 + 0xf4) + -1;
 
@@ -7978,7 +7980,7 @@ LAB_0047e183:
 
       pcVar5 = local_58;
 
-      FUN_00455890(local_c,*(float *)(local_84 + 0x2c) * 1.2,&local_94);
+      project_cursor_to_ground(local_c,*(float *)(local_84 + 0x2c) * 1.2,&local_94);
 
       _DAT_00632ba4 = (uint)((float)local_94 < *(float *)(local_84 + 0x2c));
 
@@ -8318,9 +8320,11 @@ LAB_0047e84d:
 
       local_68 = (float)local_94 * 2000.0 + local_78;
 
-      iVar6 = FUN_00478ad0(param_1,4,iVar3 + 0x38,*(undefined4 *)(iVar3 + 0x11c),&local_70,
+      iVar6 = new_fire__FP6OBJECTiPfT0P3P3Df
 
-                           0x43fa0000);
+                        (param_1,4,iVar3 + 0x38,*(undefined4 *)(iVar3 + 0x11c),&local_70,0x43fa0000)
+
+      ;
 
       if (iVar6 != 0) {
 
@@ -8554,7 +8558,9 @@ LAB_0047eba7:
 
 LAB_0047eacc:
 
-      iVar6 = FUN_00478ad0(param_1,local_88,iVar3 + 0x38,piVar15,&local_70,0x43fa0000);
+      iVar6 = new_fire__FP6OBJECTiPfT0P3P3Df
+
+                        (param_1,local_88,iVar3 + 0x38,piVar15,&local_70,0x43fa0000);
 
       if (iVar6 != 0) {
 
@@ -9085,12 +9091,12 @@ LAB_0047f714:
 
 }
 
-/* ===== FUN_0047f730 @ 0x0047F730 ===== */
+/* ===== mecc_in_gyro @ 0x0047F730 ===== */
 /* PS2 candidate: mecc_in_gyro (conf 0.508) */
 
 
 
-uint FUN_0047f730(int param_1)
+uint mecc_in_gyro(int param_1)
 
 
 
@@ -9659,12 +9665,12 @@ LAB_0047ff01:
 
 }
 
-/* ===== FUN_0047fff0 @ 0x0047FFF0 ===== */
+/* ===== mecc_to_bush @ 0x0047FFF0 ===== */
 /* PS2 candidate: mecc_to_bush (conf 0.603) */
 
 
 
-void FUN_0047fff0(int param_1)
+void mecc_to_bush(int param_1)
 
 
 

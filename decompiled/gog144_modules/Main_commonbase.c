@@ -756,7 +756,7 @@ LAB_004195d2:
 
     iVar8 = *(int *)(param_1 + 0x100);
 
-    iVar9 = FUN_0052e480(param_1);
+    iVar9 = fx_create(param_1);
 
     if (((iVar9 != 0) && (iVar9 = FUN_0052e5b0(*param_4), iVar9 != 0)) &&
 
@@ -778,7 +778,7 @@ LAB_004195d2:
 
     uVar7 = FUN_0052e5b0(*param_4);
 
-    iVar8 = FUN_0052e480(uVar7);
+    iVar8 = fx_create(uVar7);
 
     if (iVar8 != 0) {
 
@@ -820,7 +820,7 @@ LAB_004195d2:
 
   case 0x1e:
 
-    iVar8 = FUN_0052e480(param_1);
+    iVar8 = fx_create(param_1);
 
     if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(*param_4), iVar8 != 0)) {
 
@@ -846,7 +846,7 @@ LAB_004195d2:
 
   case 0x1f:
 
-    iVar8 = FUN_0052e480(param_1);
+    iVar8 = fx_create(param_1);
 
     if (iVar8 != 0) {
 
@@ -882,7 +882,7 @@ LAB_004195d2:
 
     uVar7 = FUN_0052e5b0(*param_4);
 
-    iVar8 = FUN_0052e480(uVar7);
+    iVar8 = fx_create(uVar7);
 
     if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(param_4[1]), iVar8 != 0)) {
 
@@ -906,7 +906,7 @@ LAB_004195d2:
 
   case 0x21:
 
-    iVar8 = FUN_0052e480(param_1);
+    iVar8 = fx_create(param_1);
 
     if (iVar8 != 0) {
 
@@ -928,7 +928,7 @@ LAB_004195d2:
 
   case 0x22:
 
-    iVar8 = FUN_0052e480(param_1);
+    iVar8 = fx_create(param_1);
 
     if (iVar8 != 0) {
 
@@ -988,7 +988,7 @@ LAB_004195d2:
 
     uVar7 = FUN_0052e5b0(*param_4);
 
-    iVar8 = FUN_0052e480(uVar7);
+    iVar8 = fx_create(uVar7);
 
     if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(param_4[1]), iVar8 != 0)) {
 
@@ -1012,7 +1012,7 @@ LAB_004195d2:
 
   case 0x24:
 
-    iVar8 = FUN_0052e480(param_1);
+    iVar8 = fx_create(param_1);
 
     if (iVar8 != 0) {
 

@@ -505,7 +505,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
       }
 
-      iVar1 = FUN_0047f730(DAT_00632a88);
+      iVar1 = mecc_in_gyro(DAT_00632a88);
 
       if (iVar1 != 0) {
 
@@ -8194,7 +8194,7 @@ int FUN_00425b50(int param_1)
 
     **(undefined4 **)(iVar1 + 0x100) = 0x41a00000;
 
-    iVar2 = FUN_0052e480(param_1);
+    iVar2 = fx_create(param_1);
 
     if (iVar2 == 0) {
 

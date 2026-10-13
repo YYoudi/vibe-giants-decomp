@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (33 named) — decompiled, names from PS2 symbols
+ * 90 functions (35 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -110,12 +110,12 @@ switchD_004b095c_caseD_0:
 
 }
 
-/* ===== FUN_004B09C0 @ 0x004B09C0 ===== */
+/* ===== world_get_pointer @ 0x004B09C0 ===== */
 /* PS2 candidate: world_get_pointer (conf 0.691) */
 
 
 
-int * FUN_004B09C0(int param_1)
+int * world_get_pointer(int param_1)
 
 
 
@@ -1033,7 +1033,7 @@ void FUN_004b4ca0(float param_1)
 
   }
 
-  iVar2 = FUN_0052e480(param_1);
+  iVar2 = fx_create(param_1);
 
   if (iVar2 == 0) {
 
@@ -1909,7 +1909,7 @@ LAB_004b56d8:
 
          (iVar3 != 8)) {
 
-        if ((iVar3 == 0) && (iVar6 = FUN_0052e480(iVar6), iVar6 != 0)) {
+        if ((iVar3 == 0) && (iVar6 = fx_create(iVar6), iVar6 != 0)) {
 
           FUN_0045a740(iVar2 + 0x5c4,0x49,0xffffffff);
 
@@ -3653,7 +3653,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   }
 
-  iVar3 = FUN_0052e480(uVar2);
+  iVar3 = fx_create(uVar2);
 
   if (((iVar3 != 0) || (param_1 == -1)) && ((*puVar6 & 0x200) != 0)) {
 
@@ -3705,7 +3705,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   }
 
-  iVar3 = FUN_0052e480(uVar2);
+  iVar3 = fx_create(uVar2);
 
   if (iVar3 != 0) {
 
@@ -4044,7 +4044,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
   if (*(int *)(param_1 + 0x104) == 0) {
 
-    FUN_004baa70(param_1);
+    reaper_init__FP6OBJECT(param_1);
 
   }
 
@@ -4308,7 +4308,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffdfffff;
 
-    iVar9 = FUN_0052e480(param_1);
+    iVar9 = fx_create(param_1);
 
     if (iVar9 != 0) {
 
@@ -4342,7 +4342,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffdfffff;
 
-    iVar7 = FUN_0052e480(param_1);
+    iVar7 = fx_create(param_1);
 
     if (iVar7 != 0) {
 
@@ -4362,7 +4362,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
        ) {
 
-      iVar7 = FUN_0052e480(param_1);
+      iVar7 = fx_create(param_1);
 
       if (iVar7 != 0) {
 
@@ -4386,7 +4386,7 @@ LAB_004b8187:
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x40000000;
 
-    iVar9 = FUN_0052e480(param_1);
+    iVar9 = fx_create(param_1);
 
     if (iVar9 != 0) {
 
@@ -4420,7 +4420,7 @@ LAB_004b8187:
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffefffff;
 
-      iVar9 = FUN_0052e480(param_1);
+      iVar9 = fx_create(param_1);
 
       if (iVar9 != 0) {
 
@@ -4438,7 +4438,7 @@ LAB_004b8187:
 
     }
 
-    iVar9 = FUN_0052e480(param_1);
+    iVar9 = fx_create(param_1);
 
     if (iVar9 != 0) {
 
@@ -4524,7 +4524,7 @@ LAB_004b8187:
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xff7fffff;
 
-      FUN_004c0550(param_1,pfVar11);
+      reaper_create_fake_reaper__FP6OBJECTP3P3Dfi(param_1,pfVar11);
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 8;
 
@@ -4604,7 +4604,7 @@ LAB_004b8187:
 
     iVar7 = *(int *)(param_1 + 0x100);
 
-    iVar9 = FUN_0052e480(param_1);
+    iVar9 = fx_create(param_1);
 
     if (iVar9 != 0) {
 
@@ -4638,7 +4638,7 @@ LAB_004b8187:
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfeffffff;
 
-    iVar7 = FUN_0052e480(param_1);
+    iVar7 = fx_create(param_1);
 
     if (iVar7 != 0) {
 
@@ -4770,7 +4770,7 @@ LAB_004b8187:
 
        ) {
 
-      iVar9 = FUN_0052e480(param_1);
+      iVar9 = fx_create(param_1);
 
       if (iVar9 != 0) {
 
@@ -4826,7 +4826,7 @@ LAB_004b8187:
 
        ) {
 
-      iVar9 = FUN_0052e480(param_1);
+      iVar9 = fx_create(param_1);
 
       if (iVar9 != 0) {
 
@@ -5240,7 +5240,7 @@ LAB_004b76fe:
 
     uVar5 = FUN_0052e5b0(*param_4);
 
-    iVar7 = FUN_0052e480(param_1);
+    iVar7 = fx_create(param_1);
 
     if (iVar7 != 0) {
 
@@ -5264,7 +5264,7 @@ LAB_004b76fe:
 
     }
 
-    iVar7 = FUN_0052e480(uVar5);
+    iVar7 = fx_create(uVar5);
 
     if (iVar7 == 0) {
 
@@ -5346,7 +5346,7 @@ LAB_004b76fe:
 
        ) {
 
-      iVar7 = FUN_0052e480(param_1);
+      iVar7 = fx_create(param_1);
 
       if (iVar7 != 0) {
 
@@ -5362,7 +5362,7 @@ LAB_004b76fe:
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x20000000;
 
-    iVar9 = FUN_0052e480(param_1);
+    iVar9 = fx_create(param_1);
 
     if (iVar9 != 0) {
 
@@ -8259,7 +8259,7 @@ void FUN_004ba990(int param_1,float param_2,undefined4 param_3)
 
        fVar4 < (float10)param_2 * (float10)param_2)) {
 
-      iVar3 = FUN_0052e480(param_1);
+      iVar3 = fx_create(param_1);
 
       if (iVar3 != 0) {
 
@@ -8277,12 +8277,12 @@ void FUN_004ba990(int param_1,float param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004baa70 @ 0x004BAA70 ===== */
+/* ===== reaper_init__FP6OBJECT @ 0x004BAA70 ===== */
 /* PS2 candidate: reaper_init__FP6OBJECT (conf 0.494) */
 
 
 
-void FUN_004baa70(int param_1)
+void reaper_init__FP6OBJECT(int param_1)
 
 
 
@@ -10501,7 +10501,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     *(int *)(iVar7 + 0x274) = param_1;
 
-    iVar5 = FUN_0052e480(param_1);
+    iVar5 = fx_create(param_1);
 
     if (iVar5 == 0) {
 
@@ -10567,7 +10567,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     *(int *)(iVar7 + 0x274) = param_1;
 
-    iVar5 = FUN_0052e480(param_1);
+    iVar5 = fx_create(param_1);
 
     if (iVar5 == 0) {
 
@@ -10635,7 +10635,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     sound_play_player(0x395,param_1);
 
-    iVar5 = FUN_0052e480(param_1);
+    iVar5 = fx_create(param_1);
 
     if (iVar5 == 0) {
 
@@ -10711,7 +10711,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
       sound_play_player(0x36a,param_1);
 
-      iVar5 = FUN_0052e480(param_1);
+      iVar5 = fx_create(param_1);
 
       if (iVar5 == 0) {
 
@@ -10789,7 +10789,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
           *(int *)(iVar5 + 0x274) = param_1;
 
-          iVar6 = FUN_0052e480(param_1);
+          iVar6 = fx_create(param_1);
 
           if (iVar6 == 0) {
 
@@ -11227,7 +11227,7 @@ LAB_004beb10:
 
 LAB_004beac3:
 
-  iVar1 = FUN_0052e480(param_1);
+  iVar1 = fx_create(param_1);
 
   if (iVar1 != 0) {
 
@@ -11313,7 +11313,7 @@ LAB_004bebf2:
 
 LAB_004bebb4:
 
-  iVar1 = FUN_0052e480(param_1);
+  iVar1 = fx_create(param_1);
 
   if (iVar1 != 0) {
 
@@ -11363,7 +11363,7 @@ switchD_004bed16_caseD_28:
 
   *(int *)(iVar1 + 0x274) = param_1;
 
-  iVar4 = FUN_0052e480(param_1);
+  iVar4 = fx_create(param_1);
 
   if (iVar4 == 0) {
 
@@ -11548,7 +11548,7 @@ void FUN_004beee0(int param_1)
 
   puVar9 = *(uint **)(param_1 + 0x100);
 
-  iVar3 = FUN_0052e480(param_1);
+  iVar3 = fx_create(param_1);
 
   if (iVar3 == 0) {
 
@@ -12253,7 +12253,7 @@ void fxb_firewall_create(int param_1,int *param_2,int *param_3,uint param_4,unde
 
   *(int *)(iVar4 + 0x274) = param_1;
 
-  iVar5 = FUN_0052e480(param_1);
+  iVar5 = fx_create(param_1);
 
   piVar3 = param_3;
 
@@ -12368,7 +12368,7 @@ void reaper_cast_firewall
 
   *(int *)(*param_2 + 0x274) = param_1;
 
-  iVar1 = FUN_0052e480(param_1);
+  iVar1 = fx_create(param_1);
 
   if (iVar1 == 0) {
 
@@ -12394,7 +12394,7 @@ void reaper_cast_firewall
 
   *param_5 = *(undefined4 *)(DAT_00632ed8 + 0x784);
 
-  iVar1 = FUN_0052e480(param_1);
+  iVar1 = fx_create(param_1);
 
   if (iVar1 != 0) {
 
@@ -12572,7 +12572,7 @@ void reaper_finish_shrinker(undefined4 param_1,int param_2,int param_3,int param
 
         FUN_00457100(0xe,piVar1[2],iVar8,param_1,0,0);
 
-        iVar6 = FUN_0052e480(param_1);
+        iVar6 = fx_create(param_1);
 
         if (iVar6 != 0) {
 
@@ -12705,7 +12705,7 @@ void FUN_004bfe50(int param_1)
 
         *(int *)(iVar4 + 0x274) = iVar3;
 
-        iVar5 = FUN_0052e480(iVar3);
+        iVar5 = fx_create(iVar3);
 
         if (iVar5 == 0) {
 
@@ -12735,7 +12735,7 @@ void FUN_004bfe50(int param_1)
 
   }
 
-  if (((0 < *(int *)(iVar6 + 0xea8)) && (iVar6 = FUN_0052e480(iVar3), iVar6 != 0)) &&
+  if (((0 < *(int *)(iVar6 + 0xea8)) && (iVar6 = fx_create(iVar3), iVar6 != 0)) &&
 
      (iVar6 = reaper_0052e4a0(iVar3), iVar6 != 0)) {
 

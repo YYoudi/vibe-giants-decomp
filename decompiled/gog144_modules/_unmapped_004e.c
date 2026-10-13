@@ -9737,7 +9737,7 @@ int FUN_004ec1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
     *(undefined4 *)(iVar2 + 0x274) = param_1;
 
-    iVar3 = FUN_0052e480(param_1);
+    iVar3 = fx_create(param_1);
 
     if (iVar3 == 0) {
 
@@ -10185,7 +10185,7 @@ void flk_replay_reset(void)
 
   }
 
-  DAT_006330e4 = FUN_004B09C0(uVar2);
+  DAT_006330e4 = world_get_pointer(uVar2);
 
   Main_mission_00490940();
 

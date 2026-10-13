@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (90 named) — decompiled, names from PS2 symbols
+ * 162 functions (91 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -1332,7 +1332,7 @@ undefined4 comm_worldname_menu(undefined4 param_1,char *param_2)
 
   
 
-  iVar2 = FUN_004B09C0(param_1);
+  iVar2 = world_get_pointer(param_1);
 
   if (iVar2 == 0) {
 
@@ -1403,7 +1403,7 @@ void comm_worldname_menu2(int param_1)
 
   if (DAT_005def8c != 0) {
 
-    iVar3 = FUN_004B09C0(param_1);
+    iVar3 = world_get_pointer(param_1);
 
     if (iVar3 == 0) {
 
@@ -3169,7 +3169,7 @@ void comm_game_setup_menu(void)
 
     comm_gametype_pop(DAT_00633000);
 
-    iVar5 = FUN_004B09C0(DAT_00632ee4);
+    iVar5 = world_get_pointer(DAT_00632ee4);
 
     if (iVar5 != 0) {
 
@@ -3446,7 +3446,7 @@ void comm_show_conn_menu(void)
 
     comm_00521620(DAT_00632f10);
 
-    iVar5 = FUN_004B09C0(DAT_00632ee4);
+    iVar5 = world_get_pointer(DAT_00632ee4);
 
     if (iVar5 == 0) {
 
@@ -3454,7 +3454,7 @@ void comm_show_conn_menu(void)
 
     }
 
-    iVar7 = FUN_004B09C0();
+    iVar7 = world_get_pointer();
 
     iVar5 = DAT_00632ee4;
 
@@ -3502,7 +3502,7 @@ LAB_00523950:
 
     if (DAT_005def8c != 0) {
 
-      iVar7 = FUN_004B09C0();
+      iVar7 = world_get_pointer();
 
       if (iVar7 == 0) {
 
@@ -6493,7 +6493,7 @@ void FUN_00529C00(uint *param_1,uint *param_2,uint *param_3,uint *param_4)
 
   *param_1 = ((DAT_00632f0c << 8 | DAT_00632f10) << 8 | DAT_00632f18) << 8;
 
-  iVar1 = FUN_004B09C0(DAT_00632ee4);
+  iVar1 = world_get_pointer(DAT_00632ee4);
 
   if (iVar1 == 0) {
 
@@ -11737,12 +11737,12 @@ void FUN_0052E470(void)
 
 }
 
-/* ===== FUN_0052e480 @ 0x0052E480 ===== */
+/* ===== fx_create @ 0x0052E480 ===== */
 /* PS2 candidate: fx_create (conf 0.587) */
 
 
 
-undefined4 FUN_0052e480(void)
+undefined4 fx_create(void)
 
 
 

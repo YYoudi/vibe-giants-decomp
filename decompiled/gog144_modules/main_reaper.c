@@ -100,7 +100,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
         }
 
-        iVar6 = FUN_0052e480(iVar4);
+        iVar6 = fx_create(iVar4);
 
         if (iVar6 == 0) {
 
