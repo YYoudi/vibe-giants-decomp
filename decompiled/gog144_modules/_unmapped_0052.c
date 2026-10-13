@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (106 named) — decompiled, names from PS2 symbols
+ * 162 functions (107 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -8521,8 +8521,8 @@ void comm_stats_accumulate(int param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0052b5a0 @ 0x0052B5A0 ===== */
-void FUN_0052b5a0(undefined4 param_1,int param_2,undefined4 param_3)
+/* ===== comm_stats_accumulate_global @ 0x0052B5A0 ===== */
+void comm_stats_accumulate_global(undefined4 param_1,int param_2,undefined4 param_3)
 
 
 
@@ -12338,7 +12338,7 @@ void comm_0052e6e0(char *param_1,int param_2)
 
               uVar5 = FUN_0052ab00(uVar9,~uVar7 + 1,local_200);
 
-              FUN_0052b5a0(uVar5);
+              comm_stats_accumulate_global(uVar5);
 
             }
 
@@ -13469,7 +13469,7 @@ void comm_0052b780_user_3(int param_1)
 
     if (param_1 != 0) {
 
-      FUN_0052b5a0(param_1,10,&local_c);
+      comm_stats_accumulate_global(param_1,10,&local_c);
 
       return;
 
@@ -13512,7 +13512,7 @@ void comm_0052b780_user_4(int param_1)
 
     if (param_1 != 0) {
 
-      FUN_0052b5a0(param_1,6,&local_8);
+      comm_stats_accumulate_global(param_1,6,&local_8);
 
       return;
 
@@ -13555,7 +13555,7 @@ void comm_fakehost_menu_user(int param_1,undefined4 param_2)
 
     if (param_1 != 0) {
 
-      FUN_0052b5a0(param_1,6,&local_8);
+      comm_stats_accumulate_global(param_1,6,&local_8);
 
       return;
 

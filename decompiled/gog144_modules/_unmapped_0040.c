@@ -10711,7 +10711,7 @@ void SetupCameraDataNormal__FP6OBJECTT0(undefined4 param_1,float param_2)
 
   if ((*(int *)(iVar4 + 4) == 3) && (DAT_005550b8 == 0)) {
 
-    FUN_004b89d0(iVar4,&local_4c,&DAT_005842e0);
+    camera_fov_chase(iVar4,&local_4c,&DAT_005842e0);
 
   }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (134 named) — decompiled, names from PS2 symbols
+ * 179 functions (135 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -2359,7 +2359,7 @@ void FUN_00531260(undefined4 param_1)
 
   uStack_3 = 0;
 
-  FUN_0052b5a0(param_1,6,&local_8);
+  comm_stats_accumulate_global(param_1,6,&local_8);
 
   return;
 
@@ -4804,7 +4804,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
           else {
 
-            FUN_0052b5a0(iVar1,10,&local_d4);
+            comm_stats_accumulate_global(iVar1,10,&local_d4);
 
           }
 
@@ -6793,7 +6793,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                   else {
 
-                    FUN_0052b5a0(iVar6,10,&local_248);
+                    comm_stats_accumulate_global(iVar6,10,&local_248);
 
                   }
 
@@ -7690,7 +7690,7 @@ void comm_send_helper(int param_1)
 
     if (param_1 != 0) {
 
-      FUN_0052b5a0(param_1,3,&local_4);
+      comm_stats_accumulate_global(param_1,3,&local_4);
 
       return;
 
@@ -8442,9 +8442,9 @@ void comm_0052b430_user_big(void)
 
           if (1 < (int)(DAT_005dfed8 + -0x5dfedc)) {
 
-            FUN_0052b5a0(*(undefined4 *)(local_24 + local_20),DAT_005dfed8 + -0x5dfedc,&DAT_005dfedc
+            comm_stats_accumulate_global
 
-                        );
+                      (*(undefined4 *)(local_24 + local_20),DAT_005dfed8 + -0x5dfedc,&DAT_005dfedc);
 
           }
 
@@ -8482,7 +8482,9 @@ void comm_0052b430_user_big(void)
 
                     DAT_005df6c8 = DAT_005df6c8 + 1;
 
-                    FUN_0052b5a0(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+                    comm_stats_accumulate_global
+
+                              (*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
 
                     pbVar4 = &DAT_005df6cc;
 
@@ -8532,7 +8534,7 @@ void comm_0052b430_user_big(void)
 
             DAT_005df6c8 = DAT_005df6c8 + 1;
 
-            FUN_0052b5a0(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+            comm_stats_accumulate_global(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
 
             iVar9 = local_1c;
 
@@ -8939,9 +8941,11 @@ void comm_0052b430_user_bigger(void)
 
               if (1 < (int)(DAT_005dfed8 + -0x5dfedc)) {
 
-                FUN_0052b5a0(*(undefined4 *)(local_24 + local_20),DAT_005dfed8 + -0x5dfedc,
+                comm_stats_accumulate_global
 
-                             &DAT_005dfedc);
+                          (*(undefined4 *)(local_24 + local_20),DAT_005dfed8 + -0x5dfedc,
+
+                           &DAT_005dfedc);
 
               }
 
@@ -8979,7 +8983,9 @@ void comm_0052b430_user_bigger(void)
 
                         DAT_005df6c8 = DAT_005df6c8 + 1;
 
-                        FUN_0052b5a0(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+                        comm_stats_accumulate_global
+
+                                  (*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
 
                         pbVar4 = &DAT_005df6cc;
 
@@ -9029,7 +9035,9 @@ void comm_0052b430_user_bigger(void)
 
                 DAT_005df6c8 = DAT_005df6c8 + 1;
 
-                FUN_0052b5a0(*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
+                comm_stats_accumulate_global
+
+                          (*(undefined4 *)(local_24 + local_20),pbVar4,&DAT_005df6cc);
 
                 iVar9 = local_1c;
 
@@ -14659,7 +14667,7 @@ int bistream_tell_user(undefined4 param_1,int param_2,int *param_3)
 
       FUN_005438c9(&local_10,8,1,iVar2);
 
-      param_3 = (int *)FUN_0053ffa0(param_1,local_10,0);
+      param_3 = (int *)map_chunk_alloc(param_1,local_10,0);
 
       *param_3 = local_10;
 
@@ -14880,7 +14888,7 @@ int bistream_tell_user2(undefined4 param_1,int param_2,int *param_3)
 
       FUN_005438c9(&local_10,8,1,iVar2);
 
-      param_3 = (int *)FUN_0053ffa0(param_1,local_10,0);
+      param_3 = (int *)map_chunk_alloc(param_1,local_10,0);
 
       *param_3 = local_10;
 
@@ -17102,7 +17110,7 @@ byte * FUN_0053d8d0(undefined4 param_1,int param_2,byte param_3)
 
   iVar1 = *(int *)(&DAT_005808e4 + (uint)param_3 * 0xc);
 
-  pbVar2 = (byte *)FUN_0053ffa0(param_1,(iVar1 + 4) * param_2 + 0xc,1);
+  pbVar2 = (byte *)map_chunk_alloc(param_1,(iVar1 + 4) * param_2 + 0xc,1);
 
   pbVar2[2] = 3;
 
@@ -20745,7 +20753,7 @@ int FUN_0053feb0(undefined4 param_1,int param_2)
 
   }
 
-  iVar1 = FUN_0053ffa0(param_1,0x24,1);
+  iVar1 = map_chunk_alloc(param_1,0x24,1);
 
   iVar2 = iVar1 + 4;
 
@@ -20833,8 +20841,8 @@ void map_alloc_cleanup(int param_1)
 
 }
 
-/* ===== FUN_0053ffa0 @ 0x0053FFA0 ===== */
-undefined4 * FUN_0053ffa0(int param_1,uint param_2,int param_3)
+/* ===== map_chunk_alloc @ 0x0053FFA0 ===== */
+undefined4 * map_chunk_alloc(int param_1,uint param_2,int param_3)
 
 
 
@@ -20860,7 +20868,7 @@ undefined4 * FUN_0053ffa0(int param_1,uint param_2,int param_3)
 
     if (*(int *)(param_1 + 0xc) != 0) {
 
-      puVar1 = (undefined4 *)FUN_0053ffa0(*(int *)(param_1 + 0xc),param_2,param_3);
+      puVar1 = (undefined4 *)map_chunk_alloc(*(int *)(param_1 + 0xc),param_2,param_3);
 
       if (puVar1 != (undefined4 *)0x0) goto LAB_0053ffe2;
 

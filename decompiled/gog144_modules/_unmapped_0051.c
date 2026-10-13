@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (136 named) — decompiled, names from PS2 symbols
+ * 186 functions (137 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5827,10 +5827,12 @@ LAB_00516ae2:
 
 }
 
-/* ===== FUN_00516b60 @ 0x00516B60 ===== */
-void FUN_00516b60(float *param_1,float param_2,float param_3,float param_4,float param_5,
+/* ===== textrender_node_transform @ 0x00516B60 ===== */
+void textrender_node_transform
 
-                 float param_6,int param_7)
+               (float *param_1,float param_2,float param_3,float param_4,float param_5,float param_6
+
+               ,int param_7)
 
 
 

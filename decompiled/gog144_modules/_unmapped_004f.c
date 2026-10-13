@@ -4650,9 +4650,11 @@ void textrender_glyph_quad
 
     *(float *)(param_2 + 0x44) = param_5 * *(float *)(param_2 + 0x2c) + param_7;
 
-    FUN_00516b60(iVar2 * 0x38 + iVar1,param_4,param_5,param_6,param_7,
+    textrender_node_transform
 
-                 *(undefined4 *)(param_2 + 0x54),uVar3);
+              (iVar2 * 0x38 + iVar1,param_4,param_5,param_6,param_7,*(undefined4 *)(param_2 + 0x54),
+
+               uVar3);
 
     return;
 

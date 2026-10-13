@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (71 named) — decompiled, names from PS2 symbols
+ * 90 functions (72 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -5438,12 +5438,12 @@ LAB_004b76fe:
 
 }
 
-/* ===== FUN_004b89d0 @ 0x004B89D0 ===== */
+/* ===== camera_fov_chase @ 0x004B89D0 ===== */
 /* PS2 candidate: reaper_camdist_modify (conf 0.301) */
 
 
 
-void FUN_004b89d0(int param_1,float *param_2,float *param_3)
+void camera_fov_chase(int param_1,float *param_2,float *param_3)
 
 
 

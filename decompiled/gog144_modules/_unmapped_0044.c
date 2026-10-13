@@ -2239,7 +2239,7 @@ flick_file_load(int param_1,undefined4 param_2,char *param_3,undefined4 param_4,
 
   uVar1 = FUN_0053feb0(0,0);
 
-  puVar2 = (undefined4 *)FUN_0053ffa0(uVar1,0x140,1);
+  puVar2 = (undefined4 *)map_chunk_alloc(uVar1,0x140,1);
 
   *puVar2 = uVar1;
 
@@ -2277,15 +2277,15 @@ flick_file_load(int param_1,undefined4 param_2,char *param_3,undefined4 param_4,
 
   puVar2[0x23] = param_2;
 
-  uVar3 = FUN_0053ffa0(uVar1,puVar2[0x24] * 0xc,1);
+  uVar3 = map_chunk_alloc(uVar1,puVar2[0x24] * 0xc,1);
 
   puVar2[0x27] = uVar3;
 
-  uVar3 = FUN_0053ffa0(uVar1,puVar2[0x25] * 0x874,1);
+  uVar3 = map_chunk_alloc(uVar1,puVar2[0x25] * 0x874,1);
 
   puVar2[0x28] = uVar3;
 
-  uVar1 = FUN_0053ffa0(uVar1,puVar2[0x26] * 0x310,1);
+  uVar1 = map_chunk_alloc(uVar1,puVar2[0x26] * 0x310,1);
 
   puVar2[0x29] = uVar1;
 
@@ -2671,7 +2671,7 @@ LAB_00443ac3:
 
         piVar5[0xc6] = iVar4;
 
-        uVar3 = FUN_0053ffa0(uVar3,piVar5[0x1d8] << 2,1);
+        uVar3 = map_chunk_alloc(uVar3,piVar5[0x1d8] << 2,1);
 
         *(undefined4 *)(piVar5[0xc6] + 0x54) = uVar3;
 
@@ -5415,7 +5415,7 @@ LAB_00445a50:
 
       }
 
-      uVar9 = FUN_0053ffa0(*param_1,0x20,1);
+      uVar9 = map_chunk_alloc(*param_1,0x20,1);
 
       *(undefined4 *)(iVar10 + 0x2ec) = uVar9;
 
@@ -6260,7 +6260,7 @@ undefined4 * FUN_00446a00(undefined4 param_1,char *param_2)
 
   uVar3 = FUN_0053feb0(0,0);
 
-  puVar4 = (undefined4 *)FUN_0053ffa0(uVar3,0x110,1);
+  puVar4 = (undefined4 *)map_chunk_alloc(uVar3,0x110,1);
 
   if (puVar4 != (undefined4 *)0x0) {
 
@@ -6815,7 +6815,7 @@ void texture_object_debug_dump_3(void)
 
     uVar3 = FUN_0053feb0(0,0);
 
-    puVar4 = (undefined4 *)FUN_0053ffa0(uVar3,0x14,1);
+    puVar4 = (undefined4 *)map_chunk_alloc(uVar3,0x14,1);
 
     *puVar4 = uVar3;
 

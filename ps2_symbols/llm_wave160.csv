@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00516b60,FUN_00516b60,,textrender_node_transform,0.9,llm-w160,0x38 node xform caller glyph_quad
+0052b5a0,FUN_0052b5a0,,comm_stats_accumulate_global,0.9,llm-w160,global counters twin callers mecc_fire_logic
+004b89d0,FUN_004b89d0,,camera_fov_chase,0.9,llm-w160,chase_value_time consts caller SetupCameraDataNormal
+0053ffa0,FUN_0053ffa0,,map_chunk_alloc,0.9,llm-w160,0x1f-aligned alloc 5 MAP/flick callers

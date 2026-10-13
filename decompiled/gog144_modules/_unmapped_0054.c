@@ -164,7 +164,7 @@ void MAP_ChunkPoolCreate(undefined4 param_1,undefined2 param_2,short param_3)
 
   uVar2 = FUN_0053feb0(param_1,0);
 
-  puVar3 = (undefined4 *)FUN_0053ffa0(uVar2,0x1c,1);
+  puVar3 = (undefined4 *)map_chunk_alloc(uVar2,0x1c,1);
 
   *(undefined2 *)(puVar3 + 1) = param_2;
 
@@ -262,7 +262,7 @@ undefined4 MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi(undefined4 *param_1,int param_2
 
   
 
-  piVar2 = (int *)FUN_0053ffa0(*param_1,(uint)*(ushort *)((int)param_1 + 6) * param_2,1);
+  piVar2 = (int *)map_chunk_alloc(*param_1,(uint)*(ushort *)((int)param_1 + 6) * param_2,1);
 
   if (piVar2 == (int *)0x0) {
 

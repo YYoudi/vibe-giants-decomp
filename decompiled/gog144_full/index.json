@@ -632,7 +632,7 @@
  "0x0040DB70": {
   "name": "SetupCameraDataNormal__FP6OBJECTT0",
   "named": true,
-  "len": 6279
+  "len": 6283
  },
  "0x0040E1C0": {
   "name": "charger_dust_fx",
@@ -2522,7 +2522,7 @@
  "0x00443480": {
   "name": "flick_file_load",
   "named": true,
-  "len": 3099
+  "len": 3111
  },
  "0x00443740": {
   "name": "main_flick_00443740",
@@ -2537,7 +2537,7 @@
  "0x00443A90": {
   "name": "FLK_ActorAdd__FP9FLK_FlickiPcii",
   "named": true,
-  "len": 2474
+  "len": 2477
  },
  "0x00443C50": {
   "name": "flick_slot_lookup_handle",
@@ -2587,7 +2587,7 @@
  "0x00445A20": {
   "name": "FLK_FlickProcess",
   "named": true,
-  "len": 14857
+  "len": 14860
  },
  "0x00446620": {
   "name": "FLK_FlickStop",
@@ -2612,7 +2612,7 @@
  "0x00446A00": {
   "name": "FUN_00446a00",
   "named": false,
-  "len": 1003
+  "len": 1006
  },
  "0x00446A90": {
   "name": "object_stop_movement",
@@ -2647,7 +2647,7 @@
  "0x00446EE0": {
   "name": "texture_object_debug_dump_3",
   "named": true,
-  "len": 766
+  "len": 769
  },
  "0x00446F50": {
   "name": "SetupCameraHail__Fv",
@@ -6325,9 +6325,9 @@
   "len": 24945
  },
  "0x004B89D0": {
-  "name": "FUN_004b89d0",
-  "named": false,
-  "len": 584
+  "name": "camera_fov_chase",
+  "named": true,
+  "len": 588
  },
  "0x004B8A60": {
   "name": "reaper_has_bow_2",
@@ -7777,7 +7777,7 @@
  "0x004FA380": {
   "name": "textrender_glyph_quad",
   "named": true,
-  "len": 1612
+  "len": 1639
  },
  "0x004FA490": {
   "name": "FUN_004fa490",
@@ -8665,9 +8665,9 @@
   "len": 1658
  },
  "0x00516B60": {
-  "name": "FUN_00516b60",
-  "named": false,
-  "len": 875
+  "name": "textrender_node_transform",
+  "named": true,
+  "len": 903
  },
  "0x00516BF0": {
   "name": "xform_view",
@@ -9820,9 +9820,9 @@
   "len": 677
  },
  "0x0052B5A0": {
-  "name": "FUN_0052b5a0",
-  "named": false,
-  "len": 529
+  "name": "comm_stats_accumulate_global",
+  "named": true,
+  "len": 545
  },
  "0x0052B630": {
   "name": "comm_dp_recv_setup",
@@ -9992,7 +9992,7 @@
  "0x0052E6E0": {
   "name": "comm_0052e6e0",
   "named": true,
-  "len": 5952
+  "len": 5968
  },
  "0x0052EA80": {
   "name": "comm_audio_volume_user",
@@ -10047,17 +10047,17 @@
  "0x0052F2A0": {
   "name": "comm_0052b780_user_3",
   "named": true,
-  "len": 455
+  "len": 471
  },
  "0x0052F300": {
   "name": "comm_0052b780_user_4",
   "named": true,
-  "len": 401
+  "len": 417
  },
  "0x0052F350": {
   "name": "comm_fakehost_menu_user",
   "named": true,
-  "len": 453
+  "len": 469
  },
  "0x0052F3B0": {
   "name": "comm_fakehost_menu",
@@ -10237,7 +10237,7 @@
  "0x00531260": {
   "name": "FUN_00531260",
   "named": false,
-  "len": 308
+  "len": 324
  },
  "0x005312A0": {
   "name": "comm_packet_send_2",
@@ -10272,7 +10272,7 @@
  "0x00532F60": {
   "name": "comm_entergame_msg_3",
   "named": true,
-  "len": 2044
+  "len": 2060
  },
  "0x005330C0": {
   "name": "comm_scorelimit_menu_user",
@@ -10327,12 +10327,12 @@
  "0x00533D40": {
   "name": "mecc_fire_logic__FP6OBJECT",
   "named": true,
-  "len": 43017
+  "len": 43033
  },
  "0x00534EC0": {
   "name": "comm_send_helper",
   "named": true,
-  "len": 437
+  "len": 453
  },
  "0x00534F10": {
   "name": "comm_packet_write_header",
@@ -10352,12 +10352,12 @@
  "0x005354C0": {
   "name": "comm_0052b430_user_big",
   "named": true,
-  "len": 8659
+  "len": 8737
  },
  "0x005359A0": {
   "name": "comm_0052b430_user_bigger",
   "named": true,
-  "len": 10445
+  "len": 10583
  },
  "0x00535F40": {
   "name": "comm_session_init",
@@ -10642,7 +10642,7 @@
  "0x0053BA50": {
   "name": "bistream_tell_user",
   "named": true,
-  "len": 973
+  "len": 976
  },
  "0x0053BB30": {
   "name": "ANM_AnimGetImage_2",
@@ -10667,7 +10667,7 @@
  "0x0053BC90": {
   "name": "bistream_tell_user2",
   "named": true,
-  "len": 971
+  "len": 974
  },
  "0x0053BD70": {
   "name": "ANM_AnimDestroy",
@@ -10817,7 +10817,7 @@
  "0x0053D8D0": {
   "name": "FUN_0053d8d0",
   "named": false,
-  "len": 635
+  "len": 638
  },
  "0x0053D940": {
   "name": "ObjectUpdateSpeedDist",
@@ -11102,7 +11102,7 @@
  "0x0053FEB0": {
   "name": "FUN_0053feb0",
   "named": false,
-  "len": 691
+  "len": 694
  },
  "0x0053FF30": {
   "name": "MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi",
@@ -11115,9 +11115,9 @@
   "len": 467
  },
  "0x0053FFA0": {
-  "name": "FUN_0053ffa0",
-  "named": false,
-  "len": 1030
+  "name": "map_chunk_alloc",
+  "named": true,
+  "len": 1036
  },
  "0x00540020": {
   "name": "map_memfree",
@@ -11132,7 +11132,7 @@
  "0x00540190": {
   "name": "MAP_ChunkPoolCreate",
   "named": true,
-  "len": 642
+  "len": 645
  },
  "0x005401E0": {
   "name": "FUN_005401e0",
@@ -11142,7 +11142,7 @@
  "0x00540250": {
   "name": "MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi",
   "named": true,
-  "len": 761
+  "len": 764
  },
  "0x005402B0": {
   "name": "MAP_ChunkDestroy",
