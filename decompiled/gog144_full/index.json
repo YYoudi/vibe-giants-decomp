@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "rpman_init__FP6OBJECT",
   "named": true,
-  "len": 43251
+  "len": 43293
  },
  "0x00437FA0": {
   "name": "editor_cursor_pick_point",
@@ -2587,7 +2587,7 @@
  "0x00445A20": {
   "name": "FLK_FlickProcess",
   "named": true,
-  "len": 14898
+  "len": 14908
  },
  "0x00446620": {
   "name": "FLK_FlickStop",
@@ -4040,14 +4040,14 @@
   "len": 1406
  },
  "0x00476F90": {
-  "name": "FUN_00476f90",
-  "named": false,
-  "len": 564
+  "name": "spawn_marker_scan_b",
+  "named": true,
+  "len": 571
  },
  "0x00476FF0": {
-  "name": "FUN_00476ff0",
-  "named": false,
-  "len": 564
+  "name": "spawn_marker_scan_a",
+  "named": true,
+  "len": 571
  },
  "0x00477050": {
   "name": "showchat_mission_objective__Fi_2",
@@ -4855,9 +4855,9 @@
   "len": 456
  },
  "0x00495780": {
-  "name": "FUN_00495780",
-  "named": false,
-  "len": 328
+  "name": "sound_entry_volume_set",
+  "named": true,
+  "len": 338
  },
  "0x004957D0": {
   "name": "sound_play_3",
@@ -5015,9 +5015,9 @@
   "len": 176
  },
  "0x00497520": {
-  "name": "FUN_00497520",
-  "named": false,
-  "len": 415
+  "name": "obj_children_flag_set",
+  "named": true,
+  "len": 433
  },
  "0x00497570": {
   "name": "obj_children_flag_clear",
@@ -5132,7 +5132,7 @@
  "0x004990C0": {
   "name": "object_spawn_from_linkage",
   "named": true,
-  "len": 1825
+  "len": 1834
  },
  "0x00499200": {
   "name": "FUN_00499200",

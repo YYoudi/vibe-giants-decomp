@@ -1534,7 +1534,7 @@ LAB_00437d68:
 
             *piVar21 = *piVar21 + 1;
 
-            FUN_00476f90(piVar11[0xe]);
+            spawn_marker_scan_b(piVar11[0xe]);
 
           }
 
@@ -1626,7 +1626,7 @@ LAB_00437d68:
 
             if ((*(uint *)(iVar10 + 0x1c8) & 0x8000000) != 0) {
 
-              FUN_00476ff0(iVar10);
+              spawn_marker_scan_a(iVar10);
 
             }
 
@@ -1752,7 +1752,7 @@ LAB_00437d68:
 
             *piVar21 = *piVar21 + 1;
 
-            FUN_00476f90(piVar11[0xe]);
+            spawn_marker_scan_b(piVar11[0xe]);
 
           }
 
@@ -1842,7 +1842,7 @@ LAB_00437d68:
 
             if ((*(uint *)(iVar10 + 0x1c8) & 0x8000000) != 0) {
 
-              FUN_00476ff0(iVar10);
+              spawn_marker_scan_a(iVar10);
 
             }
 
@@ -2060,7 +2060,7 @@ LAB_00437d68:
 
           if ((*(uint *)(iVar10 + 0x1c8) & 0x8000000) != 0) {
 
-            FUN_00476ff0(iVar10);
+            spawn_marker_scan_a(iVar10);
 
           }
 
@@ -2288,7 +2288,7 @@ LAB_004367b5:
 
           *piVar11 = *piVar11 + 1;
 
-          FUN_00476f90(piVar21[0xe]);
+          spawn_marker_scan_b(piVar21[0xe]);
 
         }
 

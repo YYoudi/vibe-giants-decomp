@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (116 named) — decompiled, names from PS2 symbols
+ * 142 functions (118 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -5993,8 +5993,8 @@ void sound_stop_obj(int param_1)
 
 }
 
-/* ===== FUN_00495780 @ 0x00495780 ===== */
-void FUN_00495780(int param_1,float param_2)
+/* ===== sound_entry_volume_set @ 0x00495780 ===== */
+void sound_entry_volume_set(int param_1,float param_2)
 
 
 
@@ -7722,8 +7722,8 @@ void object_destroy(int param_1)
 
 }
 
-/* ===== FUN_00497520 @ 0x00497520 ===== */
-void FUN_00497520(int param_1)
+/* ===== obj_children_flag_set @ 0x00497520 ===== */
+void obj_children_flag_set(int param_1)
 
 
 
@@ -7743,7 +7743,7 @@ void FUN_00497520(int param_1)
 
     if (((*(uint *)(iVar1 + 0xd8) & 0x4000) == 0) && (*(int *)(iVar1 + 0x210) == param_1)) {
 
-      FUN_00497520(iVar1);
+      obj_children_flag_set(iVar1);
 
     }
 
@@ -9831,7 +9831,7 @@ void object_spawn_from_linkage(int param_1,uint param_2)
 
         object_setup_specialtype(iVar1);
 
-        FUN_00497520(iVar1);
+        obj_children_flag_set(iVar1);
 
 LAB_004991da:
 

@@ -5673,7 +5673,7 @@ LAB_00445a50:
 
     if (-1 < (int)puVar12[2]) {
 
-      FUN_00495780(puVar12[2],puVar12[3]);
+      sound_entry_volume_set(puVar12[2],puVar12[3]);
 
       puVar12 = puVar12 + puVar12[1];
 

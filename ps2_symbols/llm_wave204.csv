@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00497520,FUN_00497520,,obj_children_flag_set,0.9,llm-w204,recursive 0x4000 set pairs flag_clear
+00495780,FUN_00495780,,sound_entry_volume_set,0.9,llm-w204,00632dbc slot + fptr vol*0.01 caller FLK
+00476ff0,FUN_00476ff0,,spawn_marker_scan_a,0.9,llm-w204,0x8000000 spawn-bit walk callers rpman_init
+00476f90,FUN_00476f90,,spawn_marker_scan_b,0.9,llm-w204,twin
