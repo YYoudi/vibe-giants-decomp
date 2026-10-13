@@ -548,17 +548,19 @@ void ai_fly_update_goal_3(undefined4 param_1,undefined4 param_2,undefined4 param
 }
 
 /* ===== FUN_00401fe0 @ 0x00401FE0 ===== */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: ai_goal_complete (conf 0.353) */
 
 
 
-undefined4 FUN_00401fe0(int param_1)
+undefined4 FUN_00401fe0(OBJECT *param_1)
 
 
 
 {
 
-  int iVar1;
+  dword dVar1;
 
   uint uVar2;
 
@@ -572,11 +574,11 @@ undefined4 FUN_00401fe0(int param_1)
 
   
 
-  iVar1 = *(int *)(param_1 + 0x168);
+  dVar1 = param_1->gap_168;
 
-  if (iVar1 != 0) {
+  if (dVar1 != 0) {
 
-    uVar2 = *(uint *)(iVar1 + 0x14);
+    uVar2 = *(uint *)(dVar1 + 0x14);
 
     if ((uVar2 & 0x400) == 0) {
 
@@ -588,19 +590,19 @@ undefined4 FUN_00401fe0(int param_1)
 
         }
 
-        if (((*(byte *)(iVar1 + 0x14) & 0x40) != 0) || (*(int *)(param_1 + 0x104) != 0)) {
+        if (((*(byte *)(dVar1 + 0x14) & 0x40) != 0) || (*(int *)&param_1->field_0x104 != 0)) {
 
-          if ((ABS(*(float *)(param_1 + 0xa0) - *(float *)(iVar1 + 4)) <
+          if ((ABS((float)param_1->gap_A0 - *(float *)(dVar1 + 4)) <
 
                *(float *)(DAT_006330e4 + 0x1c0)) &&
 
-             ((ABS(*(float *)(param_1 + 0xa4) - *(float *)(iVar1 + 8)) <
+             ((ABS(*(float *)&param_1->field_0xa4 - *(float *)(dVar1 + 8)) <
 
                *(float *)(DAT_006330e4 + 0x1c0) &&
 
               (fVar4 = *(float *)(DAT_006330e4 + 0x1c0) * 0.25,
 
-              fVar6 = (float10)FUN_0050a5e0(iVar1 + 4,param_1 + 0xa0),
+              fVar6 = (float10)FUN_0050a5e0(dVar1 + 4,&param_1->gap_A0),
 
               fVar6 < (float10)fVar4 * (float10)fVar4)))) {
 
@@ -610,21 +612,21 @@ undefined4 FUN_00401fe0(int param_1)
 
         }
 
-        if (2.0 < ABS(*(float *)(iVar1 + 4) - *(float *)(param_1 + 0xa0))) {
+        if (2.0 < ABS(*(float *)(dVar1 + 4) - (float)param_1->gap_A0)) {
 
           return 0;
 
         }
 
-        if (ABS(*(float *)(iVar1 + 8) - *(float *)(param_1 + 0xa4)) <= 2.0) {
+        if (ABS(*(float *)(dVar1 + 8) - *(float *)&param_1->field_0xa4) <= 2.0) {
 
-          if ((*(byte *)(iVar1 + 0x14) & 8) == 0) {
+          if ((*(byte *)(dVar1 + 0x14) & 8) == 0) {
 
             return 1;
 
           }
 
-          if (2.0 < ABS(*(float *)(iVar1 + 0xc) - *(float *)(param_1 + 0xa8))) {
+          if (2.0 < ABS(*(float *)(dVar1 + 0xc) - *(float *)&param_1->field_0xa8)) {
 
             return 0;
 
@@ -638,7 +640,9 @@ undefined4 FUN_00401fe0(int param_1)
 
       }
 
-      fVar6 = (float10)FUN_0050a770(*(undefined4 *)(iVar1 + 0x10),*(undefined4 *)(param_1 + 200));
+      fVar6 = (float10)FUN_0050a770(*(undefined4 *)(dVar1 + 0x10),
+
+                                    *(undefined4 *)&param_1->field_0xc8);
 
       bVar3 = (byte)((ushort)((ushort)(NAN(fVar6) || NAN((float10)0.0)) << 10) >> 8) |
 
@@ -648,9 +652,9 @@ undefined4 FUN_00401fe0(int param_1)
 
     else {
 
-      bVar3 = *(float *)(iVar1 + 0x18) < 0.0 |
+      bVar3 = *(float *)(dVar1 + 0x18) < 0.0 |
 
-              (byte)((ushort)((ushort)(*(float *)(iVar1 + 0x18) == 0.0) << 0xe) >> 8);
+              (byte)((ushort)((ushort)(*(float *)(dVar1 + 0x18) == 0.0) << 0xe) >> 8);
 
     }
 
@@ -9008,7 +9012,13 @@ void FUN_0040be30(void)
 }
 
 /* ===== buoy_set_lights @ 0x0040C2D0 ===== */
-int buoy_set_lights(int param_1,int param_2)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+int buoy_set_lights(OBJECT *obj)
 
 
 
@@ -9024,17 +9034,19 @@ int buoy_set_lights(int param_1,int param_2)
 
   int iVar5;
 
+  int in_stack_00000008;
+
   int local_38;
 
   
 
-  iVar5 = param_2;
+  iVar5 = in_stack_00000008;
 
   for (puVar1 = DAT_00632d68; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
     iVar5 = puVar1[3];
 
-    if ((*(int *)(iVar5 + 0x1e0) == 0x69) && (*(int *)(iVar5 + 0xe8) == *(int *)(param_1 + 0xe8))) {
+    if ((*(int *)(iVar5 + 0x1e0) == 0x69) && (*(int *)(iVar5 + 0xe8) == *(int *)&obj->field_0xe8)) {
 
       if (*(int *)(iVar5 + 0x174) == 0) {
 
@@ -9042,17 +9054,17 @@ int buoy_set_lights(int param_1,int param_2)
 
       }
 
-      if ((*(int *)(iVar5 + 0x174) == *(int *)(param_1 + 0x174) + 2) && (local_38 != 0)) break;
+      if ((*(int *)(iVar5 + 0x174) == obj->acc_grenade_do_bounce + 2) && (local_38 != 0)) break;
 
     }
 
   }
 
-  if (param_2 != 0) {
+  if (in_stack_00000008 != 0) {
 
-    puVar2 = *(undefined4 **)(param_1 + 0x100);
+    puVar2 = *(undefined4 **)&obj->field_0x100;
 
-    puVar3 = *(undefined4 **)(*(int *)(param_1 + 0x274) + 0x100);
+    puVar3 = *(undefined4 **)(obj->field_274 + 0x100);
 
     FUN_00448920(*puVar2);
 
@@ -9076,7 +9088,7 @@ int buoy_set_lights(int param_1,int param_2)
 
     puVar2[6] = 0;
 
-    *(undefined4 *)(param_1 + 0xe4) = 3;
+    obj->gap_E4 = 3;
 
   }
 
@@ -9086,7 +9098,7 @@ int buoy_set_lights(int param_1,int param_2)
 
   }
 
-  if (param_2 != 0) {
+  if (in_stack_00000008 != 0) {
 
     puVar1 = *(undefined4 **)(iVar5 + 0x100);
 

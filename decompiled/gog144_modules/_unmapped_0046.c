@@ -490,7 +490,11 @@ FUN_004654c0(undefined4 param_1,int param_2,int param_3,int param_4,float param_
 }
 
 /* ===== FUN_004656b0 @ 0x004656B0 ===== */
-void FUN_004656b0(undefined4 param_1,int param_2,float param_3,int param_4)
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void FUN_004656b0(undefined4 param_1,OBJECT *param_2,float param_3,int param_4)
 
 
 
@@ -500,7 +504,7 @@ void FUN_004656b0(undefined4 param_1,int param_2,float param_3,int param_4)
 
   float local_8;
 
-  undefined4 local_4;
+  dword local_4;
 
   
 
@@ -510,7 +514,7 @@ void FUN_004656b0(undefined4 param_1,int param_2,float param_3,int param_4)
 
     if (iVar1 != 0) {
 
-      local_4 = *(undefined4 *)(param_2 + 0x188);
+      local_4 = param_2->field_188;
 
       local_8 = param_3;
 
@@ -522,15 +526,15 @@ void FUN_004656b0(undefined4 param_1,int param_2,float param_3,int param_4)
 
   if (param_3 != 0.0) {
 
-    *(float *)(param_2 + 0xc4) = *(float *)(param_2 + 0xc4) / param_3;
+    *(float *)&param_2->field_0xc4 = *(float *)&param_2->field_0xc4 / param_3;
 
   }
 
-  *(undefined4 *)(param_2 + 0x210) = 0;
+  *(undefined4 *)&param_2->field_0x210 = 0;
 
-  if (*(int *)(param_2 + 0x1e0) == 0x59) {
+  if (*(int *)&param_2->field_0x1e0 == 0x59) {
 
-    if (*(int *)(param_2 + 0x218) < 2) {
+    if ((int)param_2->field_218 < 2) {
 
       FUN_00425850(param_2);
 
@@ -538,34 +542,38 @@ void FUN_004656b0(undefined4 param_1,int param_2,float param_3,int param_4)
 
   }
 
-  else if (*(int *)(param_2 + 0x1e0) == 0x12) {
+  else if (*(int *)&param_2->field_0x1e0 == 0x12) {
 
-    FUN_004f4150();
+    FUN_004f4150(param_2);
 
   }
 
   else {
 
-    iVar1 = FUN_004a6180(param_2);
+    iVar1 = FUN_004a6180();
 
     if (iVar1 != 0) {
 
-      *(undefined4 *)(param_2 + 0xc4) = *(undefined4 *)(*(int *)(param_2 + 0x100) + 0xfac);
+      *(undefined4 *)&param_2->field_0xc4 = *(undefined4 *)(*(int *)&param_2->field_0x100 + 0xfac);
 
     }
 
   }
 
-  *(uint *)(param_2 + 0xd8) = *(uint *)(param_2 + 0xd8) & 0xfff7ffff | 0x10000000;
+  *(uint *)&param_2->field_0xd8 = *(uint *)&param_2->field_0xd8 & 0xfff7ffff | 0x10000000;
 
   return;
 
 }
 
 /* ===== FUN_00465790 @ 0x00465790 ===== */
-void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,float param_5
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
-                 ,int param_6,float param_7)
+
+
+void FUN_00465790(undefined4 param_1,OBJECT *param_2,undefined4 param_3,undefined4 param_4,
+
+                 float param_5,int param_6,float param_7)
 
 
 
@@ -579,15 +587,15 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 
   if (param_7 != 0.0) {
 
-    *(float *)(param_2 + 0xc4) = *(float *)(param_2 + 0xc4) / param_7;
+    *(float *)&param_2->field_0xc4 = *(float *)&param_2->field_0xc4 / param_7;
 
   }
 
-  *(undefined4 *)(param_2 + 0x210) = 0;
+  *(undefined4 *)&param_2->field_0x210 = 0;
 
-  if (*(int *)(param_2 + 0x1e0) == 0x59) {
+  if (*(int *)&param_2->field_0x1e0 == 0x59) {
 
-    if (*(int *)(param_2 + 0x218) < 2) {
+    if ((int)param_2->field_218 < 2) {
 
       FUN_00425850(param_2);
 
@@ -595,29 +603,29 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 
   }
 
-  else if (*(int *)(param_2 + 0x1e0) == 0x12) {
+  else if (*(int *)&param_2->field_0x1e0 == 0x12) {
 
-    FUN_004f4150();
+    FUN_004f4150(param_2);
 
   }
 
   else {
 
-    iVar1 = FUN_004a6180(param_2);
+    iVar1 = FUN_004a6180();
 
     if (iVar1 != 0) {
 
-      *(undefined4 *)(param_2 + 0xc4) = *(undefined4 *)(*(int *)(param_2 + 0x100) + 0xfac);
+      *(undefined4 *)&param_2->field_0xc4 = *(undefined4 *)(*(int *)&param_2->field_0x100 + 0xfac);
 
     }
 
   }
 
-  *(uint *)(param_2 + 0xd8) = *(uint *)(param_2 + 0xd8) & 0xfff7ffff | 0x10000000;
+  *(uint *)&param_2->field_0xd8 = *(uint *)&param_2->field_0xd8 & 0xfff7ffff | 0x10000000;
 
-  *(int *)(param_2 + 0x210) = param_6;
+  *(int *)&param_2->field_0x210 = param_6;
 
-  *(undefined4 *)(param_2 + 0x218) = 0xffffffff;
+  param_2->field_218 = 0xffffffff;
 
   FUN_0050a610(param_6 + 0xa0,param_3);
 
@@ -630,13 +638,15 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 }
 
 /* ===== FUN_00465880 @ 0x00465880 ===== */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: reaper_update_xhair_status__FP6OBJECT (conf 0.376) */
 
 
 
-void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float param_5,float param_6
+void FUN_00465880(int param_1,OBJECT *param_2,int param_3,undefined4 param_4,float param_5,
 
-                 )
+                 float param_6)
 
 
 
@@ -682,7 +692,7 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
   undefined4 local_c;
 
-  undefined4 local_8;
+  dword local_8;
 
   undefined4 local_4;
 
@@ -712,7 +722,7 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
       local_24 = pfVar2[2];
 
-      if (*(int *)(param_2 + 4) == 0x2a5) {
+      if (param_2->field_4 == 0x2a5) {
 
         fVar1 = 1000.0;
 
@@ -766,7 +776,7 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
         local_14 = param_5;
 
-        local_8 = *(undefined4 *)(param_2 + 0x188);
+        local_8 = param_2->field_188;
 
         local_4 = 0;
 
@@ -778,15 +788,15 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
       if (param_6 != 0.0) {
 
-        *(float *)(param_2 + 0xc4) = *(float *)(param_2 + 0xc4) / param_6;
+        *(float *)&param_2->field_0xc4 = *(float *)&param_2->field_0xc4 / param_6;
 
       }
 
-      *(undefined4 *)(param_2 + 0x210) = 0;
+      *(undefined4 *)&param_2->field_0x210 = 0;
 
-      if (*(int *)(param_2 + 0x1e0) == 0x59) {
+      if (*(int *)&param_2->field_0x1e0 == 0x59) {
 
-        if (*(int *)(param_2 + 0x218) < 2) {
+        if ((int)param_2->field_218 < 2) {
 
           FUN_00425850(param_2);
 
@@ -794,29 +804,31 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
       }
 
-      else if (*(int *)(param_2 + 0x1e0) == 0x12) {
+      else if (*(int *)&param_2->field_0x1e0 == 0x12) {
 
-        FUN_004f4150();
+        FUN_004f4150(param_2);
 
       }
 
       else {
 
-        iVar3 = FUN_004a6180(param_2);
+        iVar3 = FUN_004a6180();
 
         if (iVar3 != 0) {
 
-          *(undefined4 *)(param_2 + 0xc4) = *(undefined4 *)(*(int *)(param_2 + 0x100) + 0xfac);
+          *(undefined4 *)&param_2->field_0xc4 =
+
+               *(undefined4 *)(*(int *)&param_2->field_0x100 + 0xfac);
 
         }
 
       }
 
-      *(uint *)(param_2 + 0xd8) = *(uint *)(param_2 + 0xd8) & 0xfff7ffff | 0x10000000;
+      *(uint *)&param_2->field_0xd8 = *(uint *)&param_2->field_0xd8 & 0xfff7ffff | 0x10000000;
 
-      *(int *)(param_2 + 0x210) = iVar4;
+      *(int *)&param_2->field_0x210 = iVar4;
 
-      *(undefined4 *)(param_2 + 0x218) = 0xffffffff;
+      param_2->field_218 = 0xffffffff;
 
       FUN_0050a610(iVar4 + 0xa0,&local_38);
 
@@ -875,11 +887,13 @@ LAB_00465986:
 }
 
 /* ===== FUN_00465bf0 @ 0x00465BF0 ===== */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: reaper_collect_food (conf 0.513) */
 
 
 
-void FUN_00465bf0(float param_1,float param_2,undefined4 param_3,float param_4)
+void FUN_00465bf0(float param_1,OBJECT *param_2,undefined4 param_3,float param_4)
 
 
 
@@ -887,41 +901,41 @@ void FUN_00465bf0(float param_1,float param_2,undefined4 param_3,float param_4)
 
   undefined4 uVar1;
 
-  float fVar2;
+  OBJECT *obj;
 
-  int iVar3;
+  int iVar2;
 
-  float fVar4;
+  float fVar3;
 
-  undefined4 uVar5;
+  undefined4 uVar4;
 
   undefined4 local_18;
 
   float local_14;
 
-  undefined4 local_10;
+  dword local_10;
 
   undefined1 local_c [12];
 
   
 
-  fVar2 = param_2;
+  obj = param_2;
 
-  if (param_2 == 0.0) {
+  if (param_2 == (OBJECT *)0x0) {
 
 LAB_00465d3b:
 
-    iVar3 = FUN_004d5730(100);
+    iVar2 = FUN_004d5730(100);
 
-    if (iVar3 < 0x32) {
+    if (iVar2 < 0x32) {
 
-      uVar5 = 0x411;
+      uVar4 = 0x411;
 
     }
 
     else {
 
-      uVar5 = 0x412;
+      uVar4 = 0x412;
 
     }
 
@@ -929,43 +943,43 @@ LAB_00465d3b:
 
   else {
 
-    if (*(int *)((int)param_2 + 0x1e0) == 0x12) {
+    if (*(int *)&param_2->field_0x1e0 == 0x12) {
 
-      iVar3 = FUN_004d5730(100);
+      iVar2 = FUN_004d5730(100);
 
-      fVar4 = param_1;
+      fVar3 = param_1;
 
-      if (iVar3 < 0x32) {
+      if (iVar2 < 0x32) {
 
-        uVar5 = 0x474;
+        uVar4 = 0x474;
 
       }
 
       else {
 
-        uVar5 = 0x475;
+        uVar4 = 0x475;
 
       }
 
-      sound_play_player(uVar5,param_1);
+      sound_play_player(uVar4,param_1);
 
-      iVar3 = *(int *)((int)fVar4 + 0x2dc);
+      iVar2 = *(int *)((int)fVar3 + 0x2dc);
 
-      local_18 = *(undefined4 *)(iVar3 + 0x120);
+      local_18 = *(undefined4 *)(iVar2 + 0x120);
 
-      local_14 = *(float *)(iVar3 + 0x130);
+      local_14 = *(float *)(iVar2 + 0x130);
 
-      local_10 = *(undefined4 *)(iVar3 + 0x140);
+      local_10 = *(dword *)(iVar2 + 0x140);
 
-      (*(code *)PTR_FUN_00580c20)(local_c,&local_18,1,(int)fVar4 + 0x294);
+      (*(code *)PTR_FUN_00580c20)(local_c,&local_18,1,(int)fVar3 + 0x294);
 
-      param_1 = *(float *)((int)fVar4 + 200) + 90.0;
+      param_1 = *(float *)((int)fVar3 + 200) + 90.0;
 
-      uVar5 = *(undefined4 *)(DAT_00632ed8 + 0x2b4);
+      uVar4 = *(undefined4 *)(DAT_00632ed8 + 0x2b4);
 
       uVar1 = *(undefined4 *)(DAT_00632ed8 + 0x2b8);
 
-      param_2 = *(float *)((int)fVar4 + 200) - 90.0;
+      param_2 = (OBJECT *)(*(float *)((int)fVar3 + 200) - 90.0);
 
       *(undefined4 *)(DAT_00632ed8 + 0x2b4) = 0x3e99999a;
 
@@ -973,7 +987,7 @@ LAB_00465d3b:
 
       FUN_0040b350(local_c,0x1e,0x32,param_2,param_1,0x41200000,0x42340000,0,0x41700000);
 
-      *(undefined4 *)(DAT_00632ed8 + 0x2b4) = uVar5;
+      *(undefined4 *)(DAT_00632ed8 + 0x2b4) = uVar4;
 
       *(undefined4 *)(DAT_00632ed8 + 0x2b8) = uVar1;
 
@@ -981,127 +995,127 @@ LAB_00465d3b:
 
     }
 
-    if (*(int *)((int)param_2 + 0x1e0) != 0x15) goto LAB_00465d3b;
+    if (*(int *)&param_2->field_0x1e0 != 0x15) goto LAB_00465d3b;
 
-    iVar3 = FUN_004d5730(100);
+    iVar2 = FUN_004d5730(100);
 
-    if (iVar3 < 0x32) {
+    if (iVar2 < 0x32) {
 
-      uVar5 = 0x481;
+      uVar4 = 0x481;
 
     }
 
     else {
 
-      uVar5 = 0x482;
+      uVar4 = 0x482;
 
     }
 
   }
 
-  fVar4 = param_1;
+  fVar3 = param_1;
 
-  sound_play_player(uVar5,param_1);
+  sound_play_player(uVar4,param_1);
 
 LAB_00465d63:
 
-  iVar3 = reaper_0052e4a0(fVar4);
+  iVar2 = reaper_0052e4a0(fVar3);
 
-  if (iVar3 == 0) {
+  if (iVar2 == 0) {
 
-    *(undefined4 *)((int)fVar4 + 0x278) = param_3;
+    *(undefined4 *)((int)fVar3 + 0x278) = param_3;
 
   }
 
   else {
 
-    if (fVar2 == 0.0) {
+    if (obj == (OBJECT *)0x0) {
 
       return;
 
     }
 
-    local_10 = *(undefined4 *)((int)fVar2 + 0x188);
+    local_10 = obj->field_188;
 
     local_18 = param_3;
 
     local_14 = param_4;
 
-    reaper_00530bd0(fVar4,2,1,0,3,&local_18);
+    reaper_00530bd0(fVar3,2,1,0,3,&local_18);
 
   }
 
-  if (fVar2 != 0.0) {
+  if (obj != (OBJECT *)0x0) {
 
     if (param_4 != 0.0) {
 
-      *(float *)((int)fVar2 + 0xc4) = *(float *)((int)fVar2 + 0xc4) / param_4;
+      *(float *)&obj->field_0xc4 = *(float *)&obj->field_0xc4 / param_4;
 
     }
 
-    *(undefined4 *)((int)fVar2 + 0x210) = 0;
+    *(undefined4 *)&obj->field_0x210 = 0;
 
-    if (*(int *)((int)fVar2 + 0x1e0) == 0x59) {
+    if (*(int *)&obj->field_0x1e0 == 0x59) {
 
-      if (*(int *)((int)fVar2 + 0x218) < 2) {
+      if ((int)obj->field_218 < 2) {
 
-        FUN_00425850(fVar2);
+        FUN_00425850(obj);
 
       }
 
     }
 
-    else if (*(int *)((int)fVar2 + 0x1e0) == 0x12) {
+    else if (*(int *)&obj->field_0x1e0 == 0x12) {
 
-      FUN_004f4150();
+      FUN_004f4150(obj);
 
     }
 
     else {
 
-      iVar3 = FUN_004a6180(fVar2);
+      iVar2 = FUN_004a6180();
 
-      if (iVar3 != 0) {
+      if (iVar2 != 0) {
 
-        *(undefined4 *)((int)fVar2 + 0xc4) = *(undefined4 *)(*(int *)((int)fVar2 + 0x100) + 0xfac);
+        *(undefined4 *)&obj->field_0xc4 = *(undefined4 *)(*(int *)&obj->field_0x100 + 0xfac);
 
       }
 
     }
 
-    *(uint *)((int)fVar2 + 0xd8) = *(uint *)((int)fVar2 + 0xd8) & 0xfff7ffff | 0x10000000;
+    *(uint *)&obj->field_0xd8 = *(uint *)&obj->field_0xd8 & 0xfff7ffff | 0x10000000;
 
-    if (*(int *)((int)fVar2 + 4) != 0xb) {
+    if (obj->field_4 != 0xb) {
 
-      FUN_0050ae40(*(undefined4 *)((int)fVar4 + 200),&param_1,&param_4);
+      FUN_0050ae40(*(undefined4 *)((int)fVar3 + 200),&param_1,&param_4);
 
-      if (*(int *)((int)fVar2 + 0x104) == 0) {
+      if (*(int *)&obj->field_0x104 == 0) {
 
-        *(float *)((int)fVar2 + 0x128) = param_1 * 100.0;
+        obj->gap_128 = (dword)(param_1 * 100.0);
 
-        *(undefined4 *)((int)fVar2 + 0x108) = 0x41f00000;
+        *(undefined4 *)&obj->field_0x108 = 0x41f00000;
 
-        *(float *)((int)fVar2 + 300) = param_4 * -100.0;
+        *(float *)&obj->field_0x12c = param_4 * -100.0;
 
       }
 
       else {
 
-        *(float *)((int)fVar2 + 0x128) = param_1 * 100.0 + *(float *)((int)fVar2 + 0x128);
+        obj->gap_128 = (dword)(param_1 * 100.0 + (float)obj->gap_128);
 
-        *(float *)((int)fVar2 + 300) = *(float *)((int)fVar2 + 300) - param_4 * 100.0;
+        *(float *)&obj->field_0x12c = *(float *)&obj->field_0x12c - param_4 * 100.0;
 
-        *(float *)((int)fVar2 + 0x130) = *(float *)((int)fVar2 + 0x130) + 30.0;
+        *(float *)&obj->field_0x130 = *(float *)&obj->field_0x130 + 30.0;
 
       }
 
     }
 
-    iVar3 = FUN_0052e480(fVar4);
+    iVar2 = FUN_0052e480(fVar3);
 
-    if (iVar3 != 0) {
+    if (iVar2 != 0) {
 
-      FUN_00456f80(7,0x461c4000,fVar2,fVar4,0,0);
+      FUN_00456f80(7,0x461c4000,obj,fVar3,0,0);
 
     }
 

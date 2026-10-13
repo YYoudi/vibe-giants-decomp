@@ -4,11 +4,15 @@
  */
 
 /* ===== FUN_00480150 @ 0x00480150 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: mecc_exit_bush (conf 0.499) */
 
 
 
-void FUN_00480150(int param_1)
+void FUN_00480150(OBJECT *obj)
 
 
 
@@ -18,23 +22,21 @@ void FUN_00480150(int param_1)
 
   
 
-  if (((*(uint *)(param_1 + 0xe0) & 0x2000000) != 0) &&
+  if (((obj->field_E0 & 0x2000000) != 0) && ((obj->field_E0 & 0x4000000) == 0)) {
 
-     ((*(uint *)(param_1 + 0xe0) & 0x4000000) == 0)) {
-
-    iVar1 = reaper_0052e4a0(param_1);
+    iVar1 = reaper_0052e4a0(obj);
 
     if (iVar1 != 0) {
 
-      reaper_00530bd0(param_1,0,0,0,0xc,0);
+      reaper_00530bd0(obj,0,0,0,0xc,0);
 
     }
 
-    *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x4000000;
+    obj->field_E0 = obj->field_E0 | 0x4000000;
 
-    *(undefined4 *)(param_1 + 0x274) = 0;
+    obj->field_274 = 0;
 
-    sound_play_player(0x572,param_1);
+    sound_play_player(0x572,obj);
 
   }
 
@@ -1546,7 +1548,13 @@ LAB_00481615:
 }
 
 /* ===== FUN_00481630 @ 0x00481630 ===== */
-void FUN_00481630(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void FUN_00481630(OBJECT *obj)
 
 
 
@@ -1562,17 +1570,15 @@ void FUN_00481630(int param_1)
 
   
 
-  iVar2 = *(int *)(param_1 + 0x210);
+  iVar2 = *(int *)&obj->field_0x210;
 
   if ((iVar2 == 0) || (*(int *)(iVar2 + 0x1e0) != 0x5f)) {
 
-    if (((*(uint *)(param_1 + 0xe0) & 0x20000) != 0) &&
-
-       (piVar4 = DAT_00632d70, DAT_00632d70 != (int *)0x0)) {
+    if (((obj->field_E0 & 0x20000) != 0) && (piVar4 = DAT_00632d70, DAT_00632d70 != (int *)0x0)) {
 
       while (((iVar2 = piVar4[3], (*(uint *)(iVar2 + 0xd8) & 0x8000) != 0 ||
 
-              (*(int *)(iVar2 + 4) != 0x3df)) || (*(int *)(iVar2 + 0x210) != param_1))) {
+              (*(int *)(iVar2 + 4) != 0x3df)) || (*(OBJECT **)(iVar2 + 0x210) != obj))) {
 
         piVar4 = (int *)*piVar4;
 
@@ -1590,35 +1596,35 @@ void FUN_00481630(int param_1)
 
       *(undefined4 *)(iVar2 + 0x218) = 0xffffffff;
 
-      *(undefined4 *)(iVar2 + 200) = *(undefined4 *)(param_1 + 200);
+      *(undefined4 *)(iVar2 + 200) = *(undefined4 *)&obj->field_0xc8;
 
-      *(undefined4 *)(iVar2 + 0x10c) = *(undefined4 *)(param_1 + 0x10c);
+      *(undefined4 *)(iVar2 + 0x10c) = *(undefined4 *)&obj->field_0x10c;
 
-      *(undefined4 *)(iVar2 + 0x110) = *(undefined4 *)(param_1 + 0x110);
+      *(undefined4 *)(iVar2 + 0x110) = *(undefined4 *)&obj->field_0x110;
 
       *(undefined4 *)(iVar2 + 0x108) = 0xbf800000;
 
-      *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfffdffff;
+      obj->field_E0 = obj->field_E0 & 0xfffdffff;
 
       fVar1 = *(float *)(iVar2 + 0xa8);
 
-      *(undefined4 *)(param_1 + 0x130) = 0x42480000;
+      *(undefined4 *)&obj->field_0x130 = 0x42480000;
 
-      *(float *)(param_1 + 0xa8) = fVar1 + 7.5;
+      *(float *)&obj->field_0xa8 = fVar1 + 7.5;
 
-      *(float *)(param_1 + 0x128) = *(float *)(param_1 + 0x29c) * 50.0;
+      obj->gap_128 = (dword)(*(float *)&obj->field_0x29c * 50.0);
 
-      *(float *)(param_1 + 300) = *(float *)(param_1 + 0x2ac) * 50.0;
+      *(float *)&obj->field_0x12c = *(float *)&obj->field_0x2ac * 50.0;
 
-      iVar2 = reaper_0052e4a0(param_1);
+      iVar2 = reaper_0052e4a0(obj);
 
       if (iVar2 != 0) {
 
-        reaper_00530bd0(param_1,0,0,0,0x17,0);
+        reaper_00530bd0(obj,0,0,0,0x17,0);
 
       }
 
-      sound_play_player(0x59e,param_1);
+      sound_play_player(0x59e,obj);
 
     }
 
@@ -1626,7 +1632,7 @@ void FUN_00481630(int param_1)
 
   }
 
-  if (*(int *)(param_1 + 0x218) == 3) {
+  if (obj->field_218 == 3) {
 
     uVar3 = *(uint *)(iVar2 + 0xe0) & 0xfffffffd;
 
@@ -1634,7 +1640,7 @@ void FUN_00481630(int param_1)
 
   else {
 
-    if (*(int *)(param_1 + 0x218) != 4) goto LAB_0048167a;
+    if (obj->field_218 != 4) goto LAB_0048167a;
 
     uVar3 = *(uint *)(iVar2 + 0xe0) & 0xfffffffb;
 
@@ -1644,33 +1650,33 @@ void FUN_00481630(int param_1)
 
 LAB_0048167a:
 
-  fVar1 = *(float *)(*(int *)(param_1 + 0x210) + 0xa8);
+  fVar1 = *(float *)(*(int *)&obj->field_0x210 + 0xa8);
 
-  *(undefined4 *)(param_1 + 0x218) = 0xffffffff;
+  obj->field_218 = 0xffffffff;
 
-  *(undefined4 *)(param_1 + 0x214) = 0xffffffff;
+  *(undefined4 *)&obj->field_0x214 = 0xffffffff;
 
-  *(float *)(param_1 + 0xa8) = fVar1 + 7.5;
+  *(float *)&obj->field_0xa8 = fVar1 + 7.5;
 
-  *(undefined4 *)(param_1 + 0x130) = 0x42480000;
+  *(undefined4 *)&obj->field_0x130 = 0x42480000;
 
-  *(undefined4 *)(param_1 + 0x210) = 0;
+  *(undefined4 *)&obj->field_0x210 = 0;
 
-  *(uint *)(param_1 + 0xdc) = *(uint *)(param_1 + 0xdc) & 0xffff7fff;
+  *(uint *)&obj->field_0xdc = *(uint *)&obj->field_0xdc & 0xffff7fff;
 
-  *(float *)(param_1 + 0x128) = *(float *)(param_1 + 0x29c) * 50.0;
+  obj->gap_128 = (dword)(*(float *)&obj->field_0x29c * 50.0);
 
-  *(float *)(param_1 + 300) = *(float *)(param_1 + 0x2ac) * 50.0;
+  *(float *)&obj->field_0x12c = *(float *)&obj->field_0x2ac * 50.0;
 
-  iVar2 = reaper_0052e4a0(param_1);
+  iVar2 = reaper_0052e4a0(obj);
 
   if (iVar2 != 0) {
 
-    reaper_00530bd0(param_1,0,0,0,0x17,0);
+    reaper_00530bd0(obj,0,0,0,0x17,0);
 
   }
 
-  sound_play_player(0x59d,param_1);
+  sound_play_player(0x59d,obj);
 
   return;
 

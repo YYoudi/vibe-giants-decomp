@@ -139,6 +139,8 @@ void object_set_objectset(int param_1,int param_2)
 }
 
 /* ===== object_list_update @ 0x004975C0 ===== */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: object_list_update (conf 0.46199999999999997) */
 
 
@@ -209,7 +211,7 @@ void object_list_update(void)
 
   {
 
-    FUN_00499fa0(piVar4[3]);
+    FUN_00499fa0((OBJECT *)piVar4[3]);
 
   }
 

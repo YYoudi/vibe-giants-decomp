@@ -120,7 +120,7 @@ void main_fx_004471a0(void)
 
 
 
-int fx_setupWeather__Fi(int p0)
+int fx_setupWeather__Fi(FxData *fx)
 
 
 
@@ -136,7 +136,7 @@ int fx_setupWeather__Fi(int p0)
 
   
 
-  iVar2 = object_allocate_type(p0,0);
+  iVar2 = object_allocate_type(fx,0);
 
   iVar1 = *(int *)(iVar2 + 0x100);
 
@@ -1056,23 +1056,25 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
 
 
-void fx_setupTracer__FP10FXSTACKTAG(undefined4 *p0)
+void fx_setupTracer__FP10FXSTACKTAG(FxData *fx)
 
 
 
 {
 
-  int iVar1;
+  uint *puVar1;
 
-  undefined4 *puVar2;
+  int iVar2;
 
-  undefined4 uVar3;
+  undefined4 *puVar3;
+
+  undefined4 uVar4;
 
   undefined1 local_200 [512];
 
   
 
-  if (p0 == (undefined4 *)0x0) {
+  if (fx == (FxData *)0x0) {
 
     FUN_00542f27(local_200,s_Failed_to_setup_tracer_fx___s____005597cc,DAT_0059ce5c + 0x20);
 
@@ -1082,51 +1084,55 @@ void fx_setupTracer__FP10FXSTACKTAG(undefined4 *p0)
 
   else {
 
-    iVar1 = *(int *)(p0[1] + 0x100);
+    iVar2 = *(int *)(fx->fx_4 + 0x100);
 
-    if (*(int *)(iVar1 + 0xf8) == 0) {
+    if (*(int *)(iVar2 + 0xf8) == 0) {
 
-      puVar2 = (undefined4 *)
+      puVar3 = (undefined4 *)
 
                FUN_0053a700(0xc,0x14,s_fx_tracer_00559800,s_C__Giants_source_Main_fx_c_00558840,
 
                             0xc15);
 
-      *(undefined4 **)(iVar1 + 0xf8) = puVar2;
+      *(undefined4 **)(iVar2 + 0xf8) = puVar3;
 
-      *puVar2 = 0;
+      *puVar3 = 0;
 
-      puVar2[1] = 0;
+      puVar3[1] = 0;
 
-      puVar2[2] = 0;
+      puVar3[2] = 0;
 
-      puVar2[3] = 0;
+      puVar3[3] = 0;
 
-      puVar2[4] = 0;
+      puVar3[4] = 0;
 
     }
 
-    if (**(int **)(iVar1 + 0xf8) == 0) {
+    if (**(int **)(iVar2 + 0xf8) == 0) {
 
-      (*(int **)(iVar1 + 0xf8))[1] = -1;
+      (*(int **)(iVar2 + 0xf8))[1] = -1;
 
-      *(undefined4 *)(*(int *)(iVar1 + 0xf8) + 8) = 0;
+      *(undefined4 *)(*(int *)(iVar2 + 0xf8) + 8) = 0;
 
-      uVar3 = tracer_get_tracer(*(int *)(iVar1 + 0xf8) + 4);
+      uVar4 = tracer_get_tracer(*(int *)(iVar2 + 0xf8) + 4);
 
-      **(undefined4 **)(iVar1 + 0xf8) = uVar3;
+      **(undefined4 **)(iVar2 + 0xf8) = uVar4;
 
-      if (**(int **)(iVar1 + 0xf8) != 0) {
+      if (**(int **)(iVar2 + 0xf8) != 0) {
 
-        *(uint *)(p0[1] + 0xe0) = *(uint *)(p0[1] + 0xe0) | 0x4000;
+        puVar1 = (uint *)(fx->fx_4 + 0xe0);
 
-        *(uint *)(p0[1] + 0xe4) = *(uint *)(p0[1] + 0xe4) | 0x2000;
+        *puVar1 = *puVar1 | 0x4000;
 
-        *(undefined4 *)(**(int **)(iVar1 + 0xf8) + 0x3c) = 0x40400000;
+        puVar1 = (uint *)(fx->fx_4 + 0xe4);
 
-        *(undefined4 *)(**(int **)(iVar1 + 0xf8) + 0x38) = 0x3dcccccd;
+        *puVar1 = *puVar1 | 0x2000;
 
-        tracer_add_ref(**(undefined4 **)(iVar1 + 0xf8));
+        *(undefined4 *)(**(int **)(iVar2 + 0xf8) + 0x3c) = 0x40400000;
+
+        *(undefined4 *)(**(int **)(iVar2 + 0xf8) + 0x38) = 0x3dcccccd;
+
+        tracer_add_ref(**(undefined4 **)(iVar2 + 0xf8));
 
         return;
 
@@ -1145,7 +1151,7 @@ void fx_setupTracer__FP10FXSTACKTAG(undefined4 *p0)
 
 
 
-void fx_setupTextureAnimtion__FP10FXSTACKTAGif(undefined4 *p0,int p1,float p2)
+void fx_setupTextureAnimtion__FP10FXSTACKTAGif(FxData *fx,int p1,undefined4 p2)
 
 
 
@@ -1163,7 +1169,7 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(undefined4 *p0,int p1,float p2)
 
   
 
-  if (p0 == (undefined4 *)0x0) {
+  if (fx == (FxData *)0x0) {
 
     FUN_00542f27(local_200,s_Failed_to_setup_texture_animatio_00559a00,DAT_0059ce5c + 0x20);
 
@@ -1173,35 +1179,35 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(undefined4 *p0,int p1,float p2)
 
   else {
 
-    *(uint *)(p0[1] + 0xe0) = *(uint *)(p0[1] + 0xe0) | 0x10000;
+    *(uint *)(fx->fx_4 + 0xe0) = *(uint *)(fx->fx_4 + 0xe0) | 0x10000;
 
     uVar1 = FUN_0053a700(0xc,0x14,s_Fx_Texture_Animation_00559a60,
 
                          s_C__Giants_source_Main_fx_c_00558840,0xd25);
 
-    *(undefined4 *)(p0[1] + 0x2f4) = uVar1;
+    *(undefined4 *)(fx->fx_4 + 0x2f4) = uVar1;
 
-    *(int *)(*(int *)(p0[1] + 0x2f4) + 4) = p1;
+    *(int *)(*(int *)(fx->fx_4 + 0x2f4) + 4) = p1;
 
-    *(float *)(*(int *)(p0[1] + 0x2f4) + 0xc) = p2;
+    *(undefined4 *)(*(int *)(fx->fx_4 + 0x2f4) + 0xc) = p2;
 
-    *(undefined4 *)(*(int *)(p0[1] + 0x2f4) + 8) = 0;
+    *(undefined4 *)(*(int *)(fx->fx_4 + 0x2f4) + 8) = 0;
 
-    *(undefined4 *)(*(int *)(p0[1] + 0x2f4) + 0x10) = 0;
+    *(undefined4 *)(*(int *)(fx->fx_4 + 0x2f4) + 0x10) = 0;
 
     uVar1 = FUN_0053a700(0xc,p1 * 4,s_Fx_Texture_Frames_00559a4c,
 
                          s_C__Giants_source_Main_fx_c_00558840,0xd2b);
 
-    **(undefined4 **)(p0[1] + 0x2f4) = uVar1;
+    **(undefined4 **)(fx->fx_4 + 0x2f4) = uVar1;
 
-    *(undefined4 *)**(undefined4 **)(p0[1] + 0x2f4) =
+    *(undefined4 *)**(undefined4 **)(fx->fx_4 + 0x2f4) =
 
-         *(undefined4 *)(*(int *)(*(int *)(p0[1] + 8) + 0x400) + 0x90);
+         *(undefined4 *)(*(int *)(*(int *)(fx->fx_4 + 8) + 0x400) + 0x90);
 
     FUN_00542f27(local_280,&DAT_00555df0,
 
-                 **(undefined4 **)(*(int *)(*(int *)(p0[1] + 8) + 0x400) + 0x90));
+                 **(undefined4 **)(*(int *)(*(int *)(fx->fx_4 + 8) + 0x400) + 0x90));
 
     for (pcVar2 = local_280; (*pcVar2 < '0' || ('9' < *pcVar2)); pcVar2 = pcVar2 + 1) {
 
@@ -1219,7 +1225,7 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(undefined4 *p0,int p1,float p2)
 
         uVar1 = main_texture_00508750(local_200);
 
-        *(undefined4 *)(**(int **)(p0[1] + 0x2f4) + iVar3 * 4) = uVar1;
+        *(undefined4 *)(**(int **)(fx->fx_4 + 0x2f4) + iVar3 * 4) = uVar1;
 
         iVar3 = iVar3 + 1;
 
@@ -1242,7 +1248,7 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(undefined4 *p0,int p1,float p2)
 
 void fx_setupVerticleFade__FP10FXSTACKTAGfffff
 
-               (undefined4 *p0,float p1,float p2,float p3,float p4,float p5)
+               (FxData *fx,undefined4 p1,undefined4 p2,undefined4 p3,undefined4 p4,undefined4 p5)
 
 
 
@@ -1250,67 +1256,77 @@ void fx_setupVerticleFade__FP10FXSTACKTAGfffff
 
   int *piVar1;
 
-  int iVar2;
+  uint *puVar2;
 
-  undefined4 *puVar3;
+  int iVar3;
 
-  int iVar4;
+  undefined4 *puVar4;
 
-  char *pcVar5;
+  int iVar5;
+
+  char *pcVar6;
 
   undefined1 local_200 [512];
 
   
 
-  if (p0 == (undefined4 *)0x0) {
+  if (fx == (FxData *)0x0) {
 
-    pcVar5 = s_Failed_to_setup_verticle_fade_fo_00559ba0;
+    pcVar6 = s_Failed_to_setup_verticle_fade_fo_00559ba0;
 
   }
 
   else {
 
-    iVar2 = *(int *)(p0[1] + 0x100);
+    iVar3 = *(int *)(fx->fx_4 + 0x100);
 
-    if (*(int *)(iVar2 + 0xfc) == 0) {
+    if (*(int *)(iVar3 + 0xfc) == 0) {
 
-      puVar3 = (undefined4 *)
+      puVar4 = (undefined4 *)
 
                FUN_0053a700(0xc,0x78,s_fx_vfade_00559c1c,s_C__Giants_source_Main_fx_c_00558840,0xe2c
 
                            );
 
-      *(undefined4 **)(iVar2 + 0xfc) = puVar3;
+      *(undefined4 **)(iVar3 + 0xfc) = puVar4;
 
-      for (iVar4 = 0x1e; iVar4 != 0; iVar4 = iVar4 + -1) {
+      for (iVar5 = 0x1e; iVar5 != 0; iVar5 = iVar5 + -1) {
 
-        *puVar3 = 0;
+        *puVar4 = 0;
 
-        puVar3 = puVar3 + 1;
+        puVar4 = puVar4 + 1;
 
       }
 
-      *(uint *)(p0[1] + 0xdc) = *(uint *)(p0[1] + 0xdc) | 0x40000;
+      puVar2 = (uint *)(fx->fx_4 + 0xdc);
 
-      *(uint *)(p0[1] + 0xe0) = *(uint *)(p0[1] + 0xe0) | 0x200000;
+      *puVar2 = *puVar2 | 0x40000;
+
+      *(uint *)(fx->fx_4 + 0xe0) = *(uint *)(fx->fx_4 + 0xe0) | 0x200000;
 
     }
 
-    iVar4 = *(int *)(*(int *)(iVar2 + 0xfc) + 100);
+    iVar5 = *(int *)(*(int *)(iVar3 + 0xfc) + 100);
 
-    if (iVar4 < 5) {
+    if (iVar5 < 5) {
 
-      *(float *)(*(int *)(iVar2 + 0xfc) + 0x14 + iVar4 * 4) = p1;
+      *(undefined4 *)(*(int *)(iVar3 + 0xfc) + 0x14 + iVar5 * 4) = p1;
 
-      *(float *)(*(int *)(iVar2 + 0xfc) + 0x28 + *(int *)(*(int *)(iVar2 + 0xfc) + 100) * 4) = p2;
+      *(undefined4 *)(*(int *)(iVar3 + 0xfc) + 0x28 + *(int *)(*(int *)(iVar3 + 0xfc) + 100) * 4) =
 
-      *(float *)(*(int *)(iVar2 + 0xfc) + 0x3c + *(int *)(*(int *)(iVar2 + 0xfc) + 100) * 4) = p3;
+           p2;
 
-      *(float *)(*(int *)(iVar2 + 0xfc) + 0x50 + *(int *)(*(int *)(iVar2 + 0xfc) + 100) * 4) = p4;
+      *(undefined4 *)(*(int *)(iVar3 + 0xfc) + 0x3c + *(int *)(*(int *)(iVar3 + 0xfc) + 100) * 4) =
 
-      *(float *)(*(int *)(iVar2 + 0xfc) + *(int *)(*(int *)(iVar2 + 0xfc) + 100) * 4) = p5;
+           p3;
 
-      piVar1 = (int *)(*(int *)(iVar2 + 0xfc) + 100);
+      *(undefined4 *)(*(int *)(iVar3 + 0xfc) + 0x50 + *(int *)(*(int *)(iVar3 + 0xfc) + 100) * 4) =
+
+           p4;
+
+      *(undefined4 *)(*(int *)(iVar3 + 0xfc) + *(int *)(*(int *)(iVar3 + 0xfc) + 100) * 4) = p5;
+
+      piVar1 = (int *)(*(int *)(iVar3 + 0xfc) + 100);
 
       *piVar1 = *piVar1 + 1;
 
@@ -1318,11 +1334,11 @@ void fx_setupVerticleFade__FP10FXSTACKTAGfffff
 
     }
 
-    pcVar5 = s_Failed_to_setup_verticle_fade_fo_00559be0;
+    pcVar6 = s_Failed_to_setup_verticle_fade_fo_00559be0;
 
   }
 
-  FUN_00542f27(local_200,pcVar5,DAT_0059ce5c + 0x20);
+  FUN_00542f27(local_200,pcVar6,DAT_0059ce5c + 0x20);
 
   FUN_0051ea20(local_200);
 

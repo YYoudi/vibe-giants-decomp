@@ -26,7 +26,7 @@ from ghidra.program.model.symbol import SourceType
 from ghidra.util.task import ConsoleTaskMonitor
 MON = ConsoleTaskMonitor()
 
-MIN_HITS = 3
+MIN_HITS = 2
 
 def main():
     mined = set()
@@ -63,14 +63,36 @@ def main():
         tx = program.startTransaction("apply OBJECT* params")
         applied = skipped = failed = 0
         try:
+            reasons = {"nofunc": 0, "noparams": 0, "already": 0, "bad": 0}
             for addr, _nh in cands:
                 fn = fm.getFunctionAt(af.getAddress("0x" + addr))
                 if fn is None:
-                    skipped += 1
+                    skipped += 1; reasons["nofunc"] += 1
                     continue
                 params = fn.getParameters()
-                if any(not p.getDataType().getName().startswith("undefined") for p in params[1:]):
-                    skipped += 1        # would damage PS2-typed params
+                if not params:
+                    # Ghidra dissolved params, but the export body used param_1
+                    # at OBJECT offsets — force a 1-param OBJECT* signature.
+                    sig = FunctionDefinitionDataType(fn.getName())
+                    sig.setReturnType(fn.getReturnType())
+                    sig.setArguments([ParameterDefinitionImpl("obj", obj_ptr, "")])
+                    if ApplyFunctionSignatureCmd(fn.getEntryPoint(), sig, SourceType.USER_DEFINED).applyTo(program, MON):
+                        applied += 1
+                    else:
+                        failed += 1
+                    continue
+                if "OBJECT" in params[0].getDataType().getName():
+                    skipped += 1; reasons["already"] += 1
+                    continue
+                bad = False
+                for p in params[1:]:
+                    n = p.getDataType().getName()
+                    if "float" in n or "double" in n:
+                        bad = True      # would damage FPU-arg signatures
+                    elif "*" in n and "undefined" not in n and "char" not in n and "OBJECT" not in n and "FxData" not in n:
+                        bad = True      # would damage named-pointer params
+                if bad:
+                    skipped += 1; reasons["bad"] += 1
                     continue
                 sig = FunctionDefinitionDataType(fn.getName())
                 sig.setReturnType(fn.getReturnType())
@@ -88,7 +110,7 @@ def main():
             raise
         program.flushEvents()
         project.save(program)
-        print(f"OBJECT* applied={applied} skipped={skipped} failed={failed}")
+        print(f"OBJECT* applied={applied} skipped={skipped} failed={failed} reasons={reasons}")
     finally:
         project.close()
 

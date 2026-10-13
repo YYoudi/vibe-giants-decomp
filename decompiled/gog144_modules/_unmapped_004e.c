@@ -125,7 +125,7 @@ void FUN_004e10e0(OBJECT *obj)
 
       if ((float)obj->field_278 < *(float *)&obj->field_0x1c0) {
 
-        FUN_004e7ae0(obj,0);
+        FUN_004e7ae0(obj);
 
       }
 
@@ -1951,7 +1951,13 @@ LAB_004e2f36:
 }
 
 /* ===== FUN_004e2f60 @ 0x004E2F60 ===== */
-void FUN_004e2f60(int param_1,float param_2)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void FUN_004e2f60(OBJECT *obj)
 
 
 
@@ -1959,7 +1965,7 @@ void FUN_004e2f60(int param_1,float param_2)
 
   int *piVar1;
 
-  int iVar2;
+  OBJECT *pOVar2;
 
   int *piVar3;
 
@@ -1969,33 +1975,33 @@ void FUN_004e2f60(int param_1,float param_2)
 
   float10 fVar6;
 
+  float in_stack_00000008;
+
   
 
-  if ((*(int *)(param_1 + 4) != 0xd7) ||
+  if ((obj->field_4 != 0xd7) || (((obj->field_E0 & 0x20) == 0 && ((obj->field_E0 & 0x40) != 0)))) {
 
-     (((*(uint *)(param_1 + 0xe0) & 0x20) == 0 && ((*(uint *)(param_1 + 0xe0) & 0x40) != 0)))) {
-
-    piVar1 = *(int **)(param_1 + 0x100);
+    piVar1 = *(int **)&obj->field_0x100;
 
     for (puVar5 = DAT_00632d6c; puVar5 != (undefined4 *)0x0; puVar5 = (undefined4 *)*puVar5) {
 
-      iVar2 = puVar5[3];
+      pOVar2 = (OBJECT *)puVar5[3];
 
-      piVar3 = *(int **)(iVar2 + 0x100);
+      piVar3 = *(int **)&pOVar2->field_0x100;
 
-      if ((((*(int *)(iVar2 + 4) == 0xd7) && (iVar2 != param_1)) && (*piVar3 == 0)) &&
+      if ((((pOVar2->field_4 == 0xd7) && (pOVar2 != obj)) && (*piVar3 == 0)) &&
 
-         ((*(int *)(iVar2 + 0xe8) != 0x66 ||
+         ((*(int *)&pOVar2->field_0xe8 != 0x66 ||
 
           (((piVar3[0x7c] == 0 && ((*(byte *)(piVar3 + 0x6e) & 1) != 0)) &&
 
-           (((*(uint *)(iVar2 + 0xe0) & 0x1000000) == 0 && (piVar3[0x8a] == 0)))))))) {
+           (((pOVar2->field_E0 & 0x1000000) == 0 && (piVar3[0x8a] == 0)))))))) {
 
-        if ((((*(int *)(param_1 + 4) == 0xd7) && (iVar4 = piVar1[0x4d], iVar4 != 0)) &&
+        if ((((obj->field_4 == 0xd7) && (iVar4 = piVar1[0x4d], iVar4 != 0)) &&
 
-            (piVar3[0x4d] == iVar4)) && ((*(byte *)(param_1 + 0xe4) & 0x40) == 0)) {
+            (piVar3[0x4d] == iVar4)) && ((obj->gap_E4 & 0x40) == 0)) {
 
-          *(uint *)(iVar2 + 0xe0) = *(uint *)(iVar2 + 0xe0) | 0x21;
+          pOVar2->field_E0 = pOVar2->field_E0 | 0x21;
 
           piVar3[1] = *piVar1;
 
@@ -2003,21 +2009,21 @@ void FUN_004e2f60(int param_1,float param_2)
 
         else {
 
-          fVar6 = (float10)FUN_0050a5e0(iVar2 + 0xa0,param_1 + 0xa0);
+          fVar6 = (float10)FUN_0050a5e0(&pOVar2->gap_A0,&obj->gap_A0);
 
-          if (fVar6 <= (float10)param_2 * (float10)param_2) {
+          if (fVar6 <= (float10)in_stack_00000008 * (float10)in_stack_00000008) {
 
-            if (*(int *)(param_1 + 4) == 0xd7) {
+            if (obj->field_4 == 0xd7) {
 
-              *(uint *)(iVar2 + 0xe0) = *(uint *)(iVar2 + 0xe0) | 1;
+              pOVar2->field_E0 = pOVar2->field_E0 | 1;
 
             }
 
             else {
 
-              *(uint *)(iVar2 + 0xe0) = *(uint *)(iVar2 + 0xe0) | 0x21;
+              pOVar2->field_E0 = pOVar2->field_E0 | 0x21;
 
-              piVar3[1] = *(int *)(param_1 + 0x274);
+              piVar3[1] = obj->field_274;
 
             }
 
@@ -2038,13 +2044,15 @@ void FUN_004e2f60(int param_1,float param_2)
 /* ===== FUN_004e30b0 @ 0x004E30B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
 /* PS2 candidate: rpman_verify_enemy__FP6OBJECTf (conf 0.458) */
 
 
 
-undefined4 FUN_004e30b0(OBJECT *param_1,float param_2)
+undefined4 FUN_004e30b0(OBJECT *obj)
 
 
 
@@ -2062,6 +2070,8 @@ undefined4 FUN_004e30b0(OBJECT *param_1,float param_2)
 
   float10 fVar6;
 
+  float in_stack_00000008;
+
   undefined4 uVar7;
 
   undefined4 local_18;
@@ -2078,9 +2088,9 @@ undefined4 FUN_004e30b0(OBJECT *param_1,float param_2)
 
   
 
-  piVar2 = *(int **)&param_1->field_0x100;
+  piVar2 = *(int **)&obj->field_0x100;
 
-  if ((DAT_005a858c != 0) && (iVar3 = FUN_004e3440(param_1,DAT_005a858c), iVar3 != 0)) {
+  if ((DAT_005a858c != 0) && (iVar3 = FUN_004e3440(obj,DAT_005a858c), iVar3 != 0)) {
 
     return 1;
 
@@ -2088,13 +2098,13 @@ undefined4 FUN_004e30b0(OBJECT *param_1,float param_2)
 
   if ((float)piVar2[0x28] < (float)piVar2[0x29]) {
 
-    param_2 = (float)piVar2[0x29];
+    in_stack_00000008 = (float)piVar2[0x29];
 
   }
 
-  if ((param_1->field_E0 & 0x20) != 0) {
+  if ((obj->field_E0 & 0x20) != 0) {
 
-    param_1->field_E0 = param_1->field_E0 & 0xffffffdf;
+    obj->field_E0 = obj->field_E0 & 0xffffffdf;
 
     return 0;
 
@@ -2114,15 +2124,15 @@ undefined4 FUN_004e30b0(OBJECT *param_1,float param_2)
 
     if ((*(byte *)(*piVar2 + 0xe0) & 8) == 0) {
 
-      param_1->field_E0 = param_1->field_E0 & 0xefffffff;
+      obj->field_E0 = obj->field_E0 & 0xefffffff;
 
     }
 
-    else if ((param_1->field_E0 & 0x10000000) == 0) {
+    else if ((obj->field_E0 & 0x10000000) == 0) {
 
       *piVar2 = 0;
 
-      param_1->field_E0 = param_1->field_E0 | 0x10000000;
+      obj->field_E0 = obj->field_E0 | 0x10000000;
 
     }
 
@@ -2152,15 +2162,17 @@ LAB_004e3204:
 
         if (iVar3 != 0) {
 
-          if (param_2 <= 0.0) goto LAB_004e3253;
+          if (in_stack_00000008 <= 0.0) goto LAB_004e3253;
 
-          if (param_2 * param_2 < (float)piVar2[0xd] * 0.25) goto LAB_004e3204;
+          if (in_stack_00000008 * in_stack_00000008 < (float)piVar2[0xd] * 0.25) goto LAB_004e3204;
 
         }
 
       }
 
-      if ((0.0 < param_2) && (param_2 * param_2 < (float)piVar2[0xd])) {
+      if ((0.0 < in_stack_00000008) && (in_stack_00000008 * in_stack_00000008 < (float)piVar2[0xd]))
+
+      {
 
 LAB_004e324d:
 
@@ -2182,19 +2194,19 @@ LAB_004e324d:
 
 LAB_004e3253:
 
-  if (*(int *)&param_1->field_0xe8 != 0x66) {
+  if (*(int *)&obj->field_0xe8 != 0x66) {
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FUN_00518b70(obj,0);
 
-    fVar6 = (float10)*(float *)&param_1->field_0xec - fVar6;
+    fVar6 = (float10)*(float *)&obj->field_0xec - fVar6;
 
-    *(float *)&param_1->field_0xec = (float)fVar6;
+    *(float *)&obj->field_0xec = (float)fVar6;
 
     if (fVar6 < (float10)0.0) {
 
       iVar3 = *piVar2;
 
-      FUN_004e3920(param_1);
+      FUN_004e3920(obj);
 
       iVar4 = *piVar2;
 
@@ -2210,7 +2222,7 @@ LAB_004e32bc:
 
         if (iVar4 != iVar3) {
 
-          fVar6 = (float10)FUN_0050a610(&param_1->gap_A0,iVar4 + 0xa0);
+          fVar6 = (float10)FUN_0050a610(&obj->gap_A0,iVar4 + 0xa0);
 
           piVar2[0xd] = (int)(float)fVar6;
 
@@ -2220,7 +2232,7 @@ LAB_004e32bc:
 
       }
 
-      *(undefined4 *)&param_1->field_0xec = 0x40a00000;
+      *(undefined4 *)&obj->field_0xec = 0x40a00000;
 
     }
 
@@ -2232,7 +2244,7 @@ LAB_004e32bc:
 
   }
 
-  fVar6 = (float10)FUN_00518b70(param_1,0);
+  fVar6 = (float10)FUN_00518b70(obj,0);
 
   fVar1 = (float)piVar2[0xf];
 
@@ -2240,7 +2252,7 @@ LAB_004e32bc:
 
   if ((float10)0.0 <= (float10)fVar1 - fVar6) goto LAB_004e33f4;
 
-  if ((param_1->field_E0 & 8) == 0) {
+  if ((obj->field_E0 & 8) == 0) {
 
     piVar2[0xf] = 0x3f800000;
 
@@ -2252,13 +2264,13 @@ LAB_004e32bc:
 
   }
 
-  iVar3 = **(int **)&param_1->field_0x100;
+  iVar3 = **(int **)&obj->field_0x100;
 
   if (iVar3 == 0) {
 
 LAB_004e33e5:
 
-    uVar5 = param_1->field_E0 | 2;
+    uVar5 = obj->field_E0 | 2;
 
   }
 
@@ -2268,13 +2280,11 @@ LAB_004e33e5:
 
     if ((iVar4 == 0) && (iVar4 = FUN_004a62b0(iVar3), iVar4 == 0)) {
 
-      local_c = param_1->gap_A0;
+      local_c = obj->gap_A0;
 
-      local_8 = *(undefined4 *)&param_1->field_0xa4;
+      local_8 = *(undefined4 *)&obj->field_0xa4;
 
-      local_4 = (float)param_1->field_1E8 * *(float *)&param_1->field_0xc4 +
-
-                *(float *)&param_1->field_0xa8;
+      local_4 = (float)obj->field_1E8 * *(float *)&obj->field_0xc4 + *(float *)&obj->field_0xa8;
 
       local_18 = *(undefined4 *)(iVar3 + 0xa0);
 
@@ -2282,7 +2292,7 @@ LAB_004e33e5:
 
       local_10 = *(float *)(iVar3 + 0x1e8) * *(float *)(iVar3 + 0xc4) + *(float *)(iVar3 + 0xa8);
 
-      if (*(int *)&param_1->field_0x210 == 0) {
+      if (*(int *)&obj->field_0x210 == 0) {
 
         uVar7 = 7;
 
@@ -2290,7 +2300,7 @@ LAB_004e33e5:
 
       else {
 
-        _DAT_00561494 = *(undefined4 *)(*(int *)&param_1->field_0x210 + 4);
+        _DAT_00561494 = *(undefined4 *)(*(int *)&obj->field_0x210 + 4);
 
         uVar7 = 8;
 
@@ -2302,15 +2312,15 @@ LAB_004e33e5:
 
     }
 
-    uVar5 = param_1->field_E0 & 0xfffffffd;
+    uVar5 = obj->field_E0 & 0xfffffffd;
 
   }
 
-  param_1->field_E0 = uVar5;
+  obj->field_E0 = uVar5;
 
 LAB_004e33f4:
 
-  if ((param_1->field_E0 & 2) == 0) {
+  if ((obj->field_E0 & 2) == 0) {
 
     piVar2[0xe] = 0;
 
@@ -2318,7 +2328,7 @@ LAB_004e33f4:
 
   else {
 
-    fVar6 = (float10)FUN_00518b70(param_1,0);
+    fVar6 = (float10)FUN_00518b70(obj,0);
 
     fVar1 = (float)piVar2[0xe];
 
@@ -3164,13 +3174,15 @@ void FUN_004e3eb0(int param_1)
 }
 
 /* ===== FUN_004e3f10 @ 0x004E3F10 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
 /* PS2 candidate: rpman_set_enemy_attack_goal__FP6OBJECTi (conf 0.441) */
 
 
 
-void FUN_004e3f10(OBJECT *param_1,int param_2)
+void FUN_004e3f10(OBJECT *obj)
 
 
 
@@ -3183,6 +3195,8 @@ void FUN_004e3f10(OBJECT *param_1,int param_2)
   float10 fVar3;
 
   float10 fVar4;
+
+  int in_stack_00000008;
 
   undefined4 uVar5;
 
@@ -3204,7 +3218,7 @@ void FUN_004e3f10(OBJECT *param_1,int param_2)
 
   
 
-  piVar1 = *(int **)&param_1->field_0x100;
+  piVar1 = *(int **)&obj->field_0x100;
 
   if (*piVar1 == 0) {
 
@@ -3212,23 +3226,23 @@ void FUN_004e3f10(OBJECT *param_1,int param_2)
 
   }
 
-  if (param_2 != 0) {
+  if (in_stack_00000008 != 0) {
 
     fVar3 = (float10)FUN_004d5780(0x41a00000,0x42480000);
 
-    if ((param_1->field_E0 & 0x10000) == 0) {
+    if ((obj->field_E0 & 0x10000) == 0) {
 
-      fVar7 = *(float *)&param_1->field_0xc8 - 10.0;
+      fVar7 = *(float *)&obj->field_0xc8 - 10.0;
 
-      uVar5 = *(undefined4 *)&param_1->field_0xc8;
+      uVar5 = *(undefined4 *)&obj->field_0xc8;
 
     }
 
     else {
 
-      fVar7 = *(float *)&param_1->field_0xc8 + 10.0;
+      fVar7 = *(float *)&obj->field_0xc8 + 10.0;
 
-      uVar5 = *(undefined4 *)&param_1->field_0xc8;
+      uVar5 = *(undefined4 *)&obj->field_0xc8;
 
     }
 
@@ -3236,43 +3250,43 @@ void FUN_004e3f10(OBJECT *param_1,int param_2)
 
     FUN_0050ae40((float)fVar4,&local_14,&local_10);
 
-    local_4 = *(undefined4 *)&param_1->field_0xa8;
+    local_4 = *(undefined4 *)&obj->field_0xa8;
 
-    param_1->field_16C = (dword)&LAB_004cb930;
+    obj->field_16C = (dword)&LAB_004cb930;
 
-    local_c = local_14 * (float)fVar3 + (float)param_1->gap_A0;
+    local_c = local_14 * (float)fVar3 + (float)obj->gap_A0;
 
-    local_8 = *(float *)&param_1->field_0xa4 - local_10 * (float)fVar3;
+    local_8 = *(float *)&obj->field_0xa4 - local_10 * (float)fVar3;
 
     if (piVar1[0x36] == 0) {
 
-      FUN_00401610(param_1,&local_c);
+      FUN_00401610(obj,&local_c);
 
     }
 
     else {
 
-      FUN_00401050(param_1,&local_c);
+      FUN_00401050(obj,&local_c);
 
     }
 
-    FUN_00402270(param_1);
+    FUN_00402270(obj);
 
-    if (param_1->gap_168 != 0) {
+    if (obj->gap_168 != 0) {
 
       return;
 
     }
 
-    if (*(int *)&param_1->field_0xe8 != 0x66) {
+    if (*(int *)&obj->field_0xe8 != 0x66) {
 
-      param_1->gap_E4 = 0xd;
+      obj->gap_E4 = 0xd;
 
       return;
 
     }
 
-    param_1->gap_E4 = 0xd1;
+    obj->gap_E4 = 0xd1;
 
     return;
 
@@ -3282,7 +3296,7 @@ void FUN_004e3f10(OBJECT *param_1,int param_2)
 
   if ((iVar2 == 0) && (iVar2 = FUN_004a62b0(*piVar1), iVar2 == 0)) {
 
-    if ((param_1->field_E0 & 0x40000) == 0) {
+    if ((obj->field_E0 & 0x40000) == 0) {
 
       iVar2 = piVar1[0x28];
 
@@ -3294,7 +3308,7 @@ void FUN_004e3f10(OBJECT *param_1,int param_2)
 
   }
 
-  else if ((param_1->field_E0 & 0x40000) == 0) {
+  else if ((obj->field_E0 & 0x40000) == 0) {
 
     iVar2 = 0x42c80000;
 
@@ -3312,7 +3326,7 @@ LAB_004e409b:
 
   fVar3 = (float10)FUN_004d5780(iVar6,iVar2);
 
-  fVar4 = (float10)FUN_0050a400(*piVar1 + 0xa0,&param_1->gap_A0);
+  fVar4 = (float10)FUN_0050a400(*piVar1 + 0xa0,&obj->gap_A0);
 
   fVar7 = (float)fVar4;
 
@@ -3344,17 +3358,17 @@ LAB_004e409b:
 
   local_4 = *(undefined4 *)(*piVar1 + 0xa8);
 
-  param_1->field_16C = (dword)&LAB_004cb930;
+  obj->field_16C = (dword)&LAB_004cb930;
 
   if (piVar1[0x36] == 0) {
 
-    FUN_00401610(param_1,&local_c);
+    FUN_00401610(obj,&local_c);
 
   }
 
   else {
 
-    FUN_00401050(param_1,&local_c);
+    FUN_00401050(obj,&local_c);
 
   }
 
@@ -3362,13 +3376,13 @@ LAB_004e409b:
 
   if (0x31 < iVar2) {
 
-    param_1->field_E0 = param_1->field_E0 & 0xfffeffff;
+    obj->field_E0 = obj->field_E0 & 0xfffeffff;
 
     return;
 
   }
 
-  param_1->field_E0 = param_1->field_E0 | 0x10000;
+  obj->field_E0 = obj->field_E0 | 0x10000;
 
   return;
 
@@ -6413,13 +6427,13 @@ void FUN_004e6ba0(OBJECT *param_1,float param_2)
 
     *(int *)(iVar4 + 0x184) = *(int *)(iVar4 + 0x184) + 1;
 
-    if (*(int *)(*(int *)(iVar4 + 0x194) + 0x174) == 0) {
+    if ((*(OBJECT **)(iVar4 + 0x194))->acc_grenade_do_bounce == 0) {
 
       *(int *)(iVar4 + 0x198) = *(int *)(iVar4 + 0x198) + 1;
 
     }
 
-    uVar9 = buoy_set_lights(*(int *)(iVar4 + 0x194),0);
+    uVar9 = buoy_set_lights(*(OBJECT **)(iVar4 + 0x194));
 
     *(undefined4 *)(iVar4 + 0x194) = uVar9;
 
@@ -6911,13 +6925,15 @@ void rpman_gib__FP6OBJECTT0(OBJECT *p0,int p1)
 }
 
 /* ===== FUN_004e7ae0 @ 0x004E7AE0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
 /* PS2 candidate: rpman_notify_hit (conf 0.439) */
 
 
 
-void FUN_004e7ae0(OBJECT *param_1,int param_2)
+void FUN_004e7ae0(OBJECT *obj)
 
 
 
@@ -6949,6 +6965,8 @@ void FUN_004e7ae0(OBJECT *param_1,int param_2)
 
   float10 fVar13;
 
+  int in_stack_00000008;
+
   undefined4 uVar14;
 
   float fVar15;
@@ -6957,25 +6975,27 @@ void FUN_004e7ae0(OBJECT *param_1,int param_2)
 
   
 
-  pOVar2 = param_1;
+  pOVar2 = obj;
 
-  piVar1 = *(int **)&param_1->field_0x100;
+  piVar1 = *(int **)&obj->field_0x100;
 
-  if (param_1->gap_E4 == 0) {
-
-    return;
-
-  }
-
-  if ((((param_2 != 0) && (*(int *)(param_2 + 0x1e0) == 0x4d)) && (*(int *)(param_2 + 0x274) != 0))
-
-     && (*(dword *)(*(int *)(param_2 + 0x274) + 0x18c) == param_1->field_18C)) {
+  if (obj->gap_E4 == 0) {
 
     return;
 
   }
 
-  if (*(int *)&param_1->field_0xe8 != 0x66) {
+  if ((((in_stack_00000008 != 0) && (*(int *)(in_stack_00000008 + 0x1e0) == 0x4d)) &&
+
+      (*(int *)(in_stack_00000008 + 0x274) != 0)) &&
+
+     (*(dword *)(*(int *)(in_stack_00000008 + 0x274) + 0x18c) == obj->field_18C)) {
+
+    return;
+
+  }
+
+  if (*(int *)&obj->field_0xe8 != 0x66) {
 
     if (*piVar1 != 0) {
 
@@ -6983,7 +7003,7 @@ void FUN_004e7ae0(OBJECT *param_1,int param_2)
 
     }
 
-    fVar13 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,&param_1->gap_A0);
+    fVar13 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,&obj->gap_A0);
 
     fVar15 = (float)fVar13;
 
@@ -7033,9 +7053,9 @@ void FUN_004e7ae0(OBJECT *param_1,int param_2)
 
           (((iVar9 == 0 || (*(int *)(iVar9 + 0x1e0) != 0x61)) &&
 
-           (fVar13 = (float10)FUN_0050a5e0(&param_1->gap_A0,iVar12 + 0xa0), fVar13 < (float10)625.0)
+           (fVar13 = (float10)FUN_0050a5e0(&obj->gap_A0,iVar12 + 0xa0), fVar13 < (float10)625.0)))))
 
-           ))))) {
+         ) {
 
         FUN_004e2ce0(iVar12,0);
 
@@ -7191,9 +7211,9 @@ LAB_004e821a:
 
   }
 
-  if ((param_2 != 0) && (*(int *)(param_2 + 4) == 0x325)) {
+  if ((in_stack_00000008 != 0) && (*(int *)(in_stack_00000008 + 4) == 0x325)) {
 
-    pdVar10 = &param_1->gap_A0;
+    pdVar10 = &obj->gap_A0;
 
     iVar12 = 0;
 
@@ -7209,7 +7229,7 @@ LAB_004e7bdc:
 
     else {
 
-      param_1 = (OBJECT *)0x43968000;
+      obj = (OBJECT *)0x43968000;
 
       iVar7 = 0x43968000;
 
@@ -7235,9 +7255,9 @@ LAB_004e7bdc:
 
         }
 
-        if (*pfVar11 < (float)param_1) {
+        if (*pfVar11 < (float)obj) {
 
-          param_1 = (OBJECT *)*pfVar11;
+          obj = (OBJECT *)*pfVar11;
 
           iVar7 = iVar12;
 
@@ -7271,13 +7291,13 @@ LAB_004e7bdc:
 
     if (iVar12 < piVar1[0x71]) {
 
-      FUN_004e3920(param_1);
+      FUN_004e3920(obj);
 
     }
 
     if (*piVar1 != 0) goto LAB_004e7ce8;
 
-    FUN_004e3920(param_1);
+    FUN_004e3920(obj);
 
   }
 
@@ -7293,17 +7313,17 @@ LAB_004e7bdc:
 
       *piVar1 = 0;
 
-      *(undefined4 *)&param_1->field_0xe8 = 2;
+      *(undefined4 *)&obj->field_0xe8 = 2;
 
       iVar7 = FUN_004d5730(100);
 
       if (iVar7 < piVar1[0x71]) {
 
-        FUN_004e3920(param_1);
+        FUN_004e3920(obj);
 
       }
 
-      *(undefined4 *)&param_1->field_0xe8 = 0x66;
+      *(undefined4 *)&obj->field_0xe8 = 0x66;
 
       if (*piVar1 == 0) {
 
@@ -7329,7 +7349,7 @@ LAB_004e7ce8:
 
   FUN_004d5730(100);
 
-  if ((((param_1->field_E0 & 0x3000000) == 0) && (piVar1[0x8a] == 0)) && (param_1->gap_E4 != 200)) {
+  if ((((obj->field_E0 & 0x3000000) == 0) && (piVar1[0x8a] == 0)) && (obj->gap_E4 != 200)) {
 
     if (piVar1[0x4d] != 0) {
 
@@ -7341,17 +7361,17 @@ LAB_004e7ce8:
 
     if (((iVar12 == 0) && (iVar12 = FUN_004a62b0(*piVar1), iVar12 == 0)) ||
 
-       (*(int *)&param_1->field_0xe8 != 0x66)) {
+       (*(int *)&obj->field_0xe8 != 0x66)) {
 
-      param_1->field_E0 = param_1->field_E0 | 0x40000000;
+      obj->field_E0 = obj->field_E0 | 0x40000000;
 
-      param_1->gap_E4 = 0xc;
+      obj->gap_E4 = 0xc;
 
     }
 
     else {
 
-      param_1->gap_E4 = 0xcd;
+      obj->gap_E4 = 0xcd;
 
     }
 
@@ -7375,7 +7395,7 @@ LAB_004e7ce8:
 
          ((((*(int *)&pOVar2->field_0xe8 == 0x66 &&
 
-            (((param_1->field_E0 & 0x3000000) == 0 && ((pOVar2->field_E0 & 0x1000000) == 0)))) &&
+            (((obj->field_E0 & 0x3000000) == 0 && ((pOVar2->field_E0 & 0x1000000) == 0)))) &&
 
            (piVar3 = *(int **)&pOVar2->field_0x100, piVar3[0x8a] == 0)) &&
 
@@ -7385,7 +7405,7 @@ LAB_004e7ce8:
 
         *(undefined4 *)(*(int *)(piVar3[0x4d] + 0x100) + 0x10) = 1;
 
-        if ((pOVar2->gap_E4 != 200) && (pOVar2 != param_1)) {
+        if ((pOVar2->gap_E4 != 200) && (pOVar2 != obj)) {
 
           iVar12 = FUN_004d5730(100);
 
@@ -7437,7 +7457,7 @@ LAB_004e7fcb:
 
 LAB_004e7fd7:
 
-              if (*(int *)&param_1->field_0xe8 == 0x66) {
+              if (*(int *)&obj->field_0xe8 == 0x66) {
 
                 pOVar2->gap_E4 = 0xcd;
 
@@ -7451,7 +7471,7 @@ LAB_004e7fd7:
 
             if (iVar12 < 0x32) {
 
-              param_1->field_E0 = param_1->field_E0 | 0x40000000;
+              obj->field_E0 = obj->field_E0 | 0x40000000;
 
             }
 
@@ -7546,49 +7566,61 @@ LAB_004e8053:
 }
 
 /* ===== FUN_004e9ce0 @ 0x004E9CE0 ===== */
-void FUN_004e9ce0(int param_1,int param_2,int param_3)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void FUN_004e9ce0(OBJECT *obj)
 
 
 
 {
 
-  if (param_1 != 0) {
+  int in_stack_00000008;
 
-    if (param_2 != 0) {
+  int in_stack_0000000c;
 
-      if (*(int *)(param_1 + 0xe4) != 3) {
+  
 
-        FUN_004034a0(param_1,1,0x20,0,0,0);
+  if (obj != (OBJECT *)0x0) {
+
+    if (in_stack_00000008 != 0) {
+
+      if (obj->gap_E4 != 3) {
+
+        FUN_004034a0(obj,1,0x20,0,0,0);
 
       }
 
-      if ((*(int *)(param_1 + 0xf4) == 0) && (*(int *)(param_1 + 0x274) == 0)) {
+      if ((obj->acc_rpman_tuba_horn_check == 0) && (obj->field_274 == 0)) {
 
-        *(undefined4 *)(param_1 + 0xe4) = 3;
+        obj->gap_E4 = 3;
 
         return;
 
       }
 
-      *(undefined4 *)(param_1 + 0xe4) = 2;
+      obj->gap_E4 = 2;
 
       return;
 
     }
 
-    if (*(int *)(param_1 + 0x274) != 0) {
+    if (obj->field_274 != 0) {
 
-      *(int *)(*(int *)(param_1 + 0x100) + param_3 * 4) = *(int *)(param_1 + 0x274);
+      *(dword *)(*(int *)&obj->field_0x100 + in_stack_0000000c * 4) = obj->field_274;
 
-      *(undefined4 *)(param_1 + 0x274) = 0;
+      obj->field_274 = 0;
 
     }
 
-    *(undefined4 *)(param_1 + 0xec) = *(undefined4 *)(DAT_00632ed8 + 0xf4c);
+    *(undefined4 *)&obj->field_0xec = *(undefined4 *)(DAT_00632ed8 + 0xf4c);
 
-    FUN_004034a0(param_1,1,0x30,0,0,0);
+    FUN_004034a0(obj,1,0x30,0,0,0);
 
-    *(undefined4 *)(param_1 + 0xe4) = 1;
+    obj->gap_E4 = 1;
 
   }
 
@@ -7841,7 +7873,13 @@ LAB_004ea5de:
 }
 
 /* ===== FUN_004ea810 @ 0x004EA810 ===== */
-void FUN_004ea810(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void FUN_004ea810(OBJECT *obj)
 
 
 
@@ -7855,9 +7893,9 @@ void FUN_004ea810(int param_1)
 
   
 
-  piVar1 = *(int **)(param_1 + 0x100);
+  piVar1 = *(int **)&obj->field_0x100;
 
-  *(undefined4 *)(param_1 + 0xf4) = 0;
+  obj->acc_rpman_tuba_horn_check = 0;
 
   iVar2 = 6;
 
@@ -7869,7 +7907,7 @@ void FUN_004ea810(int param_1)
 
     if (*piVar3 != 0) {
 
-      *(int *)(param_1 + 0xf4) = *(int *)(param_1 + 0xf4) + 1;
+      obj->acc_rpman_tuba_horn_check = obj->acc_rpman_tuba_horn_check + 1;
 
     }
 
@@ -7879,13 +7917,13 @@ void FUN_004ea810(int param_1)
 
   } while (iVar2 != 0);
 
-  if ((*(int *)(param_1 + 0xf4) == 0) && (*(int *)(param_1 + 0xe4) == 1)) {
+  if ((obj->acc_rpman_tuba_horn_check == 0) && (obj->gap_E4 == 1)) {
 
-    FUN_004034a0(param_1,1,0x20,0,0,0);
+    FUN_004034a0(obj,1,0x20,0,0,0);
 
-    if ((*(int *)(param_1 + 0xf4) == 0) && (*(int *)(param_1 + 0x274) == 0)) {
+    if ((obj->acc_rpman_tuba_horn_check == 0) && (obj->field_274 == 0)) {
 
-      *(undefined4 *)(param_1 + 0xe4) = 3;
+      obj->gap_E4 = 3;
 
       FUN_00497dc0(piVar1 + 6);
 
@@ -7893,7 +7931,7 @@ void FUN_004ea810(int param_1)
 
     }
 
-    *(undefined4 *)(param_1 + 0xe4) = 2;
+    obj->gap_E4 = 2;
 
   }
 
