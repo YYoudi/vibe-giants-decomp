@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (88 named) — decompiled, names from PS2 symbols
+ * 102 functions (90 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -5554,6 +5554,235 @@ void hud_draw_rect(float param_1,float param_2,float param_3,float param_4,float
 
 }
 
+/* ===== cspec_00417530 @ 0x00417530 ===== */
+void cspec_00417530(int param_1)
+
+
+
+{
+
+  int iVar1;
+
+  int iVar2;
+
+  undefined4 uVar3;
+
+  int iVar4;
+
+  int iVar5;
+
+  
+
+  iVar5 = *(int *)(param_1 + 0x100);
+
+  if ((*(int *)(param_1 + 0x18c) != 1) || (iVar4 = 1, DAT_00632a88 == 0)) {
+
+    iVar4 = *(int *)(param_1 + 0x18c) + -1;
+
+  }
+
+  iVar1 = fx_create(param_1);
+
+  if (iVar1 == 0) goto code_r0x0041776a;
+
+  iVar1 = *(int *)(iVar5 + 0x368);
+
+  iVar2 = meccbasepit_bldg_from_object(param_1);
+
+  if ((iVar2 == 0) || (((iVar1 < 4 || (0xb < iVar1)) && ((iVar1 < 0x11 || (0x18 < iVar1)))))) {
+
+    if ((*(int *)(iVar5 + 0x368) < 0) ||
+
+       (*(int *)((*(int *)(iVar5 + 0x368) + 2) * 0x1c + iVar5) < 1)) {
+
+      uVar3 = 0;
+
+    }
+
+    else {
+
+      uVar3 = 1;
+
+    }
+
+    *(undefined4 *)(iVar5 + 0x5a4) = uVar3;
+
+  }
+
+  else {
+
+    iVar1 = *(int *)(iVar5 + 0x368);
+
+    iVar2 = *(int *)(param_1 + 0x100);
+
+    if (iVar1 == 6) {
+
+      if (0 < *(int *)(iVar2 + 0xe0)) goto code_r0x00417698;
+
+      iVar1 = 5;
+
+code_r0x004175c7:
+
+      if (*(int *)(iVar2 + 0xc4) < 1) {
+
+        iVar1 = 4;
+
+      }
+
+    }
+
+    else {
+
+      if (iVar1 == 5) goto code_r0x004175c7;
+
+      if (iVar1 == 8) {
+
+        if (*(int *)(iVar2 + 0x118) < 1) {
+
+          iVar1 = 7;
+
+        }
+
+      }
+
+      else if (iVar1 == 0xb) {
+
+        if (*(int *)(iVar2 + 0x16c) < 1) {
+
+          iVar1 = 10;
+
+code_r0x0041761b:
+
+          if (*(int *)(iVar2 + 0x150) < 1) {
+
+            iVar1 = 9;
+
+          }
+
+        }
+
+      }
+
+      else {
+
+        if (iVar1 == 10) goto code_r0x0041761b;
+
+        if (iVar1 == 0x13) {
+
+          if (0 < *(int *)(iVar2 + 0x24c)) goto code_r0x00417698;
+
+          iVar1 = 0x12;
+
+        }
+
+        else if (iVar1 != 0x12) {
+
+          if (iVar1 == 0x15) {
+
+            if (*(int *)(iVar2 + 0x284) < 1) {
+
+              iVar1 = 0x14;
+
+            }
+
+          }
+
+          else if (iVar1 == 0x18) {
+
+            if (*(int *)(iVar2 + 0x2d8) < 1) {
+
+              iVar1 = 0x17;
+
+code_r0x00417689:
+
+              if (*(int *)(iVar2 + 700) < 1) {
+
+                iVar1 = 0x16;
+
+              }
+
+            }
+
+          }
+
+          else if (iVar1 == 0x17) goto code_r0x00417689;
+
+          goto code_r0x00417698;
+
+        }
+
+        if (*(int *)(iVar2 + 0x230) < 1) {
+
+          iVar1 = 0x11;
+
+        }
+
+      }
+
+    }
+
+code_r0x00417698:
+
+    *(uint *)(iVar5 + 0x5a4) = (uint)(0 < *(int *)((iVar1 + 2) * 0x1c + iVar2));
+
+  }
+
+  if (*(int *)(iVar5 + 0x5a8) != *(int *)(iVar5 + 0x5a4)) {
+
+    iVar1 = dialog_level_is_base();
+
+    if (iVar1 != 0) {
+
+      reaper_00530bd0(param_1,0,0,0,0x17 - (uint)(*(int *)(iVar5 + 0x5a4) != 0),0);
+
+    }
+
+    *(undefined4 *)(iVar5 + 0x5a8) = *(undefined4 *)(iVar5 + 0x5a4);
+
+  }
+
+  iVar4 = (&DAT_006330d0)[iVar4];
+
+  *(uint *)(iVar5 + 0x5ac) = (uint)(0 < iVar4);
+
+  if (*(uint *)(iVar5 + 0x5b0) != (uint)(0 < iVar4)) {
+
+    iVar4 = dialog_level_is_base();
+
+    if (iVar4 != 0) {
+
+      reaper_00530bd0(param_1,0,0,0,0x15 - (uint)(*(int *)(iVar5 + 0x5ac) != 0),0);
+
+    }
+
+    *(undefined4 *)(iVar5 + 0x5b0) = *(undefined4 *)(iVar5 + 0x5ac);
+
+  }
+
+code_r0x0041776a:
+
+  iVar5 = meccbasepit_bldg_from_object(param_1);
+
+  if (iVar5 != 0) {
+
+    func_0x00408190();
+
+    return;
+
+  }
+
+  iVar5 = reaperbase_bldg_from_object(param_1);
+
+  if (iVar5 != 0) {
+
+    func_0x004b4ab0(param_1);
+
+  }
+
+  return;
+
+}
+
 /* ===== FUN_004177a0 @ 0x004177A0 ===== */
 int FUN_004177a0(int param_1)
 
@@ -8170,6 +8399,29 @@ LAB_0041a787:
     puVar3 = (undefined4 *)*puVar3;
 
   } while( true );
+
+}
+
+/* ===== cspec_0041a7b0 @ 0x0041A7B0 ===== */
+void cspec_0041a7b0(int param_1)
+
+
+
+{
+
+  *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x800;
+
+  if (DAT_00632e74 != 0) {
+
+    *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) & 0xbfffffff;
+
+    return;
+
+  }
+
+  *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40000000;
+
+  return;
 
 }
 

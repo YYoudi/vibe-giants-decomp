@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (115 named) — decompiled, names from PS2 symbols
+ * 132 functions (118 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -8066,6 +8066,135 @@ void FUN_00425850(int param_1)
 
 }
 
+/* ===== cspec_00425870 @ 0x00425870 ===== */
+void cspec_00425870(float param_1)
+
+
+
+{
+
+  float fVar1;
+
+  float *pfVar2;
+
+  int iVar3;
+
+  int iVar4;
+
+  int iVar5;
+
+  int *piVar6;
+
+  int iVar7;
+
+  float10 fVar8;
+
+  
+
+  iVar3 = (int)param_1;
+
+  iVar7 = 0;
+
+  pfVar2 = *(float **)((int)param_1 + 0x100);
+
+  if (DAT_00632e74 == 0) {
+
+    iVar4 = dialog_level_is_base();
+
+    if ((iVar4 == 0) && (DAT_00632c00 == 0)) {
+
+      *pfVar2 = 0.0;
+
+    }
+
+    *(uint *)((int)param_1 + 0x30) = *(uint *)((int)param_1 + 0x30) | 0x84;
+
+    *(undefined4 *)((int)param_1 + 0x14) = 0x3f800000;
+
+    *(uint *)((int)param_1 + 0x1d0) = *(uint *)((int)param_1 + 0x1d0) | 0xfff;
+
+    if (*(int *)((int)param_1 + 0x210) == 0) {
+
+      fVar8 = (float10)FUN_00518b70(param_1,0);
+
+      fVar1 = *pfVar2;
+
+      *pfVar2 = (float)((float10)fVar1 - fVar8);
+
+      if ((float10)fVar1 - fVar8 < (float10)0.0) {
+
+        *pfVar2 = 0.0;
+
+        object_destroy(param_1);
+
+      }
+
+      if (1.0 <= *pfVar2) {
+
+        *(undefined4 *)((int)param_1 + 0x184) = 0;
+
+        return;
+
+      }
+
+      *(float *)((int)param_1 + 0x184) = 1.0 - *pfVar2;
+
+      return;
+
+    }
+
+    *(undefined4 *)((int)param_1 + 0x184) = 0;
+
+    if (*pfVar2 < 1.0) {
+
+      *pfVar2 = 1.0;
+
+    }
+
+    iVar4 = fx_create(param_1);
+
+    if ((iVar4 != 0) && (param_1 = -1.0, piVar6 = DAT_00632d74, DAT_00632d74 != (int *)0x0)) {
+
+      do {
+
+        iVar4 = piVar6[3];
+
+        iVar5 = ObjIsReaper(iVar4);
+
+        if (((iVar5 != 0) &&
+
+            ((*(float *)(iVar4 + 0x278) < *(float *)(iVar4 + 0x1c0) &&
+
+             (fVar8 = (float10)distancesq2d__FP3P3DT0(iVar4 + 0xa0,iVar3 + 0xa0),
+
+             fVar8 < (float10)100.0)))) && ((fVar8 < (float10)param_1 || (param_1 < 0.0)))) {
+
+          param_1 = (float)fVar8;
+
+          iVar7 = iVar4;
+
+        }
+
+        piVar6 = (int *)*piVar6;
+
+      } while (piVar6 != (int *)0x0);
+
+      if (iVar7 != 0) {
+
+        fx_get_free_effect__Fv();
+
+        func_0x004c5720(iVar7,iVar3,*(float *)(DAT_00632ed8 + 0x8ac) * *(float *)(iVar3 + 0xf4));
+
+      }
+
+    }
+
+  }
+
+  return;
+
+}
+
 /* ===== kabuto_corpse_create__FP6OBJECTi @ 0x00425A40 ===== */
 /* PS2 candidate: kabuto_corpse_create__FP6OBJECTi (conf 0.613) */
 
@@ -8217,6 +8346,214 @@ int corpse_create(int param_1)
   }
 
   return 0;
+
+}
+
+/* ===== cspec_00425c00 @ 0x00425C00 ===== */
+void cspec_00425c00(int param_1,float param_2,int param_3)
+
+
+
+{
+
+  float10 fVar1;
+
+  char *pcVar2;
+
+  undefined4 uVar3;
+
+  undefined1 *puVar4;
+
+  undefined1 auStack_34 [4];
+
+  undefined4 uStack_30;
+
+  undefined4 uStack_2c;
+
+  undefined4 uStack_28;
+
+  float fStack_18;
+
+  undefined4 uStack_14;
+
+  undefined4 uStack_10;
+
+  
+
+  if ((((50.0 < param_2) || (param_1 == 4)) || (param_1 == 6)) || ((param_1 == 8 || (param_1 == 7)))
+
+     ) {
+
+    fVar1 = (float10)atand2pos(*(undefined4 *)(param_3 + 300),*(undefined4 *)(param_3 + 0x128));
+
+    uStack_30 = *(undefined4 *)(param_3 + 0xa0);
+
+    uStack_2c = *(undefined4 *)(param_3 + 0xa4);
+
+    fStack_18 = (float)(fVar1 - (float10)90.0);
+
+    uStack_28 = *(undefined4 *)(param_3 + 0xa8);
+
+    puVar4 = auStack_34;
+
+    uVar3 = 9;
+
+    pcVar2 = s_fxb_mecc_death_005562c4;
+
+    uStack_14 = 0;
+
+    uStack_10 = 0;
+
+    fx_get_free_effect__Fv();
+
+    object_destroy(param_3,pcVar2,uVar3,puVar4);
+
+  }
+
+  return;
+
+}
+
+/* ===== cspec_00425ca0 @ 0x00425CA0 ===== */
+void cspec_00425ca0(int param_1)
+
+
+
+{
+
+  float *pfVar1;
+
+  float fVar2;
+
+  undefined4 *puVar3;
+
+  int iVar4;
+
+  int iVar5;
+
+  float10 fVar6;
+
+  undefined4 uVar7;
+
+  
+
+  if (DAT_00632e74 == 0) {
+
+    puVar3 = DAT_00632d68;
+
+    if (*(int *)(param_1 + 0xe4) == 0) {
+
+      for (; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
+
+        iVar4 = puVar3[3];
+
+        if ((((*(int *)(iVar4 + 0x1e0) == 0x60) && (*(int *)(iVar4 + 4) == 0x41c)) &&
+
+            (*(int *)(iVar4 + 0x174) == 0)) && (iVar5 = __ftol(), *(int *)(iVar4 + 0xe8) == iVar5))
+
+        {
+
+          *(int *)(param_1 + 0x274) = iVar4;
+
+          *(undefined4 *)(param_1 + 0xf8) = 0;
+
+          break;
+
+        }
+
+      }
+
+      fVar6 = (float10)rndfloatrange(0x41700000,0x41f00000);
+
+      *(float *)(param_1 + 0xf0) = (float)fVar6;
+
+      *(undefined4 *)(param_1 + 0xe4) = 1;
+
+    }
+
+    else if (*(int *)(param_1 + 0xe4) == 1) {
+
+      if (*(int *)(param_1 + 0x274) != 0) {
+
+        fVar6 = (float10)FUN_00518b70(param_1,0);
+
+        fVar6 = (float10)*(float *)(param_1 + 0xf0) - fVar6;
+
+        *(float *)(param_1 + 0xf0) = (float)fVar6;
+
+        if (fVar6 < (float10)0.0) {
+
+          fVar6 = (float10)rndfloatrange(0x41700000,0x41f00000);
+
+          *(float *)(param_1 + 0xf0) = (float)fVar6;
+
+          iVar4 = crt_rand_scaled(100);
+
+          if (iVar4 < 0x32) {
+
+            uVar7 = 0x6e7;
+
+          }
+
+          else {
+
+            uVar7 = 0x6e8;
+
+          }
+
+          sound_play_obj(uVar7,param_1);
+
+        }
+
+        iVar4 = *(int *)(param_1 + 0x274);
+
+        fVar6 = (float10)FUN_00518b70(param_1,0);
+
+        pfVar1 = (float *)(param_1 + 0xa0);
+
+        fVar6 = fVar6 * (float10)*(float *)(iVar4 + 0xfc) + (float10)*(float *)(param_1 + 0xf8);
+
+        fVar2 = (float)fVar6;
+
+        *(float *)(param_1 + 0xf8) = (float)fVar6;
+
+        ai_move_ground_common(iVar4,fVar2,fVar2,pfVar1);
+
+        if ((*(float *)(param_1 + 0xb8) != *pfVar1) ||
+
+           (*(float *)(param_1 + 0xbc) != *(float *)(param_1 + 0xa4))) {
+
+          fVar6 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xb8,pfVar1);
+
+          *(float *)(param_1 + 200) = (float)fVar6;
+
+        }
+
+        *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
+
+        objspec_dispatch_gate(param_1);
+
+        fVar6 = (float10)FUN_00518b70(param_1,0);
+
+        object_animate_process(param_1,(float)fVar6);
+
+        ObjectCalculateTransform(param_1);
+
+        *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x20;
+
+        return;
+
+      }
+
+      object_destroy(param_1);
+
+      return;
+
+    }
+
+  }
+
+  return;
 
 }
 
