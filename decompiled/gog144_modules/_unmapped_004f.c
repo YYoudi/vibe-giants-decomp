@@ -1034,7 +1034,7 @@ void FUN_004f4fc0(float param_1)
 
   if (*(int *)(iVar2 + 0x3c) != 0) {
 
-    FUN_00448920(*(int *)(iVar2 + 0x3c));
+    fx_delete(*(int *)(iVar2 + 0x3c));
 
   }
 
@@ -1225,7 +1225,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
     if (*(int *)(iVar5 + 0x3c) != 0) {
 
-      FUN_00448920(*(int *)(iVar5 + 0x3c));
+      fx_delete(*(int *)(iVar5 + 0x3c));
 
       *(undefined4 *)(iVar5 + 0x3c) = 0;
 
@@ -2020,7 +2020,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
     if (*(int *)(param_1 + 0xf4) != 0) {
 
-      FUN_00448920(*(int *)(param_1 + 0xf4));
+      fx_delete(*(int *)(param_1 + 0xf4));
 
     }
 

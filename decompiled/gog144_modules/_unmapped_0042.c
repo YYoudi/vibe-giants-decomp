@@ -762,7 +762,7 @@ void FUN_00420780(int param_1,undefined4 param_2)
 
     if (DAT_00632e74 == 0) {
 
-      iVar1 = FUN_0040cec0();
+      iVar1 = mecc_zoom_out__FRC10CntrlInputif_2();
 
       if (iVar1 == 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (18 named) — decompiled, names from PS2 symbols
+ * 39 functions (19 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -758,7 +758,7 @@ LAB_004d2364:
 
       if (pfVar1[0xe] != 0.0) {
 
-        FUN_00448920(pfVar1[0xe]);
+        fx_delete(pfVar1[0xe]);
 
       }
 
@@ -1034,7 +1034,7 @@ LAB_004d2a47:
 
       if (pfVar1[0xe] != 0.0) {
 
-        FUN_00448920(pfVar1[0xe]);
+        fx_delete(pfVar1[0xe]);
 
       }
 
@@ -1640,7 +1640,7 @@ LAB_004d2124:
 
     if (pfVar1[0xe] != 0.0) {
 
-      FUN_00448920(pfVar1[0xe]);
+      fx_delete(pfVar1[0xe]);
 
     }
 
@@ -1808,7 +1808,7 @@ LAB_004d288a:
 
     if (pfVar1[0xe] != 0.0) {
 
-      FUN_00448920(pfVar1[0xe]);
+      fx_delete(pfVar1[0xe]);
 
     }
 
@@ -1952,7 +1952,7 @@ switchD_004d1ccc_caseD_20:
 
     if (pfVar1[0xe] != 0.0) {
 
-      FUN_00448920(pfVar1[0xe]);
+      fx_delete(pfVar1[0xe]);
 
     }
 
@@ -3317,12 +3317,12 @@ int crt_rand_scaled(int param_1)
 
 }
 
-/* ===== FUN_004d5740 @ 0x004D5740 ===== */
+/* ===== rndintrange @ 0x004D5740 ===== */
 /* PS2 candidate: rndintrange (conf 0.54) */
 
 
 
-int FUN_004d5740(int param_1,int param_2)
+int rndintrange(int param_1,int param_2)
 
 
 

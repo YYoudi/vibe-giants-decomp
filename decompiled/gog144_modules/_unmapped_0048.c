@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (45 named) — decompiled, names from PS2 symbols
+ * 74 functions (46 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -141,12 +141,12 @@ LAB_00480200:
 
 }
 
-/* ===== FUN_004802c0 @ 0x004802C0 ===== */
+/* ===== mecc_disable_personal_shield @ 0x004802C0 ===== */
 /* PS2 candidate: mecc_disable_personal_shield (conf 0.543) */
 
 
 
-void FUN_004802c0(int param_1)
+void mecc_disable_personal_shield(int param_1)
 
 
 
@@ -198,7 +198,7 @@ LAB_004802fd:
 
     ObjectSetAnim(iVar1,1,0x10,0,0,0);
 
-    FUN_00448920(*(undefined4 *)(iVar3 + 0xf8));
+    fx_delete(*(undefined4 *)(iVar3 + 0xf8));
 
     *(undefined4 *)(iVar3 + 0xf8) = 0;
 
@@ -290,7 +290,7 @@ void mecc_disable_repair_gun(int param_1)
 
     if (*(int *)(iVar2 + 0x144) != 0) {
 
-      FUN_00448920(*(int *)(iVar2 + 0x144));
+      fx_delete(*(int *)(iVar2 + 0x144));
 
       *(undefined4 *)(iVar2 + 0x144) = 0;
 
@@ -357,7 +357,7 @@ void FUN_004804d0(int param_1)
 
   if (*(int *)(iVar1 + 0x144) != 0) {
 
-    FUN_00448920(*(int *)(iVar1 + 0x144));
+    fx_delete(*(int *)(iVar1 + 0x144));
 
     *(undefined4 *)(iVar1 + 0x144) = 0;
 
@@ -790,7 +790,7 @@ void mecc_stop_looping_effects(int param_1)
 
     }
 
-    FUN_00448920(*(undefined4 *)(iVar1 + 0x19c));
+    fx_delete(*(undefined4 *)(iVar1 + 0x19c));
 
     *(undefined4 *)(iVar1 + 0x19c) = 0;
 
@@ -808,7 +808,7 @@ void mecc_stop_looping_effects(int param_1)
 
     }
 
-    FUN_00495e10(iVar1 + 0x1fc);
+    sound_stop_sequence(iVar1 + 0x1fc);
 
   }
 
@@ -816,7 +816,7 @@ void mecc_stop_looping_effects(int param_1)
 
   if (*(int *)(iVar1 + 0x1e4) != 0) {
 
-    FUN_00495e10(iVar1 + 0x1e4);
+    sound_stop_sequence(iVar1 + 0x1e4);
 
   }
 
@@ -840,13 +840,13 @@ void mecc_stop_looping_effects(int param_1)
 
   if (*(int *)(iVar1 + 0x1ec) != 0) {
 
-    FUN_00495e10(iVar1 + 0x1ec);
+    sound_stop_sequence(iVar1 + 0x1ec);
 
   }
 
   if (*(int *)(iVar1 + 0x1e8) != 0) {
 
-    FUN_00495e10(iVar1 + 0x1e8);
+    sound_stop_sequence(iVar1 + 0x1e8);
 
   }
 
@@ -1273,7 +1273,7 @@ void FUN_004810d0(int param_1)
 
                   }
 
-                  FUN_004802c0(param_1);
+                  mecc_disable_personal_shield(param_1);
 
                   iVar4 = *(int *)(param_1 + 0x100);
 
@@ -1435,7 +1435,7 @@ LAB_00481264:
 
                   }
 
-                  FUN_004802c0(param_1);
+                  mecc_disable_personal_shield(param_1);
 
                   iVar4 = *(int *)(param_1 + 0x100);
 
@@ -1443,7 +1443,7 @@ LAB_00481264:
 
                     if (*(int *)(iVar4 + 0x144) != 0) {
 
-                      FUN_00448920(*(int *)(iVar4 + 0x144));
+                      fx_delete(*(int *)(iVar4 + 0x144));
 
                       *(undefined4 *)(iVar4 + 0x144) = 0;
 
@@ -1717,7 +1717,7 @@ void obj_grab_carry(int param_1,int param_2)
 
   }
 
-  FUN_004802c0(iVar1);
+  mecc_disable_personal_shield(iVar1);
 
   iVar3 = *(int *)(iVar1 + 0x100);
 
@@ -1725,7 +1725,7 @@ void obj_grab_carry(int param_1,int param_2)
 
     if (*(int *)(iVar3 + 0x144) != 0) {
 
-      FUN_00448920(*(int *)(iVar3 + 0x144));
+      fx_delete(*(int *)(iVar3 + 0x144));
 
       *(undefined4 *)(iVar3 + 0x144) = 0;
 
@@ -1834,7 +1834,7 @@ void obj_ride_mount(int param_1,int param_2,int param_3)
 
   }
 
-  FUN_004802c0(param_1);
+  mecc_disable_personal_shield(param_1);
 
   iVar1 = *(int *)(param_1 + 0x100);
 
@@ -1842,7 +1842,7 @@ void obj_ride_mount(int param_1,int param_2,int param_3)
 
     if (*(int *)(iVar1 + 0x144) != 0) {
 
-      FUN_00448920(*(int *)(iVar1 + 0x144));
+      fx_delete(*(int *)(iVar1 + 0x144));
 
       *(undefined4 *)(iVar1 + 0x144) = 0;
 

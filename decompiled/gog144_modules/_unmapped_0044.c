@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (50 named) — decompiled, names from PS2 symbols
+ * 76 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1399,7 +1399,7 @@ void FUN_00441d20(undefined4 *param_1,float param_2)
 
     iVar3 = object_allocate_type(0x29f,0x80000000);
 
-    FUN_0049bc90(iVar2,param_2,iVar3 + 0xa0);
+    tracer_calc_falloff__FP6Traceri(iVar2,param_2,iVar3 + 0xa0);
 
     object_copy_posdirinfo(iVar3);
 
@@ -7790,12 +7790,12 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00448920 @ 0x00448920 ===== */
+/* ===== fx_delete @ 0x00448920 ===== */
 /* PS2 candidate: fx_delete (conf 0.536) */
 
 
 
-void FUN_00448920(int *param_1)
+void fx_delete(int *param_1)
 
 
 
@@ -9978,7 +9978,7 @@ LAB_0044abc9:
 
       pfVar19 = (float *)((int)pfVar18 + 9);
 
-      FUN_004d5740();
+      rndintrange();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10016,7 +10016,7 @@ LAB_0044abc9:
 
       pfVar19 = (float *)((int)pfVar18 + 9);
 
-      FUN_004d5740();
+      rndintrange();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -10792,7 +10792,7 @@ LAB_0044b93c:
 
     case 0x44:
 
-      iVar12 = FUN_004d5740();
+      iVar12 = rndintrange();
 
       pfVar19 = (float *)((int)pfVar18 + 0x11);
 
@@ -12612,7 +12612,7 @@ LAB_0044de79:
 
       pfVar19 = (float *)((int)pfVar18 + 9);
 
-      uVar14 = FUN_004d5740();
+      uVar14 = rndintrange();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
@@ -12688,7 +12688,7 @@ LAB_0044de79:
 
       pfVar19 = (float *)((int)pfVar18 + 9);
 
-      FUN_004d5740();
+      rndintrange();
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (65 named) — decompiled, names from PS2 symbols
+ * 145 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -2082,7 +2082,7 @@ LAB_0045294e:
 
         iVar3 = FUN_00457fb0(DAT_00632a88,iVar2);
 
-        if ((iVar3 != -1) && (iVar3 = FUN_004a9010(iVar3), iVar3 != -1)) {
+        if ((iVar3 != -1) && (iVar3 = IconDefAmmoIcon(iVar3), iVar3 != -1)) {
 
           inv_award_item(DAT_00632a88,0xffffffff,iVar3,999999,1);
 
@@ -2102,9 +2102,9 @@ LAB_0045294e:
 
         iVar3 = FUN_00457fb0(DAT_00632a88,iVar2);
 
-        if (((iVar3 != -1) && (iVar5 = FUN_004a9010(iVar3), iVar5 != -1)) &&
+        if (((iVar3 != -1) && (iVar5 = IconDefAmmoIcon(iVar3), iVar5 != -1)) &&
 
-           (iVar5 = FUN_004a9010(iVar3), iVar5 != -1)) {
+           (iVar5 = IconDefAmmoIcon(iVar3), iVar5 != -1)) {
 
           param_1 = (int *)0x0;
 
@@ -4623,9 +4623,9 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 
           }
 
-          FUN_00517220(iVar1,param_5,auStack_c);
+          xformobj_world_local(iVar1,param_5,auStack_c);
 
-          FUN_00517220(iVar1,&local_3c,auStack_18);
+          xformobj_world_local(iVar1,&local_3c,auStack_18);
 
           iVar3 = collide_line_bbox(&uStack_48,auStack_c,auStack_18,iVar4);
 
@@ -4862,7 +4862,7 @@ LAB_00455d20:
 
       if (iVar2 != 0) {
 
-        FUN_00448920(iVar2);
+        fx_delete(iVar2);
 
         *(undefined4 *)(iVar3 + 0x19c) = 0;
 
@@ -6099,7 +6099,7 @@ int FUN_004571a0(int param_1,int *param_2,int param_3)
 
     local_74 = &local_a4;
 
-    FUN_00517220(param_1,param_3,local_94);
+    xformobj_world_local(param_1,param_3,local_94);
 
     uVar1 = FUN_00403a70(param_1,0,local_70);
 
@@ -7454,7 +7454,7 @@ int SpecialWeaponIdSet__FP6OBJECTi(int param_1,int param_2)
 
     if (iVar4 == 0x11) {
 
-      FUN_004802c0(param_1);
+      mecc_disable_personal_shield(param_1);
 
     }
 
@@ -8290,7 +8290,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
         }
 
-        uVar5 = FUN_004a9010(uVar1);
+        uVar5 = IconDefAmmoIcon(uVar1);
 
         iVar3 = reaper_needs_ammo(iVar6,uVar5);
 
@@ -8418,7 +8418,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
     }
 
-    uVar5 = FUN_004a9010(uVar1);
+    uVar5 = IconDefAmmoIcon(uVar1);
 
     iVar3 = FUN_00457bd0(iVar6,uVar5);
 
@@ -8907,7 +8907,7 @@ LAB_00459ce0:
 
           }
 
-          iVar2 = FUN_004a9010(param_3);
+          iVar2 = IconDefAmmoIcon(param_3);
 
           if (iVar2 != -1) {
 
@@ -12802,12 +12802,12 @@ void reaper_lock_short_4(undefined4 param_1,undefined4 param_2,undefined4 param_
 
 }
 
-/* ===== FUN_0045dcb0 @ 0x0045DCB0 ===== */
+/* ===== marker_process__FP6OBJECT @ 0x0045DCB0 ===== */
 /* PS2 candidate: marker_process__FP6OBJECT (conf 0.536) */
 
 
 
-void FUN_0045dcb0(int param_1)
+void marker_process__FP6OBJECT(int param_1)
 
 
 
@@ -12959,7 +12959,7 @@ LAB_0045dd27:
 
       if (piVar6[-1] != 0) {
 
-        FUN_00448920(piVar6[-1]);
+        fx_delete(piVar6[-1]);
 
         piVar6[-1] = 0;
 
@@ -12967,7 +12967,7 @@ LAB_0045dd27:
 
       if (*piVar6 != 0) {
 
-        FUN_00448920(*piVar6);
+        fx_delete(*piVar6);
 
         *piVar6 = 0;
 
@@ -13183,7 +13183,7 @@ LAB_0045de98:
 
       else if (*piVar6 != 0) {
 
-        FUN_00448920(*piVar6);
+        fx_delete(*piVar6);
 
         *piVar6 = 0;
 
@@ -13191,7 +13191,7 @@ LAB_0045de98:
 
       if ((piVar6[-2] != iVar4) && (piVar6[-1] != 0)) {
 
-        FUN_00448920(piVar6[-1]);
+        fx_delete(piVar6[-1]);
 
         piVar6[-1] = 0;
 

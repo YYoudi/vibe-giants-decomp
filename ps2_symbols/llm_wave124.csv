@@ -1,0 +1,20 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004e13e0,FUN_004e13e0,,rpman_setup_firing_parameters__FP6OBJECTi,0.9,llm-w124,body-verified
+00414420,FUN_00414420,,point_in_tri,0.9,llm-w124,body-verified barycentric
+00495e10,FUN_00495e10,,sound_stop_sequence,0.9,llm-w124,body-verified
+0040cef0,FUN_0040cef0,,mecc_zoom_out__FRC10CntrlInputif,0.9,llm-w124,body-verified mode==2
+0040cec0,FUN_0040cec0,,mecc_zoom_out__FRC10CntrlInputif_2,0.9,llm-w124,body-verified mode==0
+004802c0,FUN_004802c0,,mecc_disable_personal_shield,0.9,llm-w124,body-verified
+004cb960,FUN_004cb960,,evilreaper_set_new_location__FP6OBJECTi,0.9,llm-w124,body-verified
+0053f5d0,FUN_0053f5d0,,GEO_QuatInverse,0.9,llm-w124,body-verified quat
+004e4bc0,FUN_004e4bc0,,cleaner_process,0.9,llm-w124,body-verified family
+004d5740,FUN_004d5740,,rndintrange,0.9,llm-w124,body-verified rand range
+0049bc90,FUN_0049bc90,,tracer_calc_falloff__FP6Traceri,0.9,llm-w124,body-verified
+00517220,FUN_00517220,,xformobj_world_local,0.9,llm-w124,body-verified+bsim
+0049c550,FUN_0049c550,,collide_wall_block,0.9,llm-w124,body-verified
+0053fca0,FUN_0053fca0,,MAP_MapperInitialize__FP11_MAP_MapperP12_MAP_KeyInit,0.9,llm-w124,body-verified
+0045dcb0,FUN_0045dcb0,,marker_process__FP6OBJECT,0.9,llm-w124,body-verified family
+00448920,FUN_00448920,,fx_delete,0.9,llm-w124,body-verified list walk
+004e6ba0,FUN_004e6ba0,,rpboat_logic__FP6OBJECT,0.9,llm-w124,body-verified
+004a9010,FUN_004a9010,,IconDefAmmoIcon,0.9,llm-w124,body-verified table
+004cb730,FUN_004cb730,,evilreaper_fire_bow__FP6OBJECT,0.9,llm-w124,body-verified

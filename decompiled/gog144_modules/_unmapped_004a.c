@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (66 named) — decompiled, names from PS2 symbols
+ * 131 functions (67 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3734,7 +3734,7 @@ void piranha_finit(void)
 
     if (*piVar1 != 0) {
 
-      FUN_00448920(*piVar1);
+      fx_delete(*piVar1);
 
     }
 
@@ -3801,7 +3801,7 @@ void FUN_004a4550(void)
 
         if (pfVar5[-2] != 0.0) {
 
-          FUN_00448920(pfVar5[-2]);
+          fx_delete(pfVar5[-2]);
 
         }
 
@@ -7512,12 +7512,12 @@ undefined4 FUN_004a8fe0(int param_1)
 
 }
 
-/* ===== FUN_004a9010 @ 0x004A9010 ===== */
+/* ===== IconDefAmmoIcon @ 0x004A9010 ===== */
 /* PS2 candidate: IconDefAmmoIcon (conf 0.534) */
 
 
 
-undefined4 FUN_004a9010(int param_1)
+undefined4 IconDefAmmoIcon(int param_1)
 
 
 

@@ -84,7 +84,7 @@ undefined4 * FUN_00467270(undefined4 param_1,int param_2,int param_3,undefined4 
 
       do {
 
-        iVar6 = FUN_004d5740(0xffffffc0,0x20);
+        iVar6 = rndintrange(0xffffffc0,0x20);
 
         iVar12 = 0;
 

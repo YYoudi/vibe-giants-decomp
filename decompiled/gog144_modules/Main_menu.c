@@ -30,7 +30,7 @@ void main_menu_00483200(int param_1,int param_2)
 
           if (iVar1 != 0) {
 
-            FUN_00448920(iVar1);
+            fx_delete(iVar1);
 
             *(undefined4 *)((&DAT_0059dcd4)[param_1 * 3] + iVar2 * 4) = 0;
 
@@ -62,7 +62,7 @@ void main_menu_00483200(int param_1,int param_2)
 
         if (iVar1 != 0) {
 
-          FUN_00448920(iVar1);
+          fx_delete(iVar1);
 
           *(undefined4 *)(*(int *)(param_2 + 0x48) + iVar2 * 4) = 0;
 

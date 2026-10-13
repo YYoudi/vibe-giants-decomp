@@ -3689,7 +3689,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
       if (*puVar5 != 0) {
 
-        FUN_00448920(*puVar5);
+        fx_delete(*puVar5);
 
       }
 
@@ -5102,7 +5102,7 @@ LAB_004b76fe:
 
     if (puVar3[0x38e] != 0) {
 
-      FUN_00448920(puVar3[0x38e]);
+      fx_delete(puVar3[0x38e]);
 
       puVar3[0x38e] = 0;
 
@@ -8190,7 +8190,7 @@ void FUN_004ba920(int param_1)
 
   FUN_00495ee0(pbVar1 + 0xff0);
 
-  FUN_00448920(*(undefined4 *)(pbVar1 + 0xe34));
+  fx_delete(*(undefined4 *)(pbVar1 + 0xe34));
 
   pbVar1[0xe34] = 0;
 
@@ -9795,7 +9795,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
       if (puVar2[0x38e] != 0) {
 
-        FUN_00448920(puVar2[0x38e]);
+        fx_delete(puVar2[0x38e]);
 
         puVar2[0x38e] = 0;
 
@@ -9831,7 +9831,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
     if (puVar7[0x38e] != 0) {
 
-      FUN_00448920(puVar7[0x38e]);
+      fx_delete(puVar7[0x38e]);
 
       puVar7[0x38e] = 0;
 
@@ -10131,7 +10131,7 @@ void reaper_select_sword(int param_1)
 
   if (puVar5[0x38e] != 0) {
 
-    FUN_00448920(puVar5[0x38e]);
+    fx_delete(puVar5[0x38e]);
 
     puVar5[0x38e] = 0;
 
@@ -10254,7 +10254,7 @@ void reaper_fire_logic__FP6OBJECT(int param_1)
 
     if (puVar2[0x38e] != 0) {
 
-      FUN_00448920(puVar2[0x38e]);
+      fx_delete(puVar2[0x38e]);
 
       puVar2[0x38e] = 0;
 
@@ -10867,7 +10867,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
   if (iVar5 != 0) {
 
-    FUN_00448920(iVar5);
+    fx_delete(iVar5);
 
     *(undefined4 *)(iVar7 + 0xe38) = 0;
 
@@ -11636,7 +11636,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     if (puVar7[0x38e] != 0) {
 
-      FUN_00448920(puVar7[0x38e]);
+      fx_delete(puVar7[0x38e]);
 
       puVar7[0x38e] = 0;
 
@@ -12136,7 +12136,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     if (puVar9[0x38e] != 0) {
 
-      FUN_00448920(puVar9[0x38e]);
+      fx_delete(puVar9[0x38e]);
 
       puVar9[0x38e] = 0;
 
@@ -12721,7 +12721,7 @@ void reaper_finish_hail__FP6OBJECT(int param_1)
 
       }
 
-      FUN_00448920(*local_68);
+      fx_delete(*local_68);
 
       param_1 = param_1 + 1;
 

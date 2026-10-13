@@ -102,7 +102,7 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
   do {
 
-    FUN_0049bc90(param_1,iVar6,local_c);
+    tracer_calc_falloff__FP6Traceri(param_1,iVar6,local_c);
 
     iVar5 = FUN_004f8800(iVar3);
 
@@ -233,7 +233,7 @@ void main_smoke_004f9170(int param_1)
 
   do {
 
-    FUN_0049bc90(param_1,iVar7,local_c);
+    tracer_calc_falloff__FP6Traceri(param_1,iVar7,local_c);
 
     iVar6 = FUN_004f8800(iVar4);
 

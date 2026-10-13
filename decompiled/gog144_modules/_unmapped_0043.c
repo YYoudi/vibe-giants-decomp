@@ -4040,7 +4040,7 @@ int editor_cursor_pick_point(int param_1)
 
       }
 
-      FUN_00517220(iVar4,local_c,&local_18);
+      xformobj_world_local(iVar4,local_c,&local_18);
 
       if (((local_18 <= pfVar5[3]) && (local_14 <= pfVar5[4])) &&
 

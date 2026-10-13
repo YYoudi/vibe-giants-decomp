@@ -14326,7 +14326,7 @@ void cam_mode_full(int param_1,int param_2)
 
     iVar3 = *(int *)(iVar5 + 0x100);
 
-    FUN_00448920(*(undefined4 *)(iVar3 + 0xf4));
+    fx_delete(*(undefined4 *)(iVar3 + 0xf4));
 
     *(undefined4 *)(iVar3 + 0xf4) = 0;
 

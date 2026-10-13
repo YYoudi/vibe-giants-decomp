@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (43 named) — decompiled, names from PS2 symbols
+ * 64 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -4986,7 +4986,7 @@ void FUN_004c6f40(int param_1)
 
       *piVar2 = 0;
 
-      FUN_00495e10(piVar2 + 3);
+      sound_stop_sequence(piVar2 + 3);
 
       FUN_00497510(piVar2[1]);
 
@@ -5999,7 +5999,7 @@ void sound_obj_seq_big(int param_1)
 
   *(undefined4 *)(iVar1 + 0x90) = uVar3;
 
-  uVar3 = FUN_004d5740(*(undefined4 *)(iVar1 + 0x74),*(undefined4 *)(iVar1 + 0x78));
+  uVar3 = rndintrange(*(undefined4 *)(iVar1 + 0x74),*(undefined4 *)(iVar1 + 0x78));
 
   *(undefined4 *)(iVar1 + 0x9c) = uVar3;
 
@@ -6164,11 +6164,11 @@ void sound_obj_seq_bigger(int param_1)
 
   *(undefined4 *)(iVar3 + 0x90) = uVar2;
 
-  uVar2 = FUN_004d5740(*(undefined4 *)(iVar3 + 0x6c),*(undefined4 *)(iVar3 + 0x70));
+  uVar2 = rndintrange(*(undefined4 *)(iVar3 + 0x6c),*(undefined4 *)(iVar3 + 0x70));
 
   *(undefined4 *)(iVar3 + 0x98) = uVar2;
 
-  uVar2 = FUN_004d5740(*(undefined4 *)(iVar3 + 0x74),*(undefined4 *)(iVar3 + 0x78));
+  uVar2 = rndintrange(*(undefined4 *)(iVar3 + 0x74),*(undefined4 *)(iVar3 + 0x78));
 
   *(undefined4 *)(iVar3 + 0x9c) = uVar2;
 
@@ -6351,12 +6351,12 @@ void sound_obj_seq_small(int param_1,undefined4 param_2,undefined4 param_3,undef
 
 }
 
-/* ===== FUN_004cb730 @ 0x004CB730 ===== */
+/* ===== evilreaper_fire_bow__FP6OBJECT @ 0x004CB730 ===== */
 /* PS2 candidate: evilreaper_fire_bow__FP6OBJECT (conf 0.533) */
 
 
 
-void FUN_004cb730(int param_1)
+void evilreaper_fire_bow__FP6OBJECT(int param_1)
 
 
 
@@ -6499,12 +6499,12 @@ void FUN_004cb860(int param_1)
 
 }
 
-/* ===== FUN_004cb960 @ 0x004CB960 ===== */
+/* ===== evilreaper_set_new_location__FP6OBJECTi @ 0x004CB960 ===== */
 /* PS2 candidate: evilreaper_set_new_location__FP6OBJECTi (conf 0.467) */
 
 
 
-void FUN_004cb960(int param_1,int param_2)
+void evilreaper_set_new_location__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -9751,9 +9751,9 @@ LAB_004cf690:
 
         }
 
-        uVar9 = FUN_004d5740(*(undefined4 *)(DAT_00632ed8 + 0xd18),
+        uVar9 = rndintrange(*(undefined4 *)(DAT_00632ed8 + 0xd18),
 
-                             *(undefined4 *)(DAT_00632ed8 + 0xd1c));
+                            *(undefined4 *)(DAT_00632ed8 + 0xd1c));
 
         *(undefined4 *)((int)fVar5 + 0xf4) = uVar9;
 
@@ -10017,9 +10017,9 @@ LAB_004cf539:
 
           }
 
-          uVar9 = FUN_004d5740(*(undefined4 *)(DAT_00632ed8 + 0xd18),
+          uVar9 = rndintrange(*(undefined4 *)(DAT_00632ed8 + 0xd18),
 
-                               *(undefined4 *)(DAT_00632ed8 + 0xd1c));
+                              *(undefined4 *)(DAT_00632ed8 + 0xd1c));
 
           *(undefined4 *)((int)fVar5 + 0xf4) = uVar9;
 

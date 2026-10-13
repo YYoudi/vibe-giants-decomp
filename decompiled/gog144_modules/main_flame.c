@@ -38,7 +38,7 @@ void FUN_00442f70(undefined4 *param_1,float param_2)
 
   }
 
-  iVar2 = FUN_004d5740(*(undefined4 *)(DAT_00632ed8 + 0x150),*(undefined4 *)(DAT_00632ed8 + 0x154));
+  iVar2 = rndintrange(*(undefined4 *)(DAT_00632ed8 + 0x150),*(undefined4 *)(DAT_00632ed8 + 0x154));
 
   uVar4 = iVar2 * 0x14 + 0x1c;
 

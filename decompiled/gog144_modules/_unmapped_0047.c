@@ -6186,7 +6186,7 @@ void FUN_0047caa0(int param_1,undefined4 param_2,undefined4 param_3,float *param
 
       if (*(int *)(iVar5 + 0xf4) != 0) {
 
-        FUN_00448920(*(int *)(iVar5 + 0xf4));
+        fx_delete(*(int *)(iVar5 + 0xf4));
 
         *(undefined4 *)(iVar5 + 0xf4) = 0;
 
@@ -6358,7 +6358,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x144) != 0) {
 
-        FUN_00448920(*(int *)(iVar5 + 0x144));
+        fx_delete(*(int *)(iVar5 + 0x144));
 
         *(undefined4 *)(iVar5 + 0x144) = 0;
 
@@ -6618,7 +6618,7 @@ LAB_0047cdb1:
 
   case 0x13:
 
-    FUN_004802c0(iVar7);
+    mecc_disable_personal_shield(iVar7);
 
     return;
 
@@ -6658,7 +6658,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x144) != 0) {
 
-        FUN_00448920(*(int *)(iVar5 + 0x144));
+        fx_delete(*(int *)(iVar5 + 0x144));
 
         *(undefined4 *)(iVar5 + 0x144) = 0;
 
@@ -6762,7 +6762,7 @@ LAB_0047cdb1:
 
     }
 
-    FUN_004802c0(iVar7);
+    mecc_disable_personal_shield(iVar7);
 
     iVar5 = *(int *)(iVar7 + 0x100);
 
@@ -6770,7 +6770,7 @@ LAB_0047cdb1:
 
       if (*(int *)(iVar5 + 0x144) != 0) {
 
-        FUN_00448920(*(int *)(iVar5 + 0x144));
+        fx_delete(*(int *)(iVar5 + 0x144));
 
         *(undefined4 *)(iVar5 + 0x144) = 0;
 
@@ -6912,7 +6912,7 @@ LAB_0047d90a:
 
     }
 
-    FUN_004802c0(iVar7);
+    mecc_disable_personal_shield(iVar7);
 
     iVar5 = *(int *)(iVar7 + 0x100);
 
@@ -6920,7 +6920,7 @@ LAB_0047d90a:
 
     if (*(int *)(iVar5 + 0x144) != 0) {
 
-      FUN_00448920(*(int *)(iVar5 + 0x144));
+      fx_delete(*(int *)(iVar5 + 0x144));
 
       *(undefined4 *)(iVar5 + 0x144) = 0;
 
@@ -7020,7 +7020,7 @@ LAB_0047d6b8:
 
     if (*(int *)(iVar5 + 0x19c) != 0) {
 
-      FUN_00448920(*(int *)(iVar5 + 0x19c));
+      fx_delete(*(int *)(iVar5 + 0x19c));
 
       *(undefined4 *)(iVar5 + 0x19c) = 0;
 
@@ -7062,7 +7062,7 @@ LAB_0047d6b8:
 
     if (*(int *)(iVar5 + 0x144) != 0) {
 
-      FUN_00448920(*(int *)(iVar5 + 0x144));
+      fx_delete(*(int *)(iVar5 + 0x144));
 
       *(undefined4 *)(iVar5 + 0x144) = 0;
 
@@ -7120,7 +7120,7 @@ LAB_0047d6b8:
 
     if (*(int *)(iVar5 + 0x1fc) != 0) {
 
-      FUN_00495e10(iVar5 + 0x1fc);
+      sound_stop_sequence(iVar5 + 0x1fc);
 
       return;
 
@@ -7206,7 +7206,7 @@ LAB_0047d6b8:
 
       }
 
-      FUN_004802c0(iVar7);
+      mecc_disable_personal_shield(iVar7);
 
       iVar5 = *(int *)(iVar7 + 0x100);
 
@@ -7214,7 +7214,7 @@ LAB_0047d6b8:
 
         if (*(int *)(iVar5 + 0x144) != 0) {
 
-          FUN_00448920(*(int *)(iVar5 + 0x144));
+          fx_delete(*(int *)(iVar5 + 0x144));
 
           *(undefined4 *)(iVar5 + 0x144) = 0;
 
@@ -7360,7 +7360,7 @@ LAB_0047d5b2:
 
     }
 
-    FUN_004802c0(iVar7);
+    mecc_disable_personal_shield(iVar7);
 
     iVar5 = *(int *)(iVar7 + 0x100);
 
@@ -7368,7 +7368,7 @@ LAB_0047d5b2:
 
     if (*(int *)(iVar5 + 0x144) != 0) {
 
-      FUN_00448920(*(int *)(iVar5 + 0x144));
+      fx_delete(*(int *)(iVar5 + 0x144));
 
       *(undefined4 *)(iVar5 + 0x144) = 0;
 
@@ -7824,7 +7824,7 @@ LAB_0047e183:
 
         if (*(int *)(iVar6 + 0x144) != 0) {
 
-          FUN_00448920(*(int *)(iVar6 + 0x144));
+          fx_delete(*(int *)(iVar6 + 0x144));
 
           *(undefined4 *)(iVar6 + 0x144) = 0;
 
@@ -7890,7 +7890,7 @@ LAB_0047e183:
 
         if (*(int *)(iVar6 + 0x144) != 0) {
 
-          FUN_00448920(*(int *)(iVar6 + 0x144));
+          fx_delete(*(int *)(iVar6 + 0x144));
 
           *(undefined4 *)(iVar6 + 0x144) = 0;
 
@@ -8246,7 +8246,7 @@ LAB_0047e84d:
 
       }
 
-      FUN_00448920(*(undefined4 *)(iVar3 + 0x19c));
+      fx_delete(*(undefined4 *)(iVar3 + 0x19c));
 
       *(undefined4 *)(iVar3 + 0x19c) = 0;
 
@@ -8264,7 +8264,7 @@ LAB_0047e84d:
 
       }
 
-      FUN_00495e10(iVar3 + 0x1fc);
+      sound_stop_sequence(iVar3 + 0x1fc);
 
     }
 
@@ -8276,7 +8276,7 @@ LAB_0047e84d:
 
       if (*(int *)(iVar6 + 0x144) != 0) {
 
-        FUN_00448920(*(int *)(iVar6 + 0x144));
+        fx_delete(*(int *)(iVar6 + 0x144));
 
         *(undefined4 *)(iVar6 + 0x144) = 0;
 
@@ -8488,7 +8488,7 @@ LAB_0047eba7:
 
         }
 
-        FUN_00448920(*(undefined4 *)(iVar3 + 0x19c));
+        fx_delete(*(undefined4 *)(iVar3 + 0x19c));
 
         *(undefined4 *)(iVar3 + 0x19c) = 0;
 
@@ -8506,7 +8506,7 @@ LAB_0047eba7:
 
         }
 
-        FUN_00495e10(iVar3 + 0x1fc);
+        sound_stop_sequence(iVar3 + 0x1fc);
 
       }
 
@@ -8710,7 +8710,7 @@ LAB_0047ec06:
 
     if (*(int *)(iVar6 + 0x144) != 0) {
 
-      FUN_00448920(*(int *)(iVar6 + 0x144));
+      fx_delete(*(int *)(iVar6 + 0x144));
 
       *(undefined4 *)(iVar6 + 0x144) = 0;
 
@@ -9461,7 +9461,7 @@ void FUN_0047f740(float param_1)
 
     if (*(float *)(iVar2 + 400) < 0.0 != (*(float *)(iVar2 + 400) == 0.0)) {
 
-      FUN_004802c0(fVar5);
+      mecc_disable_personal_shield(fVar5);
 
       if (((*(uint *)((int)fVar5 + 0xe0) & 0x2000000) != 0) &&
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (69 named) — decompiled, names from PS2 symbols
+ * 142 functions (72 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -2610,7 +2610,7 @@ LAB_00492458:
 
           iVar1 = FUN_00457fb0(DAT_00632a88,iVar9);
 
-          if ((iVar1 != -1) && (iVar2 = FUN_004a9010(iVar1), iVar2 != -1)) {
+          if ((iVar1 != -1) && (iVar2 = IconDefAmmoIcon(iVar1), iVar2 != -1)) {
 
             param_2 = (int *)0x0;
 
@@ -3424,11 +3424,11 @@ LAB_00492a3a:
 
                     else {
 
-                      uVar7 = FUN_004a9010(*(undefined4 *)(iVar6 + DAT_006330e4));
+                      uVar7 = IconDefAmmoIcon(*(undefined4 *)(iVar6 + DAT_006330e4));
 
                       uVar7 = FUN_004a90a0(uVar7);
 
-                      uVar7 = FUN_004a9010(*(undefined4 *)(iVar6 + DAT_006330e4),uVar7);
+                      uVar7 = IconDefAmmoIcon(*(undefined4 *)(iVar6 + DAT_006330e4),uVar7);
 
                       reaper_give_ammo(DAT_00632a88,uVar7);
 
@@ -5209,7 +5209,7 @@ void ambient_streams_handler(void)
 
     if (*(int *)(iVar2 + 0x1a0) != 0) {
 
-      FUN_00448920(*(int *)(iVar2 + 0x1a0));
+      fx_delete(*(int *)(iVar2 + 0x1a0));
 
       *(undefined4 *)(iVar2 + 0x1a0) = 0;
 
@@ -5219,7 +5219,7 @@ void ambient_streams_handler(void)
 
     if (*(int *)(iVar2 + 0xf4) != 0) {
 
-      FUN_00448920(*(int *)(iVar2 + 0xf4));
+      fx_delete(*(int *)(iVar2 + 0xf4));
 
       *(undefined4 *)(iVar2 + 0xf4) = 0;
 
@@ -6611,12 +6611,12 @@ LAB_00495d07:
 
 }
 
-/* ===== FUN_00495e10 @ 0x00495E10 ===== */
+/* ===== sound_stop_sequence @ 0x00495E10 ===== */
 /* PS2 candidate: sound_stop_sequence (conf 0.545) */
 
 
 
-void FUN_00495e10(int *param_1)
+void sound_stop_sequence(int *param_1)
 
 
 
@@ -12356,7 +12356,7 @@ void FUN_0049baa0(int param_1)
 
     if (*(int *)(iVar4 + 0x1a0) != 0) {
 
-      FUN_00448920(*(int *)(iVar4 + 0x1a0));
+      fx_delete(*(int *)(iVar4 + 0x1a0));
 
       *(undefined4 *)(iVar4 + 0x1a0) = 0;
 
@@ -12364,7 +12364,7 @@ void FUN_0049baa0(int param_1)
 
     if (*(int *)(iVar4 + 0xf4) != 0) {
 
-      FUN_00448920(*(int *)(iVar4 + 0xf4));
+      fx_delete(*(int *)(iVar4 + 0xf4));
 
       *(undefined4 *)(iVar4 + 0xf4) = 0;
 
@@ -12475,12 +12475,12 @@ void FUN_0049bc50(int param_1)
 
 }
 
-/* ===== FUN_0049bc90 @ 0x0049BC90 ===== */
+/* ===== tracer_calc_falloff__FP6Traceri @ 0x0049BC90 ===== */
 /* PS2 candidate: object_get_ref_world (conf 0.313) */
 
 
 
-void FUN_0049bc90(int param_1,int param_2,undefined4 param_3)
+void tracer_calc_falloff__FP6Traceri(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -12729,9 +12729,9 @@ int FUN_0049bf60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefi
 
   
 
-  FUN_00517220(param_3,param_1,local_c);
+  xformobj_world_local(param_3,param_1,local_c);
 
-  FUN_00517220(param_3,param_2,local_18);
+  xformobj_world_local(param_3,param_2,local_18);
 
   iVar1 = collgrid_anim_audio_user(local_c,local_18,param_3,param_4,param_5);
 
@@ -12820,7 +12820,7 @@ int collide_line_tri_hit
 
       local_14 = (param_2[2] - param_1[2]) * fVar1 + param_1[2];
 
-      iVar3 = FUN_00414420(&local_1c,&local_10,param_3,param_4,param_5);
+      iVar3 = point_in_tri(&local_1c,&local_10,param_3,param_4,param_5);
 
       if (param_6 == (float *)0x0) {
 
@@ -12995,12 +12995,12 @@ switchD_0049c26d_default:
 
 }
 
-/* ===== FUN_0049c550 @ 0x0049C550 ===== */
+/* ===== collide_wall_block @ 0x0049C550 ===== */
 /* PS2 candidate: collide_wall_block (conf 0.537) */
 
 
 
-undefined4 FUN_0049c550(float *param_1,float *param_2,float param_3)
+undefined4 collide_wall_block(float *param_1,float *param_2,float param_3)
 
 
 

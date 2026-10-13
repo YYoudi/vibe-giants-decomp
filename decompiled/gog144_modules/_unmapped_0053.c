@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (107 named) — decompiled, names from PS2 symbols
+ * 179 functions (109 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -19935,12 +19935,12 @@ undefined4 FUN_0053f440(float *param_1,float *param_2,float *param_3,float *para
 
 }
 
-/* ===== FUN_0053f5d0 @ 0x0053F5D0 ===== */
+/* ===== GEO_QuatInverse @ 0x0053F5D0 ===== */
 /* PS2 candidate: GEO_QuatInverse (conf 0.541) */
 
 
 
-void FUN_0053f5d0(float *param_1,float *param_2)
+void GEO_QuatInverse(float *param_1,float *param_2)
 
 
 
@@ -20218,7 +20218,7 @@ void GEO_QuatDivide(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   
 
-  FUN_0053f5d0(local_10,param_3);
+  GEO_QuatInverse(local_10,param_3);
 
   GEO_QuatMultiply(param_1,local_10,param_2);
 
@@ -20429,12 +20429,12 @@ void MAP_SListFixPtrs(int *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053fca0 @ 0x0053FCA0 ===== */
+/* ===== MAP_MapperInitialize__FP11_MAP_MapperP12_MAP_KeyInit @ 0x0053FCA0 ===== */
 /* PS2 candidate: MAP_MapperInitialize__FP11_MAP_MapperP12_MAP_KeyInit (conf 0.536) */
 
 
 
-void FUN_0053fca0(int param_1,undefined4 *param_2)
+void MAP_MapperInitialize__FP11_MAP_MapperP12_MAP_KeyInit(int param_1,undefined4 *param_2)
 
 
 
@@ -20610,7 +20610,7 @@ void FUN_0053fd40(undefined4 *param_1,undefined4 param_2,int param_3)
 
   if (*(int *)(param_3 + 4) != 0) {
 
-    FUN_0053fca0(puVar1,param_2);
+    MAP_MapperInitialize__FP11_MAP_MapperP12_MAP_KeyInit(puVar1,param_2);
 
   }
 

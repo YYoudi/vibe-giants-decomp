@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (101 named) — decompiled, names from PS2 symbols
+ * 186 functions (102 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -1999,7 +1999,7 @@ void flk_actor_update(int param_1)
 
     local_28 = *(undefined4 *)(DAT_00632a88 + 0xa8);
 
-    FUN_00517220(param_1,&local_30,local_24);
+    xformobj_world_local(param_1,&local_30,local_24);
 
     pcVar7 = *(char **)(param_1 + 0x204);
 
@@ -4365,7 +4365,7 @@ void object_spawn_class2(int param_1,undefined4 *param_2,float param_3,float par
 
     *param_2 = DAT_006328e8;
 
-    iVar2 = FUN_004d5740(*(int *)(DAT_00632ed8 + 0x200) + -1,*(int *)(DAT_00632ed8 + 0x204) + -1);
+    iVar2 = rndintrange(*(int *)(DAT_00632ed8 + 0x200) + -1,*(int *)(DAT_00632ed8 + 0x204) + -1);
 
     if (0 < iVar2) {
 
@@ -4536,9 +4536,9 @@ void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float p
 
       if ((((float)param_2 != 0.0) && (param_6 != 0)) &&
 
-         (iVar5 = FUN_004d5740(*(undefined4 *)(DAT_00632ed8 + 0x224),
+         (iVar5 = rndintrange(*(undefined4 *)(DAT_00632ed8 + 0x224),
 
-                               *(undefined4 *)(DAT_00632ed8 + 0x228)), 0 < iVar5)) {
+                              *(undefined4 *)(DAT_00632ed8 + 0x228)), 0 < iVar5)) {
 
         do {
 
@@ -6356,12 +6356,12 @@ void xformobj_p3d_world(int param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_00517220 @ 0x00517220 ===== */
+/* ===== xformobj_world_local @ 0x00517220 ===== */
 /* PS2 candidate: xformobj_world_local (conf 0.538) */
 
 
 
-void FUN_00517220(int param_1,float *param_2,float *param_3)
+void xformobj_world_local(int param_1,float *param_2,float *param_3)
 
 
 

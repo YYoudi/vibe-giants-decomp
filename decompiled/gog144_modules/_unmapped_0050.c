@@ -4718,7 +4718,7 @@ void mecc_smoking_fx_update(int param_1)
 
     if (*(int *)(iVar1 + 0x1a0) != 0) {
 
-      FUN_00448920(*(int *)(iVar1 + 0x1a0));
+      fx_delete(*(int *)(iVar1 + 0x1a0));
 
       *(undefined4 *)(iVar1 + 0x1a0) = 0;
 
@@ -4762,7 +4762,7 @@ void mecc_smoking_fx_update(int param_1)
 
   if ((*(int *)(iVar1 + 0x1a4) != iVar3) && (*(int *)(iVar1 + 0x1a0) != 0)) {
 
-    FUN_00448920(*(int *)(iVar1 + 0x1a0));
+    fx_delete(*(int *)(iVar1 + 0x1a0));
 
     *(undefined4 *)(iVar1 + 0x1a0) = 0;
 
@@ -6839,7 +6839,7 @@ LAB_005062c9:
 
         else {
 
-          FUN_004802c0();
+          mecc_disable_personal_shield();
 
         }
 
@@ -7625,7 +7625,7 @@ LAB_005063fa:
 
                   else {
 
-                    FUN_004802c0();
+                    mecc_disable_personal_shield();
 
                   }
 
@@ -7787,7 +7787,7 @@ LAB_005067ce:
 
           if ((uVar9 & 0x800000) == 0) goto LAB_005062c9;
 
-          FUN_004802c0(param_1);
+          mecc_disable_personal_shield(param_1);
 
           goto LAB_005062ce;
 
@@ -8561,7 +8561,7 @@ LAB_00507665:
 
       if (*(int *)(iVar7 + 0x1a8) != 0) {
 
-        FUN_00448920(*(int *)(iVar7 + 0x1a8));
+        fx_delete(*(int *)(iVar7 + 0x1a8));
 
       }
 
@@ -8823,7 +8823,7 @@ undefined * TextGetPtrRandom(undefined *param_1)
 
   } while (iVar4 < 10);
 
-  uVar3 = FUN_004d5740(1,iVar1 + -1);
+  uVar3 = rndintrange(1,iVar1 + -1);
 
   crt_sprintf(local_100,&DAT_0055c8ac,param_1,uVar3);
 
@@ -11530,7 +11530,7 @@ void kabutoai_move(float param_1)
 
     pfVar1[5] = (float)fVar13;
 
-    fVar7 = (float)FUN_004d5740(1,2);
+    fVar7 = (float)rndintrange(1,2);
 
     pfVar1[9] = fVar7;
 

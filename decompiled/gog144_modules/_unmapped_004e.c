@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (45 named) — decompiled, names from PS2 symbols
+ * 94 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -95,7 +95,7 @@ void ai_death_anim(int param_1)
 
   else {
 
-    FUN_00495e10(*(int *)(param_1 + 0x100) + 0x234);
+    sound_stop_sequence(*(int *)(param_1 + 0x100) + 0x234);
 
     if ((*(int *)(param_1 + 0x10) != 0x65) && (*(int *)(*(int *)(param_1 + 8) + 0x19c) != 0)) {
 
@@ -219,11 +219,11 @@ void rpman_init_firing__FP6OBJECT(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  uVar2 = FUN_004d5740(*(undefined4 *)(iVar1 + 0x7c),*(undefined4 *)(iVar1 + 0x80));
+  uVar2 = rndintrange(*(undefined4 *)(iVar1 + 0x7c),*(undefined4 *)(iVar1 + 0x80));
 
   *(undefined1 *)(iVar1 + 0x24) = uVar2;
 
-  uVar2 = FUN_004d5740(*(undefined4 *)(iVar1 + 0x74),*(undefined4 *)(iVar1 + 0x78));
+  uVar2 = rndintrange(*(undefined4 *)(iVar1 + 0x74),*(undefined4 *)(iVar1 + 0x78));
 
   *(undefined1 *)(iVar1 + 0x25) = uVar2;
 
@@ -233,12 +233,12 @@ void rpman_init_firing__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004e13e0 @ 0x004E13E0 ===== */
+/* ===== rpman_setup_firing_parameters__FP6OBJECTi @ 0x004E13E0 ===== */
 /* PS2 candidate: rpman_setup_firing_parameters__FP6OBJECTi (conf 0.546) */
 
 
 
-void FUN_004e13e0(int param_1,int param_2)
+void rpman_setup_firing_parameters__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -531,7 +531,7 @@ void FUN_004e1970(float param_1)
 
   }
 
-  FUN_004e13e0(iVar3,0xffffffff);
+  rpman_setup_firing_parameters__FP6OBJECTi(iVar3,0xffffffff);
 
   uVar2 = *(uint *)(iVar3 + 0xe0);
 
@@ -591,11 +591,11 @@ void FUN_004e1970(float param_1)
 
           *(float *)(iVar3 + 300) = local_38[0] * -100.0;
 
-          uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+          uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
           *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-          uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+          uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
           *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -625,11 +625,11 @@ void FUN_004e1970(float param_1)
 
         iVar5 = *(int *)(iVar3 + 0x100);
 
-        uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+        uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
         *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-        uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+        uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
         *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -659,11 +659,11 @@ void FUN_004e1970(float param_1)
 
       iVar5 = *(int *)(iVar3 + 0x100);
 
-      uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+      uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
       *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-      uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+      uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
       *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -703,11 +703,11 @@ void FUN_004e1970(float param_1)
 
         iVar5 = *(int *)(iVar3 + 0x100);
 
-        uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+        uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
         *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-        uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+        uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
         *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -739,11 +739,11 @@ void FUN_004e1970(float param_1)
 
       iVar5 = *(int *)(iVar3 + 0x100);
 
-      uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+      uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
       *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-      uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+      uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
       *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -801,11 +801,11 @@ void FUN_004e1970(float param_1)
 
       iVar5 = *(int *)(iVar3 + 0x100);
 
-      uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+      uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
       *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-      uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+      uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
       *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -837,11 +837,11 @@ void FUN_004e1970(float param_1)
 
     iVar5 = *(int *)(iVar3 + 0x100);
 
-    uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+    uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
     *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-    uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+    uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
     *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -863,7 +863,7 @@ void FUN_004e1970(float param_1)
 
   }
 
-  FUN_004e13e0(iVar3,0x400);
+  rpman_setup_firing_parameters__FP6OBJECTi(iVar3,0x400);
 
   if ((*(int *)(iVar3 + 0x10) != 0x50) && (*(int *)(*(int *)(iVar3 + 8) + 0x148) != 0)) {
 
@@ -873,11 +873,11 @@ void FUN_004e1970(float param_1)
 
   iVar5 = *(int *)(iVar3 + 0x100);
 
-  uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
+  uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x7c),*(undefined4 *)(iVar5 + 0x80));
 
   *(undefined1 *)(iVar5 + 0x24) = uVar4;
 
-  uVar4 = FUN_004d5740(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
+  uVar4 = rndintrange(*(undefined4 *)(iVar5 + 0x74),*(undefined4 *)(iVar5 + 0x78));
 
   *(undefined1 *)(iVar5 + 0x25) = uVar4;
 
@@ -1460,7 +1460,7 @@ LAB_004e28c4:
 
     if (*(int *)(*(int *)(iVar5 + 0x100) + 0xd8) != 0) {
 
-      FUN_004e4bc0(iVar5,0);
+      cleaner_process(iVar5,0);
 
       return 1;
 
@@ -3127,7 +3127,7 @@ void FUN_004e3eb0(int param_1)
 
     *(float *)(iVar1 + 0x40) = (float)fVar3;
 
-    uVar2 = FUN_004d5740(0x7d,0x81);
+    uVar2 = rndintrange(0x7d,0x81);
 
     sound_play_obj(uVar2,param_1);
 
@@ -3801,7 +3801,7 @@ void ai_idle_anim_53(int param_1,int param_2)
 
   if (*(int *)(*(int *)(param_1 + 0x100) + 0xd8) != 0) {
 
-    FUN_004e4bc0(param_1,param_2);
+    cleaner_process(param_1,param_2);
 
     return;
 
@@ -3948,12 +3948,12 @@ void ai_range_check(int param_1)
 
 }
 
-/* ===== FUN_004e4bc0 @ 0x004E4BC0 ===== */
+/* ===== cleaner_process @ 0x004E4BC0 ===== */
 /* PS2 candidate: cleaner_process (conf 0.541) */
 
 
 
-void FUN_004e4bc0(float param_1,int param_2)
+void cleaner_process(float param_1,int param_2)
 
 
 
@@ -4435,7 +4435,7 @@ LAB_004e51e4:
 
     piVar2[7] = (int)(float)fVar4;
 
-    uVar3 = FUN_004d5740(piVar2[0x1f],piVar2[0x20]);
+    uVar3 = rndintrange(piVar2[0x1f],piVar2[0x20]);
 
     *(undefined1 *)(piVar2 + 9) = uVar3;
 
@@ -5093,7 +5093,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       piVar4[7] = (int)(float)fVar13;
 
-      uVar8 = FUN_004d5740(piVar4[0x1f],piVar4[0x20]);
+      uVar8 = rndintrange(piVar4[0x1f],piVar4[0x20]);
 
       *(undefined1 *)(piVar4 + 9) = uVar8;
 
@@ -5422,7 +5422,7 @@ void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
 
     }
 
-    FUN_00495e10(piVar2 + 0x8d);
+    sound_stop_sequence(piVar2 + 0x8d);
 
     cVar7 = *(char *)((int)piVar2 + 0x25) + -1;
 
@@ -5444,7 +5444,7 @@ void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
 
       piVar2[7] = (int)(float)fVar10;
 
-      uVar6 = FUN_004d5740(piVar2[0x1f],piVar2[0x20]);
+      uVar6 = rndintrange(piVar2[0x1f],piVar2[0x20]);
 
       *(undefined1 *)(piVar2 + 9) = uVar6;
 
@@ -5464,7 +5464,7 @@ void FUN_004e5f70(int param_1,int param_2,int param_3,float param_4)
 
   }
 
-  FUN_00495e10(piVar2 + 0x8d);
+  sound_stop_sequence(piVar2 + 0x8d);
 
   iVar8 = *(int *)(param_1 + 0xe8);
 
@@ -6024,12 +6024,12 @@ LAB_004e6af2:
 
 }
 
-/* ===== FUN_004e6ba0 @ 0x004E6BA0 ===== */
+/* ===== rpboat_logic__FP6OBJECT @ 0x004E6BA0 ===== */
 /* PS2 candidate: rpboat_logic__FP6OBJECT (conf 0.534) */
 
 
 
-void FUN_004e6ba0(float param_1,float param_2)
+void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
 
 
@@ -6758,7 +6758,7 @@ void rpman_gib__FP6OBJECTT0(int param_1,int param_2)
 
   if (*(int *)(iVar3 + 0x234) != 0) {
 
-    FUN_00495e10(iVar3 + 0x234);
+    sound_stop_sequence(iVar3 + 0x234);
 
   }
 
@@ -10502,7 +10502,7 @@ void FUN_004ee150(void)
 
   if ((DAT_006330e4 != 0) && (*(int *)(DAT_006330e4 + 0x4f6c) != 0)) {
 
-    FUN_00448920(*(int *)(DAT_006330e4 + 0x4f6c));
+    fx_delete(*(int *)(DAT_006330e4 + 0x4f6c));
 
     *(undefined4 *)(DAT_006330e4 + 0x4f6c) = 0;
 
@@ -10553,7 +10553,7 @@ void fx_spawn_checked(int param_1)
 
   if ((DAT_006330e4 != 0) && (*(int *)(DAT_006330e4 + 0x4f6c) != 0)) {
 
-    FUN_00448920(*(int *)(DAT_006330e4 + 0x4f6c));
+    fx_delete(*(int *)(DAT_006330e4 + 0x4f6c));
 
     *(undefined4 *)(DAT_006330e4 + 0x4f6c) = 0;
 

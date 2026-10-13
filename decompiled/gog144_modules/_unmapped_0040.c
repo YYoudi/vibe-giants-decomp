@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (58 named) — decompiled, names from PS2 symbols
+ * 105 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -3124,7 +3124,7 @@ LAB_00404e2f:
 
   if ((uVar2 & 0x10008) != 0) {
 
-    iVar5 = FUN_0040cef0();
+    iVar5 = mecc_zoom_out__FRC10CntrlInputif();
 
     if (iVar5 != 0) {
 
@@ -8022,7 +8022,7 @@ void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 
   
 
-  param_2 = FUN_004d5740(param_2,param_3);
+  param_2 = rndintrange(param_2,param_3);
 
   if (0 < param_2) {
 
@@ -8151,7 +8151,7 @@ void FUN_0040b4b0(int param_1)
 
   
 
-  iVar4 = FUN_004d5740(*(undefined4 *)(DAT_00632ed8 + 0x2c4),*(undefined4 *)(DAT_00632ed8 + 0x2c8));
+  iVar4 = rndintrange(*(undefined4 *)(DAT_00632ed8 + 0x2c4),*(undefined4 *)(DAT_00632ed8 + 0x2c8));
 
   if (0 < iVar4) {
 
@@ -8654,7 +8654,7 @@ void FUN_0040bb40(undefined4 param_1,int param_2)
 
   if (param_2 != 0) {
 
-    FUN_00517220(param_1,param_2,&local_c);
+    xformobj_world_local(param_1,param_2,&local_c);
 
     if (DAT_00632db4 == (undefined4 *)0x0) {
 
@@ -9016,9 +9016,9 @@ int buoy_set_lights(int param_1,int param_2)
 
     puVar3 = *(undefined4 **)(*(int *)(param_1 + 0x274) + 0x100);
 
-    FUN_00448920(*puVar2);
+    fx_delete(*puVar2);
 
-    FUN_00448920(*puVar3);
+    fx_delete(*puVar3);
 
     uVar4 = fx_get_free_effect__Fv();
 
@@ -9054,9 +9054,9 @@ int buoy_set_lights(int param_1,int param_2)
 
     puVar2 = *(undefined4 **)(*(int *)(iVar5 + 0x274) + 0x100);
 
-    FUN_00448920(*puVar1);
+    fx_delete(*puVar1);
 
-    FUN_00448920(*puVar2);
+    fx_delete(*puVar2);
 
     uVar4 = fx_get_free_effect__Fv();
 
@@ -9321,12 +9321,12 @@ undefined4 camera_cursor_fire(void)
 
 }
 
-/* ===== FUN_0040cec0 @ 0x0040CEC0 ===== */
+/* ===== mecc_zoom_out__FRC10CntrlInputif_2 @ 0x0040CEC0 ===== */
 /* PS2 candidate: mecc_zoom_out__FRC10CntrlInputif (conf 0.545) */
 
 
 
-undefined4 FUN_0040cec0(void)
+undefined4 mecc_zoom_out__FRC10CntrlInputif_2(void)
 
 
 
@@ -9342,12 +9342,12 @@ undefined4 FUN_0040cec0(void)
 
 }
 
-/* ===== FUN_0040cef0 @ 0x0040CEF0 ===== */
+/* ===== mecc_zoom_out__FRC10CntrlInputif @ 0x0040CEF0 ===== */
 /* PS2 candidate: mecc_zoom_out__FRC10CntrlInputif_2 (conf 0.545) */
 
 
 
-undefined4 FUN_0040cef0(void)
+undefined4 mecc_zoom_out__FRC10CntrlInputif(void)
 
 
 
@@ -11061,19 +11061,19 @@ void FUN_0040ee20(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     if (*(int *)(iVar1 + 0x4c) != 0) {
 
-      FUN_00448920(*(int *)(iVar1 + 0x4c));
+      fx_delete(*(int *)(iVar1 + 0x4c));
 
     }
 
     if (*(int *)(iVar1 + 0x50) != 0) {
 
-      FUN_00448920(*(int *)(iVar1 + 0x50));
+      fx_delete(*(int *)(iVar1 + 0x50));
 
     }
 
     if (*(int *)(iVar1 + 0x54) != 0) {
 
-      FUN_00448920(*(int *)(iVar1 + 0x54));
+      fx_delete(*(int *)(iVar1 + 0x54));
 
     }
 

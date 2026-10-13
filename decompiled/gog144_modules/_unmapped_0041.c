@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (62 named) — decompiled, names from PS2 symbols
+ * 100 functions (63 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -1837,7 +1837,7 @@ void collide_objects(int param_1)
 
                   else {
 
-                    FUN_00517220(iVar5,param_1 + 0xa0,&local_ac);
+                    xformobj_world_local(iVar5,param_1 + 0xa0,&local_ac);
 
                     fVar2 = *(float *)(param_1 + 0x154) / *(float *)(iVar5 + 0xc4);
 
@@ -1859,7 +1859,7 @@ void collide_objects(int param_1)
 
                     if (iVar7 != 0) {
 
-                      FUN_00517220(iVar5,param_1 + 0xac,&local_94);
+                      xformobj_world_local(iVar5,param_1 + 0xac,&local_94);
 
                       local_9c = ABS(local_90 - local_5c);
 
@@ -2972,12 +2972,12 @@ float10 FUN_004143f0(undefined4 param_1)
 
 }
 
-/* ===== FUN_00414420 @ 0x00414420 ===== */
+/* ===== point_in_tri @ 0x00414420 ===== */
 /* PS2 candidate: point_in_tri (conf 0.546) */
 
 
 
-uint FUN_00414420(int param_1,float *param_2,int param_3,int param_4,int param_5)
+uint point_in_tri(int param_1,float *param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -3447,7 +3447,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
   local_3c = 4;
 
-  while ((FUN_0049c550(param_1 + 0xa0,param_3,*(undefined4 *)(param_1 + 0x154)),
+  while ((collide_wall_block(param_1 + 0xa0,param_3,*(undefined4 *)(param_1 + 0x154)),
 
          piVar3 = DAT_00632d7c,
 
@@ -3838,7 +3838,7 @@ undefined4 obj_animate_pose_update(int param_1,int param_2)
 
           local_80 = local_98 * local_9c + local_8c + *(float *)(param_1 + 0xb4);
 
-          iVar8 = FUN_00414420(&local_88,&local_ac,&local_74,&local_30,&local_3c);
+          iVar8 = point_in_tri(&local_88,&local_ac,&local_74,&local_30,&local_3c);
 
           if (iVar8 != 0) {
 
@@ -3962,7 +3962,7 @@ LAB_0041529b:
 
           if ((*(float *)(param_1 + 0x140) <= local_80) &&
 
-             (iVar8 = FUN_00414420(&local_88,&local_ac,&local_74,&local_30,&local_3c), iVar8 != 0))
+             (iVar8 = point_in_tri(&local_88,&local_ac,&local_74,&local_30,&local_3c), iVar8 != 0))
 
           {
 
@@ -4054,7 +4054,7 @@ LAB_00415478:
 
               local_80 = fVar6 * fVar5 + fVar4 + *(float *)(param_1 + 0xb4);
 
-              iVar8 = FUN_00414420(&local_88,&local_ac,&local_74,&local_30,&local_3c);
+              iVar8 = point_in_tri(&local_88,&local_ac,&local_74,&local_30,&local_3c);
 
               if ((iVar8 != 0) &&
 
@@ -4435,7 +4435,7 @@ LAB_00415d36:
 
           local_b8 = local_b8 + -1;
 
-          FUN_00517220(iVar1,pfVar8,&local_a8);
+          xformobj_world_local(iVar1,pfVar8,&local_a8);
 
           pfVar9 = (float *)(*(int *)(*(int *)(iVar1 + 8) + 0x400) + 0x44);
 
@@ -4848,7 +4848,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
                                     (float10)param_2[2]);
 
-                  iVar7 = FUN_00414420(&local_64,&local_b0,&local_8c,&local_3c,&local_30);
+                  iVar7 = point_in_tri(&local_64,&local_b0,&local_8c,&local_3c,&local_30);
 
                   if (iVar7 != 0) {
 
