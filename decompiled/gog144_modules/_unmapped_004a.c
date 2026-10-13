@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (121 named) — decompiled, names from PS2 symbols
+ * 131 functions (122 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -6303,8 +6303,8 @@ LAB_004a6a79:
 
 }
 
-/* ===== FUN_004a6b60 @ 0x004A6B60 ===== */
-void FUN_004a6b60(int param_1)
+/* ===== player_pitch_update @ 0x004A6B60 ===== */
+void player_pitch_update(int param_1)
 
 
 

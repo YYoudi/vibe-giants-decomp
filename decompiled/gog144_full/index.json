@@ -3922,7 +3922,7 @@
  "0x00471A60": {
   "name": "game_loop_run",
   "named": true,
-  "len": 4785
+  "len": 4795
  },
  "0x00471DC0": {
   "name": "render_error_dialog_check",
@@ -3985,9 +3985,9 @@
   "len": 670
  },
  "0x00475290": {
-  "name": "FUN_00475290",
-  "named": false,
-  "len": 1298
+  "name": "obj_float_chase_update",
+  "named": true,
+  "len": 1308
  },
  "0x00475350": {
   "name": "FUN_00475350",
@@ -5800,9 +5800,9 @@
   "len": 3789
  },
  "0x004A6B60": {
-  "name": "FUN_004a6b60",
-  "named": false,
-  "len": 683
+  "name": "player_pitch_update",
+  "named": true,
+  "len": 690
  },
  "0x004A6C00": {
   "name": "obj_scale_compute",
@@ -7000,9 +7000,9 @@
   "len": 2095
  },
  "0x004D4DB0": {
-  "name": "FUN_004d4db0",
-  "named": false,
-  "len": 1191
+  "name": "obj_state_machine_update",
+  "named": true,
+  "len": 1203
  },
  "0x004D5710": {
   "name": "rndstart",
@@ -7575,9 +7575,9 @@
   "len": 1465
  },
  "0x004EF190": {
-  "name": "FUN_004ef190",
-  "named": false,
-  "len": 1155
+  "name": "obj_health_ratio_update",
+  "named": true,
+  "len": 1166
  },
  "0x004EF2D0": {
   "name": "ANM_AnimGetImage",

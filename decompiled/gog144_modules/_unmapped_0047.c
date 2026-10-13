@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (61 named) — decompiled, names from PS2 symbols
+ * 67 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1407,7 +1407,7 @@ void game_loop_run(int param_1)
 
           kabutoai_select_target__FP6OBJECT();
 
-          FUN_00475290();
+          obj_float_chase_update();
 
           weapon_id_inventory_update();
 
@@ -2059,8 +2059,8 @@ undefined4 world_edge_quadrant(float *param_1)
 
 }
 
-/* ===== FUN_00475290 @ 0x00475290 ===== */
-void FUN_00475290(void)
+/* ===== obj_float_chase_update @ 0x00475290 ===== */
+void obj_float_chase_update(void)
 
 
 

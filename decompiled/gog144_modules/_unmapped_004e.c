@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (80 named) — decompiled, names from PS2 symbols
+ * 94 functions (81 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -11795,8 +11795,8 @@ LAB_004ef171:
 
 }
 
-/* ===== FUN_004ef190 @ 0x004EF190 ===== */
-undefined4 FUN_004ef190(int param_1)
+/* ===== obj_health_ratio_update @ 0x004EF190 ===== */
+undefined4 obj_health_ratio_update(int param_1)
 
 
 

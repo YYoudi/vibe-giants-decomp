@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004ef190,FUN_004ef190,,obj_health_ratio_update,0.9,runtime-w215,BP hit per-frame: arg obj class 0x3D; body 1-hp/max + death flag 0x80
+004d4db0,FUN_004d4db0,,obj_state_machine_update,0.9,runtime-w215,BP hit: caller obj_velocity_commit; state 0/1/3 machine, ripper 0x17 partner watch
+00475290,FUN_00475290,,obj_float_chase_update,0.9,runtime-w215,BP hit: caller ai_anim_select_mode ctx; DAT_0059dbe0 entries chase limits at 30/250 per sec
+004a6b60,FUN_004a6b60,,player_pitch_update,0.9,runtime-w215,BP hit: caller mecc_init; player DAT_00632a88 pitch clamp [-90,+80]
