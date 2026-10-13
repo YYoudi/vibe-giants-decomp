@@ -1379,7 +1379,7 @@ void FUN_00471a60(int param_1)
 
         if ((*(uint *)(puVar1[3] + 0xd8) & 0xc000) == 0) {
 
-          FUN_00499280(puVar1[3]);
+          object_copy_posdirinfo(puVar1[3]);
 
         }
 
@@ -2334,7 +2334,7 @@ void dlog_text_render_screen(void)
 
     FUN_005163e0(&DAT_0059dc40);
 
-    FUN_00515eb0(&DAT_0059dc28,&DAT_0059dc2c);
+    render_get_clip_nearfar(&DAT_0059dc28,&DAT_0059dc2c);
 
     local_24 = DAT_0059dbe8 + DAT_0059dbf4;
 
@@ -4964,7 +4964,7 @@ void mecc_init__FP6OBJECT(int param_1)
 
       *(int *)(param_1 + 0x104) = iVar1 + 0x80;
 
-      FUN_004a1740(param_1);
+      PhysicsExZeroForce(param_1);
 
       if (**(int **)(param_1 + 8) != 0x85) {
 
@@ -6628,7 +6628,7 @@ LAB_0047cdb1:
 
     if (*(int *)(iVar5 + 0x18c) == 0x13) {
 
-      uVar4 = FUN_00458150(iVar7);
+      uVar4 = WeaponIdGetPresent__FP6OBJECT(iVar7);
 
       *(undefined4 *)(iVar5 + 0xfc) = uVar4;
 
@@ -7804,7 +7804,7 @@ LAB_0047e183:
 
   if ((param_1[0x38] & 0x20000U) == 0) {
 
-    local_74 = FUN_00458150(param_1);
+    local_74 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
     if ((*(byte *)(param_1 + 0x83) & 0x10) != 0) {
 

@@ -7842,7 +7842,7 @@ void FUN_0040afb0(int param_1,int param_2)
 
   FUN_00418630(uVar2,0x55,iVar3 + 0xa0);
 
-  FUN_00499280(*(undefined4 *)(iVar1 + 0x52c + param_2 * 4));
+  object_copy_posdirinfo(*(undefined4 *)(iVar1 + 0x52c + param_2 * 4));
 
   *(undefined4 *)(*(int *)(iVar1 + 0x52c + param_2 * 4) + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 

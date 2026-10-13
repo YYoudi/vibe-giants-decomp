@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (52 named) — decompiled, names from PS2 symbols
+ * 131 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -797,12 +797,12 @@ void AddHud__4cHudP8cHudIcon_2(void)
 
 }
 
-/* ===== FUN_004a1740 @ 0x004A1740 ===== */
+/* ===== PhysicsExZeroForce @ 0x004A1740 ===== */
 /* PS2 candidate: PhysicsExInit (conf 0.605) */
 
 
 
-void FUN_004a1740(int param_1)
+void PhysicsExZeroForce(int param_1)
 
 
 
@@ -5474,7 +5474,7 @@ void FUN_004a5f40(int param_1)
 
       camera_fov_update();
 
-      FUN_00499280(DAT_00632a88);
+      object_copy_posdirinfo(DAT_00632a88);
 
       FUN_0049b8a0(DAT_00632a88);
 
@@ -9135,7 +9135,7 @@ void weapondefs_load(void)
 
   }
 
-  FUN_005178d0(iVar1,&local_8,8);
+  BinFileRead(iVar1,&local_8,8);
 
   puVar2 = _malloc(local_4);
 
@@ -9143,7 +9143,7 @@ void weapondefs_load(void)
 
   puVar2[1] = local_4;
 
-  FUN_005178d0(iVar1,puVar2 + 2,local_4 - 8);
+  BinFileRead(iVar1,puVar2 + 2,local_4 - 8);
 
   ANM_BinderDestroy_2(iVar1);
 
@@ -9343,7 +9343,7 @@ int FUN_004aa0b0(int param_1,undefined4 param_2)
 
     puVar1[0x6c] = 0xffffffff;
 
-    FUN_004a1740(iVar2);
+    PhysicsExZeroForce(iVar2);
 
     *puVar1 = *puVar1 | 1;
 
@@ -11776,11 +11776,11 @@ void read_objects_bin_PS2(void)
 
   FUN_00543e00();
 
-  FUN_005178d0();
+  BinFileRead();
 
   piVar9 = (int *)FUN_0053a700();
 
-  FUN_005178d0();
+  BinFileRead();
 
   pcStack0000000c = (char *)*piVar9;
 

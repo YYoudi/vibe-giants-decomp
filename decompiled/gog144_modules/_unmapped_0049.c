@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (59 named) — decompiled, names from PS2 symbols
+ * 142 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -3430,7 +3430,7 @@ LAB_00492a3a:
 
                       uVar7 = FUN_004a9010(*(undefined4 *)(iVar6 + DAT_006330e4),uVar7);
 
-                      FUN_004b8f00(DAT_00632a88,uVar7);
+                      reaper_give_ammo(DAT_00632a88,uVar7);
 
                     }
 
@@ -9965,12 +9965,12 @@ void object_stop_movement(int param_1)
 
 }
 
-/* ===== FUN_00499280 @ 0x00499280 ===== */
+/* ===== object_copy_posdirinfo @ 0x00499280 ===== */
 /* PS2 candidate: object_set_location_fix (conf 0.535) */
 
 
 
-void FUN_00499280(int param_1)
+void object_copy_posdirinfo(int param_1)
 
 
 
@@ -13875,7 +13875,7 @@ void partyhouse_exit_dlog(void)
 
     FUN_004186c0(DAT_0059f998,0xc,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
 
-    FUN_00499280(DAT_00632a88);
+    object_copy_posdirinfo(DAT_00632a88);
 
     FUN_0040d790();
 

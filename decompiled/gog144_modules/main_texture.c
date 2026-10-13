@@ -50,7 +50,7 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
   iVar3 = FUN_00517970(param_2);
 
-  FUN_005178d0(param_2,&local_28,4);
+  BinFileRead(param_2,&local_28,4);
 
   iVar2 = 0;
 
@@ -64,9 +64,9 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
       sceSifLoadElf_2(param_2,1);
 
-      FUN_005178d0(param_2,&local_24,1);
+      BinFileRead(param_2,&local_24,1);
 
-      FUN_005178d0(param_2,local_20,local_24 & 0xff);
+      BinFileRead(param_2,local_20,local_24 & 0xff);
 
       uVar6 = 0xffffffff;
 
@@ -148,17 +148,17 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
     do {
 
-      FUN_005178d0(param_2,&local_29,1);
+      BinFileRead(param_2,&local_29,1);
 
       *(undefined1 *)(puVar4 + 8) = local_29;
 
-      FUN_005178d0(param_2,&local_29,1);
+      BinFileRead(param_2,&local_29,1);
 
       *(undefined1 *)((int)puVar4 + 0x23) = local_29;
 
-      FUN_005178d0(param_2,&local_24,1);
+      BinFileRead(param_2,&local_24,1);
 
-      FUN_005178d0(param_2,local_20,local_24 & 0xff);
+      BinFileRead(param_2,local_20,local_24 & 0xff);
 
       *puVar4 = puVar8;
 

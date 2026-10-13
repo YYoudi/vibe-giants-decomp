@@ -1568,7 +1568,7 @@ void obj_path_follow(int param_1)
 
                   (param_1,0,*(undefined4 *)(iVar2 + 0x174),iVar2 + 0xa0,iVar2 + 200);
 
-        FUN_00499280(iVar2);
+        object_copy_posdirinfo(iVar2);
 
         FUN_00413820(iVar2);
 
@@ -4396,7 +4396,7 @@ LAB_00503c4b:
 
          , ABS(fVar6) < (float10)50.0 || ((*(byte *)(iVar2 + 0xe0) & 4) != 0)))) &&
 
-       (iVar5 = FUN_00458150(param_1), iVar5 != 0x13)) {
+       (iVar5 = WeaponIdGetPresent__FP6OBJECT(param_1), iVar5 != 0x13)) {
 
       if (((*(uint *)(param_1 + 0xdc) & 0x8000000) != 0) && (*(float *)(iVar3 + 0x28) == 0.0)) {
 
@@ -6349,7 +6349,7 @@ void mecc_animselect_gm(int param_1,int param_2)
 
   local_80 = -1;
 
-  iVar7 = FUN_00458150(param_1);
+  iVar7 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
   local_40 = iVar7;
 
@@ -6371,7 +6371,7 @@ void mecc_animselect_gm(int param_1,int param_2)
 
   }
 
-  iVar7 = FUN_00458200(param_1);
+  iVar7 = WeaponIdCheck__FP6OBJECT(param_1);
 
   if (((*(uint *)(param_1 + 0xe0) & 0x2000000) == 0) || (iVar3 == 0x2e)) {
 
@@ -12300,7 +12300,7 @@ switchD_0050ca70_caseD_15:
 
       playerobj_eval_refpt(param_1,0,iVar9 + 0xa0);
 
-      FUN_00499280(iVar9);
+      object_copy_posdirinfo(iVar9);
 
       *(undefined4 *)(iVar9 + 200) = *(undefined4 *)((int)param_1 + 200);
 
@@ -12392,7 +12392,7 @@ switchD_0050ca70_caseD_15:
 
         *(undefined4 *)(iVar6 + 0x11c) = uVar15;
 
-        FUN_00499280(iVar6);
+        object_copy_posdirinfo(iVar6);
 
         *(uint *)(iVar6 + 0xd8) = *(uint *)(iVar6 + 0xd8) | 0x40000000;
 
@@ -12796,7 +12796,7 @@ switchD_0050ca70_caseD_15:
 
       FUN_004979b0(iVar9,param_1);
 
-      FUN_00499280(iVar9);
+      object_copy_posdirinfo(iVar9);
 
       *(undefined4 *)(iVar9 + 0x178) = *(undefined4 *)(iVar9 + 0xa0);
 
@@ -13932,7 +13932,7 @@ LAB_0050e4da:
 
       FUN_004979b0(iVar9,param_1);
 
-      FUN_00499280(iVar9);
+      object_copy_posdirinfo(iVar9);
 
       *(undefined4 *)(iVar9 + 0x178) = *(undefined4 *)(iVar9 + 0xa0);
 
@@ -13966,7 +13966,7 @@ LAB_0050e4da:
 
       FUN_004979b0(iVar9,param_1);
 
-      FUN_00499280(iVar9);
+      object_copy_posdirinfo(iVar9);
 
       *(undefined4 *)(iVar9 + 0x178) = *(undefined4 *)(iVar9 + 0xa0);
 
@@ -13992,7 +13992,7 @@ LAB_0050e4da:
 
         object_change_ospec(iVar6,0x32);
 
-        FUN_00499280(iVar6);
+        object_copy_posdirinfo(iVar6);
 
         *(undefined4 *)(iVar6 + 0x178) = *(undefined4 *)(iVar6 + 0xa0);
 

@@ -106,7 +106,7 @@ void teammecc_create(int param_1,int param_2)
 
         teammecc_get_wantloc_formation(param_1,0,iVar4,iVar3 + 0xa0,iVar3 + 200);
 
-        FUN_00499280(iVar3);
+        object_copy_posdirinfo(iVar3);
 
         *(undefined4 *)(iVar3 + 0xec) = 0;
 

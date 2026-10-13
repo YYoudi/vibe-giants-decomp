@@ -38,7 +38,7 @@ void main_fx_004470b0(undefined4 param_1)
 
   }
 
-  FUN_005178d0(iVar1,&local_30,4);
+  BinFileRead(iVar1,&local_30,4);
 
   if (local_30 != 1) {
 
@@ -50,15 +50,15 @@ void main_fx_004470b0(undefined4 param_1)
 
   }
 
-  FUN_005178d0(iVar1,&param_1,4);
+  BinFileRead(iVar1,&param_1,4);
 
-  FUN_005178d0(iVar1,&DAT_0059ce60,4);
+  BinFileRead(iVar1,&DAT_0059ce60,4);
 
   DAT_0059ce6c = FUN_0053a700(0xc,param_1,s_fx_bin_00558838,s_C__Giants_source_Main_fx_c_00558840,
 
                               0xbe);
 
-  FUN_005178d0(iVar1,DAT_0059ce6c,param_1);
+  BinFileRead(iVar1,DAT_0059ce6c,param_1);
 
   ANM_BinderDestroy_2(iVar1);
 
@@ -170,7 +170,7 @@ int fx_setupWeather__Fi(undefined4 param_1)
 
   *(int *)(iVar2 + 0x104) = iVar1 + 0xa0;
 
-  FUN_004a1740(iVar2);
+  PhysicsExZeroForce(iVar2);
 
   *(uint *)(iVar2 + 0xd8) = *(uint *)(iVar2 + 0xd8) | 0x10;
 

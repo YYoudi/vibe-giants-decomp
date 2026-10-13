@@ -15765,7 +15765,7 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
   if ((*(byte *)(param_1 + 0xd8) & 2) != 0) {
 
-    FUN_00515eb0(&pcStack_90,&puStack_88);
+    render_get_clip_nearfar(&pcStack_90,&puStack_88);
 
     FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_90,(undefined4 *)0x479c4000);
 

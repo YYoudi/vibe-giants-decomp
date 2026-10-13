@@ -245,7 +245,7 @@ void FUN_004803a0(int param_1)
 
   if (*(int *)(iVar2 + 0x18c) == 0x13) {
 
-    uVar1 = FUN_00458150(param_1);
+    uVar1 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
     *(undefined4 *)(iVar2 + 0xfc) = uVar1;
 
@@ -7215,7 +7215,7 @@ int texture_add_file(int *param_1)
 
   }
 
-  FUN_005178d0(iVar2,&local_120,4);
+  BinFileRead(iVar2,&local_120,4);
 
   if ((((local_120 != 0x1a0002e1) && (local_120 != 0x1a0002e2)) && (local_120 != 0x1a0002e3)) &&
 
@@ -7231,11 +7231,11 @@ int texture_add_file(int *param_1)
 
   }
 
-  FUN_005178d0(iVar2,local_11c,0x1c);
+  BinFileRead(iVar2,local_11c,0x1c);
 
   sceSifLoadElf(iVar2,local_108);
 
-  FUN_005178d0(iVar2,&local_12c,4);
+  BinFileRead(iVar2,&local_12c,4);
 
   if (param_1 != (int *)0x0) {
 
@@ -7267,9 +7267,9 @@ int texture_add_file(int *param_1)
 
         if ((int)puVar7 < 0x59e8d4) {
 
-          FUN_005178d0(iVar2,puVar7,1);
+          BinFileRead(iVar2,puVar7,1);
 
-          FUN_005178d0(iVar2,puVar6,0x20);
+          BinFileRead(iVar2,puVar6,0x20);
 
           uVar3 = local_128;
 

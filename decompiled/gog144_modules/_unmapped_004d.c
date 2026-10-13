@@ -1668,7 +1668,7 @@ LAB_004d2124:
 
     ANM_DumpCluster((undefined4 *)(param_1 + 0xa0));
 
-    FUN_00499280(param_1);
+    object_copy_posdirinfo(param_1);
 
     object_stop_movement(param_1);
 
@@ -2639,7 +2639,7 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
       playerobj_eval_refpt(param_1,0,iVar4 + 0xa0);
 
-      FUN_00499280(iVar4);
+      object_copy_posdirinfo(iVar4);
 
       *(undefined4 *)(iVar4 + 200) = *(undefined4 *)(param_1 + 200);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (97 named) — decompiled, names from PS2 symbols
+ * 179 functions (98 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -5017,7 +5017,7 @@ void comm_cam_mode_menu(undefined4 *param_1)
 
       *(undefined4 *)(iVar1 + 0xa8) = *(undefined4 *)((int)param_1 + 0x11);
 
-      FUN_00499280(iVar1);
+      object_copy_posdirinfo(iVar1);
 
       FUN_004a7440(iVar1);
 
@@ -5118,7 +5118,7 @@ void mecc_shield_spell(int param_1)
 
     *(undefined4 *)(iVar2 + 0xb4) = *(undefined4 *)(param_1 + 0x1c);
 
-    FUN_00499280(iVar2);
+    object_copy_posdirinfo(iVar2);
 
     FUN_004a7440(iVar2);
 
@@ -5287,7 +5287,7 @@ void mecc_cloak_spell(int param_1)
 
     *(undefined4 *)(iVar2 + 0xb4) = *(undefined4 *)(param_1 + 0x1e);
 
-    FUN_00499280(iVar2);
+    object_copy_posdirinfo(iVar2);
 
     FUN_004a7440(iVar2);
 
@@ -14715,12 +14715,12 @@ void AddHud__4cHudP8cHudIcon_3(void)
 
 }
 
-/* ===== FUN_0053bb50 @ 0x0053BB50 ===== */
+/* ===== ANM_ObjFixPtrs__FP7ANM_ObjP8_MAP_Fix @ 0x0053BB50 ===== */
 /* PS2 candidate: ANM_ObjFixPtrs__FP7ANM_ObjP8_MAP_Fix (conf 0.732) */
 
 
 
-void FUN_0053bb50(int param_1,undefined4 param_2)
+void ANM_ObjFixPtrs__FP7ANM_ObjP8_MAP_Fix(int param_1,undefined4 param_2)
 
 
 
@@ -14817,7 +14817,7 @@ void nam_name_lookup(int param_1,int param_2)
 
       puVar5 = (undefined4 *)NAM_NameGetCustom(iVar6);
 
-      FUN_0053bb50(*puVar5,uVar3);
+      ANM_ObjFixPtrs__FP7ANM_ObjP8_MAP_Fix(*puVar5,uVar3);
 
       iVar6 = NAM_NameFindByHandleIndex_2(uVar2,iVar4);
 

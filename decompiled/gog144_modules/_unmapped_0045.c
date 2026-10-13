@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (57 named) — decompiled, names from PS2 symbols
+ * 145 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -303,12 +303,12 @@ void gameover_menu(void)
 
 }
 
-/* ===== FUN_004511d0 @ 0x004511D0 ===== */
+/* ===== calc_tri_weighted_plane @ 0x004511D0 ===== */
 /* PS2 candidate: calc_tri_plane (conf 0.591) */
 
 
 
-void FUN_004511d0(float *param_1,float *param_2,float *param_3,float *param_4)
+void calc_tri_weighted_plane(float *param_1,float *param_2,float *param_3,float *param_4)
 
 
 
@@ -3225,7 +3225,7 @@ void giftshop_exit__Fv(void)
 
       FUN_004186c0(DAT_0059d970,1,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
 
-      FUN_00499280(DAT_00632a88);
+      object_copy_posdirinfo(DAT_00632a88);
 
       FUN_0040d790();
 
@@ -3325,7 +3325,7 @@ void giftshop_exit__Fv(void)
 
     FUN_004186c0(DAT_0059d96c,uVar2,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
 
-    FUN_00499280(DAT_00632a88);
+    object_copy_posdirinfo(DAT_00632a88);
 
     FUN_0040d790();
 
@@ -7091,12 +7091,12 @@ int FUN_00458040(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00458150 @ 0x00458150 ===== */
+/* ===== WeaponIdGetPresent__FP6OBJECT @ 0x00458150 ===== */
 /* PS2 candidate: WeaponIdGetCurrent__FP6OBJECT (conf 0.544) */
 
 
 
-undefined4 FUN_00458150(int param_1)
+undefined4 WeaponIdGetPresent__FP6OBJECT(int param_1)
 
 
 
@@ -7182,12 +7182,12 @@ undefined4 WeaponIdGetPresent__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_00458200 @ 0x00458200 ===== */
+/* ===== WeaponIdCheck__FP6OBJECT @ 0x00458200 ===== */
 /* PS2 candidate: WeaponIdCheck__FP6OBJECT (conf 0.744) */
 
 
 
-bool FUN_00458200(int param_1)
+bool WeaponIdCheck__FP6OBJECT(int param_1)
 
 
 
@@ -8352,7 +8352,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
           param_2 = (uint *)(float)iVar3;
 
-          fVar8 = (float10)FUN_004b9290(iVar6,uVar1);
+          fVar8 = (float10)reaper_get_ammo(iVar6,uVar1);
 
           if ((float10)(float)param_2 <= fVar8) {
 
@@ -8705,7 +8705,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
         }
 
-        FUN_004b8f00(param_1,param_3,param_4);
+        reaper_give_ammo(param_1,param_3,param_4);
 
       }
 
@@ -10138,7 +10138,7 @@ void FUN_0045ab30(int param_1)
 
     if (iVar1 != 0) {
 
-      iVar1 = FUN_00458150(param_1);
+      iVar1 = WeaponIdGetPresent__FP6OBJECT(param_1);
 
       if (((iVar1 != 1) && (iVar1 != 0x13)) && (-1 < iVar1)) {
 
@@ -10217,11 +10217,13 @@ void FUN_0045ac50(undefined4 *param_1)
 
   if (iVar3 != 0) {
 
-    iVar3 = FUN_00458150(puVar2);
+    iVar3 = WeaponIdGetPresent__FP6OBJECT(puVar2);
 
-    if (((-1 < iVar3) && (iVar3 = FUN_00458150(puVar2), iVar3 != 1)) &&
+    if (((-1 < iVar3) && (iVar3 = WeaponIdGetPresent__FP6OBJECT(puVar2), iVar3 != 1)) &&
 
-       ((iVar3 = FUN_0052aa70(), iVar3 == 0 || (iVar3 = FUN_00458150(puVar2), iVar3 != 3)))) {
+       ((iVar3 = FUN_0052aa70(), iVar3 == 0 ||
+
+        (iVar3 = WeaponIdGetPresent__FP6OBJECT(puVar2), iVar3 != 3)))) {
 
       fVar6 = (float10)FUN_004d5780(0,0x40c8f5c3);
 
@@ -10235,13 +10237,15 @@ void FUN_0045ac50(undefined4 *param_1)
 
       param_1 = (undefined4 *)0x0;
 
-      uVar4 = FUN_00458150(puVar2,&param_1,(float)fVar6 * 6.0,(float)(fVar7 * (float10)6.0),
+      uVar4 = WeaponIdGetPresent__FP6OBJECT
 
-                           0x41280000,0x41f00000);
+                        (puVar2,&param_1,(float)fVar6 * 6.0,(float)(fVar7 * (float10)6.0),0x41280000
+
+                         ,0x41f00000);
 
       uVar4 = FUN_0045a2b0(puVar2,uVar4);
 
-      uVar4 = FUN_00458150(puVar2,uVar4);
+      uVar4 = WeaponIdGetPresent__FP6OBJECT(puVar2,uVar4);
 
       FUN_0045a820(puVar2,uVar4);
 
@@ -12579,7 +12583,7 @@ LAB_0045d769:
 
       }
 
-      FUN_004a1740(puVar3);
+      PhysicsExZeroForce(puVar3);
 
     }
 

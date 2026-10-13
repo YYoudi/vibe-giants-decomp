@@ -4077,7 +4077,7 @@ int object_spawn_42(undefined4 param_1)
 
   project_cursor_to_ground(iVar3 + 0xa0,0x447a0000,&param_1);
 
-  FUN_00499280(iVar3);
+  object_copy_posdirinfo(iVar3);
 
   *(uint *)(iVar3 + 0xdc) = *(uint *)(iVar3 + 0xdc) | 0x20000000;
 
@@ -4135,7 +4135,7 @@ int object_spawn_42(undefined4 param_1)
 
     }
 
-    FUN_00499280(iVar3);
+    object_copy_posdirinfo(iVar3);
 
   }
 
@@ -4145,7 +4145,7 @@ int object_spawn_42(undefined4 param_1)
 
       *(undefined4 *)(iVar3 + 0xa8) = 0;
 
-      FUN_00499280(iVar3);
+      object_copy_posdirinfo(iVar3);
 
     }
 
@@ -4257,7 +4257,7 @@ int main_editor_004382b0(int param_1,int param_2)
 
   *(undefined4 *)(param_1 + 0xfc) = *(undefined4 *)(param_2 + 0x28);
 
-  FUN_00499280(param_1);
+  object_copy_posdirinfo(param_1);
 
   return param_1;
 

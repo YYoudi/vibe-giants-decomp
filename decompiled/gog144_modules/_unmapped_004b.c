@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (45 named) — decompiled, names from PS2 symbols
+ * 90 functions (47 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -6111,12 +6111,12 @@ void FUN_004b8e40(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 }
 
-/* ===== FUN_004b8f00 @ 0x004B8F00 ===== */
+/* ===== reaper_give_ammo @ 0x004B8F00 ===== */
 /* PS2 candidate: reaper_give_ammo (conf 0.515) */
 
 
 
-void FUN_004b8f00(int param_1,undefined4 param_2,int param_3)
+void reaper_give_ammo(int param_1,undefined4 param_2,int param_3)
 
 
 
@@ -6489,12 +6489,12 @@ void FUN_004b91d0(int param_1)
 
 }
 
-/* ===== FUN_004b9290 @ 0x004B9290 ===== */
+/* ===== reaper_get_ammo @ 0x004B9290 ===== */
 /* PS2 candidate: reaper_has_bow_4 (conf 0.731) */
 
 
 
-float10 FUN_004b9290(int param_1,int param_2)
+float10 reaper_get_ammo(int param_1,int param_2)
 
 
 
@@ -8298,7 +8298,7 @@ void reaper_init__FP6OBJECT(int param_1)
 
   *(int *)(param_1 + 0x104) = iVar1 + 0xd00;
 
-  FUN_004a1740(param_1);
+  PhysicsExZeroForce(param_1);
 
   *(undefined4 *)(*(int *)(param_1 + 0x104) + 4) = *(undefined4 *)(DAT_00632ed8 + 0x704);
 

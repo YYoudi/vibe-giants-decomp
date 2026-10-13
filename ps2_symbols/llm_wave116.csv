@@ -1,0 +1,13 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004511d0,FUN_004511d0,,calc_tri_weighted_plane,0.9,llm-w116,body-verified cross product
+004a1740,FUN_004a1740,,PhysicsExZeroForce,0.9,llm-w116,body-verified zero force fields
+004b8f00,FUN_004b8f00,,reaper_give_ammo,0.9,llm-w116,body-verified weapon switch
+00458200,FUN_00458200,,WeaponIdCheck__FP6OBJECT,0.9,llm-w116,body-verified
+00499280,FUN_00499280,,object_copy_posdirinfo,0.9,llm-w116,body-verified pos/dir copy
+00458150,FUN_00458150,,WeaponIdGetPresent__FP6OBJECT,0.9,llm-w116,body-verified
+00514c00,FUN_00514c00,,wave_effect_zero_edges,0.9,llm-w116,body-verified
+0053bb50,FUN_0053bb50,,ANM_ObjFixPtrs__FP7ANM_ObjP8_MAP_Fix,0.9,llm-w116,body-verified MAP_PtrFix calls
+004b9290,FUN_004b9290,,reaper_get_ammo,0.9,llm-w116,body-verified ammo scan (renamed from reaper_has_bow var)
+005178d0,FUN_005178d0,,BinFileRead,0.9,llm-w116,body-verified ReadFile wrapper
+00540190,FUN_00540190,,MAP_ChunkPoolCreate,0.9,llm-w116,body-verified MAP alloc
+00515eb0,FUN_00515eb0,,render_get_clip_nearfar,0.9,llm-w116,body-verified (rejected fx_free_effect)

@@ -972,7 +972,7 @@ LAB_004374a1:
 
             collgrid_clear_grid(piVar11[0xe]);
 
-            FUN_00499280(piVar11[0xe]);
+            object_copy_posdirinfo(piVar11[0xe]);
 
             *(float *)(piVar11[0xe] + 200) = (float)local_7c + *(float *)(piVar11[0xe] + 200);
 
@@ -1208,7 +1208,7 @@ LAB_004374a1:
 
             *(float *)(piVar11[0xe] + 0xa4) = _DAT_0059cc14 - local_80 * (float)local_7c;
 
-            FUN_00499280(piVar11[0xe]);
+            object_copy_posdirinfo(piVar11[0xe]);
 
             *(uint *)(piVar11[0xe] + 0xdc) = *(uint *)(piVar11[0xe] + 0xdc) | 0x80000000;
 
@@ -1282,7 +1282,7 @@ LAB_004374a1:
 
           *(float *)(iVar10 + 0xa8) = (float)(fVar24 + (float10)*(float *)(iVar10 + 0x1d4));
 
-          FUN_00499280(iVar10);
+          object_copy_posdirinfo(iVar10);
 
           *(undefined4 *)(iVar10 + 0x108) = 0;
 
@@ -1394,7 +1394,7 @@ LAB_00437d68:
 
           }
 
-          FUN_00499280(piVar11[0xe]);
+          object_copy_posdirinfo(piVar11[0xe]);
 
           collgrid_clear_grid(piVar11[0xe]);
 

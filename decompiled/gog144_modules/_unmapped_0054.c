@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (253 named) — decompiled, names from PS2 symbols
+ * 351 functions (254 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -143,12 +143,12 @@ undefined4 MAP_PtrFix(int *param_1,int *param_2)
 
 }
 
-/* ===== FUN_00540190 @ 0x00540190 ===== */
+/* ===== MAP_ChunkPoolCreate @ 0x00540190 ===== */
 /* PS2 candidate: MAP_ChunkPoolCreate (conf 0.721) */
 
 
 
-void FUN_00540190(undefined4 param_1,undefined2 param_2,short param_3)
+void MAP_ChunkPoolCreate(undefined4 param_1,undefined2 param_2,short param_3)
 
 
 

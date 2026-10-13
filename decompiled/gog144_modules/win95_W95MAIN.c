@@ -106,7 +106,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
                                 s_C__Giants_source_win95_W95MAIN_C_0057d858,0x7be);
 
-  FUN_005178d0(iVar11,pcVar8,iVar7);
+  BinFileRead(iVar11,pcVar8,iVar7);
 
   ANM_BinderDestroy_2(iVar11);
 

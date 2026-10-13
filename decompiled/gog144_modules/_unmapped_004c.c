@@ -7034,7 +7034,7 @@ void dome_render_text(void)
 
   (**(code **)(DAT_00656430 + 0x10))(DAT_00656430,1);
 
-  FUN_00515eb0(&pcStack_8,&puStack_4);
+  render_get_clip_nearfar(&pcStack_8,&puStack_4);
 
   FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_8,(undefined4 *)0x46dac000);
 
@@ -7626,7 +7626,7 @@ LAB_004ccbc0:
 
   FUN_005163e0(auStack_10c);
 
-  FUN_00515eb0(&pcStack_1c0,&puStack_1c8);
+  render_get_clip_nearfar(&pcStack_1c0,&puStack_1c8);
 
   FNT_StringRender__FPcP14FNT_RenderInfo((char *)0x40400000,(undefined4 *)0x4b989680);
 
@@ -8725,7 +8725,7 @@ undefined4 dev_debug_flags(void)
 
     (**(code **)(DAT_00656430 + 0x10))(DAT_00656430,1,iVar5,uVar13,uVar15);
 
-    FUN_00515eb0(&local_218,&local_210);
+    render_get_clip_nearfar(&local_218,&local_210);
 
     FNT_StringRender__FPcP14FNT_RenderInfo(local_218,(undefined4 *)0x46dac000);
 

@@ -1056,7 +1056,7 @@ void FUN_004f4fc0(float param_1)
 
     *(float *)((int)fVar3 + 0xa8) = (float)fVar4;
 
-    FUN_00499280(fVar3);
+    object_copy_posdirinfo(fVar3);
 
   }
 
@@ -1197,7 +1197,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
       *(float *)(param_1 + 0xa8) = (float)fVar6;
 
-      FUN_00499280(param_1);
+      object_copy_posdirinfo(param_1);
 
     }
 
@@ -2265,7 +2265,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
           playerobj_eval_refpt(param_1,0,iVar2 + 0xa0);
 
-          FUN_00499280(*(undefined4 *)(iVar1 + 0x30));
+          object_copy_posdirinfo(*(undefined4 *)(iVar1 + 0x30));
 
           *(undefined4 *)(*(int *)(iVar1 + 0x30) + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
@@ -2827,7 +2827,7 @@ void smartie_make_held_object__FP6OBJECTi(int param_1,undefined4 param_2)
 
     playerobj_eval_refpt(param_1,0,iVar2 + 0xa0);
 
-    FUN_00499280(*(undefined4 *)(iVar3 + 0x30));
+    object_copy_posdirinfo(*(undefined4 *)(iVar3 + 0x30));
 
     *(undefined4 *)(*(int *)(iVar3 + 0x30) + 0x18c) = *(undefined4 *)(param_1 + 0x18c);
 
@@ -3780,7 +3780,7 @@ void FUN_004f9380(int param_1)
 
         playerobj_eval_refpt(param_1,1,iVar6 + 0xa0);
 
-        FUN_00499280(iVar6);
+        object_copy_posdirinfo(iVar6);
 
         *(float *)(iVar6 + 200) = *(float *)(param_1 + 200) + *(float *)(iVar5 + 0x24);
 

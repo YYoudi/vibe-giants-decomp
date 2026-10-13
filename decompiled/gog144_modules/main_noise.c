@@ -78,17 +78,17 @@ void read_sfx_bin(undefined4 param_1)
 
   if (DAT_006331fc == 0) {
 
-    FUN_005178d0(param_1,&local_24,4);
+    BinFileRead(param_1,&local_24,4);
 
     if (local_24 == -1) {
 
-      FUN_005178d0(param_1,&local_18,4);
+      BinFileRead(param_1,&local_18,4);
 
-      FUN_005178d0(param_1,&local_24,4);
+      BinFileRead(param_1,&local_24,4);
 
-      FUN_005178d0(param_1,&local_8,4);
+      BinFileRead(param_1,&local_8,4);
 
-      FUN_005178d0(param_1,&local_1c,4);
+      BinFileRead(param_1,&local_1c,4);
 
       local_14 = 0x14;
 
@@ -114,7 +114,7 @@ void read_sfx_bin(undefined4 param_1)
 
       local_c = iVar6;
 
-      FUN_005178d0(param_1,iVar6,local_1c - local_14);
+      BinFileRead(param_1,iVar6,local_1c - local_14);
 
       local_10 = 0;
 
@@ -166,7 +166,7 @@ void read_sfx_bin(undefined4 param_1)
 
               DAT_00630ed0 = DAT_00630ed0 + local_20;
 
-              FUN_005178d0(param_1,DAT_00632dbc[iVar1 * 0xb + 1],local_20);
+              BinFileRead(param_1,DAT_00632dbc[iVar1 * 0xb + 1],local_20);
 
             }
 

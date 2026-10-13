@@ -40,17 +40,17 @@ void main_readdata_004adfa0(void)
 
   }
 
-  FUN_005178d0(iVar3,&local_4,4);
+  BinFileRead(iVar3,&local_4,4);
 
   if (local_4 == 0x1a0002dd) {
 
-    FUN_005178d0(iVar3,&local_8,4);
+    BinFileRead(iVar3,&local_8,4);
 
     pcVar4 = (char *)FUN_0053a700(0x13,local_8,&DAT_0055fe48,
 
                                   s_C__Giants_source_main_readdata_c_0055fe50,0x25);
 
-    FUN_005178d0(iVar3,pcVar4,local_8);
+    BinFileRead(iVar3,pcVar4,local_8);
 
     pcVar5 = pcVar4;
 

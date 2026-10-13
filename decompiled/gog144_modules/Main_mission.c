@@ -56,7 +56,7 @@ void FUN_00490860(void)
 
         *(undefined4 *)(iVar4 + 0x457c + DAT_006330e4) = uVar3;
 
-        FUN_005178d0(iVar1,*(undefined4 *)(iVar4 + 0x457c + DAT_006330e4),uVar2);
+        BinFileRead(iVar1,*(undefined4 *)(iVar4 + 0x457c + DAT_006330e4),uVar2);
 
         ANM_BinderDestroy_2(iVar1);
 

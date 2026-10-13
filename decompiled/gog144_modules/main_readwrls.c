@@ -106,7 +106,7 @@ void worldlist_bin_load(void)
 
     else {
 
-      FUN_005178d0(iVar2,local_34 + iVar9,4);
+      BinFileRead(iVar2,local_34 + iVar9,4);
 
       if (local_34[iVar9] != 0x1a0003d0) {
 
@@ -118,7 +118,7 @@ void worldlist_bin_load(void)
 
       }
 
-      FUN_005178d0(iVar2,local_40,4);
+      BinFileRead(iVar2,local_40,4);
 
       uVar3 = FUN_0053a700(0x1a,local_40[0],&DAT_005602a8,
 
@@ -126,7 +126,7 @@ void worldlist_bin_load(void)
 
       (&DAT_005a6c2c)[iVar9] = uVar3;
 
-      FUN_005178d0(iVar2,uVar3,local_40[0]);
+      BinFileRead(iVar2,uVar3,local_40[0]);
 
       ANM_BinderDestroy_2(iVar2);
 
@@ -399,7 +399,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
   }
 
-  FUN_005178d0(iVar6,&local_3e4,4);
+  BinFileRead(iVar6,&local_3e4,4);
 
   if (local_3e4 != 0x1a0002e5) {
 
@@ -415,7 +415,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
   }
 
-  FUN_005178d0(iVar6,&local_3a0,0x1c);
+  BinFileRead(iVar6,&local_3a0,0x1c);
 
   sceSifLoadElf(iVar6,local_398);
 
@@ -427,7 +427,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
   sceSifLoadElf(iVar6,local_390);
 
-  FUN_005178d0(iVar6,&local_3c8,4);
+  BinFileRead(iVar6,&local_3c8,4);
 
   if (-1 < local_3c8) {
 
@@ -461,7 +461,7 @@ LAB_004b10f8:
 
     sceSifLoadElf(iVar6,local_388[0]);
 
-    FUN_005178d0(iVar6,&local_404,4);
+    BinFileRead(iVar6,&local_404,4);
 
     local_410 = (param_3 - param_2) / (float)local_404;
 
@@ -473,7 +473,7 @@ LAB_004b10f8:
 
         pcVar26 = local_418;
 
-        FUN_005178d0(iVar6,local_3c0,0x20);
+        BinFileRead(iVar6,local_3c0,0x20);
 
         FUN_00542f27(local_364,s__s_bin_00554384,local_3c0);
 
@@ -499,7 +499,7 @@ LAB_004b10f8:
 
   sceSifLoadElf(iVar6,local_3a0);
 
-  FUN_005178d0(iVar6,&local_3dc,4);
+  BinFileRead(iVar6,&local_3dc,4);
 
   if (local_3dc == 0) {
 
@@ -515,7 +515,7 @@ LAB_004b10f8:
 
   local_3fc[0] = pcVar26;
 
-  FUN_005178d0(iVar6,pcVar26,local_3dc);
+  BinFileRead(iVar6,pcVar26,local_3dc);
 
   cVar3 = *pcVar26;
 
@@ -3575,7 +3575,7 @@ LAB_004b2ac0:
 
   if (iVar6 != 0) {
 
-    FUN_005178d0(iVar6,&local_3e8,4);
+    BinFileRead(iVar6,&local_3e8,4);
 
     if (local_3e8 == (char *)0x1a0002dd) {
 
@@ -3583,13 +3583,13 @@ LAB_004b2ac0:
 
         local_3fc[0] = (char *)0xffffffff;
 
-        FUN_005178d0(iVar6,local_3fc,4);
+        BinFileRead(iVar6,local_3fc,4);
 
         if (local_3fc[0] == (char *)0xffffffff) break;
 
         iVar14 = FUN_00497d20(local_3fc[0]);
 
-        FUN_005178d0(iVar6,local_3c0,0x18);
+        BinFileRead(iVar6,local_3c0,0x18);
 
         piVar18 = (int *)(iVar14 + 0x400);
 
@@ -3625,11 +3625,11 @@ LAB_004b2ac0:
 
           local_418 = (char *)0xffffffff;
 
-          FUN_005178d0(iVar6,&local_418,4);
+          BinFileRead(iVar6,&local_418,4);
 
           if (local_418 == (char *)0xffffffff) break;
 
-          FUN_005178d0(iVar6,local_3c0,0x18);
+          BinFileRead(iVar6,local_3c0,0x18);
 
           if ((iVar14 != 0) && (iVar15 = *(int *)(iVar14 + 8 + (int)local_418 * 4), iVar15 != 0)) {
 

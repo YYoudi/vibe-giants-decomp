@@ -1379,7 +1379,7 @@ void FUN_00441d20(undefined4 *param_1,float param_2)
 
   *(undefined4 *)(iVar2 + 0xa8) = param_1[2];
 
-  FUN_00499280(iVar2);
+  object_copy_posdirinfo(iVar2);
 
   *(undefined4 *)(iVar2 + 0xec) = 0;
 
@@ -1401,7 +1401,7 @@ void FUN_00441d20(undefined4 *param_1,float param_2)
 
     FUN_0049bc90(iVar2,param_2,iVar3 + 0xa0);
 
-    FUN_00499280(iVar3);
+    object_copy_posdirinfo(iVar3);
 
     *(undefined4 *)(iVar3 + 0xc4) = *(undefined4 *)(iVar2 + 0xc4);
 
@@ -2359,7 +2359,7 @@ LAB_00443656:
 
     if (iVar7 != 0) {
 
-      FUN_005178d0(iVar7,local_98,0x18);
+      BinFileRead(iVar7,local_98,0x18);
 
       psVar4 = _malloc(local_98[1]);
 
@@ -2377,7 +2377,7 @@ LAB_00443656:
 
       }
 
-      FUN_005178d0(iVar7,psVar4 + 6,local_98[1] - 0x18);
+      BinFileRead(iVar7,psVar4 + 6,local_98[1] - 0x18);
 
       ANM_BinderDestroy_2(iVar7);
 
@@ -3490,7 +3490,7 @@ undefined4 FLK_FlickRender(int param_1)
 
   FUN_005163e0(local_84);
 
-  FUN_00515eb0(&local_190,&local_1e8);
+  render_get_clip_nearfar(&local_190,&local_1e8);
 
   FNT_StringRender__FPcP14FNT_RenderInfo((char *)0x3f800000,local_1e8);
 
@@ -6019,7 +6019,7 @@ LAB_00446783:
 
     if (iVar6 != 0) {
 
-      FUN_005178d0(iVar6,asStack_98,0x18);
+      BinFileRead(iVar6,asStack_98,0x18);
 
       psVar3 = _malloc(asStack_98[1]);
 
@@ -6037,7 +6037,7 @@ LAB_00446783:
 
       }
 
-      FUN_005178d0(iVar6,psVar3 + 6,asStack_98[1] - 0x18);
+      BinFileRead(iVar6,psVar3 + 6,asStack_98[1] - 0x18);
 
       ANM_BinderDestroy_2(iVar6);
 
@@ -6817,7 +6817,7 @@ void FUN_00446ee0(void)
 
     *puVar4 = uVar3;
 
-    uVar3 = FUN_00540190(uVar3,0x10,0x44);
+    uVar3 = MAP_ChunkPoolCreate(uVar3,0x10,0x44);
 
     puVar4[1] = uVar3;
 
@@ -8087,7 +8087,7 @@ int fx_createGameLockedObj__FP6FxDataiii
 
     *(int **)(iVar4 + 0x104) = piVar1 + 0x28;
 
-    FUN_004a1740(iVar4);
+    PhysicsExZeroForce(iVar4);
 
     uVar3 = *(uint *)(iVar4 + 0xd8);
 
@@ -8328,7 +8328,7 @@ LAB_00449042:
 
   *(int **)(iVar4 + 0x104) = piVar1 + 0x28;
 
-  FUN_004a1740(iVar4);
+  PhysicsExZeroForce(iVar4);
 
   *(undefined4 *)(iVar4 + 0x1e8) = 0x42480000;
 

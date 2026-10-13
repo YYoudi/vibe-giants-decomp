@@ -2431,7 +2431,7 @@ void FUN_0046aeb0(int param_1)
 
     *(uint **)(param_1 + 0x104) = puVar2 + 0x10;
 
-    FUN_004a1740(param_1);
+    PhysicsExZeroForce(param_1);
 
     *(undefined4 *)(*(int *)(param_1 + 0x104) + 8) = *(undefined4 *)(param_1 + 0x200);
 
@@ -3790,7 +3790,7 @@ int object_0046e830(int param_1,int param_2)
 
     *(uint *)(iVar2 + 0x1c8) = *(uint *)(iVar2 + 0x1c8) & 0xfffff1ff;
 
-    FUN_004a1740(iVar2);
+    PhysicsExZeroForce(iVar2);
 
     puVar4[0x10] = puVar4[0x10] | 3;
 
@@ -3859,7 +3859,7 @@ void FUN_0046e9d0(int param_1,undefined4 *param_2,undefined4 param_3,float param
 
     *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffff1ff;
 
-    FUN_004a1740(param_1);
+    PhysicsExZeroForce(param_1);
 
     puVar1[0x10] = puVar1[0x10] | 3;
 

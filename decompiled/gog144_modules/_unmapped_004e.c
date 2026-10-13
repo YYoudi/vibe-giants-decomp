@@ -8333,7 +8333,7 @@ LAB_004eafad:
 
     *(uint *)(iVar6 + 0x30) = *(uint *)(iVar6 + 0x30) | 1;
 
-    FUN_00499280(iVar6);
+    object_copy_posdirinfo(iVar6);
 
     return;
 
@@ -8599,7 +8599,7 @@ LAB_004eb392:
 
     *(uint *)(iVar6 + 0x30) = *(uint *)(iVar6 + 0x30) | 1;
 
-    FUN_00499280(iVar6);
+    object_copy_posdirinfo(iVar6);
 
     return;
 
@@ -8815,7 +8815,7 @@ LAB_004eb772:
 
   *(uint *)(iVar6 + 0x30) = *(uint *)(iVar6 + 0x30) | 1;
 
-  FUN_00499280(iVar6);
+  object_copy_posdirinfo(iVar6);
 
   return;
 

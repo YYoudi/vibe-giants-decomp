@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (88 named) — decompiled, names from PS2 symbols
+ * 186 functions (91 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -3497,12 +3497,12 @@ void terrain_vertex_walk(int param_1,int param_2,float param_3,undefined4 param_
 
 }
 
-/* ===== FUN_00514c00 @ 0x00514C00 ===== */
+/* ===== wave_effect_zero_edges @ 0x00514C00 ===== */
 /* PS2 candidate: wave_effect_zero_edges (conf 0.733) */
 
 
 
-void FUN_00514c00(int param_1,uint param_2)
+void wave_effect_zero_edges(int param_1,uint param_2)
 
 
 
@@ -4058,7 +4058,7 @@ void FUN_00515090(int param_1)
 
         if (*(int *)(param_1 + 0x30) != iVar3) {
 
-          FUN_00514c00(param_1,iVar3);
+          wave_effect_zero_edges(param_1,iVar3);
 
           *(int *)(param_1 + 0x30) = iVar3;
 
@@ -4214,7 +4214,7 @@ void FUN_00515090(int param_1)
 
           FUN_00514cb0(param_1);
 
-          FUN_00514c00(param_1,iVar3);
+          wave_effect_zero_edges(param_1,iVar3);
 
         }
 
@@ -4357,7 +4357,7 @@ void object_spawn_class2(int param_1,undefined4 *param_2,float param_3,float par
 
     *(float *)(iVar2 + 0xc4) = (float)(fVar5 * (float10)param_3 * (float10)param_4);
 
-    FUN_00499280(iVar2);
+    object_copy_posdirinfo(iVar2);
 
     *param_2 = DAT_006328e8;
 
@@ -4564,7 +4564,7 @@ void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float p
 
           *(float *)(iVar4 + 0x10c) = (float)(fVar7 * (float10)param_5) / fVar1;
 
-          FUN_00499280(iVar4);
+          object_copy_posdirinfo(iVar4);
 
           iVar5 = iVar5 + -1;
 
@@ -4696,7 +4696,7 @@ void object_spawn_class3(undefined4 param_1)
 
         *(float *)(iVar4 + 0xc4) = (float)(fVar6 * (float10)fVar3 * (float10)fVar2);
 
-        FUN_00499280(iVar4);
+        object_copy_posdirinfo(iVar4);
 
         fVar1 = pfVar5[-3];
 
@@ -4871,12 +4871,12 @@ void FNT_StringRender__FPcP14FNT_RenderInfo(char *p0,undefined4 *p1)
 
 }
 
-/* ===== FUN_00515eb0 @ 0x00515EB0 ===== */
+/* ===== render_get_clip_nearfar @ 0x00515EB0 ===== */
 /* PS2 candidate: fx_free_effect__FP9FXLISTTAG_2 (conf 0.726) */
 
 
 
-void FUN_00515eb0(undefined4 *param_1,undefined4 *param_2)
+void render_get_clip_nearfar(undefined4 *param_1,undefined4 *param_2)
 
 
 
@@ -6868,12 +6868,12 @@ uint FUN_005178a0(LPCSTR param_1)
 
 }
 
-/* ===== FUN_005178d0 @ 0x005178D0 ===== */
+/* ===== BinFileRead @ 0x005178D0 ===== */
 /* PS2 candidate: BinFileRead (conf 0.72) */
 
 
 
-DWORD FUN_005178d0(HANDLE param_1,LPVOID param_2,DWORD param_3)
+DWORD BinFileRead(HANDLE param_1,LPVOID param_2,DWORD param_3)
 
 
 

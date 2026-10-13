@@ -14384,7 +14384,7 @@ LAB_0052fabe:
 
         comm_packet_big(iVar5);
 
-        FUN_00499280(iVar5);
+        object_copy_posdirinfo(iVar5);
 
         FUN_004a7440(iVar5);
 

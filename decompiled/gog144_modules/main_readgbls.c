@@ -30,7 +30,7 @@ void reread_globals_bin(void)
 
   }
 
-  FUN_005178d0(iVar1,&local_4,4);
+  BinFileRead(iVar1,&local_4,4);
 
   if (local_4 != 0x7a330000) {
 
@@ -42,9 +42,9 @@ void reread_globals_bin(void)
 
   }
 
-  FUN_005178d0(iVar1,&local_c,4);
+  BinFileRead(iVar1,&local_c,4);
 
-  FUN_005178d0(iVar1,&local_8,4);
+  BinFileRead(iVar1,&local_8,4);
 
   if (DAT_00632ed8 == 0) {
 
@@ -82,9 +82,9 @@ LAB_004ae3ae:
 
 LAB_004ae43b:
 
-  FUN_005178d0(iVar1,DAT_00632ed8,local_c * 4);
+  BinFileRead(iVar1,DAT_00632ed8,local_c * 4);
 
-  FUN_005178d0(iVar1,DAT_00632ee0,local_8 * 4);
+  BinFileRead(iVar1,DAT_00632ee0,local_8 * 4);
 
   ANM_BinderDestroy_2(iVar1);
 

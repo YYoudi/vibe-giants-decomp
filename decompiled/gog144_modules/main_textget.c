@@ -103,11 +103,11 @@ void TextPtrInit__Fv(void)
 
     if (iVar3 != 0) {
 
-      FUN_005178d0(iVar3,&DAT_0057bc7c,4);
+      BinFileRead(iVar3,&DAT_0057bc7c,4);
 
-      FUN_005178d0(iVar3,&DAT_0057bc80,4);
+      BinFileRead(iVar3,&DAT_0057bc80,4);
 
-      FUN_005178d0(iVar3,&DAT_0057bc84,4);
+      BinFileRead(iVar3,&DAT_0057bc84,4);
 
       DAT_0057bc88 = FUN_0053a700(0x1c,DAT_0057bc7c * 8,s_keyoffs_0057bccc,
 
@@ -121,11 +121,11 @@ void TextPtrInit__Fv(void)
 
                                   s_C__Giants_source_main_textget_c_0057bc98,0x5c);
 
-      FUN_005178d0(iVar3,DAT_0057bc88,DAT_0057bc7c * 8);
+      BinFileRead(iVar3,DAT_0057bc88,DAT_0057bc7c * 8);
 
-      FUN_005178d0(iVar3,DAT_0057bc8c,DAT_0057bc80);
+      BinFileRead(iVar3,DAT_0057bc8c,DAT_0057bc80);
 
-      FUN_005178d0(iVar3,DAT_0057bc90,DAT_0057bc84);
+      BinFileRead(iVar3,DAT_0057bc90,DAT_0057bc84);
 
       ANM_BinderDestroy_2(iVar3);
 

@@ -1892,7 +1892,7 @@ void gti_terrain_load(undefined4 param_1)
 
           case 5:
 
-            FUN_004511d0(local_5c,local_50,&local_7c,local_70);
+            calc_tri_weighted_plane(local_5c,local_50,&local_7c,local_70);
 
             puVar9 = local_44;
 
@@ -1904,7 +1904,7 @@ void gti_terrain_load(undefined4 param_1)
 
           case 6:
 
-            FUN_004511d0(local_44,&local_7c,local_5c,local_70);
+            calc_tri_weighted_plane(local_44,&local_7c,local_5c,local_70);
 
             puVar9 = local_50;
 
@@ -1914,7 +1914,7 @@ void gti_terrain_load(undefined4 param_1)
 
 LAB_00475069:
 
-            FUN_004511d0(puVar8,puVar13,puVar9,&local_30);
+            calc_tri_weighted_plane(puVar8,puVar13,puVar9,&local_30);
 
             sVar1 = FUN_004751d0(local_70);
 
@@ -1942,7 +1942,7 @@ LAB_00475069:
 
           }
 
-          FUN_004511d0(puVar8,puVar13,puVar9,local_70);
+          calc_tri_weighted_plane(puVar8,puVar13,puVar9,local_70);
 
           sVar1 = FUN_004751d0(local_70);
 

@@ -26,7 +26,7 @@ undefined4 main_dedicated_00426460(void)
 
   }
 
-  FUN_005178d0(iVar1,&local_4,4);
+  BinFileRead(iVar1,&local_4,4);
 
   if (local_4 != 2) {
 
@@ -38,7 +38,7 @@ undefined4 main_dedicated_00426460(void)
 
   }
 
-  FUN_005178d0(iVar1,&local_8,4);
+  BinFileRead(iVar1,&local_8,4);
 
   DAT_0058c64c = FUN_0053a700(0x27,local_8 + -8,s_DedInfo_005563f8,
 
@@ -46,7 +46,7 @@ undefined4 main_dedicated_00426460(void)
 
   DAT_0058c650 = DAT_0058c64c;
 
-  FUN_005178d0(iVar1,DAT_0058c64c,local_8 + -8);
+  BinFileRead(iVar1,DAT_0058c64c,local_8 + -8);
 
   ANM_BinderDestroy_2(iVar1);
 

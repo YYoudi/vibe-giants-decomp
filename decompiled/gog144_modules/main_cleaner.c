@@ -205,7 +205,7 @@ void cleaner_go_obj(void)
 
             *(float *)(iVar9 + 0xc4) = (float)fVar12;
 
-            FUN_00499280(iVar9);
+            object_copy_posdirinfo(iVar9);
 
             *(int *)(iVar9 + 0x274) = iVar7;
 

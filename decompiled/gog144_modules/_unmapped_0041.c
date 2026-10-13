@@ -9062,7 +9062,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     *(undefined4 *)(param_1 + 0xa8) = *(undefined4 *)(iVar2 + 0xb0);
 
-    FUN_00499280(param_1);
+    object_copy_posdirinfo(param_1);
 
     endDisplay__Fv_2();
 
@@ -9082,7 +9082,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     *pfVar4 = *pfVar4 + 40.0;
 
-    FUN_00499280(param_1);
+    object_copy_posdirinfo(param_1);
 
   }
 
