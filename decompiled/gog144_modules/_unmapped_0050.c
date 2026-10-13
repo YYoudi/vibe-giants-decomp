@@ -4322,13 +4322,13 @@ LAB_00503c4b:
 
   }
 
-  iVar5 = FUN_00402170(iVar2);
+  iVar5 = ai_goal_skip_locked_b(iVar2);
 
   if (iVar5 != 0) {
 
     *(uint *)(iVar2 + 0xe0) = *(uint *)(iVar2 + 0xe0) | 4;
 
-    iVar5 = FUN_004021e0(iVar2);
+    iVar5 = ai_goal_skip_locked_a(iVar2);
 
     if (iVar5 != 0) {
 

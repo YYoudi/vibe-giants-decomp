@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0040adb0,FUN_0040adb0,,base_slot14or1_get,0.9,llm-w206,slot 0xe/1 multi-getter alive callees
+004021e0,FUN_004021e0,,ai_goal_skip_locked_a,0.9,llm-w206,skip 0x10-flagged goals callers set_slave_goal
+00402170,FUN_00402170,,ai_goal_skip_locked_b,0.9,llm-w206,twin
+0054ce73,FUN_0054ce73,,crt_stream_flags_set,0.9,llm-w206,mask merge via crt_flags_map
+0052b860,FUN_0052b860,,comm_relay_to_others,0.9,llm-w206,players != local != param caller dp_recv

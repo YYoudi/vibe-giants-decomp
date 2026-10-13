@@ -2695,7 +2695,7 @@ void FUN_00531470(void)
 
         local_4e6 = 0;
 
-        FUN_0052b860(0,(uint)bVar3 * 2 + 3,&local_510);
+        comm_relay_to_others(0,(uint)bVar3 * 2 + 3,&local_510);
 
       }
 

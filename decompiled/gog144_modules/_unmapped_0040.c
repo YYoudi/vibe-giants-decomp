@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (89 named) — decompiled, names from PS2 symbols
+ * 105 functions (92 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -695,8 +695,8 @@ void ai_get_goal_location(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00402170 @ 0x00402170 ===== */
-uint FUN_00402170(int param_1)
+/* ===== ai_goal_skip_locked_b @ 0x00402170 ===== */
+uint ai_goal_skip_locked_b(int param_1)
 
 
 
@@ -734,8 +734,8 @@ uint FUN_00402170(int param_1)
 
 }
 
-/* ===== FUN_004021e0 @ 0x004021E0 ===== */
-bool FUN_004021e0(int param_1)
+/* ===== ai_goal_skip_locked_a @ 0x004021E0 ===== */
+bool ai_goal_skip_locked_a(int param_1)
 
 
 
@@ -7628,8 +7628,8 @@ float10 meccbase_get_max_energy(int param_1)
 
 }
 
-/* ===== FUN_0040adb0 @ 0x0040ADB0 ===== */
-undefined4 FUN_0040adb0(int param_1)
+/* ===== base_slot14or1_get @ 0x0040ADB0 ===== */
+undefined4 base_slot14or1_get(int param_1)
 
 
 

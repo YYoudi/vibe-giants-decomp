@@ -85,14 +85,14 @@
   "len": 303
  },
  "0x00402170": {
-  "name": "FUN_00402170",
-  "named": false,
-  "len": 529
+  "name": "ai_goal_skip_locked_b",
+  "named": true,
+  "len": 538
  },
  "0x004021E0": {
-  "name": "FUN_004021e0",
-  "named": false,
-  "len": 441
+  "name": "ai_goal_skip_locked_a",
+  "named": true,
+  "len": 450
  },
  "0x00402240": {
   "name": "ai_move_goals_reinit",
@@ -380,9 +380,9 @@
   "len": 838
  },
  "0x0040ADB0": {
-  "name": "FUN_0040adb0",
-  "named": false,
-  "len": 495
+  "name": "base_slot14or1_get",
+  "named": true,
+  "len": 501
  },
  "0x0040AE10": {
   "name": "base_slot14_get",
@@ -8017,7 +8017,7 @@
  "0x00503970": {
   "name": "teammecc_set_slave_goal__FP6OBJECTi",
   "named": true,
-  "len": 8195
+  "len": 8213
  },
  "0x00504050": {
   "name": "mecc_set_fire__FP6OBJECTi",
@@ -9835,9 +9835,9 @@
   "len": 933
  },
  "0x0052B860": {
-  "name": "FUN_0052b860",
-  "named": false,
-  "len": 422
+  "name": "comm_relay_to_others",
+  "named": true,
+  "len": 430
  },
  "0x0052B8C0": {
   "name": "comm_dp_send",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36875
+  "len": 36883
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -12505,14 +12505,14 @@
   "len": 2244
  },
  "0x0054CE73": {
-  "name": "FUN_0054ce73",
-  "named": false,
-  "len": 195
+  "name": "crt_stream_flags_set",
+  "named": true,
+  "len": 203
  },
  "0x0054CEA8": {
   "name": "FUN_0054cea8",
   "named": false,
-  "len": 122
+  "len": 130
  },
  "0x0054CEBE": {
   "name": "crt_flags_map",
