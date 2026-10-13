@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (43 named) — decompiled, names from PS2 symbols
+ * 94 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -1780,7 +1780,7 @@ void FUN_004e2ce0(int param_1,int param_2)
 
           iVar6 = iVar2 + 0xa0;
 
-          fVar8 = (float10)FUN_0050a5e0(iVar6,iVar5);
+          fVar8 = (float10)distancesq2d__FP3P3DT0(iVar6,iVar5);
 
           local_18 = (float)fVar8;
 
@@ -1792,13 +1792,13 @@ void FUN_004e2ce0(int param_1,int param_2)
 
               if (*piVar1 == 0) goto joined_r0x004e2e65;
 
-              fVar8 = (float10)FUN_0050a5e0(*piVar1 + 0xa0,iVar6);
+              fVar8 = (float10)distancesq2d__FP3P3DT0(*piVar1 + 0xa0,iVar6);
 
               if ((float10)local_18 <= fVar8) {
 
-                fVar8 = (float10)FUN_0050a5e0(iVar5,*piVar1 + 0xa0);
+                fVar8 = (float10)distancesq2d__FP3P3DT0(iVar5,*piVar1 + 0xa0);
 
-                fVar9 = (float10)FUN_0050a5e0(*piVar1 + 0xa0,iVar6);
+                fVar9 = (float10)distancesq2d__FP3P3DT0(*piVar1 + 0xa0,iVar6);
 
                 puVar3 = DAT_00632d7c;
 
@@ -1824,7 +1824,7 @@ joined_r0x004e2e65:
 
                     if (*(int *)(*(int *)(iVar5 + 0x100) + 0x44) == iVar2) goto LAB_004e2f36;
 
-                    fVar8 = (float10)FUN_0050a5e0(iVar6,iVar5 + 0xa0);
+                    fVar8 = (float10)distancesq2d__FP3P3DT0(iVar6,iVar5 + 0xa0);
 
                     local_18 = (float)fVar8;
 
@@ -1844,9 +1844,9 @@ LAB_004e2f05:
 
                     iVar4 = ObjIsMecc(iVar5);
 
-                    if ((iVar4 != 0) || (iVar4 = FUN_004a6180(iVar5), iVar4 != 0)) {
+                    if ((iVar4 != 0) || (iVar4 = ObjIsReaper(iVar5), iVar4 != 0)) {
 
-                      fVar8 = (float10)FUN_0050a5e0(iVar6,iVar5 + 0xa0);
+                      fVar8 = (float10)distancesq2d__FP3P3DT0(iVar6,iVar5 + 0xa0);
 
                       local_18 = (float)fVar8;
 
@@ -1864,7 +1864,7 @@ LAB_004e2f05:
 
                     if (iVar4 != 0) {
 
-                      fVar8 = (float10)FUN_0050a5e0(iVar6,iVar5 + 0xa0);
+                      fVar8 = (float10)distancesq2d__FP3P3DT0(iVar6,iVar5 + 0xa0);
 
                       local_18 = (float)fVar8;
 
@@ -1892,13 +1892,13 @@ LAB_004e2f05:
 
               else {
 
-                fVar8 = (float10)FUN_0050a5e0(*piVar1 + 0xa0,iVar5);
+                fVar8 = (float10)distancesq2d__FP3P3DT0(*piVar1 + 0xa0,iVar5);
 
                 if ((float10)local_18 <= fVar8) {
 
-                  fVar8 = (float10)FUN_0050a5e0(iVar6,*piVar1 + 0xa0);
+                  fVar8 = (float10)distancesq2d__FP3P3DT0(iVar6,*piVar1 + 0xa0);
 
-                  fVar9 = (float10)FUN_0050a5e0(*piVar1 + 0xa0,iVar5);
+                  fVar9 = (float10)distancesq2d__FP3P3DT0(*piVar1 + 0xa0,iVar5);
 
                   puVar3 = DAT_00632d7c;
 
@@ -1987,7 +1987,7 @@ void ai_d7_pairing(int param_1,float param_2)
 
         else {
 
-          fVar6 = (float10)FUN_0050a5e0(iVar2 + 0xa0,param_1 + 0xa0);
+          fVar6 = (float10)distancesq2d__FP3P3DT0(iVar2 + 0xa0,param_1 + 0xa0);
 
           if (fVar6 <= (float10)param_2 * (float10)param_2) {
 
@@ -2090,7 +2090,7 @@ undefined4 FUN_004e30b0(int param_1,float param_2)
 
   }
 
-  iVar3 = FUN_004a6180(*piVar2);
+  iVar3 = ObjIsReaper(*piVar2);
 
   if (iVar3 != 0) {
 
@@ -2598,7 +2598,7 @@ bool FUN_004e3730(int param_1)
 
     if ((float)puVar1[3] < 0.0 == ((float)puVar1[3] == 0.0)) {
 
-      fVar3 = (float10)FUN_0050a5e0(puVar1,param_1 + 0xa0);
+      fVar3 = (float10)distancesq2d__FP3P3DT0(puVar1,param_1 + 0xa0);
 
       if (fVar3 < (float10)40000.0) break;
 
@@ -2667,7 +2667,9 @@ void ai_radius_scan(int param_1,float param_2)
 
       if (*(int *)(iVar2 + 4) == 0x325) {
 
-        fVar5 = (float10)FUN_0050a5e0((undefined4 *)(iVar2 + 0xa0),(undefined4 *)(param_1 + 0xa0));
+        fVar5 = (float10)distancesq2d__FP3P3DT0
+
+                                   ((undefined4 *)(iVar2 + 0xa0),(undefined4 *)(param_1 + 0xa0));
 
         if (fVar5 < (float10)local_20) {
 
@@ -2842,7 +2844,7 @@ LAB_004e3ad2:
 
                     if (fVar9 <= (float10)*(float *)(DAT_00632ed8 + 0xa9c)) {
 
-                      fVar9 = (float10)FUN_0050a5e0(param_1 + 0xa0,iVar4 + 0xa0);
+                      fVar9 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,iVar4 + 0xa0);
 
                       param_2 = (float)fVar9;
 
@@ -2976,7 +2978,7 @@ LAB_004e3ad2:
 
               piVar3[0x1a] = (int)DAT_00632b44;
 
-              fVar9 = (float10)FUN_0050a5e0(puVar2,&DAT_00632b48);
+              fVar9 = (float10)distancesq2d__FP3P3DT0(puVar2,&DAT_00632b48);
 
               if (fVar9 < (float10)14400.0) {
 
@@ -4255,12 +4257,12 @@ void FUN_004e4f60(int param_1)
 
 }
 
-/* ===== FUN_004e5000 @ 0x004E5000 ===== */
+/* ===== make_grenade_shot__FP6OBJECTf @ 0x004E5000 ===== */
 /* PS2 candidate: make_grenade_shot__FP6OBJECTf (conf 0.599) */
 
 
 
-void FUN_004e5000(int param_1,float param_2)
+void make_grenade_shot__FP6OBJECTf(int param_1,float param_2)
 
 
 
@@ -4618,13 +4620,13 @@ void FUN_004e5270(int param_1,int param_2,int param_3,int param_4)
 
     if (param_4 == 0) {
 
-      iVar3 = FUN_004aa550(0x19,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
+      iVar3 = PROJ_Create3(0x19,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
 
     }
 
     else {
 
-      iVar3 = FUN_004aa550(0x1b,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
+      iVar3 = PROJ_Create3(0x1b,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
 
       sound_play_obj(0x568,param_1);
 
@@ -5007,7 +5009,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
         sound_play_obj(0x563,param_1);
 
-        iVar9 = FUN_004aa550(0x1c,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
+        iVar9 = PROJ_Create3(0x1c,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
 
         *(int *)(iVar9 + 0x274) = param_1;
 
@@ -5017,7 +5019,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       sound_play_obj(0x569,param_1);
 
-      iVar11 = FUN_004aa550(0x1a,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
+      iVar11 = PROJ_Create3(0x1a,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
 
       playerobj_eval_refpt(iVar9,0,local_50);
 
@@ -5141,7 +5143,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
             if (*(int *)(iVar9 + 4) == 0x325) {
 
-              fVar13 = (float10)FUN_0050a5e0(iVar9 + 0xa0,param_1 + 0xa0);
+              fVar13 = (float10)distancesq2d__FP3P3DT0(iVar9 + 0xa0,param_1 + 0xa0);
 
               if ((fVar13 < (float10)param_4) && (iVar11 = FUN_004e3530(param_1,iVar9), iVar11 != 0)
 
@@ -5516,9 +5518,9 @@ LAB_004e6651:
 
         if (*(int *)(iVar8 + 4) == 0x325) {
 
-          fVar10 = (float10)FUN_0050a5e0((undefined4 *)(iVar8 + 0xa0),(undefined4 *)(param_1 + 0xa0)
+          fVar10 = (float10)distancesq2d__FP3P3DT0
 
-                                        );
+                                      ((undefined4 *)(iVar8 + 0xa0),(undefined4 *)(param_1 + 0xa0));
 
           if (fVar10 < (float10)param_4) {
 
@@ -5805,7 +5807,7 @@ LAB_004e6792:
 
          (fVar1 = *(float *)(DAT_00632ed8 + 0xc40),
 
-         fVar7 = (float10)FUN_0050a5e0(iVar4 + 0xa0,param_1 + 0xa0),
+         fVar7 = (float10)distancesq2d__FP3P3DT0(iVar4 + 0xa0,param_1 + 0xa0),
 
          fVar7 < (float10)fVar1 * (float10)fVar1)) {
 
@@ -5886,9 +5888,9 @@ void obj_proximity_update(int param_1)
 
   }
 
-  fVar3 = (float10)FUN_0050a5e0(param_1 + 0xa0,*(int *)(iVar1 + 400) + 0xa0);
+  fVar3 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,*(int *)(iVar1 + 400) + 0xa0);
 
-  fVar4 = (float10)FUN_0050a5e0(DAT_00632a88 + 0xa0,*(int *)(iVar1 + 400) + 0xa0);
+  fVar4 = (float10)distancesq2d__FP3P3DT0(DAT_00632a88 + 0xa0,*(int *)(iVar1 + 400) + 0xa0);
 
   if (*(int *)(iVar1 + 0x184) == 0) {
 
@@ -6576,7 +6578,7 @@ void FUN_004e7390(int param_1)
 
      ((*(uint *)(*(int *)(iVar1 + 0x20c) + 0xe0) & 0x100) == 0)) {
 
-    fVar2 = (float10)FUN_0050a5e0(param_1 + 0xa0,*(int *)(iVar1 + 0x1ec) + 0xa0);
+    fVar2 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,*(int *)(iVar1 + 0x1ec) + 0xa0);
 
     if ((float10)100.0 <= fVar2) {
 
@@ -6947,7 +6949,7 @@ void FUN_004e7ae0(float param_1,int param_2)
 
           (((iVar7 == 0 || (*(int *)(iVar7 + 0x1e0) != 0x61)) &&
 
-           (fVar11 = (float10)FUN_0050a5e0((int)param_1 + 0xa0,iVar5 + 0xa0),
+           (fVar11 = (float10)distancesq2d__FP3P3DT0((int)param_1 + 0xa0,iVar5 + 0xa0),
 
            fVar11 < (float10)625.0)))))) {
 
@@ -7137,7 +7139,7 @@ LAB_004e7bdc:
 
         }
 
-        fVar11 = (float10)FUN_0050a5e0(puVar8,pfVar9 + -3);
+        fVar11 = (float10)distancesq2d__FP3P3DT0(puVar8,pfVar9 + -3);
 
         if (fVar11 < (float10)2500.0 != (fVar11 == (float10)2500.0)) {
 
@@ -11896,7 +11898,7 @@ bool FUN_004ef510(int param_1)
 
   }
 
-  iVar1 = FUN_004a6180(*(undefined4 *)(param_1 + 0x274));
+  iVar1 = ObjIsReaper(*(undefined4 *)(param_1 + 0x274));
 
   return iVar1 == 0;
 

@@ -34,7 +34,7 @@ undefined4 EnemyIsInvalid__FP6OBJECTT0(int param_1,int param_2)
 
        || (4.0 <= *(float *)(iVar3 + 0x54))))))) {
 
-    iVar3 = FUN_004a6180(param_2);
+    iVar3 = ObjIsReaper(param_2);
 
     if (iVar3 != 0) {
 
@@ -512,7 +512,7 @@ void verm_control(int param_1)
 
     local_54 = *(float *)((int)fVar4 + 0xa8);
 
-    fVar9 = (float10)FUN_0050a5e0(&local_5c,param_1 + 0xa0);
+    fVar9 = (float10)distancesq2d__FP3P3DT0(&local_5c,param_1 + 0xa0);
 
     local_78 = (float)fVar9;
 
@@ -636,7 +636,7 @@ void verm_control(int param_1)
 
         && (*(float *)(iVar6 + 0x54) < 4.0)))) goto LAB_004d2124;
 
-    iVar6 = FUN_004a6180(fVar4);
+    iVar6 = ObjIsReaper(fVar4);
 
     if (iVar6 == 0) {
 
@@ -774,7 +774,7 @@ LAB_004d2364:
 
     else {
 
-      iVar6 = FUN_004a6180(fVar4);
+      iVar6 = ObjIsReaper(fVar4);
 
       if (iVar6 != 0) {
 
@@ -898,7 +898,7 @@ LAB_004d2364:
 
         && (*(float *)(iVar6 + 0x54) < 4.0)))) goto LAB_004d2124;
 
-    iVar6 = FUN_004a6180(fVar4);
+    iVar6 = ObjIsReaper(fVar4);
 
     if (iVar6 != 0) {
 
@@ -990,7 +990,7 @@ LAB_004d2364:
 
     if (*(float *)(DAT_00632ed8 + 0xd4) * *(float *)(DAT_00632ed8 + 0xd4) <= local_78) {
 
-      fVar9 = (float10)FUN_0050a5e0(&local_68,iVar6);
+      fVar9 = (float10)distancesq2d__FP3P3DT0(&local_68,iVar6);
 
       if (((float10)5.0 <= fVar9) && (0.0 <= *pfVar1)) break;
 
@@ -1048,7 +1048,7 @@ LAB_004d2a47:
 
     else {
 
-      iVar6 = FUN_004a6180(fVar4);
+      iVar6 = ObjIsReaper(fVar4);
 
       if (iVar6 != 0) {
 
@@ -1144,7 +1144,7 @@ LAB_004d2a47:
 
       }
 
-      fVar9 = (float10)FUN_0050a5e0(&local_68,iVar6);
+      fVar9 = (float10)distancesq2d__FP3P3DT0(&local_68,iVar6);
 
       if (((fVar9 < (float10)5.0) || (*pfVar1 < 0.0)) &&
 
@@ -1178,7 +1178,7 @@ LAB_004d2a47:
 
         || (4.0 <= *(float *)(iVar6 + 0x54))))) {
 
-      iVar6 = FUN_004a6180(fVar4);
+      iVar6 = ObjIsReaper(fVar4);
 
       if (iVar6 != 0) {
 
@@ -1260,7 +1260,7 @@ LAB_004d2d85:
 
           ) || (4.0 <= *(float *)(iVar6 + 0x54))))))) {
 
-      iVar6 = FUN_004a6180(fVar4);
+      iVar6 = ObjIsReaper(fVar4);
 
       if (iVar6 != 0) {
 
@@ -1402,7 +1402,7 @@ LAB_004d27a6:
 
           ) || (4.0 <= *(float *)(iVar6 + 0x54))))))) {
 
-      iVar6 = FUN_004a6180(fVar4);
+      iVar6 = ObjIsReaper(fVar4);
 
       if (iVar6 != 0) {
 
@@ -1502,7 +1502,7 @@ LAB_004d27a6:
 
         || (4.0 <= *(float *)(iVar6 + 0x54))))) {
 
-      iVar6 = FUN_004a6180(fVar4);
+      iVar6 = ObjIsReaper(fVar4);
 
       if (iVar6 != 0) {
 
@@ -2870,11 +2870,11 @@ int FUN_004d4760(int param_1,undefined4 param_2,float param_3)
 
          (((*(int *)(iVar1 + 0x210) == 0 && ((*(uint *)(iVar1 + 0x1c8) & 0x20000) != 0)) &&
 
-          ((iVar4 = ObjIsMecc(iVar1), iVar4 != 0 || (iVar4 = FUN_004a6180(iVar1), iVar4 != 0))))))
+          ((iVar4 = ObjIsMecc(iVar1), iVar4 != 0 || (iVar4 = ObjIsReaper(iVar1), iVar4 != 0)))))) &&
 
-        && ((iVar4 = *(int *)(param_1 + 0x100), *(int *)(iVar1 + 4) != 0 &&
+        ((iVar4 = *(int *)(param_1 + 0x100), *(int *)(iVar1 + 4) != 0 &&
 
-            ((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0)))) &&
+         ((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0)))) &&
 
        ((*(float *)(iVar1 + 0x278) < *(float *)(iVar1 + 0x1c0) &&
 
@@ -2882,7 +2882,7 @@ int FUN_004d4760(int param_1,undefined4 param_2,float param_3)
 
          (4.0 <= *(float *)(iVar4 + 0x54))))))) {
 
-      iVar4 = FUN_004a6180(iVar1);
+      iVar4 = ObjIsReaper(iVar1);
 
       if (iVar4 != 0) {
 
@@ -3965,7 +3965,7 @@ void reaper_spell_sound_1(int param_1,undefined4 *param_2,undefined4 param_3)
 
     local_14 = local_58;
 
-    iVar1 = FUN_004aa550(0x29,*(undefined4 *)(*(int *)(param_1 + 0x274) + 0x18c),param_1,0,local_44,
+    iVar1 = PROJ_Create3(0x29,*(undefined4 *)(*(int *)(param_1 + 0x274) + 0x18c),param_1,0,local_44,
 
                          0);
 
@@ -4062,7 +4062,7 @@ void reaper_spell_sound_2(int param_1,int param_2,undefined4 param_3)
 
     uStack_14 = uStack_48;
 
-    iVar1 = FUN_004aa550(0x1f,*(undefined4 *)(*(int *)(param_1 + 0x274) + 0x18c),param_1,0,local_44,
+    iVar1 = PROJ_Create3(0x1f,*(undefined4 *)(*(int *)(param_1 + 0x274) + 0x18c),param_1,0,local_44,
 
                          param_2);
 

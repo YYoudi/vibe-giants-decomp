@@ -317,7 +317,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
     }
 
-    iVar1 = FUN_004a6180(DAT_00632a88);
+    iVar1 = ObjIsReaper(DAT_00632a88);
 
     if (iVar1 == 0) {
 
@@ -857,7 +857,7 @@ undefined4 FUN_00420890(void)
 
   
 
-  iVar2 = FUN_004a6180(DAT_00632a88);
+  iVar2 = ObjIsReaper(DAT_00632a88);
 
   if (iVar2 == 0) {
 
@@ -930,7 +930,7 @@ undefined4 FUN_00420930(void)
 
   
 
-  iVar2 = FUN_004a6180(DAT_00632a88);
+  iVar2 = ObjIsReaper(DAT_00632a88);
 
   if (iVar2 == 0) {
 
@@ -1003,7 +1003,7 @@ undefined4 FUN_004209d0(void)
 
   
 
-  iVar2 = FUN_004a6180(DAT_00632a88);
+  iVar2 = ObjIsReaper(DAT_00632a88);
 
   if (iVar2 == 0) {
 
@@ -1076,7 +1076,7 @@ undefined4 FUN_00420a70(void)
 
   
 
-  iVar2 = FUN_004a6180(DAT_00632a88);
+  iVar2 = ObjIsReaper(DAT_00632a88);
 
   if (iVar2 == 0) {
 
@@ -8889,7 +8889,7 @@ void dlog_objname_menu(void)
 
           else {
 
-            iVar2 = FUN_004a6180(iVar1);
+            iVar2 = ObjIsReaper(iVar1);
 
             if ((((iVar2 != 0) || (iVar2 = ObjIsMecc(iVar1), iVar2 != 0)) ||
 
@@ -8903,7 +8903,7 @@ void dlog_objname_menu(void)
 
               }
 
-              iVar2 = FUN_004a6180(iVar1);
+              iVar2 = ObjIsReaper(iVar1);
 
               if (iVar2 == 0) {
 

@@ -1,16 +1,16 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (21 named) — decompiled, names from PS2 symbols
+ * 48 functions (23 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004f38f0 @ 0x004F38F0 ===== */
+/* ===== smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie @ 0x004F38F0 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 /* PS2 candidate: smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie (conf 0.597) */
 
 
 
-void FUN_004f38f0(int param_1,int param_2)
+void smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie(int param_1,int param_2)
 
 
 
@@ -414,7 +414,7 @@ void FUN_004f3de0(int param_1,int param_2,int param_3,int param_4,float *param_5
 
   local_14 = *(undefined4 *)(param_4 + 0x18c);
 
-  iVar1 = FUN_004a6180(param_4);
+  iVar1 = ObjIsReaper(param_4);
 
   if ((iVar1 != 0) &&
 
@@ -428,7 +428,7 @@ void FUN_004f3de0(int param_1,int param_2,int param_3,int param_4,float *param_5
 
   }
 
-  iVar1 = FUN_004a6180(param_4);
+  iVar1 = ObjIsReaper(param_4);
 
   if ((iVar1 == 0) || (param_2 != 1)) {
 
@@ -462,7 +462,7 @@ void FUN_004f3de0(int param_1,int param_2,int param_3,int param_4,float *param_5
 
 LAB_004f3ef6:
 
-  iVar1 = FUN_004a6180(param_4);
+  iVar1 = ObjIsReaper(param_4);
 
   if ((iVar1 != 0) && (param_2 == 3)) {
 
@@ -600,7 +600,7 @@ void FUN_004f40a0(int param_1,int param_2,int param_3)
 
   }
 
-  FUN_004f5410(param_1,param_2,param_3);
+  smartie_attach_to_base(param_1,param_2,param_3);
 
   *(undefined4 *)(param_1 + 0xe4) = 0x37;
 
@@ -798,7 +798,7 @@ void smartie_lock_to_player(int param_1,undefined4 param_2,int param_3)
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6180(*(undefined4 *)(param_1 + 0x274));
+    iVar2 = ObjIsReaper(*(undefined4 *)(param_1 + 0x274));
 
     if (iVar2 == 0) {
 
@@ -963,7 +963,7 @@ int FUN_004f4ed0(int param_1,int param_2)
 
     if ((((iVar4 == 0) || (iVar4 = meccbasepit_bldg_from_object(iVar2), iVar4 != 0)) &&
 
-        ((iVar4 = FUN_004a6180(param_2), iVar4 == 0 ||
+        ((iVar4 = ObjIsReaper(param_2), iVar4 == 0 ||
 
          (iVar4 = reaperbase_bldg_from_object(iVar2), iVar4 != 0)))) &&
 
@@ -973,13 +973,13 @@ int FUN_004f4ed0(int param_1,int param_2)
 
              ((iVar4 = *(int *)(iVar1 + 0xd8), iVar4 == 0 || (iVar4 == iVar2)))))) &&
 
-        (((iVar4 = FUN_004a6180(param_2), iVar4 == 0 ||
+        (((iVar4 = ObjIsReaper(param_2), iVar4 == 0 ||
 
           ((iVar4 = *(int *)(iVar1 + 0xcfc), iVar4 == 0 || (iVar4 == iVar2)))) &&
 
-         (fVar5 = (float10)FUN_0050a5e0(iVar2 + 0xa0,param_1 + 0xa0), fVar5 <= (float10)160000.0))))
+         (fVar5 = (float10)distancesq2d__FP3P3DT0(iVar2 + 0xa0,param_1 + 0xa0),
 
-       )) break;
+         fVar5 <= (float10)160000.0)))))) break;
 
     puVar3 = (undefined4 *)*puVar3;
 
@@ -1165,7 +1165,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
         iVar2 = iVar4 + 0xa0;
 
-        fVar6 = (float10)FUN_0050a5e0(iVar2,iVar1);
+        fVar6 = (float10)distancesq2d__FP3P3DT0(iVar2,iVar1);
 
         if (fVar6 <= (float10)1600.0) {
 
@@ -1205,7 +1205,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
   }
 
-  iVar4 = FUN_004a6180(param_2);
+  iVar4 = ObjIsReaper(param_2);
 
   if (iVar4 == 0) {
 
@@ -1307,12 +1307,12 @@ LAB_004f539d:
 
 }
 
-/* ===== FUN_004f5410 @ 0x004F5410 ===== */
+/* ===== smartie_attach_to_base @ 0x004F5410 ===== */
 /* PS2 candidate: smartie_attach_to_base (conf 0.598) */
 
 
 
-void FUN_004f5410(int param_1,undefined4 param_2,undefined4 param_3)
+void smartie_attach_to_base(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -1490,7 +1490,7 @@ LAB_004f55b7:
 
   }
 
-  iVar2 = FUN_004a6180(param_2);
+  iVar2 = ObjIsReaper(param_2);
 
   if (iVar2 != 0) {
 
@@ -1825,7 +1825,7 @@ int FUN_004f5950(int param_1,float param_2)
 
     if ((((-1 < (char)((uint)*(undefined4 *)(iVar2 + 0xd8) >> 8)) &&
 
-         (((iVar4 = ObjIsMecc(iVar2), iVar4 != 0 || (iVar4 = FUN_004a6180(iVar2), iVar4 != 0)) &&
+         (((iVar4 = ObjIsMecc(iVar2), iVar4 != 0 || (iVar4 = ObjIsReaper(iVar2), iVar4 != 0)) &&
 
           (*(float *)(iVar2 + 0x278) < *(float *)(iVar2 + 0x1c0))))) &&
 
@@ -1839,7 +1839,7 @@ int FUN_004f5950(int param_1,float param_2)
 
              || (iVar4 = FUN_004586e0(iVar2), iVar4 != 10)))) &&
 
-           (((iVar4 = FUN_004a6180(iVar2), iVar4 == 0 ||
+           (((iVar4 = ObjIsReaper(iVar2), iVar4 == 0 ||
 
              (*(int *)(*(int *)(iVar2 + 0x100) + 0xe2c) == 0)) &&
 
@@ -1859,7 +1859,7 @@ int FUN_004f5950(int param_1,float param_2)
 
                (*(int *)(*(int *)(iVar2 + 0x100) + 0xd8) != 0)))) &&
 
-             ((iVar4 = FUN_004a6180(iVar2), iVar4 == 0 ||
+             ((iVar4 = ObjIsReaper(iVar2), iVar4 == 0 ||
 
               (*(int *)(*(int *)(iVar2 + 0x100) + 0xcfc) != 0)))) &&
 
@@ -1875,7 +1875,7 @@ int FUN_004f5950(int param_1,float param_2)
 
       if ((*(int *)(param_1 + 0xe8) != 10) ||
 
-         ((((iVar4 = FUN_004a6180(iVar2), iVar4 == 0 || (*(int *)(iVar2 + 0x210) == 0)) ||
+         ((((iVar4 = ObjIsReaper(iVar2), iVar4 == 0 || (*(int *)(iVar2 + 0x210) == 0)) ||
 
            (iVar4 = FUN_004a6120(*(int *)(iVar2 + 0x210)), iVar4 == 0)) &&
 
@@ -2130,7 +2130,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
   smartie_lock_to_player(param_1,param_2,param_3);
 
-  iVar2 = FUN_004a6180(param_2);
+  iVar2 = ObjIsReaper(param_2);
 
   if (iVar2 == 0) {
 
@@ -2557,7 +2557,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
           (((*(int *)(param_3 + 0x274) == 0 ||
 
-            (iVar3 = FUN_004a6180(*(int *)(param_3 + 0x274)), iVar3 == 0)) &&
+            (iVar3 = ObjIsReaper(*(int *)(param_3 + 0x274)), iVar3 == 0)) &&
 
            ((*(byte *)(param_3 + 0xe0) & 8) == 0)))) &&
 
@@ -5573,7 +5573,7 @@ void status_update_entry(float param_1)
 
       ((iVar3 = ObjIsMecc(param_1), iVar3 == 0 || ((*(uint *)((int)fVar2 + 0xe0) & 0x2000000) == 0))
 
-      )) && ((iVar3 = FUN_004a6180(fVar2), iVar3 == 0 ||
+      )) && ((iVar3 = ObjIsReaper(fVar2), iVar3 == 0 ||
 
              (*(int *)(*(int *)((int)fVar2 + 0x100) + 0xe2c) == 0)))) {
 

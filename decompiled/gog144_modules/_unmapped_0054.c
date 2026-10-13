@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (257 named) — decompiled, names from PS2 symbols
+ * 351 functions (259 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -939,12 +939,12 @@ void FUN_00540ab0(float *param_1,float *param_2,int param_3,int param_4,int para
 
 }
 
-/* ===== FUN_00541690 @ 0x00541690 ===== */
+/* ===== ANM_ClusterApplyMatSingleVertex_2 @ 0x00541690 ===== */
 /* PS2 candidate: ANM_ClusterApplyMatSingleVertex_2 (conf 0.592) */
 
 
 
-void FUN_00541690(int param_1,int param_2,int param_3,int param_4,int param_5)
+void ANM_ClusterApplyMatSingleVertex_2(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -9361,7 +9361,7 @@ undefined1 * crt_printf_fmt_e(undefined1 *param_1,int param_2,int param_3,int *p
 
   if (param_5 != '\0') {
 
-    FUN_00546145(param_1 + (*param_4 == 0x2d),0 < param_2);
+    crt_memmove(param_1 + (*param_4 == 0x2d),0 < param_2);
 
   }
 
@@ -9495,7 +9495,7 @@ undefined1 * FUN_00545fba(undefined1 *param_1,size_t param_2,int *param_3,char p
 
   if (param_3[1] < 1) {
 
-    FUN_00546145(puVar3,1);
+    crt_memmove(puVar3,1);
 
     *puVar3 = 0x30;
 
@@ -9511,7 +9511,7 @@ undefined1 * FUN_00545fba(undefined1 *param_1,size_t param_2,int *param_3,char p
 
   if (0 < (int)param_2) {
 
-    FUN_00546145(puVar3,1);
+    crt_memmove(puVar3,1);
 
     *puVar3 = DAT_005810bc;
 
@@ -9525,7 +9525,7 @@ undefined1 * FUN_00545fba(undefined1 *param_1,size_t param_2,int *param_3,char p
 
       }
 
-      FUN_00546145(puVar3 + 1,param_2);
+      crt_memmove(puVar3 + 1,param_2);
 
       _memset(puVar3 + 1,0x30,param_2);
 
@@ -9645,12 +9645,12 @@ __cfltcvt(double *arg,char *buffer,size_t sizeInBytes,int format,int precision,i
 
 }
 
-/* ===== FUN_00546145 @ 0x00546145 ===== */
+/* ===== crt_memmove @ 0x00546145 ===== */
 /* PS2 candidate: ObjectSetAnim (conf 0.587) */
 
 
 
-void FUN_00546145(char *param_1,int param_2)
+void crt_memmove(char *param_1,int param_2)
 
 
 

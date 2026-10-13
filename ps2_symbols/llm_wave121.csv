@@ -1,0 +1,19 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0050a5e0,FUN_0050a5e0,,distancesq2d__FP3P3DT0,0.9,llm-w121,body-verified
+004e5000,FUN_004e5000,,make_grenade_shot__FP6OBJECTf,0.9,llm-w121,body-verified
+004f5410,FUN_004f5410,,smartie_attach_to_base,0.9,llm-w121,body-verified
+004f38f0,FUN_004f38f0,,smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie,0.9,llm-w121,body-verified
+0046f050,FUN_0046f050,,lift_update_rider_position__FP6OBJECT,0.9,llm-w121,body-verified
+00478260,FUN_00478260,,formation_update_info,0.9,llm-w121,body-verified
+0053a900,FUN_0053a900,,strncpynull,0.9,llm-w121,body-verified
+00541690,FUN_00541690,,ANM_ClusterApplyMatSingleVertex_2,0.9,llm-w121,body-verified variant
+004a4480,FUN_004a4480,,trajectory_calculate,0.9,llm-w121,body-verified ballistic
+004b4ca0,FUN_004b4ca0,,reaperbasebldg_move,0.9,llm-w121,body-verified
+004aa550,FUN_004aa550,,PROJ_Create3,0.9,llm-w121,body-verified
+00408530,FUN_00408530,,meccbaseitem_move,0.9,llm-w121,body-verified
+004a6180,FUN_004a6180,,ObjIsReaper,0.9,llm-w121,body-verified type==3 (trio complete)
+005161c0,FUN_005161c0,,XFSetViewportRegion,0.9,llm-w121,body-verified upcall
+0046b3f0,FUN_0046b3f0,,Init__7PS2Game,0.9,llm-w121,body-verified init chain
+00519fe0,FUN_00519fe0,,reg_open_key,0.9,llm-w121,body-verified RegCreateKeyExA (rejected tex_freeTexBuf)
+00517aa0,FUN_00517aa0,,di_error_name,0.9,llm-w121,body-verified DIERR strings (rejected PickupTypeToIcon)
+00546145,FUN_00546145,,crt_memmove,0.9,llm-w121,body-verified strlen+shift (rejected ObjectSetAnim)

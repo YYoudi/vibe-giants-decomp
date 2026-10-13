@@ -274,7 +274,7 @@ void main_object_004976e0(void)
 
     if (((*(int *)(iVar1 + 0x174) == 0) && (*(int *)(iVar1 + 0x170) != 0)) &&
 
-       ((iVar4 = ObjIsMecc(iVar1), iVar4 != 0 || (iVar4 = FUN_004a6180(iVar1), iVar4 != 0)))) {
+       ((iVar4 = ObjIsMecc(iVar1), iVar4 != 0 || (iVar4 = ObjIsReaper(iVar1), iVar4 != 0)))) {
 
       mem_free_tagged(*(undefined4 *)(iVar1 + 0x170),s_C__Giants_source_main_object_c_0055c9ec,0x1f0
 

@@ -1773,7 +1773,7 @@ void collide_objects(int param_1)
 
                       pfVar9 = (float *)(param_1 + 0xac);
 
-                      fVar11 = (float10)FUN_0050a5e0(pfVar9,iVar5 + 0xa0);
+                      fVar11 = (float10)distancesq2d__FP3P3DT0(pfVar9,iVar5 + 0xa0);
 
                       if ((float10)fVar2 * (float10)fVar2 <= fVar11) {
 
@@ -4990,7 +4990,7 @@ void FUN_004162c0(int param_1)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6180(param_1);
+    iVar1 = ObjIsReaper(param_1);
 
     if (iVar1 != 0) {
 
@@ -7144,13 +7144,13 @@ int FUN_00418950(int param_1)
 
     if ((((iVar3 == 0) || (iVar3 = meccbasepit_bldg_from_object(iVar2), iVar3 != 0)) &&
 
-        ((iVar3 = FUN_004a6180(param_1), iVar3 == 0 ||
+        ((iVar3 = ObjIsReaper(param_1), iVar3 == 0 ||
 
          (iVar3 = reaperbase_bldg_from_object(iVar2), iVar3 != 0)))) &&
 
-       (fVar4 = (float10)FUN_0050a5e0(iVar2 + 0xa0,param_1 + 0xa0), fVar4 < (float10)490000.0))
+       (fVar4 = (float10)distancesq2d__FP3P3DT0(iVar2 + 0xa0,param_1 + 0xa0),
 
-    break;
+       fVar4 < (float10)490000.0)) break;
 
     puVar1 = (undefined4 *)*puVar1;
 
@@ -8564,9 +8564,9 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
         (-1 < (char)((uint)*(undefined4 *)(iVar4 + 0xd8) >> 8))) &&
 
-       (fVar8 = (float10)FUN_0050a5e0(iVar4 + 0xa0,iVar3 + 0xa0), fVar8 <= (float10)250000.0))
+       (fVar8 = (float10)distancesq2d__FP3P3DT0(iVar4 + 0xa0,iVar3 + 0xa0),
 
-    break;
+       fVar8 <= (float10)250000.0)) break;
 
     puVar6 = (undefined4 *)*puVar6;
 
@@ -9359,7 +9359,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
         }
 
-        fVar8 = (float10)FUN_0050a5e0(iVar4 + 0xa0,iVar5 + 0xa0);
+        fVar8 = (float10)distancesq2d__FP3P3DT0(iVar4 + 0xa0,iVar5 + 0xa0);
 
         if (*(float *)(iVar3 + 0x18) < *(float *)(DAT_00632ed8 + 0x624) * 0.5) {
 
@@ -9838,7 +9838,7 @@ LAB_0041bdd7:
 
         piVar7 = local_c;
 
-        fVar8 = (float10)FUN_0050a5e0(iVar3 + 0xa0,param_1 + 0xa0);
+        fVar8 = (float10)distancesq2d__FP3P3DT0(iVar3 + 0xa0,param_1 + 0xa0);
 
         if (*(float *)(iVar6 + 0x18) < *(float *)(DAT_00632ed8 + 0x624) * 0.1) {
 
@@ -11119,7 +11119,7 @@ void FUN_0041ebb0(int param_1)
 
     if ((iVar3 != 0) && (*(int *)(iVar1 + 0x274) == param_1)) {
 
-      FUN_00408530(iVar1);
+      meccbaseitem_move(iVar1);
 
     }
 
@@ -11364,7 +11364,7 @@ LAB_0041edda:
 
     if ((iVar3 != 0) && (*(int *)(iVar6 + 0x274) == param_1)) {
 
-      FUN_00408530(iVar6);
+      meccbaseitem_move(iVar6);
 
     }
 
@@ -11378,7 +11378,7 @@ LAB_0041edda:
 
     if ((iVar3 != 0) && (*(int *)(iVar6 + 0x274) == param_1)) {
 
-      FUN_00408530(iVar6);
+      meccbaseitem_move(iVar6);
 
     }
 
@@ -11900,7 +11900,7 @@ LAB_0041f398:
 
       }
 
-      iVar5 = FUN_004a6180(DAT_00632a88);
+      iVar5 = ObjIsReaper(DAT_00632a88);
 
       if (iVar5 != 0) {
 
@@ -11918,7 +11918,7 @@ LAB_0041f398:
 
   puVar10[1] = 0;
 
-  iVar5 = FUN_004a6180(DAT_00632a88);
+  iVar5 = ObjIsReaper(DAT_00632a88);
 
   if (iVar5 == 0) {
 

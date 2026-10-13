@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (93 named) — decompiled, names from PS2 symbols
+ * 186 functions (96 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -332,7 +332,9 @@ LAB_00511547:
 
   param_1 = *(float *)(*(int *)(iVar6 + *(int *)(iVar2 + 0x98) * 4) + 0xf8);
 
-  fVar7 = (float10)FUN_0050a5e0(*(int *)(iVar6 + *(int *)(iVar2 + 0x98) * 4) + 0xa0,iVar5 + 0xa0);
+  fVar7 = (float10)distancesq2d__FP3P3DT0
+
+                             (*(int *)(iVar6 + *(int *)(iVar2 + 0x98) * 4) + 0xa0,iVar5 + 0xa0);
 
   if (fVar7 <= (float10)param_1 * (float10)param_1) {
 
@@ -687,11 +689,13 @@ void FUN_005116e0(int param_1)
 
                                     0xf8);
 
-                  fVar5 = (float10)FUN_0050a5e0(*(int *)(*(int *)(iVar3 + 0x30) +
+                  fVar5 = (float10)distancesq2d__FP3P3DT0
 
-                                                        *(int *)(iVar2 + 0x98) * 4) + 0xa0,
+                                             (*(int *)(*(int *)(iVar3 + 0x30) +
 
-                                                param_1 + 0xa0);
+                                                      *(int *)(iVar2 + 0x98) * 4) + 0xa0,
+
+                                              param_1 + 0xa0);
 
                   if (fVar5 <= (float10)fVar1 * (float10)fVar1) {
 
@@ -1445,7 +1449,7 @@ bool obj_proximity_flags(int param_1)
 
         do {
 
-          fVar7 = (float10)FUN_0050a5e0(param_1 + 0xa0,piVar5[3] + 0xa0);
+          fVar7 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,piVar5[3] + 0xa0);
 
           if (fVar7 < (float10)*(float *)(DAT_00632ed8 + 0x998) *
 
@@ -1475,7 +1479,7 @@ bool obj_proximity_flags(int param_1)
 
           if ((((iVar2 == 4) || (iVar2 == 2)) || (iVar2 == 3)) &&
 
-             (fVar7 = (float10)FUN_0050a5e0(param_1 + 0xa0,puVar4[3] + 0xa0),
+             (fVar7 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,puVar4[3] + 0xa0),
 
              fVar7 < (float10)*(float *)(DAT_00632ed8 + 0x99c) *
 
@@ -1509,7 +1513,7 @@ bool obj_proximity_flags(int param_1)
 
             *(float *)(iVar1 + 0x3c) = DAT_00632b44;
 
-            fVar7 = (float10)FUN_0050a5e0(param_1 + 0xa0,&DAT_00632b48);
+            fVar7 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,&DAT_00632b48);
 
             if ((fVar7 < (float10)*(float *)(DAT_00632ed8 + 0x9a4) *
 
@@ -1896,13 +1900,13 @@ undefined4 vimp_mana_effect(int param_1,undefined4 param_2,undefined4 param_3,un
 
       iVar2 = piVar5[3];
 
-      iVar3 = FUN_004a6180(iVar2);
+      iVar3 = ObjIsReaper(iVar2);
 
       if (((((iVar3 != 0) && (*(float *)(iVar2 + 0x278) < *(float *)(iVar2 + 0x1c0))) ||
 
            ((*(int *)(iVar2 + 4) == 0x438 && (*(float *)(iVar2 + 0x278) < *(float *)(iVar2 + 0x1c0))
 
-            ))) && (fVar6 = (float10)FUN_0050a5e0(iVar2 + 0xa0,param_1 + 0xa0),
+            ))) && (fVar6 = (float10)distancesq2d__FP3P3DT0(iVar2 + 0xa0,param_1 + 0xa0),
 
                    fVar6 < (float10)fVar1 * (float10)fVar1)) &&
 
@@ -4472,7 +4476,7 @@ void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float p
 
           (*(float *)(DAT_00632ed8 + 0x1ec) == param_3)) {
 
-        iVar5 = FUN_004a6180(param_1);
+        iVar5 = ObjIsReaper(param_1);
 
         if (iVar5 == 0) {
 
@@ -5116,12 +5120,12 @@ void render_projection_set(float param_1,float param_2,int param_3)
 
 }
 
-/* ===== FUN_005161c0 @ 0x005161C0 ===== */
+/* ===== XFSetViewportRegion @ 0x005161C0 ===== */
 /* PS2 candidate: XFSetViewportRegion (conf 0.587) */
 
 
 
-void FUN_005161c0(float param_1,float param_2,float param_3,float param_4)
+void XFSetViewportRegion(float param_1,float param_2,float param_3,float param_4)
 
 
 
@@ -7021,7 +7025,7 @@ void FUN_00517a60(undefined4 param_1)
 
   
 
-  uVar1 = FUN_00517aa0(DAT_005ddb7c);
+  uVar1 = di_error_name(DAT_005ddb7c);
 
   tracer_set_text(param_1,uVar1);
 
@@ -7042,12 +7046,12 @@ void _GLOBAL__D_Game(void)
 
 }
 
-/* ===== FUN_00517aa0 @ 0x00517AA0 ===== */
+/* ===== di_error_name @ 0x00517AA0 ===== */
 /* PS2 candidate: PickupTypeToIcon__Fi (conf 0.588) */
 
 
 
-char * FUN_00517aa0(int param_1)
+char * di_error_name(int param_1)
 
 
 
@@ -8336,7 +8340,7 @@ float10 FUN_00518b70(int param_1,int param_2)
 
 LAB_00518bb0:
 
-      fVar2 = (float10)FUN_0050a5e0(iVar3,pfVar1 + 4);
+      fVar2 = (float10)distancesq2d__FP3P3DT0(iVar3,pfVar1 + 4);
 
       if (fVar2 < (float10)*pfVar1 != (fVar2 == (float10)*pfVar1)) {
 
@@ -9693,12 +9697,12 @@ int FUN_00519F20(DWORD *param_1,DWORD param_2,LPCSTR param_3)
 
 }
 
-/* ===== FUN_00519fe0 @ 0x00519FE0 ===== */
+/* ===== reg_open_key @ 0x00519FE0 ===== */
 /* PS2 candidate: tex_freeTexBuf__Fv (conf 0.597) */
 
 
 
-void FUN_00519fe0(LPCSTR param_1)
+void reg_open_key(LPCSTR param_1)
 
 
 
@@ -13010,7 +13014,7 @@ LAB_0051cb4e:
 
   (**(code **)(DAT_00656420 + 0x44))(DAT_00656420,DAT_00632e9c != 0);
 
-  FUN_005161c0(0,0,(float)_DAT_005ddb44,(float)_DAT_005ddb48);
+  XFSetViewportRegion(0,0,(float)_DAT_005ddb44,(float)_DAT_005ddb48);
 
   object_destroy_all__7PS2Game(1);
 
@@ -13520,7 +13524,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     if (iVar6 == 1) {
 
-      FUN_0053a900(&DAT_005dda88,pcVar7,(int)param_1 - (int)pcVar7,8);
+      strncpynull(&DAT_005dda88,pcVar7,(int)param_1 - (int)pcVar7,8);
 
       iVar6 = 0;
 
@@ -13528,7 +13532,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 2) {
 
-      FUN_0053a900(&DAT_005dda90,pcVar7,(int)param_1 - (int)pcVar7,0x50);
+      strncpynull(&DAT_005dda90,pcVar7,(int)param_1 - (int)pcVar7,0x50);
 
       iVar6 = 0;
 
@@ -13536,7 +13540,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 3) {
 
-      FUN_0053a900(&DAT_005ddae0,pcVar7,(int)param_1 - (int)pcVar7,8);
+      strncpynull(&DAT_005ddae0,pcVar7,(int)param_1 - (int)pcVar7,8);
 
       iVar6 = 0;
 
@@ -13544,7 +13548,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 4) {
 
-      FUN_0053a900(&DAT_005ddae8,pcVar7,(int)param_1 - (int)pcVar7,0x50);
+      strncpynull(&DAT_005ddae8,pcVar7,(int)param_1 - (int)pcVar7,0x50);
 
       iVar6 = 0;
 
@@ -13552,7 +13556,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 7) {
 
-      FUN_0053a900(&DAT_0063304c,pcVar7,(int)param_1 - (int)pcVar7,0x20);
+      strncpynull(&DAT_0063304c,pcVar7,(int)param_1 - (int)pcVar7,0x20);
 
       iVar6 = 0;
 
@@ -13560,7 +13564,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 8) {
 
-      FUN_0053a900(&DAT_00632f48,pcVar7,(int)param_1 - (int)pcVar7,0x20);
+      strncpynull(&DAT_00632f48,pcVar7,(int)param_1 - (int)pcVar7,0x20);
 
       iVar6 = 0;
 
@@ -13568,7 +13572,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 9) {
 
-      FUN_0053a900(&DAT_00632f68,pcVar7,(int)param_1 - (int)pcVar7,0x40);
+      strncpynull(&DAT_00632f68,pcVar7,(int)param_1 - (int)pcVar7,0x40);
 
       if (DAT_00632f68 != '\0') {
 
@@ -13582,7 +13586,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 10) {
 
-      FUN_0053a900(auStack_14,pcVar7,(int)param_1 - (int)pcVar7,0x14);
+      strncpynull(auStack_14,pcVar7,(int)param_1 - (int)pcVar7,0x14);
 
       DAT_00632fa8 = ANM_BinderDestroy_3(auStack_14);
 
@@ -13608,9 +13612,9 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 0xb) {
 
-      FUN_0053a900(&DAT_00633070,pcVar7,(int)param_1 - (int)pcVar7,0x20);
+      strncpynull(&DAT_00633070,pcVar7,(int)param_1 - (int)pcVar7,0x20);
 
-      FUN_0053a900(&DAT_00632ee8,pcVar7,(int)param_1 - (int)pcVar7,0x20);
+      strncpynull(&DAT_00632ee8,pcVar7,(int)param_1 - (int)pcVar7,0x20);
 
       iVar6 = 0;
 
@@ -13662,7 +13666,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 0xe) {
 
-      FUN_0053a900(&DAT_00633030,pcVar7,(int)param_1 - (int)pcVar7,8);
+      strncpynull(&DAT_00633030,pcVar7,(int)param_1 - (int)pcVar7,8);
 
       iVar6 = 0;
 
@@ -13712,7 +13716,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
     else if (iVar6 == 0x12) {
 
-      FUN_0053a900(&DAT_00633090,pcVar7,(int)param_1 - (int)pcVar7,0x20);
+      strncpynull(&DAT_00633090,pcVar7,(int)param_1 - (int)pcVar7,0x20);
 
       iVar6 = 0;
 
@@ -14749,7 +14753,7 @@ LAB_0051ded4:
 
         DAT_00632e94 = (**(code **)(DAT_00656420 + 0xc4))();
 
-        FUN_00519fe0(local_64);
+        reg_open_key(local_64);
 
         game_options_verify();
 
@@ -15035,7 +15039,7 @@ LAB_0051e225:
 
   if (local_64[0] != '\0') {
 
-    FUN_00519fe0(local_64);
+    reg_open_key(local_64);
 
     uStack_6c = 0x3f400000;
 

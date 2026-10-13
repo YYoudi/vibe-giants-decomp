@@ -6731,7 +6731,7 @@ switchD_0043b245_caseD_c:
 
       }
 
-      FUN_00478260(iVar1);
+      formation_update_info(iVar1);
 
       return;
 
@@ -6763,7 +6763,7 @@ LAB_0043b360:
 
            (uint)(*(int *)(*(int *)(iVar1 + 0x100) + 0x4c) == 0);
 
-      FUN_00478260(iVar1);
+      formation_update_info(iVar1);
 
       return;
 
@@ -10820,7 +10820,7 @@ void wredit_obj_update(void)
 
       else {
 
-        FUN_00478260(iVar3);
+        formation_update_info(iVar3);
 
       }
 
@@ -10932,7 +10932,7 @@ LAB_0043fd98:
 
         }
 
-        FUN_00478260(iVar3);
+        formation_update_info(iVar3);
 
       }
 

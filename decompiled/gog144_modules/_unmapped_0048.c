@@ -3836,7 +3836,7 @@ LAB_00483e92:
 
   FUN_0051a1c0(s_DefPlayer_0055a07c,local_40,0x40);
 
-  FUN_00519fe0(&DAT_0063304c);
+  reg_open_key(&DAT_0063304c);
 
   comm_0051a130(s_Deleted_0055bf90,0);
 
@@ -11894,7 +11894,7 @@ void menu_deleted_player(void)
 
   if (DAT_0059ee9c == 1) {
 
-    FUN_00519fe0(&DAT_006329e0);
+    reg_open_key(&DAT_006329e0);
 
     comm_0051a130(s_Deleted_0055bf90,1);
 

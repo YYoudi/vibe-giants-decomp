@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (102 named) — decompiled, names from PS2 symbols
+ * 179 functions (103 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -5643,7 +5643,7 @@ void FUN_00533b00(int param_1)
 
       object_change_ospec(iVar5,0x4b);
 
-      FUN_0046b3f0(iVar5,param_1 + 5);
+      Init__7PS2Game(iVar5,param_1 + 5);
 
 LAB_00533b86:
 
@@ -6865,7 +6865,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               if (iVar9 == 0) {
 
-                iVar9 = FUN_004a6180(iVar6);
+                iVar9 = ObjIsReaper(iVar6);
 
                 if (iVar9 == 0) {
 
@@ -14573,12 +14573,12 @@ bool FUN_0053a8a0(byte *param_1,byte *param_2)
 
 }
 
-/* ===== FUN_0053a900 @ 0x0053A900 ===== */
+/* ===== strncpynull @ 0x0053A900 ===== */
 /* PS2 candidate: strncpynull (conf 0.593) */
 
 
 
-void FUN_0053a900(undefined1 *param_1,undefined1 *param_2,int param_3,int param_4)
+void strncpynull(undefined1 *param_1,undefined1 *param_2,int param_3,int param_4)
 
 
 

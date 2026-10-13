@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (38 named) — decompiled, names from PS2 symbols
+ * 87 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -1042,7 +1042,7 @@ void status_draw_panel(void)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6180(DAT_00632a88);
+    iVar1 = ObjIsReaper(DAT_00632a88);
 
     if (iVar1 != 0) {
 
@@ -2012,7 +2012,7 @@ switchD_00501829_caseD_3:
 
              (fVar2 = *(float *)(DAT_00632ed8 + 0xaec) + *(float *)(DAT_00632ed8 + 0xaec),
 
-             fVar15 = (float10)FUN_0050a5e0(iStack_18c + 0xa0,local_1b0 + 0xa0),
+             fVar15 = (float10)distancesq2d__FP3P3DT0(iStack_18c + 0xa0,local_1b0 + 0xa0),
 
              fVar15 <= (float10)fVar2 * (float10)fVar2)) {
 
@@ -2574,7 +2574,7 @@ LAB_0050203c:
 
                  (*(char *)(iVar5 + 0x1f7) != '\0')) && (*(float *)(iVar5 + 0x1f8) != 0.0)) &&
 
-               (fVar15 = (float10)FUN_0050a5e0(iVar5 + 0xa0,iVar11 + 0xe0),
+               (fVar15 = (float10)distancesq2d__FP3P3DT0(iVar5 + 0xa0,iVar11 + 0xe0),
 
                fVar15 <= (float10)10000.0)) {
 
@@ -3009,7 +3009,7 @@ void FUN_00502750(int param_1,float *param_2,undefined4 param_3,undefined4 param
 
       (&DAT_005a8704)[param_1 * 3] = param_2[2];
 
-      fVar5 = (float10)FUN_0050a5e0(pfVar1,param_5);
+      fVar5 = (float10)distancesq2d__FP3P3DT0(pfVar1,param_5);
 
     } while ((fVar5 < (float10)param_6 * (float10)param_6) ||
 
@@ -3025,7 +3025,9 @@ void FUN_00502750(int param_1,float *param_2,undefined4 param_3,undefined4 param
 
         if ((param_1 != iVar4) &&
 
-           (fVar2 = *(float *)(DAT_00632ed8 + 0xaf8), fVar5 = (float10)FUN_0050a5e0(pfVar1,puVar3),
+           (fVar2 = *(float *)(DAT_00632ed8 + 0xaf8),
+
+           fVar5 = (float10)distancesq2d__FP3P3DT0(pfVar1,puVar3),
 
            fVar5 < (float10)fVar2 * (float10)fVar2)) break;
 
@@ -3408,7 +3410,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     FUN_00456090(iVar4);
 
-    fVar11 = (float10)FUN_0050a5e0(puVar1,pfVar2);
+    fVar11 = (float10)distancesq2d__FP3P3DT0(puVar1,pfVar2);
 
     if ((*(float *)(iVar4 + 0xec) < 0.0) && (fVar11 < (float10)param_1 * (float10)param_1)) {
 
@@ -3458,7 +3460,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     *(undefined4 *)(*(int *)(iVar4 + 0x100) + 0x20) = 3;
 
-    fVar11 = (float10)FUN_0050a5e0(puVar1,pfVar2);
+    fVar11 = (float10)distancesq2d__FP3P3DT0(puVar1,pfVar2);
 
     local_24 = (float)(SQRT(fVar11) * (float10)0.0033333334);
 
@@ -3552,7 +3554,7 @@ LAB_00502fdd:
 
     *(undefined4 *)(*(int *)(iVar4 + 0x100) + 0x20) = 3;
 
-    fVar11 = (float10)FUN_0050a5e0(puVar1,pfVar2);
+    fVar11 = (float10)distancesq2d__FP3P3DT0(puVar1,pfVar2);
 
     local_24 = (float)(SQRT(fVar11) * (float10)0.0033333334);
 
@@ -3620,7 +3622,7 @@ LAB_00502fdd:
 
     *(undefined4 *)(*(int *)(iVar4 + 0x100) + 0x20) = 3;
 
-    fVar11 = (float10)FUN_0050a5e0(puVar1,pfVar2);
+    fVar11 = (float10)distancesq2d__FP3P3DT0(puVar1,pfVar2);
 
     DAT_005a8800 = DAT_005a8800 | 1 << (bVar9 & 0x1f);
 
@@ -3720,7 +3722,7 @@ LAB_00503502:
 
     *(undefined4 *)(*(int *)(iVar4 + 0x100) + 0x20) = 3;
 
-    fVar11 = (float10)FUN_0050a5e0(puVar1,pfVar2);
+    fVar11 = (float10)distancesq2d__FP3P3DT0(puVar1,pfVar2);
 
     DAT_005a8800 = DAT_005a8800 | 1 << (bVar9 & 0x1f);
 
@@ -4324,7 +4326,7 @@ LAB_00503c4b:
 
   }
 
-  fVar6 = (float10)FUN_0050a5e0(iVar2 + 0xa0,&local_c);
+  fVar6 = (float10)distancesq2d__FP3P3DT0(iVar2 + 0xa0,&local_c);
 
   if (local_4 < *(float *)(iVar2 + 0x140)) {
 
@@ -9081,7 +9083,7 @@ void FUN_005093e0(float param_1)
 
       if ((((*(int *)(iVar1 + 0x274) != 0) && (*(int *)(iVar1 + 0xe4) == 2)) &&
 
-          (fVar5 = (float10)FUN_0050a5e0((int)param_1 + 0xa0,iVar1 + 0xa0),
+          (fVar5 = (float10)distancesq2d__FP3P3DT0((int)param_1 + 0xa0,iVar1 + 0xa0),
 
           fVar5 <= (float10)*(float *)(DAT_00632ed8 + 0x310) *
 
@@ -10169,12 +10171,12 @@ float10 FUN_0050a5c0(float *param_1)
 
 }
 
-/* ===== FUN_0050a5e0 @ 0x0050A5E0 ===== */
+/* ===== distancesq2d__FP3P3DT0 @ 0x0050A5E0 ===== */
 /* PS2 candidate: distancesq2d__FP3P3DT0 (conf 0.599) */
 
 
 
-float10 FUN_0050a5e0(float *param_1,float *param_2)
+float10 distancesq2d__FP3P3DT0(float *param_1,float *param_2)
 
 
 
@@ -11098,7 +11100,7 @@ void reaper_ability_playersound5(int param_1,int param_2)
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6180(iVar2);
+    iVar3 = ObjIsReaper(iVar2);
 
     if (iVar3 != 0) {
 
@@ -11224,7 +11226,7 @@ void TurretExit(int param_1)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a6180(iVar1);
+      iVar2 = ObjIsReaper(iVar1);
 
       if (iVar2 != 0) {
 
@@ -11588,7 +11590,7 @@ void kabutoai_move(float param_1)
 
            ((*(int *)((int)fVar7 + 0x210) == 0 &&
 
-            (fVar13 = (float10)FUN_0050a5e0((int)fVar7 + 0xa0,iVar9 + 0xa0),
+            (fVar13 = (float10)distancesq2d__FP3P3DT0((int)fVar7 + 0xa0,iVar9 + 0xa0),
 
             fVar13 <= (float10)param_1)))) {
 
@@ -11738,9 +11740,9 @@ LAB_0050e1a4:
 
            ((*(int *)(iVar6 + 0x210) == 0 &&
 
-            (fVar13 = (float10)FUN_0050a5e0(iVar6 + 0xa0,iVar9 + 0xa0), fVar13 <= (float10)param_1))
+            (fVar13 = (float10)distancesq2d__FP3P3DT0(iVar6 + 0xa0,iVar9 + 0xa0),
 
-           )) {
+            fVar13 <= (float10)param_1)))) {
 
           param_1 = (float)fVar13;
 
@@ -11808,9 +11810,9 @@ LAB_0050e1a4:
 
            ((*(int *)(iVar6 + 0x210) == 0 &&
 
-            (fVar13 = (float10)FUN_0050a5e0(iVar6 + 0xa0,iVar9 + 0xa0), fVar13 <= (float10)param_1))
+            (fVar13 = (float10)distancesq2d__FP3P3DT0(iVar6 + 0xa0,iVar9 + 0xa0),
 
-           )) {
+            fVar13 <= (float10)param_1)))) {
 
           param_1 = (float)fVar13;
 
@@ -11902,9 +11904,9 @@ LAB_0050d177:
 
            ((*(int *)(iVar6 + 0x210) == 0 &&
 
-            (fVar13 = (float10)FUN_0050a5e0(iVar6 + 0xa0,iVar9 + 0xa0), fVar13 <= (float10)param_1))
+            (fVar13 = (float10)distancesq2d__FP3P3DT0(iVar6 + 0xa0,iVar9 + 0xa0),
 
-           )) {
+            fVar13 <= (float10)param_1)))) {
 
           param_1 = (float)fVar13;
 
@@ -12156,7 +12158,7 @@ switchD_0050ca70_caseD_15:
 
     }
 
-    fVar13 = (float10)FUN_0050a5e0((int)pfVar1[1] + 0xa0,(int)param_1 + 0xa0);
+    fVar13 = (float10)distancesq2d__FP3P3DT0((int)pfVar1[1] + 0xa0,(int)param_1 + 0xa0);
 
     if (fVar13 < (float10)(fVar4 + 10.0) * (float10)(fVar4 + 10.0)) {
 
@@ -13220,7 +13222,7 @@ LAB_0050e133:
 
     iVar6 = ObjIsMecc(DAT_00632a88);
 
-    if (((iVar6 == 0) && (iVar6 = FUN_004a6180(DAT_00632a88), iVar6 == 0)) &&
+    if (((iVar6 == 0) && (iVar6 = ObjIsReaper(DAT_00632a88), iVar6 == 0)) &&
 
        (iVar6 = ObjIsKabuto(DAT_00632a88), iVar6 == 0)) {
 
@@ -13228,7 +13230,7 @@ LAB_0050e133:
 
     }
 
-    fVar13 = (float10)FUN_0050a5e0(DAT_00632a88 + 0xa0,(int)param_1 + 0xa0);
+    fVar13 = (float10)distancesq2d__FP3P3DT0(DAT_00632a88 + 0xa0,(int)param_1 + 0xa0);
 
     bVar11 = fVar13 < (float10)22500.0 |
 
@@ -13240,13 +13242,13 @@ LAB_0050e133:
 
     iVar6 = ObjIsMecc(DAT_00632a88);
 
-    if (((iVar6 != 0) || (iVar6 = FUN_004a6180(DAT_00632a88), iVar6 != 0)) ||
+    if (((iVar6 != 0) || (iVar6 = ObjIsReaper(DAT_00632a88), iVar6 != 0)) ||
 
        (iVar6 = ObjIsKabuto(DAT_00632a88), iVar6 != 0)) {
 
       iVar6 = (int)param_1 + 0xa0;
 
-      fVar13 = (float10)FUN_0050a5e0(DAT_00632a88 + 0xa0,iVar6);
+      fVar13 = (float10)distancesq2d__FP3P3DT0(DAT_00632a88 + 0xa0,iVar6);
 
       if (fVar13 <= (float10)640000.0) {
 
@@ -13396,7 +13398,7 @@ LAB_0050e133:
 
               ((*(int *)(iVar6 + 0x210) == 0 &&
 
-               (fVar13 = (float10)FUN_0050a5e0(iVar6 + 0xa0,iVar9 + 0xa0),
+               (fVar13 = (float10)distancesq2d__FP3P3DT0(iVar6 + 0xa0,iVar9 + 0xa0),
 
                fVar13 <= (float10)param_1)))))) {
 
@@ -13536,7 +13538,7 @@ LAB_0050e133:
 
     }
 
-    fVar13 = (float10)FUN_0050a5e0((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
+    fVar13 = (float10)distancesq2d__FP3P3DT0((int)param_1 + 0xa0,(int)pfVar1[1] + 0xa0);
 
     if (fVar13 < (float10)100.0) {
 
@@ -13632,9 +13634,9 @@ LAB_0050e133:
 
           ((*(int *)(iVar6 + 0x210) == 0 &&
 
-           (fVar13 = (float10)FUN_0050a5e0(iVar6 + 0xa0,iVar9 + 0xa0), fVar13 <= (float10)param_1)))
+           (fVar13 = (float10)distancesq2d__FP3P3DT0(iVar6 + 0xa0,iVar9 + 0xa0),
 
-          ))) {
+           fVar13 <= (float10)param_1)))))) {
 
         param_1 = (float)fVar13;
 

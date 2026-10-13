@@ -50,7 +50,7 @@ void main_demo_004267a0(void)
 
           else {
 
-            iVar1 = FUN_004a6180(iVar3);
+            iVar1 = ObjIsReaper(iVar3);
 
             if ((((iVar1 != 0) || (iVar1 = ObjIsMecc(iVar3), iVar1 != 0)) ||
 
@@ -76,7 +76,7 @@ void main_demo_004267a0(void)
 
                       if (iVar3 != 0) {
 
-                        iVar3 = FUN_004a6180(iVar4);
+                        iVar3 = ObjIsReaper(iVar4);
 
                         if (((iVar3 == 0) && (iVar3 = ObjIsMecc(iVar4), iVar3 == 0)) &&
 
@@ -162,7 +162,7 @@ void main_demo_004267a0(void)
 
               *(undefined4 *)(iVar3 + 0x124) = *(undefined4 *)(iVar3 + 0x114);
 
-              iVar1 = FUN_004a6180(iVar3);
+              iVar1 = ObjIsReaper(iVar3);
 
               if (iVar1 == 0) {
 
@@ -276,7 +276,7 @@ void main_demo_004267a0(void)
 
           if (iVar3 != 0) {
 
-            iVar3 = FUN_004a6180(iVar4);
+            iVar3 = ObjIsReaper(iVar4);
 
             if (((iVar3 == 0) && (iVar3 = ObjIsMecc(iVar4), iVar3 == 0)) &&
 
@@ -375,7 +375,7 @@ undefined4 main_demo_00426c10(void)
 
             if (iVar5 != 0) {
 
-              iVar5 = FUN_004a6180(iVar6);
+              iVar5 = ObjIsReaper(iVar6);
 
               if (((iVar5 == 0) && (iVar5 = ObjIsMecc(iVar6), iVar5 == 0)) &&
 
@@ -461,7 +461,7 @@ undefined4 main_demo_00426c10(void)
 
       iVar6 = (&DAT_005989d8)[local_64[0]];
 
-      iVar4 = FUN_004a6180(iVar6);
+      iVar4 = ObjIsReaper(iVar6);
 
       if ((((iVar4 != 0) || (iVar4 = ObjIsMecc(iVar6), iVar4 != 0)) ||
 
@@ -487,7 +487,7 @@ undefined4 main_demo_00426c10(void)
 
                 if (iVar5 != 0) {
 
-                  iVar5 = FUN_004a6180(iVar6);
+                  iVar5 = ObjIsReaper(iVar6);
 
                   if (((iVar5 == 0) && (iVar5 = ObjIsMecc(iVar6), iVar5 == 0)) &&
 
@@ -531,7 +531,7 @@ undefined4 main_demo_00426c10(void)
 
         }
 
-        iVar6 = FUN_004a6180(iVar6);
+        iVar6 = ObjIsReaper(iVar6);
 
         if (iVar6 != 0) {
 

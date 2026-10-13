@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (29 named) — decompiled, names from PS2 symbols
+ * 53 functions (31 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -548,7 +548,7 @@ void reaper_lock_user_3(undefined4 param_1,int param_2,float param_3,int param_4
 
   else {
 
-    iVar1 = FUN_004a6180(param_2);
+    iVar1 = ObjIsReaper(param_2);
 
     if (iVar1 != 0) {
 
@@ -605,7 +605,7 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 
   else {
 
-    iVar1 = FUN_004a6180(param_2);
+    iVar1 = ObjIsReaper(param_2);
 
     if (iVar1 != 0) {
 
@@ -804,7 +804,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
       else {
 
-        iVar3 = FUN_004a6180(param_2);
+        iVar3 = ObjIsReaper(param_2);
 
         if (iVar3 != 0) {
 
@@ -1061,7 +1061,7 @@ LAB_00465d63:
 
     else {
 
-      iVar3 = FUN_004a6180(fVar2);
+      iVar3 = ObjIsReaper(fVar2);
 
       if (iVar3 != 0) {
 
@@ -1553,7 +1553,9 @@ float10 FUN_004698f0(int param_1,undefined4 param_2)
 
   fVar2 = (float10)FUN_00543e70();
 
-  FUN_004a4480(param_1 + 0x128,param_1 + 0xa0,param_2,iVar1 + 0x40,(float)(fVar2 * (float10)0.1));
+  trajectory_calculate
+
+            (param_1 + 0x128,param_1 + 0xa0,param_2,iVar1 + 0x40,(float)(fVar2 * (float10)0.1));
 
   return (float10)(float)(fVar2 * (float10)0.1);
 
@@ -1665,7 +1667,7 @@ void FUN_004699e0(int param_1)
 
   }
 
-  fVar4 = (float10)FUN_0050a5e0(param_1 + 0xa0,*(int *)(param_1 + 0x274) + 0xa0);
+  fVar4 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,*(int *)(param_1 + 0x274) + 0xa0);
 
   if ((float10)*(float *)(DAT_00632ed8 + 0x11c0) * (float10)*(float *)(DAT_00632ed8 + 0x11c0) <=
 
@@ -2737,12 +2739,12 @@ void FUN_0046aeb0(int param_1)
 
 }
 
-/* ===== FUN_0046b3f0 @ 0x0046B3F0 ===== */
+/* ===== Init__7PS2Game @ 0x0046B3F0 ===== */
 /* PS2 candidate: Init__7PS2Game (conf 0.581) */
 
 
 
-void FUN_0046b3f0(undefined4 param_1,undefined4 param_2)
+void Init__7PS2Game(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -3891,12 +3893,12 @@ void FUN_0046e9d0(int param_1,undefined4 *param_2,undefined4 param_3,float param
 
 }
 
-/* ===== FUN_0046f050 @ 0x0046F050 ===== */
+/* ===== lift_update_rider_position__FP6OBJECT @ 0x0046F050 ===== */
 /* PS2 candidate: lift_update_rider_position__FP6OBJECT (conf 0.596) */
 
 
 
-void FUN_0046f050(int param_1)
+void lift_update_rider_position__FP6OBJECT(int param_1)
 
 
 
@@ -3966,7 +3968,7 @@ void FUN_0046f050(int param_1)
 
       pfVar1 = (float *)(iVar5 + 0xa0);
 
-      fVar9 = (float10)FUN_0050a5e0(pfVar1,local_160);
+      fVar9 = (float10)distancesq2d__FP3P3DT0(pfVar1,local_160);
 
       if (fVar9 < (float10)900.0) {
 

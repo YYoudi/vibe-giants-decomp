@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (52 named) — decompiled, names from PS2 symbols
+ * 90 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -982,12 +982,12 @@ void FUN_004b4570(int param_1)
 
 }
 
-/* ===== FUN_004b4ca0 @ 0x004B4CA0 ===== */
+/* ===== reaperbasebldg_move @ 0x004B4CA0 ===== */
 /* PS2 candidate: reaperbasebldg_move (conf 0.591) */
 
 
 
-void FUN_004b4ca0(float param_1)
+void reaperbasebldg_move(float param_1)
 
 
 
@@ -2926,7 +2926,7 @@ LAB_004b696a:
 
       FUN_00418630(local_18,*puVar6,local_c);
 
-      fVar7 = (float10)FUN_0050a5e0(local_c,param_2 + 0xa0);
+      fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
       if (fVar7 < (float10)local_14) {
 
@@ -3032,9 +3032,9 @@ LAB_004b6b5e:
 
       FUN_00418630(local_18,piVar4[1],local_c);
 
-      fVar7 = (float10)FUN_0050a5e0(local_c,param_2 + 0xa0);
+      fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
-      fVar8 = (float10)FUN_0050a5e0(local_c,*piVar4 + 0xa0);
+      fVar8 = (float10)distancesq2d__FP3P3DT0(local_c,*piVar4 + 0xa0);
 
       if ((float10)(float)fVar7 < fVar8) {
 
@@ -3164,9 +3164,9 @@ int FUN_004b6c00(int param_1,int *param_2)
 
            (iVar2 = iVar2 + 1, ((byte)*(undefined4 *)(iVar1 + 0xe0) & 0x3f) != 0x3f)) &&
 
-          (fVar5 = (float10)FUN_0050a5e0(iVar1 + 0xa0,param_1 + 0xa0), fVar5 <= (float10)250000.0))
+          (fVar5 = (float10)distancesq2d__FP3P3DT0(iVar1 + 0xa0,param_1 + 0xa0),
 
-         && (fVar5 < (float10)local_8)) {
+          fVar5 <= (float10)250000.0)) && (fVar5 < (float10)local_8)) {
 
         local_8 = (float)fVar5;
 
@@ -4700,7 +4700,7 @@ LAB_004b8187:
 
         if ((iVar9 != 0) ||
 
-           (iVar9 = FUN_004a6180(*(undefined4 *)(*(int *)(iVar7 + 0xea4) + 0x274)), iVar9 != 0)) {
+           (iVar9 = ObjIsReaper(*(undefined4 *)(*(int *)(iVar7 + 0xea4) + 0x274)), iVar9 != 0)) {
 
           smartie_unlock_from_player
 
@@ -6996,9 +6996,9 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
       if ((iVar4 == 0) &&
 
-         (iVar4 = FUN_004a6180(*(undefined4 *)(param_2 + 0xf48)), puVar10 = DAT_00632d98, iVar4 == 0
+         (iVar4 = ObjIsReaper(*(undefined4 *)(param_2 + 0xf48)), puVar10 = DAT_00632d98, iVar4 == 0)
 
-         )) {
+         ) {
 
         return 0;
 
@@ -7078,7 +7078,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
   case 0x18:
 
-    fVar11 = (float10)FUN_0050a5e0(param_1 + 0xa0,param_2 + 0xf4c);
+    fVar11 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,param_2 + 0xf4c);
 
     if ((float10)*(float *)(DAT_00632ed8 + 0x758) * (float10)*(float *)(DAT_00632ed8 + 0x758) <=
 
@@ -7400,7 +7400,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     iVar4 = ObjIsMecc(iVar4);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a6180(*(undefined4 *)(param_2 + 0xf48)), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = ObjIsReaper(*(undefined4 *)(param_2 + 0xf48)), iVar4 == 0)) {
 
       iVar4 = *(int *)(*(int *)(param_2 + 0xf48) + 4);
 
@@ -7864,7 +7864,7 @@ float10 physics_reset_b(int param_1)
 
             * -32.17405;
 
-  FUN_004a4480(param_1 + 0x128,param_1 + 0xa0,puVar1,&local_c,(float)fVar4);
+  trajectory_calculate(param_1 + 0x128,param_1 + 0xa0,puVar1,&local_c,(float)fVar4);
 
   return (float10)(float)fVar4;
 
@@ -7970,7 +7970,7 @@ void sound_player_user(undefined4 param_1,int *param_2)
 
           }
 
-          iVar4 = FUN_004a6180(*param_2);
+          iVar4 = ObjIsReaper(*param_2);
 
           if (iVar4 != 0) {
 
@@ -8090,7 +8090,7 @@ void sound_player_user(undefined4 param_1,int *param_2)
 
             }
 
-            iVar5 = FUN_004a6180(*param_2);
+            iVar5 = ObjIsReaper(*param_2);
 
             iVar4 = *param_2;
 
@@ -8249,7 +8249,7 @@ void FUN_004ba990(int param_1,float param_2,undefined4 param_3)
 
     if (((*(int *)(iVar1 + 0x18c) != *(int *)(param_1 + 0x18c)) &&
 
-        ((((((iVar3 = FUN_004a6180(iVar1), iVar3 != 0 || (iVar3 = ObjIsMecc(iVar1), iVar3 != 0)) ||
+        ((((((iVar3 = ObjIsReaper(iVar1), iVar3 != 0 || (iVar3 = ObjIsMecc(iVar1), iVar3 != 0)) ||
 
             (iVar3 = *(int *)(iVar1 + 4), iVar3 == 0xb)) || ((iVar3 == 8 || (iVar3 == 0x438)))) ||
 
@@ -10497,7 +10497,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     local_14 = local_b8;
 
-    iVar7 = FUN_004aa550(0x2b,*(undefined4 *)(param_1 + 0x18c),param_1,0,&local_44,0);
+    iVar7 = PROJ_Create3(0x2b,*(undefined4 *)(param_1 + 0x18c),param_1,0,&local_44,0);
 
     *(int *)(iVar7 + 0x274) = param_1;
 
@@ -10563,7 +10563,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     local_88[0] = local_88[0] | 0x10;
 
-    iVar7 = FUN_004aa550(0x16,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,0);
+    iVar7 = PROJ_Create3(0x16,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,0);
 
     *(int *)(iVar7 + 0x274) = param_1;
 
@@ -10629,7 +10629,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     local_58 = local_b8;
 
-    iVar7 = FUN_004aa550(0x15,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,0);
+    iVar7 = PROJ_Create3(0x15,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,0);
 
     *(int *)(iVar7 + 0x274) = param_1;
 
@@ -10705,7 +10705,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
       local_88[0] = local_88[0] | 0x10;
 
-      iVar7 = FUN_004aa550(0x17,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,puVar2[0x3e3]);
+      iVar7 = PROJ_Create3(0x17,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,puVar2[0x3e3]);
 
       *(int *)(iVar7 + 0x274) = param_1;
 
@@ -10785,7 +10785,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
           local_a0 = (float)((int)local_a0 + 1);
 
-          iVar5 = FUN_004aa550(0x34,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,uVar3);
+          iVar5 = PROJ_Create3(0x34,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_88,uVar3);
 
           *(int *)(iVar5 + 0x274) = param_1;
 
@@ -11159,7 +11159,7 @@ void reaper_fire_spell__FP6OBJECTiP3P3DT0i
 
   local_44[0] = local_44[0] | 0x10;
 
-  iVar1 = FUN_004aa550(param_2,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,param_4);
+  iVar1 = PROJ_Create3(param_2,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,param_4);
 
   switch(param_2) {
 

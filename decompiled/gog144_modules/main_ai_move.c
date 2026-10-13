@@ -1099,15 +1099,15 @@ LAB_00402316:
 
       if (3.0 < fVar8) {
 
-        fVar10 = (float10)FUN_0050a5e0(iVar4 + 0x1c,iVar4 + 4);
+        fVar10 = (float10)distancesq2d__FP3P3DT0(iVar4 + 0x1c,iVar4 + 4);
 
         local_8c = (float)fVar10;
 
-        fVar10 = (float10)FUN_0050a5e0(param_1 + 0x28,iVar4 + 4);
+        fVar10 = (float10)distancesq2d__FP3P3DT0(param_1 + 0x28,iVar4 + 4);
 
         local_90 = (float)fVar10;
 
-        fVar10 = (float10)FUN_0050a5e0(iVar4 + 0x1c,param_1 + 0x28);
+        fVar10 = (float10)distancesq2d__FP3P3DT0(iVar4 + 0x1c,param_1 + 0x28);
 
         if ((local_8c < local_90) ||
 

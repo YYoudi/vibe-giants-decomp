@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (38 named) — decompiled, names from PS2 symbols
+ * 67 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -521,7 +521,7 @@ undefined4 sound_obj_event(undefined4 *param_1)
 
           (*(int *)(iVar1 + 0xe4) == 10)) &&
 
-         ((fVar5 = (float10)FUN_0050a5e0(puVar2,iVar1 + 0xa0), iVar3 == 0 ||
+         ((fVar5 = (float10)distancesq2d__FP3P3DT0(puVar2,iVar1 + 0xa0), iVar3 == 0 ||
 
           (fVar5 < (float10)(float)param_1)))) {
 
@@ -722,7 +722,7 @@ switchD_004711dd_default:
 
         fStack_58 = fVar3;
 
-        FUN_005161c0(0,0,fVar3,fVar2);
+        XFSetViewportRegion(0,0,fVar3,fVar2);
 
         view_matrix_build(&local_50,&local_78,&local_6c);
 
@@ -887,7 +887,7 @@ void fx_weather_system(void)
 
       iStack_64 = iVar11;
 
-      FUN_005161c0(0,0,(float)iVar11,(float)iVar5);
+      XFSetViewportRegion(0,0,(float)iVar11,(float)iVar5);
 
       FUN_00515de0(&DAT_0055b640,&DAT_0055b64c);
 
@@ -2284,7 +2284,7 @@ void dlog_text_render_screen(void)
 
     if (iVar4 == 0) {
 
-      iVar4 = FUN_004a6180(DAT_00632a88);
+      iVar4 = ObjIsReaper(DAT_00632a88);
 
       if (iVar4 != 0) {
 
@@ -3972,12 +3972,12 @@ int FUN_00478160(int param_1,int *param_2)
 
 }
 
-/* ===== FUN_00478260 @ 0x00478260 ===== */
+/* ===== formation_update_info @ 0x00478260 ===== */
 /* PS2 candidate: formation_update_info (conf 0.595) */
 
 
 
-void FUN_00478260(int param_1)
+void formation_update_info(int param_1)
 
 
 

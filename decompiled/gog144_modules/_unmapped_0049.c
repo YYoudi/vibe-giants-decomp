@@ -1406,7 +1406,7 @@ LAB_0049156a:
 
       if (iVar7 == 0) {
 
-        iVar7 = FUN_004a6180(iVar8);
+        iVar7 = ObjIsReaper(iVar8);
 
         if (iVar7 != 0) {
 
@@ -1526,7 +1526,7 @@ LAB_00491945:
 
       if (iVar5 == 0) {
 
-        iVar5 = FUN_004a6180(iVar7);
+        iVar5 = ObjIsReaper(iVar7);
 
         if (iVar5 != 0) {
 
@@ -1626,7 +1626,7 @@ LAB_00491abd:
 
       }
 
-      iVar5 = FUN_004a6180(DAT_00632a88);
+      iVar5 = ObjIsReaper(DAT_00632a88);
 
       if (iVar5 != 0) {
 
@@ -2281,7 +2281,7 @@ void FUN_00492290(void)
 
   if (iVar1 == 0) {
 
-    iVar2 = FUN_004a6180(DAT_00632a88);
+    iVar2 = ObjIsReaper(DAT_00632a88);
 
     if (iVar2 == 0) {
 
@@ -2654,7 +2654,7 @@ LAB_00492458:
 
       }
 
-      iVar1 = FUN_004a6180(DAT_00632a88);
+      iVar1 = ObjIsReaper(DAT_00632a88);
 
       if (iVar1 != 0) {
 
@@ -3916,7 +3916,7 @@ LAB_00492a3a:
 
       case 0x22:
 
-        iVar14 = FUN_004a6180(DAT_00632a88);
+        iVar14 = ObjIsReaper(DAT_00632a88);
 
         puVar10 = DAT_00632d68;
 
@@ -3988,7 +3988,7 @@ LAB_00492a3a:
 
         if (iVar14 == 0) {
 
-          iVar14 = FUN_004a6180(DAT_00632a88);
+          iVar14 = ObjIsReaper(DAT_00632a88);
 
           if (iVar14 != 0) {
 
@@ -4854,7 +4854,7 @@ void FUN_00494120(int param_1)
 
       if (iVar4 == 0) {
 
-        iVar4 = FUN_004a6180(DAT_00632a88);
+        iVar4 = ObjIsReaper(DAT_00632a88);
 
         if (iVar4 == 0) {
 
@@ -5073,7 +5073,7 @@ void FUN_00494400(void)
 
         if (iVar2 != 0) {
 
-          iVar2 = FUN_004a6180(*(undefined4 *)(iVar3 + 0x274));
+          iVar2 = ObjIsReaper(*(undefined4 *)(iVar3 + 0x274));
 
           if (iVar2 != 0) {
 
@@ -5197,7 +5197,7 @@ void ambient_streams_handler(void)
 
   if (iVar2 == 0) {
 
-    FUN_004a6180(DAT_00632a88);
+    ObjIsReaper(DAT_00632a88);
 
     puVar1 = DAT_00632d68;
 
@@ -8309,7 +8309,7 @@ void weapon_id_inventory_update(void)
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6180(puVar1);
+    iVar2 = ObjIsReaper(puVar1);
 
     if (iVar2 == 0) {
 
@@ -8467,7 +8467,7 @@ void weapon_id_inventory_update(void)
 
   if (iVar3 == 0) {
 
-    iVar2 = FUN_004a6180(&DAT_0059f380);
+    iVar2 = ObjIsReaper(&DAT_0059f380);
 
     if (iVar2 != 0) {
 
@@ -8795,7 +8795,7 @@ void FUN_004982c0(void)
 
   }
 
-  iVar3 = FUN_004a6180(&DAT_0059f688);
+  iVar3 = ObjIsReaper(&DAT_0059f688);
 
   pcVar1 = DAT_0059f788;
 
@@ -9000,7 +9000,7 @@ void FUN_004984b0(void)
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6180(iVar1);
+    iVar2 = ObjIsReaper(iVar1);
 
     if (iVar2 == 0) {
 
@@ -9424,7 +9424,7 @@ void vimp_death_fx(int param_1)
 
   }
 
-  iVar1 = FUN_004a6180(DAT_00632a88);
+  iVar1 = ObjIsReaper(DAT_00632a88);
 
   if (iVar1 != 0) {
 
@@ -10676,7 +10676,7 @@ void FUN_00499fa0(int param_1)
 
     if (iVar1 != 0) goto LAB_00499fe3;
 
-    iVar1 = FUN_004a6180(*(undefined4 *)(param_1 + 0x274));
+    iVar1 = ObjIsReaper(*(undefined4 *)(param_1 + 0x274));
 
     if (iVar1 != 0) goto LAB_00499fe3;
 
@@ -11562,7 +11562,7 @@ undefined4 FUN_0049a950(float *param_1,float *param_2,float *param_3,float param
 
   
 
-  fVar2 = (float10)FUN_0050a5e0(param_1,param_2);
+  fVar2 = (float10)distancesq2d__FP3P3DT0(param_1,param_2);
 
   fVar1 = (float)((((float10)*param_3 - (float10)*param_1) * (float10)(*param_2 - *param_1) +
 
@@ -11584,7 +11584,7 @@ undefined4 FUN_0049a950(float *param_1,float *param_2,float *param_3,float param
 
   }
 
-  fVar2 = (float10)FUN_0050a5e0(pfVar3,param_3);
+  fVar2 = (float10)distancesq2d__FP3P3DT0(pfVar3,param_3);
 
   if ((float10)param_4 * (float10)param_4 <= fVar2) {
 
@@ -13157,7 +13157,7 @@ undefined4 FUN_0049dbd0(int param_1)
 
   if ((fVar4 <= (float10)10.0) && ((float10)-10.0 <= fVar4)) {
 
-    fVar4 = (float10)FUN_0050a5e0(*(int *)(iVar3 + 0x3c) + 0xa0,param_1 + 0xa0);
+    fVar4 = (float10)distancesq2d__FP3P3DT0(*(int *)(iVar3 + 0x3c) + 0xa0,param_1 + 0xa0);
 
     fVar1 = (float)fVar4;
 
@@ -13189,7 +13189,7 @@ undefined4 FUN_0049dbd0(int param_1)
 
        (fVar2 = *(float *)(DAT_00632ed8 + 0xd00),
 
-       fVar4 = (float10)FUN_0050a5e0(*(int *)(iVar3 + 0x3c) + 0xa0,iVar3 + 0x40),
+       fVar4 = (float10)distancesq2d__FP3P3DT0(*(int *)(iVar3 + 0x3c) + 0xa0,iVar3 + 0x40),
 
        fVar4 <= (float10)fVar2 * (float10)fVar2)) {
 
@@ -13207,7 +13207,7 @@ undefined4 FUN_0049dbd0(int param_1)
 
        (fVar1 = *(float *)(DAT_00632ed8 + 0xd00),
 
-       fVar4 = (float10)FUN_0050a5e0(*(int *)(iVar3 + 0x3c) + 0xa0,iVar3 + 0x40),
+       fVar4 = (float10)distancesq2d__FP3P3DT0(*(int *)(iVar3 + 0x3c) + 0xa0,iVar3 + 0x40),
 
        (float10)fVar1 * (float10)fVar1 < fVar4)) {
 
@@ -13337,7 +13337,7 @@ void FUN_0049de80(int param_1,int param_2)
 
   pfVar1 = (float *)(iVar3 + 0x40);
 
-  fVar4 = (float10)FUN_0050a5e0(*(int *)(iVar3 + 0x3c) + 0xa0,pfVar1);
+  fVar4 = (float10)distancesq2d__FP3P3DT0(*(int *)(iVar3 + 0x3c) + 0xa0,pfVar1);
 
   if ((float10)fVar2 * (float10)fVar2 < fVar4) {
 
@@ -13479,7 +13479,7 @@ void options_defaults(void)
 
     menu_audio_setup(2);
 
-    FUN_00519fe0(local_40);
+    reg_open_key(local_40);
 
     mission_0051a0c0(s_VideoWidth_0055be0c,&DAT_006331c8);
 
@@ -13691,7 +13691,7 @@ void FUN_0049e4a0(int param_1)
 
       if (iVar1 == 0) {
 
-        iVar1 = FUN_004a6180(DAT_00632a88);
+        iVar1 = ObjIsReaper(DAT_00632a88);
 
         if (iVar1 != 0) {
 

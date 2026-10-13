@@ -4615,7 +4615,7 @@ void gamespy_host_game(void)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6180(DAT_00632a88);
+    iVar1 = ObjIsReaper(DAT_00632a88);
 
     if (iVar1 != 0) {
 
@@ -12935,7 +12935,7 @@ LAB_0052edc5:
 
   if (iVar8 == 0) {
 
-    iVar8 = FUN_004a6180(iVar9);
+    iVar8 = ObjIsReaper(iVar9);
 
     if (iVar8 == 0) {
 
@@ -12973,7 +12973,7 @@ LAB_0052edc5:
 
   }
 
-  iVar4 = FUN_004a6180(iVar9);
+  iVar4 = ObjIsReaper(iVar9);
 
   if (iVar4 != 0) {
 
@@ -14294,7 +14294,7 @@ void cam_mode_full(int param_1,int param_2)
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6180(iVar5);
+    iVar3 = ObjIsReaper(iVar5);
 
     puVar2 = DAT_00632d68;
 
@@ -14366,7 +14366,7 @@ LAB_0052fabe:
 
         }
 
-        iVar4 = FUN_004a6180(iVar5);
+        iVar4 = ObjIsReaper(iVar5);
 
         if (iVar4 != 0) {
 
@@ -14725,7 +14725,7 @@ void comm_obj_sync(int param_1)
 
       if ((*(int *)(param_1 + 0x274) != 0) &&
 
-         (iVar5 = FUN_004a6180(*(int *)(param_1 + 0x274)), iVar5 != 0)) {
+         (iVar5 = ObjIsReaper(*(int *)(param_1 + 0x274)), iVar5 != 0)) {
 
         local_c = *(uint *)(*(int *)(param_1 + 0x274) + 0x188);
 

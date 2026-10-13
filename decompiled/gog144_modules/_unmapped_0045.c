@@ -1840,7 +1840,7 @@ void FUN_00452490(int *param_1,int *param_2)
 
   iVar2 = ObjIsMecc(DAT_00632a88);
 
-  if ((iVar2 == 0) && (iVar2 = FUN_004a6180(DAT_00632a88), iVar2 == 0)) {
+  if ((iVar2 == 0) && (iVar2 = ObjIsReaper(DAT_00632a88), iVar2 == 0)) {
 
     return;
 
@@ -1932,7 +1932,7 @@ void FUN_00452490(int *param_1,int *param_2)
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6180(DAT_00632a88);
+    iVar2 = ObjIsReaper(DAT_00632a88);
 
     if (iVar2 != 0) {
 
@@ -3229,7 +3229,7 @@ void giftshop_exit__Fv(void)
 
       FUN_0040d790();
 
-      iVar1 = FUN_004a6180(DAT_00632a88);
+      iVar1 = ObjIsReaper(DAT_00632a88);
 
       if (iVar1 != 0) {
 
@@ -3388,7 +3388,7 @@ undefined4 FUN_00454a40(int param_1,int param_2)
 
   }
 
-  iVar3 = FUN_004a6180(DAT_00632a88);
+  iVar3 = ObjIsReaper(DAT_00632a88);
 
   if (iVar3 == 0) {
 
@@ -3746,7 +3746,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
        (iVar3 = FUN_0052e5b0(*(undefined4 *)param_4), *(int *)(iVar3 + 0x210) == 0)) {
 
-      iVar2 = FUN_004a6180(iVar3);
+      iVar2 = ObjIsReaper(iVar3);
 
       if (iVar2 != 0) {
 
@@ -8236,7 +8236,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6180(iVar6);
+    iVar3 = ObjIsReaper(iVar6);
 
     if (iVar3 == 0) {
 
@@ -8637,7 +8637,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6180(param_1);
+    iVar2 = ObjIsReaper(param_1);
 
     if (iVar2 != 0) {
 
@@ -10017,7 +10017,7 @@ void item_drop_backheld(int param_1)
 
   }
 
-  iVar2 = FUN_004a6180(param_1);
+  iVar2 = ObjIsReaper(param_1);
 
   if ((((iVar2 != 0) && (*(int *)(param_1 + 0x210) != 0)) &&
 
@@ -10537,7 +10537,7 @@ void reaper_spawn_ospec_1
 
     else {
 
-      iVar2 = FUN_004a6180(param_2);
+      iVar2 = ObjIsReaper(param_2);
 
       if (iVar2 != 0) {
 
@@ -10664,7 +10664,7 @@ void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param
 
     else {
 
-      iVar2 = FUN_004a6180(param_2);
+      iVar2 = ObjIsReaper(param_2);
 
       if (iVar2 != 0) {
 
@@ -10754,7 +10754,7 @@ void reaper_lock_short_5(undefined4 param_1,int param_2,float param_3,int param_
 
   
 
-  iVar1 = FUN_004a6180(param_2);
+  iVar1 = ObjIsReaper(param_2);
 
   if (iVar1 == 0) {
 
@@ -13888,7 +13888,7 @@ undefined4 validate_eat__FP6OBJECTT0(int param_1,float param_2)
 
         if (((iVar1 != 0) && (*(int *)(iVar1 + 4) == 0x536)) &&
 
-           ((fVar5 = (float10)FUN_0050a5e0(param_1 + 0xa0,iVar1 + 0xa0), iVar3 == 0 ||
+           ((fVar5 = (float10)distancesq2d__FP3P3DT0(param_1 + 0xa0,iVar1 + 0xa0), iVar3 == 0 ||
 
             (fVar5 < (float10)param_2)))) {
 

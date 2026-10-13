@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (52 named) — decompiled, names from PS2 symbols
+ * 105 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -200,11 +200,11 @@ LAB_00401cd9:
 
         }
 
-        fVar6 = (float10)FUN_0050a5e0(pfVar1,&local_c);
+        fVar6 = (float10)distancesq2d__FP3P3DT0(pfVar1,&local_c);
 
         if ((fVar6 < (float10)2.0) ||
 
-           ((fVar6 = (float10)FUN_0050a5e0(pfVar1,&local_c), fVar6 < (float10)12.0 &&
+           ((fVar6 = (float10)distancesq2d__FP3P3DT0(pfVar1,&local_c), fVar6 < (float10)12.0 &&
 
             ((float)puVar2[6] <= 4.0)))) {
 
@@ -602,7 +602,7 @@ undefined4 FUN_00401fe0(int param_1)
 
               (fVar4 = *(float *)(DAT_006330e4 + 0x1c0) * 0.25,
 
-              fVar6 = (float10)FUN_0050a5e0(iVar1 + 4,param_1 + 0xa0),
+              fVar6 = (float10)distancesq2d__FP3P3DT0(iVar1 + 4,param_1 + 0xa0),
 
               fVar6 < (float10)fVar4 * (float10)fVar4)))) {
 
@@ -5012,12 +5012,12 @@ void FUN_00407c40(int param_1)
 
 }
 
-/* ===== FUN_00408530 @ 0x00408530 ===== */
+/* ===== meccbaseitem_move @ 0x00408530 ===== */
 /* PS2 candidate: meccbaseitem_move (conf 0.591) */
 
 
 
-void FUN_00408530(float param_1)
+void meccbaseitem_move(float param_1)
 
 
 
@@ -7187,7 +7187,7 @@ LAB_0040a91a:
 
       FUN_00418630(local_18,*puVar6,local_c);
 
-      fVar7 = (float10)FUN_0050a5e0(local_c,param_2 + 0xa0);
+      fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
       if (fVar7 < (float10)local_14) {
 
@@ -7293,9 +7293,9 @@ LAB_0040ab0e:
 
       FUN_00418630(local_18,piVar4[1],local_c);
 
-      fVar7 = (float10)FUN_0050a5e0(local_c,param_2 + 0xa0);
+      fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
-      fVar8 = (float10)FUN_0050a5e0(local_c,*piVar4 + 0xa0);
+      fVar8 = (float10)distancesq2d__FP3P3DT0(local_c,*piVar4 + 0xa0);
 
       if ((float10)(float)fVar7 < fVar8) {
 
@@ -9382,7 +9382,7 @@ undefined4 camera_is_sniper_2(void)
 
   iVar1 = ObjIsMecc(DAT_00632a88);
 
-  if (((iVar1 == 0) && (iVar1 = FUN_004a6180(DAT_00632a88), iVar1 == 0)) &&
+  if (((iVar1 == 0) && (iVar1 = ObjIsReaper(DAT_00632a88), iVar1 == 0)) &&
 
      (iVar1 = ObjIsKabuto(DAT_00632a88), iVar1 == 0)) {
 
@@ -9425,7 +9425,7 @@ undefined4 camera_is_sniper(void)
 
     iVar1 = ObjIsMecc(DAT_00632a88);
 
-    if (((iVar1 == 0) && (iVar1 = FUN_004a6180(DAT_00632a88), iVar1 == 0)) &&
+    if (((iVar1 == 0) && (iVar1 = ObjIsReaper(DAT_00632a88), iVar1 == 0)) &&
 
        (iVar1 = ObjIsKabuto(DAT_00632a88), iVar1 == 0)) {
 
@@ -9488,7 +9488,7 @@ int cam_target_get(void)
 
      (((iVar2 = ObjIsMecc(DAT_00632a88), iVar2 != 0 ||
 
-       (iVar2 = FUN_004a6180(DAT_00632a88), iVar2 != 0)) ||
+       (iVar2 = ObjIsReaper(DAT_00632a88), iVar2 != 0)) ||
 
       (iVar2 = ObjIsKabuto(DAT_00632a88), iVar2 != 0)))) {
 
@@ -9669,7 +9669,7 @@ void sound_player_voice_smartie(void)
 
   if (DAT_005550c4 < 0) {
 
-    iVar1 = FUN_004a6180(DAT_00632a88);
+    iVar1 = ObjIsReaper(DAT_00632a88);
 
     if (iVar1 == 0) {
 
@@ -9713,7 +9713,7 @@ void sound_player_voice_smartie(void)
 
   }
 
-  iVar1 = FUN_004a6180(DAT_00632a88);
+  iVar1 = ObjIsReaper(DAT_00632a88);
 
   if (iVar1 != 0) {
 
@@ -9764,7 +9764,7 @@ void sound_player_voice_mecc(void)
 
   if (*(float *)(&DAT_005553c4 + iVar1) == 0.0) {
 
-    iVar1 = FUN_004a6180(DAT_00632a88);
+    iVar1 = ObjIsReaper(DAT_00632a88);
 
     if (iVar1 == 0) {
 
@@ -9808,7 +9808,7 @@ void sound_player_voice_mecc(void)
 
   }
 
-  iVar1 = FUN_004a6180(DAT_00632a88);
+  iVar1 = ObjIsReaper(DAT_00632a88);
 
   if (iVar1 != 0) {
 
@@ -9912,7 +9912,7 @@ LAB_0040d56d:
 
       if (iVar1 == 0) {
 
-        iVar1 = FUN_004a6180(DAT_00632a88);
+        iVar1 = ObjIsReaper(DAT_00632a88);
 
         if (iVar1 == 0) {
 
@@ -9958,7 +9958,7 @@ LAB_0040d5e0:
 
       if (iVar1 == 0) {
 
-        iVar1 = FUN_004a6180(DAT_00632a88);
+        iVar1 = ObjIsReaper(DAT_00632a88);
 
         if (iVar1 == 0) {
 
@@ -10497,7 +10497,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   if (DAT_00632bc4 == 0) {
 
-    iVar7 = FUN_004a6180(param_2);
+    iVar7 = ObjIsReaper(param_2);
 
     if ((iVar7 == 0) || (iVar7 = FUN_004a6120(*(undefined4 *)((int)param_2 + 0x210)), iVar7 == 0)) {
 
@@ -10743,7 +10743,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   DAT_005550dc = local_1c;
 
-  iVar7 = FUN_004a6180(iVar4);
+  iVar7 = ObjIsReaper(iVar4);
 
   if ((iVar7 != 0) && (iVar7 = FUN_004a6120(*(undefined4 *)(iVar4 + 0x210)), iVar7 != 0)) {
 
@@ -10761,7 +10761,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   FUN_00415d80(&DAT_005550d4,&local_24);
 
-  iVar7 = FUN_004a6180(iVar4);
+  iVar7 = ObjIsReaper(iVar4);
 
   if ((iVar7 != 0) && (iVar7 = FUN_004a6120(*(undefined4 *)(iVar4 + 0x210)), iVar7 != 0)) {
 
@@ -11132,7 +11132,7 @@ void ai_nearest_55_scan(float param_1)
 
        ((iVar3 = ObjIsMecc(iVar2), iVar3 == 0 || ((*(uint *)(iVar2 + 0xe0) & 0x2000000) == 0)))) {
 
-      fVar5 = (float10)FUN_0050a5e0(iVar1 + 0x40,iVar2 + 0xa0);
+      fVar5 = (float10)distancesq2d__FP3P3DT0(iVar1 + 0x40,iVar2 + 0xa0);
 
       param_1 = (float)fVar5;
 

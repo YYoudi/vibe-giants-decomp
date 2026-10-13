@@ -84,7 +84,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
         if (iVar5 == 1) {
 
-          local_5c[1] = FUN_004aa550(0x14,*(undefined4 *)(iVar4 + 0x18c),iVar4,0xfffffffe,local_44,
+          local_5c[1] = PROJ_Create3(0x14,*(undefined4 *)(iVar4 + 0x18c),iVar4,0xfffffffe,local_44,
 
                                      *(undefined4 *)(iVar2 + 0xf28));
 
@@ -92,7 +92,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
         else {
 
-          iVar6 = FUN_004aa550(0x12,*(undefined4 *)(iVar4 + 0x18c),iVar4,0xfffffffe,local_44,
+          iVar6 = PROJ_Create3(0x12,*(undefined4 *)(iVar4 + 0x18c),iVar4,0xfffffffe,local_44,
 
                                *(undefined4 *)(iVar2 + 0xf28));
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (60 named) — decompiled, names from PS2 symbols
+ * 131 functions (63 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3660,12 +3660,12 @@ void FUN_004a4360(int param_1)
 
 }
 
-/* ===== FUN_004a4480 @ 0x004A4480 ===== */
+/* ===== trajectory_calculate @ 0x004A4480 ===== */
 /* PS2 candidate: trajectory_calculate (conf 0.592) */
 
 
 
-void FUN_004a4480(float *param_1,float *param_2,float *param_3,float *param_4,float param_5)
+void trajectory_calculate(float *param_1,float *param_2,float *param_3,float *param_4,float param_5)
 
 
 
@@ -3843,7 +3843,7 @@ void FUN_004a4550(void)
 
          (((*(int *)(in_ECX + 0x274) == 0 ||
 
-           ((iVar3 = FUN_004a6180(*(int *)(in_ECX + 0x274)), iVar3 == 0 &&
+           ((iVar3 = ObjIsReaper(*(int *)(in_ECX + 0x274)), iVar3 == 0 &&
 
             (iVar3 = reaperbase_bldg_from_object(*(undefined4 *)(in_ECX + 0x274)), iVar3 == 0)))) &&
 
@@ -4069,7 +4069,7 @@ void FUN_004a48a0(float param_1)
 
     pfVar1 = (float *)((int)param_1 + 0xa0);
 
-    fVar6 = (float10)FUN_0050a5e0(pfVar1,*(int *)((int)param_1 + 0x274) + 0xa0);
+    fVar6 = (float10)distancesq2d__FP3P3DT0(pfVar1,*(int *)((int)param_1 + 0x274) + 0xa0);
 
     local_28 = (float)fVar6;
 
@@ -5604,12 +5604,12 @@ undefined4 ObjIsMecc(int param_1)
 
 }
 
-/* ===== FUN_004a6180 @ 0x004A6180 ===== */
+/* ===== ObjIsReaper @ 0x004A6180 ===== */
 /* PS2 candidate: ObjIsReaper (conf 0.59) */
 
 
 
-undefined4 FUN_004a6180(int param_1)
+undefined4 ObjIsReaper(int param_1)
 
 
 
@@ -9632,7 +9632,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     local_11c = (*(float *)(local_128 + 4) / *(float *)(local_128 + 8)) * -32.17405;
 
-    FUN_004a4480(iVar2 + 0x128,&local_13c,param_6,&local_124,local_12c);
+    trajectory_calculate(iVar2 + 0x128,&local_13c,param_6,&local_124,local_12c);
 
     FUN_004993c0(iVar2,&local_13c);
 
@@ -9700,12 +9700,12 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
 }
 
-/* ===== FUN_004aa550 @ 0x004AA550 ===== */
+/* ===== PROJ_Create3 @ 0x004AA550 ===== */
 /* PS2 candidate: PROJ_Create3 (conf 0.591) */
 
 
 
-int FUN_004aa550(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
+int PROJ_Create3(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
 
                 undefined4 *param_5,undefined4 param_6)
 
@@ -10777,7 +10777,7 @@ bool kabuto_punch_check(int param_1)
 
   
 
-  iVar1 = FUN_004a6180(param_1);
+  iVar1 = ObjIsReaper(param_1);
 
   if (iVar1 == 0) {
 
@@ -10928,7 +10928,7 @@ void reaper_ability_3dsound(int param_1)
 
     if (iVar3 == 0) {
 
-      iVar3 = FUN_004a6180(*(int *)(iVar4 + 0xc));
+      iVar3 = ObjIsReaper(*(int *)(iVar4 + 0xc));
 
       if (iVar3 == 0) {
 
@@ -11107,7 +11107,7 @@ void FUN_004aca20(int param_1,int param_2)
 
   if (((param_2 == 0) ||
 
-      ((((((iVar4 = ObjIsMecc(param_2), iVar4 == 0 && (iVar4 = FUN_004a6180(iVar3), iVar4 == 0)) &&
+      ((((((iVar4 = ObjIsMecc(param_2), iVar4 == 0 && (iVar4 = ObjIsReaper(iVar3), iVar4 == 0)) &&
 
           (*(int *)(iVar3 + 4) != 8)) &&
 
@@ -11171,7 +11171,7 @@ void FUN_004aca20(int param_1,int param_2)
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_004a6180(iVar3);
+    iVar4 = ObjIsReaper(iVar3);
 
     if (iVar4 == 0) {
 

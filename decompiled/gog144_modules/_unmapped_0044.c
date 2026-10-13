@@ -3840,7 +3840,7 @@ undefined4 FLK_FlickRender(int param_1)
 
             fStack_1e4 = (float)(int)fStack_208;
 
-            FUN_005161c0(0,0,fStack_1e4,fVar2);
+            XFSetViewportRegion(0,0,fStack_1e4,fVar2);
 
             (**(code **)(DAT_00656420 + 0xa0))(DAT_00656420,0,0,fStack_1e4,fVar2,0);
 
@@ -3958,7 +3958,7 @@ LAB_00444d25:
 
             (DAT_00656420,0,fStack_1f4 + fVar2,local_1f8 + local_1f8,fStack_1f4 - fVar2,0);
 
-  FUN_005161c0(0,fStack_1f4 - fVar2,local_1f8 + local_1f8,fVar2 + fVar2);
+  XFSetViewportRegion(0,fStack_1f4 - fVar2,local_1f8 + local_1f8,fVar2 + fVar2);
 
   FUN_005162b0(auStack_c4);
 

@@ -2033,7 +2033,7 @@ void reaper_finish_smartie_grab__FP6OBJECT(int param_1)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a6180(*(undefined4 *)(*(int *)(iVar1 + 0xea4) + 0x274));
+      iVar2 = ObjIsReaper(*(undefined4 *)(*(int *)(iVar1 + 0xea4) + 0x274));
 
       if (iVar2 == 0) goto LAB_004c1f61;
 
@@ -2413,7 +2413,7 @@ void FUN_004c26d0(int param_1,undefined4 *param_2)
 
     do {
 
-      iVar1 = FUN_004a6180(param_1);
+      iVar1 = ObjIsReaper(param_1);
 
       if (iVar1 == 0) {
 
@@ -4164,7 +4164,7 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
               FUN_004186c0(iVar5,0x14,local_40,local_5c);
 
-              fVar8 = (float10)FUN_0050a5e0(local_40,(int)fVar3 + 0xa0);
+              fVar8 = (float10)distancesq2d__FP3P3DT0(local_40,(int)fVar3 + 0xa0);
 
               if (fVar8 <= (float10)9.0) {
 
@@ -4911,7 +4911,7 @@ void fxn_firering(int param_1)
 
   *(undefined4 *)(param_1 + 0xfc) = 0x40800000;
 
-  iVar4 = FUN_004a6180(*(undefined4 *)(param_1 + 0x274));
+  iVar4 = ObjIsReaper(*(undefined4 *)(param_1 + 0x274));
 
   if (iVar4 != 0) {
 
@@ -5596,7 +5596,7 @@ LAB_004caa99:
 
             *(float *)(iVar3 + 0x54) = DAT_00632b44;
 
-            fVar9 = (float10)FUN_0050a5e0(puVar2,&DAT_00632b48);
+            fVar9 = (float10)distancesq2d__FP3P3DT0(puVar2,&DAT_00632b48);
 
             if ((float10)14400.0 <= fVar9) goto LAB_004caa99;
 
@@ -5689,7 +5689,7 @@ void FUN_004cabb0(int param_1,float param_2)
 
   }
 
-  iVar4 = FUN_004a6180(*(undefined4 *)(iVar1 + 0x3c));
+  iVar4 = ObjIsReaper(*(undefined4 *)(iVar1 + 0x3c));
 
   if (iVar4 != 0) {
 
@@ -5940,7 +5940,7 @@ float10 physics_reset_c(int param_1)
 
             * -32.17405;
 
-  FUN_004a4480(param_1 + 0x128,param_1 + 0xa0,iVar1,&local_c,(float)fVar2);
+  trajectory_calculate(param_1 + 0x128,param_1 + 0xa0,iVar1,&local_c,(float)fVar2);
 
   return (float10)(float)fVar2;
 
@@ -6323,7 +6323,7 @@ void sound_obj_seq_small(int param_1,undefined4 param_2,undefined4 param_3,undef
 
   local_14 = local_48;
 
-  iVar1 = FUN_004aa550(param_2,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,param_4);
+  iVar1 = PROJ_Create3(param_2,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,param_4);
 
   *(int *)(iVar1 + 0x274) = param_1;
 
@@ -6436,7 +6436,7 @@ void FUN_004cb730(int param_1)
 
   local_14 = local_48;
 
-  iVar2 = FUN_004aa550(0x16,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
+  iVar2 = PROJ_Create3(0x16,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
 
   *(int *)(iVar2 + 0x274) = param_1;
 
@@ -6641,7 +6641,7 @@ undefined4 FUN_004cba90(int param_1,undefined4 *param_2,float param_3)
 
           && ((*(int *)(iVar3 + 0x174) == 0 || (bVar2)))) &&
 
-         (((fVar7 = (float10)FUN_0050a5e0(iVar3 + 0xa0,param_1 + 0xa0), iVar5 == 0 ||
+         (((fVar7 = (float10)distancesq2d__FP3P3DT0(iVar3 + 0xa0,param_1 + 0xa0), iVar5 == 0 ||
 
            ((float10)param_3 < fVar7)) && ((float10)25.0 < fVar7)))) {
 
@@ -6790,7 +6790,7 @@ void physics_reset_a(int param_1)
 
               ) * -32.17405;
 
-    FUN_004a4480(param_1 + 0x128,iVar1,iVar4,&local_c,(float)fVar5);
+    trajectory_calculate(param_1 + 0x128,iVar1,iVar4,&local_c,(float)fVar5);
 
     *(float *)(param_1 + 0xf0) = (float)fVar5 * 0.85;
 
@@ -6929,7 +6929,7 @@ undefined4 physics_reset_d(int param_1)
 
                 *(float *)(*(int *)(param_1 + 0x104) + 8)) * -32.17405;
 
-      FUN_004a4480(param_1 + 0x128,param_1 + 0xa0,iVar1 + 0xdcc,&local_c,(float)fVar3);
+      trajectory_calculate(param_1 + 0x128,param_1 + 0xa0,iVar1 + 0xdcc,&local_c,(float)fVar3);
 
       fVar3 = (float10)FUN_00518b70(param_1,0);
 
@@ -7278,7 +7278,7 @@ void FUN_004cc900(void)
 
   if (iVar6 == 0) {
 
-    iVar6 = FUN_004a6180(DAT_00632a88);
+    iVar6 = ObjIsReaper(DAT_00632a88);
 
     if (iVar6 == 0) {
 
@@ -7672,7 +7672,7 @@ LAB_004ccbc0:
 
                          (float)piStack_244 * 0.5;
 
-            FUN_005161c0(fStack_210,fStack_220,piStack_244,fStack_238);
+            XFSetViewportRegion(fStack_210,fStack_220,piStack_244,fStack_238);
 
             (**(code **)(DAT_00656420 + 0xa4))
 
@@ -7698,7 +7698,7 @@ LAB_004ccbc0:
 
           if (iVar6 < 0) {
 
-            FUN_005161c0(uStack_21c,uStack_218,piStack_244,fStack_238);
+            XFSetViewportRegion(uStack_21c,uStack_218,piStack_244,fStack_238);
 
             (**(code **)(DAT_00656420 + 0xa4))
 
@@ -8477,7 +8477,7 @@ undefined4 dev_debug_flags(void)
 
           fStack_1f0 = fVar1;
 
-          FUN_005161c0(0,0,fStack_20c);
+          XFSetViewportRegion(0,0,fStack_20c);
 
           (**(code **)(DAT_00656420 + 0xa0))(DAT_00656420,0,0,fStack_20c,fVar1,0);
 
@@ -8777,7 +8777,7 @@ undefined4 dev_debug_flags(void)
 
       for (; puVar2 = DAT_00632d78, puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
 
-        if ((-1 < *(char *)(puVar3[3] + 0xd8)) && (iVar5 = FUN_004a6180(), iVar5 != 0)) {
+        if ((-1 < *(char *)(puVar3[3] + 0xd8)) && (iVar5 = ObjIsReaper(), iVar5 != 0)) {
 
           status_update_entry();
 
@@ -9207,7 +9207,7 @@ void object_spawn_4c(int param_1)
 
       iVar2 = *(int *)(*(int *)(iVar4 + 8) + 0x400);
 
-      fVar6 = (float10)FUN_0050a5e0(iVar2 + 0x44,iVar2 + 0x50);
+      fVar6 = (float10)distancesq2d__FP3P3DT0(iVar2 + 0x44,iVar2 + 0x50);
 
       iVar2 = *(int *)(iVar4 + 0x170);
 
@@ -9233,7 +9233,7 @@ void object_spawn_4c(int param_1)
 
                  (((iVar5 = puVar3[3], iVar5 == iVar4 || (*(int *)(iVar5 + 0x170) != iVar2)) ||
 
-                  (fVar7 = (float10)FUN_0050a5e0(iVar5 + 0xa0,&local_c),
+                  (fVar7 = (float10)distancesq2d__FP3P3DT0(iVar5 + 0xa0,&local_c),
 
                   (float10)(float)fVar6 <= fVar7))))) {
 
@@ -10305,7 +10305,7 @@ LAB_004cf539:
 
         (4.0 <= *(float *)(iVar7 + 0x54))))) {
 
-      iVar7 = FUN_004a6180(iVar10);
+      iVar7 = ObjIsReaper(iVar10);
 
       if (iVar7 == 0) goto LAB_004cf982;
 
@@ -10367,7 +10367,7 @@ LAB_004cf982:
 
       param_1 = *(float *)(DAT_00632ed8 + 0xfc);
 
-      fVar15 = (float10)FUN_0050a5e0((int)fVar5 + 0xa0,*(int *)(iVar11 + 0xc) + 0xa0);
+      fVar15 = (float10)distancesq2d__FP3P3DT0((int)fVar5 + 0xa0,*(int *)(iVar11 + 0xc) + 0xa0);
 
       if ((float10)param_1 * (float10)param_1 < fVar15) {
 
@@ -10529,7 +10529,7 @@ LAB_004d0a9e:
 
       local_38 = *(float *)((int)fVar3 + 0xa8);
 
-      fVar15 = (float10)FUN_0050a5e0(&local_40,(int)fVar5 + 0xa0);
+      fVar15 = (float10)distancesq2d__FP3P3DT0(&local_40,(int)fVar5 + 0xa0);
 
       local_48 = (float)fVar15;
 
@@ -10541,7 +10541,7 @@ LAB_004d0a9e:
 
     }
 
-    fVar15 = (float10)FUN_0050a5e0((int)fVar5 + 0xa0,pfVar12 + 5);
+    fVar15 = (float10)distancesq2d__FP3P3DT0((int)fVar5 + 0xa0,pfVar12 + 5);
 
     param_1 = (float)fVar15;
 
@@ -10703,7 +10703,7 @@ LAB_004d0e26:
 
          ) goto LAB_004d10ab;
 
-      iVar11 = FUN_004a6180(fVar3);
+      iVar11 = ObjIsReaper(fVar3);
 
       if (iVar11 != 0) {
 
@@ -11163,7 +11163,7 @@ LAB_004d135c:
 
     local_38 = *(float *)((int)fVar3 + 0xa8);
 
-    fVar15 = (float10)FUN_0050a5e0(&local_40,(int)fVar5 + 0xa0);
+    fVar15 = (float10)distancesq2d__FP3P3DT0(&local_40,(int)fVar5 + 0xa0);
 
     param_1 = (float)fVar15;
 
@@ -11283,7 +11283,7 @@ LAB_004d135c:
 
     {
 
-      iVar11 = FUN_004a6180(fVar3);
+      iVar11 = ObjIsReaper(fVar3);
 
       if (iVar11 != 0) {
 
@@ -11349,7 +11349,7 @@ LAB_004d135c:
 
     {
 
-      iVar11 = FUN_004a6180(fVar3);
+      iVar11 = ObjIsReaper(fVar3);
 
       if (iVar11 != 0) {
 
@@ -11437,7 +11437,7 @@ LAB_004d135c:
 
          (4.0 <= *(float *)((int)local_48 + 0x54))))))) {
 
-      iVar11 = FUN_004a6180(fVar3);
+      iVar11 = ObjIsReaper(fVar3);
 
       if (iVar11 != 0) {
 
@@ -11585,7 +11585,7 @@ LAB_004d135c:
 
         ))) {
 
-      iVar11 = FUN_004a6180(fVar3);
+      iVar11 = ObjIsReaper(fVar3);
 
       if (iVar11 != 0) {
 
