@@ -138,7 +138,13 @@ def main():
     e, funcs, text_bytes, t_addr, strmap, ranges = load_ps2()
     print(f"    PS2 functions: {len(funcs)}  printable string runs: {len(strmap)}")
     print("[*] disassembling PS2 .text for string refs ...")
-    ps2refs = ps2_string_refs(text_bytes, t_addr, funcs, strmap, ranges)
+    refs_json = os.path.join(HERE, "ps2_string_refs.json")
+    if os.path.exists(refs_json):
+        ps2refs = {int(k, 16): set(v)
+                   for k, v in json.load(open(refs_json, encoding="utf-8")).items()}
+        print(f"    (from Ghidra dump {os.path.basename(refs_json)})")
+    else:
+        ps2refs = ps2_string_refs(text_bytes, t_addr, funcs, strmap, ranges)
     print(f"    PS2 functions with string refs: {len(ps2refs)}")
     print("[*] loading PC Ghidra exports ...")
     pcrefs, pcnames = pc_string_refs()

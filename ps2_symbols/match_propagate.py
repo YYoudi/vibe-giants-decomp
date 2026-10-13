@@ -47,7 +47,26 @@ def pc_graph():
     return callees, callers, names
 
 def ps2_graph():
-    """ps2_addr -> set(ps2_callee_addr)."""
+    """ps2_addr -> set(ps2_callee_addr). Prefers the Ghidra-derived dump."""
+    cg = os.path.join(HERE, "ps2_callgraph.json")
+    if os.path.exists(cg):
+        g = json.load(open(cg, encoding="utf-8"))
+        callees = collections.defaultdict(set)
+        fns = {}
+        for caller, cs in g.items():
+            a = int(caller, 16)
+            callees[a] = set(int(c, 16) for c in cs)
+        from elftools.elf.elffile import ELFFile
+        e = ELFFile(open(PS2_ELF, "rb"))
+        st = e.get_section_by_name(".symtab")
+        for s_ in st.iter_symbols():
+            if s_["st_info"]["type"] == "STT_FUNC" and s_["st_size"] > 0 and s_.name:
+                fns[s_["st_value"]] = (s_.name, s_["st_size"])
+        callers = collections.defaultdict(set)
+        for a, cs in callees.items():
+            for c in cs:
+                callers[c].add(a)
+        return callees, callers, fns
     import capstone
     from elftools.elf.elffile import ELFFile
     raw = open(PS2_ELF,"rb").read()
