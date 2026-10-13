@@ -4672,7 +4672,7 @@
  "0x00491C00": {
   "name": "mission_level_load",
   "named": true,
-  "len": 1030
+  "len": 1031
  },
  "0x00491D30": {
   "name": "camera_attach_path_object",
@@ -5585,9 +5585,9 @@
   "len": 515
  },
  "0x004A2BE0": {
-  "name": "FUN_004a2be0",
-  "named": false,
-  "len": 699
+  "name": "animspeed_factor_get",
+  "named": true,
+  "len": 707
  },
  "0x004A2C50": {
   "name": "SphereFitToObject",
@@ -6135,9 +6135,9 @@
   "len": 520
  },
  "0x004B0A60": {
-  "name": "FUN_004b0a60",
-  "named": false,
-  "len": 439
+  "name": "anm_dict_find",
+  "named": true,
+  "len": 440
  },
  "0x004B0AB0": {
   "name": "world_get_nicename",
@@ -8397,7 +8397,7 @@
  "0x00512700": {
   "name": "evilreaper_speed_dist",
   "named": true,
-  "len": 2801
+  "len": 2809
  },
  "0x005129D0": {
   "name": "create_one_vimp_chunk",

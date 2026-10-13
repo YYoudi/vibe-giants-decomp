@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (120 named) — decompiled, names from PS2 symbols
+ * 131 functions (121 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -2208,8 +2208,8 @@ void PhysicsExCalcControledModelSpeeds(int param_1,undefined4 param_2,undefined4
 
 }
 
-/* ===== FUN_004a2be0 @ 0x004A2BE0 ===== */
-float10 FUN_004a2be0(int param_1)
+/* ===== animspeed_factor_get @ 0x004A2BE0 ===== */
+float10 animspeed_factor_get(int param_1)
 
 
 

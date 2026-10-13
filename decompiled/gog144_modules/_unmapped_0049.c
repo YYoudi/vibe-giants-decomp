@@ -1665,7 +1665,7 @@ void mission_level_load(undefined4 param_1)
 
   *(undefined4 *)(DAT_00632bd4 * 0x30 + 0x4550 + DAT_006330e4) = 3;
 
-  pcVar1 = (char *)FUN_004b0a60(param_1);
+  pcVar1 = (char *)anm_dict_find(param_1);
 
   _strncpy((char *)(DAT_00632bd4 * 0x30 + 0x4558 + DAT_006330e4),pcVar1,0x20);
 

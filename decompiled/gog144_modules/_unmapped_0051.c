@@ -1644,7 +1644,7 @@ LAB_005127e2:
 
       *(undefined4 *)(iVar1 + 0x50) = *(undefined4 *)(iVar1 + 0x4c);
 
-      fVar4 = (float10)FUN_004a2be0(param_1);
+      fVar4 = (float10)animspeed_factor_get(param_1);
 
       *(float *)(param_1 + 0x154) = (float)fVar4;
 
