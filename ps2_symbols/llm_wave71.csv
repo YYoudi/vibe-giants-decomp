@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004431c0,FUN_004431C0,,status_update_3obj,0.9,llm-read42,
+004757c0,FUN_004757C0,,screen_coord_calc,0.9,llm-read42,
+00417a50,FUN_00417A50,,obj_speed_clamp,0.9,llm-read42,
+00519750,FUN_00519750,,dinput_device_check,0.9,llm-read42,

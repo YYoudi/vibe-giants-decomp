@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (27 named) — decompiled, names from PS2 symbols
+ * 67 functions (28 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -2374,7 +2374,7 @@ void dlog_text_render_screen(void)
 
             {
 
-              FUN_004757c0(iVar7,iVar8);
+              screen_coord_calc(iVar7,iVar8);
 
               pbVar1 = (byte *)(*(int *)(*(int *)(DAT_006330e4 + 0x10) + iVar8 * 4) + 0xf + iVar5);
 
@@ -2475,8 +2475,8 @@ void dlog_text_pop_screen(int param_1)
 
 }
 
-/* ===== FUN_004757c0 @ 0x004757C0 ===== */
-void FUN_004757c0(int param_1,int param_2)
+/* ===== screen_coord_calc @ 0x004757C0 ===== */
+void screen_coord_calc(int param_1,int param_2)
 
 
 
@@ -2649,7 +2649,7 @@ void FUN_004759a0(void)
 
       if (DAT_00632ba8 != 0) {
 
-        FUN_004757c0(iVar2,iVar3);
+        screen_coord_calc(iVar2,iVar3);
 
         return;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (42 named) — decompiled, names from PS2 symbols
+ * 100 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -5857,8 +5857,8 @@ LAB_00417a14:
 
 }
 
-/* ===== FUN_00417a50 @ 0x00417A50 ===== */
-float10 FUN_00417a50(float param_1,float param_2)
+/* ===== obj_speed_clamp @ 0x00417A50 ===== */
+float10 obj_speed_clamp(float param_1,float param_2)
 
 
 

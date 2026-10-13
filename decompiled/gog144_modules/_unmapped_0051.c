@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (72 named) — decompiled, names from PS2 symbols
+ * 186 functions (73 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -8948,12 +8948,12 @@ undefined4 dinput_init(void)
 
 }
 
-/* ===== FUN_00519750 @ 0x00519750 ===== */
+/* ===== dinput_device_check @ 0x00519750 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-bool FUN_00519750(void)
+bool dinput_device_check(void)
 
 
 
@@ -9128,7 +9128,7 @@ undefined4 dinput_key_poll(void)
 
       if (DAT_00633104 != 0) {
 
-        FUN_00519750();
+        dinput_device_check();
 
         return 1;
 

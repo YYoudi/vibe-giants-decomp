@@ -8831,7 +8831,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_0040b8f0();
 
-    FUN_004431c0();
+    status_update_3obj();
 
     main_tracer_00509dd0();
 

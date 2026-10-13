@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (39 named) — decompiled, names from PS2 symbols
+ * 76 functions (40 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1973,8 +1973,8 @@ void FUN_00443110(void)
 
 }
 
-/* ===== FUN_004431c0 @ 0x004431C0 ===== */
-void FUN_004431c0(void)
+/* ===== status_update_3obj @ 0x004431C0 ===== */
+void status_update_3obj(void)
 
 
 
