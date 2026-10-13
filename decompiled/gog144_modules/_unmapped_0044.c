@@ -2096,13 +2096,13 @@ void status_update_3obj(void)
 
         fStack_8 = fStack_40;
 
-        FUN_00517370(puVar1,afStack_e0);
+        hud_screen_project(puVar1,afStack_e0);
 
-        FUN_00517370(puVar1,afStack_a8);
+        hud_screen_project(puVar1,afStack_a8);
 
-        FUN_00517370(puVar1,afStack_70);
+        hud_screen_project(puVar1,afStack_70);
 
-        FUN_00517370(puVar1,afStack_38);
+        hud_screen_project(puVar1,afStack_38);
 
         status_bar_update3(afStack_e0,afStack_a8,afStack_70);
 

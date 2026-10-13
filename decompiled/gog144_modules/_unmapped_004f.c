@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (14 named) — decompiled, names from PS2 symbols
+ * 48 functions (15 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -4438,8 +4438,8 @@ undefined4 * AudioDataStreamStatus__Fv_3(void)
 
 }
 
-/* ===== FUN_004fa1f0 @ 0x004FA1F0 ===== */
-void FUN_004fa1f0(int param_1,int *param_2,int param_3)
+/* ===== terrain_mesh_query @ 0x004FA1F0 ===== */
+void terrain_mesh_query(int param_1,int *param_2,int param_3)
 
 
 

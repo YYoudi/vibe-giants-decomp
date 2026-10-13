@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (18 named) — decompiled, names from PS2 symbols
+ * 53 functions (19 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -1303,8 +1303,8 @@ undefined4 AudioDataStreamStatus__Fv(void)
 
 }
 
-/* ===== FUN_00467510 @ 0x00467510 ===== */
-void FUN_00467510(int param_1)
+/* ===== obj_skinning_eval @ 0x00467510 ===== */
+void obj_skinning_eval(int param_1)
 
 
 
@@ -1467,7 +1467,7 @@ void FUN_004676a0(void)
 
       while( true ) {
 
-        FUN_00467510(puVar1);
+        obj_skinning_eval(puVar1);
 
         if ((undefined4 **)puVar2 == &DAT_00632a80) break;
 

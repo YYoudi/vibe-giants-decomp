@@ -452,7 +452,7 @@
  "0x0040B8F0": {
   "name": "particle_lifespan_render",
   "named": true,
-  "len": 1954
+  "len": 1978
  },
  "0x0040BAB0": {
   "name": "main_blood_0040bab0",
@@ -2507,7 +2507,7 @@
  "0x004431C0": {
   "name": "status_update_3obj",
   "named": true,
-  "len": 2134
+  "len": 2158
  },
  "0x004433A0": {
   "name": "FLK_ReplayFileNameClear",
@@ -3655,14 +3655,14 @@
   "len": 3512
  },
  "0x00467510": {
-  "name": "FUN_00467510",
-  "named": false,
-  "len": 2343
+  "name": "obj_skinning_eval",
+  "named": true,
+  "len": 2348
  },
  "0x004676A0": {
   "name": "FUN_004676a0",
   "named": false,
-  "len": 520
+  "len": 525
  },
  "0x00469860": {
   "name": "FUN_00469860",
@@ -7770,9 +7770,9 @@
   "len": 165
  },
  "0x004FA1F0": {
-  "name": "FUN_004fa1f0",
-  "named": false,
-  "len": 2616
+  "name": "terrain_mesh_query",
+  "named": true,
+  "len": 2622
  },
  "0x004FA380": {
   "name": "FUN_004fa380",
@@ -7872,12 +7872,12 @@
  "0x00500490": {
   "name": "FUN_00500490",
   "named": false,
-  "len": 627
+  "len": 633
  },
  "0x00500520": {
   "name": "main_status_00500520",
   "named": true,
-  "len": 2836
+  "len": 2842
  },
  "0x005007F0": {
   "name": "FUN_005007f0",
@@ -8715,9 +8715,9 @@
   "len": 1429
  },
  "0x00517370": {
-  "name": "FUN_00517370",
-  "named": false,
-  "len": 1966
+  "name": "hud_screen_project",
+  "named": true,
+  "len": 1972
  },
  "0x00517510": {
   "name": "textrender_3d_project",
@@ -11255,9 +11255,9 @@
   "len": 157
  },
  "0x00541D20": {
-  "name": "FUN_00541d20",
-  "named": false,
-  "len": 3056
+  "name": "crt_matrix_invert",
+  "named": true,
+  "len": 3061
  },
  "0x00541EB0": {
   "name": "FUN_00541eb0",

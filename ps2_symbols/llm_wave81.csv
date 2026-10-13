@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00517370,FUN_00517370,,hud_screen_project,0.9,llm-read52,
+00467510,FUN_00467510,,obj_skinning_eval,0.9,llm-read52,
+004fa1f0,FUN_004FA1F0,,terrain_mesh_query,0.9,llm-read52,
+00541d20,FUN_00541D20,,crt_matrix_invert,0.9,llm-read52,

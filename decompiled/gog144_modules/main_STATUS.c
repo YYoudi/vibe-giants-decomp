@@ -156,7 +156,7 @@ int main_status_00500520(int *param_1)
 
     param_1[10] = DAT_00632e88;
 
-    FUN_004fa1f0(param_1,0,0xffffffff);
+    terrain_mesh_query(param_1,0,0xffffffff);
 
     FUN_00500300(param_1);
 
