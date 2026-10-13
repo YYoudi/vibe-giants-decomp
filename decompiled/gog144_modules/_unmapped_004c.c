@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (27 named) — decompiled, names from PS2 symbols
+ * 64 functions (28 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -2481,8 +2481,8 @@ void FUN_004c26d0(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_004c2850 @ 0x004C2850 ===== */
-void FUN_004c2850(int param_1,int *param_2,int param_3,undefined4 param_4)
+/* ===== obj_yaw_turn @ 0x004C2850 ===== */
+void obj_yaw_turn(int param_1,int *param_2,int param_3,undefined4 param_4)
 
 
 
@@ -6968,7 +6968,7 @@ void FUN_004cc7a0(int param_1)
 
   if ((*(byte *)(param_1 + 0xe0) & 4) != 0) {
 
-    FUN_004c2850(param_1,*(int *)(param_1 + 0x100) + 0xb8,*(int *)(param_1 + 0x100) + 0xbc,0);
+    obj_yaw_turn(param_1,*(int *)(param_1 + 0x100) + 0xb8,*(int *)(param_1 + 0x100) + 0xbc,0);
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfffffffb;
 
@@ -6989,7 +6989,7 @@ void ai_island_init(void)
 
   if (0 < DAT_00633244) {
 
-    main_drawwatr_00430fd0();
+    dlog_entry_alloc();
 
   }
 
@@ -7044,7 +7044,7 @@ void dome_render_text(void)
 
   if (DAT_00633244 < 1) {
 
-    main_drawwatr_00430fd0();
+    dlog_entry_alloc();
 
     return;
 
@@ -8559,7 +8559,7 @@ undefined4 dev_debug_flags(void)
 
     if (0 < DAT_00633244) {
 
-      main_drawwatr_00430fd0();
+      dlog_entry_alloc();
 
     }
 
@@ -8735,7 +8735,7 @@ undefined4 dev_debug_flags(void)
 
     if (DAT_00633244 < 1) {
 
-      main_drawwatr_00430fd0();
+      dlog_entry_alloc();
 
     }
 

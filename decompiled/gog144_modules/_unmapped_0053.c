@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (67 named) — decompiled, names from PS2 symbols
+ * 179 functions (68 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -13843,12 +13843,12 @@ void mem_verify(void)
 
 }
 
-/* ===== FUN_0053a270 @ 0x0053A270 ===== */
+/* ===== mem_debug_alloc @ 0x0053A270 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 * FUN_0053a270(undefined4 param_1,uint param_2,char *param_3,undefined4 param_4)
+undefined4 * mem_debug_alloc(undefined4 param_1,uint param_2,char *param_3,undefined4 param_4)
 
 
 
@@ -14358,7 +14358,7 @@ int FUN_0053a700(undefined4 param_1,int param_2,undefined4 param_3,undefined4 pa
 
   
 
-  iVar1 = FUN_0053a270(param_1,param_2,param_4,param_5);
+  iVar1 = mem_debug_alloc(param_1,param_2,param_4,param_5);
 
   if ((iVar1 == 0) && (param_2 != 0)) {
 
@@ -14413,7 +14413,7 @@ void MemString(undefined4 param_1,char *param_2,int *param_3,undefined4 param_4,
 
   uVar3 = ~uVar3;
 
-  iVar2 = FUN_0053a270(param_1,uVar3,param_4,param_5);
+  iVar2 = mem_debug_alloc(param_1,uVar3,param_4,param_5);
 
   if ((iVar2 == 0) && (uVar3 != 0)) {
 

@@ -62,9 +62,9 @@ undefined4 * game_water_00513be0(int param_1,int param_2)
 
   puVar4 = (undefined4 *)
 
-           FUN_0053a270(0x28,(uVar12 * 0xc + -0xc) * (uVar11 - 1) + 0x4c + uVar3 * 0x10,
+           mem_debug_alloc(0x28,(uVar12 * 0xc + -0xc) * (uVar11 - 1) + 0x4c + uVar3 * 0x10,
 
-                        s__C__Giants_source_game_water_c_0057c097 + 1,0x35);
+                           s__C__Giants_source_game_water_c_0057c097 + 1,0x35);
 
   puVar14 = puVar4;
 

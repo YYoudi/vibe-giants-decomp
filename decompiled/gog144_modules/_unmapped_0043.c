@@ -743,8 +743,8 @@ LAB_00430f12:
 
 }
 
-/* ===== main/drawwatr_00430fd0 @ 0x00430FD0 ===== */
-void main_drawwatr_00430fd0(void)
+/* ===== dlog_entry_alloc @ 0x00430FD0 ===== */
+void dlog_entry_alloc(void)
 
 
 
