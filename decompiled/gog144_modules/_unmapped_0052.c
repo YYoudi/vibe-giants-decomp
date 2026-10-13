@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (100 named) — decompiled, names from PS2 symbols
+ * 162 functions (101 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -4489,7 +4489,7 @@ void gamespy_host_game(void)
 
     DAT_00633238 = 0;
 
-    FUN_0051fba0();
+    gamespy_interface_release();
 
   }
 
@@ -6557,8 +6557,8 @@ void FUN_00529C00(uint *param_1,uint *param_2,uint *param_3,uint *param_4)
 
 }
 
-/* ===== FUN_00529d10 @ 0x00529D10 ===== */
-void FUN_00529d10(uint param_1,uint param_2,uint param_3,uint param_4)
+/* ===== game_settings_unpack @ 0x00529D10 ===== */
+void game_settings_unpack(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 
@@ -6691,7 +6691,7 @@ void showchat_mission_objective__Fi_2(int param_1)
 
     }
 
-    FUN_00529d10(*puVar2,puVar2[1],uVar4,puVar2[3]);
+    game_settings_unpack(*puVar2,puVar2[1],uVar4,puVar2[3]);
 
     iVar8 = DAT_00632f0c;
 

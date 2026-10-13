@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (104 named) — decompiled, names from PS2 symbols
+ * 142 functions (105 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -4750,12 +4750,12 @@ void story_flick_open(void)
 
 }
 
-/* ===== FUN_00494030 @ 0x00494030 ===== */
+/* ===== damage_voice_trigger @ 0x00494030 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00494030(int param_1)
+void damage_voice_trigger(int param_1)
 
 
 

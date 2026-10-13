@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0051fba0,FUN_0051fba0,,gamespy_interface_release,0.9,llm-w142,callers gamespy_shutdown/host_game vtable releases
+004fdfd0,FUN_004fdfd0,,textrender_string_draw_2,0.9,llm-w142,structural twin of 004fded0
+00494030,FUN_00494030,,damage_voice_trigger,0.9,llm-w142,caller obj_damage_apply + 0x4a68 counter + fmt msg
+00529d10,FUN_00529d10,,game_settings_unpack,0.9,llm-w142,caller showchat_mission_objective bitfields -> 632fxx block

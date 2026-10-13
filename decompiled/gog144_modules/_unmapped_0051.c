@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (115 named) — decompiled, names from PS2 symbols
+ * 186 functions (116 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -15623,7 +15623,7 @@ void gamespy_shutdown(void)
 
   }
 
-  FUN_0051fba0();
+  gamespy_interface_release();
 
   return;
 
@@ -15732,7 +15732,7 @@ void GiantsInitNewWorld(void)
 
       error_screen_show(local_1f4);
 
-      FUN_0051fba0();
+      gamespy_interface_release();
 
       DAT_00633160 = 0;
 
@@ -16251,12 +16251,12 @@ HRESULT gamespy_directplay_init(void)
 
 }
 
-/* ===== FUN_0051fba0 @ 0x0051FBA0 ===== */
+/* ===== gamespy_interface_release @ 0x0051FBA0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051fba0(void)
+void gamespy_interface_release(void)
 
 
 

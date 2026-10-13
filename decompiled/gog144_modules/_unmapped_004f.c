@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (37 named) — decompiled, names from PS2 symbols
+ * 48 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -5268,10 +5268,12 @@ LAB_004fdf63:
 
 }
 
-/* ===== FUN_004fdfd0 @ 0x004FDFD0 ===== */
-int FUN_004fdfd0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,float param_5,
+/* ===== textrender_string_draw_2 @ 0x004FDFD0 ===== */
+int textrender_string_draw_2
 
-                float param_6,undefined4 param_7)
+              (int param_1,int param_2,undefined4 param_3,undefined4 param_4,float param_5,
+
+              float param_6,undefined4 param_7)
 
 
 

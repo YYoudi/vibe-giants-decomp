@@ -178,7 +178,7 @@ void comm_comm_00520490(void)
 
         }
 
-        FUN_0051fba0();
+        gamespy_interface_release();
 
         iVar5 = main_dlog_00428490(DAT_005def88,1);
 

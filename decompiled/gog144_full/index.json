@@ -3212,7 +3212,7 @@
  "0x00456F80": {
   "name": "obj_damage_apply",
   "named": true,
-  "len": 2002
+  "len": 2010
  },
  "0x00457100": {
   "name": "FUN_00457100",
@@ -4760,9 +4760,9 @@
   "len": 949
  },
  "0x00494030": {
-  "name": "FUN_00494030",
-  "named": false,
-  "len": 1036
+  "name": "damage_voice_trigger",
+  "named": true,
+  "len": 1044
  },
  "0x00494120": {
   "name": "mission_check_obj_proximity__FP6OBJECT",
@@ -7810,9 +7810,9 @@
   "len": 1514
  },
  "0x004FDFD0": {
-  "name": "FUN_004fdfd0",
-  "named": false,
-  "len": 1371
+  "name": "textrender_string_draw_2",
+  "named": true,
+  "len": 1397
  },
  "0x004FE0F0": {
   "name": "terrain_uv_sample",
@@ -9307,12 +9307,12 @@
  "0x0051F2F0": {
   "name": "gamespy_shutdown",
   "named": true,
-  "len": 2162
+  "len": 2175
  },
  "0x0051F470": {
   "name": "GiantsInitNewWorld",
   "named": true,
-  "len": 6799
+  "len": 6812
  },
  "0x0051F9E0": {
   "name": "gamespy_directplay_init",
@@ -9320,9 +9320,9 @@
   "len": 2825
  },
  "0x0051FBA0": {
-  "name": "FUN_0051fba0",
-  "named": false,
-  "len": 1425
+  "name": "gamespy_interface_release",
+  "named": true,
+  "len": 1438
  },
  "0x0051FC90": {
   "name": "comm_tcpip_menu",
@@ -9337,7 +9337,7 @@
  "0x00520490": {
   "name": "comm_comm_00520490",
   "named": true,
-  "len": 4457
+  "len": 4470
  },
  "0x00520B90": {
   "name": "gamespy_send_statechange",
@@ -9512,7 +9512,7 @@
  "0x00524DE0": {
   "name": "gamespy_host_game",
   "named": true,
-  "len": 2875
+  "len": 2888
  },
  "0x00525030": {
   "name": "Audio3DTestToneUpdate__Fv_6",
@@ -9605,9 +9605,9 @@
   "len": 1032
  },
  "0x00529D10": {
-  "name": "FUN_00529d10",
-  "named": false,
-  "len": 734
+  "name": "game_settings_unpack",
+  "named": true,
+  "len": 742
  },
  "0x00529E00": {
   "name": "comm_comm_00529e00",
@@ -9622,7 +9622,7 @@
  "0x0052A050": {
   "name": "showchat_mission_objective__Fi_2",
   "named": true,
-  "len": 9487
+  "len": 9495
  },
  "0x0052A940": {
   "name": "comm_server_heartbeat",

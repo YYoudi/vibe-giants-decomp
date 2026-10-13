@@ -5993,7 +5993,7 @@ LAB_004570b5:
 
   }
 
-  FUN_00494030(param_3);
+  damage_voice_trigger(param_3);
 
   return;
 
