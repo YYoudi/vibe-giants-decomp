@@ -4562,7 +4562,7 @@ switchD_00478e15_caseD_5:
 
     *(float *)(iVar4 + 0x274) = fVar1;
 
-    iVar5 = reaper_0052e4a0(fVar1);
+    iVar5 = main_0052e4a0(fVar1);
 
     if (iVar5 != 0) {
 
@@ -4707,7 +4707,7 @@ void FUN_00478f60(int param_1,undefined4 param_2)
 
     if (*(int *)(iVar3 + 0x1fc) == 0) {
 
-      iVar1 = reaper_0052e4a0(param_1);
+      iVar1 = main_0052e4a0(param_1);
 
       if (iVar1 != 0) {
 
@@ -5052,7 +5052,7 @@ void FUN_0047be20(float param_1,float param_2,int param_3,int param_4,float para
 
   iVar4 = *(int *)(param_3 + 0x100);
 
-  iVar3 = reaper_0052e4a0(param_3);
+  iVar3 = main_0052e4a0(param_3);
 
   if (iVar3 != 0) {
 
@@ -5230,7 +5230,7 @@ LAB_0047c03e:
 
   }
 
-  iVar4 = reaper_0052e4a0(iVar2);
+  iVar4 = main_0052e4a0(iVar2);
 
   if ((iVar4 != 0) && ((*(byte *)(iVar2 + 0x1c8) & 1) != 0)) {
 
@@ -5790,7 +5790,7 @@ void FUN_0047c680(int param_1,int param_2,float param_3)
 
     FUN_004a5d10();
 
-    iVar1 = reaper_0052e4a0(param_1);
+    iVar1 = main_0052e4a0(param_1);
 
     if (iVar1 != 0) {
 
@@ -5977,7 +5977,7 @@ void FUN_0047c900(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar4 = reaper_0052e4a0(param_1);
+  iVar4 = main_0052e4a0(param_1);
 
   if (iVar4 != 0) {
 
@@ -6356,7 +6356,7 @@ LAB_0047cdb1:
 
         *(undefined4 *)(iVar5 + 0x144) = 0;
 
-        iVar6 = reaper_0052e4a0(iVar7);
+        iVar6 = main_0052e4a0(iVar7);
 
         if (iVar6 != 0) {
 
@@ -6384,7 +6384,7 @@ LAB_0047cdb1:
 
       *(uint *)(iVar7 + 0xe0) = *(uint *)(iVar7 + 0xe0) & 0xfeffffff;
 
-      iVar5 = reaper_0052e4a0(iVar7);
+      iVar5 = main_0052e4a0(iVar7);
 
       if (iVar5 != 0) {
 
@@ -6470,7 +6470,7 @@ LAB_0047cdb1:
 
        ) {
 
-      iVar5 = reaper_0052e4a0(iVar7);
+      iVar5 = main_0052e4a0(iVar7);
 
       if (iVar5 != 0) {
 
@@ -6630,7 +6630,7 @@ LAB_0047cdb1:
 
       *(uint *)(iVar7 + 0xe0) = *(uint *)(iVar7 + 0xe0) | 0x1000000;
 
-      iVar5 = reaper_0052e4a0(iVar7);
+      iVar5 = main_0052e4a0(iVar7);
 
       if (iVar5 != 0) {
 
@@ -6656,7 +6656,7 @@ LAB_0047cdb1:
 
         *(undefined4 *)(iVar5 + 0x144) = 0;
 
-        iVar6 = reaper_0052e4a0(iVar7);
+        iVar6 = main_0052e4a0(iVar7);
 
         if (iVar6 != 0) {
 
@@ -6684,7 +6684,7 @@ LAB_0047cdb1:
 
       *(uint *)(iVar7 + 0xe0) = *(uint *)(iVar7 + 0xe0) & 0xfeffffff;
 
-      iVar5 = reaper_0052e4a0(iVar7);
+      iVar5 = main_0052e4a0(iVar7);
 
       if (iVar5 != 0) {
 
@@ -6746,7 +6746,7 @@ LAB_0047cdb1:
 
     FUN_00480a60(iVar7);
 
-    iVar6 = reaper_0052e4a0(iVar5);
+    iVar6 = main_0052e4a0(iVar5);
 
     if (iVar6 != 0) {
 
@@ -6768,7 +6768,7 @@ LAB_0047cdb1:
 
         *(undefined4 *)(iVar5 + 0x144) = 0;
 
-        iVar6 = reaper_0052e4a0(iVar7);
+        iVar6 = main_0052e4a0(iVar7);
 
         if (iVar6 != 0) {
 
@@ -6796,7 +6796,7 @@ LAB_0047cdb1:
 
       *(uint *)(iVar7 + 0xe0) = *(uint *)(iVar7 + 0xe0) & 0xfeffffff;
 
-      iVar5 = reaper_0052e4a0(iVar7);
+      iVar5 = main_0052e4a0(iVar7);
 
       if (iVar5 != 0) {
 
@@ -6810,7 +6810,7 @@ LAB_0047cdb1:
 
        ) {
 
-      iVar5 = reaper_0052e4a0(iVar7);
+      iVar5 = main_0052e4a0(iVar7);
 
       if (iVar5 != 0) {
 
@@ -6894,7 +6894,7 @@ LAB_0047d90a:
 
     FUN_00480a60(iVar7);
 
-    iVar6 = reaper_0052e4a0(iVar5);
+    iVar6 = main_0052e4a0(iVar5);
 
     if (iVar6 != 0) {
 
@@ -6918,7 +6918,7 @@ LAB_0047d90a:
 
       *(undefined4 *)(iVar5 + 0x144) = 0;
 
-      iVar6 = reaper_0052e4a0(iVar7);
+      iVar6 = main_0052e4a0(iVar7);
 
       if (iVar6 != 0) {
 
@@ -7060,7 +7060,7 @@ LAB_0047d6b8:
 
       *(undefined4 *)(iVar5 + 0x144) = 0;
 
-      iVar6 = reaper_0052e4a0(iVar7);
+      iVar6 = main_0052e4a0(iVar7);
 
       if (iVar6 != 0) {
 
@@ -7190,7 +7190,7 @@ LAB_0047d6b8:
 
       FUN_00480a60(iVar7);
 
-      iVar6 = reaper_0052e4a0(iVar5);
+      iVar6 = main_0052e4a0(iVar5);
 
       if (iVar6 != 0) {
 
@@ -7212,7 +7212,7 @@ LAB_0047d6b8:
 
           *(undefined4 *)(iVar5 + 0x144) = 0;
 
-          iVar6 = reaper_0052e4a0(iVar7);
+          iVar6 = main_0052e4a0(iVar7);
 
           if (iVar6 != 0) {
 
@@ -7240,7 +7240,7 @@ LAB_0047d6b8:
 
         *(uint *)(iVar7 + 0xe0) = *(uint *)(iVar7 + 0xe0) & 0xfeffffff;
 
-        iVar5 = reaper_0052e4a0(iVar7);
+        iVar5 = main_0052e4a0(iVar7);
 
         if (iVar5 != 0) {
 
@@ -7254,7 +7254,7 @@ LAB_0047d6b8:
 
          ((*(uint *)(iVar7 + 0xe0) & 0x4000000) == 0)) {
 
-        iVar5 = reaper_0052e4a0(iVar7);
+        iVar5 = main_0052e4a0(iVar7);
 
         if (iVar5 != 0) {
 
@@ -7342,7 +7342,7 @@ LAB_0047d5b2:
 
     FUN_00480a60(iVar7);
 
-    iVar6 = reaper_0052e4a0(iVar5);
+    iVar6 = main_0052e4a0(iVar5);
 
     if (iVar6 != 0) {
 
@@ -7366,7 +7366,7 @@ LAB_0047d5b2:
 
       *(undefined4 *)(iVar5 + 0x144) = 0;
 
-      iVar6 = reaper_0052e4a0(iVar7);
+      iVar6 = main_0052e4a0(iVar7);
 
       if (iVar6 != 0) {
 
@@ -7396,7 +7396,7 @@ LAB_0047d6cb:
 
     *(uint *)(iVar7 + 0xe0) = *(uint *)(iVar7 + 0xe0) & 0xfeffffff;
 
-    iVar5 = reaper_0052e4a0(iVar7);
+    iVar5 = main_0052e4a0(iVar7);
 
     if (iVar5 != 0) {
 
@@ -7410,7 +7410,7 @@ LAB_0047d6f9:
 
        ) {
 
-      iVar5 = reaper_0052e4a0(iVar7);
+      iVar5 = main_0052e4a0(iVar7);
 
       if (iVar5 != 0) {
 
@@ -7822,7 +7822,7 @@ LAB_0047e183:
 
           *(undefined4 *)(iVar6 + 0x144) = 0;
 
-          iVar11 = reaper_0052e4a0(param_1);
+          iVar11 = main_0052e4a0(param_1);
 
           if (iVar11 != 0) {
 
@@ -7850,7 +7850,7 @@ LAB_0047e183:
 
         param_1[0x38] = param_1[0x38] & 0xfeffffff;
 
-        iVar6 = reaper_0052e4a0(param_1);
+        iVar6 = main_0052e4a0(param_1);
 
         if (iVar6 != 0) {
 
@@ -7888,7 +7888,7 @@ LAB_0047e183:
 
           *(undefined4 *)(iVar6 + 0x144) = 0;
 
-          iVar11 = reaper_0052e4a0(param_1);
+          iVar11 = main_0052e4a0(param_1);
 
           if (iVar11 != 0) {
 
@@ -7916,7 +7916,7 @@ LAB_0047e183:
 
         param_1[0x38] = param_1[0x38] & 0xfeffffff;
 
-        iVar6 = reaper_0052e4a0(param_1);
+        iVar6 = main_0052e4a0(param_1);
 
         if (iVar6 != 0) {
 
@@ -8232,7 +8232,7 @@ LAB_0047e84d:
 
     if (*(int *)(iVar3 + 0x19c) != 0) {
 
-      iVar6 = reaper_0052e4a0(param_1);
+      iVar6 = main_0052e4a0(param_1);
 
       if (iVar6 != 0) {
 
@@ -8250,7 +8250,7 @@ LAB_0047e84d:
 
     if (*(int *)(iVar3 + 0x1fc) != 0) {
 
-      iVar6 = reaper_0052e4a0(param_1);
+      iVar6 = main_0052e4a0(param_1);
 
       if (iVar6 != 0) {
 
@@ -8274,7 +8274,7 @@ LAB_0047e84d:
 
         *(undefined4 *)(iVar6 + 0x144) = 0;
 
-        iVar11 = reaper_0052e4a0(param_1);
+        iVar11 = main_0052e4a0(param_1);
 
         if (iVar11 != 0) {
 
@@ -8472,7 +8472,7 @@ LAB_0047eba7:
 
       if (*(int *)(iVar3 + 0x19c) != 0) {
 
-        iVar6 = reaper_0052e4a0(param_1);
+        iVar6 = main_0052e4a0(param_1);
 
         if (iVar6 != 0) {
 
@@ -8490,7 +8490,7 @@ LAB_0047eba7:
 
       if (*(int *)(iVar3 + 0x1fc) != 0) {
 
-        iVar6 = reaper_0052e4a0(param_1);
+        iVar6 = main_0052e4a0(param_1);
 
         if (iVar6 != 0) {
 
@@ -8536,7 +8536,7 @@ LAB_0047eba7:
 
         *(undefined4 *)(iVar3 + 0x19c) = uVar10;
 
-        iVar6 = reaper_0052e4a0(param_1,pcVar17,uVar18,puVar14);
+        iVar6 = main_0052e4a0(param_1,pcVar17,uVar18,puVar14);
 
         if (iVar6 != 0) {
 
@@ -8704,7 +8704,7 @@ LAB_0047ec06:
 
       *(undefined4 *)(iVar6 + 0x144) = 0;
 
-      iVar11 = reaper_0052e4a0(param_1);
+      iVar11 = main_0052e4a0(param_1);
 
       if (iVar11 != 0) {
 
@@ -8766,7 +8766,7 @@ LAB_0047ec06:
 
       *(undefined4 *)(iVar3 + 0x144) = uVar10;
 
-      iVar6 = reaper_0052e4a0(param_1,iVar6,uVar18,puVar14);
+      iVar6 = main_0052e4a0(param_1,iVar6,uVar18,puVar14);
 
       if (iVar6 != 0) {
 
@@ -9457,7 +9457,7 @@ void FUN_0047f740(float param_1)
 
          ((*(uint *)((int)fVar5 + 0xe0) & 0x4000000) == 0)) {
 
-        iVar6 = reaper_0052e4a0(fVar5);
+        iVar6 = main_0052e4a0(fVar5);
 
         if (iVar6 != 0) {
 
@@ -9750,7 +9750,7 @@ void FUN_0047fff0(int param_1)
 
   }
 
-  iVar4 = reaper_0052e4a0(param_1);
+  iVar4 = main_0052e4a0(param_1);
 
   if (iVar4 != 0) {
 

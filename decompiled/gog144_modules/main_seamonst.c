@@ -78,7 +78,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   else {
 
-    iVar3 = reaper_0052e4a0(param_1);
+    iVar3 = main_0052e4a0(param_1);
 
     if (iVar3 != 0) {
 

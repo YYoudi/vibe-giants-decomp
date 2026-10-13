@@ -108,7 +108,7 @@ void fxb_firecircle_create(int param_1,undefined4 param_2,undefined4 param_3,und
 
   *(undefined4 *)(puVar1[1] + 0xc4) = 0x40a00000;
 
-  iVar4 = reaper_0052e4a0(param_1);
+  iVar4 = main_0052e4a0(param_1);
 
   if (iVar4 != 0) {
 
@@ -257,7 +257,7 @@ void FUN_004c03a0(int param_1,undefined4 param_2)
 
       *puVar2 = *puVar2 | 0x40;
 
-      iVar3 = reaper_0052e4a0(param_1);
+      iVar3 = main_0052e4a0(param_1);
 
       if (iVar3 != 0) {
 
@@ -358,7 +358,7 @@ void FUN_004c0550(float *param_1,float *param_2)
 
     local_50 = local_3c;
 
-    iVar3 = reaper_0052e4a0(iVar2);
+    iVar3 = main_0052e4a0(iVar2);
 
     if (iVar3 != 0) {
 
@@ -408,7 +408,7 @@ void FUN_004c0550(float *param_1,float *param_2)
 
   } while (iVar4 < 3);
 
-  iVar4 = reaper_0052e4a0(iVar2);
+  iVar4 = main_0052e4a0(iVar2);
 
   if (iVar4 != 0) {
 
@@ -511,7 +511,7 @@ void FUN_004c0810(float param_1)
 
     param_1 = fVar1;
 
-    iVar5 = reaper_0052e4a0(iVar3);
+    iVar5 = main_0052e4a0(iVar3);
 
     fVar1 = param_1;
 
@@ -1030,7 +1030,7 @@ void FUN_004c0fc0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 
 
     }
 
-    iVar3 = reaper_0052e4a0(param_1);
+    iVar3 = main_0052e4a0(param_1);
 
     if (iVar3 == 0) {
 
@@ -1343,7 +1343,7 @@ void FUN_004c1170(int param_1)
 
             if ((*(byte *)(iVar4 + 0xe0) & 2) == 0) {
 
-              iVar6 = reaper_0052e4a0(iVar4);
+              iVar6 = main_0052e4a0(iVar4);
 
               if (iVar6 == 0) {
 
@@ -1480,7 +1480,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     iVar5 = *(int *)(iVar2 + 0xf48);
 
-    iVar4 = reaper_0052e4a0(param_1);
+    iVar4 = main_0052e4a0(param_1);
 
     if (iVar4 != 0) {
 
@@ -1558,7 +1558,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     }
 
-    iVar5 = reaper_0052e4a0(iVar1);
+    iVar5 = main_0052e4a0(iVar1);
 
     if (iVar5 != 0) {
 
@@ -1658,7 +1658,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
       *(undefined4 *)(iVar5 + 0xea0) = *(undefined4 *)(iVar2 + 0xf54);
 
-      iVar5 = reaper_0052e4a0(iVar1);
+      iVar5 = main_0052e4a0(iVar1);
 
       if (iVar5 != 0) {
 
@@ -1706,7 +1706,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
       *(uint *)(iVar1 + 0xe0) = *(uint *)(iVar1 + 0xe0) | 0x20000;
 
-      iVar4 = reaper_0052e4a0(iVar1);
+      iVar4 = main_0052e4a0(iVar1);
 
       if (iVar4 != 0) {
 
@@ -1792,7 +1792,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
       *(uint *)(iVar1 + 0xe0) = *(uint *)(iVar1 + 0xe0) | 0x10000;
 
-      iVar5 = reaper_0052e4a0(iVar1);
+      iVar5 = main_0052e4a0(iVar1);
 
       if (iVar5 != 0) {
 
@@ -1870,7 +1870,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
         *(undefined4 *)(iVar2 + 0xe60) = *(undefined4 *)(iVar2 + 0xf54);
 
-        iVar5 = reaper_0052e4a0(iVar1);
+        iVar5 = main_0052e4a0(iVar1);
 
         if (iVar5 != 0) {
 
@@ -1948,7 +1948,7 @@ void reaper_ability_playersound(int param_1,undefined4 *param_2)
 
     *(undefined4 *)(iVar2 + 0xe6c) = param_2[2];
 
-    iVar2 = reaper_0052e4a0(param_1);
+    iVar2 = main_0052e4a0(param_1);
 
     if (iVar2 != 0) {
 
@@ -2132,7 +2132,7 @@ void FUN_004c1f80(int param_1,undefined4 *param_2)
 
   fx_get_free_effect__Fv();
 
-  iVar1 = reaper_0052e4a0(param_1,pcVar2,uVar3,puVar4);
+  iVar1 = main_0052e4a0(param_1,pcVar2,uVar3,puVar4);
 
   if (iVar1 != 0) {
 
@@ -2177,7 +2177,7 @@ void reaper_ability_playersound2(int param_1,undefined4 *param_2)
 
       *(undefined4 *)(iVar1 + 0xe48) = param_2[2];
 
-      iVar1 = reaper_0052e4a0(param_1);
+      iVar1 = main_0052e4a0(param_1);
 
       if (iVar1 != 0) {
 
@@ -2248,7 +2248,7 @@ void FUN_004c2140(int param_1,undefined4 *param_2)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x800000;
 
-    iVar3 = reaper_0052e4a0(param_1);
+    iVar3 = main_0052e4a0(param_1);
 
     if (iVar3 != 0) {
 
@@ -2266,7 +2266,7 @@ void FUN_004c2140(int param_1,undefined4 *param_2)
 
   }
 
-  iVar3 = reaper_0052e4a0(param_1);
+  iVar3 = main_0052e4a0(param_1);
 
   if (iVar3 != 0) {
 
@@ -2315,7 +2315,7 @@ void reaper_ability_playersound3(int param_1,undefined4 *param_2)
 
     *(undefined4 *)(iVar2 + 0xe94) = param_2[2];
 
-    iVar2 = reaper_0052e4a0(param_1);
+    iVar2 = main_0052e4a0(param_1);
 
     if (iVar2 != 0) {
 
@@ -3814,7 +3814,7 @@ void FUN_004c52d0(int param_1)
 
       *(undefined4 *)(iVar3 + 0x18c) = *(undefined4 *)(iVar2 + 0x18c);
 
-      iVar4 = reaper_0052e4a0(iVar2);
+      iVar4 = main_0052e4a0(iVar2);
 
       if (iVar4 != 0) {
 
@@ -4003,7 +4003,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
       playerobj_zap_movement(iVar3);
 
-      iVar7 = reaper_0052e4a0(iVar3);
+      iVar7 = main_0052e4a0(iVar3);
 
       if (iVar7 != 0) {
 
@@ -4208,7 +4208,7 @@ void FUN_004c5810(float param_1)
 
                 *(undefined4 *)(iVar7 + 0xcf8) = 0;
 
-                iVar7 = reaper_0052e4a0(fVar3);
+                iVar7 = main_0052e4a0(fVar3);
 
                 if (iVar7 != 0) {
 
@@ -4350,7 +4350,7 @@ void FUN_004c5bf0(int param_1)
 
             if ((*(byte *)(iVar3 + 0xe0) & 1) == 0) {
 
-              iVar5 = reaper_0052e4a0(iVar3);
+              iVar5 = main_0052e4a0(iVar3);
 
               if (iVar5 == 0) {
 
@@ -4607,7 +4607,7 @@ void FUN_004c5fb0(int param_1,int param_2)
 
     if (iVar3 != 0) {
 
-      iVar3 = reaper_0052e4a0(param_1);
+      iVar3 = main_0052e4a0(param_1);
 
       if (iVar3 != 0) {
 
@@ -4794,7 +4794,7 @@ void firewall_create_fire__FP6OBJECTT0Uifffi
 
     *puVar2 = uVar11;
 
-    iVar4 = reaper_0052e4a0(param_1,uVar7,uVar8,uVar9,uVar10,iVar4,uVar12,uVar14);
+    iVar4 = main_0052e4a0(param_1,uVar7,uVar8,uVar9,uVar10,iVar4,uVar12,uVar14);
 
     if (iVar4 != 0) {
 
@@ -4881,7 +4881,7 @@ void fxn_firering(int param_1)
 
   puVar1[2] = uVar3;
 
-  iVar4 = reaper_0052e4a0(param_1,pcVar5,uVar6,puVar7);
+  iVar4 = main_0052e4a0(param_1,pcVar5,uVar6,puVar7);
 
   if (iVar4 != 0) {
 
@@ -9113,8 +9113,8 @@ LAB_004ce7b8:
 
 }
 
-/* ===== time_format_hms @ 0x004CE880 ===== */
-void time_format_hms(int param_1,undefined4 param_2)
+/* ===== comm_004ce880 @ 0x004CE880 ===== */
+void comm_004ce880(int param_1,undefined4 param_2)
 
 
 

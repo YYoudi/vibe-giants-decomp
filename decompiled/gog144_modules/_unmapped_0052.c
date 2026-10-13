@@ -359,7 +359,7 @@ void gamespy_send_statechange(void)
 
     else {
 
-      time_format_hms(iVar2 * 0x3c,local_28);
+      comm_004ce880(iVar2 * 0x3c,local_28);
 
     }
 
@@ -1930,7 +1930,7 @@ void comm_capture_time_menu(int param_1,int param_2)
 
     else {
 
-      time_format_hms(param_1 * 0x3c,local_28);
+      comm_004ce880(param_1 * 0x3c,local_28);
 
     }
 
@@ -2166,7 +2166,7 @@ void comm_timelimit_menu(int param_1)
 
     else {
 
-      time_format_hms(param_1 * 0x3c,local_28);
+      comm_004ce880(param_1 * 0x3c,local_28);
 
     }
 
@@ -2534,7 +2534,7 @@ void comm_scorelimit_menu(uint *param_1,uint *param_2,undefined4 param_3)
 
         else {
 
-          time_format_hms(uVar2 * 0x3c,local_28);
+          comm_004ce880(uVar2 * 0x3c,local_28);
 
         }
 
@@ -3910,7 +3910,7 @@ LAB_00523950:
 
       else {
 
-        time_format_hms(iVar5 * 0x3c,local_bc);
+        comm_004ce880(iVar5 * 0x3c,local_bc);
 
       }
 
@@ -4064,7 +4064,7 @@ LAB_00523950:
 
       else {
 
-        time_format_hms(iVar5 * 0x3c,local_bc);
+        comm_004ce880(iVar5 * 0x3c,local_bc);
 
       }
 
@@ -6085,7 +6085,7 @@ void comm_change_options_menu(void)
 
   if (DAT_00632f2c != DAT_005de4c4) {
 
-    time_format_hms(DAT_00632f2c * 0x3c,local_28);
+    comm_004ce880(DAT_00632f2c * 0x3c,local_28);
 
     if (DAT_00632f2c < 1) {
 
@@ -6227,7 +6227,7 @@ void comm_change_options_menu(void)
 
     if (DAT_00632fcc != DAT_005de564) {
 
-      time_format_hms(DAT_00632fcc * 0x3c,local_28);
+      comm_004ce880(DAT_00632fcc * 0x3c,local_28);
 
       if (DAT_00632fcc == 0) {
 
@@ -7009,7 +7009,7 @@ void FUN_0052a050(int param_1)
 
         else {
 
-          time_format_hms(iVar8 * 0x3c,local_4c4);
+          comm_004ce880(iVar8 * 0x3c,local_4c4);
 
         }
 
@@ -11768,12 +11768,12 @@ undefined4 FUN_0052e480(void)
 
 }
 
-/* ===== reaper_0052e4a0 @ 0x0052E4A0 ===== */
+/* ===== main_0052e4a0 @ 0x0052E4A0 ===== */
 /* PS2 candidate: ObjectSetAnim (conf 0.491) */
 
 
 
-void reaper_0052e4a0(void)
+void main_0052e4a0(void)
 
 
 

@@ -249,7 +249,7 @@ void FUN_004f3af0(int param_1)
 
         *(undefined4 *)(iVar8 + 0x14) = 0x41d80000;
 
-        iVar8 = reaper_0052e4a0(iVar5);
+        iVar8 = main_0052e4a0(iVar5);
 
         if (iVar8 != 0) {
 
@@ -578,7 +578,7 @@ void FUN_004f40a0(int param_1,int param_2,int param_3)
 
   
 
-  iVar1 = reaper_0052e4a0(param_1);
+  iVar1 = main_0052e4a0(param_1);
 
   if (iVar1 != 0) {
 
@@ -608,7 +608,7 @@ void FUN_004f40a0(int param_1,int param_2,int param_3)
 
   FUN_004034a0(param_1,0x41,0x20,0,0,0x3f2aaaab);
 
-  iVar1 = reaper_0052e4a0(param_1);
+  iVar1 = main_0052e4a0(param_1);
 
   if (iVar1 != 0) {
 
@@ -1111,7 +1111,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
     *(undefined4 *)(iVar5 + 0x14) = 0x41d80000;
 
-    iVar4 = reaper_0052e4a0(param_1);
+    iVar4 = main_0052e4a0(param_1);
 
     if (iVar4 != 0) {
 
@@ -1529,7 +1529,7 @@ void FUN_004f5630(int param_1)
 
       *(undefined4 *)(iVar1 + 0x14) = 0x41d80000;
 
-      iVar2 = reaper_0052e4a0(param_1);
+      iVar2 = main_0052e4a0(param_1);
 
       if (iVar2 != 0) {
 
@@ -1624,7 +1624,7 @@ void fx_reaper_bubble(int param_1,undefined4 param_2)
 
         *(undefined4 *)(iVar1 + 0x14) = 0x41d80000;
 
-        iVar2 = reaper_0052e4a0(param_1);
+        iVar2 = main_0052e4a0(param_1);
 
         if (iVar2 != 0) {
 
@@ -2088,7 +2088,7 @@ void FUN_004f5c10(int param_1,int param_2,undefined4 param_3)
 
       *(undefined4 *)(iVar2 + 0x14) = 0x41d80000;
 
-      iVar6 = reaper_0052e4a0(param_1);
+      iVar6 = main_0052e4a0(param_1);
 
       if (iVar6 != 0) {
 
@@ -2148,7 +2148,7 @@ void FUN_004f5c10(int param_1,int param_2,undefined4 param_3)
 
   FUN_004034a0(param_1,uVar4,0x21,0,0,0x3f000000);
 
-  iVar2 = reaper_0052e4a0(param_1);
+  iVar2 = main_0052e4a0(param_1);
 
   if (iVar2 != 0) {
 
@@ -2341,7 +2341,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
             *(undefined4 *)(iVar3 + 0x14) = 0x41d80000;
 
-            iVar3 = reaper_0052e4a0(param_1);
+            iVar3 = main_0052e4a0(param_1);
 
             if (iVar3 != 0) {
 
@@ -2647,7 +2647,7 @@ switchD_004f7908_caseD_20:
 
             *(uint *)(param_3 + 0xe0) = *(uint *)(param_3 + 0xe0) | 0x40;
 
-            iVar4 = reaper_0052e4a0(param_3);
+            iVar4 = main_0052e4a0(param_3);
 
             if (iVar4 != 0) {
 
@@ -2782,7 +2782,7 @@ void FUN_004f7af0(int param_1)
 
     *(undefined4 *)(iVar1 + 0x14) = 0x41d80000;
 
-    iVar1 = reaper_0052e4a0(param_1);
+    iVar1 = main_0052e4a0(param_1);
 
     if (iVar1 != 0) {
 
@@ -2845,7 +2845,7 @@ void FUN_004f7b50(int param_1,undefined4 param_2)
 
     ;
 
-    iVar3 = reaper_0052e4a0(param_1);
+    iVar3 = main_0052e4a0(param_1);
 
     if (iVar3 != 0) {
 

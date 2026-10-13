@@ -22,7 +22,7 @@ void FUN_00480150(int param_1)
 
      ((*(uint *)(param_1 + 0xe0) & 0x4000000) == 0)) {
 
-    iVar1 = reaper_0052e4a0(param_1);
+    iVar1 = main_0052e4a0(param_1);
 
     if (iVar1 != 0) {
 
@@ -125,7 +125,7 @@ LAB_00480200:
 
   ANM_DumpCluster(param_1,0x1d);
 
-  iVar2 = reaper_0052e4a0(param_1);
+  iVar2 = main_0052e4a0(param_1);
 
   if (iVar2 != 0) {
 
@@ -212,7 +212,7 @@ LAB_00480357:
 
   ANM_DumpCluster(param_1,0x1d);
 
-  iVar3 = reaper_0052e4a0(param_1);
+  iVar3 = main_0052e4a0(param_1);
 
   if (iVar3 != 0) {
 
@@ -253,7 +253,7 @@ void FUN_004803a0(int param_1)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x1000000;
 
-    iVar2 = reaper_0052e4a0(param_1);
+    iVar2 = main_0052e4a0(param_1);
 
     if (iVar2 != 0) {
 
@@ -294,7 +294,7 @@ void FUN_00480400(int param_1)
 
       *(undefined4 *)(iVar2 + 0x144) = 0;
 
-      iVar1 = reaper_0052e4a0(param_1);
+      iVar1 = main_0052e4a0(param_1);
 
       if (iVar1 != 0) {
 
@@ -322,7 +322,7 @@ void FUN_00480400(int param_1)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfeffffff;
 
-    iVar2 = reaper_0052e4a0(param_1);
+    iVar2 = main_0052e4a0(param_1);
 
     if (iVar2 != 0) {
 
@@ -361,7 +361,7 @@ void FUN_004804d0(int param_1)
 
     *(undefined4 *)(iVar1 + 0x144) = 0;
 
-    iVar2 = reaper_0052e4a0(param_1);
+    iVar2 = main_0052e4a0(param_1);
 
     if (iVar2 != 0) {
 
@@ -782,7 +782,7 @@ void FUN_00480a60(int param_1)
 
   if (*(int *)(iVar1 + 0x19c) != 0) {
 
-    iVar2 = reaper_0052e4a0(param_1);
+    iVar2 = main_0052e4a0(param_1);
 
     if (iVar2 != 0) {
 
@@ -800,7 +800,7 @@ void FUN_00480a60(int param_1)
 
   if (*(int *)(iVar1 + 0x1fc) != 0) {
 
-    iVar2 = reaper_0052e4a0(param_1);
+    iVar2 = main_0052e4a0(param_1);
 
     if (iVar2 != 0) {
 
@@ -1263,7 +1263,7 @@ void FUN_004810d0(int param_1)
 
                   FUN_00480a60(param_1);
 
-                  iVar8 = reaper_0052e4a0(iVar4);
+                  iVar8 = main_0052e4a0(iVar4);
 
                   if (iVar8 != 0) {
 
@@ -1291,7 +1291,7 @@ void FUN_004810d0(int param_1)
 
                     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfeffffff;
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    iVar4 = main_0052e4a0(param_1);
 
                     if (iVar4 != 0) {
 
@@ -1305,7 +1305,7 @@ void FUN_004810d0(int param_1)
 
                      ((*(uint *)(param_1 + 0xe0) & 0x4000000) == 0)) {
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    iVar4 = main_0052e4a0(param_1);
 
                     if (iVar4 != 0) {
 
@@ -1423,7 +1423,7 @@ LAB_00481264:
 
                   FUN_00480a60(param_1);
 
-                  iVar5 = reaper_0052e4a0(iVar4);
+                  iVar5 = main_0052e4a0(iVar4);
 
                   if (iVar5 != 0) {
 
@@ -1447,7 +1447,7 @@ LAB_00481264:
 
                       *(undefined4 *)(iVar4 + 0x144) = 0;
 
-                      iVar8 = reaper_0052e4a0(param_1);
+                      iVar8 = main_0052e4a0(param_1);
 
                       if (iVar8 != 0) {
 
@@ -1475,7 +1475,7 @@ LAB_00481264:
 
                     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfeffffff;
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    iVar4 = main_0052e4a0(param_1);
 
                     if (iVar4 != 0) {
 
@@ -1489,7 +1489,7 @@ LAB_00481264:
 
                      ((*(uint *)(param_1 + 0xe0) & 0x4000000) == 0)) {
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    iVar4 = main_0052e4a0(param_1);
 
                     if (iVar4 != 0) {
 
@@ -1606,7 +1606,7 @@ void FUN_00481630(int param_1)
 
       *(float *)(param_1 + 300) = *(float *)(param_1 + 0x2ac) * 50.0;
 
-      iVar2 = reaper_0052e4a0(param_1);
+      iVar2 = main_0052e4a0(param_1);
 
       if (iVar2 != 0) {
 
@@ -1658,7 +1658,7 @@ LAB_0048167a:
 
   *(float *)(param_1 + 300) = *(float *)(param_1 + 0x2ac) * 50.0;
 
-  iVar2 = reaper_0052e4a0(param_1);
+  iVar2 = main_0052e4a0(param_1);
 
   if (iVar2 != 0) {
 
@@ -1707,7 +1707,7 @@ void FUN_00481830(int param_1,int param_2)
 
   FUN_00480a60(iVar1);
 
-  iVar2 = reaper_0052e4a0(iVar3);
+  iVar2 = main_0052e4a0(iVar3);
 
   if (iVar2 != 0) {
 
@@ -1729,7 +1729,7 @@ void FUN_00481830(int param_1,int param_2)
 
       *(undefined4 *)(iVar3 + 0x144) = 0;
 
-      iVar2 = reaper_0052e4a0(iVar1);
+      iVar2 = main_0052e4a0(iVar1);
 
       if (iVar2 != 0) {
 
@@ -1757,7 +1757,7 @@ void FUN_00481830(int param_1,int param_2)
 
     *(uint *)(iVar1 + 0xe0) = *(uint *)(iVar1 + 0xe0) & 0xfeffffff;
 
-    iVar3 = reaper_0052e4a0(iVar1);
+    iVar3 = main_0052e4a0(iVar1);
 
     if (iVar3 != 0) {
 
@@ -1771,7 +1771,7 @@ void FUN_00481830(int param_1,int param_2)
 
   {
 
-    iVar3 = reaper_0052e4a0(iVar1);
+    iVar3 = main_0052e4a0(iVar1);
 
     if (iVar3 != 0) {
 
@@ -1822,7 +1822,7 @@ void FUN_004819f0(int param_1,int param_2,int param_3)
 
   FUN_00480a60(param_1);
 
-  iVar1 = reaper_0052e4a0(param_2);
+  iVar1 = main_0052e4a0(param_2);
 
   if (iVar1 != 0) {
 
@@ -1846,7 +1846,7 @@ void FUN_004819f0(int param_1,int param_2,int param_3)
 
       *(undefined4 *)(iVar1 + 0x144) = 0;
 
-      iVar2 = reaper_0052e4a0(param_1);
+      iVar2 = main_0052e4a0(param_1);
 
       if (iVar2 != 0) {
 
@@ -1874,7 +1874,7 @@ void FUN_004819f0(int param_1,int param_2,int param_3)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfeffffff;
 
-    iVar1 = reaper_0052e4a0(param_1);
+    iVar1 = main_0052e4a0(param_1);
 
     if (iVar1 != 0) {
 
@@ -1888,7 +1888,7 @@ void FUN_004819f0(int param_1,int param_2,int param_3)
 
      ((*(uint *)(param_1 + 0xe0) & 0x4000000) == 0)) {
 
-    iVar1 = reaper_0052e4a0(param_1);
+    iVar1 = main_0052e4a0(param_1);
 
     if (iVar1 != 0) {
 

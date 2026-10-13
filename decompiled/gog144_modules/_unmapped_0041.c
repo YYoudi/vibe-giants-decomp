@@ -5252,7 +5252,7 @@ void FUN_00416990(int param_1,int param_2,int param_3,int param_4)
 
   }
 
-  if ((param_4 != 0) && (iVar1 = reaper_0052e4a0(param_1), iVar1 != 0)) {
+  if ((param_4 != 0) && (iVar1 = main_0052e4a0(param_1), iVar1 != 0)) {
 
     local_8 = *(undefined4 *)(param_3 + 0x188);
 
@@ -7338,7 +7338,7 @@ undefined4 FUN_00418a00(int param_1,float param_2)
 
 LAB_00418bc3:
 
-  iVar3 = reaper_0052e4a0(fVar2);
+  iVar3 = main_0052e4a0(fVar2);
 
   if (iVar3 != 0) {
 
@@ -7366,7 +7366,7 @@ LAB_00418bc3:
 
       FUN_0041b390(iVar3,fVar2);
 
-      iVar5 = reaper_0052e4a0(fVar2);
+      iVar5 = main_0052e4a0(fVar2);
 
       if (iVar5 != 0) {
 
@@ -9279,7 +9279,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
   (&DAT_006330d0)[iVar4] = (&DAT_006330d0)[iVar4] + -1;
 
-  iVar4 = reaper_0052e4a0(param_1);
+  iVar4 = main_0052e4a0(param_1);
 
   if (iVar4 != 0) {
 
@@ -9455,7 +9455,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
         }
 
-        iVar5 = reaper_0052e4a0(param_1);
+        iVar5 = main_0052e4a0(param_1);
 
         if (iVar5 != 0) {
 
@@ -9676,7 +9676,7 @@ LAB_0041bba6:
 
   (&DAT_006330d0)[iVar4] = (&DAT_006330d0)[iVar4] + 1;
 
-  iVar4 = reaper_0052e4a0(param_1);
+  iVar4 = main_0052e4a0(param_1);
 
   if (iVar4 != 0) {
 
@@ -10523,7 +10523,7 @@ LAB_0041e5bd:
 
   }
 
-  iVar6 = reaper_0052e4a0(iVar3);
+  iVar6 = main_0052e4a0(iVar3);
 
   if (iVar6 != 0) {
 

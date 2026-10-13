@@ -514,7 +514,7 @@ LAB_004195d2:
 
     FUN_0041b390(iVar8,param_1);
 
-    iVar9 = reaper_0052e4a0(param_1);
+    iVar9 = main_0052e4a0(param_1);
 
     if (iVar9 != 0) {
 
@@ -612,7 +612,7 @@ LAB_004195d2:
 
     }
 
-    iVar9 = reaper_0052e4a0(param_1);
+    iVar9 = main_0052e4a0(param_1);
 
     if (iVar9 != 0) {
 
