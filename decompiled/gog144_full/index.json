@@ -627,12 +627,12 @@
  "0x0040D820": {
   "name": "ref_anode_user",
   "named": true,
-  "len": 3216
+  "len": 3226
  },
  "0x0040DB70": {
   "name": "FUN_0040db70",
   "named": false,
-  "len": 6222
+  "len": 6227
  },
  "0x0040E1C0": {
   "name": "charger_dust_fx",
@@ -727,7 +727,7 @@
  "0x00412DF0": {
   "name": "FUN_00412df0",
   "named": false,
-  "len": 14049
+  "len": 14053
  },
  "0x00413820": {
   "name": "FUN_00413820",
@@ -745,9 +745,9 @@
   "len": 703
  },
  "0x00413970": {
-  "name": "FUN_00413970",
-  "named": false,
-  "len": 2151
+  "name": "obj_slope_move",
+  "named": true,
+  "len": 2153
  },
  "0x00413B70": {
   "name": "FUN_00413b70",
@@ -1785,9 +1785,9 @@
   "len": 3094
  },
  "0x0042BFB0": {
-  "name": "FUN_0042bfb0",
-  "named": false,
-  "len": 2002
+  "name": "level_scene_mesh_process",
+  "named": true,
+  "len": 2031
  },
  "0x0042C1B0": {
   "name": "level_scene_process",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23304
+  "len": 23316
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -3442,7 +3442,7 @@
  "0x0045A900": {
   "name": "FUN_0045a900",
   "named": false,
-  "len": 2450
+  "len": 2452
  },
  "0x0045AB30": {
   "name": "FUN_0045ab30",
@@ -3907,7 +3907,7 @@
  "0x00471130": {
   "name": "water_draw_dump",
   "named": true,
-  "len": 3321
+  "len": 3326
  },
  "0x00471420": {
   "name": "fx_weather_system",
@@ -3997,7 +3997,7 @@
  "0x004753C0": {
   "name": "dlog_text_render_screen",
   "named": true,
-  "len": 4037
+  "len": 4042
  },
  "0x00475700": {
   "name": "dlog_text_pop_screen",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "FUN_0047caa0",
   "named": false,
-  "len": 22831
+  "len": 22832
  },
  "0x0047DF10": {
   "name": "FUN_0047df10",
@@ -4305,9 +4305,9 @@
   "len": 8424
  },
  "0x00481630": {
-  "name": "FUN_00481630",
-  "named": false,
-  "len": 2504
+  "name": "obj_swap_link",
+  "named": true,
+  "len": 2505
  },
  "0x00481830": {
   "name": "FUN_00481830",
@@ -8625,9 +8625,9 @@
   "len": 462
  },
  "0x00516420": {
-  "name": "FUN_00516420",
-  "named": false,
-  "len": 1892
+  "name": "view_matrix_build",
+  "named": true,
+  "len": 1897
  },
  "0x00516630": {
   "name": "XFMatMult",

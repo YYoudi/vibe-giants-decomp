@@ -9997,7 +9997,7 @@ void FUN_0045a900(int param_1)
 
   if ((iVar2 != 0) && (iVar2 = FUN_0047f730(param_1), iVar2 != 0)) {
 
-    FUN_00481630(param_1);
+    obj_swap_link(param_1);
 
     return;
 
@@ -10007,7 +10007,7 @@ void FUN_0045a900(int param_1)
 
      (iVar2 = FUN_004a6160(param_1), iVar2 != 0)) {
 
-    FUN_00481630(param_1);
+    obj_swap_link(param_1);
 
     return;
 

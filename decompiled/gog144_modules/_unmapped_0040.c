@@ -10320,7 +10320,7 @@ void ref_anode_user(void)
 
       local_14 = local_28 * local_1c;
 
-      FUN_00516420(&DAT_005550d4,&local_c,&local_18);
+      view_matrix_build(&DAT_005550d4,&local_c,&local_18);
 
       return;
 
@@ -10408,7 +10408,7 @@ void ref_anode_user(void)
 
     local_8 = local_24 * local_20;
 
-    FUN_00516420(&DAT_005550d4,&local_18,&local_c);
+    view_matrix_build(&DAT_005550d4,&local_18,&local_c);
 
   }
 
@@ -10783,7 +10783,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   }
 
-  FUN_00516420(&local_24,&local_18,&local_c);
+  view_matrix_build(&local_24,&local_18,&local_c);
 
   return;
 

@@ -718,7 +718,7 @@ switchD_004711dd_default:
 
         FUN_005161c0(0,0,fVar3,fVar2);
 
-        FUN_00516420(&local_50,&local_78,&local_6c);
+        view_matrix_build(&local_50,&local_78,&local_6c);
 
         FUN_005160b0(0x42b40000,0,1);
 
@@ -2350,7 +2350,7 @@ void dlog_text_render_screen(void)
 
     FNT_StringRender__FPcP14FNT_RenderInfo((char *)0x447a0000,(undefined4 *)0x464b2000);
 
-    FUN_00516420(&local_24,&local_c,&local_18);
+    view_matrix_build(&local_24,&local_c,&local_18);
 
     FUN_005160b0(0x42700000,0x3fa66666,1);
 
@@ -6710,7 +6710,7 @@ LAB_0047cdb1:
 
   case 0x17:
 
-    FUN_00481630(iVar7);
+    obj_swap_link(iVar7);
 
     return;
 
