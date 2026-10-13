@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (68 named) — decompiled, names from PS2 symbols
+ * 186 functions (69 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -6560,14 +6560,16 @@ LAB_0051744c:
 
 }
 
-/* ===== FUN_00517510 @ 0x00517510 ===== */
+/* ===== textrender_3d_project @ 0x00517510 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00517510(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+void textrender_3d_project
 
-                 float *param_5,int param_6,int param_7)
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+               float *param_5,int param_6,int param_7)
 
 
 

@@ -1509,7 +1509,7 @@ void FUN_00471a60(int param_1)
 
               if (DAT_00632d5c != 0) {
 
-                FUN_00426570();
+                dlog_objname_menu();
 
               }
 

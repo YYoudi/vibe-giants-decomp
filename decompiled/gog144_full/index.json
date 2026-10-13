@@ -1360,9 +1360,9 @@
   "len": 251
  },
  "0x00426570": {
-  "name": "FUN_00426570",
-  "named": false,
-  "len": 3944
+  "name": "dlog_objname_menu",
+  "named": true,
+  "len": 3949
  },
  "0x004267A0": {
   "name": "main_demo_004267a0",
@@ -1817,7 +1817,7 @@
  "0x0042D8A0": {
   "name": "FUN_0042d8a0",
   "named": false,
-  "len": 3907
+  "len": 3926
  },
  "0x0042DC50": {
   "name": "alpha_queue_push",
@@ -3700,9 +3700,9 @@
   "len": 1131
  },
  "0x0046A800": {
-  "name": "FUN_0046a800",
-  "named": false,
-  "len": 2483
+  "name": "obj_anim_flags_update",
+  "named": true,
+  "len": 2492
  },
  "0x0046AA30": {
   "name": "gfx_d3d_0046aa30",
@@ -3922,7 +3922,7 @@
  "0x00471A60": {
   "name": "FUN_00471a60",
   "named": false,
-  "len": 4647
+  "len": 4652
  },
  "0x00471DC0": {
   "name": "FUN_00471dc0",
@@ -5837,7 +5837,7 @@
  "0x004A7790": {
   "name": "FUN_004a7790",
   "named": false,
-  "len": 261
+  "len": 266
  },
  "0x004A77C0": {
   "name": "playerobj_zap_movement",
@@ -6515,9 +6515,9 @@
   "len": 1176
  },
  "0x004BCC30": {
-  "name": "FUN_004bcc30",
-  "named": false,
-  "len": 2656
+  "name": "ai_flight_check",
+  "named": true,
+  "len": 2659
  },
  "0x004BCE60": {
   "name": "FUN_004bce60",
@@ -8720,9 +8720,9 @@
   "len": 1966
  },
  "0x00517510": {
-  "name": "FUN_00517510",
-  "named": false,
-  "len": 3165
+  "name": "textrender_3d_project",
+  "named": true,
+  "len": 3189
  },
  "0x00517740": {
   "name": "main_xform_00517740",

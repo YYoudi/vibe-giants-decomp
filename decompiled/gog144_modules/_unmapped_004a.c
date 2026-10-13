@@ -7027,7 +7027,7 @@ void FUN_004a7790(int param_1)
 
   if (param_1 == DAT_00632a88) {
 
-    FUN_00426570();
+    dlog_objname_menu();
 
   }
 

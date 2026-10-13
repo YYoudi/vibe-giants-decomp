@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (74 named) — decompiled, names from PS2 symbols
+ * 129 functions (75 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -8796,12 +8796,12 @@ undefined4 comm_00426540(void)
 
 }
 
-/* ===== FUN_00426570 @ 0x00426570 ===== */
+/* ===== dlog_objname_menu @ 0x00426570 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00426570(void)
+void dlog_objname_menu(void)
 
 
 
@@ -17139,11 +17139,13 @@ void FUN_0042d8a0(int param_1)
 
   local_30 = local_148;
 
-  FUN_00517510(*(undefined4 *)(param_1 + 200),*(undefined4 *)(param_1 + 0xcc),
+  textrender_3d_project
 
-               *(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xc4),param_1 + 0xa0,8,
+            (*(undefined4 *)(param_1 + 200),*(undefined4 *)(param_1 + 0xcc),
 
-               local_1c0);
+             *(undefined4 *)(param_1 + 0xd0),*(undefined4 *)(param_1 + 0xc4),param_1 + 0xa0,8,
+
+             local_1c0);
 
   (**(code **)(DAT_0065642c + 8))(DAT_0065642c,0x60100,0,0x80ffffff);
 

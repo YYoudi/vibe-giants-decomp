@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (14 named) — decompiled, names from PS2 symbols
+ * 53 functions (15 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -1898,8 +1898,8 @@ uint reaper_lock_short_2(int param_1,undefined4 *param_2,int param_3)
 
 }
 
-/* ===== FUN_0046a800 @ 0x0046A800 ===== */
-void FUN_0046a800(uint param_1,float *param_2)
+/* ===== obj_anim_flags_update @ 0x0046A800 ===== */
+void obj_anim_flags_update(uint param_1,float *param_2)
 
 
 

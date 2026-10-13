@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00426570,FUN_00426570,,dlog_objname_menu,0.9,llm-read36,
+00517510,FUN_00517510,,textrender_3d_project,0.9,llm-read36,
+0046a800,FUN_0046A800,,obj_anim_flags_update,0.9,llm-read36,
+004bcc30,FUN_004BCC30,,ai_flight_check,0.9,llm-read36,
