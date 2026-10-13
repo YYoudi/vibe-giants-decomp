@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (40 named) — decompiled, names from PS2 symbols
+ * 87 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -3931,7 +3931,7 @@ void FUN_005035c0(undefined4 param_1,int param_2)
 
         if ((!bVar5) && (((&DAT_005a8804)[param_2] & 1 << ((byte)local_28 & 0x1f)) == 0)) {
 
-          fVar12 = (float10)FUN_0050a580(iVar3 + 0xa0,local_24);
+          fVar12 = (float10)distance3d__FP3P3DT0(iVar3 + 0xa0,local_24);
 
           if (*(int *)(iVar10 + 0x1c) == local_28) {
 
@@ -9015,12 +9015,12 @@ void main_texture_00508860(void)
 
 }
 
-/* ===== FUN_00508fa0 @ 0x00508FA0 ===== */
+/* ===== objspec_get_movetype @ 0x00508FA0 ===== */
 /* PS2 candidate: objspec_has_shot_function_3 (conf 0.554) */
 
 
 
-undefined4 FUN_00508fa0(int param_1)
+undefined4 objspec_get_movetype(int param_1)
 
 
 
@@ -10137,12 +10137,12 @@ float10 FUN_0050a550(float *param_1)
 
 }
 
-/* ===== FUN_0050a580 @ 0x0050A580 ===== */
+/* ===== distance3d__FP3P3DT0 @ 0x0050A580 ===== */
 /* PS2 candidate: distance3d__FP3P3DT0 (conf 0.559) */
 
 
 
-float10 FUN_0050a580(float *param_1,float *param_2)
+float10 distance3d__FP3P3DT0(float *param_1,float *param_2)
 
 
 
@@ -10203,12 +10203,12 @@ void FUN_0050a610(void)
 
 }
 
-/* ===== FUN_0050a640 @ 0x0050A640 ===== */
+/* ===== tri_to_plane__FP3P3DN20P7PLANE3D @ 0x0050A640 ===== */
 /* PS2 candidate: tri_to_plane__FP3P3DN20P7PLANE3D (conf 0.55) */
 
 
 
-void FUN_0050a640(float *param_1,float *param_2,float *param_3,float *param_4)
+void tri_to_plane__FP3P3DN20P7PLANE3D(float *param_1,float *param_2,float *param_3,float *param_4)
 
 
 

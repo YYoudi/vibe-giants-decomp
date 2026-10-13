@@ -4820,7 +4820,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
                   }
 
-                  fVar9 = (float10)FUN_0050a580(param_1,param_2);
+                  fVar9 = (float10)distance3d__FP3P3DT0(param_1,param_2);
 
                   if ((float10)4.0 / fVar9 <= (float10)local_94) {
 
@@ -4830,7 +4830,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
                   else {
 
-                    fVar9 = (float10)FUN_0050a580(param_1,param_2);
+                    fVar9 = (float10)distance3d__FP3P3DT0(param_1,param_2);
 
                     fVar9 = (float10)4.0 / fVar9;
 
@@ -8459,7 +8459,7 @@ void objtype_team_assign(int param_1)
 
         item_create_base_pickup(iVar2 + 0x5d0,0x49,0xffffffff);
 
-        FUN_004b5810(param_1);
+        reaperbase_update_icons(param_1);
 
         return;
 
@@ -8467,7 +8467,7 @@ void objtype_team_assign(int param_1)
 
     }
 
-    FUN_004b5810(param_1);
+    reaperbase_update_icons(param_1);
 
     return;
 
@@ -8721,7 +8721,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
       }
 
-      FUN_004b5810(param_1);
+      reaperbase_update_icons(param_1);
 
     }
 
@@ -8929,7 +8929,7 @@ LAB_0041b204:
 
     if (fVar1 < fVar3 != (fVar1 == fVar3)) {
 
-      FUN_004b5b30(*(undefined4 *)(iVar4 + 0x274),iVar7,1);
+      meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset(*(undefined4 *)(iVar4 + 0x274),iVar7,1);
 
     }
 
@@ -8989,7 +8989,7 @@ LAB_0041b12c:
 
   if (fVar1 < fVar3 != (fVar1 == fVar3)) {
 
-    FUN_00409780(*(undefined4 *)(iVar4 + 0x274),iVar7,1);
+    meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2(*(undefined4 *)(iVar4 + 0x274),iVar7,1);
 
   }
 
@@ -10527,7 +10527,7 @@ LAB_0041e5bd:
 
   if (iVar6 == 0) {
 
-    FUN_004b5810(iVar3);
+    reaperbase_update_icons(iVar3);
 
   }
 

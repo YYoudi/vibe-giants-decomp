@@ -1452,7 +1452,7 @@ LAB_004f54ef:
 
       if (iVar1 != 0) goto LAB_004f54ef;
 
-      FUN_00493ea0();
+      mission_replenish_food__Fv_2();
 
     }
 
@@ -3571,7 +3571,7 @@ void main_smoke_004f90e0(undefined4 param_1,float param_2)
 
   XFGetViewport(local_c);
 
-  fVar1 = (float10)FUN_0050a580(local_c,param_1);
+  fVar1 = (float10)distance3d__FP3P3DT0(local_c,param_1);
 
   fVar1 = ((float10)960.00006 / ((fVar1 + (float10)30.0) * (fVar1 + (float10)30.0))) *
 
@@ -4826,7 +4826,7 @@ void FUN_004fa520(int param_1,float param_2)
 
         uVar12 = uVar11 | 4;
 
-        iVar8 = FUN_00508fa0(iVar3);
+        iVar8 = objspec_get_movetype(iVar3);
 
         if (iVar8 != 0) {
 
@@ -5581,7 +5581,7 @@ void status_update_entry(float param_1)
 
              (*(int *)(*(int *)((int)fVar2 + 0x100) + 0xe2c) == 0)))) {
 
-    FUN_0040d6f0(local_1c,local_20,local_24,local_c);
+    XFGetViewportExt(local_1c,local_20,local_24,local_c);
 
     local_30 = *(undefined4 *)((int)fVar2 + 4);
 

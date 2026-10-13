@@ -306,7 +306,7 @@ float10 anim_dump_related(int param_1,undefined4 param_2,float *param_3,int para
 
   uVar3 = __ftol(*(undefined4 *)(param_4 + 0xc));
 
-  iVar4 = FUN_0053cb50(param_1,uVar3);
+  iVar4 = ANM_NodeGetMat(param_1,uVar3);
 
   local_c = *(undefined4 *)(iVar4 + 0x10);
 

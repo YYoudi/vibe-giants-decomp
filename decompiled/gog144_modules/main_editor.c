@@ -1102,7 +1102,7 @@ LAB_004374a1:
 
           else {
 
-            FUN_00477f20(iVar10,_DAT_00632b10 * 7.2,0);
+            marker_spline_rotate_tangent(iVar10,_DAT_00632b10 * 7.2,0);
 
           }
 
@@ -1242,7 +1242,7 @@ LAB_004374a1:
 
           if ((*(uint *)(piVar11[0xe] + 0x1c8) & 0x20000000) != 0) {
 
-            FUN_00477f20(piVar11[0xe],_DAT_00632b10 * 7.2,1);
+            marker_spline_rotate_tangent(piVar11[0xe],_DAT_00632b10 * 7.2,1);
 
           }
 

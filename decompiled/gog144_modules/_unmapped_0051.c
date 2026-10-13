@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (100 named) — decompiled, names from PS2 symbols
+ * 186 functions (101 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -4627,7 +4627,7 @@ void FUN_00515b20(int param_1,undefined4 param_2,undefined4 param_3)
 
   }
 
-  fVar3 = (float10)FUN_0050a580(param_1 + 0xac,param_1 + 0xa0);
+  fVar3 = (float10)distance3d__FP3P3DT0(param_1 + 0xac,param_1 + 0xa0);
 
   fVar4 = (float10)FUN_00518b70(param_1,0);
 
@@ -7040,7 +7040,7 @@ void _GLOBAL__D_Game(void)
 
 {
 
-  FUN_0051ea60(&DAT_00555df0,&DAT_005dd970);
+  dbg_error_printf(&DAT_00555df0,&DAT_005dd970);
 
   return;
 
@@ -12268,7 +12268,7 @@ void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_
 
   _DAT_005dd944 = FUN_00507b00;
 
-  _DAT_005dd948 = FUN_0040d6f0;
+  _DAT_005dd948 = XFGetViewportExt;
 
   _DAT_005dd94c = sine_cos_lookup;
 
@@ -15355,12 +15355,12 @@ void error_screen_exit(undefined4 param_1)
 
 }
 
-/* ===== FUN_0051ea60 @ 0x0051EA60 ===== */
+/* ===== dbg_error_printf @ 0x0051EA60 ===== */
 /* PS2 candidate: _Error1 (conf 0.547) */
 
 
 
-void FUN_0051ea60(LPCSTR param_1)
+void dbg_error_printf(LPCSTR param_1)
 
 
 

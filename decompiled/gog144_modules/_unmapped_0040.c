@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (55 named) — decompiled, names from PS2 symbols
+ * 105 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -1397,7 +1397,7 @@ ref_get_anode2(undefined4 param_1,float *param_2,int param_3,int param_4,int par
 
     uVar1 = FUN_0053ca70();
 
-    iVar4 = FUN_0053cb50(iVar2,*(undefined4 *)(*(int *)(iVar2 + 0xc) + 0x10),uVar1);
+    iVar4 = ANM_NodeGetMat(iVar2,*(undefined4 *)(*(int *)(iVar2 + 0xc) + 0x10),uVar1);
 
     if (iVar4 == 0) goto LAB_00403980;
 
@@ -1677,7 +1677,9 @@ LAB_00403d93:
 
             }
 
-            puVar5 = (undefined4 *)FUN_0053cb50(uVar4,auStack_64[1],*(undefined4 *)(param_1 + 0xc));
+            puVar5 = (undefined4 *)
+
+                     ANM_NodeGetMat(uVar4,auStack_64[1],*(undefined4 *)(param_1 + 0xc));
 
             if (puVar5 == (undefined4 *)0x0) {
 
@@ -1793,7 +1795,9 @@ LAB_00403c86:
 
             }
 
-            puVar5 = (undefined4 *)FUN_0053cc20(local_70,iVar3,*(undefined4 *)(param_1 + 0xc));
+            puVar5 = (undefined4 *)
+
+                     ANM_BlendedNodeGetMat(local_70,iVar3,*(undefined4 *)(param_1 + 0xc));
 
             if (puVar5 == (undefined4 *)0x0) {
 
@@ -6466,12 +6470,12 @@ void meccbase_update_icons(int param_1)
 
 }
 
-/* ===== FUN_00409780 @ 0x00409780 ===== */
+/* ===== meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2 @ 0x00409780 ===== */
 /* PS2 candidate: meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset (conf 0.557) */
 
 
 
-void FUN_00409780(int param_1,int param_2,int param_3)
+void meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2(int param_1,int param_2,int param_3)
 
 
 
@@ -9292,12 +9296,12 @@ void FUN_0040ce70(void)
 
 }
 
-/* ===== FUN_0040ce90 @ 0x0040CE90 ===== */
+/* ===== camera_cursor_fire @ 0x0040CE90 ===== */
 /* PS2 candidate: camera_cursor_fire (conf 0.551) */
 
 
 
-undefined4 FUN_0040ce90(void)
+undefined4 camera_cursor_fire(void)
 
 
 
@@ -10073,14 +10077,16 @@ float10 FUN_0040d6e0(void)
 
 }
 
-/* ===== FUN_0040d6f0 @ 0x0040D6F0 ===== */
+/* ===== XFGetViewportExt @ 0x0040D6F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: project_vec_to_ground (conf 0.563) */
 
 
 
-void FUN_0040d6f0(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+void XFGetViewportExt(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,
+
+                     undefined4 *param_4)
 
 
 

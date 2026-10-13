@@ -2468,7 +2468,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
       }
 
-      uVar2 = FUN_0053cb50(param_2[0x1de],uVar2,piVar1[6]);
+      uVar2 = ANM_NodeGetMat(param_2[0x1de],uVar2,piVar1[6]);
 
       (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_88,uVar2);
 
@@ -2508,7 +2508,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
     }
 
-    uVar2 = FUN_0053cb50(param_2[0x1df],uVar2,param_2[6]);
+    uVar2 = ANM_NodeGetMat(param_2[0x1df],uVar2,param_2[6]);
 
     (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,uVar2);
 
@@ -2885,7 +2885,7 @@ hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int p
 
           }
 
-          uVar3 = FUN_0053cb50(*(undefined4 *)(iVar5 + 0x308),uVar3,piVar2[6]);
+          uVar3 = ANM_NodeGetMat(*(undefined4 *)(iVar5 + 0x308),uVar3,piVar2[6]);
 
           (*(code *)PTR_crt_matrix_mul_00580c18)(iVar6,iVar6,uVar3);
 
@@ -3640,7 +3640,7 @@ undefined4 FLK_FlickRender(int param_1)
 
           }
 
-          uVar5 = FUN_0053cb50(piVar8[1]);
+          uVar5 = ANM_NodeGetMat(piVar8[1]);
 
           (*(code *)PTR_crt_matrix_mul_00580c18)(piVar9,piVar9,uVar5);
 
@@ -3692,7 +3692,7 @@ undefined4 FLK_FlickRender(int param_1)
 
           uVar5 = AddHud__4cHudP8cHudIcon_4(*(undefined4 *)(piVar9[0x1db] + 0xc),piVar9[3]);
 
-          uVar5 = FUN_0053cb50(piVar9[0x1db],uVar5);
+          uVar5 = ANM_NodeGetMat(piVar9[0x1db],uVar5);
 
           (*(code *)PTR_crt_matrix_mul_00580c18)(aiStack_1d4,piVar11,uVar5);
 
@@ -3874,7 +3874,7 @@ undefined4 FLK_FlickRender(int param_1)
 
         if ((float)piVar9[0x20a] != 0.0) {
 
-          fVar14 = (float10)FUN_0050a580(piVar9 + 0x29);
+          fVar14 = (float10)distance3d__FP3P3DT0(piVar9 + 0x29);
 
           FUN_00515890(piVar9 + -2,piVar9 + 0x20b,(float)(fVar14 / (float10)DAT_006328e0),0,
 

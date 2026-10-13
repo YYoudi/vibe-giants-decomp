@@ -4588,7 +4588,7 @@ void FUN_004e5270(int param_1,int param_2,int param_3,int param_4)
 
       local_60 = local_7c;
 
-      fVar4 = (float10)FUN_0050a580(&local_5c,&local_74);
+      fVar4 = (float10)distance3d__FP3P3DT0(&local_5c,&local_74);
 
       fVar4 = fVar4 * (float10)0.02;
 
@@ -11067,7 +11067,7 @@ void FUN_004EE800(void)
 
   iVar1 = DAT_00632d20 + 1;
 
-  iVar2 = FUN_004B0B40();
+  iVar2 = InitFxDict__Fv();
 
   if (iVar2 < iVar1) {
 

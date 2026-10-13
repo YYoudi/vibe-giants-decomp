@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (40 named) — decompiled, names from PS2 symbols
+ * 67 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -3648,7 +3648,7 @@ void FUN_00477da0(int param_1,float param_2,int param_3)
 
   }
 
-  FUN_00477f20(param_1,uVar4,uVar7);
+  marker_spline_rotate_tangent(param_1,uVar4,uVar7);
 
 LAB_00477eaf:
 
@@ -3689,12 +3689,12 @@ void marker_spline_adjust_location(int param_1)
 
 }
 
-/* ===== FUN_00477f20 @ 0x00477F20 ===== */
+/* ===== marker_spline_rotate_tangent @ 0x00477F20 ===== */
 /* PS2 candidate: marker_spline_rotate_tangent (conf 0.562) */
 
 
 
-void FUN_00477f20(int param_1,float param_2,int param_3)
+void marker_spline_rotate_tangent(int param_1,float param_2,int param_3)
 
 
 
@@ -4482,7 +4482,7 @@ LAB_00478c22:
 
       local_34 = param_3;
 
-      fVar8 = (float10)FUN_0050a580(&local_24,&local_30);
+      fVar8 = (float10)distance3d__FP3P3DT0(&local_24,&local_30);
 
       fVar8 = fVar8 * (float10)0.01;
 
@@ -7962,7 +7962,7 @@ LAB_0047e183:
 
   if (param_1 == DAT_00632a88) {
 
-    iVar7 = FUN_0040ce90();
+    iVar7 = camera_cursor_fire();
 
     iVar11 = local_88;
 
@@ -8308,7 +8308,7 @@ LAB_0047e84d:
 
              ((local_84 != 0 && (iVar6 = FUN_0045a2b0(param_1,local_74,0), 0 < iVar6)))))) {
 
-      FUN_0040d6f0(&local_54,&local_44,&local_98,&local_80);
+      XFGetViewportExt(&local_54,&local_44,&local_98,&local_80);
 
       sine_cos_lookup(local_54,&local_8c,&local_58);
 

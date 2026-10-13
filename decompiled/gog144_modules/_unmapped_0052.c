@@ -1510,7 +1510,7 @@ void FUN_00521980(int *param_1)
 
   
 
-  iVar1 = FUN_004B0B40();
+  iVar1 = InitFxDict__Fv();
 
   iVar3 = 0;
 
@@ -3464,7 +3464,7 @@ void comm_show_conn_menu(void)
 
        iVar7 == 0)) {
 
-      iVar7 = FUN_004B0B40();
+      iVar7 = InitFxDict__Fv();
 
       iVar5 = 0;
 

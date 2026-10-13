@@ -14146,7 +14146,7 @@ int FUN_0042b060(int param_1,float param_2,int param_3)
 
     uVar3 = FUN_00515db0();
 
-    fVar7 = (float10)FUN_0050a580(param_1 + 0xa0,uVar3);
+    fVar7 = (float10)distance3d__FP3P3DT0(param_1 + 0xa0,uVar3);
 
     fVar8 = (float10)FUN_00515dd0();
 
@@ -15813,7 +15813,7 @@ LAB_0042c927:
 
           texture_alloc_helper(*(int *)(iVar15 + 0x90));
 
-          iVar8 = FUN_00508fa0(*(undefined4 *)(iVar15 + 0x90));
+          iVar8 = objspec_get_movetype(*(undefined4 *)(iVar15 + 0x90));
 
           if (iVar8 == 0) goto LAB_0042c927;
 
@@ -17238,7 +17238,7 @@ LAB_0042dcd8:
 
           texture_alloc_helper(iVar5);
 
-          iVar5 = FUN_00508fa0(*(undefined4 *)(iVar4 + 0x90));
+          iVar5 = objspec_get_movetype(*(undefined4 *)(iVar4 + 0x90));
 
           if (iVar5 == 0) goto LAB_0042dcd8;
 
@@ -17873,7 +17873,7 @@ void animate_core_caller(int param_1,undefined4 param_2,int param_3,undefined4 p
 
     if (fVar1 < 0.0 == (fVar1 == 0.0)) {
 
-      fVar10 = (float10)FUN_0050a580(param_1 + 0xa0,param_5);
+      fVar10 = (float10)distance3d__FP3P3DT0(param_1 + 0xa0,param_5);
 
       fVar1 = *(float *)(param_1 + 0x1f0);
 

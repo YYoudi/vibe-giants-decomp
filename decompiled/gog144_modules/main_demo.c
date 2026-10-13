@@ -224,11 +224,11 @@ void main_demo_004267a0(void)
 
       do {
 
-        FUN_0049a140((&DAT_005989d8)[DAT_0059997c],DAT_00599980,DAT_00599984,
+        object_load_ospec((&DAT_005989d8)[DAT_0059997c],DAT_00599980,DAT_00599984,
 
-                     *(undefined4 *)((&DAT_005989d8)[DAT_0059997c] + 0x1e0),
+                          *(undefined4 *)((&DAT_005989d8)[DAT_0059997c] + 0x1e0),
 
-                     DAT_005989d4 + DAT_005989cc);
+                          DAT_005989d4 + DAT_005989cc);
 
         DAT_005989d4 = DAT_005989d4 + DAT_00599980;
 

@@ -209,7 +209,7 @@ void object_list_update(void)
 
   {
 
-    FUN_00499fa0(piVar4[3]);
+    object_mty_check_obj(piVar4[3]);
 
   }
 

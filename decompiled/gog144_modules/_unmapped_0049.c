@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (65 named) — decompiled, names from PS2 symbols
+ * 142 functions (69 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -36,7 +36,7 @@ void FUN_004907e0(void)
 
   }
 
-  iVar2 = FUN_004B0B40();
+  iVar2 = InitFxDict__Fv();
 
   iVar4 = 0;
 
@@ -4592,12 +4592,12 @@ void FUN_00493d60(undefined4 param_1,float param_2)
 
 }
 
-/* ===== FUN_00493ea0 @ 0x00493EA0 ===== */
+/* ===== mission_replenish_food__Fv_2 @ 0x00493EA0 ===== */
 /* PS2 candidate: mission_replenish_food__Fv (conf 0.55) */
 
 
 
-void FUN_00493ea0(void)
+void mission_replenish_food__Fv_2(void)
 
 
 
@@ -4621,12 +4621,12 @@ void FUN_00493ea0(void)
 
 }
 
-/* ===== FUN_00493ee0 @ 0x00493EE0 ===== */
+/* ===== mission_replenish_food__Fv @ 0x00493EE0 ===== */
 /* PS2 candidate: mission_replenish_food__Fv_2 (conf 0.55) */
 
 
 
-void FUN_00493ee0(void)
+void mission_replenish_food__Fv(void)
 
 
 
@@ -8990,7 +8990,7 @@ void FUN_004984b0(void)
 
   
 
-  FUN_0040d6f0(&local_5c,&local_68,&local_60,&local_c);
+  XFGetViewportExt(&local_5c,&local_68,&local_60,&local_c);
 
   ref_anode_user();
 
@@ -9036,7 +9036,7 @@ void FUN_004984b0(void)
 
   }
 
-  FUN_0040d6f0(&local_6c,&local_64,&local_58,&local_18);
+  XFGetViewportExt(&local_6c,&local_64,&local_58,&local_18);
 
   fVar5 = (float10)FUN_0050a7c0(local_5c,local_6c);
 
@@ -10655,12 +10655,12 @@ void FUN_00499f30(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00499fa0 @ 0x00499FA0 ===== */
+/* ===== object_mty_check_obj @ 0x00499FA0 ===== */
 /* PS2 candidate: object_mty_check_obj (conf 0.42) */
 
 
 
-void FUN_00499fa0(int param_1)
+void object_mty_check_obj(int param_1)
 
 
 
@@ -10849,12 +10849,14 @@ objspec_has_shot_function
 
 }
 
-/* ===== FUN_0049a140 @ 0x0049A140 ===== */
+/* ===== object_load_ospec @ 0x0049A140 ===== */
 /* PS2 candidate: object_load_ospec (conf 0.55) */
 
 
 
-void FUN_0049a140(int param_1,undefined4 param_2,undefined4 param_3,int param_4,undefined4 param_5)
+void object_load_ospec(int param_1,undefined4 param_2,undefined4 param_3,int param_4,
+
+                      undefined4 param_5)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (64 named) — decompiled, names from PS2 symbols
+ * 131 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -564,12 +564,12 @@ void path_short_calculate
 
 }
 
-/* ===== FUN_004a12f0 @ 0x004A12F0 ===== */
+/* ===== heap_siftup__FPP5ANODEi @ 0x004A12F0 ===== */
 /* PS2 candidate: heap_siftup__FPP5ANODEi (conf 0.558) */
 
 
 
-void FUN_004a12f0(int param_1,int param_2)
+void heap_siftup__FPP5ANODEi(int param_1,int param_2)
 
 
 
@@ -956,14 +956,16 @@ void FUN_004a17f0(int param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_004a18d0 @ 0x004A18D0 ===== */
+/* ===== PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D @ 0x004A18D0 ===== */
 /* PS2 candidate: PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D (conf 0.551) */
 
 
 
-void FUN_004a18d0(int param_1,float *param_2,float *param_3,float *param_4,undefined4 param_5,
+void PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D
 
-                 float *param_6,int param_7)
+               (int param_1,float *param_2,float *param_3,float *param_4,undefined4 param_5,
+
+               float *param_6,int param_7)
 
 
 
@@ -1490,7 +1492,9 @@ void obj_geom_process(int param_1)
 
     }
 
-    fVar10 = (float10)FUN_004a18d0(param_1,&local_68,&local_5c,puVar1,param_1 + 0x134,local_38,1);
+    fVar10 = (float10)PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D
+
+                                (param_1,&local_68,&local_5c,puVar1,param_1 + 0x134,local_38,1);
 
     local_6c = (float)fVar10;
 
@@ -1518,9 +1522,9 @@ void obj_geom_process(int param_1)
 
   DAT_0055ea3c = *(float *)(param_1 + 0x1e8) * *(float *)(param_1 + 0xc4);
 
-  fVar10 = (float10)FUN_004a18d0(param_1,&local_68,&local_5c,puVar1,param_1 + 0x134,&DAT_0055ea30,1)
+  fVar10 = (float10)PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D
 
-  ;
+                              (param_1,&local_68,&local_5c,puVar1,param_1 + 0x134,&DAT_0055ea30,1);
 
   if ((float10)0.05 <= fVar10) {
 
@@ -3168,9 +3172,11 @@ LAB_004a3a06:
 
           fStack_2a8 = fVar8 + *(float *)(param_1 + 0xb4);
 
-          FUN_004a18d0(param_1,afStack_2c8,&fStack_2b0,(float *)(param_1 + 0x128),param_1 + 0x134,
+          PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D
 
-                       &fStack_2d8,0);
+                    (param_1,afStack_2c8,&fStack_2b0,(float *)(param_1 + 0x128),param_1 + 0x134,
+
+                     &fStack_2d8,0);
 
           *(float *)(param_1 + 0xa0) = afStack_2c8[0] - fVar6;
 
@@ -3434,7 +3440,7 @@ int obj_visibility_test(float param_1)
 
         }
 
-        fVar10 = (float10)FUN_0050a580(pfVar1,pfVar9);
+        fVar10 = (float10)distance3d__FP3P3DT0(pfVar1,pfVar9);
 
         if (fVar10 == (float10)0.0) {
 
@@ -4999,7 +5005,7 @@ void FUN_004a59a0(void)
 
   }
 
-  FUN_0040d6f0(&local_24,&local_28,&local_10,&local_c);
+  XFGetViewportExt(&local_24,&local_28,&local_10,&local_c);
 
   sine_cos_lookup(local_24,&local_1c,&local_20);
 
@@ -12808,13 +12814,13 @@ LAB_004aed0a:
 
               FUN_0053be00();
 
-              in_stack_00000020 = (undefined4 *)FUN_0053cb50();
+              in_stack_00000020 = (undefined4 *)ANM_NodeGetMat();
 
               uVar11 = *(undefined4 *)(&stack0x000008a8 + iVar21 * 4);
 
               FUN_0053be00();
 
-              iVar20 = FUN_0053cb50();
+              iVar20 = ANM_NodeGetMat();
 
               if ((in_stack_00000020 == (undefined4 *)0x0) || (iVar20 == 0)) {
 

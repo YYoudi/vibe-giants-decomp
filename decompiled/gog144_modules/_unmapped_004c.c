@@ -223,7 +223,7 @@ void reaper_finish_cloak(int param_1,undefined4 param_2)
 
       uVar1 = *(undefined4 *)(DAT_00632ed8 + 0x1058);
 
-      iVar4 = FUN_0040ce90();
+      iVar4 = camera_cursor_fire();
 
       if (iVar4 == 0) {
 

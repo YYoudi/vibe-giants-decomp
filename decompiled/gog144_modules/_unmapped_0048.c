@@ -4295,7 +4295,7 @@ void mission_cheat_check(void)
 
   iVar4 = 0;
 
-  iVar1 = FUN_004B0B40();
+  iVar1 = InitFxDict__Fv();
 
   iVar5 = 0;
 
@@ -4375,7 +4375,7 @@ void mission_cheat_check(void)
 
     iVar5 = 0;
 
-    iVar4 = FUN_004B0B40();
+    iVar4 = InitFxDict__Fv();
 
     iVar2 = 0;
 
@@ -4562,7 +4562,7 @@ void mission_load_cheat(void)
 
   mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
 
-  iVar8 = FUN_004B0B40();
+  iVar8 = InitFxDict__Fv();
 
   iVar7 = 0;
 
@@ -4691,7 +4691,7 @@ undefined4 mission_load_world(int param_1)
 
   mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
 
-  iVar1 = FUN_004B0B40();
+  iVar1 = InitFxDict__Fv();
 
   if (-1 < iVar1) {
 
@@ -5174,7 +5174,7 @@ void menu_mission_list_init(void)
 
   iVar4 = 0;
 
-  iVar2 = FUN_004B0B40();
+  iVar2 = InitFxDict__Fv();
 
   iVar5 = 0;
 
@@ -5250,7 +5250,7 @@ void menu_mission_list_init(void)
 
   if (DAT_00632f08 < 0xe) {
 
-    iVar4 = FUN_004B0B40();
+    iVar4 = InitFxDict__Fv();
 
     iVar5 = 0;
 
@@ -5427,7 +5427,7 @@ void mission_mpworld_load(void)
 
   _DAT_00632ac8 = DAT_00632ac0;
 
-  iVar4 = FUN_004B0B40();
+  iVar4 = InitFxDict__Fv();
 
   iVar8 = 0;
 

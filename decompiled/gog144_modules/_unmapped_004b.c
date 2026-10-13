@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (53 named) — decompiled, names from PS2 symbols
+ * 90 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -304,12 +304,12 @@ char * world_get_nicename(int param_1)
 
 }
 
-/* ===== FUN_004B0B40 @ 0x004B0B40 ===== */
+/* ===== InitFxDict__Fv @ 0x004B0B40 ===== */
 /* PS2 candidate: InitFxDict__Fv (conf 0.55) */
 
 
 
-void FUN_004B0B40(void)
+void InitFxDict__Fv(void)
 
 
 
@@ -1187,7 +1187,7 @@ void reaperbasebldg_move(float param_1)
 
       }
 
-      fVar6 = (float10)FUN_0050a580(DAT_00632a88 + 0xa0,(int)param_1 + 0xa0);
+      fVar6 = (float10)distance3d__FP3P3DT0(DAT_00632a88 + 0xa0,(int)param_1 + 0xa0);
 
       fVar6 = (fVar6 - (float10)*(float *)(DAT_00632ed8 + 0x1210)) /
 
@@ -1621,7 +1621,7 @@ switchD_004b4d3a_caseD_7:
 
        (*(int *)((int)param_1 + 0x18c) != *(int *)(DAT_00632a88 + 0x18c))) {
 
-      fVar6 = (float10)FUN_0050a580(DAT_00632a88 + 0xa0,(int)param_1 + 0xa0);
+      fVar6 = (float10)distance3d__FP3P3DT0(DAT_00632a88 + 0xa0,(int)param_1 + 0xa0);
 
       fVar6 = (fVar6 - (float10)*(float *)(DAT_00632ed8 + 0x1210)) /
 
@@ -1943,7 +1943,7 @@ LAB_004b56d8:
 
       }
 
-      FUN_004b5810(iVar1);
+      reaperbase_update_icons(iVar1);
 
     }
 
@@ -1953,12 +1953,12 @@ LAB_004b56d8:
 
 }
 
-/* ===== FUN_004b5810 @ 0x004B5810 ===== */
+/* ===== reaperbase_update_icons @ 0x004B5810 ===== */
 /* PS2 candidate: reaperbase_update_icons (conf 0.547) */
 
 
 
-void FUN_004b5810(int param_1)
+void reaperbase_update_icons(int param_1)
 
 
 
@@ -2212,12 +2212,12 @@ void FUN_004b5810(int param_1)
 
 }
 
-/* ===== FUN_004b5b30 @ 0x004B5B30 ===== */
+/* ===== meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset @ 0x004B5B30 ===== */
 /* PS2 candidate: meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2 (conf 0.557) */
 
 
 
-void FUN_004b5b30(int param_1,int param_2,int param_3)
+void meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset(int param_1,int param_2,int param_3)
 
 
 
@@ -2549,7 +2549,7 @@ void FUN_004b65a0(int param_1,int param_2)
 
     *(int *)(*(int *)(param_1 + 0x100) + 0x20) = param_2;
 
-    FUN_004b5810(iVar1);
+    reaperbase_update_icons(iVar1);
 
   }
 
@@ -7088,7 +7088,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     }
 
-    iVar4 = FUN_0040ce90();
+    iVar4 = camera_cursor_fire();
 
     if (iVar4 == 0) {
 

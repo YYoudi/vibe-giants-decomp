@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (105 named) — decompiled, names from PS2 symbols
+ * 179 functions (107 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -8068,7 +8068,7 @@ LAB_00535170:
 
     if (((*(uint *)(iVar5 + 0xd8) & 0x8000) == 0) && (*(int *)(iVar5 + 0x188) == iVar4)) {
 
-      FUN_0049a140(iVar5,uVar2 - 0xe,uVar1,uVar3,puVar7);
+      object_load_ospec(iVar5,uVar2 - 0xe,uVar1,uVar3,puVar7);
 
       goto LAB_00535351;
 
@@ -10445,7 +10445,7 @@ void FUN_00536cb0(void)
 
   if (iVar2 != 0) {
 
-    FUN_0040d6f0(local_1c,local_20,local_24,local_c);
+    XFGetViewportExt(local_1c,local_20,local_24,local_c);
 
     iVar3 = FUN_004eed30(local_c,local_18);
 
@@ -15124,7 +15124,7 @@ int FUN_0053bef0(int param_1,undefined4 param_2,undefined4 param_3)
 
   
 
-  uVar1 = FUN_0053cb50(param_1,param_2,param_3);
+  uVar1 = ANM_NodeGetMat(param_1,param_2,param_3);
 
   (*(code *)PTR_crt_matrix_copy_init_00580c1c)(param_1 + 0xa4,uVar1);
 
@@ -15513,7 +15513,7 @@ LAB_0053ca17:
 
   else if (sVar2 == 3) {
 
-    iVar4 = FUN_0053cb50(*(undefined4 *)(param_1 + 0x14),param_2,param_3);
+    iVar4 = ANM_NodeGetMat(*(undefined4 *)(param_1 + 0x14),param_2,param_3);
 
     local_70 = *(undefined4 *)(iVar4 + 0x10);
 
@@ -15537,7 +15537,7 @@ LAB_0053ca17:
 
       puVar5 = &local_64;
 
-      uVar3 = FUN_0053cb50(*(int *)(param_1 + 0x10),param_2,param_3);
+      uVar3 = ANM_NodeGetMat(*(int *)(param_1 + 0x10),param_2,param_3);
 
       (*(code *)PTR_crt_matrix_copy_init_00580c1c)(&local_64,uVar3);
 
@@ -15727,12 +15727,12 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 
 }
 
-/* ===== FUN_0053cb50 @ 0x0053CB50 ===== */
+/* ===== ANM_NodeGetMat @ 0x0053CB50 ===== */
 /* PS2 candidate: ANM_NodeGetMat (conf 0.555) */
 
 
 
-int FUN_0053cb50(int param_1,undefined4 param_2,int param_3)
+int ANM_NodeGetMat(int param_1,undefined4 param_2,int param_3)
 
 
 
@@ -15822,12 +15822,12 @@ int FUN_0053cb50(int param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== FUN_0053cc20 @ 0x0053CC20 ===== */
+/* ===== ANM_BlendedNodeGetMat @ 0x0053CC20 ===== */
 /* PS2 candidate: ANM_BlendedNodeGetMat (conf 0.559) */
 
 
 
-int FUN_0053cc20(int param_1,int param_2,int param_3)
+int ANM_BlendedNodeGetMat(int param_1,int param_2,int param_3)
 
 
 
@@ -16302,7 +16302,7 @@ void ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi
 
     if (puVar3[1] != 0) {
 
-      uVar1 = FUN_0053cb50(puVar3[1],param_2,param_6);
+      uVar1 = ANM_NodeGetMat(puVar3[1],param_2,param_6);
 
       (*(code *)PTR_ANM_ClusterApplyMatSingleVertex_0058096c)(*puVar3,uVar1,param_3,param_4,param_5)
 
@@ -16377,7 +16377,7 @@ void FUN_0053d120(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
       }
 
-      uVar4 = FUN_0053cc20(iVar2,param_2,param_6);
+      uVar4 = ANM_BlendedNodeGetMat(iVar2,param_2,param_6);
 
       (*(code *)PTR_ANM_ClusterApplyMatSingleVertex_0058096c)
 
@@ -16714,7 +16714,7 @@ byte nam_lookup_full(int param_1,int param_2,int param_3,int param_4,undefined4 
 
         if (iVar2 != 0) {
 
-          uVar6 = FUN_0053cc20(param_1,param_2,param_5);
+          uVar6 = ANM_BlendedNodeGetMat(param_1,param_2,param_5);
 
           (*(code *)PTR_crt_matrix_copy_init_00580c1c)(local_44,uVar6);
 
@@ -16792,7 +16792,7 @@ LAB_0053d503:
 
     }
 
-    uVar3 = FUN_0053cc20(param_1,param_2,param_5);
+    uVar3 = ANM_BlendedNodeGetMat(param_1,param_2,param_5);
 
     (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(param_3,param_3 + 0xc,1,uVar3);
 

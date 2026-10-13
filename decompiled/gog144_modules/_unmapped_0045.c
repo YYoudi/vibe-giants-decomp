@@ -4192,25 +4192,25 @@ int physics_vec_math(float *param_1,float *param_2,uint *param_3,float *param_4,
 
   case 1:
 
-    FUN_0050a640(&local_24,&local_30,&local_18,param_2);
+    tri_to_plane__FP3P3DN20P7PLANE3D(&local_24,&local_30,&local_18,param_2);
 
     break;
 
   case 2:
 
-    FUN_0050a640(&local_30,&local_24,&local_c,param_2);
+    tri_to_plane__FP3P3DN20P7PLANE3D(&local_30,&local_24,&local_c,param_2);
 
     break;
 
   case 3:
 
-    FUN_0050a640(&local_c,&local_18,&local_24,param_2);
+    tri_to_plane__FP3P3DN20P7PLANE3D(&local_c,&local_18,&local_24,param_2);
 
     break;
 
   case 4:
 
-    FUN_0050a640(&local_18,&local_c,&local_30,param_2);
+    tri_to_plane__FP3P3DN20P7PLANE3D(&local_18,&local_c,&local_30,param_2);
 
     break;
 
@@ -4498,7 +4498,7 @@ void project_cursor_to_ground(undefined4 param_1,undefined4 param_2,undefined4 p
 
   
 
-  FUN_0040d6f0(&local_30,&local_2c,local_1c,local_c);
+  XFGetViewportExt(&local_30,&local_2c,local_1c,local_c);
 
   sine_cos_lookup(local_30,&local_28,&local_24);
 
@@ -5805,7 +5805,7 @@ LAB_00456e0a:
 
             }
 
-            fVar6 = (float10)FUN_0050a580(iVar1 + 0xa0,uVar4);
+            fVar6 = (float10)distance3d__FP3P3DT0(iVar1 + 0xa0,uVar4);
 
             param_4 = (float)(fVar6 - (float10)*(float *)(iVar1 + 0x154) * (float10)0.5);
 
@@ -13073,7 +13073,7 @@ LAB_0045de98:
 
                 if ((piVar6[-3] != 0) &&
 
-                   (fVar9 = (float10)FUN_0050a580(piVar6[-3] + 0xa0,param_1 + 0xa0),
+                   (fVar9 = (float10)distance3d__FP3P3DT0(piVar6[-3] + 0xa0,param_1 + 0xa0),
 
                    fVar9 < (float10)1000.0)) {
 

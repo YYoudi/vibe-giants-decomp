@@ -1,0 +1,20 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00477f20,FUN_00477f20,,marker_spline_rotate_tangent,0.9,llm-w123,body-verified family
+0053cc20,FUN_0053cc20,,ANM_BlendedNodeGetMat,0.9,llm-w123,body-verified
+0050a580,FUN_0050a580,,distance3d__FP3P3DT0,0.9,llm-w123,body-verified
+004a12f0,FUN_004a12f0,,heap_siftup__FPP5ANODEi,0.9,llm-w123,body-verified sift
+004b5b30,FUN_004b5b30,,meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset,0.9,llm-w123,body-verified
+00409780,FUN_00409780,,meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2,0.9,llm-w123,body-verified variant
+00499fa0,FUN_00499fa0,,object_mty_check_obj,0.9,llm-w123,body-verified ObjIs calls
+0053cb50,FUN_0053cb50,,ANM_NodeGetMat,0.9,llm-w123,body-verified
+00508fa0,FUN_00508fa0,,objspec_get_movetype,0.9,llm-w123,body-verified movetype table
+004a18d0,FUN_004a18d0,,PhysicsExCollisionPlane2_OLD__FP6OBJECTP3P3DN31P7PLANE3D,0.9,llm-w123,body-verified
+0040ce90,FUN_0040ce90,,camera_cursor_fire,0.9,llm-w123,body-verified mode check
+0050a640,FUN_0050a640,,tri_to_plane__FP3P3DN20P7PLANE3D,0.9,llm-w123,body-verified
+004b0b40,FUN_004b0b40,,InitFxDict__Fv,0.9,llm-w123,body-verified
+0049a140,FUN_0049a140,,object_load_ospec,0.9,llm-w123,body-verified fp table
+00493ee0,FUN_00493ee0,,mission_replenish_food__Fv,0.9,llm-w123,string-proven story5_Pad
+00493ea0,FUN_00493ea0,,mission_replenish_food__Fv_2,0.9,llm-w123,string-proven story5_get_food_1
+004b5810,FUN_004b5810,,reaperbase_update_icons,0.9,llm-w123,body-verified
+0040d6f0,FUN_0040d6f0,,XFGetViewportExt,0.9,llm-w123,body-verified globals copy (rejected project_vec_to_ground)
+0051ea60,FUN_0051ea60,,dbg_error_printf,0.9,llm-w123,body-verified wvsprintf (rejected _Error1)

@@ -284,7 +284,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
           piVar5 = *(int **)(piVar3[1] + 8 + local_1dc * 4);
 
-          FUN_0050a580(iVar9 + 0xa0,(float *)(iVar7 + 0xa0));
+          distance3d__FP3P3DT0(iVar9 + 0xa0,(float *)(iVar7 + 0xa0));
 
           iVar7 = __ftol();
 
@@ -360,13 +360,13 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
       *(undefined4 *)(iVar10 + 0x18) = 0;
 
-      FUN_00477f20(*(undefined4 *)(piVar3[0x11] + iVar7 * 4),uVar6,1);
+      marker_spline_rotate_tangent(*(undefined4 *)(piVar3[0x11] + iVar7 * 4),uVar6,1);
 
       uVar6 = *(undefined4 *)(iVar10 + 0x1c);
 
       *(undefined4 *)(iVar10 + 0x1c) = 0;
 
-      FUN_00477f20(*(undefined4 *)(piVar3[0x11] + iVar7 * 4),uVar6,0);
+      marker_spline_rotate_tangent(*(undefined4 *)(piVar3[0x11] + iVar7 * 4),uVar6,0);
 
       iVar7 = iVar7 + 1;
 
@@ -402,7 +402,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   piVar8[10] = *(int *)(iVar9 + 0x28);
 
-  FUN_0050a580(piVar12 + 8,piVar8 + 8);
+  distance3d__FP3P3DT0(piVar12 + 8,piVar8 + 8);
 
   iVar7 = __ftol();
 
@@ -452,7 +452,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
     ObjectUpdateSpeedDist(piVar3[1],&local_1ac,local_1c4);
 
-    FUN_0050a580(local_1c4 + 3,local_1c4);
+    distance3d__FP3P3DT0(local_1c4 + 3,local_1c4);
 
     iVar9 = __ftol();
 

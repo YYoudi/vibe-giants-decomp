@@ -392,7 +392,7 @@ uint main_path_0049ff30(undefined4 param_1,undefined4 param_2,undefined4 *param_
 
       *(int *)(DAT_005a0ce4 + DAT_005a0cdc * 4) = iVar7;
 
-      FUN_004a12f0(DAT_005a0ce4,DAT_005a0cdc);
+      heap_siftup__FPP5ANODEi(DAT_005a0ce4,DAT_005a0cdc);
 
       *(uint *)(iVar7 + 0x10) = *(uint *)(iVar7 + 0x10) | 0x80000000;
 
