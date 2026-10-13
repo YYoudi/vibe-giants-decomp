@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (36 named) — decompiled, names from PS2 symbols
+ * 100 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -11117,12 +11117,12 @@ void FUN_0041ebb0(int param_1)
 
 }
 
-/* ===== FUN_0041ebf0 @ 0x0041EBF0 ===== */
+/* ===== objtype_setup_rpman @ 0x0041EBF0 ===== */
 /* PS2 candidate: repair_logic (conf 0.36) */
 
 
 
-void FUN_0041ebf0(int param_1,float param_2,int param_3)
+void objtype_setup_rpman(int param_1,float param_2,int param_3)
 
 
 
@@ -11376,8 +11376,8 @@ LAB_0041edda:
 
 }
 
-/* ===== FUN_0041ee70 @ 0x0041EE70 ===== */
-void FUN_0041ee70(int param_1)
+/* ===== objtype_setup_kabuto @ 0x0041EE70 ===== */
+void objtype_setup_kabuto(int param_1)
 
 
 
@@ -11419,7 +11419,7 @@ void FUN_0041ee70(int param_1)
 
               }
 
-              FUN_0041ebf0(param_1,9,0xb);
+              objtype_setup_rpman(param_1,9,0xb);
 
               return;
 

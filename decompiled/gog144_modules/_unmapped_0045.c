@@ -6422,7 +6422,7 @@ LAB_004575ee:
 
         AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
-        mission_004576e0();
+        mission_texture_audio();
 
         DAT_00632f08 = 0;
 
@@ -6493,12 +6493,12 @@ void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(undefined4 p0)
 
 }
 
-/* ===== mission_004576e0 @ 0x004576E0 ===== */
+/* ===== mission_texture_audio @ 0x004576E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void mission_004576e0(void)
+void mission_texture_audio(void)
 
 
 

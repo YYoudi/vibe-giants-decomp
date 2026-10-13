@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (36 named) — decompiled, names from PS2 symbols
+ * 76 functions (37 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1821,12 +1821,12 @@ void FUN_00442ad0(float param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00442ec0 @ 0x00442EC0 ===== */
+/* ===== sound_3dpos_play @ 0x00442EC0 ===== */
 /* PS2 candidate: verm_collect__FP6OBJECT (conf 0.354) */
 
 
 
-void FUN_00442ec0(int param_1)
+void sound_3dpos_play(int param_1)
 
 
 

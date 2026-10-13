@@ -66,7 +66,7 @@ void FUN_004907e0(void)
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
-  mission_004576e0();
+  mission_texture_audio();
 
   DAT_005a85fc = 1;
 
@@ -891,7 +891,7 @@ undefined4 FUN_00490fe0(void)
 
             AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(p0);
 
-            mission_004576e0();
+            mission_texture_audio();
 
             return 1;
 

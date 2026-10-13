@@ -4622,7 +4622,7 @@ void mission_load_cheat(void)
 
               AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
-              mission_004576e0();
+              mission_texture_audio();
 
               FUN_00495990(0x6e6);
 
@@ -6960,7 +6960,7 @@ void mission_menu_load(void)
 
       AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
-      mission_004576e0();
+      mission_texture_audio();
 
       FUN_00495990(0x6e6);
 
@@ -7058,7 +7058,7 @@ void mission_menu_load(void)
 
       AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
-      mission_004576e0();
+      mission_texture_audio();
 
       FUN_00495990(0x6e6);
 
@@ -7550,7 +7550,7 @@ LAB_00489916:
 
     AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
-    mission_004576e0();
+    mission_texture_audio();
 
     FUN_00495990(0x6e6);
 
@@ -7654,7 +7654,7 @@ LAB_00489916:
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(DAT_00632d20);
 
-  mission_004576e0();
+  mission_texture_audio();
 
   FUN_00495990(0x6e6);
 

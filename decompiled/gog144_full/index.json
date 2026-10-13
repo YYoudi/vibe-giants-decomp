@@ -1165,14 +1165,14 @@
   "len": 432
  },
  "0x0041EBF0": {
-  "name": "FUN_0041ebf0",
-  "named": false,
-  "len": 3518
+  "name": "objtype_setup_rpman",
+  "named": true,
+  "len": 3525
  },
  "0x0041EE70": {
-  "name": "FUN_0041ee70",
-  "named": false,
-  "len": 3420
+  "name": "objtype_setup_kabuto",
+  "named": true,
+  "len": 3435
  },
  "0x0041F0F0": {
   "name": "FUN_0041f0f0",
@@ -2490,9 +2490,9 @@
   "len": 1021
  },
  "0x00442EC0": {
-  "name": "FUN_00442ec0",
-  "named": false,
-  "len": 816
+  "name": "sound_3dpos_play",
+  "named": true,
+  "len": 820
  },
  "0x00442F70": {
   "name": "FUN_00442f70",
@@ -3247,7 +3247,7 @@
  "0x004575D0": {
   "name": "mission_load_full",
   "named": true,
-  "len": 1391
+  "len": 1396
  },
  "0x004576D0": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4",
@@ -3255,9 +3255,9 @@
   "len": 189
  },
  "0x004576E0": {
-  "name": "mission_004576e0",
+  "name": "mission_texture_audio",
   "named": true,
-  "len": 1169
+  "len": 1174
  },
  "0x00457A70": {
   "name": "FUN_00457a70",
@@ -4152,7 +4152,7 @@
  "0x0047BE20": {
   "name": "FUN_0047be20",
   "named": false,
-  "len": 4207
+  "len": 4215
  },
  "0x0047C1D0": {
   "name": "FUN_0047c1d0",
@@ -4407,7 +4407,7 @@
  "0x00484B00": {
   "name": "mission_load_cheat",
   "named": true,
-  "len": 2557
+  "len": 2562
  },
  "0x00485020": {
   "name": "mission_load_world",
@@ -4487,7 +4487,7 @@
  "0x00489120": {
   "name": "mission_menu_load",
   "named": true,
-  "len": 5368
+  "len": 5378
  },
  "0x004895F0": {
   "name": "texture_add_file",
@@ -4497,7 +4497,7 @@
  "0x004897D0": {
   "name": "mission_menu_load2",
   "named": true,
-  "len": 4659
+  "len": 4669
  },
  "0x00489CA0": {
   "name": "FUN_00489ca0",
@@ -4617,7 +4617,7 @@
  "0x004907E0": {
   "name": "FUN_004907e0",
   "named": false,
-  "len": 804
+  "len": 809
  },
  "0x00490860": {
   "name": "FUN_00490860",
@@ -4662,7 +4662,7 @@
  "0x00490FE0": {
   "name": "FUN_00490fe0",
   "named": false,
-  "len": 4405
+  "len": 4410
  },
  "0x00491380": {
   "name": "FUN_00491380",
@@ -7532,7 +7532,7 @@
  "0x004EE800": {
   "name": "FUN_004EE800",
   "named": false,
-  "len": 362
+  "len": 367
  },
  "0x004EE890": {
   "name": "game_files_check",

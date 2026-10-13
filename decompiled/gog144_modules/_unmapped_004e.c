@@ -11077,7 +11077,7 @@ void FUN_004EE800(void)
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(iVar1);
 
-  mission_004576e0();
+  mission_texture_audio();
 
   return;
 

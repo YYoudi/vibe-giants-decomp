@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0041ebf0,FUN_0041EBF0,,objtype_setup_rpman,0.9,llm-read20,
+0041ee70,FUN_0041EE70,,objtype_setup_kabuto,0.9,llm-read20,
+00442ec0,FUN_00442EC0,,sound_3dpos_play,0.9,llm-44r,
+004576e0,FUN_004576E0,,mission_texture_audio,0.9,llm-44r,

@@ -5072,7 +5072,7 @@ void FUN_0047be20(float param_1,float param_2,int param_3,int param_4,float para
 
       (DAT_00632bbc != 0)) && (*(int *)(iVar4 + 0xd8) != 0)) {
 
-    FUN_0041ee70(*(int *)(iVar4 + 0xd8));
+    objtype_setup_kabuto(*(int *)(iVar4 + 0xd8));
 
   }
 
