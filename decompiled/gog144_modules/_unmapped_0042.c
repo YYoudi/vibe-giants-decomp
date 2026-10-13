@@ -9350,7 +9350,7 @@ void FUN_00427100(void)
 
   if (DAT_00633044 != 0) {
 
-    FUN_00500890(&DAT_00632900);
+    status_draw_sub(&DAT_00632900);
 
     return;
 
@@ -15805,7 +15805,7 @@ LAB_0042c927:
 
         else {
 
-          main_texture_00508720(*(int *)(iVar15 + 0x90));
+          texture_alloc_helper(*(int *)(iVar15 + 0x90));
 
           iVar8 = FUN_00508fa0(*(undefined4 *)(iVar15 + 0x90));
 
@@ -17224,7 +17224,7 @@ LAB_0042dcd8:
 
         else {
 
-          main_texture_00508720(iVar5);
+          texture_alloc_helper(iVar5);
 
           iVar5 = FUN_00508fa0(*(undefined4 *)(iVar4 + 0x90));
 

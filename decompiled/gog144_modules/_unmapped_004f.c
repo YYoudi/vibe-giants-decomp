@@ -4820,7 +4820,7 @@ void FUN_004fa520(int param_1,float param_2)
 
       if (iVar3 != 0) {
 
-        main_texture_00508720(iVar3);
+        texture_alloc_helper(iVar3);
 
         uVar12 = uVar11 | 4;
 

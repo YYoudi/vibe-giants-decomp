@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (33 named) — decompiled, names from PS2 symbols
+ * 142 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -2770,8 +2770,8 @@ LAB_00492458:
 
 }
 
-/* ===== FUN_004928a0 @ 0x004928A0 ===== */
-void FUN_004928a0(void)
+/* ===== savegame_verify_user @ 0x004928A0 ===== */
+void savegame_verify_user(void)
 
 
 
@@ -4679,12 +4679,12 @@ void FUN_00493f20(void)
 
 }
 
-/* ===== FUN_00493f70 @ 0x00493F70 ===== */
+/* ===== story_flick_open @ 0x00493F70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00493f70(void)
+void story_flick_open(void)
 
 
 
@@ -5138,12 +5138,12 @@ char * mission_trigger_name(int param_1)
 
 }
 
-/* ===== FUN_004946a0 @ 0x004946A0 ===== */
+/* ===== ambient_streams_handler @ 0x004946A0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004946a0(void)
+void ambient_streams_handler(void)
 
 
 
@@ -6952,8 +6952,8 @@ void FUN_00496810(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00496840 @ 0x00496840 ===== */
-void FUN_00496840(int param_1,int param_2)
+/* ===== anim_select_user @ 0x00496840 ===== */
+void anim_select_user(int param_1,int param_2)
 
 
 
@@ -8248,12 +8248,12 @@ void FUN_00497dc0(int *param_1)
 
 }
 
-/* ===== FUN_00497de0 @ 0x00497DE0 ===== */
+/* ===== weapon_id_inventory_update @ 0x00497DE0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00497de0(void)
+void weapon_id_inventory_update(void)
 
 
 
@@ -8589,7 +8589,7 @@ LAB_00497f79:
 
 LAB_00498199:
 
-  FUN_00496840(&DAT_0059f380,iVar2);
+  anim_select_user(&DAT_0059f380,iVar2);
 
   return;
 
@@ -8722,7 +8722,7 @@ void FUN_004981c0(int param_1)
 
        (*(float *)(param_1 + 0x114) != 0.0)) {
 
-      FUN_00496840(param_1,*(undefined4 *)(&DAT_0055caf0 + uVar4 * 4));
+      anim_select_user(param_1,*(undefined4 *)(&DAT_0055caf0 + uVar4 * 4));
 
       return;
 
@@ -8734,7 +8734,7 @@ void FUN_004981c0(int param_1)
 
 LAB_00498224:
 
-  FUN_00496840(param_1,iVar3);
+  anim_select_user(param_1,iVar3);
 
   return;
 
@@ -8785,7 +8785,7 @@ void FUN_004982c0(void)
 
   if (iVar3 != 0) {
 
-    FUN_004988e0();
+    weapon_id_check_big();
 
     goto LAB_0049841a;
 
@@ -8861,7 +8861,7 @@ LAB_00498377:
 
   }
 
-  FUN_00496840(&DAT_0059f688,iVar3);
+  anim_select_user(&DAT_0059f688,iVar3);
 
 LAB_0049841a:
 
@@ -9152,8 +9152,8 @@ void FUN_004984b0(void)
 
 }
 
-/* ===== FUN_004988e0 @ 0x004988E0 ===== */
-void FUN_004988e0(int param_1)
+/* ===== weapon_id_check_big @ 0x004988E0 ===== */
+void weapon_id_check_big(int param_1)
 
 
 
@@ -9189,7 +9189,7 @@ LAB_00498914:
 
 LAB_00498ae1:
 
-      FUN_00496840(param_1,iVar2);
+      anim_select_user(param_1,iVar2);
 
       return;
 
@@ -9281,7 +9281,7 @@ LAB_0049891f:
 
   iVar2 = FUN_004a8f90(uVar1);
 
-  FUN_00496840(param_1,*(undefined4 *)(&DAT_0055caa0 + iVar2 * 4));
+  anim_select_user(param_1,*(undefined4 *)(&DAT_0055caa0 + iVar2 * 4));
 
   return;
 
@@ -9343,8 +9343,8 @@ LAB_00498a2c:
 
 }
 
-/* ===== FUN_00498af0 @ 0x00498AF0 ===== */
-void FUN_00498af0(int param_1)
+/* ===== vimp_death_fx @ 0x00498AF0 ===== */
+void vimp_death_fx(int param_1)
 
 
 
@@ -9464,8 +9464,8 @@ void FUN_00498af0(int param_1)
 
 }
 
-/* ===== FUN_00498c60 @ 0x00498C60 ===== */
-void FUN_00498c60(int param_1)
+/* ===== object_lock_with_volume @ 0x00498C60 ===== */
+void object_lock_with_volume(int param_1)
 
 
 
@@ -9511,8 +9511,8 @@ void FUN_00498c60(int param_1)
 
 }
 
-/* ===== FUN_00498cd0 @ 0x00498CD0 ===== */
-undefined4 FUN_00498cd0(int param_1)
+/* ===== object_volume_sfx @ 0x00498CD0 ===== */
+undefined4 object_volume_sfx(int param_1)
 
 
 
@@ -9747,8 +9747,10 @@ void FUN_00498cf0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00499030 @ 0x00499030 ===== */
-void FUN_00499030(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5)
+/* ===== object_spawn_small @ 0x00499030 ===== */
+void object_spawn_small(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+                       int param_5)
 
 
 
@@ -9792,8 +9794,8 @@ void FUN_00499030(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 
 }
 
-/* ===== FUN_004990c0 @ 0x004990C0 ===== */
-void FUN_004990c0(int param_1,uint param_2)
+/* ===== object_spawn_from_linkage @ 0x004990C0 ===== */
+void object_spawn_from_linkage(int param_1,uint param_2)
 
 
 
@@ -12547,10 +12549,12 @@ int FUN_0049bd10(undefined4 param_1)
 
 }
 
-/* ===== FUN_0049bd90 @ 0x0049BD90 ===== */
-int FUN_0049bd90(undefined4 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,
+/* ===== collgrid_anim_audio_user @ 0x0049BD90 ===== */
+int collgrid_anim_audio_user
 
-                undefined4 *param_5)
+              (undefined4 param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4,
+
+              undefined4 *param_5)
 
 
 
@@ -12719,7 +12723,7 @@ int FUN_0049bf60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefi
 
   FUN_00517220(param_3,param_2,local_18);
 
-  iVar1 = FUN_0049bd90(local_c,local_18,param_3,param_4,param_5);
+  iVar1 = collgrid_anim_audio_user(local_c,local_18,param_3,param_4,param_5);
 
   if ((iVar1 != 0) && (param_4 != (undefined4 *)0x0)) {
 

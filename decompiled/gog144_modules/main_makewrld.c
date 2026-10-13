@@ -1294,7 +1294,7 @@ void gti_terrain_load(undefined4 param_1)
 
       *piVar4 = iVar11;
 
-      main_texture_00508720(puVar6);
+      texture_alloc_helper(puVar6);
 
       puVar7 = puVar6;
 
@@ -1354,7 +1354,7 @@ void gti_terrain_load(undefined4 param_1)
 
       *piVar4 = iVar11;
 
-      main_texture_00508720(puVar6);
+      texture_alloc_helper(puVar6);
 
       puVar7 = (undefined4 *)*piVar4;
 
@@ -1412,7 +1412,7 @@ void gti_terrain_load(undefined4 param_1)
 
       *piVar4 = iVar11;
 
-      main_texture_00508720(puVar6);
+      texture_alloc_helper(puVar6);
 
       puVar7 = (undefined4 *)*piVar4;
 

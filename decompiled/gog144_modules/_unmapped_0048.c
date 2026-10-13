@@ -647,7 +647,7 @@ LAB_0048097d:
 
     if (iVar3 == 0x2e) {
 
-      if ((((*(byte *)(param_1 + 0x30) & 2) != 0) && (FUN_00496840(param_1,1), bVar5)) &&
+      if ((((*(byte *)(param_1 + 0x30) & 2) != 0) && (anim_select_user(param_1,1), bVar5)) &&
 
          (iVar3 = *(int *)(param_1 + 0x274), puVar2 = DAT_00632d68, iVar3 != 0)) {
 
@@ -677,7 +677,7 @@ LAB_0048097d:
 
       if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
 
-        FUN_00496840(param_1,1);
+        anim_select_user(param_1,1);
 
       }
 
@@ -2462,7 +2462,7 @@ void FUN_004829d0(void)
 
       ref_anode_user();
 
-      FUN_00516890();
+      xfmat_mult_b();
 
       main_drawobj_0042d490();
 
@@ -2492,7 +2492,7 @@ void FUN_004829d0(void)
 
       FUN_004fa720(&DAT_00632900,DAT_0055bdb8,0xffffffff);
 
-      FUN_00500890(&DAT_00632900);
+      status_draw_sub(&DAT_00632900);
 
       render_view_xform();
 
@@ -2542,7 +2542,7 @@ void FUN_004829d0(void)
 
       FUN_004fa720(&DAT_00632900,DAT_0063291c,0xffffffff);
 
-      FUN_00500890(&DAT_00632900);
+      status_draw_sub(&DAT_00632900);
 
       if (((DAT_00633104 == 0) && (DAT_00632c0c != 0)) && (DAT_0059e8e0 != '\0')) {
 
@@ -11138,7 +11138,7 @@ void menu_dlog_callback_b(void)
 
     if (DAT_0059ee9c == 1) {
 
-      FUN_004946a0();
+      ambient_streams_handler();
 
       (*DAT_005dd28c)();
 
@@ -11286,7 +11286,7 @@ LAB_0048e7be:
 
     if (DAT_0059ee9c == 1) {
 
-      FUN_004946a0();
+      ambient_streams_handler();
 
       (*DAT_005dd28c)();
 
@@ -11376,7 +11376,7 @@ LAB_0048e7be:
 
     if (DAT_0059ee9c == 1) {
 
-      FUN_004946a0();
+      ambient_streams_handler();
 
       (*DAT_005dd28c)();
 

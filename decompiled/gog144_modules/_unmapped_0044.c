@@ -3898,7 +3898,7 @@ undefined4 FUN_004444c0(int param_1)
 
   }
 
-  FUN_00515ba0();
+  object_spawn_class3();
 
   if (*(float *)(param_1 + 0xd4) != 0.0) {
 
@@ -3960,7 +3960,7 @@ LAB_00444d25:
 
   FUN_005160b0((float)(fVar14 * (float10)114.59156),0,1);
 
-  FUN_00516890();
+  xfmat_mult_b();
 
   FUN_00451cf0();
 
@@ -4124,7 +4124,7 @@ LAB_00444d25:
 
     FUN_005162b0();
 
-    FUN_00516850();
+    xfmat_mult_a();
 
     main_drawobj_0042d490();
 

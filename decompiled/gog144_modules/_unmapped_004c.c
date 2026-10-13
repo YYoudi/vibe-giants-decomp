@@ -1004,7 +1004,7 @@ void FUN_004c0fc0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 
 
   *(undefined4 *)(iVar1 + 0xfc) = 0x3f000000;
 
-  iVar2 = FUN_00499030(iVar1,0x18,0,0,0);
+  iVar2 = object_spawn_small(iVar1,0x18,0,0,0);
 
   *(undefined4 *)(iVar2 + 0x210) = 0;
 
@@ -2711,7 +2711,7 @@ void FUN_004c2ab0(undefined4 param_1,int param_2,float param_3,int param_4,int p
 
   iVar5 = FUN_00456050(param_2);
 
-  if ((param_4 != 0) && (iVar6 = FUN_00498cd0(param_1), iVar6 == 0)) {
+  if ((param_4 != 0) && (iVar6 = object_volume_sfx(param_1), iVar6 == 0)) {
 
     pfVar8 = param_6 + param_5 * 10;
 
@@ -7728,7 +7728,7 @@ LAB_004ccbc0:
 
           FUN_005160b0(0x42700000,(float)piStack_244 / fStack_238,0);
 
-          FUN_00516850();
+          xfmat_mult_a();
 
           if (*(int *)(puVar8 + -0x290) == 0) {
 
@@ -7840,7 +7840,7 @@ LAB_004ccbc0:
 
   FUN_005160b0(fStack_228,fStack_224,1);
 
-  FUN_00516850();
+  xfmat_mult_a();
 
   if (iStack_240 < 1) {
 
@@ -8477,7 +8477,7 @@ undefined4 dev_debug_flags(void)
 
           FUN_005162b0(auStack_16c);
 
-          FUN_00516890();
+          xfmat_mult_b();
 
           FUN_00451cf0();
 
@@ -8535,7 +8535,7 @@ undefined4 dev_debug_flags(void)
 
   }
 
-  FUN_00516890();
+  xfmat_mult_b();
 
   piVar11 = DAT_00632d68;
 
@@ -8599,7 +8599,7 @@ undefined4 dev_debug_flags(void)
 
            ((iVar7 = FUN_004a6120(), iVar7 != 0 && (*(int *)(iVar9 + 0x274) == iVar5)))) {
 
-          FUN_00498af0();
+          vimp_death_fx();
 
         }
 
@@ -8849,7 +8849,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_004676a0();
 
-    FUN_00500e20();
+    status_draw_panel();
 
     if (DAT_00632fac == 0) {
 
@@ -8897,7 +8897,7 @@ undefined4 dev_debug_flags(void)
 
   if ((DAT_00632c00 == 0) && (0.0 < _DAT_00632bdc)) {
 
-    FUN_00493f70();
+    story_flick_open();
 
     FUN_00542f27(&local_1c0,s__8_0f_00561330,(double)_DAT_00632bdc);
 

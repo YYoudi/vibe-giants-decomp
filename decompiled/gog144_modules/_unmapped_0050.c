@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (19 named) — decompiled, names from PS2 symbols
+ * 87 functions (24 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -472,8 +472,8 @@ void FUN_005007f0(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_00500830 @ 0x00500830 ===== */
-void FUN_00500830(void)
+/* ===== status_draw_small @ 0x00500830 ===== */
+void status_draw_small(void)
 
 
 
@@ -511,8 +511,8 @@ void FUN_00500830(void)
 
 }
 
-/* ===== FUN_00500890 @ 0x00500890 ===== */
-void FUN_00500890(int param_1)
+/* ===== status_draw_sub @ 0x00500890 ===== */
+void status_draw_sub(int param_1)
 
 
 
@@ -1009,8 +1009,8 @@ void FUN_00500cf0(int param_1)
 
 }
 
-/* ===== FUN_00500e20 @ 0x00500E20 ===== */
-void FUN_00500e20(void)
+/* ===== status_draw_panel @ 0x00500E20 ===== */
+void status_draw_panel(void)
 
 
 
@@ -1265,8 +1265,8 @@ void FUN_00501000(int param_1)
 
 }
 
-/* ===== FUN_00501030 @ 0x00501030 ===== */
-void FUN_00501030(int param_1)
+/* ===== teammecc_enemies_helper @ 0x00501030 ===== */
+void teammecc_enemies_helper(int param_1)
 
 
 
@@ -4704,7 +4704,7 @@ void mecc_smoking_fx_update(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar3 = FUN_00498cd0(param_1);
+  iVar3 = object_volume_sfx(param_1);
 
   if (iVar3 != 0) {
 
@@ -8930,8 +8930,8 @@ void main_texture_00507f80(void)
 
 }
 
-/* ===== main/texture_00508720 @ 0x00508720 ===== */
-void main_texture_00508720(int param_1)
+/* ===== texture_alloc_helper @ 0x00508720 ===== */
+void texture_alloc_helper(int param_1)
 
 
 
@@ -9703,7 +9703,7 @@ void main_tracer_00509dd0(void)
 
           iVar3 = piVar2[3] + iVar7 * 0x24;
 
-          main_tracer_00509f10(iVar3,piVar2[7],piVar2[0xf],piVar2[3] + iVar4 * 0x24,iVar3);
+          view_xform_user(iVar3,piVar2[7],piVar2[0xf],piVar2[3] + iVar4 * 0x24,iVar3);
 
           iVar5 = iVar5 + 1;
 
@@ -9727,12 +9727,10 @@ void main_tracer_00509dd0(void)
 
 }
 
-/* ===== main/tracer_00509f10 @ 0x00509F10 ===== */
-void main_tracer_00509f10
+/* ===== view_xform_user @ 0x00509F10 ===== */
+void view_xform_user(undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,
 
-               (undefined4 param_1,undefined4 param_2,float param_3,undefined4 param_4,
-
-               undefined4 param_5)
+                    undefined4 param_5)
 
 
 
@@ -11063,12 +11061,12 @@ void FUN_0050af50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4
 
 }
 
-/* ===== FUN_0050c1c0 @ 0x0050C1C0 ===== */
+/* ===== reaper_ability_playersound5 @ 0x0050C1C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0050c1c0(int param_1,int param_2)
+void reaper_ability_playersound5(int param_1,int param_2)
 
 
 

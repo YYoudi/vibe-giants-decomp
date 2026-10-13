@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (51 named) — decompiled, names from PS2 symbols
+ * 186 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -209,12 +209,12 @@ void FUN_00510f50(float param_1,float param_2)
 
 }
 
-/* ===== FUN_00511410 @ 0x00511410 ===== */
+/* ===== herdgen_marker_user @ 0x00511410 ===== */
 /* PS2 candidate: vimp_logic (conf 0.374) */
 
 
 
-void FUN_00511410(float param_1,float *param_2,undefined4 param_3)
+void herdgen_marker_user(float param_1,float *param_2,undefined4 param_3)
 
 
 
@@ -443,7 +443,7 @@ void FUN_005116e0(int param_1)
 
     if (*(int *)(param_1 + 0xd8) < 0) {
 
-      FUN_00496840(param_1,0x32);
+      anim_select_user(param_1,0x32);
 
       return;
 
@@ -517,7 +517,7 @@ void FUN_005116e0(int param_1)
 
         if (iVar3 == 2) {
 
-          FUN_00496840(param_1,0x24);
+          anim_select_user(param_1,0x24);
 
           return;
 
@@ -651,7 +651,7 @@ void FUN_005116e0(int param_1)
 
           {
 
-            FUN_00496840(param_1,0x26);
+            anim_select_user(param_1,0x26);
 
             return;
 
@@ -665,7 +665,7 @@ void FUN_005116e0(int param_1)
 
                ((iVar3 != 0x3b && (iVar3 != 0x3c)))) {
 
-              FUN_00496840(param_1,0x23);
+              anim_select_user(param_1,0x23);
 
               return;
 
@@ -673,9 +673,9 @@ void FUN_005116e0(int param_1)
 
             if (((*(byte *)(param_1 + 0x30) & 2) != 0) &&
 
-               (((*(byte *)(param_1 + 0xe0) & 1) == 0 || (iVar3 = FUN_00511ff0(param_1), iVar3 == 0)
+               (((*(byte *)(param_1 + 0xe0) & 1) == 0 ||
 
-                ))) {
+                (iVar3 = evilreaper_ai_big(param_1), iVar3 == 0)))) {
 
               if (*(float *)(iVar2 + 100) < 0.0 != (*(float *)(iVar2 + 100) == 0.0)) {
 
@@ -1059,8 +1059,8 @@ void vimp_handle_close_area_damage(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00511ff0 @ 0x00511FF0 ===== */
-undefined4 FUN_00511ff0(int param_1)
+/* ===== evilreaper_ai_big @ 0x00511FF0 ===== */
+undefined4 evilreaper_ai_big(int param_1)
 
 
 
@@ -1116,7 +1116,7 @@ undefined4 FUN_00511ff0(int param_1)
 
         *(undefined4 *)(iVar2 + 0xe0) = 0;
 
-        FUN_00511410(iVar2,iVar4 + 200,0xbf800000);
+        herdgen_marker_user(iVar2,iVar4 + 200,0xbf800000);
 
         return 1;
 
@@ -1541,12 +1541,12 @@ bool FUN_005124e0(int param_1)
 
 }
 
-/* ===== FUN_00512700 @ 0x00512700 ===== */
+/* ===== evilreaper_speed_dist @ 0x00512700 ===== */
 /* PS2 candidate: fx_logic (conf 0.405) */
 
 
 
-void FUN_00512700(int param_1)
+void evilreaper_speed_dist(int param_1)
 
 
 
@@ -4310,8 +4310,10 @@ void FUN_005155c0(void)
 
 }
 
-/* ===== FUN_00515710 @ 0x00515710 ===== */
-void FUN_00515710(int param_1,undefined4 *param_2,float param_3,float param_4,undefined4 param_5)
+/* ===== object_spawn_class2 @ 0x00515710 ===== */
+void object_spawn_class2(int param_1,undefined4 *param_2,float param_3,float param_4,
+
+                        undefined4 param_5)
 
 
 
@@ -4528,7 +4530,7 @@ void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float p
 
       }
 
-      FUN_00515710(param_1,pfVar2,param_2,param_5,param_7);
+      object_spawn_class2(param_1,pfVar2,param_2,param_5,param_7);
 
       if ((((float)param_2 != 0.0) && (param_6 != 0)) &&
 
@@ -4635,8 +4637,8 @@ void FUN_00515b20(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_00515ba0 @ 0x00515BA0 ===== */
-void FUN_00515ba0(undefined4 param_1)
+/* ===== object_spawn_class3 @ 0x00515BA0 ===== */
+void object_spawn_class3(undefined4 param_1)
 
 
 
@@ -5519,8 +5521,8 @@ void XFMatMult(float *param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_00516850 @ 0x00516850 ===== */
-void FUN_00516850(void)
+/* ===== xfmat_mult_a @ 0x00516850 ===== */
+void xfmat_mult_a(void)
 
 
 
@@ -5560,8 +5562,8 @@ void FUN_00516850(void)
 
 }
 
-/* ===== FUN_00516890 @ 0x00516890 ===== */
-void FUN_00516890(void)
+/* ===== xfmat_mult_b @ 0x00516890 ===== */
+void xfmat_mult_b(void)
 
 
 
@@ -9253,8 +9255,8 @@ undefined4 FUN_00519a50(void)
 
 }
 
-/* ===== FUN_00519be0 @ 0x00519BE0 ===== */
-undefined4 FUN_00519be0(void)
+/* ===== anim_dump_user @ 0x00519BE0 ===== */
+undefined4 anim_dump_user(void)
 
 
 
@@ -10986,14 +10988,16 @@ void textrender_texture_alloc(int param_1)
 
 }
 
-/* ===== FUN_0051b500 @ 0x0051B500 ===== */
+/* ===== textrender_text_draw @ 0x0051B500 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051b500(uint param_1,undefined4 param_2,float param_3,undefined4 param_4,
+void textrender_text_draw
 
-                 undefined4 param_5,byte *param_6,int param_7)
+               (uint param_1,undefined4 param_2,float param_3,undefined4 param_4,undefined4 param_5,
+
+               byte *param_6,int param_7)
 
 
 
@@ -11263,7 +11267,7 @@ void FUN_0051b810(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   } while (cVar1 != '\0');
 
-  FUN_0051b500(param_1,param_2,param_3,param_4,param_5,param_6,~uVar2 - 1);
+  textrender_text_draw(param_1,param_2,param_3,param_4,param_5,param_6,~uVar2 - 1);
 
   return;
 
@@ -11379,9 +11383,11 @@ void FUN_0051b970(undefined4 param_1,undefined4 param_2,float param_3,undefined4
 
   } while (cVar1 != '\0');
 
-  FUN_0051b500(param_1,param_2,param_3,param_4,
+  textrender_text_draw
 
-               (param_3 / _DAT_005dd8c4) * (float)DAT_005dd394 + param_5,param_6,~uVar2 - 1);
+            (param_1,param_2,param_3,param_4,
+
+             (param_3 / _DAT_005dd8c4) * (float)DAT_005dd394 + param_5,param_6,~uVar2 - 1);
 
   return;
 
@@ -11400,9 +11406,11 @@ void FUN_0051b9c0(undefined4 param_1,undefined4 param_2,float param_3,undefined4
 
 {
 
-  FUN_0051b500(param_1,param_2,param_3,param_4,
+  textrender_text_draw
 
-               (param_3 / _DAT_005dd8c4) * (float)DAT_005dd394 + param_5,param_6,param_7);
+            (param_1,param_2,param_3,param_4,
+
+             (param_3 / _DAT_005dd8c4) * (float)DAT_005dd394 + param_5,param_6,param_7);
 
   return;
 
@@ -11513,9 +11521,11 @@ void FUN_0051ba00(undefined4 param_1,undefined4 param_2,float param_3,float para
 
   } while (bVar2 != 0);
 
-  FUN_0051b500(param_1,param_2,param_3,param_4 - (fVar5 / (float)DAT_00632e84) * 0.5,
+  textrender_text_draw
 
-               (param_3 / _DAT_005dd8c4) * (float)DAT_005dd394 + param_5,param_6,~uVar6 - 1);
+            (param_1,param_2,param_3,param_4 - (fVar5 / (float)DAT_00632e84) * 0.5,
+
+             (param_3 / _DAT_005dd8c4) * (float)DAT_005dd394 + param_5,param_6,~uVar6 - 1);
 
   return;
 
@@ -13345,7 +13355,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
         }
 
-        FUN_00519be0();
+        anim_dump_user();
 
         main_004ee9c0();
 
@@ -15109,7 +15119,7 @@ void error_screen_show(LPCSTR param_1)
 
         FUN_00451cf0();
 
-        FUN_00516890();
+        xfmat_mult_b();
 
         FUN_0042ebf0(0xa0d0d0,0,0x3f7fbe77,0,0x3f7fbe77);
 

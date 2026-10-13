@@ -4641,9 +4641,9 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 
                (((*(uint *)(iVar1 + 0x1c8) & 0x1000000) != 0 ||
 
-                (iVar3 = FUN_0049bd90(auStack_c,auStack_18,iVar1,&uStack_48,0), iVar4 = DAT_00632a88
+                (iVar3 = collgrid_anim_audio_user(auStack_c,auStack_18,iVar1,&uStack_48,0),
 
-                , iVar3 != 0)))) {
+                iVar4 = DAT_00632a88, iVar3 != 0)))) {
 
               FUN_005170f0(iVar1,&uStack_48,auStack_30);
 

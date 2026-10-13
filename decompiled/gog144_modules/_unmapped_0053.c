@@ -3023,7 +3023,7 @@ LAB_005319de:
 
         }
 
-        FUN_004990c0(*(undefined4 *)(pcVar15 + 5),*(undefined4 *)(pcVar15 + 1));
+        object_spawn_from_linkage(*(undefined4 *)(pcVar15 + 5),*(undefined4 *)(pcVar15 + 1));
 
         DAT_005e0304 = DAT_005e0304 + 9;
 
@@ -3339,13 +3339,13 @@ LAB_005319de:
 
           *(undefined4 *)(iVar6 + 0x18c) = *(undefined4 *)(pcVar15 + 9);
 
-          iVar8 = FUN_00499030(iVar6,0x26f,0xffffffff,*(undefined4 *)(iVar4 + 0x30),0);
+          iVar8 = object_spawn_small(iVar6,0x26f,0xffffffff,*(undefined4 *)(iVar4 + 0x30),0);
 
           *(int *)(iVar4 + 0x38) = iVar8;
 
           *(uint *)(iVar8 + 0xd8) = *(uint *)(iVar8 + 0xd8) | 0x40000000;
 
-          iVar4 = FUN_00499030(iVar6,0x273,0xffffffff,*(undefined4 *)(iVar4 + 0x30),0);
+          iVar4 = object_spawn_small(iVar6,0x273,0xffffffff,*(undefined4 *)(iVar4 + 0x30),0);
 
           *(int *)(iVar8 + 0x274) = iVar4;
 
@@ -5224,7 +5224,7 @@ LAB_0053369f:
 
       }
 
-      FUN_0050c1c0(iVar1,iVar2);
+      reaper_ability_playersound5(iVar1,iVar2);
 
       FUN_00497570(iVar2);
 
@@ -5383,7 +5383,7 @@ LAB_005337eb:
 
       }
 
-      FUN_0050c1c0(iVar1,iVar2);
+      reaper_ability_playersound5(iVar1,iVar2);
 
       FUN_00497570(iVar2);
 
@@ -10183,7 +10183,7 @@ LAB_005369b7:
 
 LAB_005369e7:
 
-  FUN_00500830();
+  status_draw_small();
 
   FUN_005007f0(&local_114,&local_118);
 

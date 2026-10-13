@@ -9542,7 +9542,7 @@ LAB_004bd3f4:
 
       iVar13 = FUN_00456050(iVar10);
 
-      if ((bVar8) && (iVar14 = FUN_00498cd0(param_1), iVar14 == 0)) {
+      if ((bVar8) && (iVar14 = object_volume_sfx(param_1), iVar14 == 0)) {
 
         pfVar18 = (float *)(puVar5 + 0x1b);
 
@@ -10455,7 +10455,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
   uVar4 = FUN_00456050(param_1);
 
-  FUN_00498c60(uVar4);
+  object_lock_with_volume(uVar4);
 
   iVar7 = 0;
 

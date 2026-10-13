@@ -14374,7 +14374,7 @@ LAB_0052fabe:
 
         }
 
-        FUN_004990c0(iVar3,*(undefined4 *)(iVar5 + 0x188));
+        object_spawn_from_linkage(iVar3,*(undefined4 *)(iVar5 + 0x188));
 
       }
 

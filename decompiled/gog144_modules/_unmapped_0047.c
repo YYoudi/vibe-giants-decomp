@@ -730,7 +730,7 @@ switchD_004711dd_default:
 
         (**(code **)(DAT_00656420 + 0x14))(DAT_00656420);
 
-        FUN_00516890();
+        xfmat_mult_b();
 
         FUN_00451cf0();
 
@@ -1401,7 +1401,7 @@ void FUN_00471a60(int param_1)
 
           FUN_00475290();
 
-          FUN_00497de0();
+          weapon_id_inventory_update();
 
           FUN_004eb900();
 
@@ -1411,7 +1411,7 @@ void FUN_00471a60(int param_1)
 
             FUN_00501050(uVar2);
 
-            FUN_00501030(uVar2);
+            teammecc_enemies_helper(uVar2);
 
           }
 
@@ -1461,7 +1461,7 @@ void FUN_00471a60(int param_1)
 
           }
 
-          FUN_00515ba0(0);
+          object_spawn_class3(0);
 
           FUN_004982c0();
 
@@ -1471,7 +1471,7 @@ void FUN_00471a60(int param_1)
 
             if ((*(uint *)(puVar1[3] + 0xd8) & 0xc000) == 0) {
 
-              FUN_00498c60(puVar1[3]);
+              object_lock_with_volume(puVar1[3]);
 
             }
 
@@ -2469,7 +2469,7 @@ void dlog_text_pop_screen(int param_1)
 
   FUN_005160b0(DAT_0059dc20,DAT_0059dc24,1);
 
-  FUN_00516850();
+  xfmat_mult_a();
 
   return;
 
@@ -9611,7 +9611,7 @@ void FUN_0047f740(float param_1)
 
       if (((*(uint *)((int)fVar5 + 0xd8) & 0x3000) == 0) ||
 
-         (iVar7 = FUN_00498cd0(fVar5), iVar7 != 0)) {
+         (iVar7 = object_volume_sfx(fVar5), iVar7 != 0)) {
 
         uVar9 = *(uint *)(iVar6 + 0xd8);
 

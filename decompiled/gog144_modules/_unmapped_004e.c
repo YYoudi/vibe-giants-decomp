@@ -10008,7 +10008,7 @@ void water_fx_test(void)
 
     if (*(int *)(DAT_006330e4 + 0x5088) != 0) {
 
-      main_texture_00508720(*(int *)(DAT_006330e4 + 0x5088));
+      texture_alloc_helper(*(int *)(DAT_006330e4 + 0x5088));
 
     }
 
@@ -10922,7 +10922,7 @@ void FUN_004ee670(int param_1)
 
   FUN_00489ca0();
 
-  FUN_004928a0();
+  savegame_verify_user();
 
   iVar2 = FUN_0052aa70();
 

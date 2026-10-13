@@ -8758,7 +8758,7 @@ void wredit_menu_7(int param_1)
 
           FUN_00497510(iVar7);
 
-          iVar2 = FUN_00499030(iVar6,DAT_0059cc30,iVar2,DAT_0059cc34,0);
+          iVar2 = object_spawn_small(iVar6,DAT_0059cc30,iVar2,DAT_0059cc34,0);
 
           goto LAB_0043cb30;
 
@@ -8772,7 +8772,7 @@ void wredit_menu_7(int param_1)
 
     }
 
-    iVar2 = FUN_00499030(iVar6,DAT_0059cc30,iVar2,DAT_0059cc34,0);
+    iVar2 = object_spawn_small(iVar6,DAT_0059cc30,iVar2,DAT_0059cc34,0);
 
 LAB_0043cb30:
 

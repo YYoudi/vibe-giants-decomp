@@ -5209,7 +5209,7 @@ void dlog_pop_user(void)
 
   FUN_005160b0(DAT_00584370,DAT_00584328,1);
 
-  FUN_00516850();
+  xfmat_mult_a();
 
   return;
 
