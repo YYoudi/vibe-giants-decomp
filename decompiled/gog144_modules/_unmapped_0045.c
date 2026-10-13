@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (118 named) — decompiled, names from PS2 symbols
+ * 145 functions (123 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -2777,8 +2777,8 @@ void fx_emitter_flags_setup(uint param_1,uint param_2,int param_3)
 
 }
 
-/* ===== FUN_00452ee0 @ 0x00452EE0 ===== */
-undefined4 FUN_00452ee0(int param_1)
+/* ===== icon_slot_in_use_check @ 0x00452EE0 ===== */
+undefined4 icon_slot_in_use_check(int param_1)
 
 
 
@@ -4930,8 +4930,8 @@ joined_r0x00455cee:
 
 }
 
-/* ===== FUN_00455e20 @ 0x00455E20 ===== */
-void FUN_00455e20(int param_1)
+/* ===== obj_children_destroy @ 0x00455E20 ===== */
+void obj_children_destroy(int param_1)
 
 
 
@@ -4975,8 +4975,8 @@ void FUN_00455e20(int param_1)
 
 }
 
-/* ===== FUN_00455e70 @ 0x00455E70 ===== */
-void FUN_00455e70(int param_1)
+/* ===== obj_children_destroy_2 @ 0x00455E70 ===== */
+void obj_children_destroy_2(int param_1)
 
 
 
@@ -7774,7 +7774,7 @@ void TeamMemberInitWeapons__FP6OBJECT(int param_1)
 
   else {
 
-    iVar4 = FUN_00452ee0(3);
+    iVar4 = icon_slot_in_use_check(3);
 
     if (iVar4 == 0) {
 
@@ -8109,8 +8109,8 @@ bool IconDef_wield_eq4(undefined4 param_1)
 
 }
 
-/* ===== FUN_00458cf0 @ 0x00458CF0 ===== */
-undefined4 FUN_00458cf0(undefined4 param_1)
+/* ===== IconDef_wield_is12 @ 0x00458CF0 ===== */
+undefined4 IconDef_wield_is12(undefined4 param_1)
 
 
 
@@ -8138,8 +8138,8 @@ undefined4 FUN_00458cf0(undefined4 param_1)
 
 }
 
-/* ===== FUN_00458d20 @ 0x00458D20 ===== */
-undefined4 FUN_00458d20(undefined4 param_1)
+/* ===== IconDef_wield_is13 @ 0x00458D20 ===== */
+undefined4 IconDef_wield_is13(undefined4 param_1)
 
 
 
@@ -8262,7 +8262,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
     else {
 
-      iVar3 = FUN_00458d20(uVar1);
+      iVar3 = IconDef_wield_is13(uVar1);
 
       if (iVar3 == 0) {
 
@@ -8390,7 +8390,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
   param_2 = (uint *)iVar3;
 
-  iVar4 = FUN_00458cf0(uVar1);
+  iVar4 = IconDef_wield_is12(uVar1);
 
   if (iVar4 == 0) {
 

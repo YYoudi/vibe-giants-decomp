@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00458d20,FUN_00458d20,,IconDef_wield_is13,0.9,llm-w200,compound wield predicates callers inv_check
+00458cf0,FUN_00458cf0,,IconDef_wield_is12,0.9,llm-w200
+00452ee0,FUN_00452ee0,,icon_slot_in_use_check,0.9,llm-w200,0059d868/8e8 tables caller TeamMemberInit
+00470670,FUN_00470670,,map_entry_lookup,0.9,llm-w200,MappingFind wrapper caller main_verm
+004319c0,FUN_004319c0,,audio_listener_update,0.9,llm-w200,camera axis for 3D audio caller stream_tied
+00455e20,FUN_00455e20,,obj_children_destroy,0.9,llm-w200,owned walk + destroy callers destroy_special
+00455e70,FUN_00455e70,,obj_children_destroy_2,0.9,llm-w200,twin

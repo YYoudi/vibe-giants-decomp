@@ -2010,9 +2010,9 @@
   "len": 9768
  },
  "0x004319C0": {
-  "name": "FUN_004319c0",
-  "named": false,
-  "len": 225
+  "name": "audio_listener_update",
+  "named": true,
+  "len": 234
  },
  "0x00431A00": {
   "name": "get_free_world_ripple__Fv_2",
@@ -2067,7 +2067,7 @@
  "0x00434280": {
   "name": "audio_stream_tied",
   "named": true,
-  "len": 4570
+  "len": 4579
  },
  "0x00434620": {
   "name": "main/drawwrld_00434620",
@@ -3025,9 +3025,9 @@
   "len": 3885
  },
  "0x00452EE0": {
-  "name": "FUN_00452ee0",
-  "named": false,
-  "len": 378
+  "name": "icon_slot_in_use_check",
+  "named": true,
+  "len": 388
  },
  "0x00452F20": {
   "name": "IconIsAvailable__Fi",
@@ -3130,14 +3130,14 @@
   "len": 2448
  },
  "0x00455E20": {
-  "name": "FUN_00455e20",
-  "named": false,
-  "len": 472
+  "name": "obj_children_destroy",
+  "named": true,
+  "len": 480
  },
  "0x00455E70": {
-  "name": "FUN_00455e70",
-  "named": false,
-  "len": 487
+  "name": "obj_children_destroy_2",
+  "named": true,
+  "len": 497
  },
  "0x00455EC0": {
   "name": "object_create_gun_2",
@@ -3357,7 +3357,7 @@
  "0x00458710": {
   "name": "TeamMemberInitWeapons__FP6OBJECT",
   "named": true,
-  "len": 4112
+  "len": 4122
  },
  "0x00458A10": {
   "name": "TeamMemberClearWeapons__FP6OBJECT",
@@ -3385,14 +3385,14 @@
   "len": 134
  },
  "0x00458CF0": {
-  "name": "FUN_00458cf0",
-  "named": false,
-  "len": 239
+  "name": "IconDef_wield_is12",
+  "named": true,
+  "len": 245
  },
  "0x00458D20": {
-  "name": "FUN_00458d20",
-  "named": false,
-  "len": 239
+  "name": "IconDef_wield_is13",
+  "named": true,
+  "len": 245
  },
  "0x00458D50": {
   "name": "IconDef_wield_eq5",
@@ -3407,7 +3407,7 @@
  "0x00459540": {
   "name": "inv_check_pickup",
   "named": true,
-  "len": 5253
+  "len": 5265
  },
  "0x00459930": {
   "name": "inv_award_item",
@@ -3885,9 +3885,9 @@
   "len": 375
  },
  "0x00470670": {
-  "name": "FUN_00470670",
-  "named": false,
-  "len": 412
+  "name": "map_entry_lookup",
+  "named": true,
+  "len": 416
  },
  "0x004706D0": {
   "name": "FUN_004706d0",
@@ -5302,7 +5302,7 @@
  "0x0049BAA0": {
   "name": "object_destroy_specialtype",
   "named": true,
-  "len": 2299
+  "len": 2335
  },
  "0x0049BC50": {
   "name": "FUN_0049bc50",
@@ -8352,7 +8352,7 @@
  "0x0050F830": {
   "name": "main_verm_0050f830",
   "named": true,
-  "len": 611
+  "len": 615
  },
  "0x005108F0": {
   "name": "FUN_005108f0",

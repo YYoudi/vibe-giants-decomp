@@ -12324,9 +12324,9 @@ void object_destroy_specialtype(int param_1)
 
     iVar4 = *(int *)(param_1 + 0x100);
 
-    FUN_00455e20(param_1);
+    obj_children_destroy(param_1);
 
-    FUN_00455e70(param_1);
+    obj_children_destroy_2(param_1);
 
     puVar3 = DAT_00632d68;
 
@@ -12382,9 +12382,9 @@ void object_destroy_specialtype(int param_1)
 
       *(undefined4 *)(param_1 + 0x184) = 0;
 
-      FUN_00455e20(param_1);
+      obj_children_destroy(param_1);
 
-      FUN_00455e70(param_1);
+      obj_children_destroy_2(param_1);
 
       puVar3 = DAT_00632d68;
 

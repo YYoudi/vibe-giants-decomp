@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (72 named) — decompiled, names from PS2 symbols
+ * 74 functions (73 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -972,8 +972,8 @@ LAB_0043114d:
 
 }
 
-/* ===== FUN_004319c0 @ 0x004319C0 ===== */
-void FUN_004319c0(undefined4 *param_1)
+/* ===== audio_listener_update @ 0x004319C0 ===== */
+void audio_listener_update(undefined4 *param_1)
 
 
 
@@ -2062,7 +2062,7 @@ void audio_stream_tied(void)
 
   XFGetCameraOrigin();
 
-  FUN_004319c0(local_25c);
+  audio_listener_update(local_25c);
 
   pfVar2 = (float *)AudioDataStreamStatus__Fv_4();
 

@@ -38,7 +38,7 @@ void main_verm_0050f830(undefined4 param_1,int param_2,undefined4 *param_3,undef
 
   }
 
-  FUN_00470670(param_1,puVar1 + 1);
+  map_entry_lookup(param_1,puVar1 + 1);
 
   *param_3 = 0x28;
 
