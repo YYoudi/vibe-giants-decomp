@@ -1967,12 +1967,12 @@
  "0x0042F8E0": {
   "name": "status_bar_update3",
   "named": true,
-  "len": 8377
+  "len": 8394
  },
  "0x0042FEC0": {
-  "name": "FUN_0042fec0",
-  "named": false,
-  "len": 6507
+  "name": "dlog_alpha_sort_copy",
+  "named": true,
+  "len": 6515
  },
  "0x00430480": {
   "name": "FUN_00430480",
@@ -1980,9 +1980,9 @@
   "len": 4248
  },
  "0x00430820": {
-  "name": "FUN_00430820",
-  "named": false,
-  "len": 3562
+  "name": "dlog_alpha_range_copy",
+  "named": true,
+  "len": 3571
  },
  "0x00430B20": {
   "name": "FUN_00430b20",

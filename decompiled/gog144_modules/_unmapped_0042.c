@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (61 named) — decompiled, names from PS2 symbols
+ * 129 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -19553,7 +19553,7 @@ void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *para
 
     if ((bVar5 & 1) != 0) {
 
-      FUN_0042fec0(3,local_460,&local_46c,local_230);
+      dlog_alpha_sort_copy(3,local_460,&local_46c,local_230);
 
       if (local_46c < 3) {
 
@@ -19847,7 +19847,7 @@ void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *para
 
     if ((DAT_0059b7c8 & 0x10) != 0) {
 
-      FUN_00430820(local_480,local_474,&local_46c,local_470);
+      dlog_alpha_range_copy(local_480,local_474,&local_46c,local_470);
 
       if (local_46c < 3) {
 
@@ -19901,8 +19901,8 @@ void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *para
 
 }
 
-/* ===== FUN_0042fec0 @ 0x0042FEC0 ===== */
-void FUN_0042fec0(undefined4 param_1,undefined4 *param_2,int *param_3,undefined4 *param_4)
+/* ===== dlog_alpha_sort_copy @ 0x0042FEC0 ===== */
+void dlog_alpha_sort_copy(undefined4 param_1,undefined4 *param_2,int *param_3,undefined4 *param_4)
 
 
 
