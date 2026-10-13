@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (242 named) — decompiled, names from PS2 symbols
+ * 351 functions (243 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -493,12 +493,12 @@ void NAM_NameFindByHandleIndex_2(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00540500 @ 0x00540500 ===== */
+/* ===== NAM_NameFindByHandle @ 0x00540500 ===== */
 /* PS2 candidate: NAM_NameFindByHandle (conf 0.771) */
 
 
 
-void FUN_00540500(int param_1)
+void NAM_NameFindByHandle(int param_1)
 
 
 

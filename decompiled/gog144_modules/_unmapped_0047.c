@@ -4364,7 +4364,7 @@ int FUN_00478ad0(float param_1,uint param_2,float *param_3,int param_4,float *pa
 
   if (uVar2 == 0x2d) {
 
-    FUN_004a76e0(fVar1,10,&local_24);
+    playerobj_eval_refpt(fVar1,10,&local_24);
 
     local_30 = *param_5;
 
@@ -4376,7 +4376,7 @@ int FUN_00478ad0(float param_1,uint param_2,float *param_3,int param_4,float *pa
 
   else {
 
-    FUN_004a76e0(param_2,local_48,&local_24);
+    playerobj_eval_refpt(param_2,local_48,&local_24);
 
     if (param_4 != 0) {
 
@@ -4490,7 +4490,7 @@ LAB_00478c22:
 
       local_28 = (float)(fVar8 * (float10)(float)local_34 + (float10)local_28);
 
-      FUN_004a76e0(param_2,0,&local_18);
+      playerobj_eval_refpt(param_2,0,&local_18);
 
     }
 
@@ -5389,7 +5389,7 @@ void FUN_0047c1d0(int param_1)
 
       FUN_0053e460(local_44,-*(float *)(DAT_00632ed8 + 0x120c),0,*(undefined4 *)(param_1 + 200));
 
-      FUN_004a76e0(param_1,10,&local_5c);
+      playerobj_eval_refpt(param_1,10,&local_5c);
 
       local_50 = local_3c * -1000.0 + local_5c;
 
@@ -5691,7 +5691,7 @@ void FUN_0047c440(int param_1)
 
       }
 
-      uVar6 = FUN_00455b70(local_10,*(undefined4 *)(iVar3 + 0x18c),param_1,local_c);
+      uVar6 = project_cursor_to_object(local_10,*(undefined4 *)(iVar3 + 0x18c),param_1,local_c);
 
       iVar7 = FUN_00478ad0(iVar3,uVar5,0,uVar6,local_c,param_1);
 
@@ -6968,7 +6968,7 @@ LAB_0047d6b8:
 
       *(float *)(iVar7 + 200) = (float)fVar9;
 
-      FUN_004a76e0(iVar7,0,(undefined4 *)(iVar7 + 0xa0));
+      playerobj_eval_refpt(iVar7,0,(undefined4 *)(iVar7 + 0xa0));
 
       FUN_00499310(iVar7,*(undefined4 *)(iVar7 + 0xa0),*(undefined4 *)(iVar7 + 0xa4),
 
@@ -7760,7 +7760,7 @@ void mecc_fire_logic__FP6OBJECT(int *param_1)
 
           _DAT_00632ba4 = (uint)((float)local_94 < 1100.0);
 
-          uVar10 = FUN_00455b70(puVar14,param_1[99],local_94,&local_70);
+          uVar10 = project_cursor_to_object(puVar14,param_1[99],local_94,&local_70);
 
           FUN_00478ad0(param_1,1,0,uVar10,&local_70,0x43fa0000);
 
@@ -8078,7 +8078,7 @@ LAB_0047e183:
 
       else {
 
-        piVar15 = (int *)FUN_00455b70(pcVar5,param_1[99],local_94,&local_70);
+        piVar15 = (int *)project_cursor_to_object(pcVar5,param_1[99],local_94,&local_70);
 
       }
 

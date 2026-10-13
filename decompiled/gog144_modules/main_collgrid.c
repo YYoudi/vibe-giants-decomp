@@ -1109,11 +1109,11 @@ void main_collgrid_00411140(int param_1)
 
           uVar4 = *(ushort *)(iVar10 + local_54 * 2);
 
-          FUN_005170f0(param_1,iVar9 + (uint)*(ushort *)(iVar10 + local_50 * 2) * 0xc);
+          xformobj_p3d_world(param_1,iVar9 + (uint)*(ushort *)(iVar10 + local_50 * 2) * 0xc);
 
-          FUN_005170f0(param_1,iVar9 + (uint)uVar3 * 0xc,&local_a8);
+          xformobj_p3d_world(param_1,iVar9 + (uint)uVar3 * 0xc,&local_a8);
 
-          FUN_005170f0(param_1,iVar9 + (uint)uVar4 * 0xc,&local_94);
+          xformobj_p3d_world(param_1,iVar9 + (uint)uVar4 * 0xc,&local_94);
 
           local_80 = local_90 - fVar7;
 
@@ -1672,11 +1672,11 @@ void main_collgrid_00411a10(int param_1)
 
           uVar2 = *(ushort *)(iVar8 + local_48 * 2);
 
-          FUN_005170f0(param_1,iVar7 + (uint)*(ushort *)(iVar8 + local_3c * 2) * 0xc);
+          xformobj_p3d_world(param_1,iVar7 + (uint)*(ushort *)(iVar8 + local_3c * 2) * 0xc);
 
-          FUN_005170f0(param_1,iVar7 + (uint)uVar1 * 0xc,&local_94);
+          xformobj_p3d_world(param_1,iVar7 + (uint)uVar1 * 0xc,&local_94);
 
-          FUN_005170f0(param_1,iVar7 + (uint)uVar2 * 0xc,&local_80);
+          xformobj_p3d_world(param_1,iVar7 + (uint)uVar2 * 0xc,&local_80);
 
           local_74 = local_7c - fVar4;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (40 named) — decompiled, names from PS2 symbols
+ * 105 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -3178,7 +3178,7 @@ LAB_00404e2f:
 
   if ((uVar2 & 0x40) != 0) {
 
-    FUN_004a76e0(param_1,param_5[7],local_30);
+    playerobj_eval_refpt(param_1,param_5[7],local_30);
 
     fx_get_free_effect__Fv();
 
@@ -3229,7 +3229,7 @@ int FUN_00406bc0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,u
 
   puVar1 = (undefined4 *)(iVar3 + 0xa0);
 
-  FUN_004a76e0(param_1,0,puVar1);
+  playerobj_eval_refpt(param_1,0,puVar1);
 
   FUN_00499310(iVar3,*puVar1,*(undefined4 *)(iVar3 + 0xa4),*(undefined4 *)(iVar3 + 0xa8));
 
@@ -3285,7 +3285,7 @@ int FUN_00406bc0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,u
 
   }
 
-  FUN_004a76e0(param_1,uVar6,iVar2 + 8);
+  playerobj_eval_refpt(param_1,uVar6,iVar2 + 8);
 
   *(undefined4 *)(iVar3 + 0xe8) = param_3;
 
@@ -5137,7 +5137,7 @@ switchD_004085cd_caseD_1:
 
       *(undefined4 *)((int)param_1 + 0x184) = 0;
 
-      iVar4 = FUN_004a6200(param_1);
+      iVar4 = meccbasepit_bldg_from_object(param_1);
 
       if (iVar4 == 0) {
 
@@ -5207,7 +5207,7 @@ LAB_0040892e:
 
       *(float *)(iVar3 + 0x14) = (float)fVar6;
 
-      iVar4 = FUN_004a6200(iVar3);
+      iVar4 = meccbasepit_bldg_from_object(iVar3);
 
       if (iVar4 == 0) {
 
@@ -5327,7 +5327,7 @@ LAB_004089de:
 
       }
 
-      iVar4 = FUN_004a6200(param_1);
+      iVar4 = meccbasepit_bldg_from_object(param_1);
 
       if (iVar4 == 0) {
 
@@ -5983,7 +5983,7 @@ void meccbaseitem_finish_building(int param_1)
 
   *(undefined4 *)(param_1 + 0xe4) = 4;
 
-  iVar3 = FUN_004a6200(param_1);
+  iVar3 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar3 == 0) {
 
@@ -6552,9 +6552,9 @@ void kabutoai_anim_update(int param_1,int param_2)
 
     if ((((*(int *)(iVar1 + 4) == 0xb) && (*(int *)(iVar1 + 0x274) != 0)) &&
 
-        ((iVar3 = FUN_004a6200(*(int *)(iVar1 + 0x274)), iVar3 != 0 ||
+        ((iVar3 = meccbasepit_bldg_from_object(*(int *)(iVar1 + 0x274)), iVar3 != 0 ||
 
-         (iVar3 = FUN_004a6290(*(undefined4 *)(iVar1 + 0x274)), iVar3 != 0)))) &&
+         (iVar3 = reaperbase_bldg_from_object(*(undefined4 *)(iVar1 + 0x274)), iVar3 != 0)))) &&
 
        ((*(int *)(iVar1 + 0x274) == *(int *)(param_1 + 0x274) && (*(int *)(iVar1 + 0xe4) == 0x37))))
 
@@ -7514,12 +7514,12 @@ undefined4 FUN_0040acc0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0040acf0 @ 0x0040ACF0 ===== */
+/* ===== meccbasepit_bldg_from_object @ 0x0040ACF0 ===== */
 /* PS2 candidate: meccbasepit_bldg_from_object (conf 0.767) */
 
 
 
-int FUN_0040acf0(int param_1)
+int meccbasepit_bldg_from_object(int param_1)
 
 
 
@@ -7574,7 +7574,7 @@ float10 FUN_0040ad30(int param_1)
 
   
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -9984,14 +9984,14 @@ LAB_0040d65a:
 
 }
 
-/* ===== FUN_0040d670 @ 0x0040D670 ===== */
+/* ===== camera_fov_update @ 0x0040D670 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: camera_fov_update (conf 0.303) */
 
 
 
-void FUN_0040d670(void)
+void camera_fov_update(void)
 
 
 
@@ -10822,7 +10822,7 @@ void charger_dust_fx(int param_1)
 
     if ((fVar2 < 11.0) && (11.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,2,local_30);
+      playerobj_eval_refpt(param_1,2,local_30);
 
       puVar5 = local_34;
 
@@ -10838,7 +10838,7 @@ void charger_dust_fx(int param_1)
 
     if ((fVar2 < 15.0) && (15.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,3,local_30);
+      playerobj_eval_refpt(param_1,3,local_30);
 
       puVar5 = local_34;
 
@@ -10854,7 +10854,7 @@ void charger_dust_fx(int param_1)
 
     if ((fVar2 < 19.0) && (19.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,4,local_30);
+      playerobj_eval_refpt(param_1,4,local_30);
 
       puVar5 = local_34;
 
@@ -10870,7 +10870,7 @@ void charger_dust_fx(int param_1)
 
     if ((fVar2 < 5.0) && (5.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,5,local_30);
+      playerobj_eval_refpt(param_1,5,local_30);
 
 LAB_0040e451:
 
@@ -10896,7 +10896,7 @@ LAB_0040e451:
 
     if ((fVar2 < 6.0) && (6.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,2,local_30);
+      playerobj_eval_refpt(param_1,2,local_30);
 
       puVar5 = local_34;
 
@@ -10912,7 +10912,7 @@ LAB_0040e451:
 
     if ((fVar2 < 8.0) && (8.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,3,local_30);
+      playerobj_eval_refpt(param_1,3,local_30);
 
       puVar5 = local_34;
 
@@ -10928,7 +10928,7 @@ LAB_0040e451:
 
     if ((fVar2 < 10.0) && (10.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,4,local_30);
+      playerobj_eval_refpt(param_1,4,local_30);
 
       puVar5 = local_34;
 
@@ -10944,7 +10944,7 @@ LAB_0040e451:
 
     if ((fVar2 < 3.0) && (3.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,5,local_30);
+      playerobj_eval_refpt(param_1,5,local_30);
 
       goto LAB_0040e451;
 
@@ -10956,7 +10956,7 @@ LAB_0040e451:
 
     if ((fVar2 < 26.0) && (26.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,2,local_30);
+      playerobj_eval_refpt(param_1,2,local_30);
 
       fx_get_free_effect__Fv();
 
@@ -10964,7 +10964,7 @@ LAB_0040e451:
 
     if ((fVar2 < 17.0) && (17.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,3,local_30);
+      playerobj_eval_refpt(param_1,3,local_30);
 
       fx_get_free_effect__Fv();
 
@@ -10972,7 +10972,7 @@ LAB_0040e451:
 
     if ((fVar2 < 51.0) && (51.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,4,local_30);
+      playerobj_eval_refpt(param_1,4,local_30);
 
       fx_get_free_effect__Fv();
 
@@ -10980,7 +10980,7 @@ LAB_0040e451:
 
     if ((fVar2 < 42.0) && (42.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,5,local_30);
+      playerobj_eval_refpt(param_1,5,local_30);
 
       fx_get_free_effect__Fv();
 
@@ -10994,7 +10994,7 @@ LAB_0040e451:
 
     if ((fVar2 < 10.0) && (10.0 <= fVar1)) {
 
-      FUN_004a76e0(param_1,6,local_30);
+      playerobj_eval_refpt(param_1,6,local_30);
 
       fx_get_free_effect__Fv();
 

@@ -2035,7 +2035,7 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
   pfVar1 = (float *)(param_1 + 0xa0);
 
-  FUN_004a76e0(*(int *)(iVar2 + 0x24),*(undefined4 *)(iVar2 + 0x28),pfVar1);
+  playerobj_eval_refpt(*(int *)(iVar2 + 0x24),*(undefined4 *)(iVar2 + 0x28),pfVar1);
 
   FUN_00414690(pfVar1,local_1c);
 
@@ -2637,7 +2637,7 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
       }
 
-      FUN_004a76e0(param_1,0,iVar4 + 0xa0);
+      playerobj_eval_refpt(param_1,0,iVar4 + 0xa0);
 
       FUN_00499280(iVar4);
 
@@ -2860,7 +2860,7 @@ int FUN_004d4760(int param_1,undefined4 param_2,float param_3)
 
   
 
-  FUN_004a76e0(param_1,param_2,local_c);
+  playerobj_eval_refpt(param_1,param_2,local_c);
 
   puVar3 = DAT_00632d6c;
 
@@ -3447,7 +3447,7 @@ void FUN_004d5810(int param_1,int param_2)
 
     *puVar1 = *puVar1 & 0xfffffffd;
 
-    FUN_004a76e0(param_2,5,param_1 + 0xa0);
+    playerobj_eval_refpt(param_2,5,param_1 + 0xa0);
 
     iVar2 = reaper_0052e4a0(param_1);
 
@@ -3959,7 +3959,7 @@ void reaper_spell_sound_1(int param_1,undefined4 *param_2,undefined4 param_3)
 
   if (*(int *)(param_1 + 0x274) != 0) {
 
-    FUN_004a76e0(param_1,2,&local_60);
+    playerobj_eval_refpt(param_1,2,&local_60);
 
     fVar4 = (float10)FUN_0050a490(&local_60,param_2);
 
@@ -4066,7 +4066,7 @@ void reaper_spell_sound_2(int param_1,int param_2,undefined4 param_3)
 
               (local_44,param_1 + 0x294,*(int *)(param_1 + 0x2dc) + 0x88);
 
-    FUN_004a76e0(param_1,2,&uStack_50);
+    playerobj_eval_refpt(param_1,2,&uStack_50);
 
     uStack_34 = uStack_50;
 
@@ -4201,7 +4201,7 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
       reaper_00530bd0(iVar6,0,1,0,0x23,&param_1);
 
-      FUN_004b7450(iVar6,0x23,4,&param_1);
+      reaper_animselect(iVar6,0x23,4,&param_1);
 
     }
 
@@ -4245,7 +4245,7 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
     *puVar1 = *puVar1 & 0xfffffffd;
 
-    FUN_004a76e0(iVar2,5,iVar6 + 0xa0);
+    playerobj_eval_refpt(iVar2,5,iVar6 + 0xa0);
 
     iVar6 = reaper_0052e4a0(iVar6);
 

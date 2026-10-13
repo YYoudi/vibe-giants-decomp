@@ -3952,7 +3952,7 @@ void FUN_0046f050(int param_1)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  FUN_004a76e0(*(undefined4 *)(iVar4 + 4),1,local_160);
+  playerobj_eval_refpt(*(undefined4 *)(iVar4 + 4),1,local_160);
 
   for (puVar7 = DAT_00632d6c; puVar7 != (undefined4 *)0x0; puVar7 = (undefined4 *)*puVar7) {
 
@@ -4083,9 +4083,9 @@ void sound_sequence_alloc(int param_1,int param_2)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  FUN_004a76e0(*(undefined4 *)(iVar1 + 4),0,local_c);
+  playerobj_eval_refpt(*(undefined4 *)(iVar1 + 4),0,local_c);
 
-  FUN_004a76e0(iVar2,0,local_18);
+  playerobj_eval_refpt(iVar2,0,local_18);
 
   *(float *)(iVar2 + 0xf4) = *(float *)(iVar2 + 200) + 180.0;
 

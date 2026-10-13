@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (84 named) — decompiled, names from PS2 symbols
+ * 186 functions (85 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2705,7 +2705,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
           }
 
-          FUN_004a76e0(param_2,8,param_1 + param_1[0x29] * 8 + 6);
+          playerobj_eval_refpt(param_2,8,param_1 + param_1[0x29] * 8 + 6);
 
           if ((float)param_1[(param_1[0x29] + 1) * 8] < 0.0) {
 
@@ -2725,7 +2725,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
           }
 
-          FUN_004a76e0(param_2,9,param_1 + param_1[0x29] * 8 + 6);
+          playerobj_eval_refpt(param_2,9,param_1 + param_1[0x29] * 8 + 6);
 
           if ((float)param_1[(param_1[0x29] + 1) * 8] < 0.0) {
 
@@ -2765,7 +2765,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
             }
 
-            FUN_004a76e0(param_2,0,param_1 + param_1[0x29] * 8 + 6);
+            playerobj_eval_refpt(param_2,0,param_1 + param_1[0x29] * 8 + 6);
 
             if ((float)param_1[(param_1[0x29] + 1) * 8] < 0.0) {
 
@@ -2795,7 +2795,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
             }
 
-            FUN_004a76e0(param_2,1,param_1 + param_1[0x29] * 8 + 6);
+            playerobj_eval_refpt(param_2,1,param_1 + param_1[0x29] * 8 + 6);
 
             if ((float)param_1[(param_1[0x29] + 1) * 8] < 0.0) {
 
@@ -2825,7 +2825,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
             }
 
-            FUN_004a76e0(param_2,0xb,param_1 + param_1[0x29] * 8 + 6);
+            playerobj_eval_refpt(param_2,0xb,param_1 + param_1[0x29] * 8 + 6);
 
             if ((float)param_1[(param_1[0x29] + 1) * 8] < 0.0) {
 
@@ -2855,7 +2855,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
             }
 
-            FUN_004a76e0(param_2,0xc,param_1 + param_1[0x29] * 8 + 6);
+            playerobj_eval_refpt(param_2,0xc,param_1 + param_1[0x29] * 8 + 6);
 
             if ((float)param_1[(param_1[0x29] + 1) * 8] < 0.0) {
 
@@ -2909,7 +2909,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
       }
 
-      FUN_004a76e0(param_2,8,param_1 + param_1[0x29] * 8 + 6);
+      playerobj_eval_refpt(param_2,8,param_1 + param_1[0x29] * 8 + 6);
 
       if ((float)param_1[(param_1[0x29] + 1) * 8] < 0.0) {
 
@@ -2929,7 +2929,7 @@ int FUN_00513fa0(int *param_1,int param_2)
 
       }
 
-      FUN_004a76e0(param_2,9,param_1 + param_1[0x29] * 8 + 6);
+      playerobj_eval_refpt(param_2,9,param_1 + param_1[0x29] * 8 + 6);
 
       fVar1 = 1.0;
 
@@ -6277,12 +6277,12 @@ void xform_p3d_mat33(float *param_1,float *param_2,float *param_3,float *param_4
 
 }
 
-/* ===== FUN_005170f0 @ 0x005170F0 ===== */
+/* ===== xformobj_p3d_world @ 0x005170F0 ===== */
 /* PS2 candidate: object_get_ref_point__FP6OBJECTP7f32vec3Ui (conf 0.408) */
 
 
 
-void FUN_005170f0(int param_1,float *param_2,float *param_3)
+void xformobj_p3d_world(int param_1,float *param_2,float *param_3)
 
 
 

@@ -291,7 +291,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
   if ((in_stack_00000008 & 0x10) == 0) {
 
-    local_254 = FUN_00496b10(&local_25c);
+    local_254 = object_get_num_objects(&local_25c);
 
     if ((float)local_254 / (float)local_25c <= *(float *)(DAT_00632ed8 + 0x13e0)) {
 
@@ -423,7 +423,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
   }
 
-  local_258 = (float)FUN_00496b10(&local_254);
+  local_258 = (float)object_get_num_objects(&local_254);
 
   local_25c = *in_stack_0000000c;
 

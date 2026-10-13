@@ -169,11 +169,11 @@ void path_world_init__Fv(void)
 
               local_34 = 0;
 
-              FUN_005170f0(iVar2,&local_3c,iVar1);
+              xformobj_p3d_world(iVar2,&local_3c,iVar1);
 
               local_3c = *(undefined4 *)(iVar4 + 0x50);
 
-              FUN_005170f0(iVar2,&local_3c,iVar1 + 0x18);
+              xformobj_p3d_world(iVar2,&local_3c,iVar1 + 0x18);
 
               terrain_grid_lookup(iVar1,iVar1 + 0xc,iVar1 + 0x10,iVar1 + 0x14);
 

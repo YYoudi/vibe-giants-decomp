@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (51 named) — decompiled, names from PS2 symbols
+ * 142 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -116,20 +116,20 @@ void scenerio_start_index__Fi(int p0)
 
   *(int *)(DAT_006330e4 + 0x4a60) = p0;
 
-  FUN_004909f0();
+  scenerio_start_mission__Fv();
 
   return;
 
 }
 
-/* ===== FUN_004909f0 @ 0x004909F0 ===== */
+/* ===== scenerio_start_mission__Fv @ 0x004909F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: scenerio_start_mission__Fv (conf 0.418) */
 
 
 
-void FUN_004909f0(void)
+void scenerio_start_mission__Fv(void)
 
 
 
@@ -867,7 +867,7 @@ undefined4 FUN_00490fe0(void)
 
           case 2:
 
-            FUN_004909f0();
+            scenerio_start_mission__Fv();
 
             return 1;
 
@@ -5243,7 +5243,7 @@ LAB_004947ed:
 
       *(int *)(DAT_006330e4 + 0x4a60) = iVar2 + -1;
 
-      FUN_004909f0();
+      scenerio_start_mission__Fv();
 
       camera_attach_path_object(*(undefined4 *)(DAT_00632a88 + 4));
 
@@ -6977,12 +6977,12 @@ void anim_select_user(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00496b10 @ 0x00496B10 ===== */
+/* ===== object_get_num_objects @ 0x00496B10 ===== */
 /* PS2 candidate: object_get_num_objects (conf 0.75) */
 
 
 
-undefined4 FUN_00496b10(undefined4 *param_1)
+undefined4 object_get_num_objects(undefined4 *param_1)
 
 
 
@@ -10963,7 +10963,7 @@ void FUN_0049a1f0(int param_1)
 
     local_1c = local_24;
 
-    FUN_005170f0(param_1,&local_24,&local_30);
+    xformobj_p3d_world(param_1,&local_24,&local_30);
 
     local_18[3] = local_30 + 1.0;
 
@@ -11035,7 +11035,7 @@ void FUN_0049a1f0(int param_1)
 
       }
 
-      FUN_005170f0(param_1,&local_24,&local_30);
+      xformobj_p3d_world(param_1,&local_24,&local_30);
 
       if (uVar2 == 0) {
 
@@ -11117,12 +11117,12 @@ void FUN_0049a1f0(int param_1)
 
 }
 
-/* ===== FUN_0049a3c0 @ 0x0049A3C0 ===== */
+/* ===== collide_bbox_bbox @ 0x0049A3C0 ===== */
 /* PS2 candidate: collide_bbox_bbox (conf 0.782) */
 
 
 
-undefined4 FUN_0049a3c0(float *param_1,float *param_2)
+undefined4 collide_bbox_bbox(float *param_1,float *param_2)
 
 
 
@@ -11180,12 +11180,12 @@ undefined4 FUN_0049a3c0(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0049a450 @ 0x0049A450 ===== */
+/* ===== collide_ptsize_bbox @ 0x0049A450 ===== */
 /* PS2 candidate: collide_ptsize_bbox (conf 0.714) */
 
 
 
-undefined4 FUN_0049a450(float *param_1,float param_2,float *param_3)
+undefined4 collide_ptsize_bbox(float *param_1,float param_2,float *param_3)
 
 
 
@@ -12500,7 +12500,7 @@ void FUN_0049bc90(int param_1,int param_2,undefined4 param_3)
 
   local_4 = *(undefined4 *)(iVar1 + 0x30);
 
-  FUN_005170f0(param_1,&local_c,param_3);
+  xformobj_p3d_world(param_1,&local_c,param_3);
 
   return;
 
@@ -12737,7 +12737,7 @@ int FUN_0049bf60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefi
 
     local_1c = param_4[2];
 
-    FUN_005170f0(param_3,&local_24,param_4);
+    xformobj_p3d_world(param_3,&local_24,param_4);
 
   }
 
@@ -13843,7 +13843,7 @@ void partyhouse_exit_dlog(void)
 
   DAT_00632aeb = 0;
 
-  FUN_0040d670();
+  camera_fov_update();
 
   dialog_level_pop(&LAB_0049f2d0);
 

@@ -1,0 +1,24 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b7450,FUN_004b7450,,reaper_animselect,0.9,promote-auto,score=2.58;caller+callee;callers=['reaper_spell_big']
+004c1ee0,FUN_004c1ee0,,reaper_finish_smartie_grab__FP6OBJECT,0.9,promote-auto,score=2.54;caller+callee;callers=['reaper_cast_cloak_firecircle']
+00503970,FUN_00503970,,teammecc_set_slave_goal__FP6OBJECTi,0.9,promote-auto,score=2.50;caller+callee;callers=['teammecc_setup_enemies__FP6OBJECTi']
+004c0fc0,FUN_004c0fc0,,reaper_tornado_create,0.9,promote-auto,score=2.49;caller+callee;callers=['reaper_cast_cloak_firecircle']
+004c1f80,FUN_004c1f80,,reaper_update_spell_status__FP6OBJECT,0.9,promote-auto,score=2.46;caller+callee;callers=['reaper_cast_cloak_firecircle']
+004bea70,FUN_004bea70,,reaper_fire_spell__FP6OBJECTiP3P3DT0i,0.9,promote-auto,"score=2.44;caller+callee;callers=['reaper_cast_cloak_firecircle', 'reaper_ability_playersound']"
+004c2140,FUN_004c2140,,reaper_finish_teleport,0.9,promote-auto,score=2.43;caller+callee;callers=['reaper_cast_cloak_firecircle']
+004909f0,FUN_004909f0,,scenerio_start_mission__Fv,0.9,promote-auto,"score=2.42;caller+callee;callers=['scenerio_start_index__Fi', 'ambient_streams_handler']"
+004c03a0,FUN_004c03a0,,reaper_finish_cloak,0.9,promote-auto,score=2.40;caller+callee;callers=['reaper_cast_cloak_firecircle']
+0049a3c0,FUN_0049a3c0,,collide_bbox_bbox,0.9,promote-auto,"score=1.78;caller;callers=['collide_objects', 'obj_visibility_test']"
+00455b70,FUN_00455b70,,project_cursor_to_object,0.9,promote-auto,"score=1.78;caller;callers=['editor_cursor_pick_point', 'mecc_fire_logic__FP6OBJECT']"
+0053faa0,FUN_0053faa0,,GEO_QuatDivide,0.9,promote-auto,score=1.77;callee;callers=[]
+00540500,FUN_00540500,,NAM_NameFindByHandle,0.9,promote-auto,score=1.77;caller;callers=['nam_lookup_by_handle']
+004b6f60,FUN_004b6f60,,meccbasepit_bldg_from_object,0.9,promote-auto,"score=1.77;caller;callers=['objtype_setup_mecc', 'bldg_get_bldg_name']"
+0040acf0,FUN_0040acf0,,meccbasepit_bldg_from_object,0.9,promote-auto,"score=1.77;caller;callers=['objtype_setup_mecc', 'bldg_get_bldg_name']"
+00496b10,FUN_00496b10,,object_get_num_objects,0.9,promote-auto,score=1.75;caller;callers=['fx_get_free_effect__Fv']
+0040d670,FUN_0040d670,,camera_fov_update,0.9,promote-auto,"score=1.72;caller;callers=['partyhouse_exit_dlog', 'game_mode_update']"
+0049a450,FUN_0049a450,,collide_ptsize_bbox,0.9,promote-auto,score=1.71;caller;callers=['collide_objects']
+004a76e0,FUN_004a76e0,,playerobj_eval_refpt,0.9,promote-auto,"score=1.71;caller;callers=['obj_impact_effects', 'charger_dust_fx']"
+004a6290,FUN_004a6290,,reaperbase_bldg_from_object,0.9,promote-auto,"score=1.71;caller;callers=['kabutoai_anim_update', 'dlog_pop_user']"
+004a6200,FUN_004a6200,,meccbasepit_bldg_from_object,0.9,promote-auto,"score=1.71;caller;callers=['meccbaseitem_finish_building', 'kabutoai_anim_update']"
+004c1de0,FUN_004c1de0,,reaper_can_do_spell_anim__FP6OBJECT,0.9,promote-auto,score=1.71;caller;callers=['reaper_cast_cloak_firecircle']
+005170f0,FUN_005170f0,,xformobj_p3d_world,0.9,promote-auto,"score=1.71;caller;callers=['main_cleaner_0040f750', 'collgrid_collide_c']"

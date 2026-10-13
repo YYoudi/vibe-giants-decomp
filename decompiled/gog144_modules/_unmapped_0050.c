@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (32 named) — decompiled, names from PS2 symbols
+ * 87 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -2806,7 +2806,7 @@ LAB_0050203c:
 
       do {
 
-        FUN_00503970(param_1,iVar11);
+        teammecc_set_slave_goal__FP6OBJECTi(param_1,iVar11);
 
         iVar11 = iVar11 + 1;
 
@@ -3194,7 +3194,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     else {
 
-      FUN_004a76e0(iVar10,1,&local_c);
+      playerobj_eval_refpt(iVar10,1,&local_c);
 
     }
 
@@ -4071,12 +4071,12 @@ void FUN_005035c0(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_00503970 @ 0x00503970 ===== */
+/* ===== teammecc_set_slave_goal__FP6OBJECTi @ 0x00503970 ===== */
 /* PS2 candidate: teammecc_set_slave_goal__FP6OBJECTi (conf 0.497) */
 
 
 
-void FUN_00503970(int param_1,int param_2)
+void teammecc_set_slave_goal__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -4633,7 +4633,7 @@ LAB_00504094:
 
     else {
 
-      FUN_004a76e0(iVar4,1,&local_c);
+      playerobj_eval_refpt(iVar4,1,&local_c);
 
     }
 
@@ -12294,7 +12294,7 @@ switchD_0050ca70_caseD_15:
 
       iVar9 = object_allocate_type(0x5a,0);
 
-      FUN_004a76e0(param_1,0,iVar9 + 0xa0);
+      playerobj_eval_refpt(param_1,0,iVar9 + 0xa0);
 
       FUN_00499280(iVar9);
 
@@ -13644,7 +13644,7 @@ LAB_0050e133:
 
     if ((pfVar1[1] != 0.0) &&
 
-       (iVar6 = FUN_0049a3c0(iVar9 + 0x27c,(int)pfVar1[1] + 0x27c), iVar6 != 0)) {
+       (iVar6 = collide_bbox_bbox(iVar9 + 0x27c,(int)pfVar1[1] + 0x27c), iVar6 != 0)) {
 
       FUN_00456d00(pfVar1[1],0,1,0x40800000,0,0);
 

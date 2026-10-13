@@ -94,9 +94,9 @@ LAB_0041906f:
 
       local_90 = *param_4;
 
-      iVar8 = FUN_004a6200(param_1);
+      iVar8 = meccbasepit_bldg_from_object(param_1);
 
-      if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+      if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
         iVar8 = FUN_004a6220(param_1);
 
@@ -126,9 +126,9 @@ LAB_0041906f:
 
     }
 
-    iVar8 = FUN_004a6200(param_1);
+    iVar8 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+    if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
       fVar4 = *pfVar3;
 
@@ -144,9 +144,9 @@ LAB_0041906f:
 
     if (*param_4 <= fVar4) {
 
-      iVar8 = FUN_004a6200(param_1);
+      iVar8 = meccbasepit_bldg_from_object(param_1);
 
-      if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+      if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
         fVar4 = *pfVar3;
 
@@ -162,9 +162,9 @@ LAB_0041906f:
 
         pfVar3 = *(float **)(param_1 + 0x100);
 
-        iVar8 = FUN_004a6200(param_1);
+        iVar8 = meccbasepit_bldg_from_object(param_1);
 
-        if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+        if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
           local_94 = *pfVar3;
 
@@ -180,9 +180,9 @@ LAB_0041906f:
 
         pfVar3 = *(float **)(param_1 + 0x100);
 
-        iVar8 = FUN_004a6200(param_1);
+        iVar8 = meccbasepit_bldg_from_object(param_1);
 
-        if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+        if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
           fVar4 = *pfVar3;
 
@@ -204,9 +204,9 @@ LAB_0041906f:
 
           pfVar3 = *(float **)(param_1 + 0x100);
 
-          iVar8 = FUN_004a6200(param_1);
+          iVar8 = meccbasepit_bldg_from_object(param_1);
 
-          if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+          if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
             local_90 = *pfVar3;
 
@@ -222,9 +222,9 @@ LAB_0041906f:
 
         pfVar3 = *(float **)(param_1 + 0x100);
 
-        iVar8 = FUN_004a6200(param_1);
+        iVar8 = meccbasepit_bldg_from_object(param_1);
 
-        if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+        if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
           fVar4 = *pfVar3;
 
@@ -240,9 +240,9 @@ LAB_0041906f:
 
         pfVar3 = *(float **)(param_1 + 0x100);
 
-        iVar8 = FUN_004a6200(param_1);
+        iVar8 = meccbasepit_bldg_from_object(param_1);
 
-        if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+        if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
           iVar8 = FUN_004a6220(param_1);
 
@@ -264,9 +264,9 @@ LAB_0041906f:
 
         pfVar3 = *(float **)(param_1 + 0x100);
 
-        iVar8 = FUN_004a6200(param_1);
+        iVar8 = meccbasepit_bldg_from_object(param_1);
 
-        if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+        if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
           fVar4 = *pfVar3;
 
@@ -292,9 +292,9 @@ LAB_0041906f:
 
     }
 
-    iVar8 = FUN_004a6200(param_1);
+    iVar8 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+    if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
       local_94 = *pfVar3;
 
@@ -308,11 +308,11 @@ LAB_0041906f:
 
     local_94 = *param_4 - local_94;
 
-    iVar8 = FUN_004a6200(param_1);
+    iVar8 = meccbasepit_bldg_from_object(param_1);
 
     if ((iVar8 == 0) && (iVar8 = FUN_004a6220(param_1), iVar8 == 0)) {
 
-      iVar8 = FUN_004a6290(param_1);
+      iVar8 = reaperbase_bldg_from_object(param_1);
 
       if ((iVar8 != 0) || (iVar8 = FUN_004a6300(param_1), iVar8 != 0)) {
 
@@ -338,9 +338,9 @@ LAB_0041927a:
 
     pfVar3 = *(float **)(param_1 + 0x100);
 
-    iVar8 = FUN_004a6200(param_1);
+    iVar8 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+    if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
       fVar4 = *pfVar3;
 
@@ -356,9 +356,9 @@ LAB_0041927a:
 
       pfVar3 = *(float **)(param_1 + 0x100);
 
-      iVar8 = FUN_004a6200(param_1);
+      iVar8 = meccbasepit_bldg_from_object(param_1);
 
-      if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+      if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
         local_94 = *pfVar3;
 
@@ -376,9 +376,9 @@ LAB_0041927a:
 
     pfVar3 = *(float **)(param_1 + 0x100);
 
-    iVar8 = FUN_004a6200(param_1);
+    iVar8 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+    if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
       local_90 = *pfVar3;
 
@@ -394,9 +394,9 @@ LAB_0041927a:
 
     pfVar3 = *(float **)(param_1 + 0x100);
 
-    iVar8 = FUN_004a6200(param_1);
+    iVar8 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar8 == 0) && (iVar8 = FUN_004a6290(param_1), iVar8 == 0)) {
+    if ((iVar8 == 0) && (iVar8 = reaperbase_bldg_from_object(param_1), iVar8 == 0)) {
 
       iVar8 = FUN_004a6220(param_1);
 
@@ -574,7 +574,7 @@ LAB_004195d2:
 
     fVar4 = *param_4;
 
-    iVar9 = FUN_004a6200(param_1);
+    iVar9 = meccbasepit_bldg_from_object(param_1);
 
     if (iVar9 == 0) {
 
@@ -592,11 +592,11 @@ LAB_004195d2:
 
     fVar4 = *param_4;
 
-    iVar9 = FUN_004a6200(param_1);
+    iVar9 = meccbasepit_bldg_from_object(param_1);
 
     if (iVar9 == 0) {
 
-      iVar9 = FUN_004a6290(param_1);
+      iVar9 = reaperbase_bldg_from_object(param_1);
 
       if (iVar9 != 0) {
 
@@ -782,7 +782,7 @@ LAB_004195d2:
 
     if (iVar8 != 0) {
 
-      iVar8 = FUN_004a6200(param_1);
+      iVar8 = meccbasepit_bldg_from_object(param_1);
 
       if (iVar8 == 0) {
 
@@ -1054,7 +1054,7 @@ LAB_004195d2:
 
         *(uint *)(iVar9 + (int)local_90) = (uint)bVar2;
 
-        iVar9 = FUN_004a6200(param_1);
+        iVar9 = meccbasepit_bldg_from_object(param_1);
 
         iVar10 = (uint)bVar1 * 0x58;
 

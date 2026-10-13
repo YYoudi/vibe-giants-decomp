@@ -82,19 +82,19 @@ void collgrid_collide_c(undefined4 param_1,undefined4 *param_2,int *param_3)
 
   local_c = param_2[2];
 
-  FUN_005170f0(param_1,&local_14,&local_2c);
+  xformobj_p3d_world(param_1,&local_14,&local_2c);
 
   local_14 = param_2[3];
 
-  FUN_005170f0(param_1,&local_14,&local_44);
+  xformobj_p3d_world(param_1,&local_14,&local_44);
 
   local_10 = param_2[4];
 
-  FUN_005170f0(param_1,&local_14,&local_38);
+  xformobj_p3d_world(param_1,&local_14,&local_38);
 
   local_14 = *param_2;
 
-  FUN_005170f0(param_1,&local_14,&local_20);
+  xformobj_p3d_world(param_1,&local_14,&local_20);
 
   fVar2 = local_28;
 
@@ -1725,7 +1725,7 @@ void collide_objects(int param_1)
 
               }
 
-              iVar7 = FUN_0049a3c0(pfVar8,iVar5 + 0x27c);
+              iVar7 = collide_bbox_bbox(pfVar8,iVar5 + 0x27c);
 
               if (iVar7 != 0) {
 
@@ -1855,7 +1855,7 @@ void collide_objects(int param_1)
 
                     }
 
-                    iVar7 = FUN_0049a450(&local_ac,fVar2,local_6c);
+                    iVar7 = collide_ptsize_bbox(&local_ac,fVar2,local_6c);
 
                     if (iVar7 != 0) {
 
@@ -1917,7 +1917,7 @@ void collide_objects(int param_1)
 
                       }
 
-                      FUN_005170f0(iVar5,&local_ac,param_1 + 0xa0);
+                      xformobj_p3d_world(iVar5,&local_ac,param_1 + 0xa0);
 
                       local_b8 = 1;
 
@@ -4453,7 +4453,7 @@ LAB_00415d36:
 
           fVar3 = pfVar8[4] / *(float *)(iVar1 + 0xc4);
 
-          iVar7 = FUN_0049a450(&local_a8,fVar3,local_78);
+          iVar7 = collide_ptsize_bbox(&local_a8,fVar3,local_78);
 
           if (iVar7 != 0) {
 
@@ -4517,7 +4517,7 @@ LAB_00415d36:
 
               }
 
-              FUN_005170f0(iVar1,&local_a8,&local_94);
+              xformobj_p3d_world(iVar1,&local_a8,&local_94);
 
               fVar3 = ((local_94 - *pfVar8) + *(float *)(param_1 + 0xa0)) -
 
@@ -4728,7 +4728,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
        (((*(uint *)(iVar7 + 0x1c8) & 0x1008) != 0 &&
 
-        (local_40 = iVar7, iVar5 = FUN_0049a3c0(&local_58,iVar7 + 0x27c), iVar5 != 0)))) {
+        (local_40 = iVar7, iVar5 = collide_bbox_bbox(&local_58,iVar7 + 0x27c), iVar5 != 0)))) {
 
       xform_p3d_world_mat(iVar7,local_24);
 
@@ -5100,11 +5100,11 @@ LAB_00416450:
 
   DAT_00632928 = DAT_00632e88;
 
-  iVar1 = FUN_004a6200(DAT_00632bbc);
+  iVar1 = meccbasepit_bldg_from_object(DAT_00632bbc);
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6290(DAT_00632bbc);
+    iVar1 = reaperbase_bldg_from_object(DAT_00632bbc);
 
     if (iVar1 != 0) {
 
@@ -5173,11 +5173,11 @@ void dlog_pop_user(void)
 
   DAT_00632bb0 = 0;
 
-  iVar3 = FUN_004a6200(iVar1);
+  iVar3 = meccbasepit_bldg_from_object(iVar1);
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6290(iVar1);
+    iVar3 = reaperbase_bldg_from_object(iVar1);
 
     if (iVar3 != 0) {
 
@@ -5232,11 +5232,11 @@ void reaper_lock_short(int param_1,int param_2,int param_3,int param_4)
 
   
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6290(param_1);
+    iVar1 = reaperbase_bldg_from_object(param_1);
 
     if (iVar1 != 0) {
 
@@ -5279,7 +5279,7 @@ void FUN_00416a30(undefined4 param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -5571,9 +5571,9 @@ int FUN_004177a0(int param_1)
 
     iVar1 = puVar2[3];
 
-    iVar3 = FUN_004a6200(iVar1);
+    iVar3 = meccbasepit_bldg_from_object(iVar1);
 
-    if (((iVar3 != 0) || (iVar3 = FUN_004a6290(iVar1), iVar3 != 0)) &&
+    if (((iVar3 != 0) || (iVar3 = reaperbase_bldg_from_object(iVar1), iVar3 != 0)) &&
 
        (*(int *)(iVar1 + 0x18c) == param_1)) break;
 
@@ -5596,7 +5596,7 @@ void FUN_004177f0(undefined4 param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -5606,7 +5606,7 @@ void FUN_004177f0(undefined4 param_1,undefined4 param_2)
 
   }
 
-  iVar1 = FUN_004a6290(param_1);
+  iVar1 = reaperbase_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -5687,7 +5687,7 @@ undefined4 obj_maxspeed_lookup(float param_1,float param_2)
 
   uVar5 = 0;
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar4 == 0) {
 
@@ -5695,7 +5695,7 @@ undefined4 obj_maxspeed_lookup(float param_1,float param_2)
 
     if (iVar4 != 0) goto LAB_004178ce;
 
-    iVar4 = FUN_004a6290(param_1);
+    iVar4 = reaperbase_bldg_from_object(param_1);
 
     if (iVar4 != 0) {
 
@@ -5729,11 +5729,11 @@ LAB_004178d4:
 
   pfVar2 = *(float **)(iVar3 + 0x100);
 
-  iVar4 = FUN_004a6200(iVar3);
+  iVar4 = meccbasepit_bldg_from_object(iVar3);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_004a6290(iVar3);
+    iVar4 = reaperbase_bldg_from_object(iVar3);
 
     if (iVar4 != 0) goto LAB_00417900;
 
@@ -5753,11 +5753,11 @@ LAB_00417900:
 
     pfVar2 = *(float **)(iVar3 + 0x100);
 
-    iVar4 = FUN_004a6200(iVar3);
+    iVar4 = meccbasepit_bldg_from_object(iVar3);
 
     if (iVar4 == 0) {
 
-      iVar4 = FUN_004a6290(iVar3);
+      iVar4 = reaperbase_bldg_from_object(iVar3);
 
       if (iVar4 != 0) goto LAB_00417945;
 
@@ -5781,11 +5781,11 @@ LAB_00417945:
 
   pfVar2 = *(float **)(iVar3 + 0x100);
 
-  iVar4 = FUN_004a6200(iVar3);
+  iVar4 = meccbasepit_bldg_from_object(iVar3);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_004a6290(iVar3);
+    iVar4 = reaperbase_bldg_from_object(iVar3);
 
     if (iVar4 != 0) goto LAB_00417980;
 
@@ -5805,11 +5805,11 @@ LAB_00417980:
 
   pfVar2 = *(float **)(iVar3 + 0x100);
 
-  iVar4 = FUN_004a6200(iVar3);
+  iVar4 = meccbasepit_bldg_from_object(iVar3);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_004a6290(iVar3);
+    iVar4 = reaperbase_bldg_from_object(iVar3);
 
     if (iVar4 == 0) {
 
@@ -5880,11 +5880,11 @@ float10 obj_speed_clamp(float param_1,float param_2)
 
   pfVar2 = *(float **)((int)param_1 + 0x100);
 
-  iVar5 = FUN_004a6200(param_1);
+  iVar5 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_004a6290(param_1);
+    iVar5 = reaperbase_bldg_from_object(param_1);
 
     if (iVar5 != 0) goto LAB_00417a7a;
 
@@ -5910,11 +5910,11 @@ LAB_00417a7a:
 
     pfVar2 = *(float **)((int)param_1 + 0x100);
 
-    iVar5 = FUN_004a6200(param_1);
+    iVar5 = meccbasepit_bldg_from_object(param_1);
 
     if (iVar5 == 0) {
 
-      iVar5 = FUN_004a6290(param_1);
+      iVar5 = reaperbase_bldg_from_object(param_1);
 
       if (iVar5 == 0) {
 
@@ -5934,11 +5934,11 @@ LAB_00417acb:
 
   pfVar2 = *(float **)(iVar4 + 0x100);
 
-  iVar5 = FUN_004a6200(iVar4);
+  iVar5 = meccbasepit_bldg_from_object(iVar4);
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_004a6290(iVar4);
+    iVar5 = reaperbase_bldg_from_object(iVar4);
 
     if (iVar5 != 0) goto LAB_00417aef;
 
@@ -5958,11 +5958,11 @@ LAB_00417aef:
 
   pfVar2 = *(float **)(iVar4 + 0x100);
 
-  iVar5 = FUN_004a6200(iVar4);
+  iVar5 = meccbasepit_bldg_from_object(iVar4);
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_004a6290(iVar4);
+    iVar5 = reaperbase_bldg_from_object(iVar4);
 
     if (iVar5 != 0) goto LAB_00417b5a;
 
@@ -6004,11 +6004,11 @@ LAB_00417b5a:
 
   pfVar2 = *(float **)(iVar4 + 0x100);
 
-  iVar5 = FUN_004a6200(iVar4);
+  iVar5 = meccbasepit_bldg_from_object(iVar4);
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_004a6290(iVar4);
+    iVar5 = reaperbase_bldg_from_object(iVar4);
 
     if (iVar5 != 0) goto LAB_00417ba7;
 
@@ -6028,11 +6028,11 @@ LAB_00417ba7:
 
     puVar3 = *(undefined4 **)(iVar4 + 0x100);
 
-    iVar5 = FUN_004a6200(iVar4);
+    iVar5 = meccbasepit_bldg_from_object(iVar4);
 
     if (iVar5 == 0) {
 
-      iVar5 = FUN_004a6290(iVar4);
+      iVar5 = reaperbase_bldg_from_object(iVar4);
 
       if (iVar5 == 0) {
 
@@ -6093,11 +6093,11 @@ float10 FUN_00417f20(int param_1)
 
   pfVar1 = *(float **)(param_1 + 0x100);
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6290(param_1);
+    iVar2 = reaperbase_bldg_from_object(param_1);
 
     if (iVar2 == 0) {
 
@@ -6134,11 +6134,11 @@ undefined4 FUN_00417f60(int param_1)
 
   
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
   if ((iVar4 == 0) && (iVar4 = FUN_004a6220(param_1), iVar4 == 0)) {
 
-    iVar4 = FUN_004a6290(param_1);
+    iVar4 = reaperbase_bldg_from_object(param_1);
 
     if ((iVar4 == 0) && (iVar4 = FUN_004a6300(param_1), iVar4 == 0)) {
 
@@ -6164,9 +6164,9 @@ undefined4 FUN_00417f60(int param_1)
 
   fVar1 = (float)((float10)*(float *)(DAT_00632ed8 + 0xb80) * fVar5 * (float10)0.01);
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_004a6290(param_1), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = reaperbase_bldg_from_object(param_1), iVar4 == 0)) {
 
     fVar2 = *pfVar3;
 
@@ -6207,9 +6207,9 @@ float10 FUN_00418010(int param_1,float param_2)
 
   pfVar1 = *(float **)(param_1 + 0x100);
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
-  if ((iVar2 == 0) && (iVar2 = FUN_004a6290(param_1), iVar2 == 0)) {
+  if ((iVar2 == 0) && (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
     iVar2 = FUN_004a6220(param_1);
 
@@ -6262,9 +6262,9 @@ void FUN_004180a0(int param_1,float param_2)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
-  if ((iVar2 != 0) || (iVar2 = FUN_004a6290(param_1), iVar2 != 0)) {
+  if ((iVar2 != 0) || (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 != 0)) {
 
     *(float *)(iVar1 + 0x5a0) = param_2;
 
@@ -6323,7 +6323,7 @@ float10 FUN_00418170(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 == 0) {
 
@@ -6331,7 +6331,7 @@ float10 FUN_00418170(undefined4 param_1)
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_004a6290(param_1);
+      iVar1 = reaperbase_bldg_from_object(param_1);
 
       if (iVar1 == 0) {
 
@@ -6388,9 +6388,9 @@ undefined4 FUN_004181d0(float param_1,int param_2)
 
     pfVar1 = *(float **)(iVar4 + 0x100);
 
-    iVar3 = FUN_004a6200(iVar4);
+    iVar3 = meccbasepit_bldg_from_object(iVar4);
 
-    if ((iVar3 == 0) && (iVar4 = FUN_004a6290(iVar4), iVar4 == 0)) {
+    if ((iVar3 == 0) && (iVar4 = reaperbase_bldg_from_object(iVar4), iVar4 == 0)) {
 
       param_1 = *pfVar1;
 
@@ -6404,11 +6404,11 @@ undefined4 FUN_004181d0(float param_1,int param_2)
 
     uVar2 = *(undefined4 *)(param_2 * 0x1c + 0x20 + iVar5);
 
-    iVar5 = FUN_004a6200(uVar2);
+    iVar5 = meccbasepit_bldg_from_object(uVar2);
 
     if ((iVar5 == 0) && (iVar5 = FUN_004a6220(uVar2), iVar5 == 0)) {
 
-      iVar5 = FUN_004a6290(uVar2);
+      iVar5 = reaperbase_bldg_from_object(uVar2);
 
       if ((iVar5 == 0) && (iVar5 = FUN_004a6300(uVar2), iVar5 == 0)) {
 
@@ -6473,11 +6473,11 @@ undefined4 FUN_00418380(float param_1,int param_2)
 
   }
 
-  iVar3 = FUN_004a6200(iVar4);
+  iVar3 = meccbasepit_bldg_from_object(iVar4);
 
   if ((iVar3 == 0) && (iVar3 = FUN_004a6220(iVar4), iVar3 == 0)) {
 
-    iVar3 = FUN_004a6290(iVar4);
+    iVar3 = reaperbase_bldg_from_object(iVar4);
 
     if ((iVar3 == 0) && (iVar3 = FUN_004a6300(iVar4), iVar3 == 0)) {
 
@@ -6511,9 +6511,9 @@ LAB_004183f6:
 
   pfVar2 = *(float **)(iVar5 + 0x100);
 
-  iVar4 = FUN_004a6200(iVar5);
+  iVar4 = meccbasepit_bldg_from_object(iVar5);
 
-  if ((iVar4 == 0) && (iVar5 = FUN_004a6290(iVar5), iVar5 == 0)) {
+  if ((iVar4 == 0) && (iVar5 = reaperbase_bldg_from_object(iVar5), iVar5 == 0)) {
 
     fVar1 = *pfVar2;
 
@@ -6685,9 +6685,9 @@ undefined4 FUN_00418540(float param_1,int param_2)
 
     pfVar1 = *(float **)(iVar4 + 0x100);
 
-    iVar3 = FUN_004a6200(iVar4);
+    iVar3 = meccbasepit_bldg_from_object(iVar4);
 
-    if ((iVar3 == 0) && (iVar4 = FUN_004a6290(iVar4), iVar4 == 0)) {
+    if ((iVar3 == 0) && (iVar4 = reaperbase_bldg_from_object(iVar4), iVar4 == 0)) {
 
       param_1 = *pfVar1;
 
@@ -6701,11 +6701,11 @@ undefined4 FUN_00418540(float param_1,int param_2)
 
     uVar2 = *(undefined4 *)(param_2 + 0x20 + iVar5);
 
-    iVar5 = FUN_004a6200(uVar2);
+    iVar5 = meccbasepit_bldg_from_object(uVar2);
 
     if ((iVar5 == 0) && (iVar5 = FUN_004a6220(uVar2), iVar5 == 0)) {
 
-      iVar5 = FUN_004a6290(uVar2);
+      iVar5 = reaperbase_bldg_from_object(uVar2);
 
       if ((iVar5 == 0) && (iVar5 = FUN_004a6300(uVar2), iVar5 == 0)) {
 
@@ -7030,7 +7030,7 @@ undefined4 FUN_004188a0(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a6290(param_1);
+  iVar1 = reaperbase_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -7040,7 +7040,7 @@ undefined4 FUN_004188a0(undefined4 param_1)
 
   }
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -7069,11 +7069,11 @@ bool FUN_004188e0(int param_1)
 
   
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6290(param_1);
+    iVar1 = reaperbase_bldg_from_object(param_1);
 
     if ((iVar1 != 0) && (iVar1 = *(int *)(*(int *)(param_1 + 0x100) + 0x100), iVar1 != 0)) {
 
@@ -7142,11 +7142,13 @@ int FUN_00418950(int param_1)
 
     iVar3 = FUN_004a6160(param_1);
 
-    if ((((iVar3 == 0) || (iVar3 = FUN_004a6200(iVar2), iVar3 != 0)) &&
+    if ((((iVar3 == 0) || (iVar3 = meccbasepit_bldg_from_object(iVar2), iVar3 != 0)) &&
 
-        ((iVar3 = FUN_004a6180(param_1), iVar3 == 0 || (iVar3 = FUN_004a6290(iVar2), iVar3 != 0))))
+        ((iVar3 = FUN_004a6180(param_1), iVar3 == 0 ||
 
-       && (fVar4 = (float10)FUN_0050a5e0(iVar2 + 0xa0,param_1 + 0xa0), fVar4 < (float10)490000.0))
+         (iVar3 = reaperbase_bldg_from_object(iVar2), iVar3 != 0)))) &&
+
+       (fVar4 = (float10)FUN_0050a5e0(iVar2 + 0xa0,param_1 + 0xa0), fVar4 < (float10)490000.0))
 
     break;
 
@@ -7468,11 +7470,11 @@ void collgrid_query_obj(int param_1,int param_2)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffffdfff;
 
-    iVar4 = FUN_004a6200(param_1);
+    iVar4 = meccbasepit_bldg_from_object(param_1);
 
     if ((iVar4 == 0) && (iVar4 = FUN_004a6220(param_1), iVar4 == 0)) {
 
-      iVar4 = FUN_004a6290(param_1);
+      iVar4 = reaperbase_bldg_from_object(param_1);
 
       if ((iVar4 == 0) && (iVar4 = FUN_004a6300(param_1), iVar4 == 0)) {
 
@@ -7500,9 +7502,9 @@ void collgrid_query_obj(int param_1,int param_2)
 
                    );
 
-    iVar4 = FUN_004a6200(param_1);
+    iVar4 = meccbasepit_bldg_from_object(param_1);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a6290(param_1), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = reaperbase_bldg_from_object(param_1), iVar4 == 0)) {
 
       iVar4 = FUN_004a6220(param_1);
 
@@ -7672,11 +7674,11 @@ void reaper_state_check_c(int param_1)
 
   puVar1 = *(undefined4 **)(param_1 + 0x100);
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6290(param_1);
+    iVar2 = reaperbase_bldg_from_object(param_1);
 
     if (iVar2 != 0) goto LAB_0041a15d;
 
@@ -7694,11 +7696,11 @@ LAB_0041a15d:
 
   iVar2 = *(int *)(param_1 + 0x100);
 
-  iVar3 = FUN_004a6200(param_1);
+  iVar3 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6290(param_1);
+    iVar3 = reaperbase_bldg_from_object(param_1);
 
     if (iVar3 == 0) {
 
@@ -8180,7 +8182,7 @@ void objtype_setup_combat(int param_1,float param_2)
 
   iVar3 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar2 == 0) {
 
@@ -8212,7 +8214,7 @@ void objtype_setup_combat(int param_1,float param_2)
 
   *(int *)(iVar2 + 0x274) = param_1;
 
-  iVar3 = FUN_004a6200(iVar2);
+  iVar3 = meccbasepit_bldg_from_object(iVar2);
 
   if (iVar3 == 0) {
 
@@ -8220,7 +8222,7 @@ void objtype_setup_combat(int param_1,float param_2)
 
     if (iVar3 != 0) goto LAB_0041a8b7;
 
-    iVar3 = FUN_004a6290(iVar2);
+    iVar3 = reaperbase_bldg_from_object(iVar2);
 
     if (iVar3 != 0) {
 
@@ -8254,11 +8256,11 @@ LAB_0041a8bd:
 
   pfVar1 = *(float **)(iVar2 + 0x100);
 
-  iVar3 = FUN_004a6200(iVar2);
+  iVar3 = meccbasepit_bldg_from_object(iVar2);
 
   if (iVar3 == 0) {
 
-    iVar3 = FUN_004a6290(iVar2);
+    iVar3 = reaperbase_bldg_from_object(iVar2);
 
     if (iVar3 == 0) {
 
@@ -8317,7 +8319,7 @@ void objtype_team_assign(int param_1)
 
   iVar2 = *(int *)(param_1 + 0x100);
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -8524,9 +8526,9 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   pfVar1 = *(float **)(iVar3 + 0x100);
 
-  iVar4 = FUN_004a6200(iVar3);
+  iVar4 = meccbasepit_bldg_from_object(iVar3);
 
-  if ((iVar4 == 0) && (iVar4 = FUN_004a6290(iVar3), iVar4 == 0)) {
+  if ((iVar4 == 0) && (iVar4 = reaperbase_bldg_from_object(iVar3), iVar4 == 0)) {
 
     iVar4 = FUN_004a6220(iVar3);
 
@@ -8626,7 +8628,7 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
 LAB_0041ae31:
 
-  iVar4 = FUN_004a6200(iVar3);
+  iVar4 = meccbasepit_bldg_from_object(iVar3);
 
   if (iVar4 == 0) {
 
@@ -8817,11 +8819,11 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   }
 
-  iVar7 = FUN_004a6200(param_1);
+  iVar7 = meccbasepit_bldg_from_object(param_1);
 
   if (((iVar7 != 0) && (param_2 == 0x396)) ||
 
-     ((iVar7 = FUN_004a6290(param_1), iVar7 != 0 && (param_2 == 0x484)))) {
+     ((iVar7 = reaperbase_bldg_from_object(param_1), iVar7 != 0 && (param_2 == 0x484)))) {
 
     *(undefined4 *)(param_1 + 0x184) = 0x3f800000;
 
@@ -8841,9 +8843,9 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   *(int *)(iVar4 + 0x274) = param_1;
 
-  iVar7 = FUN_004a6200(iVar4);
+  iVar7 = meccbasepit_bldg_from_object(iVar4);
 
-  if ((iVar7 == 0) && (iVar7 = FUN_004a6290(iVar4), iVar7 == 0)) {
+  if ((iVar7 == 0) && (iVar7 = reaperbase_bldg_from_object(iVar4), iVar7 == 0)) {
 
     iVar7 = FUN_004a6220(iVar4);
 
@@ -8877,13 +8879,13 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
     iVar7 = FUN_004a6300(iVar4);
 
-    if ((iVar7 == 0) || (iVar7 = FUN_004b6f60(iVar4), iVar7 < 0)) goto LAB_0041b268;
+    if ((iVar7 == 0) || (iVar7 = meccbasepit_bldg_from_object(iVar4), iVar7 < 0)) goto LAB_0041b268;
 
-    iVar5 = FUN_004a6200(iVar4);
+    iVar5 = meccbasepit_bldg_from_object(iVar4);
 
     if ((iVar5 == 0) && (iVar5 = FUN_004a6220(iVar4), iVar5 == 0)) {
 
-      iVar5 = FUN_004a6290(iVar4);
+      iVar5 = reaperbase_bldg_from_object(iVar4);
 
       if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar4), iVar5 != 0)) {
 
@@ -8909,9 +8911,9 @@ LAB_0041b204:
 
     pfVar2 = *(float **)(iVar4 + 0x100);
 
-    iVar5 = FUN_004a6200(iVar4);
+    iVar5 = meccbasepit_bldg_from_object(iVar4);
 
-    if ((iVar5 == 0) && (iVar5 = FUN_004a6290(iVar4), iVar5 == 0)) {
+    if ((iVar5 == 0) && (iVar5 = reaperbase_bldg_from_object(iVar4), iVar5 == 0)) {
 
       fVar1 = *pfVar2;
 
@@ -8935,15 +8937,15 @@ LAB_0041b204:
 
   }
 
-  iVar7 = FUN_0040acf0();
+  iVar7 = meccbasepit_bldg_from_object();
 
   if (iVar7 < 0) goto LAB_0041b268;
 
-  iVar5 = FUN_004a6200(iVar4);
+  iVar5 = meccbasepit_bldg_from_object(iVar4);
 
   if ((iVar5 == 0) && (iVar5 = FUN_004a6220(iVar4), iVar5 == 0)) {
 
-    iVar5 = FUN_004a6290(iVar4);
+    iVar5 = reaperbase_bldg_from_object(iVar4);
 
     if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar4), iVar5 != 0)) {
 
@@ -8969,9 +8971,9 @@ LAB_0041b12c:
 
   pfVar2 = *(float **)(iVar4 + 0x100);
 
-  iVar5 = FUN_004a6200(iVar4);
+  iVar5 = meccbasepit_bldg_from_object(iVar4);
 
-  if ((iVar5 == 0) && (iVar5 = FUN_004a6290(iVar4), iVar5 == 0)) {
+  if ((iVar5 == 0) && (iVar5 = reaperbase_bldg_from_object(iVar4), iVar5 == 0)) {
 
     fVar1 = *pfVar2;
 
@@ -9267,7 +9269,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
   }
 
-  iVar3 = FUN_004a6200(param_1);
+  iVar3 = meccbasepit_bldg_from_object(param_1);
 
   iVar2 = param_2;
 
@@ -9305,11 +9307,11 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
   param_2 = 0;
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar4 == 0) {
 
-    iVar4 = FUN_004a6290(param_1);
+    iVar4 = reaperbase_bldg_from_object(param_1);
 
     if (iVar4 != 0) {
 
@@ -9387,7 +9389,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
   }
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
   iVar3 = iVar2 * 0x58;
 
@@ -9407,7 +9409,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
     if ((*(int *)(param_1 + 0x18c) == *(int *)(DAT_00632a88 + 0x18c)) && (DAT_00632bb0 != 0)) {
 
-      iVar4 = FUN_004a6200(param_1);
+      iVar4 = meccbasepit_bldg_from_object(param_1);
 
       if (iVar4 == 0) {
 
@@ -9447,11 +9449,11 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
           (iVar3 = *(int *)(iVar4 + 0x100), *(int *)(iVar3 + 0x24) == iVar2)))) {
 
-        iVar5 = FUN_004a6200(param_1);
+        iVar5 = meccbasepit_bldg_from_object(param_1);
 
         if (iVar5 == 0) {
 
-          iVar5 = FUN_004a6290(param_1);
+          iVar5 = reaperbase_bldg_from_object(param_1);
 
           if (iVar5 != 0) {
 
@@ -9548,7 +9550,7 @@ undefined4 reaper_big_update(int param_1,int param_2)
 
   iVar4 = *(int *)(param_1 + 0x100);
 
-  iVar3 = FUN_004a6200(param_1);
+  iVar3 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar3 != 0) {
 
@@ -9702,7 +9704,7 @@ LAB_0041bba6:
 
   local_8 = 0;
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar4 == 0) {
 
@@ -9778,11 +9780,11 @@ LAB_0041bba6:
 
             iVar1 = *(int *)(iVar3 + 0x274);
 
-            iVar5 = FUN_004a6200(iVar1);
+            iVar5 = meccbasepit_bldg_from_object(iVar1);
 
             if (iVar5 == 0) {
 
-              iVar5 = FUN_004a6290(iVar1);
+              iVar5 = reaperbase_bldg_from_object(iVar1);
 
               if (iVar5 != 0) {
 
@@ -9902,11 +9904,11 @@ LAB_0041bdd7:
 
       iVar3 = *(int *)(iVar4 + 0x274);
 
-      iVar6 = FUN_004a6200(iVar3);
+      iVar6 = meccbasepit_bldg_from_object(iVar3);
 
       if (iVar6 == 0) {
 
-        iVar6 = FUN_004a6290(iVar3);
+        iVar6 = reaperbase_bldg_from_object(iVar3);
 
         if (iVar6 == 0) goto LAB_0041bf20;
 
@@ -9967,7 +9969,7 @@ undefined4 FUN_0041bf50(undefined4 param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_004a6200(param_1);
+  iVar1 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar1 == 0) {
 
@@ -10152,7 +10154,7 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar2 != 0) {
 
@@ -10162,7 +10164,7 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   }
 
-  iVar2 = FUN_004a6290(param_1);
+  iVar2 = reaperbase_bldg_from_object(param_1);
 
   if (iVar2 != 0) {
 
@@ -10176,13 +10178,13 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004b6f60(param_1);
+    iVar2 = meccbasepit_bldg_from_object(param_1);
 
   }
 
   else {
 
-    iVar2 = FUN_0040acf0();
+    iVar2 = meccbasepit_bldg_from_object();
 
   }
 
@@ -10192,7 +10194,7 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
     if (iVar2 != 0) {
 
-      iVar4 = FUN_004a6200(iVar2);
+      iVar4 = meccbasepit_bldg_from_object(iVar2);
 
       if (iVar4 == 0) {
 
@@ -10399,11 +10401,11 @@ int objtype_setup_reaper(float param_1)
 
   }
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
   iVar6 = (-(uint)(iVar4 != 0) & 5) + 8;
 
-  iVar4 = FUN_004a6200(iVar3);
+  iVar4 = meccbasepit_bldg_from_object(iVar3);
 
   if (iVar4 == 0) {
 
@@ -10435,7 +10437,7 @@ int objtype_setup_reaper(float param_1)
 
   *(int *)(iVar4 + 0x274) = iVar3;
 
-  iVar6 = FUN_004a6200(iVar4);
+  iVar6 = meccbasepit_bldg_from_object(iVar4);
 
   if (iVar6 == 0) {
 
@@ -10443,7 +10445,7 @@ int objtype_setup_reaper(float param_1)
 
     if (iVar6 != 0) goto LAB_0041e52a;
 
-    iVar6 = FUN_004a6290(iVar4);
+    iVar6 = reaperbase_bldg_from_object(iVar4);
 
     if (iVar6 != 0) {
 
@@ -10477,11 +10479,11 @@ LAB_0041e530:
 
   pfVar2 = *(float **)(iVar4 + 0x100);
 
-  iVar6 = FUN_004a6200(iVar4);
+  iVar6 = meccbasepit_bldg_from_object(iVar4);
 
   if (iVar6 == 0) {
 
-    iVar6 = FUN_004a6290(iVar4);
+    iVar6 = reaperbase_bldg_from_object(iVar4);
 
     if (iVar6 == 0) {
 
@@ -10521,7 +10523,7 @@ LAB_0041e5bd:
 
   *(uint *)(iVar4 + 0x1c8) = *(uint *)(iVar4 + 0x1c8) & 0xfffff7ff | 0x20000;
 
-  iVar6 = FUN_004a6200(iVar3);
+  iVar6 = meccbasepit_bldg_from_object(iVar3);
 
   if (iVar6 == 0) {
 
@@ -10591,7 +10593,7 @@ LAB_0041e5bd:
 
   *(uint *)(iVar3 + 0x1c8) = *(uint *)(iVar3 + 0x1c8) & 0xfffdffff | 0x800;
 
-  FUN_004a6200(iVar3);
+  meccbasepit_bldg_from_object(iVar3);
 
   if (*(int *)(iVar1 + 0x20) != 0) {
 
@@ -10628,11 +10630,11 @@ void FUN_0041e720(float param_1)
 
   iVar3 = (int)param_1;
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
   if ((iVar2 == 0) && (iVar2 = FUN_004a6220(param_1), iVar2 == 0)) {
 
-    iVar2 = FUN_004a6290(param_1);
+    iVar2 = reaperbase_bldg_from_object(param_1);
 
     if ((iVar2 == 0) && (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) {
 
@@ -10658,9 +10660,9 @@ LAB_0041e779:
 
   pfVar1 = *(float **)(iVar3 + 0x100);
 
-  iVar2 = FUN_004a6200(iVar3);
+  iVar2 = meccbasepit_bldg_from_object(iVar3);
 
-  if ((iVar2 != 0) || (iVar2 = FUN_004a6290(iVar3), iVar2 != 0)) {
+  if ((iVar2 != 0) || (iVar2 = reaperbase_bldg_from_object(iVar3), iVar2 != 0)) {
 
     if ((pfVar1 != (float *)0x0) && (pfVar1[0x166] = param_1, param_1 < 0.0)) {
 
@@ -10723,11 +10725,11 @@ void obj_group_spread(float param_1)
 
   iVar4 = *(int *)((int)param_1 + 0x100);
 
-  iVar2 = FUN_004a6200(param_1);
+  iVar2 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar2 == 0) {
 
-    iVar3 = FUN_004a6290(param_1);
+    iVar3 = reaperbase_bldg_from_object(param_1);
 
     iVar2 = 0x10;
 
@@ -10755,11 +10757,11 @@ void obj_group_spread(float param_1)
 
       if ((iVar4 != 0) && ((*(int *)(iVar4 + 0xe4) == 2 || (*(int *)(iVar4 + 0xe4) == 3)))) {
 
-        iVar3 = FUN_004a6200(iVar4);
+        iVar3 = meccbasepit_bldg_from_object(iVar4);
 
         if ((iVar3 == 0) && (iVar3 = FUN_004a6220(iVar4), iVar3 == 0)) {
 
-          iVar3 = FUN_004a6290(iVar4);
+          iVar3 = reaperbase_bldg_from_object(iVar4);
 
           if ((iVar3 != 0) || (iVar3 = FUN_004a6300(iVar4), iVar3 != 0)) {
 
@@ -10787,9 +10789,9 @@ LAB_0041e8bf:
 
         pfVar1 = *(float **)(iVar4 + 0x100);
 
-        iVar3 = FUN_004a6200(iVar4);
+        iVar3 = meccbasepit_bldg_from_object(iVar4);
 
-        if ((iVar3 == 0) && (iVar3 = FUN_004a6290(iVar4), iVar3 == 0)) {
+        if ((iVar3 == 0) && (iVar3 = reaperbase_bldg_from_object(iVar4), iVar3 == 0)) {
 
           iVar3 = FUN_004a6220(iVar4);
 
@@ -10860,11 +10862,11 @@ void FUN_0041e960(float param_1)
 
   if ((iVar2 == 0) && (*(int *)(iVar5 + 0x568) == 0)) {
 
-    iVar2 = FUN_004a6200(param_1);
+    iVar2 = meccbasepit_bldg_from_object(param_1);
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a6290(param_1);
+      iVar2 = reaperbase_bldg_from_object(param_1);
 
       if (iVar2 == 0) {
 
@@ -10884,11 +10886,11 @@ void FUN_0041e960(float param_1)
 
     iVar2 = *(int *)((int)param_1 + 0x100);
 
-    iVar3 = FUN_004a6200(param_1);
+    iVar3 = meccbasepit_bldg_from_object(param_1);
 
     if (iVar3 == 0) {
 
-      iVar4 = FUN_004a6290(param_1);
+      iVar4 = reaperbase_bldg_from_object(param_1);
 
       iVar3 = 0x10;
 
@@ -10916,11 +10918,11 @@ void FUN_0041e960(float param_1)
 
         if ((iVar2 != 0) && ((*(int *)(iVar2 + 0xe4) == 2 || (*(int *)(iVar2 + 0xe4) == 3)))) {
 
-          iVar4 = FUN_004a6200(iVar2);
+          iVar4 = meccbasepit_bldg_from_object(iVar2);
 
           if ((iVar4 == 0) && (iVar4 = FUN_004a6220(iVar2), iVar4 == 0)) {
 
-            iVar4 = FUN_004a6290(iVar2);
+            iVar4 = reaperbase_bldg_from_object(iVar2);
 
             if ((iVar4 != 0) || (iVar4 = FUN_004a6300(iVar2), iVar4 != 0)) {
 
@@ -10968,13 +10970,13 @@ LAB_0041ea62:
 
       do {
 
-        iVar5 = FUN_004a6200(iVar1);
+        iVar5 = meccbasepit_bldg_from_object(iVar1);
 
         if (iVar5 == 0) {
 
           if (*piVar6 == 0) goto LAB_0041eae1;
 
-          iVar4 = FUN_004a6200(iVar1);
+          iVar4 = meccbasepit_bldg_from_object(iVar1);
 
           iVar5 = iVar3 + 8;
 
@@ -10984,11 +10986,11 @@ LAB_0041ea62:
 
 LAB_0041eb17:
 
-          iVar4 = FUN_004a6200(iVar1);
+          iVar4 = meccbasepit_bldg_from_object(iVar1);
 
           if (iVar4 == 0) {
 
-            iVar4 = FUN_004a6290(iVar1);
+            iVar4 = reaperbase_bldg_from_object(iVar1);
 
             if (iVar4 != 0) {
 
@@ -11012,7 +11014,7 @@ LAB_0041eb6c:
 
           if (*piVar6 != 0) {
 
-            iVar4 = FUN_004a6200(iVar1);
+            iVar4 = meccbasepit_bldg_from_object(iVar1);
 
             iVar5 = iVar3 + 0xd;
 
@@ -11036,7 +11038,7 @@ LAB_0041eb12:
 
 LAB_0041eae1:
 
-          iVar5 = FUN_004a6200(iVar1);
+          iVar5 = meccbasepit_bldg_from_object(iVar1);
 
           if (iVar5 == 0) {
 
@@ -11050,11 +11052,11 @@ LAB_0041eae1:
 
           }
 
-          iVar5 = FUN_004a6200(iVar1);
+          iVar5 = meccbasepit_bldg_from_object(iVar1);
 
           if (iVar5 == 0) {
 
-            iVar4 = FUN_004a6290(iVar1);
+            iVar4 = reaperbase_bldg_from_object(iVar1);
 
             iVar5 = iVar3;
 
@@ -11164,11 +11166,11 @@ void objtype_setup_rpman(int param_1,float param_2,int param_3)
 
   iVar6 = *(int *)(param_1 + 0x100);
 
-  iVar4 = FUN_004a6200(param_1);
+  iVar4 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar4 == 0) {
 
-    iVar5 = FUN_004a6290(param_1);
+    iVar5 = reaperbase_bldg_from_object(param_1);
 
     iVar4 = 0x10;
 
@@ -11196,11 +11198,11 @@ void objtype_setup_rpman(int param_1,float param_2,int param_3)
 
       if ((iVar6 != 0) && ((*(int *)(iVar6 + 0xe4) == 2 || (*(int *)(iVar6 + 0xe4) == 3)))) {
 
-        iVar5 = FUN_004a6200(iVar6);
+        iVar5 = meccbasepit_bldg_from_object(iVar6);
 
         if ((iVar5 == 0) && (iVar5 = FUN_004a6220(iVar6), iVar5 == 0)) {
 
-          iVar5 = FUN_004a6290(iVar6);
+          iVar5 = reaperbase_bldg_from_object(iVar6);
 
           if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar6), iVar5 != 0)) {
 
@@ -11238,7 +11240,7 @@ LAB_0041ecb2:
 
   for (; (int)param_2 <= param_3; param_2 = (float)((int)param_2 + 1)) {
 
-    iVar6 = FUN_004a6200(param_1);
+    iVar6 = meccbasepit_bldg_from_object(param_1);
 
     if (iVar6 == 0) {
 
@@ -11252,11 +11254,11 @@ LAB_0041ecb2:
 
     }
 
-    iVar6 = FUN_004a6200(param_1);
+    iVar6 = meccbasepit_bldg_from_object(param_1);
 
     if (iVar6 == 0) {
 
-      iVar6 = FUN_004a6290(param_1);
+      iVar6 = reaperbase_bldg_from_object(param_1);
 
       if (iVar6 != 0) {
 
@@ -11278,11 +11280,11 @@ LAB_0041ecb2:
 
   iVar6 = *(int *)(param_1 + 0x100);
 
-  iVar3 = FUN_004a6200(param_1);
+  iVar3 = meccbasepit_bldg_from_object(param_1);
 
   if (iVar3 == 0) {
 
-    iVar4 = FUN_004a6290(param_1);
+    iVar4 = reaperbase_bldg_from_object(param_1);
 
     iVar3 = 0x10;
 
@@ -11312,11 +11314,11 @@ LAB_0041ecb2:
 
       if ((iVar6 != 0) && ((*(int *)(iVar6 + 0xe4) == 2 || (*(int *)(iVar6 + 0xe4) == 3)))) {
 
-        iVar4 = FUN_004a6200(iVar6);
+        iVar4 = meccbasepit_bldg_from_object(iVar6);
 
         if ((iVar4 == 0) && (iVar4 = FUN_004a6220(iVar6), iVar4 == 0)) {
 
-          iVar4 = FUN_004a6290(iVar6);
+          iVar4 = reaperbase_bldg_from_object(iVar6);
 
           if ((iVar4 != 0) || (iVar4 = FUN_004a6300(iVar6), iVar4 != 0)) {
 
@@ -11407,7 +11409,7 @@ void objtype_setup_kabuto(int param_1)
 
   if (((iVar1 == 0) && (*(int *)(iVar2 + 0x568) == 0)) &&
 
-     (iVar2 = FUN_004a6290(param_1), iVar2 == 0)) {
+     (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
     iVar2 = *(int *)(param_1 + 0x100);
 
@@ -11491,7 +11493,7 @@ void objtype_setup_kabuto(int param_1)
 
           do {
 
-            iVar3 = FUN_004a6200(param_1);
+            iVar3 = meccbasepit_bldg_from_object(param_1);
 
             if (iVar3 == 0) {
 
@@ -11527,7 +11529,7 @@ void objtype_setup_kabuto(int param_1)
 
         do {
 
-          iVar3 = FUN_004a6200(param_1);
+          iVar3 = meccbasepit_bldg_from_object(param_1);
 
           if (iVar3 == 0) {
 
@@ -11563,7 +11565,7 @@ void objtype_setup_kabuto(int param_1)
 
       do {
 
-        iVar3 = FUN_004a6200(param_1);
+        iVar3 = meccbasepit_bldg_from_object(param_1);
 
         if (iVar3 == 0) {
 

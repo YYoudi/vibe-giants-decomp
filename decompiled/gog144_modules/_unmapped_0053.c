@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (80 named) — decompiled, names from PS2 symbols
+ * 179 functions (81 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -6155,9 +6155,9 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         iVar6 = puVar13[3];
 
-        iVar9 = FUN_004a6200(iVar6);
+        iVar9 = meccbasepit_bldg_from_object(iVar6);
 
-        if ((iVar9 != 0) || (iVar9 = FUN_004a6290(iVar6), iVar9 != 0)) {
+        if ((iVar9 != 0) || (iVar9 = reaperbase_bldg_from_object(iVar6), iVar9 != 0)) {
 
           iVar9 = FUN_0052aa70();
 
@@ -6341,13 +6341,13 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             if (iVar9 == 0) {
 
-              FUN_004b6f60(iVar6);
+              meccbasepit_bldg_from_object(iVar6);
 
             }
 
             else {
 
-              FUN_0040acf0();
+              meccbasepit_bldg_from_object();
 
             }
 
@@ -10439,7 +10439,7 @@ void FUN_00536cb0(void)
 
   
 
-  iVar2 = FUN_00455b70(&LAB_00536e50,0,0,local_18);
+  iVar2 = project_cursor_to_object(&LAB_00536e50,0,0,local_18);
 
   if (iVar2 != 0) {
 
@@ -10576,11 +10576,11 @@ LAB_00536fe0:
 
       else {
 
-        iVar2 = FUN_004a6200(param_1);
+        iVar2 = meccbasepit_bldg_from_object(param_1);
 
         if ((((iVar2 == 0) && (iVar2 = FUN_004a6220(param_1), iVar2 == 0)) &&
 
-            (iVar2 = FUN_004a6290(param_1), iVar2 == 0)) &&
+            (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) &&
 
            (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) {
 
@@ -10945,7 +10945,7 @@ void comm_wincond_destroy(int param_1)
 
         if (iVar5 == 0) {
 
-          iVar5 = FUN_0040acf0(iVar4);
+          iVar5 = meccbasepit_bldg_from_object(iVar4);
 
           fVar12 = (float10)FUN_0040ad30(iVar4);
 
@@ -10955,7 +10955,7 @@ void comm_wincond_destroy(int param_1)
 
         else {
 
-          iVar5 = FUN_004b6f60();
+          iVar5 = meccbasepit_bldg_from_object();
 
           fVar12 = (float10)FUN_004b6d60(iVar4);
 
@@ -16156,9 +16156,11 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
         *piVar7 = iVar2;
 
-        uVar4 = FUN_00540500(*(undefined4 *)(*(int *)(iVar1 + 4) + 0x10),
+        uVar4 = NAM_NameFindByHandle
 
-                             CONCAT22((short)((uint)iVar2 >> 0x10),*(undefined2 *)(iVar2 + 8)));
+                          (*(undefined4 *)(*(int *)(iVar1 + 4) + 0x10),
+
+                           CONCAT22((short)((uint)iVar2 >> 0x10),*(undefined2 *)(iVar2 + 8)));
 
         uVar5 = FUN_005404b0(uVar4);
 
@@ -20189,12 +20191,12 @@ void GEO_QuatMultiply(float *param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_0053faa0 @ 0x0053FAA0 ===== */
+/* ===== GEO_QuatDivide @ 0x0053FAA0 ===== */
 /* PS2 candidate: GEO_QuatDivide (conf 0.774) */
 
 
 
-void FUN_0053faa0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void GEO_QuatDivide(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 

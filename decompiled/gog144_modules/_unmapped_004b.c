@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (30 named) — decompiled, names from PS2 symbols
+ * 90 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -1285,7 +1285,7 @@ switchD_004b4d3a_caseD_1:
 
     *(undefined4 *)((int)param_1 + 0x184) = 0;
 
-    iVar4 = FUN_004a6290(param_1);
+    iVar4 = reaperbase_bldg_from_object(param_1);
 
     if (iVar4 == 0) {
 
@@ -1355,7 +1355,7 @@ LAB_004b5098:
 
     *(float *)(iVar3 + 0x14) = (float)fVar6;
 
-    iVar4 = FUN_004a6290(iVar3);
+    iVar4 = reaperbase_bldg_from_object(iVar3);
 
     if (iVar4 == 0) {
 
@@ -1817,7 +1817,7 @@ void reaperbasebldg_finish_building(int param_1)
 
   *(undefined4 *)(param_1 + 0xe4) = 4;
 
-  iVar3 = FUN_004a6290(param_1);
+  iVar3 = reaperbase_bldg_from_object(param_1);
 
   if (iVar3 == 0) {
 
@@ -2336,7 +2336,7 @@ void reaperbasebldg_shot_2(float param_1,int param_2)
 
 LAB_004b5d40:
 
-  iVar4 = FUN_004a6290(param_1);
+  iVar4 = reaperbase_bldg_from_object(param_1);
 
   if (iVar4 == 0) {
 
@@ -3317,7 +3317,7 @@ float10 FUN_004b6d60(int param_1)
 
   
 
-  iVar1 = FUN_004a6290(param_1);
+  iVar1 = reaperbase_bldg_from_object(param_1);
 
   if (iVar1 != 0) {
 
@@ -3565,12 +3565,12 @@ int FUN_004b6f20(int param_1)
 
 }
 
-/* ===== FUN_004b6f60 @ 0x004B6F60 ===== */
+/* ===== meccbasepit_bldg_from_object @ 0x004B6F60 ===== */
 /* PS2 candidate: meccbasepit_bldg_from_object_2 (conf 0.767) */
 
 
 
-int FUN_004b6f60(int param_1)
+int meccbasepit_bldg_from_object(int param_1)
 
 
 
@@ -3973,7 +3973,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
 }
 
-/* ===== FUN_004b7450 @ 0x004B7450 ===== */
+/* ===== reaper_animselect @ 0x004B7450 ===== */
 /* WARNING: Removing unreachable block (ram,0x004b7a7a) */
 
 /* WARNING: Removing unreachable block (ram,0x004b7a90) */
@@ -3984,7 +3984,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
 
 
-void FUN_004b7450(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
 
 
 
@@ -4216,7 +4216,7 @@ void FUN_004b7450(int param_1,undefined4 param_2,undefined4 param_3,float *param
 
   case 10:
 
-    FUN_004c0fc0(param_1,param_4,param_4[3],param_4[4]);
+    reaper_tornado_create(param_1,param_4,param_4[3],param_4[4]);
 
     return;
 
@@ -4346,7 +4346,7 @@ void FUN_004b7450(int param_1,undefined4 param_2,undefined4 param_3,float *param
 
     if (iVar7 != 0) {
 
-      FUN_004bea70(param_1,0x25,0,0,0xffffffff);
+      reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x25,0,0,0xffffffff);
 
       return;
 
@@ -4366,7 +4366,7 @@ void FUN_004b7450(int param_1,undefined4 param_2,undefined4 param_3,float *param
 
       if (iVar7 != 0) {
 
-        FUN_004bea70(param_1,0x26,0,0,0xffffffff);
+        reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x26,0,0,0xffffffff);
 
         *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xbfffffff;
 
@@ -4424,7 +4424,7 @@ LAB_004b8187:
 
       if (iVar9 != 0) {
 
-        FUN_004bea70(param_1,0x24,0,0,0xffffffff);
+        reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x24,0,0,0xffffffff);
 
       }
 
@@ -4642,7 +4642,7 @@ LAB_004b8187:
 
     if (iVar7 != 0) {
 
-      FUN_004bea70(param_1,0x27,0,0,0xffffffff);
+      reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x27,0,0,0xffffffff);
 
       return;
 
@@ -5116,7 +5116,7 @@ LAB_004b76fe:
 
   case 0x27:
 
-    FUN_004c03a0(param_1,0);
+    reaper_finish_cloak(param_1,0);
 
     return;
 
@@ -5136,13 +5136,13 @@ LAB_004b76fe:
 
   case 0x2a:
 
-    FUN_004bea70(param_1,0x27,param_4,0,param_4[3]);
+    reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x27,param_4,0,param_4[3]);
 
     return;
 
   case 0x2b:
 
-    FUN_004bea70(param_1,0x26,param_4,0,param_4[3]);
+    reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x26,param_4,0,param_4[3]);
 
     return;
 
@@ -5150,7 +5150,7 @@ LAB_004b76fe:
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffefffff;
 
-    FUN_004bea70(param_1,0x24,param_4,0,param_4[3]);
+    reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x24,param_4,0,param_4[3]);
 
     return;
 
@@ -5250,7 +5250,7 @@ LAB_004b76fe:
 
       *(float *)(param_1 + 200) = (float)fVar14;
 
-      FUN_004a76e0(param_1,0,(undefined4 *)(param_1 + 0xa0));
+      playerobj_eval_refpt(param_1,0,(undefined4 *)(param_1 + 0xa0));
 
       FUN_00499310(param_1,*(undefined4 *)(param_1 + 0xa0),*(undefined4 *)(param_1 + 0xa4),
 
@@ -5278,7 +5278,7 @@ LAB_004b76fe:
 
   case 0x31:
 
-    FUN_004bea70(param_1,0x2c,param_4,0,param_4[3]);
+    reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x2c,param_4,0,param_4[3]);
 
     return;
 
@@ -5334,7 +5334,7 @@ LAB_004b76fe:
 
   case 0x34:
 
-    FUN_004bea70(param_1,0x32,param_4,0,param_4[3]);
+    reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x32,param_4,0,param_4[3]);
 
     return;
 
@@ -5350,7 +5350,7 @@ LAB_004b76fe:
 
       if (iVar7 != 0) {
 
-        FUN_004bea70(param_1,0x33,0,0,0xffffffff);
+        reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x33,0,0,0xffffffff);
 
       }
 
@@ -5388,7 +5388,7 @@ LAB_004b76fe:
 
   case 0x36:
 
-    FUN_004bea70(param_1,0x33,param_4,0,param_4[3]);
+    reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x33,param_4,0,param_4[3]);
 
     return;
 
@@ -7096,7 +7096,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     }
 
-    iVar4 = FUN_00455b70(0,param_1,SQRT((float)fVar11),&local_68);
+    iVar4 = project_cursor_to_object(0,param_1,SQRT((float)fVar11),&local_68);
 
     if (iVar4 == 0) {
 
@@ -7529,9 +7529,11 @@ undefined4 FUN_004ba1a0(int param_1,int param_2)
 
   iVar1 = FUN_004a6220(param_1);
 
-  if ((((iVar1 == 0) && (iVar1 = FUN_004a6200(param_1), iVar1 == 0)) &&
+  if ((((iVar1 == 0) && (iVar1 = meccbasepit_bldg_from_object(param_1), iVar1 == 0)) &&
 
-      (iVar1 = FUN_004a6300(param_1), iVar1 == 0)) && (iVar1 = FUN_004a6290(param_1), iVar1 == 0)) {
+      (iVar1 = FUN_004a6300(param_1), iVar1 == 0)) &&
+
+     (iVar1 = reaperbase_bldg_from_object(param_1), iVar1 == 0)) {
 
     if ((*(uint *)(param_1 + 0xd8) & 0x4000c000) != 0) {
 
@@ -9767,7 +9769,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
       if (((*puVar2 & 2) == 0) && (iVar5 = FUN_0040cf70(), iVar5 == 0)) {
 
-        FUN_004a76e0(uVar6,0,local_30);
+        playerobj_eval_refpt(uVar6,0,local_30);
 
         fx_get_free_effect__Fv();
 
@@ -9817,7 +9819,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
       uVar6 = FUN_00456050(iVar4);
 
-      FUN_004a76e0(uVar6,0,local_30);
+      playerobj_eval_refpt(uVar6,0,local_30);
 
       fx_get_free_effect__Fv();
 
@@ -10469,7 +10471,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     FUN_004a8f50(0x2b);
 
-    FUN_004a76e0(uVar4,0,&local_c0);
+    playerobj_eval_refpt(uVar4,0,&local_c0);
 
     local_b4 = *param_3;
 
@@ -10537,7 +10539,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     FUN_004a8f50(0x16);
 
-    FUN_004a76e0(uVar4,0,&local_c0);
+    playerobj_eval_refpt(uVar4,0,&local_c0);
 
     local_b4 = *param_3;
 
@@ -10603,7 +10605,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     FUN_004a8f50(0x15);
 
-    FUN_004a76e0(uVar4,0,&local_c0);
+    playerobj_eval_refpt(uVar4,0,&local_c0);
 
     local_b4 = *param_3;
 
@@ -10685,7 +10687,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
       }
 
-      FUN_004a76e0(uVar4,0,&local_c0);
+      playerobj_eval_refpt(uVar4,0,&local_c0);
 
       fVar8 = (float10)FUN_0050a490(&local_c0,param_3);
 
@@ -10751,7 +10753,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     local_a0 = 0.0;
 
-    FUN_004a76e0(uVar4,0,&local_c0);
+    playerobj_eval_refpt(uVar4,0,&local_c0);
 
     fVar8 = (float10)FUN_0050a490(&local_c0,param_3);
 
@@ -11026,12 +11028,14 @@ LAB_004be9d9:
 
 }
 
-/* ===== FUN_004bea70 @ 0x004BEA70 ===== */
+/* ===== reaper_fire_spell__FP6OBJECTiP3P3DT0i @ 0x004BEA70 ===== */
 /* PS2 candidate: reaper_fire_spell__FP6OBJECTiP3P3DT0i (conf 0.444) */
 
 
 
-void FUN_004bea70(int param_1,int param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5)
+void reaper_fire_spell__FP6OBJECTiP3P3DT0i
+
+               (int param_1,int param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5)
 
 
 
@@ -11077,7 +11081,7 @@ void FUN_004bea70(int param_1,int param_2,undefined4 *param_3,undefined4 param_4
 
   
 
-  FUN_004a76e0(param_1,0,&local_60);
+  playerobj_eval_refpt(param_1,0,&local_60);
 
   if (param_2 == 0x2c) {
 
@@ -12267,7 +12271,7 @@ void fxb_firewall_create(int param_1,int *param_2,int *param_3,uint param_4,unde
 
   local_44 = *(undefined4 *)(iVar5 + 0x30);
 
-  FUN_005170f0(*piVar2,&local_4c,local_40);
+  xformobj_p3d_world(*piVar2,&local_4c,local_40);
 
   FUN_004993c0(iVar4,local_40);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (48 named) — decompiled, names from PS2 symbols
+ * 145 functions (49 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3185,7 +3185,7 @@ void FUN_004544f0(void)
 
   DAT_00632aeb = 0;
 
-  FUN_0040d670();
+  camera_fov_update();
 
   dialog_level_pop(&LAB_00454820);
 
@@ -3782,7 +3782,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
         reaper_00530bd0(iVar3,0,2,0,0x30,&local_8);
 
-        FUN_004b7450(iVar3,0x30,8,&local_8);
+        reaper_animselect(iVar3,0x30,8,&local_8);
 
         return;
 
@@ -4633,7 +4633,7 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 
           if (iVar3 != 0) {
 
-            FUN_005170f0(iVar1,&uStack_48,auStack_30);
+            xformobj_p3d_world(iVar1,&uStack_48,auStack_30);
 
             fVar6 = (float10)FUN_0050a610(param_5,auStack_30);
 
@@ -4645,7 +4645,7 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 
                 iVar4 = DAT_00632a88, iVar3 != 0)))) {
 
-              FUN_005170f0(iVar1,&uStack_48,auStack_30);
+              xformobj_p3d_world(iVar1,&uStack_48,auStack_30);
 
               fVar6 = (float10)FUN_0050a610(param_5,auStack_30);
 
@@ -4685,7 +4685,7 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 
       }
 
-      FUN_005170f0(iVar5,&uStack_24,param_4);
+      xformobj_p3d_world(iVar5,&uStack_24,param_4);
 
       return iVar5;
 
@@ -4707,12 +4707,14 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 
 }
 
-/* ===== FUN_00455b70 @ 0x00455B70 ===== */
+/* ===== project_cursor_to_object @ 0x00455B70 ===== */
 /* PS2 candidate: project_cursor_to_object (conf 0.447) */
 
 
 
-void FUN_00455b70(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+void project_cursor_to_object
+
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -5677,7 +5679,7 @@ void FUN_00456a10(int param_1,float param_2,float param_3,int param_4,int param_
 
       local_10 = (*(float *)(iVar1 + 0x20) + *(float *)(iVar1 + 0x14)) * 0.5;
 
-      FUN_005170f0(param_4,&local_18,local_c);
+      xformobj_p3d_world(param_4,&local_18,local_c);
 
       pfVar2 = local_c;
 
@@ -5785,9 +5787,11 @@ void vimp_close_damage(undefined4 param_1,float param_2,int param_3,float param_
 
         if ((iVar5 == 0) &&
 
-           (((iVar5 = FUN_004a6200(iVar1), iVar5 == 0 && (iVar5 = FUN_004a6300(iVar1), iVar5 == 0))
+           (((iVar5 = meccbasepit_bldg_from_object(iVar1), iVar5 == 0 &&
 
-            && (iVar5 = FUN_004a6290(iVar1), iVar5 == 0)))) {
+             (iVar5 = FUN_004a6300(iVar1), iVar5 == 0)) &&
+
+            (iVar5 = reaperbase_bldg_from_object(iVar1), iVar5 == 0)))) {
 
           if (((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0) &&
 
@@ -10362,7 +10366,7 @@ byte ai_target_classify(int param_1,int param_2,byte param_3)
 
     iVar2 = FUN_004a6300(param_2);
 
-    if (((iVar2 == 0) || (iVar2 = FUN_004b6f60(param_2), iVar2 < 0)) ||
+    if (((iVar2 == 0) || (iVar2 = meccbasepit_bldg_from_object(param_2), iVar2 < 0)) ||
 
        (iVar2 = FUN_0052aa70(), iVar2 == 0)) goto LAB_0045af46;
 
@@ -10372,7 +10376,7 @@ byte ai_target_classify(int param_1,int param_2,byte param_3)
 
   else {
 
-    iVar2 = FUN_0040acf0();
+    iVar2 = meccbasepit_bldg_from_object();
 
     if ((iVar2 < 0) || (iVar2 = FUN_0052aa70(), iVar2 == 0)) goto LAB_0045af46;
 

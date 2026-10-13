@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (46 named) — decompiled, names from PS2 symbols
+ * 131 functions (49 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3416,7 +3416,7 @@ int obj_visibility_test(float param_1)
 
       local_2c = local_1c + local_2c;
 
-      iVar8 = FUN_0049a3c0(&local_40,iVar4 + 0x27c);
+      iVar8 = collide_bbox_bbox(&local_40,iVar4 + 0x27c);
 
       if (iVar8 != 0) {
 
@@ -3839,7 +3839,7 @@ void FUN_004a4550(void)
 
            ((iVar3 = FUN_004a6180(*(int *)(in_ECX + 0x274)), iVar3 == 0 &&
 
-            (iVar3 = FUN_004a6290(*(undefined4 *)(in_ECX + 0x274)), iVar3 == 0)))) &&
+            (iVar3 = reaperbase_bldg_from_object(*(undefined4 *)(in_ECX + 0x274)), iVar3 == 0)))) &&
 
           (((*(int *)(in_ECX + 0xe8) == 5 ||
 
@@ -5468,7 +5468,7 @@ void FUN_004a5f40(int param_1)
 
       *(undefined4 *)(DAT_00632a88 + 0xd4) = 0;
 
-      FUN_0040d670();
+      camera_fov_update();
 
       FUN_00499280(DAT_00632a88);
 
@@ -5678,12 +5678,12 @@ undefined4 FUN_004a61e0(int param_1)
 
 }
 
-/* ===== FUN_004a6200 @ 0x004A6200 ===== */
+/* ===== meccbasepit_bldg_from_object @ 0x004A6200 ===== */
 /* PS2 candidate: meccbasepit_bldg_from_object (conf 0.712) */
 
 
 
-undefined4 FUN_004a6200(int param_1)
+undefined4 meccbasepit_bldg_from_object(int param_1)
 
 
 
@@ -5751,12 +5751,12 @@ undefined4 FUN_004a6240(int param_1)
 
 }
 
-/* ===== FUN_004a6290 @ 0x004A6290 ===== */
+/* ===== reaperbase_bldg_from_object @ 0x004A6290 ===== */
 /* PS2 candidate: reaperbase_bldg_from_object (conf 0.712) */
 
 
 
-undefined4 FUN_004a6290(int param_1)
+undefined4 reaperbase_bldg_from_object(int param_1)
 
 
 
@@ -6955,12 +6955,12 @@ float10 FUN_004a7630(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004a76e0 @ 0x004A76E0 ===== */
+/* ===== playerobj_eval_refpt @ 0x004A76E0 ===== */
 /* PS2 candidate: playerobj_eval_refpt (conf 0.712) */
 
 
 
-void FUN_004a76e0(int param_1,int param_2,undefined4 *param_3)
+void playerobj_eval_refpt(int param_1,int param_2,undefined4 *param_3)
 
 
 
@@ -6984,7 +6984,7 @@ void FUN_004a76e0(int param_1,int param_2,undefined4 *param_3)
 
     local_c = 0;
 
-    FUN_005170f0(param_1,&local_c,param_3);
+    xformobj_p3d_world(param_1,&local_c,param_3);
 
     return;
 
@@ -7000,7 +7000,7 @@ void FUN_004a76e0(int param_1,int param_2,undefined4 *param_3)
 
     local_4 = *(undefined4 *)(iVar1 + 0x30);
 
-    FUN_005170f0(param_1,&local_c,param_3);
+    xformobj_p3d_world(param_1,&local_c,param_3);
 
     return;
 
@@ -9276,7 +9276,7 @@ void FUN_004a9fe0(undefined4 param_1,int param_2)
 
   if (-1 < param_2) {
 
-    FUN_004a76e0(param_1,param_2,local_c);
+    playerobj_eval_refpt(param_1,param_2,local_c);
 
   }
 
@@ -9548,7 +9548,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   *(undefined4 *)(local_130 + 0x1d0) = param_5;
 
-  FUN_004a76e0(param_3,param_4,&local_13c);
+  playerobj_eval_refpt(param_3,param_4,&local_13c);
 
   *(undefined4 *)(iVar2 + 0x210) = param_3;
 
@@ -9832,9 +9832,11 @@ bool obj_targetable_by_player(int param_1,int param_2)
 
   iVar2 = FUN_004a6220(param_1);
 
-  if ((((iVar2 == 0) && (iVar2 = FUN_004a6200(param_1), iVar2 == 0)) &&
+  if ((((iVar2 == 0) && (iVar2 = meccbasepit_bldg_from_object(param_1), iVar2 == 0)) &&
 
-      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) && (iVar2 = FUN_004a6290(param_1), iVar2 == 0)) {
+      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) &&
+
+     (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
     if (((*(char *)(param_1 + 0x1f5) != '\0') ||
 
@@ -9901,9 +9903,11 @@ bool FUN_004aa7f0(int param_1,int param_2)
 
   iVar2 = FUN_004a6220(param_1);
 
-  if ((((iVar2 == 0) && (iVar2 = FUN_004a6200(param_1), iVar2 == 0)) &&
+  if ((((iVar2 == 0) && (iVar2 = meccbasepit_bldg_from_object(param_1), iVar2 == 0)) &&
 
-      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) && (iVar2 = FUN_004a6290(param_1), iVar2 == 0)) {
+      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) &&
+
+     (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
     if (((*(char *)(param_1 + 0x1f5) != '\0') ||
 
@@ -9968,9 +9972,11 @@ bool FUN_004aa8f0(int param_1,int param_2)
 
   iVar2 = FUN_004a6220(param_1);
 
-  if ((((iVar2 == 0) && (iVar2 = FUN_004a6200(param_1), iVar2 == 0)) &&
+  if ((((iVar2 == 0) && (iVar2 = meccbasepit_bldg_from_object(param_1), iVar2 == 0)) &&
 
-      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) && (iVar2 = FUN_004a6290(param_1), iVar2 == 0)) {
+      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) &&
+
+     (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
     if (((*(char *)(param_1 + 0x1f5) != '\0') ||
 

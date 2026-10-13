@@ -16716,7 +16716,7 @@ void render_view_xform(void)
 
             local_10 = puVar2[2];
 
-            FUN_005170f0(fVar3,&local_18,local_c);
+            xformobj_p3d_world(fVar3,&local_18,local_c);
 
             xform_view(local_c,local_24);
 

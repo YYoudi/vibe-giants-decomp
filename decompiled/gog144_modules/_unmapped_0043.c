@@ -3996,13 +3996,13 @@ int editor_cursor_pick_point(int param_1)
 
     if (param_1 != 0) {
 
-      iVar4 = FUN_00455b70(&LAB_004380c0,0,0x460ca000,0);
+      iVar4 = project_cursor_to_object(&LAB_004380c0,0,0x460ca000,0);
 
       return iVar4;
 
     }
 
-    iVar4 = FUN_00455b70(0,0,0x460ca000,0);
+    iVar4 = project_cursor_to_object(0,0,0x460ca000,0);
 
     return iVar4;
 

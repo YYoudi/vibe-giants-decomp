@@ -1,0 +1,10 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b7450,FUN_004b7450,,reaper_animselect,0.9,promote-auto,score=2.58;caller+callee;callers=['reaper_spell_big']
+004c1ee0,FUN_004c1ee0,,reaper_finish_smartie_grab__FP6OBJECT,0.9,promote-auto,score=2.54;caller+callee;callers=['reaper_cast_cloak_firecircle']
+00503970,FUN_00503970,,teammecc_set_slave_goal__FP6OBJECTi,0.9,promote-auto,score=2.50;caller+callee;callers=['teammecc_setup_enemies__FP6OBJECTi']
+004c0fc0,FUN_004c0fc0,,reaper_tornado_create,0.9,promote-auto,score=2.49;caller+callee;callers=['reaper_cast_cloak_firecircle']
+004c1f80,FUN_004c1f80,,reaper_update_spell_status__FP6OBJECT,0.9,promote-auto,score=2.46;caller+callee;callers=['reaper_cast_cloak_firecircle']
+004bea70,FUN_004bea70,,reaper_fire_spell__FP6OBJECTiP3P3DT0i,0.9,promote-auto,"score=2.44;caller+callee;callers=['reaper_cast_cloak_firecircle', 'reaper_ability_playersound']"
+004c2140,FUN_004c2140,,reaper_finish_teleport,0.9,promote-auto,score=2.43;caller+callee;callers=['reaper_cast_cloak_firecircle']
+004909f0,FUN_004909f0,,scenerio_start_mission__Fv,0.9,promote-auto,"score=2.42;caller+callee;callers=['scenerio_start_index__Fi', 'ambient_streams_handler']"
+004c03a0,FUN_004c03a0,,reaper_finish_cloak,0.9,promote-auto,score=2.40;caller+callee;callers=['reaper_cast_cloak_firecircle']

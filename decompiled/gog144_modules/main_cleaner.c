@@ -316,7 +316,7 @@ void main_cleaner_0040f750(int param_1)
 
   iVar2 = *(int *)(*(int *)(param_1 + 8) + 0x400 + iVar2 * 4);
 
-  FUN_005170f0(param_1,*(undefined4 *)(iVar2 + 0x14),local_18 + 3);
+  xformobj_p3d_world(param_1,*(undefined4 *)(iVar2 + 0x14),local_18 + 3);
 
   local_18[0] = local_18[3];
 
@@ -332,7 +332,7 @@ void main_cleaner_0040f750(int param_1)
 
     do {
 
-      FUN_005170f0(param_1,*(int *)(iVar2 + 0x14) + iVar3,&local_3c);
+      xformobj_p3d_world(param_1,*(int *)(iVar2 + 0x14) + iVar3,&local_3c);
 
       if (local_3c < local_18[0]) {
 

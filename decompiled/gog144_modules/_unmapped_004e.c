@@ -1604,7 +1604,7 @@ void FUN_004e2b10(int param_1)
 
     iVar2 = *(int *)(*(int *)(iVar1 + 0x134) + 0x100);
 
-    FUN_004a76e0(*(int *)(iVar1 + 0x134),*(int *)(iVar1 + 0x138),iVar1 + 8);
+    playerobj_eval_refpt(*(int *)(iVar1 + 0x134),*(int *)(iVar1 + 0x138),iVar1 + 8);
 
     FUN_00414690(param_1 + 0xa0,local_1c);
 
@@ -1669,7 +1669,7 @@ undefined4 ai_ground_snap(int param_1)
 
     pfVar1 = (float *)(param_1 + 0xa0);
 
-    FUN_004a76e0(*(int *)(iVar2 + 0x134),*(int *)(iVar2 + 0x138),pfVar1);
+    playerobj_eval_refpt(*(int *)(iVar2 + 0x134),*(int *)(iVar2 + 0x138),pfVar1);
 
     FUN_00414690(pfVar1,local_1c);
 
@@ -4522,7 +4522,7 @@ void FUN_004e5270(int param_1,int param_2,int param_3,int param_4)
 
   if (param_3 != 0) {
 
-    FUN_004a76e0(iVar2,2,&local_5c);
+    playerobj_eval_refpt(iVar2,2,&local_5c);
 
     if (param_2 == 0) {
 
@@ -4640,7 +4640,7 @@ void FUN_004e5270(int param_1,int param_2,int param_3,int param_4)
 
   }
 
-  FUN_004a76e0(iVar2,0,local_50);
+  playerobj_eval_refpt(iVar2,0,local_50);
 
   if (DAT_00632e70 != DAT_005a8594) {
 
@@ -4875,7 +4875,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       iVar5 = *(int *)(param_1 + 0x100);
 
-      FUN_004a76e0(iVar9,2,&local_5c);
+      playerobj_eval_refpt(iVar9,2,&local_5c);
 
       if (iVar11 == 0) {
 
@@ -4985,7 +4985,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       FUN_0050a400(&local_5c,&local_68);
 
-      FUN_004a76e0(iVar9,2,&local_5c);
+      playerobj_eval_refpt(iVar9,2,&local_5c);
 
       fVar13 = (float10)FUN_0050a400(&local_5c,&local_68);
 
@@ -5019,7 +5019,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       iVar11 = FUN_004aa550(0x1a,*(undefined4 *)(param_1 + 0x18c),param_1,0,local_44,0);
 
-      FUN_004a76e0(iVar9,0,local_50);
+      playerobj_eval_refpt(iVar9,0,local_50);
 
       ANM_BinderDestroy(local_50,1,0x4ac,0,0x3f666666,0x3f8ccccd,0x41000000,0x40800000,0x41700000,
 
@@ -7704,7 +7704,7 @@ void FUN_004ea3e0(float param_1)
 
   *puVar2 = 0;
 
-  FUN_004a76e0(iVar3,iVar4 + 6,local_c);
+  playerobj_eval_refpt(iVar3,iVar4 + 6,local_c);
 
   FUN_00401000(iVar6);
 
@@ -8151,7 +8151,7 @@ LAB_004eac20:
 
     *(undefined4 *)(iVar6 + 0xcc) = 0;
 
-    FUN_0040d670();
+    camera_fov_update();
 
     DAT_00633108 = 1;
 
@@ -8417,7 +8417,7 @@ LAB_004eb000:
 
     *(undefined4 *)(iVar6 + 0xcc) = 0;
 
-    FUN_0040d670();
+    camera_fov_update();
 
     DAT_00633108 = 1;
 
@@ -8633,7 +8633,7 @@ LAB_004eb3e0:
 
   *(undefined4 *)(iVar6 + 0xcc) = 0;
 
-  FUN_0040d670();
+  camera_fov_update();
 
   DAT_00633108 = 1;
 
@@ -11749,7 +11749,7 @@ ai_class_filter(undefined4 param_1,undefined4 param_2,int param_3,int param_4,by
 
       }
 
-      iVar3 = FUN_0049a3c0(local_18,iVar2 + 0x27c);
+      iVar3 = collide_bbox_bbox(local_18,iVar2 + 0x27c);
 
       if ((iVar3 != 0) && (iVar3 = FUN_0049a550(0,param_1,param_2,iVar2 + 0x27c), iVar3 != 0)) {
 
@@ -11917,7 +11917,7 @@ int ai_anim_select_mode(int param_1,int param_2)
 
   uVar1 = *(undefined4 *)(param_1 + 0x274);
 
-  iVar2 = FUN_004a6200(uVar1);
+  iVar2 = meccbasepit_bldg_from_object(uVar1);
 
   if (iVar2 == 0) {
 

@@ -56,7 +56,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   FUN_0053e460(local_44,-*(float *)(DAT_00632ed8 + 0x1558),0,(float)fVar5);
 
-  FUN_004a76e0(param_1,0,&local_6c);
+  playerobj_eval_refpt(param_1,0,&local_6c);
 
   local_60 = -(*(float *)(DAT_00632ed8 + 0x1554) * local_3c) + local_6c;
 

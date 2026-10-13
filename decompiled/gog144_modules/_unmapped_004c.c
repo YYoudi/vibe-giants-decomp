@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (31 named) — decompiled, names from PS2 symbols
+ * 64 functions (37 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -128,12 +128,12 @@ void fxb_firecircle_create(int param_1,undefined4 param_2,undefined4 param_3,und
 
 }
 
-/* ===== FUN_004c03a0 @ 0x004C03A0 ===== */
+/* ===== reaper_finish_cloak @ 0x004C03A0 ===== */
 /* PS2 candidate: reaper_finish_cloak (conf 0.4) */
 
 
 
-void FUN_004c03a0(int param_1,undefined4 param_2)
+void reaper_finish_cloak(int param_1,undefined4 param_2)
 
 
 
@@ -183,7 +183,7 @@ void FUN_004c03a0(int param_1,undefined4 param_2)
 
     if (iVar3 != 0) {
 
-      FUN_004bea70(param_1,0x2c,param_2,0,0xffffffff);
+      reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x2c,param_2,0,0xffffffff);
 
     }
 
@@ -253,7 +253,7 @@ void FUN_004c03a0(int param_1,undefined4 param_2)
 
       else {
 
-        FUN_00455b70(pcVar6,iVar3,uVar1,puVar2 + 0x393);
+        project_cursor_to_object(pcVar6,iVar3,uVar1,puVar2 + 0x393);
 
       }
 
@@ -781,7 +781,7 @@ LAB_004c0b9c:
 
           uVar8 = FUN_00456050(iVar3);
 
-          FUN_004a76e0(uVar8,0,&local_40);
+          playerobj_eval_refpt(uVar8,0,&local_40);
 
           if (local_38 < local_44) {
 
@@ -849,7 +849,7 @@ LAB_004c0b9c:
 
         uVar8 = FUN_00456050(iVar3);
 
-        FUN_004a76e0(uVar8,0,&local_40);
+        playerobj_eval_refpt(uVar8,0,&local_40);
 
         if (local_38 < local_44) {
 
@@ -957,12 +957,12 @@ LAB_004c0b9c:
 
 }
 
-/* ===== FUN_004c0fc0 @ 0x004C0FC0 ===== */
+/* ===== reaper_tornado_create @ 0x004C0FC0 ===== */
 /* PS2 candidate: reaper_tornado_create (conf 0.493) */
 
 
 
-void FUN_004c0fc0(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
+void reaper_tornado_create(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -1207,7 +1207,7 @@ void FUN_004c1170(int param_1)
 
         FUN_0053e460(local_44,-*(float *)(DAT_00632ed8 + 0x120c),0,*(undefined4 *)(iVar4 + 200));
 
-        FUN_004a76e0(iVar4,0xffffffff,&local_5c);
+        playerobj_eval_refpt(iVar4,0xffffffff,&local_5c);
 
         local_50 = local_3c * -1000.0 + local_5c;
 
@@ -1215,7 +1215,7 @@ void FUN_004c1170(int param_1)
 
         local_48 = local_1c * -1000.0 + local_54;
 
-        FUN_004bea70(iVar4,0x32,&local_50,0,0xffffffff);
+        reaper_fire_spell__FP6OBJECTiP3P3DT0i(iVar4,0x32,&local_50,0,0xffffffff);
 
         break;
 
@@ -1496,11 +1496,11 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     *(int *)(iVar2 + 0xea4) = iVar5;
 
-    iVar5 = FUN_004c1de0(iVar1);
+    iVar5 = reaper_can_do_spell_anim__FP6OBJECT(iVar1);
 
     if (iVar5 == 0) {
 
-      FUN_004c1ee0();
+      reaper_finish_smartie_grab__FP6OBJECT();
 
     }
 
@@ -1546,7 +1546,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
          *(float *)(iVar2 + iVar5 * 4) - *(float *)(iVar2 + 0xd40 + *(int *)(iVar2 + 0xdb0) * 0xc);
 
-    iVar5 = FUN_004c1de0(param_1);
+    iVar5 = reaper_can_do_spell_anim__FP6OBJECT(param_1);
 
     if (iVar5 == 0) {
 
@@ -1576,7 +1576,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
   case 0x18:
 
-    FUN_004c2140(param_1,iVar2 + 0xf4c);
+    reaper_finish_teleport(param_1,iVar2 + 0xf4c);
 
     FUN_004c2320(iVar1);
 
@@ -1602,7 +1602,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
          *(float *)(iVar2 + iVar1 * 4) - *(float *)(iVar2 + 0xd40 + *(int *)(iVar2 + 0xdb0) * 0xc);
 
-    FUN_004c1f80(param_1,iVar2 + 0xf4c);
+    reaper_update_spell_status__FP6OBJECT(param_1,iVar2 + 0xf4c);
 
     *(undefined4 *)(iVar2 + 0xda8) = *(undefined4 *)(DAT_00632ed8 + 0x14f4);
 
@@ -1628,7 +1628,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     iVar5 = *(int *)(param_1 + 0x100);
 
-    iVar4 = FUN_004c1de0(param_1);
+    iVar4 = reaper_can_do_spell_anim__FP6OBJECT(param_1);
 
     if (iVar4 == 0) {
 
@@ -1638,7 +1638,9 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
       if (iVar4 != 0) {
 
-        FUN_004bea70(iVar1,0x24,(undefined4 *)(iVar2 + 0xf4c),0,0xffffffff);
+        reaper_fire_spell__FP6OBJECTiP3P3DT0i(iVar1,0x24,(undefined4 *)(iVar2 + 0xf4c),0,0xffffffff)
+
+        ;
 
       }
 
@@ -1682,7 +1684,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     *(int *)(iVar2 + 0xf28) = iVar5;
 
-    iVar4 = FUN_004c1de0(param_1);
+    iVar4 = reaper_can_do_spell_anim__FP6OBJECT(param_1);
 
     if (iVar4 == 0) {
 
@@ -1828,7 +1830,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     FUN_004c2320(param_1);
 
-    FUN_004c0fc0(iVar1,iVar2 + 0xf4c,0xffffffff,0xffffffff);
+    reaper_tornado_create(iVar1,iVar2 + 0xf4c,0xffffffff,0xffffffff);
 
     *(undefined4 *)(iVar2 + 0xda8) = *(undefined4 *)(DAT_00632ed8 + 0x1500);
 
@@ -1836,7 +1838,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
   case 0x3f:
 
-    FUN_004c03a0(param_1,iVar2 + 0xf4c);
+    reaper_finish_cloak(param_1,iVar2 + 0xf4c);
 
     break;
 
@@ -1850,7 +1852,9 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
       if (iVar5 != 0) {
 
-        FUN_004bea70(iVar1,0x33,(undefined4 *)(iVar2 + 0xf4c),0,0xffffffff);
+        reaper_fire_spell__FP6OBJECTiP3P3DT0i(iVar1,0x33,(undefined4 *)(iVar2 + 0xf4c),0,0xffffffff)
+
+        ;
 
       }
 
@@ -1904,12 +1908,12 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004c1de0 @ 0x004C1DE0 ===== */
+/* ===== reaper_can_do_spell_anim__FP6OBJECT @ 0x004C1DE0 ===== */
 /* PS2 candidate: reaper_can_do_spell_anim__FP6OBJECT (conf 0.706) */
 
 
 
-undefined4 FUN_004c1de0(int param_1)
+undefined4 reaper_can_do_spell_anim__FP6OBJECT(int param_1)
 
 
 
@@ -1972,7 +1976,7 @@ void reaper_ability_playersound(int param_1,undefined4 *param_2)
 
     if (iVar2 != 0) {
 
-      FUN_004bea70(param_1,0x27,param_2,0,0xffffffff);
+      reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x27,param_2,0,0xffffffff);
 
       return;
 
@@ -1992,12 +1996,12 @@ void reaper_ability_playersound(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_004c1ee0 @ 0x004C1EE0 ===== */
+/* ===== reaper_finish_smartie_grab__FP6OBJECT @ 0x004C1EE0 ===== */
 /* PS2 candidate: reaper_finish_smartie_grab__FP6OBJECT (conf 0.542) */
 
 
 
-void FUN_004c1ee0(int param_1)
+void reaper_finish_smartie_grab__FP6OBJECT(int param_1)
 
 
 
@@ -2053,14 +2057,14 @@ LAB_004c1f71:
 
 }
 
-/* ===== FUN_004c1f80 @ 0x004C1F80 ===== */
+/* ===== reaper_update_spell_status__FP6OBJECT @ 0x004C1F80 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: reaper_update_spell_status__FP6OBJECT (conf 0.458) */
 
 
 
-void FUN_004c1f80(int param_1,undefined4 *param_2)
+void reaper_update_spell_status__FP6OBJECT(int param_1,undefined4 *param_2)
 
 
 
@@ -2199,7 +2203,7 @@ void reaper_ability_playersound2(int param_1,undefined4 *param_2)
 
   if (iVar1 != 0) {
 
-    FUN_004bea70(param_1,0x26,param_2,0,0xffffffff);
+    reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x26,param_2,0,0xffffffff);
 
   }
 
@@ -2209,12 +2213,12 @@ void reaper_ability_playersound2(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_004c2140 @ 0x004C2140 ===== */
+/* ===== reaper_finish_teleport @ 0x004C2140 ===== */
 /* PS2 candidate: reaper_finish_teleport (conf 0.432) */
 
 
 
-void FUN_004c2140(int param_1,undefined4 *param_2)
+void reaper_finish_teleport(int param_1,undefined4 *param_2)
 
 
 
@@ -2339,7 +2343,7 @@ void reaper_ability_playersound3(int param_1,undefined4 *param_2)
 
     if (iVar2 != 0) {
 
-      FUN_004bea70(param_1,0x25,param_2,0,0xffffffff);
+      reaper_fire_spell__FP6OBJECTiP3P3DT0i(param_1,0x25,param_2,0,0xffffffff);
 
       return;
 
@@ -4370,7 +4374,7 @@ void reaper_lock_user_2(int param_1)
 
                   *(float *)(iVar3 + 200) = (float)fVar6;
 
-                  FUN_004a76e0(iVar3,0,(undefined4 *)(iVar3 + 0xa0));
+                  playerobj_eval_refpt(iVar3,0,(undefined4 *)(iVar3 + 0xa0));
 
                   FUN_00499310(iVar3,*(undefined4 *)(iVar3 + 0xa0),*(undefined4 *)(iVar3 + 0xa4),
 
@@ -6299,7 +6303,7 @@ void sound_obj_seq_small(int param_1,undefined4 param_2,undefined4 param_3,undef
 
   
 
-  FUN_004a76e0(param_1,0,&local_50);
+  playerobj_eval_refpt(param_1,0,&local_50);
 
   fVar2 = (float10)FUN_0050a490(&local_50,param_3);
 
@@ -6388,7 +6392,7 @@ void FUN_004cb730(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  FUN_004a76e0(*(undefined4 *)(iVar1 + 0xa8),0,&local_50);
+  playerobj_eval_refpt(*(undefined4 *)(iVar1 + 0xa8),0,&local_50);
 
   iVar2 = *(int *)(iVar1 + 0x3c);
 
@@ -9013,7 +9017,7 @@ undefined4 dev_debug_flags(void)
 
   if (DAT_00633234 == 0) goto LAB_004ce7b8;
 
-  iVar5 = FUN_00455b70(&LAB_004ce810,0,0x47afc800,local_1e0);
+  iVar5 = project_cursor_to_object(&LAB_004ce810,0,0x47afc800,local_1e0);
 
   if (iVar5 == 0) {
 
@@ -9825,7 +9829,9 @@ LAB_004cf539:
 
         *(uint *)((int)fVar5 + 0xd8) = *(uint *)((int)fVar5 + 0xd8) & 0xffffffef;
 
-        FUN_004a76e0(*(undefined4 *)(iVar11 + 0x24),*(undefined4 *)(iVar11 + 0x28),&local_34);
+        playerobj_eval_refpt
+
+                  (*(undefined4 *)(iVar11 + 0x24),*(undefined4 *)(iVar11 + 0x28),&local_34);
 
         main_ai_move_004014b0(fVar5,&local_34,*(undefined4 *)(*(int *)(iVar11 + 0x24) + 200));
 
