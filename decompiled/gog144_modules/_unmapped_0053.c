@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (115 named) — decompiled, names from PS2 symbols
+ * 179 functions (118 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -3077,7 +3077,7 @@ LAB_005319de:
 
           }
 
-          iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1));
+          iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 1));
 
           pcVar14 = DAT_005e0304;
 
@@ -3217,7 +3217,7 @@ LAB_005319de:
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
-           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
+           (iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
 
           iVar4 = PROJ_CreateBasic(*(undefined4 *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 9));
 
@@ -3229,7 +3229,7 @@ LAB_005319de:
 
           else {
 
-            uVar5 = FUN_0052e5b0(*(int *)(pcVar15 + 0x25));
+            uVar5 = objanim_select_animloop(*(int *)(pcVar15 + 0x25));
 
           }
 
@@ -3325,7 +3325,7 @@ LAB_005319de:
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
-           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
+           (iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
 
           iVar6 = object_allocate_type(*(undefined4 *)(pcVar15 + 1),0x80000000);
 
@@ -3363,7 +3363,7 @@ LAB_005319de:
 
       case '#':
 
-        iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1));
+        iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 1));
 
         if (iVar4 != 0) {
 
@@ -3381,7 +3381,7 @@ LAB_005319de:
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
-           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1)), iVar4 != 0)) {
+           (iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 1)), iVar4 != 0)) {
 
           *(undefined4 *)(iVar4 + 0x278) = *(undefined4 *)(pcVar15 + 5);
 
@@ -3401,7 +3401,7 @@ LAB_005319de:
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
-           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
+           (iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
 
           iVar4 = object_allocate_type(*(undefined4 *)(pcVar15 + 1),0);
 
@@ -3601,7 +3601,7 @@ LAB_005319de:
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
-           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1)), iVar4 == 0)) {
+           (iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 1)), iVar4 == 0)) {
 
           iVar4 = object_allocate_type(0x3df,2);
 
@@ -3775,7 +3775,7 @@ LAB_00532b21:
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
-           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 1)), iVar4 == 0)) {
+           (iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 1)), iVar4 == 0)) {
 
           iVar4 = object_allocate_type(0x434,0x80000000);
 
@@ -3807,11 +3807,11 @@ LAB_00532b21:
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
-           (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 0x21)), iVar4 != 0)) {
+           (iVar4 = objanim_select_animloop(*(undefined4 *)(pcVar15 + 0x21)), iVar4 != 0)) {
 
           uVar5 = *(undefined4 *)(pcVar15 + 0x1d);
 
-          iVar6 = FUN_0052e5b0(uVar5);
+          iVar6 = objanim_select_animloop(uVar5);
 
           if (iVar6 == 0) {
 
@@ -5090,7 +5090,7 @@ void mecc_shield_spell(int param_1)
 
     }
 
-    FUN_00457f40(iVar2,*(undefined1 *)(param_1 + 9),uVar3);
+    WeaponIdSet__FP6OBJECTii(iVar2,*(undefined1 *)(param_1 + 9),uVar3);
 
     reaper_lock_short_3(iVar2,*(undefined1 *)(param_1 + 9));
 
@@ -9764,12 +9764,12 @@ LAB_0053653b:
 
 }
 
-/* ===== FUN_00536580 @ 0x00536580 ===== */
+/* ===== chat_insert_lf @ 0x00536580 ===== */
 /* PS2 candidate: chat_insert_lf (conf 0.375) */
 
 
 
-void FUN_00536580(char *param_1,undefined4 param_2)
+void chat_insert_lf(char *param_1,undefined4 param_2)
 
 
 
@@ -10406,14 +10406,14 @@ undefined4 AudioGetMasterVolume__Fv_11(void)
 
 }
 
-/* ===== FUN_00536cb0 @ 0x00536CB0 ===== */
+/* ===== multi_display_player_cursor_info__Fv @ 0x00536CB0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: multi_display_player_cursor_info__Fv (conf 0.38) */
 
 
 
-void FUN_00536cb0(void)
+void multi_display_player_cursor_info__Fv(void)
 
 
 
@@ -17240,12 +17240,12 @@ void FUN_0053d970(uint *param_1,uint *param_2)
 
 }
 
-/* ===== FUN_0053d9e0 @ 0x0053D9E0 ===== */
+/* ===== GEO_MatIdentity @ 0x0053D9E0 ===== */
 /* PS2 candidate: GEO_MatIdentity (conf 0.368) */
 
 
 
-void FUN_0053d9e0(undefined4 *param_1)
+void GEO_MatIdentity(undefined4 *param_1)
 
 
 

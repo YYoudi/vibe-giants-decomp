@@ -58,7 +58,7 @@ void main_commonbase_00418f00(int param_1,undefined4 param_2,int param_3,float *
 
     iVar8 = *(int *)(param_1 + 0x100);
 
-    iVar9 = FUN_0052e5b0(param_4[1]);
+    iVar9 = objanim_select_animloop(param_4[1]);
 
     if (iVar9 != 0) {
 
@@ -466,7 +466,9 @@ LAB_004195d2:
 
     fVar4 = *(float *)(iVar8 + 0x56c);
 
-    if (((fVar4 == 0.0) || (fVar4 == *param_4)) || (iVar9 = FUN_0052e5b0(fVar4), iVar9 == 0)) {
+    if (((fVar4 == 0.0) || (fVar4 == *param_4)) ||
+
+       (iVar9 = objanim_select_animloop(fVar4), iVar9 == 0)) {
 
       *(float *)(iVar8 + 0x56c) = *param_4;
 
@@ -532,7 +534,7 @@ LAB_004195d2:
 
     iVar8 = *(int *)(param_1 + 0x100);
 
-    iVar9 = FUN_0052e5b0(param_4[1]);
+    iVar9 = objanim_select_animloop(param_4[1]);
 
     if (iVar9 != 0) {
 
@@ -564,7 +566,7 @@ LAB_004195d2:
 
     local_94 = *(float *)(param_1 + 0x100);
 
-    iVar8 = FUN_0052e5b0(param_4[1]);
+    iVar8 = objanim_select_animloop(param_4[1]);
 
     if (iVar8 == 0) {
 
@@ -720,7 +722,7 @@ LAB_004195d2:
 
     if (((*(int *)(iVar8 + 0x570) == 0) || (*(float *)(iVar8 + 0x56c) == *param_4)) ||
 
-       (iVar9 = FUN_0052e5b0(*(int *)(iVar8 + 0x570)), iVar9 == 0)) {
+       (iVar9 = objanim_select_animloop(*(int *)(iVar8 + 0x570)), iVar9 == 0)) {
 
       *(float *)(iVar8 + 0x570) = *param_4;
 
@@ -758,11 +760,13 @@ LAB_004195d2:
 
     iVar9 = fx_create(param_1);
 
-    if (((iVar9 != 0) && (iVar9 = FUN_0052e5b0(*param_4), iVar9 != 0)) &&
+    if (((iVar9 != 0) && (iVar9 = objanim_select_animloop(*param_4), iVar9 != 0)) &&
 
        ((iVar10 = *(int *)(iVar8 + 0x5bc + (int)param_4[2] * 4), iVar10 == 0 ||
 
-        ((iVar10 == *(int *)(iVar9 + 0x188) || (iVar10 = FUN_0052e5b0(iVar10), iVar10 == 0)))))) {
+        ((iVar10 == *(int *)(iVar9 + 0x188) ||
+
+         (iVar10 = objanim_select_animloop(iVar10), iVar10 == 0)))))) {
 
       *(undefined4 *)(iVar8 + 0x5bc + (int)param_4[2] * 4) = *(undefined4 *)(iVar9 + 0x188);
 
@@ -776,7 +780,7 @@ LAB_004195d2:
 
   case 0x1d:
 
-    uVar7 = FUN_0052e5b0(*param_4);
+    uVar7 = objanim_select_animloop(*param_4);
 
     iVar8 = fx_create(uVar7);
 
@@ -822,7 +826,7 @@ LAB_004195d2:
 
     iVar8 = fx_create(param_1);
 
-    if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(*param_4), iVar8 != 0)) {
+    if ((iVar8 != 0) && (iVar8 = objanim_select_animloop(*param_4), iVar8 != 0)) {
 
       iVar9 = *(int *)(param_1 + 0x100);
 
@@ -850,9 +854,9 @@ LAB_004195d2:
 
     if (iVar8 != 0) {
 
-      iVar8 = FUN_0052e5b0(*param_4);
+      iVar8 = objanim_select_animloop(*param_4);
 
-      iVar9 = FUN_0052e5b0(param_4[1]);
+      iVar9 = objanim_select_animloop(param_4[1]);
 
       if ((iVar8 != 0) && (iVar9 != 0)) {
 
@@ -862,7 +866,9 @@ LAB_004195d2:
 
         if ((iVar10 == 0) ||
 
-           ((iVar10 == *(int *)(iVar8 + 0x188) || (iVar10 = FUN_0052e5b0(iVar10), iVar10 == 0)))) {
+           ((iVar10 == *(int *)(iVar8 + 0x188) ||
+
+            (iVar10 = objanim_select_animloop(iVar10), iVar10 == 0)))) {
 
           *(undefined4 *)(iVar9 + 0x10) = *(undefined4 *)(iVar8 + 0x188);
 
@@ -880,11 +886,11 @@ LAB_004195d2:
 
   case 0x20:
 
-    uVar7 = FUN_0052e5b0(*param_4);
+    uVar7 = objanim_select_animloop(*param_4);
 
     iVar8 = fx_create(uVar7);
 
-    if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(param_4[1]), iVar8 != 0)) {
+    if ((iVar8 != 0) && (iVar8 = objanim_select_animloop(param_4[1]), iVar8 != 0)) {
 
       iVar9 = ObjIsMecc(uVar7);
 
@@ -910,9 +916,9 @@ LAB_004195d2:
 
     if (iVar8 != 0) {
 
-      iVar8 = FUN_0052e5b0(*param_4);
+      iVar8 = objanim_select_animloop(*param_4);
 
-      iVar9 = FUN_0052e5b0(param_4[1]);
+      iVar9 = objanim_select_animloop(param_4[1]);
 
       if ((iVar8 != 0) && (iVar9 != 0)) {
 
@@ -932,9 +938,9 @@ LAB_004195d2:
 
     if (iVar8 != 0) {
 
-      iVar8 = FUN_0052e5b0(*param_4);
+      iVar8 = objanim_select_animloop(*param_4);
 
-      iVar9 = FUN_0052e5b0(param_4[1]);
+      iVar9 = objanim_select_animloop(param_4[1]);
 
       if ((iVar8 != 0) && (iVar9 != 0)) {
 
@@ -944,7 +950,9 @@ LAB_004195d2:
 
         if ((iVar6 == 0) ||
 
-           ((iVar6 == *(int *)(iVar8 + 0x188) || (iVar6 = FUN_0052e5b0(iVar6), iVar6 == 0)))) {
+           ((iVar6 == *(int *)(iVar8 + 0x188) ||
+
+            (iVar6 = objanim_select_animloop(iVar6), iVar6 == 0)))) {
 
           puVar5 = DAT_00632d98;
 
@@ -986,11 +994,11 @@ LAB_004195d2:
 
   case 0x23:
 
-    uVar7 = FUN_0052e5b0(*param_4);
+    uVar7 = objanim_select_animloop(*param_4);
 
     iVar8 = fx_create(uVar7);
 
-    if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(param_4[1]), iVar8 != 0)) {
+    if ((iVar8 != 0) && (iVar8 = objanim_select_animloop(param_4[1]), iVar8 != 0)) {
 
       iVar9 = ObjIsMecc(uVar7);
 
@@ -1016,9 +1024,9 @@ LAB_004195d2:
 
     if (iVar8 != 0) {
 
-      iVar8 = FUN_0052e5b0(*param_4);
+      iVar8 = objanim_select_animloop(*param_4);
 
-      iVar9 = FUN_0052e5b0(param_4[1]);
+      iVar9 = objanim_select_animloop(param_4[1]);
 
       if ((iVar8 != 0) && (iVar9 != 0)) {
 

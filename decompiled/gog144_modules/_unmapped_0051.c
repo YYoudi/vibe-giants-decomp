@@ -1656,7 +1656,7 @@ LAB_005127e2:
 
     fVar2 = *(float *)(iVar1 + 0x50);
 
-    iVar3 = FUN_00497d70(*(undefined4 *)(param_1 + 4));
+    iVar3 = object_find(*(undefined4 *)(param_1 + 4));
 
     if (iVar3 != 0) {
 

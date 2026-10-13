@@ -1773,7 +1773,7 @@ void makewrld_big(void)
 
       (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_cc,auStack_44);
 
-      FUN_0053d9e0(&uStack_154);
+      GEO_MatIdentity(&uStack_154);
 
       iVar4 = *(int *)((int)&DAT_00556e44 + iVar7);
 
@@ -2697,7 +2697,7 @@ void main_drawwrld_00434c30(int param_1)
 
     *puVar1 = 0;
 
-    FUN_0053d9e0(param_1 + 0x38);
+    GEO_MatIdentity(param_1 + 0x38);
 
     *(undefined4 *)(param_1 + 0x7c) = 0;
 
@@ -3508,7 +3508,7 @@ void dlog_frame_reset(void)
 
     *puVar1 = 0;
 
-    FUN_0053d9e0(iVar3 + 0x38);
+    GEO_MatIdentity(iVar3 + 0x38);
 
     *(undefined4 *)(iVar3 + 0x7c) = 0;
 
@@ -3538,7 +3538,7 @@ void dlog_frame_reset(void)
 
     *puVar1 = 0;
 
-    FUN_0053d9e0(iVar3 + 0x38);
+    GEO_MatIdentity(iVar3 + 0x38);
 
     *(undefined4 *)(iVar3 + 0x7c) = 0;
 
@@ -3568,7 +3568,7 @@ void dlog_frame_reset(void)
 
     *puVar1 = 0;
 
-    FUN_0053d9e0(iVar3 + 0x38);
+    GEO_MatIdentity(iVar3 + 0x38);
 
     *(undefined4 *)(iVar3 + 0x7c) = 0;
 
@@ -3598,7 +3598,7 @@ void dlog_frame_reset(void)
 
     *puVar1 = 0;
 
-    FUN_0053d9e0(iVar3 + 0x38);
+    GEO_MatIdentity(iVar3 + 0x38);
 
     *(undefined4 *)(iVar3 + 0x7c) = 0;
 
@@ -3628,7 +3628,7 @@ void dlog_frame_reset(void)
 
     *puVar1 = 0;
 
-    FUN_0053d9e0(iVar3 + 0x38);
+    GEO_MatIdentity(iVar3 + 0x38);
 
     *(undefined4 *)(iVar3 + 0x7c) = 0;
 
@@ -4418,7 +4418,7 @@ void wredit_menu_main(void)
 
       do {
 
-        iVar2 = FUN_00497d70();
+        iVar2 = object_find();
 
         if (*(byte *)(iVar2 + 0x1f6) == DAT_0059cd3c) {
 
@@ -5059,7 +5059,7 @@ void wredit_menu_3(int param_1)
 
         do {
 
-          iVar2 = FUN_00497d70(*(undefined4 *)(iVar8 + DAT_0059cd30));
+          iVar2 = object_find(*(undefined4 *)(iVar8 + DAT_0059cd30));
 
           if (*(byte *)(iVar2 + 0x1f6) == DAT_0059cd3c) {
 
@@ -5513,7 +5513,7 @@ void wredit_menu_4(void)
 
       do {
 
-        iVar2 = FUN_00497d70(*(undefined4 *)(iVar7 + DAT_0059cd30));
+        iVar2 = object_find(*(undefined4 *)(iVar7 + DAT_0059cd30));
 
         if (*(byte *)(iVar2 + 0x1f6) == DAT_0059cd3c) {
 
@@ -5754,7 +5754,7 @@ void wredit_object_select(void)
 
     do {
 
-      iVar1 = FUN_00497d70(*(undefined4 *)(iVar4 + DAT_0059cd30));
+      iVar1 = object_find(*(undefined4 *)(iVar4 + DAT_0059cd30));
 
       if (*(byte *)(iVar1 + 0x1f6) == DAT_0059cd3c) {
 
@@ -7273,7 +7273,7 @@ void wredit_menu_5(int param_1)
 
         do {
 
-          iVar2 = FUN_00497d70(*(undefined4 *)(iVar7 + DAT_0059cd30));
+          iVar2 = object_find(*(undefined4 *)(iVar7 + DAT_0059cd30));
 
           if (*(byte *)(iVar2 + 0x1f6) == DAT_0059cd3c) {
 
@@ -8278,7 +8278,7 @@ void wredit_lock_list(void)
 
   iVar3 = *(int *)(DAT_0059cbd8 + 0x38);
 
-  iVar1 = FUN_00497d70(DAT_0059cc30);
+  iVar1 = object_find(DAT_0059cc30);
 
   DAT_0059cd64 = main_dlog_00427150();
 
@@ -8938,7 +8938,7 @@ LAB_0043cb4c:
 
         do {
 
-          iVar4 = FUN_00497d70(*(undefined4 *)(iVar7 + DAT_0059cd30));
+          iVar4 = object_find(*(undefined4 *)(iVar7 + DAT_0059cd30));
 
           if (*(byte *)(iVar4 + 0x1f6) == DAT_0059cd3c) {
 

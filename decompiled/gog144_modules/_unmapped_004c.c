@@ -3418,7 +3418,9 @@ void mecc_drop_carried_object_2(int param_1,int param_2)
 
   if ((((iVar4 == 0) || (iVar5 = *(int *)(iVar1 + 0x10), iVar5 == 0)) ||
 
-      (iVar5 == *(int *)(param_1 + 0x188))) || (iVar5 = FUN_0052e5b0(iVar5), iVar5 == 0)) {
+      (iVar5 == *(int *)(param_1 + 0x188))) || (iVar5 = objanim_select_animloop(iVar5), iVar5 == 0))
+
+  {
 
     lift_logic__FP6OBJECT(param_2);
 
@@ -3568,7 +3570,7 @@ void FUN_004c50b0(int param_1,int param_2)
 
     if (((iVar3 != 0) && (iVar3 != *(int *)(param_1 + 0x188))) &&
 
-       (iVar3 = FUN_0052e5b0(iVar3), iVar3 != 0)) {
+       (iVar3 = objanim_select_animloop(iVar3), iVar3 != 0)) {
 
       return;
 
@@ -3677,7 +3679,7 @@ void lzo_checked_alloc(int param_1)
 
               if (((iVar6 != 0) && (iVar6 != *(int *)(param_1 + 0x188))) &&
 
-                 (iVar6 = FUN_0052e5b0(iVar6), iVar6 != 0)) goto LAB_004c52ae;
+                 (iVar6 = objanim_select_animloop(iVar6), iVar6 != 0)) goto LAB_004c52ae;
 
             }
 
@@ -8509,7 +8511,7 @@ undefined4 dev_debug_flags(void)
 
           FUN_00515de0(iVar5 + 0xc,iVar5 + 0x18);
 
-          FUN_0053d9e0();
+          GEO_MatIdentity();
 
           FUN_005162b0(auStack_16c);
 
@@ -8783,7 +8785,7 @@ undefined4 dev_debug_flags(void)
 
     render_view_xform();
 
-    FUN_00536cb0();
+    multi_display_player_cursor_info__Fv();
 
     iVar5 = dialog_level_is_base();
 

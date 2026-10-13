@@ -1,16 +1,16 @@
 /* Giants 1.449 — module main/editor
- * 6 functions (5 named) — decompiled, names from PS2 symbols
+ * 6 functions (6 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/editor.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004361b0 @ 0x004361B0 ===== */
+/* ===== rpman_init__FP6OBJECT @ 0x004361B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: rpman_init__FP6OBJECT (conf 0.381) */
 
 
 
-void FUN_004361b0(void)
+void rpman_init__FP6OBJECT(void)
 
 
 

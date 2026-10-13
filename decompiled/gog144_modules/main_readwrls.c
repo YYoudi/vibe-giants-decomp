@@ -997,7 +997,7 @@ LAB_004b1410:
 
       pfVar23 = (float *)((int)pfVar21 + 5);
 
-      iVar6 = FUN_00497d70(fVar17);
+      iVar6 = object_find(fVar17);
 
       if (iVar6 == 0) {
 
@@ -1509,7 +1509,7 @@ switchD_004b1431_caseD_2d:
 
       pfVar23 = (float *)((int)pfVar21 + 5);
 
-      iVar6 = FUN_00497d70(fVar17);
+      iVar6 = object_find(fVar17);
 
       if (iVar6 == 0) {
 
@@ -1631,7 +1631,7 @@ switchD_004b1431_caseD_2d:
 
       pfVar23 = (float *)((int)pfVar21 + 5);
 
-      iVar6 = FUN_00497d70(fVar17);
+      iVar6 = object_find(fVar17);
 
       if (iVar6 == 0) {
 
@@ -1991,7 +1991,7 @@ switchD_004b1431_caseD_2d:
 
       pfVar23 = (float *)((int)pfVar21 + 5);
 
-      iVar6 = FUN_00497d70(fVar17);
+      iVar6 = object_find(fVar17);
 
       if (iVar6 == 0) {
 

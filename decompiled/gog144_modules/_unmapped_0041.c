@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (71 named) — decompiled, names from PS2 symbols
+ * 100 functions (73 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -1983,7 +1983,7 @@ void collide_objects(int param_1)
 
         local_a4 = *(float *)(param_1 + 0xa8);
 
-        local_b8 = FUN_004156f0(param_1,&local_94);
+        local_b8 = collide_objects_kabuto__FP6OBJECTP3P3D(param_1,&local_94);
 
       } while ((((*(float *)(param_1 + 0xa0) != local_ac) ||
 
@@ -2077,7 +2077,7 @@ LAB_004135eb:
 
 LAB_00413703:
 
-  fVar11 = (float10)FUN_00413e90(param_1 + 0xa0,&local_a0);
+  fVar11 = (float10)get_floor_z_point_plat(param_1 + 0xa0,&local_a0);
 
   fVar2 = (float)fVar11;
 
@@ -2222,7 +2222,7 @@ undefined4 FUN_004138c0(float param_1,int param_2)
 
      (*(int *)((int)param_1 + 0x224) == 0)) {
 
-    fVar3 = (float10)FUN_00413e90(param_2,&param_2);
+    fVar3 = (float10)get_floor_z_point_plat(param_2,&param_2);
 
     param_1 = (float)fVar3;
 
@@ -2616,7 +2616,7 @@ float10 get_floor_z_point(undefined4 param_1)
 
   fVar1 = local_c[0];
 
-  fVar2 = (float10)FUN_00413e90(param_1,0);
+  fVar2 = (float10)get_floor_z_point_plat(param_1,0);
 
   if (fVar2 <= (float10)local_c[0]) {
 
@@ -2628,12 +2628,12 @@ float10 get_floor_z_point(undefined4 param_1)
 
 }
 
-/* ===== FUN_00413e90 @ 0x00413E90 ===== */
+/* ===== get_floor_z_point_plat @ 0x00413E90 ===== */
 /* PS2 candidate: get_floor_z_point_plat (conf 0.366) */
 
 
 
-float10 FUN_00413e90(float *param_1,int *param_2)
+float10 get_floor_z_point_plat(float *param_1,int *param_2)
 
 
 
@@ -3455,7 +3455,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
          (piVar3 = DAT_00632d7c, *(int *)(param_1 + 0x224) == 0))) {
 
-    fVar8 = (float10)FUN_00413e90(param_3);
+    fVar8 = (float10)get_floor_z_point_plat(param_3);
 
     local_38 = (int *)(float)fVar8;
 
@@ -4118,12 +4118,12 @@ LAB_0041566c:
 
 }
 
-/* ===== FUN_004156f0 @ 0x004156F0 ===== */
+/* ===== collide_objects_kabuto__FP6OBJECTP3P3D @ 0x004156F0 ===== */
 /* PS2 candidate: collide_objects_kabuto__FP6OBJECTP3P3D (conf 0.376) */
 
 
 
-undefined4 FUN_004156f0(int param_1,float *param_2)
+undefined4 collide_objects_kabuto__FP6OBJECTP3P3D(int param_1,float *param_2)
 
 
 
@@ -5203,7 +5203,7 @@ void dlog_pop_user(void)
 
   DAT_00657508 = 0;
 
-  FUN_0040d790();
+  camera_override_done();
 
   FUN_005162b0(&DAT_00584330);
 

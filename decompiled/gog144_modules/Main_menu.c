@@ -221,7 +221,7 @@ void main_menu_004832f0(void)
 
     FUN_00531470();
 
-    FUN_0044efd0(1);
+    fx_process(1);
 
     sound_checked_big(1);
 

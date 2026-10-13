@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (67 named) — decompiled, names from PS2 symbols
+ * 90 functions (69 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3825,7 +3825,7 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
       }
 
-      iVar4 = FUN_004a6140(fVar8);
+      iVar4 = ObjIsTurret(fVar8);
 
       if (iVar4 == 0) {
 
@@ -4186,7 +4186,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     else {
 
-      uVar5 = FUN_0052e5b0(param_4[6]);
+      uVar5 = objanim_select_animloop(param_4[6]);
 
       *(undefined4 *)(iVar7 + 0xc) = uVar5;
 
@@ -4228,7 +4228,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
   case 0xd:
 
-    iVar7 = FUN_0052e5b0(param_4[1]);
+    iVar7 = objanim_select_animloop(param_4[1]);
 
     param_4 = (float *)*pfVar11;
 
@@ -4652,7 +4652,7 @@ LAB_004b8187:
 
   case 0x16:
 
-    iVar9 = FUN_0052e5b0(*param_4);
+    iVar9 = objanim_select_animloop(*param_4);
 
     iVar7 = *(int *)(param_1 + 0x100);
 
@@ -4762,7 +4762,7 @@ LAB_004b8187:
 
   case 0x18:
 
-    iVar7 = FUN_0052e5b0(*param_4);
+    iVar7 = objanim_select_animloop(*param_4);
 
     *(int *)(*(int *)(param_1 + 0x100) + 0xf28) = iVar7;
 
@@ -4932,7 +4932,7 @@ LAB_004b8187:
 
     iVar7 = *(int *)(param_1 + 0x100);
 
-    uVar5 = FUN_0052e5b0(param_4[3]);
+    uVar5 = objanim_select_animloop(param_4[3]);
 
     *(undefined4 *)(iVar7 + 0xf8c) = uVar5;
 
@@ -4966,7 +4966,7 @@ LAB_004b76fe:
 
       do {
 
-        uVar5 = FUN_0052e5b0(*pfVar11);
+        uVar5 = objanim_select_animloop(*pfVar11);
 
         *puVar12 = uVar5;
 
@@ -4986,7 +4986,7 @@ LAB_004b76fe:
 
   case 0x23:
 
-    iVar7 = FUN_0052e5b0(*param_4);
+    iVar7 = objanim_select_animloop(*param_4);
 
     if (iVar7 != 0) {
 
@@ -5178,7 +5178,7 @@ LAB_004b76fe:
 
     if (iVar7 < 4) {
 
-      uVar5 = FUN_0052e5b0(*param_4);
+      uVar5 = objanim_select_animloop(*param_4);
 
       reaper_finish_shrinker(param_1,uVar5,piVar1,iVar7);
 
@@ -5238,7 +5238,7 @@ LAB_004b76fe:
 
   case 0x30:
 
-    uVar5 = FUN_0052e5b0(*param_4);
+    uVar5 = objanim_select_animloop(*param_4);
 
     iVar7 = fx_create(param_1);
 
@@ -5296,9 +5296,9 @@ LAB_004b76fe:
 
   case 0x33:
 
-    iVar7 = FUN_0052e5b0(*param_4);
+    iVar7 = objanim_select_animloop(*param_4);
 
-    fVar10 = (float)FUN_0052e5b0(pfVar11[1]);
+    fVar10 = (float)objanim_select_animloop(pfVar11[1]);
 
     if (fVar10 == 0.0) {
 
@@ -7414,7 +7414,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
           (iVar4 = FUN_004d7b80(*(int *)(param_2 + 0xf48)), iVar4 == 0)))) {
 
-        iVar4 = FUN_004a6100(*(undefined4 *)(param_2 + 0xf48));
+        iVar4 = ObjIsRipper(*(undefined4 *)(param_2 + 0xf48));
 
         if (iVar4 == 0) {
 
@@ -8171,12 +8171,12 @@ void reaper_firewall_hit(int param_1,undefined4 *param_2,float *param_3,undefine
 
 }
 
-/* ===== FUN_004ba920 @ 0x004BA920 ===== */
+/* ===== reaper_stop_looping_effects @ 0x004BA920 ===== */
 /* PS2 candidate: reaper_stop_looping_effects (conf 0.362) */
 
 
 
-void FUN_004ba920(int param_1)
+void reaper_stop_looping_effects(int param_1)
 
 
 
@@ -8748,9 +8748,9 @@ void reaper_turbo_towards_moving_target__FP6OBJECT(int param_1)
 
       *puVar1 = *puVar1 | 0x10000;
 
-      FUN_0053d9e0(*(int *)(iVar2 + 0x50) + 0x294);
+      GEO_MatIdentity(*(int *)(iVar2 + 0x50) + 0x294);
 
-      FUN_004a2c50(*(int *)(iVar2 + 0x50) + 0x294,*(undefined4 *)(iVar2 + 0xc),0x40000000);
+      SphereFitToObject(*(int *)(iVar2 + 0x50) + 0x294,*(undefined4 *)(iVar2 + 0xc),0x40000000);
 
     }
 
@@ -8799,7 +8799,7 @@ void audio_anode_check(int param_1)
 
   if (-1 < (char)((uint)*(undefined4 *)(iVar2 + 0x20c) >> 8)) {
 
-    FUN_0040d790();
+    camera_override_done();
 
     return;
 
@@ -8849,12 +8849,12 @@ LAB_004bcb0b:
 
 }
 
-/* ===== FUN_004bcb30 @ 0x004BCB30 ===== */
+/* ===== reaper_set_pitch__FP6OBJECT @ 0x004BCB30 ===== */
 /* PS2 candidate: reaper_set_pitch__FP6OBJECT (conf 0.374) */
 
 
 
-void FUN_004bcb30(int param_1)
+void reaper_set_pitch__FP6OBJECT(int param_1)
 
 
 
@@ -11886,7 +11886,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
               ((iVar3 == 0x438 || (iVar3 == 0xd7)))) ||
 
-             ((iVar3 = FUN_004a6100(uVar6), iVar3 != 0 ||
+             ((iVar3 = ObjIsRipper(uVar6), iVar3 != 0 ||
 
               ((*(int *)(uVar6 + 4) == 0x23f || (*(int *)(uVar6 + 4) == 0x2e9)))))) &&
 
@@ -11922,9 +11922,9 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
             *(uint *)(*puVar7 + 0xd8) = *(uint *)(*puVar7 + 0xd8) | 0x10000;
 
-            FUN_0053d9e0(*puVar7 + 0x294);
+            GEO_MatIdentity(*puVar7 + 0x294);
 
-            FUN_004a2c50(*puVar7 + 0x294,uVar6,0x40000000);
+            SphereFitToObject(*puVar7 + 0x294,uVar6,0x40000000);
 
             local_15c = local_15c + 1;
 
@@ -11996,9 +11996,9 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
       *(uint *)(puVar9[0x3e4] + 0xd8) = *(uint *)(puVar9[0x3e4] + 0xd8) | 0x10000;
 
-      FUN_0053d9e0(puVar9[0x3e4] + 0x294);
+      GEO_MatIdentity(puVar9[0x3e4] + 0x294);
 
-      FUN_004a2c50(puVar9[0x3e4] + 0x294,puVar9[0x3e3],0x40000000);
+      SphereFitToObject(puVar9[0x3e4] + 0x294,puVar9[0x3e3],0x40000000);
 
     }
 
@@ -12691,7 +12691,7 @@ void reaper_finish_hail__FP6OBJECT(int param_1)
 
         puVar1 = (uint *)(iVar4 + 0x294);
 
-        FUN_0053d9e0(puVar1);
+        GEO_MatIdentity(puVar1);
 
         *(undefined4 *)(iVar4 + 0x2a4) = puVar7[-1];
 

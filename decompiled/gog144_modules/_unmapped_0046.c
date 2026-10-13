@@ -1168,7 +1168,7 @@ void camera_ref_anode(int param_1,undefined4 param_2,int param_3,int *param_4)
 
   }
 
-  FUN_0040d790();
+  camera_override_done();
 
   return;
 
@@ -2455,7 +2455,7 @@ void kbos_init(int param_1)
 
     puVar2[0xb] = 0;
 
-    uVar6 = FUN_00497d70(*(undefined4 *)(param_1 + 4));
+    uVar6 = object_find(*(undefined4 *)(param_1 + 4));
 
     puVar2[1] = uVar6;
 

@@ -730,7 +730,7 @@ switchD_004711dd_default:
 
         render_projection_set(0x42b40000,0,1);
 
-        FUN_0053d9e0(auStack_44);
+        GEO_MatIdentity(auStack_44);
 
         (**(code **)(DAT_00656420 + 0x18))(DAT_00656420,auStack_40);
 
@@ -893,7 +893,7 @@ void fx_weather_system(void)
 
       FUN_00515de0(&DAT_0055b640,&DAT_0055b64c);
 
-      FUN_0053d9e0(auStack_44);
+      GEO_MatIdentity(auStack_44);
 
       FUN_005162b0(auStack_40);
 
@@ -1505,7 +1505,7 @@ void game_loop_run(int param_1)
 
             FUN_00443110();
 
-            FUN_0044efd0(0);
+            fx_process(0);
 
             sound_checked_big(0);
 
@@ -5019,7 +5019,7 @@ void reset_scale__FP6OBJECT(int param_1)
 
   
 
-  iVar1 = FUN_00497d70(*(undefined4 *)(param_1 + 4));
+  iVar1 = object_find(*(undefined4 *)(param_1 + 4));
 
   if (iVar1 != 0) {
 
@@ -5274,7 +5274,7 @@ LAB_0047c03e:
 
       }
 
-      iVar5 = FUN_004a6140(iVar4);
+      iVar5 = ObjIsTurret(iVar4);
 
       if (iVar5 == 0) {
 
@@ -6502,7 +6502,7 @@ LAB_0047cdb1:
 
   case 0xd:
 
-    iVar5 = FUN_0052e5b0(param_4[1]);
+    iVar5 = objanim_select_animloop(param_4[1]);
 
     param_4 = (float *)*pfVar3;
 
@@ -6576,7 +6576,7 @@ LAB_0047cdb1:
 
     if (param_4[3] != 0.0) {
 
-      uVar4 = FUN_0052e5b0(param_4[3]);
+      uVar4 = objanim_select_animloop(param_4[3]);
 
     }
 
@@ -6728,7 +6728,7 @@ LAB_0047cdb1:
 
   case 0x18:
 
-    iVar5 = FUN_0052e5b0(*param_4);
+    iVar5 = objanim_select_animloop(*param_4);
 
     if (iVar5 == 0) {
 
@@ -6854,9 +6854,9 @@ LAB_0047d90a:
 
     if (iVar5 == 0) {
 
-      uVar4 = FUN_0052e5b0(*param_4);
+      uVar4 = objanim_select_animloop(*param_4);
 
-      iVar5 = FUN_0052e5b0(pfVar3[1]);
+      iVar5 = objanim_select_animloop(pfVar3[1]);
 
       if (iVar5 == 0) {
 
@@ -6878,7 +6878,7 @@ LAB_0047d90a:
 
   case 0x1a:
 
-    iVar5 = FUN_0052e5b0(*param_4);
+    iVar5 = objanim_select_animloop(*param_4);
 
     if (iVar5 == 0) {
 
@@ -6962,7 +6962,7 @@ LAB_0047d6b8:
 
   case 0x1b:
 
-    uVar4 = FUN_0052e5b0(*param_4);
+    uVar4 = objanim_select_animloop(*param_4);
 
     iVar5 = fx_create(iVar7);
 
@@ -7142,7 +7142,7 @@ LAB_0047d6b8:
 
     }
 
-    iVar5 = FUN_0052e5b0(*param_4);
+    iVar5 = objanim_select_animloop(*param_4);
 
     if (iVar5 == 0) {
 
@@ -7478,7 +7478,7 @@ LAB_0047de23:
 
     iVar5 = FUN_0052c5c0();
 
-    if ((iVar5 != 0) && (iVar5 = FUN_0052e5b0(*param_4), iVar5 != 0)) {
+    if ((iVar5 != 0) && (iVar5 = objanim_select_animloop(*param_4), iVar5 != 0)) {
 
       iVar5 = menu_fx_spawn(iVar7,iVar5);
 
@@ -8462,9 +8462,9 @@ LAB_0047eba7:
 
           *puVar1 = *puVar1 | 0x10000;
 
-          FUN_0053d9e0(*(int *)(iVar3 + 0x118) + 0x294);
+          GEO_MatIdentity(*(int *)(iVar3 + 0x118) + 0x294);
 
-          FUN_004a2c50(*(int *)(iVar3 + 0x118) + 0x294,piVar15,0x40000000);
+          SphereFitToObject(*(int *)(iVar3 + 0x118) + 0x294,piVar15,0x40000000);
 
         }
 
@@ -9205,7 +9205,7 @@ void mecc_jet(float param_1)
 
     if ((*(byte *)((int)DAT_00632a88 + 0x20c) & 2) == 0) {
 
-      FUN_0040d790();
+      camera_override_done();
 
     }
 

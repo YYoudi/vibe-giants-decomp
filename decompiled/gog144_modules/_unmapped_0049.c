@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (95 named) — decompiled, names from PS2 symbols
+ * 142 functions (96 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -644,7 +644,7 @@ void showchat_mission_objective__Fi(void)
 
       *pcVar7 = '\0';
 
-      FUN_00536580();
+      chat_insert_lf();
 
     }
 
@@ -678,7 +678,7 @@ void showchat_mission_objective__Fi(void)
 
       }
 
-      FUN_00536580();
+      chat_insert_lf();
 
     }
 
@@ -2600,7 +2600,7 @@ LAB_00492458:
 
         DAT_0059f2c4 = uVar5;
 
-        FUN_00457f40(DAT_00632a88,0,1);
+        WeaponIdSet__FP6OBJECTii(DAT_00632a88,0,1);
 
         *(undefined4 *)(iVar1 + 0x4c) = 0;
 
@@ -3082,7 +3082,7 @@ LAB_00492a3a:
 
         pbVar12 = pbVar5 + 5;
 
-        iVar14 = FUN_00497d70(uVar7);
+        iVar14 = object_find(uVar7);
 
         if ((iVar14 != 0) && (local_134 = object_allocate_type(uVar7,0x80000000), local_134 != 0)) {
 
@@ -4050,7 +4050,7 @@ LAB_00492a3a:
 
     if ((((DAT_00632d20 == 10) && (*(int *)(DAT_006330e4 + 0x4a60) == 0)) &&
 
-        (iVar14 = FUN_00497d70(0x2e6), iVar14 != 0)) &&
+        (iVar14 = object_find(0x2e6), iVar14 != 0)) &&
 
        (iVar6 = object_allocate_type(0x2e6,0x80000000), iVar6 != 0)) {
 
@@ -8178,12 +8178,12 @@ undefined4 * objectset_find(int param_1)
 
 }
 
-/* ===== FUN_00497d70 @ 0x00497D70 ===== */
+/* ===== object_find @ 0x00497D70 ===== */
 /* PS2 candidate: object_find (conf 0.38) */
 
 
 
-undefined4 * FUN_00497d70(int param_1)
+undefined4 * object_find(int param_1)
 
 
 
@@ -9855,7 +9855,7 @@ LAB_004991da:
 
       object_free_all_allocated_data(iVar1);
 
-      iVar2 = FUN_00497d70(param_1);
+      iVar2 = object_find(param_1);
 
       if (iVar2 == 0) goto LAB_004991da;
 
@@ -12263,7 +12263,7 @@ void object_setup_specialtype(int param_1)
 
     *(undefined4 *)(iVar1 + 0x60) = 0;
 
-    FUN_00458710(param_1);
+    TeamMemberInitWeapons__FP6OBJECT(param_1);
 
     ANM_DumpCluster(param_1);
 
@@ -13883,7 +13883,7 @@ void partyhouse_exit_dlog(void)
 
     object_copy_posdirinfo(DAT_00632a88);
 
-    FUN_0040d790();
+    camera_override_done();
 
   }
 

@@ -2545,7 +2545,7 @@ void make_spit__FP6OBJECTP3P3Df(int param_1,int param_2,float param_3)
 
   }
 
-  iVar3 = FUN_00497d70(uVar7);
+  iVar3 = object_find(uVar7);
 
   if (iVar3 != 0) {
 
@@ -3423,7 +3423,7 @@ void rpboat_unlock_from_boat__FP6OBJECTT0(int param_1,int param_2)
 
     *(undefined4 *)(param_2 + 0x274) = 0;
 
-    FUN_0040d790();
+    camera_override_done();
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 2;
 
@@ -3524,7 +3524,7 @@ void object_attach_target(int param_1,int param_2)
 
   sound_play_2(0x626,param_1);
 
-  FUN_004ba920(param_1);
+  reaper_stop_looping_effects(param_1);
 
   return;
 
@@ -3690,7 +3690,7 @@ void rpboat_tilt__FP6OBJECT(int param_1)
 
     else {
 
-      FUN_0040d790();
+      camera_override_done();
 
     }
 
@@ -4175,7 +4175,7 @@ void charger_do_fx__FP6OBJECTiii
 
   case 3:
 
-    uVar4 = FUN_0052e5b0(param_4[1]);
+    uVar4 = objanim_select_animloop(param_4[1]);
 
     reaper_spell_sound_2(param_1,uVar4,*puVar3);
 
@@ -4187,7 +4187,9 @@ void charger_do_fx__FP6OBJECTiii
 
     if ((((iVar6 != 0) && (*(int *)(iVar2 + 0x274) == 0)) &&
 
-        (iVar6 = FUN_0052e5b0(*param_4), iVar6 != 0)) && (*(int *)(iVar6 + 0x210) == 0)) {
+        (iVar6 = objanim_select_animloop(*param_4), iVar6 != 0)) && (*(int *)(iVar6 + 0x210) == 0))
+
+    {
 
       param_1 = *(undefined4 *)(iVar2 + 0x188);
 
@@ -4223,7 +4225,7 @@ void charger_do_fx__FP6OBJECTiii
 
     *(undefined4 *)(iVar2 + 0x274) = 0;
 
-    FUN_0040d790();
+    camera_override_done();
 
     *(uint *)(iVar6 + 0xe0) = *(uint *)(iVar6 + 0xe0) | 2;
 

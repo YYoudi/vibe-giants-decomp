@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (96 named) — decompiled, names from PS2 symbols
+ * 162 functions (97 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -11915,12 +11915,12 @@ undefined4 FUN_0052e530(undefined4 param_1)
 
 }
 
-/* ===== FUN_0052e5b0 @ 0x0052E5B0 ===== */
+/* ===== objanim_select_animloop @ 0x0052E5B0 ===== */
 /* PS2 candidate: objanim_select_animloop (conf 0.378) */
 
 
 
-int FUN_0052e5b0(int param_1)
+int objanim_select_animloop(int param_1)
 
 
 

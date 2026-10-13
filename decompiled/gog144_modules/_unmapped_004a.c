@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (90 named) — decompiled, names from PS2 symbols
+ * 131 functions (93 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -2265,12 +2265,12 @@ float10 FUN_004a2be0(int param_1)
 
 }
 
-/* ===== FUN_004a2c50 @ 0x004A2C50 ===== */
+/* ===== SphereFitToObject @ 0x004A2C50 ===== */
 /* PS2 candidate: SphereFitToObject (conf 0.368) */
 
 
 
-void FUN_004a2c50(undefined4 param_1,int param_2,float param_3)
+void SphereFitToObject(undefined4 param_1,int param_2,float param_3)
 
 
 
@@ -4882,7 +4882,7 @@ LAB_004a5802:
 
         FUN_00500f50(DAT_006330cc,DAT_006330c4);
 
-        FUN_004361b0();
+        rpman_init__FP6OBJECT();
 
         return;
 
@@ -4894,7 +4894,7 @@ LAB_004a5802:
 
   }
 
-  FUN_004361b0();
+  rpman_init__FP6OBJECT();
 
   return;
 
@@ -5444,13 +5444,13 @@ void player_force_type(int param_1)
 
     object_free_all_allocated_data(DAT_00632a88);
 
-    iVar2 = FUN_00497d70(param_1);
+    iVar2 = object_find(param_1);
 
     if (iVar2 == 0) {
 
       param_1 = 0;
 
-      iVar2 = FUN_00497d70(0);
+      iVar2 = object_find(0);
 
       if (iVar2 == 0) {
 
@@ -5530,12 +5530,12 @@ void player_force_type(int param_1)
 
 }
 
-/* ===== FUN_004a6100 @ 0x004A6100 ===== */
+/* ===== ObjIsRipper @ 0x004A6100 ===== */
 /* PS2 candidate: ObjIsRipper (conf 0.368) */
 
 
 
-undefined4 FUN_004a6100(int param_1)
+undefined4 ObjIsRipper(int param_1)
 
 
 
@@ -5572,12 +5572,12 @@ undefined4 ObjIsJetski(int param_1)
 
 }
 
-/* ===== FUN_004a6140 @ 0x004A6140 ===== */
+/* ===== ObjIsTurret @ 0x004A6140 ===== */
 /* PS2 candidate: ObjIsTurret (conf 0.381) */
 
 
 
-undefined4 FUN_004a6140(int param_1)
+undefined4 ObjIsTurret(int param_1)
 
 
 
@@ -10368,7 +10368,7 @@ LAB_004ac24a:
 
     if ((*(byte *)(iVar2 + 0x60) & 1) == 0) {
 
-      iVar2 = FUN_0052e5b0(param_4[6]);
+      iVar2 = objanim_select_animloop(param_4[6]);
 
       *(int *)(param_1 + 0x274) = iVar2;
 
@@ -10382,7 +10382,7 @@ LAB_004ac24a:
 
   case 7:
 
-    uVar5 = FUN_0052e5b0(*param_4);
+    uVar5 = objanim_select_animloop(*param_4);
 
     *(undefined4 *)(iVar2 + 0x1d8) = uVar5;
 
@@ -10396,7 +10396,7 @@ LAB_004ac24a:
 
     if (iVar3 == 0) {
 
-      iVar3 = FUN_0052e5b0(param_4[3]);
+      iVar3 = objanim_select_animloop(param_4[3]);
 
       uVar5 = param_4[4];
 
@@ -10558,7 +10558,7 @@ LAB_004ac24a:
 
     *(uint *)(iVar2 + 0x60) = *(uint *)(iVar2 + 0x60) & 0xfffeffff;
 
-    iVar2 = FUN_0052e5b0(*param_4);
+    iVar2 = objanim_select_animloop(*param_4);
 
     if (iVar2 != 0) {
 
@@ -10572,7 +10572,7 @@ LAB_004ac24a:
 
   case 100:
 
-    uVar5 = FUN_0052e5b0(*param_4);
+    uVar5 = objanim_select_animloop(*param_4);
 
     sf_is_valid_target__FP6OBJECT(param_1,uVar5);
 
@@ -10839,7 +10839,7 @@ bool kabuto_punch_check(int param_1)
 
           }
 
-          iVar1 = FUN_004a6100(param_1);
+          iVar1 = ObjIsRipper(param_1);
 
           if (iVar1 != 0) {
 
@@ -11002,7 +11002,7 @@ void reaper_ability_3dsound(int param_1)
 
             }
 
-            iVar3 = FUN_004a6100(*(undefined4 *)(iVar4 + 0xc));
+            iVar3 = ObjIsRipper(*(undefined4 *)(iVar4 + 0xc));
 
             if (iVar3 != 0) {
 
@@ -11129,9 +11129,9 @@ void sf_is_valid_target__FP6OBJECT(int param_1,int param_2)
 
          (*(int *)(iVar3 + 4) != 0x29a)) &&
 
-        ((iVar4 = FUN_004a6100(iVar3), iVar4 == 0 || (iVar4 = FUN_004d49c0(iVar3), iVar4 == 0)))))))
+        ((iVar4 = ObjIsRipper(iVar3), iVar4 == 0 || (iVar4 = FUN_004d49c0(iVar3), iVar4 == 0))))))))
 
-      ) || (iVar4 = ObjIsJetski(*(undefined4 *)(iVar3 + 0x210)), iVar4 != 0)) {
+     || (iVar4 = ObjIsJetski(*(undefined4 *)(iVar3 + 0x210)), iVar4 != 0)) {
 
     *(undefined4 *)(iVar6 + 0x14) = 1;
 
@@ -11217,7 +11217,7 @@ LAB_004acbe1:
 
         else {
 
-          iVar4 = FUN_004a6100(iVar3);
+          iVar4 = ObjIsRipper(iVar3);
 
           if ((iVar4 == 0) || (iVar4 = FUN_004d49c0(iVar3), iVar4 == 0)) {
 
@@ -11478,7 +11478,7 @@ undefined4 repairgun_target_valid__FP6OBJECTi(int param_1,int param_2)
 
        (*(int *)(param_1 + 0x1e0) != 0x5f)) {
 
-      iVar2 = FUN_004a6140(param_1);
+      iVar2 = ObjIsTurret(param_1);
 
       if ((((iVar2 != 0) && (*(int *)(param_1 + 0x18c) == param_2)) &&
 
@@ -12956,7 +12956,7 @@ LAB_004af232:
 
   iVar21 = *(int *)(iVar20 + (int)piVar9);
 
-  FUN_00497d70();
+  object_find();
 
   puVar10[1] = iVar21;
 

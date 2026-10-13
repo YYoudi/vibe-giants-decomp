@@ -577,7 +577,7 @@ uint * main_drawwrld_00435170(int param_1,uint param_2,uint param_3)
 
   *puVar1 = 0;
 
-  FUN_0053d9e0(puVar3 + 0xe);
+  GEO_MatIdentity(puVar3 + 0xe);
 
   puVar3[0x1f] = 0;
 

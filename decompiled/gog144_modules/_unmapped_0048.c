@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (49 named) — decompiled, names from PS2 symbols
+ * 74 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -336,12 +336,12 @@ void mecc_disable_repair_gun(int param_1)
 
 }
 
-/* ===== FUN_004804d0 @ 0x004804D0 ===== */
+/* ===== mecc_repairwand_off @ 0x004804D0 ===== */
 /* PS2 candidate: mecc_repairwand_off (conf 0.371) */
 
 
 
-void FUN_004804d0(int param_1)
+void mecc_repairwand_off(int param_1)
 
 
 
@@ -881,7 +881,9 @@ void FUN_00480d10(int param_1,int param_2,undefined4 param_3,int param_4)
 
   if ((((iVar2 != 0) && (iVar3 = *(int *)(iVar1 + 0x5bc + param_4 * 4), iVar3 != 0)) &&
 
-      (iVar3 != *(int *)(param_2 + 0x188))) && (iVar3 = FUN_0052e5b0(iVar3), iVar3 != 0)) {
+      (iVar3 != *(int *)(param_2 + 0x188))) && (iVar3 = objanim_select_animloop(iVar3), iVar3 != 0))
+
+  {
 
     return;
 
@@ -940,7 +942,9 @@ void mecc_drop_carried_object(int param_1,int param_2)
 
   if ((((iVar4 == 0) || (iVar5 = *(int *)(iVar1 + 0x10), iVar5 == 0)) ||
 
-      (iVar5 == *(int *)(param_1 + 0x188))) || (iVar5 = FUN_0052e5b0(iVar5), iVar5 == 0)) {
+      (iVar5 == *(int *)(param_1 + 0x188))) || (iVar5 = objanim_select_animloop(iVar5), iVar5 == 0))
+
+  {
 
     lift_logic__FP6OBJECT(param_2);
 
@@ -1023,7 +1027,7 @@ void FUN_00480ef0(int param_1,int param_2)
 
     if (((iVar3 != 0) && (iVar3 != *(int *)(param_1 + 0x188))) &&
 
-       (iVar3 = FUN_0052e5b0(iVar3), iVar3 != 0)) {
+       (iVar3 = objanim_select_animloop(iVar3), iVar3 != 0)) {
 
       return;
 
@@ -1281,7 +1285,7 @@ void projectile_logic(int param_1)
 
                   if ((*(uint *)(param_1 + 0xe0) & 0x1000000) != 0) {
 
-                    FUN_004804d0(param_1);
+                    mecc_repairwand_off(param_1);
 
                     if (*(int *)(iVar4 + 0x18c) == 0x13) {
 
@@ -2498,7 +2502,7 @@ void FUN_004829d0(void)
 
       render_view_xform();
 
-      FUN_0040d790();
+      camera_override_done();
 
       Audio3DTestToneStop__Fv();
 
@@ -2838,7 +2842,7 @@ void menu_handlers_lookup(void)
 
     dialog_level_pop(menu_handlers_lookup);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -3008,7 +3012,7 @@ LAB_00482fd8:
 
   dialog_level_pop(menu_handlers_lookup);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -3242,7 +3246,7 @@ void menu_handlers_exec(void)
 
     dialog_level_pop(menu_handlers_exec);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -3430,7 +3434,7 @@ LAB_00483738:
 
   dialog_level_pop(menu_handlers_exec);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -3941,7 +3945,7 @@ void savegame_cam_section(void)
 
     dialog_level_pop(&LAB_00483fd0);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -4035,7 +4039,7 @@ void savegame_cam_section(void)
 
     dialog_level_pop(&LAB_00483fd0);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -4498,7 +4502,7 @@ void mission_load_cheat(void)
 
   dialog_level_pop(&LAB_00484ce0);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -4931,7 +4935,7 @@ void comm_00485300(void)
 
   dialog_level_pop(&LAB_004855a0);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -5367,7 +5371,7 @@ void mission_mpworld_load(void)
 
   dialog_level_pop(&LAB_00485c90);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -5663,7 +5667,7 @@ void menu_dialog_teardown(void)
 
     dialog_level_pop(&LAB_00486250);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -6403,7 +6407,7 @@ void FUN_004888f0(void)
 
   dialog_level_pop(&LAB_004889f0);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -6705,7 +6709,7 @@ void menu_load_world3(void)
 
   dialog_level_pop(&LAB_00488e60);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -6884,7 +6888,7 @@ void mission_menu_load(void)
 
       dialog_level_pop(mission_menu_load2);
 
-      FUN_0040d790();
+      camera_override_done();
 
       object_destroy(DAT_0059ee98);
 
@@ -6974,7 +6978,7 @@ void mission_menu_load(void)
 
       dialog_level_pop(mission_menu_load2);
 
-      FUN_0040d790();
+      camera_override_done();
 
       object_destroy(DAT_0059ee98);
 
@@ -7354,7 +7358,7 @@ void mission_menu_load2(void)
 
     dialog_level_pop(mission_menu_load2);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -7466,7 +7470,7 @@ LAB_00489916:
 
     dialog_level_pop(mission_menu_load2);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -7570,7 +7574,7 @@ LAB_00489916:
 
   dialog_level_pop(mission_menu_load2);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -7901,7 +7905,7 @@ void FUN_00489F50(void)
 
   dialog_level_pop(&LAB_0048a140);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -8884,7 +8888,7 @@ LAB_0048b04f:
 
     dialog_level_pop(&LAB_0048b7b0);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -9974,7 +9978,7 @@ void dialog_0048ca10(void)
 
     dialog_level_pop(&LAB_0048cda0);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -10044,7 +10048,7 @@ void dialog_0048ca10(void)
 
     dialog_level_pop(&LAB_0048cda0);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -10314,7 +10318,7 @@ void menu_state_dispatch_2(void)
 
     dialog_level_pop(&LAB_0048d830);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -10564,7 +10568,7 @@ void menu_dlog_callback_a(void)
 
     dialog_level_pop(menu_dlog_callback_a);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -10716,7 +10720,7 @@ LAB_0048e1b4:
 
     dialog_level_pop(menu_dlog_callback_a);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -10810,7 +10814,7 @@ LAB_0048e1b4:
 
     dialog_level_pop(menu_dlog_callback_a);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -11078,7 +11082,7 @@ void menu_dlog_callback_b(void)
 
     dialog_level_pop(menu_dlog_callback_b);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -11226,7 +11230,7 @@ LAB_0048e7be:
 
     dialog_level_pop(menu_dlog_callback_b);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -11316,7 +11320,7 @@ LAB_0048e7be:
 
     dialog_level_pop(menu_dlog_callback_b);
 
-    FUN_0040d790();
+    camera_override_done();
 
     object_destroy(DAT_0059ee98);
 
@@ -11570,7 +11574,7 @@ void FUN_0048EC30(void)
 
   dialog_level_pop(&LAB_0048ed70);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -11834,7 +11838,7 @@ void menu_deleted_player(void)
 
   dialog_level_pop(&LAB_0048f160);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 
@@ -12193,7 +12197,7 @@ void menu_gameplay_teardown(int param_1)
 
   dialog_level_pop(&LAB_0048f840);
 
-  FUN_0040d790();
+  camera_override_done();
 
   object_destroy(DAT_0059ee98);
 

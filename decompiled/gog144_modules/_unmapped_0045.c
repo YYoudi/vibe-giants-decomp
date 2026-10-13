@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (92 named) — decompiled, names from PS2 symbols
+ * 145 functions (95 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3227,7 +3227,7 @@ void giftshop_exit__Fv(void)
 
       object_copy_posdirinfo(DAT_00632a88);
 
-      FUN_0040d790();
+      camera_override_done();
 
       iVar1 = ObjIsReaper(DAT_00632a88);
 
@@ -3327,7 +3327,7 @@ void giftshop_exit__Fv(void)
 
     object_copy_posdirinfo(DAT_00632a88);
 
-    FUN_0040d790();
+    camera_override_done();
 
   }
 
@@ -3744,7 +3744,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
     if (((iVar3 != 0) && (*(int *)(param_1 + 0x274) == 0)) &&
 
-       (iVar3 = FUN_0052e5b0(*(undefined4 *)param_4), *(int *)(iVar3 + 0x210) == 0)) {
+       (iVar3 = objanim_select_animloop(*(undefined4 *)param_4), *(int *)(iVar3 + 0x210) == 0)) {
 
       iVar2 = ObjIsReaper(iVar3);
 
@@ -4896,7 +4896,7 @@ LAB_00455d20:
 
       }
 
-      FUN_004804d0(param_1);
+      mecc_repairwand_off(param_1);
 
     }
 
@@ -6829,12 +6829,12 @@ void reaper_lock_short_2(undefined4 param_1,undefined1 param_2)
 
 }
 
-/* ===== FUN_00457f40 @ 0x00457F40 ===== */
+/* ===== WeaponIdSet__FP6OBJECTii @ 0x00457F40 ===== */
 /* PS2 candidate: WeaponIdSet__FP6OBJECTii (conf 0.378) */
 
 
 
-void FUN_00457f40(int param_1,int param_2,int param_3)
+void WeaponIdSet__FP6OBJECTii(int param_1,int param_2,int param_3)
 
 
 
@@ -7211,12 +7211,12 @@ bool WeaponIdCheck__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_00458230 @ 0x00458230 ===== */
+/* ===== WeaponIdSetPresent__FP6OBJECTi @ 0x00458230 ===== */
 /* PS2 candidate: WeaponIdSetPresent__FP6OBJECTi (conf 0.374) */
 
 
 
-void FUN_00458230(int param_1)
+void WeaponIdSetPresent__FP6OBJECTi(int param_1)
 
 
 
@@ -7639,12 +7639,12 @@ undefined4 SpecialWeaponIdGet__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_00458710 @ 0x00458710 ===== */
+/* ===== TeamMemberInitWeapons__FP6OBJECT @ 0x00458710 ===== */
 /* PS2 candidate: TeamMemberInitWeapons__FP6OBJECT (conf 0.378) */
 
 
 
-void FUN_00458710(int param_1)
+void TeamMemberInitWeapons__FP6OBJECT(int param_1)
 
 
 
@@ -9216,7 +9216,7 @@ void inv_remove_item(int param_1,undefined4 *param_2,undefined4 param_3,int para
 
       }
 
-      FUN_00457f40(param_1,iVar5,0xffffffff);
+      WeaponIdSet__FP6OBJECTii(param_1,iVar5,0xffffffff);
 
       WeaponIdCycleToNext__FP6OBJECTi(param_1,1);
 
@@ -12337,7 +12337,7 @@ undefined4 kabuto_init(uint *param_1)
 
   if ((~*puVar2 & 1) == 0) goto LAB_0045d769;
 
-  uVar6 = FUN_00497d70(puVar3[1]);
+  uVar6 = object_find(puVar3[1]);
 
   puVar2[0x55] = uVar6;
 
@@ -12457,7 +12457,7 @@ undefined4 kabuto_init(uint *param_1)
 
     *(uint *)(uVar6 + 0xd8) = *(uint *)(uVar6 + 0xd8) | 0x40010000;
 
-    FUN_0053d9e0(uVar6 + 0x294);
+    GEO_MatIdentity(uVar6 + 0x294);
 
     *param_1 = uVar6;
 
@@ -12477,7 +12477,7 @@ undefined4 kabuto_init(uint *param_1)
 
   *(uint *)(uVar6 + 0xd8) = *(uint *)(uVar6 + 0xd8) | 0x40010000;
 
-  FUN_0053d9e0(uVar6 + 0x294);
+  GEO_MatIdentity(uVar6 + 0x294);
 
   puVar2[0xc5] = uVar6;
 

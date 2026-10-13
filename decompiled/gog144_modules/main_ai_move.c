@@ -1177,9 +1177,9 @@ LAB_004026d0:
 
         if (((!bVar2) &&
 
-            (fVar10 = (float10)FUN_00413e90(iVar5,&local_90), (float10)(float)param_1[0x2a] < fVar10
+            (fVar10 = (float10)get_floor_z_point_plat(iVar5,&local_90),
 
-            )) && (local_90 != 0.0)) {
+            (float10)(float)param_1[0x2a] < fVar10)) && (local_90 != 0.0)) {
 
           collgrid_pos_query_dlog(local_90,iVar5,&local_88);
 

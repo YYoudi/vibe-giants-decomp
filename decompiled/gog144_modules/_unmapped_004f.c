@@ -163,7 +163,7 @@ void smartie_animselect(int param_1)
 
   
 
-  iVar3 = FUN_0052e5b0(*(undefined4 *)(param_1 + 0x14));
+  iVar3 = objanim_select_animloop(*(undefined4 *)(param_1 + 0x14));
 
   if (iVar3 == 0) {
 
@@ -197,7 +197,7 @@ void smartie_animselect(int param_1)
 
   }
 
-  iVar4 = FUN_0052e5b0(*(undefined4 *)(param_1 + 0x28));
+  iVar4 = objanim_select_animloop(*(undefined4 *)(param_1 + 0x28));
 
   *(int *)(iVar3 + 0x274) = iVar4;
 
@@ -205,7 +205,7 @@ void smartie_animselect(int param_1)
 
     iVar6 = *(int *)(iVar4 + 0x100);
 
-    iVar5 = FUN_0052e5b0(*(undefined4 *)(param_1 + 0x2c));
+    iVar5 = objanim_select_animloop(*(undefined4 *)(param_1 + 0x2c));
 
     if (iVar5 != 0) {
 
@@ -215,7 +215,7 @@ void smartie_animselect(int param_1)
 
       *(int *)(iVar6 + 0x574 + iVar2 * 4) = iVar3;
 
-      iVar6 = FUN_0052e5b0(*(undefined4 *)(param_1 + 0x30));
+      iVar6 = objanim_select_animloop(*(undefined4 *)(param_1 + 0x30));
 
       if ((iVar6 != 0) && (iVar6 == DAT_00632a88)) {
 

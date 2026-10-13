@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (58 named) — decompiled, names from PS2 symbols
+ * 76 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -2442,7 +2442,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
   if (param_2[0x1dd] == 0) {
 
-    FUN_0053d9e0(local_88);
+    GEO_MatIdentity(local_88);
 
   }
 
@@ -2677,7 +2677,7 @@ LAB_00443ac3:
 
       }
 
-      FUN_0053d9e0(piVar5 + 0xa8);
+      GEO_MatIdentity(piVar5 + 0xa8);
 
       piVar5[0x20f] = 0;
 
@@ -2859,7 +2859,7 @@ hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int p
 
       if (*(int *)(iVar5 + 0x304) == 0) {
 
-        FUN_0053d9e0(iVar5 + 0x294);
+        GEO_MatIdentity(iVar5 + 0x294);
 
       }
 
@@ -3590,7 +3590,7 @@ undefined4 FLK_FlickRender(int param_1)
 
     iVar12 = puVar3[3];
 
-    iVar7 = FUN_00445570(param_1,iVar12);
+    iVar7 = FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT(param_1,iVar12);
 
     if (iVar7 != 0) {
 
@@ -3658,7 +3658,7 @@ undefined4 FLK_FlickRender(int param_1)
 
   object_list_update();
 
-  FUN_0044efd0();
+  fx_process();
 
   object_lock_apply(1,4);
 
@@ -4086,7 +4086,7 @@ LAB_00444d25:
 
     piVar8 = (int *)puVar3[3];
 
-    iVar12 = FUN_00445570(param_1,piVar8);
+    iVar12 = FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT(param_1,piVar8);
 
     if ((((iVar12 != 0) && (piVar8[2] != 0)) &&
 
@@ -4390,12 +4390,12 @@ LAB_004451e2:
 
 }
 
-/* ===== FUN_00445570 @ 0x00445570 ===== */
+/* ===== FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT @ 0x00445570 ===== */
 /* PS2 candidate: FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT (conf 0.367) */
 
 
 
-undefined4 FUN_00445570(int param_1,int param_2)
+undefined4 FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT(int param_1,int param_2)
 
 
 
@@ -7649,12 +7649,12 @@ LAB_004481cb:
 
 }
 
-/* ===== FUN_00448750 @ 0x00448750 ===== */
+/* ===== fxobj_delete__FP6OBJECTP7FxOspeci @ 0x00448750 ===== */
 /* PS2 candidate: fxobj_delete__FP6OBJECTP7FxOspeci (conf 0.376) */
 
 
 
-void FUN_00448750(int param_1,int param_2,int param_3)
+void fxobj_delete__FP6OBJECTP7FxOspeci(int param_1,int param_2,int param_3)
 
 
 
@@ -7762,7 +7762,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
     local_38 = local_38 + *(float *)(*(int *)(param_2 + 0x100) + 4);
 
-    FUN_0053d9e0(puVar1);
+    GEO_MatIdentity(puVar1);
 
     *(float *)(param_1 + 0x2a4) = local_40;
 
@@ -7815,7 +7815,7 @@ void fx_delete(int *param_1)
 
       if ((int *)*piVar1 == param_1 + 2) {
 
-        FUN_00448750(puVar2[3],piVar1,1);
+        fxobj_delete__FP6OBJECTP7FxOspeci(puVar2[3],piVar1,1);
 
       }
 
@@ -8198,7 +8198,7 @@ int fx_createObj__FP6FxDatai(int param_1,undefined4 param_2,int param_3,float pa
 
         if (((uVar2 & 0x200000) == 0) && (param_3 == 0)) {
 
-          FUN_0053d9e0(iVar4 + 0x294);
+          GEO_MatIdentity(iVar4 + 0x294);
 
           *(undefined4 *)(iVar4 + 0x2a4) = *(undefined4 *)(param_1 + 0x14);
 
@@ -8214,7 +8214,7 @@ int fx_createObj__FP6FxDatai(int param_1,undefined4 param_2,int param_3,float pa
 
         else {
 
-          FUN_0053d9e0(iVar4 + 0x294);
+          GEO_MatIdentity(iVar4 + 0x294);
 
           XFGetViewport(&local_c);
 
@@ -11198,7 +11198,7 @@ LAB_0044b93c:
 
             if ((int *)**(undefined4 **)(puVar8[3] + 0x100) == in_stack_0000d770) {
 
-              FUN_00448750();
+              fxobj_delete__FP6OBJECTP7FxOspeci();
 
             }
 
@@ -13259,12 +13259,12 @@ LAB_0044efbb:
 
 }
 
-/* ===== FUN_0044efd0 @ 0x0044EFD0 ===== */
+/* ===== fx_process @ 0x0044EFD0 ===== */
 /* PS2 candidate: fx_process (conf 0.377) */
 
 
 
-void FUN_0044efd0(undefined4 param_1)
+void fx_process(undefined4 param_1)
 
 
 

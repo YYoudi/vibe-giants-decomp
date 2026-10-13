@@ -1,0 +1,26 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a6140,FUN_004a6140,,ObjIsTurret,0.9,llm-w134,body-verified type 0x2c
+004361b0,FUN_004361b0,,rpman_init__FP6OBJECT,0.9,llm-w134,body-verified
+00536cb0,FUN_00536cb0,,multi_display_player_cursor_info__Fv,0.9,llm-w134,body-verified
+004e4360,FUN_004e4360,,rpman_maintain_hide__FP6OBJECT,0.9,llm-w134,body-verified
+00497d70,FUN_00497d70,,object_find,0.9,llm-w134,body-verified list walk
+0052e5b0,FUN_0052e5b0,,objanim_select_animloop,0.9,llm-w134,body-verified
+00458710,FUN_00458710,,TeamMemberInitWeapons__FP6OBJECT,0.9,llm-w134,body-verified
+00457f40,FUN_00457f40,,WeaponIdSet__FP6OBJECTii,0.9,llm-w134,body-verified
+004e3440,FUN_004e3440,,rpman_smartie_consider__FP6OBJECTT0,0.9,llm-w134,body-verified
+0044efd0,FUN_0044efd0,,fx_process,0.9,llm-w134,body-verified iterates fx_process_one
+00448750,FUN_00448750,,fxobj_delete__FP6OBJECTP7FxOspeci,0.9,llm-w134,body-verified
+004156f0,FUN_004156f0,,collide_objects_kabuto__FP6OBJECTP3P3D,0.9,llm-w134,body-verified
+00536580,FUN_00536580,,chat_insert_lf,0.9,llm-w134,body-verified
+0040db70,FUN_0040db70,,SetupCameraDataNormal__FP6OBJECTT0,0.9,llm-w134,body-verified
+004bcb30,FUN_004bcb30,,reaper_set_pitch__FP6OBJECT,0.9,llm-w134,body-verified
+00458230,FUN_00458230,,WeaponIdSetPresent__FP6OBJECTi,0.9,llm-w134,body-verified
+004804d0,FUN_004804d0,,mecc_repairwand_off,0.9,llm-w134,body-verified
+0040d790,FUN_0040d790,,camera_override_done,0.9,llm-w134,body-verified clears globals
+0053d9e0,FUN_0053d9e0,,GEO_MatIdentity,0.9,llm-w134,body-verified identity copy
+004a6100,FUN_004a6100,,ObjIsRipper,0.9,llm-w134,body-verified type 0x17
+004a2c50,FUN_004a2c50,,SphereFitToObject,0.9,llm-w134,body-verified
+004e1240,FUN_004e1240,,rpman_jet__FP6OBJECT,0.9,llm-w134,body-verified
+00445570,FUN_00445570,,FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT,0.9,llm-w134,body-verified
+00413e90,FUN_00413e90,,get_floor_z_point_plat,0.9,llm-w134,body-verified
+004ba920,FUN_004ba920,,reaper_stop_looping_effects,0.9,llm-w134,body-verified

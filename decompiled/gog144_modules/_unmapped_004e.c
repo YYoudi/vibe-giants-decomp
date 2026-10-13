@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (65 named) — decompiled, names from PS2 symbols
+ * 94 functions (68 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -135,12 +135,12 @@ void ai_death_anim(int param_1)
 
 }
 
-/* ===== FUN_004e1240 @ 0x004E1240 ===== */
+/* ===== rpman_jet__FP6OBJECT @ 0x004E1240 ===== */
 /* PS2 candidate: rpman_jet__FP6OBJECT (conf 0.367) */
 
 
 
-void FUN_004e1240(int param_1)
+void rpman_jet__FP6OBJECT(int param_1)
 
 
 
@@ -2062,7 +2062,9 @@ undefined4 rpman_verify_enemy__FP6OBJECTf(int param_1,float param_2)
 
   piVar2 = *(int **)(param_1 + 0x100);
 
-  if ((DAT_005a858c != 0) && (iVar3 = FUN_004e3440(param_1,DAT_005a858c), iVar3 != 0)) {
+  if ((DAT_005a858c != 0) &&
+
+     (iVar3 = rpman_smartie_consider__FP6OBJECTT0(param_1,DAT_005a858c), iVar3 != 0)) {
 
     return 1;
 
@@ -2154,7 +2156,7 @@ LAB_004e324d:
 
     else {
 
-      iVar3 = FUN_004a6140(*piVar2);
+      iVar3 = ObjIsTurret(*piVar2);
 
       if ((iVar3 == 0) && (iVar3 = bldg_get_max_energy(*piVar2), iVar3 != 0)) goto LAB_004e324d;
 
@@ -2320,14 +2322,14 @@ LAB_004e33f4:
 
 }
 
-/* ===== FUN_004e3440 @ 0x004E3440 ===== */
+/* ===== rpman_smartie_consider__FP6OBJECTT0 @ 0x004E3440 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: rpman_smartie_consider__FP6OBJECTT0 (conf 0.377) */
 
 
 
-undefined4 FUN_004e3440(int param_1,int param_2)
+undefined4 rpman_smartie_consider__FP6OBJECTT0(int param_1,int param_2)
 
 
 
@@ -2810,7 +2812,7 @@ void rpman_scan_for_enemy__FP6OBJECTfii(int param_1,float param_2,int param_3,in
 
         if (((iVar6 == 0) && (*(int *)(iVar4 + 0x1e0) != 0x55)) &&
 
-           ((iVar6 = FUN_004a6140(iVar4), iVar6 == 0 || (*(int *)(iVar4 + 0x18c) == 100)))) {
+           ((iVar6 = ObjIsTurret(iVar4), iVar6 == 0 || (*(int *)(iVar4 + 0x18c) == 100)))) {
 
 LAB_004e3a00:
 
@@ -2818,7 +2820,9 @@ LAB_004e3a00:
 
             if (((*(int *)(iVar4 + 0x1e0) == 0x12) && (*(int *)(iVar4 + 0xe8) == 10)) &&
 
-               (DAT_005a858c = iVar4, iVar6 = FUN_004e3440(param_1,iVar4), iVar6 != 0)) {
+               (DAT_005a858c = iVar4, iVar6 = rpman_smartie_consider__FP6OBJECTT0(param_1,iVar4),
+
+               iVar6 != 0)) {
 
               return;
 
@@ -2830,7 +2834,7 @@ LAB_004e3a00:
 
               if ((iVar6 == 0) && (iVar6 = FUN_004a62b0(iVar4), iVar6 == 0)) {
 
-                iVar6 = FUN_004a6140(*piVar3);
+                iVar6 = ObjIsTurret(*piVar3);
 
                 if ((iVar6 != 0) && (*(int *)(iVar4 + 0x18c) != *(int *)(param_1 + 0x18c))) {
 
@@ -2864,7 +2868,7 @@ LAB_004e3ad2:
 
                     param_2 = (float)fVar9;
 
-                    iVar6 = FUN_004a6140(iVar4);
+                    iVar6 = ObjIsTurret(iVar4);
 
                     if (((iVar6 != 0) && (iVar6 = FUN_004a6360(*piVar3), iVar6 == 0)) &&
 
@@ -2914,7 +2918,7 @@ LAB_004e3ad2:
 
         else if (param_3 == 0) {
 
-          iVar6 = FUN_004a6140(iVar4);
+          iVar6 = ObjIsTurret(iVar4);
 
           if (iVar6 != 0) goto LAB_004e3a00;
 
@@ -3440,12 +3444,12 @@ undefined4 FUN_004e4280(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004e4360 @ 0x004E4360 ===== */
+/* ===== rpman_maintain_hide__FP6OBJECT @ 0x004E4360 ===== */
 /* PS2 candidate: rpman_maintain_hide__FP6OBJECT (conf 0.38) */
 
 
 
-void FUN_004e4360(int param_1)
+void rpman_maintain_hide__FP6OBJECT(int param_1)
 
 
 
@@ -7201,7 +7205,7 @@ LAB_004e7bdc:
 
     if (((iVar5 != 0) || (iVar5 = FUN_004a62b0(*piVar1), iVar5 != 0)) &&
 
-       (iVar5 = FUN_004a6140(*piVar1), iVar5 == 0)) {
+       (iVar5 = ObjIsTurret(*piVar1), iVar5 == 0)) {
 
       iVar5 = *piVar1;
 
@@ -8133,7 +8137,7 @@ LAB_004eac20:
 
     iVar6 = DAT_00632a88;
 
-    iVar3 = FUN_00497d70(3);
+    iVar3 = object_find(3);
 
     if (iVar3 == 0) {
 
@@ -8399,7 +8403,7 @@ LAB_004eb000:
 
     iVar6 = DAT_00632a88;
 
-    iVar3 = FUN_00497d70(1);
+    iVar3 = object_find(1);
 
     if (iVar3 == 0) {
 
@@ -8615,7 +8619,7 @@ LAB_004eb3e0:
 
   iVar6 = DAT_00632a88;
 
-  iVar3 = FUN_00497d70(2);
+  iVar3 = object_find(2);
 
   if (iVar3 == 0) {
 

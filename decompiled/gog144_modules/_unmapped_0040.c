@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (71 named) — decompiled, names from PS2 symbols
+ * 105 functions (73 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -1683,7 +1683,7 @@ LAB_00403d93:
 
             if (puVar5 == (undefined4 *)0x0) {
 
-              FUN_0053d9e0(*(int *)(param_1 + 0x2dc) + local_78);
+              GEO_MatIdentity(*(int *)(param_1 + 0x2dc) + local_78);
 
             }
 
@@ -1801,7 +1801,7 @@ LAB_00403c86:
 
             if (puVar5 == (undefined4 *)0x0) {
 
-              FUN_0053d9e0(*(int *)(param_1 + 0x2dc) + local_78);
+              GEO_MatIdentity(*(int *)(param_1 + 0x2dc) + local_78);
 
             }
 
@@ -10143,12 +10143,12 @@ void camera_override_info
 
 }
 
-/* ===== FUN_0040d790 @ 0x0040D790 ===== */
+/* ===== camera_override_done @ 0x0040D790 ===== */
 /* PS2 candidate: camera_override_done (conf 0.371) */
 
 
 
-void FUN_0040d790(void)
+void camera_override_done(void)
 
 
 
@@ -10342,7 +10342,7 @@ void ref_anode_user(void)
 
     if (DAT_00632bc4 != 0) {
 
-      FUN_0040db70(DAT_00632a88,DAT_00632a88);
+      SetupCameraDataNormal__FP6OBJECTT0(DAT_00632a88,DAT_00632a88);
 
       return;
 
@@ -10368,7 +10368,7 @@ void ref_anode_user(void)
 
       if (DAT_005550bc != 2) {
 
-        FUN_0040db70(iVar1,iVar1);
+        SetupCameraDataNormal__FP6OBJECTT0(iVar1,iVar1);
 
         return;
 
@@ -10430,14 +10430,14 @@ void ref_anode_user(void)
 
 }
 
-/* ===== FUN_0040db70 @ 0x0040DB70 ===== */
+/* ===== SetupCameraDataNormal__FP6OBJECTT0 @ 0x0040DB70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: SetupCameraDataNormal__FP6OBJECTT0 (conf 0.375) */
 
 
 
-void FUN_0040db70(undefined4 param_1,float param_2)
+void SetupCameraDataNormal__FP6OBJECTT0(undefined4 param_1,float param_2)
 
 
 

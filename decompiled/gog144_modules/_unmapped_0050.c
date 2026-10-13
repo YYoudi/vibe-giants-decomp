@@ -8689,7 +8689,7 @@ LAB_0050768d:
 
     if ((*(uint *)(param_1 + 0xe0) & 0x10000) != 0) {
 
-      FUN_00458230(param_1);
+      WeaponIdSetPresent__FP6OBJECTi(param_1);
 
     }
 
@@ -8721,7 +8721,7 @@ LAB_0050768d:
 
      (((*(uint *)(param_1 + 0xe0) & 0x10000) == 0 || ((local_6c & 0x80000) != 0)))) {
 
-    FUN_00458230(param_1);
+    WeaponIdSetPresent__FP6OBJECTi(param_1);
 
   }
 
@@ -11258,7 +11258,7 @@ void TurretExit(int param_1)
 
     if (iVar1 == DAT_00632a88) {
 
-      FUN_0040d790();
+      camera_override_done();
 
       if (DAT_00632bbc == 0) {
 

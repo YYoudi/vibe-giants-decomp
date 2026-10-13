@@ -802,7 +802,7 @@ void fx_stackPop__FPP10FXSTACKTAGT0(int *param_1,undefined4 *param_2)
 
     if ((char)((uint)*(undefined4 *)(iVar3 + 0xe0) >> 8) < '\0') {
 
-      FUN_00448750(iVar3,*(undefined4 *)(iVar3 + 0x100),0);
+      fxobj_delete__FP6OBJECTP7FxOspeci(iVar3,*(undefined4 *)(iVar3 + 0x100),0);
 
     }
 
@@ -828,7 +828,7 @@ void fx_stackPop__FPP10FXSTACKTAGT0(int *param_1,undefined4 *param_2)
 
   if ((char)((uint)*(undefined4 *)(iVar3 + 0xe0) >> 8) < '\0') {
 
-    FUN_00448750(iVar3,*(undefined4 *)(iVar3 + 0x100),0);
+    fxobj_delete__FP6OBJECTP7FxOspeci(iVar3,*(undefined4 *)(iVar3 + 0x100),0);
 
   }
 
