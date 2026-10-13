@@ -2,17 +2,17 @@
 
 | module | functions | named | file |
 |---|---|---|---|
-| _unmapped_0054 | 351 | 239 | _unmapped_0054.c |
+| _unmapped_0054 | 351 | 240 | _unmapped_0054.c |
 | _unmapped_0051 | 186 | 79 | _unmapped_0051.c |
 | _unmapped_0053 | 179 | 75 | _unmapped_0053.c |
 | _unmapped_0052 | 162 | 90 | _unmapped_0052.c |
 | _unmapped_0045 | 145 | 47 | _unmapped_0045.c |
 | _unmapped_0049 | 142 | 48 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 44 | _unmapped_004a.c |
-| _unmapped_0042 | 129 | 86 | _unmapped_0042.c |
+| _unmapped_0042 | 129 | 87 | _unmapped_0042.c |
 | _unmapped_0040 | 105 | 37 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 48 | _unmapped_0041.c |
-| _unmapped_004e | 94 | 32 | _unmapped_004e.c |
+| _unmapped_004e | 94 | 33 | _unmapped_004e.c |
 | _unmapped_004b | 90 | 30 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 28 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 43 | _unmapped_0044.c |
@@ -20,7 +20,7 @@
 | _unmapped_0048 | 74 | 35 | _unmapped_0048.c |
 | _unmapped_0047 | 67 | 30 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 29 | _unmapped_004c.c |
-| _unmapped_0046 | 53 | 21 | _unmapped_0046.c |
+| _unmapped_0046 | 53 | 22 | _unmapped_0046.c |
 | _unmapped_004f | 48 | 17 | _unmapped_004f.c |
 | _unmapped_004d | 39 | 12 | _unmapped_004d.c |
 | main/dlog | 19 | 19 | main_dlog.c |

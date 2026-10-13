@@ -895,7 +895,7 @@ void wredit_minishop_icons(undefined4 param_1,int param_2,int param_3)
 
   if (*(int *)(param_2 + 0x1e0) == 0x5c) {
 
-    FUN_0046f8d0(param_2,local_80);
+    obj_5c_slot_scan(param_2,local_80);
 
     crt_file_free_init();
 

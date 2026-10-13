@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (86 named) — decompiled, names from PS2 symbols
+ * 129 functions (87 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -14389,8 +14389,8 @@ void FUN_0042b220(ushort *param_1)
 
 }
 
-/* ===== FUN_0042b290 @ 0x0042B290 ===== */
-void FUN_0042b290(int param_1,int param_2,float param_3,float param_4)
+/* ===== level_scene_mesh_uv2 @ 0x0042B290 ===== */
+void level_scene_mesh_uv2(int param_1,int param_2,float param_3,float param_4)
 
 
 
@@ -16123,9 +16123,11 @@ LAB_0042cb13:
 
               (**(code **)(DAT_00656430 + 8))(DAT_00656430,uVar14,uVar7,uVar16);
 
-              FUN_0042b290(iVar2,param_3,*(undefined4 *)(*(int *)(param_1 + 0x100) + 0x88),
+              level_scene_mesh_uv2
 
-                           *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x8c));
+                        (iVar2,param_3,*(undefined4 *)(*(int *)(param_1 + 0x100) + 0x88),
+
+                         *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x8c));
 
               goto LAB_0042ccba;
 
@@ -16323,7 +16325,7 @@ LAB_0042cb13:
 
                 if (local_118 == 0) {
 
-                  FUN_0046f8d0(iVar8,auStack_84);
+                  obj_5c_slot_scan(iVar8,auStack_84);
 
                   if (DAT_00633244 < 3) {
 

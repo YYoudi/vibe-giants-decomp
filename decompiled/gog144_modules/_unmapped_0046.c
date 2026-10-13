@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (21 named) — decompiled, names from PS2 symbols
+ * 53 functions (22 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -4222,8 +4222,8 @@ bool kabutoai_is_punch_anim__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_0046f8d0 @ 0x0046F8D0 ===== */
-void FUN_0046f8d0(int param_1,uint *param_2)
+/* ===== obj_5c_slot_scan @ 0x0046F8D0 ===== */
+void obj_5c_slot_scan(int param_1,uint *param_2)
 
 
 

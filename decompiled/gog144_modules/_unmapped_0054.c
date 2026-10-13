@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (239 named) — decompiled, names from PS2 symbols
+ * 351 functions (240 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -25616,9 +25616,9 @@ bool crt_tzset_dst(int *param_1)
 
       if (DAT_00630df0 == 0) {
 
-        FUN_0054e89c(1,1,iVar2,4,1,0,0,2,0,0,0);
+        crt_tz_rule_eval(1,1,iVar2,4,1,0,0,2,0,0,0);
 
-        FUN_0054e89c(0,1,param_1[5],10,5,0,0,2,0,0,0);
+        crt_tz_rule_eval(0,1,param_1[5],10,5,0,0,2,0,0,0);
 
       }
 
@@ -25644,9 +25644,9 @@ bool crt_tzset_dst(int *param_1)
 
         }
 
-        FUN_0054e89c(1,DAT_00630e90 == 0,iVar2,DAT_00630e92,uVar3,uVar4,uVar5,DAT_00630e98,
+        crt_tz_rule_eval(1,DAT_00630e90 == 0,iVar2,DAT_00630e92,uVar3,uVar4,uVar5,DAT_00630e98,
 
-                     DAT_00630e9a,DAT_00630e9c,DAT_00630e9e);
+                         DAT_00630e9a,DAT_00630e9c,DAT_00630e9e);
 
         if (DAT_00630e3c != 0) {
 
@@ -25672,9 +25672,9 @@ bool crt_tzset_dst(int *param_1)
 
         }
 
-        FUN_0054e89c(0,DAT_00630e3c == 0,iVar2,DAT_00630e3e,uVar3,uVar4,uVar5,DAT_00630e44,
+        crt_tz_rule_eval(0,DAT_00630e3c == 0,iVar2,DAT_00630e3e,uVar3,uVar4,uVar5,DAT_00630e44,
 
-                     DAT_00630e46,DAT_00630e48,DAT_00630e4a);
+                         DAT_00630e46,DAT_00630e48,DAT_00630e4a);
 
       }
 
@@ -25732,14 +25732,14 @@ LAB_0054e868:
 
 }
 
-/* ===== FUN_0054e89c @ 0x0054E89C ===== */
+/* ===== crt_tz_rule_eval @ 0x0054E89C ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0054e89c(int param_1,int param_2,uint param_3,int param_4,int param_5,int param_6,
+void crt_tz_rule_eval(int param_1,int param_2,uint param_3,int param_4,int param_5,int param_6,
 
-                 int param_7,int param_8,int param_9,int param_10,int param_11)
+                     int param_7,int param_8,int param_9,int param_10,int param_11)
 
 
 
