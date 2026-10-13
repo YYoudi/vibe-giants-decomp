@@ -63,9 +63,10 @@ def emit(rows, fname, tier_base):
     for f in glob.glob(os.path.join(PS2, "*.csv")):
         try:
             for r in csv.DictReader(open(os.path.join(PS2, f), encoding="utf-8")):
-                claimed.add(norm(r["pc_addr"]))
-                used.add(r["ps2_name"])
-        except FileNotFoundError:
+                if "ps2_name" in r and r.get("pc_addr"):
+                    claimed.add(norm(r["pc_addr"]))
+                    used.add(r["ps2_name"])
+        except (FileNotFoundError, KeyError, ValueError):
             pass
     out = []
     for a, nm in sorted(rows):
