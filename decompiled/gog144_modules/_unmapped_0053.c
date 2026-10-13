@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (121 named) — decompiled, names from PS2 symbols
+ * 179 functions (124 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -3107,7 +3107,7 @@ LAB_005319de:
 
       case '\r':
 
-        FUN_00534f10(pcVar15);
+        comm_packet_write_header(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x1a;
 
@@ -7704,8 +7704,8 @@ void comm_send_helper(int param_1)
 
 }
 
-/* ===== FUN_00534f10 @ 0x00534F10 ===== */
-void FUN_00534f10(int param_1)
+/* ===== comm_packet_write_header @ 0x00534F10 ===== */
+void comm_packet_write_header(int param_1)
 
 
 
@@ -9155,12 +9155,12 @@ LAB_00535e38:
 
 }
 
-/* ===== FUN_00535f40 @ 0x00535F40 ===== */
+/* ===== comm_session_init @ 0x00535F40 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00535f40(void)
+void comm_session_init(void)
 
 
 
@@ -16933,8 +16933,8 @@ void ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(int *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053d700 @ 0x0053D700 ===== */
-void FUN_0053d700(undefined4 *param_1,int param_2)
+/* ===== nam_entry_ctor @ 0x0053D700 ===== */
+void nam_entry_ctor(undefined4 *param_1,int param_2)
 
 
 
@@ -17063,7 +17063,7 @@ void nam_lookup_variant(int param_1,int param_2)
 
       puVar5 = (undefined4 *)NAM_NameGetCustom(iVar6);
 
-      FUN_0053d700(*puVar5,uVar3);
+      nam_entry_ctor(*puVar5,uVar3);
 
       iVar6 = NAM_NameFindByHandleIndex_2(uVar2,iVar4);
 

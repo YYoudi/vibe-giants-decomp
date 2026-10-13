@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (65 named) — decompiled, names from PS2 symbols
+ * 76 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -6461,8 +6461,8 @@ void FUN_00446b00(int param_1,float param_2,float param_3,float param_4,float pa
 
 }
 
-/* ===== FUN_00446be0 @ 0x00446BE0 ===== */
-void FUN_00446be0(undefined4 param_1,undefined4 param_2,float *param_3)
+/* ===== flick_text_measure @ 0x00446BE0 ===== */
+void flick_text_measure(undefined4 param_1,undefined4 param_2,float *param_3)
 
 
 
@@ -6645,7 +6645,7 @@ void flick_text_layout(undefined4 param_1,char *param_2,float *param_3)
 
       else if (0x1f < bVar4) {
 
-        FUN_00446be0(param_1,bVar4,param_3);
+        flick_text_measure(param_1,bVar4,param_3);
 
       }
 

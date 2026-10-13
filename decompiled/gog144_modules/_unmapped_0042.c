@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (98 named) — decompiled, names from PS2 symbols
+ * 129 functions (100 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -1136,8 +1136,8 @@ undefined4 FUN_00420a70(void)
 
 }
 
-/* ===== FUN_00420b10 @ 0x00420B10 ===== */
-undefined * FUN_00420b10(int param_1,int param_2,uint param_3)
+/* ===== mission_objective_entry_lookup @ 0x00420B10 ===== */
+undefined * mission_objective_entry_lookup(int param_1,int param_2,uint param_3)
 
 
 
@@ -14099,14 +14099,14 @@ void BinFileSeek(undefined4 param_1,undefined4 param_2)
 
 {
 
-  FUN_0042b060(param_1,param_2,0);
+  obj_in_render_range(param_1,param_2,0);
 
   return;
 
 }
 
-/* ===== FUN_0042b060 @ 0x0042B060 ===== */
-int FUN_0042b060(int param_1,float param_2,int param_3)
+/* ===== obj_in_render_range @ 0x0042B060 ===== */
+int obj_in_render_range(int param_1,float param_2,int param_3)
 
 
 
@@ -14211,7 +14211,7 @@ void BinFileCreateWrite_2(undefined4 param_1)
 
 {
 
-  FUN_0042b060(param_1,0,0);
+  obj_in_render_range(param_1,0,0);
 
   return;
 
@@ -14224,7 +14224,7 @@ void BinFileCreateWrite_3(undefined4 param_1)
 
 {
 
-  FUN_0042b060(param_1,0,1);
+  obj_in_render_range(param_1,0,1);
 
   return;
 
@@ -15571,7 +15571,7 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
   main_animate_00404b60(param_1,0xffffffff);
 
-  local_8c = FUN_0042b060(param_1,0,0);
+  local_8c = obj_in_render_range(param_1,0,0);
 
   iVar2 = *(int *)(*(int *)(param_1 + 8) + 0x400 + local_8c * 4);
 
@@ -16832,7 +16832,7 @@ void render_view_xform(void)
 
         iVar5 = piVar11[1];
 
-        iVar6 = FUN_0042b060(iVar4,0,0);
+        iVar6 = obj_in_render_range(iVar4,0,0);
 
         uVar7 = *(uint *)((iVar5 * 5 + 10) * 0x10 +
 
@@ -17208,7 +17208,7 @@ void alpha_queue_push(int param_1)
 
   
 
-  iVar3 = FUN_0042b060(param_1,0,0);
+  iVar3 = obj_in_render_range(param_1,0,0);
 
   iVar3 = *(int *)(*(int *)(param_1 + 8) + 0x400 + iVar3 * 4);
 
@@ -17361,7 +17361,7 @@ void shrap_create_water(undefined4 param_1)
 
 {
 
-  FUN_0042b060(param_1,0,0);
+  obj_in_render_range(param_1,0,0);
 
   status_hud_render(param_1,0xffff,0xffffffff);
 

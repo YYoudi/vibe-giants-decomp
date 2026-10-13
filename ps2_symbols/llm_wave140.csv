@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0053d700,FUN_0053d700,,nam_entry_ctor,0.9,llm-w140,caller nam_lookup_variant + PtrFix members
+00535f40,FUN_00535f40,,comm_session_init,0.9,llm-w140,caller level_config_load + comm defaults block
+00420b10,FUN_00420b10,,mission_objective_entry_lookup,0.9,llm-w140,caller showchat_mission_objective class 1/2/3 bit table
+00493d60,FUN_00493d60,,player_voice_timer_update,0.9,llm-w140,taunt timer callers sound_player_voice2
+0042b060,FUN_0042b060,,obj_in_render_range,0.9,llm-w140,camera dist + scale LOD check
+00534f10,FUN_00534f10,,comm_packet_write_header,0.9,llm-w140,packet buffer header append
+00478160,FUN_00478160,,ai_move_ground_step,0.9,llm-w140,caller ai_ground_snap + follow tick
+00446be0,FUN_00446be0,,flick_text_measure,0.9,llm-w140,caller flick_text_layout + char width pair

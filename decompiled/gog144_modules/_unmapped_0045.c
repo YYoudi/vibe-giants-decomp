@@ -6263,7 +6263,7 @@ void level_config_load(void)
 
   mission_0051a0c0(s_FarClipIndex_0055a04c,&DAT_006331bc);
 
-  FUN_00535f40();
+  comm_session_init();
 
   comm_options_defaults();
 

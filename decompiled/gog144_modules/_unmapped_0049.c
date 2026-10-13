@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (103 named) — decompiled, names from PS2 symbols
+ * 142 functions (104 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -656,7 +656,7 @@ void showchat_mission_objective__Fi(void)
 
         FUN_00507b00();
 
-        FUN_00420b10();
+        mission_objective_entry_lookup();
 
         crt_sprintf();
 
@@ -666,13 +666,13 @@ void showchat_mission_objective__Fi(void)
 
         FUN_00507b00();
 
-        FUN_00420b10();
+        mission_objective_entry_lookup();
 
-        FUN_00420b10();
+        mission_objective_entry_lookup();
 
-        FUN_00420b10();
+        mission_objective_entry_lookup();
 
-        FUN_00420b10();
+        mission_objective_entry_lookup();
 
         crt_sprintf();
 
@@ -4541,12 +4541,12 @@ void FUN_00493c90(void)
 
 }
 
-/* ===== FUN_00493d60 @ 0x00493D60 ===== */
+/* ===== player_voice_timer_update @ 0x00493D60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00493d60(undefined4 param_1,float param_2)
+void player_voice_timer_update(undefined4 param_1,float param_2)
 
 
 

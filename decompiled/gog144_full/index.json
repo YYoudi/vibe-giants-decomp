@@ -1250,9 +1250,9 @@
   "len": 709
  },
  "0x00420B10": {
-  "name": "FUN_00420b10",
-  "named": false,
-  "len": 1110
+  "name": "mission_objective_entry_lookup",
+  "named": true,
+  "len": 1128
  },
  "0x00420C10": {
   "name": "input_mapping_init",
@@ -1727,22 +1727,22 @@
  "0x0042B040": {
   "name": "BinFileSeek",
   "named": true,
-  "len": 116
+  "len": 123
  },
  "0x0042B060": {
-  "name": "FUN_0042b060",
-  "named": false,
-  "len": 1605
+  "name": "obj_in_render_range",
+  "named": true,
+  "len": 1612
  },
  "0x0042B160": {
   "name": "BinFileCreateWrite_2",
   "named": true,
-  "len": 100
+  "len": 107
  },
  "0x0042B180": {
   "name": "BinFileCreateWrite_3",
   "named": true,
-  "len": 100
+  "len": 107
  },
  "0x0042B1A0": {
   "name": "reaper_has_bow",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23529
+  "len": 23536
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -1812,7 +1812,7 @@
  "0x0042D550": {
   "name": "render_view_xform",
   "named": true,
-  "len": 4552
+  "len": 4559
  },
  "0x0042D8A0": {
   "name": "FUN_0042d8a0",
@@ -1822,12 +1822,12 @@
  "0x0042DC50": {
   "name": "alpha_queue_push",
   "named": true,
-  "len": 2573
+  "len": 2580
  },
  "0x0042DE50": {
   "name": "shrap_create_water",
   "named": true,
-  "len": 147
+  "len": 154
  },
  "0x0042DE80": {
   "name": "FUN_0042de80",
@@ -2630,14 +2630,14 @@
   "len": 1093
  },
  "0x00446BE0": {
-  "name": "FUN_00446be0",
-  "named": false,
-  "len": 1001
+  "name": "flick_text_measure",
+  "named": true,
+  "len": 1007
  },
  "0x00446CE0": {
   "name": "flick_text_layout",
   "named": true,
-  "len": 1629
+  "len": 1635
  },
  "0x00446DF0": {
   "name": "map_chunk_destroy",
@@ -3232,7 +3232,7 @@
  "0x00457440": {
   "name": "level_config_load",
   "named": true,
-  "len": 642
+  "len": 647
  },
  "0x004574D0": {
   "name": "defaults_reset_menu",
@@ -4090,9 +4090,9 @@
   "len": 1160
  },
  "0x00478160": {
-  "name": "FUN_00478160",
-  "named": false,
-  "len": 1195
+  "name": "ai_move_ground_step",
+  "named": true,
+  "len": 1202
  },
  "0x00478260": {
   "name": "formation_update_info",
@@ -4172,7 +4172,7 @@
  "0x0047C680": {
   "name": "sound_player_voice2",
   "named": true,
-  "len": 1376
+  "len": 1389
  },
  "0x0047C7A0": {
   "name": "object_spawn_class",
@@ -4657,7 +4657,7 @@
  "0x00490D70": {
   "name": "showchat_mission_objective__Fi",
   "named": true,
-  "len": 3876
+  "len": 3966
  },
  "0x00490FE0": {
   "name": "scenerio_process__Fv",
@@ -4735,9 +4735,9 @@
   "len": 786
  },
  "0x00493D60": {
-  "name": "FUN_00493d60",
-  "named": false,
-  "len": 959
+  "name": "player_voice_timer_update",
+  "named": true,
+  "len": 972
  },
  "0x00493EA0": {
   "name": "mission_replenish_food__Fv_2",
@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "reaper_animselect",
   "named": true,
-  "len": 24926
+  "len": 24939
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -7177,7 +7177,7 @@
  "0x004E2BA0": {
   "name": "ai_ground_snap",
   "named": true,
-  "len": 1479
+  "len": 1486
  },
  "0x004E2CE0": {
   "name": "rpman_find_hide_spot__FP6OBJECTi",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36721
+  "len": 36733
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10335,9 +10335,9 @@
   "len": 437
  },
  "0x00534F10": {
-  "name": "FUN_00534f10",
-  "named": false,
-  "len": 1757
+  "name": "comm_packet_write_header",
+  "named": true,
+  "len": 1769
  },
  "0x00535010": {
   "name": "comm_chat_dispatch",
@@ -10360,9 +10360,9 @@
   "len": 10445
  },
  "0x00535F40": {
-  "name": "FUN_00535f40",
-  "named": false,
-  "len": 1142
+  "name": "comm_session_init",
+  "named": true,
+  "len": 1147
  },
  "0x00536050": {
   "name": "atox__FPc",
@@ -10805,14 +10805,14 @@
   "len": 515
  },
  "0x0053D700": {
-  "name": "FUN_0053d700",
-  "named": false,
-  "len": 1287
+  "name": "nam_entry_ctor",
+  "named": true,
+  "len": 1289
  },
  "0x0053D810": {
   "name": "nam_lookup_variant",
   "named": true,
-  "len": 993
+  "len": 995
  },
  "0x0053D8D0": {
   "name": "FUN_0053d8d0",

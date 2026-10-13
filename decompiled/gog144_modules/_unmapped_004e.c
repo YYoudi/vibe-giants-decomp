@@ -1657,7 +1657,7 @@ undefined4 ai_ground_snap(int param_1)
 
   if (*(int *)(iVar2 + 0x138) < 0) {
 
-    local_20 = FUN_00478160(param_1,iVar2 + 0x134);
+    local_20 = ai_move_ground_step(param_1,iVar2 + 0x134);
 
     uVar4 = *(undefined4 *)(iVar2 + 0x140);
 

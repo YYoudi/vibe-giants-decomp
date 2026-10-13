@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (54 named) — decompiled, names from PS2 symbols
+ * 67 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -3893,8 +3893,8 @@ undefined4 FUN_00478080(int param_1,undefined4 param_2,undefined4 param_3,undefi
 
 }
 
-/* ===== FUN_00478160 @ 0x00478160 ===== */
-int FUN_00478160(int param_1,int *param_2)
+/* ===== ai_move_ground_step @ 0x00478160 ===== */
+int ai_move_ground_step(int param_1,int *param_2)
 
 
 
@@ -5774,7 +5774,7 @@ void sound_player_voice2(int param_1,int param_2,float param_3)
 
   if (*(float *)(*(int *)(param_1 + 0x100) + 0x4c) < 20.0) {
 
-    FUN_00493d60(param_1,param_3);
+    player_voice_timer_update(param_1,param_3);
 
     object_destroy(param_2);
 
