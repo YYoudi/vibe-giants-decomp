@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (45 named) — decompiled, names from PS2 symbols
+ * 105 functions (46 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -2399,12 +2399,12 @@ void FUN_004043a0(int param_1)
 
 }
 
-/* ===== FUN_004043d0 @ 0x004043D0 ===== */
+/* ===== S_maxobj_create_vertex_normals @ 0x004043D0 ===== */
 /* PS2 candidate: S_maxobj_create_vertex_normals (conf 0.819) */
 
 
 
-void FUN_004043d0(int param_1,int param_2,int param_3)
+void S_maxobj_create_vertex_normals(int param_1,int param_2,int param_3)
 
 
 
@@ -2549,7 +2549,7 @@ void FUN_00404530(int param_1,undefined4 param_2)
 
       do {
 
-        (*(code *)PTR_FUN_0055405c)(param_1,iVar2,param_2);
+        (*(code *)PTR_S_maxobj_create_vertex_normals_0055405c)(param_1,iVar2,param_2);
 
         iVar2 = iVar2 + 1;
 

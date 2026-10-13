@@ -8576,7 +8576,7 @@ void fx_orient_ground(int param_1,float param_2)
 
     FUN_0053fb40(local_320,&local_354,&local_32c,local_364);
 
-    FUN_0053deb0(local_2cc,local_320);
+    quat_to_matrix__FP4QUATPf(local_2cc,local_320);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_244,local_2cc,local_310);
 
@@ -9524,7 +9524,7 @@ LAB_0044abc9:
 
         else {
 
-          FUN_004992d0();
+          object_add_location();
 
           *(undefined4 *)(puStack0000003c[1] + 0x2a4) = *(undefined4 *)(puStack0000003c[1] + 0xa0);
 
@@ -9556,7 +9556,7 @@ LAB_0044abc9:
 
         else {
 
-          FUN_004992d0();
+          object_add_location();
 
           *(undefined4 *)(puStack0000003c[1] + 0x2a4) = *(undefined4 *)(puStack0000003c[1] + 0xa0);
 

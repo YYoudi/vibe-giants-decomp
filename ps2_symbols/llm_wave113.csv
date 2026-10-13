@@ -1,0 +1,15 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00454dc0,FUN_00454dc0,,minishop_update_mecc_icons,0.9,llm-w113,body-verified 20 icon slots
+00454d80,FUN_00454d80,,minishop_update_mecc_icons_2,0.9,llm-w113,body-verified variant
+004992d0,FUN_004992d0,,object_add_location,0.9,llm-w113,body-verified pos+=delta
+004ae290,FUN_004ae290,,releaseMpegBuffers__Fv,0.9,llm-w113,body-verified 7 buffer frees
+00455ef0,FUN_00455ef0,,object_create_gun,0.9,llm-w113,body-verified weapon idx dispatch
+00455ec0,FUN_00455ec0,,object_create_gun_2,0.9,llm-w113,body-verified variant
+0053bd70,FUN_0053bd70,,ANM_AnimDestroy,0.9,llm-w113,body-verified destroy chain
+0053d0a0,FUN_0053d0a0,,ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi,0.9,llm-w113,body-verified
+004043d0,FUN_004043d0,,S_maxobj_create_vertex_normals,0.9,llm-w113,body-verified mesh normals
+0054a887,FUN_0054a887,,MemFree,0.9,llm-w113,body-verified free guard
+0049a0f0,FUN_0049a0f0,,objspec_has_shot_function,0.9,llm-w113,body-verified per-class fp table
+0053deb0,FUN_0053deb0,,quat_to_matrix__FP4QUATPf,0.9,llm-w113,body-verified quat math
+0042b1a0,FUN_0042b1a0,,reaper_has_bow,0.9,llm-w113,body-verified inventory scan
+00547636,FUN_00547636,,GetOdIcon__FUi,0.9,llm-w113,body-verified table lookup

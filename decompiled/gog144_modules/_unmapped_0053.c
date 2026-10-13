@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (88 named) — decompiled, names from PS2 symbols
+ * 179 functions (91 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -14912,12 +14912,12 @@ int bistream_tell_user2(undefined4 param_1,int param_2,int *param_3)
 
 }
 
-/* ===== FUN_0053bd70 @ 0x0053BD70 ===== */
+/* ===== ANM_AnimDestroy @ 0x0053BD70 ===== */
 /* PS2 candidate: ANM_AnimDestroy (conf 0.823) */
 
 
 
-void FUN_0053bd70(int param_1)
+void ANM_AnimDestroy(int param_1)
 
 
 
@@ -16265,14 +16265,16 @@ void FUN_0053d050(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0053d0a0 @ 0x0053D0A0 ===== */
+/* ===== ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi @ 0x0053D0A0 ===== */
 /* PS2 candidate: ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi (conf 0.82) */
 
 
 
-void FUN_0053d0a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+void ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi
 
-                 undefined4 param_5,undefined4 param_6)
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+               undefined4 param_5,undefined4 param_6)
 
 
 
@@ -16524,7 +16526,9 @@ void FUN_0053d2d0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 
   for (iVar2 = *(int *)(param_1 + 0x14); iVar2 != 0; iVar2 = iVar2 + -1) {
 
-    FUN_0053d0a0(*piVar4,param_2,param_3,param_4,iVar3,param_5);
+    ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi
+
+              (*piVar4,param_2,param_3,param_4,iVar3,param_5);
 
     iVar1 = *piVar4;
 
@@ -17877,12 +17881,12 @@ void FUN_0053dde0(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,und
 
 }
 
-/* ===== FUN_0053deb0 @ 0x0053DEB0 ===== */
+/* ===== quat_to_matrix__FP4QUATPf @ 0x0053DEB0 ===== */
 /* PS2 candidate: quat_to_matrix__FP4QUATPf (conf 0.807) */
 
 
 
-void FUN_0053deb0(undefined4 *param_1,float *param_2)
+void quat_to_matrix__FP4QUATPf(undefined4 *param_1,float *param_2)
 
 
 
@@ -18001,7 +18005,7 @@ void FUN_0053dfd0(undefined4 *param_1,undefined4 *param_2)
 
   else {
 
-    FUN_0053deb0(param_1,param_2 + 3);
+    quat_to_matrix__FP4QUATPf(param_1,param_2 + 3);
 
     param_2 = extraout_EDX;
 

@@ -6990,7 +6990,7 @@ LAB_0047d6b8:
 
     if (iVar5 == 0) {
 
-      FUN_00454dc0(uVar4,pfVar3[1]);
+      minishop_update_mecc_icons(uVar4,pfVar3[1]);
 
       return;
 

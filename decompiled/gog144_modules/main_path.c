@@ -159,7 +159,7 @@ void path_world_init__Fv(void)
 
               iVar1 = DAT_005a0cf0 + iVar5;
 
-              iVar4 = FUN_0042b1a0(iVar2);
+              iVar4 = reaper_has_bow(iVar2);
 
               iVar4 = *(int *)(*(int *)(iVar2 + 8) + 0x400 + iVar4 * 4);
 

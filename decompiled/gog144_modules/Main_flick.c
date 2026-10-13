@@ -86,7 +86,7 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
         if (*piVar6 != 0) {
 
-          FUN_0053bd70(*piVar6);
+          ANM_AnimDestroy(*piVar6);
 
         }
 

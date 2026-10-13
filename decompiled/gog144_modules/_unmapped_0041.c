@@ -2769,7 +2769,7 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
       xform_p3d_world_mat(iVar11,local_24);
 
-      iVar7 = FUN_0042b1a0(iVar11);
+      iVar7 = reaper_has_bow(iVar11);
 
       iVar7 = *(int *)(*(int *)(iVar11 + 8) + 0x400 + iVar7 * 4);
 

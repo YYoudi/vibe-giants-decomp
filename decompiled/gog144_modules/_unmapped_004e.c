@@ -11222,7 +11222,7 @@ void shutdown_blood_cleanup(void)
 
   main_readwrls_004b42d0();
 
-  FUN_004ae290();
+  releaseMpegBuffers__Fv();
 
   win95_text_0051b160();
 

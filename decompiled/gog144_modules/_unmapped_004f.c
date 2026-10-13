@@ -62,7 +62,7 @@ void FUN_004f38f0(int param_1,int param_2)
 
   if (0.0 <= fVar4) {
 
-    FUN_004992d0(param_1,0,0,*(float *)(DAT_00632ed8 + 0x7d8) * fVar2);
+    object_add_location(param_1,0,0,*(float *)(DAT_00632ed8 + 0x7d8) * fVar2);
 
   }
 
@@ -90,9 +90,9 @@ void FUN_004f38f0(int param_1,int param_2)
 
     local_30[0] = *(float *)(DAT_00632ed8 + 0x7e4) * local_30[0];
 
-    FUN_004992d0(param_1,local_34 * fVar2,local_30[0] * fVar2,
+    object_add_location(param_1,local_34 * fVar2,local_30[0] * fVar2,
 
-                 -(*(float *)(DAT_00632ed8 + 0x7e8) * fVar2));
+                        -(*(float *)(DAT_00632ed8 + 0x7e8) * fVar2));
 
     FUN_00414690(pfVar1,local_1c);
 

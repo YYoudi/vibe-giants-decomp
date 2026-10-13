@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (90 named) — decompiled, names from PS2 symbols
+ * 129 functions (91 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -14228,12 +14228,12 @@ void BinFileCreateWrite_3(undefined4 param_1)
 
 }
 
-/* ===== FUN_0042b1a0 @ 0x0042B1A0 ===== */
+/* ===== reaper_has_bow @ 0x0042B1A0 ===== */
 /* PS2 candidate: reaper_has_bow_3 (conf 0.807) */
 
 
 
-int FUN_0042b1a0(int param_1)
+int reaper_has_bow(int param_1)
 
 
 

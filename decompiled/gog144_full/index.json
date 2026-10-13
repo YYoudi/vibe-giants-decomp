@@ -195,14 +195,14 @@
   "len": 358
  },
  "0x004043D0": {
-  "name": "FUN_004043d0",
-  "named": false,
-  "len": 2070
+  "name": "S_maxobj_create_vertex_normals",
+  "named": true,
+  "len": 2088
  },
  "0x00404530": {
   "name": "FUN_00404530",
   "named": false,
-  "len": 469
+  "len": 496
  },
  "0x00404570": {
   "name": "FUN_00404570",
@@ -252,12 +252,12 @@
  "0x00405780": {
   "name": "main_animate_00405780",
   "named": true,
-  "len": 495
+  "len": 498
  },
  "0x004057D0": {
   "name": "main_animate_004057d0",
   "named": true,
-  "len": 2657
+  "len": 2663
  },
  "0x00406BC0": {
   "name": "FUN_00406bc0",
@@ -767,7 +767,7 @@
  "0x00413E90": {
   "name": "FUN_00413e90",
   "named": false,
-  "len": 6026
+  "len": 6028
  },
  "0x004143F0": {
   "name": "FUN_004143f0",
@@ -1745,9 +1745,9 @@
   "len": 100
  },
  "0x0042B1A0": {
-  "name": "FUN_0042b1a0",
-  "named": false,
-  "len": 353
+  "name": "reaper_has_bow",
+  "named": true,
+  "len": 355
  },
  "0x0042B1D0": {
   "name": "main_0042b1d0",
@@ -2527,7 +2527,7 @@
  "0x00443740": {
   "name": "main_flick_00443740",
   "named": true,
-  "len": 2097
+  "len": 2100
  },
  "0x00443910": {
   "name": "wredit_matrix_recurse",
@@ -2787,7 +2787,7 @@
  "0x00449200": {
   "name": "fx_orient_ground",
   "named": true,
-  "len": 2014
+  "len": 2027
  },
  "0x00449400": {
   "name": "fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii",
@@ -2817,7 +2817,7 @@
  "0x00449CE0": {
   "name": "fx_processOpCodes",
   "named": true,
-  "len": 67434
+  "len": 67448
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -3055,14 +3055,14 @@
   "len": 1171
  },
  "0x00454D80": {
-  "name": "FUN_00454d80",
-  "named": false,
-  "len": 476
+  "name": "minishop_update_mecc_icons_2",
+  "named": true,
+  "len": 492
  },
  "0x00454DC0": {
-  "name": "FUN_00454dc0",
-  "named": false,
-  "len": 478
+  "name": "minishop_update_mecc_icons",
+  "named": true,
+  "len": 492
  },
  "0x00454E00": {
   "name": "reaper_spell_big",
@@ -3140,14 +3140,14 @@
   "len": 485
  },
  "0x00455EC0": {
-  "name": "FUN_00455ec0",
-  "named": false,
-  "len": 279
+  "name": "object_create_gun_2",
+  "named": true,
+  "len": 286
  },
  "0x00455EF0": {
-  "name": "FUN_00455ef0",
-  "named": false,
-  "len": 281
+  "name": "object_create_gun",
+  "named": true,
+  "len": 286
  },
  "0x00455F20": {
   "name": "FUN_00455f20",
@@ -3212,12 +3212,12 @@
  "0x00456F80": {
   "name": "obj_damage_apply",
   "named": true,
-  "len": 1982
+  "len": 1995
  },
  "0x00457100": {
   "name": "FUN_00457100",
   "named": false,
-  "len": 797
+  "len": 810
  },
  "0x004571A0": {
   "name": "FUN_004571a0",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "FUN_0047caa0",
   "named": false,
-  "len": 22852
+  "len": 22866
  },
  "0x0047DF10": {
   "name": "audio_listener_pan",
@@ -5047,7 +5047,7 @@
  "0x00497A50": {
   "name": "FUN_00497a50",
   "named": false,
-  "len": 2457
+  "len": 2469
  },
  "0x00497BD0": {
   "name": "objobj_type_lookup",
@@ -5122,7 +5122,7 @@
  "0x00498CF0": {
   "name": "FUN_00498cf0",
   "named": false,
-  "len": 4838
+  "len": 4845
  },
  "0x00499030": {
   "name": "object_spawn_small",
@@ -5150,9 +5150,9 @@
   "len": 558
  },
  "0x004992D0": {
-  "name": "FUN_004992d0",
-  "named": false,
-  "len": 393
+  "name": "object_add_location",
+  "named": true,
+  "len": 400
  },
  "0x00499310": {
   "name": "FUN_00499310",
@@ -5235,9 +5235,9 @@
   "len": 431
  },
  "0x0049A0F0": {
-  "name": "FUN_0049a0f0",
-  "named": false,
-  "len": 523
+  "name": "objspec_has_shot_function",
+  "named": true,
+  "len": 546
  },
  "0x0049A140": {
   "name": "FUN_0049a140",
@@ -5417,7 +5417,7 @@
  "0x0049FD40": {
   "name": "path_world_init__Fv",
   "named": true,
-  "len": 2804
+  "len": 2806
  },
  "0x0049FF30": {
   "name": "main_path_0049ff30",
@@ -5567,7 +5567,7 @@
  "0x004A26F0": {
   "name": "obj_bone_update",
   "named": true,
-  "len": 1544
+  "len": 1557
  },
  "0x004A2850": {
   "name": "FUN_004a2850",
@@ -5792,7 +5792,7 @@
  "0x004A6730": {
   "name": "obj_turn_update",
   "named": true,
-  "len": 1447
+  "len": 1468
  },
  "0x004A6860": {
   "name": "obj_alpha_fade_update",
@@ -5807,7 +5807,7 @@
  "0x004A6C00": {
   "name": "obj_scale_compute",
   "named": true,
-  "len": 7151
+  "len": 7158
  },
  "0x004A73A0": {
   "name": "FUN_004a73a0",
@@ -5817,7 +5817,7 @@
  "0x004A7400": {
   "name": "FUN_004a7400",
   "named": false,
-  "len": 303
+  "len": 324
  },
  "0x004A7440": {
   "name": "FUN_004a7440",
@@ -6042,12 +6042,12 @@
  "0x004AC4B0": {
   "name": "FUN_004ac4b0",
   "named": false,
-  "len": 1457
+  "len": 1470
  },
  "0x004AC620": {
   "name": "FUN_004ac620",
   "named": false,
-  "len": 1352
+  "len": 1365
  },
  "0x004AC760": {
   "name": "kabuto_punch_check",
@@ -6095,9 +6095,9 @@
   "len": 5494
  },
  "0x004AE290": {
-  "name": "FUN_004ae290",
-  "named": false,
-  "len": 428
+  "name": "releaseMpegBuffers__Fv",
+  "named": true,
+  "len": 438
  },
  "0x004AE310": {
   "name": "reread_globals_bin",
@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "reaper_animselect",
   "named": true,
-  "len": 24607
+  "len": 24623
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -7547,7 +7547,7 @@
  "0x004EE9C0": {
   "name": "shutdown_blood_cleanup",
   "named": true,
-  "len": 602
+  "len": 612
  },
  "0x004EEA40": {
   "name": "anm_binder_free",
@@ -7597,7 +7597,7 @@
  "0x004F38F0": {
   "name": "FUN_004f38f0",
   "named": false,
-  "len": 2122
+  "len": 2143
  },
  "0x004F3AF0": {
   "name": "FUN_004f3af0",
@@ -10670,9 +10670,9 @@
   "len": 971
  },
  "0x0053BD70": {
-  "name": "FUN_0053bd70",
-  "named": false,
-  "len": 365
+  "name": "ANM_AnimDestroy",
+  "named": true,
+  "len": 368
  },
  "0x0053BDA0": {
   "name": "FUN_0053bda0",
@@ -10755,9 +10755,9 @@
   "len": 550
  },
  "0x0053D0A0": {
-  "name": "FUN_0053d0a0",
-  "named": false,
-  "len": 747
+  "name": "ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi",
+  "named": true,
+  "len": 803
  },
  "0x0053D120": {
   "name": "FUN_0053d120",
@@ -10777,7 +10777,7 @@
  "0x0053D2D0": {
   "name": "FUN_0053d2d0",
   "named": false,
-  "len": 579
+  "len": 636
  },
  "0x0053D330": {
   "name": "FUN_0053d330",
@@ -10875,14 +10875,14 @@
   "len": 986
  },
  "0x0053DEB0": {
-  "name": "FUN_0053deb0",
-  "named": false,
-  "len": 1075
+  "name": "quat_to_matrix__FP4QUATPf",
+  "named": true,
+  "len": 1088
  },
  "0x0053DFD0": {
   "name": "FUN_0053dfd0",
   "named": false,
-  "len": 1431
+  "len": 1444
  },
  "0x0053E090": {
   "name": "FUN_0053e090",
@@ -11212,7 +11212,7 @@
  "0x00540800": {
   "name": "crt_math_dispatch_init",
   "named": true,
-  "len": 1416
+  "len": 1443
  },
  "0x00540AB0": {
   "name": "FUN_00540ab0",
@@ -11992,7 +11992,7 @@
  "0x00547586": {
   "name": "crt_fpe_dispatch",
   "named": true,
-  "len": 626
+  "len": 628
  },
  "0x0054760E": {
   "name": "crt_matherr_flag",
@@ -12000,9 +12000,9 @@
   "len": 296
  },
  "0x00547636": {
-  "name": "FUN_00547636",
-  "named": false,
-  "len": 376
+  "name": "GetOdIcon__FUi",
+  "named": true,
+  "len": 378
  },
  "0x0054765B": {
   "name": "crt_fpe_sigcode",
@@ -12267,7 +12267,7 @@
  "0x00549E11": {
   "name": "_input",
   "named": true,
-  "len": 19536
+  "len": 19486
  },
  "0x0054A836": {
   "name": "crt_scanf_hexchar",
@@ -12280,9 +12280,9 @@
   "len": 328
  },
  "0x0054A887": {
-  "name": "FUN_0054a887",
-  "named": false,
-  "len": 184
+  "name": "MemFree",
+  "named": true,
+  "len": 179
  },
  "0x0054A89E": {
   "name": "crt_scanf_skipws",

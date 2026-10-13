@@ -5268,7 +5268,7 @@ LAB_004b76fe:
 
     if (iVar7 == 0) {
 
-      FUN_00454d80(uVar5,pfVar11[1]);
+      minishop_update_mecc_icons_2(uVar5,pfVar11[1]);
 
       return;
 

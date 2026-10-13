@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (246 named) — decompiled, names from PS2 symbols
+ * 351 functions (248 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -748,7 +748,7 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_collgrid_collision_test_00554058 = (&PTR_LAB_00580cdc)[param_1];
 
-  PTR_FUN_0055405c = (&PTR_LAB_00580ce8)[param_1];
+  PTR_S_maxobj_create_vertex_normals_0055405c = (&PTR_LAB_00580ce8)[param_1];
 
   PTR_FUN_00554060 = (&PTR_FUN_00580cf4)[param_1];
 
@@ -12268,7 +12268,7 @@ float10 crt_fpe_dispatch(undefined4 param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_00547636(param_2);
+  iVar1 = GetOdIcon__FUi(param_2);
 
   if (iVar1 != 0) {
 
@@ -12327,12 +12327,12 @@ void crt_matherr_flag(int param_1)
 
 }
 
-/* ===== FUN_00547636 @ 0x00547636 ===== */
+/* ===== GetOdIcon__FUi @ 0x00547636 ===== */
 /* PS2 candidate: GetOdIcon__FUi (conf 0.804) */
 
 
 
-undefined4 FUN_00547636(int param_1)
+undefined4 GetOdIcon__FUi(int param_1)
 
 
 
@@ -16079,7 +16079,7 @@ LAB_0054a81d:
 
       uVar5 = crt_scanf_skipws(&local_8,param_1,param_1);
 
-      FUN_0054a887(uVar5);
+      MemFree(uVar5);
 
       iVar6 = FUN_005451d1(pbVar10[1]);
 
@@ -16283,7 +16283,7 @@ LAB_0054a7f7:
 
         local_8 = local_8 + -1;
 
-        FUN_0054a887(local_18,param_1);
+        MemFree(local_18,param_1);
 
         goto LAB_0054a817;
 
@@ -16545,7 +16545,7 @@ LAB_0054a1c6:
 
           local_8 = local_8 + -1;
 
-          FUN_0054a887(uVar4,param_1);
+          MemFree(uVar4,param_1);
 
           if (local_20 != 0) {
 
@@ -16673,7 +16673,7 @@ LAB_0054a381:
 
         local_34 = local_30;
 
-        FUN_0054a887(local_18,param_1);
+        MemFree(local_18,param_1);
 
         while( true ) {
 
@@ -16739,7 +16739,7 @@ LAB_0054a381:
 
         local_8 = local_8 + -1;
 
-        FUN_0054a887(local_18,param_1);
+        MemFree(local_18,param_1);
 
 LAB_0054a4e6:
 
@@ -16871,7 +16871,7 @@ LAB_0054a2e9:
 
               local_8 = local_8 + -1;
 
-              FUN_0054a887(local_18,param_1);
+              MemFree(local_18,param_1);
 
               local_18 = 0x30;
 
@@ -16969,7 +16969,7 @@ LAB_0054a720:
 
             local_8 = local_8 + -1;
 
-            FUN_0054a887(uVar7,param_1);
+            MemFree(uVar7,param_1);
 
             lVar15 = local_2c;
 
@@ -17067,7 +17067,7 @@ LAB_0054a642:
 
             local_8 = local_8 + -1;
 
-            FUN_0054a887(uVar7,param_1);
+            MemFree(uVar7,param_1);
 
             lVar15 = local_2c;
 
@@ -17165,11 +17165,11 @@ LAB_0054a778:
 
           local_8 = local_8 + -1;
 
-          FUN_0054a887(uVar7,param_1);
+          MemFree(uVar7,param_1);
 
           local_8 = local_8 + -1;
 
-          FUN_0054a887(uVar4,param_1);
+          MemFree(uVar4,param_1);
 
           goto LAB_0054a817;
 
@@ -17259,12 +17259,12 @@ uint crt_scanf_getchar(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0054a887 @ 0x0054A887 ===== */
+/* ===== MemFree @ 0x0054A887 ===== */
 /* PS2 candidate: MemFree (conf 0.818) */
 
 
 
-void FUN_0054a887(int param_1,undefined4 param_2)
+void MemFree(int param_1,undefined4 param_2)
 
 
 

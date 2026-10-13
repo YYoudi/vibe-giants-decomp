@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (56 named) — decompiled, names from PS2 symbols
+ * 142 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -7898,7 +7898,7 @@ void FUN_00497a50(int param_1,int param_2)
 
     if ((0 < iVar2) && (iVar2 <= *(int *)(param_1 + 0x1d8))) {
 
-      FUN_00455ef0(param_1,iVar2);
+      object_create_gun(param_1,iVar2);
 
     }
 
@@ -7906,7 +7906,7 @@ void FUN_00497a50(int param_1,int param_2)
 
     if ((0 < iVar2) && (iVar2 <= *(int *)(param_1 + 0x1d8))) {
 
-      FUN_00455ec0(param_1,iVar2);
+      object_create_gun_2(param_1,iVar2);
 
     }
 
@@ -9739,7 +9739,7 @@ void FUN_00498cf0(int param_1,int param_2)
 
       if (*(int *)(iVar3 + 4) == 2) {
 
-        FUN_00455ec0(iVar3,1);
+        object_create_gun_2(iVar3,1);
 
       }
 
@@ -9994,12 +9994,12 @@ void FUN_00499280(int param_1)
 
 }
 
-/* ===== FUN_004992d0 @ 0x004992D0 ===== */
+/* ===== object_add_location @ 0x004992D0 ===== */
 /* PS2 candidate: object_add_location (conf 0.842) */
 
 
 
-void FUN_004992d0(int param_1,float param_2,float param_3,float param_4)
+void object_add_location(int param_1,float param_2,float param_3,float param_4)
 
 
 
@@ -10816,16 +10816,18 @@ void FUN_0049a0c0(int param_1)
 
 }
 
-/* ===== FUN_0049a0f0 @ 0x0049A0F0 ===== */
+/* ===== objspec_has_shot_function @ 0x0049A0F0 ===== */
 /* PS2 candidate: objspec_has_shot_function (conf 0.814) */
 
 
 
 undefined4
 
-FUN_0049a0f0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5
+objspec_has_shot_function
 
-            ,undefined4 param_6)
+          (undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5,
+
+          undefined4 param_6)
 
 
 

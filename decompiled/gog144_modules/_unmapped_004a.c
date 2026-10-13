@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (50 named) — decompiled, names from PS2 symbols
+ * 131 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1901,7 +1901,7 @@ void obj_bone_update(int param_1,float param_2,float param_3,undefined4 param_4,
 
       FUN_0053fad0(local_98,&DAT_0055ea50,param_1 + 0x144);
 
-      FUN_0053deb0(local_44,local_98);
+      quat_to_matrix__FP4QUATPf(local_44,local_98);
 
       (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_44,param_1 + 0x294);
 
@@ -6082,11 +6082,11 @@ void obj_turn_update(int param_1)
 
   fVar1 = (float10)FUN_00518b70(param_1,0);
 
-  FUN_004992d0(param_1,0,0,
+  object_add_location(param_1,0,0,
 
-               (float)(((float10)*(float *)(param_1 + 0x118) + (float10)*(float *)(param_1 + 0x108))
+                      (float)(((float10)*(float *)(param_1 + 0x118) +
 
-                       * fVar1 * (float10)0.5));
+                              (float10)*(float *)(param_1 + 0x108)) * fVar1 * (float10)0.5));
 
   return;
 
@@ -6727,7 +6727,7 @@ LAB_004a70b2:
 
   }
 
-  FUN_004992d0(iVar4,local_c,local_10,0);
+  object_add_location(iVar4,local_c,local_10,0);
 
   return;
 
@@ -6785,11 +6785,11 @@ void FUN_004a7400(int param_1)
 
   fVar1 = (float10)FUN_00518b70(param_1,0);
 
-  FUN_004992d0(param_1,0,0,
+  object_add_location(param_1,0,0,
 
-               (float)(((float10)*(float *)(param_1 + 0x118) + (float10)*(float *)(param_1 + 0x108))
+                      (float)(((float10)*(float *)(param_1 + 0x118) +
 
-                       * fVar1 * (float10)0.5));
+                              (float10)*(float *)(param_1 + 0x108)) * fVar1 * (float10)0.5));
 
   return;
 
@@ -10653,7 +10653,7 @@ void FUN_004ac4b0(int param_1,float *param_2,int param_3,float param_4,float par
 
     FUN_0053fb40(local_120,&local_12c,&local_138,(float)(fVar2 / fVar1));
 
-    FUN_0053deb0(local_88,local_120);
+    quat_to_matrix__FP4QUATPf(local_88,local_120);
 
     FUN_0053dbb0(local_44,local_110,param_1 + 0x294);
 
@@ -10752,7 +10752,7 @@ void FUN_004ac620(int param_1,float *param_2,float param_3)
 
   FUN_0053fb40(local_120,&local_138,&local_12c,local_13c);
 
-  FUN_0053deb0(local_cc,local_120);
+  quat_to_matrix__FP4QUATPf(local_cc,local_120);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_cc,local_110);
 
@@ -11646,12 +11646,12 @@ void fx_create_hack_logic(int param_1)
 
 }
 
-/* ===== FUN_004ae290 @ 0x004AE290 ===== */
+/* ===== releaseMpegBuffers__Fv @ 0x004AE290 ===== */
 /* PS2 candidate: releaseMpegBuffers__Fv (conf 0.831) */
 
 
 
-void FUN_004ae290(void)
+void releaseMpegBuffers__Fv(void)
 
 
 

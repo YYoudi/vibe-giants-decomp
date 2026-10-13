@@ -834,7 +834,7 @@ void main_animate_00405780(int param_1)
 
   if (*(int *)(param_1 + 0x6c) != 0) {
 
-    FUN_0053bd70(*(int *)(param_1 + 0x6c));
+    ANM_AnimDestroy(*(int *)(param_1 + 0x6c));
 
   }
 
@@ -915,7 +915,7 @@ void main_animate_004057d0(int param_1)
 
               DAT_0058419c = DAT_0058419c - *piVar5;
 
-              FUN_0053bd70(iVar3);
+              ANM_AnimDestroy(iVar3);
 
               mem_free_tagged(piVar5,s_C__Giants_source_main_ANIMATE_CP_00554124,0x5f3);
 
@@ -979,7 +979,7 @@ void main_animate_004057d0(int param_1)
 
               DAT_0058419c = DAT_0058419c - *piVar5;
 
-              FUN_0053bd70(iVar3);
+              ANM_AnimDestroy(iVar3);
 
               mem_free_tagged(piVar5,s_C__Giants_source_main_ANIMATE_CP_00554124,0x5f3);
 

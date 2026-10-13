@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (52 named) — decompiled, names from PS2 symbols
+ * 145 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3619,12 +3619,12 @@ void reaper_bldg_check(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00454d80 @ 0x00454D80 ===== */
+/* ===== minishop_update_mecc_icons_2 @ 0x00454D80 ===== */
 /* PS2 candidate: minishop_update_mecc_icons (conf 0.845) */
 
 
 
-void FUN_00454d80(int param_1,uint param_2)
+void minishop_update_mecc_icons_2(int param_1,uint param_2)
 
 
 
@@ -3666,12 +3666,12 @@ void FUN_00454d80(int param_1,uint param_2)
 
 }
 
-/* ===== FUN_00454dc0 @ 0x00454DC0 ===== */
+/* ===== minishop_update_mecc_icons @ 0x00454DC0 ===== */
 /* PS2 candidate: minishop_update_mecc_icons_2 (conf 0.845) */
 
 
 
-void FUN_00454dc0(int param_1,uint param_2)
+void minishop_update_mecc_icons(int param_1,uint param_2)
 
 
 
@@ -5018,12 +5018,12 @@ void FUN_00455e70(int param_1)
 
 }
 
-/* ===== FUN_00455ec0 @ 0x00455EC0 ===== */
+/* ===== object_create_gun_2 @ 0x00455EC0 ===== */
 /* PS2 candidate: object_create_gun (conf 0.825) */
 
 
 
-void FUN_00455ec0(int param_1,int param_2)
+void object_create_gun_2(int param_1,int param_2)
 
 
 
@@ -5043,12 +5043,12 @@ void FUN_00455ec0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00455ef0 @ 0x00455EF0 ===== */
+/* ===== object_create_gun @ 0x00455EF0 ===== */
 /* PS2 candidate: object_create_gun_2 (conf 0.825) */
 
 
 
-void FUN_00455ef0(int param_1,int param_2)
+void object_create_gun(int param_1,int param_2)
 
 
 
@@ -5949,7 +5949,7 @@ void obj_damage_apply(int param_1,undefined4 param_2,int param_3,int param_4,und
 
     }
 
-    FUN_0049a0f0(param_1,param_2,param_3,param_4,param_5,param_6);
+    objspec_has_shot_function(param_1,param_2,param_3,param_4,param_5,param_6);
 
     if (*(float *)(param_3 + 0x1c0) <= *(float *)(param_3 + 0x278)) {
 
@@ -6012,7 +6012,7 @@ void FUN_00457100(int param_1,undefined4 param_2,int param_3,int param_4,undefin
 
   
 
-  FUN_0049a0f0(param_1,param_2,param_3,param_4,param_5,param_6);
+  objspec_has_shot_function(param_1,param_2,param_3,param_4,param_5,param_6);
 
   if ((param_3 != 0) && (*(float *)(param_3 + 0x1c0) <= *(float *)(param_3 + 0x278))) {
 
