@@ -6255,7 +6255,7 @@ void level_config_load(void)
 
   DAT_00632ee4 = FUN_004b0a00(&DAT_00632ee8);
 
-  registry_read_dword(s_FarClipIndex_0055a04c,&DAT_006331bc);
+  mission_0051a0c0(s_FarClipIndex_0055a04c,&DAT_006331bc);
 
   FUN_00535f40();
 

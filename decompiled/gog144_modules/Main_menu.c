@@ -80,7 +80,7 @@ void main_menu_00483200(int param_1,int param_2)
 
   }
 
-  objects_free_by_ospec();
+  mission_00447fd0();
 
   return;
 

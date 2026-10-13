@@ -1,0 +1,3 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0048e010,FUN_0048E010,,menu_dlog_callback_a,0.9,llm-read5,
+0048e610,FUN_0048E610,,menu_dlog_callback_b,0.9,llm-read5,

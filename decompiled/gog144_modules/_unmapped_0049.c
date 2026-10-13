@@ -1857,7 +1857,7 @@ void savegame_load(void)
 
   }
 
-  registry_read_dword(s_SaveGameVersion_0055c7b0,&local_84);
+  mission_0051a0c0(s_SaveGameVersion_0055c7b0,&local_84);
 
   if (local_84 == 0x11) {
 
@@ -2894,7 +2894,7 @@ undefined4 mission_init(char *p0)
 
   else {
 
-    registry_read_dword(s_CamMode_00555a28,local_124);
+    mission_0051a0c0(s_CamMode_00555a28,local_124);
 
     FUN_0040d130(local_124[0]);
 
@@ -13469,11 +13469,11 @@ void options_defaults(void)
 
     FUN_00519fe0(local_40);
 
-    registry_read_dword(s_VideoWidth_0055be0c,&DAT_006331c8);
+    mission_0051a0c0(s_VideoWidth_0055be0c,&DAT_006331c8);
 
-    registry_read_dword(s_VideoHeight_0055be00,&DAT_006331cc);
+    mission_0051a0c0(s_VideoHeight_0055be00,&DAT_006331cc);
 
-    registry_read_dword(s_VideoDepth_0055bdf4,&DAT_006331d0);
+    mission_0051a0c0(s_VideoDepth_0055bdf4,&DAT_006331d0);
 
     FUN_0051a160(s_VideoDevGuid_0055bde4,&DAT_006331e8,0x10);
 
@@ -13975,7 +13975,7 @@ undefined4 chat_log_init(int param_1)
 
   if ((iVar2 != 0) && (iVar2 = FUN_0052aa70(), iVar2 == 0)) {
 
-    registry_read_dword(s_MissionCheat_0055be64,&local_104);
+    mission_0051a0c0(s_MissionCheat_0055be64,&local_104);
 
     if (local_104 == 0) {
 

@@ -6560,7 +6560,7 @@ void keymap_load(void)
 
   iStack_84 = -1;
 
-  registry_read_dword(s_KeyVersion_00555ef0,&iStack_84);
+  mission_0051a0c0(s_KeyVersion_00555ef0,&iStack_84);
 
   if (iStack_84 == 0x36) {
 

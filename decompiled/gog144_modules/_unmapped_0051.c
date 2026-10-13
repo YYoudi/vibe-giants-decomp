@@ -9799,8 +9799,8 @@ void FUN_0051a090(LPCSTR param_1,BYTE *param_2)
 
 }
 
-/* ===== registry_read_dword @ 0x0051A0C0 ===== */
-void registry_read_dword(LPCSTR param_1,LPBYTE param_2)
+/* ===== mission_0051a0c0 @ 0x0051A0C0 ===== */
+void mission_0051a0c0(LPCSTR param_1,LPBYTE param_2)
 
 
 

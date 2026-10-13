@@ -2273,7 +2273,7 @@ void game_options_verify(void)
 
   
 
-  registry_read_dword(s_GameOptionsVersion_0055bdc0,&local_4);
+  mission_0051a0c0(s_GameOptionsVersion_0055bdc0,&local_4);
 
   if (local_4 != 1) {
 
@@ -2289,7 +2289,7 @@ void game_options_verify(void)
 
   if (iVar1 == 0) {
 
-    registry_read_dword(s_GameOptions_0055be30,&DAT_0059eeb4);
+    mission_0051a0c0(s_GameOptions_0055be30,&DAT_0059eeb4);
 
     if (DAT_00656420 != 0) {
 
@@ -2387,11 +2387,11 @@ void game_options_verify(void)
 
     }
 
-    registry_read_dword(s_VideoWidth_0055be0c,&DAT_006331c8);
+    mission_0051a0c0(s_VideoWidth_0055be0c,&DAT_006331c8);
 
-    registry_read_dword(s_VideoHeight_0055be00,&DAT_006331cc);
+    mission_0051a0c0(s_VideoHeight_0055be00,&DAT_006331cc);
 
-    registry_read_dword(s_VideoDepth_0055bdf4,&DAT_006331d0);
+    mission_0051a0c0(s_VideoDepth_0055bdf4,&DAT_006331d0);
 
     FUN_0051a160(s_VideoDevGuid_0055bde4,&DAT_006331e8,0x10);
 
@@ -2681,9 +2681,9 @@ void menu_mission_launch(void)
 
     local_4 = 0;
 
-    registry_read_dword(s_MissionCheat_0055be64,&local_4);
+    mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
 
-    registry_read_dword(s_DevNoMissionLoad_0055be50,&DAT_006331f8);
+    mission_0051a0c0(s_DevNoMissionLoad_0055be50,&DAT_006331f8);
 
     uVar2 = -(uint)(DAT_00633104 != 0) & 0xfffffffd;
 
@@ -2874,7 +2874,7 @@ void menu_handlers_lookup(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -3044,7 +3044,7 @@ LAB_00482fd8:
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -3278,7 +3278,7 @@ void menu_handlers_exec(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -3466,7 +3466,7 @@ LAB_00483738:
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -3977,7 +3977,7 @@ void savegame_cam_section(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -4071,7 +4071,7 @@ void savegame_cam_section(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -4291,7 +4291,7 @@ void mission_cheat_check(void)
 
   local_4 = 0;
 
-  registry_read_dword(s_MissionCheat_0055be64,&local_4);
+  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
 
   iVar4 = 0;
 
@@ -4536,7 +4536,7 @@ void mission_load_cheat(void)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -4560,7 +4560,7 @@ void mission_load_cheat(void)
 
   local_4 = 0;
 
-  registry_read_dword(s_MissionCheat_0055be64,&local_4);
+  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
 
   iVar8 = FUN_004B0B40();
 
@@ -4689,7 +4689,7 @@ undefined4 mission_load_world(int param_1)
 
   local_4 = 0;
 
-  registry_read_dword(s_MissionCheat_0055be64,&local_4);
+  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
 
   iVar1 = FUN_004B0B40();
 
@@ -4967,7 +4967,7 @@ void comm_00485300(void)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -5405,7 +5405,7 @@ void mission_mpworld_load(void)
 
   iVar9 = 0;
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -5505,12 +5505,12 @@ void mission_mpworld_load(void)
 
 }
 
-/* ===== menu_dialog_spawn_obj @ 0x00485F10 ===== */
+/* ===== dlog_00485f10 @ 0x00485F10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void menu_dialog_spawn_obj(void)
+void dlog_00485f10(void)
 
 
 
@@ -5699,7 +5699,7 @@ void menu_dialog_teardown(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -6439,7 +6439,7 @@ void FUN_004888f0(void)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -6504,7 +6504,7 @@ void mission_load_world2(void)
 
   local_4 = 0;
 
-  registry_read_dword(s_MissionCheat_0055be64,&local_4);
+  mission_0051a0c0(s_MissionCheat_0055be64,&local_4);
 
   if (local_4 == 0) {
 
@@ -6624,7 +6624,7 @@ void mission_load_world2(void)
 
           DAT_0055bdb0 = iVar1;
 
-          registry_read_dword(s_LoadWorld_0055bfec,&DAT_0059ee9c);
+          mission_0051a0c0(s_LoadWorld_0055bfec,&DAT_0059ee9c);
 
           iVar1 = DAT_00632918;
 
@@ -6741,7 +6741,7 @@ void mission_load_world3(void)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -6920,7 +6920,7 @@ void mission_menu_load(void)
 
       }
 
-      objects_free_by_ospec(0,2);
+      mission_00447fd0(0,2);
 
       if (DAT_0059eec0 != 0) {
 
@@ -7010,7 +7010,7 @@ void mission_menu_load(void)
 
       }
 
-      objects_free_by_ospec(0,2);
+      mission_00447fd0(0,2);
 
       if (DAT_0059eec0 != 0) {
 
@@ -7114,7 +7114,7 @@ void mission_menu_load(void)
 
     DAT_0055bdb0 = iVar1;
 
-    registry_read_dword(s_LoadMission_0055c12c,&DAT_0059ee9c);
+    mission_0051a0c0(s_LoadMission_0055c12c,&DAT_0059ee9c);
 
     iVar1 = DAT_00632918;
 
@@ -7245,7 +7245,7 @@ int texture_add_file(int *param_1)
 
   local_124 = 0;
 
-  registry_read_dword(s_MissionCheat_0055be64,&local_124);
+  mission_0051a0c0(s_MissionCheat_0055be64,&local_124);
 
   uVar3 = (&DAT_00633384)[DAT_00632d20];
 
@@ -7390,7 +7390,7 @@ void mission_menu_load2(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -7502,7 +7502,7 @@ LAB_00489916:
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -7606,7 +7606,7 @@ LAB_00489916:
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -7937,7 +7937,7 @@ void FUN_00489F50(void)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -8920,7 +8920,7 @@ LAB_0048b04f:
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10010,7 +10010,7 @@ void dialog_0048ca10(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10080,7 +10080,7 @@ void dialog_0048ca10(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10350,7 +10350,7 @@ void FUN_0048d690(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10421,7 +10421,7 @@ void FUN_0048DE30(void)
 
   }
 
-  dlog_push_level(main_0048e010,pcVar3);
+  dlog_push_level(menu_dlog_callback_a,pcVar3);
 
   FUN_00426FA0();
 
@@ -10523,18 +10523,18 @@ void FUN_0048DE30(void)
 
   }
 
-  dialog_level_pop(main_0048e010);
+  dialog_level_pop(menu_dlog_callback_a);
 
   return;
 
 }
 
-/* ===== main_0048e010 @ 0x0048E010 ===== */
+/* ===== menu_dlog_callback_a @ 0x0048E010 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void main_0048e010(void)
+void menu_dlog_callback_a(void)
 
 
 
@@ -10560,7 +10560,7 @@ void main_0048e010(void)
 
     DAT_0059ee9c = 0;
 
-    dialog_level_pop(main_0048e010);
+    dialog_level_pop(menu_dlog_callback_a);
 
     FUN_0040d790();
 
@@ -10600,7 +10600,7 @@ void main_0048e010(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10712,7 +10712,7 @@ LAB_0048e1b4:
 
   if ((-1 < iVar3) && (FUN_004834d0(iVar3,1,1,0), DAT_00632aaa != '\0')) {
 
-    dialog_level_pop(main_0048e010);
+    dialog_level_pop(menu_dlog_callback_a);
 
     FUN_0040d790();
 
@@ -10752,7 +10752,7 @@ LAB_0048e1b4:
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10806,7 +10806,7 @@ LAB_0048e1b4:
 
   if (DAT_00632aa8 != '\0') {
 
-    dialog_level_pop(main_0048e010);
+    dialog_level_pop(menu_dlog_callback_a);
 
     FUN_0040d790();
 
@@ -10846,7 +10846,7 @@ LAB_0048e1b4:
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -10935,7 +10935,7 @@ void FUN_0048E430(void)
 
   }
 
-  dlog_push_level(main_0048e610,pcVar3);
+  dlog_push_level(menu_dlog_callback_b,pcVar3);
 
   FUN_00426FA0();
 
@@ -11037,18 +11037,18 @@ void FUN_0048E430(void)
 
   }
 
-  dialog_level_pop(main_0048e610);
+  dialog_level_pop(menu_dlog_callback_b);
 
   return;
 
 }
 
-/* ===== main_0048e610 @ 0x0048E610 ===== */
+/* ===== menu_dlog_callback_b @ 0x0048E610 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void main_0048e610(void)
+void menu_dlog_callback_b(void)
 
 
 
@@ -11074,7 +11074,7 @@ void main_0048e610(void)
 
     DAT_0059ee9c = 0;
 
-    dialog_level_pop(main_0048e610);
+    dialog_level_pop(menu_dlog_callback_b);
 
     FUN_0040d790();
 
@@ -11114,7 +11114,7 @@ void main_0048e610(void)
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -11222,7 +11222,7 @@ LAB_0048e7be:
 
   if ((-1 < iVar3) && (FUN_004834d0(iVar3,1,1,0), DAT_00632aaa != '\0')) {
 
-    dialog_level_pop(main_0048e610);
+    dialog_level_pop(menu_dlog_callback_b);
 
     FUN_0040d790();
 
@@ -11262,7 +11262,7 @@ LAB_0048e7be:
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -11312,7 +11312,7 @@ LAB_0048e7be:
 
   if (DAT_00632aa8 != '\0') {
 
-    dialog_level_pop(main_0048e610);
+    dialog_level_pop(menu_dlog_callback_b);
 
     FUN_0040d790();
 
@@ -11352,7 +11352,7 @@ LAB_0048e7be:
 
     }
 
-    objects_free_by_ospec(0,2);
+    mission_00447fd0(0,2);
 
     if (DAT_0059eec0 != 0) {
 
@@ -11606,7 +11606,7 @@ void FUN_0048EC30(void)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -11870,7 +11870,7 @@ void FUN_0048f040(void)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
@@ -12229,7 +12229,7 @@ void FUN_0048f620(int param_1)
 
   }
 
-  objects_free_by_ospec(0,2);
+  mission_00447fd0(0,2);
 
   if (DAT_0059eec0 != 0) {
 
