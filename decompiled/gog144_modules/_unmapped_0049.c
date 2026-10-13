@@ -2604,7 +2604,7 @@ LAB_00492458:
 
         *(undefined4 *)(iVar1 + 0x4c) = 0;
 
-        FUN_00457fe0(DAT_00632a88,DAT_0059f2d0);
+        reaper_lock_short_3(DAT_00632a88,DAT_0059f2d0);
 
         do {
 

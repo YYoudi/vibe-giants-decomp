@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (32 named) — decompiled, names from PS2 symbols
+ * 145 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -6794,8 +6794,8 @@ int FUN_00457d50(int param_1)
 
 }
 
-/* ===== FUN_00457f00 @ 0x00457F00 ===== */
-void FUN_00457f00(undefined4 param_1,undefined1 param_2)
+/* ===== reaper_lock_short_2 @ 0x00457F00 ===== */
+void reaper_lock_short_2(undefined4 param_1,undefined1 param_2)
 
 
 
@@ -6899,8 +6899,8 @@ undefined4 FUN_00457fb0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00457fe0 @ 0x00457FE0 ===== */
-void FUN_00457fe0(int param_1,int param_2)
+/* ===== reaper_lock_short_3 @ 0x00457FE0 ===== */
+void reaper_lock_short_3(int param_1,int param_2)
 
 
 
@@ -7826,7 +7826,7 @@ void FUN_00458710(int param_1)
 
     if ((*(int *)(iVar1 + 0x60) == 2) && (*(int *)(iVar1 + 0x184) != -1)) {
 
-      FUN_00457f00(iVar3,0xffffffff);
+      reaper_lock_short_2(iVar3,0xffffffff);
 
     }
 
@@ -7838,7 +7838,7 @@ void FUN_00458710(int param_1)
 
       if ((*(int *)(iVar1 + 0x60) == 3) && (*(int *)(iVar1 + 0x188) != -1)) {
 
-        FUN_00457f00(iVar3,0xffffffff);
+        reaper_lock_short_2(iVar3,0xffffffff);
 
       }
 
@@ -8865,7 +8865,7 @@ LAB_00459ce0:
 
             }
 
-            FUN_00457fe0(param_1,param_2);
+            reaper_lock_short_3(param_1,param_2);
 
             FUN_00458180(param_1,param_3);
 
@@ -8891,7 +8891,7 @@ LAB_00459ce0:
 
               if (iVar3 == param_3) {
 
-                FUN_00457fe0(param_1,iVar2);
+                reaper_lock_short_3(param_1,iVar2);
 
                 break;
 
@@ -10727,8 +10727,8 @@ float10 FUN_0045b610(undefined4 param_1,int param_2,float param_3)
 
 }
 
-/* ===== FUN_0045b670 @ 0x0045B670 ===== */
-void FUN_0045b670(undefined4 param_1,int param_2,float param_3,int param_4,int param_5)
+/* ===== reaper_lock_short_5 @ 0x0045B670 ===== */
+void reaper_lock_short_5(undefined4 param_1,int param_2,float param_3,int param_4,int param_5)
 
 
 
@@ -10830,8 +10830,8 @@ void FUN_0045b670(undefined4 param_1,int param_2,float param_3,int param_4,int p
 
 }
 
-/* ===== FUN_0045b7a0 @ 0x0045B7A0 ===== */
-void FUN_0045b7a0(undefined4 param_1,int param_2)
+/* ===== reaper_lock_short_6 @ 0x0045B7A0 ===== */
+void reaper_lock_short_6(undefined4 param_1,int param_2)
 
 
 
@@ -12751,10 +12751,10 @@ LAB_0045dc09:
 
 }
 
-/* ===== FUN_0045dc40 @ 0x0045DC40 ===== */
-void FUN_0045dc40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+/* ===== reaper_lock_short_4 @ 0x0045DC40 ===== */
+void reaper_lock_short_4(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
 
-                 undefined4 param_5,undefined4 param_6,int param_7)
+                        ,undefined4 param_5,undefined4 param_6,int param_7)
 
 
 
@@ -13253,8 +13253,8 @@ switchD_0045e0e5_default:
 
 }
 
-/* ===== FUN_0045e250 @ 0x0045E250 ===== */
-undefined1 FUN_0045e250(int param_1,int param_2)
+/* ===== reaper_state_machine @ 0x0045E250 ===== */
+undefined1 reaper_state_machine(int param_1,int param_2)
 
 
 

@@ -5088,7 +5088,7 @@ void mecc_shield_spell(int param_1)
 
     FUN_00457f40(iVar2,*(undefined1 *)(param_1 + 9),uVar3);
 
-    FUN_00457fe0(iVar2,*(undefined1 *)(param_1 + 9));
+    reaper_lock_short_3(iVar2,*(undefined1 *)(param_1 + 9));
 
     if (*(byte *)(param_1 + 0xb) == 0xff) {
 
@@ -5458,7 +5458,7 @@ void FUN_005338e0(int param_1)
 
             if (((*(uint *)(iVar1 + 0xd8) & 0x8000) == 0) && (*(int *)(iVar1 + 0x188) == *piVar6)) {
 
-              FUN_0045b670(iVar3,iVar1,piVar6[4],piVar6[2],0);
+              reaper_lock_short_5(iVar3,iVar1,piVar6[4],piVar6[2],0);
 
               break;
 
@@ -5490,7 +5490,7 @@ void FUN_005338e0(int param_1)
 
             if (((*(uint *)(iVar1 + 0xd8) & 0x8000) == 0) && (*(int *)(iVar1 + 0x188) == *piVar6)) {
 
-              FUN_0045b670(iVar3,iVar1,piVar6[4],piVar6[2],0);
+              reaper_lock_short_5(iVar3,iVar1,piVar6[4],piVar6[2],0);
 
               break;
 

@@ -1222,7 +1222,7 @@
  "0x00420280": {
   "name": "FUN_00420280",
   "named": false,
-  "len": 6214
+  "len": 6235
  },
  "0x00420780": {
   "name": "FUN_00420780",
@@ -3280,9 +3280,9 @@
   "len": 452
  },
  "0x00457F00": {
-  "name": "FUN_00457f00",
-  "named": false,
-  "len": 298
+  "name": "reaper_lock_short_2",
+  "named": true,
+  "len": 305
  },
  "0x00457F40": {
   "name": "FUN_00457f40",
@@ -3295,9 +3295,9 @@
   "len": 268
  },
  "0x00457FE0": {
-  "name": "FUN_00457fe0",
-  "named": false,
-  "len": 607
+  "name": "reaper_lock_short_3",
+  "named": true,
+  "len": 614
  },
  "0x00458040": {
   "name": "FUN_00458040",
@@ -3357,7 +3357,7 @@
  "0x00458710": {
   "name": "FUN_00458710",
   "named": false,
-  "len": 4037
+  "len": 4051
  },
  "0x00458A10": {
   "name": "FUN_00458a10",
@@ -3412,7 +3412,7 @@
  "0x00459930": {
   "name": "inv_award_item",
   "named": true,
-  "len": 7812
+  "len": 7826
  },
  "0x00459F10": {
   "name": "FUN_00459f10",
@@ -3475,14 +3475,14 @@
   "len": 596
  },
  "0x0045B670": {
-  "name": "FUN_0045b670",
-  "named": false,
-  "len": 1503
+  "name": "reaper_lock_short_5",
+  "named": true,
+  "len": 1510
  },
  "0x0045B7A0": {
-  "name": "FUN_0045b7a0",
-  "named": false,
-  "len": 351
+  "name": "reaper_lock_short_6",
+  "named": true,
+  "len": 358
  },
  "0x0045B7F0": {
   "name": "FUN_0045b7f0",
@@ -3545,9 +3545,9 @@
   "len": 1547
  },
  "0x0045DC40": {
-  "name": "FUN_0045dc40",
-  "named": false,
-  "len": 574
+  "name": "reaper_lock_short_4",
+  "named": true,
+  "len": 588
  },
  "0x0045DCB0": {
   "name": "FUN_0045dcb0",
@@ -3555,9 +3555,9 @@
   "len": 7155
  },
  "0x0045E250": {
-  "name": "FUN_0045e250",
-  "named": false,
-  "len": 2283
+  "name": "reaper_state_machine",
+  "named": true,
+  "len": 2291
  },
  "0x0045E440": {
   "name": "FUN_0045e440",
@@ -4707,7 +4707,7 @@
  "0x00492430": {
   "name": "FUN_00492430",
   "named": false,
-  "len": 5628
+  "len": 5635
  },
  "0x004928A0": {
   "name": "savegame_verify_user",
@@ -10302,7 +10302,7 @@
  "0x00533500": {
   "name": "mecc_shield_spell",
   "named": true,
-  "len": 3391
+  "len": 3398
  },
  "0x00533700": {
   "name": "mecc_cloak_spell",
@@ -10312,7 +10312,7 @@
  "0x005338E0": {
   "name": "FUN_005338e0",
   "named": false,
-  "len": 3366
+  "len": 3380
  },
  "0x00533B00": {
   "name": "FUN_00533b00",

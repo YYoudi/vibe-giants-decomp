@@ -403,7 +403,7 @@ void FUN_00420280(int param_1,int param_2,int param_3,int param_4)
 
       }
 
-      FUN_00457fe0(DAT_00632a88,1);
+      reaper_lock_short_3(DAT_00632a88,1);
 
       return;
 
@@ -427,7 +427,7 @@ void FUN_00420280(int param_1,int param_2,int param_3,int param_4)
 
       }
 
-      FUN_00457fe0(DAT_00632a88,2);
+      reaper_lock_short_3(DAT_00632a88,2);
 
       return;
 
@@ -449,7 +449,7 @@ void FUN_00420280(int param_1,int param_2,int param_3,int param_4)
 
     }
 
-    FUN_00457fe0(DAT_00632a88,3);
+    reaper_lock_short_3(DAT_00632a88,3);
 
     return;
 
