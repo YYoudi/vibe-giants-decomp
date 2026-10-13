@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (148 named) — decompiled, names from PS2 symbols
+ * 179 functions (149 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -209,7 +209,7 @@ void comm_send_recv_pair(int param_1)
 
         local_18._0_3_ = CONCAT12((char)uVar4,(ushort)local_18);
 
-        fVar5 = (float10)FUN_0052af80(uVar4);
+        fVar5 = (float10)comm_qos_get(uVar4);
 
         local_10._1_3_ = SUB43((float)fVar5,0);
 
@@ -225,7 +225,7 @@ void comm_send_recv_pair(int param_1)
 
         local_14 = CONCAT31(local_14._1_3_,(char)uVar4);
 
-        fVar5 = (float10)FUN_0052afa0(uVar4);
+        fVar5 = (float10)comm_ping_get(uVar4);
 
         local_8._1_3_ = SUB43((float)fVar5,0);
 
@@ -348,7 +348,7 @@ void comm_send_big(undefined4 *param_1)
 
            (cVar2 != *(char *)(param_1 + 1))) {
 
-          fVar6 = (float10)FUN_0052af80(cVar2);
+          fVar6 = (float10)comm_qos_get(cVar2);
 
           fVar6 = fVar6 + (float10)*(float *)((int)param_1 + 9);
 
@@ -358,7 +358,7 @@ void comm_send_big(undefined4 *param_1)
 
         else {
 
-          fVar6 = (float10)FUN_0052af80(cVar2);
+          fVar6 = (float10)comm_qos_get(cVar2);
 
           fVar6 = fVar6 - (float10)*(float *)((int)param_1 + 9);
 
@@ -382,7 +382,7 @@ void comm_send_big(undefined4 *param_1)
 
       if (*(char *)(param_1 + 1) != -1) {
 
-        fVar6 = (float10)FUN_0052afa0(*(char *)(param_1 + 1));
+        fVar6 = (float10)comm_ping_get(*(char *)(param_1 + 1));
 
         FUN_0052b220(*(undefined1 *)(param_1 + 1),
 
@@ -448,7 +448,7 @@ void comm_send_big(undefined4 *param_1)
 
       if (local_18._2_1_ != -1) {
 
-        fVar6 = (float10)FUN_0052af80(local_18._2_1_);
+        fVar6 = (float10)comm_qos_get(local_18._2_1_);
 
         local_10._1_3_ = SUB43((float)fVar6,0);
 
@@ -468,7 +468,7 @@ void comm_send_big(undefined4 *param_1)
 
       if (local_14 != -1) {
 
-        fVar6 = (float10)FUN_0052afa0(local_14);
+        fVar6 = (float10)comm_ping_get(local_14);
 
         local_8._1_3_ = SUB43((float)fVar6,0);
 
@@ -4667,7 +4667,7 @@ void comm_team_broadcast_draw(int param_1)
 
               local_7 = uVar1;
 
-              uVar4 = FUN_0052ac40(iVar2);
+              uVar4 = comm_player_team_get(iVar2);
 
               local_2 = '\x01' - (uVar4 < 0xe);
 
@@ -4748,7 +4748,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
     uVar2 = comm_0052ab20(*(undefined4 *)((int)param_1 + 1));
 
-    uVar3 = FUN_0052ac40(uVar2);
+    uVar3 = comm_player_team_get(uVar2);
 
     comm_0052ac60(uVar2,*(undefined4 *)((int)param_1 + 5));
 
@@ -11752,11 +11752,11 @@ void FUN_005375e0(void)
 
                 uVar5 = comm_0052ab50(iVar3);
 
-                fVar16 = (float10)FUN_0052af80(uVar5);
+                fVar16 = (float10)comm_qos_get(uVar5);
 
                 if ((float10)local_a9c < fVar16) {
 
-                  fVar16 = (float10)FUN_0052af80(uVar5);
+                  fVar16 = (float10)comm_qos_get(uVar5);
 
                   local_a9c = (float)fVar16;
 
@@ -12190,11 +12190,11 @@ switchD_0053793e_default:
 
         fVar9 = (float)comm_0052ab50(iVar3);
 
-        fVar16 = (float10)FUN_0052af80(fVar9);
+        fVar16 = (float10)comm_qos_get(fVar9);
 
         if ((float10)local_a94 < fVar16) {
 
-          fVar16 = (float10)FUN_0052af80(fVar9);
+          fVar16 = (float10)comm_qos_get(fVar9);
 
           local_a94 = (float)fVar16;
 
@@ -12222,7 +12222,7 @@ switchD_0053793e_default:
 
           if (((iVar8 != 0) && (fVar9 = (float)comm_0052ab50(iVar3), fVar9 != fVar13)) &&
 
-             (fVar16 = (float10)FUN_0052af80(fVar9), fVar16 == (float10)local_a94)) {
+             (fVar16 = (float10)comm_qos_get(fVar9), fVar16 == (float10)local_a94)) {
 
             fVar13 = -NAN;
 
@@ -12373,8 +12373,8 @@ void comm_send_538010(void)
 
 }
 
-/* ===== FUN_005380b0 @ 0x005380B0 ===== */
-void FUN_005380b0(void)
+/* ===== net_wsa_startup @ 0x005380B0 ===== */
+void net_wsa_startup(void)
 
 
 

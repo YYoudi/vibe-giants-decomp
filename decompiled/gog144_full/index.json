@@ -9685,9 +9685,9 @@
   "len": 199
  },
  "0x0052AC40": {
-  "name": "FUN_0052ac40",
-  "named": false,
-  "len": 151
+  "name": "comm_player_team_get",
+  "named": true,
+  "len": 159
  },
  "0x0052AC60": {
   "name": "comm_0052ac60",
@@ -9730,14 +9730,14 @@
   "len": 744
  },
  "0x0052AF80": {
-  "name": "FUN_0052af80",
-  "named": false,
+  "name": "comm_qos_get",
+  "named": true,
   "len": 179
  },
  "0x0052AFA0": {
-  "name": "FUN_0052afa0",
-  "named": false,
-  "len": 171
+  "name": "comm_ping_get",
+  "named": true,
+  "len": 172
  },
  "0x0052AFC0": {
   "name": "FUN_0052afc0",
@@ -9882,7 +9882,7 @@
  "0x0052D300": {
   "name": "net_0052d300",
   "named": true,
-  "len": 4308
+  "len": 4311
  },
  "0x0052D5B0": {
   "name": "comm_socket_recv_loop",
@@ -9987,7 +9987,7 @@
  "0x0052E5E0": {
   "name": "comm_player_name_user",
   "named": true,
-  "len": 1650
+  "len": 1658
  },
  "0x0052E6E0": {
   "name": "comm_0052e6e0",
@@ -10002,7 +10002,7 @@
  "0x0052EB60": {
   "name": "comm_team_broadcast_send",
   "named": true,
-  "len": 622
+  "len": 630
  },
  "0x0052EBD0": {
   "name": "comm_team_broadcast_menu",
@@ -10012,7 +10012,7 @@
  "0x0052EF00": {
   "name": "FUN_0052EF00",
   "named": false,
-  "len": 2135
+  "len": 2143
  },
  "0x0052F040": {
   "name": "comm_entergame_msg_1",
@@ -10167,12 +10167,12 @@
  "0x00530180": {
   "name": "comm_send_recv_pair",
   "named": true,
-  "len": 1911
+  "len": 1912
  },
  "0x00530270": {
   "name": "comm_send_big",
   "named": true,
-  "len": 3977
+  "len": 3979
  },
  "0x00530430": {
   "name": "FUN_00530430",
@@ -10267,12 +10267,12 @@
  "0x00532E90": {
   "name": "comm_team_broadcast_draw",
   "named": true,
-  "len": 1241
+  "len": 1249
  },
  "0x00532F60": {
   "name": "comm_entergame_msg_3",
   "named": true,
-  "len": 2060
+  "len": 2068
  },
  "0x005330C0": {
   "name": "comm_scorelimit_menu_user",
@@ -10460,9 +10460,9 @@
   "len": 733
  },
  "0x005380B0": {
-  "name": "FUN_005380b0",
-  "named": false,
-  "len": 107
+  "name": "net_wsa_startup",
+  "named": true,
+  "len": 110
  },
  "0x005380E0": {
   "name": "stream_player_start",
@@ -11512,7 +11512,7 @@
  "0x00544297": {
   "name": "__nh_malloc",
   "named": true,
-  "len": 515
+  "len": 518
  },
  "0x005442C3": {
   "name": "crt_malloc_ext",
@@ -12305,9 +12305,9 @@
   "len": 720
  },
  "0x0054AAC3": {
-  "name": "FUN_0054aac3",
-  "named": false,
-  "len": 217
+  "name": "crt_malloc_hook",
+  "named": true,
+  "len": 220
  },
  "0x0054AADE": {
   "name": "crt_subsystem_ver",
@@ -12442,7 +12442,7 @@
  "0x0054C365": {
   "name": "_malloc",
   "named": true,
-  "len": 1918
+  "len": 1921
  },
  "0x0054C3FE": {
   "name": "FUN_0054C3FE",
@@ -12472,17 +12472,17 @@
  "0x0054C857": {
   "name": "bin_file_create_54",
   "named": true,
-  "len": 768
+  "len": 769
  },
  "0x0054C8AF": {
   "name": "bin_file_copy_str",
   "named": true,
-  "len": 1021
+  "len": 1022
  },
  "0x0054C968": {
   "name": "crt_startup_init",
   "named": true,
-  "len": 744
+  "len": 745
  },
  "0x0054CA01": {
   "name": "crt_env_parse",
@@ -12765,9 +12765,9 @@
   "len": 2881
  },
  "0x0054EDF6": {
-  "name": "FUN_0054edf6",
-  "named": false,
-  "len": 138
+  "name": "crt_once_init",
+  "named": true,
+  "len": 139
  },
  "0x0054EE12": {
   "name": "FUN_0054ee12",
@@ -12857,7 +12857,7 @@
  "0x0054FC55": {
   "name": "realloc",
   "named": true,
-  "len": 6428
+  "len": 6437
  },
  "0x0054FDE0": {
   "name": "FUN_0054FDE0",

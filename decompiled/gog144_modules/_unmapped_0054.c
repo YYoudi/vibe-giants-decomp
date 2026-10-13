@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (292 named) — decompiled, names from PS2 symbols
+ * 351 functions (294 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -5500,7 +5500,7 @@ void * __cdecl __nh_malloc(size_t _Size,int _NhFlag)
 
       }
 
-      iVar2 = FUN_0054aac3(_Size);
+      iVar2 = crt_malloc_hook(_Size);
 
     } while (iVar2 != 0);
 
@@ -17550,8 +17550,8 @@ void crt_scanf_float(uint *param_1,int param_2)
 
 }
 
-/* ===== FUN_0054aac3 @ 0x0054AAC3 ===== */
-undefined4 FUN_0054aac3(undefined4 param_1)
+/* ===== crt_malloc_hook @ 0x0054AAC3 ===== */
+undefined4 crt_malloc_hook(undefined4 param_1)
 
 
 
@@ -20688,7 +20688,7 @@ LAB_0054c452:
 
     }
 
-    iVar1 = FUN_0054aac3(uVar3);
+    iVar1 = crt_malloc_hook(uVar3);
 
     if (iVar1 == 0) {
 
@@ -21138,7 +21138,7 @@ byte * bin_file_create_54(void)
 
   if (DAT_00658a08 == 0) {
 
-    FUN_0054edf6();
+    crt_once_init();
 
   }
 
@@ -21217,7 +21217,7 @@ void bin_file_copy_str(void)
 
   if (DAT_00658a08 == 0) {
 
-    FUN_0054edf6();
+    crt_once_init();
 
   }
 
@@ -21312,7 +21312,7 @@ void crt_startup_init(void)
 
   if (DAT_00658a08 == 0) {
 
-    FUN_0054edf6();
+    crt_once_init();
 
   }
 
@@ -26506,8 +26506,8 @@ LAB_0054edc7:
 
 }
 
-/* ===== FUN_0054edf6 @ 0x0054EDF6 ===== */
-void FUN_0054edf6(void)
+/* ===== crt_once_init @ 0x0054EDF6 ===== */
+void crt_once_init(void)
 
 
 
@@ -28635,7 +28635,7 @@ byte * realloc(byte *param_1,uint param_2)
 
           }
 
-          iVar1 = FUN_0054aac3(param_2);
+          iVar1 = crt_malloc_hook(param_2);
 
         } while (iVar1 != 0);
 
@@ -28771,7 +28771,7 @@ byte * realloc(byte *param_1,uint param_2)
 
             }
 
-            iVar1 = FUN_0054aac3(param_2);
+            iVar1 = crt_malloc_hook(param_2);
 
           } while (iVar1 != 0);
 
@@ -28813,7 +28813,7 @@ byte * realloc(byte *param_1,uint param_2)
 
             }
 
-            iVar1 = FUN_0054aac3(param_2);
+            iVar1 = crt_malloc_hook(param_2);
 
           } while (iVar1 != 0);
 

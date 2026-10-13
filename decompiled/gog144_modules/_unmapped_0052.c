@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (117 named) — decompiled, names from PS2 symbols
+ * 162 functions (120 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -7567,8 +7567,8 @@ int team_color_get(int param_1)
 
 }
 
-/* ===== FUN_0052ac40 @ 0x0052AC40 ===== */
-undefined1 FUN_0052ac40(int param_1)
+/* ===== comm_player_team_get @ 0x0052AC40 ===== */
+undefined1 comm_player_team_get(int param_1)
 
 
 
@@ -7811,8 +7811,8 @@ char * comm_player_name4(int param_1)
 
 }
 
-/* ===== FUN_0052af80 @ 0x0052AF80 ===== */
-float10 FUN_0052af80(int param_1)
+/* ===== comm_qos_get @ 0x0052AF80 ===== */
+float10 comm_qos_get(int param_1)
 
 
 
@@ -7828,8 +7828,8 @@ float10 FUN_0052af80(int param_1)
 
 }
 
-/* ===== FUN_0052afa0 @ 0x0052AFA0 ===== */
-float10 FUN_0052afa0(int param_1)
+/* ===== comm_ping_get @ 0x0052AFA0 ===== */
+float10 comm_ping_get(int param_1)
 
 
 
@@ -9600,7 +9600,7 @@ net_0052d300(undefined4 *param_1,char *param_2,uint param_3,char *param_4,char *
 
   }
 
-  FUN_005380b0();
+  net_wsa_startup();
 
   s = socket(2,2,0x11);
 
@@ -12017,7 +12017,7 @@ void comm_player_name_user(void)
 
       do {
 
-        cVar1 = FUN_0052ac40(iVar2);
+        cVar1 = comm_player_team_get(iVar2);
 
         *pcVar3 = cVar1;
 
@@ -12642,7 +12642,7 @@ void comm_team_broadcast_send(undefined4 param_1,undefined1 param_2)
 
       local_7 = param_2;
 
-      uVar2 = FUN_0052ac40(param_1);
+      uVar2 = comm_player_team_get(param_1);
 
       local_2 = '\x01' - (uVar2 < 0xe);
 
@@ -13122,7 +13122,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
             local_17 = CONCAT31((int3)uVar2,(byte)param_2);
 
-            uVar3 = FUN_0052ac40(param_1);
+            uVar3 = comm_player_team_get(param_1);
 
             cStack_12 = '\x01' - (uVar3 < 0xe);
 
