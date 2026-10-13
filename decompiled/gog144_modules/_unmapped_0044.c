@@ -158,8 +158,8 @@ LAB_00440165:
 
 }
 
-/* ===== wredit_marker_menu3 @ 0x00440230 ===== */
-void wredit_marker_menu3(void)
+/* ===== wredit_marker_menu_full @ 0x00440230 ===== */
+void wredit_marker_menu_full(void)
 
 
 
@@ -995,8 +995,8 @@ LAB_00440ccd:
 
 }
 
-/* ===== main/editor_00441480 @ 0x00441480 ===== */
-int main_editor_00441480(void)
+/* ===== wredit_str_input @ 0x00441480 ===== */
+int wredit_str_input(void)
 
 
 
@@ -1080,8 +1080,8 @@ int main_editor_00441480(void)
 
 }
 
-/* ===== main/editor_00441510 @ 0x00441510 ===== */
-int main_editor_00441510(void)
+/* ===== wredit_str_input_short @ 0x00441510 ===== */
+int wredit_str_input_short(void)
 
 
 
@@ -2409,8 +2409,8 @@ LAB_004436f3:
 
 }
 
-/* ===== hud_icon_add @ 0x00443910 ===== */
-void hud_icon_add(undefined4 *param_1,int *param_2)
+/* ===== wredit_matrix_recurse @ 0x00443910 ===== */
+void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
 
 
@@ -2440,7 +2440,7 @@ void hud_icon_add(undefined4 *param_1,int *param_2)
 
   else {
 
-    hud_icon_add(local_88,param_2[0x1dd]);
+    wredit_matrix_recurse(local_88,param_2[0x1dd]);
 
     if (param_2[0x1de] != 0) {
 
@@ -2857,7 +2857,7 @@ hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int p
 
         iVar6 = iVar5 + 0x294;
 
-        hud_icon_add(iVar6,*(int *)(iVar5 + 0x304));
+        wredit_matrix_recurse(iVar6,*(int *)(iVar5 + 0x304));
 
         if (*(int *)(iVar5 + 0x308) != 0) {
 
@@ -3616,7 +3616,7 @@ undefined4 FUN_004444c0(int param_1)
 
         piVar9 = piVar8 + -0x1c;
 
-        hud_icon_add(piVar9,*piVar8);
+        wredit_matrix_recurse(piVar9,*piVar8);
 
         if (piVar8[1] != 0) {
 
@@ -3670,7 +3670,7 @@ undefined4 FUN_004444c0(int param_1)
 
         piVar11 = piVar9 + 0xa3;
 
-        hud_icon_add(piVar11,piVar8);
+        wredit_matrix_recurse(piVar11,piVar8);
 
         if (piVar9[0x1db] != 0) {
 

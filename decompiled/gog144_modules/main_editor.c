@@ -438,7 +438,7 @@ switchD_004364b2_caseD_7:
 
 switchD_004364b2_caseD_8:
 
-        wredit_marker_menu3();
+        wredit_marker_menu_full();
 
         return;
 
@@ -2904,7 +2904,7 @@ void main_editor_0043a590(void)
 
     case 8:
 
-      wredit_marker_menu3();
+      wredit_marker_menu_full();
 
       return;
 

@@ -4546,7 +4546,7 @@ void wredit_menu_main(void)
 
   case 8:
 
-    wredit_marker_menu3();
+    wredit_marker_menu_full();
 
     return;
 
@@ -5119,7 +5119,7 @@ void wredit_menu_3(int param_1)
 
     case 8:
 
-      wredit_marker_menu3();
+      wredit_marker_menu_full();
 
       return;
 
@@ -5649,7 +5649,7 @@ void wredit_menu_4(void)
 
   case 8:
 
-    wredit_marker_menu3();
+    wredit_marker_menu_full();
 
     return;
 
@@ -6245,7 +6245,7 @@ switchD_0043b245_caseD_7:
 
 switchD_0043b245_caseD_8:
 
-      wredit_marker_menu3();
+      wredit_marker_menu_full();
 
       return;
 
@@ -7385,7 +7385,7 @@ void wredit_menu_5(int param_1)
 
     case 8:
 
-      wredit_marker_menu3();
+      wredit_marker_menu_full();
 
       break;
 
@@ -7772,7 +7772,7 @@ void wredit_flick_list(void)
 
     case 8:
 
-      wredit_marker_menu3();
+      wredit_marker_menu_full();
 
       return;
 
@@ -8665,7 +8665,7 @@ void wredit_menu_6(void)
 
     case 8:
 
-      wredit_marker_menu3();
+      wredit_marker_menu_full();
 
       return;
 
@@ -9050,7 +9050,7 @@ LAB_0043cb4c:
 
     case 8:
 
-      wredit_marker_menu3();
+      wredit_marker_menu_full();
 
       return;
 
