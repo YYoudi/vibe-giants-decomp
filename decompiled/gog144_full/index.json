@@ -1187,7 +1187,7 @@
  "0x0041F120": {
   "name": "hud_status_main",
   "named": true,
-  "len": 8859
+  "len": 8862
  },
  "0x0041F8F0": {
   "name": "FUN_0041f8f0",
@@ -9242,7 +9242,7 @@
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
   "named": true,
-  "len": 6144
+  "len": 6152
  },
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
@@ -9775,9 +9775,9 @@
   "len": 176
  },
  "0x0052B260": {
-  "name": "FUN_0052b260",
-  "named": false,
-  "len": 173
+  "name": "comm_stat_a_set",
+  "named": true,
+  "len": 176
  },
  "0x0052B280": {
   "name": "FUN_0052b280",
@@ -10172,7 +10172,7 @@
  "0x00530270": {
   "name": "comm_send_big",
   "named": true,
-  "len": 3999
+  "len": 4005
  },
  "0x00530430": {
   "name": "comm_death_packet_build",
@@ -10235,9 +10235,9 @@
   "len": 968
  },
  "0x00531260": {
-  "name": "FUN_00531260",
-  "named": false,
-  "len": 324
+  "name": "comm_packet43_stats",
+  "named": true,
+  "len": 331
  },
  "0x005312A0": {
   "name": "comm_packet_send_2",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36883
+  "len": 36893
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10375,9 +10375,9 @@
   "len": 353
  },
  "0x00536150": {
-  "name": "FUN_00536150",
-  "named": false,
-  "len": 221
+  "name": "hud_flags_reset",
+  "named": true,
+  "len": 224
  },
  "0x00536170": {
   "name": "chat_init",
@@ -10585,9 +10585,9 @@
   "len": 1451
  },
  "0x00539DE0": {
-  "name": "FUN_00539de0",
-  "named": false,
-  "len": 573
+  "name": "savegame_header_init",
+  "named": true,
+  "len": 581
  },
  "0x00539E60": {
   "name": "mem_verify",

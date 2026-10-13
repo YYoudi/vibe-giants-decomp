@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00539de0,FUN_00539de0,,savegame_header_init,0.9,llm-w211,magic 0x71625344 + ptr table caller CheckSaveGameName
+0052b260,FUN_0052b260,,comm_stat_a_set,0.9,llm-w211,005dddf0 setter pairs stat_a_get
+00531260,FUN_00531260,,comm_packet43_stats,0.9,llm-w211,0x43 tag + stats accumulate
+00536150,FUN_00536150,,hud_flags_reset,0.9,llm-w211,zeroes 006327e0 block caller hud_status_main

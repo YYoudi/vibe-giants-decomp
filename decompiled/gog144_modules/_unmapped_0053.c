@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (161 named) — decompiled, names from PS2 symbols
+ * 179 functions (164 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -374,9 +374,9 @@ void comm_send_big(undefined4 *param_1)
 
         fVar6 = (float10)comm_stat_a_get(*(char *)((int)param_1 + 3));
 
-        FUN_0052b260(*(undefined1 *)((int)param_1 + 3),
+        comm_stat_a_set(*(undefined1 *)((int)param_1 + 3),
 
-                     (float)(fVar6 + (float10)*(float *)((int)param_1 + 0xd)));
+                        (float)(fVar6 + (float10)*(float *)((int)param_1 + 0xd)));
 
       }
 
@@ -2338,8 +2338,8 @@ void comm_0052ab20_user(undefined4 param_1)
 
 }
 
-/* ===== FUN_00531260 @ 0x00531260 ===== */
-void FUN_00531260(undefined4 param_1)
+/* ===== comm_packet43_stats @ 0x00531260 ===== */
+void comm_packet43_stats(undefined4 param_1)
 
 
 
@@ -4005,7 +4005,7 @@ LAB_00532513:
 
         dlog_user_525340();
 
-        FUN_00531260(*(undefined4 *)(pcVar15 + 1));
+        comm_packet43_stats(*(undefined4 *)(pcVar15 + 1));
 
         comm_player_name_user();
 
@@ -4107,7 +4107,7 @@ LAB_00532513:
 
           if (pcVar15[3] != -1) {
 
-            FUN_0052b260(pcVar15[3],*(undefined4 *)(pcVar15 + 0xd));
+            comm_stat_a_set(pcVar15[3],*(undefined4 *)(pcVar15 + 0xd));
 
           }
 
@@ -9390,8 +9390,8 @@ void controlShutdown_2(void)
 
 }
 
-/* ===== FUN_00536150 @ 0x00536150 ===== */
-void FUN_00536150(void)
+/* ===== hud_flags_reset @ 0x00536150 ===== */
+void hud_flags_reset(void)
 
 
 
@@ -13535,12 +13535,12 @@ undefined4 Utils_lzss_00539ac0(LPCSTR param_1)
 
 }
 
-/* ===== FUN_00539de0 @ 0x00539DE0 ===== */
+/* ===== savegame_header_init @ 0x00539DE0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00539de0(undefined4 param_1)
+void savegame_header_init(undefined4 param_1)
 
 
 

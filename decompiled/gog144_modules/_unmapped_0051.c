@@ -13209,7 +13209,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
   }
 
-  FUN_00539de0(uVar10);
+  savegame_header_init(uVar10);
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6(&LAB_0051cbe0);
 
