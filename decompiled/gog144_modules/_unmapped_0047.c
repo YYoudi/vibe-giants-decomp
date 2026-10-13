@@ -6224,7 +6224,7 @@ void kbos_move(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
 
       if ((*(uint *)(iVar7 + 0xd8) & 0x4000) != 0) {
 
-        FUN_00497570(iVar7);
+        obj_children_flag_clear(iVar7);
 
         return;
 

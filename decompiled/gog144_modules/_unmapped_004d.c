@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (28 named) — decompiled, names from PS2 symbols
+ * 39 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -4267,8 +4267,8 @@ void charger_do_fx__FP6OBJECTiii
 
 }
 
-/* ===== FUN_004d7b80 @ 0x004D7B80 ===== */
-bool FUN_004d7b80(int param_1)
+/* ===== target_hurt_class_check @ 0x004D7B80 ===== */
+bool target_hurt_class_check(int param_1)
 
 
 

@@ -1,14 +1,14 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (114 named) — decompiled, names from PS2 symbols
+ * 145 functions (115 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00450aa0 @ 0x00450AA0 ===== */
+/* ===== render_stats_reset @ 0x00450AA0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00450aa0(void)
+void render_stats_reset(void)
 
 
 
@@ -142,7 +142,7 @@ void render_stats_update(void)
 
         DAT_0059d800 = 1;
 
-        FUN_00450aa0();
+        render_stats_reset();
 
       }
 

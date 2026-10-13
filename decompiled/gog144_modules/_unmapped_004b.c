@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (77 named) — decompiled, names from PS2 symbols
+ * 90 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3208,8 +3208,8 @@ int FUN_004b6c00(int param_1,int *param_2)
 
 }
 
-/* ===== FUN_004b6cd0 @ 0x004B6CD0 ===== */
-void FUN_004b6cd0(undefined4 param_1,int param_2,int param_3)
+/* ===== food_object_flag_clear @ 0x004B6CD0 ===== */
+void food_object_flag_clear(undefined4 param_1,int param_2,int param_3)
 
 
 
@@ -4110,7 +4110,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
       if ((*(uint *)(param_1 + 0xd8) & 0x4000) != 0) {
 
-        FUN_00497570(param_1);
+        obj_children_flag_clear(param_1);
 
         return;
 
@@ -7408,11 +7408,11 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
       if ((((iVar4 != 8) && (((iVar4 != 0x438 && (iVar4 != 0x29a)) && (iVar4 != 0x232)))) &&
 
-          ((iVar4 != 0xb || (iVar4 = FUN_004ef510(*(int *)(param_2 + 0xf48)), iVar4 == 0)))) &&
+          ((iVar4 != 0xb || (iVar4 = target_can_be_hurt(*(int *)(param_2 + 0xf48)), iVar4 == 0))))
 
-         ((*(int *)(*(int *)(param_2 + 0xf48) + 4) != 0xd7 ||
+         && ((*(int *)(*(int *)(param_2 + 0xf48) + 4) != 0xd7 ||
 
-          (iVar4 = FUN_004d7b80(*(int *)(param_2 + 0xf48)), iVar4 == 0)))) {
+             (iVar4 = target_hurt_class_check(*(int *)(param_2 + 0xf48)), iVar4 == 0)))) {
 
         iVar4 = ObjIsRipper(*(undefined4 *)(param_2 + 0xf48));
 

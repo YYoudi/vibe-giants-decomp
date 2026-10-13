@@ -2067,7 +2067,7 @@
  "0x00434280": {
   "name": "audio_stream_tied",
   "named": true,
-  "len": 4566
+  "len": 4570
  },
  "0x00434620": {
   "name": "main/drawwrld_00434620",
@@ -2137,7 +2137,7 @@
  "0x00435940": {
   "name": "dlog_entry_render_quads",
   "named": true,
-  "len": 3164
+  "len": 3168
  },
  "0x00435BC0": {
   "name": "fx_blob_shadow",
@@ -2597,7 +2597,7 @@
  "0x00446650": {
   "name": "flick_file_load_state",
   "named": true,
-  "len": 2953
+  "len": 2959
  },
  "0x00446890": {
   "name": "flick_objects_reload",
@@ -2845,9 +2845,9 @@
   "len": 2615
  },
  "0x00450AA0": {
-  "name": "FUN_00450aa0",
-  "named": false,
-  "len": 530
+  "name": "render_stats_reset",
+  "named": true,
+  "len": 536
  },
  "0x00450AF0": {
   "name": "fps_log_write",
@@ -2857,7 +2857,7 @@
  "0x00450BB0": {
   "name": "render_stats_update",
   "named": true,
-  "len": 971
+  "len": 977
  },
  "0x00450C90": {
   "name": "FUN_00450c90",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "kbos_move",
   "named": true,
-  "len": 23446
+  "len": 23457
  },
  "0x0047DF10": {
   "name": "audio_listener_pan",
@@ -5020,9 +5020,9 @@
   "len": 415
  },
  "0x00497570": {
-  "name": "FUN_00497570",
-  "named": false,
-  "len": 419
+  "name": "obj_children_flag_clear",
+  "named": true,
+  "len": 441
  },
  "0x004975C0": {
   "name": "object_list_update",
@@ -6052,17 +6052,17 @@
  "0x004AC760": {
   "name": "kabuto_punch_check",
   "named": true,
-  "len": 1522
+  "len": 1539
  },
  "0x004AC860": {
   "name": "reaper_ability_3dsound",
   "named": true,
-  "len": 2763
+  "len": 2780
  },
  "0x004ACA20": {
   "name": "sf_is_valid_target__FP6OBJECT",
   "named": true,
-  "len": 3696
+  "len": 3730
  },
  "0x004AD190": {
   "name": "sound_3dpos_user",
@@ -6265,9 +6265,9 @@
   "len": 1146
  },
  "0x004B6CD0": {
-  "name": "FUN_004b6cd0",
-  "named": false,
-  "len": 651
+  "name": "food_object_flag_clear",
+  "named": true,
+  "len": 661
  },
  "0x004B6D20": {
   "name": "FUN_004b6d20",
@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "reaper_animselect",
   "named": true,
-  "len": 24945
+  "len": 24956
  },
  "0x004B89D0": {
   "name": "camera_fov_chase",
@@ -6422,7 +6422,7 @@
  "0x004B95D0": {
   "name": "reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi",
   "named": true,
-  "len": 11765
+  "len": 11785
  },
  "0x004BA1A0": {
   "name": "reaper_xhair_validate__FP6OBJECTPv",
@@ -7065,9 +7065,9 @@
   "len": 2494
  },
  "0x004D7B80": {
-  "name": "FUN_004d7b80",
-  "named": false,
-  "len": 370
+  "name": "target_hurt_class_check",
+  "named": true,
+  "len": 381
  },
  "0x004D7C40": {
   "name": "kabutoai_is_punch_anim__FP6OBJECT_3",
@@ -7585,9 +7585,9 @@
   "len": 89
  },
  "0x004EF510": {
-  "name": "FUN_004ef510",
-  "named": false,
-  "len": 371
+  "name": "target_can_be_hurt",
+  "named": true,
+  "len": 377
  },
  "0x004EF560": {
   "name": "ai_anim_select_mode",
@@ -7662,12 +7662,12 @@
  "0x004F5630": {
   "name": "reaper_lock_pair_4f",
   "named": true,
-  "len": 1290
+  "len": 1300
  },
  "0x004F5710": {
   "name": "fx_reaper_bubble_create",
   "named": true,
-  "len": 3344
+  "len": 3376
  },
  "0x004F5950": {
   "name": "smartie_check_follow__FP6OBJECTf",
@@ -7677,7 +7677,7 @@
  "0x004F5C10": {
   "name": "smartie_board_player__FP6OBJECTT0i",
   "named": true,
-  "len": 4092
+  "len": 4102
  },
  "0x004F6090": {
   "name": "meccbaseitem_shot",
@@ -7692,7 +7692,7 @@
  "0x004F7780": {
   "name": "smartie_shot",
   "named": true,
-  "len": 4683
+  "len": 4723
  },
  "0x004F7AF0": {
   "name": "smartie_clear_held_object",
@@ -10302,12 +10302,12 @@
  "0x00533500": {
   "name": "mecc_shield_spell",
   "named": true,
-  "len": 3463
+  "len": 3485
  },
  "0x00533700": {
   "name": "mecc_cloak_spell",
   "named": true,
-  "len": 2867
+  "len": 2889
  },
  "0x005338E0": {
   "name": "comm_team_broadcast",
@@ -10990,9 +10990,9 @@
   "len": 6892
  },
  "0x0053F2E0": {
-  "name": "FUN_0053f2e0",
-  "named": false,
-  "len": 415
+  "name": "ftol_pairs_store",
+  "named": true,
+  "len": 419
  },
  "0x0053F330": {
   "name": "geom_clip_poly_plane",

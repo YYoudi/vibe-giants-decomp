@@ -6091,7 +6091,7 @@ LAB_00446830:
 
     if (DAT_00633248 != 0) {
 
-      FUN_00450aa0();
+      render_stats_reset();
 
     }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (75 named) — decompiled, names from PS2 symbols
+ * 94 functions (76 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -11875,8 +11875,8 @@ uint ANM_AnimGetImage(int param_1)
 
 }
 
-/* ===== FUN_004ef510 @ 0x004EF510 ===== */
-bool FUN_004ef510(int param_1)
+/* ===== target_can_be_hurt @ 0x004EF510 ===== */
+bool target_can_be_hurt(int param_1)
 
 
 

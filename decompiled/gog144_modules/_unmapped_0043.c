@@ -2258,7 +2258,7 @@ void audio_stream_tied(void)
 
   makewrld_big();
 
-  FUN_0053f2e0(auStack_80,piVar6 + 2,*piVar6);
+  ftol_pairs_store(auStack_80,piVar6 + 2,*piVar6);
 
   audio_register_sound_name(&DAT_00556fc4);
 
@@ -3364,7 +3364,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   iVar4 = geom_clip_poly_plane(auStack_144,auStack_a0,&DAT_00556f70,uVar3);
 
-  FUN_0053f2e0(auStack_40,auStack_144,iVar4);
+  ftol_pairs_store(auStack_40,auStack_144,iVar4);
 
   if (2 < iVar4) {
 

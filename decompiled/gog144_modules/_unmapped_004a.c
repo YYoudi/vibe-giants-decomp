@@ -10813,7 +10813,7 @@ bool kabuto_punch_check(int param_1)
 
       else if (iVar1 == 0xb) {
 
-        iVar1 = FUN_004ef510(param_1);
+        iVar1 = target_can_be_hurt(param_1);
 
         if ((iVar1 != 0) && (*(int *)(param_1 + 0xe4) != 0x35)) {
 
@@ -10829,7 +10829,7 @@ bool kabuto_punch_check(int param_1)
 
           if (iVar1 == 0xd7) {
 
-            iVar1 = FUN_004d7b80();
+            iVar1 = target_hurt_class_check();
 
             if (iVar1 == 0) {
 
@@ -10958,7 +10958,7 @@ void reaper_ability_3dsound(int param_1)
 
           if (*(int *)(iVar3 + 4) == 0xb) {
 
-            iVar3 = FUN_004ef510(iVar3);
+            iVar3 = target_can_be_hurt(iVar3);
 
             if (iVar3 != 0) {
 
@@ -10994,7 +10994,7 @@ void reaper_ability_3dsound(int param_1)
 
             if (iVar2 == 0xd7) {
 
-              iVar3 = FUN_004d7b80(iVar3);
+              iVar3 = target_hurt_class_check(iVar3);
 
               if (iVar3 != 0) {
 
@@ -11125,11 +11125,11 @@ void sf_is_valid_target__FP6OBJECT(int param_1,int param_2)
 
           (*(int *)(iVar3 + 4) != 8)) &&
 
-         ((*(int *)(iVar3 + 4) != 0xb || (iVar4 = FUN_004ef510(iVar3), iVar4 == 0)))) &&
+         ((*(int *)(iVar3 + 4) != 0xb || (iVar4 = target_can_be_hurt(iVar3), iVar4 == 0)))) &&
 
         ((iVar4 = *(int *)(iVar3 + 4), iVar4 != 0x438 && (iVar4 != 0x232)))) &&
 
-       ((((iVar4 != 0xd7 || (iVar4 = FUN_004d7b80(iVar3), iVar4 == 0)) &&
+       ((((iVar4 != 0xd7 || (iVar4 = target_hurt_class_check(iVar3), iVar4 == 0)) &&
 
          (*(int *)(iVar3 + 4) != 0x29a)) &&
 
@@ -11195,7 +11195,7 @@ void sf_is_valid_target__FP6OBJECT(int param_1,int param_2)
 
       }
 
-      else if ((*(int *)(iVar3 + 4) == 0xb) && (iVar4 = FUN_004ef510(iVar3), iVar4 != 0)) {
+      else if ((*(int *)(iVar3 + 4) == 0xb) && (iVar4 = target_can_be_hurt(iVar3), iVar4 != 0)) {
 
         *(undefined4 *)(iVar3 + 0xe4) = 0x35;
 
@@ -11213,7 +11213,7 @@ LAB_004acbe1:
 
         }
 
-        else if ((iVar4 == 0xd7) && (iVar4 = FUN_004d7b80(iVar3), iVar4 != 0)) {
+        else if ((iVar4 == 0xd7) && (iVar4 = target_hurt_class_check(iVar3), iVar4 != 0)) {
 
           FUN_004d7c60(iVar3,iVar7);
 

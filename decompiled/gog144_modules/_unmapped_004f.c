@@ -1555,7 +1555,7 @@ void reaper_lock_pair_4f(int param_1)
 
       if (iVar2 != 0) {
 
-        FUN_004b6cd0(param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
+        food_object_flag_clear(param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
 
       }
 
@@ -1650,7 +1650,9 @@ void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
         if (iVar2 != 0) {
 
-          FUN_004b6cd0(param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
+          food_object_flag_clear
+
+                    (param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
 
         }
 
@@ -2110,7 +2112,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
       if (iVar6 != 0) {
 
-        FUN_004b6cd0(param_1,*(undefined4 *)(iVar2 + 0x2c),*(undefined4 *)(iVar2 + 0x28));
+        food_object_flag_clear(param_1,*(undefined4 *)(iVar2 + 0x2c),*(undefined4 *)(iVar2 + 0x28));
 
       }
 
@@ -2619,7 +2621,9 @@ void smartie_shot(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
                 if (iVar4 != 0) {
 
-                  FUN_004b6cd0(param_3,*(undefined4 *)(iVar3 + 0x2c),*(undefined4 *)(iVar3 + 0x28));
+                  food_object_flag_clear
+
+                            (param_3,*(undefined4 *)(iVar3 + 0x2c),*(undefined4 *)(iVar3 + 0x28));
 
                 }
 

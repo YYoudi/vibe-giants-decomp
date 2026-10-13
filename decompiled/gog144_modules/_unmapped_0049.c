@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (112 named) — decompiled, names from PS2 symbols
+ * 142 functions (113 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -7753,8 +7753,8 @@ void FUN_00497520(int param_1)
 
 }
 
-/* ===== FUN_00497570 @ 0x00497570 ===== */
-void FUN_00497570(int param_1)
+/* ===== obj_children_flag_clear @ 0x00497570 ===== */
+void obj_children_flag_clear(int param_1)
 
 
 
@@ -7774,7 +7774,7 @@ void FUN_00497570(int param_1)
 
     if (((*(uint *)(iVar1 + 0xd8) & 0x4000) != 0) && (*(int *)(iVar1 + 0x210) == param_1)) {
 
-      FUN_00497570(iVar1);
+      obj_children_flag_clear(iVar1);
 
     }
 

@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00497570,FUN_00497570,,obj_children_flag_clear,0.9,llm-w190,recursive 0x4000 clear via 0x210 owner
+004ef510,FUN_004ef510,,target_can_be_hurt,0.9,llm-w190,timer+flags+partner-not-reaper 4 callers
+004d7b80,FUN_004d7b80,,target_hurt_class_check,0.9,llm-w190,type switch state!=0xdd
+0053f2e0,FUN_0053f2e0,,ftol_pairs_store,0.9,llm-w190,ftol pairs into stride-8 array
+00450aa0,FUN_00450aa0,,render_stats_reset,0.9,llm-w190,zeros the render_stats counters
+004b6cd0,FUN_004b6cd0,,food_object_flag_clear,0.9,llm-w190,model 0x353 walk bit clear

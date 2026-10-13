@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (149 named) — decompiled, names from PS2 symbols
+ * 179 functions (150 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -5194,7 +5194,7 @@ LAB_00533630:
 
 LAB_0053369f:
 
-          FUN_00497570(iVar2);
+          obj_children_flag_clear(iVar2);
 
           break;
 
@@ -5230,7 +5230,7 @@ LAB_0053369f:
 
       reaper_ability_playersound5(iVar1,iVar2);
 
-      FUN_00497570(iVar2);
+      obj_children_flag_clear(iVar2);
 
     }
 
@@ -5361,7 +5361,7 @@ LAB_005337eb:
 
           object_attach_target(iVar2,iVar1);
 
-          FUN_00497570(iVar2);
+          obj_children_flag_clear(iVar2);
 
           break;
 
@@ -5389,7 +5389,7 @@ LAB_005337eb:
 
       reaper_ability_playersound5(iVar1,iVar2);
 
-      FUN_00497570(iVar2);
+      obj_children_flag_clear(iVar2);
 
     }
 
@@ -19662,8 +19662,8 @@ LAB_0053f14f:
 
 }
 
-/* ===== FUN_0053f2e0 @ 0x0053F2E0 ===== */
-void FUN_0053f2e0(int param_1,undefined4 param_2,int param_3)
+/* ===== ftol_pairs_store @ 0x0053F2E0 ===== */
+void ftol_pairs_store(int param_1,undefined4 param_2,int param_3)
 
 
 
