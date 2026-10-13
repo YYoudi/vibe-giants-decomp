@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (2 named) — decompiled, names from PS2 symbols
+ * 74 functions (7 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -2059,12 +2059,12 @@ void FUN_00482390(int param_1)
 
 }
 
-/* ===== FUN_004824E0 @ 0x004824E0 ===== */
+/* ===== game_options_load @ 0x004824E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004824E0(void)
+void game_options_load(void)
 
 
 
@@ -2248,12 +2248,12 @@ void FUN_004824E0(void)
 
 }
 
-/* ===== FUN_00482700 @ 0x00482700 ===== */
+/* ===== game_options_verify @ 0x00482700 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00482700(void)
+void game_options_verify(void)
 
 
 
@@ -2566,14 +2566,14 @@ void FUN_004829d0(void)
 
 }
 
-/* ===== FUN_00482B60 @ 0x00482B60 ===== */
+/* ===== menu_mission_launch @ 0x00482B60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
 
 
-void FUN_00482B60(void)
+void menu_mission_launch(void)
 
 
 
@@ -2629,13 +2629,13 @@ void FUN_00482B60(void)
 
   if (DAT_00633104 == 0) {
 
-    pcVar6 = FUN_004835f0;
+    pcVar6 = menu_handlers_exec;
 
   }
 
   else {
 
-    pcVar6 = FUN_00482e90;
+    pcVar6 = menu_handlers_lookup;
 
   }
 
@@ -2677,9 +2677,9 @@ void FUN_00482B60(void)
 
     camera_override_refpt(DAT_0059ee98,0);
 
-    FUN_00423af0();
+    keymap_load();
 
-    FUN_00491e30();
+    savegame_load();
 
     local_4 = 0;
 
@@ -2793,24 +2793,24 @@ void FUN_00482B60(void)
 
   if (DAT_00633104 == 0) {
 
-    FUN_00426fd0(FUN_004835f0);
+    FUN_00426fd0(menu_handlers_exec);
 
     return;
 
   }
 
-  FUN_00426fd0(FUN_00482e90);
+  FUN_00426fd0(menu_handlers_lookup);
 
   return;
 
 }
 
-/* ===== FUN_00482e90 @ 0x00482E90 ===== */
+/* ===== menu_handlers_lookup @ 0x00482E90 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00482e90(void)
+void menu_handlers_lookup(void)
 
 
 
@@ -2836,7 +2836,7 @@ void FUN_00482e90(void)
 
   if (DAT_00632aa4._3_1_ != '\0') {
 
-    FUN_00426fd0(FUN_00482e90);
+    FUN_00426fd0(menu_handlers_lookup);
 
     FUN_0040d790();
 
@@ -3006,7 +3006,7 @@ LAB_00482fd8:
 
   }
 
-  FUN_00426fd0(FUN_00482e90);
+  FUN_00426fd0(menu_handlers_lookup);
 
   FUN_0040d790();
 
@@ -3209,12 +3209,12 @@ void FUN_004834d0(int param_1,int param_2,int param_3,int param_4)
 
 }
 
-/* ===== FUN_004835f0 @ 0x004835F0 ===== */
+/* ===== menu_handlers_exec @ 0x004835F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004835f0(void)
+void menu_handlers_exec(void)
 
 
 
@@ -3240,7 +3240,7 @@ void FUN_004835f0(void)
 
   if (DAT_00632aa4._3_1_ != '\0') {
 
-    FUN_00426fd0(FUN_004835f0);
+    FUN_00426fd0(menu_handlers_exec);
 
     FUN_0040d790();
 
@@ -3428,7 +3428,7 @@ LAB_00483738:
 
   }
 
-  FUN_00426fd0(FUN_004835f0);
+  FUN_00426fd0(menu_handlers_exec);
 
   FUN_0040d790();
 
@@ -3886,7 +3886,7 @@ LAB_00483f92:
 
     if (iVar6 != 0) {
 
-      FUN_004824E0();
+      game_options_load();
 
     }
 
@@ -3898,7 +3898,7 @@ LAB_00483f92:
 
   FUN_00457550();
 
-  FUN_00425f60();
+  keymap_slot_load();
 
   return;
 
@@ -4636,7 +4636,7 @@ void FUN_00484b00(void)
 
           else {
 
-            FUN_00491c00(iVar7);
+            mission_level_load(iVar7);
 
           }
 
@@ -5081,7 +5081,7 @@ void FUN_00485300(void)
 
 LAB_00485528:
 
-  FUN_00522580(DAT_00632ff0,uVar2);
+  comm_base_status_menu(DAT_00632ff0,uVar2);
 
   FUN_00521ed0(DAT_00632f2c,1);
 
@@ -5091,7 +5091,7 @@ LAB_00485528:
 
   comm_comm_00529e00();
 
-  FUN_0052D220();
+  gamespy_statechange3();
 
   if (((DAT_0063315c == 0) && (DAT_00633160 == 0)) && (DAT_0063317c == 0)) {
 
@@ -5477,7 +5477,7 @@ void FUN_00485B00(void)
 
           comm_comm_00529e00();
 
-          FUN_0052D220();
+          gamespy_statechange3();
 
           break;
 
@@ -5731,7 +5731,7 @@ void FUN_00486110(void)
 
     comm_comm_00529e00();
 
-    FUN_0052D220();
+    gamespy_statechange3();
 
     if (((DAT_0063315c == 0) && (DAT_00633160 == 0)) && (DAT_0063317c == 0)) {
 
@@ -6459,7 +6459,7 @@ void FUN_004888f0(void)
 
   _DAT_00632ac8 = DAT_00632ac0;
 
-  FUN_00482B60();
+  menu_mission_launch();
 
   if (((DAT_0063315c == 0) && (DAT_00633160 == 0)) && (DAT_0063317c == 0)) {
 
@@ -7207,7 +7207,7 @@ int texture_add_file(int *param_1)
 
     FUN_00542f27(&DAT_00657400,s_Failed_to_open__s_0055c14c,local_100);
 
-    FUN_0051e680(&DAT_00657400);
+    error_screen_show(&DAT_00657400);
 
     return 0;
 
@@ -7221,7 +7221,7 @@ int texture_add_file(int *param_1)
 
     FUN_00542f27(&DAT_00657400,s_Bad_version_for__s_0055c138,local_100);
 
-    FUN_0051e680(&DAT_00657400);
+    error_screen_show(&DAT_00657400);
 
     ANM_BinderDestroy_2(iVar2);
 
@@ -8049,7 +8049,7 @@ void FUN_00489F50(void)
 
     else {
 
-      FUN_00482B60();
+      menu_mission_launch();
 
     }
 
@@ -10026,7 +10026,7 @@ void FUN_0048CA10(void)
 
     _DAT_00632ac8 = DAT_00632ac0;
 
-    FUN_004824E0();
+    game_options_load();
 
     FUN_0048A7D0();
 
@@ -10096,7 +10096,7 @@ void FUN_0048CA10(void)
 
     _DAT_00632ac8 = DAT_00632ac0;
 
-    FUN_004824E0();
+    game_options_load();
 
     FUN_00489D40();
 
@@ -10366,7 +10366,7 @@ void FUN_0048d690(void)
 
     _DAT_00632ac8 = DAT_00632ac0;
 
-    FUN_004824E0();
+    game_options_load();
 
     FUN_00489D40();
 
@@ -11642,7 +11642,7 @@ void FUN_0048EC30(void)
 
   else if (DAT_0059eeb8 == 1) {
 
-    FUN_00482B60();
+    menu_mission_launch();
 
   }
 

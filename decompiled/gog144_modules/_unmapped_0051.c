@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (29 named) — decompiled, names from PS2 symbols
+ * 186 functions (36 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -4853,15 +4853,19 @@ void FUN_00515de0(float *param_1,float *param_2)
 }
 
 /* ===== FNT_StringRender__FPcP14FNT_RenderInfo @ 0x00515E90 ===== */
-void FNT_StringRender__FPcP14FNT_RenderInfo(undefined4 param_1,undefined4 param_2)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void FNT_StringRender__FPcP14FNT_RenderInfo(char *p0,undefined4 *p1)
 
 
 
 {
 
-  DAT_0057c0c0 = param_1;
+  DAT_0057c0c0 = p0;
 
-  DAT_0057c0c4 = param_2;
+  DAT_0057c0c4 = p1;
 
   return;
 
@@ -4887,7 +4891,11 @@ void FUN_00515eb0(undefined4 *param_1,undefined4 *param_2)
 }
 
 /* ===== AudioMusicStreamPlay__Fiiii @ 0x00515ED0 ===== */
-void AudioMusicStreamPlay__Fiiii(void)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void AudioMusicStreamPlay__Fiiii(int p0,int p1,int p2,int p3)
 
 
 
@@ -4914,6 +4922,8 @@ float10 FUN_00515f20(void)
 
 /* ===== ResetFog__Fv @ 0x00515F30 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
 
 
@@ -5007,6 +5017,10 @@ void FUN_00515f60(int param_1)
 }
 
 /* ===== AudioGetMasterVolume__Fv_8 @ 0x005160A0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_8(void)
 
 
@@ -5588,6 +5602,10 @@ void FUN_00516890(void)
 }
 
 /* ===== AudioDataStreamStatus__Fv_4 @ 0x005168D0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 * AudioDataStreamStatus__Fv_4(void)
 
 
@@ -5599,6 +5617,10 @@ undefined4 * AudioDataStreamStatus__Fv_4(void)
 }
 
 /* ===== AudioDataStreamStatus__Fv_5 @ 0x005168E0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 * AudioDataStreamStatus__Fv_5(void)
 
 
@@ -7205,8 +7227,8 @@ char * FUN_00517aa0(int param_1)
 
 }
 
-/* ===== FUN_00517ca0 @ 0x00517CA0 ===== */
-undefined4 FUN_00517ca0(int *param_1,undefined4 param_2)
+/* ===== exception_report_write @ 0x00517CA0 ===== */
+undefined4 exception_report_write(int *param_1,undefined4 param_2)
 
 
 
@@ -8589,12 +8611,12 @@ void FUN_00518FA0(void)
 
 }
 
-/* ===== FUN_00519110 @ 0x00519110 ===== */
+/* ===== dinput_init @ 0x00519110 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_00519110(void)
+undefined4 dinput_init(void)
 
 
 
@@ -12246,8 +12268,8 @@ void FUN_0051c370(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_0051c470 @ 0x0051C470 ===== */
-int FUN_0051c470(void)
+/* ===== localization_check @ 0x0051C470 ===== */
+int localization_check(void)
 
 
 
@@ -12704,6 +12726,10 @@ char FUN_0051c870(void)
 }
 
 /* ===== AudioDataStreamStatus__Fv_6 @ 0x0051C890 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioDataStreamStatus__Fv_6(void)
 
 
@@ -12744,6 +12770,14 @@ void FUN_0051c8d0(void)
 
 
 {
+
+  int unaff_ESI;
+
+  int unaff_EDI;
+
+  int unaff_retaddr;
+
+  
 
   DAT_00632e94 = (**(code **)(DAT_00656420 + 0xc4))(DAT_00656420,7);
 
@@ -12843,7 +12877,7 @@ LAB_0051c979:
 
   DAT_00633150 = 2;
 
-  AudioMusicStreamPlay__Fiiii(0);
+  AudioMusicStreamPlay__Fiiii(0,unaff_EDI,unaff_ESI,unaff_retaddr);
 
   return;
 
@@ -13219,7 +13253,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
     if (DAT_005dda78 == (HWND)0x0) {
 
-      FUN_0051e680(s_CreateWindowEx_failed_0057d8ac);
+      error_screen_show(s_CreateWindowEx_failed_0057d8ac);
 
       return 0;
 
@@ -13229,9 +13263,9 @@ undefined4 CheckSaveGameName__Fv(void)
 
     if (DAT_005ddb3c == 0) {
 
-      DAT_005ddb54 = AudioDataStreamStatus__Fv_6(DAT_005dda78);
+      DAT_005ddb54 = AudioDataStreamStatus__Fv_6();
 
-      iVar3 = FUN_0051DC20(in_stack_00000004);
+      iVar3 = startup_options_init(in_stack_00000004);
 
       if (iVar3 != 0) {
 
@@ -13249,7 +13283,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
           if (DAT_0057d7fc == 3) {
 
-            FUN_00482700();
+            game_options_verify();
 
             FUN_0051C9F0();
 
@@ -13325,7 +13359,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
         }
 
-        FUN_00539e60();
+        mem_verify();
 
         ANM_DumpCluster();
 
@@ -13390,7 +13424,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
   DAT_005dda70 = 6;
 
-  FUN_0049e290();
+  options_defaults();
 
   iVar6 = 0;
 
@@ -13664,7 +13698,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
         DAT_00633238 = 1;
 
-        thunk_FUN_00482700();
+        game_options_verify();
 
         DAT_005dda70 = DAT_005dda70 & 0xfffffff8;
 
@@ -14244,12 +14278,12 @@ LAB_0051daf3:
 
 }
 
-/* ===== FUN_0051DC20 @ 0x0051DC20 ===== */
+/* ===== startup_options_init @ 0x0051DC20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_0051DC20(undefined4 param_1,undefined4 param_2)
+undefined4 startup_options_init(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -14275,6 +14309,8 @@ undefined4 FUN_0051DC20(undefined4 param_1,undefined4 param_2)
 
   bool bVar10;
 
+  undefined4 *p1;
+
   undefined4 uStack_6c;
 
   undefined4 uStack_68;
@@ -14283,7 +14319,7 @@ undefined4 FUN_0051DC20(undefined4 param_1,undefined4 param_2)
 
   
 
-  AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8(FUN_0051e680);
+  AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8(error_screen_show);
 
   iVar1 = FUN_004ee930();
 
@@ -14403,7 +14439,7 @@ undefined4 FUN_0051DC20(undefined4 param_1,undefined4 param_2)
 
           }
 
-          FUN_0051e680(local_64);
+          error_screen_show(local_64);
 
           DAT_005dda80 = 1;
 
@@ -14607,7 +14643,7 @@ LAB_0051ded4:
 
     if (DAT_005dda80 == 0) {
 
-      FUN_0051e680(local_64);
+      error_screen_show(local_64);
 
       DAT_005dda80 = 1;
 
@@ -14626,6 +14662,8 @@ LAB_0051ded4:
   (*DAT_005dd280)(0x2c,DAT_005dda70);
 
   (*DAT_005dd30c)();
+
+  p1 = &DAT_005ddb5c;
 
   (**(code **)(DAT_00656420 + 0x6c))(DAT_00656420,&DAT_005ddb5c,&DAT_005ddb6c);
 
@@ -14679,6 +14717,8 @@ LAB_0051ded4:
 
       FUN_00519d90();
 
+      iVar1 = 0x51dfb7;
+
       FUN_0051a1c0(s_DefPlayer_0055a07c,local_64,0x40);
 
       if (local_64[0] != '\0') {
@@ -14687,13 +14727,17 @@ LAB_0051ded4:
 
         FUN_00519fe0(local_64);
 
-        FUN_00482700();
+        game_options_verify();
 
         FUN_00519ed0();
 
         goto LAB_0051e225;
 
       }
+
+      iVar4 = 0x51dffe;
+
+      iVar3 = DAT_00656420;
 
       DAT_00632e94 = (**(code **)(DAT_00656420 + 0xc4))(DAT_00656420,7);
 
@@ -14797,7 +14841,7 @@ LAB_0051e096:
 
       DAT_00633150 = 2;
 
-      AudioMusicStreamPlay__Fiiii(0);
+      AudioMusicStreamPlay__Fiiii(0,iVar1,iVar4,iVar3);
 
       FUN_00519ed0();
 
@@ -14806,6 +14850,10 @@ LAB_0051e096:
     }
 
   }
+
+  iVar3 = 0x51e11b;
+
+  iVar1 = DAT_00656420;
 
   DAT_00632e94 = (**(code **)(DAT_00656420 + 0xc4))(DAT_00656420,7);
 
@@ -14905,9 +14953,9 @@ LAB_0051e1b3:
 
   DAT_00633150 = 2;
 
-  AudioMusicStreamPlay__Fiiii(0);
+  AudioMusicStreamPlay__Fiiii(0,(int)p1,iVar3,iVar1);
 
-  FUN_004824E0();
+  game_options_load();
 
 LAB_0051e225:
 
@@ -14935,7 +14983,7 @@ LAB_0051e225:
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2(DAT_005ddb88);
 
-  iVar1 = FUN_00519110(param_2);
+  iVar1 = dinput_init(param_2);
 
   if (iVar1 == 0) {
 
@@ -15000,6 +15048,8 @@ LAB_0051e225:
 }
 
 /* ===== Audio3DTestToneUpdate__Fv_4 @ 0x0051E670 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* PS2 candidate: __builtin_new (conf 0.529) */
 
 
@@ -15016,8 +15066,8 @@ void Audio3DTestToneUpdate__Fv_4(void)
 
 }
 
-/* ===== FUN_0051e680 @ 0x0051E680 ===== */
-void FUN_0051e680(LPCSTR param_1)
+/* ===== error_screen_show @ 0x0051E680 ===== */
+void error_screen_show(LPCSTR param_1)
 
 
 
@@ -15240,7 +15290,7 @@ void FUN_0051ea20(void)
 
   if (iVar1 != 0) {
 
-    FUN_0051e680();
+    error_screen_show();
 
     return;
 
@@ -15259,7 +15309,7 @@ void FUN_0051ea30(undefined4 param_1)
 
   if (DAT_005dda80 == 0) {
 
-    FUN_0051e680(param_1);
+    error_screen_show(param_1);
 
     DAT_005dda80 = 1;
 
@@ -15286,7 +15336,7 @@ void FUN_0051ea60(LPCSTR param_1)
 
   wvsprintfA(local_100,param_1,&stack0x00000008);
 
-  FUN_0051e680(local_100);
+  error_screen_show(local_100);
 
   return;
 
@@ -15299,13 +15349,17 @@ void FUN_0051EA90(void)
 
 {
 
-  FUN_0051e680(&DAT_005dd970);
+  error_screen_show(&DAT_005dd970);
 
   return;
 
 }
 
 /* ===== Audio3DTestToneUpdate__Fv_5 @ 0x0051EAA0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void Audio3DTestToneUpdate__Fv_5(void)
 
 
@@ -15376,12 +15430,12 @@ int FUN_0051f2d0(void)
 
 }
 
-/* ===== FUN_0051f2f0 @ 0x0051F2F0 ===== */
+/* ===== gamespy_shutdown @ 0x0051F2F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051f2f0(void)
+void gamespy_shutdown(void)
 
 
 
@@ -15638,7 +15692,7 @@ void FUN_0051f470(void)
 
       FUN_00542f27(local_1f4,uVar2,iVar3);
 
-      FUN_0051e680(local_1f4);
+      error_screen_show(local_1f4);
 
       FUN_0051fba0();
 
@@ -15656,7 +15710,7 @@ void FUN_0051f470(void)
 
     if (DAT_00633160 == 0) {
 
-      FUN_0051FC90();
+      comm_tcpip_menu();
 
       return;
 
@@ -15664,7 +15718,7 @@ void FUN_0051f470(void)
 
     DAT_005def80 = 2;
 
-    FUN_00520050();
+    comm_client_connect_menu();
 
     return;
 
@@ -15712,11 +15766,11 @@ void FUN_0051f470(void)
 
     FUN_00542f27(local_1f4,uVar2,HVar1);
 
-    FUN_0051e680(local_1f4);
+    error_screen_show(local_1f4);
 
     if (DAT_005def80 == 0) goto LAB_0051f868;
 
-    FUN_0052d280();
+    gamespy_shutdown2();
 
     (**(code **)(*DAT_005def60 + 0x14))(DAT_005def60,0,4);
 
@@ -15870,7 +15924,7 @@ LAB_0051f6a4:
 
       }
 
-      FUN_005233F0();
+      comm_show_conn_menu();
 
       iVar3 = FUN_00426540();
 
@@ -15880,7 +15934,7 @@ LAB_0051f6a4:
 
       }
 
-      FUN_00482700();
+      game_options_verify();
 
       return;
 
@@ -15890,11 +15944,11 @@ LAB_0051f6a4:
 
     FUN_00542f27(local_1f4,uVar2,iVar3);
 
-    FUN_0051e680(local_1f4);
+    error_screen_show(local_1f4);
 
     if (DAT_005def80 == 0) goto LAB_0051f868;
 
-    FUN_0052d280();
+    gamespy_shutdown2();
 
     (**(code **)(*DAT_005def60 + 0x14))(DAT_005def60,0,4);
 
@@ -16266,8 +16320,8 @@ void FUN_0051fba0(void)
 
 }
 
-/* ===== FUN_0051FC90 @ 0x0051FC90 ===== */
-void FUN_0051FC90(void)
+/* ===== comm_tcpip_menu @ 0x0051FC90 ===== */
+void comm_tcpip_menu(void)
 
 
 

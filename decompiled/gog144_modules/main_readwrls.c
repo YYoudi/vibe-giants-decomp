@@ -96,7 +96,7 @@ void read_world_list(void)
 
       if (iVar9 < 1) {
 
-        FUN_0051e680(s_Failed_to_open_worldlist_bin_005602d0);
+        error_screen_show(s_Failed_to_open_worldlist_bin_005602d0);
 
         return;
 
@@ -110,7 +110,7 @@ void read_world_list(void)
 
       if (local_34[iVar9] != 0x1a0003d0) {
 
-        FUN_0051e680(s_Bad_version_for_worldlist_00560280);
+        error_screen_show(s_Bad_version_for_worldlist_00560280);
 
         ANM_BinderDestroy_2(iVar2);
 
@@ -393,7 +393,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
     FUN_00542f27(&DAT_00657400,s_Failed_to_open__s_0055c14c,param_1);
 
-    FUN_0051e680(&DAT_00657400);
+    error_screen_show(&DAT_00657400);
 
     return;
 
@@ -407,7 +407,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
                 );
 
-    FUN_0051e680(&DAT_00657400);
+    error_screen_show(&DAT_00657400);
 
     ANM_BinderDestroy_2(iVar6);
 

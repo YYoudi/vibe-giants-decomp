@@ -2999,13 +2999,19 @@ undefined4 FUN_004d49c0(int param_1)
 }
 
 /* ===== kabutoai_is_punch_anim__FP6OBJECT_2 @ 0x004D49E0 ===== */
-bool kabutoai_is_punch_anim__FP6OBJECT_2(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+bool kabutoai_is_punch_anim__FP6OBJECT_2(OBJECT *p0)
 
 
 
 {
 
-  return *(int *)(param_1 + 0xe4) == 0x98;
+  return p0->gap_E4 == 0x98;
 
 }
 
@@ -4311,13 +4317,19 @@ bool FUN_004d7b80(int param_1)
 }
 
 /* ===== kabutoai_is_punch_anim__FP6OBJECT_3 @ 0x004D7C40 ===== */
-bool kabutoai_is_punch_anim__FP6OBJECT_3(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+bool kabutoai_is_punch_anim__FP6OBJECT_3(OBJECT *p0)
 
 
 
 {
 
-  return *(int *)(param_1 + 0xe4) == 0x12d;
+  return p0->gap_E4 == 0x12d;
 
 }
 
@@ -4775,6 +4787,8 @@ void FUN_004d8330(int param_1,float param_2,float *param_3,float *param_4)
 
 /* ===== endDisplay__Fv_2 @ 0x004D8420 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
 
 

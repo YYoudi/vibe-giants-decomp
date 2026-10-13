@@ -32,7 +32,7 @@ void main_fx_004470b0(undefined4 param_1)
 
   if (iVar1 == 0) {
 
-    FUN_0051e680(s_Failed_to_open_Fx_bin_00558874);
+    error_screen_show(s_Failed_to_open_Fx_bin_00558874);
 
     return;
 
@@ -42,7 +42,7 @@ void main_fx_004470b0(undefined4 param_1)
 
   if (local_30 != 1) {
 
-    FUN_0051e680(s_Bad_version_for_Fx_bin_0055885c);
+    error_screen_show(s_Bad_version_for_Fx_bin_0055885c);
 
     ANM_BinderDestroy_2(iVar1);
 

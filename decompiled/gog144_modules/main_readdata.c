@@ -34,7 +34,7 @@ void main_readdata_004adfa0(void)
 
   if (iVar3 == 0) {
 
-    FUN_0051e680(s_Failed_to_open_GameObj_bin_0055fe90);
+    error_screen_show(s_Failed_to_open_GameObj_bin_0055fe90);
 
     return;
 
@@ -388,7 +388,7 @@ void main_readdata_004adfa0(void)
 
   }
 
-  FUN_0051e680(s_Bad_version_for_GameObj_bin_0055fe74);
+  error_screen_show(s_Bad_version_for_GameObj_bin_0055fe74);
 
   ANM_BinderDestroy_2(iVar3);
 

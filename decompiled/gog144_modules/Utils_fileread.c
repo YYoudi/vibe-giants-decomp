@@ -67,7 +67,7 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
     FUN_00425eb0(&DAT_00657400);
 
-    FUN_0051e680(&DAT_00657400);
+    error_screen_show(&DAT_00657400);
 
   }
 

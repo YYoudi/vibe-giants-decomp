@@ -727,13 +727,19 @@ void FUN_004f41f0(undefined4 param_1,int param_2,int param_3,int param_4)
 }
 
 /* ===== kabutoai_select_punch_anim__FP6OBJECT_2 @ 0x004F4250 ===== */
-void kabutoai_select_punch_anim__FP6OBJECT_2(undefined4 param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void kabutoai_select_punch_anim__FP6OBJECT_2(OBJECT *p0)
 
 
 
 {
 
-  FUN_00530bd0(param_1,0,0,0,0xc,0);
+  FUN_00530bd0(p0,0,0,0,0xc,0);
 
   return;
 
@@ -4438,6 +4444,10 @@ LAB_004f9ea2:
 }
 
 /* ===== AudioDataStreamStatus__Fv_3 @ 0x004FA1E0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 * AudioDataStreamStatus__Fv_3(void)
 
 

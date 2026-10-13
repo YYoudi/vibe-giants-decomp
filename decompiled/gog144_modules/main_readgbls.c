@@ -24,7 +24,7 @@ void reread_globals_bin(void)
 
   if (iVar1 == 0) {
 
-    FUN_0051e680(s_Failed_to_open_GData_gbn_0055ff08);
+    error_screen_show(s_Failed_to_open_GData_gbn_0055ff08);
 
     return;
 
@@ -34,7 +34,7 @@ void reread_globals_bin(void)
 
   if (local_4 != 0x7a330000) {
 
-    FUN_0051e680(s_Bad_version_for_GData_gbn_0055feec);
+    error_screen_show(s_Bad_version_for_GData_gbn_0055feec);
 
     ANM_BinderDestroy_2(iVar1);
 

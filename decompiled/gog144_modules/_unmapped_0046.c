@@ -1287,6 +1287,10 @@ void FUN_004669a0(float param_1,int param_2)
 }
 
 /* ===== AudioDataStreamStatus__Fv @ 0x00467260 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioDataStreamStatus__Fv(void)
 
 
@@ -4206,13 +4210,19 @@ void FUN_0046f7f0(float *param_1)
 }
 
 /* ===== kabutoai_is_punch_anim__FP6OBJECT @ 0x0046F8B0 ===== */
-bool kabutoai_is_punch_anim__FP6OBJECT(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+bool kabutoai_is_punch_anim__FP6OBJECT(OBJECT *p0)
 
 
 
 {
 
-  return *(int *)(param_1 + 0xe8) == 1;
+  return *(int *)&p0->field_0xe8 == 1;
 
 }
 

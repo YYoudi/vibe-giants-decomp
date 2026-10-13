@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (21 named) — decompiled, names from PS2 symbols
+ * 131 functions (23 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -649,6 +649,10 @@ void FUN_004a1330(int param_1)
 }
 
 /* ===== endDisplay__Fv @ 0x004A13A0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void endDisplay__Fv(void)
 
 
@@ -4416,7 +4420,7 @@ void FUN_004A54E0(void)
 
       DAT_00633020 = 0;
 
-      FUN_005233F0();
+      comm_show_conn_menu();
 
     }
 
@@ -4442,7 +4446,7 @@ void FUN_004A54E0(void)
 
     if (*DAT_00632fb8 != '\0') {
 
-      iVar3 = FUN_0049f5a0(DAT_00632fb8);
+      iVar3 = chat_log_init(DAT_00632fb8);
 
       if (iVar3 == 0) {
 
@@ -4850,7 +4854,7 @@ LAB_004a5802:
 
       DAT_00632920 = 0xffffffff;
 
-      FUN_005233F0();
+      comm_show_conn_menu();
 
     }
 
@@ -5910,15 +5914,19 @@ undefined4 FUN_004a63a0(int param_1)
 }
 
 /* ===== voBufReset__FP5VoBuf @ 0x004A6400 ===== */
-void voBufReset__FP5VoBuf(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void voBufReset__FP5VoBuf(undefined4 *p0)
 
 
 
 {
 
-  *(undefined4 *)(param_1 + 0x208) = 0;
+  p0[0x82] = 0;
 
-  *(undefined4 *)(param_1 + 0x20c) = 0;
+  p0[0x83] = 0;
 
   return;
 
@@ -7627,12 +7635,12 @@ undefined4 FUN_004a9130(int param_1)
 
 }
 
-/* ===== FUN_004a9160 @ 0x004A9160 ===== */
+/* ===== projectile_define @ 0x004A9160 ===== */
 /* PS2 candidate: reset__9mus_Piece (conf 0.436) */
 
 
 
-undefined4 * FUN_004a9160(int param_1,undefined4 *param_2)
+undefined4 * projectile_define(int param_1,undefined4 *param_2)
 
 
 
@@ -9147,7 +9155,7 @@ void FUN_004a9e10(void)
 
   }
 
-  FUN_004a9160(puVar2,puVar2 + 2);
+  projectile_define(puVar2,puVar2 + 2);
 
   piVar3 = &DAT_005a2588;
 
@@ -10121,18 +10129,18 @@ void FUN_004aab40(undefined4 param_1,int param_2,int param_3,int param_4,undefin
 
   }
 
-  FUN_004abd40(param_1,param_5,param_4 + (param_2 + param_3) * 4,param_6);
+  repair_spell_fx(param_1,param_5,param_4 + (param_2 + param_3) * 4,param_6);
 
   return;
 
 }
 
-/* ===== FUN_004abd40 @ 0x004ABD40 ===== */
+/* ===== repair_spell_fx @ 0x004ABD40 ===== */
 /* PS2 candidate: husk_shot (conf 0.362) */
 
 
 
-void FUN_004abd40(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+void repair_spell_fx(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -10739,29 +10747,35 @@ void FUN_004ac620(int param_1,float *param_2,float param_3)
 }
 
 /* ===== FUN_004ac760 @ 0x004AC760 ===== */
-bool FUN_004ac760(int param_1)
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+bool FUN_004ac760(OBJECT *param_1)
 
 
 
 {
 
-  int iVar1;
+  dword dVar1;
+
+  int iVar2;
 
   
 
-  iVar1 = FUN_004a6180(param_1);
+  iVar2 = FUN_004a6180(param_1);
 
-  if (iVar1 == 0) {
+  if (iVar2 == 0) {
 
-    iVar1 = FUN_004a6160(param_1);
+    iVar2 = FUN_004a6160(param_1);
 
-    if (iVar1 == 0) {
+    if (iVar2 == 0) {
 
-      iVar1 = *(int *)(param_1 + 4);
+      dVar1 = param_1->field_4;
 
-      if (iVar1 == 8) {
+      if (dVar1 == 8) {
 
-        if (*(int *)(param_1 + 0xe4) != 6) {
+        if (param_1->gap_E4 != 6) {
 
           return false;
 
@@ -10769,11 +10783,11 @@ bool FUN_004ac760(int param_1)
 
       }
 
-      else if (iVar1 == 0xb) {
+      else if (dVar1 == 0xb) {
 
-        iVar1 = FUN_004ef510(param_1);
+        iVar2 = FUN_004ef510(param_1);
 
-        if ((iVar1 != 0) && (*(int *)(param_1 + 0xe4) != 0x35)) {
+        if ((iVar2 != 0) && (param_1->gap_E4 != 0x35)) {
 
           return false;
 
@@ -10783,43 +10797,43 @@ bool FUN_004ac760(int param_1)
 
       else {
 
-        if ((iVar1 != 0x438) && (iVar1 != 0x29a)) {
+        if ((dVar1 != 0x438) && (dVar1 != 0x29a)) {
 
-          if (iVar1 == 0xd7) {
+          if (dVar1 == 0xd7) {
 
-            iVar1 = FUN_004d7b80();
+            iVar2 = FUN_004d7b80();
 
-            if (iVar1 == 0) {
-
-              return true;
-
-            }
-
-            iVar1 = kabutoai_is_punch_anim__FP6OBJECT_3(param_1);
-
-            return iVar1 != 0;
-
-          }
-
-          iVar1 = FUN_004a6100(param_1);
-
-          if (iVar1 != 0) {
-
-            iVar1 = FUN_004d49c0(param_1);
-
-            if (iVar1 == 0) {
+            if (iVar2 == 0) {
 
               return true;
 
             }
 
-            iVar1 = kabutoai_is_punch_anim__FP6OBJECT_2(param_1);
+            iVar2 = kabutoai_is_punch_anim__FP6OBJECT_3(param_1);
 
-            return iVar1 != 0;
+            return iVar2 != 0;
 
           }
 
-          if (*(int *)(param_1 + 4) != 0x232) {
+          iVar2 = FUN_004a6100(param_1);
+
+          if (iVar2 != 0) {
+
+            iVar2 = FUN_004d49c0(param_1);
+
+            if (iVar2 == 0) {
+
+              return true;
+
+            }
+
+            iVar2 = kabutoai_is_punch_anim__FP6OBJECT_2(param_1);
+
+            return iVar2 != 0;
+
+          }
+
+          if (param_1->field_4 != 0x232) {
 
             return true;
 
@@ -10827,7 +10841,7 @@ bool FUN_004ac760(int param_1)
 
         }
 
-        if (*(int *)(param_1 + 0xe4) != 100) {
+        if (param_1->gap_E4 != 100) {
 
           return false;
 
@@ -10837,7 +10851,7 @@ bool FUN_004ac760(int param_1)
 
     }
 
-    else if ((*(byte *)(param_1 + 0xe0) & 0x40) == 0) {
+    else if ((param_1->field_E0 & 0x40) == 0) {
 
       return false;
 
@@ -10845,7 +10859,7 @@ bool FUN_004ac760(int param_1)
 
   }
 
-  else if ((*(byte *)(param_1 + 0xe0) & 0x20) == 0) {
+  else if ((param_1->field_E0 & 0x20) == 0) {
 
     return false;
 

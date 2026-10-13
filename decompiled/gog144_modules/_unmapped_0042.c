@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (33 named) — decompiled, names from PS2 symbols
+ * 129 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -1211,12 +1211,12 @@ undefined * FUN_00420b10(int param_1,int param_2,uint param_3)
 
 }
 
-/* ===== FUN_00420c10 @ 0x00420C10 ===== */
+/* ===== input_mapping_init @ 0x00420C10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00420c10(int param_1)
+void input_mapping_init(int param_1)
 
 
 
@@ -6226,8 +6226,8 @@ LAB_004239b5:
 
 }
 
-/* ===== FUN_004239d0 @ 0x004239D0 ===== */
-void FUN_004239d0(void)
+/* ===== keymap_save @ 0x004239D0 ===== */
+void keymap_save(void)
 
 
 
@@ -6315,12 +6315,12 @@ void FUN_004239d0(void)
 
 }
 
-/* ===== FUN_00423af0 @ 0x00423AF0 ===== */
+/* ===== keymap_load @ 0x00423AF0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00423af0(void)
+void keymap_load(void)
 
 
 
@@ -6342,7 +6342,7 @@ void FUN_00423af0(void)
 
   
 
-  FUN_00423e20();
+  input_keyname_lookup();
 
   uVar1 = 0x2000;
 
@@ -6556,7 +6556,7 @@ void FUN_00423af0(void)
 
   _DAT_00584558 = 0x2b;
 
-  FUN_00420c10(0xffffffff);
+  input_mapping_init(0xffffffff);
 
   iStack_84 = -1;
 
@@ -6616,7 +6616,7 @@ void FUN_00423af0(void)
 
     }
 
-    FUN_00420c10(0);
+    input_mapping_init(0);
 
   }
 
@@ -6624,12 +6624,12 @@ void FUN_00423af0(void)
 
 }
 
-/* ===== FUN_00423e20 @ 0x00423E20 ===== */
+/* ===== input_keyname_lookup @ 0x00423E20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00423e20(void)
+void input_keyname_lookup(void)
 
 
 
@@ -8221,6 +8221,10 @@ int FUN_00425b50(int param_1)
 }
 
 /* ===== AudioGetMasterVolume__Fv_2 @ 0x00425E90 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_2(void)
 
 
@@ -8232,13 +8236,17 @@ undefined4 AudioGetMasterVolume__Fv_2(void)
 }
 
 /* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2 @ 0x00425EA0 ===== */
-void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2(undefined4 param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2(undefined4 p0)
 
 
 
 {
 
-  DAT_0058c648 = param_1;
+  DAT_0058c648 = p0;
 
   return;
 
@@ -8309,8 +8317,8 @@ void FUN_00425eb0(undefined4 param_1)
 
 }
 
-/* ===== FUN_00425f60 @ 0x00425F60 ===== */
-void FUN_00425f60(void)
+/* ===== keymap_slot_load @ 0x00425F60 ===== */
+void keymap_slot_load(void)
 
 
 
@@ -8727,9 +8735,9 @@ switchD_004260b3_caseD_4:
 
         FUN_0052f2a0(0);
 
-        FUN_0052D220();
+        gamespy_statechange3();
 
-        FUN_00522B80();
+        comm_game_setup_menu();
 
         DAT_0058c658 = 1;
 
@@ -8749,7 +8757,7 @@ switchD_004260b3_caseD_4:
 
   FUN_0052f2a0(0);
 
-  FUN_0052D220();
+  gamespy_statechange3();
 
   return 1;
 
@@ -9313,6 +9321,10 @@ void FUN_00427040(int param_1)
 }
 
 /* ===== Audio3DTestToneUpdate__Fv @ 0x004270F0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void Audio3DTestToneUpdate__Fv(void)
 
 
@@ -14024,19 +14036,27 @@ void FUN_0042aea0(undefined4 *param_1,undefined4 *param_2)
 }
 
 /* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3 @ 0x0042B010 ===== */
-void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(undefined4 param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(undefined4 p0)
 
 
 
 {
 
-  DAT_005565d0 = param_1;
+  DAT_005565d0 = p0;
 
   return;
 
 }
 
 /* ===== Audio3DTestToneUpdate__Fv_2 @ 0x0042B020 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void Audio3DTestToneUpdate__Fv_2(void)
 
 
@@ -14050,6 +14070,10 @@ void Audio3DTestToneUpdate__Fv_2(void)
 }
 
 /* ===== Audio3DTestToneUpdate__Fv_3 @ 0x0042B030 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void Audio3DTestToneUpdate__Fv_3(void)
 
 
@@ -15495,11 +15519,11 @@ void FUN_0042c3e0(int param_1,byte param_2,int param_3)
 
   uint local_94;
 
-  undefined4 uStack_90;
+  char *pcStack_90;
 
   int local_8c;
 
-  undefined4 uStack_88;
+  undefined4 *puStack_88;
 
   undefined1 auStack_84 [16];
 
@@ -15735,9 +15759,9 @@ void FUN_0042c3e0(int param_1,byte param_2,int param_3)
 
   if ((*(byte *)(param_1 + 0xd8) & 2) != 0) {
 
-    FUN_00515eb0(&uStack_90,&uStack_88);
+    FUN_00515eb0(&pcStack_90,&puStack_88);
 
-    FNT_StringRender__FPcP14FNT_RenderInfo(uStack_90,0x479c4000);
+    FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_90,(undefined4 *)0x479c4000);
 
     fVar22 = (float10)FUN_00515da0(0);
 
@@ -16577,7 +16601,7 @@ LAB_0042d3f8:
 
   if ((*(byte *)(param_1 + 0xd8) & 2) != 0) {
 
-    FNT_StringRender__FPcP14FNT_RenderInfo(uStack_90,uStack_88);
+    FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_90,puStack_88);
 
     fVar22 = (float10)FUN_00515da0(1);
 
@@ -17149,8 +17173,8 @@ void FUN_0042d8a0(int param_1)
 
 }
 
-/* ===== FUN_0042dc50 @ 0x0042DC50 ===== */
-void FUN_0042dc50(int param_1)
+/* ===== alpha_queue_push @ 0x0042DC50 ===== */
+void alpha_queue_push(int param_1)
 
 
 

@@ -4263,8 +4263,8 @@ int main_editor_004382b0(int param_1,int param_2)
 
 }
 
-/* ===== main/editor_00438770 @ 0x00438770 ===== */
-void main_editor_00438770(void)
+/* ===== wredit_menu_main @ 0x00438770 ===== */
+void wredit_menu_main(void)
 
 
 
@@ -4438,7 +4438,7 @@ void main_editor_00438770(void)
 
   case 3:
 
-    main_editor_0043aa40();
+    wredit_obj_info();
 
     return;
 
@@ -4528,19 +4528,19 @@ void main_editor_00438770(void)
 
   case 5:
 
-    main_editor_0043bd80();
+    wredit_flick_menu();
 
     return;
 
   case 6:
 
-    main_editor_0043c580();
+    wredit_lock_list();
 
     return;
 
   case 7:
 
-    main_editor_0043d0a0();
+    wredit_ai_menu();
 
     return;
 
@@ -4586,19 +4586,19 @@ void main_editor_00438770(void)
 
   case 10:
 
-    main_editor_0043f950();
+    wredit_marker_info();
 
     return;
 
   case 0xb:
 
-    main_editor_0043fbc0();
+    wredit_marker_info2();
 
     return;
 
   case 0xc:
 
-    main_editor_0043fe90();
+    wredit_trigger_menu();
 
     return;
 
@@ -4775,8 +4775,8 @@ void main_editor_00439490(void)
 
 }
 
-/* ===== main/editor_00439660 @ 0x00439660 ===== */
-void main_editor_00439660(void)
+/* ===== wredit_menu_draw @ 0x00439660 ===== */
+void wredit_menu_draw(void)
 
 
 
@@ -4858,8 +4858,8 @@ void main_editor_00439660(void)
 
 }
 
-/* ===== main/editor_004397b0 @ 0x004397B0 ===== */
-void main_editor_004397b0(int param_1)
+/* ===== wredit_menu_3 @ 0x004397B0 ===== */
+void wredit_menu_3(int param_1)
 
 
 
@@ -5091,7 +5091,7 @@ void main_editor_004397b0(int param_1)
 
     case 3:
 
-      main_editor_0043aa40();
+      wredit_obj_info();
 
       return;
 
@@ -5101,19 +5101,19 @@ void main_editor_004397b0(int param_1)
 
     case 5:
 
-      main_editor_0043bd80();
+      wredit_flick_menu();
 
       return;
 
     case 6:
 
-      main_editor_0043c580();
+      wredit_lock_list();
 
       return;
 
     case 7:
 
-      main_editor_0043d0a0();
+      wredit_ai_menu();
 
       return;
 
@@ -5125,25 +5125,25 @@ void main_editor_004397b0(int param_1)
 
     case 9:
 
-      main_editor_00440500();
+      wredit_marker_info3();
 
       return;
 
     case 10:
 
-      main_editor_0043f950();
+      wredit_marker_info();
 
       return;
 
     case 0xb:
 
-      main_editor_0043fbc0();
+      wredit_marker_info2();
 
       return;
 
     case 0xc:
 
-      main_editor_0043fe90();
+      wredit_trigger_menu();
 
       return;
 
@@ -5332,8 +5332,8 @@ void main_editor_00439df0(void)
 
 }
 
-/* ===== main/editor_00439eb0 @ 0x00439EB0 ===== */
-void main_editor_00439eb0(void)
+/* ===== wredit_menu_4 @ 0x00439EB0 ===== */
+void wredit_menu_4(void)
 
 
 
@@ -5541,7 +5541,7 @@ void main_editor_00439eb0(void)
 
   case 3:
 
-    main_editor_0043aa40();
+    wredit_obj_info();
 
     return;
 
@@ -5631,19 +5631,19 @@ void main_editor_00439eb0(void)
 
   case 5:
 
-    main_editor_0043bd80();
+    wredit_flick_menu();
 
     return;
 
   case 6:
 
-    main_editor_0043c580();
+    wredit_lock_list();
 
     return;
 
   case 7:
 
-    main_editor_0043d0a0();
+    wredit_ai_menu();
 
     return;
 
@@ -5655,25 +5655,25 @@ void main_editor_00439eb0(void)
 
   case 9:
 
-    main_editor_00440500();
+    wredit_marker_info3();
 
     return;
 
   case 10:
 
-    main_editor_0043f950();
+    wredit_marker_info();
 
     return;
 
   case 0xb:
 
-    main_editor_0043fbc0();
+    wredit_marker_info2();
 
     return;
 
   case 0xc:
 
-    main_editor_0043fe90();
+    wredit_trigger_menu();
 
     return;
 
@@ -5831,8 +5831,8 @@ char * main_editor_0043aa00(int param_1)
 
 }
 
-/* ===== main/editor_0043aa40 @ 0x0043AA40 ===== */
-void main_editor_0043aa40(void)
+/* ===== wredit_obj_info @ 0x0043AA40 ===== */
+void wredit_obj_info(void)
 
 
 
@@ -5952,7 +5952,7 @@ LAB_0043aac5:
 
   else {
 
-    FUN_004944D0();
+    mission_trigger_name();
 
     main_dlog_00427890();
 
@@ -6181,7 +6181,7 @@ void main_editor_0043afa0(int param_1)
 
 switchD_0043b245_caseD_0:
 
-      main_editor_00439660();
+      wredit_menu_draw();
 
       return;
 
@@ -6205,7 +6205,7 @@ switchD_0043b245_caseD_2:
 
 switchD_0043b245_caseD_3:
 
-      main_editor_0043aa40();
+      wredit_obj_info();
 
       return;
 
@@ -6213,7 +6213,7 @@ switchD_0043b245_caseD_3:
 
 switchD_0043b245_caseD_4:
 
-      main_editor_0043b530();
+      wredit_lock_menu();
 
       return;
 
@@ -6221,7 +6221,7 @@ switchD_0043b245_caseD_4:
 
 switchD_0043b245_caseD_5:
 
-      main_editor_0043bd80();
+      wredit_flick_menu();
 
       return;
 
@@ -6229,7 +6229,7 @@ switchD_0043b245_caseD_5:
 
 switchD_0043b245_caseD_6:
 
-      main_editor_0043c580();
+      wredit_lock_list();
 
       return;
 
@@ -6237,7 +6237,7 @@ switchD_0043b245_caseD_6:
 
 switchD_0043b245_caseD_7:
 
-      main_editor_0043d0a0();
+      wredit_ai_menu();
 
       return;
 
@@ -6253,7 +6253,7 @@ switchD_0043b245_caseD_8:
 
 switchD_0043b245_caseD_9:
 
-      main_editor_00440500();
+      wredit_marker_info3();
 
       return;
 
@@ -6261,7 +6261,7 @@ switchD_0043b245_caseD_9:
 
 switchD_0043b245_caseD_a:
 
-      main_editor_0043f950();
+      wredit_marker_info();
 
       return;
 
@@ -6269,7 +6269,7 @@ switchD_0043b245_caseD_a:
 
 switchD_0043b245_caseD_b:
 
-      main_editor_0043fbc0();
+      wredit_marker_info2();
 
       return;
 
@@ -6277,7 +6277,7 @@ switchD_0043b245_caseD_b:
 
 switchD_0043b245_caseD_c:
 
-      main_editor_0043fe90();
+      wredit_trigger_menu();
 
       return;
 
@@ -6709,7 +6709,7 @@ switchD_0043b245_caseD_c:
 
     if (*(int *)(iVar1 + 4) == 0x44a) {
 
-      main_editor_00438770();
+      wredit_menu_main();
 
       return;
 
@@ -6747,7 +6747,7 @@ switchD_0043afda_caseD_9:
 
 LAB_0043b360:
 
-      main_editor_00438770();
+      wredit_menu_main();
 
       return;
 
@@ -6829,8 +6829,8 @@ int main_editor_0043b500(int param_1,int param_2)
 
 }
 
-/* ===== main/editor_0043b530 @ 0x0043B530 ===== */
-void main_editor_0043b530(void)
+/* ===== wredit_lock_menu @ 0x0043B530 ===== */
+void wredit_lock_menu(void)
 
 
 
@@ -7054,8 +7054,8 @@ code_r0x0043b744:
 
 }
 
-/* ===== main/editor_0043b770 @ 0x0043B770 ===== */
-void main_editor_0043b770(int param_1)
+/* ===== wredit_menu_5 @ 0x0043B770 ===== */
+void wredit_menu_5(int param_1)
 
 
 
@@ -7305,13 +7305,13 @@ void main_editor_0043b770(int param_1)
 
     case 3:
 
-      main_editor_0043aa40();
+      wredit_obj_info();
 
       break;
 
     case 4:
 
-      main_editor_0043b530();
+      wredit_lock_menu();
 
       break;
 
@@ -7373,13 +7373,13 @@ void main_editor_0043b770(int param_1)
 
     case 6:
 
-      main_editor_0043c580();
+      wredit_lock_list();
 
       break;
 
     case 7:
 
-      main_editor_0043d0a0();
+      wredit_ai_menu();
 
       break;
 
@@ -7391,25 +7391,25 @@ void main_editor_0043b770(int param_1)
 
     case 9:
 
-      main_editor_00440500();
+      wredit_marker_info3();
 
       break;
 
     case 10:
 
-      main_editor_0043f950();
+      wredit_marker_info();
 
       break;
 
     case 0xb:
 
-      main_editor_0043fbc0();
+      wredit_marker_info2();
 
       break;
 
     case 0xc:
 
-      main_editor_0043fe90();
+      wredit_trigger_menu();
 
     }
 
@@ -7492,8 +7492,8 @@ LAB_0043bd4f:
 
 }
 
-/* ===== main/editor_0043bd80 @ 0x0043BD80 ===== */
-void main_editor_0043bd80(void)
+/* ===== wredit_flick_menu @ 0x0043BD80 ===== */
+void wredit_flick_menu(void)
 
 
 
@@ -7671,8 +7671,8 @@ LAB_0043bed3:
 
 }
 
-/* ===== main/editor_0043bf40 @ 0x0043BF40 ===== */
-void main_editor_0043bf40(void)
+/* ===== wredit_flick_list @ 0x0043BF40 ===== */
+void wredit_flick_list(void)
 
 
 
@@ -7742,31 +7742,31 @@ void main_editor_0043bf40(void)
 
     case 3:
 
-      main_editor_0043aa40();
+      wredit_obj_info();
 
       return;
 
     case 4:
 
-      main_editor_0043b530();
+      wredit_lock_menu();
 
       return;
 
     case 5:
 
-      main_editor_0043bd80();
+      wredit_flick_menu();
 
       return;
 
     case 6:
 
-      main_editor_0043c580();
+      wredit_lock_list();
 
       return;
 
     case 7:
 
-      main_editor_0043d0a0();
+      wredit_ai_menu();
 
       return;
 
@@ -7778,25 +7778,25 @@ void main_editor_0043bf40(void)
 
     case 9:
 
-      main_editor_00440500();
+      wredit_marker_info3();
 
       return;
 
     case 10:
 
-      main_editor_0043f950();
+      wredit_marker_info();
 
       return;
 
     case 0xb:
 
-      main_editor_0043fbc0();
+      wredit_marker_info2();
 
       return;
 
     case 0xc:
 
-      main_editor_0043fe90();
+      wredit_trigger_menu();
 
       return;
 
@@ -8237,8 +8237,8 @@ LAB_0043c543:
 
 }
 
-/* ===== main/editor_0043c580 @ 0x0043C580 ===== */
-void main_editor_0043c580(void)
+/* ===== wredit_lock_list @ 0x0043C580 ===== */
+void wredit_lock_list(void)
 
 
 
@@ -8406,8 +8406,8 @@ LAB_0043c665:
 
 }
 
-/* ===== main/editor_0043c760 @ 0x0043C760 ===== */
-void main_editor_0043c760(void)
+/* ===== wredit_menu_6 @ 0x0043C760 ===== */
+void wredit_menu_6(void)
 
 
 
@@ -8431,7 +8431,7 @@ void main_editor_0043c760(void)
 
        ((DAT_00632aaa != '\0' && (iVar2 = main_dlog_00427310(DAT_0059cd64), iVar2 == 1)))) {
 
-      main_editor_0043caa0(0);
+      wredit_menu_7(0);
 
     }
 
@@ -8517,7 +8517,7 @@ void main_editor_0043c760(void)
 
       if (iVar2 != 0) {
 
-        main_editor_0043caa0(iVar2);
+        wredit_menu_7(iVar2);
 
       }
 
@@ -8635,31 +8635,31 @@ void main_editor_0043c760(void)
 
     case 3:
 
-      main_editor_0043aa40();
+      wredit_obj_info();
 
       return;
 
     case 4:
 
-      main_editor_0043b530();
+      wredit_lock_menu();
 
       return;
 
     case 5:
 
-      main_editor_0043bd80();
+      wredit_flick_menu();
 
       return;
 
     case 6:
 
-      main_editor_0043c580();
+      wredit_lock_list();
 
       return;
 
     case 7:
 
-      main_editor_0043d0a0();
+      wredit_ai_menu();
 
       return;
 
@@ -8671,25 +8671,25 @@ void main_editor_0043c760(void)
 
     case 9:
 
-      main_editor_00440500();
+      wredit_marker_info3();
 
       return;
 
     case 10:
 
-      main_editor_0043f950();
+      wredit_marker_info();
 
       return;
 
     case 0xb:
 
-      main_editor_0043fbc0();
+      wredit_marker_info2();
 
       return;
 
     case 0xc:
 
-      main_editor_0043fe90();
+      wredit_trigger_menu();
 
       return;
 
@@ -8701,8 +8701,8 @@ void main_editor_0043c760(void)
 
 }
 
-/* ===== main/editor_0043caa0 @ 0x0043CAA0 ===== */
-void main_editor_0043caa0(int param_1)
+/* ===== wredit_menu_7 @ 0x0043CAA0 ===== */
+void wredit_menu_7(int param_1)
 
 
 
@@ -8970,13 +8970,13 @@ LAB_0043cb4c:
 
     case 3:
 
-      main_editor_0043aa40();
+      wredit_obj_info();
 
       return;
 
     case 4:
 
-      main_editor_0043b530();
+      wredit_lock_menu();
 
       return;
 
@@ -9038,13 +9038,13 @@ LAB_0043cb4c:
 
     case 6:
 
-      main_editor_0043c580();
+      wredit_lock_list();
 
       return;
 
     case 7:
 
-      main_editor_0043d0a0();
+      wredit_ai_menu();
 
       return;
 
@@ -9056,25 +9056,25 @@ LAB_0043cb4c:
 
     case 9:
 
-      main_editor_00440500();
+      wredit_marker_info3();
 
       return;
 
     case 10:
 
-      main_editor_0043f950();
+      wredit_marker_info();
 
       return;
 
     case 0xb:
 
-      main_editor_0043fbc0();
+      wredit_marker_info2();
 
       return;
 
     case 0xc:
 
-      main_editor_0043fe90();
+      wredit_trigger_menu();
 
       return;
 
@@ -9086,8 +9086,8 @@ LAB_0043cb4c:
 
 }
 
-/* ===== main/editor_0043d0a0 @ 0x0043D0A0 ===== */
-void main_editor_0043d0a0(void)
+/* ===== wredit_ai_menu @ 0x0043D0A0 ===== */
+void wredit_ai_menu(void)
 
 
 
@@ -9937,7 +9937,7 @@ void main_editor_0043f120(void)
 
       if ((DAT_00632aaa != '\0') && (iVar3 = main_dlog_00427310(DAT_0059cd68), iVar3 == 1)) {
 
-        main_editor_0043f220(0xffffffff);
+        wredit_ai_menu2(0xffffffff);
 
       }
 
@@ -9945,7 +9945,7 @@ void main_editor_0043f120(void)
 
     else {
 
-      main_editor_0043f220(0xffffffff);
+      wredit_ai_menu2(0xffffffff);
 
     }
 
@@ -10039,7 +10039,7 @@ void main_editor_0043f120(void)
 
     if (iVar3 != -1) {
 
-      main_editor_0043f220(iVar3);
+      wredit_ai_menu2(iVar3);
 
     }
 
@@ -10049,8 +10049,8 @@ void main_editor_0043f120(void)
 
 }
 
-/* ===== main/editor_0043f220 @ 0x0043F220 ===== */
-void main_editor_0043f220(int param_1)
+/* ===== wredit_ai_menu2 @ 0x0043F220 ===== */
+void wredit_ai_menu2(int param_1)
 
 
 
@@ -10452,8 +10452,8 @@ LAB_0043f7ab:
 
 }
 
-/* ===== main/editor_0043f950 @ 0x0043F950 ===== */
-void main_editor_0043f950(void)
+/* ===== wredit_marker_info @ 0x0043F950 ===== */
+void wredit_marker_info(void)
 
 
 
@@ -10684,8 +10684,8 @@ LAB_0043fb02:
 
 }
 
-/* ===== main/editor_0043fbc0 @ 0x0043FBC0 ===== */
-void main_editor_0043fbc0(void)
+/* ===== wredit_marker_info2 @ 0x0043FBC0 ===== */
+void wredit_marker_info2(void)
 
 
 
@@ -10948,8 +10948,8 @@ LAB_0043fd98:
 
 }
 
-/* ===== main/editor_0043fe90 @ 0x0043FE90 ===== */
-void main_editor_0043fe90(void)
+/* ===== wredit_trigger_menu @ 0x0043FE90 ===== */
+void wredit_trigger_menu(void)
 
 
 
@@ -11057,7 +11057,7 @@ LAB_0043ff15:
 
   main_dlog_00427890();
 
-  uVar5 = FUN_004944D0(iVar1,uVar5,uVar7,uVar8,uVar9,uVar11);
+  uVar5 = mission_trigger_name(iVar1,uVar5,uVar7,uVar8,uVar9,uVar11);
 
   main_dlog_00427890(DAT_0059cd7c,0,0x3f000000,0x40c00000,0x88000000,uVar5);
 

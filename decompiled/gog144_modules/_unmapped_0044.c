@@ -430,8 +430,8 @@ LAB_00440422:
 
 }
 
-/* ===== main/editor_00440500 @ 0x00440500 ===== */
-void main_editor_00440500(void)
+/* ===== wredit_marker_info3 @ 0x00440500 ===== */
+void wredit_marker_info3(void)
 
 
 
@@ -3062,7 +3062,9 @@ LAB_00444114:
 
       case 0xf:
 
-        FNT_RenderInfoProcess__FP14FNT_RenderInfof(param_1 + 0x104,*(undefined4 *)(param_1 + 0xac));
+        FNT_RenderInfoProcess__FP14FNT_RenderInfof
+
+                  ((undefined4 *)(param_1 + 0x104),*(float *)(param_1 + 0xac));
 
         return;
 
@@ -3378,6 +3380,8 @@ undefined4 FUN_004444c0(int param_1)
 
   float10 fVar14;
 
+  undefined8 uVar15;
+
   int local_210;
 
   float fStack_208;
@@ -3388,7 +3392,7 @@ undefined4 FUN_004444c0(int param_1)
 
   float fStack_1f4;
 
-  undefined4 local_1e8;
+  undefined4 *local_1e8;
 
   float fStack_1e4;
 
@@ -3408,7 +3412,7 @@ undefined4 FUN_004444c0(int param_1)
 
   undefined4 uStack_1c0;
 
-  undefined4 local_190;
+  char *local_190;
 
   float local_18c;
 
@@ -3478,7 +3482,7 @@ undefined4 FUN_004444c0(int param_1)
 
   FUN_00515eb0(&local_190,&local_1e8);
 
-  FNT_StringRender__FPcP14FNT_RenderInfo(0x3f800000,local_1e8);
+  FNT_StringRender__FPcP14FNT_RenderInfo((char *)0x3f800000,local_1e8);
 
   uVar4 = AddHud__4cHudP8cHudIcon_4
 
@@ -4004,7 +4008,7 @@ LAB_00444d25:
 
           if (-1 < (char)piVar9[0x34]) {
 
-            FUN_0042dc50();
+            alpha_queue_push();
 
           }
 
@@ -4062,7 +4066,7 @@ LAB_00444d25:
 
        (FUN_0049aa20(), -1 < (char)piVar8[0x36])) {
 
-      FUN_0042dc50();
+      alpha_queue_push();
 
     }
 
@@ -4082,7 +4086,7 @@ LAB_00444d25:
 
           ((int *)piVar8[0x84] != DAT_00632a88)))))) && (FUN_0049aa20(), -1 < (char)piVar8[0x36])) {
 
-      FUN_0042dc50();
+      alpha_queue_push();
 
     }
 
@@ -4222,9 +4226,11 @@ LAB_004451e2:
 
     FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
+    uVar15 = CONCAT44(aiStack_1d4,auStack_148);
 
-    FUN_00446ce0(uVar4);
+    uVar4 = AudioGetMasterVolume__Fv_3();
+
+    FUN_00446ce0(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_7();
 
@@ -4244,9 +4250,11 @@ LAB_004451e2:
 
     FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
+    uVar15 = CONCAT44(aiStack_1d4,auStack_148);
 
-    FUN_00446ce0(uVar4);
+    uVar4 = AudioGetMasterVolume__Fv_3();
+
+    FUN_00446ce0(uVar4,uVar15);
 
     uVar4 = FUN_00450cc0();
 
@@ -4266,9 +4274,11 @@ LAB_004451e2:
 
     FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
+    uVar15 = CONCAT44(aiStack_1d4,auStack_148);
 
-    FUN_00446ce0(uVar4);
+    uVar4 = AudioGetMasterVolume__Fv_3();
+
+    FUN_00446ce0(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_4();
 
@@ -4288,9 +4298,11 @@ LAB_004451e2:
 
     FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
+    uVar15 = CONCAT44(aiStack_1d4,auStack_148);
 
-    FUN_00446ce0(uVar4);
+    uVar4 = AudioGetMasterVolume__Fv_3();
+
+    FUN_00446ce0(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_6();
 
@@ -4310,9 +4322,11 @@ LAB_004451e2:
 
     FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
+    uVar15 = CONCAT44(aiStack_1d4,auStack_148);
 
-    FUN_00446ce0(uVar4);
+    uVar4 = AudioGetMasterVolume__Fv_3();
+
+    FUN_00446ce0(uVar4,uVar15);
 
     uVar4 = AudioGetMasterVolume__Fv_5();
 
@@ -4332,9 +4346,11 @@ LAB_004451e2:
 
     FNT_RenderInfoProcess__FP14FNT_RenderInfof(aiStack_1d4,DAT_006328e0);
 
-    uVar4 = AudioGetMasterVolume__Fv_3(auStack_148,aiStack_1d4);
+    uVar15 = CONCAT44(aiStack_1d4,auStack_148);
 
-    FUN_00446ce0(uVar4);
+    uVar4 = AudioGetMasterVolume__Fv_3();
+
+    FUN_00446ce0(uVar4,uVar15);
 
   }
 
@@ -6334,7 +6350,11 @@ void FUN_00446a90(undefined4 *param_1)
 }
 
 /* ===== FNT_RenderInfoProcess__FP14FNT_RenderInfof @ 0x00446AD0 ===== */
-void FNT_RenderInfoProcess__FP14FNT_RenderInfof(int param_1,float param_2)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void FNT_RenderInfoProcess__FP14FNT_RenderInfof(undefined4 *p0,float p1)
 
 
 
@@ -6344,13 +6364,13 @@ void FNT_RenderInfoProcess__FP14FNT_RenderInfof(int param_1,float param_2)
 
   
 
-  fVar1 = param_2 * *(float *)(param_1 + 0x18) + *(float *)(param_1 + 0x1c);
+  fVar1 = p1 * (float)p0[6] + (float)p0[7];
 
-  *(float *)(param_1 + 0x1c) = fVar1;
+  p0[7] = fVar1;
 
-  *(float *)(param_1 + 0x2c) = *(float *)(param_1 + 0x2c) - param_2 * *(float *)(param_1 + 0x28);
+  p0[0xb] = (float)p0[0xb] - p1 * (float)p0[10];
 
-  *(float *)(param_1 + 0x20) = fVar1;
+  p0[8] = fVar1;
 
   return;
 
@@ -6810,6 +6830,10 @@ void FUN_00446ee0(void)
 }
 
 /* ===== SetupCameraHail__Fv @ 0x00446F50 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void SetupCameraHail__Fv(void)
 
 
@@ -6965,6 +6989,10 @@ void FUN_00447060(void)
 }
 
 /* ===== AudioGetMasterVolume__Fv_3 @ 0x004470A0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_3(void)
 
 
@@ -7049,10 +7077,12 @@ undefined4 Main_fx_00447210(undefined4 param_1)
 
 }
 
-/* ===== Main/fx_00447370 @ 0x00447370 ===== */
-void Main_fx_00447370(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
+/* ===== fx_weather_fog_setup @ 0x00447370 ===== */
+void fx_weather_fog_setup
 
-                     undefined4 param_5)
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
+
+               undefined4 param_5)
 
 
 
@@ -7118,10 +7148,12 @@ void Main_fx_00447370(int param_1,undefined4 param_2,undefined4 param_3,undefine
 
 }
 
-/* ===== Main/fx_004474c0 @ 0x004474C0 ===== */
-void Main_fx_004474c0(int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4,
+/* ===== fx_weather_fogsky_setup @ 0x004474C0 ===== */
+void fx_weather_fogsky_setup
 
-                     undefined4 *param_5,undefined4 param_6)
+               (int param_1,undefined4 param_2,undefined4 *param_3,undefined4 param_4,
+
+               undefined4 *param_5,undefined4 param_6)
 
 
 
@@ -7193,10 +7225,12 @@ void Main_fx_004474c0(int param_1,undefined4 param_2,undefined4 *param_3,undefin
 
 }
 
-/* ===== Main/fx_00447620 @ 0x00447620 ===== */
-void Main_fx_00447620(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
+/* ===== fx_weather_fog_setup2 @ 0x00447620 ===== */
+void fx_weather_fog_setup2
 
-                     undefined4 param_5)
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
+
+               undefined4 param_5)
 
 
 
@@ -7528,7 +7562,7 @@ void Main_fx_00448100(void)
 
       *(uint *)(iVar1 + 0xd8) = *(uint *)(iVar1 + 0xd8) & 0xbfffffff;
 
-      FUN_0042dc50(iVar1);
+      alpha_queue_push(iVar1);
 
       *(uint *)(iVar1 + 0xd8) = *(uint *)(iVar1 + 0xd8) | 0x40000000;
 
@@ -7595,7 +7629,7 @@ void Main_fx_00448170(int param_1,byte param_2)
 
 LAB_004481cb:
 
-        FUN_0042dc50(iVar1);
+        alpha_queue_push(iVar1);
 
       }
 
@@ -7997,21 +8031,21 @@ void FUN_00448c20(int param_1)
 }
 
 /* ===== fx_createGameLockedObj__FP6FxDataiii @ 0x00448CA0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* PS2 candidate: fx_createGameLockedObj__FP6FxDataiii (conf 0.489) */
 
 
 
-int fx_createGameLockedObj__FP6FxDataiii
-
-              (int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+int fx_createGameLockedObj__FP6FxDataiii(FxData *p0,int p1,int p2,int p3)
 
 
 
 {
 
-  int *piVar1;
+  undefined4 *puVar1;
 
-  undefined4 uVar2;
+  dword dVar2;
 
   uint uVar3;
 
@@ -8021,29 +8055,29 @@ int fx_createGameLockedObj__FP6FxDataiii
 
   
 
-  if ((*(byte *)(param_1 + 0x10) & 4) != 0) {
+  if ((p0->fx_10 & 4) != 0) {
 
-    iVar4 = object_allocate_type(param_3,0);
+    iVar4 = object_allocate_type(p2,0);
 
-    piVar1 = *(int **)(iVar4 + 0x100);
+    puVar1 = *(undefined4 **)(iVar4 + 0x100);
 
     *(uint *)(iVar4 + 0x1c8) = *(uint *)(iVar4 + 0x1c8) & 0xfffdffff | 0x800;
 
     *(uint *)(iVar4 + 0xd8) = *(uint *)(iVar4 + 0xd8) | 0x10020;
 
-    *piVar1 = param_1;
+    *puVar1 = p0;
 
-    uVar2 = *(undefined4 *)(param_1 + 0x3c);
+    dVar2 = p0->fx_3C;
 
-    *(undefined4 *)(iVar4 + 0x214) = param_4;
+    *(int *)(iVar4 + 0x214) = p3;
 
-    *(undefined4 *)(iVar4 + 0x210) = uVar2;
+    *(dword *)(iVar4 + 0x210) = dVar2;
 
-    *(undefined4 *)(iVar4 + 0x218) = *(undefined4 *)(param_1 + 0x40);
+    *(dword *)(iVar4 + 0x218) = p0[1].fx_0;
 
     *(uint *)(iVar4 + 0xd8) = *(uint *)(iVar4 + 0xd8) | 0x400020;
 
-    *(int **)(iVar4 + 0x104) = piVar1 + 0x28;
+    *(undefined4 **)(iVar4 + 0x104) = puVar1 + 0x28;
 
     FUN_004a1740(iVar4);
 
@@ -8057,19 +8091,19 @@ int fx_createGameLockedObj__FP6FxDataiii
 
     *(uint *)(iVar4 + 0xd8) = uVar3 | 0x40000010;
 
-    if ((*(uint *)(param_1 + 0x10) & 0x4000) != 0) {
+    if ((p0->fx_10 & 0x4000) != 0) {
 
       *(uint *)(iVar4 + 0xe4) = *(uint *)(iVar4 + 0xe4) | 0x400;
 
     }
 
-    if ((char)((uint)*(undefined4 *)(param_1 + 0x10) >> 8) < '\0') {
+    if ((char)(p0->fx_10 >> 8) < '\0') {
 
       *(uint *)(iVar4 + 0xe4) = *(uint *)(iVar4 + 0xe4) | 0x1000;
 
     }
 
-    if ((*(uint *)(param_1 + 0x10) & 0x10000) != 0) {
+    if ((p0->fx_10 & 0x10000) != 0) {
 
       *(uint *)(iVar4 + 0xd8) = uVar3 | 0x40000410;
 
@@ -8077,7 +8111,7 @@ int fx_createGameLockedObj__FP6FxDataiii
 
     object_lock_logic(iVar4);
 
-    *(undefined4 *)(iVar4 + 0xfc) = *(undefined4 *)(param_1 + 8);
+    *(dword *)(iVar4 + 0xfc) = p0->fx_8;
 
     return iVar4;
 
@@ -9800,7 +9834,13 @@ LAB_0044abc9:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        in_stack_0000001c = fx_createGameLockedObj__FP6FxDataiii();
+        in_stack_0000001c =
+
+             fx_createGameLockedObj__FP6FxDataiii
+
+                       (in_stack_0000d770,(int)*p2,*(int *)((int)pfVar19 + 5),
+
+                        *(int *)((int)pfVar19 + 9));
 
       }
 
@@ -10640,7 +10680,7 @@ LAB_0044b93c:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        Main_fx_00447370();
+        fx_weather_fog_setup();
 
       }
 
@@ -10734,7 +10774,7 @@ LAB_0044b93c:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        Main_fx_004474c0();
+        fx_weather_fogsky_setup();
 
       }
 
@@ -11184,7 +11224,7 @@ LAB_0044b93c:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        Main_fx_00447620();
+        fx_weather_fog_setup2();
 
       }
 

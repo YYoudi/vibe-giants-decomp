@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (13 named) — decompiled, names from PS2 symbols
+ * 145 functions (14 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -202,6 +202,10 @@ float10 FUN_00450c90(void)
 }
 
 /* ===== AudioGetMasterVolume__Fv_7 @ 0x00450CB0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_7(void)
 
 
@@ -226,6 +230,10 @@ void FUN_00450cc0(void)
 }
 
 /* ===== AudioGetMasterVolume__Fv_4 @ 0x00450CE0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_4(void)
 
 
@@ -237,6 +245,10 @@ undefined4 AudioGetMasterVolume__Fv_4(void)
 }
 
 /* ===== AudioGetMasterVolume__Fv_5 @ 0x00450CF0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_5(void)
 
 
@@ -248,6 +260,10 @@ undefined4 AudioGetMasterVolume__Fv_5(void)
 }
 
 /* ===== AudioGetMasterVolume__Fv_6 @ 0x00450D00 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_6(void)
 
 
@@ -1462,7 +1478,7 @@ void FUN_00452130(undefined4 param_1)
 
     if (bVar4) {
 
-      FUN_00482700();
+      game_options_verify();
 
       goto LAB_004521d9;
 
@@ -1472,7 +1488,7 @@ void FUN_00452130(undefined4 param_1)
 
   FUN_0051c8d0();
 
-  FUN_004824E0();
+  game_options_load();
 
 LAB_004521d9:
 
@@ -6117,12 +6133,12 @@ int FUN_004571a0(int param_1,int *param_2,int param_3)
 
 }
 
-/* ===== FUN_00457270 @ 0x00457270 ===== */
+/* ===== comm_options_defaults @ 0x00457270 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00457270(void)
+void comm_options_defaults(void)
 
 
 
@@ -6243,9 +6259,9 @@ void FUN_00457440(void)
 
   FUN_00535f40();
 
-  FUN_00457270();
+  comm_options_defaults();
 
-  FUN_00482700();
+  game_options_verify();
 
   return;
 
@@ -6297,13 +6313,13 @@ void FUN_00457550(void)
 
   {
 
-    FUN_00482B60();
+    menu_mission_launch();
 
     return;
 
   }
 
-  FUN_00423af0();
+  keymap_load();
 
   if (DAT_0063315c != 0) {
 
@@ -6461,13 +6477,17 @@ LAB_004576b1:
 }
 
 /* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4 @ 0x004576D0 ===== */
-void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(undefined4 param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4(undefined4 p0)
 
 
 
 {
 
-  DAT_0059d9f0 = param_1;
+  DAT_0059d9f0 = p0;
 
   return;
 
@@ -7142,15 +7162,21 @@ void FUN_00458180(int param_1,int param_2)
 }
 
 /* ===== WeaponIdGetPresent__FP6OBJECT @ 0x004581E0 ===== */
-undefined4 WeaponIdGetPresent__FP6OBJECT(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+undefined4 WeaponIdGetPresent__FP6OBJECT(OBJECT *p0)
 
 
 
 {
 
-  if (*(int *)(param_1 + 0x1e0) == 2) {
+  if (*(int *)&p0->field_0x1e0 == 2) {
 
-    return *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x5c);
+    return *(undefined4 *)(*(int *)&p0->field_0x100 + 0x5c);
 
   }
 

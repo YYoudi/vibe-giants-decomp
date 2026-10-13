@@ -30,7 +30,7 @@ undefined4 main_dedicated_00426460(void)
 
   if (local_4 != 2) {
 
-    FUN_0051e680(s_Bad_version_for_dedicated_bin_00556424);
+    error_screen_show(s_Bad_version_for_dedicated_bin_00556424);
 
     ANM_BinderDestroy_2(iVar1);
 

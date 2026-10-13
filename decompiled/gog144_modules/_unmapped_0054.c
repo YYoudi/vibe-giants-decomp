@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (163 named) — decompiled, names from PS2 symbols
+ * 351 functions (164 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -334,13 +334,17 @@ undefined4 MAP_ChunkDestroy(int param_1,int param_2)
 }
 
 /* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8 @ 0x005402F0 ===== */
-void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8(undefined4 param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8(undefined4 p0)
 
 
 
 {
 
-  DAT_00630b40 = param_1;
+  DAT_00630b40 = p0;
 
   return;
 
@@ -559,7 +563,7 @@ void FUN_00540530(int param_1,code *param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_005405c0 @ 0x005405C0 ===== */
+/* ===== cpu_vendor_detect @ 0x005405C0 ===== */
 /* WARNING: Removing unreachable block (ram,0x005406e8) */
 
 /* WARNING: Removing unreachable block (ram,0x005406d2) */
@@ -572,7 +576,7 @@ void FUN_00540530(int param_1,code *param_2,undefined4 param_3)
 
 
 
-void FUN_005405c0(void)
+void cpu_vendor_detect(void)
 
 
 
@@ -717,7 +721,7 @@ uint FUN_005407e0(void)
 
   
 
-  uVar1 = FUN_005405c0();
+  uVar1 = cpu_vendor_detect();
 
   if ((uVar1 & 0x400) != 0) {
 
@@ -4793,13 +4797,13 @@ void FUN_00543e00(void)
 }
 
 /* ===== AddHud__4cHudP8cHudIcon_6 @ 0x00543E3A ===== */
-void AddHud__4cHudP8cHudIcon_6(void)
+void AddHud__4cHudP8cHudIcon_6(int param_1,int param_2,int param_3,int param_4)
 
 
 
 {
 
-  AudioMusicStreamPlay__Fiiii_3();
+  AudioMusicStreamPlay__Fiiii_3(param_1,param_2,param_3,param_4);
 
   return;
 
@@ -7106,7 +7110,7 @@ HANDLE FUN_00544e7c(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 para
 
 {
 
-  LPVOID lpParameter;
+  undefined4 *p0;
 
   HANDLE pvVar1;
 
@@ -7116,19 +7120,19 @@ HANDLE FUN_00544e7c(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 para
 
   DVar2 = 0;
 
-  lpParameter = (LPVOID)_malloc(1,0x74);
+  p0 = (undefined4 *)_malloc(1,0x74);
 
-  if (lpParameter != (LPVOID)0x0) {
+  if (p0 != (undefined4 *)0x0) {
 
-    voBufReset__FP5VoBuf_2(lpParameter);
+    voBufReset__FP5VoBuf_2(p0);
 
-    *(undefined4 *)((int)lpParameter + 4) = 0xffffffff;
+    p0[1] = 0xffffffff;
 
-    *(undefined4 *)((int)lpParameter + 0x48) = param_3;
+    p0[0x12] = param_3;
 
-    *(undefined4 *)((int)lpParameter + 0x4c) = param_4;
+    p0[0x13] = param_4;
 
-    pvVar1 = CreateThread(param_1,param_2,FUN_00544ee7,lpParameter,param_5,param_6);
+    pvVar1 = CreateThread(param_1,param_2,FUN_00544ee7,p0,param_5,param_6);
 
     if (pvVar1 != (HANDLE)0x0) {
 
@@ -7140,7 +7144,7 @@ HANDLE FUN_00544e7c(LPSECURITY_ATTRIBUTES param_1,SIZE_T param_2,undefined4 para
 
   }
 
-  FUN_005443bf(lpParameter);
+  FUN_005443bf(p0);
 
   if (DVar2 != 0) {
 
@@ -8571,7 +8575,7 @@ void entry(void)
 
   pHVar5 = GetModuleHandleA((LPCSTR)0x0);
 
-  uVar3 = FUN_0051c470(pHVar5,uVar6,uVar3,uVar4);
+  uVar3 = localization_check(pHVar5,uVar6,uVar3,uVar4);
 
   BinFileCreateWrite_4(uVar3);
 
@@ -9161,6 +9165,8 @@ void _GLOBAL__D_Game_2(void)
 
 /* ===== AudioDataStreamStatus__Fv_7 @ 0x00545CDD ===== */
 /* WARNING: Removing unreachable block (ram,0x00545d12) */
+
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
 
 
@@ -12246,11 +12252,7 @@ LAB_00547564:
 }
 
 /* ===== crt_fpe_dispatch @ 0x00547586 ===== */
-float10 crt_fpe_dispatch(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
-
-                        ,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8
-
-                        ,undefined4 param_9)
+float10 crt_fpe_dispatch(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -12258,45 +12260,21 @@ float10 crt_fpe_dispatch(undefined4 param_1,undefined4 param_2,undefined4 param_
 
   int iVar1;
 
-  undefined4 local_24;
+  undefined4 in_stack_0000001c;
 
-  int local_20;
+  undefined4 in_stack_00000020;
 
-  undefined4 local_1c;
-
-  undefined4 local_18;
-
-  undefined4 local_14;
-
-  undefined4 local_10;
-
-  undefined4 local_c;
-
-  undefined4 uStack_8;
+  undefined4 in_stack_00000024;
 
   
 
-  local_20 = FUN_00547636(param_2);
+  iVar1 = FUN_00547636(param_2);
 
-  if (local_20 != 0) {
+  if (iVar1 != 0) {
 
-    local_1c = param_3;
+    crt_fnstcw(in_stack_00000024,0xffff);
 
-    local_18 = param_4;
-
-    local_14 = param_5;
-
-    local_10 = param_6;
-
-    local_24 = param_1;
-
-    local_c = param_7;
-
-    uStack_8 = param_8;
-
-    crt_fnstcw(param_9,0xffff);
-
-    iVar1 = AudioDataStreamStatus__Fv_8(&local_24);
+    iVar1 = AudioDataStreamStatus__Fv_8();
 
     if (iVar1 == 0) {
 
@@ -12304,15 +12282,15 @@ float10 crt_fpe_dispatch(undefined4 param_1,undefined4 param_2,undefined4 param_
 
     }
 
-    return (float10)(double)CONCAT44(uStack_8,local_c);
+    return (float10)(double)CONCAT44(in_stack_00000020,in_stack_0000001c);
 
   }
 
-  crt_fnstcw(param_9,0xffff);
+  crt_fnstcw(in_stack_00000024,0xffff);
 
   crt_matherr_flag(param_1);
 
-  return (float10)(double)CONCAT44(param_8,param_7);
+  return (float10)(double)CONCAT44(in_stack_00000020,in_stack_0000001c);
 
 }
 
@@ -14620,7 +14598,7 @@ undefined4 crt_tls_init(void)
 
 {
 
-  DWORD *lpTlsValue;
+  DWORD *p0;
 
   BOOL BVar1;
 
@@ -14634,21 +14612,21 @@ undefined4 crt_tls_init(void)
 
   if (DAT_00581638 != 0xffffffff) {
 
-    lpTlsValue = (DWORD *)_malloc(1,0x74);
+    p0 = (DWORD *)_malloc(1,0x74);
 
-    if (lpTlsValue != (DWORD *)0x0) {
+    if (p0 != (DWORD *)0x0) {
 
-      BVar1 = TlsSetValue(DAT_00581638,lpTlsValue);
+      BVar1 = TlsSetValue(DAT_00581638,p0);
 
       if (BVar1 != 0) {
 
-        voBufReset__FP5VoBuf_2(lpTlsValue);
+        voBufReset__FP5VoBuf_2(p0);
 
         DVar2 = GetCurrentThreadId();
 
-        lpTlsValue[1] = 0xffffffff;
+        p0[1] = 0xffffffff;
 
-        *lpTlsValue = DVar2;
+        *p0 = DVar2;
 
         return 1;
 
@@ -14663,15 +14641,19 @@ undefined4 crt_tls_init(void)
 }
 
 /* ===== voBufReset__FP5VoBuf_2 @ 0x0054858D ===== */
-void voBufReset__FP5VoBuf_2(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void voBufReset__FP5VoBuf_2(undefined4 *p0)
 
 
 
 {
 
-  *(undefined **)(param_1 + 0x50) = &DAT_00583a40;
+  p0[0x14] = &DAT_00583a40;
 
-  *(undefined4 *)(param_1 + 0x14) = 1;
+  p0[5] = 1;
 
   return;
 
@@ -14686,7 +14668,7 @@ DWORD * __getptd(void)
 
   DWORD dwErrCode;
 
-  DWORD *lpTlsValue;
+  DWORD *p0;
 
   BOOL BVar1;
 
@@ -14696,25 +14678,25 @@ DWORD * __getptd(void)
 
   dwErrCode = GetLastError();
 
-  lpTlsValue = TlsGetValue(DAT_00581638);
+  p0 = TlsGetValue(DAT_00581638);
 
-  if (lpTlsValue == (DWORD *)0x0) {
+  if (p0 == (DWORD *)0x0) {
 
-    lpTlsValue = (DWORD *)_malloc(1,0x74);
+    p0 = (DWORD *)_malloc(1,0x74);
 
-    if (lpTlsValue != (DWORD *)0x0) {
+    if (p0 != (DWORD *)0x0) {
 
-      BVar1 = TlsSetValue(DAT_00581638,lpTlsValue);
+      BVar1 = TlsSetValue(DAT_00581638,p0);
 
       if (BVar1 != 0) {
 
-        voBufReset__FP5VoBuf_2(lpTlsValue);
+        voBufReset__FP5VoBuf_2(p0);
 
         DVar2 = GetCurrentThreadId();
 
-        lpTlsValue[1] = 0xffffffff;
+        p0[1] = 0xffffffff;
 
-        *lpTlsValue = DVar2;
+        *p0 = DVar2;
 
         goto LAB_005485fb;
 
@@ -14730,7 +14712,7 @@ LAB_005485fb:
 
   SetLastError(dwErrCode);
 
-  return lpTlsValue;
+  return p0;
 
 }
 
@@ -14802,6 +14784,8 @@ void __freeptd(LPVOID param_1)
 }
 
 /* ===== AudioMusicStreamPlay__Fiiii_3 @ 0x005486B0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* Library Function - Single Match
 
     __cintrindisp2
@@ -14812,7 +14796,7 @@ void __freeptd(LPVOID param_1)
 
 
 
-void AudioMusicStreamPlay__Fiiii_3(void)
+void AudioMusicStreamPlay__Fiiii_3(int p0,int p1,int p2,int p3)
 
 
 
@@ -14827,6 +14811,8 @@ void AudioMusicStreamPlay__Fiiii_3(void)
 }
 
 /* ===== AudioMusicStreamPlay__Fiiii_2 @ 0x005486EE ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* Library Function - Single Match
 
     __cintrindisp1
@@ -14837,7 +14823,7 @@ void AudioMusicStreamPlay__Fiiii_3(void)
 
 
 
-void AudioMusicStreamPlay__Fiiii_2(void)
+void AudioMusicStreamPlay__Fiiii_2(int p0,int p1,int p2,int p3)
 
 
 
@@ -23433,6 +23419,10 @@ LAB_0054d82e:
 }
 
 /* ===== AudioDataStreamStatus__Fv_8 @ 0x0054D84B ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioDataStreamStatus__Fv_8(void)
 
 
@@ -23869,7 +23859,7 @@ LAB_0054dbb8:
 
   if (((*param_2 != 8) && (DAT_00583bb0 == 0)) &&
 
-     (iVar1 = AudioDataStreamStatus__Fv_8(param_2), iVar1 != 0)) {
+     (iVar1 = AudioDataStreamStatus__Fv_8(), iVar1 != 0)) {
 
     return;
 

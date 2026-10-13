@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (26 named) — decompiled, names from PS2 symbols
+ * 179 functions (27 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -2156,6 +2156,10 @@ LAB_00531013:
 }
 
 /* ===== Audio3DTestToneUpdate__Fv_7 @ 0x005310B0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 void Audio3DTestToneUpdate__Fv_7(void)
 
 
@@ -4233,7 +4237,7 @@ LAB_00532513:
 
       case 'G':
 
-        FUN_0052f3b0(pcVar15);
+        comm_fakehost_menu(pcVar15);
 
         pcVar14 = DAT_005e0304;
 
@@ -4273,7 +4277,7 @@ LAB_00532b8b:
 
         if (*(int *)(pcVar15 + 1) != DAT_005def94) goto LAB_00532b8b;
 
-        FUN_00520FD0();
+        comm_damage_teams_menu();
 
         DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4321,7 +4325,7 @@ LAB_00532b8b:
 
         if (*(int *)(pcVar15 + 1) != DAT_005def94) goto LAB_00532b8b;
 
-        FUN_00520B90();
+        gamespy_send_statechange();
 
         DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4335,7 +4339,7 @@ LAB_0053196c:
 
           DAT_005def94 = 0;
 
-          FUN_00522B80();
+          comm_game_setup_menu();
 
           DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4379,7 +4383,7 @@ LAB_0053196c:
 
           DAT_005def94 = 0;
 
-          FUN_00522B80();
+          comm_game_setup_menu();
 
           DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4435,7 +4439,7 @@ LAB_00531a53:
 
         if (*(int *)(pcVar15 + 1) != DAT_005def94) goto LAB_00532b8b;
 
-        FUN_0052f790();
+        comm_player_marker_menu();
 
         DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4533,7 +4537,7 @@ LAB_0053151e:
 
   _DAT_005e2734 = 0.0;
 
-  FUN_00524de0();
+  gamespy_host_game();
 
   return;
 
@@ -4865,7 +4869,7 @@ void FUN_005330c0(int param_1)
 
     puVar2[3] = *puVar3 & 0xffff;
 
-    FUN_005227B0(&local_10,puVar2,iVar1);
+    comm_scorelimit_menu(&local_10,puVar2,iVar1);
 
     puVar2 = puVar2 + 4;
 
@@ -10384,6 +10388,10 @@ void FUN_00536c60(void)
 }
 
 /* ===== AudioGetMasterVolume__Fv_11 @ 0x00536CA0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 AudioGetMasterVolume__Fv_11(void)
 
 
@@ -10872,7 +10880,7 @@ void FUN_005371e0(void)
 
   DAT_00632e40 = 1;
 
-  FUN_005233F0();
+  comm_show_conn_menu();
 
   return;
 
@@ -11452,7 +11460,7 @@ void FUN_005375e0(void)
 
     DAT_00632e40 = 1;
 
-    FUN_005233F0();
+    comm_show_conn_menu();
 
     return;
 
@@ -13153,6 +13161,10 @@ void FUN_00538ff0(int param_1)
 }
 
 /* ===== __default_unexpected__Fv @ 0x00539000 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
 undefined4 __default_unexpected__Fv(void)
 
 
@@ -13554,8 +13566,8 @@ void FUN_00539de0(undefined4 param_1)
 
 }
 
-/* ===== FUN_00539e60 @ 0x00539E60 ===== */
-void FUN_00539e60(void)
+/* ===== mem_verify @ 0x00539E60 ===== */
+void mem_verify(void)
 
 
 
@@ -18872,7 +18884,11 @@ void FUN_0053e9c0(float *param_1,float *param_2,float param_3)
 }
 
 /* ===== GEO_DefaultSpan__FP14GEO_RegionSpan @ 0x0053E9F0 ===== */
-void GEO_DefaultSpan__FP14GEO_RegionSpan(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void GEO_DefaultSpan__FP14GEO_RegionSpan(undefined4 *p0)
 
 
 
@@ -18880,23 +18896,25 @@ void GEO_DefaultSpan__FP14GEO_RegionSpan(int param_1)
 
   int iVar1;
 
+  int iVar2;
+
   
 
   do {
 
-    (**(code **)(param_1 + 0x28))(param_1 + 0x10);
+    (*(code *)p0[10])(p0 + 4);
 
-    iVar1 = *(int *)(param_1 + 0x20);
+    iVar1 = p0[8];
 
-    *(int *)(param_1 + 0x10 + iVar1 * 4) =
+    p0[iVar1 + 4] = p0[iVar1 + 4] + p0[iVar1 + 6];
 
-         *(int *)(param_1 + 0x10 + iVar1 * 4) + *(int *)(param_1 + 0x18 + iVar1 * 4);
+    iVar1 = p0[3];
 
-    iVar1 = *(int *)(param_1 + 0xc) - *(int *)(param_1 + 0x18 + *(int *)(param_1 + 0x20) * 4);
+    iVar2 = p0[p0[8] + 6];
 
-    *(int *)(param_1 + 0xc) = iVar1;
+    p0[3] = iVar1 - iVar2;
 
-  } while (iVar1 != 0);
+  } while (iVar1 - iVar2 != 0);
 
   return;
 
@@ -20293,13 +20311,17 @@ void FUN_0053fb40(float *param_1,undefined4 param_2,float param_3,float param_4)
 }
 
 /* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6 @ 0x0053FC10 ===== */
-void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6(undefined *param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6(undefined *p0)
 
 
 
 {
 
-  PTR__malloc_00580c84 = param_1;
+  PTR__malloc_00580c84 = p0;
 
   return;
 
@@ -20333,13 +20355,17 @@ uint FUN_0053fc20(int param_1)
 }
 
 /* ===== AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7 @ 0x0053FC40 ===== */
-void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7(undefined *param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+
+
+void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7(undefined *p0)
 
 
 
 {
 
-  PTR_FUN_00580c8c = param_1;
+  PTR_FUN_00580c8c = p0;
 
   return;
 

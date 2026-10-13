@@ -84,7 +84,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
     if ((local_30 != -0x55feff55) && (local_30 != -0x55feff56)) {
 
-      FUN_0051e680(s_Bad_version_of_GB2_file_0055b7c4);
+      error_screen_show(s_Bad_version_of_GB2_file_0055b7c4);
 
       Audio3DTestToneUpdate__Fv_5();
 

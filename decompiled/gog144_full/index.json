@@ -102,7 +102,7 @@
  "0x00402270": {
   "name": "FUN_00402270",
   "named": false,
-  "len": 9660
+  "len": 9080
  },
  "0x004029A0": {
   "name": "main_ai_move_004029a0",
@@ -172,7 +172,7 @@
  "0x00403E60": {
   "name": "FUN_00403e60",
   "named": false,
-  "len": 4732
+  "len": 4726
  },
  "0x004041F0": {
   "name": "ANM_DumpCluster",
@@ -220,9 +220,9 @@
   "len": 1766
  },
  "0x00404D70": {
-  "name": "main/ANIMATE_00404d70",
+  "name": "obj_impact_effects",
   "named": true,
-  "len": 4110
+  "len": 4107
  },
  "0x004050D0": {
   "name": "main_animate_004050d0",
@@ -267,12 +267,12 @@
  "0x00406DD0": {
   "name": "army_process_opcodes__FP6OBJECTPPUci",
   "named": true,
-  "len": 20474
+  "len": 20442
  },
  "0x004078F0": {
   "name": "army_create_platoon__FP6OBJECTPcT1",
   "named": true,
-  "len": 1518
+  "len": 1629
  },
  "0x00407A10": {
   "name": "FUN_00407a10",
@@ -282,7 +282,7 @@
  "0x00407C30": {
   "name": "AudioGetSampleName__Fi",
   "named": true,
-  "len": 127
+  "len": 223
  },
  "0x00407C40": {
   "name": "FUN_00407c40",
@@ -292,7 +292,7 @@
  "0x00408530": {
   "name": "FUN_00408530",
   "named": false,
-  "len": 13451
+  "len": 12994
  },
  "0x00408EC0": {
   "name": "FUN_00408ec0",
@@ -317,7 +317,7 @@
  "0x00409930": {
   "name": "FUN_00409930",
   "named": false,
-  "len": 1108
+  "len": 1080
  },
  "0x00409B60": {
   "name": "FUN_00409b60",
@@ -485,9 +485,9 @@
   "len": 719
  },
  "0x0040C2D0": {
-  "name": "FUN_0040c2d0",
-  "named": false,
-  "len": 1565
+  "name": "buoy_set_lights",
+  "named": true,
+  "len": 1568
  },
  "0x0040C480": {
   "name": "FUN_0040c480",
@@ -577,7 +577,7 @@
  "0x0040D6A0": {
   "name": "AudioGetMasterVolume__Fv",
   "named": true,
-  "len": 79
+  "len": 159
  },
  "0x0040D6B0": {
   "name": "FUN_0040d6b0",
@@ -622,7 +622,7 @@
  "0x0040D810": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM",
   "named": true,
-  "len": 117
+  "len": 187
  },
  "0x0040D820": {
   "name": "FUN_0040d820",
@@ -635,9 +635,9 @@
   "len": 6216
  },
  "0x0040E1C0": {
-  "name": "FUN_0040e1c0",
-  "named": false,
-  "len": 3149
+  "name": "charger_dust_fx",
+  "named": true,
+  "len": 3152
  },
  "0x0040EE20": {
   "name": "FUN_0040ee20",
@@ -1032,7 +1032,7 @@
  "0x0041A110": {
   "name": "kabutoai_select_punch_anim__FP6OBJECT",
   "named": true,
-  "len": 123
+  "len": 260
  },
  "0x0041A130": {
   "name": "FUN_0041a130",
@@ -1137,7 +1137,7 @@
  "0x0041C0C0": {
   "name": "bldg_get_bldg_name",
   "named": true,
-  "len": 3030
+  "len": 2938
  },
  "0x0041E440": {
   "name": "FUN_0041e440",
@@ -1255,9 +1255,9 @@
   "len": 1110
  },
  "0x00420C10": {
-  "name": "FUN_00420c10",
-  "named": false,
-  "len": 62494
+  "name": "input_mapping_init",
+  "named": true,
+  "len": 62500
  },
  "0x00423470": {
   "name": "FUN_00423470",
@@ -1280,19 +1280,19 @@
   "len": 3799
  },
  "0x004239D0": {
-  "name": "FUN_004239d0",
-  "named": false,
-  "len": 1308
+  "name": "keymap_save",
+  "named": true,
+  "len": 1307
  },
  "0x00423AF0": {
-  "name": "FUN_00423af0",
-  "named": false,
-  "len": 4066
+  "name": "keymap_load",
+  "named": true,
+  "len": 4085
  },
  "0x00423E20": {
-  "name": "FUN_00423e20",
-  "named": false,
-  "len": 23058
+  "name": "input_keyname_lookup",
+  "named": true,
+  "len": 23066
  },
  "0x004257C0": {
   "name": "FUN_004257c0",
@@ -1322,12 +1322,12 @@
  "0x00425E90": {
   "name": "AudioGetMasterVolume__Fv_2",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x00425EA0": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_2",
   "named": true,
-  "len": 119
+  "len": 189
  },
  "0x00425EB0": {
   "name": "FUN_00425eb0",
@@ -1335,19 +1335,19 @@
   "len": 848
  },
  "0x00425F60": {
-  "name": "FUN_00425f60",
-  "named": false,
-  "len": 890
+  "name": "keymap_slot_load",
+  "named": true,
+  "len": 894
  },
  "0x00426030": {
   "name": "FUN_00426030",
   "named": false,
-  "len": 4982
+  "len": 5006
  },
  "0x00426460": {
   "name": "main_dedicated_00426460",
   "named": true,
-  "len": 670
+  "len": 675
  },
  "0x00426510": {
   "name": "main_dedicated_00426510",
@@ -1412,7 +1412,7 @@
  "0x004270F0": {
   "name": "Audio3DTestToneUpdate__Fv",
   "named": true,
-  "len": 91
+  "len": 171
  },
  "0x00427100": {
   "name": "FUN_00427100",
@@ -1712,17 +1712,17 @@
  "0x0042B010": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3",
   "named": true,
-  "len": 119
+  "len": 189
  },
  "0x0042B020": {
   "name": "Audio3DTestToneUpdate__Fv_2",
   "named": true,
-  "len": 84
+  "len": 164
  },
  "0x0042B030": {
   "name": "Audio3DTestToneUpdate__Fv_3",
   "named": true,
-  "len": 93
+  "len": 173
  },
  "0x0042B040": {
   "name": "BinFileSeek",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "FUN_0042c3e0",
   "named": false,
-  "len": 23197
+  "len": 23214
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -1820,9 +1820,9 @@
   "len": 3835
  },
  "0x0042DC50": {
-  "name": "FUN_0042dc50",
-  "named": false,
-  "len": 2547
+  "name": "alpha_queue_push",
+  "named": true,
+  "len": 2551
  },
  "0x0042DE50": {
   "name": "shrap_create_water",
@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "FUN_004361b0",
   "named": false,
-  "len": 42871
+  "len": 43018
  },
  "0x00437FA0": {
   "name": "main/editor_00437fa0",
@@ -2240,9 +2240,9 @@
   "len": 5050
  },
  "0x00438770": {
-  "name": "main/editor_00438770",
+  "name": "wredit_menu_main",
   "named": true,
-  "len": 5729
+  "len": 5703
  },
  "0x00439490": {
   "name": "main/editor_00439490",
@@ -2250,14 +2250,14 @@
   "len": 1781
  },
  "0x00439660": {
-  "name": "main/editor_00439660",
+  "name": "wredit_menu_draw",
   "named": true,
-  "len": 1334
+  "len": 1330
  },
  "0x004397B0": {
-  "name": "main/editor_004397b0",
+  "name": "wredit_menu_3",
   "named": true,
-  "len": 6370
+  "len": 6340
  },
  "0x00439DF0": {
   "name": "main/editor_00439df0",
@@ -2265,9 +2265,9 @@
   "len": 795
  },
  "0x00439EB0": {
-  "name": "main/editor_00439eb0",
+  "name": "wredit_menu_4",
   "named": true,
-  "len": 5629
+  "len": 5599
  },
  "0x0043A440": {
   "name": "main/editor_0043a440",
@@ -2277,7 +2277,7 @@
  "0x0043A590": {
   "name": "main_editor_0043a590",
   "named": true,
-  "len": 6003
+  "len": 5972
  },
  "0x0043AA00": {
   "name": "main/editor_0043aa00",
@@ -2285,14 +2285,14 @@
   "len": 475
  },
  "0x0043AA40": {
-  "name": "main/editor_0043aa40",
+  "name": "wredit_obj_info",
   "named": true,
-  "len": 5626
+  "len": 5629
  },
  "0x0043AFA0": {
   "name": "main/editor_0043afa0",
   "named": true,
-  "len": 8206
+  "len": 8167
  },
  "0x0043B4D0": {
   "name": "main/editor_0043b4d0",
@@ -2305,14 +2305,14 @@
   "len": 390
  },
  "0x0043B530": {
-  "name": "main/editor_0043b530",
+  "name": "wredit_lock_menu",
   "named": true,
-  "len": 3173
+  "len": 3169
  },
  "0x0043B770": {
-  "name": "main/editor_0043b770",
+  "name": "wredit_menu_5",
   "named": true,
-  "len": 5965
+  "len": 5934
  },
  "0x0043BCC0": {
   "name": "main/editor_0043bcc0",
@@ -2320,14 +2320,14 @@
   "len": 916
  },
  "0x0043BD80": {
-  "name": "main/editor_0043bd80",
+  "name": "wredit_flick_menu",
   "named": true,
-  "len": 2398
+  "len": 2395
  },
  "0x0043BF40": {
-  "name": "main/editor_0043bf40",
+  "name": "wredit_flick_list",
   "named": true,
-  "len": 5785
+  "len": 5755
  },
  "0x0043C420": {
   "name": "main/editor_0043c420",
@@ -2335,24 +2335,24 @@
   "len": 1774
  },
  "0x0043C580": {
-  "name": "main/editor_0043c580",
+  "name": "wredit_lock_list",
   "named": true,
-  "len": 2372
+  "len": 2368
  },
  "0x0043C760": {
-  "name": "main/editor_0043c760",
+  "name": "wredit_menu_6",
   "named": true,
-  "len": 4119
+  "len": 4071
  },
  "0x0043CAA0": {
-  "name": "main/editor_0043caa0",
+  "name": "wredit_menu_7",
   "named": true,
-  "len": 6356
+  "len": 6325
  },
  "0x0043D0A0": {
-  "name": "main/editor_0043d0a0",
+  "name": "wredit_ai_menu",
   "named": true,
-  "len": 17456
+  "len": 17450
  },
  "0x0043EFB0": {
   "name": "main/editor_0043efb0",
@@ -2362,17 +2362,17 @@
  "0x0043F120": {
   "name": "main/editor_0043f120",
   "named": true,
-  "len": 1513
+  "len": 1498
  },
  "0x0043F220": {
-  "name": "main/editor_0043f220",
+  "name": "wredit_ai_menu2",
   "named": true,
-  "len": 8259
+  "len": 8254
  },
  "0x0043F950": {
-  "name": "main/editor_0043f950",
+  "name": "wredit_marker_info",
   "named": true,
-  "len": 1393
+  "len": 1391
  },
  "0x0043FA90": {
   "name": "main/editor_0043fa90",
@@ -2380,9 +2380,9 @@
   "len": 1804
  },
  "0x0043FBC0": {
-  "name": "main/editor_0043fbc0",
+  "name": "wredit_marker_info2",
   "named": true,
-  "len": 1393
+  "len": 1392
  },
  "0x0043FD00": {
   "name": "main/editor_0043fd00",
@@ -2390,9 +2390,9 @@
   "len": 2233
  },
  "0x0043FE90": {
-  "name": "main/editor_0043fe90",
+  "name": "wredit_trigger_menu",
   "named": true,
-  "len": 2400
+  "len": 2407
  },
  "0x004400B0": {
   "name": "main/editor_004400b0",
@@ -2410,9 +2410,9 @@
   "len": 1980
  },
  "0x00440500": {
-  "name": "main/editor_00440500",
+  "name": "wredit_marker_info3",
   "named": true,
-  "len": 1388
+  "len": 1387
  },
  "0x00440640": {
   "name": "main/editor_00440640",
@@ -2427,7 +2427,7 @@
  "0x00440D90": {
   "name": "main_editor_00440d90",
   "named": true,
-  "len": 5046
+  "len": 5051
  },
  "0x00441480": {
   "name": "main/editor_00441480",
@@ -2562,7 +2562,7 @@
  "0x004440F0": {
   "name": "FUN_004440f0",
   "named": false,
-  "len": 2838
+  "len": 2869
  },
  "0x00444320": {
   "name": "FUN_00444320",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FUN_004444c0",
   "named": false,
-  "len": 18371
+  "len": 18607
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -2622,7 +2622,7 @@
  "0x00446AD0": {
   "name": "FNT_RenderInfoProcess__FP14FNT_RenderInfof",
   "named": true,
-  "len": 374
+  "len": 328
  },
  "0x00446B00": {
   "name": "FUN_00446b00",
@@ -2652,7 +2652,7 @@
  "0x00446F50": {
   "name": "SetupCameraHail__Fv",
   "named": true,
-  "len": 99
+  "len": 179
  },
  "0x00446F70": {
   "name": "FUN_00446f70",
@@ -2667,12 +2667,12 @@
  "0x004470A0": {
   "name": "AudioGetMasterVolume__Fv_3",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x004470B0": {
   "name": "main_fx_004470b0",
   "named": true,
-  "len": 848
+  "len": 858
  },
  "0x00447190": {
   "name": "dialog_level_is_base_8",
@@ -2695,19 +2695,19 @@
   "len": 1296
  },
  "0x00447370": {
-  "name": "Main/fx_00447370",
+  "name": "fx_weather_fog_setup",
   "named": true,
-  "len": 1585
+  "len": 1600
  },
  "0x004474C0": {
-  "name": "Main/fx_004474c0",
+  "name": "fx_weather_fogsky_setup",
   "named": true,
-  "len": 1641
+  "len": 1659
  },
  "0x00447620": {
-  "name": "Main/fx_00447620",
+  "name": "fx_weather_fog_setup2",
   "named": true,
-  "len": 1590
+  "len": 1606
  },
  "0x00447F20": {
   "name": "Main/fx_00447f20",
@@ -2727,12 +2727,12 @@
  "0x00448100": {
   "name": "Main/fx_00448100",
   "named": true,
-  "len": 583
+  "len": 587
  },
  "0x00448170": {
   "name": "Main/fx_00448170",
   "named": true,
-  "len": 766
+  "len": 770
  },
  "0x004481E0": {
   "name": "fx_get_free_effect__Fv",
@@ -2772,7 +2772,7 @@
  "0x00448CA0": {
   "name": "fx_createGameLockedObj__FP6FxDataiii",
   "named": true,
-  "len": 1874
+  "len": 1739
  },
  "0x00448E10": {
   "name": "FUN_00448e10",
@@ -2817,7 +2817,7 @@
  "0x00449CE0": {
   "name": "FUN_00449ce0",
   "named": false,
-  "len": 69715
+  "len": 69876
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -2867,7 +2867,7 @@
  "0x00450CB0": {
   "name": "AudioGetMasterVolume__Fv_7",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x00450CC0": {
   "name": "FUN_00450cc0",
@@ -2877,17 +2877,17 @@
  "0x00450CE0": {
   "name": "AudioGetMasterVolume__Fv_4",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x00450CF0": {
   "name": "AudioGetMasterVolume__Fv_5",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x00450D00": {
   "name": "AudioGetMasterVolume__Fv_6",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x00450D10": {
   "name": "FUN_00450D10",
@@ -2997,7 +2997,7 @@
  "0x00452130": {
   "name": "FUN_00452130",
   "named": false,
-  "len": 1291
+  "len": 1303
  },
  "0x00452200": {
   "name": "FUN_00452200",
@@ -3225,14 +3225,14 @@
   "len": 1091
  },
  "0x00457270": {
-  "name": "FUN_00457270",
-  "named": false,
-  "len": 1656
+  "name": "comm_options_defaults",
+  "named": true,
+  "len": 1665
  },
  "0x00457440": {
   "name": "FUN_00457440",
   "named": false,
-  "len": 601
+  "len": 617
  },
  "0x004574D0": {
   "name": "FUN_004574d0",
@@ -3242,7 +3242,7 @@
  "0x00457550": {
   "name": "FUN_00457550",
   "named": false,
-  "len": 444
+  "len": 450
  },
  "0x004575D0": {
   "name": "FUN_004575d0",
@@ -3252,7 +3252,7 @@
  "0x004576D0": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_4",
   "named": true,
-  "len": 119
+  "len": 189
  },
  "0x004576E0": {
   "name": "FUN_004576e0",
@@ -3317,7 +3317,7 @@
  "0x004581E0": {
   "name": "WeaponIdGetPresent__FP6OBJECT",
   "named": true,
-  "len": 189
+  "len": 336
  },
  "0x00458200": {
   "name": "FUN_00458200",
@@ -3647,7 +3647,7 @@
  "0x00467260": {
   "name": "AudioDataStreamStatus__Fv",
   "named": true,
-  "len": 69
+  "len": 149
  },
  "0x00467270": {
   "name": "FUN_00467270",
@@ -3817,7 +3817,7 @@
  "0x0046F8B0": {
   "name": "kabutoai_is_punch_anim__FP6OBJECT",
   "named": true,
-  "len": 106
+  "len": 254
  },
  "0x0046F8D0": {
   "name": "FUN_0046f8d0",
@@ -3927,12 +3927,12 @@
  "0x00471DC0": {
   "name": "FUN_00471dc0",
   "named": false,
-  "len": 316
+  "len": 319
  },
  "0x00471E10": {
   "name": "main_makeobj_00471e10",
   "named": true,
-  "len": 7663
+  "len": 7668
  },
  "0x004721B0": {
   "name": "BinFileSeek_5",
@@ -3997,7 +3997,7 @@
  "0x004753C0": {
   "name": "FUN_004753c0",
   "named": false,
-  "len": 3995
+  "len": 4017
  },
  "0x00475700": {
   "name": "FUN_00475700",
@@ -4022,7 +4022,7 @@
  "0x00476DC0": {
   "name": "AudioDataStreamStatus__Fv_2",
   "named": true,
-  "len": 74
+  "len": 154
  },
  "0x00476DD0": {
   "name": "marker_get_name",
@@ -4032,7 +4032,7 @@
  "0x00476E90": {
   "name": "showchat_mission_objective__Fi",
   "named": true,
-  "len": 284
+  "len": 342
  },
  "0x00476EB0": {
   "name": "FUN_00476eb0",
@@ -4052,7 +4052,7 @@
  "0x00477050": {
   "name": "showchat_mission_objective__Fi_2",
   "named": true,
-  "len": 3241
+  "len": 3294
  },
  "0x00477340": {
   "name": "FUN_00477340",
@@ -4142,7 +4142,7 @@
  "0x00479300": {
   "name": "mecc_init__FP6OBJECT",
   "named": true,
-  "len": 1351
+  "len": 1411
  },
  "0x0047BDF0": {
   "name": "FUN_0047bdf0",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "FUN_0047caa0",
   "named": false,
-  "len": 22687
+  "len": 22543
  },
  "0x0047DF10": {
   "name": "FUN_0047df10",
@@ -4207,7 +4207,7 @@
  "0x0047F330": {
   "name": "mecc_indicate_shots_fired__FP6OBJECT",
   "named": true,
-  "len": 365
+  "len": 484
  },
  "0x0047F370": {
   "name": "FUN_0047f370",
@@ -4335,14 +4335,14 @@
   "len": 1195
  },
  "0x004824E0": {
-  "name": "FUN_004824E0",
-  "named": false,
-  "len": 2810
+  "name": "game_options_load",
+  "named": true,
+  "len": 2815
  },
  "0x00482700": {
-  "name": "FUN_00482700",
-  "named": false,
-  "len": 2663
+  "name": "game_options_verify",
+  "named": true,
+  "len": 2670
  },
  "0x004829D0": {
   "name": "FUN_004829d0",
@@ -4350,14 +4350,14 @@
   "len": 1636
  },
  "0x00482B60": {
-  "name": "FUN_00482B60",
-  "named": false,
-  "len": 3520
+  "name": "menu_mission_launch",
+  "named": true,
+  "len": 3555
  },
  "0x00482E90": {
-  "name": "FUN_00482e90",
-  "named": false,
-  "len": 3938
+  "name": "menu_handlers_lookup",
+  "named": true,
+  "len": 3962
  },
  "0x00483200": {
   "name": "main_menu_00483200",
@@ -4375,9 +4375,9 @@
   "len": 1242
  },
  "0x004835F0": {
-  "name": "FUN_004835f0",
-  "named": false,
-  "len": 3998
+  "name": "menu_handlers_exec",
+  "named": true,
+  "len": 4016
  },
  "0x00483BA0": {
   "name": "FUN_00483BA0",
@@ -4387,7 +4387,7 @@
  "0x00483E50": {
   "name": "FUN_00483e50",
   "named": false,
-  "len": 2237
+  "len": 2246
  },
  "0x00484340": {
   "name": "FUN_00484340",
@@ -4407,7 +4407,7 @@
  "0x00484B00": {
   "name": "FUN_00484b00",
   "named": false,
-  "len": 2528
+  "len": 2534
  },
  "0x00485020": {
   "name": "FUN_00485020",
@@ -4422,7 +4422,7 @@
  "0x00485300": {
   "name": "FUN_00485300",
   "named": false,
-  "len": 2599
+  "len": 2616
  },
  "0x00485840": {
   "name": "FUN_00485840",
@@ -4432,7 +4432,7 @@
  "0x00485B00": {
   "name": "FUN_00485B00",
   "named": false,
-  "len": 2188
+  "len": 2196
  },
  "0x00485F10": {
   "name": "FUN_00485F10",
@@ -4442,7 +4442,7 @@
  "0x00486110": {
   "name": "FUN_00486110",
   "named": false,
-  "len": 1354
+  "len": 1362
  },
  "0x004862E0": {
   "name": "FUN_004862E0",
@@ -4472,7 +4472,7 @@
  "0x004888F0": {
   "name": "FUN_004888f0",
   "named": false,
-  "len": 1123
+  "len": 1130
  },
  "0x00488A80": {
   "name": "FUN_00488A80",
@@ -4492,7 +4492,7 @@
  "0x004895F0": {
   "name": "texture_add_file",
   "named": true,
-  "len": 2195
+  "len": 2205
  },
  "0x004897D0": {
   "name": "FUN_004897d0",
@@ -4512,7 +4512,7 @@
  "0x00489F50": {
   "name": "FUN_00489F50",
   "named": false,
-  "len": 1967
+  "len": 1974
  },
  "0x0048A7D0": {
   "name": "FUN_0048A7D0",
@@ -4547,7 +4547,7 @@
  "0x0048CA10": {
   "name": "FUN_0048CA10",
   "named": false,
-  "len": 3183
+  "len": 3193
  },
  "0x0048D4B0": {
   "name": "FUN_0048D4B0",
@@ -4557,7 +4557,7 @@
  "0x0048D690": {
   "name": "FUN_0048d690",
   "named": false,
-  "len": 1521
+  "len": 1526
  },
  "0x0048DE30": {
   "name": "FUN_0048DE30",
@@ -4587,7 +4587,7 @@
  "0x0048EC30": {
   "name": "FUN_0048EC30",
   "named": false,
-  "len": 1412
+  "len": 1419
  },
  "0x0048EE60": {
   "name": "FUN_0048EE60",
@@ -4617,7 +4617,7 @@
  "0x004907E0": {
   "name": "FUN_004907e0",
   "named": false,
-  "len": 795
+  "len": 800
  },
  "0x00490860": {
   "name": "FUN_00490860",
@@ -4637,12 +4637,12 @@
  "0x004909D0": {
   "name": "scenerio_start_index__Fi",
   "named": true,
-  "len": 165
+  "len": 221
  },
  "0x004909F0": {
   "name": "FUN_004909f0",
   "named": false,
-  "len": 3035
+  "len": 3048
  },
  "0x00490C50": {
   "name": "FUN_00490c50",
@@ -4662,7 +4662,7 @@
  "0x00490FE0": {
   "name": "FUN_00490fe0",
   "named": false,
-  "len": 4330
+  "len": 4324
  },
  "0x00491380": {
   "name": "FUN_00491380",
@@ -4670,9 +4670,9 @@
   "len": 9997
  },
  "0x00491C00": {
-  "name": "FUN_00491c00",
-  "named": false,
-  "len": 1029
+  "name": "mission_level_load",
+  "named": true,
+  "len": 1035
  },
  "0x00491D30": {
   "name": "FUN_00491d30",
@@ -4680,14 +4680,14 @@
   "len": 1426
  },
  "0x00491E30": {
-  "name": "FUN_00491e30",
-  "named": false,
-  "len": 1248
+  "name": "savegame_load",
+  "named": true,
+  "len": 1249
  },
  "0x00491F10": {
-  "name": "FUN_00491f10",
-  "named": false,
-  "len": 1079
+  "name": "savegame_verify",
+  "named": true,
+  "len": 1082
  },
  "0x00492010": {
   "name": "FUN_00492010",
@@ -4712,12 +4712,12 @@
  "0x004928A0": {
   "name": "FUN_004928a0",
   "named": false,
-  "len": 482
+  "len": 485
  },
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 23981
+  "len": 24061
  },
  "0x00493960": {
   "name": "FUN_00493960",
@@ -4775,14 +4775,14 @@
   "len": 1268
  },
  "0x004944D0": {
-  "name": "FUN_004944D0",
-  "named": false,
-  "len": 409
+  "name": "mission_trigger_name",
+  "named": true,
+  "len": 417
  },
  "0x004946A0": {
   "name": "FUN_004946a0",
   "named": false,
-  "len": 2309
+  "len": 2405
  },
  "0x00494890": {
   "name": "FUN_00494890",
@@ -4942,7 +4942,7 @@
  "0x00496220": {
   "name": "ambient_streams_stopped__FP6OBJECT",
   "named": true,
-  "len": 209
+  "len": 357
  },
  "0x004967B0": {
   "name": "FUN_004967b0",
@@ -4987,7 +4987,7 @@
  "0x00496C00": {
   "name": "object_allocate_type",
   "named": true,
-  "len": 3324
+  "len": 3334
  },
  "0x00496E80": {
   "name": "FUN_00496e80",
@@ -4997,7 +4997,7 @@
  "0x00497150": {
   "name": "object_allocate_type_end",
   "named": true,
-  "len": 3333
+  "len": 3343
  },
  "0x004973C0": {
   "name": "FUN_004973c0",
@@ -5052,7 +5052,7 @@
  "0x00497BD0": {
   "name": "FUN_00497bd0",
   "named": false,
-  "len": 1107
+  "len": 1112
  },
  "0x00497C90": {
   "name": "FUN_00497c90",
@@ -5082,7 +5082,7 @@
  "0x00497DE0": {
   "name": "FUN_00497de0",
   "named": false,
-  "len": 5477
+  "len": 5617
  },
  "0x004981C0": {
   "name": "FUN_004981c0",
@@ -5102,12 +5102,12 @@
  "0x004988E0": {
   "name": "FUN_004988e0",
   "named": false,
-  "len": 2905
+  "len": 2964
  },
  "0x00498AF0": {
   "name": "FUN_00498af0",
   "named": false,
-  "len": 1486
+  "len": 1502
  },
  "0x00498C60": {
   "name": "FUN_00498c60",
@@ -5365,9 +5365,9 @@
   "len": 1190
  },
  "0x0049E290": {
-  "name": "FUN_0049e290",
-  "named": false,
-  "len": 758
+  "name": "options_defaults",
+  "named": true,
+  "len": 762
  },
  "0x0049E350": {
   "name": "FUN_0049e350",
@@ -5395,9 +5395,9 @@
   "len": 564
  },
  "0x0049F5A0": {
-  "name": "FUN_0049f5a0",
-  "named": false,
-  "len": 5165
+  "name": "chat_log_init",
+  "named": true,
+  "len": 5184
  },
  "0x0049FA90": {
   "name": "main_path_0049fa90",
@@ -5477,7 +5477,7 @@
  "0x004A13A0": {
   "name": "endDisplay__Fv",
   "named": true,
-  "len": 101
+  "len": 181
  },
  "0x004A13C0": {
   "name": "FUN_004a13c0",
@@ -5662,7 +5662,7 @@
  "0x004A54E0": {
   "name": "FUN_004A54E0",
   "named": false,
-  "len": 7099
+  "len": 7114
  },
  "0x004A59A0": {
   "name": "FUN_004a59a0",
@@ -5782,7 +5782,7 @@
  "0x004A6400": {
   "name": "voBufReset__FP5VoBuf",
   "named": true,
-  "len": 145
+  "len": 180
  },
  "0x004A6420": {
   "name": "FUN_004a6420",
@@ -5965,14 +5965,14 @@
   "len": 332
  },
  "0x004A9160": {
-  "name": "FUN_004a9160",
-  "named": false,
-  "len": 19887
+  "name": "projectile_define",
+  "named": true,
+  "len": 19892
  },
  "0x004A9E10": {
   "name": "FUN_004a9e10",
   "named": false,
-  "len": 1660
+  "len": 1665
  },
  "0x004A9F30": {
   "name": "FUN_004a9f30",
@@ -6032,12 +6032,12 @@
  "0x004AAB40": {
   "name": "FUN_004aab40",
   "named": false,
-  "len": 377
+  "len": 380
  },
  "0x004ABD40": {
-  "name": "FUN_004abd40",
-  "named": false,
-  "len": 6706
+  "name": "repair_spell_fx",
+  "named": true,
+  "len": 6709
  },
  "0x004AC4B0": {
   "name": "FUN_004ac4b0",
@@ -6052,7 +6052,7 @@
  "0x004AC760": {
   "name": "FUN_004ac760",
   "named": false,
-  "len": 1521
+  "len": 1560
  },
  "0x004AC860": {
   "name": "FUN_004ac860",
@@ -6092,7 +6092,7 @@
  "0x004ADFA0": {
   "name": "main_readdata_004adfa0",
   "named": true,
-  "len": 5477
+  "len": 5487
  },
  "0x004AE290": {
   "name": "FUN_004ae290",
@@ -6102,7 +6102,7 @@
  "0x004AE310": {
   "name": "reread_globals_bin",
   "named": true,
-  "len": 1415
+  "len": 1425
  },
  "0x004AE480": {
   "name": "main_readgbls_004ae480",
@@ -6152,7 +6152,7 @@
  "0x004B0B70": {
   "name": "read_world_list",
   "named": true,
-  "len": 3769
+  "len": 3779
  },
  "0x004B0D80": {
   "name": "main/readwrls_004b0d80",
@@ -6177,7 +6177,7 @@
  "0x004B0FC0": {
   "name": "bin_load_1a0002e5",
   "named": true,
-  "len": 69988
+  "len": 69998
  },
  "0x004B42D0": {
   "name": "main_readwrls_004b42d0",
@@ -6197,7 +6197,7 @@
  "0x004B4560": {
   "name": "AudioGetSampleName__Fi_2",
   "named": true,
-  "len": 258
+  "len": 222
  },
  "0x004B4570": {
   "name": "FUN_004b4570",
@@ -6207,7 +6207,7 @@
  "0x004B4CA0": {
   "name": "FUN_004b4ca0",
   "named": false,
-  "len": 11370
+  "len": 10876
  },
  "0x004B54C0": {
   "name": "FUN_004b54c0",
@@ -6352,7 +6352,7 @@
  "0x004B8C90": {
   "name": "reaper_can_use_other__FP6OBJECTi",
   "named": true,
-  "len": 354
+  "len": 492
  },
  "0x004B8CD0": {
   "name": "reaper_has_bow",
@@ -6392,7 +6392,7 @@
  "0x004B9120": {
   "name": "FUN_004b9120",
   "named": false,
-  "len": 1129
+  "len": 1207
  },
  "0x004B91D0": {
   "name": "FUN_004b91d0",
@@ -6482,7 +6482,7 @@
  "0x004BC550": {
   "name": "reaper_is_water_jump__FP6OBJECT",
   "named": true,
-  "len": 239
+  "len": 387
  },
  "0x004BC640": {
   "name": "FUN_004bc640",
@@ -6527,7 +6527,7 @@
  "0x004BD7C0": {
   "name": "reaper_change_bow__FP6OBJECT",
   "named": true,
-  "len": 3386
+  "len": 3428
  },
  "0x004BDAA0": {
   "name": "FUN_004bdaa0",
@@ -6612,7 +6612,7 @@
  "0x004C0810": {
   "name": "FUN_004c0810",
   "named": false,
-  "len": 9142
+  "len": 9482
  },
  "0x004C0FC0": {
   "name": "FUN_004c0fc0",
@@ -6687,17 +6687,17 @@
  "0x004C4880": {
   "name": "FUN_004c4880",
   "named": false,
-  "len": 3726
+  "len": 3689
  },
  "0x004C4B10": {
   "name": "fillin_snap__FP6OBJECTP8TimeSnap",
   "named": true,
-  "len": 533
+  "len": 535
  },
  "0x004C4B60": {
   "name": "FUN_004c4b60",
   "named": false,
-  "len": 3726
+  "len": 3689
  },
  "0x004C4DF0": {
   "name": "FUN_004c4df0",
@@ -6732,7 +6732,7 @@
  "0x004C54D0": {
   "name": "reaper_check_enter_teleport__FP6OBJECT",
   "named": true,
-  "len": 3113
+  "len": 3270
  },
  "0x004C5810": {
   "name": "FUN_004c5810",
@@ -6782,7 +6782,7 @@
  "0x004C73C0": {
   "name": "FUN_004c73c0",
   "named": false,
-  "len": 3520
+  "len": 3475
  },
  "0x004CA560": {
   "name": "FUN_004ca560",
@@ -6867,7 +6867,7 @@
  "0x004CC810": {
   "name": "FUN_004cc810",
   "named": false,
-  "len": 821
+  "len": 838
  },
  "0x004CC8D0": {
   "name": "FUN_004cc8d0",
@@ -6877,12 +6877,12 @@
  "0x004CC900": {
   "name": "FUN_004cc900",
   "named": false,
-  "len": 15061
+  "len": 15219
  },
  "0x004CD5D0": {
   "name": "FUN_004cd5d0",
   "named": false,
-  "len": 4928
+  "len": 4932
  },
  "0x004CD990": {
   "name": "FUN_004cd990",
@@ -6890,9 +6890,9 @@
   "len": 1063
  },
  "0x004CDA80": {
-  "name": "FUN_004cda80",
-  "named": false,
-  "len": 13925
+  "name": "dev_debug_flags",
+  "named": true,
+  "len": 14022
  },
  "0x004CE880": {
   "name": "FUN_004ce880",
@@ -6982,7 +6982,7 @@
  "0x004D49E0": {
   "name": "kabutoai_is_punch_anim__FP6OBJECT_2",
   "named": true,
-  "len": 111
+  "len": 246
  },
  "0x004D4A00": {
   "name": "FUN_004d4a00",
@@ -7072,7 +7072,7 @@
  "0x004D7C40": {
   "name": "kabutoai_is_punch_anim__FP6OBJECT_3",
   "named": true,
-  "len": 112
+  "len": 247
  },
  "0x004D7C60": {
   "name": "FUN_004d7c60",
@@ -7097,7 +7097,7 @@
  "0x004D8420": {
   "name": "endDisplay__Fv_2",
   "named": true,
-  "len": 193
+  "len": 271
  },
  "0x004D8440": {
   "name": "FUN_004d8440",
@@ -7127,7 +7127,7 @@
  "0x004E13A0": {
   "name": "rpman_init_firing__FP6OBJECT",
   "named": true,
-  "len": 442
+  "len": 590
  },
  "0x004E13E0": {
   "name": "FUN_004e13e0",
@@ -7137,7 +7137,7 @@
  "0x004E1970": {
   "name": "FUN_004e1970",
   "named": false,
-  "len": 10069
+  "len": 9628
  },
  "0x004E21F0": {
   "name": "FUN_004e21f0",
@@ -7327,7 +7327,7 @@
  "0x004E6BA0": {
   "name": "FUN_004e6ba0",
   "named": false,
-  "len": 6468
+  "len": 6471
  },
  "0x004E7160": {
   "name": "FUN_004e7160",
@@ -7362,7 +7362,7 @@
  "0x004E7970": {
   "name": "rpman_gib__FP6OBJECTT0",
   "named": true,
-  "len": 1410
+  "len": 1443
  },
  "0x004E7AE0": {
   "name": "FUN_004e7ae0",
@@ -7455,9 +7455,9 @@
   "len": 1432
  },
  "0x004ED600": {
-  "name": "FUN_004ED600",
-  "named": false,
-  "len": 1067
+  "name": "perf_options_menu",
+  "named": true,
+  "len": 1072
  },
  "0x004ED910": {
   "name": "FUN_004ed910",
@@ -7482,7 +7482,7 @@
  "0x004EDDF0": {
   "name": "FUN_004eddf0",
   "named": false,
-  "len": 337
+  "len": 347
  },
  "0x004EDE30": {
   "name": "FUN_004ede30",
@@ -7515,19 +7515,19 @@
   "len": 1841
  },
  "0x004EE390": {
-  "name": "FUN_004ee390",
-  "named": false,
-  "len": 3452
+  "name": "editor_dump_objnames",
+  "named": true,
+  "len": 3460
  },
  "0x004EE630": {
   "name": "FUN_004ee630",
   "named": false,
-  "len": 381
+  "len": 456
  },
  "0x004EE670": {
   "name": "FUN_004ee670",
   "named": false,
-  "len": 1939
+  "len": 2020
  },
  "0x004EE800": {
   "name": "FUN_004EE800",
@@ -7535,19 +7535,19 @@
   "len": 357
  },
  "0x004EE890": {
-  "name": "FUN_004ee890",
-  "named": false,
-  "len": 589
+  "name": "game_files_check",
+  "named": true,
+  "len": 598
  },
  "0x004EE930": {
   "name": "FUN_004ee930",
   "named": false,
-  "len": 584
+  "len": 588
  },
  "0x004EE9C0": {
   "name": "FUN_004ee9c0",
   "named": false,
-  "len": 586
+  "len": 590
  },
  "0x004EEA40": {
   "name": "FUN_004eea40",
@@ -7632,7 +7632,7 @@
  "0x004F4250": {
   "name": "kabutoai_select_punch_anim__FP6OBJECT_2",
   "named": true,
-  "len": 127
+  "len": 264
  },
  "0x004F4C00": {
   "name": "smartie_lock_to_player",
@@ -7767,7 +7767,7 @@
  "0x004FA1E0": {
   "name": "AudioDataStreamStatus__Fv_3",
   "named": true,
-  "len": 85
+  "len": 165
  },
  "0x004FA1F0": {
   "name": "FUN_004fa1f0",
@@ -7855,9 +7855,9 @@
   "len": 776
  },
  "0x00500220": {
-  "name": "FUN_00500220",
-  "named": false,
-  "len": 1457
+  "name": "status_subobj_init",
+  "named": true,
+  "len": 1463
  },
  "0x00500300": {
   "name": "FUN_00500300",
@@ -7877,7 +7877,7 @@
  "0x00500520": {
   "name": "main_status_00500520",
   "named": true,
-  "len": 2830
+  "len": 2836
  },
  "0x005007F0": {
   "name": "FUN_005007f0",
@@ -7917,7 +7917,7 @@
  "0x00500F40": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_5",
   "named": true,
-  "len": 208
+  "len": 276
  },
  "0x00500F50": {
   "name": "FUN_00500f50",
@@ -8025,9 +8025,9 @@
   "len": 2663
  },
  "0x00504230": {
-  "name": "FUN_00504230",
-  "named": false,
-  "len": 1181
+  "name": "mecc_smoking_fx_update",
+  "named": true,
+  "len": 1191
  },
  "0x00504930": {
   "name": "teammecc_clear_mode",
@@ -8042,7 +8042,7 @@
  "0x005059B0": {
   "name": "mecc_animselect_gm",
   "named": true,
-  "len": 46214
+  "len": 46665
  },
  "0x005078E0": {
   "name": "main_textget_005078e0",
@@ -8077,7 +8077,7 @@
  "0x00507E40": {
   "name": "endDisplay__Fv_3",
   "named": true,
-  "len": 94
+  "len": 174
  },
  "0x00507E50": {
   "name": "main_texture_00507e50",
@@ -8552,7 +8552,7 @@
  "0x00515E90": {
   "name": "FNT_StringRender__FPcP14FNT_RenderInfo",
   "named": true,
-  "len": 161
+  "len": 217
  },
  "0x00515EB0": {
   "name": "FUN_00515eb0",
@@ -8562,7 +8562,7 @@
  "0x00515ED0": {
   "name": "AudioMusicStreamPlay__Fiiii",
   "named": true,
-  "len": 95
+  "len": 198
  },
  "0x00515F20": {
   "name": "FUN_00515f20",
@@ -8572,7 +8572,7 @@
  "0x00515F30": {
   "name": "ResetFog__Fv",
   "named": true,
-  "len": 223
+  "len": 301
  },
  "0x00515F60": {
   "name": "FUN_00515f60",
@@ -8582,7 +8582,7 @@
  "0x005160A0": {
   "name": "AudioGetMasterVolume__Fv_8",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x005160B0": {
   "name": "FUN_005160b0",
@@ -8647,12 +8647,12 @@
  "0x005168D0": {
   "name": "AudioDataStreamStatus__Fv_4",
   "named": true,
-  "len": 85
+  "len": 165
  },
  "0x005168E0": {
   "name": "AudioDataStreamStatus__Fv_5",
   "named": true,
-  "len": 85
+  "len": 165
  },
  "0x005168F0": {
   "name": "FUN_005168f0",
@@ -8800,9 +8800,9 @@
   "len": 2695
  },
  "0x00517CA0": {
-  "name": "FUN_00517ca0",
-  "named": false,
-  "len": 11758
+  "name": "exception_report_write",
+  "named": true,
+  "len": 11768
  },
  "0x00518620": {
   "name": "FUN_00518620",
@@ -8875,9 +8875,9 @@
   "len": 909
  },
  "0x00519110": {
-  "name": "FUN_00519110",
-  "named": false,
-  "len": 5187
+  "name": "dinput_init",
+  "named": true,
+  "len": 5186
  },
  "0x00519750": {
   "name": "FUN_00519750",
@@ -9110,9 +9110,9 @@
   "len": 1018
  },
  "0x0051C470": {
-  "name": "FUN_0051c470",
-  "named": false,
-  "len": 637
+  "name": "localization_check",
+  "named": true,
+  "len": 643
  },
  "0x0051C540": {
   "name": "FUN_0051c540",
@@ -9217,7 +9217,7 @@
  "0x0051C890": {
   "name": "AudioDataStreamStatus__Fv_6",
   "named": true,
-  "len": 71
+  "len": 151
  },
  "0x0051C8A0": {
   "name": "FUN_0051c8a0",
@@ -9232,7 +9232,7 @@
  "0x0051C8D0": {
   "name": "FUN_0051c8d0",
   "named": false,
-  "len": 1508
+  "len": 1604
  },
  "0x0051C9F0": {
   "name": "FUN_0051C9F0",
@@ -9242,52 +9242,52 @@
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
   "named": true,
-  "len": 6073
+  "len": 6079
  },
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
   "named": true,
-  "len": 15503
+  "len": 15508
  },
  "0x0051DC20": {
-  "name": "FUN_0051DC20",
-  "named": false,
-  "len": 10454
+  "name": "startup_options_init",
+  "named": true,
+  "len": 10693
  },
  "0x0051E670": {
   "name": "Audio3DTestToneUpdate__Fv_4",
   "named": true,
-  "len": 135
+  "len": 213
  },
  "0x0051E680": {
-  "name": "FUN_0051e680",
-  "named": false,
-  "len": 3698
+  "name": "error_screen_show",
+  "named": true,
+  "len": 3703
  },
  "0x0051EA20": {
   "name": "FUN_0051ea20",
   "named": false,
-  "len": 211
+  "len": 216
  },
  "0x0051EA30": {
   "name": "FUN_0051ea30",
   "named": false,
-  "len": 146
+  "len": 151
  },
  "0x0051EA60": {
   "name": "FUN_0051ea60",
   "named": false,
-  "len": 211
+  "len": 216
  },
  "0x0051EA90": {
   "name": "FUN_0051EA90",
   "named": false,
-  "len": 80
+  "len": 85
  },
  "0x0051EAA0": {
   "name": "Audio3DTestToneUpdate__Fv_5",
   "named": true,
-  "len": 84
+  "len": 164
  },
  "0x0051EAC0": {
   "name": "FUN_0051eac0",
@@ -9305,14 +9305,14 @@
   "len": 257
  },
  "0x0051F2F0": {
-  "name": "FUN_0051f2f0",
-  "named": false,
-  "len": 2136
+  "name": "gamespy_shutdown",
+  "named": true,
+  "len": 2140
  },
  "0x0051F470": {
   "name": "FUN_0051f470",
   "named": false,
-  "len": 6718
+  "len": 6772
  },
  "0x0051F9E0": {
   "name": "FUN_0051f9e0",
@@ -9325,14 +9325,14 @@
   "len": 1425
  },
  "0x0051FC90": {
-  "name": "FUN_0051FC90",
-  "named": false,
-  "len": 2101
+  "name": "comm_tcpip_menu",
+  "named": true,
+  "len": 2104
  },
  "0x00520050": {
-  "name": "FUN_00520050",
-  "named": false,
-  "len": 4684
+  "name": "comm_client_connect_menu",
+  "named": true,
+  "len": 4696
  },
  "0x00520490": {
   "name": "comm_comm_00520490",
@@ -9340,19 +9340,19 @@
   "len": 4450
  },
  "0x00520B90": {
-  "name": "FUN_00520B90",
-  "named": false,
-  "len": 1887
+  "name": "gamespy_send_statechange",
+  "named": true,
+  "len": 1899
  },
  "0x00520D70": {
   "name": "FUN_00520D70",
   "named": false,
-  "len": 2330
+  "len": 2364
  },
  "0x00520FD0": {
-  "name": "FUN_00520FD0",
-  "named": false,
-  "len": 1404
+  "name": "comm_damage_teams_menu",
+  "named": true,
+  "len": 1414
  },
  "0x00521150": {
   "name": "FUN_00521150",
@@ -9480,9 +9480,9 @@
   "len": 1019
  },
  "0x00522580": {
-  "name": "FUN_00522580",
-  "named": false,
-  "len": 1122
+  "name": "comm_base_status_menu",
+  "named": true,
+  "len": 1131
  },
  "0x005226B0": {
   "name": "FUN_005226b0",
@@ -9495,29 +9495,29 @@
   "len": 468
  },
  "0x005227B0": {
-  "name": "FUN_005227B0",
-  "named": false,
-  "len": 3806
+  "name": "comm_scorelimit_menu",
+  "named": true,
+  "len": 3832
  },
  "0x00522B80": {
-  "name": "FUN_00522B80",
-  "named": false,
-  "len": 7805
+  "name": "comm_game_setup_menu",
+  "named": true,
+  "len": 7830
  },
  "0x005233F0": {
-  "name": "FUN_005233F0",
-  "named": false,
-  "len": 22955
+  "name": "comm_show_conn_menu",
+  "named": true,
+  "len": 23025
  },
  "0x00524DE0": {
-  "name": "FUN_00524de0",
-  "named": false,
-  "len": 2828
+  "name": "gamespy_host_game",
+  "named": true,
+  "len": 2842
  },
  "0x00525030": {
   "name": "Audio3DTestToneUpdate__Fv_6",
   "named": true,
-  "len": 182
+  "len": 260
  },
  "0x00525040": {
   "name": "FUN_00525040",
@@ -9560,9 +9560,9 @@
   "len": 743
  },
  "0x00528620": {
-  "name": "FUN_00528620",
-  "named": false,
-  "len": 1002
+  "name": "gamespy_statechange2",
+  "named": true,
+  "len": 1010
  },
  "0x00528720": {
   "name": "FUN_00528720",
@@ -9590,9 +9590,9 @@
   "len": 3773
  },
  "0x00529320": {
-  "name": "FUN_00529320",
-  "named": false,
-  "len": 5731
+  "name": "comm_change_options_menu",
+  "named": true,
+  "len": 5743
  },
  "0x00529B20": {
   "name": "FUN_00529b20",
@@ -9642,7 +9642,7 @@
  "0x0052AAD0": {
   "name": "AudioGetMasterVolume__Fv_9",
   "named": true,
-  "len": 81
+  "len": 161
  },
  "0x0052AAE0": {
   "name": "FUN_0052aae0",
@@ -9652,7 +9652,7 @@
  "0x0052AAF0": {
   "name": "AudioGetMasterVolume__Fv_10",
   "named": true,
-  "len": 82
+  "len": 162
  },
  "0x0052AB00": {
   "name": "FUN_0052ab00",
@@ -9850,9 +9850,9 @@
   "len": 612
  },
  "0x0052BAB0": {
-  "name": "FUN_0052bab0",
-  "named": false,
-  "len": 9008
+  "name": "comm_net_stats_dump",
+  "named": true,
+  "len": 9015
  },
  "0x0052C4D0": {
   "name": "FUN_0052c4d0",
@@ -9870,14 +9870,14 @@
   "len": 445
  },
  "0x0052D220": {
-  "name": "FUN_0052D220",
-  "named": false,
-  "len": 391
+  "name": "gamespy_statechange3",
+  "named": true,
+  "len": 399
  },
  "0x0052D280": {
-  "name": "FUN_0052d280",
-  "named": false,
-  "len": 536
+  "name": "gamespy_shutdown2",
+  "named": true,
+  "len": 541
  },
  "0x0052D300": {
   "name": "net_0052d300",
@@ -10007,7 +10007,7 @@
  "0x0052EBD0": {
   "name": "FUN_0052ebd0",
   "named": false,
-  "len": 4726
+  "len": 4734
  },
  "0x0052EF00": {
   "name": "FUN_0052EF00",
@@ -10057,22 +10057,22 @@
  "0x0052F350": {
   "name": "FUN_0052f350",
   "named": false,
-  "len": 427
+  "len": 433
  },
  "0x0052F3B0": {
-  "name": "FUN_0052f3b0",
-  "named": false,
-  "len": 1475
+  "name": "comm_fakehost_menu",
+  "named": true,
+  "len": 1497
  },
  "0x0052F510": {
   "name": "FUN_0052f510",
   "named": false,
-  "len": 860
+  "len": 866
  },
  "0x0052F5B0": {
   "name": "FUN_0052f5b0",
   "named": false,
-  "len": 1080
+  "len": 1088
  },
  "0x0052F6A0": {
   "name": "FUN_0052f6a0",
@@ -10095,9 +10095,9 @@
   "len": 303
  },
  "0x0052F790": {
-  "name": "FUN_0052f790",
-  "named": false,
-  "len": 891
+  "name": "comm_player_marker_menu",
+  "named": true,
+  "len": 902
  },
  "0x0052F830": {
   "name": "FUN_0052f830",
@@ -10222,7 +10222,7 @@
  "0x005310B0": {
   "name": "Audio3DTestToneUpdate__Fv_7",
   "named": true,
-  "len": 84
+  "len": 164
  },
  "0x005310C0": {
   "name": "FUN_005310c0",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36060
+  "len": 36120
  },
  "0x00532E20": {
   "name": "FUN_00532e20",
@@ -10277,7 +10277,7 @@
  "0x005330C0": {
   "name": "FUN_005330c0",
   "named": false,
-  "len": 662
+  "len": 670
  },
  "0x00533140": {
   "name": "FUN_00533140",
@@ -10422,7 +10422,7 @@
  "0x00536CA0": {
   "name": "AudioGetMasterVolume__Fv_11",
   "named": true,
-  "len": 82
+  "len": 162
  },
  "0x00536CB0": {
   "name": "FUN_00536cb0",
@@ -10442,7 +10442,7 @@
  "0x005371E0": {
   "name": "FUN_005371e0",
   "named": false,
-  "len": 2375
+  "len": 2382
  },
  "0x00537400": {
   "name": "FUN_00537400",
@@ -10452,7 +10452,7 @@
  "0x005375E0": {
   "name": "FUN_005375e0",
   "named": false,
-  "len": 19374
+  "len": 19381
  },
  "0x00538010": {
   "name": "FUN_00538010",
@@ -10482,7 +10482,7 @@
  "0x00538580": {
   "name": "vfs_fileread_load",
   "named": true,
-  "len": 3150
+  "len": 3155
  },
  "0x005387A0": {
   "name": "player_display_info",
@@ -10507,7 +10507,7 @@
  "0x00539000": {
   "name": "__default_unexpected__Fv",
   "named": true,
-  "len": 101
+  "len": 181
  },
  "0x00539010": {
   "name": "FUN_00539010",
@@ -10590,9 +10590,9 @@
   "len": 573
  },
  "0x00539E60": {
-  "name": "FUN_00539e60",
-  "named": false,
-  "len": 5114
+  "name": "mem_verify",
+  "named": true,
+  "len": 5112
  },
  "0x0053A270": {
   "name": "FUN_0053a270",
@@ -10977,7 +10977,7 @@
  "0x0053E9F0": {
   "name": "GEO_DefaultSpan__FP14GEO_RegionSpan",
   "named": true,
-  "len": 485
+  "len": 414
  },
  "0x0053EA30": {
   "name": "FUN_0053ea30",
@@ -11042,7 +11042,7 @@
  "0x0053FC10": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6",
   "named": true,
-  "len": 127
+  "len": 197
  },
  "0x0053FC20": {
   "name": "FUN_0053fc20",
@@ -11052,7 +11052,7 @@
  "0x0053FC40": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_7",
   "named": true,
-  "len": 123
+  "len": 193
  },
  "0x0053FC50": {
   "name": "__get_eh_context",
@@ -11152,7 +11152,7 @@
  "0x005402F0": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8",
   "named": true,
-  "len": 119
+  "len": 189
  },
  "0x00540310": {
   "name": "FUN_00540310",
@@ -11200,14 +11200,14 @@
   "len": 680
  },
  "0x005405C0": {
-  "name": "FUN_005405c0",
-  "named": false,
-  "len": 1980
+  "name": "cpu_vendor_detect",
+  "named": true,
+  "len": 1985
  },
  "0x005407E0": {
   "name": "FUN_005407e0",
   "named": false,
-  "len": 165
+  "len": 170
  },
  "0x00540800": {
   "name": "FUN_00540800",
@@ -11457,7 +11457,7 @@
  "0x00543E3A": {
   "name": "AddHud__4cHudP8cHudIcon_6",
   "named": true,
-  "len": 97
+  "len": 171
  },
  "0x00543E70": {
   "name": "FUN_00543e70",
@@ -11672,7 +11672,7 @@
  "0x00544E7C": {
   "name": "FUN_00544e7c",
   "named": false,
-  "len": 821
+  "len": 688
  },
  "0x00544EE7": {
   "name": "FUN_00544ee7",
@@ -11757,7 +11757,7 @@
  "0x00545758": {
   "name": "entry",
   "named": true,
-  "len": 1528
+  "len": 1534
  },
  "0x00545860": {
   "name": "__amsg_exit",
@@ -11822,7 +11822,7 @@
  "0x00545CDD": {
   "name": "AudioDataStreamStatus__Fv_7",
   "named": true,
-  "len": 133
+  "len": 211
  },
  "0x00545D1B": {
   "name": "FUN_00545d1b",
@@ -11992,7 +11992,7 @@
  "0x00547586": {
   "name": "crt_fpe_dispatch",
   "named": true,
-  "len": 1026
+  "len": 626
  },
  "0x0054760E": {
   "name": "crt_matherr_flag",
@@ -12132,17 +12132,17 @@
  "0x00548539": {
   "name": "crt_tls_init",
   "named": true,
-  "len": 551
+  "len": 495
  },
  "0x0054858D": {
   "name": "voBufReset__FP5VoBuf_2",
   "named": true,
-  "len": 157
+  "len": 191
  },
  "0x005485A0": {
   "name": "__getptd",
   "named": true,
-  "len": 674
+  "len": 594
  },
  "0x00548607": {
   "name": "__freeptd",
@@ -12152,12 +12152,12 @@
  "0x005486B0": {
   "name": "AudioMusicStreamPlay__Fiiii_3",
   "named": true,
-  "len": 199
+  "len": 300
  },
  "0x005486EE": {
   "name": "AudioMusicStreamPlay__Fiiii_2",
   "named": true,
-  "len": 199
+  "len": 300
  },
  "0x0054872B": {
   "name": "__ctrandisp2",
@@ -12647,7 +12647,7 @@
  "0x0054D84B": {
   "name": "AudioDataStreamStatus__Fv_8",
   "named": true,
-  "len": 71
+  "len": 151
  },
  "0x0054D84E": {
   "name": "crt_openfile",
@@ -12657,7 +12657,7 @@
  "0x0054DB1D": {
   "name": "crt_fpe_signal",
   "named": true,
-  "len": 1259
+  "len": 1252
  },
  "0x0054DBED": {
   "name": "crt_fpclassify",

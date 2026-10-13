@@ -7637,13 +7637,19 @@ void FUN_0041a0d0(undefined4 param_1,int param_2,undefined4 param_3)
 }
 
 /* ===== kabutoai_select_punch_anim__FP6OBJECT @ 0x0041A110 ===== */
-void kabutoai_select_punch_anim__FP6OBJECT(undefined4 param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void kabutoai_select_punch_anim__FP6OBJECT(OBJECT *p0)
 
 
 
 {
 
-  FUN_00530bd0(param_1,0,0,0,3,0);
+  FUN_00530bd0(p0,0,0,0,3,0);
 
   return;
 
@@ -10108,10 +10114,6 @@ switchD_0041bf79_caseD_d:
 }
 
 /* ===== bldg_get_bldg_name @ 0x0041C0C0 ===== */
-/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
-
-
-
 undefined1 * bldg_get_bldg_name(int param_1)
 
 
@@ -10119,8 +10121,6 @@ undefined1 * bldg_get_bldg_name(int param_1)
 {
 
   char cVar1;
-
-  OBJECT *p0;
 
   int iVar2;
 
@@ -10182,21 +10182,21 @@ undefined1 * bldg_get_bldg_name(int param_1)
 
   if (-1 < iVar2) {
 
-    p0 = *(OBJECT **)(param_1 + 0x274);
+    iVar2 = *(int *)(param_1 + 0x274);
 
-    if (p0 != (OBJECT *)0x0) {
+    if (iVar2 != 0) {
 
-      iVar4 = FUN_004a6200(p0);
+      iVar4 = FUN_004a6200(iVar2);
 
       if (iVar4 == 0) {
 
-        pcVar5 = (char *)AudioGetSampleName__Fi_2(p0,iVar2);
+        pcVar5 = (char *)AudioGetSampleName__Fi_2(iVar2);
 
       }
 
       else {
 
-        pcVar5 = (char *)AudioGetSampleName__Fi();
+        pcVar5 = (char *)AudioGetSampleName__Fi(iVar2);
 
       }
 

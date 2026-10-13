@@ -122,7 +122,7 @@ int main_status_00500520(int *param_1)
 
     }
 
-    FUN_00500220(param_1);
+    status_subobj_init(param_1);
 
     puVar5 = (undefined4 *)param_1[6];
 
