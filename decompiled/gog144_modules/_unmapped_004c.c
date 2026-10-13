@@ -7802,13 +7802,15 @@ LAB_004ccbc0:
 
           local_204 = (fStack_1e8 + local_1fc[2]) * -0.5;
 
-          FUN_0053dc50(auStack_88,
+          GEO_MatIdentityScale
 
-                       5.0 / SQRT((fStack_1e8 - local_1fc[2]) * (fStack_1e8 - local_1fc[2]) +
+                    (auStack_88,
 
-                                  (fStack_1ec - local_1fc[1]) * (fStack_1ec - local_1fc[1]) +
+                     5.0 / SQRT((fStack_1e8 - local_1fc[2]) * (fStack_1e8 - local_1fc[2]) +
 
-                                  (local_1fc[3] - local_1fc[0]) * (local_1fc[3] - local_1fc[0])));
+                                (fStack_1ec - local_1fc[1]) * (fStack_1ec - local_1fc[1]) +
+
+                                (local_1fc[3] - local_1fc[0]) * (local_1fc[3] - local_1fc[0])));
 
           FUN_0053dc10(auStack_cc,&local_20c);
 

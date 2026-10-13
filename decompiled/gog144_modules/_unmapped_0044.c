@@ -2492,7 +2492,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
     }
 
-    FUN_0053dc50(auStack_44,fStack_8c);
+    GEO_MatIdentityScale(auStack_44,fStack_8c);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_88,local_88,auStack_44);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (283 named) — decompiled, names from PS2 symbols
+ * 351 functions (284 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -9737,7 +9737,7 @@ LAB_00546276:
 
         (iVar5 = FUN_0054d6cd(uVar2), iVar5 == 0)))) {
 
-      FUN_0054d689(piVar4);
+      crt_stream_release(piVar4);
 
     }
 
@@ -12863,7 +12863,7 @@ uint _filbuf(undefined4 *param_1)
 
       if ((uVar2 & 0x10c) == 0) {
 
-        FUN_0054d689(param_1);
+        crt_stream_release(param_1);
 
       }
 
@@ -23173,12 +23173,12 @@ DWORD _lseek(uint param_1,LONG param_2,DWORD param_3)
 
 }
 
-/* ===== FUN_0054d689 @ 0x0054D689 ===== */
+/* ===== crt_stream_release @ 0x0054D689 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0054d689(undefined4 *param_1)
+void crt_stream_release(undefined4 *param_1)
 
 
 
@@ -24134,7 +24134,7 @@ uint crt_free_impl(uint param_1,int *param_2)
 
     if (param_2[2] == 0) {
 
-      FUN_0054d689(param_2);
+      crt_stream_release(param_2);
 
     }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (144 named) — decompiled, names from PS2 symbols
+ * 179 functions (146 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -17624,8 +17624,8 @@ void FUN_0053dc10(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0053dc50 @ 0x0053DC50 ===== */
-void FUN_0053dc50(undefined4 *param_1,float param_2)
+/* ===== GEO_MatIdentityScale @ 0x0053DC50 ===== */
+void GEO_MatIdentityScale(undefined4 *param_1,float param_2)
 
 
 
@@ -20506,8 +20506,8 @@ void MAP_MapperInitialize__FP11_MAP_MapperP12_MAP_KeyInit(int param_1,undefined4
 
 }
 
-/* ===== FUN_0053fcf0 @ 0x0053FCF0 ===== */
-void FUN_0053fcf0(uint *param_1)
+/* ===== map_bit_reverse @ 0x0053FCF0 ===== */
+void map_bit_reverse(uint *param_1)
 
 
 
@@ -20680,7 +20680,7 @@ undefined4 MAP_MappingFind(int param_1,int param_2,uint param_3)
 
     piVar1[6] = param_2;
 
-    FUN_0053fcf0(piVar1);
+    map_bit_reverse(piVar1);
 
     if (piVar1[3] == 0) {
 

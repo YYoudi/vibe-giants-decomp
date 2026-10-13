@@ -358,7 +358,7 @@ void object_lock_logic(int param_1)
 
     }
 
-    FUN_0053dc50(local_188,local_1d0);
+    GEO_MatIdentityScale(local_188,local_1d0);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_1cc,local_1cc,local_188);
 

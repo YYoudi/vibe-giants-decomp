@@ -2532,7 +2532,7 @@
  "0x00443910": {
   "name": "wredit_matrix_recurse",
   "named": true,
-  "len": 1818
+  "len": 1826
  },
  "0x00443A90": {
   "name": "FLK_ActorAdd__FP9FLK_FlickiPcii",
@@ -3897,7 +3897,7 @@
  "0x00470710": {
   "name": "object_lock_logic",
   "named": true,
-  "len": 4383
+  "len": 4391
  },
  "0x00470E40": {
   "name": "sound_obj_event",
@@ -5975,9 +5975,9 @@
   "len": 1673
  },
  "0x004A9F30": {
-  "name": "FUN_004a9f30",
-  "named": false,
-  "len": 317
+  "name": "bbox_center_calc",
+  "named": true,
+  "len": 321
  },
  "0x004A9F80": {
   "name": "ANM_DumpCluster_2",
@@ -6877,7 +6877,7 @@
  "0x004CC900": {
   "name": "ShopMenuSlotCollision__Fi",
   "named": true,
-  "len": 15492
+  "len": 15516
  },
  "0x004CD5D0": {
   "name": "lens_effects_process__Fv",
@@ -10850,9 +10850,9 @@
   "len": 492
  },
  "0x0053DC50": {
-  "name": "FUN_0053dc50",
-  "named": false,
-  "len": 482
+  "name": "GEO_MatIdentityScale",
+  "named": true,
+  "len": 490
  },
  "0x0053DCA0": {
   "name": "GEO_MatFromQuat",
@@ -11070,9 +11070,9 @@
   "len": 749
  },
  "0x0053FCF0": {
-  "name": "FUN_0053fcf0",
-  "named": false,
-  "len": 579
+  "name": "map_bit_reverse",
+  "named": true,
+  "len": 582
  },
  "0x0053FD40": {
   "name": "map_struct_finit",
@@ -11087,7 +11087,7 @@
  "0x0053FE20": {
   "name": "MAP_MappingFind",
   "named": true,
-  "len": 503
+  "len": 506
  },
  "0x0053FE70": {
   "name": "MAP_MemGroupFixPtrs",
@@ -11877,7 +11877,7 @@
  "0x0054616A": {
   "name": "_flsbuf",
   "named": true,
-  "len": 1699
+  "len": 1705
  },
  "0x00546282": {
   "name": "_output",
@@ -12067,7 +12067,7 @@
  "0x0054797F": {
   "name": "_filbuf",
   "named": true,
-  "len": 1388
+  "len": 1394
  },
  "0x00547A5B": {
   "name": "_read",
@@ -12620,9 +12620,9 @@
   "len": 715
  },
  "0x0054D689": {
-  "name": "FUN_0054d689",
-  "named": false,
-  "len": 506
+  "name": "crt_stream_release",
+  "named": true,
+  "len": 512
  },
  "0x0054D6CD": {
   "name": "FUN_0054d6cd",
@@ -12682,7 +12682,7 @@
  "0x0054DDCF": {
   "name": "crt_free_impl",
   "named": true,
-  "len": 872
+  "len": 878
  },
  "0x0054DE3D": {
   "name": "crt_strtod_core",
