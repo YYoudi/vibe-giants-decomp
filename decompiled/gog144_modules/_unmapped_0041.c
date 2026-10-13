@@ -5413,7 +5413,7 @@ void hud_marker_draw(float param_1,float param_2,float param_3)
 
   if (DAT_00633188 < 6) {
 
-    iVar3 = FUN_005168f0((int)param_1 + 0xa0,&local_14,&param_1);
+    iVar3 = hud_clipcode_calc((int)param_1 + 0xa0,&local_14,&param_1);
 
     if (iVar3 == 0) {
 
@@ -5484,7 +5484,7 @@ void hud_draw_rect(float param_1,float param_2,float param_3,float param_4,float
 
   if (DAT_00633188 < 6) {
 
-    iVar2 = FUN_005168f0((int)param_1 + 0xa0,&param_1,&local_10);
+    iVar2 = hud_clipcode_calc((int)param_1 + 0xa0,&param_1,&local_10);
 
     if (iVar2 == 0) {
 

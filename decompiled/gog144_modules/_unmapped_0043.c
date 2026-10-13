@@ -10537,8 +10537,8 @@ LAB_0043f9ab:
 
 }
 
-/* ===== main/editor_0043fa90 @ 0x0043FA90 ===== */
-void main_editor_0043fa90(void)
+/* ===== wredit_anim_update @ 0x0043FA90 ===== */
+void wredit_anim_update(void)
 
 
 

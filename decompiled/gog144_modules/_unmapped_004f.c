@@ -5597,7 +5597,7 @@ void status_update_entry(float param_1)
 
     iVar4 = FUN_004ef070(local_c,&local_18,1,&local_30,0);
 
-    if ((iVar4 != 0) && (iVar4 = FUN_005168f0(&local_18,&param_1,&local_34), iVar4 == 0)) {
+    if ((iVar4 != 0) && (iVar4 = hud_clipcode_calc(&local_18,&param_1,&local_34), iVar4 == 0)) {
 
       uVar1 = (uint)(*(int *)((int)DAT_00632a88 + 0x18c) == *(int *)((int)fVar2 + 0x18c));
 

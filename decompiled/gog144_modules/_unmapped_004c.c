@@ -10779,7 +10779,7 @@ LAB_004d0e26:
 
         local_30 = local_3c - local_48 * param_1;
 
-        FUN_004d4630(fVar5,&local_34,0);
+        ai_face_move(fVar5,&local_34,0);
 
         fVar15 = (float10)FUN_0050a400((int)fVar3 + 0xa0,(int)fVar5 + 0xa0);
 

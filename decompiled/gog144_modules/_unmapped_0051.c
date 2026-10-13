@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (80 named) — decompiled, names from PS2 symbols
+ * 186 functions (82 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5633,8 +5633,8 @@ undefined4 * AudioDataStreamStatus__Fv_5(void)
 
 }
 
-/* ===== FUN_005168f0 @ 0x005168F0 ===== */
-uint FUN_005168f0(float *param_1,float *param_2,float *param_3)
+/* ===== hud_clipcode_calc @ 0x005168F0 ===== */
+uint hud_clipcode_calc(float *param_1,float *param_2,float *param_3)
 
 
 
@@ -11127,11 +11127,11 @@ void textrender_text_draw
 
       fVar3 = (float)(byte)(&DAT_005dd3c2)[iVar6] * fVar4 + (float)param_6;
 
-      FUN_0051b6e0(uVar10,param_6,fVar3,param_2 - (float)iVar7 * fVar4,
+      textrender_char_vertex
 
-                   (float)(int)((uint)(byte)(&DAT_005dd3c1)[iVar6] - iVar7) * fVar4 + param_2,uVar8)
+                (uVar10,param_6,fVar3,param_2 - (float)iVar7 * fVar4,
 
-      ;
+                 (float)(int)((uint)(byte)(&DAT_005dd3c1)[iVar6] - iVar7) * fVar4 + param_2,uVar8);
 
       param_6 = (byte *)(fVar3 + fVar4);
 
@@ -11145,10 +11145,12 @@ void textrender_text_draw
 
 }
 
-/* ===== FUN_0051b6e0 @ 0x0051B6E0 ===== */
-void FUN_0051b6e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,float param_4,
+/* ===== textrender_char_vertex @ 0x0051B6E0 ===== */
+void textrender_char_vertex
 
-                 float param_5,int param_6)
+               (undefined4 param_1,undefined4 param_2,undefined4 param_3,float param_4,float param_5
+
+               ,int param_6)
 
 
 
@@ -11336,13 +11338,13 @@ void textrender_draw_small
 
     iVar6 = (int)(char)(&DAT_005dd3c0)[iVar1];
 
-    FUN_0051b6e0(param_1,fVar5 * param_4,
+    textrender_char_vertex
 
-                 (float)(byte)(&DAT_005dd3c2)[iVar1] * fVar4 + fVar5 * param_4,
+              (param_1,fVar5 * param_4,(float)(byte)(&DAT_005dd3c2)[iVar1] * fVar4 + fVar5 * param_4
 
-                 fVar2 - (float)iVar6 * fVar4,
+               ,fVar2 - (float)iVar6 * fVar4,
 
-                 (float)(int)((uint)(byte)(&DAT_005dd3c1)[iVar1] - iVar6) * fVar4 + fVar2,param_6);
+               (float)(int)((uint)(byte)(&DAT_005dd3c1)[iVar1] - iVar6) * fVar4 + fVar2,param_6);
 
   }
 
