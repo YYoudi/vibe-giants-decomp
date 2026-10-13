@@ -164,7 +164,7 @@ void comm_comm_00520490(void)
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
-        FUN_00518950();
+        time_frame_update();
 
         fVar2 = DAT_006328e8 - DAT_006328e8;
 
@@ -172,7 +172,7 @@ void comm_comm_00520490(void)
 
         while (fVar2 < 5.0) {
 
-          FUN_00518950();
+          time_frame_update();
 
           fVar2 = DAT_006328e8 - fVar8;
 

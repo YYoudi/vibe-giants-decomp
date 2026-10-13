@@ -10728,7 +10728,7 @@ float10 editor_dump_objnames(float param_1)
 
       do {
 
-        if ((0.0 <= param_1) && (FUN_00518950(), param_1 < DAT_006328e8 - local_a4)) {
+        if ((0.0 <= param_1) && (time_frame_update(), param_1 < DAT_006328e8 - local_a4)) {
 
           DAT_005a8600 = puVar4;
 

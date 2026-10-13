@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0048f620,FUN_0048F620,,menu_gameplay_teardown,0.9,llm-read38,
+00518950,FUN_00518950,,time_frame_update,0.9,llm-read38,
+005124e0,FUN_005124E0,,obj_proximity_flags,0.9,llm-read38,
+00442120,FUN_00442120,,fx_fade_compute,0.9,llm-read38,

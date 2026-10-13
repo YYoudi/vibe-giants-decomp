@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (38 named) — decompiled, names from PS2 symbols
+ * 76 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1383,11 +1383,13 @@ void FUN_00441d20(undefined4 *param_1,float param_2)
 
   *(undefined4 *)(iVar2 + 0xec) = 0;
 
-  FUN_00442120(*(float *)(DAT_00632ed8 + 0x50c) * param_2,*(float *)(DAT_00632ed8 + 0x510) * param_2
+  fx_fade_compute(*(float *)(DAT_00632ed8 + 0x50c) * param_2,
 
-               ,*(float *)(DAT_00632ed8 + 0x514) * param_2,*(undefined4 *)(DAT_00632ed8 + 0x518),
+                  *(float *)(DAT_00632ed8 + 0x510) * param_2,
 
-               *(undefined4 *)(DAT_00632ed8 + 0x51c),iVar2 + 0x1a4,iVar2 + 0x1a8);
+                  *(float *)(DAT_00632ed8 + 0x514) * param_2,*(undefined4 *)(DAT_00632ed8 + 0x518),
+
+                  *(undefined4 *)(DAT_00632ed8 + 0x51c),iVar2 + 0x1a4,iVar2 + 0x1a8);
 
   FUN_0049bc50(iVar2);
 
@@ -1419,10 +1421,10 @@ void FUN_00441d20(undefined4 *param_1,float param_2)
 
 }
 
-/* ===== FUN_00442120 @ 0x00442120 ===== */
-void FUN_00442120(float param_1,float param_2,float param_3,float param_4,float param_5,
+/* ===== fx_fade_compute @ 0x00442120 ===== */
+void fx_fade_compute(float param_1,float param_2,float param_3,float param_4,float param_5,
 
-                 float *param_6,float *param_7)
+                    float *param_6,float *param_7)
 
 
 

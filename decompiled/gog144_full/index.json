@@ -2467,12 +2467,12 @@
  "0x00441D20": {
   "name": "FUN_00441d20",
   "named": false,
-  "len": 1399
+  "len": 1428
  },
  "0x00442120": {
-  "name": "FUN_00442120",
-  "named": false,
-  "len": 2863
+  "name": "fx_fade_compute",
+  "named": true,
+  "len": 2869
  },
  "0x00442330": {
   "name": "object_spawn_menu_wredit",
@@ -4610,9 +4610,9 @@
   "len": 1815
  },
  "0x0048F620": {
-  "name": "FUN_0048f620",
-  "named": false,
-  "len": 2824
+  "name": "menu_gameplay_teardown",
+  "named": true,
+  "len": 2834
  },
  "0x004907E0": {
   "name": "FUN_004907e0",
@@ -7517,7 +7517,7 @@
  "0x004EE390": {
   "name": "editor_dump_objnames",
   "named": true,
-  "len": 3472
+  "len": 3477
  },
  "0x004EE630": {
   "name": "kabutoai_punch_user",
@@ -8390,9 +8390,9 @@
   "len": 6788
  },
  "0x005124E0": {
-  "name": "FUN_005124e0",
-  "named": false,
-  "len": 2618
+  "name": "obj_proximity_flags",
+  "named": true,
+  "len": 2625
  },
  "0x00512700": {
   "name": "evilreaper_speed_dist",
@@ -8825,9 +8825,9 @@
   "len": 555
  },
  "0x00518950": {
-  "name": "FUN_00518950",
-  "named": false,
-  "len": 1933
+  "name": "time_frame_update",
+  "named": true,
+  "len": 1938
  },
  "0x00518B70": {
   "name": "FUN_00518b70",
@@ -9242,7 +9242,7 @@
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
   "named": true,
-  "len": 6103
+  "len": 6108
  },
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
@@ -9262,7 +9262,7 @@
  "0x0051E680": {
   "name": "error_screen_show",
   "named": true,
-  "len": 3847
+  "len": 3857
  },
  "0x0051EA20": {
   "name": "FUN_0051ea20",
@@ -9292,7 +9292,7 @@
  "0x0051EAC0": {
   "name": "FUN_0051eac0",
   "named": false,
-  "len": 9589
+  "len": 9619
  },
  "0x0051F2A0": {
   "name": "FUN_0051f2a0",
@@ -9337,7 +9337,7 @@
  "0x00520490": {
   "name": "comm_comm_00520490",
   "named": true,
-  "len": 4447
+  "len": 4457
  },
  "0x00520B90": {
   "name": "gamespy_send_statechange",

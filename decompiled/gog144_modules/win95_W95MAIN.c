@@ -316,7 +316,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
-        FUN_00518950();
+        time_frame_update();
 
         fVar5 = DAT_006328e8;
 
@@ -324,7 +324,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
         while (DAT_006328e8 - fVar5 < 0.2) {
 
-          FUN_00518950();
+          time_frame_update();
 
           fVar6 = DAT_006328e8;
 
@@ -426,7 +426,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
-        FUN_00518950();
+        time_frame_update();
 
         fVar5 = DAT_006328e8;
 
@@ -440,7 +440,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
             if (12.0 <= DAT_006328e8 - fVar5) goto LAB_0051f08e;
 
-            FUN_00518950();
+            time_frame_update();
 
             fVar6 = DAT_006328e8;
 
@@ -460,7 +460,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
 LAB_0051f08e:
 
-        FUN_00518950();
+        time_frame_update();
 
         fVar5 = DAT_006328e8;
 
@@ -472,7 +472,7 @@ LAB_0051f08e:
 
             if (0.2 <= DAT_006328e8 - fVar5) goto LAB_0051f1b8;
 
-            FUN_00518950();
+            time_frame_update();
 
             fVar6 = DAT_006328e8;
 

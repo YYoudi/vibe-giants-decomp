@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (69 named) — decompiled, names from PS2 symbols
+ * 186 functions (71 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -1402,8 +1402,8 @@ undefined4 evilreaper_ai_big(int param_1)
 
 }
 
-/* ===== FUN_005124e0 @ 0x005124E0 ===== */
-bool FUN_005124e0(int param_1)
+/* ===== obj_proximity_flags @ 0x005124E0 ===== */
+bool obj_proximity_flags(int param_1)
 
 
 
@@ -8140,12 +8140,12 @@ void FUN_00518890(void)
 
 }
 
-/* ===== FUN_00518950 @ 0x00518950 ===== */
+/* ===== time_frame_update @ 0x00518950 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00518950(void)
+void time_frame_update(void)
 
 
 
@@ -13323,7 +13323,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
               dinput_key_poll();
 
-              FUN_00518950();
+              time_frame_update();
 
               FUN_00519a50();
 
@@ -15253,7 +15253,7 @@ LAB_0051e90f:
 
     if (DAT_005ddb38 == 0) {
 
-      FUN_00518950();
+      time_frame_update();
 
     }
 
@@ -15275,7 +15275,7 @@ LAB_0051e90f:
 
     if (DAT_005ddb38 == 0) {
 
-      FUN_00518950();
+      time_frame_update();
 
     }
 
