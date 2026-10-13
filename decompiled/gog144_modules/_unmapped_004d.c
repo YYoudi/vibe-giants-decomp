@@ -377,7 +377,7 @@ void FUN_004d1b30(int param_1)
 
       }
 
-      iVar2 = FUN_00512c80(param_1,param_1,0,fVar1,2);
+      iVar2 = vimp_mana_effect(param_1,param_1,0,fVar1,2);
 
       if (iVar2 == 0) {
 
@@ -1914,7 +1914,7 @@ LAB_004d288a:
 
          (((*(byte *)(param_1 + 0xe0) & 8) != 0 ||
 
-          (iVar6 = FUN_00512c80(param_1,param_1,0,local_70,2), iVar6 == 0)))) break;
+          (iVar6 = vimp_mana_effect(param_1,param_1,0,local_70,2), iVar6 == 0)))) break;
 
     }
 

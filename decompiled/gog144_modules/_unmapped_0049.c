@@ -13459,7 +13459,7 @@ void options_defaults(void)
 
   DAT_00633150 = 2;
 
-  FUN_00519d90();
+  filecopy_dirs();
 
   FUN_0051a1c0(s_DefPlayer_0055a07c,local_40,0x40);
 

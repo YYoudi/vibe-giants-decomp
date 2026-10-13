@@ -6276,7 +6276,7 @@ void options_defplayer(void)
 
   DAT_00632f08 = 0;
 
-  FUN_00519d90();
+  filecopy_dirs();
 
   if (DAT_00633154 == 0) {
 

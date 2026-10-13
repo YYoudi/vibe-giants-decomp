@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (57 named) — decompiled, names from PS2 symbols
+ * 162 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -359,7 +359,7 @@ void gamespy_send_statechange(void)
 
     else {
 
-      time_format_hms(iVar2 * 0x3c,local_28);
+      comm_004ce880(iVar2 * 0x3c,local_28);
 
     }
 
@@ -1017,8 +1017,8 @@ undefined4 FUN_005213a0(int param_1)
 
 }
 
-/* ===== FUN_005213d0 @ 0x005213D0 ===== */
-void FUN_005213d0(char *param_1,int param_2)
+/* ===== comm_session_menu @ 0x005213D0 ===== */
+void comm_session_menu(char *param_1,int param_2)
 
 
 
@@ -1078,8 +1078,8 @@ void FUN_005213d0(char *param_1,int param_2)
 
 }
 
-/* ===== FUN_005214b0 @ 0x005214B0 ===== */
-void FUN_005214b0(int param_1,char *param_2)
+/* ===== comm_gtype_name @ 0x005214B0 ===== */
+void comm_gtype_name(int param_1,char *param_2)
 
 
 
@@ -1113,8 +1113,8 @@ void FUN_005214b0(int param_1,char *param_2)
 
 }
 
-/* ===== FUN_005214f0 @ 0x005214F0 ===== */
-void FUN_005214f0(int param_1)
+/* ===== comm_gametype_menu @ 0x005214F0 ===== */
+void comm_gametype_menu(int param_1)
 
 
 
@@ -1930,7 +1930,7 @@ void comm_capture_time_menu(int param_1,int param_2)
 
     else {
 
-      time_format_hms(param_1 * 0x3c,local_28);
+      comm_004ce880(param_1 * 0x3c,local_28);
 
     }
 
@@ -2166,7 +2166,7 @@ void comm_timelimit_menu(int param_1)
 
     else {
 
-      time_format_hms(param_1 * 0x3c,local_28);
+      comm_004ce880(param_1 * 0x3c,local_28);
 
     }
 
@@ -2534,7 +2534,7 @@ void comm_scorelimit_menu(uint *param_1,uint *param_2,undefined4 param_3)
 
         else {
 
-          time_format_hms(uVar2 * 0x3c,local_28);
+          comm_004ce880(uVar2 * 0x3c,local_28);
 
         }
 
@@ -2803,7 +2803,7 @@ void comm_game_setup_menu(void)
 
       main_dlog_00427230(DAT_005def8c,0x12e);
 
-      FUN_005214b0(iVar5,local_80);
+      comm_gtype_name(iVar5,local_80);
 
       main_dlog_00427890(DAT_005def8c,0x12e,DAT_0057dc9c,0x41200000,0x81000002,local_80);
 
@@ -3910,7 +3910,7 @@ LAB_00523950:
 
       else {
 
-        time_format_hms(iVar5 * 0x3c,local_bc);
+        comm_004ce880(iVar5 * 0x3c,local_bc);
 
       }
 
@@ -4064,7 +4064,7 @@ LAB_00523950:
 
       else {
 
-        time_format_hms(iVar5 * 0x3c,local_bc);
+        comm_004ce880(iVar5 * 0x3c,local_bc);
 
       }
 
@@ -6085,7 +6085,7 @@ void comm_change_options_menu(void)
 
   if (DAT_00632f2c != DAT_005de4c4) {
 
-    time_format_hms(DAT_00632f2c * 0x3c,local_28);
+    comm_004ce880(DAT_00632f2c * 0x3c,local_28);
 
     if (DAT_00632f2c < 1) {
 
@@ -6227,7 +6227,7 @@ void comm_change_options_menu(void)
 
     if (DAT_00632fcc != DAT_005de564) {
 
-      time_format_hms(DAT_00632fcc * 0x3c,local_28);
+      comm_004ce880(DAT_00632fcc * 0x3c,local_28);
 
       if (DAT_00632fcc == 0) {
 
@@ -6819,7 +6819,7 @@ void FUN_0052a050(int param_1)
 
         main_dlog_00427230(DAT_005def8c,0x12e);
 
-        FUN_005214b0(iVar8,local_4c4);
+        comm_gtype_name(iVar8,local_4c4);
 
         main_dlog_00427890(DAT_005def8c,0x12e,DAT_0057dc9c,0x41200000,0x81000002,local_4c4);
 
@@ -7009,7 +7009,7 @@ void FUN_0052a050(int param_1)
 
         else {
 
-          time_format_hms(iVar8 * 0x3c,local_4c4);
+          comm_004ce880(iVar8 * 0x3c,local_4c4);
 
         }
 
@@ -7167,7 +7167,7 @@ void FUN_0052a050(int param_1)
 
         DAT_00632f67 = 0;
 
-        FUN_005213d0(&DAT_00632f48,0);
+        comm_session_menu(&DAT_00632f48,0);
 
       }
 

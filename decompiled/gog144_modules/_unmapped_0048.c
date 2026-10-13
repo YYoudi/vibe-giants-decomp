@@ -5021,7 +5021,7 @@ void comm_00485300(void)
 
   }
 
-  FUN_005214f0(DAT_00632f18);
+  comm_gametype_menu(DAT_00632f18);
 
   iVar4 = FUN_005213a0(DAT_00632f18);
 
@@ -5725,7 +5725,7 @@ void main_00486110(void)
 
     DAT_0059eed8 = 0;
 
-    FUN_005213d0(&DAT_00632f48,1);
+    comm_session_menu(&DAT_00632f48,1);
 
     comm_comm_00529e00();
 

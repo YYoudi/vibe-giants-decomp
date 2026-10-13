@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (49 named) — decompiled, names from PS2 symbols
+ * 186 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -1857,12 +1857,12 @@ int FUN_005129d0(undefined4 *param_1,uint param_2,int param_3,int param_4,undefi
 
 }
 
-/* ===== FUN_00512c80 @ 0x00512C80 ===== */
+/* ===== vimp_mana_effect @ 0x00512C80 ===== */
 /* PS2 candidate: evilreaper_award_item__FP6OBJECT (conf 0.441) */
 
 
 
-undefined4 FUN_00512c80(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+undefined4 vimp_mana_effect(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -9498,8 +9498,8 @@ undefined4 * FUN_00519d30(void)
 
 }
 
-/* ===== FUN_00519d90 @ 0x00519D90 ===== */
-void FUN_00519d90(void)
+/* ===== filecopy_dirs @ 0x00519D90 ===== */
+void filecopy_dirs(void)
 
 
 
@@ -14715,7 +14715,7 @@ LAB_0051ded4:
 
     if (bVar10) {
 
-      FUN_00519d90();
+      filecopy_dirs();
 
       iVar1 = 0x51dfb7;
 
@@ -15005,7 +15005,7 @@ LAB_0051e225:
 
   } while (iVar1 < 10);
 
-  FUN_00519d90();
+  filecopy_dirs();
 
   FUN_0051a1c0(s_DefPlayer_0055a07c,local_64,0x40);
 

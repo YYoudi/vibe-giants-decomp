@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (50 named) — decompiled, names from PS2 symbols
+ * 129 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -9356,7 +9356,7 @@ void FUN_00427100(void)
 
   }
 
-  FUN_004295c0();
+  cursor_texture_draw();
 
   return;
 
@@ -11584,8 +11584,8 @@ switchD_00429534_default:
 
 }
 
-/* ===== FUN_004295c0 @ 0x004295C0 ===== */
-void FUN_004295c0(void)
+/* ===== cursor_texture_draw @ 0x004295C0 ===== */
+void cursor_texture_draw(void)
 
 
 

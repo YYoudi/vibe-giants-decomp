@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004295c0,FUN_004295C0,,cursor_texture_draw,0.9,llm-strings4,
+00512c80,FUN_00512C80,,vimp_mana_effect,0.9,llm-strings4,
+00519d90,FUN_00519D90,,filecopy_dirs,0.9,llm-strings4,
+005213d0,FUN_005213D0,,comm_session_menu,0.9,llm-strings4,
+005214b0,FUN_005214B0,,comm_gtype_name,0.9,llm-strings4,
+005214f0,FUN_005214F0,,comm_gametype_menu,0.9,llm-strings4,

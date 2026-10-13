@@ -12611,7 +12611,7 @@ void stream_00538800(void)
 
     DAT_005e2b60 = '\0';
 
-    FUN_00519d90();
+    filecopy_dirs();
 
     FUN_0051a1c0(s_DestDir_0057cb14,&DAT_005e2a60,0x100);
 

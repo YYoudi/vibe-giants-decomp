@@ -9113,8 +9113,8 @@ LAB_004ce7b8:
 
 }
 
-/* ===== time_format_hms @ 0x004CE880 ===== */
-void time_format_hms(int param_1,undefined4 param_2)
+/* ===== comm_004ce880 @ 0x004CE880 ===== */
+void comm_004ce880(int param_1,undefined4 param_2)
 
 
 

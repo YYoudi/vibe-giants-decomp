@@ -1417,7 +1417,7 @@
  "0x00427100": {
   "name": "FUN_00427100",
   "named": false,
-  "len": 191
+  "len": 198
  },
  "0x00427120": {
   "name": "FUN_00427120",
@@ -1645,9 +1645,9 @@
   "len": 1080
  },
  "0x004295C0": {
-  "name": "FUN_004295c0",
-  "named": false,
-  "len": 1056
+  "name": "cursor_texture_draw",
+  "named": true,
+  "len": 1063
  },
  "0x004296C0": {
   "name": "FUN_004296c0",
@@ -3237,7 +3237,7 @@
  "0x004574D0": {
   "name": "options_defplayer",
   "named": true,
-  "len": 440
+  "len": 441
  },
  "0x00457550": {
   "name": "FUN_00457550",
@@ -4422,7 +4422,7 @@
  "0x00485300": {
   "name": "comm_00485300",
   "named": true,
-  "len": 2662
+  "len": 2668
  },
  "0x00485840": {
   "name": "FUN_00485840",
@@ -4442,7 +4442,7 @@
  "0x00486110": {
   "name": "main_00486110",
   "named": true,
-  "len": 1367
+  "len": 1372
  },
  "0x004862E0": {
   "name": "FUN_004862E0",
@@ -5367,7 +5367,7 @@
  "0x0049E290": {
   "name": "options_defaults",
   "named": true,
-  "len": 774
+  "len": 775
  },
  "0x0049E350": {
   "name": "cmdline_parse",
@@ -6895,9 +6895,9 @@
   "len": 14024
  },
  "0x004CE880": {
-  "name": "time_format_hms",
+  "name": "comm_004ce880",
   "named": true,
-  "len": 289
+  "len": 287
  },
  "0x004CE8D0": {
   "name": "FUN_004ce8d0",
@@ -6932,12 +6932,12 @@
  "0x004D1B30": {
   "name": "FUN_004d1b30",
   "named": false,
-  "len": 799
+  "len": 803
  },
  "0x004D1BD0": {
   "name": "FUN_004d1bd0",
   "named": false,
-  "len": 31255
+  "len": 31259
  },
  "0x004D3720": {
   "name": "FUN_004d3720",
@@ -8405,9 +8405,9 @@
   "len": 2876
  },
  "0x00512C80": {
-  "name": "FUN_00512c80",
-  "named": false,
-  "len": 1608
+  "name": "vimp_mana_effect",
+  "named": true,
+  "len": 1612
  },
  "0x005137C0": {
   "name": "FUN_005137c0",
@@ -8920,9 +8920,9 @@
   "len": 1227
  },
  "0x00519D90": {
-  "name": "FUN_00519d90",
-  "named": false,
-  "len": 1471
+  "name": "filecopy_dirs",
+  "named": true,
+  "len": 1472
  },
  "0x00519ED0": {
   "name": "FUN_00519ed0",
@@ -9252,7 +9252,7 @@
  "0x0051DC20": {
   "name": "startup_options_init",
   "named": true,
-  "len": 10698
+  "len": 10700
  },
  "0x0051E670": {
   "name": "Audio3DTestToneUpdate__Fv_4",
@@ -9342,7 +9342,7 @@
  "0x00520B90": {
   "name": "gamespy_send_statechange",
   "named": true,
-  "len": 1902
+  "len": 1900
  },
  "0x00520D70": {
   "name": "FUN_00520D70",
@@ -9385,19 +9385,19 @@
   "len": 166
  },
  "0x005213D0": {
-  "name": "FUN_005213d0",
-  "named": false,
-  "len": 792
+  "name": "comm_session_menu",
+  "named": true,
+  "len": 797
  },
  "0x005214B0": {
-  "name": "FUN_005214b0",
-  "named": false,
-  "len": 388
+  "name": "comm_gtype_name",
+  "named": true,
+  "len": 391
  },
  "0x005214F0": {
-  "name": "FUN_005214f0",
-  "named": false,
-  "len": 1125
+  "name": "comm_gametype_menu",
+  "named": true,
+  "len": 1131
  },
  "0x00521620": {
   "name": "comm_00521620",
@@ -9447,7 +9447,7 @@
  "0x00521ED0": {
   "name": "comm_capture_time_menu",
   "named": true,
-  "len": 1094
+  "len": 1092
  },
  "0x00522020": {
   "name": "comm_smartie_diff_menu",
@@ -9467,7 +9467,7 @@
  "0x00522260": {
   "name": "comm_timelimit_menu",
   "named": true,
-  "len": 1007
+  "len": 1005
  },
  "0x00522360": {
   "name": "comm_playerscore_menu",
@@ -9497,17 +9497,17 @@
  "0x005227B0": {
   "name": "comm_scorelimit_menu",
   "named": true,
-  "len": 3823
+  "len": 3821
  },
  "0x00522B80": {
   "name": "comm_game_setup_menu",
   "named": true,
-  "len": 7873
+  "len": 7876
  },
  "0x005233F0": {
   "name": "comm_show_conn_menu",
   "named": true,
-  "len": 22959
+  "len": 22955
  },
  "0x00524DE0": {
   "name": "gamespy_host_game",
@@ -9592,7 +9592,7 @@
  "0x00529320": {
   "name": "comm_change_options_menu",
   "named": true,
-  "len": 5749
+  "len": 5745
  },
  "0x00529B20": {
   "name": "FUN_00529b20",
@@ -9622,7 +9622,7 @@
  "0x0052A050": {
   "name": "FUN_0052a050",
   "named": false,
-  "len": 9458
+  "len": 9464
  },
  "0x0052A940": {
   "name": "comm_server_ping",
@@ -10497,7 +10497,7 @@
  "0x00538800": {
   "name": "stream_00538800",
   "named": true,
-  "len": 9853
+  "len": 9854
  },
  "0x00538FF0": {
   "name": "FUN_00538ff0",

@@ -62,7 +62,8 @@ def emit(rows, fname, tier_base):
     used = set()
     for f in ["unified_names_1449.csv", "module_names_wave.csv", "module_bands.csv",
               "bsim_wave.csv", "system_wave2.csv", "crt_llm_names.csv", "crt_llm_names2.csv",
-              "llm_strings_wave.csv", "llm_strings_wave2.csv"]:
+              "llm_strings_wave.csv", "llm_strings_wave2.csv", "llm_wave4.csv",
+              "callpat_wave.csv", "crt_llm_names2.csv"]:
         try:
             for r in csv.DictReader(open(os.path.join(PS2, f), encoding="utf-8")):
                 claimed.add(norm(r["pc_addr"]))
@@ -105,6 +106,8 @@ def main():
             for r in csv.DictReader(open(os.path.join(PS2, f), encoding="utf-8")):
                 if float(r["conf"]) >= 0.9:
                     named[norm(r["pc_addr"])] = r["ps2_name"]
+        except FileNotFoundError:
+            pass
         except FileNotFoundError:
             pass
     callers = collections.defaultdict(set)
