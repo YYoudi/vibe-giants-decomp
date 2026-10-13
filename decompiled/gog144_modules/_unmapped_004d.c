@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (30 named) — decompiled, names from PS2 symbols
+ * 39 functions (31 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -2673,8 +2673,8 @@ void make_spit__FP6OBJECTP3P3Df(int param_1,int param_2,float param_3)
 
 }
 
-/* ===== FUN_004d4580 @ 0x004D4580 ===== */
-float10 FUN_004d4580(float param_1,int param_2,float param_3)
+/* ===== obj_face_target_move @ 0x004D4580 ===== */
+float10 obj_face_target_move(float param_1,int param_2,float param_3)
 
 
 

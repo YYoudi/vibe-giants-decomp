@@ -14274,7 +14274,7 @@ LAB_0051daf3:
 
                         else {
 
-                          uVar5 = FUN_00544fb5(pcVar7 + 5,0,0x10);
+                          uVar5 = crt_errno_set3(pcVar7 + 5,0,0x10);
 
                           FUN_00538ff0(uVar5);
 

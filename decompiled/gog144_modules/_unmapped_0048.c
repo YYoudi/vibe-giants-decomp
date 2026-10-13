@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (55 named) — decompiled, names from PS2 symbols
+ * 74 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -996,8 +996,8 @@ void mecc_drop_carried_object(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00480ef0 @ 0x00480EF0 ===== */
-void FUN_00480ef0(int param_1,int param_2)
+/* ===== obj_give_carried_item_3 @ 0x00480EF0 ===== */
+void obj_give_carried_item_3(int param_1,int param_2)
 
 
 

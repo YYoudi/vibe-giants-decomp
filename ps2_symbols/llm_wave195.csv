@@ -1,0 +1,11 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054f607,FUN_0054f607,,crt_mbslen,0.9,llm-w195,wctomb+compare callers strcpy_lock
+0054cce7,FUN_0054cce7,,crt_exit_flush_all,0.9,llm-w195,0xfc+user fptr+0xff chain callers abort
+00544fb5,FUN_00544fb5,,crt_errno_set3,0.9,llm-w195,3-arg wrapper of errno4
+004b6de0,FUN_004b6de0,,base_slot11_get,0.9,llm-w195,slot 0xb->0x154 / 3->0x74
+004c50b0,FUN_004c50b0,,obj_give_carried_item_2,0.9,llm-w195,carried-give twins callees fx+giftshop
+00480ef0,FUN_00480ef0,,obj_give_carried_item_3,0.9,llm-w195,twin
+004d4580,FUN_004d4580,,obj_face_target_move,0.9,llm-w195,dirfcalc+sign+turn caller smartie_move
+004571a0,FUN_004571a0,,death_pose_setup,0.9,llm-w195,anm_apply+nam_lookup caller mecc_do_death
+00446a00,FUN_00446a00,,texture_alloc_map,0.9,llm-w195,lock+chunk_alloc+group_fix caller texdump3
+00426f20,FUN_00426f20,,render_error_poll,0.9,llm-w195,wraps render_error_dialog_check callers FLK

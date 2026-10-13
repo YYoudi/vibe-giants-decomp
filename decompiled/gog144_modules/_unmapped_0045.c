@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (116 named) — decompiled, names from PS2 symbols
+ * 145 functions (117 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -6050,8 +6050,8 @@ void obj_shot_expire_destroy
 
 }
 
-/* ===== FUN_004571a0 @ 0x004571A0 ===== */
-int FUN_004571a0(int param_1,int *param_2,int param_3)
+/* ===== death_pose_setup @ 0x004571A0 ===== */
+int death_pose_setup(int param_1,int *param_2,int param_3)
 
 
 

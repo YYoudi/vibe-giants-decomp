@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (70 named) — decompiled, names from PS2 symbols
+ * 76 functions (71 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -4142,7 +4142,7 @@ LAB_00444d25:
 
     main_drawobj_0042d490();
 
-    FUN_00426f20();
+    render_error_poll();
 
     render_view_xform();
 
@@ -6233,8 +6233,8 @@ undefined4 FLK_FlickPlaying(void)
 
 }
 
-/* ===== FUN_00446a00 @ 0x00446A00 ===== */
-undefined4 * FUN_00446a00(undefined4 param_1,char *param_2)
+/* ===== texture_alloc_map @ 0x00446A00 ===== */
+undefined4 * texture_alloc_map(undefined4 param_1,char *param_2)
 
 
 
@@ -6803,9 +6803,9 @@ void texture_object_debug_dump_3(void)
 
   if (DAT_00656468 == 0) {
 
-    DAT_00656468 = FUN_00446a00(s_GiantFont_Eng_00558828,s________________0123456789__<_>___005587e8
+    DAT_00656468 = texture_alloc_map(s_GiantFont_Eng_00558828,
 
-                               );
+                                     s________________0123456789__<_>___005587e8);
 
   }
 

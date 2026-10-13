@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (111 named) — decompiled, names from PS2 symbols
+ * 129 functions (112 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -9077,8 +9077,8 @@ void dialog_level_process(void)
 
 }
 
-/* ===== FUN_00426f20 @ 0x00426F20 ===== */
-void FUN_00426f20(void)
+/* ===== render_error_poll @ 0x00426F20 ===== */
+void render_error_poll(void)
 
 
 

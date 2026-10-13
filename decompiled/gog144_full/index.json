@@ -1017,7 +1017,7 @@
  "0x00418F00": {
   "name": "main_commonbase_00418f00",
   "named": true,
-  "len": 18497
+  "len": 18522
  },
  "0x0041A090": {
   "name": "reaper_state_check_a",
@@ -1385,9 +1385,9 @@
   "len": 490
  },
  "0x00426F20": {
-  "name": "FUN_00426f20",
-  "named": false,
-  "len": 344
+  "name": "render_error_poll",
+  "named": true,
+  "len": 349
  },
  "0x00426F40": {
   "name": "dlog_push_level",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19204
+  "len": 19209
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -2610,9 +2610,9 @@
   "len": 186
  },
  "0x00446A00": {
-  "name": "FUN_00446a00",
-  "named": false,
-  "len": 1007
+  "name": "texture_alloc_map",
+  "named": true,
+  "len": 1012
  },
  "0x00446A90": {
   "name": "object_stop_movement",
@@ -2647,7 +2647,7 @@
  "0x00446EE0": {
   "name": "texture_object_debug_dump_3",
   "named": true,
-  "len": 770
+  "len": 781
  },
  "0x00446F50": {
   "name": "SetupCameraHail__Fv",
@@ -3220,9 +3220,9 @@
   "len": 835
  },
  "0x004571A0": {
-  "name": "FUN_004571a0",
-  "named": false,
-  "len": 1105
+  "name": "death_pose_setup",
+  "named": true,
+  "len": 1109
  },
  "0x00457270": {
   "name": "comm_options_defaults",
@@ -3917,7 +3917,7 @@
  "0x00471780": {
   "name": "hud_audio_dlog_screen",
   "named": true,
-  "len": 3342
+  "len": 3352
  },
  "0x00471A60": {
   "name": "game_loop_run",
@@ -4152,7 +4152,7 @@
  "0x0047BE20": {
   "name": "mecc_do_death",
   "named": true,
-  "len": 4364
+  "len": 4368
  },
  "0x0047C1D0": {
   "name": "mecc_do_flare__FP6OBJECT",
@@ -4290,9 +4290,9 @@
   "len": 1530
  },
  "0x00480EF0": {
-  "name": "FUN_00480ef0",
-  "named": false,
-  "len": 803
+  "name": "obj_give_carried_item_3",
+  "named": true,
+  "len": 814
  },
  "0x00480F90": {
   "name": "menu_fx_spawn",
@@ -6280,9 +6280,9 @@
   "len": 841
  },
  "0x004B6DE0": {
-  "name": "FUN_004b6de0",
-  "named": false,
-  "len": 366
+  "name": "base_slot11_get",
+  "named": true,
+  "len": 369
  },
  "0x004B6E20": {
   "name": "FUN_004b6e20",
@@ -6715,9 +6715,9 @@
   "len": 984
  },
  "0x004C50B0": {
-  "name": "FUN_004c50b0",
-  "named": false,
-  "len": 730
+  "name": "obj_give_carried_item_2",
+  "named": true,
+  "len": 741
  },
  "0x004C5130": {
   "name": "lzo_checked_alloc",
@@ -6757,7 +6757,7 @@
  "0x004C5E10": {
   "name": "ai_proximity_scan",
   "named": true,
-  "len": 1783
+  "len": 1786
  },
  "0x004C5FB0": {
   "name": "reaper_lock_pair",
@@ -6912,7 +6912,7 @@
  "0x004CEAA0": {
   "name": "smartie_move",
   "named": true,
-  "len": 54199
+  "len": 54231
  },
  "0x004D1790": {
   "name": "EnemyIsInvalid__FP6OBJECTT0",
@@ -6955,9 +6955,9 @@
   "len": 2957
  },
  "0x004D4580": {
-  "name": "FUN_004d4580",
-  "named": false,
-  "len": 754
+  "name": "obj_face_target_move",
+  "named": true,
+  "len": 762
  },
  "0x004D4630": {
   "name": "ai_face_move",
@@ -9247,7 +9247,7 @@
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
   "named": true,
-  "len": 15513
+  "len": 15515
  },
  "0x0051DC20": {
   "name": "startup_options_init",
@@ -11685,9 +11685,9 @@
   "len": 367
  },
  "0x00544FB5": {
-  "name": "FUN_00544fb5",
-  "named": false,
-  "len": 145
+  "name": "crt_errno_set3",
+  "named": true,
+  "len": 147
  },
  "0x00544FCC": {
   "name": "crt_errno_big",
@@ -11762,12 +11762,12 @@
  "0x00545860": {
   "name": "__amsg_exit",
   "named": true,
-  "len": 239
+  "len": 245
  },
  "0x00545885": {
   "name": "crt_abort_exit",
   "named": true,
-  "len": 273
+  "len": 279
  },
  "0x005458A9": {
   "name": "crt_freebuf_ops",
@@ -12317,7 +12317,7 @@
  "0x0054AB0B": {
   "name": "crt_heap_select",
   "named": true,
-  "len": 2443
+  "len": 2445
  },
  "0x0054AC53": {
   "name": "_heap_init",
@@ -12495,9 +12495,9 @@
   "len": 2295
  },
  "0x0054CCE7": {
-  "name": "FUN_0054cce7",
-  "named": false,
-  "len": 262
+  "name": "crt_exit_flush_all",
+  "named": true,
+  "len": 268
  },
  "0x0054CD20": {
   "name": "__rt_error_box_2",
@@ -12712,7 +12712,7 @@
  "0x0054E448": {
   "name": "crt_strcpy_lock",
   "named": true,
-  "len": 3209
+  "len": 3207
  },
  "0x0054E6CF": {
   "name": "crt_lock_54e6cf",
@@ -12815,9 +12815,9 @@
   "len": 1201
  },
  "0x0054F607": {
-  "name": "FUN_0054f607",
-  "named": false,
-  "len": 760
+  "name": "crt_mbslen",
+  "named": true,
+  "len": 758
  },
  "0x0054F684": {
   "name": "crt_errno_user2",

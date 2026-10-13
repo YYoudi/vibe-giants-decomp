@@ -790,7 +790,7 @@ LAB_004195d2:
 
       if (iVar8 == 0) {
 
-        iVar8 = FUN_004b6de0(param_1);
+        iVar8 = base_slot11_get(param_1);
 
       }
 
@@ -896,13 +896,13 @@ LAB_004195d2:
 
       if (iVar9 == 0) {
 
-        FUN_004c50b0(uVar7,iVar8);
+        obj_give_carried_item_2(uVar7,iVar8);
 
         return;
 
       }
 
-      FUN_00480ef0();
+      obj_give_carried_item_3();
 
       return;
 

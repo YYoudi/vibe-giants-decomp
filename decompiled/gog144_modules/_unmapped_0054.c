@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (306 named) — decompiled, names from PS2 symbols
+ * 351 functions (309 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -7258,8 +7258,8 @@ void crt_ptd_free_alloc(DWORD param_1)
 
 }
 
-/* ===== FUN_00544fb5 @ 0x00544FB5 ===== */
-void FUN_00544fb5(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== crt_errno_set3 @ 0x00544FB5 ===== */
+void crt_errno_set3(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -8604,7 +8604,7 @@ void __cdecl __amsg_exit(int param_1)
 
   if (DAT_00630bac == 1) {
 
-    FUN_0054cce7();
+    crt_exit_flush_all();
 
   }
 
@@ -8629,7 +8629,7 @@ void crt_abort_exit(undefined4 param_1)
 
   if (DAT_00630bac == 1) {
 
-    FUN_0054cce7();
+    crt_exit_flush_all();
 
   }
 
@@ -17757,7 +17757,7 @@ int crt_heap_select(void)
 
         aCStackY_18[3] = '\0';
 
-        iVar4 = FUN_00544fb5();
+        iVar4 = crt_errno_set3();
 
         if (iVar4 == 2) {
 
@@ -21814,8 +21814,8 @@ LAB_0054cc0c:
 
 }
 
-/* ===== FUN_0054cce7 @ 0x0054CCE7 ===== */
-void FUN_0054cce7(void)
+/* ===== crt_exit_flush_all @ 0x0054CCE7 ===== */
+void crt_exit_flush_all(void)
 
 
 
@@ -25400,7 +25400,7 @@ void crt_strcpy_lock(void)
 
   DAT_00630df0 = 0;
 
-  _Str1 = (char *)FUN_0054f607(&DAT_005528fc);
+  _Str1 = (char *)crt_mbslen(&DAT_005528fc);
 
   if (_Str1 == (char *)0x0) {
 
@@ -27644,8 +27644,8 @@ void crt_mant_normalize(undefined2 *param_1,uint param_2,int param_3)
 
 }
 
-/* ===== FUN_0054f607 @ 0x0054F607 ===== */
-int FUN_0054f607(uchar *param_1)
+/* ===== crt_mbslen @ 0x0054F607 ===== */
+int crt_mbslen(uchar *param_1)
 
 
 

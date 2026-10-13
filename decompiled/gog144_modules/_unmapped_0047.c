@@ -1248,7 +1248,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     render_scene_begin();
 
-    FUN_00426f20();
+    render_error_poll();
 
     AddHud__4cHudP8cHudIcon_2();
 
@@ -1286,7 +1286,7 @@ LAB_00471872:
 
   render_scene_begin();
 
-  FUN_00426f20();
+  render_error_poll();
 
   AddHud__4cHudP8cHudIcon_2();
 
@@ -5206,7 +5206,7 @@ LAB_0047bfbd:
 
   if ((((*(uint *)(iVar2 + 0xd8) & 0x80000) != 0) && (param_5 != 0.0)) && (80.0 <= param_2)) {
 
-    uVar7 = FUN_004571a0(iVar2,&DAT_0057a778,param_5);
+    uVar7 = death_pose_setup(iVar2,&DAT_0057a778,param_5);
 
     *(undefined4 *)(iVar4 + 0xf0) = uVar7;
 

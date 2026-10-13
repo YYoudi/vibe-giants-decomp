@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (57 named) — decompiled, names from PS2 symbols
+ * 64 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -3539,8 +3539,8 @@ void FUN_004c4fd0(int param_1)
 
 }
 
-/* ===== FUN_004c50b0 @ 0x004C50B0 ===== */
-void FUN_004c50b0(int param_1,int param_2)
+/* ===== obj_give_carried_item_2 @ 0x004C50B0 ===== */
+void obj_give_carried_item_2(int param_1,int param_2)
 
 
 
@@ -4512,7 +4512,7 @@ void ai_proximity_scan(int param_1)
 
     uVar1 = *(undefined4 *)(iVar3 + 0xcfc);
 
-    iVar3 = FUN_004b6de0(uVar1);
+    iVar3 = base_slot11_get(uVar1);
 
     if (iVar3 != 0) {
 
@@ -10765,7 +10765,7 @@ LAB_004d0e26:
 
       if ((float10)local_44 <= fVar15) {
 
-        fVar15 = (float10)FUN_004d4580(fVar5,&local_40,0);
+        fVar15 = (float10)obj_face_target_move(fVar5,&local_40,0);
 
         *(float *)((int)fVar5 + 0x15c) = local_40;
 
@@ -11417,7 +11417,7 @@ LAB_004d135c:
 
       if ((float10)0.0 <= fVar15) {
 
-        fVar15 = (float10)FUN_004d4580(fVar5,&local_34,0);
+        fVar15 = (float10)obj_face_target_move(fVar5,&local_34,0);
 
         *(float *)((int)fVar5 + 0x15c) = local_34;
 
@@ -11731,7 +11731,7 @@ LAB_004d135c:
 
     if (iVar11 == 0) {
 
-      FUN_004d4580(fVar5,(int)fVar3 + 0xa0,0);
+      obj_face_target_move(fVar5,(int)fVar3 + 0xa0,0);
 
       if ((uVar13 != 0) &&
 
@@ -11755,7 +11755,7 @@ LAB_004d135c:
 
     if (iVar11 == 0) {
 
-      FUN_004d4580(fVar5,(int)fVar3 + 0xa0,0);
+      obj_face_target_move(fVar5,(int)fVar3 + 0xa0,0);
 
       if ((local_44 == 7.14662e-44) && (0.6666667 <= *(float *)((int)fVar5 + 0x14))) {
 

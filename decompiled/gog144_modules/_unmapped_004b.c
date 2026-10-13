@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (78 named) — decompiled, names from PS2 symbols
+ * 90 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3363,8 +3363,8 @@ float10 reaperbase_get_max_energy(int param_1)
 
 }
 
-/* ===== FUN_004b6de0 @ 0x004B6DE0 ===== */
-undefined4 FUN_004b6de0(int param_1)
+/* ===== base_slot11_get @ 0x004B6DE0 ===== */
+undefined4 base_slot11_get(int param_1)
 
 
 
