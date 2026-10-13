@@ -6867,7 +6867,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                 if (iVar9 == 0) {
 
-                  iVar9 = FUN_004a61a0(iVar6);
+                  iVar9 = ObjIsKabuto(iVar6);
 
                   if (iVar9 != 0) {
 

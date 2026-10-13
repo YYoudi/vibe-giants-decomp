@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (41 named) — decompiled, names from PS2 symbols
+ * 94 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -942,14 +942,14 @@ undefined4 FUN_004e21f0(int param_1)
 
 }
 
-/* ===== FUN_004e2260 @ 0x004E2260 ===== */
+/* ===== rpman_verify_bush__FP6OBJECT @ 0x004E2260 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: rpman_verify_bush__FP6OBJECT (conf 0.634) */
 
 
 
-undefined4 FUN_004e2260(int param_1)
+undefined4 rpman_verify_bush__FP6OBJECT(int param_1)
 
 
 
@@ -1860,7 +1860,7 @@ LAB_004e2f05:
 
                     }
 
-                    iVar4 = FUN_004a61a0(iVar5);
+                    iVar4 = ObjIsKabuto(iVar5);
 
                     if (iVar4 != 0) {
 
@@ -2130,7 +2130,7 @@ LAB_004e3204:
 
       else {
 
-        iVar3 = FUN_004a61a0(iVar3);
+        iVar3 = ObjIsKabuto(iVar3);
 
         if (iVar3 != 0) {
 
@@ -2942,7 +2942,7 @@ LAB_004e3ad2:
 
           param_2 = (float)fVar9;
 
-          iVar6 = FUN_004a61a0(iVar4);
+          iVar6 = ObjIsKabuto(iVar4);
 
           if (iVar6 != 0) {
 
@@ -2962,7 +2962,7 @@ LAB_004e3ad2:
 
             }
 
-            iVar6 = FUN_004a61a0(iVar4);
+            iVar6 = ObjIsKabuto(iVar4);
 
             if ((iVar6 != 0) && (param_2 < 10000.0)) {
 

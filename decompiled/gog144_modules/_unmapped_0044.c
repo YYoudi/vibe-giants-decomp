@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (49 named) — decompiled, names from PS2 symbols
+ * 76 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1734,7 +1734,7 @@ undefined4 FUN_004429c0(float param_1)
 
       if (iVar5 != 0) {
 
-        iVar5 = FUN_004a61a0(iVar5);
+        iVar5 = ObjIsKabuto(iVar5);
 
         if (iVar5 != 0) {
 
@@ -8602,12 +8602,12 @@ void fx_orient_ground(int param_1,float param_2)
 
 }
 
-/* ===== FUN_00449800 @ 0x00449800 ===== */
+/* ===== fx_setupTracerRGB__FP10FXSTACKTAGPfT1 @ 0x00449800 ===== */
 /* PS2 candidate: _vfprintf_r (conf 0.333) */
 
 
 
-void FUN_00449800(int param_1,undefined4 *param_2,undefined4 *param_3)
+void fx_setupTracerRGB__FP10FXSTACKTAGPfT1(int param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
@@ -9730,7 +9730,7 @@ LAB_0044abc9:
 
       if ((in_stack_0000d774 == 0) && (!bVar5)) {
 
-        FUN_00449800();
+        fx_setupTracerRGB__FP10FXSTACKTAGPfT1();
 
       }
 

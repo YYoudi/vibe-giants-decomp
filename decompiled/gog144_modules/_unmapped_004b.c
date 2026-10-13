@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (50 named) — decompiled, names from PS2 symbols
+ * 90 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -1911,9 +1911,9 @@ LAB_004b56d8:
 
         if ((iVar3 == 0) && (iVar6 = fx_create(iVar6), iVar6 != 0)) {
 
-          FUN_0045a740(iVar2 + 0x5c4,0x49,0xffffffff);
+          item_create_base_pickup(iVar2 + 0x5c4,0x49,0xffffffff);
 
-          FUN_0045a740(iVar2 + 0x5d0,0x49,0xffffffff);
+          item_create_base_pickup(iVar2 + 0x5d0,0x49,0xffffffff);
 
         }
 
@@ -4690,7 +4690,7 @@ LAB_004b8187:
 
       if (*(int *)(iVar9 + 0x274) == 0) {
 
-        FUN_004a61a0(*(undefined4 *)(iVar9 + 0x210));
+        ObjIsKabuto(*(undefined4 *)(iVar9 + 0x210));
 
       }
 
@@ -6577,12 +6577,12 @@ void FUN_004b92d0(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004b9330 @ 0x004B9330 ===== */
+/* ===== reaper_give_all_spell_energy @ 0x004B9330 ===== */
 /* PS2 candidate: reaper_give_all_spell_energy (conf 0.367) */
 
 
 
-void FUN_004b9330(int param_1,int param_2)
+void reaper_give_all_spell_energy(int param_1,int param_2)
 
 
 
@@ -7032,7 +7032,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     }
 
-    iVar7 = FUN_004a61a0(*(undefined4 *)(iVar4 + 0x210));
+    iVar7 = ObjIsKabuto(*(undefined4 *)(iVar4 + 0x210));
 
     if (iVar7 != 0) {
 
@@ -7958,7 +7958,7 @@ void sound_player_user(undefined4 param_1,int *param_2)
 
           else {
 
-            iVar4 = FUN_004a61a0(iVar4);
+            iVar4 = ObjIsKabuto(iVar4);
 
             if (iVar4 != 0) {
 
@@ -8078,7 +8078,7 @@ void sound_player_user(undefined4 param_1,int *param_2)
 
             else {
 
-              iVar4 = FUN_004a61a0(iVar4);
+              iVar4 = ObjIsKabuto(iVar4);
 
               if (iVar4 != 0) {
 
@@ -8714,7 +8714,7 @@ void FUN_004bc930(int param_1)
 
     if ((iVar3 != 0) && ((*(uint *)(*(int *)(iVar2 + 0xc) + 0x1c8) & 0x400000) != 0)) {
 
-      iVar3 = FUN_004a61a0(*(int *)(iVar2 + 0xc));
+      iVar3 = ObjIsKabuto(*(int *)(iVar2 + 0xc));
 
       if (iVar3 != 0) {
 
@@ -9767,7 +9767,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
       uVar6 = FUN_00456050(param_1);
 
-      if (((*puVar2 & 2) == 0) && (iVar5 = FUN_0040cf70(), iVar5 == 0)) {
+      if (((*puVar2 & 2) == 0) && (iVar5 = camera_is_sniper(), iVar5 == 0)) {
 
         playerobj_eval_refpt(uVar6,0,local_30);
 
@@ -9813,7 +9813,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
   else {
 
-    iVar5 = FUN_0040cf70();
+    iVar5 = camera_is_sniper();
 
     if (iVar5 == 0) {
 
@@ -12606,7 +12606,7 @@ void reaper_finish_shrinker(undefined4 param_1,int param_2,int param_3,int param
 
         }
 
-        iVar8 = FUN_004a61a0(iVar8);
+        iVar8 = ObjIsKabuto(iVar8);
 
         if (iVar8 != 0) {
 

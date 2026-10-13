@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (37 named) — decompiled, names from PS2 symbols
+ * 87 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -1074,7 +1074,7 @@ void status_draw_panel(void)
 
     }
 
-    iVar1 = FUN_004a61a0(DAT_00632a88);
+    iVar1 = ObjIsKabuto(DAT_00632a88);
 
     if (iVar1 == 0) {
 
@@ -6673,7 +6673,7 @@ LAB_00505c08:
 
       local_88 = iVar7;
 
-      FUN_004ac620(param_1,param_1 + 0x144,0x3dcccccd);
+      align_with_ground(param_1,param_1 + 0x144,0x3dcccccd);
 
       bVar17 = true;
 
@@ -7519,7 +7519,7 @@ LAB_005065cf:
 
                   *(uint *)(iVar7 + 0xd8) = *(uint *)(iVar7 + 0xd8) | 0x10000;
 
-                  iVar14 = FUN_0040cf70();
+                  iVar14 = camera_is_sniper();
 
                   if (iVar14 != 0) {
 
@@ -7713,7 +7713,7 @@ LAB_00506418:
 
                 if (iVar14 != 0) {
 
-                  iVar14 = FUN_0040cf70();
+                  iVar14 = camera_is_sniper();
 
                   if (iVar14 == 0) {
 
@@ -10622,14 +10622,14 @@ LAB_0050aac5:
 
 }
 
-/* ===== FUN_0050ac00 @ 0x0050AC00 ===== */
+/* ===== matrix_mult__FPfN20 @ 0x0050AC00 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: matrix_mult__FPfN20 (conf 0.63) */
 
 
 
-void FUN_0050ac00(float *param_1,float *param_2,undefined4 *param_3)
+void matrix_mult__FPfN20(float *param_1,float *param_2,undefined4 *param_3)
 
 
 
@@ -12024,7 +12024,7 @@ LAB_0050d177:
 
 switchD_0050ca70_caseD_15:
 
-    iVar9 = FUN_004a61a0(pfVar1[1]);
+    iVar9 = ObjIsKabuto(pfVar1[1]);
 
     if (iVar9 == 0) {
 
@@ -12408,7 +12408,7 @@ switchD_0050ca70_caseD_15:
 
       if ((int)pfVar1[8] < 1) {
 
-        iVar9 = FUN_004a61a0(pfVar1[1]);
+        iVar9 = ObjIsKabuto(pfVar1[1]);
 
         if (iVar9 == 0) {
 
@@ -13222,7 +13222,7 @@ LAB_0050e133:
 
     if (((iVar6 == 0) && (iVar6 = FUN_004a6180(DAT_00632a88), iVar6 == 0)) &&
 
-       (iVar6 = FUN_004a61a0(DAT_00632a88), iVar6 == 0)) {
+       (iVar6 = ObjIsKabuto(DAT_00632a88), iVar6 == 0)) {
 
       return;
 
@@ -13242,7 +13242,7 @@ LAB_0050e133:
 
     if (((iVar6 != 0) || (iVar6 = FUN_004a6180(DAT_00632a88), iVar6 != 0)) ||
 
-       (iVar6 = FUN_004a61a0(DAT_00632a88), iVar6 != 0)) {
+       (iVar6 = ObjIsKabuto(DAT_00632a88), iVar6 != 0)) {
 
       iVar6 = (int)param_1 + 0xa0;
 

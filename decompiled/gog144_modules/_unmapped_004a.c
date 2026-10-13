@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (55 named) — decompiled, names from PS2 symbols
+ * 131 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -539,14 +539,16 @@ void path_flyer_calculate
 
 }
 
-/* ===== FUN_004a12a0 @ 0x004A12A0 ===== */
+/* ===== path_short_calculate @ 0x004A12A0 ===== */
 /* PS2 candidate: path_short_calculate (conf 0.636) */
 
 
 
-void FUN_004a12a0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+void path_short_calculate
 
-                 undefined4 param_5,undefined4 param_6,undefined4 param_7)
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+               undefined4 param_5,undefined4 param_6,undefined4 param_7)
 
 
 
@@ -4416,7 +4418,7 @@ void comm_game_session_update(void)
 
   if ((*(float *)(DAT_00632a88 + 0x1c0) <= *(float *)(DAT_00632a88 + 0x278)) &&
 
-     (iVar3 = FUN_0040cf70(), iVar3 != 0)) {
+     (iVar3 = camera_is_sniper(), iVar3 != 0)) {
 
     cam_mode_switch(1);
 
@@ -4814,7 +4816,7 @@ LAB_004a5802:
 
        (((DAT_00632bac == 0 && (DAT_00632bb0 == 0)) && (DAT_00632bb4 == 0)))) {
 
-      FUN_0045a900(DAT_00632a88);
+      item_drop_backheld(DAT_00632a88);
 
     }
 
@@ -5623,12 +5625,12 @@ undefined4 FUN_004a6180(int param_1)
 
 }
 
-/* ===== FUN_004a61a0 @ 0x004A61A0 ===== */
+/* ===== ObjIsKabuto @ 0x004A61A0 ===== */
 /* PS2 candidate: ObjIsKabuto (conf 0.626) */
 
 
 
-undefined4 FUN_004a61a0(int param_1)
+undefined4 ObjIsKabuto(int param_1)
 
 
 
@@ -10671,12 +10673,12 @@ void FUN_004ac4b0(int param_1,float *param_2,int param_3,float param_4,float par
 
 }
 
-/* ===== FUN_004ac620 @ 0x004AC620 ===== */
+/* ===== align_with_ground @ 0x004AC620 ===== */
 /* PS2 candidate: align_with_ground (conf 0.56) */
 
 
 
-void FUN_004ac620(int param_1,float *param_2,float param_3)
+void align_with_ground(int param_1,float *param_2,float param_3)
 
 
 

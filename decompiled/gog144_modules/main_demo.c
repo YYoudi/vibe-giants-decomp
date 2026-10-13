@@ -54,7 +54,7 @@ void main_demo_004267a0(void)
 
             if ((((iVar1 != 0) || (iVar1 = ObjIsMecc(iVar3), iVar1 != 0)) ||
 
-                (iVar1 = FUN_004a61a0(iVar3), iVar1 != 0)) &&
+                (iVar1 = ObjIsKabuto(iVar3), iVar1 != 0)) &&
 
                ((iVar1 = ObjIsMecc(iVar3), iVar1 == 0 || (*(int *)(iVar3 + 0x174) == 0)))) {
 
@@ -80,7 +80,7 @@ void main_demo_004267a0(void)
 
                         if (((iVar3 == 0) && (iVar3 = ObjIsMecc(iVar4), iVar3 == 0)) &&
 
-                           (iVar3 = FUN_004a61a0(iVar4), iVar3 == 0)) {
+                           (iVar3 = ObjIsKabuto(iVar4), iVar3 == 0)) {
 
                           comm_send_small_b(iVar4);
 
@@ -280,7 +280,7 @@ void main_demo_004267a0(void)
 
             if (((iVar3 == 0) && (iVar3 = ObjIsMecc(iVar4), iVar3 == 0)) &&
 
-               (iVar3 = FUN_004a61a0(iVar4), iVar3 == 0)) {
+               (iVar3 = ObjIsKabuto(iVar4), iVar3 == 0)) {
 
               comm_send_small_b(iVar4);
 
@@ -379,7 +379,7 @@ undefined4 main_demo_00426c10(void)
 
               if (((iVar5 == 0) && (iVar5 = ObjIsMecc(iVar6), iVar5 == 0)) &&
 
-                 (iVar5 = FUN_004a61a0(iVar6), iVar5 == 0)) {
+                 (iVar5 = ObjIsKabuto(iVar6), iVar5 == 0)) {
 
                 comm_send_small_b(iVar6);
 
@@ -465,7 +465,7 @@ undefined4 main_demo_00426c10(void)
 
       if ((((iVar4 != 0) || (iVar4 = ObjIsMecc(iVar6), iVar4 != 0)) ||
 
-          (iVar4 = FUN_004a61a0(iVar6), iVar4 != 0)) &&
+          (iVar4 = ObjIsKabuto(iVar6), iVar4 != 0)) &&
 
          ((iVar4 = ObjIsMecc(iVar6), iVar4 == 0 || (*(int *)(iVar6 + 0x174) == 0)))) {
 
@@ -491,7 +491,7 @@ undefined4 main_demo_00426c10(void)
 
                   if (((iVar5 == 0) && (iVar5 = ObjIsMecc(iVar6), iVar5 == 0)) &&
 
-                     (iVar5 = FUN_004a61a0(iVar6), iVar5 == 0)) {
+                     (iVar5 = ObjIsKabuto(iVar6), iVar5 == 0)) {
 
                     comm_send_small_b(iVar6);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (50 named) — decompiled, names from PS2 symbols
+ * 105 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -6079,9 +6079,9 @@ LAB_004090c8:
 
         if ((iVar3 == 0) && (iVar6 = fx_create(iVar6), iVar6 != 0)) {
 
-          FUN_0045a740(iVar2 + 0x5c4,0x13,0xffffffff);
+          item_create_base_pickup(iVar2 + 0x5c4,0x13,0xffffffff);
 
-          FUN_0045a740(iVar2 + 0x5d0,0x13,0xffffffff);
+          item_create_base_pickup(iVar2 + 0x5d0,0x13,0xffffffff);
 
         }
 
@@ -9384,7 +9384,7 @@ undefined4 FUN_0040cf20(void)
 
   if (((iVar1 == 0) && (iVar1 = FUN_004a6180(DAT_00632a88), iVar1 == 0)) &&
 
-     (iVar1 = FUN_004a61a0(DAT_00632a88), iVar1 == 0)) {
+     (iVar1 = ObjIsKabuto(DAT_00632a88), iVar1 == 0)) {
 
     return 0;
 
@@ -9394,12 +9394,12 @@ undefined4 FUN_0040cf20(void)
 
 }
 
-/* ===== FUN_0040cf70 @ 0x0040CF70 ===== */
+/* ===== camera_is_sniper @ 0x0040CF70 ===== */
 /* PS2 candidate: camera_is_firstp (conf 0.492) */
 
 
 
-undefined4 FUN_0040cf70(void)
+undefined4 camera_is_sniper(void)
 
 
 
@@ -9427,7 +9427,7 @@ undefined4 FUN_0040cf70(void)
 
     if (((iVar1 == 0) && (iVar1 = FUN_004a6180(DAT_00632a88), iVar1 == 0)) &&
 
-       (iVar1 = FUN_004a61a0(DAT_00632a88), iVar1 == 0)) {
+       (iVar1 = ObjIsKabuto(DAT_00632a88), iVar1 == 0)) {
 
       return 0;
 
@@ -9490,7 +9490,7 @@ int cam_target_get(void)
 
        (iVar2 = FUN_004a6180(DAT_00632a88), iVar2 != 0)) ||
 
-      (iVar2 = FUN_004a61a0(DAT_00632a88), iVar2 != 0)))) {
+      (iVar2 = ObjIsKabuto(DAT_00632a88), iVar2 != 0)))) {
 
     iVar1 = 1;
 
@@ -9677,7 +9677,7 @@ void sound_player_voice_smartie(void)
 
       if (iVar1 == 0) {
 
-        iVar1 = FUN_004a61a0(DAT_00632a88);
+        iVar1 = ObjIsKabuto(DAT_00632a88);
 
         if (iVar1 == 0) {
 
@@ -9727,7 +9727,7 @@ void sound_player_voice_smartie(void)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a61a0(DAT_00632a88);
+    iVar1 = ObjIsKabuto(DAT_00632a88);
 
     if (iVar1 != 0) {
 
@@ -9772,7 +9772,7 @@ void sound_player_voice_mecc(void)
 
       if (iVar1 == 0) {
 
-        iVar1 = FUN_004a61a0(DAT_00632a88);
+        iVar1 = ObjIsKabuto(DAT_00632a88);
 
         if (iVar1 == 0) {
 
@@ -9822,7 +9822,7 @@ void sound_player_voice_mecc(void)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a61a0(DAT_00632a88);
+    iVar1 = ObjIsKabuto(DAT_00632a88);
 
     if (iVar1 != 0) {
 
@@ -9916,7 +9916,7 @@ LAB_0040d56d:
 
         if (iVar1 == 0) {
 
-          iVar1 = FUN_004a61a0(DAT_00632a88);
+          iVar1 = ObjIsKabuto(DAT_00632a88);
 
           if (iVar1 == 0) goto LAB_0040d56d;
 
@@ -9962,7 +9962,7 @@ LAB_0040d5e0:
 
         if (iVar1 == 0) {
 
-          iVar1 = FUN_004a61a0(DAT_00632a88);
+          iVar1 = ObjIsKabuto(DAT_00632a88);
 
           if (iVar1 == 0) goto LAB_0040d65a;
 
@@ -11136,7 +11136,7 @@ void ai_nearest_55_scan(float param_1)
 
       param_1 = (float)fVar5;
 
-      iVar3 = FUN_004a61a0(iVar2);
+      iVar3 = ObjIsKabuto(iVar2);
 
       if (iVar3 != 0) {
 

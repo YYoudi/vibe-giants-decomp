@@ -277,7 +277,7 @@ void menu_player_join_check(int param_1,int param_2,int param_3,int param_4)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a61a0(DAT_00632a88);
+    iVar1 = ObjIsKabuto(DAT_00632a88);
 
     if (iVar1 != 0) {
 
@@ -865,7 +865,7 @@ undefined4 FUN_00420890(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a61a0(DAT_00632a88);
+      iVar2 = ObjIsKabuto(DAT_00632a88);
 
       iVar2 = 3 - (uint)(iVar2 != 0);
 
@@ -938,7 +938,7 @@ undefined4 FUN_00420930(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a61a0(DAT_00632a88);
+      iVar2 = ObjIsKabuto(DAT_00632a88);
 
       iVar2 = 3 - (uint)(iVar2 != 0);
 
@@ -1011,7 +1011,7 @@ undefined4 FUN_004209d0(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a61a0(DAT_00632a88);
+      iVar2 = ObjIsKabuto(DAT_00632a88);
 
       iVar2 = 3 - (uint)(iVar2 != 0);
 
@@ -1084,7 +1084,7 @@ undefined4 FUN_00420a70(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a61a0(DAT_00632a88);
+      iVar2 = ObjIsKabuto(DAT_00632a88);
 
       iVar2 = 3 - (uint)(iVar2 != 0);
 
@@ -8893,7 +8893,7 @@ void dlog_objname_menu(void)
 
             if ((((iVar2 != 0) || (iVar2 = ObjIsMecc(iVar1), iVar2 != 0)) ||
 
-                (iVar2 = FUN_004a61a0(iVar1), iVar2 != 0)) &&
+                (iVar2 = ObjIsKabuto(iVar1), iVar2 != 0)) &&
 
                ((iVar2 = ObjIsMecc(iVar1), iVar2 == 0 || (*(int *)(iVar1 + 0x174) == 0)))) {
 

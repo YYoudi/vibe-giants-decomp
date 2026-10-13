@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (61 named) — decompiled, names from PS2 symbols
+ * 145 functions (63 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1984,7 +1984,7 @@ LAB_0045289f:
 
       }
 
-      FUN_004b9330(DAT_00632a88,uVar8);
+      reaper_give_all_spell_energy(DAT_00632a88,uVar8);
 
       if ((DAT_0059d984 == 0) && (piVar1 == (int *)0x0)) {
 
@@ -6474,7 +6474,7 @@ LAB_004576b1:
 
   DAT_00632f08 = 1;
 
-  FUN_0051f470();
+  GiantsInitNewWorld();
 
   return;
 
@@ -8240,7 +8240,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
     if (iVar3 == 0) {
 
-      iVar3 = FUN_004a61a0(iVar6);
+      iVar3 = ObjIsKabuto(iVar6);
 
       if (iVar3 == 0) {
 
@@ -9812,12 +9812,12 @@ void FUN_0045a4c0(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0045a740 @ 0x0045A740 ===== */
+/* ===== item_create_base_pickup @ 0x0045A740 ===== */
 /* PS2 candidate: item_create_base_pickup (conf 0.625) */
 
 
 
-void FUN_0045a740(undefined4 *param_1,undefined4 param_2,int param_3)
+void item_create_base_pickup(undefined4 *param_1,undefined4 param_2,int param_3)
 
 
 
@@ -9972,12 +9972,12 @@ int FUN_0045a820(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
 }
 
-/* ===== FUN_0045a900 @ 0x0045A900 ===== */
+/* ===== item_drop_backheld @ 0x0045A900 ===== */
 /* PS2 candidate: item_drop_backheld (conf 0.637) */
 
 
 
-void FUN_0045a900(int param_1)
+void item_drop_backheld(int param_1)
 
 
 
@@ -11077,13 +11077,13 @@ void AttackObject__FP6OBJECTT0P3P3DT2fi
 
   }
 
-  iVar3 = FUN_004a61a0(param_1);
+  iVar3 = ObjIsKabuto(param_1);
 
   iVar4 = param_1;
 
   if ((iVar3 == 0) && (iVar3 = FUN_004a61c0(param_1), iVar3 == 0)) {
 
-    iVar4 = FUN_004a61a0(*(undefined4 *)(param_1 + 0x274));
+    iVar4 = ObjIsKabuto(*(undefined4 *)(param_1 + 0x274));
 
     if ((iVar4 == 0) && (iVar4 = FUN_004a61c0(*(undefined4 *)(param_1 + 0x274)), iVar4 == 0)) {
 
@@ -11175,7 +11175,7 @@ LAB_0045bb57:
 
     if ((~param_6 & 0x10) != 0) {
 
-      iVar3 = FUN_004a61a0(iVar4);
+      iVar3 = ObjIsKabuto(iVar4);
 
       if (iVar3 == 0) {
 

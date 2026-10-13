@@ -2023,7 +2023,7 @@ void reaper_finish_smartie_grab__FP6OBJECT(int param_1)
 
   if (*(int *)(iVar2 + 0x274) == 0) {
 
-    FUN_004a61a0(*(undefined4 *)(iVar2 + 0x210));
+    ObjIsKabuto(*(undefined4 *)(iVar2 + 0x210));
 
   }
 
@@ -4778,7 +4778,7 @@ void firewall_create_fire__FP6OBJECTT0Uifffi
 
     fx_get_free_effect__Fv();
 
-    iVar4 = FUN_004a61a0(param_2,pcVar5,uVar11,puVar13);
+    iVar4 = ObjIsKabuto(param_2,pcVar5,uVar11,puVar13);
 
     if (iVar4 != 0) {
 
@@ -5524,7 +5524,7 @@ void FUN_004ca890(float param_1,float param_2)
 
         }
 
-        iVar8 = FUN_004a61a0(iVar7);
+        iVar8 = ObjIsKabuto(iVar7);
 
         if (iVar8 != 0) {
 
@@ -5540,7 +5540,7 @@ void FUN_004ca890(float param_1,float param_2)
 
           }
 
-          iVar8 = FUN_004a61a0(iVar7);
+          iVar8 = ObjIsKabuto(iVar7);
 
           if ((iVar8 != 0) && (param_1 < 10000.0)) {
 
@@ -5731,7 +5731,7 @@ LAB_004cacea:
 
   else {
 
-    iVar4 = FUN_004a61a0(*(undefined4 *)(iVar1 + 0x3c));
+    iVar4 = ObjIsKabuto(*(undefined4 *)(iVar1 + 0x3c));
 
     if (iVar4 == 0) {
 
@@ -7280,7 +7280,7 @@ void FUN_004cc900(void)
 
     if (iVar6 == 0) {
 
-      iVar6 = FUN_004a61a0(DAT_00632a88);
+      iVar6 = ObjIsKabuto(DAT_00632a88);
 
       if (iVar6 != 0) {
 
@@ -8785,7 +8785,7 @@ undefined4 dev_debug_flags(void)
 
       for (; puVar2 != (undefined4 *)0x0; puVar2 = (undefined4 *)*puVar2) {
 
-        if ((-1 < *(char *)(puVar2[3] + 0xd8)) && (iVar5 = FUN_004a61a0(), iVar5 != 0)) {
+        if ((-1 < *(char *)(puVar2[3] + 0xd8)) && (iVar5 = ObjIsKabuto(), iVar5 != 0)) {
 
           status_update_entry();
 
@@ -10773,7 +10773,7 @@ LAB_004d0e26:
 
     case 8:
 
-      iVar11 = FUN_004d1790(fVar5,fVar3);
+      iVar11 = EnemyIsInvalid__FP6OBJECTT0(fVar5,fVar3);
 
       if (iVar11 == 0) {
 
@@ -10807,7 +10807,7 @@ LAB_004d0e26:
 
     case 9:
 
-      iVar11 = FUN_004d1790(fVar5,fVar3);
+      iVar11 = EnemyIsInvalid__FP6OBJECTT0(fVar5,fVar3);
 
       if (iVar11 == 0) {
 
@@ -11691,7 +11691,7 @@ LAB_004d135c:
 
   case 0x44:
 
-    iVar11 = FUN_004d1790(fVar5,fVar3);
+    iVar11 = EnemyIsInvalid__FP6OBJECTT0(fVar5,fVar3);
 
     if (iVar11 == 0) {
 
@@ -11715,7 +11715,7 @@ LAB_004d135c:
 
   case 0x45:
 
-    iVar11 = FUN_004d1790(fVar5,fVar3);
+    iVar11 = EnemyIsInvalid__FP6OBJECTT0(fVar5,fVar3);
 
     if (iVar11 == 0) {
 

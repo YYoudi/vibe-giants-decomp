@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (61 named) — decompiled, names from PS2 symbols
+ * 142 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -1148,7 +1148,7 @@ LAB_0049156a:
 
     }
 
-    iVar9 = FUN_004a61a0(iVar7);
+    iVar9 = ObjIsKabuto(iVar7);
 
     if (iVar9 == 0) {
 
@@ -1378,7 +1378,7 @@ LAB_0049156a:
 
       else if (*(int *)(DAT_00632ed8 + 0x15c0) <= iVar5) {
 
-        iVar9 = FUN_004a61a0(DAT_00632a88);
+        iVar9 = ObjIsKabuto(DAT_00632a88);
 
         goto LAB_00491945;
 
@@ -1476,7 +1476,7 @@ LAB_00491aab:
 
         _DAT_0059f328 = (float)fVar10;
 
-        iVar9 = FUN_004a61a0(DAT_00632a88);
+        iVar9 = ObjIsKabuto(DAT_00632a88);
 
 LAB_00491945:
 
@@ -1602,7 +1602,7 @@ LAB_00491abd:
 
     else {
 
-      iVar5 = FUN_004a61a0(DAT_00632a88);
+      iVar5 = ObjIsKabuto(DAT_00632a88);
 
       if (iVar5 != 0) {
 
@@ -2285,7 +2285,7 @@ void FUN_00492290(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a61a0(DAT_00632a88);
+      iVar2 = ObjIsKabuto(DAT_00632a88);
 
       uVar5 = DAT_0059f284;
 
@@ -2500,7 +2500,7 @@ LAB_00492458:
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_004a61a0(DAT_00632a88);
+      iVar1 = ObjIsKabuto(DAT_00632a88);
 
       if (iVar1 != 0) {
 
@@ -2764,7 +2764,7 @@ LAB_00492458:
 
       }
 
-      FUN_004a61a0(DAT_00632a88);
+      ObjIsKabuto(DAT_00632a88);
 
     }
 
@@ -4910,7 +4910,7 @@ void FUN_00494120(int param_1)
 
       local_4 = local_10 * 10.0 + *(float *)(DAT_00632a88 + 0xa8);
 
-      iVar4 = FUN_0049a4e0(&local_c,param_1 + 0x27c);
+      iVar4 = collide_pt_bbox(&local_c,param_1 + 0x27c);
 
       if (iVar4 == 0) {
 
@@ -8297,7 +8297,7 @@ void weapon_id_inventory_update(void)
 
   }
 
-  iVar2 = FUN_0040cf70();
+  iVar2 = camera_is_sniper();
 
   if (iVar2 == 0) {
 
@@ -8313,7 +8313,7 @@ void weapon_id_inventory_update(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a61a0(puVar1);
+      iVar2 = ObjIsKabuto(puVar1);
 
       if (iVar2 == 0) {
 
@@ -9004,7 +9004,7 @@ void FUN_004984b0(void)
 
     if (iVar2 == 0) {
 
-      iVar2 = FUN_004a61a0(iVar1);
+      iVar2 = ObjIsKabuto(iVar1);
 
       if (iVar2 == 0) {
 
@@ -9444,7 +9444,7 @@ void vimp_death_fx(int param_1)
 
   }
 
-  iVar1 = FUN_004a61a0(DAT_00632a88);
+  iVar1 = ObjIsKabuto(DAT_00632a88);
 
   if ((iVar1 == 0) || (DAT_00632adf == '\0')) {
 
@@ -11233,12 +11233,12 @@ undefined4 collide_ptsize_bbox(float *param_1,float param_2,float *param_3)
 
 }
 
-/* ===== FUN_0049a4e0 @ 0x0049A4E0 ===== */
+/* ===== collide_pt_bbox @ 0x0049A4E0 ===== */
 /* PS2 candidate: collide_pt_bbox (conf 0.631) */
 
 
 
-undefined4 FUN_0049a4e0(float *param_1,float *param_2)
+undefined4 collide_pt_bbox(float *param_1,float *param_2)
 
 
 
@@ -12350,7 +12350,7 @@ void FUN_0049baa0(int param_1)
 
     FUN_00458a10(param_1);
 
-    FUN_0045a900(param_1);
+    item_drop_backheld(param_1);
 
     if (*(int *)(iVar4 + 0x1a0) != 0) {
 
@@ -12412,7 +12412,7 @@ void FUN_0049baa0(int param_1)
 
       }
 
-      FUN_0045a900(param_1);
+      item_drop_backheld(param_1);
 
       return;
 
@@ -13274,7 +13274,7 @@ void FUN_0049dd90(int param_1)
 
       fVar1 = (float)fVar6;
 
-      iVar5 = FUN_004a61a0(iVar3);
+      iVar5 = ObjIsKabuto(iVar3);
 
       if (iVar5 != 0) {
 

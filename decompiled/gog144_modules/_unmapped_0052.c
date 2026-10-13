@@ -12939,7 +12939,7 @@ LAB_0052edc5:
 
     if (iVar8 == 0) {
 
-      iVar8 = FUN_004a61a0(iVar9);
+      iVar8 = ObjIsKabuto(iVar9);
 
       if (iVar8 != 0) {
 

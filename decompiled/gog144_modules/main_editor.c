@@ -1420,7 +1420,7 @@ LAB_00437d68:
 
             FUN_0050a8f0(0,0,*(undefined4 *)(piVar11[0xe] + 200),local_24);
 
-            FUN_0050ac00(local_24,local_48,local_48);
+            matrix_mult__FPfN20(local_24,local_48,local_48);
 
             iVar10 = piVar11[0xe];
 

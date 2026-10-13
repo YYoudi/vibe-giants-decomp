@@ -1,0 +1,15 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0045a900,FUN_0045a900,,item_drop_backheld,0.9,llm-w119,body-verified
+004a12a0,FUN_004a12a0,,path_short_calculate,0.9,llm-w119,body-verified path family delegate
+004ac620,FUN_004ac620,,align_with_ground,0.9,llm-w119,body-verified
+004e2260,FUN_004e2260,,rpman_verify_bush__FP6OBJECT,0.9,llm-w119,body-verified
+0051f470,FUN_0051f470,,GiantsInitNewWorld,0.9,llm-w119,body-verified HRESULT init
+004d1790,FUN_004d1790,,EnemyIsInvalid__FP6OBJECTT0,0.9,llm-w119,body-verified flag pattern
+0049a4e0,FUN_0049a4e0,,collide_pt_bbox,0.9,llm-w119,body-verified pt-in-bbox
+0050ac00,FUN_0050ac00,,matrix_mult__FPfN20,0.9,llm-w119,body-verified mat product
+004a61a0,FUN_004a61a0,,ObjIsKabuto,0.9,llm-w119,body-verified type==1
+0045a740,FUN_0045a740,,item_create_base_pickup,0.9,llm-w119,body-verified model 0x311
+00449800,FUN_00449800,,fx_setupTracerRGB__FP10FXSTACKTAGPfT1,0.9,llm-w119,string-proven tracer rgb msg
+0040cf70,FUN_0040cf70,,camera_is_sniper,0.9,llm-w119,body-verified
+004b9330,FUN_004b9330,,reaper_give_all_spell_energy,0.9,llm-w119,body-verified 5 slots
+00517970,FUN_00517970,,binfile_seek_cur,0.9,llm-w119,body-verified SetFilePointer cur (rejected changeInputVolume)

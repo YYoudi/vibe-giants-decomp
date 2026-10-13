@@ -48,7 +48,7 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
   }
 
-  iVar3 = FUN_00517970(param_2);
+  iVar3 = binfile_seek_cur(param_2);
 
   BinFileRead(param_2,&local_28,4);
 

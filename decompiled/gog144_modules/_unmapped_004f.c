@@ -472,15 +472,15 @@ LAB_004f3ef6:
 
     local_38 = 0;
 
-    FUN_0045a740(&local_40,0x3c,*(undefined4 *)(iVar2 + 0x188));
+    item_create_base_pickup(&local_40,0x3c,*(undefined4 *)(iVar2 + 0x188));
 
     local_3c = local_3c + 15.0;
 
-    FUN_0045a740(&local_40,0x3d,*(undefined4 *)(iVar2 + 0x188));
+    item_create_base_pickup(&local_40,0x3d,*(undefined4 *)(iVar2 + 0x188));
 
     local_3c = local_3c + 15.0;
 
-    FUN_0045a740(&local_40,0x3e,*(undefined4 *)(iVar2 + 0x188));
+    item_create_base_pickup(&local_40,0x3e,*(undefined4 *)(iVar2 + 0x188));
 
   }
 

@@ -4396,7 +4396,7 @@ int new_fire__FP6OBJECTiPfT0P3P3Df
 
     if (*(int *)((int)fVar1 + 0x174) == 0) {
 
-      iVar5 = FUN_0040cf70();
+      iVar5 = camera_is_sniper();
 
       pfVar3 = param_3;
 

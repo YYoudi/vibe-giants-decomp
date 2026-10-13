@@ -1486,9 +1486,11 @@ void main_ai_move_004029a0(int param_1,undefined4 param_2)
 
   }
 
-  iVar2 = FUN_004a12a0(param_1,*(undefined4 *)(param_1 + 0x154),param_1 + 0xa0,param_2,5,&local_7c,
+  iVar2 = path_short_calculate
 
-                       local_78);
+                    (param_1,*(undefined4 *)(param_1 + 0x154),param_1 + 0xa0,param_2,5,&local_7c,
+
+                     local_78);
 
   if ((iVar2 == -1) || (local_7c == 0)) {
 

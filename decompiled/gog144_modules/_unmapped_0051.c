@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (91 named) — decompiled, names from PS2 symbols
+ * 186 functions (93 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2031,7 +2031,7 @@ void flk_actor_update(int param_1)
 
         FUN_00513920(iVar2,iVar8,local_18);
 
-        iVar8 = FUN_0049a4e0(local_24,local_18);
+        iVar8 = collide_pt_bbox(local_24,local_18);
 
         if (iVar8 != 0) {
 
@@ -6924,12 +6924,12 @@ void sceSifLoadElf_2(HANDLE param_1,LONG param_2)
 
 }
 
-/* ===== FUN_00517970 @ 0x00517970 ===== */
+/* ===== binfile_seek_cur @ 0x00517970 ===== */
 /* PS2 candidate: changeInputVolume__FUi (conf 0.631) */
 
 
 
-void FUN_00517970(HANDLE param_1)
+void binfile_seek_cur(HANDLE param_1)
 
 
 
@@ -15623,14 +15623,14 @@ void gamespy_shutdown(void)
 
 }
 
-/* ===== FUN_0051f470 @ 0x0051F470 ===== */
+/* ===== GiantsInitNewWorld @ 0x0051F470 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: GiantsInitNewWorld (conf 0.633) */
 
 
 
-void FUN_0051f470(void)
+void GiantsInitNewWorld(void)
 
 
 

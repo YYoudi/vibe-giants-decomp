@@ -1591,7 +1591,7 @@ void collide_objects(int param_1)
 
     local_b8 = 1;
 
-    iVar5 = FUN_004a61a0(param_1);
+    iVar5 = ObjIsKabuto(param_1);
 
     if ((iVar5 == 0) && (iVar5 = FUN_004a61c0(param_1), iVar5 == 0)) {
 
@@ -1709,7 +1709,7 @@ void collide_objects(int param_1)
 
                (((*(int *)(param_1 + 4) != 0x23c || (iVar7 = ObjIsMecc(iVar5), iVar7 == 0)) &&
 
-                (((*(int *)(param_1 + 4) != 0x2ea || (iVar7 = FUN_004a61a0(iVar5), iVar7 == 0)) &&
+                (((*(int *)(param_1 + 4) != 0x2ea || (iVar7 = ObjIsKabuto(iVar5), iVar7 == 0)) &&
 
                  (*(int *)(iVar5 + 0x210) != param_1)))))) {
 
@@ -3503,7 +3503,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
     if (((((*(uint *)(iVar6 + 0xd8) & 0x4000c000) == 0 && uVar4 == 0) && (uVar4 == 0)) &&
 
-        (((local_34 = iVar6, iVar5 = FUN_004a61a0(), iVar5 == 0 &&
+        (((local_34 = iVar6, iVar5 = ObjIsKabuto(), iVar5 == 0 &&
 
           (iVar5 = FUN_004a61c0(), iVar5 == 0)) || ((*(byte *)(iVar6 + 0x1cc) & 1) == 0)))) &&
 
@@ -8387,9 +8387,9 @@ void objtype_team_assign(int param_1)
 
       if (iVar1 != 0) {
 
-        FUN_0045a740(iVar2 + 0x5c4,0x13,0xffffffff);
+        item_create_base_pickup(iVar2 + 0x5c4,0x13,0xffffffff);
 
-        FUN_0045a740(iVar2 + 0x5d0,0x13,0xffffffff);
+        item_create_base_pickup(iVar2 + 0x5d0,0x13,0xffffffff);
 
         meccbase_update_icons(param_1);
 
@@ -8455,9 +8455,9 @@ void objtype_team_assign(int param_1)
 
       if (iVar1 != 0) {
 
-        FUN_0045a740(iVar2 + 0x5c4,0x49,0xffffffff);
+        item_create_base_pickup(iVar2 + 0x5c4,0x49,0xffffffff);
 
-        FUN_0045a740(iVar2 + 0x5d0,0x49,0xffffffff);
+        item_create_base_pickup(iVar2 + 0x5d0,0x49,0xffffffff);
 
         FUN_004b5810(param_1);
 
@@ -11926,7 +11926,7 @@ LAB_0041f398:
 
     if (iVar5 == 0) {
 
-      iVar5 = FUN_004a61a0(DAT_00632a88);
+      iVar5 = ObjIsKabuto(DAT_00632a88);
 
       iVar5 = 3 - (uint)(iVar5 != 0);
 
