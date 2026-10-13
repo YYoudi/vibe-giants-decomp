@@ -10377,7 +10377,7 @@ void FUN_004edf90(void)
 
   *(undefined4 *)(iVar2 + 0xc0) = *(undefined4 *)(iVar2 + 0xb4);
 
-  FUN_0040d820();
+  ref_anode_user();
 
   return;
 

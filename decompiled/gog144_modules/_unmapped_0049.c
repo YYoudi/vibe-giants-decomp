@@ -8988,7 +8988,7 @@ void FUN_004984b0(void)
 
   FUN_0040d6f0(&local_5c,&local_68,&local_60,&local_c);
 
-  FUN_0040d820();
+  ref_anode_user();
 
   iVar1 = AudioGetMasterVolume__Fv();
 

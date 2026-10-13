@@ -263,7 +263,7 @@ void main_menu_004832f0(void)
 
   }
 
-  FUN_0040d820();
+  ref_anode_user();
 
   if (DAT_00632a88 == -0x21524111) {
 

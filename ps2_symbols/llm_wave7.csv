@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00409930,FUN_00409930,,kabutoai_anim_update,0.9,llm-gameplay,
+0040d820,FUN_0040D820,,ref_anode_user,0.9,llm-gameplay,
+00416550,FUN_00416550,,dlog_pop_user,0.9,llm-gameplay,
+0042d550,FUN_0042D550,,render_view_xform,0.9,llm-gameplay,
+004950a0,FUN_004950A0,,sfxdefs_load,0.9,llm-gameplay,

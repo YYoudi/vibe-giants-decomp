@@ -1204,7 +1204,7 @@ undefined4 FUN_00471780(void)
 
     }
 
-    if (((DAT_00633044 != 0) && (FUN_0040d820(), iVar2 = DAT_006330e4, DAT_006330e4 != 0)) &&
+    if (((DAT_00633044 != 0) && (ref_anode_user(), iVar2 = DAT_006330e4, DAT_006330e4 != 0)) &&
 
        (*(int *)(DAT_006330e4 + 0x13c) == 0)) {
 

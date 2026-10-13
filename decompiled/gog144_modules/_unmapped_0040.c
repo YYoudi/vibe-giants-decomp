@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (24 named) — decompiled, names from PS2 symbols
+ * 105 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -6521,8 +6521,8 @@ void FUN_00409780(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00409930 @ 0x00409930 ===== */
-void FUN_00409930(int param_1,int param_2)
+/* ===== kabutoai_anim_update @ 0x00409930 ===== */
+void kabutoai_anim_update(int param_1,int param_2)
 
 
 
@@ -10221,12 +10221,12 @@ void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM(undefined4 p0)
 
 }
 
-/* ===== FUN_0040d820 @ 0x0040D820 ===== */
+/* ===== ref_anode_user @ 0x0040D820 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0040d820(void)
+void ref_anode_user(void)
 
 
 

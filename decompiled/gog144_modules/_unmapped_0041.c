@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (8 named) — decompiled, names from PS2 symbols
+ * 100 functions (9 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -5134,8 +5134,8 @@ LAB_00416450:
 
 }
 
-/* ===== FUN_00416550 @ 0x00416550 ===== */
-void FUN_00416550(void)
+/* ===== dlog_pop_user @ 0x00416550 ===== */
+void dlog_pop_user(void)
 
 
 

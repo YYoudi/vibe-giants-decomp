@@ -5494,7 +5494,7 @@ void FUN_004ff470(void)
 
   if (DAT_00632bb0 != 0) {
 
-    FUN_00416550();
+    dlog_pop_user();
 
   }
 

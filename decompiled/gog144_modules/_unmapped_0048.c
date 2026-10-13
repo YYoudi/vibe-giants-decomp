@@ -2460,7 +2460,7 @@ void FUN_004829d0(void)
 
       camera_override_refpt(DAT_0059ee98,0);
 
-      FUN_0040d820();
+      ref_anode_user();
 
       FUN_00516890();
 
@@ -2494,7 +2494,7 @@ void FUN_004829d0(void)
 
       FUN_00500890(&DAT_00632900);
 
-      FUN_0042d550();
+      render_view_xform();
 
       FUN_0040d790();
 
@@ -2516,7 +2516,7 @@ void FUN_004829d0(void)
 
     if (DAT_0059eeac == 0) {
 
-      FUN_0040d820();
+      ref_anode_user();
 
       if (DAT_0059eed4 == 0) {
 

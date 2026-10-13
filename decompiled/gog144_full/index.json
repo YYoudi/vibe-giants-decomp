@@ -315,9 +315,9 @@
   "len": 821
  },
  "0x00409930": {
-  "name": "FUN_00409930",
-  "named": false,
-  "len": 1111
+  "name": "kabutoai_anim_update",
+  "named": true,
+  "len": 1119
  },
  "0x00409B60": {
   "name": "FUN_00409b60",
@@ -625,9 +625,9 @@
   "len": 187
  },
  "0x0040D820": {
-  "name": "FUN_0040d820",
-  "named": false,
-  "len": 3196
+  "name": "ref_anode_user",
+  "named": true,
+  "len": 3198
  },
  "0x0040DB70": {
   "name": "FUN_0040db70",
@@ -835,9 +835,9 @@
   "len": 2798
  },
  "0x00416550": {
-  "name": "FUN_00416550",
-  "named": false,
-  "len": 838
+  "name": "dlog_pop_user",
+  "named": true,
+  "len": 839
  },
  "0x00416990": {
   "name": "FUN_00416990",
@@ -1810,9 +1810,9 @@
   "len": 335
  },
  "0x0042D550": {
-  "name": "FUN_0042d550",
-  "named": false,
-  "len": 4527
+  "name": "render_view_xform",
+  "named": true,
+  "len": 4532
  },
  "0x0042D8A0": {
   "name": "FUN_0042d8a0",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FUN_004444c0",
   "named": false,
-  "len": 18612
+  "len": 18622
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -3917,7 +3917,7 @@
  "0x00471780": {
   "name": "FUN_00471780",
   "named": false,
-  "len": 3196
+  "len": 3198
  },
  "0x00471A60": {
   "name": "FUN_00471a60",
@@ -4347,7 +4347,7 @@
  "0x004829D0": {
   "name": "FUN_004829d0",
   "named": false,
-  "len": 1635
+  "len": 1644
  },
  "0x00482B60": {
   "name": "menu_mission_launch",
@@ -4367,7 +4367,7 @@
  "0x004832F0": {
   "name": "main_menu_004832f0",
   "named": true,
-  "len": 2865
+  "len": 2867
  },
  "0x004834D0": {
   "name": "FUN_004834d0",
@@ -5097,7 +5097,7 @@
  "0x004984B0": {
   "name": "FUN_004984b0",
   "named": false,
-  "len": 4077
+  "len": 4079
  },
  "0x004988E0": {
   "name": "FUN_004988e0",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14024
+  "len": 14029
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7492,7 +7492,7 @@
  "0x004EDF90": {
   "name": "FUN_004edf90",
   "named": false,
-  "len": 1465
+  "len": 1467
  },
  "0x004EE080": {
   "name": "env_texture_load",
@@ -7827,7 +7827,7 @@
  "0x004FF470": {
   "name": "FUN_004ff470",
   "named": false,
-  "len": 356
+  "len": 357
  },
  "0x004FF6A0": {
   "name": "FUN_004ff6a0",

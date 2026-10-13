@@ -4110,7 +4110,7 @@ LAB_00444d25:
 
   Audio3DTestToneUpdate__Fv_2();
 
-  FUN_0042d550();
+  render_view_xform();
 
   Audio3DTestToneUpdate__Fv_3();
 
@@ -4130,7 +4130,7 @@ LAB_00444d25:
 
     FUN_00426f20();
 
-    FUN_0042d550();
+    render_view_xform();
 
   }
 

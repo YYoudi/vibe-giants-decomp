@@ -8745,7 +8745,7 @@ undefined4 dev_debug_flags(void)
 
     main_drawwatr_00431700();
 
-    FUN_0042d550();
+    render_view_xform();
 
     FUN_00536cb0();
 
