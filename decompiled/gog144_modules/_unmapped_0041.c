@@ -7046,7 +7046,7 @@ undefined4 base_get_base_building(undefined4 param_1)
 
   if (iVar1 != 0) {
 
-    uVar2 = FUN_004b6f20();
+    uVar2 = base_slot8_get();
 
     return uVar2;
 
@@ -7056,7 +7056,7 @@ undefined4 base_get_base_building(undefined4 param_1)
 
   if (iVar1 != 0) {
 
-    uVar2 = FUN_0040abb0(param_1);
+    uVar2 = base_slot13_get_owner(param_1);
 
     return uVar2;
 
@@ -9327,7 +9327,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
     if (iVar4 != 0) {
 
-      param_2 = FUN_004b6eb0(param_1);
+      param_2 = base_slot10_get(param_1);
 
     }
 
@@ -9335,7 +9335,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
   else {
 
-    param_2 = FUN_0040ae40();
+    param_2 = base_slot15_get();
 
   }
 

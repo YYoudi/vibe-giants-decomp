@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (104 named) — decompiled, names from PS2 symbols
+ * 145 functions (105 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3953,8 +3953,8 @@ undefined4 in_fov(int param_1,int param_2,float param_3)
 
 }
 
-/* ===== FUN_00455150 @ 0x00455150 ===== */
-void FUN_00455150(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
+/* ===== grid_coords_from_floats @ 0x00455150 ===== */
+void grid_coords_from_floats(undefined4 param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 

@@ -78,7 +78,7 @@ void main_setupgam_004eda20(void)
 
   controlShutdown__Fv();
 
-  FUN_00447060();
+  gfx_interfaces_release();
 
   uVar1 = objectset_find(2);
 

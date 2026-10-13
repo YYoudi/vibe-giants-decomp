@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (81 named) — decompiled, names from PS2 symbols
+ * 105 functions (84 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -7390,8 +7390,8 @@ void FUN_0040ab60(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0040abb0 @ 0x0040ABB0 ===== */
-int FUN_0040abb0(int param_1)
+/* ===== base_slot13_get_owner @ 0x0040ABB0 ===== */
+int base_slot13_get_owner(int param_1)
 
 
 
@@ -7698,8 +7698,8 @@ undefined4 FUN_0040ae10(int param_1)
 
 }
 
-/* ===== FUN_0040ae40 @ 0x0040AE40 ===== */
-undefined4 FUN_0040ae40(int param_1)
+/* ===== base_slot15_get @ 0x0040AE40 ===== */
+undefined4 base_slot15_get(int param_1)
 
 
 
@@ -7733,8 +7733,8 @@ undefined4 FUN_0040ae40(int param_1)
 
 }
 
-/* ===== FUN_0040ae80 @ 0x0040AE80 ===== */
-undefined4 FUN_0040ae80(int param_1)
+/* ===== base_slot16_get @ 0x0040AE80 ===== */
+undefined4 base_slot16_get(int param_1)
 
 
 

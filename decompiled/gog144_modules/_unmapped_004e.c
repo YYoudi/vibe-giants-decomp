@@ -11498,9 +11498,9 @@ undefined4 line_of_sight_grid(float *param_1,float *param_2)
 
   local_4 = param_2[2];
 
-  FUN_00455150(param_1,&param_1,&local_28);
+  grid_coords_from_floats(param_1,&param_1,&local_28);
 
-  FUN_00455150(&local_c,local_10,local_14);
+  grid_coords_from_floats(&local_c,local_10,local_14);
 
   local_24 = local_c - *pfVar1;
 

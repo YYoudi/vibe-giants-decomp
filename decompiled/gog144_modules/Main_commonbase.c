@@ -796,7 +796,7 @@ LAB_004195d2:
 
       else {
 
-        iVar8 = FUN_0040ae80();
+        iVar8 = base_slot16_get();
 
       }
 

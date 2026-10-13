@@ -13054,9 +13054,9 @@ undefined4 collide_wall_block(float *param_1,float *param_2,float param_3)
 
   local_8 = (param_2[1] - param_1[1]) * (fVar1 + 1.1) + param_1[1];
 
-  FUN_00455150(param_1,&param_1,&local_10);
+  grid_coords_from_floats(param_1,&param_1,&local_10);
 
-  FUN_00455150(&local_c,&param_3,&param_2);
+  grid_coords_from_floats(&local_c,&param_3,&param_2);
 
   iVar4 = (int)param_3 - (int)param_1;
 

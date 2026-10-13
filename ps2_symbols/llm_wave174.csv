@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0040ae80,FUN_0040ae80,,base_slot16_get,0.9,llm-w174,slot getter family 00418380(param,0x10)
+0040ae40,FUN_0040ae40,,base_slot15_get,0.9,llm-w174,slot 0xf
+0040abb0,FUN_0040abb0,,base_slot13_get_owner,0.9,llm-w174,slot 0xd returns 0x18c owner
+004b6f20,FUN_004b6f20,,base_slot8_get,0.9,llm-w174,slot 8 via 00418510
+004b6eb0,FUN_004b6eb0,,base_slot10_get,0.9,llm-w174,slot 10 via 00418380
+00447060,FUN_00447060,,gfx_interfaces_release,0.9,llm-w174,frees 00656464/68 caller main_setupgam
+00455150,FUN_00455150,,grid_coords_from_floats,0.9,llm-w174,ftol pair out callers collide_wall_block

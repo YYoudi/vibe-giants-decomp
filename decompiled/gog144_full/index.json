@@ -350,9 +350,9 @@
   "len": 546
  },
  "0x0040ABB0": {
-  "name": "FUN_0040abb0",
-  "named": false,
-  "len": 331
+  "name": "base_slot13_get_owner",
+  "named": true,
+  "len": 340
  },
  "0x0040ABF0": {
   "name": "FUN_0040abf0",
@@ -390,14 +390,14 @@
   "len": 254
  },
  "0x0040AE40": {
-  "name": "FUN_0040ae40",
-  "named": false,
-  "len": 366
+  "name": "base_slot15_get",
+  "named": true,
+  "len": 369
  },
  "0x0040AE80": {
-  "name": "FUN_0040ae80",
-  "named": false,
-  "len": 367
+  "name": "base_slot16_get",
+  "named": true,
+  "len": 370
  },
  "0x0040AEC0": {
   "name": "FUN_0040aec0",
@@ -982,7 +982,7 @@
  "0x004188A0": {
   "name": "base_get_base_building",
   "named": true,
-  "len": 439
+  "len": 450
  },
  "0x004188E0": {
   "name": "base_has_partyhouse",
@@ -1017,7 +1017,7 @@
  "0x00418F00": {
   "name": "main_commonbase_00418f00",
   "named": true,
-  "len": 18473
+  "len": 18476
  },
  "0x0041A090": {
   "name": "reaper_state_check_a",
@@ -1122,7 +1122,7 @@
  "0x0041B660": {
   "name": "fxb_build_select",
   "named": true,
-  "len": 5023
+  "len": 5029
  },
  "0x0041BA60": {
   "name": "reaper_big_update",
@@ -2660,9 +2660,9 @@
   "len": 1382
  },
  "0x00447060": {
-  "name": "FUN_00447060",
-  "named": false,
-  "len": 302
+  "name": "gfx_interfaces_release",
+  "named": true,
+  "len": 312
  },
  "0x004470A0": {
   "name": "AudioGetMasterVolume__Fv_3",
@@ -3075,9 +3075,9 @@
   "len": 942
  },
  "0x00455150": {
-  "name": "FUN_00455150",
-  "named": false,
-  "len": 211
+  "name": "grid_coords_from_floats",
+  "named": true,
+  "len": 222
  },
  "0x00455190": {
   "name": "grid_get_conntype",
@@ -5342,7 +5342,7 @@
  "0x0049C550": {
   "name": "collide_wall_block",
   "named": true,
-  "len": 1590
+  "len": 1612
  },
  "0x0049DBD0": {
   "name": "FUN_0049dbd0",
@@ -6295,9 +6295,9 @@
   "len": 252
  },
  "0x004B6EB0": {
-  "name": "FUN_004b6eb0",
-  "named": false,
-  "len": 365
+  "name": "base_slot10_get",
+  "named": true,
+  "len": 368
  },
  "0x004B6EF0": {
   "name": "FUN_004b6ef0",
@@ -6305,9 +6305,9 @@
   "len": 249
  },
  "0x004B6F20": {
-  "name": "FUN_004b6f20",
-  "named": false,
-  "len": 329
+  "name": "base_slot8_get",
+  "named": true,
+  "len": 331
  },
  "0x004B6F60": {
   "name": "meccbasepit_bldg_from_object",
@@ -7472,7 +7472,7 @@
  "0x004EDA20": {
   "name": "main_setupgam_004eda20",
   "named": true,
-  "len": 4384
+  "len": 4394
  },
  "0x004EDD70": {
   "name": "world_make_reset_callbacks__Fi",
@@ -7567,7 +7567,7 @@
  "0x004EED30": {
   "name": "line_of_sight_grid",
   "named": true,
-  "len": 3516
+  "len": 3538
  },
  "0x004EF070": {
   "name": "ai_class_filter",
