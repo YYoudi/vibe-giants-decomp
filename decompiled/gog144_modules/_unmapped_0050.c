@@ -876,17 +876,17 @@ void render_billboard_matrix(float param_1,float param_2,float param_3,undefined
 
   local_a4 = (float)(fVar2 * (float10)param_3);
 
-  FUN_0053e3d0();
+  mat0198_identity();
 
-  FUN_0053e430(param_4);
+  mat0198_identity_scale_apply(param_4);
 
   GEO_MatLookAt(local_88,&local_ac,&local_94,&local_a0);
 
   (*(code *)PTR_crt_matrix_copy_init_00580c1c)(local_88,local_88);
 
-  FUN_0053e410(local_88);
+  mat0198_xform_apply(local_88);
 
-  FUN_0053e3f0(local_88);
+  mat0198_get(local_88);
 
   GEO_MatTranspose(auStack_44,local_88);
 

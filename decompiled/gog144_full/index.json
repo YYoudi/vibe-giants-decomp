@@ -7902,7 +7902,7 @@
  "0x00500C00": {
   "name": "render_billboard_matrix",
   "named": true,
-  "len": 1271
+  "len": 1297
  },
  "0x00500CF0": {
   "name": "status_team_lookup",
@@ -9332,7 +9332,7 @@
  "0x00520050": {
   "name": "comm_client_connect_menu",
   "named": true,
-  "len": 4694
+  "len": 4692
  },
  "0x00520490": {
   "name": "comm_comm_00520490",
@@ -10900,24 +10900,24 @@
   "len": 2188
  },
  "0x0053E3D0": {
-  "name": "FUN_0053e3d0",
-  "named": false,
-  "len": 303
+  "name": "mat0198_identity",
+  "named": true,
+  "len": 307
  },
  "0x0053E3F0": {
-  "name": "FUN_0053e3f0",
-  "named": false,
-  "len": 271
+  "name": "mat0198_get",
+  "named": true,
+  "len": 270
  },
  "0x0053E410": {
-  "name": "FUN_0053e410",
-  "named": false,
-  "len": 142
+  "name": "mat0198_xform_apply",
+  "named": true,
+  "len": 149
  },
  "0x0053E430": {
-  "name": "FUN_0053e430",
-  "named": false,
-  "len": 211
+  "name": "mat0198_identity_scale_apply",
+  "named": true,
+  "len": 227
  },
  "0x0053E460": {
   "name": "GEO_MatBuildXYZ",
@@ -11700,9 +11700,9 @@
   "len": 205
  },
  "0x005451F9": {
-  "name": "FUN_005451f9",
-  "named": false,
-  "len": 248
+  "name": "crt_wcslen",
+  "named": true,
+  "len": 246
  },
  "0x00545220": {
   "name": "_strstr",
@@ -12732,17 +12732,17 @@
  "0x0054E9DC": {
   "name": "BinFileCreateWrite_5",
   "named": true,
-  "len": 100
+  "len": 102
  },
  "0x0054E9ED": {
-  "name": "FUN_0054e9ed",
-  "named": false,
-  "len": 361
+  "name": "crt_ctype_test",
+  "named": true,
+  "len": 363
  },
  "0x0054EA1E": {
   "name": "crt_lock_54ea1e",
   "named": true,
-  "len": 3540
+  "len": 3548
  },
  "0x0054EBCB": {
   "name": "crt_codepage_init",
@@ -12755,9 +12755,9 @@
   "len": 268
  },
  "0x0054EC48": {
-  "name": "FUN_0054ec48",
-  "named": false,
-  "len": 377
+  "name": "crt_ctype_table_init",
+  "named": true,
+  "len": 385
  },
  "0x0054EC71": {
   "name": "crt_getstringtype_full",

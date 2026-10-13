@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (316 named) — decompiled, names from PS2 symbols
+ * 351 functions (319 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -7539,8 +7539,8 @@ uint crt_char_class(int param_1)
 
 }
 
-/* ===== FUN_005451f9 @ 0x005451F9 ===== */
-int FUN_005451f9(short *param_1)
+/* ===== crt_wcslen @ 0x005451F9 ===== */
+int crt_wcslen(short *param_1)
 
 
 
@@ -25880,14 +25880,14 @@ void BinFileCreateWrite_5(undefined4 param_1)
 
 {
 
-  FUN_0054e9ed(param_1,0,4);
+  crt_ctype_test(param_1,0,4);
 
   return;
 
 }
 
-/* ===== FUN_0054e9ed @ 0x0054E9ED ===== */
-undefined4 FUN_0054e9ed(byte param_1,uint param_2,byte param_3)
+/* ===== crt_ctype_test @ 0x0054E9ED ===== */
+undefined4 crt_ctype_test(byte param_1,uint param_2,byte param_3)
 
 
 
@@ -26164,7 +26164,7 @@ code_r0x0054ea6a:
 
 LAB_0054ebaa:
 
-    FUN_0054ec48();
+    crt_ctype_table_init();
 
   }
 
@@ -26274,8 +26274,8 @@ undefined4 crt_errno_map(int param_1)
 
 }
 
-/* ===== FUN_0054ec48 @ 0x0054EC48 ===== */
-void FUN_0054ec48(void)
+/* ===== crt_ctype_table_init @ 0x0054EC48 ===== */
+void crt_ctype_table_init(void)
 
 
 

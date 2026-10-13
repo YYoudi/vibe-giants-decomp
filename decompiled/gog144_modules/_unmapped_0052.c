@@ -94,7 +94,7 @@ LAB_005200bb:
 
       iVar3 = *DAT_005def70;
 
-      iVar4 = FUN_005451f9(local_200,1);
+      iVar4 = crt_wcslen(local_200,1);
 
       iVar3 = (**(code **)(iVar3 + 0x48))(DAT_005def70,u_hostname_0057dec0,local_200,iVar4 * 2 + 2);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (155 named) — decompiled, names from PS2 symbols
+ * 179 functions (159 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -18382,8 +18382,8 @@ void S_GEO_Vec3Transform_2(float *param_1,float *param_2,int param_3,uint *param
 
 }
 
-/* ===== FUN_0053e3d0 @ 0x0053E3D0 ===== */
-void FUN_0053e3d0(void)
+/* ===== mat0198_identity @ 0x0053E3D0 ===== */
+void mat0198_identity(void)
 
 
 
@@ -18415,8 +18415,8 @@ void FUN_0053e3d0(void)
 
 }
 
-/* ===== FUN_0053e3f0 @ 0x0053E3F0 ===== */
-void FUN_0053e3f0(undefined4 *param_1)
+/* ===== mat0198_get @ 0x0053E3F0 ===== */
+void mat0198_get(undefined4 *param_1)
 
 
 
@@ -18444,8 +18444,8 @@ void FUN_0053e3f0(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0053e410 @ 0x0053E410 ===== */
-void FUN_0053e410(undefined4 param_1)
+/* ===== mat0198_xform_apply @ 0x0053E410 ===== */
+void mat0198_xform_apply(undefined4 param_1)
 
 
 
@@ -18457,8 +18457,8 @@ void FUN_0053e410(undefined4 param_1)
 
 }
 
-/* ===== FUN_0053e430 @ 0x0053E430 ===== */
-void FUN_0053e430(undefined4 param_1)
+/* ===== mat0198_identity_scale_apply @ 0x0053E430 ===== */
+void mat0198_identity_scale_apply(undefined4 param_1)
 
 
 
