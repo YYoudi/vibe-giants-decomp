@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (266 named) — decompiled, names from PS2 symbols
+ * 351 functions (267 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -8549,7 +8549,7 @@ void entry(void)
 
   DAT_00630ba4 = bin_file_memmove();
 
-  FUN_0054c968();
+  crt_startup_init();
 
   bin_file_copy_str();
 
@@ -21287,12 +21287,12 @@ void bin_file_copy_str(void)
 
 }
 
-/* ===== FUN_0054c968 @ 0x0054C968 ===== */
+/* ===== crt_startup_init @ 0x0054C968 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0054c968(void)
+void crt_startup_init(void)
 
 
 

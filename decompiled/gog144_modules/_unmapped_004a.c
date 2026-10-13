@@ -2316,7 +2316,7 @@ void SphereFitToObject(undefined4 param_1,int param_2,float param_3)
 
     local_8c = local_8c * param_3;
 
-    FUN_0053dca0(local_88,&local_94);
+    GEO_MatFromQuat(local_88,&local_94);
 
     local_a0 = *(undefined4 *)(param_2 + 0xa0);
 
@@ -2582,7 +2582,7 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
     fStack_2ac = fStack_2b0;
 
-    FUN_0053dca0(afStack_29c,&fStack_2b0);
+    GEO_MatFromQuat(afStack_29c,&fStack_2b0);
 
     fStack_258 = *(float *)(param_1 + 0xa0);
 

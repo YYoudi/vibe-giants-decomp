@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (57 named) — decompiled, names from PS2 symbols
+ * 67 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1403,7 +1403,7 @@ void game_loop_run(int param_1)
 
         if ((DAT_00632a88 != 0) && (DAT_00633044 != 0)) {
 
-          FUN_004759a0();
+          input_mouse_world_check();
 
           kabutoai_select_target__FP6OBJECT();
 
@@ -2628,8 +2628,8 @@ void screen_coord_calc(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004759a0 @ 0x004759A0 ===== */
-void FUN_004759a0(void)
+/* ===== input_mouse_world_check @ 0x004759A0 ===== */
+void input_mouse_world_check(void)
 
 
 

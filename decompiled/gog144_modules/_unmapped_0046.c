@@ -1368,7 +1368,7 @@ void obj_skinning_eval(int param_1)
 
     local_170 = 0x3f800000;
 
-    FUN_0053dca0(local_154,param_1 + 0x44);
+    GEO_MatFromQuat(local_154,param_1 + 0x44);
 
     fVar10 = (float10)rndfloat(0x40c90fdb);
 

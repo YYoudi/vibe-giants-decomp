@@ -3322,7 +3322,7 @@ LAB_00492a3a:
 
               pbVar12 = pbVar12 + 4;
 
-              iVar11 = FUN_00457a70(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4));
+              iVar11 = player_has_weapon(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4));
 
               if ((iVar11 == 0) && (iVar11 = FUN_00457d10(DAT_00632a88), iVar11 != 0)) {
 

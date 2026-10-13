@@ -5441,17 +5441,19 @@ void hud_marker_draw(float param_1,float param_2,float param_3)
 
       param_1 = local_8 * param_1;
 
-      FUN_0042ebf0(0x7700,local_14 - local_10,local_10 + local_14,local_8 * 5.0 + param_1,
+      hud_quad_scaled_write
 
-                   local_c + local_8 * 5.0 + param_1);
+                (0x7700,local_14 - local_10,local_10 + local_14,local_8 * 5.0 + param_1,
+
+                 local_c + local_8 * 5.0 + param_1);
 
       local_8 = local_14 - local_10;
 
-      FUN_0042ebf0(0xff00,local_8,(param_2 / param_3) * local_4 + local_8,
+      hud_quad_scaled_write
 
-                   5.0 / (float)DAT_00632e88 + param_1,local_c + 5.0 / (float)DAT_00632e88 + param_1
+                (0xff00,local_8,(param_2 / param_3) * local_4 + local_8,
 
-                  );
+                 5.0 / (float)DAT_00632e88 + param_1,local_c + 5.0 / (float)DAT_00632e88 + param_1);
 
     }
 
@@ -5502,17 +5504,21 @@ void hud_draw_rect(float param_1,float param_2,float param_3,float param_4,float
 
       fVar1 = fVar1 * 20.0;
 
-      FUN_0042ebf0(0x7700,fVar1 + param_1,(1.0 / (float)DAT_00632e84) * 4.0 + fVar1 + param_1,
+      hud_quad_scaled_write
 
-                   local_10 - local_c,local_c + local_10);
+                (0x7700,fVar1 + param_1,(1.0 / (float)DAT_00632e84) * 4.0 + fVar1 + param_1,
+
+                 local_10 - local_c,local_c + local_10);
 
       local_c = local_10 - local_c;
 
-      FUN_0042ebf0(0xff00,20.0 / (float)DAT_00632e88 + param_1,
+      hud_quad_scaled_write
 
-                   4.0 / (float)DAT_00632e84 + 20.0 / (float)DAT_00632e88 + param_1,local_c,
+                (0xff00,20.0 / (float)DAT_00632e88 + param_1,
 
-                   (param_2 / param_3) * local_8 + local_c);
+                 4.0 / (float)DAT_00632e84 + 20.0 / (float)DAT_00632e88 + param_1,local_c,
+
+                 (param_2 / param_3) * local_8 + local_c);
 
       local_8 = local_4 / (float)DAT_00632e88;
 
@@ -5520,19 +5526,23 @@ void hud_draw_rect(float param_1,float param_2,float param_3,float param_4,float
 
       fVar1 = 24.0 / (float)DAT_00632e88;
 
-      FUN_0042ebf0(0x777777,fVar1 + param_1,2.0 / (float)DAT_00632e84 + fVar1 + param_1,
+      hud_quad_scaled_write
 
-                   local_10 - local_c,local_c + local_10);
+                (0x777777,fVar1 + param_1,2.0 / (float)DAT_00632e84 + fVar1 + param_1,
+
+                 local_10 - local_c,local_c + local_10);
 
       if (0.0 < param_4) {
 
         local_c = local_10 - local_c;
 
-        FUN_0042ebf0(0xffffff,24.0 / (float)DAT_00632e88 + param_1,
+        hud_quad_scaled_write
 
-                     2.0 / (float)DAT_00632e84 + 24.0 / (float)DAT_00632e88 + param_1,local_c,
+                  (0xffffff,24.0 / (float)DAT_00632e88 + param_1,
 
-                     (param_4 / param_5) * local_8 + local_c);
+                   2.0 / (float)DAT_00632e84 + 24.0 / (float)DAT_00632e88 + param_1,local_c,
+
+                   (param_4 / param_5) * local_8 + local_c);
 
       }
 

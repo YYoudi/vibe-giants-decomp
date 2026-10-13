@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (132 named) — decompiled, names from PS2 symbols
+ * 179 functions (133 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -10360,9 +10360,11 @@ LAB_00536b76:
 
   fVar2 = 2.0 / (float)DAT_00632e88 + fVar1 + param_3;
 
-  FUN_0042ebf0(0xff0000,fVar5,fVar3 + param_2 + 0.5,fVar1 + param_3,fVar2);
+  hud_quad_scaled_write(0xff0000,fVar5,fVar3 + param_2 + 0.5,fVar1 + param_3,fVar2);
 
-  FUN_0042ebf0(uVar8,fVar5,(20.0 / fVar6) * param_1 + fVar4 + param_2,fVar1 + param_3,fVar2);
+  hud_quad_scaled_write
+
+            (uVar8,fVar5,(20.0 / fVar6) * param_1 + fVar4 + param_2,fVar1 + param_3,fVar2);
 
   return;
 
@@ -17661,8 +17663,8 @@ void FUN_0053dc50(undefined4 *param_1,float param_2)
 
 }
 
-/* ===== FUN_0053dca0 @ 0x0053DCA0 ===== */
-void FUN_0053dca0(uint *param_1,float *param_2)
+/* ===== GEO_MatFromQuat @ 0x0053DCA0 ===== */
+void GEO_MatFromQuat(uint *param_1,float *param_2)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (105 named) — decompiled, names from PS2 symbols
+ * 129 functions (106 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -18401,8 +18401,8 @@ void texture_object_debug_dump(void)
 
 }
 
-/* ===== FUN_0042ebf0 @ 0x0042EBF0 ===== */
-void FUN_0042ebf0(float param_1,float param_2,float param_3,float param_4,float param_5)
+/* ===== hud_quad_scaled_write @ 0x0042EBF0 ===== */
+void hud_quad_scaled_write(float param_1,float param_2,float param_3,float param_4,float param_5)
 
 
 

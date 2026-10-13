@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054c968,FUN_0054c968,,crt_startup_init,0.9,llm-w155,GetModuleFileNameA + CRT init caller entry
+00457a70,FUN_00457a70,,player_has_weapon,0.9,llm-w155,0x17c slot compare callers inv_check/award
+0042ebf0,FUN_0042ebf0,,hud_quad_scaled_write,0.9,llm-w155,GFX lock + 632e84 screen scale
+004759a0,FUN_004759a0,,input_mouse_world_check,0.9,llm-w155,mouse vs 0x1d8/0x1dc bounds caller game_loop_run
+0053dca0,FUN_0053dca0,,GEO_MatFromQuat,0.9,llm-w155,identity + quat build

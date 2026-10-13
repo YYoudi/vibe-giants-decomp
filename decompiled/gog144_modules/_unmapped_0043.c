@@ -3296,7 +3296,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   fStack_17c = -1.0 / (param_3[4] - param_3[1]);
 
-  FUN_0053dca0(auStack_e4,&fStack_180);
+  GEO_MatFromQuat(auStack_e4,&fStack_180);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(pbVar1,auStack_e4,pbVar1);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (101 named) — decompiled, names from PS2 symbols
+ * 145 functions (102 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -6570,8 +6570,8 @@ void mission_texture_audio(void)
 
 }
 
-/* ===== FUN_00457a70 @ 0x00457A70 ===== */
-bool FUN_00457a70(int param_1,int param_2)
+/* ===== player_has_weapon @ 0x00457A70 ===== */
+bool player_has_weapon(int param_1,int param_2)
 
 
 
@@ -8398,7 +8398,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
   iVar4 = FUN_00458c90(uVar1);
 
-  if ((iVar4 == 0) || (iVar4 = FUN_00457a70(iVar6,uVar1), iVar4 == 0)) {
+  if ((iVar4 == 0) || (iVar4 = player_has_weapon(iVar6,uVar1), iVar4 == 0)) {
 
     iVar4 = FUN_00458c90(uVar1);
 
@@ -8412,7 +8412,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
   else {
 
-    iVar3 = FUN_00457a70(iVar6,uVar1);
+    iVar3 = player_has_weapon(iVar6,uVar1);
 
     if (iVar3 == 0) {
 
@@ -8859,7 +8859,7 @@ LAB_00459ce0:
 
           mecc_disable_repair_gun(param_1);
 
-          iVar2 = FUN_00457a70(param_1,param_3);
+          iVar2 = player_has_weapon(param_1,param_3);
 
           if (iVar2 == 0) {
 
