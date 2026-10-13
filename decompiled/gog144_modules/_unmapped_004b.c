@@ -1249,7 +1249,7 @@ LAB_004b4fe5:
 
       FUN_004b54c0(iVar4,param_1,iVar3);
 
-      iVar2 = main_0052e4a0(param_1);
+      iVar2 = reaper_0052e4a0(param_1);
 
       if (iVar2 != 0) {
 
@@ -1415,7 +1415,7 @@ LAB_004b5148:
 
     if ((float10)param_1 - (float10)1.0 < fVar6 != ((float10)param_1 - (float10)1.0 == fVar6)) {
 
-      iVar4 = main_0052e4a0();
+      iVar4 = reaper_0052e4a0();
 
       if (iVar4 != 0) {
 
@@ -3645,7 +3645,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   puVar6 = *(uint **)(param_3 + 0x100);
 
-  iVar3 = main_0052e4a0(param_3);
+  iVar3 = reaper_0052e4a0(param_3);
 
   if (iVar3 != 0) {
 
@@ -3791,7 +3791,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   }
 
-  iVar3 = main_0052e4a0(uVar2);
+  iVar3 = reaper_0052e4a0(uVar2);
 
   if ((iVar3 != 0) && ((*(byte *)(uVar2 + 0x1c8) & 1) != 0)) {
 
@@ -3873,7 +3873,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   }
 
-  iVar3 = main_0052e4a0(uVar2);
+  iVar3 = reaper_0052e4a0(uVar2);
 
   if (iVar3 != 0) {
 
@@ -4318,7 +4318,7 @@ void FUN_004b7450(int param_1,undefined4 param_2,undefined4 param_3,float *param
 
       *(undefined4 *)(iVar7 + 0xe94) = _DAT_00000008;
 
-      iVar7 = main_0052e4a0(param_1);
+      iVar7 = reaper_0052e4a0(param_1);
 
       if (iVar7 != 0) {
 
@@ -4396,7 +4396,7 @@ LAB_004b8187:
 
       *(undefined4 *)(iVar7 + 0xe48) = _DAT_00000008;
 
-      iVar7 = main_0052e4a0(param_1);
+      iVar7 = reaper_0052e4a0(param_1);
 
       if (iVar7 != 0) {
 
@@ -4448,7 +4448,7 @@ LAB_004b8187:
 
       *(undefined4 *)(iVar7 + 0xea0) = _DAT_00000008;
 
-      iVar7 = main_0052e4a0(param_1);
+      iVar7 = reaper_0052e4a0(param_1);
 
       if (iVar7 != 0) {
 
@@ -4480,7 +4480,7 @@ LAB_004b8187:
 
     }
 
-    iVar7 = main_0052e4a0(param_1);
+    iVar7 = reaper_0052e4a0(param_1);
 
     if (iVar7 != 0) {
 
@@ -4508,7 +4508,7 @@ LAB_004b8187:
 
        ) {
 
-      iVar9 = main_0052e4a0(param_1);
+      iVar9 = reaper_0052e4a0(param_1);
 
       if (iVar9 != 0) {
 
@@ -4536,7 +4536,7 @@ LAB_004b8187:
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x800000;
 
-    iVar9 = main_0052e4a0(param_1);
+    iVar9 = reaper_0052e4a0(param_1);
 
     if (iVar9 != 0) {
 
@@ -4614,7 +4614,7 @@ LAB_004b8187:
 
       *(undefined4 *)(iVar7 + 0xe6c) = _DAT_00000008;
 
-      iVar7 = main_0052e4a0(param_1);
+      iVar7 = reaper_0052e4a0(param_1);
 
       if (iVar7 != 0) {
 
@@ -4656,7 +4656,7 @@ LAB_004b8187:
 
     iVar7 = *(int *)(param_1 + 0x100);
 
-    iVar8 = main_0052e4a0(param_1);
+    iVar8 = reaper_0052e4a0(param_1);
 
     if (iVar8 != 0) {
 
@@ -4796,7 +4796,7 @@ LAB_004b8187:
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x20000;
 
-      iVar9 = main_0052e4a0(param_1);
+      iVar9 = reaper_0052e4a0(param_1);
 
       if (iVar9 != 0) {
 
@@ -4860,7 +4860,7 @@ LAB_004b8187:
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x10000;
 
-      iVar7 = main_0052e4a0(param_1);
+      iVar7 = reaper_0052e4a0(param_1);
 
       if (iVar7 != 0) {
 
@@ -5218,7 +5218,7 @@ LAB_004b76fe:
 
     sound_get_free_sequence__Fv();
 
-    iVar7 = main_0052e4a0(param_1,uVar5,uVar15,fVar10,uVar16,uVar17,pfVar13,uVar18);
+    iVar7 = reaper_0052e4a0(param_1,uVar5,uVar15,fVar10,uVar16,uVar17,pfVar13,uVar18);
 
     if (iVar7 != 0) {
 
@@ -5372,7 +5372,7 @@ LAB_004b76fe:
 
       *(undefined4 *)(iVar7 + 0xe60) = _DAT_00000008;
 
-      iVar7 = main_0052e4a0(param_1);
+      iVar7 = reaper_0052e4a0(param_1);
 
       if (iVar7 != 0) {
 
@@ -7719,7 +7719,7 @@ void reaper_ability_sound(int param_1)
 
     puVar1[0x13] = (uint)(float)fVar4;
 
-    iVar3 = main_0052e4a0(param_1);
+    iVar3 = reaper_0052e4a0(param_1);
 
     if (iVar3 != 0) {
 
@@ -8365,7 +8365,7 @@ void FUN_004bc3e0(int param_1)
 
   iVar1 = param_1;
 
-  if ((*(int *)(param_1 + 0x210) == 0) && (iVar2 = main_0052e4a0(param_1), iVar2 != 0)) {
+  if ((*(int *)(param_1 + 0x210) == 0) && (iVar2 = reaper_0052e4a0(param_1), iVar2 != 0)) {
 
     iVar2 = FUN_0052e4b0(iVar1);
 
@@ -9929,7 +9929,7 @@ switchD_004bd98b_default:
 
   }
 
-  iVar5 = main_0052e4a0(iVar4);
+  iVar5 = reaper_0052e4a0(iVar4);
 
   if (iVar5 != 0) {
 
@@ -10002,7 +10002,7 @@ void FUN_004bdaa0(uint param_1)
 
     }
 
-    iVar5 = main_0052e4a0(uVar3);
+    iVar5 = reaper_0052e4a0(uVar3);
 
     if (iVar5 != 0) {
 
@@ -10139,7 +10139,7 @@ void FUN_004bdbf0(int param_1)
 
   *puVar5 = *puVar5 & 0xfffffffe;
 
-  iVar4 = main_0052e4a0(param_1);
+  iVar4 = reaper_0052e4a0(param_1);
 
   if (iVar4 != 0) {
 
@@ -10509,7 +10509,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     else {
 
-      iVar5 = main_0052e4a0(param_1);
+      iVar5 = reaper_0052e4a0(param_1);
 
       if (iVar5 != 0) {
 
@@ -10575,7 +10575,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     else {
 
-      iVar5 = main_0052e4a0(param_1);
+      iVar5 = reaper_0052e4a0(param_1);
 
       if (iVar5 != 0) {
 
@@ -10645,7 +10645,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     else {
 
-      iVar5 = main_0052e4a0(param_1);
+      iVar5 = reaper_0052e4a0(param_1);
 
       if (iVar5 != 0) {
 
@@ -10721,7 +10721,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
       else {
 
-        iVar5 = main_0052e4a0(param_1);
+        iVar5 = reaper_0052e4a0(param_1);
 
         if (iVar5 != 0) {
 
@@ -10797,7 +10797,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
           else {
 
-            iVar6 = main_0052e4a0(param_1);
+            iVar6 = reaper_0052e4a0(param_1);
 
             if (iVar6 != 0) {
 
@@ -10839,7 +10839,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
     sound_play_player(0x389,param_1);
 
-    iVar7 = main_0052e4a0(param_1);
+    iVar7 = reaper_0052e4a0(param_1);
 
     if ((iVar7 != 0) && (local_a0 != 0.0)) {
 
@@ -11369,7 +11369,7 @@ switchD_004bed16_caseD_28:
 
   }
 
-  iVar4 = main_0052e4a0(param_1);
+  iVar4 = reaper_0052e4a0(param_1);
 
   if (iVar4 == 0) {
 
@@ -11716,7 +11716,7 @@ void FUN_004beee0(int param_1)
 
       sound_play_player(uVar4,param_1);
 
-      iVar3 = main_0052e4a0(param_1);
+      iVar3 = reaper_0052e4a0(param_1);
 
       if (iVar3 == 0) {
 
@@ -11732,7 +11732,7 @@ void FUN_004beee0(int param_1)
 
     if (-1 < (char)uVar6) {
 
-      iVar3 = main_0052e4a0(param_1);
+      iVar3 = reaper_0052e4a0(param_1);
 
       if (iVar3 != 0) {
 
@@ -12152,7 +12152,7 @@ void FUN_004beee0(int param_1)
 
     if (fVar10 < (float10)0.0 == (fVar10 == (float10)0.0)) {
 
-      iVar3 = main_0052e4a0(param_1);
+      iVar3 = reaper_0052e4a0(param_1);
 
       if (iVar3 == 0) {
 
@@ -12172,7 +12172,7 @@ void FUN_004beee0(int param_1)
 
   *puVar9 = *puVar9 & 0xfffffffe;
 
-  iVar3 = main_0052e4a0(param_1);
+  iVar3 = reaper_0052e4a0(param_1);
 
   if (iVar3 == 0) {
 
@@ -12293,7 +12293,7 @@ void fxb_firewall_create(int param_1,int *param_2,int *param_3,uint param_4,unde
 
   fx_get_free_effect__Fv();
 
-  iVar5 = main_0052e4a0(iVar1,pcVar6,uVar7,puVar8);
+  iVar5 = reaper_0052e4a0(iVar1,pcVar6,uVar7,puVar8);
 
   if (iVar5 != 0) {
 
@@ -12394,7 +12394,7 @@ void reaper_cast_firewall
 
   if (iVar1 != 0) {
 
-    iVar1 = main_0052e4a0(param_1);
+    iVar1 = reaper_0052e4a0(param_1);
 
     if (iVar1 != 0) {
 
@@ -12572,7 +12572,7 @@ void reaper_finish_shrinker(undefined4 param_1,int param_2,int param_3,int param
 
         if (iVar6 != 0) {
 
-          iVar6 = main_0052e4a0(param_1);
+          iVar6 = reaper_0052e4a0(param_1);
 
           if (iVar6 != 0) {
 
@@ -12733,7 +12733,7 @@ void FUN_004bfe50(int param_1)
 
   if (((0 < *(int *)(iVar6 + 0xea8)) && (iVar6 = FUN_0052e480(iVar3), iVar6 != 0)) &&
 
-     (iVar6 = main_0052e4a0(iVar3), iVar6 != 0)) {
+     (iVar6 = reaper_0052e4a0(iVar3), iVar6 != 0)) {
 
     iVar6 = *(int *)(iVar3 + 0x100);
 

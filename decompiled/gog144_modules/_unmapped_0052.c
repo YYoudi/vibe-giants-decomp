@@ -1196,8 +1196,8 @@ void comm_gametype_menu(int param_1)
 
 }
 
-/* ===== comm_team_names_init @ 0x00521620 ===== */
-void comm_team_names_init(int param_1)
+/* ===== comm_00521620 @ 0x00521620 ===== */
+void comm_00521620(int param_1)
 
 
 
@@ -2837,7 +2837,7 @@ void comm_game_setup_menu(void)
 
     }
 
-    comm_team_names_init(DAT_00632f10);
+    comm_00521620(DAT_00632f10);
 
     iVar5 = DAT_00632ee4;
 
@@ -3444,7 +3444,7 @@ void comm_show_conn_menu(void)
 
     main_dlog_00427890(DAT_005def8c,0x131,DAT_0057dc9c - 0.01,0x41300000,0x85000002,uVar3);
 
-    comm_team_names_init(DAT_00632f10);
+    comm_00521620(DAT_00632f10);
 
     iVar5 = FUN_004B09C0(DAT_00632ee4);
 
@@ -6747,7 +6747,7 @@ void FUN_0052a050(int param_1)
 
     if (DAT_00632f10 != local_1d4) {
 
-      comm_team_names_init(DAT_00632f10);
+      comm_00521620(DAT_00632f10);
 
     }
 
@@ -11768,12 +11768,12 @@ undefined4 FUN_0052e480(void)
 
 }
 
-/* ===== main_0052e4a0 @ 0x0052E4A0 ===== */
+/* ===== reaper_0052e4a0 @ 0x0052E4A0 ===== */
 /* PS2 candidate: ObjectSetAnim (conf 0.491) */
 
 
 
-void main_0052e4a0(void)
+void reaper_0052e4a0(void)
 
 
 
@@ -12087,8 +12087,8 @@ void FUN_0052e5e0(void)
 
 }
 
-/* ===== comm_packet_parse @ 0x0052E6E0 ===== */
-void comm_packet_parse(char *param_1,int param_2)
+/* ===== comm_0052e6e0 @ 0x0052E6E0 ===== */
+void comm_0052e6e0(char *param_1,int param_2)
 
 
 
@@ -12232,13 +12232,13 @@ void comm_packet_parse(char *param_1,int param_2)
 
         local_201 = 0;
 
-        comm_chat_render(&local_300,bVar2 & 0xf);
+        comm_005363f0(&local_300,bVar2 & 0xf);
 
         return;
 
       }
 
-      comm_chat_render(param_1 + 3,bVar2 & 0xf);
+      comm_005363f0(param_1 + 3,bVar2 & 0xf);
 
     }
 
@@ -12372,7 +12372,7 @@ LAB_0052e7e9:
 
         if ((local_200[2] & 0x40U) == 0) {
 
-          comm_chat_render(local_200 + 3,local_200[2] & 0xfU);
+          comm_005363f0(local_200 + 3,local_200[2] & 0xfU);
 
           return;
 
@@ -12456,7 +12456,7 @@ LAB_0052e7e9:
 
         local_201 = 0;
 
-        comm_chat_render(&local_300,local_200[2] & 0xfU);
+        comm_005363f0(&local_300,local_200[2] & 0xfU);
 
         return;
 
@@ -12597,7 +12597,7 @@ void FUN_0052ea80(char *param_1,undefined4 param_2,byte param_3,undefined4 param
 
     }
 
-    comm_packet_parse(local_200,param_4);
+    comm_0052e6e0(local_200,param_4);
 
   }
 
@@ -12849,7 +12849,7 @@ void comm_team_broadcast_menu(int param_1)
 
         }
 
-        comm_packet_parse(local_200,0);
+        comm_0052e6e0(local_200,0);
 
       }
 
@@ -13175,7 +13175,7 @@ void comm_entergame_msg(undefined4 param_1)
 
   FUN_00542f27(local_c8,uVar3,uVar1,uVar2);
 
-  comm_chat_render(local_c8,1);
+  comm_005363f0(local_c8,1);
 
   return;
 
@@ -13250,7 +13250,7 @@ void comm_entergame_msg2(int param_1)
 
         FUN_00542f27(local_c8,uVar4,uVar1,uVar3);
 
-        comm_chat_render(local_c8,1);
+        comm_005363f0(local_c8,1);
 
         return;
 
@@ -13620,7 +13620,7 @@ void comm_fakehost_menu(int param_1)
 
         FUN_00542f27(local_100,uVar2);
 
-        comm_chat_render(local_100,1);
+        comm_005363f0(local_100,1);
 
         break;
 
@@ -13672,7 +13672,7 @@ void comm_fakehost_menu(int param_1)
 
     FUN_00542f27(local_100,uVar2);
 
-    comm_chat_render(local_100,1);
+    comm_005363f0(local_100,1);
 
   }
 
@@ -13822,7 +13822,7 @@ void comm_fakehost_toggle(void)
 
         FUN_00542f27(local_100,uVar3);
 
-        comm_chat_render(local_100,1);
+        comm_005363f0(local_100,1);
 
         break;
 
@@ -14027,7 +14027,7 @@ void comm_player_marker_menu(void)
 
     uVar3 = FUN_00507b00(s_CommPlayerMarkerLarge_0057fe20,1);
 
-    comm_chat_render(uVar3);
+    comm_005363f0(uVar3);
 
     return;
 
@@ -14037,7 +14037,7 @@ void comm_player_marker_menu(void)
 
     uVar3 = FUN_00507b00(s_CommPlayerMarkerSmall_0057fe08,1);
 
-    comm_chat_render(uVar3);
+    comm_005363f0(uVar3);
 
     return;
 
@@ -14045,7 +14045,7 @@ void comm_player_marker_menu(void)
 
   uVar3 = FUN_00507b00(s_CommPlayerMarkerNone_0057fdf0,1);
 
-  comm_chat_render(uVar3);
+  comm_005363f0(uVar3);
 
   return;
 

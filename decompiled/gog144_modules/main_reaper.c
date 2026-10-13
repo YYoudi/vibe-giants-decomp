@@ -160,7 +160,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
       } while (iVar8 < 3);
 
-      iVar8 = main_0052e4a0(iVar4);
+      iVar8 = reaper_0052e4a0(iVar4);
 
       if (iVar8 != 0) {
 

@@ -2834,7 +2834,7 @@ void main_editor_0043a590(void)
 
     DAT_0059cc30 = *(undefined4 *)(DAT_0059cd30 + iVar3 * 0x24);
 
-    wredit_menu_pop();
+    wredit_00439490();
 
     DAT_0059cc38 = 6;
 
@@ -2938,7 +2938,7 @@ void main_editor_0043a590(void)
 
   else {
 
-    wredit_menu_pop();
+    wredit_00439490();
 
     if (DAT_0059cbd8 == (undefined4 *)0x0) {
 

@@ -10971,7 +10971,7 @@ void FUN_0050af50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4
 
         if (param_3 != 0) {
 
-          iVar3 = main_0052e4a0(iVar2);
+          iVar3 = reaper_0052e4a0(iVar2);
 
           if (iVar3 != 0) {
 
@@ -11033,7 +11033,7 @@ void FUN_0050af50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4
 
       if (iVar3 != 0) {
 
-        iVar4 = main_0052e4a0(param_1);
+        iVar4 = reaper_0052e4a0(param_1);
 
         if (iVar4 != 0) {
 
@@ -11144,7 +11144,7 @@ void FUN_0050c1c0(int param_1,int param_2)
 
   _DAT_0057bfb0 = *(undefined4 *)(DAT_00632ed8 + 0x8f4);
 
-  iVar4 = main_0052e4a0(iVar2);
+  iVar4 = reaper_0052e4a0(iVar2);
 
   if (iVar4 != 0) {
 
@@ -11284,7 +11284,7 @@ void FUN_0050c2e0(int param_1)
 
     }
 
-    iVar3 = main_0052e4a0(iVar1);
+    iVar3 = reaper_0052e4a0(iVar1);
 
     if (iVar3 != 0) {
 

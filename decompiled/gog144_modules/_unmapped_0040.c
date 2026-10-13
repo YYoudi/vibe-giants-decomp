@@ -5101,7 +5101,7 @@ LAB_00408880:
 
         FUN_00408ec0(iVar4,param_1,iVar3);
 
-        iVar2 = main_0052e4a0(param_1);
+        iVar2 = reaper_0052e4a0(param_1);
 
         if (iVar2 == 0) {
 
@@ -5267,7 +5267,7 @@ LAB_004089de:
 
       if ((float10)param_1 - (float10)1.0 < fVar6 != ((float10)param_1 - (float10)1.0 == fVar6)) {
 
-        iVar4 = main_0052e4a0();
+        iVar4 = reaper_0052e4a0();
 
         if (iVar4 != 0) {
 
@@ -6568,7 +6568,7 @@ void kabutoai_anim_update(int param_1,int param_2)
 
       *(float *)(iVar1 + 0xa0) = (float)(fVar4 + (float10)*(float *)(iVar1 + 0xa0));
 
-      iVar3 = main_0052e4a0(iVar1);
+      iVar3 = reaper_0052e4a0(iVar1);
 
       if (iVar3 != 0) {
 

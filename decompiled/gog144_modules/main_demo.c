@@ -72,7 +72,7 @@ void main_demo_004267a0(void)
 
                     if ((*(uint *)(iVar4 + 0xd8) & 0x800000) != 0) {
 
-                      iVar3 = main_0052e4a0(iVar4);
+                      iVar3 = reaper_0052e4a0(iVar4);
 
                       if (iVar3 != 0) {
 
@@ -272,7 +272,7 @@ void main_demo_004267a0(void)
 
         if ((*(uint *)(iVar4 + 0xd8) & 0x800000) != 0) {
 
-          iVar3 = main_0052e4a0(iVar4);
+          iVar3 = reaper_0052e4a0(iVar4);
 
           if (iVar3 != 0) {
 
@@ -371,7 +371,7 @@ undefined4 main_demo_00426c10(void)
 
           if ((*(uint *)(iVar6 + 0xd8) & 0x800000) != 0) {
 
-            iVar5 = main_0052e4a0(iVar6);
+            iVar5 = reaper_0052e4a0(iVar6);
 
             if (iVar5 != 0) {
 
@@ -483,7 +483,7 @@ undefined4 main_demo_00426c10(void)
 
               if ((*(uint *)(iVar6 + 0xd8) & 0x800000) != 0) {
 
-                iVar5 = main_0052e4a0(iVar6);
+                iVar5 = reaper_0052e4a0(iVar6);
 
                 if (iVar5 != 0) {
 

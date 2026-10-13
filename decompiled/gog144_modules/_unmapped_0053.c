@@ -1296,7 +1296,7 @@ LAB_005307f3:
 
     }
 
-    comm_packet_parse(local_200,0);
+    comm_0052e6e0(local_200,0);
 
   }
 
@@ -1461,7 +1461,7 @@ void comm_kill_message2(undefined4 param_1,int param_2)
 
       }
 
-      comm_packet_parse(local_200,0);
+      comm_0052e6e0(local_200,0);
 
     }
 
@@ -1630,7 +1630,7 @@ void rpman_move(int param_1,int param_2)
 
         }
 
-        comm_packet_parse(local_200,0);
+        comm_0052e6e0(local_200,0);
 
       }
 
@@ -4023,7 +4023,7 @@ LAB_00532513:
 
             if ((bVar3 & 0x40) == 0) {
 
-              comm_chat_render(pcVar15,bVar3 & 0xf);
+              comm_005363f0(pcVar15,bVar3 & 0xf);
 
             }
 
@@ -4039,7 +4039,7 @@ LAB_00532513:
 
         else {
 
-          comm_packet_parse(DAT_005e0304,0);
+          comm_0052e6e0(DAT_005e0304,0);
 
         }
 
@@ -4149,7 +4149,7 @@ LAB_00532513:
 
           uVar5 = FUN_00507b00(s_CommWeaponBits_0057ff1c,1);
 
-          comm_chat_render(uVar5);
+          comm_005363f0(uVar5);
 
         }
 
@@ -4193,7 +4193,7 @@ LAB_00532513:
 
         uVar5 = FUN_00507b00(pcVar14,1);
 
-        comm_chat_render(uVar5);
+        comm_005363f0(uVar5);
 
         DAT_00633250 = *(uint *)(pcVar15 + 1);
 
@@ -4223,7 +4223,7 @@ LAB_00532513:
 
         uVar5 = FUN_00507b00(pcVar14,1);
 
-        comm_chat_render(uVar5);
+        comm_005363f0(uVar5);
 
         _DAT_00633254 = (uint)(byte)pcVar15[1];
 
@@ -4301,7 +4301,7 @@ LAB_00532b8b:
 
         uVar5 = FUN_00507b00(pcVar15,1);
 
-        comm_chat_render(uVar5);
+        comm_005363f0(uVar5);
 
         DAT_005e0304 = DAT_005e0304 + 5;
 
@@ -4367,7 +4367,7 @@ LAB_0053196c:
 
               FUN_00542f27(local_200,uVar5);
 
-              comm_chat_render(local_200,1);
+              comm_005363f0(local_200,1);
 
               goto LAB_0053196c;
 
@@ -4511,7 +4511,7 @@ LAB_00531503:
 
     uVar5 = FUN_00507b00(pcVar15,1);
 
-    comm_chat_render(uVar5);
+    comm_005363f0(uVar5);
 
   }
 
@@ -4768,7 +4768,7 @@ void comm_entergame_msg3(undefined4 *param_1)
 
         FUN_00542f27(local_c8,uVar6,uVar4,uVar5);
 
-        comm_chat_render(local_c8,1);
+        comm_005363f0(local_c8,1);
 
       }
 
@@ -9597,8 +9597,8 @@ void FUN_005362d0(char *param_1,undefined4 param_2)
 
 }
 
-/* ===== comm_chat_render @ 0x005363F0 ===== */
-void comm_chat_render(char *param_1,undefined4 param_2)
+/* ===== comm_005363f0 @ 0x005363F0 ===== */
+void comm_005363f0(char *param_1,undefined4 param_2)
 
 
 
@@ -9640,7 +9640,7 @@ void comm_chat_render(char *param_1,undefined4 param_2)
 
   fVar2 = (float)fVar8;
 
-  fVar8 = (float10)textrender_init(fVar2,local_12c);
+  fVar8 = (float10)main_0051bd30(fVar2,local_12c);
 
   if ((float10)0.6 < fVar8) {
 
@@ -9736,7 +9736,7 @@ LAB_00536519:
 
 LAB_0053653b:
 
-      fVar8 = (float10)textrender_init(fVar2,pcVar6);
+      fVar8 = (float10)main_0051bd30(fVar2,pcVar6);
 
     } while ((float10)0.6 < fVar8);
 
@@ -9918,7 +9918,7 @@ void chat_insert_name(char *param_1,char *param_2,undefined4 param_3,int param_4
 
   local_1 = 0;
 
-  comm_chat_render(local_100,param_3);
+  comm_005363f0(local_100,param_3);
 
   return;
 
@@ -10017,7 +10017,7 @@ void FUN_00536700(int param_1)
 
     local_1 = 0;
 
-    fVar12 = (float10)textrender_init(fVar13,local_100);
+    fVar12 = (float10)main_0051bd30(fVar13,local_100);
 
     if ((float10)0.76 < fVar12) {
 
@@ -10043,7 +10043,7 @@ void FUN_00536700(int param_1)
 
         local_100[~uVar5 - 2] = '\0';
 
-        fVar12 = (float10)textrender_init(fVar13,local_100);
+        fVar12 = (float10)main_0051bd30(fVar13,local_100);
 
       } while ((float10)0.76 < fVar12);
 
@@ -10780,7 +10780,7 @@ void comm_entergame_message(void)
 
           FUN_00542f27(local_c8,uVar5,uVar2,uVar4);
 
-          comm_chat_render(local_c8,1);
+          comm_005363f0(local_c8,1);
 
         }
 
@@ -10834,7 +10834,7 @@ void comm_entergame_message(void)
 
           FUN_00542f27(local_c8,uVar5,uVar2,uVar4);
 
-          comm_chat_render(local_c8,1);
+          comm_005363f0(local_c8,1);
 
         }
 
@@ -11073,7 +11073,7 @@ void comm_wincond_destroy(int param_1)
 
         }
 
-        comm_packet_parse(local_200,0);
+        comm_0052e6e0(local_200,0);
 
       }
 
@@ -11284,7 +11284,7 @@ void FUN_005375e0(void)
 
             }
 
-            comm_packet_parse(local_a80,0);
+            comm_0052e6e0(local_a80,0);
 
           }
 
@@ -12076,7 +12076,7 @@ LAB_00537de2:
 
             }
 
-            comm_packet_parse(pcVar4,0);
+            comm_0052e6e0(pcVar4,0);
 
           }
 

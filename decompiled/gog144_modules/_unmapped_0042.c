@@ -9496,9 +9496,9 @@ void main_00427570(undefined4 param_1,float param_2)
 
     fVar7 = (float10)FUN_0051bc00(*(undefined4 *)((int)param_2 + 0x30));
 
-    fVar6 = (float10)textrender_init(*(undefined4 *)((int)param_2 + 0x30),
+    fVar6 = (float10)main_0051bd30(*(undefined4 *)((int)param_2 + 0x30),
 
-                                     *(undefined4 *)((int)param_2 + 0x28));
+                                   *(undefined4 *)((int)param_2 + 0x28));
 
     param_2 = (float)fVar6;
 
@@ -9759,11 +9759,11 @@ void main_dlog_00427ac0(int *param_1,float param_2)
 
       fVar5 = (float10)FUN_0051bc00(piVar3[0xd]);
 
-      fVar6 = (float10)textrender_init(piVar3[0xd],piVar3[10]);
+      fVar6 = (float10)main_0051bd30(piVar3[0xd],piVar3[10]);
 
       param_1 = (int *)(float)fVar6;
 
-      fVar6 = (float10)textrender_init(piVar3[0xd],&DAT_005562b8);
+      fVar6 = (float10)main_0051bd30(piVar3[0xd],&DAT_005562b8);
 
       if ((float10)(float)param_1 < fVar6 * (float10)piVar3[0xb]) {
 
@@ -9920,7 +9920,7 @@ void main_dlog_00427f00(undefined4 param_1,float param_2)
 
   for (; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
-    fVar5 = (float10)textrender_init(local_c,puVar1 + 4);
+    fVar5 = (float10)main_0051bd30(local_c,puVar1 + 4);
 
     if ((float10)param_2 < fVar5) {
 
@@ -11181,7 +11181,7 @@ LAB_004291b7:
 
           fVar14 = *(float *)(iVar5 + 0x38);
 
-          fVar12 = (float10)textrender_init(local_8,puVar3 + 4);
+          fVar12 = (float10)main_0051bd30(local_8,puVar3 + 4);
 
           local_4 = (float)((float10)(fVar14 * 0.5 + param_2) - fVar12 * (float10)0.5);
 
@@ -11297,7 +11297,7 @@ LAB_004291b7:
 
           fVar1 = *(float *)((int)param_2 + 0x1c);
 
-          fVar12 = (float10)textrender_init(local_8,piVar10 + 4);
+          fVar12 = (float10)main_0051bd30(local_8,piVar10 + 4);
 
           param_2 = (float)((float10)(fVar14 * 0.5 + fVar1) - fVar12 * (float10)0.5);
 
@@ -12039,11 +12039,11 @@ void FUN_00429990(undefined4 param_1,float param_2)
 
         local_c = (float)fVar15;
 
-        fVar15 = (float10)textrender_init(*(undefined4 *)((int)param_2 + 0x34),
+        fVar15 = (float10)main_0051bd30(*(undefined4 *)((int)param_2 + 0x34),
 
-                                          *(undefined4 *)((int)param_2 + 0x28));
+                                        *(undefined4 *)((int)param_2 + 0x28));
 
-        fVar14 = (float10)textrender_init(*(undefined4 *)((int)param_2 + 0x34),&DAT_005562b8);
+        fVar14 = (float10)main_0051bd30(*(undefined4 *)((int)param_2 + 0x34),&DAT_005562b8);
 
         fVar14 = fVar14 * (float10)*(int *)((int)param_2 + 0x2c);
 
@@ -12191,13 +12191,13 @@ LAB_00429b07:
 
           local_c = (float)fVar15;
 
-          fVar15 = (float10)textrender_init(*(undefined4 *)(iVar7 + 0x34),
+          fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),
 
-                                            *(undefined4 *)(iVar7 + 0x28));
+                                          *(undefined4 *)(iVar7 + 0x28));
 
           param_2 = (float)fVar15;
 
-          fVar15 = (float10)textrender_init(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
+          fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
 
           fVar15 = fVar15 * (float10)*(int *)(iVar7 + 0x2c);
 
@@ -12327,11 +12327,11 @@ LAB_00429c6f:
 
     local_c = (float)fVar15;
 
-    fVar15 = (float10)textrender_init(*(undefined4 *)(iVar7 + 0x34),*(undefined4 *)(iVar7 + 0x28));
+    fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),*(undefined4 *)(iVar7 + 0x28));
 
     param_2 = (float)fVar15;
 
-    fVar15 = (float10)textrender_init(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
+    fVar15 = (float10)main_0051bd30(*(undefined4 *)(iVar7 + 0x34),&DAT_005562b8);
 
     fVar15 = fVar15 * (float10)*(int *)(iVar7 + 0x2c);
 

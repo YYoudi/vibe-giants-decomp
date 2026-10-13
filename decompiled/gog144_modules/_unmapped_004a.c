@@ -10121,7 +10121,7 @@ void cast_repair_spell(undefined4 param_1,int param_2,int param_3,int param_4,un
 
   
 
-  iVar1 = main_0052e4a0(param_1);
+  iVar1 = reaper_0052e4a0(param_1);
 
   if (iVar1 != 0) {
 
@@ -11034,7 +11034,7 @@ LAB_004ac9df:
 
   }
 
-  iVar4 = main_0052e4a0(param_1);
+  iVar4 = reaper_0052e4a0(param_1);
 
   if (iVar4 != 0) {
 
@@ -11269,7 +11269,7 @@ LAB_004acbe1:
 
 LAB_004accab:
 
-  iVar6 = main_0052e4a0(iVar7);
+  iVar6 = reaper_0052e4a0(iVar7);
 
   if (iVar6 != 0) {
 
