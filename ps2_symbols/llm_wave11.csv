@@ -6,7 +6,7 @@ pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
 00443910,FUN_00443910,,hud_icon_add,0.9,llm-flick,
 00443d60,FUN_00443D60,,hud_icon_for_object,0.9,llm-flick,
 004457d0,FUN_004457D0,,hud_icon_timed,0.9,llm-flick,
-004517e0,FUN_00517E0,,hud_render_icons,0.9,llm-flick,
+004517e0,FUN_004517E0,,hud_render_icons,0.9,llm-flick,
 00446890,FUN_00446890,,flick_objects_reload,0.9,llm-flick,
 00446df0,FUN_00446DF0,,map_chunk_destroy,0.9,llm-flick,
 00447f20,FUN_00447F20,,object_lock_apply,0.9,llm-flick,
