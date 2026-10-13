@@ -1,5 +1,5 @@
 pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
 004654c0,FUN_004654C0,,fx_rect_interp,0.9,llm-read41,
 004d8150,FUN_004D8150,,ai_accel_update,0.9,llm-read41,
-004819f0,FUN_004819F0,,obj_ride_mount,0.9,llar-read41,
+004819f0,FUN_004819F0,,obj_ride_mount,0.9,llm-read41,
 004a1c50,FUN_004A1C50,,obj_vel_reset,0.9,llm-read41,
