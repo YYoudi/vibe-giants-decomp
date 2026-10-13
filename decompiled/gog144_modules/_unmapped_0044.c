@@ -3848,7 +3848,7 @@ undefined4 FUN_004444c0(int param_1)
 
             (**(code **)(DAT_00656420 + 0x14))(DAT_00656420);
 
-            FUN_0042e460(piVar9 + -2,0,0,piVar9 + 0xa3,&uStack_170);
+            animate_core_caller(piVar9 + -2,0,0,piVar9 + 0xa3,&uStack_170);
 
             FUN_00451da0();
 
@@ -12252,7 +12252,7 @@ LAB_0044d657:
 
             FUN_004d5780();
 
-            FUN_0042e3b0();
+            mpeg_mode_set();
 
           }
 
@@ -12354,7 +12354,7 @@ LAB_0044d657:
 
             FUN_004d5780();
 
-            FUN_0042e3b0();
+            mpeg_mode_set();
 
           }
 

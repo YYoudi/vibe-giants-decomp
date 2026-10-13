@@ -1522,7 +1522,7 @@ LAB_00437d68:
 
         for (; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-          iVar10 = main_editor_004380e0(piVar11[0xd]);
+          iVar10 = object_spawn_42(piVar11[0xd]);
 
           piVar11[0xe] = iVar10;
 
@@ -1740,7 +1740,7 @@ LAB_00437d68:
 
         for (; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
-          iVar10 = main_editor_004380e0(piVar11[0xd]);
+          iVar10 = object_spawn_42(piVar11[0xd]);
 
           piVar11[0xe] = iVar10;
 
@@ -2242,7 +2242,7 @@ LAB_004367b5:
 
       if ((DAT_0059cbf4 != 0) &&
 
-         (iVar10 = main_editor_004380e0(DAT_0059cbf4), piVar11 = DAT_0059cbd8, iVar10 != 0)) {
+         (iVar10 = object_spawn_42(DAT_0059cbf4), piVar11 = DAT_0059cbd8, iVar10 != 0)) {
 
         for (; piVar11 != (int *)0x0; piVar11 = (int *)*piVar11) {
 
@@ -2276,7 +2276,7 @@ LAB_004367b5:
 
       for (; piVar21 != (int *)0x0; piVar21 = (int *)*piVar21) {
 
-        iVar10 = main_editor_004380e0(piVar21[0xd]);
+        iVar10 = object_spawn_42(piVar21[0xd]);
 
         piVar21[0xe] = iVar10;
 
@@ -2942,7 +2942,7 @@ void main_editor_0043a590(void)
 
     if (DAT_0059cbd8 == (undefined4 *)0x0) {
 
-      uVar2 = main_editor_004380e0(*(undefined4 *)(DAT_0059cd30 + iVar3 * 0x24));
+      uVar2 = object_spawn_42(*(undefined4 *)(DAT_0059cd30 + iVar3 * 0x24));
 
       while (puVar5 = DAT_0059cbd8, puVar5 != (undefined4 *)0x0) {
 
@@ -3166,7 +3166,7 @@ void main_editor_0043a590(void)
 
         *puVar1 = 0;
 
-        uVar2 = main_editor_004380e0(*(undefined4 *)(iVar3 * 0x24 + DAT_0059cd30));
+        uVar2 = object_spawn_42(*(undefined4 *)(iVar3 * 0x24 + DAT_0059cd30));
 
         DAT_0059cbd8[0xe] = uVar2;
 

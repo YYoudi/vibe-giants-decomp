@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (21 named) — decompiled, names from PS2 symbols
+ * 90 functions (25 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -2557,8 +2557,8 @@ void FUN_004b65a0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004b6630 @ 0x004B6630 ===== */
-undefined4 FUN_004b6630(int param_1,uint param_2)
+/* ===== object_spawn_4b @ 0x004B6630 ===== */
+undefined4 object_spawn_4b(int param_1,uint param_2)
 
 
 
@@ -7907,12 +7907,12 @@ void FUN_004ba5e0(undefined4 param_1,int *param_2)
 
 }
 
-/* ===== FUN_004ba640 @ 0x004BA640 ===== */
+/* ===== sound_player_user @ 0x004BA640 ===== */
 /* PS2 candidate: item_check (conf 0.495) */
 
 
 
-void FUN_004ba640(undefined4 param_1,int *param_2)
+void sound_player_user(undefined4 param_1,int *param_2)
 
 
 
@@ -8330,8 +8330,8 @@ void FUN_004baa70(int param_1)
 
 }
 
-/* ===== FUN_004bc3e0 @ 0x004BC3E0 ===== */
-void FUN_004bc3e0(int param_1)
+/* ===== reaper_lock_user @ 0x004BC3E0 ===== */
+void reaper_lock_user(int param_1)
 
 
 
@@ -8756,8 +8756,8 @@ void FUN_004bc930(int param_1)
 
 }
 
-/* ===== FUN_004bca70 @ 0x004BCA70 ===== */
-void FUN_004bca70(int param_1)
+/* ===== audio_anode_check @ 0x004BCA70 ===== */
+void audio_anode_check(int param_1)
 
 
 

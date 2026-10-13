@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (53 named) — decompiled, names from PS2 symbols
+ * 74 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -1570,8 +1570,8 @@ void FUN_00432270(int param_1)
 
 }
 
-/* ===== FUN_00432400 @ 0x00432400 ===== */
-void FUN_00432400(void)
+/* ===== makewrld_big @ 0x00432400 ===== */
+void makewrld_big(void)
 
 
 
@@ -1959,12 +1959,12 @@ void main_drawwrld_00432f30(void)
 
 }
 
-/* ===== main/drawwrld_00434280 @ 0x00434280 ===== */
+/* ===== audio_stream_tied @ 0x00434280 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void main_drawwrld_00434280(void)
+void audio_stream_tied(void)
 
 
 
@@ -2254,7 +2254,7 @@ void main_drawwrld_00434280(void)
 
   }
 
-  FUN_00432400();
+  makewrld_big();
 
   FUN_0053f2e0(auStack_80,piVar6 + 2,*piVar6);
 
@@ -4056,8 +4056,8 @@ int main_editor_00437fa0(int param_1)
 
 }
 
-/* ===== main/editor_004380e0 @ 0x004380E0 ===== */
-int main_editor_004380e0(undefined4 param_1)
+/* ===== object_spawn_42 @ 0x004380E0 ===== */
+int object_spawn_42(undefined4 param_1)
 
 
 
@@ -4229,7 +4229,7 @@ int main_editor_004382b0(int param_1,int param_2)
 
     FUN_00497510(param_1);
 
-    param_1 = main_editor_004380e0(*(undefined4 *)(param_2 + 0x34));
+    param_1 = object_spawn_42(*(undefined4 *)(param_2 + 0x34));
 
   }
 
@@ -9914,8 +9914,8 @@ LAB_0043effd:
 
 }
 
-/* ===== main/editor_0043f120 @ 0x0043F120 ===== */
-void main_editor_0043f120(void)
+/* ===== wredit_ai_menu3 @ 0x0043F120 ===== */
+void wredit_ai_menu3(void)
 
 
 

@@ -2828,7 +2828,7 @@ void menu_handlers_lookup(void)
 
   
 
-  FUN_004a5cd0();
+  screenshot_helper();
 
   main_menu_004832f0();
 
@@ -3232,7 +3232,7 @@ void menu_handlers_exec(void)
 
   
 
-  FUN_004a5cd0();
+  screenshot_helper();
 
   main_menu_004832f0();
 
@@ -7344,7 +7344,7 @@ void mission_menu_load2(void)
 
   
 
-  FUN_004a5cd0();
+  screenshot_helper();
 
   main_menu_004832f0();
 
@@ -10550,7 +10550,7 @@ void menu_dlog_callback_a(void)
 
   
 
-  FUN_004a5cd0();
+  screenshot_helper();
 
   main_menu_004832f0();
 
@@ -11064,7 +11064,7 @@ void menu_dlog_callback_b(void)
 
   
 
-  FUN_004a5cd0();
+  screenshot_helper();
 
   main_menu_004832f0();
 

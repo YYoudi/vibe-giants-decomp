@@ -1029,7 +1029,7 @@ void main_dlog_00427e80(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3[0xc] = 0;
 
-  main_dlog_00427f00(param_1,puVar3);
+  dlog_screen_user_2(param_1,puVar3);
 
   return;
 

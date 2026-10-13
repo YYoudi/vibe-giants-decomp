@@ -1156,7 +1156,7 @@ undefined4 hud_audio_dlog_screen(void)
 
       if (iVar2 == 0) {
 
-        FUN_004a5cd0();
+        screenshot_helper();
 
         return 1;
 
@@ -5786,7 +5786,7 @@ void sound_player_voice2(int param_1,int param_2,float param_3)
 
     sound_play_player(uVar3,param_1);
 
-    FUN_004a5d10();
+    audio_speaker_user();
 
     iVar1 = reaper_0052e4a0(param_1);
 

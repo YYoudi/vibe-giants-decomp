@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (30 named) — decompiled, names from PS2 symbols
+ * 131 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -4862,7 +4862,7 @@ LAB_004a5802:
 
     if (DAT_00632a88 != 0) {
 
-      FUN_004a5d10();
+      audio_speaker_user();
 
       if (*(int *)(DAT_00632a88 + 0x18c) + -1 < 2) {
 
@@ -5155,8 +5155,8 @@ LAB_004a5ac1:
 
 }
 
-/* ===== FUN_004a5cd0 @ 0x004A5CD0 ===== */
-void FUN_004a5cd0(void)
+/* ===== screenshot_helper @ 0x004A5CD0 ===== */
+void screenshot_helper(void)
 
 
 
@@ -5182,8 +5182,8 @@ void FUN_004a5cd0(void)
 
 }
 
-/* ===== FUN_004a5d10 @ 0x004A5D10 ===== */
-void FUN_004a5d10(void)
+/* ===== audio_speaker_user @ 0x004A5D10 ===== */
+void audio_speaker_user(void)
 
 
 
@@ -11285,8 +11285,8 @@ LAB_004accab:
 
 }
 
-/* ===== FUN_004ad190 @ 0x004AD190 ===== */
-void FUN_004ad190(int param_1,int param_2)
+/* ===== sound_3dpos_user @ 0x004AD190 ===== */
+void sound_3dpos_user(int param_1,int param_2)
 
 
 

@@ -6993,7 +6993,7 @@ void ai_island_init(void)
 
   }
 
-  main_drawwrld_00434280();
+  audio_stream_tied();
 
   return;
 
@@ -8483,7 +8483,7 @@ undefined4 dev_debug_flags(void)
 
           (**(code **)(DAT_00656420 + 0x14))();
 
-          FUN_0042e460(iVar9,0,0,auStack_170,&local_208);
+          animate_core_caller(iVar9,0,0,auStack_170,&local_208);
 
           FUN_00451da0();
 
@@ -8563,7 +8563,7 @@ undefined4 dev_debug_flags(void)
 
     }
 
-    main_drawwrld_00434280();
+    audio_stream_tied();
 
     FUN_00435f30();
 

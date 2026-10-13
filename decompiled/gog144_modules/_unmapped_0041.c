@@ -5289,7 +5289,7 @@ void FUN_00416a30(undefined4 param_1,undefined4 param_2)
 
   }
 
-  FUN_004b6630(param_1,param_2);
+  object_spawn_4b(param_1,param_2);
 
   return;
 
@@ -9261,7 +9261,7 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
   if (iVar3 == 0) {
 
-    FUN_004b6630(param_1,param_2);
+    object_spawn_4b(param_1,param_2);
 
   }
 
@@ -11008,7 +11008,7 @@ LAB_0041eb6c:
 
 LAB_0041eb12:
 
-              FUN_004b6630(iVar1,iVar5);
+              object_spawn_4b(iVar1,iVar5);
 
             }
 
@@ -11028,7 +11028,7 @@ LAB_0041eae1:
 
           if (iVar5 == 0) {
 
-            FUN_004b6630(iVar1,iVar3);
+            object_spawn_4b(iVar1,iVar3);
 
           }
 
@@ -11230,7 +11230,7 @@ LAB_0041ecb2:
 
     if (iVar6 == 0) {
 
-      FUN_004b6630(param_1,param_2);
+      object_spawn_4b(param_1,param_2);
 
     }
 
@@ -11483,7 +11483,7 @@ void FUN_0041ee70(int param_1)
 
             if (iVar3 == 0) {
 
-              FUN_004b6630(param_1,iVar1);
+              object_spawn_4b(param_1,iVar1);
 
             }
 
@@ -11519,7 +11519,7 @@ void FUN_0041ee70(int param_1)
 
           if (iVar3 == 0) {
 
-            FUN_004b6630(param_1,iVar1);
+            object_spawn_4b(param_1,iVar1);
 
           }
 
@@ -11555,7 +11555,7 @@ void FUN_0041ee70(int param_1)
 
         if (iVar3 == 0) {
 
-          FUN_004b6630(param_1,iVar1);
+          object_spawn_4b(param_1,iVar1);
 
         }
 

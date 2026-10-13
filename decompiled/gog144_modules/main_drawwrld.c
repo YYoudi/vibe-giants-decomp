@@ -712,11 +712,11 @@ void main_drawwrld_00435e20(void)
 
   DAT_00656498 = 0;
 
-  FUN_0042e230();
+  drawwrld_helper_b();
 
-  FUN_0042dfa0();
+  drawwrld_helper_a();
 
-  FUN_0042e380();
+  drawwrld_helper_c();
 
   return;
 

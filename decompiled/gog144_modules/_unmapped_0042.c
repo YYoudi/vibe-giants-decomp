@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (53 named) — decompiled, names from PS2 symbols
+ * 129 functions (59 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -9716,8 +9716,8 @@ void comm_00427860(int *param_1,int param_2,int param_3)
 
 }
 
-/* ===== main/dlog_00427ac0 @ 0x00427AC0 ===== */
-void main_dlog_00427ac0(int *param_1,float param_2)
+/* ===== dlog_screen_user_1 @ 0x00427AC0 ===== */
+void dlog_screen_user_1(int *param_1,float param_2)
 
 
 
@@ -9875,8 +9875,8 @@ undefined4 main_dlog_00427e60(undefined4 *param_1,int param_2)
 
 }
 
-/* ===== main/dlog_00427f00 @ 0x00427F00 ===== */
-void main_dlog_00427f00(undefined4 param_1,float param_2)
+/* ===== dlog_screen_user_2 @ 0x00427F00 ===== */
+void dlog_screen_user_2(undefined4 param_1,float param_2)
 
 
 
@@ -10244,7 +10244,7 @@ LAB_00428598:
 
   if ((piVar4[3] & 0x200U) != 0) {
 
-    main_dlog_00427f00(param_1,piVar4);
+    dlog_screen_user_2(param_1,piVar4);
 
   }
 
@@ -10371,8 +10371,8 @@ LAB_004285d8:
 
 }
 
-/* ===== main/dlog_00428620 @ 0x00428620 ===== */
-void main_dlog_00428620(int *param_1,int param_2,int param_3)
+/* ===== wredit_004284d0_user @ 0x00428620 ===== */
+void wredit_004284d0_user(int *param_1,int param_2,int param_3)
 
 
 
@@ -11067,7 +11067,7 @@ void FUN_00428f70(float param_1,float param_2)
 
   if ((*(uint *)((int)param_2 + 0xc) & 0x200) != 0) {
 
-    main_dlog_00427f00(param_1,param_2);
+    dlog_screen_user_2(param_1,param_2);
 
   }
 
@@ -11868,7 +11868,7 @@ LAB_00429782:
 
         case 1:
 
-          FUN_00429990(param_1,piVar6);
+          dlog_screen_user_big(param_1,piVar6);
 
           return;
 
@@ -11930,8 +11930,8 @@ LAB_00429782:
 
 }
 
-/* ===== FUN_00429990 @ 0x00429990 ===== */
-void FUN_00429990(undefined4 param_1,float param_2)
+/* ===== dlog_screen_user_big @ 0x00429990 ===== */
+void dlog_screen_user_big(undefined4 param_1,float param_2)
 
 
 
@@ -12524,7 +12524,7 @@ void FUN_00429e10(int param_1,int param_2)
 
   if ((*puVar1 & 0x200) != 0) {
 
-    main_dlog_00427f00(param_1,iVar8);
+    dlog_screen_user_2(param_1,iVar8);
 
   }
 
@@ -17439,8 +17439,8 @@ void fx_blastmark(void)
 
 }
 
-/* ===== FUN_0042dfa0 @ 0x0042DFA0 ===== */
-void FUN_0042dfa0(void)
+/* ===== drawwrld_helper_a @ 0x0042DFA0 ===== */
+void drawwrld_helper_a(void)
 
 
 
@@ -17604,8 +17604,8 @@ void fx_kabuto_footprint(void)
 
 }
 
-/* ===== FUN_0042e230 @ 0x0042E230 ===== */
-void FUN_0042e230(void)
+/* ===== drawwrld_helper_b @ 0x0042E230 ===== */
+void drawwrld_helper_b(void)
 
 
 
@@ -17736,8 +17736,8 @@ void FUN_0042e350(void)
 
 }
 
-/* ===== FUN_0042e380 @ 0x0042E380 ===== */
-void FUN_0042e380(void)
+/* ===== drawwrld_helper_c @ 0x0042E380 ===== */
+void drawwrld_helper_c(void)
 
 
 
@@ -17764,8 +17764,8 @@ void dlog_free_global_3(void)
 
 }
 
-/* ===== FUN_0042e3b0 @ 0x0042E3B0 ===== */
-void FUN_0042e3b0(int param_1,undefined4 param_2,undefined4 param_3)
+/* ===== mpeg_mode_set @ 0x0042E3B0 ===== */
+void mpeg_mode_set(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -17816,8 +17816,10 @@ void _cleanup_4(void)
 
 }
 
-/* ===== FUN_0042e460 @ 0x0042E460 ===== */
-void FUN_0042e460(int param_1,undefined4 param_2,int param_3,undefined4 param_4,undefined4 param_5)
+/* ===== animate_core_caller @ 0x0042E460 ===== */
+void animate_core_caller(int param_1,undefined4 param_2,int param_3,undefined4 param_4,
+
+                        undefined4 param_5)
 
 
 

@@ -578,7 +578,7 @@ LAB_004195d2:
 
     if (iVar9 == 0) {
 
-      FUN_004b6630(param_1,fVar4);
+      object_spawn_4b(param_1,fVar4);
 
     }
 
