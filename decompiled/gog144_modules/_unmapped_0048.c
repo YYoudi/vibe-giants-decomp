@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (25 named) — decompiled, names from PS2 symbols
+ * 74 functions (27 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -3723,12 +3723,12 @@ void mission_intro_load(void)
 
 }
 
-/* ===== FUN_00483e50 @ 0x00483E50 ===== */
+/* ===== player_defaults_load_all @ 0x00483E50 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00483e50(void)
+void player_defaults_load_all(void)
 
 
 
@@ -4019,7 +4019,7 @@ void savegame_cam_section(void)
 
     } while (iVar3 < 5);
 
-    FUN_00483e50();
+    player_defaults_load_all();
 
   }
 
@@ -4097,7 +4097,7 @@ void savegame_cam_section(void)
 
     DAT_0059eed4 = 0;
 
-    FUN_00483e50();
+    player_defaults_load_all();
 
     comm_0051a130(s_CamMode_00555a28,1);
 
@@ -6674,12 +6674,12 @@ void mission_load_world2(void)
 
 }
 
-/* ===== mission_load_world3 @ 0x00488D00 ===== */
+/* ===== menu_load_world3 @ 0x00488D00 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void mission_load_world3(void)
+void menu_load_world3(void)
 
 
 
@@ -11809,12 +11809,12 @@ void FUN_0048EE60(void)
 
 }
 
-/* ===== FUN_0048f040 @ 0x0048F040 ===== */
+/* ===== menu_deleted_player @ 0x0048F040 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0048f040(void)
+void menu_deleted_player(void)
 
 
 

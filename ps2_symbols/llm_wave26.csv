@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0048f040,FUN_0048F040,,menu_deleted_player,0.9,llm-read12,
+00483e50,FUN_00483E50,,player_defaults_load_all,0.9,llm-read12,
+00488d00,FUN_00488D00,,menu_load_world3,0.9,llm-read12,

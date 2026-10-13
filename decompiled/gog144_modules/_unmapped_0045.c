@@ -6294,7 +6294,7 @@ void defaults_reset_menu(void)
 
   }
 
-  FUN_00483e50();
+  player_defaults_load_all();
 
   DAT_00633154 = 0;
 

@@ -3237,7 +3237,7 @@
  "0x004574D0": {
   "name": "defaults_reset_menu",
   "named": true,
-  "len": 443
+  "len": 455
  },
  "0x00457550": {
   "name": "menu_keymap_screen",
@@ -4385,14 +4385,14 @@
   "len": 2805
  },
  "0x00483E50": {
-  "name": "FUN_00483e50",
-  "named": false,
-  "len": 2258
+  "name": "player_defaults_load_all",
+  "named": true,
+  "len": 2270
  },
  "0x00484340": {
   "name": "savegame_cam_section",
   "named": true,
-  "len": 2993
+  "len": 3017
  },
  "0x004845E0": {
   "name": "FUN_004845e0",
@@ -4480,9 +4480,9 @@
   "len": 3173
  },
  "0x00488D00": {
-  "name": "mission_load_world3",
+  "name": "menu_load_world3",
   "named": true,
-  "len": 1576
+  "len": 1573
  },
  "0x00489120": {
   "name": "mission_menu_load",
@@ -4595,9 +4595,9 @@
   "len": 1973
  },
  "0x0048F040": {
-  "name": "FUN_0048f040",
-  "named": false,
-  "len": 1242
+  "name": "menu_deleted_player",
+  "named": true,
+  "len": 1249
  },
  "0x0048F310": {
   "name": "story_script_scan",
