@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0051b850,FUN_0051B850,,textrender_draw_small,0.9,llm-read26,
+0051ba00,FUN_0051BA00,,textrender_draw_buffered,0.9,llm-read26,
+0051bc10,FUN_0051BC10,,textrender_draw_min,0.9,llm-read26,
+0051bc90,FUN_0051BC90,,textrender_draw_cached,0.9,llm-read26,
+0051bde0,FUN_0051BDE0,,textrender_draw_large,0.9,llm-read26,
+0051bed0,FUN_0051BED0,,textrender_draw_main,0.9,llm-read26,
+0051c8d0,FUN_0051C8D0,,music_stream_play,0.9,llm-read26,
+0051ea30,FUN_0051EA30,,error_screen_exit,0.9,llm-read26,

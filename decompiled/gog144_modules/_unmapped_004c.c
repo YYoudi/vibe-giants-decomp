@@ -8679,7 +8679,7 @@ undefined4 dev_debug_flags(void)
 
               FUN_00516a20(&local_1c0,puVar14,uVar13);
 
-              FUN_0051bed0();
+              textrender_draw_main();
 
             }
 
@@ -8877,7 +8877,9 @@ undefined4 dev_debug_flags(void)
 
   if ((DAT_006331c4 == 0) && (iVar5 = FUN_0052c5c0(), iVar5 != 0)) {
 
-    FUN_0051ba00(0,0,0x3d0f5c29,0x3f000000,0x3f000000,s_Dongle_check_skipped_____00561350);
+    textrender_draw_buffered
+
+              (0,0,0x3d0f5c29,0x3f000000,0x3f000000,s_Dongle_check_skipped_____00561350);
 
   }
 
@@ -8891,7 +8893,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_00542f27();
 
-    FUN_0051ba00(0,0,0x3d0f5c29,0x3f000000,0x3d4ccccd,auStack_108,puVar14,uVar13);
+    textrender_draw_buffered(0,0,0x3d0f5c29,0x3f000000,0x3d4ccccd,auStack_108,puVar14,uVar13);
 
   }
 
@@ -8929,7 +8931,7 @@ undefined4 dev_debug_flags(void)
 
     }
 
-    FUN_0051ba00(uVar13,0x3f0000003d3851ec,uVar15);
+    textrender_draw_buffered(uVar13,0x3f0000003d3851ec,uVar15);
 
   }
 
@@ -8939,7 +8941,7 @@ undefined4 dev_debug_flags(void)
 
       uVar8 = FUN_00507b00();
 
-      FUN_0051ba00(0x1fff1f,0,0x3d4ccccd,0x3f000000,0x3f000000,uVar8);
+      textrender_draw_buffered(0x1fff1f,0,0x3d4ccccd,0x3f000000,0x3f000000,uVar8);
 
     }
 
@@ -8959,7 +8961,7 @@ undefined4 dev_debug_flags(void)
 
       }
 
-      FUN_0051ba00(0x1fff1f,0,0x3d4ccccd,0x3f000000,0x3ca3d70a,local_1e0);
+      textrender_draw_buffered(0x1fff1f,0,0x3d4ccccd,0x3f000000,0x3ca3d70a,local_1e0);
 
     }
 
@@ -8983,7 +8985,7 @@ undefined4 dev_debug_flags(void)
 
       FUN_00542f27(auStack_170,s__s__s_0055c280,uVar8);
 
-      FUN_0051ba00(0xff1f1f,0,0x3cf5c28f,0x3f000000,0x3d75c28f,auStack_170);
+      textrender_draw_buffered(0xff1f1f,0,0x3cf5c28f,0x3f000000,0x3d75c28f,auStack_170);
 
     }
 
@@ -8997,7 +8999,7 @@ undefined4 dev_debug_flags(void)
 
       uVar8 = FUN_00507b00();
 
-      FUN_0051ba00(0x1fff1f,0,0x3d4ccccd,0x3f000000,0x3f000000,uVar8);
+      textrender_draw_buffered(0x1fff1f,0,0x3d4ccccd,0x3f000000,0x3f000000,uVar8);
 
     }
 

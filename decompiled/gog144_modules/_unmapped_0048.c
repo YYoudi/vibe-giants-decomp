@@ -9964,7 +9964,7 @@ void dialog_0048ca10(void)
 
   case 0xb:
 
-    FUN_0051c8d0();
+    music_stream_play();
 
     break;
 

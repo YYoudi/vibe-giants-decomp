@@ -1584,7 +1584,7 @@ void FUN_00471dc0(void)
 
   if (DAT_00633044 == 0) {
 
-    FUN_0051ba00(0xffffff,0,0x3dcccccd,0x3f000000,0x3f000000,s_Render_Error_0055b724);
+    textrender_draw_buffered(0xffffff,0,0x3dcccccd,0x3f000000,0x3f000000,s_Render_Error_0055b724);
 
     return;
 

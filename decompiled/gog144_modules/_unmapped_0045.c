@@ -1486,7 +1486,7 @@ void options_menu_apply(undefined4 param_1)
 
   }
 
-  FUN_0051c8d0();
+  music_stream_play();
 
   game_options_load();
 

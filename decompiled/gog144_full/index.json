@@ -1472,7 +1472,7 @@
  "0x00427570": {
   "name": "dlog_00427570",
   "named": true,
-  "len": 1944
+  "len": 1995
  },
  "0x004276A0": {
   "name": "dlog_004276a0",
@@ -1617,7 +1617,7 @@
  "0x00428810": {
   "name": "FUN_00428810",
   "named": false,
-  "len": 3984
+  "len": 4002
  },
  "0x00428B20": {
   "name": "FUN_00428b20",
@@ -1657,7 +1657,7 @@
  "0x00429990": {
   "name": "dlog_screen_user_big",
   "named": true,
-  "len": 8912
+  "len": 8960
  },
  "0x00429E10": {
   "name": "FUN_00429e10",
@@ -2567,7 +2567,7 @@
  "0x00444320": {
   "name": "FUN_00444320",
   "named": false,
-  "len": 2145
+  "len": 2155
  },
  "0x004444C0": {
   "name": "FUN_004444c0",
@@ -2632,12 +2632,12 @@
  "0x00446BE0": {
   "name": "FUN_00446be0",
   "named": false,
-  "len": 986
+  "len": 1002
  },
  "0x00446CE0": {
   "name": "FUN_00446ce0",
   "named": false,
-  "len": 1606
+  "len": 1624
  },
  "0x00446DF0": {
   "name": "map_chunk_destroy",
@@ -2997,7 +2997,7 @@
  "0x00452130": {
   "name": "options_menu_apply",
   "named": true,
-  "len": 1309
+  "len": 1314
  },
  "0x00452200": {
   "name": "FUN_00452200",
@@ -3927,7 +3927,7 @@
  "0x00471DC0": {
   "name": "FUN_00471dc0",
   "named": false,
-  "len": 319
+  "len": 331
  },
  "0x00471E10": {
   "name": "main_makeobj_00471e10",
@@ -4547,7 +4547,7 @@
  "0x0048CA10": {
   "name": "dialog_0048ca10",
   "named": true,
-  "len": 3204
+  "len": 3209
  },
  "0x0048D4B0": {
   "name": "FUN_0048D4B0",
@@ -5682,12 +5682,12 @@
  "0x004A5E10": {
   "name": "player_draw_missile_lock",
   "named": true,
-  "len": 736
+  "len": 748
  },
  "0x004A5EB0": {
   "name": "FUN_004a5eb0",
   "named": false,
-  "len": 594
+  "len": 622
  },
  "0x004A5F40": {
   "name": "FUN_004a5f40",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14093
+  "len": 14201
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -8857,7 +8857,7 @@
  "0x00518DD0": {
   "name": "renderer_load_return_site",
   "named": true,
-  "len": 1258
+  "len": 1268
  },
  "0x00518F00": {
   "name": "FUN_00518f00",
@@ -8867,7 +8867,7 @@
  "0x00518F20": {
   "name": "fps_display",
   "named": true,
-  "len": 447
+  "len": 459
  },
  "0x00518FA0": {
   "name": "FUN_00518FA0",
@@ -9002,7 +9002,7 @@
  "0x0051A280": {
   "name": "stream_0051a280",
   "named": true,
-  "len": 12264
+  "len": 12559
  },
  "0x0051AD50": {
   "name": "FUN_0051ad50",
@@ -9045,9 +9045,9 @@
   "len": 487
  },
  "0x0051B850": {
-  "name": "FUN_0051b850",
-  "named": false,
-  "len": 1237
+  "name": "textrender_draw_small",
+  "named": true,
+  "len": 1261
  },
  "0x0051B970": {
   "name": "FUN_0051b970",
@@ -9060,9 +9060,9 @@
   "len": 434
  },
  "0x0051BA00": {
-  "name": "FUN_0051ba00",
-  "named": false,
-  "len": 1534
+  "name": "textrender_draw_buffered",
+  "named": true,
+  "len": 1561
  },
  "0x0051BC00": {
   "name": "FUN_0051bc00",
@@ -9070,9 +9070,9 @@
   "len": 136
  },
  "0x0051BC10": {
-  "name": "FUN_0051bc10",
-  "named": false,
-  "len": 458
+  "name": "textrender_draw_min",
+  "named": true,
+  "len": 465
  },
  "0x0051BC70": {
   "name": "FUN_0051bc70",
@@ -9080,9 +9080,9 @@
   "len": 216
  },
  "0x0051BC90": {
-  "name": "FUN_0051bc90",
-  "named": false,
-  "len": 951
+  "name": "textrender_draw_cached",
+  "named": true,
+  "len": 961
  },
  "0x0051BD30": {
   "name": "dlog_0051bd30",
@@ -9090,9 +9090,9 @@
   "len": 1129
  },
  "0x0051BDE0": {
-  "name": "FUN_0051bde0",
-  "named": false,
-  "len": 1150
+  "name": "textrender_draw_large",
+  "named": true,
+  "len": 1159
  },
  "0x0051BEA0": {
   "name": "FUN_0051bea0",
@@ -9100,14 +9100,14 @@
   "len": 428
  },
  "0x0051BED0": {
-  "name": "FUN_0051bed0",
-  "named": false,
-  "len": 5176
+  "name": "textrender_draw_main",
+  "named": true,
+  "len": 5184
  },
  "0x0051C370": {
   "name": "FUN_0051c370",
   "named": false,
-  "len": 1021
+  "len": 1026
  },
  "0x0051C470": {
   "name": "localization_check",
@@ -9230,9 +9230,9 @@
   "len": 76
  },
  "0x0051C8D0": {
-  "name": "FUN_0051c8d0",
-  "named": false,
-  "len": 1601
+  "name": "music_stream_play",
+  "named": true,
+  "len": 1606
  },
  "0x0051C9F0": {
   "name": "FUN_0051C9F0",
@@ -9262,7 +9262,7 @@
  "0x0051E680": {
   "name": "error_screen_show",
   "named": true,
-  "len": 3709
+  "len": 3847
  },
  "0x0051EA20": {
   "name": "FUN_0051ea20",
@@ -9270,9 +9270,9 @@
   "len": 216
  },
  "0x0051EA30": {
-  "name": "FUN_0051ea30",
-  "named": false,
-  "len": 151
+  "name": "error_screen_exit",
+  "named": true,
+  "len": 156
  },
  "0x0051EA60": {
   "name": "FUN_0051ea60",
@@ -10392,7 +10392,7 @@
  "0x005363F0": {
   "name": "comm_005363f0",
   "named": true,
-  "len": 2133
+  "len": 2143
  },
  "0x00536580": {
   "name": "FUN_00536580",
@@ -10407,7 +10407,7 @@
  "0x00536700": {
   "name": "FUN_00536700",
   "named": false,
-  "len": 4777
+  "len": 4925
  },
  "0x00536B20": {
   "name": "FUN_00536b20",
@@ -10432,12 +10432,12 @@
  "0x00536F60": {
   "name": "bldg_comm_status",
   "named": true,
-  "len": 2370
+  "len": 2378
  },
  "0x00537120": {
   "name": "base_hint_menu",
   "named": true,
-  "len": 729
+  "len": 745
  },
  "0x005371E0": {
   "name": "comm_entergame_message",

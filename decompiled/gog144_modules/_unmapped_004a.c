@@ -5324,7 +5324,7 @@ void player_draw_missile_lock(void)
 
     uVar1 = TextGetPtrQ(s_MissileLock_0055eb2c,fVar3);
 
-    FUN_0051ba00(0xff0000,0,fVar3,0x3f000000,DAT_005a0ee4,uVar1);
+    textrender_draw_buffered(0xff0000,0,fVar3,0x3f000000,DAT_005a0ee4,uVar1);
 
     sound_play(0x10b);
 
@@ -5367,7 +5367,9 @@ void FUN_004a5eb0(void)
 
     _DAT_005a0ee8 = 0x3ecccccd;
 
-    FUN_0051ba00(0xe0e020,0,(float)(fVar1 * (float10)1.2),0x3f000000,0x3ecccccd,&DAT_00632c10);
+    textrender_draw_buffered
+
+              (0xe0e020,0,(float)(fVar1 * (float10)1.2),0x3f000000,0x3ecccccd,&DAT_00632c10);
 
     fVar1 = (float10)FUN_00518b70(DAT_00632a88,0);
 

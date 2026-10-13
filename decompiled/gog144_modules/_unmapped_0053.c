@@ -9660,7 +9660,7 @@ void comm_005363f0(char *param_1,undefined4 param_2)
 
       do {
 
-        fVar8 = (float10)FUN_0051bc90(fVar2,pcVar6,local_134);
+        fVar8 = (float10)textrender_draw_cached(fVar2,pcVar6,local_134);
 
         if ((pcVar7 == (char *)0x0) && ((float10)0.6 < fVar8)) {
 
@@ -9997,7 +9997,7 @@ void FUN_00536700(int param_1)
 
     local_108 = 0;
 
-    fVar12 = (float10)FUN_0051bc90(fVar13,DAT_00632fb8,DAT_00632fb0);
+    fVar12 = (float10)textrender_draw_cached(fVar13,DAT_00632fb8,DAT_00632fb0);
 
     if ((float10)0.76 < fVar12) {
 
@@ -10007,7 +10007,9 @@ void FUN_00536700(int param_1)
 
         pcVar8 = pcVar8 + 1;
 
-        fVar12 = (float10)FUN_0051bc90(fVar13,pcVar8,DAT_00632fb8 + (DAT_00632fb0 - (int)pcVar8));
+        fVar12 = (float10)textrender_draw_cached
+
+                                    (fVar13,pcVar8,DAT_00632fb8 + (DAT_00632fb0 - (int)pcVar8));
 
       } while ((float10)0.76 < fVar12);
 
@@ -10065,7 +10067,9 @@ void FUN_00536700(int param_1)
 
       }
 
-      fVar12 = (float10)FUN_0051bc90(fVar13,local_100,DAT_00632fb8 + (DAT_00632fb0 - (int)pcVar8));
+      fVar12 = (float10)textrender_draw_cached
+
+                                  (fVar13,local_100,DAT_00632fb8 + (DAT_00632fb0 - (int)pcVar8));
 
       local_104 = (float)(fVar12 + (float10)0.1);
 
@@ -10199,7 +10203,7 @@ LAB_005369e7:
 
     uVar4 = FUN_00507b00(s_ChatBoxHint_00580264);
 
-    FUN_0051ba00(0x1fffff,0,fVar1 * 0.75,0x3e99999a,local_118 - 0.03,uVar4);
+    textrender_draw_buffered(0x1fffff,0,fVar1 * 0.75,0x3e99999a,local_118 - 0.03,uVar4);
 
   }
 
@@ -10235,9 +10239,11 @@ LAB_00536aeb:
 
           if (cVar2 != '\f') goto LAB_00536aeb;
 
-          FUN_0051ba00(*(undefined4 *)(&DAT_006328c0 + (&DAT_00632844)[iVar11] * 4),0,fVar1 * 1.5,
+          textrender_draw_buffered
 
-                       0x3f000000,local_118,pcVar8 + 1);
+                    (*(undefined4 *)(&DAT_006328c0 + (&DAT_00632844)[iVar11] * 4),0,fVar1 * 1.5,
+
+                     0x3f000000,local_118,pcVar8 + 1);
 
         }
 
@@ -10644,7 +10650,7 @@ LAB_00537079:
 
   }
 
-  FUN_0051bed0(uVar4,&local_c,param_1,puVar3,uVar5);
+  textrender_draw_main(uVar4,&local_c,param_1,puVar3,uVar5);
 
   return;
 
@@ -10681,7 +10687,7 @@ void base_hint_menu(int param_1,int param_2)
 
     uVar2 = FUN_00507b00(s_BaseHintHomeBase_00580284,0);
 
-    FUN_0051bed0(uVar1,&local_c,15.0 / (float)DAT_00632e88,uVar2);
+    textrender_draw_main(uVar1,&local_c,15.0 / (float)DAT_00632e88,uVar2);
 
     return;
 
@@ -10689,7 +10695,7 @@ void base_hint_menu(int param_1,int param_2)
 
   uVar2 = FUN_00507b00(s_BaseHintEnemyBase_00580270,0);
 
-  FUN_0051bed0(uVar1,&local_c,15.0 / (float)DAT_00632e88,uVar2);
+  textrender_draw_main(uVar1,&local_c,15.0 / (float)DAT_00632e88,uVar2);
 
   return;
 

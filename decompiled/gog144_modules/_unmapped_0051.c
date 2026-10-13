@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (60 named) — decompiled, names from PS2 symbols
+ * 186 functions (68 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -8444,7 +8444,7 @@ LAB_00518e60:
 
   if (DAT_005dcfac == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_GDVSysCreate_0057c9c0);
+    error_screen_exit(s_Failed_to_load_GDVSysCreate_0057c9c0);
 
     return 0;
 
@@ -8454,7 +8454,7 @@ LAB_00518e60:
 
   if (DAT_005dcfb0 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_UpCallsLoad_0057c998);
+    error_screen_exit(s_Failed_to_load_UpCallsLoad_0057c998);
 
     return 0;
 
@@ -8526,7 +8526,7 @@ undefined4 fps_display(void)
 
     }
 
-    FUN_0051ba00(0xffffff,0,0x3d000000,0x3f000000,0x3e000000,local_20);
+    textrender_draw_buffered(0xffffff,0,0x3d000000,0x3f000000,0x3e000000,local_20);
 
   }
 
@@ -10075,7 +10075,7 @@ LAB_0051a310:
 
   if (DAT_005dd280 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVInit_0057d6ac);
+    error_screen_exit(s_Failed_to_load_SDVInit_0057d6ac);
 
     return 0;
 
@@ -10085,7 +10085,7 @@ LAB_0051a310:
 
   if (DAT_005dd284 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVFinit_0057d688);
+    error_screen_exit(s_Failed_to_load_SDVFinit_0057d688);
 
     return 0;
 
@@ -10095,7 +10095,7 @@ LAB_0051a310:
 
   if (DAT_005dd288 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVPause_0057d664);
+    error_screen_exit(s_Failed_to_load_SDVPause_0057d664);
 
     return 0;
 
@@ -10105,7 +10105,7 @@ LAB_0051a310:
 
   if (DAT_005dd28c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVResume_0057d63c);
+    error_screen_exit(s_Failed_to_load_SDVResume_0057d63c);
 
     return 0;
 
@@ -10115,7 +10115,7 @@ LAB_0051a310:
 
   if (DAT_005dd290 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVSilence_0057d614);
+    error_screen_exit(s_Failed_to_load_SDVSilence_0057d614);
 
     return 0;
 
@@ -10125,7 +10125,7 @@ LAB_0051a310:
 
   if (DAT_005dd294 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVProcess_0057d5ec);
+    error_screen_exit(s_Failed_to_load_SDVProcess_0057d5ec);
 
     return 0;
 
@@ -10135,7 +10135,7 @@ LAB_0051a310:
 
   if (_DAT_005dd298 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVPreLoad_0057d5c4);
+    error_screen_exit(s_Failed_to_load_SDVPreLoad_0057d5c4);
 
     return 0;
 
@@ -10145,7 +10145,7 @@ LAB_0051a310:
 
   if (DAT_005dd29c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVUnLoad_0057d59c);
+    error_screen_exit(s_Failed_to_load_SDVUnLoad_0057d59c);
 
     return 0;
 
@@ -10155,7 +10155,7 @@ LAB_0051a310:
 
   if (DAT_005dd2a0 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVStopObject_0057d56c);
+    error_screen_exit(s_Failed_to_load_SDVStopObject_0057d56c);
 
     return 0;
 
@@ -10165,7 +10165,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2a4 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVStopSample_0057d53c);
+    error_screen_exit(s_Failed_to_load_SDVStopSample_0057d53c);
 
     return 0;
 
@@ -10175,7 +10175,7 @@ LAB_0051a310:
 
   if (DAT_005dd2a8 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVStopInstance_0057d50c);
+    error_screen_exit(s_Failed_to_load_SDVStopInstance_0057d50c);
 
     return 0;
 
@@ -10185,7 +10185,7 @@ LAB_0051a310:
 
   if (DAT_005dd2ac == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVStart3DObj_0057d4dc);
+    error_screen_exit(s_Failed_to_load_SDVStart3DObj_0057d4dc);
 
     return 0;
 
@@ -10195,7 +10195,7 @@ LAB_0051a310:
 
   if (DAT_005dd2b0 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVStart3DPos_0057d4ac);
+    error_screen_exit(s_Failed_to_load_SDVStart3DPos_0057d4ac);
 
     return 0;
 
@@ -10205,7 +10205,7 @@ LAB_0051a310:
 
   if (DAT_005dd2b4 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVStart2DSample_0057d478);
+    error_screen_exit(s_Failed_to_load_SDVStart2DSample_0057d478);
 
     return 0;
 
@@ -10215,7 +10215,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2b8 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVSetVolumeInsta_0057d43c);
+    error_screen_exit(s_Failed_to_load_SDVSetVolumeInsta_0057d43c);
 
     return 0;
 
@@ -10225,7 +10225,7 @@ LAB_0051a310:
 
   if (DAT_005dd2bc == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVSetVolPCTInsta_0057d400);
+    error_screen_exit(s_Failed_to_load_SDVSetVolPCTInsta_0057d400);
 
     return 0;
 
@@ -10235,7 +10235,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2c0 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVSoundFastIsPla_0057d3b8);
+    error_screen_exit(s_Failed_to_load_SDVSoundFastIsPla_0057d3b8);
 
     return 0;
 
@@ -10245,7 +10245,7 @@ LAB_0051a310:
 
   if (DAT_005dd2c4 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVGetInstance_0057d388);
+    error_screen_exit(s_Failed_to_load_SDVGetInstance_0057d388);
 
     return 0;
 
@@ -10255,7 +10255,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2c8 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVGetMinMaxDista_0057d348);
+    error_screen_exit(s_Failed_to_load_SDVGetMinMaxDista_0057d348);
 
     return 0;
 
@@ -10265,7 +10265,7 @@ LAB_0051a310:
 
   if (DAT_005dd2cc == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVSetGlobalVolum_0057d310);
+    error_screen_exit(s_Failed_to_load_SDVSetGlobalVolum_0057d310);
 
     return 0;
 
@@ -10275,7 +10275,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2d0 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVSetGlobalContr_0057d2d4);
+    error_screen_exit(s_Failed_to_load_SDVSetGlobalContr_0057d2d4);
 
     return 0;
 
@@ -10285,7 +10285,7 @@ LAB_0051a310:
 
   if (DAT_005dd2d4 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVSetGlobalContr_0057d298);
+    error_screen_exit(s_Failed_to_load_SDVSetGlobalContr_0057d298);
 
     return 0;
 
@@ -10295,7 +10295,7 @@ LAB_0051a310:
 
   if (DAT_005dd2d8 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVGetGlobalVolum_0057d260);
+    error_screen_exit(s_Failed_to_load_SDVGetGlobalVolum_0057d260);
 
     return 0;
 
@@ -10305,7 +10305,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2dc == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVGetGlobalContr_0057d224);
+    error_screen_exit(s_Failed_to_load_SDVGetGlobalContr_0057d224);
 
     return 0;
 
@@ -10315,7 +10315,7 @@ LAB_0051a310:
 
   if (DAT_005dd2e0 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVGetGlobalContr_0057d1e8);
+    error_screen_exit(s_Failed_to_load_SDVGetGlobalContr_0057d1e8);
 
     return 0;
 
@@ -10325,7 +10325,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2e4 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVGetListenerPos_0057d1a8);
+    error_screen_exit(s_Failed_to_load_SDVGetListenerPos_0057d1a8);
 
     return 0;
 
@@ -10335,7 +10335,7 @@ LAB_0051a310:
 
   if (DAT_005dd2e8 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVGetTime_0057d180);
+    error_screen_exit(s_Failed_to_load_SDVGetTime_0057d180);
 
     return 0;
 
@@ -10345,7 +10345,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2ec == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVCalcVolume_0057d150);
+    error_screen_exit(s_Failed_to_load_SDVCalcVolume_0057d150);
 
     return 0;
 
@@ -10355,7 +10355,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2f0 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVWantLoadOcclud_0057d118);
+    error_screen_exit(s_Failed_to_load_SDVWantLoadOcclud_0057d118);
 
     return 0;
 
@@ -10365,7 +10365,7 @@ LAB_0051a310:
 
   if (DAT_005dd2f4 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVOcclusionBox_0057d0e8);
+    error_screen_exit(s_Failed_to_load_SDVOcclusionBox_0057d0e8);
 
     return 0;
 
@@ -10375,7 +10375,7 @@ LAB_0051a310:
 
   if (_DAT_005dd2f8 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVDestroyOcclusi_0057d0a8);
+    error_screen_exit(s_Failed_to_load_SDVDestroyOcclusi_0057d0a8);
 
     return 0;
 
@@ -10385,7 +10385,7 @@ LAB_0051a310:
 
   if (DAT_005dd2fc == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVDestroyOcclusi_0057d060);
+    error_screen_exit(s_Failed_to_load_SDVDestroyOcclusi_0057d060);
 
     return 0;
 
@@ -10395,7 +10395,7 @@ LAB_0051a310:
 
   if (_DAT_005dd300 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVUpdateOcclusio_0057d020);
+    error_screen_exit(s_Failed_to_load_SDVUpdateOcclusio_0057d020);
 
     return 0;
 
@@ -10405,7 +10405,7 @@ LAB_0051a310:
 
   if (_DAT_005dd304 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVOcclusionParms_0057cfe8);
+    error_screen_exit(s_Failed_to_load_SDVOcclusionParms_0057cfe8);
 
     return 0;
 
@@ -10415,7 +10415,7 @@ LAB_0051a310:
 
   if (DAT_005dd308 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVHWLoadWorld_0057cfb8);
+    error_screen_exit(s_Failed_to_load_SDVHWLoadWorld_0057cfb8);
 
     return 0;
 
@@ -10425,7 +10425,7 @@ LAB_0051a310:
 
   if (DAT_005dd364 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_SDVUpCallsLoad_0057cf88);
+    error_screen_exit(s_Failed_to_load_SDVUpCallsLoad_0057cf88);
 
     return 0;
 
@@ -10435,7 +10435,7 @@ LAB_0051a310:
 
   if (DAT_005dd30c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVInit_0057cf68);
+    error_screen_exit(s_Failed_to_load_MDVInit_0057cf68);
 
     return 0;
 
@@ -10445,7 +10445,7 @@ LAB_0051a310:
 
   if (DAT_005dd310 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVFinit_0057cf44);
+    error_screen_exit(s_Failed_to_load_MDVFinit_0057cf44);
 
     return 0;
 
@@ -10455,7 +10455,7 @@ LAB_0051a310:
 
   if (DAT_005dd314 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVProcess_0057cf1c);
+    error_screen_exit(s_Failed_to_load_MDVProcess_0057cf1c);
 
     return 0;
 
@@ -10465,7 +10465,7 @@ LAB_0051a310:
 
   if (DAT_005dd318 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVPlaySong_0057cef4);
+    error_screen_exit(s_Failed_to_load_MDVPlaySong_0057cef4);
 
     return 0;
 
@@ -10475,7 +10475,7 @@ LAB_0051a310:
 
   if (DAT_005dd31c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVStopSong_0057cecc);
+    error_screen_exit(s_Failed_to_load_MDVStopSong_0057cecc);
 
     return 0;
 
@@ -10485,7 +10485,7 @@ LAB_0051a310:
 
   if (_DAT_005dd320 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVGetPlayList_0057ce9c);
+    error_screen_exit(s_Failed_to_load_MDVGetPlayList_0057ce9c);
 
     return 0;
 
@@ -10495,7 +10495,7 @@ LAB_0051a310:
 
   if (DAT_005dd324 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVGetSongPlaying_0057ce64);
+    error_screen_exit(s_Failed_to_load_MDVGetSongPlaying_0057ce64);
 
     return 0;
 
@@ -10505,7 +10505,7 @@ LAB_0051a310:
 
   if (DAT_005dd328 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVIsJumping_0057ce38);
+    error_screen_exit(s_Failed_to_load_MDVIsJumping_0057ce38);
 
     return 0;
 
@@ -10515,7 +10515,7 @@ LAB_0051a310:
 
   if (DAT_005dd32c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVSetGlobalVolum_0057ce00);
+    error_screen_exit(s_Failed_to_load_MDVSetGlobalVolum_0057ce00);
 
     return 0;
 
@@ -10525,7 +10525,7 @@ LAB_0051a310:
 
   if (_DAT_005dd330 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVSetGlobalContr_0057cdc4);
+    error_screen_exit(s_Failed_to_load_MDVSetGlobalContr_0057cdc4);
 
     return 0;
 
@@ -10535,7 +10535,7 @@ LAB_0051a310:
 
   if (_DAT_005dd334 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVSetGlobalContr_0057cd88);
+    error_screen_exit(s_Failed_to_load_MDVSetGlobalContr_0057cd88);
 
     return 0;
 
@@ -10545,7 +10545,7 @@ LAB_0051a310:
 
   if (DAT_005dd338 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVGetGlobalVolum_0057cd50);
+    error_screen_exit(s_Failed_to_load_MDVGetGlobalVolum_0057cd50);
 
     return 0;
 
@@ -10555,7 +10555,7 @@ LAB_0051a310:
 
   if (_DAT_005dd33c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVGetGlobalContr_0057cd14);
+    error_screen_exit(s_Failed_to_load_MDVGetGlobalContr_0057cd14);
 
     return 0;
 
@@ -10565,7 +10565,7 @@ LAB_0051a310:
 
   if (_DAT_005dd340 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_MDVGetGlobalContr_0057ccd8);
+    error_screen_exit(s_Failed_to_load_MDVGetGlobalContr_0057ccd8);
 
     return 0;
 
@@ -10575,7 +10575,7 @@ LAB_0051a310:
 
   if (DAT_005dd344 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVSilence_0057ccb0);
+    error_screen_exit(s_Failed_to_load_VDVSilence_0057ccb0);
 
     return 0;
 
@@ -10585,7 +10585,7 @@ LAB_0051a310:
 
   if (_DAT_005dd348 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVPlayStream_0057cc80);
+    error_screen_exit(s_Failed_to_load_VDVPlayStream_0057cc80);
 
     return 0;
 
@@ -10595,7 +10595,7 @@ LAB_0051a310:
 
   if (_DAT_005dd34c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVPlayStreamSync_0057cc48);
+    error_screen_exit(s_Failed_to_load_VDVPlayStreamSync_0057cc48);
 
     return 0;
 
@@ -10605,7 +10605,7 @@ LAB_0051a310:
 
   if (_DAT_005dd350 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVGetStreamSyncT_0057cc0c);
+    error_screen_exit(s_Failed_to_load_VDVGetStreamSyncT_0057cc0c);
 
     return 0;
 
@@ -10615,7 +10615,7 @@ LAB_0051a310:
 
   if (DAT_005dd354 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVStopStream_0057cbdc);
+    error_screen_exit(s_Failed_to_load_VDVStopStream_0057cbdc);
 
     return 0;
 
@@ -10625,7 +10625,7 @@ LAB_0051a310:
 
   if (DAT_005dd358 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVIsPlayingStrea_0057cba4);
+    error_screen_exit(s_Failed_to_load_VDVIsPlayingStrea_0057cba4);
 
     return 0;
 
@@ -10635,7 +10635,7 @@ LAB_0051a310:
 
   if (_DAT_005dd35c == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVSetVolPCTStrea_0057cb6c);
+    error_screen_exit(s_Failed_to_load_VDVSetVolPCTStrea_0057cb6c);
 
     return 0;
 
@@ -10645,7 +10645,7 @@ LAB_0051a310:
 
   if (DAT_005dd360 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_VDVFinitStreams_0057cb3c);
+    error_screen_exit(s_Failed_to_load_VDVFinitStreams_0057cb3c);
 
     return 0;
 
@@ -10655,7 +10655,7 @@ LAB_0051a310:
 
   if (DAT_005dd364 == (FARPROC)0x0) {
 
-    FUN_0051ea30(s_Failed_to_load_UpCallsLoad_0057c998);
+    error_screen_exit(s_Failed_to_load_UpCallsLoad_0057c998);
 
     return 0;
 
@@ -11273,14 +11273,16 @@ void FUN_0051b810(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
 }
 
-/* ===== FUN_0051b850 @ 0x0051B850 ===== */
+/* ===== textrender_draw_small @ 0x0051B850 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051b850(uint param_1,undefined4 param_2,float param_3,float param_4,float param_5,
+void textrender_draw_small
 
-                 int param_6)
+               (uint param_1,undefined4 param_2,float param_3,float param_4,float param_5,
+
+               int param_6)
 
 
 
@@ -11416,14 +11418,16 @@ void FUN_0051b9c0(undefined4 param_1,undefined4 param_2,float param_3,undefined4
 
 }
 
-/* ===== FUN_0051ba00 @ 0x0051BA00 ===== */
+/* ===== textrender_draw_buffered @ 0x0051BA00 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051ba00(undefined4 param_1,undefined4 param_2,float param_3,float param_4,float param_5,
+void textrender_draw_buffered
 
-                 byte *param_6)
+               (undefined4 param_1,undefined4 param_2,float param_3,float param_4,float param_5,
+
+               byte *param_6)
 
 
 
@@ -11546,12 +11550,12 @@ float10 FUN_0051bc00(float param_1)
 
 }
 
-/* ===== FUN_0051bc10 @ 0x0051BC10 ===== */
+/* ===== textrender_draw_min @ 0x0051BC10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_0051bc10(float param_1,int param_2)
+float10 textrender_draw_min(float param_1,int param_2)
 
 
 
@@ -11592,12 +11596,12 @@ float10 FUN_0051bc70(float param_1)
 
 }
 
-/* ===== FUN_0051bc90 @ 0x0051BC90 ===== */
+/* ===== textrender_draw_cached @ 0x0051BC90 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_0051bc90(float param_1,byte *param_2,int param_3)
+float10 textrender_draw_cached(float param_1,byte *param_2,int param_3)
 
 
 
@@ -11756,12 +11760,12 @@ float10 dlog_0051bd30(float param_1,byte *param_2)
 
 }
 
-/* ===== FUN_0051bde0 @ 0x0051BDE0 ===== */
+/* ===== textrender_draw_large @ 0x0051BDE0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 FUN_0051bde0(float param_1,byte *param_2)
+float10 textrender_draw_large(float param_1,byte *param_2)
 
 
 
@@ -11892,12 +11896,12 @@ float10 FUN_0051bea0(float param_1,char *param_2)
 
 }
 
-/* ===== FUN_0051bed0 @ 0x0051BED0 ===== */
+/* ===== textrender_draw_main @ 0x0051BED0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051bed0(uint param_1,undefined4 *param_2,float param_3,byte *param_4,int param_5)
+void textrender_draw_main(uint param_1,undefined4 *param_2,float param_3,byte *param_4,int param_5)
 
 
 
@@ -12228,7 +12232,7 @@ void FUN_0051c370(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
   _DAT_005dd918 = FUN_00517a10;
 
-  _DAT_005dd91c = FUN_0051ea30;
+  _DAT_005dd91c = error_screen_exit;
 
   _DAT_005dd920 = FUN_00425eb0;
 
@@ -12774,8 +12778,8 @@ bool dialog_level_is_base_7(void)
 
 }
 
-/* ===== FUN_0051c8d0 @ 0x0051C8D0 ===== */
-void FUN_0051c8d0(void)
+/* ===== music_stream_play @ 0x0051C8D0 ===== */
+void music_stream_play(void)
 
 
 
@@ -15173,7 +15177,7 @@ void error_screen_show(LPCSTR param_1)
 
           acStack_3c[_Count] = '\0';
 
-          FUN_0051ba00(0xd0d0ff,0,0x3d000000,0x3f000000,param_1,acStack_3c);
+          textrender_draw_buffered(0xd0d0ff,0,0x3d000000,0x3f000000,param_1,acStack_3c);
 
           param_1 = (LPCSTR)((float)param_1 + 0.03125);
 
@@ -15185,15 +15189,23 @@ void error_screen_show(LPCSTR param_1)
 
         }
 
-        FUN_0051ba00(0xe0e0ff,0,0x3d000000,0x3f000000,0x3dc00000,s_Giants__Citizen_Kabuto_0057dc24);
+        textrender_draw_buffered
 
-        FUN_0051ba00(0xe0e0ff,0,0x3d000000,0x3f000000,0x3e000000,
+                  (0xe0e0ff,0,0x3d000000,0x3f000000,0x3dc00000,s_Giants__Citizen_Kabuto_0057dc24);
 
-                     s_Wintry_Cool_Game_Error_Screen_0057dc04);
+        textrender_draw_buffered
 
-        FUN_0051ba00(0xc0c0df,0,0x3d000000,0x3f000000,0x3f600000,s_Enter_to_Continue_0057dbf0);
+                  (0xe0e0ff,0,0x3d000000,0x3f000000,0x3e000000,
 
-        FUN_0051ba00(0xc0c0df,0,0x3d000000,0x3f000000,0x3f680000,s_Escape_to_Exit_Game_0057dbdc);
+                   s_Wintry_Cool_Game_Error_Screen_0057dc04);
+
+        textrender_draw_buffered
+
+                  (0xc0c0df,0,0x3d000000,0x3f000000,0x3f600000,s_Enter_to_Continue_0057dbf0);
+
+        textrender_draw_buffered
+
+                  (0xc0c0df,0,0x3d000000,0x3f000000,0x3f680000,s_Escape_to_Exit_Game_0057dbdc);
 
         ANM_DumpCluster();
 
@@ -15310,8 +15322,8 @@ void FUN_0051ea20(void)
 
 }
 
-/* ===== FUN_0051ea30 @ 0x0051EA30 ===== */
-void FUN_0051ea30(undefined4 param_1)
+/* ===== error_screen_exit @ 0x0051EA30 ===== */
+void error_screen_exit(undefined4 param_1)
 
 
 

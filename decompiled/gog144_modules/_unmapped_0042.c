@@ -9520,9 +9520,9 @@ void dlog_00427570(undefined4 param_1,float param_2)
 
       if (cVar2 == '\n') {
 
-        fVar6 = (float10)FUN_0051bc90(*(undefined4 *)(iVar3 + 0x30),pcVar5,(int)pcVar4 - (int)pcVar5
+        fVar6 = (float10)textrender_draw_cached
 
-                                     );
+                                   (*(undefined4 *)(iVar3 + 0x30),pcVar5,(int)pcVar4 - (int)pcVar5);
 
         if ((float10)param_2 < fVar6) {
 
@@ -9544,7 +9544,9 @@ void dlog_00427570(undefined4 param_1,float param_2)
 
     }
 
-    fVar6 = (float10)FUN_0051bc90(*(undefined4 *)(iVar3 + 0x30),pcVar5,(int)pcVar4 - (int)pcVar5);
+    fVar6 = (float10)textrender_draw_cached
+
+                               (*(undefined4 *)(iVar3 + 0x30),pcVar5,(int)pcVar4 - (int)pcVar5);
 
     if ((float10)param_2 < fVar6) {
 
@@ -10729,7 +10731,7 @@ void FUN_00428810(undefined4 *param_1)
 
             }
 
-            fVar15 = (float10)FUN_0051bc90(puVar7[0xd],puVar7[10],puVar7[0xc]);
+            fVar15 = (float10)textrender_draw_cached(puVar7[0xd],puVar7[10],puVar7[0xc]);
 
             FUN_0051b970(0xffff00,0,puVar7[0xd],(float)(fVar15 + (float10)(float)puVar7[7]),
 
@@ -10767,11 +10769,11 @@ void FUN_00428810(undefined4 *param_1)
 
           }
 
-          FUN_0051ba00(iVar14,0,local_8,(fVar2 + fVar3) * 0.5,
+          textrender_draw_buffered
 
-                       (float)((float10)((fVar4 + fVar5) * 0.5) - fVar15 * (float10)0.5),puVar7[0xb]
+                    (iVar14,0,local_8,(fVar2 + fVar3) * 0.5,
 
-                      );
+                     (float)((float10)((fVar4 + fVar5) * 0.5) - fVar15 * (float10)0.5),puVar7[0xb]);
 
           break;
 
@@ -12395,9 +12397,11 @@ LAB_00429c6f:
 
           iVar13 = iVar12 + 1;
 
-          fVar15 = (float10)FUN_0051bc90(*(undefined4 *)(iVar7 + 0x34),*(undefined4 *)(iVar7 + 0x28)
+          fVar15 = (float10)textrender_draw_cached
 
-                                         ,iVar13);
+                                      (*(undefined4 *)(iVar7 + 0x34),*(undefined4 *)(iVar7 + 0x28),
+
+                                       iVar13);
 
           local_8 = (float)fVar15;
 

@@ -3291,7 +3291,7 @@ void FUN_00444320(void)
 
           }
 
-          fVar8 = (float10)FUN_0051bc90(uVar3,local_200,(int)pcVar5 - (int)local_200);
+          fVar8 = (float10)textrender_draw_cached(uVar3,local_200,(int)pcVar5 - (int)local_200);
 
           FUN_0051b9c0(0xffffffff,0,uVar3,(float)((float10)0.5 - fVar8 * (float10)0.5),local_214,
 
@@ -6472,7 +6472,7 @@ void FUN_00446be0(undefined4 param_1,undefined4 param_2,float *param_3)
 
   FUN_00516260(local_10);
 
-  fVar3 = (float10)FUN_0051bc10(param_3[3],param_2);
+  fVar3 = (float10)textrender_draw_min(param_3[3],param_2);
 
   fVar4 = (float10)FUN_0051bc00(param_3[3],param_2);
 
@@ -6524,7 +6524,7 @@ void FUN_00446be0(undefined4 param_1,undefined4 param_2,float *param_3)
 
   }
 
-  FUN_0051b850(param_3[0xc],1.0 - fVar2 * fVar1,param_3[3],param_3[4],param_3[5],param_2);
+  textrender_draw_small(param_3[0xc],1.0 - fVar2 * fVar1,param_3[3],param_3[4],param_3[5],param_2);
 
   param_3[8] = param_3[9] + param_3[8];
 
@@ -6583,7 +6583,7 @@ void FUN_00446ce0(undefined4 param_1,char *param_2,float *param_3)
 
   if (param_2 != (char *)0x0) {
 
-    fVar8 = (float10)FUN_0051bde0(param_3[3],param_2);
+    fVar8 = (float10)textrender_draw_large(param_3[3],param_2);
 
     fVar9 = (float10)FUN_0051bea0(param_3[3],param_2);
 
@@ -6613,7 +6613,7 @@ void FUN_00446ce0(undefined4 param_1,char *param_2,float *param_3)
 
         *param_3 = local_34[0];
 
-        fVar8 = (float10)FUN_0051bde0(param_3[3],param_2 + iVar5 + 1);
+        fVar8 = (float10)textrender_draw_large(param_3[3],param_2 + iVar5 + 1);
 
         if (fVar8 != (float10)0.0) {
 
