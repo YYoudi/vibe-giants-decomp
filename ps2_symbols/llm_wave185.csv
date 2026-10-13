@@ -1,0 +1,9 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00436110,FUN_00436110,,iface_set_56494,0.9,llm-w185,four per-interface wrappers of 00435940
+004360d0,FUN_004360d0,,iface_set_56498,0.9,llm-w185,DInput device iface
+00436150,FUN_00436150,,iface_set_5646c,0.9,llm-w185,audio iface
+00436190,FUN_00436190,,iface_set_56544,0.9,llm-w185
+0050a5c0,FUN_0050a5c0,,vec2_lensq,0.9,llm-w185,2D dist sq caller obj_3dsound_scan
+0051f2d0,FUN_0051f2d0,,comm_active_player_count,0.9,llm-w185,counts 005ddf60 entries callers comm_setup
+00423470,FUN_00423470,,bit_to_index,0.9,llm-w185,bit scan inverse of key_to_bitmask
+0052ac80,FUN_0052ac80,,comm_player_flag_set,0.9,llm-w185,20-slot setter callers cmd_char

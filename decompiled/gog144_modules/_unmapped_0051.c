@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (154 named) — decompiled, names from PS2 symbols
+ * 186 functions (155 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -15437,8 +15437,8 @@ void FUN_0051f2a0(void)
 
 }
 
-/* ===== FUN_0051f2d0 @ 0x0051F2D0 ===== */
-int FUN_0051f2d0(void)
+/* ===== comm_active_player_count @ 0x0051F2D0 ===== */
+int comm_active_player_count(void)
 
 
 

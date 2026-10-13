@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (66 named) — decompiled, names from PS2 symbols
+ * 74 functions (70 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -3842,8 +3842,8 @@ void FUN_00436090(uint param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004360d0 @ 0x004360D0 ===== */
-void FUN_004360d0(undefined4 param_1,undefined4 param_2)
+/* ===== iface_set_56498 @ 0x004360D0 ===== */
+void iface_set_56498(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -3878,8 +3878,8 @@ void FUN_004360f0(undefined4 param_1)
 
 }
 
-/* ===== FUN_00436110 @ 0x00436110 ===== */
-void FUN_00436110(undefined4 param_1,undefined4 param_2)
+/* ===== iface_set_56494 @ 0x00436110 ===== */
+void iface_set_56494(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -3918,8 +3918,8 @@ void gfx_set_image_buffer(undefined4 param_1,undefined4 param_2,undefined4 param
 
 }
 
-/* ===== FUN_00436150 @ 0x00436150 ===== */
-void FUN_00436150(undefined4 param_1,undefined4 param_2)
+/* ===== iface_set_5646c @ 0x00436150 ===== */
+void iface_set_5646c(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -3954,8 +3954,8 @@ void FUN_00436170(undefined4 param_1)
 
 }
 
-/* ===== FUN_00436190 @ 0x00436190 ===== */
-void FUN_00436190(undefined4 param_1,undefined4 param_2)
+/* ===== iface_set_56544 @ 0x00436190 ===== */
+void iface_set_56544(undefined4 param_1,undefined4 param_2)
 
 
 

@@ -3626,7 +3626,7 @@ undefined4 obj_3dsound_scan(int param_1,int param_2)
 
           local_8 = *(float *)(uVar2 + 0xa4) - *(float *)(param_1 + 0xa4);
 
-          fVar7 = (float10)FUN_0050a5c0(&local_c);
+          fVar7 = (float10)vec2_lensq(&local_c);
 
           fVar1 = (float)fVar7;
 

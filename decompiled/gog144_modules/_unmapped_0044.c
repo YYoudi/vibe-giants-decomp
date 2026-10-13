@@ -4036,7 +4036,7 @@ LAB_00444d25:
 
             FUN_004360f0();
 
-            FUN_00436110(piVar9 + 0x1df,piVar9 + 0x20d);
+            iface_set_56494(piVar9 + 0x1df,piVar9 + 0x20d);
 
           }
 
@@ -4044,7 +4044,7 @@ LAB_00444d25:
 
             FUN_00436090(0x23234,iVar7,0xa0a0a0);
 
-            FUN_004360d0(piVar9 + 0x1df,piVar9 + 0x20d);
+            iface_set_56498(piVar9 + 0x1df,piVar9 + 0x20d);
 
           }
 

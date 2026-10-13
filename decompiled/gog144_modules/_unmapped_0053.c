@@ -2197,7 +2197,7 @@ void comm_process_command_char(uint param_1,char *param_2)
 
   if (cVar1 == 'A') {
 
-    FUN_0052ac80();
+    comm_player_flag_set();
 
     return;
 
@@ -2881,7 +2881,7 @@ void FUN_00531470(void)
 
             comm_audio_volume_user(local_480,1,0,0);
 
-            FUN_0052ac80(pcVar15[1],0);
+            comm_player_flag_set(pcVar15[1],0);
 
             FUN_0052ae90(pcVar15[1]);
 
@@ -4129,7 +4129,7 @@ LAB_00532513:
 
       case 'A':
 
-        FUN_0052ac80(pcVar15[1],1);
+        comm_player_flag_set(pcVar15[1],1);
 
         DAT_005e0304 = DAT_005e0304 + 2;
 
@@ -12158,7 +12158,7 @@ switchD_0053793e_default:
 
   if (((iVar8 != 0) && (iVar8 = game_mode_set1_check(DAT_00632f18), iVar8 == 0)) &&
 
-     (iVar8 = FUN_0051f2d0(), iVar8 < 2)) {
+     (iVar8 = comm_active_player_count(), iVar8 < 2)) {
 
     iVar3 = iVar3 + 1;
 

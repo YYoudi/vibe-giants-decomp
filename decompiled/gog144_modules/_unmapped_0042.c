@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (110 named) — decompiled, names from PS2 symbols
+ * 129 functions (111 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -3200,11 +3200,11 @@ void input_mapping_init(int param_1)
 
     } while ((uVar3 & 1) == 0);
 
-    iVar4 = FUN_00423470(0x2000000);
+    iVar4 = bit_to_index(0x2000000);
 
     (&DAT_00584378)[iVar4 * 2] = (&DAT_00584378)[iVar2 * 2];
 
-    iVar2 = FUN_00423470(0x2000000);
+    iVar2 = bit_to_index(0x2000000);
 
     (&DAT_00584379)[iVar2 * 2] = 1;
 
@@ -4438,21 +4438,21 @@ LAB_00421d1e:
 
   } while ((uVar3 & 1) == 0);
 
-  iVar4 = FUN_00423470(0x10000);
+  iVar4 = bit_to_index(0x10000);
 
   (&DAT_005843d0)[iVar4 * 2] = (&DAT_005843d0)[iVar2 * 2];
 
-  iVar2 = FUN_00423470(0x10000);
+  iVar2 = bit_to_index(0x10000);
 
   (&DAT_005843d1)[iVar2 * 2] = 2;
 
-  iVar2 = FUN_00423470(0x8000);
+  iVar2 = bit_to_index(0x8000);
 
-  iVar4 = FUN_00423470(0x20000);
+  iVar4 = bit_to_index(0x20000);
 
   (&DAT_005843d0)[iVar4 * 2] = (&DAT_005843d0)[iVar2 * 2];
 
-  iVar2 = FUN_00423470(0x20000);
+  iVar2 = bit_to_index(0x20000);
 
   (&DAT_005843d1)[iVar2 * 2] = 2;
 
@@ -5674,8 +5674,8 @@ LAB_004228ea:
 
 }
 
-/* ===== FUN_00423470 @ 0x00423470 ===== */
-int FUN_00423470(uint param_1)
+/* ===== bit_to_index @ 0x00423470 ===== */
+int bit_to_index(uint param_1)
 
 
 
@@ -6514,33 +6514,33 @@ void keymap_load(void)
 
   } while ((uVar1 & 1) == 0);
 
-  _DAT_00584508 = FUN_00423470(0x10);
+  _DAT_00584508 = bit_to_index(0x10);
 
-  _DAT_0058450c = FUN_00423470(0x20);
+  _DAT_0058450c = bit_to_index(0x20);
 
-  _DAT_00584510 = FUN_00423470(0x40);
+  _DAT_00584510 = bit_to_index(0x40);
 
-  _DAT_00584514 = FUN_00423470(0x80);
+  _DAT_00584514 = bit_to_index(0x80);
 
-  _DAT_00584518 = FUN_00423470(0x200);
+  _DAT_00584518 = bit_to_index(0x200);
 
-  _DAT_0058451c = FUN_00423470(0x400);
+  _DAT_0058451c = bit_to_index(0x400);
 
-  _DAT_00584520 = FUN_00423470(0x800);
+  _DAT_00584520 = bit_to_index(0x800);
 
-  _DAT_00584524 = FUN_00423470(0x1000);
+  _DAT_00584524 = bit_to_index(0x1000);
 
-  _DAT_00584528 = FUN_00423470(0x2000);
+  _DAT_00584528 = bit_to_index(0x2000);
 
-  _DAT_0058452c = FUN_00423470(0x4000);
+  _DAT_0058452c = bit_to_index(0x4000);
 
-  _DAT_00584530 = FUN_00423470(0x200000);
+  _DAT_00584530 = bit_to_index(0x200000);
 
-  _DAT_00584534 = FUN_00423470(0x400000);
+  _DAT_00584534 = bit_to_index(0x400000);
 
-  _DAT_00584538 = FUN_00423470(0x800000);
+  _DAT_00584538 = bit_to_index(0x800000);
 
-  _DAT_0058453c = FUN_00423470(0x1000000);
+  _DAT_0058453c = bit_to_index(0x1000000);
 
   _DAT_00584540 = 0x24;
 
@@ -8405,7 +8405,7 @@ undefined4 comm_game_setup_big(void)
 
   if (DAT_0058c658 != 0) {
 
-    iVar1 = FUN_0051f2d0();
+    iVar1 = comm_active_player_count();
 
     if (iVar1 < DAT_0058c654) {
 
@@ -8723,7 +8723,7 @@ switchD_004260b3_caseD_4:
 
     DAT_0058c654 = iVar3;
 
-    iVar1 = FUN_0051f2d0();
+    iVar1 = comm_active_player_count();
 
     if (0 < iVar3 - iVar1) {
 
@@ -18146,13 +18146,13 @@ void rp_spark_hud_setup(int param_1)
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_88,local_44,local_cc);
 
-    FUN_004360d0(auStack_88,&local_e4);
+    iface_set_56498(auStack_88,&local_e4);
 
     GEO_MatFromQuat_2(local_cc,_DAT_0059acb4 * -6.2831855);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_88,local_44,local_cc);
 
-    FUN_004360d0(auStack_88,&local_e4);
+    iface_set_56498(auStack_88,&local_e4);
 
     return;
 
@@ -18228,7 +18228,7 @@ LAB_0042e978:
 
         FUN_00436170();
 
-        FUN_00436190(local_cc,iVar6);
+        iface_set_56544(local_cc,iVar6);
 
       }
 
@@ -18236,7 +18236,7 @@ LAB_0042e978:
 
         gfx_set_image_buffer(uVar7,iVar2);
 
-        FUN_00436150(local_cc,iVar6);
+        iface_set_5646c(local_cc,iVar6);
 
       }
 
@@ -18250,7 +18250,7 @@ LAB_0042e978:
 
       FUN_00436090(uVar7,iVar2);
 
-      FUN_004360d0(local_cc,iVar6);
+      iface_set_56498(local_cc,iVar6);
 
       return;
 
@@ -18258,7 +18258,7 @@ LAB_0042e978:
 
     FUN_004360f0(uVar4);
 
-    FUN_00436110(local_cc,iVar6);
+    iface_set_56494(local_cc,iVar6);
 
   }
 
