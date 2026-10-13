@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (26 named) — decompiled, names from PS2 symbols
+ * 87 functions (27 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -10469,8 +10469,8 @@ void FUN_0050a8f0(void)
 
 }
 
-/* ===== FUN_0050a9e0 @ 0x0050A9E0 ===== */
-void FUN_0050a9e0(float *param_1,float *param_2,float *param_3,float *param_4)
+/* ===== vec_to_angles @ 0x0050A9E0 ===== */
+void vec_to_angles(float *param_1,float *param_2,float *param_3,float *param_4)
 
 
 

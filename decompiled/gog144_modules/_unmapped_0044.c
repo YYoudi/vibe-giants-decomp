@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (37 named) — decompiled, names from PS2 symbols
+ * 76 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -12851,8 +12851,8 @@ void FUN_0044ead0(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0044eaf0 @ 0x0044EAF0 ===== */
-void FUN_0044eaf0(undefined4 *param_1)
+/* ===== fx_goto_processing @ 0x0044EAF0 ===== */
+void fx_goto_processing(undefined4 *param_1)
 
 
 
@@ -13113,7 +13113,7 @@ int FUN_0044ed20(int *param_1,int param_2)
 
   if ((*(byte *)(param_1 + 6) & 0x20) != 0) {
 
-    FUN_0044eaf0(param_1 + 2);
+    fx_goto_processing(param_1 + 2);
 
   }
 

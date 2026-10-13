@@ -1275,9 +1275,9 @@
   "len": 424
  },
  "0x004237B0": {
-  "name": "FUN_004237b0",
-  "named": false,
-  "len": 3799
+  "name": "input_key_bind",
+  "named": true,
+  "len": 3801
  },
  "0x004239D0": {
   "name": "keymap_save",
@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "FUN_004361b0",
   "named": false,
-  "len": 42870
+  "len": 42871
  },
  "0x00437FA0": {
   "name": "main/editor_00437fa0",
@@ -2825,14 +2825,14 @@
   "len": 277
  },
  "0x0044EAF0": {
-  "name": "FUN_0044eaf0",
-  "named": false,
-  "len": 2489
+  "name": "fx_goto_processing",
+  "named": true,
+  "len": 2495
  },
  "0x0044ED20": {
   "name": "FUN_0044ed20",
   "named": false,
-  "len": 3602
+  "len": 3608
  },
  "0x0044EFD0": {
   "name": "FUN_0044efd0",
@@ -8265,9 +8265,9 @@
   "len": 1199
  },
  "0x0050A9E0": {
-  "name": "FUN_0050a9e0",
-  "named": false,
-  "len": 2318
+  "name": "vec_to_angles",
+  "named": true,
+  "len": 2319
  },
  "0x0050AC00": {
   "name": "FUN_0050ac00",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36340
+  "len": 36347
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10310,9 +10310,9 @@
   "len": 2819
  },
  "0x005338E0": {
-  "name": "FUN_005338e0",
-  "named": false,
-  "len": 3380
+  "name": "comm_team_broadcast",
+  "named": true,
+  "len": 3387
  },
  "0x00533B00": {
   "name": "FUN_00533b00",

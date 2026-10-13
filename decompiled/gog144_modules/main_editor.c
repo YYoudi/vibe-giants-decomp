@@ -1424,7 +1424,7 @@ LAB_00437d68:
 
             iVar10 = piVar11[0xe];
 
-            FUN_0050a9e0(local_48,iVar10 + 0xcc,iVar10 + 0xd0,iVar10 + 200);
+            vec_to_angles(local_48,iVar10 + 0xcc,iVar10 + 0xd0,iVar10 + 200);
 
             *(float *)(piVar11[0xe] + 0xcc) = -*(float *)(piVar11[0xe] + 0xcc);
 

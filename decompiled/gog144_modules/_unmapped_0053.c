@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (68 named) — decompiled, names from PS2 symbols
+ * 179 functions (69 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -3657,7 +3657,7 @@ LAB_005319de:
 
       case '-':
 
-        FUN_005338e0(pcVar15);
+        comm_team_broadcast(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x96;
 
@@ -5395,8 +5395,8 @@ LAB_005337eb:
 
 }
 
-/* ===== FUN_005338e0 @ 0x005338E0 ===== */
-void FUN_005338e0(int param_1)
+/* ===== comm_team_broadcast @ 0x005338E0 ===== */
+void comm_team_broadcast(int param_1)
 
 
 
