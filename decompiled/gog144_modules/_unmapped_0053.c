@@ -12761,7 +12761,7 @@ LAB_00538add:
 
           do {
 
-            iVar2 = crt_file_lock_big(local_6a0.cFileName,s_VO_Sfx_00580404,6);
+            iVar2 = crt_file_lock_ops(local_6a0.cFileName,s_VO_Sfx_00580404,6);
 
             if (iVar2 == 0) {
 
@@ -12785,7 +12785,7 @@ LAB_00538add:
 
               } while (cVar1 != '\0');
 
-              iVar2 = crt_file_lock_big(local_6a0.cFileName + 6,DAT_005e2840,~uVar8 - 1);
+              iVar2 = crt_file_lock_ops(local_6a0.cFileName + 6,DAT_005e2840,~uVar8 - 1);
 
               if (iVar2 == 0) goto LAB_00538b60;
 
@@ -14478,7 +14478,7 @@ bool FUN_0053a830(undefined4 param_1,char *param_2)
 
   } while (cVar1 != '\0');
 
-  iVar2 = crt_file_lock_big(param_1,param_2,~uVar3 - 1);
+  iVar2 = crt_file_lock_ops(param_1,param_2,~uVar3 - 1);
 
   return iVar2 == 0;
 
@@ -14512,7 +14512,7 @@ bool matchn(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   
 
-  iVar1 = crt_file_lock_big(param_1,param_2,param_3);
+  iVar1 = crt_file_lock_ops(param_1,param_2,param_3);
 
   return iVar1 == 0;
 
@@ -18852,7 +18852,7 @@ float10 FUN_0053e960(undefined4 param_1,undefined4 param_2)
 
   }
 
-  crt_file_freebuf(s_Zero_length_vector_00580c70);
+  crt_freebuf_ops(s_Zero_length_vector_00580c70);
 
   return (float10)fVar1;
 

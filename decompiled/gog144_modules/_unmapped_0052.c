@@ -7159,7 +7159,7 @@ void FUN_0052a050(int param_1)
 
       local_3c5 = 0;
 
-      iVar8 = crt_file_lock_big(&DAT_00632f48,local_444,0x20);
+      iVar8 = crt_file_lock_ops(&DAT_00632f48,local_444,0x20);
 
       if (iVar8 != 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (215 named) — decompiled, names from PS2 symbols
+ * 351 functions (231 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -391,7 +391,7 @@ void FUN_00540310(undefined4 param_1)
 
     }
 
-    crt_flsbuf_write(iVar1,param_1,&stack0x00000008);
+    crt_flsbuf_ops(iVar1,param_1,&stack0x00000008);
 
     OutputDebugStringA((LPCSTR)&DAT_00630a30);
 
@@ -2705,7 +2705,7 @@ void __rt_error_box(char *param_1,char *param_2)
 
     if ((_DAT_0058114c & 0x10c) == 0) {
 
-      crt_file_flush();
+      crt_flush_ops();
 
     }
 
@@ -4981,7 +4981,7 @@ LAB_00543f3c:
 
         }
 
-        uVar2 = FUN_00549bd9();
+        uVar2 = crt_frndint_user();
 
         return uVar2;
 
@@ -8015,12 +8015,12 @@ void crt_file_unlock_2(int param_1,int param_2)
 
 }
 
-/* ===== crt_file_lock_big @ 0x00545540 ===== */
+/* ===== crt_file_lock_ops @ 0x00545540 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 crt_file_lock_big(byte *param_1,char *param_2,int param_3)
+undefined4 crt_file_lock_ops(byte *param_1,char *param_2,int param_3)
 
 
 
@@ -8635,8 +8635,8 @@ void FUN_00545885(undefined4 param_1)
 
 }
 
-/* ===== crt_file_freebuf @ 0x005458A9 ===== */
-undefined4 crt_file_freebuf(undefined4 param_1)
+/* ===== crt_freebuf_ops @ 0x005458A9 ===== */
+undefined4 crt_freebuf_ops(undefined4 param_1)
 
 
 
@@ -8662,12 +8662,12 @@ undefined4 crt_file_freebuf(undefined4 param_1)
 
 }
 
-/* ===== crt_file_flush @ 0x005458EA ===== */
+/* ===== crt_flush_ops @ 0x005458EA ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 crt_file_flush(FILE *param_1,int *param_2,uint param_3,uint param_4)
+undefined4 crt_flush_ops(FILE *param_1,int *param_2,uint param_3,uint param_4)
 
 
 
@@ -8751,8 +8751,8 @@ LAB_0054598a:
 
 }
 
-/* ===== crt_file_lock_2big @ 0x00545999 ===== */
-int crt_file_lock_2big(void)
+/* ===== crt_file_lock_2ops @ 0x00545999 ===== */
+int crt_file_lock_2ops(void)
 
 
 
@@ -8862,7 +8862,7 @@ int crt_file_lock_2big(void)
 
     iVar4 = local_8 << 5;
 
-    crt_file_lock_3(iVar4);
+    crt_lock_fd(iVar4);
 
   }
 
@@ -8874,8 +8874,8 @@ LAB_00545aab:
 
 }
 
-/* ===== crt_errno_dos_set @ 0x00545ABC ===== */
-undefined4 crt_errno_dos_set(uint param_1,HANDLE param_2)
+/* ===== crt_set_errno_val @ 0x00545ABC ===== */
+undefined4 crt_set_errno_val(uint param_1,HANDLE param_2)
 
 
 
@@ -8943,8 +8943,8 @@ LAB_00545b15:
 
 }
 
-/* ===== crt_doserrno_set @ 0x00545B38 ===== */
-undefined4 crt_doserrno_set(uint param_1)
+/* ===== crt_set_doserrno @ 0x00545B38 ===== */
+undefined4 crt_set_doserrno(uint param_1)
 
 
 
@@ -9016,8 +9016,8 @@ LAB_00545b94:
 
 }
 
-/* ===== crt_osfhnd_get @ 0x00545BB7 ===== */
-undefined4 crt_osfhnd_get(uint param_1)
+/* ===== crt_validate_osfhnd @ 0x00545BB7 ===== */
+undefined4 crt_validate_osfhnd(uint param_1)
 
 
 
@@ -9047,8 +9047,8 @@ undefined4 crt_osfhnd_get(uint param_1)
 
 }
 
-/* ===== crt_file_lock_3 @ 0x00545BF9 ===== */
-void crt_file_lock_3(uint param_1)
+/* ===== crt_lock_fd @ 0x00545BF9 ===== */
+void crt_lock_fd(uint param_1)
 
 
 
@@ -9103,8 +9103,8 @@ void FUN_00545c58(uint param_1)
 
 }
 
-/* ===== crt_flsbuf_write @ 0x00545C7A ===== */
-undefined4 crt_flsbuf_write(undefined1 *param_1,undefined4 param_2,undefined4 param_3)
+/* ===== crt_flsbuf_ops @ 0x00545C7A ===== */
+undefined4 crt_flsbuf_ops(undefined1 *param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -9301,7 +9301,7 @@ void __cdecl __fassign(int flag,char *argument,char *number)
 
   if (flag != 0) {
 
-    FUN_0054d36b(&local_c);
+    binfile_seek_strtod(&local_c);
 
     *(undefined4 *)argument = local_c;
 
@@ -9311,7 +9311,7 @@ void __cdecl __fassign(int flag,char *argument,char *number)
 
   }
 
-  FUN_0054d398(&number,number);
+  binfile_seek_strtod2(&number,number);
 
   *(char **)argument = number;
 
@@ -9332,7 +9332,7 @@ int FUN_00545e42(undefined8 *param_1,int param_2,int param_3,undefined4 param_4)
 
   
 
-  FUN_0054d43c(*param_1,local_14,local_2c);
+  crt_mbtowc_helper(*param_1,local_14,local_2c);
 
   FUN_0054d3c5((uint)(0 < param_3) + param_2 + (uint)(local_14[0] == 0x2d),param_3 + 1,local_14);
 
@@ -9444,7 +9444,7 @@ int FUN_00545f65(undefined8 *param_1,int param_2,int param_3)
 
   
 
-  FUN_0054d43c(*param_1,&local_14,local_2c);
+  crt_mbtowc_helper(*param_1,&local_14,local_2c);
 
   FUN_0054d3c5((uint)(local_14 == 0x2d) + param_2,local_10 + param_3,&local_14);
 
@@ -9556,7 +9556,7 @@ void FUN_00546061(undefined8 *param_1,int param_2,int param_3,undefined4 param_4
 
   
 
-  FUN_0054d43c(*param_1,&local_14,local_2c);
+  crt_mbtowc_helper(*param_1,&local_14,local_2c);
 
   iVar1 = local_10 + -1;
 
@@ -9771,7 +9771,7 @@ LAB_00546276:
 
         if ((puVar6[4] & 0x20) != 0) {
 
-          FUN_0054d5b1(uVar2,0,2);
+          crt_lseek_errno(uVar2,0,2);
 
         }
 
@@ -10156,7 +10156,7 @@ LAB_0054653d:
 
               uVar6 = crt_va_arg_w();
 
-              local_10 = (undefined1 *)FUN_0054d6f6(local_24c,uVar6);
+              local_10 = (undefined1 *)crt_wctomb_lock(local_24c,uVar6);
 
               if ((int)local_10 < 0) {
 
@@ -10620,7 +10620,7 @@ LAB_005468c4:
 
             puVar11 = puVar11 + -1;
 
-            iVar8 = FUN_0054d6f6(local_3c,*psVar5);
+            iVar8 = crt_wctomb_lock(local_3c,*psVar5);
 
             if (iVar8 < 1) break;
 
@@ -10863,7 +10863,7 @@ int _fclose_lk(int param_1)
 
   if ((*(byte *)(param_1 + 0xd) & 0x40) != 0) {
 
-    iVar1 = FUN_0054d7b8(*(undefined4 *)(param_1 + 0x10));
+    iVar1 = crt_close_osf(*(undefined4 *)(param_1 + 0x10));
 
     return -(uint)(iVar1 != 0);
 
@@ -12698,7 +12698,7 @@ undefined4 _close(uint param_1)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    crt_file_lock_3(param_1);
+    crt_lock_fd(param_1);
 
     uVar1 = _close_lk(param_1);
 
@@ -12741,21 +12741,21 @@ undefined4 _close_lk(uint param_1)
 
   
 
-  iVar1 = crt_osfhnd_get(param_1);
+  iVar1 = crt_validate_osfhnd(param_1);
 
   if (iVar1 != -1) {
 
     if ((param_1 == 1) || (param_1 == 2)) {
 
-      iVar1 = crt_osfhnd_get(2);
+      iVar1 = crt_validate_osfhnd(2);
 
-      iVar2 = crt_osfhnd_get(1);
+      iVar2 = crt_validate_osfhnd(1);
 
       if (iVar2 == iVar1) goto LAB_0054791f;
 
     }
 
-    hObject = (HANDLE)crt_osfhnd_get(param_1);
+    hObject = (HANDLE)crt_validate_osfhnd(param_1);
 
     BVar3 = CloseHandle(hObject);
 
@@ -12775,7 +12775,7 @@ LAB_0054791f:
 
 LAB_00547921:
 
-  crt_doserrno_set(param_1);
+  crt_set_doserrno(param_1);
 
   *(undefined1 *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) = 0;
 
@@ -12950,7 +12950,7 @@ undefined4 _read(uint param_1,undefined4 param_2,undefined4 param_3)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    crt_file_lock_3(param_1);
+    crt_lock_fd(param_1);
 
     uVar1 = _read_lk(param_1,param_2,param_3);
 
@@ -14161,7 +14161,7 @@ undefined4 _write(uint param_1,undefined4 param_2,undefined4 param_3)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    crt_file_lock_3(param_1);
+    crt_lock_fd(param_1);
 
     uVar1 = _write_lk(param_1,param_2,param_3);
 
@@ -15693,8 +15693,8 @@ void __math_exit(void)
 
 }
 
-/* ===== FUN_00549bd9 @ 0x00549BD9 ===== */
-void FUN_00549bd9(void)
+/* ===== crt_frndint_user @ 0x00549BD9 ===== */
+void crt_frndint_user(void)
 
 
 
@@ -16717,7 +16717,7 @@ LAB_0054a381:
 
               }
 
-              FUN_0054dc7f(&local_42,&local_3c,DAT_005810b8);
+              crt_lock_54dc7f(&local_42,&local_3c,DAT_005810b8);
 
               *(undefined2 *)pbVar13 = local_42;
 
@@ -20309,7 +20309,7 @@ int __loctotime_t(int param_1,int param_2,int param_3,int param_4,int param_5,in
 
     }
 
-    FUN_0054e41a();
+    crt_lock_54e41a();
 
     local_20 = param_4;
 
@@ -20323,7 +20323,7 @@ int __loctotime_t(int param_1,int param_2,int param_3,int param_4,int param_5,in
 
        (((param_7 == -1 && (DAT_00583bc4 != 0)) &&
 
-        (local_14 = uVar2, local_c = param_3, iVar1 = FUN_0054e6cf(local_28), iVar1 != 0)))) {
+        (local_14 = uVar2, local_c = param_3, iVar1 = crt_lock_54e6cf(local_28), iVar1 != 0)))) {
 
       param_6 = param_6 + _DAT_00583bc8;
 
@@ -22690,8 +22690,8 @@ void BinFileSeek_4(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0054d36b @ 0x0054D36B ===== */
-void FUN_0054d36b(undefined4 param_1,undefined4 param_2)
+/* ===== binfile_seek_strtod @ 0x0054D36B ===== */
+void binfile_seek_strtod(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -22709,8 +22709,8 @@ void FUN_0054d36b(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0054d398 @ 0x0054D398 ===== */
-void FUN_0054d398(undefined4 param_1,undefined4 param_2)
+/* ===== binfile_seek_strtod2 @ 0x0054D398 ===== */
+void binfile_seek_strtod2(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -22823,8 +22823,8 @@ void FUN_0054d3c5(char *param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0054d43c @ 0x0054D43C ===== */
-int * FUN_0054d43c(undefined4 param_1,undefined4 param_2,int *param_3,int param_4)
+/* ===== crt_mbtowc_helper @ 0x0054D43C ===== */
+int * crt_mbtowc_helper(undefined4 param_1,undefined4 param_2,int *param_3,int param_4)
 
 
 
@@ -23067,8 +23067,8 @@ void FUN_0054D5A8(void)
 
 }
 
-/* ===== FUN_0054d5b1 @ 0x0054D5B1 ===== */
-undefined4 FUN_0054d5b1(uint param_1,undefined4 param_2,undefined4 param_3)
+/* ===== crt_lseek_errno @ 0x0054D5B1 ===== */
+undefined4 crt_lseek_errno(uint param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -23084,7 +23084,7 @@ undefined4 FUN_0054d5b1(uint param_1,undefined4 param_2,undefined4 param_3)
 
      ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + (param_1 & 0x1f) * 0x24) & 1) != 0)) {
 
-    crt_file_lock_3(param_1);
+    crt_lock_fd(param_1);
 
     uVar1 = _lseek(param_1,param_2,param_3);
 
@@ -23125,7 +23125,7 @@ DWORD _lseek(uint param_1,LONG param_2,DWORD param_3)
 
   
 
-  hFile = (HANDLE)crt_osfhnd_get(param_1);
+  hFile = (HANDLE)crt_validate_osfhnd(param_1);
 
   if (hFile == (HANDLE)0xffffffff) {
 
@@ -23233,8 +23233,8 @@ byte FUN_0054d6cd(uint param_1)
 
 }
 
-/* ===== FUN_0054d6f6 @ 0x0054D6F6 ===== */
-undefined4 FUN_0054d6f6(undefined4 param_1,undefined4 param_2)
+/* ===== crt_wctomb_lock @ 0x0054D6F6 ===== */
+undefined4 crt_wctomb_lock(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -23258,7 +23258,7 @@ undefined4 FUN_0054d6f6(undefined4 param_1,undefined4 param_2)
 
   }
 
-  uVar1 = FUN_0054d74f(param_1,param_2);
+  uVar1 = crt_errno_read(param_1,param_2);
 
   if (bVar2) {
 
@@ -23276,8 +23276,8 @@ undefined4 FUN_0054d6f6(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0054d74f @ 0x0054D74F ===== */
-int FUN_0054d74f(LPSTR param_1,WCHAR param_2)
+/* ===== crt_errno_read @ 0x0054D74F ===== */
+int crt_errno_read(LPSTR param_1,WCHAR param_2)
 
 
 
@@ -23335,8 +23335,8 @@ int FUN_0054d74f(LPSTR param_1,WCHAR param_2)
 
 }
 
-/* ===== FUN_0054d7b8 @ 0x0054D7B8 ===== */
-undefined4 FUN_0054d7b8(uint param_1)
+/* ===== crt_close_osf @ 0x0054D7B8 ===== */
+undefined4 crt_close_osf(uint param_1)
 
 
 
@@ -23374,11 +23374,11 @@ LAB_0054d839:
 
   if ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + iVar5) & 1) == 0) goto LAB_0054d839;
 
-  crt_file_lock_3(param_1);
+  crt_lock_fd(param_1);
 
   if ((*(byte *)((&DAT_006578c0)[(int)param_1 >> 5] + 4 + iVar5) & 1) != 0) {
 
-    hFile = (HANDLE)crt_osfhnd_get(param_1);
+    hFile = (HANDLE)crt_validate_osfhnd(param_1);
 
     BVar1 = FlushFileBuffers(hFile);
 
@@ -23650,7 +23650,7 @@ LAB_0054d97c:
 
   }
 
-  uVar3 = crt_file_lock_2big();
+  uVar3 = crt_file_lock_2ops();
 
   if (uVar3 == 0xffffffff) {
 
@@ -23686,7 +23686,7 @@ LAB_0054d97c:
 
       }
 
-      crt_errno_dos_set(uVar3,hFile);
+      crt_set_errno_val(uVar3,hFile);
 
       iVar8 = (uVar3 & 0x1f) * 0x24;
 
@@ -23932,8 +23932,8 @@ int crt_fpclassify(int param_1,uint param_2)
 
 }
 
-/* ===== FUN_0054dc7f @ 0x0054DC7F ===== */
-undefined4 FUN_0054dc7f(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+/* ===== crt_lock_54dc7f @ 0x0054DC7F ===== */
+undefined4 crt_lock_54dc7f(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -23957,7 +23957,7 @@ undefined4 FUN_0054dc7f(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
   }
 
-  uVar1 = FUN_0054dcdc(param_1,param_2,param_3);
+  uVar1 = crt_errno_big2(param_1,param_2,param_3);
 
   if (bVar2) {
 
@@ -23975,8 +23975,8 @@ undefined4 FUN_0054dc7f(undefined4 param_1,undefined4 param_2,undefined4 param_3
 
 }
 
-/* ===== FUN_0054dcdc @ 0x0054DCDC ===== */
-uint FUN_0054dcdc(LPWSTR param_1,byte *param_2,uint param_3)
+/* ===== crt_errno_big2 @ 0x0054DCDC ===== */
+uint crt_errno_big2(LPWSTR param_1,byte *param_2,uint param_3)
 
 
 
@@ -25328,8 +25328,8 @@ byte * FUN_0054e3e0(byte *param_1,byte *param_2)
 
 }
 
-/* ===== FUN_0054e41a @ 0x0054E41A ===== */
-void FUN_0054e41a(void)
+/* ===== crt_lock_54e41a @ 0x0054E41A ===== */
+void crt_lock_54e41a(void)
 
 
 
@@ -25341,7 +25341,7 @@ void FUN_0054e41a(void)
 
     if (DAT_00630ea8 == 0) {
 
-      FUN_0054e448();
+      crt_strcpy_lock();
 
       DAT_00630ea8 = DAT_00630ea8 + 1;
 
@@ -25355,12 +25355,12 @@ void FUN_0054e41a(void)
 
 }
 
-/* ===== FUN_0054e448 @ 0x0054E448 ===== */
+/* ===== crt_strcpy_lock @ 0x0054E448 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0054e448(void)
+void crt_strcpy_lock(void)
 
 
 
@@ -25568,8 +25568,8 @@ LAB_0054e6b9:
 
 }
 
-/* ===== FUN_0054e6cf @ 0x0054E6CF ===== */
-undefined4 FUN_0054e6cf(undefined4 param_1)
+/* ===== crt_lock_54e6cf @ 0x0054E6CF ===== */
+undefined4 crt_lock_54e6cf(undefined4 param_1)
 
 
 
@@ -25911,8 +25911,8 @@ undefined4 FUN_0054e9ed(byte param_1,uint param_2,byte param_3)
 
 }
 
-/* ===== FUN_0054ea1e @ 0x0054EA1E ===== */
-undefined4 FUN_0054ea1e(undefined4 param_1)
+/* ===== crt_lock_54ea1e @ 0x0054EA1E ===== */
+undefined4 crt_lock_54ea1e(undefined4 param_1)
 
 
 
@@ -26162,7 +26162,7 @@ LAB_0054ebaa:
 
 LAB_0054ebaf:
 
-  FUN_0054ec71();
+  crt_getstringtype_full();
 
 LAB_0054ea45:
 
@@ -26307,8 +26307,8 @@ void FUN_0054ec48(void)
 
 }
 
-/* ===== FUN_0054ec71 @ 0x0054EC71 ===== */
-void FUN_0054ec71(void)
+/* ===== crt_getstringtype_full @ 0x0054EC71 ===== */
+void crt_getstringtype_full(void)
 
 
 
@@ -26511,7 +26511,7 @@ void FUN_0054edf6(void)
 
   if (DAT_00658a08 == 0) {
 
-    FUN_0054ea1e(0xfffffffd);
+    crt_lock_54ea1e(0xfffffffd);
 
     DAT_00658a08 = 1;
 
@@ -27156,7 +27156,7 @@ int FUN_0054f246(undefined4 param_1,int param_2)
 
         uStackY_24 = 0x54f31f;
 
-        hFile = (HANDLE)crt_osfhnd_get();
+        hFile = (HANDLE)crt_validate_osfhnd();
 
         BVar4 = SetEndOfFile(hFile);
 
@@ -27192,7 +27192,7 @@ int FUN_0054f246(undefined4 param_1,int param_2)
 
       uStackY_28 = 0x54f2b3;
 
-      FUN_0054f684();
+      crt_errno_user2();
 
       do {
 
@@ -27222,7 +27222,7 @@ int FUN_0054f246(undefined4 param_1,int param_2)
 
       } while (0 < param_2);
 
-      FUN_0054f684();
+      crt_errno_user2();
 
     }
 
@@ -27683,8 +27683,8 @@ int FUN_0054f607(uchar *param_1)
 
 }
 
-/* ===== FUN_0054f684 @ 0x0054F684 ===== */
-int FUN_0054f684(uint param_1,int param_2)
+/* ===== crt_errno_user2 @ 0x0054F684 ===== */
+int crt_errno_user2(uint param_1,int param_2)
 
 
 

@@ -10967,7 +10967,7 @@
  "0x0053E960": {
   "name": "FUN_0053e960",
   "named": false,
-  "len": 425
+  "len": 424
  },
  "0x0053E9C0": {
   "name": "FUN_0053e9c0",
@@ -11157,7 +11157,7 @@
  "0x00540310": {
   "name": "FUN_00540310",
   "named": false,
-  "len": 982
+  "len": 980
  },
  "0x005403C0": {
   "name": "LNK_DNodeInDList",
@@ -11347,7 +11347,7 @@
  "0x00542F79": {
   "name": "__rt_error_box",
   "named": true,
-  "len": 2055
+  "len": 2054
  },
  "0x00543270": {
   "name": "FUN_00543270",
@@ -11467,7 +11467,7 @@
  "0x00543E92": {
   "name": "crt_pow_main",
   "named": true,
-  "len": 3323
+  "len": 3327
  },
  "0x00544065": {
   "name": "FUN_00544065",
@@ -11740,7 +11740,7 @@
   "len": 208
  },
  "0x00545540": {
-  "name": "crt_file_lock_big",
+  "name": "crt_file_lock_ops",
   "named": true,
   "len": 2595
  },
@@ -11770,39 +11770,39 @@
   "len": 271
  },
  "0x005458A9": {
-  "name": "crt_file_freebuf",
+  "name": "crt_freebuf_ops",
   "named": true,
-  "len": 332
+  "len": 331
  },
  "0x005458EA": {
-  "name": "crt_file_flush",
+  "name": "crt_flush_ops",
   "named": true,
-  "len": 1234
+  "len": 1233
  },
  "0x00545999": {
-  "name": "crt_file_lock_2big",
+  "name": "crt_file_lock_2ops",
   "named": true,
-  "len": 1779
+  "len": 1775
  },
  "0x00545ABC": {
-  "name": "crt_errno_dos_set",
+  "name": "crt_set_errno_val",
   "named": true,
   "len": 875
  },
  "0x00545B38": {
-  "name": "crt_doserrno_set",
+  "name": "crt_set_doserrno",
   "named": true,
   "len": 948
  },
  "0x00545BB7": {
-  "name": "crt_osfhnd_get",
+  "name": "crt_validate_osfhnd",
   "named": true,
-  "len": 439
+  "len": 444
  },
  "0x00545BF9": {
-  "name": "crt_file_lock_3",
+  "name": "crt_lock_fd",
   "named": true,
-  "len": 524
+  "len": 520
  },
  "0x00545C58": {
   "name": "FUN_00545c58",
@@ -11810,9 +11810,9 @@
   "len": 200
  },
  "0x00545C7A": {
-  "name": "crt_flsbuf_write",
+  "name": "crt_flsbuf_ops",
   "named": true,
-  "len": 491
+  "len": 489
  },
  "0x00545CCB": {
   "name": "_GLOBAL_$D$Game_2",
@@ -11837,12 +11837,12 @@
  "0x00545E04": {
   "name": "__fassign",
   "named": true,
-  "len": 454
+  "len": 469
  },
  "0x00545E42": {
   "name": "FUN_00545e42",
   "named": false,
-  "len": 368
+  "len": 373
  },
  "0x00545EA3": {
   "name": "crt_printf_fmt_e",
@@ -11852,7 +11852,7 @@
  "0x00545F65": {
   "name": "FUN_00545f65",
   "named": false,
-  "len": 335
+  "len": 340
  },
  "0x00545FBA": {
   "name": "FUN_00545fba",
@@ -11862,7 +11862,7 @@
  "0x00546061": {
   "name": "FUN_00546061",
   "named": false,
-  "len": 766
+  "len": 771
  },
  "0x005460F4": {
   "name": "__cfltcvt",
@@ -11877,12 +11877,12 @@
  "0x0054616A": {
   "name": "_flsbuf",
   "named": true,
-  "len": 1696
+  "len": 1699
  },
  "0x00546282": {
   "name": "_output",
   "named": true,
-  "len": 12728
+  "len": 12734
  },
  "0x005469C3": {
   "name": "_outchar",
@@ -11927,7 +11927,7 @@
  "0x00546AD2": {
   "name": "_fclose_lk",
   "named": true,
-  "len": 289
+  "len": 290
  },
  "0x00546B00": {
   "name": "_flush",
@@ -12052,12 +12052,12 @@
  "0x00547874": {
   "name": "_close",
   "named": true,
-  "len": 472
+  "len": 468
  },
  "0x005478D1": {
   "name": "_close_lk",
   "named": true,
-  "len": 837
+  "len": 857
  },
  "0x00547954": {
   "name": "__freebuf",
@@ -12072,7 +12072,7 @@
  "0x00547A5B": {
   "name": "_read",
   "named": true,
-  "len": 524
+  "len": 520
  },
  "0x00547AC0": {
   "name": "_read_lk",
@@ -12097,7 +12097,7 @@
  "0x0054820D": {
   "name": "_write",
   "named": true,
-  "len": 526
+  "len": 522
  },
  "0x00548272": {
   "name": "_write_lk",
@@ -12250,9 +12250,9 @@
   "len": 359
  },
  "0x00549BD9": {
-  "name": "FUN_00549bd9",
-  "named": false,
-  "len": 652
+  "name": "crt_frndint_user",
+  "named": true,
+  "len": 656
  },
  "0x00549C7C": {
   "name": "crt_pow_special",
@@ -12267,7 +12267,7 @@
  "0x00549E11": {
   "name": "_input",
   "named": true,
-  "len": 19533
+  "len": 19536
  },
  "0x0054A836": {
   "name": "crt_scanf_hexchar",
@@ -12427,7 +12427,7 @@
  "0x0054C1B2": {
   "name": "__loctotime_t",
   "named": true,
-  "len": 1106
+  "len": 1112
  },
  "0x0054C280": {
   "name": "__aulldiv",
@@ -12575,14 +12575,14 @@
   "len": 131
  },
  "0x0054D36B": {
-  "name": "FUN_0054d36b",
-  "named": false,
-  "len": 205
+  "name": "binfile_seek_strtod",
+  "named": true,
+  "len": 212
  },
  "0x0054D398": {
-  "name": "FUN_0054d398",
-  "named": false,
-  "len": 205
+  "name": "binfile_seek_strtod2",
+  "named": true,
+  "len": 213
  },
  "0x0054D3C5": {
   "name": "FUN_0054d3c5",
@@ -12590,9 +12590,9 @@
   "len": 1016
  },
  "0x0054D43C": {
-  "name": "FUN_0054d43c",
-  "named": false,
-  "len": 580
+  "name": "crt_mbtowc_helper",
+  "named": true,
+  "len": 585
  },
  "0x0054D498": {
   "name": "FUN_0054d498",
@@ -12610,14 +12610,14 @@
   "len": 67
  },
  "0x0054D5B1": {
-  "name": "FUN_0054d5b1",
-  "named": false,
-  "len": 529
+  "name": "crt_lseek_errno",
+  "named": true,
+  "len": 528
  },
  "0x0054D616": {
   "name": "_lseek",
   "named": true,
-  "len": 710
+  "len": 715
  },
  "0x0054D689": {
   "name": "FUN_0054d689",
@@ -12630,19 +12630,19 @@
   "len": 193
  },
  "0x0054D6F6": {
-  "name": "FUN_0054d6f6",
-  "named": false,
-  "len": 448
+  "name": "crt_wctomb_lock",
+  "named": true,
+  "len": 453
  },
  "0x0054D74F": {
-  "name": "FUN_0054d74f",
-  "named": false,
-  "len": 679
+  "name": "crt_errno_read",
+  "named": true,
+  "len": 681
  },
  "0x0054D7B8": {
-  "name": "FUN_0054d7b8",
-  "named": false,
-  "len": 988
+  "name": "crt_close_osf",
+  "named": true,
+  "len": 990
  },
  "0x0054D84B": {
   "name": "AudioDataStreamStatus__Fv_8",
@@ -12665,14 +12665,14 @@
   "len": 808
  },
  "0x0054DC7F": {
-  "name": "FUN_0054dc7f",
-  "named": false,
-  "len": 475
+  "name": "crt_lock_54dc7f",
+  "named": true,
+  "len": 480
  },
  "0x0054DCDC": {
-  "name": "FUN_0054dcdc",
-  "named": false,
-  "len": 1341
+  "name": "crt_errno_big2",
+  "named": true,
+  "len": 1343
  },
  "0x0054DDB0": {
   "name": "__allshl",
@@ -12705,19 +12705,19 @@
   "len": 1318
  },
  "0x0054E41A": {
-  "name": "FUN_0054e41a",
-  "named": false,
-  "len": 217
+  "name": "crt_lock_54e41a",
+  "named": true,
+  "len": 223
  },
  "0x0054E448": {
-  "name": "FUN_0054e448",
-  "named": false,
-  "len": 3212
+  "name": "crt_strcpy_lock",
+  "named": true,
+  "len": 3215
  },
  "0x0054E6CF": {
-  "name": "FUN_0054e6cf",
-  "named": false,
-  "len": 165
+  "name": "crt_lock_54e6cf",
+  "named": true,
+  "len": 168
  },
  "0x0054E6F0": {
   "name": "FUN_0054e6f0",
@@ -12740,9 +12740,9 @@
   "len": 361
  },
  "0x0054EA1E": {
-  "name": "FUN_0054ea1e",
-  "named": false,
-  "len": 3520
+  "name": "crt_lock_54ea1e",
+  "named": true,
+  "len": 3533
  },
  "0x0054EBCB": {
   "name": "FUN_0054ebcb",
@@ -12760,14 +12760,14 @@
   "len": 377
  },
  "0x0054EC71": {
-  "name": "FUN_0054ec71",
-  "named": false,
-  "len": 2871
+  "name": "crt_getstringtype_full",
+  "named": true,
+  "len": 2881
  },
  "0x0054EDF6": {
   "name": "FUN_0054edf6",
   "named": false,
-  "len": 135
+  "len": 138
  },
  "0x0054EE12": {
   "name": "FUN_0054ee12",
@@ -12802,7 +12802,7 @@
  "0x0054F246": {
   "name": "FUN_0054f246",
   "named": false,
-  "len": 1661
+  "len": 1672
  },
  "0x0054F36B": {
   "name": "FUN_0054f36b",
@@ -12820,9 +12820,9 @@
   "len": 748
  },
  "0x0054F684": {
-  "name": "FUN_0054f684",
-  "named": false,
-  "len": 573
+  "name": "crt_errno_user2",
+  "named": true,
+  "len": 576
  },
  "0x0054F6E5": {
   "name": "__mbsnbicoll",
