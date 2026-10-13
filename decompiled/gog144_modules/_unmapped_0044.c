@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (47 named) — decompiled, names from PS2 symbols
+ * 76 functions (49 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -4224,7 +4224,7 @@ LAB_004451e2:
 
     FUN_00542f27(auStack_148,s_Framerate_Average___3_2f_005587b8,(double)fVar14);
 
-    FUN_00446a90(aiStack_1d4);
+    object_stop_movement(aiStack_1d4);
 
     aiStack_1d4[0] = 0;
 
@@ -4248,7 +4248,7 @@ LAB_004451e2:
 
     FUN_00542f27(auStack_148,s_Triangle_second___d_005587a4,uVar4);
 
-    FUN_00446a90(aiStack_1d4);
+    object_stop_movement(aiStack_1d4);
 
     aiStack_1d4[0] = 0;
 
@@ -4272,7 +4272,7 @@ LAB_004451e2:
 
     FUN_00542f27(auStack_148,s_Triangle_scene___d_00558790,uVar4);
 
-    FUN_00446a90(aiStack_1d4);
+    object_stop_movement(aiStack_1d4);
 
     aiStack_1d4[0] = 0;
 
@@ -4296,7 +4296,7 @@ LAB_004451e2:
 
     FUN_00542f27(auStack_148,s_Number_of_Frames___d_00558778,uVar4);
 
-    FUN_00446a90(aiStack_1d4);
+    object_stop_movement(aiStack_1d4);
 
     aiStack_1d4[0] = 0;
 
@@ -4320,7 +4320,7 @@ LAB_004451e2:
 
     FUN_00542f27(auStack_148,s_Framerate_Min___d_00558764,uVar4);
 
-    FUN_00446a90(aiStack_1d4);
+    object_stop_movement(aiStack_1d4);
 
     aiStack_1d4[0] = 0;
 
@@ -4344,7 +4344,7 @@ LAB_004451e2:
 
     FUN_00542f27(auStack_148,s_Framerate_Max___d_00558750,uVar4);
 
-    FUN_00446a90(aiStack_1d4);
+    object_stop_movement(aiStack_1d4);
 
     aiStack_1d4[0] = 0;
 
@@ -5853,12 +5853,12 @@ LAB_00446389:
 
 }
 
-/* ===== FUN_00446620 @ 0x00446620 ===== */
+/* ===== FLK_FlickStop @ 0x00446620 ===== */
 /* PS2 candidate: FLK_FlickStop (conf 0.885) */
 
 
 
-void FUN_00446620(void)
+void FLK_FlickStop(void)
 
 
 
@@ -6316,12 +6316,12 @@ undefined4 * FUN_00446a00(undefined4 param_1,char *param_2)
 
 }
 
-/* ===== FUN_00446a90 @ 0x00446A90 ===== */
+/* ===== object_stop_movement @ 0x00446A90 ===== */
 /* PS2 candidate: object_stop_movement_2 (conf 0.881) */
 
 
 
-void FUN_00446a90(undefined4 *param_1)
+void object_stop_movement(undefined4 *param_1)
 
 
 
@@ -7748,7 +7748,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
           (fVar2 = *(float *)(*(int *)(param_2 + 0x100) + 8), fVar2 < 0.0 == (fVar2 == 0.0))) {
 
-    FUN_0040d6b0(&local_40);
+    XFGetViewport(&local_40);
 
     fVar4 = (float10)FUN_004d5780(-**(float **)(param_2 + 0x100),**(float **)(param_2 + 0x100));
 
@@ -8216,7 +8216,7 @@ int FUN_00448e10(int param_1,undefined4 param_2,int param_3,float param_4,float 
 
           FUN_0053d9e0(iVar4 + 0x294);
 
-          FUN_0040d6b0(&local_c);
+          XFGetViewport(&local_c);
 
           if (param_3 == 0) {
 

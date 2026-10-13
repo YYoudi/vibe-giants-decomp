@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (89 named) — decompiled, names from PS2 symbols
+ * 129 functions (90 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -9137,12 +9137,12 @@ void dlog_push_level(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00426FA0 @ 0x00426FA0 ===== */
+/* ===== dialog_level_set_textentry_mode @ 0x00426FA0 ===== */
 /* PS2 candidate: dialog_level_set_textentry_mode (conf 0.851) */
 
 
 
-void FUN_00426FA0(void)
+void dialog_level_set_textentry_mode(void)
 
 
 

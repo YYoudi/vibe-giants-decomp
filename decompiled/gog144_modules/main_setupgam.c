@@ -74,7 +74,7 @@ void main_setupgam_004eda20(void)
 
   FLK_ReplayFileNameClear();
 
-  FUN_00446620();
+  FLK_FlickStop();
 
   FUN_004cc8d0();
 

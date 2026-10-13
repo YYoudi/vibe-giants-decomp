@@ -283,7 +283,7 @@ void gameover_menu(void)
 
   dlog_push_level(&LAB_00450db0,&LAB_00450e60);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   DAT_0059d804 = FUN_00497cd0(0x127);
 
@@ -1884,7 +1884,7 @@ void FUN_00452490(int *param_1,int *param_2)
 
   dlog_push_level(&LAB_00454820,&LAB_00454360);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   piVar1 = param_2;
 

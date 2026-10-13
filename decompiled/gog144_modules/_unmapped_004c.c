@@ -7296,7 +7296,7 @@ void FUN_004cc900(void)
 
         FUN_00544a37(uVar4);
 
-        FUN_00446a90(&local_1bc);
+        object_stop_movement(&local_1bc);
 
         afStack_1b8[1] = afStack_1b8[1] * 0.25;
 
@@ -7868,7 +7868,7 @@ LAB_004ccbc0:
 
       FUN_00544a37(iVar5,&local_20c,10);
 
-      FUN_00446a90(&local_1bc);
+      object_stop_movement(&local_1bc);
 
       if (local_22c == (undefined *)0x0) {
 
@@ -8559,7 +8559,7 @@ undefined4 dev_debug_flags(void)
 
   main_drawobj_0042d490();
 
-  FUN_0040d6b0();
+  XFGetViewport();
 
   iVar5 = comm_00426540();
 
@@ -11179,7 +11179,7 @@ LAB_004d135c:
 
   case 0x3d:
 
-    FUN_0040d6b0(local_28);
+    XFGetViewport(local_28);
 
     param_1 = *(float *)(DAT_00632ed8 + 0x144);
 

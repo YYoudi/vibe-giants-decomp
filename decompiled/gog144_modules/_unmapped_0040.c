@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (44 named) — decompiled, names from PS2 symbols
+ * 105 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -10028,12 +10028,12 @@ undefined4 AudioGetMasterVolume__Fv(void)
 
 }
 
-/* ===== FUN_0040d6b0 @ 0x0040D6B0 ===== */
+/* ===== XFGetViewport @ 0x0040D6B0 ===== */
 /* PS2 candidate: XFGetViewport (conf 0.86) */
 
 
 
-void FUN_0040d6b0(undefined4 *param_1)
+void XFGetViewport(undefined4 *param_1)
 
 
 

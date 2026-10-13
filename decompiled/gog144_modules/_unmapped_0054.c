@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (245 named) — decompiled, names from PS2 symbols
+ * 351 functions (246 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -6862,7 +6862,7 @@ void __local_unwind2(int param_1,int param_2)
 
     if (*(int *)(iVar1 + 4 + iVar2 * 0xc) == 0) {
 
-      FUN_00544c62(0x101);
+      __get_eh_context(0x101);
 
       (**(code **)(iVar1 + 8 + iVar2 * 0xc))();
 
@@ -6876,12 +6876,12 @@ void __local_unwind2(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00544c62 @ 0x00544C62 ===== */
+/* ===== __get_eh_context @ 0x00544C62 ===== */
 /* PS2 candidate: FNT_StringRender__FPcP14FNT_RenderInfo_2 (conf 0.856) */
 
 
 
-void FUN_00544c62(void)
+void __get_eh_context(void)
 
 
 

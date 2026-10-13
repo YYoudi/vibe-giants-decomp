@@ -5314,7 +5314,7 @@ void FUN_00494890(void)
 
   dlog_push_level(&LAB_00494940,&LAB_00494bb0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   DAT_00632aa4._3_1_ = 0;
 
@@ -13645,7 +13645,7 @@ void FUN_0049e4a0(int param_1)
 
     dlog_push_level(&LAB_0049f2d0,&LAB_0049f050);
 
-    FUN_00426FA0();
+    dialog_level_set_textentry_mode();
 
     DAT_00632bb8 = 1;
 

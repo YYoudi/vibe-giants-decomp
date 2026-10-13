@@ -2639,7 +2639,7 @@ void menu_mission_launch(void)
 
   dlog_push_level(pcVar6,FUN_004829d0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -3070,7 +3070,7 @@ LAB_00482fd8:
 
     DAT_0059eeb0 = 0;
 
-    FUN_00446620();
+    FLK_FlickStop();
 
     (*DAT_005dd354)(DAT_0059eedc);
 
@@ -3492,7 +3492,7 @@ LAB_00483738:
 
     DAT_0059eeb0 = 0;
 
-    FUN_00446620();
+    FLK_FlickStop();
 
     (*DAT_005dd354)(DAT_0059eedc);
 
@@ -3591,7 +3591,7 @@ void mission_intro_load(void)
 
   dlog_push_level(&LAB_00483fd0,FUN_004829d0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -4253,7 +4253,7 @@ void mission_cheat_check(void)
 
   dlog_push_level(&LAB_00484ce0,FUN_004829d0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -4614,7 +4614,7 @@ void mission_load_cheat(void)
 
               DAT_0059eeb0 = 0;
 
-              FUN_00446620();
+              FLK_FlickStop();
 
               (*DAT_005dd354)(DAT_0059eedc);
 
@@ -4762,7 +4762,7 @@ void FUN_004850F0(void)
 
   dlog_push_level(&LAB_004855a0,FUN_004829d0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar2 = main_status_00500520(&DAT_00632900);
 
@@ -5126,7 +5126,7 @@ void menu_mission_list_init(void)
 
   dlog_push_level(&LAB_00485c90,FUN_004829d0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -5524,7 +5524,7 @@ void dlog_00485f10(void)
 
   dlog_push_level(&LAB_00486250,FUN_004829d0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -5778,7 +5778,7 @@ void FUN_004862E0(void)
 
   dlog_push_level(&LAB_004864d0,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -6002,7 +6002,7 @@ void FUN_00486FC0(void)
 
   dlog_push_level(&LAB_004871b0,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -6147,7 +6147,7 @@ void FUN_00487B70(void)
 
   dlog_push_level(&LAB_00487d60,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -6278,7 +6278,7 @@ void FUN_00488740(void)
 
   dlog_push_level(&LAB_004889f0,FUN_004829d0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -6544,7 +6544,7 @@ void mission_load_world2(void)
 
         dlog_push_level(&LAB_00488e60,FUN_004829d0);
 
-        FUN_00426FA0();
+        dialog_level_set_textentry_mode();
 
         iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -6840,7 +6840,7 @@ void mission_menu_load(void)
 
   dlog_push_level(mission_menu_load2,pcVar5);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -6950,7 +6950,7 @@ void mission_menu_load(void)
 
       DAT_0059eeb0 = 0;
 
-      FUN_00446620();
+      FLK_FlickStop();
 
       (*DAT_005dd354)(DAT_0059eedc);
 
@@ -7040,7 +7040,7 @@ void mission_menu_load(void)
 
       DAT_0059eeb0 = 0;
 
-      FUN_00446620();
+      FLK_FlickStop();
 
       (*DAT_005dd354)(DAT_0059eedc);
 
@@ -7532,7 +7532,7 @@ LAB_00489916:
 
     DAT_0059eeb0 = 0;
 
-    FUN_00446620();
+    FLK_FlickStop();
 
     (*DAT_005dd354)(DAT_0059eedc);
 
@@ -7636,7 +7636,7 @@ LAB_00489916:
 
   DAT_0059eeb0 = 0;
 
-  FUN_00446620();
+  FLK_FlickStop();
 
   (*DAT_005dd354)(DAT_0059eedc);
 
@@ -7750,7 +7750,7 @@ void FUN_00489D40(void)
 
   dlog_push_level(&LAB_0048a140,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -8112,7 +8112,7 @@ void FUN_0048A7D0(void)
 
   dlog_push_level(&LAB_0048b7b0,pcVar8);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -9743,7 +9743,7 @@ void FUN_0048C830(void)
 
   dlog_push_level(&LAB_0048cda0,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -10153,7 +10153,7 @@ void FUN_0048D4B0(void)
 
   dlog_push_level(&LAB_0048d830,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -10423,7 +10423,7 @@ void FUN_0048DE30(void)
 
   dlog_push_level(menu_dlog_callback_a,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -10937,7 +10937,7 @@ void FUN_0048E430(void)
 
   dlog_push_level(menu_dlog_callback_b,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -11439,7 +11439,7 @@ void FUN_0048EA50(void)
 
   dlog_push_level(&LAB_0048ed70,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -11703,7 +11703,7 @@ void FUN_0048EE60(void)
 
   dlog_push_level(&LAB_0048f160,pcVar3);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 
@@ -12050,7 +12050,7 @@ void FUN_0048F460(void)
 
   dlog_push_level(&LAB_0048f840,FUN_00471dc0);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   iVar1 = main_status_00500520(&DAT_00632900);
 

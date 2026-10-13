@@ -16395,7 +16395,7 @@ void comm_tcpip_menu(void)
 
   dlog_push_level(&LAB_0051fe70,&LAB_0051fe60);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   DAT_005def84 = main_dlog_00427150();
 

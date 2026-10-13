@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (15 named) — decompiled, names from PS2 symbols
+ * 39 functions (16 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -530,7 +530,7 @@ void verm_control(int param_1)
 
   case 0x1f:
 
-    FUN_0040d6b0(local_50);
+    XFGetViewport(local_50);
 
     local_70 = *(float *)(DAT_00632ed8 + 0x144);
 
@@ -4642,7 +4642,7 @@ void ai_accel_update(int param_1,float param_2)
 
   fVar1 = (float)fVar5;
 
-  FUN_004d8330(param_1,0x3f800000,&local_c,&local_10);
+  rpman_get_thrust__FP6OBJECTfPfT2(param_1,0x3f800000,&local_c,&local_10);
 
   fVar3 = local_c * fVar1 * 4.0 + *(float *)(param_1 + 0x108);
 
@@ -4658,7 +4658,7 @@ void ai_accel_update(int param_1,float param_2)
 
   local_4 = fVar3 + fVar3 + *(float *)(param_1 + 0xa8);
 
-  FUN_004d8330(param_1,0x3f000000,&local_c,&local_10);
+  rpman_get_thrust__FP6OBJECTfPfT2(param_1,0x3f000000,&local_c,&local_10);
 
   fVar3 = local_c * fVar1 * 4.0 + *(float *)(param_1 + 0x108);
 
@@ -4710,12 +4710,12 @@ void ai_accel_update(int param_1,float param_2)
 
 }
 
-/* ===== FUN_004d8330 @ 0x004D8330 ===== */
+/* ===== rpman_get_thrust__FP6OBJECTfPfT2 @ 0x004D8330 ===== */
 /* PS2 candidate: rpman_get_thrust__FP6OBJECTfPfT2 (conf 0.898) */
 
 
 
-void FUN_004d8330(int param_1,float param_2,float *param_3,float *param_4)
+void rpman_get_thrust__FP6OBJECTfPfT2(int param_1,float param_2,float *param_3,float *param_4)
 
 
 

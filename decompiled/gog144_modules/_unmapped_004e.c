@@ -11061,7 +11061,7 @@ void FUN_004EE800(void)
 
   }
 
-  FUN_00446620();
+  FLK_FlickStop();
 
   iVar1 = DAT_00632d20 + 1;
 

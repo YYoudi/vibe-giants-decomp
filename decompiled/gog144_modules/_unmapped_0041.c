@@ -4978,7 +4978,7 @@ void FUN_004162c0(int param_1)
 
   dlog_push_level(&LAB_00416630,&LAB_00416b40);
 
-  FUN_00426FA0();
+  dialog_level_set_textentry_mode();
 
   *(undefined1 *)(param_1 + 0x20a) = 0;
 
@@ -5010,7 +5010,7 @@ void FUN_004162c0(int param_1)
 
   sound_play(0x652);
 
-  FUN_0040d6b0(&DAT_00657510);
+  XFGetViewport(&DAT_00657510);
 
   fVar2 = (float10)FUN_0040d6d0();
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (83 named) — decompiled, names from PS2 symbols
+ * 179 functions (88 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -15553,7 +15553,7 @@ LAB_0053ca17:
 
     }
 
-    FUN_0053e870(&local_b0,param_1 + 0x6c,&local_b0);
+    GEO_Vec2Sub(&local_b0,param_1 + 0x6c,&local_b0);
 
     FUN_0053e960(&local_b0,&local_b0);
 
@@ -16134,7 +16134,9 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
   if (*(int *)((int)param_3 + 0x10) != 0) {
 
-    puVar3 = (undefined4 *)(*(code *)PTR_FUN_00580c88)(*(int *)((int)param_3 + 0x10) * 8 + 0xc);
+    puVar3 = (undefined4 *)
+
+             (*(code *)PTR_MAP_AllocHook__FUi_00580c88)(*(int *)((int)param_3 + 0x10) * 8 + 0xc);
 
     iStack_4 = 0;
 
@@ -16416,7 +16418,7 @@ int editor_anim_skin(int param_1,undefined4 param_2,int param_3,undefined4 param
 
   if (iVar1 != 0) {
 
-    iVar3 = (*(code *)PTR_FUN_00580c88)(iVar1 * 4 + 0x18);
+    iVar3 = (*(code *)PTR_MAP_AllocHook__FUi_00580c88)(iVar1 * 4 + 0x18);
 
     *(int *)(iVar3 + 8) = param_1;
 
@@ -16876,12 +16878,12 @@ LAB_0053d67c:
 
 }
 
-/* ===== FUN_0053d6b0 @ 0x0053D6B0 ===== */
+/* ===== ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix @ 0x0053D6B0 ===== */
 /* PS2 candidate: ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix (conf 0.893) */
 
 
 
-void FUN_0053d6b0(int *param_1,undefined4 param_2)
+void ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(int *param_1,undefined4 param_2)
 
 
 
@@ -16942,9 +16944,9 @@ void FUN_0053d700(undefined4 *param_1,int param_2)
 
   if (sVar1 == 2) {
 
-    FUN_0053d6b0(param_1 + 0x26,param_2);
+    ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x26,param_2);
 
-    FUN_0053d6b0(param_1 + 0x27,param_2);
+    ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x27,param_2);
 
   }
 
@@ -16952,7 +16954,7 @@ void FUN_0053d700(undefined4 *param_1,int param_2)
 
     if (sVar1 == 1) {
 
-      FUN_0053d6b0(param_1 + 0x27,param_2);
+      ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x27,param_2);
 
       goto LAB_0053d7a7;
 
@@ -16960,23 +16962,23 @@ void FUN_0053d700(undefined4 *param_1,int param_2)
 
     if (sVar1 != 3) goto LAB_0053d7a7;
 
-    FUN_0053d6b0(param_1 + 0x26,param_2);
+    ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x26,param_2);
 
-    FUN_0053d6b0(param_1 + 0x27,param_2);
+    ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x27,param_2);
 
   }
 
-  FUN_0053d6b0(param_1 + 0x28,param_2);
+  ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x28,param_2);
 
 LAB_0053d7a7:
 
   if (*(short *)(param_1 + 1) == 1) {
 
-    FUN_0053d6b0(param_1 + 0x3e,param_2);
+    ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x3e,param_2);
 
-    FUN_0053d6b0(param_1 + 0x3f,param_2);
+    ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x3f,param_2);
 
-    FUN_0053d6b0(param_1 + 0x40,param_2);
+    ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix(param_1 + 0x40,param_2);
 
   }
 
@@ -18713,12 +18715,12 @@ void FUN_0053e7f0(void)
 
 }
 
-/* ===== FUN_0053e870 @ 0x0053E870 ===== */
+/* ===== GEO_Vec2Sub @ 0x0053E870 ===== */
 /* PS2 candidate: GEO_Vec2Sub (conf 0.868) */
 
 
 
-void FUN_0053e870(float *param_1,float *param_2,float *param_3)
+void GEO_Vec2Sub(float *param_1,float *param_2,float *param_3)
 
 
 
@@ -18734,12 +18736,12 @@ void FUN_0053e870(float *param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_0053e8a0 @ 0x0053E8A0 ===== */
+/* ===== GEO_Vec2Scale @ 0x0053E8A0 ===== */
 /* PS2 candidate: GEO_Vec2Scale (conf 0.85) */
 
 
 
-void FUN_0053e8a0(float *param_1,float *param_2,float param_3)
+void GEO_Vec2Scale(float *param_1,float *param_2,float param_3)
 
 
 
@@ -18852,7 +18854,7 @@ float10 FUN_0053e960(undefined4 param_1,undefined4 param_2)
 
   if (fVar2 != (float10)0.0) {
 
-    FUN_0053e8a0(param_1,param_2,1.0 / fVar1);
+    GEO_Vec2Scale(param_1,param_2,1.0 / fVar1);
 
     return (float10)fVar1;
 
@@ -20331,12 +20333,12 @@ void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6(undefined *p0)
 
 }
 
-/* ===== FUN_0053fc20 @ 0x0053FC20 ===== */
+/* ===== MAP_AllocHook__FUi @ 0x0053FC20 ===== */
 /* PS2 candidate: MAP_AllocHook__FUi (conf 0.893) */
 
 
 
-uint FUN_0053fc20(int param_1)
+uint MAP_AllocHook__FUi(int param_1)
 
 
 
@@ -20741,7 +20743,7 @@ int FUN_0053feb0(undefined4 param_1,int param_2)
 
   *(int *)(iVar1 + 0x14) = iVar1 + 0x14;
 
-  FUN_0053ff30(iVar2,iVar2,0x24);
+  MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi(iVar2,iVar2,0x24);
 
   *(int *)(iVar1 + 0x20) = iVar2;
 
@@ -20749,12 +20751,12 @@ int FUN_0053feb0(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_0053ff30 @ 0x0053FF30 ===== */
+/* ===== MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi @ 0x0053FF30 ===== */
 /* PS2 candidate: MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi (conf 0.851) */
 
 
 
-void FUN_0053ff30(int param_1,undefined4 *param_2,int param_3)
+void MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi(int param_1,undefined4 *param_2,int param_3)
 
 
 
@@ -20852,7 +20854,7 @@ undefined4 * FUN_0053ffa0(int param_1,uint param_2,int param_3)
 
   }
 
-  puVar1 = (undefined4 *)(*(code *)PTR_FUN_00580c88)(param_2);
+  puVar1 = (undefined4 *)(*(code *)PTR_MAP_AllocHook__FUi_00580c88)(param_2);
 
 LAB_0053ffe2:
 
@@ -20880,7 +20882,7 @@ LAB_0053ffe2:
 
   if (param_1 != 0) {
 
-    FUN_0053ff30(param_1,puVar1 + 1,param_2);
+    MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi(param_1,puVar1 + 1,param_2);
 
     return puVar1 + 4;
 

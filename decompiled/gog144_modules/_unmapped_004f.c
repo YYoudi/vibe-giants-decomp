@@ -3571,7 +3571,7 @@ void main_smoke_004f90e0(undefined4 param_1,float param_2)
 
   
 
-  FUN_0040d6b0(local_c);
+  XFGetViewport(local_c);
 
   fVar1 = (float10)FUN_0050a580(local_c,param_1);
 

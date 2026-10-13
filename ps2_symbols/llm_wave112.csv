@@ -1,0 +1,12 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0053e870,FUN_0053e870,,GEO_Vec2Sub,0.9,llm-w112,body-verified vec sub
+0053e8a0,FUN_0053e8a0,,GEO_Vec2Scale,0.9,llm-w112,body-verified vec scale
+00446620,FUN_00446620,,FLK_FlickStop,0.9,llm-w112,body-verified flick stop
+00446a90,FUN_00446a90,,object_stop_movement,0.9,llm-w112,body-verified vel reset
+0040d6b0,FUN_0040d6b0,,XFGetViewport,0.9,llm-w112,body-verified viewport copy
+00426fa0,FUN_00426fa0,,dialog_level_set_textentry_mode,0.9,llm-w112,body-verified
+004d8330,FUN_004d8330,,rpman_get_thrust__FP6OBJECTfPfT2,0.9,llm-w112,body-verified thrust calc
+0053d6b0,FUN_0053d6b0,,ANM_KeysFixPtrs__FPP8ANM_KeysP8_MAP_Fix,0.9,llm-w112,MAP/ANM fix family
+0053fc20,FUN_0053fc20,,MAP_AllocHook__FUi,0.9,llm-w112,MAP family
+0053ff30,FUN_0053ff30,,MAPI_AddMem__FP13_MAP_MemGroupP8_MAP_MemUi,0.9,llm-w112,MAP family
+00544c62,FUN_00544c62,,__get_eh_context,0.9,llm-w112,body-verified EBP/EAX save (target corrected from bad FNT candidate)
