@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00420890,FUN_00420890,,hud_class_key_handler_4,0.9,llm-w157,4th structural twin
+0054cebe,FUN_0054cebe,,crt_flags_map,0.9,llm-w157,printf flag remap CRT region
+005312a0,FUN_005312a0,,comm_packet_send_2,0.9,llm-w157,critsec packet variant 0x50000
+00513a20,FUN_00513a20,,hud_parse_format_codes_2,0.9,llm-w157,twin of 00513ac0 caller dev_debug

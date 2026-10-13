@@ -8581,7 +8581,9 @@ undefined4 dev_debug_flags(void)
 
   while ((piVar11 != (int *)0x0 &&
 
-         ((*(int *)(piVar11[3] + 0x204) == 0 || (iVar5 = FUN_00513a20(), iVar5 != 0))))) {
+         ((*(int *)(piVar11[3] + 0x204) == 0 || (iVar5 = hud_parse_format_codes_2(), iVar5 != 0)))))
+
+  {
 
     piVar11 = (int *)*piVar11;
 

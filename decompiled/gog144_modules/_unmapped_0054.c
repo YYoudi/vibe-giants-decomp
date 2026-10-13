@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (268 named) — decompiled, names from PS2 symbols
+ * 351 functions (269 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -21997,7 +21997,7 @@ uint FUN_0054ce73(uint param_1,uint param_2)
 
   
 
-  uVar1 = FUN_0054cebe();
+  uVar1 = crt_flags_map();
 
   uVar1 = uVar1 & ~param_2 | param_1 & param_2;
 
@@ -22020,8 +22020,8 @@ void FUN_0054cea8(undefined4 param_1,uint param_2)
 
 }
 
-/* ===== FUN_0054cebe @ 0x0054CEBE ===== */
-uint FUN_0054cebe(uint param_1)
+/* ===== crt_flags_map @ 0x0054CEBE ===== */
+uint crt_flags_map(uint param_1)
 
 
 

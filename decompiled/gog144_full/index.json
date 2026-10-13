@@ -1230,9 +1230,9 @@
   "len": 1153
  },
  "0x00420890": {
-  "name": "FUN_00420890",
-  "named": false,
-  "len": 720
+  "name": "hud_class_key_handler_4",
+  "named": true,
+  "len": 731
  },
  "0x00420930": {
   "name": "hud_class_key_handler_2",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14465
+  "len": 14480
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -8420,9 +8420,9 @@
   "len": 1499
  },
  "0x00513A20": {
-  "name": "FUN_00513a20",
-  "named": false,
-  "len": 1226
+  "name": "hud_parse_format_codes_2",
+  "named": true,
+  "len": 1238
  },
  "0x00513AC0": {
   "name": "FUN_00513ac0",
@@ -10240,9 +10240,9 @@
   "len": 308
  },
  "0x005312A0": {
-  "name": "FUN_005312a0",
-  "named": false,
-  "len": 703
+  "name": "comm_packet_send_2",
+  "named": true,
+  "len": 709
  },
  "0x00531340": {
   "name": "comm_packet_send",
@@ -12507,7 +12507,7 @@
  "0x0054CE73": {
   "name": "FUN_0054ce73",
   "named": false,
-  "len": 194
+  "len": 195
  },
  "0x0054CEA8": {
   "name": "FUN_0054cea8",
@@ -12515,9 +12515,9 @@
   "len": 122
  },
  "0x0054CEBE": {
-  "name": "FUN_0054cebe",
-  "named": false,
-  "len": 935
+  "name": "crt_flags_map",
+  "named": true,
+  "len": 936
  },
  "0x0054CF50": {
   "name": "FUN_0054cf50",

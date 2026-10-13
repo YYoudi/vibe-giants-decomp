@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (134 named) — decompiled, names from PS2 symbols
+ * 186 functions (135 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2216,8 +2216,8 @@ void mesh_node_calc_bounds(int param_1,int param_2,float *param_3)
 
 }
 
-/* ===== FUN_00513a20 @ 0x00513A20 ===== */
-undefined4 FUN_00513a20(int param_1)
+/* ===== hud_parse_format_codes_2 @ 0x00513A20 ===== */
+undefined4 hud_parse_format_codes_2(int param_1)
 
 
 
