@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (34 named) — decompiled, names from PS2 symbols
+ * 105 functions (35 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -9857,12 +9857,12 @@ float10 FUN_0040d480(void)
 
 }
 
-/* ===== FUN_0040d4a0 @ 0x0040D4A0 ===== */
+/* ===== speaker_config_apply @ 0x0040D4A0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0040d4a0(void)
+void speaker_config_apply(void)
 
 
 
@@ -10286,7 +10286,7 @@ void ref_anode_user(void)
 
     }
 
-    FUN_0040d4a0();
+    speaker_config_apply();
 
     if (DAT_00632e48 != 0) {
 

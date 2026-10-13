@@ -565,9 +565,9 @@
   "len": 227
  },
  "0x0040D4A0": {
-  "name": "FUN_0040d4a0",
-  "named": false,
-  "len": 1784
+  "name": "speaker_config_apply",
+  "named": true,
+  "len": 1792
  },
  "0x0040D670": {
   "name": "FUN_0040d670",
@@ -627,7 +627,7 @@
  "0x0040D820": {
   "name": "ref_anode_user",
   "named": true,
-  "len": 3226
+  "len": 3234
  },
  "0x0040DB70": {
   "name": "FUN_0040db70",
@@ -885,9 +885,9 @@
   "len": 127
  },
  "0x00417880": {
-  "name": "FUN_00417880",
-  "named": false,
-  "len": 2403
+  "name": "obj_maxspeed_lookup",
+  "named": true,
+  "len": 2410
  },
  "0x00417A50": {
   "name": "obj_speed_clamp",
@@ -3775,9 +3775,9 @@
   "len": 4763
  },
  "0x0046C060": {
-  "name": "FUN_0046c060",
-  "named": false,
-  "len": 2144
+  "name": "obj_3dsound_scan",
+  "named": true,
+  "len": 2148
  },
  "0x0046E120": {
   "name": "FUN_0046e120",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "FUN_0047caa0",
   "named": false,
-  "len": 22832
+  "len": 22846
  },
  "0x0047DF10": {
   "name": "FUN_0047df10",
@@ -4310,9 +4310,9 @@
   "len": 2505
  },
  "0x00481830": {
-  "name": "FUN_00481830",
-  "named": false,
-  "len": 1933
+  "name": "obj_grab_carry",
+  "named": true,
+  "len": 1935
  },
  "0x004819F0": {
   "name": "obj_ride_mount",
@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "FUN_004b7450",
   "named": false,
-  "len": 24261
+  "len": 24275
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -6737,7 +6737,7 @@
  "0x004C5810": {
   "name": "FUN_004c5810",
   "named": false,
-  "len": 4126
+  "len": 4170
  },
  "0x004C5B10": {
   "name": "FUN_004c5b10",
@@ -10302,7 +10302,7 @@
  "0x00533500": {
   "name": "mecc_shield_spell",
   "named": true,
-  "len": 3400
+  "len": 3402
  },
  "0x00533700": {
   "name": "mecc_cloak_spell",

@@ -5184,7 +5184,7 @@ LAB_00533630:
 
           else {
 
-            FUN_00481830(iVar2,iVar1);
+            obj_grab_carry(iVar2,iVar1);
 
           }
 

@@ -6556,9 +6556,9 @@ LAB_0047cdb1:
 
     }
 
-    FUN_00417880(*(undefined4 *)(iVar5 + 0xd8),
+    obj_maxspeed_lookup(*(undefined4 *)(iVar5 + 0xd8),
 
-                 (float)((float10)*(float *)(DAT_00632ed8 + 0x61c) * fVar9));
+                        (float)((float10)*(float *)(DAT_00632ed8 + 0x61c) * fVar9));
 
     return;
 

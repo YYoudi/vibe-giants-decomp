@@ -4294,9 +4294,9 @@ void FUN_004b7450(int param_1,undefined4 param_2,undefined4 param_3,float *param
 
     }
 
-    FUN_00417880(*(undefined4 *)(iVar7 + 0xcfc),
+    obj_maxspeed_lookup(*(undefined4 *)(iVar7 + 0xcfc),
 
-                 (float)((float10)*(float *)(DAT_00632ed8 + 0x61c) * fVar14));
+                        (float)((float10)*(float *)(DAT_00632ed8 + 0x61c) * fVar14));
 
     sound_play_player(0x3ce,param_1);
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0040d4a0,FUN_0040D4A0,,speaker_config_apply,0.9,llm-read44,
+0046c060,FUN_0046C060,,obj_3dsound_scan,0.9,llm-read44,
+00417880,FUN_00417880,,obj_maxspeed_lookup,0.9,llm-read44,
+00481830,FUN_00481830,,obj_grab_carry,0.9,llm-read44,

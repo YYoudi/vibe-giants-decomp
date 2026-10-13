@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (43 named) — decompiled, names from PS2 symbols
+ * 100 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -5662,8 +5662,8 @@ undefined4 NAM_DictionaryGetTotalNames(int param_1)
 
 }
 
-/* ===== FUN_00417880 @ 0x00417880 ===== */
-undefined4 FUN_00417880(float param_1,float param_2)
+/* ===== obj_maxspeed_lookup @ 0x00417880 ===== */
+undefined4 obj_maxspeed_lookup(float param_1,float param_2)
 
 
 

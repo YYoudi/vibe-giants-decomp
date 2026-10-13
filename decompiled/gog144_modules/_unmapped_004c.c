@@ -4188,7 +4188,9 @@ void FUN_004c5810(float param_1)
 
                 }
 
-                FUN_00417880(iVar1,(float)((float10)*(float *)(DAT_00632ed8 + 0x61c) * fVar8));
+                obj_maxspeed_lookup(iVar1,(float)((float10)*(float *)(DAT_00632ed8 + 0x61c) * fVar8)
+
+                                   );
 
                 if (*(int *)(iVar7 + 0xcf4) == 0) {
 
