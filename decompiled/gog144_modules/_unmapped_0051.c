@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (73 named) — decompiled, names from PS2 symbols
+ * 186 functions (74 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -15708,7 +15708,7 @@ void FUN_0051f470(void)
 
     DAT_005ddfb4 = 0;
 
-    iVar3 = FUN_0051f9e0();
+    iVar3 = gamespy_directplay_init();
 
     if (iVar3 < 0) {
 
@@ -16064,12 +16064,12 @@ LAB_0051f868:
 
 }
 
-/* ===== FUN_0051f9e0 @ 0x0051F9E0 ===== */
+/* ===== gamespy_directplay_init @ 0x0051F9E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-HRESULT FUN_0051f9e0(void)
+HRESULT gamespy_directplay_init(void)
 
 
 

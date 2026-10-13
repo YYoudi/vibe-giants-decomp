@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (233 named) — decompiled, names from PS2 symbols
+ * 351 functions (236 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -8541,7 +8541,7 @@ void entry(void)
 
   local_8 = 0;
 
-  FUN_0054c61a();
+  crt_io_init();
 
   DAT_006579f0 = GetCommandLineA();
 
@@ -20902,8 +20902,8 @@ int * FUN_0054c5e0(int param_1,int *param_2)
 
 }
 
-/* ===== FUN_0054c61a @ 0x0054C61A ===== */
-void FUN_0054c61a(void)
+/* ===== crt_io_init @ 0x0054C61A ===== */
+void crt_io_init(void)
 
 
 
@@ -21324,7 +21324,7 @@ void FUN_0054c968(void)
 
   }
 
-  FUN_0054ca01(pcVar2,0,0,&local_8,&local_c);
+  crt_env_parse(pcVar2,0,0,&local_8,&local_c);
 
   pvVar1 = _malloc(local_c + local_8 * 4);
 
@@ -21334,7 +21334,7 @@ void FUN_0054c968(void)
 
   }
 
-  FUN_0054ca01(pcVar2,pvVar1,(void *)((int)pvVar1 + local_8 * 4),&local_8,&local_c);
+  crt_env_parse(pcVar2,pvVar1,(void *)((int)pvVar1 + local_8 * 4),&local_8,&local_c);
 
   _DAT_00630b74 = pvVar1;
 
@@ -21344,8 +21344,8 @@ void FUN_0054c968(void)
 
 }
 
-/* ===== FUN_0054ca01 @ 0x0054CA01 ===== */
-void FUN_0054ca01(byte *param_1,undefined4 *param_2,byte *param_3,int *param_4,int *param_5)
+/* ===== crt_env_parse @ 0x0054CA01 ===== */
+void crt_env_parse(byte *param_1,undefined4 *param_2,byte *param_3,int *param_4,int *param_5)
 
 
 
@@ -25581,7 +25581,7 @@ undefined4 crt_lock_54e6cf(undefined4 param_1)
 
   _lock(0xb);
 
-  uVar1 = FUN_0054e6f0(param_1);
+  uVar1 = crt_tzset_dst(param_1);
 
   _unlock(0xb);
 
@@ -25589,8 +25589,8 @@ undefined4 crt_lock_54e6cf(undefined4 param_1)
 
 }
 
-/* ===== FUN_0054e6f0 @ 0x0054E6F0 ===== */
-bool FUN_0054e6f0(int *param_1)
+/* ===== crt_tzset_dst @ 0x0054E6F0 ===== */
+bool crt_tzset_dst(int *param_1)
 
 
 

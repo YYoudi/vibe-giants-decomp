@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054c61a,FUN_0054C61A,,crt_io_init,0.9,llm-read46,
+0054ca01,FUN_0054CA01,,crt_env_parse,0.9,llm-read46,
+0051f9e0,FUN_0051F9E0,,gamespy_directplay_init,0.9,llm-read46,
+0054e6f0,FUN_0054E6F0,,crt_tzset_dst,0.9,llm-read46,

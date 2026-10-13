@@ -9312,12 +9312,12 @@
  "0x0051F470": {
   "name": "FUN_0051f470",
   "named": false,
-  "len": 6785
+  "len": 6796
  },
  "0x0051F9E0": {
-  "name": "FUN_0051f9e0",
-  "named": false,
-  "len": 2814
+  "name": "gamespy_directplay_init",
+  "named": true,
+  "len": 2825
  },
  "0x0051FBA0": {
   "name": "FUN_0051fba0",
@@ -11757,7 +11757,7 @@
  "0x00545758": {
   "name": "entry",
   "named": true,
-  "len": 1549
+  "len": 1548
  },
  "0x00545860": {
   "name": "__amsg_exit",
@@ -12465,9 +12465,9 @@
   "len": 385
  },
  "0x0054C61A": {
-  "name": "FUN_0054c61a",
-  "named": false,
-  "len": 3144
+  "name": "crt_io_init",
+  "named": true,
+  "len": 3143
  },
  "0x0054C857": {
   "name": "bin_file_create_54",
@@ -12482,12 +12482,12 @@
  "0x0054C968": {
   "name": "FUN_0054c968",
   "named": false,
-  "len": 738
+  "len": 740
  },
  "0x0054CA01": {
-  "name": "FUN_0054ca01",
-  "named": false,
-  "len": 3855
+  "name": "crt_env_parse",
+  "named": true,
+  "len": 3856
  },
  "0x0054CBB5": {
   "name": "bin_file_memmove",
@@ -12717,12 +12717,12 @@
  "0x0054E6CF": {
   "name": "crt_lock_54e6cf",
   "named": true,
-  "len": 168
+  "len": 169
  },
  "0x0054E6F0": {
-  "name": "FUN_0054e6f0",
-  "named": false,
-  "len": 2003
+  "name": "crt_tzset_dst",
+  "named": true,
+  "len": 2004
  },
  "0x0054E89C": {
   "name": "FUN_0054e89c",
