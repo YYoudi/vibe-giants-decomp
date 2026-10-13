@@ -8802,7 +8802,7 @@
  "0x00517CA0": {
   "name": "exception_report_write",
   "named": true,
-  "len": 11768
+  "len": 11775
  },
  "0x00518620": {
   "name": "FUN_00518620",
@@ -8810,9 +8810,9 @@
   "len": 486
  },
  "0x00518670": {
-  "name": "filedate_log",
+  "name": "file_date_log_write",
   "named": true,
-  "len": 1989
+  "len": 1996
  },
  "0x005187F0": {
   "name": "datetime_format",

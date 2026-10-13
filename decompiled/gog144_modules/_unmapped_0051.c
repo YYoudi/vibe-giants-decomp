@@ -7804,7 +7804,7 @@ LAB_0051804e:
 
                 local_ec4 = local_ee0.AllocationBase;
 
-                filedate_log(hFile,local_ee0.AllocationBase);
+                file_date_log_write(hFile,local_ee0.AllocationBase);
 
               }
 
@@ -7919,8 +7919,8 @@ void FUN_00518620(HANDLE param_1,LPCSTR param_2)
 
 }
 
-/* ===== filedate_log @ 0x00518670 ===== */
-void filedate_log(undefined4 param_1,HMODULE param_2)
+/* ===== file_date_log_write @ 0x00518670 ===== */
+void file_date_log_write(undefined4 param_1,HMODULE param_2)
 
 
 
