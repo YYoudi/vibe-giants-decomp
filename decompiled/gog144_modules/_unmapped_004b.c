@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (28 named) — decompiled, names from PS2 symbols
+ * 90 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -5933,7 +5933,7 @@ void FUN_004b8d30(int param_1,int param_2,int param_3)
 
   }
 
-  FUN_004b9390(param_1,param_2,iVar2,param_3);
+  obj_link_slot_clear(param_1,param_2,iVar2,param_3);
 
   return;
 
@@ -6630,8 +6630,8 @@ void FUN_004b9330(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004b9390 @ 0x004B9390 ===== */
-void FUN_004b9390(int param_1,int param_2,int param_3,int param_4)
+/* ===== obj_link_slot_clear @ 0x004B9390 ===== */
+void obj_link_slot_clear(int param_1,int param_2,int param_3,int param_4)
 
 
 

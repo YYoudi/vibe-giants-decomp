@@ -152,7 +152,7 @@
  "0x00403890": {
   "name": "ref_get_anode2",
   "named": true,
-  "len": 2785
+  "len": 2802
  },
  "0x00403A70": {
   "name": "FUN_00403a70",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23316
+  "len": 23333
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -2042,7 +2042,7 @@
  "0x00432400": {
   "name": "makewrld_big",
   "named": true,
-  "len": 6264
+  "len": 6281
  },
  "0x00432950": {
   "name": "FUN_00432950",
@@ -2137,7 +2137,7 @@
  "0x00435940": {
   "name": "dlog_entry_render_quads",
   "named": true,
-  "len": 3078
+  "len": 3095
  },
  "0x00435BC0": {
   "name": "fx_blob_shadow",
@@ -2532,7 +2532,7 @@
  "0x00443910": {
   "name": "wredit_matrix_recurse",
   "named": true,
-  "len": 1750
+  "len": 1767
  },
  "0x00443A90": {
   "name": "FUN_00443a90",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FUN_004444c0",
   "named": false,
-  "len": 18701
+  "len": 18718
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -3897,7 +3897,7 @@
  "0x00470710": {
   "name": "object_lock_logic",
   "named": true,
-  "len": 4211
+  "len": 4285
  },
  "0x00470E40": {
   "name": "sound_obj_event",
@@ -4707,7 +4707,7 @@
  "0x00492430": {
   "name": "FUN_00492430",
   "named": false,
-  "len": 5635
+  "len": 5642
  },
  "0x004928A0": {
   "name": "savegame_verify_user",
@@ -5602,7 +5602,7 @@
  "0x004A2D60": {
   "name": "FUN_004a2d60",
   "named": false,
-  "len": 20010
+  "len": 20044
  },
  "0x004A3E90": {
   "name": "obj_material_names",
@@ -6112,7 +6112,7 @@
  "0x004AE4C0": {
   "name": "read_objects_bin_PS2",
   "named": true,
-  "len": 49763
+  "len": 49780
  },
  "0x004B0540": {
   "name": "readobjs_load_object",
@@ -6367,7 +6367,7 @@
  "0x004B8D30": {
   "name": "FUN_004b8d30",
   "named": false,
-  "len": 1053
+  "len": 1060
  },
  "0x004B8DE0": {
   "name": "FUN_004b8de0",
@@ -6415,9 +6415,9 @@
   "len": 584
  },
  "0x004B9390": {
-  "name": "FUN_004b9390",
-  "named": false,
-  "len": 2681
+  "name": "obj_link_slot_clear",
+  "named": true,
+  "len": 2688
  },
  "0x004B95D0": {
   "name": "FUN_004b95d0",
@@ -6622,7 +6622,7 @@
  "0x004C1170": {
   "name": "FUN_004c1170",
   "named": false,
-  "len": 5878
+  "len": 5911
  },
  "0x004C15F0": {
   "name": "reaper_cast_cloak_firecircle",
@@ -6877,7 +6877,7 @@
  "0x004CC900": {
   "name": "FUN_004cc900",
   "named": false,
-  "len": 15252
+  "len": 15269
  },
  "0x004CD5D0": {
   "name": "FUN_004cd5d0",
@@ -7590,9 +7590,9 @@
   "len": 372
  },
  "0x004EF560": {
-  "name": "FUN_004ef560",
-  "named": false,
-  "len": 2300
+  "name": "ai_anim_select_mode",
+  "named": true,
+  "len": 2307
  },
  "0x004F38F0": {
   "name": "FUN_004f38f0",
@@ -7800,9 +7800,9 @@
   "len": 308
  },
  "0x004FDD00": {
-  "name": "FUN_004fdd00",
-  "named": false,
-  "len": 2580
+  "name": "text_num_parse",
+  "named": true,
+  "len": 2584
  },
  "0x004FDED0": {
   "name": "FUN_004fded0",
@@ -7902,7 +7902,7 @@
  "0x00500C00": {
   "name": "FUN_00500c00",
   "named": false,
-  "len": 1233
+  "len": 1250
  },
  "0x00500CF0": {
   "name": "FUN_00500cf0",
@@ -8712,7 +8712,7 @@
  "0x00517220": {
   "name": "FUN_00517220",
   "named": false,
-  "len": 1412
+  "len": 1429
  },
  "0x00517370": {
   "name": "FUN_00517370",
@@ -10697,7 +10697,7 @@
  "0x0053BEF0": {
   "name": "FUN_0053bef0",
   "named": false,
-  "len": 236
+  "len": 253
  },
  "0x0053BF20": {
   "name": "FUN_0053bf20",
@@ -10722,7 +10722,7 @@
  "0x0053C660": {
   "name": "FUN_0053c660",
   "named": false,
-  "len": 5281
+  "len": 5298
  },
  "0x0053CA70": {
   "name": "FUN_0053ca70",
@@ -10787,7 +10787,7 @@
  "0x0053D3B0": {
   "name": "nam_lookup_full",
   "named": true,
-  "len": 3024
+  "len": 3041
  },
  "0x0053D5E0": {
   "name": "FUN_0053d5e0",
@@ -11212,7 +11212,7 @@
  "0x00540800": {
   "name": "FUN_00540800",
   "named": false,
-  "len": 1314
+  "len": 1348
  },
  "0x00540AB0": {
   "name": "FUN_00540ab0",
@@ -11225,9 +11225,9 @@
   "len": 5416
  },
  "0x00541A40": {
-  "name": "FUN_00541a40",
-  "named": false,
-  "len": 3109
+  "name": "crt_matrix_copy_init",
+  "named": true,
+  "len": 3117
  },
  "0x00541C10": {
   "name": "anm_dump_a",

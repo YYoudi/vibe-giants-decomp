@@ -16309,7 +16309,7 @@ LAB_0042cb13:
 
                   fStack_6c = -fStack_60;
 
-                  (*(code *)PTR_FUN_00580c1c)(auStack_50,param_1 + 0x294);
+                  (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_50,param_1 + 0x294);
 
                   uVar7 = FUN_00515db0();
 

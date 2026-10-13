@@ -1427,7 +1427,7 @@ LAB_00403980:
 
   FUN_0053dde0(local_88,&local_a0,&local_ac,&local_94);
 
-  (*(code *)PTR_FUN_00580c1c)(auStack_44,local_88);
+  (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,local_88);
 
   FUN_0053d970(param_1,auStack_44);
 

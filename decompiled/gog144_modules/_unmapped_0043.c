@@ -1769,7 +1769,7 @@ void makewrld_big(void)
 
       FUN_0053d970(auStack_44,&uStack_88);
 
-      (*(code *)PTR_FUN_00580c1c)(auStack_cc,auStack_44);
+      (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_cc,auStack_44);
 
       FUN_0053d9e0(&uStack_154);
 
@@ -3276,7 +3276,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   local_190 = param_1;
 
-  (*(code *)PTR_FUN_00580c1c)(pbVar1,param_2);
+  (*(code *)PTR_crt_matrix_copy_init_00580c1c)(pbVar1,param_2);
 
   fStack_18c = -*param_3;
 

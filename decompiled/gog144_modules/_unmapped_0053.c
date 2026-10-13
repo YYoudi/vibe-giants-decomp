@@ -15120,7 +15120,7 @@ int FUN_0053bef0(int param_1,undefined4 param_2,undefined4 param_3)
 
   uVar1 = FUN_0053cb50(param_1,param_2,param_3);
 
-  (*(code *)PTR_FUN_00580c1c)(param_1 + 0xa4,uVar1);
+  (*(code *)PTR_crt_matrix_copy_init_00580c1c)(param_1 + 0xa4,uVar1);
 
   return param_1 + 0xa4;
 
@@ -15533,7 +15533,7 @@ LAB_0053ca17:
 
       uVar3 = FUN_0053cb50(*(int *)(param_1 + 0x10),param_2,param_3);
 
-      (*(code *)PTR_FUN_00580c1c)(&local_64,uVar3);
+      (*(code *)PTR_crt_matrix_copy_init_00580c1c)(&local_64,uVar3);
 
       (*(code *)PTR_FUN_00580c20)(&local_b0,&local_70,1,&local_64);
 
@@ -16698,7 +16698,7 @@ byte nam_lookup_full(int param_1,int param_2,int param_3,int param_4,undefined4 
 
           uVar6 = FUN_0053cc20(param_1,param_2,param_5);
 
-          (*(code *)PTR_FUN_00580c1c)(local_44,uVar6);
+          (*(code *)PTR_crt_matrix_copy_init_00580c1c)(local_44,uVar6);
 
           (*(code *)PTR_FUN_00580c20)(&fStack_50,param_3,1,local_44);
 

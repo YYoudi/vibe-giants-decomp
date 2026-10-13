@@ -2,7 +2,7 @@
 
 | module | functions | named | file |
 |---|---|---|---|
-| _unmapped_0054 | 351 | 232 | _unmapped_0054.c |
+| _unmapped_0054 | 351 | 233 | _unmapped_0054.c |
 | _unmapped_0051 | 186 | 73 | _unmapped_0051.c |
 | _unmapped_0053 | 179 | 69 | _unmapped_0053.c |
 | _unmapped_0052 | 162 | 85 | _unmapped_0052.c |
@@ -12,8 +12,8 @@
 | _unmapped_0042 | 129 | 77 | _unmapped_0042.c |
 | _unmapped_0040 | 105 | 34 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 43 | _unmapped_0041.c |
-| _unmapped_004e | 94 | 25 | _unmapped_004e.c |
-| _unmapped_004b | 90 | 28 | _unmapped_004b.c |
+| _unmapped_004e | 94 | 26 | _unmapped_004e.c |
+| _unmapped_004b | 90 | 29 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 27 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 40 | _unmapped_0044.c |
 | _unmapped_0043 | 74 | 57 | _unmapped_0043.c |
@@ -21,7 +21,7 @@
 | _unmapped_0047 | 67 | 28 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 28 | _unmapped_004c.c |
 | _unmapped_0046 | 53 | 16 | _unmapped_0046.c |
-| _unmapped_004f | 48 | 12 | _unmapped_004f.c |
+| _unmapped_004f | 48 | 13 | _unmapped_004f.c |
 | _unmapped_004d | 39 | 12 | _unmapped_004d.c |
 | main/dlog | 19 | 19 | main_dlog.c |
 | main/ai_move | 15 | 11 | main_ai_move.c |

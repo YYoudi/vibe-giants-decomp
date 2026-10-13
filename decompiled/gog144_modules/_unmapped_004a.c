@@ -2554,7 +2554,7 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
   
 
-  (*(code *)PTR_FUN_00580c1c)(local_88,param_2 + 0x294);
+  (*(code *)PTR_crt_matrix_copy_init_00580c1c)(local_88,param_2 + 0x294);
 
   if (param_1 != 0) {
 
@@ -2588,7 +2588,7 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
   }
 
-  (*(code *)PTR_FUN_00580c1c)(auStack_cc,auStack_154);
+  (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_cc,auStack_154);
 
   FUN_0053d970(auStack_110,auStack_cc);
 
@@ -12810,7 +12810,7 @@ LAB_004aed0a:
 
               else {
 
-                (*(code *)PTR_FUN_00580c1c)();
+                (*(code *)PTR_crt_matrix_copy_init_00580c1c)();
 
                 (*(code *)PTR_FUN_00580c18)();
 

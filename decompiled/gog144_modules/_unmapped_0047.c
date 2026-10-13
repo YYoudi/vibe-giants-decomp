@@ -394,7 +394,9 @@ void object_lock_logic(int param_1)
 
         }
 
-        (*(code *)PTR_FUN_00580c1c)(local_188,iVar2 * 0x44 + *(int *)(param_1 + 0x2dc));
+        (*(code *)PTR_crt_matrix_copy_init_00580c1c)
+
+                  (local_188,iVar2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
         (*(code *)PTR_FUN_00580c18)(auStack_144,local_1cc,local_188);
 
@@ -450,7 +452,9 @@ LAB_00470793:
 
         }
 
-        (*(code *)PTR_FUN_00580c1c)(local_188,iVar2 * 0x44 + *(int *)(param_1 + 0x2dc));
+        (*(code *)PTR_crt_matrix_copy_init_00580c1c)
+
+                  (local_188,iVar2 * 0x44 + *(int *)(param_1 + 0x2dc));
 
         (*(code *)PTR_FUN_00580c18)(param_1 + 0x294,local_1cc,local_188);
 

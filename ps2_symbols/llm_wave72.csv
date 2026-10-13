@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004fdd00,FUN_004FDD00,,text_num_parse,0.9,llm-read43,
+004ef560,FUN_004EF560,,ai_anim_select_mode,0.9,llm-read43,
+004b9390,FUN_004B9390,,obj_link_slot_clear,0.9,llm-read43,
+00541a40,FUN_00541A40,,crt_matrix_copy_init,0.9,llm-read43,

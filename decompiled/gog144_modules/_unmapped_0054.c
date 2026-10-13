@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (232 named) — decompiled, names from PS2 symbols
+ * 351 functions (233 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -760,7 +760,7 @@ void FUN_00540800(int param_1)
 
   PTR_level_scene_mesh_render_005565b8 = (&PTR_LAB_00580d24)[param_1];
 
-  PTR_FUN_00580c1c = (&PTR_FUN_00580d30)[param_1];
+  PTR_crt_matrix_copy_init_00580c1c = (&PTR_crt_matrix_copy_init_00580d30)[param_1];
 
   PTR_FUN_00580c18 = (&PTR_FUN_00580d3c)[param_1];
 
@@ -1208,8 +1208,8 @@ void FUN_00541690(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 }
 
-/* ===== FUN_00541a40 @ 0x00541A40 ===== */
-void FUN_00541a40(uint *param_1,uint *param_2)
+/* ===== crt_matrix_copy_init @ 0x00541A40 ===== */
+void crt_matrix_copy_init(uint *param_1,uint *param_2)
 
 
 

@@ -2510,7 +2510,7 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
     uVar2 = FUN_0053cb50(param_2[0x1df],uVar2,param_2[6]);
 
-    (*(code *)PTR_FUN_00580c1c)(auStack_44,uVar2);
+    (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,uVar2);
 
     (*(code *)PTR_FUN_00580c18)(local_88,local_88,auStack_44);
 
@@ -3848,7 +3848,7 @@ undefined4 FUN_004444c0(int param_1)
 
             FUN_00515de0();
 
-            (*(code *)PTR_FUN_00580c1c)(auStack_44,piVar9 + 0x1df);
+            (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,piVar9 + 0x1df);
 
             FUN_0053d970(auStack_148,auStack_44);
 

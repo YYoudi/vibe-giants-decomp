@@ -6395,7 +6395,7 @@ void FUN_00517220(int param_1,float *param_2,float *param_3)
 
   if ((*(byte *)(param_1 + 0xd8) & 0x20) != 0) {
 
-    (*(code *)PTR_FUN_00580c1c)(&local_44,param_1 + 0x294);
+    (*(code *)PTR_crt_matrix_copy_init_00580c1c)(&local_44,param_1 + 0x294);
 
     *param_3 = local_40 * *param_2 + local_3c * param_2[1] + local_38 * param_2[2] + local_34;
 

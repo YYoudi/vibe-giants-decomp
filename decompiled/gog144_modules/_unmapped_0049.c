@@ -2708,7 +2708,7 @@ LAB_00492458:
 
         *(int *)(iVar1 + 0xdb4) = DAT_0059f2f0;
 
-        FUN_004b9390(DAT_00632a88,0x21,0xffffffff,0);
+        obj_link_slot_clear(DAT_00632a88,0x21,0xffffffff,0);
 
         if (DAT_0059f2f0 < 1) {
 

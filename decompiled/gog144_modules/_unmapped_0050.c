@@ -876,7 +876,7 @@ void FUN_00500c00(float param_1,float param_2,float param_3,undefined4 param_4)
 
   FUN_0053dde0(local_88,&local_ac,&local_94,&local_a0);
 
-  (*(code *)PTR_FUN_00580c1c)(local_88,local_88);
+  (*(code *)PTR_crt_matrix_copy_init_00580c1c)(local_88,local_88);
 
   FUN_0053e410(local_88);
 

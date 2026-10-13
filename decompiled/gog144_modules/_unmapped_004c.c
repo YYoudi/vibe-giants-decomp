@@ -1133,7 +1133,9 @@ void FUN_004c1170(int param_1)
 
   if (((*(byte *)(iVar4 + 0x20c) & 8) != 0) && (-1 < *(int *)(iVar2 + 0xdb0))) {
 
-    FUN_004b9390(iVar4,*(undefined4 *)(iVar2 + 0xd3c + *(int *)(iVar2 + 0xdb0) * 0xc),0xffffffff,0);
+    obj_link_slot_clear(iVar4,*(undefined4 *)(iVar2 + 0xd3c + *(int *)(iVar2 + 0xdb0) * 0xc),
+
+                        0xffffffff,0);
 
   }
 
@@ -7236,7 +7238,7 @@ void FUN_004cc900(void)
 
     FUN_0053dde0(&local_1bc,&local_20c,local_1fc,&local_178);
 
-    (*(code *)PTR_FUN_00580c1c)(&local_1bc,&local_1bc);
+    (*(code *)PTR_crt_matrix_copy_init_00580c1c)(&local_1bc,&local_1bc);
 
     FUN_0053d970(&DAT_005a6c40,&local_1bc);
 
