@@ -156,7 +156,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   *piVar3 = iVar7;
 
-  iVar7 = FUN_0053d8d0(iVar7,piVar3[0xf],5);
+  iVar7 = map_typed_alloc(iVar7,piVar3[0xf],5);
 
   piVar3[1] = iVar7;
 

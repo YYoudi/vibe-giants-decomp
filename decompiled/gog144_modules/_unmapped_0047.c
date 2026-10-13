@@ -748,7 +748,7 @@ switchD_004711dd_default:
 
         main_drawwatr_00431700();
 
-        FUN_00451da0();
+        render_scene_end();
 
         ANM_DumpCluster();
 
@@ -1031,7 +1031,7 @@ void fx_weather_system(void)
 
       }
 
-      FUN_00451da0();
+      render_scene_end();
 
       if (local_7c == 0) {
 
@@ -1252,7 +1252,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     AddHud__4cHudP8cHudIcon_2();
 
-    FUN_00451da0();
+    render_scene_end();
 
     (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
@@ -1290,7 +1290,7 @@ LAB_00471872:
 
   AddHud__4cHudP8cHudIcon_2();
 
-  FUN_00451da0();
+  render_scene_end();
 
   (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 

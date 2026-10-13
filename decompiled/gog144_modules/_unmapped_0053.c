@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (136 named) — decompiled, names from PS2 symbols
+ * 179 functions (138 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -17091,8 +17091,8 @@ void nam_lookup_variant(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0053d8d0 @ 0x0053D8D0 ===== */
-byte * FUN_0053d8d0(undefined4 param_1,int param_2,byte param_3)
+/* ===== map_typed_alloc @ 0x0053D8D0 ===== */
+byte * map_typed_alloc(undefined4 param_1,int param_2,byte param_3)
 
 
 
@@ -18643,15 +18643,17 @@ void vec2_normalize(int param_1,float *param_2,float *param_3,float *param_4)
 
   if ((float10)1e-05 < fVar1) {
 
-    fVar2 = (float10)FUN_0053e780(*(undefined4 *)(param_1 + 0x28),*(undefined4 *)(param_1 + 0x2c));
+    fVar2 = (float10)math_angle_wrap(*(undefined4 *)(param_1 + 0x28),*(undefined4 *)(param_1 + 0x2c)
+
+                                    );
 
     *param_2 = (float)fVar2;
 
-    fVar1 = (float10)FUN_0053e780(*(undefined4 *)(param_1 + 0x24),(float)fVar1);
+    fVar1 = (float10)math_angle_wrap(*(undefined4 *)(param_1 + 0x24),(float)fVar1);
 
     *param_3 = (float)fVar1;
 
-    fVar1 = (float10)FUN_0053e780(*(undefined4 *)(param_1 + 0x14),*(undefined4 *)(param_1 + 4));
+    fVar1 = (float10)math_angle_wrap(*(undefined4 *)(param_1 + 0x14),*(undefined4 *)(param_1 + 4));
 
     *param_4 = (float)fVar1;
 
@@ -18659,11 +18661,11 @@ void vec2_normalize(int param_1,float *param_2,float *param_3,float *param_4)
 
   }
 
-  fVar2 = (float10)FUN_0053e780(-*(float *)(param_1 + 0x1c),*(undefined4 *)(param_1 + 0x18));
+  fVar2 = (float10)math_angle_wrap(-*(float *)(param_1 + 0x1c),*(undefined4 *)(param_1 + 0x18));
 
   *param_2 = (float)fVar2;
 
-  fVar1 = (float10)FUN_0053e780(*(undefined4 *)(param_1 + 0xc),(float)fVar1);
+  fVar1 = (float10)math_angle_wrap(*(undefined4 *)(param_1 + 0xc),(float)fVar1);
 
   *param_3 = (float)fVar1;
 
@@ -18673,8 +18675,8 @@ void vec2_normalize(int param_1,float *param_2,float *param_3,float *param_4)
 
 }
 
-/* ===== FUN_0053e780 @ 0x0053E780 ===== */
-float10 FUN_0053e780(float param_1,float param_2)
+/* ===== math_angle_wrap @ 0x0053E780 ===== */
+float10 math_angle_wrap(float param_1,float param_2)
 
 
 

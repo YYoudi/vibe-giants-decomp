@@ -3862,7 +3862,7 @@ undefined4 FLK_FlickRender(int param_1)
 
             animate_core_caller(piVar9 + -2,0,0,piVar9 + 0xa3,&uStack_170);
 
-            FUN_00451da0();
+            render_scene_end();
 
             if (local_210 == 0) {
 
@@ -4376,7 +4376,7 @@ LAB_004451e2:
 
   fps_display();
 
-  FUN_00451da0();
+  render_scene_end();
 
   (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 

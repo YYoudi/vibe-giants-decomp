@@ -81,7 +81,7 @@ void main_fx_004471a0(void)
 
   if (DAT_006330e4 != 0) {
 
-    FUN_004ee150();
+    world_fx_release();
 
     if (DAT_0059ce6c != 0) {
 

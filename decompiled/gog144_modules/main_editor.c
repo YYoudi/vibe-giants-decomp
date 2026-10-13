@@ -920,7 +920,7 @@ LAB_004374a1:
 
                 if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
-                  FUN_004ee150();
+                  world_fx_release();
 
                   fx_spawn_checked(iVar10);
 
@@ -986,7 +986,7 @@ LAB_004374a1:
 
               if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
-                FUN_004ee150();
+                world_fx_release();
 
                 fx_spawn_checked(iVar10);
 
@@ -1040,7 +1040,7 @@ LAB_004374a1:
 
             if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
-              FUN_004ee150();
+              world_fx_release();
 
               fx_spawn_checked(iVar10);
 
@@ -1088,7 +1088,7 @@ LAB_004374a1:
 
               if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
-                FUN_004ee150();
+                world_fx_release();
 
                 fx_spawn_checked(iVar10);
 
@@ -1306,7 +1306,7 @@ LAB_004374a1:
 
             if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
-              FUN_004ee150();
+              world_fx_release();
 
               fx_spawn_checked(iVar10);
 
@@ -1446,7 +1446,7 @@ LAB_00437d68:
 
             if ((iVar17 != 0) && (DAT_006330e4 != 0)) {
 
-              FUN_004ee150();
+              world_fx_release();
 
               fx_spawn_checked(iVar10);
 

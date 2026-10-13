@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "rpman_init__FP6OBJECT",
   "named": true,
-  "len": 43227
+  "len": 43251
  },
  "0x00437FA0": {
   "name": "editor_cursor_pick_point",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19129
+  "len": 19137
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -2682,7 +2682,7 @@
  "0x004471A0": {
   "name": "main_fx_004471a0",
   "named": true,
-  "len": 598
+  "len": 602
  },
  "0x00447210": {
   "name": "Main/fx_00447210",
@@ -2940,9 +2940,9 @@
   "len": 759
  },
  "0x00451DA0": {
-  "name": "FUN_00451da0",
-  "named": false,
-  "len": 649
+  "name": "render_scene_end",
+  "named": true,
+  "len": 653
  },
  "0x00451E10": {
   "name": "main_gfxhelp_00451e10",
@@ -3907,17 +3907,17 @@
  "0x00471130": {
   "name": "water_draw_dump",
   "named": true,
-  "len": 3351
+  "len": 3355
  },
  "0x00471420": {
   "name": "fx_weather_system",
   "named": true,
-  "len": 4842
+  "len": 4846
  },
  "0x00471780": {
   "name": "hud_audio_dlog_screen",
   "named": true,
-  "len": 3318
+  "len": 3326
  },
  "0x00471A60": {
   "name": "game_loop_run",
@@ -4067,7 +4067,7 @@
  "0x004776C0": {
   "name": "marker_create_path__FP6OBJECTi",
   "named": true,
-  "len": 10115
+  "len": 10118
  },
  "0x00477DA0": {
   "name": "marker_spline_adjust_scale",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14487
+  "len": 14495
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7505,9 +7505,9 @@
   "len": 397
  },
  "0x004EE150": {
-  "name": "FUN_004ee150",
-  "named": false,
-  "len": 522
+  "name": "world_fx_release",
+  "named": true,
+  "len": 526
  },
  "0x004EE1C0": {
   "name": "fx_spawn_checked",
@@ -9262,7 +9262,7 @@
  "0x0051E680": {
   "name": "error_screen_show",
   "named": true,
-  "len": 3935
+  "len": 3939
  },
  "0x0051EA20": {
   "name": "FUN_0051ea20",
@@ -9292,7 +9292,7 @@
  "0x0051EAC0": {
   "name": "loglauncher_process_2",
   "named": true,
-  "len": 9679
+  "len": 9703
  },
  "0x0051F2A0": {
   "name": "FUN_0051f2a0",
@@ -9337,7 +9337,7 @@
  "0x00520490": {
   "name": "comm_comm_00520490",
   "named": true,
-  "len": 4482
+  "len": 4490
  },
  "0x00520B90": {
   "name": "gamespy_send_statechange",
@@ -10815,9 +10815,9 @@
   "len": 1001
  },
  "0x0053D8D0": {
-  "name": "FUN_0053d8d0",
-  "named": false,
-  "len": 638
+  "name": "map_typed_alloc",
+  "named": true,
+  "len": 641
  },
  "0x0053D940": {
   "name": "ObjectUpdateSpeedDist",
@@ -10932,12 +10932,12 @@
  "0x0053E6C0": {
   "name": "vec2_normalize",
   "named": true,
-  "len": 1027
+  "len": 1080
  },
  "0x0053E780": {
-  "name": "FUN_0053e780",
-  "named": false,
-  "len": 424
+  "name": "math_angle_wrap",
+  "named": true,
+  "len": 427
  },
  "0x0053E7F0": {
   "name": "FUN_0053e7f0",

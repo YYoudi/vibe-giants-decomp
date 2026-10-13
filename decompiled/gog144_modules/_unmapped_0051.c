@@ -15227,7 +15227,7 @@ void error_screen_show(LPCSTR param_1)
 
         ANM_DumpCluster();
 
-        FUN_00451da0();
+        render_scene_end();
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (102 named) — decompiled, names from PS2 symbols
+ * 145 functions (103 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1232,8 +1232,8 @@ undefined4 render_scene_begin(void)
 
 }
 
-/* ===== FUN_00451da0 @ 0x00451DA0 ===== */
-undefined4 FUN_00451da0(void)
+/* ===== render_scene_end @ 0x00451DA0 ===== */
+undefined4 render_scene_end(void)
 
 
 

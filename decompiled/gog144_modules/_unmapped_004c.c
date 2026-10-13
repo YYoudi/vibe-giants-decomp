@@ -8465,7 +8465,7 @@ undefined4 dev_debug_flags(void)
 
     local_1e4 = (float)fVar12;
 
-    FUN_00451da0();
+    render_scene_end();
 
     local_1fc = DAT_00632d68;
 
@@ -8525,7 +8525,7 @@ undefined4 dev_debug_flags(void)
 
           animate_core_caller(iVar9,0,0,auStack_170,&local_208);
 
-          FUN_00451da0();
+          render_scene_end();
 
           ANM_DumpCluster();
 

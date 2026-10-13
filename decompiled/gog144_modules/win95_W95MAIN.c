@@ -312,7 +312,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
         dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0x3f800000,piVar16[2]);
 
-        FUN_00451da0();
+        render_scene_end();
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
@@ -356,7 +356,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
                             );
 
-            FUN_00451da0();
+            render_scene_end();
 
             (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
@@ -396,7 +396,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
         dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0,piVar16[2]);
 
-        FUN_00451da0();
+        render_scene_end();
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
@@ -422,7 +422,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
         dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0,piVar16[2]);
 
-        FUN_00451da0();
+        render_scene_end();
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
@@ -502,7 +502,7 @@ LAB_0051f08e:
 
           dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,fVar3 * 5.0,piVar16[2]);
 
-          FUN_00451da0();
+          render_scene_end();
 
           (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
@@ -534,7 +534,7 @@ LAB_0051f1b8:
 
         dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0x3f800000,piVar16[2]);
 
-        FUN_00451da0();
+        render_scene_end();
 
         (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
