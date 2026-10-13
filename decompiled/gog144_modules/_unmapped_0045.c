@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (60 named) — decompiled, names from PS2 symbols
+ * 145 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -4627,7 +4627,7 @@ int FUN_00455920(code *param_1,undefined4 param_2,int *param_3,float *param_4,fl
 
           FUN_00517220(iVar1,&local_3c,auStack_18);
 
-          iVar3 = FUN_0049a550(&uStack_48,auStack_c,auStack_18,iVar4);
+          iVar3 = collide_line_bbox(&uStack_48,auStack_c,auStack_18,iVar4);
 
           iVar4 = DAT_00632a88;
 
@@ -8197,12 +8197,12 @@ bool FUN_00458d70(undefined4 param_1)
 
 }
 
-/* ===== FUN_00459540 @ 0x00459540 ===== */
+/* ===== inv_check_pickup @ 0x00459540 ===== */
 /* PS2 candidate: inv_check_pickup (conf 0.422) */
 
 
 
-bool FUN_00459540(int param_1,uint *param_2)
+bool inv_check_pickup(int param_1,uint *param_2)
 
 
 
@@ -8272,7 +8272,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
          ((iVar3 = reaper_has_bow_2(iVar6,uVar1), iVar3 != 0 ||
 
-          (iVar3 = FUN_004b8a60(iVar6), iVar3 < 0)))) {
+          (iVar3 = reaper_has_bow_2(iVar6), iVar3 < 0)))) {
 
         iVar3 = FUN_00458c90(uVar1);
 
@@ -8336,7 +8336,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
         if (iVar3 == 0) {
 
-          iVar3 = FUN_004b8d00(iVar6,uVar1);
+          iVar3 = reaper_has_bow_3(iVar6,uVar1);
 
           if (iVar3 == 0) {
 
@@ -8685,7 +8685,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
           }
 
-          iVar2 = FUN_004b8a60(param_1);
+          iVar2 = reaper_has_bow_2(param_1);
 
           if (-1 < iVar2) {
 

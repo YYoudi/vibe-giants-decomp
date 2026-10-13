@@ -850,7 +850,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
   local_3c = pfVar2[2] * 50000.0 + local_24;
 
-  iVar3 = FUN_0049a550(&local_38,&local_2c,&local_44,(float *)(iVar4 + 0x27c));
+  iVar3 = collide_line_bbox(&local_38,&local_2c,&local_44,(float *)(iVar4 + 0x27c));
 
   if (iVar3 != 0) {
 

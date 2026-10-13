@@ -1570,7 +1570,7 @@ void obj_path_follow(int param_1)
 
         object_copy_posdirinfo(iVar2);
 
-        FUN_00413820(iVar2);
+        setMenuSelection__7PS2Gameiiii(iVar2);
 
         *(uint *)(iVar2 + 0xd8) = *(uint *)(iVar2 + 0xd8) | 0x10000000;
 

@@ -1400,7 +1400,7 @@ LAB_00437d68:
 
           if (DAT_0059cbe0 != 0) {
 
-            FUN_00413820(piVar11[0xe]);
+            setMenuSelection__7PS2Gameiiii(piVar11[0xe]);
 
             iVar10 = piVar11[0xe];
 

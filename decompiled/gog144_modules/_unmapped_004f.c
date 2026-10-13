@@ -2446,7 +2446,7 @@ void comm_stats_reset(void)
 
         else {
 
-          iVar9 = FUN_004189e0(*(int *)(iVar1 + 0x274));
+          iVar9 = base_which_team(*(int *)(iVar1 + 0x274));
 
           if ((0 < iVar9) && (iVar9 < 3)) {
 

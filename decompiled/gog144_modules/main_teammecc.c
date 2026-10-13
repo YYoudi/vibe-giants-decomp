@@ -112,7 +112,7 @@ void teammecc_create(int param_1,int param_2)
 
         *(undefined1 **)(iVar3 + 0x16c) = &LAB_005013f0;
 
-        FUN_00413820(iVar3);
+        setMenuSelection__7PS2Gameiiii(iVar3);
 
         FUN_0049b8a0(iVar3);
 

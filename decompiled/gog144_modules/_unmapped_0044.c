@@ -3768,7 +3768,7 @@ undefined4 FLK_FlickRender(int param_1)
 
         piVar9[0x28] = piVar11[0xc];
 
-        FUN_00413820(piVar9 + -2);
+        setMenuSelection__7PS2Gameiiii(piVar9 + -2);
 
         if (DAT_0063311c == 0) {
 

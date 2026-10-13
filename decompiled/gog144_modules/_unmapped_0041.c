@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (56 named) — decompiled, names from PS2 symbols
+ * 100 functions (59 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2135,12 +2135,12 @@ LAB_00413703:
 
 }
 
-/* ===== FUN_00413820 @ 0x00413820 ===== */
+/* ===== setMenuSelection__7PS2Gameiiii @ 0x00413820 ===== */
 /* PS2 candidate: setMenuSelection__7PS2Gameiiii (conf 0.651) */
 
 
 
-void FUN_00413820(int param_1)
+void setMenuSelection__7PS2Gameiiii(int param_1)
 
 
 
@@ -5108,7 +5108,7 @@ LAB_00416450:
 
     if (iVar1 != 0) {
 
-      FUN_004b6800(0);
+      meccbase_hide_tentatives(0);
 
     }
 
@@ -5116,7 +5116,7 @@ LAB_00416450:
 
   else {
 
-    FUN_0040a7b0(0);
+    meccbase_hide_tentatives_2(0);
 
   }
 
@@ -5181,7 +5181,7 @@ void dlog_pop_user(void)
 
     if (iVar3 != 0) {
 
-      FUN_004b6800(1);
+      meccbase_hide_tentatives(1);
 
     }
 
@@ -5189,7 +5189,7 @@ void dlog_pop_user(void)
 
   else {
 
-    FUN_0040a7b0(1);
+    meccbase_hide_tentatives_2(1);
 
   }
 
@@ -7160,12 +7160,12 @@ int FUN_00418950(int param_1)
 
 }
 
-/* ===== FUN_004189e0 @ 0x004189E0 ===== */
+/* ===== base_which_team @ 0x004189E0 ===== */
 /* PS2 candidate: base_which_team (conf 0.649) */
 
 
 
-int FUN_004189e0(int param_1)
+int base_which_team(int param_1)
 
 
 
@@ -11624,12 +11624,12 @@ void FUN_0041f0f0(undefined4 param_1)
 
 }
 
-/* ===== FUN_0041f100 @ 0x0041F100 ===== */
+/* ===== menu_preview_scale_set @ 0x0041F100 ===== */
 /* PS2 candidate: ANM_DumpCluster_11 (conf 0.658) */
 
 
 
-void FUN_0041f100(int param_1,int param_2)
+void menu_preview_scale_set(int param_1,int param_2)
 
 
 

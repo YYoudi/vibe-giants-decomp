@@ -8541,7 +8541,7 @@ undefined4 dev_debug_flags(void)
 
   if (DAT_00632e74 != 0) {
 
-    FUN_00470220();
+    object_destroy_all__7PS2Game();
 
   }
 

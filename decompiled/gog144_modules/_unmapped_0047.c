@@ -1,14 +1,14 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (36 named) — decompiled, names from PS2 symbols
+ * 67 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00470220 @ 0x00470220 ===== */
+/* ===== object_destroy_all__7PS2Game @ 0x00470220 ===== */
 /* PS2 candidate: object_destroy_all__7PS2Game (conf 0.642) */
 
 
 
-void FUN_00470220(undefined4 param_1)
+void object_destroy_all__7PS2Game(undefined4 param_1)
 
 
 
@@ -4743,12 +4743,12 @@ void sound_player_sequence(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00479100 @ 0x00479100 ===== */
+/* ===== mecc_calculate_mass__FP6OBJECT @ 0x00479100 ===== */
 /* PS2 candidate: mecc_calculate_mass__FP6OBJECT (conf 0.656) */
 
 
 
-void FUN_00479100(int param_1)
+void mecc_calculate_mass__FP6OBJECT(int param_1)
 
 
 

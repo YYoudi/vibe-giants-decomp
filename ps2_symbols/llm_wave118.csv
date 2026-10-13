@@ -1,0 +1,15 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a2850,FUN_004a2850,,PhysicsExApplyMoveControls,0.9,llm-w118,body-verified
+00479100,FUN_00479100,,mecc_calculate_mass__FP6OBJECT,0.9,llm-w118,body-verified
+00459540,FUN_00459540,,inv_check_pickup,0.9,llm-w118,body-verified
+004b8a60,FUN_004b8a60,,reaper_has_bow_2,0.9,llm-w118,body-verified 0xd78 scan variant
+004b8d00,FUN_004b8d00,,reaper_has_bow_3,0.9,llm-w118,body-verified 0xd3c count variant
+00413820,FUN_00413820,,setMenuSelection__7PS2Gameiiii,0.9,llm-w118,body-verified
+004189e0,FUN_004189e0,,base_which_team,0.9,llm-w118,body-verified
+0049a550,FUN_0049a550,,collide_line_bbox,0.9,llm-w118,body-verified
+0053c660,FUN_0053c660,,ANM_NodeGetAffine,0.9,llm-w118,body-verified
+00470220,FUN_00470220,,object_destroy_all__7PS2Game,0.9,llm-w118,body-verified type 0x5c walk
+004b6800,FUN_004b6800,,meccbase_hide_tentatives,0.9,llm-w118,body-verified
+0040a7b0,FUN_0040a7b0,,meccbase_hide_tentatives_2,0.9,llm-w118,body-verified variant
+0052adc0,FUN_0052adc0,,player_name_set,0.9,llm-w118,body-verified strncpy 0x20 slots (rejected ObjectGetWorldRefPoint)
+0041f100,FUN_0041f100,,menu_preview_scale_set,0.9,llm-w118,body-verified 632abc/ac0 pair (rejected ANM_DumpCluster)

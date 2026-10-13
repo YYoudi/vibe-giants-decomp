@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (49 named) — decompiled, names from PS2 symbols
+ * 105 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -6957,12 +6957,12 @@ undefined4 object_spawn_class4(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0040a7b0 @ 0x0040A7B0 ===== */
+/* ===== meccbase_hide_tentatives_2 @ 0x0040A7B0 ===== */
 /* PS2 candidate: meccbase_hide_tentatives (conf 0.64) */
 
 
 
-void FUN_0040a7b0(int param_1)
+void meccbase_hide_tentatives_2(int param_1)
 
 
 

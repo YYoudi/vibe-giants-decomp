@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (47 named) — decompiled, names from PS2 symbols
+ * 90 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -2696,12 +2696,12 @@ undefined4 object_spawn_4b(int param_1,uint param_2)
 
 }
 
-/* ===== FUN_004b6800 @ 0x004B6800 ===== */
+/* ===== meccbase_hide_tentatives @ 0x004B6800 ===== */
 /* PS2 candidate: meccbase_hide_tentatives_2 (conf 0.64) */
 
 
 
-void FUN_004b6800(int param_1)
+void meccbase_hide_tentatives(int param_1)
 
 
 
@@ -5487,12 +5487,12 @@ void FUN_004b89d0(int param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_004b8a60 @ 0x004B8A60 ===== */
+/* ===== reaper_has_bow_2 @ 0x004B8A60 ===== */
 /* PS2 candidate: reaper_has_bow_5 (conf 0.652) */
 
 
 
-int FUN_004b8a60(int param_1)
+int reaper_has_bow_2(int param_1)
 
 
 
@@ -5811,12 +5811,12 @@ undefined4 reaper_has_bow(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004b8d00 @ 0x004B8D00 ===== */
+/* ===== reaper_has_bow_3 @ 0x004B8D00 ===== */
 /* PS2 candidate: reaper_has_bow_6 (conf 0.64) */
 
 
 
-bool FUN_004b8d00(int param_1)
+bool reaper_has_bow_3(int param_1)
 
 
 

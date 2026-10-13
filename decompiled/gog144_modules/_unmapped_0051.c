@@ -13012,7 +13012,7 @@ LAB_0051cb4e:
 
   FUN_005161c0(0,0,(float)_DAT_005ddb44,(float)_DAT_005ddb48);
 
-  FUN_00470220(1);
+  object_destroy_all__7PS2Game(1);
 
   uVar1 = AudioDataStreamStatus__Fv_3();
 

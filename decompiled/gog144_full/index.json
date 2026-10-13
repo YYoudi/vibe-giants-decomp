@@ -335,9 +335,9 @@
   "len": 2106
  },
  "0x0040A7B0": {
-  "name": "FUN_0040a7b0",
-  "named": false,
-  "len": 802
+  "name": "meccbase_hide_tentatives_2",
+  "named": true,
+  "len": 816
  },
  "0x0040A820": {
   "name": "objtype_anim_scan",
@@ -730,9 +730,9 @@
   "len": 14092
  },
  "0x00413820": {
-  "name": "FUN_00413820",
-  "named": false,
-  "len": 584
+  "name": "setMenuSelection__7PS2Gameiiii",
+  "named": true,
+  "len": 602
  },
  "0x00413880": {
   "name": "FUN_00413880",
@@ -832,12 +832,12 @@
  "0x004162C0": {
   "name": "FUN_004162c0",
   "named": false,
-  "len": 2847
+  "len": 2873
  },
  "0x00416550": {
   "name": "dlog_pop_user",
   "named": true,
-  "len": 883
+  "len": 909
  },
  "0x00416990": {
   "name": "reaper_lock_short",
@@ -995,9 +995,9 @@
   "len": 798
  },
  "0x004189E0": {
-  "name": "FUN_004189e0",
-  "named": false,
-  "len": 224
+  "name": "base_which_team",
+  "named": true,
+  "len": 227
  },
  "0x00418A00": {
   "name": "object_spawn_class5",
@@ -1180,9 +1180,9 @@
   "len": 260
  },
  "0x0041F100": {
-  "name": "FUN_0041f100",
-  "named": false,
-  "len": 191
+  "name": "menu_preview_scale_set",
+  "named": true,
+  "len": 201
  },
  "0x0041F120": {
   "name": "hud_status_main",
@@ -1662,7 +1662,7 @@
  "0x00429E10": {
   "name": "hud_screen_text_render",
   "named": true,
-  "len": 6041
+  "len": 6061
  },
  "0x0042A280": {
   "name": "dlog_wrap_text",
@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "FUN_004361b0",
   "named": false,
-  "len": 43043
+  "len": 43061
  },
  "0x00437FA0": {
   "name": "editor_cursor_pick_point",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 18839
+  "len": 18857
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -3112,7 +3112,7 @@
  "0x00455920": {
   "name": "FUN_00455920",
   "named": false,
-  "len": 3323
+  "len": 3328
  },
  "0x00455B70": {
   "name": "project_cursor_to_object",
@@ -3405,14 +3405,14 @@
   "len": 125
  },
  "0x00459540": {
-  "name": "FUN_00459540",
-  "named": false,
-  "len": 5141
+  "name": "inv_check_pickup",
+  "named": true,
+  "len": 5153
  },
  "0x00459930": {
   "name": "inv_award_item",
   "named": true,
-  "len": 7854
+  "len": 7858
  },
  "0x00459F10": {
   "name": "FUN_00459f10",
@@ -3622,7 +3622,7 @@
  "0x00465880": {
   "name": "reaper_update_xhair_status__FP6OBJECT",
   "named": true,
-  "len": 3955
+  "len": 3960
  },
  "0x00465BF0": {
   "name": "reaper_collect_food",
@@ -3850,9 +3850,9 @@
   "len": 3425
  },
  "0x00470220": {
-  "name": "FUN_00470220",
-  "named": false,
-  "len": 353
+  "name": "object_destroy_all__7PS2Game",
+  "named": true,
+  "len": 369
  },
  "0x00470250": {
   "name": "main_linkage_00470250",
@@ -4130,9 +4130,9 @@
   "len": 1295
  },
  "0x00479100": {
-  "name": "FUN_00479100",
-  "named": false,
-  "len": 1367
+  "name": "mecc_calculate_mass__FP6OBJECT",
+  "named": true,
+  "len": 1385
  },
  "0x004791F0": {
   "name": "FUN_004791f0",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24140
+  "len": 24144
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -5275,9 +5275,9 @@
   "len": 452
  },
  "0x0049A550": {
-  "name": "FUN_0049a550",
-  "named": false,
-  "len": 4503
+  "name": "collide_line_bbox",
+  "named": true,
+  "len": 4508
  },
  "0x0049A950": {
   "name": "FUN_0049a950",
@@ -5570,9 +5570,9 @@
   "len": 1557
  },
  "0x004A2850": {
-  "name": "FUN_004a2850",
-  "named": false,
-  "len": 1058
+  "name": "PhysicsExApplyMoveControls",
+  "named": true,
+  "len": 1072
  },
  "0x004A2930": {
   "name": "obj_velocity_normalize",
@@ -6245,9 +6245,9 @@
   "len": 2226
  },
  "0x004B6800": {
-  "name": "FUN_004b6800",
-  "named": false,
-  "len": 802
+  "name": "meccbase_hide_tentatives",
+  "named": true,
+  "len": 814
  },
  "0x004B6870": {
   "name": "objtype_anim_scan_2",
@@ -6330,9 +6330,9 @@
   "len": 576
  },
  "0x004B8A60": {
-  "name": "FUN_004b8a60",
-  "named": false,
-  "len": 351
+  "name": "reaper_has_bow_2",
+  "named": true,
+  "len": 355
  },
  "0x004B8A90": {
   "name": "reaper_has_bow_2",
@@ -6360,9 +6360,9 @@
   "len": 318
  },
  "0x004B8D00": {
-  "name": "FUN_004b8d00",
-  "named": false,
-  "len": 335
+  "name": "reaper_has_bow_3",
+  "named": true,
+  "len": 339
  },
  "0x004B8D30": {
   "name": "FUN_004b8d30",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14268
+  "len": 14284
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7572,7 +7572,7 @@
  "0x004EF070": {
   "name": "ai_class_filter",
   "named": true,
-  "len": 1437
+  "len": 1449
  },
  "0x004EF190": {
   "name": "FUN_004ef190",
@@ -7687,7 +7687,7 @@
  "0x004F75C0": {
   "name": "comm_stats_reset",
   "named": true,
-  "len": 1847
+  "len": 1850
  },
  "0x004F7780": {
   "name": "FUN_004f7780",
@@ -7972,12 +7972,12 @@
  "0x005011F0": {
   "name": "teammecc_create",
   "named": true,
-  "len": 2764
+  "len": 2782
  },
  "0x00501500": {
   "name": "obj_path_follow",
   "named": true,
-  "len": 2046
+  "len": 2064
  },
  "0x00501670": {
   "name": "FUN_00501670",
@@ -9237,7 +9237,7 @@
  "0x0051C9F0": {
   "name": "FUN_0051C9F0",
   "named": false,
-  "len": 1885
+  "len": 1901
  },
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
@@ -9710,9 +9710,9 @@
   "len": 1254
  },
  "0x0052ADC0": {
-  "name": "FUN_0052adc0",
-  "named": false,
-  "len": 278
+  "name": "player_name_set",
+  "named": true,
+  "len": 281
  },
  "0x0052ADF0": {
   "name": "comm_player_name3",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36341
+  "len": 36344
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10720,9 +10720,9 @@
   "len": 245
  },
  "0x0053C660": {
-  "name": "FUN_0053c660",
-  "named": false,
-  "len": 5337
+  "name": "ANM_NodeGetAffine",
+  "named": true,
+  "len": 5342
  },
  "0x0053CA70": {
   "name": "FUN_0053ca70",
@@ -10732,17 +10732,17 @@
  "0x0053CA90": {
   "name": "FUN_0053ca90",
   "named": false,
-  "len": 991
+  "len": 1001
  },
  "0x0053CB50": {
   "name": "FUN_0053cb50",
   "named": false,
-  "len": 1303
+  "len": 1308
  },
  "0x0053CC20": {
   "name": "FUN_0053cc20",
   "named": false,
-  "len": 3777
+  "len": 3787
  },
  "0x0053CEC0": {
   "name": "nam_lookup_by_handle",

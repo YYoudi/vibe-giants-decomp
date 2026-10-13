@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (100 named) — decompiled, names from PS2 symbols
+ * 179 functions (101 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -4173,7 +4173,7 @@ LAB_00532513:
 
       case 'D':
 
-        FUN_0052adc0(pcVar15[1],pcVar15 + 2);
+        player_name_set(pcVar15[1],pcVar15 + 2);
 
         DAT_005e0304 = DAT_005e0304 + 0x22;
 
@@ -15338,14 +15338,14 @@ float10 FUN_0053c640(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0053c660 @ 0x0053C660 ===== */
+/* ===== ANM_NodeGetAffine @ 0x0053C660 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: item_get_ammo (conf 0.45) */
 
 
 
-int FUN_0053c660(int param_1,int param_2,undefined4 param_3)
+int ANM_NodeGetAffine(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -15683,7 +15683,7 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 
   
 
-  uVar4 = FUN_0053c660(param_3,param_4,param_5);
+  uVar4 = ANM_NodeGetAffine(param_3,param_4,param_5);
 
   FUN_0053dfd0(local_cc,uVar4);
 
@@ -15699,7 +15699,7 @@ void FUN_0053ca90(undefined4 *param_1,int param_2,int param_3,undefined4 param_4
 
       iVar5 = *(int *)(iVar5 + 0x10)) {
 
-    uVar4 = FUN_0053c660(iVar5,param_4,param_5);
+    uVar4 = ANM_NodeGetAffine(iVar5,param_4,param_5);
 
     FUN_0053dfd0(puVar1,uVar4);
 
@@ -15778,7 +15778,7 @@ int FUN_0053cb50(int param_1,undefined4 param_2,int param_3)
 
         param_1 = *piVar3;
 
-        puVar1 = (undefined1 *)FUN_0053c660(param_1,param_2,param_3);
+        puVar1 = (undefined1 *)ANM_NodeGetAffine(param_1,param_2,param_3);
 
         if (*(code **)(param_1 + 0x18) != (code *)0x0) {
 
@@ -16019,7 +16019,7 @@ LAB_0053cd8a:
 
       iVar5 = *piVar9;
 
-      puVar3 = (undefined1 *)FUN_0053c660(iVar5,piVar2[-2],param_3);
+      puVar3 = (undefined1 *)ANM_NodeGetAffine(iVar5,piVar2[-2],param_3);
 
       if (*(code **)(iVar5 + 0x18) != (code *)0x0) {
 
@@ -16031,7 +16031,7 @@ LAB_0053cd8a:
 
       if (((float)piVar2[-1] != 0.0) && (iVar7 = local_3d4[-3], iVar7 != 0)) {
 
-        puVar4 = (undefined1 *)FUN_0053c660(iVar7,local_3d4[-2],param_3);
+        puVar4 = (undefined1 *)ANM_NodeGetAffine(iVar7,local_3d4[-2],param_3);
 
         if (*(code **)(iVar7 + 0x18) != (code *)0x0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (91 named) — decompiled, names from PS2 symbols
+ * 162 functions (92 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -7635,12 +7635,12 @@ undefined1 FUN_0052aca0(int param_1)
 
 }
 
-/* ===== FUN_0052adc0 @ 0x0052ADC0 ===== */
+/* ===== player_name_set @ 0x0052ADC0 ===== */
 /* PS2 candidate: ObjectGetWorldRefPoint__FP3P3DiP6OBJECT_3 (conf 0.643) */
 
 
 
-void FUN_0052adc0(int param_1,char *param_2)
+void player_name_set(int param_1,char *param_2)
 
 
 

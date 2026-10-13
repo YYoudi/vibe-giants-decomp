@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (54 named) — decompiled, names from PS2 symbols
+ * 131 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1927,12 +1927,12 @@ void obj_bone_update(int param_1,float param_2,float param_3,undefined4 param_4,
 
 }
 
-/* ===== FUN_004a2850 @ 0x004A2850 ===== */
+/* ===== PhysicsExApplyMoveControls @ 0x004A2850 ===== */
 /* PS2 candidate: PhysicsExApplyMoveControls (conf 0.657) */
 
 
 
-void FUN_004a2850(float param_1)
+void PhysicsExApplyMoveControls(float param_1)
 
 
 

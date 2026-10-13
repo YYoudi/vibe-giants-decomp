@@ -11751,7 +11751,9 @@ ai_class_filter(undefined4 param_1,undefined4 param_2,int param_3,int param_4,by
 
       iVar3 = collide_bbox_bbox(local_18,iVar2 + 0x27c);
 
-      if ((iVar3 != 0) && (iVar3 = FUN_0049a550(0,param_1,param_2,iVar2 + 0x27c), iVar3 != 0)) {
+      if ((iVar3 != 0) && (iVar3 = collide_line_bbox(0,param_1,param_2,iVar2 + 0x27c), iVar3 != 0))
+
+      {
 
         if (((param_5 & 1) == 0) && ((*(uint *)(iVar2 + 0x1c8) & 0x1008) == 0)) {
 

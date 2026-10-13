@@ -12548,7 +12548,7 @@ void hud_screen_text_render(int param_1,int param_2)
 
     uVar10 = __ftol(uVar10);
 
-    FUN_0041f100(uVar10);
+    menu_preview_scale_set(uVar10);
 
   }
 
@@ -12560,7 +12560,7 @@ void hud_screen_text_render(int param_1,int param_2)
 
     uVar10 = __ftol(uVar10);
 
-    FUN_0041f100(uVar10);
+    menu_preview_scale_set(uVar10);
 
     return;
 

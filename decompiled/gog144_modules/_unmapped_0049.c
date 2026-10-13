@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (60 named) — decompiled, names from PS2 symbols
+ * 142 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -3408,7 +3408,7 @@ LAB_00492a3a:
 
                     if (iVar11 == 0) {
 
-                      iVar11 = FUN_004b8a60(DAT_00632a88);
+                      iVar11 = reaper_has_bow_2(DAT_00632a88);
 
                       if (0 < iVar11) {
 
@@ -11284,12 +11284,12 @@ undefined4 FUN_0049a4e0(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0049a550 @ 0x0049A550 ===== */
+/* ===== collide_line_bbox @ 0x0049A550 ===== */
 /* PS2 candidate: collide_line_bbox (conf 0.646) */
 
 
 
-undefined4 FUN_0049a550(float *param_1,float *param_2,float *param_3,float *param_4)
+undefined4 collide_line_bbox(float *param_1,float *param_2,float *param_3,float *param_4)
 
 
 
