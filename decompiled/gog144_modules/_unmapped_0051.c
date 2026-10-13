@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (131 named) — decompiled, names from PS2 symbols
+ * 186 functions (133 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2525,8 +2525,8 @@ undefined4 FUN_00513b60(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00513ee0 @ 0x00513EE0 ===== */
-int FUN_00513ee0(int param_1,float *param_2,float *param_3)
+/* ===== wave_effect_calc_verts @ 0x00513EE0 ===== */
+int wave_effect_calc_verts(int param_1,float *param_2,float *param_3)
 
 
 
@@ -3574,8 +3574,8 @@ void wave_effect_zero_edges(int param_1,uint param_2)
 
 }
 
-/* ===== FUN_00514cb0 @ 0x00514CB0 ===== */
-void FUN_00514cb0(int param_1)
+/* ===== wave_effect_calc_edges @ 0x00514CB0 ===== */
+void wave_effect_calc_edges(int param_1)
 
 
 
@@ -4010,7 +4010,7 @@ void wave_effect_draw(int param_1)
 
       local_c8 = local_ec;
 
-      iVar3 = FUN_00513ee0(param_1,&local_cc,&local_c8);
+      iVar3 = wave_effect_calc_verts(param_1,&local_cc,&local_c8);
 
       local_c4 = iVar3;
 
@@ -4058,7 +4058,7 @@ void wave_effect_draw(int param_1)
 
         local_c8 = local_bc + local_ec;
 
-        iVar3 = FUN_00513ee0(param_1,&local_cc,&local_c8);
+        iVar3 = wave_effect_calc_verts(param_1,&local_cc,&local_c8);
 
         local_c4 = iVar3;
 
@@ -4218,7 +4218,7 @@ void wave_effect_draw(int param_1)
 
         if (fVar6 != 0.0) {
 
-          FUN_00514cb0(param_1);
+          wave_effect_calc_edges(param_1);
 
           wave_effect_zero_edges(param_1,iVar3);
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (128 named) — decompiled, names from PS2 symbols
+ * 179 functions (129 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -241,7 +241,7 @@ void comm_send_recv_pair(int param_1)
 
         else {
 
-          FUN_0052b4e0(param_1,0x16,&local_18);
+          comm_stats_accumulate(param_1,0x16,&local_18);
 
         }
 
@@ -6077,7 +6077,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                 local_240 = (undefined1)((uint)*(undefined4 *)(iVar9 + 0x188) >> 0x18);
 
-                FUN_0052b4e0(DAT_005e02e8,10,&local_248);
+                comm_stats_accumulate(DAT_005e02e8,10,&local_248);
 
               }
 
@@ -6233,7 +6233,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_20c = 0;
 
-            FUN_0052b4e0(DAT_005e02e8,0x29,auStack_234);
+            comm_stats_accumulate(DAT_005e02e8,0x29,auStack_234);
 
           }
 
@@ -6355,7 +6355,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_20c = 0;
 
-            FUN_0052b4e0(DAT_005e02e8,0x29,auStack_234);
+            comm_stats_accumulate(DAT_005e02e8,0x29,auStack_234);
 
           }
 
@@ -6483,7 +6483,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_1e3 = uStack_1e3 & 0xffffff00;
 
-            FUN_0052b4e0(DAT_005e02e8,0x26,auStack_208);
+            comm_stats_accumulate(DAT_005e02e8,0x26,auStack_208);
 
           }
 
@@ -6619,7 +6619,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_210 = (undefined1)((uint)uVar8 >> 0x18);
 
-            FUN_0052b4e0(DAT_005e02e8,0x2a,auStack_234);
+            comm_stats_accumulate(DAT_005e02e8,0x2a,auStack_234);
 
           }
 
@@ -6691,7 +6691,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           uStack_203 = uVar2;
 
-          FUN_0052b4e0(DAT_005e02e8,0x1e,auStack_208);
+          comm_stats_accumulate(DAT_005e02e8,0x1e,auStack_208);
 
         }
 
@@ -6721,7 +6721,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           local_240 = (undefined1)((uint)*(undefined4 *)(iVar6 + 0x278) >> 0x18);
 
-          FUN_0052b4e0(DAT_005e02e8,10,&local_248);
+          comm_stats_accumulate(DAT_005e02e8,10,&local_248);
 
         }
 
@@ -6849,7 +6849,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               local_239 = 0;
 
-              FUN_0052b4e0(DAT_005e02e8,2,&local_23a);
+              comm_stats_accumulate(DAT_005e02e8,2,&local_23a);
 
               FUN_00425eb0(s_________________________0058017c);
 
@@ -7015,7 +7015,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                       uStack_102 = 0;
 
-                      FUN_0052b4e0(DAT_005e02e8,0x97,auStack_198);
+                      comm_stats_accumulate(DAT_005e02e8,0x97,auStack_198);
 
                       puVar13 = local_238;
 
@@ -7181,7 +7181,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                     uStack_20e = 0;
 
-                    FUN_0052b4e0(DAT_005e02e8,0x27,auStack_234);
+                    comm_stats_accumulate(DAT_005e02e8,0x27,auStack_234);
 
                     puVar13 = local_238;
 
@@ -7343,7 +7343,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                   uStack_1e4 = 0;
 
-                  FUN_0052b4e0(DAT_005e02e8,0x25,auStack_208);
+                  comm_stats_accumulate(DAT_005e02e8,0x25,auStack_208);
 
                   puVar13 = local_238;
 
@@ -7441,7 +7441,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
 LAB_005347d1:
 
-              FUN_0052b4e0(DAT_005e02e8,uVar8,puVar15);
+              comm_stats_accumulate(DAT_005e02e8,uVar8,puVar15);
 
             }
 
@@ -7655,7 +7655,7 @@ LAB_005347d1:
 
     local_239 = 0;
 
-    FUN_0052b4e0(DAT_005e02e8,2,&local_23a);
+    comm_stats_accumulate(DAT_005e02e8,2,&local_23a);
 
   }
 
@@ -16819,8 +16819,8 @@ void FUN_0053d5e0(byte *param_1)
 
 }
 
-/* ===== FUN_0053d600 @ 0x0053D600 ===== */
-void FUN_0053d600(int param_1)
+/* ===== nam_entry_finit @ 0x0053D600 ===== */
+void nam_entry_finit(int param_1)
 
 
 
@@ -17004,7 +17004,7 @@ LAB_0053d7a7:
 
   }
 
-  FUN_0053d600(param_1);
+  nam_entry_finit(param_1);
 
   return;
 

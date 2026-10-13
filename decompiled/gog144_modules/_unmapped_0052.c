@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (104 named) — decompiled, names from PS2 symbols
+ * 162 functions (105 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -8476,8 +8476,8 @@ void FUN_0052b4b0(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0052b4e0 @ 0x0052B4E0 ===== */
-void FUN_0052b4e0(int param_1,int param_2,undefined4 param_3)
+/* ===== comm_stats_accumulate @ 0x0052B4E0 ===== */
+void comm_stats_accumulate(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -13331,7 +13331,7 @@ void comm_0052b780_user_1(int param_1)
 
     if (param_1 != 0) {
 
-      FUN_0052b4e0(param_1,0x16,&local_18);
+      comm_stats_accumulate(param_1,0x16,&local_18);
 
       return;
 
@@ -13898,7 +13898,7 @@ void FUN_0052f6e0(undefined4 param_1)
 
     uStack_4 = (uint)CONCAT12(0x51,in_CX);
 
-    FUN_0052b4e0(param_1,2,(int)&uStack_4 + 2);
+    comm_stats_accumulate(param_1,2,(int)&uStack_4 + 2);
 
   }
 
@@ -14209,7 +14209,7 @@ void comm_0052b780_user_5(int param_1)
 
       if (param_1 != 0) {
 
-        FUN_0052b4e0(param_1,8,&local_8);
+        comm_stats_accumulate(param_1,8,&local_8);
 
         return;
 
@@ -14541,7 +14541,7 @@ void comm_0052b780_user_6(int param_1,int param_2)
 
     if (param_2 != 0) {
 
-      FUN_0052b4e0(DAT_005e02e8,0x2e,local_30);
+      comm_stats_accumulate(DAT_005e02e8,0x2e,local_30);
 
       return;
 
@@ -14699,7 +14699,7 @@ void comm_obj_sync(int param_1)
 
       uStack_3 = 0;
 
-      FUN_0052b4e0(DAT_005e02e8,0x16,&local_18);
+      comm_stats_accumulate(DAT_005e02e8,0x16,&local_18);
 
       return;
 
@@ -14755,7 +14755,7 @@ void comm_obj_sync(int param_1)
 
     uStack_7 = 0;
 
-    FUN_0052b4e0(DAT_005e02e8,0x12,&local_18);
+    comm_stats_accumulate(DAT_005e02e8,0x12,&local_18);
 
   }
 

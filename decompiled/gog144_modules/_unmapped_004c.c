@@ -4384,7 +4384,7 @@ void reaper_lock_user_2(int param_1)
 
                   giftshopview_enable(0,iVar4);
 
-                  fVar6 = (float10)FUN_004a7630(iVar4,0);
+                  fVar6 = (float10)tracer_entry_angle(iVar4,0);
 
                   *(float *)(iVar3 + 200) = (float)fVar6;
 

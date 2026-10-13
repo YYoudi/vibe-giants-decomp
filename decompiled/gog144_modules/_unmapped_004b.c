@@ -5246,7 +5246,7 @@ LAB_004b76fe:
 
       giftshopview_enable(0,uVar5);
 
-      fVar14 = (float10)FUN_004a7630(uVar5,0);
+      fVar14 = (float10)tracer_entry_angle(uVar5,0);
 
       *(float *)(param_1 + 200) = (float)fVar14;
 

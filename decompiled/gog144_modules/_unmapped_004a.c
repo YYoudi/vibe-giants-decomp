@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (97 named) — decompiled, names from PS2 symbols
+ * 131 functions (98 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -6918,8 +6918,8 @@ void ObjectCalculateTransform(int param_1)
 
 }
 
-/* ===== FUN_004a7630 @ 0x004A7630 ===== */
-float10 FUN_004a7630(int param_1,int param_2)
+/* ===== tracer_entry_angle @ 0x004A7630 ===== */
+float10 tracer_entry_angle(int param_1,int param_2)
 
 
 

@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052b4e0,FUN_0052b4e0,,comm_stats_accumulate,0.9,llm-w151,per-player counters 005dde40-4c block
+00513ee0,FUN_00513ee0,,wave_effect_calc_verts,0.9,llm-w151,caller wave_effect_draw
+0053d600,FUN_0053d600,,nam_entry_finit,0.9,llm-w151,per-mode free caller nam_entry_ctor
+004a7630,FUN_004a7630,,tracer_entry_angle,0.9,llm-w151,0x44 tracer entry read callers reaper/kbos
+00514cb0,FUN_00514cb0,,wave_effect_calc_edges,0.9,llm-w151,sibling of zero_edges caller wave_draw

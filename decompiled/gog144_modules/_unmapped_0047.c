@@ -6972,7 +6972,7 @@ LAB_0047d6b8:
 
       giftshopview_enable(0,uVar4);
 
-      fVar9 = (float10)FUN_004a7630(uVar4,0);
+      fVar9 = (float10)tracer_entry_angle(uVar4,0);
 
       *(float *)(iVar7 + 200) = (float)fVar9;
 
