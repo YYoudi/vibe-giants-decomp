@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (32 named) — decompiled, names from PS2 symbols
+ * 39 functions (34 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -2999,8 +2999,8 @@ bool kabutoai_is_punch_anim__FP6OBJECT_2(int param_1)
 
 }
 
-/* ===== FUN_004d4a00 @ 0x004D4A00 ===== */
-void FUN_004d4a00(int param_1)
+/* ===== reaper_state_set98 @ 0x004D4A00 ===== */
+void reaper_state_set98(int param_1)
 
 
 
@@ -3016,8 +3016,8 @@ void FUN_004d4a00(int param_1)
 
 }
 
-/* ===== FUN_004d4a20 @ 0x004D4A20 ===== */
-void FUN_004d4a20(int param_1)
+/* ===== reaper_state98_advance @ 0x004D4A20 ===== */
+void reaper_state98_advance(int param_1)
 
 
 

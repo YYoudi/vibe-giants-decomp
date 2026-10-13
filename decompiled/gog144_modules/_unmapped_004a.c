@@ -11014,7 +11014,7 @@ void reaper_ability_3dsound(int param_1)
 
               if (iVar3 != 0) {
 
-                FUN_004d4a20(*(undefined4 *)(iVar4 + 0xc));
+                reaper_state98_advance(*(undefined4 *)(iVar4 + 0xc));
 
                 goto LAB_004ac9df;
 
@@ -11233,7 +11233,7 @@ LAB_004acbe1:
 
           else {
 
-            FUN_004d4a00(iVar3);
+            reaper_state_set98(iVar3);
 
           }
 

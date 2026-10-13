@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004e41e0,FUN_004e41e0,,obj_turn_toward_point,0.9,llm-w203,dirfcalc+playerobj_turn wrapper
+004d4a00,FUN_004d4a00,,reaper_state_set98,0.9,llm-w203,sets 0x98 when not player caller sf_valid
+004d4a20,FUN_004d4a20,,reaper_state98_advance,0.9,llm-w203,0x98 -> 0x47/0xe6 caller reaper_ability
+004c2320,FUN_004c2320,,reaper_mana_decrement,0.9,llm-w203,0x351 slot -= 0xd40 mana caller cast
+004b6e20,FUN_004b6e20,,base_slot9or1_get,0.9,llm-w203,multi-slot getter alive_at_all callees
+004bc800,FUN_004bc800,,tracer_aim_fire,0.9,llm-w203,gun_find+normalize+tracer 0x294/2dc tables

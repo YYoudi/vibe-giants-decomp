@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (81 named) — decompiled, names from PS2 symbols
+ * 90 functions (83 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3398,8 +3398,8 @@ undefined4 base_slot11_get(int param_1)
 
 }
 
-/* ===== FUN_004b6e20 @ 0x004B6E20 ===== */
-undefined4 FUN_004b6e20(int param_1)
+/* ===== base_slot9or1_get @ 0x004B6E20 ===== */
+undefined4 base_slot9or1_get(int param_1)
 
 
 
@@ -8573,8 +8573,8 @@ int audio_listener_update(undefined4 param_1,float param_2,float param_3,float p
 
 }
 
-/* ===== FUN_004bc800 @ 0x004BC800 ===== */
-void FUN_004bc800(int param_1,float *param_2,undefined4 *param_3)
+/* ===== tracer_aim_fire @ 0x004BC800 ===== */
+void tracer_aim_fire(int param_1,float *param_2,undefined4 *param_3)
 
 
 

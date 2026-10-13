@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (58 named) — decompiled, names from PS2 symbols
+ * 64 functions (59 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -1578,7 +1578,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     reaper_finish_teleport(param_1,iVar2 + 0xf4c);
 
-    FUN_004c2320(iVar1);
+    reaper_mana_decrement(iVar1);
 
     *(undefined4 *)(iVar2 + 0xda8) = *(undefined4 *)(DAT_00632ed8 + 0x1508);
 
@@ -1586,7 +1586,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
   case 0x19:
 
-    FUN_004c2320(param_1);
+    reaper_mana_decrement(param_1);
 
     reaper_ability_playersound(iVar1,iVar2 + 0xf4c);
 
@@ -1610,7 +1610,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
   case 0x1c:
 
-    FUN_004c2320(param_1);
+    reaper_mana_decrement(param_1);
 
     reaper_ability_playersound3(iVar1,iVar2 + 0xf4c);
 
@@ -1828,7 +1828,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
   case 0x21:
 
-    FUN_004c2320(param_1);
+    reaper_mana_decrement(param_1);
 
     reaper_tornado_create(iVar1,iVar2 + 0xf4c,0xffffffff,0xffffffff);
 
@@ -2363,8 +2363,8 @@ void reaper_ability_playersound3(int param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_004c2320 @ 0x004C2320 ===== */
-void FUN_004c2320(int param_1)
+/* ===== reaper_mana_decrement @ 0x004C2320 ===== */
+void reaper_mana_decrement(int param_1)
 
 
 
@@ -3367,7 +3367,9 @@ void FUN_004c4df0(int param_1)
 
        (iVar1 = game_mode_set3_check(DAT_00632f18), iVar1 == 0)))) &&
 
-     ((iVar2 = *(int *)(iVar2 + 0xcfc), iVar2 != 0 && (iVar2 = FUN_004b6e20(iVar2), iVar2 != 0)))) {
+     ((iVar2 = *(int *)(iVar2 + 0xcfc), iVar2 != 0 && (iVar2 = base_slot9or1_get(iVar2), iVar2 != 0)
+
+      ))) {
 
     bldg_get_refpt_worldloc(iVar2,10,local_c);
 

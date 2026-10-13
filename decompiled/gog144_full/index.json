@@ -6057,12 +6057,12 @@
  "0x004AC860": {
   "name": "reaper_ability_3dsound",
   "named": true,
-  "len": 2791
+  "len": 2801
  },
  "0x004ACA20": {
   "name": "sf_is_valid_target__FP6OBJECT",
   "named": true,
-  "len": 3762
+  "len": 3768
  },
  "0x004AD190": {
   "name": "sound_3dpos_user",
@@ -6285,9 +6285,9 @@
   "len": 369
  },
  "0x004B6E20": {
-  "name": "FUN_004b6e20",
-  "named": false,
-  "len": 491
+  "name": "base_slot9or1_get",
+  "named": true,
+  "len": 496
  },
  "0x004B6E80": {
   "name": "base_slot9_get",
@@ -6490,9 +6490,9 @@
   "len": 1715
  },
  "0x004BC800": {
-  "name": "FUN_004bc800",
-  "named": false,
-  "len": 614
+  "name": "tracer_aim_fire",
+  "named": true,
+  "len": 617
  },
  "0x004BC880": {
   "name": "obj_aim_calc",
@@ -6627,7 +6627,7 @@
  "0x004C15F0": {
   "name": "reaper_cast_cloak_firecircle",
   "named": true,
-  "len": 9248
+  "len": 9284
  },
  "0x004C1DE0": {
   "name": "reaper_can_do_spell_anim__FP6OBJECT",
@@ -6665,9 +6665,9 @@
   "len": 947
  },
  "0x004C2320": {
-  "name": "FUN_004c2320",
-  "named": false,
-  "len": 307
+  "name": "reaper_mana_decrement",
+  "named": true,
+  "len": 316
  },
  "0x004C26D0": {
   "name": "reaper_init_trails",
@@ -6702,7 +6702,7 @@
  "0x004C4DF0": {
   "name": "FUN_004c4df0",
   "named": false,
-  "len": 809
+  "len": 822
  },
  "0x004C4EC0": {
   "name": "mecc_drop_carried_object_2",
@@ -6985,14 +6985,14 @@
   "len": 111
  },
  "0x004D4A00": {
-  "name": "FUN_004d4a00",
-  "named": false,
-  "len": 187
+  "name": "reaper_state_set98",
+  "named": true,
+  "len": 193
  },
  "0x004D4A20": {
-  "name": "FUN_004d4a20",
-  "named": false,
-  "len": 368
+  "name": "reaper_state98_advance",
+  "named": true,
+  "len": 378
  },
  "0x004D4AE0": {
   "name": "ripnest_move",
@@ -7235,9 +7235,9 @@
   "len": 3157
  },
  "0x004E41E0": {
-  "name": "FUN_004e41e0",
-  "named": false,
-  "len": 564
+  "name": "obj_turn_toward_point",
+  "named": true,
+  "len": 573
  },
  "0x004E4280": {
   "name": "rpman_turn_towards",
