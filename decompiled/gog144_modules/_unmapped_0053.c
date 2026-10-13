@@ -8258,7 +8258,7 @@ void comm_0052b430_user_big(void)
 
   if (iVar2 != 0) {
 
-    FUN_0052b460(&local_8,&local_20);
+    comm_player_enum_start(&local_8,&local_20);
 
     local_4 = comm_0052b430();
 
@@ -8757,7 +8757,7 @@ void comm_0052b430_user_bigger(void)
 
       if (iVar2 != 0) {
 
-        FUN_0052b460(&local_8,&local_20);
+        comm_player_enum_start(&local_8,&local_20);
 
         local_4 = comm_0052b430();
 

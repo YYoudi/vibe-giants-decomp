@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (86 named) — decompiled, names from PS2 symbols
+ * 100 functions (87 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -332,7 +332,7 @@ void collgrid_collide_c(undefined4 param_1,undefined4 *param_2,int *param_3)
 
     if (0x7f < (int)((iVar11 - iVar10 ^ uVar13) - uVar13)) {
 
-      FUN_00518f00();
+      str_copy_to_static();
 
     }
 
@@ -344,7 +344,7 @@ void collgrid_collide_c(undefined4 param_1,undefined4 *param_2,int *param_3)
 
     if (0xff < iVar12 - iVar11) {
 
-      FUN_00518f00();
+      str_copy_to_static();
 
     }
 
@@ -2951,8 +2951,8 @@ float10 get_floor_z_point_plat(float *param_1,int *param_2)
 
 }
 
-/* ===== FUN_004143f0 @ 0x004143F0 ===== */
-float10 FUN_004143f0(undefined4 param_1)
+/* ===== terrain_query_z @ 0x004143F0 ===== */
+float10 terrain_query_z(undefined4 param_1)
 
 
 

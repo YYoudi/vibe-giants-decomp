@@ -8478,7 +8478,7 @@ LAB_0040b74d:
 
     piVar4[0xb] = (int)((float)piVar4[0xb] - fVar2);
 
-    fVar9 = (float10)FUN_004143f0(pfVar1);
+    fVar9 = (float10)terrain_query_z(pfVar1);
 
     if (((float10)(float)piVar4[4] <= fVar9) ||
 

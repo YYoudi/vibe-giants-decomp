@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00518f00,FUN_00518f00,,str_copy_to_static,0.9,llm-w194,fixed-dest 005dcfb8 copy callers collgrid
+004143f0,FUN_004143f0,,terrain_query_z,0.9,llm-w194,ground query wrapper returns Z callers particles/kbos
+0052f6e0,FUN_0052f6e0,,comm_name_packet_send,0.9,llm-w194,0x51 tag + stats callers comm_player_name
+0052b460,FUN_0052b460,,comm_player_enum_start,0.9,llm-w194,count + table ptr iterator init

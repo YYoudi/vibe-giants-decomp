@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (161 named) — decompiled, names from PS2 symbols
+ * 186 functions (162 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -8484,8 +8484,8 @@ LAB_00518e60:
 
 }
 
-/* ===== FUN_00518f00 @ 0x00518F00 ===== */
-void FUN_00518f00(char *param_1)
+/* ===== str_copy_to_static @ 0x00518F00 ===== */
+void str_copy_to_static(char *param_1)
 
 
 
@@ -12258,7 +12258,7 @@ void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_
 
   _DAT_005dd928 = &LAB_005179e0;
 
-  _DAT_005dd92c = FUN_00518f00;
+  _DAT_005dd92c = str_copy_to_static;
 
   _DAT_005dd930 = &LAB_0051eab0;
 

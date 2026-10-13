@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (131 named) — decompiled, names from PS2 symbols
+ * 162 functions (133 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -900,7 +900,7 @@ void comm_player_name(int param_1,int param_2)
 
       else {
 
-        FUN_0052f6e0(param_1);
+        comm_name_packet_send(param_1);
 
       }
 
@@ -7957,7 +7957,7 @@ void comm_chatlog_write(void)
 
           else if ((((int)piVar7 < 0x5de6dc) - 1 & uVar1) != DAT_005def5c) {
 
-            FUN_0052f6e0(iVar6);
+            comm_name_packet_send(iVar6);
 
             if ((int)piVar7 < 0x5de6dc) {
 
@@ -8390,8 +8390,8 @@ int comm_0052b430(void)
 
 }
 
-/* ===== FUN_0052b460 @ 0x0052B460 ===== */
-void FUN_0052b460(int *param_1,undefined4 *param_2)
+/* ===== comm_player_enum_start @ 0x0052B460 ===== */
+void comm_player_enum_start(int *param_1,undefined4 *param_2)
 
 
 
@@ -11987,7 +11987,7 @@ void comm_player_name_user(void)
 
   if (iVar2 != 0) {
 
-    FUN_0052b460(&local_108,&local_104);
+    comm_player_enum_start(&local_108,&local_104);
 
     iVar2 = 0;
 
@@ -13881,8 +13881,8 @@ void comm_audio_vol_a(undefined4 param_1)
 
 }
 
-/* ===== FUN_0052f6e0 @ 0x0052F6E0 ===== */
-void FUN_0052f6e0(undefined4 param_1)
+/* ===== comm_name_packet_send @ 0x0052F6E0 ===== */
+void comm_name_packet_send(undefined4 param_1)
 
 
 

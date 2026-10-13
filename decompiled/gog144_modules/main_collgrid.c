@@ -155,7 +155,7 @@ void main_collgrid_00410200(int param_1)
 
       if (600 < (int)local_28c - (int)local_260) {
 
-        FUN_00518f00();
+        str_copy_to_static();
 
       }
 
@@ -243,7 +243,7 @@ void main_collgrid_00410200(int param_1)
 
       if (600 < (int)local_28c - (int)local_260) {
 
-        FUN_00518f00();
+        str_copy_to_static();
 
       }
 
@@ -371,7 +371,7 @@ void main_collgrid_00410200(int param_1)
 
         if (0x7f < (int)(((int)fVar6 - (int)local_288 ^ uVar2) - uVar2)) {
 
-          FUN_00518f00();
+          str_copy_to_static();
 
         }
 
@@ -381,7 +381,7 @@ void main_collgrid_00410200(int param_1)
 
         if (0xff < local_27c - (int)fVar6) {
 
-          FUN_00518f00();
+          str_copy_to_static();
 
         }
 
@@ -401,7 +401,7 @@ void main_collgrid_00410200(int param_1)
 
     if (600 < (int)pcVar9) {
 
-      FUN_00518f00();
+      str_copy_to_static();
 
     }
 

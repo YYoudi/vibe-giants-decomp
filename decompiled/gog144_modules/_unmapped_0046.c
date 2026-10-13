@@ -2992,7 +2992,7 @@ undefined4 kbos_offspring_process_2(int param_1,uint *param_2)
 
     uVar2 = param_2[1];
 
-    fVar4 = (float10)FUN_004143f0(param_2);
+    fVar4 = (float10)terrain_query_z(param_2);
 
     *(uint *)(param_1 + 0x178) = uVar1;
 
@@ -3051,7 +3051,7 @@ undefined4 kbos_offspring_process(int param_1,uint *param_2,undefined4 param_3)
 
     uVar3 = param_2[1];
 
-    fVar5 = (float10)FUN_004143f0(param_2);
+    fVar5 = (float10)terrain_query_z(param_2);
 
     *(uint *)(param_1 + 0x178) = uVar2;
 

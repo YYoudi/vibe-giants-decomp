@@ -7148,7 +7148,7 @@ LAB_00496ce5:
 
     if (DAT_0055c9e0 < 1) {
 
-      FUN_00518f00(&DAT_00657400);
+      str_copy_to_static(&DAT_00657400);
 
       DAT_0055c9e0 = DAT_0055c9e0 + -1;
 
@@ -7526,7 +7526,7 @@ LAB_00497226:
 
     if (DAT_0055c9e0 < 1) {
 
-      FUN_00518f00(&DAT_00657400);
+      str_copy_to_static(&DAT_00657400);
 
       DAT_0055c9e0 = DAT_0055c9e0 + -1;
 
@@ -7989,7 +7989,7 @@ LAB_00497c25:
 
       }
 
-      FUN_00518f00(&DAT_00657400);
+      str_copy_to_static(&DAT_00657400);
 
       DAT_0055c9e0 = DAT_0055c9e0 + -1;
 
