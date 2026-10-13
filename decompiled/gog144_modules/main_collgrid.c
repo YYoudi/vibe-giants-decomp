@@ -23,7 +23,13 @@ void collgrid_clear_grid(int param_1)
 }
 
 /* ===== main_collgrid_00410200 @ 0x00410200 ===== */
-void main_collgrid_00410200(int param_1)
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void main_collgrid_00410200(OBJECT *obj)
 
 
 
@@ -73,15 +79,15 @@ void main_collgrid_00410200(int param_1)
 
   
 
-  if (*(int *)(param_1 + 0x21c) != 0) {
+  if (obj->gap_21C != 0) {
 
     return;
 
   }
 
-  uVar2 = *(uint *)(param_1 + 0x1c8) & 0x800;
+  uVar2 = obj->acc_grenade_do_stopped & 0x800;
 
-  if ((*(uint *)(param_1 + 0xd8) & 0x4000c000) != 0 || uVar2 != 0) {
+  if ((*(uint *)&obj->field_0xd8 & 0x4000c000) != 0 || uVar2 != 0) {
 
     return;
 
@@ -93,7 +99,7 @@ void main_collgrid_00410200(int param_1)
 
   }
 
-  if ((*(uint *)(param_1 + 0x1c8) & 0x400000) != 0) {
+  if ((obj->acc_grenade_do_stopped & 0x400000) != 0) {
 
     return;
 
@@ -109,27 +115,27 @@ void main_collgrid_00410200(int param_1)
 
   }
 
-  if ((*(uint *)(param_1 + 0xd8) & 0x80000) == 0) {
+  if ((*(uint *)&obj->field_0xd8 & 0x80000) == 0) {
 
-    if (*(float *)(param_1 + 0x14c) == 0.0) {
+    if ((float)obj->field_14C == 0.0) {
 
       return;
 
     }
 
-    fVar5 = *(float *)(param_1 + 0xa8) - *(float *)(param_1 + 0x140);
+    fVar5 = *(float *)&obj->field_0xa8 - (float)obj->acc_TargetCenter;
 
   }
 
   else {
 
-    fVar5 = *(float *)(param_1 + 0x1d4);
+    fVar5 = (float)obj->acc_popup_pre_logic;
 
   }
 
   if (fVar5 <= 4.0) {
 
-    uVar2 = *(uint *)(param_1 + 0x1c8);
+    uVar2 = obj->acc_grenade_do_stopped;
 
     if ((uVar2 & 0x80000) != 0) {
 
@@ -137,7 +143,7 @@ void main_collgrid_00410200(int param_1)
 
       local_260[0] = 1;
 
-      pfVar7 = (float *)(*(int *)(*(int *)(param_1 + 8) + 0x400) + 0x44);
+      pfVar7 = (float *)(*(int *)(obj->field_8 + 0x400) + 0x44);
 
       pfVar10 = local_278;
 
@@ -151,7 +157,7 @@ void main_collgrid_00410200(int param_1)
 
       }
 
-      main_collgrid_00410720(param_1,CONCAT44(&local_28c,local_278));
+      main_collgrid_00410720(obj,CONCAT44(&local_28c,local_278));
 
       if (600 < (int)local_28c - (int)local_260) {
 
@@ -159,9 +165,7 @@ void main_collgrid_00410200(int param_1)
 
       }
 
-      mem_free_tagged(*(undefined4 *)(param_1 + 0x21c),s_C__Giants_source_main_collgrid_c_00555464,
-
-                      0x136);
+      mem_free_tagged(obj->gap_21C,s_C__Giants_source_main_collgrid_c_00555464,0x136);
 
       puVar4 = (undefined4 *)
 
@@ -169,7 +173,7 @@ void main_collgrid_00410200(int param_1)
 
                             s_C__Giants_source_main_collgrid_c_00555464,0x137);
 
-      *(undefined4 **)(param_1 + 0x21c) = puVar4;
+      obj->gap_21C = (dword)puVar4;
 
       puVar8 = (undefined4 *)local_260;
 
@@ -199,13 +203,13 @@ void main_collgrid_00410200(int param_1)
 
     if ((uVar2 & 0x100000) != 0) {
 
-      main_collgrid_00410c70(param_1,&local_284,&local_288,&local_27c);
+      main_collgrid_00410c70(obj,&local_284,&local_288,&local_27c);
 
       local_28c = local_260 + 1;
 
       local_260[0] = 2;
 
-      pfVar7 = (float *)(*(int *)(*(int *)(param_1 + 8) + 0x400) + 0x44);
+      pfVar7 = (float *)(*(int *)(obj->field_8 + 0x400) + 0x44);
 
       pfVar10 = local_278;
 
@@ -221,9 +225,9 @@ void main_collgrid_00410200(int param_1)
 
       local_26c = local_284;
 
-      main_collgrid_00410720(param_1,local_278,&local_28c);
+      main_collgrid_00410720(obj,local_278,&local_28c);
 
-      pfVar7 = (float *)(*(int *)(*(int *)(param_1 + 8) + 0x400) + 0x44);
+      pfVar7 = (float *)(*(int *)(obj->field_8 + 0x400) + 0x44);
 
       pfVar10 = local_278;
 
@@ -239,7 +243,7 @@ void main_collgrid_00410200(int param_1)
 
       local_278[0] = local_288;
 
-      main_collgrid_00410720(param_1,local_278,&local_28c);
+      main_collgrid_00410720(obj,local_278,&local_28c);
 
       if (600 < (int)local_28c - (int)local_260) {
 
@@ -247,9 +251,7 @@ void main_collgrid_00410200(int param_1)
 
       }
 
-      mem_free_tagged(*(undefined4 *)(param_1 + 0x21c),s_C__Giants_source_main_collgrid_c_00555464,
-
-                      0x1b2);
+      mem_free_tagged(obj->gap_21C,s_C__Giants_source_main_collgrid_c_00555464,0x1b2);
 
       puVar4 = (undefined4 *)
 
@@ -257,7 +259,7 @@ void main_collgrid_00410200(int param_1)
 
                             s_C__Giants_source_main_collgrid_c_00555464,0x1b3);
 
-      *(undefined4 **)(param_1 + 0x21c) = puVar4;
+      obj->gap_21C = (dword)puVar4;
 
       puVar8 = (undefined4 *)local_260;
 
@@ -301,31 +303,31 @@ void main_collgrid_00410200(int param_1)
 
     }
 
-    local_278[0] = *(float *)(param_1 + 0xa0);
+    local_278[0] = (float)obj->gap_A0;
 
-    local_278[1] = *(float *)(param_1 + 0xa4);
+    local_278[1] = *(float *)&obj->field_0xa4;
 
-    local_278[2] = *(float *)(param_1 + 0xa8);
+    local_278[2] = *(float *)&obj->field_0xa8;
 
-    local_28c = *(undefined1 **)(param_1 + 0x154);
+    local_28c = (undefined1 *)obj->gap_154;
 
     local_260[0] = 5;
 
-    FUN_005435a5((double)((local_278[1] - (float)local_28c) * 0.2 + 0.5));
+    main_005435a5((double)((local_278[1] - (float)local_28c) * 0.2 + 0.5));
 
     fVar5 = (float)__ftol();
 
-    FUN_005435a5((double)((local_278[1] + (float)local_28c) * 0.2 + 0.5));
+    main_005435a5((double)((local_278[1] + (float)local_28c) * 0.2 + 0.5));
 
     iVar3 = __ftol();
 
     local_284 = iVar3;
 
-    FUN_005435a5((double)((local_278[0] - (float)local_28c) * 0.2 + 0.5));
+    main_005435a5((double)((local_278[0] - (float)local_28c) * 0.2 + 0.5));
 
     fVar6 = (float)__ftol();
 
-    FUN_005435a5((double)((local_278[0] + (float)local_28c) * 0.2 + 0.5));
+    main_005435a5((double)((local_278[0] + (float)local_28c) * 0.2 + 0.5));
 
     local_25b = __ftol();
 
@@ -359,11 +361,11 @@ void main_collgrid_00410200(int param_1)
 
         local_288 = fVar6;
 
-        FUN_005435a5((double)((local_278[0] - local_280) * 0.2 + 0.5));
+        main_005435a5((double)((local_278[0] - local_280) * 0.2 + 0.5));
 
         fVar6 = (float)__ftol();
 
-        FUN_005435a5((double)((local_280 + local_278[0]) * 0.2 + 0.5));
+        main_005435a5((double)((local_280 + local_278[0]) * 0.2 + 0.5));
 
         local_27c = __ftol();
 
@@ -405,9 +407,7 @@ void main_collgrid_00410200(int param_1)
 
     }
 
-    mem_free_tagged(*(undefined4 *)(param_1 + 0x21c),s_C__Giants_source_main_collgrid_c_00555464,
-
-                    0x8e);
+    mem_free_tagged(obj->gap_21C,s_C__Giants_source_main_collgrid_c_00555464,0x8e);
 
     puVar4 = (undefined4 *)
 
@@ -415,7 +415,7 @@ void main_collgrid_00410200(int param_1)
 
                           0x8f);
 
-    *(undefined4 **)(param_1 + 0x21c) = puVar4;
+    obj->gap_21C = (dword)puVar4;
 
     puVar8 = (undefined4 *)local_260;
 
@@ -520,17 +520,17 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
   local_18 = iVar9;
 
-  FUN_005435a5((double)*(float *)(iVar9 + 0x44));
+  main_005435a5((double)*(float *)(iVar9 + 0x44));
 
   iVar4 = __ftol();
 
   local_10 = iVar4;
 
-  FUN_005435a5((double)*(float *)(iVar9 + 0x50));
+  main_005435a5((double)*(float *)(iVar9 + 0x50));
 
   iVar5 = __ftol();
 
-  FUN_005435a5((double)(*(float *)(iVar9 + 0x4c) * 0.25));
+  main_005435a5((double)(*(float *)(iVar9 + 0x4c) * 0.25));
 
   iVar6 = __ftol();
 
@@ -538,7 +538,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
   iVar13 = iVar5 + 1;
 
-  FUN_005435a5((double)(*(float *)(iVar9 + 0x58) * 0.25));
+  main_005435a5((double)(*(float *)(iVar9 + 0x58) * 0.25));
 
   iVar4 = __ftol();
 
@@ -578,7 +578,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
       local_20 = 0xffff;
 
-      iVar4 = FUN_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
+      iVar4 = main_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
 
       while (iVar4 != 0) {
 
@@ -652,7 +652,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         }
 
-        FUN_005435a5((double)fVar17);
+        main_005435a5((double)fVar17);
 
         iVar8 = __ftol();
 
@@ -660,7 +660,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         iVar8 = iVar8 - local_10;
 
-        FUN_005435a5((double)local_44);
+        main_005435a5((double)local_44);
 
         iVar4 = __ftol();
 
@@ -668,13 +668,13 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         local_c = iVar4;
 
-        FUN_005435a5((double)(local_48 * 0.25));
+        main_005435a5((double)(local_48 * 0.25));
 
         iVar9 = __ftol();
 
         iVar9 = iVar9 - iVar6;
 
-        FUN_005435a5((double)(local_40 * 0.25));
+        main_005435a5((double)(local_40 * 0.25));
 
         iVar10 = __ftol();
 
@@ -718,7 +718,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
         }
 
-        iVar4 = FUN_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
+        iVar4 = main_00430e10(&local_1c,&local_20,&local_24,&local_28,&local_2c);
 
         iVar9 = local_18;
 
@@ -867,7 +867,11 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 }
 
 /* ===== main_collgrid_00411140 @ 0x00411140 ===== */
-void main_collgrid_00411140(int param_1)
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void main_collgrid_00411140(OBJECT *param_1)
 
 
 
@@ -877,37 +881,45 @@ void main_collgrid_00411140(int param_1)
 
   byte bVar2;
 
-  ushort uVar3;
+  int iVar3;
 
-  ushort uVar4;
+  char *pcVar4;
 
-  char *pcVar5;
+  float fVar5;
 
   float fVar6;
 
   float fVar7;
 
-  float fVar8;
+  int iVar8;
 
   int iVar9;
 
   int iVar10;
 
-  int iVar11;
+  undefined4 *puVar11;
 
-  undefined4 *puVar12;
+  uint uVar12;
 
-  uint uVar13;
+  dword *pdVar13;
 
-  float *pfVar14;
+  uint uVar14;
 
-  uint uVar15;
+  float *pfVar15;
 
-  float *pfVar16;
+  undefined4 *puVar16;
 
-  undefined4 *puVar17;
+  float10 fVar17;
 
-  float10 fVar18;
+  OBJECT *pOVar18;
+
+  float *pfVar19;
+
+  OBJECT *pOVar20;
+
+  OBJECT *pOVar21;
+
+  undefined8 uVar22;
 
   float local_bc;
 
@@ -993,89 +1005,89 @@ void main_collgrid_00411140(int param_1)
 
   
 
-  iVar9 = FUN_0042b1d0();
+  iVar8 = main_0042b1d0();
 
-  local_7c = *(int *)(*(int *)(param_1 + 8) + 0x400 + iVar9 * 4);
+  local_7c = *(int *)(param_1->field_8 + 0x400 + iVar8 * 4);
 
-  pfVar14 = (float *)(param_1 + 0x27c);
+  pdVar13 = &param_1->acc_teammecc_get_new_wander_;
 
-  pfVar16 = local_20;
+  pfVar15 = local_20;
 
-  for (iVar9 = 6; iVar9 != 0; iVar9 = iVar9 + -1) {
+  for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
 
-    *pfVar16 = *pfVar14;
+    *pfVar15 = (float)*pdVar13;
 
-    pfVar14 = pfVar14 + 1;
+    pdVar13 = pdVar13 + 1;
 
-    pfVar16 = pfVar16 + 1;
+    pfVar15 = pfVar15 + 1;
 
   }
 
   if (local_20[0] != local_20[3]) {
 
-    FUN_005435a5((double)(local_20[0] * 0.2 + 0.5));
+    main_005435a5((double)(local_20[0] * 0.2 + 0.5));
+
+    iVar8 = __ftol();
+
+    local_68 = iVar8;
+
+    main_005435a5((double)(local_20[1] * 0.2 + 0.5));
 
     iVar9 = __ftol();
 
-    local_68 = iVar9;
+    local_4c = iVar9;
 
-    FUN_005435a5((double)(local_20[1] * 0.2 + 0.5));
+    main_005435a5((double)(local_20[3] * 0.2 + 0.5));
 
     iVar10 = __ftol();
 
-    local_4c = iVar10;
+    local_58 = iVar10;
 
-    FUN_005435a5((double)(local_20[3] * 0.2 + 0.5));
-
-    iVar11 = __ftol();
-
-    local_58 = iVar11;
-
-    FUN_005435a5((double)(local_10 * 0.2 + 0.5));
+    main_005435a5((double)(local_10 * 0.2 + 0.5));
 
     local_44 = __ftol();
 
-    local_3c = (iVar11 - iVar9) + 1;
+    local_3c = (iVar10 - iVar8) + 1;
 
-    uVar15 = ((local_44 - iVar10) + 1) * local_3c + 9;
+    uVar14 = ((local_44 - iVar9) + 1) * local_3c + 9;
 
-    puVar12 = (undefined4 *)
+    puVar11 = (undefined4 *)
 
-              FUN_0053a700(6,uVar15,s_collpgrid_005555b4,s_C__Giants_source_main_collgrid_c_00555464
+              FUN_0053a700(6,uVar14,s_collpgrid_005555b4,s_C__Giants_source_main_collgrid_c_00555464
 
                            ,0x202);
 
-    puVar17 = puVar12;
+    puVar16 = puVar11;
 
-    for (uVar13 = uVar15 >> 2; uVar13 != 0; uVar13 = uVar13 - 1) {
+    for (uVar12 = uVar14 >> 2; uVar12 != 0; uVar12 = uVar12 - 1) {
 
-      *puVar17 = 0;
+      *puVar16 = 0;
 
-      puVar17 = puVar17 + 1;
-
-    }
-
-    for (uVar15 = uVar15 & 3; uVar15 != 0; uVar15 = uVar15 - 1) {
-
-      *(undefined1 *)puVar17 = 0;
-
-      puVar17 = (undefined4 *)((int)puVar17 + 1);
+      puVar16 = puVar16 + 1;
 
     }
 
-    *(undefined4 **)(param_1 + 0x21c) = puVar12;
+    for (uVar14 = uVar14 & 3; uVar14 != 0; uVar14 = uVar14 - 1) {
 
-    *(undefined1 *)puVar12 = 3;
+      *(undefined1 *)puVar16 = 0;
 
-    local_60 = (undefined2 *)((int)puVar12 + 1);
+      puVar16 = (undefined4 *)((int)puVar16 + 1);
 
-    *(undefined2 *)((int)puVar12 + 3) = (undefined2)local_4c;
+    }
 
-    *local_60 = (short)iVar9;
+    param_1->gap_21C = (dword)puVar11;
 
-    *(undefined2 *)((int)puVar12 + 5) = (undefined2)local_58;
+    *(undefined1 *)puVar11 = 3;
 
-    *(undefined2 *)((int)puVar12 + 7) = (undefined2)local_44;
+    local_60 = (undefined2 *)((int)puVar11 + 1);
+
+    *(undefined2 *)((int)puVar11 + 3) = (undefined2)local_4c;
+
+    *local_60 = (short)iVar8;
+
+    *(undefined2 *)((int)puVar11 + 5) = (undefined2)local_58;
+
+    *(undefined2 *)((int)puVar11 + 7) = (undefined2)local_44;
 
     local_5c = 0;
 
@@ -1083,7 +1095,7 @@ void main_collgrid_00411140(int param_1)
 
       local_64 = (undefined4 *)(local_7c + 0x84);
 
-      iVar9 = local_7c;
+      iVar8 = local_7c;
 
       do {
 
@@ -1091,47 +1103,63 @@ void main_collgrid_00411140(int param_1)
 
         local_40 = 0xffff;
 
-        iVar10 = FUN_00430e10(&local_48,&local_40,&local_50,&local_38,&local_54);
+        iVar9 = main_00430e10(&local_48,&local_40,&local_50,&local_38,&local_54);
 
-        fVar6 = local_b8;
+        while (iVar9 != 0) {
 
-        fVar7 = local_b4;
+          iVar10 = *(int *)(iVar8 + 0x34);
 
-        fVar8 = local_b0;
+          iVar3 = *(int *)(iVar8 + 0x14);
 
-        while (local_b8 = fVar6, local_b4 = fVar7, local_b0 = fVar8, iVar10 != 0) {
+          iVar8 = iVar3 + (uint)*(ushort *)(iVar10 + local_38 * 2) * 0xc;
 
-          iVar10 = *(int *)(iVar9 + 0x34);
+          iVar9 = iVar3 + (uint)*(ushort *)(iVar10 + local_54 * 2) * 0xc;
 
-          iVar9 = *(int *)(iVar9 + 0x14);
+          uVar22 = CONCAT44(&local_b8,iVar3 + (uint)*(ushort *)(iVar10 + local_50 * 2) * 0xc);
 
-          uVar3 = *(ushort *)(iVar10 + local_38 * 2);
+          pOVar21 = param_1;
 
-          uVar4 = *(ushort *)(iVar10 + local_54 * 2);
+          FUN_005170f0(param_1);
 
-          FUN_005170f0(param_1,iVar9 + (uint)*(ushort *)(iVar10 + local_50 * 2) * 0xc);
+          pfVar15 = &local_a8;
 
-          FUN_005170f0(param_1,iVar9 + (uint)uVar3 * 0xc,&local_a8);
+          pOVar20 = param_1;
 
-          FUN_005170f0(param_1,iVar9 + (uint)uVar4 * 0xc,&local_94);
+          FUN_005170f0(param_1);
 
-          local_80 = local_90 - fVar7;
+          pfVar19 = &local_94;
 
-          local_78 = (local_8c - fVar8) * (local_a4 - fVar7) - (local_a0 - fVar8) * local_80;
+          pOVar18 = param_1;
 
-          local_88 = local_94 - fVar6;
+          FUN_005170f0(param_1);
 
-          local_84 = (undefined4 *)(local_a8 - fVar6);
+          local_80 = local_90 - local_b4;
 
-          local_74 = local_88 * (local_a0 - fVar8) - (float)local_84 * (local_8c - fVar8);
+          local_78 = (local_8c - local_b0) * (local_a4 - local_b4) -
 
-          local_70 = (float)local_84 * local_80 - local_88 * (local_a4 - fVar7);
+                     (local_a0 - local_b0) * local_80;
 
-          FUN_0050a810(&local_78,&local_74,&local_70);
+          local_88 = local_94 - local_b8;
 
-          local_6c = -(local_70 * fVar8 + local_74 * fVar7 + fVar6 * local_78);
+          local_84 = (undefined4 *)(local_a8 - local_b8);
 
-          if (local_a4 < fVar7) {
+          local_74 = local_88 * (local_a0 - local_b0) - (float)local_84 * (local_8c - local_b0);
+
+          local_70 = (float)local_84 * local_80 - local_88 * (local_a4 - local_b4);
+
+          FUN_0050a810(&local_78,&local_74,&local_70,pOVar18,iVar9,pfVar19,pOVar20,iVar8,pfVar15,
+
+                       pOVar21,uVar22);
+
+          fVar7 = local_b0;
+
+          fVar6 = local_b4;
+
+          fVar5 = local_b8;
+
+          local_6c = -(local_70 * local_b0 + local_74 * local_b4 + local_b8 * local_78);
+
+          if (local_a4 < local_b4) {
 
             local_b8 = local_a8;
 
@@ -1139,19 +1167,19 @@ void main_collgrid_00411140(int param_1)
 
             local_b0 = local_a0;
 
-            local_a8 = fVar6;
+            local_a8 = fVar5;
 
-            local_a4 = fVar7;
+            local_a4 = fVar6;
 
-            local_a0 = fVar8;
+            local_a0 = fVar7;
 
           }
 
-          fVar8 = local_a0;
+          fVar7 = local_a0;
 
-          fVar7 = local_a4;
+          fVar6 = local_a4;
 
-          fVar6 = local_a8;
+          fVar5 = local_a8;
 
           if (local_90 < local_a4) {
 
@@ -1161,19 +1189,19 @@ void main_collgrid_00411140(int param_1)
 
             local_a0 = local_8c;
 
-            local_94 = fVar6;
+            local_94 = fVar5;
 
-            local_90 = fVar7;
+            local_90 = fVar6;
 
-            local_8c = fVar8;
+            local_8c = fVar7;
 
           }
 
-          fVar8 = local_a0;
+          fVar7 = local_a0;
 
-          fVar7 = local_a4;
+          fVar6 = local_a4;
 
-          fVar6 = local_a8;
+          fVar5 = local_a8;
 
           if (local_a4 < local_b4) {
 
@@ -1183,11 +1211,11 @@ void main_collgrid_00411140(int param_1)
 
             local_a0 = local_b0;
 
-            local_b8 = fVar6;
+            local_b8 = fVar5;
 
-            local_b4 = fVar7;
+            local_b4 = fVar6;
 
-            local_b0 = fVar8;
+            local_b0 = fVar7;
 
           }
 
@@ -1243,7 +1271,7 @@ void main_collgrid_00411140(int param_1)
 
               else {
 
-                fVar6 = ((local_94 - local_b8) * (local_b4 - local_bc)) / (local_b4 - local_90) +
+                fVar5 = ((local_94 - local_b8) * (local_b4 - local_bc)) / (local_b4 - local_90) +
 
                         local_b8;
 
@@ -1263,13 +1291,13 @@ void main_collgrid_00411140(int param_1)
 
                 }
 
-                local_98 = fVar6;
+                local_98 = fVar5;
 
-                if (local_ac < fVar6) {
+                if (local_ac < fVar5) {
 
                   local_98 = local_ac;
 
-                  local_ac = fVar6;
+                  local_ac = fVar5;
 
                 }
 
@@ -1291,19 +1319,19 @@ void main_collgrid_00411140(int param_1)
 
                   }
 
-                  FUN_005435a5((double)local_28);
+                  main_005435a5((double)local_28);
+
+                  iVar9 = __ftol();
+
+                  main_005435a5((double)(local_9c * 0.2 + 0.5));
 
                   iVar10 = __ftol();
 
-                  FUN_005435a5((double)(local_9c * 0.2 + 0.5));
+                  iVar8 = local_4c;
 
-                  iVar11 = __ftol();
+                  if ((((local_68 <= iVar10) && (iVar10 <= local_58)) && (local_4c <= iVar9)) &&
 
-                  iVar9 = local_4c;
-
-                  if ((((local_68 <= iVar11) && (iVar11 <= local_58)) && (local_4c <= iVar10)) &&
-
-                     (iVar10 <= local_44)) {
+                     (iVar9 <= local_44)) {
 
                     local_34 = local_9c;
 
@@ -1323,19 +1351,19 @@ void main_collgrid_00411140(int param_1)
 
                     }
 
-                    fVar18 = (float10)FUN_00455600();
+                    fVar17 = (float10)FUN_00455600();
 
-                    local_88 = (float)fVar18;
+                    local_88 = (float)fVar17;
 
                     if (local_70 <= 0.64278) {
 
                       if (local_2c - local_88 < 8.0 != (local_2c - local_88 == 8.0)) {
 
-                        iVar11 = ((iVar10 - iVar9) * local_3c - local_68) + iVar11;
+                        iVar10 = ((iVar9 - iVar8) * local_3c - local_68) + iVar10;
 
-                        *(byte *)(iVar11 + 8 + (int)local_60) =
+                        *(byte *)(iVar10 + 8 + (int)local_60) =
 
-                             *(byte *)(iVar11 + 8 + (int)local_60) | 1;
+                             *(byte *)(iVar10 + 8 + (int)local_60) | 1;
 
                       }
 
@@ -1343,7 +1371,7 @@ void main_collgrid_00411140(int param_1)
 
                     else {
 
-                      local_24 = (byte *)(((iVar10 - iVar9) * local_3c - local_68) + iVar11 + 8 +
+                      local_24 = (byte *)(((iVar9 - iVar8) * local_3c - local_68) + iVar10 + 8 +
 
                                          (int)local_60);
 
@@ -1367,29 +1395,29 @@ void main_collgrid_00411140(int param_1)
 
                       for (; local_84 != (undefined4 *)0x0; local_84 = (undefined4 *)*local_84) {
 
-                        iVar9 = local_84[3];
+                        pOVar18 = (OBJECT *)local_84[3];
 
-                        if ((((-1 < (char)((uint)*(undefined4 *)(iVar9 + 0xd8) >> 8)) &&
+                        if ((((-1 < (char)((uint)*(undefined4 *)&pOVar18->field_0xd8 >> 8)) &&
 
-                             (iVar9 != param_1)) &&
+                             (pOVar18 != param_1)) &&
 
-                            (pcVar5 = *(char **)(iVar9 + 0x21c), pcVar5 != (char *)0x0)) &&
+                            (pcVar4 = (char *)pOVar18->gap_21C, pcVar4 != (char *)0x0)) &&
 
-                           (((*(byte *)(iVar9 + 0x1c8) & 8) != 0 && (*pcVar5 == '\x03')))) {
+                           (((pOVar18->acc_grenade_do_stopped & 8) != 0 && (*pcVar4 == '\x03')))) {
 
-                          iVar9 = (int)*(short *)(pcVar5 + 1);
+                          iVar8 = (int)*(short *)(pcVar4 + 1);
 
-                          local_88 = (float)(int)*(short *)(pcVar5 + 3);
+                          local_88 = (float)(int)*(short *)(pcVar4 + 3);
 
-                          if (((iVar9 <= iVar11) &&
+                          if (((iVar8 <= iVar10) &&
 
-                              (((int)local_88 <= iVar10 && (iVar11 <= *(short *)(pcVar5 + 5))))) &&
+                              (((int)local_88 <= iVar9 && (iVar10 <= *(short *)(pcVar4 + 5))))) &&
 
-                             (iVar10 <= *(short *)(pcVar5 + 7))) {
+                             (iVar9 <= *(short *)(pcVar4 + 7))) {
 
-                            pbVar1 = (byte *)(pcVar5 + (((*(short *)(pcVar5 + 5) - iVar9) + 1) *
+                            pbVar1 = (byte *)(pcVar4 + (((*(short *)(pcVar4 + 5) - iVar8) + 1) *
 
-                                                        (iVar10 - (int)local_88) - iVar9) + iVar11 +
+                                                        (iVar9 - (int)local_88) - iVar8) + iVar10 +
 
                                                        9);
 
@@ -1425,15 +1453,9 @@ void main_collgrid_00411140(int param_1)
 
           }
 
-          iVar10 = FUN_00430e10(&local_48,&local_40,&local_50,&local_38,&local_54);
+          iVar9 = main_00430e10(&local_48,&local_40,&local_50);
 
-          iVar9 = local_7c;
-
-          fVar6 = local_b8;
-
-          fVar7 = local_b4;
-
-          fVar8 = local_b0;
+          iVar8 = local_7c;
 
         }
 
@@ -1441,7 +1463,7 @@ void main_collgrid_00411140(int param_1)
 
         local_64 = local_64 + 0x14;
 
-      } while (local_5c < *(int *)(iVar9 + 0x68));
+      } while (local_5c < *(int *)(iVar8 + 0x68));
 
     }
 
@@ -1452,39 +1474,51 @@ void main_collgrid_00411140(int param_1)
 }
 
 /* ===== main_collgrid_00411a10 @ 0x00411A10 ===== */
-void main_collgrid_00411a10(int param_1)
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
+
+
+void main_collgrid_00411a10(OBJECT *param_1)
 
 
 
 {
 
-  ushort uVar1;
+  int iVar1;
 
-  ushort uVar2;
+  float fVar2;
 
   float fVar3;
 
   float fVar4;
 
-  float fVar5;
+  int iVar5;
 
   int iVar6;
 
   int iVar7;
 
-  int iVar8;
+  undefined4 *puVar8;
 
-  undefined4 *puVar9;
+  uint uVar9;
 
-  uint uVar10;
+  dword *pdVar10;
 
-  float *pfVar11;
+  uint uVar11;
 
-  uint uVar12;
+  float *pfVar12;
 
-  float *pfVar13;
+  undefined4 *puVar13;
 
-  undefined4 *puVar14;
+  OBJECT *pOVar14;
+
+  float *pfVar15;
+
+  OBJECT *pOVar16;
+
+  OBJECT *pOVar17;
+
+  undefined8 uVar18;
 
   float local_a8;
 
@@ -1493,6 +1527,8 @@ void main_collgrid_00411a10(int param_1)
   float local_a0;
 
   float local_9c;
+
+  float local_98;
 
   float local_94;
 
@@ -1558,87 +1594,87 @@ void main_collgrid_00411a10(int param_1)
 
   
 
-  iVar6 = FUN_0042b1d0();
+  iVar5 = main_0042b1d0();
 
-  local_6c = *(int *)(*(int *)(param_1 + 8) + 0x400 + iVar6 * 4);
+  local_6c = *(int *)(param_1->field_8 + 0x400 + iVar5 * 4);
 
-  pfVar11 = (float *)(param_1 + 0x27c);
+  pdVar10 = &param_1->acc_teammecc_get_new_wander_;
 
-  pfVar13 = local_2c;
+  pfVar12 = local_2c;
 
-  for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
+  for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
 
-    *pfVar13 = *pfVar11;
+    *pfVar12 = (float)*pdVar10;
 
-    pfVar11 = pfVar11 + 1;
+    pdVar10 = pdVar10 + 1;
 
-    pfVar13 = pfVar13 + 1;
+    pfVar12 = pfVar12 + 1;
 
   }
 
   if (local_2c[0] != local_2c[3]) {
 
-    FUN_005435a5((double)(local_2c[0] * 0.2 + 0.5));
+    main_005435a5((double)(local_2c[0] * 0.2 + 0.5));
+
+    iVar5 = __ftol();
+
+    main_005435a5((double)(local_2c[1] * 0.2 + 0.5));
 
     iVar6 = __ftol();
 
-    FUN_005435a5((double)(local_2c[1] * 0.2 + 0.5));
+    local_68 = iVar6;
+
+    main_005435a5((double)(local_2c[3] * 0.2 + 0.5));
 
     iVar7 = __ftol();
 
-    local_68 = iVar7;
-
-    FUN_005435a5((double)(local_2c[3] * 0.2 + 0.5));
-
-    iVar8 = __ftol();
-
-    FUN_005435a5((double)(local_1c * 0.2 + 0.5));
+    main_005435a5((double)(local_1c * 0.2 + 0.5));
 
     local_50 = __ftol();
 
-    local_30 = ((int)((iVar8 - iVar6) + (iVar8 - iVar6 >> 0x1f & 7U)) >> 3) + 1;
+    local_30 = ((int)((iVar7 - iVar5) + (iVar7 - iVar5 >> 0x1f & 7U)) >> 3) + 1;
 
-    uVar12 = ((local_50 - iVar7) + 1) * local_30 + 9;
+    uVar11 = ((local_50 - iVar6) + 1) * local_30 + 9;
 
-    local_40 = iVar6 + -1 + local_30 * 8;
+    local_40 = iVar5 + -1 + local_30 * 8;
 
-    puVar9 = (undefined4 *)
+    puVar8 = (undefined4 *)
 
-             FUN_0053a700(6,uVar12,s_collmgrid_005555c0,s_C__Giants_source_main_collgrid_c_00555464,
+             FUN_0053a700(6,uVar11,s_collmgrid_005555c0,s_C__Giants_source_main_collgrid_c_00555464,
 
                           0x289);
 
-    puVar14 = puVar9;
+    puVar13 = puVar8;
 
-    for (uVar10 = uVar12 >> 2; uVar10 != 0; uVar10 = uVar10 - 1) {
+    for (uVar9 = uVar11 >> 2; uVar9 != 0; uVar9 = uVar9 - 1) {
 
-      *puVar14 = 0;
+      *puVar13 = 0;
 
-      puVar14 = puVar14 + 1;
-
-    }
-
-    for (uVar12 = uVar12 & 3; uVar12 != 0; uVar12 = uVar12 - 1) {
-
-      *(undefined1 *)puVar14 = 0;
-
-      puVar14 = (undefined4 *)((int)puVar14 + 1);
+      puVar13 = puVar13 + 1;
 
     }
 
-    *(undefined4 **)(param_1 + 0x21c) = puVar9;
+    for (uVar11 = uVar11 & 3; uVar11 != 0; uVar11 = uVar11 - 1) {
 
-    *(undefined1 *)puVar9 = 4;
+      *(undefined1 *)puVar13 = 0;
 
-    local_34 = (undefined1 *)((int)puVar9 + 9);
+      puVar13 = (undefined4 *)((int)puVar13 + 1);
 
-    *(undefined2 *)((int)puVar9 + 3) = (undefined2)local_68;
+    }
 
-    *(short *)((int)puVar9 + 1) = (short)iVar6;
+    param_1->gap_21C = (dword)puVar8;
 
-    *(undefined2 *)((int)puVar9 + 5) = (undefined2)local_40;
+    *(undefined1 *)puVar8 = 4;
 
-    *(undefined2 *)((int)puVar9 + 7) = (undefined2)local_50;
+    local_34 = (undefined1 *)((int)puVar8 + 9);
+
+    *(undefined2 *)((int)puVar8 + 3) = (undefined2)local_68;
+
+    *(short *)((int)puVar8 + 1) = (short)iVar5;
+
+    *(undefined2 *)((int)puVar8 + 5) = (undefined2)local_40;
+
+    *(undefined2 *)((int)puVar8 + 7) = (undefined2)local_50;
 
     local_44 = 0;
 
@@ -1646,7 +1682,7 @@ void main_collgrid_00411a10(int param_1)
 
       local_70 = (undefined4 *)(local_6c + 0x84);
 
-      iVar7 = local_6c;
+      iVar6 = local_6c;
 
       do {
 
@@ -1654,45 +1690,67 @@ void main_collgrid_00411a10(int param_1)
 
         local_4c = 0xffff;
 
-        iVar8 = FUN_00430e10(&local_38,&local_4c,&local_3c,&local_54,&local_48);
+        iVar7 = main_00430e10(&local_38,&local_4c,&local_3c,&local_54,&local_48);
 
-        fVar3 = local_a4;
+        while (iVar7 != 0) {
 
-        fVar4 = local_a0;
+          iVar7 = *(int *)(iVar6 + 0x34);
 
-        fVar5 = local_9c;
+          iVar1 = *(int *)(iVar6 + 0x14);
 
-        while (local_a4 = fVar3, local_a0 = fVar4, local_9c = fVar5, iVar8 != 0) {
+          iVar6 = iVar1 + (uint)*(ushort *)(iVar7 + local_54 * 2) * 0xc;
 
-          iVar8 = *(int *)(iVar7 + 0x34);
+          local_98 = (float)(iVar1 + (uint)*(ushort *)(iVar7 + local_48 * 2) * 0xc);
 
-          iVar7 = *(int *)(iVar7 + 0x14);
+          uVar18 = CONCAT44(&local_a4,iVar1 + (uint)*(ushort *)(iVar7 + local_3c * 2) * 0xc);
 
-          uVar1 = *(ushort *)(iVar8 + local_54 * 2);
+          pOVar17 = param_1;
 
-          uVar2 = *(ushort *)(iVar8 + local_48 * 2);
+          FUN_005170f0(param_1);
 
-          FUN_005170f0(param_1,iVar7 + (uint)*(ushort *)(iVar8 + local_3c * 2) * 0xc);
+          pfVar12 = &local_94;
 
-          FUN_005170f0(param_1,iVar7 + (uint)uVar1 * 0xc,&local_94);
+          pOVar16 = param_1;
 
-          FUN_005170f0(param_1,iVar7 + (uint)uVar2 * 0xc,&local_80);
+          FUN_005170f0(param_1);
 
-          local_74 = local_7c - fVar4;
+          pfVar15 = &local_80;
 
-          local_64 = (local_78 - fVar5) * (local_90 - fVar4) - (local_8c - fVar5) * local_74;
+          pOVar14 = param_1;
 
-          local_88 = local_94 - fVar3;
+          FUN_005170f0(param_1);
 
-          local_60 = (local_80 - fVar3) * (local_8c - fVar5) - local_88 * (local_78 - fVar5);
+          local_74 = local_7c - local_a0;
 
-          local_5c = local_88 * local_74 - (local_80 - fVar3) * (local_90 - fVar4);
+          local_64 = (local_78 - local_9c) * (local_90 - local_a0) -
 
-          FUN_0050a810(&local_64,&local_60,&local_5c);
+                     (local_8c - local_9c) * local_74;
 
-          local_58 = -(local_5c * fVar5 + local_60 * fVar4 + fVar3 * local_64);
+          fVar2 = local_80 - local_a4;
 
-          if (local_90 < fVar4) {
+          local_88 = local_94 - local_a4;
+
+          local_60 = fVar2 * (local_8c - local_9c) - local_88 * (local_78 - local_9c);
+
+          local_5c = local_88 * local_74 - fVar2 * (local_90 - local_a0);
+
+          iVar7 = (int)local_98;
+
+          local_98 = fVar2;
+
+          FUN_0050a810(&local_64,&local_60,&local_5c,pOVar14,iVar7,pfVar15,pOVar16,iVar6,pfVar12,
+
+                       pOVar17,uVar18);
+
+          fVar4 = local_9c;
+
+          fVar3 = local_a0;
+
+          fVar2 = local_a4;
+
+          local_58 = -(local_5c * local_9c + local_60 * local_a0 + local_a4 * local_64);
+
+          if (local_90 < local_a0) {
 
             local_a4 = local_94;
 
@@ -1700,19 +1758,19 @@ void main_collgrid_00411a10(int param_1)
 
             local_9c = local_8c;
 
-            local_94 = fVar3;
+            local_94 = fVar2;
 
-            local_90 = fVar4;
+            local_90 = fVar3;
 
-            local_8c = fVar5;
+            local_8c = fVar4;
 
           }
 
-          fVar5 = local_8c;
+          fVar4 = local_8c;
 
-          fVar4 = local_90;
+          fVar3 = local_90;
 
-          fVar3 = local_94;
+          fVar2 = local_94;
 
           if (local_7c < local_90) {
 
@@ -1722,21 +1780,21 @@ void main_collgrid_00411a10(int param_1)
 
             local_8c = local_78;
 
-            local_80 = fVar3;
+            local_80 = fVar2;
 
-            local_7c = fVar4;
+            local_7c = fVar3;
 
-            local_78 = fVar5;
+            local_78 = fVar4;
 
-            local_2c[2] = fVar5;
+            local_2c[2] = fVar4;
 
           }
 
-          fVar5 = local_8c;
+          fVar4 = local_8c;
 
-          fVar4 = local_90;
+          fVar3 = local_90;
 
-          fVar3 = local_94;
+          fVar2 = local_94;
 
           if (local_90 < local_a0) {
 
@@ -1748,11 +1806,11 @@ void main_collgrid_00411a10(int param_1)
 
             local_8c = local_9c;
 
-            local_a4 = fVar3;
+            local_a4 = fVar2;
 
-            local_a0 = fVar4;
+            local_a0 = fVar3;
 
-            local_9c = fVar5;
+            local_9c = fVar4;
 
           }
 
@@ -1808,7 +1866,7 @@ void main_collgrid_00411a10(int param_1)
 
               else {
 
-                fVar3 = ((local_80 - local_a4) * (local_a0 - local_a8)) / (local_a0 - local_7c) +
+                fVar2 = ((local_80 - local_a4) * (local_a0 - local_a8)) / (local_a0 - local_7c) +
 
                         local_a4;
 
@@ -1828,21 +1886,21 @@ void main_collgrid_00411a10(int param_1)
 
                 }
 
-                local_88 = fVar3;
+                local_88 = fVar2;
 
-                if (local_84 < fVar3) {
+                if (local_84 < fVar2) {
 
                   local_88 = local_84;
 
-                  local_84 = fVar3;
+                  local_84 = fVar2;
 
                 }
 
               }
 
-              fVar3 = (local_84 + 5.0) - 0.5;
+              local_98 = (local_84 + 5.0) - 0.5;
 
-              if (local_88 < fVar3) {
+              if (local_88 < local_98) {
 
                 local_74 = local_a8 * 0.2 + 0.5;
 
@@ -1854,17 +1912,17 @@ void main_collgrid_00411a10(int param_1)
 
                   }
 
-                  FUN_005435a5((double)local_74);
+                  main_005435a5((double)local_74);
+
+                  iVar6 = __ftol();
+
+                  main_005435a5((double)(local_88 * 0.2 + 0.5));
 
                   iVar7 = __ftol();
 
-                  FUN_005435a5((double)(local_88 * 0.2 + 0.5));
+                  if ((((iVar5 <= iVar7) && (iVar7 <= local_40)) && (local_68 <= iVar6)) &&
 
-                  iVar8 = __ftol();
-
-                  if ((((iVar6 <= iVar8) && (iVar8 <= local_40)) && (local_68 <= iVar7)) &&
-
-                     (iVar7 <= local_50)) {
+                     (iVar6 <= local_50)) {
 
                     local_14 = local_88;
 
@@ -1886,29 +1944,29 @@ void main_collgrid_00411a10(int param_1)
 
                     FUN_00455600();
 
-                    uVar10 = iVar8 - iVar6;
+                    uVar9 = iVar7 - iVar5;
 
-                    uVar12 = uVar10 & 0x80000007;
+                    uVar11 = uVar9 & 0x80000007;
 
-                    if ((int)uVar12 < 0) {
+                    if ((int)uVar11 < 0) {
 
-                      uVar12 = (uVar12 - 1 | 0xfffffff8) + 1;
+                      uVar11 = (uVar11 - 1 | 0xfffffff8) + 1;
 
                     }
 
-                    local_34[((int)(uVar10 + ((int)uVar10 >> 0x1f & 7U)) >> 3) +
+                    local_34[((int)(uVar9 + ((int)uVar9 >> 0x1f & 7U)) >> 3) +
 
-                             (iVar7 - local_68) * local_30] =
+                             (iVar6 - local_68) * local_30] =
 
-                         local_34[((int)(uVar10 + ((int)uVar10 >> 0x1f & 7U)) >> 3) +
+                         local_34[((int)(uVar9 + ((int)uVar9 >> 0x1f & 7U)) >> 3) +
 
-                                  (iVar7 - local_68) * local_30] | '\x01' << ((byte)uVar12 & 0x1f);
+                                  (iVar6 - local_68) * local_30] | '\x01' << ((byte)uVar11 & 0x1f);
 
                   }
 
                   local_88 = local_88 + 5.0;
 
-                } while (local_88 < fVar3);
+                } while (local_88 < local_98);
 
               }
 
@@ -1918,15 +1976,9 @@ void main_collgrid_00411a10(int param_1)
 
           }
 
-          iVar8 = FUN_00430e10(&local_38,&local_4c,&local_3c,&local_54,&local_48);
+          iVar7 = main_00430e10(&local_38,&local_4c,&local_3c);
 
-          iVar7 = local_6c;
-
-          fVar3 = local_a4;
-
-          fVar4 = local_a0;
-
-          fVar5 = local_9c;
+          iVar6 = local_6c;
 
         }
 
@@ -1934,7 +1986,7 @@ void main_collgrid_00411a10(int param_1)
 
         local_70 = local_70 + 0x14;
 
-      } while (local_44 < *(int *)(iVar7 + 0x68));
+      } while (local_44 < *(int *)(iVar6 + 0x68));
 
     }
 

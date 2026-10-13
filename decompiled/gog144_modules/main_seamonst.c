@@ -78,7 +78,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   else {
 
-    iVar3 = FUN_0052e4a0(param_1);
+    iVar3 = reaper_0052e4a0(param_1);
 
     if (iVar3 != 0) {
 
@@ -90,7 +90,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
       local_48 = *(undefined4 *)(iVar2 + 0x188);
 
-      FUN_00530bd0(param_1,3,1,0,1,&local_54);
+      reaper_00530bd0(param_1,3,1,0,1,&local_54);
 
     }
 

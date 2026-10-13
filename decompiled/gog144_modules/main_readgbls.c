@@ -20,7 +20,7 @@ void reread_globals_bin(void)
 
   
 
-  iVar1 = FUN_005380e0(s_GData_gbn_0055ff24);
+  iVar1 = main_005380e0(s_GData_gbn_0055ff24);
 
   if (iVar1 == 0) {
 

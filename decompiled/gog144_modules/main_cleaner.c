@@ -244,29 +244,29 @@ void cleaner_go_obj(void)
 /* ===== main_cleaner_0040f750 @ 0x0040F750 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
 
 
-void main_cleaner_0040f750(int param_1)
+
+void main_cleaner_0040f750(OBJECT *param_1)
 
 
 
 {
 
-  int iVar1;
+  OBJECT *pOVar1;
 
   int iVar2;
 
-  int iVar3;
+  float *pfVar3;
 
-  float *pfVar4;
+  int iVar4;
 
-  int iVar5;
-
-  float *pfVar6;
+  float *pfVar5;
 
   float10 extraout_ST0;
 
-  float10 fVar7;
+  float10 fVar6;
 
   float10 extraout_ST1;
 
@@ -274,7 +274,7 @@ void main_cleaner_0040f750(int param_1)
 
   float10 extraout_ST1_01;
 
-  float10 fVar8;
+  float10 fVar7;
 
   int local_44;
 
@@ -304,9 +304,9 @@ void main_cleaner_0040f750(int param_1)
 
   
 
-  iVar1 = param_1;
+  pOVar1 = param_1;
 
-  iVar2 = FUN_0042b1d0(param_1);
+  iVar2 = main_0042b1d0(param_1);
 
   AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3(iVar2);
 
@@ -314,9 +314,9 @@ void main_cleaner_0040f750(int param_1)
 
   Audio3DTestToneUpdate__Fv_3();
 
-  iVar2 = *(int *)(*(int *)(param_1 + 8) + 0x400 + iVar2 * 4);
+  iVar2 = *(int *)(param_1->field_8 + 0x400 + iVar2 * 4);
 
-  FUN_005170f0(param_1,*(undefined4 *)(iVar2 + 0x14),local_18 + 3);
+  FUN_005170f0(param_1);
 
   local_18[0] = local_18[3];
 
@@ -324,15 +324,13 @@ void main_cleaner_0040f750(int param_1)
 
   local_18[2] = local_4;
 
-  iVar5 = 1;
+  iVar4 = 1;
 
   if (1 < *(int *)(iVar2 + 0x10)) {
 
-    iVar3 = 0xc;
-
     do {
 
-      FUN_005170f0(param_1,*(int *)(iVar2 + 0x14) + iVar3,&local_3c);
+      FUN_005170f0(param_1);
 
       if (local_3c < local_18[0]) {
 
@@ -370,57 +368,55 @@ void main_cleaner_0040f750(int param_1)
 
       }
 
-      iVar5 = iVar5 + 1;
+      iVar4 = iVar4 + 1;
 
-      iVar3 = iVar3 + 0xc;
-
-    } while (iVar5 < *(int *)(iVar2 + 0x10));
+    } while (iVar4 < *(int *)(iVar2 + 0x10));
 
   }
 
-  pfVar4 = local_18;
+  pfVar3 = local_18;
 
-  pfVar6 = &DAT_005842f0;
+  pfVar5 = &DAT_005842f0;
 
   for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {
 
-    *pfVar6 = *pfVar4;
+    *pfVar5 = *pfVar3;
 
-    pfVar4 = pfVar4 + 1;
+    pfVar3 = pfVar3 + 1;
 
-    pfVar6 = pfVar6 + 1;
+    pfVar5 = pfVar5 + 1;
 
   }
 
-  param_1 = __ftol();
+  param_1 = (OBJECT *)__ftol();
 
   local_44 = __ftol();
 
-  fVar7 = extraout_ST0;
+  fVar6 = extraout_ST0;
 
-  fVar8 = extraout_ST1;
+  fVar7 = extraout_ST1;
 
-  if (0x96 < local_44 * param_1) {
+  if (0x96 < local_44 * (int)param_1) {
 
-    param_1 = __ftol();
+    iVar2 = __ftol();
 
-    param_1 = param_1 + 1;
+    param_1 = (OBJECT *)(iVar2 + 1);
 
-    fVar8 = extraout_ST1_00;
+    fVar7 = extraout_ST1_00;
 
     local_44 = __ftol();
 
     local_44 = local_44 + 1;
 
-    fVar7 = extraout_ST1_01;
+    fVar6 = extraout_ST1_01;
 
   }
 
-  _DAT_00584308 = (float)(fVar8 / (float10)param_1);
+  _DAT_00584308 = (float)(fVar7 / (float10)(int)param_1);
 
-  if ((float10)_DAT_00584308 < fVar7 / (float10)local_44) {
+  if ((float10)_DAT_00584308 < fVar6 / (float10)local_44) {
 
-    _DAT_00584308 = (float)(fVar7 / (float10)local_44);
+    _DAT_00584308 = (float)(fVar6 / (float10)local_44);
 
   }
 
@@ -440,17 +436,17 @@ void main_cleaner_0040f750(int param_1)
 
                               s_C__Giants_source_main_cleaner_c_00555438,0xac);
 
-  iVar5 = 0;
+  iVar4 = 0;
 
   if (0 < iVar2) {
 
     do {
 
-      *(undefined4 *)(DAT_00584320 + iVar5 * 4) = 0xc47a0000;
+      *(undefined4 *)(DAT_00584320 + iVar4 * 4) = 0xc47a0000;
 
-      iVar5 = iVar5 + 1;
+      iVar4 = iVar4 + 1;
 
-    } while (iVar5 < iVar2);
+    } while (iVar4 < iVar2);
 
   }
 
@@ -462,7 +458,7 @@ void main_cleaner_0040f750(int param_1)
 
     do {
 
-      param_1 = 0;
+      param_1 = (OBJECT *)0x0;
 
       if (0 < iVar2) {
 
@@ -470,7 +466,7 @@ void main_cleaner_0040f750(int param_1)
 
           local_28 = DAT_005842f8;
 
-          local_30 = ((float)param_1 + 0.5) * _DAT_00584308 + DAT_005842f0;
+          local_30 = ((float)(int)param_1 + 0.5) * _DAT_00584308 + DAT_005842f0;
 
           local_2c = ((float)local_44 + 0.5) * _DAT_00584308 + DAT_005842f4;
 
@@ -480,19 +476,19 @@ void main_cleaner_0040f750(int param_1)
 
           local_20 = local_2c;
 
-          iVar2 = FUN_0049bf60(&local_24,&local_30,iVar1,&local_30,0);
+          iVar2 = FUN_0049bf60(&local_24,&local_30,pOVar1,&local_30,0);
 
           if (iVar2 != 0) {
 
-            *(undefined4 *)(DAT_00584320 + (DAT_00584314 * local_44 + param_1) * 4) = local_28;
+            *(undefined4 *)(DAT_00584320 + (DAT_00584314 * local_44 + (int)param_1) * 4) = local_28;
 
           }
 
-          param_1 = param_1 + 1;
+          param_1 = (OBJECT *)((int)param_1 + 1);
 
           iVar2 = DAT_00584314;
 
-        } while (param_1 < DAT_00584314);
+        } while ((int)param_1 < DAT_00584314);
 
       }
 

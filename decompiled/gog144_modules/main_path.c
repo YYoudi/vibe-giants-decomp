@@ -41,6 +41,8 @@ void main_path_0049fa90(void)
 /* ===== path_world_init__Fv @ 0x0049FD40 ===== */
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
 
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 
 
 void path_world_init__Fv(void)
@@ -51,13 +53,11 @@ void path_world_init__Fv(void)
 
   int iVar1;
 
-  int iVar2;
+  int *piVar2;
 
-  int *piVar3;
+  int iVar3;
 
   int iVar4;
-
-  int iVar5;
 
   int *in_stack_00000004;
 
@@ -68,6 +68,16 @@ void path_world_init__Fv(void)
   undefined4 in_stack_00000010;
 
   undefined4 in_stack_00000014;
+
+  OBJECT *obj;
+
+  undefined4 *puVar5;
+
+  OBJECT *pOVar6;
+
+  undefined4 *puVar7;
+
+  int iVar8;
 
   undefined4 local_3c;
 
@@ -117,31 +127,31 @@ void path_world_init__Fv(void)
 
     FUN_004ed9e0(&LAB_0049fd00);
 
-    iVar5 = 0;
+    iVar4 = 0;
 
     DAT_005a0cf4 = 0;
 
-    piVar3 = DAT_00632d7c;
+    piVar2 = DAT_00632d7c;
 
     if (DAT_00632d7c != (int *)0x0) {
 
       do {
 
-        if ((*(uint *)(piVar3[3] + 0x1c8) & 0x200000) != 0) {
+        if ((*(uint *)(piVar2[3] + 0x1c8) & 0x200000) != 0) {
 
-          iVar5 = iVar5 + 1;
+          iVar4 = iVar4 + 1;
 
-          DAT_005a0cf4 = iVar5;
+          DAT_005a0cf4 = iVar4;
 
         }
 
-        piVar3 = (int *)*piVar3;
+        piVar2 = (int *)*piVar2;
 
-      } while (piVar3 != (int *)0x0);
+      } while (piVar2 != (int *)0x0);
 
-      if (iVar5 != 0) {
+      if (iVar4 != 0) {
 
-        DAT_005a0cf0 = FUN_0053a700(0x19,iVar5 * 0x30,s_bridge_0055e994,
+        DAT_005a0cf0 = FUN_0053a700(0x19,iVar4 * 0x30,s_bridge_0055e994,
 
                                     s_C__Giants_source_main_path_c_0055e99c,0x1fe);
 
@@ -149,37 +159,49 @@ void path_world_init__Fv(void)
 
         if (DAT_00632d7c != (int *)0x0) {
 
-          iVar5 = 0;
+          iVar4 = 0;
 
           do {
 
-            iVar2 = in_stack_00000004[3];
+            obj = (OBJECT *)in_stack_00000004[3];
 
-            if ((*(uint *)(iVar2 + 0x1c8) & 0x200000) != 0) {
+            if ((obj->acc_grenade_do_stopped & 0x200000) != 0) {
 
-              iVar1 = DAT_005a0cf0 + iVar5;
+              iVar1 = DAT_005a0cf0 + iVar4;
 
-              iVar4 = FUN_0042b1a0(iVar2);
+              iVar3 = FUN_0042b1a0(obj);
 
-              iVar4 = *(int *)(*(int *)(iVar2 + 8) + 0x400 + iVar4 * 4);
+              iVar3 = *(int *)(obj->field_8 + 0x400 + iVar3 * 4);
 
-              local_3c = *(undefined4 *)(iVar4 + 0x44);
+              local_3c = *(undefined4 *)(iVar3 + 0x44);
 
-              local_38 = (*(float *)(iVar4 + 0x54) + *(float *)(iVar4 + 0x48)) * 0.5;
+              puVar7 = &local_3c;
+
+              local_38 = (*(float *)(iVar3 + 0x54) + *(float *)(iVar3 + 0x48)) * 0.5;
 
               local_34 = 0;
 
-              FUN_005170f0(iVar2,&local_3c,iVar1);
+              pOVar6 = obj;
 
-              local_3c = *(undefined4 *)(iVar4 + 0x50);
+              iVar8 = iVar1;
 
-              FUN_005170f0(iVar2,&local_3c,iVar1 + 0x18);
+              FUN_005170f0(obj);
 
-              main_path_0049fb80(iVar1,iVar1 + 0xc,iVar1 + 0x10,iVar1 + 0x14);
+              local_3c = *(undefined4 *)(iVar3 + 0x50);
+
+              puVar5 = &local_3c;
+
+              iVar3 = iVar1 + 0x18;
+
+              FUN_005170f0(obj);
+
+              main_path_0049fb80(iVar1,iVar1 + 0xc,iVar1 + 0x10,iVar1 + 0x14,obj,puVar5,iVar3,pOVar6
+
+                                 ,puVar7,iVar8);
 
               main_path_0049fb80(iVar1 + 0x18,iVar1 + 0x24,iVar1 + 0x28,iVar1 + 0x2c);
 
-              iVar5 = iVar5 + 0x30;
+              iVar4 = iVar4 + 0x30;
 
             }
 
@@ -1155,11 +1177,11 @@ void main_path_004a0f40(int param_1,undefined4 param_2,float *param_3,float *par
 
   _DAT_0059f9f0 = fVar1;
 
-  FUN_005435a5((double)(fVar1 * 0.2 + 0.5));
+  main_005435a5((double)(fVar1 * 0.2 + 0.5));
 
   DAT_005a0cc8 = __ftol();
 
-  FUN_005435a5((double)(_DAT_0059f9ec * 0.2 + 0.5));
+  main_005435a5((double)(_DAT_0059f9ec * 0.2 + 0.5));
 
   DAT_005a0cc4 = __ftol();
 
@@ -1181,19 +1203,19 @@ void main_path_004a0f40(int param_1,undefined4 param_2,float *param_3,float *par
 
   }
 
-  FUN_005435a5((double)((*param_3 - fVar1) * 0.2 + 0.5));
+  main_005435a5((double)((*param_3 - fVar1) * 0.2 + 0.5));
 
   iVar6 = __ftol();
 
-  FUN_005435a5((double)((param_3[1] - fVar2) * 0.2 + 0.5));
+  main_005435a5((double)((param_3[1] - fVar2) * 0.2 + 0.5));
 
   iVar3 = __ftol();
 
-  FUN_005435a5((double)((*param_4 - fVar1) * 0.2 + 0.5));
+  main_005435a5((double)((*param_4 - fVar1) * 0.2 + 0.5));
 
   iVar4 = __ftol();
 
-  FUN_005435a5((double)((param_4[1] - fVar2) * 0.2 + 0.5));
+  main_005435a5((double)((param_4[1] - fVar2) * 0.2 + 0.5));
 
   iVar5 = __ftol();
 

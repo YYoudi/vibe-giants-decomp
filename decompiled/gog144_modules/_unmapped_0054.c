@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (166 named) — decompiled, names from PS2 symbols
+ * 351 functions (168 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -3448,8 +3448,8 @@ switchD_005432a5_caseD_0:
 
 }
 
-/* ===== FUN_005435a5 @ 0x005435A5 ===== */
-float10 FUN_005435a5(double param_1)
+/* ===== main_005435a5 @ 0x005435A5 ===== */
+float10 main_005435a5(double param_1)
 
 
 
@@ -3885,8 +3885,8 @@ char * __cdecl _strchr(char *_Str,int _Val)
 
 }
 
-/* ===== FUN_0054384c @ 0x0054384C ===== */
-undefined4 FUN_0054384c(int param_1)
+/* ===== main_0054384c @ 0x0054384C ===== */
+undefined4 main_0054384c(int param_1)
 
 
 

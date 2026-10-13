@@ -166,7 +166,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
       } while (iVar8 < 3);
 
-      iVar8 = FUN_0052e4a0(pOVar4);
+      iVar8 = reaper_0052e4a0(pOVar4);
 
       if (iVar8 != 0) {
 
@@ -176,7 +176,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(OBJECT *p0,uint *p1)
 
         local_5c[2] = *(int *)(iVar6 + 0x188);
 
-        FUN_00530bd0(pOVar4,0,3,0,0x1e,local_5c);
+        reaper_00530bd0(pOVar4,0,3,0,0x1e,local_5c);
 
       }
 

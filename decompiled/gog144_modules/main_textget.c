@@ -99,7 +99,7 @@ void TextPtrInit__Fv(void)
 
     FUN_00542f27(local_100,s_GText_s_bin_0057bcd4,uVar1);
 
-    iVar3 = FUN_005380e0(local_100);
+    iVar3 = main_005380e0(local_100);
 
     if (iVar3 != 0) {
 

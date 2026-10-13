@@ -30,7 +30,7 @@ void main_readdata_004adfa0(void)
 
   
 
-  iVar3 = FUN_005380e0(s_GameObj_bin_0055feac);
+  iVar3 = main_005380e0(s_GameObj_bin_0055feac);
 
   if (iVar3 == 0) {
 

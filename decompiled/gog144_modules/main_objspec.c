@@ -18,7 +18,7 @@ void main_objspec_00499c80(int param_1)
 
   if ((iVar1 != 0) && (*(char *)(iVar1 + 0x1e) < '\0')) {
 
-    main_texture_00508840(iVar1);
+    main_00508840(iVar1);
 
     FUN_005086e0(*(undefined4 *)(param_1 + 0x2e0));
 
@@ -71,7 +71,7 @@ void FUN_00499cd0(int param_1)
 
   if ((iVar1 != 0) && (*(char *)(iVar1 + 0x1e) < '\0')) {
 
-    main_texture_00508840(iVar1);
+    main_00508840(iVar1);
 
     FUN_005086e0(*(undefined4 *)(param_1 + 0x2e0));
 

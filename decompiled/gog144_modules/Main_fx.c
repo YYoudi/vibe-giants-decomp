@@ -28,7 +28,7 @@ void main_fx_004470b0(undefined4 param_1)
 
   FUN_00542f27(local_2c,s__s_bin_00554384,param_1);
 
-  iVar1 = FUN_005380e0(local_2c);
+  iVar1 = main_005380e0(local_2c);
 
   if (iVar1 == 0) {
 
@@ -245,7 +245,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
   
 
-  iVar1 = FUN_00426540();
+  iVar1 = comm_00426540();
 
   if ((iVar1 != 0) && ((in_stack_00000008 & 2) == 0)) {
 
@@ -776,6 +776,8 @@ LAB_0044838a:
 }
 
 /* ===== FUN_00448a40 @ 0x00448A40 ===== */
+/* WARNING: Struct "OBJECT": ignoring multiple overlapping fields */
+
 /* PS2 candidate: fx_stackPop__FPP10FXSTACKTAGT0 (conf 0.521) */
 
 
@@ -790,9 +792,7 @@ void FUN_00448a40(int *param_1,undefined4 *param_2)
 
   undefined4 *puVar2;
 
-  int iVar3;
-
-  undefined4 *puVar4;
+  undefined4 *puVar3;
 
   
 
@@ -802,11 +802,9 @@ void FUN_00448a40(int *param_1,undefined4 *param_2)
 
   if (puVar2 == puVar1) {
 
-    iVar3 = puVar2[1];
+    if ((char)(((OBJECT *)puVar2[1])->field_E0 >> 8) < '\0') {
 
-    if ((char)((uint)*(undefined4 *)(iVar3 + 0xe0) >> 8) < '\0') {
-
-      FUN_00448750(iVar3,*(undefined4 *)(iVar3 + 0x100),0);
+      FUN_00448750((OBJECT *)puVar2[1]);
 
     }
 
@@ -820,19 +818,17 @@ void FUN_00448a40(int *param_1,undefined4 *param_2)
 
   }
 
-  for (puVar4 = (undefined4 *)*puVar1; puVar4 != puVar2; puVar4 = (undefined4 *)*puVar4) {
+  for (puVar3 = (undefined4 *)*puVar1; puVar3 != puVar2; puVar3 = (undefined4 *)*puVar3) {
 
-    puVar1 = puVar4;
+    puVar1 = puVar3;
 
   }
 
   *puVar1 = 0;
 
-  iVar3 = *(int *)(*param_1 + 4);
+  if ((char)((*(OBJECT **)(*param_1 + 4))->field_E0 >> 8) < '\0') {
 
-  if ((char)((uint)*(undefined4 *)(iVar3 + 0xe0) >> 8) < '\0') {
-
-    FUN_00448750(iVar3,*(undefined4 *)(iVar3 + 0x100),0);
+    FUN_00448750(*(OBJECT **)(*param_1 + 4));
 
   }
 

@@ -50,11 +50,11 @@ void comm_comm_00520490(void)
 
   
 
-  uVar3 = main_dlog_00428460(DAT_005def88,1);
+  uVar3 = wredit_00428460(DAT_005def88,1);
 
   if ((DAT_00633180 != 0) ||
 
-     (local_26c = (undefined4 *)main_dlog_00428670(DAT_005def88,1,uVar3),
+     (local_26c = (undefined4 *)wredit_00428670(DAT_005def88,1,uVar3),
 
      local_26c != (undefined4 *)0x0)) {
 
@@ -188,7 +188,7 @@ void comm_comm_00520490(void)
 
           do {
 
-            iVar4 = main_dlog_00428670(DAT_005def88,1,iVar7);
+            iVar4 = wredit_00428670(DAT_005def88,1,iVar7);
 
             if (iVar4 != 0) {
 

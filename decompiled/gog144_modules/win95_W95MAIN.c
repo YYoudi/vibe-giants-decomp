@@ -92,7 +92,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
   (**(code **)(DAT_00656420 + 0xa8))(DAT_00656420);
 
-  iVar11 = FUN_005380e0(param_1);
+  iVar11 = main_005380e0(param_1);
 
   if (iVar11 == 0) {
 

@@ -18,7 +18,7 @@ undefined4 main_dedicated_00426460(void)
 
   
 
-  iVar1 = FUN_005380e0(&DAT_00633090);
+  iVar1 = main_005380e0(&DAT_00633090);
 
   if (iVar1 == 0) {
 

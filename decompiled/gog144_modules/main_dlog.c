@@ -313,7 +313,7 @@ void main_dlog_004273b0(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3[0xd] = 0;
 
-  main_dlog_00427570(param_1,puVar3);
+  main_00427570(param_1,puVar3);
 
   return;
 
@@ -412,7 +412,7 @@ void main_dlog_00427490(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3[0xd] = param_7;
 
-  main_dlog_00427570(param_1,puVar3);
+  main_00427570(param_1,puVar3);
 
   return;
 
@@ -457,7 +457,7 @@ void main_dlog_00427790(int *param_1,int param_2,int param_3)
 
       piVar1[10] = param_3;
 
-      main_dlog_00427570(param_1,piVar1);
+      main_00427570(param_1,piVar1);
 
     }
 
@@ -506,7 +506,7 @@ void main_dlog_004277f0(int *param_1,int param_2,undefined4 param_3)
 
       MemString(8,param_3,piVar1 + 10,s_C__Giants_source_main_dlog_c_00556510,0x203);
 
-      main_dlog_00427570(param_1,piVar1);
+      main_00427570(param_1,piVar1);
 
     }
 
@@ -603,7 +603,7 @@ void main_dlog_00427890(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3[0xd] = 0;
 
-  main_dlog_00427570(param_1,puVar3);
+  main_00427570(param_1,puVar3);
 
   return;
 
@@ -704,11 +704,11 @@ void main_dlog_00427970(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   fVar7 = (float10)FUN_0051bc00(param_6);
 
-  fVar8 = (float10)FUN_0051BD30(puVar4[0xd],puVar4[10]);
+  fVar8 = (float10)main_0051bd30(puVar4[0xd],puVar4[10]);
 
   param_6 = (float)fVar8;
 
-  fVar8 = (float10)FUN_0051BD30(puVar4[0xd],&DAT_005562b8);
+  fVar8 = (float10)main_0051bd30(puVar4[0xd],&DAT_005562b8);
 
   if ((float10)param_6 < fVar8 * (float10)(int)puVar4[0xb]) {
 
@@ -716,7 +716,7 @@ void main_dlog_00427970(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   }
 
-  main_dlog_004276a0(puVar4[3],puVar4[4],puVar4[5],param_6,(float)fVar7,&param_2,&param_5);
+  main_004276a0(puVar4[3],puVar4[4],puVar4[5],param_6,(float)fVar7,&param_2,&param_5);
 
   puVar4[9] = param_5 + (float)fVar7;
 
@@ -833,11 +833,11 @@ void main_dlog_00427bb0(undefined4 *param_1,float param_2,float param_3,undefine
 
   fVar8 = (float10)FUN_0051bc00(param_6);
 
-  fVar9 = (float10)FUN_0051BD30(fVar3,*puVar7);
+  fVar9 = (float10)main_0051bd30(fVar3,*puVar7);
 
   param_3 = (float)((float10)param_5 + (float10)param_5 + fVar9 + (float10)0.01);
 
-  main_dlog_004276a0(puVar5[3],puVar5[4],puVar5[5],param_3,(float)fVar8,&param_2,&param_6);
+  main_004276a0(puVar5[3],puVar5[4],puVar5[5],param_3,(float)fVar8,&param_2,&param_6);
 
   puVar5[6] = param_6 - param_5;
 
@@ -948,11 +948,11 @@ void main_dlog_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   }
 
-  fVar8 = (float10)FUN_0051BD30(uVar4,puVar5[0xb]);
+  fVar8 = (float10)main_0051bd30(uVar4,puVar5[0xb]);
 
   param_2 = (float)(fVar8 + (float10)param_6 + (float10)0.005);
 
-  main_dlog_004276a0(puVar5[3],puVar5[4],puVar5[5],param_2,param_6,&param_1,&param_5);
+  main_004276a0(puVar5[3],puVar5[4],puVar5[5],param_2,param_6,&param_1,&param_5);
 
   puVar5[9] = param_5 + param_6;
 

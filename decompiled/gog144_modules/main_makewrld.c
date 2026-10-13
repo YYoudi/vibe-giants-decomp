@@ -54,7 +54,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4eec) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4eec));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4eec));
 
       iVar3 = *piVar1;
 
@@ -78,7 +78,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      main_texture_00508840(*piVar1);
+      main_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -102,7 +102,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ee4) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ee4));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4ee4));
 
       iVar3 = *piVar1;
 
@@ -126,7 +126,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ee0) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ee0));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4ee0));
 
       iVar3 = *piVar1;
 
@@ -150,7 +150,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      main_texture_00508840(*piVar1);
+      main_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -174,7 +174,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ed8) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ed8));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4ed8));
 
       iVar3 = *piVar1;
 
@@ -198,7 +198,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ed4) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ed4));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4ed4));
 
       iVar3 = *piVar1;
 
@@ -222,7 +222,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      main_texture_00508840(*piVar1);
+      main_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -246,7 +246,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ecc) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ecc));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4ecc));
 
       iVar3 = *piVar1;
 
@@ -270,7 +270,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ec8) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ec8));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4ec8));
 
       iVar3 = *piVar1;
 
@@ -294,7 +294,7 @@ void main_makewrld_00472e40(void)
 
     if (*piVar1 != 0) {
 
-      main_texture_00508840(*piVar1);
+      main_00508840(*piVar1);
 
       iVar3 = *piVar1;
 
@@ -318,7 +318,7 @@ void main_makewrld_00472e40(void)
 
     if (*(int *)(DAT_006330e4 + 0x4ec0) != 0) {
 
-      main_texture_00508840(*(int *)(DAT_006330e4 + 0x4ec0));
+      main_00508840(*(int *)(DAT_006330e4 + 0x4ec0));
 
       iVar3 = *piVar1;
 
