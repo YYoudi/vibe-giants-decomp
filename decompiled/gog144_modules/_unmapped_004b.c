@@ -1429,7 +1429,7 @@ LAB_004b5148:
 
     }
 
-    iVar4 = FUN_0052e530(iVar3);
+    iVar4 = comm_send_gate_check(iVar3);
 
     if (iVar4 == 0) {
 
@@ -1647,7 +1647,7 @@ switchD_004b4d3a_caseD_7:
 
   }
 
-  iVar4 = FUN_0052e4b0(param_1);
+  iVar4 = comm_send_gate_check_2(param_1);
 
   if ((iVar4 != 0) && ((*pfVar1 != pfVar1[1] || (pfVar1[2] != pfVar1[3])))) {
 
@@ -8371,7 +8371,7 @@ void reaper_lock_user(int param_1)
 
   if ((*(int *)(param_1 + 0x210) == 0) && (iVar2 = reaper_0052e4a0(param_1), iVar2 != 0)) {
 
-    iVar2 = FUN_0052e4b0(iVar1);
+    iVar2 = comm_send_gate_check_2(iVar1);
 
     if (iVar2 != 0) {
 
@@ -8397,7 +8397,7 @@ void reaper_lock_user(int param_1)
 
     }
 
-    iVar2 = FUN_0052e530(iVar1);
+    iVar2 = comm_send_gate_check(iVar1);
 
     if (iVar2 != 0) {
 

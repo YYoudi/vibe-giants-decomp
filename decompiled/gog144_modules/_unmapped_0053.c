@@ -14661,7 +14661,7 @@ int bistream_tell_user(undefined4 param_1,int param_2,int *param_3)
 
     if (iVar2 == 0) {
 
-      FUN_00540310(s_Error_loading_ANM_Anim___s__0055b590,param_2);
+      map_scratch_clear(s_Error_loading_ANM_Anim___s__0055b590,param_2);
 
     }
 
@@ -14882,7 +14882,7 @@ int bistream_tell_user2(undefined4 param_1,int param_2,int *param_3)
 
     if (iVar2 == 0) {
 
-      FUN_00540310(s_Error_loading_ANM_Skin___s__00580a50,param_2);
+      map_scratch_clear(s_Error_loading_ANM_Skin___s__00580a50,param_2);
 
     }
 
@@ -16134,7 +16134,7 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
     if (iVar2 == 0) {
 
-      FUN_00540310(s_Can_t_find_tree___s__in_ANM___s__00580b48,param_2,param_1 + 0x4c);
+      map_scratch_clear(s_Can_t_find_tree___s__in_ANM___s__00580b48,param_2,param_1 + 0x4c);
 
     }
 
@@ -16192,9 +16192,9 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
             uVar4 = NAM_NameGetCustom(uVar4,param_1 + 0x4c);
 
-            FUN_00540310(s_Error_binding___The_SKN___s__ref_00580a70,*(int *)(iVar1 + 4) + 0x28,
+            map_scratch_clear(s_Error_binding___The_SKN___s__ref_00580a70,*(int *)(iVar1 + 4) + 0x28
 
-                         uVar4);
+                              ,uVar4);
 
           }
 
@@ -16202,9 +16202,9 @@ undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
             uVar4 = NAM_NameGetCustom(uVar4,param_1 + 0x4c,param_2);
 
-            FUN_00540310(s_Error_binding___The_SKN___s__ref_00580ae0,*(int *)(iVar1 + 4) + 0x28,
+            map_scratch_clear(s_Error_binding___The_SKN___s__ref_00580ae0,*(int *)(iVar1 + 4) + 0x28
 
-                         uVar4);
+                              ,uVar4);
 
           }
 

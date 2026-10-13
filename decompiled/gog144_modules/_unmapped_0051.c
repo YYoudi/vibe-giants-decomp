@@ -12254,7 +12254,7 @@ void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_
 
   _DAT_005dd920 = FUN_00425eb0;
 
-  _DAT_005dd924 = FUN_00540310;
+  _DAT_005dd924 = map_scratch_clear;
 
   _DAT_005dd928 = &LAB_005179e0;
 

@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052e530,FUN_0052e530,,comm_send_gate_check,0.9,llm-w189b,is_base+player_active+throttle gates
+0052e4b0,FUN_0052e4b0,,comm_send_gate_check_2,0.9,llm-w189b,same gates variant
+0046e9d0,FUN_0046e9d0,,reaper_ospec_init,0.9,llm-w189b,zeroes ospec 0x1c callers reaper spawn
+004c5d80,FUN_004c5d80,,obj_release_carried_slot,0.9,llm-w189b,0x5bc slot msg+setloc+0x20a clear
+004a7cb0,FUN_004a7cb0,,math_sign_of,0.9,llm-w189b,ftol sign classifier 3 named movement callers
+00540310,FUN_00540310,,map_scratch_clear,0.9,llm-w189b,0x20202020 workspace fill flick callers
+004f9b50,FUN_004f9b50,,ripper_sound_state_check,0.9,llm-w189b,state 100 walk callers ripper/sound

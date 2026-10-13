@@ -10812,7 +10812,7 @@ float10 editor_dump_objnames(float param_1)
 
                                 ,piVar9[-7],*(undefined4 *)*piVar9);
 
-                    FUN_00540310(&DAT_00556380,&DAT_00657400);
+                    map_scratch_clear(&DAT_00556380,&DAT_00657400);
 
                   }
 

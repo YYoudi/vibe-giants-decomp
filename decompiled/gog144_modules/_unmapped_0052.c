@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (129 named) — decompiled, names from PS2 symbols
+ * 162 functions (131 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -11797,12 +11797,12 @@ void reaper_0052e4a0(void)
 
 }
 
-/* ===== FUN_0052e4b0 @ 0x0052E4B0 ===== */
+/* ===== comm_send_gate_check_2 @ 0x0052E4B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_0052e4b0(undefined4 param_1)
+undefined4 comm_send_gate_check_2(undefined4 param_1)
 
 
 
@@ -11856,12 +11856,12 @@ undefined4 FUN_0052e4b0(undefined4 param_1)
 
 }
 
-/* ===== FUN_0052e530 @ 0x0052E530 ===== */
+/* ===== comm_send_gate_check @ 0x0052E530 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_0052e530(undefined4 param_1)
+undefined4 comm_send_gate_check(undefined4 param_1)
 
 
 

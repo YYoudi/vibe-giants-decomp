@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (40 named) — decompiled, names from PS2 symbols
+ * 48 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -3706,7 +3706,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
     if ((float10)fVar4 - fVar8 < (float10)0.0) {
 
-      FUN_004f9b50(param_1,0);
+      ripper_sound_state_check(param_1,0);
 
       pfVar2[8] = 2.2;
 
@@ -4098,8 +4098,8 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004f9b50 @ 0x004F9B50 ===== */
-void FUN_004f9b50(int param_1,int param_2)
+/* ===== ripper_sound_state_check @ 0x004F9B50 ===== */
+void ripper_sound_state_check(int param_1,int param_2)
 
 
 
@@ -4204,7 +4204,7 @@ void sound_play_pair(undefined4 param_1,float param_2,int param_3,undefined4 par
 
   iVar1 = *(int *)(param_3 + 0x100);
 
-  FUN_004f9b50(param_3,1);
+  ripper_sound_state_check(param_3,1);
 
   param_2 = param_2 + *(float *)(param_3 + 0x278);
 

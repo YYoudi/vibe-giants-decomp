@@ -5289,7 +5289,7 @@ LAB_004089de:
 
       }
 
-      iVar4 = FUN_0052e530(iVar3);
+      iVar4 = comm_send_gate_check(iVar3);
 
       if (iVar4 == 0) {
 
@@ -5447,7 +5447,7 @@ LAB_00408b1e:
 
       }
 
-      iVar4 = FUN_0052e4b0(iVar3);
+      iVar4 = comm_send_gate_check_2(iVar3);
 
       if (iVar4 == 0) {
 
@@ -5521,7 +5521,7 @@ LAB_00408b1e:
 
       *(float *)((int)param_1 + 0x14) = (float)fVar6;
 
-      iVar4 = FUN_0052e4b0(param_1);
+      iVar4 = comm_send_gate_check_2(param_1);
 
       if (iVar4 == 0) {
 

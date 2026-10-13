@@ -601,7 +601,7 @@ LAB_005080c7:
 
                       piVar9[uVar19 * 9 + 0xb]);
 
-          FUN_00540310(&DAT_00657400);
+          map_scratch_clear(&DAT_00657400);
 
           goto LAB_00508353;
 

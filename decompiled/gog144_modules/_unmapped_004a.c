@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (114 named) — decompiled, names from PS2 symbols
+ * 131 functions (116 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -722,7 +722,7 @@ int audio_register_sound_name(char *param_1)
 
   } while (cVar1 != '\0');
 
-  uVar2 = FUN_004a14a0();
+  uVar2 = crt_rdtsc();
 
   *(undefined4 *)(&DAT_005a0e80 + local_8 * 4) = uVar2;
 
@@ -736,8 +736,8 @@ int audio_register_sound_name(char *param_1)
 
 }
 
-/* ===== FUN_004a14a0 @ 0x004A14A0 ===== */
-undefined8 FUN_004a14a0(void)
+/* ===== crt_rdtsc @ 0x004A14A0 ===== */
+undefined8 crt_rdtsc(void)
 
 
 
@@ -770,7 +770,7 @@ void Audio3DTestToneStop__Fv(void)
 
   if (DAT_0055e9e8 != -1) {
 
-    iVar1 = FUN_004a14a0();
+    iVar1 = crt_rdtsc();
 
     *(int *)(&DAT_005a0e00 + DAT_0055e9e8 * 4) =
 
@@ -7133,8 +7133,8 @@ char FUN_004a7be0(void)
 
 }
 
-/* ===== FUN_004a7cb0 @ 0x004A7CB0 ===== */
-char FUN_004a7cb0(void)
+/* ===== math_sign_of @ 0x004A7CB0 ===== */
+char math_sign_of(void)
 
 
 

@@ -678,7 +678,7 @@ LAB_004d2151:
 
         else {
 
-          uVar2 = FUN_004a7cb0(local_74 * 0.05,0x3e800000);
+          uVar2 = math_sign_of(local_74 * 0.05,0x3e800000);
 
           *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -706,7 +706,7 @@ LAB_004d2151:
 
         else {
 
-          uVar2 = FUN_004a7cb0(local_6c * 0.1,0x3e4ccccd);
+          uVar2 = math_sign_of(local_6c * 0.1,0x3e4ccccd);
 
           *(undefined1 *)(param_1 + 0x20a) = uVar2;
 
@@ -834,7 +834,7 @@ LAB_004d2364:
 
         else {
 
-          uVar2 = FUN_004a7cb0(local_74 * 0.05,0x3e800000);
+          uVar2 = math_sign_of(local_74 * 0.05,0x3e800000);
 
           *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -862,7 +862,7 @@ LAB_004d2364:
 
         else {
 
-          uVar2 = FUN_004a7cb0(local_6c * 0.1,0x3e4ccccd);
+          uVar2 = math_sign_of(local_6c * 0.1,0x3e4ccccd);
 
           *(undefined1 *)(param_1 + 0x20a) = uVar2;
 
@@ -952,7 +952,7 @@ LAB_004d2364:
 
       else {
 
-        uVar2 = FUN_004a7cb0(local_74 * 0.05,0x3e800000);
+        uVar2 = math_sign_of(local_74 * 0.05,0x3e800000);
 
         *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -980,7 +980,7 @@ LAB_004d2364:
 
       else {
 
-        uVar2 = FUN_004a7cb0(local_6c * 0.1,0x3e4ccccd);
+        uVar2 = math_sign_of(local_6c * 0.1,0x3e4ccccd);
 
         *(undefined1 *)(param_1 + 0x20a) = uVar2;
 
@@ -1108,7 +1108,7 @@ LAB_004d2a47:
 
         else {
 
-          uVar2 = FUN_004a7cb0(local_74 * 0.05,0x3e800000);
+          uVar2 = math_sign_of(local_74 * 0.05,0x3e800000);
 
           *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -1136,7 +1136,7 @@ LAB_004d2a47:
 
         else {
 
-          uVar2 = FUN_004a7cb0(local_6c * 0.1,0x3e4ccccd);
+          uVar2 = math_sign_of(local_6c * 0.1,0x3e4ccccd);
 
           *(undefined1 *)(param_1 + 0x20a) = uVar2;
 
@@ -1222,7 +1222,7 @@ LAB_004d211b:
 
       if (ABS(fVar9) != (float10)0.0) {
 
-        uVar2 = FUN_004a7cb0((float)(fVar9 * (float10)0.05),0x3e800000);
+        uVar2 = math_sign_of((float)(fVar9 * (float10)0.05),0x3e800000);
 
         *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -1296,7 +1296,7 @@ LAB_004d2d85:
 
       if (ABS(fVar9) != (float10)0.0) {
 
-        uVar2 = FUN_004a7cb0((float)(fVar9 * (float10)0.05),0x3e800000);
+        uVar2 = math_sign_of((float)(fVar9 * (float10)0.05),0x3e800000);
 
         *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -1448,7 +1448,7 @@ LAB_004d27a6:
 
       else {
 
-        uVar2 = FUN_004a7cb0(local_70 * 0.05,0x3e800000);
+        uVar2 = math_sign_of(local_70 * 0.05,0x3e800000);
 
         *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -1538,7 +1538,7 @@ LAB_004d27a6:
 
       if (ABS(fVar9) != (float10)0.0) {
 
-        uVar2 = FUN_004a7cb0((float)(fVar9 * (float10)0.05),0x3e800000);
+        uVar2 = math_sign_of((float)(fVar9 * (float10)0.05),0x3e800000);
 
         *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -1936,7 +1936,7 @@ switchD_004d1ccc_caseD_20:
 
   if (ABS(fVar9) != (float10)0.0) {
 
-    uVar2 = FUN_004a7cb0((float)(fVar9 * (float10)0.05),0x3e800000);
+    uVar2 = math_sign_of((float)(fVar9 * (float10)0.05),0x3e800000);
 
     *(undefined1 *)(param_1 + 0x208) = uVar2;
 
@@ -2714,7 +2714,7 @@ float10 FUN_004d4580(float param_1,int param_2,float param_3)
 
   }
 
-  uVar2 = FUN_004a7cb0((float)fVar3 * 0.05,0x3e800000);
+  uVar2 = math_sign_of((float)fVar3 * 0.05,0x3e800000);
 
   *(undefined1 *)(iVar1 + 0x208) = uVar2;
 
@@ -2779,7 +2779,7 @@ void ai_face_move(undefined4 *param_1,undefined4 *param_2,float param_3)
 
     else {
 
-      uVar3 = FUN_004a7cb0(fVar1 * 0.05,0x3e800000);
+      uVar3 = math_sign_of(fVar1 * 0.05,0x3e800000);
 
       *(undefined1 *)(iVar2 + 0x208) = uVar3;
 
@@ -2799,7 +2799,7 @@ void ai_face_move(undefined4 *param_1,undefined4 *param_2,float param_3)
 
     if (ABS(fVar1) < 10.0) {
 
-      uVar3 = FUN_004a7cb0((float)fVar4 * 0.1,0x3e4ccccd);
+      uVar3 = math_sign_of((float)fVar4 * 0.1,0x3e4ccccd);
 
       *(undefined1 *)(iVar2 + 0x20a) = uVar3;
 

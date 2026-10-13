@@ -5993,7 +5993,7 @@ void reaper_lock_big(int param_1)
 
   if (iVar4 != 0) {
 
-    iVar4 = FUN_0052e4b0(iVar3);
+    iVar4 = comm_send_gate_check_2(iVar3);
 
     if (iVar4 != 0) {
 
@@ -6019,7 +6019,7 @@ void reaper_lock_big(int param_1)
 
     }
 
-    iVar4 = FUN_0052e530(iVar3);
+    iVar4 = comm_send_gate_check(iVar3);
 
     if (iVar4 != 0) {
 

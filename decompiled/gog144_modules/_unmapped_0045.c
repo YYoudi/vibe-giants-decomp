@@ -10561,7 +10561,7 @@ void reaper_spawn_ospec_1
 
     fVar3 = (float10)powf();
 
-    FUN_0046e9d0(iVar1,param_3,param_4,(float)(fVar3 / (float10)param_5),0x3f400000);
+    reaper_ospec_init(iVar1,param_3,param_4,(float)(fVar3 / (float10)param_5),0x3f400000);
 
   }
 
@@ -10688,7 +10688,7 @@ void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param
 
     fVar3 = (float10)powf();
 
-    FUN_0046e9d0(iVar1,&local_2c,param_3,(float)(fVar3 / (float10)param_4),0x3f400000);
+    reaper_ospec_init(iVar1,&local_2c,param_3,(float)(fVar3 / (float10)param_4),0x3f400000);
 
   }
 

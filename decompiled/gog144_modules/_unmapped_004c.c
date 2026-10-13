@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (56 named) — decompiled, names from PS2 symbols
+ * 64 functions (57 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -4438,8 +4438,8 @@ LAB_004c5cb5:
 
 }
 
-/* ===== FUN_004c5d80 @ 0x004C5D80 ===== */
-void FUN_004c5d80(int param_1,int param_2,undefined4 param_3,int param_4)
+/* ===== obj_release_carried_slot @ 0x004C5D80 ===== */
+void obj_release_carried_slot(int param_1,int param_2,undefined4 param_3,int param_4)
 
 
 
@@ -4542,7 +4542,7 @@ void ai_proximity_scan(int param_1)
 
             if (iVar2 != 0) {
 
-              FUN_004c5d80(uVar1,param_1,iVar3,1);
+              obj_release_carried_slot(uVar1,param_1,iVar3,1);
 
               return;
 
@@ -4570,7 +4570,7 @@ void ai_proximity_scan(int param_1)
 
         if (iVar2 != 0) {
 
-          FUN_004c5d80(uVar1,param_1,iVar3,0);
+          obj_release_carried_slot(uVar1,param_1,iVar3,0);
 
           return;
 
@@ -9701,7 +9701,7 @@ LAB_004cf690:
 
         else {
 
-          uVar6 = FUN_004a7cb0(param_1 * 0.05,0x3e800000);
+          uVar6 = math_sign_of(param_1 * 0.05,0x3e800000);
 
           *(undefined1 *)((int)fVar5 + 0x208) = uVar6;
 
@@ -9765,7 +9765,7 @@ LAB_004cf690:
 
         else {
 
-          uVar6 = FUN_004a7cb0((float)local_4c * 0.05,0x3e800000);
+          uVar6 = math_sign_of((float)local_4c * 0.05,0x3e800000);
 
           *(undefined1 *)((int)fVar5 + 0x208) = uVar6;
 
@@ -10031,7 +10031,7 @@ LAB_004cf539:
 
           else {
 
-            uVar6 = FUN_004a7cb0((float)local_4c * 0.05,0x3e800000);
+            uVar6 = math_sign_of((float)local_4c * 0.05,0x3e800000);
 
             *(undefined1 *)((int)fVar5 + 0x208) = uVar6;
 
@@ -10079,7 +10079,7 @@ LAB_004cf539:
 
       else {
 
-        uVar6 = FUN_004a7cb0(param_1 * 0.05,0x3e800000);
+        uVar6 = math_sign_of(param_1 * 0.05,0x3e800000);
 
         *(undefined1 *)((int)fVar5 + 0x208) = uVar6;
 
@@ -10783,7 +10783,7 @@ LAB_004d0e26:
 
         else {
 
-          uVar6 = FUN_004a7cb0(param_1 * 0.1,0x3e4ccccd);
+          uVar6 = math_sign_of(param_1 * 0.1,0x3e4ccccd);
 
           *(undefined1 *)((int)fVar5 + 0x20a) = uVar6;
 
@@ -11281,7 +11281,7 @@ LAB_004d135c:
 
     if (ABS(fVar15) != (float10)0.0) {
 
-      uVar6 = FUN_004a7cb0((float)(fVar15 * (float10)0.05),0x3e800000);
+      uVar6 = math_sign_of((float)(fVar15 * (float10)0.05),0x3e800000);
 
       *(undefined1 *)((int)fVar5 + 0x208) = uVar6;
 
@@ -11435,7 +11435,7 @@ LAB_004d135c:
 
         else {
 
-          uVar6 = FUN_004a7cb0(local_48 * 0.1,0x3e4ccccd);
+          uVar6 = math_sign_of(local_48 * 0.1,0x3e4ccccd);
 
           *(undefined1 *)((int)fVar5 + 0x20a) = uVar6;
 
@@ -11513,7 +11513,7 @@ LAB_004d135c:
 
       if (ABS(fVar15) != (float10)0.0) {
 
-        uVar6 = FUN_004a7cb0((float)(fVar15 * (float10)0.05),0x3e800000);
+        uVar6 = math_sign_of((float)(fVar15 * (float10)0.05),0x3e800000);
 
         *(undefined1 *)((int)fVar5 + 0x208) = uVar6;
 
@@ -11671,7 +11671,7 @@ LAB_004d135c:
 
       else {
 
-        uVar6 = FUN_004a7cb0(local_48 * 0.05,0x3e800000);
+        uVar6 = math_sign_of(local_48 * 0.05,0x3e800000);
 
         *(undefined1 *)((int)fVar5 + 0x208) = uVar6;
 

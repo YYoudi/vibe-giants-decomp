@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (300 named) — decompiled, names from PS2 symbols
+ * 351 functions (301 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -42,7 +42,7 @@ void map_memfree(int param_1,int param_2)
 
       if (puVar3 == puVar1) {
 
-        FUN_00540310(s_Error_MAP_MemFree__couldn_t_free_00580ca4);
+        map_scratch_clear(s_Error_MAP_MemFree__couldn_t_free_00580ca4);
 
         return;
 
@@ -350,8 +350,8 @@ void AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_8(undefined4 p0)
 
 }
 
-/* ===== FUN_00540310 @ 0x00540310 ===== */
-void FUN_00540310(undefined4 param_1)
+/* ===== map_scratch_clear @ 0x00540310 ===== */
+void map_scratch_clear(undefined4 param_1)
 
 
 

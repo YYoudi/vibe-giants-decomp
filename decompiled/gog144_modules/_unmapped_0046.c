@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (41 named) — decompiled, names from PS2 symbols
+ * 53 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -55,7 +55,7 @@ void FUN_00465070(int param_1)
 
   
 
-  iVar1 = FUN_0052e530(param_1);
+  iVar1 = comm_send_gate_check(param_1);
 
   if (iVar1 != 0) {
 
@@ -627,7 +627,7 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 
   fVar2 = (float10)powf();
 
-  FUN_0046e9d0(param_6,param_3,param_4,(float)(fVar2 / (float10)param_5),0x3f400000);
+  reaper_ospec_init(param_6,param_3,param_4,(float)(fVar2 / (float10)param_5),0x3f400000);
 
   return;
 
@@ -828,7 +828,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
       param_5 = (float)(fVar5 / (float10)param_5);
 
-      FUN_0046e9d0(iVar4,&local_38,0,param_5,0x3f400000);
+      reaper_ospec_init(iVar4,&local_38,0,param_5,0x3f400000);
 
     }
 
@@ -3828,8 +3828,10 @@ int object_0046e830(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0046e9d0 @ 0x0046E9D0 ===== */
-void FUN_0046e9d0(int param_1,undefined4 *param_2,undefined4 param_3,float param_4,float param_5)
+/* ===== reaper_ospec_init @ 0x0046E9D0 ===== */
+void reaper_ospec_init(int param_1,undefined4 *param_2,undefined4 param_3,float param_4,
+
+                      float param_5)
 
 
 

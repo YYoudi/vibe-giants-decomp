@@ -806,7 +806,7 @@ LAB_004195d2:
 
         if (iVar9 == 0) {
 
-          FUN_004c5d80(param_1,uVar7,iVar8,param_4[2]);
+          obj_release_carried_slot(param_1,uVar7,iVar8,param_4[2]);
 
           return;
 

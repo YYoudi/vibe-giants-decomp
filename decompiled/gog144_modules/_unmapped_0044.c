@@ -2699,7 +2699,7 @@ LAB_00443ac3:
 
     }
 
-    FUN_00540310(s_Error__Duplicate_actor__already_i_00558620,param_1 + 1);
+    map_scratch_clear(s_Error__Duplicate_actor__already_i_00558620,param_1 + 1);
 
   }
 
@@ -2748,7 +2748,7 @@ undefined4 flick_slot_lookup_handle(int param_1,int param_2,int param_3,int para
 
       if (local_4 == 0) {
 
-        FUN_00540310(s_Flick_error___Can_t_find_handle_r_0055868c,param_5);
+        map_scratch_clear(s_Flick_error___Can_t_find_handle_r_0055868c,param_5);
 
       }
 
@@ -2772,7 +2772,7 @@ undefined4 flick_slot_lookup_handle(int param_1,int param_2,int param_3,int para
 
       if (local_8 == 0) {
 
-        FUN_00540310(s_Flick_error___Can_t_find_attach_r_00558658,param_3);
+        map_scratch_clear(s_Flick_error___Can_t_find_attach_r_00558658,param_3);
 
       }
 
@@ -2841,7 +2841,7 @@ hud_icon_for_object(int param_1,int param_2,undefined4 param_3,int param_4,int p
 
           if (iVar4 == 0) {
 
-            FUN_00540310(s_Flick_error___Can_t_find_fx_acto_005586c0,param_6);
+            map_scratch_clear(s_Flick_error___Can_t_find_fx_acto_005586c0,param_6);
 
           }
 
@@ -2948,7 +2948,7 @@ undefined4 flick_slot_lookup_handle_2(int param_1,int param_2,int param_3)
 
       if (iVar3 == 0) {
 
-        FUN_00540310(s_Flick_error___Can_t_find_origin_r_005586f8,param_3);
+        map_scratch_clear(s_Flick_error___Can_t_find_origin_r_005586f8,param_3);
 
       }
 
@@ -4933,7 +4933,7 @@ LAB_00445a50:
 
       else {
 
-        FUN_00540310(s_Error__Duplicate_director__alrea_005585e4,param_1 + 1);
+        map_scratch_clear(s_Error__Duplicate_director__alrea_005585e4,param_1 + 1);
 
         puVar12 = puVar12 + puVar12[1];
 
@@ -5033,7 +5033,7 @@ LAB_00445a50:
 
       if (iVar10 == 0) {
 
-        FUN_00540310(s_Flick_error___Can_t_find_camera___0055872c,iVar11);
+        map_scratch_clear(s_Flick_error___Can_t_find_camera___0055872c,iVar11);
 
         puVar12 = puVar12 + puVar12[1];
 
