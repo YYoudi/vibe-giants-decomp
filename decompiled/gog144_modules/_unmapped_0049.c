@@ -9362,7 +9362,7 @@ void vimp_death_fx(int param_1)
 
         && (-61.1 < *(float *)(param_1 + 0x140))) && (DAT_0063311c == 0)) {
 
-      fx_rp_spark(param_1);
+      rp_spark_hud_setup(param_1);
 
     }
 

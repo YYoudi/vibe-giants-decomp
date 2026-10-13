@@ -18013,12 +18013,12 @@ void animate_core_caller(int param_1,undefined4 param_2,int param_3,undefined4 p
 
 }
 
-/* ===== fx_rp_spark @ 0x0042E690 ===== */
+/* ===== rp_spark_hud_setup @ 0x0042E690 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void fx_rp_spark(int param_1)
+void rp_spark_hud_setup(int param_1)
 
 
 

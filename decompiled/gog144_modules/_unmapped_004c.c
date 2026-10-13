@@ -8615,7 +8615,7 @@ undefined4 dev_debug_flags(void)
 
                (((*(uint *)(iVar9 + 0xd8) & 0x10) == 0 && (DAT_0063311c == 0)))) {
 
-              fx_rp_spark();
+              rp_spark_hud_setup();
 
             }
 

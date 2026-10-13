@@ -1910,9 +1910,9 @@
   "len": 3207
  },
  "0x0042E690": {
-  "name": "fx_rp_spark",
+  "name": "rp_spark_hud_setup",
   "named": true,
-  "len": 3643
+  "len": 3650
  },
  "0x0042EA60": {
   "name": "FUN_0042ea60",
@@ -5107,7 +5107,7 @@
  "0x00498AF0": {
   "name": "vimp_death_fx",
   "named": true,
-  "len": 1502
+  "len": 1509
  },
  "0x00498C60": {
   "name": "object_lock_with_volume",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14047
+  "len": 14054
  },
  "0x004CE880": {
   "name": "comm_004ce880",
