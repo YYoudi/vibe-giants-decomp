@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (24 named) — decompiled, names from PS2 symbols
+ * 39 functions (25 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -602,7 +602,7 @@ void verm_control(int param_1)
 
         sound_play_obj(0x4e8,param_1);
 
-        FUN_00495750(0x4ea,param_1);
+        sound_stop_obj(0x4ea,param_1);
 
       }
 
@@ -610,7 +610,7 @@ void verm_control(int param_1)
 
         *(undefined4 *)(param_1 + 0xe4) = 0x2c;
 
-        FUN_00495750(0x4ea,param_1);
+        sound_stop_obj(0x4ea,param_1);
 
       }
 
@@ -876,7 +876,7 @@ LAB_004d2364:
 
         *(undefined4 *)(param_1 + 0xe4) = 0x2c;
 
-        FUN_00495750(0x4e8,param_1);
+        sound_stop_obj(0x4e8,param_1);
 
       }
 
@@ -1152,7 +1152,7 @@ LAB_004d2a47:
 
         *(undefined4 *)(param_1 + 0xe4) = 0x2c;
 
-        FUN_00495750(0x4e8,param_1);
+        sound_stop_obj(0x4e8,param_1);
 
       }
 
@@ -3405,19 +3405,19 @@ void rpboat_unlock_from_boat__FP6OBJECTT0(int param_1,int param_2)
 
   if (param_2 != 0) {
 
-    FUN_00495750(0x62b,param_1);
+    sound_stop_obj(0x62b,param_1);
 
-    FUN_00495750(0x626,param_1);
+    sound_stop_obj(0x626,param_1);
 
-    FUN_00495750(0x629,param_1);
+    sound_stop_obj(0x629,param_1);
 
-    FUN_00495750(0x62e,param_1);
+    sound_stop_obj(0x62e,param_1);
 
-    FUN_00495750(0x6fc,param_1);
+    sound_stop_obj(0x6fc,param_1);
 
-    FUN_00495750(0x6fc,param_2);
+    sound_stop_obj(0x6fc,param_2);
 
-    FUN_00495750(0x36c,param_1);
+    sound_stop_obj(0x36c,param_1);
 
     *(undefined4 *)(param_1 + 0x210) = 0;
 
@@ -3427,7 +3427,7 @@ void rpboat_unlock_from_boat__FP6OBJECTT0(int param_1,int param_2)
 
     *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 2;
 
-    iVar2 = FUN_00456050(param_1);
+    iVar2 = gun_find_right(param_1);
 
     if (iVar2 != 0) {
 
@@ -3496,7 +3496,7 @@ void object_attach_target(int param_1,int param_2)
 
   *(int *)(param_2 + 0x274) = param_1;
 
-  iVar3 = FUN_00456050(param_1);
+  iVar3 = gun_find_right(param_1);
 
   if (iVar3 != 0) {
 
@@ -4110,12 +4110,14 @@ void reaper_spell_sound_2(int param_1,int param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_004d77e0 @ 0x004D77E0 ===== */
+/* ===== charger_do_fx__FP6OBJECTiii @ 0x004D77E0 ===== */
 /* PS2 candidate: charger_do_fx__FP6OBJECTiii (conf 0.418) */
 
 
 
-void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
+void charger_do_fx__FP6OBJECTiii
+
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -4203,19 +4205,19 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
     puVar1 = *(uint **)(iVar6 + 0x100);
 
-    FUN_00495750(0x62b,iVar6);
+    sound_stop_obj(0x62b,iVar6);
 
-    FUN_00495750(0x626,iVar6);
+    sound_stop_obj(0x626,iVar6);
 
-    FUN_00495750(0x629,iVar6);
+    sound_stop_obj(0x629,iVar6);
 
-    FUN_00495750(0x62e,iVar6);
+    sound_stop_obj(0x62e,iVar6);
 
-    FUN_00495750(0x6fc,iVar6);
+    sound_stop_obj(0x6fc,iVar6);
 
-    FUN_00495750(0x6fc,iVar2);
+    sound_stop_obj(0x6fc,iVar2);
 
-    FUN_00495750(0x36c,iVar6);
+    sound_stop_obj(0x36c,iVar6);
 
     *(undefined4 *)(iVar6 + 0x210) = 0;
 
@@ -4225,7 +4227,7 @@ void FUN_004d77e0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *
 
     *(uint *)(iVar6 + 0xe0) = *(uint *)(iVar6 + 0xe0) | 2;
 
-    iVar5 = FUN_00456050(iVar6);
+    iVar5 = gun_find_right(iVar6);
 
     if (iVar5 != 0) {
 

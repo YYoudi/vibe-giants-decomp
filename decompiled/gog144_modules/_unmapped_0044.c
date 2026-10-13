@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (55 named) — decompiled, names from PS2 symbols
+ * 76 functions (57 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1346,12 +1346,12 @@ void make_explosion_large(undefined4 param_1)
 
 }
 
-/* ===== FUN_00441d20 @ 0x00441D20 ===== */
+/* ===== make_dust_ball @ 0x00441D20 ===== */
 /* PS2 candidate: make_dust_ball (conf 0.426) */
 
 
 
-void FUN_00441d20(undefined4 *param_1,float param_2)
+void make_dust_ball(undefined4 *param_1,float param_2)
 
 
 
@@ -2532,12 +2532,14 @@ void wredit_matrix_recurse(undefined4 *param_1,int *param_2)
 
 }
 
-/* ===== FUN_00443a90 @ 0x00443A90 ===== */
+/* ===== FLK_ActorAdd__FP9FLK_FlickiPcii @ 0x00443A90 ===== */
 /* PS2 candidate: FLK_ActorAdd__FP9FLK_FlickiPcii (conf 0.419) */
 
 
 
-undefined4 FUN_00443a90(int *param_1,int param_2,int param_3,int param_4,int param_5)
+undefined4
+
+FLK_ActorAdd__FP9FLK_FlickiPcii(int *param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -3876,9 +3878,9 @@ undefined4 FLK_FlickRender(int param_1)
 
           fVar14 = (float10)distance3d__FP3P3DT0(piVar9 + 0x29);
 
-          FUN_00515890(piVar9 + -2,piVar9 + 0x20b,(float)(fVar14 / (float10)DAT_006328e0),0,
+          drip_make(piVar9 + -2,piVar9 + 0x20b,(float)(fVar14 / (float10)DAT_006328e0),0,
 
-                       piVar9[0x20a]);
+                    piVar9[0x20a]);
 
         }
 
@@ -4957,7 +4959,7 @@ LAB_00445a50:
 
     }
 
-    FUN_00443a90(param_1,puVar12[2],iVar11,puVar12[4],puVar12[5]);
+    FLK_ActorAdd__FP9FLK_FlickiPcii(param_1,puVar12[2],iVar11,puVar12[4],puVar12[5]);
 
     puVar12 = puVar12 + puVar12[1];
 
@@ -5491,7 +5493,7 @@ LAB_00445a50:
 
     if (-1 < (int)puVar12[2]) {
 
-      FUN_00495750(puVar12[3],puVar12[2] * 0x874 + 0xc + param_1[0x28]);
+      sound_stop_obj(puVar12[3],puVar12[2] * 0x874 + 0xc + param_1[0x28]);
 
       puVar12 = puVar12 + puVar12[1];
 
@@ -7738,7 +7740,7 @@ void FUN_00448750(int param_1,int param_2,int param_3)
 
     if (*(int *)(param_2 + 0x108) != 0) {
 
-      FUN_00495700(*(int *)(param_2 + 0x108),param_1);
+      sound_stop_player(*(int *)(param_2 + 0x108),param_1);
 
     }
 

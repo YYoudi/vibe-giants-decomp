@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (83 named) — decompiled, names from PS2 symbols
+ * 145 functions (86 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -5235,12 +5235,12 @@ int gun_find_left(int param_1)
 
 }
 
-/* ===== FUN_00456050 @ 0x00456050 ===== */
+/* ===== gun_find_right @ 0x00456050 ===== */
 /* PS2 candidate: gun_find_right (conf 0.43) */
 
 
 
-int FUN_00456050(int param_1)
+int gun_find_right(int param_1)
 
 
 
@@ -5608,12 +5608,12 @@ void reaper_spell_small(undefined4 param_1,int param_2,undefined4 param_3,int pa
 
 }
 
-/* ===== FUN_00456a10 @ 0x00456A10 ===== */
+/* ===== hurt_pusher @ 0x00456A10 ===== */
 /* PS2 candidate: hurt_pusher (conf 0.419) */
 
 
 
-void FUN_00456a10(int param_1,float param_2,float param_3,int param_4,int param_5,float *param_6)
+void hurt_pusher(int param_1,float param_2,float param_3,int param_4,int param_5,float *param_6)
 
 
 
@@ -7516,7 +7516,7 @@ LAB_00458528:
 
     uVar5 = IconDefProjectile(10,uVar5);
 
-    iVar7 = FUN_004aa0b0(uVar5);
+    iVar7 = PROJ_CreateBasic(uVar5);
 
     *(int *)(iVar7 + 0x274) = param_1;
 
@@ -10184,12 +10184,12 @@ void item_drop_curweap(int param_1)
 
 }
 
-/* ===== FUN_0045ac50 @ 0x0045AC50 ===== */
+/* ===== item_drop_all_random @ 0x0045AC50 ===== */
 /* PS2 candidate: item_drop_all_random (conf 0.435) */
 
 
 
-void FUN_0045ac50(undefined4 *param_1)
+void item_drop_all_random(undefined4 *param_1)
 
 
 
@@ -11006,7 +11006,7 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 
       fStack_38 = param_2 * fStack_8 * 6.0 + fStack_38;
 
-      FUN_00441d20(&fStack_40,param_2 * param_4);
+      make_dust_ball(&fStack_40,param_2 * param_4);
 
       return;
 
@@ -11213,7 +11213,7 @@ LAB_0045bb57:
 
         local_30 = (float)(fVar6 + (float10)local_30);
 
-        FUN_00441d20(&local_38,param_2);
+        make_dust_ball(&local_38,param_2);
 
         iVar4 = iVar4 + -1;
 
@@ -13145,7 +13145,7 @@ LAB_0045de98:
 
         if (iVar7 != 0) {
 
-          FUN_00495750(0x407,iVar7);
+          sound_stop_obj(0x407,iVar7);
 
           iVar5 = reaper_0052e4a0(param_1);
 
@@ -13521,7 +13521,7 @@ void laser_ghost__FP6OBJECT(int param_1)
 
       if (iVar5 == 0xca) {
 
-        FUN_00495700(0x453,param_1);
+        sound_stop_player(0x453,param_1);
 
 LAB_0045e62f:
 
@@ -13669,7 +13669,7 @@ LAB_0045e51d:
 
         sound_play_player(0x452,param_1);
 
-        FUN_00495700(0x453,param_1);
+        sound_stop_player(0x453,param_1);
 
         ObjectSetAnim(param_1,199,0x10,0,0,0);
 
@@ -13681,7 +13681,7 @@ LAB_0045e51d:
 
       sound_play_player(0x452,param_1);
 
-      FUN_00495700(0x453,param_1);
+      sound_stop_player(0x453,param_1);
 
       ObjectSetAnim(param_1,199,0x30,0,0,0x3e800000);
 

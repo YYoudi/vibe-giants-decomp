@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (107 named) — decompiled, names from PS2 symbols
+ * 186 functions (110 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -354,7 +354,7 @@ LAB_00511547:
 
   }
 
-  FUN_00511cf0(iVar5);
+  vimp_get_wanted_loc__FP6OBJECT(iVar5);
 
   iVar6 = *(int *)(iVar5 + 0x100);
 
@@ -719,7 +719,7 @@ void vimp_animselect(int param_1)
 
                   }
 
-                  FUN_00511cf0(param_1);
+                  vimp_get_wanted_loc__FP6OBJECT(param_1);
 
                 }
 
@@ -863,12 +863,12 @@ void vimp_animselect(int param_1)
 
 }
 
-/* ===== FUN_00511cf0 @ 0x00511CF0 ===== */
+/* ===== vimp_get_wanted_loc__FP6OBJECT @ 0x00511CF0 ===== */
 /* PS2 candidate: vimp_get_wanted_loc__FP6OBJECT (conf 0.423) */
 
 
 
-void FUN_00511cf0(int param_1)
+void vimp_get_wanted_loc__FP6OBJECT(int param_1)
 
 
 
@@ -3255,12 +3255,14 @@ LAB_005148d3:
 
 }
 
-/* ===== FUN_00514900 @ 0x00514900 ===== */
+/* ===== wave_effect_get_player_origin @ 0x00514900 ===== */
 /* PS2 candidate: wave_effect_get_player_origin (conf 0.433) */
 
 
 
-void FUN_00514900(int param_1,int param_2,float *param_3,float *param_4,float param_5,float param_6)
+void wave_effect_get_player_origin
+
+               (int param_1,int param_2,float *param_3,float *param_4,float param_5,float param_6)
 
 
 
@@ -3986,7 +3988,7 @@ void FUN_00515090(int param_1)
 
   {
 
-    FUN_00514900(param_1,iVar2,&local_e0,&local_ec,local_4,local_8);
+    wave_effect_get_player_origin(param_1,iVar2,&local_e0,&local_ec,local_4,local_8);
 
     if ((iVar2 == 0) || (*(int *)(param_1 + 0x34) == 0)) {
 
@@ -4419,14 +4421,14 @@ void object_spawn_class2(int param_1,undefined4 *param_2,float param_3,float par
 
 }
 
-/* ===== FUN_00515890 @ 0x00515890 ===== */
+/* ===== drip_make @ 0x00515890 ===== */
 /* PS2 candidate: drip_make (conf 0.433) */
 
 
 
-void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float param_5,int param_6,
+void drip_make(int param_1,float *param_2,float param_3,float param_4,float param_5,int param_6,
 
-                 undefined4 param_7)
+              undefined4 param_7)
 
 
 
@@ -4635,9 +4637,9 @@ void FUN_00515b20(int param_1,undefined4 param_2,undefined4 param_3)
 
   fVar4 = (float10)FUN_00518b70(param_1,0);
 
-  FUN_00515890(param_1,param_2,(float)((float10)(float)fVar3 / fVar4),
+  drip_make(param_1,param_2,(float)((float10)(float)fVar3 / fVar4),ABS(*(float *)(param_1 + 0x114)),
 
-               ABS(*(float *)(param_1 + 0x114)),0x3f800000,1,param_3);
+            0x3f800000,1,param_3);
 
   return;
 

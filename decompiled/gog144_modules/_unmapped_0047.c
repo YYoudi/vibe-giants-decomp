@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (50 named) — decompiled, names from PS2 symbols
+ * 67 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -3545,12 +3545,12 @@ void marker_path_create(int param_1)
 
 }
 
-/* ===== FUN_00477da0 @ 0x00477DA0 ===== */
+/* ===== marker_spline_adjust_scale @ 0x00477DA0 ===== */
 /* PS2 candidate: marker_spline_adjust_scale (conf 0.436) */
 
 
 
-void FUN_00477da0(int param_1,float param_2,int param_3)
+void marker_spline_adjust_scale(int param_1,float param_2,int param_3)
 
 
 
@@ -4239,7 +4239,7 @@ void FUN_004789e0(int param_1,char param_2,int *param_3,undefined4 *param_4)
 
     else if ((*(uint *)(param_1 + 0xe0) & 0x100) == 0) {
 
-      iVar4 = FUN_00456050(param_1);
+      iVar4 = gun_find_right(param_1);
 
       *param_4 = 1;
 
@@ -5086,7 +5086,7 @@ void mecc_do_death(float param_1,float param_2,int param_3,int param_4,float par
 
   }
 
-  FUN_00495700(0x5a5,iVar2);
+  sound_stop_player(0x5a5,iVar2);
 
   *(undefined4 *)(iVar4 + 0x1dc) = 0;
 
@@ -5154,13 +5154,13 @@ void mecc_do_death(float param_1,float param_2,int param_3,int param_4,float par
 
   }
 
-  FUN_00495700(0x693,iVar2);
+  sound_stop_player(0x693,iVar2);
 
-  FUN_00495700(0x694,iVar2);
+  sound_stop_player(0x694,iVar2);
 
-  FUN_00495700(0x695,iVar2);
+  sound_stop_player(0x695,iVar2);
 
-  FUN_00495700(0x696,iVar2);
+  sound_stop_player(0x696,iVar2);
 
   if (param_1 == 7.00649e-45) {
 
@@ -7002,7 +7002,7 @@ LAB_0047d6b8:
 
   case 0x1c:
 
-    if ((*(int *)(iVar5 + 0x19c) == 0) && (local_1c = FUN_00456050(iVar7), local_1c != 0)) {
+    if ((*(int *)(iVar5 + 0x19c) == 0) && (local_1c = gun_find_right(iVar7), local_1c != 0)) {
 
       local_20 = 1;
 
@@ -7038,7 +7038,7 @@ LAB_0047d6b8:
 
       PROJ_DefGet(0x13);
 
-      local_1c = FUN_00456050(iVar7);
+      local_1c = gun_find_right(iVar7);
 
       if (local_1c != 0) {
 
@@ -7818,7 +7818,7 @@ LAB_0047e183:
 
       }
 
-      FUN_00495700(0x5a5,param_1);
+      sound_stop_player(0x5a5,param_1);
 
       iVar6 = param_1[0x40];
 
@@ -7884,7 +7884,7 @@ LAB_0047e183:
 
       }
 
-      FUN_00495700(0x5a5,param_1);
+      sound_stop_player(0x5a5,param_1);
 
       iVar6 = param_1[0x40];
 
@@ -8146,7 +8146,7 @@ LAB_0047e183:
 
     *(undefined4 *)(iVar3 + 0x1dc) = 0;
 
-    FUN_00495700(0x5a5,param_1);
+    sound_stop_player(0x5a5,param_1);
 
     *(uint *)(*(int *)(iVar3 + 0x118) + 0xd8) =
 
@@ -8224,7 +8224,7 @@ LAB_0047e84d:
 
   }
 
-  local_98 = (float)FUN_00456050(param_1);
+  local_98 = (float)gun_find_right(param_1);
 
   if (local_98 == 0.0) {
 
@@ -8336,7 +8336,7 @@ LAB_0047e84d:
 
       if (*(int *)(iVar3 + 0x118) != 0) {
 
-        FUN_00495700(0x5a5,param_1);
+        sound_stop_player(0x5a5,param_1);
 
         *(undefined4 *)(iVar3 + 0x1dc) = 0;
 
@@ -8402,7 +8402,7 @@ LAB_0047eba7:
 
           if (iVar6 == 0) {
 
-            FUN_00495700(0x5a5,param_1);
+            sound_stop_player(0x5a5,param_1);
 
             *(undefined4 *)(iVar3 + 0x1dc) = 0;
 
@@ -8420,7 +8420,7 @@ LAB_0047eba7:
 
         if (*(int *)(iVar3 + 0x11c) == 0) {
 
-          FUN_00495700(0x5a5,param_1);
+          sound_stop_player(0x5a5,param_1);
 
           *(undefined4 *)(iVar3 + 0x1dc) = 0;
 
@@ -9754,7 +9754,7 @@ void mecc_to_bush(int param_1)
 
   }
 
-  iVar4 = FUN_00456050(param_1);
+  iVar4 = gun_find_right(param_1);
 
   if (iVar4 != 0) {
 

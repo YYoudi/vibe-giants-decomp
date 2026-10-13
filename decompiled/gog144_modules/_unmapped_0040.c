@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (66 named) — decompiled, names from PS2 symbols
+ * 105 functions (67 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -5942,9 +5942,9 @@ void meccbaseitem_start_building(int param_1,int param_2,int param_3)
 
       if (DAT_00657678 == 0) {
 
-        FUN_00441d20(*piVar5 + 0xa0,0x40000000);
+        make_dust_ball(*piVar5 + 0xa0,0x40000000);
 
-        FUN_00441d20(*piVar5 + 0xa0,0x40400000);
+        make_dust_ball(*piVar5 + 0xa0,0x40400000);
 
       }
 
@@ -8726,12 +8726,12 @@ void FUN_0040bb40(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_0040bc00 @ 0x0040BC00 ===== */
+/* ===== wound_process_single__FP5WOUND @ 0x0040BC00 ===== */
 /* PS2 candidate: wound_process_single__FP5WOUND (conf 0.431) */
 
 
 
-void FUN_0040bc00(int param_1)
+void wound_process_single__FP5WOUND(int param_1)
 
 
 
@@ -8876,7 +8876,7 @@ void FUN_0040bdc0(void)
 
   for (puVar1 = DAT_00632db0; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
-    FUN_0040bc00(puVar1);
+    wound_process_single__FP5WOUND(puVar1);
 
   }
 

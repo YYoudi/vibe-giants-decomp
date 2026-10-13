@@ -14304,7 +14304,7 @@ void cam_mode_full(int param_1,int param_2)
 
       *(uint *)(iVar5 + 0xc4) = puVar1[0x3eb];
 
-      iVar3 = FUN_00456050(iVar5);
+      iVar3 = gun_find_right(iVar5);
 
       if (iVar3 != 0) {
 

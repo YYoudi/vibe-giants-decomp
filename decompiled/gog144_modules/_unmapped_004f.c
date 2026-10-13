@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (32 named) — decompiled, names from PS2 symbols
+ * 48 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -108,7 +108,7 @@ void smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie(int param_1,int para
 
       if (fVar5 < (float10)4.0) {
 
-        FUN_00495750(0x3b5,param_1);
+        sound_stop_obj(0x3b5,param_1);
 
         smartie_lock_to_player(param_1,*(undefined4 *)(param_1 + 0x274),1);
 
@@ -2697,7 +2697,7 @@ switchD_004f7908_caseD_20:
 
         }
 
-        FUN_00456a10(param_1,param_2,param_2,param_3,param_4,param_5);
+        hurt_pusher(param_1,param_2,param_2,param_3,param_4,param_5);
 
         FUN_0040bb40(param_3,param_5);
 
@@ -3216,7 +3216,7 @@ void smokegen_process(float param_1)
 
     if ((float10)fVar2 - fVar9 < (float10)0.0) {
 
-      FUN_004f8800(param_1);
+      make_particle__FP6OBJECT(param_1);
 
       piVar3[1] = piVar3[2];
 
@@ -3250,7 +3250,7 @@ LAB_004f844a:
 
       do {
 
-        FUN_004f8800(param_1);
+        make_particle__FP6OBJECT(param_1);
 
         iVar8 = iVar8 + -1;
 
@@ -3467,12 +3467,12 @@ void obj_sound_cleanup(undefined4 *param_1)
 
 }
 
-/* ===== FUN_004f8800 @ 0x004F8800 ===== */
+/* ===== make_particle__FP6OBJECT @ 0x004F8800 ===== */
 /* PS2 candidate: make_particle__FP6OBJECT (conf 0.42) */
 
 
 
-int FUN_004f8800(float param_1)
+int make_particle__FP6OBJECT(float param_1)
 
 
 

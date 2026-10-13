@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (60 named) — decompiled, names from PS2 symbols
+ * 94 functions (64 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -198,7 +198,7 @@ void FUN_004e1240(int param_1)
 
   }
 
-  FUN_00495750(0x565,param_1);
+  sound_stop_obj(0x565,param_1);
 
   return;
 
@@ -1715,12 +1715,12 @@ undefined4 ai_ground_snap(int param_1)
 
 }
 
-/* ===== FUN_004e2ce0 @ 0x004E2CE0 ===== */
+/* ===== rpman_find_hide_spot__FP6OBJECTi @ 0x004E2CE0 ===== */
 /* PS2 candidate: rpman_find_hide_spot__FP6OBJECTi (conf 0.436) */
 
 
 
-void FUN_004e2ce0(int param_1,int param_2)
+void rpman_find_hide_spot__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -3094,12 +3094,12 @@ LAB_004e3e52:
 
 }
 
-/* ===== FUN_004e3eb0 @ 0x004E3EB0 ===== */
+/* ===== rpman_consider_run_chatter__FP6OBJECT @ 0x004E3EB0 ===== */
 /* PS2 candidate: rpman_consider_run_chatter__FP6OBJECT (conf 0.431) */
 
 
 
-void FUN_004e3eb0(int param_1)
+void rpman_consider_run_chatter__FP6OBJECT(int param_1)
 
 
 
@@ -3475,7 +3475,7 @@ void FUN_004e4360(int param_1)
 
   if (piVar2[0x11] == 0) {
 
-    FUN_004e2ce0(param_1,1);
+    rpman_find_hide_spot__FP6OBJECTi(param_1,1);
 
     if (piVar2[0x11] != 0) {
 
@@ -6321,7 +6321,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
   else if (*(int *)(iVar4 + 0x238) != 0) {
 
-    FUN_00495750(0x62e,iVar5);
+    sound_stop_obj(0x62e,iVar5);
 
     *(undefined4 *)(iVar4 + 0x238) = 0;
 
@@ -6604,12 +6604,12 @@ void FUN_004e7390(int param_1)
 
 }
 
-/* ===== FUN_004e7460 @ 0x004E7460 ===== */
+/* ===== rpman_army_goto_firepit__FP6OBJECT @ 0x004E7460 ===== */
 /* PS2 candidate: rpman_army_goto_firepit__FP6OBJECT (conf 0.433) */
 
 
 
-void FUN_004e7460(int param_1)
+void rpman_army_goto_firepit__FP6OBJECT(int param_1)
 
 
 
@@ -6764,7 +6764,7 @@ void rpman_gib__FP6OBJECTT0(int param_1,int param_2)
 
   if (*(int *)(iVar3 + 0x238) != 0) {
 
-    FUN_00495750(0x62e,param_1);
+    sound_stop_obj(0x62e,param_1);
 
     *(undefined4 *)(iVar3 + 0x238) = 0;
 
@@ -6953,7 +6953,7 @@ void rpman_notify_hit(float param_1,int param_2)
 
            fVar11 < (float10)625.0)))))) {
 
-        FUN_004e2ce0(iVar5,0);
+        rpman_find_hide_spot__FP6OBJECTi(iVar5,0);
 
         iVar7 = *(int *)(iVar10 + 0x44);
 
@@ -10881,12 +10881,12 @@ void kabutoai_punch_user(void)
 
 }
 
-/* ===== FUN_004ee670 @ 0x004EE670 ===== */
+/* ===== reaper_logic @ 0x004EE670 ===== */
 /* PS2 candidate: reaper_logic (conf 0.426) */
 
 
 
-void FUN_004ee670(int param_1)
+void reaper_logic(int param_1)
 
 
 

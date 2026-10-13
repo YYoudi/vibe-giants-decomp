@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (69 named) — decompiled, names from PS2 symbols
+ * 100 functions (70 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -7099,12 +7099,12 @@ bool FUN_004188e0(int param_1)
 
 }
 
-/* ===== FUN_00418950 @ 0x00418950 ===== */
+/* ===== base_find_closest @ 0x00418950 ===== */
 /* PS2 candidate: base_find_closest (conf 0.421) */
 
 
 
-int FUN_00418950(int param_1)
+int base_find_closest(int param_1)
 
 
 

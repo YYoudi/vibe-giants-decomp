@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (83 named) — decompiled, names from PS2 symbols
+ * 142 functions (88 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -399,12 +399,12 @@ void FUN_00490d40(void)
 
 }
 
-/* ===== FUN_00490d70 @ 0x00490D70 ===== */
+/* ===== showchat_mission_objective__Fi @ 0x00490D70 ===== */
 /* PS2 candidate: showchat_mission_objective__Fi (conf 0.421) */
 
 
 
-void FUN_00490d70(void)
+void showchat_mission_objective__Fi(void)
 
 
 
@@ -735,7 +735,7 @@ undefined4 FUN_00490fe0(void)
 
         DAT_0063302c = 0;
 
-        FUN_00490d70(*(int *)(DAT_006330e4 + 0x4a60) + -1);
+        showchat_mission_objective__Fi(*(int *)(DAT_006330e4 + 0x4a60) + -1);
 
       }
 
@@ -833,7 +833,7 @@ undefined4 FUN_00490fe0(void)
 
           }
 
-          FUN_00492290();
+          save_mission_continuity__Fv();
 
           if (iVar2 < 0x20) {
 
@@ -2246,14 +2246,14 @@ void level_config_lookup(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00492290 @ 0x00492290 ===== */
+/* ===== save_mission_continuity__Fv @ 0x00492290 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: save_mission_continuity__Fv (conf 0.432) */
 
 
 
-void FUN_00492290(void)
+void save_mission_continuity__Fv(void)
 
 
 
@@ -5255,7 +5255,7 @@ LAB_004947ed:
 
         DAT_0063302c = 0;
 
-        FUN_00490d70(*(int *)(DAT_006330e4 + 0x4a60) + -1);
+        showchat_mission_objective__Fi(*(int *)(DAT_006330e4 + 0x4a60) + -1);
 
       }
 
@@ -5917,12 +5917,12 @@ int sound_play_2(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00495700 @ 0x00495700 ===== */
+/* ===== sound_stop_player @ 0x00495700 ===== */
 /* PS2 candidate: sound_stop_player (conf 0.43) */
 
 
 
-void FUN_00495700(int param_1,int param_2)
+void sound_stop_player(int param_1,int param_2)
 
 
 
@@ -5958,12 +5958,12 @@ void FUN_00495700(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00495750 @ 0x00495750 ===== */
+/* ===== sound_stop_obj @ 0x00495750 ===== */
 /* PS2 candidate: sound_stop_obj (conf 0.421) */
 
 
 
-void FUN_00495750(int param_1)
+void sound_stop_obj(int param_1)
 
 
 
@@ -6396,7 +6396,7 @@ LAB_00495a11:
 
             if (piVar1[0xb] != 0) {
 
-              FUN_00495750(piVar1[4],piVar1[0xb]);
+              sound_stop_obj(piVar1[4],piVar1[0xb]);
 
             }
 
@@ -8678,7 +8678,7 @@ void FUN_004981c0(int param_1)
 
   pcVar1 = *(char **)(param_1 + 0x100);
 
-  iVar2 = FUN_00456050(DAT_00632a88);
+  iVar2 = gun_find_right(DAT_00632a88);
 
   if (iVar2 == 0) {
 
@@ -8809,7 +8809,7 @@ void FUN_004982c0(void)
 
   else {
 
-    iVar3 = FUN_00456050(DAT_00632a88);
+    iVar3 = gun_find_right(DAT_00632a88);
 
     if (iVar3 == 0) goto LAB_0049841a;
 
@@ -8869,7 +8869,7 @@ LAB_00498377:
 
 LAB_0049841a:
 
-  FUN_004984b0();
+  kabuto_logic();
 
   fVar5 = (float10)FUN_00518b70(DAT_00632a88,0);
 
@@ -8897,14 +8897,14 @@ LAB_0049841a:
 
 }
 
-/* ===== FUN_004984b0 @ 0x004984B0 ===== */
+/* ===== kabuto_logic @ 0x004984B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: kabuto_logic (conf 0.424) */
 
 
 
-void FUN_004984b0(void)
+void kabuto_logic(void)
 
 
 
@@ -12275,7 +12275,7 @@ void FUN_0049b8a0(int param_1)
 
     iVar1 = *(int *)(param_1 + 0x100);
 
-    FUN_004c26d0(param_1,iVar1 + 0x68);
+    reaper_init_trails(param_1,iVar1 + 0x68);
 
     reaper_init_items(param_1);
 

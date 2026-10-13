@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (48 named) — decompiled, names from PS2 symbols
+ * 87 functions (49 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -2948,16 +2948,16 @@ void teammecc_get_wantloc_formation
 
 }
 
-/* ===== FUN_00502750 @ 0x00502750 ===== */
+/* ===== teammecc_get_new_wander_loc__FP6OBJECTiP3P3DffT2ffff @ 0x00502750 ===== */
 /* PS2 candidate: teammecc_get_new_wander_loc__FP6OBJECTiP3P3DffT2ffff (conf 0.434) */
 
 
 
-void FUN_00502750(int param_1,float *param_2,undefined4 param_3,undefined4 param_4,
+void teammecc_get_new_wander_loc__FP6OBJECTiP3P3DffT2ffff
 
-                 undefined4 param_5,float param_6,float param_7,undefined4 param_8,
+               (int param_1,float *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
 
-                 undefined4 param_9)
+               float param_6,float param_7,undefined4 param_8,undefined4 param_9)
 
 
 
@@ -3160,9 +3160,11 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
     if ((float10)fVar3 * (float10)fVar3 < fVar11) {
 
-      FUN_00502750(param_2,iVar10,0,*puVar1,iVar4 + 0xa0,*(undefined4 *)(DAT_00632ed8 + 0xae4),
+      teammecc_get_new_wander_loc__FP6OBJECTiP3P3DffT2ffff
 
-                   *(undefined4 *)(DAT_00632ed8 + 0xae8),0,0x43b40000);
+                (param_2,iVar10,0,*puVar1,iVar4 + 0xa0,*(undefined4 *)(DAT_00632ed8 + 0xae4),
+
+                 *(undefined4 *)(DAT_00632ed8 + 0xae8),0,0x43b40000);
 
     }
 
@@ -3188,7 +3190,7 @@ void teammecc_get_attackloc(float param_1,int param_2)
 
   if (*(int *)(iVar4 + 0xe4) == 0) {
 
-    iVar10 = FUN_00456050(iVar4);
+    iVar10 = gun_find_right(iVar4);
 
     if (iVar10 == 0) {
 
@@ -4055,9 +4057,11 @@ void teammecc_get_hideloc__FP6OBJECTi(undefined4 param_1,int param_2)
 
       if ((float10)fVar2 * (float10)fVar2 < fVar12) {
 
-        FUN_00502750(param_2,iVar10,0,*puVar7,iVar3 + 0xa0,*(undefined4 *)(DAT_00632ed8 + 0xae4),
+        teammecc_get_new_wander_loc__FP6OBJECTiP3P3DffT2ffff
 
-                     *(undefined4 *)(DAT_00632ed8 + 0xae8),0,0x43b40000);
+                  (param_2,iVar10,0,*puVar7,iVar3 + 0xa0,*(undefined4 *)(DAT_00632ed8 + 0xae4),
+
+                   *(undefined4 *)(DAT_00632ed8 + 0xae8),0,0x43b40000);
 
       }
 
@@ -4627,7 +4631,7 @@ LAB_00504094:
 
     }
 
-    iVar4 = FUN_00456050(iVar1);
+    iVar4 = gun_find_right(iVar1);
 
     if (iVar4 == 0) {
 
@@ -8629,7 +8633,7 @@ LAB_0050768d:
 
   {
 
-    FUN_00495700(0x574,param_1);
+    sound_stop_player(0x574,param_1);
 
     *(undefined4 *)(iVar7 + 0x1e0) = 0;
 
@@ -11142,7 +11146,7 @@ void reaper_ability_playersound5(int param_1,int param_2)
 
     }
 
-    FUN_00495700(uVar5,iVar2);
+    sound_stop_player(uVar5,iVar2);
 
   }
 
@@ -11280,7 +11284,7 @@ void TurretExit(int param_1)
 
         }
 
-        FUN_00495700(uVar4,iVar1);
+        sound_stop_player(uVar4,iVar1);
 
       }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (35 named) — decompiled, names from PS2 symbols
+ * 53 functions (36 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -1528,9 +1528,9 @@ void kabutoai_change_anim__FP6OBJECTii4SDKYfi
 
     ObjectSetAnim(param_1,param_2,bVar1,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
 
-    FUN_00495750(0x6dc,param_1);
+    sound_stop_obj(0x6dc,param_1);
 
-    FUN_00495750(0x6dd,param_1);
+    sound_stop_obj(0x6dd,param_1);
 
   }
 
@@ -1598,12 +1598,12 @@ float10 FUN_00469950(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004699e0 @ 0x004699E0 ===== */
+/* ===== loglauncher_process @ 0x004699E0 ===== */
 /* PS2 candidate: loglauncher_process (conf 0.419) */
 
 
 
-void FUN_004699e0(int param_1)
+void loglauncher_process(int param_1)
 
 
 
@@ -1659,9 +1659,9 @@ void FUN_004699e0(int param_1)
 
                     *(float *)(DAT_00632ed8 + 0x15dc) * *(float *)(param_1 + 0xc4),0x3e2aaaab);
 
-      FUN_00495750(0x6dc,param_1);
+      sound_stop_obj(0x6dc,param_1);
 
-      FUN_00495750(0x6dd,param_1);
+      sound_stop_obj(0x6dd,param_1);
 
     }
 
@@ -1701,9 +1701,9 @@ void FUN_004699e0(int param_1)
 
   ObjectSetAnim(param_1,uVar6,0x20,0,fVar1 * 0.0,0x3e2aaaab);
 
-  FUN_00495750(0x6dc,param_1);
+  sound_stop_obj(0x6dc,param_1);
 
-  FUN_00495750(0x6dd,param_1);
+  sound_stop_obj(0x6dd,param_1);
 
 LAB_00469b54:
 

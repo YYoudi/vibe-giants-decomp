@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (50 named) — decompiled, names from PS2 symbols
+ * 64 functions (52 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -227,7 +227,7 @@ void reaper_finish_cloak(int param_1,undefined4 param_2)
 
       if (iVar4 == 0) {
 
-        iVar4 = FUN_00456050(param_1);
+        iVar4 = gun_find_right(param_1);
 
         (*(code *)PTR_crt_matrix_mul_00580c18)
 
@@ -779,7 +779,7 @@ LAB_004c0b9c:
 
           ;
 
-          uVar8 = FUN_00456050(iVar3);
+          uVar8 = gun_find_right(iVar3);
 
           playerobj_eval_refpt(uVar8,0,&local_40);
 
@@ -847,7 +847,7 @@ LAB_004c0b9c:
 
         local_44 = *(float *)(iVar5 + 0x1e8) * *(float *)(iVar5 + 0xc4) + *(float *)(iVar5 + 0xa8);
 
-        uVar8 = FUN_00456050(iVar3);
+        uVar8 = gun_find_right(iVar3);
 
         playerobj_eval_refpt(uVar8,0,&local_40);
 
@@ -1361,7 +1361,7 @@ void reaper_check_enter_jet_ski__FP6OBJECT(int param_1)
 
                 comm_chat_send_2(iVar8,0,1,0,4,&param_1);
 
-                FUN_004d77e0(iVar8,4,4,&param_1);
+                charger_do_fx__FP6OBJECTiii(iVar8,4,4,&param_1);
 
               }
 
@@ -2388,12 +2388,12 @@ void FUN_004c2320(int param_1)
 
 }
 
-/* ===== FUN_004c26d0 @ 0x004C26D0 ===== */
+/* ===== reaper_init_trails @ 0x004C26D0 ===== */
 /* PS2 candidate: reaper_init_trails (conf 0.432) */
 
 
 
-void FUN_004c26d0(int param_1,undefined4 *param_2)
+void reaper_init_trails(int param_1,undefined4 *param_2)
 
 
 
@@ -2471,7 +2471,7 @@ void FUN_004c26d0(int param_1,undefined4 *param_2)
 
       object_create_child(iVar1,1,0x29d);
 
-      iVar2 = FUN_00456050(iVar1);
+      iVar2 = gun_find_right(iVar1);
 
       *(undefined4 *)(iVar2 + 0x184) = *(undefined4 *)(iVar1 + 0x184);
 
@@ -2719,7 +2719,7 @@ void reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap
 
   
 
-  iVar5 = FUN_00456050(param_2);
+  iVar5 = gun_find_right(param_2);
 
   if ((param_4 != 0) && (iVar6 = object_volume_sfx(param_1), iVar6 == 0)) {
 
@@ -3086,7 +3086,7 @@ LAB_004c4aab:
 
   if (*(int *)(iVar5 + 0xff4) != 0) {
 
-    FUN_00495700(0x36c,param_1);
+    sound_stop_player(0x36c,param_1);
 
     *(undefined4 *)(iVar5 + 0xff4) = 0;
 
@@ -3328,7 +3328,7 @@ LAB_004c4d8b:
 
   if (*(int *)(iVar5 + 0xff4) != 0) {
 
-    FUN_00495700(0x36c,param_1);
+    sound_stop_player(0x36c,param_1);
 
     *(undefined4 *)(iVar5 + 0xff4) = 0;
 
@@ -6466,12 +6466,12 @@ void evilreaper_fire_bow__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004cb860 @ 0x004CB860 ===== */
+/* ===== evilreaper_select_firewall_loc__FP6OBJECT @ 0x004CB860 ===== */
 /* PS2 candidate: evilreaper_select_firewall_loc__FP6OBJECT (conf 0.435) */
 
 
 
-void FUN_004cb860(int param_1)
+void evilreaper_select_firewall_loc__FP6OBJECT(int param_1)
 
 
 
@@ -11253,7 +11253,7 @@ LAB_004d135c:
 
       *(float *)(iVar11 + 0x274) = fVar5;
 
-      FUN_00495750(0x4d3,fVar5);
+      sound_stop_obj(0x4d3,fVar5);
 
     }
 

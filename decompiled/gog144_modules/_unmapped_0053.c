@@ -3219,7 +3219,7 @@ LAB_005319de:
 
            (iVar4 = FUN_0052e5b0(*(undefined4 *)(pcVar15 + 5)), iVar4 == 0)) {
 
-          iVar4 = FUN_004aa0b0(*(undefined4 *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 9));
+          iVar4 = PROJ_CreateBasic(*(undefined4 *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 9));
 
           if (*(int *)(pcVar15 + 0x25) == 0) {
 

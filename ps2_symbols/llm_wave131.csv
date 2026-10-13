@@ -1,0 +1,28 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004e2ce0,FUN_004e2ce0,,rpman_find_hide_spot__FP6OBJECTi,0.9,llm-w131,body-verified
+00477da0,FUN_00477da0,,marker_spline_adjust_scale,0.9,llm-w131,body-verified family
+004cb860,FUN_004cb860,,evilreaper_select_firewall_loc__FP6OBJECT,0.9,llm-w131,body-verified
+0045ac50,FUN_0045ac50,,item_drop_all_random,0.9,llm-w131,body-verified
+00502750,FUN_00502750,,teammecc_get_new_wander_loc__FP6OBJECTiP3P3DffT2ffff,0.9,llm-w131,body-verified
+00515890,FUN_00515890,,drip_make,0.9,llm-w131,body-verified
+00514900,FUN_00514900,,wave_effect_get_player_origin,0.9,llm-w131,body-verified
+004e7460,FUN_004e7460,,rpman_army_goto_firepit__FP6OBJECT,0.9,llm-w131,body-verified
+004c26d0,FUN_004c26d0,,reaper_init_trails,0.9,llm-w131,body-verified
+00492290,FUN_00492290,,save_mission_continuity__Fv,0.9,llm-w131,body-verified
+004e3eb0,FUN_004e3eb0,,rpman_consider_run_chatter__FP6OBJECT,0.9,llm-w131,body-verified
+0040bc00,FUN_0040bc00,,wound_process_single__FP5WOUND,0.9,llm-w131,body-verified
+00495700,FUN_00495700,,sound_stop_player,0.9,llm-w131,body-verified
+00456050,FUN_00456050,,gun_find_right,0.9,llm-w131,body-verified
+004ee670,FUN_004ee670,,reaper_logic,0.9,llm-w131,body-verified
+00441d20,FUN_00441d20,,make_dust_ball,0.9,llm-w131,body-verified model 0x2a0
+004984b0,FUN_004984b0,,kabuto_logic,0.9,llm-w131,body-verified
+00511cf0,FUN_00511cf0,,vimp_get_wanted_loc__FP6OBJECT,0.9,llm-w131,body-verified
+004aa0b0,FUN_004aa0b0,,PROJ_CreateBasic,0.9,llm-w131,body-verified
+00495750,FUN_00495750,,sound_stop_obj,0.9,llm-w131,body-verified
+00490d70,FUN_00490d70,,showchat_mission_objective__Fi,0.9,llm-w131,body-verified
+00418950,FUN_00418950,,base_find_closest,0.9,llm-w131,body-verified ObjIsPlayer
+004f8800,FUN_004f8800,,make_particle__FP6OBJECT,0.9,llm-w131,body-verified
+004699e0,FUN_004699e0,,loglauncher_process,0.9,llm-w131,body-verified
+00456a10,FUN_00456a10,,hurt_pusher,0.9,llm-w131,body-verified
+00443a90,FUN_00443a90,,FLK_ActorAdd__FP9FLK_FlickiPcii,0.9,llm-w131,body-verified flick family
+004d77e0,FUN_004d77e0,,charger_do_fx__FP6OBJECTiii,0.9,llm-w131,body-verified

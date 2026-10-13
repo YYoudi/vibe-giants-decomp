@@ -1768,9 +1768,9 @@ void reaperbasebldg_start_building(int param_1,int param_2,uint param_3)
 
       if (DAT_00657678 == 0) {
 
-        FUN_00441d20(*piVar5 + 0xa0,0x40000000);
+        make_dust_ball(*piVar5 + 0xa0,0x40000000);
 
-        FUN_00441d20(*piVar5 + 0xa0,0x40400000);
+        make_dust_ball(*piVar5 + 0xa0,0x40400000);
 
       }
 
@@ -3713,7 +3713,7 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   }
 
-  FUN_00495700(0x36c,uVar2);
+  sound_stop_player(0x36c,uVar2);
 
   puVar6[0x3fd] = 0;
 
@@ -3775,13 +3775,13 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   }
 
-  FUN_00495700(0x69c,uVar2);
+  sound_stop_player(0x69c,uVar2);
 
-  FUN_00495700(0x69d,uVar2);
+  sound_stop_player(0x69d,uVar2);
 
-  FUN_00495700(0x69e,uVar2);
+  sound_stop_player(0x69e,uVar2);
 
-  FUN_00495700(0x69f,uVar2);
+  sound_stop_player(0x69f,uVar2);
 
   if (DAT_00632f08 == 0) {
 
@@ -3963,7 +3963,7 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
      (((((param_1 == 5 || (param_1 == 7)) || (param_1 == 6)) || (param_1 == 8)) &&
 
-      (iVar3 = FUN_00456050(uVar2), iVar3 != 0)))) {
+      (iVar3 = gun_find_right(uVar2), iVar3 != 0)))) {
 
     *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x40000000;
 
@@ -4074,7 +4074,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
         *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) & 0xbfffffff;
 
-        iVar7 = FUN_00456050(param_1);
+        iVar7 = gun_find_right(param_1);
 
         if (iVar7 != 0) {
 
@@ -5418,7 +5418,7 @@ LAB_004b76fe:
 
       *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40000000;
 
-      iVar7 = FUN_00456050(param_1);
+      iVar7 = gun_find_right(param_1);
 
       if (iVar7 != 0) {
 
@@ -6426,7 +6426,7 @@ LAB_004b914c:
 
   }
 
-  FUN_00495700(0x36c,param_1);
+  sound_stop_player(0x36c,param_1);
 
   return;
 
@@ -7106,7 +7106,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     }
 
-    iVar4 = FUN_00456050(param_1);
+    iVar4 = gun_find_right(param_1);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_44,iVar4 + 0x294,*(undefined4 *)(iVar4 + 0x2dc));
 
@@ -7757,7 +7757,7 @@ void reaper_ability_sound(int param_1)
 
     if (puVar1[0x38b] == 0) {
 
-      iVar3 = FUN_00456050(param_1);
+      iVar3 = gun_find_right(param_1);
 
       if (iVar3 != 0) {
 
@@ -7767,7 +7767,7 @@ void reaper_ability_sound(int param_1)
 
     }
 
-    FUN_00495700(0x34c,param_1);
+    sound_stop_player(0x34c,param_1);
 
     puVar1[0x3c7] = *(uint *)(DAT_00632ed8 + 0x828);
 
@@ -8214,7 +8214,7 @@ void FUN_004ba920(int param_1)
 
   if ((*pbVar1 & 2) == 0) {
 
-    iVar2 = FUN_00456050(param_1);
+    iVar2 = gun_find_right(param_1);
 
     *(uint *)(iVar2 + 0xd8) = *(uint *)(iVar2 + 0xd8) & 0xbfffffff;
 
@@ -8590,7 +8590,7 @@ void FUN_004bc800(int param_1,float *param_2,undefined4 *param_3)
 
   
 
-  iVar1 = FUN_00456050(param_1);
+  iVar1 = gun_find_right(param_1);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(local_44,iVar1 + 0x294,*(undefined4 *)(iVar1 + 0x2dc));
 
@@ -8645,7 +8645,7 @@ void FUN_004bc880(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 
   
 
-  iVar1 = FUN_00456050(param_1);
+  iVar1 = gun_find_right(param_1);
 
   (*(code *)PTR_crt_matrix_mul_00580c18)(local_44,iVar1 + 0x294,*(undefined4 *)(iVar1 + 0x2dc));
 
@@ -9150,7 +9150,7 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
               ((0x37 < iVar10 && (iVar10 != 0x4c)))))) {
 
-            iVar10 = FUN_00456050(param_1);
+            iVar10 = gun_find_right(param_1);
 
             if (iVar10 != 0) {
 
@@ -9166,7 +9166,7 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
             }
 
-            FUN_00495700(0x34c,param_1);
+            sound_stop_player(0x34c,param_1);
 
             puVar5[0x3c7] = *(uint *)(DAT_00632ed8 + 0x828);
 
@@ -9186,13 +9186,13 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
                (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0))) &&
 
-              (iVar10 = FUN_00456050(param_1), iVar10 != 0)))) {
+              (iVar10 = gun_find_right(param_1), iVar10 != 0)))) {
 
             *(uint *)(iVar10 + 0xd8) = *(uint *)(iVar10 + 0xd8) & 0xbfffffff;
 
           }
 
-          FUN_00495700(0x34c,param_1);
+          sound_stop_player(0x34c,param_1);
 
           puVar5[0x3c7] = *(uint *)(DAT_00632ed8 + 0x828);
 
@@ -9220,13 +9220,13 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
                (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0))) &&
 
-              (iVar10 = FUN_00456050(param_1), iVar10 != 0)))) {
+              (iVar10 = gun_find_right(param_1), iVar10 != 0)))) {
 
             *(uint *)(iVar10 + 0xd8) = *(uint *)(iVar10 + 0xd8) & 0xbfffffff;
 
           }
 
-          FUN_00495700(0x34c,param_1);
+          sound_stop_player(0x34c,param_1);
 
           puVar5[0x3c7] = *(uint *)(DAT_00632ed8 + 0x828);
 
@@ -9544,7 +9544,7 @@ LAB_004bd3f4:
 
       fVar6 = *(float *)(DAT_00632ed8 + 0x500);
 
-      iVar13 = FUN_00456050(iVar10);
+      iVar13 = gun_find_right(iVar10);
 
       if ((bVar8) && (iVar14 = object_volume_sfx(param_1), iVar14 == 0)) {
 
@@ -9767,7 +9767,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
        ((uVar3 & 0x4000000) != 0)) {
 
-      uVar6 = FUN_00456050(param_1);
+      uVar6 = gun_find_right(param_1);
 
       if (((*puVar2 & 2) == 0) && (iVar5 = camera_is_sniper(), iVar5 == 0)) {
 
@@ -9781,7 +9781,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
       object_create_child(iVar4,1,uVar6);
 
-      iVar5 = FUN_00456050(iVar4);
+      iVar5 = gun_find_right(iVar4);
 
       if ((*puVar2 & 2) != 0) {
 
@@ -9819,7 +9819,7 @@ void reaper_change_bow__FP6OBJECT(uint param_1)
 
     if (iVar5 == 0) {
 
-      uVar6 = FUN_00456050(iVar4);
+      uVar6 = gun_find_right(iVar4);
 
       playerobj_eval_refpt(uVar6,0,local_30);
 
@@ -9901,7 +9901,7 @@ switchD_004bd98b_default:
 
   if (puVar2[0x3e4] != 0) {
 
-    FUN_00495700(0x36c,iVar4);
+    sound_stop_player(0x36c,iVar4);
 
     puVar2[0x3fd] = 0;
 
@@ -9988,7 +9988,7 @@ void reaper_select_bow(uint param_1)
 
       object_create_child(uVar3,1,uVar4);
 
-      iVar5 = FUN_00456050(uVar3);
+      iVar5 = gun_find_right(uVar3);
 
       if ((*puVar1 & 2) != 0) {
 
@@ -10105,7 +10105,7 @@ void reaper_select_sword(int param_1)
 
     object_create_child(param_1,1,0x29d);
 
-    iVar4 = FUN_00456050(param_1);
+    iVar4 = gun_find_right(param_1);
 
     if ((*puVar2 & 2) != 0) {
 
@@ -10155,7 +10155,7 @@ void reaper_select_sword(int param_1)
 
   if (puVar2[0x3e4] != 0) {
 
-    FUN_00495700(0x36c,param_1);
+    sound_stop_player(0x36c,param_1);
 
     puVar2[0x3fd] = 0;
 
@@ -10165,7 +10165,7 @@ void reaper_select_sword(int param_1)
 
   if (puVar2[0x3e4] != 0) {
 
-    FUN_00495700(0x36c,param_1);
+    sound_stop_player(0x36c,param_1);
 
     puVar2[0x3fd] = 0;
 
@@ -10302,7 +10302,7 @@ void reaper_fire_logic__FP6OBJECT(int param_1)
 
       if ((char)((uint)*(undefined4 *)(param_1 + 0xe0) >> 8) < '\0') {
 
-        FUN_00495700(0x34c,param_1);
+        sound_stop_player(0x34c,param_1);
 
         puVar2[0x3c7] = *(uint *)(DAT_00632ed8 + 0x828);
 
@@ -10354,7 +10354,7 @@ void reaper_fire_logic__FP6OBJECT(int param_1)
 
          (0.0 < *(float *)(DAT_00632ed8 + 0x824))) {
 
-        FUN_00495700(0x34c,param_1);
+        sound_stop_player(0x34c,param_1);
 
         puVar2[0x3c7] = *(uint *)(DAT_00632ed8 + 0x828);
 
@@ -10457,7 +10457,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
   puVar2 = *(uint **)(param_1 + 0x100);
 
-  uVar4 = FUN_00456050(param_1);
+  uVar4 = gun_find_right(param_1);
 
   object_lock_with_volume(uVar4);
 
@@ -10681,7 +10681,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
       if (puVar2[0x3e4] != 0) {
 
-        FUN_00495700(0x36c,param_1);
+        sound_stop_player(0x36c,param_1);
 
         puVar2[0x3fd] = 0;
 
@@ -11796,7 +11796,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     if ((puVar9[0x38e] == 0) && ((float)puVar9[0x16] < 0.0 != ((float)puVar9[0x16] == 0.0))) {
 
-      local_11c = FUN_00456050(param_1);
+      local_11c = gun_find_right(param_1);
 
       local_120 = 0;
 
@@ -11960,7 +11960,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     if (puVar9[0x3e3] == 0) {
 
-      FUN_00495700(0x36c,param_1);
+      sound_stop_player(0x36c,param_1);
 
       puVar9[0x3fd] = 0;
 
@@ -12014,7 +12014,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
       }
 
-      FUN_00495700(0x36c,param_1);
+      sound_stop_player(0x36c,param_1);
 
       puVar9[0x3fd] = 0;
 
@@ -12064,7 +12064,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
   if (puVar9[0x3e4] != 0) {
 
-    FUN_00495700(0x36c,param_1);
+    sound_stop_player(0x36c,param_1);
 
     puVar9[0x3fd] = 0;
 
@@ -12130,7 +12130,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     }
 
-    FUN_00495700(uVar4,param_1);
+    sound_stop_player(uVar4,param_1);
 
     puVar9 = *(uint **)(param_1 + 0x100);
 
@@ -12471,7 +12471,7 @@ void fxb_cloak_create(int param_1)
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40000000;
 
-  iVar3 = FUN_00456050(param_1);
+  iVar3 = gun_find_right(param_1);
 
   *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x40000000;
 
@@ -12687,7 +12687,7 @@ void reaper_finish_hail__FP6OBJECT(int param_1)
 
       if (param_1 < *(int *)(iVar6 + 0xea8)) {
 
-        iVar4 = FUN_004aa0b0(0xf,*(undefined4 *)(iVar3 + 0x18c));
+        iVar4 = PROJ_CreateBasic(0xf,*(undefined4 *)(iVar3 + 0x18c));
 
         puVar1 = (uint *)(iVar4 + 0x294);
 

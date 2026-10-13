@@ -104,7 +104,7 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
     tracer_calc_falloff__FP6Traceri(param_1,iVar6,local_c);
 
-    iVar5 = FUN_004f8800(iVar3);
+    iVar5 = make_particle__FP6OBJECT(iVar3);
 
     iVar2 = *(int *)(iVar5 + 0x100);
 
@@ -235,7 +235,7 @@ void main_smoke_004f9170(int param_1)
 
     tracer_calc_falloff__FP6Traceri(param_1,iVar7,local_c);
 
-    iVar6 = FUN_004f8800(iVar4);
+    iVar6 = make_particle__FP6OBJECT(iVar4);
 
     iVar2 = *(int *)(iVar6 + 0x100);
 

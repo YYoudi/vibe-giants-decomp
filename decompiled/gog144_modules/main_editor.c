@@ -934,7 +934,7 @@ LAB_004374a1:
 
             else {
 
-              FUN_00477da0(iVar10,_DAT_00632b10 * 0.2,0);
+              marker_spline_adjust_scale(iVar10,_DAT_00632b10 * 0.2,0);
 
             }
 
@@ -1000,7 +1000,7 @@ LAB_004374a1:
 
           else {
 
-            FUN_00477da0(iVar10,_DAT_00632b10 * 0.2,0);
+            marker_spline_adjust_scale(iVar10,_DAT_00632b10 * 0.2,0);
 
           }
 
@@ -1164,7 +1164,7 @@ LAB_004374a1:
 
             else {
 
-              FUN_00477da0(iVar10,_DAT_00632b10 * 0.2,1);
+              marker_spline_adjust_scale(iVar10,_DAT_00632b10 * 0.2,1);
 
             }
 
@@ -1216,7 +1216,7 @@ LAB_004374a1:
 
           else {
 
-            FUN_00477da0(iVar10,_DAT_00632b10 * 0.2,0);
+            marker_spline_adjust_scale(iVar10,_DAT_00632b10 * 0.2,0);
 
           }
 

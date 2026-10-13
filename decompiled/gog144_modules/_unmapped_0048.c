@@ -826,7 +826,7 @@ void mecc_stop_looping_effects(int param_1)
 
   if (*(int *)(iVar1 + 0x1e0) != 0) {
 
-    FUN_00495700(0x574,param_1);
+    sound_stop_player(0x574,param_1);
 
     *(undefined4 *)(iVar1 + 0x1e0) = 0;
 
@@ -834,7 +834,7 @@ void mecc_stop_looping_effects(int param_1)
 
   if (*(int *)(iVar1 + 0x1dc) != 0) {
 
-    FUN_00495700(0x5a5,param_1);
+    sound_stop_player(0x5a5,param_1);
 
     *(undefined4 *)(iVar1 + 0x1dc) = 0;
 

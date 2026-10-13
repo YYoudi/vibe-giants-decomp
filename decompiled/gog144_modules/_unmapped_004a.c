@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (85 named) — decompiled, names from PS2 symbols
+ * 131 functions (86 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -9300,12 +9300,12 @@ void ObjectGetWorldRefPoint__FP3P3DiP6OBJECT(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_004aa0b0 @ 0x004AA0B0 ===== */
+/* ===== PROJ_CreateBasic @ 0x004AA0B0 ===== */
 /* PS2 candidate: PROJ_CreateBasic (conf 0.422) */
 
 
 
-int FUN_004aa0b0(int param_1,undefined4 param_2)
+int PROJ_CreateBasic(int param_1,undefined4 param_2)
 
 
 
@@ -9544,7 +9544,7 @@ int PROJ_Create2(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   local_110 = 0x3f800000;
 
-  iVar2 = FUN_004aa0b0(param_1,param_2);
+  iVar2 = PROJ_CreateBasic(param_1,param_2);
 
   if ((param_1 < 0) || (0x34 < param_1)) {
 
@@ -9739,7 +9739,7 @@ int PROJ_Create3(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
 
   
 
-  iVar3 = FUN_004aa0b0(param_1,param_2);
+  iVar3 = PROJ_CreateBasic(param_1,param_2);
 
   *(uint *)(iVar3 + 0x1c8) = *(uint *)(iVar3 + 0x1c8) & 0xfffdffff;
 
