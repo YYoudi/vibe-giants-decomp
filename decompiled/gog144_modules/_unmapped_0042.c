@@ -1362,7 +1362,7 @@ void input_mapping_init(int param_1)
 
   if (bVar7) {
 
-    FUN_005438c9(local_1e0,0x160,1,iVar2);
+    file_read_locked(local_1e0,0x160,1,iVar2);
 
     editor_0054384c(iVar2);
 
@@ -6305,7 +6305,7 @@ void keymap_save(void)
 
   if (iVar1 != 0) {
 
-    FUN_00543a24(&DAT_00584378,0x160,1,iVar1);
+    file_write_locked(&DAT_00584378,0x160,1,iVar1);
 
     editor_0054384c(iVar1);
 
@@ -6610,7 +6610,7 @@ void keymap_load(void)
 
     if (iVar2 != 0) {
 
-      FUN_005438c9(&DAT_00584378,0x160,1,iVar2);
+      file_read_locked(&DAT_00584378,0x160,1,iVar2);
 
       editor_0054384c(iVar2);
 

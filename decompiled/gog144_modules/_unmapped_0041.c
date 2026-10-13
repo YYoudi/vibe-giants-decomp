@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (82 named) — decompiled, names from PS2 symbols
+ * 100 functions (86 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -3102,12 +3102,12 @@ float10 obj_get_last_ground_z(int param_1)
 
 }
 
-/* ===== FUN_00414690 @ 0x00414690 ===== */
+/* ===== ground_height_at @ 0x00414690 ===== */
 /* PS2 candidate: get_grid_ground_info (conf 0.4) */
 
 
 
-void FUN_00414690(undefined4 param_1,int param_2)
+void ground_height_at(undefined4 param_1,int param_2)
 
 
 
@@ -5268,8 +5268,8 @@ void reaper_lock_short(int param_1,int param_2,int param_3,int param_4)
 
 }
 
-/* ===== FUN_00416a30 @ 0x00416A30 ===== */
-void FUN_00416a30(undefined4 param_1,undefined4 param_2)
+/* ===== bldg_spawn_by_type @ 0x00416A30 ===== */
+void bldg_spawn_by_type(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -5595,8 +5595,8 @@ int FUN_004177a0(int param_1)
 
 }
 
-/* ===== FUN_004177f0 @ 0x004177F0 ===== */
-void FUN_004177f0(undefined4 param_1,undefined4 param_2)
+/* ===== bldg_slot_action_dispatch @ 0x004177F0 ===== */
+void bldg_slot_action_dispatch(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -6371,8 +6371,8 @@ float10 bldg_get_max_energy(undefined4 param_1)
 
 }
 
-/* ===== FUN_004181d0 @ 0x004181D0 ===== */
-undefined4 FUN_004181d0(float param_1,int param_2)
+/* ===== bldg_anim_select @ 0x004181D0 ===== */
+undefined4 bldg_anim_select(float param_1,int param_2)
 
 
 
@@ -11459,7 +11459,7 @@ void objtype_setup_kabuto(int param_1)
 
             do {
 
-              FUN_00416a30(param_1,iVar1);
+              bldg_spawn_by_type(param_1,iVar1);
 
               reaper_lock_short(param_1,iVar1,iVar2,0);
 
@@ -11481,7 +11481,7 @@ void objtype_setup_kabuto(int param_1)
 
             do {
 
-              FUN_00416a30(param_1,iVar1);
+              bldg_spawn_by_type(param_1,iVar1);
 
               reaper_lock_short(param_1,iVar1,iVar2,0);
 

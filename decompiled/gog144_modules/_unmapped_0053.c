@@ -7803,9 +7803,11 @@ void comm_packet_write_header(int param_1)
 
 LAB_00534fe4:
 
-      FUN_00457100(*(undefined1 *)(param_1 + 1),*(undefined4 *)(param_1 + 0x16),iVar3,iVar5,
+      obj_shot_expire_destroy
 
-                   param_1 + 10,0);
+                (*(undefined1 *)(param_1 + 1),*(undefined4 *)(param_1 + 0x16),iVar3,iVar5,
+
+                 param_1 + 10,0);
 
     }
 
@@ -14669,7 +14671,7 @@ int bistream_tell_user(undefined4 param_1,int param_2,int *param_3)
 
     else {
 
-      FUN_005438c9(&local_10,8,1,iVar2);
+      file_read_locked(&local_10,8,1,iVar2);
 
       param_3 = (int *)map_chunk_alloc(param_1,local_10,0);
 
@@ -14677,7 +14679,7 @@ int bistream_tell_user(undefined4 param_1,int param_2,int *param_3)
 
       param_3[1] = local_c;
 
-      FUN_005438c9(param_3 + 2,local_10 + -8,1,iVar2);
+      file_read_locked(param_3 + 2,local_10 + -8,1,iVar2);
 
       editor_0054384c(iVar2);
 
@@ -14890,7 +14892,7 @@ int bistream_tell_user2(undefined4 param_1,int param_2,int *param_3)
 
     else {
 
-      FUN_005438c9(&local_10,8,1,iVar2);
+      file_read_locked(&local_10,8,1,iVar2);
 
       param_3 = (int *)map_chunk_alloc(param_1,local_10,0);
 
@@ -14898,7 +14900,7 @@ int bistream_tell_user2(undefined4 param_1,int param_2,int *param_3)
 
       param_3[1] = local_c;
 
-      FUN_005438c9(param_3 + 2,local_10 + -8,1,iVar2);
+      file_read_locked(param_3 + 2,local_10 + -8,1,iVar2);
 
       editor_0054384c(iVar2);
 

@@ -812,7 +812,7 @@ LAB_004195d2:
 
         }
 
-        FUN_00480d10(param_1,uVar7,iVar8,param_4[2]);
+        obj_give_carried_item(param_1,uVar7,iVar8,param_4[2]);
 
         return;
 

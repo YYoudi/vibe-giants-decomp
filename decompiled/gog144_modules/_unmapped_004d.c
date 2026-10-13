@@ -2025,7 +2025,7 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
   playerobj_eval_refpt(*(int *)(iVar2 + 0x24),*(undefined4 *)(iVar2 + 0x28),pfVar1);
 
-  FUN_00414690(pfVar1,local_1c);
+  ground_height_at(pfVar1,local_1c);
 
   if (*(float *)(param_1 + 0xa8) < local_c) {
 

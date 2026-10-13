@@ -1606,7 +1606,7 @@ void FUN_004e2b10(int param_1)
 
     playerobj_eval_refpt(*(int *)(iVar1 + 0x134),*(int *)(iVar1 + 0x138),iVar1 + 8);
 
-    FUN_00414690(param_1 + 0xa0,local_1c);
+    ground_height_at(param_1 + 0xa0,local_1c);
 
     if ((*(byte *)(iVar2 + 0x28) & 1) == 0) {
 
@@ -1671,7 +1671,7 @@ undefined4 ai_ground_snap(int param_1)
 
     playerobj_eval_refpt(*(int *)(iVar2 + 0x134),*(int *)(iVar2 + 0x138),pfVar1);
 
-    FUN_00414690(pfVar1,local_1c);
+    ground_height_at(pfVar1,local_1c);
 
     if ((*(byte *)(puVar3 + 10) & 1) == 0) {
 
@@ -6087,7 +6087,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
   ai_move_ground_common(*(undefined4 *)(iVar3 + 0x134),(float)fVar6,uVar9,pfVar1);
 
-  FUN_00414690(pfVar1,local_50);
+  ground_height_at(pfVar1,local_50);
 
   if (*(int *)(*(int *)(*(int *)(iVar3 + 0x134) + 0x100) + 0x48) == 0) {
 
@@ -11771,7 +11771,7 @@ ai_class_filter(undefined4 param_1,undefined4 param_2,int param_3,int param_4,by
 
         else {
 
-          iVar2 = FUN_0049bf60(param_1,param_2,iVar2,0,0);
+          iVar2 = los_line_check(param_1,param_2,iVar2,0,0);
 
         }
 
@@ -11931,9 +11931,9 @@ int ai_anim_select_mode(int param_1,int param_2)
 
   if (iVar2 == 0) {
 
-    if (((param_2 == 0) && (iVar2 = FUN_004181d0(uVar1,1), iVar2 == 0)) &&
+    if (((param_2 == 0) && (iVar2 = bldg_anim_select(uVar1,1), iVar2 == 0)) &&
 
-       (iVar2 = FUN_004181d0(uVar1,9), iVar2 == 0)) {
+       (iVar2 = bldg_anim_select(uVar1,9), iVar2 == 0)) {
 
       uVar3 = 9;
 
@@ -11949,9 +11949,9 @@ LAB_004ef5b0:
 
   else if (param_2 == 0) {
 
-    iVar2 = FUN_004181d0(uVar1,1);
+    iVar2 = bldg_anim_select(uVar1,1);
 
-    if ((iVar2 == 0) && (iVar2 = FUN_004181d0(uVar1,0xe), iVar2 == 0)) {
+    if ((iVar2 == 0) && (iVar2 = bldg_anim_select(uVar1,0xe), iVar2 == 0)) {
 
       uVar3 = 0xe;
 
@@ -11965,7 +11965,7 @@ LAB_004ef5b0:
 
     if (param_2 == 4) {
 
-      iVar2 = FUN_004181d0(uVar1,5);
+      iVar2 = bldg_anim_select(uVar1,5);
 
       if (iVar2 == 0) {
 
@@ -11979,7 +11979,7 @@ LAB_004ef5b0:
 
       if (param_2 == 7) {
 
-        iVar2 = FUN_004181d0(uVar1,8);
+        iVar2 = bldg_anim_select(uVar1,8);
 
         if (iVar2 != 0) {
 
@@ -11993,7 +11993,7 @@ LAB_004ef5b0:
 
       if (param_2 == 9) {
 
-        iVar2 = FUN_004181d0(uVar1,10);
+        iVar2 = bldg_anim_select(uVar1,10);
 
         if (iVar2 == 0) {
 
@@ -12007,7 +12007,7 @@ LAB_004ef5b0:
 
         if (param_2 == 0x11) {
 
-          iVar2 = FUN_004181d0(uVar1,0x12);
+          iVar2 = bldg_anim_select(uVar1,0x12);
 
           if (iVar2 == 0) {
 
@@ -12021,7 +12021,7 @@ LAB_004ef5b0:
 
           if (param_2 == 0x14) {
 
-            iVar2 = FUN_004181d0(uVar1,0x15);
+            iVar2 = bldg_anim_select(uVar1,0x15);
 
             if (iVar2 != 0) {
 
@@ -12035,7 +12035,7 @@ LAB_004ef5b0:
 
           if (param_2 == 0x16) {
 
-            iVar2 = FUN_004181d0(uVar1,0x17);
+            iVar2 = bldg_anim_select(uVar1,0x17);
 
             if (iVar2 == 0) {
 
@@ -12051,7 +12051,7 @@ LAB_004ef5b0:
 
           }
 
-          iVar2 = FUN_004181d0(uVar1,0x18);
+          iVar2 = bldg_anim_select(uVar1,0x18);
 
           if (iVar2 != 0) {
 
@@ -12063,7 +12063,7 @@ LAB_004ef5b0:
 
         }
 
-        iVar2 = FUN_004181d0(uVar1,0x13);
+        iVar2 = bldg_anim_select(uVar1,0x13);
 
         if (iVar2 != 0) {
 
@@ -12075,7 +12075,7 @@ LAB_004ef5b0:
 
       }
 
-      iVar2 = FUN_004181d0(uVar1,0xb);
+      iVar2 = bldg_anim_select(uVar1,0xb);
 
       if (iVar2 != 0) {
 
@@ -12087,7 +12087,7 @@ LAB_004ef5b0:
 
     }
 
-    iVar2 = FUN_004181d0(uVar1,6);
+    iVar2 = bldg_anim_select(uVar1,6);
 
     if (iVar2 == 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (302 named) — decompiled, names from PS2 symbols
+ * 351 functions (304 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -3975,8 +3975,10 @@ undefined4 __fclose_lk(FILE *param_1)
 
 }
 
-/* ===== FUN_005438c9 @ 0x005438C9 ===== */
-undefined4 FUN_005438c9(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* ===== file_read_locked @ 0x005438C9 ===== */
+undefined4
+
+file_read_locked(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -4175,8 +4177,10 @@ void BinFileSeek_2(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00543a24 @ 0x00543A24 ===== */
-undefined4 FUN_00543a24(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+/* ===== file_write_locked @ 0x00543A24 ===== */
+undefined4
+
+file_write_locked(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 
 

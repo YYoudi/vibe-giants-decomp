@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (115 named) — decompiled, names from PS2 symbols
+ * 145 functions (116 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -5999,10 +5999,12 @@ LAB_004570b5:
 
 }
 
-/* ===== FUN_00457100 @ 0x00457100 ===== */
-void FUN_00457100(int param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,
+/* ===== obj_shot_expire_destroy @ 0x00457100 ===== */
+void obj_shot_expire_destroy
 
-                 undefined4 param_6)
+               (int param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,
+
+               undefined4 param_6)
 
 
 
@@ -10535,7 +10537,7 @@ void reaper_spawn_ospec_1
 
     else if (*(int *)(param_2 + 0x1e0) == 0x12) {
 
-      FUN_004f4150();
+      smartie_release_to_bldg();
 
     }
 
@@ -10662,7 +10664,7 @@ void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param
 
     else if (*(int *)(param_2 + 0x1e0) == 0x12) {
 
-      FUN_004f4150();
+      smartie_release_to_bldg();
 
     }
 

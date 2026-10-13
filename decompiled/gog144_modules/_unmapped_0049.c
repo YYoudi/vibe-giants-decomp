@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (114 named) — decompiled, names from PS2 symbols
+ * 142 functions (115 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -1891,7 +1891,7 @@ void savegame_load(void)
 
     if (iVar1 != 0) {
 
-      FUN_005438c9(&DAT_00633380,0x23084,1,iVar1);
+      file_read_locked(&DAT_00633380,0x23084,1,iVar1);
 
       editor_0054384c(iVar1);
 
@@ -1962,7 +1962,7 @@ void savegame_verify(void)
 
   if (iVar1 != 0) {
 
-    FUN_00543a24(&DAT_00633380,0x23084,1,iVar1);
+    file_write_locked(&DAT_00633380,0x23084,1,iVar1);
 
     editor_0054384c(iVar1);
 
@@ -12708,10 +12708,10 @@ int collgrid_anim_audio_user
 
 }
 
-/* ===== FUN_0049bf60 @ 0x0049BF60 ===== */
-int FUN_0049bf60(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
+/* ===== los_line_check @ 0x0049BF60 ===== */
+int los_line_check(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4,
 
-                undefined4 param_5)
+                  undefined4 param_5)
 
 
 

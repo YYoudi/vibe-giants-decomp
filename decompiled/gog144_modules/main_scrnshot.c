@@ -174,7 +174,7 @@ void main_scrnshot_004ebae0(void)
 
   if (iVar5 != 0) {
 
-    FUN_00543a24(&uStack_168,0x12,1,iVar5);
+    file_write_locked(&uStack_168,0x12,1,iVar5);
 
     if (0 < DAT_00632e88 * DAT_00632e84) {
 
@@ -196,7 +196,7 @@ void main_scrnshot_004ebae0(void)
 
     }
 
-    FUN_00543a24(auStack_154,0x1a,1,iVar5);
+    file_write_locked(auStack_154,0x1a,1,iVar5);
 
     editor_0054384c(iVar5);
 

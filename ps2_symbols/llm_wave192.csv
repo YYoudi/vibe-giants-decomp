@@ -1,0 +1,11 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004f4150,FUN_004f4150,,smartie_release_to_bldg,0.9,llm-w192,bldg predicates + partner dispatch callers reaper spawn
+00457100,FUN_00457100,,obj_shot_expire_destroy,0.9,llm-w192,shot dispatch + expire + destroy type 6
+004177f0,FUN_004177f0,,bldg_slot_action_dispatch,0.9,llm-w192,per-base-type dispatch both bldg predicates
+005438c9,FUN_005438c9,,file_read_locked,0.9,llm-w192,lock+read+unlock callers input_mapping/keymap
+00543a24,FUN_00543a24,,file_write_locked,0.9,llm-w192,lock+write+flush callers keymap_save/savegame
+0049bf60,FUN_0049bf60,,los_line_check,0.9,llm-w192,xform pair + collgrid callers ai_class_filter
+00414690,FUN_00414690,,ground_height_at,0.9,llm-w192,physics_vec_math callers fx_orient/snap/ai_move
+00480d10,FUN_00480d10,,obj_give_carried_item,0.9,llm-w192,refpt+fx_create+giftshop caller commonbase
+004181d0,FUN_004181d0,,bldg_anim_select,0.9,llm-w192,4 bldg predicates caller ai_anim_select_mode
+00416a30,FUN_00416a30,,bldg_spawn_by_type,0.9,llm-w192,spawn class4/4b by bldg type callers setup_kabuto

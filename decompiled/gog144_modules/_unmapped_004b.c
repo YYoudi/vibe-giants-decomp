@@ -7895,7 +7895,7 @@ void reaper_release_shrink(undefined4 param_1,int *param_2)
 
     if ((param_2[5] == 0) && (*param_2 != 0)) {
 
-      FUN_00457100(0xe,-(float)param_2[2],*param_2,param_1,0,0);
+      obj_shot_expire_destroy(0xe,-(float)param_2[2],*param_2,param_1,0,0);
 
       *(float *)(*param_2 + 0xc4) = (float)param_2[4] + *(float *)(*param_2 + 0xc4);
 
@@ -8056,7 +8056,7 @@ void sound_player_user(undefined4 param_1,int *param_2)
 
             if (param_2[5] == 0) {
 
-              FUN_00457100(0xe,-(float)param_2[2],*param_2,param_1,0,0);
+              obj_shot_expire_destroy(0xe,-(float)param_2[2],*param_2,param_1,0,0);
 
             }
 
@@ -12574,7 +12574,7 @@ void reaper_finish_shrinker(undefined4 param_1,int param_2,int param_3,int param
 
         piVar1[6] = 0;
 
-        FUN_00457100(0xe,piVar1[2],iVar8,param_1,0,0);
+        obj_shot_expire_destroy(0xe,piVar1[2],iVar8,param_1,0,0);
 
         iVar6 = fx_create(param_1);
 

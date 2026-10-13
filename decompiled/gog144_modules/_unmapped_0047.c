@@ -3215,7 +3215,7 @@ void showchat_mission_objective__Fi_2(int p0)
 
           pfVar8[-1] = fStack_84;
 
-          FUN_00414690(&fStack_88,auStack_1c);
+          ground_height_at(&fStack_88,auStack_1c);
 
           if (fStack_c <= fStack_80) {
 
@@ -3928,7 +3928,7 @@ int ai_move_ground_step(int param_1,int *param_2)
 
   iVar2 = ai_move_ground_common(*param_2,(float)fVar4,iVar2,pfVar1);
 
-  FUN_00414690(pfVar1,local_1c);
+  ground_height_at(pfVar1,local_1c);
 
   if (*(int *)(*(int *)(*param_2 + 0x100) + 0x48) == 0) {
 

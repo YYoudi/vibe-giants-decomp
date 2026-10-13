@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (53 named) — decompiled, names from PS2 symbols
+ * 74 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -858,8 +858,8 @@ void mecc_stop_looping_effects(int param_1)
 
 }
 
-/* ===== FUN_00480d10 @ 0x00480D10 ===== */
-void FUN_00480d10(int param_1,int param_2,undefined4 param_3,int param_4)
+/* ===== obj_give_carried_item @ 0x00480D10 ===== */
+void obj_give_carried_item(int param_1,int param_2,undefined4 param_3,int param_4)
 
 
 

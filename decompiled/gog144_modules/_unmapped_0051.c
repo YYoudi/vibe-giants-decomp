@@ -358,7 +358,7 @@ LAB_00511547:
 
     puVar1 = (undefined4 *)(iVar6 + 0x40);
 
-    FUN_00414690(puVar1,local_1c);
+    ground_height_at(puVar1,local_1c);
 
     crt_euler_to_quat(*(int *)(iVar6 + 0xa8) + 0x294,0,0,0,
 
@@ -1004,7 +1004,7 @@ void vimp_get_wanted_loc__FP6OBJECT(int param_1)
 
     puVar1 = (undefined4 *)(iVar4 + 0x40);
 
-    FUN_00414690(puVar1,local_1c);
+    ground_height_at(puVar1,local_1c);
 
     crt_euler_to_quat(*(int *)(iVar4 + 0xa8) + 0x294,0,0,0,
 

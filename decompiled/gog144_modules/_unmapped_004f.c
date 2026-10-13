@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (41 named) — decompiled, names from PS2 symbols
+ * 48 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -94,7 +94,7 @@ void smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie(int param_1,int para
 
                         -(*(float *)(DAT_00632ed8 + 0x7e8) * fVar2));
 
-    FUN_00414690(pfVar1,local_1c);
+    ground_height_at(pfVar1,local_1c);
 
     if (*(float *)(param_1 + 0xa8) < local_c + 3.0) {
 
@@ -622,8 +622,8 @@ void smartie_from_back_to_partyhouse(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004f4150 @ 0x004F4150 ===== */
-void FUN_004f4150(int param_1)
+/* ===== smartie_release_to_bldg @ 0x004F4150 ===== */
+void smartie_release_to_bldg(int param_1)
 
 
 
@@ -1420,7 +1420,7 @@ LAB_004f5569:
 
     if (iVar1 == 0) {
 
-      FUN_00416a30(param_3,uVar3);
+      bldg_spawn_by_type(param_3,uVar3);
 
     }
 
@@ -1462,7 +1462,7 @@ LAB_004f54ef:
 
     if (iVar1 == 0) {
 
-      FUN_00416a30(param_3,uVar3);
+      bldg_spawn_by_type(param_3,uVar3);
 
     }
 
@@ -1543,7 +1543,7 @@ void reaper_lock_pair_4f(int param_1)
 
     }
 
-    FUN_004177f0(*(undefined4 *)(param_1 + 0x274),param_1);
+    bldg_slot_action_dispatch(*(undefined4 *)(param_1 + 0x274),param_1);
 
     ai_clear_move_goal(param_1);
 
@@ -1638,7 +1638,7 @@ void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
       }
 
-      FUN_004177f0(*(undefined4 *)(param_1 + 0x274),param_1);
+      bldg_slot_action_dispatch(*(undefined4 *)(param_1 + 0x274),param_1);
 
       ai_clear_move_goal(param_1);
 
@@ -2100,7 +2100,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
     }
 
-    FUN_004177f0(*(undefined4 *)(param_1 + 0x274),param_1);
+    bldg_slot_action_dispatch(*(undefined4 *)(param_1 + 0x274),param_1);
 
     ai_clear_move_goal(param_1);
 
@@ -2599,7 +2599,7 @@ void smartie_shot(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
             case 0x21:
 
-              FUN_004177f0(iVar4,param_3);
+              bldg_slot_action_dispatch(iVar4,param_3);
 
               ai_clear_move_goal(param_3);
 
@@ -3912,7 +3912,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
     playerobj_eval_refpt(*(undefined4 *)(iVar5 + 0x14),*(undefined4 *)(iVar5 + 0x18),pfVar2);
 
-    FUN_00414690(pfVar2,local_1c);
+    ground_height_at(pfVar2,local_1c);
 
     if (*(int *)(*(int *)(iVar5 + 0x14) + 0xf8) == 0) {
 

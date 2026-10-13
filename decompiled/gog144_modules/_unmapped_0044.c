@@ -8534,7 +8534,7 @@ void fx_orient_ground(int param_1,float param_2)
 
   if (param_1 != 0) {
 
-    FUN_00414690(*(int *)(param_1 + 4) + 0xa0,&local_348);
+    ground_height_at(*(int *)(param_1 + 4) + 0xa0,&local_348);
 
     iVar1 = *(int *)(param_1 + 4);
 
@@ -11314,7 +11314,7 @@ joined_r0x0044cc6b:
 
         else {
 
-          FUN_00414690();
+          ground_height_at();
 
           *(undefined4 *)(puStack0000003c[1] + 0x2c4) = in_stack_0000032c;
 

@@ -480,7 +480,7 @@ void main_cleaner_0040f750(int param_1)
 
           local_20 = local_2c;
 
-          iVar2 = FUN_0049bf60(&local_24,&local_30,iVar1,&local_30,0);
+          iVar2 = los_line_check(&local_24,&local_30,iVar1,&local_30,0);
 
           if (iVar2 != 0) {
 

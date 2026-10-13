@@ -544,7 +544,7 @@ void reaper_lock_user_3(undefined4 param_1,int param_2,float param_3,int param_4
 
   else if (*(int *)(param_2 + 0x1e0) == 0x12) {
 
-    FUN_004f4150();
+    smartie_release_to_bldg();
 
   }
 
@@ -601,7 +601,7 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 
   else if (*(int *)(param_2 + 0x1e0) == 0x12) {
 
-    FUN_004f4150();
+    smartie_release_to_bldg();
 
   }
 
@@ -800,7 +800,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
       else if (*(int *)(param_2 + 0x1e0) == 0x12) {
 
-        FUN_004f4150();
+        smartie_release_to_bldg();
 
       }
 
@@ -858,7 +858,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
     if ((*(uint *)(iVar4 + 0x1c8) & 0x1000000) != 0) goto LAB_00465986;
 
-    iVar3 = FUN_0049bf60(&local_2c,&local_44,iVar4,&local_38,0);
+    iVar3 = los_line_check(&local_2c,&local_44,iVar4,&local_38,0);
 
     if (iVar3 != 0) goto LAB_00465986;
 
@@ -1057,7 +1057,7 @@ LAB_00465d63:
 
     else if (*(int *)((int)fVar2 + 0x1e0) == 0x12) {
 
-      FUN_004f4150();
+      smartie_release_to_bldg();
 
     }
 
@@ -2164,7 +2164,7 @@ void gfx_d3d_0046aa30(int param_1,int param_2)
 
         if (bVar2 == bVar3) {
 
-          FUN_00414690((undefined4 *)(param_1 + 0xa0),local_50);
+          ground_height_at((undefined4 *)(param_1 + 0xa0),local_50);
 
           if (0.64278 <= local_48) {
 
@@ -2212,7 +2212,7 @@ void gfx_d3d_0046aa30(int param_1,int param_2)
 
       else if (bVar2 == bVar3) {
 
-        FUN_00414690(param_1 + 0xa0,local_50);
+        ground_height_at(param_1 + 0xa0,local_50);
 
         if (0.64278 <= local_48) {
 
@@ -2282,7 +2282,7 @@ LAB_0046ad71:
 
       if (bVar2 == bVar3) {
 
-        FUN_00414690(param_1 + 0xa0,local_50);
+        ground_height_at(param_1 + 0xa0,local_50);
 
         if (0.64278 <= local_48) {
 
@@ -2314,7 +2314,7 @@ LAB_0046ad71:
 
     else if (bVar2 == bVar3) {
 
-      FUN_00414690(param_1 + 0xa0,local_50);
+      ground_height_at(param_1 + 0xa0,local_50);
 
       if (0.64278 <= local_48) {
 
@@ -2336,7 +2336,7 @@ LAB_0046ad71:
 
   else if (*(float *)(param_1 + 0xa8) < 0.0 == (*(float *)(param_1 + 0xa8) == 0.0)) {
 
-    FUN_00414690((undefined4 *)(param_1 + 0xa0),local_50);
+    ground_height_at((undefined4 *)(param_1 + 0xa0),local_50);
 
     if (0.64278 <= local_48) {
 

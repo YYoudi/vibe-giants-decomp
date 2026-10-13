@@ -356,7 +356,7 @@ void reaper_create_fake_reaper__FP6OBJECTP3P3Dfi(float *param_1,float *param_2)
 
     local_54 = (float)(fVar6 + (float10)*(float *)(iVar2 + 0xa4));
 
-    FUN_00414690(&local_58,local_4c);
+    ground_height_at(&local_58,local_4c);
 
     local_50 = local_3c;
 
@@ -1752,7 +1752,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
     local_2c = *(float *)(DAT_00632ed8 + 0x834) * local_2c + *(float *)(iVar1 + 0xa8);
 
-    FUN_00414690(&local_34,local_1c);
+    ground_height_at(&local_34,local_1c);
 
     iVar5 = *(int *)(iVar1 + 0x100);
 
@@ -9541,7 +9541,7 @@ LAB_004cec2d:
 
       ai_move_ground_common(iVar10,param_1,param_1,pfVar12);
 
-      FUN_00414690(pfVar12,local_1c);
+      ground_height_at(pfVar12,local_1c);
 
       *(undefined4 *)((int)fVar5 + 0xa8) = local_c;
 

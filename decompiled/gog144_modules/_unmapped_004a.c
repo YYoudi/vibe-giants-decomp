@@ -1408,7 +1408,7 @@ void obj_geom_process(int param_1)
 
     if (bVar5) {
 
-      FUN_00414690(&local_68,local_38);
+      ground_height_at(&local_68,local_38);
 
       bVar5 = false;
 
@@ -1430,7 +1430,7 @@ void obj_geom_process(int param_1)
 
       }
 
-      FUN_00414690(&local_68,local_38);
+      ground_height_at(&local_68,local_38);
 
       if ((local_4 == local_20) && (local_8 == local_24)) break;
 
@@ -10262,7 +10262,7 @@ LAB_004ac207:
 
     if (((uVar1 & 0x80) != 0) &&
 
-       (FUN_00414690(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
+       (ground_height_at(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
 
 LAB_004ac241:
 
@@ -10316,7 +10316,7 @@ LAB_004ac24a:
 
       if (((uVar1 & 0x80) != 0) &&
 
-         (FUN_00414690(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
+         (ground_height_at(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
 
         FUN_0042dfd0(param_4,&local_74,0x41200000);
 
@@ -10448,7 +10448,7 @@ LAB_004ac24a:
 
     if (((uVar1 & 0x80) == 0) ||
 
-       (FUN_00414690(param_4,local_68), 5.0 <= (float)param_4[2] - local_58)) goto LAB_004ac24a;
+       (ground_height_at(param_4,local_68), 5.0 <= (float)param_4[2] - local_58)) goto LAB_004ac24a;
 
     goto LAB_004ac241;
 
@@ -10528,7 +10528,7 @@ LAB_004ac24a:
 
       if (((uVar1 & 0x80) != 0) &&
 
-         (FUN_00414690(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
+         (ground_height_at(param_4,local_68), (float)param_4[2] - local_58 < 5.0)) {
 
         FUN_0042dfd0(param_4,&local_74,0x41200000);
 
