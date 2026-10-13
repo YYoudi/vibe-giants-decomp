@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (87 named) — decompiled, names from PS2 symbols
+ * 100 functions (88 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -4359,7 +4359,7 @@ LAB_00415d68:
 
           if ((*(float *)(iVar1 + 0x154) + pfVar8[4]) - (float)fVar12 < 0.0) goto LAB_00415d68;
 
-          uVar6 = FUN_0045bd90(param_1,iVar1,local_b4);
+          uVar6 = kabuto_bite_damage(param_1,iVar1,local_b4);
 
           local_ac = local_ac & uVar6;
 
@@ -4457,7 +4457,7 @@ LAB_00415d36:
 
           if (iVar7 != 0) {
 
-            uVar6 = FUN_0045bd90(param_1,iVar1,local_b4);
+            uVar6 = kabuto_bite_damage(param_1,iVar1,local_b4);
 
             if ((local_ac & uVar6) != 0) {
 
@@ -4890,8 +4890,8 @@ void collide_camera_check_walls(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_00416240 @ 0x00416240 ===== */
-void FUN_00416240(int param_1)
+/* ===== evilreaper_award_flow @ 0x00416240 ===== */
+void evilreaper_award_flow(int param_1)
 
 
 

@@ -3379,7 +3379,7 @@ void reaper_fx_at_bldg_b(int param_1)
 
     if (((float)fVar3 < 36.0 != ((float)fVar3 == 36.0)) && ((float10)36.0 < fVar4)) {
 
-      FUN_00416240(param_1);
+      evilreaper_award_flow(param_1);
 
       return;
 

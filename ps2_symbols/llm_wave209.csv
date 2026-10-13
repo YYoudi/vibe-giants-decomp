@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0046e120,FUN_0046e120,,reaper_ospec_ptr48_set,0.9,llm-w209,ospec 0x48 field 3 reaper callers
+00416240,FUN_00416240,,evilreaper_award_flow,0.9,llm-w209,award+fx+chat notify caller fx_at_bldg_b
+00457d10,FUN_00457d10,,mecc_slot_scan,0.9,llm-w209,0x180-0x18b class-2 slots callers inv/mission
+0045bd90,FUN_0045bd90,,kabuto_bite_damage,0.9,llm-w209,fx_create+damage caller collide_kabuto
+00465790,FUN_00465790,,reaper_eat_finish,0.9,llm-w209,ospec_init+release+powf scale callees

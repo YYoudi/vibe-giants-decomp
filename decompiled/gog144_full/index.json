@@ -817,7 +817,7 @@
  "0x004156F0": {
   "name": "collide_objects_kabuto__FP6OBJECTP3P3D",
   "named": true,
-  "len": 8237
+  "len": 8249
  },
  "0x00415D80": {
   "name": "collide_camera_check_walls",
@@ -825,9 +825,9 @@
   "len": 6040
  },
  "0x00416240": {
-  "name": "FUN_00416240",
-  "named": false,
-  "len": 570
+  "name": "evilreaper_award_flow",
+  "named": true,
+  "len": 579
  },
  "0x004162C0": {
   "name": "evilreaper_award_item__FP6OBJECT",
@@ -3270,9 +3270,9 @@
   "len": 1150
  },
  "0x00457D10": {
-  "name": "FUN_00457d10",
-  "named": false,
-  "len": 278
+  "name": "mecc_slot_scan",
+  "named": true,
+  "len": 280
  },
  "0x00457D50": {
   "name": "FUN_00457d50",
@@ -3407,7 +3407,7 @@
  "0x00459540": {
   "name": "inv_check_pickup",
   "named": true,
-  "len": 5265
+  "len": 5267
  },
  "0x00459930": {
   "name": "inv_award_item",
@@ -3462,12 +3462,12 @@
  "0x0045B2B0": {
   "name": "reaper_spawn_ospec_1",
   "named": true,
-  "len": 1894
+  "len": 1904
  },
  "0x0045B440": {
   "name": "reaper_spawn_ospec_2",
   "named": true,
-  "len": 2067
+  "len": 2077
  },
  "0x0045B610": {
   "name": "FUN_0045b610",
@@ -3495,9 +3495,9 @@
   "len": 3509
  },
  "0x0045BD90": {
-  "name": "FUN_0045bd90",
-  "named": false,
-  "len": 774
+  "name": "kabuto_bite_damage",
+  "named": true,
+  "len": 780
  },
  "0x0045BF10": {
   "name": "reaper_spell_user",
@@ -3615,14 +3615,14 @@
   "len": 1003
  },
  "0x00465790": {
-  "name": "FUN_00465790",
-  "named": false,
-  "len": 1072
+  "name": "reaper_eat_finish",
+  "named": true,
+  "len": 1082
  },
  "0x00465880": {
   "name": "reaper_update_xhair_status__FP6OBJECT",
   "named": true,
-  "len": 3985
+  "len": 3995
  },
  "0x00465BF0": {
   "name": "reaper_collect_food",
@@ -3780,9 +3780,9 @@
   "len": 2146
  },
  "0x0046E120": {
-  "name": "FUN_0046e120",
-  "named": false,
-  "len": 206
+  "name": "reaper_ospec_ptr48_set",
+  "named": true,
+  "len": 216
  },
  "0x0046E830": {
   "name": "object_0046e830",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24305
+  "len": 24309
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -6702,7 +6702,7 @@
  "0x004C4DF0": {
   "name": "reaper_fx_at_bldg_b",
   "named": true,
-  "len": 829
+  "len": 838
  },
  "0x004C4EC0": {
   "name": "mecc_drop_carried_object_2",

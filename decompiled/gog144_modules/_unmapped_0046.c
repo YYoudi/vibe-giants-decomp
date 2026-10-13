@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (42 named) — decompiled, names from PS2 symbols
+ * 53 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -566,10 +566,10 @@ void reaper_lock_user_3(undefined4 param_1,int param_2,float param_3,int param_4
 
 }
 
-/* ===== FUN_00465790 @ 0x00465790 ===== */
-void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,float param_5
+/* ===== reaper_eat_finish @ 0x00465790 ===== */
+void reaper_eat_finish(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
-                 ,int param_6,float param_7)
+                      float param_5,int param_6,float param_7)
 
 
 
@@ -778,7 +778,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
       }
 
-      FUN_0046e120(iVar4,&LAB_0045afe0);
+      reaper_ospec_ptr48_set(iVar4,&LAB_0045afe0);
 
       if (param_6 != 0.0) {
 
@@ -3688,8 +3688,8 @@ undefined4 obj_3dsound_scan(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0046e120 @ 0x0046E120 ===== */
-void FUN_0046e120(int param_1,undefined4 param_2)
+/* ===== reaper_ospec_ptr48_set @ 0x0046E120 ===== */
+void reaper_ospec_ptr48_set(int param_1,undefined4 param_2)
 
 
 

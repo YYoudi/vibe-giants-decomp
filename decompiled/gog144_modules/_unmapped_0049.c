@@ -3324,7 +3324,7 @@ LAB_00492a3a:
 
               iVar11 = player_has_weapon(DAT_00632a88,*(undefined4 *)(iVar6 + DAT_006330e4));
 
-              if ((iVar11 == 0) && (iVar11 = FUN_00457d10(DAT_00632a88), iVar11 != 0)) {
+              if ((iVar11 == 0) && (iVar11 = mecc_slot_scan(DAT_00632a88), iVar11 != 0)) {
 
                 if (*(int *)(iVar6 + DAT_006330e4) != 1) {
 
@@ -3338,7 +3338,7 @@ LAB_00492a3a:
 
               else {
 
-                iVar11 = FUN_00457d10(DAT_00632a88);
+                iVar11 = mecc_slot_scan(DAT_00632a88);
 
                 if ((iVar11 == 0) &&
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (128 named) — decompiled, names from PS2 symbols
+ * 145 functions (130 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -6734,8 +6734,8 @@ bool player_needs_ammo__FP6OBJECTi(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00457d10 @ 0x00457D10 ===== */
-undefined4 FUN_00457d10(int param_1)
+/* ===== mecc_slot_scan @ 0x00457D10 ===== */
+undefined4 mecc_slot_scan(int param_1)
 
 
 
@@ -8406,7 +8406,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
     iVar4 = IconDef_wield_eq1(uVar1);
 
-    if ((iVar4 != 0) && (iVar4 = FUN_00457d10(iVar6), iVar4 == 0)) {
+    if ((iVar4 != 0) && (iVar4 = mecc_slot_scan(iVar6), iVar4 == 0)) {
 
       return false;
 
@@ -10517,7 +10517,7 @@ void reaper_spawn_ospec_1
 
     }
 
-    FUN_0046e120(iVar1,&LAB_0045afe0);
+    reaper_ospec_ptr48_set(iVar1,&LAB_0045afe0);
 
     if (param_6 != 0.0) {
 
@@ -10644,7 +10644,7 @@ void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param
 
     }
 
-    FUN_0046e120(iVar1,&LAB_0045afe0);
+    reaper_ospec_ptr48_set(iVar1,&LAB_0045afe0);
 
     if (param_5 != 0.0) {
 
@@ -11263,8 +11263,8 @@ LAB_0045bd2c:
 
 }
 
-/* ===== FUN_0045bd90 @ 0x0045BD90 ===== */
-undefined4 FUN_0045bd90(int param_1,float param_2,byte param_3)
+/* ===== kabuto_bite_damage @ 0x0045BD90 ===== */
+undefined4 kabuto_bite_damage(int param_1,float param_2,byte param_3)
 
 
 
