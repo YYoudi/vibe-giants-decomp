@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (25 named) — decompiled, names from PS2 symbols
+ * 87 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -9165,8 +9165,8 @@ void FUN_005093e0(float param_1)
 
 }
 
-/* ===== FUN_005095e0 @ 0x005095E0 ===== */
-void FUN_005095e0(int param_1,int param_2,float param_3)
+/* ===== level_scene_entry_process @ 0x005095E0 ===== */
+void level_scene_entry_process(int param_1,int param_2,float param_3)
 
 
 

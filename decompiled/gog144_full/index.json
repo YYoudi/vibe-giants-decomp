@@ -1187,7 +1187,7 @@
  "0x0041F120": {
   "name": "hud_status_main",
   "named": true,
-  "len": 8721
+  "len": 8732
  },
  "0x0041F8F0": {
   "name": "FUN_0041f8f0",
@@ -1195,9 +1195,9 @@
   "len": 548
  },
  "0x0041F960": {
-  "name": "FUN_0041f960",
-  "named": false,
-  "len": 5223
+  "name": "hud_status_global_reset",
+  "named": true,
+  "len": 5234
  },
  "0x0041FED0": {
   "name": "FUN_0041fed0",
@@ -1775,9 +1775,9 @@
   "len": 1347
  },
  "0x0042B5B0": {
-  "name": "FUN_0042b5b0",
-  "named": false,
-  "len": 2633
+  "name": "level_scene_mesh_render",
+  "named": true,
+  "len": 2644
  },
  "0x0042BB10": {
   "name": "FUN_0042bb10",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23243
+  "len": 23276
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -2067,7 +2067,7 @@
  "0x00434280": {
   "name": "audio_stream_tied",
   "named": true,
-  "len": 4506
+  "len": 4509
  },
  "0x00434620": {
   "name": "main/drawwrld_00434620",
@@ -8145,9 +8145,9 @@
   "len": 2550
  },
  "0x005095E0": {
-  "name": "FUN_005095e0",
-  "named": false,
-  "len": 7449
+  "name": "level_scene_entry_process",
+  "named": true,
+  "len": 7462
  },
  "0x00509B80": {
   "name": "tracer_add_ref",
@@ -10985,9 +10985,9 @@
   "len": 4302
  },
  "0x0053ED40": {
-  "name": "FUN_0053ed40",
-  "named": false,
-  "len": 6886
+  "name": "crt_loader_walk",
+  "named": true,
+  "len": 6892
  },
  "0x0053F2E0": {
   "name": "FUN_0053f2e0",
@@ -11212,7 +11212,7 @@
  "0x00540800": {
   "name": "FUN_00540800",
   "named": false,
-  "len": 1281
+  "len": 1301
  },
  "0x00540AB0": {
   "name": "FUN_00540ab0",

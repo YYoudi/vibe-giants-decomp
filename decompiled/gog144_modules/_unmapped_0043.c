@@ -2262,7 +2262,7 @@ void audio_stream_tied(void)
 
   if (DAT_00632ba8 == 0) {
 
-    FUN_0053ed40(piVar6[1],*piVar6,auStack_80,&PTR_LAB_00556e68,0,0);
+    crt_loader_walk(piVar6[1],*piVar6,auStack_80,&PTR_LAB_00556e68,0,0);
 
     FUN_00432950();
 

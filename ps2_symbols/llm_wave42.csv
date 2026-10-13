@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+005095e0,FUN_005095E0,,level_scene_entry_process,0.9,llm-read25,
+0053ed40,FUN_0053ED40,,crt_loader_walk,0.9,llm-read25,
+0041f960,FUN_0041F960,,hud_status_global_reset,0.9,llm-read25,
+0042b5b0,FUN_0042B5B0,,level_scene_mesh_render,0.9,llm-read25,

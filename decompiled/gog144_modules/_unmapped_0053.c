@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (60 named) — decompiled, names from PS2 symbols
+ * 179 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -19217,10 +19217,10 @@ LAB_0053ec5d:
 
 }
 
-/* ===== FUN_0053ed40 @ 0x0053ED40 ===== */
-void FUN_0053ed40(uint param_1,undefined **param_2,undefined **param_3,undefined **param_4,
+/* ===== crt_loader_walk @ 0x0053ED40 ===== */
+void crt_loader_walk(uint param_1,undefined **param_2,undefined **param_3,undefined **param_4,
 
-                 undefined1 *param_5,int param_6)
+                    undefined1 *param_5,int param_6)
 
 
 

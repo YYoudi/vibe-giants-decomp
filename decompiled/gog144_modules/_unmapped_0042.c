@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (65 named) — decompiled, names from PS2 symbols
+ * 129 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -14734,8 +14734,8 @@ void FUN_0042b4e0(undefined4 *param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0042b5b0 @ 0x0042B5B0 ===== */
-void FUN_0042b5b0(undefined4 *param_1,int param_2,undefined4 *param_3)
+/* ===== level_scene_mesh_render @ 0x0042B5B0 ===== */
+void level_scene_mesh_render(undefined4 *param_1,int param_2,undefined4 *param_3)
 
 
 
@@ -16131,7 +16131,7 @@ LAB_0042cb13:
 
                         (DAT_00656430,uVar14,*(undefined4 *)(iVar15 + 0x90),uVar16);
 
-              FUN_005095e0(param_1,iVar2,param_3);
+              level_scene_entry_process(param_1,iVar2,param_3);
 
               goto LAB_0042ccba;
 
@@ -16365,7 +16365,7 @@ LAB_0042cb13:
 
                                      DAT_00656458,DAT_0065645c,auStack_5c,0);
 
-                  (*(code *)PTR_FUN_005565b8)(uVar7);
+                  (*(code *)PTR_level_scene_mesh_render_005565b8)(uVar7);
 
                 }
 

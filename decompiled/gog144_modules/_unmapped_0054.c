@@ -758,7 +758,7 @@ void FUN_00540800(int param_1)
 
   PTR_FUN_005565b4 = (&PTR_LAB_00580d18)[param_1];
 
-  PTR_FUN_005565b8 = (&PTR_LAB_00580d24)[param_1];
+  PTR_level_scene_mesh_render_005565b8 = (&PTR_LAB_00580d24)[param_1];
 
   PTR_FUN_00580c1c = (&PTR_FUN_00580d30)[param_1];
 

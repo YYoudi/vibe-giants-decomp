@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (38 named) — decompiled, names from PS2 symbols
+ * 100 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -11676,7 +11676,7 @@ void hud_status_main(void)
 
   
 
-  FUN_0041f960();
+  hud_status_global_reset();
 
   if (DAT_00632fac != 0) {
 
@@ -12317,12 +12317,12 @@ void FUN_0041f8f0(undefined1 *param_1,int param_2,undefined4 param_3,int param_4
 
 }
 
-/* ===== FUN_0041f960 @ 0x0041F960 ===== */
+/* ===== hud_status_global_reset @ 0x0041F960 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0041f960(void)
+void hud_status_global_reset(void)
 
 
 
