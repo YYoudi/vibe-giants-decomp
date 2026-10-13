@@ -3587,7 +3587,7 @@ LAB_004b2ac0:
 
         if (local_3fc[0] == (char *)0xffffffff) break;
 
-        iVar14 = FUN_00497d20(local_3fc[0]);
+        iVar14 = objectset_find(local_3fc[0]);
 
         BinFileRead(iVar6,local_3c0,0x18);
 

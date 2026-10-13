@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (69 named) — decompiled, names from PS2 symbols
+ * 145 functions (70 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -9893,14 +9893,14 @@ void item_create_base_pickup(undefined4 *param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== FUN_0045a820 @ 0x0045A820 ===== */
+/* ===== item_drop_item @ 0x0045A820 ===== */
 /* PS2 candidate: item_drop_item (conf 0.512) */
 
 
 
-int FUN_0045a820(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+int item_drop_item(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
 
-                undefined4 param_5,undefined4 param_6,undefined4 param_7)
+                  undefined4 param_5,undefined4 param_6,undefined4 param_7)
 
 
 
@@ -10095,9 +10095,9 @@ void item_drop_backheld(int param_1)
 
       }
 
-      FUN_0045a820(param_1,iVar2,1,*(float *)(param_1 + 0x29c) * -30.0,
+      item_drop_item(param_1,iVar2,1,*(float *)(param_1 + 0x29c) * -30.0,
 
-                   *(float *)(param_1 + 0x2ac) * -30.0,0x41700000,0x41f00000);
+                     *(float *)(param_1 + 0x2ac) * -30.0,0x41700000,0x41f00000);
 
       SpecialWeaponIdSet__FP6OBJECTi(param_1,0xffffffff);
 
@@ -10162,7 +10162,7 @@ void item_drop_curweap(int param_1)
 
                              *(float *)(param_1 + 0x2ac) * -30.0,0x41700000,0x41f00000);
 
-        FUN_0045a820(param_1,iVar1,uVar2);
+        item_drop_item(param_1,iVar1,uVar2);
 
         if (local_104 != (undefined4 *)0x0) {
 
@@ -10247,7 +10247,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
       uVar4 = WeaponIdGetPresent__FP6OBJECT(puVar2,uVar4);
 
-      FUN_0045a820(puVar2,uVar4);
+      item_drop_item(puVar2,uVar4);
 
       if (param_1 != (undefined4 *)0x0) {
 
@@ -10285,7 +10285,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
         uVar4 = FUN_004582d0(puVar2,iVar3,uVar4);
 
-        FUN_0045a820(puVar2,uVar4);
+        item_drop_item(puVar2,uVar4);
 
         if (param_1 != (undefined4 *)0x0) {
 
@@ -10317,7 +10317,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
                            0x41f00000);
 
-      FUN_0045a820(puVar2,uVar4);
+      item_drop_item(puVar2,uVar4);
 
     }
 
@@ -12281,7 +12281,7 @@ undefined4 FUN_0045d300(uint *param_1)
 
   if (DAT_0059da20 == 0) {
 
-    FUN_004ed9e0(&LAB_0045d870);
+    world_reset_callback_add(&LAB_0045d870);
 
     if (DAT_0055a4d8 != 0xfe) {
 

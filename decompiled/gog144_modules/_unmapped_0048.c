@@ -2498,7 +2498,7 @@ void FUN_004829d0(void)
 
       FUN_0040d790();
 
-      FUN_004a14b0();
+      Audio3DTestToneStop__Fv();
 
       if (((DAT_00633104 == 0) && (DAT_00632c0c != 0)) && (DAT_0059e8e0 != '\0')) {
 

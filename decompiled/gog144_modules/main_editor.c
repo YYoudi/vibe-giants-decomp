@@ -2527,7 +2527,7 @@ void main_editor_00438350(void)
 
     DAT_0059cbe4 = 1;
 
-    FUN_004ed9e0(&LAB_004386c0);
+    world_reset_callback_add(&LAB_004386c0);
 
     iVar3 = 0;
 

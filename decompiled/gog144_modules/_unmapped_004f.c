@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (23 named) — decompiled, names from PS2 symbols
+ * 48 functions (24 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -132,12 +132,12 @@ void smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie(int param_1,int para
 
 }
 
-/* ===== FUN_004f3af0 @ 0x004F3AF0 ===== */
+/* ===== smartie_animselect @ 0x004F3AF0 ===== */
 /* PS2 candidate: smartie_animselect (conf 0.509) */
 
 
 
-void FUN_004f3af0(int param_1)
+void smartie_animselect(int param_1)
 
 
 
@@ -490,7 +490,7 @@ LAB_004f3ef6:
 
   local_4 = *(undefined4 *)(param_4 + 0x188);
 
-  FUN_004f3af0(local_34);
+  smartie_animselect(local_34);
 
   iVar2 = dialog_level_is_base();
 

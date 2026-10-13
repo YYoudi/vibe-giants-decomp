@@ -1,0 +1,21 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00448a40,FUN_00448a40,,fx_stackPop__FPP10FXSTACKTAGT0,0.9,llm-w126,body-verified
+00403b50,FUN_00403b50,,BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i,0.9,llm-w126,body-verified
+00497d20,FUN_00497d20,,objectset_find,0.9,llm-w126,body-verified
+00490860,FUN_00490860,,read_worlds_bin_fn_PS2,0.9,llm-w126,body-verified
+004419d0,FUN_004419d0,,make_explosion_large,0.9,llm-w126,body-verified
+0045a820,FUN_0045a820,,item_drop_item,0.9,llm-w126,body-verified
+0052ffe0,FUN_0052ffe0,,IconIsKabutoIcon__Fi,0.9,llm-w126,body-verified
+004e7300,FUN_004e7300,,ObjIsMyArmySpline__FP6OBJECTi,0.9,llm-w126,body-verified 0x48a
+004a17f0,FUN_004a17f0,,PhysicsExCollisionPlane,0.9,llm-w126,body-verified plane dot
+004ed9e0,FUN_004ed9e0,,world_reset_callback_add,0.9,llm-w126,body-verified family
+004b91d0,FUN_004b91d0,,reaper_init_items,0.9,llm-w126,body-verified -1 fill
+004ad7e0,FUN_004ad7e0,,reapertrail_logic,0.9,llm-w126,body-verified
+004a8f50,FUN_004a8f50,,PROJ_DefGet,0.9,llm-w126,body-verified 0x55 stride
+004a14b0,FUN_004a14b0,,Audio3DTestToneStop__Fv,0.9,llm-w126,body-verified
+00431b80,FUN_00431b80,,kabutoai_select_target__FP6OBJECT,0.9,llm-w126,body-verified
+004f3af0,FUN_004f3af0,,smartie_animselect,0.9,llm-w126,body-verified
+00414680,FUN_00414680,,obj_get_last_ground_z,0.9,llm-w126,body-verified field 0x140 (rejected CByteStream)
+00545885,FUN_00545885,,crt_abort_exit,0.9,llm-w126,body-verified ExitProcess (rejected _decodeOrSkip)
+00542eb0,FUN_00542eb0,,crt_init_sys,0.9,llm-w126,body-verified hooks init call
+004cea60,FUN_004cea60,,smartie_move_turn,0.9,llm-w126,body-verified move wrapper (rejected ObjIsMeccBaseWall)

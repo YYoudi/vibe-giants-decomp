@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (71 named) — decompiled, names from PS2 symbols
+ * 131 functions (75 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -690,7 +690,7 @@ int FUN_004a13c0(char *param_1)
 
   
 
-  FUN_004a14b0();
+  Audio3DTestToneStop__Fv();
 
   local_8 = 0;
 
@@ -753,12 +753,12 @@ undefined8 FUN_004a14a0(void)
 
 }
 
-/* ===== FUN_004a14b0 @ 0x004A14B0 ===== */
+/* ===== Audio3DTestToneStop__Fv @ 0x004A14B0 ===== */
 /* PS2 candidate: Audio3DTestToneStop__Fv (conf 0.51) */
 
 
 
-void FUN_004a14b0(void)
+void Audio3DTestToneStop__Fv(void)
 
 
 
@@ -793,7 +793,7 @@ void AddHud__4cHudP8cHudIcon_2(void)
 
 {
 
-  FUN_004a14b0();
+  Audio3DTestToneStop__Fv();
 
   return;
 
@@ -905,12 +905,12 @@ void FUN_004a17c0(int param_1,float param_2)
 
 }
 
-/* ===== FUN_004a17f0 @ 0x004A17F0 ===== */
+/* ===== PhysicsExCollisionPlane @ 0x004A17F0 ===== */
 /* PS2 candidate: PhysicsExCollisionPlane (conf 0.511) */
 
 
 
-void FUN_004a17f0(int param_1,float *param_2,float *param_3)
+void PhysicsExCollisionPlane(int param_1,float *param_2,float *param_3)
 
 
 
@@ -5468,7 +5468,7 @@ void FUN_004a5f40(int param_1)
 
       if (-1 < iVar1) {
 
-        uVar3 = FUN_00497d20(0x85);
+        uVar3 = objectset_find(0x85);
 
         *(undefined4 *)(DAT_00632a88 + 8) = uVar3;
 
@@ -7411,12 +7411,12 @@ void main_procanim_004a8d40(int param_1)
 
 }
 
-/* ===== FUN_004a8f50 @ 0x004A8F50 ===== */
+/* ===== PROJ_DefGet @ 0x004A8F50 ===== */
 /* PS2 candidate: PROJ_DefGet (conf 0.51) */
 
 
 
-undefined4 * FUN_004a8f50(int param_1)
+undefined4 * PROJ_DefGet(int param_1)
 
 
 
@@ -11404,12 +11404,12 @@ void sound_3dpos_user(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004ad7e0 @ 0x004AD7E0 ===== */
+/* ===== reapertrail_logic @ 0x004AD7E0 ===== */
 /* PS2 candidate: reapertrail_logic (conf 0.51) */
 
 
 
-void FUN_004ad7e0(int param_1)
+void reapertrail_logic(int param_1)
 
 
 
@@ -13000,7 +13000,7 @@ switchD_004af2c0_caseD_24:
 
     pfVar29 = (float *)((int)pfVar30 + 5);
 
-    iVar20 = FUN_00497d20();
+    iVar20 = objectset_find();
 
     puVar10[2] = iVar20;
 
@@ -13344,7 +13344,7 @@ switchD_004af2c0_caseD_54:
 
       iVar20 = puVar10[0x40];
 
-      uVar11 = FUN_00497d20();
+      uVar11 = objectset_find();
 
       *(undefined4 *)(iVar20 + 0x6c) = uVar11;
 
@@ -13364,7 +13364,7 @@ switchD_004af2c0_caseD_54:
 
       iVar20 = puVar10[0x40];
 
-      uVar11 = FUN_00497d20();
+      uVar11 = objectset_find();
 
       *(undefined4 *)(iVar20 + 0xa0) = uVar11;
 
@@ -13382,7 +13382,7 @@ switchD_004af2c0_caseD_54:
 
       iVar20 = puVar10[0x40];
 
-      uVar11 = FUN_00497d20();
+      uVar11 = objectset_find();
 
       *(undefined4 *)(iVar20 + 0xfb4) = uVar11;
 
@@ -13472,7 +13472,7 @@ switchD_004af2c0_caseD_54:
 
       iVar20 = puVar10[0x40];
 
-      uVar11 = FUN_00497d20();
+      uVar11 = objectset_find();
 
       *(undefined4 *)(iVar20 + 0xa4) = uVar11;
 

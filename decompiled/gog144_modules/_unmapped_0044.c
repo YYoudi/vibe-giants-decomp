@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (53 named) — decompiled, names from PS2 symbols
+ * 76 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1241,12 +1241,12 @@ void wredit_spawn_object(void)
 
 }
 
-/* ===== FUN_004419d0 @ 0x004419D0 ===== */
+/* ===== make_explosion_large @ 0x004419D0 ===== */
 /* PS2 candidate: make_explosion_large (conf 0.517) */
 
 
 
-void FUN_004419d0(undefined4 param_1)
+void make_explosion_large(undefined4 param_1)
 
 
 
@@ -8892,7 +8892,7 @@ undefined4 fx_processOpCodes(void)
 
         }
 
-        FUN_00448a40();
+        fx_stackPop__FPP10FXSTACKTAGT0();
 
         if (in_stack_0000d778 != 0) {
 
@@ -12808,7 +12808,7 @@ LAB_0044e828:
 
       while (puStack0000003c != (undefined4 *)0x0) {
 
-        FUN_00448a40();
+        fx_stackPop__FPP10FXSTACKTAGT0();
 
         puStack0000003c = puStack00000014;
 

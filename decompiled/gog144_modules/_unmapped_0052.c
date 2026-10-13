@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (93 named) — decompiled, names from PS2 symbols
+ * 162 functions (94 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -14924,12 +14924,12 @@ void FUN_0052ff70(char *param_1)
 
 }
 
-/* ===== FUN_0052ffe0 @ 0x0052FFE0 ===== */
+/* ===== IconIsKabutoIcon__Fi @ 0x0052FFE0 ===== */
 /* PS2 candidate: IconIsKabutoIcon__Fi (conf 0.511) */
 
 
 
-void FUN_0052ffe0(void)
+void IconIsKabutoIcon__Fi(void)
 
 
 

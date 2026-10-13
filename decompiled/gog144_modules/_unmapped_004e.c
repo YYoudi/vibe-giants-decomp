@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (48 named) — decompiled, names from PS2 symbols
+ * 94 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -6491,12 +6491,12 @@ undefined4 FUN_004e7250(int param_1)
 
 }
 
-/* ===== FUN_004e7300 @ 0x004E7300 ===== */
+/* ===== ObjIsMyArmySpline__FP6OBJECTi @ 0x004E7300 ===== */
 /* PS2 candidate: ObjIsMyArmySpline__FP6OBJECTi (conf 0.511) */
 
 
 
-undefined4 FUN_004e7300(int param_1,int param_2)
+undefined4 ObjIsMyArmySpline__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -10020,12 +10020,12 @@ void water_fx_test(void)
 
 }
 
-/* ===== FUN_004ed9e0 @ 0x004ED9E0 ===== */
+/* ===== world_reset_callback_add @ 0x004ED9E0 ===== */
 /* PS2 candidate: world_reset_callback_add (conf 0.51) */
 
 
 
-void FUN_004ed9e0(int param_1)
+void world_reset_callback_add(int param_1)
 
 
 
@@ -10214,59 +10214,59 @@ void meccprocanimscreate_004ede30(void)
 
   
 
-  uVar1 = FUN_00497d20(2);
+  uVar1 = objectset_find(2);
 
   MeccProcAnimsCreate(uVar1);
 
-  uVar1 = FUN_00497d20(0x85);
+  uVar1 = objectset_find(0x85);
 
   MeccProcAnimsCreate(uVar1);
 
-  uVar1 = FUN_00497d20(0x248);
+  uVar1 = objectset_find(0x248);
 
   MeccProcAnimsCreate_2(uVar1);
 
-  uVar1 = FUN_00497d20(0x270);
+  uVar1 = objectset_find(0x270);
 
   MeccProcAnimsCreate_3(uVar1);
 
-  uVar1 = FUN_00497d20(0x3b);
+  uVar1 = objectset_find(0x3b);
 
   MeccProcAnimsCreate_4(uVar1);
 
-  uVar1 = FUN_00497d20(0x42f);
+  uVar1 = objectset_find(0x42f);
 
   MeccProcAnimsCreate_4(uVar1);
 
-  uVar1 = FUN_00497d20(0x42e);
+  uVar1 = objectset_find(0x42e);
 
   MeccProcAnimsCreate_4(uVar1);
 
-  uVar1 = FUN_00497d20(0x4ac);
+  uVar1 = objectset_find(0x4ac);
 
   MeccProcAnimsCreate_4(uVar1);
 
-  uVar1 = FUN_00497d20(0x4ad);
+  uVar1 = objectset_find(0x4ad);
 
   MeccProcAnimsCreate_4(uVar1);
 
-  uVar1 = FUN_00497d20(0x4ab);
+  uVar1 = objectset_find(0x4ab);
 
   MeccProcAnimsCreate_4(uVar1);
 
-  uVar1 = FUN_00497d20(0x4aa);
+  uVar1 = objectset_find(0x4aa);
 
   MeccProcAnimsCreate_4(uVar1);
 
-  uVar1 = FUN_00497d20(1);
+  uVar1 = objectset_find(1);
 
   KabutoProcAnimsCreate(uVar1);
 
-  uVar1 = FUN_00497d20(0x66);
+  uVar1 = objectset_find(0x66);
 
   main_procanim_004a8d40(uVar1);
 
-  uVar1 = FUN_00497d20(0x65);
+  uVar1 = objectset_find(0x65);
 
   main_procanim_004a8d40(uVar1);
 
@@ -10920,7 +10920,7 @@ void FUN_004ee670(int param_1)
 
   }
 
-  FUN_00490860();
+  read_worlds_bin_fn_PS2();
 
   FUN_00489ca0();
 

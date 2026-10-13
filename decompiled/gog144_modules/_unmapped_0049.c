@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (72 named) — decompiled, names from PS2 symbols
+ * 142 functions (73 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -3344,13 +3344,13 @@ LAB_00492a3a:
 
                    ((iVar11 = *(int *)(iVar6 + DAT_006330e4), iVar11 == 7 || (iVar11 == 0xe)))) {
 
-                  iVar11 = FUN_0045a820(DAT_00632a88,iVar11,0xffffffff,
+                  iVar11 = item_drop_item(DAT_00632a88,iVar11,0xffffffff,
 
-                                        *(float *)(DAT_00632a88 + 0x29c) * -30.0,
+                                          *(float *)(DAT_00632a88 + 0x29c) * -30.0,
 
-                                        *(float *)(DAT_00632a88 + 0x2ac) * -30.0,0x41700000,
+                                          *(float *)(DAT_00632a88 + 0x2ac) * -30.0,0x41700000,
 
-                                        0xbf800000);
+                                          0xbf800000);
 
                   *(uint *)(iVar11 + 0xd8) = *(uint *)(iVar11 + 0xd8) | 0x400;
 
@@ -8121,12 +8121,12 @@ undefined4 FUN_00497cd0(int param_1)
 
 }
 
-/* ===== FUN_00497d20 @ 0x00497D20 ===== */
+/* ===== objectset_find @ 0x00497D20 ===== */
 /* PS2 candidate: objectset_find (conf 0.519) */
 
 
 
-undefined4 * FUN_00497d20(int param_1)
+undefined4 * objectset_find(int param_1)
 
 
 
@@ -12277,7 +12277,7 @@ void FUN_0049b8a0(int param_1)
 
     FUN_004c26d0(param_1,iVar1 + 0x68);
 
-    FUN_004b91d0(param_1);
+    reaper_init_items(param_1);
 
     reaper_set_bow(param_1,0x2c,0,0xffffffff,0);
 

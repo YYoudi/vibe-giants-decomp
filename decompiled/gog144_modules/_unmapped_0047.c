@@ -1403,7 +1403,7 @@ void FUN_00471a60(int param_1)
 
           FUN_004759a0();
 
-          FUN_00431b80();
+          kabutoai_select_target__FP6OBJECT();
 
           FUN_00475290();
 
@@ -4253,7 +4253,7 @@ void FUN_004789e0(int param_1,char param_2,int *param_3,undefined4 *param_4)
 
   }
 
-  piVar3 = (int *)FUN_004a8f50(param_2);
+  piVar3 = (int *)PROJ_DefGet(param_2);
 
   if ((iVar4 != 0) && (*(int *)(iVar4 + 4) != *piVar3)) {
 
@@ -4346,7 +4346,7 @@ int new_fire__FP6OBJECTiPfT0P3P3Df
 
   uVar7 = param_2 & 0xff;
 
-  local_44 = FUN_004a8f50(uVar7);
+  local_44 = PROJ_DefGet(uVar7);
 
   pfVar3 = param_3;
 
@@ -5665,7 +5665,7 @@ void FUN_0047c440(int param_1)
 
     uVar5 = FUN_004a9040(*(undefined4 *)(iVar1 + 0x124));
 
-    iVar7 = FUN_004a8f50(uVar5);
+    iVar7 = PROJ_DefGet(uVar5);
 
     iVar4 = PROJ_GetCustom(uVar5);
 
@@ -7034,7 +7034,7 @@ LAB_0047d6b8:
 
     if (*(int *)(iVar5 + 0x144) == 0) {
 
-      FUN_004a8f50(0x13);
+      PROJ_DefGet(0x13);
 
       local_1c = FUN_00456050(iVar7);
 
@@ -7942,7 +7942,7 @@ LAB_0047e183:
 
     local_88 = iVar6;
 
-    local_84 = FUN_004a8f50(iVar6);
+    local_84 = PROJ_DefGet(iVar6);
 
   }
 
@@ -7952,7 +7952,7 @@ LAB_0047e183:
 
     local_88 = 0x18;
 
-    local_84 = FUN_004a8f50(0x18);
+    local_84 = PROJ_DefGet(0x18);
 
     iVar6 = local_88;
 
@@ -8969,7 +8969,7 @@ void FUN_0047f520(float param_1,float param_2,float *param_3,float *param_4)
 
   iVar3 = (int)param_1;
 
-  fVar4 = (float10)FUN_00414680(param_1);
+  fVar4 = (float10)obj_get_last_ground_z(param_1);
 
   if (((param_1 != (float)DAT_00632a88) &&
 

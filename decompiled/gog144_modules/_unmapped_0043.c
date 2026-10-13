@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (61 named) — decompiled, names from PS2 symbols
+ * 74 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -1195,12 +1195,12 @@ void get_free_world_ripple__Fv(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00431b80 @ 0x00431B80 ===== */
+/* ===== kabutoai_select_target__FP6OBJECT @ 0x00431B80 ===== */
 /* PS2 candidate: kabutoai_select_target__FP6OBJECT (conf 0.51) */
 
 
 
-void FUN_00431b80(void)
+void kabutoai_select_target__FP6OBJECT(void)
 
 
 

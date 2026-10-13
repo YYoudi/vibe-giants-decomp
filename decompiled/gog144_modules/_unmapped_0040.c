@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (60 named) — decompiled, names from PS2 symbols
+ * 105 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -1552,12 +1552,12 @@ int FUN_00403a70(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00403b50 @ 0x00403B50 ===== */
+/* ===== BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i @ 0x00403B50 ===== */
 /* PS2 candidate: BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i (conf 0.521) */
 
 
 
-void FUN_00403b50(int param_1)
+void BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i(int param_1)
 
 
 
@@ -2119,7 +2119,7 @@ void FUN_00403e60(int *param_1,float param_2)
 
   param_1[3] = iVar7;
 
-  FUN_00403b50(param_1);
+  BasicUsrAnmApply__FP9ObjectSetP14BasicUsrAnmDefPFP6OBJECTPvii_i(param_1);
 
   if (param_1[4] == 0xfe) {
 
@@ -6103,7 +6103,7 @@ LAB_004090c8:
 
       if (**(int **)(iVar6 + 8) != *(int *)(&DAT_00554564 + iVar3 * 0x58)) {
 
-        uVar5 = FUN_00497d20(*(int *)(&DAT_00554564 + iVar3 * 0x58));
+        uVar5 = objectset_find(*(int *)(&DAT_00554564 + iVar3 * 0x58));
 
         object_set_objectset(iVar6,uVar5);
 
@@ -6493,7 +6493,7 @@ void meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2(int param_1,int param_2
 
     if (**(int **)(iVar1 + 8) != *(int *)(&DAT_00554564 + param_2 * 0x58)) {
 
-      uVar2 = FUN_00497d20(*(int *)(&DAT_00554564 + param_2 * 0x58));
+      uVar2 = objectset_find(*(int *)(&DAT_00554564 + param_2 * 0x58));
 
       object_set_objectset(iVar1,uVar2);
 
@@ -6507,7 +6507,7 @@ void meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset_2(int param_1,int param_2
 
     if (**(int **)(iVar1 + 8) != *(int *)(&DAT_00554568 + param_2 * 0x58)) {
 
-      uVar2 = FUN_00497d20(*(int *)(&DAT_00554568 + param_2 * 0x58));
+      uVar2 = objectset_find(*(int *)(&DAT_00554568 + param_2 * 0x58));
 
       object_set_objectset(iVar1,uVar2);
 

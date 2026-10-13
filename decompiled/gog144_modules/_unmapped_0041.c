@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (64 named) — decompiled, names from PS2 symbols
+ * 100 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -3087,12 +3087,12 @@ LAB_0041447d:
 
 }
 
-/* ===== FUN_00414680 @ 0x00414680 ===== */
+/* ===== obj_get_last_ground_z @ 0x00414680 ===== */
 /* PS2 candidate: GetCurrentPos__C11CByteStream_3 (conf 0.518) */
 
 
 
-float10 FUN_00414680(int param_1)
+float10 obj_get_last_ground_z(int param_1)
 
 
 
@@ -4401,7 +4401,7 @@ LAB_00415d68:
 
                    (*(float *)(iVar1 + 0x154) + pfVar8[4]);
 
-        FUN_004a17f0(param_1,pfVar8,&local_88);
+        PhysicsExCollisionPlane(param_1,pfVar8,&local_88);
 
         if ((*pfVar9 - *(float *)(param_1 + 0xac)) * *param_2 +
 

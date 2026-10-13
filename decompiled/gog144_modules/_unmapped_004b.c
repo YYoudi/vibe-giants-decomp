@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (57 named) — decompiled, names from PS2 symbols
+ * 90 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -1931,7 +1931,7 @@ LAB_004b56d8:
 
       if (**(int **)(iVar6 + 8) != *(int *)(&DAT_005606b4 + iVar3 * 0x58)) {
 
-        uVar5 = FUN_00497d20(*(int *)(&DAT_005606b4 + iVar3 * 0x58));
+        uVar5 = objectset_find(*(int *)(&DAT_005606b4 + iVar3 * 0x58));
 
         object_set_objectset(iVar6,uVar5);
 
@@ -2235,7 +2235,7 @@ void meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset(int param_1,int param_2,i
 
     if (**(int **)(iVar1 + 8) != *(int *)(&DAT_005606b4 + param_2 * 0x58)) {
 
-      uVar2 = FUN_00497d20(*(int *)(&DAT_005606b4 + param_2 * 0x58));
+      uVar2 = objectset_find(*(int *)(&DAT_005606b4 + param_2 * 0x58));
 
       object_set_objectset(iVar1,uVar2);
 
@@ -2249,7 +2249,7 @@ void meccbasepit_swap_model__FP6OBJECTi13e_bldg_objset(int param_1,int param_2,i
 
     if (**(int **)(iVar1 + 8) != *(int *)(&DAT_005606b8 + param_2 * 0x58)) {
 
-      uVar2 = FUN_00497d20(*(int *)(&DAT_005606b8 + param_2 * 0x58));
+      uVar2 = objectset_find(*(int *)(&DAT_005606b8 + param_2 * 0x58));
 
       object_set_objectset(iVar1,uVar2);
 
@@ -3881,13 +3881,13 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
       iVar3 = *(int *)(uVar2 + 0x100);
 
-      FUN_0045a820(uVar2,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),
+      item_drop_item(uVar2,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),
 
-                   *(undefined4 *)(iVar3 + 0xd74 + *(int *)(iVar3 + 0xdb4) * 8),
+                     *(undefined4 *)(iVar3 + 0xd74 + *(int *)(iVar3 + 0xdb4) * 8),
 
-                   *(float *)(uVar2 + 0x29c) * -30.0,*(float *)(uVar2 + 0x2ac) * -30.0,0x41700000,
+                     *(float *)(uVar2 + 0x29c) * -30.0,*(float *)(uVar2 + 0x2ac) * -30.0,0x41700000,
 
-                   0x41f00000);
+                     0x41f00000);
 
       reaper_set_bow(uVar2,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),0xffffffff,0
 
@@ -6432,12 +6432,12 @@ LAB_004b914c:
 
 }
 
-/* ===== FUN_004b91d0 @ 0x004B91D0 ===== */
+/* ===== reaper_init_items @ 0x004B91D0 ===== */
 /* PS2 candidate: reaper_init_items (conf 0.51) */
 
 
 
-void FUN_004b91d0(int param_1)
+void reaper_init_items(int param_1)
 
 
 
@@ -7052,7 +7052,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
   case 0x16:
 
-    iVar4 = FUN_004a8f50(0x26);
+    iVar4 = PROJ_DefGet(0x26);
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
@@ -7140,7 +7140,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     }
 
-    iVar4 = FUN_004a8f50(0x27);
+    iVar4 = PROJ_DefGet(0x27);
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
@@ -7172,7 +7172,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
   case 0x1c:
 
-    iVar4 = FUN_004a8f50(0x25);
+    iVar4 = PROJ_DefGet(0x25);
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
@@ -7314,7 +7314,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     }
 
-    iVar4 = FUN_004a8f50(0x24);
+    iVar4 = PROJ_DefGet(0x24);
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
@@ -7432,7 +7432,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     }
 
-    iVar4 = FUN_004a8f50(0x14);
+    iVar4 = PROJ_DefGet(0x14);
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
@@ -7470,7 +7470,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
   case 0x49:
 
-    iVar4 = FUN_004a8f50(0x33);
+    iVar4 = PROJ_DefGet(0x33);
 
     fVar1 = *(float *)(iVar4 + 0x2c);
 
@@ -10469,7 +10469,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
   case 0x2c:
 
-    FUN_004a8f50(0x2b);
+    PROJ_DefGet(0x2b);
 
     playerobj_eval_refpt(uVar4,0,&local_c0);
 
@@ -10537,7 +10537,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
   case 0x2d:
 
-    FUN_004a8f50(0x16);
+    PROJ_DefGet(0x16);
 
     playerobj_eval_refpt(uVar4,0,&local_c0);
 
@@ -10603,7 +10603,7 @@ void FUN_004be020(int param_1,undefined4 param_2,uint *param_3,undefined4 *param
 
   case 0x2e:
 
-    FUN_004a8f50(0x15);
+    PROJ_DefGet(0x15);
 
     playerobj_eval_refpt(uVar4,0,&local_c0);
 
@@ -11568,13 +11568,13 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     iVar3 = *(int *)(param_1 + 0x100);
 
-    FUN_0045a820(param_1,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),
+    item_drop_item(param_1,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),
 
-                 *(undefined4 *)(iVar3 + 0xd74 + *(int *)(iVar3 + 0xdb4) * 8),
+                   *(undefined4 *)(iVar3 + 0xd74 + *(int *)(iVar3 + 0xdb4) * 8),
 
-                 *(float *)(param_1 + 0x29c) * -30.0,*(float *)(param_1 + 0x2ac) * -30.0,0x41700000,
+                   *(float *)(param_1 + 0x29c) * -30.0,*(float *)(param_1 + 0x2ac) * -30.0,
 
-                 0x41f00000);
+                   0x41700000,0x41f00000);
 
     reaper_set_bow(param_1,*(undefined4 *)(iVar3 + 0xd70 + *(int *)(iVar3 + 0xdb4) * 8),0xffffffff,0
 

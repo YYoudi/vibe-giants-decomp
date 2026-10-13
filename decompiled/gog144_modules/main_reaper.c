@@ -64,7 +64,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
     param_1 = (float)fVar10 - 90.0;
 
-    iVar5 = FUN_004a8f50(0x12);
+    iVar5 = PROJ_DefGet(0x12);
 
     if (iVar5 != 0) {
 

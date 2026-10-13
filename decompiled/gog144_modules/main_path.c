@@ -115,7 +115,7 @@ void path_world_init__Fv(void)
 
     DAT_005a0cf8 = 1;
 
-    FUN_004ed9e0(&LAB_0049fd00);
+    world_reset_callback_add(&LAB_0049fd00);
 
     iVar5 = 0;
 

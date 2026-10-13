@@ -80,67 +80,67 @@ void main_setupgam_004eda20(void)
 
   FUN_00447060();
 
-  uVar1 = FUN_00497d20(2);
+  uVar1 = objectset_find(2);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x85);
+  uVar1 = objectset_find(0x85);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x248);
+  uVar1 = objectset_find(0x248);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x270);
+  uVar1 = objectset_find(0x270);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x349);
+  uVar1 = objectset_find(0x349);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x34b);
+  uVar1 = objectset_find(0x34b);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x34a);
+  uVar1 = objectset_find(0x34a);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x3b5);
+  uVar1 = objectset_find(0x3b5);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x3b);
+  uVar1 = objectset_find(0x3b);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x42f);
+  uVar1 = objectset_find(0x42f);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x42e);
+  uVar1 = objectset_find(0x42e);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x4ab);
+  uVar1 = objectset_find(0x4ab);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x4aa);
+  uVar1 = objectset_find(0x4aa);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x4ac);
+  uVar1 = objectset_find(0x4ac);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(0x4ad);
+  uVar1 = objectset_find(0x4ad);
 
   main_procanim_004a8150(uVar1);
 
-  uVar1 = FUN_00497d20(1);
+  uVar1 = objectset_find(1);
 
   main_procanim_004a8150(uVar1);
 

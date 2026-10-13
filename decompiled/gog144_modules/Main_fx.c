@@ -1,5 +1,5 @@
 /* Giants 1.449 — module Main/fx
- * 9 functions (8 named) — decompiled, names from PS2 symbols
+ * 9 functions (9 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/fx.c(pp) (assert-string evidence)
  */
 
@@ -771,12 +771,12 @@ LAB_0044838a:
 
 }
 
-/* ===== FUN_00448a40 @ 0x00448A40 ===== */
+/* ===== fx_stackPop__FPP10FXSTACKTAGT0 @ 0x00448A40 ===== */
 /* PS2 candidate: fx_stackPop__FPP10FXSTACKTAGT0 (conf 0.521) */
 
 
 
-void FUN_00448a40(int *param_1,undefined4 *param_2)
+void fx_stackPop__FPP10FXSTACKTAGT0(int *param_1,undefined4 *param_2)
 
 
 

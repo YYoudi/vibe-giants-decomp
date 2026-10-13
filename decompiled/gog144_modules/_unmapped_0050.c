@@ -11003,7 +11003,7 @@ void FUN_0050af50(int param_1,undefined4 param_2,int param_3,undefined4 *param_4
 
       }
 
-      iVar3 = FUN_004a8f50(*(undefined4 *)(iVar1 + 0x34));
+      iVar3 = PROJ_DefGet(*(undefined4 *)(iVar1 + 0x34));
 
       local_c = (*(uint *)(iVar1 + 0x2c) >> 2 & 1) + *(int *)(iVar1 + 0x30);
 

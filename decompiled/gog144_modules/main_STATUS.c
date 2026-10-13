@@ -88,7 +88,7 @@ int main_status_00500520(int *param_1)
 
     }
 
-    FUN_004ed9e0(&LAB_00500710);
+    world_reset_callback_add(&LAB_00500710);
 
     iVar2 = 0;
 

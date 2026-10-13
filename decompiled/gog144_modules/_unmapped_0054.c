@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (259 named) — decompiled, names from PS2 symbols
+ * 351 functions (261 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -2535,12 +2535,12 @@ void ANM_DumpCluster_5(void)
 
 }
 
-/* ===== FUN_00542eb0 @ 0x00542EB0 ===== */
+/* ===== crt_init_sys @ 0x00542EB0 ===== */
 /* PS2 candidate: _InitSys (conf 0.516) */
 
 
 
-void FUN_00542eb0(void)
+void crt_init_sys(void)
 
 
 
@@ -6929,9 +6929,9 @@ void FUN_00544d5c(void)
 
 {
 
-  if (PTR_FUN_00580e00 != (undefined *)0x0) {
+  if (PTR_crt_init_sys_00580e00 != (undefined *)0x0) {
 
-    (*(code *)PTR_FUN_00580e00)();
+    (*(code *)PTR_crt_init_sys_00580e00)();
 
   }
 
@@ -8529,7 +8529,7 @@ void entry(void)
 
   if (iVar2 == 0) {
 
-    FUN_00545885(0x1c);
+    crt_abort_exit(0x1c);
 
   }
 
@@ -8537,7 +8537,7 @@ void entry(void)
 
   if (iVar2 == 0) {
 
-    FUN_00545885(0x10);
+    crt_abort_exit(0x10);
 
   }
 
@@ -8612,12 +8612,12 @@ void __cdecl __amsg_exit(int param_1)
 
 }
 
-/* ===== FUN_00545885 @ 0x00545885 ===== */
+/* ===== crt_abort_exit @ 0x00545885 ===== */
 /* PS2 candidate: _decodeOrSkip (conf 0.516) */
 
 
 
-void FUN_00545885(undefined4 param_1)
+void crt_abort_exit(undefined4 param_1)
 
 
 

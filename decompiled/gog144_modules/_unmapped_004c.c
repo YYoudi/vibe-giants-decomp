@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (45 named) — decompiled, names from PS2 symbols
+ * 64 functions (46 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -203,7 +203,7 @@ void reaper_finish_cloak(int param_1,undefined4 param_2)
 
   else {
 
-    iVar4 = FUN_004a8f50(0x2c);
+    iVar4 = PROJ_DefGet(0x2c);
 
     iVar5 = PROJ_GetCustom(0x2c);
 
@@ -8879,7 +8879,7 @@ undefined4 dev_debug_flags(void)
 
     dlog_alpha_big_render();
 
-    FUN_004a14b0();
+    Audio3DTestToneStop__Fv();
 
   }
 
@@ -9259,12 +9259,12 @@ void object_spawn_4c(int param_1)
 
 }
 
-/* ===== FUN_004cea60 @ 0x004CEA60 ===== */
+/* ===== smartie_move_turn @ 0x004CEA60 ===== */
 /* PS2 candidate: ObjIsMeccBaseWall (conf 0.509) */
 
 
 
-void FUN_004cea60(int param_1)
+void smartie_move_turn(int param_1)
 
 
 

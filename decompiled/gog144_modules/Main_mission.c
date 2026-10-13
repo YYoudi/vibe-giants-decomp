@@ -1,14 +1,14 @@
 /* Giants 1.449 — module Main/mission
- * 2 functions (1 named) — decompiled, names from PS2 symbols
+ * 2 functions (2 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\Main/mission.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00490860 @ 0x00490860 ===== */
+/* ===== read_worlds_bin_fn_PS2 @ 0x00490860 ===== */
 /* PS2 candidate: read_worlds_bin_fn_PS2 (conf 0.517) */
 
 
 
-void FUN_00490860(void)
+void read_worlds_bin_fn_PS2(void)
 
 
 
