@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0040a820,FUN_0040A820,,objtype_anim_scan,0.9,llm-read37,
+0041a980,FUN_0041A980,,objtype_team_assign,0.9,llm-read37,
+0040b640,FUN_0040B640,,particles_decay_update,0.9,llm-read37,
+00417330,FUN_00417330,,hud_draw_rect,0.9,llm-read37,

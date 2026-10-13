@@ -1493,7 +1493,7 @@ void FUN_00471a60(int param_1)
 
             FUN_0040bdc0();
 
-            FUN_0040b640();
+            particles_decay_update();
 
             FUN_00443110();
 

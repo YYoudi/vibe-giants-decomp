@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (39 named) — decompiled, names from PS2 symbols
+ * 100 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -5461,8 +5461,8 @@ void FUN_004171d0(float param_1,float param_2,float param_3)
 
 }
 
-/* ===== FUN_00417330 @ 0x00417330 ===== */
-void FUN_00417330(float param_1,float param_2,float param_3,float param_4,float param_5)
+/* ===== hud_draw_rect @ 0x00417330 ===== */
+void hud_draw_rect(float param_1,float param_2,float param_3,float param_4,float param_5)
 
 
 
@@ -8141,7 +8141,7 @@ void objtype_setup_spell(undefined4 param_1)
 
       puVar2[3] = uStack_14;
 
-      FUN_0041a980(iVar4,param_1);
+      objtype_team_assign(iVar4,param_1);
 
     }
 
@@ -8296,8 +8296,8 @@ LAB_0041a942:
 
 }
 
-/* ===== FUN_0041a980 @ 0x0041A980 ===== */
-void FUN_0041a980(int param_1)
+/* ===== objtype_team_assign @ 0x0041A980 ===== */
+void objtype_team_assign(int param_1)
 
 
 

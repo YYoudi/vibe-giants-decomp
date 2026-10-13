@@ -10,8 +10,8 @@
 | _unmapped_0049 | 142 | 47 | _unmapped_0049.c |
 | _unmapped_004a | 131 | 35 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 67 | _unmapped_0042.c |
-| _unmapped_0040 | 105 | 32 | _unmapped_0040.c |
-| _unmapped_0041 | 100 | 39 | _unmapped_0041.c |
+| _unmapped_0040 | 105 | 34 | _unmapped_0040.c |
+| _unmapped_0041 | 100 | 41 | _unmapped_0041.c |
 | _unmapped_004e | 94 | 21 | _unmapped_004e.c |
 | _unmapped_004b | 90 | 26 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 26 | _unmapped_0050.c |
