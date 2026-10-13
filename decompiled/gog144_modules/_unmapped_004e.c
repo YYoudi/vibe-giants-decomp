@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (28 named) — decompiled, names from PS2 symbols
+ * 94 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -2614,12 +2614,12 @@ bool FUN_004e3730(int param_1)
 
 }
 
-/* ===== FUN_004e37c0 @ 0x004E37C0 ===== */
+/* ===== ai_radius_scan @ 0x004E37C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004e37c0(int param_1,float param_2)
+void ai_radius_scan(int param_1,float param_2)
 
 
 

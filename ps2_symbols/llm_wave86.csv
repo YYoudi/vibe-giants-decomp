@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052dc80,FUN_0052DC80,,comm_packet_decode,0.9,llm-read57,
+0052b8c0,FUN_0052B8C0,,comm_dp_send,0.9,llm-read57,
+004e37c0,FUN_004E37C0,,ai_radius_scan,0.9,llm-read57,
+004f86a0,FUN_004F86A0,,obj_sound_cleanup,0.9,llm-read57,

@@ -58,7 +58,7 @@ void comm_chat_send_3(undefined1 param_1,undefined4 param_2,int param_3,int para
 
       if (1 < (int)DAT_005dfed8 + -0x5dfedc) {
 
-        FUN_0052b8c0((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
+        comm_dp_send((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
 
       }
 
@@ -603,7 +603,7 @@ void FUN_00530430(int param_1,int param_2,int param_3,int param_4,undefined4 par
 
     }
 
-    FUN_0052b8c0(0x16,local_18);
+    comm_dp_send(0x16,local_18);
 
   }
 
@@ -1683,7 +1683,7 @@ void comm_send_small_a(int param_1)
 
     }
 
-    FUN_0052b8c0(6,&local_8);
+    comm_dp_send(6,&local_8);
 
   }
 
@@ -1730,7 +1730,7 @@ void comm_send_small_b(int param_1)
 
     }
 
-    FUN_0052b8c0(6,&local_8);
+    comm_dp_send(6,&local_8);
 
   }
 
@@ -1801,7 +1801,7 @@ void reaper_00530bd0(int param_1,int param_2,int param_3,int param_4,undefined1 
 
       if (1 < (int)DAT_005dfed8 + -0x5dfedc) {
 
-        FUN_0052b8c0((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
+        comm_dp_send((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
 
       }
 
@@ -1940,7 +1940,7 @@ void comm_chat_send_1(int param_1,int param_2,int param_3,int param_4,undefined1
 
       if (1 < (int)DAT_005dfed8 + -0x5dfedc) {
 
-        FUN_0052b8c0((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
+        comm_dp_send((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
 
       }
 
@@ -2079,7 +2079,7 @@ void comm_chat_send_2(int param_1,int param_2,int param_3,int param_4,undefined1
 
       if (1 < (int)DAT_005dfed8 + -0x5dfedc) {
 
-        FUN_0052b8c0((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
+        comm_dp_send((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
 
       }
 
@@ -6125,7 +6125,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             if (iVar9 == 0) {
 
-              FUN_0052b8c0(10,&local_248);
+              comm_dp_send(10,&local_248);
 
             }
 
@@ -7896,7 +7896,7 @@ void comm_chat_dispatch(int param_1,int param_2)
 
           if (1 < (int)DAT_005dfed8 + -0x5dfedc) {
 
-            FUN_0052b8c0((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
+            comm_dp_send((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
 
           }
 
@@ -7992,7 +7992,7 @@ LAB_005352a9:
 
           if (1 < (int)DAT_005dfed8 + -0x5dfedc) {
 
-            FUN_0052b8c0((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
+            comm_dp_send((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
 
           }
 
@@ -8165,7 +8165,7 @@ void FUN_00535390(void)
 
       if (1 < (int)DAT_005dfed8 + -0x5dfedc) {
 
-        FUN_0052b8c0((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
+        comm_dp_send((undefined1 *)((int)DAT_005dfed8 + -0x5dfedc),&DAT_005dfedc);
 
       }
 
@@ -8727,7 +8727,7 @@ void comm_0052b430_user_bigger(void)
 
       if (1 < (int)(DAT_005dfed8 + -0x5dfedc)) {
 
-        FUN_0052b8c0(DAT_005dfed8 + -0x5dfedc,&DAT_005dfedc);
+        comm_dp_send(DAT_005dfed8 + -0x5dfedc,&DAT_005dfedc);
 
       }
 
@@ -10768,7 +10768,7 @@ void comm_entergame_message(void)
 
       if (iVar3 == 0) {
 
-        FUN_0052b8c0(10,&local_d4);
+        comm_dp_send(10,&local_d4);
 
       }
 
@@ -10822,7 +10822,7 @@ void comm_entergame_message(void)
 
       if (iVar3 == 0) {
 
-        FUN_0052b8c0(10,&local_d4);
+        comm_dp_send(10,&local_d4);
 
       }
 
@@ -11414,7 +11414,7 @@ void FUN_005375e0(void)
 
         if (iVar3 == 0) {
 
-          FUN_0052b8c0(10,&local_a90);
+          comm_dp_send(10,&local_a90);
 
         }
 

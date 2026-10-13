@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (87 named) — decompiled, names from PS2 symbols
+ * 162 functions (89 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -8795,8 +8795,8 @@ void FUN_0052b860(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0052b8c0 @ 0x0052B8C0 ===== */
-void FUN_0052b8c0(int param_1,undefined4 param_2)
+/* ===== comm_dp_send @ 0x0052B8C0 ===== */
+void comm_dp_send(int param_1,undefined4 param_2)
 
 
 
@@ -10558,7 +10558,7 @@ void FUN_0052dbb0(undefined1 *param_1,uint param_2,byte *param_3)
 
 }
 
-/* ===== FUN_0052dc80 @ 0x0052DC80 ===== */
+/* ===== comm_packet_decode @ 0x0052DC80 ===== */
 /* WARNING: Removing unreachable block (ram,0x0052dd6b) */
 
 /* WARNING: Removing unreachable block (ram,0x0052dd47) */
@@ -10569,7 +10569,7 @@ void FUN_0052dbb0(undefined1 *param_1,uint param_2,byte *param_3)
 
 
 
-void FUN_0052dc80(int param_1,int param_2,int param_3,int param_4)
+void comm_packet_decode(int param_1,int param_2,int param_3,int param_4)
 
 
 
@@ -11503,7 +11503,7 @@ void FUN_0052e250(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
 
     } while ((char)SVar3 != '\0');
 
-    FUN_0052dc80(param_1 + 0x12,~uVar4 - 1,local_248,iVar5);
+    comm_packet_decode(param_1 + 0x12,~uVar4 - 1,local_248,iVar5);
 
     FUN_0052dbb0(local_248,iVar5,local_c8);
 
@@ -12144,7 +12144,7 @@ void comm_0052e6e0(char *param_1,int param_2)
 
     } while (cVar1 != '\0');
 
-    FUN_0052b8c0(~uVar8 + 1,param_1);
+    comm_dp_send(~uVar8 + 1,param_1);
 
     bVar2 = param_1[2];
 
@@ -13082,7 +13082,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
             local_b = 0;
 
-            FUN_0052b8c0(0xe,&local_18);
+            comm_dp_send(0xe,&local_18);
 
             return;
 
@@ -13094,7 +13094,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
       else {
 
-        FUN_0052b8c0(8,&local_8);
+        comm_dp_send(8,&local_8);
 
       }
 
@@ -13230,7 +13230,7 @@ void comm_entergame_msg_2(int param_1)
 
     if (iVar2 == 0) {
 
-      FUN_0052b8c0(10,&local_d4);
+      comm_dp_send(10,&local_d4);
 
     }
 
@@ -13364,7 +13364,7 @@ void FUN_0052f210(void)
 
     uStack_4 = (uint)CONCAT12(0x2f,(undefined2)uStack_4);
 
-    FUN_0052b8c0(2,(int)&uStack_4 + 2);
+    comm_dp_send(2,(int)&uStack_4 + 2);
 
   }
 
@@ -13428,7 +13428,7 @@ void comm_0052b430_user(void)
 
     _local_4 = (uint3)CONCAT11(uVar2,local_4);
 
-    FUN_0052b8c0(3,&local_4);
+    comm_dp_send(3,&local_4);
 
   }
 
@@ -13873,7 +13873,7 @@ void comm_audio_vol_a(undefined4 param_1)
 
     local_3 = 0;
 
-    FUN_0052b8c0(10,&local_c);
+    comm_dp_send(10,&local_c);
 
   }
 
@@ -13933,7 +13933,7 @@ void comm_audio_vol_b(void)
 
     local_3 = 0;
 
-    FUN_0052b8c0(6,&local_8);
+    comm_dp_send(6,&local_8);
 
   }
 
@@ -13968,7 +13968,7 @@ void comm_audio_vol_c(void)
 
     local_3 = 0;
 
-    FUN_0052b8c0(6,&local_8);
+    comm_dp_send(6,&local_8);
 
   }
 
@@ -14078,7 +14078,7 @@ void comm_audio_vol_d(void)
 
     local_3 = 0;
 
-    FUN_0052b8c0(6,&local_8);
+    comm_dp_send(6,&local_8);
 
   }
 
@@ -14113,7 +14113,7 @@ void comm_audio_vol_f(void)
 
     local_3 = 0;
 
-    FUN_0052b8c0(6,&local_8);
+    comm_dp_send(6,&local_8);
 
   }
 
@@ -14148,7 +14148,7 @@ void comm_audio_vol_e(void)
 
     local_3 = 0;
 
-    FUN_0052b8c0(6,&local_8);
+    comm_dp_send(6,&local_8);
 
   }
 
@@ -14420,7 +14420,7 @@ LAB_0052fabe:
 
           }
 
-          FUN_0052b8c0(0x16,&local_18);
+          comm_dp_send(0x16,&local_18);
 
         }
 
@@ -14557,7 +14557,7 @@ void comm_0052b780_user_6(int param_1,int param_2)
 
     }
 
-    FUN_0052b8c0(0x2e,local_30);
+    comm_dp_send(0x2e,local_30);
 
   }
 
@@ -14610,7 +14610,7 @@ void comm_0052b780_user_7(int param_1)
 
     }
 
-    FUN_0052b8c0(10,&local_c);
+    comm_dp_send(10,&local_c);
 
   }
 
@@ -14788,7 +14788,7 @@ void FUN_0052fed0(void)
 
     if (iVar1 == 0) {
 
-      FUN_0052b8c0(2,(int)&uStack_4 + 2);
+      comm_dp_send(2,(int)&uStack_4 + 2);
 
     }
 

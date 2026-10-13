@@ -7215,9 +7215,9 @@
   "len": 656
  },
  "0x004E37C0": {
-  "name": "FUN_004e37c0",
-  "named": false,
-  "len": 1927
+  "name": "ai_radius_scan",
+  "named": true,
+  "len": 1929
  },
  "0x004E3920": {
   "name": "FUN_004e3920",
@@ -7720,9 +7720,9 @@
   "len": 4576
  },
  "0x004F86A0": {
-  "name": "FUN_004f86a0",
-  "named": false,
-  "len": 1945
+  "name": "obj_sound_cleanup",
+  "named": true,
+  "len": 1950
  },
  "0x004F8800": {
   "name": "FUN_004f8800",
@@ -9840,8 +9840,8 @@
   "len": 416
  },
  "0x0052B8C0": {
-  "name": "FUN_0052b8c0",
-  "named": false,
+  "name": "comm_dp_send",
+  "named": true,
   "len": 1438
  },
  "0x0052BA30": {
@@ -9905,9 +9905,9 @@
   "len": 1439
  },
  "0x0052DC80": {
-  "name": "FUN_0052dc80",
-  "named": false,
-  "len": 1614
+  "name": "comm_packet_decode",
+  "named": true,
+  "len": 1620
  },
  "0x0052DDF0": {
   "name": "FUN_0052ddf0",
@@ -9947,7 +9947,7 @@
  "0x0052E250": {
   "name": "FUN_0052e250",
   "named": false,
-  "len": 2977
+  "len": 2983
  },
  "0x0052E3D0": {
   "name": "FUN_0052e3d0",
