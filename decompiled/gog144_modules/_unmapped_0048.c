@@ -1329,7 +1329,7 @@ void FUN_004810d0(int param_1)
 
                 local_24 = *(float *)(iVar4 + 0x188);
 
-                FUN_00530d70(param_1,0,1,0,0x23,&local_24);
+                comm_chat_send_1(param_1,0,1,0,0x23,&local_24);
 
               }
 
@@ -1517,7 +1517,7 @@ LAB_0048160d:
 
                   local_24 = *(float *)(iVar4 + 0x188);
 
-                  FUN_00530d70(param_1,0,1,0,0x23,&local_24);
+                  comm_chat_send_1(param_1,0,1,0,0x23,&local_24);
 
                 }
 

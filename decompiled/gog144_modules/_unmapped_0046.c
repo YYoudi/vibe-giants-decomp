@@ -69,7 +69,7 @@ void FUN_00465070(int param_1)
 
     local_4 = DAT_006328e8;
 
-    FUN_00530f10(param_1,5,0,0,0x10,&local_14);
+    comm_chat_send_2(param_1,5,0,0,0x10,&local_14);
 
   }
 

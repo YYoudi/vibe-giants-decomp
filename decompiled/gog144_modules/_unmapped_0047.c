@@ -5312,7 +5312,7 @@ LAB_0047c03e:
 
     param_3 = 0;
 
-    FUN_00530f10(iVar2,0,0,4,3,&param_3);
+    comm_chat_send_2(iVar2,0,0,4,3,&param_3);
 
   }
 
@@ -5934,7 +5934,7 @@ void FUN_0047c8c0(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
   local_8 = param_3[2];
 
-  FUN_00530d70(param_1,3,1,0,0x25,&local_10);
+  comm_chat_send_1(param_1,3,1,0,0x25,&local_10);
 
   return;
 
@@ -6007,7 +6007,7 @@ void reaper_lock_big(int param_1)
 
       local_4 = *(undefined4 *)(iVar3 + 0x278);
 
-      FUN_00530f10(iVar3,9,0,0,1,&local_24);
+      comm_chat_send_2(iVar3,9,0,0,1,&local_24);
 
     }
 
@@ -6051,7 +6051,7 @@ void reaper_lock_big(int param_1)
 
         local_18 = *(undefined4 *)(iVar3 + 0x164);
 
-        FUN_00530f10(iVar3,6,0,4,2,&local_24);
+        comm_chat_send_2(iVar3,6,0,4,2,&local_24);
 
         return;
 
@@ -6075,7 +6075,7 @@ void reaper_lock_big(int param_1)
 
                                         *(undefined2 *)(iVar3 + 0x20a)));
 
-      FUN_00530f10(iVar3,0,0,4,3,&param_1);
+      comm_chat_send_2(iVar3,0,0,4,3,&param_1);
 
     }
 

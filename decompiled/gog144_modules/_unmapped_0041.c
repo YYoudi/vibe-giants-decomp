@@ -4917,7 +4917,7 @@ void FUN_00416240(int param_1)
 
         param_1 = *(undefined4 *)(iVar1 + 0x188);
 
-        FUN_00530d70(DAT_00632bbc,0,1,0,5,&param_1);
+        comm_chat_send_1(DAT_00632bbc,0,1,0,5,&param_1);
 
         return;
 
@@ -7729,7 +7729,7 @@ void FUN_0041a1c0(int param_1,undefined4 param_2)
 
   param_1 = *(undefined4 *)(param_1 + 0x188);
 
-  FUN_00530d70(param_2,0,1,0,0x1a,&param_1);
+  comm_chat_send_1(param_2,0,1,0,0x1a,&param_1);
 
   return;
 

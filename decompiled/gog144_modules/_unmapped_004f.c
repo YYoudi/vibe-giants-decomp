@@ -553,7 +553,7 @@ void FUN_004f4020(int param_1,undefined4 param_2,int param_3,int param_4,undefin
 
   local_8 = *(undefined4 *)(param_4 + 0x188);
 
-  FUN_00530d70(param_1,4,3,0,0x17,local_1c);
+  comm_chat_send_1(param_1,4,3,0,0x17,local_1c);
 
   return;
 

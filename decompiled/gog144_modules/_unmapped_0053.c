@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (71 named) — decompiled, names from PS2 symbols
+ * 179 functions (74 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -1877,14 +1877,14 @@ LAB_00530ccf:
 
 }
 
-/* ===== FUN_00530d70 @ 0x00530D70 ===== */
+/* ===== comm_chat_send_1 @ 0x00530D70 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00530d70(int param_1,int param_2,int param_3,int param_4,undefined1 param_5,
+void comm_chat_send_1(int param_1,int param_2,int param_3,int param_4,undefined1 param_5,
 
-                 undefined4 *param_6)
+                     undefined4 *param_6)
 
 
 
@@ -2016,14 +2016,14 @@ LAB_00530e6f:
 
 }
 
-/* ===== FUN_00530f10 @ 0x00530F10 ===== */
+/* ===== comm_chat_send_2 @ 0x00530F10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00530f10(int param_1,int param_2,int param_3,int param_4,undefined1 param_5,
+void comm_chat_send_2(int param_1,int param_2,int param_3,int param_4,undefined1 param_5,
 
-                 undefined4 *param_6)
+                     undefined4 *param_6)
 
 
 
@@ -15097,7 +15097,7 @@ float10 FUN_0053be80(float param_1,undefined4 param_2)
 
     local_c = param_2;
 
-    FUN_0053bf20(&local_1c,iVar2);
+    crt_stream_seek(&local_1c,iVar2);
 
     (**(code **)(iVar2 + 4))(&param_1,&local_1c);
 
@@ -15126,8 +15126,8 @@ int FUN_0053bef0(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0053bf20 @ 0x0053BF20 ===== */
-void FUN_0053bf20(int param_1,int param_2)
+/* ===== crt_stream_seek @ 0x0053BF20 ===== */
+void crt_stream_seek(int param_1,int param_2)
 
 
 
@@ -15427,7 +15427,7 @@ int FUN_0053c660(int param_1,int param_2,undefined4 param_3)
 
   if (sVar2 == 1) {
 
-    FUN_0053bf20(&local_98,*(undefined4 *)(param_1 + 0x9c));
+    crt_stream_seek(&local_98,*(undefined4 *)(param_1 + 0x9c));
 
     puVar5 = (undefined4 *)(param_1 + 0x6c);
 
@@ -15455,7 +15455,7 @@ int FUN_0053c660(int param_1,int param_2,undefined4 param_3)
 
     if (*(int *)(param_1 + 0x98) != 0) {
 
-      FUN_0053bf20(&local_98,*(int *)(param_1 + 0x98));
+      crt_stream_seek(&local_98,*(int *)(param_1 + 0x98));
 
       (**(code **)(*(int *)(param_1 + 0x98) + 4))(param_1 + 0x6c,&local_98);
 
@@ -15465,7 +15465,7 @@ int FUN_0053c660(int param_1,int param_2,undefined4 param_3)
 
     if (*(int *)(param_1 + 0x9c) != 0) {
 
-      FUN_0053bf20(&local_98,*(int *)(param_1 + 0x9c));
+      crt_stream_seek(&local_98,*(int *)(param_1 + 0x9c));
 
       pfVar1 = (float *)(param_1 + 0x78);
 
@@ -15483,7 +15483,7 @@ int FUN_0053c660(int param_1,int param_2,undefined4 param_3)
 
     if (*(int *)(param_1 + 0xa0) != 0) {
 
-      FUN_0053bf20(&local_98,*(int *)(param_1 + 0xa0));
+      crt_stream_seek(&local_98,*(int *)(param_1 + 0xa0));
 
       (**(code **)(*(int *)(param_1 + 0xa0) + 4))(param_1 + 0x88,&local_98);
 
@@ -15541,7 +15541,7 @@ LAB_0053ca17:
 
     if (*(int *)(param_1 + 0x98) != 0) {
 
-      FUN_0053bf20(&local_98,*(int *)(param_1 + 0x98));
+      crt_stream_seek(&local_98,*(int *)(param_1 + 0x98));
 
       (**(code **)(*(int *)(param_1 + 0x98) + 4))(param_1 + 0x6c,&local_98);
 
@@ -15599,7 +15599,7 @@ LAB_0053ca17:
 
       else {
 
-        FUN_0053bf20(&local_98,iVar4);
+        crt_stream_seek(&local_98,iVar4);
 
         (**(code **)(*(int *)(param_1 + 0x9c) + 4))(&DAT_005808d8,&local_98);
 
@@ -15613,7 +15613,7 @@ LAB_0053ca17:
 
     if (*(int *)(param_1 + 0xa0) != 0) {
 
-      FUN_0053bf20(&local_98,*(int *)(param_1 + 0xa0));
+      crt_stream_seek(&local_98,*(int *)(param_1 + 0xa0));
 
       (**(code **)(*(int *)(param_1 + 0xa0) + 4))(param_1 + 0x88,&local_98);
 
@@ -17125,7 +17125,7 @@ void FUN_0053d940(int param_1,undefined4 param_2,undefined4 param_3)
 
   if (*(int *)(param_1 + 8) != 0) {
 
-    FUN_0053bf20(param_2,param_1);
+    crt_stream_seek(param_2,param_1);
 
     (**(code **)(param_1 + 4))(param_3,param_2);
 

@@ -3869,7 +3869,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
     param_3 = param_3 & 0xff000000;
 
-    FUN_00530f10(uVar2,0,0,3,3,&param_3);
+    comm_chat_send_2(uVar2,0,0,3,3,&param_3);
 
   }
 
@@ -8389,7 +8389,7 @@ void reaper_lock_user(int param_1)
 
       local_4 = *(undefined4 *)(iVar1 + 0x278);
 
-      FUN_00530f10(iVar1,9,0,0,1,&local_24);
+      comm_chat_send_2(iVar1,9,0,0,1,&local_24);
 
     }
 
@@ -8419,7 +8419,7 @@ void reaper_lock_user(int param_1)
 
         local_18 = *(undefined4 *)(iVar1 + 0x164);
 
-        FUN_00530f10(iVar1,4,0,4,2,&local_24);
+        comm_chat_send_2(iVar1,4,0,4,2,&local_24);
 
         return;
 
@@ -8427,7 +8427,7 @@ void reaper_lock_user(int param_1)
 
       param_1._0_3_ = CONCAT12(*(undefined1 *)(iVar1 + 0x208),*(undefined2 *)(iVar1 + 0x20a));
 
-      FUN_00530f10(iVar1,0,0,3,3,&param_1);
+      comm_chat_send_2(iVar1,0,0,3,3,&param_1);
 
     }
 

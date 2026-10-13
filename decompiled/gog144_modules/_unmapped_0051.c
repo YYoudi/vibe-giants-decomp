@@ -390,7 +390,7 @@ LAB_00511547:
 
     param_1 = *(float *)(iVar2 + 0xb4);
 
-    FUN_00530f10(iVar5,1,0,0,8,&param_1);
+    comm_chat_send_2(iVar5,1,0,0,8,&param_1);
 
   }
 
@@ -633,7 +633,7 @@ void FUN_005116e0(int param_1)
 
                 local_8 = 0;
 
-                FUN_00530f10(param_1,1,1,0,0xb,&local_8);
+                comm_chat_send_2(param_1,1,1,0,0xb,&local_8);
 
                 return;
 
@@ -996,7 +996,7 @@ void FUN_00511cf0(int param_1)
 
     local_1e = __ftol();
 
-    FUN_00530f10(param_1,0,2,0,4,&local_24);
+    comm_chat_send_2(param_1,0,2,0,4,&local_24);
 
   }
 
@@ -1164,7 +1164,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
               local_18 = 0.0;
 
-              FUN_00530f10(iVar2,1,1,0,0xb,&local_18);
+              comm_chat_send_2(iVar2,1,1,0,0xb,&local_18);
 
               return 1;
 
@@ -1218,7 +1218,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
                 local_18 = 0.0;
 
-                FUN_00530f10(iVar2,1,1,0,0xb,&local_18);
+                comm_chat_send_2(iVar2,1,1,0,0xb,&local_18);
 
                 return 1;
 
@@ -1302,7 +1302,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
                 param_1 = CONCAT31(param_1._1_3_,*(undefined1 *)(iVar3 + 0x88));
 
-                FUN_00530f10(iVar2,0,0,1,7,&param_1);
+                comm_chat_send_2(iVar2,0,0,1,7,&param_1);
 
               }
 
@@ -1378,7 +1378,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
                 param_1 = CONCAT31(param_1._1_3_,*(undefined1 *)(iVar4 + 0x88));
 
-                FUN_00530f10(iVar2,0,0,1,7,&param_1);
+                comm_chat_send_2(iVar2,0,0,1,7,&param_1);
 
               }
 
