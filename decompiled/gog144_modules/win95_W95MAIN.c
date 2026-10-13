@@ -124,7 +124,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
     do {
 
-      iVar11 = FUN_005451d1((int)*pcVar14);
+      iVar11 = crt_char_class((int)*pcVar14);
 
       while (iVar11 != 0) {
 
@@ -132,7 +132,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
         pcVar14 = pcVar14 + 1;
 
-        iVar11 = FUN_005451d1((int)*pcVar9);
+        iVar11 = crt_char_class((int)*pcVar9);
 
       }
 
@@ -142,7 +142,7 @@ undefined4 loglauncher_process_2(undefined4 param_1)
 
       while (((cVar2 != '\0' && (*pcVar9 != '.')) &&
 
-             (iVar11 = FUN_005451d1((int)*pcVar9), iVar11 == 0))) {
+             (iVar11 = crt_char_class((int)*pcVar9), iVar11 == 0))) {
 
         cVar2 = pcVar9[1];
 

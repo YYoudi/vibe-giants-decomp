@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (75 named) — decompiled, names from PS2 symbols
+ * 90 functions (77 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -3441,8 +3441,8 @@ undefined4 FUN_004b6e20(int param_1)
 
 }
 
-/* ===== FUN_004b6e80 @ 0x004B6E80 ===== */
-undefined4 FUN_004b6e80(int param_1)
+/* ===== base_slot9_get @ 0x004B6E80 ===== */
+undefined4 base_slot9_get(int param_1)
 
 
 
@@ -3503,8 +3503,8 @@ undefined4 base_slot10_get(int param_1)
 
 }
 
-/* ===== FUN_004b6ef0 @ 0x004B6EF0 ===== */
-undefined4 FUN_004b6ef0(int param_1)
+/* ===== base_slot8_get_2 @ 0x004B6EF0 ===== */
+undefined4 base_slot8_get_2(int param_1)
 
 
 

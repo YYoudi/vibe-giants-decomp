@@ -3497,7 +3497,7 @@ void FUN_004c4fd0(int param_1)
 
     uVar1 = *(undefined4 *)(iVar3 + 0xcfc);
 
-    iVar3 = FUN_004b6ef0(uVar1);
+    iVar3 = base_slot8_get_2(uVar1);
 
     if (iVar3 != 0) {
 
@@ -4293,7 +4293,7 @@ void FUN_004c5b10(int param_1)
 
        (iVar1 = ObjIsJetski(*(int *)(param_1 + 0x210)), iVar1 == 0)) &&
 
-      (iVar2 = FUN_004b6e80(*(undefined4 *)(iVar2 + 0xcfc)), iVar2 != 0)))) {
+      (iVar2 = base_slot9_get(*(undefined4 *)(iVar2 + 0xcfc)), iVar2 != 0)))) {
 
     bldg_get_refpt_worldloc(iVar2,0xc,local_c);
 

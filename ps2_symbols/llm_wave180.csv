@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004b6ef0,FUN_004b6ef0,,base_slot8_get_2,0.9,llm-w180,slot getter cluster round 2
+004b6e80,FUN_004b6e80,,base_slot9_get,0.9,llm-w180,slot 9 via 004184a0
+0040aec0,FUN_0040aec0,,base_slot13_get_2,0.9,llm-w180,slot 0xd via 00418380
+0040ae10,FUN_0040ae10,,base_slot14_get,0.9,llm-w180,slot 0xe via 004184a0
+0050ae10,FUN_0050ae10,,math_cos_lut_read,0.9,llm-w180,005cc878 table & 0x3fff
+005451d1,FUN_005451d1,,crt_char_class,0.9,llm-w180,locale classify callers scanf family

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (290 named) — decompiled, names from PS2 symbols
+ * 351 functions (291 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -7512,8 +7512,8 @@ LAB_0054513d:
 
 }
 
-/* ===== FUN_005451d1 @ 0x005451D1 ===== */
-uint FUN_005451d1(int param_1)
+/* ===== crt_char_class @ 0x005451D1 ===== */
+uint crt_char_class(int param_1)
 
 
 
@@ -16085,13 +16085,13 @@ LAB_0054a81d:
 
       MemFree(uVar5);
 
-      iVar6 = FUN_005451d1(pbVar10[1]);
+      iVar6 = crt_char_class(pbVar10[1]);
 
       pbVar13 = pbVar10;
 
       while (pbVar10 = pbVar13 + 1, iVar6 != 0) {
 
-        iVar6 = FUN_005451d1(pbVar13[2]);
+        iVar6 = crt_char_class(pbVar13[2]);
 
         pbVar13 = pbVar10;
 
@@ -17303,7 +17303,7 @@ undefined4 crt_scanf_skipws(int *param_1,undefined4 param_2)
 
     uVar1 = crt_scanf_getchar(param_2);
 
-    iVar2 = FUN_005451d1(uVar1);
+    iVar2 = crt_char_class(uVar1);
 
   } while (iVar2 != 0);
 

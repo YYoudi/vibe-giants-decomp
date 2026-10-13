@@ -385,9 +385,9 @@
   "len": 495
  },
  "0x0040AE10": {
-  "name": "FUN_0040ae10",
-  "named": false,
-  "len": 254
+  "name": "base_slot14_get",
+  "named": true,
+  "len": 257
  },
  "0x0040AE40": {
   "name": "base_slot15_get",
@@ -400,9 +400,9 @@
   "len": 370
  },
  "0x0040AEC0": {
-  "name": "FUN_0040aec0",
-  "named": false,
-  "len": 251
+  "name": "base_slot13_get_2",
+  "named": true,
+  "len": 256
  },
  "0x0040AFB0": {
   "name": "meccbasepit_create_food",
@@ -6290,9 +6290,9 @@
   "len": 491
  },
  "0x004B6E80": {
-  "name": "FUN_004b6e80",
-  "named": false,
-  "len": 252
+  "name": "base_slot9_get",
+  "named": true,
+  "len": 254
  },
  "0x004B6EB0": {
   "name": "base_slot10_get",
@@ -6300,9 +6300,9 @@
   "len": 368
  },
  "0x004B6EF0": {
-  "name": "FUN_004b6ef0",
-  "named": false,
-  "len": 249
+  "name": "base_slot8_get_2",
+  "named": true,
+  "len": 253
  },
  "0x004B6F20": {
   "name": "base_slot8_get",
@@ -6712,7 +6712,7 @@
  "0x004C4FD0": {
   "name": "FUN_004c4fd0",
   "named": false,
-  "len": 980
+  "len": 984
  },
  "0x004C50B0": {
   "name": "FUN_004c50b0",
@@ -6742,7 +6742,7 @@
  "0x004C5B10": {
   "name": "FUN_004c5b10",
   "named": false,
-  "len": 844
+  "len": 846
  },
  "0x004C5BF0": {
   "name": "reaper_lock_user_2",
@@ -8290,9 +8290,9 @@
   "len": 148
  },
  "0x0050AE10": {
-  "name": "FUN_0050ae10",
-  "named": false,
-  "len": 139
+  "name": "math_cos_lut_read",
+  "named": true,
+  "len": 144
  },
  "0x0050AE40": {
   "name": "sine_cos_lookup",
@@ -9247,7 +9247,7 @@
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
   "named": true,
-  "len": 15507
+  "len": 15513
  },
  "0x0051DC20": {
   "name": "startup_options_init",
@@ -9292,7 +9292,7 @@
  "0x0051EAC0": {
   "name": "loglauncher_process_2",
   "named": true,
-  "len": 9703
+  "len": 9709
  },
  "0x0051F2A0": {
   "name": "FUN_0051f2a0",
@@ -11695,9 +11695,9 @@
   "len": 3159
  },
  "0x005451D1": {
-  "name": "FUN_005451d1",
-  "named": false,
-  "len": 203
+  "name": "crt_char_class",
+  "named": true,
+  "len": 205
  },
  "0x005451F9": {
   "name": "FUN_005451f9",
@@ -12267,7 +12267,7 @@
  "0x00549E11": {
   "name": "_input",
   "named": true,
-  "len": 19486
+  "len": 19490
  },
  "0x0054A836": {
   "name": "crt_scanf_hexchar",
@@ -12287,7 +12287,7 @@
  "0x0054A89E": {
   "name": "crt_scanf_skipws",
   "named": true,
-  "len": 268
+  "len": 270
  },
  "0x0054A8C2": {
   "name": "crt_getstringtype",

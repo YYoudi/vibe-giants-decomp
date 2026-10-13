@@ -13466,7 +13466,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
   do {
 
-    iVar3 = FUN_005451d1((int)*param_1);
+    iVar3 = crt_char_class((int)*param_1);
 
     pcVar7 = param_1;
 
@@ -13476,7 +13476,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
       pcVar7 = pcVar7 + 1;
 
-      iVar3 = FUN_005451d1((int)*pcVar1);
+      iVar3 = crt_char_class((int)*pcVar1);
 
     }
 
@@ -13514,7 +13514,7 @@ void gfx_d3d_0051d0d0(char *param_1)
 
       do {
 
-        iVar3 = FUN_005451d1((int)*param_1);
+        iVar3 = crt_char_class((int)*param_1);
 
         if (iVar3 != 0) break;
 
