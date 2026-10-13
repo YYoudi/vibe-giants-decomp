@@ -6251,9 +6251,9 @@ void level_config_load(void)
 
   }
 
-  DAT_00632d20 = FUN_004b0a00(&DAT_00633070);
+  DAT_00632d20 = session_table_lookup(&DAT_00633070);
 
-  DAT_00632ee4 = FUN_004b0a00(&DAT_00632ee8);
+  DAT_00632ee4 = session_table_lookup(&DAT_00632ee8);
 
   mission_0051a0c0(s_FarClipIndex_0055a04c,&DAT_006331bc);
 

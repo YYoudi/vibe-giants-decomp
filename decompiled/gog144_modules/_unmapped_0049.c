@@ -883,7 +883,9 @@ undefined4 FUN_00490fe0(void)
 
             DAT_0059f300 = *(undefined4 *)(DAT_00632a88 + 4);
 
-            p0 = FUN_004b0a00(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4558 + DAT_006330e4);
+            p0 = session_table_lookup
+
+                           (*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4558 + DAT_006330e4);
 
             *(undefined4 *)(DAT_006330e4 + 0x4a60) = 0x1b;
 

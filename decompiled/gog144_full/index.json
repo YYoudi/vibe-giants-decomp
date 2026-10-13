@@ -3232,7 +3232,7 @@
  "0x00457440": {
   "name": "level_config_load",
   "named": true,
-  "len": 626
+  "len": 642
  },
  "0x004574D0": {
   "name": "defaults_reset_menu",
@@ -3922,7 +3922,7 @@
  "0x00471A60": {
   "name": "FUN_00471a60",
   "named": false,
-  "len": 4610
+  "len": 4634
  },
  "0x00471DC0": {
   "name": "FUN_00471dc0",
@@ -4662,7 +4662,7 @@
  "0x00490FE0": {
   "name": "FUN_00490fe0",
   "named": false,
-  "len": 4368
+  "len": 4405
  },
  "0x00491380": {
   "name": "FUN_00491380",
@@ -5660,9 +5660,9 @@
   "len": 458
  },
  "0x004A54E0": {
-  "name": "FUN_004A54E0",
-  "named": false,
-  "len": 7145
+  "name": "comm_game_session_update",
+  "named": true,
+  "len": 7157
  },
  "0x004A59A0": {
   "name": "FUN_004a59a0",
@@ -6130,9 +6130,9 @@
   "len": 423
  },
  "0x004B0A00": {
-  "name": "FUN_004b0a00",
-  "named": false,
-  "len": 512
+  "name": "session_table_lookup",
+  "named": true,
+  "len": 520
  },
  "0x004B0A60": {
   "name": "FUN_004b0a60",
@@ -6160,9 +6160,9 @@
   "len": 597
  },
  "0x004B0E50": {
-  "name": "main/readwrls_004b0e50",
+  "name": "config_get_double",
   "named": true,
-  "len": 172
+  "len": 167
  },
  "0x004B0E60": {
   "name": "main/readwrls_004b0e60",

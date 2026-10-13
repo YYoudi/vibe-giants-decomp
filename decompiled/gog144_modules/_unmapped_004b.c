@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (25 named) — decompiled, names from PS2 symbols
+ * 90 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -153,12 +153,12 @@ int * FUN_004B09C0(int param_1)
 
 }
 
-/* ===== FUN_004b0a00 @ 0x004B0A00 ===== */
+/* ===== session_table_lookup @ 0x004B0A00 ===== */
 /* PS2 candidate: world_get_id (conf 0.529) */
 
 
 
-undefined4 FUN_004b0a00(undefined4 param_1)
+undefined4 session_table_lookup(undefined4 param_1)
 
 
 
@@ -390,12 +390,12 @@ void main_readwrls_004b0d80(void)
 
 }
 
-/* ===== main/readwrls_004b0e50 @ 0x004B0E50 ===== */
+/* ===== config_get_double @ 0x004B0E50 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-float10 main_readwrls_004b0e50(void)
+float10 config_get_double(void)
 
 
 

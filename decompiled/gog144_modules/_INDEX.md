@@ -8,12 +8,12 @@
 | _unmapped_0052 | 162 | 84 | _unmapped_0052.c |
 | _unmapped_0045 | 145 | 28 | _unmapped_0045.c |
 | _unmapped_0049 | 142 | 47 | _unmapped_0049.c |
-| _unmapped_004a | 131 | 34 | _unmapped_004a.c |
+| _unmapped_004a | 131 | 35 | _unmapped_004a.c |
 | _unmapped_0042 | 129 | 62 | _unmapped_0042.c |
 | _unmapped_0040 | 105 | 31 | _unmapped_0040.c |
 | _unmapped_0041 | 100 | 29 | _unmapped_0041.c |
 | _unmapped_004e | 94 | 21 | _unmapped_004e.c |
-| _unmapped_004b | 90 | 25 | _unmapped_004b.c |
+| _unmapped_004b | 90 | 26 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 25 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 36 | _unmapped_0044.c |
 | _unmapped_0043 | 74 | 55 | _unmapped_0043.c |

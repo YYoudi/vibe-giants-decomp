@@ -1339,7 +1339,7 @@ void FUN_00471a60(int param_1)
 
     if ((param_1 != 0) && (DAT_00633128 != 0)) {
 
-      FUN_004A54E0();
+      comm_game_session_update();
 
       return;
 
@@ -1389,7 +1389,7 @@ void FUN_00471a60(int param_1)
 
         if (param_1 != 0) {
 
-          FUN_004A54E0();
+          comm_game_session_update();
 
         }
 
