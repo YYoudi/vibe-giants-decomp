@@ -2532,7 +2532,7 @@ void FUN_004757c0(int param_1,int param_2)
 
   local_34 = iVar1;
 
-  FUN_004551b0(&local_28,&local_10,0,&local_3c,0);
+  physics_vec_math(&local_28,&local_10,0,&local_3c,0);
 
   local_20 = local_3c + 20.0;
 
@@ -2582,7 +2582,7 @@ void FUN_004757c0(int param_1,int param_2)
 
               local_38 = iVar4;
 
-              FUN_004551b0(&local_1c,&local_10,0,&local_3c,0);
+              physics_vec_math(&local_1c,&local_10,0,&local_3c,0);
 
               if (-local_4 < local_8 * local_20 + local_c * local_24 + local_10 * local_28) {
 

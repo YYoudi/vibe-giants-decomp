@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (69 named) — decompiled, names from PS2 symbols
+ * 129 functions (72 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -10785,7 +10785,7 @@ void FUN_00428810(undefined4 *param_1)
 
         case 4:
 
-          FUN_00428b20(param_1,puVar7);
+          dlog_rect_vtable_draw(param_1,puVar7);
 
         }
 
@@ -10803,8 +10803,8 @@ void FUN_00428810(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00428b20 @ 0x00428B20 ===== */
-void FUN_00428b20(int param_1,int param_2)
+/* ===== dlog_rect_vtable_draw @ 0x00428B20 ===== */
+void dlog_rect_vtable_draw(int param_1,int param_2)
 
 
 
@@ -11896,7 +11896,7 @@ LAB_00429782:
 
         case 3:
 
-          FUN_00429e10(param_1,piVar6);
+          hud_screen_text_render(param_1,piVar6);
 
           return;
 
@@ -12441,12 +12441,12 @@ LAB_00429ded:
 
 }
 
-/* ===== FUN_00429e10 @ 0x00429E10 ===== */
+/* ===== hud_screen_text_render @ 0x00429E10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00429e10(int param_1,int param_2)
+void hud_screen_text_render(int param_1,int param_2)
 
 
 
@@ -19209,16 +19209,16 @@ void FUN_0042f4c0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
 {
 
-  FUN_0042f4f0(0x3f800000,0x3f800000,param_1,param_2,param_3,param_4);
+  dlog_alpha_blend(0x3f800000,0x3f800000,param_1,param_2,param_3,param_4);
 
   return;
 
 }
 
-/* ===== FUN_0042f4f0 @ 0x0042F4F0 ===== */
-void FUN_0042f4f0(undefined4 param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,
+/* ===== dlog_alpha_blend @ 0x0042F4F0 ===== */
+void dlog_alpha_blend(undefined4 param_1,undefined4 param_2,int param_3,int param_4,
 
-                 int param_6)
+                     undefined4 param_5,int param_6)
 
 
 

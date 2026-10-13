@@ -1569,7 +1569,7 @@ void FUN_00412df0(int param_1)
 
   *(undefined4 *)(param_1 + 0x220) = 0;
 
-  local_3c = FUN_004551b0((float *)(param_1 + 0xac),&local_50,local_38,&local_40,1);
+  local_3c = physics_vec_math((float *)(param_1 + 0xac),&local_50,local_38,&local_40,1);
 
   *(undefined4 *)(param_1 + 0x140) = local_40;
 
@@ -2037,7 +2037,7 @@ LAB_004135eb:
 
     }
 
-    local_20 = FUN_004551b0(param_1 + 0xa0,local_34,local_1c,local_24,1);
+    local_20 = physics_vec_math(param_1 + 0xa0,local_34,local_1c,local_24,1);
 
     iVar5 = 0;
 
@@ -2059,7 +2059,7 @@ LAB_004135eb:
 
       if (iVar5 != 0) {
 
-        local_20 = FUN_004551b0(param_1 + 0xa0,local_34,local_1c,local_24,1);
+        local_20 = physics_vec_math(param_1 + 0xa0,local_34,local_1c,local_24,1);
 
       }
 
@@ -2160,7 +2160,7 @@ void FUN_00413820(int param_1)
 
   
 
-  FUN_004551b0(param_1 + 0xa0,&local_1c,local_4,local_c,1);
+  physics_vec_math(param_1 + 0xa0,&local_1c,local_4,local_c,1);
 
   *(undefined4 *)(param_1 + 0x140) = local_c[0];
 
@@ -2228,7 +2228,7 @@ undefined4 FUN_004138c0(float param_1,int param_2)
 
     if (param_2 == 0) {
 
-      FUN_004551b0(iVar2,local_10,0,&param_1,1);
+      physics_vec_math(iVar2,local_10,0,&param_1,1);
 
       if (local_8 < 0.64278) {
 
@@ -2509,7 +2509,7 @@ void FUN_00413c90(int param_1)
 
   pfVar1 = (float *)(param_1 + 0xa0);
 
-  local_8 = FUN_004551b0(pfVar1,&local_1c,local_4,&local_c,1);
+  local_8 = physics_vec_math(pfVar1,&local_1c,local_4,&local_c,1);
 
   if (*(float *)(param_1 + 0x140) < local_c) {
 
@@ -2612,7 +2612,7 @@ float10 FUN_00413e40(undefined4 param_1)
 
   
 
-  FUN_004551b0(param_1,local_1c,local_4,local_c,1);
+  physics_vec_math(param_1,local_1c,local_4,local_c,1);
 
   fVar1 = local_c[0];
 
@@ -2966,7 +2966,7 @@ float10 FUN_004143f0(undefined4 param_1)
 
   
 
-  FUN_004551b0(param_1,local_1c,local_4,local_c,1);
+  physics_vec_math(param_1,local_1c,local_4,local_c,1);
 
   return (float10)local_c[0];
 
@@ -3117,7 +3117,7 @@ void FUN_00414690(undefined4 param_1,int param_2)
 
   
 
-  uVar1 = FUN_004551b0(param_1,param_2,param_2 + 0x18,param_2 + 0x10,1);
+  uVar1 = physics_vec_math(param_1,param_2,param_2 + 0x18,param_2 + 0x10,1);
 
   *(undefined4 *)(param_2 + 0x14) = uVar1;
 
@@ -3168,7 +3168,7 @@ void FUN_004146c0(float param_1,float *param_2)
 
   pfVar2 = (float *)((int)param_1 + 0xa0);
 
-  local_8 = FUN_004551b0(pfVar1,&local_1c,local_4,local_c,1);
+  local_8 = physics_vec_math(pfVar1,&local_1c,local_4,local_c,1);
 
   fVar3 = local_1c * *pfVar1 +
 
@@ -3182,7 +3182,7 @@ void FUN_004146c0(float param_1,float *param_2)
 
   if (0.0 < fVar3 * fVar4) {
 
-    FUN_004551b0(pfVar2,&local_1c,local_4,local_c,1);
+    physics_vec_math(pfVar2,&local_1c,local_4,local_c,1);
 
     fVar4 = local_18 * *(float *)((int)param_1 + 0xa4) +
 
@@ -3269,7 +3269,7 @@ void FUN_00414840(int param_1)
 
   obj_sub100_transform(param_1);
 
-  FUN_004551b0(param_1 + 0xa0,&local_1c,local_4,local_c,1);
+  physics_vec_math(param_1 + 0xa0,&local_1c,local_4,local_c,1);
 
   *(undefined4 *)(param_1 + 0x140) = local_c[0];
 
@@ -3463,7 +3463,7 @@ void collgrid_collide_d(int param_1,float *param_2,float *param_3)
 
     if ((local_34 != 0) ||
 
-       ((FUN_004551b0(param_3,local_18,0,&local_38), 0.64278 <= local_10 &&
+       ((physics_vec_math(param_3,local_18,0,&local_38), 0.64278 <= local_10 &&
 
         (piVar3 = DAT_00632d7c,
 

@@ -310,7 +310,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
         }
 
-        FUN_0042f4f0(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0x3f800000,piVar16[2]);
+        dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0x3f800000,piVar16[2]);
 
         FUN_00451da0();
 
@@ -352,7 +352,9 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
             }
 
-            FUN_0042f4f0(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,1.0 - fVar3 * 5.0,piVar16[2]);
+            dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,1.0 - fVar3 * 5.0,piVar16[2]
+
+                            );
 
             FUN_00451da0();
 
@@ -392,7 +394,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
         }
 
-        FUN_0042f4f0(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0,piVar16[2]);
+        dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0,piVar16[2]);
 
         FUN_00451da0();
 
@@ -418,7 +420,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
         }
 
-        FUN_0042f4f0(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0,piVar16[2]);
+        dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0,piVar16[2]);
 
         FUN_00451da0();
 
@@ -498,7 +500,7 @@ LAB_0051f08e:
 
           }
 
-          FUN_0042f4f0(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,fVar3 * 5.0,piVar16[2]);
+          dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,fVar3 * 5.0,piVar16[2]);
 
           FUN_00451da0();
 
@@ -530,7 +532,7 @@ LAB_0051f1b8:
 
         }
 
-        FUN_0042f4f0(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0x3f800000,piVar16[2]);
+        dlog_alpha_blend(fStack_5dc,fStack_5e0,piVar16[-1],*piVar16,0x3f800000,piVar16[2]);
 
         FUN_00451da0();
 

@@ -727,12 +727,12 @@
  "0x00412DF0": {
   "name": "FUN_00412df0",
   "named": false,
-  "len": 14037
+  "len": 14049
  },
  "0x00413820": {
   "name": "FUN_00413820",
   "named": false,
-  "len": 580
+  "len": 584
  },
  "0x00413880": {
   "name": "FUN_00413880",
@@ -742,7 +742,7 @@
  "0x004138C0": {
   "name": "FUN_004138c0",
   "named": false,
-  "len": 699
+  "len": 703
  },
  "0x00413970": {
   "name": "FUN_00413970",
@@ -757,12 +757,12 @@
  "0x00413C90": {
   "name": "FUN_00413c90",
   "named": false,
-  "len": 2039
+  "len": 2043
  },
  "0x00413E40": {
   "name": "FUN_00413e40",
   "named": false,
-  "len": 436
+  "len": 440
  },
  "0x00413E90": {
   "name": "FUN_00413e90",
@@ -772,7 +772,7 @@
  "0x004143F0": {
   "name": "FUN_004143f0",
   "named": false,
-  "len": 220
+  "len": 224
  },
  "0x00414420": {
   "name": "FUN_00414420",
@@ -787,17 +787,17 @@
  "0x00414690": {
   "name": "FUN_00414690",
   "named": false,
-  "len": 273
+  "len": 277
  },
  "0x004146C0": {
   "name": "FUN_004146c0",
   "named": false,
-  "len": 2015
+  "len": 2023
  },
  "0x00414840": {
   "name": "FUN_00414840",
   "named": false,
-  "len": 616
+  "len": 620
  },
  "0x004148A0": {
   "name": "obj_sub100_transform",
@@ -807,7 +807,7 @@
  "0x00414990": {
   "name": "collgrid_collide_d",
   "named": true,
-  "len": 3877
+  "len": 3881
  },
  "0x00414D40": {
   "name": "obj_animate_pose_update",
@@ -1617,12 +1617,12 @@
  "0x00428810": {
   "name": "FUN_00428810",
   "named": false,
-  "len": 4002
+  "len": 4011
  },
  "0x00428B20": {
-  "name": "FUN_00428b20",
-  "named": false,
-  "len": 3230
+  "name": "dlog_rect_vtable_draw",
+  "named": true,
+  "len": 3239
  },
  "0x00428F70": {
   "name": "FUN_00428f70",
@@ -1652,7 +1652,7 @@
  "0x004296C0": {
   "name": "dlog_list_navigate_sound",
   "named": true,
-  "len": 4402
+  "len": 4412
  },
  "0x00429990": {
   "name": "dlog_screen_user_big",
@@ -1660,9 +1660,9 @@
   "len": 8960
  },
  "0x00429E10": {
-  "name": "FUN_00429e10",
-  "named": false,
-  "len": 6027
+  "name": "hud_screen_text_render",
+  "named": true,
+  "len": 6037
  },
  "0x0042A280": {
   "name": "FUN_0042a280",
@@ -1957,12 +1957,12 @@
  "0x0042F4C0": {
   "name": "FUN_0042f4c0",
   "named": false,
-  "len": 191
+  "len": 195
  },
  "0x0042F4F0": {
-  "name": "FUN_0042f4f0",
-  "named": false,
-  "len": 3206
+  "name": "dlog_alpha_blend",
+  "named": true,
+  "len": 3214
  },
  "0x0042F8E0": {
   "name": "status_bar_update3",
@@ -3085,24 +3085,24 @@
   "len": 218
  },
  "0x004551B0": {
-  "name": "FUN_004551b0",
-  "named": false,
-  "len": 4192
+  "name": "physics_vec_math",
+  "named": true,
+  "len": 4196
  },
  "0x004555E0": {
   "name": "ai_fly_update_goal_4",
   "named": true,
-  "len": 154
+  "len": 158
  },
  "0x00455600": {
   "name": "FUN_00455600",
   "named": false,
-  "len": 208
+  "len": 212
  },
  "0x00455630": {
   "name": "FUN_00455630",
   "named": false,
-  "len": 2440
+  "len": 2452
  },
  "0x00455890": {
   "name": "FUN_00455890",
@@ -3487,7 +3487,7 @@
  "0x0045B7F0": {
   "name": "FUN_0045b7f0",
   "named": false,
-  "len": 2625
+  "len": 2629
  },
  "0x0045BA70": {
   "name": "AttackObject__FP6OBJECTT0P3P3DT2fi",
@@ -4007,7 +4007,7 @@
  "0x004757C0": {
   "name": "FUN_004757c0",
   "named": false,
-  "len": 2275
+  "len": 2283
  },
  "0x004759A0": {
   "name": "FUN_004759a0",
@@ -9292,7 +9292,7 @@
  "0x0051EAC0": {
   "name": "FUN_0051eac0",
   "named": false,
-  "len": 9535
+  "len": 9589
  },
  "0x0051F2A0": {
   "name": "FUN_0051f2a0",

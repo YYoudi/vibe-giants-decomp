@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00429e10,FUN_00429E10,,hud_screen_text_render,0.9,llm-read29,
+00428b20,FUN_00428B20,,dlog_rect_vtable_draw,0.9,llm-read29,
+004551b0,FUN_004551B0,,physics_vec_math,0.9,llm-read29,
+0042f4f0,FUN_0042F4F0,,dlog_alpha_blend,0.9,llm-read29,

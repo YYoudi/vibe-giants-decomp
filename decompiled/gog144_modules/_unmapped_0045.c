@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (38 named) — decompiled, names from PS2 symbols
+ * 145 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3993,8 +3993,8 @@ byte FUN_00455190(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004551b0 @ 0x004551B0 ===== */
-int FUN_004551b0(float *param_1,float *param_2,uint *param_3,float *param_4,int param_5)
+/* ===== physics_vec_math @ 0x004551B0 ===== */
+int physics_vec_math(float *param_1,float *param_2,uint *param_3,float *param_4,int param_5)
 
 
 
@@ -4277,7 +4277,7 @@ void ai_fly_update_goal_4(undefined4 param_1,undefined4 param_2,undefined4 param
 
 {
 
-  FUN_004551b0(param_1,param_2,0,param_3,1);
+  physics_vec_math(param_1,param_2,0,param_3,1);
 
   return;
 
@@ -4298,7 +4298,7 @@ float10 FUN_00455600(float param_1)
 
   
 
-  FUN_004551b0(param_1,local_10,0,&param_1,1);
+  physics_vec_math(param_1,local_10,0,&param_1,1);
 
   return (float10)param_1;
 
@@ -4361,7 +4361,7 @@ int FUN_00455630(float *param_1,float param_2,float *param_3,float *param_4,unde
 
       local_24 = local_34 * pfVar3[2] + param_3[2];
 
-      FUN_004551b0(&local_2c,local_10,0,&param_4,1);
+      physics_vec_math(&local_2c,local_10,0,&param_4,1);
 
       if (local_24 <= (float)param_4) break;
 
@@ -4403,7 +4403,7 @@ LAB_004556f2:
 
       local_24 = fVar1 * pfVar3[2] + pfVar2[2];
 
-      FUN_004551b0(&local_2c,local_10,0,&param_4,1);
+      physics_vec_math(&local_2c,local_10,0,&param_4,1);
 
       local_30 = param_4;
 
@@ -4429,7 +4429,7 @@ LAB_004556f2:
 
     local_24 = param_2 * pfVar3[2] + pfVar2[2];
 
-    FUN_004551b0(&local_2c,&local_20,0,&local_30,1);
+    physics_vec_math(&local_2c,&local_20,0,&local_30,1);
 
     fVar1 = (local_2c - *pfVar2) * local_20 +
 
@@ -10934,7 +10934,7 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 
   (*(code *)PTR_FUN_00580c20)(&local_34,&local_1c,1,(int)param_1 + 0x294);
 
-  FUN_004551b0(&local_34,&fStack_10,0,auStack_44,1);
+  physics_vec_math(&local_34,&fStack_10,0,auStack_44,1);
 
   fStack_4 = fStack_10 * local_34 + fStack_c * fStack_30 + fStack_8 * fStack_2c + fStack_4;
 
