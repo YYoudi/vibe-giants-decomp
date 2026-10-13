@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00519a50,FUN_00519A50,,input_keystate_update,0.9,llm-read53,
+004f75c0,FUN_004F75C0,,comm_stats_reset,0.9,llm-read53,
+0040c580,FUN_0040C580,,obj_face_target,0.9,llm-read53,
+0043fd00,FUN_0043FD00,,wredit_obj_update,0.9,llm-read53,

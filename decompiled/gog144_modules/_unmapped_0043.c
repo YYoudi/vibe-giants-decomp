@@ -10769,8 +10769,8 @@ LAB_0043fc1b:
 
 }
 
-/* ===== main/editor_0043fd00 @ 0x0043FD00 ===== */
-void main_editor_0043fd00(void)
+/* ===== wredit_obj_update @ 0x0043FD00 ===== */
+void wredit_obj_update(void)
 
 
 

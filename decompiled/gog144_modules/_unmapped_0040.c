@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (36 named) — decompiled, names from PS2 symbols
+ * 105 functions (37 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -9125,8 +9125,8 @@ undefined4 FUN_0040c480(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0040c580 @ 0x0040C580 ===== */
-undefined4 FUN_0040c580(int param_1,int param_2,float *param_3)
+/* ===== obj_face_target @ 0x0040C580 ===== */
+undefined4 obj_face_target(int param_1,int param_2,float *param_3)
 
 
 

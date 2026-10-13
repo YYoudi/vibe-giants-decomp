@@ -362,7 +362,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
             dinput_key_poll();
 
-            FUN_00519a50();
+            input_keystate_update();
 
             hud_status_main();
 
@@ -448,7 +448,7 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
           dinput_key_poll();
 
-          FUN_00519a50();
+          input_keystate_update();
 
           hud_status_main();
 

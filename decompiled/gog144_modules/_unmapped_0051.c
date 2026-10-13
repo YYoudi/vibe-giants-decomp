@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (77 named) — decompiled, names from PS2 symbols
+ * 186 functions (78 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -9142,12 +9142,12 @@ undefined4 dinput_key_poll(void)
 
 }
 
-/* ===== FUN_00519a50 @ 0x00519A50 ===== */
+/* ===== input_keystate_update @ 0x00519A50 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_00519a50(void)
+undefined4 input_keystate_update(void)
 
 
 
@@ -13325,7 +13325,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
               time_frame_update();
 
-              FUN_00519a50();
+              input_keystate_update();
 
               hud_audio_dlog_screen();
 
@@ -15217,7 +15217,7 @@ void error_screen_show(LPCSTR param_1)
 
         dinput_key_poll();
 
-        FUN_00519a50();
+        input_keystate_update();
 
         hud_status_main();
 

@@ -1425,7 +1425,7 @@ void FUN_00471a60(int param_1)
 
           FUN_004a4550();
 
-          FUN_004f75c0();
+          comm_stats_reset();
 
           win95_frate_00518c60();
 

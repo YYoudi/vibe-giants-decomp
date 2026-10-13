@@ -495,9 +495,9 @@
   "len": 966
  },
  "0x0040C580": {
-  "name": "FUN_0040c580",
-  "named": false,
-  "len": 1638
+  "name": "obj_face_target",
+  "named": true,
+  "len": 1641
  },
  "0x0040CE50": {
   "name": "FUN_0040ce50",
@@ -2385,9 +2385,9 @@
   "len": 1387
  },
  "0x0043FD00": {
-  "name": "main/editor_0043fd00",
+  "name": "wredit_obj_update",
   "named": true,
-  "len": 2241
+  "len": 2238
  },
  "0x0043FE90": {
   "name": "wredit_trigger_menu",
@@ -3922,7 +3922,7 @@
  "0x00471A60": {
   "name": "FUN_00471a60",
   "named": false,
-  "len": 4652
+  "len": 4656
  },
  "0x00471DC0": {
   "name": "FUN_00471dc0",
@@ -7327,7 +7327,7 @@
  "0x004E6BA0": {
   "name": "FUN_004e6ba0",
   "named": false,
-  "len": 6474
+  "len": 6477
  },
  "0x004E7160": {
   "name": "FUN_004e7160",
@@ -7685,9 +7685,9 @@
   "len": 3505
  },
  "0x004F75C0": {
-  "name": "FUN_004f75c0",
-  "named": false,
-  "len": 1843
+  "name": "comm_stats_reset",
+  "named": true,
+  "len": 1847
  },
  "0x004F7780": {
   "name": "FUN_004f7780",
@@ -8890,9 +8890,9 @@
   "len": 1650
  },
  "0x00519A50": {
-  "name": "FUN_00519a50",
-  "named": false,
-  "len": 1851
+  "name": "input_keystate_update",
+  "named": true,
+  "len": 1860
  },
  "0x00519BE0": {
   "name": "anim_dump_user",
@@ -9242,7 +9242,7 @@
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
   "named": true,
-  "len": 6108
+  "len": 6117
  },
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
@@ -9262,7 +9262,7 @@
  "0x0051E680": {
   "name": "error_screen_show",
   "named": true,
-  "len": 3857
+  "len": 3866
  },
  "0x0051EA20": {
   "name": "FUN_0051ea20",
@@ -9292,7 +9292,7 @@
  "0x0051EAC0": {
   "name": "FUN_0051eac0",
   "named": false,
-  "len": 9619
+  "len": 9637
  },
  "0x0051F2A0": {
   "name": "FUN_0051f2a0",

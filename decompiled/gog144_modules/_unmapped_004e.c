@@ -6333,7 +6333,7 @@ void FUN_004e6ba0(float param_1,float param_2)
 
   if (((*(int *)(iVar3 + 0x194) != 0) &&
 
-      (iVar5 = FUN_0040c580(*(int *)(iVar3 + 0x194),iVar5,local_5c), iVar5 != 0)) &&
+      (iVar5 = obj_face_target(*(int *)(iVar3 + 0x194),iVar5,local_5c), iVar5 != 0)) &&
 
      (iVar5 = FUN_0040c480(*(undefined4 *)(iVar3 + 0x194),local_5c), iVar5 != 0)) {
 
