@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (56 named) — decompiled, names from PS2 symbols
+ * 74 functions (57 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -1953,8 +1953,8 @@ int mine_find_of_owner(int param_1)
 
 }
 
-/* ===== FUN_00482350 @ 0x00482350 ===== */
-void FUN_00482350(void)
+/* ===== dev_debug_text_draw @ 0x00482350 ===== */
+void dev_debug_text_draw(void)
 
 
 

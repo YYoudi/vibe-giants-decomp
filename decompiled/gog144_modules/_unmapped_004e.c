@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (79 named) — decompiled, names from PS2 symbols
+ * 94 functions (80 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -4230,8 +4230,8 @@ LAB_004e4f31:
 
 }
 
-/* ===== FUN_004e4f60 @ 0x004E4F60 ===== */
-void FUN_004e4f60(int param_1)
+/* ===== rpman_sniper_anim_set @ 0x004E4F60 ===== */
+void rpman_sniper_anim_set(int param_1)
 
 
 
@@ -5213,7 +5213,7 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
         piVar4[0x6e] = piVar4[0x6e] & 0xfffffff7;
 
-        FUN_004e4f60(param_1);
+        rpman_sniper_anim_set(param_1);
 
         *(undefined4 *)(param_1 + 0xe4) = 0xe2;
 

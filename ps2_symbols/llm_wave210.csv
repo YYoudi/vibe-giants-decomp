@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004e4f60,FUN_004e4f60,,rpman_sniper_anim_set,0.9,llm-w210,anim 0x47 + scale caller fire_sniper
+004a5eb0,FUN_004a5eb0,,dev_debug_overlay_draw,0.9,llm-w210,dlog draw with coords caller dev_debug
+00482350,FUN_00482350,,dev_debug_text_draw,0.9,llm-w210,draws debug string via text_draw_wrap
+0049e670,FUN_0049e670,,item_pickup_valid_check,0.9,llm-w210,ammo/wield/Mecc checks

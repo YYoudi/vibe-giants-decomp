@@ -8873,7 +8873,7 @@ undefined4 dev_debug_flags(void)
 
     player_draw_missile_lock();
 
-    FUN_004a5eb0();
+    dev_debug_overlay_draw();
 
     particle_lifespan_render();
 
@@ -8919,7 +8919,7 @@ undefined4 dev_debug_flags(void)
 
   SetupCameraHail__Fv();
 
-  FUN_00482350();
+  dev_debug_text_draw();
 
   if ((DAT_006331c4 == 0) && (iVar5 = FUN_0052c5c0(), iVar5 != 0)) {
 

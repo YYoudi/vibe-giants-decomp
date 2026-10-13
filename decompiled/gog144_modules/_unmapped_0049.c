@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (121 named) — decompiled, names from PS2 symbols
+ * 142 functions (122 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -13745,8 +13745,8 @@ void lift_logic__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_0049e670 @ 0x0049E670 ===== */
-bool FUN_0049e670(int param_1,int param_2,int *param_3,int param_4)
+/* ===== item_pickup_valid_check @ 0x0049E670 ===== */
+bool item_pickup_valid_check(int param_1,int param_2,int *param_3,int param_4)
 
 
 

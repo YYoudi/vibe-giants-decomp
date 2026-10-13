@@ -4325,9 +4325,9 @@
   "len": 439
  },
  "0x00482350": {
-  "name": "FUN_00482350",
-  "named": false,
-  "len": 219
+  "name": "dev_debug_text_draw",
+  "named": true,
+  "len": 226
  },
  "0x00482390": {
   "name": "menu_audio_setup",
@@ -5380,9 +5380,9 @@
   "len": 1888
  },
  "0x0049E670": {
-  "name": "FUN_0049e670",
-  "named": false,
-  "len": 1290
+  "name": "item_pickup_valid_check",
+  "named": true,
+  "len": 1301
  },
  "0x0049F1C0": {
   "name": "partyhouse_exit_dlog",
@@ -5685,9 +5685,9 @@
   "len": 748
  },
  "0x004A5EB0": {
-  "name": "FUN_004a5eb0",
-  "named": false,
-  "len": 622
+  "name": "dev_debug_overlay_draw",
+  "named": true,
+  "len": 632
  },
  "0x004A5F40": {
   "name": "player_force_type",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14553
+  "len": 14570
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -7285,9 +7285,9 @@
   "len": 1271
  },
  "0x004E4F60": {
-  "name": "FUN_004e4f60",
-  "named": false,
-  "len": 605
+  "name": "rpman_sniper_anim_set",
+  "named": true,
+  "len": 614
  },
  "0x004E5000": {
   "name": "make_grenade_shot__FP6OBJECTf",
@@ -7307,7 +7307,7 @@
  "0x004E5640": {
   "name": "fire_sniper_shot__FP6OBJECTT0",
   "named": true,
-  "len": 10334
+  "len": 10343
  },
  "0x004E5F70": {
   "name": "rpman_rapid_fire__FP6OBJECTiii",
