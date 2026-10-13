@@ -704,11 +704,11 @@ void main_dlog_00427970(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   fVar7 = (float10)FUN_0051bc00(param_6);
 
-  fVar8 = (float10)main_0051bd30(puVar4[0xd],puVar4[10]);
+  fVar8 = (float10)textrender_init(puVar4[0xd],puVar4[10]);
 
   param_6 = (float)fVar8;
 
-  fVar8 = (float10)main_0051bd30(puVar4[0xd],&DAT_005562b8);
+  fVar8 = (float10)textrender_init(puVar4[0xd],&DAT_005562b8);
 
   if ((float10)param_6 < fVar8 * (float10)(int)puVar4[0xb]) {
 
@@ -833,7 +833,7 @@ void main_dlog_00427bb0(undefined4 *param_1,float param_2,float param_3,undefine
 
   fVar8 = (float10)FUN_0051bc00(param_6);
 
-  fVar9 = (float10)main_0051bd30(fVar3,*puVar7);
+  fVar9 = (float10)textrender_init(fVar3,*puVar7);
 
   param_3 = (float)((float10)param_5 + (float10)param_5 + fVar9 + (float10)0.01);
 
@@ -948,7 +948,7 @@ void main_dlog_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   }
 
-  fVar8 = (float10)main_0051bd30(uVar4,puVar5[0xb]);
+  fVar8 = (float10)textrender_init(uVar4,puVar5[0xb]);
 
   param_2 = (float)(fVar8 + (float10)param_6 + (float10)0.005);
 

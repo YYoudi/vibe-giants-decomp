@@ -10197,8 +10197,8 @@ void FUN_004eddf0(void)
 
 }
 
-/* ===== meccprocanimscreate_004ede30 @ 0x004EDE30 ===== */
-void meccprocanimscreate_004ede30(void)
+/* ===== procanims_create_all @ 0x004EDE30 ===== */
+void procanims_create_all(void)
 
 
 

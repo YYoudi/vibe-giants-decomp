@@ -14085,7 +14085,7 @@ undefined4 chat_log_init(int param_1)
 
 LAB_0049f8f1:
 
-            comm_005363f0(puVar3,uVar4);
+            comm_chat_render(puVar3,uVar4);
 
             return 1;
 

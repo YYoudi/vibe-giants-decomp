@@ -54,7 +54,7 @@ void main_editor_004400b0(void)
 
   }
 
-  wredit_00439490();
+  wredit_menu_pop();
 
 LAB_00440165:
 
@@ -146,7 +146,7 @@ LAB_00440165:
 
            *(uint *)(iVar2 + 0xdc) ^ (*(uint *)(iVar2 + 0xdc) ^ iVar5 - 1U) & 0xf;
 
-      wredit_00439490();
+      wredit_menu_pop();
 
       return;
 
@@ -185,7 +185,7 @@ void wredit_marker_menu3(void)
 
   if (DAT_0059cbd8 == 0) {
 
-    wredit_00439490();
+    wredit_menu_pop();
 
     return;
 
@@ -316,7 +316,7 @@ void main_editor_004403a0(void)
 
   }
 
-  wredit_00439490();
+  wredit_menu_pop();
 
 LAB_00440422:
 
@@ -418,7 +418,7 @@ LAB_00440422:
 
       FUN_00476eb0(iVar2);
 
-      wredit_00439490();
+      wredit_menu_pop();
 
       return;
 
@@ -453,7 +453,7 @@ void wredit_marker_info3(void)
 
   if (DAT_0059cbd8 == 0) {
 
-    wredit_00439490();
+    wredit_menu_pop();
 
     return;
 
@@ -558,7 +558,7 @@ void main_editor_00440640(void)
 
   }
 
-  wredit_00439490();
+  wredit_menu_pop();
 
 LAB_004406b2:
 
@@ -650,7 +650,7 @@ LAB_004406b2:
 
       *(undefined4 *)(iVar4 + 0x174) = uVar2;
 
-      wredit_00439490();
+      wredit_menu_pop();
 
       return;
 
@@ -1213,7 +1213,7 @@ void FUN_004417a0(void)
 
     DAT_0059cbb0 = 0;
 
-    wredit_00439490();
+    wredit_menu_pop();
 
     return;
 

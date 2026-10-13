@@ -1,0 +1,12 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004ede30,FUN_004EDE30,,procanims_create_all,0.9,llm-promote,
+004ce880,FUN_004CE880,,comm_time_string,0.9,llm-promote,
+00521620,FUN_00521620,,comm_team_names_init,0.9,llm-promote,
+00485300,FUN_00485300,,comm_options_menu_main,0.9,llm-promote,
+00439490,FUN_00439490,,wredit_menu_pop,0.9,llm-promote,
+0043afa0,FUN_0043AFA0,,wredit_menu_master,0.9,llm-promote,
+0048ca10,FUN_0048CA10,,dlog_menu_loop,0.9,llm-promote,
+0052e6e0,FUN_0052E6E0,,comm_packet_parse,0.9,llm-promote,
+005363f0,FUN_005363F0,,comm_chat_render,0.9,llm-promote,
+0046e830,FUN_0046E830,,object_ospec_spawn,0.9,llm-promote,
+0051bd30,FUN_0051BD30,,textrender_init,0.9,llm-promote,

@@ -4904,12 +4904,12 @@ void FUN_004850F0(void)
 
 }
 
-/* ===== comm_00485300 @ 0x00485300 ===== */
+/* ===== comm_options_menu_main @ 0x00485300 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void comm_00485300(void)
+void comm_options_menu_main(void)
 
 
 
@@ -5031,7 +5031,7 @@ void comm_00485300(void)
 
     DAT_00632f10 = 0;
 
-    comm_00521620(0);
+    comm_team_names_init(0);
 
     iVar4 = FUN_004B09C0(DAT_00632ee4);
 
@@ -9849,12 +9849,12 @@ void FUN_0048C830(void)
 
 }
 
-/* ===== dialog_0048ca10 @ 0x0048CA10 ===== */
+/* ===== dlog_menu_loop @ 0x0048CA10 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void dialog_0048ca10(void)
+void dlog_menu_loop(void)
 
 
 

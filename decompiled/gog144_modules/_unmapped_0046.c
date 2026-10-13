@@ -746,7 +746,7 @@ void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     }
 
-    iVar4 = object_0046e830(param_1,param_2);
+    iVar4 = object_ospec_spawn(param_1,param_2);
 
     if (iVar4 != 0) {
 
@@ -3697,12 +3697,12 @@ void FUN_0046e120(int param_1,undefined4 param_2)
 
 }
 
-/* ===== object_0046e830 @ 0x0046E830 ===== */
+/* ===== object_ospec_spawn @ 0x0046E830 ===== */
 /* PS2 candidate: formation_create_sonak__FP6OBJECTi (conf 0.4) */
 
 
 
-int object_0046e830(int param_1,int param_2)
+int object_ospec_spawn(int param_1,int param_2)
 
 
 
