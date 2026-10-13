@@ -1963,8 +1963,8 @@ void object_spawn_menu_wredit(undefined4 param_1,int param_2)
 
 }
 
-/* ===== cspec_00442490 @ 0x00442490 ===== */
-void cspec_00442490(int param_1)
+/* ===== ambient_critter_ai_c36 @ 0x00442490 ===== */
+void ambient_critter_ai_c36(int param_1)
 
 
 
@@ -14385,12 +14385,12 @@ void cspec_0044f1a0(undefined4 param_1,undefined4 param_2,int param_3,undefined4
 
 }
 
-/* ===== cspec_0044f1e0 @ 0x0044F1E0 ===== */
+/* ===== fx_projectile_sim_c78 @ 0x0044F1E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_0044f1e0(int param_1)
+void fx_projectile_sim_c78(int param_1)
 
 
 

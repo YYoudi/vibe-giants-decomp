@@ -13515,8 +13515,8 @@ undefined4 cspec_004cc080(void)
 
 }
 
-/* ===== cspec_004cc090 @ 0x004CC090 ===== */
-void cspec_004cc090(int param_1,float param_2,float param_3,float param_4)
+/* ===== reaper_shrink_handler_c99 @ 0x004CC090 ===== */
+void reaper_shrink_handler_c99(int param_1,float param_2,float param_3,float param_4)
 
 
 

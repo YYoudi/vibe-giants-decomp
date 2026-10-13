@@ -13422,12 +13422,12 @@ void ANM_BinderDestroy(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== cspec_0040fad0 @ 0x0040FAD0 ===== */
+/* ===== critter_wander_ai_c65 @ 0x0040FAD0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_0040fad0(int param_1)
+void critter_wander_ai_c65(int param_1)
 
 
 

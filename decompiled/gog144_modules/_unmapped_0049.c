@@ -7494,12 +7494,12 @@ void ambient_streams_stopped__FP6OBJECT(int param_1)
 
 }
 
-/* ===== cspec_00496240 @ 0x00496240 ===== */
+/* ===== hud_status_overlay_c58 @ 0x00496240 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_00496240(int param_1)
+void hud_status_overlay_c58(int param_1)
 
 
 

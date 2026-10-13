@@ -11898,12 +11898,12 @@ void TurretFire__FP6OBJECTiT0P3P3D(int param_1,undefined4 param_2,int param_3,un
 
 }
 
-/* ===== cspec_0050b120 @ 0x0050B120 ===== */
+/* ===== turret_aim_ai_main_c44 @ 0x0050B120 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_0050b120(float param_1)
+void turret_aim_ai_main_c44(float param_1)
 
 
 

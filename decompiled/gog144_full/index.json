@@ -745,9 +745,9 @@
   "len": 3830
  },
  "0x0040FAD0": {
-  "name": "cspec_0040fad0",
+  "name": "critter_wander_ai_c65",
   "named": true,
-  "len": 8212
+  "len": 8219
  },
  "0x004101D0": {
   "name": "collgrid_clear_grid",
@@ -2600,9 +2600,9 @@
   "len": 1840
  },
  "0x00442490": {
-  "name": "cspec_00442490",
+  "name": "ambient_critter_ai_c36",
   "named": true,
-  "len": 6459
+  "len": 6467
  },
  "0x004429C0": {
   "name": "scenerio_handle_music__FPv",
@@ -2985,9 +2985,9 @@
   "len": 420
  },
  "0x0044F1E0": {
-  "name": "cspec_0044f1e0",
+  "name": "fx_projectile_sim_c78",
   "named": true,
-  "len": 27028
+  "len": 27035
  },
  "0x004503D0": {
   "name": "cspec_004503d0",
@@ -3615,9 +3615,9 @@
   "len": 134
  },
  "0x00458F60": {
-  "name": "cspec_00458f60",
+  "name": "smartie_village_ai_c37",
   "named": true,
-  "len": 7942
+  "len": 7950
  },
  "0x00459540": {
   "name": "inv_check_pickup",
@@ -3900,9 +3900,9 @@
   "len": 1249
  },
  "0x00466AB0": {
-  "name": "cspec_00466ab0",
+  "name": "reaper_death_broadcaster_c1",
   "named": true,
-  "len": 8877
+  "len": 8907
  },
  "0x00467250": {
   "name": "cspec_00467250",
@@ -3930,9 +3930,9 @@
   "len": 525
  },
  "0x004676E0": {
-  "name": "cspec_004676e0",
+  "name": "kabuto_ai_main_c15",
   "named": true,
-  "len": 40601
+  "len": 40605
  },
  "0x00469860": {
   "name": "kabutoai_change_anim__FP6OBJECTii4SDKYfi",
@@ -4135,9 +4135,9 @@
   "len": 216
  },
  "0x0046E170": {
-  "name": "cspec_0046e170",
+  "name": "projectile_motion_c76",
   "named": true,
-  "len": 6168
+  "len": 6175
  },
  "0x0046E630": {
   "name": "cspec_0046e630",
@@ -4165,9 +4165,9 @@
   "len": 1104
  },
  "0x0046EA90": {
-  "name": "cspec_0046ea90",
+  "name": "lift_rider_dispatcher_c104",
   "named": true,
-  "len": 6758
+  "len": 6770
  },
  "0x0046F050": {
   "name": "lift_update_rider_position__FP6OBJECT",
@@ -4535,9 +4535,9 @@
   "len": 611
  },
  "0x00478340": {
-  "name": "cspec_00478340",
+  "name": "spawnling_ai_c97",
   "named": true,
-  "len": 6175
+  "len": 6177
  },
  "0x004787F0": {
   "name": "cspec_004787f0",
@@ -5105,9 +5105,9 @@
   "len": 2900
  },
  "0x0048FA50": {
-  "name": "cspec_0048fa50",
+  "name": "reaper_explosive_shot_c57",
   "named": true,
-  "len": 8521
+  "len": 8532
  },
  "0x00490120": {
   "name": "cspec_00490120",
@@ -5465,9 +5465,9 @@
   "len": 209
  },
  "0x00496240": {
-  "name": "cspec_00496240",
+  "name": "hud_status_overlay_c58",
   "named": true,
-  "len": 6439
+  "len": 6447
  },
  "0x00496750": {
   "name": "cspec_00496750",
@@ -7645,9 +7645,9 @@
   "len": 62
  },
  "0x004CC090": {
-  "name": "cspec_004cc090",
+  "name": "reaper_shrink_handler_c99",
   "named": true,
-  "len": 6608
+  "len": 6619
  },
  "0x004CC6F0": {
   "name": "cspec_004cc6f0",
@@ -7835,9 +7835,9 @@
   "len": 474
  },
  "0x004D4F00": {
-  "name": "cspec_004d4f00",
+  "name": "smoke_puff_spawner_c49",
   "named": true,
-  "len": 9078
+  "len": 9086
  },
  "0x004D55F0": {
   "name": "death_handler_c49",
@@ -7895,9 +7895,9 @@
   "len": 5309
  },
  "0x004D5F20": {
-  "name": "cspec_004d5f20",
+  "name": "seamonster_ai_main_c90",
   "named": true,
-  "len": 27152
+  "len": 27160
  },
  "0x004D73B0": {
   "name": "reaper_spell_sound_1",
@@ -8275,9 +8275,9 @@
   "len": 16471
  },
  "0x004E91E0": {
-  "name": "cspec_004e91e0",
+  "name": "creature_health_ai_c98",
   "named": true,
-  "len": 8077
+  "len": 8085
  },
  "0x004E9AA0": {
   "name": "cspec_004e9aa0",
@@ -8290,9 +8290,9 @@
   "len": 794
  },
  "0x004E9D90": {
-  "name": "cspec_004e9d90",
+  "name": "barracks_spawner_ai_c103",
   "named": true,
-  "len": 7022
+  "len": 7032
  },
  "0x004EA350": {
   "name": "LineOfSight",
@@ -9370,9 +9370,9 @@
   "len": 2768
  },
  "0x0050B120": {
-  "name": "cspec_0050b120",
+  "name": "turret_aim_ai_main_c44",
   "named": true,
-  "len": 21887
+  "len": 21895
  },
  "0x0050C1C0": {
   "name": "reaper_ability_playersound5",
@@ -9470,9 +9470,9 @@
   "len": 1100
  },
  "0x005109E0": {
-  "name": "cspec_005109e0",
+  "name": "evilreaper_herd_handler_c21",
   "named": true,
-  "len": 6495
+  "len": 6508
  },
  "0x00510F50": {
   "name": "evilreaper_gib__FP6OBJECTT0",
@@ -9550,14 +9550,14 @@
   "len": 1621
  },
  "0x00512DE0": {
-  "name": "cspec_00512de0",
+  "name": "reaper_minion_ai_c84",
   "named": true,
-  "len": 6208
+  "len": 6214
  },
  "0x00513320": {
-  "name": "cspec_00513320",
+  "name": "reaper_fx_emitter_c80",
   "named": true,
-  "len": 6049
+  "len": 6056
  },
  "0x005137C0": {
   "name": "flk_actor_update",

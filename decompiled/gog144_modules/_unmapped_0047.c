@@ -4631,8 +4631,8 @@ LAB_0047832a:
 
 }
 
-/* ===== cspec_00478340 @ 0x00478340 ===== */
-void cspec_00478340(int param_1)
+/* ===== spawnling_ai_c97 @ 0x00478340 ===== */
+void spawnling_ai_c97(int param_1)
 
 
 

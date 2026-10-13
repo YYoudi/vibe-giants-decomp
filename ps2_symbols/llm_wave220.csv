@@ -1,0 +1,21 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004676e0,cspec_004676e0,,kabuto_ai_main_c15,0.9,cspec-w220,kabutoai_change_anim+loglauncher+ai_goal 40KB
+004d5f20,cspec_004d5f20,,seamonster_ai_main_c90,0.9,cspec-w220,comm gates+drip+SphereFit sea creature 27KB
+0044f1e0,cspec_0044f1e0,,fx_projectile_sim_c78,0.9,cspec-w220,fx_process_one+fxobj_delete+mpeg+quat motion 27KB
+0050b120,cspec_0050b120,,turret_aim_ai_main_c44,0.9,cspec-w220,TurretExit+ai_class_filter+PROJ_DefGet 21KB
+004d4f00,cspec_004d4f00,,smoke_puff_spawner_c49,0.9,cspec-w220,smoke+crt_rand+ospec change 9KB
+00466ab0,cspec_00466ab0,,reaper_death_broadcaster_c1,0.9,cspec-w220,comm_kill_message pair+hurt_pusher+fptr death
+0048fa50,cspec_0048fa50,,reaper_explosive_shot_c57,0.9,cspec-w220,make_explosion_large+los_line+smoke spawn
+0040fad0,cspec_0040fad0,,critter_wander_ai_c65,0.9,cspec-w220,anim_select+blood+ground wander 8KB
+004e91e0,cspec_004e91e0,,creature_health_ai_c98,0.9,cspec-w220,obj_health_ratio_update+eval_refpt+moveonly
+00458f60,cspec_00458f60,,smartie_village_ai_c37,0.9,cspec-w220,inv_award/check+chat+los+pickups
+004e9d90,cspec_004e9d90,,barracks_spawner_ai_c103,0.9,cspec-w220,barracks_logic+ai_anim_play+allocate
+0046ea90,cspec_0046ea90,,lift_rider_dispatcher_c104,0.9,cspec-w220,lift_update_rider+chase+sequence_alloc
+004cc090,cspec_004cc090,,reaper_shrink_handler_c99,0.9,cspec-w220,reaper_release_shrink+sincos lut
+005109e0,cspec_005109e0,,evilreaper_herd_handler_c21,0.9,cspec-w220,evilreaper_gib+herdgen_marker+euler
+00442490,cspec_00442490,,ambient_critter_ai_c36,0.9,cspec-w220,obj_scale_pulse+terrain_query+music handle
+00496240,cspec_00496240,,hud_status_overlay_c58,0.9,cspec-w220,crt_sprintf+rand only (text overlay)
+00512de0,cspec_00512de0,,reaper_minion_ai_c84,0.9,cspec-w220,ObjIsReaper+ground_height+ospec change
+00478340,cspec_00478340,,spawnling_ai_c97,0.9,cspec-w220,ai_move_ground_step+object_spawn_small
+0046e170,cspec_0046e170,,projectile_motion_c76,0.9,cspec-w220,trajectory+GEO_MatFromQuat+gravity/vel
+00513320,cspec_00513320,,reaper_fx_emitter_c80,0.9,cspec-w220,fx_create+terrain_query+reaper helpers

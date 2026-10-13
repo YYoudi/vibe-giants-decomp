@@ -86,12 +86,12 @@ undefined4 FUN_005108f0(int param_1)
 
 }
 
-/* ===== cspec_005109e0 @ 0x005109E0 ===== */
+/* ===== evilreaper_herd_handler_c21 @ 0x005109E0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_005109e0(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+void evilreaper_herd_handler_c21(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
 
 
 
@@ -2656,12 +2656,12 @@ undefined4 vimp_mana_effect(int param_1,undefined4 param_2,undefined4 param_3,un
 
 }
 
-/* ===== cspec_00512de0 @ 0x00512DE0 ===== */
+/* ===== reaper_minion_ai_c84 @ 0x00512DE0 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 
 
-void cspec_00512de0(int param_1)
+void reaper_minion_ai_c84(int param_1)
 
 
 
@@ -2971,8 +2971,8 @@ void cspec_00512de0(int param_1)
 
 }
 
-/* ===== cspec_00513320 @ 0x00513320 ===== */
-void cspec_00513320(int param_1)
+/* ===== reaper_fx_emitter_c80 @ 0x00513320 ===== */
+void reaper_fx_emitter_c80(int param_1)
 
 
 

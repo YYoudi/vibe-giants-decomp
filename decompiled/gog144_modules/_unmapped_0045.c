@@ -9522,8 +9522,8 @@ bool IconDef_wield_eq3(undefined4 param_1)
 
 }
 
-/* ===== cspec_00458f60 @ 0x00458F60 ===== */
-void cspec_00458f60(int param_1)
+/* ===== smartie_village_ai_c37 @ 0x00458F60 ===== */
+void smartie_village_ai_c37(int param_1)
 
 
 

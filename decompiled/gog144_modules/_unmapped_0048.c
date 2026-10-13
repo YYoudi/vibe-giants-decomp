@@ -13132,8 +13132,8 @@ LAB_0048f768:
 
 }
 
-/* ===== cspec_0048fa50 @ 0x0048FA50 ===== */
-void cspec_0048fa50(int param_1)
+/* ===== reaper_explosive_shot_c57 @ 0x0048FA50 ===== */
+void reaper_explosive_shot_c57(int param_1)
 
 
 

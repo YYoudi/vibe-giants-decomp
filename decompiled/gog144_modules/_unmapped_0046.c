@@ -1979,8 +1979,10 @@ void kabuto_create_kbos(float param_1,int param_2)
 
 }
 
-/* ===== cspec_00466ab0 @ 0x00466AB0 ===== */
-void cspec_00466ab0(int param_1,float param_2,int param_3,int param_4,float *param_5,int param_6)
+/* ===== reaper_death_broadcaster_c1 @ 0x00466AB0 ===== */
+void reaper_death_broadcaster_c1
+
+               (int param_1,float param_2,int param_3,int param_4,float *param_5,int param_6)
 
 
 
@@ -2788,12 +2790,12 @@ void FUN_004676a0(void)
 
 }
 
-/* ===== cspec_004676e0 @ 0x004676E0 ===== */
+/* ===== kabuto_ai_main_c15 @ 0x004676E0 ===== */
 /* WARNING: Type propagation algorithm not settling */
 
 
 
-void cspec_004676e0(float param_1)
+void kabuto_ai_main_c15(float param_1)
 
 
 
@@ -9733,8 +9735,8 @@ void reaper_ospec_ptr48_set(int param_1,undefined4 param_2)
 
 }
 
-/* ===== cspec_0046e170 @ 0x0046E170 ===== */
-void cspec_0046e170(int param_1)
+/* ===== projectile_motion_c76 @ 0x0046E170 ===== */
+void projectile_motion_c76(int param_1)
 
 
 
@@ -10429,8 +10431,8 @@ void reaper_ospec_init(int param_1,undefined4 *param_2,undefined4 param_3,float 
 
 }
 
-/* ===== cspec_0046ea90 @ 0x0046EA90 ===== */
-void cspec_0046ea90(int *param_1)
+/* ===== lift_rider_dispatcher_c104 @ 0x0046EA90 ===== */
+void lift_rider_dispatcher_c104(int *param_1)
 
 
 

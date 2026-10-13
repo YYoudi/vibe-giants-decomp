@@ -8608,8 +8608,8 @@ code_r0x004e8a31:
 
 }
 
-/* ===== cspec_004e91e0 @ 0x004E91E0 ===== */
-void cspec_004e91e0(int param_1)
+/* ===== creature_health_ai_c98 @ 0x004E91E0 ===== */
+void creature_health_ai_c98(int param_1)
 
 
 
@@ -9293,8 +9293,8 @@ void FUN_004e9ce0(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== cspec_004e9d90 @ 0x004E9D90 ===== */
-void cspec_004e9d90(float param_1)
+/* ===== barracks_spawner_ai_c103 @ 0x004E9D90 ===== */
+void barracks_spawner_ai_c103(float param_1)
 
 
 

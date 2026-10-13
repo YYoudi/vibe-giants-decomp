@@ -4010,8 +4010,8 @@ void cspec_004d4ea0(int param_1)
 
 }
 
-/* ===== cspec_004d4f00 @ 0x004D4F00 ===== */
-void cspec_004d4f00(float param_1)
+/* ===== smoke_puff_spawner_c49 @ 0x004D4F00 ===== */
+void smoke_puff_spawner_c49(float param_1)
 
 
 
@@ -5186,8 +5186,8 @@ LAB_004d5d41:
 
 }
 
-/* ===== cspec_004d5f20 @ 0x004D5F20 ===== */
-void cspec_004d5f20(float param_1)
+/* ===== seamonster_ai_main_c90 @ 0x004D5F20 ===== */
+void seamonster_ai_main_c90(float param_1)
 
 
 
