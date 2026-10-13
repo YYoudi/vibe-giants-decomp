@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (75 named) — decompiled, names from PS2 symbols
+ * 186 functions (76 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -3358,10 +3358,10 @@ void FUN_00514900(int param_1,int param_2,float *param_3,float *param_4,float pa
 
 }
 
-/* ===== FUN_00514a50 @ 0x00514A50 ===== */
-void FUN_00514a50(int param_1,int param_2,float param_3,undefined4 param_4,float param_5,
+/* ===== terrain_vertex_walk @ 0x00514A50 ===== */
+void terrain_vertex_walk(int param_1,int param_2,float param_3,undefined4 param_4,float param_5,
 
-                 float param_6,float param_7,float param_8)
+                        float param_6,float param_7,float param_8)
 
 
 
@@ -4178,15 +4178,15 @@ void FUN_00515090(int param_1)
 
           local_d0 = (float)(extraout_ST0_00 - (float10)iVar5);
 
-          FUN_00514a50(param_1,((iVar5 + 0x10000000) % *(int *)(param_1 + 0xc)) * iVar2 +
+          terrain_vertex_walk(param_1,((iVar5 + 0x10000000) % *(int *)(param_1 + 0xc)) * iVar2 +
 
-                               (iVar3 + 0x10000000) % iVar2,
+                                      (iVar3 + 0x10000000) % iVar2,
 
-                       local_ec * *(float *)(puVar8 + -0x18) * local_e8,
+                              local_ec * *(float *)(puVar8 + -0x18) * local_e8,
 
-                       *(undefined4 *)(puVar8 + -0x14),*(undefined4 *)(puVar8 + -0x10),
+                              *(undefined4 *)(puVar8 + -0x14),*(undefined4 *)(puVar8 + -0x10),
 
-                       *(undefined4 *)(puVar8 + -0xc),local_b4,local_d0);
+                              *(undefined4 *)(puVar8 + -0xc),local_b4,local_d0);
 
           puVar8 = puVar8 + 0x20;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (43 named) — decompiled, names from PS2 symbols
+ * 145 functions (44 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -488,8 +488,8 @@ void FUN_00451300(float param_1,float param_2,float param_3,float param_4,float 
 
 }
 
-/* ===== FUN_004513c0 @ 0x004513C0 ===== */
-void FUN_004513c0(float param_1,float *param_2,float *param_3,float *param_4)
+/* ===== vec_lerp_approach @ 0x004513C0 ===== */
+void vec_lerp_approach(float param_1,float *param_2,float *param_3,float *param_4)
 
 
 

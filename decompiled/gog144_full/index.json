@@ -1950,9 +1950,9 @@
   "len": 5622
  },
  "0x0042F310": {
-  "name": "FUN_0042f310",
-  "named": false,
-  "len": 1590
+  "name": "dlog_fade_control",
+  "named": true,
+  "len": 1595
  },
  "0x0042F4C0": {
   "name": "FUN_0042f4c0",
@@ -2910,9 +2910,9 @@
   "len": 1090
  },
  "0x004513C0": {
-  "name": "FUN_004513c0",
-  "named": false,
-  "len": 1757
+  "name": "vec_lerp_approach",
+  "named": true,
+  "len": 1762
  },
  "0x00451560": {
   "name": "FUN_00451560",
@@ -3835,9 +3835,9 @@
   "len": 1609
  },
  "0x0046FC80": {
-  "name": "FUN_0046fc80",
-  "named": false,
-  "len": 2200
+  "name": "obj_orient_set",
+  "named": true,
+  "len": 2202
  },
  "0x0046FE30": {
   "name": "FUN_0046fe30",
@@ -6177,7 +6177,7 @@
  "0x004B0FC0": {
   "name": "bin_load_1a0002e5",
   "named": true,
-  "len": 70018
+  "len": 70020
  },
  "0x004B42D0": {
   "name": "main_readwrls_004b42d0",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14216
+  "len": 14221
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -8460,9 +8460,9 @@
   "len": 1696
  },
  "0x00514A50": {
-  "name": "FUN_00514a50",
-  "named": false,
-  "len": 2272
+  "name": "terrain_vertex_walk",
+  "named": true,
+  "len": 2286
  },
  "0x00514C00": {
   "name": "FUN_00514c00",
@@ -8487,7 +8487,7 @@
  "0x00515090": {
   "name": "FUN_00515090",
   "named": false,
-  "len": 5728
+  "len": 5763
  },
  "0x00515580": {
   "name": "FUN_00515580",

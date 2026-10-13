@@ -8863,7 +8863,7 @@ undefined4 dev_debug_flags(void)
 
     }
 
-    FUN_0042f310();
+    dlog_fade_control();
 
     if (((DAT_00632bc0 != 0) || (DAT_00632e48 != 0)) || (DAT_00632bc4 != 0)) {
 

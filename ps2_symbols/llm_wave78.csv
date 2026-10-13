@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0042f310,FUN_0042F310,,dlog_fade_control,0.9,llm-read49,
+0046fc80,FUN_0046FC80,,obj_orient_set,0.9,llm-read49,
+00514a50,FUN_00514A50,,terrain_vertex_walk,0.9,llm-read49,
+004513c0,FUN_004513C0,,vec_lerp_approach,0.9,llm-read49,

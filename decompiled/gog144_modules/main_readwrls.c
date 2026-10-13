@@ -2625,7 +2625,7 @@ switchD_004b1431_caseD_2c:
 
       local_3c0[2] = *(float *)((int)pfVar21 + 9);
 
-      FUN_0046fc80(puVar19,local_3c0);
+      obj_orient_set(puVar19,local_3c0);
 
       fVar17 = local_410;
 

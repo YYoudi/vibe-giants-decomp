@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (80 named) — decompiled, names from PS2 symbols
+ * 129 functions (81 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -19067,12 +19067,12 @@ void dlog_alpha_big_render(void)
 
 }
 
-/* ===== FUN_0042f310 @ 0x0042F310 ===== */
+/* ===== dlog_fade_control @ 0x0042F310 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0042f310(void)
+void dlog_fade_control(void)
 
 
 
