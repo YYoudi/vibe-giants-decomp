@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (111 named) — decompiled, names from PS2 symbols
+ * 142 functions (112 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -6939,8 +6939,8 @@ void objanim_select_anim(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00496810 @ 0x00496810 ===== */
-void FUN_00496810(int param_1,int param_2)
+/* ===== objanim_select_anim_2 @ 0x00496810 ===== */
+void objanim_select_anim_2(int param_1,int param_2)
 
 
 
@@ -8629,7 +8629,7 @@ LAB_00498087:
 
           DAT_0059f390 = 0xffffffff;
 
-          FUN_00496810(&DAT_0059f380,(&DAT_0055cab0)[iVar2]);
+          objanim_select_anim_2(&DAT_0059f380,(&DAT_0055cab0)[iVar2]);
 
           return;
 
@@ -9319,7 +9319,7 @@ LAB_00498a2c:
 
             *(undefined4 *)(param_1 + 0x10) = 0xffffffff;
 
-            FUN_00496810(param_1,uVar1);
+            objanim_select_anim_2(param_1,uVar1);
 
           }
 

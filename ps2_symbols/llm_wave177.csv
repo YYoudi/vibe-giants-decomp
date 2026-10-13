@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052ac00,FUN_0052ac00,,team_color_get,0.9,llm-w177,team->RGB map callers bldg_comm_status
+00496810,FUN_00496810,,objanim_select_anim_2,0.9,llm-w177,same anim select skeleton callers weapon_id
+0053d2a0,FUN_0053d2a0,,anm_binder_eval_2,0.9,llm-w177,0x18/0x14 vertex eval twin callers main_animate

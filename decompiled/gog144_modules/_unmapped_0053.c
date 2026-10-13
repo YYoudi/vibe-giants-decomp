@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (146 named) — decompiled, names from PS2 symbols
+ * 179 functions (147 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -10570,7 +10570,7 @@ void bldg_comm_status(float param_1)
 
       }
 
-      uVar4 = FUN_0052ac00(uVar4);
+      uVar4 = team_color_get(uVar4);
 
     }
 
@@ -10630,7 +10630,7 @@ LAB_00536fe0:
 
     uVar5 = comm_0052ab50(uVar6);
 
-    uVar4 = FUN_0052ac00(uVar5);
+    uVar4 = team_color_get(uVar5);
 
   }
 
@@ -10691,7 +10691,7 @@ void base_hint_menu(int param_1,int param_2)
 
   
 
-  uVar1 = FUN_0052ac00((*(int *)(param_1 + 4) == 0x343) + '\x01');
+  uVar1 = team_color_get((*(int *)(param_1 + 4) == 0x343) + '\x01');
 
   local_c = *(undefined4 *)(param_1 + 0xa0);
 
@@ -16482,8 +16482,8 @@ int editor_anim_skin(int param_1,undefined4 param_2,int param_3,undefined4 param
 
 }
 
-/* ===== FUN_0053d2a0 @ 0x0053D2A0 ===== */
-void FUN_0053d2a0(int param_1)
+/* ===== anm_binder_eval_2 @ 0x0053D2A0 ===== */
+void anm_binder_eval_2(int param_1)
 
 
 

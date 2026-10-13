@@ -134,7 +134,7 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
           if (*piVar9 != 0) {
 
-            FUN_0053d2a0(*piVar9);
+            anm_binder_eval_2(*piVar9);
 
           }
 

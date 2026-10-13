@@ -257,7 +257,7 @@
  "0x004057D0": {
   "name": "main_animate_004057d0",
   "named": true,
-  "len": 2663
+  "len": 2668
  },
  "0x00406BC0": {
   "name": "army_create_rpman__FP6OBJECTP9ArmyOrderifi",
@@ -2527,7 +2527,7 @@
  "0x00443740": {
   "name": "main_flick_00443740",
   "named": true,
-  "len": 2118
+  "len": 2123
  },
  "0x00443910": {
   "name": "wredit_matrix_recurse",
@@ -4955,9 +4955,9 @@
   "len": 290
  },
  "0x00496810": {
-  "name": "FUN_00496810",
-  "named": false,
-  "len": 243
+  "name": "objanim_select_anim_2",
+  "named": true,
+  "len": 252
  },
  "0x00496840": {
   "name": "anim_select_user",
@@ -5082,7 +5082,7 @@
  "0x00497DE0": {
   "name": "weapon_id_inventory_update",
   "named": true,
-  "len": 5497
+  "len": 5506
  },
  "0x004981C0": {
   "name": "obj_weapon_animselect",
@@ -5102,7 +5102,7 @@
  "0x004988E0": {
   "name": "weapon_id_check_big",
   "named": true,
-  "len": 2932
+  "len": 2941
  },
  "0x00498AF0": {
   "name": "vimp_death_fx",
@@ -9680,9 +9680,9 @@
   "len": 458
  },
  "0x0052AC00": {
-  "name": "FUN_0052ac00",
-  "named": false,
-  "len": 197
+  "name": "team_color_get",
+  "named": true,
+  "len": 199
  },
  "0x0052AC40": {
   "name": "FUN_0052ac40",
@@ -10432,12 +10432,12 @@
  "0x00536F60": {
   "name": "bldg_comm_status",
   "named": true,
-  "len": 2415
+  "len": 2419
  },
  "0x00537120": {
   "name": "base_hint_menu",
   "named": true,
-  "len": 745
+  "len": 747
  },
  "0x005371E0": {
   "name": "comm_entergame_message",
@@ -10770,9 +10770,9 @@
   "len": 1213
  },
  "0x0053D2A0": {
-  "name": "FUN_0053d2a0",
-  "named": false,
-  "len": 374
+  "name": "anm_binder_eval_2",
+  "named": true,
+  "len": 379
  },
  "0x0053D2D0": {
   "name": "ANM_AnimationEvalVertices",

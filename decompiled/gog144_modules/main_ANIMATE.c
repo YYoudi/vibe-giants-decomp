@@ -949,7 +949,7 @@ void main_animate_004057d0(int param_1)
 
           if (*piVar5 == 0) break;
 
-          FUN_0053d2a0(*puVar7);
+          anm_binder_eval_2(*puVar7);
 
           iVar6 = iVar6 + 1;
 
