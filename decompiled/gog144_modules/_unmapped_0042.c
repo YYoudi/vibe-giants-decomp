@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (87 named) — decompiled, names from PS2 symbols
+ * 129 functions (88 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -17490,7 +17490,7 @@ void FUN_0042dfd0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   
 
-  FUN_0042e030(param_1,param_2,param_3,local_44,local_5c);
+  fx_billboard_matrix(param_1,param_2,param_3,local_44,local_5c);
 
   main_drawwrld_00434ce0(DAT_006573e8);
 
@@ -17502,10 +17502,10 @@ void FUN_0042dfd0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0042e030 @ 0x0042E030 ===== */
-void FUN_0042e030(undefined4 *param_1,undefined4 param_2,float param_3,undefined4 *param_4,
+/* ===== fx_billboard_matrix @ 0x0042E030 ===== */
+void fx_billboard_matrix(undefined4 *param_1,undefined4 param_2,float param_3,undefined4 *param_4,
 
-                 undefined4 *param_5)
+                        undefined4 *param_5)
 
 
 
@@ -17799,7 +17799,7 @@ void mpeg_mode_set(int param_1,undefined4 param_2,undefined4 param_3)
 
   local_60 = -*(float *)(param_1 + 700);
 
-  FUN_0042e030(param_1 + 0xa0,&local_68,param_3,local_44,local_5c);
+  fx_billboard_matrix(param_1 + 0xa0,&local_68,param_3,local_44,local_5c);
 
   main_drawwrld_00434ce0(DAT_006573f0);
 

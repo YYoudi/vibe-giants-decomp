@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (37 named) — decompiled, names from PS2 symbols
+ * 105 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -11079,8 +11079,8 @@ void FUN_0040ee20(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
 }
 
-/* ===== FUN_0040eef0 @ 0x0040EEF0 ===== */
-void FUN_0040eef0(float param_1)
+/* ===== ai_nearest_55_scan @ 0x0040EEF0 ===== */
+void ai_nearest_55_scan(float param_1)
 
 
 

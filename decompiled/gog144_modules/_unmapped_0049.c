@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (49 named) — decompiled, names from PS2 symbols
+ * 142 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -837,7 +837,7 @@ undefined4 FUN_00490fe0(void)
 
           if (iVar2 < 0x20) {
 
-            FUN_00492010(DAT_00632d20,iVar2,*(undefined4 *)(DAT_00632a88 + 4));
+            level_config_write(DAT_00632d20,iVar2,*(undefined4 *)(DAT_00632a88 + 4));
 
           }
 
@@ -1972,12 +1972,12 @@ void savegame_verify(void)
 
 }
 
-/* ===== FUN_00492010 @ 0x00492010 ===== */
+/* ===== level_config_write @ 0x00492010 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00492010(int param_1,int param_2,int param_3)
+void level_config_write(int param_1,int param_2,int param_3)
 
 
 
@@ -2807,7 +2807,7 @@ void savegame_verify_user(void)
 
     if (iVar1 < 0x1b) {
 
-      FUN_00492010(DAT_00632d20,iVar1,DAT_0059f300);
+      level_config_write(DAT_00632d20,iVar1,DAT_0059f300);
 
     }
 

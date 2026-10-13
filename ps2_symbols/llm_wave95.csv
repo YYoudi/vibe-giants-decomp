@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004e4680,FUN_004E4680,,ai_rand_anim_select,0.9,llm-read66,
+0040eef0,FUN_0040EEF0,,ai_nearest_55_scan,0.9,llm-read66,
+00492010,FUN_00492010,,level_config_write,0.9,llm-read66,
+0042e030,FUN_0042E030,,fx_billboard_matrix,0.9,llm-read66,

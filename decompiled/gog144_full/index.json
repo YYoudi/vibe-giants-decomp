@@ -645,9 +645,9 @@
   "len": 1127
  },
  "0x0040EEF0": {
-  "name": "FUN_0040eef0",
-  "named": false,
-  "len": 1440
+  "name": "ai_nearest_55_scan",
+  "named": true,
+  "len": 1446
  },
  "0x0040F030": {
   "name": "FUN_0040f030",
@@ -1852,12 +1852,12 @@
  "0x0042DFD0": {
   "name": "FUN_0042dfd0",
   "named": false,
-  "len": 360
+  "len": 367
  },
  "0x0042E030": {
-  "name": "FUN_0042e030",
-  "named": false,
-  "len": 1341
+  "name": "fx_billboard_matrix",
+  "named": true,
+  "len": 1355
  },
  "0x0042E1F0": {
   "name": "fx_kabuto_footprint",
@@ -1897,7 +1897,7 @@
  "0x0042E3B0": {
   "name": "mpeg_mode_set",
   "named": true,
-  "len": 614
+  "len": 621
  },
  "0x0042E450": {
   "name": "_cleanup_4",
@@ -4662,7 +4662,7 @@
  "0x00490FE0": {
   "name": "FUN_00490fe0",
   "named": false,
-  "len": 4410
+  "len": 4416
  },
  "0x00491380": {
   "name": "FUN_00491380",
@@ -4690,9 +4690,9 @@
   "len": 1089
  },
  "0x00492010": {
-  "name": "FUN_00492010",
-  "named": false,
-  "len": 2492
+  "name": "level_config_write",
+  "named": true,
+  "len": 2498
  },
  "0x00492150": {
   "name": "level_config_lookup",
@@ -4712,7 +4712,7 @@
  "0x004928A0": {
   "name": "savegame_verify_user",
   "named": true,
-  "len": 493
+  "len": 499
  },
  "0x00492910": {
   "name": "mission_init",
@@ -7255,9 +7255,9 @@
   "len": 779
  },
  "0x004E4680": {
-  "name": "FUN_004e4680",
-  "named": false,
-  "len": 1347
+  "name": "ai_rand_anim_select",
+  "named": true,
+  "len": 1354
  },
  "0x004E47C0": {
   "name": "ai_idle_anim_select",
