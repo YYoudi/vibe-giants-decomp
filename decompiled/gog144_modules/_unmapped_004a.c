@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (49 named) — decompiled, names from PS2 symbols
+ * 131 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -514,14 +514,16 @@ LAB_004a0eb3:
 
 }
 
-/* ===== FUN_004a1250 @ 0x004A1250 ===== */
+/* ===== path_flyer_calculate @ 0x004A1250 ===== */
 /* PS2 candidate: path_flyer_calculate (conf 0.692) */
 
 
 
-void FUN_004a1250(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float param_5
+void path_flyer_calculate
 
-                 ,undefined4 param_6,undefined4 param_7,undefined4 param_8)
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,float param_5,
+
+               undefined4 param_6,undefined4 param_7,undefined4 param_8)
 
 
 
@@ -11486,9 +11488,9 @@ undefined4 FUN_004adbf0(int param_1,int param_2)
 
         if (iVar2 != 0) {
 
-          fVar3 = (float10)FUN_00417f20(param_1);
+          fVar3 = (float10)bldg_get_energy(param_1);
 
-          fVar4 = (float10)FUN_00418170(param_1);
+          fVar4 = (float10)bldg_get_max_energy(param_1);
 
           if (fVar4 == (float10)(float)fVar3) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (19 named) — decompiled, names from PS2 symbols
+ * 48 functions (20 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -185,7 +185,7 @@ void FUN_004f3af0(int param_1)
 
   *(undefined4 *)(iVar3 + 0xe4) = *(undefined4 *)(param_1 + 0x18);
 
-  FUN_00418010(iVar3,*(undefined4 *)(DAT_00632ed8 + 0x894));
+  bldg_set_energy(iVar3,*(undefined4 *)(DAT_00632ed8 + 0x894));
 
   *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x10;
 
@@ -1919,12 +1919,12 @@ int FUN_004f5950(int param_1,float param_2)
 
 }
 
-/* ===== FUN_004f5c10 @ 0x004F5C10 ===== */
+/* ===== smartie_board_player__FP6OBJECTT0i @ 0x004F5C10 ===== */
 /* PS2 candidate: smartie_board_player__FP6OBJECTT0i (conf 0.656) */
 
 
 
-void FUN_004f5c10(int param_1,int param_2,undefined4 param_3)
+void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param_3)
 
 
 
@@ -2205,7 +2205,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
       }
 
-      fVar4 = (float10)FUN_00417f20(param_2);
+      fVar4 = (float10)bldg_get_energy(param_2);
 
       if ((float10)0.0 < fVar4) {
 
@@ -2231,7 +2231,7 @@ int FUN_004f6090(int param_1,undefined4 param_2)
 
   else {
 
-    fVar4 = (float10)FUN_00417f20(param_2);
+    fVar4 = (float10)bldg_get_energy(param_2);
 
     if (fVar4 <= (float10)0.0) {
 
@@ -5502,7 +5502,7 @@ void FUN_004ff470(void)
 
   if (DAT_00632bb4 != 0) {
 
-    FUN_004544f0();
+    giftshop_exit__Fv();
 
   }
 

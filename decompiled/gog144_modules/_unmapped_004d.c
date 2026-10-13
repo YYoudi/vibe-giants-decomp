@@ -141,7 +141,7 @@ void FUN_004d1840(int param_1,int *param_2)
 
         else {
 
-          iVar3 = FUN_00417f60(iVar2);
+          iVar3 = bldg_get_max_energy(iVar2);
 
           bVar4 = iVar3 == 0;
 

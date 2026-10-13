@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (81 named) — decompiled, names from PS2 symbols
+ * 179 functions (82 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -5323,7 +5323,7 @@ LAB_005337eb:
 
       *(undefined4 *)(iVar1 + 0xdb4) = 0;
 
-      FUN_004bdbf0(iVar2);
+      reaper_select_sword(iVar2);
 
     }
 
@@ -5333,7 +5333,7 @@ LAB_005337eb:
 
       *(uint *)(iVar1 + 0xd88) = (uint)*(byte *)(param_1 + 9);
 
-      FUN_004bdaa0();
+      reaper_select_bow();
 
     }
 
@@ -6211,7 +6211,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_21a = (undefined2)((uint)uVar2 >> 0x10);
 
-            fVar14 = (float10)FUN_00417f20(iVar6);
+            fVar14 = (float10)bldg_get_energy(iVar6);
 
             fVar1 = (float)fVar14;
 
@@ -6309,7 +6309,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_21a = (undefined2)((uint)uVar8 >> 0x10);
 
-            fVar14 = (float10)FUN_00417f20(iVar6);
+            fVar14 = (float10)bldg_get_energy(iVar6);
 
             fVar1 = (float)fVar14;
 
@@ -10316,9 +10316,9 @@ void FUN_00536b20(float param_1,float param_2,float param_3)
 
   }
 
-  fVar9 = (float10)FUN_00417f20(param_1);
+  fVar9 = (float10)bldg_get_energy(param_1);
 
-  fVar10 = (float10)FUN_00418170(param_1);
+  fVar10 = (float10)bldg_get_max_energy(param_1);
 
   fVar1 = (float)((float10)(float)fVar9 / fVar10);
 
@@ -10965,7 +10965,7 @@ void comm_wincond_destroy(int param_1)
 
         if ((-1 < iVar5) &&
 
-           (fVar13 = (float10)FUN_00417f20(iVar4),
+           (fVar13 = (float10)bldg_get_energy(iVar4),
 
            (float10)(float)((float10)fVar1 * fVar12 * (float10)0.01) < fVar13)) {
 
@@ -11874,11 +11874,11 @@ LAB_00537c57:
 
              (*(int *)(iVar3 + 0x100) == 0)) goto LAB_00537c91;
 
-          fVar16 = (float10)FUN_00417f20(iVar3);
+          fVar16 = (float10)bldg_get_energy(iVar3);
 
           local_a98 = (float)fVar16;
 
-          fVar16 = (float10)FUN_00418170(iVar3);
+          fVar16 = (float10)bldg_get_max_energy(iVar3);
 
           if (fVar16 != (float10)local_a98) goto LAB_00537c91;
 
@@ -20566,7 +20566,7 @@ void FUN_0053fd40(undefined4 *param_1,undefined4 param_2,int param_3)
 
   FUN_005400e0(piVar3,param_3);
 
-  FUN_0053fe70(*param_1,param_3);
+  MAP_MemGroupFixPtrs(*param_1,param_3);
 
   param_1 = (undefined4 *)param_1[8];
 
@@ -20666,12 +20666,12 @@ undefined4 FUN_0053fe20(int param_1,int param_2,uint param_3)
 
 }
 
-/* ===== FUN_0053fe70 @ 0x0053FE70 ===== */
+/* ===== MAP_MemGroupFixPtrs @ 0x0053FE70 ===== */
 /* PS2 candidate: MAP_MemGroupFixPtrs (conf 0.672) */
 
 
 
-void FUN_0053fe70(int param_1,undefined4 param_2)
+void MAP_MemGroupFixPtrs(int param_1,undefined4 param_2)
 
 
 
@@ -20721,7 +20721,7 @@ int FUN_0053feb0(undefined4 param_1,int param_2)
 
     local_8[1] = 1;
 
-    FUN_0053fe70(param_2,local_8);
+    MAP_MemGroupFixPtrs(param_2,local_8);
 
     *(undefined4 *)(param_2 + 0xc) = param_1;
 

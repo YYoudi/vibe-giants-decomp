@@ -5004,7 +5004,7 @@ void FUN_00407c40(int param_1)
 
     piVar1[0x1b] = 1;
 
-    FUN_00418010(param_1,*(undefined4 *)(DAT_00632ed8 + 0x15a0));
+    bldg_set_energy(param_1,*(undefined4 *)(DAT_00632ed8 + 0x15a0));
 
   }
 
@@ -5073,7 +5073,7 @@ void FUN_00408530(float param_1)
 
     case 2:
 
-      fVar6 = (float10)FUN_00417f20(param_1);
+      fVar6 = (float10)bldg_get_energy(param_1);
 
       if ((float10)0.0 < fVar6) {
 
@@ -5195,7 +5195,7 @@ switchD_004085cd_caseD_1:
 
 LAB_0040892e:
 
-      fVar6 = (float10)FUN_00417f20(iVar3);
+      fVar6 = (float10)bldg_get_energy(iVar3);
 
       fVar6 = fVar6 / (float10)param_1;
 
@@ -5265,7 +5265,7 @@ LAB_0040892e:
 
 LAB_004089de:
 
-      fVar6 = (float10)FUN_00417f20(iVar3);
+      fVar6 = (float10)bldg_get_energy(iVar3);
 
       if ((float10)param_1 - (float10)1.0 < fVar6 != ((float10)param_1 - (float10)1.0 == fVar6)) {
 
@@ -5385,7 +5385,7 @@ LAB_004089de:
 
 LAB_00408b1e:
 
-      fVar6 = (float10)FUN_00417f20(iVar3);
+      fVar6 = (float10)bldg_get_energy(iVar3);
 
       fVar6 = fVar6 / (float10)param_1;
 
@@ -5501,7 +5501,7 @@ LAB_00408b1e:
 
       }
 
-      fVar6 = (float10)FUN_00417f20(param_1);
+      fVar6 = (float10)bldg_get_energy(param_1);
 
       fVar6 = fVar6 / (float10)*(float *)(DAT_00632ed8 + 0x894);
 
@@ -5643,9 +5643,9 @@ LAB_0040878e:
 
     *(undefined4 *)((int)param_1 + 0x184) = 0;
 
-    fVar7 = (float10)FUN_00417f20(param_1);
+    fVar7 = (float10)bldg_get_energy(param_1);
 
-    fVar6 = (float10)FUN_00418170(param_1);
+    fVar6 = (float10)bldg_get_max_energy(param_1);
 
     fVar6 = (float10)(float)fVar7 / fVar6;
 
@@ -5653,9 +5653,9 @@ LAB_0040878e:
 
   case 4:
 
-    fVar6 = (float10)FUN_00417f20(param_1);
+    fVar6 = (float10)bldg_get_energy(param_1);
 
-    fVar7 = (float10)FUN_00418170(param_1);
+    fVar7 = (float10)bldg_get_max_energy(param_1);
 
     fVar7 = (float10)(float)fVar6 / fVar7;
 
@@ -5739,7 +5739,7 @@ switchD_004085cd_caseD_7:
 
   case 9:
 
-    fVar6 = (float10)FUN_00417f20(param_1);
+    fVar6 = (float10)bldg_get_energy(param_1);
 
     fVar6 = fVar6 / (float10)*(float *)(DAT_00632ed8 + 0x894);
 
@@ -6041,7 +6041,7 @@ void meccbaseitem_finish_building(int param_1)
 
 LAB_004090c8:
 
-  FUN_00418010(iVar6,param_1);
+  bldg_set_energy(iVar6,param_1);
 
   *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) & 0xfffff7ff | 0x20000;
 
@@ -6635,7 +6635,7 @@ void FUN_00409b60(int param_1,int param_2)
 
   iVar4 = *(int *)(*(int *)(param_1 + 0x274) + 0x100);
 
-  fVar6 = (float10)FUN_00418170(param_1);
+  fVar6 = (float10)bldg_get_max_energy(param_1);
 
   fVar1 = *(float *)(DAT_00632ed8 + 0xb80) * (float)fVar6 * 0.01;
 
@@ -6665,7 +6665,7 @@ LAB_00409bc6:
 
   *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x800;
 
-  FUN_00418010(param_1,fVar1);
+  bldg_set_energy(param_1,fVar1);
 
   *(float *)(param_1 + 0x278) = (float)fVar6 - fVar1;
 
@@ -6800,13 +6800,13 @@ void FUN_0040a550(int param_1,int param_2)
 
     else {
 
-      fVar3 = (float10)FUN_00417f20(iVar2);
+      fVar3 = (float10)bldg_get_energy(iVar2);
 
       if ((float10)0.0 < fVar3) {
 
-        fVar3 = (float10)FUN_00417f20(iVar2);
+        fVar3 = (float10)bldg_get_energy(iVar2);
 
-        fVar4 = (float10)FUN_00418170(iVar2);
+        fVar4 = (float10)bldg_get_max_energy(iVar2);
 
         if ((float10)(float)fVar3 < fVar4) {
 
@@ -6923,7 +6923,7 @@ undefined4 object_spawn_class4(int param_1,int param_2)
 
     *(int *)(iVar2 + 0x274) = param_1;
 
-    FUN_00418010(iVar2,0);
+    bldg_set_energy(iVar2,0);
 
     FUN_004034a0(iVar2,1,0x84,0,0,0);
 

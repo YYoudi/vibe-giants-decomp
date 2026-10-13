@@ -2156,7 +2156,7 @@ LAB_004e324d:
 
       iVar3 = FUN_004a6140(*piVar2);
 
-      if ((iVar3 == 0) && (iVar3 = FUN_00417f60(*piVar2), iVar3 != 0)) goto LAB_004e324d;
+      if ((iVar3 == 0) && (iVar3 = bldg_get_max_energy(*piVar2), iVar3 != 0)) goto LAB_004e324d;
 
     }
 
@@ -2882,7 +2882,7 @@ LAB_004e3ad2:
 
               else {
 
-                iVar6 = FUN_00417f60(iVar4);
+                iVar6 = bldg_get_max_energy(iVar4);
 
                 if (iVar6 == 0) goto LAB_004e3ad2;
 
@@ -2898,7 +2898,7 @@ LAB_004e3ad2:
 
             if (((iVar6 != 0) || (iVar6 = FUN_004a6360(iVar4), iVar6 != 0)) &&
 
-               (iVar6 = FUN_00417f60(iVar4), iVar6 == 0)) {
+               (iVar6 = bldg_get_max_energy(iVar4), iVar6 == 0)) {
 
               local_2c = param_2;
 

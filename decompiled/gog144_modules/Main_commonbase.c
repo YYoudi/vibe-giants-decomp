@@ -280,7 +280,7 @@ LAB_0041906f:
 
         if (fVar4 < 0.0 != (fVar4 == 0.0)) {
 
-          FUN_00418010(param_1,0);
+          bldg_set_energy(param_1,0);
 
         }
 

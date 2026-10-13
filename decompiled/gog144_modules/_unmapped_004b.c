@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (35 named) — decompiled, names from PS2 symbols
+ * 90 functions (39 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -974,7 +974,7 @@ void FUN_004b4570(int param_1)
 
     piVar1[0x1b] = 1;
 
-    FUN_00418010(param_1,*(undefined4 *)(DAT_00632ed8 + 0x15a4));
+    bldg_set_energy(param_1,*(undefined4 *)(DAT_00632ed8 + 0x15a4));
 
   }
 
@@ -1069,9 +1069,9 @@ void FUN_004b4ca0(float param_1)
 
       *(undefined4 *)((int)param_1 + 0x184) = 0;
 
-      fVar6 = (float10)FUN_00417f20(param_1);
+      fVar6 = (float10)bldg_get_energy(param_1);
 
-      fVar7 = (float10)FUN_00418170(param_1);
+      fVar7 = (float10)bldg_get_max_energy(param_1);
 
       fVar7 = (float10)(float)fVar6 / fVar7;
 
@@ -1095,9 +1095,9 @@ void FUN_004b4ca0(float param_1)
 
       }
 
-      fVar6 = (float10)FUN_00417f20(param_1);
+      fVar6 = (float10)bldg_get_energy(param_1);
 
-      fVar7 = (float10)FUN_00418170(param_1);
+      fVar7 = (float10)bldg_get_max_energy(param_1);
 
       fVar7 = (float10)(float)fVar6 / fVar7;
 
@@ -1161,7 +1161,7 @@ void FUN_004b4ca0(float param_1)
 
     case 9:
 
-      fVar6 = (float10)FUN_00417f20(param_1);
+      fVar6 = (float10)bldg_get_energy(param_1);
 
       fVar6 = fVar6 / (float10)*(float *)(DAT_00632ed8 + 0x894);
 
@@ -1221,7 +1221,7 @@ void FUN_004b4ca0(float param_1)
 
   case 2:
 
-    fVar6 = (float10)FUN_00417f20(param_1);
+    fVar6 = (float10)bldg_get_energy(param_1);
 
     if ((float10)0.0 < fVar6) {
 
@@ -1341,7 +1341,7 @@ switchD_004b4d3a_caseD_1:
 
 LAB_004b5098:
 
-    fVar6 = (float10)FUN_00417f20(iVar3);
+    fVar6 = (float10)bldg_get_energy(iVar3);
 
     fVar6 = fVar6 / (float10)param_1;
 
@@ -1411,7 +1411,7 @@ LAB_004b5098:
 
 LAB_004b5148:
 
-    fVar6 = (float10)FUN_00417f20(iVar3);
+    fVar6 = (float10)bldg_get_energy(iVar3);
 
     if ((float10)param_1 - (float10)1.0 < fVar6 != ((float10)param_1 - (float10)1.0 == fVar6)) {
 
@@ -1477,9 +1477,9 @@ LAB_004b5148:
 
     if (*(int *)((int)param_1 + 0x10) == 1) {
 
-      fVar6 = (float10)FUN_00417f20(param_1);
+      fVar6 = (float10)bldg_get_energy(param_1);
 
-      fVar7 = (float10)FUN_00418170(param_1);
+      fVar7 = (float10)bldg_get_max_energy(param_1);
 
       fVar7 = (float10)(float)fVar6 / fVar7;
 
@@ -1603,7 +1603,7 @@ switchD_004b4d3a_caseD_7:
 
     }
 
-    fVar6 = (float10)FUN_00417f20(param_1);
+    fVar6 = (float10)bldg_get_energy(param_1);
 
     fVar6 = fVar6 / (float10)*(float *)(DAT_00632ed8 + 0x894);
 
@@ -1873,7 +1873,7 @@ void reaperbasebldg_finish_building(int param_1)
 
 LAB_004b56d8:
 
-  FUN_00418010(iVar6,param_1);
+  bldg_set_energy(iVar6,param_1);
 
   *(uint *)(iVar6 + 0x1c8) = *(uint *)(iVar6 + 0x1c8) & 0xfffff7ff | 0x20000;
 
@@ -2394,7 +2394,7 @@ LAB_004b5db6:
 
   fVar1 = *(float *)(DAT_00632ed8 + 0xb80) * param_1 * 0.01;
 
-  FUN_00418010(iVar2,fVar1);
+  bldg_set_energy(iVar2,fVar1);
 
   *(float *)(iVar2 + 0x278) = param_1 - fVar1;
 
@@ -2529,13 +2529,13 @@ void FUN_004b65a0(int param_1,int param_2)
 
     else {
 
-      fVar3 = (float10)FUN_00417f20(iVar2);
+      fVar3 = (float10)bldg_get_energy(iVar2);
 
       if ((float10)0.0 < fVar3) {
 
-        fVar3 = (float10)FUN_00417f20(iVar2);
+        fVar3 = (float10)bldg_get_energy(iVar2);
 
-        fVar4 = (float10)FUN_00418170(iVar2);
+        fVar4 = (float10)bldg_get_max_energy(iVar2);
 
         if ((float10)(float)fVar3 < fVar4) {
 
@@ -2662,7 +2662,7 @@ undefined4 object_spawn_4b(int param_1,uint param_2)
 
     *(int *)(iVar3 + 0x274) = param_1;
 
-    FUN_00418010(iVar3,0);
+    bldg_set_energy(iVar3,0);
 
     FUN_004034a0(iVar3,1,0x84,0,0,0);
 
@@ -3919,7 +3919,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
     puVar6[0x36d] = 0;
 
-    FUN_004bdbf0(uVar2);
+    reaper_select_sword(uVar2);
 
     puVar5 = puVar6 + 0x351;
 
@@ -4156,7 +4156,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     *(undefined4 *)(*(int *)(param_1 + 0x100) + 0xdb4) = 0;
 
-    FUN_004bdbf0(param_1);
+    reaper_select_sword(param_1);
 
     return;
 
@@ -4168,7 +4168,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     *(float *)(iVar7 + 0xd88) = *param_4;
 
-    FUN_004bdaa0(param_1);
+    reaper_select_bow(param_1);
 
     return;
 
@@ -4756,7 +4756,7 @@ LAB_004b8187:
 
     *(float *)(iVar7 + 0xf18) = param_4[0x11];
 
-    FUN_004bfe50(param_1);
+    reaper_finish_hail__FP6OBJECT(param_1);
 
     return;
 
@@ -6335,7 +6335,7 @@ void FUN_004b9080(int param_1,int param_2,int param_3,int param_4,int param_5)
 
     *(int *)(iVar2 + 0xdb4) = param_3 + 1;
 
-    FUN_004bdaa0(param_1);
+    reaper_select_bow(param_1);
 
   }
 
@@ -6402,13 +6402,13 @@ LAB_004b914c:
 
   if (*(int *)(iVar2 + 0xdb4) == 0) {
 
-    FUN_004bdbf0();
+    reaper_select_sword();
 
   }
 
   else if (*(int *)(iVar2 + 0xdb4) == 1) {
 
-    FUN_004bdaa0();
+    reaper_select_bow();
 
   }
 
@@ -9945,12 +9945,12 @@ switchD_004bd98b_default:
 
 }
 
-/* ===== FUN_004bdaa0 @ 0x004BDAA0 ===== */
+/* ===== reaper_select_bow @ 0x004BDAA0 ===== */
 /* PS2 candidate: reaper_select_bow (conf 0.359) */
 
 
 
-void FUN_004bdaa0(uint param_1)
+void reaper_select_bow(uint param_1)
 
 
 
@@ -10068,12 +10068,12 @@ switchD_004bdb93_default:
 
 }
 
-/* ===== FUN_004bdbf0 @ 0x004BDBF0 ===== */
+/* ===== reaper_select_sword @ 0x004BDBF0 ===== */
 /* PS2 candidate: reaper_select_sword (conf 0.358) */
 
 
 
-void FUN_004bdbf0(int param_1)
+void reaper_select_sword(int param_1)
 
 
 
@@ -10278,7 +10278,7 @@ void FUN_004bddb0(int param_1)
 
     if (0 < *(int *)(iVar1 + 0xdb4)) {
 
-      FUN_004beee0(param_1);
+      reaper_fire_bow__FP6OBJECT(param_1);
 
       return;
 
@@ -10286,7 +10286,7 @@ void FUN_004bddb0(int param_1)
 
     if (DAT_00632bc0 == 0) {
 
-      FUN_004c0810(param_1);
+      reaper_fire_sword__FP6OBJECT(param_1);
 
     }
 
@@ -11483,12 +11483,12 @@ switchD_004bed83_caseD_28:
 
 }
 
-/* ===== FUN_004beee0 @ 0x004BEEE0 ===== */
+/* ===== reaper_fire_bow__FP6OBJECT @ 0x004BEEE0 ===== */
 /* PS2 candidate: reaper_fire_bow__FP6OBJECT (conf 0.53) */
 
 
 
-void FUN_004beee0(int param_1)
+void reaper_fire_bow__FP6OBJECT(int param_1)
 
 
 
@@ -12626,12 +12626,12 @@ void reaper_finish_shrinker(undefined4 param_1,int param_2,int param_3,int param
 
 }
 
-/* ===== FUN_004bfe50 @ 0x004BFE50 ===== */
+/* ===== reaper_finish_hail__FP6OBJECT @ 0x004BFE50 ===== */
 /* PS2 candidate: reaper_finish_hail__FP6OBJECT (conf 0.335) */
 
 
 
-void FUN_004bfe50(int param_1)
+void reaper_finish_hail__FP6OBJECT(int param_1)
 
 
 

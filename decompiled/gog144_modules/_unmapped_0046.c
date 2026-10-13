@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (24 named) — decompiled, names from PS2 symbols
+ * 53 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -631,14 +631,14 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 
 }
 
-/* ===== FUN_00465880 @ 0x00465880 ===== */
+/* ===== reaper_update_xhair_status__FP6OBJECT @ 0x00465880 ===== */
 /* PS2 candidate: reaper_update_xhair_status__FP6OBJECT (conf 0.376) */
 
 
 
-void FUN_00465880(int param_1,int param_2,int param_3,undefined4 param_4,float param_5,float param_6
+void reaper_update_xhair_status__FP6OBJECT
 
-                 )
+               (int param_1,int param_2,int param_3,undefined4 param_4,float param_5,float param_6)
 
 
 
@@ -876,12 +876,12 @@ LAB_00465986:
 
 }
 
-/* ===== FUN_00465bf0 @ 0x00465BF0 ===== */
+/* ===== reaper_collect_food @ 0x00465BF0 ===== */
 /* PS2 candidate: reaper_collect_food (conf 0.513) */
 
 
 
-void FUN_00465bf0(float param_1,float param_2,undefined4 param_3,float param_4)
+void reaper_collect_food(float param_1,float param_2,undefined4 param_3,float param_4)
 
 
 

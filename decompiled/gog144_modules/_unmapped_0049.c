@@ -3288,7 +3288,7 @@ LAB_00492a3a:
 
         *(uint *)(iVar14 + 0xd8) = *(uint *)(iVar14 + 0xd8) | 0x400;
 
-        FUN_004f5c10(iVar14,DAT_00632a88,0);
+        smartie_board_player__FP6OBJECTT0i(iVar14,DAT_00632a88,0);
 
         break;
 

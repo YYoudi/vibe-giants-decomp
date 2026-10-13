@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (51 named) — decompiled, names from PS2 symbols
+ * 100 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -6074,12 +6074,12 @@ LAB_00417c0e:
 
 }
 
-/* ===== FUN_00417f20 @ 0x00417F20 ===== */
+/* ===== bldg_get_energy @ 0x00417F20 ===== */
 /* PS2 candidate: bldg_get_energy (conf 0.414) */
 
 
 
-float10 FUN_00417f20(int param_1)
+float10 bldg_get_energy(int param_1)
 
 
 
@@ -6111,12 +6111,12 @@ float10 FUN_00417f20(int param_1)
 
 }
 
-/* ===== FUN_00417f60 @ 0x00417F60 ===== */
+/* ===== bldg_get_max_energy @ 0x00417F60 ===== */
 /* PS2 candidate: ObjIsMeccBaseWall (conf 0.434) */
 
 
 
-undefined4 FUN_00417f60(int param_1)
+undefined4 bldg_get_max_energy(int param_1)
 
 
 
@@ -6188,12 +6188,12 @@ undefined4 FUN_00417f60(int param_1)
 
 }
 
-/* ===== FUN_00418010 @ 0x00418010 ===== */
+/* ===== bldg_set_energy @ 0x00418010 ===== */
 /* PS2 candidate: bldg_set_energy (conf 0.553) */
 
 
 
-float10 FUN_00418010(int param_1,float param_2)
+float10 bldg_set_energy(int param_1,float param_2)
 
 
 
@@ -6306,12 +6306,12 @@ void FUN_004180a0(int param_1,float param_2)
 
 }
 
-/* ===== FUN_00418170 @ 0x00418170 ===== */
+/* ===== bldg_get_max_energy @ 0x00418170 ===== */
 /* PS2 candidate: bldg_get_max_energy (conf 0.469) */
 
 
 
-float10 FUN_00418170(undefined4 param_1)
+float10 bldg_get_max_energy(undefined4 param_1)
 
 
 
@@ -10946,7 +10946,7 @@ LAB_0041ea62:
 
           }
 
-          FUN_00418010(*piVar6,param_1);
+          bldg_set_energy(*piVar6,param_1);
 
         }
 
@@ -11226,7 +11226,7 @@ LAB_0041ecb2:
 
         }
 
-        FUN_00418010(*piVar7,local_4);
+        bldg_set_energy(*piVar7,local_4);
 
       }
 
@@ -11342,7 +11342,7 @@ LAB_0041edda:
 
         }
 
-        FUN_00418010(*piVar7,param_2);
+        bldg_set_energy(*piVar7,param_2);
 
       }
 

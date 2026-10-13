@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (38 named) — decompiled, names from PS2 symbols
+ * 64 functions (41 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -422,12 +422,12 @@ void reaper_create_fake_reaper__FP6OBJECTP3P3Dfi(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_004c0810 @ 0x004C0810 ===== */
+/* ===== reaper_fire_sword__FP6OBJECT @ 0x004C0810 ===== */
 /* PS2 candidate: reaper_fire_sword__FP6OBJECT (conf 0.456) */
 
 
 
-void FUN_004c0810(float param_1)
+void reaper_fire_sword__FP6OBJECT(float param_1)
 
 
 
@@ -1072,14 +1072,14 @@ void reaper_tornado_create(int param_1,undefined4 *param_2,undefined4 param_3,un
 
 }
 
-/* ===== FUN_004c1170 @ 0x004C1170 ===== */
+/* ===== reaper_check_enter_jet_ski__FP6OBJECT @ 0x004C1170 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: reaper_check_enter_jet_ski__FP6OBJECT (conf 0.463) */
 
 
 
-void FUN_004c1170(int param_1)
+void reaper_check_enter_jet_ski__FP6OBJECT(int param_1)
 
 
 
@@ -4035,12 +4035,12 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_004c5810 @ 0x004C5810 ===== */
+/* ===== reaper_replenish_basepit_energy__FP6OBJECT @ 0x004C5810 ===== */
 /* PS2 candidate: reaper_replenish_basepit_energy__FP6OBJECT (conf 0.455) */
 
 
 
-void FUN_004c5810(float param_1)
+void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
 
 
@@ -4152,11 +4152,11 @@ void FUN_004c5810(float param_1)
 
           if (fVar8 <= (float10)0.0) {
 
-            fVar8 = (float10)FUN_00417f20(iVar1);
+            fVar8 = (float10)bldg_get_energy(iVar1);
 
             param_1 = (float)fVar8;
 
-            fVar8 = (float10)FUN_00418170(iVar1);
+            fVar8 = (float10)bldg_get_max_energy(iVar1);
 
             if (fVar8 < (float10)param_1 == (fVar8 == (float10)param_1)) {
 

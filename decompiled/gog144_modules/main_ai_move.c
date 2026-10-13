@@ -1655,9 +1655,11 @@ void main_ai_move_00402b90(int param_1,undefined4 param_2,undefined4 param_3)
 
   
 
-  iVar2 = FUN_004a1250(param_1,*(undefined4 *)(param_1 + 0x154),param_1 + 0xa0,param_3,param_2,5,
+  iVar2 = path_flyer_calculate
 
-                       &local_7c,local_78);
+                    (param_1,*(undefined4 *)(param_1 + 0x154),param_1 + 0xa0,param_3,param_2,5,
+
+                     &local_7c,local_78);
 
   if ((iVar2 == -1) || (local_7c == 0)) {
 

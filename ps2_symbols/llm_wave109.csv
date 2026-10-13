@@ -1,0 +1,18 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004c1170,FUN_004c1170,,reaper_check_enter_jet_ski__FP6OBJECT,0.9,promote-auto,"callee=['reaper_fire_spell__FP6OBJECTiP3P3DT0i', 'reaper_cast_cloak_firecircle', 'reaper_ability_sound'];c=0.463;mod="
+00465880,FUN_00465880,,reaper_update_xhair_status__FP6OBJECT,0.9,promote-auto,"callee=['reaper_spawn_ospec_1', 'reaper_00530bd0', 'reaper_0052e4a0'];c=0.376;mod="
+004f5c10,FUN_004f5c10,,smartie_board_player__FP6OBJECTT0i,0.9,promote-auto,"callee=['smartie_lock_to_player', 'comm_player_name4'];c=0.656;mod="
+004544f0,FUN_004544f0,,giftshop_exit__Fv,0.9,promote-auto,"callee=['base_partyhouse_exit', 'base_giftshop_exit'];c=0.585;mod="
+00418010,FUN_00418010,,bldg_set_energy,0.9,promote-auto,"callee=['reaperbase_bldg_from_object', 'meccbasepit_bldg_from_object'];c=0.553;mod="
+00418170,FUN_00418170,,bldg_get_max_energy,0.9,promote-auto,"callee=['reaperbase_bldg_from_object', 'meccbasepit_bldg_from_object'];c=0.539;mod="
+004beee0,FUN_004beee0,,reaper_fire_bow__FP6OBJECT,0.9,promote-auto,"callee=['reaper_00530bd0', 'reaper_0052e4a0'];c=0.53;mod="
+00417f60,FUN_00417f60,,bldg_get_max_energy,0.9,promote-auto,"callee=['reaperbase_bldg_from_object', 'meccbasepit_bldg_from_object'];c=0.519;mod="
+00465bf0,FUN_00465bf0,,reaper_collect_food,0.9,promote-auto,"callee=['reaper_00530bd0', 'reaper_0052e4a0'];c=0.513;mod="
+004c0810,FUN_004c0810,,reaper_fire_sword__FP6OBJECT,0.9,promote-auto,"callee=['reaper_00530bd0', 'reaper_0052e4a0'];c=0.456;mod="
+004c5810,FUN_004c5810,,reaper_replenish_basepit_energy__FP6OBJECT,0.9,promote-auto,"callee=['reaper_00530bd0', 'reaper_0052e4a0'];c=0.455;mod="
+00417f20,FUN_00417f20,,bldg_get_energy,0.9,promote-auto,"callee=['reaperbase_bldg_from_object', 'meccbasepit_bldg_from_object'];c=0.414;mod="
+004bdaa0,FUN_004bdaa0,,reaper_select_bow,0.9,promote-auto,"callee=['reaper_00530bd0', 'reaper_0052e4a0'];c=0.359;mod="
+004bdbf0,FUN_004bdbf0,,reaper_select_sword,0.9,promote-auto,"callee=['reaper_00530bd0', 'reaper_0052e4a0'];c=0.358;mod="
+004bfe50,FUN_004bfe50,,reaper_finish_hail__FP6OBJECT,0.9,promote-auto,"callee=['reaper_00530bd0', 'reaper_0052e4a0'];c=0.335;mod="
+004a1250,FUN_004a1250,,path_flyer_calculate,0.9,promote-auto,callee=['main_path_004a0f40'];c=0.692;mod=
+0053fe70,FUN_0053fe70,,MAP_MemGroupFixPtrs,0.9,promote-auto,callee=['MAP_SListFixPtrs'];c=0.672;mod=

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (51 named) — decompiled, names from PS2 symbols
+ * 145 functions (52 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -3154,12 +3154,12 @@ void fx_time_budget(void)
 
 }
 
-/* ===== FUN_004544f0 @ 0x004544F0 ===== */
+/* ===== giftshop_exit__Fv @ 0x004544F0 ===== */
 /* PS2 candidate: giftshop_exit__Fv (conf 0.426) */
 
 
 
-void FUN_004544f0(void)
+void giftshop_exit__Fv(void)
 
 
 
