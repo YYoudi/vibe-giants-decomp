@@ -1090,19 +1090,19 @@
   "len": 382
  },
  "0x0041A570": {
-  "name": "FUN_0041a570",
-  "named": false,
-  "len": 3085
+  "name": "objtype_setup_spell",
+  "named": true,
+  "len": 3092
  },
  "0x0041A7F0": {
-  "name": "FUN_0041a7f0",
-  "named": false,
-  "len": 1985
+  "name": "objtype_setup_combat",
+  "named": true,
+  "len": 1993
  },
  "0x0041A980": {
   "name": "FUN_0041a980",
   "named": false,
-  "len": 2797
+  "len": 2981
  },
  "0x0041AC40": {
   "name": "FUN_0041ac40",
@@ -7502,7 +7502,7 @@
  "0x004EE0F0": {
   "name": "FUN_004ee0f0",
   "named": false,
-  "len": 382
+  "len": 389
  },
  "0x004EE150": {
   "name": "FUN_004ee150",

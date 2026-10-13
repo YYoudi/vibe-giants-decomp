@@ -10475,7 +10475,7 @@ void FUN_004ee0f0(void)
 
     DAT_00632f0c = 0;
 
-    FUN_0041a570(0);
+    objtype_setup_spell(0);
 
   }
 

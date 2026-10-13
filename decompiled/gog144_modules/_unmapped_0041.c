@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (31 named) — decompiled, names from PS2 symbols
+ * 100 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -7962,8 +7962,8 @@ void commonbase_init_user(undefined4 param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0041a570 @ 0x0041A570 ===== */
-void FUN_0041a570(undefined4 param_1)
+/* ===== objtype_setup_spell @ 0x0041A570 ===== */
+void objtype_setup_spell(undefined4 param_1)
 
 
 
@@ -8153,8 +8153,8 @@ LAB_0041a787:
 
 }
 
-/* ===== FUN_0041a7f0 @ 0x0041A7F0 ===== */
-void FUN_0041a7f0(int param_1,float param_2)
+/* ===== objtype_setup_combat @ 0x0041A7F0 ===== */
+void objtype_setup_combat(int param_1,float param_2)
 
 
 
@@ -8337,7 +8337,7 @@ void FUN_0041a980(int param_1)
 
         *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffdffff | 0x800;
 
-        FUN_0041a7f0(param_1,0xd);
+        objtype_setup_combat(param_1,0xd);
 
       }
 
@@ -8349,31 +8349,31 @@ void FUN_0041a980(int param_1)
 
       *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffdffff | 0x800;
 
-      FUN_0041a7f0(param_1,0xd);
+      objtype_setup_combat(param_1,0xd);
 
-      FUN_0041a7f0(param_1,0xe);
+      objtype_setup_combat(param_1,0xe);
 
-      FUN_0041a7f0(param_1,0xf);
+      objtype_setup_combat(param_1,0xf);
 
-      FUN_0041a7f0(param_1,0x10);
+      objtype_setup_combat(param_1,0x10);
 
-      FUN_0041a7f0(param_1,0x11);
+      objtype_setup_combat(param_1,0x11);
 
-      FUN_0041a7f0(param_1,0x12);
+      objtype_setup_combat(param_1,0x12);
 
-      FUN_0041a7f0(param_1,0x13);
+      objtype_setup_combat(param_1,0x13);
 
-      FUN_0041a7f0(param_1,0x14);
+      objtype_setup_combat(param_1,0x14);
 
-      FUN_0041a7f0(param_1,0x15);
+      objtype_setup_combat(param_1,0x15);
 
-      FUN_0041a7f0(param_1,0x16);
+      objtype_setup_combat(param_1,0x16);
 
-      FUN_0041a7f0(param_1,0x17);
+      objtype_setup_combat(param_1,0x17);
 
-      FUN_0041a7f0(param_1,0x18);
+      objtype_setup_combat(param_1,0x18);
 
-      FUN_0041a7f0(param_1,0x19);
+      objtype_setup_combat(param_1,0x19);
 
       iVar1 = FUN_00521310(DAT_00632f18);
 
@@ -8415,7 +8415,7 @@ void FUN_0041a980(int param_1)
 
         *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffdffff | 0x800;
 
-        FUN_0041a7f0(param_1,8);
+        objtype_setup_combat(param_1,8);
 
       }
 
@@ -8427,21 +8427,21 @@ void FUN_0041a980(int param_1)
 
       *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffdffff | 0x800;
 
-      FUN_0041a7f0(param_1,8);
+      objtype_setup_combat(param_1,8);
 
-      FUN_0041a7f0(param_1,9);
+      objtype_setup_combat(param_1,9);
 
-      FUN_0041a7f0(param_1,10);
+      objtype_setup_combat(param_1,10);
 
-      FUN_0041a7f0(param_1,0xb);
+      objtype_setup_combat(param_1,0xb);
 
-      FUN_0041a7f0(param_1,0xc);
+      objtype_setup_combat(param_1,0xc);
 
-      FUN_0041a7f0(param_1,0xd);
+      objtype_setup_combat(param_1,0xd);
 
-      FUN_0041a7f0(param_1,0xe);
+      objtype_setup_combat(param_1,0xe);
 
-      FUN_0041a7f0(param_1,0xf);
+      objtype_setup_combat(param_1,0xf);
 
       iVar1 = FUN_00521310(DAT_00632f18);
 
