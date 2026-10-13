@@ -10669,7 +10669,7 @@ void face_target(int param_1,float *param_2,int param_3,float param_4,float para
 
     }
 
-    FUN_0053fb40(local_120,&local_12c,&local_138,(float)(fVar2 / fVar1));
+    vec_cross_normalize(local_120,&local_12c,&local_138,(float)(fVar2 / fVar1));
 
     quat_to_matrix__FP4QUATPf(local_88,local_120);
 
@@ -10768,7 +10768,7 @@ void align_with_ground(int param_1,float *param_2,float param_3)
 
   GEO_Vec3Normalize(&local_138,&local_138);
 
-  FUN_0053fb40(local_120,&local_138,&local_12c,local_13c);
+  vec_cross_normalize(local_120,&local_138,&local_12c,local_13c);
 
   quat_to_matrix__FP4QUATPf(local_cc,local_120);
 

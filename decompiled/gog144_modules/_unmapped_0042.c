@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (103 named) — decompiled, names from PS2 symbols
+ * 129 functions (104 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -120,8 +120,8 @@ bool FUN_00420090(uint param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00420180 @ 0x00420180 ===== */
-undefined4 FUN_00420180(int param_1,undefined4 param_2)
+/* ===== input_key_state_check @ 0x00420180 ===== */
+undefined4 input_key_state_check(int param_1,undefined4 param_2)
 
 
 
@@ -891,7 +891,7 @@ undefined4 FUN_00420890(void)
 
   if (bVar1 < 0x65) {
 
-    iVar2 = FUN_00420180(bVar1,iVar2);
+    iVar2 = input_key_state_check(bVar1,iVar2);
 
   }
 
@@ -964,7 +964,7 @@ undefined4 FUN_00420930(void)
 
   if (bVar1 < 0x65) {
 
-    iVar2 = FUN_00420180(bVar1,iVar2);
+    iVar2 = input_key_state_check(bVar1,iVar2);
 
   }
 
@@ -1037,7 +1037,7 @@ undefined4 FUN_004209d0(void)
 
   if (bVar1 < 0x65) {
 
-    iVar2 = FUN_00420180(bVar1,iVar2);
+    iVar2 = input_key_state_check(bVar1,iVar2);
 
   }
 
@@ -1110,7 +1110,7 @@ undefined4 FUN_00420a70(void)
 
   if (bVar1 < 0x65) {
 
-    iVar2 = FUN_00420180(bVar1,iVar2);
+    iVar2 = input_key_state_check(bVar1,iVar2);
 
   }
 

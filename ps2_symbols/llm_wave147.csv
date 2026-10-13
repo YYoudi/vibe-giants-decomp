@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00420180,FUN_00420180,,input_key_state_check,0.9,llm-w147,key-def tables 005845d0 + state arrays
+0053fb40,FUN_0053fb40,,vec_cross_normalize,0.9,llm-w147,cross+dot+sqrt callers fx_orient_ground
+00416a70,FUN_00416a70,,rect2d_normalize,0.9,llm-w147,min/max coord sort caller turret_find
+00407a10,FUN_00407a10,,army_order_entry_init,0.9,llm-w147,caller army_process_opcodes 0x110 stride fill
+0054eeec,FUN_0054eeec,,crt_strtod_mantissa,0.9,llm-w147,caller crt_strtod_core
+0049a950,FUN_0049a950,,geom_point_line_dist,0.9,llm-w147,caller ai_class_filter distsq+cross

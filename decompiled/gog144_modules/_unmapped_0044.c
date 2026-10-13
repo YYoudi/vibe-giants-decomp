@@ -8576,7 +8576,7 @@ void fx_orient_ground(int param_1,float param_2)
 
     GEO_Vec3Normalize(&local_354,&local_354);
 
-    FUN_0053fb40(local_320,&local_354,&local_32c,local_364);
+    vec_cross_normalize(local_320,&local_354,&local_32c,local_364);
 
     quat_to_matrix__FP4QUATPf(local_2cc,local_320);
 

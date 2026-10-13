@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (105 named) — decompiled, names from PS2 symbols
+ * 142 functions (106 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -11543,8 +11543,8 @@ undefined4 collide_line_bbox(float *param_1,float *param_2,float *param_3,float 
 
 }
 
-/* ===== FUN_0049a950 @ 0x0049A950 ===== */
-undefined4 FUN_0049a950(float *param_1,float *param_2,float *param_3,float param_4)
+/* ===== geom_point_line_dist @ 0x0049A950 ===== */
+undefined4 geom_point_line_dist(float *param_1,float *param_2,float *param_3,float param_4)
 
 
 

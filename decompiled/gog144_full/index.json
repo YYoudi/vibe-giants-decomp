@@ -267,7 +267,7 @@
  "0x00406DD0": {
   "name": "army_process_opcodes__FP6OBJECTPPUci",
   "named": true,
-  "len": 20474
+  "len": 20492
  },
  "0x004078F0": {
   "name": "army_create_platoon__FP6OBJECTPcT1",
@@ -275,9 +275,9 @@
   "len": 1516
  },
  "0x00407A10": {
-  "name": "FUN_00407a10",
-  "named": false,
-  "len": 1135
+  "name": "army_order_entry_init",
+  "named": true,
+  "len": 1144
  },
  "0x00407C30": {
   "name": "AudioGetSampleName__Fi",
@@ -850,9 +850,9 @@
   "len": 268
  },
  "0x00416A70": {
-  "name": "FUN_00416a70",
-  "named": false,
-  "len": 834
+  "name": "rect2d_normalize",
+  "named": true,
+  "len": 842
  },
  "0x004171D0": {
   "name": "hud_marker_draw",
@@ -1187,7 +1187,7 @@
  "0x0041F120": {
   "name": "hud_status_main",
   "named": true,
-  "len": 8837
+  "len": 8855
  },
  "0x0041F8F0": {
   "name": "FUN_0041f8f0",
@@ -1210,9 +1210,9 @@
   "len": 1033
  },
  "0x00420180": {
-  "name": "FUN_00420180",
-  "named": false,
-  "len": 792
+  "name": "input_key_state_check",
+  "named": true,
+  "len": 801
  },
  "0x00420260": {
   "name": "player_can_use_ammo__FP6OBJECTi",
@@ -1232,22 +1232,22 @@
  "0x00420890": {
   "name": "FUN_00420890",
   "named": false,
-  "len": 709
+  "len": 718
  },
  "0x00420930": {
   "name": "FUN_00420930",
   "named": false,
-  "len": 709
+  "len": 718
  },
  "0x004209D0": {
   "name": "FUN_004209d0",
   "named": false,
-  "len": 709
+  "len": 718
  },
  "0x00420A70": {
   "name": "FUN_00420a70",
   "named": false,
-  "len": 709
+  "len": 718
  },
  "0x00420B10": {
   "name": "mission_objective_entry_lookup",
@@ -2787,7 +2787,7 @@
  "0x00449200": {
   "name": "fx_orient_ground",
   "named": true,
-  "len": 2038
+  "len": 2045
  },
  "0x00449400": {
   "name": "fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii",
@@ -4017,7 +4017,7 @@
  "0x00475A40": {
   "name": "turret_find_team_at_point",
   "named": true,
-  "len": 1058
+  "len": 1066
  },
  "0x00476DC0": {
   "name": "AudioDataStreamStatus__Fv_2",
@@ -5280,9 +5280,9 @@
   "len": 4508
  },
  "0x0049A950": {
-  "name": "FUN_0049a950",
-  "named": false,
-  "len": 898
+  "name": "geom_point_line_dist",
+  "named": true,
+  "len": 906
  },
  "0x0049AA20": {
   "name": "sine_cosine_table_gen",
@@ -6042,12 +6042,12 @@
  "0x004AC4B0": {
   "name": "face_target",
   "named": true,
-  "len": 1480
+  "len": 1487
  },
  "0x004AC620": {
   "name": "align_with_ground",
   "named": true,
-  "len": 1375
+  "len": 1382
  },
  "0x004AC760": {
   "name": "kabuto_punch_check",
@@ -7572,7 +7572,7 @@
  "0x004EF070": {
   "name": "ai_class_filter",
   "named": true,
-  "len": 1455
+  "len": 1463
  },
  "0x004EF190": {
   "name": "FUN_004ef190",
@@ -11035,9 +11035,9 @@
   "len": 589
  },
  "0x0053FB40": {
-  "name": "FUN_0053fb40",
-  "named": false,
-  "len": 1046
+  "name": "vec_cross_normalize",
+  "named": true,
+  "len": 1053
  },
  "0x0053FC10": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6",
@@ -12687,7 +12687,7 @@
  "0x0054DE3D": {
   "name": "crt_strtod_core",
   "named": true,
-  "len": 9088
+  "len": 9095
  },
  "0x0054E310": {
   "name": "_strcmp",
@@ -12790,9 +12790,9 @@
   "len": 226
  },
  "0x0054EEEC": {
-  "name": "FUN_0054eeec",
-  "named": false,
-  "len": 1125
+  "name": "crt_strtod_mantissa",
+  "named": true,
+  "len": 1132
  },
  "0x0054EFB3": {
   "name": "crt_fltout",

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (78 named) — decompiled, names from PS2 symbols
+ * 105 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -4064,7 +4064,7 @@ LAB_00407550:
 
           *(float **)(iVar11 + 0x90) = pfVar15;
 
-          FUN_00407a10(param_1);
+          army_order_entry_init(param_1);
 
           pfVar18 = DAT_005841b4;
 
@@ -4424,7 +4424,7 @@ LAB_00407699:
 
           *(undefined4 *)(iVar11 + 0xc) = uVar5;
 
-          FUN_00407a10(param_1);
+          army_order_entry_init(param_1);
 
           pfVar18 = DAT_005841b4;
 
@@ -4565,8 +4565,8 @@ void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined
 
 }
 
-/* ===== FUN_00407a10 @ 0x00407A10 ===== */
-void FUN_00407a10(int param_1)
+/* ===== army_order_entry_init @ 0x00407A10 ===== */
+void army_order_entry_init(int param_1)
 
 
 

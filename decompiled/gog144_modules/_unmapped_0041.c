@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (80 named) — decompiled, names from PS2 symbols
+ * 100 functions (81 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -5295,12 +5295,12 @@ void FUN_00416a30(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00416a70 @ 0x00416A70 ===== */
+/* ===== rect2d_normalize @ 0x00416A70 ===== */
 undefined4
 
-FUN_00416a70(float param_1,float param_2,float param_3,float param_4,float param_5,float param_6,
+rect2d_normalize(float param_1,float param_2,float param_3,float param_4,float param_5,float param_6
 
-            float param_7,float param_8)
+                ,float param_7,float param_8)
 
 
 
@@ -11972,7 +11972,7 @@ LAB_0041f398:
 
         if (uVar9 == 100 || bVar1 < 100) {
 
-          iVar6 = FUN_00420180(uVar9,iVar6);
+          iVar6 = input_key_state_check(uVar9,iVar6);
 
 LAB_0041f57d:
 
@@ -12034,7 +12034,7 @@ LAB_0041f57d:
 
       if (bVar7 < 0x65) {
 
-        iVar6 = FUN_00420180(bVar7,iVar6);
+        iVar6 = input_key_state_check(bVar7,iVar6);
 
       }
 

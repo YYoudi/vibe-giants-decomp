@@ -2726,9 +2726,9 @@ int turret_find_team_at_point(float param_1,float param_2)
 
        ((iVar5 = hud_clipcode_calc(iVar1 + 0xa0,&param_1,&param_2), iVar6 = DAT_00632a88, iVar5 == 0
 
-        && (iVar5 = FUN_00416a70(param_1 - 6.0,param_2 - 6.0,param_1 + 6.0,param_2 + 6.0,fVar3,fVar4
+        && (iVar5 = rect2d_normalize(param_1 - 6.0,param_2 - 6.0,param_1 + 6.0,param_2 + 6.0,fVar3,
 
-                                 ,fVar3,fVar4), iVar6 = DAT_00632a88, iVar5 != 0)))) break;
+                                     fVar4,fVar3,fVar4), iVar6 = DAT_00632a88, iVar5 != 0)))) break;
 
     puVar2 = (undefined4 *)*puVar2;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (125 named) — decompiled, names from PS2 symbols
+ * 179 functions (126 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -20263,8 +20263,8 @@ void FUN_0053fad0(float *param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0053fb40 @ 0x0053FB40 ===== */
-void FUN_0053fb40(float *param_1,undefined4 param_2,float param_3,float param_4)
+/* ===== vec_cross_normalize @ 0x0053FB40 ===== */
+void vec_cross_normalize(float *param_1,undefined4 param_2,float param_3,float param_4)
 
 
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (263 named) — decompiled, names from PS2 symbols
+ * 351 functions (264 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -24853,7 +24853,7 @@ LAB_0054e1b5:
 
     }
 
-    FUN_0054eeec(local_60,local_8,&local_44);
+    crt_strtod_mantissa(local_60,local_8,&local_44);
 
     iVar4 = local_20;
 
@@ -26651,8 +26651,8 @@ void FUN_0054eebf(uint *param_1)
 
 }
 
-/* ===== FUN_0054eeec @ 0x0054EEEC ===== */
-void FUN_0054eeec(char *param_1,int param_2,uint *param_3)
+/* ===== crt_strtod_mantissa @ 0x0054EEEC ===== */
+void crt_strtod_mantissa(char *param_1,int param_2,uint *param_3)
 
 
 

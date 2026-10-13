@@ -11765,7 +11765,7 @@ ai_class_filter(undefined4 param_1,undefined4 param_2,int param_3,int param_4,by
 
         if (((param_5 & 1) == 0) && ((*(uint *)(iVar2 + 0x1c8) & 0x1008) == 0)) {
 
-          iVar2 = FUN_0049a950(param_1,param_2,iVar2 + 0xa0,*(undefined4 *)(iVar2 + 0x154));
+          iVar2 = geom_point_line_dist(param_1,param_2,iVar2 + 0xa0,*(undefined4 *)(iVar2 + 0x154));
 
         }
 
