@@ -5766,13 +5766,13 @@ LAB_00533cde:
 
         }
 
-        FUN_0041ae70(iVar4,(int)*(short *)(param_1 + 1),*(undefined4 *)(param_1 + 3),
+        objtype_setup_mecc(iVar4,(int)*(short *)(param_1 + 1),*(undefined4 *)(param_1 + 3),
 
-                     *(undefined1 *)(param_1 + 7),param_1 + 0xc,*(undefined4 *)(param_1 + 0x18),
+                           *(undefined1 *)(param_1 + 7),param_1 + 0xc,
 
-                     *(undefined4 *)(param_1 + 0x1c),*(undefined4 *)(param_1 + 0x20),
+                           *(undefined4 *)(param_1 + 0x18),*(undefined4 *)(param_1 + 0x1c),
 
-                     *(undefined4 *)(param_1 + 0x24));
+                           *(undefined4 *)(param_1 + 0x20),*(undefined4 *)(param_1 + 0x24));
 
         return;
 

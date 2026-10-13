@@ -512,7 +512,7 @@ LAB_004195d2:
 
     iVar8 = object_allocate_type(uVar7,0x80000000);
 
-    FUN_0041b390(iVar8,param_1);
+    objtype_setup_vimp(iVar8,param_1);
 
     iVar9 = reaper_0052e4a0(param_1);
 
@@ -634,7 +634,7 @@ LAB_004195d2:
 
   case 0x10:
 
-    iVar8 = FUN_0041e440(param_1);
+    iVar8 = objtype_setup_reaper(param_1);
 
     if (iVar8 != 0) {
 
@@ -652,7 +652,7 @@ LAB_004195d2:
 
     if (iVar8 != 0) {
 
-      FUN_0041e440(param_1);
+      objtype_setup_reaper(param_1);
 
       return;
 

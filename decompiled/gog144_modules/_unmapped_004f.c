@@ -647,7 +647,7 @@ LAB_004f418c:
 
 LAB_004f4192:
 
-        FUN_0041b390(param_1,iVar1);
+        objtype_setup_vimp(param_1,iVar1);
 
         return;
 
@@ -2537,7 +2537,7 @@ void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
          (*(int *)(param_3 + 0x274) != 0)) {
 
-        FUN_0041b390(param_3,*(int *)(param_3 + 0x274));
+        objtype_setup_vimp(param_3,*(int *)(param_3 + 0x274));
 
         return;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (10 named) — decompiled, names from PS2 symbols
+ * 53 functions (13 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -491,8 +491,8 @@ FUN_004654c0(undefined4 param_1,int param_2,int param_3,int param_4,float param_
 
 }
 
-/* ===== FUN_004656b0 @ 0x004656B0 ===== */
-void FUN_004656b0(undefined4 param_1,int param_2,float param_3,int param_4)
+/* ===== reaper_lock_user_3 @ 0x004656B0 ===== */
+void reaper_lock_user_3(undefined4 param_1,int param_2,float param_3,int param_4)
 
 
 
@@ -1807,8 +1807,8 @@ void hud_icon_add_2(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0046a710 @ 0x0046A710 ===== */
-uint FUN_0046a710(int param_1,undefined4 *param_2,int param_3)
+/* ===== reaper_lock_short_2 @ 0x0046A710 ===== */
+uint reaper_lock_short_2(int param_1,undefined4 *param_2,int param_3)
 
 
 
@@ -2796,8 +2796,8 @@ float10 FUN_0046b450(int param_1)
 
 }
 
-/* ===== FUN_0046b480 @ 0x0046B480 ===== */
-undefined4 FUN_0046b480(int param_1,undefined4 param_2,char param_3)
+/* ===== reaper_lock_user_4 @ 0x0046B480 ===== */
+undefined4 reaper_lock_user_4(int param_1,undefined4 param_2,char param_3)
 
 
 

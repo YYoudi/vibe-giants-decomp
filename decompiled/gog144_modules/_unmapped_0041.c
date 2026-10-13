@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (33 named) — decompiled, names from PS2 symbols
+ * 100 functions (36 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -7364,7 +7364,7 @@ LAB_00418bc3:
 
       iVar3 = object_allocate_type(uVar9,0x80000000);
 
-      FUN_0041b390(iVar3,fVar2);
+      objtype_setup_vimp(iVar3,fVar2);
 
       iVar5 = reaper_0052e4a0(fVar2);
 
@@ -8638,10 +8638,12 @@ LAB_0041ae31:
 
 }
 
-/* ===== FUN_0041ae70 @ 0x0041AE70 ===== */
-void FUN_0041ae70(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+/* ===== objtype_setup_mecc @ 0x0041AE70 ===== */
+void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
-                 undefined4 param_6,float param_7,undefined4 param_8,undefined4 param_9)
+                       undefined4 param_5,undefined4 param_6,float param_7,undefined4 param_8,
+
+                       undefined4 param_9)
 
 
 
@@ -8993,8 +8995,8 @@ LAB_0041b268:
 
 }
 
-/* ===== FUN_0041b390 @ 0x0041B390 ===== */
-void FUN_0041b390(int param_1,int param_2)
+/* ===== objtype_setup_vimp @ 0x0041B390 ===== */
+void objtype_setup_vimp(int param_1,int param_2)
 
 
 
@@ -10350,8 +10352,8 @@ switchD_0041c1e2_caseD_3d9:
 
 }
 
-/* ===== FUN_0041e440 @ 0x0041E440 ===== */
-int FUN_0041e440(float param_1)
+/* ===== objtype_setup_reaper @ 0x0041E440 ===== */
+int objtype_setup_reaper(float param_1)
 
 
 

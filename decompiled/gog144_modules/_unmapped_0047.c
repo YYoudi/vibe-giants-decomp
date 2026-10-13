@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (25 named) — decompiled, names from PS2 symbols
+ * 67 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -5934,8 +5934,8 @@ void FUN_0047c8c0(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_0047c900 @ 0x0047C900 ===== */
-void FUN_0047c900(int param_1)
+/* ===== reaper_lock_big @ 0x0047C900 ===== */
+void reaper_lock_big(int param_1)
 
 
 

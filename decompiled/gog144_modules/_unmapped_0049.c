@@ -2512,13 +2512,13 @@ LAB_00492458:
 
           uVar5 = FUN_004669a0(DAT_00632a88,0);
 
-          FUN_0046b480(uVar5,DAT_0059f288,1);
+          reaper_lock_user_4(uVar5,DAT_0059f288,1);
 
           if (DAT_0059f284 == 2) {
 
             uVar5 = FUN_004669a0(DAT_00632a88,1);
 
-            FUN_0046b480(uVar5,DAT_0059f28c,1);
+            reaper_lock_user_4(uVar5,DAT_0059f28c,1);
 
           }
 

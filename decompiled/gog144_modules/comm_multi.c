@@ -139,7 +139,7 @@ LAB_005333ee:
 
       }
 
-      FUN_0041b390(iVar4,iVar3);
+      objtype_setup_vimp(iVar4,iVar3);
 
       return;
 
