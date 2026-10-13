@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (94 named) — decompiled, names from PS2 symbols
+ * 129 functions (95 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -181,12 +181,12 @@ undefined4 FUN_00420180(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00420260 @ 0x00420260 ===== */
+/* ===== player_can_use_ammo__FP6OBJECTi @ 0x00420260 ===== */
 /* PS2 candidate: player_can_use_ammo__FP6OBJECTi (conf 0.408) */
 
 
 
-undefined4 FUN_00420260(void)
+undefined4 player_can_use_ammo__FP6OBJECTi(void)
 
 
 
@@ -8139,7 +8139,7 @@ int kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
 
       ObjectCalculateTransform(iVar1);
 
-      FUN_0049a1f0(iVar1);
+      PROJ_ObjectFinalize(iVar1);
 
       ObjectSetAnim(iVar1,*(undefined4 *)(param_1 + 0x10),0x20,0,0,0);
 

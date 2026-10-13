@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (25 named) — decompiled, names from PS2 symbols
+ * 39 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -2055,7 +2055,7 @@ undefined4 obj_follow_owner_refpt(int param_1)
 
   fVar5 = (float10)FUN_00518b70(param_1,0);
 
-  FUN_00403e60(param_1,(float)fVar5);
+  object_animate_process(param_1,(float)fVar5);
 
   ObjectCalculateTransform(param_1);
 
@@ -3128,7 +3128,7 @@ void FUN_004d4ae0(int param_1)
 
       object_set_location_p3d(iVar4,(undefined4 *)(param_1 + 0xa0));
 
-      fVar6 = (float10)FUN_004d5760(0x43b40000);
+      fVar6 = (float10)rndfloat(0x43b40000);
 
       *(float *)(iVar4 + 200) = (float)fVar6;
 
@@ -3340,12 +3340,12 @@ int rndintrange(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004d5760 @ 0x004D5760 ===== */
+/* ===== rndfloat @ 0x004D5760 ===== */
 /* PS2 candidate: rndfloat (conf 0.413) */
 
 
 
-float10 FUN_004d5760(float param_1)
+float10 rndfloat(float param_1)
 
 
 
@@ -3587,7 +3587,7 @@ void FUN_004d59d0(int param_1)
 
   fVar3 = (float10)FUN_00518b70(param_1,0);
 
-  FUN_00403e60(param_1,(float)fVar3);
+  object_animate_process(param_1,(float)fVar3);
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
 

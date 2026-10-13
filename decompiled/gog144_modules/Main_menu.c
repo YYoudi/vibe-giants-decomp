@@ -247,7 +247,7 @@ void main_menu_004832f0(void)
 
     fVar7 = (float10)FUN_00518b70(0,0);
 
-    FUN_00403e60(DAT_0059ee98,(float)fVar7);
+    object_animate_process(DAT_0059ee98,(float)fVar7);
 
     ObjectCalculateTransform(DAT_0059ee98);
 

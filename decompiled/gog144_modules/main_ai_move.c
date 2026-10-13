@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/ai_move
- * 15 functions (12 named) — decompiled, names from PS2 symbols
+ * 15 functions (13 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/ai_move.c(pp) (assert-string evidence)
  */
 
@@ -1261,7 +1261,7 @@ LAB_004026d0:
 
       else {
 
-        FUN_00402d60(param_1,iVar5,*(undefined4 *)(iVar4 + 0x14));
+        ai_chase_location__FP6OBJECTP3P3DUi(param_1,iVar5,*(undefined4 *)(iVar4 + 0x14));
 
       }
 
@@ -1801,12 +1801,12 @@ void main_ai_move_00402b90(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_00402d60 @ 0x00402D60 ===== */
+/* ===== ai_chase_location__FP6OBJECTP3P3DUi @ 0x00402D60 ===== */
 /* PS2 candidate: ai_chase_location__FP6OBJECTP3P3DUi (conf 0.418) */
 
 
 
-void FUN_00402d60(float param_1,undefined4 *param_2,uint param_3)
+void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint param_3)
 
 
 

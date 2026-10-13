@@ -82,7 +82,7 @@ void teammecc_create(int param_1,int param_2)
 
     }
 
-    iVar4 = FUN_00500fb0(param_1);
+    iVar4 = team_count(param_1);
 
     iVar2 = iVar4 + -1;
 

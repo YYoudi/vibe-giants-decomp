@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (88 named) — decompiled, names from PS2 symbols
+ * 142 functions (91 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -688,14 +688,14 @@ void showchat_mission_objective__Fi(void)
 
 }
 
-/* ===== FUN_00490fe0 @ 0x00490FE0 ===== */
+/* ===== scenerio_process__Fv @ 0x00490FE0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: scenerio_process__Fv (conf 0.403) */
 
 
 
-undefined4 FUN_00490fe0(void)
+undefined4 scenerio_process__Fv(void)
 
 
 
@@ -2407,7 +2407,7 @@ void save_mission_continuity__Fv(void)
 
     DAT_0059f2d0 = *(undefined4 *)(iVar1 + 0x60);
 
-    iVar2 = FUN_00500fb0(iVar2);
+    iVar2 = team_count(iVar2);
 
     DAT_0059f2c8 = iVar2 + -1;
 
@@ -2532,7 +2532,7 @@ LAB_00492458:
 
     else {
 
-      iVar1 = FUN_00500fb0(DAT_00632a88);
+      iVar1 = team_count(DAT_00632a88);
 
       iVar1 = iVar1 + -1;
 
@@ -2542,7 +2542,7 @@ LAB_00492458:
 
           FUN_00501000(DAT_00632a88);
 
-          iVar1 = FUN_00500fb0(DAT_00632a88);
+          iVar1 = team_count(DAT_00632a88);
 
         } while (iVar1 != 1);
 
@@ -8873,7 +8873,7 @@ LAB_0049841a:
 
   fVar5 = (float10)FUN_00518b70(DAT_00632a88,0);
 
-  FUN_00403e60(&DAT_0059f688,(float)fVar5);
+  object_animate_process(&DAT_0059f688,(float)fVar5);
 
   iVar3 = ObjIsMecc(DAT_00632a88);
 
@@ -8883,13 +8883,13 @@ LAB_0049841a:
 
   }
 
-  FUN_00403e60(&DAT_0059f688,0);
+  object_animate_process(&DAT_0059f688,0);
 
   if (DAT_0059f990 != 0) {
 
     fVar5 = (float10)FUN_00518b70(DAT_00632a88,0);
 
-    FUN_00403e60(&DAT_0059f380,(float)fVar5);
+    object_animate_process(&DAT_0059f380,(float)fVar5);
 
   }
 
@@ -9538,12 +9538,12 @@ undefined4 object_volume_sfx(int param_1)
 
 }
 
-/* ===== FUN_00498cf0 @ 0x00498CF0 ===== */
+/* ===== create_static_object @ 0x00498CF0 ===== */
 /* PS2 candidate: create_static_object (conf 0.417) */
 
 
 
-void FUN_00498cf0(int param_1,int param_2)
+void create_static_object(int param_1,int param_2)
 
 
 
@@ -9625,7 +9625,7 @@ void FUN_00498cf0(int param_1,int param_2)
 
        puVar2 != (undefined4 *)0x0)) {
 
-      fVar6 = (float10)FUN_004d5760(*puVar2);
+      fVar6 = (float10)rndfloat(*puVar2);
 
       *(float *)(iVar3 + 0x14) = (float)fVar6;
 
@@ -10918,12 +10918,12 @@ undefined4 FUN_0049a1d0(int param_1)
 
 }
 
-/* ===== FUN_0049a1f0 @ 0x0049A1F0 ===== */
+/* ===== PROJ_ObjectFinalize @ 0x0049A1F0 ===== */
 /* PS2 candidate: PROJ_ObjectFinalize (conf 0.401) */
 
 
 
-void FUN_0049a1f0(int param_1)
+void PROJ_ObjectFinalize(int param_1)
 
 
 
@@ -12469,7 +12469,7 @@ void FUN_0049bc50(int param_1)
 
   }
 
-  FUN_00403e60(param_1,0);
+  object_animate_process(param_1,0);
 
   return;
 
@@ -13671,7 +13671,7 @@ void lift_logic__FP6OBJECT(int param_1)
 
     fVar2 = (float10)FUN_00518b70(0,0);
 
-    FUN_00403e60(DAT_0059f99c,(float)fVar2);
+    object_animate_process(DAT_0059f99c,(float)fVar2);
 
     *(uint *)(DAT_0059f99c + 0xd8) = *(uint *)(DAT_0059f99c + 0xd8) | 0x10;
 

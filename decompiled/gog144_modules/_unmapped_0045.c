@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (86 named) — decompiled, names from PS2 symbols
+ * 145 functions (90 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -405,12 +405,12 @@ void FUN_00451270(float param_1,float param_2,float param_3,float *param_4)
 
 }
 
-/* ===== FUN_00451300 @ 0x00451300 ===== */
+/* ===== chase_value_time @ 0x00451300 ===== */
 /* PS2 candidate: chase_value_time (conf 0.408) */
 
 
 
-void FUN_00451300(float param_1,float param_2,float param_3,float param_4,float *param_5)
+void chase_value_time(float param_1,float param_2,float param_3,float param_4,float *param_5)
 
 
 
@@ -5721,14 +5721,14 @@ void hurt_pusher(int param_1,float param_2,float param_3,int param_4,int param_5
 
 }
 
-/* ===== FUN_00456d00 @ 0x00456D00 ===== */
+/* ===== playerobj_lookud @ 0x00456D00 ===== */
 /* PS2 candidate: playerobj_lookud (conf 0.412) */
 
 
 
-void FUN_00456d00(undefined4 param_1,undefined4 param_2,undefined4 param_3,float param_4,
+void playerobj_lookud(undefined4 param_1,undefined4 param_2,undefined4 param_3,float param_4,
 
-                 undefined4 param_5,undefined4 param_6)
+                     undefined4 param_5,undefined4 param_6)
 
 
 
@@ -9075,12 +9075,12 @@ LAB_00459ce0:
 
 }
 
-/* ===== FUN_00459f10 @ 0x00459F10 ===== */
+/* ===== inv_remove_item @ 0x00459F10 ===== */
 /* PS2 candidate: inv_remove_item (conf 0.404) */
 
 
 
-void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+void inv_remove_item(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
 
 
 
@@ -10875,14 +10875,14 @@ void reaper_lock_short_6(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_0045b7f0 @ 0x0045B7F0 ===== */
+/* ===== FootDust @ 0x0045B7F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: FootDust (conf 0.415) */
 
 
 
-void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
+void FootDust(float param_1,float param_2,float param_3,float param_4)
 
 
 
@@ -13723,7 +13723,7 @@ LAB_0045e789:
 
     fVar9 = (float10)FUN_00518b70(param_1,0);
 
-    FUN_00403e60(param_1,(float)fVar9);
+    object_animate_process(param_1,(float)fVar9);
 
   }
 

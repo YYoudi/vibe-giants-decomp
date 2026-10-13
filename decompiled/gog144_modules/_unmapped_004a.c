@@ -3992,7 +3992,7 @@ int piranha_make__FP6OBJECT(int param_1)
 
   do {
 
-    fVar6 = (float10)FUN_004d5760(0x43b40000);
+    fVar6 = (float10)rndfloat(0x43b40000);
 
     *(float *)(iVar5 + 200) = (float)fVar6;
 
@@ -9668,7 +9668,7 @@ int PROJ_Create2(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   }
 
-  FUN_0049a1f0(iVar2);
+  PROJ_ObjectFinalize(iVar2);
 
   iVar5 = local_130;
 
@@ -9791,7 +9791,7 @@ int PROJ_Create3(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
 
   }
 
-  FUN_0049a1f0(iVar3);
+  PROJ_ObjectFinalize(iVar3);
 
   if ((*(byte *)(param_2 + 1) & 1) != 0) {
 

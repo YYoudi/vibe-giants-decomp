@@ -1777,15 +1777,15 @@ int create_one_vimp_chunk
 
   *(undefined4 *)(iVar2 + 0xa8) = param_1[2];
 
-  fVar3 = (float10)FUN_004d5760(0x43b40000);
+  fVar3 = (float10)rndfloat(0x43b40000);
 
   *(float *)(iVar2 + 200) = (float)fVar3;
 
-  fVar3 = (float10)FUN_004d5760(0x43b40000);
+  fVar3 = (float10)rndfloat(0x43b40000);
 
   *(float *)(iVar2 + 0xcc) = (float)fVar3;
 
-  fVar3 = (float10)FUN_004d5760(0x43b40000);
+  fVar3 = (float10)rndfloat(0x43b40000);
 
   *(float *)(iVar2 + 0xd0) = (float)fVar3;
 
@@ -4556,7 +4556,7 @@ void drip_make(int param_1,float *param_2,float param_3,float param_4,float para
 
                                          *(undefined4 *)(DAT_00632ed8 + 0x238));
 
-          fVar8 = (float10)FUN_004d5760(0x43b40000);
+          fVar8 = (float10)rndfloat(0x43b40000);
 
           sine_cos_lookup((float)fVar8,&param_6,&param_7);
 

@@ -2995,7 +2995,7 @@ LAB_005319de:
 
         else {
 
-          FUN_00498cf0(*(undefined4 *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 5));
+          create_static_object(*(undefined4 *)(pcVar15 + 1),*(undefined4 *)(pcVar15 + 5));
 
           DAT_005e0304 = DAT_005e0304 + 9;
 
@@ -3249,7 +3249,7 @@ LAB_005319de:
 
           *(undefined4 *)(iVar4 + 0x130) = *(undefined4 *)(pcVar15 + 0x21);
 
-          thunk_FUN_0049a1f0(iVar4);
+          PROJ_ObjectFinalize(iVar4);
 
         }
 
@@ -5023,7 +5023,7 @@ void comm_cam_mode_menu(undefined4 *param_1)
 
       ObjectCalculateTransform(iVar1);
 
-      FUN_0049a1f0(iVar1);
+      PROJ_ObjectFinalize(iVar1);
 
     }
 

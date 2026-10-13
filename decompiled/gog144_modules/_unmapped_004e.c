@@ -1882,7 +1882,7 @@ LAB_004e2f05:
 
                 }
 
-                fVar8 = (float10)FUN_004d5760(0x45afc800);
+                fVar8 = (float10)rndfloat(0x45afc800);
 
                 local_10 = (float)(fVar8 + (float10)local_18);
 
@@ -4572,13 +4572,13 @@ void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int par
 
     if (iVar3 != 0) {
 
-      fVar4 = (float10)FUN_004d5760(0x43b40000,&local_68,&local_64);
+      fVar4 = (float10)rndfloat(0x43b40000,&local_68,&local_64);
 
       sine_cos_lookup((float)fVar4);
 
       local_64 = -local_64;
 
-      fVar4 = (float10)FUN_004d5760(0x43b40000,&local_7c,&local_80);
+      fVar4 = (float10)rndfloat(0x43b40000,&local_7c,&local_80);
 
       sine_cos_lookup((float)fVar4);
 
@@ -6329,7 +6329,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
   fVar6 = (float10)FUN_00518b70(iVar5,0);
 
-  FUN_00403e60(iVar5,(float)fVar6);
+  object_animate_process(iVar5,(float)fVar6);
 
   *(uint *)(iVar5 + 0xd8) = *(uint *)(iVar5 + 0xd8) | 0x40;
 
@@ -10467,7 +10467,7 @@ void FUN_004ee0f0(void)
 
       do {
 
-        FUN_00498cf0(iVar1,0);
+        create_static_object(iVar1,0);
 
         iVar1 = iVar1 + 1;
 
@@ -10952,7 +10952,7 @@ void reaper_logic(int param_1)
 
         fVar5 = (float10)FUN_00518b70(iVar2,0);
 
-        FUN_00403e60(iVar2,(float)fVar5);
+        object_animate_process(iVar2,(float)fVar5);
 
         object_apply_location(iVar2);
 

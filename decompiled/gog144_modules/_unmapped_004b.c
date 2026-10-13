@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (66 named) — decompiled, names from PS2 symbols
+ * 90 functions (67 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -637,14 +637,14 @@ char * AudioGetSampleName__Fi_2(int p0)
 
 }
 
-/* ===== FUN_004b4570 @ 0x004B4570 ===== */
+/* ===== reaperbase_init @ 0x004B4570 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: reaperbase_init (conf 0.413) */
 
 
 
-void FUN_004b4570(int param_1)
+void reaperbase_init(int param_1)
 
 
 
@@ -706,7 +706,7 @@ void FUN_004b4570(int param_1)
 
     ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
-    FUN_00403e60(iVar2,0x3d4ccccd);
+    object_animate_process(iVar2,0x3d4ccccd);
 
     piVar6 = &DAT_005606c0;
 
@@ -5457,7 +5457,7 @@ void FUN_004b89d0(int param_1,float *param_2,float *param_3)
 
     if (*param_2 != *param_3) {
 
-      FUN_00451300(0x3dcccccd,0x41200000,0x42480000,*param_2,param_3);
+      chase_value_time(0x3dcccccd,0x41200000,0x42480000,*param_2,param_3);
 
       *param_2 = *param_3;
 
@@ -5473,7 +5473,7 @@ void FUN_004b89d0(int param_1,float *param_2,float *param_3)
 
     if (fVar1 != *param_3) {
 
-      FUN_00451300(0x3f800000,0x41200000,0x42480000,fVar1,param_3);
+      chase_value_time(0x3f800000,0x41200000,0x42480000,fVar1,param_3);
 
       *param_2 = *param_3;
 
@@ -8265,7 +8265,7 @@ void FUN_004ba990(int param_1,float param_2,undefined4 param_3)
 
       if (iVar3 != 0) {
 
-        FUN_00456d00(iVar1,param_1,0xd,param_3,0,0);
+        playerobj_lookud(iVar1,param_1,0xd,param_3,0,0);
 
       }
 
@@ -9136,7 +9136,7 @@ void reaper_walkrun_go__FP6OBJECT(int param_1)
 
     fVar20 = (float10)FUN_00518b70(param_1,0);
 
-    FUN_00403e60(param_1,(float)fVar20);
+    object_animate_process(param_1,(float)fVar20);
 
     if ((**(byte **)(param_1 + 0x104) & 0x40) == 0) {
 
@@ -9360,7 +9360,7 @@ LAB_004bd2f0:
 
     fVar20 = (float10)FUN_00518b70(param_1,0);
 
-    FUN_00403e60(param_1,(float)fVar20);
+    object_animate_process(param_1,(float)fVar20);
 
 LAB_004bd2e5:
 
@@ -10463,7 +10463,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
   iVar7 = 0;
 
-  FUN_00403e60(uVar4,0);
+  object_animate_process(uVar4,0);
 
   local_a8 = 0;
 

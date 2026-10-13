@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (49 named) — decompiled, names from PS2 symbols
+ * 87 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -1187,12 +1187,12 @@ void FUN_00500f80(int param_1)
 
 }
 
-/* ===== FUN_00500fb0 @ 0x00500FB0 ===== */
+/* ===== team_count @ 0x00500FB0 ===== */
 /* PS2 candidate: team_count (conf 0.411) */
 
 
 
-int FUN_00500fb0(int param_1)
+int team_count(int param_1)
 
 
 
@@ -1607,7 +1607,7 @@ void FUN_00501670(int param_1)
 
   if ((param_1 != 0) && (*(int *)(param_1 + 4) == 2)) {
 
-    iVar3 = FUN_00500fb0(param_1);
+    iVar3 = team_count(param_1);
 
     if (iVar3 + -1 < 4) {
 
@@ -4200,7 +4200,7 @@ void teammecc_set_slave_goal__FP6OBJECTi(int param_1,int param_2)
 
             ((*(uint *)(param_1 + 0xe0) & 0x2000000) == 0)) {
 
-      fVar6 = (float10)FUN_004d5760(0x3fc00000);
+      fVar6 = (float10)rndfloat(0x3fc00000);
 
       *(float *)(iVar3 + 0x34) = (float)fVar6;
 
@@ -4408,7 +4408,7 @@ LAB_00503c4b:
 
       if (((*(uint *)(param_1 + 0xdc) & 0x8000000) != 0) && (*(float *)(iVar3 + 0x28) == 0.0)) {
 
-        fVar6 = (float10)FUN_004d5760(0x3e99999a);
+        fVar6 = (float10)rndfloat(0x3e99999a);
 
         *(float *)(iVar3 + 0x28) = (float)fVar6;
 
@@ -9135,7 +9135,7 @@ void ripper_control__FP6OBJECT(float param_1)
 
       }
 
-      fVar5 = (float10)FUN_004d5760(0x42960000);
+      fVar5 = (float10)rndfloat(0x42960000);
 
       fVar6 = (float10)dirfcalcp3d__FP3P3DT0(iVar4 + 0xa0,iVar2 + 0xa0);
 
@@ -11644,7 +11644,7 @@ LAB_0050d17f:
 
         if (fVar7 < 40.0) {
 
-          fVar13 = (float10)FUN_004d5760(0x43b40000);
+          fVar13 = (float10)rndfloat(0x43b40000);
 
           main_ai_move_00401910(iVar9,(float)fVar13);
 
@@ -11670,9 +11670,9 @@ LAB_0050e1a4:
 
       }
 
-      fVar13 = (float10)FUN_004d5760(0x43b40000);
+      fVar13 = (float10)rndfloat(0x43b40000);
 
-      fVar12 = (float10)FUN_004d5760(0x41f00000);
+      fVar12 = (float10)rndfloat(0x41f00000);
 
       sine_cos_lookup((float)fVar13,&local_18,&local_14);
 
@@ -13658,7 +13658,7 @@ LAB_0050e133:
 
        (iVar6 = collide_bbox_bbox(iVar9 + 0x27c,(int)pfVar1[1] + 0x27c), iVar6 != 0)) {
 
-      FUN_00456d00(pfVar1[1],0,1,0x40800000,0,0);
+      playerobj_lookud(pfVar1[1],0,1,0x40800000,0,0);
 
       *(undefined4 *)(iVar9 + 0xe4) = 0x2e;
 
@@ -14020,11 +14020,11 @@ LAB_0050e4da:
 
         *(float *)(iVar6 + 0x130) = (float)fVar13;
 
-        fVar13 = (float10)FUN_004d5760(0x43b40000);
+        fVar13 = (float10)rndfloat(0x43b40000);
 
         *(float *)(iVar6 + 200) = (float)fVar13;
 
-        fVar13 = (float10)FUN_004d5760(0x40000000);
+        fVar13 = (float10)rndfloat(0x40000000);
 
         *(float *)(iVar6 + 0x14) = (float)fVar13;
 

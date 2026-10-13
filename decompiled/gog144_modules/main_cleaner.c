@@ -179,11 +179,11 @@ void cleaner_go_obj(void)
 
             iVar9 = object_allocate_type(0x2ad,0x80000000);
 
-            fVar12 = (float10)FUN_004d5760(*(undefined4 *)(DAT_00632ed8 + 0x538));
+            fVar12 = (float10)rndfloat(*(undefined4 *)(DAT_00632ed8 + 0x538));
 
             fVar4 = (float)(fVar12 + (float10)(fVar6 * fVar3 * 0.5));
 
-            fVar12 = (float10)FUN_004d5760(0x43b40000);
+            fVar12 = (float10)rndfloat(0x43b40000);
 
             sine_cos_lookup((float)fVar12,&local_14,&local_10);
 
@@ -193,7 +193,7 @@ void cleaner_go_obj(void)
 
             *(undefined4 *)(iVar9 + 0xa8) = *(undefined4 *)(iVar7 + 0xa8);
 
-            fVar12 = (float10)FUN_004d5760(0x43b40000);
+            fVar12 = (float10)rndfloat(0x43b40000);
 
             *(float *)(iVar9 + 200) = (float)fVar12;
 
@@ -217,7 +217,7 @@ void cleaner_go_obj(void)
 
             *(undefined4 *)(iVar9 + 0xfc) = 0x3f800000;
 
-            fVar12 = (float10)FUN_004d5760(0x3f800000);
+            fVar12 = (float10)rndfloat(0x3f800000);
 
             *(float *)(iVar9 + 0xec) = (float)fVar12;
 

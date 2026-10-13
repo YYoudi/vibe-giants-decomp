@@ -7264,7 +7264,7 @@ undefined4 object_spawn_class5(int param_1,float param_2)
 
     ObjectSetAnim(iVar3,1,0x20,0,0,0);
 
-    FUN_00403e60(iVar3,0x3d4ccccd);
+    object_animate_process(iVar3,0x3d4ccccd);
 
     if (param_1 == 2) {
 
@@ -8053,7 +8053,7 @@ void objtype_setup_spell(undefined4 param_1)
 
       ObjectSetAnim(iVar1,1,0x20,0,0,0);
 
-      FUN_00403e60(iVar1,0x3d4ccccd);
+      object_animate_process(iVar1,0x3d4ccccd);
 
       if (*(int *)(iVar1 + 8) != 0) {
 
@@ -8331,7 +8331,7 @@ void objtype_team_assign(int param_1)
 
     }
 
-    FUN_00407c40(param_1);
+    meccbase_init(param_1);
 
     iVar1 = dialog_level_is_base();
 
@@ -8409,7 +8409,7 @@ void objtype_team_assign(int param_1)
 
   if (iVar1 != 0) {
 
-    FUN_004b4570(param_1);
+    reaperbase_init(param_1);
 
     iVar1 = dialog_level_is_base();
 
@@ -8578,7 +8578,7 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   ObjectSetAnim(iVar4,1,0x20,0,0,0);
 
-  FUN_00403e60(iVar4,0x3d4ccccd);
+  object_animate_process(iVar4,0x3d4ccccd);
 
   puVar2[4] = *(float *)(iVar3 + 0xa0) - *(float *)(iVar4 + 0xa0);
 
@@ -8632,13 +8632,13 @@ LAB_0041ae31:
 
   if (iVar4 == 0) {
 
-    FUN_004b4570(iVar3);
+    reaperbase_init(iVar3);
 
   }
 
   else {
 
-    FUN_00407c40();
+    meccbase_init();
 
   }
 
@@ -9104,7 +9104,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
-    FUN_00403e60(iVar2,0x3d4ccccd);
+    object_animate_process(iVar2,0x3d4ccccd);
 
     if (*(int *)(iVar2 + 8) != 0) {
 

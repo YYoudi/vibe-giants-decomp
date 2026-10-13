@@ -3542,7 +3542,7 @@ undefined4 FLK_FlickRender(int param_1)
 
       if ((puVar10[-0xd] != 0) || (*(int *)(param_1 + 0xa8) != 0)) {
 
-        FUN_00403e60(puVar10 + -0xc,DAT_006328e0);
+        object_animate_process(puVar10 + -0xc,DAT_006328e0);
 
       }
 
@@ -3576,13 +3576,13 @@ undefined4 FLK_FlickRender(int param_1)
 
       ObjectSetAnim(iVar12,*(undefined4 *)(iVar12 + 0x10),0x34,1,0);
 
-      FUN_00403e60(iVar12,DAT_006328e0);
+      object_animate_process(iVar12,DAT_006328e0);
 
     }
 
     else if ((*(int *)(iVar12 + 4) == 0x65) || (*(int *)(iVar12 + 4) == 0x66)) {
 
-      FUN_00403e60(iVar12,DAT_006328e0);
+      object_animate_process(iVar12,DAT_006328e0);
 
     }
 
@@ -3602,13 +3602,13 @@ undefined4 FLK_FlickRender(int param_1)
 
         ObjectSetAnim(iVar12,*(undefined4 *)(iVar12 + 0x10),0x34,1);
 
-        FUN_00403e60(iVar12,DAT_006328e0);
+        object_animate_process(iVar12,DAT_006328e0);
 
       }
 
       else if ((*(int *)(iVar12 + 4) == 0x65) || (*(int *)(iVar12 + 4) == 0x66)) {
 
-        FUN_00403e60();
+        object_animate_process();
 
       }
 
@@ -4116,7 +4116,7 @@ LAB_00444d25:
 
   if (*(int *)(param_1 + 0xc4) == 0) {
 
-    FUN_004cd5d0();
+    lens_effects_process__Fv();
 
   }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (52 named) — decompiled, names from PS2 symbols
+ * 64 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -7123,14 +7123,14 @@ void controlShutdown__Fv(void)
 
 }
 
-/* ===== FUN_004cc900 @ 0x004CC900 ===== */
+/* ===== ShopMenuSlotCollision__Fi @ 0x004CC900 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: ShopMenuSlotCollision__Fi (conf 0.41) */
 
 
 
-void FUN_004cc900(void)
+void ShopMenuSlotCollision__Fi(void)
 
 
 
@@ -7730,7 +7730,9 @@ LAB_004ccbc0:
 
           if ((((DAT_00633104 != 0) && (iVar2 = ObjIsMecc(DAT_00632a88), iVar2 != 0)) &&
 
-              (iVar2 = FUN_00420260(), iVar2 == iVar6)) && (iVar2 = FUN_00420260(), -1 < iVar2)) {
+              (iVar2 = player_can_use_ammo__FP6OBJECTi(), iVar2 == iVar6)) &&
+
+             (iVar2 = player_can_use_ammo__FP6OBJECTi(), -1 < iVar2)) {
 
             iVar3 = *piVar7 * 0x58;
 
@@ -7980,14 +7982,14 @@ LAB_004ccbc0:
 
 }
 
-/* ===== FUN_004cd5d0 @ 0x004CD5D0 ===== */
+/* ===== lens_effects_process__Fv @ 0x004CD5D0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: lens_effects_process__Fv (conf 0.401) */
 
 
 
-void FUN_004cd5d0(void)
+void lens_effects_process__Fv(void)
 
 
 
@@ -8775,7 +8777,7 @@ undefined4 dev_debug_flags(void)
 
     alpha_queue_push_2();
 
-    FUN_004cd5d0();
+    lens_effects_process__Fv();
 
     main_drawwatr_00431700();
 
@@ -8887,7 +8889,7 @@ undefined4 dev_debug_flags(void)
 
     if (DAT_00632fac == 0) {
 
-      FUN_004cc900();
+      ShopMenuSlotCollision__Fi();
 
     }
 
@@ -9551,7 +9553,7 @@ LAB_004cec2d:
 
       fVar15 = (float10)FUN_00518b70(fVar5,0);
 
-      FUN_00403e60(fVar5,(float)fVar15);
+      object_animate_process(fVar5,(float)fVar15);
 
       ObjectCalculateTransform(fVar5);
 
@@ -10641,7 +10643,7 @@ LAB_004d0a9e:
 
           else {
 
-            fVar15 = (float10)FUN_004d5760(0x43b40000);
+            fVar15 = (float10)rndfloat(0x43b40000);
 
             pfVar12[1] = (float)fVar15;
 
@@ -10659,7 +10661,7 @@ LAB_004d0a9e:
 
         else {
 
-          fVar15 = (float10)FUN_004d5760(0x43b40000);
+          fVar15 = (float10)rndfloat(0x43b40000);
 
           pfVar12[1] = (float)fVar15;
 
@@ -10951,7 +10953,7 @@ LAB_004d10ab:
 
         if (iVar11 != 0) {
 
-          FUN_00456d00(iVar11,0,1,*(undefined4 *)(DAT_00632ed8 + 0x3f0),0,0);
+          playerobj_lookud(iVar11,0,1,*(undefined4 *)(DAT_00632ed8 + 0x3f0),0,0);
 
         }
 

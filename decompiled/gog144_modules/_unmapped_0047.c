@@ -1184,7 +1184,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     if ((DAT_00633028 == 0) || (DAT_0063302c < 4)) {
 
-      iVar2 = FUN_00490fe0();
+      iVar2 = scenerio_process__Fv();
 
       if (iVar2 != 0) {
 
@@ -1455,7 +1455,7 @@ void game_loop_run(int param_1)
 
                   fVar4 = (float10)FUN_00518b70(iVar3,0);
 
-                  FUN_00403e60(iVar3,(float)fVar4);
+                  object_animate_process(iVar3,(float)fVar4);
 
                   object_apply_location(iVar3);
 
@@ -1493,7 +1493,7 @@ void game_loop_run(int param_1)
 
               if ((*(uint *)(puVar1[3] + 0xd8) & 0x8000) == 0) {
 
-                FUN_0049a1f0(puVar1[3]);
+                PROJ_ObjectFinalize(puVar1[3]);
 
               }
 
@@ -4468,13 +4468,13 @@ LAB_00478c22:
 
     if ((cVar6 == '\x10') || (cVar6 == '\x18')) {
 
-      fVar8 = (float10)FUN_004d5760(0x43b40000,&local_3c,&local_38);
+      fVar8 = (float10)rndfloat(0x43b40000,&local_3c,&local_38);
 
       sine_cos_lookup((float)fVar8);
 
       local_38 = -local_38;
 
-      fVar8 = (float10)FUN_004d5760(0x43b40000,&param_3,&param_6);
+      fVar8 = (float10)rndfloat(0x43b40000,&param_3,&param_6);
 
       sine_cos_lookup((float)fVar8);
 

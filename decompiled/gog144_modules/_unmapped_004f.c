@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (33 named) — decompiled, names from PS2 symbols
+ * 48 functions (34 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -2164,12 +2164,12 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
 }
 
-/* ===== FUN_004f6090 @ 0x004F6090 ===== */
+/* ===== meccbaseitem_shot @ 0x004F6090 ===== */
 /* PS2 candidate: meccbaseitem_shot (conf 0.407) */
 
 
 
-int FUN_004f6090(int param_1,undefined4 param_2)
+int meccbaseitem_shot(int param_1,undefined4 param_2)
 
 
 
@@ -3544,7 +3544,7 @@ int make_particle__FP6OBJECT(float param_1)
 
   if ((float10)0.0 < fVar5) {
 
-    fVar5 = (float10)FUN_004d5760((float)fVar5);
+    fVar5 = (float10)rndfloat((float)fVar5);
 
     *(float *)(iVar4 + 0x14) = (float)fVar5;
 
@@ -3940,7 +3940,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
     fVar8 = (float10)FUN_00518b70(param_1,0);
 
-    FUN_00403e60(param_1,(float)fVar8);
+    object_animate_process(param_1,(float)fVar8);
 
     ObjectCalculateTransform(param_1);
 
@@ -4238,7 +4238,7 @@ void sound_play_pair(undefined4 param_1,float param_2,int param_3,undefined4 par
 
     *(undefined4 *)(param_3 + 0xe4) = 0x14;
 
-    FUN_0040b4b0(param_3);
+    blood_from_object(param_3);
 
     *(uint *)(param_3 + 0x1c8) = *(uint *)(param_3 + 0x1c8) & 0xfffdffff;
 

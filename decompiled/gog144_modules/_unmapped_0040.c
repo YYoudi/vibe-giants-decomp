@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (67 named) — decompiled, names from PS2 symbols
+ * 105 functions (71 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -1874,12 +1874,12 @@ void ObjectUpdateSpeedDist(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00403e60 @ 0x00403E60 ===== */
+/* ===== object_animate_process @ 0x00403E60 ===== */
 /* PS2 candidate: object_animate_process (conf 0.407) */
 
 
 
-void FUN_00403e60(int *param_1,float param_2)
+void object_animate_process(int *param_1,float param_2)
 
 
 
@@ -3154,7 +3154,7 @@ LAB_00404e2f:
 
     }
 
-    FUN_0045b7f0(param_1,uVar9,1,(float)fVar8);
+    FootDust(param_1,uVar9,1,(float)fVar8);
 
     fVar8 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,param_1 + 0xa0);
 
@@ -4665,14 +4665,14 @@ undefined ** AudioGetSampleName__Fi(int p0)
 
 }
 
-/* ===== FUN_00407c40 @ 0x00407C40 ===== */
+/* ===== meccbase_init @ 0x00407C40 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: meccbase_init (conf 0.412) */
 
 
 
-void FUN_00407c40(int param_1)
+void meccbase_init(int param_1)
 
 
 
@@ -4730,7 +4730,7 @@ void FUN_00407c40(int param_1)
 
     ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
-    FUN_00403e60(iVar2,0x3d4ccccd);
+    object_animate_process(iVar2,0x3d4ccccd);
 
     piVar6 = &DAT_00554570;
 
@@ -7993,14 +7993,16 @@ void FUN_0040b300(void)
 
 }
 
-/* ===== FUN_0040b350 @ 0x0040B350 ===== */
+/* ===== blood_from_point @ 0x0040B350 ===== */
 /* PS2 candidate: blood_from_point (conf 0.41) */
 
 
 
-void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+void blood_from_point(int *param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
-                 undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9)
+                     undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
+
+                     undefined4 param_9)
 
 
 
@@ -8108,7 +8110,7 @@ void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 
       piVar3[0xb] = (int)(*(float *)(DAT_00632ed8 + 0x2a8) + *(float *)(DAT_00632ed8 + 0x2a4));
 
-      fVar5 = (float10)FUN_004d5760(0x3f800000);
+      fVar5 = (float10)rndfloat(0x3f800000);
 
       piVar3[6] = (int)(float)fVar5;
 
@@ -8124,12 +8126,12 @@ void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 
 }
 
-/* ===== FUN_0040b4b0 @ 0x0040B4B0 ===== */
+/* ===== blood_from_object @ 0x0040B4B0 ===== */
 /* PS2 candidate: blood_from_object (conf 0.406) */
 
 
 
-void FUN_0040b4b0(int param_1)
+void blood_from_object(int param_1)
 
 
 
@@ -8251,7 +8253,7 @@ void FUN_0040b4b0(int param_1)
 
       piVar6[0xb] = (int)(*(float *)(DAT_00632ed8 + 0x2a8) + *(float *)(DAT_00632ed8 + 0x2a4));
 
-      fVar8 = (float10)FUN_004d5760(0x3f800000);
+      fVar8 = (float10)rndfloat(0x3f800000);
 
       piVar6[6] = (int)(float)fVar8;
 
@@ -8396,7 +8398,7 @@ LAB_0040b74d:
 
       if ((float10)fVar3 - fVar9 <= (float10)0.0) {
 
-        fVar9 = (float10)FUN_004d5760(0x3e800000);
+        fVar9 = (float10)rndfloat(0x3e800000);
 
         piVar4[0xc] = (int)(float)fVar9;
 
@@ -8466,7 +8468,7 @@ LAB_0040b74d:
 
         piVar7[0xb] = piVar4[0xb];
 
-        fVar9 = (float10)FUN_004d5760(0x3f800000);
+        fVar9 = (float10)rndfloat(0x3f800000);
 
         piVar7[6] = (int)(float)fVar9;
 
@@ -8720,7 +8722,7 @@ void FUN_0040bb40(undefined4 param_1,int param_2)
 
   }
 
-  FUN_0040b4b0(param_1);
+  blood_from_object(param_1);
 
   return;
 
@@ -8841,13 +8843,13 @@ void wound_process_single__FP5WOUND(int param_1)
 
     }
 
-    FUN_0040b350(local_7c,iVar2,uVar3,(float)(extraout_ST0 - (float10)*(float *)(iVar1 + 0x56c)),
+    blood_from_point(local_7c,iVar2,uVar3,(float)(extraout_ST0 - (float10)*(float *)(iVar1 + 0x56c))
 
-                 (float)((float10)*(float *)(iVar1 + 0x56c) + extraout_ST0),
+                     ,(float)((float10)*(float *)(iVar1 + 0x56c) + extraout_ST0),
 
-                 *(undefined4 *)(iVar1 + 0x570),*(undefined4 *)(iVar1 + 0x574),
+                     *(undefined4 *)(iVar1 + 0x570),*(undefined4 *)(iVar1 + 0x574),
 
-                 *(undefined4 *)(iVar1 + 0x578),*(undefined4 *)(iVar1 + 0x57c));
+                     *(undefined4 *)(iVar1 + 0x578),*(undefined4 *)(iVar1 + 0x57c));
 
   }
 
@@ -10715,7 +10717,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   else if (local_4c != DAT_005842e0) {
 
-    FUN_00451300(0x3dcccccd,0x41200000,0x42480000,local_4c,&DAT_005842e0);
+    chase_value_time(0x3dcccccd,0x41200000,0x42480000,local_4c,&DAT_005842e0);
 
     local_4c = DAT_005842e0;
 
@@ -10723,19 +10725,19 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   if (param_2 != _DAT_005842e4) {
 
-    FUN_00451300(0x3dcccccd,0x41200000,0x42480000,param_2,&DAT_005842e4);
+    chase_value_time(0x3dcccccd,0x41200000,0x42480000,param_2,&DAT_005842e4);
 
   }
 
   if (local_48 != _DAT_005842e8) {
 
-    FUN_00451300(0x3dcccccd,0x41200000,0x42480000,local_48,&DAT_005842e8);
+    chase_value_time(0x3dcccccd,0x41200000,0x42480000,local_48,&DAT_005842e8);
 
   }
 
   if (local_44 != _DAT_005842ec) {
 
-    FUN_00451300(0x3dcccccd,0x41200000,0x42480000,local_44,&DAT_005842ec);
+    chase_value_time(0x3dcccccd,0x41200000,0x42480000,local_44,&DAT_005842ec);
 
   }
 

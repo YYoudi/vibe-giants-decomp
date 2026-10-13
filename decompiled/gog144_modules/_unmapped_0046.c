@@ -975,7 +975,7 @@ LAB_00465d3b:
 
       *(undefined4 *)(DAT_00632ed8 + 0x2b8) = 0x3f4ccccd;
 
-      FUN_0040b350(local_c,0x1e,0x32,param_2,param_1,0x41200000,0x42340000,0,0x41700000);
+      blood_from_point(local_c,0x1e,0x32,param_2,param_1,0x41200000,0x42340000,0,0x41700000);
 
       *(undefined4 *)(DAT_00632ed8 + 0x2b4) = uVar5;
 
@@ -1370,7 +1370,7 @@ void obj_skinning_eval(int param_1)
 
     FUN_0053dca0(local_154,param_1 + 0x44);
 
-    fVar10 = (float10)FUN_004d5760(0x40c90fdb);
+    fVar10 = (float10)rndfloat(0x40c90fdb);
 
     FUN_0053dd90(local_110,(float)fVar10);
 
@@ -1884,7 +1884,7 @@ uint reaper_lock_short_2(int param_1,undefined4 *param_2,int param_3)
 
     }
 
-    FUN_00403e60(param_1,0);
+    object_animate_process(param_1,0);
 
     uVar5 = 1;
 
@@ -2585,7 +2585,7 @@ void kbos_init(int param_1)
 
       *(undefined4 *)(*(int *)(param_1 + 0x104) + 0x10) = 0x3e800000;
 
-      fVar7 = (float10)FUN_004d5760(0x43b40000);
+      fVar7 = (float10)rndfloat(0x43b40000);
 
       *(float *)(param_1 + 200) = (float)fVar7;
 
@@ -2760,7 +2760,7 @@ void Init__7PS2Game(undefined4 param_1,undefined4 param_2)
 
   ObjectCalculateTransform(param_1);
 
-  FUN_0049a1f0(param_1);
+  PROJ_ObjectFinalize(param_1);
 
   kbos_init(param_1);
 
@@ -2902,7 +2902,7 @@ int object_spawn_init_usage(undefined4 param_1,undefined4 param_2,undefined4 *pa
 
   ObjectCalculateTransform(iVar1);
 
-  FUN_0049a1f0(iVar1);
+  PROJ_ObjectFinalize(iVar1);
 
   kbos_init(iVar1);
 
@@ -2955,7 +2955,7 @@ int kbos_offspring_create(undefined4 param_1)
 
     ObjectCalculateTransform(iVar1);
 
-    FUN_0049a1f0(iVar1);
+    PROJ_ObjectFinalize(iVar1);
 
     kbos_init(iVar1);
 
@@ -3270,7 +3270,7 @@ undefined4 FUN_0046baf0(undefined4 param_1,int param_2,char param_3,byte param_4
 
       ObjectSetAnim(param_2,piVar4[iVar3 + 8],0x21,0,0,0);
 
-      FUN_00403e60(param_2,0);
+      object_animate_process(param_2,0);
 
     }
 
@@ -3485,9 +3485,9 @@ undefined4 FUN_0046bc60(float param_1,int *param_2)
 
         *(undefined4 *)(DAT_00632ed8 + 0x2b8) = 0x3f666666;
 
-        FUN_0040b350(iVar6 + 0xa0,0x3c,0x3c,0,0x43b40000,0x40a00000,0x41f00000,0x41200000,0x42200000
+        blood_from_point(iVar6 + 0xa0,0x3c,0x3c,0,0x43b40000,0x40a00000,0x41f00000,0x41200000,
 
-                    );
+                         0x42200000);
 
         *(float *)(DAT_00632ed8 + 0x2b4) = param_1;
 
@@ -3774,7 +3774,7 @@ int object_0046e830(int param_1,int param_2)
 
   ObjectCalculateTransform(iVar2);
 
-  FUN_0049a1f0(iVar2);
+  PROJ_ObjectFinalize(iVar2);
 
   puVar4 = *(undefined4 **)(iVar2 + 0x100);
 

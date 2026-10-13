@@ -12359,7 +12359,7 @@ LAB_0048f768:
 
       fVar12 = (float10)FUN_00518b70(iVar9,0);
 
-      FUN_00403e60(iVar9,(float)fVar12);
+      object_animate_process(iVar9,(float)fVar12);
 
       object_apply_location(iVar9);
 

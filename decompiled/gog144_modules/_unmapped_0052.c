@@ -14388,7 +14388,7 @@ LAB_0052fabe:
 
         ObjectCalculateTransform(iVar5);
 
-        FUN_0049a1f0(iVar5);
+        PROJ_ObjectFinalize(iVar5);
 
         _DAT_00632b60 = 0;
 
