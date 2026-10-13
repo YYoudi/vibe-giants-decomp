@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (20 named) — decompiled, names from PS2 symbols
+ * 53 functions (21 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -77,10 +77,10 @@ void FUN_00465070(int param_1)
 
 }
 
-/* ===== FUN_004650d0 @ 0x004650D0 ===== */
-int FUN_004650d0(undefined4 param_1,float *param_2,float *param_3,float param_4,float param_5,
+/* ===== ai_spread_select @ 0x004650D0 ===== */
+int ai_spread_select(undefined4 param_1,float *param_2,float *param_3,float param_4,float param_5,
 
-                float *param_6)
+                    float *param_6)
 
 
 

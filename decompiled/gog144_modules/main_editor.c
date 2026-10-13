@@ -2787,7 +2787,7 @@ LAB_004384e0:
 
     }
 
-    FUN_00543bc3(iVar3,iVar4,0x24,&LAB_004386a0);
+    crt_qsort_helper(iVar3,iVar4,0x24,&LAB_004386a0);
 
   }
 
@@ -3393,7 +3393,7 @@ void main_editor_00440d90(void)
 
       }
 
-      FUN_00543bc3(iVar6,iVar5,4,&LAB_00441400);
+      crt_qsort_helper(iVar6,iVar5,4,&LAB_00441400);
 
       iVar7 = 0;
 

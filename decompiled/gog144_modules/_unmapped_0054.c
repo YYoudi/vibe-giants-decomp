@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (238 named) — decompiled, names from PS2 symbols
+ * 351 functions (239 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -4393,8 +4393,8 @@ undefined4 crt_dosmaperr_user(LPCSTR param_1)
 
 }
 
-/* ===== FUN_00543bc3 @ 0x00543BC3 ===== */
-void FUN_00543bc3(uint *param_1,uint *param_2,uint param_3,code *param_4)
+/* ===== crt_qsort_helper @ 0x00543BC3 ===== */
+void crt_qsort_helper(uint *param_1,uint *param_2,uint param_3,code *param_4)
 
 
 

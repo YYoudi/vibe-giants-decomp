@@ -16816,7 +16816,7 @@ void render_view_xform(void)
 
     }
 
-    FUN_00543bc3(piVar11,iVar13,0xc,&LAB_0042d860);
+    crt_qsort_helper(piVar11,iVar13,0xc,&LAB_0042d860);
 
     if (0 < iVar13) {
 

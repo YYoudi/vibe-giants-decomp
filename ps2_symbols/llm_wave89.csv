@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00442ad0,FUN_00442AD0,,obj_scale_pulse,0.9,llm-read60,
+004171d0,FUN_004171D0,,hud_marker_draw,0.9,llm-read60,
+00543bc3,FUN_00543BC3,,crt_qsort_helper,0.9,llm-read60,
+004650d0,FUN_004650D0,,ai_spread_select,0.9,llm-read60,
