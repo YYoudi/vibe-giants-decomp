@@ -3825,7 +3825,7 @@
   "len": 354
  },
  "0x0045ECE0": {
-  "name": "cspec_0045ece0",
+  "name": "reaper_ai_main",
   "named": true,
   "len": 131343
  },
@@ -4585,9 +4585,9 @@
   "len": 1357
  },
  "0x00479430": {
-  "name": "cspec_00479430",
+  "name": "mecc_ai_main",
   "named": true,
-  "len": 52882
+  "len": 52880
  },
  "0x0047BDF0": {
   "name": "reset_scale__FP6OBJECT",
@@ -7385,9 +7385,9 @@
   "len": 230
  },
  "0x004C2D20": {
-  "name": "cspec_004c2d20",
+  "name": "reaper_spellcast_ai_main",
   "named": true,
-  "len": 61544
+  "len": 61554
  },
  "0x004C4870": {
   "name": "cspec_004c4870",
@@ -7985,9 +7985,9 @@
   "len": 605
  },
  "0x004D8D60": {
-  "name": "cspec_004d8d60",
+  "name": "rpman_ai_main",
   "named": true,
-  "len": 153143
+  "len": 153142
  },
  "0x004E1030": {
   "name": "rpman_goto_last_loc__FP6OBJECTi",
@@ -8545,9 +8545,9 @@
   "len": 2388
  },
  "0x004EF730": {
-  "name": "cspec_004ef730",
+  "name": "smartie_ai_main",
   "named": true,
-  "len": 89012
+  "len": 89013
  },
  "0x004F38F0": {
   "name": "smartie_handle_reaper_grab__FP6OBJECTP14ObjSpecSmartie",

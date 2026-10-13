@@ -14739,8 +14739,8 @@ LAB_004ef5b0:
 
 }
 
-/* ===== cspec_004ef730 @ 0x004EF730 ===== */
-void cspec_004ef730(int param_1)
+/* ===== smartie_ai_main @ 0x004EF730 ===== */
+void smartie_ai_main(int param_1)
 
 
 

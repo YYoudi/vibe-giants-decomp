@@ -5971,12 +5971,12 @@ void mecc_init__FP6OBJECT(int param_1)
 
 }
 
-/* ===== cspec_00479430 @ 0x00479430 ===== */
+/* ===== mecc_ai_main @ 0x00479430 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_00479430(int param_1)
+void mecc_ai_main(int param_1)
 
 
 

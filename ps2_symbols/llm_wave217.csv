@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0045ece0,cspec_0045ece0,,reaper_ai_main,0.9,cspec-w217,131KB row1: reaper_lock_short_4+reaper_state_machine+reaper_ospec_init callees
+00479430,cspec_00479430,,mecc_ai_main,0.9,cspec-w217,52KB row2: mecc_disable_personal_shield/mecc_exit_bush/mecc_smoking_fx_update
+004c2d20,cspec_004c2d20,,reaper_spellcast_ai_main,0.9,cspec-w217,61KB row3: reaper_create_fake_reaper+fxb_cloak/fxb_firecircle spells
+004ef730,cspec_004ef730,,smartie_ai_main,0.9,cspec-w217,89KB row18: smartie_attach_to_base+base_slot_gets+reaperbase_bldg
+004d8d60,cspec_004d8d60,,rpman_ai_main,0.9,cspec-w217,153KB row51 (biggest fn in game): rpman_sniper/rapid_fire/goto_last_loc/setup_firing

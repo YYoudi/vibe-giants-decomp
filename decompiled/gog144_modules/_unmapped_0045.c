@@ -16180,12 +16180,12 @@ float10 FUN_0045eca0(int param_1)
 
 }
 
-/* ===== cspec_0045ece0 @ 0x0045ECE0 ===== */
+/* ===== reaper_ai_main @ 0x0045ECE0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_0045ece0(int param_1)
+void reaper_ai_main(int param_1)
 
 
 

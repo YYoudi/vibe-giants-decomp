@@ -3101,12 +3101,12 @@ void cspec_004c2d00(int param_1)
 
 }
 
-/* ===== cspec_004c2d20 @ 0x004C2D20 ===== */
+/* ===== reaper_spellcast_ai_main @ 0x004C2D20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_004c2d20(float param_1)
+void reaper_spellcast_ai_main(float param_1)
 
 
 

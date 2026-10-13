@@ -8356,12 +8356,12 @@ void ai_anim_play(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
 }
 
-/* ===== cspec_004d8d60 @ 0x004D8D60 ===== */
+/* ===== rpman_ai_main @ 0x004D8D60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_004d8d60(int *param_1)
+void rpman_ai_main(int *param_1)
 
 
 
