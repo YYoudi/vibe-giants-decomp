@@ -13311,7 +13311,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
               FUN_00519a50();
 
-              FUN_00471780();
+              hud_audio_dlog_screen();
 
               if (DAT_005dda80 != 0) {
 

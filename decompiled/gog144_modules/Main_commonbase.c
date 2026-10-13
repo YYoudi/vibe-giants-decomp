@@ -742,7 +742,7 @@ LAB_004195d2:
 
     if ((DAT_00632a88 != 0) && (fVar4 == *(float *)(DAT_00632a88 + 0x188))) {
 
-      FUN_004753c0();
+      dlog_text_render_screen();
 
       DAT_00632bac = 1;
 

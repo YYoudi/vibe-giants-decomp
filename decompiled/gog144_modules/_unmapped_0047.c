@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (16 named) — decompiled, names from PS2 symbols
+ * 67 functions (25 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -478,8 +478,8 @@ LAB_00470793:
 
 }
 
-/* ===== FUN_00470e40 @ 0x00470E40 ===== */
-undefined4 FUN_00470e40(undefined4 *param_1)
+/* ===== sound_obj_event @ 0x00470E40 ===== */
+undefined4 sound_obj_event(undefined4 *param_1)
 
 
 
@@ -555,8 +555,8 @@ undefined4 FUN_00470e40(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00471130 @ 0x00471130 ===== */
-void FUN_00471130(void)
+/* ===== water_draw_dump @ 0x00471130 ===== */
+void water_draw_dump(void)
 
 
 
@@ -1049,8 +1049,8 @@ void FUN_00471420(void)
 
 }
 
-/* ===== FUN_00471780 @ 0x00471780 ===== */
-undefined4 FUN_00471780(void)
+/* ===== hud_audio_dlog_screen @ 0x00471780 ===== */
+undefined4 hud_audio_dlog_screen(void)
 
 
 
@@ -1136,7 +1136,7 @@ undefined4 FUN_00471780(void)
 
     FUN_00471420(puVar8,puVar9,fVar10);
 
-    FUN_00471130();
+    water_draw_dump();
 
     FUN_00516220(auStack_50);
 
@@ -1646,10 +1646,8 @@ void main_makewrld_00473570
 
 }
 
-/* ===== main/makewrld_00473e10 @ 0x00473E10 ===== */
-void main_makewrld_00473e10
-
-               (int param_1,int param_2,float *param_3,float *param_4,undefined4 param_5)
+/* ===== grid_point_user @ 0x00473E10 ===== */
+void grid_point_user(int param_1,int param_2,float *param_3,float *param_4,undefined4 param_5)
 
 
 
@@ -1922,7 +1920,7 @@ undefined4 landscape_bump_check(int param_1,int param_2,int param_3,int param_4,
 
     }
 
-    main_makewrld_00473e10(param_1,param_2,local_18,local_c,*(byte *)(iVar3 + 0xc) & 7);
+    grid_point_user(param_1,param_2,local_18,local_c,*(byte *)(iVar3 + 0xc) & 7);
 
     switch(*(byte *)(iVar3 + 0xc) & 7) {
 
@@ -2175,7 +2173,7 @@ void FUN_00475350(int param_1)
 
     }
 
-    FUN_004753c0();
+    dlog_text_render_screen();
 
     DAT_00632bac = 1;
 
@@ -2185,12 +2183,12 @@ void FUN_00475350(int param_1)
 
 }
 
-/* ===== FUN_004753c0 @ 0x004753C0 ===== */
+/* ===== dlog_text_render_screen @ 0x004753C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004753c0(void)
+void dlog_text_render_screen(void)
 
 
 
@@ -2432,8 +2430,8 @@ void FUN_004753c0(void)
 
 }
 
-/* ===== FUN_00475700 @ 0x00475700 ===== */
-void FUN_00475700(int param_1)
+/* ===== dlog_text_pop_screen @ 0x00475700 ===== */
+void dlog_text_pop_screen(int param_1)
 
 
 
@@ -3454,8 +3452,8 @@ void FUN_00477340(int param_1)
 
 }
 
-/* ===== FUN_004775e0 @ 0x004775E0 ===== */
-void FUN_004775e0(int param_1)
+/* ===== marker_path_create @ 0x004775E0 ===== */
+void marker_path_create(int param_1)
 
 
 
@@ -4612,18 +4610,18 @@ switchD_00478e15_caseD_5:
 
   }
 
-  FUN_00478f60(fVar1,uVar2);
+  sound_player_sequence(fVar1,uVar2);
 
   return iVar4;
 
 }
 
-/* ===== FUN_00478f60 @ 0x00478F60 ===== */
+/* ===== sound_player_sequence @ 0x00478F60 ===== */
 /* PS2 candidate: mecc_play_fire_snd__FP6OBJECTi (conf 0.515) */
 
 
 
-void FUN_00478f60(int param_1,undefined4 param_2)
+void sound_player_sequence(int param_1,undefined4 param_2)
 
 
 
@@ -5709,8 +5707,8 @@ void FUN_0047c440(int param_1)
 
 }
 
-/* ===== FUN_0047c680 @ 0x0047C680 ===== */
-void FUN_0047c680(int param_1,int param_2,float param_3)
+/* ===== sound_player_voice2 @ 0x0047C680 ===== */
+void sound_player_voice2(int param_1,int param_2,float param_3)
 
 
 
@@ -5808,8 +5806,8 @@ void FUN_0047c680(int param_1,int param_2,float param_3)
 
 }
 
-/* ===== FUN_0047c7a0 @ 0x0047C7A0 ===== */
-void FUN_0047c7a0(int param_1,undefined4 param_2,undefined4 *param_3,int param_4)
+/* ===== object_spawn_class @ 0x0047C7A0 ===== */
+void object_spawn_class(int param_1,undefined4 param_2,undefined4 *param_3,int param_4)
 
 
 
@@ -6582,7 +6580,7 @@ LAB_0047cdb1:
 
       *(int *)(iVar5 + 0x274) = iVar7;
 
-      FUN_00478f60(iVar7,*(undefined1 *)(pfVar3 + 5));
+      sound_player_sequence(iVar7,*(undefined1 *)(pfVar3 + 5));
 
       return;
 
@@ -7460,7 +7458,7 @@ LAB_0047d6f9:
 
 LAB_0047de23:
 
-    FUN_0047c7a0(iVar7,param_4[3],param_4,fVar10);
+    object_spawn_class(iVar7,param_4[3],param_4,fVar10);
 
     break;
 

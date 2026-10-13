@@ -5512,7 +5512,7 @@ void FUN_004ff470(void)
 
   if (DAT_00632ba8 != 0) {
 
-    FUN_00475700(1);
+    dlog_text_pop_screen(1);
 
   }
 

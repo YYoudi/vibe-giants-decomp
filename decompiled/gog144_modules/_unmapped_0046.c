@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (4 named) — decompiled, names from PS2 symbols
+ * 53 functions (10 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00465030 @ 0x00465030 ===== */
-void FUN_00465030(undefined4 param_1,undefined4 param_2)
+/* ===== sound_player_voice @ 0x00465030 ===== */
+void sound_player_voice(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -223,13 +223,13 @@ int FUN_00465230(float param_1,undefined4 param_2,float *param_3,int *param_4,ui
 
       do {
 
-        fVar9 = (float10)FUN_00465350(piVar7[6],
+        fVar9 = (float10)anim_dump_related(piVar7[6],
 
-                                      (float)piVar7[1] * (float)param_4 +
+                                           (float)piVar7[1] * (float)param_4 +
 
-                                      (1.0 - (float)param_4) * (float)piVar7[2],local_c,fVar6,
+                                           (1.0 - (float)param_4) * (float)piVar7[2],local_c,fVar6,
 
-                                      param_2,(float)piVar7[1]);
+                                           param_2,(float)piVar7[1]);
 
         if ((iVar8 < 0) || (fVar9 < (float10)param_1)) {
 
@@ -267,10 +267,10 @@ int FUN_00465230(float param_1,undefined4 param_2,float *param_3,int *param_4,ui
 
 }
 
-/* ===== FUN_00465350 @ 0x00465350 ===== */
-float10 FUN_00465350(int param_1,undefined4 param_2,float *param_3,int param_4,int param_5,
+/* ===== anim_dump_related @ 0x00465350 ===== */
+float10 anim_dump_related(int param_1,undefined4 param_2,float *param_3,int param_4,int param_5,
 
-                    float param_6)
+                         float param_6)
 
 
 
@@ -427,11 +427,13 @@ FUN_004654c0(undefined4 param_1,int param_2,int param_3,int param_4,float param_
 
         do {
 
-          fVar5 = (float10)FUN_00465350(*(undefined4 *)(iVar4 + 0x18),
+          fVar5 = (float10)anim_dump_related(*(undefined4 *)(iVar4 + 0x18),
 
-                                        (float)param_4 * param_5 + (1.0 - param_5) * (float)param_3,
+                                             (float)param_4 * param_5 +
 
-                                        &local_c,param_1,param_2,0);
+                                             (1.0 - param_5) * (float)param_3,&local_c,param_1,
+
+                                             param_2,0);
 
           if (*param_6 < 0.0) {
 
@@ -1111,8 +1113,8 @@ LAB_00465d63:
 
 }
 
-/* ===== FUN_00465f10 @ 0x00465F10 ===== */
-void FUN_00465f10(int param_1,undefined4 param_2,int param_3,int *param_4)
+/* ===== camera_ref_anode @ 0x00465F10 ===== */
+void camera_ref_anode(int param_1,undefined4 param_2,int param_3,int *param_4)
 
 
 
@@ -1752,8 +1754,8 @@ void FUN_0046a480(int param_1,float param_2)
 
 }
 
-/* ===== FUN_0046a4e0 @ 0x0046A4E0 ===== */
-void FUN_0046a4e0(int param_1,int param_2)
+/* ===== hud_icon_add_2 @ 0x0046A4E0 ===== */
+void hud_icon_add_2(int param_1,int param_2)
 
 
 
@@ -2873,8 +2875,8 @@ undefined4 FUN_0046b480(int param_1,undefined4 param_2,char param_3)
 
 }
 
-/* ===== FUN_0046b560 @ 0x0046B560 ===== */
-int FUN_0046b560(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
+/* ===== object_spawn_init_usage @ 0x0046B560 ===== */
+int object_spawn_init_usage(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
 
 
 
@@ -4052,8 +4054,8 @@ void FUN_0046f050(int param_1)
 
 }
 
-/* ===== FUN_0046f2e0 @ 0x0046F2E0 ===== */
-void FUN_0046f2e0(int param_1,int param_2)
+/* ===== sound_sequence_alloc @ 0x0046F2E0 ===== */
+void sound_sequence_alloc(int param_1,int param_2)
 
 
 

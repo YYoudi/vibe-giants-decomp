@@ -7737,7 +7737,7 @@ LAB_00506418:
 
                   if ((iVar14 == 0) || (iVar14 = FUN_0052c5c0(), iVar14 != 0)) {
 
-                    FUN_0047c7a0(param_1,uVar13,&local_5c,0);
+                    object_spawn_class(param_1,uVar13,&local_5c,0);
 
                   }
 
@@ -11256,7 +11256,7 @@ void FUN_0050c2e0(int param_1)
 
       }
 
-      FUN_004753c0();
+      dlog_text_render_screen();
 
       if (DAT_005dc89c != 0) {
 

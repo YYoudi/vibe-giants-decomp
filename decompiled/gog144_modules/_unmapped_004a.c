@@ -4794,7 +4794,7 @@ LAB_004a5802:
 
        ((*(int *)(DAT_00632a88 + 0x1e0) != 3 || ((*(uint *)(DAT_00632a88 + 0xe0) & 0x100) == 0)))) {
 
-      FUN_004753c0();
+      dlog_text_render_screen();
 
     }
 
