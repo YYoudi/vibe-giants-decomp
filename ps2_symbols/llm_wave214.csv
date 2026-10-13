@@ -1,0 +1,3 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00500490,FUN_00500490,,mission_screen_update_frame,0.9,runtime-w214,BP hit menu: arg=DAT_00632900 ret 0x51CBD1; sets screen dims + calls named icon-bounds fns
+0051c9f0,FUN_0051C9F0,,video_options_apply,0.9,runtime-w214,caller of 0x500490; GFX GetCaps upcalls + screen dims + near plane init

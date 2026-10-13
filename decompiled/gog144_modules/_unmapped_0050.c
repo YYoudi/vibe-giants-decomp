@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (74 named) — decompiled, names from PS2 symbols
+ * 87 functions (75 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -394,8 +394,8 @@ void mission_screen_slot_bounds_merge(int param_1)
 
 }
 
-/* ===== FUN_00500490 @ 0x00500490 ===== */
-void FUN_00500490(int *param_1)
+/* ===== mission_screen_update_frame @ 0x00500490 ===== */
+void mission_screen_update_frame(int *param_1)
 
 
 

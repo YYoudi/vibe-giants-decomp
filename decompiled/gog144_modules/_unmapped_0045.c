@@ -1492,7 +1492,7 @@ void options_menu_apply(undefined4 param_1)
 
 LAB_004521d9:
 
-  FUN_0051C9F0();
+  video_options_apply();
 
   win95_text_0051b160();
 

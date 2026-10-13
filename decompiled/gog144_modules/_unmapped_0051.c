@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (168 named) — decompiled, names from PS2 symbols
+ * 186 functions (169 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -12915,12 +12915,12 @@ LAB_0051c979:
 
 }
 
-/* ===== FUN_0051C9F0 @ 0x0051C9F0 ===== */
+/* ===== video_options_apply @ 0x0051C9F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_0051C9F0(void)
+void video_options_apply(void)
 
 
 
@@ -13024,7 +13024,7 @@ LAB_0051cb4e:
 
   uVar1 = AudioDataStreamStatus__Fv_3();
 
-  FUN_00500490(uVar1);
+  mission_screen_update_frame(uVar1);
 
   dlog_frame_reset();
 
@@ -13317,7 +13317,7 @@ undefined4 CheckSaveGameName__Fv(void)
 
             game_options_verify();
 
-            FUN_0051C9F0();
+            video_options_apply();
 
           }
 
@@ -14991,7 +14991,7 @@ LAB_0051e1b3:
 
 LAB_0051e225:
 
-  FUN_0051C9F0();
+  video_options_apply();
 
   (**(code **)(DAT_00656420 + 0x70))(DAT_00656420,&uStack_68);
 

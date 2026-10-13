@@ -2997,7 +2997,7 @@
  "0x00452130": {
   "name": "options_menu_apply",
   "named": true,
-  "len": 1314
+  "len": 1321
  },
  "0x00452200": {
   "name": "fx_arc_math",
@@ -7870,9 +7870,9 @@
   "len": 1585
  },
  "0x00500490": {
-  "name": "FUN_00500490",
-  "named": false,
-  "len": 699
+  "name": "mission_screen_update_frame",
+  "named": true,
+  "len": 714
  },
  "0x00500520": {
   "name": "main_status_00500520",
@@ -9235,14 +9235,14 @@
   "len": 1606
  },
  "0x0051C9F0": {
-  "name": "FUN_0051C9F0",
-  "named": false,
-  "len": 1908
+  "name": "video_options_apply",
+  "named": true,
+  "len": 1930
  },
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
   "named": true,
-  "len": 6152
+  "len": 6159
  },
  "0x0051D0D0": {
   "name": "gfx_d3d_0051d0d0",
@@ -9252,7 +9252,7 @@
  "0x0051DC20": {
   "name": "startup_options_init",
   "named": true,
-  "len": 10731
+  "len": 10738
  },
  "0x0051E670": {
   "name": "Audio3DTestToneUpdate__Fv_4",
