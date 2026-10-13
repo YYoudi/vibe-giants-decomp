@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (50 named) — decompiled, names from PS2 symbols
+ * 142 functions (51 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -1717,8 +1717,8 @@ LAB_00491cd0:
 
 }
 
-/* ===== FUN_00491d30 @ 0x00491D30 ===== */
-void FUN_00491d30(int param_1)
+/* ===== camera_attach_path_object @ 0x00491D30 ===== */
+void camera_attach_path_object(int param_1)
 
 
 
@@ -3248,7 +3248,7 @@ LAB_00492a3a:
 
         if (iVar14 != 0) {
 
-          FUN_00491d30(DAT_0059f278);
+          camera_attach_path_object(DAT_0059f278);
 
         }
 
@@ -5245,7 +5245,7 @@ LAB_004947ed:
 
       FUN_004909f0();
 
-      FUN_00491d30(*(undefined4 *)(DAT_00632a88 + 4));
+      camera_attach_path_object(*(undefined4 *)(DAT_00632a88 + 4));
 
       if (DAT_00632f08 == 0) {
 

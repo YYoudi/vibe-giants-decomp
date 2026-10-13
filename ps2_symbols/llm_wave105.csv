@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00449ce0,FUN_00449ce0,,fx_processOpCodes,0.9,llm-w105,
+004444c0,FUN_004444c0,,FLK_FlickRender,0.9,llm-w105,
+004ceaa0,FUN_004ceaa0,,smartie_move,0.9,llm-w105,
+00443c50,FUN_00443c50,,flick_slot_lookup_handle,0.9,llm-w105,
+00491d30,FUN_00491d30,,camera_attach_path_object,0.9,llm-w105,

@@ -7705,7 +7705,7 @@ void FUN_00489ca0(void)
 
     scenerio_start_index__Fi(DAT_006329d8);
 
-    FUN_00491d30(*(undefined4 *)(DAT_00632a88 + 4));
+    camera_attach_path_object(*(undefined4 *)(DAT_00632a88 + 4));
 
     DAT_0059eee4 = 0;
 

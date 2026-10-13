@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (30 named) — decompiled, names from PS2 symbols
+ * 64 functions (31 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -9268,7 +9268,7 @@ void FUN_004cea60(int param_1)
 
   
 
-  FUN_004ceaa0(param_1);
+  smartie_move(param_1);
 
   iVar1 = *(int *)(param_1 + 0xe4);
 
@@ -9282,12 +9282,12 @@ void FUN_004cea60(int param_1)
 
 }
 
-/* ===== FUN_004ceaa0 @ 0x004CEAA0 ===== */
+/* ===== smartie_move @ 0x004CEAA0 ===== */
 /* PS2 candidate: smartie_move (conf 0.445) */
 
 
 
-void FUN_004ceaa0(float param_1)
+void smartie_move(float param_1)
 
 
 

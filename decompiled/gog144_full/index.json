@@ -2540,9 +2540,9 @@
   "len": 2450
  },
  "0x00443C50": {
-  "name": "FUN_00443c50",
-  "named": false,
-  "len": 1407
+  "name": "flick_slot_lookup_handle",
+  "named": true,
+  "len": 1419
  },
  "0x00443D60": {
   "name": "hud_icon_for_object",
@@ -2570,9 +2570,9 @@
   "len": 2159
  },
  "0x004444C0": {
-  "name": "FUN_004444c0",
-  "named": false,
-  "len": 18762
+  "name": "FLK_FlickRender",
+  "named": true,
+  "len": 18765
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -2587,7 +2587,7 @@
  "0x00445A20": {
   "name": "FUN_00445a20",
   "named": false,
-  "len": 14730
+  "len": 14742
  },
  "0x00446620": {
   "name": "FUN_00446620",
@@ -2602,7 +2602,7 @@
  "0x00446890": {
   "name": "flick_objects_reload",
   "named": true,
-  "len": 1533
+  "len": 1536
  },
  "0x004469E0": {
   "name": "FUN_004469e0",
@@ -2737,7 +2737,7 @@
  "0x004481E0": {
   "name": "fx_get_free_effect__Fv",
   "named": true,
-  "len": 9169
+  "len": 9174
  },
  "0x00448750": {
   "name": "FUN_00448750",
@@ -2767,7 +2767,7 @@
  "0x00448C20": {
   "name": "FUN_00448c20",
   "named": false,
-  "len": 785
+  "len": 790
  },
  "0x00448CA0": {
   "name": "fx_createGameLockedObj__FP6FxDataiii",
@@ -2815,9 +2815,9 @@
   "len": 1956
  },
  "0x00449CE0": {
-  "name": "FUN_00449ce0",
-  "named": false,
-  "len": 67429
+  "name": "fx_processOpCodes",
+  "named": true,
+  "len": 67434
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -2832,7 +2832,7 @@
  "0x0044ED20": {
   "name": "FUN_0044ed20",
   "named": false,
-  "len": 3608
+  "len": 3618
  },
  "0x0044EFD0": {
   "name": "FUN_0044efd0",
@@ -4502,7 +4502,7 @@
  "0x00489CA0": {
   "name": "FUN_00489ca0",
   "named": false,
-  "len": 659
+  "len": 672
  },
  "0x00489D40": {
   "name": "FUN_00489D40",
@@ -4675,9 +4675,9 @@
   "len": 1035
  },
  "0x00491D30": {
-  "name": "FUN_00491d30",
-  "named": false,
-  "len": 1429
+  "name": "camera_attach_path_object",
+  "named": true,
+  "len": 1442
  },
  "0x00491E30": {
   "name": "savegame_load",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24076
+  "len": 24089
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -4782,7 +4782,7 @@
  "0x004946A0": {
   "name": "ambient_streams_handler",
   "named": true,
-  "len": 2320
+  "len": 2333
  },
  "0x00494890": {
   "name": "FUN_00494890",
@@ -6910,8 +6910,8 @@
   "len": 314
  },
  "0x004CEAA0": {
-  "name": "FUN_004ceaa0",
-  "named": false,
+  "name": "smartie_move",
+  "named": true,
   "len": 53784
  },
  "0x004D1790": {

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (43 named) — decompiled, names from PS2 symbols
+ * 76 functions (46 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -2705,8 +2705,8 @@ LAB_00443ac3:
 
 }
 
-/* ===== FUN_00443c50 @ 0x00443C50 ===== */
-undefined4 FUN_00443c50(int param_1,int param_2,int param_3,int param_4,int param_5)
+/* ===== flick_slot_lookup_handle @ 0x00443C50 ===== */
+undefined4 flick_slot_lookup_handle(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -3349,14 +3349,14 @@ void wredit_text_fade(void)
 
 }
 
-/* ===== FUN_004444c0 @ 0x004444C0 ===== */
+/* ===== FLK_FlickRender @ 0x004444C0 ===== */
 /* WARNING: Removing unreachable block (ram,0x004446e1) */
 
 /* PS2 candidate: FLK_FlickRender__FP9FLK_Flick (conf 0.365) */
 
 
 
-undefined4 FUN_004444c0(int param_1)
+undefined4 FLK_FlickRender(int param_1)
 
 
 
@@ -4989,7 +4989,7 @@ LAB_00445a50:
 
     }
 
-    FUN_00443c50(param_1,puVar12[2],iVar10,puVar12[4],iVar11);
+    flick_slot_lookup_handle(param_1,puVar12[2],iVar10,puVar12[4],iVar11);
 
     puVar12 = puVar12 + puVar12[1];
 
@@ -6124,7 +6124,7 @@ int flick_objects_reload(void)
 
         if (DAT_005585b4 == 0) {
 
-          FUN_004444c0(DAT_0059ce54);
+          FLK_FlickRender(DAT_0059ce54);
 
         }
 
@@ -8022,7 +8022,7 @@ void FUN_00448c20(int param_1)
 
           *(uint *)(iVar1 + 0xe0) = uVar2 & 0xffbfffff;
 
-          FUN_00449ce0(param_1 + 8,0,iVar1);
+          fx_processOpCodes(param_1 + 8,0,iVar1);
 
         }
 
@@ -8661,7 +8661,7 @@ void FUN_00449800(int param_1,undefined4 *param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_00449ce0 @ 0x00449CE0 ===== */
+/* ===== fx_processOpCodes @ 0x00449CE0 ===== */
 /* WARNING: Removing unreachable block (ram,0x0044aa26) */
 
 /* WARNING: Removing unreachable block (ram,0x0044a94f) */
@@ -8670,7 +8670,7 @@ void FUN_00449800(int param_1,undefined4 *param_2,undefined4 *param_3)
 
 
 
-undefined4 FUN_00449ce0(void)
+undefined4 fx_processOpCodes(void)
 
 
 
@@ -13089,7 +13089,7 @@ int FUN_0044ed20(int *param_1,int param_2)
 
               *(uint *)(iVar5 + 0xe0) = uVar4 & 0xffbfffff;
 
-              FUN_00449ce0(param_1 + 2,0,iVar5);
+              fx_processOpCodes(param_1 + 2,0,iVar5);
 
             }
 
@@ -13155,7 +13155,7 @@ int FUN_0044ed20(int *param_1,int param_2)
 
   }
 
-  iVar5 = FUN_00449ce0(param_1 + 2,0,0);
+  iVar5 = fx_processOpCodes(param_1 + 2,0,0);
 
   if (iVar5 != 0) {
 

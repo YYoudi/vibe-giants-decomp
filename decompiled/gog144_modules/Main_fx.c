@@ -755,7 +755,7 @@ LAB_004485e3:
 
     } while (iVar1 != 0);
 
-    FUN_00449ce0(puVar8 + 2,1,0);
+    fx_processOpCodes(puVar8 + 2,1,0);
 
     return puVar8;
 
