@@ -13397,7 +13397,7 @@ void dlog_alpha_quad_build(float *param_1,float *param_2)
 
                   *(undefined1 *)(pfVar9 + 0xd) = 0;
 
-                  FUN_00516cf0(pfVar9);
+                  dlog_alpha_scale_verts(pfVar9);
 
                 }
 
@@ -13642,7 +13642,7 @@ void dlog_alpha4_copy(undefined4 *param_1,undefined4 *param_2)
 
     *(undefined1 *)(param_2 + 0xd) = 0;
 
-    FUN_00516cf0(param_2);
+    dlog_alpha_scale_verts(param_2);
 
   }
 
@@ -13777,7 +13777,7 @@ void dlog_alpha8_copy(undefined4 *param_1,undefined4 *param_2)
 
     *(undefined1 *)(param_2 + 0xd) = 0;
 
-    FUN_00516cf0(param_2);
+    dlog_alpha_scale_verts(param_2);
 
   }
 
@@ -13902,7 +13902,7 @@ void dlog_alpha10_copy(undefined4 *param_1,undefined4 *param_2)
 
     *(undefined1 *)(param_2 + 0xd) = 0;
 
-    FUN_00516cf0(param_2);
+    dlog_alpha_scale_verts(param_2);
 
     param_2 = param_2 + 0xe;
 
@@ -14013,7 +14013,7 @@ void dlog_alpha20_copy(undefined4 *param_1,undefined4 *param_2)
 
     *(undefined1 *)(param_2 + 0xd) = 0;
 
-    FUN_00516cf0(param_2);
+    dlog_alpha_scale_verts(param_2);
 
     param_2 = param_2 + 0xe;
 
@@ -19675,7 +19675,7 @@ void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *para
 
                 *(undefined1 *)(puVar7 + 0xd) = 0;
 
-                FUN_00516cf0(puVar7);
+                dlog_alpha_scale_verts(puVar7);
 
               }
 
@@ -19779,7 +19779,7 @@ void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *para
 
             *(undefined1 *)(puVar7 + 0xd) = 0;
 
-            FUN_00516cf0(puVar7);
+            dlog_alpha_scale_verts(puVar7);
 
           }
 
@@ -20004,7 +20004,7 @@ void dlog_alpha_sort_copy(undefined4 param_1,undefined4 *param_2,int *param_3,un
 
             *(undefined1 *)(param_4 + 0xd) = 0;
 
-            FUN_00516cf0(param_4);
+            dlog_alpha_scale_verts(param_4);
 
           }
 
@@ -20116,7 +20116,7 @@ void dlog_alpha_sort_copy(undefined4 param_1,undefined4 *param_2,int *param_3,un
 
             *(undefined1 *)(param_4 + 0xd) = 0;
 
-            FUN_00516cf0(param_4);
+            dlog_alpha_scale_verts(param_4);
 
           }
 
@@ -20274,7 +20274,7 @@ void dlog_alpha_sort_copy(undefined4 param_1,undefined4 *param_2,int *param_3,un
 
   *(undefined1 *)(param_4 + 0xd) = 0;
 
-  FUN_00516cf0(param_4);
+  dlog_alpha_scale_verts(param_4);
 
   *param_3 = iVar4 + 1;
 

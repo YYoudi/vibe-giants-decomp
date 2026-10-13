@@ -1687,27 +1687,27 @@
  "0x0042A640": {
   "name": "dlog_alpha_quad_build",
   "named": true,
-  "len": 5720
+  "len": 5730
  },
  "0x0042A9C0": {
   "name": "dlog_alpha4_copy",
   "named": true,
-  "len": 2180
+  "len": 2190
  },
  "0x0042AB70": {
   "name": "dlog_alpha8_copy",
   "named": true,
-  "len": 2178
+  "len": 2188
  },
  "0x0042AD20": {
   "name": "dlog_alpha10_copy",
   "named": true,
-  "len": 1913
+  "len": 1923
  },
  "0x0042AEA0": {
   "name": "dlog_alpha20_copy",
   "named": true,
-  "len": 1911
+  "len": 1921
  },
  "0x0042B010": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3",
@@ -1967,27 +1967,27 @@
  "0x0042F8E0": {
   "name": "status_bar_update3",
   "named": true,
-  "len": 8414
+  "len": 8434
  },
  "0x0042FEC0": {
   "name": "dlog_alpha_sort_copy",
   "named": true,
-  "len": 6515
+  "len": 6545
  },
  "0x00430480": {
   "name": "dlog_alpha_flags_copy",
   "named": true,
-  "len": 4257
+  "len": 4277
  },
  "0x00430820": {
   "name": "dlog_alpha_range_copy",
   "named": true,
-  "len": 3571
+  "len": 3591
  },
  "0x00430B20": {
   "name": "dlog_alpha_flags20_copy",
   "named": true,
-  "len": 3569
+  "len": 3589
  },
  "0x00430E10": {
   "name": "collgrid_00430e10",
@@ -2160,9 +2160,9 @@
   "len": 1455
  },
  "0x00435FD0": {
-  "name": "FUN_00435fd0",
-  "named": false,
-  "len": 1115
+  "name": "input_device_poll_2",
+  "named": true,
+  "len": 1122
  },
  "0x00436060": {
   "name": "cleanup_00436060",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 19122
+  "len": 19129
  },
  "0x00445570": {
   "name": "FLK_ObjectInFlick__FP9FLK_FlickP6OBJECT",
@@ -2627,7 +2627,7 @@
  "0x00446B00": {
   "name": "flick_actor_set_rect",
   "named": true,
-  "len": 1101
+  "len": 1141
  },
  "0x00446BE0": {
   "name": "flick_text_measure",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14480
+  "len": 14487
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -8172,7 +8172,7 @@
  "0x00509F10": {
   "name": "view_xform_user",
   "named": true,
-  "len": 2888
+  "len": 2898
  },
  "0x0050A170": {
   "name": "main_tracer_0050a170",
@@ -8680,9 +8680,9 @@
   "len": 924
  },
  "0x00516CF0": {
-  "name": "FUN_00516cf0",
-  "named": false,
-  "len": 806
+  "name": "dlog_alpha_scale_verts",
+  "named": true,
+  "len": 816
  },
  "0x00516D80": {
   "name": "verts_transform",
@@ -10662,7 +10662,7 @@
  "0x0053BBB0": {
   "name": "nam_name_lookup",
   "named": true,
-  "len": 1129
+  "len": 1138
  },
  "0x0053BC90": {
   "name": "bistream_tell_user2",
@@ -10812,7 +10812,7 @@
  "0x0053D810": {
   "name": "nam_lookup_variant",
   "named": true,
-  "len": 995
+  "len": 1001
  },
  "0x0053D8D0": {
   "name": "FUN_0053d8d0",
@@ -11195,9 +11195,9 @@
   "len": 190
  },
  "0x00540530": {
-  "name": "FUN_00540530",
-  "named": false,
-  "len": 684
+  "name": "nam_handle_ctor",
+  "named": true,
+  "len": 687
  },
  "0x005405C0": {
   "name": "cpu_vendor_detect",
@@ -11490,14 +11490,14 @@
   "len": 798
  },
  "0x00544198": {
-  "name": "FUN_00544198",
-  "named": false,
-  "len": 912
+  "name": "crt_strspn",
+  "named": true,
+  "len": 910
  },
  "0x00544223": {
   "name": "ANM_BinderDestroy_3",
   "named": true,
-  "len": 95
+  "len": 93
  },
  "0x0054422E": {
   "name": "crt_scanf_float2",
@@ -12712,7 +12712,7 @@
  "0x0054E448": {
   "name": "crt_strcpy_lock",
   "named": true,
-  "len": 3215
+  "len": 3209
  },
  "0x0054E6CF": {
   "name": "crt_lock_54e6cf",

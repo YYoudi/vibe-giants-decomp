@@ -9940,7 +9940,7 @@ void view_xform_user(undefined4 param_1,undefined4 param_2,float param_3,undefin
 
     puStack_118 = (undefined1 *)ppuVar6;
 
-    FUN_00516cf0();
+    dlog_alpha_scale_verts();
 
     iVar5 = iVar5 + -1;
 

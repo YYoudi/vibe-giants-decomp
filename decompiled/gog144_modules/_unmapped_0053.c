@@ -14799,9 +14799,9 @@ void nam_name_lookup(int param_1,int param_2)
 
   MAP_PtrFix(param_1 + 0x18,param_2);
 
-  FUN_00540530(*(undefined4 *)(param_1 + 0x10),0,param_2);
+  nam_handle_ctor(*(undefined4 *)(param_1 + 0x10),0,param_2);
 
-  FUN_00540530(*puVar1,&LAB_00540520,param_2);
+  nam_handle_ctor(*puVar1,&LAB_00540520,param_2);
 
   param_2 = 1;
 
@@ -14813,7 +14813,7 @@ void nam_name_lookup(int param_1,int param_2)
 
     uVar2 = *puVar5;
 
-    FUN_00540530(uVar2,&LAB_00540520,uVar3);
+    nam_handle_ctor(uVar2,&LAB_00540520,uVar3);
 
     iVar6 = NAM_NameFindByHandleIndex_2(uVar2,0);
 
@@ -17043,7 +17043,7 @@ void nam_lookup_variant(int param_1,int param_2)
 
   MAP_PtrFix(param_1 + 0x24,param_2);
 
-  FUN_00540530(*puVar1,&LAB_00540520,param_2);
+  nam_handle_ctor(*puVar1,&LAB_00540520,param_2);
 
   param_2 = 1;
 
@@ -17055,7 +17055,7 @@ void nam_lookup_variant(int param_1,int param_2)
 
     uVar2 = *puVar5;
 
-    FUN_00540530(uVar2,&LAB_00540520,uVar3);
+    nam_handle_ctor(uVar2,&LAB_00540520,uVar3);
 
     iVar6 = NAM_NameFindByHandleIndex_2(uVar2,0);
 

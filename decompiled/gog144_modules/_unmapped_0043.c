@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (63 named) — decompiled, names from PS2 symbols
+ * 74 functions (64 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -110,7 +110,7 @@ void dlog_alpha_flags_copy(int param_1,undefined4 *param_2,int *param_3,undefine
 
             *(undefined1 *)(param_4 + 0xd) = 0;
 
-            FUN_00516cf0(param_4);
+            dlog_alpha_scale_verts(param_4);
 
           }
 
@@ -236,7 +236,7 @@ void dlog_alpha_flags_copy(int param_1,undefined4 *param_2,int *param_3,undefine
 
   *(undefined1 *)(param_4 + 0xd) = 0;
 
-  FUN_00516cf0(param_4);
+  dlog_alpha_scale_verts(param_4);
 
   *param_3 = local_c + 1;
 
@@ -347,7 +347,7 @@ void dlog_alpha_range_copy(int param_1,undefined4 *param_2,int *param_3,undefine
 
         *(undefined1 *)(param_4 + 0xd) = 0;
 
-        FUN_00516cf0(param_4);
+        dlog_alpha_scale_verts(param_4);
 
         param_4 = param_4 + 0xe;
 
@@ -423,7 +423,7 @@ void dlog_alpha_range_copy(int param_1,undefined4 *param_2,int *param_3,undefine
 
     *(undefined1 *)(param_4 + 0xd) = 0;
 
-    FUN_00516cf0(param_4);
+    dlog_alpha_scale_verts(param_4);
 
     *param_3 = local_8 + 1;
 
@@ -540,7 +540,7 @@ void dlog_alpha_flags20_copy(int param_1,undefined4 *param_2,int *param_3,undefi
 
         *(undefined1 *)(param_4 + 0xd) = 0;
 
-        FUN_00516cf0(param_4);
+        dlog_alpha_scale_verts(param_4);
 
         param_4 = param_4 + 0xe;
 
@@ -616,7 +616,7 @@ void dlog_alpha_flags20_copy(int param_1,undefined4 *param_2,int *param_3,undefi
 
     *(undefined1 *)(param_4 + 0xd) = 0;
 
-    FUN_00516cf0(param_4);
+    dlog_alpha_scale_verts(param_4);
 
     *param_3 = local_8 + 1;
 
@@ -3711,8 +3711,8 @@ void input_device_poll(void)
 
 }
 
-/* ===== FUN_00435fd0 @ 0x00435FD0 ===== */
-void FUN_00435fd0(void)
+/* ===== input_device_poll_2 @ 0x00435FD0 ===== */
+void input_device_poll_2(void)
 
 
 

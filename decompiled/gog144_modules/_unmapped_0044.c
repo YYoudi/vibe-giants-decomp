@@ -4062,7 +4062,7 @@ LAB_00444d25:
 
   }
 
-  FUN_00435fd0();
+  input_device_poll_2();
 
   cleanup_00436060();
 
@@ -6421,7 +6421,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   if (*(char *)(param_1 + 0x34) == '\0') {
 
-    FUN_00516cf0(param_1);
+    dlog_alpha_scale_verts(param_1);
 
   }
 
@@ -6431,7 +6431,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   if (*(char *)(param_1 + 0x6c) == '\0') {
 
-    FUN_00516cf0(iVar1);
+    dlog_alpha_scale_verts(iVar1);
 
   }
 
@@ -6441,7 +6441,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   if (*(char *)(param_1 + 0xa4) == '\0') {
 
-    FUN_00516cf0(iVar2);
+    dlog_alpha_scale_verts(iVar2);
 
   }
 
@@ -6451,7 +6451,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   if (*(char *)(param_1 + 0xdc) == '\0') {
 
-    FUN_00516cf0(iVar3);
+    dlog_alpha_scale_verts(iVar3);
 
   }
 

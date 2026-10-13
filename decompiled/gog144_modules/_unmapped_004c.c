@@ -8733,7 +8733,7 @@ undefined4 dev_debug_flags(void)
 
     }
 
-    FUN_00435fd0();
+    input_device_poll_2();
 
     cleanup_00436060();
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (271 named) — decompiled, names from PS2 symbols
+ * 351 functions (273 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -510,8 +510,8 @@ void NAM_NameFindByHandle(int param_1)
 
 }
 
-/* ===== FUN_00540530 @ 0x00540530 ===== */
-void FUN_00540530(int param_1,code *param_2,undefined4 param_3)
+/* ===== nam_handle_ctor @ 0x00540530 ===== */
+void nam_handle_ctor(int param_1,code *param_2,undefined4 param_3)
 
 
 
@@ -5279,8 +5279,8 @@ uint FUN_00544123(int param_1,uint param_2)
 
 }
 
-/* ===== FUN_00544198 @ 0x00544198 ===== */
-int FUN_00544198(byte *param_1)
+/* ===== crt_strspn @ 0x00544198 ===== */
+int crt_strspn(byte *param_1)
 
 
 
@@ -5373,7 +5373,7 @@ void ANM_BinderDestroy_3(undefined4 param_1)
 
 {
 
-  FUN_00544198(param_1);
+  crt_strspn(param_1);
 
   return;
 
@@ -25500,7 +25500,7 @@ LAB_0054e6b9:
 
         }
 
-        iVar4 = FUN_00544198(_Source);
+        iVar4 = crt_strspn(_Source);
 
         DAT_00583bc0 = iVar4 * 0xe10;
 
@@ -25514,7 +25514,7 @@ LAB_0054e6b9:
 
           _Source = _Source + 1;
 
-          iVar4 = FUN_00544198(_Source);
+          iVar4 = crt_strspn(_Source);
 
           DAT_00583bc0 = DAT_00583bc0 + iVar4 * 0x3c;
 
@@ -25526,7 +25526,7 @@ LAB_0054e6b9:
 
             _Source = _Source + 1;
 
-            iVar4 = FUN_00544198(_Source);
+            iVar4 = crt_strspn(_Source);
 
             DAT_00583bc0 = DAT_00583bc0 + iVar4;
 

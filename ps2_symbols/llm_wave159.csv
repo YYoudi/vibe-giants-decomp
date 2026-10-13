@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00544198,FUN_00544198,,crt_strspn,0.9,llm-w159,locale char scan caller crt_strcpy_lock
+00540530,FUN_00540530,,nam_handle_ctor,0.9,llm-w159,PtrFix family callers nam lookups
+00516cf0,FUN_00516cf0,,dlog_alpha_scale_verts,0.9,llm-w159,1/size scale + verts 5 dlog callers
+00435fd0,FUN_00435fd0,,input_device_poll_2,0.9,llm-w159,twin of 00435f30 DInput
