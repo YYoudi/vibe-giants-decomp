@@ -314,7 +314,7 @@ float10 anim_dump_related(int param_1,undefined4 param_2,float *param_3,int para
 
   local_4 = *(undefined4 *)(iVar4 + 0x30);
 
-  (*(code *)PTR_FUN_00580c20)(param_3,&local_c,1,param_4 + 0x294);
+  (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(param_3,&local_c,1,param_4 + 0x294);
 
   fStack_18 = *(float *)(param_5 + 0x128);
 
@@ -959,7 +959,7 @@ LAB_00465d3b:
 
       local_10 = *(undefined4 *)(iVar3 + 0x140);
 
-      (*(code *)PTR_FUN_00580c20)(local_c,&local_18,1,(int)fVar4 + 0x294);
+      (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(local_c,&local_18,1,(int)fVar4 + 0x294);
 
       param_1 = *(float *)((int)fVar4 + 200) + 90.0;
 
@@ -1374,7 +1374,7 @@ void obj_skinning_eval(int param_1)
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_154,local_154,local_110);
 
-    FUN_0053dde0(auStack_88,param_1 + 0x2c,param_1 + 0x38,&local_178);
+    GEO_MatLookAt(auStack_88,param_1 + 0x2c,param_1 + 0x38,&local_178);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_cc,auStack_88,local_154);
 
@@ -1522,7 +1522,7 @@ void FUN_00469860(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     }
 
-    FUN_004034a0(param_1,param_2,bVar1,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
+    ObjectSetAnim(param_1,param_2,bVar1,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
 
     FUN_00495750(0x6dc,param_1);
 
@@ -1649,9 +1649,9 @@ void FUN_004699e0(int param_1)
 
     if ((*(int *)(param_1 + 0x10) != 0x26) && (*(int *)(*(int *)(param_1 + 8) + 0xa0) != 0)) {
 
-      FUN_004034a0(param_1,0x26,0x21,3,
+      ObjectSetAnim(param_1,0x26,0x21,3,
 
-                   *(float *)(DAT_00632ed8 + 0x15dc) * *(float *)(param_1 + 0xc4),0x3e2aaaab);
+                    *(float *)(DAT_00632ed8 + 0x15dc) * *(float *)(param_1 + 0xc4),0x3e2aaaab);
 
       FUN_00495750(0x6dc,param_1);
 
@@ -1693,7 +1693,7 @@ void FUN_004699e0(int param_1)
 
   }
 
-  FUN_004034a0(param_1,uVar6,0x20,0,fVar1 * 0.0,0x3e2aaaab);
+  ObjectSetAnim(param_1,uVar6,0x20,0,fVar1 * 0.0,0x3e2aaaab);
 
   FUN_00495750(0x6dc,param_1);
 
@@ -1854,7 +1854,7 @@ uint reaper_lock_short_2(int param_1,undefined4 *param_2,int param_3)
 
     uVar4 = param_2[8];
 
-    FUN_004034a0(param_1,iVar1,uVar5,uVar3,uVar4,uVar2);
+    ObjectSetAnim(param_1,iVar1,uVar5,uVar3,uVar4,uVar2);
 
     if (param_3 != 0) {
 
@@ -2665,7 +2665,7 @@ void FUN_0046aeb0(int param_1)
 
       }
 
-      FUN_004034a0(param_1,0x49,0x21,3,0x42b40000,0);
+      ObjectSetAnim(param_1,0x49,0x21,3,0x42b40000,0);
 
       *(undefined4 *)(param_1 + 0xe4) = 1;
 
@@ -2693,7 +2693,7 @@ void FUN_0046aeb0(int param_1)
 
     }
 
-    FUN_004034a0(param_1,0x49,0x21,3,0x42b40000,0);
+    ObjectSetAnim(param_1,0x49,0x21,3,0x42b40000,0);
 
     *(undefined4 *)(param_1 + 0xe4) = 1;
 
@@ -2729,7 +2729,7 @@ void FUN_0046aeb0(int param_1)
 
   }
 
-  FUN_004034a0(param_1,5,0x21,0,0,0);
+  ObjectSetAnim(param_1,5,0x21,0,0,0);
 
   *(undefined4 *)(param_1 + 0xe4) = 1;
 
@@ -3262,7 +3262,7 @@ undefined4 FUN_0046baf0(undefined4 param_1,int param_2,char param_3,byte param_4
 
     if (*(int *)(param_2 + 0x10) != piVar4[iVar3 + 8]) {
 
-      FUN_004034a0(param_2,piVar4[iVar3 + 8],0x21,0,0,0);
+      ObjectSetAnim(param_2,piVar4[iVar3 + 8],0x21,0,0,0);
 
       FUN_00403e60(param_2,0);
 

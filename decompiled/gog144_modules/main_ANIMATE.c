@@ -122,7 +122,7 @@ void main_animate_00404b60(int param_1,int param_2)
 
 LAB_00404c65:
 
-  FUN_0053d2d0(local_6c,local_60,uVar2,0xc,*(undefined4 *)(param_1 + 0xc));
+  ANM_AnimationEvalVertices(local_6c,local_60,uVar2,0xc,*(undefined4 *)(param_1 + 0xc));
 
   return;
 

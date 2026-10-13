@@ -606,7 +606,7 @@ void FUN_004f40a0(int param_1,int param_2,int param_3)
 
   smartie_make_held_object__FP6OBJECTi(param_1,0x2f2);
 
-  FUN_004034a0(param_1,0x41,0x20,0,0,0x3f2aaaab);
+  ObjectSetAnim(param_1,0x41,0x20,0,0,0x3f2aaaab);
 
   iVar1 = reaper_0052e4a0(param_1);
 
@@ -1048,7 +1048,7 @@ void FUN_004f4fc0(float param_1)
 
   if (*(int *)((int)fVar3 + 0xe8) == 2) {
 
-    FUN_004034a0(fVar3,1,0x21,0,0,0x3e2aaaab);
+    ObjectSetAnim(fVar3,1,0x21,0,0,0x3e2aaaab);
 
     *(uint *)((int)fVar3 + 0xe0) = *(uint *)((int)fVar3 + 0xe0) | 0x11;
 
@@ -1189,7 +1189,7 @@ void smartie_unlock_from_player(int param_1,int param_2,int param_3)
 
     if (iVar4 == 2) {
 
-      FUN_004034a0(param_1,1,0x21,0,0,0x3e2aaaab);
+      ObjectSetAnim(param_1,1,0x21,0,0,0x3e2aaaab);
 
       *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x11;
 
@@ -2148,7 +2148,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
   }
 
-  FUN_004034a0(param_1,uVar4,0x21,0,0,0x3f000000);
+  ObjectSetAnim(param_1,uVar4,0x21,0,0,0x3f000000);
 
   iVar2 = reaper_0052e4a0(param_1);
 
@@ -2681,7 +2681,7 @@ switchD_004f7908_caseD_20:
 
           }
 
-          FUN_004034a0(param_3,uVar6,0,0,0,0x3ecccccd);
+          ObjectSetAnim(param_3,uVar6,0,0,0,0x3ecccccd);
 
           iVar4 = crt_rand_scaled(100);
 

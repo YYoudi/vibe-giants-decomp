@@ -3752,7 +3752,7 @@ void FUN_00477f20(int param_1,float param_2,int param_3)
 
     FUN_0053dd90(local_44,param_2 * 0.017453292);
 
-    (*(code *)PTR_FUN_00580c20)(&local_50,(undefined4 *)(iVar4 + 0x14),1,local_44);
+    (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(&local_50,(undefined4 *)(iVar4 + 0x14),1,local_44);
 
     *(undefined4 *)(iVar4 + 0x14) = local_50;
 
@@ -3776,7 +3776,7 @@ void FUN_00477f20(int param_1,float param_2,int param_3)
 
     FUN_0053dd90(local_44,param_2 * 0.017453292);
 
-    (*(code *)PTR_FUN_00580c20)(&local_50,(undefined4 *)(iVar4 + 8),1,local_44);
+    (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(&local_50,(undefined4 *)(iVar4 + 8),1,local_44);
 
     *(undefined4 *)(iVar4 + 8) = local_50;
 
@@ -6748,7 +6748,7 @@ LAB_0047cdb1:
 
     *(uint *)(iVar5 + 0xe0) = *(uint *)(iVar5 + 0xe0) | 1;
 
-    FUN_004034a0(iVar7,0xd3,0x21,0,0,0);
+    ObjectSetAnim(iVar7,0xd3,0x21,0,0,0);
 
     FUN_00480a60(iVar7);
 
@@ -7192,7 +7192,7 @@ LAB_0047d6b8:
 
       *(uint *)(iVar5 + 0xe0) = *(uint *)(iVar5 + 0xe0) | 1;
 
-      FUN_004034a0(iVar7,0xd3,0x21,0,0,0);
+      ObjectSetAnim(iVar7,0xd3,0x21,0,0,0);
 
       FUN_00480a60(iVar7);
 

@@ -874,7 +874,7 @@ void FUN_00500c00(float param_1,float param_2,float param_3,undefined4 param_4)
 
   FUN_0053e430(param_4);
 
-  FUN_0053dde0(local_88,&local_ac,&local_94,&local_a0);
+  GEO_MatLookAt(local_88,&local_ac,&local_94,&local_a0);
 
   (*(code *)PTR_crt_matrix_copy_init_00580c1c)(local_88,local_88);
 
@@ -6321,7 +6321,7 @@ void mecc_animselect_gm(int param_1,int param_2)
 
     }
 
-    FUN_004034a0(param_1,local_38,uVar13,0,0,0x3e2aaaab);
+    ObjectSetAnim(param_1,local_38,uVar13,0,0,0x3e2aaaab);
 
     return;
 
@@ -7573,7 +7573,7 @@ LAB_005065cf:
 
                     puVar4 = *(uint **)(iVar7 + 0x100);
 
-                    FUN_004034a0(iVar7,10,0x20,0,0,0);
+                    ObjectSetAnim(iVar7,10,0x20,0,0,0);
 
                     *puVar4 = *puVar4 & 0xfffffffb;
 
@@ -7967,7 +7967,7 @@ LAB_0050698f:
 
                ((*(int *)(iVar15 + 4) == 0xb || (*(int *)(iVar15 + 4) == 0xd8)))) {
 
-              FUN_004034a0(iVar15,0x57,0x20,0,0,0);
+              ObjectSetAnim(iVar15,0x57,0x20,0,0,0);
 
               break;
 
@@ -8677,7 +8677,7 @@ LAB_0050768d:
 
     }
 
-    FUN_004034a0(param_1,local_88,local_84,local_60,fVar1 * *(float *)(param_1 + 0xc4),local_3c);
+    ObjectSetAnim(param_1,local_88,local_84,local_60,fVar1 * *(float *)(param_1 + 0xc4),local_3c);
 
     if ((*(uint *)(param_1 + 0xe0) & 0x10000) != 0) {
 
@@ -11317,7 +11317,7 @@ void FUN_0050c3c0(int param_1)
 
     if (*(int *)(*(int *)(param_1 + 8) + 0x34 + uVar1 * 4) != 0) {
 
-      FUN_004034a0(param_1,uVar1 + 0xb,0x28,0,0,0);
+      ObjectSetAnim(param_1,uVar1 + 0xb,0x28,0,0,0);
 
     }
 
@@ -11329,7 +11329,7 @@ void FUN_0050c3c0(int param_1)
 
   if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
 
-    FUN_004034a0(param_1,1,0x21,0,0,0);
+    ObjectSetAnim(param_1,1,0x21,0,0,0);
 
   }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (249 named) — decompiled, names from PS2 symbols
+ * 351 functions (253 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -764,11 +764,11 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_crt_matrix_mul_00580c18 = (&PTR_crt_matrix_mul_00580d3c)[param_1];
 
-  PTR_FUN_00580c20 = (&PTR_FUN_00580d48)[param_1];
+  PTR_S_GEO_Vec3Transform_00580c20 = (&PTR_S_GEO_Vec3Transform_00580d48)[param_1];
 
-  PTR_FUN_00580c24 = (&PTR_FUN_00580d54)[param_1];
+  PTR_S_GEO_Vec3Transform_2_00580c24 = (&PTR_S_GEO_Vec3Transform_2_00580d54)[param_1];
 
-  PTR_FUN_00580c28 = (&PTR_FUN_00580d60)[param_1];
+  PTR_S_GEO_Vec4Transform_00580c28 = (&PTR_S_GEO_Vec4Transform_00580d60)[param_1];
 
   PTR_FUN_00580c30 = (&PTR_FUN_00580d6c)[param_1];
 
@@ -786,7 +786,9 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_FUN_00580c4c = (&PTR_FUN_00580dc0)[param_1];
 
-  PTR_FUN_0058096c = (&PTR_FUN_00580dcc)[param_1];
+  PTR_ANM_ClusterApplyMatSingleVertex_0058096c =
+
+       (&PTR_ANM_ClusterApplyMatSingleVertex_00580dcc)[param_1];
 
   return;
 
@@ -1929,12 +1931,12 @@ void crt_matrix_vec4_mul(int param_1,int param_2,int param_3,int param_4,int par
 
 }
 
-/* ===== FUN_00542130 @ 0x00542130 ===== */
+/* ===== S_GEO_Vec4Transform @ 0x00542130 ===== */
 /* PS2 candidate: S_GEO_Vec4Transform (conf 0.766) */
 
 
 
-void FUN_00542130(float *param_1,float *param_2,int param_3,uint *param_4)
+void S_GEO_Vec4Transform(float *param_1,float *param_2,int param_3,uint *param_4)
 
 
 
@@ -2240,12 +2242,12 @@ void AddHud__4cHudP8cHudIcon_5(void)
 
 }
 
-/* ===== FUN_00542a90 @ 0x00542A90 ===== */
+/* ===== ANM_ClusterApplyMatSingleVertex @ 0x00542A90 ===== */
 /* PS2 candidate: ANM_ClusterApplyMatSingleVertex (conf 0.756) */
 
 
 
-void FUN_00542a90(int param_1,int param_2,int param_3,int param_4,int param_5)
+void ANM_ClusterApplyMatSingleVertex(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -2337,12 +2339,12 @@ void FUN_00542a90(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 }
 
-/* ===== FUN_00542bb0 @ 0x00542BB0 ===== */
+/* ===== S_GEO_Vec3Transform @ 0x00542BB0 ===== */
 /* PS2 candidate: S_GEO_Vec3Transform (conf 0.77) */
 
 
 
-void FUN_00542bb0(float *param_1,float *param_2,int param_3,uint *param_4)
+void S_GEO_Vec3Transform(float *param_1,float *param_2,int param_3,uint *param_4)
 
 
 
@@ -14606,7 +14608,7 @@ undefined4 crt_tls_init(void)
 
   
 
-  FUN_0054bec4();
+  crt_critical_sections_init();
 
   DAT_00581638 = TlsAlloc();
 
@@ -19947,12 +19949,12 @@ undefined4 crt_sbh_adjust_block(int param_1,int *param_2,byte *param_3,uint para
 
 }
 
-/* ===== FUN_0054bec4 @ 0x0054BEC4 ===== */
+/* ===== crt_critical_sections_init @ 0x0054BEC4 ===== */
 /* PS2 candidate: ANM_Uninit__Fv (conf 0.77) */
 
 
 
-void FUN_0054bec4(void)
+void crt_critical_sections_init(void)
 
 
 

@@ -2673,7 +2673,7 @@ LAB_00443ac3:
 
         *(undefined4 *)(piVar5[0xc6] + 0x54) = uVar3;
 
-        FUN_004034a0(piVar5 + 3,0,0x20,1,0,0);
+        ObjectSetAnim(piVar5 + 3,0,0x20,1,0,0);
 
       }
 
@@ -3572,7 +3572,7 @@ undefined4 FLK_FlickRender(int param_1)
 
     if (*(int *)(iVar12 + 0x1e0) == 0x3d) {
 
-      FUN_004034a0(iVar12,*(undefined4 *)(iVar12 + 0x10),0x34,1,0);
+      ObjectSetAnim(iVar12,*(undefined4 *)(iVar12 + 0x10),0x34,1,0);
 
       FUN_00403e60(iVar12,DAT_006328e0);
 
@@ -3598,7 +3598,7 @@ undefined4 FLK_FlickRender(int param_1)
 
       if (*(int *)(iVar12 + 0x1e0) == 0x3d) {
 
-        FUN_004034a0(iVar12,*(undefined4 *)(iVar12 + 0x10),0x34,1);
+        ObjectSetAnim(iVar12,*(undefined4 *)(iVar12 + 0x10),0x34,1);
 
         FUN_00403e60(iVar12,DAT_006328e0);
 
@@ -3708,7 +3708,7 @@ undefined4 FLK_FlickRender(int param_1)
 
         uStack_14c = 0;
 
-        (*(code *)PTR_FUN_00580c28)(&iStack_180,&uStack_158);
+        (*(code *)PTR_S_GEO_Vec4Transform_00580c28)(&iStack_180,&uStack_158);
 
         iStack_178 = 0;
 
@@ -12652,7 +12652,7 @@ LAB_0044de79:
 
           *(uint *)(puStack0000003c[1] + 0xe4) = *(uint *)(puStack0000003c[1] + 0xe4) | 0x40000;
 
-          FUN_004034a0();
+          ObjectSetAnim();
 
         }
 
@@ -12676,7 +12676,7 @@ LAB_0044de79:
 
           *(uint *)(puStack0000003c[1] + 0xe4) = *(uint *)(puStack0000003c[1] + 0xe4) | 0x40000;
 
-          FUN_004034a0();
+          ObjectSetAnim();
 
         }
 

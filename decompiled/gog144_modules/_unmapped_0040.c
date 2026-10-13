@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (47 named) — decompiled, names from PS2 symbols
+ * 105 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -788,14 +788,14 @@ void ai_move_goals_reinit(undefined4 param_1)
 
 }
 
-/* ===== FUN_004034a0 @ 0x004034A0 ===== */
+/* ===== ObjectSetAnim @ 0x004034A0 ===== */
 /* PS2 candidate: ObjectSetAnim (conf 0.75) */
 
 
 
-void FUN_004034a0(int param_1,int param_2,uint param_3,undefined4 param_4,undefined4 param_5,
+void ObjectSetAnim(int param_1,int param_2,uint param_3,undefined4 param_4,undefined4 param_5,
 
-                 float param_6)
+                  float param_6)
 
 
 
@@ -1427,7 +1427,7 @@ LAB_00403980:
 
   uStack_98 = local_58;
 
-  FUN_0053dde0(local_88,&local_a0,&local_ac,&local_94);
+  GEO_MatLookAt(local_88,&local_a0,&local_ac,&local_94);
 
   (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_44,local_88);
 
@@ -4722,7 +4722,7 @@ void FUN_00407c40(int param_1)
 
     FUN_004a7440(iVar2);
 
-    FUN_004034a0(iVar2,1,0x20,0,0,0);
+    ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
     FUN_00403e60(iVar2,0x3d4ccccd);
 
@@ -5725,7 +5725,7 @@ switchD_004085cd_caseD_7:
 
     if ((*(byte *)((int)param_1 + 0x30) & 2) != 0) {
 
-      FUN_004034a0(param_1,1,0x84,0,0,0);
+      ObjectSetAnim(param_1,1,0x84,0,0,0);
 
       *(undefined4 *)((int)param_1 + 0xe4) = 4;
 
@@ -5803,7 +5803,7 @@ switchD_004085cd_caseD_b:
 
     }
 
-    FUN_004034a0(param_1,1,0x84,0,0,0);
+    ObjectSetAnim(param_1,1,0x84,0,0,0);
 
     *(undefined4 *)((int)param_1 + 0xe4) = 9;
 
@@ -5831,7 +5831,7 @@ LAB_00408e3a:
 
 LAB_00408df5:
 
-    FUN_004034a0(param_1,2,0x10,0,0,0);
+    ObjectSetAnim(param_1,2,0x10,0,0,0);
 
     *(undefined4 *)((int)param_1 + 0xe4) = 0xb;
 
@@ -5872,7 +5872,7 @@ void FUN_00408ec0(int param_1,int param_2,int param_3)
 
   *(undefined4 *)(param_2 + 0xe4) = 3;
 
-  FUN_004034a0(param_2,1,0x84,0,0,0);
+  ObjectSetAnim(param_2,1,0x84,0,0,0);
 
   *(undefined4 *)(param_2 + 0x14) = 0;
 
@@ -5932,7 +5932,7 @@ void FUN_00408ec0(int param_1,int param_2,int param_3)
 
       *(undefined4 *)(iVar4 + 0xe4) = 5;
 
-      FUN_004034a0(*piVar5,1,0x10,0,0,0);
+      ObjectSetAnim(*piVar5,1,0x10,0,0,0);
 
       if (DAT_00657678 == 0) {
 
@@ -6925,7 +6925,7 @@ undefined4 object_spawn_class4(int param_1,int param_2)
 
     bldg_set_energy(iVar2,0);
 
-    FUN_004034a0(iVar2,1,0x84,0,0,0);
+    ObjectSetAnim(iVar2,1,0x84,0,0,0);
 
     *(undefined4 *)(iVar2 + 0x14) = 0x3f800000;
 
@@ -8817,7 +8817,9 @@ void FUN_0040bc00(int param_1)
 
     ;
 
-    (*(code *)PTR_FUN_00580c20)(local_7c,param_1 + 0x14,1,*(int *)(param_1 + 0x38) + 0x294);
+    (*(code *)PTR_S_GEO_Vec3Transform_00580c20)
+
+              (local_7c,param_1 + 0x14,1,*(int *)(param_1 + 0x38) + 0x294);
 
     FUN_0050a400(*(int *)(param_1 + 0x38) + 0xa0,local_7c);
 
@@ -11049,7 +11051,7 @@ void FUN_0040ee20(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     }
 
-    FUN_004034a0(param_1,param_2,bVar2,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
+    ObjectSetAnim(param_1,param_2,bVar2,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
 
     if (*(int *)(iVar1 + 0x4c) != 0) {
 

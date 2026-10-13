@@ -117,7 +117,7 @@ LAB_00480200:
 
     *(undefined4 *)(iVar1 + 0xf8) = uVar3;
 
-    FUN_004034a0(iVar2,1,0x20,0,0,0,pcVar4,uVar5,puVar6);
+    ObjectSetAnim(iVar2,1,0x20,0,0,0,pcVar4,uVar5,puVar6);
 
   }
 
@@ -196,7 +196,7 @@ LAB_004802fd:
 
   if (iVar1 != 0) {
 
-    FUN_004034a0(iVar1,1,0x10,0,0,0);
+    ObjectSetAnim(iVar1,1,0x10,0,0,0);
 
     FUN_00448920(*(undefined4 *)(iVar3 + 0xf8));
 
@@ -1120,7 +1120,7 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
     *(undefined4 *)(param_2 + 0xe4) = 10;
 
-    FUN_004034a0(param_2,2,0x20,0,0,0);
+    ObjectSetAnim(param_2,2,0x20,0,0,0);
 
     sound_play_obj(0x6f1,param_2);
 
@@ -1259,7 +1259,7 @@ void FUN_004810d0(int param_1)
 
                   *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | 1;
 
-                  FUN_004034a0(param_1,0xd3,0x21,0,0,0);
+                  ObjectSetAnim(param_1,0xd3,0x21,0,0,0);
 
                   FUN_00480a60(param_1);
 
@@ -1703,7 +1703,7 @@ void obj_grab_carry(int param_1,int param_2)
 
   *(uint *)(param_2 + 0xe0) = *(uint *)(param_2 + 0xe0) | 1;
 
-  FUN_004034a0(param_1,0xd3,0x21,0,0,0);
+  ObjectSetAnim(param_1,0xd3,0x21,0,0,0);
 
   FUN_00480a60(iVar1);
 

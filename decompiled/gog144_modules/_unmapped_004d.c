@@ -2484,9 +2484,9 @@ LAB_004d3f6e:
 
 LAB_004d4031:
 
-      FUN_004034a0(param_1,2,0x21,1,*(float *)(param_1 + 0x1b4) * *(float *)(param_1 + 0xc4),
+      ObjectSetAnim(param_1,2,0x21,1,*(float *)(param_1 + 0x1b4) * *(float *)(param_1 + 0xc4),
 
-                   0x3e2aaaab);
+                    0x3e2aaaab);
 
       return;
 
@@ -4408,7 +4408,7 @@ void FUN_004d7c60(int param_1,int param_2)
 
       if ((*(int *)(param_1 + 0x10) != 0xaa) && (*(int *)(*(int *)(param_1 + 8) + 0x2b0) != 0)) {
 
-        FUN_004034a0(param_1,0xaa,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+        ObjectSetAnim(param_1,0xaa,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       }
 
@@ -4549,7 +4549,7 @@ void ai_ospec12d_logic(int param_1)
 
     }
 
-    FUN_004034a0(param_1,uVar6,0x21,0,fVar1 * 0.0,0x3e2aaaab);
+    ObjectSetAnim(param_1,uVar6,0x21,0,fVar1 * 0.0,0x3e2aaaab);
 
 LAB_004d7f5f:
 
@@ -4947,7 +4947,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
         if ((*(int *)(param_1 + 0x10) != 0x8d) && (*(int *)(*(int *)(param_1 + 8) + 0x23c) != 0)) {
 
-          FUN_004034a0(param_1,0x8d,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+          ObjectSetAnim(param_1,0x8d,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
         }
 
@@ -4957,7 +4957,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
       {
 
-        FUN_004034a0(param_1,0x8c,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+        ObjectSetAnim(param_1,0x8c,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       }
 
@@ -4973,7 +4973,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
           if ((*(int *)(param_1 + 0x10) != 0x2b) && (*(int *)(*(int *)(param_1 + 8) + 0xb4) != 0)) {
 
-            FUN_004034a0(param_1,0x2b,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x2b,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -4987,7 +4987,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
           {
 
-            FUN_004034a0(param_1,0x50,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x50,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -5013,7 +5013,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
           {
 
-            FUN_004034a0(param_1,0x4a,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x4a,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -5025,7 +5025,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
           {
 
-            FUN_004034a0(param_1,0x4b,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x4b,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -5035,7 +5035,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
                 (*(int *)(*(int *)(param_1 + 8) + 0x144) != 0)) {
 
-          FUN_004034a0(param_1,0x4f,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+          ObjectSetAnim(param_1,0x4f,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
         }
 
@@ -5095,7 +5095,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
           {
 
-            FUN_004034a0(param_1,0x78,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x78,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -5105,7 +5105,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
                 (*(int *)(*(int *)(param_1 + 8) + 0x1ec) != 0)) {
 
-          FUN_004034a0(param_1,0x79,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+          ObjectSetAnim(param_1,0x79,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
         }
 
@@ -5137,7 +5137,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
             }
 
-            FUN_004034a0(param_1,0x75,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x75,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -5165,7 +5165,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
             }
 
-            FUN_004034a0(param_1,0x76,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x76,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -5193,7 +5193,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
             }
 
-            FUN_004034a0(param_1,0x9e,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+            ObjectSetAnim(param_1,0x9e,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
           }
 
@@ -5219,7 +5219,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
           }
 
-          FUN_004034a0(param_1,0x9f,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+          ObjectSetAnim(param_1,0x9f,uVar6,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
         }
 
@@ -5233,7 +5233,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
       if ((*(int *)(param_1 + 0x10) != 0x77) && (*(int *)(*(int *)(param_1 + 8) + 0x1e4) != 0)) {
 
-        FUN_004034a0(param_1,0x77,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+        ObjectSetAnim(param_1,0x77,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       }
 
@@ -5291,7 +5291,7 @@ LAB_004d88df:
 
       if (iVar2 != 0) {
 
-        FUN_004034a0(param_1,0x30,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+        ObjectSetAnim(param_1,0x30,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       }
 
@@ -5307,7 +5307,7 @@ LAB_004d88df:
 
   if (iVar2 != 0) {
 
-    FUN_004034a0(param_1,0x74,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+    ObjectSetAnim(param_1,0x74,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
   }
 
@@ -5366,7 +5366,7 @@ void ai_anim_play(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     }
 
-    FUN_004034a0(param_1,param_2,bVar1,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
+    ObjectSetAnim(param_1,param_2,bVar1,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
 
   }
 

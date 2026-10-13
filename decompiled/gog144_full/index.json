@@ -130,9 +130,9 @@
   "len": 375
  },
  "0x004034A0": {
-  "name": "FUN_004034a0",
-  "named": false,
-  "len": 2171
+  "name": "ObjectSetAnim",
+  "named": true,
+  "len": 2173
  },
  "0x004035D0": {
   "name": "anim_select_check",
@@ -152,7 +152,7 @@
  "0x00403890": {
   "name": "ref_get_anode2",
   "named": true,
-  "len": 2813
+  "len": 2814
  },
  "0x00403A70": {
   "name": "FUN_00403a70",
@@ -217,7 +217,7 @@
  "0x00404B60": {
   "name": "main_animate_00404b60",
   "named": true,
-  "len": 1766
+  "len": 1779
  },
  "0x00404D70": {
   "name": "obj_impact_effects",
@@ -287,17 +287,17 @@
  "0x00407C40": {
   "name": "FUN_00407c40",
   "named": false,
-  "len": 6428
+  "len": 6429
  },
  "0x00408530": {
   "name": "FUN_00408530",
   "named": false,
-  "len": 13578
+  "len": 13581
  },
  "0x00408EC0": {
   "name": "FUN_00408ec0",
   "named": false,
-  "len": 1731
+  "len": 1733
  },
  "0x00409030": {
   "name": "meccbaseitem_finish_building",
@@ -332,7 +332,7 @@
  "0x0040A5E0": {
   "name": "object_spawn_class4",
   "named": true,
-  "len": 2105
+  "len": 2106
  },
  "0x0040A7B0": {
   "name": "FUN_0040a7b0",
@@ -472,7 +472,7 @@
  "0x0040BC00": {
   "name": "FUN_0040bc00",
   "named": false,
-  "len": 2433
+  "len": 2465
  },
  "0x0040BDC0": {
   "name": "FUN_0040bdc0",
@@ -642,7 +642,7 @@
  "0x0040EE20": {
   "name": "FUN_0040ee20",
   "named": false,
-  "len": 1127
+  "len": 1128
  },
  "0x0040EEF0": {
   "name": "ai_nearest_55_scan",
@@ -667,7 +667,7 @@
  "0x0040F3C0": {
   "name": "cleaner_go_obj",
   "named": true,
-  "len": 4457
+  "len": 4458
  },
  "0x0040F750": {
   "name": "main_cleaner_0040f750",
@@ -817,7 +817,7 @@
  "0x004156F0": {
   "name": "FUN_004156f0",
   "named": false,
-  "len": 8155
+  "len": 8171
  },
  "0x00415D80": {
   "name": "FUN_00415d80",
@@ -875,9 +875,9 @@
   "len": 335
  },
  "0x00417830": {
-  "name": "FUN_00417830",
-  "named": false,
-  "len": 381
+  "name": "base_get_smartie_building",
+  "named": true,
+  "len": 394
  },
  "0x00417860": {
   "name": "NAM_DictionaryGetTotalNames",
@@ -1002,7 +1002,7 @@
  "0x00418A00": {
   "name": "object_spawn_class5",
   "named": true,
-  "len": 3042
+  "len": 3043
  },
  "0x00418C80": {
   "name": "FUN_00418c80",
@@ -1092,12 +1092,12 @@
  "0x0041A570": {
   "name": "objtype_setup_spell",
   "named": true,
-  "len": 3165
+  "len": 3166
  },
  "0x0041A7F0": {
   "name": "objtype_setup_combat",
   "named": true,
-  "len": 2095
+  "len": 2096
  },
  "0x0041A980": {
   "name": "objtype_team_assign",
@@ -1107,17 +1107,17 @@
  "0x0041AC40": {
   "name": "FUN_0041ac40",
   "named": false,
-  "len": 2853
+  "len": 2854
  },
  "0x0041AE70": {
   "name": "objtype_setup_mecc",
   "named": true,
-  "len": 5682
+  "len": 5683
  },
  "0x0041B390": {
   "name": "objtype_setup_vimp",
   "named": true,
-  "len": 3567
+  "len": 3569
  },
  "0x0041B660": {
   "name": "fxb_build_select",
@@ -1142,7 +1142,7 @@
  "0x0041E440": {
   "name": "objtype_setup_reaper",
   "named": true,
-  "len": 3629
+  "len": 3631
  },
  "0x0041E720": {
   "name": "FUN_0041e720",
@@ -1312,12 +1312,12 @@
  "0x00425A40": {
   "name": "FUN_00425a40",
   "named": false,
-  "len": 1557
+  "len": 1558
  },
  "0x00425B50": {
   "name": "FUN_00425b50",
   "named": false,
-  "len": 978
+  "len": 979
  },
  "0x00425E90": {
   "name": "AudioGetMasterVolume__Fv_2",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23424
+  "len": 23488
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -1912,7 +1912,7 @@
  "0x0042E690": {
   "name": "rp_spark_hud_setup",
   "named": true,
-  "len": 3672
+  "len": 3680
  },
  "0x0042EA60": {
   "name": "FUN_0042ea60",
@@ -2137,7 +2137,7 @@
  "0x00435940": {
   "name": "dlog_entry_render_quads",
   "named": true,
-  "len": 3145
+  "len": 3161
  },
  "0x00435BC0": {
   "name": "fx_blob_shadow",
@@ -2190,9 +2190,9 @@
   "len": 139
  },
  "0x00436130": {
-  "name": "FUN_00436130",
-  "named": false,
-  "len": 342
+  "name": "gfx_set_image_buffer",
+  "named": true,
+  "len": 350
  },
  "0x00436150": {
   "name": "FUN_00436150",
@@ -2537,7 +2537,7 @@
  "0x00443A90": {
   "name": "FUN_00443a90",
   "named": false,
-  "len": 2450
+  "len": 2451
  },
  "0x00443C50": {
   "name": "flick_slot_lookup_handle",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FLK_FlickRender",
   "named": true,
-  "len": 18816
+  "len": 18834
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -2817,7 +2817,7 @@
  "0x00449CE0": {
   "name": "fx_processOpCodes",
   "named": true,
-  "len": 67448
+  "len": 67450
  },
  "0x0044EAD0": {
   "name": "FUN_0044ead0",
@@ -3347,7 +3347,7 @@
  "0x00458350": {
   "name": "FUN_00458350",
   "named": false,
-  "len": 4422
+  "len": 4423
  },
  "0x004586E0": {
   "name": "FUN_004586e0",
@@ -3407,7 +3407,7 @@
  "0x00459540": {
   "name": "FUN_00459540",
   "named": false,
-  "len": 5121
+  "len": 5131
  },
  "0x00459930": {
   "name": "inv_award_item",
@@ -3477,7 +3477,7 @@
  "0x0045B670": {
   "name": "reaper_lock_short_5",
   "named": true,
-  "len": 1511
+  "len": 1512
  },
  "0x0045B7A0": {
   "name": "reaper_lock_short_6",
@@ -3487,7 +3487,7 @@
  "0x0045B7F0": {
   "name": "FUN_0045b7f0",
   "named": false,
-  "len": 2629
+  "len": 2645
  },
  "0x0045BA70": {
   "name": "AttackObject__FP6OBJECTT0P3P3DT2fi",
@@ -3542,12 +3542,12 @@
  "0x0045DAE0": {
   "name": "fx_lightning_strike",
   "named": true,
-  "len": 1554
+  "len": 1555
  },
  "0x0045DC40": {
   "name": "reaper_lock_short_4",
   "named": true,
-  "len": 588
+  "len": 589
  },
  "0x0045DCB0": {
   "name": "FUN_0045dcb0",
@@ -3562,7 +3562,7 @@
  "0x0045E440": {
   "name": "FUN_0045e440",
   "named": false,
-  "len": 7484
+  "len": 7522
  },
  "0x0045E9B0": {
   "name": "validate_eat__FP6OBJECTT0",
@@ -3602,7 +3602,7 @@
  "0x00465350": {
   "name": "anim_dump_related",
   "named": true,
-  "len": 1909
+  "len": 1925
  },
  "0x004654C0": {
   "name": "fx_rect_interp",
@@ -3627,7 +3627,7 @@
  "0x00465BF0": {
   "name": "reaper_collect_food",
   "named": true,
-  "len": 3709
+  "len": 3725
  },
  "0x00465F10": {
   "name": "camera_ref_anode",
@@ -3657,7 +3657,7 @@
  "0x00467510": {
   "name": "obj_skinning_eval",
   "named": true,
-  "len": 2348
+  "len": 2349
  },
  "0x004676A0": {
   "name": "FUN_004676a0",
@@ -3667,7 +3667,7 @@
  "0x00469860": {
   "name": "FUN_00469860",
   "named": false,
-  "len": 749
+  "len": 750
  },
  "0x004698F0": {
   "name": "FUN_004698f0",
@@ -3682,7 +3682,7 @@
  "0x004699E0": {
   "name": "FUN_004699e0",
   "named": false,
-  "len": 1958
+  "len": 1961
  },
  "0x0046A480": {
   "name": "FUN_0046a480",
@@ -3697,7 +3697,7 @@
  "0x0046A710": {
   "name": "reaper_lock_short_2",
   "named": true,
-  "len": 1131
+  "len": 1132
  },
  "0x0046A800": {
   "name": "obj_anim_flags_update",
@@ -3712,7 +3712,7 @@
  "0x0046AEB0": {
   "name": "FUN_0046aeb0",
   "named": false,
-  "len": 6458
+  "len": 6461
  },
  "0x0046B3F0": {
   "name": "FUN_0046b3f0",
@@ -3767,7 +3767,7 @@
  "0x0046BAF0": {
   "name": "FUN_0046baf0",
   "named": false,
-  "len": 1939
+  "len": 1940
  },
  "0x0046BC60": {
   "name": "FUN_0046bc60",
@@ -4082,7 +4082,7 @@
  "0x00477F20": {
   "name": "FUN_00477f20",
   "named": false,
-  "len": 2137
+  "len": 2169
  },
  "0x00478080": {
   "name": "FUN_00478080",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "FUN_0047caa0",
   "named": false,
-  "len": 22866
+  "len": 22868
  },
  "0x0047DF10": {
   "name": "audio_listener_pan",
@@ -4242,12 +4242,12 @@
  "0x004801C0": {
   "name": "mecc_enable_personal_shield",
   "named": true,
-  "len": 1300
+  "len": 1301
  },
  "0x004802C0": {
   "name": "FUN_004802c0",
   "named": false,
-  "len": 1034
+  "len": 1035
  },
  "0x004803A0": {
   "name": "FUN_004803a0",
@@ -4297,12 +4297,12 @@
  "0x00480F90": {
   "name": "menu_fx_spawn",
   "named": true,
-  "len": 1353
+  "len": 1354
  },
  "0x004810D0": {
   "name": "FUN_004810d0",
   "named": false,
-  "len": 8429
+  "len": 8430
  },
  "0x00481630": {
   "name": "obj_swap_link",
@@ -4312,7 +4312,7 @@
  "0x00481830": {
   "name": "obj_grab_carry",
   "named": true,
-  "len": 1935
+  "len": 1936
  },
  "0x004819F0": {
   "name": "obj_ride_mount",
@@ -4957,7 +4957,7 @@
  "0x00496810": {
   "name": "FUN_00496810",
   "named": false,
-  "len": 242
+  "len": 243
  },
  "0x00496840": {
   "name": "anim_select_user",
@@ -5602,7 +5602,7 @@
  "0x004A2D60": {
   "name": "FUN_004a2d60",
   "named": false,
-  "len": 20094
+  "len": 20196
  },
  "0x004A3E90": {
   "name": "obj_material_names",
@@ -5642,7 +5642,7 @@
  "0x004A4770": {
   "name": "FUN_004a4770",
   "named": false,
-  "len": 1451
+  "len": 1452
  },
  "0x004A48A0": {
   "name": "FUN_004a48a0",
@@ -5872,7 +5872,7 @@
  "0x004A8190": {
   "name": "ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef",
   "named": true,
-  "len": 2980
+  "len": 3012
  },
  "0x004A8CC0": {
   "name": "MeccProcAnimsCreate",
@@ -5997,7 +5997,7 @@
  "0x004AA230": {
   "name": "FUN_004aa230",
   "named": false,
-  "len": 4040
+  "len": 4041
  },
  "0x004AA550": {
   "name": "FUN_004aa550",
@@ -6072,7 +6072,7 @@
  "0x004AD7E0": {
   "name": "FUN_004ad7e0",
   "named": false,
-  "len": 377
+  "len": 378
  },
  "0x004ADBF0": {
   "name": "FUN_004adbf0",
@@ -6112,7 +6112,7 @@
  "0x004AE4C0": {
   "name": "read_objects_bin_PS2",
   "named": true,
-  "len": 49791
+  "len": 49792
  },
  "0x004B0540": {
   "name": "readobjs_load_object",
@@ -6202,17 +6202,17 @@
  "0x004B4570": {
   "name": "FUN_004b4570",
   "named": false,
-  "len": 6187
+  "len": 6188
  },
  "0x004B4CA0": {
   "name": "FUN_004b4ca0",
   "named": false,
-  "len": 11486
+  "len": 11487
  },
  "0x004B54C0": {
   "name": "FUN_004b54c0",
   "named": false,
-  "len": 1852
+  "len": 1854
  },
  "0x004B5640": {
   "name": "reaperbasebldg_finish_building",
@@ -6242,7 +6242,7 @@
  "0x004B6630": {
   "name": "object_spawn_4b",
   "named": true,
-  "len": 2225
+  "len": 2226
  },
  "0x004B6800": {
   "name": "FUN_004b6800",
@@ -6322,7 +6322,7 @@
  "0x004B7450": {
   "name": "reaper_animselect",
   "named": true,
-  "len": 24623
+  "len": 24624
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -6340,9 +6340,9 @@
   "len": 320
  },
  "0x004B8AC0": {
-  "name": "FUN_004b8ac0",
-  "named": false,
-  "len": 1504
+  "name": "reaper_needs_ammo",
+  "named": true,
+  "len": 1509
  },
  "0x004B8C20": {
   "name": "reaper_needs_other",
@@ -6522,7 +6522,7 @@
  "0x004BCE60": {
   "name": "FUN_004bce60",
   "named": false,
-  "len": 12629
+  "len": 12630
  },
  "0x004BD7C0": {
   "name": "reaper_change_bow__FP6OBJECT",
@@ -6607,7 +6607,7 @@
  "0x004C0550": {
   "name": "reaper_create_fake_reaper__FP6OBJECTP3P3Dfi",
   "named": true,
-  "len": 2497
+  "len": 2498
  },
  "0x004C0810": {
   "name": "reaper_fire_sword__FP6OBJECT",
@@ -6617,7 +6617,7 @@
  "0x004C0FC0": {
   "name": "reaper_tornado_create",
   "named": true,
-  "len": 1884
+  "len": 1885
  },
  "0x004C1170": {
   "name": "reaper_check_enter_jet_ski__FP6OBJECT",
@@ -6682,7 +6682,7 @@
  "0x004C2AB0": {
   "name": "FUN_004c2ab0",
   "named": false,
-  "len": 3529
+  "len": 3530
  },
  "0x004C4880": {
   "name": "obj_snap_variant_a",
@@ -6792,7 +6792,7 @@
  "0x004CA830": {
   "name": "evilreaper_change_anim__FP6OBJECTii4SDKYf",
   "named": true,
-  "len": 611
+  "len": 612
  },
  "0x004CA890": {
   "name": "FUN_004ca890",
@@ -6812,12 +6812,12 @@
  "0x004CAF60": {
   "name": "sound_obj_seq_big",
   "named": true,
-  "len": 3272
+  "len": 3275
  },
  "0x004CB220": {
   "name": "sound_obj_seq_bigger",
   "named": true,
-  "len": 4595
+  "len": 4598
  },
  "0x004CB630": {
   "name": "sound_obj_seq_small",
@@ -6847,7 +6847,7 @@
  "0x004CBB90": {
   "name": "physics_reset_a",
   "named": true,
-  "len": 2670
+  "len": 2671
  },
  "0x004CBDF0": {
   "name": "physics_reset_d",
@@ -6877,7 +6877,7 @@
  "0x004CC900": {
   "name": "FUN_004cc900",
   "named": false,
-  "len": 15333
+  "len": 15334
  },
  "0x004CD5D0": {
   "name": "FUN_004cd5d0",
@@ -6947,7 +6947,7 @@
  "0x004D3ED0": {
   "name": "FUN_004d3ed0",
   "named": false,
-  "len": 4972
+  "len": 4974
  },
  "0x004D4350": {
   "name": "FUN_004d4350",
@@ -7077,12 +7077,12 @@
  "0x004D7C60": {
   "name": "FUN_004d7c60",
   "named": false,
-  "len": 1511
+  "len": 1512
  },
  "0x004D7E10": {
   "name": "ai_ospec12d_logic",
   "named": true,
-  "len": 3190
+  "len": 3191
  },
  "0x004D8150": {
   "name": "ai_accel_update",
@@ -7102,12 +7102,12 @@
  "0x004D8440": {
   "name": "ai_damage_response",
   "named": true,
-  "len": 9245
+  "len": 9261
  },
  "0x004D8CE0": {
   "name": "ai_anim_play",
   "named": true,
-  "len": 603
+  "len": 604
  },
  "0x004E1030": {
   "name": "FUN_004e1030",
@@ -7117,7 +7117,7 @@
  "0x004E10E0": {
   "name": "ai_death_anim",
   "named": true,
-  "len": 1453
+  "len": 1455
  },
  "0x004E1240": {
   "name": "FUN_004e1240",
@@ -7137,7 +7137,7 @@
  "0x004E1970": {
   "name": "FUN_004e1970",
   "named": false,
-  "len": 10087
+  "len": 10096
  },
  "0x004E21F0": {
   "name": "FUN_004e21f0",
@@ -7152,17 +7152,17 @@
  "0x004E22D0": {
   "name": "ai_visibility_cull",
   "named": true,
-  "len": 1770
+  "len": 1771
  },
  "0x004E2450": {
   "name": "ai_move_pair_caller",
   "named": true,
-  "len": 3198
+  "len": 3200
  },
  "0x004E26E0": {
   "name": "ai_damage_update",
   "named": true,
-  "len": 3836
+  "len": 3843
  },
  "0x004E29F0": {
   "name": "smartie_claim_targets",
@@ -7247,47 +7247,47 @@
  "0x004E4360": {
   "name": "FUN_004e4360",
   "named": false,
-  "len": 2397
+  "len": 2398
  },
  "0x004E45A0": {
   "name": "FUN_004e45a0",
   "named": false,
-  "len": 779
+  "len": 782
  },
  "0x004E4680": {
   "name": "ai_rand_anim_select",
   "named": true,
-  "len": 1354
+  "len": 1356
  },
  "0x004E47C0": {
   "name": "ai_idle_anim_select",
   "named": true,
-  "len": 1369
+  "len": 1377
  },
  "0x004E4920": {
   "name": "ai_idle_anim_53",
   "named": true,
-  "len": 1343
+  "len": 1345
  },
  "0x004E4A50": {
   "name": "ai_range_check",
   "named": true,
-  "len": 1628
+  "len": 1631
  },
  "0x004E4BC0": {
   "name": "FUN_004e4bc0",
   "named": false,
-  "len": 3069
+  "len": 3073
  },
  "0x004E4E70": {
   "name": "FUN_004e4e70",
   "named": false,
-  "len": 1266
+  "len": 1268
  },
  "0x004E4F60": {
   "name": "FUN_004e4f60",
   "named": false,
-  "len": 601
+  "len": 605
  },
  "0x004E5000": {
   "name": "FUN_004e5000",
@@ -7307,22 +7307,22 @@
  "0x004E5640": {
   "name": "FUN_004e5640",
   "named": false,
-  "len": 10155
+  "len": 10158
  },
  "0x004E5F70": {
   "name": "FUN_004e5f70",
   "named": false,
-  "len": 7890
+  "len": 7895
  },
  "0x004E6670": {
   "name": "FUN_004e6670",
   "named": false,
-  "len": 2493
+  "len": 2494
  },
  "0x004E6880": {
   "name": "obj_proximity_update",
   "named": true,
-  "len": 3848
+  "len": 3849
  },
  "0x004E6BA0": {
   "name": "FUN_004e6ba0",
@@ -7332,7 +7332,7 @@
  "0x004E7160": {
   "name": "FUN_004e7160",
   "named": false,
-  "len": 1151
+  "len": 1152
  },
  "0x004E7250": {
   "name": "FUN_004e7250",
@@ -7357,7 +7357,7 @@
  "0x004E7460": {
   "name": "FUN_004e7460",
   "named": false,
-  "len": 1874
+  "len": 1875
  },
  "0x004E7970": {
   "name": "rpman_gib__FP6OBJECTT0",
@@ -7367,12 +7367,12 @@
  "0x004E7AE0": {
   "name": "FUN_004e7ae0",
   "named": false,
-  "len": 11815
+  "len": 11819
  },
  "0x004E9CE0": {
   "name": "FUN_004e9ce0",
   "named": false,
-  "len": 792
+  "len": 794
  },
  "0x004EA350": {
   "name": "FUN_004ea350",
@@ -7382,12 +7382,12 @@
  "0x004EA3E0": {
   "name": "FUN_004ea3e0",
   "named": false,
-  "len": 2879
+  "len": 2881
  },
  "0x004EA810": {
   "name": "FUN_004ea810",
   "named": false,
-  "len": 799
+  "len": 800
  },
  "0x004EA8C0": {
   "name": "comm_packet_big",
@@ -7617,7 +7617,7 @@
  "0x004F40A0": {
   "name": "FUN_004f40a0",
   "named": false,
-  "len": 792
+  "len": 793
  },
  "0x004F4150": {
   "name": "FUN_004f4150",
@@ -7647,12 +7647,12 @@
  "0x004F4FC0": {
   "name": "FUN_004f4fc0",
   "named": false,
-  "len": 1212
+  "len": 1213
  },
  "0x004F50C0": {
   "name": "smartie_unlock_from_player",
   "named": true,
-  "len": 3916
+  "len": 3917
  },
  "0x004F5410": {
   "name": "FUN_004f5410",
@@ -7677,7 +7677,7 @@
  "0x004F5C10": {
   "name": "smartie_board_player__FP6OBJECTT0i",
   "named": true,
-  "len": 4080
+  "len": 4081
  },
  "0x004F6090": {
   "name": "FUN_004f6090",
@@ -7692,7 +7692,7 @@
  "0x004F7780": {
   "name": "FUN_004f7780",
   "named": false,
-  "len": 4643
+  "len": 4644
  },
  "0x004F7AF0": {
   "name": "FUN_004f7af0",
@@ -7902,7 +7902,7 @@
  "0x00500C00": {
   "name": "FUN_00500c00",
   "named": false,
-  "len": 1250
+  "len": 1251
  },
  "0x00500CF0": {
   "name": "status_team_lookup",
@@ -8042,7 +8042,7 @@
  "0x005059B0": {
   "name": "mecc_animselect_gm",
   "named": true,
-  "len": 46288
+  "len": 46292
  },
  "0x005078E0": {
   "name": "main_textget_005078e0",
@@ -8332,7 +8332,7 @@
  "0x0050C3C0": {
   "name": "FUN_0050c3c0",
   "named": false,
-  "len": 503
+  "len": 505
  },
  "0x0050C950": {
   "name": "FUN_0050c950",
@@ -8372,7 +8372,7 @@
  "0x005116E0": {
   "name": "FUN_005116e0",
   "named": false,
-  "len": 8451
+  "len": 8457
  },
  "0x00511CF0": {
   "name": "FUN_00511cf0",
@@ -8780,14 +8780,14 @@
   "len": 90
  },
  "0x00517A10": {
-  "name": "FUN_00517a10",
-  "named": false,
-  "len": 292
+  "name": "tracer_set_text",
+  "named": true,
+  "len": 295
  },
  "0x00517A60": {
   "name": "FUN_00517a60",
   "named": false,
-  "len": 222
+  "len": 225
  },
  "0x00517A80": {
   "name": "_GLOBAL_$D$Game",
@@ -9107,7 +9107,7 @@
  "0x0051C370": {
   "name": "FUN_0051c370",
   "named": false,
-  "len": 1026
+  "len": 1029
  },
  "0x0051C470": {
   "name": "localization_check",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36347
+  "len": 36349
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10302,22 +10302,22 @@
  "0x00533500": {
   "name": "mecc_shield_spell",
   "named": true,
-  "len": 3402
+  "len": 3403
  },
  "0x00533700": {
   "name": "mecc_cloak_spell",
   "named": true,
-  "len": 2831
+  "len": 2832
  },
  "0x005338E0": {
   "name": "comm_team_broadcast",
   "named": true,
-  "len": 3387
+  "len": 3389
  },
  "0x00533B00": {
   "name": "FUN_00533b00",
   "named": false,
-  "len": 2174
+  "len": 2176
  },
  "0x00533C60": {
   "name": "base_warn_missing",
@@ -10722,7 +10722,7 @@
  "0x0053C660": {
   "name": "FUN_0053c660",
   "named": false,
-  "len": 5321
+  "len": 5337
  },
  "0x0053CA70": {
   "name": "FUN_0053ca70",
@@ -10757,12 +10757,12 @@
  "0x0053D0A0": {
   "name": "ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi",
   "named": true,
-  "len": 803
+  "len": 839
  },
  "0x0053D120": {
   "name": "FUN_0053d120",
   "named": false,
-  "len": 1077
+  "len": 1105
  },
  "0x0053D1C0": {
   "name": "editor_anim_skin",
@@ -10775,9 +10775,9 @@
   "len": 374
  },
  "0x0053D2D0": {
-  "name": "FUN_0053d2d0",
-  "named": false,
-  "len": 636
+  "name": "ANM_AnimationEvalVertices",
+  "named": true,
+  "len": 664
  },
  "0x0053D330": {
   "name": "FUN_0053d330",
@@ -10787,7 +10787,7 @@
  "0x0053D3B0": {
   "name": "nam_lookup_full",
   "named": true,
-  "len": 3046
+  "len": 3078
  },
  "0x0053D5E0": {
   "name": "FUN_0053d5e0",
@@ -10870,9 +10870,9 @@
   "len": 621
  },
  "0x0053DDE0": {
-  "name": "FUN_0053dde0",
-  "named": false,
-  "len": 986
+  "name": "GEO_MatLookAt",
+  "named": true,
+  "len": 987
  },
  "0x0053DEB0": {
   "name": "quat_to_matrix__FP4QUATPf",
@@ -10895,9 +10895,9 @@
   "len": 2013
  },
  "0x0053E270": {
-  "name": "FUN_0053e270",
-  "named": false,
-  "len": 2179
+  "name": "S_GEO_Vec3Transform_2",
+  "named": true,
+  "len": 2188
  },
  "0x0053E3D0": {
   "name": "FUN_0053e3d0",
@@ -10955,9 +10955,9 @@
   "len": 248
  },
  "0x0053E8D0": {
-  "name": "FUN_0053e8d0",
-  "named": false,
-  "len": 237
+  "name": "distancesq3d1p__FP3P3D",
+  "named": true,
+  "len": 247
  },
  "0x0053E900": {
   "name": "FUN_0053e900",
@@ -10967,7 +10967,7 @@
  "0x0053E960": {
   "name": "FUN_0053e960",
   "named": false,
-  "len": 425
+  "len": 435
  },
  "0x0053E9C0": {
   "name": "GEO_Vec4Scale",
@@ -11212,7 +11212,7 @@
  "0x00540800": {
   "name": "crt_math_dispatch_init",
   "named": true,
-  "len": 1443
+  "len": 1607
  },
  "0x00540AB0": {
   "name": "FUN_00540ab0",
@@ -11270,9 +11270,9 @@
   "len": 3912
  },
  "0x00542130": {
-  "name": "FUN_00542130",
-  "named": false,
-  "len": 5379
+  "name": "S_GEO_Vec4Transform",
+  "named": true,
+  "len": 5386
  },
  "0x005424D0": {
   "name": "FUN_005424d0",
@@ -11285,14 +11285,14 @@
   "len": 80
  },
  "0x00542A90": {
-  "name": "FUN_00542a90",
-  "named": false,
-  "len": 2053
+  "name": "ANM_ClusterApplyMatSingleVertex",
+  "named": true,
+  "len": 2072
  },
  "0x00542BB0": {
-  "name": "FUN_00542bb0",
-  "named": false,
-  "len": 2164
+  "name": "S_GEO_Vec3Transform",
+  "named": true,
+  "len": 2171
  },
  "0x00542D10": {
   "name": "FUN_00542d10",
@@ -12132,7 +12132,7 @@
  "0x00548539": {
   "name": "crt_tls_init",
   "named": true,
-  "len": 495
+  "len": 509
  },
  "0x0054858D": {
   "name": "voBufReset__FP5VoBuf_2",
@@ -12400,9 +12400,9 @@
   "len": 1277
  },
  "0x0054BEC4": {
-  "name": "FUN_0054bec4",
-  "named": false,
-  "len": 371
+  "name": "crt_critical_sections_init",
+  "named": true,
+  "len": 385
  },
  "0x0054BEED": {
   "name": "_lock",

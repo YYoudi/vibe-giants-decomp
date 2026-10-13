@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (44 named) — decompiled, names from PS2 symbols
+ * 90 functions (45 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -704,7 +704,7 @@ void FUN_004b4570(int param_1)
 
     FUN_004a7440(iVar2);
 
-    FUN_004034a0(iVar2,1,0x20,0,0,0);
+    ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
     FUN_00403e60(iVar2,0x3d4ccccd);
 
@@ -1569,7 +1569,7 @@ switchD_004b4d3a_caseD_7:
 
     }
 
-    FUN_004034a0(param_1,1,0x84,0,0,0);
+    ObjectSetAnim(param_1,1,0x84,0,0,0);
 
     *(undefined4 *)((int)param_1 + 0x14) = 0x3f800000;
 
@@ -1696,7 +1696,7 @@ void FUN_004b54c0(int param_1,int param_2,uint param_3)
 
   *(undefined4 *)(param_2 + 0xe4) = 3;
 
-  FUN_004034a0(param_2,1,0x84,0,0,0);
+  ObjectSetAnim(param_2,1,0x84,0,0,0);
 
   *(undefined4 *)(param_2 + 0x14) = 0;
 
@@ -1764,7 +1764,7 @@ void FUN_004b54c0(int param_1,int param_2,uint param_3)
 
       *(undefined4 *)(iVar4 + 0xe4) = 5;
 
-      FUN_004034a0(*piVar5,1,0x10,0,0,0);
+      ObjectSetAnim(*piVar5,1,0x10,0,0,0);
 
       if (DAT_00657678 == 0) {
 
@@ -2664,7 +2664,7 @@ undefined4 object_spawn_4b(int param_1,uint param_2)
 
     bldg_set_energy(iVar3,0);
 
-    FUN_004034a0(iVar3,1,0x84,0,0,0);
+    ObjectSetAnim(iVar3,1,0x84,0,0,0);
 
     *(undefined4 *)(iVar3 + 0x14) = 0x3f800000;
 
@@ -4584,7 +4584,7 @@ LAB_004b8187:
 
       if ((DAT_00560c50 != 0xfe) && (*(int *)(*(int *)(param_1 + 8) + 8 + DAT_00560c50 * 4) != 0)) {
 
-        FUN_004034a0(iVar7,DAT_00560c50,1,0,0,0x3e2aaaab);
+        ObjectSetAnim(iVar7,DAT_00560c50,1,0,0,0x3e2aaaab);
 
       }
 
@@ -5561,12 +5561,12 @@ undefined4 reaper_has_bow_2(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004b8ac0 @ 0x004B8AC0 ===== */
+/* ===== reaper_needs_ammo @ 0x004B8AC0 ===== */
 /* PS2 candidate: reaper_needs_ammo (conf 0.326) */
 
 
 
-bool FUN_004b8ac0(int param_1,undefined4 param_2)
+bool reaper_needs_ammo(int param_1,undefined4 param_2)
 
 
 
@@ -9616,7 +9616,7 @@ LAB_004bd3f4:
 
         if (pfVar15[4] != 3.5593e-43) {
 
-          FUN_004034a0(iVar10,pfVar15[4],4,0,0,0);
+          ObjectSetAnim(iVar10,pfVar15[4],4,0,0,0);
 
           if (pfVar19[4] == pfVar15[4]) {
 

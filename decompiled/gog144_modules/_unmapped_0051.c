@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (87 named) — decompiled, names from PS2 symbols
+ * 186 functions (88 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -535,7 +535,7 @@ void FUN_005116e0(int param_1)
 
           if (*(int *)(param_1 + 0x10) != 0x43) {
 
-            FUN_004034a0(param_1,0x43,0x20,0,0,0x3f2aaaab);
+            ObjectSetAnim(param_1,0x43,0x20,0,0,0x3f2aaaab);
 
             return;
 
@@ -543,7 +543,7 @@ void FUN_005116e0(int param_1)
 
           if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
 
-            FUN_004034a0(param_1,0x44,0x21,0,0,0x3f2aaaab);
+            ObjectSetAnim(param_1,0x44,0x21,0,0,0x3f2aaaab);
 
             return;
 
@@ -557,13 +557,13 @@ void FUN_005116e0(int param_1)
 
             if (*(char *)(iVar2 + 0x88) != '\0') {
 
-              FUN_004034a0(param_1,0x37,0x20,0,0,0x3f2aaaab);
+              ObjectSetAnim(param_1,0x37,0x20,0,0,0x3f2aaaab);
 
               return;
 
             }
 
-            FUN_004034a0(param_1,0x38,0x20,0,0,0x3f2aaaab);
+            ObjectSetAnim(param_1,0x38,0x20,0,0,0x3f2aaaab);
 
             return;
 
@@ -777,7 +777,7 @@ void FUN_005116e0(int param_1)
 
               if (iVar2 != *(int *)(param_1 + 0x10)) {
 
-                FUN_004034a0(param_1,iVar2,0x21,0,0,0x3f2aaaab);
+                ObjectSetAnim(param_1,iVar2,0x21,0,0,0x3f2aaaab);
 
                 return;
 
@@ -841,7 +841,7 @@ void FUN_005116e0(int param_1)
 
           if (iVar2 != *(int *)(param_1 + 0x10)) {
 
-            FUN_004034a0(param_1,iVar2,0x21,1,fVar1 * *(float *)(param_1 + 0xc4),0x3f000000);
+            ObjectSetAnim(param_1,iVar2,0x21,1,fVar1 * *(float *)(param_1 + 0xc4),0x3f000000);
 
             return;
 
@@ -6979,12 +6979,12 @@ void ANM_BinderDestroy_2(HANDLE param_1)
 
 }
 
-/* ===== FUN_00517a10 @ 0x00517A10 ===== */
+/* ===== tracer_set_text @ 0x00517A10 ===== */
 /* PS2 candidate: tracer_add_trail (conf 0.768) */
 
 
 
-void FUN_00517a10(LPCSTR param_1)
+void tracer_set_text(LPCSTR param_1)
 
 
 
@@ -7023,7 +7023,7 @@ void FUN_00517a60(undefined4 param_1)
 
   uVar1 = FUN_00517aa0(DAT_005ddb7c);
 
-  FUN_00517a10(param_1,uVar1);
+  tracer_set_text(param_1,uVar1);
 
   return;
 
@@ -12240,7 +12240,7 @@ void FUN_0051c370(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3)
 
 {
 
-  _DAT_005dd918 = FUN_00517a10;
+  _DAT_005dd918 = tracer_set_text;
 
   _DAT_005dd91c = error_screen_exit;
 

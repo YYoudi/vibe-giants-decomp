@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (55 named) — decompiled, names from PS2 symbols
+ * 100 functions (56 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -4295,7 +4295,7 @@ undefined4 FUN_004156f0(int param_1,float *param_2)
 
           local_38 = *(undefined4 *)(iVar7 + 0x250);
 
-          (*(code *)PTR_FUN_00580c20)(pfVar8 + -8,&local_40,1,param_1 + 0x294);
+          (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(pfVar8 + -8,&local_40,1,param_1 + 0x294);
 
           pfVar8[-5] = *(float *)(param_1 + 0xc4) * 20.0;
 
@@ -5618,12 +5618,12 @@ void FUN_004177f0(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00417830 @ 0x00417830 ===== */
+/* ===== base_get_smartie_building @ 0x00417830 ===== */
 /* PS2 candidate: base_get_smartie_building (conf 0.775) */
 
 
 
-undefined4 FUN_00417830(int param_1)
+undefined4 base_get_smartie_building(int param_1)
 
 
 
@@ -7262,7 +7262,7 @@ undefined4 object_spawn_class5(int param_1,float param_2)
 
     FUN_004a7440(iVar3);
 
-    FUN_004034a0(iVar3,1,0x20,0,0,0);
+    ObjectSetAnim(iVar3,1,0x20,0,0,0);
 
     FUN_00403e60(iVar3,0x3d4ccccd);
 
@@ -8051,7 +8051,7 @@ void objtype_setup_spell(undefined4 param_1)
 
       FUN_004a7440(iVar1);
 
-      FUN_004034a0(iVar1,1,0x20,0,0,0);
+      ObjectSetAnim(iVar1,1,0x20,0,0,0);
 
       FUN_00403e60(iVar1,0x3d4ccccd);
 
@@ -8294,7 +8294,7 @@ LAB_0041a8bd:
 
 LAB_0041a942:
 
-  FUN_004034a0(iVar2,1,0x84,0,0,0);
+  ObjectSetAnim(iVar2,1,0x84,0,0,0);
 
   *(undefined4 *)(iVar2 + 0x14) = 0x3f800000;
 
@@ -8576,7 +8576,7 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
   FUN_004a7440(iVar4);
 
-  FUN_004034a0(iVar4,1,0x20,0,0,0);
+  ObjectSetAnim(iVar4,1,0x20,0,0,0);
 
   FUN_00403e60(iVar4,0x3d4ccccd);
 
@@ -8871,7 +8871,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   *(undefined4 *)(iVar4 + 0xe4) = param_4;
 
-  FUN_004034a0(iVar4,1,0x84,0,0,0);
+  ObjectSetAnim(iVar4,1,0x84,0,0,0);
 
   iVar7 = FUN_004a6220(iVar4);
 
@@ -9102,7 +9102,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     FUN_004a7440(iVar2);
 
-    FUN_004034a0(iVar2,1,0x20,0,0,0);
+    ObjectSetAnim(iVar2,1,0x20,0,0,0);
 
     FUN_00403e60(iVar2,0x3d4ccccd);
 
@@ -9172,7 +9172,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
   *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 8;
 
-  FUN_004034a0(param_1,0x65,0x20,0,0,0);
+  ObjectSetAnim(param_1,0x65,0x20,0,0,0);
 
   iVar2 = FUN_0052aa70();
 
@@ -10517,7 +10517,7 @@ LAB_0041e530:
 
 LAB_0041e5bd:
 
-  FUN_004034a0(iVar4,1,0x84,0,0,0);
+  ObjectSetAnim(iVar4,1,0x84,0,0,0);
 
   *(undefined4 *)(iVar4 + 0x14) = 0x3f800000;
 
@@ -10601,7 +10601,7 @@ LAB_0041e5bd:
 
     *(undefined4 *)(*(int *)(iVar1 + 0x20) + 0xe4) = 5;
 
-    FUN_004034a0(*(undefined4 *)(iVar1 + 0x20),1,0x10,0,0,0);
+    ObjectSetAnim(*(undefined4 *)(iVar1 + 0x20),1,0x10,0,0,0);
 
   }
 

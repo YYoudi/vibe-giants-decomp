@@ -1,0 +1,14 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00417830,FUN_00417830,,base_get_smartie_building,0.9,llm-w115,body-verified
+00542bb0,FUN_00542bb0,,S_GEO_Vec3Transform,0.9,llm-w115,body-verified batched
+00542130,FUN_00542130,,S_GEO_Vec4Transform,0.9,llm-w115,body-verified batched
+0053e270,FUN_0053e270,,S_GEO_Vec3Transform_2,0.9,llm-w115,body-verified variant
+0053e8d0,FUN_0053e8d0,,distancesq3d1p__FP3P3D,0.9,llm-w115,body-verified dot/sqrt
+0053d2d0,FUN_0053d2d0,,ANM_AnimationEvalVertices,0.9,llm-w115,body-verified eval loop
+0053dde0,FUN_0053dde0,,GEO_MatLookAt,0.9,llm-w115,body-verified mat build
+00542a90,FUN_00542a90,,ANM_ClusterApplyMatSingleVertex,0.9,llm-w115,body-verified
+004b8ac0,FUN_004b8ac0,,reaper_needs_ammo,0.9,llm-w115,body-verified weapon switch
+004034a0,FUN_004034a0,,ObjectSetAnim,0.9,llm-w115,body-verified anim set
+00517a10,FUN_00517a10,,tracer_set_text,0.9,llm-w115,body-verified wvsprintf trace (renamed from tracer_add_trail)
+0054bec4,FUN_0054bec4,,crt_critical_sections_init,0.9,llm-w115,body-verified InitCriticalSection x4 (rejected ANM_Uninit)
+00436130,FUN_00436130,,gfx_set_image_buffer,0.9,llm-w115,body-verified upcall (rejected sceMpeg PS2 name)

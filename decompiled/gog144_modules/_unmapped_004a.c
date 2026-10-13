@@ -3080,9 +3080,9 @@ LAB_004a3a06:
 
       fStack_2f4 = -fStack_2a8;
 
-      (*(code *)PTR_FUN_00580c28)(&fStack_2d8,&fStack_2fc,1,auStack_110);
+      (*(code *)PTR_S_GEO_Vec4Transform_00580c28)(&fStack_2d8,&fStack_2fc,1,auStack_110);
 
-      fVar15 = (float10)FUN_0053e8d0(&fStack_2d8);
+      fVar15 = (float10)distancesq3d1p__FP3P3D(&fStack_2d8);
 
       GEO_Vec4Scale((float *)(param_1 + 0x144),&fStack_2d8,(float)((float10)1.0 / fVar15));
 
@@ -3118,13 +3118,13 @@ LAB_004a3a06:
 
       fStack_2f4 = -fStack_2b4;
 
-      (*(code *)PTR_FUN_00580c28)(&fStack_2d8,&fStack_2fc,1,auStack_110);
+      (*(code *)PTR_S_GEO_Vec4Transform_00580c28)(&fStack_2d8,&fStack_2fc,1,auStack_110);
 
-      fVar15 = (float10)FUN_0053e8d0(&fStack_2d8);
+      fVar15 = (float10)distancesq3d1p__FP3P3D(&fStack_2d8);
 
       GEO_Vec4Scale(&fStack_2d8,&fStack_2d8,(float)((float10)1.0 / fVar15));
 
-      (*(code *)PTR_FUN_00580c20)(param_1 + 0x254,afStack_2c8 + 3,1,auStack_154);
+      (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(param_1 + 0x254,afStack_2c8 + 3,1,auStack_154);
 
       fVar6 = 1.0 / SQRT(fStack_2dc);
 
@@ -3134,7 +3134,9 @@ LAB_004a3a06:
 
       fStack_2b4 = fVar6 * fStack_2b4;
 
-      (*(code *)PTR_FUN_00580c20)((float *)(param_1 + 0x260),afStack_2c8 + 3,1,auStack_154);
+      (*(code *)PTR_S_GEO_Vec3Transform_00580c20)
+
+                ((float *)(param_1 + 0x260),afStack_2c8 + 3,1,auStack_154);
 
       uVar13 = objspec_has_shot_function_2(param_1,param_2);
 
@@ -3964,7 +3966,7 @@ int FUN_004a4770(int param_1)
 
   *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x200;
 
-  FUN_004034a0(iVar5,1,0x21,0,0,0);
+  ObjectSetAnim(iVar5,1,0x21,0,0,0);
 
   pfVar1 = (float *)(param_1 + 0xa0);
 
@@ -9578,7 +9580,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   if ((float)puVar7[0x16] == 0.0) {
 
-    FUN_0053dde0(local_44,&local_13c,&local_10c,&local_118);
+    GEO_MatLookAt(local_44,&local_13c,&local_10c,&local_118);
 
     FUN_0053dd40(local_88,0xbfc90fdb);
 
@@ -11413,7 +11415,7 @@ void FUN_004ad7e0(int param_1)
 
     puVar1[0x18] = puVar1[0x18] & 0xffffffcf;
 
-    FUN_004034a0(param_1,10,0x21,1,0x41a00000,0);
+    ObjectSetAnim(param_1,10,0x21,1,0x41a00000,0);
 
     *(undefined4 *)(param_1 + 0xe4) = 1;
 
@@ -13224,7 +13226,7 @@ switchD_004af2c0_caseD_54:
 
   case 0x13:
 
-    FUN_004034a0();
+    ObjectSetAnim();
 
     pfVar29 = (float *)((int)pfVar30 + 2);
 

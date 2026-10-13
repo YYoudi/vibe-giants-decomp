@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (93 named) — decompiled, names from PS2 symbols
+ * 179 functions (97 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -3383,7 +3383,7 @@ LAB_005319de:
 
           *(undefined4 *)(iVar4 + 0x278) = *(undefined4 *)(pcVar15 + 5);
 
-          FUN_004034a0(iVar4,1,0x84,0,0,0);
+          ObjectSetAnim(iVar4,1,0x84,0,0,0);
 
           *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | 1;
 
@@ -3537,7 +3537,7 @@ LAB_005319de:
 
           *(undefined4 *)(iVar4 + 0x188) = *(undefined4 *)(pcVar15 + 0x15);
 
-          FUN_004034a0(iVar4,*(undefined4 *)(pcVar15 + 0x19),0x80,0,0,0);
+          ObjectSetAnim(iVar4,*(undefined4 *)(pcVar15 + 0x19),0x80,0,0,0);
 
           *(undefined4 *)(iVar4 + 0x14) = 0x3f800000;
 
@@ -5074,7 +5074,7 @@ void mecc_shield_spell(int param_1)
 
     *(undefined4 *)(iVar2 + 0x278) = *(undefined4 *)(param_1 + 5);
 
-    FUN_004034a0(iVar2,1,0x21,0,0,0);
+    ObjectSetAnim(iVar2,1,0x21,0,0,0);
 
     if (*(byte *)(param_1 + 10) == 0xff) {
 
@@ -5293,7 +5293,7 @@ void mecc_cloak_spell(int param_1)
 
     *(undefined4 *)(iVar2 + 0x278) = *(undefined4 *)(param_1 + 5);
 
-    FUN_004034a0(iVar2,1,0x21,0,0,0);
+    ObjectSetAnim(iVar2,1,0x21,0,0,0);
 
     piVar3 = DAT_00632d68;
 
@@ -5584,9 +5584,9 @@ LAB_00533a8f:
 
       *(undefined1 *)(iVar4 + 0x228) = *(undefined1 *)(param_1 + 0x95);
 
-      FUN_004034a0(iVar3,*(undefined4 *)(param_1 + 0x7d),*(undefined4 *)(param_1 + 0x81),
+      ObjectSetAnim(iVar3,*(undefined4 *)(param_1 + 0x7d),*(undefined4 *)(param_1 + 0x81),
 
-                   *(undefined4 *)(param_1 + 0x85),*(undefined4 *)(param_1 + 0x79),0);
+                    *(undefined4 *)(param_1 + 0x85),*(undefined4 *)(param_1 + 0x79),0);
 
     }
 
@@ -5701,9 +5701,9 @@ LAB_00533b86:
 
       *(undefined4 *)(iVar5 + 0x278) = *(undefined4 *)(param_1 + 0x19);
 
-      FUN_004034a0(iVar5,*(undefined4 *)(param_1 + 0x31),*(undefined4 *)(param_1 + 0x35),
+      ObjectSetAnim(iVar5,*(undefined4 *)(param_1 + 0x31),*(undefined4 *)(param_1 + 0x35),
 
-                   *(undefined4 *)(param_1 + 0x39),*(undefined4 *)(param_1 + 0x2d),0);
+                    *(undefined4 *)(param_1 + 0x39),*(undefined4 *)(param_1 + 0x2d),0);
 
     }
 
@@ -15539,7 +15539,7 @@ LAB_0053ca17:
 
       (*(code *)PTR_crt_matrix_copy_init_00580c1c)(&local_64,uVar3);
 
-      (*(code *)PTR_FUN_00580c20)(&local_b0,&local_70,1,&local_64);
+      (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(&local_b0,&local_70,1,&local_64);
 
     }
 
@@ -16302,7 +16302,9 @@ void ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi
 
       uVar1 = FUN_0053cb50(puVar3[1],param_2,param_6);
 
-      (*(code *)PTR_FUN_0058096c)(*puVar3,uVar1,param_3,param_4,param_5);
+      (*(code *)PTR_ANM_ClusterApplyMatSingleVertex_0058096c)(*puVar3,uVar1,param_3,param_4,param_5)
+
+      ;
 
     }
 
@@ -16375,7 +16377,7 @@ void FUN_0053d120(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
       uVar4 = FUN_0053cc20(iVar2,param_2,param_6);
 
-      (*(code *)PTR_FUN_0058096c)
+      (*(code *)PTR_ANM_ClusterApplyMatSingleVertex_0058096c)
 
                 (*(undefined4 *)(iVar6 + -0xc + iVar1),uVar4,param_3,param_4,param_5);
 
@@ -16497,14 +16499,16 @@ void FUN_0053d2a0(int param_1)
 
 }
 
-/* ===== FUN_0053d2d0 @ 0x0053D2D0 ===== */
+/* ===== ANM_AnimationEvalVertices @ 0x0053D2D0 ===== */
 /* PS2 candidate: ANM_AnimationEvalVertices (conf 0.766) */
 
 
 
-void FUN_0053d2d0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+void ANM_AnimationEvalVertices
 
-                 undefined4 param_5)
+               (int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+
+               undefined4 param_5)
 
 
 
@@ -16712,7 +16716,7 @@ byte nam_lookup_full(int param_1,int param_2,int param_3,int param_4,undefined4 
 
           (*(code *)PTR_crt_matrix_copy_init_00580c1c)(local_44,uVar6);
 
-          (*(code *)PTR_FUN_00580c20)(&fStack_50,param_3,1,local_44);
+          (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(&fStack_50,param_3,1,local_44);
 
           fVar1 = fStack_48 * fStack_48 + fStack_4c * fStack_4c + fStack_50 * fStack_50;
 
@@ -16788,7 +16792,7 @@ LAB_0053d503:
 
     uVar3 = FUN_0053cc20(param_1,param_2,param_5);
 
-    (*(code *)PTR_FUN_00580c20)(param_3,param_3 + 0xc,1,uVar3);
+    (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(param_3,param_3 + 0xc,1,uVar3);
 
   } while( true );
 
@@ -17804,12 +17808,12 @@ void FUN_0053dd90(undefined4 *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053dde0 @ 0x0053DDE0 ===== */
+/* ===== GEO_MatLookAt @ 0x0053DDE0 ===== */
 /* PS2 candidate: GEO_MatLookAt (conf 0.364) */
 
 
 
-void FUN_0053dde0(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
+void GEO_MatLookAt(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
 
 
 
@@ -18231,12 +18235,12 @@ void crt_bbox_center(float *param_1,int param_2)
 
 }
 
-/* ===== FUN_0053e270 @ 0x0053E270 ===== */
+/* ===== S_GEO_Vec3Transform_2 @ 0x0053E270 ===== */
 /* PS2 candidate: S_GEO_Vec3Transform_2 (conf 0.752) */
 
 
 
-void FUN_0053e270(float *param_1,float *param_2,int param_3,uint *param_4,uint param_5)
+void S_GEO_Vec3Transform_2(float *param_1,float *param_2,int param_3,uint *param_4,uint param_5)
 
 
 
@@ -18761,12 +18765,12 @@ void GEO_Vec2Scale(float *param_1,float *param_2,float param_3)
 
 }
 
-/* ===== FUN_0053e8d0 @ 0x0053E8D0 ===== */
+/* ===== distancesq3d1p__FP3P3D @ 0x0053E8D0 ===== */
 /* PS2 candidate: distancesq3d1p__FP3P3D (conf 0.766) */
 
 
 
-void FUN_0053e8d0(float *param_1)
+void distancesq3d1p__FP3P3D(float *param_1)
 
 
 
@@ -18852,7 +18856,7 @@ float10 FUN_0053e960(undefined4 param_1,undefined4 param_2)
 
   
 
-  fVar2 = (float10)FUN_0053e8d0(param_2);
+  fVar2 = (float10)distancesq3d1p__FP3P3D(param_2);
 
   fVar1 = (float)fVar2;
 

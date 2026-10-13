@@ -396,7 +396,7 @@ void reaper_create_fake_reaper__FP6OBJECTP3P3Dfi(float *param_1,float *param_2)
 
       if ((DAT_00560c50 != 0xfe) && (*(int *)(*(int *)(iVar2 + 8) + 8 + DAT_00560c50 * 4) != 0)) {
 
-        FUN_004034a0(iVar3,DAT_00560c50,1,0,0,0x3e2aaaab);
+        ObjectSetAnim(iVar3,DAT_00560c50,1,0,0,0x3e2aaaab);
 
       }
 
@@ -1012,7 +1012,7 @@ void reaper_tornado_create(int param_1,undefined4 *param_2,undefined4 param_3,un
 
   *(uint *)(iVar2 + 0xd8) = *(uint *)(iVar2 + 0xd8) | 0x14;
 
-  FUN_004034a0(iVar2,10,0x24,0,0,0);
+  ObjectSetAnim(iVar2,10,0x24,0,0,0);
 
   *(undefined4 *)(iVar2 + 0x184) = 0x3f800000;
 
@@ -2787,7 +2787,7 @@ void FUN_004c2ab0(undefined4 param_1,int param_2,float param_3,int param_4,int p
 
         if (pfVar7[4] != 3.5593e-43) {
 
-          FUN_004034a0(param_2,pfVar7[4],4,0,0,0);
+          ObjectSetAnim(param_2,pfVar7[4],4,0,0,0);
 
           if (pfVar8[4] == pfVar7[4]) {
 
@@ -5403,7 +5403,7 @@ void evilreaper_change_anim__FP6OBJECTii4SDKYf
 
     }
 
-    FUN_004034a0(param_1,param_2,uVar2,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
+    ObjectSetAnim(param_1,param_2,uVar2,param_4,param_5 * *(float *)(param_1 + 0xc4),0x3e2aaaab);
 
     if (param_2 != 0x89) {
 
@@ -6019,7 +6019,7 @@ void sound_obj_seq_big(int param_1)
 
     if (*(int *)(param_1 + 0x10) != 0x3e) {
 
-      FUN_004034a0(param_1,0x3e,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+      ObjectSetAnim(param_1,0x3e,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       *(undefined4 *)(iVar1 + 0xb4) = 0x3e;
 
@@ -6063,7 +6063,7 @@ void sound_obj_seq_big(int param_1)
 
     if (*(int *)(param_1 + 0x10) != 0x5a) {
 
-      FUN_004034a0(param_1,0x5a,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+      ObjectSetAnim(param_1,0x5a,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       *(undefined4 *)(iVar1 + 0xb4) = 0x5a;
 
@@ -6077,7 +6077,7 @@ void sound_obj_seq_big(int param_1)
 
   if (*(int *)(param_1 + 0x10) != 2) {
 
-    FUN_004034a0(param_1,2,0x21,1,*(float *)(param_1 + 0xc4) * 30.0,0x3e2aaaab);
+    ObjectSetAnim(param_1,2,0x21,1,*(float *)(param_1 + 0xc4) * 30.0,0x3e2aaaab);
 
     *(undefined4 *)(iVar1 + 0xb4) = 2;
 
@@ -6224,7 +6224,7 @@ void sound_obj_seq_bigger(int param_1)
 
       if (*(int *)(param_1 + 0x10) != 0x81) {
 
-        FUN_004034a0(param_1,0x81,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+        ObjectSetAnim(param_1,0x81,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
         *(undefined4 *)(iVar1 + 0xb4) = 0x81;
 
@@ -6246,7 +6246,7 @@ void sound_obj_seq_bigger(int param_1)
 
     if (*(int *)(param_1 + 0x10) != 0x7b) {
 
-      FUN_004034a0(param_1,0x7b,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+      ObjectSetAnim(param_1,0x7b,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       *(undefined4 *)(iVar3 + 0xb4) = 0x7b;
 
@@ -6264,7 +6264,7 @@ void sound_obj_seq_bigger(int param_1)
 
   if (*(int *)(param_1 + 0x10) != 0x3d) {
 
-    FUN_004034a0(param_1,0x3d,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+    ObjectSetAnim(param_1,0x3d,0x20,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
     *(undefined4 *)(iVar3 + 0xb4) = 0x3d;
 
@@ -6804,7 +6804,7 @@ void physics_reset_a(int param_1)
 
     if (*(int *)(param_1 + 0x10) != 0x5a) {
 
-      FUN_004034a0(param_1,0x5a,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
+      ObjectSetAnim(param_1,0x5a,0x21,0,*(float *)(param_1 + 0xc4) * 0.0,0x3e2aaaab);
 
       *(undefined4 *)(iVar1 + 0xb4) = 0x5a;
 
@@ -7246,7 +7246,7 @@ void FUN_004cc900(void)
 
     local_170 = 0x3f800000;
 
-    FUN_0053dde0(&local_1bc,&local_20c,local_1fc,&local_178);
+    GEO_MatLookAt(&local_1bc,&local_20c,local_1fc,&local_178);
 
     (*(code *)PTR_crt_matrix_copy_init_00580c1c)(&local_1bc,&local_1bc);
 

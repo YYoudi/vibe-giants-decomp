@@ -6948,7 +6948,7 @@ void FUN_00496810(int param_1,int param_2)
 
      (*(int *)(*(int *)(param_1 + 8) + 8 + param_2 * 4) != 0)) {
 
-    FUN_004034a0(param_1,param_2,0x30,0,0,0x3e2aaaab);
+    ObjectSetAnim(param_1,param_2,0x30,0,0,0x3e2aaaab);
 
   }
 

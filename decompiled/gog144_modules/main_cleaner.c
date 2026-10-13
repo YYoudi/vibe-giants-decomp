@@ -221,7 +221,7 @@ void cleaner_go_obj(void)
 
             *(float *)(iVar9 + 0xec) = (float)fVar12;
 
-            FUN_004034a0(iVar9,0xb,0x24,0,0,0);
+            ObjectSetAnim(iVar9,0xb,0x24,0,0,0);
 
             iVar10 = iVar10 + 1;
 

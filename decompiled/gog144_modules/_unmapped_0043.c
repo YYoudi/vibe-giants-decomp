@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (57 named) — decompiled, names from PS2 symbols
+ * 74 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -3322,7 +3322,7 @@ void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
   fStack_14c = fStack_158;
 
-  (*(code *)PTR_FUN_00580c20)(auStack_144,&fStack_174,4,param_2);
+  (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(auStack_144,&fStack_174,4,param_2);
 
   iVar4 = 4;
 
@@ -3889,12 +3889,12 @@ void FUN_00436110(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00436130 @ 0x00436130 ===== */
+/* ===== gfx_set_image_buffer @ 0x00436130 ===== */
 /* PS2 candidate: sceMpegSetImageBuff (conf 0.769) */
 
 
 
-void FUN_00436130(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+void gfx_set_image_buffer(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 
 

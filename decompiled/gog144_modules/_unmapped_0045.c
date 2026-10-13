@@ -7520,7 +7520,7 @@ LAB_00458528:
 
     *(int *)(iVar7 + 0x274) = param_1;
 
-    FUN_004034a0(iVar7,1,0x20,0,0,0);
+    ObjectSetAnim(iVar7,1,0x20,0,0,0);
 
 LAB_0045863f:
 
@@ -8292,7 +8292,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
         uVar5 = FUN_004a9010(uVar1);
 
-        iVar3 = FUN_004b8ac0(iVar6,uVar5);
+        iVar3 = reaper_needs_ammo(iVar6,uVar5);
 
         if (iVar3 == 0) {
 
@@ -8306,7 +8306,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
       iVar3 = FUN_00458cd0(uVar1);
 
-      if ((iVar3 != 0) && (iVar3 = FUN_004b8ac0(iVar6,uVar1), iVar3 == 0)) {
+      if ((iVar3 != 0) && (iVar3 = reaper_needs_ammo(iVar6,uVar1), iVar3 == 0)) {
 
         return false;
 
@@ -10808,7 +10808,7 @@ void reaper_lock_short_5(undefined4 param_1,int param_2,float param_3,int param_
 
     if (*(int *)(param_2 + 0x10) != piVar2[param_4 + 8]) {
 
-      FUN_004034a0(param_2,piVar2[param_4 + 8],0x21,0,0,0);
+      ObjectSetAnim(param_2,piVar2[param_4 + 8],0x21,0,0,0);
 
     }
 
@@ -10936,7 +10936,7 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 
   local_14 = *(undefined4 *)(iVar2 + 0x30);
 
-  (*(code *)PTR_FUN_00580c20)(&local_34,&local_1c,1,(int)param_1 + 0x294);
+  (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(&local_34,&local_1c,1,(int)param_1 + 0x294);
 
   physics_vec_math(&local_34,&fStack_10,0,auStack_44,1);
 
@@ -12749,7 +12749,7 @@ LAB_0045dc09:
 
   *(float *)(*(int *)(iVar1 + 0x150) + 0x14) = (float)((float10)1.0 - fVar6);
 
-  FUN_004034a0(*(undefined4 *)(iVar1 + 0x150),1,0x84,0,0,0);
+  ObjectSetAnim(*(undefined4 *)(iVar1 + 0x150),1,0x84,0,0,0);
 
   return;
 
@@ -12776,7 +12776,7 @@ void reaper_lock_short_4(undefined4 param_1,undefined4 param_2,undefined4 param_
 
   
 
-  FUN_004034a0(param_1,param_2,param_3,param_4,param_5,param_6);
+  ObjectSetAnim(param_1,param_2,param_3,param_4,param_5,param_6);
 
   if (param_7 != 0) {
 
@@ -13477,7 +13477,7 @@ void FUN_0045e440(int param_1)
 
           sound_play_player(0x453,param_1);
 
-          FUN_004034a0(param_1,0xca,0x20,0,0,0x3e800000);
+          ObjectSetAnim(param_1,0xca,0x20,0,0,0x3e800000);
 
         }
 
@@ -13561,7 +13561,7 @@ LAB_0045e62f:
 
       }
 
-      FUN_004034a0(param_1,uVar11,uVar10,0,0,uVar12);
+      ObjectSetAnim(param_1,uVar11,uVar10,0,0,uVar12);
 
     }
 
@@ -13637,7 +13637,7 @@ LAB_0045e4b5:
 
 LAB_0045e51d:
 
-            FUN_004034a0(param_1,uVar11,0x20,0,0,0x3e800000);
+            ObjectSetAnim(param_1,uVar11,0x20,0,0,0x3e800000);
 
           }
 
@@ -13653,7 +13653,7 @@ LAB_0045e51d:
 
           }
 
-          FUN_004034a0(param_1,uVar11,0x20,0,0,0x3e800000);
+          ObjectSetAnim(param_1,uVar11,0x20,0,0,0x3e800000);
 
         }
 
@@ -13665,7 +13665,7 @@ LAB_0045e51d:
 
         FUN_00495700(0x453,param_1);
 
-        FUN_004034a0(param_1,199,0x10,0,0,0);
+        ObjectSetAnim(param_1,199,0x10,0,0,0);
 
       }
 
@@ -13677,7 +13677,7 @@ LAB_0045e51d:
 
       FUN_00495700(0x453,param_1);
 
-      FUN_004034a0(param_1,199,0x30,0,0,0x3e800000);
+      ObjectSetAnim(param_1,199,0x30,0,0,0x3e800000);
 
     }
 
@@ -13787,7 +13787,9 @@ LAB_0045e789:
 
     fStack_4 = *(float *)(iVar6 + 0x140);
 
-    (*(code *)PTR_FUN_00580c20)((float *)(iVar5 + 0x2c),&uStack_c,1,param_1 + 0x294);
+    (*(code *)PTR_S_GEO_Vec3Transform_00580c20)((float *)(iVar5 + 0x2c),&uStack_c,1,param_1 + 0x294)
+
+    ;
 
     pfVar7 = (float *)(iVar5 + 0x38);
 
@@ -13823,7 +13825,7 @@ LAB_0045e789:
 
       *(float *)(iVar5 + 0x40) = fStack_4 - *(float *)(iVar5 + 0x34);
 
-      fVar9 = (float10)FUN_0053e8d0(pfVar7);
+      fVar9 = (float10)distancesq3d1p__FP3P3D(pfVar7);
 
       *(float *)(iVar5 + 0x4c) = (float)fVar9;
 

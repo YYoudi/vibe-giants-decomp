@@ -155,7 +155,7 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
               local_5c = puVar2[2];
 
-              (*(code *)PTR_FUN_00580c28)(local_54,&local_64,1,local_44);
+              (*(code *)PTR_S_GEO_Vec4Transform_00580c28)(local_54,&local_64,1,local_44);
 
               FUN_0053e960(puVar7,local_54);
 
@@ -169,7 +169,7 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
                 local_5c = puVar2[2];
 
-                (*(code *)PTR_FUN_00580c28)(local_54,&local_64,1,local_44);
+                (*(code *)PTR_S_GEO_Vec4Transform_00580c28)(local_54,&local_64,1,local_44);
 
                 FUN_0053e960(puVar7 + 3,local_54);
 

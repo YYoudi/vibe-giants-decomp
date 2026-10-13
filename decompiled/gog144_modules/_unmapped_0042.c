@@ -8141,7 +8141,7 @@ int FUN_00425a40(int param_1,undefined4 param_2)
 
       FUN_0049a1f0(iVar1);
 
-      FUN_004034a0(iVar1,*(undefined4 *)(param_1 + 0x10),0x20,0,0,0);
+      ObjectSetAnim(iVar1,*(undefined4 *)(param_1 + 0x10),0x20,0,0,0);
 
     }
 
@@ -8208,7 +8208,7 @@ int FUN_00425b50(int param_1)
 
     }
 
-    FUN_004034a0(iVar1,uVar3,0x80,0,0,0);
+    ObjectSetAnim(iVar1,uVar3,0x80,0,0,0);
 
     *(undefined4 *)(iVar1 + 0x14) = 0x3f800000;
 
@@ -16315,9 +16315,11 @@ LAB_0042cb13:
 
                   uVar7 = FUN_00515db0();
 
-                  (*(code *)PTR_FUN_00580c20)(auStack_c,uVar7,1,auStack_50);
+                  (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(auStack_c,uVar7,1,auStack_50);
 
-                  (*(code *)PTR_FUN_00580c24)(auStack_5c,&fStack_74,1,auStack_50,0xffffffef);
+                  (*(code *)PTR_S_GEO_Vec3Transform_2_00580c24)
+
+                            (auStack_5c,&fStack_74,1,auStack_50,0xffffffef);
 
                   local_98 = 1;
 
@@ -18230,7 +18232,7 @@ LAB_0042e978:
 
       else {
 
-        FUN_00436130(uVar7,iVar2);
+        gfx_set_image_buffer(uVar7,iVar2);
 
         FUN_00436150(local_cc,iVar6);
 
