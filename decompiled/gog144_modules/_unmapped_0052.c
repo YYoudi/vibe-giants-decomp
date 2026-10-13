@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (112 named) — decompiled, names from PS2 symbols
+ * 162 functions (113 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -7313,8 +7313,8 @@ bool dialog_level_is_base(void)
 
 }
 
-/* ===== FUN_0052aa80 @ 0x0052AA80 ===== */
-bool FUN_0052aa80(int param_1)
+/* ===== comm_player_active_check @ 0x0052AA80 ===== */
+bool comm_player_active_check(int param_1)
 
 
 
@@ -11762,7 +11762,7 @@ undefined4 fx_create(void)
 
   }
 
-  uVar2 = FUN_0052aa80();
+  uVar2 = comm_player_active_check();
 
   return uVar2;
 
@@ -11791,7 +11791,7 @@ void reaper_0052e4a0(void)
 
   }
 
-  FUN_0052aa80();
+  comm_player_active_check();
 
   return;
 
@@ -11820,7 +11820,7 @@ undefined4 FUN_0052e4b0(undefined4 param_1)
 
   }
 
-  iVar1 = FUN_0052aa80(param_1);
+  iVar1 = comm_player_active_check(param_1);
 
   if (iVar1 == 0) {
 
@@ -11879,7 +11879,7 @@ undefined4 FUN_0052e530(undefined4 param_1)
 
   }
 
-  iVar1 = FUN_0052aa80(param_1);
+  iVar1 = comm_player_active_check(param_1);
 
   if (iVar1 == 0) {
 
@@ -12983,7 +12983,7 @@ LAB_0052edc5:
 
   iVar4 = dialog_level_is_base();
 
-  if ((iVar4 == 0) || (iVar4 = FUN_0052aa80(iVar9), iVar4 != 0)) {
+  if ((iVar4 == 0) || (iVar4 = comm_player_active_check(iVar9), iVar4 != 0)) {
 
     obj_damage_apply(0x13,0x461c4000,iVar9,0,0,0);
 
@@ -14380,7 +14380,7 @@ LAB_0052fabe:
 
       iVar4 = dialog_level_is_base();
 
-      if ((iVar4 != 0) && (iVar4 = FUN_0052aa80(iVar5), iVar4 != 0)) {
+      if ((iVar4 != 0) && (iVar4 = comm_player_active_check(iVar5), iVar4 != 0)) {
 
         comm_packet_big(iVar5);
 

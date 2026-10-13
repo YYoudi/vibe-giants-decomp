@@ -4342,7 +4342,7 @@
  "0x00482700": {
   "name": "game_options_verify",
   "named": true,
-  "len": 2754
+  "len": 2764
  },
  "0x004829D0": {
   "name": "FUN_004829d0",
@@ -4547,7 +4547,7 @@
  "0x0048CA10": {
   "name": "dialog_0048ca10",
   "named": true,
-  "len": 3293
+  "len": 3298
  },
  "0x0048D4B0": {
   "name": "FUN_0048D4B0",
@@ -8802,17 +8802,17 @@
  "0x00517CA0": {
   "name": "exception_report_write",
   "named": true,
-  "len": 11775
+  "len": 11853
  },
  "0x00518620": {
-  "name": "FUN_00518620",
-  "named": false,
-  "len": 486
+  "name": "dbg_write_file",
+  "named": true,
+  "len": 488
  },
  "0x00518670": {
   "name": "file_date_log_write",
   "named": true,
-  "len": 1996
+  "len": 2000
  },
  "0x005187F0": {
   "name": "datetime_format",
@@ -9125,9 +9125,9 @@
   "len": 175
  },
  "0x0051C590": {
-  "name": "FUN_0051c590",
-  "named": false,
-  "len": 393
+  "name": "audio_option_gate",
+  "named": true,
+  "len": 398
  },
  "0x0051C5E0": {
   "name": "dialog_level_is_base_2",
@@ -9635,9 +9635,9 @@
   "len": 123
  },
  "0x0052AA80": {
-  "name": "FUN_0052aa80",
-  "named": false,
-  "len": 474
+  "name": "comm_player_active_check",
+  "named": true,
+  "len": 486
  },
  "0x0052AAD0": {
   "name": "AudioGetMasterVolume__Fv_9",
@@ -9962,22 +9962,22 @@
  "0x0052E480": {
   "name": "fx_create",
   "named": true,
-  "len": 246
+  "len": 258
  },
  "0x0052E4A0": {
   "name": "reaper_0052e4a0",
   "named": true,
-  "len": 213
+  "len": 225
  },
  "0x0052E4B0": {
   "name": "FUN_0052e4b0",
   "named": false,
-  "len": 644
+  "len": 656
  },
  "0x0052E530": {
   "name": "FUN_0052e530",
   "named": false,
-  "len": 645
+  "len": 657
  },
  "0x0052E5B0": {
   "name": "objanim_select_animloop",
@@ -10007,7 +10007,7 @@
  "0x0052EBD0": {
   "name": "comm_team_broadcast_menu",
   "named": true,
-  "len": 4777
+  "len": 4789
  },
  "0x0052EF00": {
   "name": "FUN_0052EF00",
@@ -10122,7 +10122,7 @@
  "0x0052F980": {
   "name": "cam_mode_full",
   "named": true,
-  "len": 3683
+  "len": 3695
  },
  "0x0052FBF0": {
   "name": "comm_0052b780_user_6",
@@ -10447,7 +10447,7 @@
  "0x00537400": {
   "name": "comm_wincond_destroy",
   "named": true,
-  "len": 3325
+  "len": 3345
  },
  "0x005375E0": {
   "name": "FUN_005375e0",

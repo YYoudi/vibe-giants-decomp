@@ -10939,7 +10939,9 @@ void comm_wincond_destroy(int param_1)
 
   iVar4 = dialog_level_is_base();
 
-  if (((((iVar4 != 0) && (iVar4 = FUN_0052aa80(param_1), iVar4 != 0)) && (DAT_00632ff0 != 0)) &&
+  if (((((iVar4 != 0) && (iVar4 = comm_player_active_check(param_1), iVar4 != 0)) &&
+
+       (DAT_00632ff0 != 0)) &&
 
       ((iVar4 = FUN_00521310(DAT_00632f18), iVar4 != 0 && (DAT_00632ff0 != 0)))) &&
 

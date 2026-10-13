@@ -2325,7 +2325,7 @@ void game_options_verify(void)
 
       FUN_0051c770((_DAT_0059eeb4 & 2) != 0);
 
-      FUN_0051c590((_DAT_0059eeb4 & 4) != 0);
+      audio_option_gate((_DAT_0059eeb4 & 4) != 0);
 
       FUN_0051c610((_DAT_0059eeb4 & 8) != 0);
 
@@ -2427,7 +2427,7 @@ void game_options_verify(void)
 
     FUN_0051c770(0);
 
-    FUN_0051c590(0);
+    audio_option_gate(0);
 
     FUN_0051c610(0);
 
@@ -9956,7 +9956,7 @@ void dialog_0048ca10(void)
 
     iVar3 = dialog_level_is_base_2();
 
-    FUN_0051c590(iVar3 == 0);
+    audio_option_gate(iVar3 == 0);
 
     break;
 

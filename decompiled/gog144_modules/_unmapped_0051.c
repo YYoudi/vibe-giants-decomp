@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (142 named) — decompiled, names from PS2 symbols
+ * 186 functions (144 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -7456,7 +7456,7 @@ undefined4 exception_report_write(int *param_1,undefined4 param_2)
 
   SetFilePointer(hFile,0,(PLONG)0x0,2);
 
-  FUN_00518620(hFile,s__0057c8cc);
+  dbg_write_file(hFile,s__0057c8cc);
 
   piVar1 = (int *)*param_1;
 
@@ -7608,11 +7608,11 @@ undefined4 exception_report_write(int *param_1,undefined4 param_2)
 
 LAB_0051804e:
 
-  FUN_00518620(hFile,s__s_caused__s_in_module__s_at__04_0057c670,local_120,pcVar7,pcVar4,
+  dbg_write_file(hFile,s__s_caused__s_in_module__s_at__04_0057c670,local_120,pcVar7,pcVar4,
 
-               *(undefined4 *)(iVar10 + 0xbc),*(undefined4 *)(iVar10 + 0xb8));
+                 *(undefined4 *)(iVar10 + 0xbc),*(undefined4 *)(iVar10 + 0xb8));
 
-  FUN_00518620(hFile,s_Exception_handler_called_in__s__0057c64c,param_2);
+  dbg_write_file(hFile,s_Exception_handler_called_in__s__0057c64c,param_2);
 
   GetSystemTimeAsFileTime(&local_418);
 
@@ -7642,7 +7642,7 @@ LAB_0051804e:
 
   }
 
-  FUN_00518620(hFile,s_Error_occurred_at__s__0057c61c,local_48c);
+  dbg_write_file(hFile,s_Error_occurred_at__s__0057c61c,local_48c);
 
   DVar3 = GetModuleFileNameA((HMODULE)0x0,local_590,0x104);
 
@@ -7662,19 +7662,21 @@ LAB_0051804e:
 
   }
 
-  FUN_00518620(hFile,s__s__run_by__s__0057c608,local_590,local_65c);
+  dbg_write_file(hFile,s__s__run_by__s__0057c608,local_590,local_65c);
 
   GetSystemInfo(&local_680);
 
-  FUN_00518620(hFile,s__d_processor_s___type__d__0057c5ec,local_680.dwNumberOfProcessors,
+  dbg_write_file(hFile,s__d_processor_s___type__d__0057c5ec,local_680.dwNumberOfProcessors,
 
-               local_680.dwProcessorType);
+                 local_680.dwProcessorType);
 
   local_6a0.dwLength = 0x20;
 
   GlobalMemoryStatus(&local_6a0);
 
-  FUN_00518620(hFile,s__d_MBytes_physical_memory__0057c5cc,local_6a0.dwTotalPhys + 0xfffff >> 0x14);
+  dbg_write_file(hFile,s__d_MBytes_physical_memory__0057c5cc,local_6a0.dwTotalPhys + 0xfffff >> 0x14
+
+                );
 
   if ((*piVar1 == -0x3ffffffb) && (1 < (uint)piVar1[4])) {
 
@@ -7688,39 +7690,39 @@ LAB_0051804e:
 
     wsprintfA(local_a88,s__s_location__08x_caused_an_acces_0057c584,pcVar4,piVar1[6]);
 
-    FUN_00518620(hFile,&DAT_00555df0,local_a88);
+    dbg_write_file(hFile,&DAT_00555df0,local_a88);
 
   }
 
-  FUN_00518620(hFile,&DAT_0057c1f8);
+  dbg_write_file(hFile,&DAT_0057c1f8);
 
-  FUN_00518620(hFile,s_Registers__0057c574);
+  dbg_write_file(hFile,s_Registers__0057c574);
 
-  FUN_00518620(hFile,s_EAX__08x_CS__04x_EIP__08x_EFLGS__0057c54c,*(undefined4 *)(iVar10 + 0xb0),
+  dbg_write_file(hFile,s_EAX__08x_CS__04x_EIP__08x_EFLGS__0057c54c,*(undefined4 *)(iVar10 + 0xb0),
 
-               *(undefined4 *)(iVar10 + 0xbc),*(undefined4 *)(iVar10 + 0xb8),
+                 *(undefined4 *)(iVar10 + 0xbc),*(undefined4 *)(iVar10 + 0xb8),
 
-               *(undefined4 *)(iVar10 + 0xc0));
+                 *(undefined4 *)(iVar10 + 0xc0));
 
-  FUN_00518620(hFile,s_EBX__08x_SS__04x_ESP__08x_EBP__0_0057c524,*(undefined4 *)(iVar10 + 0xa4),
+  dbg_write_file(hFile,s_EBX__08x_SS__04x_ESP__08x_EBP__0_0057c524,*(undefined4 *)(iVar10 + 0xa4),
 
-               *(undefined4 *)(iVar10 + 200),*(undefined4 *)(iVar10 + 0xc4),
+                 *(undefined4 *)(iVar10 + 200),*(undefined4 *)(iVar10 + 0xc4),
 
-               *(undefined4 *)(iVar10 + 0xb4));
+                 *(undefined4 *)(iVar10 + 0xb4));
 
-  FUN_00518620(hFile,s_ECX__08x_DS__04x_ESI__08x_FS__04_0057c500,*(undefined4 *)(iVar10 + 0xac),
+  dbg_write_file(hFile,s_ECX__08x_DS__04x_ESI__08x_FS__04_0057c500,*(undefined4 *)(iVar10 + 0xac),
 
-               *(undefined4 *)(iVar10 + 0x98),*(undefined4 *)(iVar10 + 0xa0),
+                 *(undefined4 *)(iVar10 + 0x98),*(undefined4 *)(iVar10 + 0xa0),
 
-               *(undefined4 *)(iVar10 + 0x90));
+                 *(undefined4 *)(iVar10 + 0x90));
 
-  FUN_00518620(hFile,s_EDX__08x_ES__04x_EDI__08x_GS__04_0057c4dc,*(undefined4 *)(iVar10 + 0xa8),
+  dbg_write_file(hFile,s_EDX__08x_ES__04x_EDI__08x_GS__04_0057c4dc,*(undefined4 *)(iVar10 + 0xa8),
 
-               *(undefined4 *)(iVar10 + 0x94),*(undefined4 *)(iVar10 + 0x9c),
+                 *(undefined4 *)(iVar10 + 0x94),*(undefined4 *)(iVar10 + 0x9c),
 
-               *(undefined4 *)(iVar10 + 0x8c));
+                 *(undefined4 *)(iVar10 + 0x8c));
 
-  FUN_00518620(hFile,s_Bytes_at_CS_EIP__0057c4c8);
+  dbg_write_file(hFile,s_Bytes_at_CS_EIP__0057c4c8);
 
   local_a8c = *(int *)(iVar10 + 0xb8);
 
@@ -7728,13 +7730,13 @@ LAB_0051804e:
 
     local_8 = 0;
 
-    FUN_00518620(hFile,s__02x_0057c4c0,*(undefined1 *)(iVar13 + local_a8c));
+    dbg_write_file(hFile,s__02x_0057c4c0,*(undefined1 *)(iVar13 + local_a8c));
 
     local_8 = 0xffffffff;
 
   }
 
-  FUN_00518620(hFile,s_Stack_dump__0057c4ac);
+  dbg_write_file(hFile,s_Stack_dump__0057c4ac);
 
   local_8 = 1;
 
@@ -7784,11 +7786,11 @@ LAB_0051804e:
 
       if (local_a98 < local_e94) {
 
-        FUN_00518620(hFile,&DAT_00555df0,&local_e84);
+        dbg_write_file(hFile,&DAT_00555df0,&local_e84);
 
         local_8 = 0xffffffff;
 
-        FUN_00518620(hFile,s_Module_list__names__addresses__s_0057c428);
+        dbg_write_file(hFile,s_Module_list__names__addresses__s_0057c428);
 
         GetSystemInfo(&local_ebc);
 
@@ -7892,7 +7894,7 @@ LAB_0051804e:
 
     local_e90 = pCVar11;
 
-    FUN_00518620(hFile,&DAT_00555df0,&local_e84);
+    dbg_write_file(hFile,&DAT_00555df0,&local_e84);
 
     local_e84 = '\0';
 
@@ -7900,8 +7902,8 @@ LAB_0051804e:
 
 }
 
-/* ===== FUN_00518620 @ 0x00518620 ===== */
-void FUN_00518620(HANDLE param_1,LPCSTR param_2)
+/* ===== dbg_write_file @ 0x00518620 ===== */
+void dbg_write_file(HANDLE param_1,LPCSTR param_2)
 
 
 
@@ -8048,9 +8050,9 @@ void file_date_log_write(undefined4 param_1,HMODULE param_2)
 
       }
 
-      FUN_00518620(param_1,s__s__loaded_at_0x_08x____d_bytes___0057c910,local_120,param_2,DVar1,
+      dbg_write_file(param_1,s__s__loaded_at_0x_08x____d_bytes___0057c910,local_120,param_2,DVar1,
 
-                   piVar4[2],&local_190);
+                     piVar4[2],&local_190);
 
     }
 
@@ -12387,8 +12389,8 @@ undefined4 FUN_0051c570(void)
 
 }
 
-/* ===== FUN_0051c590 @ 0x0051C590 ===== */
-void FUN_0051c590(int param_1)
+/* ===== audio_option_gate @ 0x0051C590 ===== */
+void audio_option_gate(int param_1)
 
 
 
