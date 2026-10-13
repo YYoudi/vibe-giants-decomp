@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (34 named) — decompiled, names from PS2 symbols
+ * 94 functions (36 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -3780,8 +3780,8 @@ void ai_idle_anim_select(int param_1)
 
 }
 
-/* ===== FUN_004e4920 @ 0x004E4920 ===== */
-void FUN_004e4920(int param_1,int param_2)
+/* ===== ai_idle_anim_53 @ 0x004E4920 ===== */
+void ai_idle_anim_53(int param_1,int param_2)
 
 
 
@@ -9283,8 +9283,8 @@ undefined4 FUN_004eba40(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_004ebce0 @ 0x004EBCE0 ===== */
-undefined4 FUN_004ebce0(void)
+/* ===== mission_marker_rect_check @ 0x004EBCE0 ===== */
+undefined4 mission_marker_rect_check(void)
 
 
 
@@ -9477,7 +9477,7 @@ undefined4 FUN_004ebe10(float *param_1,float *param_2,float *param_3)
 
      ((iVar3 < *(int *)(iVar4 + 0x28) || (fVar1 < -61.1 != (fVar1 == -61.1))))) {
 
-    iVar4 = FUN_004ebce0(param_2,param_3);
+    iVar4 = mission_marker_rect_check(param_2,param_3);
 
     if (iVar4 == 0) {
 
@@ -11110,7 +11110,7 @@ undefined4 game_files_check(void)
 
       if (iVar1 != 0) {
 
-        FUN_00539010();
+        registry_volume_check();
 
         return 1;
 

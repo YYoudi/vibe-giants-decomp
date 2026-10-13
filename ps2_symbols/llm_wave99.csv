@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00539010,FUN_00539010,,registry_volume_check,0.9,llm-read70,
+0046fb50,FUN_0046FB50,,obj_5c_mount_slot3,0.9,llm-read70,
+004ebce0,FUN_004EBCE0,,mission_marker_rect_check,0.9,llm-read70,
+004e4920,FUN_004E4920,,ai_idle_anim_53,0.9,llm-read70,

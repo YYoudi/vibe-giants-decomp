@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "FUN_004361b0",
   "named": false,
-  "len": 42871
+  "len": 42907
  },
  "0x00437FA0": {
   "name": "main/editor_00437fa0",
@@ -3830,9 +3830,9 @@
   "len": 1682
  },
  "0x0046FB50": {
-  "name": "FUN_0046fb50",
-  "named": false,
-  "len": 1609
+  "name": "obj_5c_mount_slot3",
+  "named": true,
+  "len": 1615
  },
  "0x0046FC80": {
   "name": "obj_orient_set",
@@ -7265,9 +7265,9 @@
   "len": 1369
  },
  "0x004E4920": {
-  "name": "FUN_004e4920",
-  "named": false,
-  "len": 1340
+  "name": "ai_idle_anim_53",
+  "named": true,
+  "len": 1343
  },
  "0x004E4A50": {
   "name": "ai_range_check",
@@ -7425,14 +7425,14 @@
   "len": 3354
  },
  "0x004EBCE0": {
-  "name": "FUN_004ebce0",
-  "named": false,
-  "len": 1664
+  "name": "mission_marker_rect_check",
+  "named": true,
+  "len": 1677
  },
  "0x004EBE10": {
   "name": "FUN_004ebe10",
   "named": false,
-  "len": 1223
+  "len": 1236
  },
  "0x004EBF30": {
   "name": "mission_marker_pos_check",
@@ -7537,7 +7537,7 @@
  "0x004EE890": {
   "name": "game_files_check",
   "named": true,
-  "len": 598
+  "len": 607
  },
  "0x004EE930": {
   "name": "intro_assets_check",
@@ -10510,9 +10510,9 @@
   "len": 181
  },
  "0x00539010": {
-  "name": "FUN_00539010",
-  "named": false,
-  "len": 1804
+  "name": "registry_volume_check",
+  "named": true,
+  "len": 1813
  },
  "0x00539140": {
   "name": "FUN_00539140",

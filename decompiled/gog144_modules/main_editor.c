@@ -914,7 +914,7 @@ LAB_004374a1:
 
               if (*(int *)(iVar10 + 0x1e0) == 0x5c) {
 
-                FUN_0046fb50(iVar10);
+                obj_5c_mount_slot3(iVar10);
 
                 iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
@@ -980,7 +980,7 @@ LAB_004374a1:
 
             if (*(int *)(iVar10 + 0x1e0) == 0x5c) {
 
-              FUN_0046fb50(iVar10);
+              obj_5c_mount_slot3(iVar10);
 
               iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
@@ -1034,7 +1034,7 @@ LAB_004374a1:
 
           if (*(int *)(iVar10 + 0x1e0) == 0x5c) {
 
-            FUN_0046fb50(iVar10);
+            obj_5c_mount_slot3(iVar10);
 
             iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
@@ -1082,7 +1082,7 @@ LAB_004374a1:
 
             if (*(int *)(iVar10 + 0x1e0) == 0x5c) {
 
-              FUN_0046fb50(iVar10);
+              obj_5c_mount_slot3(iVar10);
 
               iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
@@ -1300,7 +1300,7 @@ LAB_004374a1:
 
           if (*(int *)(iVar10 + 0x1e0) == 0x5c) {
 
-            FUN_0046fb50(iVar10);
+            obj_5c_mount_slot3(iVar10);
 
             iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 
@@ -1440,7 +1440,7 @@ LAB_00437d68:
 
           if (*(int *)(iVar10 + 0x1e0) == 0x5c) {
 
-            FUN_0046fb50(iVar10);
+            obj_5c_mount_slot3(iVar10);
 
             iVar17 = kabutoai_is_punch_anim__FP6OBJECT(iVar10);
 

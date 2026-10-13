@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (78 named) — decompiled, names from PS2 symbols
+ * 179 functions (79 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -13179,8 +13179,8 @@ undefined4 __default_unexpected__Fv(void)
 
 }
 
-/* ===== FUN_00539010 @ 0x00539010 ===== */
-bool FUN_00539010(void)
+/* ===== registry_volume_check @ 0x00539010 ===== */
+bool registry_volume_check(void)
 
 
 
