@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (72 named) — decompiled, names from PS2 symbols
+ * 129 functions (73 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -18710,8 +18710,8 @@ void FUN_0042ef40(undefined4 *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0042ef80 @ 0x0042EF80 ===== */
-void FUN_0042ef80(void)
+/* ===== dlog_alpha_big_render @ 0x0042EF80 ===== */
+void dlog_alpha_big_render(void)
 
 
 
@@ -19813,7 +19813,7 @@ void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *para
 
     if ((DAT_0059b7c8 & 8) != 0) {
 
-      FUN_00430480(local_480,local_474,&local_46c,local_470);
+      dlog_alpha_flags_copy(local_480,local_474,&local_46c,local_470);
 
       if (local_46c < 3) {
 

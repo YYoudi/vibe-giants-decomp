@@ -8865,7 +8865,7 @@ undefined4 dev_debug_flags(void)
 
     }
 
-    FUN_0042ef80();
+    dlog_alpha_big_render();
 
     FUN_004a14b0();
 

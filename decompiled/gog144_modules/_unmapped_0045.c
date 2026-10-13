@@ -2266,7 +2266,7 @@ LAB_0045282a:
 
     }
 
-    FUN_00494bc0();
+    mission_type_dispatch();
 
     return;
 
@@ -3339,7 +3339,7 @@ void FUN_004544f0(void)
 
     if (DAT_00632bd8 != 0) {
 
-      FUN_00494bc0();
+      mission_type_dispatch();
 
     }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (47 named) — decompiled, names from PS2 symbols
+ * 142 functions (48 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -5328,8 +5328,8 @@ void FUN_00494890(void)
 
 }
 
-/* ===== FUN_00494bc0 @ 0x00494BC0 ===== */
-void FUN_00494bc0(void)
+/* ===== mission_type_dispatch @ 0x00494BC0 ===== */
+void mission_type_dispatch(void)
 
 
 

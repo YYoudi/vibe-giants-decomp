@@ -1945,9 +1945,9 @@
   "len": 462
  },
  "0x0042EF80": {
-  "name": "FUN_0042ef80",
-  "named": false,
-  "len": 5595
+  "name": "dlog_alpha_big_render",
+  "named": true,
+  "len": 5604
  },
  "0x0042F310": {
   "name": "FUN_0042f310",
@@ -1967,7 +1967,7 @@
  "0x0042F8E0": {
   "name": "status_bar_update3",
   "named": true,
-  "len": 8394
+  "len": 8403
  },
  "0x0042FEC0": {
   "name": "dlog_alpha_sort_copy",
@@ -1975,9 +1975,9 @@
   "len": 6515
  },
  "0x00430480": {
-  "name": "FUN_00430480",
-  "named": false,
-  "len": 4248
+  "name": "dlog_alpha_flags_copy",
+  "named": true,
+  "len": 4257
  },
  "0x00430820": {
   "name": "dlog_alpha_range_copy",
@@ -3007,7 +3007,7 @@
  "0x00452490": {
   "name": "FUN_00452490",
   "named": false,
-  "len": 6962
+  "len": 6971
  },
  "0x00452A30": {
   "name": "FUN_00452a30",
@@ -3042,7 +3042,7 @@
  "0x004544F0": {
   "name": "FUN_004544f0",
   "named": false,
-  "len": 3062
+  "len": 3071
  },
  "0x00454A40": {
   "name": "FUN_00454a40",
@@ -4790,9 +4790,9 @@
   "len": 674
  },
  "0x00494BC0": {
-  "name": "FUN_00494bc0",
-  "named": false,
-  "len": 4075
+  "name": "mission_type_dispatch",
+  "named": true,
+  "len": 4084
  },
  "0x00494F90": {
   "name": "FUN_00494f90",
@@ -5540,14 +5540,14 @@
   "len": 2956
  },
  "0x004A1E30": {
-  "name": "FUN_004a1e30",
-  "named": false,
-  "len": 4912
+  "name": "obj_geom_process",
+  "named": true,
+  "len": 4916
  },
  "0x004A2220": {
   "name": "PhysicsExGroundCollision",
   "named": true,
-  "len": 163
+  "len": 167
  },
  "0x004A2240": {
   "name": "FUN_004a2240",
@@ -5617,7 +5617,7 @@
  "0x004A4210": {
   "name": "FUN_004a4210",
   "named": false,
-  "len": 1767
+  "len": 1771
  },
  "0x004A4360": {
   "name": "FUN_004a4360",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14201
+  "len": 14210
  },
  "0x004CE880": {
   "name": "comm_004ce880",
