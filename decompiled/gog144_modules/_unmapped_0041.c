@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (59 named) — decompiled, names from PS2 symbols
+ * 100 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -3242,12 +3242,12 @@ void collide_find_ground_hit(float param_1,float *param_2)
 
 }
 
-/* ===== FUN_00414840 @ 0x00414840 ===== */
+/* ===== setMenuSelection__7PS2Gameiiii_2 @ 0x00414840 ===== */
 /* PS2 candidate: setMenuSelection__7PS2Gameiiii_2 (conf 0.613) */
 
 
 
-void FUN_00414840(int param_1)
+void setMenuSelection__7PS2Gameiiii_2(int param_1)
 
 
 
@@ -4907,7 +4907,7 @@ void FUN_00416240(int param_1)
 
   if ((param_1 != 0) && (DAT_00632bbc != 0)) {
 
-    iVar2 = FUN_0052aa70();
+    iVar2 = dialog_level_is_base();
 
     if (iVar2 != 0) {
 
@@ -5040,7 +5040,7 @@ void FUN_004162c0(int param_1)
 
   _DAT_00657674 = 0;
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -5155,7 +5155,7 @@ void dlog_pop_user(void)
 
   iVar3 = *(int *)(DAT_00632bbc + 0x100);
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -6546,12 +6546,12 @@ bool lzo_assert(int param_1)
 
 }
 
-/* ===== FUN_00418470 @ 0x00418470 ===== */
+/* ===== base_bldg_is_alive_at_all_2 @ 0x00418470 ===== */
 /* PS2 candidate: base_bldg_is_alive_at_all (conf 0.622) */
 
 
 
-bool FUN_00418470(int param_1,int param_2)
+bool base_bldg_is_alive_at_all_2(int param_1,int param_2)
 
 
 
@@ -6573,12 +6573,12 @@ bool FUN_00418470(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004184a0 @ 0x004184A0 ===== */
+/* ===== base_bldg_is_alive_at_all @ 0x004184A0 ===== */
 /* PS2 candidate: base_bldg_is_alive_at_all_2 (conf 0.622) */
 
 
 
-bool FUN_004184a0(int param_1,int param_2)
+bool base_bldg_is_alive_at_all(int param_1,int param_2)
 
 
 
@@ -8333,11 +8333,11 @@ void objtype_team_assign(int param_1)
 
     FUN_00407c40(param_1);
 
-    iVar1 = FUN_0052aa70();
+    iVar1 = dialog_level_is_base();
 
     if ((iVar1 == 0) || (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)) {
 
-      iVar2 = FUN_0052aa70();
+      iVar2 = dialog_level_is_base();
 
       if ((iVar2 != 0) && (iVar2 = FUN_00521330(DAT_00632f18), iVar2 == 0)) {
 
@@ -8411,11 +8411,11 @@ void objtype_team_assign(int param_1)
 
     FUN_004b4570(param_1);
 
-    iVar1 = FUN_0052aa70();
+    iVar1 = dialog_level_is_base();
 
     if ((iVar1 == 0) || (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)) {
 
-      iVar2 = FUN_0052aa70();
+      iVar2 = dialog_level_is_base();
 
       if ((iVar2 != 0) && (iVar2 = FUN_00521330(DAT_00632f18), iVar2 == 0)) {
 
@@ -9048,7 +9048,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
   *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfffffeff;
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -9174,7 +9174,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
   ObjectSetAnim(param_1,0x65,0x20,0,0,0);
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if ((iVar2 != 0) && (-1 < *(char *)(param_1 + 0xe0))) {
 
@@ -9760,7 +9760,7 @@ LAB_0041bba6:
 
           FUN_00401000(iVar3);
 
-          FUN_004f7af0(iVar3);
+          smartie_clear_held_object(iVar3);
 
           *(undefined1 *)(iVar3 + 0x20b) = 0;
 
@@ -9884,7 +9884,7 @@ LAB_0041bdd7:
 
     FUN_00401000(iVar4);
 
-    FUN_004f7af0(iVar4);
+    smartie_clear_held_object(iVar4);
 
     *(undefined1 *)(iVar4 + 0x20b) = 0;
 
@@ -10858,7 +10858,7 @@ void FUN_0041e960(float param_1)
 
   iVar5 = *(int *)((int)param_1 + 0x100);
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if ((iVar2 == 0) && (*(int *)(iVar5 + 0x568) == 0)) {
 
@@ -11405,7 +11405,7 @@ void objtype_setup_kabuto(int param_1)
 
   iVar2 = *(int *)(param_1 + 0x100);
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (((iVar1 == 0) && (*(int *)(iVar2 + 0x568) == 0)) &&
 
@@ -11812,7 +11812,7 @@ void hud_status_main(void)
 
   _DAT_006328f0 = 0x3f800000;
 
-  iVar5 = FUN_0052aa70();
+  iVar5 = dialog_level_is_base();
 
   if (iVar5 == 0) {
 
@@ -11866,7 +11866,7 @@ LAB_0041f398:
 
       else {
 
-        FUN_00536120();
+        controlShutdown_2();
 
       }
 

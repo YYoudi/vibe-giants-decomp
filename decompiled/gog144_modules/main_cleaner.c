@@ -81,7 +81,7 @@ void cleaner_go_obj(void)
 
     _DAT_0058431c = 1.5;
 
-    iVar7 = FUN_0052aa70();
+    iVar7 = dialog_level_is_base();
 
     if (iVar7 == 0) {
 

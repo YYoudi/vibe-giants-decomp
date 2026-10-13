@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (58 named) — decompiled, names from PS2 symbols
+ * 131 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3703,12 +3703,12 @@ void FUN_004a4480(float *param_1,float *param_2,float *param_3,float *param_4,fl
 
 }
 
-/* ===== FUN_004a4510 @ 0x004A4510 ===== */
+/* ===== piranha_finit @ 0x004A4510 ===== */
 /* PS2 candidate: piranha_finit (conf 0.608) */
 
 
 
-void FUN_004a4510(void)
+void piranha_finit(void)
 
 
 
@@ -4822,7 +4822,7 @@ LAB_004a5802:
 
     if (DAT_00632aec != '\0') {
 
-      FUN_0045ab30(DAT_00632a88);
+      item_drop_curweap(DAT_00632a88);
 
     }
 
@@ -4856,7 +4856,7 @@ LAB_004a5802:
 
     }
 
-    iVar3 = FUN_0052aa70();
+    iVar3 = dialog_level_is_base();
 
     if (((iVar3 != 0) && (DAT_00632ad8 != '\0')) && (iVar3 = dialog_level_is_base(), iVar3 != 0)) {
 
@@ -5416,7 +5416,7 @@ void FUN_004a5f40(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -5899,7 +5899,7 @@ undefined4 FUN_004a63a0(int param_1)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if ((iVar2 != 0) && (puVar1 = DAT_00632d98, (*(uint *)(param_1 + 0xdc) & 0x800000) != 0)) {
 
@@ -9876,7 +9876,7 @@ bool obj_targetable_by_player(int param_1,int param_2)
 
   }
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (((((iVar2 == 0) || (DAT_00632f20 == 0)) || (iVar2 = FUN_004a61e0(param_1), iVar2 == 0)) &&
 
@@ -10053,7 +10053,7 @@ undefined4 FUN_004aa9d0(int param_1,int param_2)
 
     }
 
-    iVar2 = FUN_0052aa70();
+    iVar2 = dialog_level_is_base();
 
     if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = FUN_004a61e0(param_1), iVar2 != 0)) ||
 
@@ -10075,12 +10075,12 @@ undefined4 FUN_004aa9d0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004aaa80 @ 0x004AAA80 ===== */
+/* ===== MortarCollisionValid__FP6OBJECTi @ 0x004AAA80 ===== */
 /* PS2 candidate: MortarCollisionValid__FP6OBJECTi (conf 0.62) */
 
 
 
-undefined4 FUN_004aaa80(int param_1,int param_2)
+undefined4 MortarCollisionValid__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -10106,7 +10106,7 @@ undefined4 FUN_004aaa80(int param_1,int param_2)
 
     }
 
-    iVar2 = FUN_0052aa70();
+    iVar2 = dialog_level_is_base();
 
     if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = FUN_004a61e0(param_1), iVar2 != 0)) ||
 

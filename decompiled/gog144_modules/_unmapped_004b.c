@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (51 named) — decompiled, names from PS2 symbols
+ * 90 functions (52 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -2002,7 +2002,7 @@ void FUN_004b5810(int param_1)
 
     }
 
-    iVar4 = FUN_00418470(param_1,8);
+    iVar4 = base_bldg_is_alive_at_all_2(param_1,8);
 
     if (iVar4 == 0) {
 
@@ -2056,7 +2056,7 @@ void FUN_004b5810(int param_1)
 
     iVar3 = FUN_00418380(param_1,2);
 
-    if ((iVar3 == 0) && (iVar3 = FUN_00418470(param_1,10), iVar3 == 0)) {
+    if ((iVar3 == 0) && (iVar3 = base_bldg_is_alive_at_all_2(param_1,10), iVar3 == 0)) {
 
       *(undefined4 *)(iVar4 + 0x6c) = 1;
 
@@ -2082,7 +2082,7 @@ void FUN_004b5810(int param_1)
 
     }
 
-    iVar4 = FUN_00418470(param_1,10);
+    iVar4 = base_bldg_is_alive_at_all_2(param_1,10);
 
     if (iVar4 == 0) {
 
@@ -2108,7 +2108,7 @@ void FUN_004b5810(int param_1)
 
     iVar4 = FUN_00418380(param_1,4);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0xc), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xc), iVar4 == 0)) {
 
       *(undefined4 *)(iVar1 + 0xa4) = 1;
 
@@ -2130,7 +2130,7 @@ void FUN_004b5810(int param_1)
 
     iVar4 = FUN_00418380(param_1,5);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0xd), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xd), iVar4 == 0)) {
 
       *(undefined4 *)(iVar1 + 0xc0) = 1;
 
@@ -2152,7 +2152,7 @@ void FUN_004b5810(int param_1)
 
     iVar4 = FUN_00418380(param_1,6);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0xe), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xe), iVar4 == 0)) {
 
       *(undefined4 *)(iVar1 + 0xdc) = 1;
 
@@ -2174,7 +2174,7 @@ void FUN_004b5810(int param_1)
 
     iVar4 = FUN_00418380(param_1,7);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0xf), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xf), iVar4 == 0)) {
 
       *(undefined4 *)(iVar1 + 0xf8) = 1;
 
@@ -2196,7 +2196,7 @@ void FUN_004b5810(int param_1)
 
     iVar4 = FUN_00418380(param_1,3);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0xb), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0xb), iVar4 == 0)) {
 
       *(undefined4 *)(iVar1 + 0x88) = 1;
 
@@ -2804,7 +2804,7 @@ undefined4 objtype_anim_scan_2(int param_1,int param_2,undefined4 *param_3)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004184a0(param_1,8);
+  iVar2 = base_bldg_is_alive_at_all(param_1,8);
 
   if (iVar2 != 0) {
 
@@ -3413,7 +3413,7 @@ undefined4 FUN_004b6e20(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004184a0(param_1,9);
+  iVar2 = base_bldg_is_alive_at_all(param_1,9);
 
   if (iVar2 != 0) {
 
@@ -3421,7 +3421,7 @@ undefined4 FUN_004b6e20(int param_1)
 
   }
 
-  iVar2 = FUN_004184a0(param_1,1);
+  iVar2 = base_bldg_is_alive_at_all(param_1,1);
 
   if (iVar2 != 0) {
 
@@ -3429,7 +3429,7 @@ undefined4 FUN_004b6e20(int param_1)
 
   }
 
-  iVar2 = FUN_00418470(param_1,9);
+  iVar2 = base_bldg_is_alive_at_all_2(param_1,9);
 
   if (iVar2 != 0) {
 
@@ -3456,7 +3456,7 @@ undefined4 FUN_004b6e80(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004184a0(param_1,9);
+  iVar2 = base_bldg_is_alive_at_all(param_1,9);
 
   if (iVar2 != 0) {
 
@@ -3957,7 +3957,7 @@ void FUN_004b6fa0(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   }
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if ((iVar3 != 0) &&
 
@@ -4280,7 +4280,7 @@ void reaper_animselect(int param_1,undefined4 param_2,undefined4 param_3,float *
 
     *(float *)(iVar7 + 0xcec) = (float)(int)param_4;
 
-    iVar9 = FUN_0052aa70();
+    iVar9 = dialog_level_is_base();
 
     if (iVar9 == 0) {
 
@@ -4774,7 +4774,7 @@ LAB_004b8187:
 
       if (iVar9 != 0) {
 
-        iVar9 = FUN_0052aa70();
+        iVar9 = dialog_level_is_base();
 
         if (iVar9 != 0) {
 
@@ -4830,7 +4830,7 @@ LAB_004b8187:
 
       if (iVar9 != 0) {
 
-        iVar9 = FUN_0052aa70();
+        iVar9 = dialog_level_is_base();
 
         if (iVar9 != 0) {
 
@@ -7870,12 +7870,12 @@ float10 physics_reset_b(int param_1)
 
 }
 
-/* ===== FUN_004ba5e0 @ 0x004BA5E0 ===== */
+/* ===== reaper_release_shrink @ 0x004BA5E0 ===== */
 /* PS2 candidate: reaper_release_shrink (conf 0.618) */
 
 
 
-void FUN_004ba5e0(undefined4 param_1,int *param_2)
+void reaper_release_shrink(undefined4 param_1,int *param_2)
 
 
 
@@ -9152,7 +9152,7 @@ void FUN_004bce60(int param_1)
 
             if (iVar10 != 0) {
 
-              iVar16 = FUN_0052aa70();
+              iVar16 = dialog_level_is_base();
 
               if ((iVar16 == 0) || (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0))) {
 
@@ -9180,7 +9180,7 @@ void FUN_004bce60(int param_1)
 
           if ((puVar5[0x38b] == 0) &&
 
-             (((iVar10 = FUN_0052aa70(), iVar10 == 0 ||
+             (((iVar10 = dialog_level_is_base(), iVar10 == 0 ||
 
                (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0))) &&
 
@@ -9214,7 +9214,7 @@ void FUN_004bce60(int param_1)
 
           if ((puVar5[0x38b] == 0) &&
 
-             (((iVar10 = FUN_0052aa70(), iVar10 == 0 ||
+             (((iVar10 = dialog_level_is_base(), iVar10 == 0 ||
 
                (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0))) &&
 

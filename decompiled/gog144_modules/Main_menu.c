@@ -215,7 +215,7 @@ void main_menu_004832f0(void)
 
   }
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (((iVar3 == 0) || (DAT_00633044 == 0)) || (DAT_00632f08 < 0xd)) {
 

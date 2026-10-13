@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (92 named) — decompiled, names from PS2 symbols
+ * 162 functions (93 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -7298,12 +7298,12 @@ int comm_server_heartbeat(int param_1)
 
 }
 
-/* ===== FUN_0052aa70 @ 0x0052AA70 ===== */
+/* ===== dialog_level_is_base @ 0x0052AA70 ===== */
 /* PS2 candidate: hurt_object (conf 0.621) */
 
 
 
-bool FUN_0052aa70(void)
+bool dialog_level_is_base(void)
 
 
 
@@ -11754,7 +11754,7 @@ undefined4 fx_create(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -11783,7 +11783,7 @@ void reaper_0052e4a0(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -11812,7 +11812,7 @@ undefined4 FUN_0052e4b0(undefined4 param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -11871,7 +11871,7 @@ undefined4 FUN_0052e530(undefined4 param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -11983,7 +11983,7 @@ void comm_player_name_user(void)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -12499,7 +12499,7 @@ void comm_audio_volume_user(char *param_1,undefined4 param_2,byte param_3,undefi
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -12628,7 +12628,7 @@ void comm_team_broadcast_send(undefined4 param_1,undefined1 param_2)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -12699,7 +12699,7 @@ void comm_team_broadcast_menu(int param_1)
 
   uVar3 = comm_0052ab20(*(undefined4 *)(param_1 + 2));
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   if (iVar4 == 0) {
 
@@ -12743,7 +12743,7 @@ void comm_team_broadcast_menu(int param_1)
 
     crt_sprintf(local_280,uVar7);
 
-    iVar4 = FUN_0052aa70();
+    iVar4 = dialog_level_is_base();
 
     if (iVar4 == 0) {
 
@@ -12981,7 +12981,7 @@ LAB_0052edc5:
 
   }
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   if ((iVar4 == 0) || (iVar4 = FUN_0052aa80(iVar9), iVar4 != 0)) {
 
@@ -13036,7 +13036,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -13062,7 +13062,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
           uVar2 = FUN_0052ab00(param_1);
 
-          iVar1 = FUN_0052aa70();
+          iVar1 = dialog_level_is_base();
 
           if (iVar1 != 0) {
 
@@ -13106,7 +13106,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
       if (iVar1 != 0) {
 
-        iVar1 = FUN_0052aa70();
+        iVar1 = dialog_level_is_base();
 
         if (iVar1 != 0) {
 
@@ -13214,7 +13214,7 @@ void comm_entergame_msg_2(int param_1)
 
   comm_0052ac60(uVar1);
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -13325,7 +13325,7 @@ void comm_0052b780_user_1(int param_1)
 
   } while ((int)piVar3 < 0x633014);
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -13358,7 +13358,7 @@ void FUN_0052f210(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -13455,7 +13455,7 @@ void comm_0052b780_user_3(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -13500,7 +13500,7 @@ void comm_0052b780_user_4(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -13543,7 +13543,7 @@ void comm_fakehost_menu_user(int param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -13721,7 +13721,7 @@ void comm_fakehost_player(undefined4 param_1)
 
           uVar3 = FUN_0052ab00(iVar1);
 
-          iVar1 = FUN_0052aa70();
+          iVar1 = dialog_level_is_base();
 
           if (iVar1 == 0) {
 
@@ -13782,7 +13782,7 @@ void comm_fakehost_toggle(void)
 
   iVar1 = comm_00426540();
 
-  if ((iVar1 == 0) || (iVar1 = FUN_0052aa70(), iVar1 == 0)) {
+  if ((iVar1 == 0) || (iVar1 = dialog_level_is_base(), iVar1 == 0)) {
 
     return;
 
@@ -13861,7 +13861,7 @@ void comm_audio_vol_a(undefined4 param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -13923,7 +13923,7 @@ void comm_audio_vol_b(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -13958,7 +13958,7 @@ void comm_audio_vol_c(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14005,7 +14005,7 @@ void comm_player_marker_menu(void)
 
   }
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   auVar1 = local_4;
 
@@ -14068,7 +14068,7 @@ void comm_audio_vol_d(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14103,7 +14103,7 @@ void comm_audio_vol_f(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14138,7 +14138,7 @@ void comm_audio_vol_e(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14183,7 +14183,7 @@ void comm_0052b780_user_5(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14378,7 +14378,7 @@ LAB_0052fabe:
 
       }
 
-      iVar4 = FUN_0052aa70();
+      iVar4 = dialog_level_is_base();
 
       if ((iVar4 != 0) && (iVar4 = FUN_0052aa80(iVar5), iVar4 != 0)) {
 
@@ -14406,7 +14406,7 @@ LAB_0052fabe:
 
         local_3 = 0;
 
-        iVar5 = FUN_0052aa70();
+        iVar5 = dialog_level_is_base();
 
         if (iVar5 != 0) {
 
@@ -14495,7 +14495,7 @@ void comm_0052b780_user_6(int param_1,int param_2)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (iVar3 != 0) {
 
@@ -14586,7 +14586,7 @@ void comm_0052b780_user_7(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14655,7 +14655,7 @@ void comm_obj_sync(int param_1)
 
   
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   if (iVar4 != 0) {
 
@@ -14780,7 +14780,7 @@ void FUN_0052fed0(void)
 
   uStack_4 = (uint)CONCAT12(0xe,in_CX);
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14819,7 +14819,7 @@ void comm_0052b780_user_8(undefined4 *param_1,uint param_2)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -14941,7 +14941,7 @@ void FUN_0052ffe0(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 

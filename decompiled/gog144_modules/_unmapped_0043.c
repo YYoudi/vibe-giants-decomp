@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (58 named) — decompiled, names from PS2 symbols
+ * 74 functions (59 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -1098,12 +1098,12 @@ void FUN_00431a00(undefined4 *param_1,float param_2,float param_3,float param_4,
 
 }
 
-/* ===== FUN_00431ae0 @ 0x00431AE0 ===== */
+/* ===== get_free_world_ripple__Fv @ 0x00431AE0 ===== */
 /* PS2 candidate: get_free_world_ripple__Fv (conf 0.606) */
 
 
 
-void FUN_00431ae0(undefined4 *param_1)
+void get_free_world_ripple__Fv(undefined4 *param_1)
 
 
 

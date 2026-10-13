@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (101 named) — decompiled, names from PS2 symbols
+ * 179 functions (102 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -24,7 +24,7 @@ void comm_chat_send_3(undefined1 param_1,undefined4 param_2,int param_3,int para
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -32,7 +32,9 @@ void comm_chat_send_3(undefined1 param_1,undefined4 param_2,int param_3,int para
 
   }
 
-  if ((0x3ff < (int)((int)DAT_005dfed8 + -0x5dfec1)) && (iVar2 = FUN_0052aa70(), iVar2 != 0)) {
+  if ((0x3ff < (int)((int)DAT_005dfed8 + -0x5dfec1)) && (iVar2 = dialog_level_is_base(), iVar2 != 0)
+
+     ) {
 
     iVar2 = FUN_0052c5c0();
 
@@ -169,7 +171,7 @@ void comm_send_recv_pair(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (((iVar1 != 0) && (iVar2 = FUN_0052c5c0(), iVar1 = DAT_00632f34, iVar2 != 0)) &&
 
@@ -296,7 +298,7 @@ void comm_send_big(undefined4 *param_1)
 
   
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   if (iVar4 != 0) {
 
@@ -519,7 +521,7 @@ void FUN_00530430(int param_1,int param_2,int param_3,int param_4,undefined4 par
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -1192,7 +1194,7 @@ LAB_005307b6:
 
 LAB_005307f3:
 
-  iVar7 = FUN_0052aa70();
+  iVar7 = dialog_level_is_base();
 
   if (iVar7 == 0) {
 
@@ -1357,7 +1359,7 @@ void comm_kill_message2(undefined4 param_1,int param_2)
 
     crt_sprintf(local_2c8,uVar3,uVar2,local_2f0);
 
-    iVar4 = FUN_0052aa70();
+    iVar4 = dialog_level_is_base();
 
     if (iVar4 == 0) {
 
@@ -1526,7 +1528,7 @@ void rpman_move(int param_1,int param_2)
 
       crt_sprintf(local_2c8,uVar4,uVar3,pcVar8);
 
-      iVar2 = FUN_0052aa70();
+      iVar2 = dialog_level_is_base();
 
       if (iVar2 == 0) {
 
@@ -1663,7 +1665,7 @@ void comm_send_small_a(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -1710,7 +1712,7 @@ void comm_send_small_b(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -1763,7 +1765,7 @@ void reaper_00530bd0(int param_1,int param_2,int param_3,int param_4,undefined1 
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -1775,7 +1777,7 @@ void reaper_00530bd0(int param_1,int param_2,int param_3,int param_4,undefined1 
 
   if ((0x3ff < (int)((int)DAT_005dfed8 + (uVar1 - 0x5dfecd))) &&
 
-     (iVar2 = FUN_0052aa70(), iVar2 != 0)) {
+     (iVar2 = dialog_level_is_base(), iVar2 != 0)) {
 
     iVar2 = FUN_0052c5c0();
 
@@ -1902,7 +1904,7 @@ void comm_chat_send_1(int param_1,int param_2,int param_3,int param_4,undefined1
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -1914,7 +1916,7 @@ void comm_chat_send_1(int param_1,int param_2,int param_3,int param_4,undefined1
 
   if ((0x3ff < (int)((int)DAT_005dfed8 + (uVar1 - 0x5dfecd))) &&
 
-     (iVar2 = FUN_0052aa70(), iVar2 != 0)) {
+     (iVar2 = dialog_level_is_base(), iVar2 != 0)) {
 
     iVar2 = FUN_0052c5c0();
 
@@ -2041,7 +2043,7 @@ void comm_chat_send_2(int param_1,int param_2,int param_3,int param_4,undefined1
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -2053,7 +2055,7 @@ void comm_chat_send_2(int param_1,int param_2,int param_3,int param_4,undefined1
 
   if ((0x3ff < (int)((int)DAT_005e2310 + (uVar1 - 0x5e2305))) &&
 
-     (iVar2 = FUN_0052aa70(), iVar2 != 0)) {
+     (iVar2 = dialog_level_is_base(), iVar2 != 0)) {
 
     iVar2 = FUN_0052c5c0();
 
@@ -2211,7 +2213,7 @@ void FUN_005310c0(uint param_1,char *param_2)
 
     }
 
-    iVar2 = FUN_0052aa70();
+    iVar2 = dialog_level_is_base();
 
     if ((iVar2 != 0) && (DAT_005e02e4 == 0)) {
 
@@ -2296,7 +2298,7 @@ void comm_0052ab20_user(undefined4 param_1)
 
   uVar2 = comm_0052ab20(param_1);
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if ((iVar3 != 0) && (DAT_005e02e4 == 0)) {
 
@@ -2378,7 +2380,7 @@ void FUN_005312a0(undefined1 param_1)
 
   uStack_4 = CONCAT13(param_1,0x50000);
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if ((iVar1 != 0) && (DAT_005e02e4 == 0)) {
 
@@ -2435,7 +2437,7 @@ void FUN_00531340(undefined4 param_1)
 
   uStack_4 = (undefined1)((uint)param_1 >> 0x18);
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if ((iVar2 != 0) && (DAT_005e02e4 == 0)) {
 
@@ -2484,9 +2486,9 @@ void FUN_005313e0(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
-  if (((iVar1 != 0) && (iVar1 = FUN_0052aa70(), iVar1 != 0)) && (DAT_005e02e4 == 0)) {
+  if (((iVar1 != 0) && (iVar1 = dialog_level_is_base(), iVar1 != 0)) && (DAT_005e02e4 == 0)) {
 
     while (EnterCriticalSection((LPCRITICAL_SECTION)&DAT_005e02ec),
 
@@ -2615,7 +2617,7 @@ void FUN_00531470(void)
 
   local_524 = 0;
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   if (iVar4 == 0) {
 
@@ -2631,7 +2633,7 @@ void FUN_00531470(void)
 
     if (iVar4 != 0) {
 
-      iVar4 = FUN_0052aa70();
+      iVar4 = dialog_level_is_base();
 
       if ((iVar4 != 0) && (1.5 <= DAT_006328e8 - _DAT_005e272c)) {
 
@@ -2825,7 +2827,7 @@ void FUN_00531470(void)
 
       case '\x04':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (iVar4 != 0) {
 
@@ -2981,7 +2983,7 @@ void FUN_00531470(void)
 
       case '\x06':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if ((iVar4 == 0) || (DAT_00632f08 < 10)) {
 
@@ -3003,7 +3005,7 @@ LAB_005319de:
 
       case '\a':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if ((iVar4 == 0) || (DAT_00632f08 < 10)) goto LAB_005319de;
 
@@ -3011,7 +3013,7 @@ LAB_005319de:
 
         if (iVar4 != 0) {
 
-          iVar4 = FUN_0052aa70();
+          iVar4 = dialog_level_is_base();
 
           if (iVar4 == 0) goto LAB_005319de;
 
@@ -3049,7 +3051,7 @@ LAB_005319de:
 
       case '\n':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         pcVar14 = DAT_005e0304;
 
@@ -3059,7 +3061,7 @@ LAB_005319de:
 
           if (iVar4 != 0) {
 
-            iVar4 = FUN_0052aa70();
+            iVar4 = dialog_level_is_base();
 
             pcVar14 = DAT_005e0304;
 
@@ -3211,7 +3213,7 @@ LAB_005319de:
 
       case '\x19':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
@@ -3291,7 +3293,7 @@ LAB_005319de:
 
       case '\x1f':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if ((iVar4 != 0) && (9 < DAT_00632f08)) {
 
@@ -3319,7 +3321,7 @@ LAB_005319de:
 
       case '\"':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
@@ -3375,7 +3377,7 @@ LAB_005319de:
 
       case '$':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
@@ -3395,7 +3397,7 @@ LAB_005319de:
 
       case '%':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
@@ -3467,7 +3469,7 @@ LAB_005319de:
 
           iVar4 = FUN_0052c5c0();
 
-          if ((iVar4 != 0) && (iVar4 = FUN_0052aa70(), iVar4 != 0)) {
+          if ((iVar4 != 0) && (iVar4 = dialog_level_is_base(), iVar4 != 0)) {
 
             pcVar14 = local_4e4;
 
@@ -3519,7 +3521,7 @@ LAB_005319de:
 
       case '&':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if ((iVar4 != 0) && (9 < DAT_00632f08)) {
 
@@ -3543,7 +3545,7 @@ LAB_005319de:
 
           iVar4 = FUN_0052c5c0();
 
-          if ((iVar4 != 0) && (iVar4 = FUN_0052aa70(), iVar4 != 0)) {
+          if ((iVar4 != 0) && (iVar4 = dialog_level_is_base(), iVar4 != 0)) {
 
             pcVar14 = &local_510;
 
@@ -3595,7 +3597,7 @@ LAB_005319de:
 
       case '*':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
@@ -3731,7 +3733,7 @@ LAB_00532b21:
 
         }
 
-        FUN_00431ae0(local_100);
+        get_free_world_ripple__Fv(local_100);
 
         DAT_005e0304 = DAT_005e0304 + bVar3 + 2;
 
@@ -3769,7 +3771,7 @@ LAB_00532b21:
 
       case '6':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
@@ -3801,7 +3803,7 @@ LAB_00532b21:
 
       case '7':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (((iVar4 != 0) && (9 < DAT_00632f08)) &&
 
@@ -4091,7 +4093,7 @@ LAB_00532513:
 
       case '@':
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (iVar4 != 0) {
 
@@ -4560,7 +4562,7 @@ void anm_dump_52(undefined4 *param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -4629,7 +4631,7 @@ void comm_team_broadcast_draw(int param_1)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -4651,7 +4653,7 @@ void comm_team_broadcast_draw(int param_1)
 
           uVar1 = *(undefined1 *)(param_1 + 1);
 
-          iVar3 = FUN_0052aa70();
+          iVar3 = dialog_level_is_base();
 
           if (iVar3 != 0) {
 
@@ -4724,7 +4726,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -4780,7 +4782,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
         iVar1 = *(int *)((int)param_1 + 1);
 
-        iVar7 = FUN_0052aa70();
+        iVar7 = dialog_level_is_base();
 
         if (iVar7 != 0) {
 
@@ -4959,7 +4961,7 @@ void comm_cam_mode_menu(undefined4 *param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -5052,7 +5054,7 @@ void mecc_shield_spell(int param_1)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (((iVar2 != 0) && (9 < DAT_00632f08)) && (piVar4 = DAT_00632d68, DAT_00632d68 != (int *)0x0)) {
 
@@ -5104,7 +5106,7 @@ void mecc_shield_spell(int param_1)
 
     }
 
-    FUN_00458350(iVar2,uVar3);
+    SpecialWeaponIdSet__FP6OBJECTi(iVar2,uVar3);
 
     *(undefined4 *)(iVar2 + 0xa0) = *(undefined4 *)(param_1 + 0x14);
 
@@ -5255,7 +5257,7 @@ void mecc_cloak_spell(int param_1)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (((iVar2 != 0) && (9 < DAT_00632f08)) && (piVar3 = DAT_00632d68, DAT_00632d68 != (int *)0x0)) {
 
@@ -5420,7 +5422,7 @@ void comm_team_broadcast(int param_1)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (((iVar3 != 0) && (9 < DAT_00632f08)) && (piVar6 = DAT_00632d68, DAT_00632d68 != (int *)0x0)) {
 
@@ -5619,7 +5621,7 @@ void FUN_00533b00(int param_1)
 
   
 
-  iVar5 = FUN_0052aa70();
+  iVar5 = dialog_level_is_base();
 
   if ((iVar5 != 0) && (puVar4 = DAT_00632d68, 9 < DAT_00632f08)) {
 
@@ -5697,7 +5699,7 @@ LAB_00533b86:
 
       *(undefined4 *)(iVar2 + 0xc) = uVar1;
 
-      FUN_0046a480(iVar5,uVar1);
+      kbos_sizer(iVar5,uVar1);
 
       *(undefined4 *)(iVar5 + 0x278) = *(undefined4 *)(param_1 + 0x19);
 
@@ -5730,7 +5732,7 @@ void base_warn_missing(int param_1)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if ((iVar3 == 0) || (puVar1 = DAT_00632d68, DAT_00632f08 < 10)) {
 
@@ -6027,7 +6029,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
   iVar6 = FUN_0052c5c0();
 
-  if ((iVar6 != 0) && (iVar6 = FUN_0052aa70(), iVar6 != 0)) {
+  if ((iVar6 != 0) && (iVar6 = dialog_level_is_base(), iVar6 != 0)) {
 
     iVar6 = 0;
 
@@ -6059,7 +6061,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             if (*(int *)(iVar11 + 0x274) == iVar9) {
 
-              iVar7 = FUN_0052aa70();
+              iVar7 = dialog_level_is_base();
 
               if (iVar7 != 0) {
 
@@ -6105,7 +6107,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         if ((*(byte *)(iVar6 + 0x1c8) & 1) != 0) {
 
-          iVar9 = FUN_0052aa70();
+          iVar9 = dialog_level_is_base();
 
           if (iVar9 != 0) {
 
@@ -6159,7 +6161,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         if ((iVar9 != 0) || (iVar9 = reaperbase_bldg_from_object(iVar6), iVar9 != 0)) {
 
-          iVar9 = FUN_0052aa70();
+          iVar9 = dialog_level_is_base();
 
           if (iVar9 != 0) {
 
@@ -6255,7 +6257,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         {
 
-          iVar9 = FUN_0052aa70();
+          iVar9 = dialog_level_is_base();
 
           if (iVar9 != 0) {
 
@@ -6399,7 +6401,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           iVar9 = *(int *)(iVar6 + 0x100);
 
-          iVar11 = FUN_0052aa70();
+          iVar11 = dialog_level_is_base();
 
           if (iVar11 != 0) {
 
@@ -6501,7 +6503,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           iVar9 = *(int *)(iVar6 + 0x100);
 
-          iVar11 = FUN_0052aa70();
+          iVar11 = dialog_level_is_base();
 
           if (iVar11 != 0) {
 
@@ -6633,7 +6635,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         if (((-1 < (char)((uint)*(undefined4 *)(iVar6 + 0xd8) >> 8)) &&
 
-            (*(int *)(iVar6 + 0x1e0) == 0x2c)) && (iVar9 = FUN_0052aa70(), iVar9 != 0)) {
+            (*(int *)(iVar6 + 0x1e0) == 0x2c)) && (iVar9 = dialog_level_is_base(), iVar9 != 0)) {
 
           uVar8 = *(undefined4 *)(iVar6 + 4);
 
@@ -6705,7 +6707,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             (*(int *)(iVar6 + 0x1e0) == 0x3d)) &&
 
-           ((*(float *)(iVar6 + 0x278) != 0.0 && (iVar9 = FUN_0052aa70(), iVar9 != 0)))) {
+           ((*(float *)(iVar6 + 0x278) != 0.0 && (iVar9 = dialog_level_is_base(), iVar9 != 0)))) {
 
           uStack_23f = 0;
 
@@ -6773,7 +6775,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                 iVar6 = FUN_0052ab00(DAT_005e02e8);
 
-                iVar9 = FUN_0052aa70();
+                iVar9 = dialog_level_is_base();
 
                 if (iVar9 != 0) {
 
@@ -6875,7 +6877,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                     iStack_1dc = iVar9;
 
-                    iVar11 = FUN_0052aa70();
+                    iVar11 = dialog_level_is_base();
 
                     if (iVar11 != 0) {
 
@@ -7027,7 +7029,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                   puVar4 = *(uint **)(iVar6 + 0x100);
 
-                  iVar9 = FUN_0052aa70();
+                  iVar9 = dialog_level_is_base();
 
                   if (iVar9 != 0) {
 
@@ -7193,7 +7195,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                 iVar9 = *(int *)(iVar6 + 0x100);
 
-                iVar11 = FUN_0052aa70();
+                iVar11 = dialog_level_is_base();
 
                 if (iVar11 != 0) {
 
@@ -7365,7 +7367,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
           if (iVar9 == 0x5f) {
 
-            iVar9 = FUN_0052aa70();
+            iVar9 = dialog_level_is_base();
 
             if (iVar9 != 0) {
 
@@ -7447,7 +7449,7 @@ LAB_005347d1:
 
           else if (iVar9 == 0x5a) {
 
-            iVar9 = FUN_0052aa70();
+            iVar9 = dialog_level_is_base();
 
             if (iVar9 != 0) {
 
@@ -7561,7 +7563,7 @@ LAB_005347d1:
 
             iVar9 = *(int *)(iVar6 + 0x100);
 
-            iVar11 = FUN_0052aa70();
+            iVar11 = dialog_level_is_base();
 
             if (iVar11 != 0) {
 
@@ -7676,7 +7678,7 @@ void comm_send_helper(int param_1)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -7725,7 +7727,7 @@ void FUN_00534f10(int param_1)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (iVar3 != 0) {
 
@@ -7870,7 +7872,7 @@ void comm_chat_dispatch(int param_1,int param_2)
 
       if ((0x3ff < (int)((int)DAT_005dfad0 + (uVar2 - 0x5dfad0))) &&
 
-         (iVar5 = FUN_0052aa70(), iVar5 != 0)) {
+         (iVar5 = dialog_level_is_base(), iVar5 != 0)) {
 
         iVar5 = FUN_0052c5c0();
 
@@ -7966,7 +7968,7 @@ LAB_005352a9:
 
       if ((0x3ff < (int)((int)DAT_005df2c0 + (uVar2 - 0x5df2c0))) &&
 
-         (iVar5 = FUN_0052aa70(), iVar5 != 0)) {
+         (iVar5 = dialog_level_is_base(), iVar5 != 0)) {
 
         iVar5 = FUN_0052c5c0();
 
@@ -8105,7 +8107,7 @@ void comm_heartbeat_send(void)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -8137,7 +8139,7 @@ void comm_heartbeat_send(void)
 
   }
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -8248,7 +8250,7 @@ void comm_0052b430_user_big(void)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -8695,7 +8697,7 @@ void comm_0052b430_user_bigger(void)
 
   
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -8745,7 +8747,7 @@ void comm_0052b430_user_bigger(void)
 
     else {
 
-      iVar2 = FUN_0052aa70();
+      iVar2 = dialog_level_is_base();
 
       if (iVar2 != 0) {
 
@@ -9339,12 +9341,12 @@ int FUN_00536050(char *param_1)
 
 }
 
-/* ===== FUN_00536120 @ 0x00536120 ===== */
+/* ===== controlShutdown_2 @ 0x00536120 ===== */
 /* PS2 candidate: controlShutdown__Fv_2 (conf 0.611) */
 
 
 
-void FUN_00536120(void)
+void controlShutdown_2(void)
 
 
 
@@ -10534,7 +10536,7 @@ void bldg_comm_status(float param_1)
 
   uVar5 = 1;
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if ((iVar2 == 0) || ((*(byte *)((int)param_1 + 0x1c8) & 1) == 0)) {
 
@@ -10754,7 +10756,7 @@ void comm_entergame_message(void)
 
     comm_0052ac60(uVar2);
 
-    iVar3 = FUN_0052aa70();
+    iVar3 = dialog_level_is_base();
 
     if (iVar3 != 0) {
 
@@ -10808,7 +10810,7 @@ void comm_entergame_message(void)
 
     comm_0052ac60(uVar2);
 
-    iVar3 = FUN_0052aa70();
+    iVar3 = dialog_level_is_base();
 
     if (iVar3 != 0) {
 
@@ -10925,7 +10927,7 @@ void comm_wincond_destroy(int param_1)
 
   
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   if (((((iVar4 != 0) && (iVar4 = FUN_0052aa80(param_1), iVar4 != 0)) && (DAT_00632ff0 != 0)) &&
 
@@ -10979,7 +10981,7 @@ void comm_wincond_destroy(int param_1)
 
     pcVar6 = (char *)FUN_00507b00(s_WinCondMetDestroy_00580298);
 
-    iVar4 = FUN_0052aa70();
+    iVar4 = dialog_level_is_base();
 
     if (iVar4 == 0) {
 
@@ -11190,7 +11192,7 @@ void FUN_005375e0(void)
 
         pcVar4 = (char *)FUN_00507b00(s_CommFlagCapsOn_0058030c);
 
-        iVar3 = FUN_0052aa70();
+        iVar3 = dialog_level_is_base();
 
         if (iVar3 == 0) {
 
@@ -11338,7 +11340,7 @@ void FUN_005375e0(void)
 
   if (fVar16 < (float10)0.0 != (fVar16 == (float10)0.0)) {
 
-    iVar3 = FUN_0052aa70();
+    iVar3 = dialog_level_is_base();
 
     if (iVar3 != 0) {
 
@@ -11400,7 +11402,7 @@ void FUN_005375e0(void)
 
       comm_0052ac60(uVar5);
 
-      iVar3 = FUN_0052aa70();
+      iVar3 = dialog_level_is_base();
 
       if (iVar3 != 0) {
 
@@ -11488,7 +11490,7 @@ void FUN_005375e0(void)
 
           pcVar4 = (char *)FUN_00507b00(s_WinCondMetTimer_005802fc);
 
-          iVar3 = FUN_0052aa70();
+          iVar3 = dialog_level_is_base();
 
           if (iVar3 == 0) {
 
@@ -11620,7 +11622,7 @@ void FUN_005375e0(void)
 
             pcVar4 = (char *)FUN_00507b00(s_WinCondMetPlayerScore_005802e4);
 
-            iVar3 = FUN_0052aa70();
+            iVar3 = dialog_level_is_base();
 
             if (iVar3 == 0) {
 
@@ -11760,7 +11762,7 @@ void FUN_005375e0(void)
 
             pcVar4 = (char *)FUN_00507b00(s_WinCondMetTeamScore_005802d0);
 
-            iVar3 = FUN_0052aa70();
+            iVar3 = dialog_level_is_base();
 
             if (iVar3 == 0) {
 
@@ -11884,7 +11886,7 @@ LAB_00537c57:
 
           pcVar4 = (char *)FUN_00507b00(s_WinCondMetBase_005802c0);
 
-          iVar3 = FUN_0052aa70();
+          iVar3 = dialog_level_is_base();
 
           if (iVar3 == 0) {
 
@@ -11978,7 +11980,7 @@ LAB_00537c57:
 
         pcVar4 = (char *)FUN_00507b00(s_WinCondMetEndNow_005802ac);
 
-        iVar3 = FUN_0052aa70();
+        iVar3 = dialog_level_is_base();
 
         if (iVar3 == 0) {
 
@@ -12234,7 +12236,7 @@ switchD_0053793e_default:
 
 LAB_00537f57:
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (iVar3 != 0) {
 
@@ -12335,7 +12337,7 @@ void comm_send_538010(void)
 
     DAT_00633010 = (float)DAT_00632fcc * 60.0;
 
-    iVar2 = FUN_0052aa70();
+    iVar2 = dialog_level_is_base();
 
     if (iVar2 != 0) {
 

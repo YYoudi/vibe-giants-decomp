@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (27 named) — decompiled, names from PS2 symbols
+ * 53 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -1193,12 +1193,12 @@ undefined4 teammecc_get_slavecount(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004669a0 @ 0x004669A0 ===== */
+/* ===== kabuto_create_kbos @ 0x004669A0 ===== */
 /* PS2 candidate: kabuto_create_kbos (conf 0.438) */
 
 
 
-void FUN_004669a0(float param_1,int param_2)
+void kabuto_create_kbos(float param_1,int param_2)
 
 
 
@@ -1709,12 +1709,12 @@ LAB_00469b54:
 
 }
 
-/* ===== FUN_0046a480 @ 0x0046A480 ===== */
+/* ===== kbos_sizer @ 0x0046A480 ===== */
 /* PS2 candidate: kbos_sizer (conf 0.608) */
 
 
 
-void FUN_0046a480(int param_1,float param_2)
+void kbos_sizer(int param_1,float param_2)
 
 
 

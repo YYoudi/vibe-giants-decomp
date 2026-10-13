@@ -18,7 +18,7 @@ void comm_multi_00533280(int param_1)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if ((iVar3 != 0) && (puVar2 = DAT_00632d68, 9 < DAT_00632f08)) {
 
@@ -95,7 +95,7 @@ void comm_multi_00533370(int param_1,int param_2)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if ((iVar3 != 0) && (puVar1 = DAT_00632d68, 9 < DAT_00632f08)) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (63 named) — decompiled, names from PS2 symbols
+ * 145 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -2788,7 +2788,7 @@ undefined4 FUN_00452ee0(int param_1)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -2835,7 +2835,7 @@ uint FUN_00452f20(int param_1)
 
   if (param_1 != -1) {
 
-    iVar1 = FUN_0052aa70();
+    iVar1 = dialog_level_is_base();
 
     if (iVar1 != 0) {
 
@@ -3078,7 +3078,7 @@ void fx_time_budget(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 == 0) {
 
@@ -3201,7 +3201,7 @@ void giftshop_exit__Fv(void)
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_0052aa70();
+      iVar1 = dialog_level_is_base();
 
       if (iVar1 != 0) {
 
@@ -3261,7 +3261,7 @@ void giftshop_exit__Fv(void)
 
       if (iVar1 == 0) {
 
-        iVar1 = FUN_0052aa70();
+        iVar1 = dialog_level_is_base();
 
         if (iVar1 != 0) {
 
@@ -3380,7 +3380,7 @@ undefined4 FUN_00454a40(int param_1,int param_2)
 
   piVar2 = *(int **)(param_1 + 0x100);
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (iVar3 != 0) {
 
@@ -5941,7 +5941,7 @@ void obj_damage_apply(int param_1,undefined4 param_2,int param_3,int param_4,und
 
   if ((*(uint *)(param_3 + 0x1c8) & 0x4000000) == 0) {
 
-    iVar2 = FUN_0052aa70();
+    iVar2 = dialog_level_is_base();
 
     if (iVar2 != 0) {
 
@@ -7337,12 +7337,12 @@ int FUN_00458300(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00458350 @ 0x00458350 ===== */
+/* ===== SpecialWeaponIdSet__FP6OBJECTi @ 0x00458350 ===== */
 /* PS2 candidate: SpecialWeaponIdSet__FP6OBJECTi (conf 0.619) */
 
 
 
-int FUN_00458350(int param_1,int param_2)
+int SpecialWeaponIdSet__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -7744,7 +7744,7 @@ void FUN_00458710(int param_1)
 
   *(undefined4 *)(iVar1 + 0x16c) = 0;
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   if (iVar4 == 0) {
 
@@ -7864,7 +7864,7 @@ void FUN_00458710(int param_1)
 
   WeaponIdSetSlot__FP6OBJECTi(iVar3,2,0xffffffff);
 
-  FUN_00458350(iVar3,0xffffffff);
+  SpecialWeaponIdSet__FP6OBJECTi(iVar3,0xffffffff);
 
   return;
 
@@ -8003,7 +8003,7 @@ void FUN_00458a10(int param_1)
 
   }
 
-  FUN_00458350(iVar3,0xffffffff);
+  SpecialWeaponIdSet__FP6OBJECTi(iVar3,0xffffffff);
 
   return;
 
@@ -9053,7 +9053,7 @@ LAB_00459ce0:
 
     else {
 
-      FUN_00458350(param_1);
+      SpecialWeaponIdSet__FP6OBJECTi(param_1);
 
     }
 
@@ -9108,7 +9108,7 @@ void FUN_00459f10(int param_1,undefined4 *param_2,undefined4 param_3,int param_4
 
   if (iVar5 != 0) {
 
-    FUN_00458350(param_1,0xffffffff);
+    SpecialWeaponIdSet__FP6OBJECTi(param_1,0xffffffff);
 
     return;
 
@@ -10099,7 +10099,7 @@ void item_drop_backheld(int param_1)
 
                    *(float *)(param_1 + 0x2ac) * -30.0,0x41700000,0x41f00000);
 
-      FUN_00458350(param_1,0xffffffff);
+      SpecialWeaponIdSet__FP6OBJECTi(param_1,0xffffffff);
 
     }
 
@@ -10109,12 +10109,12 @@ void item_drop_backheld(int param_1)
 
 }
 
-/* ===== FUN_0045ab30 @ 0x0045AB30 ===== */
+/* ===== item_drop_curweap @ 0x0045AB30 ===== */
 /* PS2 candidate: item_drop_curweap (conf 0.504) */
 
 
 
-void FUN_0045ab30(int param_1)
+void item_drop_curweap(int param_1)
 
 
 
@@ -10221,7 +10221,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
     if (((-1 < iVar3) && (iVar3 = WeaponIdGetPresent__FP6OBJECT(puVar2), iVar3 != 1)) &&
 
-       ((iVar3 = FUN_0052aa70(), iVar3 == 0 ||
+       ((iVar3 = dialog_level_is_base(), iVar3 == 0 ||
 
         (iVar3 = WeaponIdGetPresent__FP6OBJECT(puVar2), iVar3 != 3)))) {
 
@@ -10372,7 +10372,7 @@ byte ai_target_classify(int param_1,int param_2,byte param_3)
 
     if (((iVar2 == 0) || (iVar2 = meccbasepit_bldg_from_object(param_2), iVar2 < 0)) ||
 
-       (iVar2 = FUN_0052aa70(), iVar2 == 0)) goto LAB_0045af46;
+       (iVar2 = dialog_level_is_base(), iVar2 == 0)) goto LAB_0045af46;
 
     iVar2 = FUN_00521330(DAT_00632f18);
 
@@ -10382,7 +10382,7 @@ byte ai_target_classify(int param_1,int param_2,byte param_3)
 
     iVar2 = meccbasepit_bldg_from_object();
 
-    if ((iVar2 < 0) || (iVar2 = FUN_0052aa70(), iVar2 == 0)) goto LAB_0045af46;
+    if ((iVar2 < 0) || (iVar2 = dialog_level_is_base(), iVar2 == 0)) goto LAB_0045af46;
 
     iVar2 = FUN_00521330(DAT_00632f18);
 
@@ -12477,7 +12477,7 @@ undefined4 FUN_0045d300(uint *param_1)
 
   puVar2[0xc5] = uVar6;
 
-  iVar5 = FUN_0052aa70();
+  iVar5 = dialog_level_is_base();
 
   if (iVar5 == 0) {
 

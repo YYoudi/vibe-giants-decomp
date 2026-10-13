@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (51 named) — decompiled, names from PS2 symbols
+ * 105 functions (52 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -6170,7 +6170,7 @@ void meccbase_update_icons(int param_1)
 
     }
 
-    iVar4 = FUN_00418470(param_1,0xd);
+    iVar4 = base_bldg_is_alive_at_all_2(param_1,0xd);
 
     if (iVar4 == 0) {
 
@@ -6234,7 +6234,7 @@ void meccbase_update_icons(int param_1)
 
     iVar3 = FUN_00418380(param_1,2);
 
-    if ((iVar3 == 0) && (iVar3 = FUN_00418470(param_1,0xf), iVar3 == 0)) {
+    if ((iVar3 == 0) && (iVar3 = base_bldg_is_alive_at_all_2(param_1,0xf), iVar3 == 0)) {
 
       *(undefined4 *)(iVar4 + 0x6c) = 1;
 
@@ -6260,7 +6260,7 @@ void meccbase_update_icons(int param_1)
 
     }
 
-    iVar4 = FUN_00418470(param_1,0xf);
+    iVar4 = base_bldg_is_alive_at_all_2(param_1,0xf);
 
     if (iVar4 == 0) {
 
@@ -6286,15 +6286,15 @@ void meccbase_update_icons(int param_1)
 
     iVar4 = FUN_00418380(param_1,4);
 
-    if ((((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0x11), iVar4 == 0)) ||
+    if ((((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x11), iVar4 == 0)) ||
 
         ((iVar4 = FUN_00418380(param_1,5), iVar4 == 0 &&
 
-         (iVar4 = FUN_00418470(param_1,0x12), iVar4 == 0)))) ||
+         (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x12), iVar4 == 0)))) ||
 
        ((iVar4 = FUN_00418380(param_1,6), iVar4 == 0 &&
 
-        (iVar4 = FUN_00418470(param_1,0x13), iVar4 == 0)))) {
+        (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x13), iVar4 == 0)))) {
 
       iVar4 = FUN_00418380(param_1,0x11);
 
@@ -6336,11 +6336,11 @@ void meccbase_update_icons(int param_1)
 
     iVar4 = FUN_00418380(param_1,7);
 
-    if (((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0x14), iVar4 == 0)) ||
+    if (((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x14), iVar4 == 0)) ||
 
        ((iVar4 = FUN_00418380(param_1,8), iVar4 == 0 &&
 
-        (iVar4 = FUN_00418470(param_1,0x15), iVar4 == 0)))) {
+        (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x15), iVar4 == 0)))) {
 
       iVar4 = FUN_00418380(param_1,0x14);
 
@@ -6376,15 +6376,15 @@ void meccbase_update_icons(int param_1)
 
     iVar4 = FUN_00418380(param_1,9);
 
-    if ((((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0x16), iVar4 == 0)) ||
+    if ((((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x16), iVar4 == 0)) ||
 
         ((iVar4 = FUN_00418380(param_1,10), iVar4 == 0 &&
 
-         (iVar4 = FUN_00418470(param_1,0x17), iVar4 == 0)))) ||
+         (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x17), iVar4 == 0)))) ||
 
        ((iVar4 = FUN_00418380(param_1,0xb), iVar4 == 0 &&
 
-        (iVar4 = FUN_00418470(param_1,0x18), iVar4 == 0)))) {
+        (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x18), iVar4 == 0)))) {
 
       iVar4 = FUN_00418380(param_1,0x16);
 
@@ -6428,7 +6428,7 @@ void meccbase_update_icons(int param_1)
 
     iVar4 = FUN_00418380(param_1,0xc);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0x19), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x19), iVar4 == 0)) {
 
       *(undefined4 *)(iVar1 + 0x184) = 1;
 
@@ -6450,7 +6450,7 @@ void meccbase_update_icons(int param_1)
 
     iVar4 = FUN_00418380(param_1,3);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_00418470(param_1,0x10), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = base_bldg_is_alive_at_all_2(param_1,0x10), iVar4 == 0)) {
 
       *(undefined4 *)(iVar1 + 0x88) = 1;
 
@@ -7065,7 +7065,7 @@ undefined4 objtype_anim_scan(int param_1,int param_2,undefined4 *param_3)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004184a0(param_1,0xd);
+  iVar2 = base_bldg_is_alive_at_all(param_1,0xd);
 
   if (iVar2 != 0) {
 
@@ -7637,7 +7637,7 @@ undefined4 FUN_0040adb0(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004184a0(param_1,0xe);
+  iVar2 = base_bldg_is_alive_at_all(param_1,0xe);
 
   if (iVar2 != 0) {
 
@@ -7645,7 +7645,7 @@ undefined4 FUN_0040adb0(int param_1)
 
   }
 
-  iVar2 = FUN_004184a0(param_1,1);
+  iVar2 = base_bldg_is_alive_at_all(param_1,1);
 
   if (iVar2 != 0) {
 
@@ -7653,7 +7653,7 @@ undefined4 FUN_0040adb0(int param_1)
 
   }
 
-  iVar2 = FUN_00418470(param_1,0xe);
+  iVar2 = base_bldg_is_alive_at_all_2(param_1,0xe);
 
   if (iVar2 != 0) {
 
@@ -7680,7 +7680,7 @@ undefined4 FUN_0040ae10(int param_1)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  iVar2 = FUN_004184a0(param_1,0xe);
+  iVar2 = base_bldg_is_alive_at_all(param_1,0xe);
 
   if (iVar2 != 0) {
 
@@ -9359,12 +9359,12 @@ undefined4 FUN_0040cef0(void)
 
 }
 
-/* ===== FUN_0040cf20 @ 0x0040CF20 ===== */
+/* ===== camera_is_sniper_2 @ 0x0040CF20 ===== */
 /* PS2 candidate: camera_is_sniper (conf 0.617) */
 
 
 
-undefined4 FUN_0040cf20(void)
+undefined4 camera_is_sniper_2(void)
 
 
 

@@ -24,7 +24,7 @@ void FUN_004907e0(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -442,7 +442,7 @@ void FUN_00490d70(void)
 
   if ((DAT_00632f08 == 0) && (in_stack_0000102c < 0x1a)) {
 
-    FUN_00536120();
+    controlShutdown_2();
 
     iVar8 = in_stack_0000102c * 0x30;
 
@@ -2510,13 +2510,13 @@ LAB_00492458:
 
         if (DAT_0059f284 != 0) {
 
-          uVar5 = FUN_004669a0(DAT_00632a88,0);
+          uVar5 = kabuto_create_kbos(DAT_00632a88,0);
 
           reaper_lock_user_4(uVar5,DAT_0059f288,1);
 
           if (DAT_0059f284 == 2) {
 
-            uVar5 = FUN_004669a0(DAT_00632a88,1);
+            uVar5 = kabuto_create_kbos(DAT_00632a88,1);
 
             reaper_lock_user_4(uVar5,DAT_0059f28c,1);
 
@@ -5558,7 +5558,7 @@ undefined4 FUN_00494f90(void)
 
   if (DAT_0059f320 != 0) {
 
-    iVar1 = FUN_0052aa70();
+    iVar1 = dialog_level_is_base();
 
     if (iVar1 == 0) {
 
@@ -10582,7 +10582,7 @@ LAB_00499c49:
 
   collgrid_clear_grid(param_1);
 
-  FUN_00414840(param_1);
+  setMenuSelection__7PS2Gameiiii_2(param_1);
 
   *(uint *)(param_1 + 0xdc) = *(uint *)(param_1 + 0xdc) & 0x7fffffff;
 
@@ -12374,7 +12374,7 @@ void FUN_0049baa0(int param_1)
 
     if (iVar4 == 3) {
 
-      FUN_004ba5e0(param_1,*(int *)(param_1 + 0x100) + 0xdbc);
+      reaper_release_shrink(param_1,*(int *)(param_1 + 0x100) + 0xdbc);
 
       *(undefined4 *)(param_1 + 0x184) = 0;
 
@@ -13857,7 +13857,7 @@ void partyhouse_exit_dlog(void)
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_0052aa70();
+      iVar1 = dialog_level_is_base();
 
       if (iVar1 != 0) {
 
@@ -13985,7 +13985,7 @@ undefined4 chat_log_init(int param_1)
 
   iVar2 = match(param_1);
 
-  if ((iVar2 != 0) && (iVar2 = FUN_0052aa70(), iVar2 == 0)) {
+  if ((iVar2 != 0) && (iVar2 = dialog_level_is_base(), iVar2 == 0)) {
 
     mission_0051a0c0(s_MissionCheat_0055be64,&local_104);
 
@@ -14157,7 +14157,7 @@ LAB_0049f8f1:
 
           }
 
-          iVar2 = FUN_0052aa70();
+          iVar2 = dialog_level_is_base();
 
           if (iVar2 != 0) {
 
@@ -14185,7 +14185,7 @@ LAB_0049f8f1:
 
         else {
 
-          iVar2 = FUN_0052aa70();
+          iVar2 = dialog_level_is_base();
 
           if (iVar2 != 0) {
 

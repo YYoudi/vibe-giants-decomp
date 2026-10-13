@@ -6357,7 +6357,7 @@ void mecc_animselect_gm(int param_1,int param_2)
 
   local_38 = FUN_004a8f90(iVar7);
 
-  iVar7 = FUN_0052aa70();
+  iVar7 = dialog_level_is_base();
 
   if ((iVar7 == 0) && (param_1 != DAT_00632a88)) {
 
@@ -7737,7 +7737,7 @@ LAB_00506418:
 
                   local_54 = *(float *)(param_1 + 0xa8) - 0.5;
 
-                  iVar14 = FUN_0052aa70();
+                  iVar14 = dialog_level_is_base();
 
                   if ((iVar14 == 0) || (iVar14 = FUN_0052c5c0(), iVar14 != 0)) {
 

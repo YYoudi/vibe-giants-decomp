@@ -30,7 +30,7 @@ void main_setupgam_004eda20(void)
 
   DAT_00633044 = 0;
 
-  FUN_004a4510();
+  piranha_finit();
 
   main_cleaner_0040f390();
 

@@ -83,7 +83,7 @@ void mecc_enable_personal_shield(int param_1)
 
     if (*(int *)(iVar1 + 0x18c) == 0x11) goto LAB_00480200;
 
-    FUN_00458350(param_1,0x11);
+    SpecialWeaponIdSet__FP6OBJECTi(param_1,0x11);
 
   }
 
@@ -174,7 +174,7 @@ void FUN_004802c0(int param_1)
 
     if (*(int *)(iVar3 + 0x18c) != 0x11) {
 
-      FUN_00458350(param_1,0x11);
+      SpecialWeaponIdSet__FP6OBJECTi(param_1,0x11);
 
       goto LAB_004802fd;
 
@@ -462,7 +462,7 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
          ((*(int *)(iVar3 + 0x54) == 1 || (*(int *)(iVar3 + 0x54) == 3)))) {
 
-        iVar6 = FUN_0052aa70();
+        iVar6 = dialog_level_is_base();
 
         if ((iVar6 == 0) || (iVar6 = FUN_0052c5c0(), iVar6 != 0)) {
 
@@ -547,7 +547,7 @@ void FUN_00480730(int param_1)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (iVar3 == 0) {
 
@@ -1243,7 +1243,7 @@ void FUN_004810d0(int param_1)
 
               if (iVar8 == 0) {
 
-                iVar8 = FUN_0052aa70();
+                iVar8 = dialog_level_is_base();
 
                 if ((iVar8 == 0) || (iVar8 = FUN_0052c5c0(), iVar8 != 0)) {
 
@@ -1407,7 +1407,7 @@ LAB_00481264:
 
                 }
 
-                iVar5 = FUN_0052aa70();
+                iVar5 = dialog_level_is_base();
 
                 if ((iVar5 == 0) || (iVar5 = FUN_0052c5c0(), iVar5 != 0)) {
 
@@ -7840,7 +7840,7 @@ void FUN_00489D40(void)
 
       (*DAT_005dd288)();
 
-      iVar1 = FUN_0052aa70();
+      iVar1 = dialog_level_is_base();
 
       if (iVar1 == 0) {
 

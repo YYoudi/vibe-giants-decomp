@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (91 named) — decompiled, names from PS2 symbols
+ * 129 functions (92 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -8066,12 +8066,12 @@ void FUN_00425850(int param_1)
 
 }
 
-/* ===== FUN_00425a40 @ 0x00425A40 ===== */
+/* ===== kabuto_corpse_create__FP6OBJECTi @ 0x00425A40 ===== */
 /* PS2 candidate: kabuto_corpse_create__FP6OBJECTi (conf 0.613) */
 
 
 
-int FUN_00425a40(int param_1,undefined4 param_2)
+int kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
 
 
 
@@ -8776,7 +8776,7 @@ undefined4 comm_00426540(void)
 
   if (DAT_00633238 != 0) {
 
-    iVar1 = FUN_0052aa70();
+    iVar1 = dialog_level_is_base();
 
     if (iVar1 != 0) {
 

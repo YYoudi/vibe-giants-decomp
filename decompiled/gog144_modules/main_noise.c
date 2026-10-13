@@ -182,7 +182,7 @@ void read_sfx_bin(undefined4 param_1)
 
             if (local_18 == 0x33221102) {
 
-              iVar4 = FUN_0052aa70();
+              iVar4 = dialog_level_is_base();
 
               if (iVar4 != 0) {
 
@@ -190,7 +190,7 @@ void read_sfx_bin(undefined4 param_1)
 
               }
 
-              iVar4 = FUN_0052aa70();
+              iVar4 = dialog_level_is_base();
 
               if (iVar4 != 0) {
 

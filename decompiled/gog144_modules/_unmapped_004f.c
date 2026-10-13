@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (20 named) — decompiled, names from PS2 symbols
+ * 48 functions (21 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -273,7 +273,7 @@ void FUN_004f3af0(int param_1)
 
       *(undefined4 *)(iVar5 + 0xec) = 0;
 
-      iVar6 = FUN_0052aa70();
+      iVar6 = dialog_level_is_base();
 
       if (iVar6 != 0) {
 
@@ -492,7 +492,7 @@ LAB_004f3ef6:
 
   FUN_004f3af0(local_34);
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 != 0) {
 
@@ -1370,7 +1370,7 @@ void FUN_004f5410(int param_1,undefined4 param_2,undefined4 param_3)
 
   if (iVar1 == 0) goto LAB_004f55b7;
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -1950,7 +1950,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
   if (((*(int *)(param_1 + 0xe8) != 10) && ((*(byte *)(param_1 + 0xe0) & 8) != 0)) &&
 
-     (iVar2 = FUN_0052aa70(), iVar2 != 0)) {
+     (iVar2 = dialog_level_is_base(), iVar2 != 0)) {
 
     pcVar3 = (char *)(*(int *)(param_1 + 0x100) + 0x80);
 
@@ -2400,7 +2400,7 @@ void comm_stats_reset(void)
 
   
 
-  iVar8 = FUN_0052aa70();
+  iVar8 = dialog_level_is_base();
 
   if ((iVar8 == 0) || (iVar8 = FUN_0052c5c0(), iVar8 != 0)) {
 
@@ -2753,12 +2753,12 @@ switchD_004f7908_caseD_20:
 
 }
 
-/* ===== FUN_004f7af0 @ 0x004F7AF0 ===== */
+/* ===== smartie_clear_held_object @ 0x004F7AF0 ===== */
 /* PS2 candidate: smartie_clear_held_object (conf 0.607) */
 
 
 
-void FUN_004f7af0(int param_1)
+void smartie_clear_held_object(int param_1)
 
 
 

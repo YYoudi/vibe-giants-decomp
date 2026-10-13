@@ -1692,7 +1692,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
       if (iVar4 != 0) {
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (iVar4 != 0) {
 
@@ -1770,7 +1770,7 @@ void reaper_cast_cloak_firecircle(int param_1,int param_2)
 
       if (iVar4 != 0) {
 
-        iVar4 = FUN_0052aa70();
+        iVar4 = dialog_level_is_base();
 
         if (iVar4 != 0) {
 
@@ -3357,7 +3357,9 @@ void FUN_004c4df0(int param_1)
 
   if ((((iVar1 != 0) && (DAT_00632bb0 == 0)) &&
 
-      ((iVar1 = FUN_0052aa70(), iVar1 == 0 || (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)))) &&
+      ((iVar1 = dialog_level_is_base(), iVar1 == 0 ||
+
+       (iVar1 = FUN_005213a0(DAT_00632f18), iVar1 == 0)))) &&
 
      ((iVar2 = *(int *)(iVar2 + 0xcfc), iVar2 != 0 && (iVar2 = FUN_004b6e20(iVar2), iVar2 != 0)))) {
 
@@ -3509,7 +3511,7 @@ void FUN_004c4fd0(int param_1)
 
         }
 
-        iVar2 = FUN_0052aa70();
+        iVar2 = dialog_level_is_base();
 
         if (iVar2 != 0) {
 
@@ -3641,7 +3643,7 @@ void lzo_checked_alloc(int param_1)
 
           if (iVar5 == 0) {
 
-            iVar5 = FUN_0052aa70();
+            iVar5 = dialog_level_is_base();
 
             if (iVar5 != 0) {
 
@@ -4180,7 +4182,7 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
                 }
 
-                iVar5 = FUN_0052aa70();
+                iVar5 = dialog_level_is_base();
 
                 if (iVar5 == 0) {
 
@@ -4534,7 +4536,7 @@ void ai_proximity_scan(int param_1)
 
             }
 
-            iVar3 = FUN_0052aa70();
+            iVar3 = dialog_level_is_base();
 
             if (iVar3 != 0) {
 
@@ -4562,7 +4564,7 @@ void ai_proximity_scan(int param_1)
 
         }
 
-        iVar3 = FUN_0052aa70();
+        iVar3 = dialog_level_is_base();
 
         if (iVar3 != 0) {
 
@@ -8759,7 +8761,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_00536cb0();
 
-    iVar5 = FUN_0052aa70();
+    iVar5 = dialog_level_is_base();
 
     if ((iVar5 != 0) && (puVar2 = DAT_00632d70, _DAT_00633254 < 2)) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (42 named) — decompiled, names from PS2 symbols
+ * 94 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -7520,12 +7520,12 @@ void FUN_004e9ce0(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004ea350 @ 0x004EA350 ===== */
+/* ===== LineOfSight @ 0x004EA350 ===== */
 /* PS2 candidate: LineOfSight (conf 0.606) */
 
 
 
-void FUN_004ea350(int param_1,int param_2)
+void LineOfSight(int param_1,int param_2)
 
 
 
@@ -7856,7 +7856,7 @@ void comm_packet_big(int param_1)
 
   
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   iVar4 = DAT_006330e4;
 
@@ -8173,7 +8173,7 @@ LAB_004eac20:
 
     main_linkage_00470250(&DAT_00632d74,iVar6);
 
-    iVar3 = FUN_0052aa70();
+    iVar3 = dialog_level_is_base();
 
     if (iVar3 == 0) goto LAB_004eaf80;
 
@@ -8439,7 +8439,7 @@ LAB_004eb000:
 
     main_linkage_00470250(&DAT_00632d78,iVar6);
 
-    iVar3 = FUN_0052aa70();
+    iVar3 = dialog_level_is_base();
 
     if (iVar3 == 0) goto LAB_004eb365;
 
@@ -8655,7 +8655,7 @@ LAB_004eb3e0:
 
   main_linkage_00470250(&DAT_00632d70,iVar6);
 
-  iVar3 = FUN_0052aa70();
+  iVar3 = dialog_level_is_base();
 
   if (iVar3 == 0) goto LAB_004eb745;
 
@@ -9038,7 +9038,7 @@ void match_start_entry(void)
 
   _DAT_005a85a8 = 0;
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 
@@ -10175,7 +10175,7 @@ void flk_replay_reset(void)
 
   FLK_ReplayFileNameClear();
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   uVar2 = DAT_00632d20;
 
@@ -10910,7 +10910,7 @@ void FUN_004ee670(int param_1)
 
   }
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   if (iVar2 == 0) {
 
@@ -10924,7 +10924,7 @@ void FUN_004ee670(int param_1)
 
   savegame_verify_user();
 
-  iVar2 = FUN_0052aa70();
+  iVar2 = dialog_level_is_base();
 
   puVar1 = DAT_00632d68;
 
@@ -11053,7 +11053,7 @@ void FUN_004EE800(void)
 
   
 
-  iVar1 = FUN_0052aa70();
+  iVar1 = dialog_level_is_base();
 
   if (iVar1 != 0) {
 

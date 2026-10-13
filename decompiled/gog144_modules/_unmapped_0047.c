@@ -1541,7 +1541,7 @@ void FUN_00471a60(int param_1)
 
                 }
 
-                iVar3 = FUN_0052aa70();
+                iVar3 = dialog_level_is_base();
 
                 if (iVar3 != 0) {
 
@@ -2161,7 +2161,7 @@ void FUN_00475350(int param_1)
 
   if ((param_1 != 0) && (DAT_00632bbc != 0)) {
 
-    iVar1 = FUN_0052aa70();
+    iVar1 = dialog_level_is_base();
 
     if (iVar1 != 0) {
 
@@ -2240,7 +2240,7 @@ void dlog_text_render_screen(void)
 
   if (DAT_00632a88 != 0) {
 
-    iVar4 = FUN_0052aa70();
+    iVar4 = dialog_level_is_base();
 
     if ((iVar4 != 0) && (iVar4 = 0, 0 < *(int *)(DAT_006330e4 + 0x1dc))) {
 
@@ -2449,7 +2449,7 @@ void dlog_text_pop_screen(int param_1)
 
   if (((param_1 != 0) && (DAT_00632bbc != 0)) && (DAT_00632a88 != 0)) {
 
-    iVar1 = FUN_0052aa70();
+    iVar1 = dialog_level_is_base();
 
     if ((iVar1 != 0) && (DAT_00632bac != 0)) {
 
@@ -4885,7 +4885,7 @@ void FUN_004791f0(int param_1)
 
   }
 
-  iVar4 = FUN_0052aa70();
+  iVar4 = dialog_level_is_base();
 
   puVar2 = DAT_00632d70;
 
@@ -5076,7 +5076,7 @@ void FUN_0047be20(float param_1,float param_2,int param_3,int param_4,float para
 
   }
 
-  if ((((*(int *)(iVar2 + 0x174) == 0) && (iVar3 = FUN_0052aa70(), iVar3 == 0)) &&
+  if ((((*(int *)(iVar2 + 0x174) == 0) && (iVar3 = dialog_level_is_base(), iVar3 == 0)) &&
 
       (DAT_00632bbc != 0)) && (*(int *)(iVar4 + 0xd8) != 0)) {
 
@@ -6546,7 +6546,7 @@ LAB_0047cdb1:
 
     *(float *)(iVar5 + 0x4c) = (float)(int)param_4;
 
-    iVar7 = FUN_0052aa70();
+    iVar7 = dialog_level_is_base();
 
     if (iVar7 == 0) {
 
@@ -6598,7 +6598,7 @@ LAB_0047cdb1:
 
   case 0x11:
 
-    iVar5 = FUN_00458350(iVar7,(int)*(char *)(param_4 + 1));
+    iVar5 = SpecialWeaponIdSet__FP6OBJECTi(iVar7,(int)*(char *)(param_4 + 1));
 
     if (iVar5 != 0) {
 
@@ -6708,7 +6708,7 @@ LAB_0047cdb1:
 
     if (*(float *)(iVar5 + 0x18c) != *param_4) {
 
-      FUN_00458350(iVar7,*param_4);
+      SpecialWeaponIdSet__FP6OBJECTi(iVar7,*param_4);
 
     }
 
