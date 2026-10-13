@@ -542,12 +542,12 @@
  "0x0040D130": {
   "name": "cam_mode_switch",
   "named": true,
-  "len": 1368
+  "len": 1377
  },
  "0x0040D260": {
   "name": "BinFileCreateWrite",
   "named": true,
-  "len": 98
+  "len": 107
  },
  "0x0040D280": {
   "name": "sound_player_voice_smartie",
@@ -567,12 +567,12 @@
  "0x0040D4A0": {
   "name": "speaker_config_apply",
   "named": true,
-  "len": 1794
+  "len": 1812
  },
  "0x0040D670": {
   "name": "FUN_0040d670",
   "named": false,
-  "len": 307
+  "len": 316
  },
  "0x0040D6A0": {
   "name": "AudioGetMasterVolume__Fv",
@@ -837,7 +837,7 @@
  "0x00416550": {
   "name": "dlog_pop_user",
   "named": true,
-  "len": 843
+  "len": 852
  },
  "0x00416990": {
   "name": "reaper_lock_short",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23387
+  "len": 23405
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FUN_004444c0",
   "named": false,
-  "len": 18744
+  "len": 18762
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -3907,7 +3907,7 @@
  "0x00471130": {
   "name": "water_draw_dump",
   "named": true,
-  "len": 3326
+  "len": 3335
  },
  "0x00471420": {
   "name": "fx_weather_system",
@@ -3917,7 +3917,7 @@
  "0x00471780": {
   "name": "hud_audio_dlog_screen",
   "named": true,
-  "len": 3237
+  "len": 3246
  },
  "0x00471A60": {
   "name": "FUN_00471a60",
@@ -3997,12 +3997,12 @@
  "0x004753C0": {
   "name": "dlog_text_render_screen",
   "named": true,
-  "len": 4050
+  "len": 4059
  },
  "0x00475700": {
   "name": "dlog_text_pop_screen",
   "named": true,
-  "len": 631
+  "len": 640
  },
  "0x004757C0": {
   "name": "screen_coord_calc",
@@ -4450,9 +4450,9 @@
   "len": 2064
  },
  "0x00486C40": {
-  "name": "FUN_00486c40",
-  "named": false,
-  "len": 1214
+  "name": "menu_mission_set_clamped_2",
+  "named": true,
+  "len": 1228
  },
  "0x00486FC0": {
   "name": "FUN_00486FC0",
@@ -6867,7 +6867,7 @@
  "0x004CC810": {
   "name": "dome_render_text",
   "named": true,
-  "len": 841
+  "len": 859
  },
  "0x004CC8D0": {
   "name": "FUN_004cc8d0",
@@ -6877,7 +6877,7 @@
  "0x004CC900": {
   "name": "FUN_004cc900",
   "named": false,
-  "len": 15296
+  "len": 15314
  },
  "0x004CD5D0": {
   "name": "FUN_004cd5d0",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14232
+  "len": 14259
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -8585,9 +8585,9 @@
   "len": 161
  },
  "0x005160B0": {
-  "name": "FUN_005160b0",
-  "named": false,
-  "len": 1330
+  "name": "render_projection_set",
+  "named": true,
+  "len": 1339
  },
  "0x005161C0": {
   "name": "FUN_005161c0",
@@ -11212,7 +11212,7 @@
  "0x00540800": {
   "name": "crt_math_dispatch_init",
   "named": true,
-  "len": 1380
+  "len": 1397
  },
  "0x00540AB0": {
   "name": "FUN_00540ab0",
@@ -11260,9 +11260,9 @@
   "len": 3061
  },
  "0x00541EB0": {
-  "name": "FUN_00541eb0",
-  "named": false,
-  "len": 1809
+  "name": "mesh_build_fvf_verts",
+  "named": true,
+  "len": 1817
  },
  "0x00541FC0": {
   "name": "crt_matrix_vec4_mul",

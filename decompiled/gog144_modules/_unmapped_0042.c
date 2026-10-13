@@ -15773,7 +15773,7 @@ void status_hud_render(int param_1,byte param_2,int param_3)
 
     fVar22 = (float10)FUN_00515d90((float)fVar22);
 
-    FUN_005160b0((float)fVar22);
+    render_projection_set((float)fVar22);
 
   }
 
@@ -16615,7 +16615,7 @@ LAB_0042d3f8:
 
     fVar22 = (float10)FUN_00515d90((float)fVar22);
 
-    FUN_005160b0((float)fVar22);
+    render_projection_set((float)fVar22);
 
   }
 

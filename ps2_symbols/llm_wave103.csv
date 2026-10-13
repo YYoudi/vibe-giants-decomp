@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+005160b0,FUN_005160b0,,render_projection_set,0.9,llm-w103,
+00541eb0,FUN_00541eb0,,mesh_build_fvf_verts,0.9,llm-w103,
+00486c40,FUN_00486c40,,menu_mission_set_clamped_2,0.9,llm-w103,

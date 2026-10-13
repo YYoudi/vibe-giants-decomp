@@ -9629,7 +9629,7 @@ void cam_mode_switch(int param_1)
 
   _DAT_005550c0 = 0;
 
-  FUN_005160b0(*(undefined4 *)(iVar1 + 8),0,1);
+  render_projection_set(*(undefined4 *)(iVar1 + 8),0,1);
 
   return;
 
@@ -9642,7 +9642,7 @@ void BinFileCreateWrite(undefined4 param_1)
 
 {
 
-  FUN_005160b0(param_1,0,1);
+  render_projection_set(param_1,0,1);
 
   return;
 
@@ -9878,7 +9878,7 @@ void speaker_config_apply(void)
 
   if (DAT_00555134 != 0.0) {
 
-    FUN_005160b0(DAT_00555134,0,1,DAT_00555134);
+    render_projection_set(DAT_00555134,0,1,DAT_00555134);
 
     return;
 
@@ -9978,7 +9978,7 @@ LAB_0040d5e0:
 
 LAB_0040d65a:
 
-  FUN_005160b0(fVar2,0,1);
+  render_projection_set(fVar2,0,1);
 
   return;
 
@@ -10005,7 +10005,7 @@ void FUN_0040d670(void)
 
   _DAT_005550c0 = 0;
 
-  FUN_005160b0(*(undefined4 *)(iVar1 + 8),0,1);
+  render_projection_set(*(undefined4 *)(iVar1 + 8),0,1);
 
   return;
 

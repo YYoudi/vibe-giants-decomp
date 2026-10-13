@@ -726,7 +726,7 @@ switchD_004711dd_default:
 
         view_matrix_build(&local_50,&local_78,&local_6c);
 
-        FUN_005160b0(0x42b40000,0,1);
+        render_projection_set(0x42b40000,0,1);
 
         FUN_0053d9e0(auStack_44);
 
@@ -1148,7 +1148,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     FUN_005162b0(auStack_40);
 
-    FUN_005160b0((float)fVar6,fVar10,1);
+    render_projection_set((float)fVar6,fVar10,1);
 
   }
 
@@ -2358,7 +2358,7 @@ void dlog_text_render_screen(void)
 
     view_matrix_build(&local_24,&local_c,&local_18);
 
-    FUN_005160b0(0x42700000,0x3fa66666,1);
+    render_projection_set(0x42700000,0x3fa66666,1);
 
     iVar8 = 0;
 
@@ -2473,7 +2473,7 @@ void dlog_text_pop_screen(int param_1)
 
   FUN_005162b0(&DAT_0059dc40);
 
-  FUN_005160b0(DAT_0059dc20,DAT_0059dc24,1);
+  render_projection_set(DAT_0059dc20,DAT_0059dc24,1);
 
   xfmat_mult_a();
 

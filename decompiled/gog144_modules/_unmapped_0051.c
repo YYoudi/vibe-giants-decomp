@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (83 named) — decompiled, names from PS2 symbols
+ * 186 functions (84 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -5033,12 +5033,12 @@ undefined4 AudioGetMasterVolume__Fv_8(void)
 
 }
 
-/* ===== FUN_005160b0 @ 0x005160B0 ===== */
+/* ===== render_projection_set @ 0x005160B0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_005160b0(float param_1,float param_2,int param_3)
+void render_projection_set(float param_1,float param_2,int param_3)
 
 
 

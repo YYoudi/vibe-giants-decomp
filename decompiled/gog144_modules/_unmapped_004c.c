@@ -7036,7 +7036,7 @@ void dome_render_text(void)
 
   fVar1 = (float10)FUN_00515d90((float)fVar1);
 
-  FUN_005160b0((float)fVar1);
+  render_projection_set((float)fVar1);
 
   dlog_scene_submit();
 
@@ -7046,7 +7046,7 @@ void dome_render_text(void)
 
   fVar1 = (float10)FUN_00515d90((float)fVar1);
 
-  FUN_005160b0((float)fVar1);
+  render_projection_set((float)fVar1);
 
   if (DAT_00633244 < 1) {
 
@@ -7732,7 +7732,7 @@ LAB_004ccbc0:
 
           FUN_005162b0(&DAT_005a6c44);
 
-          FUN_005160b0(0x42700000,(float)piStack_244 / fStack_238,0);
+          render_projection_set(0x42700000,(float)piStack_244 / fStack_238,0);
 
           xfmat_mult_a();
 
@@ -7844,7 +7844,7 @@ LAB_004ccbc0:
 
   FNT_StringRender__FPcP14FNT_RenderInfo(pcStack_1c0,puStack_1c8);
 
-  FUN_005160b0(fStack_228,fStack_224,1);
+  render_projection_set(fStack_228,fStack_224,1);
 
   xfmat_mult_a();
 
@@ -8529,7 +8529,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_005162b0();
 
-    FUN_005160b0(local_210,local_1e4,1);
+    render_projection_set(local_210,local_1e4,1);
 
     FUN_00451cf0();
 
@@ -8727,7 +8727,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_00515d90((float)fVar12);
 
-    FUN_005160b0();
+    render_projection_set();
 
     dlog_scene_submit();
 
@@ -8737,7 +8737,7 @@ undefined4 dev_debug_flags(void)
 
     FUN_00515d90((float)fVar12);
 
-    FUN_005160b0();
+    render_projection_set();
 
     if (DAT_00633244 < 1) {
 

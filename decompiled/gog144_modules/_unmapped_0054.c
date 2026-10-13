@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (241 named) — decompiled, names from PS2 symbols
+ * 351 functions (242 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -754,7 +754,7 @@ void crt_math_dispatch_init(int param_1)
 
   PTR_collgrid_collide_b_00554064 = (&PTR_LAB_00580d00)[param_1];
 
-  PTR_FUN_005565b0 = (&PTR_FUN_00580d0c)[param_1];
+  PTR_FUN_005565b0 = (&PTR_mesh_build_fvf_verts_00580d0c)[param_1];
 
   PTR_FUN_005565b4 = (&PTR_LAB_00580d18)[param_1];
 
@@ -1631,8 +1631,8 @@ LAB_00541e86:
 
 }
 
-/* ===== FUN_00541eb0 @ 0x00541EB0 ===== */
-void FUN_00541eb0(undefined4 *param_1,int param_2,int param_3)
+/* ===== mesh_build_fvf_verts @ 0x00541EB0 ===== */
+void mesh_build_fvf_verts(undefined4 *param_1,int param_2,int param_3)
 
 
 

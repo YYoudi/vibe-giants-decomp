@@ -3968,7 +3968,7 @@ LAB_00444d25:
 
   fVar14 = (float10)fpatan(fVar14 / (float10)local_1dc,(float10)1);
 
-  FUN_005160b0((float)(fVar14 * (float10)114.59156),0,1);
+  render_projection_set((float)(fVar14 * (float10)114.59156),0,1);
 
   xfmat_mult_b();
 
@@ -4216,7 +4216,7 @@ LAB_004451e2:
 
   FUN_00516220(&local_1f8);
 
-  FUN_005160b0(local_18c,local_1dc,1);
+  render_projection_set(local_18c,local_1dc,1);
 
   if (DAT_00633248 != 0) {
 
