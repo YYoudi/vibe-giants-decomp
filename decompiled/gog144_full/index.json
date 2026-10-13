@@ -2475,9 +2475,9 @@
   "len": 2863
  },
  "0x00442330": {
-  "name": "FUN_00442330",
-  "named": false,
-  "len": 1829
+  "name": "object_spawn_menu_wredit",
+  "named": true,
+  "len": 1841
  },
  "0x004429C0": {
   "name": "FUN_004429c0",
@@ -2520,9 +2520,9 @@
   "len": 939
  },
  "0x00443480": {
-  "name": "flk_file_open",
+  "name": "flick_file_load",
   "named": true,
-  "len": 3090
+  "len": 3096
  },
  "0x00443740": {
   "name": "main_flick_00443740",
@@ -2572,7 +2572,7 @@
  "0x004444C0": {
   "name": "FUN_004444c0",
   "named": false,
-  "len": 18643
+  "len": 18648
  },
  "0x00445570": {
   "name": "FUN_00445570",
@@ -2595,9 +2595,9 @@
   "len": 243
  },
  "0x00446650": {
-  "name": "flk_file_open2",
+  "name": "flick_file_load_state",
   "named": true,
-  "len": 2926
+  "len": 2935
  },
  "0x00446890": {
   "name": "flick_objects_reload",
@@ -3235,9 +3235,9 @@
   "len": 626
  },
  "0x004574D0": {
-  "name": "options_defplayer",
+  "name": "defaults_reset_menu",
   "named": true,
-  "len": 441
+  "len": 443
  },
  "0x00457550": {
   "name": "menu_keymap_screen",
@@ -3922,7 +3922,7 @@
  "0x00471A60": {
   "name": "FUN_00471a60",
   "named": false,
-  "len": 4605
+  "len": 4610
  },
  "0x00471DC0": {
   "name": "FUN_00471dc0",
@@ -4352,7 +4352,7 @@
  "0x00482B60": {
   "name": "menu_mission_launch",
   "named": true,
-  "len": 3551
+  "len": 3558
  },
  "0x00482E90": {
   "name": "menu_handlers_lookup",
@@ -4367,7 +4367,7 @@
  "0x004832F0": {
   "name": "main_menu_004832f0",
   "named": true,
-  "len": 2868
+  "len": 2873
  },
  "0x004834D0": {
   "name": "FUN_004834d0",
@@ -4377,12 +4377,12 @@
  "0x004835F0": {
   "name": "menu_handlers_exec",
   "named": true,
-  "len": 4040
+  "len": 4042
  },
  "0x00483BA0": {
   "name": "mission_intro_load",
   "named": true,
-  "len": 2798
+  "len": 2805
  },
  "0x00483E50": {
   "name": "FUN_00483e50",
@@ -4587,7 +4587,7 @@
  "0x0048EC30": {
   "name": "FUN_0048EC30",
   "named": false,
-  "len": 1428
+  "len": 1430
  },
  "0x0048EE60": {
   "name": "FUN_0048EE60",
@@ -4612,7 +4612,7 @@
  "0x0048F620": {
   "name": "FUN_0048f620",
   "named": false,
-  "len": 2817
+  "len": 2824
  },
  "0x004907E0": {
   "name": "FUN_004907e0",
@@ -4642,7 +4642,7 @@
  "0x004909F0": {
   "name": "FUN_004909f0",
   "named": false,
-  "len": 3050
+  "len": 3057
  },
  "0x00490C50": {
   "name": "scenario_list_load",
@@ -4662,7 +4662,7 @@
  "0x00490FE0": {
   "name": "FUN_00490fe0",
   "named": false,
-  "len": 4334
+  "len": 4368
  },
  "0x00491380": {
   "name": "FUN_00491380",
@@ -4742,12 +4742,12 @@
  "0x00493EA0": {
   "name": "FUN_00493ea0",
   "named": false,
-  "len": 335
+  "len": 342
  },
  "0x00493EE0": {
   "name": "FUN_00493ee0",
   "named": false,
-  "len": 330
+  "len": 337
  },
  "0x00493F20": {
   "name": "FUN_00493f20",
@@ -4757,7 +4757,7 @@
  "0x00493F70": {
   "name": "story_flick_open",
   "named": true,
-  "len": 932
+  "len": 939
  },
  "0x00494030": {
   "name": "FUN_00494030",
@@ -4895,9 +4895,9 @@
   "len": 234
  },
  "0x004959E0": {
-  "name": "sound_play_5",
+  "name": "sound_checked_big",
   "named": true,
-  "len": 3636
+  "len": 3641
  },
  "0x00495C70": {
   "name": "sound_play_checked",
@@ -5122,7 +5122,7 @@
  "0x00498CF0": {
   "name": "FUN_00498cf0",
   "named": false,
-  "len": 4826
+  "len": 4838
  },
  "0x00499030": {
   "name": "object_spawn_small",
@@ -5385,9 +5385,9 @@
   "len": 1287
  },
  "0x0049F1C0": {
-  "name": "FUN_0049f1c0",
-  "named": false,
-  "len": 890
+  "name": "partyhouse_exit_dlog",
+  "named": true,
+  "len": 898
  },
  "0x0049F510": {
   "name": "chat_log_close",
@@ -7402,7 +7402,7 @@
  "0x004EB850": {
   "name": "FUN_004eb850",
   "named": false,
-  "len": 731
+  "len": 738
  },
  "0x004EB8F0": {
   "name": "FUN_004eb8f0",
@@ -7412,12 +7412,12 @@
  "0x004EB900": {
   "name": "FUN_004eb900",
   "named": false,
-  "len": 1962
+  "len": 1969
  },
  "0x004EBA40": {
   "name": "FUN_004eba40",
   "named": false,
-  "len": 750
+  "len": 757
  },
  "0x004EBAE0": {
   "name": "main_scrnshot_004ebae0",
@@ -7527,7 +7527,7 @@
  "0x004EE670": {
   "name": "FUN_004ee670",
   "named": false,
-  "len": 1972
+  "len": 1974
  },
  "0x004EE800": {
   "name": "FUN_004EE800",
@@ -7827,7 +7827,7 @@
  "0x004FF470": {
   "name": "FUN_004ff470",
   "named": false,
-  "len": 365
+  "len": 373
  },
  "0x004FF6A0": {
   "name": "FUN_004ff6a0",

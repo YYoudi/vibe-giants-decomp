@@ -2607,7 +2607,7 @@ void menu_mission_launch(void)
 
     else {
 
-      iVar1 = flk_file_open2(s_intro_island_1_0055be74);
+      iVar1 = flick_file_load_state(s_intro_island_1_0055be74);
 
       DAT_0059eeb0 = (uint)(iVar1 == 0);
 
@@ -3502,7 +3502,7 @@ LAB_00483738:
 
   if (DAT_0059ee9c == 5) {
 
-    options_defplayer();
+    defaults_reset_menu();
 
   }
 
@@ -3571,7 +3571,7 @@ void mission_intro_load(void)
 
     else {
 
-      iVar1 = flk_file_open2(s_intro_island_1_0055be74);
+      iVar1 = flick_file_load_state(s_intro_island_1_0055be74);
 
       DAT_0059eeb0 = (uint)(iVar1 == 0);
 
@@ -11642,7 +11642,7 @@ void FUN_0048EC30(void)
 
   else if (DAT_0059eeb8 == 0) {
 
-    options_defplayer();
+    defaults_reset_menu();
 
   }
 
@@ -12365,7 +12365,7 @@ LAB_0048f768:
 
   }
 
-  flk_file_open2();
+  flick_file_load_state();
 
   return;
 

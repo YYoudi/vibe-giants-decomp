@@ -9056,7 +9056,7 @@ void FUN_004eb850(void)
 
     if (iVar2 != 0) {
 
-      flk_file_open2(iVar1 * 0x20 + 0x210 + DAT_006330e4);
+      flick_file_load_state(iVar1 * 0x20 + 0x210 + DAT_006330e4);
 
       return;
 
@@ -9180,7 +9180,7 @@ void FUN_004eb900(void)
 
            (*(float *)(iVar8 + 0xa4) == *(float *)(iVar7 + 0x30)))))) {
 
-        flk_file_open2(local_8 + 0x210 + iVar3);
+        flick_file_load_state(local_8 + 0x210 + iVar3);
 
         DAT_00632b9c = DAT_00632b9c | uVar5;
 
@@ -9251,7 +9251,7 @@ undefined4 FUN_004eba40(int param_1,undefined4 param_2)
 
       if (iVar1 != 0) {
 
-        flk_file_open2(iVar4 * 0x20 + 0x210 + DAT_006330e4);
+        flick_file_load_state(iVar4 * 0x20 + 0x210 + DAT_006330e4);
 
         DAT_00632b94 = 1;
 
@@ -10988,7 +10988,7 @@ void FUN_004ee670(int param_1)
 
   else {
 
-    options_defplayer();
+    defaults_reset_menu();
 
     DAT_00561f74 = 0;
 

@@ -223,7 +223,7 @@ void main_menu_004832f0(void)
 
     FUN_0044efd0(1);
 
-    sound_play_5(1);
+    sound_checked_big(1);
 
     object_list_update();
 

@@ -1,0 +1,7 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00442330,FUN_00442330,,object_spawn_menu_wredit,0.9,llm-44r,
+00443480,FUN_00443480,,flick_file_load,0.9,llm-44r,
+00446650,FUN_00446650,,flick_file_load_state,0.9,llm-44r,
+004574d0,FUN_004574D0,,defaults_reset_menu,0.9,llm-44r,
+004959e0,FUN_004959E0,,sound_checked_big,0.9,llm-49r,
+0049f1c0,FUN_0049F1C0,,partyhouse_exit_dlog,0.9,llm-49r,

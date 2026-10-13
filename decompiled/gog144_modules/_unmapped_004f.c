@@ -5488,7 +5488,7 @@ void FUN_004ff470(void)
 
   if (DAT_00632bb8 != 0) {
 
-    FUN_0049f1c0();
+    partyhouse_exit_dlog();
 
   }
 

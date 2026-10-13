@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (45 named) — decompiled, names from PS2 symbols
+ * 142 functions (46 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -215,7 +215,7 @@ void FUN_004909f0(void)
 
       if (*pcVar1 != '\0') {
 
-        flk_file_open2(pcVar1);
+        flick_file_load_state(pcVar1);
 
         *(undefined4 *)
 
@@ -791,9 +791,11 @@ undefined4 FUN_00490fe0(void)
 
             DAT_0059f318 = 1;
 
-            flk_file_open2(*(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4)
+            flick_file_load_state
 
-                           * 0x118 + 0x22e8 + DAT_006330e4);
+                      (*(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) *
+
+                       0x118 + 0x22e8 + DAT_006330e4);
 
             return 0;
 
@@ -857,7 +859,7 @@ undefined4 FUN_00490fe0(void)
 
           case 1:
 
-            flk_file_open2(iVar3 + DAT_006330e4 + 0x4558);
+            flick_file_load_state(iVar3 + DAT_006330e4 + 0x4558);
 
             *(int *)(DAT_006330e4 + 0x4a60) = *(int *)(DAT_006330e4 + 0x4a60) + 1;
 
@@ -4609,7 +4611,7 @@ void FUN_00493ea0(void)
 
     DAT_00632bf4 = iVar1;
 
-    flk_file_open2(s_story5_get_food_1_0055c44c);
+    flick_file_load_state(s_story5_get_food_1_0055c44c);
 
   }
 
@@ -4638,7 +4640,7 @@ void FUN_00493ee0(void)
 
     DAT_00632bf0 = iVar1;
 
-    flk_file_open2(s_story5_Pad_0055c460);
+    flick_file_load_state(s_story5_Pad_0055c460);
 
   }
 
@@ -4724,7 +4726,7 @@ void story_flick_open(void)
 
       else if (DAT_00632c08 == 0) {
 
-        flk_file_open2(iVar1 + 0x22a0 + DAT_006330e4);
+        flick_file_load_state(iVar1 + 0x22a0 + DAT_006330e4);
 
         DAT_00632c08 = 1;
 
@@ -6255,8 +6257,8 @@ void FUN_004959d0(void)
 
 }
 
-/* ===== sound_play_5 @ 0x004959E0 ===== */
-void sound_play_5(int param_1)
+/* ===== sound_checked_big @ 0x004959E0 ===== */
+void sound_checked_big(int param_1)
 
 
 
@@ -9653,7 +9655,7 @@ void FUN_00498cf0(int param_1,int param_2)
 
       if ((*(int **)(iVar3 + 0x170) != (int *)0x0) && (**(int **)(iVar3 + 0x170) == 5)) {
 
-        FUN_00442330(iVar5,iVar3);
+        object_spawn_menu_wredit(iVar5,iVar3);
 
       }
 
@@ -13824,8 +13826,8 @@ bool FUN_0049e670(int param_1,int param_2,int *param_3,int param_4)
 
 }
 
-/* ===== FUN_0049f1c0 @ 0x0049F1C0 ===== */
-void FUN_0049f1c0(void)
+/* ===== partyhouse_exit_dlog @ 0x0049F1C0 ===== */
+void partyhouse_exit_dlog(void)
 
 
 

@@ -6267,8 +6267,8 @@ void level_config_load(void)
 
 }
 
-/* ===== options_defplayer @ 0x004574D0 ===== */
-void options_defplayer(void)
+/* ===== defaults_reset_menu @ 0x004574D0 ===== */
+void defaults_reset_menu(void)
 
 
 

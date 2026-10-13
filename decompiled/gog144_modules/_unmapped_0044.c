@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (35 named) — decompiled, names from PS2 symbols
+ * 76 functions (36 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1558,8 +1558,8 @@ void FUN_00442120(float param_1,float param_2,float param_3,float param_4,float 
 
 }
 
-/* ===== FUN_00442330 @ 0x00442330 ===== */
-void FUN_00442330(undefined4 param_1,int param_2)
+/* ===== object_spawn_menu_wredit @ 0x00442330 ===== */
+void object_spawn_menu_wredit(undefined4 param_1,int param_2)
 
 
 
@@ -2190,12 +2190,12 @@ void FUN_004433b0(float *param_1)
 
 }
 
-/* ===== flk_file_open @ 0x00443480 ===== */
+/* ===== flick_file_load @ 0x00443480 ===== */
 undefined4 *
 
-flk_file_open(int param_1,undefined4 param_2,char *param_3,undefined4 param_4,undefined4 param_5,
+flick_file_load(int param_1,undefined4 param_2,char *param_3,undefined4 param_4,undefined4 param_5,
 
-             undefined4 param_6,undefined4 param_7)
+               undefined4 param_6,undefined4 param_7)
 
 
 
@@ -2395,7 +2395,7 @@ LAB_00443656:
 
 LAB_004436f3:
 
-      uVar1 = flk_file_open(psVar4,iVar7,param_1,0,0,0,param_7);
+      uVar1 = flick_file_load(psVar4,iVar7,param_1,0,0,0,param_7);
 
       puVar2[0x32] = uVar1;
 
@@ -3652,7 +3652,7 @@ undefined4 FUN_004444c0(int param_1)
 
   object_lock_apply(1,4);
 
-  sound_play_5(0);
+  sound_checked_big(0);
 
   piVar8 = *(int **)(param_1 + 0xa0);
 
@@ -5868,12 +5868,12 @@ void FUN_00446620(void)
 
 }
 
-/* ===== flk_file_open2 @ 0x00446650 ===== */
+/* ===== flick_file_load_state @ 0x00446650 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-int flk_file_open2(char *param_1)
+int flick_file_load_state(char *param_1)
 
 
 
@@ -6065,7 +6065,7 @@ LAB_00446783:
 
 LAB_00446830:
 
-      DAT_0059ce54 = flk_file_open(psVar3,iVar6,param_1,0,0,0,DAT_00656468);
+      DAT_0059ce54 = flick_file_load(psVar3,iVar6,param_1,0,0,0,DAT_00656468);
 
       if (DAT_0059ce54 != 0) {
 

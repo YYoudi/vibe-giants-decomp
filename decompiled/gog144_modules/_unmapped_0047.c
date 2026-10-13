@@ -1499,7 +1499,7 @@ void FUN_00471a60(int param_1)
 
             FUN_0044efd0(0);
 
-            sound_play_5(0);
+            sound_checked_big(0);
 
             ANM_DumpCluster();
 
