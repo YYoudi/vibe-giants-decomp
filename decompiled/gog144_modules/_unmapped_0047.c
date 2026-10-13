@@ -1804,7 +1804,7 @@ void game_loop_run(int param_1)
 
       DAT_00632b8c = 0;
 
-      FUN_004EE800();
+      world_next_enter();
 
       return;
 
@@ -6288,9 +6288,9 @@ LAB_0047969b:
 
   iVar4 = dialog_level_is_base();
 
-  if ((((iVar4 != 0) && (iVar4 = FUN_0052c5c0(), iVar4 == 0)) && (DAT_00632a88 == param_1)) &&
+  if ((((iVar4 != 0) && (iVar4 = net_active_players_get(), iVar4 == 0)) && (DAT_00632a88 == param_1)
 
-     ((*(uint *)(param_1 + 0xe0) & 0x20000) != 0)) {
+      ) && ((*(uint *)(param_1 + 0xe0) & 0x20000) != 0)) {
 
     fVar18 = (float10)FRateGetSecsframe(0,0);
 
@@ -6554,7 +6554,7 @@ LAB_00479a50:
 
       puVar3[0x85] = uVar5;
 
-      if ((uVar5 != 0) && (iVar4 = FUN_00501090(), iVar4 == 0)) {
+      if ((uVar5 != 0) && (iVar4 = player_pet_follow_tick(), iVar4 == 0)) {
 
         uVar7 = TextGetPtr(s_AIMeccPrefix_0055bcbc);
 
@@ -7346,7 +7346,7 @@ LAB_00479c1b:
 
   }
 
-  iVar4 = FUN_0052c5c0();
+  iVar4 = net_active_players_get();
 
   if ((((iVar4 != 0) && (puVar3[0x36] == 0)) && (iVar4 = base_find_closest(param_1), iVar4 != 0)) &&
 
@@ -8182,7 +8182,7 @@ LAB_0047b505:
 
           iVar8 = dialog_level_is_base();
 
-          if ((iVar8 == 0) || (iVar8 = FUN_0052c5c0(), iVar8 != 0)) {
+          if ((iVar8 == 0) || (iVar8 = net_active_players_get(), iVar8 != 0)) {
 
             iVar4 = menu_fx_spawn(param_1,iVar4);
 
@@ -9461,7 +9461,7 @@ void object_spawn_class(int param_1,undefined4 param_2,undefined4 *param_3,int p
 
   *(undefined4 *)(iVar3 + 0x2c4) = *(undefined4 *)(iVar3 + 0xa8);
 
-  iVar4 = FUN_0052c5c0();
+  iVar4 = net_active_players_get();
 
   if (iVar4 != 0) {
 
@@ -10416,7 +10416,7 @@ LAB_0047d90a:
 
   case 0x19:
 
-    iVar5 = FUN_0052c5c0();
+    iVar5 = net_active_players_get();
 
     pfVar3 = param_4;
 
@@ -10702,7 +10702,7 @@ LAB_0047d6b8:
 
   case 0x23:
 
-    iVar5 = FUN_0052c5c0();
+    iVar5 = net_active_players_get();
 
     if (iVar5 == 0) {
 
@@ -11010,7 +11010,7 @@ LAB_0047d6f9:
 
   case 0x24:
 
-    iVar5 = FUN_0052c5c0();
+    iVar5 = net_active_players_get();
 
     if (iVar5 != 0) {
 
@@ -11026,7 +11026,7 @@ LAB_0047d6f9:
 
   case 0x25:
 
-    iVar5 = FUN_0052c5c0();
+    iVar5 = net_active_players_get();
 
     if (iVar5 == 0) {
 
@@ -11044,7 +11044,7 @@ LAB_0047de23:
 
   case 0x26:
 
-    iVar5 = FUN_0052c5c0();
+    iVar5 = net_active_players_get();
 
     if ((iVar5 != 0) && (iVar5 = objanim_select_animloop(*param_4), iVar5 != 0)) {
 

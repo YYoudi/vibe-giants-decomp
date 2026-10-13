@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0049a0c0,0049a0c0,,cspec_attack_tick_dispatch,0.9,w233,class<0x6b: call field3 handler at 0x55cb00+class*0x44+12 (attack/anim tick)
+0046b450,0046b450,,type2e9_specval_get,0.9,w233,type 0x2e9: return spec+8 float else 0; caller save_mission_continuity
+0052dbb0,0052dbb0,,bit6_pack_encode,0.9,w233,3 bytes -> 4 sextets 6-bit pack loop; caller new_fire
+004e7250,004e7250,,gridcell_free_check_store,0.9,w233,grid DAT_6330e4 bounds + cell flag +0xe free -> store pos to spec +0xe0
+004676a0,004676a0,,kabuto_skinning_eval_all,0.9,w233,walk DAT_632a80 list -> obj_skinning_eval each
+004489e0,004489e0,,piranha_anchor_move,0.9,w233,"set anchor +0x1c..24, move children (spec+0==anchor+8) via object_set_location_p3d"
+00469950,00469950,,turn_target_state_set,0.9,w233,"playerobj_turn diff, flag 0x1000000, tgt +0x158, frac +0x208"

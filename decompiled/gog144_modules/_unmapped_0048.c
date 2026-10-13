@@ -464,7 +464,7 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
         iVar6 = dialog_level_is_base();
 
-        if ((iVar6 == 0) || (iVar6 = FUN_0052c5c0(), iVar6 != 0)) {
+        if ((iVar6 == 0) || (iVar6 = net_active_players_get(), iVar6 != 0)) {
 
           smartie_start_special_building
 
@@ -476,9 +476,11 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
         else {
 
-          FUN_004f4020(iVar2,*(undefined4 *)(iVar3 + 0x54),iVar1,param_1,param_1 + 0xa0,
+          comm_msg17_pair_send
 
-                       *(float *)(param_1 + 200) + 180.0);
+                    (iVar2,*(undefined4 *)(iVar3 + 0x54),iVar1,param_1,param_1 + 0xa0,
+
+                     *(float *)(param_1 + 200) + 180.0);
 
         }
 
@@ -1398,7 +1400,7 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
   }
 
-  iVar3 = FUN_0052c5c0();
+  iVar3 = net_active_players_get();
 
   if (iVar3 != 0) {
 
@@ -1517,7 +1519,7 @@ void projectile_logic(int param_1)
 
                 iVar8 = dialog_level_is_base();
 
-                if ((iVar8 == 0) || (iVar8 = FUN_0052c5c0(), iVar8 != 0)) {
+                if ((iVar8 == 0) || (iVar8 = net_active_players_get(), iVar8 != 0)) {
 
                   *(int *)(iVar4 + 0x210) = param_1;
 
@@ -1681,7 +1683,7 @@ LAB_00481264:
 
                 iVar5 = dialog_level_is_base();
 
-                if ((iVar5 == 0) || (iVar5 = FUN_0052c5c0(), iVar5 != 0)) {
+                if ((iVar5 == 0) || (iVar5 = net_active_players_get(), iVar5 != 0)) {
 
                   *(int *)(param_1 + 0x210) = iVar4;
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004c5b10,004c5b10,,reaperbase_dock_check,0.9,w236,"fx + DAT_632bb0/ba8 gates, +0xcfc bldg slot9 refpt, dist2<36 dock check"
+004ba990,004ba990,,reaperbase_enemy_scan,0.9,w236,"enemy team, types reaper/mecc/0xb/8/0x438/0xe5/0x49/0xe6/0x29a, dist2 range"
+004d7c60,004d7c60,,rpman_hit_state_set,0.9,w236,"hp<max switch cause +0xe8 (0xdd guard, 0x65-67 special), tgt class 0x4d, anim+notify"
+0053d120,0053d120,,anm_skin_verts_apply,0.9,w236,ANM_ObjZeroWeightedVertices + cluster matrix rows copy to verts

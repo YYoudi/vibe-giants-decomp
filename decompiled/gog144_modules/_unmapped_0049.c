@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 158 functions (141 named) — decompiled, names from PS2 symbols
+ * 158 functions (144 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -2805,7 +2805,7 @@ void save_mission_continuity__Fv(void)
 
         if (iVar2 != 0) {
 
-          fVar7 = (float10)FUN_0046b450(iVar2);
+          fVar7 = (float10)type2e9_specval_get(iVar2);
 
           DAT_0059f288 = (float)fVar7;
 
@@ -2819,7 +2819,7 @@ void save_mission_continuity__Fv(void)
 
           uVar5 = uVar5 + 1;
 
-          fVar7 = (float10)FUN_0046b450(iVar2);
+          fVar7 = (float10)type2e9_specval_get(iVar2);
 
           if (uVar5 == 1) {
 
@@ -2988,7 +2988,7 @@ void load_mission_continuity__Fii(int param_1,int *param_2)
 
 LAB_00492458:
 
-  FUN_0049a030(DAT_00632a88);
+  cspec_field17_dispatch(DAT_00632a88);
 
   iVar1 = DAT_0059f278;
 
@@ -7998,7 +7998,7 @@ void objspec_dispatch_gate(int param_1)
 
       ((*(uint *)(param_1 + 0xd8) & 0xc000) == 0)) && ((*(byte *)(param_1 + 0x1c8) & 0x10) == 0)) {
 
-    FUN_0049a0c0();
+    cspec_attack_tick_dispatch();
 
     return;
 
@@ -9219,7 +9219,7 @@ void object_copy_activedata(int param_1,int param_2)
 
     }
 
-    iVar2 = FUN_00455f20(param_2);
+    iVar2 = owned_obj_type_find_2(param_2);
 
     if ((0 < iVar2) && (iVar2 <= *(int *)(param_1 + 0x1d8))) {
 
@@ -10960,7 +10960,7 @@ void create_static_object(int param_1,int param_2)
 
     }
 
-    iVar4 = FUN_0052c5c0();
+    iVar4 = net_active_players_get();
 
     if (iVar4 != 0) {
 
@@ -12032,12 +12032,12 @@ LAB_00499fe3:
 
 }
 
-/* ===== FUN_0049a030 @ 0x0049A030 ===== */
+/* ===== cspec_field17_dispatch @ 0x0049A030 ===== */
 /* PS2 candidate: reaper_set_spell (conf 0.423) */
 
 
 
-void FUN_0049a030(int param_1)
+void cspec_field17_dispatch(int param_1)
 
 
 
@@ -12119,8 +12119,8 @@ void cspec_update_dispatch(int param_1)
 
 }
 
-/* ===== FUN_0049a0c0 @ 0x0049A0C0 ===== */
-void FUN_0049a0c0(int param_1)
+/* ===== cspec_attack_tick_dispatch @ 0x0049A0C0 ===== */
+void cspec_attack_tick_dispatch(int param_1)
 
 
 
@@ -14813,7 +14813,7 @@ LAB_0049ca1f:
 
     if (*(int *)(iVar8 + 0x3c) == 0) goto LAB_0049cb5c;
 
-    iVar7 = FUN_0049dbd0(param_1);
+    iVar7 = facing_player_bark(param_1);
 
     if (iVar7 != 0) break;
 
@@ -14855,7 +14855,7 @@ LAB_0049cbcb:
 
     if (*(int *)(iVar8 + 0x3c) != 0) {
 
-      iVar7 = FUN_0049dbd0(param_1);
+      iVar7 = facing_player_bark(param_1);
 
       if (iVar7 != 0) break;
 
@@ -15087,7 +15087,7 @@ LAB_0049d02e:
 
     if (*(int *)(iVar8 + 0x3c) != 0) {
 
-      iVar8 = FUN_0049dbd0(param_1);
+      iVar8 = facing_player_bark(param_1);
 
       if (iVar8 != 0) break;
 
@@ -15617,7 +15617,7 @@ LAB_0049d7c6:
 
     if (*(int *)(iVar8 + 0x3c) != 0) {
 
-      iVar7 = FUN_0049dbd0(param_1);
+      iVar7 = facing_player_bark(param_1);
 
       if (iVar7 == 0) {
 
@@ -15779,12 +15779,12 @@ LAB_0049d7c6:
 
 }
 
-/* ===== FUN_0049dbd0 @ 0x0049DBD0 ===== */
+/* ===== facing_player_bark @ 0x0049DBD0 ===== */
 /* PS2 candidate: offspring_can_attack__FP6OBJECT (conf 0.444) */
 
 
 
-undefined4 FUN_0049dbd0(int param_1)
+undefined4 facing_player_bark(int param_1)
 
 
 
@@ -16959,7 +16959,7 @@ LAB_0049f8f1:
 
           if (iVar2 != 0) {
 
-            iVar2 = FUN_0052c5c0();
+            iVar2 = net_active_players_get();
 
             if (iVar2 != 0) {
 
@@ -16987,7 +16987,7 @@ LAB_0049f8f1:
 
           if (iVar2 != 0) {
 
-            iVar2 = FUN_0052c5c0();
+            iVar2 = net_active_players_get();
 
             if (iVar2 != 0) {
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0046b420,0046b420,,type2e9_specval_get_2,0.9,w243,type 0x2e9: return spec+0xc float (twin of +8 getter)
+0046b7f0,0046b7f0,,injured_state_start,0.9,w243,"hp<max, spec[0x1f/0x20]==0: flags|=0x3c, state 0x14, store params"
+00519ca0,00519ca0,,strbuf_ring_append,0.9,w243,"append byte to 32B ring DAT_57c9fc, wrap ptr, len++; pairs strbuf_current_get"
+00515f20,00515f20,,scale_1_13_get,0.9,w243,return DAT_6331bc * 0.07692308

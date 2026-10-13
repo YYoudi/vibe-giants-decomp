@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 85 functions (83 named) — decompiled, names from PS2 symbols
+ * 85 functions (85 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -60,7 +60,7 @@ LAB_00440165:
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar4 = (char *)FUN_00519CF0();
+    pcVar4 = (char *)strbuf_current_get();
 
     if (pcVar4 == (char *)0x0) {
 
@@ -322,7 +322,7 @@ LAB_00440422:
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar5 = (char *)FUN_00519CF0();
+    pcVar5 = (char *)strbuf_current_get();
 
     if (pcVar5 == (char *)0x0) {
 
@@ -564,7 +564,7 @@ LAB_004406b2:
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar3 = (char *)FUN_00519CF0();
+    pcVar3 = (char *)strbuf_current_get();
 
     if (pcVar3 == (char *)0x0) {
 
@@ -1020,7 +1020,7 @@ int wredit_str_input(void)
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar2 = (char *)FUN_00519CF0();
+    pcVar2 = (char *)strbuf_current_get();
 
     if (pcVar2 == (char *)0x0) {
 
@@ -1105,7 +1105,7 @@ int wredit_str_input_short(void)
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar2 = (char *)FUN_00519CF0();
+    pcVar2 = (char *)strbuf_current_get();
 
     if (pcVar2 == (char *)0x0) {
 
@@ -6842,7 +6842,7 @@ int flick_file_load_state(char *param_1)
 
     for (; puVar9 != (undefined4 *)0x0; puVar9 = (undefined4 *)*puVar9) {
 
-      FUN_0049a030(puVar9[3]);
+      cspec_field17_dispatch(puVar9[3]);
 
     }
 
@@ -8778,8 +8778,8 @@ void fx_delete(int *param_1)
 
 }
 
-/* ===== FUN_004489e0 @ 0x004489E0 ===== */
-void FUN_004489e0(int param_1,undefined4 *param_2)
+/* ===== piranha_anchor_move @ 0x004489E0 ===== */
+void piranha_anchor_move(int param_1,undefined4 *param_2)
 
 
 
@@ -8880,8 +8880,8 @@ void fx_lifespan_setup(int param_1,float param_2,float param_3,float param_4)
 
 }
 
-/* ===== FUN_00448c20 @ 0x00448C20 ===== */
-void FUN_00448c20(int param_1)
+/* ===== fx_anchor_toggle_ops @ 0x00448C20 ===== */
+void fx_anchor_toggle_ops(int param_1)
 
 
 

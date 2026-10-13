@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (168 named) — decompiled, names from PS2 symbols
+ * 179 functions (171 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -36,7 +36,7 @@ void comm_chat_send_3(undefined1 param_1,undefined4 param_2,int param_3,int para
 
      ) {
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -173,7 +173,7 @@ void comm_send_recv_pair(int param_1)
 
   iVar1 = dialog_level_is_base();
 
-  if (((iVar1 != 0) && (iVar2 = FUN_0052c5c0(), iVar1 = DAT_00632f34, iVar2 != 0)) &&
+  if (((iVar1 != 0) && (iVar2 = net_active_players_get(), iVar1 = DAT_00632f34, iVar2 != 0)) &&
 
      (iVar2 = 0, 0 < DAT_00632f34)) {
 
@@ -302,7 +302,7 @@ void comm_send_big(undefined4 *param_1)
 
   if (iVar4 != 0) {
 
-    iVar4 = FUN_0052c5c0();
+    iVar4 = net_active_players_get();
 
     if (iVar4 != 0) {
 
@@ -597,7 +597,7 @@ void comm_death_packet_build
 
     uStack_3 = 0;
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -1677,7 +1677,7 @@ void comm_send_small_a(int param_1)
 
     uStack_3 = 0;
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -1724,7 +1724,7 @@ void comm_send_small_b(int param_1)
 
     uStack_3 = 0;
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -1781,7 +1781,7 @@ void reaper_00530bd0(int param_1,int param_2,int param_3,int param_4,undefined1 
 
      (iVar2 = dialog_level_is_base(), iVar2 != 0)) {
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -1920,7 +1920,7 @@ void comm_chat_send_1(int param_1,int param_2,int param_3,int param_4,undefined1
 
      (iVar2 = dialog_level_is_base(), iVar2 != 0)) {
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -2059,7 +2059,7 @@ void comm_chat_send_2(int param_1,int param_2,int param_3,int param_4,undefined1
 
      (iVar2 = dialog_level_is_base(), iVar2 != 0)) {
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -2631,7 +2631,7 @@ void comm_msg_dispatch(void)
 
     gamespy_process_queries();
 
-    iVar4 = FUN_0052c5c0();
+    iVar4 = net_active_players_get();
 
     if (iVar4 != 0) {
 
@@ -2833,7 +2833,7 @@ void comm_msg_dispatch(void)
 
         if (iVar4 != 0) {
 
-          iVar4 = FUN_0052c5c0();
+          iVar4 = net_active_players_get();
 
           if (iVar4 == 0) {
 
@@ -2933,7 +2933,7 @@ void comm_msg_dispatch(void)
 
             if ((*(uint *)(iVar4 + 0x188) & 0xff) == (uint)bVar3) {
 
-              iVar6 = FUN_0052c5c0();
+              iVar6 = net_active_players_get();
 
               if ((iVar6 == 0) || (*(int *)(iVar4 + 0x1e0) != 0x4d)) {
 
@@ -3011,7 +3011,7 @@ LAB_005319de:
 
         if ((iVar4 == 0) || (DAT_00632f08 < 10)) goto LAB_005319de;
 
-        iVar4 = FUN_0052c5c0();
+        iVar4 = net_active_players_get();
 
         if (iVar4 != 0) {
 
@@ -3059,7 +3059,7 @@ LAB_005319de:
 
         if ((iVar4 != 0) && (9 < DAT_00632f08)) {
 
-          iVar4 = FUN_0052c5c0();
+          iVar4 = net_active_players_get();
 
           if (iVar4 != 0) {
 
@@ -3471,7 +3471,7 @@ LAB_005319de:
 
           *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | 1;
 
-          iVar4 = FUN_0052c5c0();
+          iVar4 = net_active_players_get();
 
           if ((iVar4 != 0) && (iVar4 = dialog_level_is_base(), iVar4 != 0)) {
 
@@ -3547,7 +3547,7 @@ LAB_005319de:
 
           *(undefined4 *)(iVar4 + 0x14) = 0x3f800000;
 
-          iVar4 = FUN_0052c5c0();
+          iVar4 = net_active_players_get();
 
           if ((iVar4 != 0) && (iVar4 = dialog_level_is_base(), iVar4 != 0)) {
 
@@ -3889,7 +3889,7 @@ LAB_00532513:
 
       case ':':
 
-        iVar4 = FUN_0052c5c0();
+        iVar4 = net_active_players_get();
 
         pcVar14 = DAT_005e0304;
 
@@ -4017,7 +4017,7 @@ LAB_00532513:
 
       case '<':
 
-        iVar4 = FUN_0052c5c0();
+        iVar4 = net_active_players_get();
 
         if (iVar4 == 0) {
 
@@ -4570,7 +4570,7 @@ void anm_dump_52(undefined4 *param_1)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -4639,7 +4639,7 @@ void comm_team_broadcast_draw(int param_1)
 
   if (iVar2 != 0) {
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 != 0) {
 
@@ -4661,7 +4661,7 @@ void comm_team_broadcast_draw(int param_1)
 
           if (iVar3 != 0) {
 
-            iVar3 = FUN_0052c5c0();
+            iVar3 = net_active_players_get();
 
             if (iVar3 != 0) {
 
@@ -4734,7 +4734,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -4780,7 +4780,7 @@ void comm_entergame_msg_3(undefined4 *param_1)
 
       }
 
-      iVar1 = FUN_0052c5c0();
+      iVar1 = net_active_players_get();
 
       if (iVar1 != 0) {
 
@@ -4969,7 +4969,7 @@ void comm_cam_mode_menu(undefined4 *param_1)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -6031,7 +6031,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
   
 
-  iVar6 = FUN_0052c5c0();
+  iVar6 = net_active_players_get();
 
   if ((iVar6 != 0) && (iVar6 = dialog_level_is_base(), iVar6 != 0)) {
 
@@ -6127,7 +6127,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
             uStack_23f = 0;
 
-            iVar9 = FUN_0052c5c0();
+            iVar9 = net_active_players_get();
 
             if (iVar9 == 0) {
 
@@ -7735,7 +7735,7 @@ void comm_packet_write_header(int param_1)
 
   if (iVar3 != 0) {
 
-    iVar3 = FUN_0052c5c0();
+    iVar3 = net_active_players_get();
 
     puVar6 = DAT_005e0304;
 
@@ -7870,7 +7870,7 @@ void comm_chat_dispatch(int param_1,int param_2)
 
   if ((param_2 != 0) &&
 
-     (iVar5 = FUN_0052c5c0(), puVar8 = DAT_005e0304, puVar9 = DAT_00632d68, iVar5 != 0)) {
+     (iVar5 = net_active_players_get(), puVar8 = DAT_005e0304, puVar9 = DAT_00632d68, iVar5 != 0)) {
 
     local_8c = (undefined1)DAT_005e02e8;
 
@@ -7880,7 +7880,7 @@ void comm_chat_dispatch(int param_1,int param_2)
 
          (iVar5 = dialog_level_is_base(), iVar5 != 0)) {
 
-        iVar5 = FUN_0052c5c0();
+        iVar5 = net_active_players_get();
 
         if (iVar5 == 0) {
 
@@ -7976,7 +7976,7 @@ LAB_005352a9:
 
          (iVar5 = dialog_level_is_base(), iVar5 != 0)) {
 
-        iVar5 = FUN_0052c5c0();
+        iVar5 = net_active_players_get();
 
         if (iVar5 == 0) {
 
@@ -8149,7 +8149,7 @@ void comm_heartbeat_send(void)
 
   if (iVar2 != 0) {
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -8709,7 +8709,7 @@ void comm_0052b430_user_bigger(void)
 
   if (iVar2 != 0) {
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -10384,12 +10384,12 @@ LAB_00536b76:
 
 }
 
-/* ===== FUN_00536c60 @ 0x00536C60 ===== */
+/* ===== bubble_timeout_clear @ 0x00536C60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00536c60(void)
+void bubble_timeout_clear(void)
 
 
 
@@ -10784,7 +10784,7 @@ void comm_entergame_message(void)
 
       local_cb = 0;
 
-      iVar3 = FUN_0052c5c0();
+      iVar3 = net_active_players_get();
 
       if (iVar3 == 0) {
 
@@ -10838,7 +10838,7 @@ void comm_entergame_message(void)
 
       local_cb = 0;
 
-      iVar3 = FUN_0052c5c0();
+      iVar3 = net_active_players_get();
 
       if (iVar3 == 0) {
 
@@ -10894,7 +10894,7 @@ void comm_entergame_message(void)
 
   for (puVar1 = DAT_00632d68; puVar1 != (undefined4 *)0x0; puVar1 = (undefined4 *)*puVar1) {
 
-    FUN_0049a030(puVar1[3]);
+    cspec_field17_dispatch(puVar1[3]);
 
   }
 
@@ -11206,7 +11206,7 @@ void comm_voice_update(void)
 
       DAT_00632f30 = 0.0;
 
-      iVar3 = FUN_0052c5c0();
+      iVar3 = net_active_players_get();
 
       if (iVar3 != 0) {
 
@@ -11344,7 +11344,7 @@ void comm_voice_update(void)
 
   }
 
-  iVar3 = FUN_0052c5c0();
+  iVar3 = net_active_players_get();
 
   if (iVar3 == 0) {
 
@@ -11434,7 +11434,7 @@ void comm_voice_update(void)
 
         local_a87 = 0;
 
-        iVar3 = FUN_0052c5c0();
+        iVar3 = net_active_players_get();
 
         if (iVar3 == 0) {
 
@@ -11478,7 +11478,7 @@ void comm_voice_update(void)
 
     for (puVar2 = DAT_00632d68; puVar2 != (undefined4 *)0x0; puVar2 = (undefined4 *)*puVar2) {
 
-      FUN_0049a030(puVar2[3]);
+      cspec_field17_dispatch(puVar2[3]);
 
     }
 
@@ -16340,10 +16340,12 @@ void ANM_BinderEvalVertices__FP10ANM_BinderiP8GEO_Vec4iiUi
 
 }
 
-/* ===== FUN_0053d120 @ 0x0053D120 ===== */
-void FUN_0053d120(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+/* ===== anm_skin_verts_apply @ 0x0053D120 ===== */
+void anm_skin_verts_apply
 
-                 undefined4 param_6)
+               (int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+
+               undefined4 param_6)
 
 
 
@@ -16570,8 +16572,10 @@ void ANM_AnimationEvalVertices
 
 }
 
-/* ===== FUN_0053d330 @ 0x0053D330 ===== */
-void FUN_0053d330(int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+/* ===== anm_skin_all_bones_apply @ 0x0053D330 ===== */
+void anm_skin_all_bones_apply
+
+               (int param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 
 
 
@@ -16623,7 +16627,7 @@ void FUN_0053d330(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
       }
 
-      FUN_0053d120(iVar2,param_2,param_3,param_4,iVar6,param_5);
+      anm_skin_verts_apply(iVar2,param_2,param_3,param_4,iVar6,param_5);
 
       piVar1 = (int *)(*(int *)(iVar2 + 4) + iVar5);
 

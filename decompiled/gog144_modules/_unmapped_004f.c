@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 63 functions (59 named) — decompiled, names from PS2 symbols
+ * 63 functions (61 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -506,10 +506,12 @@ LAB_004f3ef6:
 
 }
 
-/* ===== FUN_004f4020 @ 0x004F4020 ===== */
-void FUN_004f4020(int param_1,undefined4 param_2,int param_3,int param_4,undefined4 *param_5,
+/* ===== comm_msg17_pair_send @ 0x004F4020 ===== */
+void comm_msg17_pair_send
 
-                 undefined4 param_6)
+               (int param_1,undefined4 param_2,int param_3,int param_4,undefined4 *param_5,
+
+               undefined4 param_6)
 
 
 
@@ -848,7 +850,9 @@ void reaperbase_death_handler_c18(int param_1,int param_2,undefined4 param_3,sho
 
         else {
 
-          FUN_0040ac70(param_1,*(undefined4 *)(iVar3 + 0x2c),*(undefined4 *)(iVar3 + 0x28));
+          master_flag_bit_clear(param_1,*(undefined4 *)(iVar3 + 0x2c),*(undefined4 *)(iVar3 + 0x28))
+
+          ;
 
         }
 
@@ -976,7 +980,7 @@ void reaperbase_death_handler_c18(int param_1,int param_2,undefined4 param_3,sho
 
   case 0xd:
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     psVar5 = param_4;
 
@@ -1044,7 +1048,7 @@ void reaperbase_death_handler_c18(int param_1,int param_2,undefined4 param_3,sho
 
   case 0xe:
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     psVar5 = param_4;
 
@@ -1374,7 +1378,7 @@ LAB_004f453b:
 
   case 0x16:
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -1388,7 +1392,7 @@ LAB_004f453b:
 
   case 0x17:
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     psVar5 = param_4;
 
@@ -2248,7 +2252,7 @@ void reaper_lock_pair_4f(int param_1)
 
     else {
 
-      FUN_0040ac70(param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
+      master_flag_bit_clear(param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
 
     }
 
@@ -2345,7 +2349,7 @@ void fx_reaper_bubble_create(int param_1,undefined4 param_2)
 
       else {
 
-        FUN_0040ac70(param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
+        master_flag_bit_clear(param_1,*(undefined4 *)(iVar1 + 0x2c),*(undefined4 *)(iVar1 + 0x28));
 
       }
 
@@ -2805,7 +2809,7 @@ void smartie_board_player__FP6OBJECTT0i(int param_1,int param_2,undefined4 param
 
     else {
 
-      FUN_0040ac70(param_1,*(undefined4 *)(iVar2 + 0x2c),*(undefined4 *)(iVar2 + 0x28));
+      master_flag_bit_clear(param_1,*(undefined4 *)(iVar2 + 0x2c),*(undefined4 *)(iVar2 + 0x28));
 
     }
 
@@ -4638,7 +4642,7 @@ void comm_stats_reset(void)
 
   iVar8 = dialog_level_is_base();
 
-  if ((iVar8 == 0) || (iVar8 = FUN_0052c5c0(), iVar8 != 0)) {
+  if ((iVar8 == 0) || (iVar8 = net_active_players_get(), iVar8 != 0)) {
 
     iVar7 = DAT_006330d8;
 
@@ -4886,7 +4890,9 @@ void smartie_shot(int param_1,float param_2,int param_3,undefined4 param_4,undef
 
               else {
 
-                FUN_0040ac70(param_3,*(undefined4 *)(iVar3 + 0x2c),*(undefined4 *)(iVar3 + 0x28));
+                master_flag_bit_clear
+
+                          (param_3,*(undefined4 *)(iVar3 + 0x2c),*(undefined4 *)(iVar3 + 0x28));
 
               }
 
@@ -6310,7 +6316,7 @@ int make_particle__FP6OBJECT(float param_1)
 
   }
 
-  fVar5 = (float10)FUN_00404200(iVar4);
+  fVar5 = (float10)particle_state_param_get(iVar4);
 
   if ((float10)0.0 < fVar5) {
 
@@ -8052,8 +8058,8 @@ void FUN_004fa720(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004fa780 @ 0x004FA780 ===== */
-void FUN_004fa780(int param_1,int param_2)
+/* ===== slot5625_flag_set @ 0x004FA780 ===== */
+void slot5625_flag_set(int param_1,int param_2)
 
 
 

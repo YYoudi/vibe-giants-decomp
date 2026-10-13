@@ -4302,7 +4302,7 @@ void piranha_launch_fx__FP6OBJECT(int param_1)
 
       local_38 = 0;
 
-      FUN_004489e0((&DAT_00632960)[iVar3 * 3],&local_40);
+      piranha_anchor_move((&DAT_00632960)[iVar3 * 3],&local_40);
 
       if (iVar3 < 10) {
 
@@ -5130,7 +5130,7 @@ LAB_004a56f9:
 
   }
 
-  pcVar4 = (char *)FUN_00519CF0();
+  pcVar4 = (char *)strbuf_current_get();
 
   if (pcVar4 != (char *)0x0) {
 
@@ -13294,7 +13294,7 @@ LAB_004ac9df:
 
   if (*(int *)(iVar4 + 0x1c) != 0) {
 
-    FUN_00448c20(*(int *)(iVar4 + 0x1c));
+    fx_anchor_toggle_ops(*(int *)(iVar4 + 0x1c));
 
     *(undefined4 *)(iVar4 + 0x1c) = 0;
 
@@ -13449,7 +13449,7 @@ LAB_004acbe1:
 
         else if ((iVar4 == 0xd7) && (iVar4 = target_hurt_class_check(iVar3), iVar4 != 0)) {
 
-          FUN_004d7c60(iVar3,iVar7);
+          rpman_hit_state_set(iVar3,iVar7);
 
         }
 

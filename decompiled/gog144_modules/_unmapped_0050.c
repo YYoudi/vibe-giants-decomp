@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 103 functions (95 named) — decompiled, names from PS2 symbols
+ * 103 functions (97 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -1183,7 +1183,7 @@ void destroy_fx_spawn(int param_1)
 
     if ((iVar1 != 0) && (*(int *)(param_1 + 4) == 2)) {
 
-      FUN_00501170(param_1);
+      destroy_group_same170(param_1);
 
     }
 
@@ -1336,8 +1336,8 @@ int FUN_00501070(int param_1)
 
 }
 
-/* ===== FUN_00501090 @ 0x00501090 ===== */
-undefined1 * FUN_00501090(void)
+/* ===== player_pet_follow_tick @ 0x00501090 ===== */
+undefined1 * player_pet_follow_tick(void)
 
 
 
@@ -1440,12 +1440,12 @@ void FUN_00501100(char *param_1)
 
 }
 
-/* ===== FUN_00501170 @ 0x00501170 ===== */
+/* ===== destroy_group_same170 @ 0x00501170 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00501170(int param_1)
+void destroy_group_same170(int param_1)
 
 
 
@@ -8181,7 +8181,7 @@ LAB_00506418:
 
                   iVar14 = dialog_level_is_base();
 
-                  if ((iVar14 == 0) || (iVar14 = FUN_0052c5c0(), iVar14 != 0)) {
+                  if ((iVar14 == 0) || (iVar14 = net_active_players_get(), iVar14 != 0)) {
 
                     object_spawn_class(param_1,uVar13,&local_5c,0);
 
@@ -17110,7 +17110,7 @@ LAB_005100ec:
 
           }
 
-          if ((*(int *)(iVar3 + 0xb0) == 0) && (iVar7 = FUN_005108f0(fVar5), iVar7 != 0)) {
+          if ((*(int *)(iVar3 + 0xb0) == 0) && (iVar7 = herd_promote_check(fVar5), iVar7 != 0)) {
 
             iVar7 = *(int *)((int)fVar5 + 0x100);
 

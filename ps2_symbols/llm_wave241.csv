@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00501170,00501170,,destroy_group_same170,0.9,w241,"type2 + same +0x170: destroy all others via FUN_00499200, clear DAT_5a8834 globals"
+00528720,00528720,,comm_all_players_ready,0.9,w241,state 0-3/6-7 skip; all players flag set need DAT_5de2a4==0
+00423760,00423760,,keybind_slot_clear,0.9,w241,"map dev 0/1/2->0x19/0xe/0x10, wrap idx mod 0x20, table=0xff + input_bindings_clear"

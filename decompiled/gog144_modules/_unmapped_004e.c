@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 109 functions (99 named) — decompiled, names from PS2 symbols
+ * 109 functions (104 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -905,8 +905,8 @@ LAB_004e21cb:
 
 }
 
-/* ===== FUN_004e21f0 @ 0x004E21F0 ===== */
-undefined4 FUN_004e21f0(int param_1)
+/* ===== type0d7_unique_check @ 0x004E21F0 ===== */
+undefined4 type0d7_unique_check(int param_1)
 
 
 
@@ -2561,8 +2561,8 @@ undefined4 ai_los_clear_to_target(float param_1,float param_2,int param_3,int pa
 
 }
 
-/* ===== FUN_004e3730 @ 0x004E3730 ===== */
-bool FUN_004e3730(int param_1)
+/* ===== spawn_clearance_check @ 0x004E3730 ===== */
+bool spawn_clearance_check(int param_1)
 
 
 
@@ -6456,8 +6456,8 @@ LAB_004e723e:
 
 }
 
-/* ===== FUN_004e7250 @ 0x004E7250 ===== */
-undefined4 FUN_004e7250(int param_1)
+/* ===== gridcell_free_check_store @ 0x004E7250 ===== */
+undefined4 gridcell_free_check_store(int param_1)
 
 
 
@@ -6520,8 +6520,8 @@ undefined4 ObjIsMyArmySpline__FP6OBJECTi(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004e7330 @ 0x004E7330 ===== */
-void FUN_004e7330(int param_1,int param_2)
+/* ===== seq_dep_release @ 0x004E7330 ===== */
+void seq_dep_release(int param_1,int param_2)
 
 
 
@@ -12985,7 +12985,7 @@ void base_spells_setup(void)
 
   
 
-  iVar1 = FUN_0052c5c0();
+  iVar1 = net_active_players_get();
 
   if (iVar1 != 0) {
 
@@ -13534,7 +13534,7 @@ void reaper_logic(int param_1)
 
   }
 
-  iVar2 = FUN_0052c5c0();
+  iVar2 = net_active_players_get();
 
   puVar1 = DAT_00632d68;
 
@@ -13572,8 +13572,8 @@ void reaper_logic(int param_1)
 
 }
 
-/* ===== FUN_004EE800 @ 0x004EE800 ===== */
-void FUN_004EE800(void)
+/* ===== world_next_enter @ 0x004EE800 ===== */
+void world_next_enter(void)
 
 
 
@@ -17580,7 +17580,7 @@ LAB_004f32da:
 
     else {
 
-      FUN_0040ac70(param_1,*(undefined4 *)(iVar11 + 0x2c),*(undefined4 *)(iVar11 + 0x28));
+      master_flag_bit_clear(param_1,*(undefined4 *)(iVar11 + 0x2c),*(undefined4 *)(iVar11 + 0x28));
 
     }
 
@@ -17674,7 +17674,9 @@ LAB_004f2864:
 
       else {
 
-        FUN_0040ac70(param_1,*(undefined4 *)(iVar11 + 0x2c),*(undefined4 *)(iVar11 + 0x28));
+        master_flag_bit_clear(param_1,*(undefined4 *)(iVar11 + 0x2c),*(undefined4 *)(iVar11 + 0x28))
+
+        ;
 
       }
 

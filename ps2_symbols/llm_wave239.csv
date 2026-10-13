@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004ee800,004ee800,,world_next_enter,0.9,w239,"base guard, FLK_FlickStop, world+1 else gameover_menu, speaker cfg + texture audio"
+0049dbd0,0049dbd0,,facing_player_bark,0.9,w239,"player facing +-10deg, dist cfg+0xd04^2, rand<50: sound 0x682/0x683 + state"
+00519cf0,00519cf0,,strbuf_current_get,0.9,w239,"copy DAT_57c9fc 32B -> DAT_5dd24c, term at len DAT_5dd248"
+0049a030,0049a030,,cspec_field17_dispatch,0.9,w239,"class<0x6b: field17 (last, +0x44) handler at 0x55cb00 table"

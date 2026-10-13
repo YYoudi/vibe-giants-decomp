@@ -1,10 +1,10 @@
 /* Giants 1.449 — module _unmapped_0051
- * 195 functions (184 named) — decompiled, names from PS2 symbols
+ * 195 functions (189 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_005108f0 @ 0x005108F0 ===== */
-undefined4 FUN_005108f0(int param_1)
+/* ===== herd_promote_check @ 0x005108F0 ===== */
+undefined4 herd_promote_check(int param_1)
 
 
 
@@ -1309,7 +1309,7 @@ void vimp_animselect(int param_1)
 
                     }
 
-                    iVar3 = FUN_005108f0(param_1);
+                    iVar3 = herd_promote_check(param_1);
 
                     if (iVar3 == 0) {
 
@@ -2963,7 +2963,7 @@ void reaper_minion_ai_c84(int param_1)
 
   }
 
-  FUN_00448c20(**(undefined4 **)(param_1 + 0x100));
+  fx_anchor_toggle_ops(**(undefined4 **)(param_1 + 0x100));
 
   object_destroy(param_1);
 
@@ -6288,8 +6288,8 @@ void AudioMusicStreamPlay__Fiiii(int p0,int p1,int p2,int p3)
 
 }
 
-/* ===== FUN_00515f20 @ 0x00515F20 ===== */
-float10 FUN_00515f20(void)
+/* ===== scale_1_13_get @ 0x00515F20 ===== */
+float10 scale_1_13_get(void)
 
 
 
@@ -10730,12 +10730,12 @@ void wredit_00519c70(void)
 
 }
 
-/* ===== FUN_00519ca0 @ 0x00519CA0 ===== */
+/* ===== strbuf_ring_append @ 0x00519CA0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00519ca0(int param_1)
+void strbuf_ring_append(int param_1)
 
 
 
@@ -10763,8 +10763,8 @@ void FUN_00519ca0(int param_1)
 
 }
 
-/* ===== FUN_00519CF0 @ 0x00519CF0 ===== */
-undefined4 * FUN_00519CF0(void)
+/* ===== strbuf_current_get @ 0x00519CF0 ===== */
+undefined4 * strbuf_current_get(void)
 
 
 
@@ -12062,8 +12062,8 @@ LAB_0051a310:
 
 }
 
-/* ===== FUN_0051ad50 @ 0x0051AD50 ===== */
-void FUN_0051ad50(undefined4 param_1)
+/* ===== vobuf_alloc_wrap @ 0x0051AD50 ===== */
+void vobuf_alloc_wrap(undefined4 param_1)
 
 
 

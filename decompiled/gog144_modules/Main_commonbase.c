@@ -106,7 +106,7 @@ LAB_0041906f:
 
           *pfVar3 = 0.0;
 
-          FUN_004180a0(param_1,param_4[1]);
+          bldg_rate_set(param_1,param_4[1]);
 
           return;
 
@@ -120,7 +120,7 @@ LAB_0041906f:
 
       }
 
-      FUN_004180a0(param_1,param_4[1]);
+      bldg_rate_set(param_1,param_4[1]);
 
       return;
 
@@ -424,7 +424,7 @@ LAB_0041927a:
 
       *(undefined4 *)(param_1 + 0x278) = 0;
 
-      FUN_004180a0(param_1,param_4[1]);
+      bldg_rate_set(param_1,param_4[1]);
 
       return;
 
@@ -432,7 +432,7 @@ LAB_0041927a:
 
 LAB_004195d2:
 
-    FUN_004180a0(param_1,param_4[1]);
+    bldg_rate_set(param_1,param_4[1]);
 
     return;
 
@@ -650,7 +650,7 @@ LAB_004195d2:
 
   case 0x11:
 
-    iVar8 = FUN_0052c5c0();
+    iVar8 = net_active_players_get();
 
     if (iVar8 != 0) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 132 functions (125 named) — decompiled, names from PS2 symbols
+ * 132 functions (128 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -5868,8 +5868,8 @@ LAB_00423748:
 
 }
 
-/* ===== FUN_00423760 @ 0x00423760 ===== */
-void FUN_00423760(int param_1,int param_2)
+/* ===== keybind_slot_clear @ 0x00423760 ===== */
+void keybind_slot_clear(int param_1,int param_2)
 
 
 
@@ -8045,12 +8045,12 @@ float10 FUN_00425840(void)
 
 }
 
-/* ===== FUN_00425850 @ 0x00425850 ===== */
+/* ===== verm_ai_cb @ 0x00425850 ===== */
 /* PS2 candidate: verm_ai_cb (conf 0.65) */
 
 
 
-void FUN_00425850(int param_1)
+void verm_ai_cb(int param_1)
 
 
 
@@ -9119,7 +9119,7 @@ undefined4 comm_00426540(void)
 
     if (iVar1 != 0) {
 
-      iVar1 = FUN_0052c5c0();
+      iVar1 = net_active_players_get();
 
       if (iVar1 != 0) {
 
@@ -9676,12 +9676,12 @@ void Audio3DTestToneUpdate__Fv(void)
 
 }
 
-/* ===== FUN_00427100 @ 0x00427100 ===== */
+/* ===== hud_cursor_status_draw @ 0x00427100 ===== */
 /* PS2 candidate: __main (conf 0.629) */
 
 
 
-void FUN_00427100(void)
+void hud_cursor_status_draw(void)
 
 
 
@@ -11140,7 +11140,7 @@ void dlog_widgets_draw(undefined4 *param_1)
 
   } while (local_c < 2);
 
-  FUN_00427100();
+  hud_cursor_status_draw();
 
   return;
 
@@ -12492,7 +12492,7 @@ void dlog_screen_user_big(undefined4 param_1,float param_2)
 
 LAB_00429b07:
 
-  pcVar8 = (char *)FUN_00519CF0();
+  pcVar8 = (char *)strbuf_current_get();
 
   if (pcVar8 != (char *)0x0) {
 

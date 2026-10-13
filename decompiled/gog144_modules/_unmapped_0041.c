@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 102 functions (94 named) — decompiled, names from PS2 symbols
+ * 102 functions (96 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -2195,8 +2195,8 @@ undefined4 FUN_00413880(int param_1)
 
 }
 
-/* ===== FUN_004138c0 @ 0x004138C0 ===== */
-undefined4 FUN_004138c0(float param_1,int param_2)
+/* ===== walkable_floor_check @ 0x004138C0 ===== */
+undefined4 walkable_floor_check(float param_1,int param_2)
 
 
 
@@ -6488,8 +6488,8 @@ float10 bldg_set_energy(int param_1,float param_2)
 
 }
 
-/* ===== FUN_004180a0 @ 0x004180A0 ===== */
-void FUN_004180a0(int param_1,float param_2)
+/* ===== bldg_rate_set @ 0x004180A0 ===== */
+void bldg_rate_set(int param_1,float param_2)
 
 
 

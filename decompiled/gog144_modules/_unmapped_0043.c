@@ -7974,7 +7974,7 @@ LAB_0043c17b:
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar9 = (char *)FUN_00519CF0();
+    pcVar9 = (char *)strbuf_current_get();
 
     if (pcVar9 == (char *)0x0) {
 
@@ -8439,7 +8439,7 @@ void wredit_menu_6(void)
 
     if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-      pcVar3 = (char *)FUN_00519CF0();
+      pcVar3 = (char *)strbuf_current_get();
 
       if (pcVar3 == (char *)0x0) {
 
@@ -9961,7 +9961,7 @@ void wredit_ai_menu3(void)
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar2 = (char *)FUN_00519CF0();
+    pcVar2 = (char *)strbuf_current_get();
 
     if (pcVar2 == (char *)0x0) {
 
@@ -10588,7 +10588,7 @@ LAB_0043fb02:
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar2 = (char *)FUN_00519CF0();
+    pcVar2 = (char *)strbuf_current_get();
 
     if (pcVar2 == (char *)0x0) {
 
@@ -10836,7 +10836,7 @@ LAB_0043fd98:
 
   if ((DAT_0059cd48 == (char *)0x0) || (*DAT_0059cd48 == '\0')) {
 
-    pcVar2 = (char *)FUN_00519CF0();
+    pcVar2 = (char *)strbuf_current_get();
 
     if (pcVar2 == (char *)0x0) {
 

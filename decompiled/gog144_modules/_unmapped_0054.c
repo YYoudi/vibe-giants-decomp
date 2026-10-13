@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (324 named) — decompiled, names from PS2 symbols
+ * 351 functions (328 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -9163,7 +9163,7 @@ void _GLOBAL__D_Game_2(void)
 
 {
 
-  FUN_0054cea8(0x10000,0x30000);
+  crt_stream_flag_8_clear(0x10000,0x30000);
 
   return;
 
@@ -22013,8 +22013,8 @@ uint crt_stream_flags_set(uint param_1,uint param_2)
 
 }
 
-/* ===== FUN_0054cea8 @ 0x0054CEA8 ===== */
-void FUN_0054cea8(undefined4 param_1,uint param_2)
+/* ===== crt_stream_flag_8_clear @ 0x0054CEA8 ===== */
+void crt_stream_flag_8_clear(undefined4 param_1,uint param_2)
 
 
 
@@ -22415,8 +22415,8 @@ void Reset__4List(undefined4 *param_1)
 
 }
 
-/* ===== FUN_0054d12b @ 0x0054D12B ===== */
-undefined4 FUN_0054d12b(int *param_1)
+/* ===== zero3_check @ 0x0054D12B ===== */
+undefined4 zero3_check(int *param_1)
 
 
 
@@ -22566,7 +22566,7 @@ undefined4 list_reset_54(ushort *param_1,uint *param_2,int *param_3)
 
     iVar4 = 0;
 
-    iVar2 = FUN_0054d12b(&local_10);
+    iVar2 = zero3_check(&local_10);
 
     if (iVar2 != 0) {
 
@@ -25112,8 +25112,8 @@ LAB_0054e354:
 
 }
 
-/* ===== FUN_0054e3a0 @ 0x0054E3A0 ===== */
-int FUN_0054e3a0(byte *param_1,byte *param_2)
+/* ===== crt_strpbrk_idx @ 0x0054E3A0 ===== */
+int crt_strpbrk_idx(byte *param_1,byte *param_2)
 
 
 
@@ -25225,8 +25225,8 @@ int FUN_0054e3a0(byte *param_1,byte *param_2)
 
 }
 
-/* ===== FUN_0054e3e0 @ 0x0054E3E0 ===== */
-byte * FUN_0054e3e0(byte *param_1,byte *param_2)
+/* ===== crt_strpbrk @ 0x0054E3E0 ===== */
+byte * crt_strpbrk(byte *param_1,byte *param_2)
 
 
 

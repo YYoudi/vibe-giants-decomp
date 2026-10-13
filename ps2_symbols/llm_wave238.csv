@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052c5c0,0052c5c0,,net_active_players_get,0.9,w238,state==5 -> DAT_632f44 player count else 1 (48 callers)
+0040ac70,0040ac70,,master_flag_bit_clear,0.9,w238,clear bit (idx+0xb9)&31 at owner-owner +0xe0 flags
+004180a0,004180a0,,bldg_rate_set,0.9,w238,"meccbasepit/reaperbase: +0x5a0 cfg-clamped rate, else spec+8; caller main_commonbase"
+00448c20,00448c20,,fx_anchor_toggle_ops,0.9,w238,"type==4: walk anchors, toggle 0x400000, fx_processOpCodes"

@@ -1,0 +1,3 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0054e3e0,0054e3e0,,crt_strpbrk,0.9,w245,"charset bitmap from param_2, return ptr to first matching char in param_1"
+0054e3a0,0054e3a0,,crt_strpbrk_idx,0.9,w245,"same charset bitmap, return INDEX of first match (strpbrk index variant)"

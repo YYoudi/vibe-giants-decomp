@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 54 functions (53 named) — decompiled, names from PS2 symbols
+ * 54 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -7305,12 +7305,12 @@ bool kabutoai_is_punch_anim__FP6OBJECT_3(int param_1)
 
 }
 
-/* ===== FUN_004d7c60 @ 0x004D7C60 ===== */
+/* ===== rpman_hit_state_set @ 0x004D7C60 ===== */
 /* PS2 candidate: rpman_sfcaught (conf 0.311) */
 
 
 
-void FUN_004d7c60(int param_1,int param_2)
+void rpman_hit_state_set(int param_1,int param_2)
 
 
 
@@ -9879,7 +9879,7 @@ LAB_004deb91:
 
           if (*piVar15 == 0) {
 
-            iVar7 = FUN_004e7250();
+            iVar7 = gridcell_free_check_store();
 
             if (iVar7 == 0) {
 
@@ -9971,7 +9971,7 @@ LAB_004def3a:
 
             if (piVar15[0x35] == 0) {
 
-              iVar7 = FUN_004e7250(param_1);
+              iVar7 = gridcell_free_check_store(param_1);
 
               if (iVar7 != 0) {
 
@@ -10369,7 +10369,7 @@ LAB_004df304:
 
         if (*(char *)param_1[0x41] < '\0') {
 
-          iVar7 = FUN_004e7250(param_1);
+          iVar7 = gridcell_free_check_store(param_1);
 
           if (iVar7 == 0) {
 
@@ -10773,7 +10773,7 @@ LAB_004de04c:
 
           if (((float)piVar15[0x2f] < 0.0 == ((float)piVar15[0x2f] == 0.0)) ||
 
-             (iVar7 = FUN_004e21f0(param_1), iVar7 == 0)) goto LAB_004de7f8;
+             (iVar7 = type0d7_unique_check(param_1), iVar7 == 0)) goto LAB_004de7f8;
 
           if ((piVar15[0x1b] == 0) || (*(int *)(piVar15[0x1b] + 0xe4) != 0x66)) {
 
@@ -13603,7 +13603,7 @@ LAB_004da168:
 
         if (*piVar15 == 0) {
 
-          FUN_00469950(param_1,piVar15[0x56]);
+          turn_target_state_set(param_1,piVar15[0x56]);
 
         }
 
@@ -13645,7 +13645,7 @@ LAB_004da168:
 
         else {
 
-          FUN_00469950(param_1,piVar15[0x56]);
+          turn_target_state_set(param_1,piVar15[0x56]);
 
         }
 
@@ -13669,7 +13669,7 @@ LAB_004e0779:
 
         FUN_004e7160(param_1,0);
 
-        FUN_00469950(param_1,(float)param_1[0x32] + 70.0);
+        turn_target_state_set(param_1,(float)param_1[0x32] + 70.0);
 
         break;
 
@@ -14231,7 +14231,7 @@ LAB_004dc53c:
 
         if (*piVar15 != 0) goto LAB_004db8e6;
 
-        iVar7 = FUN_004e3730(param_1);
+        iVar7 = spawn_clearance_check(param_1);
 
         if (iVar7 != 0) {
 
@@ -14247,7 +14247,7 @@ LAB_004dc53c:
 
           if ((param_1[0x38] & 0x100000U) != 0) {
 
-            FUN_004e7330(param_1,piVar15[0x7c]);
+            seq_dep_release(param_1,piVar15[0x7c]);
 
           }
 
@@ -14627,7 +14627,7 @@ LAB_004e019c:
 
           if ((param_1[0x38] & 0x100000U) != 0) {
 
-            FUN_004e7330(param_1,piVar15[0x7c]);
+            seq_dep_release(param_1,piVar15[0x7c]);
 
           }
 
@@ -14871,7 +14871,7 @@ LAB_004dc268:
 
       case 0x65:
 
-        fVar17 = (float10)FUN_00469950(param_1,piVar15[0x7e]);
+        fVar17 = (float10)turn_target_state_set(param_1,piVar15[0x7e]);
 
         if (fVar17 == (float10)0.0) {
 
@@ -15367,7 +15367,7 @@ LAB_004dc633:
 
           if (*piVar15 == 0) {
 
-            iVar7 = FUN_004e7250(param_1);
+            iVar7 = gridcell_free_check_store(param_1);
 
             if (iVar7 == 0) {
 

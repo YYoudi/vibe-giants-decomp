@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 87 functions (85 named) — decompiled, names from PS2 symbols
+ * 87 functions (86 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -6808,8 +6808,8 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
 }
 
-/* ===== FUN_004c5b10 @ 0x004C5B10 ===== */
-void FUN_004c5b10(int param_1)
+/* ===== reaperbase_dock_check @ 0x004C5B10 ===== */
+void reaperbase_dock_check(int param_1)
 
 
 
@@ -7977,7 +7977,7 @@ void reaperbase_death_handler_c88
 
       sound_stop_sequence(piVar1 + 3);
 
-      FUN_00448c20(*piVar1);
+      fx_anchor_toggle_ops(*piVar1);
 
       *piVar1 = 0;
 
@@ -8104,7 +8104,7 @@ void fxn_firering(int param_1)
 
   }
 
-  FUN_00448c20(*puVar1);
+  fx_anchor_toggle_ops(*puVar1);
 
   *puVar1 = 0;
 
@@ -8185,7 +8185,7 @@ void reaperbase_firecircle_ai_c88(int param_1)
 
       sound_stop_sequence(puVar2 + 3);
 
-      FUN_00448c20(*puVar2);
+      fx_anchor_toggle_ops(*puVar2);
 
       *puVar2 = 0;
 
@@ -8501,7 +8501,7 @@ void type58_death_cleanup(int param_1)
 
       }
 
-      FUN_00448c20(*piVar2);
+      fx_anchor_toggle_ops(*piVar2);
 
       *piVar2 = 0;
 
@@ -11693,9 +11693,9 @@ LAB_004c7d68:
 
     }
 
-    FUN_004ba990(param_1,*(undefined4 *)(DAT_00632ed8 + 0xf18),*(undefined4 *)(DAT_00632ed8 + 0xf1c)
+    reaperbase_enemy_scan
 
-                );
+              (param_1,*(undefined4 *)(DAT_00632ed8 + 0xf18),*(undefined4 *)(DAT_00632ed8 + 0xf1c));
 
   }
 
@@ -14225,7 +14225,7 @@ void ShopMenuSlotCollision__Fi(void)
 
       if (iVar6 != 0) {
 
-        fVar13 = (float10)FUN_0045eca0(DAT_00632a88);
+        fVar13 = (float10)reaper_spec_float_get(DAT_00632a88);
 
         if (fVar13 <= (float10)0.0) {
 
@@ -15778,7 +15778,7 @@ undefined4 dev_debug_flags(void)
 
     } while ((int)piVar11 < 0x632d1c);
 
-    iVar5 = FUN_00501090();
+    iVar5 = player_pet_follow_tick();
 
     if (iVar5 != 0) {
 
@@ -15808,7 +15808,7 @@ undefined4 dev_debug_flags(void)
 
     render_fog_color_set();
 
-    FUN_004676a0();
+    kabuto_skinning_eval_all();
 
     status_draw_panel();
 
@@ -15822,7 +15822,7 @@ undefined4 dev_debug_flags(void)
 
     if (((DAT_00632bc0 != 0) || (DAT_00632e48 != 0)) || (DAT_00632bc4 != 0)) {
 
-      FUN_00427100();
+      hud_cursor_status_draw();
 
     }
 
@@ -15836,7 +15836,7 @@ undefined4 dev_debug_flags(void)
 
   dev_debug_text_draw();
 
-  if ((DAT_006331c4 == 0) && (iVar5 = FUN_0052c5c0(), iVar5 != 0)) {
+  if ((DAT_006331c4 == 0) && (iVar5 = net_active_players_get(), iVar5 != 0)) {
 
     textrender_draw_buffered
 

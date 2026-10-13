@@ -203,7 +203,7 @@ void object_list_update(void)
 
   wredit_obj_cleanup();
 
-  FUN_00536c60();
+  bubble_timeout_clear();
 
   for (piVar4 = DAT_00632d68; piVar2 = DAT_00632d68, piVar4 != (int *)0x0; piVar4 = (int *)*piVar4)
 

@@ -2104,7 +2104,7 @@ LAB_00403218:
 
       ;
 
-      iVar8 = FUN_004138c0(iVar5,&fStack_28,fVar2);
+      iVar8 = walkable_floor_check(iVar5,&fStack_28,fVar2);
 
       if (iVar8 == 0) break;
 

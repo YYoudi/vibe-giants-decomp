@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004e3730,004e3730,,spawn_clearance_check,0.9,w234,"scan DAT_5a8500 stride16: count dist2<200^2 with sign filter, need <5; cfg+0x230 gate"
+005108f0,005108f0,,herd_promote_check,0.9,w234,"owner slot +0x98, rank +0x9c: count rank-less unowned members, pct < +0xfc threshold"
+00455f20,00455f20,,owned_obj_type_find_2,0.9,w234,twin of owned_obj_type_find with +0x218==1 variant

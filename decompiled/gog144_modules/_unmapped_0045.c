@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 166 functions (157 named) — decompiled, names from PS2 symbols
+ * 166 functions (161 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -1043,8 +1043,8 @@ void calc_tri_weighted_plane(float *param_1,float *param_2,float *param_3,float 
 
 }
 
-/* ===== FUN_00451270 @ 0x00451270 ===== */
-void FUN_00451270(float param_1,float param_2,float param_3,float *param_4)
+/* ===== move_clamp_toward @ 0x00451270 ===== */
+void move_clamp_toward(float param_1,float param_2,float param_3,float *param_4)
 
 
 
@@ -5929,8 +5929,8 @@ void object_create_gun(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00455f20 @ 0x00455F20 ===== */
-int FUN_00455f20(int param_1)
+/* ===== owned_obj_type_find_2 @ 0x00455F20 ===== */
+int owned_obj_type_find_2(int param_1)
 
 
 
@@ -12350,7 +12350,7 @@ void reaper_spawn_ospec_1
 
       if (*(int *)(param_2 + 0x218) < 2) {
 
-        FUN_00425850(param_2);
+        verm_ai_cb(param_2);
 
       }
 
@@ -12477,7 +12477,7 @@ void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param
 
       if (*(int *)(param_2 + 0x218) < 2) {
 
-        FUN_00425850(param_2);
+        verm_ai_cb(param_2);
 
       }
 
@@ -12519,8 +12519,8 @@ void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param
 
 }
 
-/* ===== FUN_0045b610 @ 0x0045B610 ===== */
-float10 FUN_0045b610(undefined4 param_1,int param_2,float param_3)
+/* ===== type_table_lerp_get @ 0x0045B610 ===== */
+float10 type_table_lerp_get(undefined4 param_1,int param_2,float param_3)
 
 
 
@@ -16153,8 +16153,8 @@ void vec_bounds_calc(float *param_1,float *param_2,float *param_3,float *param_4
 
 }
 
-/* ===== FUN_0045eca0 @ 0x0045ECA0 ===== */
-float10 FUN_0045eca0(int param_1)
+/* ===== reaper_spec_float_get @ 0x0045ECA0 ===== */
+float10 reaper_spec_float_get(int param_1)
 
 
 
@@ -17247,7 +17247,7 @@ LAB_0045fa0b:
 
           if (*(int *)(uVar10 + 0x218) < 2) {
 
-            FUN_00425850(uVar10);
+            verm_ai_cb(uVar10);
 
           }
 
@@ -18617,7 +18617,7 @@ LAB_00461417:
 
             else {
 
-              FUN_0046b7f0(uVar10,uVar19,uVar18);
+              injured_state_start(uVar10,uVar19,uVar18);
 
             }
 
@@ -18717,7 +18717,7 @@ LAB_004612d0:
 
               else {
 
-                FUN_0046b7f0(uVar10,uVar19,uVar18);
+                injured_state_start(uVar10,uVar19,uVar18);
 
               }
 
@@ -20153,7 +20153,7 @@ LAB_00462b6e:
 
                       if (*(int *)(uVar18 + 0x218) < 2) {
 
-                        FUN_00425850(uVar18);
+                        verm_ai_cb(uVar18);
 
                       }
 
@@ -20999,7 +20999,7 @@ LAB_00463ff9:
 
                         if (*(int *)(uVar10 + 0x218) < 2) {
 
-                          FUN_00425850(uVar10);
+                          verm_ai_cb(uVar10);
 
                         }
 
@@ -21719,7 +21719,7 @@ LAB_004645bd:
 
                 puVar2[3] = uVar10;
 
-                fVar26 = (float10)FUN_0045b610(param_1,uVar10,puVar2[0x56]);
+                fVar26 = (float10)type_table_lerp_get(param_1,uVar10,puVar2[0x56]);
 
                 puVar2[0xb] = (uint)(float)fVar26;
 
@@ -21801,7 +21801,7 @@ LAB_00464543:
 
             puVar2[2] = uVar10;
 
-            fVar26 = (float10)FUN_0045b610(param_1,uVar10,puVar2[0x56]);
+            fVar26 = (float10)type_table_lerp_get(param_1,uVar10,puVar2[0x56]);
 
             fStack_1e8 = (float)fVar26;
 
@@ -22495,27 +22495,13 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x2d,3.0 <= (float)puVar2[0x57]);
+    slot5625_flag_set(0x2d,3.0 <= (float)puVar2[0x57]);
 
-    FUN_004fa780(0x2e,3.0 <= (float)puVar2[0x57]);
+    slot5625_flag_set(0x2e,3.0 <= (float)puVar2[0x57]);
 
-    FUN_004fa780(0x2f,3.0 <= (float)puVar2[0x57]);
+    slot5625_flag_set(0x2f,3.0 <= (float)puVar2[0x57]);
 
-    FUN_004fa780(0x30e,*puVar2 & 0x80000);
-
-    if (((float)puVar2[0x57] < 3.0) || (puVar2[200] != 0)) {
-
-      uVar9 = 0;
-
-    }
-
-    else {
-
-      uVar9 = 1;
-
-    }
-
-    FUN_004fa780(0x317,uVar9);
+    slot5625_flag_set(0x30e,*puVar2 & 0x80000);
 
     if (((float)puVar2[0x57] < 3.0) || (puVar2[200] != 0)) {
 
@@ -22529,7 +22515,21 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x318,uVar9);
+    slot5625_flag_set(0x317,uVar9);
+
+    if (((float)puVar2[0x57] < 3.0) || (puVar2[200] != 0)) {
+
+      uVar9 = 0;
+
+    }
+
+    else {
+
+      uVar9 = 1;
+
+    }
+
+    slot5625_flag_set(0x318,uVar9);
 
     if (((float)puVar2[0x57] < 3.0) || (puVar2[0xc9] != 0)) {
 
@@ -22543,7 +22543,7 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x319,uVar9);
+    slot5625_flag_set(0x319,uVar9);
 
     if (((float)puVar2[0x57] < 3.0) || (puVar2[0xc9] != 0)) {
 
@@ -22557,19 +22557,19 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x31a,uVar9);
+    slot5625_flag_set(0x31a,uVar9);
 
-    FUN_004fa780(0x31b,puVar2[200] != 0);
+    slot5625_flag_set(0x31b,puVar2[200] != 0);
 
-    FUN_004fa780(0x31c,puVar2[200] != 0);
+    slot5625_flag_set(0x31c,puVar2[200] != 0);
 
-    FUN_004fa780(0x31d,puVar2[0xc9] != 0);
+    slot5625_flag_set(0x31d,puVar2[0xc9] != 0);
 
-    FUN_004fa780(0x31e,puVar2[0xc9] != 0);
+    slot5625_flag_set(0x31e,puVar2[0xc9] != 0);
 
-    FUN_004fa780(0x2d3,(float)puVar2[0x57] < 3.0);
+    slot5625_flag_set(0x2d3,(float)puVar2[0x57] < 3.0);
 
-    FUN_004fa780(0x2d4,(float)puVar2[0x57] < 3.0);
+    slot5625_flag_set(0x2d4,(float)puVar2[0x57] < 3.0);
 
     if (((puVar2[3] == 0) || (!bVar24)) || ((*(byte *)(param_1 + 0x20c) & 2) == 0)) {
 
@@ -22583,7 +22583,7 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x85,uVar9);
+    slot5625_flag_set(0x85,uVar9);
 
     if (((*puVar2 & 0x800) == 0) || ((*puVar2 & 0x4000) == 0)) {
 
@@ -22597,7 +22597,7 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(200,uVar9);
+    slot5625_flag_set(200,uVar9);
 
     if (((*puVar2 & 0x800) == 0) || ((*puVar2 & 0x1000) == 0)) {
 
@@ -22611,7 +22611,7 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0xc9,uVar9);
+    slot5625_flag_set(0xc9,uVar9);
 
     if ((((~*puVar2 & 0x800) == 0) || (!bVar24)) || ((*(byte *)(param_1 + 0x20c) & 2) == 0)) {
 
@@ -22625,9 +22625,9 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x82,uVar9);
+    slot5625_flag_set(0x82,uVar9);
 
-    FUN_004fa780(0x83,0);
+    slot5625_flag_set(0x83,0);
 
     if ((puVar2[0x14] == 0) || (bVar24)) {
 
@@ -22641,7 +22641,7 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x13,uVar9);
+    slot5625_flag_set(0x13,uVar9);
 
     if ((*puVar2 & 0x800) == 0) {
 
@@ -22665,7 +22665,7 @@ LAB_0046477f:
 
     }
 
-    FUN_004fa780(0x35,uVar9);
+    slot5625_flag_set(0x35,uVar9);
 
   }
 

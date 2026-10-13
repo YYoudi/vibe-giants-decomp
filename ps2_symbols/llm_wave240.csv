@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0053d330,0053d330,,anm_skin_all_bones_apply,0.9,w240,"walk cluster list stride4, remap 0x1c rows, anm_skin_verts_apply per bone; caller main_animate"
+00427100,00427100,,hud_cursor_status_draw,0.9,w240,DAT_633044: status_draw_sub else cursor_texture_draw; callers dlog_widgets_draw/dev_debug
+0045b610,0045b610,,type_table_lerp_get,0.9,w240,"stride 0x0e table DAT_55a168 by type: lerp p3/3 between [1],[2]"
+004e7330,004e7330,,seq_dep_release,0.9,w240,"find type 0x48a same +0xe8, +0x174==mine-1: clear 0x100000 + its +0xf8"

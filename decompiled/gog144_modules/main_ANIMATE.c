@@ -108,7 +108,7 @@ void main_animate_00404b60(int param_1,int param_2)
 
   if (1 < iVar3) {
 
-    FUN_0053d330(&local_70,iVar3,uVar2,0xc,*(undefined4 *)(param_1 + 0xc));
+    anm_skin_all_bones_apply(&local_70,iVar3,uVar2,0xc,*(undefined4 *)(param_1 + 0xc));
 
     return;
 

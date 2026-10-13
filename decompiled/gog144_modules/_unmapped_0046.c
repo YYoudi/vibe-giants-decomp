@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 84 functions (78 named) — decompiled, names from PS2 symbols
+ * 84 functions (83 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -536,7 +536,7 @@ void reaper_lock_user_3(undefined4 param_1,int param_2,float param_3,int param_4
 
     if (*(int *)(param_2 + 0x218) < 2) {
 
-      FUN_00425850(param_2);
+      verm_ai_cb(param_2);
 
     }
 
@@ -593,7 +593,7 @@ void reaper_eat_finish(undefined4 param_1,int param_2,undefined4 param_3,undefin
 
     if (*(int *)(param_2 + 0x218) < 2) {
 
-      FUN_00425850(param_2);
+      verm_ai_cb(param_2);
 
     }
 
@@ -792,7 +792,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
         if (*(int *)(param_2 + 0x218) < 2) {
 
-          FUN_00425850(param_2);
+          verm_ai_cb(param_2);
 
         }
 
@@ -1049,7 +1049,7 @@ LAB_00465d63:
 
       if (*(int *)((int)fVar2 + 0x218) < 2) {
 
-        FUN_00425850(fVar2);
+        verm_ai_cb(fVar2);
 
       }
 
@@ -1451,7 +1451,7 @@ void kabutoai_death_handler_c1(int param_1,int param_2,undefined4 param_3,float 
 
         if (*(int *)(iVar12 + 0x218) < 2) {
 
-          FUN_00425850(iVar12);
+          verm_ai_cb(iVar12);
 
         }
 
@@ -1527,7 +1527,7 @@ void kabutoai_death_handler_c1(int param_1,int param_2,undefined4 param_3,float 
 
         if (*(int *)(iVar12 + 0x218) < 2) {
 
-          FUN_00425850(iVar12);
+          verm_ai_cb(iVar12);
 
         }
 
@@ -2747,8 +2747,8 @@ void obj_skinning_eval(int param_1)
 
 }
 
-/* ===== FUN_004676a0 @ 0x004676A0 ===== */
-void FUN_004676a0(void)
+/* ===== kabuto_skinning_eval_all @ 0x004676A0 ===== */
+void kabuto_skinning_eval_all(void)
 
 
 
@@ -3617,7 +3617,7 @@ LAB_004683d5:
 
                                 ((int)param_1 + 0xa0,*(int *)((int)param_1 + 0x274) + 0xa0);
 
-    fVar11 = (float10)FUN_00469950(param_1,(float)fVar11);
+    fVar11 = (float10)turn_target_state_set(param_1,(float)fVar11);
 
     if ((float10)5.0 <= fVar11) {
 
@@ -3801,9 +3801,9 @@ LAB_004683d5:
 
     if ((799 < iVar7) && (iVar6 < 800)) {
 
-      fVar11 = (float10)FUN_0045b610(param_1,*(undefined4 *)(*(int *)(iVar8 + 0x3c) + 0x274),
+      fVar11 = (float10)type_table_lerp_get(param_1,*(undefined4 *)(*(int *)(iVar8 + 0x3c) + 0x274),
 
-                                     0x40400000);
+                                            0x40400000);
 
       *(float *)(iVar8 + 0x68) = (float)fVar11;
 
@@ -4503,7 +4503,7 @@ LAB_004679d8:
 
         sound_play_obj(0x462,param_1);
 
-        fVar11 = (float10)FUN_0045b610(param_1,DAT_00632a88,0x40400000);
+        fVar11 = (float10)type_table_lerp_get(param_1,DAT_00632a88,0x40400000);
 
         *(float *)(iVar8 + 0x68) = (float)fVar11;
 
@@ -4827,8 +4827,8 @@ float10 trajectory_throw_calc(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00469950 @ 0x00469950 ===== */
-float10 FUN_00469950(int param_1,undefined4 param_2)
+/* ===== turn_target_state_set @ 0x00469950 ===== */
+float10 turn_target_state_set(int param_1,undefined4 param_2)
 
 
 
@@ -5460,7 +5460,7 @@ void reaperbase_3dpos_c28(int param_1,undefined4 param_2,int param_3)
 
     puVar2 = *(undefined4 **)(param_3 + 0x100);
 
-    FUN_00448c20(*puVar2);
+    fx_anchor_toggle_ops(*puVar2);
 
     *puVar2 = 0;
 
@@ -6597,8 +6597,8 @@ void Init__7PS2Game(undefined4 param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0046b420 @ 0x0046B420 ===== */
-float10 FUN_0046b420(int param_1)
+/* ===== type2e9_specval_get_2 @ 0x0046B420 ===== */
+float10 type2e9_specval_get_2(int param_1)
 
 
 
@@ -6614,8 +6614,8 @@ float10 FUN_0046b420(int param_1)
 
 }
 
-/* ===== FUN_0046b450 @ 0x0046B450 ===== */
-float10 FUN_0046b450(int param_1)
+/* ===== type2e9_specval_get @ 0x0046B450 ===== */
+float10 type2e9_specval_get(int param_1)
 
 
 
@@ -6920,8 +6920,8 @@ undefined4 kbos_offspring_process(int param_1,uint *param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0046b7f0 @ 0x0046B7F0 ===== */
-undefined4 FUN_0046b7f0(int param_1,uint param_2,undefined4 param_3)
+/* ===== injured_state_start @ 0x0046B7F0 ===== */
+undefined4 injured_state_start(int param_1,uint param_2,undefined4 param_3)
 
 
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00501090,00501090,,player_pet_follow_tick,0.9,w237,"viewobj+0x170 creature: flag +0x34, timer +0x134 -=dt, clear at 0"
+004f4020,004f4020,,comm_msg17_pair_send,0.9,w237,"flag 0x200, ids +0x188 pair, floats+param6, comm_chat_send_1(4,3,0,0x17)"
+004138c0,004138c0,,walkable_floor_check,0.9,w237,"floor z, slope cos<0.64278, depth +0x1e8*scale; caller ai_chase_location"
+00425850,00425850,,verm_ai_cb,0.9,w237,"verm AI callback; callers reaper_spawn_ospec_1/2, kabutoai_death_handler_c1"

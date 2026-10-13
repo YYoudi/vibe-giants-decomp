@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00451270,00451270,,move_clamp_toward,0.9,w242,signed float move by step toward lim with min/max clamp (island helper)
+004e21f0,004e21f0,,type0d7_unique_check,0.9,w242,"flag 0x2000: no other type 0xd7 same spec+0x134, state!=0x21"
+004fa780,004fa780,,slot5625_flag_set,0.9,w242,idx*0x58: set/clear bit 2 in DAT_562528
+00528780,00528780,,comm_all_players_loaded,0.9,w242,twin of all_players_ready + every player byte DAT_5de290>=0xc

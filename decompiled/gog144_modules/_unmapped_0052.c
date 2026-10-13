@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (153 named) — decompiled, names from PS2 symbols
+ * 162 functions (157 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -5203,8 +5203,8 @@ void gamespy_statechange2(void)
 
 }
 
-/* ===== FUN_00528720 @ 0x00528720 ===== */
-undefined4 FUN_00528720(void)
+/* ===== comm_all_players_ready @ 0x00528720 ===== */
+undefined4 comm_all_players_ready(void)
 
 
 
@@ -5232,8 +5232,8 @@ undefined4 FUN_00528720(void)
 
 }
 
-/* ===== FUN_00528780 @ 0x00528780 ===== */
-undefined4 FUN_00528780(void)
+/* ===== comm_all_players_loaded @ 0x00528780 ===== */
+undefined4 comm_all_players_loaded(void)
 
 
 
@@ -9413,12 +9413,12 @@ void comm_rate_second_tick(void)
 
 }
 
-/* ===== FUN_0052c5c0 @ 0x0052C5C0 ===== */
+/* ===== net_active_players_get @ 0x0052C5C0 ===== */
 /* PS2 candidate: __tfSc (conf 0.76) */
 
 
 
-undefined4 FUN_0052c5c0(void)
+undefined4 net_active_players_get(void)
 
 
 
@@ -10447,8 +10447,8 @@ void gamespy_0052db50(SOCKET *param_1)
 
 }
 
-/* ===== FUN_0052dbb0 @ 0x0052DBB0 ===== */
-void FUN_0052dbb0(undefined1 *param_1,uint param_2,byte *param_3)
+/* ===== bit6_pack_encode @ 0x0052DBB0 ===== */
+void bit6_pack_encode(undefined1 *param_1,uint param_2,byte *param_3)
 
 
 
@@ -11513,7 +11513,7 @@ void new_fire__FP6OBJECTiPfT0P3P3Df(SOCKET *param_1,sockaddr *param_2,char *para
 
     comm_packet_decode(param_1 + 0x12,~uVar4 - 1,local_248,iVar5);
 
-    FUN_0052dbb0(local_248,iVar5,local_c8);
+    bit6_pack_encode(local_248,iVar5,local_c8);
 
     crt_sprintf(local_1c8,s__validate__s_0057f27c,local_c8);
 
@@ -12132,7 +12132,7 @@ void comm_0052e6e0(char *param_1,int param_2)
 
   
 
-  iVar3 = FUN_0052c5c0();
+  iVar3 = net_active_players_get();
 
   if (iVar3 == 0) {
 
@@ -12640,7 +12640,7 @@ void comm_team_broadcast_send(undefined4 param_1,undefined1 param_2)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -12739,7 +12739,7 @@ void comm_team_broadcast_menu(int param_1)
 
      || (*(char *)(param_1 + 6) == '\0')) goto LAB_0052eee6;
 
-  iVar4 = FUN_0052c5c0();
+  iVar4 = net_active_players_get();
 
   if (iVar4 != 0) {
 
@@ -13056,7 +13056,7 @@ void comm_players_state_send(undefined4 param_1,undefined4 param_2)
 
     local_1 = 0;
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 == 0) {
 
@@ -13118,7 +13118,7 @@ void comm_players_state_send(undefined4 param_1,undefined4 param_2)
 
         if (iVar1 != 0) {
 
-          iVar1 = FUN_0052c5c0();
+          iVar1 = net_active_players_get();
 
           if (iVar1 != 0) {
 
@@ -13234,7 +13234,7 @@ void comm_entergame_msg_2(int param_1)
 
     local_cb = 0;
 
-    iVar2 = FUN_0052c5c0();
+    iVar2 = net_active_players_get();
 
     if (iVar2 == 0) {
 
@@ -14195,7 +14195,7 @@ void comm_0052b780_user_5(int param_1)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -14418,7 +14418,7 @@ LAB_0052fabe:
 
         if (iVar5 != 0) {
 
-          iVar5 = FUN_0052c5c0();
+          iVar5 = net_active_players_get();
 
           if (iVar5 != 0) {
 
@@ -14555,7 +14555,7 @@ void comm_0052b780_user_6(int param_1,int param_2)
 
     }
 
-    iVar3 = FUN_0052c5c0();
+    iVar3 = net_active_players_get();
 
     if (iVar3 != 0) {
 
@@ -14608,7 +14608,7 @@ void comm_0052b780_user_7(int param_1)
 
     uStack_3 = 0;
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 
@@ -14792,7 +14792,7 @@ void comm_dp_packet_send_a(void)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 == 0) {
 
@@ -14953,7 +14953,7 @@ void IconIsKabutoIcon__Fi(void)
 
   if (iVar1 != 0) {
 
-    iVar1 = FUN_0052c5c0();
+    iVar1 = net_active_players_get();
 
     if (iVar1 != 0) {
 

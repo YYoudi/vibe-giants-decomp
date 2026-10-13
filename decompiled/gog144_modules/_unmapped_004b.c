@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 95 functions (93 named) — decompiled, names from PS2 symbols
+ * 95 functions (94 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -370,7 +370,7 @@ void main_readwrls_004b0d80(void)
 
   _DAT_005a6c24 = 0x3f800000;
 
-  _DAT_005a6c28 = FUN_0051ad50(&LAB_004b0e00);
+  _DAT_005a6c28 = vobuf_alloc_wrap(&LAB_004b0e00);
 
   if (_DAT_005a6c28 == 0) {
 
@@ -8742,12 +8742,12 @@ void reaper_stop_looping_effects(int param_1)
 
 }
 
-/* ===== FUN_004ba990 @ 0x004BA990 ===== */
+/* ===== reaperbase_enemy_scan @ 0x004BA990 ===== */
 /* PS2 candidate: reaper_cloak_damage (conf 0.431) */
 
 
 
-void FUN_004ba990(int param_1,float param_2,undefined4 param_3)
+void reaperbase_enemy_scan(int param_1,float param_2,undefined4 param_3)
 
 
 
@@ -9101,11 +9101,11 @@ void reaperbase_ai_main_c3(int param_1)
 
   iVar4 = dialog_level_is_base();
 
-  if ((((iVar4 != 0) && (iVar4 = FUN_0052c5c0(), iVar4 == 0)) && (DAT_00632a88 == param_1)) &&
+  if ((((iVar4 != 0) && (iVar4 = net_active_players_get(), iVar4 == 0)) && (DAT_00632a88 == param_1)
 
-     ((*(int *)(param_1 + 0x210) != 0 &&
+      ) && ((*(int *)(param_1 + 0x210) != 0 &&
 
-      (iVar4 = ObjIsJetski(*(int *)(param_1 + 0x210)), iVar4 != 0)))) {
+            (iVar4 = ObjIsJetski(*(int *)(param_1 + 0x210)), iVar4 != 0)))) {
 
     fVar19 = (float10)FRateGetSecsframe(0,0);
 
@@ -9345,7 +9345,7 @@ LAB_004bb195:
 
                   iVar13 = dialog_level_is_base();
 
-                  if ((iVar13 == 0) || (iVar13 = FUN_0052c5c0(), iVar13 != 0)) {
+                  if ((iVar13 == 0) || (iVar13 = net_active_players_get(), iVar13 != 0)) {
 
                     smartie_start_special_building
 
@@ -9357,9 +9357,11 @@ LAB_004bb195:
 
                   else {
 
-                    FUN_004f4020(iVar4,*(undefined4 *)(iVar7 + 0x54),fStack_a4,param_1,pfVar8,
+                    comm_msg17_pair_send
 
-                                 *(float *)(param_1 + 200) + 180.0);
+                              (iVar4,*(undefined4 *)(iVar7 + 0x54),fStack_a4,param_1,pfVar8,
+
+                               *(float *)(param_1 + 200) + 180.0);
 
                   }
 
@@ -10185,9 +10187,11 @@ LAB_004bbb8f:
 
     if (fVar19 < (float10)0.0 == (fVar19 == (float10)0.0)) {
 
-      FUN_004ba990(param_1,*(undefined4 *)(DAT_00632ed8 + 0x8a8),
+      reaperbase_enemy_scan
 
-                   *(undefined4 *)(DAT_00632ed8 + 0x8a4));
+                (param_1,*(undefined4 *)(DAT_00632ed8 + 0x8a8),*(undefined4 *)(DAT_00632ed8 + 0x8a4)
+
+                );
 
     }
 
@@ -10513,7 +10517,7 @@ LAB_004bc27d:
 
     reaper_fx_at_bldg_b(param_1);
 
-    FUN_004c5b10(param_1);
+    reaperbase_dock_check(param_1);
 
     ai_proximity_scan(param_1);
 
@@ -10531,7 +10535,7 @@ LAB_004bc27d:
 
   drip_system_init(param_1,puStack_ac + 0x19,0);
 
-  iVar4 = FUN_0052c5c0();
+  iVar4 = net_active_players_get();
 
   if (((iVar4 != 0) && (puStack_ac[0x33f] == 0)) &&
 

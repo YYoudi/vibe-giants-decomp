@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 120 functions (111 named) — decompiled, names from PS2 symbols
+ * 120 functions (113 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -2236,8 +2236,8 @@ void ANM_DumpCluster(void)
 
 }
 
-/* ===== FUN_00404200 @ 0x00404200 ===== */
-float10 FUN_00404200(int param_1)
+/* ===== particle_state_param_get @ 0x00404200 ===== */
+float10 particle_state_param_get(int param_1)
 
 
 
@@ -8373,8 +8373,8 @@ undefined4 FUN_0040abf0(int param_1,int *param_2)
 
 }
 
-/* ===== FUN_0040ac70 @ 0x0040AC70 ===== */
-void FUN_0040ac70(int param_1,int param_2,int param_3)
+/* ===== master_flag_bit_clear @ 0x0040AC70 ===== */
+void master_flag_bit_clear(int param_1,int param_2,int param_3)
 
 
 
@@ -13547,7 +13547,7 @@ void critter_wander_ai_c65(int param_1)
 
                                        param_1 + 0xa8);
 
-    FUN_00451270((float)(fVar5 * (float10)10.0));
+    move_clamp_toward((float)(fVar5 * (float10)10.0));
 
     fVar5 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,param_1 + 0x15c);
 

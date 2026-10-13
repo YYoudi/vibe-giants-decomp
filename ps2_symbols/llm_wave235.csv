@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0045eca0,0045eca0,,reaper_spec_float_get,0.9,w235,"class 1, spec+0xc bit0: return spec+0x340 float"
+00404200,00404200,,particle_state_param_get,0.9,w235,state!=0xfe: table[state][0] float; caller make_particle
+00536c60,00536c60,,bubble_timeout_clear,0.9,w235,clear DAT_5e2738 bubble if dead or 1s timeout; caller object_list_update
