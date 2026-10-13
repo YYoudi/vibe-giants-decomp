@@ -486,8 +486,8 @@ LAB_00470793:
 
 }
 
-/* ===== cspec_00470a10 @ 0x00470A10 ===== */
-void cspec_00470a10(float param_1)
+/* ===== fx_shape_creature_ai_c67 @ 0x00470A10 ===== */
+void fx_shape_creature_ai_c67(float param_1)
 
 
 
@@ -859,8 +859,8 @@ undefined4 sound_obj_event(undefined4 *param_1)
 
 }
 
-/* ===== cspec_00470f10 @ 0x00470F10 ===== */
-void cspec_00470f10(float param_1)
+/* ===== ambient_bird_ai_c68 @ 0x00470F10 ===== */
+void ambient_bird_ai_c68(float param_1)
 
 
 

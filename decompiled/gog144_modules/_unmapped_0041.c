@@ -5554,8 +5554,8 @@ void hud_draw_rect(float param_1,float param_2,float param_3,float param_4,float
 
 }
 
-/* ===== cspec_00417530 @ 0x00417530 ===== */
-void cspec_00417530(int param_1)
+/* ===== base_bldg_siege_ai_c32 @ 0x00417530 ===== */
+void base_bldg_siege_ai_c32(int param_1)
 
 
 

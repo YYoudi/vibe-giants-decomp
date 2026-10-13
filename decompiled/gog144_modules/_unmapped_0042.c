@@ -8414,8 +8414,8 @@ void cspec_00425c00(int param_1,float param_2,int param_3)
 
 }
 
-/* ===== cspec_00425ca0 @ 0x00425CA0 ===== */
-void cspec_00425ca0(int param_1)
+/* ===== generic_walker_ai_c45 @ 0x00425CA0 ===== */
+void generic_walker_ai_c45(int param_1)
 
 
 

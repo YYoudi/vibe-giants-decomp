@@ -2197,8 +2197,8 @@ void cspec_00481bd0(undefined4 param_1)
 
 }
 
-/* ===== cspec_00481bf0 @ 0x00481BF0 ===== */
-void cspec_00481bf0(int param_1)
+/* ===== reaper_artillery_ai_c95 @ 0x00481BF0 ===== */
+void reaper_artillery_ai_c95(int param_1)
 
 
 

@@ -203,8 +203,8 @@ void cspec_004505d0(int param_1)
 
 }
 
-/* ===== cspec_00450620 @ 0x00450620 ===== */
-void cspec_00450620(undefined4 param_1,float param_2,int param_3,int param_4,int param_5)
+/* ===== kabuto_respawner_c60 @ 0x00450620 ===== */
+void kabuto_respawner_c60(undefined4 param_1,float param_2,int param_3,int param_4,int param_5)
 
 
 
@@ -334,8 +334,8 @@ void cspec_00450620(undefined4 param_1,float param_2,int param_3,int param_4,int
 
 }
 
-/* ===== cspec_004508a0 @ 0x004508A0 ===== */
-void cspec_004508a0(int param_1)
+/* ===== fx_relay_object_c5 @ 0x004508A0 ===== */
+void fx_relay_object_c5(int param_1)
 
 
 
@@ -797,8 +797,8 @@ void gameover_menu(void)
 
 }
 
-/* ===== cspec_00450fa0 @ 0x00450FA0 ===== */
-void cspec_00450fa0(int param_1)
+/* ===== meccbase_pickup_ai_c52 @ 0x00450FA0 ===== */
+void meccbase_pickup_ai_c52(int param_1)
 
 
 
@@ -6251,12 +6251,12 @@ void herdgen_get_next_marker(int param_1,int *param_2)
 
 }
 
-/* ===== cspec_00456180 @ 0x00456180 ===== */
+/* ===== herd_spawner_ai_c17 @ 0x00456180 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_00456180(int param_1)
+void herd_spawner_ai_c17(int param_1)
 
 
 

@@ -1,0 +1,22 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004f7d20,cspec_004f7d20,,smartie_spawner_ai_c38,0.9,cspec-w221,anim_select_user+allocate+p3d set + reaper helpers
+0040c710,cspec_0040c710,,smartieboy_ai_c105,0.9,cspec-w221,voice_quota+obj_face_target+spawn (Timmy mission target)
+00481bf0,cspec_00481bf0,,reaper_artillery_ai_c95,0.9,cspec-w221,damage+scale+apply_location from refptdir
+004c6b20,cspec_004c6b20,,reaperbase_firecircle_ai_c88,0.9,cspec-w221,fxn_firering+reaper helpers+base gate
+00490290,cspec_00490290,,explosive_trap_ai_c43,0.9,cspec-w221,make_explosion_large+los+collide_bbox
+00508fc0,cspec_00508fc0,,reaper_grunt_ai_c8,0.9,cspec-w221,ANM binder+damage+interrupt_sequence
+00456180,cspec_00456180,,herd_spawner_ai_c17,0.9,cspec-w221,herd_create_one+MemAllocMsg+fx_create
+00470a10,cspec_00470a10,,fx_shape_creature_ai_c67,0.9,cspec-w221,fx_shape_gen+chase_angle+object_spawn_small
+00405980,cspec_00405980,,army_opcodes_object_c106,0.9,cspec-w221,army_process_opcodes+binder+stream_player
+004c7020,cspec_004c7020,,bldg_power_drain_ai_c40,0.9,cspec-w221,bldg/meccbase/reaperbase energy getters+damage
+004ec440,cspec_004ec440,,seamonster_swimmer_c29,0.9,cspec-w221,main_seamonst+ai_goal+alpha_fade+gravity
+00469be0,cspec_00469be0,,kabuto_death_shots_c15,0.9,cspec-w221,death sounds trio field4
+00417530,cspec_00417530,,base_bldg_siege_ai_c32,0.9,cspec-w221,base bldg predicates+reaper helpers (32/82 shared)
+00450fa0,cspec_00450fa0,,meccbase_pickup_ai_c52,0.9,cspec-w221,ObjIsMecc+anim_select_check2+dist
+004e9aa0,cspec_004e9aa0,,ripper_death_voices_c98,0.9,cspec-w221,ObjIsRipper+ai_d7_pairing+voice_event
+004c2430,cspec_004c2430,,reaper_mecc_combat_c3,0.9,cspec-w221,gun_find+mecc_shot+hurt_pusher+jetski/turret checks
+00470f10,cspec_00470f10,,ambient_bird_ai_c68,0.9,cspec-w221,sine_cos+rand+add_location (flyover)
+0040beb0,cspec_0040beb0,,missing_smartie_ai_c20,0.9,cspec-w221,dirfcalc+playerobj_turn+sign (seek player)
+004508a0,cspec_004508a0,,fx_relay_object_c5,0.9,cspec-w221,fx_processOpCodes+distsq+fx alloc
+00450620,cspec_00450620,,kabuto_respawner_c60,0.9,cspec-w221,ObjIsKabuto+allocate+set_location (60/101 shared)
+00425ca0,cspec_00425ca0,,generic_walker_ai_c45,0.9,cspec-w221,ai_move_ground_common+dispatch_gate

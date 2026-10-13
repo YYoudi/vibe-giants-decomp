@@ -260,9 +260,9 @@
   "len": 2668
  },
  "0x00405980": {
-  "name": "cspec_00405980",
+  "name": "army_opcodes_object_c106",
   "named": true,
-  "len": 4041
+  "len": 4051
  },
  "0x00406BC0": {
   "name": "army_create_rpman__FP6OBJECTP9ArmyOrderifi",
@@ -510,9 +510,9 @@
   "len": 734
  },
  "0x0040BEB0": {
-  "name": "cspec_0040beb0",
+  "name": "missing_smartie_ai_c20",
   "named": true,
-  "len": 2900
+  "len": 2908
  },
  "0x0040C220": {
   "name": "cspec_0040c220",
@@ -535,9 +535,9 @@
   "len": 1654
  },
  "0x0040C710": {
-  "name": "cspec_0040c710",
+  "name": "smartieboy_ai_c105",
   "named": true,
-  "len": 5765
+  "len": 5769
  },
  "0x0040CDF0": {
   "name": "cspec_0040cdf0",
@@ -940,9 +940,9 @@
   "len": 1721
  },
  "0x00417530": {
-  "name": "cspec_00417530",
+  "name": "base_bldg_siege_ai_c32",
   "named": true,
-  "len": 3285
+  "len": 3293
  },
  "0x004177A0": {
   "name": "FUN_004177a0",
@@ -1415,9 +1415,9 @@
   "len": 959
  },
  "0x00425CA0": {
-  "name": "cspec_00425ca0",
+  "name": "generic_walker_ai_c45",
   "named": true,
-  "len": 2586
+  "len": 2593
  },
  "0x00425E90": {
   "name": "AudioGetMasterVolume__Fv_2",
@@ -3010,14 +3010,14 @@
   "len": 274
  },
  "0x00450620": {
-  "name": "cspec_00450620",
+  "name": "kabuto_respawner_c60",
   "named": true,
-  "len": 2667
+  "len": 2673
  },
  "0x004508A0": {
-  "name": "cspec_004508a0",
+  "name": "fx_relay_object_c5",
   "named": true,
-  "len": 2774
+  "len": 2778
  },
  "0x00450AA0": {
   "name": "render_stats_reset",
@@ -3070,9 +3070,9 @@
   "len": 549
  },
  "0x00450FA0": {
-  "name": "cspec_00450fa0",
+  "name": "meccbase_pickup_ai_c52",
   "named": true,
-  "len": 3078
+  "len": 3086
  },
  "0x004511D0": {
   "name": "calc_tri_weighted_plane",
@@ -3370,9 +3370,9 @@
   "len": 763
  },
  "0x00456180": {
-  "name": "cspec_00456180",
+  "name": "herd_spawner_ai_c17",
   "named": true,
-  "len": 5182
+  "len": 5187
  },
  "0x00456470": {
   "name": "herd_create_one",
@@ -3955,9 +3955,9 @@
   "len": 1997
  },
  "0x00469BE0": {
-  "name": "cspec_00469be0",
+  "name": "kabuto_death_shots_c15",
   "named": true,
-  "len": 3346
+  "len": 3354
  },
  "0x00469F00": {
   "name": "cspec_00469f00",
@@ -4305,9 +4305,9 @@
   "len": 4391
  },
  "0x00470A10": {
-  "name": "cspec_00470a10",
+  "name": "fx_shape_creature_ai_c67",
   "named": true,
-  "len": 4691
+  "len": 4701
  },
  "0x00470DD0": {
   "name": "cspec_00470dd0",
@@ -4320,9 +4320,9 @@
   "len": 1161
  },
  "0x00470F10": {
-  "name": "cspec_00470f10",
+  "name": "ambient_bird_ai_c68",
   "named": true,
-  "len": 2901
+  "len": 2906
  },
  "0x00471130": {
   "name": "water_draw_dump",
@@ -4800,9 +4800,9 @@
   "len": 132
  },
  "0x00481BF0": {
-  "name": "cspec_00481bf0",
+  "name": "reaper_artillery_ai_c95",
   "named": true,
-  "len": 5647
+  "len": 5656
  },
  "0x004820F0": {
   "name": "cspec_004820f0",
@@ -5120,9 +5120,9 @@
   "len": 61
  },
  "0x00490290": {
-  "name": "cspec_00490290",
+  "name": "explosive_trap_ai_c43",
   "named": true,
-  "len": 5316
+  "len": 5323
  },
  "0x00490680": {
   "name": "cspec_00490680",
@@ -7360,9 +7360,9 @@
   "len": 316
  },
  "0x004C2430": {
-  "name": "cspec_004c2430",
+  "name": "reaper_mecc_combat_c3",
   "named": true,
-  "len": 2953
+  "len": 2973
  },
  "0x004C26D0": {
   "name": "reaper_init_trails",
@@ -7530,9 +7530,9 @@
   "len": 1390
  },
  "0x004C6B20": {
-  "name": "cspec_004c6b20",
+  "name": "reaperbase_firecircle_ai_c88",
   "named": true,
-  "len": 5500
+  "len": 5514
  },
  "0x004C6F30": {
   "name": "cspec_004c6f30",
@@ -7545,9 +7545,9 @@
   "len": 919
  },
  "0x004C7020": {
-  "name": "cspec_004c7020",
+  "name": "bldg_power_drain_ai_c40",
   "named": true,
-  "len": 4003
+  "len": 4012
  },
  "0x004C73A0": {
   "name": "cspec_004c73a0",
@@ -8280,9 +8280,9 @@
   "len": 8085
  },
  "0x004E9AA0": {
-  "name": "cspec_004e9aa0",
+  "name": "ripper_death_voices_c98",
   "named": true,
-  "len": 2990
+  "len": 2999
  },
  "0x004E9CE0": {
   "name": "FUN_004e9ce0",
@@ -8375,9 +8375,9 @@
   "len": 1818
  },
  "0x004EC440": {
-  "name": "cspec_004ec440",
+  "name": "seamonster_swimmer_c29",
   "named": true,
-  "len": 3966
+  "len": 3974
  },
  "0x004EC7A0": {
   "name": "cspec_004ec7a0",
@@ -8680,9 +8680,9 @@
   "len": 2460
  },
  "0x004F7D20": {
-  "name": "cspec_004f7d20",
+  "name": "smartie_spawner_ai_c38",
   "named": true,
-  "len": 5944
+  "len": 5952
  },
  "0x004F8130": {
   "name": "cspec_004f8130",
@@ -9180,9 +9180,9 @@
   "len": 255
  },
  "0x00508FC0": {
-  "name": "cspec_00508fc0",
+  "name": "reaper_grunt_ai_c8",
   "named": true,
-  "len": 5197
+  "len": 5201
  },
  "0x005093E0": {
   "name": "ripper_control__FP6OBJECT",

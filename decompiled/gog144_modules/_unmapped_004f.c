@@ -5303,8 +5303,8 @@ void smartie_get_name__FP6OBJECT(int param_1)
 
 }
 
-/* ===== cspec_004f7d20 @ 0x004F7D20 ===== */
-void cspec_004f7d20(int param_1)
+/* ===== smartie_spawner_ai_c38 @ 0x004F7D20 ===== */
+void smartie_spawner_ai_c38(int param_1)
 
 
 

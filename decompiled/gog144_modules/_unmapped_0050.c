@@ -9476,8 +9476,8 @@ undefined4 objspec_get_movetype(int param_1)
 
 }
 
-/* ===== cspec_00508fc0 @ 0x00508FC0 ===== */
-void cspec_00508fc0(int param_1)
+/* ===== reaper_grunt_ai_c8 @ 0x00508FC0 ===== */
+void reaper_grunt_ai_c8(int param_1)
 
 
 

@@ -3204,8 +3204,8 @@ LAB_00404e2f:
 
 }
 
-/* ===== cspec_00405980 @ 0x00405980 ===== */
-void cspec_00405980(int param_1)
+/* ===== army_opcodes_object_c106 @ 0x00405980 ===== */
+void army_opcodes_object_c106(int param_1)
 
 
 
@@ -9876,8 +9876,8 @@ void wound_list_cleanup(void)
 
 }
 
-/* ===== cspec_0040beb0 @ 0x0040BEB0 ===== */
-void cspec_0040beb0(int param_1)
+/* ===== missing_smartie_ai_c20 @ 0x0040BEB0 ===== */
+void missing_smartie_ai_c20(int param_1)
 
 
 
@@ -10427,12 +10427,12 @@ undefined4 obj_face_target(int param_1,int param_2,float *param_3)
 
 }
 
-/* ===== cspec_0040c710 @ 0x0040C710 ===== */
+/* ===== smartieboy_ai_c105 @ 0x0040C710 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_0040c710(int param_1)
+void smartieboy_ai_c105(int param_1)
 
 
 

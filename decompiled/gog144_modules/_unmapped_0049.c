@@ -137,8 +137,8 @@ undefined4 cspec_00490280(void)
 
 }
 
-/* ===== cspec_00490290 @ 0x00490290 ===== */
-void cspec_00490290(int param_1)
+/* ===== explosive_trap_ai_c43 @ 0x00490290 ===== */
+void explosive_trap_ai_c43(int param_1)
 
 
 

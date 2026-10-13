@@ -2388,14 +2388,16 @@ void reaper_mana_decrement(int param_1)
 
 }
 
-/* ===== cspec_004c2430 @ 0x004C2430 ===== */
+/* ===== reaper_mecc_combat_c3 @ 0x004C2430 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void cspec_004c2430(int param_1,float param_2,int param_3,int param_4,undefined4 param_5,
+void reaper_mecc_combat_c3
 
-                   undefined4 param_6)
+               (int param_1,float param_2,int param_3,int param_4,undefined4 param_5,
+
+               undefined4 param_6)
 
 
 
@@ -8134,8 +8136,8 @@ void fxn_firering(int param_1)
 
 }
 
-/* ===== cspec_004c6b20 @ 0x004C6B20 ===== */
-void cspec_004c6b20(int param_1)
+/* ===== reaperbase_firecircle_ai_c88 @ 0x004C6B20 ===== */
+void reaperbase_firecircle_ai_c88(int param_1)
 
 
 
@@ -8519,8 +8521,8 @@ void FUN_004c6f40(int param_1)
 
 }
 
-/* ===== cspec_004c7020 @ 0x004C7020 ===== */
-void cspec_004c7020(int param_1)
+/* ===== bldg_power_drain_ai_c40 @ 0x004C7020 ===== */
+void bldg_power_drain_ai_c40(int param_1)
 
 
 

@@ -4977,8 +4977,8 @@ LAB_00469b54:
 
 }
 
-/* ===== cspec_00469be0 @ 0x00469BE0 ===== */
-void cspec_00469be0(int param_1,float param_2,int param_3)
+/* ===== kabuto_death_shots_c15 @ 0x00469BE0 ===== */
+void kabuto_death_shots_c15(int param_1,float param_2,int param_3)
 
 
 

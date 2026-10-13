@@ -9063,8 +9063,8 @@ code_r0x004e9829:
 
 }
 
-/* ===== cspec_004e9aa0 @ 0x004E9AA0 ===== */
-void cspec_004e9aa0(undefined4 param_1,float param_2,int param_3,int param_4)
+/* ===== ripper_death_voices_c98 @ 0x004E9AA0 ===== */
+void ripper_death_voices_c98(undefined4 param_1,float param_2,int param_3,int param_4)
 
 
 
@@ -12058,8 +12058,8 @@ int FUN_004ec1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== cspec_004ec440 @ 0x004EC440 ===== */
-void cspec_004ec440(int param_1)
+/* ===== seamonster_swimmer_c29 @ 0x004EC440 ===== */
+void seamonster_swimmer_c29(int param_1)
 
 
 
