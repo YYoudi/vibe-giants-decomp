@@ -3744,8 +3744,8 @@ switchD_004d4b2b_default:
 
 }
 
-/* ===== cspec_004d4c80 @ 0x004D4C80 ===== */
-void cspec_004d4c80(int param_1)
+/* ===== anim_tick_c47 @ 0x004D4C80 ===== */
+void anim_tick_c47(int param_1)
 
 
 
@@ -3951,8 +3951,8 @@ void obj_state_machine_update(int param_1)
 
 }
 
-/* ===== cspec_004d4ea0 @ 0x004D4EA0 ===== */
-void cspec_004d4ea0(int param_1)
+/* ===== anim_tick_c48 @ 0x004D4EA0 ===== */
+void anim_tick_c48(int param_1)
 
 
 

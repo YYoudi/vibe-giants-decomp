@@ -2953,8 +2953,8 @@ undefined4 cspec_004b6530(void)
 
 }
 
-/* ===== cspec_004b6540 @ 0x004B6540 ===== */
-void cspec_004b6540(int param_1)
+/* ===== base_pair_ptr_clear_c82 @ 0x004B6540 ===== */
+void base_pair_ptr_clear_c82(int param_1)
 
 
 

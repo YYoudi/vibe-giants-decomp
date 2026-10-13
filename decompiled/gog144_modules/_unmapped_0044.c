@@ -1346,8 +1346,8 @@ void make_explosion_large(undefined4 param_1)
 
 }
 
-/* ===== cspec_00441c00 @ 0x00441C00 ===== */
-void cspec_00441c00(int param_1)
+/* ===== destroy_only_c16 @ 0x00441C00 ===== */
+void destroy_only_c16(int param_1)
 
 
 
@@ -2528,8 +2528,8 @@ void obj_scale_pulse(float param_1,undefined4 param_2)
 
 }
 
-/* ===== cspec_00442c30 @ 0x00442C30 ===== */
-void cspec_00442c30(int param_1)
+/* ===== anim_tick_c36 @ 0x00442C30 ===== */
+void anim_tick_c36(int param_1)
 
 
 

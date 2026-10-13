@@ -515,9 +515,9 @@
   "len": 2908
  },
  "0x0040C220": {
-  "name": "cspec_0040c220",
+  "name": "smartie_anim_tick_c20",
   "named": true,
-  "len": 777
+  "len": 784
  },
  "0x0040C2D0": {
   "name": "buoy_set_lights",
@@ -2565,9 +2565,9 @@
   "len": 2402
  },
  "0x00441C00": {
-  "name": "cspec_00441c00",
+  "name": "destroy_only_c16",
   "named": true,
-  "len": 478
+  "len": 480
  },
  "0x00441C50": {
   "name": "destroy_only_stub_c55",
@@ -2615,9 +2615,9 @@
   "len": 1035
  },
  "0x00442C30": {
-  "name": "cspec_00442c30",
+  "name": "anim_tick_c36",
   "named": true,
-  "len": 608
+  "len": 607
  },
  "0x00442CB0": {
   "name": "death_handler_c36",
@@ -3985,9 +3985,9 @@
   "len": 58
  },
  "0x0046A380": {
-  "name": "cspec_0046a380",
+  "name": "reaperbase_3dpos_c28",
   "named": true,
-  "len": 607
+  "len": 613
  },
  "0x0046A400": {
   "name": "cspec_0046a400",
@@ -4125,9 +4125,9 @@
   "len": 1678
  },
  "0x0046E070": {
-  "name": "cspec_0046e070",
+  "name": "reaperbase_fx_death_c76",
   "named": true,
-  "len": 803
+  "len": 812
  },
  "0x0046E120": {
   "name": "reaper_ospec_ptr48_set",
@@ -4310,9 +4310,9 @@
   "len": 4701
  },
  "0x00470DD0": {
-  "name": "cspec_00470dd0",
+  "name": "fx_death_pop_c67",
   "named": true,
-  "len": 788
+  "len": 790
  },
  "0x00470E40": {
   "name": "sound_obj_event",
@@ -4475,9 +4475,9 @@
   "len": 3307
  },
  "0x004772D0": {
-  "name": "cspec_004772d0",
+  "name": "map_cleanup_free_c96",
   "named": true,
-  "len": 528
+  "len": 534
  },
  "0x00477340": {
   "name": "marker_spline_adjust_buoy",
@@ -5505,14 +5505,14 @@
   "len": 2341
  },
  "0x00496A20": {
-  "name": "cspec_00496a20",
+  "name": "anim_tick_c11",
   "named": true,
-  "len": 592
+  "len": 591
  },
  "0x00496A90": {
-  "name": "cspec_00496a90",
+  "name": "anim_tick_c19",
   "named": true,
-  "len": 513
+  "len": 512
  },
  "0x00496B10": {
   "name": "object_get_num_objects",
@@ -6390,9 +6390,9 @@
   "len": 974
  },
  "0x004A66A0": {
-  "name": "cspec_004a66a0",
+  "name": "location_drift_object_c26",
   "named": true,
-  "len": 795
+  "len": 806
  },
  "0x004A6730": {
   "name": "obj_turn_update",
@@ -6465,9 +6465,9 @@
   "len": 1470
  },
  "0x004A7990": {
-  "name": "cspec_004a7990",
+  "name": "orbit_drift_c69",
   "named": true,
-  "len": 646
+  "len": 647
  },
  "0x004A7A20": {
   "name": "cspec_004a7a20",
@@ -6685,9 +6685,9 @@
   "len": 277
  },
  "0x004AABE0": {
-  "name": "cspec_004aabe0",
+  "name": "mesh_free_c77",
   "named": true,
-  "len": 576
+  "len": 575
  },
  "0x004AAC50": {
   "name": "cspec_004aac50",
@@ -6915,9 +6915,9 @@
   "len": 61
  },
  "0x004B6540": {
-  "name": "cspec_004b6540",
+  "name": "base_pair_ptr_clear_c82",
   "named": true,
-  "len": 560
+  "len": 569
  },
  "0x004B65A0": {
   "name": "base_slot_state_check",
@@ -7485,19 +7485,19 @@
   "len": 1108
  },
  "0x004C61C0": {
-  "name": "cspec_004c61c0",
+  "name": "fx_death_c85",
   "named": true,
-  "len": 556
+  "len": 554
  },
  "0x004C6210": {
-  "name": "cspec_004c6210",
+  "name": "destroy_only_c85",
   "named": true,
-  "len": 466
+  "len": 468
  },
  "0x004C6260": {
-  "name": "cspec_004c6260",
+  "name": "animloop_tick_c86",
   "named": true,
-  "len": 437
+  "len": 440
  },
  "0x004C62C0": {
   "name": "firewall_create_fire__FP6OBJECTT0Uifffi",
@@ -7515,9 +7515,9 @@
   "len": 2483
  },
  "0x004C6840": {
-  "name": "cspec_004c6840",
+  "name": "reaperbase_kabuto_watch_c87",
   "named": true,
-  "len": 651
+  "len": 664
  },
  "0x004C68D0": {
   "name": "reaperbase_death_handler_c88",
@@ -7815,9 +7815,9 @@
   "len": 2095
  },
  "0x004D4C80": {
-  "name": "cspec_004d4c80",
+  "name": "anim_tick_c47",
   "named": true,
-  "len": 501
+  "len": 500
  },
  "0x004D4CF0": {
   "name": "death_handler_c47",
@@ -7830,9 +7830,9 @@
   "len": 1203
  },
  "0x004D4EA0": {
-  "name": "cspec_004d4ea0",
+  "name": "anim_tick_c48",
   "named": true,
-  "len": 474
+  "len": 473
  },
  "0x004D4F00": {
   "name": "smoke_puff_spawner_c49",
@@ -8245,9 +8245,9 @@
   "len": 62
  },
  "0x004E75E0": {
-  "name": "cspec_004e75e0",
+  "name": "rpman_ptr_clear_c51",
   "named": true,
-  "len": 677
+  "len": 682
  },
  "0x004E7680": {
   "name": "cspec_004e7680",
@@ -8690,9 +8690,9 @@
   "len": 1349
  },
  "0x004F8250": {
-  "name": "cspec_004f8250",
+  "name": "smartie_ptr_clear_c38",
   "named": true,
-  "len": 687
+  "len": 694
  },
  "0x004F82C0": {
   "name": "cspec_004f82c0",
@@ -9670,9 +9670,9 @@
   "len": 1755
  },
  "0x00515CE0": {
-  "name": "cspec_00515ce0",
+  "name": "orbit_turn_ai_c41",
   "named": true,
-  "len": 808
+  "len": 811
  },
  "0x00515D90": {
   "name": "render_get_fov",

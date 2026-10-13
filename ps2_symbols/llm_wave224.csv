@@ -1,0 +1,23 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00515ce0,cspec_00515ce0,,orbit_turn_ai_c41,0.9,cspec-w224,obj_turn+copy+rand
+0046e070,cspec_0046e070,,reaperbase_fx_death_c76,0.9,cspec-w224,fx+reaper helpers field16
+004a66a0,cspec_004a66a0,,location_drift_object_c26,0.9,cspec-w224,add_location only
+00470dd0,cspec_00470dd0,,fx_death_pop_c67,0.9,cspec-w224,fx+destroy+3dpos field4
+0040c220,cspec_0040c220,,smartie_anim_tick_c20,0.9,cspec-w224,anim_select pair field3
+004f8250,cspec_004f8250,,smartie_ptr_clear_c38,0.9,cspec-w224,obj_ptr_clear field11
+004e75e0,cspec_004e75e0,,rpman_ptr_clear_c51,0.9,cspec-w224,obj_ptr_clear field11
+004c6840,cspec_004c6840,,reaperbase_kabuto_watch_c87,0.9,cspec-w224,ObjIsKabuto+interrupt seq field9
+004a7990,cspec_004a7990,,orbit_drift_c69,0.9,cspec-w224,sine_cos+add_location
+00442c30,cspec_00442c30,,anim_tick_c36,0.9,cspec-w224,anim_select_check2 field3
+0046a380,cspec_0046a380,,reaperbase_3dpos_c28,0.9,cspec-w224,sound 3dpos field4
+00496a20,cspec_00496a20,,anim_tick_c11,0.9,cspec-w224,anim_select pair field3
+004aabe0,cspec_004aabe0,,mesh_free_c77,0.9,cspec-w224,mem_free field10
+004b6540,cspec_004b6540,,base_pair_ptr_clear_c82,0.9,cspec-w224,obj_ptr_clear field11
+004c61c0,cspec_004c61c0,,fx_death_c85,0.9,cspec-w224,fx+destroy field4
+004772d0,cspec_004772d0,,map_cleanup_free_c96,0.9,cspec-w224,map_alloc_cleanup+free field10
+00496a90,cspec_00496a90,,anim_tick_c19,0.9,cspec-w224,anim_select_check2 field3
+004d4c80,cspec_004d4c80,,anim_tick_c47,0.9,cspec-w224,anim_select pair field3
+00441c00,cspec_00441c00,,destroy_only_c16,0.9,cspec-w224,destroy only
+004d4ea0,cspec_004d4ea0,,anim_tick_c48,0.9,cspec-w224,anim_select pair field3
+004c6210,cspec_004c6210,,destroy_only_c85,0.9,cspec-w224,destroy only
+004c6260,cspec_004c6260,,animloop_tick_c86,0.9,cspec-w224,animloop field9

@@ -6652,8 +6652,8 @@ void ospec_change_init_c27(int param_1)
 
 }
 
-/* ===== cspec_004a66a0 @ 0x004A66A0 ===== */
-void cspec_004a66a0(int param_1)
+/* ===== location_drift_object_c26 @ 0x004A66A0 ===== */
+void location_drift_object_c26(int param_1)
 
 
 
@@ -7965,8 +7965,8 @@ void orbit_drift_object_c50(int param_1)
 
 }
 
-/* ===== cspec_004a7990 @ 0x004A7990 ===== */
-void cspec_004a7990(int param_1)
+/* ===== orbit_drift_c69 @ 0x004A7990 ===== */
+void orbit_drift_c69(int param_1)
 
 
 
@@ -11276,8 +11276,8 @@ void cspec_004aaba0(int param_1)
 
 }
 
-/* ===== cspec_004aabe0 @ 0x004AABE0 ===== */
-void cspec_004aabe0(int param_1)
+/* ===== mesh_free_c77 @ 0x004AABE0 ===== */
+void mesh_free_c77(int param_1)
 
 
 

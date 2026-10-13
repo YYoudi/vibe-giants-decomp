@@ -5693,8 +5693,8 @@ void smartie_spawn_anim_c38(int param_1,int param_2,undefined4 param_3,undefined
 
 }
 
-/* ===== cspec_004f8250 @ 0x004F8250 ===== */
-void cspec_004f8250(int param_1)
+/* ===== smartie_ptr_clear_c38 @ 0x004F8250 ===== */
+void smartie_ptr_clear_c38(int param_1)
 
 
 

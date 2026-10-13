@@ -8206,8 +8206,8 @@ void ripper_anim_init_c7(int param_1)
 
 }
 
-/* ===== cspec_00496a20 @ 0x00496A20 ===== */
-void cspec_00496a20(int param_1)
+/* ===== anim_tick_c11 @ 0x00496A20 ===== */
+void anim_tick_c11(int param_1)
 
 
 
@@ -8253,8 +8253,8 @@ void cspec_00496a20(int param_1)
 
 }
 
-/* ===== cspec_00496a90 @ 0x00496A90 ===== */
-void cspec_00496a90(int param_1)
+/* ===== anim_tick_c19 @ 0x00496A90 ===== */
+void anim_tick_c19(int param_1)
 
 
 

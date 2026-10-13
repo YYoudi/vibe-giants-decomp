@@ -6748,8 +6748,8 @@ undefined4 cspec_004e75d0(void)
 
 }
 
-/* ===== cspec_004e75e0 @ 0x004E75E0 ===== */
-void cspec_004e75e0(int param_1)
+/* ===== rpman_ptr_clear_c51 @ 0x004E75E0 ===== */
+void rpman_ptr_clear_c51(int param_1)
 
 
 

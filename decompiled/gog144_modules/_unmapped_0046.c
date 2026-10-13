@@ -5443,8 +5443,8 @@ undefined4 cspec_0046a370(void)
 
 }
 
-/* ===== cspec_0046a380 @ 0x0046A380 ===== */
-void cspec_0046a380(int param_1,undefined4 param_2,int param_3)
+/* ===== reaperbase_3dpos_c28 @ 0x0046A380 ===== */
+void reaperbase_3dpos_c28(int param_1,undefined4 param_2,int param_3)
 
 
 
@@ -9655,8 +9655,8 @@ undefined4 reaperbase_free_handler_c75(int param_1,int param_2)
 
 }
 
-/* ===== cspec_0046e070 @ 0x0046E070 ===== */
-int cspec_0046e070(int param_1,int param_2)
+/* ===== reaperbase_fx_death_c76 @ 0x0046E070 ===== */
+int reaperbase_fx_death_c76(int param_1,int param_2)
 
 
 

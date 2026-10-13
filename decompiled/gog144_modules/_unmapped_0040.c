@@ -10079,8 +10079,8 @@ LAB_0040c1ed:
 
 }
 
-/* ===== cspec_0040c220 @ 0x0040C220 ===== */
-void cspec_0040c220(int param_1)
+/* ===== smartie_anim_tick_c20 @ 0x0040C220 ===== */
+void smartie_anim_tick_c20(int param_1)
 
 
 

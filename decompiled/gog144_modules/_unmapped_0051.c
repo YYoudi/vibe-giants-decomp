@@ -6060,8 +6060,8 @@ void object_spawn_class3(undefined4 param_1)
 
 }
 
-/* ===== cspec_00515ce0 @ 0x00515CE0 ===== */
-void cspec_00515ce0(int param_1)
+/* ===== orbit_turn_ai_c41 @ 0x00515CE0 ===== */
+void orbit_turn_ai_c41(int param_1)
 
 
 

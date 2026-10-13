@@ -7327,8 +7327,8 @@ void reaper_ptr_clear_c3(int param_1)
 
 }
 
-/* ===== cspec_004c61c0 @ 0x004C61C0 ===== */
-void cspec_004c61c0(undefined4 param_1,undefined4 param_2,int param_3)
+/* ===== fx_death_c85 @ 0x004C61C0 ===== */
+void fx_death_c85(undefined4 param_1,undefined4 param_2,int param_3)
 
 
 
@@ -7370,8 +7370,8 @@ void cspec_004c61c0(undefined4 param_1,undefined4 param_2,int param_3)
 
 }
 
-/* ===== cspec_004c6210 @ 0x004C6210 ===== */
-void cspec_004c6210(int param_1)
+/* ===== destroy_only_c85 @ 0x004C6210 ===== */
+void destroy_only_c85(int param_1)
 
 
 
@@ -7405,8 +7405,8 @@ void cspec_004c6210(int param_1)
 
 }
 
-/* ===== cspec_004c6260 @ 0x004C6260 ===== */
-void cspec_004c6260(undefined4 param_1,int param_2,undefined4 param_3,undefined4 *param_4)
+/* ===== animloop_tick_c86 @ 0x004C6260 ===== */
+void animloop_tick_c86(undefined4 param_1,int param_2,undefined4 param_3,undefined4 *param_4)
 
 
 
@@ -7871,8 +7871,8 @@ void reaperbase_attacker_ai_c87(int param_1)
 
 }
 
-/* ===== cspec_004c6840 @ 0x004C6840 ===== */
-void cspec_004c6840(int param_1,int param_2)
+/* ===== reaperbase_kabuto_watch_c87 @ 0x004C6840 ===== */
+void reaperbase_kabuto_watch_c87(int param_1,int param_2)
 
 
 

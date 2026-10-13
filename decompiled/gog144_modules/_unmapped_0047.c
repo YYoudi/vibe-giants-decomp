@@ -729,8 +729,8 @@ void fx_shape_creature_ai_c67(float param_1)
 
 }
 
-/* ===== cspec_00470dd0 @ 0x00470DD0 ===== */
-void cspec_00470dd0(undefined4 param_1,float param_2,int param_3)
+/* ===== fx_death_pop_c67 @ 0x00470DD0 ===== */
+void fx_death_pop_c67(undefined4 param_1,float param_2,int param_3)
 
 
 
@@ -3732,8 +3732,8 @@ void showchat_mission_objective__Fi_2(int p0)
 
 }
 
-/* ===== cspec_004772d0 @ 0x004772D0 ===== */
-void cspec_004772d0(int param_1)
+/* ===== map_cleanup_free_c96 @ 0x004772D0 ===== */
+void map_cleanup_free_c96(int param_1)
 
 
 
