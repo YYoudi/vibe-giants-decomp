@@ -1,0 +1,3 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00513b60,FUN_00513b60,,hud_parse_format_codes_3,0.9,llm-w161,third twin format parse
+00516c70,FUN_00516c70,,clipcode_z_calc,0.9,llm-w161,near/far 0057c0c0-c4 clip code at +0x34

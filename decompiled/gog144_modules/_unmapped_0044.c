@@ -6417,7 +6417,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   *(float *)(param_1 + 0xb8) = param_3 - param_5;
 
-  FUN_00516c70(param_1);
+  clipcode_z_calc(param_1);
 
   if (*(char *)(param_1 + 0x34) == '\0') {
 
@@ -6427,7 +6427,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   iVar1 = param_1 + 0x38;
 
-  FUN_00516c70(iVar1);
+  clipcode_z_calc(iVar1);
 
   if (*(char *)(param_1 + 0x6c) == '\0') {
 
@@ -6437,7 +6437,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   iVar2 = param_1 + 0x70;
 
-  FUN_00516c70(iVar2);
+  clipcode_z_calc(iVar2);
 
   if (*(char *)(param_1 + 0xa4) == '\0') {
 
@@ -6447,7 +6447,7 @@ void flick_actor_set_rect(int param_1,float param_2,float param_3,float param_4,
 
   iVar3 = param_1 + 0xa8;
 
-  FUN_00516c70(iVar3);
+  clipcode_z_calc(iVar3);
 
   if (*(char *)(param_1 + 0xdc) == '\0') {
 

@@ -3746,7 +3746,7 @@ undefined4 obj_animate_pose_update(int param_1,int param_2)
 
     iVar10 = local_48;
 
-    iVar9 = FUN_00513b60(param_2,iVar8,local_48);
+    iVar9 = hud_parse_format_codes_3(param_2,iVar8,local_48);
 
     if (iVar9 == 0) {
 
@@ -4746,7 +4746,7 @@ void collide_camera_check_walls(float *param_1,float *param_2)
 
         do {
 
-          iVar6 = FUN_00513b60(iVar7,iVar5,local_98);
+          iVar6 = hud_parse_format_codes_3(iVar7,iVar5,local_98);
 
           if (iVar6 == 0) {
 

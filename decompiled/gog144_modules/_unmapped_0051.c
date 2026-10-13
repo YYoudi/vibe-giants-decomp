@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (137 named) — decompiled, names from PS2 symbols
+ * 186 functions (139 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2436,8 +2436,8 @@ undefined4 FUN_00513ac0(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00513b60 @ 0x00513B60 ===== */
-undefined4 FUN_00513b60(int param_1,int param_2,int param_3)
+/* ===== hud_parse_format_codes_3 @ 0x00513B60 ===== */
+undefined4 hud_parse_format_codes_3(int param_1,int param_2,int param_3)
 
 
 
@@ -5921,8 +5921,8 @@ void xform_view(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_00516c70 @ 0x00516C70 ===== */
-void FUN_00516c70(int param_1)
+/* ===== clipcode_z_calc @ 0x00516C70 ===== */
+void clipcode_z_calc(int param_1)
 
 
 

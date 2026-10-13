@@ -9936,7 +9936,7 @@ void view_xform_user(undefined4 param_1,undefined4 param_2,float param_3,undefin
 
     puStack_114 = (undefined1 *)ppuVar6;
 
-    FUN_00516c70();
+    clipcode_z_calc();
 
     puStack_118 = (undefined1 *)ppuVar6;
 

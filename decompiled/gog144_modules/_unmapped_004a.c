@@ -2628,7 +2628,7 @@ undefined4 FUN_004a2d60(int param_1,int param_2)
 
       iVar14 = iStack_2a0;
 
-      iVar10 = FUN_00513b60(param_2,iVar9,iStack_2a0);
+      iVar10 = hud_parse_format_codes_3(param_2,iVar9,iStack_2a0);
 
       if (iVar10 == 0) {
 

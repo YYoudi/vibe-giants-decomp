@@ -812,7 +812,7 @@
  "0x00414D40": {
   "name": "obj_animate_pose_update",
   "named": true,
-  "len": 10618
+  "len": 10630
  },
  "0x004156F0": {
   "name": "collide_objects_kabuto__FP6OBJECTP3P3D",
@@ -822,7 +822,7 @@
  "0x00415D80": {
   "name": "collide_camera_check_walls",
   "named": true,
-  "len": 6028
+  "len": 6040
  },
  "0x00416240": {
   "name": "FUN_00416240",
@@ -2627,7 +2627,7 @@
  "0x00446B00": {
   "name": "flick_actor_set_rect",
   "named": true,
-  "len": 1141
+  "len": 1153
  },
  "0x00446BE0": {
   "name": "flick_text_measure",
@@ -5602,7 +5602,7 @@
  "0x004A2D60": {
   "name": "FUN_004a2d60",
   "named": false,
-  "len": 20263
+  "len": 20275
  },
  "0x004A3E90": {
   "name": "obj_material_names",
@@ -8172,7 +8172,7 @@
  "0x00509F10": {
   "name": "view_xform_user",
   "named": true,
-  "len": 2898
+  "len": 2901
  },
  "0x0050A170": {
   "name": "main_tracer_0050a170",
@@ -8430,9 +8430,9 @@
   "len": 1293
  },
  "0x00513B60": {
-  "name": "FUN_00513b60",
-  "named": false,
-  "len": 1119
+  "name": "hud_parse_format_codes_3",
+  "named": true,
+  "len": 1131
  },
  "0x00513BE0": {
   "name": "game_water_00513be0",
@@ -8675,9 +8675,9 @@
   "len": 451
  },
  "0x00516C70": {
-  "name": "FUN_00516c70",
-  "named": false,
-  "len": 924
+  "name": "clipcode_z_calc",
+  "named": true,
+  "len": 927
  },
  "0x00516CF0": {
   "name": "dlog_alpha_scale_verts",
