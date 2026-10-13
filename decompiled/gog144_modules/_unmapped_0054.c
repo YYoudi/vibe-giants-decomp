@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (168 named) — decompiled, names from PS2 symbols
+ * 351 functions (169 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -9336,14 +9336,14 @@ int FUN_00545e42(undefined8 *param_1,int param_2,int param_3,undefined4 param_4)
 
   FUN_0054d3c5((uint)(0 < param_3) + param_2 + (uint)(local_14[0] == 0x2d),param_3 + 1,local_14);
 
-  FUN_00545ea3(param_2,param_3,param_4,local_14,0);
+  crt_printf_fmt_e(param_2,param_3,param_4,local_14,0);
 
   return param_2;
 
 }
 
-/* ===== FUN_00545ea3 @ 0x00545EA3 ===== */
-undefined1 * FUN_00545ea3(undefined1 *param_1,int param_2,int param_3,int *param_4,char param_5)
+/* ===== crt_printf_fmt_e @ 0x00545EA3 ===== */
+undefined1 * crt_printf_fmt_e(undefined1 *param_1,int param_2,int param_3,int *param_4,char param_5)
 
 
 
@@ -9568,7 +9568,7 @@ void FUN_00546061(undefined8 *param_1,int param_2,int param_3,undefined4 param_4
 
   if ((local_10 < -4) || (param_3 <= local_10)) {
 
-    FUN_00545ea3(param_2,param_3,param_4,&local_14,1);
+    crt_printf_fmt_e(param_2,param_3,param_4,&local_14,1);
 
   }
 

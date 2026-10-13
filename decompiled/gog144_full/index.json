@@ -11842,12 +11842,12 @@
  "0x00545E42": {
   "name": "FUN_00545e42",
   "named": false,
-  "len": 364
+  "len": 368
  },
  "0x00545EA3": {
-  "name": "FUN_00545ea3",
-  "named": false,
-  "len": 1058
+  "name": "crt_printf_fmt_e",
+  "named": true,
+  "len": 1062
  },
  "0x00545F65": {
   "name": "FUN_00545f65",
@@ -11862,7 +11862,7 @@
  "0x00546061": {
   "name": "FUN_00546061",
   "named": false,
-  "len": 762
+  "len": 766
  },
  "0x005460F4": {
   "name": "__cfltcvt",
