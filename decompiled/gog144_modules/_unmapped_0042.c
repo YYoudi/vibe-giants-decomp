@@ -19833,7 +19833,7 @@ void status_bar_update3(undefined4 *param_1,undefined4 *param_2,undefined4 *para
 
     if ((DAT_0059b7c8 & 0x20) != 0) {
 
-      FUN_00430b20(local_480,local_474,&local_46c,local_470);
+      dlog_alpha_flags20_copy(local_480,local_474,&local_46c,local_470);
 
       if (local_46c < 3) {
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (24 named) — decompiled, names from PS2 symbols
+ * 94 functions (25 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -3551,7 +3551,7 @@ void FUN_004e4360(int param_1)
 
 LAB_004e4520:
 
-  FUN_004a6860(param_1);
+  obj_alpha_fade_update(param_1);
 
   *(int *)(param_1 + 0x1a8) = piVar2[0x6b];
 
@@ -9493,8 +9493,8 @@ undefined4 FUN_004ebe10(float *param_1,float *param_2,float *param_3)
 
 }
 
-/* ===== FUN_004ebf30 @ 0x004EBF30 ===== */
-undefined4 FUN_004ebf30(int param_1,undefined4 param_2,float *param_3)
+/* ===== mission_marker_pos_check @ 0x004EBF30 ===== */
+undefined4 mission_marker_pos_check(int param_1,undefined4 param_2,float *param_3)
 
 
 
@@ -9729,7 +9729,7 @@ int FUN_004ec1f0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   
 
-  iVar2 = FUN_004ebf30(param_2,&local_c,&local_18);
+  iVar2 = mission_marker_pos_check(param_2,&local_c,&local_18);
 
   if (iVar2 != 0) {
 

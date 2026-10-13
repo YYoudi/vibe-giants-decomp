@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a6860,FUN_004A6860,,obj_alpha_fade_update,0.9,llm-read33,
+00430b20,FUN_00430B20,,dlog_alpha_flags20_copy,0.9,llm-read33,
+004ebf30,FUN_004EBF30,,mission_marker_pos_check,0.9,llm-read33,
+004d7e10,FUN_004D7E10,,ai_ospec12d_logic,0.9,llm-read33,

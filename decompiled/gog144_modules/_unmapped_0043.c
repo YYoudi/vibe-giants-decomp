@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (56 named) — decompiled, names from PS2 symbols
+ * 74 functions (57 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -437,8 +437,8 @@ void dlog_alpha_range_copy(int param_1,undefined4 *param_2,int *param_3,undefine
 
 }
 
-/* ===== FUN_00430b20 @ 0x00430B20 ===== */
-void FUN_00430b20(int param_1,undefined4 *param_2,int *param_3,undefined4 *param_4)
+/* ===== dlog_alpha_flags20_copy @ 0x00430B20 ===== */
+void dlog_alpha_flags20_copy(int param_1,undefined4 *param_2,int *param_3,undefined4 *param_4)
 
 
 

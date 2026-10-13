@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (10 named) — decompiled, names from PS2 symbols
+ * 39 functions (11 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -4420,8 +4420,8 @@ void FUN_004d7c60(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004d7e10 @ 0x004D7E10 ===== */
-void FUN_004d7e10(int param_1)
+/* ===== ai_ospec12d_logic @ 0x004D7E10 ===== */
+void ai_ospec12d_logic(int param_1)
 
 
 

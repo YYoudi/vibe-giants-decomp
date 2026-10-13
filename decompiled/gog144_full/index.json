@@ -1967,7 +1967,7 @@
  "0x0042F8E0": {
   "name": "status_bar_update3",
   "named": true,
-  "len": 8403
+  "len": 8414
  },
  "0x0042FEC0": {
   "name": "dlog_alpha_sort_copy",
@@ -1985,9 +1985,9 @@
   "len": 3571
  },
  "0x00430B20": {
-  "name": "FUN_00430b20",
-  "named": false,
-  "len": 3558
+  "name": "dlog_alpha_flags20_copy",
+  "named": true,
+  "len": 3569
  },
  "0x00430E10": {
   "name": "collgrid_00430e10",
@@ -5792,12 +5792,12 @@
  "0x004A6730": {
   "name": "FUN_004a6730",
   "named": false,
-  "len": 1435
+  "len": 1444
  },
  "0x004A6860": {
-  "name": "FUN_004a6860",
-  "named": false,
-  "len": 3776
+  "name": "obj_alpha_fade_update",
+  "named": true,
+  "len": 3785
  },
  "0x004A6B60": {
   "name": "FUN_004a6b60",
@@ -6057,7 +6057,7 @@
  "0x004AC860": {
   "name": "reaper_ability_3dsound",
   "named": true,
-  "len": 2763
+  "len": 2768
  },
  "0x004ACA20": {
   "name": "FUN_004aca20",
@@ -7080,9 +7080,9 @@
   "len": 1511
  },
  "0x004D7E10": {
-  "name": "FUN_004d7e10",
-  "named": false,
-  "len": 3185
+  "name": "ai_ospec12d_logic",
+  "named": true,
+  "len": 3190
  },
  "0x004D8150": {
   "name": "FUN_004d8150",
@@ -7247,7 +7247,7 @@
  "0x004E4360": {
   "name": "FUN_004e4360",
   "named": false,
-  "len": 2388
+  "len": 2397
  },
  "0x004E45A0": {
   "name": "FUN_004e45a0",
@@ -7435,14 +7435,14 @@
   "len": 1223
  },
  "0x004EBF30": {
-  "name": "FUN_004ebf30",
-  "named": false,
-  "len": 3678
+  "name": "mission_marker_pos_check",
+  "named": true,
+  "len": 3690
  },
  "0x004EC1F0": {
   "name": "FUN_004ec1f0",
   "named": false,
-  "len": 1333
+  "len": 1345
  },
  "0x004EC2C0": {
   "name": "main_seamonst_004ec2c0",

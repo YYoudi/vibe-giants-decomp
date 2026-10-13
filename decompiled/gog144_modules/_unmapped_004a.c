@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (37 named) — decompiled, names from PS2 symbols
+ * 131 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -6024,7 +6024,7 @@ void FUN_004a6730(int param_1)
 
   
 
-  FUN_004a6860(param_1);
+  obj_alpha_fade_update(param_1);
 
   if (*(char *)(param_1 + 0x209) != '\0') {
 
@@ -6088,8 +6088,8 @@ void FUN_004a6730(int param_1)
 
 }
 
-/* ===== FUN_004a6860 @ 0x004A6860 ===== */
-void FUN_004a6860(float param_1)
+/* ===== obj_alpha_fade_update @ 0x004A6860 ===== */
+void obj_alpha_fade_update(float param_1)
 
 
 
@@ -10968,7 +10968,7 @@ void reaper_ability_3dsound(int param_1)
 
               if (iVar3 != 0) {
 
-                FUN_004d7e10(*(undefined4 *)(iVar4 + 0xc));
+                ai_ospec12d_logic(*(undefined4 *)(iVar4 + 0xc));
 
                 goto LAB_004ac9df;
 
