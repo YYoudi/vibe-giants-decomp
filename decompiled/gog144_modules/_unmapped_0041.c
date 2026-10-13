@@ -5225,7 +5225,7 @@ void FUN_00416550(void)
 
   farclip_config(DAT_0065755c);
 
-  FUN_00426fd0(&LAB_00416630);
+  dialog_level_pop(&LAB_00416630);
 
   DAT_00632bb0 = 0;
 

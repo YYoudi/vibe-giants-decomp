@@ -1942,7 +1942,7 @@ void teammecc_setup_enemies__FP6OBJECTi(OBJECT *p0,int p1)
 
       }
 
-      uVar6 = FUN_004961C0((int)pcVar17,pcVar18,0,unaff_EDI);
+      uVar6 = teammecc_clear_mode((int)pcVar17,pcVar18,0,unaff_EDI);
 
       *(undefined4 *)(iVar12 + 0x1f8) = uVar6;
 
@@ -2114,7 +2114,7 @@ switchD_00501829_caseD_3:
 
                 }
 
-                FUN_004961C0((int)pcVar17,pcVar18,0,unaff_EDI);
+                teammecc_clear_mode((int)pcVar17,pcVar18,0,unaff_EDI);
 
                 _DAT_0057a774 = 45.0;
 
@@ -2214,7 +2214,7 @@ switchD_00501829_caseD_3:
 
                 }
 
-                FUN_004961C0((int)pcVar17,pcVar18,0,unaff_EDI);
+                teammecc_clear_mode((int)pcVar17,pcVar18,0,unaff_EDI);
 
                 _DAT_0057a774 = 45.0;
 
@@ -5168,7 +5168,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
               }
 
-              uVar10 = FUN_004961C0((int)pcVar16,pcVar9,0,unaff_EDI);
+              uVar10 = teammecc_clear_mode((int)pcVar16,pcVar9,0,unaff_EDI);
 
               *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -5490,7 +5490,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
               }
 
-              uVar10 = FUN_004961C0((int)pcVar16,pcVar9,0,unaff_EDI);
+              uVar10 = teammecc_clear_mode((int)pcVar16,pcVar9,0,unaff_EDI);
 
               *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -5830,7 +5830,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
         if (iVar8 == 0) {
 
-          uVar10 = FUN_004961C0(0x57b7f4,*(char **)(DAT_006330e4 + 0x50e0),0,unaff_EDI);
+          uVar10 = teammecc_clear_mode(0x57b7f4,*(char **)(DAT_006330e4 + 0x50e0),0,unaff_EDI);
 
           *(undefined4 *)(iVar13 + 500) = uVar10;
 
@@ -6112,7 +6112,7 @@ void teammecc_set_mode(int param_1,float param_2,int param_3)
 
             }
 
-            uVar10 = FUN_004961C0((int)pcVar16,pcVar9,0,unaff_EDI);
+            uVar10 = teammecc_clear_mode((int)pcVar16,pcVar9,0,unaff_EDI);
 
             *(undefined4 *)(iVar13 + 500) = uVar10;
 

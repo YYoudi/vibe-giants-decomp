@@ -82,6 +82,10 @@ def main():
     for a in list(cand):
         if a in verified:
             cand[a] = [(0.95, t + "-verified", verified[a]) for c, t, n in cand[a]]
+    # verified entries are authoritative: ensure each has a row even if its
+    # candidate disappeared from the source tables (regenerated matchers).
+    for a, vnm in verified.items():
+        cand.setdefault(a, []).append((0.95, "verified", vnm))
     rows, conflicts = [], []
     for a, lst in cand.items():
         lst.sort(reverse=True)

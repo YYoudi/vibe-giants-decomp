@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004add70,FUN_004ADD70,,fx_create_hack_logic,0.9,llm-audio-render,
+004b5d10,FUN_004B5D10,,reaperbasebldg_shot_2,0.9,llm-audio-render,
+004cc810,FUN_004CC810,,dome_render_text,0.9,llm-audio-render,

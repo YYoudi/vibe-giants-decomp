@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (32 named) — decompiled, names from PS2 symbols
+ * 142 functions (33 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -6895,7 +6895,7 @@ void FUN_00495ee0(int *param_1)
 
 }
 
-/* ===== FUN_004961C0 @ 0x004961C0 ===== */
+/* ===== teammecc_clear_mode @ 0x004961C0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* WARNING: Unknown calling convention -- yet parameter storage is locked */
@@ -6906,7 +6906,7 @@ void FUN_00495ee0(int *param_1)
 
 
 
-undefined4 FUN_004961C0(int p0,char *p1,uint p2,OBJECT *p3)
+undefined4 teammecc_clear_mode(int p0,char *p1,uint p2,OBJECT *p3)
 
 
 
@@ -13853,7 +13853,7 @@ void FUN_0049e4a0(int param_1)
 
     }
 
-    FUN_00426fd0(&LAB_0049f2d0);
+    dialog_level_pop(&LAB_0049f2d0);
 
     DAT_00632bb8 = 0;
 
@@ -13973,7 +13973,7 @@ void FUN_0049f1c0(void)
 
   FUN_0040d670();
 
-  FUN_00426fd0(&LAB_0049f2d0);
+  dialog_level_pop(&LAB_0049f2d0);
 
   DAT_00632bb8 = 0;
 

@@ -458,7 +458,7 @@ void FUN_00520D70(void)
 
         DAT_005def8c = 0;
 
-        FUN_00426fd0(&LAB_00525460);
+        dialog_level_pop(&LAB_00525460);
 
         goto LAB_00520ebe;
 
@@ -472,7 +472,7 @@ void FUN_00520D70(void)
 
       DAT_005def8c = 0;
 
-      FUN_00426fd0(&LAB_00525460);
+      dialog_level_pop(&LAB_00525460);
 
       DAT_00632e44 = 0;
 
@@ -536,7 +536,7 @@ void FUN_00520D70(void)
 
         DAT_005def8c = 0;
 
-        FUN_00426fd0(&LAB_00525460);
+        dialog_level_pop(&LAB_00525460);
 
 LAB_00520ebe:
 
@@ -574,7 +574,7 @@ LAB_00520ebe:
 
       DAT_005def8c = 0;
 
-      FUN_00426fd0(&LAB_00525460);
+      dialog_level_pop(&LAB_00525460);
 
       DAT_00632e44 = 0;
 
@@ -4637,7 +4637,7 @@ void gamespy_host_game(void)
 
     DAT_005def8c = 0;
 
-    FUN_00426fd0(&LAB_00525460);
+    dialog_level_pop(&LAB_00525460);
 
   }
 
@@ -5145,7 +5145,7 @@ void gamespy_statechange2(void)
 
   DAT_005def8c = 0;
 
-  FUN_00426fd0(&LAB_00525460);
+  dialog_level_pop(&LAB_00525460);
 
   DAT_005dde58 = 0;
 

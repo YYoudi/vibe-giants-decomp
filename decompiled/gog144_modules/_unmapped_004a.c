@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (24 named) — decompiled, names from PS2 symbols
+ * 131 functions (26 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -4265,12 +4265,12 @@ LAB_004a4bf3:
 
 }
 
-/* ===== FUN_004a4c10 @ 0x004A4C10 ===== */
+/* ===== piranha_launch_fx__FP6OBJECT @ 0x004A4C10 ===== */
 /* PS2 candidate: piranha_launch_fx__FP6OBJECT (conf 0.546) */
 
 
 
-void FUN_004a4c10(int param_1)
+void piranha_launch_fx__FP6OBJECT(int param_1)
 
 
 
@@ -11679,12 +11679,12 @@ undefined * FUN_004add50(int param_1)
 
 }
 
-/* ===== FUN_004add70 @ 0x004ADD70 ===== */
+/* ===== fx_create_hack_logic @ 0x004ADD70 ===== */
 /* PS2 candidate: fx_create_hack_logic (conf 0.458) */
 
 
 
-void FUN_004add70(int param_1)
+void fx_create_hack_logic(int param_1)
 
 
 

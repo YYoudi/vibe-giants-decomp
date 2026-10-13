@@ -4110,7 +4110,7 @@ LAB_00444d25:
 
   Audio3DTestToneUpdate__Fv_3();
 
-  FUN_004cc810(0,*(undefined4 *)&param_1->field_0xbc);
+  dome_render_text(0,*(undefined4 *)&param_1->field_0xbc);
 
   if (*(int *)&param_1->field_0xc4 == 0) {
 
@@ -5707,7 +5707,7 @@ LAB_00445a50:
 
     }
 
-    FUN_004961C0(iVar11,*(char **)(DAT_006330e4 + 0x50e0),0,unaff_ESI);
+    teammecc_clear_mode(iVar11,*(char **)(DAT_006330e4 + 0x50e0),0,unaff_ESI);
 
     puVar12 = puVar12 + puVar12[1];
 

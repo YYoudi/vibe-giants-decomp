@@ -2246,7 +2246,7 @@ LAB_0045282a:
 
   if (iVar2 == 0) {
 
-    FUN_00426fd0(&LAB_00454820);
+    dialog_level_pop(&LAB_00454820);
 
     DAT_00632bb4 = 0;
 
@@ -3187,7 +3187,7 @@ void FUN_004544f0(void)
 
   FUN_0040d670();
 
-  FUN_00426fd0(&LAB_00454820);
+  dialog_level_pop(&LAB_00454820);
 
   DAT_00632bb4 = 0;
 

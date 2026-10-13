@@ -4641,7 +4641,7 @@ void wredit_00439490(void)
 
 {
 
-  FUN_00426fd0(&LAB_00438ef0);
+  dialog_level_pop(&LAB_00438ef0);
 
   if (DAT_0059cd4c != 0) {
 
@@ -5195,7 +5195,7 @@ void wredit_menu_3(int param_1)
 
   }
 
-  FUN_00426fd0(&LAB_00438ef0);
+  dialog_level_pop(&LAB_00438ef0);
 
 switchD_004397eb_default:
 

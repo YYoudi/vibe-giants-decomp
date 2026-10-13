@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (16 named) — decompiled, names from PS2 symbols
+ * 90 functions (17 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -1275,7 +1275,7 @@ LAB_004b4fe5:
 
       }
 
-      FUN_004add70(obj);
+      fx_create_hack_logic(obj);
 
       return;
 
@@ -2297,12 +2297,12 @@ void FUN_004b5b30(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_004b5d10 @ 0x004B5D10 ===== */
+/* ===== reaperbasebldg_shot_2 @ 0x004B5D10 ===== */
 /* PS2 candidate: reaperbasebldg_shot (conf 0.442) */
 
 
 
-void FUN_004b5d10(float param_1,int param_2)
+void reaperbasebldg_shot_2(float param_1,int param_2)
 
 
 

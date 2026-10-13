@@ -317,7 +317,7 @@ void FUN_004f3af0(int param_1)
 
           }
 
-          FUN_004961C0((int)p0,p1,0,unaff_EDI);
+          teammecc_clear_mode((int)p0,p1,0,unaff_EDI);
 
           uVar7 = FUN_00507b00(s_SmChGyropadDone_00562250,1,1);
 

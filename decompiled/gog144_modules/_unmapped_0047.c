@@ -740,7 +740,7 @@ switchD_004711dd_default:
 
         ai_island_init(0,0);
 
-        FUN_004cc810(0,0);
+        dome_render_text(0,0);
 
         main_drawwatr_00431700();
 
@@ -2465,7 +2465,7 @@ void FUN_00475700(int param_1)
 
   }
 
-  FUN_00426fd0(&LAB_00475b40);
+  dialog_level_pop(&LAB_00475b40);
 
   DAT_00632ba8 = 0;
 

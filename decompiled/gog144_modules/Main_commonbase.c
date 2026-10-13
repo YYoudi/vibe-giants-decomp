@@ -1138,13 +1138,13 @@ LAB_004195d2:
 
     if ((obj->field_E0 & 0x2000) == 0) {
 
-      FUN_004b5d10(obj,0);
+      reaperbasebldg_shot_2(obj,0);
 
       return;
 
     }
 
-    FUN_004b5d10(obj,1);
+    reaperbasebldg_shot_2(obj,1);
 
     return;
 

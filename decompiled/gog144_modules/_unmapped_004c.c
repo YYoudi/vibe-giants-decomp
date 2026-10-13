@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (8 named) — decompiled, names from PS2 symbols
+ * 64 functions (9 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -7127,8 +7127,8 @@ void ai_island_init(void)
 
 }
 
-/* ===== FUN_004cc810 @ 0x004CC810 ===== */
-void FUN_004cc810(void)
+/* ===== dome_render_text @ 0x004CC810 ===== */
+void dome_render_text(void)
 
 
 
