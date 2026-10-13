@@ -6099,7 +6099,7 @@ int FUN_004571a0(int param_1,int *param_2,int param_3)
 
     uVar1 = FUN_00403a70(param_1,0,local_70);
 
-    FUN_0053d3b0(local_70,uVar1,local_94,1,*(undefined4 *)(param_1 + 0xc));
+    nam_lookup_full(local_70,uVar1,local_94,1,*(undefined4 *)(param_1 + 0xc));
 
     if (local_78 != 0) {
 

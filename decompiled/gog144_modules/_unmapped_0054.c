@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (169 named) — decompiled, names from PS2 symbols
+ * 351 functions (174 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -710,8 +710,8 @@ void cpu_vendor_detect(void)
 
 }
 
-/* ===== FUN_005407e0 @ 0x005407E0 ===== */
-uint FUN_005407e0(void)
+/* ===== cpu_feature_dispatch @ 0x005407E0 ===== */
+uint cpu_feature_dispatch(void)
 
 
 
@@ -742,7 +742,7 @@ void FUN_00540800(int param_1)
 
   if (param_1 == -1) {
 
-    param_1 = FUN_005407e0();
+    param_1 = cpu_feature_dispatch();
 
   }
 
@@ -1389,8 +1389,8 @@ void FUN_00541a40(uint *param_1,uint *param_2)
 
 }
 
-/* ===== FUN_00541c10 @ 0x00541C10 ===== */
-float10 FUN_00541c10(float param_1)
+/* ===== anm_dump_a @ 0x00541C10 ===== */
+float10 anm_dump_a(float param_1)
 
 
 
@@ -1402,8 +1402,8 @@ float10 FUN_00541c10(float param_1)
 
 }
 
-/* ===== FUN_00541c50 @ 0x00541C50 ===== */
-float10 FUN_00541c50(float param_1)
+/* ===== anm_dump_b @ 0x00541C50 ===== */
+float10 anm_dump_b(float param_1)
 
 
 
@@ -1415,8 +1415,8 @@ float10 FUN_00541c50(float param_1)
 
 }
 
-/* ===== FUN_00541c90 @ 0x00541C90 ===== */
-float10 FUN_00541c90(float param_1)
+/* ===== anm_dump_c @ 0x00541C90 ===== */
+float10 anm_dump_c(float param_1)
 
 
 
@@ -1428,8 +1428,8 @@ float10 FUN_00541c90(float param_1)
 
 }
 
-/* ===== FUN_00541cd0 @ 0x00541CD0 ===== */
-float10 FUN_00541cd0(float param_1)
+/* ===== anm_dump_d @ 0x00541CD0 ===== */
+float10 anm_dump_d(float param_1)
 
 
 

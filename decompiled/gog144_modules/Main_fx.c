@@ -28,7 +28,7 @@ void main_fx_004470b0(undefined4 param_1)
 
   FUN_00542f27(local_2c,s__s_bin_00554384,param_1);
 
-  iVar1 = main_005380e0(local_2c);
+  iVar1 = stream_player_start(local_2c);
 
   if (iVar1 == 0) {
 

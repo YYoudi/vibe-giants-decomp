@@ -90,7 +90,7 @@ void worldlist_bin_load(void)
 
     }
 
-    iVar2 = main_005380e0(local_20);
+    iVar2 = stream_player_start(local_20);
 
     if (iVar2 == 0) {
 
@@ -385,7 +385,7 @@ void bin_load_1a0002e5(char *param_1,float param_2,float param_3)
 
   _DAT_005a6c24 = param_2;
 
-  iVar6 = main_005380e0(param_1);
+  iVar6 = stream_player_start(param_1);
 
   local_3ec = iVar6;
 
@@ -3569,7 +3569,7 @@ LAB_004b2ac0:
 
   *(undefined4 *)((int)&uStack_368 + ~uVar13) = DAT_00560330;
 
-  iVar6 = main_005380e0(local_364);
+  iVar6 = stream_player_start(local_364);
 
   puVar19 = DAT_00632d50;
 

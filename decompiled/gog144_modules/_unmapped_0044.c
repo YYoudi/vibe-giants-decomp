@@ -2345,7 +2345,7 @@ LAB_00443656:
 
     }
 
-    iVar7 = main_005380e0(local_80);
+    iVar7 = stream_player_start(local_80);
 
     if (iVar7 != 0) {
 
@@ -6005,7 +6005,7 @@ LAB_00446783:
 
     }
 
-    iVar6 = main_005380e0(auStack_80);
+    iVar6 = stream_player_start(auStack_80);
 
     if (iVar6 != 0) {
 
@@ -6968,7 +6968,7 @@ void FUN_00447060(void)
 
   if (DAT_00656464 != (undefined4 *)0x0) {
 
-    FUN_0053ff60(*DAT_00656464);
+    map_alloc_cleanup(*DAT_00656464);
 
     DAT_00656464 = (undefined4 *)0x0;
 
@@ -6976,7 +6976,7 @@ void FUN_00447060(void)
 
   if (DAT_00656468 != (undefined4 *)0x0) {
 
-    FUN_0053ff60(*DAT_00656468);
+    map_alloc_cleanup(*DAT_00656468);
 
     DAT_00656468 = (undefined4 *)0x0;
 

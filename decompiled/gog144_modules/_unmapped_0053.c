@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (61 named) — decompiled, names from PS2 symbols
+ * 179 functions (65 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -12370,8 +12370,8 @@ void FUN_005380b0(void)
 
 }
 
-/* ===== main_005380e0 @ 0x005380E0 ===== */
-undefined4 main_005380e0(undefined4 param_1)
+/* ===== stream_player_start @ 0x005380E0 ===== */
+undefined4 stream_player_start(undefined4 param_1)
 
 
 
@@ -14679,7 +14679,7 @@ int bistream_tell_user(undefined4 param_1,int param_2,int *param_3)
 
   local_8 = param_3;
 
-  FUN_0053d810(iVar2,&local_8);
+  nam_lookup_variant(iVar2,&local_8);
 
   *(uint *)(iVar2 + 8) = (uint)bVar1 | (uint)param_3;
 
@@ -14929,7 +14929,7 @@ void FUN_0053bd70(int param_1)
 
   uVar2 = *(undefined4 *)(*(int *)(param_1 + 0xc) + 0xc);
 
-  FUN_0053ff60(*(int *)(param_1 + 0xc));
+  map_alloc_cleanup(*(int *)(param_1 + 0xc));
 
   if ((uVar1 & 1) != 0) {
 
@@ -16077,8 +16077,8 @@ LAB_0053cd8a:
 
 }
 
-/* ===== FUN_0053cec0 @ 0x0053CEC0 ===== */
-undefined4 * FUN_0053cec0(int param_1,int param_2,int *param_3)
+/* ===== nam_lookup_by_handle @ 0x0053CEC0 ===== */
+undefined4 * nam_lookup_by_handle(int param_1,int param_2,int *param_3)
 
 
 
@@ -16426,7 +16426,7 @@ int editor_anim_skin(int param_1,undefined4 param_2,int param_3,undefined4 param
 
     while (iVar2 != 0) {
 
-      iVar2 = FUN_0053cec0(param_1,param_2,iVar2,param_4);
+      iVar2 = nam_lookup_by_handle(param_1,param_2,iVar2,param_4);
 
       *piVar4 = iVar2;
 
@@ -16601,8 +16601,8 @@ void FUN_0053d330(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 
 }
 
-/* ===== FUN_0053d3b0 @ 0x0053D3B0 ===== */
-byte FUN_0053d3b0(int param_1,int param_2,int param_3,int param_4,undefined4 param_5)
+/* ===== nam_lookup_full @ 0x0053D3B0 ===== */
+byte nam_lookup_full(int param_1,int param_2,int param_3,int param_4,undefined4 param_5)
 
 
 
@@ -16990,8 +16990,8 @@ LAB_0053d7a7:
 
 }
 
-/* ===== FUN_0053d810 @ 0x0053D810 ===== */
-void FUN_0053d810(int param_1,int param_2)
+/* ===== nam_lookup_variant @ 0x0053D810 ===== */
+void nam_lookup_variant(int param_1,int param_2)
 
 
 
@@ -20772,8 +20772,8 @@ void FUN_0053ff30(int param_1,undefined4 *param_2,int param_3)
 
 }
 
-/* ===== FUN_0053ff60 @ 0x0053FF60 ===== */
-void FUN_0053ff60(int param_1)
+/* ===== map_alloc_cleanup @ 0x0053FF60 ===== */
+void map_alloc_cleanup(int param_1)
 
 
 

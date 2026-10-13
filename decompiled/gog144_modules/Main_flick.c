@@ -100,7 +100,7 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
       map_memfree(*param_1,param_1[0x29]);
 
-      FUN_0053ff60(*param_1);
+      map_alloc_cleanup(*param_1);
 
       if (iVar1 != 0) {
 

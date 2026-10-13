@@ -9117,7 +9117,7 @@ void weapondefs_load(void)
 
   
 
-  iVar1 = main_005380e0(s_weapondefs_bin_0055fd48);
+  iVar1 = stream_player_start(s_weapondefs_bin_0055fd48);
 
   if (iVar1 == 0) {
 

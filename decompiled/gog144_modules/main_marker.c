@@ -134,7 +134,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   if (*piVar3 != 0) {
 
-    FUN_0053ff60(*piVar3);
+    map_alloc_cleanup(*piVar3);
 
   }
 

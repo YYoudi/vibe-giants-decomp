@@ -7203,7 +7203,7 @@ int texture_add_file(int *param_1)
 
   FUN_00542f27(local_100,s_W__s_bin_0055c160,&DAT_00633070);
 
-  iVar2 = main_005380e0(local_100);
+  iVar2 = stream_player_start(local_100);
 
   if (iVar2 == 0) {
 

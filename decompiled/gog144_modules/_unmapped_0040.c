@@ -8811,7 +8811,9 @@ void FUN_0040bc00(int param_1)
 
   if (iVar1 != 0) {
 
-    FUN_0053d3b0(local_70,iVar1,param_1 + 0x14,1,*(undefined4 *)(*(int *)(param_1 + 0x38) + 0xc));
+    nam_lookup_full(local_70,iVar1,param_1 + 0x14,1,*(undefined4 *)(*(int *)(param_1 + 0x38) + 0xc))
+
+    ;
 
     (*(code *)PTR_FUN_00580c20)(local_7c,param_1 + 0x14,1,*(int *)(param_1 + 0x38) + 0x294);
 

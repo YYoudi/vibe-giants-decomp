@@ -36,7 +36,7 @@ void FUN_00490860(void)
 
       FUN_00542f27(local_100,s_wm__s_bin_0055c6d8,iVar4 + 0x4558 + DAT_006330e4);
 
-      iVar1 = main_005380e0(local_100);
+      iVar1 = stream_player_start(local_100);
 
       if (iVar1 == 0) {
 

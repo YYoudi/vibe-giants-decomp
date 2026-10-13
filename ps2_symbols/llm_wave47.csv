@@ -1,0 +1,11 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0053cec0,FUN_0053CEC0,,nam_lookup_by_handle,0.9,llm-read30,
+0053d3b0,FUN_0053D3B0,,nam_lookup_full,0.9,llm-read30,
+0053d810,FUN_0053D810,,nam_lookup_variant,0.9,llm-read30,
+0053ff60,FUN_0053FF60,,map_alloc_cleanup,0.9,llm-read30,
+005407e0,FUN_005407E0,,cpu_feature_dispatch,0.9,llm-read30,
+00541c10,FUN_00541C10,,anm_dump_a,0.9,llm-read30,
+00541c50,FUN_00541C50,,anm_dump_b,0.9,llm-read30,
+00541c90,FUN_00541C90,,anm_dump_c,0.9,llm-read30,
+00541cd0,FUN_00541CD0,,anm_dump_d,0.9,llm-read30,
+005380e0,FUN_005380E0,,stream_player_start,0.9,llm-read30,
