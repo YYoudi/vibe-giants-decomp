@@ -668,7 +668,7 @@ LAB_004195d2:
 
   case 0x13:
 
-    FUN_0041ba60(param_1,*param_4);
+    reaper_big_update(param_1,*param_4);
 
     return;
 

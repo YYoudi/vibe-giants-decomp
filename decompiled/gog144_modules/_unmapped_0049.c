@@ -13859,7 +13859,7 @@ void partyhouse_exit_dlog(void)
 
       if (iVar1 != 0) {
 
-        FUN_0041a410(DAT_00632bbc,DAT_00632a88,DAT_0059f998);
+        commonbase_init_user(DAT_00632bbc,DAT_00632a88,DAT_0059f998);
 
       }
 

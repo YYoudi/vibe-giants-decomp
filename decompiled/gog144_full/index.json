@@ -1017,7 +1017,7 @@
  "0x00418F00": {
   "name": "main_commonbase_00418f00",
   "named": true,
-  "len": 17471
+  "len": 17476
  },
  "0x0041A090": {
   "name": "reaper_state_check_a",
@@ -1085,9 +1085,9 @@
   "len": 326
  },
  "0x0041A410": {
-  "name": "FUN_0041a410",
-  "named": false,
-  "len": 374
+  "name": "commonbase_init_user",
+  "named": true,
+  "len": 382
  },
  "0x0041A570": {
   "name": "FUN_0041a570",
@@ -1125,9 +1125,9 @@
   "len": 4883
  },
  "0x0041BA60": {
-  "name": "FUN_0041ba60",
-  "named": false,
-  "len": 6741
+  "name": "reaper_big_update",
+  "named": true,
+  "len": 6746
  },
  "0x0041BF50": {
   "name": "FUN_0041bf50",
@@ -5387,7 +5387,7 @@
  "0x0049F1C0": {
   "name": "partyhouse_exit_dlog",
   "named": true,
-  "len": 898
+  "len": 906
  },
  "0x0049F510": {
   "name": "chat_log_close",

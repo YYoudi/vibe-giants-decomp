@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (29 named) — decompiled, names from PS2 symbols
+ * 100 functions (31 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -7933,8 +7933,8 @@ void reaper_state_check_i(undefined4 param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0041a410 @ 0x0041A410 ===== */
-void FUN_0041a410(undefined4 param_1,int param_2,int param_3)
+/* ===== commonbase_init_user @ 0x0041A410 ===== */
+void commonbase_init_user(undefined4 param_1,int param_2,int param_3)
 
 
 
@@ -9499,12 +9499,12 @@ undefined4 fxb_build_select(int param_1,int param_2)
 
 }
 
-/* ===== FUN_0041ba60 @ 0x0041BA60 ===== */
+/* ===== reaper_big_update @ 0x0041BA60 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-undefined4 FUN_0041ba60(int param_1,int param_2)
+undefined4 reaper_big_update(int param_1,int param_2)
 
 
 
