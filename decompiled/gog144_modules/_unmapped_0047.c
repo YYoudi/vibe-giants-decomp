@@ -3752,7 +3752,7 @@ void marker_spline_rotate_tangent(int param_1,float param_2,int param_3)
 
     *(float *)(iVar1 + 0x1c) = param_2 + *(float *)(iVar1 + 0x1c);
 
-    FUN_0053dd90(local_44,param_2 * 0.017453292);
+    GEO_MatFromQuat_2(local_44,param_2 * 0.017453292);
 
     (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(&local_50,(undefined4 *)(iVar4 + 0x14),1,local_44);
 
@@ -3776,7 +3776,7 @@ void marker_spline_rotate_tangent(int param_1,float param_2,int param_3)
 
     *(float *)(iVar1 + 0x18) = param_2 + *(float *)(iVar1 + 0x18);
 
-    FUN_0053dd90(local_44,param_2 * 0.017453292);
+    GEO_MatFromQuat_2(local_44,param_2 * 0.017453292);
 
     (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(&local_50,(undefined4 *)(iVar4 + 8),1,local_44);
 

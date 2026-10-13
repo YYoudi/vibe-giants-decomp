@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (102 named) — decompiled, names from PS2 symbols
+ * 131 functions (103 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -7213,8 +7213,8 @@ char math_clamp_sign(float param_1)
 
 }
 
-/* ===== FUN_004a7df0 @ 0x004A7DF0 ===== */
-void FUN_004a7df0(float *param_1,float param_2,undefined4 param_3)
+/* ===== math_sincos_pair @ 0x004A7DF0 ===== */
+void math_sincos_pair(float *param_1,float param_2,undefined4 param_3)
 
 
 
@@ -9594,7 +9594,7 @@ int PROJ_Create2(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     GEO_MatLookAt(local_44,&local_13c,&local_10c,&local_118);
 
-    FUN_0053dd40(local_88,0xbfc90fdb);
+    GEO_MatFromQuat_3(local_88,0xbfc90fdb);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_100,local_44,local_88);
 

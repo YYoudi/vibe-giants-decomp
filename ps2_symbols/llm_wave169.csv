@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a7df0,FUN_004a7df0,,math_sincos_pair,0.9,llm-w169,sincos out pair + swap
+00493f20,FUN_00493f20,,voice_quota_check,0.9,llm-w169,0x4a68/0x4a6c counters callers story_flick
+00543d17,FUN_00543d17,,crt_qsort_part,0.9,llm-w169,comparator fptr partition caller qsort_helper
+0053dd90,FUN_0053dd90,,GEO_MatFromQuat_2,0.9,llm-w169,identity+quat twin
+0053dd40,FUN_0053dd40,,GEO_MatFromQuat_3,0.9,llm-w169,identity+quat twin caller PROJ_Create2

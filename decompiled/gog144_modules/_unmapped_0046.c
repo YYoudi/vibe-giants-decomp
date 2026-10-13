@@ -1372,7 +1372,7 @@ void obj_skinning_eval(int param_1)
 
     fVar10 = (float10)rndfloat(0x40c90fdb);
 
-    FUN_0053dd90(local_110,(float)fVar10);
+    GEO_MatFromQuat_2(local_110,(float)fVar10);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(local_154,local_154,local_110);
 
@@ -4012,11 +4012,11 @@ void lift_update_rider_position__FP6OBJECT(int param_1)
 
         FUN_0053dc10(local_88,&local_170);
 
-        FUN_0053dd90(local_110,
+        GEO_MatFromQuat_2(local_110,
 
-                     (*(float *)(*(int *)(iVar4 + 4) + 0xf4) - *(float *)(*(int *)(iVar4 + 4) + 200)
+                          (*(float *)(*(int *)(iVar4 + 4) + 0xf4) -
 
-                     ) * 0.017453292);
+                          *(float *)(*(int *)(iVar4 + 4) + 200)) * 0.017453292);
 
         (*(code *)PTR_crt_matrix_mul_00580c18)(local_cc,local_110,local_88);
 

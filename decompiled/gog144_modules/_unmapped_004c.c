@@ -7812,7 +7812,7 @@ LAB_004ccbc0:
 
           FUN_0053dc10(auStack_cc,&local_20c);
 
-          FUN_0053dd90(auStack_44,DAT_005a84e0);
+          GEO_MatFromQuat_2(auStack_44,DAT_005a84e0);
 
           (*(code *)PTR_crt_matrix_mul_00580c18)(puVar8,auStack_cc,auStack_88);
 

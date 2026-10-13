@@ -6369,7 +6369,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
   }
 
-  FUN_00493f20();
+  voice_quota_check();
 
   return;
 

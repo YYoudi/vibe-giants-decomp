@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (141 named) — decompiled, names from PS2 symbols
+ * 179 functions (143 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -17720,8 +17720,8 @@ void GEO_MatFromQuat(uint *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0053dd40 @ 0x0053DD40 ===== */
-void FUN_0053dd40(undefined4 *param_1,undefined4 param_2)
+/* ===== GEO_MatFromQuat_3 @ 0x0053DD40 ===== */
+void GEO_MatFromQuat_3(undefined4 *param_1,undefined4 param_2)
 
 
 
@@ -17771,8 +17771,8 @@ void FUN_0053dd40(undefined4 *param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_0053dd90 @ 0x0053DD90 ===== */
-void FUN_0053dd90(undefined4 *param_1,undefined4 param_2)
+/* ===== GEO_MatFromQuat_2 @ 0x0053DD90 ===== */
+void GEO_MatFromQuat_2(undefined4 *param_1,undefined4 param_2)
 
 
 

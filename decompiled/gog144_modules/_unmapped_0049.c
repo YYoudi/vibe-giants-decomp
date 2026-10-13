@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (109 named) — decompiled, names from PS2 symbols
+ * 142 functions (110 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -4652,12 +4652,12 @@ void mission_replenish_food__Fv(void)
 
 }
 
-/* ===== FUN_00493f20 @ 0x00493F20 ===== */
+/* ===== voice_quota_check @ 0x00493F20 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00493f20(void)
+void voice_quota_check(void)
 
 
 
@@ -4718,7 +4718,7 @@ void story_flick_open(void)
 
         if (DAT_00632c08 == 0) {
 
-          FUN_00493f20();
+          voice_quota_check();
 
           _DAT_00632bdc = 0.001;
 

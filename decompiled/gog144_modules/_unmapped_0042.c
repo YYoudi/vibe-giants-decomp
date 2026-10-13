@@ -18142,13 +18142,13 @@ void rp_spark_hud_setup(int param_1)
 
     FUN_00436090(0x134,DAT_0059acb0,iVar2 << 0x18);
 
-    FUN_0053dd90(local_cc,_DAT_0059acb4 * 6.2831855);
+    GEO_MatFromQuat_2(local_cc,_DAT_0059acb4 * 6.2831855);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_88,local_44,local_cc);
 
     FUN_004360d0(auStack_88,&local_e4);
 
-    FUN_0053dd90(local_cc,_DAT_0059acb4 * -6.2831855);
+    GEO_MatFromQuat_2(local_cc,_DAT_0059acb4 * -6.2831855);
 
     (*(code *)PTR_crt_matrix_mul_00580c18)(auStack_88,local_44,local_cc);
 
