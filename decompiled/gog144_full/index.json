@@ -1685,9 +1685,9 @@
   "len": 1540
  },
  "0x0042A640": {
-  "name": "FUN_0042a640",
-  "named": false,
-  "len": 5693
+  "name": "dlog_alpha_quad_build",
+  "named": true,
+  "len": 5702
  },
  "0x0042A9C0": {
   "name": "FUN_0042a9c0",
@@ -1932,7 +1932,7 @@
  "0x0042ED90": {
   "name": "FUN_0042ed90",
   "named": false,
-  "len": 1609
+  "len": 1618
  },
  "0x0042EEE0": {
   "name": "FUN_0042eee0",
@@ -1947,7 +1947,7 @@
  "0x0042EF80": {
   "name": "dlog_alpha_big_render",
   "named": true,
-  "len": 5604
+  "len": 5613
  },
  "0x0042F310": {
   "name": "FUN_0042f310",
@@ -3910,14 +3910,14 @@
   "len": 3321
  },
  "0x00471420": {
-  "name": "FUN_00471420",
-  "named": false,
-  "len": 4810
+  "name": "fx_weather_system",
+  "named": true,
+  "len": 4815
  },
  "0x00471780": {
   "name": "hud_audio_dlog_screen",
   "named": true,
-  "len": 3232
+  "len": 3237
  },
  "0x00471A60": {
   "name": "FUN_00471a60",
@@ -6250,9 +6250,9 @@
   "len": 802
  },
  "0x004B6870": {
-  "name": "FUN_004b6870",
-  "named": false,
-  "len": 4217
+  "name": "objtype_anim_scan_2",
+  "named": true,
+  "len": 4224
  },
  "0x004B6BB0": {
   "name": "FUN_004b6bb0",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36312
+  "len": 36330
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10340,9 +10340,9 @@
   "len": 1749
  },
  "0x00535010": {
-  "name": "FUN_00535010",
-  "named": false,
-  "len": 5334
+  "name": "comm_chat_dispatch",
+  "named": true,
+  "len": 5340
  },
  "0x00535390": {
   "name": "FUN_00535390",

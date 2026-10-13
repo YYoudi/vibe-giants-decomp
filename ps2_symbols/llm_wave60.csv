@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0042a640,FUN_0042A640,,dlog_alpha_quad_build,0.9,llm-read31,
+00535010,FUN_00535010,,comm_chat_dispatch,0.9,llm-read31,
+00471420,FUN_00471420,,fx_weather_system,0.9,llm-read31,
+004b6870,FUN_004B6870,,objtype_anim_scan_2,0.9,llm-read31,

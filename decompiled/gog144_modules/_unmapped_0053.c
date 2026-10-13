@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (65 named) — decompiled, names from PS2 symbols
+ * 179 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -3091,13 +3091,13 @@ LAB_005319de:
 
       case '\v':
 
-        FUN_00535010(1,1);
+        comm_chat_dispatch(1,1);
 
         break;
 
       case '\f':
 
-        FUN_00535010(0,1);
+        comm_chat_dispatch(0,1);
 
         break;
 
@@ -3263,7 +3263,7 @@ LAB_005319de:
 
       case '\x1b':
 
-        FUN_00535010(1,0);
+        comm_chat_dispatch(1,0);
 
         break;
 
@@ -7809,12 +7809,12 @@ LAB_00534fe4:
 
 }
 
-/* ===== FUN_00535010 @ 0x00535010 ===== */
+/* ===== comm_chat_dispatch @ 0x00535010 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00535010(int param_1,int param_2)
+void comm_chat_dispatch(int param_1,int param_2)
 
 
 

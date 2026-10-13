@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (26 named) — decompiled, names from PS2 symbols
+ * 67 functions (27 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -778,12 +778,12 @@ switchD_004711dd_default:
 
 }
 
-/* ===== FUN_00471420 @ 0x00471420 ===== */
+/* ===== fx_weather_system @ 0x00471420 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00471420(void)
+void fx_weather_system(void)
 
 
 
@@ -1134,7 +1134,7 @@ undefined4 hud_audio_dlog_screen(void)
 
     fVar10 = (float)fVar7;
 
-    FUN_00471420(puVar8,puVar9,fVar10);
+    fx_weather_system(puVar8,puVar9,fVar10);
 
     water_draw_dump();
 
