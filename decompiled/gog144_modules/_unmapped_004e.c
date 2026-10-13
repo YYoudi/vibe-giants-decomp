@@ -11208,7 +11208,7 @@ void FUN_004ee9c0(void)
 
   FUN_0051f2f0();
 
-  _dmVector_2();
+  FUN_0052E470();
 
   main_setupgam_004eda20();
 

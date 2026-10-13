@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (30 named) — decompiled, names from PS2 symbols
+ * 186 functions (29 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -8666,7 +8666,7 @@ undefined4 FUN_00519110(void)
 
       FUN_00517a60();
 
-      _dmVector();
+      FUN_0051EA90();
 
       return 1;
 
@@ -8688,7 +8688,7 @@ undefined4 FUN_00519110(void)
 
       pHStack_718 = (HWND)0x5191dc;
 
-      _dmVector();
+      FUN_0051EA90();
 
       return 1;
 
@@ -8714,7 +8714,7 @@ undefined4 FUN_00519110(void)
 
       ppHStack_724 = (HWND *)0x519219;
 
-      _dmVector();
+      FUN_0051EA90();
 
       return 1;
 
@@ -8740,7 +8740,7 @@ undefined4 FUN_00519110(void)
 
       FUN_00517a60();
 
-      _dmVector();
+      FUN_0051EA90();
 
       return 1;
 
@@ -8762,7 +8762,7 @@ undefined4 FUN_00519110(void)
 
       pHStack_718 = (HWND)0x5192ad;
 
-      _dmVector();
+      FUN_0051EA90();
 
       return 1;
 
@@ -8788,7 +8788,7 @@ undefined4 FUN_00519110(void)
 
       ppHStack_724 = (HWND *)0x5192ea;
 
-      _dmVector();
+      FUN_0051EA90();
 
       return 1;
 
@@ -8810,7 +8810,7 @@ undefined4 FUN_00519110(void)
 
       FUN_00517a60(s_DIKey_SetProperty__s_0057ca20);
 
-      _dmVector();
+      FUN_0051EA90();
 
       return 1;
 
@@ -15292,8 +15292,8 @@ void FUN_0051ea60(LPCSTR param_1)
 
 }
 
-/* ===== _dmVector @ 0x0051EA90 ===== */
-void _dmVector(void)
+/* ===== FUN_0051EA90 @ 0x0051EA90 ===== */
+void FUN_0051EA90(void)
 
 
 

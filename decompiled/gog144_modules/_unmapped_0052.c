@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (5 named) — decompiled, names from PS2 symbols
+ * 162 functions (4 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -11712,8 +11712,8 @@ void FUN_0052e3d0(void)
 
 }
 
-/* ===== _dmVector_2 @ 0x0052E470 ===== */
-void _dmVector_2(void)
+/* ===== FUN_0052E470 @ 0x0052E470 ===== */
+void FUN_0052E470(void)
 
 
 
