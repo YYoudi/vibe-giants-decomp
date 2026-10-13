@@ -2031,11 +2031,11 @@ void menu_audio_setup(int param_1)
 
       FUN_00452050(1);
 
-      FUN_00452110(1);
+      audio_link_option_set(1);
 
-      FUN_004520f0(1);
+      option_set_6331b4(1);
 
-      FUN_0051c8a0(1);
+      option_set_6331b8(1);
 
       bVar1 = (~DAT_00632e94 & 0x4000) == 0;
 
@@ -2331,9 +2331,9 @@ void game_options_verify(void)
 
       audio_option_set_b((_DAT_0059eeb4 & 0x10) != 0);
 
-      FUN_0051c7b0((_DAT_0059eeb4 & 0x20) != 0);
+      option_set_633228((_DAT_0059eeb4 & 0x20) != 0);
 
-      FUN_0051c8a0(DAT_0059eeb4 < '\0');
+      option_set_6331b8(DAT_0059eeb4 < '\0');
 
       if ((_DAT_0059eeb4 & 0x40) == 0) {
 
@@ -2433,9 +2433,9 @@ void game_options_verify(void)
 
     audio_option_set_b(0);
 
-    FUN_0051c7b0(0);
+    option_set_633228(0);
 
-    FUN_0051c8a0(0);
+    option_set_6331b8(0);
 
     audio_music_mode_gate(0);
 
@@ -9888,7 +9888,7 @@ void dialog_0048ca10(void)
 
     iVar3 = dialog_level_is_base_6();
 
-    FUN_0051c7b0(iVar3 == 0);
+    option_set_633228(iVar3 == 0);
 
     break;
 
@@ -9940,7 +9940,7 @@ void dialog_0048ca10(void)
 
     iVar3 = dialog_level_is_base_7();
 
-    FUN_0051c8a0(iVar3 == 0);
+    option_set_6331b8(iVar3 == 0);
 
     break;
 

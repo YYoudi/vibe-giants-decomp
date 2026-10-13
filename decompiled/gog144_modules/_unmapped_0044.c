@@ -4270,7 +4270,7 @@ LAB_004451e2:
 
     flick_text_layout(uVar4,uVar15);
 
-    uVar4 = FUN_00450cc0();
+    uVar4 = gfx_polycount_get();
 
     crt_sprintf(auStack_148,s_Triangle_scene___d_00558790,uVar4);
 

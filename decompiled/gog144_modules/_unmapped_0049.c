@@ -3394,7 +3394,7 @@ LAB_00492a3a:
 
                 if (iVar11 == 0) {
 
-                  iVar11 = FUN_00458c90(*(undefined4 *)(iVar6 + DAT_006330e4));
+                  iVar11 = IconDef_wield_eq1(*(undefined4 *)(iVar6 + DAT_006330e4));
 
                   if (iVar11 == 0) {
 

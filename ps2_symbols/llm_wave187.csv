@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00458c90,FUN_00458c90,,IconDef_wield_eq1,0.9,llm-w187,5th wield predicate callers inv fns
+0052ab00,FUN_0052ab00,,comm_player_active_get,0.9,llm-w187,005ddf60[idx] read 5 comm callers
+00450cc0,FUN_00450cc0,,gfx_polycount_get,0.9,llm-w187,GFX 0xc4 query caller FLK_FlickRender
+00452110,FUN_00452110,,audio_link_option_set,0.9,llm-w187,sets 0063311c gate of LinkStatusGet
+004520f0,FUN_004520f0,,option_set_6331b4,0.9,llm-w187,raw single-global setters menu_audio
+0051c8a0,FUN_0051c8a0,,option_set_6331b8,0.9,llm-w187
+0051c7b0,FUN_0051c7b0,,option_set_633228,0.9,llm-w187

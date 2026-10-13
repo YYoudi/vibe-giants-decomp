@@ -179,7 +179,7 @@ void comm_send_recv_pair(int param_1)
 
     do {
 
-      iVar3 = FUN_0052ab00(iVar2);
+      iVar3 = comm_player_active_get(iVar2);
 
       if (iVar3 != 0) {
 
@@ -2901,11 +2901,11 @@ void FUN_00531470(void)
 
               do {
 
-                iVar6 = FUN_0052ab00(iVar4);
+                iVar6 = comm_player_active_get(iVar4);
 
                 if (iVar6 != 0) {
 
-                  uVar5 = FUN_0052ab00(iVar4);
+                  uVar5 = comm_player_active_get(iVar4);
 
                   comm_fakehost_menu_user(0,uVar5);
 
@@ -3071,7 +3071,7 @@ LAB_005319de:
 
             local_534 = (ushort)(byte)pcVar15[4];
 
-            uVar5 = FUN_0052ab00(*(uint *)(pcVar15 + 1) & 0xff);
+            uVar5 = comm_player_active_get(*(uint *)(pcVar15 + 1) & 0xff);
 
             comm_0052b780(uVar5,6,&local_538);
 
@@ -3507,7 +3507,7 @@ LAB_005319de:
 
             local_4b7 = 0;
 
-            uVar5 = FUN_0052ab00(DAT_005e02e8);
+            uVar5 = comm_player_active_get(DAT_005e02e8);
 
             comm_0052b780(uVar5,0x2e,local_4e4);
 
@@ -3583,7 +3583,7 @@ LAB_005319de:
 
             local_4f3 = 0;
 
-            uVar5 = FUN_0052ab00(DAT_005e02e8);
+            uVar5 = comm_player_active_get(DAT_005e02e8);
 
             comm_0052b780(uVar5,0x1e,&local_510);
 
@@ -4255,7 +4255,7 @@ LAB_00532b8b:
 
         do {
 
-          iVar6 = FUN_0052ab00(iVar4);
+          iVar6 = comm_player_active_get(iVar4);
 
           if (iVar6 == *(int *)(pcVar15 + 1)) {
 
@@ -4349,7 +4349,7 @@ LAB_0053196c:
 
           do {
 
-            iVar6 = FUN_0052ab00(iVar4);
+            iVar6 = comm_player_active_get(iVar4);
 
             if (iVar6 == DAT_005def94) {
 
@@ -4401,7 +4401,7 @@ LAB_0053196c:
 
             do {
 
-              iVar6 = FUN_0052ab00(iVar4);
+              iVar6 = comm_player_active_get(iVar4);
 
               if (iVar6 == *(int *)(pcVar15 + 5)) {
 
@@ -4663,7 +4663,7 @@ void comm_team_broadcast_draw(int param_1)
 
               local_8 = 0x12;
 
-              local_6 = FUN_0052ab00(iVar2);
+              local_6 = comm_player_active_get(iVar2);
 
               local_7 = uVar1;
 
@@ -4987,7 +4987,7 @@ void comm_cam_mode_menu(undefined4 *param_1)
 
       local_3 = 0;
 
-      uVar2 = FUN_0052ab00(DAT_005e02e8);
+      uVar2 = comm_player_active_get(DAT_005e02e8);
 
       comm_0052b780(uVar2,0x16,local_18);
 
@@ -5319,7 +5319,7 @@ LAB_005337eb:
 
     }
 
-    iVar4 = FUN_00458c90(*(undefined1 *)(param_1 + 9));
+    iVar4 = IconDef_wield_eq1(*(undefined1 *)(param_1 + 9));
 
     if (iVar4 == 0) {
 
@@ -6773,7 +6773,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               if (DAT_0059d99c != 0) {
 
-                iVar6 = FUN_0052ab00(DAT_005e02e8);
+                iVar6 = comm_player_active_get(DAT_005e02e8);
 
                 iVar9 = dialog_level_is_base();
 
@@ -6801,11 +6801,11 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               }
 
-              uVar8 = FUN_0052ab00(DAT_005e02e8);
+              uVar8 = comm_player_active_get(DAT_005e02e8);
 
               comm_0052b780_user_4(uVar8);
 
-              uVar8 = FUN_0052ab00(DAT_005e02e8);
+              uVar8 = comm_player_active_get(DAT_005e02e8);
 
               comm_send_helper(uVar8);
 
@@ -6817,7 +6817,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                   if (DAT_0063325c != 0) {
 
-                    uVar8 = FUN_0052ab00(DAT_005e02e8);
+                    uVar8 = comm_player_active_get(DAT_005e02e8);
 
                     comm_fakehost_menu_user(0,uVar8);
 
@@ -6827,7 +6827,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                 else {
 
-                  uVar8 = FUN_0052ab00(DAT_005e02e8,DAT_005def94);
+                  uVar8 = comm_player_active_get(DAT_005e02e8,DAT_005def94);
 
                   comm_fakehost_menu_user(uVar8);
 
@@ -6837,7 +6837,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
               if (DAT_00633260 != '\0') {
 
-                uVar8 = FUN_0052ab00(DAT_005e02e8);
+                uVar8 = comm_player_active_get(DAT_005e02e8);
 
                 comm_audio_volume_user(&DAT_00633260,1,0,uVar8);
 
@@ -11612,7 +11612,7 @@ void FUN_005375e0(void)
 
             do {
 
-              iVar6 = FUN_0052ab00(iVar8);
+              iVar6 = comm_player_active_get(iVar8);
 
               if ((iVar6 != 0) &&
 
@@ -11746,7 +11746,7 @@ void FUN_005375e0(void)
 
             do {
 
-              iVar8 = FUN_0052ab00(iVar3);
+              iVar8 = comm_player_active_get(iVar3);
 
               if (iVar8 != 0) {
 
@@ -12184,7 +12184,7 @@ switchD_0053793e_default:
 
     do {
 
-      iVar8 = FUN_0052ab00(iVar3);
+      iVar8 = comm_player_active_get(iVar3);
 
       if (iVar8 != 0) {
 
@@ -12218,7 +12218,7 @@ switchD_0053793e_default:
 
         do {
 
-          iVar8 = FUN_0052ab00(iVar3);
+          iVar8 = comm_player_active_get(iVar3);
 
           if (((iVar8 != 0) && (fVar9 = (float)comm_0052ab50(iVar3), fVar9 != fVar13)) &&
 

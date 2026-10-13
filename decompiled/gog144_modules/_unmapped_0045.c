@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (109 named) — decompiled, names from PS2 symbols
+ * 145 functions (113 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -216,8 +216,8 @@ undefined4 AudioGetMasterVolume__Fv_7(void)
 
 }
 
-/* ===== FUN_00450cc0 @ 0x00450CC0 ===== */
-void FUN_00450cc0(void)
+/* ===== gfx_polycount_get @ 0x00450CC0 ===== */
+void gfx_polycount_get(void)
 
 
 
@@ -1365,12 +1365,12 @@ void FUN_004520d0(int param_1)
 
 }
 
-/* ===== FUN_004520f0 @ 0x004520F0 ===== */
+/* ===== option_set_6331b4 @ 0x004520F0 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_004520f0(int param_1)
+void option_set_6331b4(int param_1)
 
 
 
@@ -1382,8 +1382,8 @@ void FUN_004520f0(int param_1)
 
 }
 
-/* ===== FUN_00452110 @ 0x00452110 ===== */
-void FUN_00452110(int param_1)
+/* ===== audio_link_option_set @ 0x00452110 ===== */
+void audio_link_option_set(int param_1)
 
 
 
@@ -8056,8 +8056,8 @@ void teammate_copy_weapons(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00458c90 @ 0x00458C90 ===== */
-bool FUN_00458c90(undefined4 param_1)
+/* ===== IconDef_wield_eq1 @ 0x00458C90 ===== */
+bool IconDef_wield_eq1(undefined4 param_1)
 
 
 
@@ -8268,7 +8268,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
       }
 
-      iVar3 = FUN_00458c90(uVar1);
+      iVar3 = IconDef_wield_eq1(uVar1);
 
       if ((iVar3 != 0) &&
 
@@ -8276,7 +8276,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
           (iVar3 = reaper_has_bow_2(iVar6), iVar3 < 0)))) {
 
-        iVar3 = FUN_00458c90(uVar1);
+        iVar3 = IconDef_wield_eq1(uVar1);
 
         if (iVar3 == 0) {
 
@@ -8396,11 +8396,11 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
   }
 
-  iVar4 = FUN_00458c90(uVar1);
+  iVar4 = IconDef_wield_eq1(uVar1);
 
   if ((iVar4 == 0) || (iVar4 = player_has_weapon(iVar6,uVar1), iVar4 == 0)) {
 
-    iVar4 = FUN_00458c90(uVar1);
+    iVar4 = IconDef_wield_eq1(uVar1);
 
     if ((iVar4 != 0) && (iVar4 = FUN_00457d10(iVar6), iVar4 == 0)) {
 
@@ -8647,7 +8647,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
       if (iVar2 == 0) {
 
-        iVar2 = FUN_00458c90(param_3);
+        iVar2 = IconDef_wield_eq1(param_3);
 
         if (iVar2 == 0) {
 
@@ -8727,7 +8727,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
       if (iVar3 == 0) {
 
-        iVar3 = FUN_00458c90(param_3);
+        iVar3 = IconDef_wield_eq1(param_3);
 
         if (iVar3 == 0) {
 
@@ -9120,7 +9120,7 @@ void inv_remove_item(int param_1,undefined4 *param_2,undefined4 param_3,int para
 
   if (iVar5 == 0) {
 
-    iVar6 = FUN_00458c90(uVar4);
+    iVar6 = IconDef_wield_eq1(uVar4);
 
     iVar5 = (int)param_2;
 

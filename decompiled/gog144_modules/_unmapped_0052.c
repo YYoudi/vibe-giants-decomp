@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (126 named) — decompiled, names from PS2 symbols
+ * 162 functions (127 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -7405,8 +7405,8 @@ undefined4 AudioGetMasterVolume__Fv_10(void)
 
 }
 
-/* ===== FUN_0052ab00 @ 0x0052AB00 ===== */
-undefined4 FUN_0052ab00(int param_1)
+/* ===== comm_player_active_get @ 0x0052AB00 ===== */
+undefined4 comm_player_active_get(int param_1)
 
 
 
@@ -12304,7 +12304,7 @@ void comm_0052e6e0(char *param_1,int param_2)
 
         do {
 
-          iVar3 = FUN_0052ab00(uVar9);
+          iVar3 = comm_player_active_get(uVar9);
 
           if ((iVar3 != 0) && (uVar9 != uVar8)) {
 
@@ -12318,7 +12318,7 @@ void comm_0052e6e0(char *param_1,int param_2)
 
             }
 
-            if ((param_2 == 0) || (iVar3 = FUN_0052ab00(uVar9), iVar3 == param_2)) {
+            if ((param_2 == 0) || (iVar3 = comm_player_active_get(uVar9), iVar3 == param_2)) {
 
               uVar7 = 0xffffffff;
 
@@ -12336,7 +12336,7 @@ void comm_0052e6e0(char *param_1,int param_2)
 
               } while (cVar1 != '\0');
 
-              uVar5 = FUN_0052ab00(uVar9,~uVar7 + 1,local_200);
+              uVar5 = comm_player_active_get(uVar9,~uVar7 + 1,local_200);
 
               comm_stats_accumulate_global(uVar5);
 
@@ -12638,7 +12638,7 @@ void comm_team_broadcast_send(undefined4 param_1,undefined1 param_2)
 
       local_8 = 0x12;
 
-      local_6 = FUN_0052ab00(param_1);
+      local_6 = comm_player_active_get(param_1);
 
       local_7 = param_2;
 
@@ -13042,7 +13042,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
     local_8 = 0x31;
 
-    local_6 = FUN_0052ab00(param_1);
+    local_6 = comm_player_active_get(param_1);
 
     local_7 = (DAT_005ddb54 != 0) << 7 | (byte)param_2;
 
@@ -13060,7 +13060,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
         if (iVar1 != 0) {
 
-          uVar2 = FUN_0052ab00(param_1);
+          uVar2 = comm_player_active_get(param_1);
 
           iVar1 = dialog_level_is_base();
 
@@ -13116,7 +13116,7 @@ void FUN_0052EF00(undefined4 param_1,undefined4 param_2)
 
             local_18 = 0x12;
 
-            uVar2 = FUN_0052ab00(param_1);
+            uVar2 = comm_player_active_get(param_1);
 
             uStack_13 = (undefined1)((uint)uVar2 >> 0x18);
 
@@ -13598,7 +13598,7 @@ void comm_fakehost_menu(int param_1)
 
     do {
 
-      iVar1 = FUN_0052ab00(iVar3);
+      iVar1 = comm_player_active_get(iVar3);
 
       if (iVar1 == DAT_005def94) {
 
@@ -13638,7 +13638,7 @@ void comm_fakehost_menu(int param_1)
 
   if (0 < DAT_00632f34) {
 
-    while (iVar1 = FUN_0052ab00(iVar3), iVar1 != DAT_005def94) {
+    while (iVar1 = comm_player_active_get(iVar3), iVar1 != DAT_005def94) {
 
       iVar3 = iVar3 + 1;
 
@@ -13709,7 +13709,7 @@ void comm_fakehost_player(undefined4 param_1)
 
     do {
 
-      iVar2 = FUN_0052ab00(iVar1);
+      iVar2 = comm_player_active_get(iVar1);
 
       if (iVar2 != 0) {
 
@@ -13719,7 +13719,7 @@ void comm_fakehost_player(undefined4 param_1)
 
         if (iVar2 == 0) {
 
-          uVar3 = FUN_0052ab00(iVar1);
+          uVar3 = comm_player_active_get(iVar1);
 
           iVar1 = dialog_level_is_base();
 
@@ -13800,7 +13800,7 @@ void comm_fakehost_toggle(void)
 
     do {
 
-      iVar2 = FUN_0052ab00(iVar1);
+      iVar2 = comm_player_active_get(iVar1);
 
       if (iVar2 == DAT_005def94) {
 
