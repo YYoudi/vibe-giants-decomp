@@ -120,7 +120,13 @@ def main():
                 callees[a].add(c)
 
     def family(nm):
-        return re.split(r"[^A-Za-z]+", nm.split("__F")[0])[0].lower()
+        base = nm.split("__F")[0]
+        toks = [t for t in re.split(r"[^A-Za-z0-9]+", base) if t]
+        # module-wave names end with a hex address: main_collgrid_00426f40
+        # -> semantic family is the token before the address
+        if len(toks) >= 3 and re.fullmatch(r"[0-9a-fA-F]{8}", toks[-1]):
+            return toks[-2].lower()
+        return toks[0].lower() if toks else ""
 
     GENERIC = {"fun_", "crt", "func"}
     rows = []

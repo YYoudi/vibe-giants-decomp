@@ -1,1 +1,4 @@
 pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00434d40,FUN_00434D40,,cleanup_00434d40,0.9,call-pattern,
+00436060,FUN_00436060,,cleanup_00436060,0.9,call-pattern,
+004ce880,FUN_004CE880,,comm_004ce880,0.9,call-pattern,

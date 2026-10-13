@@ -359,7 +359,7 @@ void gamespy_send_statechange(void)
 
     else {
 
-      comm_time_string(iVar2 * 0x3c,local_28);
+      comm_004ce880(iVar2 * 0x3c,local_28);
 
     }
 
@@ -1930,7 +1930,7 @@ void comm_capture_time_menu(int param_1,int param_2)
 
     else {
 
-      comm_time_string(param_1 * 0x3c,local_28);
+      comm_004ce880(param_1 * 0x3c,local_28);
 
     }
 
@@ -2166,7 +2166,7 @@ void comm_timelimit_menu(int param_1)
 
     else {
 
-      comm_time_string(param_1 * 0x3c,local_28);
+      comm_004ce880(param_1 * 0x3c,local_28);
 
     }
 
@@ -2534,7 +2534,7 @@ void comm_scorelimit_menu(uint *param_1,uint *param_2,undefined4 param_3)
 
         else {
 
-          comm_time_string(uVar2 * 0x3c,local_28);
+          comm_004ce880(uVar2 * 0x3c,local_28);
 
         }
 
@@ -3910,7 +3910,7 @@ LAB_00523950:
 
       else {
 
-        comm_time_string(iVar5 * 0x3c,local_bc);
+        comm_004ce880(iVar5 * 0x3c,local_bc);
 
       }
 
@@ -4064,7 +4064,7 @@ LAB_00523950:
 
       else {
 
-        comm_time_string(iVar5 * 0x3c,local_bc);
+        comm_004ce880(iVar5 * 0x3c,local_bc);
 
       }
 
@@ -6085,7 +6085,7 @@ void comm_change_options_menu(void)
 
   if (DAT_00632f2c != DAT_005de4c4) {
 
-    comm_time_string(DAT_00632f2c * 0x3c,local_28);
+    comm_004ce880(DAT_00632f2c * 0x3c,local_28);
 
     if (DAT_00632f2c < 1) {
 
@@ -6227,7 +6227,7 @@ void comm_change_options_menu(void)
 
     if (DAT_00632fcc != DAT_005de564) {
 
-      comm_time_string(DAT_00632fcc * 0x3c,local_28);
+      comm_004ce880(DAT_00632fcc * 0x3c,local_28);
 
       if (DAT_00632fcc == 0) {
 
@@ -7009,7 +7009,7 @@ void FUN_0052a050(int param_1)
 
         else {
 
-          comm_time_string(iVar8 * 0x3c,local_4c4);
+          comm_004ce880(iVar8 * 0x3c,local_4c4);
 
         }
 

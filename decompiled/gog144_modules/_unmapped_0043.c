@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0043
- * 74 functions (52 named) — decompiled, names from PS2 symbols
+ * 74 functions (53 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
  */
 
@@ -2764,7 +2764,7 @@ void main_drawwrld_00434d10(byte *param_1)
 
   if ((*param_1 & 1) != 0) {
 
-    main_drawwrld_00434d40(param_1);
+    cleanup_00434d40(param_1);
 
     (**(code **)(*(int *)(param_1 + 0x30) + 0x2c))(*(int *)(param_1 + 0x30));
 
@@ -2776,8 +2776,8 @@ void main_drawwrld_00434d10(byte *param_1)
 
 }
 
-/* ===== main/drawwrld_00434d40 @ 0x00434D40 ===== */
-void main_drawwrld_00434d40(uint *param_1)
+/* ===== cleanup_00434d40 @ 0x00434D40 ===== */
+void cleanup_00434d40(uint *param_1)
 
 
 
@@ -3161,7 +3161,7 @@ void main_drawwrld_004350c0(byte *param_1)
 
       else {
 
-        main_drawwrld_00434d40(param_1);
+        cleanup_00434d40(param_1);
 
         puVar4 = puVar2;
 
@@ -3374,7 +3374,7 @@ void main_drawwrld_00435940(byte *param_1,undefined4 param_2,float *param_3)
 
   if ((*param_1 & 1) != 0) {
 
-    main_drawwrld_00434d40(param_1);
+    cleanup_00434d40(param_1);
 
     uVar3 = (**(code **)(*(int *)(param_1 + 0x30) + 0x10))
 
@@ -3726,7 +3726,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_00656498 & 1) != 0) {
 
-    main_drawwrld_00434d40(DAT_00656498);
+    cleanup_00434d40(DAT_00656498);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3742,7 +3742,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_00656494 & 1) != 0) {
 
-    main_drawwrld_00434d40(DAT_00656494);
+    cleanup_00434d40(DAT_00656494);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3758,7 +3758,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_0065646c & 1) != 0) {
 
-    main_drawwrld_00434d40(DAT_0065646c);
+    cleanup_00434d40(DAT_0065646c);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3774,7 +3774,7 @@ void FUN_00435fd0(void)
 
   if ((*DAT_00656544 & 1) != 0) {
 
-    main_drawwrld_00434d40(DAT_00656544);
+    cleanup_00434d40(DAT_00656544);
 
     iVar1 = *(int *)(pbVar2 + 0x30);
 
@@ -3790,8 +3790,8 @@ void FUN_00435fd0(void)
 
 }
 
-/* ===== FUN_00436060 @ 0x00436060 ===== */
-void FUN_00436060(void)
+/* ===== cleanup_00436060 @ 0x00436060 ===== */
+void cleanup_00436060(void)
 
 
 
@@ -3803,9 +3803,9 @@ void FUN_00436060(void)
 
   _cleanup_3();
 
-  main_drawwrld_00434d40(DAT_0065646c);
+  cleanup_00434d40(DAT_0065646c);
 
-  main_drawwrld_00434d40(DAT_00656544);
+  cleanup_00434d40(DAT_00656544);
 
   return;
 

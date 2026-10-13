@@ -16,7 +16,7 @@
 | _unmapped_004b | 90 | 21 | _unmapped_004b.c |
 | _unmapped_0050 | 87 | 19 | _unmapped_0050.c |
 | _unmapped_0044 | 76 | 28 | _unmapped_0044.c |
-| _unmapped_0043 | 74 | 52 | _unmapped_0043.c |
+| _unmapped_0043 | 74 | 53 | _unmapped_0043.c |
 | _unmapped_0048 | 74 | 25 | _unmapped_0048.c |
 | _unmapped_0047 | 67 | 16 | _unmapped_0047.c |
 | _unmapped_004c | 64 | 19 | _unmapped_004c.c |

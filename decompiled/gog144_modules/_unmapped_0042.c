@@ -17461,7 +17461,7 @@ void _cleanup(void)
 
 {
 
-  main_drawwrld_00434d40(DAT_006573e8);
+  cleanup_00434d40(DAT_006573e8);
 
   return;
 
@@ -17626,7 +17626,7 @@ void _cleanup_2(void)
 
 {
 
-  main_drawwrld_00434d40(DAT_006573ec);
+  cleanup_00434d40(DAT_006573ec);
 
   return;
 
@@ -17758,7 +17758,7 @@ void _cleanup_3(void)
 
 {
 
-  main_drawwrld_00434d40(DAT_006573f0);
+  cleanup_00434d40(DAT_006573f0);
 
   return;
 
