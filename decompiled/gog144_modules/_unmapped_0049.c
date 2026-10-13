@@ -1802,7 +1802,7 @@ void FUN_00491d30(int param_1)
 
   }
 
-  FUN_00501500();
+  obj_path_follow();
 
   return;
 

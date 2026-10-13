@@ -3212,7 +3212,7 @@
  "0x00456F80": {
   "name": "obj_damage_apply",
   "named": true,
-  "len": 1978
+  "len": 1982
  },
  "0x00457100": {
   "name": "FUN_00457100",
@@ -4160,9 +4160,9 @@
   "len": 1179
  },
  "0x0047C2D0": {
-  "name": "FUN_0047c2d0",
-  "named": false,
-  "len": 2161
+  "name": "obj_hover_update",
+  "named": true,
+  "len": 2165
  },
  "0x0047C440": {
   "name": "FUN_0047c440",
@@ -4677,7 +4677,7 @@
  "0x00491D30": {
   "name": "FUN_00491d30",
   "named": false,
-  "len": 1426
+  "len": 1429
  },
  "0x00491E30": {
   "name": "savegame_load",
@@ -5555,9 +5555,9 @@
   "len": 2406
  },
  "0x004A24E0": {
-  "name": "FUN_004a24e0",
-  "named": false,
-  "len": 1249
+  "name": "obj_move_clamped",
+  "named": true,
+  "len": 1253
  },
  "0x004A2650": {
   "name": "FUN_004a2650",
@@ -5567,7 +5567,7 @@
  "0x004A26F0": {
   "name": "FUN_004a26f0",
   "named": false,
-  "len": 1534
+  "len": 1538
  },
  "0x004A2850": {
   "name": "FUN_004a2850",
@@ -7975,9 +7975,9 @@
   "len": 2739
  },
  "0x00501500": {
-  "name": "FUN_00501500",
-  "named": false,
-  "len": 1995
+  "name": "obj_path_follow",
+  "named": true,
+  "len": 1998
  },
  "0x00501670": {
   "name": "FUN_00501670",
@@ -10160,9 +10160,9 @@
   "len": 367
  },
  "0x00530010": {
-  "name": "FUN_00530010",
-  "named": false,
-  "len": 2289
+  "name": "comm_chat_send_3",
+  "named": true,
+  "len": 2316
  },
  "0x00530180": {
   "name": "comm_send_recv_pair",

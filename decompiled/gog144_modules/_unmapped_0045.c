@@ -5941,7 +5941,7 @@ void obj_damage_apply(int param_1,undefined4 param_2,int param_3,int param_4,und
 
     if (iVar2 != 0) {
 
-      FUN_00530010(param_1,param_2,param_3,param_4,param_5,param_6);
+      comm_chat_send_3(param_1,param_2,param_3,param_4,param_5,param_6);
 
     }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (41 named) — decompiled, names from PS2 symbols
+ * 131 functions (42 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1698,8 +1698,8 @@ void obj_gravity_apply(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004a24e0 @ 0x004A24E0 ===== */
-void FUN_004a24e0(float param_1,float *param_2,float param_3)
+/* ===== obj_move_clamped @ 0x004A24E0 ===== */
+void obj_move_clamped(float param_1,float *param_2,float param_3)
 
 
 
@@ -1917,7 +1917,7 @@ void FUN_004a26f0(int param_1,float param_2,float param_3,undefined4 param_4,und
 
     fStack_9c = fStack_64 * param_3 + -(fStack_60 * param_2);
 
-    FUN_004a24e0(param_1,&local_a4,param_4,param_5);
+    obj_move_clamped(param_1,&local_a4,param_4,param_5);
 
   }
 

@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0047c2d0,FUN_0047C2D0,,obj_hover_update,0.9,llm-read56,
+00530010,FUN_00530010,,comm_chat_send_3,0.9,llm-read56,
+00501500,FUN_00501500,,obj_path_follow,0.9,llm-read56,
+004a24e0,FUN_004A24E0,,obj_move_clamped,0.9,llm-read56,

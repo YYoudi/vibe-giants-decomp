@@ -1,14 +1,16 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (74 named) — decompiled, names from PS2 symbols
+ * 179 functions (75 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_00530010 @ 0x00530010 ===== */
+/* ===== comm_chat_send_3 @ 0x00530010 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void FUN_00530010(undefined1 param_1,undefined4 param_2,int param_3,int param_4,undefined4 *param_5)
+void comm_chat_send_3(undefined1 param_1,undefined4 param_2,int param_3,int param_4,
+
+                     undefined4 *param_5)
 
 
 
