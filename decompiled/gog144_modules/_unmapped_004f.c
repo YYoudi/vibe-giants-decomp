@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004f
- * 48 functions (30 named) — decompiled, names from PS2 symbols
+ * 48 functions (32 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004f.c(pp) (assert-string evidence)
  */
 
@@ -1879,7 +1879,7 @@ int smartie_check_follow__FP6OBJECTf(int param_1,float param_2)
 
          ((((iVar4 = ObjIsReaper(iVar2), iVar4 == 0 || (*(int *)(iVar2 + 0x210) == 0)) ||
 
-           (iVar4 = FUN_004a6120(*(int *)(iVar2 + 0x210)), iVar4 == 0)) &&
+           (iVar4 = ObjIsJetski(*(int *)(iVar2 + 0x210)), iVar4 == 0)) &&
 
           ((iVar4 = ObjIsMecc(iVar2), iVar4 == 0 || (iVar4 = mecc_in_gyro(iVar2), iVar4 == 0)))))) {
 
@@ -2488,12 +2488,12 @@ void comm_stats_reset(void)
 
 }
 
-/* ===== FUN_004f7780 @ 0x004F7780 ===== */
+/* ===== smartie_shot @ 0x004F7780 ===== */
 /* PS2 candidate: smartie_shot (conf 0.441) */
 
 
 
-void FUN_004f7780(int param_1,float param_2,int param_3,undefined4 param_4,undefined4 param_5)
+void smartie_shot(int param_1,float param_2,int param_3,undefined4 param_4,undefined4 param_5)
 
 
 
@@ -3059,12 +3059,12 @@ float10 FUN_004f8350(int param_1)
 
 }
 
-/* ===== FUN_004f8360 @ 0x004F8360 ===== */
+/* ===== smokegen_process @ 0x004F8360 ===== */
 /* PS2 candidate: smokegen_process (conf 0.444) */
 
 
 
-void FUN_004f8360(float param_1)
+void smokegen_process(float param_1)
 
 
 
@@ -4151,7 +4151,7 @@ void FUN_004f9b50(int param_1,int param_2)
 
           if (param_2 != 0) {
 
-            FUN_004e7ae0(iVar2,0);
+            rpman_notify_hit(iVar2,0);
 
           }
 

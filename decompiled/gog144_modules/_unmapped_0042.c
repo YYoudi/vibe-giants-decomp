@@ -14144,7 +14144,7 @@ int FUN_0042b060(int param_1,float param_2,int param_3)
 
     }
 
-    uVar3 = FUN_00515db0();
+    uVar3 = XFGetCameraOrigin();
 
     fVar7 = (float10)distance3d__FP3P3DT0(param_1 + 0xa0,uVar3);
 
@@ -16313,7 +16313,7 @@ LAB_0042cb13:
 
                   (*(code *)PTR_crt_matrix_copy_init_00580c1c)(auStack_50,param_1 + 0x294);
 
-                  uVar7 = FUN_00515db0();
+                  uVar7 = XFGetCameraOrigin();
 
                   (*(code *)PTR_S_GEO_Vec3Transform_00580c20)(auStack_c,uVar7,1,auStack_50);
 

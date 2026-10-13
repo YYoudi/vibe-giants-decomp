@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (105 named) — decompiled, names from PS2 symbols
+ * 186 functions (107 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -1720,12 +1720,14 @@ LAB_005127e2:
 
 }
 
-/* ===== FUN_005129d0 @ 0x005129D0 ===== */
+/* ===== create_one_vimp_chunk @ 0x005129D0 ===== */
 /* PS2 candidate: create_one_vimp_chunk (conf 0.446) */
 
 
 
-int FUN_005129d0(undefined4 *param_1,uint param_2,int param_3,int param_4,undefined4 param_5)
+int create_one_vimp_chunk
+
+              (undefined4 *param_1,uint param_2,int param_3,int param_4,undefined4 param_5)
 
 
 
@@ -2617,7 +2619,7 @@ int wave_effect_get_player_position__FP11T_WaveDatasP6OBJECT(int *param_1,int pa
 
   
 
-  piVar6 = (int *)FUN_00515db0();
+  piVar6 = (int *)XFGetCameraOrigin();
 
   fVar1 = 1.0;
 
@@ -3350,7 +3352,7 @@ void FUN_00514900(int param_1,int param_2,float *param_3,float *param_4,float pa
 
   }
 
-  pfVar2 = (float *)FUN_00515db0();
+  pfVar2 = (float *)XFGetCameraOrigin();
 
   *param_3 = *pfVar2;
 
@@ -4482,7 +4484,7 @@ void FUN_00515890(int param_1,float *param_2,float param_3,float param_4,float p
 
         if (iVar5 == 0) {
 
-          iVar5 = FUN_004a6120(param_1);
+          iVar5 = ObjIsJetski(param_1);
 
           if ((iVar5 != 0) && ((**(byte **)(param_1 + 0x104) & 0x40) != 0)) {
 
@@ -4760,12 +4762,12 @@ float10 FUN_00515da0(void)
 
 }
 
-/* ===== FUN_00515db0 @ 0x00515DB0 ===== */
+/* ===== XFGetCameraOrigin @ 0x00515DB0 ===== */
 /* PS2 candidate: XFGetCameraOrigin (conf 0.442) */
 
 
 
-undefined * FUN_00515db0(void)
+undefined * XFGetCameraOrigin(void)
 
 
 
@@ -12266,7 +12268,7 @@ void _lmcGetClientPtr(undefined4 *param_1,undefined4 *param_2,undefined4 *param_
 
   _DAT_005dd93c = &LAB_00508090;
 
-  _DAT_005dd940 = FUN_005086e0;
+  _DAT_005dd940 = texture_destroy;
 
   _DAT_005dd944 = FUN_00507b00;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (80 named) — decompiled, names from PS2 symbols
+ * 131 functions (85 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3748,14 +3748,14 @@ void piranha_finit(void)
 
 }
 
-/* ===== FUN_004a4550 @ 0x004A4550 ===== */
+/* ===== piranha_go @ 0x004A4550 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: piranha_go (conf 0.444) */
 
 
 
-void FUN_004a4550(void)
+void piranha_go(void)
 
 
 
@@ -3913,7 +3913,7 @@ void FUN_004a4550(void)
 
 LAB_004a473d:
 
-      iVar3 = FUN_004a4770(in_ECX);
+      iVar3 = piranha_make__FP6OBJECT(in_ECX);
 
       *(uint *)(iVar3 + 0xe0) = *(uint *)(iVar3 + 0xe0) | 1;
 
@@ -3929,12 +3929,12 @@ LAB_004a473d:
 
 }
 
-/* ===== FUN_004a4770 @ 0x004A4770 ===== */
+/* ===== piranha_make__FP6OBJECT @ 0x004A4770 ===== */
 /* PS2 candidate: piranha_make__FP6OBJECT (conf 0.443) */
 
 
 
-int FUN_004a4770(int param_1)
+int piranha_make__FP6OBJECT(int param_1)
 
 
 
@@ -4022,12 +4022,12 @@ int FUN_004a4770(int param_1)
 
 }
 
-/* ===== FUN_004a48a0 @ 0x004A48A0 ===== */
+/* ===== piranha_chase_swimmer__FP6OBJECT @ 0x004A48A0 ===== */
 /* PS2 candidate: piranha_chase_swimmer__FP6OBJECT (conf 0.443) */
 
 
 
-void FUN_004a48a0(float param_1)
+void piranha_chase_swimmer__FP6OBJECT(float param_1)
 
 
 
@@ -5551,12 +5551,12 @@ undefined4 FUN_004a6100(int param_1)
 
 }
 
-/* ===== FUN_004a6120 @ 0x004A6120 ===== */
+/* ===== ObjIsJetski @ 0x004A6120 ===== */
 /* PS2 candidate: ObjIsJetski (conf 0.446) */
 
 
 
-undefined4 FUN_004a6120(int param_1)
+undefined4 ObjIsJetski(int param_1)
 
 
 
@@ -7554,12 +7554,12 @@ undefined4 IconDefProjectile(int param_1)
 
 }
 
-/* ===== FUN_004a9070 @ 0x004A9070 ===== */
+/* ===== IconDefMaxAmmo @ 0x004A9070 ===== */
 /* PS2 candidate: IconDefMaxAmmo (conf 0.443) */
 
 
 
-undefined4 FUN_004a9070(int param_1)
+undefined4 IconDefMaxAmmo(int param_1)
 
 
 
@@ -9431,7 +9431,7 @@ int FUN_004aa0b0(int param_1,undefined4 param_2)
 
   *(char *)(puVar1 + 0x79) = (char)param_1;
 
-  puVar3 = (uint *)FUN_00515db0();
+  puVar3 = (uint *)XFGetCameraOrigin();
 
   puVar1[0x7b] = *puVar3;
 
@@ -11131,7 +11131,7 @@ void FUN_004aca20(int param_1,int param_2)
 
         ((iVar4 = FUN_004a6100(iVar3), iVar4 == 0 || (iVar4 = FUN_004d49c0(iVar3), iVar4 == 0)))))))
 
-      ) || (iVar4 = FUN_004a6120(*(undefined4 *)(iVar3 + 0x210)), iVar4 != 0)) {
+      ) || (iVar4 = ObjIsJetski(*(undefined4 *)(iVar3 + 0x210)), iVar4 != 0)) {
 
     *(undefined4 *)(iVar6 + 0x14) = 1;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (113 named) — decompiled, names from PS2 symbols
+ * 179 functions (114 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -7131,7 +7131,7 @@ void mecc_fire_logic__FP6OBJECT(void)
 
                     }
 
-                    iVar9 = FUN_004a6120(*(undefined4 *)(iVar6 + 0x210));
+                    iVar9 = ObjIsJetski(*(undefined4 *)(iVar6 + 0x210));
 
                     if (iVar9 != 0) {
 
@@ -18456,12 +18456,12 @@ void FUN_0053e430(undefined4 param_1)
 
 }
 
-/* ===== FUN_0053e460 @ 0x0053E460 ===== */
+/* ===== GEO_MatBuildXYZ @ 0x0053E460 ===== */
 /* PS2 candidate: GEO_MatBuildXYZ (conf 0.444) */
 
 
 
-void FUN_0053e460(uint *param_1,float param_2,float param_3,float param_4)
+void GEO_MatBuildXYZ(uint *param_1,float param_2,float param_3,float param_4)
 
 
 

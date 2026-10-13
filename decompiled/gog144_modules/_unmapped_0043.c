@@ -1859,7 +1859,7 @@ void makewrld_big(void)
 
   if (1 < DAT_00633244) {
 
-    pfVar3 = (float *)FUN_00515db0();
+    pfVar3 = (float *)XFGetCameraOrigin();
 
     fStack_188 = *pfVar3;
 
@@ -2040,7 +2040,7 @@ void audio_stream_tied(void)
 
   
 
-  puVar1 = (undefined4 *)FUN_00515db0();
+  puVar1 = (undefined4 *)XFGetCameraOrigin();
 
   _DAT_0059ca94 = *puVar1;
 
@@ -2060,7 +2060,7 @@ void audio_stream_tied(void)
 
   local_260 = *(int *)(DAT_006330e4 + 0x34);
 
-  FUN_00515db0();
+  XFGetCameraOrigin();
 
   FUN_004319c0(local_25c);
 

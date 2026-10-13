@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (54 named) — decompiled, names from PS2 symbols
+ * 76 functions (55 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1663,12 +1663,12 @@ void object_spawn_menu_wredit(undefined4 param_1,int param_2)
 
 }
 
-/* ===== FUN_004429c0 @ 0x004429C0 ===== */
+/* ===== scenerio_handle_music__FPv @ 0x004429C0 ===== */
 /* PS2 candidate: scenerio_handle_music__FPv (conf 0.437) */
 
 
 
-undefined4 FUN_004429c0(float param_1)
+undefined4 scenerio_handle_music__FPv(float param_1)
 
 
 
@@ -3508,7 +3508,7 @@ undefined4 FLK_FlickRender(int param_1)
 
   FUN_005162b0(auStack_c4);
 
-  puVar6 = (undefined4 *)FUN_00515db0();
+  puVar6 = (undefined4 *)XFGetCameraOrigin();
 
   fVar2 = DAT_006328e0;
 
@@ -3564,7 +3564,7 @@ undefined4 FLK_FlickRender(int param_1)
 
     if ((*(byte *)(iVar12 + 0xd8) & 0x40) != 0) {
 
-      FUN_00499500();
+      object_apply_location();
 
       FUN_004967b0(iVar12);
 
@@ -3976,7 +3976,7 @@ LAB_00444d25:
 
   main_drawobj_0042d490();
 
-  uVar4 = FUN_00515db0();
+  uVar4 = XFGetCameraOrigin();
 
   ai_island_init(uVar4);
 
@@ -4625,7 +4625,7 @@ LAB_0044569a:
 
   if ((iVar1 != 0x473) && (iVar1 != 0x3bb)) {
 
-    uVar4 = FUN_00515db0();
+    uVar4 = XFGetCameraOrigin();
 
     fVar7 = (float10)FUN_0050a610(uVar4,param_2 + 0xa0);
 
@@ -7347,7 +7347,7 @@ void object_lock_apply(int param_1,byte param_2)
 
       FUN_004a6420(iVar1);
 
-      FUN_00499500(iVar1);
+      object_apply_location(iVar1);
 
       object_lock_logic(iVar1);
 

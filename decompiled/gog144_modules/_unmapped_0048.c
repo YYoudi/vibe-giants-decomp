@@ -12361,7 +12361,7 @@ LAB_0048f768:
 
       FUN_00403e60(iVar9,(float)fVar12);
 
-      FUN_00499500(iVar9);
+      object_apply_location(iVar9);
 
     }
 

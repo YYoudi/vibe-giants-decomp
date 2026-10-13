@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004b
- * 90 functions (65 named) — decompiled, names from PS2 symbols
+ * 90 functions (66 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004b.c(pp) (assert-string evidence)
  */
 
@@ -5616,7 +5616,7 @@ bool reaper_needs_ammo(int param_1,undefined4 param_2)
 
   case 0x3c:
 
-    iVar2 = FUN_004a6120(*(undefined4 *)(param_1 + 0x210));
+    iVar2 = ObjIsJetski(*(undefined4 *)(param_1 + 0x210));
 
     if (iVar2 != 0) {
 
@@ -5630,7 +5630,7 @@ bool reaper_needs_ammo(int param_1,undefined4 param_2)
 
   case 0x3d:
 
-    iVar2 = FUN_004a6120(*(undefined4 *)(param_1 + 0x210));
+    iVar2 = ObjIsJetski(*(undefined4 *)(param_1 + 0x210));
 
     if (iVar2 != 0) {
 
@@ -5644,7 +5644,7 @@ bool reaper_needs_ammo(int param_1,undefined4 param_2)
 
   case 0x3e:
 
-    iVar2 = FUN_004a6120(*(undefined4 *)(param_1 + 0x210));
+    iVar2 = ObjIsJetski(*(undefined4 *)(param_1 + 0x210));
 
     if (iVar2 != 0) {
 
@@ -5664,7 +5664,7 @@ bool reaper_needs_ammo(int param_1,undefined4 param_2)
 
     if (*piVar3 == param_1) {
 
-      iVar4 = FUN_004a9070(param_1);
+      iVar4 = IconDefMaxAmmo(param_1);
 
       return *(int *)(iVar1 + 0xd7c + iVar2 * 8) < iVar4;
 
@@ -6093,11 +6093,11 @@ void reaper_give_other(int param_1,int param_2,int param_3,int param_4,int param
 
     }
 
-    iVar2 = FUN_004a9070(param_2);
+    iVar2 = IconDefMaxAmmo(param_2);
 
     if (iVar2 < *(int *)(iVar1 + 0xd9c + param_3 * 8)) {
 
-      uVar3 = FUN_004a9070(param_2);
+      uVar3 = IconDefMaxAmmo(param_2);
 
       *(undefined4 *)(iVar1 + 0xd9c + param_3 * 8) = uVar3;
 
@@ -6170,7 +6170,7 @@ void reaper_give_ammo(int param_1,undefined4 param_2,int param_3)
 
     iVar5 = *(int *)(param_1 + 0x210);
 
-    iVar2 = FUN_004a6120(iVar5);
+    iVar2 = ObjIsJetski(iVar5);
 
     if (iVar2 != 0) {
 
@@ -6194,7 +6194,7 @@ void reaper_give_ammo(int param_1,undefined4 param_2,int param_3)
 
     iVar5 = *(int *)(param_1 + 0x210);
 
-    iVar2 = FUN_004a6120(iVar5);
+    iVar2 = ObjIsJetski(iVar5);
 
     if (iVar2 != 0) {
 
@@ -6218,7 +6218,7 @@ void reaper_give_ammo(int param_1,undefined4 param_2,int param_3)
 
     iVar5 = *(int *)(param_1 + 0x210);
 
-    iVar2 = FUN_004a6120(iVar5);
+    iVar2 = ObjIsJetski(iVar5);
 
     if (iVar2 != 0) {
 
@@ -6258,11 +6258,11 @@ void reaper_give_ammo(int param_1,undefined4 param_2,int param_3)
 
   *(int *)(iVar1 + 0xd7c + iVar5 * 8) = *(int *)(iVar1 + 0xd7c + iVar5 * 8) + param_3;
 
-  iVar2 = FUN_004a9070(param_1);
+  iVar2 = IconDefMaxAmmo(param_1);
 
   if (iVar2 < *(int *)(iVar1 + 0xd7c + iVar5 * 8)) {
 
-    uVar4 = FUN_004a9070(param_1);
+    uVar4 = IconDefMaxAmmo(param_1);
 
     *(undefined4 *)(iVar1 + 0xd7c + iVar5 * 8) = uVar4;
 
@@ -6924,7 +6924,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar2 = *(float *)(DAT_00632ed8 + 0x900);
 
-    pfVar5 = (float *)FUN_00515db0();
+    pfVar5 = (float *)XFGetCameraOrigin();
 
     local_5c = *pfVar5;
 
@@ -7218,7 +7218,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar2 = *(float *)(DAT_00632ed8 + 0x900);
 
-    pfVar5 = (float *)FUN_00515db0();
+    pfVar5 = (float *)XFGetCameraOrigin();
 
     local_5c = *pfVar5;
 
@@ -7334,7 +7334,7 @@ reaper_can_cast_spell_specific__FP6OBJECTP13ObjSpecReaperi(int param_1,int param
 
     fVar2 = *(float *)(DAT_00632ed8 + 0x900);
 
-    pfVar5 = (float *)FUN_00515db0();
+    pfVar5 = (float *)XFGetCameraOrigin();
 
     local_68 = *pfVar5;
 
@@ -7630,7 +7630,7 @@ undefined4 FUN_004ba2f0(int param_1,int param_2,int param_3)
 
       ((*(int *)(iVar1 + 0x1e0) != 1 && (*(int *)(iVar1 + 0x1e0) != 0x4c)))))) {
 
-    iVar1 = FUN_004a6120(iVar1);
+    iVar1 = ObjIsJetski(iVar1);
 
     if (iVar1 == 0) {
 
@@ -8505,7 +8505,7 @@ int audio_listener_update(undefined4 param_1,float param_2,float param_3,float p
 
   
 
-  pfVar14 = (float *)FUN_00515db0();
+  pfVar14 = (float *)XFGetCameraOrigin();
 
   fVar1 = *pfVar14;
 
@@ -8669,12 +8669,12 @@ void FUN_004bc880(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 
 }
 
-/* ===== FUN_004bc930 @ 0x004BC930 ===== */
+/* ===== reaper_turbo_towards_moving_target__FP6OBJECT @ 0x004BC930 ===== */
 /* PS2 candidate: reaper_turbo_towards_moving_target__FP6OBJECT (conf 0.451) */
 
 
 
-void FUN_004bc930(int param_1)
+void reaper_turbo_towards_moving_target__FP6OBJECT(int param_1)
 
 
 
@@ -10489,7 +10489,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     local_44 = 0;
 
-    FUN_0053e460(&local_44,-local_a0,0,(float)fVar8);
+    GEO_MatBuildXYZ(&local_44,-local_a0,0,(float)fVar8);
 
     auStack_38[1] = local_c0;
 
@@ -10555,7 +10555,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     local_88[0] = 0;
 
-    FUN_0053e460(local_88,-(float)fVar8,0,(float)fVar9);
+    GEO_MatBuildXYZ(local_88,-(float)fVar8,0,(float)fVar9);
 
     local_78 = local_c0;
 
@@ -10621,7 +10621,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     local_88[0] = 0;
 
-    FUN_0053e460(local_88,-(float)fVar8,0,(float)fVar9);
+    GEO_MatBuildXYZ(local_88,-(float)fVar8,0,(float)fVar9);
 
     local_78 = local_c0;
 
@@ -10697,7 +10697,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
       local_88[0] = 0;
 
-      FUN_0053e460(local_88,-(float)fVar8,0,(float)fVar9);
+      GEO_MatBuildXYZ(local_88,-(float)fVar8,0,(float)fVar9);
 
       local_78 = local_c0;
 
@@ -10765,7 +10765,7 @@ void make_arrow__FP6OBJECTT0P3P3DPUii
 
     local_88[0] = 0;
 
-    FUN_0053e460(local_88,-(float)fVar8,0,local_a4);
+    GEO_MatBuildXYZ(local_88,-(float)fVar8,0,local_a4);
 
     local_58 = local_b8;
 
@@ -11151,7 +11151,7 @@ void reaper_fire_spell__FP6OBJECTiP3P3DT0i
 
   local_44[0] = 0;
 
-  FUN_0053e460(local_44,-(float)fVar6,0,(float)fVar7);
+  GEO_MatBuildXYZ(local_44,-(float)fVar6,0,(float)fVar7);
 
   local_34 = local_60;
 
@@ -12518,11 +12518,11 @@ void reaper_finish_shrinker(undefined4 param_1,int param_2,int param_3,int param
 
   if ((param_2 != 0) && ((*(uint *)(param_2 + 0x1c8) & 0x400000) != 0)) {
 
-    iVar6 = FUN_004a6120(param_2);
+    iVar6 = ObjIsJetski(param_2);
 
     if (iVar6 == 0) {
 
-      iVar6 = FUN_004a6120(*(undefined4 *)(iVar8 + 0x210));
+      iVar6 = ObjIsJetski(*(undefined4 *)(iVar8 + 0x210));
 
       if (iVar6 == 0) {
 

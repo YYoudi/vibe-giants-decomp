@@ -4250,7 +4250,7 @@ LAB_00503c98:
 
     uVar4 = *(uint *)(iVar2 + 0x20c);
 
-    local_10 = FUN_00402270(iVar2);
+    local_10 = ai_goal_process(iVar2);
 
     *(uint *)(iVar2 + 0x20c) = *(uint *)(iVar2 + 0x20c) | uVar4;
 
@@ -11842,7 +11842,7 @@ joined_r0x0050d01d:
 
       *(undefined1 **)(iVar9 + 0x16c) = &LAB_0050f430;
 
-      FUN_00402270(iVar9);
+      ai_goal_process(iVar9);
 
       if (*(int *)(iVar9 + 0x168) != 0) {
 
@@ -12152,7 +12152,7 @@ switchD_0050ca70_caseD_15:
 
     *(undefined1 **)((int)param_1 + 0x16c) = &LAB_0050f430;
 
-    FUN_00402270(param_1);
+    ai_goal_process(param_1);
 
     if (*(int *)((int)param_1 + 0x168) == 0) {
 
@@ -12478,7 +12478,7 @@ switchD_0050ca70_caseD_15:
 
     *(undefined1 **)((int)param_1 + 0x16c) = &LAB_0050f430;
 
-    FUN_00402270(param_1);
+    ai_goal_process(param_1);
 
     if (*(int *)((int)param_1 + 0x168) == 0) {
 

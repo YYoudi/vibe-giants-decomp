@@ -1950,7 +1950,7 @@ void giftshopview_enable(int *param_1,int *param_2)
 
         if ((DAT_0059d984 == 0) && (piVar1 == (int *)0x0)) {
 
-          iVar5 = FUN_004a9070(piVar7[-1]);
+          iVar5 = IconDefMaxAmmo(piVar7[-1]);
 
 LAB_0045289f:
 
@@ -1998,7 +1998,7 @@ LAB_0045289f:
 
           if ((-1 < iVar3) && ((iVar3 != 0x3f || (DAT_0059d97c < 0x14)))) {
 
-            iVar3 = FUN_004a9070(iVar3);
+            iVar3 = IconDefMaxAmmo(iVar3);
 
             piVar7[1] = iVar3;
 
@@ -3824,7 +3824,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
         reaper_00530bd0(iVar3,0,2,0,0x1b,&local_8);
 
-        FUN_0047caa0(iVar3,0x1b,8,&local_8);
+        kbos_move(iVar3,0x1b,8,&local_8);
 
         return;
 
@@ -4736,7 +4736,7 @@ void project_cursor_to_object
 
   
 
-  puVar1 = (undefined4 *)FUN_00515db0();
+  puVar1 = (undefined4 *)XFGetCameraOrigin();
 
   local_c = *puVar1;
 
@@ -6674,13 +6674,13 @@ bool player_needs_ammo__FP6OBJECTi(int param_1,undefined4 param_2)
 
     case 0x25:
 
-      iVar2 = FUN_004a9070(param_2);
+      iVar2 = IconDefMaxAmmo(param_2);
 
       return *(int *)(iVar1 + 0x148) < iVar2;
 
     case 0x26:
 
-      iVar2 = FUN_004a9070(param_2);
+      iVar2 = IconDefMaxAmmo(param_2);
 
       if (*(float *)(iVar1 + 0x158) < (float)iVar2) {
 
@@ -6692,31 +6692,31 @@ bool player_needs_ammo__FP6OBJECTi(int param_1,undefined4 param_2)
 
     case 0x27:
 
-      iVar2 = FUN_004a9070(param_2);
+      iVar2 = IconDefMaxAmmo(param_2);
 
       return *(int *)(iVar1 + 0x15c) < iVar2;
 
     case 0x28:
 
-      iVar2 = FUN_004a9070(param_2);
+      iVar2 = IconDefMaxAmmo(param_2);
 
       return *(int *)(iVar1 + 0x160) < iVar2;
 
     case 0x29:
 
-      iVar2 = FUN_004a9070(param_2);
+      iVar2 = IconDefMaxAmmo(param_2);
 
       return *(int *)(iVar1 + 0x164) < iVar2;
 
     case 0x2a:
 
-      iVar2 = FUN_004a9070(param_2);
+      iVar2 = IconDefMaxAmmo(param_2);
 
       return *(int *)(iVar1 + 0x168) < iVar2;
 
     case 0x2b:
 
-      iVar2 = FUN_004a9070(param_2);
+      iVar2 = IconDefMaxAmmo(param_2);
 
       return *(int *)(iVar1 + 0x16c) < iVar2;
 
@@ -7081,7 +7081,7 @@ int WeaponIdCycleToNext__FP6OBJECTi(int param_1,int param_2)
 
     }
 
-    FUN_004788e0(param_1,iVar5);
+    mecc_play_weapon_select_snd(param_1,iVar5);
 
     return iVar5;
 
@@ -8316,7 +8316,7 @@ bool inv_check_pickup(int param_1,uint *param_2)
 
       if (iVar3 != 0) {
 
-        uVar7 = FUN_004a9070(uVar1);
+        uVar7 = IconDefMaxAmmo(uVar1);
 
         iVar3 = reaper_needs_other(iVar6,uVar1,uVar7);
 
@@ -8556,7 +8556,7 @@ LAB_00459677:
 
       if (uVar5 == uVar1) {
 
-        iVar6 = FUN_004a9070(uVar1);
+        iVar6 = IconDefMaxAmmo(uVar1);
 
         return iVar3 < iVar6;
 
@@ -8805,11 +8805,11 @@ LAB_00459ce0:
 
               *(int *)(iVar2 + 0x14c) = *(int *)(iVar2 + 0x14c) + param_4;
 
-              iVar3 = FUN_004a9070(8);
+              iVar3 = IconDefMaxAmmo(8);
 
               if (iVar3 < *(int *)(iVar2 + 0x14c)) {
 
-                uVar6 = FUN_004a9070(8);
+                uVar6 = IconDefMaxAmmo(8);
 
                 *(undefined4 *)(iVar2 + 0x14c) = uVar6;
 
@@ -8821,11 +8821,11 @@ LAB_00459ce0:
 
               *(int *)(iVar2 + 0x150) = *(int *)(iVar2 + 0x150) + param_4;
 
-              iVar3 = FUN_004a9070(9);
+              iVar3 = IconDefMaxAmmo(9);
 
               if (iVar3 < *(int *)(iVar2 + 0x150)) {
 
-                uVar6 = FUN_004a9070(9);
+                uVar6 = IconDefMaxAmmo(9);
 
                 *(undefined4 *)(iVar2 + 0x150) = uVar6;
 
@@ -8837,11 +8837,11 @@ LAB_00459ce0:
 
               *(int *)(iVar2 + 0x154) = *(int *)(iVar2 + 0x154) + param_4;
 
-              iVar3 = FUN_004a9070(0x40);
+              iVar3 = IconDefMaxAmmo(0x40);
 
               if (iVar3 < *(int *)(iVar2 + 0x154)) {
 
-                uVar6 = FUN_004a9070(0x40);
+                uVar6 = IconDefMaxAmmo(0x40);
 
                 *(undefined4 *)(iVar2 + 0x154) = uVar6;
 
@@ -8939,11 +8939,11 @@ LAB_00459ce0:
 
           *(int *)(iVar2 + 0x148) = *(int *)(iVar2 + 0x148) + param_4;
 
-          iVar3 = FUN_004a9070(param_3);
+          iVar3 = IconDefMaxAmmo(param_3);
 
           if (iVar3 < *(int *)(iVar2 + 0x148)) {
 
-            uVar6 = FUN_004a9070(param_3);
+            uVar6 = IconDefMaxAmmo(param_3);
 
             *(undefined4 *)(iVar2 + 0x148) = uVar6;
 
@@ -8955,11 +8955,11 @@ LAB_00459ce0:
 
           *(float *)(iVar2 + 0x158) = (float)param_4 + *(float *)(iVar2 + 0x158);
 
-          local_104 = (undefined4 *)FUN_004a9070(param_3);
+          local_104 = (undefined4 *)IconDefMaxAmmo(param_3);
 
           if ((float)(int)local_104 < *(float *)(iVar2 + 0x158)) {
 
-            local_104 = (undefined4 *)FUN_004a9070(param_3);
+            local_104 = (undefined4 *)IconDefMaxAmmo(param_3);
 
             *(float *)(iVar2 + 0x158) = (float)(int)local_104;
 
@@ -8971,11 +8971,11 @@ LAB_00459ce0:
 
           *(int *)(iVar2 + 0x15c) = *(int *)(iVar2 + 0x15c) + param_4;
 
-          iVar3 = FUN_004a9070(param_3);
+          iVar3 = IconDefMaxAmmo(param_3);
 
           if (iVar3 < *(int *)(iVar2 + 0x15c)) {
 
-            uVar6 = FUN_004a9070(param_3);
+            uVar6 = IconDefMaxAmmo(param_3);
 
             *(undefined4 *)(iVar2 + 0x15c) = uVar6;
 
@@ -8987,11 +8987,11 @@ LAB_00459ce0:
 
           *(int *)(iVar2 + 0x160) = *(int *)(iVar2 + 0x160) + param_4;
 
-          iVar3 = FUN_004a9070(param_3);
+          iVar3 = IconDefMaxAmmo(param_3);
 
           if (iVar3 < *(int *)(iVar2 + 0x160)) {
 
-            uVar6 = FUN_004a9070(param_3);
+            uVar6 = IconDefMaxAmmo(param_3);
 
             *(undefined4 *)(iVar2 + 0x160) = uVar6;
 
@@ -9003,11 +9003,11 @@ LAB_00459ce0:
 
           *(int *)(iVar2 + 0x164) = *(int *)(iVar2 + 0x164) + param_4;
 
-          iVar3 = FUN_004a9070(param_3);
+          iVar3 = IconDefMaxAmmo(param_3);
 
           if (iVar3 < *(int *)(iVar2 + 0x164)) {
 
-            uVar6 = FUN_004a9070(param_3);
+            uVar6 = IconDefMaxAmmo(param_3);
 
             *(undefined4 *)(iVar2 + 0x164) = uVar6;
 
@@ -9019,11 +9019,11 @@ LAB_00459ce0:
 
           *(int *)(iVar2 + 0x168) = *(int *)(iVar2 + 0x168) + param_4;
 
-          iVar3 = FUN_004a9070(param_3);
+          iVar3 = IconDefMaxAmmo(param_3);
 
           if (iVar3 < *(int *)(iVar2 + 0x168)) {
 
-            uVar6 = FUN_004a9070(param_3);
+            uVar6 = IconDefMaxAmmo(param_3);
 
             *(undefined4 *)(iVar2 + 0x168) = uVar6;
 
@@ -9035,11 +9035,11 @@ LAB_00459ce0:
 
           *(int *)(iVar2 + 0x16c) = *(int *)(iVar2 + 0x16c) + param_4;
 
-          iVar3 = FUN_004a9070(param_3);
+          iVar3 = IconDefMaxAmmo(param_3);
 
           if (iVar3 < *(int *)(iVar2 + 0x16c)) {
 
-            uVar6 = FUN_004a9070(param_3);
+            uVar6 = IconDefMaxAmmo(param_3);
 
             *(undefined4 *)(iVar2 + 0x16c) = uVar6;
 
@@ -10021,7 +10021,7 @@ void item_drop_backheld(int param_1)
 
   if ((((iVar2 != 0) && (*(int *)(param_1 + 0x210) != 0)) &&
 
-      (iVar2 = FUN_004a6120(*(int *)(param_1 + 0x210)), iVar2 != 0)) &&
+      (iVar2 = ObjIsJetski(*(int *)(param_1 + 0x210)), iVar2 != 0)) &&
 
      (((*(int *)(DAT_006330e4 + 0x50bc) < 0 ||
 
@@ -13741,7 +13741,7 @@ LAB_0045e789:
 
     *(float *)(iVar5 + 0x40) = pfVar7[2];
 
-    pfVar8 = (float *)FUN_00515db0();
+    pfVar8 = (float *)XFGetCameraOrigin();
 
     pfVar7 = (float *)(iVar5 + 0x2c);
 

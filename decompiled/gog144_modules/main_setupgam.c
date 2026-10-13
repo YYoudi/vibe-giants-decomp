@@ -44,19 +44,19 @@ void main_setupgam_004eda20(void)
 
       main_00508840(*(int *)(DAT_006330e4 + 0x5080));
 
-      FUN_005086e0(*(undefined4 *)(DAT_006330e4 + 0x5080));
+      texture_destroy(*(undefined4 *)(DAT_006330e4 + 0x5080));
 
     }
 
     main_00508840(DAT_006330e4 + 0x5040);
 
-    FUN_005086e0(DAT_006330e4 + 0x5040);
+    texture_destroy(DAT_006330e4 + 0x5040);
 
     if (*(int *)(DAT_006330e4 + 0x5088) != 0) {
 
       main_00508840(*(int *)(DAT_006330e4 + 0x5088));
 
-      FUN_005086e0(*(undefined4 *)(DAT_006330e4 + 0x5088));
+      texture_destroy(*(undefined4 *)(DAT_006330e4 + 0x5088));
 
     }
 
@@ -64,7 +64,7 @@ void main_setupgam_004eda20(void)
 
       main_00508840(DAT_006330e4 + 0x4ea0);
 
-      FUN_005086e0(DAT_006330e4 + 0x4ea0);
+      texture_destroy(DAT_006330e4 + 0x4ea0);
 
     }
 

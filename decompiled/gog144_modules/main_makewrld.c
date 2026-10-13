@@ -60,7 +60,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -84,7 +84,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -108,7 +108,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -132,7 +132,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -156,7 +156,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -180,7 +180,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -204,7 +204,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -228,7 +228,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -252,7 +252,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -276,7 +276,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -300,7 +300,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 
@@ -324,7 +324,7 @@ void main_makewrld_00472e40(void)
 
       if ((*(ushort *)(iVar3 + 0x1e) & 0x400) == 0) {
 
-        FUN_005086e0(iVar3);
+        texture_destroy(iVar3);
 
       }
 

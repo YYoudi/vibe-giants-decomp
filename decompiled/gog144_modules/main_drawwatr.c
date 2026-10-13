@@ -259,7 +259,7 @@ void main_drawwatr_00431700(void)
 
     fVar3 = *(float *)(DAT_006330e4 + 0x50a8) * 0.5;
 
-    pfVar10 = (float *)FUN_00515db0();
+    pfVar10 = (float *)XFGetCameraOrigin();
 
     fStack_30 = *pfVar10;
 

@@ -20,7 +20,7 @@ void main_objspec_00499c80(int param_1)
 
     main_00508840(iVar1);
 
-    FUN_005086e0(*(undefined4 *)(param_1 + 0x2e0));
+    texture_destroy(*(undefined4 *)(param_1 + 0x2e0));
 
     mem_free_tagged(*(undefined4 *)(param_1 + 0x2e0),s_C__Giants_source_main_objspec_c_0055e774,0xbb
 
@@ -73,7 +73,7 @@ void object_free_all_allocated_data(int param_1)
 
     main_00508840(iVar1);
 
-    FUN_005086e0(*(undefined4 *)(param_1 + 0x2e0));
+    texture_destroy(*(undefined4 *)(param_1 + 0x2e0));
 
     mem_free_tagged(*(undefined4 *)(param_1 + 0x2e0),s_C__Giants_source_main_objspec_c_0055e774,0xbb
 

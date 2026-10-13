@@ -14904,7 +14904,7 @@ void FUN_0052ff70(char *param_1)
 
           }
 
-          FUN_0041e960();
+          repair_logic();
 
           return;
 

@@ -72,7 +72,7 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
       do {
 
-        FUN_0053e460(local_44,(float)fVar11,0,param_1);
+        GEO_MatBuildXYZ(local_44,(float)fVar11,0,param_1);
 
         local_34 = local_5c[3];
 

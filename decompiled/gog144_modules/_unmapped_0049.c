@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (81 named) — decompiled, names from PS2 symbols
+ * 142 functions (83 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -4803,14 +4803,14 @@ void FUN_00494030(int param_1)
 
 }
 
-/* ===== FUN_00494120 @ 0x00494120 ===== */
+/* ===== mission_check_obj_proximity__FP6OBJECT @ 0x00494120 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: mission_check_obj_proximity__FP6OBJECT (conf 0.443) */
 
 
 
-void FUN_00494120(int param_1)
+void mission_check_obj_proximity__FP6OBJECT(int param_1)
 
 
 
@@ -5069,7 +5069,7 @@ void mission_unload_mission_objects__Fv(void)
 
       else {
 
-        iVar2 = FUN_004a6120(iVar3);
+        iVar2 = ObjIsJetski(iVar3);
 
         if (iVar2 != 0) {
 
@@ -9380,7 +9380,7 @@ void vimp_death_fx(int param_1)
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_004a6120(param_1);
+      iVar1 = ObjIsJetski(param_1);
 
     }
 
@@ -9434,7 +9434,7 @@ void vimp_death_fx(int param_1)
 
     }
 
-    iVar1 = FUN_004a6120(*(undefined4 *)(param_1 + 0x210));
+    iVar1 = ObjIsJetski(*(undefined4 *)(param_1 + 0x210));
 
     if (iVar1 != 0) {
 
@@ -10148,12 +10148,12 @@ void object_add_location_2(int param_1,float param_2,float param_3,float param_4
 
 }
 
-/* ===== FUN_00499500 @ 0x00499500 ===== */
+/* ===== object_apply_location @ 0x00499500 ===== */
 /* PS2 candidate: object_apply_location (conf 0.439) */
 
 
 
-void FUN_00499500(float param_1)
+void object_apply_location(float param_1)
 
 
 
@@ -13774,7 +13774,7 @@ bool FUN_0049e670(int param_1,int param_2,int *param_3,int param_4)
 
   }
 
-  iVar3 = FUN_004a9070(param_2);
+  iVar3 = IconDefMaxAmmo(param_2);
 
   if (iVar3 == -1) {
 

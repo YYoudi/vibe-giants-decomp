@@ -1,0 +1,28 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004bc930,FUN_004bc930,,reaper_turbo_towards_moving_target__FP6OBJECT,0.9,llm-w130,body-verified
+004cabb0,FUN_004cabb0,,evilreaper_verify_enemy__FP6OBJECTf,0.9,llm-w130,body-verified
+0041e960,FUN_0041e960,,repair_logic,0.9,llm-w130,body-verified
+00402270,FUN_00402270,,ai_goal_process,0.9,llm-w130,body-verified
+005129d0,FUN_005129d0,,create_one_vimp_chunk,0.9,llm-w130,body-verified
+004a6120,FUN_004a6120,,ObjIsJetski,0.9,llm-w130,body-verified type 0x5a
+0047caa0,FUN_0047caa0,,kbos_move,0.9,llm-w130,body-verified
+004e3920,FUN_004e3920,,rpman_scan_for_enemy__FP6OBJECTfii,0.9,llm-w130,body-verified
+0053e460,FUN_0053e460,,GEO_MatBuildXYZ,0.9,llm-w130,body-verified
+004f8360,FUN_004f8360,,smokegen_process,0.9,llm-w130,body-verified
+004a4550,FUN_004a4550,,piranha_go,0.9,llm-w130,body-verified
+004c2ab0,FUN_004c2ab0,,reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap,0.9,llm-w130,body-verified
+004a9070,FUN_004a9070,,IconDefMaxAmmo,0.9,llm-w130,body-verified
+004a48a0,FUN_004a48a0,,piranha_chase_swimmer__FP6OBJECT,0.9,llm-w130,body-verified
+004a4770,FUN_004a4770,,piranha_make__FP6OBJECT,0.9,llm-w130,body-verified
+00494120,FUN_00494120,,mission_check_obj_proximity__FP6OBJECT,0.9,llm-w130,body-verified
+00515db0,FUN_00515db0,,XFGetCameraOrigin,0.9,llm-w130,body-verified returns 5dcf1c
+004f7780,FUN_004f7780,,smartie_shot,0.9,llm-w130,body-verified
+004e3f10,FUN_004e3f10,,rpman_set_enemy_attack_goal__FP6OBJECTi,0.9,llm-w130,body-verified
+004e7ae0,FUN_004e7ae0,,rpman_notify_hit,0.9,llm-w130,body-verified
+00499500,FUN_00499500,,object_apply_location,0.9,llm-w130,body-verified
+004e5120,FUN_004e5120,,rpman_flying_fire__FP6OBJECT,0.9,llm-w130,body-verified
+004d4350,FUN_004d4350,,make_spit__FP6OBJECTP3P3Df,0.9,llm-w130,body-verified
+0047f520,FUN_0047f520,,mecc_get_thrust__FP6OBJECTfPfT2,0.9,llm-w130,body-verified
+004788e0,FUN_004788e0,,mecc_play_weapon_select_snd,0.9,llm-w130,body-verified
+004429c0,FUN_004429c0,,scenerio_handle_music__FPv,0.9,llm-w130,body-verified
+005086e0,FUN_005086e0,,texture_destroy,0.9,llm-w130,string-proven source main/texture.c (rejected object_finit_ospec)

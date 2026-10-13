@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (47 named) — decompiled, names from PS2 symbols
+ * 67 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -1425,7 +1425,7 @@ void game_loop_run(int param_1)
 
           cleaner_go_obj();
 
-          FUN_004a4550();
+          piranha_go();
 
           comm_stats_reset();
 
@@ -1457,7 +1457,7 @@ void game_loop_run(int param_1)
 
                   FUN_00403e60(iVar3,(float)fVar4);
 
-                  FUN_00499500(iVar3);
+                  object_apply_location(iVar3);
 
                 }
 
@@ -1533,7 +1533,7 @@ void game_loop_run(int param_1)
 
                   iVar3 = puVar1[3];
 
-                  FUN_00494120(iVar3);
+                  mission_check_obj_proximity__FP6OBJECT(iVar3);
 
                   if ((*(int *)(iVar3 + 0x204) != 0) && ((*(uint *)(iVar3 + 0xd8) & 0xc000) == 0)) {
 
@@ -4113,12 +4113,12 @@ LAB_0047832a:
 
 }
 
-/* ===== FUN_004788e0 @ 0x004788E0 ===== */
+/* ===== mecc_play_weapon_select_snd @ 0x004788E0 ===== */
 /* PS2 candidate: mecc_play_weapon_select_snd (conf 0.437) */
 
 
 
-void FUN_004788e0(undefined4 param_1,undefined4 param_2)
+void mecc_play_weapon_select_snd(undefined4 param_1,undefined4 param_2)
 
 
 
@@ -5391,7 +5391,7 @@ void mecc_do_flare__FP6OBJECT(int param_1)
 
       local_44[0] = 0;
 
-      FUN_0053e460(local_44,-*(float *)(DAT_00632ed8 + 0x120c),0,*(undefined4 *)(param_1 + 200));
+      GEO_MatBuildXYZ(local_44,-*(float *)(DAT_00632ed8 + 0x120c),0,*(undefined4 *)(param_1 + 200));
 
       playerobj_eval_refpt(param_1,10,&local_5c);
 
@@ -6089,7 +6089,7 @@ void reaper_lock_big(int param_1)
 
 }
 
-/* ===== FUN_0047caa0 @ 0x0047CAA0 ===== */
+/* ===== kbos_move @ 0x0047CAA0 ===== */
 /* WARNING: Removing unreachable block (ram,0x0047ccef) */
 
 /* WARNING: Removing unreachable block (ram,0x0047cd01) */
@@ -6098,7 +6098,7 @@ void reaper_lock_big(int param_1)
 
 
 
-void FUN_0047caa0(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
+void kbos_move(int param_1,undefined4 param_2,undefined4 param_3,float *param_4)
 
 
 
@@ -7533,7 +7533,7 @@ int audio_listener_pan(float param_1,float param_2,float param_3,code *param_4,u
 
   
 
-  pfVar14 = (float *)FUN_00515db0();
+  pfVar14 = (float *)XFGetCameraOrigin();
 
   fVar1 = *pfVar14;
 
@@ -8008,7 +8008,7 @@ LAB_0047e183:
 
           local_98 = *(float *)(DAT_00632ed8 + 0x90c);
 
-          pfVar8 = (float *)FUN_00515db0();
+          pfVar8 = (float *)XFGetCameraOrigin();
 
           local_50 = *pfVar8;
 
@@ -8184,7 +8184,7 @@ LAB_0047e84d:
 
     }
 
-    uVar10 = FUN_00515db0(&local_70);
+    uVar10 = XFGetCameraOrigin(&local_70);
 
     fVar16 = (float10)FUN_0050a610(uVar10);
 
@@ -8888,7 +8888,7 @@ void mecc_calc_thrust_for_height(int param_1,float param_2)
 
   fVar1 = (float)fVar5;
 
-  FUN_0047f520(param_1,0x3f800000,&local_c,&local_10);
+  mecc_get_thrust__FP6OBJECTfPfT2(param_1,0x3f800000,&local_c,&local_10);
 
   fVar3 = local_c * fVar1 * 4.0 + *(float *)(param_1 + 0x108);
 
@@ -8904,7 +8904,7 @@ void mecc_calc_thrust_for_height(int param_1,float param_2)
 
   local_4 = fVar3 + fVar3 + *(float *)(param_1 + 0xa8);
 
-  FUN_0047f520(param_1,0x3f000000,&local_c,&local_10);
+  mecc_get_thrust__FP6OBJECTfPfT2(param_1,0x3f000000,&local_c,&local_10);
 
   fVar3 = local_c * fVar1 * 4.0 + *(float *)(param_1 + 0x108);
 
@@ -8946,12 +8946,12 @@ void mecc_calc_thrust_for_height(int param_1,float param_2)
 
 }
 
-/* ===== FUN_0047f520 @ 0x0047F520 ===== */
+/* ===== mecc_get_thrust__FP6OBJECTfPfT2 @ 0x0047F520 ===== */
 /* PS2 candidate: mecc_get_thrust__FP6OBJECTfPfT2 (conf 0.437) */
 
 
 
-void FUN_0047f520(float param_1,float param_2,float *param_3,float *param_4)
+void mecc_get_thrust__FP6OBJECTfPfT2(float param_1,float param_2,float *param_3,float *param_4)
 
 
 

@@ -255,7 +255,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
     if ((in_stack_00000008 & 4) == 0) {
 
-      piVar2 = (int *)FUN_00515db0();
+      piVar2 = (int *)XFGetCameraOrigin();
 
       local_250 = *piVar2;
 
@@ -297,7 +297,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
       local_258 = *(float *)(DAT_00632ed8 + 0x1570);
 
-      uVar3 = FUN_00515db0(&local_250);
+      uVar3 = XFGetCameraOrigin(&local_250);
 
       fVar11 = (float10)FUN_0050a610(uVar3);
 
@@ -519,7 +519,7 @@ LAB_00448378:
 
     local_258 = *(float *)(DAT_00632ed8 + 0x1570);
 
-    uVar3 = FUN_00515db0(&local_250);
+    uVar3 = XFGetCameraOrigin(&local_250);
 
     fVar11 = (float10)FUN_0050a610(uVar3);
 
@@ -663,7 +663,7 @@ LAB_004485e3:
 
       puVar8[6] = puVar8[6] | 0x1000;
 
-      FUN_0053e460(puVar8 + 0x1f,in_stack_0000000c[8],in_stack_0000000c[9],in_stack_0000000c[7]);
+      GEO_MatBuildXYZ(puVar8 + 0x1f,in_stack_0000000c[8],in_stack_0000000c[9],in_stack_0000000c[7]);
 
     }
 

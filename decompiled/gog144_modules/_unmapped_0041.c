@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (68 named) — decompiled, names from PS2 symbols
+ * 100 functions (69 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -10825,12 +10825,12 @@ LAB_0041e8bf:
 
 }
 
-/* ===== FUN_0041e960 @ 0x0041E960 ===== */
+/* ===== repair_logic @ 0x0041E960 ===== */
 /* PS2 candidate: repair_logic (conf 0.45) */
 
 
 
-void FUN_0041e960(float param_1)
+void repair_logic(float param_1)
 
 
 

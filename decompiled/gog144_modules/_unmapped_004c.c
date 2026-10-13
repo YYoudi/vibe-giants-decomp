@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004c
- * 64 functions (48 named) — decompiled, names from PS2 symbols
+ * 64 functions (50 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
  */
 
@@ -1205,7 +1205,7 @@ void reaper_check_enter_jet_ski__FP6OBJECT(int param_1)
 
         local_44[0] = 0;
 
-        FUN_0053e460(local_44,-*(float *)(DAT_00632ed8 + 0x120c),0,*(undefined4 *)(iVar4 + 200));
+        GEO_MatBuildXYZ(local_44,-*(float *)(DAT_00632ed8 + 0x120c),0,*(undefined4 *)(iVar4 + 200));
 
         playerobj_eval_refpt(iVar4,0xffffffff,&local_5c);
 
@@ -1331,7 +1331,7 @@ void reaper_check_enter_jet_ski__FP6OBJECT(int param_1)
 
         if ((((-1 < (char)((uint)*(undefined4 *)(iVar8 + 0xd8) >> 8)) &&
 
-             (iVar6 = FUN_004a6120(iVar8), iVar6 != 0)) &&
+             (iVar6 = ObjIsJetski(iVar8), iVar6 != 0)) &&
 
             ((*(int *)(iVar8 + 0x18c) == *(int *)(iVar4 + 0x18c) || (*(int *)(iVar8 + 0x18c) == 0)))
 
@@ -2670,11 +2670,13 @@ LAB_004c2940:
 
     if ((*(int *)(iVar4 + 0x1e0) == 0x3e) && (*(int *)(iVar4 + 0x274) == param_1)) {
 
-      FUN_004c2ab0(param_1,iVar4,
+      reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap
 
-                   (float)(*(int *)(iVar4 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),param_4,
+                (param_1,iVar4,
 
-                   *param_2,param_3);
+                 (float)(*(int *)(iVar4 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),param_4,
+
+                 *param_2,param_3);
 
     }
 
@@ -2684,14 +2686,14 @@ LAB_004c2940:
 
 }
 
-/* ===== FUN_004c2ab0 @ 0x004C2AB0 ===== */
+/* ===== reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap @ 0x004C2AB0 ===== */
 /* PS2 candidate: reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap (conf 0.443) */
 
 
 
-void FUN_004c2ab0(undefined4 param_1,int param_2,float param_3,int param_4,int param_5,
+void reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap
 
-                 float *param_6)
+               (undefined4 param_1,int param_2,float param_3,int param_4,int param_5,float *param_6)
 
 
 
@@ -3056,11 +3058,13 @@ LAB_004c4978:
 
     if ((*(int *)(iVar7 + 0x1e0) == 0x3e) && (*(int *)(iVar7 + 0x274) == param_1)) {
 
-      FUN_004c2ab0(param_1,iVar7,
+      reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap
 
-                   (float)(*(int *)(iVar7 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),0,
+                (param_1,iVar7,
 
-                   *(undefined4 *)(iVar5 + 0x68),iVar1);
+                 (float)(*(int *)(iVar7 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),0,
+
+                 *(undefined4 *)(iVar5 + 0x68),iVar1);
 
     }
 
@@ -3296,11 +3300,13 @@ LAB_004c4c58:
 
     if ((*(int *)(iVar7 + 0x1e0) == 0x3e) && (*(int *)(iVar7 + 0x274) == param_1)) {
 
-      FUN_004c2ab0(param_1,iVar7,
+      reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap
 
-                   (float)(*(int *)(iVar7 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),0,
+                (param_1,iVar7,
 
-                   *(undefined4 *)(iVar5 + 0x68),iVar1);
+                 (float)(*(int *)(iVar7 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),0,
+
+                 *(undefined4 *)(iVar5 + 0x68),iVar1);
 
     }
 
@@ -3776,7 +3782,7 @@ void lzo_spawn_checked(int param_1)
 
           iVar3 = piVar5[3];
 
-          iVar4 = FUN_004a6120(iVar3);
+          iVar4 = ObjIsJetski(iVar3);
 
           if (iVar4 != 0) {
 
@@ -4283,7 +4289,7 @@ void FUN_004c5b10(int param_1)
 
      (((*(int *)(param_1 + 0x210) == 0 ||
 
-       (iVar1 = FUN_004a6120(*(int *)(param_1 + 0x210)), iVar1 == 0)) &&
+       (iVar1 = ObjIsJetski(*(int *)(param_1 + 0x210)), iVar1 == 0)) &&
 
       (iVar2 = FUN_004b6e80(*(undefined4 *)(iVar2 + 0xcfc)), iVar2 != 0)))) {
 
@@ -5185,11 +5191,13 @@ LAB_004c74bd:
 
     if ((*(int *)(iVar7 + 0x1e0) == 0x3e) && (*(int *)(iVar7 + 0x274) == param_1)) {
 
-      FUN_004c2ab0(param_1,iVar7,
+      reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap
 
-                   (float)(*(int *)(iVar7 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),0,
+                (param_1,iVar7,
 
-                   *(undefined4 *)(iVar5 + 0x68),iVar1);
+                 (float)(*(int *)(iVar7 + 0x174) + 1) * *(float *)(DAT_00632ed8 + 0x500),0,
+
+                 *(undefined4 *)(iVar5 + 0x68),iVar1);
 
     }
 
@@ -5640,12 +5648,12 @@ LAB_004cab6c:
 
 }
 
-/* ===== FUN_004cabb0 @ 0x004CABB0 ===== */
+/* ===== evilreaper_verify_enemy__FP6OBJECTf @ 0x004CABB0 ===== */
 /* PS2 candidate: evilreaper_verify_enemy__FP6OBJECTf (conf 0.45) */
 
 
 
-void FUN_004cabb0(int param_1,float param_2)
+void evilreaper_verify_enemy__FP6OBJECTf(int param_1,float param_2)
 
 
 
@@ -6323,7 +6331,7 @@ void sound_obj_seq_small(int param_1,undefined4 param_2,undefined4 param_3,undef
 
   local_44[0] = 0;
 
-  FUN_0053e460(local_44,-(float)fVar2,0,(float)fVar3);
+  GEO_MatBuildXYZ(local_44,-(float)fVar2,0,(float)fVar3);
 
   local_24 = local_4c;
 
@@ -6436,7 +6444,7 @@ void evilreaper_fire_bow__FP6OBJECT(int param_1)
 
   local_44[0] = 0;
 
-  FUN_0053e460(local_44,-(float)fVar3,0,(float)fVar4);
+  GEO_MatBuildXYZ(local_44,-(float)fVar3,0,(float)fVar4);
 
   local_24 = local_4c;
 
@@ -6955,7 +6963,7 @@ undefined4 physics_reset_d(int param_1)
 
   else {
 
-    FUN_00402270(param_1);
+    ai_goal_process(param_1);
 
     if (*(int *)(param_1 + 0x168) == 0) {
 
@@ -7356,7 +7364,7 @@ void FUN_004cc900(void)
 
     local_22c = &DAT_005775a4;
 
-    iVar6 = FUN_004a6120(*(undefined4 *)(DAT_00632a88 + 0x210));
+    iVar6 = ObjIsJetski(*(undefined4 *)(DAT_00632a88 + 0x210));
 
     if (iVar6 != 0) {
 
@@ -8081,7 +8089,7 @@ void FUN_004cd5d0(void)
 
   }
 
-  pfVar6 = (float *)FUN_00515db0();
+  pfVar6 = (float *)XFGetCameraOrigin();
 
   local_3c = *(float *)(DAT_006330e4 + 0x4f60) - *pfVar6;
 
@@ -8431,7 +8439,7 @@ undefined4 dev_debug_flags(void)
 
     local_214 = 1;
 
-    pfVar6 = (float *)FUN_00515db0();
+    pfVar6 = (float *)XFGetCameraOrigin();
 
     local_208 = *pfVar6;
 
@@ -8623,7 +8631,7 @@ undefined4 dev_debug_flags(void)
 
         if (((iVar9 == iVar5) || (*(int *)(iVar9 + 0x210) == iVar5)) ||
 
-           ((iVar7 = FUN_004a6120(), iVar7 != 0 && (*(int *)(iVar9 + 0x274) == iVar5)))) {
+           ((iVar7 = ObjIsJetski(), iVar7 != 0 && (*(int *)(iVar9 + 0x274) == iVar5)))) {
 
           vimp_death_fx();
 
@@ -9837,7 +9845,7 @@ LAB_004cf539:
 
     case 100:
 
-      FUN_00402270(fVar5);
+      ai_goal_process(fVar5);
 
       if (*(int *)((int)fVar5 + 0x168) == 0) {
 
@@ -9861,7 +9869,7 @@ LAB_004cf539:
 
     case 0x65:
 
-      FUN_00402270(fVar5);
+      ai_goal_process(fVar5);
 
       if (*(int *)((int)fVar5 + 0x168) == 0) {
 
@@ -10399,7 +10407,7 @@ LAB_004cf982:
 
   case 0x96:
 
-    FUN_00402270(fVar5);
+    ai_goal_process(fVar5);
 
     if (*(int *)((int)fVar5 + 0x168) == 0) {
 
@@ -10439,7 +10447,7 @@ LAB_004cf982:
 
   case 0x97:
 
-    FUN_00402270(fVar5);
+    ai_goal_process(fVar5);
 
     if (*(int *)((int)fVar5 + 0x168) == 0) {
 
@@ -11511,7 +11519,7 @@ LAB_004d135c:
 
            (0.43333334 <= *(float *)((int)fVar5 + 0x14))) {
 
-          FUN_004d4350(fVar5,&local_40,*(undefined4 *)(DAT_00632ed8 + 0x11c));
+          make_spit__FP6OBJECTP3P3Df(fVar5,&local_40,*(undefined4 *)(DAT_00632ed8 + 0x11c));
 
         }
 

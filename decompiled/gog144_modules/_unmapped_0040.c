@@ -780,7 +780,7 @@ void ai_move_goals_reinit(undefined4 param_1)
 
   DAT_00584190 = 1;
 
-  FUN_00402270(param_1);
+  ai_goal_process(param_1);
 
   DAT_00584190 = 0;
 
@@ -10507,7 +10507,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
     iVar7 = ObjIsReaper(param_2);
 
-    if ((iVar7 == 0) || (iVar7 = FUN_004a6120(*(undefined4 *)((int)param_2 + 0x210)), iVar7 == 0)) {
+    if ((iVar7 == 0) || (iVar7 = ObjIsJetski(*(undefined4 *)((int)param_2 + 0x210)), iVar7 == 0)) {
 
       local_30 = *(undefined4 *)((int)param_2 + 200);
 
@@ -10753,7 +10753,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   iVar7 = ObjIsReaper(iVar4);
 
-  if ((iVar7 != 0) && (iVar7 = FUN_004a6120(*(undefined4 *)(iVar4 + 0x210)), iVar7 != 0)) {
+  if ((iVar7 != 0) && (iVar7 = ObjIsJetski(*(undefined4 *)(iVar4 + 0x210)), iVar7 != 0)) {
 
     puVar1 = (uint *)(*(int *)(iVar4 + 0x210) + 0x1c8);
 
@@ -10771,7 +10771,7 @@ void FUN_0040db70(undefined4 param_1,float param_2)
 
   iVar7 = ObjIsReaper(iVar4);
 
-  if ((iVar7 != 0) && (iVar7 = FUN_004a6120(*(undefined4 *)(iVar4 + 0x210)), iVar7 != 0)) {
+  if ((iVar7 != 0) && (iVar7 = ObjIsJetski(*(undefined4 *)(iVar4 + 0x210)), iVar7 != 0)) {
 
     puVar1 = (uint *)(*(int *)(iVar4 + 0x210) + 0x1c8);
 

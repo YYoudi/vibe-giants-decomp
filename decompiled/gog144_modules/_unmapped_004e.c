@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (56 named) — decompiled, names from PS2 symbols
+ * 94 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -121,7 +121,7 @@ void ai_death_anim(int param_1)
 
       if (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0)) {
 
-        FUN_004e7ae0(param_1,0);
+        rpman_notify_hit(param_1,0);
 
       }
 
@@ -2176,7 +2176,7 @@ LAB_004e3253:
 
       iVar3 = *piVar2;
 
-      FUN_004e3920(param_1,param_2,1,0);
+      rpman_scan_for_enemy__FP6OBJECTfii(param_1,param_2,1,0);
 
       iVar4 = *piVar2;
 
@@ -2361,7 +2361,7 @@ undefined4 FUN_004e3440(int param_1,int param_2)
 
       FUN_00401610(param_1,piVar1);
 
-      FUN_00402270(param_1);
+      ai_goal_process(param_1);
 
       if (*(int *)(param_1 + 0x168) != 0) {
 
@@ -2731,14 +2731,14 @@ LAB_004e3903:
 
 }
 
-/* ===== FUN_004e3920 @ 0x004E3920 ===== */
+/* ===== rpman_scan_for_enemy__FP6OBJECTfii @ 0x004E3920 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: rpman_scan_for_enemy__FP6OBJECTfii (conf 0.445) */
 
 
 
-void FUN_004e3920(int param_1,float param_2,int param_3,int param_4)
+void rpman_scan_for_enemy__FP6OBJECTfii(int param_1,float param_2,int param_3,int param_4)
 
 
 
@@ -3137,12 +3137,12 @@ void FUN_004e3eb0(int param_1)
 
 }
 
-/* ===== FUN_004e3f10 @ 0x004E3F10 ===== */
+/* ===== rpman_set_enemy_attack_goal__FP6OBJECTi @ 0x004E3F10 ===== */
 /* PS2 candidate: rpman_set_enemy_attack_goal__FP6OBJECTi (conf 0.441) */
 
 
 
-void FUN_004e3f10(int param_1,int param_2)
+void rpman_set_enemy_attack_goal__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -3228,7 +3228,7 @@ void FUN_004e3f10(int param_1,int param_2)
 
     }
 
-    FUN_00402270(param_1);
+    ai_goal_process(param_1);
 
     if (*(int *)(param_1 + 0x168) != 0) {
 
@@ -4352,12 +4352,12 @@ LAB_004e50f4:
 
 }
 
-/* ===== FUN_004e5120 @ 0x004E5120 ===== */
+/* ===== rpman_flying_fire__FP6OBJECT @ 0x004E5120 ===== */
 /* PS2 candidate: rpman_flying_fire__FP6OBJECT (conf 0.437) */
 
 
 
-void FUN_004e5120(int param_1)
+void rpman_flying_fire__FP6OBJECT(int param_1)
 
 
 
@@ -4608,7 +4608,7 @@ void fire_bullet_shot__FP6OBJECTT0ii(int param_1,int param_2,int param_3,int par
 
     local_44[0] = 0;
 
-    FUN_0053e460(local_44,(float)-fVar4,0,local_78);
+    GEO_MatBuildXYZ(local_44,(float)-fVar4,0,local_78);
 
     local_24 = local_58;
 
@@ -4995,7 +4995,7 @@ void FUN_004e5640(int param_1,int param_2,int param_3,float param_4)
 
       local_44[0] = 0;
 
-      FUN_0053e460(local_44,(float)-fVar14,0,(float)fVar13);
+      GEO_MatBuildXYZ(local_44,(float)-fVar14,0,(float)fVar13);
 
       local_14 = local_54;
 
@@ -6303,7 +6303,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
   FUN_004515b0((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
 
-  FUN_0053e460(iVar5 + 0x294,-*(float *)(iVar4 + 0x164),*pfVar1,*(undefined4 *)(iVar5 + 200));
+  GEO_MatBuildXYZ(iVar5 + 0x294,-*(float *)(iVar4 + 0x164),*pfVar1,*(undefined4 *)(iVar5 + 200));
 
   ANM_DumpCluster(iVar5,iVar4 + 0x178);
 
@@ -6832,12 +6832,12 @@ void rpman_gib__FP6OBJECTT0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004e7ae0 @ 0x004E7AE0 ===== */
+/* ===== rpman_notify_hit @ 0x004E7AE0 ===== */
 /* PS2 candidate: rpman_notify_hit (conf 0.439) */
 
 
 
-void FUN_004e7ae0(float param_1,int param_2)
+void rpman_notify_hit(float param_1,int param_2)
 
 
 
@@ -7185,13 +7185,13 @@ LAB_004e7bdc:
 
     if (iVar5 < piVar1[0x71]) {
 
-      FUN_004e3920(param_1,piVar1[0x2b],1,0);
+      rpman_scan_for_enemy__FP6OBJECTfii(param_1,piVar1[0x2b],1,0);
 
     }
 
     if (*piVar1 != 0) goto LAB_004e7ce8;
 
-    FUN_004e3920(param_1,piVar1[0x2b],0,1);
+    rpman_scan_for_enemy__FP6OBJECTfii(param_1,piVar1[0x2b],0,1);
 
   }
 
@@ -7213,7 +7213,7 @@ LAB_004e7bdc:
 
       if (iVar10 < piVar1[0x71]) {
 
-        FUN_004e3920(param_1,piVar1[0x2b],1,0);
+        rpman_scan_for_enemy__FP6OBJECTfii(param_1,piVar1[0x2b],1,0);
 
       }
 
@@ -7383,7 +7383,7 @@ LAB_004e7fd7:
 
           else if (*piVar2 == 0) {
 
-            FUN_004e3920(iVar5,piVar1[0x2b],0,1);
+            rpman_scan_for_enemy__FP6OBJECTfii(iVar5,piVar1[0x2b],0,1);
 
             if (*piVar2 == 0) {
 
@@ -10954,7 +10954,7 @@ void FUN_004ee670(int param_1)
 
         FUN_00403e60(iVar2,(float)fVar5);
 
-        FUN_00499500(iVar2);
+        object_apply_location(iVar2);
 
       }
 

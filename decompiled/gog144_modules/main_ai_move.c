@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/ai_move
- * 15 functions (11 named) — decompiled, names from PS2 symbols
+ * 15 functions (12 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/ai_move.c(pp) (assert-string evidence)
  */
 
@@ -898,12 +898,12 @@ void main_ai_move_00401910(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00402270 @ 0x00402270 ===== */
+/* ===== ai_goal_process @ 0x00402270 ===== */
 /* PS2 candidate: ai_goal_process (conf 0.45) */
 
 
 
-undefined4 FUN_00402270(undefined4 *param_1)
+undefined4 ai_goal_process(undefined4 *param_1)
 
 
 

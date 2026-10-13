@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (23 named) — decompiled, names from PS2 symbols
+ * 39 functions (24 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -1312,7 +1312,7 @@ LAB_004d2d85:
 
         {
 
-          FUN_004d4350(param_1,&local_5c,*(undefined4 *)(DAT_00632ed8 + 0xf0));
+          make_spit__FP6OBJECTP3P3Df(param_1,&local_5c,*(undefined4 *)(DAT_00632ed8 + 0xf0));
 
         }
 
@@ -2206,7 +2206,9 @@ LAB_004d4074:
 
         if (*(int *)(iVar5 + 0xc) != 0) {
 
-          FUN_004d4350(param_1,*(int *)(iVar5 + 0xc) + 0xa0,*(undefined4 *)(DAT_00632ed8 + 0x11c));
+          make_spit__FP6OBJECTP3P3Df
+
+                    (param_1,*(int *)(iVar5 + 0xc) + 0xa0,*(undefined4 *)(DAT_00632ed8 + 0x11c));
 
           *(undefined4 *)(param_1 + 0xf0) = *(undefined4 *)(DAT_00632ed8 + 0xd14);
 
@@ -2390,7 +2392,7 @@ LAB_004d3f6e:
 
       }
 
-      FUN_004d4350(param_1,*(int *)(iVar5 + 0xc) + 0xa0,uVar1);
+      make_spit__FP6OBJECTP3P3Df(param_1,*(int *)(iVar5 + 0xc) + 0xa0,uVar1);
 
     }
 
@@ -2496,12 +2498,12 @@ LAB_004d4031:
 
 }
 
-/* ===== FUN_004d4350 @ 0x004D4350 ===== */
+/* ===== make_spit__FP6OBJECTP3P3Df @ 0x004D4350 ===== */
 /* PS2 candidate: make_spit__FP6OBJECTP3P3Df (conf 0.437) */
 
 
 
-void FUN_004d4350(int param_1,int param_2,float param_3)
+void make_spit__FP6OBJECTP3P3Df(int param_1,int param_2,float param_3)
 
 
 
@@ -3603,9 +3605,9 @@ void FUN_004d59d0(int param_1)
 
   FUN_004515b0((float)(fVar3 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
 
-  FUN_0053e460(param_1 + 0x294,-*(float *)(iVar2 + 0x40),*(undefined4 *)(iVar2 + 0x44),
+  GEO_MatBuildXYZ(param_1 + 0x294,-*(float *)(iVar2 + 0x40),*(undefined4 *)(iVar2 + 0x44),
 
-               *(undefined4 *)(param_1 + 200));
+                  *(undefined4 *)(param_1 + 200));
 
   return;
 
@@ -3894,9 +3896,9 @@ LAB_004d5d41:
 
   FUN_004515b0((float)(fVar6 * (float10)*(float *)(DAT_00632ed8 + 0xe00)));
 
-  FUN_0053e460(param_1 + 0x294,-*pfVar1,*(undefined4 *)(iVar3 + 0x44),*(undefined4 *)(param_1 + 200)
+  GEO_MatBuildXYZ(param_1 + 0x294,-*pfVar1,*(undefined4 *)(iVar3 + 0x44),
 
-              );
+                  *(undefined4 *)(param_1 + 200));
 
   ANM_DumpCluster(param_1,iVar3 + 0x60);
 
@@ -3955,7 +3957,7 @@ void reaper_spell_sound_1(int param_1,undefined4 *param_2,undefined4 param_3)
 
     local_44[0] = 0;
 
-    FUN_0053e460(local_44,-(float)fVar4,0,(float)fVar5);
+    GEO_MatBuildXYZ(local_44,-(float)fVar4,0,(float)fVar5);
 
     local_24 = local_5c;
 
@@ -4390,7 +4392,7 @@ void FUN_004d7c60(int param_1,int param_2)
 
       if (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0)) {
 
-        FUN_004e7ae0(param_1,param_2);
+        rpman_notify_hit(param_1,param_2);
 
       }
 

@@ -700,7 +700,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
     if (iVar4 == 0) {
 
-      pfVar2 = (float *)FUN_00515db0();
+      pfVar2 = (float *)XFGetCameraOrigin();
 
       local_44 = *pfVar2;
 
@@ -836,7 +836,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
   }
 
-  pfVar2 = (float *)FUN_00515db0();
+  pfVar2 = (float *)XFGetCameraOrigin();
 
   local_2c = *pfVar2;
 

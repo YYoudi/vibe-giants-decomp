@@ -1,5 +1,5 @@
 /* Giants 1.449 — module main/texture
- * 8 functions (7 named) — decompiled, names from PS2 symbols
+ * 8 functions (8 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\main/texture.c(pp) (assert-string evidence)
  */
 
@@ -1147,12 +1147,12 @@ LAB_00508606:
 
 }
 
-/* ===== FUN_005086e0 @ 0x005086E0 ===== */
+/* ===== texture_destroy @ 0x005086E0 ===== */
 /* PS2 candidate: object_finit_ospec (conf 0.438) */
 
 
 
-void FUN_005086e0(int param_1)
+void texture_destroy(int param_1)
 
 
 

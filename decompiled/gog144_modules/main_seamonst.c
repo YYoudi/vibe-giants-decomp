@@ -54,7 +54,7 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   local_44[0] = 0;
 
-  FUN_0053e460(local_44,-*(float *)(DAT_00632ed8 + 0x1558),0,(float)fVar5);
+  GEO_MatBuildXYZ(local_44,-*(float *)(DAT_00632ed8 + 0x1558),0,(float)fVar5);
 
   playerobj_eval_refpt(param_1,0,&local_6c);
 
