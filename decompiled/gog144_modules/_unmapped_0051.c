@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (114 named) — decompiled, names from PS2 symbols
+ * 186 functions (115 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -2031,7 +2031,7 @@ void flk_actor_update(int param_1)
 
       if (iVar8 < *(int *)(iVar2 + 0x68)) {
 
-        FUN_00513920(iVar2,iVar8,local_18);
+        mesh_node_calc_bounds(iVar2,iVar8,local_18);
 
         iVar8 = collide_pt_bbox(local_24,local_18);
 
@@ -2109,8 +2109,8 @@ void flk_actor_update(int param_1)
 
 }
 
-/* ===== FUN_00513920 @ 0x00513920 ===== */
-void FUN_00513920(int param_1,int param_2,float *param_3)
+/* ===== mesh_node_calc_bounds @ 0x00513920 ===== */
+void mesh_node_calc_bounds(int param_1,int param_2,float *param_3)
 
 
 

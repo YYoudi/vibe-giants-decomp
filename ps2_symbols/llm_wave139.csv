@@ -1,0 +1,4 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00475a40,FUN_00475a40,,turret_find_team_at_point,0.9,llm-w139,body-verified type 0x2c team walk
+00513920,FUN_00513920,,mesh_node_calc_bounds,0.9,llm-w139,body-verified min/max over verts
+004aa7f0,FUN_004aa7f0,,obj_targetable_by_player_2,0.9,llm-w139,body-verified alpha variant of 004aa6d0

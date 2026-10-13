@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (53 named) — decompiled, names from PS2 symbols
+ * 67 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -2675,8 +2675,8 @@ void FUN_004759a0(void)
 
 }
 
-/* ===== FUN_00475a40 @ 0x00475A40 ===== */
-int FUN_00475a40(float param_1,float param_2)
+/* ===== turret_find_team_at_point @ 0x00475A40 ===== */
+int turret_find_team_at_point(float param_1,float param_2)
 
 
 

@@ -4015,9 +4015,9 @@
   "len": 596
  },
  "0x00475A40": {
-  "name": "FUN_00475a40",
-  "named": false,
-  "len": 1045
+  "name": "turret_find_team_at_point",
+  "named": true,
+  "len": 1058
  },
  "0x00476DC0": {
   "name": "AudioDataStreamStatus__Fv_2",
@@ -6010,9 +6010,9 @@
   "len": 1359
  },
  "0x004AA7F0": {
-  "name": "FUN_004aa7f0",
-  "named": false,
-  "len": 1213
+  "name": "obj_targetable_by_player_2",
+  "named": true,
+  "len": 1227
  },
  "0x004AA8F0": {
   "name": "FUN_004aa8f0",
@@ -8412,12 +8412,12 @@
  "0x005137C0": {
   "name": "flk_actor_update",
   "named": true,
-  "len": 2289
+  "len": 2298
  },
  "0x00513920": {
-  "name": "FUN_00513920",
-  "named": false,
-  "len": 1490
+  "name": "mesh_node_calc_bounds",
+  "named": true,
+  "len": 1499
  },
  "0x00513A20": {
   "name": "FUN_00513a20",

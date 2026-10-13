@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (94 named) — decompiled, names from PS2 symbols
+ * 131 functions (95 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -9902,8 +9902,8 @@ bool obj_targetable_by_player(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004aa7f0 @ 0x004AA7F0 ===== */
-bool FUN_004aa7f0(int param_1,int param_2)
+/* ===== obj_targetable_by_player_2 @ 0x004AA7F0 ===== */
+bool obj_targetable_by_player_2(int param_1,int param_2)
 
 
 
