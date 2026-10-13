@@ -1235,19 +1235,19 @@
   "len": 720
  },
  "0x00420930": {
-  "name": "FUN_00420930",
-  "named": false,
-  "len": 720
+  "name": "hud_class_key_handler_2",
+  "named": true,
+  "len": 731
  },
  "0x004209D0": {
-  "name": "FUN_004209d0",
-  "named": false,
-  "len": 720
+  "name": "hud_class_key_handler_1",
+  "named": true,
+  "len": 731
  },
  "0x00420A70": {
-  "name": "FUN_00420a70",
-  "named": false,
-  "len": 720
+  "name": "hud_class_key_handler_3",
+  "named": true,
+  "len": 731
  },
  "0x00420B10": {
   "name": "mission_objective_entry_lookup",
@@ -11860,14 +11860,14 @@
   "len": 983
  },
  "0x00546061": {
-  "name": "FUN_00546061",
-  "named": false,
-  "len": 775
+  "name": "crt_fmt_g",
+  "named": true,
+  "len": 772
  },
  "0x005460F4": {
   "name": "__cfltcvt",
   "named": true,
-  "len": 556
+  "len": 553
  },
  "0x00546145": {
   "name": "crt_memmove",

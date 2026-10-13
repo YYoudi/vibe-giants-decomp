@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (106 named) — decompiled, names from PS2 symbols
+ * 129 functions (109 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -917,8 +917,8 @@ undefined4 FUN_00420890(void)
 
 }
 
-/* ===== FUN_00420930 @ 0x00420930 ===== */
-undefined4 FUN_00420930(void)
+/* ===== hud_class_key_handler_2 @ 0x00420930 ===== */
+undefined4 hud_class_key_handler_2(void)
 
 
 
@@ -990,8 +990,8 @@ undefined4 FUN_00420930(void)
 
 }
 
-/* ===== FUN_004209d0 @ 0x004209D0 ===== */
-undefined4 FUN_004209d0(void)
+/* ===== hud_class_key_handler_1 @ 0x004209D0 ===== */
+undefined4 hud_class_key_handler_1(void)
 
 
 
@@ -1063,8 +1063,8 @@ undefined4 FUN_004209d0(void)
 
 }
 
-/* ===== FUN_00420a70 @ 0x00420A70 ===== */
-undefined4 FUN_00420a70(void)
+/* ===== hud_class_key_handler_3 @ 0x00420A70 ===== */
+undefined4 hud_class_key_handler_3(void)
 
 
 
