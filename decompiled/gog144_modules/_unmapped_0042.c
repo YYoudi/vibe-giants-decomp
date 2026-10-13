@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (59 named) — decompiled, names from PS2 symbols
+ * 129 functions (60 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -15215,8 +15215,8 @@ void FUN_0042bfb0(undefined4 param_1,ushort *param_2,int param_3,float param_4,f
 
 }
 
-/* ===== FUN_0042c1b0 @ 0x0042C1B0 ===== */
-void FUN_0042c1b0(int param_1,int param_2,int param_3)
+/* ===== level_scene_process @ 0x0042C1B0 ===== */
+void level_scene_process(int param_1,int param_2,int param_3)
 
 
 
@@ -16529,7 +16529,7 @@ LAB_0042cb13:
 
             (**(code **)(DAT_00656430 + 8))(DAT_00656430,uVar14,uVar7,uVar16);
 
-            FUN_0042c1b0(param_1,local_8c,param_3);
+            level_scene_process(param_1,local_8c,param_3);
 
 LAB_0042ccba:
 
@@ -17484,7 +17484,7 @@ void FUN_0042dfd0(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
   main_drawwrld_00434ce0(DAT_006573e8);
 
-  main_drawwrld_00435940(DAT_006573e8,local_44,local_5c);
+  dlog_entry_render_quads(DAT_006573e8,local_44,local_5c);
 
   dlog_level_free_if(DAT_006573e8);
 
@@ -17713,7 +17713,7 @@ void FUN_0042e260(int param_1,int param_2)
 
   main_drawwrld_00434ce0(DAT_006573ec);
 
-  main_drawwrld_00435940(DAT_006573ec,auStack_44,&uStack_a0);
+  dlog_entry_render_quads(DAT_006573ec,auStack_44,&uStack_a0);
 
   dlog_level_free_if(DAT_006573ec);
 
@@ -17795,7 +17795,7 @@ void mpeg_mode_set(int param_1,undefined4 param_2,undefined4 param_3)
 
   sceMpegSetDecodeMode(DAT_006573f0,0x33c,param_2,0xffffffff);
 
-  main_drawwrld_00435940(DAT_006573f0,local_44,local_5c);
+  dlog_entry_render_quads(DAT_006573f0,local_44,local_5c);
 
   dlog_level_free_if(DAT_006573f0);
 

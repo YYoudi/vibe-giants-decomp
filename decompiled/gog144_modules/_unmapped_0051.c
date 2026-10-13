@@ -13004,7 +13004,7 @@ LAB_0051cb4e:
 
   FUN_00500490(uVar1);
 
-  main_drawwrld_00435c90();
+  dlog_frame_reset();
 
   return;
 

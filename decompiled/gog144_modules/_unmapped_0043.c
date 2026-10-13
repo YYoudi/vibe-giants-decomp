@@ -2535,8 +2535,8 @@ bool main_drawwrld_00434880(float *param_1,float param_2,float param_3,float *pa
 
 }
 
-/* ===== main/drawwrld_00434aa0 @ 0x00434AA0 ===== */
-int main_drawwrld_00434aa0
+/* ===== geometry_clip_helper @ 0x00434AA0 ===== */
+int geometry_clip_helper
 
               (int param_1,int *param_2,int *param_3,int *param_4,float *param_5,int param_6)
 
@@ -3203,12 +3203,12 @@ void dlog_entry_update(byte *param_1)
 
 }
 
-/* ===== main/drawwrld_00435940 @ 0x00435940 ===== */
+/* ===== dlog_entry_render_quads @ 0x00435940 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 
 
-void main_drawwrld_00435940(byte *param_1,undefined4 param_2,float *param_3)
+void dlog_entry_render_quads(byte *param_1,undefined4 param_2,float *param_3)
 
 
 
@@ -3451,8 +3451,8 @@ void fx_blob_shadow(void)
 
 }
 
-/* ===== main/drawwrld_00435c90 @ 0x00435C90 ===== */
-void main_drawwrld_00435c90(void)
+/* ===== dlog_frame_reset @ 0x00435C90 ===== */
+void dlog_frame_reset(void)
 
 
 
@@ -3847,7 +3847,7 @@ void FUN_004360d0(undefined4 param_1,undefined4 param_2)
 
 {
 
-  main_drawwrld_00435940(DAT_00656498,param_1,param_2);
+  dlog_entry_render_quads(DAT_00656498,param_1,param_2);
 
   return;
 
@@ -3883,7 +3883,7 @@ void FUN_00436110(undefined4 param_1,undefined4 param_2)
 
 {
 
-  main_drawwrld_00435940(DAT_00656494,param_1,param_2);
+  dlog_entry_render_quads(DAT_00656494,param_1,param_2);
 
   return;
 
@@ -3923,7 +3923,7 @@ void FUN_00436150(undefined4 param_1,undefined4 param_2)
 
 {
 
-  main_drawwrld_00435940(DAT_0065646c,param_1,param_2);
+  dlog_entry_render_quads(DAT_0065646c,param_1,param_2);
 
   return;
 
@@ -3959,7 +3959,7 @@ void FUN_00436190(undefined4 param_1,undefined4 param_2)
 
 {
 
-  main_drawwrld_00435940(DAT_00656544,param_1,param_2);
+  dlog_entry_render_quads(DAT_00656544,param_1,param_2);
 
   return;
 

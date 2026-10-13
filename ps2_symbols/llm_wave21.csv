@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00435c90,FUN_00435C90,,dlog_frame_reset,0.9,llm-read7,
+0042c1b0,FUN_0042C1B0,,level_scene_process,0.9,llm-read7,
+00434aa0,FUN_00434AA0,,geometry_clip_helper,0.9,llm-read7,
+00435940,FUN_00435940,,dlog_entry_render_quads,0.9,llm-read7,

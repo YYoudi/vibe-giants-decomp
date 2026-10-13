@@ -1790,14 +1790,14 @@
   "len": 2002
  },
  "0x0042C1B0": {
-  "name": "FUN_0042c1b0",
-  "named": false,
-  "len": 2799
+  "name": "level_scene_process",
+  "named": true,
+  "len": 2806
  },
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23233
+  "len": 23240
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -1852,7 +1852,7 @@
  "0x0042DFD0": {
   "name": "FUN_0042dfd0",
   "named": false,
-  "len": 359
+  "len": 360
  },
  "0x0042E030": {
   "name": "FUN_0042e030",
@@ -1877,7 +1877,7 @@
  "0x0042E260": {
   "name": "FUN_0042e260",
   "named": false,
-  "len": 1226
+  "len": 1227
  },
  "0x0042E350": {
   "name": "FUN_0042e350",
@@ -1897,7 +1897,7 @@
  "0x0042E3B0": {
   "name": "mpeg_mode_set",
   "named": true,
-  "len": 613
+  "len": 614
  },
  "0x0042E450": {
   "name": "_cleanup_4",
@@ -2085,9 +2085,9 @@
   "len": 949
  },
  "0x00434AA0": {
-  "name": "main/drawwrld_00434aa0",
+  "name": "geometry_clip_helper",
   "named": true,
-  "len": 1991
+  "len": 1989
  },
  "0x00434C30": {
   "name": "main/drawwrld_00434c30",
@@ -2135,9 +2135,9 @@
   "len": 1735
  },
  "0x00435940": {
-  "name": "main/drawwrld_00435940",
+  "name": "dlog_entry_render_quads",
   "named": true,
-  "len": 3075
+  "len": 3076
  },
  "0x00435BC0": {
   "name": "fx_blob_shadow",
@@ -2145,9 +2145,9 @@
   "len": 979
  },
  "0x00435C90": {
-  "name": "main/drawwrld_00435c90",
+  "name": "dlog_frame_reset",
   "named": true,
-  "len": 3341
+  "len": 3335
  },
  "0x00435E20": {
   "name": "main_drawwrld_00435e20",
@@ -2177,7 +2177,7 @@
  "0x004360D0": {
   "name": "FUN_004360d0",
   "named": false,
-  "len": 138
+  "len": 139
  },
  "0x004360F0": {
   "name": "FUN_004360f0",
@@ -2187,7 +2187,7 @@
  "0x00436110": {
   "name": "FUN_00436110",
   "named": false,
-  "len": 138
+  "len": 139
  },
  "0x00436130": {
   "name": "FUN_00436130",
@@ -2197,7 +2197,7 @@
  "0x00436150": {
   "name": "FUN_00436150",
   "named": false,
-  "len": 138
+  "len": 139
  },
  "0x00436170": {
   "name": "FUN_00436170",
@@ -2207,7 +2207,7 @@
  "0x00436190": {
   "name": "FUN_00436190",
   "named": false,
-  "len": 138
+  "len": 139
  },
  "0x004361B0": {
   "name": "FUN_004361b0",
@@ -9237,7 +9237,7 @@
  "0x0051C9F0": {
   "name": "FUN_0051C9F0",
   "named": false,
-  "len": 1891
+  "len": 1885
  },
  "0x0051CC20": {
   "name": "CheckSaveGameName__Fv",
