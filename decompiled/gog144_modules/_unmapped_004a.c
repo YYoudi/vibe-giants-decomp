@@ -8008,8 +8008,8 @@ void orbit_drift_c69(int param_1)
 
 }
 
-/* ===== cspec_004a7a20 @ 0x004A7A20 ===== */
-void cspec_004a7a20(int param_1)
+/* ===== destroy_only_c72 @ 0x004A7A20 ===== */
+void destroy_only_c72(int param_1)
 
 
 
@@ -11251,8 +11251,8 @@ void cast_repair_spell(undefined4 param_1,int param_2,int param_3,int param_4,un
 
 }
 
-/* ===== cspec_004aaba0 @ 0x004AABA0 ===== */
-void cspec_004aaba0(int param_1)
+/* ===== ptr_clear_c77 @ 0x004AABA0 ===== */
+void ptr_clear_c77(int param_1)
 
 
 

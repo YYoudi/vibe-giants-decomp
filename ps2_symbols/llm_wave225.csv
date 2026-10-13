@@ -1,0 +1,25 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004cc750,cspec_004cc750,,destroy_only_c99,0.9,cspec-w225,destroy only field10
+004cc6f0,cspec_004cc6f0,,ptr_clear_c99,0.9,cspec-w225,obj_ptr_clear field11
+0046b8d0,cspec_0046b8d0,,ptr_clear_c75,0.9,cspec-w225,obj_ptr_clear field11
+004a7a20,cspec_004a7a20,,destroy_only_c72,0.9,cspec-w225,destroy only
+00480cd0,cspec_00480cd0,,destroy_only_c10,0.9,cspec-w225,destroy only
+004ef280,cspec_004ef280,,reaper_health_anim_tick_c61,0.9,cspec-w225,ObjectSetAnim+obj_health_ratio_update (0x3d family)
+00480a10,cspec_00480a10,,ptr_clear_c2,0.9,cspec-w225,obj_ptr_clear field11
+004c6090,cspec_004c6090,,destroy_only_c3,0.9,cspec-w225,destroy only field10
+004f82c0,cspec_004f82c0,,mesh_free_c38,0.9,cspec-w225,mem_free field10
+0046f3d0,cspec_0046f3d0,,destroy_only_c104,0.9,cspec-w225,destroy only field10
+004aaba0,cspec_004aaba0,,ptr_clear_c77,0.9,cspec-w225,obj_ptr_clear field11
+004505d0,cspec_004505d0,,health_anim_tick_c101,0.9,cspec-w225,ObjectSetAnim+health_ratio (0x3d family)
+004d4980,cspec_004d4980,,ptr_clear_c23,0.9,cspec-w225,obj_ptr_clear field11
+00407af0,cspec_00407af0,,army_free_c106,0.9,cspec-w225,mem_free field10
+004e76a0,cspec_004e76a0,,water_fx_free_c51,0.9,cspec-w225,game_water free field10
+004f9340,cspec_004f9340,,ripper_turn_ai_c39,0.9,cspec-w225,obj_turn+ripper_medium_move field2
+0040ce20,cspec_0040ce20,,smartieboy_fx_free_c105,0.9,cspec-w225,fx_delete field10
+00456670,cspec_00456670,,herd_free_c17,0.9,cspec-w225,mem_free field10
+004c2d00,cspec_004c2d00,,reaper_ally_tick_c62,0.9,cspec-w225,small tick field2
+004f7750,cspec_004f7750,,ptr_clear_c18,0.9,cspec-w225,obj_ptr_clear field11
+0040cdf0,cspec_0040cdf0,,smartieboy_fx_free2_c105,0.9,cspec-w225,fx_delete field10
+004ec7a0,cspec_004ec7a0,,seamonster_tick_c29,0.9,cspec-w225,main_seamonst field9
+0046e650,cspec_0046e650,,ptr_clear_c76,0.9,cspec-w225,obj_ptr_clear field11
+00480710,cspec_00480710,,ptr_clear_c13,0.9,cspec-w225,field11

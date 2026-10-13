@@ -522,8 +522,8 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
 }
 
-/* ===== cspec_00480710 @ 0x00480710 ===== */
-void cspec_00480710(int param_1)
+/* ===== ptr_clear_c13 @ 0x00480710 ===== */
+void ptr_clear_c13(int param_1)
 
 
 
@@ -797,8 +797,8 @@ undefined4 cspec_00480a00(void)
 
 }
 
-/* ===== cspec_00480a10 @ 0x00480A10 ===== */
-void cspec_00480a10(int param_1)
+/* ===== ptr_clear_c2 @ 0x00480A10 ===== */
+void ptr_clear_c2(int param_1)
 
 
 
@@ -1093,8 +1093,8 @@ void spawner_init_c9(float param_1)
 
 }
 
-/* ===== cspec_00480cd0 @ 0x00480CD0 ===== */
-void cspec_00480cd0(int param_1)
+/* ===== destroy_only_c10 @ 0x00480CD0 ===== */
+void destroy_only_c10(int param_1)
 
 
 

@@ -6994,8 +6994,8 @@ undefined4 FUN_0046b850(int param_1)
 
 }
 
-/* ===== cspec_0046b8d0 @ 0x0046B8D0 ===== */
-void cspec_0046b8d0(int param_1)
+/* ===== ptr_clear_c75 @ 0x0046B8D0 ===== */
+void ptr_clear_c75(int param_1)
 
 
 
@@ -10075,8 +10075,8 @@ void cspec_0046e630(int param_1)
 
 }
 
-/* ===== cspec_0046e650 @ 0x0046E650 ===== */
-void cspec_0046e650(int param_1)
+/* ===== ptr_clear_c76 @ 0x0046E650 ===== */
+void ptr_clear_c76(int param_1)
 
 
 
@@ -11025,8 +11025,8 @@ undefined4 cspec_0046f3c0(void)
 
 }
 
-/* ===== cspec_0046f3d0 @ 0x0046F3D0 ===== */
-void cspec_0046f3d0(int param_1)
+/* ===== destroy_only_c104 @ 0x0046F3D0 ===== */
+void destroy_only_c104(int param_1)
 
 
 

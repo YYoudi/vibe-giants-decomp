@@ -3504,8 +3504,8 @@ int FUN_004d4930(int param_1)
 
 }
 
-/* ===== cspec_004d4980 @ 0x004D4980 ===== */
-void cspec_004d4980(int param_1)
+/* ===== ptr_clear_c23 @ 0x004D4980 ===== */
+void ptr_clear_c23(int param_1)
 
 
 

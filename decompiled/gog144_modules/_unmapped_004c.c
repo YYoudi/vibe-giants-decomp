@@ -3084,8 +3084,8 @@ void reaper_set_trail__FP6OBJECTT0fiiP8TimeSnap
 
 }
 
-/* ===== cspec_004c2d00 @ 0x004C2D00 ===== */
-void cspec_004c2d00(int param_1)
+/* ===== reaper_ally_tick_c62 @ 0x004C2D00 ===== */
+void reaper_ally_tick_c62(int param_1)
 
 
 
@@ -7211,8 +7211,8 @@ void reaper_lock_pair(int param_1,int param_2)
 
 }
 
-/* ===== cspec_004c6090 @ 0x004C6090 ===== */
-void cspec_004c6090(int param_1)
+/* ===== destroy_only_c3 @ 0x004C6090 ===== */
+void destroy_only_c3(int param_1)
 
 
 
@@ -13838,8 +13838,8 @@ void reaper_shrink_handler_c99(int param_1,float param_2,float param_3,float par
 
 }
 
-/* ===== cspec_004cc6f0 @ 0x004CC6F0 ===== */
-void cspec_004cc6f0(int param_1)
+/* ===== ptr_clear_c99 @ 0x004CC6F0 ===== */
+void ptr_clear_c99(int param_1)
 
 
 
@@ -13877,8 +13877,8 @@ void cspec_004cc6f0(int param_1)
 
 }
 
-/* ===== cspec_004cc750 @ 0x004CC750 ===== */
-void cspec_004cc750(int param_1)
+/* ===== destroy_only_c99 @ 0x004CC750 ===== */
+void destroy_only_c99(int param_1)
 
 
 

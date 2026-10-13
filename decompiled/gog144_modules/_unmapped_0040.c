@@ -4874,8 +4874,8 @@ undefined4 cspec_00407ae0(void)
 
 }
 
-/* ===== cspec_00407af0 @ 0x00407AF0 ===== */
-void cspec_00407af0(void)
+/* ===== army_free_c106 @ 0x00407AF0 ===== */
+void army_free_c106(void)
 
 
 
@@ -10728,8 +10728,8 @@ void smartieboy_ai_c105(int param_1)
 
 }
 
-/* ===== cspec_0040cdf0 @ 0x0040CDF0 ===== */
-void cspec_0040cdf0(int param_1)
+/* ===== smartieboy_fx_free2_c105 @ 0x0040CDF0 ===== */
+void smartieboy_fx_free2_c105(int param_1)
 
 
 
@@ -10757,8 +10757,8 @@ void cspec_0040cdf0(int param_1)
 
 }
 
-/* ===== cspec_0040ce20 @ 0x0040CE20 ===== */
-void cspec_0040ce20(int param_1)
+/* ===== smartieboy_fx_free_c105 @ 0x0040CE20 ===== */
+void smartieboy_fx_free_c105(int param_1)
 
 
 

@@ -6910,8 +6910,8 @@ void cspec_004e7680(int param_1)
 
 }
 
-/* ===== cspec_004e76a0 @ 0x004E76A0 ===== */
-void cspec_004e76a0(int param_1)
+/* ===== water_fx_free_c51 @ 0x004E76A0 ===== */
+void water_fx_free_c51(int param_1)
 
 
 
@@ -12277,8 +12277,8 @@ LAB_004ec6fc:
 
 }
 
-/* ===== cspec_004ec7a0 @ 0x004EC7A0 ===== */
-void cspec_004ec7a0(undefined4 param_1,int param_2,undefined4 param_3,int param_4)
+/* ===== seamonster_tick_c29 @ 0x004EC7A0 ===== */
+void seamonster_tick_c29(undefined4 param_1,int param_2,undefined4 param_3,int param_4)
 
 
 
@@ -14386,8 +14386,8 @@ undefined4 obj_health_ratio_update(int param_1)
 
 }
 
-/* ===== cspec_004ef280 @ 0x004EF280 ===== */
-void cspec_004ef280(int param_1)
+/* ===== reaper_health_anim_tick_c61 @ 0x004EF280 ===== */
+void reaper_health_anim_tick_c61(int param_1)
 
 
 

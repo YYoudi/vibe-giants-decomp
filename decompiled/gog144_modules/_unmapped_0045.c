@@ -180,8 +180,8 @@ void linkage_ground_snap_c79(int param_1)
 
 }
 
-/* ===== cspec_004505d0 @ 0x004505D0 ===== */
-void cspec_004505d0(int param_1)
+/* ===== health_anim_tick_c101 @ 0x004505D0 ===== */
+void health_anim_tick_c101(int param_1)
 
 
 
@@ -6688,8 +6688,8 @@ undefined4 cspec_00456660(void)
 
 }
 
-/* ===== cspec_00456670 @ 0x00456670 ===== */
-void cspec_00456670(int param_1)
+/* ===== herd_free_c17 @ 0x00456670 ===== */
+void herd_free_c17(int param_1)
 
 
 
