@@ -34,9 +34,9 @@ void teammecc_create(int param_1,int param_2)
 
       puVar1 = (undefined4 *)
 
-               FUN_0053a700(0xd,0x138,&DAT_0057b5dc,s_C__Giants_source_main_teammecc_c_0057b5e4,
+               MemAllocMsg(0xd,0x138,&DAT_0057b5dc,s_C__Giants_source_main_teammecc_c_0057b5e4,0x19d
 
-                            0x19d);
+                          );
 
       *(undefined4 **)(param_1 + 0x170) = puVar1;
 

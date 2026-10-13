@@ -362,7 +362,7 @@ void scenario_list_load(int param_1,undefined4 param_2,char *param_3)
 
   } while (iVar1 < 0x1b);
 
-  FUN_00542f27(local_200,s_Too_many_scenerios__skipping___d_0055c6e4,0x1b);
+  crt_sprintf(local_200,s_Too_many_scenerios__skipping___d_0055c6e4,0x1b);
 
   FUN_0051ea20(local_200);
 
@@ -658,7 +658,7 @@ void FUN_00490d70(void)
 
         FUN_00420b10();
 
-        FUN_00542f27();
+        crt_sprintf();
 
       }
 
@@ -674,7 +674,7 @@ void FUN_00490d70(void)
 
         FUN_00420b10();
 
-        FUN_00542f27();
+        crt_sprintf();
 
       }
 
@@ -1402,7 +1402,7 @@ LAB_0049156a:
 
     else {
 
-      iVar7 = FUN_004a6160(DAT_00632a88);
+      iVar7 = ObjIsMecc(DAT_00632a88);
 
       if (iVar7 == 0) {
 
@@ -1452,9 +1452,9 @@ LAB_00491875:
 
     if (*(int *)(DAT_00632ed8 + 0x15b8) < iVar5) {
 
-      fVar10 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x1674),
+      fVar10 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x1674),
 
-                                     *(undefined4 *)(DAT_00632ed8 + 0x1678));
+                                      *(undefined4 *)(DAT_00632ed8 + 0x1678));
 
       iVar9 = 3;
 
@@ -1470,9 +1470,9 @@ LAB_00491aab:
 
       if (*(int *)(DAT_00632ed8 + 0x15c0) <= iVar5) {
 
-        fVar10 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x1674),
+        fVar10 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x1674),
 
-                                       *(undefined4 *)(DAT_00632ed8 + 0x1678));
+                                        *(undefined4 *)(DAT_00632ed8 + 0x1678));
 
         _DAT_0059f328 = (float)fVar10;
 
@@ -1512,9 +1512,9 @@ LAB_00491945:
 
       if (*(int *)(DAT_00632ed8 + 0x15bc) <= iVar8) {
 
-        fVar10 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x1674),
+        fVar10 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x1674),
 
-                                       *(undefined4 *)(DAT_00632ed8 + 0x1678));
+                                        *(undefined4 *)(DAT_00632ed8 + 0x1678));
 
         iVar9 = 0;
 
@@ -1522,7 +1522,7 @@ LAB_00491945:
 
       }
 
-      iVar5 = FUN_004a6160(iVar7);
+      iVar5 = ObjIsMecc(iVar7);
 
       if (iVar5 == 0) {
 
@@ -1546,9 +1546,9 @@ joined_r0x00491a63:
 
         if (uVar3 != 0) {
 
-          fVar10 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x1674),
+          fVar10 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x1674),
 
-                                         *(undefined4 *)(DAT_00632ed8 + 0x1678));
+                                          *(undefined4 *)(DAT_00632ed8 + 0x1678));
 
           iVar9 = 0xd;
 
@@ -1566,9 +1566,9 @@ joined_r0x00491a63:
 
       if (fVar10 - fVar11 < (float10)0.0) {
 
-        fVar10 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x1674),
+        fVar10 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x1674),
 
-                                       *(undefined4 *)(DAT_00632ed8 + 0x1678));
+                                        *(undefined4 *)(DAT_00632ed8 + 0x1678));
 
         _DAT_0059f328 = (float)fVar10;
 
@@ -1614,7 +1614,7 @@ LAB_00491abd:
 
       }
 
-      iVar5 = FUN_004a6160(DAT_00632a88);
+      iVar5 = ObjIsMecc(DAT_00632a88);
 
       if (iVar5 != 0) {
 
@@ -1681,21 +1681,21 @@ void mission_level_load(undefined4 param_1)
 
   case 1:
 
-    FUN_00542f27(&DAT_0059f170,s_Cutscene_____s_0055c768,iVar2 + 0x4558);
+    crt_sprintf(&DAT_0059f170,s_Cutscene_____s_0055c768,iVar2 + 0x4558);
 
     break;
 
   case 2:
 
-    FUN_00542f27(&DAT_0059f170,s_Mission_____s_____d_0055c744,iVar2 + 0x4558,
+    crt_sprintf(&DAT_0059f170,s_Mission_____s_____d_0055c744,iVar2 + 0x4558,
 
-                 *(undefined4 *)(iVar2 + 0x4554));
+                *(undefined4 *)(iVar2 + 0x4554));
 
     break;
 
   case 3:
 
-    FUN_00542f27(&DAT_0059f170,s_New_Level_____s_0055c758,iVar2 + 0x4558);
+    crt_sprintf(&DAT_0059f170,s_New_Level_____s_0055c758,iVar2 + 0x4558);
 
     break;
 
@@ -1705,7 +1705,7 @@ void mission_level_load(undefined4 param_1)
 
 LAB_00491cd0:
 
-    FUN_00542f27(&DAT_0059f170,pcVar1);
+    crt_sprintf(&DAT_0059f170,pcVar1);
 
   }
 
@@ -1885,7 +1885,7 @@ void savegame_load(void)
 
     }
 
-    FUN_00542f27(local_80,pcVar3,puVar4);
+    crt_sprintf(local_80,pcVar3,puVar4);
 
     iVar1 = BinFileSeek_2(local_80,&DAT_00555e04);
 
@@ -1924,7 +1924,7 @@ void savegame_verify(void)
 
   comm_0051a130(s_SaveGameVersion_0055c7b0,0x11);
 
-  FUN_00542f27(local_80,s___savegame_00555ee4);
+  crt_sprintf(local_80,s___savegame_00555ee4);
 
   CreateDirectoryA(local_80,(LPSECURITY_ATTRIBUTES)0x0);
 
@@ -1934,7 +1934,7 @@ void savegame_verify(void)
 
   if (local_84 == (undefined1 *)0xffffffff) {
 
-    FUN_00542f27(local_80,s___savegame__s_00555ecc,&DAT_0063304c);
+    crt_sprintf(local_80,s___savegame__s_00555ecc,&DAT_0063304c);
 
     CreateDirectoryA(local_80,(LPSECURITY_ATTRIBUTES)0x0);
 
@@ -1946,7 +1946,7 @@ void savegame_verify(void)
 
   else {
 
-    FUN_00542f27(local_80,s___savegame_SaveGame_d_00555e7c,local_84);
+    crt_sprintf(local_80,s___savegame_SaveGame_d_00555e7c,local_84);
 
     CreateDirectoryA(local_80,(LPSECURITY_ATTRIBUTES)0x0);
 
@@ -1956,7 +1956,7 @@ void savegame_verify(void)
 
   }
 
-  FUN_00542f27(local_80,pcVar2,puVar3);
+  crt_sprintf(local_80,pcVar2,puVar3);
 
   iVar1 = BinFileSeek_2(local_80,&DAT_00555e30);
 
@@ -2275,7 +2275,7 @@ void FUN_00492290(void)
 
   
 
-  iVar1 = FUN_004a6160(DAT_00632a88);
+  iVar1 = ObjIsMecc(DAT_00632a88);
 
   iVar2 = DAT_00632a88;
 
@@ -2295,7 +2295,7 @@ void FUN_00492290(void)
 
         _DAT_0059f280 = _DAT_0059f280 & 0xff;
 
-        iVar2 = FUN_00466980(DAT_00632a88,0);
+        iVar2 = teammecc_get_slavecount(DAT_00632a88,0);
 
         if (iVar2 != 0) {
 
@@ -2307,7 +2307,7 @@ void FUN_00492290(void)
 
         uVar5 = (uint)(iVar2 != 0);
 
-        iVar2 = FUN_00466980(DAT_00632a88,1);
+        iVar2 = teammecc_get_slavecount(DAT_00632a88,1);
 
         if (iVar2 != 0) {
 
@@ -2496,7 +2496,7 @@ LAB_00492458:
 
   if ((((param_1 != 0) && (param_1 != 0xc)) && (param_1 != 5)) || (param_2 != (int *)0x0)) {
 
-    iVar1 = FUN_004a6160(DAT_00632a88);
+    iVar1 = ObjIsMecc(DAT_00632a88);
 
     if (iVar1 == 0) {
 
@@ -2568,7 +2568,7 @@ LAB_00492458:
 
     if ((DAT_0059f27c != 0) && (DAT_0059f27c == *(int *)(DAT_00632a88 + 4))) {
 
-      iVar1 = FUN_004a6160(DAT_00632a88);
+      iVar1 = ObjIsMecc(DAT_00632a88);
 
       if (iVar1 != 0) {
 
@@ -2976,7 +2976,7 @@ LAB_00492988:
 
     if (*piVar9 != 4) {
 
-      FUN_00542f27(&DAT_00657400,s_Bad_Mission_Version__Mission_Mus_0055c848);
+      crt_sprintf(&DAT_00657400,s_Bad_Mission_Version__Mission_Mus_0055c848);
 
       FUN_0051ea20(&DAT_00657400);
 
@@ -3590,7 +3590,7 @@ LAB_00492a3a:
 
         if (iVar14 == 0x80) {
 
-          FUN_00542f27(&DAT_00657400,s_Error__Flick__s_not_in_world_fli_0055c7e4,pbVar12);
+          crt_sprintf(&DAT_00657400,s_Error__Flick__s_not_in_world_fli_0055c7e4,pbVar12);
 
           pbVar12 = pbVar5 + 0x21;
 
@@ -3984,7 +3984,7 @@ LAB_00492a3a:
 
         *(undefined4 *)(local_13c * 0x118 + 0x2324 + DAT_006330e4) = 1;
 
-        iVar14 = FUN_004a6160(DAT_00632a88);
+        iVar14 = ObjIsMecc(DAT_00632a88);
 
         if (iVar14 == 0) {
 
@@ -4026,7 +4026,7 @@ LAB_00492a3a:
 
       default:
 
-        FUN_00542f27(local_100,s_Mission_Load_Error__last_op____d_0055c7c0,(int)(char)local_135);
+        crt_sprintf(local_100,s_Mission_Load_Error__last_op____d_0055c7c0,(int)(char)local_135);
 
         FUN_0051ea20(local_100);
 
@@ -4425,7 +4425,7 @@ switchD_00493a7f_caseD_1a:
 
         default:
 
-          FUN_00542f27(local_100,s_Flick_Mission_Load_Error__last_o_0055c884,(int)(char)local_101);
+          crt_sprintf(local_100,s_Flick_Mission_Load_Error__last_o_0055c884,(int)(char)local_101);
 
           FUN_0051ea20(local_100);
 
@@ -4474,11 +4474,11 @@ void FUN_00493bd0(int param_1)
 
     }
 
-    FUN_00542f27(&DAT_0059f060,&DAT_0055c8ac,
+    crt_sprintf(&DAT_0059f060,&DAT_0055c8ac,
 
-                 *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
+                *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
 
-                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
+                0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
     uVar1 = FUN_00507b00(&DAT_0059f060);
 
@@ -4519,11 +4519,11 @@ void FUN_00493c90(void)
 
     *(int *)(DAT_006330e4 + 0x4a68) = *(int *)(DAT_006330e4 + 0x4a68) + 1;
 
-    FUN_00542f27(&DAT_0059f060,&DAT_0055c8ac,
+    crt_sprintf(&DAT_0059f060,&DAT_0055c8ac,
 
-                 *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
+                *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
 
-                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
+                0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
     uVar1 = FUN_00507b00(&DAT_0059f060);
 
@@ -4570,11 +4570,11 @@ void FUN_00493d60(undefined4 param_1,float param_2)
 
     *(int *)(DAT_006330e4 + 0x4a68) = *(int *)(DAT_006330e4 + 0x4a68) + 1;
 
-    FUN_00542f27(&DAT_0059f060,&DAT_0055c8ac,
+    crt_sprintf(&DAT_0059f060,&DAT_0055c8ac,
 
-                 *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
+                *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
 
-                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
+                0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
     uVar1 = FUN_00507b00(&DAT_0059f060);
 
@@ -4781,11 +4781,11 @@ void FUN_00494030(int param_1)
 
     *(uint *)(param_1 + 0xdc) = *(uint *)(param_1 + 0xdc) & 0xfffffff0;
 
-    FUN_00542f27(&DAT_0059f060,&DAT_0055c8ac,
+    crt_sprintf(&DAT_0059f060,&DAT_0055c8ac,
 
-                 *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
+                *(int *)(*(int *)(DAT_006330e4 + 0x4a60) * 0x30 + 0x4548 + DAT_006330e4) * 0x118 +
 
-                 0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
+                0x2210 + DAT_006330e4,*(undefined4 *)(DAT_006330e4 + 0x4a68));
 
     uVar1 = FUN_00507b00(&DAT_0059f060);
 
@@ -4850,7 +4850,7 @@ void FUN_00494120(int param_1)
 
     if (uVar3 == 4) {
 
-      iVar4 = FUN_004a6160(DAT_00632a88);
+      iVar4 = ObjIsMecc(DAT_00632a88);
 
       if (iVar4 == 0) {
 
@@ -4902,7 +4902,7 @@ void FUN_00494120(int param_1)
 
       local_10 = *(float *)(param_1 + 0xa8) - *(float *)(DAT_00632a88 + 0xa8);
 
-      FUN_0050a810(&local_18,&local_14,&local_10);
+      normalize__FPfN20(&local_18,&local_14,&local_10);
 
       local_c = local_18 * 10.0 + *(float *)(DAT_00632a88 + 0xa0);
 
@@ -4992,7 +4992,7 @@ void FUN_00494120(int param_1)
 
     }
 
-    FUN_00542f27(&DAT_0059f060,&DAT_0055c8ac,iVar4,uVar5);
+    crt_sprintf(&DAT_0059f060,&DAT_0055c8ac,iVar4,uVar5);
 
     uVar5 = FUN_00507b00(&DAT_0059f060);
 
@@ -5193,7 +5193,7 @@ void ambient_streams_handler(void)
 
   *(uint *)(DAT_00632a88 + 0xd8) = *(uint *)(DAT_00632a88 + 0xd8) & 0xbfffffff;
 
-  iVar2 = FUN_004a6160(DAT_00632a88);
+  iVar2 = ObjIsMecc(DAT_00632a88);
 
   if (iVar2 == 0) {
 
@@ -5711,7 +5711,7 @@ int sound_play_obj(int param_1,undefined4 param_2)
 
     if (iVar1 == 0) {
 
-      FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
+      crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
       FUN_00425eb0(&DAT_00657400);
 
@@ -5772,7 +5772,7 @@ int sound_play_player(int param_1,int param_2)
 
         }
 
-        FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
+        crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
 
         FUN_00425eb0(&DAT_00657400);
 
@@ -5796,7 +5796,7 @@ int sound_play_player(int param_1,int param_2)
 
       }
 
-      FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
+      crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
 
       FUN_00425eb0(&DAT_00657400);
 
@@ -5909,7 +5909,7 @@ int sound_play_2(int param_1,int param_2)
 
   }
 
-  FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,iVar1);
+  crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,iVar1);
 
   FUN_00425eb0(&DAT_00657400);
 
@@ -6043,7 +6043,7 @@ int sound_play_3(int param_1,undefined4 param_2,undefined4 param_3)
 
     if (iVar1 == 0) {
 
-      FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
+      crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
       FUN_00425eb0(&DAT_00657400);
 
@@ -6090,7 +6090,7 @@ int sound_play_3dpos(int param_1,undefined4 param_2)
 
     if (iVar1 == 0) {
 
-      FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
+      crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
       FUN_00425eb0(&DAT_00657400);
 
@@ -6127,7 +6127,7 @@ int sound_play_4(int param_1,undefined4 param_2)
 
     if (iVar1 == 0) {
 
-      FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
+      crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
       FUN_00425eb0(&DAT_00657400);
 
@@ -6174,7 +6174,7 @@ int sound_play(int param_1)
 
     if (iVar1 == 0) {
 
-      FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
+      crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
       FUN_00425eb0(&DAT_00657400);
 
@@ -6452,7 +6452,7 @@ LAB_00495a11:
 
                (iVar2 = (*DAT_005dd2ac)(piVar3,piVar1[10]), iVar2 == 0)))))) {
 
-            FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
+            crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar3);
 
             FUN_00425eb0(&DAT_00657400);
 
@@ -6533,7 +6533,7 @@ void sound_play_checked(int param_1)
 
         }
 
-        FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
+        crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
         FUN_00425eb0(&DAT_00657400);
 
@@ -6595,7 +6595,7 @@ void sound_play_checked(int param_1)
 
   }
 
-  FUN_00542f27(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
+  crt_sprintf(&DAT_00657400,s_SoundFail__s_0055c9b8,*piVar2);
 
   FUN_00425eb0(&DAT_00657400);
 
@@ -7142,7 +7142,7 @@ undefined4 * object_allocate_type(int param_1,uint param_2)
 
 LAB_00496ce5:
 
-    FUN_00542f27(&DAT_00657400,s_Error__ObjObj_type__d_not_found_0055ca34,param_1);
+    crt_sprintf(&DAT_00657400,s_Error__ObjObj_type__d_not_found_0055ca34,param_1);
 
     if (DAT_0055c9e0 < 1) {
 
@@ -7520,7 +7520,7 @@ undefined4 * object_allocate_type_end(int param_1,uint param_2)
 
 LAB_00497226:
 
-    FUN_00542f27(&DAT_00657400,s_Error__ObjObj_type__d_not_found_0055ca34,param_1);
+    crt_sprintf(&DAT_00657400,s_Error__ObjObj_type__d_not_found_0055ca34,param_1);
 
     if (DAT_0055c9e0 < 1) {
 
@@ -7975,7 +7975,7 @@ void objobj_type_lookup(int param_1,int param_2)
 
 LAB_00497c25:
 
-      FUN_00542f27(&DAT_00657400,s_Error__ObjObj_type__d_not_found_0055ca34,param_1);
+      crt_sprintf(&DAT_00657400,s_Error__ObjObj_type__d_not_found_0055ca34,param_1);
 
       if (0 < DAT_0055c9e0) {
 
@@ -8305,7 +8305,7 @@ void weapon_id_inventory_update(void)
 
   }
 
-  iVar2 = FUN_004a6160(puVar1);
+  iVar2 = ObjIsMecc(puVar1);
 
   if (iVar2 == 0) {
 
@@ -8461,7 +8461,7 @@ void weapon_id_inventory_update(void)
 
   _DAT_0059f388 = iVar3;
 
-  iVar3 = FUN_004a6160(&DAT_0059f380);
+  iVar3 = ObjIsMecc(&DAT_0059f380);
 
   iVar2 = DAT_0059f390;
 
@@ -8531,7 +8531,7 @@ LAB_00497f67:
 
       }
 
-      iVar3 = FUN_004a6160(&DAT_0059f380);
+      iVar3 = ObjIsMecc(&DAT_0059f380);
 
       if (iVar3 != 0) {
 
@@ -8563,7 +8563,7 @@ LAB_00497f67:
 
       }
 
-      iVar3 = FUN_004a6160(&DAT_0059f380);
+      iVar3 = ObjIsMecc(&DAT_0059f380);
 
       if (iVar3 != 0) {
 
@@ -8599,7 +8599,7 @@ LAB_00498199:
 
 LAB_00498087:
 
-  iVar3 = FUN_004a6160(&DAT_0059f380);
+  iVar3 = ObjIsMecc(&DAT_0059f380);
 
   if (iVar3 != 0) {
 
@@ -8785,7 +8785,7 @@ void FUN_004982c0(void)
 
   }
 
-  iVar3 = FUN_004a6160(&DAT_0059f688);
+  iVar3 = ObjIsMecc(&DAT_0059f688);
 
   if (iVar3 != 0) {
 
@@ -8875,7 +8875,7 @@ LAB_0049841a:
 
   FUN_00403e60(&DAT_0059f688,(float)fVar5);
 
-  iVar3 = FUN_004a6160(DAT_00632a88);
+  iVar3 = ObjIsMecc(DAT_00632a88);
 
   if ((iVar3 != 0) && ((*(uint *)(DAT_00632a88 + 0xe0) & 0x2000000) == 0)) {
 
@@ -8996,7 +8996,7 @@ void FUN_004984b0(void)
 
   iVar1 = AudioGetMasterVolume__Fv();
 
-  iVar2 = FUN_004a6160(iVar1);
+  iVar2 = ObjIsMecc(iVar1);
 
   if (iVar2 == 0) {
 
@@ -9076,7 +9076,7 @@ void FUN_004984b0(void)
 
     local_7c = local_4 - local_10;
 
-    FUN_0050a810(&local_84,&local_80,&local_7c);
+    normalize__FPfN20(&local_84,&local_80,&local_7c);
 
     local_3c = local_84 * 0.33 + local_18;
 
@@ -9229,7 +9229,7 @@ LAB_00498ae1:
 
     }
 
-    iVar3 = FUN_004a6160(param_1);
+    iVar3 = ObjIsMecc(param_1);
 
     if (iVar3 != 0) {
 
@@ -9261,7 +9261,7 @@ LAB_00498ae1:
 
     }
 
-    iVar3 = FUN_004a6160(param_1);
+    iVar3 = ObjIsMecc(param_1);
 
     if (iVar3 != 0) {
 
@@ -9291,7 +9291,7 @@ LAB_0049891f:
 
 LAB_00498a2c:
 
-  iVar3 = FUN_004a6160(param_1);
+  iVar3 = ObjIsMecc(param_1);
 
   if (iVar3 != 0) {
 
@@ -9376,7 +9376,7 @@ void vimp_death_fx(int param_1)
 
   if (param_1 != DAT_00632a88) {
 
-    iVar1 = FUN_004a6160(*(undefined4 *)(param_1 + 0x210));
+    iVar1 = ObjIsMecc(*(undefined4 *)(param_1 + 0x210));
 
     if (iVar1 == 0) {
 
@@ -9404,7 +9404,7 @@ void vimp_death_fx(int param_1)
 
   }
 
-  iVar1 = FUN_004a6160(DAT_00632a88);
+  iVar1 = ObjIsMecc(DAT_00632a88);
 
   if (iVar1 != 0) {
 
@@ -10672,7 +10672,7 @@ void FUN_00499fa0(int param_1)
 
   if (*(int *)(param_1 + 0x1e0) == 0x12) {
 
-    iVar1 = FUN_004a6160(*(undefined4 *)(param_1 + 0x274));
+    iVar1 = ObjIsMecc(*(undefined4 *)(param_1 + 0x274));
 
     if (iVar1 != 0) goto LAB_00499fe3;
 
@@ -12420,7 +12420,7 @@ void FUN_0049baa0(int param_1)
 
     if (iVar4 == 1) {
 
-      iVar4 = FUN_00466980(param_1,0);
+      iVar4 = teammecc_get_slavecount(param_1,0);
 
       if (iVar4 != 0) {
 
@@ -12428,7 +12428,7 @@ void FUN_0049baa0(int param_1)
 
       }
 
-      iVar4 = FUN_00466980(param_1,1);
+      iVar4 = teammecc_get_slavecount(param_1,1);
 
       if (iVar4 != 0) {
 
@@ -12547,7 +12547,7 @@ int FUN_0049bd10(undefined4 param_1)
 
   }
 
-  FUN_00542f27(&DAT_00657400,s_Failed_to_find_WorldAnim___s__0055e79c,param_1);
+  crt_sprintf(&DAT_00657400,s_Failed_to_find_WorldAnim___s__0055e79c,param_1);
 
   FUN_0051ea20(&DAT_00657400);
 
@@ -12794,7 +12794,7 @@ int FUN_0049bfe0(float *param_1,float *param_2,float *param_3,float *param_4,flo
 
             (*param_5 - *param_3) * (param_4[1] - param_3[1]);
 
-  FUN_0050a810(&local_10,&local_c,&local_8);
+  normalize__FPfN20(&local_10,&local_c,&local_8);
 
   local_4 = -(local_c * param_3[1] + local_8 * param_3[2] + local_10 * *param_3);
 
@@ -13266,9 +13266,9 @@ void FUN_0049dd90(int param_1)
 
        ((*(float *)(iVar3 + 0x278) < *(float *)(iVar3 + 0x1c0) &&
 
-        ((iVar5 = FUN_004a6160(iVar3), iVar5 == 0 || ((*(uint *)(iVar3 + 0xe0) & 0x2000000) == 0))))
+        ((iVar5 = ObjIsMecc(iVar3), iVar5 == 0 || ((*(uint *)(iVar3 + 0xe0) & 0x2000000) == 0))))))
 
-       )) {
+    {
 
       fVar6 = (float10)FUN_0050a610(iVar2 + 0x40,iVar3 + 0xa0);
 
@@ -13347,7 +13347,7 @@ void FUN_0049de80(int param_1,int param_2)
 
     local_10 = 0.0;
 
-    FUN_0050a810(&local_18,&local_14,&local_10);
+    normalize__FPfN20(&local_18,&local_14,&local_10);
 
     local_c = *(float *)(DAT_00632ed8 + 0xd00) * local_18 + *pfVar1;
 
@@ -13418,7 +13418,7 @@ void FUN_0049df90(int param_1)
 
     local_4 = 0.0;
 
-    FUN_0050a810(&local_c,&local_8,&local_4);
+    normalize__FPfN20(&local_c,&local_8,&local_4);
 
     local_c = *(float *)(DAT_00632ed8 + 0x1588) * local_c + *(float *)(param_1 + 0x2a4);
 
@@ -13677,7 +13677,7 @@ void FUN_0049e4a0(int param_1)
 
       BinFileCreateWrite(0x42700000);
 
-      iVar1 = FUN_004a6160(DAT_00632a88);
+      iVar1 = ObjIsMecc(DAT_00632a88);
 
       DAT_0063291c = 0xc - (uint)(iVar1 != 0);
 
@@ -13687,7 +13687,7 @@ void FUN_0049e4a0(int param_1)
 
       DAT_00632928 = DAT_00632e88;
 
-      iVar1 = FUN_004a6160(DAT_00632a88);
+      iVar1 = ObjIsMecc(DAT_00632a88);
 
       if (iVar1 == 0) {
 
@@ -13758,7 +13758,7 @@ bool FUN_0049e670(int param_1,int param_2,int *param_3,int param_4)
 
   
 
-  iVar3 = FUN_004a6160(param_1);
+  iVar3 = ObjIsMecc(param_1);
 
   iVar5 = param_2 + -0x30;
 
@@ -14075,7 +14075,7 @@ undefined4 chat_log_init(int param_1)
 
               uVar4 = FUN_00507b00();
 
-              FUN_00542f27(local_100,uVar4);
+              crt_sprintf(local_100,uVar4);
 
               uVar4 = 1;
 
@@ -14087,7 +14087,7 @@ undefined4 chat_log_init(int param_1)
 
               uVar4 = FUN_00507b00();
 
-              FUN_00542f27(local_100,uVar4);
+              crt_sprintf(local_100,uVar4);
 
               uVar4 = 1;
 

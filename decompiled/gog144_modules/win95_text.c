@@ -56,9 +56,9 @@ void win95_text_0051adb0(int param_1)
 
     DAT_005dd39c = (undefined4 *)
 
-                   FUN_0053a700(0x1c,0x10000,s_textext_0057d77c,
+                   MemAllocMsg(0x1c,0x10000,s_textext_0057d77c,
 
-                                s_C__Giants_source_win95_text_c_0057d784,0x86);
+                               s_C__Giants_source_win95_text_c_0057d784,0x86);
 
     puVar6 = DAT_005dd39c;
 

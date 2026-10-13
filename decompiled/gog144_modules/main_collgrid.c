@@ -165,9 +165,9 @@ void main_collgrid_00410200(int param_1)
 
       puVar4 = (undefined4 *)
 
-               FUN_0053a700(6,(int)local_28c - (int)local_260,s_collgrid_00555508,
+               MemAllocMsg(6,(int)local_28c - (int)local_260,s_collgrid_00555508,
 
-                            s_C__Giants_source_main_collgrid_c_00555464,0x137);
+                           s_C__Giants_source_main_collgrid_c_00555464,0x137);
 
       *(undefined4 **)(param_1 + 0x21c) = puVar4;
 
@@ -253,9 +253,9 @@ void main_collgrid_00410200(int param_1)
 
       puVar4 = (undefined4 *)
 
-               FUN_0053a700(6,(int)local_28c - (int)local_260,s_collgrid_00555508,
+               MemAllocMsg(6,(int)local_28c - (int)local_260,s_collgrid_00555508,
 
-                            s_C__Giants_source_main_collgrid_c_00555464,0x1b3);
+                           s_C__Giants_source_main_collgrid_c_00555464,0x1b3);
 
       *(undefined4 **)(param_1 + 0x21c) = puVar4;
 
@@ -411,9 +411,9 @@ void main_collgrid_00410200(int param_1)
 
     puVar4 = (undefined4 *)
 
-             FUN_0053a700(6,pcVar9,s_collgrid_00555508,s_C__Giants_source_main_collgrid_c_00555464,
+             MemAllocMsg(6,pcVar9,s_collgrid_00555508,s_C__Giants_source_main_collgrid_c_00555464,
 
-                          0x8f);
+                         0x8f);
 
     *(undefined4 **)(param_1 + 0x21c) = puVar4;
 
@@ -546,7 +546,7 @@ void main_collgrid_00410c70(int param_1,float *param_2,float *param_3,float *par
 
   puVar7 = (undefined4 *)
 
-           FUN_0053a700(6,uVar14,&DAT_005555ac,s_C__Giants_source_main_collgrid_c_00555464,0x156);
+           MemAllocMsg(6,uVar14,&DAT_005555ac,s_C__Giants_source_main_collgrid_c_00555464,0x156);
 
   puVar12 = puVar7;
 
@@ -1041,9 +1041,9 @@ void main_collgrid_00411140(int param_1)
 
     puVar12 = (undefined4 *)
 
-              FUN_0053a700(6,uVar15,s_collpgrid_005555b4,s_C__Giants_source_main_collgrid_c_00555464
+              MemAllocMsg(6,uVar15,s_collpgrid_005555b4,s_C__Giants_source_main_collgrid_c_00555464,
 
-                           ,0x202);
+                          0x202);
 
     puVar17 = puVar12;
 
@@ -1127,7 +1127,7 @@ void main_collgrid_00411140(int param_1)
 
           local_70 = (float)local_84 * local_80 - local_88 * (local_a4 - fVar7);
 
-          FUN_0050a810(&local_78,&local_74,&local_70);
+          normalize__FPfN20(&local_78,&local_74,&local_70);
 
           local_6c = -(local_70 * fVar8 + local_74 * fVar7 + fVar6 * local_78);
 
@@ -1604,9 +1604,9 @@ void main_collgrid_00411a10(int param_1)
 
     puVar9 = (undefined4 *)
 
-             FUN_0053a700(6,uVar12,s_collmgrid_005555c0,s_C__Giants_source_main_collgrid_c_00555464,
+             MemAllocMsg(6,uVar12,s_collmgrid_005555c0,s_C__Giants_source_main_collgrid_c_00555464,
 
-                          0x289);
+                         0x289);
 
     puVar14 = puVar9;
 
@@ -1688,7 +1688,7 @@ void main_collgrid_00411a10(int param_1)
 
           local_5c = local_88 * local_74 - (local_80 - fVar3) * (local_90 - fVar4);
 
-          FUN_0050a810(&local_64,&local_60,&local_5c);
+          normalize__FPfN20(&local_64,&local_60,&local_5c);
 
           local_58 = -(local_5c * fVar5 + local_60 * fVar4 + fVar3 * local_64);
 

@@ -74,7 +74,7 @@ LAB_0041906f:
 
     if (DAT_00657678 == 0) {
 
-      FUN_00542f27(local_80,s_Error_on_DPlay_StartMeccBldg_ind_00555780,*param_4,param_4[1]);
+      crt_sprintf(local_80,s_Error_on_DPlay_StartMeccBldg_ind_00555780,*param_4,param_4[1]);
 
       FUN_0051ea20(local_80);
 
@@ -544,7 +544,7 @@ LAB_004195d2:
 
     if (DAT_00657678 == 0) {
 
-      FUN_00542f27(local_80,s_Error_on_DPlay_StartReaperBldg_i_00555720,*param_4,param_4[1]);
+      crt_sprintf(local_80,s_Error_on_DPlay_StartReaperBldg_i_00555720,*param_4,param_4[1]);
 
       FUN_0051ea20(local_80);
 
@@ -798,7 +798,7 @@ LAB_004195d2:
 
       if (iVar8 != 0) {
 
-        iVar9 = FUN_004a6160(uVar7);
+        iVar9 = ObjIsMecc(uVar7);
 
         if (iVar9 == 0) {
 
@@ -886,7 +886,7 @@ LAB_004195d2:
 
     if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(param_4[1]), iVar8 != 0)) {
 
-      iVar9 = FUN_004a6160(uVar7);
+      iVar9 = ObjIsMecc(uVar7);
 
       if (iVar9 == 0) {
 
@@ -992,7 +992,7 @@ LAB_004195d2:
 
     if ((iVar8 != 0) && (iVar8 = FUN_0052e5b0(param_4[1]), iVar8 != 0)) {
 
-      iVar9 = FUN_004a6160(uVar7);
+      iVar9 = ObjIsMecc(uVar7);
 
       if (iVar9 == 0) {
 

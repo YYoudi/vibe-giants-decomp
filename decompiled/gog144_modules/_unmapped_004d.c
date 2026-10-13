@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004d
- * 39 functions (16 named) — decompiled, names from PS2 symbols
+ * 39 functions (17 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
  */
 
@@ -30,9 +30,9 @@ undefined4 FUN_004d1790(int param_1,int param_2)
 
      ((*(float *)(param_2 + 0x278) < *(float *)(param_2 + 0x1c0) &&
 
-      (((iVar2 = FUN_004a6160(param_2), iVar2 == 0 || ((*(uint *)(param_2 + 0xe0) & 0x2000000) == 0)
+      (((iVar2 = ObjIsMecc(param_2), iVar2 == 0 || ((*(uint *)(param_2 + 0xe0) & 0x2000000) == 0))
 
-        ) || (4.0 <= *(float *)(iVar3 + 0x54))))))) {
+       || (4.0 <= *(float *)(iVar3 + 0x54))))))) {
 
     iVar3 = FUN_004a6180(param_2);
 
@@ -278,9 +278,9 @@ void FUN_004d1a00(int param_1,float param_2)
 
           (*(int *)(iVar2 + 4) != 0)) &&
 
-         ((((iVar3 = FUN_004a6160(iVar2), iVar3 == 0 || ((*(uint *)(iVar2 + 0xe0) & 0x2000000) == 0)
+         ((((iVar3 = ObjIsMecc(iVar2), iVar3 == 0 || ((*(uint *)(iVar2 + 0xe0) & 0x2000000) == 0))
 
-            ) || (4.0 <= *(float *)(iVar1 + 0x54))) && (*(int *)(iVar2 + 0x210) == 0)))) {
+           || (4.0 <= *(float *)(iVar1 + 0x54))) && (*(int *)(iVar2 + 0x210) == 0)))) {
 
         fVar7 = (float10)FUN_0050a610(iVar2 + 0xa0,param_1 + 0xa0);
 
@@ -580,17 +580,17 @@ void verm_control(int param_1)
 
           fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,iVar6);
 
-          fVar9 = (float10)FUN_004d5780((float)(fVar9 - (float10)50.0),
+          fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)50.0),
 
-                                        (float)((float10)50.0 + fVar9));
+                                         (float)((float10)50.0 + fVar9));
 
           puVar8[1] = (float)fVar9;
 
           FUN_00451560(puVar8 + 1);
 
-          fVar9 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 200),
+          fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
-                                        *(undefined4 *)(DAT_00632ed8 + 0xcc));
+                                         *(undefined4 *)(DAT_00632ed8 + 0xcc));
 
           puVar8[2] = (float)fVar9;
 
@@ -632,11 +632,9 @@ void verm_control(int param_1)
 
          (*(float *)((int)fVar4 + 0x1c0) <= *(float *)((int)fVar4 + 0x278))))) ||
 
-       (((iVar5 = FUN_004a6160(fVar4), iVar5 != 0 &&
+       (((iVar5 = ObjIsMecc(fVar4), iVar5 != 0 && ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0))
 
-         ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0)) && (*(float *)(iVar6 + 0x54) < 4.0))))
-
-    goto LAB_004d2124;
+        && (*(float *)(iVar6 + 0x54) < 4.0)))) goto LAB_004d2124;
 
     iVar6 = FUN_004a6180(fVar4);
 
@@ -752,9 +750,9 @@ LAB_004d286e:
 
          (*(float *)((int)fVar4 + 0x1c0) <= *(float *)((int)fVar4 + 0x278))))) ||
 
-       (((iVar5 = FUN_004a6160(fVar4), iVar5 != 0 &&
+       (((iVar5 = ObjIsMecc(fVar4), iVar5 != 0 && ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0))
 
-         ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0)) && (*(float *)(iVar6 + 0x54) < 4.0)))) {
+        && (*(float *)(iVar6 + 0x54) < 4.0)))) {
 
 LAB_004d2364:
 
@@ -896,11 +894,9 @@ LAB_004d2364:
 
          (*(float *)((int)fVar4 + 0x1c0) <= *(float *)((int)fVar4 + 0x278))))) ||
 
-       (((iVar5 = FUN_004a6160(fVar4), iVar5 != 0 &&
+       (((iVar5 = ObjIsMecc(fVar4), iVar5 != 0 && ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0))
 
-         ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0)) && (*(float *)(iVar6 + 0x54) < 4.0))))
-
-    goto LAB_004d2124;
+        && (*(float *)(iVar6 + 0x54) < 4.0)))) goto LAB_004d2124;
 
     iVar6 = FUN_004a6180(fVar4);
 
@@ -1030,9 +1026,9 @@ LAB_004d2364:
 
          (*(float *)((int)fVar4 + 0x1c0) <= *(float *)((int)fVar4 + 0x278))))) ||
 
-       (((iVar5 = FUN_004a6160(fVar4), iVar5 != 0 &&
+       (((iVar5 = ObjIsMecc(fVar4), iVar5 != 0 && ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0))
 
-         ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) != 0)) && (*(float *)(iVar6 + 0x54) < 4.0)))) {
+        && (*(float *)(iVar6 + 0x54) < 4.0)))) {
 
 LAB_004d2a47:
 
@@ -1178,11 +1174,9 @@ LAB_004d2a47:
 
         (*(float *)((int)fVar4 + 0x278) < *(float *)((int)fVar4 + 0x1c0))) &&
 
-       (((iVar5 = FUN_004a6160(fVar4), iVar5 == 0 ||
+       (((iVar5 = ObjIsMecc(fVar4), iVar5 == 0 || ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0))
 
-         ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0)) || (4.0 <= *(float *)(iVar6 + 0x54)))))
-
-    {
+        || (4.0 <= *(float *)(iVar6 + 0x54))))) {
 
       iVar6 = FUN_004a6180(fVar4);
 
@@ -1262,11 +1256,9 @@ LAB_004d2d85:
 
          (*(float *)((int)fVar4 + 0x278) < *(float *)((int)fVar4 + 0x1c0))) &&
 
-        (((iVar5 = FUN_004a6160(fVar4), iVar5 == 0 ||
+        (((iVar5 = ObjIsMecc(fVar4), iVar5 == 0 || ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0)
 
-          ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0)) || (4.0 <= *(float *)(iVar6 + 0x54)))))
-
-       )) {
+          ) || (4.0 <= *(float *)(iVar6 + 0x54))))))) {
 
       iVar6 = FUN_004a6180(fVar4);
 
@@ -1348,17 +1340,17 @@ LAB_004d2d85:
 
           fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,param_1 + 0xa0);
 
-          fVar9 = (float10)FUN_004d5780((float)(fVar9 - (float10)80.0),
+          fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)80.0),
 
-                                        (float)((float10)80.0 + fVar9));
+                                         (float)((float10)80.0 + fVar9));
 
           puVar8[1] = (float)fVar9;
 
           FUN_00451560(puVar8 + 1);
 
-          fVar9 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 200),
+          fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
-                                        *(undefined4 *)(DAT_00632ed8 + 0xcc));
+                                         *(undefined4 *)(DAT_00632ed8 + 0xcc));
 
           puVar8[2] = (float)fVar9;
 
@@ -1406,11 +1398,9 @@ LAB_004d27a6:
 
          (*(float *)((int)fVar4 + 0x278) < *(float *)((int)fVar4 + 0x1c0))) &&
 
-        (((iVar5 = FUN_004a6160(fVar4), iVar5 == 0 ||
+        (((iVar5 = ObjIsMecc(fVar4), iVar5 == 0 || ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0)
 
-          ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0)) || (4.0 <= *(float *)(iVar6 + 0x54)))))
-
-       )) {
+          ) || (4.0 <= *(float *)(iVar6 + 0x54))))))) {
 
       iVar6 = FUN_004a6180(fVar4);
 
@@ -1508,11 +1498,9 @@ LAB_004d27a6:
 
         (*(float *)((int)fVar4 + 0x278) < *(float *)((int)fVar4 + 0x1c0))) &&
 
-       (((iVar5 = FUN_004a6160(fVar4), iVar5 == 0 ||
+       (((iVar5 = ObjIsMecc(fVar4), iVar5 == 0 || ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0))
 
-         ((*(uint *)((int)fVar4 + 0xe0) & 0x2000000) == 0)) || (4.0 <= *(float *)(iVar6 + 0x54)))))
-
-    {
+        || (4.0 <= *(float *)(iVar6 + 0x54))))) {
 
       iVar6 = FUN_004a6180(fVar4);
 
@@ -1568,17 +1556,17 @@ LAB_004d27a6:
 
           fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,param_1 + 0xa0);
 
-          fVar9 = (float10)FUN_004d5780((float)(fVar9 - (float10)20.0),
+          fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)20.0),
 
-                                        (float)((float10)20.0 + fVar9));
+                                         (float)((float10)20.0 + fVar9));
 
           puVar8[1] = (float)fVar9;
 
           FUN_00451560(puVar8 + 1);
 
-          fVar9 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 200),
+          fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
-                                        *(undefined4 *)(DAT_00632ed8 + 0xcc));
+                                         *(undefined4 *)(DAT_00632ed8 + 0xcc));
 
           puVar8[2] = (float)fVar9;
 
@@ -1730,17 +1718,17 @@ LAB_004d2124:
 
         fVar9 = (float10)FUN_0050a400(puVar8[3] + 0xa0,param_1 + 0xa0);
 
-        fVar9 = (float10)FUN_004d5780((float)(fVar9 - (float10)80.0),(float)((float10)80.0 + fVar9))
+        fVar9 = (float10)rndfloatrange((float)(fVar9 - (float10)80.0),(float)((float10)80.0 + fVar9)
 
-        ;
+                                      );
 
         puVar8[1] = (float)fVar9;
 
         FUN_00451560(puVar8 + 1);
 
-        fVar9 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 200),
+        fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
-                                      *(undefined4 *)(DAT_00632ed8 + 0xcc));
+                                       *(undefined4 *)(DAT_00632ed8 + 0xcc));
 
         puVar8[2] = (float)fVar9;
 
@@ -1834,9 +1822,9 @@ LAB_004d288a:
 
       *(undefined4 *)(param_1 + 0xe4) = 0x5c;
 
-      fVar9 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x134),
+      fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x134),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x138));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x138));
 
       *(float *)(param_1 + 0xec) = (float)fVar9;
 
@@ -1984,15 +1972,15 @@ switchD_004d1ccc_caseD_20:
 
 LAB_004d27e4:
 
-      fVar9 = (float10)FUN_004d5780((float)fVar9,(float)fVar10);
+      fVar9 = (float10)rndfloatrange((float)fVar9,(float)fVar10);
 
       puVar8[1] = (float)fVar9;
 
       FUN_00451560(puVar8 + 1);
 
-      fVar9 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 200),
+      fVar9 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 200),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0xcc));
+                                     *(undefined4 *)(DAT_00632ed8 + 0xcc));
 
       puVar8[2] = (float)fVar9;
 
@@ -2408,9 +2396,9 @@ LAB_004d3f6e:
 
     if ((*(byte *)(param_1 + 0x30) & 2) == 0) goto LAB_004d3f6e;
 
-    fVar6 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0xd0c),
+    fVar6 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0xd0c),
 
-                                  *(undefined4 *)(DAT_00632ed8 + 0xd10));
+                                   *(undefined4 *)(DAT_00632ed8 + 0xd10));
 
     *(float *)(param_1 + 0xf0) = (float)fVar6;
 
@@ -2663,7 +2651,7 @@ void FUN_004d4350(int param_1,int param_2,float param_3)
 
               (*(float *)(param_2 + 8) - *(float *)(iVar4 + 0xa8))) / fVar1;
 
-      fVar5 = (float10)FUN_004d5780((1.0 - param_3 * 0.01) * fVar2,(param_3 * 0.01 + 1.0) * fVar2);
+      fVar5 = (float10)rndfloatrange((1.0 - param_3 * 0.01) * fVar2,(param_3 * 0.01 + 1.0) * fVar2);
 
       *(float *)(iVar4 + 0x118) = (float)fVar5;
 
@@ -2882,17 +2870,17 @@ int FUN_004d4760(int param_1,undefined4 param_2,float param_3)
 
          (((*(int *)(iVar1 + 0x210) == 0 && ((*(uint *)(iVar1 + 0x1c8) & 0x20000) != 0)) &&
 
-          ((iVar4 = FUN_004a6160(iVar1), iVar4 != 0 || (iVar4 = FUN_004a6180(iVar1), iVar4 != 0)))))
+          ((iVar4 = ObjIsMecc(iVar1), iVar4 != 0 || (iVar4 = FUN_004a6180(iVar1), iVar4 != 0))))))
 
-         ) && ((iVar4 = *(int *)(param_1 + 0x100), *(int *)(iVar1 + 4) != 0 &&
+        && ((iVar4 = *(int *)(param_1 + 0x100), *(int *)(iVar1 + 4) != 0 &&
 
-               ((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0)))) &&
+            ((*(uint *)(iVar1 + 0xd8) & 0x4000c000) == 0)))) &&
 
        ((*(float *)(iVar1 + 0x278) < *(float *)(iVar1 + 0x1c0) &&
 
-        (((iVar5 = FUN_004a6160(iVar1), iVar5 == 0 || ((*(uint *)(iVar1 + 0xe0) & 0x2000000) == 0))
+        (((iVar5 = ObjIsMecc(iVar1), iVar5 == 0 || ((*(uint *)(iVar1 + 0xe0) & 0x2000000) == 0)) ||
 
-         || (4.0 <= *(float *)(iVar4 + 0x54))))))) {
+         (4.0 <= *(float *)(iVar4 + 0x54))))))) {
 
       iVar4 = FUN_004a6180(iVar1);
 
@@ -3130,9 +3118,9 @@ void FUN_004d4ae0(int param_1)
 
       puVar2 = *(undefined4 **)(iVar4 + 0x100);
 
-      fVar6 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0xc0),
+      fVar6 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0xc0),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0xc4));
+                                     *(undefined4 *)(DAT_00632ed8 + 0xc4));
 
       *(float *)(iVar4 + 0xc4) = (float)fVar6;
 
@@ -3371,12 +3359,12 @@ float10 FUN_004d5760(float param_1)
 
 }
 
-/* ===== FUN_004d5780 @ 0x004D5780 ===== */
+/* ===== rndfloatrange @ 0x004D5780 ===== */
 /* PS2 candidate: rndfloatrange (conf 0.672) */
 
 
 
-float10 FUN_004d5780(float param_1,float param_2)
+float10 rndfloatrange(float param_1,float param_2)
 
 
 
@@ -3832,9 +3820,9 @@ LAB_004d5d41:
 
     local_7c[0] = *(undefined4 *)(param_1 + 0x2b8);
 
-    FUN_0050a810(&local_90,&local_8c,&local_88);
+    normalize__FPfN20(&local_90,&local_8c,&local_88);
 
-    FUN_0050a810(&local_84,&local_80,local_7c);
+    normalize__FPfN20(&local_84,&local_80,local_7c);
 
     fVar6 = (float10)FUN_00516290(&local_90,&local_84);
 
@@ -4497,7 +4485,7 @@ void ai_ospec12d_logic(int param_1)
 
   case 100:
 
-    fVar4 = (float10)FUN_004d5780(0x40800000,0x40e00000);
+    fVar4 = (float10)rndfloatrange(0x40800000,0x40e00000);
 
     *(float *)(iVar3 + 0xd0) = (float)fVar4;
 
@@ -4579,11 +4567,11 @@ LAB_004d7f5f:
 
     }
 
-    fVar4 = (float10)FUN_004d5780(*(undefined4 *)(iVar3 + 0x1dc),*(undefined4 *)(iVar3 + 0x1e0));
+    fVar4 = (float10)rndfloatrange(*(undefined4 *)(iVar3 + 0x1dc),*(undefined4 *)(iVar3 + 0x1e0));
 
-    fVar5 = (float10)FUN_004d5780(*(float *)(param_1 + 200) - 45.0,*(float *)(param_1 + 200) + 45.0)
+    fVar5 = (float10)rndfloatrange(*(float *)(param_1 + 200) - 45.0,*(float *)(param_1 + 200) + 45.0
 
-    ;
+                                  );
 
     sine_cos_lookup((float)fVar5,&local_8,&local_4);
 
@@ -5129,7 +5117,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
             else {
 
-              fVar5 = (float10)FUN_004d5780(0,0x3f800000);
+              fVar5 = (float10)rndfloatrange(0,0x3f800000);
 
               *(float *)(param_1 + 0x14) = (float)fVar5;
 
@@ -5157,7 +5145,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
             else {
 
-              fVar5 = (float10)FUN_004d5780(0,0x3f800000);
+              fVar5 = (float10)rndfloatrange(0,0x3f800000);
 
               *(float *)(param_1 + 0x14) = (float)fVar5;
 
@@ -5185,7 +5173,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
             else {
 
-              fVar5 = (float10)FUN_004d5780(0,0x3f800000);
+              fVar5 = (float10)rndfloatrange(0,0x3f800000);
 
               *(float *)(param_1 + 0x14) = (float)fVar5;
 
@@ -5211,7 +5199,7 @@ void ai_damage_response(int param_1,int param_2,int param_3,int param_4)
 
           else {
 
-            fVar5 = (float10)FUN_004d5780(0,0x3f800000);
+            fVar5 = (float10)rndfloatrange(0,0x3f800000);
 
             *(float *)(param_1 + 0x14) = (float)fVar5;
 
@@ -5321,9 +5309,9 @@ LAB_004d8a77:
 
   }
 
-  fVar5 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0xa1c),
+  fVar5 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0xa1c),
 
-                                *(undefined4 *)(DAT_00632ed8 + 0xa54));
+                                 *(undefined4 *)(DAT_00632ed8 + 0xa54));
 
   *(float *)(iVar3 + 0x15c) = (float)fVar5;
 
@@ -5358,7 +5346,7 @@ void ai_anim_play(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     else {
 
-      fVar2 = (float10)FUN_004d5780(0,0x3f800000);
+      fVar2 = (float10)rndfloatrange(0,0x3f800000);
 
       *(float *)(param_1 + 0x14) = (float)fVar2;
 

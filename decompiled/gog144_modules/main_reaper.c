@@ -118,9 +118,9 @@ void reaper_finish_slow_follow__FP6OBJECTPUi(float param_1,int param_2)
 
       } while (iVar5 < 3);
 
-      piVar7 = (int *)FUN_0053a700(0xd,0x20,s_slow_follow_custom_00561044,
+      piVar7 = (int *)MemAllocMsg(0xd,0x20,s_slow_follow_custom_00561044,
 
-                                   s_C__Giants_source_main_reaper_c_00560fdc,0x15cf);
+                                  s_C__Giants_source_main_reaper_c_00560fdc,0x15cf);
 
       iVar6 = local_5c[2];
 

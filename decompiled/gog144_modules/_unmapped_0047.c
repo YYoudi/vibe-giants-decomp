@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0047
- * 67 functions (35 named) — decompiled, names from PS2 symbols
+ * 67 functions (36 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
  */
 
@@ -334,11 +334,11 @@ void object_lock_logic(int param_1)
 
       if (*(int *)(iVar3 + 0x2d8) <= iVar2) {
 
-        FUN_00542f27(local_100,s_Lock_error_d_Object__d__LObject___0055b5b0,1,
+        crt_sprintf(local_100,s_Lock_error_d_Object__d__LObject___0055b5b0,1,
 
-                     *(undefined4 *)(param_1 + 4),*(undefined4 *)(iVar3 + 4),
+                    *(undefined4 *)(param_1 + 4),*(undefined4 *)(iVar3 + 4),
 
-                     *(undefined4 *)(param_1 + 0x214),iVar2);
+                    *(undefined4 *)(param_1 + 0x214),iVar2);
 
         goto LAB_00470793;
 
@@ -382,11 +382,11 @@ void object_lock_logic(int param_1)
 
         if (*(int *)(param_1 + 0x2d8) <= iVar2) {
 
-          FUN_00542f27(local_100,s_Lock_error_d_Object__d__LObject___0055b5b0,2,
+          crt_sprintf(local_100,s_Lock_error_d_Object__d__LObject___0055b5b0,2,
 
-                       *(undefined4 *)(param_1 + 4),*(undefined4 *)(iVar3 + 4),iVar2,
+                      *(undefined4 *)(param_1 + 4),*(undefined4 *)(iVar3 + 4),iVar2,
 
-                       *(undefined4 *)(param_1 + 0x218));
+                      *(undefined4 *)(param_1 + 0x218));
 
           FUN_0051ea20(local_100);
 
@@ -438,11 +438,11 @@ void object_lock_logic(int param_1)
 
         if (*(int *)(param_1 + 0x2d8) <= iVar2) {
 
-          FUN_00542f27(local_100,s_Lock_error_d_Object__d__LObject___0055b5b0,3,
+          crt_sprintf(local_100,s_Lock_error_d_Object__d__LObject___0055b5b0,3,
 
-                       *(undefined4 *)(param_1 + 4),*(undefined4 *)(iVar3 + 4),iVar2,
+                      *(undefined4 *)(param_1 + 4),*(undefined4 *)(iVar3 + 4),iVar2,
 
-                       *(undefined4 *)(param_1 + 0x218));
+                      *(undefined4 *)(param_1 + 0x218));
 
 LAB_00470793:
 
@@ -2280,7 +2280,7 @@ void dlog_text_render_screen(void)
 
     }
 
-    iVar4 = FUN_004a6160(DAT_00632a88);
+    iVar4 = ObjIsMecc(DAT_00632a88);
 
     if (iVar4 == 0) {
 
@@ -2836,7 +2836,7 @@ char * marker_get_name(int param_1,int param_2)
 
     }
 
-    FUN_00542f27(&DAT_0059dca8,pcVar2,param_2);
+    crt_sprintf(&DAT_0059dca8,pcVar2,param_2);
 
     return &DAT_0059dca8;
 
@@ -3207,7 +3207,7 @@ void showchat_mission_objective__Fi_2(int p0)
 
           iStack_28 = iVar6;
 
-          FUN_0053d940(piVar1[1],&uStack_38,&fStack_88);
+          ObjectUpdateSpeedDist(piVar1[1],&uStack_38,&fStack_88);
 
           pfVar8[-2] = fStack_88;
 
@@ -3855,7 +3855,7 @@ undefined4 FUN_00478080(int param_1,undefined4 param_2,undefined4 param_3,undefi
 
     local_c = iVar2;
 
-    FUN_0053d940(*(undefined4 *)(iVar1 + 4),&local_1c,param_4);
+    ObjectUpdateSpeedDist(*(undefined4 *)(iVar1 + 4),&local_1c,param_4);
 
     if (iVar2 < iVar3) {
 
@@ -4895,7 +4895,7 @@ void FUN_004791f0(int param_1)
 
       iVar4 = puVar2[3];
 
-      iVar5 = FUN_004a6160(iVar4);
+      iVar5 = ObjIsMecc(iVar4);
 
       if ((iVar5 != 0) && (*(int *)(iVar4 + 0x174) != 0)) {
 
@@ -5000,12 +5000,12 @@ void mecc_init__FP6OBJECT(int param_1)
 
 }
 
-/* ===== FUN_0047bdf0 @ 0x0047BDF0 ===== */
+/* ===== reset_scale__FP6OBJECT @ 0x0047BDF0 ===== */
 /* PS2 candidate: reset_scale__FP6OBJECT (conf 0.698) */
 
 
 
-void FUN_0047bdf0(int param_1)
+void reset_scale__FP6OBJECT(int param_1)
 
 
 
@@ -7280,7 +7280,7 @@ LAB_0047d6b8:
 
     }
 
-    iVar6 = FUN_004a6160(iVar6);
+    iVar6 = ObjIsMecc(iVar6);
 
     if (iVar6 == 0) {
 
@@ -8596,7 +8596,7 @@ LAB_0047eacc:
 
     local_78 = -(float)param_1[0xaf];
 
-    FUN_0050a810(&local_80,&local_7c,&local_78);
+    normalize__FPfN20(&local_80,&local_7c,&local_78);
 
     local_64 = *(float *)(DAT_00632ed8 + 0xfa8) * local_80 + (float)param_1[0x28];
 
@@ -8630,7 +8630,7 @@ LAB_0047eacc:
 
             if (*(float *)(iVar3 + 0x13c) < 0.0 != (*(float *)(iVar3 + 0x13c) == 0.0)) {
 
-              iVar11 = FUN_004a6160(iVar6);
+              iVar11 = ObjIsMecc(iVar6);
 
               if (iVar11 == 0) {
 
@@ -9405,7 +9405,7 @@ void FUN_0047f740(float param_1)
 
                fVar1 * *(float *)((int)fVar5 + 0x2b8) + -(local_5c * *(float *)((int)fVar5 + 700));
 
-    FUN_0050a810(&local_50,&local_4c,&local_48);
+    normalize__FPfN20(&local_50,&local_4c,&local_48);
 
     if (*(float *)(DAT_00632ed8 + 0x157c) * 0.5 < *(float *)((int)fVar5 + 0xa8)) {
 

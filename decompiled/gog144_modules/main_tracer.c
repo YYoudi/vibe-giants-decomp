@@ -44,9 +44,9 @@ undefined4 tracer_get_tracer(int *param_1)
 
       puVar2 = (undefined4 *)
 
-               FUN_0053a700(0xd,0x44,s_tracer_0057bf6c,s_C__Giants_source_main_tracer_c_0057bf74,
+               MemAllocMsg(0xd,0x44,s_tracer_0057bf6c,s_C__Giants_source_main_tracer_c_0057bf74,0x49
 
-                            0x49);
+                          );
 
       (&DAT_00632dc8)[iVar5] = puVar2;
 
@@ -60,9 +60,9 @@ undefined4 tracer_get_tracer(int *param_1)
 
       }
 
-      uVar3 = FUN_0053a700(0xd,0x1518,s_seglist_0057bf64,s_C__Giants_source_main_tracer_c_0057bf74,
+      uVar3 = MemAllocMsg(0xd,0x1518,s_seglist_0057bf64,s_C__Giants_source_main_tracer_c_0057bf74,
 
-                           0x4c);
+                          0x4c);
 
       puVar2[3] = uVar3;
 

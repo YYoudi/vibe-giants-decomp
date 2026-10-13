@@ -52,9 +52,9 @@ undefined4 * FUN_00467270(undefined4 param_1,int param_2,int param_3,undefined4 
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(0xe,(iVar10 * 0x10 + iVar2) * 2 + 0x5c,&DAT_0055b400,
+           MemAllocMsg(0xe,(iVar10 * 0x10 + iVar2) * 2 + 0x5c,&DAT_0055b400,
 
-                        s_C__Giants_source_Main_kabuto_c_0055b318,0x1eb0);
+                       s_C__Giants_source_Main_kabuto_c_0055b318,0x1eb0);
 
   puVar11 = puVar3;
 
@@ -74,9 +74,9 @@ undefined4 * FUN_00467270(undefined4 param_1,int param_2,int param_3,undefined4 
 
     if ((~DAT_00632a7e & 0x4000) != 0) {
 
-      piVar4 = (int *)FUN_0053a700(0xe,0x2000,s_Laser_texture_data_0055b3ec,
+      piVar4 = (int *)MemAllocMsg(0xe,0x2000,s_Laser_texture_data_0055b3ec,
 
-                                   s_C__Giants_source_Main_kabuto_c_0055b318,0x1ec1);
+                                  s_C__Giants_source_Main_kabuto_c_0055b318,0x1ec1);
 
       local_14 = 0x80;
 

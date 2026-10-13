@@ -52,11 +52,11 @@ void main_demo_004267a0(void)
 
             iVar1 = FUN_004a6180(iVar3);
 
-            if ((((iVar1 != 0) || (iVar1 = FUN_004a6160(iVar3), iVar1 != 0)) ||
+            if ((((iVar1 != 0) || (iVar1 = ObjIsMecc(iVar3), iVar1 != 0)) ||
 
                 (iVar1 = FUN_004a61a0(iVar3), iVar1 != 0)) &&
 
-               ((iVar1 = FUN_004a6160(iVar3), iVar1 == 0 || (*(int *)(iVar3 + 0x174) == 0)))) {
+               ((iVar1 = ObjIsMecc(iVar3), iVar1 == 0 || (*(int *)(iVar3 + 0x174) == 0)))) {
 
               if (puVar5[-8] == 1) {
 
@@ -78,7 +78,7 @@ void main_demo_004267a0(void)
 
                         iVar3 = FUN_004a6180(iVar4);
 
-                        if (((iVar3 == 0) && (iVar3 = FUN_004a6160(iVar4), iVar3 == 0)) &&
+                        if (((iVar3 == 0) && (iVar3 = ObjIsMecc(iVar4), iVar3 == 0)) &&
 
                            (iVar3 = FUN_004a61a0(iVar4), iVar3 == 0)) {
 
@@ -166,7 +166,7 @@ void main_demo_004267a0(void)
 
               if (iVar1 == 0) {
 
-                iVar1 = FUN_004a6160(iVar3);
+                iVar1 = ObjIsMecc(iVar3);
 
                 if (iVar1 != 0) {
 
@@ -278,7 +278,7 @@ void main_demo_004267a0(void)
 
             iVar3 = FUN_004a6180(iVar4);
 
-            if (((iVar3 == 0) && (iVar3 = FUN_004a6160(iVar4), iVar3 == 0)) &&
+            if (((iVar3 == 0) && (iVar3 = ObjIsMecc(iVar4), iVar3 == 0)) &&
 
                (iVar3 = FUN_004a61a0(iVar4), iVar3 == 0)) {
 
@@ -377,7 +377,7 @@ undefined4 main_demo_00426c10(void)
 
               iVar5 = FUN_004a6180(iVar6);
 
-              if (((iVar5 == 0) && (iVar5 = FUN_004a6160(iVar6), iVar5 == 0)) &&
+              if (((iVar5 == 0) && (iVar5 = ObjIsMecc(iVar6), iVar5 == 0)) &&
 
                  (iVar5 = FUN_004a61a0(iVar6), iVar5 == 0)) {
 
@@ -463,11 +463,11 @@ undefined4 main_demo_00426c10(void)
 
       iVar4 = FUN_004a6180(iVar6);
 
-      if ((((iVar4 != 0) || (iVar4 = FUN_004a6160(iVar6), iVar4 != 0)) ||
+      if ((((iVar4 != 0) || (iVar4 = ObjIsMecc(iVar6), iVar4 != 0)) ||
 
           (iVar4 = FUN_004a61a0(iVar6), iVar4 != 0)) &&
 
-         ((iVar4 = FUN_004a6160(iVar6), iVar4 == 0 || (*(int *)(iVar6 + 0x174) == 0)))) {
+         ((iVar4 = ObjIsMecc(iVar6), iVar4 == 0 || (*(int *)(iVar6 + 0x174) == 0)))) {
 
         if (*(int *)(&DAT_0058c674 + iVar5) == 1) {
 
@@ -489,7 +489,7 @@ undefined4 main_demo_00426c10(void)
 
                   iVar5 = FUN_004a6180(iVar6);
 
-                  if (((iVar5 == 0) && (iVar5 = FUN_004a6160(iVar6), iVar5 == 0)) &&
+                  if (((iVar5 == 0) && (iVar5 = ObjIsMecc(iVar6), iVar5 == 0)) &&
 
                      (iVar5 = FUN_004a61a0(iVar6), iVar5 == 0)) {
 

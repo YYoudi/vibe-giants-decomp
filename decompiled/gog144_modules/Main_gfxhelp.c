@@ -74,13 +74,13 @@ void main_gfxhelp_00451e10(void)
 
   (**(code **)(DAT_00656454 + 0xc))(DAT_00656454,DAT_00656430);
 
-  DAT_00656458 = FUN_0053a700(9,0x203a0,s_bumpmap_basis_memory_00559db8,
+  DAT_00656458 = MemAllocMsg(9,0x203a0,s_bumpmap_basis_memory_00559db8,
 
-                              s_C__Giants_source_Main_gfxhelp_c_00559dd0,0x6c);
+                             s_C__Giants_source_Main_gfxhelp_c_00559dd0,0x6c);
 
-  DAT_0065645c = FUN_0053a700(9,0x203a0,s_bumpmap_basis_memory_00559db8,
+  DAT_0065645c = MemAllocMsg(9,0x203a0,s_bumpmap_basis_memory_00559db8,
 
-                              s_C__Giants_source_Main_gfxhelp_c_00559dd0,0x6d);
+                             s_C__Giants_source_Main_gfxhelp_c_00559dd0,0x6d);
 
   return;
 

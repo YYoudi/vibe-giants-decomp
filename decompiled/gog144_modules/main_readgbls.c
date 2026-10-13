@@ -50,9 +50,9 @@ void reread_globals_bin(void)
 
 LAB_004ae3ae:
 
-    DAT_00632ed8 = FUN_0053a700(0x27,local_c * 4,s_gdata_0055fec0,
+    DAT_00632ed8 = MemAllocMsg(0x27,local_c * 4,s_gdata_0055fec0,
 
-                                s_C__Giants_source_main_readgbls_c_0055fec8,0x2b);
+                               s_C__Giants_source_main_readgbls_c_0055fec8,0x2b);
 
     DAT_00632ed4 = local_c;
 
@@ -74,9 +74,9 @@ LAB_004ae3ae:
 
   }
 
-  DAT_00632ee0 = FUN_0053a700(0x27,local_8 * 4,s_gadata_0055feb8,
+  DAT_00632ee0 = MemAllocMsg(0x27,local_8 * 4,s_gadata_0055feb8,
 
-                              s_C__Giants_source_main_readgbls_c_0055fec8,0x32);
+                             s_C__Giants_source_main_readgbls_c_0055fec8,0x32);
 
   DAT_00632edc = local_8;
 

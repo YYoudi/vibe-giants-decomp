@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0048
- * 74 functions (42 named) — decompiled, names from PS2 symbols
+ * 74 functions (43 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0048.c(pp) (assert-string evidence)
  */
 
@@ -383,12 +383,12 @@ void FUN_004804d0(int param_1)
 
 }
 
-/* ===== FUN_00480540 @ 0x00480540 ===== */
+/* ===== mecc_special_weapon_logic__FP6OBJECT @ 0x00480540 ===== */
 /* PS2 candidate: mecc_special_weapon_logic__FP6OBJECT (conf 0.417) */
 
 
 
-void FUN_00480540(int param_1)
+void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
 
 
@@ -1359,7 +1359,7 @@ void FUN_004810d0(int param_1)
 
             else {
 
-              iVar5 = FUN_004a6160(*(int *)(iVar4 + 0x210));
+              iVar5 = ObjIsMecc(*(int *)(iVar4 + 0x210));
 
               if (iVar5 != 0) {
 
@@ -2992,7 +2992,7 @@ LAB_00482fd8:
 
     uVar6 = FUN_00507b00(pcVar5);
 
-    FUN_00542f27(&DAT_0059e8e0,&DAT_00555df0,uVar6);
+    crt_sprintf(&DAT_0059e8e0,&DAT_00555df0,uVar6);
 
     return;
 
@@ -3414,7 +3414,7 @@ LAB_00483738:
 
     uVar2 = FUN_00507b00(pcVar6);
 
-    FUN_00542f27(&DAT_0059e8e0,&DAT_00555df0,uVar2);
+    crt_sprintf(&DAT_0059e8e0,&DAT_00555df0,uVar2);
 
     return;
 
@@ -4711,7 +4711,7 @@ undefined4 mission_load_world(int param_1)
 
         if (iVar3 == param_1) {
 
-          FUN_00542f27(&DAT_0059e188,&DAT_0055bfe4,*(undefined4 *)(iVar2 + 4));
+          crt_sprintf(&DAT_0059e188,&DAT_0055bfe4,*(undefined4 *)(iVar2 + 4));
 
           DAT_0059e498 = FUN_00507b00(&DAT_0059e188);
 
@@ -7201,13 +7201,13 @@ int texture_add_file(int *param_1)
 
   }
 
-  FUN_00542f27(local_100,s_W__s_bin_0055c160,&DAT_00633070);
+  crt_sprintf(local_100,s_W__s_bin_0055c160,&DAT_00633070);
 
   iVar2 = stream_player_start(local_100);
 
   if (iVar2 == 0) {
 
-    FUN_00542f27(&DAT_00657400,s_Failed_to_open__s_0055c14c,local_100);
+    crt_sprintf(&DAT_00657400,s_Failed_to_open__s_0055c14c,local_100);
 
     error_screen_show(&DAT_00657400);
 
@@ -7221,7 +7221,7 @@ int texture_add_file(int *param_1)
 
      (local_120 != 0x1a0002e5)) {
 
-    FUN_00542f27(&DAT_00657400,s_Bad_version_for__s_0055c138,local_100);
+    crt_sprintf(&DAT_00657400,s_Bad_version_for__s_0055c138,local_100);
 
     error_screen_show(&DAT_00657400);
 
@@ -7560,7 +7560,7 @@ LAB_00489916:
 
     uVar2 = FUN_00507b00(s_MH_MissionLoad_0055c16c);
 
-    FUN_00542f27(&DAT_0059e8e0,&DAT_00555df0,uVar2);
+    crt_sprintf(&DAT_0059e8e0,&DAT_00555df0,uVar2);
 
     return;
 

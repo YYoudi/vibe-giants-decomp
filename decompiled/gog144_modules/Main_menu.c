@@ -133,9 +133,9 @@ void main_menu_004832f0(void)
 
         puVar2 = (undefined4 *)
 
-                 FUN_0053a700(0x15,*puVar6 << 2,s_selection_fx_0055bef4,
+                 MemAllocMsg(0x15,*puVar6 << 2,s_selection_fx_0055bef4,
 
-                              s_C__Giants_source_Main_menu_c_0055bed4,0x2d5);
+                             s_C__Giants_source_Main_menu_c_0055bed4,0x2d5);
 
         puVar6[-1] = (uint)puVar2;
 
@@ -183,9 +183,9 @@ void main_menu_004832f0(void)
 
         puVar2 = (undefined4 *)
 
-                 FUN_0053a700(0x15,*(int *)(iVar3 + 0x4c) << 2,s_selection_fx_0055bef4,
+                 MemAllocMsg(0x15,*(int *)(iVar3 + 0x4c) << 2,s_selection_fx_0055bef4,
 
-                              s_C__Giants_source_Main_menu_c_0055bed4,0x2c4);
+                             s_C__Giants_source_Main_menu_c_0055bed4,0x2c4);
 
         *(undefined4 **)(iVar3 + 0x48) = puVar2;
 

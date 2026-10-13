@@ -102,9 +102,9 @@ void main_seamonst_004ec2c0(int param_1,undefined4 *param_2,undefined4 param_3)
 
   puVar4 = (undefined4 *)
 
-           FUN_0053a700(0xd,0xc,s_SM_Custom_00561ba4,s_C__Giants_source_main_seamonst_c_00561bb0,
+           MemAllocMsg(0xd,0xc,s_SM_Custom_00561ba4,s_C__Giants_source_main_seamonst_c_00561bb0,
 
-                        0x158);
+                       0x158);
 
   *puVar4 = *param_2;
 

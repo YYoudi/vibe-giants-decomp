@@ -16,9 +16,9 @@ void FRateSlowTime(float param_1,float *param_2,float param_3,float param_4,floa
 
   
 
-  pfVar1 = (float *)FUN_0053a700(0x21,0x24,s_slow_frate_list_0057c954,
+  pfVar1 = (float *)MemAllocMsg(0x21,0x24,s_slow_frate_list_0057c954,
 
-                                 s_C__Giants_source_win95_frate_c_0057c964,0xde);
+                                s_C__Giants_source_win95_frate_c_0057c964,0xde);
 
   pfVar1[4] = *param_2;
 

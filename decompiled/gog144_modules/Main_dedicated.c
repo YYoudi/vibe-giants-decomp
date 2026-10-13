@@ -40,9 +40,9 @@ undefined4 main_dedicated_00426460(void)
 
   BinFileRead(iVar1,&local_8,4);
 
-  DAT_0058c64c = FUN_0053a700(0x27,local_8 + -8,s_DedInfo_005563f8,
+  DAT_0058c64c = MemAllocMsg(0x27,local_8 + -8,s_DedInfo_005563f8,
 
-                              s_C__Giants_source_Main_dedicated__00556400,0x143);
+                             s_C__Giants_source_Main_dedicated__00556400,0x143);
 
   DAT_0058c650 = DAT_0058c64c;
 

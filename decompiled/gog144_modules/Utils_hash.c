@@ -24,9 +24,7 @@ undefined4 * utils_hash_005391c0(int param_1,int param_2,uint param_3)
 
   puVar1 = (undefined4 *)
 
-           FUN_0053a700(0x1f,uVar2,s_hashtab_00580468,s_C__Giants_source_Utils_hash_c_00580470,0x1d)
-
-  ;
+           MemAllocMsg(0x1f,uVar2,s_hashtab_00580468,s_C__Giants_source_Utils_hash_c_00580470,0x1d);
 
   puVar4 = puVar1;
 
@@ -177,9 +175,9 @@ int * utils_hash_00539230(int *param_1,char *param_2)
 
     if (param_1[1] < (int)uVar3) {
 
-      piVar5 = (int *)FUN_0053a700(0x1f,0x1fab,&DAT_00580490,
+      piVar5 = (int *)MemAllocMsg(0x1f,0x1fab,&DAT_00580490,s_C__Giants_source_Utils_hash_c_00580470
 
-                                   s_C__Giants_source_Utils_hash_c_00580470,0x10e);
+                                  ,0x10e);
 
       *piVar5 = *param_1;
 
@@ -233,9 +231,9 @@ int * utils_hash_00539230(int *param_1,char *param_2)
 
     if (param_1[1] < (int)uVar3) {
 
-      piVar5 = (int *)FUN_0053a700(0x1f,0x1fab,&DAT_00580490,
+      piVar5 = (int *)MemAllocMsg(0x1f,0x1fab,&DAT_00580490,s_C__Giants_source_Utils_hash_c_00580470
 
-                                   s_C__Giants_source_Utils_hash_c_00580470,0x10e);
+                                  ,0x10e);
 
       *piVar5 = *param_1;
 
@@ -327,7 +325,7 @@ void utils_hash_005394c0(int param_1)
 
   puVar1 = (undefined4 *)
 
-           FUN_0053a700(0x1f,0x10,s_linktab_00580498,s_C__Giants_source_Utils_hash_c_00580470,0xce);
+           MemAllocMsg(0x1f,0x10,s_linktab_00580498,s_C__Giants_source_Utils_hash_c_00580470,0xce);
 
   *puVar1 = 0;
 
@@ -386,9 +384,9 @@ int * utils_hash_00539500(int *param_1,char *param_2)
 
   if (param_1[1] < (int)uVar3) {
 
-    piVar2 = (int *)FUN_0053a700(0x1f,0x1fab,&DAT_00580490,s_C__Giants_source_Utils_hash_c_00580470,
+    piVar2 = (int *)MemAllocMsg(0x1f,0x1fab,&DAT_00580490,s_C__Giants_source_Utils_hash_c_00580470,
 
-                                 0x10e);
+                                0x10e);
 
     *piVar2 = *param_1;
 

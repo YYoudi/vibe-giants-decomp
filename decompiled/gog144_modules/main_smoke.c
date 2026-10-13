@@ -40,7 +40,7 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
   puVar4 = (undefined4 *)
 
-           FUN_0053a700(0xd,0x4c,&DAT_00560428,s_C__Giants_source_main_smoke_c_00562348,0x1b3);
+           MemAllocMsg(0xd,0x4c,&DAT_00560428,s_C__Giants_source_main_smoke_c_00562348,0x1b3);
 
   *puVar4 = 0;
 
@@ -90,7 +90,7 @@ void main_smoke_004f8e10(int param_1,float param_2,undefined4 param_3)
 
   *(uint *)(iVar3 + 0xe0) = *(uint *)(iVar3 + 0xe0) | 5;
 
-  fVar7 = (float10)FUN_004d5780(puVar4[4],puVar4[5]);
+  fVar7 = (float10)rndfloatrange(puVar4[4],puVar4[5]);
 
   *(float *)(*(int *)(iVar3 + 0x100) + 8) = (float)fVar7;
 
@@ -175,7 +175,7 @@ void main_smoke_004f9170(int param_1)
 
   puVar5 = (undefined4 *)
 
-           FUN_0053a700(0xd,0x4c,&DAT_00560428,s_C__Giants_source_main_smoke_c_00562348,0x20c);
+           MemAllocMsg(0xd,0x4c,&DAT_00560428,s_C__Giants_source_main_smoke_c_00562348,0x20c);
 
   puVar5[5] = 0x3c23d70a;
 
@@ -221,7 +221,7 @@ void main_smoke_004f9170(int param_1)
 
   *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | 5;
 
-  fVar8 = (float10)FUN_004d5780(puVar5[4],puVar5[5]);
+  fVar8 = (float10)rndfloatrange(puVar5[4],puVar5[5]);
 
   *(float *)(*(int *)(iVar4 + 0x100) + 8) = (float)fVar8;
 

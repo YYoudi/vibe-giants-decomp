@@ -26,9 +26,9 @@ void main_linkage_00470250(int *param_1,int *param_2)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b
+             MemAllocMsg(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b)
 
-                         );
+    ;
 
     *puVar1 = DAT_0059da80;
 
@@ -80,9 +80,9 @@ void main_linkage_00470250(int *param_1,int *param_2)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b
+             MemAllocMsg(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b)
 
-                         );
+    ;
 
     *puVar1 = DAT_0059da80;
 
@@ -169,9 +169,9 @@ void main_linkage_00470360(int *param_1,int *param_2)
 
     puVar2 = (undefined4 *)
 
-             FUN_0053a700(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b
+             MemAllocMsg(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b)
 
-                         );
+    ;
 
     *puVar2 = DAT_0059da80;
 
@@ -225,9 +225,9 @@ void main_linkage_00470360(int *param_1,int *param_2)
 
     puVar2 = (undefined4 *)
 
-             FUN_0053a700(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b
+             MemAllocMsg(0xf,0xc84,s_links_0055b558,s_C__Giants_source_main_linkage_c_0055b560,0x1b)
 
-                         );
+    ;
 
     *puVar2 = DAT_0059da80;
 

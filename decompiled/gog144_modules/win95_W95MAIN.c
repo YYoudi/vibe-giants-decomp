@@ -102,9 +102,9 @@ undefined4 FUN_0051eac0(undefined4 param_1)
 
   iVar7 = FUN_00517990(iVar11);
 
-  pcVar8 = (char *)FUN_0053a700(0x13,iVar7 + 1,s_intro_0057dc44,
+  pcVar8 = (char *)MemAllocMsg(0x13,iVar7 + 1,s_intro_0057dc44,
 
-                                s_C__Giants_source_win95_W95MAIN_C_0057d858,0x7be);
+                               s_C__Giants_source_win95_W95MAIN_C_0057d858,0x7be);
 
   BinFileRead(iVar11,pcVar8,iVar7);
 

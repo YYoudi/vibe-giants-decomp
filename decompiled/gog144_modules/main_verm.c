@@ -22,7 +22,7 @@ void main_verm_0050f830(undefined4 param_1,int param_2,undefined4 *param_3,undef
 
   puVar1 = (undefined4 *)
 
-           FUN_0053a700(0x13,0x28,&DAT_0057bfd8,s_C__Giants_source_main_verm_c_0057bfdc,0x466);
+           MemAllocMsg(0x13,0x28,&DAT_0057bfd8,s_C__Giants_source_main_verm_c_0057bfdc,0x466);
 
   puVar3 = *(undefined4 **)(param_2 + 0x100);
 

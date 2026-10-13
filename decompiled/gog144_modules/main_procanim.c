@@ -81,9 +81,9 @@ void ProcAnimsCreate__FP9ObjectSetP9UsrAnmDef(undefined4 *p0,undefined4 *p1)
 
     }
 
-    iVar4 = FUN_0053a700(2,iVar3 << 5,s_UsrAnm_Memory_0055f4ec,
+    iVar4 = MemAllocMsg(2,iVar3 << 5,s_UsrAnm_Memory_0055f4ec,
 
-                         s_C__Giants_source_main_procanim_c_0055f4c8,0xc6);
+                        s_C__Giants_source_main_procanim_c_0055f4c8,0xc6);
 
     p0[0x118] = iVar4;
 
@@ -240,9 +240,9 @@ void KabutoProcAnimsCreate(int param_1)
 
     }
 
-    piVar3 = (int *)FUN_0053a700(2,iVar2 * 0x38,s_Kabuto_UsrAnm_Memory_0055f50c,
+    piVar3 = (int *)MemAllocMsg(2,iVar2 * 0x38,s_Kabuto_UsrAnm_Memory_0055f50c,
 
-                                 s_C__Giants_source_main_procanim_c_0055f4c8,0x3c9);
+                                s_C__Giants_source_main_procanim_c_0055f4c8,0x3c9);
 
     *(int **)(param_1 + 0x460) = piVar3;
 

@@ -44,7 +44,7 @@ void FUN_00442f70(undefined4 *param_1,float param_2)
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(0xb,uVar4,s_flame_00558574,s_C__Giants_source_main_flame_c_0055857c,0x2a);
+           MemAllocMsg(0xb,uVar4,s_flame_00558574,s_C__Giants_source_main_flame_c_0055857c,0x2a);
 
   puVar7 = puVar3;
 
@@ -68,9 +68,9 @@ void FUN_00442f70(undefined4 *param_1,float param_2)
 
   DAT_0059cda4 = puVar3;
 
-  fVar8 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x170),
+  fVar8 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x170),
 
-                                *(undefined4 *)(DAT_00632ed8 + 0x174));
+                                 *(undefined4 *)(DAT_00632ed8 + 0x174));
 
   puVar3[1] = (float)fVar8;
 
@@ -90,7 +90,7 @@ void FUN_00442f70(undefined4 *param_1,float param_2)
 
     do {
 
-      fVar8 = (float10)FUN_004d5780(0xbf666666,0x3f666666);
+      fVar8 = (float10)rndfloatrange(0xbf666666,0x3f666666);
 
       fVar8 = fVar8 * fVar8 * fVar8 * (float10)param_2;
 
@@ -98,27 +98,27 @@ void FUN_00442f70(undefined4 *param_1,float param_2)
 
       pfVar6[-1] = (float)fVar8;
 
-      fVar8 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x158),
+      fVar8 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x158),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x15c));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x15c));
 
       *pfVar6 = (float)(fVar8 * (float10)param_2);
 
-      fVar8 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x160),
+      fVar8 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x160),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x164));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x164));
 
       pfVar6[1] = (float)(SQRT((float10)(param_2 * param_2) - (float10)fVar1 * (float10)fVar1) *
 
                           fVar8 * (float10)param_2);
 
-      fVar8 = (float10)FUN_004d5780(0,0x3f800000);
+      fVar8 = (float10)rndfloatrange(0,0x3f800000);
 
       pfVar6[2] = (float)fVar8;
 
-      fVar8 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x168),
+      fVar8 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x168),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x16c));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x16c));
 
       pfVar6[3] = (float)fVar8;
 

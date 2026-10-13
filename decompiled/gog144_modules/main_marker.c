@@ -160,9 +160,9 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   piVar3[1] = iVar7;
 
-  iVar7 = FUN_0053a700(0x14,piVar3[0xf] << 2,s_spline_objs_0055bc38,
+  iVar7 = MemAllocMsg(0x14,piVar3[0xf] << 2,s_spline_objs_0055bc38,
 
-                       s_C__Giants_source_main_marker_c_0055bc18,0x1aa);
+                      s_C__Giants_source_main_marker_c_0055bc18,0x1aa);
 
   piVar3[0x11] = iVar7;
 
@@ -232,7 +232,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
         piVar12[4] = (int)(*(float *)(iVar7 + 0xa8) - *(float *)(iVar10 + 0xa8));
 
-        FUN_0050a810(piVar12 + 2,piVar12 + 3,piVar12 + 4);
+        normalize__FPfN20(piVar12 + 2,piVar12 + 3,piVar12 + 4);
 
         *(int *)(iVar4 + 0x20) = piVar12[2];
 
@@ -252,7 +252,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
         piVar12[7] = (int)(*(float *)(iVar10 + 0xa8) - *(float *)(iVar7 + 0xa8));
 
-        FUN_0050a810(piVar12 + 5,piVar12 + 6,piVar12 + 7);
+        normalize__FPfN20(piVar12 + 5,piVar12 + 6,piVar12 + 7);
 
         *(int *)(iVar4 + 0x2c) = piVar12[5];
 
@@ -438,7 +438,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   local_19c = 0;
 
-  FUN_0053d940(piVar3[1],&local_1ac,local_1c4 + 3);
+  ObjectUpdateSpeedDist(piVar3[1],&local_1ac,local_1c4 + 3);
 
   local_1dc = 0;
 
@@ -450,7 +450,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
     local_1ac = 0;
 
-    FUN_0053d940(piVar3[1],&local_1ac,local_1c4);
+    ObjectUpdateSpeedDist(piVar3[1],&local_1ac,local_1c4);
 
     FUN_0050a580(local_1c4 + 3,local_1c4);
 
@@ -546,7 +546,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
           *piVar8 = *piVar8 * 1000;
 
-          FUN_0050a810(piVar8 + 2,piVar8 + 3,pfVar1);
+          normalize__FPfN20(piVar8 + 2,piVar8 + 3,pfVar1);
 
           pfVar2 = (float *)(piVar8 + 6);
 
@@ -560,7 +560,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
           pfVar11 = (float *)(piVar8 + 5);
 
-          FUN_0050a810(pfVar11,pfVar2,pfVar1);
+          normalize__FPfN20(pfVar11,pfVar2,pfVar1);
 
           local_1dc = local_1dc + 1;
 

@@ -197,11 +197,11 @@ void cleaner_go_obj(void)
 
             *(float *)(iVar9 + 200) = (float)fVar12;
 
-            fVar12 = (float10)FUN_004d5780(local_c,(float)(fVar11 * extraout_ST1 +
+            fVar12 = (float10)rndfloatrange(local_c,(float)(fVar11 * extraout_ST1 +
 
-                                                          ((float10)fVar1 - (float10)fVar2 * fVar11)
+                                                           ((float10)fVar1 - (float10)fVar2 * fVar11
 
-                                                          ));
+                                                           )));
 
             *(float *)(iVar9 + 0xc4) = (float)fVar12;
 
@@ -436,9 +436,9 @@ void main_cleaner_0040f750(int param_1)
 
   iVar2 = DAT_0058430c * DAT_00584314;
 
-  DAT_00584320 = FUN_0053a700(5,iVar2 * 4,s_cleanhgt_00555458,
+  DAT_00584320 = MemAllocMsg(5,iVar2 * 4,s_cleanhgt_00555458,
 
-                              s_C__Giants_source_main_cleaner_c_00555438,0xac);
+                             s_C__Giants_source_main_cleaner_c_00555438,0xac);
 
   iVar5 = 0;
 

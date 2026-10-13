@@ -1707,7 +1707,7 @@ void collide_objects(int param_1)
 
                  ((*(int *)(param_1 + 4) != 3 || (*(int *)(iVar5 + 4) != 3)))))) &&
 
-               (((*(int *)(param_1 + 4) != 0x23c || (iVar7 = FUN_004a6160(iVar5), iVar7 == 0)) &&
+               (((*(int *)(param_1 + 4) != 0x23c || (iVar7 = ObjIsMecc(iVar5), iVar7 == 0)) &&
 
                 (((*(int *)(param_1 + 4) != 0x2ea || (iVar7 = FUN_004a61a0(iVar5), iVar7 == 0)) &&
 
@@ -2825,7 +2825,7 @@ float10 FUN_00413e90(float *param_1,int *param_2)
 
               local_a8 = (local_58 - local_9c) * local_8c - local_6c * (local_54 - local_98);
 
-              FUN_0050a810(&local_b0,&local_ac,&local_a8);
+              normalize__FPfN20(&local_b0,&local_ac,&local_a8);
 
               local_a4 = -(local_a8 * local_94 + local_ac * local_98 + local_9c * local_b0);
 
@@ -3786,7 +3786,7 @@ undefined4 obj_animate_pose_update(int param_1,int param_2)
 
         local_a4 = (local_30 - local_74) * local_98 - local_94 * (local_2c - local_70);
 
-        FUN_0050a810(&local_ac,&local_a8,&local_a4);
+        normalize__FPfN20(&local_ac,&local_a8,&local_a4);
 
         local_a0 = -(local_a4 * local_6c + local_a8 * local_70 + local_74 * local_ac);
 
@@ -4381,7 +4381,7 @@ LAB_00415d68:
 
         local_80 = 0;
 
-        FUN_0050a810(&local_88,&local_84,&local_80);
+        normalize__FPfN20(&local_88,&local_84,&local_80);
 
         pfVar9 = (float *)(param_1 + 0xa0);
 
@@ -4792,7 +4792,7 @@ void FUN_00415d80(float *param_1,float *param_2)
 
                 local_a8 = local_68 * local_a0 - (local_30 - local_8c) * (local_38 - local_88);
 
-                FUN_0050a810(&local_b0,&local_ac,&local_a8);
+                normalize__FPfN20(&local_b0,&local_ac,&local_a8);
 
                 local_a4 = -(local_a8 * local_84 + local_ac * local_88 + local_8c * local_b0);
 
@@ -4986,7 +4986,7 @@ void FUN_004162c0(int param_1)
 
   *(undefined1 *)(param_1 + 0x208) = 0;
 
-  iVar1 = FUN_004a6160(param_1);
+  iVar1 = ObjIsMecc(param_1);
 
   if (iVar1 == 0) {
 
@@ -5044,7 +5044,7 @@ void FUN_004162c0(int param_1)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6160(DAT_00632a88);
+    iVar1 = ObjIsMecc(DAT_00632a88);
 
     if (iVar1 != 0) {
 
@@ -7140,7 +7140,7 @@ int FUN_00418950(int param_1)
 
     iVar2 = puVar1[3];
 
-    iVar3 = FUN_004a6160(param_1);
+    iVar3 = ObjIsMecc(param_1);
 
     if ((((iVar3 == 0) || (iVar3 = meccbasepit_bldg_from_object(iVar2), iVar3 != 0)) &&
 
@@ -11890,7 +11890,7 @@ LAB_0041f398:
 
       DAT_00633028 = 0;
 
-      iVar5 = FUN_004a6160(iVar5);
+      iVar5 = ObjIsMecc(iVar5);
 
       if (iVar5 != 0) {
 
@@ -11922,7 +11922,7 @@ LAB_0041f398:
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_004a6160(DAT_00632a88);
+    iVar5 = ObjIsMecc(DAT_00632a88);
 
     if (iVar5 == 0) {
 
@@ -11958,7 +11958,7 @@ LAB_0041f398:
 
       if ((iVar6 != 0) ||
 
-         ((iVar6 = FUN_004a6160(DAT_00632a88), iVar6 != 0 && (1 << (bVar7 & 0x1f) == 1)))) {
+         ((iVar6 = ObjIsMecc(DAT_00632a88), iVar6 != 0 && (1 << (bVar7 & 0x1f) == 1)))) {
 
         iVar6 = (iVar5 * 0x2c + iVar8) * 2;
 

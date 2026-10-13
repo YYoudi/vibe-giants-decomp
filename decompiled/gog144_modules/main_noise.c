@@ -52,9 +52,9 @@ void read_sfx_bin(undefined4 param_1)
 
     DAT_00632dbc = (undefined4 *)
 
-                   FUN_0053a700(0x17,88000,s_sounds_0055c990,
+                   MemAllocMsg(0x17,88000,s_sounds_0055c990,s_C__Giants_source_main_noise_c_0055c998
 
-                                s_C__Giants_source_main_noise_c_0055c998,0xa6);
+                               ,0xa6);
 
     puVar8 = DAT_00632dbc;
 
@@ -108,9 +108,9 @@ void read_sfx_bin(undefined4 param_1)
 
     if (local_24 != 0) {
 
-      iVar6 = FUN_0053a700(0x17,local_1c,s_sfxdef_0055c988,s_C__Giants_source_main_noise_c_0055c998,
+      iVar6 = MemAllocMsg(0x17,local_1c,s_sfxdef_0055c988,s_C__Giants_source_main_noise_c_0055c998,
 
-                           0xc6);
+                          0xc6);
 
       local_c = iVar6;
 
@@ -158,9 +158,9 @@ void read_sfx_bin(undefined4 param_1)
 
               sceSifLoadElf(param_1,*(undefined4 *)(iVar6 + 0x14));
 
-              uVar3 = FUN_0053a700(0x17,local_20,&PTR_DAT_0055c984,
+              uVar3 = MemAllocMsg(0x17,local_20,&PTR_DAT_0055c984,
 
-                                   s_C__Giants_source_main_noise_c_0055c998,0x107);
+                                  s_C__Giants_source_main_noise_c_0055c998,0x107);
 
               DAT_00632dbc[iVar1 * 0xb + 1] = uVar3;
 
@@ -212,7 +212,7 @@ void read_sfx_bin(undefined4 param_1)
 
               if (local_20 == 0) {
 
-                FUN_00542f27(&DAT_00657400,s_Failed_binread__s_0055c970,iVar6);
+                crt_sprintf(&DAT_00657400,s_Failed_binread__s_0055c970,iVar6);
 
                 FUN_00425eb0(&DAT_00657400);
 
@@ -224,11 +224,11 @@ void read_sfx_bin(undefined4 param_1)
 
           }
 
-          uVar3 = FUN_0053a700(0x17,8,&DAT_0055c96c,s_C__Giants_source_main_noise_c_0055c998,0x134);
+          uVar3 = MemAllocMsg(0x17,8,&DAT_0055c96c,s_C__Giants_source_main_noise_c_0055c998,0x134);
 
           DAT_00632dbc[iVar1 * 0xb] = uVar3;
 
-          FUN_00542f27(DAT_00632dbc[iVar1 * 0xb],s_SFX_d_0055c964,iVar1);
+          crt_sprintf(DAT_00632dbc[iVar1 * 0xb],s_SFX_d_0055c964,iVar1);
 
           local_10 = local_10 + 1;
 
@@ -374,9 +374,9 @@ int sound_get_free_sequence__Fv(void)
 
     puVar2 = (undefined4 *)
 
-             FUN_0053a700(0x17,0x2d4,s_sequence_list_0055c9c8,
+             MemAllocMsg(0x17,0x2d4,s_sequence_list_0055c9c8,
 
-                          s_C__Giants_source_main_noise_c_0055c998,0x346);
+                         s_C__Giants_source_main_noise_c_0055c998,0x346);
 
     *puVar2 = DAT_0059f364;
 

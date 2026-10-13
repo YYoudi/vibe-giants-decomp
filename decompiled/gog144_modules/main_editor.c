@@ -746,9 +746,9 @@ switchD_004364b2_caseD_0:
 
             puVar16 = (undefined4 *)
 
-                      FUN_0053a700(10,0x3844,s_EditUndoData_00556fe0,
+                      MemAllocMsg(10,0x3844,s_EditUndoData_00556fe0,
 
-                                   s_C__Giants_source_main_editor_c_00556ff0,0x1011);
+                                  s_C__Giants_source_main_editor_c_00556ff0,0x1011);
 
             *puVar16 = DAT_0059cd98;
 
@@ -1876,9 +1876,9 @@ LAB_00437d68:
 
           puVar15 = (undefined4 *)
 
-                    FUN_0053a700(10,0x3844,s_EditUndoData_00556fe0,
+                    MemAllocMsg(10,0x3844,s_EditUndoData_00556fe0,
 
-                                 s_C__Giants_source_main_editor_c_00556ff0,0x1011);
+                                s_C__Giants_source_main_editor_c_00556ff0,0x1011);
 
           *puVar15 = DAT_0059cd98;
 
@@ -2561,9 +2561,9 @@ void main_editor_00438350(void)
 
     }
 
-    DAT_0059cd30 = FUN_0053a700(10,iVar3 * 0x24,s_objids_00557080,
+    DAT_0059cd30 = MemAllocMsg(10,iVar3 * 0x24,s_objids_00557080,
 
-                                s_C__Giants_source_main_editor_c_00556ff0,0x4c4);
+                               s_C__Giants_source_main_editor_c_00556ff0,0x4c4);
 
     iVar3 = 0;
 
@@ -2609,9 +2609,9 @@ void main_editor_00438350(void)
 
     }
 
-    DAT_0059cd2c = FUN_0053a700(10,(uVar10 + 1) * 0x24,s_groupids_00557074,
+    DAT_0059cd2c = MemAllocMsg(10,(uVar10 + 1) * 0x24,s_groupids_00557074,
 
-                                s_C__Giants_source_main_editor_c_00556ff0,0x4d5);
+                               s_C__Giants_source_main_editor_c_00556ff0,0x4d5);
 
     iVar3 = 0;
 
@@ -2619,7 +2619,7 @@ void main_editor_00438350(void)
 
     do {
 
-      FUN_00542f27(iVar4 + 4 + DAT_0059cd2c,s_Group_d_0055706c,iVar3);
+      crt_sprintf(iVar4 + 4 + DAT_0059cd2c,s_Group_d_0055706c,iVar3);
 
       iVar3 = iVar3 + 1;
 
@@ -2673,7 +2673,7 @@ LAB_004384e0:
 
             if (bVar2) {
 
-              FUN_00542f27(&DAT_00657400,s__s_is_too_long_00557030,local_a0);
+              crt_sprintf(&DAT_00657400,s__s_is_too_long_00557030,local_a0);
 
               FUN_0051ea20(&DAT_00657400);
 
@@ -2703,7 +2703,7 @@ LAB_004384e0:
 
           if (bVar2) {
 
-            FUN_00542f27(&DAT_00657400,s__s_is_too_long_00557030,local_a0);
+            crt_sprintf(&DAT_00657400,s__s_is_too_long_00557030,local_a0);
 
             FUN_0051ea20(&DAT_00657400);
 
@@ -2771,7 +2771,7 @@ LAB_004384e0:
 
         if (*(char *)(iVar12 + 4 + iVar3) == '\0') {
 
-          FUN_00542f27(iVar12 + 4 + iVar3,s_Obj_d_00557010,*(undefined4 *)(iVar12 + iVar3));
+          crt_sprintf(iVar12 + 4 + iVar3,s_Obj_d_00557010,*(undefined4 *)(iVar12 + iVar3));
 
           iVar3 = DAT_0059cd30;
 
@@ -3020,9 +3020,9 @@ void main_editor_0043a590(void)
 
           puVar6 = (undefined4 *)
 
-                   FUN_0053a700(10,0x3844,s_EditUndoData_00556fe0,
+                   MemAllocMsg(10,0x3844,s_EditUndoData_00556fe0,
 
-                                s_C__Giants_source_main_editor_c_00556ff0,0x1011);
+                               s_C__Giants_source_main_editor_c_00556ff0,0x1011);
 
           *puVar6 = DAT_0059cd98;
 
@@ -3209,9 +3209,9 @@ void main_editor_00440d90(void)
 
   
 
-  FUN_00542f27(local_208,s_bld_WO__s_bld_00558564);
+  crt_sprintf(local_208,s_bld_WO__s_bld_00558564);
 
-  FUN_00542f27(local_108,s_bld_WO__s_old_00558554,*(undefined4 *)(DAT_006330e4 + 4));
+  crt_sprintf(local_108,s_bld_WO__s_old_00558554,*(undefined4 *)(DAT_006330e4 + 4));
 
   MoveFileExA(local_208,local_108,1);
 
@@ -3223,7 +3223,7 @@ void main_editor_00440d90(void)
 
   if (iVar2 == 0) {
 
-    FUN_00542f27(&DAT_00657400,s_Failed_to_create__s_0055853c,local_208);
+    crt_sprintf(&DAT_00657400,s_Failed_to_create__s_0055853c,local_208);
 
     error_screen_show(&DAT_00657400);
 
@@ -3373,9 +3373,9 @@ void main_editor_00440d90(void)
 
     if (iVar6 != 0) {
 
-      iVar6 = FUN_0053a700(10,iVar6 << 2,&DAT_005583dc,s_C__Giants_source_main_editor_c_00556ff0,
+      iVar6 = MemAllocMsg(10,iVar6 << 2,&DAT_005583dc,s_C__Giants_source_main_editor_c_00556ff0,
 
-                           0xf77);
+                          0xf77);
 
       for (piVar4 = DAT_00632d68; piVar4 != (int *)0x0; piVar4 = (int *)*piVar4) {
 
@@ -3444,9 +3444,9 @@ undefined4 * main_editor_004415d0(void)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(10,0x3844,s_EditUndoData_00556fe0,
+             MemAllocMsg(10,0x3844,s_EditUndoData_00556fe0,s_C__Giants_source_main_editor_c_00556ff0
 
-                          s_C__Giants_source_main_editor_c_00556ff0,0x1011);
+                         ,0x1011);
 
     *puVar1 = DAT_0059cd98;
 

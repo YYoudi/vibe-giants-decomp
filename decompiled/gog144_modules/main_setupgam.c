@@ -76,7 +76,7 @@ void main_setupgam_004eda20(void)
 
   FLK_FlickStop();
 
-  FUN_004cc8d0();
+  controlShutdown__Fv();
 
   FUN_00447060();
 

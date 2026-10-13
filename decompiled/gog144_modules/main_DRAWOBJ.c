@@ -16,17 +16,17 @@ void main_drawobj_0042d490(void)
 
   if (DAT_0059ac9c == 0) {
 
-    DAT_0059ac9c = FUN_0053a700(9,12000,&DAT_00556604,s_C__Giants_source_main_DRAWOBJ_C_00556608,
+    DAT_0059ac9c = MemAllocMsg(9,12000,&DAT_00556604,s_C__Giants_source_main_DRAWOBJ_C_00556608,
 
-                                0x5e8);
+                               0x5e8);
 
   }
 
   if (DAT_0059aca0 == 0) {
 
-    DAT_0059aca0 = FUN_0053a700(9,12000,&DAT_00556604,s_C__Giants_source_main_DRAWOBJ_C_00556608,
+    DAT_0059aca0 = MemAllocMsg(9,12000,&DAT_00556604,s_C__Giants_source_main_DRAWOBJ_C_00556608,
 
-                                0x5ea);
+                               0x5ea);
 
   }
 

@@ -126,9 +126,9 @@ void main_objspec_00499da0(int param_1)
 
     puVar2 = (undefined4 *)
 
-             FUN_0053a700(0x18,uVar1,s_ospec_0055e794,s_C__Giants_source_main_objspec_c_0055e774,
+             MemAllocMsg(0x18,uVar1,s_ospec_0055e794,s_C__Giants_source_main_objspec_c_0055e774,0xed
 
-                          0xed);
+                        );
 
     *(undefined4 **)(param_1 + 0x100) = puVar2;
 
@@ -230,9 +230,9 @@ void object_change_ospec(int param_1,int param_2)
 
     puVar2 = (undefined4 *)
 
-             FUN_0053a700(0x18,uVar1,s_ospec_0055e794,s_C__Giants_source_main_objspec_c_0055e774,
+             MemAllocMsg(0x18,uVar1,s_ospec_0055e794,s_C__Giants_source_main_objspec_c_0055e774,0xed
 
-                          0xed);
+                        );
 
     *(undefined4 **)(param_1 + 0x100) = puVar2;
 

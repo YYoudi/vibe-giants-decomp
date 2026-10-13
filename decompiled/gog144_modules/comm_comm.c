@@ -317,9 +317,7 @@ void comm_comm_00529e00(void)
 
   puVar2 = (undefined4 *)
 
-           FUN_0053a700(0,uStack_124,s_dpappdesc_0057e950,s_C__Giants_source_comm_comm_cpp_0057ded4)
-
-  ;
+           MemAllocMsg(0,uStack_124,s_dpappdesc_0057e950,s_C__Giants_source_comm_comm_cpp_0057ded4);
 
   uStack_130 = 0;
 
@@ -430,9 +428,9 @@ void comm_comm_00529f80(void)
 
     puVar2 = (undefined4 *)
 
-             FUN_0053a700(0,uStack_14,s_dpappdesc_0057e950,s_C__Giants_source_comm_comm_cpp_0057ded4
+             MemAllocMsg(0,uStack_14,s_dpappdesc_0057e950,s_C__Giants_source_comm_comm_cpp_0057ded4,
 
-                          ,0x1112);
+                         0x1112);
 
     puVar3 = puVar2;
 
@@ -513,9 +511,9 @@ undefined4 comm_comm_0052acc0(LPSTR param_1)
 
   puVar2 = (undefined4 *)
 
-           FUN_0053a700(0,puStack_18,s_clientenum_0057ea70,s_C__Giants_source_comm_comm_cpp_0057ded4
+           MemAllocMsg(0,puStack_18,s_clientenum_0057ea70,s_C__Giants_source_comm_comm_cpp_0057ded4,
 
-                        ,0x122c);
+                       0x122c);
 
   puVar3 = puVar2;
 

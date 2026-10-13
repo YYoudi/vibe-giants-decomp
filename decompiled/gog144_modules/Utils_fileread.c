@@ -63,7 +63,7 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
   if (iVar3 == 0) {
 
-    FUN_00542f27(&DAT_00657400,s_ZipRead_fail___s_005803d4,param_1);
+    crt_sprintf(&DAT_00657400,s_ZipRead_fail___s_005803d4,param_1);
 
     FUN_00425eb0(&DAT_00657400);
 
@@ -77,7 +77,7 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
     if (*(int *)(iVar6 + 4) == 0) {
 
-      FUN_00542f27(local_200,s__s__s_0058031c,s_Bin_Override_00580324,iVar3 + 0x10);
+      crt_sprintf(local_200,s__s__s_0058031c,s_Bin_Override_00580324,iVar3 + 0x10);
 
       iVar3 = FUN_005178a0(local_200);
 
@@ -87,9 +87,9 @@ void vfs_fileread_load(undefined4 param_1,undefined4 *param_2,undefined4 *param_
 
         *param_3 = uVar4;
 
-        uVar4 = FUN_0053a700(0x1e,uVar4,s_gzpmem_005803cc,
+        uVar4 = MemAllocMsg(0x1e,uVar4,s_gzpmem_005803cc,s_C__Giants_source_Utils_fileread__005803a8
 
-                             s_C__Giants_source_Utils_fileread__005803a8,0x117);
+                            ,0x117);
 
         *param_2 = uVar4;
 
@@ -131,7 +131,7 @@ LAB_005386d1:
 
         else {
 
-          FUN_00542f27(local_200,s__s__s_0058031c,pcVar5,iVar6 + 8);
+          crt_sprintf(local_200,s__s__s_0058031c,pcVar5,iVar6 + 8);
 
         }
 
@@ -165,7 +165,7 @@ LAB_005386d1:
 
 LAB_005386ba:
 
-          FUN_00542f27(&DAT_005e2740,s__s_Bin_00580338,puVar7);
+          crt_sprintf(&DAT_005e2740,s__s_Bin_00580338,puVar7);
 
           pcVar5 = &DAT_005e2740;
 
@@ -195,9 +195,9 @@ LAB_005386ba:
 
       }
 
-      uVar4 = FUN_0053a700(0x1e,*(undefined4 *)(iVar3 + 8),s_gzpmem_005803cc,
+      uVar4 = MemAllocMsg(0x1e,*(undefined4 *)(iVar3 + 8),s_gzpmem_005803cc,
 
-                           s_C__Giants_source_Utils_fileread__005803a8,0x136);
+                          s_C__Giants_source_Utils_fileread__005803a8,0x136);
 
       *param_2 = uVar4;
 

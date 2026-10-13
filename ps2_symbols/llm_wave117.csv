@@ -1,0 +1,16 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0047bdf0,FUN_0047bdf0,,reset_scale__FP6OBJECT,0.9,llm-w117,body-verified
+00540250,FUN_00540250,,MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi,0.9,llm-w117,body-verified
+004cc8d0,FUN_004cc8d0,,controlShutdown__Fv,0.9,llm-w117,body-verified
+0053a700,FUN_0053a700,,MemAllocMsg,0.9,llm-w117,body-verified Memory Fail fmt
+0040acc0,FUN_0040acc0,,meccbasepit_get_table_ptr,0.9,llm-w117,body-verified
+0050c950,FUN_0050c950,,turret_count_portables,0.9,llm-w117,body-verified model 0x3c walk
+004a6160,FUN_004a6160,,ObjIsMecc,0.9,llm-w117,body-verified type==2
+0050a810,FUN_0050a810,,normalize__FPfN20,0.9,llm-w117,body-verified epsilon norm
+004d5780,FUN_004d5780,,rndfloatrange,0.9,llm-w117,body-verified rand scale
+00480540,FUN_00480540,,mecc_special_weapon_logic__FP6OBJECT,0.9,llm-w117,body-verified
+0050c2e0,FUN_0050c2e0,,TurretExit,0.9,llm-w117,body-verified
+00466980,FUN_00466980,,teammecc_get_slavecount,0.9,llm-w117,body-verified
+0053d940,FUN_0053d940,,ObjectUpdateSpeedDist,0.9,llm-w117,body-verified
+00542f27,FUN_00542f27,,crt_sprintf,0.9,llm-w117,body-verified (rejected memset; fmt engine w/ MemAllocMsg)
+00546a8c,FUN_00546a8c,,crt_fatal_exit,0.9,llm-w117,body-verified __exit(3) (rejected PS2 _resetGsDmaPackets)

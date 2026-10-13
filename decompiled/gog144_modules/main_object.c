@@ -14,9 +14,9 @@ void object_allocate_init(void)
 
   
 
-  DAT_0059f370 = FUN_0053a700(0x18,0x2356e0,s_bigobj_0055c9e4,
+  DAT_0059f370 = MemAllocMsg(0x18,0x2356e0,s_bigobj_0055c9e4,
 
-                              s_C__Giants_source_main_object_c_0055c9ec,0x1c);
+                             s_C__Giants_source_main_object_c_0055c9ec,0x1c);
 
   iVar1 = 0;
 
@@ -90,9 +90,9 @@ void object_set_objectset(int param_1,int param_2)
 
         *(int *)(param_1 + 0x2d8) = iVar3;
 
-        uVar1 = FUN_0053a700(0x18,iVar3 * 0x44,s_Transform_Ref_Mats_0055ca74,
+        uVar1 = MemAllocMsg(0x18,iVar3 * 0x44,s_Transform_Ref_Mats_0055ca74,
 
-                             s_C__Giants_source_main_object_c_0055c9ec,0x15a);
+                            s_C__Giants_source_main_object_c_0055c9ec,0x15a);
 
         *(undefined4 *)(param_1 + 0x2dc) = uVar1;
 
@@ -274,7 +274,7 @@ void main_object_004976e0(void)
 
     if (((*(int *)(iVar1 + 0x174) == 0) && (*(int *)(iVar1 + 0x170) != 0)) &&
 
-       ((iVar4 = FUN_004a6160(iVar1), iVar4 != 0 || (iVar4 = FUN_004a6180(iVar1), iVar4 != 0)))) {
+       ((iVar4 = ObjIsMecc(iVar1), iVar4 != 0 || (iVar4 = FUN_004a6180(iVar1), iVar4 != 0)))) {
 
       mem_free_tagged(*(undefined4 *)(iVar1 + 0x170),s_C__Giants_source_main_object_c_0055c9ec,0x1f0
 
@@ -375,9 +375,9 @@ void object_copy_personality(int param_1,int param_2)
 
         *(int *)(param_1 + 0x2d8) = iVar7;
 
-        uVar3 = FUN_0053a700(0x18,iVar7 * 0x44,s_Transform_Ref_Mats_0055ca74,
+        uVar3 = MemAllocMsg(0x18,iVar7 * 0x44,s_Transform_Ref_Mats_0055ca74,
 
-                             s_C__Giants_source_main_object_c_0055c9ec,0x15a);
+                            s_C__Giants_source_main_object_c_0055c9ec,0x15a);
 
         *(undefined4 *)(param_1 + 0x2dc) = uVar3;
 
@@ -461,9 +461,9 @@ void object_copy_personality(int param_1,int param_2)
 
         puVar4 = (undefined4 *)
 
-                 FUN_0053a700(0x18,0x20,s_Dynamic_shadow_texture_0055ca88,
+                 MemAllocMsg(0x18,0x20,s_Dynamic_shadow_texture_0055ca88,
 
-                              s_C__Giants_source_main_object_c_0055c9ec,0x23d);
+                             s_C__Giants_source_main_object_c_0055c9ec,0x23d);
 
         puVar4[4] = uVar3;
 

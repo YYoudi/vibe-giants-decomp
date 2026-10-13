@@ -74,9 +74,9 @@ void utils_lzss_005395f0(byte *param_1,uint param_2,byte *param_3)
 
   if (DAT_005f00e4 == (byte *)0x0) {
 
-    DAT_005f00e4 = (byte *)FUN_0053a700(0x20,0x8000,s_lzssbuff_005804a0,
+    DAT_005f00e4 = (byte *)MemAllocMsg(0x20,0x8000,s_lzssbuff_005804a0,
 
-                                        s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
+                                       s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
 
   }
 
@@ -144,9 +144,9 @@ LAB_00539713:
 
         if (lpBuffer == (byte *)0x0) {
 
-          lpBuffer = (byte *)FUN_0053a700(0x20,0x8000,s_lzssbuff_005804a0,
+          lpBuffer = (byte *)MemAllocMsg(0x20,0x8000,s_lzssbuff_005804a0,
 
-                                          s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
+                                         s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
 
           uVar5 = DAT_005f00f0;
 
@@ -218,9 +218,9 @@ LAB_0053977b:
 
         if (lpBuffer == (byte *)0x0) {
 
-          lpBuffer = (byte *)FUN_0053a700(0x20,0x8000,s_lzssbuff_005804a0,
+          lpBuffer = (byte *)MemAllocMsg(0x20,0x8000,s_lzssbuff_005804a0,
 
-                                          s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
+                                         s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
 
           uVar5 = DAT_005f00f0;
 
@@ -284,9 +284,9 @@ LAB_00539908:
 
         if (lpBuffer == (byte *)0x0) {
 
-          lpBuffer = (byte *)FUN_0053a700(0x20,0x8000,s_lzssbuff_005804a0,
+          lpBuffer = (byte *)MemAllocMsg(0x20,0x8000,s_lzssbuff_005804a0,
 
-                                          s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
+                                         s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
 
           uVar5 = DAT_005f00f0;
 
@@ -384,9 +384,9 @@ LAB_005399bb:
 
       if (lpBuffer == (byte *)0x0) {
 
-        lpBuffer = (byte *)FUN_0053a700(0x20,0x8000,s_lzssbuff_005804a0,
+        lpBuffer = (byte *)MemAllocMsg(0x20,0x8000,s_lzssbuff_005804a0,
 
-                                        s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
+                                       s_C__Giants_source_Utils_lzss_c_005804b4,0x282);
 
         uVar5 = DAT_005f00f0;
 
@@ -537,9 +537,9 @@ undefined4 utils_lzss_00539b10(LPCSTR param_1)
 
       puVar1 = (undefined4 *)
 
-               FUN_0053a700(0x20,nNumberOfBytesToRead + 0x17,s_lzss_de_005804ac,
+               MemAllocMsg(0x20,nNumberOfBytesToRead + 0x17,s_lzss_de_005804ac,
 
-                            s_C__Giants_source_Utils_lzss_c_005804b4,0x3a6);
+                           s_C__Giants_source_Utils_lzss_c_005804b4,0x3a6);
 
       puVar4 = local_18;
 

@@ -567,11 +567,11 @@ void main_makewrld_00473600(float *param_1)
 
   puVar1 = (undefined4 *)
 
-           FUN_0053a700(0x12,*(int *)(DAT_006330e4 + 0x1dc) * *(int *)(DAT_006330e4 + 0x1d8) * 0xc,
+           MemAllocMsg(0x12,*(int *)(DAT_006330e4 + 0x1dc) * *(int *)(DAT_006330e4 + 0x1d8) * 0xc,
 
-                        s_temp_ground_normals_0055b8c8,s_C__Giants_source_main_makewrld_c_0055b874,
+                       s_temp_ground_normals_0055b8c8,s_C__Giants_source_main_makewrld_c_0055b874,
 
-                        0xa5);
+                       0xa5);
 
   puVar9 = puVar1;
 
@@ -1030,9 +1030,9 @@ void gti_terrain_load(undefined4 param_1)
 
   DAT_0059dbe0 = (undefined4 *)
 
-                 FUN_0053a700(0x12,0x200,&DAT_0055b918,s_C__Giants_source_main_makewrld_c_0055b874,
+                 MemAllocMsg(0x12,0x200,&DAT_0055b918,s_C__Giants_source_main_makewrld_c_0055b874,
 
-                              0x21c);
+                             0x21c);
 
   puVar7 = DAT_0059dbe0;
 
@@ -1088,9 +1088,9 @@ void gti_terrain_load(undefined4 param_1)
 
   else {
 
-    uVar5 = FUN_0053a700(0x12,*(int *)(DAT_006330e4 + 0x200) * 0x38,s_wbboxes_0055b8f4,
+    uVar5 = MemAllocMsg(0x12,*(int *)(DAT_006330e4 + 0x200) * 0x38,s_wbboxes_0055b8f4,
 
-                         s_C__Giants_source_main_makewrld_c_0055b874,0x242);
+                        s_C__Giants_source_main_makewrld_c_0055b874,0x242);
 
     *(undefined4 *)(DAT_006330e4 + 0x204) = uVar5;
 
@@ -1288,9 +1288,9 @@ void gti_terrain_load(undefined4 param_1)
 
     if ((puVar7 == puVar6) && (puVar6 != (undefined4 *)0x0)) {
 
-      iVar11 = FUN_0053a700(0x12,0x20,s_ground_bump_texture_0055b860,
+      iVar11 = MemAllocMsg(0x12,0x20,s_ground_bump_texture_0055b860,
 
-                            s_C__Giants_source_main_makewrld_c_0055b874,0x2c);
+                           s_C__Giants_source_main_makewrld_c_0055b874,0x2c);
 
       *piVar4 = iVar11;
 
@@ -1348,9 +1348,9 @@ void gti_terrain_load(undefined4 param_1)
 
     if ((puVar7 == puVar6) && (puVar6 != (undefined4 *)0x0)) {
 
-      iVar11 = FUN_0053a700(0x12,0x20,s_ground_bump_texture_0055b860,
+      iVar11 = MemAllocMsg(0x12,0x20,s_ground_bump_texture_0055b860,
 
-                            s_C__Giants_source_main_makewrld_c_0055b874,0x2c);
+                           s_C__Giants_source_main_makewrld_c_0055b874,0x2c);
 
       *piVar4 = iVar11;
 
@@ -1406,9 +1406,9 @@ void gti_terrain_load(undefined4 param_1)
 
     if ((puVar7 == puVar6) && (puVar6 != (undefined4 *)0x0)) {
 
-      iVar11 = FUN_0053a700(0x12,0x20,s_ground_bump_texture_0055b860,
+      iVar11 = MemAllocMsg(0x12,0x20,s_ground_bump_texture_0055b860,
 
-                            s_C__Giants_source_main_makewrld_c_0055b874,0x2c);
+                           s_C__Giants_source_main_makewrld_c_0055b874,0x2c);
 
       *piVar4 = iVar11;
 
@@ -1556,9 +1556,9 @@ void gti_terrain_load(undefined4 param_1)
 
   puVar6 = (undefined4 *)
 
-           FUN_0053a700(0x1a,*(int *)(DAT_006330e4 + 0x1dc) * *(int *)(DAT_006330e4 + 0x1d8) * 0x10,
+           MemAllocMsg(0x1a,*(int *)(DAT_006330e4 + 0x1dc) * *(int *)(DAT_006330e4 + 0x1d8) * 0x10,
 
-                        s_World_0055b8ec,s_C__Giants_source_main_makewrld_c_0055b874,0x329);
+                       s_World_0055b8ec,s_C__Giants_source_main_makewrld_c_0055b874,0x329);
 
   puVar7 = puVar6;
 
@@ -1618,9 +1618,9 @@ void gti_terrain_load(undefined4 param_1)
 
   }
 
-  uVar5 = FUN_0053a700(0x1a,*(int *)(iVar11 + 0x1dc) << 2,s_YROWS_0055b8e4,
+  uVar5 = MemAllocMsg(0x1a,*(int *)(iVar11 + 0x1dc) << 2,s_YROWS_0055b8e4,
 
-                       s_C__Giants_source_main_makewrld_c_0055b874,0x336);
+                      s_C__Giants_source_main_makewrld_c_0055b874,0x336);
 
   *(undefined4 *)(DAT_006330e4 + 0x10) = uVar5;
 
@@ -1640,15 +1640,15 @@ void gti_terrain_load(undefined4 param_1)
 
   }
 
-  uVar5 = FUN_0053a700(0x1a,*(int *)(DAT_006330e4 + 0x1dc) << 2,&DAT_0055b8e0,
+  uVar5 = MemAllocMsg(0x1a,*(int *)(DAT_006330e4 + 0x1dc) << 2,&DAT_0055b8e0,
 
-                       s_C__Giants_source_main_makewrld_c_0055b874,0x33b);
+                      s_C__Giants_source_main_makewrld_c_0055b874,0x33b);
 
   *(undefined4 *)(DAT_006330e4 + 0x14) = uVar5;
 
-  uVar5 = FUN_0053a700(0x1a,*(int *)(DAT_006330e4 + 0x1dc) << 2,&DAT_0055b8dc,
+  uVar5 = MemAllocMsg(0x1a,*(int *)(DAT_006330e4 + 0x1dc) << 2,&DAT_0055b8dc,
 
-                       s_C__Giants_source_main_makewrld_c_0055b874,0x33c);
+                      s_C__Giants_source_main_makewrld_c_0055b874,0x33c);
 
   *(undefined4 *)(DAT_006330e4 + 0x18) = uVar5;
 

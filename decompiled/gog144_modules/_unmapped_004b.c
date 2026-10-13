@@ -284,7 +284,7 @@ char * world_get_nicename(int param_1)
 
     if (DAT_00632d28 + iVar1 * 0x1439 != (int *)0x0) {
 
-      FUN_00542f27(local_40,&DAT_0055bfe4,(DAT_00632d28 + iVar1 * 0x1439)[1]);
+      crt_sprintf(local_40,&DAT_0055bfe4,(DAT_00632d28 + iVar1 * 0x1439)[1]);
 
       pcVar2 = (char *)FUN_00507b00(local_40);
 
@@ -378,7 +378,7 @@ void main_readwrls_004b0d80(void)
 
     _DAT_005a6c24 = 0x3f800000;
 
-    FUN_00542f27(local_100,s_W__s_bin_0055c160,*(undefined4 *)(DAT_006330e4 + 4));
+    crt_sprintf(local_100,s_W__s_bin_0055c160,*(undefined4 *)(DAT_006330e4 + 4));
 
     bin_load_1a0002e5(local_100,0x3f800000,0);
 
@@ -420,7 +420,7 @@ void main_readwrls_004b0e60(undefined4 param_1)
 
   
 
-  FUN_00542f27(local_100,s_W__s_bin_0055c160,param_1);
+  crt_sprintf(local_100,s_W__s_bin_0055c160,param_1);
 
   bin_load_1a0002e5(local_100,0x3f800000,0);
 
@@ -592,9 +592,9 @@ void FUN_004b4450(void)
 
                              (double)*(float *)(iVar1 + 0xa4),(double)*(float *)(iVar1 + 0xa8));
 
-        FUN_00542f27(auStack_88,s_Object_type__d__movetype__s__is_o_00560628,
+        crt_sprintf(auStack_88,s_Object_type__d__movetype__s__is_o_00560628,
 
-                     *(undefined4 *)(iVar1 + 4),uVar5);
+                    *(undefined4 *)(iVar1 + 4),uVar5);
 
         FUN_0051ea20(auStack_88);
 
@@ -4696,7 +4696,7 @@ LAB_004b8187:
 
       else {
 
-        iVar9 = FUN_004a6160(*(int *)(iVar9 + 0x274));
+        iVar9 = ObjIsMecc(*(int *)(iVar9 + 0x274));
 
         if ((iVar9 != 0) ||
 
@@ -6990,7 +6990,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     if ((*(int *)(iVar4 + 4) != 0xb) || (*(int *)(iVar4 + 0xe4) == 0x37)) {
 
-      iVar4 = FUN_004a6160(iVar4);
+      iVar4 = ObjIsMecc(iVar4);
 
       puVar10 = DAT_00632d98;
 
@@ -7114,7 +7114,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     local_48 = -*(float *)(param_1 + 700);
 
-    FUN_0050a810(&local_50,&local_4c,&local_48);
+    normalize__FPfN20(&local_50,&local_4c,&local_48);
 
     local_5c = fStack_34;
 
@@ -7398,7 +7398,7 @@ undefined4 FUN_004b95d0(int param_1,int param_2,int param_3)
 
     }
 
-    iVar4 = FUN_004a6160(iVar4);
+    iVar4 = ObjIsMecc(iVar4);
 
     if ((iVar4 == 0) && (iVar4 = FUN_004a6180(*(undefined4 *)(param_2 + 0xf48)), iVar4 == 0)) {
 
@@ -8249,11 +8249,11 @@ void FUN_004ba990(int param_1,float param_2,undefined4 param_3)
 
     if (((*(int *)(iVar1 + 0x18c) != *(int *)(param_1 + 0x18c)) &&
 
-        ((((((iVar3 = FUN_004a6180(iVar1), iVar3 != 0 || (iVar3 = FUN_004a6160(iVar1), iVar3 != 0))
+        ((((((iVar3 = FUN_004a6180(iVar1), iVar3 != 0 || (iVar3 = ObjIsMecc(iVar1), iVar3 != 0)) ||
 
-            || (iVar3 = *(int *)(iVar1 + 4), iVar3 == 0xb)) || ((iVar3 == 8 || (iVar3 == 0x438))))
+            (iVar3 = *(int *)(iVar1 + 4), iVar3 == 0xb)) || ((iVar3 == 8 || (iVar3 == 0x438)))) ||
 
-          || ((iVar3 == 0xe5 || ((iVar3 == 0x49 || (iVar3 == 0xe6)))))) || (iVar3 == 0x29a)))) &&
+          ((iVar3 == 0xe5 || ((iVar3 == 0x49 || (iVar3 == 0xe6)))))) || (iVar3 == 0x29a)))) &&
 
        (fVar4 = (float10)FUN_0050a610(iVar1 + 0xa0,param_1 + 0xa0),
 
@@ -8598,7 +8598,7 @@ void FUN_004bc800(int param_1,float *param_2,undefined4 *param_3)
 
   param_2[2] = -*(float *)(param_1 + 700);
 
-  FUN_0050a810(param_2,param_2 + 1,param_2 + 2);
+  normalize__FPfN20(param_2,param_2 + 1,param_2 + 2);
 
   *param_3 = uStack_34;
 
@@ -8653,7 +8653,7 @@ void FUN_004bc880(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 
   fStack_54 = -*(float *)(param_1 + 700);
 
-  FUN_0050a810(&fStack_5c,&fStack_58,&fStack_54);
+  normalize__FPfN20(&fStack_5c,&fStack_58,&fStack_54);
 
   uStack_50 = uStack_34;
 
@@ -11562,7 +11562,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
     uVar5 = FUN_004a9130(puVar9[puVar9[0x36d] * 2 + 0x35c]);
 
-    FUN_00542f27(local_100,uVar4,uVar5);
+    crt_sprintf(local_100,uVar4,uVar5);
 
     FUN_005362d0(local_100,1);
 

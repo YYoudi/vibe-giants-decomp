@@ -97,7 +97,7 @@ void TextPtrInit__Fv(void)
 
     uVar1 = __default_unexpected__Fv();
 
-    FUN_00542f27(local_100,s_GText_s_bin_0057bcd4,uVar1);
+    crt_sprintf(local_100,s_GText_s_bin_0057bcd4,uVar1);
 
     iVar3 = stream_player_start(local_100);
 
@@ -109,17 +109,17 @@ void TextPtrInit__Fv(void)
 
       BinFileRead(iVar3,&DAT_0057bc84,4);
 
-      DAT_0057bc88 = FUN_0053a700(0x1c,DAT_0057bc7c * 8,s_keyoffs_0057bccc,
+      DAT_0057bc88 = MemAllocMsg(0x1c,DAT_0057bc7c * 8,s_keyoffs_0057bccc,
 
-                                  s_C__Giants_source_main_textget_c_0057bc98,0x5a);
+                                 s_C__Giants_source_main_textget_c_0057bc98,0x5a);
 
-      DAT_0057bc8c = FUN_0053a700(0x1c,DAT_0057bc80,s_keydata_0057bcc4,
+      DAT_0057bc8c = MemAllocMsg(0x1c,DAT_0057bc80,s_keydata_0057bcc4,
 
-                                  s_C__Giants_source_main_textget_c_0057bc98,0x5b);
+                                 s_C__Giants_source_main_textget_c_0057bc98,0x5b);
 
-      DAT_0057bc90 = FUN_0053a700(0x1c,DAT_0057bc84,s_textdata_0057bcb8,
+      DAT_0057bc90 = MemAllocMsg(0x1c,DAT_0057bc84,s_textdata_0057bcb8,
 
-                                  s_C__Giants_source_main_textget_c_0057bc98,0x5c);
+                                 s_C__Giants_source_main_textget_c_0057bc98,0x5c);
 
       BinFileRead(iVar3,DAT_0057bc88,DAT_0057bc7c * 8);
 

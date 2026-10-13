@@ -190,13 +190,13 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
           local_28 = uVar1 * 0xc;
 
-          local_3c = (uint *)FUN_0053a700(0x11,local_28,s_objp3d_0055b780,
+          local_3c = (uint *)MemAllocMsg(0x11,local_28,s_objp3d_0055b780,
 
-                                          s_C__Giants_source_main_makeobj_c_0055b788,0x57);
+                                         s_C__Giants_source_main_makeobj_c_0055b788,0x57);
 
-          local_30 = FUN_0053a700(0x11,uVar2 * 6,s_objtri_0055b778,
+          local_30 = MemAllocMsg(0x11,uVar2 * 6,s_objtri_0055b778,
 
-                                  s_C__Giants_source_main_makeobj_c_0055b788,0x58);
+                                 s_C__Giants_source_main_makeobj_c_0055b788,0x58);
 
           if (local_38 == 0) {
 
@@ -208,9 +208,9 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
             param_2 = (undefined4 *)
 
-                      FUN_0053a700(0x11,uVar1 * 8,s_objuv_0055b770,
+                      MemAllocMsg(0x11,uVar1 * 8,s_objuv_0055b770,
 
-                                   s_C__Giants_source_main_makeobj_c_0055b788,0x5a);
+                                  s_C__Giants_source_main_makeobj_c_0055b788,0x5a);
 
           }
 
@@ -224,9 +224,9 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
             param_3 = (undefined4 *)
 
-                      FUN_0053a700(0x11,uVar1 * 3 + 1,s_objrgb_0055b768,
+                      MemAllocMsg(0x11,uVar1 * 3 + 1,s_objrgb_0055b768,
 
-                                   s_C__Giants_source_main_makeobj_c_0055b788,0x60);
+                                  s_C__Giants_source_main_makeobj_c_0055b788,0x60);
 
           }
 
@@ -326,9 +326,9 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
           puVar6 = (undefined4 *)
 
-                   FUN_0053a700(0x11,uVar2 * 0xc,s_objtri_temp_0055b75c,
+                   MemAllocMsg(0x11,uVar2 * 0xc,s_objtri_temp_0055b75c,
 
-                                s_C__Giants_source_main_makeobj_c_0055b788,0x75);
+                               s_C__Giants_source_main_makeobj_c_0055b788,0x75);
 
           puVar15 = puVar6;
 
@@ -386,9 +386,9 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
           puVar6 = (undefined4 *)
 
-                   FUN_0053a700(0x11,0x1c,&DAT_0055b734,s_C__Giants_source_main_makeobj_c_0055b788,
+                   MemAllocMsg(0x11,0x1c,&DAT_0055b734,s_C__Giants_source_main_makeobj_c_0055b788,
 
-                                0x89);
+                               0x89);
 
           puVar10 = puVar6;
 
@@ -424,7 +424,7 @@ undefined4 * main_makeobj_00471e10(undefined4 param_1,undefined4 *param_2,undefi
 
     }
 
-    FUN_00542f27(&DAT_00657400,s_Missing_object__s_in_GB2_0055b7a8,param_2);
+    crt_sprintf(&DAT_00657400,s_Missing_object__s_in_GB2_0055b7a8,param_2);
 
     FUN_0051ea20(&DAT_00657400);
 
@@ -561,9 +561,9 @@ undefined4 * object_clone_objectset(undefined4 param_1)
 
   local_9c = uVar3;
 
-  local_8c = (int *)FUN_0053a700(0x11,uVar3 * 0xc,s_averts_0055b840,
+  local_8c = (int *)MemAllocMsg(0x11,uVar3 * 0xc,s_averts_0055b840,
 
-                                 s_C__Giants_source_main_makeobj_c_0055b788,0xf6);
+                                s_C__Giants_source_main_makeobj_c_0055b788,0xf6);
 
   DAT_0059dbdc = DAT_0059dbdc + uVar3 * 0xc;
 
@@ -623,9 +623,9 @@ LAB_004722ee:
 
     uVar10 = local_c4 * 2;
 
-    puVar4 = (uint *)FUN_0053a700(0x11,uVar10,s_normal_defs_0055b834,
+    puVar4 = (uint *)MemAllocMsg(0x11,uVar10,s_normal_defs_0055b834,
 
-                                  s_C__Giants_source_main_makeobj_c_0055b788,0x104);
+                                 s_C__Giants_source_main_makeobj_c_0055b788,0x104);
 
     DAT_0059dbdc = DAT_0059dbdc + uVar10;
 
@@ -661,9 +661,9 @@ LAB_004722ee:
 
   uVar12 = uVar10 * 2;
 
-  puVar5 = (uint *)FUN_0053a700(0x11,uVar12,s_iverts_0055b82c,
+  puVar5 = (uint *)MemAllocMsg(0x11,uVar12,s_iverts_0055b82c,
 
-                                s_C__Giants_source_main_makeobj_c_0055b788,0x123);
+                               s_C__Giants_source_main_makeobj_c_0055b788,0x123);
 
   DAT_0059dbdc = DAT_0059dbdc + uVar12;
 
@@ -697,9 +697,9 @@ LAB_004722ee:
 
     if (((byte)DAT_00632e94 & 1) != 0) {
 
-      local_b8 = (int *)FUN_0053a700(0x11,uVar12,s_inorms_0055b824,
+      local_b8 = (int *)MemAllocMsg(0x11,uVar12,s_inorms_0055b824,
 
-                                     s_C__Giants_source_main_makeobj_c_0055b788,300);
+                                    s_C__Giants_source_main_makeobj_c_0055b788,300);
 
       DAT_0059dbdc = DAT_0059dbdc + uVar12;
 
@@ -751,9 +751,9 @@ LAB_004723a2:
 
   else {
 
-    local_94 = (int *)FUN_0053a700(0x11,uVar10 * 8,s_vertuv_0055b81c,
+    local_94 = (int *)MemAllocMsg(0x11,uVar10 * 8,s_vertuv_0055b81c,
 
-                                   s_C__Giants_source_main_makeobj_c_0055b788,0x13e);
+                                  s_C__Giants_source_main_makeobj_c_0055b788,0x13e);
 
     DAT_0059dbdc = DAT_0059dbdc + uVar10 * 8;
 
@@ -797,9 +797,9 @@ LAB_004723a2:
 
     uVar1 = uVar10 * 3;
 
-    local_b4 = (int *)FUN_0053a700(0x11,uVar1 + 1,s_vertrgb_0055b814,
+    local_b4 = (int *)MemAllocMsg(0x11,uVar1 + 1,s_vertrgb_0055b814,
 
-                                   s_C__Giants_source_main_makeobj_c_0055b788,0x149);
+                                  s_C__Giants_source_main_makeobj_c_0055b788,0x149);
 
     DAT_0059dbdc = DAT_0059dbdc + 1 + uVar1;
 
@@ -837,9 +837,9 @@ LAB_004723a2:
 
   local_78 = iVar11;
 
-  local_a0 = FUN_0053a700(0x11,iVar11 * 0x24,s_Max_Objs_0055b808,
+  local_a0 = MemAllocMsg(0x11,iVar11 * 0x24,s_Max_Objs_0055b808,
 
-                          s_C__Giants_source_main_makeobj_c_0055b788,0x153);
+                         s_C__Giants_source_main_makeobj_c_0055b788,0x153);
 
   DAT_0059dbdc = DAT_0059dbdc + iVar11 * 0x24;
 
@@ -899,7 +899,7 @@ LAB_004723a2:
 
   puVar7 = (undefined4 *)
 
-           FUN_0053a700(0x11,uVar12,&DAT_0055b804,s_C__Giants_source_main_makeobj_c_0055b788,0x176);
+           MemAllocMsg(0x11,uVar12,&DAT_0055b804,s_C__Giants_source_main_makeobj_c_0055b788,0x176);
 
   DAT_0059dbdc = DAT_0059dbdc + uVar12;
 
@@ -1047,9 +1047,9 @@ LAB_004723a2:
 
       uVar10 = puVar18[0xb];
 
-      puVar8 = (uint *)FUN_0053a700(0x11,uVar10 * 2 + 2,&DAT_0055b7fc,
+      puVar8 = (uint *)MemAllocMsg(0x11,uVar10 * 2 + 2,&DAT_0055b7fc,
 
-                                    s_C__Giants_source_main_makeobj_c_0055b788,0x1b6);
+                                   s_C__Giants_source_main_makeobj_c_0055b788,0x1b6);
 
       uVar12 = uVar10 * 2;
 
@@ -1331,15 +1331,15 @@ LAB_004723a2:
 
   else {
 
-    uVar9 = FUN_0053a700(0x11,local_c4 * 0xc,s_face_normals_0055b7ec,
+    uVar9 = MemAllocMsg(0x11,local_c4 * 0xc,s_face_normals_0055b7ec,
 
-                         s_C__Giants_source_main_makeobj_c_0055b788,0x23f);
+                        s_C__Giants_source_main_makeobj_c_0055b788,0x23f);
 
     puVar7[10] = uVar9;
 
-    uVar9 = FUN_0053a700(0x11,puVar7[7] * 0xc,s_vertex_normals_0055b7dc,
+    uVar9 = MemAllocMsg(0x11,puVar7[7] * 0xc,s_vertex_normals_0055b7dc,
 
-                         s_C__Giants_source_main_makeobj_c_0055b788,0x240);
+                        s_C__Giants_source_main_makeobj_c_0055b788,0x240);
 
     puVar7[0xb] = uVar9;
 

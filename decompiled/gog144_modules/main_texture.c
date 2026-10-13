@@ -96,7 +96,7 @@ void main_texture_00507c50(char *param_1,undefined4 param_2)
 
   puVar4 = (undefined4 *)
 
-           FUN_0053a700(0x1d,uVar7,&DAT_0057bd08,s_C__Giants_source_main_texture_c_0057bd0c,0xf5);
+           MemAllocMsg(0x1d,uVar7,&DAT_0057bd08,s_C__Giants_source_main_texture_c_0057bd0c,0xf5);
 
   puVar8 = puVar4;
 
@@ -579,13 +579,13 @@ LAB_005080c7:
 
     if ((iVar10 == 0) && ((~*(byte *)((int)piVar9 + uVar19 * 0x24 + 0x4f) & 4) != 0)) {
 
-      FUN_00542f27(auStack_12c,s__s_dds_0057bed4,*param_1);
+      crt_sprintf(auStack_12c,s__s_dds_0057bed4,*param_1);
 
       iVar10 = FUN_00538540(auStack_12c);
 
       if ((iVar10 != 0) && ((DAT_00632e94 & 0x2000) != 0)) {
 
-        FUN_00542f27(auStack_64,s__s_dds_0057bed4,piVar9[uVar19 * 9 + 0xb]);
+        crt_sprintf(auStack_64,s__s_dds_0057bed4,piVar9[uVar19 * 9 + 0xb]);
 
         vfs_fileread_load(auStack_64,&piStack_1d4,&puStack_1d8);
 
@@ -597,9 +597,9 @@ LAB_005080c7:
 
         if (*piStack_1d4 != 0x20534444) {
 
-          FUN_00542f27(&DAT_00657400,s_Failed_to_open_dds_texture_secti_0057be8c,
+          crt_sprintf(&DAT_00657400,s_Failed_to_open_dds_texture_secti_0057be8c,
 
-                       piVar9[uVar19 * 9 + 0xb]);
+                      piVar9[uVar19 * 9 + 0xb]);
 
           FUN_00540310(&DAT_00657400);
 
@@ -669,9 +669,9 @@ LAB_00508282:
 
           if ((iVar13 < 0) || (iVar14 < 0)) {
 
-            FUN_00542f27(&DAT_00657400,s_Only_support_power_of_2_sizeed_t_0057bd2c,aiStack_1a8[3],
+            crt_sprintf(&DAT_00657400,s_Only_support_power_of_2_sizeed_t_0057bd2c,aiStack_1a8[3],
 
-                         aiStack_1a8[2],piVar9[uVar19 * 9 + 0xb]);
+                        aiStack_1a8[2],piVar9[uVar19 * 9 + 0xb]);
 
             FUN_0051ea20(&DAT_00657400);
 
@@ -699,9 +699,9 @@ LAB_00508282:
 
           puStack_1d8 = puStack_1d8 + -2;
 
-          piVar11 = (int *)FUN_0053a700(0x1d,puStack_1d8,s_dds_texture_raw_0057bec4,
+          piVar11 = (int *)MemAllocMsg(0x1d,puStack_1d8,s_dds_texture_raw_0057bec4,
 
-                                        s_C__Giants_source_main_texture_c_0057bd0c,0x15c);
+                                       s_C__Giants_source_main_texture_c_0057bd0c,0x15c);
 
           piVar9[uVar19 * 9 + 0xc] = (int)piVar11;
 
@@ -755,7 +755,7 @@ LAB_00508353:
 
     }
 
-    FUN_00542f27(auStack_c8,s__s_tga_0057be84,*param_1);
+    crt_sprintf(auStack_c8,s__s_tga_0057be84,*param_1);
 
     vfs_fileread_load(auStack_c8,&puStack_1b4,&iStack_1ac);
 
@@ -817,7 +817,7 @@ LAB_00508353:
 
       if (uStack_1c8._2_1_ != '\x03') {
 
-        FUN_00542f27(&DAT_00657400,s_Only_support_TRUECOLOR_and_COLOR_0057bd6c,*param_1);
+        crt_sprintf(&DAT_00657400,s_Only_support_TRUECOLOR_and_COLOR_0057bd6c,*param_1);
 
         FUN_0051ea20(&DAT_00657400);
 
@@ -855,7 +855,7 @@ LAB_00508353:
 
     if (bVar8) {
 
-      FUN_00542f27(&DAT_00657400,s_Don_t_support_paletted_textures__0057be54,*param_1);
+      crt_sprintf(&DAT_00657400,s_Don_t_support_paletted_textures__0057be54,*param_1);
 
       FUN_0051ea20(&DAT_00657400);
 
@@ -877,9 +877,9 @@ LAB_00508353:
 
         if (cStack_1b8 != ' ') {
 
-          FUN_00542f27(&DAT_00657400,s_Only_support_24bpp_with_8bpp_alp_0057bda4,uVar5 & 0xff,
+          crt_sprintf(&DAT_00657400,s_Only_support_24bpp_with_8bpp_alp_0057bda4,uVar5 & 0xff,
 
-                       *param_1);
+                      *param_1);
 
           FUN_0051ea20(&DAT_00657400);
 
@@ -897,7 +897,7 @@ LAB_00508353:
 
     else if (cStack_1b8 != '\b') {
 
-      FUN_00542f27(&DAT_00657400,s_Only_support_black___white_or_si_0057bdf0,uVar5 & 0xff,*param_1);
+      crt_sprintf(&DAT_00657400,s_Only_support_black___white_or_si_0057bdf0,uVar5 & 0xff,*param_1);
 
       FUN_0051ea20(&DAT_00657400);
 
@@ -965,11 +965,11 @@ LAB_00508111:
 
 LAB_00508123:
 
-  FUN_00542f27(&DAT_00657400,pcVar20,iVar10);
+  crt_sprintf(&DAT_00657400,pcVar20,iVar10);
 
   FUN_0051ea20(&DAT_00657400);
 
-  FUN_00542f27(&DAT_00657400,s_Tex__s_0057bedc,*param_1);
+  crt_sprintf(&DAT_00657400,s_Tex__s_0057bedc,*param_1);
 
   FUN_00425eb0(&DAT_00657400);
 
@@ -1019,9 +1019,9 @@ LAB_00508549:
 
   if ((iVar10 < 0) || (iVar13 < 0)) {
 
-    FUN_00542f27(&DAT_00657400,s_Only_support_power_of_2_sizeed_t_0057bd2c,piStack_1d4,uStack_1b0,
+    crt_sprintf(&DAT_00657400,s_Only_support_power_of_2_sizeed_t_0057bd2c,piStack_1d4,uStack_1b0,
 
-                 piVar9[uVar19 * 9 + 0xb]);
+                piVar9[uVar19 * 9 + 0xb]);
 
     FUN_0051ea20(&DAT_00657400);
 
@@ -1109,9 +1109,9 @@ LAB_00508606:
 
     puVar12 = (undefined4 *)
 
-              FUN_0053a700(0x1d,uVar19,s_texraw_0057bde4,s_C__Giants_source_main_texture_c_0057bd0c,
+              MemAllocMsg(0x1d,uVar19,s_texraw_0057bde4,s_C__Giants_source_main_texture_c_0057bd0c,
 
-                           0x234);
+                          0x234);
 
     param_1[1] = (int)puVar12;
 
@@ -1265,7 +1265,7 @@ undefined4 * main_texture_00508750(char *param_1)
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(0x1d,uVar4,&DAT_0057bf38,s_C__Giants_source_main_texture_c_0057bd0c,0x2c6);
+           MemAllocMsg(0x1d,uVar4,&DAT_0057bf38,s_C__Giants_source_main_texture_c_0057bd0c,0x2c6);
 
   puVar7 = puVar3;
 
@@ -1442,7 +1442,7 @@ main_texture_005088d0
 
   }
 
-  FUN_00542f27(auStack_64,s__s_tga_0057be84,param_1);
+  crt_sprintf(auStack_64,s__s_tga_0057be84,param_1);
 
   iVar3 = FUN_00538540(auStack_64);
 
@@ -1530,9 +1530,9 @@ main_texture_005088d0
 
         if (cStack_90 != ' ') {
 
-          FUN_00542f27(&DAT_00657400,s_Only_support_24bpp_with_8bpp_alp_0057bda4,uVar1 & 0xff,
+          crt_sprintf(&DAT_00657400,s_Only_support_24bpp_with_8bpp_alp_0057bda4,uVar1 & 0xff,param_1
 
-                       param_1);
+                     );
 
           FUN_0051ea20(&DAT_00657400);
 
@@ -1558,9 +1558,9 @@ main_texture_005088d0
 
       puVar5 = (undefined4 *)
 
-               FUN_0053a700(0x1d,uVar20,s_bmraw_0057bf5c,s_C__Giants_source_main_texture_c_0057bd0c,
+               MemAllocMsg(0x1d,uVar20,s_bmraw_0057bf5c,s_C__Giants_source_main_texture_c_0057bd0c,
 
-                            0x40a);
+                           0x40a);
 
       puVar21 = puVar5;
 
@@ -1606,9 +1606,9 @@ main_texture_005088d0
 
       puStack_cc = (undefined4 *)
 
-                   FUN_0053a700(0x1d,iVar19 * 0x20,s_texlist_0057bf54,
+                   MemAllocMsg(0x1d,iVar19 * 0x20,s_texlist_0057bf54,
 
-                                s_C__Giants_source_main_texture_c_0057bd0c,0x422);
+                               s_C__Giants_source_main_texture_c_0057bd0c,0x422);
 
       iStack_d4 = 0;
 
@@ -1724,9 +1724,9 @@ LAB_00508c6d:
 
               puVar9 = (undefined1 *)
 
-                       FUN_0053a700(0x1d,iVar6 * iVar19 * iStack_78,s_screen_tiling_texture_0057bf3c
+                       MemAllocMsg(0x1d,iVar6 * iVar19 * iStack_78,s_screen_tiling_texture_0057bf3c,
 
-                                    ,s_C__Giants_source_main_texture_c_0057bd0c,0x446);
+                                   s_C__Giants_source_main_texture_c_0057bd0c,0x446);
 
               puVar18[1] = puVar9;
 
@@ -1876,7 +1876,7 @@ LAB_00508c6d:
 
     }
 
-    FUN_00542f27(&DAT_00657400,s_Only_support_TRUECOLOR_and_COLOR_0057bd6c,param_1);
+    crt_sprintf(&DAT_00657400,s_Only_support_TRUECOLOR_and_COLOR_0057bd6c,param_1);
 
     FUN_0051ea20(&DAT_00657400);
 

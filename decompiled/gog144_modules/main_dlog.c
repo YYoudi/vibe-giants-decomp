@@ -16,7 +16,7 @@ void main_dlog_00427150(void)
 
   puVar1 = (undefined4 *)
 
-           FUN_0053a700(8,0xc,&DAT_00556508,s_C__Giants_source_main_dlog_c_00556510,0x8e);
+           MemAllocMsg(8,0xc,&DAT_00556508,s_C__Giants_source_main_dlog_c_00556510,0x8e);
 
   *puVar1 = 0;
 
@@ -245,7 +245,7 @@ void main_dlog_004273b0(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x176);
+           MemAllocMsg(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x176);
 
   puVar6 = puVar3;
 
@@ -344,7 +344,7 @@ void main_dlog_00427490(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,400);
+           MemAllocMsg(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,400);
 
   puVar6 = puVar3;
 
@@ -545,7 +545,7 @@ void main_dlog_00427890(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x176);
+           MemAllocMsg(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x176);
 
   puVar6 = puVar3;
 
@@ -648,7 +648,7 @@ void main_dlog_00427970(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   puVar4 = (undefined4 *)
 
-           FUN_0053a700(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x24b);
+           MemAllocMsg(8,0x38,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x24b);
 
   puVar6 = puVar4;
 
@@ -771,7 +771,7 @@ void main_dlog_00427bb0(undefined4 *param_1,float param_2,float param_3,undefine
 
   puVar5 = (undefined4 *)
 
-           FUN_0053a700(8,0x30,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x32b);
+           MemAllocMsg(8,0x30,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x32b);
 
   puVar7 = puVar5;
 
@@ -890,7 +890,7 @@ void main_dlog_00427d00(undefined4 *param_1,float param_2,undefined4 param_3,und
 
   puVar5 = (undefined4 *)
 
-           FUN_0053a700(8,0x30,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x394);
+           MemAllocMsg(8,0x30,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x394);
 
   puVar7 = puVar5;
 
@@ -989,7 +989,7 @@ void main_dlog_00427e80(undefined4 *param_1,undefined4 param_2,undefined4 param_
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(8,0x40,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x3f8);
+           MemAllocMsg(8,0x40,s_dlogentry_00556530,s_C__Giants_source_main_dlog_c_00556510,0x3f8);
 
   puVar5 = puVar3;
 
@@ -1108,9 +1108,9 @@ void main_dlog_00428080(int *param_1,int param_2,int param_3,char *param_4)
 
       puVar5 = (undefined4 *)
 
-               FUN_0053a700(8,~uVar6 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
+               MemAllocMsg(8,~uVar6 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
 
-                            0x448);
+                           0x448);
 
       if (puVar3 == (undefined4 *)0x0) {
 
@@ -1231,9 +1231,9 @@ void main_dlog_00428140(int *param_1,int param_2,char *param_3,undefined4 param_
 
       puVar5 = (undefined4 *)
 
-               FUN_0053a700(8,~uVar6 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
+               MemAllocMsg(8,~uVar6 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
 
-                            0x466);
+                           0x466);
 
       *piVar3 = (int)puVar5;
 
@@ -1340,9 +1340,9 @@ void main_dlog_004281f0(int *param_1,int param_2,char *param_3)
 
       puVar5 = (undefined4 *)
 
-               FUN_0053a700(8,~uVar6 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
+               MemAllocMsg(8,~uVar6 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
 
-                            0x466);
+                           0x466);
 
       *piVar3 = (int)puVar5;
 
@@ -1453,9 +1453,9 @@ void main_dlog_00428290(int *param_1,int param_2,undefined4 param_3,undefined4 p
 
       puVar6 = (undefined4 *)
 
-               FUN_0053a700(8,~uVar7 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
+               MemAllocMsg(8,~uVar7 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
 
-                            0x466);
+                           0x466);
 
       *piVar3 = (int)puVar6;
 
@@ -1566,9 +1566,9 @@ void main_dlog_00428340(int *param_1,int param_2,undefined4 param_3)
 
       puVar6 = (undefined4 *)
 
-               FUN_0053a700(8,~uVar7 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
+               MemAllocMsg(8,~uVar7 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
 
-                            0x466);
+                           0x466);
 
       *piVar3 = (int)puVar6;
 
@@ -1796,9 +1796,9 @@ void main_dlog_004286c0(int *param_1,int param_2,int param_3,char *param_4)
 
         puVar5 = (undefined4 *)
 
-                 FUN_0053a700(8,~uVar7 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
+                 MemAllocMsg(8,~uVar7 + 0x13,&DAT_0055653c,s_C__Giants_source_main_dlog_c_00556510,
 
-                              0x655);
+                             0x655);
 
         puVar10 = (undefined4 *)*piVar3;
 

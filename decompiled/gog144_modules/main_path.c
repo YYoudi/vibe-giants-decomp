@@ -141,9 +141,9 @@ void path_world_init__Fv(void)
 
       if (iVar5 != 0) {
 
-        DAT_005a0cf0 = FUN_0053a700(0x19,iVar5 * 0x30,s_bridge_0055e994,
+        DAT_005a0cf0 = MemAllocMsg(0x19,iVar5 * 0x30,s_bridge_0055e994,
 
-                                    s_C__Giants_source_main_path_c_0055e99c,0x1fe);
+                                   s_C__Giants_source_main_path_c_0055e99c,0x1fe);
 
         in_stack_00000004 = DAT_00632d7c;
 
@@ -304,15 +304,15 @@ uint main_path_0049ff30(undefined4 param_1,undefined4 param_2,undefined4 *param_
 
   if (DAT_005a0cd8 == 0) {
 
-    DAT_005a0cd8 = FUN_0053a700(0x19,120000,s_nodelist_0055e9d0,
+    DAT_005a0cd8 = MemAllocMsg(0x19,120000,s_nodelist_0055e9d0,
 
-                                s_C__Giants_source_main_path_c_0055e99c,0x16f);
+                               s_C__Giants_source_main_path_c_0055e99c,0x16f);
 
     DAT_005a0cd4 = (undefined4 *)
 
-                   FUN_0053a700(0x19,0x3ec,s_hashtable_0055e9c4,
+                   MemAllocMsg(0x19,0x3ec,s_hashtable_0055e9c4,
 
-                                s_C__Giants_source_main_path_c_0055e99c,0x170);
+                               s_C__Giants_source_main_path_c_0055e99c,0x170);
 
   }
 
@@ -334,9 +334,9 @@ uint main_path_0049ff30(undefined4 param_1,undefined4 param_2,undefined4 *param_
 
   DAT_005a0ce0 = 5000;
 
-  DAT_005a0ce4 = FUN_0053a700(0x19,0x4e24,s_pqheap_0055e9bc,s_C__Giants_source_main_path_c_0055e99c,
+  DAT_005a0ce4 = MemAllocMsg(0x19,0x4e24,s_pqheap_0055e9bc,s_C__Giants_source_main_path_c_0055e99c,
 
-                              0x49a);
+                             0x49a);
 
   param_8 = 0.0;
 
@@ -1133,9 +1133,9 @@ void main_path_004a0f40(int param_1,undefined4 param_2,float *param_3,float *par
 
     DAT_005a0cec = (undefined4 *)
 
-                   FUN_0053a700(0x19,0x1000,s_Table_0055e9dc,s_C__Giants_source_main_path_c_0055e99c
+                   MemAllocMsg(0x19,0x1000,s_Table_0055e9dc,s_C__Giants_source_main_path_c_0055e99c,
 
-                                ,0x433);
+                               0x433);
 
   }
 

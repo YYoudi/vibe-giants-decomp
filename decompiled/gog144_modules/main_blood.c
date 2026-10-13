@@ -18,9 +18,9 @@ void FUN_0040b220(void)
 
   
 
-  DAT_005841c4 = FUN_0053a700(4,26000,s_bigblood_00555008,s_C__Giants_source_main_blood_c_00555014,
+  DAT_005841c4 = MemAllocMsg(4,26000,s_bigblood_00555008,s_C__Giants_source_main_blood_c_00555014,
 
-                              0x23);
+                             0x23);
 
   iVar1 = 0;
 
@@ -74,9 +74,9 @@ void main_blood_0040bab0(void)
 
   
 
-  DAT_005841c0 = FUN_0053a700(4,0xe10,s_bigwound_00555034,s_C__Giants_source_main_blood_c_00555014,
+  DAT_005841c0 = MemAllocMsg(4,0xe10,s_bigwound_00555034,s_C__Giants_source_main_blood_c_00555014,
 
-                              0x14c);
+                             0x14c);
 
   iVar1 = 0;
 

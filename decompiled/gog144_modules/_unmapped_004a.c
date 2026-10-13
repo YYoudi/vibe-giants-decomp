@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (53 named) — decompiled, names from PS2 symbols
+ * 131 functions (54 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -3821,7 +3821,7 @@ void FUN_004a4550(void)
 
           (*(float *)(in_ECX + 0x278) < *(float *)(in_ECX + 0x1c0))) &&
 
-         ((iVar3 = FUN_004a6160(in_ECX), iVar3 != 0 && ((*(uint *)(in_ECX + 0xd8) & 0x200) == 0))))
+         ((iVar3 = ObjIsMecc(in_ECX), iVar3 != 0 && ((*(uint *)(in_ECX + 0xd8) & 0x200) == 0))))
 
       goto LAB_004a473d;
 
@@ -4131,11 +4131,11 @@ void FUN_004a48a0(float param_1)
 
       local_28 = SQRT(local_28) - 15.0;
 
-      fVar6 = (float10)FUN_004d5780(0xc0800000,0x40800000);
+      fVar6 = (float10)rndfloatrange(0xc0800000,0x40800000);
 
       local_18 = (float)((float10)local_28 * (float10)local_24 + fVar6 + (float10)local_18);
 
-      fVar6 = (float10)FUN_004d5780(0xc0800000,0x40800000);
+      fVar6 = (float10)rndfloatrange(0xc0800000,0x40800000);
 
       local_14 = (float)((float10)local_28 * (float10)fStack_20 + fVar6 + (float10)local_14);
 
@@ -5581,12 +5581,12 @@ undefined4 FUN_004a6140(int param_1)
 
 }
 
-/* ===== FUN_004a6160 @ 0x004A6160 ===== */
+/* ===== ObjIsMecc @ 0x004A6160 ===== */
 /* PS2 candidate: ObjIsMecc (conf 0.677) */
 
 
 
-undefined4 FUN_004a6160(int param_1)
+undefined4 ObjIsMecc(int param_1)
 
 
 
@@ -6379,7 +6379,7 @@ void obj_scale_compute(float param_1)
 
   fVar3 = fVar3 * *(float *)((int)param_1 + 0x194);
 
-  iVar5 = FUN_004a6160(param_1);
+  iVar5 = ObjIsMecc(param_1);
 
   if ((iVar5 == 0) || ((*(uint *)((int)param_1 + 0xd8) & 0x8000000) == 0)) {
 
@@ -6541,7 +6541,7 @@ LAB_004a6ce2:
 
   fVar3 = fVar3 * *(float *)(iVar4 + 0x194);
 
-  iVar5 = FUN_004a6160(iVar4);
+  iVar5 = ObjIsMecc(iVar4);
 
   if ((iVar5 == 0) || ((*(uint *)(iVar4 + 0xd8) & 0x8000000) == 0)) {
 
@@ -9662,7 +9662,7 @@ int FUN_004aa230(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
   if ((*(byte *)(puVar7 + 1) & 1) != 0) {
 
-    iVar4 = FUN_004a6160(*(undefined4 *)(local_130 + 0x1d0));
+    iVar4 = ObjIsMecc(*(undefined4 *)(local_130 + 0x1d0));
 
     if (iVar4 != 0) {
 
@@ -9783,7 +9783,7 @@ int FUN_004aa550(int param_1,undefined4 *param_2,undefined4 param_3,undefined4 p
 
   if ((*(byte *)(param_2 + 1) & 1) != 0) {
 
-    iVar4 = FUN_004a6160(*(undefined4 *)(iVar1 + 0x1d0));
+    iVar4 = ObjIsMecc(*(undefined4 *)(iVar1 + 0x1d0));
 
     if (iVar4 != 0) {
 
@@ -10779,7 +10779,7 @@ bool kabuto_punch_check(int param_1)
 
   if (iVar1 == 0) {
 
-    iVar1 = FUN_004a6160(param_1);
+    iVar1 = ObjIsMecc(param_1);
 
     if (iVar1 == 0) {
 
@@ -10922,7 +10922,7 @@ void reaper_ability_3dsound(int param_1)
 
   if (*(int *)(iVar4 + 0xc) != 0) {
 
-    iVar3 = FUN_004a6160(*(int *)(iVar4 + 0xc));
+    iVar3 = ObjIsMecc(*(int *)(iVar4 + 0xc));
 
     if (iVar3 == 0) {
 
@@ -11105,9 +11105,9 @@ void FUN_004aca20(int param_1,int param_2)
 
   if (((param_2 == 0) ||
 
-      ((((((iVar4 = FUN_004a6160(param_2), iVar4 == 0 && (iVar4 = FUN_004a6180(iVar3), iVar4 == 0))
+      ((((((iVar4 = ObjIsMecc(param_2), iVar4 == 0 && (iVar4 = FUN_004a6180(iVar3), iVar4 == 0)) &&
 
-          && (*(int *)(iVar3 + 4) != 8)) &&
+          (*(int *)(iVar3 + 4) != 8)) &&
 
          ((*(int *)(iVar3 + 4) != 0xb || (iVar4 = FUN_004ef510(iVar3), iVar4 == 0)))) &&
 
@@ -11165,7 +11165,7 @@ void FUN_004aca20(int param_1,int param_2)
 
   *(undefined4 *)(iVar6 + 0x10) = 1;
 
-  iVar4 = FUN_004a6160(iVar3);
+  iVar4 = ObjIsMecc(iVar3);
 
   if (iVar4 == 0) {
 
@@ -11462,7 +11462,7 @@ undefined4 FUN_004adbf0(int param_1,int param_2)
 
     iVar2 = FUN_004a6220(param_1);
 
-    if (((iVar2 == 0) && (iVar2 = FUN_004a6160(param_1), iVar2 == 0)) &&
+    if (((iVar2 == 0) && (iVar2 = ObjIsMecc(param_1), iVar2 == 0)) &&
 
        (*(int *)(param_1 + 0x1e0) != 0x5f)) {
 
@@ -11482,7 +11482,7 @@ undefined4 FUN_004adbf0(int param_1,int param_2)
 
     else {
 
-      iVar2 = FUN_004a6160(param_1);
+      iVar2 = ObjIsMecc(param_1);
 
       if ((iVar2 == 0) || (*(float *)(param_1 + 0x278) != 0.0)) {
 
@@ -11778,7 +11778,7 @@ void read_objects_bin_PS2(void)
 
   BinFileRead();
 
-  piVar9 = (int *)FUN_0053a700();
+  piVar9 = (int *)MemAllocMsg();
 
   BinFileRead();
 
@@ -11786,7 +11786,7 @@ void read_objects_bin_PS2(void)
 
   piStack0000001c = piVar9 + 1;
 
-  puStack00000010 = (undefined4 *)FUN_0053a700();
+  puStack00000010 = (undefined4 *)MemAllocMsg();
 
   puVar10 = &DAT_00632d4c;
 
@@ -11830,7 +11830,7 @@ void read_objects_bin_PS2(void)
 
       piStack0000001c = piStack0000001c + 1;
 
-      FUN_00542f27();
+      crt_sprintf();
 
       puVar10 = (undefined4 *)object_clone_objectset();
 
@@ -11838,7 +11838,7 @@ void read_objects_bin_PS2(void)
 
       *puVar10 = uVar11;
 
-      FUN_00542f27();
+      crt_sprintf();
 
       FUN_00405130();
 
@@ -11868,7 +11868,7 @@ void read_objects_bin_PS2(void)
 
   if (0 < iVar19) {
 
-    in_stack_00000030 = (undefined4 *)FUN_0053a700();
+    in_stack_00000030 = (undefined4 *)MemAllocMsg();
 
     puVar10 = &DAT_00632d50;
 
@@ -11970,7 +11970,7 @@ LAB_004ae6c3:
 
                           if (9 < iStack00000004) {
 
-                            FUN_00542f27();
+                            crt_sprintf();
 
                             FUN_0051ea20();
 
@@ -12014,7 +12014,7 @@ LAB_004ae6c3:
 
                         if (9 < iStack00000004) {
 
-                          FUN_00542f27();
+                          crt_sprintf();
 
                           FUN_0051ea20();
 
@@ -12036,7 +12036,7 @@ LAB_004ae6c3:
 
                       if (9 < iStack00000004) {
 
-                        FUN_00542f27();
+                        crt_sprintf();
 
                         FUN_0051ea20();
 
@@ -12058,7 +12058,7 @@ LAB_004ae6c3:
 
                     if (9 < iStack00000004) {
 
-                      FUN_00542f27();
+                      crt_sprintf();
 
                       FUN_0051ea20();
 
@@ -12072,7 +12072,7 @@ LAB_004ae6c3:
 
                     iStack00000004 = iStack00000004 + 1;
 
-                    FUN_00542f27();
+                    crt_sprintf();
 
                     FUN_0051ea20();
 
@@ -12084,7 +12084,7 @@ LAB_004ae6c3:
 
                   if ((puStack00000010 != (undefined4 *)0x0) && (uVar18 != 0)) {
 
-                    puVar12 = (uint *)FUN_0053a700();
+                    puVar12 = (uint *)MemAllocMsg();
 
                     *(uint **)((int)puStack00000010 + 0x24) = puVar12;
 
@@ -12156,7 +12156,7 @@ LAB_004ae6c3:
 
                   else {
 
-                    FUN_00542f27();
+                    crt_sprintf();
 
                     FUN_0051ea20();
 
@@ -12558,7 +12558,7 @@ LAB_004aed0a:
 
       if (bVar2 != 0xff) {
 
-        FUN_00542f27();
+        crt_sprintf();
 
         FUN_0051ea20();
 
@@ -12570,7 +12570,7 @@ LAB_004aed0a:
 
         if (9 < iStack00000004) {
 
-          FUN_00542f27();
+          crt_sprintf();
 
           FUN_0051ea20();
 
@@ -12652,7 +12652,7 @@ LAB_004aed0a:
 
         puVar10[0x114] = uStack00000008;
 
-        puVar14 = (undefined4 *)FUN_0053a700();
+        puVar14 = (undefined4 *)MemAllocMsg();
 
         puVar10[0x115] = puVar14;
 
@@ -12756,7 +12756,7 @@ LAB_004aed0a:
 
       if (pcStack0000000c != (char *)0x0) {
 
-        puVar14 = (undefined4 *)FUN_0053a700();
+        puVar14 = (undefined4 *)MemAllocMsg();
 
         puVar10[0x117] = puVar14;
 
@@ -12814,7 +12814,7 @@ LAB_004aed0a:
 
                 *(undefined4 *)(uStack00000008 + puVar10[0x117]) = 0xffffffff;
 
-                FUN_00542f27();
+                crt_sprintf();
 
                 FUN_0051ea20();
 
@@ -12844,7 +12844,7 @@ LAB_004aed0a:
 
       if ((puStack00000010 != (undefined4 *)0x0) && (uVar33 != 0)) {
 
-        puVar12 = (uint *)FUN_0053a700();
+        puVar12 = (uint *)MemAllocMsg();
 
         *(uint **)((int)puStack00000010 + 0x24) = puVar12;
 
@@ -12886,7 +12886,7 @@ LAB_004aed0a:
 
   if (0 < iVar19) {
 
-    in_stack_00000020 = (undefined4 *)FUN_0053a700();
+    in_stack_00000020 = (undefined4 *)MemAllocMsg();
 
     puVar10 = &DAT_00632d54;
 
@@ -13088,7 +13088,7 @@ switchD_004af2c0_caseD_54:
 
     uVar13 = *(undefined4 *)((int)pfVar30 + 9);
 
-    puVar14 = (undefined4 *)FUN_0053a700();
+    puVar14 = (undefined4 *)MemAllocMsg();
 
     puVar14[1] = 0;
 
@@ -13198,7 +13198,7 @@ switchD_004af2c0_caseD_54:
 
   case 0xc:
 
-    FUN_00542f27();
+    crt_sprintf();
 
     FUN_00425eb0();
 
@@ -13218,7 +13218,7 @@ switchD_004af2c0_caseD_54:
 
   default:
 
-    FUN_00542f27();
+    crt_sprintf();
 
     FUN_0051ea20();
 
@@ -13746,7 +13746,7 @@ switchD_004af2c0_caseD_2a:
 
   case 0x42:
 
-    FUN_00542f27();
+    crt_sprintf();
 
     FUN_00425eb0();
 
@@ -13764,7 +13764,7 @@ switchD_004af2c0_caseD_2a:
 
     if (pfVar28 == (float *)0x0) {
 
-      FUN_00542f27();
+      crt_sprintf();
 
       FUN_0051ea20();
 
@@ -14438,7 +14438,7 @@ switchD_004af2c0_caseD_2a:
 
   if (0 < (int)puVar10[0x76]) {
 
-    puVar17 = (undefined4 *)FUN_0053a700();
+    puVar17 = (undefined4 *)MemAllocMsg();
 
     puVar10[0x77] = puVar17;
 
@@ -14468,7 +14468,7 @@ switchD_004af2c0_caseD_2a:
 
   if (pcStack0000000c != &stack0x00000ea8) {
 
-    puVar14 = (undefined4 *)FUN_0053a700();
+    puVar14 = (undefined4 *)MemAllocMsg();
 
     puVar10[0x81] = puVar14;
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (254 named) — decompiled, names from PS2 symbols
+ * 351 functions (257 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -211,7 +211,7 @@ int * FUN_005401e0(int param_1)
 
   if (((uint)*(uint **)(param_1 + 0xc) & -(uint)(*(uint **)(param_1 + 0xc) != puVar1)) == 0) {
 
-    FUN_00540250(param_1,*(undefined2 *)(param_1 + 4));
+    MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi(param_1,*(undefined2 *)(param_1 + 4));
 
   }
 
@@ -245,12 +245,12 @@ int * FUN_005401e0(int param_1)
 
 }
 
-/* ===== FUN_00540250 @ 0x00540250 ===== */
+/* ===== MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi @ 0x00540250 ===== */
 /* PS2 candidate: MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi (conf 0.695) */
 
 
 
-undefined4 FUN_00540250(undefined4 *param_1,int param_2)
+undefined4 MAP_ChunksAlloc__FP14_MAP_ChunkPoolUi(undefined4 *param_1,int param_2)
 
 
 
@@ -2619,12 +2619,12 @@ longlong __ftol(void)
 
 }
 
-/* ===== FUN_00542f27 @ 0x00542F27 ===== */
+/* ===== crt_sprintf @ 0x00542F27 ===== */
 /* PS2 candidate: memset (conf 0.689) */
 
 
 
-undefined4 FUN_00542f27(undefined1 *param_1,undefined4 param_2)
+undefined4 crt_sprintf(undefined1 *param_1,undefined4 param_2)
 
 
 
@@ -2843,7 +2843,7 @@ void __rt_error_box(char *param_1,char *param_2)
 
   }
 
-  FUN_00546a8c();
+  crt_fatal_exit();
 
   return;
 
@@ -10794,12 +10794,12 @@ undefined4 crt_va_arg_w(int *param_1)
 
 }
 
-/* ===== FUN_00546a8c @ 0x00546A8C ===== */
+/* ===== crt_fatal_exit @ 0x00546A8C ===== */
 /* PS2 candidate: _resetGsDmaPackets__Fv (conf 0.679) */
 
 
 
-void FUN_00546a8c(void)
+void crt_fatal_exit(void)
 
 
 

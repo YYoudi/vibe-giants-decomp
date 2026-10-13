@@ -44,9 +44,9 @@ void FUN_00401050(int param_1,undefined4 *param_2)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -139,9 +139,9 @@ void ai_move_goals_free(int param_1,undefined4 *param_2,undefined4 param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -191,9 +191,9 @@ void ai_move_goals_free(int param_1,undefined4 *param_2,undefined4 param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -286,9 +286,9 @@ void main_ai_move_00401310(int param_1,undefined4 *param_2,undefined4 param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -338,9 +338,9 @@ void main_ai_move_00401310(int param_1,undefined4 *param_2,undefined4 param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -413,9 +413,9 @@ void main_ai_move_004014b0(int param_1,undefined4 *param_2,undefined4 param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -465,9 +465,9 @@ void main_ai_move_004014b0(int param_1,undefined4 *param_2,undefined4 param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -544,9 +544,9 @@ void FUN_00401610(int param_1,undefined4 *param_2)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -619,9 +619,9 @@ void main_ai_move_004016d0(int param_1,undefined4 *param_2)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -694,9 +694,9 @@ void main_ai_move_00401790(int param_1,undefined4 param_2,undefined4 *param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -771,9 +771,9 @@ void main_ai_move_00401850(int param_1,undefined4 param_2,undefined4 *param_3)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -848,9 +848,9 @@ void main_ai_move_00401910(int param_1,undefined4 param_2)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 
@@ -1203,9 +1203,9 @@ LAB_004026d0:
 
             puVar7 = (undefined4 *)
 
-                     FUN_0053a700(1,0x1f44,s_goals_00554030,
+                     MemAllocMsg(1,0x1f44,s_goals_00554030,
 
-                                  s_C__Giants_source_main_ai_move_c_00554038,0x41b);
+                                 s_C__Giants_source_main_ai_move_c_00554038,0x41b);
 
             *puVar7 = DAT_00584198;
 
@@ -1528,9 +1528,9 @@ void main_ai_move_004029a0(int param_1,undefined4 param_2)
 
           puVar3 = (undefined4 *)
 
-                   FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038
+                   MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,
 
-                                ,0x41b);
+                               0x41b);
 
           *puVar3 = DAT_00584198;
 
@@ -1699,9 +1699,9 @@ void main_ai_move_00402b90(int param_1,undefined4 param_2,undefined4 param_3)
 
           puVar3 = (undefined4 *)
 
-                   FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038
+                   MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,
 
-                                ,0x41b);
+                               0x41b);
 
           *puVar3 = DAT_00584198;
 
@@ -2122,9 +2122,9 @@ LAB_00403218:
 
       puVar9 = (undefined4 *)
 
-               FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,
+               MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,
 
-                            0x41b);
+                           0x41b);
 
       *puVar9 = DAT_00584198;
 
@@ -2197,9 +2197,9 @@ undefined4 * main_ai_move_004033d0(void)
 
     puVar1 = (undefined4 *)
 
-             FUN_0053a700(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b
+             MemAllocMsg(1,0x1f44,s_goals_00554030,s_C__Giants_source_main_ai_move_c_00554038,0x41b)
 
-                         );
+    ;
 
     *puVar1 = DAT_00584198;
 

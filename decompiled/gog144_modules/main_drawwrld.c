@@ -326,9 +326,9 @@ void main_drawwrld_004329b0(void)
 
     (**(code **)(iVar1 + 0xc))(iVar1,uVar3);
 
-    uVar3 = FUN_0053a700(9,iVar6 * 0xc,s_HBlandscape_renderer_index_buffe_00556f7e + 2,
+    uVar3 = MemAllocMsg(9,iVar6 * 0xc,s_HBlandscape_renderer_index_buffe_00556f7e + 2,
 
-                         s_C__Giants_source_main_drawwrld_c_00556fa0,0x436);
+                        s_C__Giants_source_main_drawwrld_c_00556fa0,0x436);
 
     *(undefined4 *)((int)&DAT_00656520 + iVar2) = uVar3;
 
@@ -511,11 +511,11 @@ uint * main_drawwrld_00435170(int param_1,uint param_2,uint param_3)
 
   }
 
-  puVar3 = (uint *)FUN_0053a700(9,iVar2 + 0x80 + (param_1 * 6 + param_2 * 0xc) * 2,
+  puVar3 = (uint *)MemAllocMsg(9,iVar2 + 0x80 + (param_1 * 6 + param_2 * 0xc) * 2,
 
-                                s_Shadow_Pool_00556fc8,s_C__Giants_source_main_drawwrld_c_00556fa0,
+                               s_Shadow_Pool_00556fc8,s_C__Giants_source_main_drawwrld_c_00556fa0,
 
-                                0xb57);
+                               0xb57);
 
   puVar5 = puVar3;
 

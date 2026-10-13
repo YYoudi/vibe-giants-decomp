@@ -22,9 +22,9 @@ void main_drawwatr_00430f30(float param_1)
 
   if (*(int *)(DAT_00632d3c + 0x10) == 0) {
 
-    uVar2 = FUN_0053a700(9,*(int *)(DAT_00632d3c + 4) << 3,s_seauv_00556740,
+    uVar2 = MemAllocMsg(9,*(int *)(DAT_00632d3c + 4) << 3,s_seauv_00556740,
 
-                         s_C__Giants_source_main_drawwatr_c_00556748,0xf);
+                        s_C__Giants_source_main_drawwatr_c_00556748,0xf);
 
     *(undefined4 *)(DAT_00632d3c + 0x10) = uVar2;
 
@@ -273,7 +273,7 @@ void main_drawwatr_00431700(void)
 
     fStack_1c = 0.0;
 
-    FUN_0050a810(&fStack_24,&fStack_20,&fStack_1c);
+    normalize__FPfN20(&fStack_24,&fStack_20,&fStack_1c);
 
     fStack_24 = fStack_24 * 12500.0;
 
@@ -419,7 +419,7 @@ void main_drawwatr_00431700(void)
 
       fStack_20 = 6.161394e-39;
 
-      uVar12 = FUN_0053a700();
+      uVar12 = MemAllocMsg();
 
       *(undefined4 *)(DAT_00632d3c + 0x10) = uVar12;
 

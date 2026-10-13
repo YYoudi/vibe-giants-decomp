@@ -46,15 +46,15 @@ int main_status_00500520(int *param_1)
 
     param_1[1] = iVar1;
 
-    iVar2 = FUN_0053a700(0x1b,iVar1 * 4,s_Status_Screen_Objdata_array_0057a730,
+    iVar2 = MemAllocMsg(0x1b,iVar1 * 4,s_Status_Screen_Objdata_array_0057a730,
 
-                         s_C__Giants_source_main_STATUS_C_0057a74c,0x1de2);
+                        s_C__Giants_source_main_STATUS_C_0057a74c,0x1de2);
 
     param_1[2] = iVar2;
 
-    iVar2 = FUN_0053a700(0x1b,iVar1 * 4,s_Status_Screen_Plist_array_0057a714,
+    iVar2 = MemAllocMsg(0x1b,iVar1 * 4,s_Status_Screen_Plist_array_0057a714,
 
-                         s_C__Giants_source_main_STATUS_C_0057a74c,0x1de3);
+                        s_C__Giants_source_main_STATUS_C_0057a74c,0x1de3);
 
     param_1[3] = iVar2;
 
@@ -72,7 +72,7 @@ int main_status_00500520(int *param_1)
 
         if (*(int *)(iVar2 + param_1[2]) == 0) {
 
-          FUN_00542f27(&DAT_00657400,s_Error__missing_objdata_in_status_0057a6dc,*puVar5);
+          crt_sprintf(&DAT_00657400,s_Error__missing_objdata_in_status_0057a6dc,*puVar5);
 
           FUN_0051ea20(&DAT_00657400);
 
@@ -106,11 +106,11 @@ int main_status_00500520(int *param_1)
 
         if (iVar1 != 0) {
 
-          uVar3 = FUN_0053a700(0x1b,*(int *)(iVar1 + 0x30) * 0x38,
+          uVar3 = MemAllocMsg(0x1b,*(int *)(iVar1 + 0x30) * 0x38,
 
-                               s_Status_Screen_P3DN3D_List_0057a6c0,
+                              s_Status_Screen_P3DN3D_List_0057a6c0,
 
-                               s_C__Giants_source_main_STATUS_C_0057a74c,0x1dfc);
+                              s_C__Giants_source_main_STATUS_C_0057a74c,0x1dfc);
 
           *(undefined4 *)(param_1[3] + iVar2 * 4) = uVar3;
 

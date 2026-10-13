@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (26 named) — decompiled, names from PS2 symbols
+ * 53 functions (27 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -1172,12 +1172,12 @@ void camera_ref_anode(int param_1,undefined4 param_2,int param_3,int *param_4)
 
 }
 
-/* ===== FUN_00466980 @ 0x00466980 ===== */
+/* ===== teammecc_get_slavecount @ 0x00466980 ===== */
 /* PS2 candidate: kabuto_get_kbos (conf 0.309) */
 
 
 
-undefined4 FUN_00466980(int param_1,int param_2)
+undefined4 teammecc_get_slavecount(int param_1,int param_2)
 
 
 
@@ -1514,7 +1514,7 @@ void FUN_00469860(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     else {
 
-      fVar2 = (float10)FUN_004d5780(0,0x3f800000);
+      fVar2 = (float10)rndfloatrange(0,0x3f800000);
 
       *(float *)(param_1 + 0x14) = (float)fVar2;
 
@@ -2501,7 +2501,7 @@ void FUN_0046aeb0(int param_1)
 
   }
 
-  fVar7 = (float10)FUN_004d5780(0x41700000,0x41f00000);
+  fVar7 = (float10)rndfloatrange(0x41700000,0x41f00000);
 
   *(float *)(param_1 + 0xf0) = (float)fVar7;
 
@@ -2563,15 +2563,15 @@ void FUN_0046aeb0(int param_1)
 
       }
 
-      fVar7 = (float10)FUN_004d5780(0xc20c0000,0x420c0000);
+      fVar7 = (float10)rndfloatrange(0xc20c0000,0x420c0000);
 
       *(float *)(param_1 + 0x128) = (float)fVar7;
 
-      fVar7 = (float10)FUN_004d5780(0xc20c0000,0x420c0000);
+      fVar7 = (float10)rndfloatrange(0xc20c0000,0x420c0000);
 
       *(float *)(param_1 + 300) = (float)fVar7;
 
-      fVar7 = (float10)FUN_004d5780(0x41700000,0x41c80000);
+      fVar7 = (float10)rndfloatrange(0x41700000,0x41c80000);
 
       *(float *)(param_1 + 0x130) = (float)fVar7;
 
@@ -2583,7 +2583,7 @@ void FUN_0046aeb0(int param_1)
 
       *(float *)(param_1 + 200) = (float)fVar7;
 
-      fVar7 = (float10)FUN_004d5780(0x3f800000,0x40400000);
+      fVar7 = (float10)rndfloatrange(0x3f800000,0x40400000);
 
       *(float *)(param_1 + 0xec) = (float)fVar7;
 

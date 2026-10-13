@@ -26,7 +26,7 @@ void main_fx_004470b0(undefined4 param_1)
 
   DAT_0059ce58 = 0;
 
-  FUN_00542f27(local_2c,s__s_bin_00554384,param_1);
+  crt_sprintf(local_2c,s__s_bin_00554384,param_1);
 
   iVar1 = stream_player_start(local_2c);
 
@@ -54,9 +54,9 @@ void main_fx_004470b0(undefined4 param_1)
 
   BinFileRead(iVar1,&DAT_0059ce60,4);
 
-  DAT_0059ce6c = FUN_0053a700(0xc,param_1,s_fx_bin_00558838,s_C__Giants_source_Main_fx_c_00558840,
+  DAT_0059ce6c = MemAllocMsg(0xc,param_1,s_fx_bin_00558838,s_C__Giants_source_Main_fx_c_00558840,
 
-                              0xbe);
+                             0xbe);
 
   BinFileRead(iVar1,DAT_0059ce6c,param_1);
 
@@ -146,7 +146,7 @@ int fx_setupWeather__Fi(undefined4 param_1)
 
   puVar3 = (undefined4 *)
 
-           FUN_0053a700(0xc,0xa0,s_fx_weather_0055888c,s_C__Giants_source_Main_fx_c_00558840,0x13e);
+           MemAllocMsg(0xc,0xa0,s_fx_weather_0055888c,s_C__Giants_source_Main_fx_c_00558840,0x13e);
 
   *(undefined4 **)(iVar1 + 0x100) = puVar3;
 
@@ -343,7 +343,7 @@ undefined4 * fx_get_free_effect__Fv(void)
 
     }
 
-    FUN_00542f27(local_240,s__s_lite_00558c74,in_stack_00000004);
+    crt_sprintf(local_240,s__s_lite_00558c74,in_stack_00000004);
 
     iVar1 = 0;
 
@@ -465,7 +465,7 @@ LAB_004482f1:
 
 LAB_0044831d:
 
-    FUN_00542f27(local_240,s__s_lite_00558c74,piVar4);
+    crt_sprintf(local_240,s__s_lite_00558c74,piVar4);
 
     iVar1 = 0;
 
@@ -535,9 +535,9 @@ LAB_00448378:
 
       puVar6 = (undefined4 *)
 
-               FUN_0053a700(0xc,0x5144,s_fx_list_00558c4c,s_C__Giants_source_Main_fx_c_00558840,
+               MemAllocMsg(0xc,0x5144,s_fx_list_00558c4c,s_C__Giants_source_Main_fx_c_00558840,0x4c2
 
-                            0x4c2);
+                          );
 
       *puVar6 = DAT_0059ce74;
 
@@ -763,7 +763,7 @@ LAB_004485e3:
 
 LAB_0044838a:
 
-  FUN_00542f27(local_200,s_fx_create_failed_to_find___s__00558c54,in_stack_00000004);
+  crt_sprintf(local_200,s_fx_create_failed_to_find___s__00558c54,in_stack_00000004);
 
   FUN_0051ea20(local_200);
 
@@ -879,7 +879,7 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
   if (param_2 == 0) {
 
-    FUN_00542f27(local_200,s_Failed_to_emit_particle_for_fx___00559708,DAT_0059ce5c + 0x20);
+    crt_sprintf(local_200,s_Failed_to_emit_particle_for_fx___00559708,DAT_0059ce5c + 0x20);
 
     FUN_0051ea20(local_200);
 
@@ -919,9 +919,9 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
             puVar5 = (undefined4 *)
 
-                     FUN_0053a700(0xc,0x4dc,s_fx_emitter_00559784,
+                     MemAllocMsg(0xc,0x4dc,s_fx_emitter_00559784,
 
-                                  s_C__Giants_source_Main_fx_c_00558840,0xbd3);
+                                 s_C__Giants_source_Main_fx_c_00558840,0xbd3);
 
             *(undefined4 **)(iVar4 + 0x104) = puVar5;
 
@@ -937,9 +937,9 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
           if (9 < *(int *)(*(int *)(iVar4 + 0x104) + 400)) {
 
-            FUN_00542f27(local_200,s_Failed_to_emit_particle_for_fx___00559740,DAT_0059ce5c + 0x20,
+            crt_sprintf(local_200,s_Failed_to_emit_particle_for_fx___00559740,DAT_0059ce5c + 0x20,10
 
-                         10);
+                       );
 
             FUN_0051ea20(local_200);
 
@@ -1051,7 +1051,7 @@ void fx_setupEmitter__FP6FxDataP10FXSTACKTAGifiiiiii
 
   }
 
-  FUN_00542f27(local_200,s_Failed_to_emit_particle_for_fx___00559790,DAT_0059ce5c + 0x20,param_3);
+  crt_sprintf(local_200,s_Failed_to_emit_particle_for_fx___00559790,DAT_0059ce5c + 0x20,param_3);
 
   FUN_0051ea20(local_200);
 
@@ -1080,7 +1080,7 @@ void fx_setupTracer__FP10FXSTACKTAG(int param_1)
 
   if (param_1 == 0) {
 
-    FUN_00542f27(local_200,s_Failed_to_setup_tracer_fx___s____005597cc,DAT_0059ce5c + 0x20);
+    crt_sprintf(local_200,s_Failed_to_setup_tracer_fx___s____005597cc,DAT_0059ce5c + 0x20);
 
     FUN_0051ea20(local_200);
 
@@ -1094,9 +1094,9 @@ void fx_setupTracer__FP10FXSTACKTAG(int param_1)
 
       puVar3 = (undefined4 *)
 
-               FUN_0053a700(0xc,0x14,s_fx_tracer_00559800,s_C__Giants_source_Main_fx_c_00558840,
+               MemAllocMsg(0xc,0x14,s_fx_tracer_00559800,s_C__Giants_source_Main_fx_c_00558840,0xc15
 
-                            0xc15);
+                          );
 
       *(undefined4 **)(iVar2 + 0xf8) = puVar3;
 
@@ -1171,7 +1171,7 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(int param_1,int param_2,undefined
 
   if (param_1 == 0) {
 
-    FUN_00542f27(local_200,s_Failed_to_setup_texture_animatio_00559a00,DAT_0059ce5c + 0x20);
+    crt_sprintf(local_200,s_Failed_to_setup_texture_animatio_00559a00,DAT_0059ce5c + 0x20);
 
     FUN_0051ea20(local_200);
 
@@ -1181,9 +1181,9 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(int param_1,int param_2,undefined
 
     *(uint *)(*(int *)(param_1 + 4) + 0xe0) = *(uint *)(*(int *)(param_1 + 4) + 0xe0) | 0x10000;
 
-    uVar1 = FUN_0053a700(0xc,0x14,s_Fx_Texture_Animation_00559a60,
+    uVar1 = MemAllocMsg(0xc,0x14,s_Fx_Texture_Animation_00559a60,
 
-                         s_C__Giants_source_Main_fx_c_00558840,0xd25);
+                        s_C__Giants_source_Main_fx_c_00558840,0xd25);
 
     *(undefined4 *)(*(int *)(param_1 + 4) + 0x2f4) = uVar1;
 
@@ -1195,9 +1195,9 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(int param_1,int param_2,undefined
 
     *(undefined4 *)(*(int *)(*(int *)(param_1 + 4) + 0x2f4) + 0x10) = 0;
 
-    uVar1 = FUN_0053a700(0xc,param_2 * 4,s_Fx_Texture_Frames_00559a4c,
+    uVar1 = MemAllocMsg(0xc,param_2 * 4,s_Fx_Texture_Frames_00559a4c,
 
-                         s_C__Giants_source_Main_fx_c_00558840,0xd2b);
+                        s_C__Giants_source_Main_fx_c_00558840,0xd2b);
 
     **(undefined4 **)(*(int *)(param_1 + 4) + 0x2f4) = uVar1;
 
@@ -1205,9 +1205,9 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(int param_1,int param_2,undefined
 
          *(undefined4 *)(*(int *)(*(int *)(*(int *)(param_1 + 4) + 8) + 0x400) + 0x90);
 
-    FUN_00542f27(local_280,&DAT_00555df0,
+    crt_sprintf(local_280,&DAT_00555df0,
 
-                 **(undefined4 **)(*(int *)(*(int *)(*(int *)(param_1 + 4) + 8) + 0x400) + 0x90));
+                **(undefined4 **)(*(int *)(*(int *)(*(int *)(param_1 + 4) + 8) + 0x400) + 0x90));
 
     for (pcVar2 = local_280; (*pcVar2 < '0' || ('9' < *pcVar2)); pcVar2 = pcVar2 + 1) {
 
@@ -1221,7 +1221,7 @@ void fx_setupTextureAnimtion__FP10FXSTACKTAGif(int param_1,int param_2,undefined
 
       do {
 
-        FUN_00542f27(local_200,s__s_02d_00559a44,local_280,iVar3);
+        crt_sprintf(local_200,s__s_02d_00559a44,local_280,iVar3);
 
         uVar1 = main_texture_00508750(local_200);
 
@@ -1282,9 +1282,9 @@ void fx_setupVerticleFade__FP10FXSTACKTAGfffff
 
       puVar4 = (undefined4 *)
 
-               FUN_0053a700(0xc,0x78,s_fx_vfade_00559c1c,s_C__Giants_source_Main_fx_c_00558840,0xe2c
+               MemAllocMsg(0xc,0x78,s_fx_vfade_00559c1c,s_C__Giants_source_Main_fx_c_00558840,0xe2c)
 
-                           );
+      ;
 
       *(undefined4 **)(iVar3 + 0xfc) = puVar4;
 
@@ -1338,7 +1338,7 @@ void fx_setupVerticleFade__FP10FXSTACKTAGfffff
 
   }
 
-  FUN_00542f27(local_200,pcVar6,DAT_0059ce5c + 0x20);
+  crt_sprintf(local_200,pcVar6,DAT_0059ce5c + 0x20);
 
   FUN_0051ea20(local_200);
 

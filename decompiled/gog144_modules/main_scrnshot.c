@@ -64,9 +64,9 @@ void main_scrnshot_004ebae0(void)
 
   
 
-  iVar1 = FUN_0053a700(0x13,DAT_00632e88 * DAT_00632e84 * 3,s_scrnshot_00561b74,
+  iVar1 = MemAllocMsg(0x13,DAT_00632e88 * DAT_00632e84 * 3,s_scrnshot_00561b74,
 
-                       s_C__Giants_source_main_scrnshot_c_00561b80,99);
+                      s_C__Giants_source_main_scrnshot_c_00561b80,99);
 
   (**(code **)(DAT_00656420 + 0xe0))(DAT_00656420,iVar1);
 
@@ -96,7 +96,7 @@ void main_scrnshot_004ebae0(void)
 
   }
 
-  FUN_00542f27(auStack_138,s_GIANT_3_3d_TGA_00561b58,iVar5 + 1);
+  crt_sprintf(auStack_138,s_GIANT_3_3d_TGA_00561b58,iVar5 + 1);
 
   uStack_15c = CONCAT22((undefined2)DAT_00632e88,(short)DAT_00632e84);
 

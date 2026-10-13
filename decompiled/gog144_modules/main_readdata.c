@@ -46,9 +46,9 @@ void main_readdata_004adfa0(void)
 
     BinFileRead(iVar3,&local_8,4);
 
-    pcVar4 = (char *)FUN_0053a700(0x13,local_8,&DAT_0055fe48,
+    pcVar4 = (char *)MemAllocMsg(0x13,local_8,&DAT_0055fe48,
 
-                                  s_C__Giants_source_main_readdata_c_0055fe50,0x25);
+                                 s_C__Giants_source_main_readdata_c_0055fe50,0x25);
 
     BinFileRead(iVar3,pcVar4,local_8);
 

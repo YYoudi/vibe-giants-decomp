@@ -34,13 +34,13 @@ void FUN_00490860(void)
 
     if (*(int *)(iVar4 + 0x4550 + DAT_006330e4) == 2) {
 
-      FUN_00542f27(local_100,s_wm__s_bin_0055c6d8,iVar4 + 0x4558 + DAT_006330e4);
+      crt_sprintf(local_100,s_wm__s_bin_0055c6d8,iVar4 + 0x4558 + DAT_006330e4);
 
       iVar1 = stream_player_start(local_100);
 
       if (iVar1 == 0) {
 
-        FUN_00542f27(local_180,s_Mission___s__Can_t_be_found_0055c6bc,local_100);
+        crt_sprintf(local_180,s_Mission___s__Can_t_be_found_0055c6bc,local_100);
 
         FUN_0051ea20(local_180);
 
@@ -50,9 +50,9 @@ void FUN_00490860(void)
 
         uVar2 = FUN_00517990(iVar1);
 
-        uVar3 = FUN_0053a700(0x16,uVar2,s_mission_data_0055c68c,
+        uVar3 = MemAllocMsg(0x16,uVar2,s_mission_data_0055c68c,
 
-                             s_C__Giants_source_Main_mission_c_0055c69c,0xa6);
+                            s_C__Giants_source_Main_mission_c_0055c69c,0xa6);
 
         *(undefined4 *)(iVar4 + 0x457c + DAT_006330e4) = uVar3;
 

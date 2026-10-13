@@ -336,7 +336,7 @@ void calc_tri_weighted_plane(float *param_1,float *param_2,float *param_3,float 
 
             (*param_3 - *param_1) * (param_2[1] - param_1[1]);
 
-  FUN_0050a810(param_4,pfVar1,pfVar2);
+  normalize__FPfN20(param_4,pfVar1,pfVar2);
 
   param_4[3] = -(*pfVar1 * param_1[1] + param_1[2] * *pfVar2 + *param_1 * *param_4);
 
@@ -1838,7 +1838,7 @@ void FUN_00452490(int *param_1,int *param_2)
 
   }
 
-  iVar2 = FUN_004a6160(DAT_00632a88);
+  iVar2 = ObjIsMecc(DAT_00632a88);
 
   if ((iVar2 == 0) && (iVar2 = FUN_004a6180(DAT_00632a88), iVar2 == 0)) {
 
@@ -1928,7 +1928,7 @@ void FUN_00452490(int *param_1,int *param_2)
 
   DAT_0059d858 = 0xffffffff;
 
-  iVar2 = FUN_004a6160(DAT_00632a88);
+  iVar2 = ObjIsMecc(DAT_00632a88);
 
   if (iVar2 == 0) {
 
@@ -2274,7 +2274,7 @@ LAB_0045282a:
 
   BinFileCreateWrite(0x42700000);
 
-  iVar2 = FUN_004a6160(DAT_00632a88);
+  iVar2 = ObjIsMecc(DAT_00632a88);
 
   DAT_0063291c = 10 - (uint)(iVar2 != 0);
 
@@ -3788,7 +3788,7 @@ void reaper_spell_big(int param_1,undefined4 param_2,undefined4 param_3,byte *pa
 
       }
 
-      iVar2 = FUN_004a6160(iVar3);
+      iVar2 = ObjIsMecc(iVar3);
 
       if (iVar2 != 0) {
 
@@ -3927,7 +3927,7 @@ undefined4 FUN_00455070(int param_1,int param_2,float param_3)
 
     local_4 = -*(float *)(param_1 + 700);
 
-    FUN_0050a810(&local_c,&local_8,&local_4);
+    normalize__FPfN20(&local_c,&local_8,&local_4);
 
     local_18 = *(float *)(param_2 + 0xa0) - *(float *)(param_1 + 0xa0);
 
@@ -3935,7 +3935,7 @@ undefined4 FUN_00455070(int param_1,int param_2,float param_3)
 
     local_10 = *(float *)(param_2 + 0xa8) - *(float *)(param_1 + 0xa8);
 
-    FUN_0050a810(&local_18,&local_14,&local_10);
+    normalize__FPfN20(&local_18,&local_14,&local_10);
 
     FUN_00516290(&local_c,&local_18);
 
@@ -4852,7 +4852,7 @@ LAB_00455d20:
 
     *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x20400000;
 
-    iVar3 = FUN_004a6160(param_1);
+    iVar3 = ObjIsMecc(param_1);
 
     if (iVar3 != 0) {
 
@@ -5439,7 +5439,7 @@ int FUN_00456470(int param_1,undefined4 param_2,int param_3)
 
   *(undefined4 *)(iVar2 + 0x164) = *(undefined4 *)(iVar2 + 0xa8);
 
-  fVar5 = (float10)FUN_004d5780(0x41200000,0x41f00000);
+  fVar5 = (float10)rndfloatrange(0x41200000,0x41f00000);
 
   *(float *)(iVar2 + 0xec) = (float)fVar5;
 
@@ -5505,7 +5505,7 @@ int FUN_00456470(int param_1,undefined4 param_2,int param_3)
 
       *(undefined4 *)(iVar1 + 0x4c) = 0x3e4ccccd;
 
-      fVar5 = (float10)FUN_004d5780(0x41200000,0x41f00000);
+      fVar5 = (float10)rndfloatrange(0x41200000,0x41f00000);
 
       *(float *)(iVar1 + 0x54) = (float)fVar5;
 
@@ -5695,7 +5695,7 @@ void FUN_00456a10(int param_1,float param_2,float param_3,int param_4,int param_
 
   if (0.001 < local_24 * local_24 + local_20 * local_20 + local_1c * local_1c) {
 
-    FUN_0050a810(&local_24,&local_20,&local_1c);
+    normalize__FPfN20(&local_24,&local_20,&local_1c);
 
     if (100.0 < param_2) {
 
@@ -5957,7 +5957,7 @@ void obj_damage_apply(int param_1,undefined4 param_2,int param_3,int param_4,und
 
       if (((*(int *)(param_4 + 0x274) != 0) &&
 
-          (iVar2 = FUN_004a6160(*(int *)(param_4 + 0x274)), iVar2 != 0)) &&
+          (iVar2 = ObjIsMecc(*(int *)(param_4 + 0x274)), iVar2 != 0)) &&
 
          (*(int *)(*(int *)(param_4 + 0x274) + 0x174) != 0)) {
 
@@ -6024,7 +6024,7 @@ void FUN_00457100(int param_1,undefined4 param_2,int param_3,int param_4,undefin
 
     if (((*(int *)(param_4 + 0x274) != 0) &&
 
-        (iVar2 = FUN_004a6160(*(int *)(param_4 + 0x274)), iVar2 != 0)) &&
+        (iVar2 = ObjIsMecc(*(int *)(param_4 + 0x274)), iVar2 != 0)) &&
 
        (*(int *)(*(int *)(param_4 + 0x274) + 0x174) != 0)) {
 
@@ -6664,7 +6664,7 @@ bool FUN_00457bd0(int param_1,undefined4 param_2)
 
   
 
-  iVar1 = FUN_004a6160(param_1);
+  iVar1 = ObjIsMecc(param_1);
 
   if ((iVar1 != 0) && (iVar1 = FUN_004a90d0(param_2), iVar1 == 4)) {
 
@@ -7370,7 +7370,7 @@ int FUN_00458350(int param_1,int param_2)
 
   iVar7 = 0;
 
-  iVar3 = FUN_004a6160(param_1);
+  iVar3 = ObjIsMecc(param_1);
 
   if (iVar3 == 0) {
 
@@ -7625,7 +7625,7 @@ undefined4 FUN_004586e0(int param_1)
 
   
 
-  iVar1 = FUN_004a6160(param_1);
+  iVar1 = ObjIsMecc(param_1);
 
   if (iVar1 != 0) {
 
@@ -8232,7 +8232,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
   uVar1 = *param_2;
 
-  iVar3 = FUN_004a6160(param_1);
+  iVar3 = ObjIsMecc(param_1);
 
   if (iVar3 == 0) {
 
@@ -8458,7 +8458,7 @@ bool FUN_00459540(int param_1,uint *param_2)
 
       param_1 = 0;
 
-      FUN_0050c950(&param_2,&param_1,*(undefined4 *)(iVar6 + 0x18c));
+      turret_count_portables(&param_2,&param_1,*(undefined4 *)(iVar6 + 0x18c));
 
       if (4 < (int)param_2) {
 
@@ -8633,7 +8633,7 @@ void inv_award_item(int param_1,int param_2,int param_3,int param_4,uint param_5
 
   
 
-  iVar2 = FUN_004a6160(param_1);
+  iVar2 = ObjIsMecc(param_1);
 
   if (iVar2 == 0) {
 
@@ -9065,7 +9065,7 @@ LAB_00459ce0:
 
     uVar7 = FUN_004a9130(param_3);
 
-    FUN_00542f27(local_100,uVar6,uVar7);
+    crt_sprintf(local_100,uVar6,uVar7);
 
     FUN_005362d0(local_100,1);
 
@@ -9997,7 +9997,7 @@ void FUN_0045a900(int param_1)
 
   
 
-  iVar2 = FUN_004a6160(param_1);
+  iVar2 = ObjIsMecc(param_1);
 
   if ((iVar2 != 0) && (iVar2 = mecc_in_gyro(param_1), iVar2 != 0)) {
 
@@ -10009,7 +10009,7 @@ void FUN_0045a900(int param_1)
 
   if (((*(int *)(param_1 + 0x210) != 0) && (*(int *)(*(int *)(param_1 + 0x210) + 0x1e0) == 0x5f)) &&
 
-     (iVar2 = FUN_004a6160(param_1), iVar2 != 0)) {
+     (iVar2 = ObjIsMecc(param_1), iVar2 != 0)) {
 
     obj_swap_link(param_1);
 
@@ -10079,7 +10079,7 @@ void FUN_0045a900(int param_1)
 
     iVar2 = FUN_004586e0(param_1);
 
-    iVar3 = FUN_004a6160(param_1);
+    iVar3 = ObjIsMecc(param_1);
 
     if ((iVar3 != 0) && (-1 < iVar2)) {
 
@@ -10089,7 +10089,7 @@ void FUN_0045a900(int param_1)
 
         uVar5 = FUN_004a9130(iVar2);
 
-        FUN_00542f27(local_100,uVar4,uVar5);
+        crt_sprintf(local_100,uVar4,uVar5);
 
         FUN_005362d0(local_100,1);
 
@@ -10134,7 +10134,7 @@ void FUN_0045ab30(int param_1)
 
   if (*(float *)(param_1 + 0x278) < *(float *)(param_1 + 0x1c0)) {
 
-    iVar1 = FUN_004a6160(param_1);
+    iVar1 = ObjIsMecc(param_1);
 
     if (iVar1 != 0) {
 
@@ -10148,7 +10148,7 @@ void FUN_0045ab30(int param_1)
 
           uVar3 = FUN_004a9130(iVar1);
 
-          FUN_00542f27(local_100,uVar2,uVar3);
+          crt_sprintf(local_100,uVar2,uVar3);
 
           FUN_005362d0(local_100,1);
 
@@ -10213,7 +10213,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
   puVar2 = param_1;
 
-  iVar3 = FUN_004a6160(param_1);
+  iVar3 = ObjIsMecc(param_1);
 
   if (iVar3 != 0) {
 
@@ -10225,7 +10225,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
         (iVar3 = WeaponIdGetPresent__FP6OBJECT(puVar2), iVar3 != 3)))) {
 
-      fVar6 = (float10)FUN_004d5780(0,0x40c8f5c3);
+      fVar6 = (float10)rndfloatrange(0,0x40c8f5c3);
 
       fVar1 = (float)fVar6;
 
@@ -10265,7 +10265,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
       if (-1 < iVar5) {
 
-        fVar6 = (float10)FUN_004d5780(0,0x40c8f5c3);
+        fVar6 = (float10)rndfloatrange(0,0x40c8f5c3);
 
         fVar1 = (float)fVar6;
 
@@ -10303,7 +10303,7 @@ void FUN_0045ac50(undefined4 *param_1)
 
     if (-1 < iVar3) {
 
-      fVar6 = (float10)FUN_004d5780(0,0x40c8f5c3);
+      fVar6 = (float10)rndfloatrange(0,0x40c8f5c3);
 
       fVar1 = (float)fVar6;
 
@@ -10970,9 +10970,9 @@ void FUN_0045b7f0(float param_1,float param_2,float param_3,float param_4)
 
       FUN_0053e900(&DAT_0055abbc,&fStack_10,&fStack_28);
 
-      fVar3 = (float10)FUN_004d5780(0,0x43b40000);
+      fVar3 = (float10)rndfloatrange(0,0x43b40000);
 
-      fVar4 = (float10)FUN_004d5780(0,0x41200000);
+      fVar4 = (float10)rndfloatrange(0,0x41200000);
 
       fVar1 = (float)fVar4;
 
@@ -11199,15 +11199,15 @@ LAB_0045bb57:
 
         local_30 = param_3[2];
 
-        fVar6 = (float10)FUN_004d5780(0xc1200000,0x41200000);
+        fVar6 = (float10)rndfloatrange(0xc1200000,0x41200000);
 
         local_38 = (float)(fVar6 + (float10)local_38);
 
-        fVar6 = (float10)FUN_004d5780(0xc1200000,0x41200000);
+        fVar6 = (float10)rndfloatrange(0xc1200000,0x41200000);
 
         local_34 = (float)(fVar6 + (float10)local_34);
 
-        fVar6 = (float10)FUN_004d5780(0xc1200000,0x41200000);
+        fVar6 = (float10)rndfloatrange(0xc1200000,0x41200000);
 
         local_30 = (float)(fVar6 + (float10)local_30);
 

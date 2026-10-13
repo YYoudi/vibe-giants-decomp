@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (48 named) — decompiled, names from PS2 symbols
+ * 105 functions (49 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -817,9 +817,9 @@ void ObjectSetAnim(int param_1,int param_2,uint param_3,undefined4 param_4,undef
 
   if (param_2 == 0xfe) {
 
-    FUN_00542f27(&DAT_00657400,s_Object__d_setting_AnimIdxNONE__a_00554068,
+    crt_sprintf(&DAT_00657400,s_Object__d_setting_AnimIdxNONE__a_00554068,
 
-                 *(undefined4 *)(param_1 + 4));
+                *(undefined4 *)(param_1 + 4));
 
     FUN_0051ea20(&DAT_00657400);
 
@@ -960,9 +960,9 @@ void anim_select_check(int param_1,int param_2)
 
   if (param_2 == 0xfe) {
 
-    FUN_00542f27(&DAT_00657400,s_Object__d_setting_AnimIdxNONE__a_00554068,
+    crt_sprintf(&DAT_00657400,s_Object__d_setting_AnimIdxNONE__a_00554068,
 
-                 *(undefined4 *)(param_1 + 4));
+                *(undefined4 *)(param_1 + 4));
 
     FUN_0051ea20(&DAT_00657400);
 
@@ -1105,9 +1105,9 @@ void anim_select_check2(int param_1,int param_2)
 
   if (param_2 == 0xfe) {
 
-    FUN_00542f27(&DAT_00657400,s_Object__d_setting_AnimIdxNONE__a_00554068,
+    crt_sprintf(&DAT_00657400,s_Object__d_setting_AnimIdxNONE__a_00554068,
 
-                 *(undefined4 *)(param_1 + 4));
+                *(undefined4 *)(param_1 + 4));
 
     FUN_0051ea20(&DAT_00657400);
 
@@ -1599,9 +1599,9 @@ void FUN_00403b50(int param_1)
 
     if (local_7c != (*(undefined4 **)(param_1 + 8))[0x114]) {
 
-      FUN_00542f27(&DAT_00657400,s_Reference_point_mismatch__object_005540c4,
+      crt_sprintf(&DAT_00657400,s_Reference_point_mismatch__object_005540c4,
 
-                   *(undefined4 *)(param_1 + 4),**(undefined4 **)(param_1 + 8));
+                  *(undefined4 *)(param_1 + 4),**(undefined4 **)(param_1 + 8));
 
       FUN_00425eb0(&DAT_00657400);
 
@@ -3154,7 +3154,7 @@ LAB_00404e2f:
 
     fVar8 = (float10)FUN_0050a610(DAT_00632a88 + 0xa0,param_1 + 0xa0);
 
-    if ((fVar8 < (float10)90000.0) && (iVar5 = FUN_004a6160(DAT_00632a88), iVar5 != 0)) {
+    if ((fVar8 < (float10)90000.0) && (iVar5 = ObjIsMecc(DAT_00632a88), iVar5 != 0)) {
 
       _DAT_00632dc0 = 0x3ecccccd;
 
@@ -4250,7 +4250,7 @@ LAB_00407550:
 
           else {
 
-            FUN_00542f27(local_400,s_Army_bin_has_too_many_labels__d__00554480,5);
+            crt_sprintf(local_400,s_Army_bin_has_too_many_labels__d__00554480,5);
 
             FUN_0051ea20(local_400);
 
@@ -4320,9 +4320,9 @@ LAB_00407550:
 
         if (param_3 == 0) {
 
-          fVar24 = (float10)FUN_004d5780(*(float *)((int)pfVar15 + 1),
+          fVar24 = (float10)rndfloatrange(*(float *)((int)pfVar15 + 1),
 
-                                         *(undefined4 *)((int)pfVar15 + 5));
+                                          *(undefined4 *)((int)pfVar15 + 5));
 
           iVar11 = *(int *)(param_1 + 0x100);
 
@@ -4430,7 +4430,7 @@ LAB_00407699:
 
         DAT_005841b4 = pfVar14;
 
-        FUN_00542f27(local_200,s_Army_Bld_System_got_unknown_opco_00554390,uVar10);
+        crt_sprintf(local_200,s_Army_Bld_System_got_unknown_opco_00554390,uVar10);
 
         FUN_0051ea20(local_200);
 
@@ -4531,7 +4531,7 @@ void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined
 
     if (iVar7 == iVar2) {
 
-      FUN_00542f27(local_80,s_Army_Bld_System_got_unknown_plat_005544b0,param_2);
+      crt_sprintf(local_80,s_Army_Bld_System_got_unknown_plat_005544b0,param_2);
 
       FUN_0051ea20(local_80);
 
@@ -4551,7 +4551,7 @@ void army_create_platoon__FP6OBJECTPcT1(int param_1,undefined4 param_2,undefined
 
   }
 
-  FUN_00542f27(local_80,s_Army_Bld_System_Has_No_Platoons___005544e0);
+  crt_sprintf(local_80,s_Army_Bld_System_Has_No_Platoons___005544e0);
 
   FUN_0051ea20(local_80);
 
@@ -6564,7 +6564,7 @@ void kabutoai_anim_update(int param_1,int param_2)
 
       *(undefined4 *)(iVar1 + 0xe4) = 0x38;
 
-      fVar4 = (float10)FUN_004d5780(0x41a00000,0x42200000);
+      fVar4 = (float10)rndfloatrange(0x41a00000,0x42200000);
 
       *(undefined4 *)(iVar1 + 0xec) = 0x41200000;
 
@@ -7489,12 +7489,12 @@ void FUN_0040ac70(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0040acc0 @ 0x0040ACC0 ===== */
+/* ===== meccbasepit_get_table_ptr @ 0x0040ACC0 ===== */
 /* PS2 candidate: meccbasepit_get_table_ptr (conf 0.684) */
 
 
 
-undefined4 FUN_0040acc0(int param_1,int param_2)
+undefined4 meccbasepit_get_table_ptr(int param_1,int param_2)
 
 
 
@@ -8080,15 +8080,15 @@ void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 
       piVar3[4] = param_1[2];
 
-      fVar5 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x2b4),
+      fVar5 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x2b4),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x2b8));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x2b8));
 
       piVar3[5] = (int)(float)fVar5;
 
-      fVar5 = (float10)FUN_004d5780(param_4,param_5);
+      fVar5 = (float10)rndfloatrange(param_4,param_5);
 
-      fVar6 = (float10)FUN_004d5780(param_6,param_7);
+      fVar6 = (float10)rndfloatrange(param_6,param_7);
 
       sine_cos_lookup((float)fVar5,&local_8,&local_4);
 
@@ -8096,7 +8096,7 @@ void FUN_0040b350(int *param_1,int param_2,undefined4 param_3,undefined4 param_4
 
       piVar3[9] = (int)-(local_4 * (float)fVar6);
 
-      fVar5 = (float10)FUN_004d5780(param_8,param_9);
+      fVar5 = (float10)rndfloatrange(param_8,param_9);
 
       piVar3[7] = (int)(float)fVar5;
 
@@ -8219,27 +8219,27 @@ void FUN_0040b4b0(int param_1)
 
       ;
 
-      fVar8 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x2b4),
+      fVar8 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x2b4),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x2b8));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x2b8));
 
       piVar6[5] = (int)(float)(fVar8 * (float10)fVar1);
 
-      fVar8 = (float10)FUN_004d5780(-*(float *)(DAT_00632ed8 + 0x3d0),
+      fVar8 = (float10)rndfloatrange(-*(float *)(DAT_00632ed8 + 0x3d0),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x3d0));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x3d0));
 
       piVar6[8] = (int)(float)(fVar8 * (float10)fVar1);
 
-      fVar8 = (float10)FUN_004d5780(-*(float *)(DAT_00632ed8 + 0x3d0),
+      fVar8 = (float10)rndfloatrange(-*(float *)(DAT_00632ed8 + 0x3d0),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x3d0));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x3d0));
 
       piVar6[9] = (int)(float)(fVar8 * (float10)fVar1);
 
-      fVar8 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 700),
+      fVar8 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 700),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x2c0));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x2c0));
 
       piVar6[7] = (int)(float)(fVar8 * (float10)fVar1);
 
@@ -8771,9 +8771,9 @@ void FUN_0040bc00(int param_1)
 
     if (fVar4 < (float10)0.0) {
 
-      fVar4 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x588),
+      fVar4 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x588),
 
-                                    *(undefined4 *)(DAT_00632ed8 + 0x58c));
+                                     *(undefined4 *)(DAT_00632ed8 + 0x58c));
 
       *(float *)(param_1 + 0x40) = (float)fVar4;
 
@@ -8799,9 +8799,9 @@ void FUN_0040bc00(int param_1)
 
     }
 
-    fVar4 = (float10)FUN_004d5780(*(undefined4 *)(DAT_00632ed8 + 0x580),
+    fVar4 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x580),
 
-                                  *(undefined4 *)(DAT_00632ed8 + 0x584));
+                                   *(undefined4 *)(DAT_00632ed8 + 0x584));
 
     *(float *)(param_1 + 0x40) = (float)fVar4;
 
@@ -9101,7 +9101,7 @@ undefined4 FUN_0040c480(int param_1,undefined4 param_2)
 
   local_4 = *(float *)(param_1 + 0xa8) - *(float *)(iVar1 + 0xa8);
 
-  FUN_0050a810(&local_c,&local_8,&local_4);
+  normalize__FPfN20(&local_c,&local_8,&local_4);
 
   fVar2 = (float10)FUN_00516290(&local_c,param_1 + 0xa0);
 
@@ -9176,7 +9176,7 @@ undefined4 obj_face_target(int param_1,int param_2,float *param_3)
 
   local_1c = *(float *)(iVar5 + 0xa8) - *(float *)(param_1 + 0xa8);
 
-  FUN_0050a810(&local_24,&local_20,&local_1c);
+  normalize__FPfN20(&local_24,&local_20,&local_1c);
 
   fVar6 = (float10)FUN_00516290(&local_24,(float *)(param_1 + 0xa0));
 
@@ -9214,7 +9214,7 @@ undefined4 obj_face_target(int param_1,int param_2,float *param_3)
 
   fVar2 = (fVar2 - fVar3) - (fVar2 - fVar4) / (fVar2 - fVar3);
 
-  FUN_0050a810(&local_18,&local_14,&local_10);
+  normalize__FPfN20(&local_18,&local_14,&local_10);
 
   *param_3 = fVar2 * local_18 + local_c;
 
@@ -9380,7 +9380,7 @@ undefined4 FUN_0040cf20(void)
 
   }
 
-  iVar1 = FUN_004a6160(DAT_00632a88);
+  iVar1 = ObjIsMecc(DAT_00632a88);
 
   if (((iVar1 == 0) && (iVar1 = FUN_004a6180(DAT_00632a88), iVar1 == 0)) &&
 
@@ -9423,7 +9423,7 @@ undefined4 FUN_0040cf70(void)
 
     }
 
-    iVar1 = FUN_004a6160(DAT_00632a88);
+    iVar1 = ObjIsMecc(DAT_00632a88);
 
     if (((iVar1 == 0) && (iVar1 = FUN_004a6180(DAT_00632a88), iVar1 == 0)) &&
 
@@ -9486,7 +9486,7 @@ int cam_target_get(void)
 
   if ((DAT_00632adf != '\0') &&
 
-     (((iVar2 = FUN_004a6160(DAT_00632a88), iVar2 != 0 ||
+     (((iVar2 = ObjIsMecc(DAT_00632a88), iVar2 != 0 ||
 
        (iVar2 = FUN_004a6180(DAT_00632a88), iVar2 != 0)) ||
 
@@ -9673,7 +9673,7 @@ void sound_player_voice_smartie(void)
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_004a6160(DAT_00632a88);
+      iVar1 = ObjIsMecc(DAT_00632a88);
 
       if (iVar1 == 0) {
 
@@ -9723,7 +9723,7 @@ void sound_player_voice_smartie(void)
 
   }
 
-  iVar1 = FUN_004a6160(DAT_00632a88);
+  iVar1 = ObjIsMecc(DAT_00632a88);
 
   if (iVar1 == 0) {
 
@@ -9768,7 +9768,7 @@ void sound_player_voice_mecc(void)
 
     if (iVar1 == 0) {
 
-      iVar1 = FUN_004a6160(DAT_00632a88);
+      iVar1 = ObjIsMecc(DAT_00632a88);
 
       if (iVar1 == 0) {
 
@@ -9818,7 +9818,7 @@ void sound_player_voice_mecc(void)
 
   }
 
-  iVar1 = FUN_004a6160(DAT_00632a88);
+  iVar1 = ObjIsMecc(DAT_00632a88);
 
   if (iVar1 == 0) {
 
@@ -9908,7 +9908,7 @@ LAB_0040d56d:
 
       if (DAT_00632adf == '\0') goto LAB_0040d56d;
 
-      iVar1 = FUN_004a6160(DAT_00632a88);
+      iVar1 = ObjIsMecc(DAT_00632a88);
 
       if (iVar1 == 0) {
 
@@ -9954,7 +9954,7 @@ LAB_0040d5e0:
 
       if (DAT_00632adf == '\0') goto LAB_0040d65a;
 
-      iVar1 = FUN_004a6160(DAT_00632a88);
+      iVar1 = ObjIsMecc(DAT_00632a88);
 
       if (iVar1 == 0) {
 
@@ -11043,7 +11043,7 @@ void FUN_0040ee20(int param_1,int param_2,int param_3,undefined4 param_4,float p
 
     else {
 
-      fVar3 = (float10)FUN_004d5780(0,0x3f800000);
+      fVar3 = (float10)rndfloatrange(0,0x3f800000);
 
       *(float *)(param_1 + 0x14) = (float)fVar3;
 
@@ -11130,9 +11130,7 @@ void ai_nearest_55_scan(float param_1)
 
         (*(float *)(iVar2 + 0x278) < *(float *)(iVar2 + 0x1c0))) &&
 
-       ((iVar3 = FUN_004a6160(iVar2), iVar3 == 0 || ((*(uint *)(iVar2 + 0xe0) & 0x2000000) == 0))))
-
-    {
+       ((iVar3 = ObjIsMecc(iVar2), iVar3 == 0 || ((*(uint *)(iVar2 + 0xe0) & 0x2000000) == 0)))) {
 
       fVar5 = (float10)FUN_0050a5e0(iVar1 + 0x40,iVar2 + 0xa0);
 
@@ -11146,7 +11144,7 @@ void ai_nearest_55_scan(float param_1)
 
       }
 
-      iVar3 = FUN_004a6160(iVar2);
+      iVar3 = ObjIsMecc(iVar2);
 
       if (((iVar3 != 0) && (*(int *)(iVar2 + 0x174) == 0)) &&
 
@@ -11217,7 +11215,7 @@ void FUN_0040f030(int param_1)
 
   local_10 = *(float *)(*(int *)(iVar1 + 0x3c) + 0xa8) - *(float *)(param_1 + 0xa8);
 
-  FUN_0050a810(&local_18,&local_14,&local_10);
+  normalize__FPfN20(&local_18,&local_14,&local_10);
 
   fVar2 = *(float *)(DAT_00632ed8 + 0x5b0) * local_18;
 
