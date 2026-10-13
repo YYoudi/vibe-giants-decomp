@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0045
- * 145 functions (45 named) — decompiled, names from PS2 symbols
+ * 145 functions (46 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0045.c(pp) (assert-string evidence)
  */
 
@@ -12650,8 +12650,8 @@ void FUN_0045da90(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_0045dae0 @ 0x0045DAE0 ===== */
-void FUN_0045dae0(float param_1)
+/* ===== fx_lightning_strike @ 0x0045DAE0 ===== */
+void fx_lightning_strike(float param_1)
 
 
 

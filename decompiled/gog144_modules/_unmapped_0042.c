@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (83 named) — decompiled, names from PS2 symbols
+ * 129 functions (84 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -12730,7 +12730,7 @@ LAB_0042a10b:
 
      (*(float *)(iVar8 + 0x18) <= fVar7)) {
 
-    uVar10 = FUN_0042a280(param_1,iVar8);
+    uVar10 = dlog_wrap_text(param_1,iVar8);
 
     *(undefined4 *)(iVar8 + 0x2c) = uVar10;
 
@@ -12752,7 +12752,7 @@ LAB_0042a1d4:
 
         if (*(float *)(iVar8 + 0x18) <= fVar7) {
 
-          uVar10 = FUN_0042a280(param_1,iVar8);
+          uVar10 = dlog_wrap_text(param_1,iVar8);
 
           *(undefined4 *)(iVar8 + 0x2c) = uVar10;
 
@@ -12832,8 +12832,8 @@ LAB_0042a254:
 
 }
 
-/* ===== FUN_0042a280 @ 0x0042A280 ===== */
-int FUN_0042a280(undefined4 param_1,int param_2)
+/* ===== dlog_wrap_text @ 0x0042A280 ===== */
+int dlog_wrap_text(undefined4 param_1,int param_2)
 
 
 
@@ -16231,7 +16231,7 @@ LAB_0042cb13:
 
                   if (DAT_00633244 < 3) {
 
-                    FUN_0046fe30(iStack_10c,auStack_84);
+                    obj_orient_flags(iStack_10c,auStack_84);
 
                     obj_ai_recognize(iVar8,0);
 
@@ -16327,7 +16327,7 @@ LAB_0042cb13:
 
                   if (DAT_00633244 < 3) {
 
-                    FUN_0046fe30(iVar8,&DAT_0059ac8c);
+                    obj_orient_flags(iVar8,&DAT_0059ac8c);
 
                     obj_ai_recognize(iVar8,0);
 
@@ -16597,7 +16597,7 @@ LAB_0042d3f8:
 
     if ((local_118 != 0) && (DAT_00633244 < 3)) {
 
-      FUN_0046fe30(DAT_006330b4,auStack_84);
+      obj_orient_flags(DAT_006330b4,auStack_84);
 
       obj_ai_recognize(DAT_006330b4,0);
 

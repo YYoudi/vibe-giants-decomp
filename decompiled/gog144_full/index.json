@@ -1662,12 +1662,12 @@
  "0x00429E10": {
   "name": "hud_screen_text_render",
   "named": true,
-  "len": 6037
+  "len": 6041
  },
  "0x0042A280": {
-  "name": "FUN_0042a280",
-  "named": false,
-  "len": 1247
+  "name": "dlog_wrap_text",
+  "named": true,
+  "len": 1249
  },
  "0x0042A3E0": {
   "name": "dlog_list_cleanup_sound",
@@ -1797,7 +1797,7 @@
  "0x0042C3E0": {
   "name": "status_hud_render",
   "named": true,
-  "len": 23333
+  "len": 23345
  },
  "0x0042D490": {
   "name": "main_drawobj_0042d490",
@@ -3540,9 +3540,9 @@
   "len": 473
  },
  "0x0045DAE0": {
-  "name": "FUN_0045dae0",
-  "named": false,
-  "len": 1547
+  "name": "fx_lightning_strike",
+  "named": true,
+  "len": 1554
  },
  "0x0045DC40": {
   "name": "reaper_lock_short_4",
@@ -3840,9 +3840,9 @@
   "len": 2202
  },
  "0x0046FE30": {
-  "name": "FUN_0046fe30",
-  "named": false,
-  "len": 1842
+  "name": "obj_orient_flags",
+  "named": true,
+  "len": 1846
  },
  "0x0046FF90": {
   "name": "obj_ai_recognize",
@@ -7115,9 +7115,9 @@
   "len": 876
  },
  "0x004E10E0": {
-  "name": "FUN_004e10e0",
-  "named": false,
-  "len": 1452
+  "name": "ai_death_anim",
+  "named": true,
+  "len": 1453
  },
  "0x004E1240": {
   "name": "FUN_004e1240",

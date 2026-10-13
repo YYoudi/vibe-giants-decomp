@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (29 named) — decompiled, names from PS2 symbols
+ * 94 functions (30 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -62,12 +62,12 @@ void FUN_004e1030(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004e10e0 @ 0x004E10E0 ===== */
+/* ===== ai_death_anim @ 0x004E10E0 ===== */
 /* PS2 candidate: rpman_tornado_logic__FP6OBJECT (conf 0.323) */
 
 
 
-void FUN_004e10e0(int param_1)
+void ai_death_anim(int param_1)
 
 
 

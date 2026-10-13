@@ -1,0 +1,5 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0042a280,FUN_0042A280,,dlog_wrap_text,0.9,llm-read58,
+0045dae0,FUN_0045DAE0,,fx_lightning_strike,0.9,llm-read58,
+004e10e0,FUN_004E10E0,,ai_death_anim,0.9,llm-read58,
+0046fe30,FUN_0046FE30,,obj_orient_flags,0.9,llm-read58,

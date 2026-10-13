@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (19 named) — decompiled, names from PS2 symbols
+ * 53 functions (20 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -4748,8 +4748,8 @@ LAB_0046fd76:
 
 }
 
-/* ===== FUN_0046fe30 @ 0x0046FE30 ===== */
-void FUN_0046fe30(int param_1,uint *param_2)
+/* ===== obj_orient_flags @ 0x0046FE30 ===== */
+void obj_orient_flags(int param_1,uint *param_2)
 
 
 
