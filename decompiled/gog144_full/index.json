@@ -9887,7 +9887,7 @@
  "0x0052D5B0": {
   "name": "comm_socket_recv_loop",
   "named": true,
-  "len": 7958
+  "len": 8054
  },
  "0x0052DAA0": {
   "name": "gamespy_0052daa0",
@@ -9920,24 +9920,24 @@
   "len": 4538
  },
  "0x0052E030": {
-  "name": "FUN_0052e030",
-  "named": false,
-  "len": 595
+  "name": "comm_packet_logfmt_1",
+  "named": true,
+  "len": 603
  },
  "0x0052E0A0": {
-  "name": "FUN_0052e0a0",
-  "named": false,
-  "len": 596
+  "name": "comm_packet_logfmt_2",
+  "named": true,
+  "len": 604
  },
  "0x0052E110": {
-  "name": "FUN_0052e110",
-  "named": false,
-  "len": 596
+  "name": "comm_packet_logfmt_3",
+  "named": true,
+  "len": 604
  },
  "0x0052E180": {
-  "name": "FUN_0052e180",
-  "named": false,
-  "len": 596
+  "name": "comm_packet_logfmt_4",
+  "named": true,
+  "len": 604
  },
  "0x0052E1F0": {
   "name": "FUN_0052e1f0",
@@ -11840,9 +11840,9 @@
   "len": 469
  },
  "0x00545E42": {
-  "name": "FUN_00545e42",
-  "named": false,
-  "len": 395
+  "name": "crt_fmt_e",
+  "named": true,
+  "len": 392
  },
  "0x00545EA3": {
   "name": "crt_printf_fmt_e",
@@ -11867,7 +11867,7 @@
  "0x005460F4": {
   "name": "__cfltcvt",
   "named": true,
-  "len": 553
+  "len": 550
  },
  "0x00546145": {
   "name": "crt_memmove",

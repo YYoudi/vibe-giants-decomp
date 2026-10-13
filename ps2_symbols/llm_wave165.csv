@@ -1,0 +1,6 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+0052e030,FUN_0052e030,,comm_packet_logfmt_1,0.9,llm-w165,4 identical twins DAT_00584374 caller recv_loop
+0052e0a0,FUN_0052e0a0,,comm_packet_logfmt_2,0.9,llm-w165,structural twin
+0052e110,FUN_0052e110,,comm_packet_logfmt_3,0.9,llm-w165,structural twin
+0052e180,FUN_0052e180,,comm_packet_logfmt_4,0.9,llm-w165,structural twin
+00545e42,FUN_00545e42,,crt_fmt_e,0.9,llm-w165,%e twin of crt_fmt_g caller __cfltcvt

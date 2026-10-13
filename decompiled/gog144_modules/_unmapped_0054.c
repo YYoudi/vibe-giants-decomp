@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (276 named) — decompiled, names from PS2 symbols
+ * 351 functions (277 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -9321,8 +9321,8 @@ void __cdecl __fassign(int flag,char *argument,char *number)
 
 }
 
-/* ===== FUN_00545e42 @ 0x00545E42 ===== */
-int FUN_00545e42(undefined8 *param_1,int param_2,int param_3,undefined4 param_4)
+/* ===== crt_fmt_e @ 0x00545E42 ===== */
+int crt_fmt_e(undefined8 *param_1,int param_2,int param_3,undefined4 param_4)
 
 
 
@@ -9625,7 +9625,7 @@ __cfltcvt(double *arg,char *buffer,size_t sizeInBytes,int format,int precision,i
 
   if ((sizeInBytes == 0x65) || (sizeInBytes == 0x45)) {
 
-    eVar1 = FUN_00545e42(arg,buffer,format,precision);
+    eVar1 = crt_fmt_e(arg,buffer,format,precision);
 
   }
 

@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0052
- * 162 functions (108 named) — decompiled, names from PS2 symbols
+ * 162 functions (112 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0052.c(pp) (assert-string evidence)
  */
 
@@ -10201,55 +10201,55 @@ void comm_socket_recv_loop(SOCKET *param_1)
 
               case 0:
 
-                FUN_0052e030(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_1(param_1,&local_8a4,&local_67c);
 
                 break;
 
               case 1:
 
-                FUN_0052e0a0(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_2(param_1,&local_8a4,&local_67c);
 
                 break;
 
               case 2:
 
-                FUN_0052e110(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_3(param_1,&local_8a4,&local_67c);
 
                 break;
 
               case 3:
 
-                FUN_0052e180(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_4(param_1,&local_8a4,&local_67c);
 
                 break;
 
               case 4:
 
-                FUN_0052e030(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_1(param_1,&local_8a4,&local_67c);
 
-                FUN_0052e0a0(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_2(param_1,&local_8a4,&local_67c);
 
-                FUN_0052e110(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_3(param_1,&local_8a4,&local_67c);
 
-                FUN_0052e180(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_4(param_1,&local_8a4,&local_67c);
 
                 break;
 
               case 5:
 
-                FUN_0052e030(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_1(param_1,&local_8a4,&local_67c);
 
                 comm_socket_send_loop(param_1,&local_8a4,&local_67c);
 
-                FUN_0052e0a0(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_2(param_1,&local_8a4,&local_67c);
 
                 comm_socket_send_loop(param_1,&local_8a4,&local_67c);
 
-                FUN_0052e110(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_3(param_1,&local_8a4,&local_67c);
 
                 comm_socket_send_loop(param_1,&local_8a4,&local_67c);
 
-                FUN_0052e180(param_1,&local_8a4,&local_67c);
+                comm_packet_logfmt_4(param_1,&local_8a4,&local_67c);
 
                 break;
 
@@ -11185,8 +11185,8 @@ code_r0x0052df88:
 
 }
 
-/* ===== FUN_0052e030 @ 0x0052E030 ===== */
-void FUN_0052e030(int param_1,undefined4 param_2,undefined4 param_3)
+/* ===== comm_packet_logfmt_1 @ 0x0052E030 ===== */
+void comm_packet_logfmt_1(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -11230,8 +11230,8 @@ void FUN_0052e030(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0052e0a0 @ 0x0052E0A0 ===== */
-void FUN_0052e0a0(int param_1,undefined4 param_2,undefined4 param_3)
+/* ===== comm_packet_logfmt_2 @ 0x0052E0A0 ===== */
+void comm_packet_logfmt_2(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -11275,8 +11275,8 @@ void FUN_0052e0a0(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0052e110 @ 0x0052E110 ===== */
-void FUN_0052e110(int param_1,undefined4 param_2,undefined4 param_3)
+/* ===== comm_packet_logfmt_3 @ 0x0052E110 ===== */
+void comm_packet_logfmt_3(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
@@ -11320,8 +11320,8 @@ void FUN_0052e110(int param_1,undefined4 param_2,undefined4 param_3)
 
 }
 
-/* ===== FUN_0052e180 @ 0x0052E180 ===== */
-void FUN_0052e180(int param_1,undefined4 param_2,undefined4 param_3)
+/* ===== comm_packet_logfmt_4 @ 0x0052E180 ===== */
+void comm_packet_logfmt_4(int param_1,undefined4 param_2,undefined4 param_3)
 
 
 
