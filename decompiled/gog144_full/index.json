@@ -1687,7 +1687,7 @@
  "0x0042A640": {
   "name": "dlog_alpha_quad_build",
   "named": true,
-  "len": 5710
+  "len": 5720
  },
  "0x0042A9C0": {
   "name": "dlog_alpha4_copy",
@@ -1700,14 +1700,14 @@
   "len": 2178
  },
  "0x0042AD20": {
-  "name": "FUN_0042ad20",
-  "named": false,
-  "len": 1908
+  "name": "dlog_alpha10_copy",
+  "named": true,
+  "len": 1913
  },
  "0x0042AEA0": {
-  "name": "FUN_0042aea0",
-  "named": false,
-  "len": 1906
+  "name": "dlog_alpha20_copy",
+  "named": true,
+  "len": 1911
  },
  "0x0042B010": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_3",
@@ -7262,7 +7262,7 @@
  "0x004E47C0": {
   "name": "FUN_004e47c0",
   "named": false,
-  "len": 1360
+  "len": 1362
  },
  "0x004E4920": {
   "name": "FUN_004e4920",
@@ -7270,14 +7270,14 @@
   "len": 1340
  },
  "0x004E4A50": {
-  "name": "FUN_004e4a50",
-  "named": false,
-  "len": 1626
+  "name": "ai_range_check",
+  "named": true,
+  "len": 1628
  },
  "0x004E4BC0": {
   "name": "FUN_004e4bc0",
   "named": false,
-  "len": 3067
+  "len": 3069
  },
  "0x004E4E70": {
   "name": "FUN_004e4e70",
@@ -11265,9 +11265,9 @@
   "len": 1809
  },
  "0x00541FC0": {
-  "name": "FUN_00541fc0",
-  "named": false,
-  "len": 3905
+  "name": "crt_matrix_vec4_mul",
+  "named": true,
+  "len": 3912
  },
  "0x00542130": {
   "name": "FUN_00542130",

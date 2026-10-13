@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (27 named) — decompiled, names from PS2 symbols
+ * 94 functions (28 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
@@ -3718,7 +3718,7 @@ void FUN_004e47c0(int param_1)
 
   if (*(int *)(*(int *)(param_1 + 0x100) + 0xd8) != 0) {
 
-    FUN_004e4a50(param_1);
+    ai_range_check(param_1);
 
     return;
 
@@ -3871,8 +3871,8 @@ void FUN_004e4920(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004e4a50 @ 0x004E4A50 ===== */
-void FUN_004e4a50(int param_1)
+/* ===== ai_range_check @ 0x004E4A50 ===== */
+void ai_range_check(int param_1)
 
 
 
@@ -4037,7 +4037,7 @@ void FUN_004e4bc0(float param_1,int param_2)
 
   if (iVar3 < 10) {
 
-    FUN_004e4a50(iVar2);
+    ai_range_check(iVar2);
 
     return;
 

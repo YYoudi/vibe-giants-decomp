@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (237 named) — decompiled, names from PS2 symbols
+ * 351 functions (238 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -1756,8 +1756,8 @@ void FUN_00541eb0(undefined4 *param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00541fc0 @ 0x00541FC0 ===== */
-void FUN_00541fc0(int param_1,int param_2,int param_3,int param_4,int param_5)
+/* ===== crt_matrix_vec4_mul @ 0x00541FC0 ===== */
+void crt_matrix_vec4_mul(int param_1,int param_2,int param_3,int param_4,int param_5)
 
 
 

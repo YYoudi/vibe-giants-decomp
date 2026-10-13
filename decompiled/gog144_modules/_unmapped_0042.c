@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0042
- * 129 functions (81 named) — decompiled, names from PS2 symbols
+ * 129 functions (83 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0042.c(pp) (assert-string evidence)
  */
 
@@ -13493,7 +13493,7 @@ void dlog_alpha_quad_build(float *param_1,float *param_2)
 
       if ((DAT_0059ac78 & 0x20) != 0) {
 
-        FUN_0042aea0(pfVar9,pfVar10);
+        dlog_alpha20_copy(pfVar9,pfVar10);
 
         param_2 = pfVar10;
 
@@ -13503,7 +13503,7 @@ void dlog_alpha_quad_build(float *param_1,float *param_2)
 
       if ((DAT_0059ac78 & 0x10) != 0) {
 
-        FUN_0042ad20(param_2,pfVar10);
+        dlog_alpha10_copy(param_2,pfVar10);
 
         param_2 = pfVar10;
 
@@ -13817,8 +13817,8 @@ LAB_0042ace9:
 
 }
 
-/* ===== FUN_0042ad20 @ 0x0042AD20 ===== */
-void FUN_0042ad20(undefined4 *param_1,undefined4 *param_2)
+/* ===== dlog_alpha10_copy @ 0x0042AD20 ===== */
+void dlog_alpha10_copy(undefined4 *param_1,undefined4 *param_2)
 
 
 
@@ -13928,8 +13928,8 @@ void FUN_0042ad20(undefined4 *param_1,undefined4 *param_2)
 
 }
 
-/* ===== FUN_0042aea0 @ 0x0042AEA0 ===== */
-void FUN_0042aea0(undefined4 *param_1,undefined4 *param_2)
+/* ===== dlog_alpha20_copy @ 0x0042AEA0 ===== */
+void dlog_alpha20_copy(undefined4 *param_1,undefined4 *param_2)
 
 
 
