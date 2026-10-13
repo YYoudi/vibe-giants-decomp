@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (108 named) — decompiled, names from PS2 symbols
+ * 131 functions (111 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -7495,8 +7495,8 @@ undefined4 IconDefWieldType(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004a8fe0 @ 0x004A8FE0 ===== */
-undefined4 FUN_004a8fe0(int param_1)
+/* ===== IconDef_0x50_get @ 0x004A8FE0 ===== */
+undefined4 IconDef_0x50_get(int param_1)
 
 
 
@@ -7596,8 +7596,8 @@ undefined4 IconDefGiveAmmo(int param_1)
 
 }
 
-/* ===== FUN_004a90d0 @ 0x004A90D0 ===== */
-undefined4 FUN_004a90d0(int param_1)
+/* ===== IconDef_0x68_get @ 0x004A90D0 ===== */
+undefined4 IconDef_0x68_get(int param_1)
 
 
 
@@ -7613,8 +7613,8 @@ undefined4 FUN_004a90d0(int param_1)
 
 }
 
-/* ===== FUN_004a9100 @ 0x004A9100 ===== */
-undefined4 FUN_004a9100(int param_1)
+/* ===== IconDef_0x6c_get @ 0x004A9100 ===== */
+undefined4 IconDef_0x6c_get(int param_1)
 
 
 

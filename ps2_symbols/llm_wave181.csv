@@ -1,0 +1,8 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+004a8fe0,FUN_004a8fe0,,IconDef_0x50_get,0.9,llm-w181,0x4c icon-def table field getters
+004a90d0,FUN_004a90d0,,IconDef_0x68_get,0.9,llm-w181,table field getter callers needs_ammo
+004a9100,FUN_004a9100,,IconDef_0x6c_get,0.9,llm-w181,table field getter
+0050ade0,FUN_0050ade0,,math_sin_lut_read_a,0.9,llm-w181,005bc870 table read
+0050adb0,FUN_0050adb0,,math_sin_lut_read_b,0.9,llm-w181,005a8870 table read
+0050a550,FUN_0050a550,,vec3_len,0.9,llm-w181,SQRT 3 comps caller mecc_animselect
+00545c58,FUN_00545c58,,crt_fd_unlock,0.9,llm-w181,per-fd critsec leave callers _read/_write/_close

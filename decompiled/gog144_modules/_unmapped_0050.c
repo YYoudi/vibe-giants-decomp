@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (65 named) — decompiled, names from PS2 symbols
+ * 87 functions (68 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -6797,7 +6797,7 @@ LAB_005075ef:
 
       local_54 = *(float *)(param_1 + 0x130) - *(float *)(param_1 + 0x13c);
 
-      fVar19 = (float10)FUN_0050a550(&local_5c);
+      fVar19 = (float10)vec3_len(&local_5c);
 
       fVar1 = (float)fVar19;
 
@@ -6805,9 +6805,9 @@ LAB_005075ef:
 
       if ((float10)*(float *)(DAT_00632ed8 + 0xb60) <= fVar19) {
 
-        fVar19 = (float10)FUN_0050a550(param_1 + 0x134);
+        fVar19 = (float10)vec3_len(param_1 + 0x134);
 
-        fVar20 = (float10)FUN_0050a550(param_1 + 0x128);
+        fVar20 = (float10)vec3_len(param_1 + 0x128);
 
         if ((fVar20 < (float10)(float)fVar19) && (iVar14 = fx_create(param_1), iVar14 != 0)) {
 
@@ -7905,15 +7905,15 @@ LAB_0050698f:
 
     local_54 = *(float *)(param_1 + 0x130) - *(float *)(param_1 + 0x13c);
 
-    fVar19 = (float10)FUN_0050a550(&local_5c);
+    fVar19 = (float10)vec3_len(&local_5c);
 
     fVar1 = (float)fVar19;
 
     if ((float10)*(float *)(DAT_00632ed8 + 0x66c) <= fVar19) {
 
-      fVar19 = (float10)FUN_0050a550(param_1 + 0x134);
+      fVar19 = (float10)vec3_len(param_1 + 0x134);
 
-      fVar20 = (float10)FUN_0050a550(param_1 + 0x128);
+      fVar20 = (float10)vec3_len(param_1 + 0x128);
 
       if ((((fVar20 < (float10)(float)fVar19) &&
 
@@ -10138,8 +10138,8 @@ float10 distance2d__FP3P3DT0(float *param_1,float *param_2)
 
 }
 
-/* ===== FUN_0050a550 @ 0x0050A550 ===== */
-float10 FUN_0050a550(float *param_1)
+/* ===== vec3_len @ 0x0050A550 ===== */
+float10 vec3_len(float *param_1)
 
 
 
@@ -10752,8 +10752,8 @@ void math_sincos_table_init(void)
 
 }
 
-/* ===== FUN_0050adb0 @ 0x0050ADB0 ===== */
-float10 FUN_0050adb0(void)
+/* ===== math_sin_lut_read_b @ 0x0050ADB0 ===== */
+float10 math_sin_lut_read_b(void)
 
 
 
@@ -10769,8 +10769,8 @@ float10 FUN_0050adb0(void)
 
 }
 
-/* ===== FUN_0050ade0 @ 0x0050ADE0 ===== */
-float10 FUN_0050ade0(void)
+/* ===== math_sin_lut_read_a @ 0x0050ADE0 ===== */
+float10 math_sin_lut_read_a(void)
 
 
 

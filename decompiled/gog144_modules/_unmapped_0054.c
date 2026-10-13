@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (291 named) — decompiled, names from PS2 symbols
+ * 351 functions (292 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -9088,8 +9088,8 @@ void crt_lock_fd(uint param_1)
 
 }
 
-/* ===== FUN_00545c58 @ 0x00545C58 ===== */
-void FUN_00545c58(uint param_1)
+/* ===== crt_fd_unlock @ 0x00545C58 ===== */
+void crt_fd_unlock(uint param_1)
 
 
 
@@ -12706,7 +12706,7 @@ undefined4 _close(uint param_1)
 
     uVar1 = _close_lk(param_1);
 
-    FUN_00545c58(param_1);
+    crt_fd_unlock(param_1);
 
     return uVar1;
 
@@ -12958,7 +12958,7 @@ undefined4 _read(uint param_1,undefined4 param_2,undefined4 param_3)
 
     uVar1 = _read_lk(param_1,param_2,param_3);
 
-    FUN_00545c58(param_1);
+    crt_fd_unlock(param_1);
 
     return uVar1;
 
@@ -14169,7 +14169,7 @@ undefined4 _write(uint param_1,undefined4 param_2,undefined4 param_3)
 
     uVar1 = _write_lk(param_1,param_2,param_3);
 
-    FUN_00545c58(param_1);
+    crt_fd_unlock(param_1);
 
     return uVar1;
 
@@ -23092,7 +23092,7 @@ undefined4 crt_lseek_errno(uint param_1,undefined4 param_2,undefined4 param_3)
 
     uVar1 = _lseek(param_1,param_2,param_3);
 
-    FUN_00545c58(param_1);
+    crt_fd_unlock(param_1);
 
     return uVar1;
 
@@ -23416,7 +23416,7 @@ LAB_0054d839:
 
 LAB_0054d82e:
 
-  FUN_00545c58(param_1);
+  crt_fd_unlock(param_1);
 
   return uVar6;
 
@@ -23762,7 +23762,7 @@ LAB_0054daf6:
 
 LAB_0054db0f:
 
-  FUN_00545c58(uVar3);
+  crt_fd_unlock(uVar3);
 
   return uVar2;
 

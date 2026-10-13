@@ -6668,7 +6668,7 @@ bool player_needs_ammo__FP6OBJECTi(int param_1,undefined4 param_2)
 
   iVar1 = ObjIsMecc(param_1);
 
-  if ((iVar1 != 0) && (iVar1 = FUN_004a90d0(param_2), iVar1 == 4)) {
+  if ((iVar1 != 0) && (iVar1 = IconDef_0x68_get(param_2), iVar1 == 4)) {
 
     iVar1 = *(int *)(param_1 + 0x100);
 
@@ -8067,7 +8067,7 @@ bool FUN_00458c90(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a90d0(param_1);
+  iVar1 = IconDef_0x68_get(param_1);
 
   return iVar1 == 1;
 
@@ -8084,7 +8084,7 @@ bool FUN_00458cb0(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a90d0(param_1);
+  iVar1 = IconDef_0x68_get(param_1);
 
   return iVar1 == 2;
 
@@ -8101,7 +8101,7 @@ bool FUN_00458cd0(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a90d0(param_1);
+  iVar1 = IconDef_0x68_get(param_1);
 
   return iVar1 == 4;
 
@@ -8118,11 +8118,11 @@ undefined4 FUN_00458cf0(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a9100(param_1);
+  iVar1 = IconDef_0x6c_get(param_1);
 
   if (iVar1 != 2) {
 
-    iVar1 = FUN_004a9100(param_1);
+    iVar1 = IconDef_0x6c_get(param_1);
 
     if (iVar1 != 1) {
 
@@ -8147,11 +8147,11 @@ undefined4 FUN_00458d20(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a9100(param_1);
+  iVar1 = IconDef_0x6c_get(param_1);
 
   if (iVar1 != 3) {
 
-    iVar1 = FUN_004a9100(param_1);
+    iVar1 = IconDef_0x6c_get(param_1);
 
     if (iVar1 != 1) {
 
@@ -8176,7 +8176,7 @@ bool FUN_00458d50(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a90d0(param_1);
+  iVar1 = IconDef_0x68_get(param_1);
 
   return iVar1 == 5;
 
@@ -8193,7 +8193,7 @@ bool FUN_00458d70(undefined4 param_1)
 
   
 
-  iVar1 = FUN_004a90d0(param_1);
+  iVar1 = IconDef_0x68_get(param_1);
 
   return iVar1 == 3;
 
@@ -9833,7 +9833,7 @@ void item_create_base_pickup(undefined4 *param_1,undefined4 param_2,int param_3)
 
   
 
-  iVar2 = FUN_004a8fe0(param_2);
+  iVar2 = IconDef_0x50_get(param_2);
 
   if (iVar2 < 0) {
 
@@ -9918,7 +9918,7 @@ int item_drop_item(int param_1,undefined4 param_2,undefined4 param_3,undefined4 
 
   
 
-  iVar3 = FUN_004a8fe0(param_2);
+  iVar3 = IconDef_0x50_get(param_2);
 
   if (iVar3 < 0) {
 
@@ -10233,9 +10233,9 @@ void item_drop_all_random(undefined4 *param_1)
 
       param_1 = (undefined4 *)fVar1;
 
-      fVar6 = (float10)FUN_0050adb0(fVar1);
+      fVar6 = (float10)math_sin_lut_read_b(fVar1);
 
-      fVar7 = (float10)FUN_0050ade0(fVar1);
+      fVar7 = (float10)math_sin_lut_read_a(fVar1);
 
       param_1 = (undefined4 *)0x0;
 
@@ -10273,9 +10273,9 @@ void item_drop_all_random(undefined4 *param_1)
 
         param_1 = (undefined4 *)fVar1;
 
-        fVar6 = (float10)FUN_0050adb0(fVar1);
+        fVar6 = (float10)math_sin_lut_read_b(fVar1);
 
-        fVar7 = (float10)FUN_0050ade0(fVar1);
+        fVar7 = (float10)math_sin_lut_read_a(fVar1);
 
         param_1 = (undefined4 *)0x0;
 
@@ -10311,9 +10311,9 @@ void item_drop_all_random(undefined4 *param_1)
 
       param_1 = (undefined4 *)fVar1;
 
-      fVar6 = (float10)FUN_0050adb0(fVar1);
+      fVar6 = (float10)math_sin_lut_read_b(fVar1);
 
-      fVar7 = (float10)FUN_0050ade0(fVar1);
+      fVar7 = (float10)math_sin_lut_read_a(fVar1);
 
       uVar4 = SpecialWeaponIdGet__FP6OBJECT
 

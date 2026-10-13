@@ -7456,7 +7456,7 @@ void ShopMenuSlotCollision__Fi(void)
 
       if (*piVar11 != -1) {
 
-        iVar2 = FUN_004a8fe0(*piVar11);
+        iVar2 = IconDef_0x50_get(*piVar11);
 
         iVar6 = piVar11[1];
 
@@ -7516,7 +7516,7 @@ void ShopMenuSlotCollision__Fi(void)
 
         *piVar11 = iVar6;
 
-        iVar5 = FUN_004a8fe0(iVar6);
+        iVar5 = IconDef_0x50_get(iVar6);
 
         *piVar7 = iVar5;
 
@@ -7586,7 +7586,7 @@ void ShopMenuSlotCollision__Fi(void)
 
         *piVar11 = iVar6;
 
-        iVar5 = FUN_004a8fe0(iVar6);
+        iVar5 = IconDef_0x50_get(iVar6);
 
         *piVar7 = iVar5;
 
