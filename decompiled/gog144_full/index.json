@@ -57,7 +57,7 @@
  "0x004019E0": {
   "name": "ai_do_update_goal__FUiP6OBJECTP3P3Dff",
   "named": true,
-  "len": 8114
+  "len": 8112
  },
  "0x00401F80": {
   "name": "ai_fly_update_goal_2",
@@ -77,7 +77,7 @@
  "0x00401FE0": {
   "name": "FUN_00401fe0",
   "named": false,
-  "len": 2048
+  "len": 2046
  },
  "0x00402140": {
   "name": "ai_get_goal_location",
@@ -102,7 +102,7 @@
  "0x00402270": {
   "name": "ai_goal_process",
   "named": true,
-  "len": 9154
+  "len": 9158
  },
  "0x004029A0": {
   "name": "main_ai_move_004029a0",
@@ -117,7 +117,7 @@
  "0x00402D60": {
   "name": "ai_chase_location__FP6OBJECTP3P3DUi",
   "named": true,
-  "len": 6442
+  "len": 6450
  },
  "0x004033D0": {
   "name": "main_ai_move_004033d0",
@@ -287,12 +287,12 @@
  "0x00407C40": {
   "name": "meccbase_init",
   "named": true,
-  "len": 6476
+  "len": 6526
  },
  "0x00408530": {
   "name": "meccbaseitem_move",
   "named": true,
-  "len": 13608
+  "len": 13644
  },
  "0x00408EC0": {
   "name": "meccbaseitem_start_building",
@@ -320,9 +320,9 @@
   "len": 1151
  },
  "0x00409B60": {
-  "name": "FUN_00409b60",
-  "named": false,
-  "len": 2588
+  "name": "reaperbasebldg_shot",
+  "named": true,
+  "len": 2595
  },
  "0x0040A550": {
   "name": "FUN_0040a550",
@@ -342,7 +342,7 @@
  "0x0040A820": {
   "name": "objtype_anim_scan",
   "named": true,
-  "len": 4273
+  "len": 4295
  },
  "0x0040AB60": {
   "name": "FUN_0040ab60",
@@ -407,7 +407,7 @@
  "0x0040AFB0": {
   "name": "meccbasepit_create_food",
   "named": true,
-  "len": 883
+  "len": 904
  },
  "0x0040B1D0": {
   "name": "FUN_0040b1d0",
@@ -475,9 +475,9 @@
   "len": 2512
  },
  "0x0040BDC0": {
-  "name": "FUN_0040bdc0",
-  "named": false,
-  "len": 721
+  "name": "process_wound",
+  "named": true,
+  "len": 722
  },
  "0x0040BE30": {
   "name": "FUN_0040be30",
@@ -492,12 +492,12 @@
  "0x0040C480": {
   "name": "FUN_0040c480",
   "named": false,
-  "len": 971
+  "len": 974
  },
  "0x0040C580": {
   "name": "obj_face_target",
   "named": true,
-  "len": 1651
+  "len": 1654
  },
  "0x0040CE50": {
   "name": "FUN_0040ce50",
@@ -627,7 +627,7 @@
  "0x0040D820": {
   "name": "ref_anode_user",
   "named": true,
-  "len": 3289
+  "len": 3280
  },
  "0x0040DB70": {
   "name": "SetupCameraDataNormal__FP6OBJECTT0",
@@ -682,7 +682,7 @@
  "0x00410200": {
   "name": "main_collgrid_00410200",
   "named": true,
-  "len": 7479
+  "len": 7482
  },
  "0x00410720": {
   "name": "collgrid_collide_c",
@@ -727,7 +727,7 @@
  "0x00412DF0": {
   "name": "collide_objects",
   "named": true,
-  "len": 14172
+  "len": 14168
  },
  "0x00413820": {
   "name": "setMenuSelection__7PS2Gameiiii",
@@ -887,12 +887,12 @@
  "0x00417880": {
   "name": "obj_maxspeed_lookup",
   "named": true,
-  "len": 2589
+  "len": 2595
  },
  "0x00417A50": {
   "name": "obj_speed_clamp",
   "named": true,
-  "len": 2795
+  "len": 2801
  },
  "0x00417F20": {
   "name": "bldg_get_energy",
@@ -902,12 +902,12 @@
  "0x00417F60": {
   "name": "bldg_get_max_energy",
   "named": true,
-  "len": 1044
+  "len": 1047
  },
  "0x00418010": {
   "name": "bldg_set_energy",
   "named": true,
-  "len": 831
+  "len": 843
  },
  "0x004180A0": {
   "name": "FUN_004180a0",
@@ -917,17 +917,17 @@
  "0x00418170": {
   "name": "bldg_get_max_energy",
   "named": true,
-  "len": 646
+  "len": 649
  },
  "0x004181D0": {
   "name": "FUN_004181d0",
   "named": false,
-  "len": 1134
+  "len": 1137
  },
  "0x00418380": {
   "name": "FUN_00418380",
   "named": false,
-  "len": 1213
+  "len": 1216
  },
  "0x00418460": {
   "name": "lzo_assert",
@@ -957,22 +957,22 @@
  "0x00418540": {
   "name": "FUN_00418540",
   "named": false,
-  "len": 1269
+  "len": 1272
  },
  "0x00418630": {
-  "name": "FUN_00418630",
-  "named": false,
-  "len": 1003
+  "name": "bldg_get_refpt_worldloc",
+  "named": true,
+  "len": 1014
  },
  "0x004186C0": {
-  "name": "FUN_004186c0",
-  "named": false,
-  "len": 1142
+  "name": "bldg_get_refpt_worldlocdir",
+  "named": true,
+  "len": 1153
  },
  "0x00418770": {
   "name": "FUN_00418770",
   "named": false,
-  "len": 910
+  "len": 907
  },
  "0x00418810": {
   "name": "FUN_00418810",
@@ -980,9 +980,9 @@
   "len": 856
  },
  "0x004188A0": {
-  "name": "FUN_004188a0",
-  "named": false,
-  "len": 429
+  "name": "base_get_base_building",
+  "named": true,
+  "len": 439
  },
  "0x004188E0": {
   "name": "base_has_partyhouse",
@@ -1002,7 +1002,7 @@
  "0x00418A00": {
   "name": "object_spawn_class5",
   "named": true,
-  "len": 3087
+  "len": 3084
  },
  "0x00418C80": {
   "name": "base_bldg_pulsate",
@@ -1012,12 +1012,12 @@
  "0x00418CF0": {
   "name": "collgrid_query_obj",
   "named": true,
-  "len": 2919
+  "len": 2924
  },
  "0x00418F00": {
   "name": "main_commonbase_00418f00",
   "named": true,
-  "len": 18425
+  "len": 18453
  },
  "0x0041A090": {
   "name": "reaper_state_check_a",
@@ -1092,12 +1092,12 @@
  "0x0041A570": {
   "name": "objtype_setup_spell",
   "named": true,
-  "len": 3199
+  "len": 3196
  },
  "0x0041A7F0": {
   "name": "objtype_setup_combat",
   "named": true,
-  "len": 2107
+  "len": 2113
  },
  "0x0041A980": {
   "name": "objtype_team_assign",
@@ -1107,17 +1107,17 @@
  "0x0041AC40": {
   "name": "FUN_0041ac40",
   "named": false,
-  "len": 2904
+  "len": 2907
  },
  "0x0041AE70": {
   "name": "objtype_setup_mecc",
   "named": true,
-  "len": 5781
+  "len": 5796
  },
  "0x0041B390": {
   "name": "objtype_setup_vimp",
   "named": true,
-  "len": 3651
+  "len": 3648
  },
  "0x0041B660": {
   "name": "fxb_build_select",
@@ -1142,22 +1142,22 @@
  "0x0041E440": {
   "name": "objtype_setup_reaper",
   "named": true,
-  "len": 3659
+  "len": 3665
  },
  "0x0041E720": {
   "name": "FUN_0041e720",
   "named": false,
-  "len": 1182
+  "len": 1188
  },
  "0x0041E810": {
   "name": "obj_group_spread",
   "named": true,
-  "len": 1866
+  "len": 1872
  },
  "0x0041E960": {
   "name": "repair_logic",
   "named": true,
-  "len": 3799
+  "len": 3802
  },
  "0x0041EBB0": {
   "name": "FUN_0041ebb0",
@@ -1167,7 +1167,7 @@
  "0x0041EBF0": {
   "name": "objtype_setup_rpman",
   "named": true,
-  "len": 3762
+  "len": 3768
  },
  "0x0041EE70": {
   "name": "objtype_setup_kabuto",
@@ -2007,7 +2007,7 @@
  "0x00431700": {
   "name": "main_drawwatr_00431700",
   "named": true,
-  "len": 9776
+  "len": 9768
  },
  "0x004319C0": {
   "name": "FUN_004319c0",
@@ -2212,7 +2212,7 @@
  "0x004361B0": {
   "name": "rpman_init__FP6OBJECT",
   "named": true,
-  "len": 43209
+  "len": 43197
  },
  "0x00437FA0": {
   "name": "editor_cursor_pick_point",
@@ -2487,7 +2487,7 @@
  "0x00442AD0": {
   "name": "obj_scale_pulse",
   "named": true,
-  "len": 1033
+  "len": 1035
  },
  "0x00442EC0": {
   "name": "sound_3dpos_play",
@@ -2555,9 +2555,9 @@
   "len": 683
  },
  "0x00443FB0": {
-  "name": "FUN_00443fb0",
-  "named": false,
-  "len": 1433
+  "name": "FLK_ActorOffsetEval__FP9FLK_Actor",
+  "named": true,
+  "len": 1454
  },
  "0x004440F0": {
   "name": "FLK_FlickTextProcess__FP9FLK_Flick",
@@ -2587,7 +2587,7 @@
  "0x00445A20": {
   "name": "FLK_FlickProcess",
   "named": true,
-  "len": 14767
+  "len": 14849
  },
  "0x00446620": {
   "name": "FLK_FlickStop",
@@ -2832,7 +2832,7 @@
  "0x0044ED20": {
   "name": "fx_process_one",
   "named": true,
-  "len": 3619
+  "len": 3617
  },
  "0x0044EFD0": {
   "name": "fx_process",
@@ -3042,7 +3042,7 @@
  "0x004544F0": {
   "name": "giftshop_exit__Fv",
   "named": true,
-  "len": 3126
+  "len": 3198
  },
  "0x00454A40": {
   "name": "FUN_00454a40",
@@ -3072,7 +3072,7 @@
  "0x00455070": {
   "name": "in_fov",
   "named": true,
-  "len": 941
+  "len": 942
  },
  "0x00455150": {
   "name": "FUN_00455150",
@@ -3202,7 +3202,7 @@
  "0x00456D40": {
   "name": "vimp_close_damage",
   "named": true,
-  "len": 2016
+  "len": 2019
  },
  "0x00456EE0": {
   "name": "FUN_00456ee0",
@@ -3457,17 +3457,17 @@
  "0x0045AE90": {
   "name": "ai_target_classify",
   "named": true,
-  "len": 1649
+  "len": 1652
  },
  "0x0045B2B0": {
   "name": "reaper_spawn_ospec_1",
   "named": true,
-  "len": 1886
+  "len": 1878
  },
  "0x0045B440": {
   "name": "reaper_spawn_ospec_2",
   "named": true,
-  "len": 2059
+  "len": 2051
  },
  "0x0045B610": {
   "name": "FUN_0045b610",
@@ -3617,12 +3617,12 @@
  "0x00465790": {
   "name": "FUN_00465790",
   "named": false,
-  "len": 1064
+  "len": 1056
  },
  "0x00465880": {
   "name": "reaper_update_xhair_status__FP6OBJECT",
   "named": true,
-  "len": 3975
+  "len": 3967
  },
  "0x00465BF0": {
   "name": "reaper_collect_food",
@@ -3672,17 +3672,17 @@
  "0x004698F0": {
   "name": "FUN_004698f0",
   "named": false,
-  "len": 389
+  "len": 381
  },
  "0x00469950": {
   "name": "FUN_00469950",
   "named": false,
-  "len": 472
+  "len": 474
  },
  "0x004699E0": {
   "name": "loglauncher_process",
   "named": true,
-  "len": 1995
+  "len": 1997
  },
  "0x0046A480": {
   "name": "kbos_sizer",
@@ -3702,7 +3702,7 @@
  "0x0046A800": {
   "name": "obj_anim_flags_update",
   "named": true,
-  "len": 2492
+  "len": 2488
  },
  "0x0046AA30": {
   "name": "gfx_d3d_0046aa30",
@@ -3770,9 +3770,9 @@
   "len": 1956
  },
  "0x0046BC60": {
-  "name": "FUN_0046bc60",
-  "named": false,
-  "len": 4783
+  "name": "kbos_scan_food__FP6OBJECTP14ObjProcessInfo",
+  "named": true,
+  "len": 4815
  },
  "0x0046C060": {
   "name": "obj_3dsound_scan",
@@ -3922,7 +3922,7 @@
  "0x00471A60": {
   "name": "game_loop_run",
   "named": true,
-  "len": 4755
+  "len": 4752
  },
  "0x00471DC0": {
   "name": "render_error_dialog_check",
@@ -4192,7 +4192,7 @@
  "0x0047CAA0": {
   "name": "kbos_move",
   "named": true,
-  "len": 23411
+  "len": 23433
  },
  "0x0047DF10": {
   "name": "audio_listener_pan",
@@ -4282,12 +4282,12 @@
  "0x00480D10": {
   "name": "FUN_00480d10",
   "named": false,
-  "len": 895
+  "len": 906
  },
  "0x00480DD0": {
   "name": "mecc_drop_carried_object",
   "named": true,
-  "len": 1519
+  "len": 1530
  },
  "0x00480EF0": {
   "name": "FUN_00480ef0",
@@ -4297,12 +4297,12 @@
  "0x00480F90": {
   "name": "menu_fx_spawn",
   "named": true,
-  "len": 1365
+  "len": 1379
  },
  "0x004810D0": {
   "name": "projectile_logic",
   "named": true,
-  "len": 8557
+  "len": 8579
  },
  "0x00481630": {
   "name": "obj_swap_link",
@@ -4407,7 +4407,7 @@
  "0x00484B00": {
   "name": "mission_load_cheat",
   "named": true,
-  "len": 2580
+  "len": 2578
  },
  "0x00485020": {
   "name": "mission_load_world",
@@ -4487,7 +4487,7 @@
  "0x00489120": {
   "name": "mission_menu_load",
   "named": true,
-  "len": 5434
+  "len": 5430
  },
  "0x004895F0": {
   "name": "texture_add_file",
@@ -4497,7 +4497,7 @@
  "0x004897D0": {
   "name": "mission_menu_load2",
   "named": true,
-  "len": 4724
+  "len": 4720
  },
  "0x00489CA0": {
   "name": "FUN_00489ca0",
@@ -4512,7 +4512,7 @@
  "0x00489F50": {
   "name": "FUN_00489F50",
   "named": false,
-  "len": 1988
+  "len": 1986
  },
  "0x0048A7D0": {
   "name": "FUN_0048A7D0",
@@ -4577,7 +4577,7 @@
  "0x0048E610": {
   "name": "menu_dlog_callback_b",
   "named": true,
-  "len": 4628
+  "len": 4622
  },
  "0x0048EA50": {
   "name": "FUN_0048EA50",
@@ -4612,7 +4612,7 @@
  "0x0048F620": {
   "name": "menu_gameplay_teardown",
   "named": true,
-  "len": 2886
+  "len": 2884
  },
  "0x004907E0": {
   "name": "FUN_004907e0",
@@ -4707,7 +4707,7 @@
  "0x00492430": {
   "name": "load_mission_continuity__Fii",
   "named": true,
-  "len": 5739
+  "len": 5737
  },
  "0x004928A0": {
   "name": "savegame_verify_user",
@@ -4717,7 +4717,7 @@
  "0x00492910": {
   "name": "mission_init",
   "named": true,
-  "len": 24229
+  "len": 24249
  },
  "0x00493960": {
   "name": "mission_flick_load",
@@ -4880,9 +4880,9 @@
   "len": 557
  },
  "0x00495990": {
-  "name": "FUN_00495990",
-  "named": false,
-  "len": 576
+  "name": "sound_stop",
+  "named": true,
+  "len": 574
  },
  "0x004959C0": {
   "name": "wredit_004959c0",
@@ -4987,7 +4987,7 @@
  "0x00496C00": {
   "name": "object_allocate_type",
   "named": true,
-  "len": 3342
+  "len": 3352
  },
  "0x00496E80": {
   "name": "FUN_00496e80",
@@ -4997,7 +4997,7 @@
  "0x00497150": {
   "name": "object_allocate_type_end",
   "named": true,
-  "len": 3351
+  "len": 3361
  },
  "0x004973C0": {
   "name": "object_stop_movement_2",
@@ -5045,14 +5045,14 @@
   "len": 1035
  },
  "0x00497A50": {
-  "name": "FUN_00497a50",
-  "named": false,
-  "len": 2469
+  "name": "object_copy_activedata",
+  "named": true,
+  "len": 2479
  },
  "0x00497BD0": {
   "name": "objobj_type_lookup",
   "named": true,
-  "len": 1117
+  "len": 1127
  },
  "0x00497C90": {
   "name": "FUN_00497c90",
@@ -5097,7 +5097,7 @@
  "0x004984B0": {
   "name": "kabuto_logic",
   "named": true,
-  "len": 4117
+  "len": 4123
  },
  "0x004988E0": {
   "name": "weapon_id_check_big",
@@ -5122,7 +5122,7 @@
  "0x00498CF0": {
   "name": "create_static_object",
   "named": true,
-  "len": 4849
+  "len": 4859
  },
  "0x00499030": {
   "name": "object_spawn_small",
@@ -5347,7 +5347,7 @@
  "0x0049DBD0": {
   "name": "FUN_0049dbd0",
   "named": false,
-  "len": 1761
+  "len": 1763
  },
  "0x0049DD90": {
   "name": "FUN_0049dd90",
@@ -5387,7 +5387,7 @@
  "0x0049F1C0": {
   "name": "partyhouse_exit_dlog",
   "named": true,
-  "len": 936
+  "len": 948
  },
  "0x0049F510": {
   "name": "chat_log_close",
@@ -5557,7 +5557,7 @@
  "0x004A24E0": {
   "name": "obj_move_clamped",
   "named": true,
-  "len": 1253
+  "len": 1245
  },
  "0x004A2650": {
   "name": "FUN_004a2650",
@@ -5760,9 +5760,9 @@
   "len": 416
  },
  "0x004A6300": {
-  "name": "FUN_004a6300",
-  "named": false,
-  "len": 200
+  "name": "ObjIsReaperBldg",
+  "named": true,
+  "len": 203
  },
  "0x004A6320": {
   "name": "FUN_004a6320",
@@ -5797,7 +5797,7 @@
  "0x004A6860": {
   "name": "obj_alpha_fade_update",
   "named": true,
-  "len": 3785
+  "len": 3789
  },
  "0x004A6B60": {
   "name": "FUN_004a6b60",
@@ -5997,7 +5997,7 @@
  "0x004AA230": {
   "name": "PROJ_Create2",
   "named": true,
-  "len": 4077
+  "len": 4069
  },
  "0x004AA550": {
   "name": "PROJ_Create3",
@@ -6007,27 +6007,27 @@
  "0x004AA6D0": {
   "name": "obj_targetable_by_player",
   "named": true,
-  "len": 1351
+  "len": 1359
  },
  "0x004AA7F0": {
   "name": "FUN_004aa7f0",
   "named": false,
-  "len": 1207
+  "len": 1213
  },
  "0x004AA8F0": {
   "name": "FUN_004aa8f0",
   "named": false,
-  "len": 1070
+  "len": 1073
  },
  "0x004AA9D0": {
   "name": "FUN_004aa9d0",
   "named": false,
-  "len": 879
+  "len": 884
  },
  "0x004AAA80": {
   "name": "MortarCollisionValid__FP6OBJECTi",
   "named": true,
-  "len": 1008
+  "len": 1020
  },
  "0x004AAB40": {
   "name": "cast_repair_spell",
@@ -6042,7 +6042,7 @@
  "0x004AC4B0": {
   "name": "face_target",
   "named": true,
-  "len": 1479
+  "len": 1480
  },
  "0x004AC620": {
   "name": "align_with_ground",
@@ -6177,7 +6177,7 @@
  "0x004B0FC0": {
   "name": "bin_load_1a0002e5",
   "named": true,
-  "len": 69954
+  "len": 69974
  },
  "0x004B42D0": {
   "name": "main_readwrls_004b42d0",
@@ -6202,7 +6202,7 @@
  "0x004B4570": {
   "name": "reaperbase_init",
   "named": true,
-  "len": 6259
+  "len": 6337
  },
  "0x004B4CA0": {
   "name": "reaperbasebldg_move",
@@ -6252,7 +6252,7 @@
  "0x004B6870": {
   "name": "objtype_anim_scan_2",
   "named": true,
-  "len": 4273
+  "len": 4295
  },
  "0x004B6BB0": {
   "name": "FUN_004b6bb0",
@@ -6317,12 +6317,12 @@
  "0x004B6FA0": {
   "name": "mecc_shot",
   "named": true,
-  "len": 5323
+  "len": 5320
  },
  "0x004B7450": {
   "name": "reaper_animselect",
   "named": true,
-  "len": 24905
+  "len": 24919
  },
  "0x004B89D0": {
   "name": "FUN_004b89d0",
@@ -6427,7 +6427,7 @@
  "0x004BA1A0": {
   "name": "reaper_xhair_validate__FP6OBJECTPv",
   "named": true,
-  "len": 1787
+  "len": 1791
  },
  "0x004BA2F0": {
   "name": "FUN_004ba2f0",
@@ -6442,7 +6442,7 @@
  "0x004BA4F0": {
   "name": "physics_reset_b",
   "named": true,
-  "len": 1384
+  "len": 1368
  },
  "0x004BA5E0": {
   "name": "reaper_release_shrink",
@@ -6502,7 +6502,7 @@
  "0x004BC930": {
   "name": "reaper_turbo_towards_moving_target__FP6OBJECT",
   "named": true,
-  "len": 1925
+  "len": 1917
  },
  "0x004BCA70": {
   "name": "audio_anode_check",
@@ -6562,7 +6562,7 @@
  "0x004BEEE0": {
   "name": "reaper_fire_bow__FP6OBJECT",
   "named": true,
-  "len": 11728
+  "len": 11734
  },
  "0x004BF8C0": {
   "name": "fxb_firewall_create",
@@ -6612,7 +6612,7 @@
  "0x004C0810": {
   "name": "reaper_fire_sword__FP6OBJECT",
   "named": true,
-  "len": 9212
+  "len": 9220
  },
  "0x004C0FC0": {
   "name": "reaper_tornado_create",
@@ -6702,17 +6702,17 @@
  "0x004C4DF0": {
   "name": "FUN_004c4df0",
   "named": false,
-  "len": 790
+  "len": 801
  },
  "0x004C4EC0": {
   "name": "mecc_drop_carried_object_2",
   "named": true,
-  "len": 1405
+  "len": 1416
  },
  "0x004C4FD0": {
   "name": "FUN_004c4fd0",
   "named": false,
-  "len": 969
+  "len": 980
  },
  "0x004C50B0": {
   "name": "FUN_004c50b0",
@@ -6722,42 +6722,42 @@
  "0x004C5130": {
   "name": "lzo_checked_alloc",
   "named": true,
-  "len": 2062
+  "len": 2073
  },
  "0x004C52D0": {
   "name": "lzo_spawn_checked",
   "named": true,
-  "len": 2215
+  "len": 2254
  },
  "0x004C54D0": {
   "name": "reaper_check_enter_teleport__FP6OBJECT",
   "named": true,
-  "len": 3127
+  "len": 3163
  },
  "0x004C5810": {
   "name": "reaper_replenish_basepit_energy__FP6OBJECT",
   "named": true,
-  "len": 4345
+  "len": 4391
  },
  "0x004C5B10": {
   "name": "FUN_004c5b10",
   "named": false,
-  "len": 833
+  "len": 844
  },
  "0x004C5BF0": {
   "name": "reaper_lock_user_2",
   "named": true,
-  "len": 2292
+  "len": 2303
  },
  "0x004C5D80": {
   "name": "FUN_004c5d80",
   "named": false,
-  "len": 688
+  "len": 699
  },
  "0x004C5E10": {
   "name": "ai_proximity_scan",
   "named": true,
-  "len": 1737
+  "len": 1759
  },
  "0x004C5FB0": {
   "name": "reaper_lock_pair",
@@ -6797,7 +6797,7 @@
  "0x004CA890": {
   "name": "evilreaper_scan_for_enemy__FP6OBJECTf",
   "named": true,
-  "len": 3718
+  "len": 3716
  },
  "0x004CABB0": {
   "name": "evilreaper_verify_enemy__FP6OBJECTf",
@@ -6807,7 +6807,7 @@
  "0x004CAE90": {
   "name": "physics_reset_c",
   "named": true,
-  "len": 864
+  "len": 848
  },
  "0x004CAF60": {
   "name": "sound_obj_seq_big",
@@ -6847,12 +6847,12 @@
  "0x004CBB90": {
   "name": "physics_reset_a",
   "named": true,
-  "len": 2737
+  "len": 2721
  },
  "0x004CBDF0": {
   "name": "physics_reset_d",
   "named": true,
-  "len": 3085
+  "len": 3069
  },
  "0x004CC7A0": {
   "name": "FUN_004cc7a0",
@@ -6882,7 +6882,7 @@
  "0x004CD5D0": {
   "name": "lens_effects_process__Fv",
   "named": true,
-  "len": 4961
+  "len": 4953
  },
  "0x004CD990": {
   "name": "FUN_004cd990",
@@ -6892,7 +6892,7 @@
  "0x004CDA80": {
   "name": "dev_debug_flags",
   "named": true,
-  "len": 14364
+  "len": 14356
  },
  "0x004CE880": {
   "name": "comm_004ce880",
@@ -6912,7 +6912,7 @@
  "0x004CEAA0": {
   "name": "smartie_move",
   "named": true,
-  "len": 54117
+  "len": 54135
  },
  "0x004D1790": {
   "name": "EnemyIsInvalid__FP6OBJECTT0",
@@ -6937,7 +6937,7 @@
  "0x004D1BD0": {
   "name": "verm_control",
   "named": true,
-  "len": 31454
+  "len": 31472
  },
  "0x004D3720": {
   "name": "obj_follow_owner_refpt",
@@ -6952,17 +6952,17 @@
  "0x004D4350": {
   "name": "make_spit__FP6OBJECTP3P3Df",
   "named": true,
-  "len": 2939
+  "len": 2949
  },
  "0x004D4580": {
   "name": "FUN_004d4580",
   "named": false,
-  "len": 752
+  "len": 754
  },
  "0x004D4630": {
   "name": "ai_face_move",
   "named": true,
-  "len": 1402
+  "len": 1404
  },
  "0x004D4760": {
   "name": "enemy_check_player_grab__FP6OBJECTif",
@@ -7047,7 +7047,7 @@
  "0x004D5B50": {
   "name": "rpboat_tilt__FP6OBJECT",
   "named": true,
-  "len": 5302
+  "len": 5303
  },
  "0x004D73B0": {
   "name": "reaper_spell_sound_1",
@@ -7110,9 +7110,9 @@
   "len": 605
  },
  "0x004E1030": {
-  "name": "FUN_004e1030",
-  "named": false,
-  "len": 885
+  "name": "rpman_goto_last_loc__FP6OBJECTi",
+  "named": true,
+  "len": 904
  },
  "0x004E10E0": {
   "name": "ai_death_anim",
@@ -7152,7 +7152,7 @@
  "0x004E22D0": {
   "name": "ai_visibility_cull",
   "named": true,
-  "len": 1780
+  "len": 1778
  },
  "0x004E2450": {
   "name": "ai_move_pair_caller",
@@ -7222,7 +7222,7 @@
  "0x004E3920": {
   "name": "rpman_scan_for_enemy__FP6OBJECTfii",
   "named": true,
-  "len": 7476
+  "len": 7472
  },
  "0x004E3EB0": {
   "name": "rpman_consider_run_chatter__FP6OBJECT",
@@ -7237,17 +7237,17 @@
  "0x004E41E0": {
   "name": "FUN_004e41e0",
   "named": false,
-  "len": 562
+  "len": 564
  },
  "0x004E4280": {
   "name": "FUN_004e4280",
   "named": false,
-  "len": 912
+  "len": 916
  },
  "0x004E4360": {
   "name": "rpman_maintain_hide__FP6OBJECT",
   "named": true,
-  "len": 2450
+  "len": 2452
  },
  "0x004E45A0": {
   "name": "FUN_004e45a0",
@@ -7277,7 +7277,7 @@
  "0x004E4BC0": {
   "name": "cleaner_process",
   "named": true,
-  "len": 3079
+  "len": 3080
  },
  "0x004E4E70": {
   "name": "FUN_004e4e70",
@@ -7297,7 +7297,7 @@
  "0x004E5120": {
   "name": "rpman_flying_fire__FP6OBJECT",
   "named": true,
-  "len": 1771
+  "len": 1773
  },
  "0x004E5270": {
   "name": "fire_bullet_shot__FP6OBJECTT0ii",
@@ -7307,12 +7307,12 @@
  "0x004E5640": {
   "name": "fire_sniper_shot__FP6OBJECTT0",
   "named": true,
-  "len": 10272
+  "len": 10278
  },
  "0x004E5F70": {
   "name": "rpman_rapid_fire__FP6OBJECTiii",
   "named": true,
-  "len": 7994
+  "len": 8000
  },
  "0x004E6670": {
   "name": "FUN_004e6670",
@@ -7327,7 +7327,7 @@
  "0x004E6BA0": {
   "name": "rpboat_logic__FP6OBJECT",
   "named": true,
-  "len": 6525
+  "len": 6527
  },
  "0x004E7160": {
   "name": "FUN_004e7160",
@@ -7350,9 +7350,9 @@
   "len": 593
  },
  "0x004E7390": {
-  "name": "FUN_004e7390",
-  "named": false,
-  "len": 906
+  "name": "rpman_set_smartie_goal__FP6OBJECT",
+  "named": true,
+  "len": 927
  },
  "0x004E7460": {
   "name": "rpman_army_goto_firepit__FP6OBJECT",
@@ -7362,7 +7362,7 @@
  "0x004E7970": {
   "name": "rpman_gib__FP6OBJECTT0",
   "named": true,
-  "len": 1424
+  "len": 1421
  },
  "0x004E7AE0": {
   "name": "rpman_notify_hit",
@@ -7415,9 +7415,9 @@
   "len": 1972
  },
  "0x004EBA40": {
-  "name": "FUN_004eba40",
-  "named": false,
-  "len": 757
+  "name": "fx_logic",
+  "named": true,
+  "len": 753
  },
  "0x004EBAE0": {
   "name": "main_scrnshot_004ebae0",
@@ -7565,14 +7565,14 @@
   "len": 728
  },
  "0x004EED30": {
-  "name": "FUN_004eed30",
-  "named": false,
-  "len": 3490
+  "name": "line_of_sight_grid",
+  "named": true,
+  "len": 3496
  },
  "0x004EF070": {
   "name": "ai_class_filter",
   "named": true,
-  "len": 1449
+  "len": 1455
  },
  "0x004EF190": {
   "name": "FUN_004ef190",
@@ -7747,7 +7747,7 @@
  "0x004F9380": {
   "name": "ripper_medium_move__FP6OBJECT",
   "named": true,
-  "len": 9206
+  "len": 9210
  },
  "0x004F9B50": {
   "name": "FUN_004f9b50",
@@ -7762,7 +7762,7 @@
  "0x004F9D20": {
   "name": "obj_shadow_cast",
   "named": true,
-  "len": 2230
+  "len": 2228
  },
  "0x004FA1E0": {
   "name": "AudioDataStreamStatus__Fv_3",
@@ -7895,9 +7895,9 @@
   "len": 2505
  },
  "0x00500A60": {
-  "name": "FUN_00500a60",
-  "named": false,
-  "len": 2076
+  "name": "item_create_base_pickup_2",
+  "named": true,
+  "len": 2089
  },
  "0x00500C00": {
   "name": "FUN_00500c00",
@@ -7935,9 +7935,9 @@
   "len": 539
  },
  "0x00501000": {
-  "name": "FUN_00501000",
-  "named": false,
-  "len": 277
+  "name": "team_toggle",
+  "named": true,
+  "len": 279
  },
  "0x00501030": {
   "name": "teammecc_enemies_helper",
@@ -7972,7 +7972,7 @@
  "0x005011F0": {
   "name": "teammecc_create",
   "named": true,
-  "len": 2792
+  "len": 2802
  },
  "0x00501500": {
   "name": "obj_path_follow",
@@ -7980,14 +7980,14 @@
   "len": 2064
  },
  "0x00501670": {
-  "name": "FUN_00501670",
-  "named": false,
-  "len": 1199
+  "name": "teammecc_toggle",
+  "named": true,
+  "len": 1202
  },
  "0x00501740": {
   "name": "teammecc_setup_enemies__FP6OBJECTi",
   "named": true,
-  "len": 22973
+  "len": 22978
  },
  "0x005025D0": {
   "name": "teammecc_leader_calc",
@@ -8017,12 +8017,12 @@
  "0x00503970": {
   "name": "teammecc_set_slave_goal__FP6OBJECTi",
   "named": true,
-  "len": 8088
+  "len": 8191
  },
  "0x00504050": {
-  "name": "FUN_00504050",
-  "named": false,
-  "len": 2691
+  "name": "mecc_set_fire__FP6OBJECTi",
+  "named": true,
+  "len": 2710
  },
  "0x00504230": {
   "name": "mecc_smoking_fx_update",
@@ -8180,9 +8180,9 @@
   "len": 434
  },
  "0x0050A390": {
-  "name": "FUN_0050a390",
-  "named": false,
-  "len": 468
+  "name": "atand2pos",
+  "named": true,
+  "len": 465
  },
  "0x0050A400": {
   "name": "dirfcalcp3d__FP3P3DT0",
@@ -8245,14 +8245,14 @@
   "len": 287
  },
  "0x0050A770": {
-  "name": "FUN_0050a770",
-  "named": false,
-  "len": 421
+  "name": "diff_angle",
+  "named": true,
+  "len": 419
  },
  "0x0050A7C0": {
-  "name": "FUN_0050a7c0",
-  "named": false,
-  "len": 406
+  "name": "playerobj_turn",
+  "named": true,
+  "len": 408
  },
  "0x0050A810": {
   "name": "normalize__FPfN20",
@@ -8347,7 +8347,7 @@
  "0x0050CA00": {
   "name": "kabutoai_move",
   "named": true,
-  "len": 50299
+  "len": 50321
  },
  "0x0050F830": {
   "name": "main_verm_0050f830",
@@ -8362,12 +8362,12 @@
  "0x00510F50": {
   "name": "evilreaper_gib__FP6OBJECTT0",
   "named": true,
-  "len": 1521
+  "len": 1441
  },
  "0x00511410": {
   "name": "herdgen_marker_user",
   "named": true,
-  "len": 3580
+  "len": 3581
  },
  "0x005116E0": {
   "name": "vimp_animselect",
@@ -8387,7 +8387,7 @@
  "0x00511FF0": {
   "name": "evilreaper_ai_big",
   "named": true,
-  "len": 6813
+  "len": 6815
  },
  "0x005124E0": {
   "name": "obj_proximity_flags",
@@ -8485,14 +8485,14 @@
   "len": 127
  },
  "0x00515090": {
-  "name": "FUN_00515090",
-  "named": false,
-  "len": 5866
+  "name": "wave_effect_draw",
+  "named": true,
+  "len": 5870
  },
  "0x00515580": {
   "name": "FUN_00515580",
   "named": false,
-  "len": 504
+  "len": 508
  },
  "0x005155C0": {
   "name": "FUN_005155c0",
@@ -8605,9 +8605,9 @@
   "len": 237
  },
  "0x00516290": {
-  "name": "FUN_00516290",
-  "named": false,
-  "len": 263
+  "name": "Dot__FP3P3DT0",
+  "named": true,
+  "len": 264
  },
  "0x005162B0": {
   "name": "FUN_005162b0",
@@ -10257,7 +10257,7 @@
  "0x00531470": {
   "name": "FUN_00531470",
   "named": false,
-  "len": 36707
+  "len": 36721
  },
  "0x00532E20": {
   "name": "anm_dump_52",
@@ -10315,9 +10315,9 @@
   "len": 3396
  },
  "0x00533B00": {
-  "name": "FUN_00533b00",
-  "named": false,
-  "len": 2196
+  "name": "mecc_do_flare__FP6OBJECT_2",
+  "named": true,
+  "len": 2210
  },
  "0x00533C60": {
   "name": "base_warn_missing",
@@ -10327,7 +10327,7 @@
  "0x00533D40": {
   "name": "mecc_fire_logic__FP6OBJECT",
   "named": true,
-  "len": 42892
+  "len": 42900
  },
  "0x00534EC0": {
   "name": "comm_send_helper",
@@ -10367,7 +10367,7 @@
  "0x00536050": {
   "name": "atox__FPc",
   "named": true,
-  "len": 1024
+  "len": 1016
  },
  "0x00536120": {
   "name": "controlShutdown_2",
@@ -10412,7 +10412,7 @@
  "0x00536B20": {
   "name": "multi_draw_health_bar_horizontal__FP6OBJECTff",
   "named": true,
-  "len": 1362
+  "len": 1365
  },
  "0x00536C60": {
   "name": "FUN_00536c60",
@@ -10427,12 +10427,12 @@
  "0x00536CB0": {
   "name": "multi_display_player_cursor_info__Fv",
   "named": true,
-  "len": 1831
+  "len": 1837
  },
  "0x00536F60": {
   "name": "bldg_comm_status",
   "named": true,
-  "len": 2412
+  "len": 2415
  },
  "0x00537120": {
   "name": "base_hint_menu",
@@ -10447,7 +10447,7 @@
  "0x00537400": {
   "name": "comm_wincond_destroy",
   "named": true,
-  "len": 3308
+  "len": 3325
  },
  "0x005375E0": {
   "name": "FUN_005375e0",
@@ -10997,7 +10997,7 @@
  "0x0053F330": {
   "name": "geom_clip_poly_plane",
   "named": true,
-  "len": 1598
+  "len": 1600
  },
  "0x0053F440": {
   "name": "Det3x3__8geom_Mat",
@@ -11032,12 +11032,12 @@
  "0x0053FAD0": {
   "name": "FUN_0053fad0",
   "named": false,
-  "len": 588
+  "len": 589
  },
  "0x0053FB40": {
   "name": "FUN_0053fb40",
   "named": false,
-  "len": 1045
+  "len": 1046
  },
  "0x0053FC10": {
   "name": "AudioSetSpeakerConfig__F14SPEAKER_SYSTEM_6",
@@ -11460,9 +11460,9 @@
   "len": 171
  },
  "0x00543E70": {
-  "name": "FUN_00543e70",
-  "named": false,
-  "len": 180
+  "name": "powf",
+  "named": true,
+  "len": 172
  },
  "0x00543E92": {
   "name": "crt_pow_main",

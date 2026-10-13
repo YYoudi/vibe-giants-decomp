@@ -3748,7 +3748,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
                                       *(undefined4 *)(param_1 + 200));
 
-          fVar8 = (float10)FUN_0050a7c0((float)fVar8);
+          fVar8 = (float10)playerobj_turn((float)fVar8);
 
           pfVar2[9] = (float)fVar8;
 
@@ -3978,7 +3978,7 @@ void ripper_medium_move__FP6OBJECT(int param_1)
 
     FUN_004515b0((float)(fVar8 * (float10)*(float *)(param_1 + 0x1a8)));
 
-    fVar8 = (float10)FUN_0050a7c0(*(undefined4 *)(param_1 + 0xf8),*pfVar1);
+    fVar8 = (float10)playerobj_turn(*(undefined4 *)(param_1 + 0xf8),*pfVar1);
 
     fVar9 = (float10)FUN_00518b70(param_1,0);
 
@@ -4385,7 +4385,7 @@ LAB_004f9ea2:
 
           fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,puVar1);
 
-          fVar9 = (float10)FUN_0050a770((float)fVar9,*(undefined4 *)(iVar6 + 200));
+          fVar9 = (float10)diff_angle((float)fVar9,*(undefined4 *)(iVar6 + 200));
 
           if (fVar9 <= (float10)*(float *)(DAT_00632ed8 + 0x5c)) {
 

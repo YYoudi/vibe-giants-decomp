@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0044
- * 76 functions (61 named) — decompiled, names from PS2 symbols
+ * 76 functions (62 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0044.c(pp) (assert-string evidence)
  */
 
@@ -1797,7 +1797,7 @@ void obj_scale_pulse(float param_1,undefined4 param_2)
 
   fVar4 = (float10)dirfcalcp3d__FP3P3DT0((int)fVar2 + 0xa0,param_2);
 
-  fVar4 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)((int)fVar2 + 200));
+  fVar4 = (float10)playerobj_turn((float)fVar4,*(undefined4 *)((int)fVar2 + 200));
 
   if ((float10)5.0 <= ABS(fVar4)) {
 
@@ -2960,12 +2960,12 @@ undefined4 FUN_00443f30(int param_1,int param_2,int param_3)
 
 }
 
-/* ===== FUN_00443fb0 @ 0x00443FB0 ===== */
+/* ===== FLK_ActorOffsetEval__FP9FLK_Actor @ 0x00443FB0 ===== */
 /* PS2 candidate: FLK_ActorOffsetEval__FP9FLK_Actor (conf 0.354) */
 
 
 
-void FUN_00443fb0(float param_1)
+void FLK_ActorOffsetEval__FP9FLK_Actor(float param_1)
 
 
 
@@ -5229,7 +5229,7 @@ LAB_00445a50:
 
     if (-1 < (int)puVar12[2]) {
 
-      FUN_00495990(puVar12[2]);
+      sound_stop(puVar12[2]);
 
       puVar12 = puVar12 + puVar12[1];
 
@@ -5309,7 +5309,7 @@ LAB_00445a50:
 
         *(undefined4 *)(iVar10 + 0x824) = puVar12[3];
 
-        FUN_00443fb0(iVar10);
+        FLK_ActorOffsetEval__FP9FLK_Actor(iVar10);
 
         puVar12 = puVar12 + puVar12[1];
 
@@ -5323,7 +5323,7 @@ LAB_00445a50:
 
         *(undefined4 *)(iVar10 + 0x828) = puVar12[4];
 
-        FUN_00443fb0(iVar10);
+        FLK_ActorOffsetEval__FP9FLK_Actor(iVar10);
 
         puVar12 = puVar12 + puVar12[1];
 
@@ -5339,7 +5339,7 @@ LAB_00445a50:
 
         *(undefined4 *)(iVar10 + 0x834) = puVar12[5];
 
-        FUN_00443fb0(iVar10);
+        FLK_ActorOffsetEval__FP9FLK_Actor(iVar10);
 
         puVar12 = puVar12 + puVar12[1];
 
@@ -5363,7 +5363,7 @@ LAB_00445a50:
 
         }
 
-        FUN_00443fb0(iVar10);
+        FLK_ActorOffsetEval__FP9FLK_Actor(iVar10);
 
         puVar12 = puVar12 + puVar12[1];
 
@@ -13129,7 +13129,7 @@ int fx_process_one(int *param_1,int param_2)
 
     if (fVar7 < (float10)0.0 != (fVar7 == (float10)0.0)) {
 
-      FUN_00495990(param_1[0x32]);
+      sound_stop(param_1[0x32]);
 
       param_1[0x32] = -1;
 

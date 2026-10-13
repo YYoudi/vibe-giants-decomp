@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0041
- * 100 functions (73 named) — decompiled, names from PS2 symbols
+ * 100 functions (76 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
  */
 
@@ -1801,11 +1801,11 @@ void collide_objects(int param_1)
 
                         fVar11 = (float10)dirfcalcp3d__FP3P3DT0(pfVar9,pfVar8);
 
-                        fVar10 = (float10)FUN_0050a770((float)fVar11,fVar2 + local_b0);
+                        fVar10 = (float10)diff_angle((float)fVar11,fVar2 + local_b0);
 
                         local_9c = (float)fVar10;
 
-                        fVar11 = (float10)FUN_0050a770((float)fVar11,fVar2 - local_b0);
+                        fVar11 = (float10)diff_angle((float)fVar11,fVar2 - local_b0);
 
                         if (fVar11 < (float10)local_9c) {
 
@@ -5707,7 +5707,7 @@ LAB_004178c6:
 
     }
 
-    iVar4 = FUN_004a6300(param_1);
+    iVar4 = ObjIsReaperBldg(param_1);
 
     if (iVar4 != 0) goto LAB_004178c6;
 
@@ -5817,7 +5817,7 @@ LAB_00417980:
 
       if (iVar4 == 0) {
 
-        iVar4 = FUN_004a6300(iVar3);
+        iVar4 = ObjIsReaperBldg(iVar3);
 
         if (iVar4 == 0) goto LAB_00417a14;
 
@@ -5970,7 +5970,7 @@ LAB_00417aef:
 
     if (iVar5 == 0) {
 
-      iVar5 = FUN_004a6300(iVar4);
+      iVar5 = ObjIsReaperBldg(iVar4);
 
       if (iVar5 != 0) goto LAB_00417b37;
 
@@ -6040,7 +6040,7 @@ LAB_00417ba7:
 
         if (iVar5 == 0) {
 
-          iVar5 = FUN_004a6300(iVar4);
+          iVar5 = ObjIsReaperBldg(iVar4);
 
           if (iVar5 == 0) goto LAB_00417c0e;
 
@@ -6140,7 +6140,7 @@ undefined4 bldg_get_max_energy(int param_1)
 
     iVar4 = reaperbase_bldg_from_object(param_1);
 
-    if ((iVar4 == 0) && (iVar4 = FUN_004a6300(param_1), iVar4 == 0)) {
+    if ((iVar4 == 0) && (iVar4 = ObjIsReaperBldg(param_1), iVar4 == 0)) {
 
       fVar5 = (float10)50.0;
 
@@ -6213,7 +6213,9 @@ float10 bldg_set_energy(int param_1,float param_2)
 
     iVar2 = FUN_004a6220(param_1);
 
-    if (((iVar2 != 0) || (iVar2 = FUN_004a6300(param_1), iVar2 != 0)) && (pfVar1 != (float *)0x0)) {
+    if (((iVar2 != 0) || (iVar2 = ObjIsReaperBldg(param_1), iVar2 != 0)) && (pfVar1 != (float *)0x0)
+
+       ) {
 
       *pfVar1 = param_2;
 
@@ -6335,7 +6337,7 @@ float10 bldg_get_max_energy(undefined4 param_1)
 
       if (iVar1 == 0) {
 
-        iVar1 = FUN_004a6300(param_1);
+        iVar1 = ObjIsReaperBldg(param_1);
 
         if (iVar1 == 0) {
 
@@ -6410,7 +6412,7 @@ undefined4 FUN_004181d0(float param_1,int param_2)
 
       iVar5 = reaperbase_bldg_from_object(uVar2);
 
-      if ((iVar5 == 0) && (iVar5 = FUN_004a6300(uVar2), iVar5 == 0)) {
+      if ((iVar5 == 0) && (iVar5 = ObjIsReaperBldg(uVar2), iVar5 == 0)) {
 
         fVar6 = (float10)50.0;
 
@@ -6479,7 +6481,7 @@ undefined4 FUN_00418380(float param_1,int param_2)
 
     iVar3 = reaperbase_bldg_from_object(iVar4);
 
-    if ((iVar3 == 0) && (iVar3 = FUN_004a6300(iVar4), iVar3 == 0)) {
+    if ((iVar3 == 0) && (iVar3 = ObjIsReaperBldg(iVar4), iVar3 == 0)) {
 
       param_1 = 50.0;
 
@@ -6707,7 +6709,7 @@ undefined4 FUN_00418540(float param_1,int param_2)
 
       iVar5 = reaperbase_bldg_from_object(uVar2);
 
-      if ((iVar5 == 0) && (iVar5 = FUN_004a6300(uVar2), iVar5 == 0)) {
+      if ((iVar5 == 0) && (iVar5 = ObjIsReaperBldg(uVar2), iVar5 == 0)) {
 
         fVar6 = (float10)50.0;
 
@@ -6739,12 +6741,12 @@ undefined4 FUN_00418540(float param_1,int param_2)
 
 }
 
-/* ===== FUN_00418630 @ 0x00418630 ===== */
+/* ===== bldg_get_refpt_worldloc @ 0x00418630 ===== */
 /* PS2 candidate: bldg_get_refpt_worldloc (conf 0.358) */
 
 
 
-void FUN_00418630(int param_1,int param_2,undefined4 *param_3)
+void bldg_get_refpt_worldloc(int param_1,int param_2,undefined4 *param_3)
 
 
 
@@ -6810,12 +6812,12 @@ void FUN_00418630(int param_1,int param_2,undefined4 *param_3)
 
 }
 
-/* ===== FUN_004186c0 @ 0x004186C0 ===== */
+/* ===== bldg_get_refpt_worldlocdir @ 0x004186C0 ===== */
 /* PS2 candidate: bldg_get_refpt_worldlocdir (conf 0.346) */
 
 
 
-void FUN_004186c0(int param_1,int param_2,undefined4 *param_3,float *param_4)
+void bldg_get_refpt_worldlocdir(int param_1,int param_2,undefined4 *param_3,float *param_4)
 
 
 
@@ -6881,7 +6883,7 @@ void FUN_004186c0(int param_1,int param_2,undefined4 *param_3,float *param_4)
 
   param_3[2] = local_14;
 
-  fVar4 = (float10)FUN_0050a390(-local_2c,-local_44[2]);
+  fVar4 = (float10)atand2pos(-local_2c,-local_44[2]);
 
   *param_4 = (float)(fVar4 + (float10)90.0);
 
@@ -6944,7 +6946,7 @@ void FUN_00418770(int param_1,int param_2,float *param_3)
 
   }
 
-  fVar4 = (float10)FUN_0050a390(-local_2c,-local_44[2]);
+  fVar4 = (float10)atand2pos(-local_2c,-local_44[2]);
 
   *param_3 = (float)(fVar4 + (float10)90.0);
 
@@ -7013,12 +7015,12 @@ void FUN_00418810(int param_1,int param_2,float *param_3,float *param_4)
 
 }
 
-/* ===== FUN_004188a0 @ 0x004188A0 ===== */
+/* ===== base_get_base_building @ 0x004188A0 ===== */
 /* PS2 candidate: base_get_base_building (conf 0.343) */
 
 
 
-undefined4 FUN_004188a0(undefined4 param_1)
+undefined4 base_get_base_building(undefined4 param_1)
 
 
 
@@ -7326,7 +7328,7 @@ undefined4 object_spawn_class5(int param_1,float param_2)
 
       local_48 = local_14;
 
-      fVar8 = (float10)FUN_0050a390(-local_2c,-local_44[2]);
+      fVar8 = (float10)atand2pos(-local_2c,-local_44[2]);
 
       param_2 = (float)(fVar8 + (float10)90.0);
 
@@ -7476,7 +7478,7 @@ void collgrid_query_obj(int param_1,int param_2)
 
       iVar4 = reaperbase_bldg_from_object(param_1);
 
-      if ((iVar4 == 0) && (iVar4 = FUN_004a6300(param_1), iVar4 == 0)) {
+      if ((iVar4 == 0) && (iVar4 = ObjIsReaperBldg(param_1), iVar4 == 0)) {
 
         fVar6 = (float10)50.0;
 
@@ -7508,9 +7510,9 @@ void collgrid_query_obj(int param_1,int param_2)
 
       iVar4 = FUN_004a6220(param_1);
 
-      if ((((iVar4 != 0) || (iVar4 = FUN_004a6300(param_1), iVar4 != 0)) && (pfVar3 != (float *)0x0)
+      if ((((iVar4 != 0) || (iVar4 = ObjIsReaperBldg(param_1), iVar4 != 0)) &&
 
-          ) && (*pfVar3 = fVar1, fVar1 < 0.0)) {
+          (pfVar3 != (float *)0x0)) && (*pfVar3 = fVar1, fVar1 < 0.0)) {
 
         *pfVar3 = 0.0;
 
@@ -8093,7 +8095,7 @@ void objtype_setup_spell(undefined4 param_1)
 
       local_8c = local_58;
 
-      fVar10 = (float10)FUN_0050a390(-local_70,-local_88[2]);
+      fVar10 = (float10)atand2pos(-local_70,-local_88[2]);
 
       *(float *)(iVar4 + 200) = (float)(fVar10 + (float10)90.0);
 
@@ -8234,7 +8236,7 @@ LAB_0041a8af:
 
     }
 
-    iVar3 = FUN_004a6300(iVar2);
+    iVar3 = ObjIsReaperBldg(iVar2);
 
     if (iVar3 != 0) goto LAB_0041a8af;
 
@@ -8268,7 +8270,7 @@ LAB_0041a8bd:
 
       if (iVar3 == 0) {
 
-        iVar3 = FUN_004a6300(iVar2);
+        iVar3 = ObjIsReaperBldg(iVar2);
 
         if (iVar3 == 0) goto LAB_0041a942;
 
@@ -8532,9 +8534,9 @@ void FUN_0041ac40(undefined4 param_1,undefined4 param_2,undefined4 param_3,undef
 
     iVar4 = FUN_004a6220(iVar3);
 
-    if ((((iVar4 != 0) || (iVar4 = FUN_004a6300(iVar3), iVar4 != 0)) && (pfVar1 != (float *)0x0)) &&
+    if ((((iVar4 != 0) || (iVar4 = ObjIsReaperBldg(iVar3), iVar4 != 0)) && (pfVar1 != (float *)0x0))
 
-       (*pfVar1 = param_6, param_6 < 0.0)) {
+       && (*pfVar1 = param_6, param_6 < 0.0)) {
 
       *pfVar1 = 0.0;
 
@@ -8687,7 +8689,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   if (iVar5 == 0) {
 
-    iVar5 = FUN_004a6300(iVar4);
+    iVar5 = ObjIsReaperBldg(iVar4);
 
     if (iVar5 != 0) {
 
@@ -8849,9 +8851,9 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
     iVar7 = FUN_004a6220(iVar4);
 
-    if ((((iVar7 != 0) || (iVar7 = FUN_004a6300(iVar4), iVar7 != 0)) && (pfVar2 != (float *)0x0)) &&
+    if ((((iVar7 != 0) || (iVar7 = ObjIsReaperBldg(iVar4), iVar7 != 0)) && (pfVar2 != (float *)0x0))
 
-       (*pfVar2 = param_7, param_7 < 0.0)) {
+       && (*pfVar2 = param_7, param_7 < 0.0)) {
 
       *pfVar2 = 0.0;
 
@@ -8877,7 +8879,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
   if (iVar7 == 0) {
 
-    iVar7 = FUN_004a6300(iVar4);
+    iVar7 = ObjIsReaperBldg(iVar4);
 
     if ((iVar7 == 0) || (iVar7 = meccbasepit_bldg_from_object(iVar4), iVar7 < 0)) goto LAB_0041b268;
 
@@ -8887,7 +8889,7 @@ void objtype_setup_mecc(int param_1,int param_2,undefined4 param_3,undefined4 pa
 
       iVar5 = reaperbase_bldg_from_object(iVar4);
 
-      if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar4), iVar5 != 0)) {
+      if ((iVar5 != 0) || (iVar5 = ObjIsReaperBldg(iVar4), iVar5 != 0)) {
 
         fVar9 = (float10)reaperbase_get_max_energy(iVar4);
 
@@ -8947,7 +8949,7 @@ LAB_0041b204:
 
     iVar5 = reaperbase_bldg_from_object(iVar4);
 
-    if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar4), iVar5 != 0)) {
+    if ((iVar5 != 0) || (iVar5 = ObjIsReaperBldg(iVar4), iVar5 != 0)) {
 
       fVar9 = (float10)reaperbase_get_max_energy(iVar4);
 
@@ -9144,7 +9146,7 @@ void objtype_setup_vimp(int param_1,int param_2)
 
     local_48 = (float)local_14;
 
-    fVar6 = (float10)FUN_0050a390(-local_2c,-local_44[2]);
+    fVar6 = (float10)atand2pos(-local_2c,-local_44[2]);
 
     object_set_location_p3d(param_1,&local_50);
 
@@ -10457,7 +10459,7 @@ LAB_0041e522:
 
     }
 
-    iVar6 = FUN_004a6300(iVar4);
+    iVar6 = ObjIsReaperBldg(iVar4);
 
     if (iVar6 != 0) goto LAB_0041e522;
 
@@ -10491,7 +10493,7 @@ LAB_0041e530:
 
       if (iVar6 == 0) {
 
-        iVar6 = FUN_004a6300(iVar4);
+        iVar6 = ObjIsReaperBldg(iVar4);
 
         if (iVar6 == 0) goto LAB_0041e5bd;
 
@@ -10636,7 +10638,7 @@ void FUN_0041e720(float param_1)
 
     iVar2 = reaperbase_bldg_from_object(param_1);
 
-    if ((iVar2 == 0) && (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) {
+    if ((iVar2 == 0) && (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)) {
 
       param_1 = 50.0;
 
@@ -10676,7 +10678,7 @@ LAB_0041e779:
 
   iVar2 = FUN_004a6220(iVar3);
 
-  if ((iVar2 == 0) && (iVar3 = FUN_004a6300(iVar3), iVar3 == 0)) {
+  if ((iVar2 == 0) && (iVar3 = ObjIsReaperBldg(iVar3), iVar3 == 0)) {
 
     return;
 
@@ -10763,7 +10765,7 @@ void obj_group_spread(float param_1)
 
           iVar3 = reaperbase_bldg_from_object(iVar4);
 
-          if ((iVar3 != 0) || (iVar3 = FUN_004a6300(iVar4), iVar3 != 0)) {
+          if ((iVar3 != 0) || (iVar3 = ObjIsReaperBldg(iVar4), iVar3 != 0)) {
 
             fVar6 = (float10)reaperbase_get_max_energy(iVar4);
 
@@ -10795,7 +10797,7 @@ LAB_0041e8bf:
 
           iVar3 = FUN_004a6220(iVar4);
 
-          if (((iVar3 != 0) || (iVar4 = FUN_004a6300(iVar4), iVar4 != 0)) &&
+          if (((iVar3 != 0) || (iVar4 = ObjIsReaperBldg(iVar4), iVar4 != 0)) &&
 
              ((pfVar1 != (float *)0x0 && (*pfVar1 = param_1, param_1 < 0.0)))) {
 
@@ -10924,7 +10926,7 @@ void repair_logic(float param_1)
 
             iVar4 = reaperbase_bldg_from_object(iVar2);
 
-            if ((iVar4 != 0) || (iVar4 = FUN_004a6300(iVar2), iVar4 != 0)) {
+            if ((iVar4 != 0) || (iVar4 = ObjIsReaperBldg(iVar2), iVar4 != 0)) {
 
               fVar7 = (float10)reaperbase_get_max_energy(iVar2);
 
@@ -11204,7 +11206,7 @@ void objtype_setup_rpman(int param_1,float param_2,int param_3)
 
           iVar5 = reaperbase_bldg_from_object(iVar6);
 
-          if ((iVar5 != 0) || (iVar5 = FUN_004a6300(iVar6), iVar5 != 0)) {
+          if ((iVar5 != 0) || (iVar5 = ObjIsReaperBldg(iVar6), iVar5 != 0)) {
 
             fVar8 = (float10)reaperbase_get_max_energy(iVar6);
 
@@ -11320,7 +11322,7 @@ LAB_0041ecb2:
 
           iVar4 = reaperbase_bldg_from_object(iVar6);
 
-          if ((iVar4 != 0) || (iVar4 = FUN_004a6300(iVar6), iVar4 != 0)) {
+          if ((iVar4 != 0) || (iVar4 = ObjIsReaperBldg(iVar6), iVar4 != 0)) {
 
             fVar8 = (float10)reaperbase_get_max_energy(iVar6);
 

@@ -100,7 +100,7 @@ LAB_0041906f:
 
         iVar8 = FUN_004a6220(param_1);
 
-        if ((((iVar8 != 0) || (iVar8 = FUN_004a6300(param_1), iVar8 != 0)) &&
+        if ((((iVar8 != 0) || (iVar8 = ObjIsReaperBldg(param_1), iVar8 != 0)) &&
 
             (pfVar3 != (float *)0x0)) && (*pfVar3 = local_90, local_90 < 0.0)) {
 
@@ -246,7 +246,7 @@ LAB_0041906f:
 
           iVar8 = FUN_004a6220(param_1);
 
-          if ((((iVar8 != 0) || (iVar8 = FUN_004a6300(param_1), iVar8 != 0)) &&
+          if ((((iVar8 != 0) || (iVar8 = ObjIsReaperBldg(param_1), iVar8 != 0)) &&
 
               (pfVar3 != (float *)0x0)) && (*pfVar3 = local_94, local_94 < 0.0)) {
 
@@ -314,7 +314,7 @@ LAB_0041906f:
 
       iVar8 = reaperbase_bldg_from_object(param_1);
 
-      if ((iVar8 != 0) || (iVar8 = FUN_004a6300(param_1), iVar8 != 0)) {
+      if ((iVar8 != 0) || (iVar8 = ObjIsReaperBldg(param_1), iVar8 != 0)) {
 
         fVar11 = (float10)reaperbase_get_max_energy(param_1);
 
@@ -400,9 +400,9 @@ LAB_0041927a:
 
       iVar8 = FUN_004a6220(param_1);
 
-      if ((((iVar8 != 0) || (iVar8 = FUN_004a6300(param_1), iVar8 != 0)) && (pfVar3 != (float *)0x0)
+      if ((((iVar8 != 0) || (iVar8 = ObjIsReaperBldg(param_1), iVar8 != 0)) &&
 
-          ) && (*pfVar3 = local_90, local_90 < 0.0)) {
+          (pfVar3 != (float *)0x0)) && (*pfVar3 = local_90, local_90 < 0.0)) {
 
         *pfVar3 = 0.0;
 
@@ -448,7 +448,7 @@ LAB_004195d2:
 
     }
 
-    iVar8 = FUN_004a6300(param_1);
+    iVar8 = ObjIsReaperBldg(param_1);
 
     if (iVar8 != 0) {
 
@@ -1100,13 +1100,13 @@ LAB_004195d2:
 
     if ((*(uint *)(param_1 + 0xe0) & 0x2000) == 0) {
 
-      FUN_00409b60(param_1,0);
+      reaperbasebldg_shot(param_1,0);
 
       return;
 
     }
 
-    FUN_00409b60(param_1,1);
+    reaperbasebldg_shot(param_1,1);
 
     return;
 

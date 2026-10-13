@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0053
- * 179 functions (118 named) — decompiled, names from PS2 symbols
+ * 179 functions (119 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
  */
 
@@ -3877,7 +3877,7 @@ LAB_00532513:
 
       case '9':
 
-        FUN_00533b00(pcVar15);
+        mecc_do_flare__FP6OBJECT_2(pcVar15);
 
         DAT_005e0304 = DAT_005e0304 + 0x3d;
 
@@ -5598,12 +5598,12 @@ LAB_00533a8f:
 
 }
 
-/* ===== FUN_00533b00 @ 0x00533B00 ===== */
+/* ===== mecc_do_flare__FP6OBJECT_2 @ 0x00533B00 ===== */
 /* PS2 candidate: mecc_do_flare__FP6OBJECT (conf 0.358) */
 
 
 
-void FUN_00533b00(int param_1)
+void mecc_do_flare__FP6OBJECT_2(int param_1)
 
 
 
@@ -6253,9 +6253,9 @@ void mecc_fire_logic__FP6OBJECT(void)
 
         if ((*(int *)(iVar6 + 0x274) != 0) &&
 
-           ((iVar9 = FUN_004a6220(iVar6), iVar9 != 0 || (iVar9 = FUN_004a6300(iVar6), iVar9 != 0))))
+           ((iVar9 = FUN_004a6220(iVar6), iVar9 != 0 || (iVar9 = ObjIsReaperBldg(iVar6), iVar9 != 0)
 
-        {
+            ))) {
 
           iVar9 = dialog_level_is_base();
 
@@ -9329,7 +9329,7 @@ int atox__FPc(char *param_1)
 
     iVar2 = iVar2 + -1;
 
-    FUN_00543e70();
+    powf();
 
     iVar4 = __ftol();
 
@@ -10310,7 +10310,7 @@ void multi_draw_health_bar_horizontal__FP6OBJECTff(float param_1,float param_2,f
 
   if (iVar7 == 0) {
 
-    iVar7 = FUN_004a6300(param_1);
+    iVar7 = ObjIsReaperBldg(param_1);
 
     fVar1 = 1.0 - fVar1 / fVar2;
 
@@ -10447,7 +10447,7 @@ void multi_display_player_cursor_info__Fv(void)
 
     XFGetViewportExt(local_1c,local_20,local_24,local_c);
 
-    iVar3 = FUN_004eed30(local_c,local_18);
+    iVar3 = line_of_sight_grid(local_c,local_18);
 
     if (iVar3 != 0) {
 
@@ -10584,7 +10584,7 @@ LAB_00536fe0:
 
             (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) &&
 
-           (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) {
+           (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)) {
 
           puVar3 = (undefined *)FUN_0049a180(*(undefined4 *)((int)param_1 + 0x1e0));
 
@@ -10941,9 +10941,11 @@ void comm_wincond_destroy(int param_1)
 
       if ((*(int *)(iVar4 + 0x18c) == *(int *)(param_1 + 0x18c)) &&
 
-         ((iVar5 = FUN_004a6220(iVar4), iVar5 != 0 || (iVar5 = FUN_004a6300(iVar4), iVar5 != 0)))) {
+         ((iVar5 = FUN_004a6220(iVar4), iVar5 != 0 || (iVar5 = ObjIsReaperBldg(iVar4), iVar5 != 0)))
 
-        iVar5 = FUN_004a6300(iVar4);
+         ) {
+
+        iVar5 = ObjIsReaperBldg(iVar4);
 
         if (iVar5 == 0) {
 
@@ -19712,7 +19714,7 @@ int geom_clip_poly_plane(float *param_1,int param_2,int param_3,float param_4)
 
   pfVar3 = (float *)(param_2 + -0xc + (int)param_4 * 0xc);
 
-  fVar4 = (float10)FUN_00516290(pfVar3,param_3);
+  fVar4 = (float10)Dot__FP3P3DT0(pfVar3,param_3);
 
   fVar4 = fVar4 + (float10)*(float *)(param_3 + 0xc);
 
@@ -19728,7 +19730,7 @@ int geom_clip_poly_plane(float *param_1,int param_2,int param_3,float param_4)
 
       param_4 = (float)fVar4;
 
-      fVar4 = (float10)FUN_00516290(pfVar1,param_3);
+      fVar4 = (float10)Dot__FP3P3DT0(pfVar1,param_3);
 
       fVar4 = fVar4 + (float10)*(float *)(param_3 + 0xc);
 
@@ -20241,7 +20243,7 @@ void FUN_0053fad0(float *param_1,undefined4 param_2,undefined4 param_3)
 
   GEO_Vec2Cross(param_1,param_2,param_3);
 
-  fVar1 = (float10)FUN_00516290(param_2,param_3);
+  fVar1 = (float10)Dot__FP3P3DT0(param_2,param_3);
 
   param_1[3] = (float)fVar1;
 
@@ -20278,7 +20280,7 @@ void FUN_0053fb40(float *param_1,undefined4 param_2,float param_3,float param_4)
 
   GEO_Vec2Cross(param_1,param_2,param_3);
 
-  fVar2 = (float10)FUN_00516290(param_2,param_3);
+  fVar2 = (float10)Dot__FP3P3DT0(param_2,param_3);
 
   param_3 = (float)fVar2;
 

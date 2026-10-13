@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0050
- * 87 functions (51 named) — decompiled, names from PS2 symbols
+ * 87 functions (58 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
  */
 
@@ -672,12 +672,12 @@ LAB_005009d6:
 
 }
 
-/* ===== FUN_00500a60 @ 0x00500A60 ===== */
+/* ===== item_create_base_pickup_2 @ 0x00500A60 ===== */
 /* PS2 candidate: item_create_base_pickup (conf 0.338) */
 
 
 
-void FUN_00500a60(undefined4 param_1,int param_2,int param_3,float param_4)
+void item_create_base_pickup_2(undefined4 param_1,int param_2,int param_3,float param_4)
 
 
 
@@ -1234,12 +1234,12 @@ int team_count(int param_1)
 
 }
 
-/* ===== FUN_00501000 @ 0x00501000 ===== */
+/* ===== team_toggle @ 0x00501000 ===== */
 /* PS2 candidate: team_toggle (conf 0.354) */
 
 
 
-void FUN_00501000(int param_1)
+void team_toggle(int param_1)
 
 
 
@@ -1255,7 +1255,7 @@ void FUN_00501000(int param_1)
 
     if ((iVar1 != 0) && (*(int *)(param_1 + 4) == 2)) {
 
-      FUN_00501670(param_1);
+      teammecc_toggle(param_1);
 
     }
 
@@ -1584,14 +1584,14 @@ void obj_path_follow(int param_1)
 
 }
 
-/* ===== FUN_00501670 @ 0x00501670 ===== */
+/* ===== teammecc_toggle @ 0x00501670 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: teammecc_toggle (conf 0.339) */
 
 
 
-void FUN_00501670(int param_1)
+void teammecc_toggle(int param_1)
 
 
 
@@ -2756,9 +2756,9 @@ LAB_0050203c:
 
           fStack_19c = 1.0;
 
-          fVar15 = (float10)FUN_0050a7c0(*(undefined4 *)(param_1 + 200),*(undefined4 *)(iVar5 + 200)
+          fVar15 = (float10)playerobj_turn(*(undefined4 *)(param_1 + 200),
 
-                                        );
+                                           *(undefined4 *)(iVar5 + 200));
 
           if ((float10)30.0 < ABS(fVar15)) {
 
@@ -4236,7 +4236,7 @@ void teammecc_set_slave_goal__FP6OBJECTi(int param_1,int param_2)
 
   }
 
-  FUN_0050a7c0(local_18,*(undefined4 *)(iVar2 + 200));
+  playerobj_turn(local_18,*(undefined4 *)(iVar2 + 200));
 
   if (*(int *)(iVar2 + 0x168) == 0) {
 
@@ -4400,9 +4400,11 @@ LAB_00503c4b:
 
     if ((((*(uint *)(iVar3 + 0xec) & 4) == 0) &&
 
-        ((fVar6 = (float10)FUN_0050a7c0(*(undefined4 *)(iVar2 + 200),*(undefined4 *)(param_1 + 200))
+        ((fVar6 = (float10)playerobj_turn(*(undefined4 *)(iVar2 + 200),
 
-         , ABS(fVar6) < (float10)50.0 || ((*(byte *)(iVar2 + 0xe0) & 4) != 0)))) &&
+                                          *(undefined4 *)(param_1 + 200)),
+
+         ABS(fVar6) < (float10)50.0 || ((*(byte *)(iVar2 + 0xe0) & 4) != 0)))) &&
 
        (iVar5 = WeaponIdGetPresent__FP6OBJECT(param_1), iVar5 != 0x13)) {
 
@@ -4424,7 +4426,7 @@ LAB_00503c4b:
 
         if (fVar6 < (float10)0.0 != (fVar6 == (float10)0.0)) {
 
-          FUN_00504050(param_1,param_2);
+          mecc_set_fire__FP6OBJECTi(param_1,param_2);
 
           *(undefined4 *)(iVar3 + 0x28) = 0;
 
@@ -4462,7 +4464,7 @@ LAB_00503c4b:
 
       *(float *)(iVar3 + 0x18) = (float)((float10)*(float *)(iVar3 + 0x18) - fVar6);
 
-      fVar6 = (float10)FUN_0050a7c0(local_18,*(undefined4 *)(iVar2 + 200));
+      fVar6 = (float10)playerobj_turn(local_18,*(undefined4 *)(iVar2 + 200));
 
       if ((*(float *)(iVar3 + 0x18) < 0.0 != (*(float *)(iVar3 + 0x18) == 0.0)) &&
 
@@ -4470,7 +4472,7 @@ LAB_00503c4b:
 
 LAB_00503e88:
 
-        FUN_00504050(param_1,param_2);
+        mecc_set_fire__FP6OBJECTi(param_1,param_2);
 
         fVar6 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x10d8),
 
@@ -4494,7 +4496,7 @@ LAB_00503e88:
 
       if (((fVar6 < (float10)0.0 != (fVar6 == (float10)0.0)) && ((*(byte *)(iVar2 + 0xe0) & 8) != 0)
 
-          ) && (fVar6 = (float10)FUN_0050a7c0(local_18,*(undefined4 *)(iVar2 + 200)),
+          ) && (fVar6 = (float10)playerobj_turn(local_18,*(undefined4 *)(iVar2 + 200)),
 
                ABS(fVar6) < (float10)20.0)) goto LAB_00503e88;
 
@@ -4506,7 +4508,7 @@ LAB_00503e88:
 
          ((*(byte *)(iVar2 + 0x30) & 2) != 0)) {
 
-        FUN_00504050(param_1,param_2);
+        mecc_set_fire__FP6OBJECTi(param_1,param_2);
 
         return;
 
@@ -4518,7 +4520,7 @@ LAB_00503e88:
 
           ((*(byte *)(iVar2 + 0x30) & 2) != 0)))) {
 
-        FUN_00504050(param_1,param_2);
+        mecc_set_fire__FP6OBJECTi(param_1,param_2);
 
         return;
 
@@ -4532,12 +4534,12 @@ LAB_00503e88:
 
 }
 
-/* ===== FUN_00504050 @ 0x00504050 ===== */
+/* ===== mecc_set_fire__FP6OBJECTi @ 0x00504050 ===== */
 /* PS2 candidate: mecc_set_fire__FP6OBJECTi (conf 0.339) */
 
 
 
-void FUN_00504050(int param_1,int param_2)
+void mecc_set_fire__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -4623,7 +4625,7 @@ LAB_00504094:
 
     local_1c = *(float *)(iVar5 + 0xc4) * *(float *)(iVar5 + 0x1e8) + *(float *)(iVar5 + 0xa8);
 
-    iVar4 = FUN_004eed30(&local_18,&local_24);
+    iVar4 = line_of_sight_grid(&local_18,&local_24);
 
     if (iVar4 == 0) {
 
@@ -9954,12 +9956,12 @@ void view_xform_user(undefined4 param_1,undefined4 param_2,float param_3,undefin
 
 }
 
-/* ===== FUN_0050a390 @ 0x0050A390 ===== */
+/* ===== atand2pos @ 0x0050A390 ===== */
 /* PS2 candidate: atand2pos (conf 0.338) */
 
 
 
-float10 FUN_0050a390(float param_1,float param_2)
+float10 atand2pos(float param_1,float param_2)
 
 
 
@@ -10297,12 +10299,12 @@ float10 FUN_0050a730(float *param_1,float param_2,float param_3)
 
 }
 
-/* ===== FUN_0050a770 @ 0x0050A770 ===== */
+/* ===== diff_angle @ 0x0050A770 ===== */
 /* PS2 candidate: diff_angle (conf 0.334) */
 
 
 
-float10 FUN_0050a770(float param_1,float param_2)
+float10 diff_angle(float param_1,float param_2)
 
 
 
@@ -10336,12 +10338,12 @@ float10 FUN_0050a770(float param_1,float param_2)
 
 }
 
-/* ===== FUN_0050a7c0 @ 0x0050A7C0 ===== */
+/* ===== playerobj_turn @ 0x0050A7C0 ===== */
 /* PS2 candidate: playerobj_turn (conf 0.347) */
 
 
 
-float10 FUN_0050a7c0(float param_1,float param_2)
+float10 playerobj_turn(float param_1,float param_2)
 
 
 
@@ -12256,7 +12258,7 @@ switchD_0050ca70_caseD_15:
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
-    fVar12 = (float10)FUN_0050a7c0((float)fVar13,*(undefined4 *)((int)param_1 + 200));
+    fVar12 = (float10)playerobj_turn((float)fVar13,*(undefined4 *)((int)param_1 + 200));
 
     local_c = (float *)(float)ABS(fVar12);
 
@@ -12356,7 +12358,7 @@ switchD_0050ca70_caseD_15:
 
         object_copy_personality(iVar6,iVar9);
 
-        FUN_00497a50(iVar6,iVar9);
+        object_copy_activedata(iVar6,iVar9);
 
         object_change_ospec(iVar6,0xc);
 
@@ -12578,7 +12580,7 @@ switchD_0050ca70_caseD_15:
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
-    fVar13 = (float10)FUN_0050a7c0(fVar7,*(undefined4 *)((int)param_1 + 200));
+    fVar13 = (float10)playerobj_turn(fVar7,*(undefined4 *)((int)param_1 + 200));
 
     *(float *)((int)param_1 + 0x158) = fVar7;
 
@@ -12704,7 +12706,7 @@ switchD_0050ca70_caseD_15:
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
-    fVar12 = (float10)FUN_0050a7c0((float)fVar13,*(undefined4 *)((int)param_1 + 200));
+    fVar12 = (float10)playerobj_turn((float)fVar13,*(undefined4 *)((int)param_1 + 200));
 
     *(uint *)((int)param_1 + 0xd8) = *(uint *)((int)param_1 + 0xd8) | 0x1000000;
 
@@ -12750,7 +12752,7 @@ switchD_0050ca70_caseD_15:
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
-    fVar13 = (float10)FUN_0050a7c0(fVar7,*(undefined4 *)((int)param_1 + 200));
+    fVar13 = (float10)playerobj_turn(fVar7,*(undefined4 *)((int)param_1 + 200));
 
     *(uint *)((int)param_1 + 0xd8) = *(uint *)((int)param_1 + 0xd8) | 0x1000000;
 
@@ -13330,7 +13332,7 @@ LAB_0050e133:
 
         *(undefined1 *)((int)param_1 + 0x208) = 0;
 
-        fVar12 = (float10)FUN_0050a7c0((float)fVar13,*(undefined4 *)((int)param_1 + 200));
+        fVar12 = (float10)playerobj_turn((float)fVar13,*(undefined4 *)((int)param_1 + 200));
 
         *(float *)((int)param_1 + 0x158) = (float)fVar13;
 
@@ -13510,7 +13512,7 @@ LAB_0050e133:
 
     *(undefined1 *)((int)param_1 + 0x208) = 0;
 
-    fVar12 = (float10)FUN_0050a7c0((float)fVar13,*(undefined4 *)((int)param_1 + 200));
+    fVar12 = (float10)playerobj_turn((float)fVar13,*(undefined4 *)((int)param_1 + 200));
 
     local_4 = (float)ABS(fVar12);
 

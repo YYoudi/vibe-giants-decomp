@@ -1404,15 +1404,15 @@ LAB_00437d68:
 
             iVar10 = piVar11[0xe];
 
-            fVar24 = (float10)FUN_0050a390(*(undefined4 *)(iVar10 + 0x148),
+            fVar24 = (float10)atand2pos(*(undefined4 *)(iVar10 + 0x148),
 
-                                           *(undefined4 *)(iVar10 + 0x14c));
+                                        *(undefined4 *)(iVar10 + 0x14c));
 
             local_74 = (float)fVar24;
 
-            fVar24 = (float10)FUN_0050a390(*(undefined4 *)(iVar10 + 0x144),
+            fVar24 = (float10)atand2pos(*(undefined4 *)(iVar10 + 0x144),
 
-                                           *(undefined4 *)(iVar10 + 0x14c));
+                                        *(undefined4 *)(iVar10 + 0x14c));
 
             local_70 = (float)fVar24;
 

@@ -1,0 +1,26 @@
+pc_addr,pc_name,ps2_addr,ps2_name,conf,tier,shared
+00409b60,FUN_00409b60,,reaperbasebldg_shot,0.9,llm-w135,body-verified
+00533b00,FUN_00533b00,,mecc_do_flare__FP6OBJECT_2,0.9,llm-w135,body-verified variant
+00418630,FUN_00418630,,bldg_get_refpt_worldloc,0.9,llm-w135,body-verified
+00501000,FUN_00501000,,team_toggle,0.9,llm-w135,body-verified calls teammecc_toggle
+004e1030,FUN_004e1030,,rpman_goto_last_loc__FP6OBJECTi,0.9,llm-w135,body-verified
+00443fb0,FUN_00443fb0,,FLK_ActorOffsetEval__FP9FLK_Actor,0.9,llm-w135,body-verified
+00543e70,FUN_00543e70,,powf,0.9,llm-w135,body-verified x87 helper
+0050a7c0,FUN_0050a7c0,,playerobj_turn,0.9,llm-w135,body-verified
+0046bc60,FUN_0046bc60,,kbos_scan_food__FP6OBJECTP14ObjProcessInfo,0.9,llm-w135,body-verified
+004e7390,FUN_004e7390,,rpman_set_smartie_goal__FP6OBJECT,0.9,llm-w135,body-verified
+004186c0,FUN_004186c0,,bldg_get_refpt_worldlocdir,0.9,llm-w135,body-verified
+00516290,FUN_00516290,,Dot__FP3P3DT0,0.9,llm-w135,body-verified 3-float dot
+004188a0,FUN_004188a0,,base_get_base_building,0.9,llm-w135,body-verified
+0040bdc0,FUN_0040bdc0,,process_wound,0.9,llm-w135,body-verified iterates wounds
+00515090,FUN_00515090,,wave_effect_draw,0.9,llm-w135,body-verified
+004eed30,FUN_004eed30,,line_of_sight_grid,0.9,llm-w135,body-verified
+004a6300,FUN_004a6300,,ObjIsReaperBldg,0.9,llm-w135,body-verified type 0x53
+00495990,FUN_00495990,,sound_stop,0.9,llm-w135,body-verified
+00504050,FUN_00504050,,mecc_set_fire__FP6OBJECTi,0.9,llm-w135,body-verified
+00501670,FUN_00501670,,teammecc_toggle,0.9,llm-w135,body-verified
+0050a390,FUN_0050a390,,atand2pos,0.9,llm-w135,body-verified fpatan
+00500a60,FUN_00500a60,,item_create_base_pickup_2,0.9,llm-w135,body-verified variant
+00497a50,FUN_00497a50,,object_copy_activedata,0.9,llm-w135,body-verified
+004eba40,FUN_004eba40,,fx_logic,0.9,llm-w135,body-verified
+0050a770,FUN_0050a770,,diff_angle,0.9,llm-w135,body-verified 360 wrap

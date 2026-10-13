@@ -891,7 +891,7 @@ void FUN_00480d10(int param_1,int param_2,undefined4 param_3,int param_4)
 
   giftshopview_enable(param_3,0);
 
-  FUN_00418630(param_3,param_4 * 2 + 0xb,local_c);
+  bldg_get_refpt_worldloc(param_3,param_4 * 2 + 0xb,local_c);
 
   object_set_location_p3d(param_2,local_c);
 
@@ -948,7 +948,7 @@ void mecc_drop_carried_object(int param_1,int param_2)
 
     lift_logic__FP6OBJECT(param_2);
 
-    FUN_00418630(param_2,0xb,local_c);
+    bldg_get_refpt_worldloc(param_2,0xb,local_c);
 
     object_set_location_p3d(param_1,local_c);
 
@@ -1096,7 +1096,7 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
   if (param_2 != 0) {
 
-    FUN_004186c0(param_2,2,&local_c,&local_18);
+    bldg_get_refpt_worldlocdir(param_2,2,&local_c,&local_18);
 
   }
 
@@ -1373,9 +1373,9 @@ void projectile_logic(int param_1)
 
                 if ((uVar2 & 6) == 0) {
 
-                  FUN_00418630(iVar4,3,local_18);
+                  bldg_get_refpt_worldloc(iVar4,3,local_18);
 
-                  FUN_00418630(iVar4,4,local_c);
+                  bldg_get_refpt_worldloc(iVar4,4,local_c);
 
                   fVar9 = (float10)FUN_0050a610(iVar8,local_18);
 
@@ -4630,7 +4630,7 @@ void mission_load_cheat(void)
 
               mission_texture_audio();
 
-              FUN_00495990(0x6e6);
+              sound_stop(0x6e6);
 
             }
 
@@ -6968,7 +6968,7 @@ void mission_menu_load(void)
 
       mission_texture_audio();
 
-      FUN_00495990(0x6e6);
+      sound_stop(0x6e6);
 
     }
 
@@ -7066,7 +7066,7 @@ void mission_menu_load(void)
 
       mission_texture_audio();
 
-      FUN_00495990(0x6e6);
+      sound_stop(0x6e6);
 
     }
 
@@ -7558,7 +7558,7 @@ LAB_00489916:
 
     mission_texture_audio();
 
-    FUN_00495990(0x6e6);
+    sound_stop(0x6e6);
 
   }
 
@@ -7662,7 +7662,7 @@ LAB_00489916:
 
   mission_texture_audio();
 
-  FUN_00495990(0x6e6);
+  sound_stop(0x6e6);
 
   return;
 
@@ -8051,7 +8051,7 @@ void FUN_00489F50(void)
 
       DAT_00632e40 = 0;
 
-      FUN_00495990(0x6e6);
+      sound_stop(0x6e6);
 
     }
 
@@ -11150,7 +11150,7 @@ void menu_dlog_callback_b(void)
 
       DAT_00632e40 = 0;
 
-      FUN_00495990(0x6e6);
+      sound_stop(0x6e6);
 
     }
 
@@ -11298,7 +11298,7 @@ LAB_0048e7be:
 
       DAT_00632e40 = 0;
 
-      FUN_00495990(0x6e6);
+      sound_stop(0x6e6);
 
     }
 
@@ -11388,7 +11388,7 @@ LAB_0048e7be:
 
       DAT_00632e40 = 0;
 
-      FUN_00495990(0x6e6);
+      sound_stop(0x6e6);
 
     }
 
@@ -12269,7 +12269,7 @@ void menu_gameplay_teardown(int param_1)
 
   DAT_00632e40 = 0;
 
-  FUN_00495990(0x6e6);
+  sound_stop(0x6e6);
 
   iVar9 = 0;
 

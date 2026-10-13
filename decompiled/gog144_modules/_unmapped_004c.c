@@ -735,7 +735,7 @@ LAB_004c0926:
 
             local_50 = (float)fVar11;
 
-            fVar11 = (float10)FUN_0050a7c0(local_50,*(undefined4 *)(iVar3 + 200));
+            fVar11 = (float10)playerobj_turn(local_50,*(undefined4 *)(iVar3 + 200));
 
             if (ABS(fVar11) <= (float10)90.0) {
 
@@ -937,7 +937,7 @@ LAB_004c0b9c:
 
     local_38 = local_44;
 
-    iVar5 = FUN_004eed30(&local_4c,&local_40);
+    iVar5 = line_of_sight_grid(&local_4c,&local_40);
 
     if (iVar5 == 0) {
 
@@ -3369,7 +3369,7 @@ void FUN_004c4df0(int param_1)
 
      ((iVar2 = *(int *)(iVar2 + 0xcfc), iVar2 != 0 && (iVar2 = FUN_004b6e20(iVar2), iVar2 != 0)))) {
 
-    FUN_00418630(iVar2,10,local_c);
+    bldg_get_refpt_worldloc(iVar2,10,local_c);
 
     fVar3 = (float10)FUN_0050a610(local_c,param_1 + 0xa0);
 
@@ -3424,7 +3424,7 @@ void mecc_drop_carried_object_2(int param_1,int param_2)
 
     lift_logic__FP6OBJECT(param_2);
 
-    FUN_00418630(param_2,0xb,local_c);
+    bldg_get_refpt_worldloc(param_2,0xb,local_c);
 
     object_set_location_p3d(param_1,local_c);
 
@@ -3501,7 +3501,7 @@ void FUN_004c4fd0(int param_1)
 
     if (iVar3 != 0) {
 
-      FUN_00418630(iVar3,0xb,local_c);
+      bldg_get_refpt_worldloc(iVar3,0xb,local_c);
 
       fVar4 = (float10)FUN_0050a610(local_c,param_1 + 0xa0);
 
@@ -3639,7 +3639,7 @@ void lzo_checked_alloc(int param_1)
 
       {
 
-        FUN_00418630(iVar1,0,local_c);
+        bldg_get_refpt_worldloc(iVar1,0,local_c);
 
         fVar7 = (float10)FUN_0050a610(local_c,param_1 + 0xa0);
 
@@ -3762,7 +3762,7 @@ void lzo_spawn_checked(int param_1)
 
      (iVar3 = lzo_assert(iVar1), iVar3 != 0)) {
 
-    FUN_00418630(iVar1,0,local_18);
+    bldg_get_refpt_worldloc(iVar1,0,local_18);
 
     fVar6 = (float10)FUN_0050a610(local_18,iVar2 + 0xa0);
 
@@ -3774,7 +3774,7 @@ void lzo_spawn_checked(int param_1)
 
        (*(int *)(iVar1 + 0xe4) == 9)) {
 
-      FUN_004186c0(iVar1,2,local_c,local_1c);
+      bldg_get_refpt_worldlocdir(iVar1,2,local_c,local_1c);
 
       piVar5 = DAT_00632d68;
 
@@ -3820,7 +3820,7 @@ void lzo_spawn_checked(int param_1)
 
       param_1 = 0;
 
-      FUN_004186c0(iVar1,2,&local_28,&param_1);
+      bldg_get_refpt_worldlocdir(iVar1,2,&local_28,&param_1);
 
       iVar3 = object_allocate_type(0x434,0x80000000);
 
@@ -3915,7 +3915,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
      (iVar4 = lzo_assert(iVar7), iVar4 != 0)) {
 
-    FUN_00418630(iVar7,0,&local_1c);
+    bldg_get_refpt_worldloc(iVar7,0,&local_1c);
 
     bVar2 = false;
 
@@ -3957,7 +3957,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
       }
 
-      FUN_00418630(iVar4,0,&local_1c);
+      bldg_get_refpt_worldloc(iVar4,0,&local_1c);
 
       iVar7 = iVar4;
 
@@ -4011,7 +4011,7 @@ void reaper_check_enter_teleport__FP6OBJECT(int param_1)
 
       }
 
-      FUN_004186c0(iVar4,1,&local_1c,&param_1);
+      bldg_get_refpt_worldlocdir(iVar4,1,&local_1c,&param_1);
 
       sound_play_player(0x6ea,iVar3);
 
@@ -4108,7 +4108,7 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
     if (iVar5 == 0) {
 
-      iVar5 = FUN_004188a0(iVar1);
+      iVar5 = base_get_base_building(iVar1);
 
       if (iVar1 != iVar5) {
 
@@ -4116,9 +4116,9 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
           param_1 = *(float *)(iVar7 + 0xcf8) * 0.33333334;
 
-          FUN_00418630(iVar5,0x14,&local_58);
+          bldg_get_refpt_worldloc(iVar5,0x14,&local_58);
 
-          FUN_00418630(iVar5,0x55,&local_4c);
+          bldg_get_refpt_worldloc(iVar5,0x55,&local_4c);
 
           fVar8 = (float10)1.0 - (float10)param_1;
 
@@ -4174,7 +4174,7 @@ void reaper_replenish_basepit_energy__FP6OBJECT(float param_1)
 
             if (fVar8 < (float10)param_1 == (fVar8 == (float10)param_1)) {
 
-              FUN_004186c0(iVar5,0x14,local_40,local_5c);
+              bldg_get_refpt_worldlocdir(iVar5,0x14,local_40,local_5c);
 
               fVar8 = (float10)distancesq2d__FP3P3DT0(local_40,(int)fVar3 + 0xa0);
 
@@ -4295,7 +4295,7 @@ void FUN_004c5b10(int param_1)
 
       (iVar2 = FUN_004b6e80(*(undefined4 *)(iVar2 + 0xcfc)), iVar2 != 0)))) {
 
-    FUN_00418630(iVar2,0xc,local_c);
+    bldg_get_refpt_worldloc(iVar2,0xc,local_c);
 
     fVar3 = (float10)FUN_0050a610(local_c,param_1 + 0xa0);
 
@@ -4366,7 +4366,7 @@ void reaper_lock_user_2(int param_1)
 
             && (*(float *)(iVar4 + 0x278) < *(float *)(iVar4 + 0x1c0))))) {
 
-          FUN_00418630(iVar4,0,local_c);
+          bldg_get_refpt_worldloc(iVar4,0,local_c);
 
           fVar6 = (float10)FUN_0050a610(local_c,iVar3 + 0xa0);
 
@@ -4461,7 +4461,7 @@ void FUN_004c5d80(int param_1,int param_2,undefined4 param_3,int param_4)
 
     giftshopview_enable(param_3,0);
 
-    FUN_00418630(param_3,param_4 * 2 + 0xb,local_c);
+    bldg_get_refpt_worldloc(param_3,param_4 * 2 + 0xb,local_c);
 
     object_set_location_p3d(param_2,local_c);
 
@@ -4516,11 +4516,11 @@ void ai_proximity_scan(int param_1)
 
     if (iVar3 != 0) {
 
-      FUN_00418630(iVar3,0xb,local_18);
+      bldg_get_refpt_worldloc(iVar3,0xb,local_18);
 
       if (*(int *)(iVar3 + 4) == 0x2e0) {
 
-        FUN_00418630(iVar3,0x11,local_c);
+        bldg_get_refpt_worldloc(iVar3,0x11,local_c);
 
       }
 
@@ -5578,7 +5578,7 @@ LAB_004caa99:
 
               fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,puVar1);
 
-              fVar9 = (float10)FUN_0050a770((float)fVar9,*(undefined4 *)(iVar3 + 0x4c));
+              fVar9 = (float10)diff_angle((float)fVar9,*(undefined4 *)(iVar3 + 0x4c));
 
               if (fVar9 <= (float10)*(float *)(DAT_00632ed8 + 0xe90)) {
 
@@ -5936,7 +5936,7 @@ float10 physics_reset_c(int param_1)
 
   if ((*(int *)(param_1 + 0xe8) == 1) || (*(int *)(param_1 + 0xe8) == 4)) {
 
-    fVar2 = (float10)FUN_00543e70();
+    fVar2 = (float10)powf();
 
     fVar2 = fVar2 * (float10)*(float *)(DAT_00632ed8 + 0x1654);
 
@@ -5944,7 +5944,7 @@ float10 physics_reset_c(int param_1)
 
   else {
 
-    fVar2 = (float10)FUN_00543e70();
+    fVar2 = (float10)powf();
 
     fVar2 = fVar2 * (float10)*(float *)(DAT_00632ed8 + 0xfe0);
 
@@ -6792,7 +6792,7 @@ void physics_reset_a(int param_1)
 
     if ((*(int *)(param_1 + 0xe8) == 1) || (*(int *)(param_1 + 0xe8) == 4)) {
 
-      fVar5 = (float10)FUN_00543e70();
+      fVar5 = (float10)powf();
 
       fVar5 = fVar5 * (float10)*(float *)(DAT_00632ed8 + 0x1654);
 
@@ -6800,7 +6800,7 @@ void physics_reset_a(int param_1)
 
     else {
 
-      fVar5 = (float10)FUN_00543e70();
+      fVar5 = (float10)powf();
 
       fVar5 = fVar5 * (float10)*(float *)(DAT_00632ed8 + 0xfe0);
 
@@ -6931,7 +6931,7 @@ undefined4 physics_reset_d(int param_1)
 
       if ((*(int *)(param_1 + 0xe8) == 1) || (*(int *)(param_1 + 0xe8) == 4)) {
 
-        fVar3 = (float10)FUN_00543e70();
+        fVar3 = (float10)powf();
 
         fVar3 = fVar3 * (float10)*(float *)(DAT_00632ed8 + 0x1654);
 
@@ -6939,7 +6939,7 @@ undefined4 physics_reset_d(int param_1)
 
       else {
 
-        fVar3 = (float10)FUN_00543e70();
+        fVar3 = (float10)powf();
 
         fVar3 = fVar3 * (float10)*(float *)(DAT_00632ed8 + 0xfe0);
 
@@ -8149,7 +8149,7 @@ LAB_004cd778:
 
       if ((iVar10 != 1) || ((~*local_44 & 1) == 0)) {
 
-        fVar11 = (float10)FUN_00543e70();
+        fVar11 = (float10)powf();
 
         afStack_18[iVar2] = (float)fVar11;
 
@@ -9083,11 +9083,11 @@ undefined4 dev_debug_flags(void)
 
       ai_get_goal_location(iVar5,&local_208);
 
-      iVar9 = FUN_004eba40(2,iVar5);
+      iVar9 = fx_logic(2,iVar5);
 
       if (iVar9 == 0) {
 
-        iVar9 = FUN_004eba40(1,iVar5);
+        iVar9 = fx_logic(1,iVar5);
 
         uVar8 = 0;
 
@@ -9683,7 +9683,7 @@ LAB_004cf690:
 
         *(undefined1 *)((int)fVar5 + 0x208) = 0;
 
-        fVar15 = (float10)FUN_0050a7c0(local_48,*(undefined4 *)((int)fVar5 + 200));
+        fVar15 = (float10)playerobj_turn(local_48,*(undefined4 *)((int)fVar5 + 200));
 
         param_1 = (float)fVar15;
 
@@ -9747,7 +9747,7 @@ LAB_004cf690:
 
         }
 
-        fVar15 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)((int)fVar5 + 200));
+        fVar15 = (float10)playerobj_turn(param_1,*(undefined4 *)((int)fVar5 + 200));
 
         local_4c = (float *)(float)fVar15;
 
@@ -10013,7 +10013,7 @@ LAB_004cf539:
 
           }
 
-          fVar15 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)((int)fVar5 + 200));
+          fVar15 = (float10)playerobj_turn(param_1,*(undefined4 *)((int)fVar5 + 200));
 
           local_4c = (float *)(float)fVar15;
 
@@ -10061,7 +10061,7 @@ LAB_004cf539:
 
       *(undefined1 *)((int)fVar5 + 0x208) = 0;
 
-      fVar15 = (float10)FUN_0050a7c0(local_48,*(undefined4 *)((int)fVar5 + 200));
+      fVar15 = (float10)playerobj_turn(local_48,*(undefined4 *)((int)fVar5 + 200));
 
       param_1 = (float)fVar15;
 
@@ -10601,7 +10601,7 @@ LAB_004d0a9e:
 
           *(float *)((int)fVar5 + 0x158) = pfVar12[1];
 
-          fVar15 = (float10)FUN_0050a7c0(pfVar12[1],*(undefined4 *)((int)fVar5 + 200));
+          fVar15 = (float10)playerobj_turn(pfVar12[1],*(undefined4 *)((int)fVar5 + 200));
 
           uVar6 = 0x18;
 
@@ -10693,7 +10693,7 @@ LAB_004d0a9e:
 
           *(float *)((int)fVar5 + 0x158) = pfVar12[1];
 
-          FUN_0050a7c0(pfVar12[1],*(undefined4 *)((int)fVar5 + 200));
+          playerobj_turn(pfVar12[1],*(undefined4 *)((int)fVar5 + 200));
 
           uVar6 = __ftol();
 
@@ -10819,7 +10819,7 @@ LAB_004d0e26:
 
         param_1 = (float)fVar15;
 
-        fVar15 = (float10)FUN_0050a770(param_1,pfVar12[1]);
+        fVar15 = (float10)diff_angle(param_1,pfVar12[1]);
 
         if (fVar15 < (float10)10.0) {
 
@@ -10845,7 +10845,7 @@ LAB_004d0e26:
 
         param_1 = (float)fVar15;
 
-        fVar15 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)((int)fVar5 + 200));
+        fVar15 = (float10)playerobj_turn(param_1,*(undefined4 *)((int)fVar5 + 200));
 
         if (*(float *)((int)fVar5 + 200) != param_1) {
 
@@ -11271,7 +11271,7 @@ LAB_004d135c:
 
     param_1 = (float)fVar15;
 
-    fVar15 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)((int)fVar5 + 200));
+    fVar15 = (float10)playerobj_turn(param_1,*(undefined4 *)((int)fVar5 + 200));
 
     if (ABS(fVar15) != (float10)0.0) {
 
@@ -11503,7 +11503,7 @@ LAB_004d135c:
 
       }
 
-      fVar15 = (float10)FUN_0050a7c0(local_4c,*(undefined4 *)((int)fVar5 + 200));
+      fVar15 = (float10)playerobj_turn(local_4c,*(undefined4 *)((int)fVar5 + 200));
 
       if (ABS(fVar15) != (float10)0.0) {
 
@@ -11653,7 +11653,7 @@ LAB_004d135c:
 
       }
 
-      fVar15 = (float10)FUN_0050a7c0(local_4c,*(undefined4 *)((int)fVar5 + 200));
+      fVar15 = (float10)playerobj_turn(local_4c,*(undefined4 *)((int)fVar5 + 200));
 
       local_48 = (float)fVar15;
 

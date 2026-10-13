@@ -207,7 +207,7 @@ void main_drawwatr_00431700(void)
 
         fcos((float10)fStack_70);
 
-        FUN_00543e70();
+        powf();
 
         iVar8 = __ftol();
 

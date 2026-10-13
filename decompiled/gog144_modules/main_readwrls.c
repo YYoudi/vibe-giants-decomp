@@ -1049,7 +1049,7 @@ LAB_004b1410:
 
         object_copy_personality(puVar19,iVar6);
 
-        FUN_00497a50(puVar19,iVar6);
+        object_copy_activedata(puVar19,iVar6);
 
         puVar19[0x28] = *pfVar23;
 
@@ -2031,7 +2031,7 @@ switchD_004b1431_caseD_2d:
 
         object_copy_personality(puVar19,iVar6);
 
-        FUN_00497a50(puVar19,iVar6);
+        object_copy_activedata(puVar19,iVar6);
 
         puVar8 = (undefined4 *)(iVar6 + 400);
 

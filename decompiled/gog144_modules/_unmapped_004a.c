@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_004a
- * 131 functions (93 named) — decompiled, names from PS2 symbols
+ * 131 functions (94 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004a.c(pp) (assert-string evidence)
  */
 
@@ -1755,7 +1755,7 @@ void obj_move_clamped(float param_1,float *param_2,float param_3)
 
     *(float *)(iVar1 + 0x1c) = param_1 * fVar4 + *(float *)(iVar1 + 0x1c);
 
-    fVar7 = (float10)FUN_00543e70();
+    fVar7 = (float10)powf();
 
     *(float *)(iVar1 + 0x20) =
 
@@ -5825,12 +5825,12 @@ undefined4 FUN_004a62b0(int param_1)
 
 }
 
-/* ===== FUN_004a6300 @ 0x004A6300 ===== */
+/* ===== ObjIsReaperBldg @ 0x004A6300 ===== */
 /* PS2 candidate: ObjIsReaperBldg (conf 0.341) */
 
 
 
-undefined4 FUN_004a6300(int param_1)
+undefined4 ObjIsReaperBldg(int param_1)
 
 
 
@@ -6267,11 +6267,11 @@ LAB_004a6a79:
 
   if (((*(uint *)((int)param_1 + 0xd8) & 0x1000000) != 0) &&
 
-     (((fVar4 = (float10)FUN_0050a7c0(*(undefined4 *)((int)param_1 + 0x158),
+     (((fVar4 = (float10)playerobj_turn(*(undefined4 *)((int)param_1 + 0x158),
 
-                                      *(undefined4 *)((int)param_1 + 200)), (float10)0.0 < fVar4 &&
+                                        *(undefined4 *)((int)param_1 + 200)), (float10)0.0 < fVar4
 
-       (fVar4 < (float10)fVar1)) || ((fVar4 < (float10)0.0 && ((float10)fVar1 < fVar4)))))) {
+       && (fVar4 < (float10)fVar1)) || ((fVar4 < (float10)0.0 && ((float10)fVar1 < fVar4)))))) {
 
     *(undefined4 *)((int)param_1 + 0x124) = 0;
 
@@ -9636,7 +9636,7 @@ int PROJ_Create2(int param_1,undefined4 param_2,undefined4 param_3,undefined4 pa
 
     FUN_0050a610(&local_13c,param_6);
 
-    fVar10 = (float10)FUN_00543e70();
+    fVar10 = (float10)powf();
 
     local_12c = (float)(fVar10 * (float10)0.1);
 
@@ -9850,7 +9850,7 @@ bool obj_targetable_by_player(int param_1,int param_2)
 
   if ((((iVar2 == 0) && (iVar2 = meccbasepit_bldg_from_object(param_1), iVar2 == 0)) &&
 
-      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) &&
+      (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)) &&
 
      (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
@@ -9890,9 +9890,9 @@ bool obj_targetable_by_player(int param_1,int param_2)
 
   if (((((iVar2 == 0) || (DAT_00632f20 == 0)) || (iVar2 = ObjIsPlayer(param_1), iVar2 == 0)) &&
 
-      (((iVar2 = FUN_004a6220(param_1), iVar2 == 0 && (iVar2 = FUN_004a6300(param_1), iVar2 == 0))
+      (((iVar2 = FUN_004a6220(param_1), iVar2 == 0 && (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)
 
-       && (*(int *)(param_1 + 0x1e0) != 0x2c)))) && (*(int *)(param_1 + 0x1e0) != 0x5f)) {
+        ) && (*(int *)(param_1 + 0x1e0) != 0x2c)))) && (*(int *)(param_1 + 0x1e0) != 0x5f)) {
 
     return *(int *)(param_1 + 0x18c) != param_2;
 
@@ -9921,7 +9921,7 @@ bool FUN_004aa7f0(int param_1,int param_2)
 
   if ((((iVar2 == 0) && (iVar2 = meccbasepit_bldg_from_object(param_1), iVar2 == 0)) &&
 
-      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) &&
+      (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)) &&
 
      (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
@@ -9959,7 +9959,7 @@ bool FUN_004aa7f0(int param_1,int param_2)
 
   iVar2 = FUN_004a6220(param_1);
 
-  if (((iVar2 == 0) && (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) &&
+  if (((iVar2 == 0) && (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)) &&
 
      ((*(int *)(param_1 + 0x1e0) != 0x2c && (*(int *)(param_1 + 0x1e0) != 0x5f)))) {
 
@@ -9990,7 +9990,7 @@ bool FUN_004aa8f0(int param_1,int param_2)
 
   if ((((iVar2 == 0) && (iVar2 = meccbasepit_bldg_from_object(param_1), iVar2 == 0)) &&
 
-      (iVar2 = FUN_004a6300(param_1), iVar2 == 0)) &&
+      (iVar2 = ObjIsReaperBldg(param_1), iVar2 == 0)) &&
 
      (iVar2 = reaperbase_bldg_from_object(param_1), iVar2 == 0)) {
 
@@ -10067,13 +10067,15 @@ undefined4 FUN_004aa9d0(int param_1,int param_2)
 
     if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = ObjIsPlayer(param_1), iVar2 != 0)) ||
 
-         ((iVar2 = FUN_004a6220(param_1), iVar2 != 0 || (iVar2 = FUN_004a6300(param_1), iVar2 != 0))
+         ((iVar2 = FUN_004a6220(param_1), iVar2 != 0 ||
 
-         )) || ((*(int *)(param_1 + 0x1e0) == 0x2c ||
+          (iVar2 = ObjIsReaperBldg(param_1), iVar2 != 0)))) ||
 
-                ((*(int *)(param_1 + 0x1e0) == 0x5f || (*(int *)(param_1 + 0x18c) != param_2))))))
+        ((*(int *)(param_1 + 0x1e0) == 0x2c ||
 
-       || ((*(int *)(param_1 + 4) == 0x325 && (*(int *)(param_1 + 0xe4) != 1)))) {
+         ((*(int *)(param_1 + 0x1e0) == 0x5f || (*(int *)(param_1 + 0x18c) != param_2)))))) ||
+
+       ((*(int *)(param_1 + 4) == 0x325 && (*(int *)(param_1 + 0xe4) != 1)))) {
 
       return 1;
 
@@ -10120,9 +10122,11 @@ undefined4 MortarCollisionValid__FP6OBJECTi(int param_1,int param_2)
 
     if ((((((iVar2 != 0) && (DAT_00632f20 != 0)) && (iVar2 = ObjIsPlayer(param_1), iVar2 != 0)) ||
 
-         ((iVar2 = FUN_004a6220(param_1), iVar2 != 0 || (iVar2 = FUN_004a6300(param_1), iVar2 != 0))
+         ((iVar2 = FUN_004a6220(param_1), iVar2 != 0 ||
 
-         )) || ((*(int *)(param_1 + 0x1e0) == 0x2c || (*(int *)(param_1 + 0x1e0) == 0x5f)))) ||
+          (iVar2 = ObjIsReaperBldg(param_1), iVar2 != 0)))) ||
+
+        ((*(int *)(param_1 + 0x1e0) == 0x2c || (*(int *)(param_1 + 0x1e0) == 0x5f)))) ||
 
        (((*(int *)(param_1 + 4) != 0x325 || (*(int *)(param_1 + 0xe4) != 1)) &&
 
@@ -10651,7 +10655,7 @@ void face_target(int param_1,float *param_2,int param_3,float param_4,float para
 
   GEO_Vec3Normalize(&local_138,&local_138);
 
-  FUN_00516290(&local_12c,&local_138);
+  Dot__FP3P3DT0(&local_12c,&local_138);
 
   fVar1 = (float10)FUN_005445f0();
 

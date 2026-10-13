@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0049
- * 142 functions (96 named) — decompiled, names from PS2 symbols
+ * 142 functions (98 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0049.c(pp) (assert-string evidence)
  */
 
@@ -2540,7 +2540,7 @@ LAB_00492458:
 
         do {
 
-          FUN_00501000(DAT_00632a88);
+          team_toggle(DAT_00632a88);
 
           iVar1 = team_count(DAT_00632a88);
 
@@ -2556,7 +2556,7 @@ LAB_00492458:
 
         do {
 
-          FUN_00501000(DAT_00632a88);
+          team_toggle(DAT_00632a88);
 
           iVar9 = iVar9 + 1;
 
@@ -3088,7 +3088,7 @@ LAB_00492a3a:
 
           object_copy_personality(local_134,iVar14);
 
-          FUN_00497a50(local_134,iVar14);
+          object_copy_activedata(local_134,iVar14);
 
           *(undefined4 *)(local_134 + 0xa0) = *(undefined4 *)pbVar12;
 
@@ -4056,7 +4056,7 @@ LAB_00492a3a:
 
       object_copy_personality(iVar6,iVar14);
 
-      FUN_00497a50(iVar6,iVar14);
+      object_copy_activedata(iVar6,iVar14);
 
       *(undefined4 *)(iVar6 + 0xa0) = 0x453a4000;
 
@@ -6188,14 +6188,14 @@ int sound_play(int param_1)
 
 }
 
-/* ===== FUN_00495990 @ 0x00495990 ===== */
+/* ===== sound_stop @ 0x00495990 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 /* PS2 candidate: sound_stop (conf 0.34) */
 
 
 
-void FUN_00495990(int param_1)
+void sound_stop(int param_1)
 
 
 
@@ -7124,7 +7124,7 @@ undefined4 * object_allocate_type(int param_1,uint param_2)
 
             object_copy_personality(puVar1,puVar2);
 
-            FUN_00497a50(puVar1,puVar2);
+            object_copy_activedata(puVar1,puVar2);
 
             goto LAB_00496d41;
 
@@ -7502,7 +7502,7 @@ undefined4 * object_allocate_type_end(int param_1,uint param_2)
 
             object_copy_personality(puVar1,puVar2);
 
-            FUN_00497a50(puVar1,puVar2);
+            object_copy_activedata(puVar1,puVar2);
 
             goto LAB_00497282;
 
@@ -7823,12 +7823,12 @@ void FUN_004979b0(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00497a50 @ 0x00497A50 ===== */
+/* ===== object_copy_activedata @ 0x00497A50 ===== */
 /* PS2 candidate: object_copy_activedata (conf 0.337) */
 
 
 
-void FUN_00497a50(int param_1,int param_2)
+void object_copy_activedata(int param_1,int param_2)
 
 
 
@@ -8011,7 +8011,7 @@ LAB_00497c25:
 
             object_copy_personality(param_2,puVar1);
 
-            FUN_00497a50(param_2,puVar1);
+            object_copy_activedata(param_2,puVar1);
 
             return;
 
@@ -9038,15 +9038,15 @@ void kabuto_logic(void)
 
   XFGetViewportExt(&local_6c,&local_64,&local_58,&local_18);
 
-  fVar5 = (float10)FUN_0050a7c0(local_5c,local_6c);
+  fVar5 = (float10)playerobj_turn(local_5c,local_6c);
 
   local_5c = (float)(fVar5 + (float10)local_6c);
 
-  fVar5 = (float10)FUN_0050a7c0(local_68,local_64);
+  fVar5 = (float10)playerobj_turn(local_68,local_64);
 
   local_68 = (float)(fVar5 + (float10)local_64);
 
-  fVar5 = (float10)FUN_0050a7c0(local_60,local_58);
+  fVar5 = (float10)playerobj_turn(local_60,local_58);
 
   local_60 = (float)(fVar5 + (float10)local_58);
 
@@ -9577,7 +9577,7 @@ void create_static_object(int param_1,int param_2)
 
     object_copy_personality(iVar3,iVar5);
 
-    FUN_00497a50(iVar3,iVar5);
+    object_copy_activedata(iVar3,iVar5);
 
     *(undefined4 *)(iVar3 + 0x170) = *(undefined4 *)(iVar5 + 0x170);
 
@@ -13159,7 +13159,7 @@ undefined4 FUN_0049dbd0(int param_1)
 
   fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,*(int *)(iVar3 + 0x3c) + 0xa0);
 
-  fVar4 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)(param_1 + 200));
+  fVar4 = (float10)playerobj_turn((float)fVar4,*(undefined4 *)(param_1 + 200));
 
   if ((fVar4 <= (float10)10.0) && ((float10)-10.0 <= fVar4)) {
 
@@ -13879,7 +13879,7 @@ void partyhouse_exit_dlog(void)
 
     }
 
-    FUN_004186c0(DAT_0059f998,0xc,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
+    bldg_get_refpt_worldlocdir(DAT_0059f998,0xc,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
 
     object_copy_posdirinfo(DAT_00632a88);
 
@@ -13897,7 +13897,7 @@ void partyhouse_exit_dlog(void)
 
   }
 
-  FUN_00495990(0x669);
+  sound_stop(0x669);
 
   sound_play(0x66c);
 

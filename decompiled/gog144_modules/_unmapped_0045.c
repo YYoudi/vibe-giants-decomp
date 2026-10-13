@@ -3223,7 +3223,7 @@ void giftshop_exit__Fv(void)
 
     if ((DAT_0059d970 != 0) && (DAT_00632a88 != 0)) {
 
-      FUN_004186c0(DAT_0059d970,1,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
+      bldg_get_refpt_worldlocdir(DAT_0059d970,1,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
 
       object_copy_posdirinfo(DAT_00632a88);
 
@@ -3283,9 +3283,9 @@ void giftshop_exit__Fv(void)
 
     if (*(int *)(DAT_0059d96c + 4) == 0x2cc) {
 
-      FUN_00418630(DAT_0059d96c,0xc,local_c);
+      bldg_get_refpt_worldloc(DAT_0059d96c,0xc,local_c);
 
-      FUN_00418630(DAT_0059d96c,0xe,local_18);
+      bldg_get_refpt_worldloc(DAT_0059d96c,0xe,local_18);
 
       fVar3 = (float10)FUN_0050a610(local_18,DAT_00632a88 + 0xa0);
 
@@ -3301,9 +3301,9 @@ void giftshop_exit__Fv(void)
 
     else if (*(int *)(DAT_0059d96c + 4) == 0x2e0) {
 
-      FUN_00418630(DAT_0059d96c,0xc,local_18);
+      bldg_get_refpt_worldloc(DAT_0059d96c,0xc,local_18);
 
-      FUN_00418630(DAT_0059d96c,0x12,local_c);
+      bldg_get_refpt_worldloc(DAT_0059d96c,0x12,local_c);
 
       fVar3 = (float10)FUN_0050a610(local_c,DAT_00632a88 + 0xa0);
 
@@ -3323,7 +3323,7 @@ void giftshop_exit__Fv(void)
 
     }
 
-    FUN_004186c0(DAT_0059d96c,uVar2,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
+    bldg_get_refpt_worldlocdir(DAT_0059d96c,uVar2,DAT_00632a88 + 0xa0,DAT_00632a88 + 200);
 
     object_copy_posdirinfo(DAT_00632a88);
 
@@ -3937,7 +3937,7 @@ undefined4 in_fov(int param_1,int param_2,float param_3)
 
     normalize__FPfN20(&local_18,&local_14,&local_10);
 
-    FUN_00516290(&local_c,&local_18);
+    Dot__FP3P3DT0(&local_c,&local_18);
 
     fVar1 = (float10)FUN_005445f0();
 
@@ -5791,7 +5791,7 @@ void vimp_close_damage(undefined4 param_1,float param_2,int param_3,float param_
 
            (((iVar5 = meccbasepit_bldg_from_object(iVar1), iVar5 == 0 &&
 
-             (iVar5 = FUN_004a6300(iVar1), iVar5 == 0)) &&
+             (iVar5 = ObjIsReaperBldg(iVar1), iVar5 == 0)) &&
 
             (iVar5 = reaperbase_bldg_from_object(iVar1), iVar5 == 0)))) {
 
@@ -10372,7 +10372,7 @@ byte ai_target_classify(int param_1,int param_2,byte param_3)
 
   if (iVar2 == 0) {
 
-    iVar2 = FUN_004a6300(param_2);
+    iVar2 = ObjIsReaperBldg(param_2);
 
     if (((iVar2 == 0) || (iVar2 = meccbasepit_bldg_from_object(param_2), iVar2 < 0)) ||
 
@@ -10559,7 +10559,7 @@ void reaper_spawn_ospec_1
 
     FUN_0050a610(iVar1 + 0xa0,param_3);
 
-    fVar3 = (float10)FUN_00543e70();
+    fVar3 = (float10)powf();
 
     FUN_0046e9d0(iVar1,param_3,param_4,(float)(fVar3 / (float10)param_5),0x3f400000);
 
@@ -10686,7 +10686,7 @@ void reaper_spawn_ospec_2(undefined4 param_1,int param_2,int param_3,float param
 
     FUN_0050a610(iVar1 + 0xa0,&local_2c);
 
-    fVar3 = (float10)FUN_00543e70();
+    fVar3 = (float10)powf();
 
     FUN_0046e9d0(iVar1,&local_2c,param_3,(float)(fVar3 / (float10)param_4),0x3f400000);
 

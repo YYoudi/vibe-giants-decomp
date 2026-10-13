@@ -728,7 +728,7 @@ void reaperbase_init(int param_1)
 
       else {
 
-        FUN_004186c0(iVar2,*piVar6,pfVar5,pfVar5 + 3);
+        bldg_get_refpt_worldlocdir(iVar2,*piVar6,pfVar5,pfVar5 + 3);
 
         if ((piVar6 == (int *)&DAT_00560a30) || (piVar6 == (int *)&DAT_00560770)) {
 
@@ -750,7 +750,7 @@ void reaperbase_init(int param_1)
 
     iVar3 = object_allocate_type(0x35a,0);
 
-    FUN_004186c0(iVar2,0,&local_c,&local_18);
+    bldg_get_refpt_worldlocdir(iVar2,0,&local_c,&local_18);
 
     object_set_location_p3d(iVar3,&local_c);
 
@@ -760,7 +760,7 @@ void reaperbase_init(int param_1)
 
     iVar3 = object_allocate_type(0x353,0);
 
-    FUN_004186c0(iVar2,0xe,&local_c,&local_18);
+    bldg_get_refpt_worldlocdir(iVar2,0xe,&local_c,&local_18);
 
     object_set_location_p3d(iVar3,&local_c);
 
@@ -770,7 +770,7 @@ void reaperbase_init(int param_1)
 
     iVar3 = object_allocate_type(0x353,0);
 
-    FUN_004186c0(iVar2,0xf,&local_c,&local_18);
+    bldg_get_refpt_worldlocdir(iVar2,0xf,&local_c,&local_18);
 
     object_set_location_p3d(iVar3,&local_c);
 
@@ -778,9 +778,9 @@ void reaperbase_init(int param_1)
 
     *(undefined4 *)(iVar3 + 200) = local_18;
 
-    FUN_00418630(iVar2,0x13,piVar1 + 0x171);
+    bldg_get_refpt_worldloc(iVar2,0x13,piVar1 + 0x171);
 
-    FUN_00418630(iVar2,0x14,piVar1 + 0x174);
+    bldg_get_refpt_worldloc(iVar2,0x14,piVar1 + 0x174);
 
     object_destroy(iVar2);
 
@@ -2924,7 +2924,7 @@ LAB_004b696a:
 
     do {
 
-      FUN_00418630(local_18,*puVar6,local_c);
+      bldg_get_refpt_worldloc(local_18,*puVar6,local_c);
 
       fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
@@ -3030,7 +3030,7 @@ LAB_004b6b5e:
 
       }
 
-      FUN_00418630(local_18,piVar4[1],local_c);
+      bldg_get_refpt_worldloc(local_18,piVar4[1],local_c);
 
       fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
@@ -3665,7 +3665,7 @@ void mecc_shot(int param_1,undefined4 param_2,uint param_3,float param_4)
 
   if (((param_1 == 5) || (param_1 == 7)) || ((param_1 == 6 || (param_1 == 8)))) {
 
-    FUN_0050a390(*(undefined4 *)(uVar2 + 300),*(undefined4 *)(uVar2 + 0x128));
+    atand2pos(*(undefined4 *)(uVar2 + 300),*(undefined4 *)(uVar2 + 0x128));
 
     fx_get_free_effect__Fv();
 
@@ -5312,7 +5312,7 @@ LAB_004b76fe:
 
       if (iVar7 != 0) {
 
-        FUN_004186c0(iVar7,2,&local_40,&param_4);
+        bldg_get_refpt_worldlocdir(iVar7,2,&local_40,&param_4);
 
       }
 
@@ -7533,7 +7533,7 @@ undefined4 reaper_xhair_validate__FP6OBJECTPv(int param_1,int param_2)
 
   if ((((iVar1 == 0) && (iVar1 = meccbasepit_bldg_from_object(param_1), iVar1 == 0)) &&
 
-      (iVar1 = FUN_004a6300(param_1), iVar1 == 0)) &&
+      (iVar1 = ObjIsReaperBldg(param_1), iVar1 == 0)) &&
 
      (iVar1 = reaperbase_bldg_from_object(param_1), iVar1 == 0)) {
 
@@ -7599,7 +7599,7 @@ undefined4 reaper_xhair_validate__FP6OBJECTPv(int param_1,int param_2)
 
     local_10 = *(float *)(param_1 + 0xa8) - *(float *)(param_2 + 0xa8);
 
-    fVar3 = (float10)FUN_00516290(&local_c,&local_18);
+    fVar3 = (float10)Dot__FP3P3DT0(&local_c,&local_18);
 
     if ((float10)0.0 <= fVar3) {
 
@@ -7844,7 +7844,7 @@ float10 physics_reset_b(int param_1)
 
   if (*(int *)(iVar2 + 8) == 0) {
 
-    fVar4 = (float10)FUN_00543e70();
+    fVar4 = (float10)powf();
 
     fVar4 = fVar4 * (float10)*(float *)(DAT_00632ed8 + 0xfe0);
 
@@ -7852,7 +7852,7 @@ float10 physics_reset_b(int param_1)
 
   else {
 
-    fVar4 = (float10)FUN_00543e70();
+    fVar4 = (float10)powf();
 
     fVar4 = fVar4 * (float10)*(float *)(DAT_00632ed8 + 0x748);
 
@@ -8704,7 +8704,7 @@ void reaper_turbo_towards_moving_target__FP6OBJECT(int param_1)
 
   *(undefined4 *)(iVar2 + 0x24) = *(undefined4 *)(iVar3 + 0xa8);
 
-  fVar5 = (float10)FUN_00543e70();
+  fVar5 = (float10)powf();
 
   fVar5 = fVar5 * (float10)*(float *)(DAT_00632ed8 + 0xfe0);
 
@@ -11904,7 +11904,7 @@ void reaper_fire_bow__FP6OBJECT(int param_1)
 
           local_144 = *(float *)(uVar6 + 0xa8) + *(float *)(uVar6 + 0x1e8);
 
-          iVar3 = FUN_004eed30(&local_158,&local_14c);
+          iVar3 = line_of_sight_grid(&local_158,&local_14c);
 
           if (iVar3 != 0) {
 

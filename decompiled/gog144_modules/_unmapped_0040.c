@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0040
- * 105 functions (73 named) — decompiled, names from PS2 symbols
+ * 105 functions (75 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
  */
 
@@ -224,7 +224,7 @@ LAB_00401cd9:
 
             if (((puVar2[5] & 0x20) != 0) &&
 
-               (fVar6 = (float10)FUN_0050a770(puVar2[4],param_3), fVar6 == (float10)0.0)) {
+               (fVar6 = (float10)diff_angle(puVar2[4],param_3), fVar6 == (float10)0.0)) {
 
               puVar2[4] = param_4;
 
@@ -640,7 +640,7 @@ undefined4 FUN_00401fe0(int param_1)
 
       }
 
-      fVar6 = (float10)FUN_0050a770(*(undefined4 *)(iVar1 + 0x10),*(undefined4 *)(param_1 + 200));
+      fVar6 = (float10)diff_angle(*(undefined4 *)(iVar1 + 0x10),*(undefined4 *)(param_1 + 200));
 
       bVar3 = (byte)((ushort)((ushort)(NAN(fVar6) || NAN((float10)0.0)) << 10) >> 8) |
 
@@ -4752,7 +4752,7 @@ void meccbase_init(int param_1)
 
       else {
 
-        FUN_004186c0(iVar2,*piVar6,piVar4 + -3,piVar4);
+        bldg_get_refpt_worldlocdir(iVar2,*piVar6,piVar4 + -3,piVar4);
 
       }
 
@@ -4764,7 +4764,7 @@ void meccbase_init(int param_1)
 
     iVar3 = object_allocate_type(0x342,0);
 
-    FUN_004186c0(iVar2,0,&local_c,&local_10);
+    bldg_get_refpt_worldlocdir(iVar2,0,&local_c,&local_10);
 
     object_set_location_p3d(iVar3,&local_c);
 
@@ -4772,9 +4772,9 @@ void meccbase_init(int param_1)
 
     *(uint *)(iVar3 + 0xd8) = *(uint *)(iVar3 + 0xd8) | 0x10;
 
-    FUN_00418630(iVar2,0x13,piVar1 + 0x171);
+    bldg_get_refpt_worldloc(iVar2,0x13,piVar1 + 0x171);
 
-    FUN_00418630(iVar2,0x14,piVar1 + 0x174);
+    bldg_get_refpt_worldloc(iVar2,0x14,piVar1 + 0x174);
 
     object_destroy(iVar2);
 
@@ -5587,7 +5587,7 @@ LAB_0040878e:
 
       *(undefined4 *)(iVar4 + 0x218) = 0xffffffff;
 
-      FUN_004186c0(param_1,2,iVar4 + 0xa0,iVar4 + 200);
+      bldg_get_refpt_worldlocdir(param_1,2,iVar4 + 0xa0,iVar4 + 200);
 
       return;
 
@@ -5597,7 +5597,7 @@ LAB_0040878e:
 
     case 0xc:
 
-      FUN_00418630(param_1,2,local_c);
+      bldg_get_refpt_worldloc(param_1,2,local_c);
 
       for (piVar5 = DAT_00632d70; piVar5 != (int *)0x0; piVar5 = (int *)*piVar5) {
 
@@ -5821,7 +5821,7 @@ LAB_00408e3a:
 
   case 0xc:
 
-    FUN_00418630(param_1,2,local_c);
+    bldg_get_refpt_worldloc(param_1,2,local_c);
 
     for (piVar5 = DAT_00632d70; piVar5 != (int *)0x0; piVar5 = (int *)*piVar5) {
 
@@ -6600,12 +6600,12 @@ void kabutoai_anim_update(int param_1,int param_2)
 
 }
 
-/* ===== FUN_00409b60 @ 0x00409B60 ===== */
+/* ===== reaperbasebldg_shot @ 0x00409B60 ===== */
 /* PS2 candidate: reaperbasebldg_shot (conf 0.361) */
 
 
 
-void FUN_00409b60(int param_1,int param_2)
+void reaperbasebldg_shot(int param_1,int param_2)
 
 
 
@@ -7191,7 +7191,7 @@ LAB_0040a91a:
 
     do {
 
-      FUN_00418630(local_18,*puVar6,local_c);
+      bldg_get_refpt_worldloc(local_18,*puVar6,local_c);
 
       fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
@@ -7297,7 +7297,7 @@ LAB_0040ab0e:
 
       }
 
-      FUN_00418630(local_18,piVar4[1],local_c);
+      bldg_get_refpt_worldloc(local_18,piVar4[1],local_c);
 
       fVar7 = (float10)distancesq2d__FP3P3DT0(local_c,param_2 + 0xa0);
 
@@ -7818,7 +7818,7 @@ void meccbasepit_create_food(int param_1,int param_2)
 
   iVar1 = *(int *)(param_1 + 0x100);
 
-  uVar2 = FUN_004188a0(param_1);
+  uVar2 = base_get_base_building(param_1);
 
   iVar3 = *(int *)(iVar1 + 0x52c + param_2 * 4);
 
@@ -7846,7 +7846,7 @@ void meccbasepit_create_food(int param_1,int param_2)
 
   *(int *)(iVar1 + 0x52c + param_2 * 4) = iVar3;
 
-  FUN_00418630(uVar2,0x55,iVar3 + 0xa0);
+  bldg_get_refpt_worldloc(uVar2,0x55,iVar3 + 0xa0);
 
   object_copy_posdirinfo(*(undefined4 *)(iVar1 + 0x52c + param_2 * 4));
 
@@ -8857,12 +8857,12 @@ void wound_process_single__FP5WOUND(int param_1)
 
 }
 
-/* ===== FUN_0040bdc0 @ 0x0040BDC0 ===== */
+/* ===== process_wound @ 0x0040BDC0 ===== */
 /* PS2 candidate: process_wound (conf 0.342) */
 
 
 
-void FUN_0040bdc0(void)
+void process_wound(void)
 
 
 
@@ -9111,11 +9111,11 @@ undefined4 FUN_0040c480(int param_1,undefined4 param_2)
 
   normalize__FPfN20(&local_c,&local_8,&local_4);
 
-  fVar2 = (float10)FUN_00516290(&local_c,param_1 + 0xa0);
+  fVar2 = (float10)Dot__FP3P3DT0(&local_c,param_1 + 0xa0);
 
-  fVar3 = (float10)FUN_00516290(&local_c,*(int *)(param_1 + 0x274) + 0xa0);
+  fVar3 = (float10)Dot__FP3P3DT0(&local_c,*(int *)(param_1 + 0x274) + 0xa0);
 
-  fVar4 = (float10)FUN_00516290(&local_c,param_2);
+  fVar4 = (float10)Dot__FP3P3DT0(&local_c,param_2);
 
   fVar3 = (float10)(float)fVar3 - fVar4;
 
@@ -9186,17 +9186,17 @@ undefined4 obj_face_target(int param_1,int param_2,float *param_3)
 
   normalize__FPfN20(&local_24,&local_20,&local_1c);
 
-  fVar6 = (float10)FUN_00516290(&local_24,(float *)(param_1 + 0xa0));
+  fVar6 = (float10)Dot__FP3P3DT0(&local_24,(float *)(param_1 + 0xa0));
 
   fVar2 = (float)fVar6;
 
   pfVar1 = (float *)(param_2 + 0xac);
 
-  fVar6 = (float10)FUN_00516290(&local_24,pfVar1);
+  fVar6 = (float10)Dot__FP3P3DT0(&local_24,pfVar1);
 
   fVar3 = (float)fVar6;
 
-  fVar6 = (float10)FUN_00516290(&local_24,(float *)(param_2 + 0xa0));
+  fVar6 = (float10)Dot__FP3P3DT0(&local_24,(float *)(param_2 + 0xa0));
 
   fVar4 = (float)fVar6;
 
@@ -10382,11 +10382,11 @@ void ref_anode_user(void)
 
       local_1c = (float)fVar2;
 
-      fVar2 = (float10)FUN_0050a390((*(float *)(iVar1 + 0xa8) - DAT_005550dc) +
+      fVar2 = (float10)atand2pos((*(float *)(iVar1 + 0xa8) - DAT_005550dc) +
 
-                                    *(float *)(iVar1 + 0x1e8) * *(float *)(iVar1 + 0xc4) +
+                                 *(float *)(iVar1 + 0x1e8) * *(float *)(iVar1 + 0xc4) +
 
-                                    _DAT_005550c8,local_20);
+                                 _DAT_005550c8,local_20);
 
       if ((float10)180.0 < fVar2) {
 

@@ -101,7 +101,7 @@ void main_collgrid_00410200(int param_1)
 
   iVar3 = FUN_004a6220();
 
-  if (((iVar3 != 0) || (iVar3 = FUN_004a6300(), iVar3 != 0)) &&
+  if (((iVar3 != 0) || (iVar3 = ObjIsReaperBldg(), iVar3 != 0)) &&
 
      (iVar3 = bldg_get_max_energy(), iVar3 != 0)) {
 

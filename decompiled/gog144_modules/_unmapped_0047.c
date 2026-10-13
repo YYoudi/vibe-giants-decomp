@@ -1335,7 +1335,7 @@ void game_loop_run(int param_1)
 
     }
 
-    if ((DAT_00632b8c != 0) && (FUN_004eba40(3,0), DAT_00632b8c != 0)) {
+    if ((DAT_00632b8c != 0) && (fx_logic(3,0), DAT_00632b8c != 0)) {
 
       DAT_00632b8c = 0;
 
@@ -1499,7 +1499,7 @@ void game_loop_run(int param_1)
 
             }
 
-            FUN_0040bdc0();
+            process_wound();
 
             particles_decay_update();
 
@@ -7296,9 +7296,9 @@ LAB_0047d6b8:
 
     if ((uVar8 & 6) == 0) {
 
-      FUN_00418630(iVar5,3,&local_4c);
+      bldg_get_refpt_worldloc(iVar5,3,&local_4c);
 
-      FUN_00418630(iVar5,4,local_40);
+      bldg_get_refpt_worldloc(iVar5,4,local_40);
 
       fVar9 = (float10)FUN_0050a610(iVar7 + 0xa0,&local_4c);
 

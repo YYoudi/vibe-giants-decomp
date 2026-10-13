@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0054
- * 351 functions (261 named) — decompiled, names from PS2 symbols
+ * 351 functions (262 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
  */
 
@@ -4811,12 +4811,12 @@ void AddHud__4cHudP8cHudIcon_6(int param_1,int param_2,int param_3,int param_4)
 
 }
 
-/* ===== FUN_00543e70 @ 0x00543E70 ===== */
+/* ===== powf @ 0x00543E70 ===== */
 /* PS2 candidate: powf (conf 0.349) */
 
 
 
-void FUN_00543e70(void)
+void powf(void)
 
 
 

@@ -1,14 +1,14 @@
 /* Giants 1.449 — module _unmapped_004e
- * 94 functions (68 named) — decompiled, names from PS2 symbols
+ * 94 functions (72 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
  */
 
-/* ===== FUN_004e1030 @ 0x004E1030 ===== */
+/* ===== rpman_goto_last_loc__FP6OBJECTi @ 0x004E1030 ===== */
 /* PS2 candidate: rpman_goto_last_loc__FP6OBJECTi (conf 0.354) */
 
 
 
-void FUN_004e1030(int param_1,int param_2)
+void rpman_goto_last_loc__FP6OBJECTi(int param_1,int param_2)
 
 
 
@@ -1034,7 +1034,7 @@ undefined4 ai_visibility_cull(int param_1)
 
   fVar4 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,iVar1,*(undefined4 *)(iVar3 + 0x58));
 
-  fVar4 = (float10)FUN_0050a770((float)fVar4);
+  fVar4 = (float10)diff_angle((float)fVar4);
 
   if ((float10)60.0 <= fVar4) {
 
@@ -2844,7 +2844,7 @@ LAB_004e3ad2:
 
                     fVar9 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar4 + 0xa0);
 
-                    fVar9 = (float10)FUN_0050a770((float)fVar9,*(undefined4 *)(param_1 + 200));
+                    fVar9 = (float10)diff_angle((float)fVar9,*(undefined4 *)(param_1 + 200));
 
                     if (fVar9 <= (float10)*(float *)(DAT_00632ed8 + 0xa9c)) {
 
@@ -3002,7 +3002,7 @@ LAB_004e3ad2:
 
               fVar9 = (float10)dirfcalcp3d__FP3P3DT0(puVar2,puVar1);
 
-              fVar9 = (float10)FUN_0050a770((float)fVar9,piVar3[0x16]);
+              fVar9 = (float10)diff_angle((float)fVar9,piVar3[0x16]);
 
               if ((float10)*(float *)(DAT_00632ed8 + 0xa9c) < fVar9) goto LAB_004e3e52;
 
@@ -3367,7 +3367,7 @@ float10 FUN_004e41e0(int param_1,undefined4 param_2)
 
   fVar2 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,param_2);
 
-  fVar3 = (float10)FUN_0050a7c0((float)fVar2,*(undefined4 *)(param_1 + 200));
+  fVar3 = (float10)playerobj_turn((float)fVar2,*(undefined4 *)(param_1 + 200));
 
   if (ABS(fVar3) == (float10)0.0) {
 
@@ -3412,11 +3412,11 @@ undefined4 FUN_004e4280(int param_1,undefined4 param_2)
 
   fVar1 = (float)fVar5;
 
-  fVar5 = (float10)FUN_0050a7c0(fVar1,*(undefined4 *)(iVar4 + 0x158));
+  fVar5 = (float10)playerobj_turn(fVar1,*(undefined4 *)(iVar4 + 0x158));
 
   fVar2 = (float)fVar5;
 
-  fVar5 = (float10)FUN_0050a7c0(fVar1,*(undefined4 *)(param_1 + 200));
+  fVar5 = (float10)playerobj_turn(fVar1,*(undefined4 *)(param_1 + 200));
 
   if (ABS(fVar5) != (float10)0.0) {
 
@@ -3513,7 +3513,7 @@ void rpman_maintain_hide__FP6OBJECT(int param_1)
 
   *(undefined4 *)(param_1 + 0x1a8) = 0x42800000;
 
-  fVar6 = (float10)FUN_0050a7c0(fVar1,*(undefined4 *)(param_1 + 200));
+  fVar6 = (float10)playerobj_turn(fVar1,*(undefined4 *)(param_1 + 200));
 
   if (ABS(fVar6) != (float10)0.0) {
 
@@ -4011,7 +4011,7 @@ void cleaner_process(float param_1,int param_2)
 
     local_4 = -*(float *)((int)param_1 + 700);
 
-    fVar5 = (float10)FUN_00516290((float *)((int)param_1 + 0x128),&local_c);
+    fVar5 = (float10)Dot__FP3P3DT0((float *)((int)param_1 + 0x128),&local_c);
 
     if (fVar5 < (float10)0.0) {
 
@@ -4405,7 +4405,7 @@ void rpman_flying_fire__FP6OBJECT(int param_1)
 
       fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,*piVar2 + 0xa0);
 
-      fVar4 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)(param_1 + 200));
+      fVar4 = (float10)playerobj_turn((float)fVar4,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar4) < (float10)60.0 == (ABS(fVar4) == (float10)60.0)) goto LAB_004e51e4;
 
@@ -4775,11 +4775,11 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
       fVar2 = (float)fVar13;
 
-      fVar13 = (float10)FUN_0050a7c0(fVar2,piVar4[0x56]);
+      fVar13 = (float10)playerobj_turn(fVar2,piVar4[0x56]);
 
       fVar3 = (float)fVar13;
 
-      fVar13 = (float10)FUN_0050a7c0(fVar2,*(undefined4 *)(param_1 + 200));
+      fVar13 = (float10)playerobj_turn(fVar2,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar13) != (float10)0.0) {
 
@@ -4815,7 +4815,7 @@ void fire_sniper_shot__FP6OBJECTT0(int param_1,int param_2,int param_3,float par
 
       fVar13 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar9);
 
-      fVar14 = (float10)FUN_0050a7c0((float)fVar13,*(undefined4 *)(param_1 + 200));
+      fVar14 = (float10)playerobj_turn((float)fVar13,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar14) != (float10)0.0) {
 
@@ -5308,11 +5308,11 @@ void rpman_rapid_fire__FP6OBJECTiii(int param_1,int param_2,int param_3,float pa
 
       fVar13 = (float)fVar10;
 
-      fVar10 = (float10)FUN_0050a7c0(fVar13,piVar2[0x56]);
+      fVar10 = (float10)playerobj_turn(fVar13,piVar2[0x56]);
 
       fVar1 = (float)fVar10;
 
-      fVar10 = (float10)FUN_0050a7c0(fVar13,*(undefined4 *)(param_1 + 200));
+      fVar10 = (float10)playerobj_turn(fVar13,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar10) != (float10)0.0) {
 
@@ -5348,7 +5348,7 @@ void rpman_rapid_fire__FP6OBJECTiii(int param_1,int param_2,int param_3,float pa
 
       fVar10 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar8);
 
-      fVar11 = (float10)FUN_0050a7c0((float)fVar10,*(undefined4 *)(param_1 + 200));
+      fVar11 = (float10)playerobj_turn((float)fVar10,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar11) != (float10)0.0) {
 
@@ -6123,7 +6123,7 @@ void rpboat_logic__FP6OBJECT(float param_1,float param_2)
 
       fVar2 = (float)fVar6;
 
-      fVar6 = (float10)FUN_0050a7c0(fVar2,*(undefined4 *)(iVar5 + 0xf4));
+      fVar6 = (float10)playerobj_turn(fVar2,*(undefined4 *)(iVar5 + 0xf4));
 
       param_1 = (float)fVar6;
 
@@ -6559,12 +6559,12 @@ void FUN_004e7330(int param_1,int param_2)
 
 }
 
-/* ===== FUN_004e7390 @ 0x004E7390 ===== */
+/* ===== rpman_set_smartie_goal__FP6OBJECT @ 0x004E7390 ===== */
 /* PS2 candidate: rpman_set_smartie_goal__FP6OBJECT (conf 0.346) */
 
 
 
-void FUN_004e7390(int param_1)
+void rpman_set_smartie_goal__FP6OBJECT(int param_1)
 
 
 
@@ -6790,7 +6790,7 @@ void rpman_gib__FP6OBJECTT0(int param_1,int param_2)
 
   }
 
-  FUN_0050a390(fVar2,local_40);
+  atand2pos(fVar2,local_40);
 
   fx_get_free_effect__Fv();
 
@@ -9224,12 +9224,12 @@ void match_start_big(void)
 
 }
 
-/* ===== FUN_004eba40 @ 0x004EBA40 ===== */
+/* ===== fx_logic @ 0x004EBA40 ===== */
 /* PS2 candidate: fx_logic (conf 0.335) */
 
 
 
-undefined4 FUN_004eba40(int param_1,undefined4 param_2)
+undefined4 fx_logic(int param_1,undefined4 param_2)
 
 
 
@@ -11449,12 +11449,12 @@ void calc_2pts_to_bbox__FP3P3DT0P4BBOX(float *param_1,float *param_2,float *para
 
 }
 
-/* ===== FUN_004eed30 @ 0x004EED30 ===== */
+/* ===== line_of_sight_grid @ 0x004EED30 ===== */
 /* PS2 candidate: line_of_sight_grid (conf 0.341) */
 
 
 
-undefined4 FUN_004eed30(float *param_1,float *param_2)
+undefined4 line_of_sight_grid(float *param_1,float *param_2)
 
 
 
@@ -11713,7 +11713,7 @@ ai_class_filter(undefined4 param_1,undefined4 param_2,int param_3,int param_4,by
 
   
 
-  iVar2 = FUN_004eed30(param_1,param_2);
+  iVar2 = line_of_sight_grid(param_1,param_2);
 
   if (iVar2 == 0) {
 

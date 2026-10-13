@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0046
- * 53 functions (37 named) — decompiled, names from PS2 symbols
+ * 53 functions (38 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0046.c(pp) (assert-string evidence)
  */
 
@@ -625,7 +625,7 @@ void FUN_00465790(undefined4 param_1,int param_2,undefined4 param_3,undefined4 p
 
   FUN_0050a610(param_6 + 0xa0,param_3);
 
-  fVar2 = (float10)FUN_00543e70();
+  fVar2 = (float10)powf();
 
   FUN_0046e9d0(param_6,param_3,param_4,(float)(fVar2 / (float10)param_5),0x3f400000);
 
@@ -824,7 +824,7 @@ void reaper_update_xhair_status__FP6OBJECT
 
       FUN_0050a610(iVar4 + 0xa0,&local_38);
 
-      fVar5 = (float10)FUN_00543e70();
+      fVar5 = (float10)powf();
 
       param_5 = (float)(fVar5 / (float10)param_5);
 
@@ -1555,7 +1555,7 @@ float10 FUN_004698f0(int param_1,undefined4 param_2)
 
   FUN_0050a610(param_1 + 0xa0,param_2);
 
-  fVar2 = (float10)FUN_00543e70();
+  fVar2 = (float10)powf();
 
   trajectory_calculate
 
@@ -1578,7 +1578,7 @@ float10 FUN_00469950(int param_1,undefined4 param_2)
 
   
 
-  fVar2 = (float10)FUN_0050a7c0(param_2,*(undefined4 *)(param_1 + 200));
+  fVar2 = (float10)playerobj_turn(param_2,*(undefined4 *)(param_1 + 200));
 
   if (ABS(fVar2) == (float10)0.0) {
 
@@ -1629,7 +1629,7 @@ void loglauncher_process(int param_1)
 
   fVar4 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xa0,iVar2 + 0xa0);
 
-  fVar5 = (float10)FUN_0050a7c0((float)fVar4,*(undefined4 *)(param_1 + 200));
+  fVar5 = (float10)playerobj_turn((float)fVar4,*(undefined4 *)(param_1 + 200));
 
   fVar1 = (float)ABS(fVar5);
 
@@ -1963,7 +1963,7 @@ void obj_anim_flags_update(uint param_1,float *param_2)
 
     local_8 = (float)puVar1[6] - *(float *)(param_1 + 0xa4);
 
-    fVar4 = (float10)FUN_0050a390(local_8,local_c);
+    fVar4 = (float10)atand2pos(local_8,local_c);
 
     puVar1[0xc] = (uint)(float)(fVar4 + (float10)90.0);
 
@@ -2003,7 +2003,7 @@ void obj_anim_flags_update(uint param_1,float *param_2)
 
     {
 
-      fVar4 = (float10)FUN_0050a390(local_8,local_c);
+      fVar4 = (float10)atand2pos(local_8,local_c);
 
       puVar1[0xc] = (uint)(float)(fVar4 + (float10)90.0);
 
@@ -2025,7 +2025,7 @@ void obj_anim_flags_update(uint param_1,float *param_2)
 
   if ((*puVar1 & 8) != 0) {
 
-    fVar4 = (float10)FUN_0050a7c0(puVar1[0xc],*(undefined4 *)(uVar3 + 200));
+    fVar4 = (float10)playerobj_turn(puVar1[0xc],*(undefined4 *)(uVar3 + 200));
 
     puVar1[0xe] = (uint)(float)fVar4;
 
@@ -3298,12 +3298,12 @@ LAB_0046bc13:
 
 }
 
-/* ===== FUN_0046bc60 @ 0x0046BC60 ===== */
+/* ===== kbos_scan_food__FP6OBJECTP14ObjProcessInfo @ 0x0046BC60 ===== */
 /* PS2 candidate: kbos_scan_food__FP6OBJECTP14ObjProcessInfo (conf 0.347) */
 
 
 
-undefined4 FUN_0046bc60(float param_1,int *param_2)
+undefined4 kbos_scan_food__FP6OBJECTP14ObjProcessInfo(float param_1,int *param_2)
 
 
 
@@ -3437,7 +3437,7 @@ undefined4 FUN_0046bc60(float param_1,int *param_2)
 
           param_1 = (float)fVar7;
 
-          fVar7 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)((int)fVar4 + 200));
+          fVar7 = (float10)playerobj_turn(param_1,*(undefined4 *)((int)fVar4 + 200));
 
           if ((float10)5.0 <= ABS(fVar7)) {
 

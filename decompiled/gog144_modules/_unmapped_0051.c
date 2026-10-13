@@ -1,5 +1,5 @@
 /* Giants 1.449 — module _unmapped_0051
- * 186 functions (112 named) — decompiled, names from PS2 symbols
+ * 186 functions (114 named) — decompiled, names from PS2 symbols
  * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
  */
 
@@ -125,13 +125,9 @@ void evilreaper_gib__FP6OBJECTT0(float param_1,float param_2)
 
     else {
 
-      fVar4 = (float10)FUN_0050a390(*(float *)((int)param_2 + 0xbc) -
+      fVar4 = (float10)atand2pos(*(float *)((int)param_2 + 0xbc) - *(float *)((int)param_2 + 0xa4),
 
-                                    *(float *)((int)param_2 + 0xa4),
-
-                                    *(float *)((int)param_2 + 0xb8) -
-
-                                    *(float *)((int)param_2 + 0xa0));
+                                 *(float *)((int)param_2 + 0xb8) - *(float *)((int)param_2 + 0xa0));
 
       fVar4 = fVar4 - (float10)90.0;
 
@@ -290,7 +286,7 @@ void herdgen_marker_user(float param_1,float *param_2,undefined4 param_3)
 
   normalize__FPfN20(&local_34,&local_30,&local_2c);
 
-  fVar7 = (float10)FUN_00516290(&local_28,&local_34);
+  fVar7 = (float10)Dot__FP3P3DT0(&local_28,&local_34);
 
   if ((float10)0.0 <= fVar7) {
 
@@ -1280,7 +1276,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
                 normalize__FPfN20(&local_18,&local_14,&local_10);
 
-                fVar6 = (float10)FUN_00516290(&local_c,&local_18);
+                fVar6 = (float10)Dot__FP3P3DT0(&local_c,&local_18);
 
                 if ((float10)0.0 <= fVar6) {
 
@@ -1356,7 +1352,7 @@ undefined4 evilreaper_ai_big(int param_1)
 
                 normalize__FPfN20(&local_c,&local_8,&local_4);
 
-                fVar6 = (float10)FUN_00516290(&local_18,&local_c);
+                fVar6 = (float10)Dot__FP3P3DT0(&local_18,&local_c);
 
                 if ((float10)0.0 <= fVar6) {
 
@@ -3905,12 +3901,12 @@ void MAP_MemGroupSetBase(int param_1,undefined4 param_2)
 
 }
 
-/* ===== FUN_00515090 @ 0x00515090 ===== */
+/* ===== wave_effect_draw @ 0x00515090 ===== */
 /* PS2 candidate: wave_effect_draw (conf 0.341) */
 
 
 
-void FUN_00515090(int param_1)
+void wave_effect_draw(int param_1)
 
 
 
@@ -4271,7 +4267,7 @@ void FUN_00515580(void)
 
       if (puVar1[0x12] != 0) {
 
-        FUN_00515090(puVar1);
+        wave_effect_draw(puVar1);
 
       }
 
@@ -5195,12 +5191,12 @@ void XFGetViewport_2(undefined4 *param_1)
 
 }
 
-/* ===== FUN_00516290 @ 0x00516290 ===== */
+/* ===== Dot__FP3P3DT0 @ 0x00516290 ===== */
 /* PS2 candidate: Dot__FP3P3DT0 (conf 0.345) */
 
 
 
-float10 FUN_00516290(float *param_1,float *param_2)
+float10 Dot__FP3P3DT0(float *param_1,float *param_2)
 
 
 

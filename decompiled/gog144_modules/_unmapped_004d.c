@@ -666,7 +666,7 @@ LAB_004d2151:
 
         local_70 = (float)fVar9;
 
-        fVar9 = (float10)FUN_0050a7c0(local_70,*(undefined4 *)(param_1 + 200));
+        fVar9 = (float10)playerobj_turn(local_70,*(undefined4 *)(param_1 + 200));
 
         local_74 = (float)fVar9;
 
@@ -822,7 +822,7 @@ LAB_004d2364:
 
         local_70 = (float)fVar9;
 
-        fVar9 = (float10)FUN_0050a7c0(local_70,*(undefined4 *)(param_1 + 200));
+        fVar9 = (float10)playerobj_turn(local_70,*(undefined4 *)(param_1 + 200));
 
         local_74 = (float)fVar9;
 
@@ -940,7 +940,7 @@ LAB_004d2364:
 
       local_70 = (float)fVar9;
 
-      fVar9 = (float10)FUN_0050a7c0(local_70,*(undefined4 *)(param_1 + 200));
+      fVar9 = (float10)playerobj_turn(local_70,*(undefined4 *)(param_1 + 200));
 
       local_74 = (float)fVar9;
 
@@ -1096,7 +1096,7 @@ LAB_004d2a47:
 
         local_70 = (float)fVar9;
 
-        fVar9 = (float10)FUN_0050a7c0(local_70,*(undefined4 *)(param_1 + 200));
+        fVar9 = (float10)playerobj_turn(local_70,*(undefined4 *)(param_1 + 200));
 
         local_74 = (float)fVar9;
 
@@ -1218,7 +1218,7 @@ LAB_004d211b:
 
       }
 
-      fVar9 = (float10)FUN_0050a7c0(local_78,*(undefined4 *)(param_1 + 200));
+      fVar9 = (float10)playerobj_turn(local_78,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar9) != (float10)0.0) {
 
@@ -1292,7 +1292,7 @@ LAB_004d2d85:
 
       }
 
-      fVar9 = (float10)FUN_0050a7c0(local_78,*(undefined4 *)(param_1 + 200));
+      fVar9 = (float10)playerobj_turn(local_78,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar9) != (float10)0.0) {
 
@@ -1436,7 +1436,7 @@ LAB_004d27a6:
 
       }
 
-      fVar9 = (float10)FUN_0050a7c0(local_74,*(undefined4 *)(param_1 + 200));
+      fVar9 = (float10)playerobj_turn(local_74,*(undefined4 *)(param_1 + 200));
 
       local_70 = (float)fVar9;
 
@@ -1534,7 +1534,7 @@ LAB_004d27a6:
 
       }
 
-      fVar9 = (float10)FUN_0050a7c0(local_70,*(undefined4 *)(param_1 + 200));
+      fVar9 = (float10)playerobj_turn(local_70,*(undefined4 *)(param_1 + 200));
 
       if (ABS(fVar9) != (float10)0.0) {
 
@@ -1932,7 +1932,7 @@ switchD_004d1ccc_caseD_20:
 
   local_70 = (float)fVar9;
 
-  fVar9 = (float10)FUN_0050a7c0(local_70,*(undefined4 *)(param_1 + 200));
+  fVar9 = (float10)playerobj_turn(local_70,*(undefined4 *)(param_1 + 200));
 
   if (ABS(fVar9) != (float10)0.0) {
 
@@ -2555,7 +2555,7 @@ void make_spit__FP6OBJECTP3P3Df(int param_1,int param_2,float param_3)
 
       object_copy_personality(iVar4,iVar3);
 
-      FUN_00497a50(iVar4,iVar3);
+      object_copy_activedata(iVar4,iVar3);
 
       puVar8 = local_34;
 
@@ -2706,7 +2706,7 @@ float10 FUN_004d4580(float param_1,int param_2,float param_3)
 
   }
 
-  fVar3 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)(iVar1 + 200));
+  fVar3 = (float10)playerobj_turn(param_1,*(undefined4 *)(iVar1 + 200));
 
   if (ABS(fVar3) == (float10)0.0) {
 
@@ -2767,7 +2767,7 @@ void ai_face_move(undefined4 *param_1,undefined4 *param_2,float param_3)
 
     }
 
-    fVar5 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)(iVar2 + 200));
+    fVar5 = (float10)playerobj_turn(param_1,*(undefined4 *)(iVar2 + 200));
 
     fVar1 = (float)fVar5;
 
@@ -3826,7 +3826,7 @@ LAB_004d5d41:
 
     normalize__FPfN20(&local_84,&local_80,local_7c);
 
-    fVar6 = (float10)FUN_00516290(&local_90,&local_84);
+    fVar6 = (float10)Dot__FP3P3DT0(&local_90,&local_84);
 
     *(float *)(iVar3 + 0x4c) =
 

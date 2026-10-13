@@ -94,7 +94,7 @@ void teammecc_create(int param_1,int param_2)
 
         object_copy_personality(iVar3,param_1);
 
-        FUN_00497a50(iVar3,param_1);
+        object_copy_activedata(iVar3,param_1);
 
         *(undefined4 *)(*(int *)(iVar3 + 0x100) + 200) = 0;
 

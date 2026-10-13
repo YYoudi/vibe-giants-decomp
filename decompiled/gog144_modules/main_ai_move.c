@@ -1029,7 +1029,7 @@ LAB_00402316:
 
       *(undefined1 *)(param_1 + 0x82) = 0;
 
-      fVar10 = (float10)FUN_0050a7c0(local_90,param_1[0x32]);
+      fVar10 = (float10)playerobj_turn(local_90,param_1[0x32]);
 
       if (fVar10 != (float10)0.0) {
 
@@ -1063,7 +1063,7 @@ LAB_00402316:
 
         *(undefined1 *)(param_1 + 0x82) = 0;
 
-        fVar10 = (float10)FUN_0050a7c0(local_90,param_1[0x32]);
+        fVar10 = (float10)playerobj_turn(local_90,param_1[0x32]);
 
         if (fVar10 == (float10)0.0) {
 
@@ -1932,7 +1932,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
   fVar2 = (float)fVar13;
 
-  fVar13 = (float10)FUN_0050a7c0(fVar2,*(undefined4 *)(iVar5 + 200));
+  fVar13 = (float10)playerobj_turn(fVar2,*(undefined4 *)(iVar5 + 200));
 
   param_1 = (float)fVar13;
 
@@ -1962,7 +1962,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
       *(uint *)(iVar5 + 0xd8) = *(uint *)(iVar5 + 0xd8) | 0x1000000;
 
-      fVar13 = (float10)FUN_0050a7c0(param_2,*(undefined4 *)(iVar5 + 200));
+      fVar13 = (float10)playerobj_turn(param_2,*(undefined4 *)(iVar5 + 200));
 
       param_2 = (undefined4 *)(float)(fVar13 * (float10)0.025);
 
@@ -1984,7 +1984,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
     *(uint *)(iVar5 + 0xd8) = *(uint *)(iVar5 + 0xd8) | 0x1000000;
 
-    fVar13 = (float10)FUN_0050a7c0(fVar2,*(undefined4 *)(iVar5 + 200));
+    fVar13 = (float10)playerobj_turn(fVar2,*(undefined4 *)(iVar5 + 200));
 
     cVar7 = FUN_004a7be0((float)(fVar13 * (float10)0.025),0x3727c5ac,0x3e4ccccd);
 
@@ -2050,7 +2050,7 @@ void ai_chase_location__FP6OBJECTP3P3DUi(float param_1,undefined4 *param_2,uint 
 
     *(uint *)(iVar5 + 0xd8) = *(uint *)(iVar5 + 0xd8) | 0x1000000;
 
-    fVar13 = (float10)FUN_0050a7c0(param_1,*(undefined4 *)(iVar5 + 200));
+    fVar13 = (float10)playerobj_turn(param_1,*(undefined4 *)(iVar5 + 200));
 
     param_1 = (float)(fVar13 * (float10)0.025);
 
