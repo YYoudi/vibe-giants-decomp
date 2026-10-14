@@ -1,0 +1,20 @@
+{
+ "vanilla-v10": {
+  "summary": {
+   "other:FAIL": 737,
+   "abx:PASS": 33,
+   "worldlist:PASS": 1,
+   "bin_world:PASS": 121
+  },
+  "golden_count": 155
+ },
+ "gog-1449": {
+  "summary": {
+   "other:FAIL": 743,
+   "abx:PASS": 33,
+   "worldlist:PASS": 1,
+   "bin_world:PASS": 122
+  },
+  "golden_count": 156
+ }
+}
