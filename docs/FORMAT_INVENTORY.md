@@ -13,12 +13,13 @@ Only reverse what is NOT covered. Update this file when coverage changes.
 | **GBS** | models | `blender-giants-plugin/gbs_plugin/importer.py`, `obj2gbs.py`, `id_to_gbs.py` | ✅ (blender import round-trip) |
 | **wdefs.bin** | weapon definitions | `giants-wdefs-importer-gui` | ✅ |
 | **GCK** | world containers (zip) | documented `sent_by_Amazed/game_structure.txt` ("just zip files") | ✅ (zip) |
-| **.bin map logic** | objects/spawns/map attrs | `map2obj.py` needs external `giantslib` (absent) | ⚠️ PARTIAL |
+| **.bin map logic** | objects/spawns/map attrs | `docs/formats/bin_objects.md` + `tools_spec/bin_formats.py` (opcode stream 19-138 byte-validated) | ✅ SOLVED 2026-10-14 |
 | **GTI (terrain)** | map terrain | — | 🔶 STARTED: header decoded (see gaps) |
 | **GText*.bin** | translations | — (`scripts/gtext_parse.py` now) | 🔶 ~95% solved (see gaps) |
-| **WorldList.bin** | world registry | — (decoded this session) | 🔶 structure known |
+| **WorldList.bin** | world registry | `docs/formats/worldlist.md` + `tools_spec/bin_formats.py` | ✅ SOLVED 2026-10-14 |
 | **GDF** | dedicated server defs | `dedicated.exe` generates (game_structure.txt) | 📝 tool exists |
-| *.gdf/.abx | server defs/unknown | — | ❓ |
+| *.abx | component registry (GameObj.bin) + object-set placements (w_*.abx) | `docs/formats/abx.md` + `tools_spec/bin_formats.py` | ✅ SOLVED 2026-10-14 |
+| *.gdf | dedicated server defs | `dedicated.exe` generates | 📝 tool exists |
 
 ## Game structure knowledge (already documented)
 
@@ -57,9 +58,12 @@ Only reverse what is NOT covered. Update this file when coverage changes.
 2. **GText*.bin** — ✅ SOLVED 100% (loader +0x10D660; `scripts/gtext_parse.py` clean on
    EN/FR/DE/IT/ES).
 3. **WorldList.bin** — decoded: {?, payloadLen, count, offsets[], name+id records}.
-4. **world.gb2** — still undecoded; world table at +0xF4070 references {wav, gti, bin, gb2}.
-5. **.bin object format (0x1A0002E5)** — loader at +0xB7C50; body structure unmapped.
-   **.abx (0x1A0002DD)** — loader at +0xBA83B region; body unmapped.
+4. **world.gb2** — ✅ SOLVED (container; ships inside `Bin/extra.gzp`): magic 0xAA0100AB,
+   9 named components (sky/sea/waterfall/... registry in GameObj.bin). See
+   `docs/formats/world_gb2.md`. Component vertex bodies = open (renderer-side).
+5. **.bin object format (0x1A0002E5)** — ✅ SOLVED (container + 120-opcode stream,
+   byte-validated on 108/120 world bins; 11-file size-variant residual documented).
+   **.abx (0x1A0002DD)** — ✅ SOLVED (two sub-formats).
 6. System-layer functions — `scripts/re_db.json` (28 fns / 14 globals, apply_labels.py).
 7. Main-loop / frame architecture — blocked on the real menu (D3DEnum filter rejects
    dgVoodoo devices; GOG D3D8 renderer crashes on v1.0 exe).
