@@ -2,16 +2,21 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-# GIANTS: CITIZEN KABUTO — Reverse Engineering (v1.0 PC, x86 32-bit)
+# GIANTS: CITIZEN KABUTO — Reverse Engineering (GOG 1.449 PC, x86 32-bit)
 
 ## CIBLE (Ground Truth)
 
-- **Binaire de référence : `GameFiles-VanillaV1/Giants.exe`** — PE32, 1 634 304 octets, daté 30 nov 2000 (v1.0 retail).
-  MD5 `330c6a9a8ab0fa4b0173d925e1d5ec27`. Image base `0x400000`, entry `0x547358`.
-- **Cible d'analyse courante : GOG 1.4.0 (build 1.449)** — projet Ghidra `ghidra_projects_gog144/` (2599 fonctions
-  énumérées, wave-2 matching PS2 en cours). Mapping v1.0↔1.449 : `decompiled/v10_1449_ranges.json` +
-  `decompiled/v10_to_v149_map.json` (générés par `scripts/cross_version_map.py`). Le vanilla v1.0 reste le ground
-  truth bit-à-bit pour toute validation de recomp.
+- **Binaire de référence : GOG 1.4.0 (build 1.449)** — `G:\Games\Giants\Giants.exe` (1 630 208 octets, daté
+  déc 2008). Image base `0x400000`. **Décompilé à 100 % et nommé à 100 %** (2026-10-14) : 2 807 fonctions
+  non-thunk, `done=2807 failed=0 named=2807` — voir `decompiled/gog144_full/stats.txt`, corpus complet dans
+  `decompiled/gog144_full/all_decompiled.c(.gz)` + modules `decompiled/gog144_modules/`.
+- **Projet Ghidra de référence : `ghidra_projects_gog144/`** (programme `Giants.exe`) — tous les renames validés
+  y sont appliqués ; c'est LA source de vérité des noms. Mapping v1.0↔1.449 : `decompiled/v10_1449_ranges.json` +
+  `decompiled/v10_to_v149_map.json` (générés par `scripts/cross_version_map.py`).
+- **Référence secondaire : vanilla v1.0 retail** — `GameFiles-VanillaV1/Giants.exe` (PE32, 1 634 304 octets,
+  30 nov 2000, MD5 `330c6a9a8ab0fa4b0173d925e1d5ec27`, entry `0x547358`). Snapshot bit-exact conservé pour les
+  comparaisons inter-versions (REA `compare_functions`/`find_changed_behavior`) et toute éventuelle validation
+  bit-à-bit de recomp — ne plus s'y calquer pour l'analyse courante.
 - ⚠️ **Fichiers contaminés** dans `GameFiles-VanillaV1/` (modifiés lors de sessions précédentes — NE PAS utiliser
   comme ground truth) : `Giants_nocd.exe`, `gg_dx7r.dll`, `libgcc_s_dw2-1.dll`, `libstdc++-6.dll`,
   `libwinpthread-1.dll`, `vfsdump_logo512.tga` (dates 2025 = modifiés ; dates 2000 = propres).
@@ -86,7 +91,8 @@ bridge ghidra-mcp = renames + projet persistant · analyzeHeadless = passes batc
   demander d'installer un outil, deviner une data, ou choisir une techno. Il manque un outil → l'installer
   (`pip`, `curl`, terminal, internet) ou l'écrire.
 - Pas de code custom/inventé dans une éventuelle recomp : tout est validé bit-à-bit vs l'original.
-- Ne jamais modifier les fichiers ground truth de `GameFiles-VanillaV1/` — travailler sur des copies.
+- Ne jamais modifier les fichiers des snapshots de référence (`GameFiles-VanillaV1/` pour v1.0 ;
+  l'install GOG `G:\Games\Giants\` pour 1.449) — travailler sur des copies.
 
 ## GIT
 
@@ -99,11 +105,13 @@ bridge ghidra-mcp = renames + projet persistant · analyzeHeadless = passes batc
 ## OUTIL GHIDRA MCP INTERACTIF (bethington/ghidra-mcp, installé 2026-08-28)
 
 - Serveur headless : `cmd //c G:/VibeRE/GiantsRE/RuntimeLab/start_ghidra_mcp.bat`
-  (HTTP 127.0.0.1:8089, ouvre ghidra_projects/GiantsRE.gpr avec renames PS2 inclus).
+  (HTTP 127.0.0.1:8089, ouvre ghidra_projects_gog144/GOG144.gpr — le projet de référence 1.449).
 - MCP dans ZCode : serveur stdio `python -m bridge_mcp_ghidra` (déjà enregistré,
   scope user, avec x64dbg). 253 outils : décomp unitaire/bulk, renames, xrefs,
   strings, types/structs, scripts, émulation P-code.
-- Boucle decomp : ancre runtime → re_db.json → rename via MCP + bulk-decompile
-  → decompiled/system_layer/*.c. Détails : docs/DECOMP_PIPELINE.md.
+- Boucle decomp courante (100 % faite, à réutiliser pour toute reprise) :
+  `scripts/apply_names_pyghidra.py` (applique les CSV `ps2_symbols/llm_waveNN.csv`, seuil conf 0.9)
+  → `scripts/export_decomp_pyghidra.py` (corpus complet + index + stats)
+  → `scripts/build_modules.py` → gzip → commit. Ancienne boucle re_db.json/system_layer : docs/DECOMP_PIPELINE.md.
 - Runner headless classique (analyzeHeadless + scripts Java) reste pour les
   passes batch complètes.

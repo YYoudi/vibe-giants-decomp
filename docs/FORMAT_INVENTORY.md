@@ -41,7 +41,10 @@ Only reverse what is NOT covered. Update this file when coverage changes.
 
 ## Binaries & environments
 
-- Vanilla v1.0: `GameFiles-VanillaV1/Giants.exe` (MD5 330c6a…ec27) — GROUND TRUTH, never modify.
+- GOG 1.4.0 (1.449): `G:\Games\Giants\Giants.exe` — PRIMARY REFERENCE (100% decompiled + named,
+  see `decompiled/gog144_full/`), never modify.
+- Vanilla v1.0: `GameFiles-VanillaV1/Giants.exe` (MD5 330c6a…ec27) — secondary reference snapshot
+  (inter-version comparisons / bit-exact recomp checks), never modify.
 - PS2 prototype ISO + ELF (unstripped): `sent_by_Amazed/…PS2.7z`, `ps2_symbols/SLUS_201.78`.
 - Working runtime copy: `RuntimeLab/GiantsWork/` (vanilla exe + Mecc gg_dx7r + dgVoodoo2
   DDraw/D3DImm + ddraw shim `.off` variants kept). Boot recipe: `scripts/boot_session.py`.
