@@ -166,3 +166,71 @@ op `0x15` names a mission's flick (`kstory5_end_1` ↔ `flk_*` family).
   re-packed; the cursor format in memory is `{op, size, …}` — confirm whether disk
   records are already in this shape; header `count_directors/actors/blocks` mapping).
 - wm op-size table to full field level (28 ops; the streams are tiny).
+
+---
+
+## MISE À JOUR 2026-10-14 — cinématique gamegauge (chapitre 4 Mecc) observée in-engine
+
+`Giants.exe -gamegauge` = **oracle déterministe** : lance sans input la cinématique
+d'intro "Mecc Story 4: The Search for Timmy" (chargée explicitement à l'écran de
+chargement), la joue in-engine (persos, sons, sous-titres, caméras, anims), compte des
+stats graphiques à l'écran et **se ferme seul en écrivant `fps.txt`**.
+
+### Preuve byte-exact (observed)
+
+- Run1 (quasi-sans trace) vs Run3 (lourdement tracé/pausé) : `fps.txt` **BYTE-IDENTICAL**
+  (3 580 octets, md5 `aa93dfcbcb5ee9e67de0f5cf40d6ef78`, 231 lignes, header
+  `357.28 Giants v1.400`, Min 183 / Max 841, 228 secondes de comptes par seconde).
+- **La cinématique tourne sur une timeline de simulation figée** — les pauses debugger ne
+  changent RIEN à la sortie. C'est l'oracle de parité du moteur : reproduire ce
+  fps.txt + la playlist ci-dessous à l'octet près.
+- Artefacts locaux : `RuntimeLab/logs/traces/gamegauge_run{1,3}_fps.txt`,
+  `hits_gamegauge_run3_full.json` (md5 dans `session_hashes.txt`).
+
+### Playlist flick déterministe (observed, 28 loads)
+
+`flick_file_load` param_2 séquencé :
+`0x0D, 0x10, 0x16, 0x17, 0x19, 0x1B, 0x1D, 0x1E, 0x21, 0x22, 0x24, 0x25, 0x26, 0x27,
+0x29, 0x2B, 0x2D, 0x2F, 0x31, 0x33, 0x35, 0x36, 0x37, 0x39, 0x3B, 0x3D, 0x3F, 0x41`
+
+### Fichiers flick de cette cinématique (famille story4, observed on disk)
+
+`flk_story4_Freedom_1..12`, `flk_story4_T_square_1..58` (+variantes a),
+`flk_story4_rescue_31` — la cinématique "The Search for Timmy" joue des segments de
+cette famille. Mapping id→nom : le nom est résolu via la table scénario `WS+0x210`
+(op 93 des world bins) puis `sprintf("flk_%s.bin")`.
+
+### Format disque flk confirmé (derived + observed)
+
+```
+u32 version = 3
+u32 total                  // == filesize
+u32 count_directors        // × 0xC-byte records
+u32 count_actors           // × 0x874-byte FLK_Actor
+u32 count_blocks           // × 0x310-byte records
+u32 (0x117 observé — rôle à confirmer)
+payload[total-0x18]        // bytecode, copié VERBATIM en mémoire (malloc(total),
+                           //  header 6 dwords copié, reste lu après) — le curseur
+                           //  de FLK_FlickProcess démarre à payload+0
+```
+
+Records bytecode : `{u32 op, u32 size_dwords, payload...}` avec avancement
+`cursor += size` (dwords, à caler exactement — la marche complète des 545 fichiers
+validera la règle comme pour les world bins).
+
+### Protocole gamegauge (pour reproduire)
+
+1. cmd élevé : `cd /d G:\Games\Giants && Giants.exe -gamegauge`
+   (batch `RuntimeLab/run_gauge.bat` — le pattern launcher/élévation casse le passage
+   d'args via certains chemins PowerShell).
+2. `AttachProcess` x32dbg élevé dès que le pid apparaît (les BPs du module persistent).
+3. BPs événementiels seulement (`ps2_symbols/gauge_evt_bps.txt`) — les BPs par-frame
+   s'effondrent sous le dedup du capteur (documenté).
+4. Auto-exit → `fps.txt` régénéré → comparer md5 au golden.
+
+### Open items
+
+- Règle d'avancement exacte des records FLK (caler sur les 545 fichiers).
+- Payloads détaillés des 31+ opcodes FLK (cases décimales 1..10 incluses — la première
+  extraction n'a vu que les cases hex 0x0B..0x35 ; ops 1..10 = director/family).
+- Mapping id→fichier nominal (lire la string pointée par param_1 pendant une pause).
