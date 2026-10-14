@@ -115,3 +115,13 @@ bridge ghidra-mcp = renames + projet persistant · analyzeHeadless = passes batc
   → `scripts/build_modules.py` → gzip → commit. Ancienne boucle re_db.json/system_layer : docs/DECOMP_PIPELINE.md.
 - Runner headless classique (analyzeHeadless + scripts Java) reste pour les
   passes batch complètes.
+## HANDOFF RUST+BEVY (phase courante, depuis 2026-10-14)
+
+Mission active : finir la documentation amont pour un second agent qui reimplementera
+le jeu en Rust+Bevy (lire docs/RUNTIME_TRACES.md, docs/systems/*.md, docs/formats/*.md,
+docs/specs/formats.json, docs/constants/, tools_spec/). Ordre de bataille et DoD : voir
+le goal de session. Regles : PAS de moteur Rust ici ; provenance systematique
+(observed/derived/inferred) ; snapshots intouchables ; captures d'ecran locales only.
+Fait : P0.1 (formats .bin/.abx/gb2/WorldList), P0.2 (verdict wm=data / flk=VM a porter),
+P1.3 partiel (6 docs systemes), P2.1 (constantes), P2.2 (specs JSON), P2.3 (validateur+golden).
+En cours : P1.1 (traces runtime — x32dbg DOIT tourner eleve, voir docs/RUNTIME_TRACES.md).

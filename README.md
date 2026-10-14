@@ -18,7 +18,8 @@ No game code or assets are recreated here from scratch: everything is derived by
 | `ps2_symbols/` | 4 769 named functions from the unstripped PS2 build (SLUS_201.78) used as naming ground truth, plus per-wave naming ledgers (`llm_waveNN.csv`: address, name, evidence note) |
 | `scripts/` | The tooling: `apply_names_pyghidra.py`, `export_decomp_pyghidra.py`, `build_modules.py`, `dump_callgraph_pyghidra.py`, `cross_version_map.py`, x64dbg MCP bridge (`xdbg_call.py`), … |
 | `RuntimeLab/` | Runtime lab: boot recipes, filtered logs (no game binaries) |
-| `docs/` | Format inventory, decomp pipeline notes |
+| `docs/` | Format inventory, decomp pipeline, **handoff docs for the Rust+Bevy reimplementation**: `docs/systems/*.md` (sim loop, collision, renderer, audio, AI, netcode, mission/flick VM verdict), `docs/formats/*.md`, `docs/specs/formats.json` (machine-readable), `docs/constants/`, `docs/RUNTIME_TRACES.md` (oracle protocol) |
+| `tools_spec/` | Python validation parsers per format (`bin_formats.py`) |
 | `AGENTS.md` | Operating manual for the RE agent (tools, method, rules) |
 
 ## Reference targets
