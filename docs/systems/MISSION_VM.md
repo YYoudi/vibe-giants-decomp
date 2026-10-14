@@ -234,3 +234,65 @@ validera la règle comme pour les world bins).
 - Payloads détaillés des 31+ opcodes FLK (cases décimales 1..10 incluses — la première
   extraction n'a vu que les cases hex 0x0B..0x35 ; ops 1..10 = director/family).
 - Mapping id→fichier nominal (lire la string pointée par param_1 pendant une pause).
+
+---
+
+## MISE À JOUR 2 — 2026-10-14 : décodeur FLK validé 545/545 + table d'opcodes complète
+
+### Règle de marche des records (VALIDÉE — 545/545 fichiers flk marchent exactement)
+
+```
+cur   = dword 6 du fichier (buffer + 0x18 bytes — arithmétique pointeurs C)
+op    = u32[cur]
+adv   = u32[cur+1]      // taille du record EN DWORDS, op et size inclus
+next  = cur + adv
+fin   : le dernier record retombe exactement sur le STRING POOL
+        (noms NUL-terminés des acteurs/directors: "reg", "center", "borjoyzee", ...)
+```
+
+Décodeur de référence : **`tools_spec/flk_decode.py`** — `--stats <Bin>` valide
+l'arbre complet (545 ok / 0 fail) et sort l'usage par opcode.
+
+### Table des opcodes FLK observée (41 ops utilisées sur 1..53)
+
+Usage = nombre total d'occurrences dans les 545 fichiers. Sémantiques tirées des
+corps de cases de `FLK_FlickProcess @ 0x00445A20` (derived) :
+
+| op | usage | sémantique (calls observés dans la case) |
+|----|-------|------------------------------------------|
+| 1 | 545 | register director (bistream_tell) — 1 par fichier |
+| 2 | 3602 | **FLK_ActorAdd**(flick, idx, name...) — ajout d'acteur |
+| 3 | 758 | flick_slot_lookup_handle |
+| 4 | 577 | animGetIndexByName — bind animation par nom |
+| 5 | 545 | hud_icon_timed |
+| 6 | 554 | (flag/cursor) |
+| 7 | 547 | (flag) |
+| 9 | 980 | AddHud(cHud, cHudIcon) |
+| 10 | — | AddHud variante |
+| 11/12 | 11/22 | (setups) |
+| 13 | 22 | **sound_play_obj** — événement son de la cinématique |
+| 14 | 622 | (const/flag) |
+| 15–21 | ~620 ch | (acteurs: champs/slots — bloc T_square) |
+| 22 | 1155 | (acteur slot majeur) |
+| 23 | 707 | (acteur) |
+| 25 | 1686 | flick_slot_lookup ×2 (le plus fréquent) |
+| 31 | 188 | (caméra/position) |
+| 32/33 | 46/2 | FLK_ActorOffsetEval (positionnement acteur) |
+| 34 | 1575 | main_objspec + map_chunk_alloc (spawn resource) |
+| 37 | 1 | ftol ×3 (timing) |
+| 38/39 | 100/— | hud_icon_for_object (39) |
+| 41 | 622 | (bloc) |
+| 42 | 5 | rare |
+| 44 | 497 | teammecc_clear_mode |
+| 47 | 2 | TextGetPtr (texte) |
+| 52/53 | 51/1 | AddHud / vcall |
+| 26/27 | — | sound_play / sound_stop |
+| 36 | — | sound_stop_obj |
+| 43 | — | sound_entry_volume_set |
+| 45/46/48/49/50 | — | (rare/non observé dans l'usage) |
+
+### Sortie de flux
+
+Le dernier record retombe **exactement** sur le STRING POOL (noms NUL-terminés
+`"reg"`, `"center"`, `"borjoyzee"`, `"yan"`, `"reaper"`...) — le stream est
+auto-terminé par son propre avancement, pas par marqueur.
