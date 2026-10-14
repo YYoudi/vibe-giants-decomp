@@ -76,4 +76,6 @@ imagery must not be published).
 
 | date | target | result |
 |---|---|---|
-| 2026-10-14 | GOG 1.449, pid 25488, menu reached under elevated x32dbg | harness armed (19 BPs), awaiting gameplay trace |
+| 2026-10-14 | GOG 1.449, pid 25488 | menu reached; stale-BP + sensor module-gate bugs found+fixed |
+| 2026-10-14 | GOG 1.449, pid 27684 | **fresh boot auto-loaded intro-island gameplay (no clicks)**; 19 event BPs; 46 sound_play_obj hits captured; memory-input menu drive PROVEN (before/after pngs); dt register observed 2ms at menu, FPS counter 742-853 in-game (uncapped, confirms dt-driven sim) |
+| — | session artifacts | `hits_session_20261014.json`, `session_hashes.txt`, `trace_report.json`, before/after drive captures (local only) |

@@ -13,7 +13,7 @@ import subprocess, json, time, struct, os, ctypes, ctypes.wintypes as wt
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TRACE = os.path.join(REPO, 'RuntimeLab', 'logs', 'traces')
-GW = 134696  # Giants window handle (re-find via find_window if stale)
+GW = 1116704  # Giants window handle (re-find via find_window if stale)
 
 DIK = {'ESC': 0x01, 'ENTER': 0x1C, 'SPACE': 0x39, 'LEFT': 0xCB, 'RIGHT': 0xCD,
        'UP': 0xC8, 'DOWN': 0xD0, 'DELETE': 0xD3, 'F1': 0x3B}

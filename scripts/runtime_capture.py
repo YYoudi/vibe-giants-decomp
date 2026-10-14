@@ -22,7 +22,7 @@ def main():
     for line in open(bpfile, encoding='utf-8'):
         s = line.strip().lower().lstrip('0x')
         if s:
-            bps.add(s.lstrip('0').rjust(8, '0'))
+            bps.add(int(s, 16))
     log_path = os.path.join(REPO, 'runtime_hits_log.json')
     log = []
     if os.path.exists(log_path):
@@ -39,15 +39,14 @@ def main():
         if not m:
             time.sleep(0.8)
             continue
-        a = m.group(1).upper()
-        core = a[2:].upper().lstrip('0')
+        cur = int(m.group(1), 16)
         # module gate removed: GetDebugState output has no currentModule field;
         # the address set only contains giants-module BPs, system pauses fall through.
-        if core not in bps:
+        if cur not in bps:
             call('ExecuteDebuggerCommand', {'command': 'g'})
             time.sleep(0.4)
             continue
-        addr = '0x' + core.rjust(8, '0')
+        addr = '0x%08X' % cur
         now = time.time()
         # same bp may re-hit in a loop: record each hit up to 5 per addr per pass
         if now - seen_at.get(addr, 0) < 1.0:

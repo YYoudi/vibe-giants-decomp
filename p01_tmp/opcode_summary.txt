@@ -1,0 +1,838 @@
+
+== OP 19 (6 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 2);
+puVar19[0xc] = 1;
+puVar19[4] = (uint)bVar11;
+
+== OP 20 (0 lines) ==
+
+
+== OP 21 (0 lines) ==
+
+
+== OP 22 (0 lines) ==
+
+
+== OP 23 (4 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 5);
+puVar19[0x31] = *pfVar20;
+
+== OP 24 (0 lines) ==
+
+
+== OP 25 (0 lines) ==
+
+
+== OP 26 (0 lines) ==
+
+
+== OP 27 (0 lines) ==
+
+
+== OP 28 (0 lines) ==
+
+
+== OP 29 (6 lines) ==
+MemString(0x1a,pfVar20,&local_3cc,s_C__Giants_source_main_readwrls_c_005602ac,0x218);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+mem_free_tagged(local_3cc,s_C__Giants_source_main_readwrls_c_005602ac,0x219);
+iVar6 = local_3ec;
+
+== OP 30 (7 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x50,s_C__Giants_source_main_readwrls_c_005602ac,0x20e);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x50));
+*(undefined4 *)(DAT_006330e4 + 0x4c) = uVar10;
+iVar6 = local_3ec;
+
+== OP 31 (6 lines) ==
+MemString(0x1a,pfVar20,&local_3c4,s_C__Giants_source_main_readwrls_c_005602ac,0x222);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+mem_free_tagged(local_3c4,s_C__Giants_source_main_readwrls_c_005602ac,0x223);
+iVar6 = local_3ec;
+
+== OP 32 (7 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x58,s_C__Giants_source_main_readwrls_c_005602ac,0x228);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x58));
+*(undefined4 *)(DAT_006330e4 + 0x54) = uVar10;
+iVar6 = local_3ec;
+
+== OP 33 (7 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x60,s_C__Giants_source_main_readwrls_c_005602ac,0x22d);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x60));
+*(undefined4 *)(DAT_006330e4 + 0x5c) = uVar10;
+iVar6 = local_3ec;
+
+== OP 34 (7 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x68,s_C__Giants_source_main_readwrls_c_005602ac,0x232);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x68));
+*(undefined4 *)(DAT_006330e4 + 100) = uVar10;
+iVar6 = local_3ec;
+
+== OP 35 (0 lines) ==
+
+
+== OP 36 (6 lines) ==
+MemString(0x1a,pfVar20,&local_3d4,s_C__Giants_source_main_readwrls_c_005602ac,0x240);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+mem_free_tagged(local_3d4,s_C__Giants_source_main_readwrls_c_005602ac,0x241);
+iVar6 = local_3ec;
+
+== OP 37 (7 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x78,s_C__Giants_source_main_readwrls_c_005602ac,0x246);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x78));
+*(undefined4 *)(DAT_006330e4 + 0x74) = uVar10;
+iVar6 = local_3ec;
+
+== OP 38 (7 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x70,s_C__Giants_source_main_readwrls_c_005602ac,0x24b);
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+uVar10 = main_texture_00508750(*(undefined4 *)(DAT_006330e4 + 0x70));
+*(undefined4 *)(DAT_006330e4 + 0x6c) = uVar10;
+iVar6 = local_3ec;
+
+== OP 39 (9 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 0x12);
+
+== OP 40 (9 lines) ==
+*(float *)(DAT_006330e4 + 0x4f7c) = (float)*(byte *)pfVar20;
+*(float *)(DAT_006330e4 + 0x4f80) = (float)*(byte *)((int)pfVar21 + 2);
+*(float *)(DAT_006330e4 + 0x4f84) = (float)*(byte *)((int)pfVar21 + 3);
+*(float *)(DAT_006330e4 + 0x4f7c) = *(float *)(DAT_006330e4 + 0x4f7c) * 0.003921569;
+*(float *)(DAT_006330e4 + 0x4f80) = *(float *)(DAT_006330e4 + 0x4f80) * 0.003921569;
+*(float *)(DAT_006330e4 + 0x4f84) = *(float *)(DAT_006330e4 + 0x4f84) * 0.003921569;
+pfVar21 = pfVar21 + 1;
+
+== OP 41 (21 lines) ==
+*(float *)(DAT_006330e4 + 0x128) = *pfVar20;
+*(undefined4 *)(DAT_006330e4 + 300) = *(undefined4 *)((int)pfVar21 + 5);
+*(float *)(DAT_006330e4 + 0x130) = (float)*(byte *)((int)pfVar21 + 9);
+*(float *)(DAT_006330e4 + 0x134) = (float)*(byte *)((int)pfVar21 + 10);
+*(float *)(DAT_006330e4 + 0x138) = (float)*(byte *)((int)pfVar21 + 0xb);
+*(float *)(DAT_006330e4 + 0x130) = *(float *)(DAT_006330e4 + 0x130) * 0.003921569;
+*(float *)(DAT_006330e4 + 0x134) = *(float *)(DAT_006330e4 + 0x134) * 0.003921569;
+*(float *)(DAT_006330e4 + 0x138) = *(float *)(DAT_006330e4 + 0x138) * 0.003921569;
+if (*(float *)(DAT_006330e4 + 0x128) < 0.0) {
+__rt_error_box(s_World_>fogmin_>__0_0f_005605c4,s_C__Giants_source_main_readwrls_c_005602ac,
+if (*(float *)(DAT_006330e4 + 300) < 0.0) {
+__rt_error_box(s_World_>fogmax_>__0_0f_005605ac,s_C__Giants_source_main_readwrls_c_005602ac,
+pfVar21 = pfVar21 + 3;
+iVar6 = local_3ec;
+
+== OP 42 (0 lines) ==
+
+
+== OP 43 (4 lines) ==
+puVar19[5] = *pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 5);
+
+== OP 44 (0 lines) ==
+
+
+== OP 45 (1 lines) ==
+goto switchD_004b1431_caseD_2d;
+
+== OP 46 (6 lines) ==
+*(float *)(DAT_006330e4 + 0x7c) = *pfVar20;
+*(float *)(DAT_006330e4 + 0x80) = 1.0 / *(float *)((int)pfVar21 + 5);
+*(undefined4 *)(DAT_006330e4 + 0x84) = *(undefined4 *)((int)pfVar21 + 9);
+pfVar21 = (float *)((int)pfVar21 + 0xd);
+
+== OP 47 (3 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 0x1d);
+
+== OP 48 (9 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 0x13);
+
+== OP 49 (3 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 0x29);
+
+== OP 50 (29 lines) ==
+if (puVar19[0x78] == 0x24) {
+if (puVar19[0x5c] == 0) {
+MemAllocMsg(0x18,0x18,&DAT_00560500,s_C__Giants_source_main_readwrls_c_005602ac,
+puVar19[0x5c] = puVar7;
+*(uint *)(puVar19[0x5c] + 4) = (uint)*(byte *)pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 3);
+iVar6 = local_3ec;
+iVar14 = puVar19[0x40];
+pfVar21 = (float *)((int)pfVar21 + 3);
+
+== OP 51 (5 lines) ==
+error_msg_show(s_Obsolete_garden_opcode_005604c0);
+pfVar21 = (float *)((int)pfVar21 + 0x25);
+iVar6 = local_3ec;
+
+== OP 52 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x1e0,s_C__Giants_source_main_readwrls_c_005602ac,0x43c)
+*(undefined4 *)(DAT_006330e4 + 0x1e4) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x1e4) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x1e4) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x1e4) = 1.0 / *(float *)(DAT_006330e4 + 0x1e4);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 53 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x1e8,s_C__Giants_source_main_readwrls_c_005602ac,0x447)
+*(undefined4 *)(DAT_006330e4 + 0x1ec) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x1ec) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x1ec) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x1ec) = 1.0 / *(float *)(DAT_006330e4 + 0x1ec);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 54 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x1f0,s_C__Giants_source_main_readwrls_c_005602ac,0x452)
+*(undefined4 *)(DAT_006330e4 + 500) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 500) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 500) = 0x42480000;
+*(float *)(DAT_006330e4 + 500) = 1.0 / *(float *)(DAT_006330e4 + 500);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 55 (5 lines) ==
+error_msg_show(s_Obsolete_mesh_single_opcode_005604a4);
+pfVar21 = (float *)((int)pfVar21 + 0x25);
+iVar6 = local_3ec;
+
+== OP 56 (5 lines) ==
+error_msg_show(s_Obsolete_mesh_group_opcode_00560488);
+pfVar21 = (float *)((int)pfVar21 + 0x25);
+iVar6 = local_3ec;
+
+== OP 57 (21 lines) ==
+*(undefined4 *)(DAT_006330e4 + 0x1a8) = *(undefined4 *)((int)pfVar21 + 0xd);
+*(undefined4 *)(DAT_006330e4 + 0x1ac) = *(undefined4 *)((int)pfVar21 + 0x11);
+*(undefined4 *)(DAT_006330e4 + 0x1b0) = *(undefined4 *)((int)pfVar21 + 0x15);
+*(undefined4 *)(DAT_006330e4 + 0x1b4) = *(undefined4 *)((int)pfVar21 + 0x19);
+if (*(float *)(DAT_006330e4 + 0x1ac) != 0.0) {
+*(float *)(DAT_006330e4 + 0x1a8) =
+*(float *)(DAT_006330e4 + 0x1a8) * *(float *)(DAT_006330e4 + 0x1a8);
+*(float *)(DAT_006330e4 + 0x1ac) =
+*(float *)(DAT_006330e4 + 0x1ac) * *(float *)(DAT_006330e4 + 0x1ac);
+*(float *)(DAT_006330e4 + 0x1b8) =
+(*(float *)(DAT_006330e4 + 0x1b4) - *(float *)(DAT_006330e4 + 0x1b0)) /
+(*(float *)(DAT_006330e4 + 0x1ac) - *(float *)(DAT_006330e4 + 0x1a8));
+*(float *)(DAT_006330e4 + 0x1bc) =
+*(float *)(DAT_006330e4 + 0x1b0) -
+*(float *)(DAT_006330e4 + 0x1b8) * *(float *)(DAT_006330e4 + 0x1a8);
+pfVar21 = pfVar23;
+
+== OP 58 (35 lines) ==
+puVar19[0x37] = puVar19[0x37] | 0x40;
+if ((local_418 != (char *)0x0) && (*(int *)(DAT_006330e4 + 0x20c) == 0)) {
+*(char **)(DAT_006330e4 + 0x208) = local_418;
+uVar10 = MemAllocMsg(0x1a,(int)local_418 * 0xc,s_walist_00560508,
+s_C__Giants_source_main_readwrls_c_005602ac,0x6d7);
+*(undefined4 *)(DAT_006330e4 + 0x20c) = uVar10;
+puVar7 = *(undefined4 **)(DAT_006330e4 + 0x20c);
+uVar10 = worldanim_find(pfVar20);
+puVar19[0x5e] = puVar19[0x28];
+puVar19[0x5f] = puVar19[0x29];
+puVar19[0x60] = puVar19[0x2a];
+if (puVar19[1] != 0x23f) {
+object_change_ospec(puVar19,0x36);
+*(undefined4 *)puVar19[0x40] = uVar10;
+*(undefined4 *)(puVar19[0x40] + 8) = *(undefined4 *)((int)pfVar21 + 0x21);
+puVar19[0x72] = puVar19[0x72] | 0x400000;
+pfVar21 = (float *)((int)pfVar21 + 0x25);
+iVar6 = local_3ec;
+
+== OP 59 (4 lines) ==
+puVar19[0x3a] = (uint)*(byte *)pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 2);
+
+== OP 60 (3 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 0x11);
+
+== OP 61 (0 lines) ==
+
+
+== OP 62 (3 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 0x15);
+
+== OP 63 (6 lines) ==
+if (puVar19[0x78] != 0x24) goto LAB_004b2ac0;
+*(float *)(puVar19[0x5c] + 0xc) = *pfVar20;
+*(undefined4 *)(puVar19[0x5c] + 0x10) = *(undefined4 *)((int)pfVar21 + 5);
+pfVar21 = (float *)((int)pfVar21 + 9);
+
+== OP 64 (54 lines) ==
+iVar6 = object_find(fVar17);
+crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpAre_00560460,fVar17);
+error_msg_show(&DAT_00657400);
+error_msg_show(s_Too_many_objects_for_world_00560510);
+object_copy_personality(puVar19,iVar6);
+object_change_ospec(puVar19,0x16);
+MemAllocMsg(0x18,0x28,s_teamripper_00560454,
+s_C__Giants_source_main_readwrls_c_005602ac,0x4ec);
+puVar19[0x5c] = puVar7;
+puVar19[0x29] = *(undefined4 *)((int)pfVar21 + 10);
+puVar19[0x2a] = *(undefined4 *)((int)pfVar21 + 0xe);
+puVar19[0x2b] = *puVar8;
+puVar19[0x2c] = puVar19[0x29];
+puVar19[0x2d] = puVar19[0x2a];
+puVar7[7] = puVar19[0x29];
+puVar7[8] = puVar19[0x2a];
+pfVar21 = (float *)((int)pfVar21 + 0x1a);
+iVar6 = local_3ec;
+
+== OP 65 (5 lines) ==
+*(float *)(puVar19[0x5c] + 4) = *pfVar20;
+*(undefined4 *)(puVar19[0x5c] + 8) = *(undefined4 *)((int)pfVar21 + 5);
+pfVar21 = (float *)((int)pfVar21 + 9);
+
+== OP 66 (63 lines) ==
+iVar6 = object_find(fVar17);
+crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpSmo_0056042c,fVar17);
+error_msg_show(&DAT_00657400);
+error_msg_show(s_Too_many_objects_for_world_00560510);
+object_copy_personality(puVar19,iVar6);
+object_change_ospec(puVar19,0x18);
+puVar19[0x28] = *pfVar23;
+puVar19[0x29] = *(undefined4 *)((int)pfVar21 + 9);
+puVar19[0x2a] = *(undefined4 *)((int)pfVar21 + 0xd);
+puVar19[0x2b] = puVar19[0x28];
+puVar19[0x2c] = puVar19[0x29];
+puVar19[0x2d] = puVar19[0x2a];
+MemAllocMsg(0x18,0x4c,&DAT_00560428,s_C__Giants_source_main_readwrls_c_005602ac,
+*(undefined4 **)puVar19[0x40] = puVar8;
+puVar19[0x36] = puVar19[0x36] | 0x40000000;
+puVar19[0x38] = puVar19[0x38] | 4;
+pfVar21 = (float *)((int)pfVar21 + 0x5d);
+iVar6 = local_3ec;
+
+== OP 67 (1 lines) ==
+
+
+== OP 68 (4 lines) ==
+pfVar21 = pfVar20;
+
+== OP 69 (4 lines) ==
+pfVar21 = pfVar20;
+
+== OP 70 (78 lines) ==
+(piVar18 = (int *)puVar19[0x5c], piVar18 != (int *)0x0)) && (*piVar18 == 5)) &&
+uVar10 = MemAllocMsg(0x18,piVar18[2] * 0xc,s_flakpts_0056056c,
+s_C__Giants_source_main_readwrls_c_005602ac,0xe4);
+*(undefined4 *)(puVar19[0x5c] + 0x14) = uVar10;
+pfVar23 = local_364;
+pfVar12 = *(float **)(puVar19[0x5c] + 0x14);
+for (uVar13 = *(int *)(puVar19[0x5c] + 8) * 3 & 0x3fffffff; uVar13 != 0; uVar13 = uVar13 - 1
+iVar6 = object_find(fVar17);
+crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpObj_0056052c,fVar17);
+iVar6 = object_allocate_type(0x406,0);
+error_msg_show(s_Too_many_objects_for_world_00560510);
+object_copy_personality(puVar19,iVar6);
+object_copy_activedata(puVar19,iVar6);
+puVar19[0x28] = *pfVar23;
+puVar19[0x29] = *(undefined4 *)((int)pfVar21 + 9);
+puVar19[0x2a] = *(undefined4 *)((int)pfVar21 + 0xd);
+puVar19[0x32] = *(undefined4 *)((int)pfVar21 + 0x11);
+puVar19[0x33] = *pfVar23;
+puVar19[0x34] = *(undefined4 *)((int)pfVar21 + 0x19);
+puVar19[0x2b] = puVar19[0x28];
+puVar19[0x2c] = puVar19[0x29];
+puVar19[0x2d] = puVar19[0x2a];
+puVar19[0x37] = puVar19[0x37] | 0x20000000;
+pfVar21 = pfVar23;
+iVar6 = local_3ec;
+
+== OP 71 (15 lines) ==
+*(float *)(DAT_006330e4 + 0x1c0) = *pfVar20;
+*(undefined4 *)(DAT_006330e4 + 0x1c8) = *(undefined4 *)((int)pfVar21 + 5);
+*(undefined4 *)(DAT_006330e4 + 0x1cc) = *(undefined4 *)((int)pfVar21 + 0xd);
+local_3d0 = *(undefined4 *)((int)pfVar21 + 0x11);
+*(float *)(DAT_006330e4 + 0x1c4) = 1.0 / *(float *)(DAT_006330e4 + 0x1c0);
+pfVar21 = (float *)((int)pfVar21 + 0x15);
+iVar6 = local_3ec;
+
+== OP 72 (14 lines) ==
+if (0x1f < *(int *)(puVar19[0x5c] + 8)) {
+error_msg_show(s_Too_many_points_in_point_list_fo_005604d8);
+*(int *)(puVar19[0x5c] + 8) = *(int *)(puVar19[0x5c] + 8) + -1;
+iVar6 = puVar19[0x5c];
+local_364[iVar14 * 3] = *pfVar20;
+local_364[iVar14 * 3 + 1] = *(float *)((int)pfVar21 + 5);
+local_364[iVar14 * 3 + 2] = *(float *)((int)pfVar21 + 9);
+pfVar21 = (float *)((int)pfVar21 + 0xd);
+iVar6 = local_3ec;
+
+== OP 73 (4 lines) ==
+*(float *)(DAT_006330e4 + 0x1f8) = *pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 5);
+
+== OP 74 (4 lines) ==
+*(undefined4 *)(DAT_006330e4 + 0x1fc) = 1;
+pfVar21 = pfVar20;
+
+== OP 75 (40 lines) ==
+if (0 < *(int *)(DAT_006330e4 + 0x208)) {
+error_msg_show(s_WorldAnims_after_references__00560408);
+error_msg_show(s_Too_many_animations_for_a_world_005603e8);
+MemString(0x1a,pfVar20,local_180 + (int)pcVar26 * 3,
+s_C__Giants_source_main_readwrls_c_005602ac,0x562);
+crt_sprintf(local_1e4,s__s_anm_005603e0,pcVar22);
+MemString(0x1a,pcVar22,auStack_178 + (int)pcVar26 * 0xc,
+s_C__Giants_source_main_readwrls_c_005602ac,0x566);
+pfVar21 = (float *)(pcVar22 + 1);
+iVar6 = local_3ec;
+
+== OP 76 (67 lines) ==
+error_msg_show(s_Lock_level_nest_too_deep_005603c4);
+if (((puVar19 != (undefined4 *)0x0) && (piVar18 = (int *)puVar19[0x5c], piVar18 != (int *)0x0)
+uVar10 = MemAllocMsg(0x18,piVar18[2] * 0xc,s_flakpts_0056056c,
+s_C__Giants_source_main_readwrls_c_005602ac,0xe4);
+*(undefined4 *)(puVar19[0x5c] + 0x14) = uVar10;
+pfVar23 = local_364;
+pfVar12 = *(float **)(puVar19[0x5c] + 0x14);
+for (uVar9 = *(int *)(puVar19[0x5c] + 8) * 3 & 0x3fffffff; uVar9 != 0; uVar9 = uVar9 - 1) {
+local_388[local_408 + 1] = uVar13;
+iVar6 = object_find(fVar17);
+crt_sprintf(&DAT_00657400,s_Can_t_find_object_type__d__OpLoc_0056039c,fVar17);
+error_msg_show(&DAT_00657400);
+error_msg_show(s_Too_many_objects_for_world_00560510);
+object_copy_personality(puVar19,iVar6);
+object_copy_activedata(puVar19,iVar6);
+puVar19[0x37] = puVar19[0x37] | 0x20000000;
+puVar19[0x84] = uVar13 | 0x80000000;
+puVar19[0x85] = (uint)*(byte *)pfVar23;
+puVar19[0x86] = (uint)*(byte *)((int)pfVar21 + 6);
+pfVar21 = (float *)((int)pfVar21 + 7);
+iVar6 = local_3ec;
+
+== OP 77 (35 lines) ==
+error_msg_show(s_Lock_level_underflow_0055c80c);
+pfVar21 = pfVar20;
+iVar6 = local_3ec;
+(piVar18 = (int *)puVar19[0x5c], piVar18 != (int *)0x0)) && (*piVar18 == 5)) &&
+uVar10 = MemAllocMsg(0x18,piVar18[2] * 0xc,s_flakpts_0056056c,
+s_C__Giants_source_main_readwrls_c_005602ac,0xe4);
+*(undefined4 *)(puVar19[0x5c] + 0x14) = uVar10;
+pfVar21 = local_364;
+pfVar23 = *(float **)(puVar19[0x5c] + 0x14);
+for (uVar13 = *(int *)(puVar19[0x5c] + 8) * 3 & 0x3fffffff; uVar13 != 0;
+pfVar21 = pfVar21 + 1;
+pfVar21 = (float *)((int)pfVar21 + 1);
+puVar2 = local_388 + local_408;
+pfVar21 = pfVar20;
+iVar6 = local_3ec;
+
+== OP 78 (42 lines) ==
+crt_sprintf(&DAT_00657400,s_Error__Flick__s_not_in_world_fli_0055c7e4,pfVar20);
+error_msg_show(&DAT_00657400);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+iVar6 = local_3ec;
+iVar6 = local_3ec;
+puVar19[0xba] = puVar19[0xba] | 1 << (bVar11 & 0x1f);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+puVar19[0xbb] = puVar19[0xbb] | 1 << (bVar11 - 0x20 & 0x1f);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+puVar19[0xbc] = puVar19[0xbc] | 1 << (bVar11 - 0x40 & 0x1f);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+puVar19[0xbc] = puVar19[0xbc] | 1 << (bVar11 + 0xa0 & 0x1f);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+iVar6 = local_3ec;
+
+== OP 79 (24 lines) ==
+error_msg_show(s_Too_many_flicks_for_world_00560380);
+pfVar21 = (float *)((int)pfVar21 + 0x41);
+iVar6 = local_3ec;
+
+== OP 80 (16 lines) ==
+iVar14 = puVar19[0x40];
+pfVar21 = pfVar23;
+pfVar21 = pfVar21 + 1;
+
+== OP 81 (11 lines) ==
+puVar19[0x32] = *pfVar20;
+puVar19[0x33] = *(undefined4 *)((int)pfVar21 + 5);
+puVar19[0x34] = *(undefined4 *)((int)pfVar21 + 9);
+if (puVar19[0x84] != 0) {
+puVar19[0x37] = puVar19[0x37] | 0x8000;
+pfVar21 = pfVar23;
+
+== OP 82 (4 lines) ==
+puVar19[0x5d] = *pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 5);
+
+== OP 83 (4 lines) ==
+*(float *)(puVar19[0x40] + 4) = *pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 5);
+
+== OP 84 (30 lines) ==
+if ((local_418 != (char *)0x0) && (*(int *)(DAT_006330e4 + 0x20c) == 0)) {
+*(char **)(DAT_006330e4 + 0x208) = local_418;
+uVar10 = MemAllocMsg(0x1a,(int)local_418 * 0xc,s_walist_00560508,
+s_C__Giants_source_main_readwrls_c_005602ac,0x6d7);
+*(undefined4 *)(DAT_006330e4 + 0x20c) = uVar10;
+puVar7 = *(undefined4 **)(DAT_006330e4 + 0x20c);
+uVar10 = worldanim_find(pfVar20);
+object_change_ospec(puVar19,0x4f);
+*(undefined4 *)puVar19[0x40] = uVar10;
+*(undefined4 *)(puVar19[0x40] + 8) = *(undefined4 *)((int)pfVar21 + 0x21);
+puVar19[0x72] = puVar19[0x72] | 0x400000;
+*(undefined4 *)(puVar19[0x40] + 0x10) = *(undefined4 *)((int)pfVar21 + 0x25);
+*(undefined4 *)(puVar19[0x40] + 0xc) = *(undefined4 *)((int)pfVar21 + 0x29);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 85 (0 lines) ==
+
+
+== OP 86 (0 lines) ==
+
+
+== OP 87 (0 lines) ==
+
+
+== OP 88 (21 lines) ==
+*(float *)(DAT_006330e4 + 0x140) = *pfVar20;
+*(undefined4 *)(DAT_006330e4 + 0x144) = *(undefined4 *)((int)pfVar21 + 5);
+*(float *)(DAT_006330e4 + 0x148) = (float)*(byte *)((int)pfVar21 + 9);
+*(float *)(DAT_006330e4 + 0x14c) = (float)*(byte *)((int)pfVar21 + 10);
+*(float *)(DAT_006330e4 + 0x150) = (float)*(byte *)((int)pfVar21 + 0xb);
+*(float *)(DAT_006330e4 + 0x148) = *(float *)(DAT_006330e4 + 0x148) * 0.003921569;
+*(float *)(DAT_006330e4 + 0x14c) = *(float *)(DAT_006330e4 + 0x14c) * 0.003921569;
+*(float *)(DAT_006330e4 + 0x150) = *(float *)(DAT_006330e4 + 0x150) * 0.003921569;
+if (*(float *)(DAT_006330e4 + 0x140) < 0.0) {
+__rt_error_box(s_World_>waterfogmin_>__0_0f_00560590,
+s_C__Giants_source_main_readwrls_c_005602ac,0x295);
+if (*(float *)(DAT_006330e4 + 0x144) < 0.0) {
+__rt_error_box(s_World_>waterfogmax_>__0_0f_00560574,
+s_C__Giants_source_main_readwrls_c_005602ac,0x296);
+pfVar21 = pfVar21 + 3;
+iVar6 = local_3ec;
+
+== OP 89 (14 lines) ==
+pfVar21 = pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 1);
+pcVar26 = (char *)(DAT_006330e4 + 0x4530);
+
+== OP 90 (6 lines) ==
+puVar19[0x3d] = *pfVar20;
+puVar19[0x3e] = *(undefined4 *)((int)pfVar21 + 5);
+puVar19[0x3f] = *(undefined4 *)((int)pfVar21 + 9);
+pfVar21 = (float *)((int)pfVar21 + 0xd);
+
+== OP 91 (7 lines) ==
+iVar14 = puVar19[0x40];
+pfVar21 = (float *)((int)pfVar21 + 0xd);
+
+== OP 92 (9 lines) ==
+MemString(0x1a,(int)pfVar21 + 6,&local_3e0,s_C__Giants_source_main_readwrls_c_005602ac,0x372);
+scenario_list_load(uVar4,uVar10,local_3e0);
+mem_free_tagged(local_3e0,s_C__Giants_source_main_readwrls_c_005602ac,0x375);
+pfVar21 = (float *)((int)pfVar21 + 0x26);
+iVar6 = local_3ec;
+
+== OP 93 (18 lines) ==
+MemString(0x1a,pfVar20,&local_3d8,s_C__Giants_source_main_readwrls_c_005602ac,0x37d);
+pcVar26 = (char *)(DAT_006330e4 + 0x2210);
+_strncpy((char *)(iVar6 * 0x118 + 0x2210 + DAT_006330e4),local_3d8,0x20);
+mem_free_tagged(local_3d8,s_C__Giants_source_main_readwrls_c_005602ac,0x386);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+iVar6 = local_3ec;
+
+== OP 94 (16 lines) ==
+pcVar26 = (char *)(DAT_006330e4 + 0x4a7c);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+iVar6 = local_3ec;
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+
+== OP 95 (8 lines) ==
+local_3c0[0] = *pfVar20;
+local_3c0[1] = *(float *)((int)pfVar21 + 5);
+local_3c0[2] = *(float *)((int)pfVar21 + 9);
+obj_orient_set(puVar19,local_3c0);
+pfVar21 = (float *)((int)pfVar21 + 0xd);
+iVar6 = local_3ec;
+
+== OP 96 (9 lines) ==
+*(float *)(DAT_006330e4 + 0x4e88) = *pfVar20;
+if (*(int *)(DAT_006330e4 + 0x4e88) != 0) {
+*(undefined4 *)(DAT_006330e4 + 0x4a60) = 0x1b;
+pfVar21 = pfVar23;
+
+== OP 97 (8 lines) ==
+iVar14 = puVar19[0x40];
+pfVar21 = (float *)((int)pfVar21 + 9);
+
+== OP 98 (7 lines) ==
+iVar14 = puVar19[0x40];
+pfVar21 = (float *)((int)pfVar21 + 9);
+
+== OP 99 (4 lines) ==
+*(undefined4 *)(puVar19[0x40] + 0x48) = 1;
+pfVar21 = pfVar20;
+
+== OP 100 (4 lines) ==
+*(undefined4 *)(puVar19[0x40] + 0x4c) = 1;
+pfVar21 = pfVar20;
+
+== OP 101 (6 lines) ==
+*(float *)(DAT_006330e4 + 0x4e8c) = *pfVar20;
+*(undefined4 *)(DAT_006330e4 + 0x4e90) = *(undefined4 *)((int)pfVar21 + 5);
+*(undefined4 *)(DAT_006330e4 + 0x4e94) = *(undefined4 *)((int)pfVar21 + 9);
+pfVar21 = (float *)((int)pfVar21 + 0xd);
+
+== OP 102 (7 lines) ==
+*(float *)(DAT_006330e4 + 0x4e98) = (float)fVar25;
+*(float *)(DAT_006330e4 + 0x4e9c) = (float)fVar25;
+pfVar21 = (float *)((int)pfVar21 + 9);
+
+== OP 103 (23 lines) ==
+pfVar5 = (float *)puVar19[0x40];
+pfVar21 = pfVar23 + 1;
+
+== OP 104 (22 lines) ==
+iVar14 = puVar19[0x40];
+pfVar21 = pfVar23 + 1;
+
+== OP 105 (0 lines) ==
+
+
+== OP 106 (13 lines) ==
+if (puVar19[0x78] == 0x33) {
+*(uint *)(puVar19[0x40] + 0x60) = (uint)*(byte *)pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 2);
+if (puVar19[0x78] == 0x61) {
+*(uint *)(puVar19[0x40] + 0xc) = (uint)*(byte *)pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 2);
+
+== OP 107 (4 lines) ==
+*(float *)(puVar19[0x40] + 0x50) = *pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 5);
+
+== OP 108 (0 lines) ==
+
+
+== OP 109 (0 lines) ==
+
+
+== OP 110 (0 lines) ==
+
+
+== OP 111 (3 lines) ==
+pfVar21 = (float *)((int)pfVar21 + 0x41);
+
+== OP 112 (0 lines) ==
+
+
+== OP 113 (1 lines) ==
+goto switchD_004b1431_caseD_2c;
+
+== OP 114 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4f20,s_C__Giants_source_main_readwrls_c_005602ac,0x45d
+*(undefined4 *)(DAT_006330e4 + 0x4f24) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4f24) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4f24) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4f24) = 1.0 / *(float *)(DAT_006330e4 + 0x4f24);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 115 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4f28,s_C__Giants_source_main_readwrls_c_005602ac,0x468
+*(undefined4 *)(DAT_006330e4 + 0x4f2c) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4f2c) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4f2c) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4f2c) = 1.0 / *(float *)(DAT_006330e4 + 0x4f2c);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 116 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4f30,s_C__Giants_source_main_readwrls_c_005602ac,0x473
+*(undefined4 *)(DAT_006330e4 + 0x4f34) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4f34) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4f34) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4f34) = 1.0 / *(float *)(DAT_006330e4 + 0x4f34);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 117 (4 lines) ==
+*(float *)(DAT_006330e4 + 0x4f38) = *pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 5);
+
+== OP 118 (20 lines) ==
+pfVar21 = pfVar20;
+pfVar21 = (float *)((int)pfVar23 + 1);
+pcVar26 = (char *)(DAT_006330e4 + 0x4f40);
+*(float *)(DAT_006330e4 + 0x4f7c) = *(float *)((int)pfVar23 + 1);
+*(undefined4 *)(DAT_006330e4 + 0x4f80) = *(undefined4 *)((int)pfVar23 + 5);
+*(undefined4 *)(DAT_006330e4 + 0x4f84) = *(undefined4 *)((int)pfVar23 + 9);
+*(undefined4 *)(DAT_006330e4 + 0x4f90) = *(undefined4 *)((int)pfVar23 + 0xd);
+*(undefined4 *)(DAT_006330e4 + 0x4f98) = *(undefined4 *)((int)pfVar23 + 0x11);
+pfVar21 = (float *)((int)pfVar23 + 0x15);
+
+== OP 119 (15 lines) ==
+*(float *)(DAT_006330e4 + 0x4fb8) = *pfVar20;
+*(undefined4 *)(DAT_006330e4 + 0x4fcc) = *(undefined4 *)((int)pfVar21 + 5);
+*(undefined4 *)(DAT_006330e4 + 0x4fd4) = *(undefined4 *)((int)pfVar21 + 9);
+*(undefined4 *)(DAT_006330e4 + 0x4fdc) = *(undefined4 *)((int)pfVar21 + 0xd);
+*(undefined4 *)(DAT_006330e4 + 0x4fe4) = *(undefined4 *)((int)pfVar21 + 0x11);
+*(undefined4 *)(DAT_006330e4 + 0x4fd0) = *(undefined4 *)((int)pfVar21 + 0x15);
+*(undefined4 *)(DAT_006330e4 + 0x4fd8) = *(undefined4 *)((int)pfVar21 + 0x19);
+*(undefined4 *)(DAT_006330e4 + 0x4fe0) = *(undefined4 *)((int)pfVar21 + 0x1d);
+*(undefined4 *)(DAT_006330e4 + 0x4fe8) = *(undefined4 *)((int)pfVar21 + 0x21);
+*(undefined4 *)(DAT_006330e4 + 0x4fec) = *(undefined4 *)((int)pfVar21 + 0x25);
+*(undefined4 *)(DAT_006330e4 + 0x4ff0) = *(undefined4 *)((int)pfVar21 + 0x29);
+*(undefined4 *)(DAT_006330e4 + 0x4ff4) = *(undefined4 *)((int)pfVar21 + 0x2d);
+pfVar21 = (float *)((int)pfVar21 + 0x31);
+
+== OP 120 (15 lines) ==
+*(float *)(DAT_006330e4 + 0x4ffc) = *pfVar20;
+*(undefined4 *)(DAT_006330e4 + 0x5010) = *(undefined4 *)((int)pfVar21 + 5);
+*(undefined4 *)(DAT_006330e4 + 0x5018) = *(undefined4 *)((int)pfVar21 + 9);
+*(undefined4 *)(DAT_006330e4 + 0x5020) = *(undefined4 *)((int)pfVar21 + 0xd);
+*(undefined4 *)(DAT_006330e4 + 0x5028) = *(undefined4 *)((int)pfVar21 + 0x11);
+*(undefined4 *)(DAT_006330e4 + 0x5014) = *(undefined4 *)((int)pfVar21 + 0x15);
+*(undefined4 *)(DAT_006330e4 + 0x501c) = *(undefined4 *)((int)pfVar21 + 0x19);
+*(undefined4 *)(DAT_006330e4 + 0x5024) = *(undefined4 *)((int)pfVar21 + 0x1d);
+*(undefined4 *)(DAT_006330e4 + 0x502c) = *(undefined4 *)((int)pfVar21 + 0x21);
+*(undefined4 *)(DAT_006330e4 + 0x5030) = *(undefined4 *)((int)pfVar21 + 0x25);
+*(undefined4 *)(DAT_006330e4 + 0x5034) = *(undefined4 *)((int)pfVar21 + 0x29);
+*(undefined4 *)(DAT_006330e4 + 0x5038) = *(undefined4 *)((int)pfVar21 + 0x2d);
+pfVar21 = (float *)((int)pfVar21 + 0x31);
+
+== OP 121 (46 lines) ==
+local_3f4 = *(undefined4 *)((int)pfVar21 + 5);
+local_3f0 = *(undefined4 *)((int)pfVar21 + 9);
+*(uint *)(DAT_006330e4 + 0x50a0) = (iVar6 << 8 | uVar13) << 8 | uVar9;
+local_3f4 = *(undefined4 *)((int)pfVar21 + 0x11);
+local_3f0 = *(undefined4 *)((int)pfVar21 + 0x15);
+*(uint *)(DAT_006330e4 + 0x508c) = (iVar6 << 8 | uVar13) << 8 | uVar9;
+local_3f4 = *(undefined4 *)((int)pfVar21 + 0x1d);
+local_3f0 = *(undefined4 *)((int)pfVar21 + 0x21);
+*(uint *)(DAT_006330e4 + 0x5090) = (iVar6 << 8 | uVar13) << 8 | uVar9;
+local_3f4 = *(undefined4 *)((int)pfVar21 + 0x29);
+local_3f0 = *(undefined4 *)((int)pfVar21 + 0x2d);
+*(uint *)(DAT_006330e4 + 0x5094) = (iVar6 << 8 | uVar13) << 8 | uVar9;
+local_3f4 = *(undefined4 *)((int)pfVar21 + 0x35);
+local_3f0 = *(undefined4 *)((int)pfVar21 + 0x39);
+*(uint *)(DAT_006330e4 + 0x5098) = (iVar6 << 8 | uVar13) << 8 | uVar9;
+local_3f4 = *(undefined4 *)((int)pfVar21 + 0x41);
+local_3f0 = *(undefined4 *)((int)pfVar21 + 0x45);
+*(uint *)(DAT_006330e4 + 0x509c) = (iVar6 << 8 | uVar13) << 8 | uVar9;
+*(undefined4 *)(DAT_006330e4 + 0x50a4) = *(undefined4 *)((int)pfVar21 + 0x49);
+*(undefined4 *)(DAT_006330e4 + 0x50a8) = *(undefined4 *)((int)pfVar21 + 0x4d);
+*(undefined4 *)(DAT_006330e4 + 0x50ac) = *(undefined4 *)((int)pfVar21 + 0x51);
+*(undefined4 *)(DAT_006330e4 + 0x50b0) = *(undefined4 *)((int)pfVar21 + 0x55);
+*(undefined4 *)(DAT_006330e4 + 0x50b4) = *(undefined4 *)((int)pfVar21 + 0x59);
+*(undefined4 *)(DAT_006330e4 + 0x50b8) = 0;
+pfVar21 = (float *)((int)pfVar21 + 0x5d);
+
+== OP 122 (0 lines) ==
+
+
+== OP 123 (0 lines) ==
+
+
+== OP 124 (0 lines) ==
+
+
+== OP 125 (0 lines) ==
+
+
+== OP 126 (0 lines) ==
+
+
+== OP 127 (0 lines) ==
+
+
+== OP 128 (0 lines) ==
+
+
+== OP 129 (4 lines) ==
+*(float *)(DAT_006330e4 + 0x4a78) = *pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 5);
+
+== OP 130 (5 lines) ==
+_strncpy((char *)(DAT_006330e4 + 0x50c0),(char *)pfVar20,0x20);
+pfVar21 = (float *)((int)pfVar21 + 0x21);
+iVar6 = local_3ec;
+
+== OP 131 (6 lines) ==
+crt_sprintf(&DAT_00657400,s_Unknown_opcode__d__last__d__in_w_0056033c,local_410,fVar17,
+(int)pfVar20 - (int)local_3fc[0]);
+error_msg_show(&DAT_00657400);
+mem_free_tagged(local_40c,s_C__Giants_source_main_readwrls_c_005602ac,0x6a1);
+
+== OP 132 (27 lines) ==
+if (*(int *)(DAT_006330e4 + 0x50e0) != 0) {
+mem_free_tagged(*(int *)(DAT_006330e4 + 0x50e0),s_C__Giants_source_main_readwrls_c_005602ac,
+pfVar21 = pfVar20;
+pfVar21 = (float *)((int)pfVar21 + 1);
+uVar10 = MemAllocMsg(0x1a,~uVar13,s_vopath_00560378,
+s_C__Giants_source_main_readwrls_c_005602ac,0x699);
+*(undefined4 *)(DAT_006330e4 + 0x50e0) = uVar10;
+pcVar26 = *(char **)(DAT_006330e4 + 0x50e0);
+
+== OP 133 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4ef0,s_C__Giants_source_main_readwrls_c_005602ac,0x483
+*(undefined4 *)(DAT_006330e4 + 0x4ef4) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4ef4) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4ef4) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4ef4) = 1.0 / *(float *)(DAT_006330e4 + 0x4ef4);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 134 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4ef8,s_C__Giants_source_main_readwrls_c_005602ac,0x48e
+*(undefined4 *)(DAT_006330e4 + 0x4efc) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4efc) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4efc) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4efc) = 1.0 / *(float *)(DAT_006330e4 + 0x4efc);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 135 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4f00,s_C__Giants_source_main_readwrls_c_005602ac,0x499
+*(undefined4 *)(DAT_006330e4 + 0x4f04) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4f04) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4f04) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4f04) = 1.0 / *(float *)(DAT_006330e4 + 0x4f04);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 136 (11 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4f08,s_C__Giants_source_main_readwrls_c_005602ac,0x4a4
+*(undefined4 *)(DAT_006330e4 + 0x4f0c) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4f0c) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4f0c) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4f0c) = 1.0 / *(float *)(DAT_006330e4 + 0x4f0c);
+pfVar21 = (float *)((int)pfVar21 + 0x2d);
+iVar6 = local_3ec;
+
+== OP 137 (1 lines) ==
+goto switchD_004b1431_caseD_89;
+
+== OP 138 (206 lines) ==
+MemString(0x1a,pfVar20,DAT_006330e4 + 0x4f18,s_C__Giants_source_main_readwrls_c_005602ac,0x4ba
+*(undefined4 *)(DAT_006330e4 + 0x4f1c) = *(undefined4 *)((int)pfVar21 + 0x21);
+if (*(float *)(DAT_006330e4 + 0x4f1c) == 0.0) {
+*(undefined4 *)(DAT_006330e4 + 0x4f1c) = 0x42480000;
+*(float *)(DAT_006330e4 + 0x4f1c) = 1.0 / *(float *)(DAT_006330e4 + 0x4f1c);
+pfVar21 = pfVar20 + 2;
+iVar6 = local_3ec;
+pfVar21 = pfVar23;
+iVar6 = local_3ec;
+if ((((puVar19 != (undefined4 *)0x0) && (piVar18 = (int *)puVar19[0x5c], piVar18 != (int *)0x0))
+uVar10 = MemAllocMsg(0x18,piVar18[2] * 0xc,s_flakpts_0056056c,
+s_C__Giants_source_main_readwrls_c_005602ac,0xe4);
+*(undefined4 *)(puVar19[0x5c] + 0x14) = uVar10;
+pfVar21 = local_364;
+pfVar20 = *(float **)(puVar19[0x5c] + 0x14);
+for (uVar13 = *(int *)(puVar19[0x5c] + 8) * 3 & 0x3fffffff; uVar13 != 0; uVar13 = uVar13 - 1) {
+pfVar21 = pfVar21 + 1;
+for (iVar14 = 0; iVar6 = local_3ec, iVar14 != 0; iVar14 = iVar14 + -1) {
+pfVar21 = (float *)((int)pfVar21 + 1);
+*(int *)(DAT_006330e4 + 0x170) = local_414;
+if (0 < *(int *)(DAT_006330e4 + 0x170)) {
+uVar10 = MemAllocMsg(0x18,*(int *)(DAT_006330e4 + 0x170) * 0x304,s_stobj_00560334,
+s_C__Giants_source_main_readwrls_c_005602ac,0x6ad);
+*(undefined4 *)(DAT_006330e4 + 0x174) = uVar10;
+puVar8 = *(undefined4 **)(DAT_006330e4 + 0x174);
