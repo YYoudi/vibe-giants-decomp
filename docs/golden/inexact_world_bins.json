@@ -1,0 +1,68 @@
+[
+ {
+  "file": "w_Kstory2.bin",
+  "status": "nosize",
+  "at": "0x279",
+  "op": 0
+ },
+ {
+  "file": "w_Kstory3.bin",
+  "status": "nosize",
+  "at": "0x215",
+  "op": 0
+ },
+ {
+  "file": "w_Kstory4.bin",
+  "status": "nosize",
+  "at": "0x1f4",
+  "op": 0
+ },
+ {
+  "file": "w_Kstory5.bin",
+  "status": "nosize",
+  "at": "0x1f4",
+  "op": 0
+ },
+ {
+  "file": "w_Rstory1.bin",
+  "status": "nosize",
+  "at": "0xcc9",
+  "op": 0
+ },
+ {
+  "file": "w_Rstory3_race_1.bin",
+  "status": "nosize",
+  "at": "0x765",
+  "op": 0
+ },
+ {
+  "file": "w_Rstory3_race_2.bin",
+  "status": "nosize",
+  "at": "0x314",
+  "op": 0
+ },
+ {
+  "file": "w_Rstory3_race_3.bin",
+  "status": "nosize",
+  "at": "0x314",
+  "op": 0
+ },
+ {
+  "file": "w_Story1.bin",
+  "status": "nosize",
+  "at": "0x1704",
+  "op": 0
+ },
+ {
+  "file": "w_intro_island.bin",
+  "status": "nosize",
+  "at": "0x341",
+  "op": 0
+ },
+ {
+  "file": "w_the_end.bin",
+  "status": "nosize",
+  "at": "0x75d",
+  "op": 0
+ }
+]

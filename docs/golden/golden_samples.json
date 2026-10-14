@@ -1,0 +1,50 @@
+{
+ "abx": [
+  "G:/Games/Giants/Bin\\GameObj.bin",
+  "G:/Games/Giants/Bin\\w_Kstory3.abx",
+  "G:/Games/Giants/Bin\\w_M_3WAY_L1.abx",
+  "G:/Games/Giants/Bin\\w_M_3WAY_Lw1.abx",
+  "G:/Games/Giants/Bin\\w_M_Mecc_Lw1.abx",
+  "G:/Games/Giants/Bin\\w_M_Reaper_L3.abx",
+  "G:/Games/Giants/Bin\\w_Rstory2.abx",
+  "G:/Games/Giants/Bin\\w_Rstory4.abx",
+  "G:/Games/Giants/Bin\\w_Story2.abx",
+  "G:/Games/Giants/Bin\\w_Story5.abx",
+  "GameFiles-VanillaV1/Bin\\GameObj.bin",
+  "GameFiles-VanillaV1/Bin\\w_Kstory3.abx",
+  "GameFiles-VanillaV1/Bin\\w_M_3WAY_L1.abx",
+  "GameFiles-VanillaV1/Bin\\w_M_3WAY_Lw1.abx",
+  "GameFiles-VanillaV1/Bin\\w_M_Mecc_Lw1.abx",
+  "GameFiles-VanillaV1/Bin\\w_M_Reaper_L3.abx",
+  "GameFiles-VanillaV1/Bin\\w_Rstory2.abx",
+  "GameFiles-VanillaV1/Bin\\w_Rstory4.abx",
+  "GameFiles-VanillaV1/Bin\\w_Story2.abx",
+  "GameFiles-VanillaV1/Bin\\w_Story5.abx"
+ ],
+ "worldlist": [
+  "G:/Games/Giants/Bin\\WorldList.bin",
+  "GameFiles-VanillaV1/Bin\\WorldList.bin"
+ ],
+ "bin_world": [
+  "G:/Games/Giants/Bin\\sfxlev1.bin",
+  "G:/Games/Giants/Bin\\w_M_Mecc_L1.bin",
+  "G:/Games/Giants/Bin\\w_Rstory3_race_3.bin",
+  "G:/Games/Giants/Bin\\xx_ambient.bin",
+  "G:/Games/Giants/Bin\\xx_giants_logo_3d.bin",
+  "G:/Games/Giants/Bin\\xx_jetski_rpm.bin",
+  "G:/Games/Giants/Bin\\xx_music_temp.bin",
+  "G:/Games/Giants/Bin\\xx_reaperman.bin",
+  "G:/Games/Giants/Bin\\xx_sm_evil.bin",
+  "G:/Games/Giants/Bin\\xx_smyan_flick.bin",
+  "G:/Games/Giants/Bin\\xx_water_rings.bin",
+  "GameFiles-VanillaV1/Bin\\w_M_3WAY_Lw1.bin",
+  "GameFiles-VanillaV1/Bin\\w_Rstory3_race_2.bin",
+  "GameFiles-VanillaV1/Bin\\w_the_end.bin",
+  "GameFiles-VanillaV1/Bin\\xx_giants_logo_3d.bin",
+  "GameFiles-VanillaV1/Bin\\xx_jetski_rpm.bin",
+  "GameFiles-VanillaV1/Bin\\xx_music_temp.bin",
+  "GameFiles-VanillaV1/Bin\\xx_reaperman.bin",
+  "GameFiles-VanillaV1/Bin\\xx_sm_evil.bin",
+  "GameFiles-VanillaV1/Bin\\xx_smyan_flick.bin"
+ ]
+}
