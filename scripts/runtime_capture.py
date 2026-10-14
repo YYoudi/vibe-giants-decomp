@@ -36,16 +36,16 @@ def main():
             time.sleep(1.0)
             continue
         m = re.search(r'currentAddress: (0x[0-9A-Fa-f]+)', st)
-        mod = re.search(r'currentModule: (\S+)', st)
         if not m:
             time.sleep(0.8)
             continue
         a = m.group(1).upper()
         core = a[2:].upper().lstrip('0')
-        modname = mod.group(1) if mod else ''
-        if modname != 'giants' or core not in bps:
+        # module gate removed: GetDebugState output has no currentModule field;
+        # the address set only contains giants-module BPs, system pauses fall through.
+        if core not in bps:
             call('ExecuteDebuggerCommand', {'command': 'g'})
-            time.sleep(0.6)
+            time.sleep(0.4)
             continue
         addr = '0x' + core.rjust(8, '0')
         now = time.time()
