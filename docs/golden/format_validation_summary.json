@@ -41,6 +41,42 @@
   "protocol": "launch Giants.exe -gamegauge from elevated cmd, attach x32dbg, arm BPs (ps2_symbols/gauge_bps.txt), auto-exits writing fps.txt",
   "run1_fps_txt": "231 lines, avg 357.28 fps (Giants v1.400), min 183 max 841, 228 seconds of per-second counts; scene boundaries visible as fps drops",
   "run2_partial_trace": "20 hits: flick_file_load x14 with deterministic param sequence [27,29,31,33,35,36,37,38,39,40,41,42,43,44]; full capture needs log-BPs (sensor dedup collapses per-frame hits)",
-  "sensor_limitation": "hot BPs (FLK_FlickProcess per-frame) collapse under the 1s dedup - future runs should use x64dbg log breakpoints or selective event BPs only"
+  "sensor_limitation": "hot BPs (FLK_FlickProcess per-frame) collapse under the 1s dedup - future runs should use x64dbg log breakpoints or selective event BPs only",
+  "byte_exact_proof": {
+   "result": "RUN1 vs RUN3 fps.txt BYTE-IDENTICAL (3580 bytes, md5 aa93dfcbcb5ee9e67de0f5cf40d6ef78)",
+   "significance": "the gamegauge cinematic runs on a FIXED simulation timeline - debugger pauses (tracing) do NOT alter the output. This is the deterministic parity oracle for the Rust engine: reproduce this exact fps.txt + the 24-flick playlist",
+   "flick_playlist_observed": [
+    "0x0D",
+    "0x10",
+    "0x16",
+    "0x17",
+    "0x19",
+    "0x1B",
+    "0x1D",
+    "0x1E",
+    "0x21",
+    "0x22",
+    "0x24",
+    "0x25",
+    "0x26",
+    "0x27",
+    "0x29",
+    "0x2B",
+    "0x2D",
+    "0x2F",
+    "0x31",
+    "0x33",
+    "0x35",
+    "0x36",
+    "0x37",
+    "0x39",
+    "0x3B",
+    "0x3D",
+    "0x3F",
+    "0x41"
+   ],
+   "flick_playlist_note": "flick_file_load param_2 sequence (28 loads incl. gaps); trace: hits_gamegauge_run3_full.json (local)",
+   "protocol": "elevated cmd: cd G:\\Games\\Giants && Giants.exe -gamegauge | attach x32dbg | arm ps2_symbols/gauge_evt_bps.txt | auto-exit writes fps.txt"
+  }
  }
 }
