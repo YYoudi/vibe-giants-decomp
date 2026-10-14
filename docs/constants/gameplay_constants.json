@@ -1,0 +1,625 @@
+[
+ {
+  "value": "DAT_006328e0",
+  "function": "FRateGetSecsframe",
+  "address": "0x00518B70",
+  "source": "decomp-static",
+  "note": "base dt register (frame seconds; runtime value, seed of all timing)"
+ },
+ {
+  "value": "10.0",
+  "function": "facing_player_bark",
+  "address": "0x0049DBD0",
+  "source": "decomp-static",
+  "note": "player-facing half-angle threshold (degrees, \u00b110\u00b0)"
+ },
+ {
+  "value": "0x682",
+  "function": "facing_player_bark",
+  "address": "0x0049DBD0",
+  "source": "decomp-static",
+  "note": "bark sound id A"
+ },
+ {
+  "value": "0x683",
+  "function": "facing_player_bark",
+  "address": "0x0049DBD0",
+  "source": "decomp-static",
+  "note": "bark sound id B"
+ },
+ {
+  "value": "0x32",
+  "function": "facing_player_bark",
+  "address": "0x0049DBD0",
+  "source": "decomp-static",
+  "note": "rand threshold 50/100 = 50%"
+ },
+ {
+  "value": "0xd04",
+  "function": "facing_player_bark",
+  "address": "0x0049DBD0",
+  "source": "decomp-static",
+  "note": "cfg radius offset (squared dist gate, DAT_632ED8+0xD04)"
+ },
+ {
+  "value": "35.0",
+  "function": "reaper_target_range_check_c1",
+  "address": "0x0045BE30",
+  "source": "decomp-static",
+  "note": "far range multiplier * spec+0xC4"
+ },
+ {
+  "value": "20.0",
+  "function": "reaper_target_range_check_c1",
+  "address": "0x0045BE30",
+  "source": "decomp-static",
+  "note": "near range multiplier * spec+0xC4"
+ },
+ {
+  "value": "0x29d",
+  "function": "reaper_target_range_check_c1",
+  "address": "0x0045BE30",
+  "source": "decomp-static",
+  "note": "target-owner self id guard"
+ },
+ {
+  "value": "0x3c00/0x3c0/0x3c",
+  "function": "reaper_target_range_check_c1",
+  "address": "0x0045BE30",
+  "source": "decomp-static",
+  "note": "target weapon-class flag masks at +0x1CC"
+ },
+ {
+  "value": "0x14",
+  "function": "injured_state_start",
+  "address": "0x0046B7F0",
+  "source": "decomp-static",
+  "note": "state id: injured-seek (obj+0xE4)"
+ },
+ {
+  "value": "0x3c",
+  "function": "injured_state_start",
+  "address": "0x0046B7F0",
+  "source": "decomp-static",
+  "note": "obj flag bits set (0x20|0x10|0x8|0x4)"
+ },
+ {
+  "value": "0x40a00000",
+  "function": "injured_seek_state_set",
+  "address": "0x0046B850",
+  "source": "decomp-static",
+  "note": "timer 5.0 s (obj+0xEC)"
+ },
+ {
+  "value": "0x13",
+  "function": "injured_seek_state_set",
+  "address": "0x0046B850",
+  "source": "decomp-static",
+  "note": "state id 19 (obj+0xE4)"
+ },
+ {
+  "value": "0x353",
+  "function": "smartie_house_scan",
+  "address": "0x004B6C00",
+  "source": "decomp-static",
+  "note": "smartie-house object type id"
+ },
+ {
+  "value": "0x3f",
+  "function": "smartie_house_scan",
+  "address": "0x004B6C00",
+  "source": "decomp-static",
+  "note": "occupancy mask (6 slots; full = 0x3F)"
+ },
+ {
+  "value": "9999999.0",
+  "function": "smartie_house_scan",
+  "address": "0x004B6C00",
+  "source": "decomp-static",
+  "note": "best-dist sentinel"
+ },
+ {
+  "value": "0x47",
+  "function": "master_flagslot_claim",
+  "address": "0x0040ABF0",
+  "source": "decomp-static",
+  "note": "first flagslot id returned (0x47+i, 12 slots)"
+ },
+ {
+  "value": "0xfff",
+  "function": "master_flagslot_claim",
+  "address": "0x0040ABF0",
+  "source": "decomp-static",
+  "note": "all-slots-taken mask"
+ },
+ {
+  "value": "0x10",
+  "function": "vvel_decay_tick",
+  "address": "0x004A73A0",
+  "source": "decomp-static",
+  "note": "obj+0xD8 flag 0x10 = no-decay"
+ },
+ {
+  "value": "0x80000",
+  "function": "vvel_decay_tick",
+  "address": "0x004A73A0",
+  "source": "decomp-static",
+  "note": "obj+0xD8 flag 0x80000 = no-decay variant"
+ },
+ {
+  "value": "0x80",
+  "function": "kabuto_laser_texture_init",
+  "address": "0x00467270",
+  "source": "decomp-static",
+  "note": "laser texture 128x128"
+ },
+ {
+  "value": "0x1ec1/0x1eb0",
+  "function": "kabuto_laser_texture_init",
+  "address": "0x00467270",
+  "source": "decomp-static",
+  "note": "allocation site line numbers (kabuto.c)"
+ },
+ {
+  "value": "0x1a8..0x1bc",
+  "function": "worldanim LOD curve",
+  "address": "OP57",
+  "source": "decomp-static",
+  "note": "WS LOD curve: (near\u00b2, far\u00b2, lo, hi) + derived slope"
+ },
+ {
+  "value": "0x457a0000",
+  "function": "bldg defaults",
+  "address": "OP121",
+  "source": "decomp-static",
+  "note": "4000.0f default WS+0x50A0 (terrain palette scale)"
+ },
+ {
+  "value": "0x42000000",
+  "function": "bldg defaults",
+  "address": "OP121",
+  "source": "decomp-static",
+  "note": "32.0f default WS+0x50A4"
+ },
+ {
+  "value": "0x3f800000/0x3fc00000",
+  "function": "bldg defaults",
+  "address": "OP121",
+  "source": "decomp-static",
+  "note": "1.0f/1.5f defaults WS+0x50AC..B4"
+ },
+ {
+  "value": "0x447a0000",
+  "function": "fog defaults",
+  "address": "OP41",
+  "source": "decomp-static",
+  "note": "1000.0f default WS+0x7C (fog near)"
+ },
+ {
+  "value": "0x3d000000",
+  "function": "fog defaults",
+  "address": "OP41",
+  "source": "decomp-static",
+  "note": "0.03125f default (density reciprocal init)"
+ },
+ {
+  "value": "0x3f000000",
+  "function": "fog defaults",
+  "address": "OP41",
+  "source": "decomp-static",
+  "note": "0.5f default WS+0x84"
+ },
+ {
+  "value": "0x42480000",
+  "function": "fog defaults",
+  "address": "OP41",
+  "source": "decomp-static",
+  "note": "50.0f fallback for zero fog/music scale (ops 52-54/114-116/133-136)"
+ },
+ {
+  "value": "0x3f800000",
+  "function": "sky defaults",
+  "address": "OP101-102",
+  "source": "decomp-static",
+  "note": "1.0f WS+0x4E8C"
+ },
+ {
+  "value": "0xbdcccccd",
+  "function": "sky defaults",
+  "address": "OP101-102",
+  "source": "decomp-static",
+  "note": "0.05f WS+0x4E90"
+ },
+ {
+  "value": "0xbd4ccccd",
+  "function": "sky defaults",
+  "address": "OP101-102",
+  "source": "decomp-static",
+  "note": "0.05f WS+0x4E94"
+ },
+ {
+  "value": "0.8726646304130554",
+  "function": "sky defaults",
+  "address": "OP101-102",
+  "source": "decomp-static",
+  "note": "default sky angle A (rad, = 50\u00b0) \u2192 cos = 0.642787"
+ },
+ {
+  "value": "1.0471975803375244",
+  "function": "sky defaults",
+  "address": "OP101-102",
+  "source": "decomp-static",
+  "note": "default sky angle B (rad, = 60\u00b0) \u2192 cos = 0.5"
+ },
+ {
+  "value": "1.0",
+  "function": "bubble_timeout_clear",
+  "address": "0x00536C60",
+  "source": "decomp-static",
+  "note": "bubble timeout seconds (DAT_632E6C - DAT_5E273C > 1.0)"
+ },
+ {
+  "value": "0x40a00000",
+  "function": "player_pet_follow_tick",
+  "address": "0x00501090",
+  "source": "decomp-static",
+  "note": "5.0 s pet-follow timer (creature+0x134)"
+ },
+ {
+  "value": "0x40a00000",
+  "function": "pet_command_set",
+  "address": "0x00501100",
+  "source": "decomp-static",
+  "note": "5.0 s command window"
+ },
+ {
+  "value": "0.1",
+  "function": "heal threshold",
+  "address": "fx_name_set_c77",
+  "source": "decomp-static",
+  "note": "fx rate floor (param_3 float, obj+0x84)"
+ },
+ {
+  "value": "25.0",
+  "function": "heal threshold",
+  "address": "fx_name_set_c77",
+  "source": "decomp-static",
+  "note": "health-crossing threshold for fx name trigger (obj+0x278)"
+ },
+ {
+  "value": "999",
+  "function": "comm_scores_send",
+  "address": "0x0052B280",
+  "source": "decomp-static",
+  "note": "score clamp max"
+ },
+ {
+  "value": "0x547",
+  "function": "comm echo",
+  "address": "comm_echo_send",
+  "source": "decomp-static",
+  "note": "max echo message length 1351"
+ },
+ {
+  "value": "1.0",
+  "function": "meccbasepit_food_take",
+  "address": "0x0040B1D0",
+  "source": "decomp-static",
+  "note": "food ripeness timer threshold (pit food +0xEC < 1.0 \u2192 not ready)"
+ },
+ {
+  "value": "0x52c",
+  "function": "meccbasepit_food_take",
+  "address": "0x0040B1D0",
+  "source": "decomp-static",
+  "note": "pit slot array offset in base spec"
+ },
+ {
+  "value": "0.1",
+  "function": "trajectory_throw_calc",
+  "address": "0x004698F0",
+  "source": "decomp-static",
+  "note": "throw velocity = dist * 0.1"
+ },
+ {
+  "value": "0.64278",
+  "function": "walkable_floor_check",
+  "address": "0x004138C0",
+  "source": "decomp-static",
+  "note": "slope cos gate (\u224850\u00b0) \u2014 walkable if slope-cos below"
+ },
+ {
+  "value": "0.64278",
+  "function": "slope_walkable_check",
+  "address": "0x00413880",
+  "source": "decomp-static",
+  "note": "slope cos gate twin"
+ },
+ {
+  "value": "0xd00",
+  "function": "ai_standoff_goal_calc",
+  "address": "0x0049DE80",
+  "source": "decomp-static",
+  "note": "cfg standoff radius (DAT_632ED8+0xD00, squared vs target)"
+ },
+ {
+  "value": "0xdd",
+  "function": "rpman_hit_state_set",
+  "address": "0x004D7C60",
+  "source": "decomp-static",
+  "note": "guard state id (obj+0xE4 == 0xDD skips hit reaction)"
+ },
+ {
+  "value": "0x4d",
+  "function": "rpman_hit_state_set",
+  "address": "0x004D7C60",
+  "source": "decomp-static",
+  "note": "rpman target class id"
+ },
+ {
+  "value": "0x65/0x66/0x67",
+  "function": "rpman_hit_state_set",
+  "address": "0x004D7C60",
+  "source": "decomp-static",
+  "note": "special hit-cause ids (0x65<cause<0x68)"
+ },
+ {
+  "value": "0x60",
+  "function": "seq_index_assign",
+  "address": "0x00476EB0",
+  "source": "decomp-static",
+  "note": "special chain class id"
+ },
+ {
+  "value": "0x8000000",
+  "function": "seq_index_assign",
+  "address": "0x00476EB0",
+  "source": "decomp-static",
+  "note": "obj+0x1C8 flag = chain member"
+ },
+ {
+  "value": "0x1d8/0x1dc",
+  "function": "gridcell_free_check_store",
+  "address": "0x004E7250",
+  "source": "decomp-static",
+  "note": "grid width/height fields in DAT_6330E4"
+ },
+ {
+  "value": "0x0e",
+  "function": "gridcell_free_check_store",
+  "address": "0x004E7250",
+  "source": "decomp-static",
+  "note": "cell occupied flag offset (stride 0x10)"
+ },
+ {
+  "value": "40000.0",
+  "function": "spawn_clearance_check",
+  "address": "0x004E3730",
+  "source": "decomp-static",
+  "note": "clearance radius\u00b2 = 200 units"
+ },
+ {
+  "value": "5",
+  "function": "spawn_clearance_check",
+  "address": "0x004E3730",
+  "source": "decomp-static",
+  "note": "max allowed neighbors within radius"
+ },
+ {
+  "value": "0xf4c",
+  "function": "bldg_spawn_state_tick",
+  "address": "0x004E9CE0",
+  "source": "decomp-static",
+  "note": "cfg spawn timer offset (DAT_632ED8+0xF4C)"
+ },
+ {
+  "value": "0x30/0x20/0x21",
+  "function": "bldg_spawn_state_tick",
+  "address": "0x004E9CE0",
+  "source": "decomp-static",
+  "note": "anim ids: spawn/idle/alt"
+ },
+ {
+  "value": "1/2/3",
+  "function": "bldg_spawn_state_tick",
+  "address": "0x004E9CE0",
+  "source": "decomp-static",
+  "note": "building state machine states (obj+0xE4)"
+ },
+ {
+  "value": "0x400000",
+  "function": "worldanim_assign",
+  "address": "OP58",
+  "source": "decomp-static",
+  "note": "obj+0x72 flag: worldanim-attached"
+ },
+ {
+  "value": "0x36",
+  "function": "worldanim_assign",
+  "address": "OP58",
+  "source": "decomp-static",
+  "note": "ospec id for animattacher (op 58)"
+ },
+ {
+  "value": "0x4f",
+  "function": "worldanim_assign",
+  "address": "OP58",
+  "source": "decomp-static",
+  "note": "ospec id for worldanim (op 84)"
+ },
+ {
+  "value": "0x16",
+  "function": "teammecc_target_state_query",
+  "address": "0x00456090",
+  "source": "decomp-static",
+  "note": "target type A (carried\u21921)"
+ },
+ {
+  "value": "0x313",
+  "function": "teammecc_target_state_query",
+  "address": "0x00456090",
+  "source": "decomp-static",
+  "note": "target type B (carried\u21921)"
+ },
+ {
+  "value": "0x311",
+  "function": "teammecc_target_state_query",
+  "address": "0x00456090",
+  "source": "decomp-static",
+  "note": "target type C (carried\u21923)"
+ },
+ {
+  "value": "0x98/0x9c/0xfc",
+  "function": "herd_promote_check",
+  "address": "0x005108F0",
+  "source": "decomp-static",
+  "note": "owner slot idx / rank / promote-threshold float (spec+0xFC)"
+ },
+ {
+  "value": "100.0",
+  "function": "herd_promote_check",
+  "address": "0x005108F0",
+  "source": "decomp-static",
+  "note": "promotion percent denominator"
+ },
+ {
+  "value": "36.0",
+  "function": "reaperbase_dock_check",
+  "address": "0x004C5B10",
+  "source": "decomp-static",
+  "note": "dock distance\u00b2 threshold (6 units)"
+ },
+ {
+  "value": "0xc",
+  "function": "reaperbase_dock_check",
+  "address": "0x004C5B10",
+  "source": "decomp-static",
+  "note": "refpt index used for dock point"
+ },
+ {
+  "value": "0x33",
+  "function": "destroy_by_id_c33_c27",
+  "address": "0x004782F0",
+  "source": "decomp-static",
+  "note": "class A (id at spec+0x134)"
+ },
+ {
+  "value": "0x27",
+  "function": "destroy_by_id_c33_c27",
+  "address": "0x004782F0",
+  "source": "decomp-static",
+  "note": "class B (id at spec+0x14)"
+ },
+ {
+  "value": "0xd7",
+  "function": "type0d7_unique_check",
+  "address": "0x004E21F0",
+  "source": "decomp-static",
+  "note": "unique-type id"
+ },
+ {
+  "value": "0x21",
+  "function": "type0d7_unique_check",
+  "address": "0x004E21F0",
+  "source": "decomp-static",
+  "note": "state exclusion (obj+0xE4 != 0x21)"
+ },
+ {
+  "value": "0x134",
+  "function": "type0d7_unique_check",
+  "address": "0x004E21F0",
+  "source": "decomp-static",
+  "note": "spec id field for uniqueness"
+ },
+ {
+  "value": "0x4000c000",
+  "function": "injured_target_scan",
+  "address": "0x004D1A00",
+  "source": "decomp-static",
+  "note": "excluded obj flags (dead-ish)"
+ },
+ {
+  "value": "0x278/0x1c0",
+  "function": "injured_target_scan",
+  "address": "0x004D1A00",
+  "source": "decomp-static",
+  "note": "hp / max-hp fields (injured = hp<max)"
+ },
+ {
+  "value": "0x874",
+  "function": "flick timing",
+  "address": "FLK",
+  "source": "decomp-static",
+  "note": "FLK_Actor struct size"
+ },
+ {
+  "value": "0x310",
+  "function": "flick timing",
+  "address": "FLK",
+  "source": "decomp-static",
+  "note": "FLK block record size"
+ },
+ {
+  "value": "0xc",
+  "function": "flick timing",
+  "address": "FLK",
+  "source": "decomp-static",
+  "note": "FLK director record size"
+ },
+ {
+  "value": "0x304",
+  "function": "spec sizes",
+  "address": "OP138",
+  "source": "decomp-static",
+  "note": "static-object (stobj) record size"
+ },
+ {
+  "value": "0xc1",
+  "function": "spec sizes",
+  "address": "OP138",
+  "source": "decomp-static",
+  "note": "OpObj world-object slot size (dwords) per object, max 0x400"
+ },
+ {
+  "value": "0x1c0..0x1cc",
+  "function": "view range",
+  "address": "OP71",
+  "source": "decomp-static",
+  "note": "WS view-range block (near/far/2\u00d7u32)"
+ },
+ {
+  "value": "0x2",
+  "function": "master collision flags",
+  "address": "COLLISION",
+  "source": "decomp-static",
+  "note": "cell blocked bit (collision grid byte)"
+ },
+ {
+  "value": "0x400000/0x181808",
+  "function": "master collision flags",
+  "address": "COLLISION",
+  "source": "decomp-static",
+  "note": "obj+0x1C8 movement mode flags (collide_walk gates)"
+ },
+ {
+  "value": "0x40a00000",
+  "function": "bubble/respawn misc",
+  "address": "MISC",
+  "source": "decomp-static",
+  "note": "5.0 s (recurring timer constant)"
+ },
+ {
+  "value": "0x447a0000",
+  "function": "bubble/respawn misc",
+  "address": "MISC",
+  "source": "decomp-static",
+  "note": "1000.0 f (recurring distance/scale default)"
+ },
+ {
+  "value": "0x3dcccccd",
+  "function": "bubble/respawn misc",
+  "address": "MISC",
+  "source": "decomp-static",
+  "note": "0.1 f (recurring small-rate default)"
+ }
+]
