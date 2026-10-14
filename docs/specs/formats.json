@@ -1,0 +1,121 @@
+{
+  "$meta": {
+    "description": "Machine-readable binary format specs for Giants (GOG 1.449). Each entry is directly transposable to Rust structs/serde. Provenance in docs/formats/*.md. All integers little-endian unless noted.",
+    "version": 1,
+    "date": "2026-10-14"
+  },
+  "bin_objects": {
+    "magic": "0x1A0002E5",
+    "header": [
+      {"name": "magic", "type": "u32", "assert": 437868773},
+      {"name": "section_offsets", "type": "[u32; 7]", "usage": {
+        "0": "logic section offset -> u32 size -> opcode stream (starts with two NUL-terminated strings)",
+        "1": "textures section offset (parsed by main_texture_00507c50)",
+        "2": "sfx section offset (parsed by read_sfx_bin)",
+        "3": "seek-only",
+        "4": "env fx id: -1/absent=none, 0=none-explicit, 1=fx_world_dust, 2=fx_world_snow",
+        "5": "unused",
+        "6": "streamed sub-chunk block: u32 count, then count * char[0x20] names -> each '<name>.bin' recurses"
+      }}
+    ],
+    "opcode_stream": {
+      "prefix": "two NUL-terminated strings",
+      "terminators": {"opcodes": [35, 42, 44, 61, 67, 108, 109, 110, 112, 255], "semantics": "clean stop"},
+      "rejected": {"opcodes": [20, 21, 22, 24, 25, 26, 27, 28, 35, 42, 44, 51, 55, 56, 85, 86, 87, 105, 108, 109, 110, 122, 123, 124, 125, 126, 127, 128, 131], "semantics": "load aborts"},
+      "sizes": {
+        "19": 2, "23": 5, "29": 17, "30": 17, "31": 17, "32": 17, "33": 17, "34": 17,
+        "36": 17, "37": 17, "38": 17, "39": 18, "40": 4, "41": 13, "43": 5, "45": 38,
+        "46": 13, "47": 29, "48": 19, "49": 41, "50": 6, "52": 45, "53": 45, "54": 45,
+        "57": 29, "58": 37, "59": 2, "60": 17, "62": 21, "63": 9, "64": 26, "65": 9,
+        "66": 93, "68": 1, "69": 1, "70": 29, "71": 21, "72": 13, "73": 5, "74": 1,
+        "76": 7, "77": 1, "78": 34, "79": 65, "81": 13, "82": 5, "83": 5, "84": 45,
+        "88": 13, "90": 13, "91": 13, "92": 38, "93": 33, "94": 33, "95": 13, "96": 5,
+        "97": 9, "98": 9, "99": 1, "100": 1, "101": 13, "102": 9, "106": 4, "107": 5,
+        "111": 65, "113": 34, "114": 45, "115": 45, "116": 45, "117": 5, "119": 49,
+        "120": 49, "121": 93, "129": 5, "130": 33, "133": 45, "134": 45, "135": 45,
+        "136": 45, "137": 46, "138": 46
+      },
+      "variable": {
+        "80": "u8 n + n*f32",
+        "89": "strz",
+        "103": "u32 n (<=0x14) + n*f32",
+        "104": "u32 n (<=0x14) + n*f32",
+        "118": "strz + 5*f32",
+        "132": "strz"
+      },
+      "note": "op 41 size-variant: 11 world files desync after op41/118 cluster — treat 41 as open until resolved (see docs/formats/bin_objects.md Open items)"
+    }
+  },
+  "abx": {
+    "magic": "0x1A0002DD",
+    "subformats": {
+      "component_registry": {
+        "file_example": "Bin/GameObj.bin",
+        "header": [
+          {"name": "magic", "type": "u32", "assert": 437051101},
+          {"name": "size", "type": "u32", "usage": "payload bytes = filesize-8"}
+        ],
+        "records": [{"name": "kind", "type": "u8"}, {"name": "file", "type": "strz"}, {"name": "name", "type": "strz"}],
+        "terminator": {"type": "u8", "assert": 255}
+      },
+      "objectset_placements": {
+        "file_example": "Bin/w_Kstory1.abx",
+        "header": [{"name": "magic", "type": "u32", "assert": 437051101}],
+        "records": [
+          {"name": "set_id", "type": "u32", "usage": "-1 = EOF; first entry of a world file is the map checksum"},
+          {"name": "default_transform", "type": "[f32; 6]"},
+          {"name": "members", "array_of": [{"name": "member_index", "type": "u32", "usage": "-1 = end of set"}, {"name": "transform", "type": "[f32; 6]"}]}
+        ],
+        "semantics": "transform -> members[idx]+0xC; default -> each of 10 slot objects +0x44; unset marker = member transform equals default dword-wise"
+      }
+    }
+  },
+  "world_gb2": {
+    "magic": "0xAA0100AB",
+    "header": [
+      {"name": "magic", "type": "u32", "assert": 2852194731},
+      {"name": "count", "type": "u32", "assert": 9},
+      {"name": "offsets", "type": "[u32; count]"}
+    ],
+    "component": [
+      {"name": "name", "type": "char[16] strz-padded"},
+      {"name": "body", "type": "per-component (prologue: u32 tag, then float arrays; full layout open)"}
+    ],
+    "names": ["sky", "outsky", "sea", "waterfall", "waterfall2", "wfall_edge", "world_glow", "underside", "space"],
+    "shipped_in": "Bin/extra.gzp (GZP container)"
+  },
+  "worldlist": {
+    "magic": "0x1A0003D0",
+    "header": [
+      {"name": "magic", "type": "u32", "assert": 437186000},
+      {"name": "names_end", "type": "u32"},
+      {"name": "count", "type": "u32"},
+      {"name": "offsets", "type": "[u32; count]", "usage": "name offsets RELATIVE TO 0x8 (add 8 for absolute)"},
+      {"name": "names", "type": "strz[count]"},
+      {"name": "tail", "type": "[u32; 2]"}
+    ]
+  },
+  "wm_mission": {
+    "file_pattern": "Bin/wm_<name>.bin",
+    "header": [
+      {"name": "version", "type": "u32", "assert": 4},
+      {"name": "start", "type": "u8", "assert": 1}
+    ],
+    "records": {"op": "u8", "payload": "fixed per op (advances seen: 1,2,4,5,7,9,0xD,0x11,0x15,0x1D,0x21)"},
+    "terminator": {"type": "u8", "assert": 2},
+    "interpreter": "mission_init @ 0x00492910 (one-shot; 28 ops 0x0B-0x26)",
+    "note": "payload details open; streams are tiny - decode on demand against mission_init"
+  },
+  "flk_flick": {
+    "file_pattern": "Bin/flk_*.bin",
+    "header": [
+      {"name": "version", "type": "u32", "assert": 3},
+      {"name": "total_size", "type": "u32", "usage": "== filesize"},
+      {"name": "count_directors", "type": "u32", "usage": "x 0xC-byte records"},
+      {"name": "count_actors", "type": "u32", "usage": "x 0x874-byte FLK_Actor"},
+      {"name": "count_blocks", "type": "u32", "usage": "x 0x310-byte records"}
+    ],
+    "payload": "bytecode: {u32 op, u32 size, payload[size-8]} - interpreted per frame by FLK_FlickProcess @ 0x00445A20, 31 ops 0x0B-0x35, persistent cursor",
+    "verdict": "INTERPRETED VM - port the interpreter (see docs/systems/MISSION_VM.md)"
+  }
+}
