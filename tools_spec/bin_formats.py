@@ -28,8 +28,9 @@ def parse_worldlist(d):
     offs = [u32(d, 0xC + 4 * i) for i in range(count)]
     names = []
     for o in offs:
-        e = d.index(b"\0", o)
-        names.append(d[o:e].decode("latin1"))
+        o_abs = o + 8  # stored offsets are relative to payload start 0x8 (Q4 fix)
+        e = d.index(b"\0", o_abs)
+        names.append(d[o_abs:e].decode("latin1"))
     return {"count": count, "names": names, "tail": (u32(d, names_end), u32(d, names_end + 4))}
 
 
