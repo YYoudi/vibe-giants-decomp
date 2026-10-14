@@ -16,5 +16,31 @@
    "bin_world:PASS": 122
   },
   "golden_count": 156
+ },
+ "gamegauge_run1": {
+  "header": "357.28 Giants v1.400",
+  "min": "183 Min",
+  "max": "841 Max",
+  "seconds_total": 228,
+  "per_second_first10": [
+   "290 Second 1",
+   "589 Second 2",
+   "637 Second 3",
+   "640 Second 4",
+   "598 Second 5",
+   "590 Second 6",
+   "601 Second 7",
+   "183 Second 8",
+   "524 Second 9",
+   "576 Second 10"
+  ],
+  "note": "framerate values are timing-dependent; structure (line count, scene-boundary fps drops) is the reproducible signature",
+  "version_string": "Giants v1.400"
+ },
+ "gamegauge": {
+  "protocol": "launch Giants.exe -gamegauge from elevated cmd, attach x32dbg, arm BPs (ps2_symbols/gauge_bps.txt), auto-exits writing fps.txt",
+  "run1_fps_txt": "231 lines, avg 357.28 fps (Giants v1.400), min 183 max 841, 228 seconds of per-second counts; scene boundaries visible as fps drops",
+  "run2_partial_trace": "20 hits: flick_file_load x14 with deterministic param sequence [27,29,31,33,35,36,37,38,39,40,41,42,43,44]; full capture needs log-BPs (sensor dedup collapses per-frame hits)",
+  "sensor_limitation": "hot BPs (FLK_FlickProcess per-frame) collapse under the 1s dedup - future runs should use x64dbg log breakpoints or selective event BPs only"
  }
 }
