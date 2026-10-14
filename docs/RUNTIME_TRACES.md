@@ -80,3 +80,14 @@ imagery must not be published).
 | 2026-10-14 | GOG 1.449, pid 27684 | **fresh boot auto-loaded intro-island gameplay (no clicks)**; 19 event BPs; 46 sound_play_obj hits captured; memory-input menu drive PROVEN (before/after pngs); dt register observed 2ms at menu, FPS counter 742-853 in-game (uncapped, confirms dt-driven sim) |
 | 2026-10-14 | GOG 1.449, `-gamegauge` runs 1-3 | **byte-exact oracle proven**: fps.txt BYTE-IDENTICAL across runs despite different tracing load; 24-flick deterministic playlist captured (0x0D→0x41); cinematic = in-engine (characters, subtitles, anims, world) |
 | — | session artifacts | `hits_session_20261014.json`, `session_hashes.txt`, `trace_report.json`, before/after drive captures (local only) |
+
+## Machine environment notes (visual oracle caveats)
+
+- The machine has TWO display adapters: **`Meta Virtual Monitor`** (virtual display
+  driver) + **AMD Radeon RX 7900 XT**. Modern APIs (wgpu/Vulkan/DX12) can enumerate and
+  present on the VIRTUAL adapter → black output with no error. The original game
+  (DX7-era paths) renders fine, so divergence is adapter selection, not hardware.
+- Session is **Console** (physical, not RDP) — verified via `qwinsta`.
+- Disk C: runs near-full (6.3 GB free / 238 GB) — keep an eye on shader-cache writes.
+- Giants.exe runs as a **640×480 popup window at (0,0)** (not exclusive fullscreen);
+  trace sessions always terminate the process when done.
