@@ -1,0 +1,223 @@
+{
+ "source": "runtime capture flick_file_load @0x443480, x32dbg, 2026-10-15, 2 full playlist passes",
+ "rule": "flk_story4_T_square_<N>.bin sorted by N (natural order, gaps skipped); id = 0x0D + index",
+ "entries": [
+  {
+   "id": "0xd",
+   "file": "flk_story4_t_square_2.bin"
+  },
+  {
+   "id": "0xe",
+   "file": "flk_story4_t_square_3.bin"
+  },
+  {
+   "id": "0xf",
+   "file": "flk_story4_t_square_4.bin"
+  },
+  {
+   "id": "0x10",
+   "file": "flk_story4_t_square_5.bin"
+  },
+  {
+   "id": "0x11",
+   "file": "flk_story4_t_square_6.bin"
+  },
+  {
+   "id": "0x12",
+   "file": "flk_story4_t_square_7.bin"
+  },
+  {
+   "id": "0x13",
+   "file": "flk_story4_t_square_8.bin"
+  },
+  {
+   "id": "0x14",
+   "file": "flk_story4_t_square_9.bin"
+  },
+  {
+   "id": "0x15",
+   "file": "flk_story4_t_square_10.bin"
+  },
+  {
+   "id": "0x16",
+   "file": "flk_story4_t_square_11.bin"
+  },
+  {
+   "id": "0x17",
+   "file": "flk_story4_t_square_12.bin"
+  },
+  {
+   "id": "0x18",
+   "file": "flk_story4_t_square_13.bin"
+  },
+  {
+   "id": "0x19",
+   "file": "flk_story4_t_square_14.bin"
+  },
+  {
+   "id": "0x1a",
+   "file": "flk_story4_t_square_15.bin"
+  },
+  {
+   "id": "0x1b",
+   "file": "flk_story4_t_square_16.bin"
+  },
+  {
+   "id": "0x1c",
+   "file": "flk_story4_t_square_17.bin"
+  },
+  {
+   "id": "0x1d",
+   "file": "flk_story4_t_square_18.bin"
+  },
+  {
+   "id": "0x1e",
+   "file": "flk_story4_t_square_19.bin"
+  },
+  {
+   "id": "0x1f",
+   "file": "flk_story4_t_square_20.bin"
+  },
+  {
+   "id": "0x20",
+   "file": "flk_story4_t_square_23.bin"
+  },
+  {
+   "id": "0x21",
+   "file": "flk_story4_t_square_24.bin"
+  },
+  {
+   "id": "0x22",
+   "file": "flk_story4_t_square_25.bin"
+  },
+  {
+   "id": "0x23",
+   "file": "flk_story4_t_square_25a.bin"
+  },
+  {
+   "id": "0x24",
+   "file": "flk_story4_t_square_26.bin"
+  },
+  {
+   "id": "0x25",
+   "file": "flk_story4_t_square_27.bin"
+  },
+  {
+   "id": "0x26",
+   "file": "flk_story4_t_square_28.bin"
+  },
+  {
+   "id": "0x27",
+   "file": "flk_story4_t_square_29.bin"
+  },
+  {
+   "id": "0x28",
+   "file": "flk_story4_t_square_30.bin"
+  },
+  {
+   "id": "0x29",
+   "file": "flk_story4_t_square_31.bin"
+  },
+  {
+   "id": "0x2a",
+   "file": "flk_story4_t_square_32.bin"
+  },
+  {
+   "id": "0x2b",
+   "file": "flk_story4_t_square_33.bin"
+  },
+  {
+   "id": "0x2c",
+   "file": "flk_story4_t_square_34.bin"
+  },
+  {
+   "id": "0x2d",
+   "file": "flk_story4_t_square_35.bin"
+  },
+  {
+   "id": "0x2e",
+   "file": "flk_story4_t_square_36.bin"
+  },
+  {
+   "id": "0x2f",
+   "file": "flk_story4_t_square_37.bin"
+  },
+  {
+   "id": "0x30",
+   "file": "flk_story4_t_square_38.bin"
+  },
+  {
+   "id": "0x31",
+   "file": "flk_story4_t_square_39.bin"
+  },
+  {
+   "id": "0x32",
+   "file": "flk_story4_t_square_40.bin"
+  },
+  {
+   "id": "0x33",
+   "file": "flk_story4_t_square_41.bin"
+  },
+  {
+   "id": "0x34",
+   "file": "flk_story4_t_square_42.bin"
+  },
+  {
+   "id": "0x35",
+   "file": "flk_story4_t_square_43.bin"
+  },
+  {
+   "id": "0x36",
+   "file": "flk_story4_t_square_44.bin"
+  },
+  {
+   "id": "0x37",
+   "file": "flk_story4_t_square_48.bin"
+  },
+  {
+   "id": "0x38",
+   "file": "flk_story4_t_square_49.bin"
+  },
+  {
+   "id": "0x39",
+   "file": "flk_story4_t_square_50.bin"
+  },
+  {
+   "id": "0x3a",
+   "file": "flk_story4_t_square_51.bin"
+  },
+  {
+   "id": "0x3b",
+   "file": "flk_story4_t_square_52.bin"
+  },
+  {
+   "id": "0x3c",
+   "file": "flk_story4_t_square_53.bin"
+  },
+  {
+   "id": "0x3d",
+   "file": "flk_story4_t_square_54.bin"
+  },
+  {
+   "id": "0x3e",
+   "file": "flk_story4_t_square_55.bin"
+  },
+  {
+   "id": "0x3f",
+   "file": "flk_story4_t_square_56.bin"
+  },
+  {
+   "id": "0x40",
+   "file": "flk_story4_t_square_57.bin"
+  },
+  {
+   "id": "0x41",
+   "file": "flk_story4_t_square_58.bin"
+  }
+ ],
+ "wrap": {
+  "id": "0x42",
+  "ctx_name": null,
+  "note": "cycle boundary entry, loads no named file; playlist loops 0x0D..0x41 -> 0x42 -> 0x0D"
+ }
+}

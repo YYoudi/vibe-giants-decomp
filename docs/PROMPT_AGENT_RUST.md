@@ -68,7 +68,11 @@ lecture — ta priorité est désormais guidée par LA CIBLE FINALE : reproduire
 
 ## 4. ÉTAT DE L'ORACLE CÔTÉ DECOMP (pour ta planification)
 
-- Playlist gamegauge : 28 ids flick déterministes (`0x0D→0x41`) — le mapping
-  id→nom est en cours de capture côté decomp (watch QUESTIONS_FOR_DECOMP).
+- Playlist gamegauge : **CAPTURE RÉELLE FAITE** (2 passes runtime) — 53 flicks,
+  ids 0x0D→0x41 = fichiers `Bin/flk_story4_T_square_2..58.bin` triés par numéro
+  (trous 21-22 et 45-47 sautés ; `25a` après `25`), **id = 0x0D + index**, playlist
+  CYCLIQUE (wrap id 0x42 sans nom, puis retour à 0x0D). Table complète :
+  `docs/systems/CINEMATIC_PIPELINE.md` §7 + `RuntimeLab/logs/traces/flick_playlist.json`.
+  La réponse au point (c) de la correction fps.txt est aussi dans QUESTIONS_FOR_DECOMP.
 - Le jeu tourne sous debugger elevated + capteurs : toute demande de trace runtime
   (dump de valeurs, args de fonction) est faisable — demande dans le fichier.

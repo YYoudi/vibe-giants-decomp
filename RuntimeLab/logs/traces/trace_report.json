@@ -1,0 +1,45 @@
+{
+ "source": "G:\\VibeRE\\GiantsRE\\runtime_hits_log.json",
+ "hits": 34,
+ "span_s": 1911,
+ "start": "2026-10-14T20:55:34",
+ "per_function": {
+  "flick_file_load": 34
+ },
+ "arg0_top": {
+  "flick_file_load": [
+   [
+    "0x10E7E4B0",
+    1
+   ],
+   [
+    "0x10EAD490",
+    1
+   ],
+   [
+    "0x107A6460",
+    1
+   ],
+   [
+    "0x1412B008",
+    1
+   ],
+   [
+    "0x1416EB28",
+    1
+   ],
+   [
+    "0x10A90DB0",
+    1
+   ],
+   [
+    "0x10AB90F8",
+    1
+   ],
+   [
+    "0x1409E568",
+    1
+   ]
+  ]
+ }
+}

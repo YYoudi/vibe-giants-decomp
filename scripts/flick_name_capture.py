@@ -43,6 +43,9 @@ def eval_arg(off):
 def main():
     out_path = os.path.join(REPO, 'RuntimeLab', 'logs', 'traces', 'flick_id_map.json')
     pairs = []
+    if os.path.exists(out_path):
+        pairs = json.load(open(out_path))
+        print('resumed with %d existing records' % len(pairs), flush=True)
     t0 = time.time()
     last_hb = 0.0
     while time.time() - t0 < float(sys.argv[1] if len(sys.argv) > 1 else 30) * 60:
@@ -73,6 +76,18 @@ def main():
                 s = read_str(a)
                 if s:
                     names['arg%d' % i] = s
+        # resolved filename: ctx(param_1) + *(ctx+0x14) is a name string (sprintf "%s" source)
+        if 0x10000 <= args[0] < 0x80000000:
+            try:
+                out = call('EvalExpression', {'expression': '[[esp+4]+0x14]'})
+                m2 = re.search(r'^0x([0-9A-Fa-f]+)', out)
+                if m2:
+                    namep = (args[0] + int(m2.group(1), 16)) & 0xFFFFFFFF
+                    s = read_str(namep)
+                    if s:
+                        names['ctx_name'] = s
+            except Exception:
+                pass
         rec = {'t': int(time.time()), 'eip': hex(cur), 'args': [hex(a) for a in args], 'names': names}
         pairs.append(rec)
         json.dump(pairs, open(out_path, 'w'), indent=1)

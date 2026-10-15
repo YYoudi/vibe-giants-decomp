@@ -137,12 +137,15 @@ Points clés pour un portage :
 
 - Écrit par `fps_log_write` — déclenché depuis `game_loop_run` en mode gamegauge
   chaque frame sans flick actif (agrégation par seconde de sim).
-- Format (observed, byte-exact entre runs) :
-  `"<avg> Giants v1.400"` / `"<n> Min"` / `"<n> Max"` / `"<n> Second <i>"` × 228.
-- Run1 vs Run3 : **byte-identiques** (3 580 octets, md5 `aa93dfcbcb5ee9e67de0f5cf40d6ef78`)
-  malgré des charges de tracing radicalement différentes → preuve du fixed-step 1/60.
-- Les chutes de fps par seconde (183 à s8, ~215 s16-20) = frontières de scènes du
-  cut-scene (segments flick).
+- Format : `"<avg> Giants v1.400"` / `"<n> Min"` / `"<n> Max"` / `"<n> Second <i>"` × N.
+- **CORRECTION run4 (2026-10-15)** : le fichier n'est byte-identique qu'INTRA-session
+  (run1==run3, md5 `aa93dfcbcb5ee9e67de0f5cf40d6ef78`) ; entre sessions/machines il
+  varie (run4 : 209 lignes, avg 309.12) — les comptes par seconde = frames rendues
+  par seconde de mur, dépendants de la charge. Le fixed-step 1/60 reste vrai pour la
+  SIM (dt forcé) mais pas pour le compte de frames de mur.
+- Oracle de parité corrigé : (a) la playlist cyclique (§7), (b) la STRUCTURE du
+  fichier (frontières de scènes aux mêmes positions — dips à s8 et s15-17), PAS
+  l'égalité byte-exact.
 
 ## 6. Checklist de portage Rust (résumé opérationnel)
 
@@ -153,11 +156,55 @@ Points clés pour un portage :
    fixed-step 60 Hz en gamegauge.
 4. Rendu : caméra depuis node flick → view matrix ; acteurs CPU-skinnés
    (`anm_skin_verts_apply`) ; terrain GTI ; texte FNT ; HUD icons.
-5. Oracle : `fps.txt` byte-identique + playlist flick (28 ids) + captures.
+5. Oracle : playlist cyclique (§7) + structure des frontières fps.txt + captures.
+
+## 7. PLAYLIST gamegauge — table id→fichier complète (capture runtime 2026-10-15)
+
+Capturé au breakpoint `flick_file_load @ 0x00443480` (x32dbg, capteur
+`scripts/flick_name_capture.py`) pendant **2 passes complètes** de la cinématique —
+données : `RuntimeLab/logs/traces/flick_playlist.json` (+ brut `flick_id_map.json`).
+
+**Règle (observed + cross-check disque)** : la playlist = les fichiers
+`Bin/flk_story4_T_square_<N>.bin` triés par N (ordre naturel, variantes comme
+`25a` après `25`), les N absents du disque sautés ; **id = 0x0D + index**.
+Signatures des appels : `flick_file_load(ctx, id, NULL, 0, ...)` — le nom est résolu
+depuis `ctx + *(ctx+0x14)` (string dans la struct), pas via param_3.
+
+| id | fichier | id | fichier | id | fichier |
+|----|---------|----|---------|----|---------|
+| 0x0D | T_square_2 | 0x20 | T_square_23 | 0x33 | T_square_41 |
+| 0x0E | T_square_3 | 0x21 | T_square_24 | 0x34 | T_square_42 |
+| 0x0F | T_square_4 | 0x22 | T_square_25 | 0x35 | T_square_43 |
+| 0x10 | T_square_5 | 0x23 | T_square_25a | 0x36 | T_square_44 |
+| 0x11 | T_square_6 | 0x24 | T_square_26 | 0x37 | T_square_48 |
+| 0x12 | T_square_7 | 0x25 | T_square_27 | 0x38 | T_square_49 |
+| 0x13 | T_square_8 | 0x26 | T_square_28 | 0x39 | T_square_50 |
+| 0x14 | T_square_9 | 0x27 | T_square_29 | 0x3A | T_square_51 |
+| 0x15 | T_square_10 | 0x28 | T_square_30 | 0x3B | T_square_52 |
+| 0x16 | T_square_11 | 0x29 | T_square_31 | 0x3C | T_square_53 |
+| 0x17 | T_square_12 | 0x2A | T_square_32 | 0x3D | T_square_54 |
+| 0x18 | T_square_13 | 0x2B | T_square_33 | 0x3E | T_square_55 |
+| 0x19 | T_square_14 | 0x2C | T_square_34 | 0x3F | T_square_56 |
+| 0x1A | T_square_15 | 0x2D | T_square_35 | 0x40 | T_square_57 |
+| 0x1B | T_square_16 | 0x2E | T_square_36 | 0x41 | T_square_58 |
+| 0x1C | T_square_17 | 0x2F | T_square_37 | | |
+| 0x1D | T_square_18 | 0x30 | T_square_38 | | |
+| 0x1E | T_square_19 | 0x31 | T_square_39 | | |
+| 0x1F | T_square_20 | 0x32 | T_square_40 | | |
+
+- **Trous observés et confirmés disque** : T_square_21, 22, 45, 46, 47 n'existent
+  pas dans `Bin/` → absents de la playlist. `T_square_58` = dernier fichier.
+- **La playlist est CYCLIQUE** (observed, 2 passes) : après 0x41, un hit **0x42**
+  (jamais de nom résolu sur lui, probablement l'entrée de wrap) puis retour à 0x0D.
+  La fin du PROCESSUS jeu n'est donc pas un id de la playlist — la durée en secondes
+  du fps.txt (209 vs 228 entre sessions) reste dépendante de l'horloge mur.
+- Tous les noms minuscules `story4_t_square_*` dans les captures = tels qu'en
+  mémoire ; les fichiers disque sont `flk_story4_T_square_*.bin` (T majuscule —
+  Windows insensible à la casse, les deux chemins s'ouvrent).
 
 ## Open items
 
-- Mapping id flick → nom de fichier (lire la string `param_1` lors d'une pause —
-  1 run gamegauge instrumenté suffira).
+- Entrée de wrap 0x42 : aucun nom résolu en 2 passes — lire ses 4 args + le
+  contexte d'appel au prochain run instrumenté si le portage en a besoin.
 - Payloads fins des ops 30-53 (les corps de cases sont dans le corpus, à transcrire
   au fur et à mesure des besoins du portage).
