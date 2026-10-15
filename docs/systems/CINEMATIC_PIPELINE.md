@@ -383,3 +383,24 @@ Chaîne complète, `flick_node_mat_get @ 0x0053BEF0` → `ANM_NodeGetMat @ 0x005
    structure des tracks/keys est celle des ANM déjà parsés par la référence
    Amazed (`lib/skn_anm.py`) — ajouter le seek/wrap + la composition hiérarchique
    et la négation d'angles.
+
+## 14. ORACLE D'EXÉCUTION SIMULÉ (M6 — outil `tools_spec/flk_sim.py`)
+
+Simulation de l'interpréteur (modèle MAJ 3/4/5 + op 9 décodée runtime) sur la
+playlist complète, fixed-step 1/60 :
+
+- **Op 9 = WAIT de payload[0] FRAMES** (validé par cohérence : les payloads
+  64/162/268/270/313… = des beats de 1-5 s à 60 fps ; 1 icône HUD ajoutée par
+  frame stationnée, compteur persistant par position de curseur). Op 10 =
+  variante à seuil absolu d'icônes (non utilisée en story4). Op 5/0x34 =
+  terminaux de frame.
+- **T_square_2 = 495 frames (8.25 s)**, structuré en 4 beats par ses 3 waits.
+- **Total playlist = 7487 frames = 124.78 s** — et la réconciliation avec le
+  fps.txt (~227-229 s) : ~100 s de phase intro/île (W_Intro → W_intro_island,
+  visible aux t=86-295 de la trace §12) + 124.78 s de chaîne = ~225 s. **Le
+  modèle d'exécution est confirmé quantitativement.**
+- Données : `flk_sim_playlist_totals.json` (durée par segment = oracle de test
+  M6 : chaque flick de ton interpréteur doit durer CE nombre de frames) et
+  `flk_sim_T_square_2.json` (trace frame-par-frame complète du 1er flick).
+- Hypothèses flaggées (à réviser si ton run diverge) : capacité HUD = 1 icône/
+  frame ; ops 9/10 seuls points de hold ; op 41 ignorée (skippée par le jeu).
