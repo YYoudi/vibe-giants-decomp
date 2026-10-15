@@ -76,5 +76,20 @@ dans l'image director → ptr → entry → tracks selon track-type.
 
 - `docs/systems/MISSION_VM.md` (MAJ 5 : op 4 caméra ; MAJ 8 : FLK_ActorOffsetEval euler inlinée).
 - `docs/systems/CINEMATIC_PIPELINE.md` §13/§16 (sampler node, crt_stream_seek).
-- Struct ANM_Anim runtime (22 dwords, agent giants-rs) : FileVersion@+0=0xB, Start@+4, End@+8,
-  TPF@+0xC, FPS@+0x10, NumNodes@+0x14 — le diviseur op 9 est `*(anim+0x18)` (7e dword, non TPF).
+- Header ANMAnim **fichier** (dump T_square_2 @0x4706C) : FileVersion@+0=0xB, ptr@+8,
+  Start@+0xC, End@+0x10, TPF@+0x14, **FPS@+0x18=30** (le diviseur op 9 = FrameRate —
+  l'empirisme `[2]/30 s` de giants-rs est validé), NAM-ptrs@+0x1C/+0x20 (la table de
+  noms du director T_square_2 est à 0x46B50), NumNodes@+0x24=220, chemin source
+  `\..\server\Giants\anm\flk_story_T_square_2.ANM` à +0x48. Le runtime ANM_Anim
+  (22 dwords, agent) est un struct distinct : FV@+0, Start@+4, End@+8, TPF@+0xC,
+  FPS@+0x10, NumNodes@+0x14.
+- **Records inline du director** (walk validé T_square_2, origine 0x3D820) :
+  `[u32 ptr][u32 size=0xB0 ou 0x110][u32 0][body size-0xC]`, stride = size
+  (header inclus) ; 56 records avant un record de type différent (taille 0x1C),
+  42 avec tracks ; **camera = l'entry type-3** (u16@+6=3, pos+rot tracks — unique
+  par director) ; track pos = `{u32 span, u32 0, u8 pre, u8 post, u8 flags, u8 _,
+  u32 ?, u32 count@+0x10, ptr keys[count]@+0x14}`, clé = `{f32 x,y,z, u32 tick@+0xC}`
+  stride 0x3C (T_square_2 : 9 clés, ticks 14400→110516). Clés rot (blocs
+  `{u32,u32,quat,quat,quat,tick@+0x38,…}` observés) : non décodées.
+  Portage giants-rs : `giants_skn_anm::director_camera_pos` + `sample_director_pos`
+  (commit 19dbb48) — caméra op 4 pilotée, espace monde (pivot set / parents) restant.
