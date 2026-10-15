@@ -202,9 +202,83 @@ depuis `ctx + *(ctx+0x14)` (string dans la struct), pas via param_3.
   mémoire ; les fichiers disque sont `flk_story4_T_square_*.bin` (T majuscule —
   Windows insensible à la casse, les deux chemins s'ouvrent).
 
+## 8. SOUS-TITRES — le flux texte des flicks (ops 14-22)
+
+Les ops 14-22 du flux de records FLK sont le **moteur de sous-titres**
+(`FLK_FlickTextProcess @ 0x004440F0` — observed, decomp `Main_flick` module).
+Même flux que les ops scène (histogramme `flk_decode.py --stats` : ops
+14,15,16,18,21 présents dans les 545 fichiers). Le curseur partagé vit à
+`flick+0xfc` ; les handlers écrivent dans la struct flick :
+
+| op | nom | sémantique (payload = `puVar6[2..]`, adv = `puVar6[1]` dwords) |
+|----|-----|----------------------------------------------------------------|
+| 14 | text-time-copy | `flick+0x124 = flick+0x120` (reset du chrono de fade) |
+| 15 | font-tick | `FNT_RenderInfoProcess(&flick+0x104, flick_dt)` (flick+0xAC = dt flick, le MÊME que les acteurs) |
+| 16 | **text-set** | id = payload[0] (+base si non nul) → `TextGetPtr(id)` → `flick_text_layout(flick+0xf8, str, &flick+0x104)` |
+| 17 | param A | `flick+0x114 = payload[0]` |
+| 18 | param B | `flick+0x118 = payload[0]` |
+| 19 | param C | `flick+0x10c = payload[0]` |
+| 20 | param D | `flick+0x110 = payload[0]` |
+| 21 | **font-set** | `FNT_RenderInfo` = payload paire `[0],[1]` (écrit flick+0x104/0x108 — font id + param) |
+| 22 | **fade-set** | durée = payload[0] secondes ; 0 → rate=1000.0 sinon `rate = 1.0/durée` → flick+0x11c ; ignoré si chrono < 0 |
+| 23 | param E | `flick+0x128 = payload[0]` (observed 707×) |
+
+- **Résolution du texte** : `TextGetPtr @ 0x00507B00` = lookup **par nom** dans la
+  table des traductions chargée (`fx_table_lookup(handle@0x57bc94, name)`) — la
+  table = `Bin/GText*.bin` (langue courante ; format 100 % décodé :
+  `scripts/gtext_parse.py`, loader jeu +0x10D660). Fallback si absent : retourne
+  le nom brut (le string pool du flick sert donc aussi de source de secours).
+- **Layout** : `flick_text_layout @ 0x00446CE0` copie 13 floats (FNT_RenderInfo),
+  mesure la largeur via `textrender_draw_large(font, str)`, aligne le curseur
+  (`info[4]-=w*info[0]`, `info[5]-=h*info[1]`), gère `\n` (saut = info[3] hauteur
+  de ligne), re-mesure par ligne.
+- **Rendu** : par les passes FNT déjà documentées (RENDERER_GGDX7 — texte FNT,
+  HUD) ; la struct affichée vit flick+0xf8 (rect/couleur posés par les params
+  17-20/23, fade par 22).
+- **Pour le portage Rust** : il faut (a) parser GText*.bin (fait : `gtext_parse.py`
+  comme référence), (b) une fonte FNT (format non encore inversé — OPEN ITEM,
+  mais les IDs de fonte posés par op 21 sont dans les flk), (c) implémenter les
+  ops 14-23 avec la table de champs ci-dessus.
+
+## 9. AUDIO cinématique — op 13
+
+- `FLK_FlickProcess @ 0x00445A20`, case 0x0D (observed) :
+  `sound_play_obj(sound_id=payload[1], source=actor_base + payload[0]*0x874 + 0xc)`
+  — son 3D **attaché à un acteur** du flick (stride acteur 0x874, +0xc = champ
+  position/attribut son). payload[0] = index acteur (-1 → pas de son).
+- ops 11/12 = enable/disable acteur (`actor+8` flag set/clear).
+- Sons ambiant opportunistes hors VM : `ambient_critter_ai_c36` joue rnd les ids
+  0x4a6/0x4a7 (ticks d'ambiance — pas une partie de la VM).
+- **Banques** : les sons référencés par id dans `Bin/*.gzp` (VO_*.gzp = voix,
+  Stream/ = musique) — chargeurs déjà cartographiés dans FORMAT_INVENTORY +
+  docs de formats. Le moteur audio (mixage 3D) reste du côté Rust (crate
+  `giants_audio`).
+
+## 10. Chaîne story + ARRÊT du jeu en gamegauge
+
+- La table des "flick slots" vit dans la mémoire de mission (base `DAT_006330e4`) :
+  **128 slots de stride 0x20**, noms à `base+0x1210+slot*0x20`, handles à
+  `base+0x210+slot*0x20`. Des slots spéciaux nommés **"start"** et **"end"**
+  existent (`match_start_entry @ 0x004EB850` matche "start" ; `fx_logic @
+  0x004EBA40` type 3 matche "end").
+- **Fin de chaîne (derived, decomp)** : quand le slot courant matche **"end"**
+  (= notre id observé 0x42, jamais de nom de fichier résolu), `fx_logic` pose
+  `world_done=1 (DAT_00632b98)` → `game_loop_run` voit `world_done && !FLK_FlickPlaying()`
+  → pose `world_next=1` → frame suivante : `world_next_enter()`.
+- L'id 0x42 = 0x0D + 53 = l'entrée juste après le dernier fichier T_square_58 →
+  la playlist des fichiers EST la chaîne story4, et 0x42 est son terminateur.
+- La boucle observée en run5 (retour à 0x0D après 0x42) = reprise de la chaîne
+  par le slot "start" (`match_start_entry`) — voir §Open items pour la condition
+  exacte exit vs reprise (éclaircie au run6).
+
+
 ## Open items
 
-- Entrée de wrap 0x42 : aucun nom résolu en 2 passes — lire ses 4 args + le
-  contexte d'appel au prochain run instrumenté si le portage en a besoin.
+- **Condition exit vs reprise** en gamegauge : run6 (sans capteur) en cours
+  pour dater la fermeture du processus ; `world_next_enter` à documenter si le
+  portage doit reproduire la fermeture exacte.
+- Entrée de wrap 0x42 : confirmée = slot "end" de la chaîne story (§10).
+- Fonte FNT : format non inversé (IDs posés par l'op 21 dans les flk ; le
+  rasterizer exact reste à documenter si parité glyphe demanded).
 - Payloads fins des ops 30-53 (les corps de cases sont dans le corpus, à transcrire
   au fur et à mesure des besoins du portage).
