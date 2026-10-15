@@ -427,3 +427,28 @@ de pauses), pas par la durée de jeu. La mesure mur par flick est donc
   est STRUCTUREL (ordre + beats) ; la calibration fine de la capacité HUD se
   fera contre le fps.txt global de ton moteur (la chaîne doit totaliser
   ~125-130 s de sim), pas contre des mesures mur.
+
+## 16. SPÉC DU SAMPLER DE TRACK — `crt_stream_seek @ 0x0053BF20` (interp.rs, M6)
+
+Décodage intégral (complément §13) — ce que doit implémenter le sampler Rust :
+
+**Structure d'une track** (telle qu'attendue par le seek) :
+- `+1` : wrap mode avant la 1ère clé ; `+2` : wrap mode après la dernière ;
+- `+3` : flags (bit1 = wrapping désactivé) ;
+- `+8` : nombre de clés N ; `+0xC..` : N pointeurs de clés ;
+- la 1ère valeur i32 d'une clé = son **temps** (ticks).
+
+**Seek(time)** :
+1. Normalisation du temps par wrap : pré-mode (t < t0) et post-mode (t > tN) —
+   ≤1 = clamp, 2-3 = **repeat** (modulo span), 4 = **ping-pong** (modulo +
+   inversion selon la parité du nombre de traversées). Bit1+3 → pas de wrap.
+2. **Recherche binaire** du segment [cléA, cléB] encadrant le temps.
+3. Sortie = **état d'interpolation linéaire** écrit dans l'instance de track :
+   `{ptr cléA, ptr cléB, alpha = (t−tA)/(tB−tA), 1−alpha}` ; cas bornes :
+   avant 1ère clé → A=B=1ère, alpha=1 ; après la dernière → alpha=0.
+4. Le **blend de valeurs** (pos/rot/scale) est fait par l'évaluateur typé de la
+   track (vtable+4) à partir de cet état — clés de translation = lerp 3 floats,
+   rotation = euler lerp (avec les signes §13), etc.
+
+**ANM_SecsFromTicks** : `(tick − anim_start) / (fps × scale)` avec fps et scale
+à anim+0x18/+0x1C — la conversion ticks→secondes des anims.
