@@ -1,0 +1,136 @@
+offset,sources,provenance,field_semantic
+0x4,PS2(10f),observed,"type/class id (0x65,0x66 runtime flick actors)"
+0x6,PS2(1f),inferred,—
+0x8,PS2(25f),inferred,"class-specific ptr / mass source (mecc_calculate_mass, 25f)"
+0xc,PS2(12f),inferred,"team/army link (army_count_rpman, 12f)"
+0x10,PS2(13f) PC(2h),observed,current ANM_Anim* (ObjectSetAnim arg; runtime)
+0x14,PS2(6f),inferred,"movement target vec? (ai_move_*, 6f)"
+0x18,PS2(2f),inferred,—
+0x1c,PS2(2f),inferred,—
+0x20,PS2(2f) PC(1h),derived,—
+0x24,PS2(5f) PC(1h),derived,"boat tilt/physics vec (rpboat_*, 5f)"
+0x28,PS2(1f) PC(2h),derived,—
+0x2c,PS2(1f) PC(4h),derived,—
+0x30,PS2(1f) PC(2h),derived,vimp run anim state (1f)
+0x34,PS2(2f) PC(2h),derived,—
+0x3c,PS2(1f),inferred,—
+0x44,PC(1h),inferred,—
+0x48,PS2(1f) PC(1h),derived,—
+0x4c,PC(2h),inferred,—
+0x50,PC(3h),inferred,—
+0x54,PS2(1f) PC(1h),derived,—
+0x58,PS2(1f) PC(1h),derived,—
+0x5c,PS2(1f),inferred,—
+0x60,PS2(2f),inferred,"weapon-id bitfield (WeaponId*, 2f)"
+0x64,PS2(1f),inferred,—
+0x68,PS2(1f),inferred,"items-id (ItemsIdGetCurrent, 1f)"
+0x78,PS2(1f) PC(2h),derived,—
+0x7c,PS2(1f) PC(1h),derived,AI anim selector state (1f)
+0x80,PS2(1f),inferred,—
+0x84,PS2(1f),inferred,—
+0x88,PS2(1f),inferred,—
+0x8c,PS2(1f),inferred,—
+0x9c,PS2(1f) PC(2h),derived,vimp path ahead (1f)
+0xa0,PC(2h),inferred,"pos vec x? (hud_icon + apply_location, PC)"
+0xa4,PC(2h),inferred,pos vec y? (PC)
+0xa8,PC(1h),inferred,pos vec z? (PC)
+0xac,PC(2h),inferred,—
+0xb0,PC(1h),inferred,—
+0xb4,PS2(1f) PC(1h),derived,—
+0xd8,PC(2h),observed,"FLAGS: b0x20 flick-anim, b0x40 loc-gate, b0x8000 freed (RUNTIME)"
+0xe0,PS2(3f),inferred,"collision radius (collide/vu0/TreeBend, 3f)"
+0xe4,PC(1h),inferred,—
+0xf4,PS2(1f),inferred,—
+0xf8,PS2(1f),inferred,—
+0x100,PC(5h),inferred,animate state (PC 5h)
+0x104,PC(2h),inferred,—
+0x108,PC(2h),inferred,velocity x (PC)
+0x10c,PC(2h),inferred,velocity y (PC)
+0x110,PC(2h),inferred,velocity z (PC)
+0x114,PC(2h),inferred,vel accum (PC)
+0x118,PC(2h),inferred,vel accum (PC)
+0x11c,PC(2h),inferred,vel accum (PC)
+0x120,PC(2h),inferred,vel accum (PC)
+0x124,PS2(1f) PC(2h),derived,follower link (sf_arm_followers)
+0x128,PC(3h),inferred,—
+0x130,PC(11h),inferred,apply-location cluster (PC 11h)
+0x134,PS2(1f) PC(3h),derived,—
+0x138,PS2(1f) PC(3h),derived,target center x (TargetCenter)
+0x13c,PS2(1f) PC(3h),derived,target center y
+0x140,PS2(1f),inferred,target center z
+0x148,PS2(5f),inferred,ambient/rock seed (5f)
+0x14c,PS2(3f),inferred,ambient (3f)
+0x150,PS2(18f),inferred,"POSITION/waypoint (18f: lift_logic, buoy_ambient, collgrid, rockgen)"
+0x160,PS2(1f),inferred,—
+0x164,PS2(1f),inferred,—
+0x16c,PS2(18f),inferred,ANIM STATE selector (18f: *_select_run_anim x5)
+0x170,PS2(2f),inferred,—
+0x174,PS2(1f),inferred,—
+0x17c,PS2(1f),inferred,—
+0x180,PS2(47f),inferred,ACTOR SPEC / class-data block (47f: firing/init/fire)
+0x184,PS2(3f),inferred,mission trigger link (3f)
+0x188,PS2(9f),inferred,AI state A (9f)
+0x18c,PS2(15f),inferred,AI state B (15f)
+0x190,PS2(8f),inferred,spline/formation link (8f)
+0x194,PS2(3f),inferred,food/hide loc (3f)
+0x198,PS2(1f) PC(1h),derived,—
+0x19c,PS2(2f) PC(1h),derived,—
+0x1a0,PS2(2f) PC(1h),derived,active orders (2f)
+0x1a4,PS2(2f),inferred,ripper/dactyl control (2f)
+0x1a8,PS2(102f),inferred,ORDER LIST HEAD (102f: army_insert/release_alive_order)
+0x1ac,PS2(6f) PC(1h),derived,spell/anim gate (6f)
+0x1b0,PS2(1f) PC(1h),derived,—
+0x1b4,PS2(3f) PC(1h),derived,—
+0x1b8,PS2(3f) PC(1h),derived,—
+0x1bc,PC(1h),inferred,—
+0x1c0,PC(1h),inferred,—
+0x1c4,PS2(1f) PC(1h),derived,—
+0x1c8,PS2(1f) PC(4h),derived,—
+0x1d0,PS2(1f),inferred,—
+0x1d4,PS2(1f),inferred,—
+0x1d8,PS2(3f),inferred,offspring/falling state (3f)
+0x1e0,PC(4h),observed,STATE id (0x3D = flick-actor mode; RUNTIME)
+0x1e4,PC(1h),inferred,—
+0x1e8,PS2(4f) PC(1h),derived,thrust (4f)
+0x1ec,PC(1h),inferred,—
+0x1f0,PC(1h),inferred,—
+0x1fc,PS2(2f),inferred,collgrid moveable (2f)
+0x200,PC(7h),inferred,apply-location cluster (PC 7h)
+0x208,PC(1h),inferred,—
+0x218,PS2(6f),inferred,formation link (6f)
+0x224,PS2(1f),inferred,—
+0x234,PS2(3f),inferred,—
+0x238,PS2(4f),inferred,gate death move (4f)
+0x240,PS2(1f),inferred,—
+0x264,PS2(1f),inferred,—
+0x26c,PS2(9f),inferred,sf disarm (9f)
+0x274,PS2(7f),inferred,camera data (7f)
+0x278,PS2(2f),inferred,—
+0x27c,PS2(1f),inferred,—
+0x280,PS2(3f),inferred,reaper falling (3f)
+0x288,PS2(1f),inferred,—
+0x28c,PS2(23f),inferred,rpman death state (23f)
+0x294,PS2(6f),inferred,evilreaper LOS (6f)
+0x2a1,PS2(1f),inferred,—
+0x2b4,PS2(2f),inferred,—
+0x2bc,PS2(1f),inferred,—
+0x2c0,PS2(1f),inferred,—
+0x2c4,PS2(4f),inferred,—
+0x2cc,PS2(1f),inferred,—
+0x2d8,PC(1h),inferred,free-data ptr (PC)
+0x2dc,PC(3h),inferred,free-data ptr (PC 3h)
+0x2e0,PC(4h),inferred,free-data ptr (PC 4h)
+0x2ec,PS2(13f),inferred,reaper shrinker post (13f)
+0x2f0,PS2(11f),inferred,ENERGY/health (11f: EnergyIncrease)
+0x2fc,PS2(1f),inferred,—
+0x30c,PS2(1f),inferred,—
+0x310,PS2(2f),inferred,—
+0x314,PS2(2f),inferred,—
+0x35c,PS2(9f),inferred,mecc backpack (9f)
+0x360,PS2(1f),inferred,—
+0x361,PS2(2f),inferred,—
+0x3fc,PS2(1f),inferred,mecc thrust (1f)
+0x400,PS2(3f),inferred,mecc thrust (3f)
+0x420,PS2(1f),inferred,—
+0x450,PS2(1f),inferred,—
+0x464,PS2(3f),inferred,shadow render (3f)

@@ -1,0 +1,61 @@
+offset,width,hits,functions
+0x10,4,2,ObjectSetAnim
+0x20,4,1,ObjectSetAnim
+0x24,4,1,ObjectSetAnim
+0x28,4,2,ObjectSetAnim
+0x2c,4,4,ObjectSetAnim; object_stop_movement
+0x30,4,2,ObjectSetAnim; object_stop_movement
+0x34,4,2,ObjectSetAnim
+0x44,4,1,ObjectSetAnim
+0x48,4,1,ObjectSetAnim
+0x4c,4,2,ObjectSetAnim
+0x50,4,3,ObjectSetAnim
+0x54,4,1,ObjectSetAnim
+0x58,4,1,ObjectSetAnim
+0x78,4,2,ObjectSetAnim
+0x7c,4,1,ObjectSetAnim
+0x9c,4,2,ObjectSetAnim
+0xa0,4,2,hud_icon_for_object; object_apply_location
+0xa4,4,2,hud_icon_for_object; object_apply_location
+0xa8,4,1,object_apply_location
+0xac,4,2,object_apply_location
+0xb0,4,1,object_apply_location
+0xb4,4,1,object_apply_location
+0xd8,4,2,obj_velocity_commit; objspec_dispatch_gate
+0xe4,4,1,object_lock_apply
+0x100,4,5,object_animate_process; object_free_all_allocated_data
+0x104,4,2,object_apply_location; object_free_all_allocated_data
+0x108,4,2,obj_velocity_commit; object_stop_movement
+0x10c,4,2,obj_velocity_commit; object_stop_movement
+0x110,4,2,obj_velocity_commit; object_stop_movement
+0x114,4,2,obj_velocity_commit; object_stop_movement
+0x118,4,2,obj_velocity_commit; object_stop_movement
+0x11c,4,2,obj_velocity_commit; object_stop_movement
+0x120,4,2,obj_velocity_commit; object_stop_movement
+0x124,4,2,obj_velocity_commit; object_stop_movement
+0x128,4,3,object_apply_location; object_stop_movement
+0x130,4,11,object_apply_location; object_stop_movement
+0x134,4,3,object_apply_location; object_stop_movement
+0x138,4,3,object_apply_location; object_stop_movement
+0x13c,4,3,object_apply_location; object_stop_movement
+0x198,4,1,object_stop_movement_2
+0x19c,4,1,object_stop_movement_2
+0x1a0,4,1,object_stop_movement_2
+0x1ac,4,1,object_stop_movement_2
+0x1b0,4,1,object_stop_movement_2
+0x1b4,4,1,object_stop_movement_2
+0x1b8,4,1,object_stop_movement_2
+0x1bc,4,1,object_stop_movement_2
+0x1c0,4,1,object_stop_movement_2
+0x1c4,4,1,object_stop_movement_2
+0x1c8,4,4,obj_velocity_commit; objspec_dispatch_gate
+0x1e0,4,4,object_animate_process; object_free_all_allocated_data
+0x1e4,4,1,object_stop_movement_2
+0x1e8,4,1,object_stop_movement_2
+0x1ec,4,1,object_stop_movement_2
+0x1f0,4,1,object_stop_movement_2
+0x200,4,7,object_apply_location; object_stop_movement_2
+0x208,4,1,obj_velocity_commit
+0x2d8,4,1,object_free_all_allocated_data
+0x2dc,4,3,object_free_all_allocated_data
+0x2e0,4,4,object_free_all_allocated_data
