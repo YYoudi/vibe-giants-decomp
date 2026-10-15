@@ -17,7 +17,10 @@ lecture — ta priorité est désormais guidée par LA CIBLE FINALE : reproduire
    cinématique : parse de `-gamegauge`, tous les consommateurs du flag, le modèle de
    timing EXACT (dt forcé 1/60 par frame rendue en mode gamegauge = fixed-step),
    l'enchaînement, `FLK_FlickRender` (caméra posée depuis le flick, dt propre des
-   acteurs), le mécanisme fps.txt.
+   acteurs), le mécanisme fps.txt — et les sections NOUVELLES : **§8 SOUS-TITRES**
+   (ops FLK 14-23 → `TextGetPtr` sur GText*.bin → layout FNT), **§9 AUDIO** (op 13,
+   son 3D attaché acteur), **§10 CHAÎNE STORY + ARRÊT** (slots "start"/"end",
+   `fx_logic` → `world_done` → `world_next_enter` : comment le jeu se ferme).
 2. `docs/systems/RENDERER_GGDX7.md` — le renderer `gg_dx7r.dll` est DÉCOMPILÉ (367
    fns) et c'est en fait GFX_DX8. Contient : la table des 6 passes de rendu de la
    cinématique (FVF + texture + géométrie pour chacune), les formules EXACTES :
