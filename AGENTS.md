@@ -4,6 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 # GIANTS: CITIZEN KABUTO — Reverse Engineering (GOG 1.449 PC, x86 32-bit)
 
+> **LIRE D'ABORD [docs/TRUST.md](docs/TRUST.md)** : le « 100 % nommé »
+> ci-dessous est une couverture, pas une sémantique — ~85 % des noms sont
+> des inférences LLM. Tout worker suit la boucle de
+> `G:\VibeRE\giants-rs\TASKS.md` (tâches GiantsRE incluses) et ne committe
+> que sur gates vertes.
+
 ## CIBLE (Ground Truth)
 
 - **Binaire de référence : GOG 1.4.0 (build 1.449)** — `G:\Games\Giants\Giants.exe` (1 630 208 octets, daté
