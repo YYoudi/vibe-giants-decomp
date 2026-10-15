@@ -296,3 +296,69 @@ corps de cases de `FLK_FlickProcess @ 0x00445A20` (derived) :
 Le dernier record retombe **exactement** sur le STRING POOL (noms NUL-terminés
 `"reg"`, `"center"`, `"borjoyzee"`, `"yan"`, `"reaper"`...) — le stream est
 auto-terminé par son propre avancement, pas par marqueur.
+
+## MISE À JOUR 3 — 2026-10-15 : payloads EXACTES des ops 30-53 (hex 0x1E-0x35)
+
+Lecture complète des cases du dispatch `FLK_FlickProcess` (decomp `_unmapped_0044.c`
+lignes 6100-6700). Convention : `p[i]` = dword payload i (p[0] = premier dword après
+{op, adv}), `adv` inclut l'entête. Les offsets d'acteur = acteur_base + idx*0x874.
+Nom des acteurs : base + p[i] quand != 0 (p[i] = offset dans le string pool).
+Tous observed (decomp), sauf mention contraire.
+
+### Bloc 0x1E-0x24 (décimal 30-36)
+
+| op | usage | payload | sémantique |
+|----|-------|---------|------------|
+| 0x1E | 0 | — | appel du hook `DAT_005dd31c()` (slot de callback jeu), avance |
+| 0x1F | 188 | f32 p0=cible, f32 p1=durée | **FADE couleur** : flick+0x36=courant, +0x37=cible, +0x38=rate (cible-courant)/durée ; durée 0 → instantané |
+| 0x20 | 46 | **variadique** : dernier dword = idx acteur ; adv 5: {p0,p1}→act+0x820/0x824 ; adv 6: +p2→0x828 ; adv 7: +p3→0x834 ; adv 9: {p0..p4}→0x820/0x824/0x828/0x834/0x830/0x82c ; puis `FLK_ActorOffsetEval` | **offset acteur** (clé de position/décalage) |
+| 0x21 | 2 | idx acteur p0, val p1 | act+0xd0 = p1 |
+| 0x22 | **1575** | p0..p2 (dont idx), p3..p8 params | **OMBRE acteur** : alloue record `"Flick_shadow"` 0x20 octets à act+0x2ec (champ nom={s_Flick_shadow,0,0,p3,p4,+0x1d=0,+0x20,word 0x80,[5]=5,[6]=5}), act+0x7d4=1, params p3..p8 → act+0x848/0x84c/0x854/0x858, +0x850/0x85c=0 |
+| 0x23 | 2 | idx p0, f32 p1 | act+0x83c = act+0x844 = p1, act+0x840=0 (état de fade d'ombre) |
+| 0x24 | 5 | idx acteur p0, sound_id p1 | `sound_stop_obj(p1, act+0xc)` |
+
+### Bloc 0x25-0x28 (décimal 37-40)
+
+| op | usage | payload | sémantique |
+|----|-------|---------|------------|
+| 0x25 | 1 | 7 dwords f32 | **lerp couleur HUD/flick** : flick+0x3b = 1.0-p1 ; si p0>0 → byte flick+0x3d=ftol(p?) ; si p?>0 → bytes +0xf5/+0xf6 ; p6=durée → +0x3c=rate, sinon +0x3a=cible |
+| 0x26 | 100 | f32 p0 | flick+0x4e = p0 (MÊME champ que le défaut 1000.0 du loader — durée d'attente/fade texte) |
+| 0x27 | 208 | id p0, name1 p1, p2, p3, name2 p4 | `hud_icon_for_object(flick, id, base+p1, p2, p3, base+p4)` |
+| 0x28 | 1 | name p0 | flick+0x4f = base+p0 |
+
+### Bloc 0x2A-0x35 (décimal 42-53)
+
+| op | usage | payload | sémantique |
+|----|-------|---------|------------|
+| 0x2A | 5 | idx p0, f32 cible p1, durée p2 | **scale lerp** : trio act+0x860 {courant, cible, rate=(cible-courant)/durée} ; durée 0 → courant=cible, rate=0 |
+| 0x2B | 0 | p0, p1 | `sound_entry_volume_set(p0, p1)` |
+| 0x2C | **497** | name p0 | `teammecc_clear_mode(base+p0, world+0x50e0, 0)` — reset mode IA team |
+| 0x2D | 1 | — | flick+0x30 = 1 (flag) |
+| 0x2E | 7 | — | flick+0x31 = 1 (flag) |
+| 0x2F | 2 | name p0 | `DAT_0059ce38 = TextGetPtr(base+p0)` — **message/caption global** (le message HUD hors sous-titre), reset des globals 0059ce3c/40/44/48 et flick+0x3f |
+| 0x30 | 0 | — | toggle `DAT_0059ce40` |
+| 0x31 | 1 | — | toggle `DAT_0059ce3c`, clear 0059ce40 |
+| 0x32 | 2 | f32 p0 | `DAT_0059ce4c = p0` (défaut loader : 0x3d23d70a = **0.04**) |
+| 0x33 | 1 | f32 p0 | `DAT_0059ce50 = p0` (défaut loader : 0x40a00000 = **5.0**) |
+| 0x34 | 51 | p0 (+conditions) | icône HUD : si flick+0x2d actif → `AddHud(*(flick+0x2d+0xc), flick+0x2c)` ; sinon (fallback LAB_00446389) `vcall_5dd34c_get(base+p0, world+0x50e0, 0)` + `DAT_0059cdb0=1` + 0059cdb4 = -flick+0x2c |
+| 0x35 | 1 | — | toggle `DAT_0059ce44` |
+
+### ⚠ op 41 décimal (0x29) — comportement observé atypique
+
+**Aucune case dans le switch décompilé** → default = avance (skip). Usage ≈ 1/file
+(622 au total), position INTERCALÉE au milieu du flux (ex. T_square_2 : record 32,
+entre op 23 et op 22, adv=5). Hypothèses : marker de scène consommé implicitement,
+ou op traitée dans une couche non couverte par le switch (à trancher par trace
+runtime si la parité l'exige — BP conditionnel sur *puVar12==0x29 dans le dispatch).
+**Ne pas en faire une op d'action dans le portage : le jeu original la saute.**
+
+### Rappel structure d'exécution (utile au portage)
+
+- Le flux est exécuté **lazily par frame** : les ops temporelles (0x19-0x1c, 5, 52)
+  comparent le temps flick et laissent le curseur sur place (état "hold",
+  `flick+0x2a` = done-for-frame) ; les ops instantanées s'enchaînent.
+- Les ops TEXTE (0x0E-0x18) sont consommées par `FLK_FlickTextProcess` depuis le
+  **même curseur** (flick+0xfc), appelé une fois par frame dans la passe rendu.
+- Les floats payload sont stockés tels quels (f32 little-endian) ; les noms
+  d'acteurs/fichiers = offsets dans le string pool relatif à `flick+0x21*4`
+  (iVar4 = base noms — voir flick_file_load).

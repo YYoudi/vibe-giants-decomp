@@ -291,10 +291,11 @@ Même flux que les ops scène (histogramme `flk_decode.py --stats` : ops
 
 ## Open items
 
-- Fonte FNT : format non inversé (IDs posés par l'op 21 dans les flk ; le
-  rasterizer exact reste à documenter si parité glyphe demandée).
-- Payloads fins des ops 30-53 (les corps de cases sont dans le corpus, à transcrire
-  au fur et à mesure des besoins du portage).
+- ~~Fonte FNT~~ **RÉSOLU 2026-10-15** : pas de fichier de fonte — rasterisation
+  GDI runtime, spec complète dans `docs/formats/FONT_GDI.md` (LOGFONT, atlas
+  256×128 u16, métriques 5 octets/char).
+- ~~Payloads ops 30-53~~ **RÉSOLU 2026-10-15** : table exacte dans
+  `docs/systems/MISSION_VM.md` §MISE À JOUR 3 (op 41/0x29 = skipped observé).
 - Dernier maillon de fermeture : entre `gameover_menu` (dialog Restart/Quit) et
   l'exit processus observé — le chemin exact en gamegauge (auto-quit du dialog ?)
   reste à lire si le portage veut reproduire le décompte exact des frames.
