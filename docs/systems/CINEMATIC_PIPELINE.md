@@ -299,3 +299,32 @@ Même flux que les ops scène (histogramme `flk_decode.py --stats` : ops
 - Dernier maillon de fermeture : entre `gameover_menu` (dialog Restart/Quit) et
   l'exit processus observé — le chemin exact en gamegauge (auto-quit du dialog ?)
   reste à lire si le portage veut reproduire le décompte exact des frames.
+
+## 11. MANIFESTE D'ASSETS de la cinématique (outils : `tools_spec/flk_manifest.py`)
+
+Extraction automatique des 53 flicks de la playlist (données :
+`RuntimeLab/logs/traces/story4_manifest.json`, régénérable) :
+
+- **14 acteurs nommés** (op 2) : `baz, bennet, borjoyzee, gordon, kabuto, lander,
+  offspring, reaper, reaper1, reg, rpman, rpman1, tel, timmy` — le casting du
+  chapitre 4 Mecc. Slots/types par fichier dans le JSON.
+- **Caméra** : une seule track, `camera01` (op 4), via le director.
+- **65 noms de sous-titres GText** (op 16), convention `Flk_story4_T_square_<N>_<k>`
+  — présence à vérifier dans `GText*.bin` (le parseur gtext existe des deux côtés).
+- **Op 13 (son VM) : AUCUNE occurrence dans les 53 fichiers** — l'audio de la
+  cinématique ne vient PAS de la VM flick ! Sources réelles : la musique/stream
+  de la couche mission + les sons attachés aux objets du monde. **Conséquence
+  M7** : pour la parité de la cinématique, le canal audio = stream du monde,
+  pas l'op 13 (qui sert aux flicks de gameplay).
+- **Chaîne de succession** : le nom du flick SUIVANT (`story4_t_square_3`...)
+  vit dans le string pool de chaque fichier, référencé par le loader de fin de
+  chaîne (`main_flick_00443740`), PAS par une op. Le dernier fichier
+  (T_square_58) n'a pas de successeur → fin de chaîne → slot "end" (§10).
+  Le portage peut donc dériver la playlist du contenu des fichiers eux-mêmes.
+- **Op 44 (0x2C)** cible des objets du monde nommés (`reg011`, `baz049`,
+  `tel022` = instances .bin), pas des acteurs flick — confirmé par payload.
+- Résolution des noms : les payloads des op 1/2/4/16/47 = **offsets dans le
+  fichier .flk** (l'image entière est mallocée par le loader) — NUL-terminés.
+  Seule exception : le nom du director (op 1) pointe une structure binaire de
+  40 octets après le nom du successeur (champ nom exact TBD — non bloquant :
+  le template du director vient de toute façon du monde .bin).

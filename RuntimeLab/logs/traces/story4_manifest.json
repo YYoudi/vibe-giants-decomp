@@ -1,0 +1,3695 @@
+{
+ "summary": {
+  "files": 53,
+  "directors": [],
+  "actors": [
+   "baz",
+   "bennet",
+   "borjoyzee",
+   "gordon",
+   "kabuto",
+   "lander",
+   "offspring",
+   "reaper",
+   "reaper1",
+   "reg",
+   "rpman",
+   "rpman1",
+   "tel",
+   "timmy"
+  ],
+  "cameras": [
+   "None/camera01"
+  ],
+  "text_names": [
+   "Flk_story4_T_square_10_1",
+   "Flk_story4_T_square_11_1",
+   "Flk_story4_T_square_11_2",
+   "Flk_story4_T_square_11_3",
+   "Flk_story4_T_square_12_1",
+   "Flk_story4_T_square_13_1",
+   "Flk_story4_T_square_14_1",
+   "Flk_story4_T_square_16_1",
+   "Flk_story4_T_square_17_1",
+   "Flk_story4_T_square_18_1",
+   "Flk_story4_T_square_19_1",
+   "Flk_story4_T_square_20_1",
+   "Flk_story4_T_square_23_1",
+   "Flk_story4_T_square_24_1",
+   "Flk_story4_T_square_25_1",
+   "Flk_story4_T_square_25a_1",
+   "Flk_story4_T_square_26_1",
+   "Flk_story4_T_square_27_1",
+   "Flk_story4_T_square_27_2",
+   "Flk_story4_T_square_28_1",
+   "Flk_story4_T_square_29_1",
+   "Flk_story4_T_square_2_1",
+   "Flk_story4_T_square_2_2",
+   "Flk_story4_T_square_2_3",
+   "Flk_story4_T_square_30_1",
+   "Flk_story4_T_square_31_1",
+   "Flk_story4_T_square_31_2",
+   "Flk_story4_T_square_32_1",
+   "Flk_story4_T_square_33_1",
+   "Flk_story4_T_square_34_1",
+   "Flk_story4_T_square_35_1",
+   "Flk_story4_T_square_37_1",
+   "Flk_story4_T_square_3_1",
+   "Flk_story4_T_square_40_1",
+   "Flk_story4_T_square_40_2",
+   "Flk_story4_T_square_42_1",
+   "Flk_story4_T_square_42_2",
+   "Flk_story4_T_square_43_1",
+   "Flk_story4_T_square_44_1",
+   "Flk_story4_T_square_44_2",
+   "Flk_story4_T_square_44_3",
+   "Flk_story4_T_square_44_4",
+   "Flk_story4_T_square_44_5",
+   "Flk_story4_T_square_44_6",
+   "Flk_story4_T_square_44_7",
+   "Flk_story4_T_square_44_8",
+   "Flk_story4_T_square_48_1",
+   "Flk_story4_T_square_49_1",
+   "Flk_story4_T_square_4_1",
+   "Flk_story4_T_square_50_1",
+   "Flk_story4_T_square_51_1",
+   "Flk_story4_T_square_52_1",
+   "Flk_story4_T_square_53_1",
+   "Flk_story4_T_square_54_1",
+   "Flk_story4_T_square_54_2",
+   "Flk_story4_T_square_55_1",
+   "Flk_story4_T_square_55_2",
+   "Flk_story4_T_square_58_1",
+   "Flk_story4_T_square_5_1",
+   "Flk_story4_T_square_6_1",
+   "Flk_story4_T_square_7_1",
+   "Flk_story4_T_square_8_1",
+   "Flk_story4_T_square_8_2",
+   "Flk_story4_T_square_9_1",
+   "Flk_story4_T_square_9_2"
+  ],
+  "sound_ids": []
+ },
+ "files": {
+  "flk_story4_t_square_2.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_2_1",
+    "Flk_story4_T_square_2_2",
+    "Flk_story4_T_square_2_3"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 65
+  },
+  "flk_story4_t_square_3.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 2,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 3,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 4,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 5,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 669
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_3_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 39
+  },
+  "flk_story4_t_square_4.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_4_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 34
+  },
+  "flk_story4_t_square_5.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 3,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 4,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 5,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 669
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_5_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 38
+  },
+  "flk_story4_t_square_6.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 3,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 4,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 5,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 669
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_6_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 42
+  },
+  "flk_story4_t_square_7.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 3,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 4,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 5,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 669
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_7_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 42
+  },
+  "flk_story4_t_square_8.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_8_1",
+    "Flk_story4_T_square_8_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 54
+  },
+  "flk_story4_t_square_9.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_9_1",
+    "Flk_story4_T_square_9_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 53
+  },
+  "flk_story4_t_square_10.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_10_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 40
+  },
+  "flk_story4_t_square_11.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_11_1",
+    "Flk_story4_T_square_11_2",
+    "Flk_story4_T_square_11_3"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 68
+  },
+  "flk_story4_t_square_12.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_12_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 40
+  },
+  "flk_story4_t_square_13.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_13_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 46
+  },
+  "flk_story4_t_square_14.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_14_1"
+   ],
+   "sounds": [],
+   "fades": 5,
+   "ops_count": 47
+  },
+  "flk_story4_t_square_15.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 29
+  },
+  "flk_story4_t_square_16.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 6,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 754
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 754
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_16_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 42
+  },
+  "flk_story4_t_square_17.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 2,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 3,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_17_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 26
+  },
+  "flk_story4_t_square_18.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 2,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 3,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_18_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 26
+  },
+  "flk_story4_t_square_19.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 2,
+     "type": 3
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 3,
+     "type": 669
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_19_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 26
+  },
+  "flk_story4_t_square_20.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_20_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 24
+  },
+  "flk_story4_t_square_23.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_23_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 24
+  },
+  "flk_story4_t_square_24.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 5,
+     "type": 2
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_24_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 32
+  },
+  "flk_story4_t_square_25.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 5,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 6,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 7,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 8,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 9,
+     "type": 215
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_25_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 44
+  },
+  "flk_story4_t_square_25a.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 5,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 6,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 7,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 8,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 9,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 10,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_25a_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 46
+  },
+  "flk_story4_t_square_26.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 5,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 6,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 7,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_26_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 44
+  },
+  "flk_story4_t_square_27.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 5,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 6,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 7,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_27_1",
+    "Flk_story4_T_square_27_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 55
+  },
+  "flk_story4_t_square_28.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 3,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 4,
+     "type": 215
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_28_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 30
+  },
+  "flk_story4_t_square_29.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_29_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 51
+  },
+  "flk_story4_t_square_30.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 2,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 3,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 4,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 5,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 669
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 1204
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_30_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 43
+  },
+  "flk_story4_t_square_31.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "reaper",
+     "slot": 2,
+     "type": 3
+    },
+    {
+     "director": 0,
+     "name": "reaper1",
+     "slot": 3,
+     "type": 666
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 4,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 5,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 669
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_31_1",
+    "Flk_story4_T_square_31_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 58
+  },
+  "flk_story4_t_square_32.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 3,
+     "type": 1
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 4,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 5,
+     "type": 215
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_32_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 32
+  },
+  "flk_story4_t_square_33.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "rpman",
+     "slot": 3,
+     "type": 215
+    },
+    {
+     "director": 0,
+     "name": "rpman1",
+     "slot": 4,
+     "type": 215
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 5,
+     "type": 240
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 240
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_33_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 33
+  },
+  "flk_story4_t_square_34.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_34_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 35
+  },
+  "flk_story4_t_square_35.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_35_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 41
+  },
+  "flk_story4_t_square_36.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 3,
+     "type": 1
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 13
+  },
+  "flk_story4_t_square_37.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_37_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 41
+  },
+  "flk_story4_t_square_38.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 3,
+     "type": 1
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 13
+  },
+  "flk_story4_t_square_39.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 10
+  },
+  "flk_story4_t_square_40.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_40_1",
+    "Flk_story4_T_square_40_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 54
+  },
+  "flk_story4_t_square_41.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 2,
+     "type": 1
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 10
+  },
+  "flk_story4_t_square_42.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_42_1",
+    "Flk_story4_T_square_42_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 55
+  },
+  "flk_story4_t_square_43.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_43_1"
+   ],
+   "sounds": [],
+   "fades": 1,
+   "ops_count": 44
+  },
+  "flk_story4_t_square_44.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "gordon",
+     "slot": 1,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "bennet",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "lander",
+     "slot": 3,
+     "type": 4
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 4,
+     "type": 135
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 5,
+     "type": 135
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 1198
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_44_1",
+    "Flk_story4_T_square_44_2",
+    "Flk_story4_T_square_44_3",
+    "Flk_story4_T_square_44_4",
+    "Flk_story4_T_square_44_5",
+    "Flk_story4_T_square_44_6",
+    "Flk_story4_T_square_44_7",
+    "Flk_story4_T_square_44_8"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 136
+  },
+  "flk_story4_t_square_48.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 3,
+     "type": 1
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_48_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 28
+  },
+  "flk_story4_t_square_49.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 3,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 4,
+     "type": 1
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 5,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_49_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 32
+  },
+  "flk_story4_t_square_50.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "timmy",
+     "slot": 2,
+     "type": 583
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 3,
+     "type": 1
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_50_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 30
+  },
+  "flk_story4_t_square_51.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 2,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 3,
+     "type": 1
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 4,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_51_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 29
+  },
+  "flk_story4_t_square_52.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 5,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 6,
+     "type": 1
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 10,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_52_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 69
+  },
+  "flk_story4_t_square_53.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 3,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 4,
+     "type": 1
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 5,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_53_1"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 38
+  },
+  "flk_story4_t_square_54.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "gordon",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "bennet",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "lander",
+     "slot": 4,
+     "type": 4
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 5,
+     "type": 135
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 135
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 7,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 8,
+     "type": 1
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 665
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_54_1",
+    "Flk_story4_T_square_54_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 55
+  },
+  "flk_story4_t_square_55.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "reg",
+     "slot": 4,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 5,
+     "type": 1
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 6,
+     "type": 4
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_55_1",
+    "Flk_story4_T_square_55_2"
+   ],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 51
+  },
+  "flk_story4_t_square_56.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 2,
+     "type": 1
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 3,
+     "type": 4
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 12
+  },
+  "flk_story4_t_square_57.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 2,
+     "type": 1
+    },
+    {
+     "director": 0,
+     "name": "offspring",
+     "slot": 3,
+     "type": 745
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [],
+   "sounds": [],
+   "fades": 0,
+   "ops_count": 13
+  },
+  "flk_story4_t_square_58.bin": {
+   "directors": [
+    {
+     "idx": 0,
+     "name": null
+    }
+   ],
+   "actors": [
+    {
+     "director": 0,
+     "name": null,
+     "slot": 0,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": null,
+     "slot": 1,
+     "type": 4294967295
+    },
+    {
+     "director": 0,
+     "name": "baz",
+     "slot": 2,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "tel",
+     "slot": 3,
+     "type": 2
+    },
+    {
+     "director": 0,
+     "name": "borjoyzee",
+     "slot": 4,
+     "type": 584
+    },
+    {
+     "director": 0,
+     "name": "kabuto",
+     "slot": 5,
+     "type": 1
+    },
+    {
+     "director": 0,
+     "name": "offspring",
+     "slot": 6,
+     "type": 745
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 7,
+     "type": 665
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 8,
+     "type": 21
+    },
+    {
+     "director": 4294967295,
+     "name": null,
+     "slot": 9,
+     "type": 21
+    }
+   ],
+   "cameras": [
+    {
+     "director": 0,
+     "node": null,
+     "track": "camera01"
+    }
+   ],
+   "texts": [
+    "Flk_story4_T_square_58_1"
+   ],
+   "sounds": [],
+   "fades": 1,
+   "ops_count": 44
+  }
+ }
+}
