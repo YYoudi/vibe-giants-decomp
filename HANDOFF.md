@@ -20,7 +20,7 @@
 2. `docs/systems/SIM_LOOP.md` — the frame skeleton you must reproduce (update order is
    gameplay-visible: velocity → per-class AI → apply → projectiles).
 3. `docs/systems/MISSION_VM.md` — **architecture decision**: missions are data (28
-   fixed-size commands), cutscenes are a bytecode VM (31 ops) — port the flick VM,
+   fixed-size commands), cutscenes are a bytecode VM (41 ops used, codes 1..53) — port the flick VM,
    run original `flk_*.bin`.
 4. `docs/formats/*.md` + `docs/specs/formats.json` — asset containers
    (`.bin` worlds/opcodes, `.abx` placements, `world.gb2`, `WorldList.bin`).
@@ -44,7 +44,7 @@
    `trajectory_throw_calc` for grenades).
 5. **Entities**: object model (`OBJECT` layout in `ps2_symbols/OBJECT_LAYOUT`),
    class-spec dispatch, smartie/reaper/vimp basics; `wm_*` mission state.
-6. **Cutscenes**: the flick VM (31 ops) + FLK_Actor 0x874 struct.
+6. **Cutscenes**: the flick VM (41 ops used) + FLK_Actor 0x874 struct.
 7. **Audio**: WAV banks + `sound_play_obj` event mapping.
 8. **Netcode**: `comm_msg_dispatch` message layer (see NETCODE.md; `giantsd` as
    protocol counterpart).
@@ -52,7 +52,9 @@
 ## 3. Known risks / unknowns
 
 - Collision grid cell scale + full cell-flag map (COLLISION.md open items).
-- FLK per-op payload details (31 ops — decode against the trace harness).
+- ~~FLK per-op payload details (31 ops — decode against the trace harness).~~
+  RESOLVED 2026-10-15: per-op payloads decoded (MISSION_VM.md MAJ 3-5, ops 30-53 exact;
+  subtitle/sound/camera verified frame-exact in giants-rs).
 - Savegame structure (registry + `savegame_%d` files) — not yet decoded.
 - The 11 world `.bin` files hitting the op-41 size variant (bin_objects.md).
 - `world.gb2` component vertex layouts (prologue known, bodies are renderer-side).

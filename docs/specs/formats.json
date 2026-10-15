@@ -115,7 +115,7 @@
       {"name": "count_actors", "type": "u32", "usage": "x 0x874-byte FLK_Actor"},
       {"name": "count_blocks", "type": "u32", "usage": "x 0x310-byte records"}
     ],
-    "payload": "bytecode: {u32 op, u32 size, payload[size-8]} - interpreted per frame by FLK_FlickProcess @ 0x00445A20, 31 ops 0x0B-0x35, persistent cursor",
+    "payload": "bytecode: {u32 op, u32 size, payload[size-8]} - interpreted per frame by FLK_FlickProcess @ 0x00445A20, 41 ops (used) on codes 1..53, persistent cursor",
     "verdict": "INTERPRETED VM - port the interpreter (see docs/systems/MISSION_VM.md)"
   }
 }

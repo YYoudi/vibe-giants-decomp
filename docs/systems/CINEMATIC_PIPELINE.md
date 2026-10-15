@@ -278,7 +278,7 @@ Même flux que les ops scène (histogramme `flk_decode.py --stats` : ops
      plus de monde → `gameover_menu` → **le processus se ferme** (confirmé run6 :
      exit propre à 04:06:45, fps.txt écrit une seule fois à la fermeture —
      229 lignes "Second", avg 498.99, machine-load-dépendant comme établi).
-  Le flag 94 n'est remis à 0 QUE par le rechargement de monde (`_unmapped_004e`
+  Le flag 94 n'est remis à 0 QUE par le rechargement de monde (`region_004e`
   :11308) — d'où exactement UNE boucle d'attirance puis l'arrêt.
 - **Pour le portage Rust** : comportement fidèle = jouer la chaîne 0x0D→0x41,
   jouer le flick "end", reprendre la chaîne une fois, fermer au 2e "end" — ou

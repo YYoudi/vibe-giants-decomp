@@ -115,7 +115,7 @@ cursor: switch (u32 op @ cursor):
 advance: cursor += u32 size @ cursor+4        // size-PREFIXED variable records
 ```
 
-Opcode families (31 ops, **derived** from case bodies):
+Opcode families (~~31 ops~~ **41 ops utilisées sur les codes 1..53**, derived from case bodies — supérieur au décompte initial de familles) :
 
 - `0x0B–0x0E`: directors — register/bind named director tracks; duplicate-director
   error; records reference the 0xC-stride table (`bistream_tell` markers).
@@ -148,7 +148,7 @@ op `0x15` names a mission's flick (`kstory5_end_1` ↔ `flk_*` family).
    struct per scenario slot (the 0x118-stride layout is documented in
    `ps2_symbols/OBJECT_LAYOUT` terms). Mission triggers/goals are NATIVE — port the
    trigger checks from `mission_00447fd0` and friends as normal Rust systems.
-2. **flk_***: port the interpreter. It is small (one switch, ~31 ops, cursor + time),
+2. **flk_***: port the interpreter. It is small (one switch, ~41 ops, cursor + time),
    the record format is self-describing (size-prefixed), and the FLK_Actor struct
    (0x874 B) plus the two other tables (0xC, 0x310) are the only state. Running the
    original cutscene bytecode buys the entire cutscene library for free and guarantees
@@ -159,7 +159,7 @@ op `0x15` names a mission's flick (`kstory5_end_1` ↔ `flk_*` family).
 
 ## Open items
 
-- Per-op payload field maps for the 31 FLK ops (the interpreter is 14.9 KB of
+- Per-op payload field maps for the 41 FLK ops (used) on codes 1..53 (the interpreter is 14.9 KB of
   decompiled C; mechanical but unhurried work — do it on demand, driven by the trace
   harness so each op is confirmed against runtime behavior).
 - On-disk record → in-memory table transform in `flick_file_load` (records appear
@@ -299,7 +299,7 @@ auto-terminé par son propre avancement, pas par marqueur.
 
 ## MISE À JOUR 3 — 2026-10-15 : payloads EXACTES des ops 30-53 (hex 0x1E-0x35)
 
-Lecture complète des cases du dispatch `FLK_FlickProcess` (decomp `_unmapped_0044.c`
+Lecture complète des cases du dispatch `FLK_FlickProcess` (decomp `region_0044.c`
 lignes 6100-6700). Convention : `p[i]` = dword payload i (p[0] = premier dword après
 {op, adv}), `adv` inclut l'entête. Les offsets d'acteur = acteur_base + idx*0x874.
 Nom des acteurs : base + p[i] quand != 0 (p[i] = offset dans le string pool).
@@ -424,7 +424,7 @@ des gzp ; le résultat = mesh GBS skinné par le token-stream documenté.
 
 ## MISE À JOUR 5 — 2026-10-15 : le modèle d'exécution par frame + caméra = piste ANM (op 4)
 
-Lecture des cases 1-10 du dispatch (`_unmapped_0044.c` 5797-6110). Complète la
+Lecture des cases 1-10 du dispatch (`region_0044.c` 5797-6110). Complète la
 MAJ 4 ; tout observed (decomp).
 
 ### Le modèle d'exécution (l'algorithme exact du portage)
@@ -476,7 +476,7 @@ track par le temps flick — exactement le même sampler que les acteurs ANM.
 
 ## MISE À JOUR 6 — 2026-10-15 : l'HORLOGE flick — `hud_icon_timed @ 0x004457D0` (réponse Q8)
 
-La pièce manquante du timing, lue intégralement (decomp `_unmapped_0044.c`
+La pièce manquante du timing, lue intégralement (decomp `region_0044.c`
 5549-5660) :
 
 **Appel** : une fois par frame, depuis le caseD_5 de `FLK_FlickProcess`

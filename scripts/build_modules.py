@@ -4,7 +4,8 @@ source-tree mapping recovered from assert strings (func_source_map_1449.json).
 
 Output: decompiled/gog144_modules/
   <dir>_<file>.c        functions of one original source file
-  _unmapped_<n>.c       functions with no source-file evidence (by address bands)
+  region_<n>.c          functions with no source-file evidence (by address bands) —
+                        naming is NEUTRAL (address band only, no source claim)
   _INDEX.md             module table with function counts and named-function stats
 """
 import json, os, re, collections
@@ -29,7 +30,7 @@ def main():
         body = text[m.end(): hits[i + 1].start() if i + 1 < len(hits) else len(text)].strip("\n")
         module = srcmap.get(f"{addr:08x}")
         if module is None:
-            module = f"_unmapped_{(addr >> 16):04x}"   # 64KB address band
+            module = f"region_{(addr >> 16):04x}"   # 64KB address band (neutral name)
         buckets[module].append((addr, name, body))
 
     index = []

@@ -1,7 +1,7 @@
 # FONT_GDI — le système de fonte de Giants (pas de fichier, rasterisation GDI runtime)
 
 > Résolution de l'open item "fonte FNT" (CINEMATIC_PIPELINE §8). Décomp
-> `win95_text.c` + `_unmapped_0051.c` (GOG 1.449). Toutes les affirmations
+> `win95_text.c` + `region_0051.c` (GOG 1.449). Toutes les affirmations
 > observed (decomp), sauf mention contraire.
 
 ## 1. Verdict : il n'y a PAS de format de fonte fichier
@@ -16,7 +16,7 @@ usage de chaque caractère.
 
 Appelée avec la **hauteur en pixels** : `0x18` (24 px — HUD, menus, texte de
 flick) ou `0xc` (12 px — petit texte) selon les call sites (observed :
-`_unmapped_0045`:2198, `_unmapped_0048`:5910/6259, `_unmapped_0052` ×3).
+`region_0045`:2198, `region_0048`:5910/6259, `region_0052` ×3).
 
 1. `CreateCompatibleDC(NULL)` → DC mémoire (`DAT_005dd8c8`).
 2. `CreateDIBSection` 1 bpp, **128×64**, top-down (`biWidth=0x80`,
