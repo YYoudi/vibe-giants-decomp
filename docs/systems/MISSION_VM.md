@@ -421,3 +421,52 @@ records de 0xC octets, `flick[0x27]+idx*0xC`).
 **Pour le portage Rust** : votre `giants_skn_anm` (en cours) se branche ICI —
 le nom du slot template + le nom d'acteur = la clé de lookup dans les SKN/ANM
 des gzp ; le résultat = mesh GBS skinné par le token-stream documenté.
+
+## MISE À JOUR 5 — 2026-10-15 : le modèle d'exécution par frame + caméra = piste ANM (op 4)
+
+Lecture des cases 1-10 du dispatch (`_unmapped_0044.c` 5797-6110). Complète la
+MAJ 4 ; tout observed (decomp).
+
+### Le modèle d'exécution (l'algorithme exact du portage)
+
+```
+par frame (FLK_FlickProcess(flick), dt dans flick+0xAC, temps écoulé flick+0x2C) :
+    curseur = flick+0x22 (persiste entre les frames)
+    boucle :
+        op = *curseur
+        si op temporelle (8/9/10) et condition non atteinte :
+            flick+0x22 = curseur          // SAUVEGARDE (hold)
+            hud_icon_timed(...)           // tick des icônes HUD
+            return flick+0x2a             // frame terminée, résume ici la prochaine fois
+        exécuter l'op (tables MAJ 3/4)
+        curseur += adv
+        si op terminale (5 / fin de stream) : flick+0x22 = curseur ; return état
+```
+
+- **Op 8 = WAIT** : {f32 t} — tant que `temps_flick < t`, hold. C'est le
+  mécanisme de synchronisation de toute la timeline.
+- **Ops 9/10** : variantes avec condition sur un acteur (hold si
+  `idx_acteur < p` etc. — mêmes labels caseD_5).
+- Le dt `flick+0xAC` (commun acteurs+texte, cf. §8) avance le temps
+  `flick+0x2c` comparé par les WAIT.
+
+### Ops 1-10 — payloads exactes (complément MAJ 4)
+
+| op | usage | payload | sémantique |
+|----|-------|---------|------------|
+| 1 | 545 | {idx_director, nom} | **DECLARE DIRECTOR** : `bistream_tell_user(0,0,base+nom)` résout le nom dans le monde .bin → table directors `flick[0x27]+idx*0xC` = {ptr, ?, used} ; doublon = erreur |
+| 2 | 3602 | {idx_director, nom, idx_slot, type} | **ADD ACTOR** → FLK_ActorAdd (MAJ 4) |
+| 3 | 758 | {p0..p4, 2 noms} | `flick_slot_lookup_handle(flick, p0, base+p1, p2, base+p3...)` — binding de scenario-slot |
+| 4 | 577 | {idx_director, nom1, nom2} | **BIND CAMÉRA** : `animGetIndexByName(template_director, base+nom1, base+nom2)` → si 0 : erreur `"Flick error : Can't find camera ..."` ; sinon flick+0x2d = `anm_id_mask(idx)`, flick+0x2e = record director. **LA CAMÉRA EST UNE PISTE ANM** d'un node de l'objet director — c'est cette piste que lit `flick_node_mat_get` (CINEMATIC_PIPELINE §4) |
+| 6 | 554 | — | clear flags flick+0x30/+0x2f |
+| 7 | 547 | {f32 cible, f32 durée} | fade canal A : flick+0x33=courant, +0x34=cible, +0x35=rate (même motif que 0x1F canal B sur +0x36/37/38) |
+| 8 | — | {f32 t} | **WAIT until** temps ≥ t |
+| 9/10 | 980 | {idx/conditions} | WAIT avec condition acteur (labels caseD_5 partagés) |
+
+### Conséquence directe pour le portage (correction §4 CINEMATIC_PIPELINE)
+
+Le rendu de caméra ne lit PAS la matrice d'un acteur lambda : il lit la piste
+ANM sélectionnée par **op 4** sur l'objet director (`flick+0x2d` = mask de
+l'anim, `flick+0x2e` = director). Dans le portage : `camera_anm =
+anim_lookup(director_object, cam_node_name, cam_track_name)` puis sample la
+track par le temps flick — exactement le même sampler que les acteurs ANM.
