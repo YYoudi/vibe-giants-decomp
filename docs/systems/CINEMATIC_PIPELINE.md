@@ -452,3 +452,19 @@ Décodage intégral (complément §13) — ce que doit implémenter le sampler R
 
 **ANM_SecsFromTicks** : `(tick − anim_start) / (fps × scale)` avec fps et scale
 à anim+0x18/+0x1C — la conversion ticks→secondes des anims.
+
+## 17. AUDIO RÉEL de l'objectif gamegauge (M7 — fichiers identifiés 2026-10-15)
+
+Résolution de `xx_music_temp` (slot musique des world bins Story*) :
+
+- **Phase intro/île** : `Stream/Intro_island/intro_island.wav`.
+- **La cinématique elle-même** : `Stream/Story4/F_TORTUREsquare.wav`
+  (21 Mo ≈ 2 min — le seul assez long pour la chaîne de 124.78 s ; les autres
+  du dossier, F_Freedom/F_Gate/F_Rescue_Meccs ≈ 30-60 s, appartiennent aux
+  missions suivantes). Le nom colle à la playlist (T_square = la place de
+  torture où Kabuto tient les Meccs captiveurs).
+- Les slots `xx_music_temp`/`xx_ambient` dans les w_*.bin = des entrées du
+  registre son (résolues par fx_table comme les autres noms), PAS des fichiers.
+- Pour le portage : M7 cinématique = jouer ces deux WAV en boucle/streaming,
+  synchronisé au démarrage de la phase correspondante. Pas d'autre audio côté
+  VM (op 13 absente, cf. §11).
