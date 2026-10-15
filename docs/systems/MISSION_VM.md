@@ -528,3 +528,61 @@ binding SKN/ANM (les 10 slots LOD), mais **leur mouvement vient des ops FLK**
 (clés d'offset 0x20, positions), pas d'une ANM auto-jouée — l'anim propre
 sert de pose de base. Point ouvert mineur : la lecture exacte de la paire
 (anim_idx=0, frame=0x20) — tester les deux lectures contre le rendu golden.
+
+## MISE À JOUR 7 — 2026-10-15 : le chemin ACTEUR → TRIANGLES À L'ÉCRAN (FLK_FlickRender intégral)
+
+Le dernier maillon manquant du rendu : comment l'acteur de la struct FLK
+devient un mesh skinné soumis à la passe (decomp `FLK_FlickRender @ 0x004444C0`
+intégral, observed). Chaîne par frame, après le Process :
+
+**A. Setup de frame** :
+- `render_get_fov/aspect`, `XFGetViewport_2`, `view_matrix_get`,
+  `render_get_clip_nearfar` (la view/caméra du flick node, cf. §4) ;
+- **swizzle dt** : `DAT_006328E0 (dt global) ← flick+0xAC (dt flick)` le temps
+  des appels de rendu — les acteurs animés en cinématique avancent au dt du
+  FLICK ; restauré en sortie.
+- **Caméra** : `flick_node_mat_get(hud_obj, view_node?, flick+0xB8+4)` →
+  `GEO_MatTranspose` → `view_matrix_reset`.
+
+**B. Anim + update des acteurs** (boucle sur flick+0xA0/+0x94, stride
+0x21d dwords — la table OBJECT des acteurs du flick) :
+- flag +0x20 posé sur obj+0xF0 si world_done ;
+- `object_animate_process(obj, dt_flick)` par acteur actif
+  (`obj[-0xd] != 0` ou world_done) ;
+- puis boucle sur la liste OBJECTS globale (DAT_00632D68) :
+  `FLK_ObjectInFlick(obj)` → si dans le flick : flag 0x40 clear →
+  `object_apply_location` + `objspec_dispatch_gate` ; types spéciaux 0x3D /
+  0x65 / 0x66 re-animent.
+
+**C. HUD/nodes du flick** : boucle sur flick+0x98 (count) × 0xC4 dwords —
+`wredit_matrix_recurse` + `ANM_NodeGetMat` + multiplication = les matrices
+des icônes HUD posées par les ops 0x27/0x34.
+
+**D. Boucle de SOUMISSION des acteurs** (celle qui dessine) — par acteur
+actif de la table flick+0xA0 :
+1. `wredit_matrix_recurse(actor_obj)` — compose la matrice monde de l'objet
+   (GEO + offset op 0x20 + parent) ;
+2. `AddHud_4(hud+0xC, time)` puis `ANM_NodeGetMat` × = **le node ANM du
+   director compose dans la matrice** (pose du squelette/l'attache) ;
+3. **Basis du billboard** : transforme (0,1,0,0) par la matrice caméra →
+   right/forward/up normalisés écrits à obj+0x1E0..0x1EB, + translation à
+   obj+0x1E3..0x1EF (matrice 4×4 complète reconstruite, tag 0x11 à +0x1DF) ;
+4. **Historique de positions** : rotation des slots obj+0x26/0x29/0x2C
+   (positions des 3 dernières frames) ;
+5. **Sélection du LOD** : `piVar9[0xB6]` = config ; si son byte +0x1E < 0
+   (skinné haut-res disponible) ET `DAT_006331C0 != 0` (option) → haut-res ;
+6. **RENDU par viewports tiles** (le secret du rendu multi-fenêtre des flicks) :
+   - `upcall+0x8C` (1re fois) puis `upcall+0xC0(hud_tex, &dims)` : récupère
+     les dims d'une texture → tile = `1 << (bit du dim)` (potences de 2) ;
+   - `XFSetViewportRegion(0,0,w,h)` + `upcall+0xA0(...)` : découpe le
+     framebuffer en tile ;
+   - `render_projection_reset(proj, proj+0xC)` + `render_scene_begin` ;
+   - **`animate_core_caller(actor, 0, 0, actor+0x28C, camera_origin)`** — LE
+     call qui soumet le mesh skinné (LOD 9 slots + token-stream, cf.
+     RENDERER_GGDX7 MAJ 3) dans la tile ;
+   - `render_scene_end` ; upcall+0xB8 si tile était la 1re.
+
+**Pour le portage** : un acteur de cinématique = OBJECT (objet du monde)
++ matrice composée {GEO ∘ offset(0x20) ∘ node ANM director} + scale op 0x2A
+(+0x860), anim propre GELÉE (n°16), soumis via `animate_core_caller` dans
+des tiles de viewport. Le billboard basis (D-3) sert aux sprites/quads attachés.
