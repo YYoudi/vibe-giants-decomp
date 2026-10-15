@@ -328,3 +328,35 @@ Extraction automatique des 53 flicks de la playlist (données :
   Seule exception : le nom du director (op 1) pointe une structure binaire de
   40 octets après le nom du successeur (champ nom exact TBD — non bloquant :
   le template du director vient de toute façon du monde .bin).
+
+## 12. ORDRE DE CHARGEMENT réel du boot gamegauge (trace runtime 2026-10-15)
+
+Capteur `scripts/fileopen_capture.py` sur `stream_player_start @ 0x005380E0`
+(l'unique ouvreur de fichiers du moteur — les noms passent par le registre
+virtuel fx_table + override `Bin/`). Données : `RuntimeLab/logs/traces/
+fileopen_trace.json` (28 opens uniques, 2 runs) :
+
+```
+GameObj.bin → GData.gbn → worldlist.bin → worldlist2..5.bin →
+W_Intro.bin → xx_intro.bin → xx_menus.bin → W_Intro.abx → weapondefs.bin →
+GTextEnglish.bin → intros.bin → W_intro_island.bin → fx_world_dust.bin →
+tx_lev1.bin → xx_effects.bin → xx_efx.bin → xx_permanentaliens.bin →
+xx_patch_screens.bin → xx_markers.bin → xx_tools.bin → W_intro_island.abx →
+W_Story4.bin → xx_giants_logo_3d.bin → wm_mission1.bin → xx_story4.bin
+```
+
+- **Le monde de la cinématique = `W_Story4`** (chapitre 4 Mecc — confirmé
+  runtime ; les variantes Kstory4/Rstory4 = chapitres Kabuto/Reaper). La
+  cinématique se joue DANS le monde intro : l'île d'intro charge d'abord
+  (W_Intro/W_intro_island), puis W_Story4 + sa mission (`wm_mission1.bin`) et
+  la séquence story4 (`xx_story4.bin`) — les flk de la playlist s'ouvrent à
+  chaque segment (ordre = playlist §7, déjà établi).
+- Les `worldlist2..5.bin` = registres de mondes additionnels (complément
+  WorldList.bin — à documenter si le portage itère les mondes).
+- Les `xx_*.bin` = packs système (intro, menus, effets, marqueurs, écrans).
+- **Note instrumentation** : un BP sur `stream_player_start` + traçage lent
+  provoque un crash reproductible (AV second-chance `mem_debug_alloc
+  @ 0x0053A321`, `mov [ecx-4],eax`) juste après `xx_story4.bin` — le jeu joue
+  parfaitement avec un BP sur `flick_file_load` seul (runs 5-6). Suspect :
+  race sensible au timing IO sous instrumentation lourde. Ne PAS utiliser ce
+  BP pendant les runs de parité ; pour retracer, logger léger (déjà dédupliqué).

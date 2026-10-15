@@ -1,0 +1,114 @@
+[
+ {
+  "t": 28.3,
+  "name": "GameObj.bin"
+ },
+ {
+  "t": 36.6,
+  "name": "GData.gbn"
+ },
+ {
+  "t": 44.8,
+  "name": "worldlist.bin"
+ },
+ {
+  "t": 53.1,
+  "name": "worldlist2.bin"
+ },
+ {
+  "t": 61.4,
+  "name": "worldlist3.bin"
+ },
+ {
+  "t": 69.7,
+  "name": "worldlist4.bin"
+ },
+ {
+  "t": 77.9,
+  "name": "worldlist5.bin"
+ },
+ {
+  "t": 86.2,
+  "name": "W_Intro.bin"
+ },
+ {
+  "t": 94.5,
+  "name": "xx_intro.bin"
+ },
+ {
+  "t": 102.7,
+  "name": "xx_menus.bin"
+ },
+ {
+  "t": 110.9,
+  "name": "W_Intro.abx"
+ },
+ {
+  "t": 119.2,
+  "name": "weapondefs.bin"
+ },
+ {
+  "t": 196.3,
+  "name": "GTextEnglish.bin"
+ },
+ {
+  "t": 204.5,
+  "name": "intros.bin"
+ },
+ {
+  "t": 212.8,
+  "name": "W_intro_island.bin"
+ },
+ {
+  "t": 221.0,
+  "name": "fx_world_dust.bin"
+ },
+ {
+  "t": 229.3,
+  "name": "tx_lev1.bin"
+ },
+ {
+  "t": 237.5,
+  "name": "xx_effects.bin"
+ },
+ {
+  "t": 245.7,
+  "name": "xx_efx.bin"
+ },
+ {
+  "t": 253.9,
+  "name": "xx_permanentaliens.bin"
+ },
+ {
+  "t": 262.2,
+  "name": "xx_patch_screens.bin"
+ },
+ {
+  "t": 270.5,
+  "name": "xx_markers.bin"
+ },
+ {
+  "t": 286.9,
+  "name": "xx_tools.bin"
+ },
+ {
+  "t": 295.2,
+  "name": "W_intro_island.abx"
+ },
+ {
+  "t": 305.7,
+  "name": "W_Story4.bin"
+ },
+ {
+  "t": 287.5,
+  "name": "xx_giants_logo_3d.bin"
+ },
+ {
+  "t": 303.7,
+  "name": "wm_mission1.bin"
+ },
+ {
+  "t": 336.0,
+  "name": "xx_story4.bin"
+ }
+]
