@@ -84,6 +84,30 @@ records with ascending indices `1,2,3,…` (`u32` + 24 B each) to EOF.
   at `+0xC` (members) and `+0x44` (slot objects). Exact semantics (euler order, radians)
   to be pinned by a P1.1 runtime dump before a Rust port trusts them.
 
+### Orientation → matrice (derived, decomp 2026-10-15)
+
+La conversion d'orientation du moteur = `math_euler_to_matrix @ 0x00516F60`
+(signature decomp : `(a, b, c, scale, out3x3)`, `sine_cos_lookup(ptr_sin, ptr_cos)`,
+**le 2e angle entre nié** : `sin(-b)`), matrice ligne-majeure exacte :
+
+```
+s = scale
+m[0] =  cos(c)*cos(a)*s                m[3] =  sin(c)*cos(a)*s              m[6] = sin(a)*s
+m[1] = (-sin(b)*cos(c)*sin(a) - sin(c)*cos(b))*s
+m[4] = ( cos(c)*cos(b) - sin(c)*sin(a)*sin(b))*s
+m[7] = cos(a)*sin(b)*s
+m[2] = ( sin(c)*sin(b) - cos(c)*sin(a)*cos(b))*s
+m[5] = (-sin(c)*sin(a)*cos(b) - cos(c)*sin(b))*s
+m[8] = cos(a)*cos(b)*s
+```
+
+Colonne 2 = forward = (sin a, cos a sin b, cos a cos b) — `a` = lacet (yaw),
+`b` = tangage (pitch, entré en sens inverse), `c` = roulis. Angles en radians
+(les tables `sine_cos_lookup` sont indexées en radians). `crt_euler_to_quat @
+0x0053E580` existe pour la variante quaternion. Statut : **derived** (decomp) ;
+une validation par dump runtime du f6 d'un placement + de la matrice objet
+résultante reste le moyen de passer à observed.
+
 ## Validation
 
 - GameObj.bin parsed end-to-end (byte-exact, 9 records + 0xFF).
