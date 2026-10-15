@@ -57,10 +57,48 @@ quads (the visible world dressing).
 | 8 | underside | island underside |
 | 9 | space | starfield/space skybox (first in gb2 offset order) |
 
-## Open items
+## MISE À JOUR 2026-10-15 — body layout COMPLÈTEMENT DÉCODÉ (parser dérivé + validé fichier)
 
-- Per-component body layouts (vertex format, counts, color encoding) — needs the
-  component loader/render path (upcall-side, `GDV` renderer interface). Tracked for
-  P1.3 RENDERER.md; for a Rust reimplementation the sky/sea/waterfall can also be
-  rebuilt procedurally once the vertex soup is dumped per component (P1.1 runtime dump
-  of the loaded component structs will settle it).
+**Parser : `main_makeobj_00471e10 @ 0x00471E10`** (appelé par `BinFileSeek_5`,
+depuis `main_readdata` après lecture de GameObj.bin).
+
+```
+u32 magic   ∈ { 0xAA0100AB (v1, avec champ fmt), 0xAA0100AA (v0, fmt=0x101 implicite) }
+              (sinon "Bad version of GB2 file")
+i32 count
+u32 offsets[count]        // relatifs au début du buffer
+
+component @ offset:
+    char  name[16]        // ex. "space"
+    u32   flags           // &1 = dual-pos (skinning), &2 = UV + texture, &4 = RGB par vertex
+    u32   usage           // (retourné, rôle secondaire)
+    [u32 fmt]             // SI magic v1 : format FVF-like (observé 0, 0x101 = XYZ|UV1)
+    [char texture[16]]    // SI flags&2 : nom de texture (ex. "tspace") → chargée par
+                          //   main_texture_00508750 → devient WS+0x4C via op 30
+    u32   vertex_count
+    u32   tri_count
+    f32   pos[vertex_count * 3]          // "objp3d" (12 B/vertex)
+    [f32 pos2[vertex_count * 3]]         // SI flags&1 (2e canal position, skinned)
+    [f32 uv[vertex_count * 2] ]          // SI flags&2 ("objuv", 8 B/vertex)
+    [u8  rgb[vertex_count * 3] ]         // SI flags&4 ("objrgb", 3 B/vertex)
+    u16   tri_indices[tri_count * 3]     // "objtri" (triangle list)
+```
+
+**Validé par octets** sur `world.gb2` réel : composant `space` = name "space",
+flags=2, usage=0, fmt=0, texture "tspace", **vcount=89, tricount=120**, puis les
+floats. (Les tailles restantes suggèrent un bloc index redondant par composant —
+à trancher en décodant les 9 composants avec le parseur.)
+
+### Rendu (dlog_scene_submit @ 0x0042A4F0)
+
+```
+gfx_state+8(FVF_GDV=0x24, texture=WS+0x4C, 0)        // texture 1 (op 30 du world bin)
+vertex lock(count=vcount) ; par vertex (stride 6 f32 = 24 B) :
+    v[0..2] = pos   v[3] = 0xFFFFFFFF (diffuse blanc forcé)   v[4..5] = uv
+primbuffer+0x20(primCount = tricount*3, indices=tri)   // TRIANGLELIST
+SI WS+0x16C > 0 : 2e passe même géométrie, FVF 0x60720, texture 0,
+                  couleur RGBA packée depuis WS+0x16C..0x178 (passe fog du ciel)
+```
+
+Le registre `DAT_632D2C` (GameObj) expose : `+4`=vcount, `+8`=tricount,
+`+0xC`=pos, `+0x10`=uv, `+0x18`=indices.
