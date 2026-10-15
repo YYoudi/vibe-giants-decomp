@@ -404,3 +404,26 @@ playlist complète, fixed-step 1/60 :
   `flk_sim_T_square_2.json` (trace frame-par-frame complète du 1er flick).
 - Hypothèses flaggées (à réviser si ton run diverge) : capacité HUD = 1 icône/
   frame ; ops 9/10 seuls points de hold ; op 41 ignorée (skippée par le jeu).
+
+## 15. LIMITES DE LA MESURE MUR par flick (run7, 2026-10-15) — et ce qui reste solide
+
+Tentative de validation par-flick : capteur timestamps sur `flick_file_load`
+(run7, fenêtre propre sans coupure, 40 deltas). **Résultat : 18-19 s MUR
+uniformes par flick, indépendant des waits internes** (un flick sim 0.03 s et
+un flick sim 14.75 s mesurent pareil) → le delta mur est dominé par
+l'overhead d'instrumentation (~15-17 s/hit : polling + lectures RPC + tempête
+de pauses), pas par la durée de jeu. La mesure mur par flick est donc
+**inutilisable** avec ce capteur ; il faudrait un handler à overhead ~nul.
+
+**Ce qui reste solide** :
+- La contrainte forte = le fps.txt du jeu propre : 229 s de sim pour
+  l'ensemble gauge. Réconciliation : 229 − ~100 s d'intro/île (estimation
+  molle, trace mur §12) = **~129 s attendus pour la chaîne vs 124.78 s
+  simulés — écart 3,3 %**. Le modèle global tient.
+- La structure interne des waits (op 9 = payload[0] frames) reste Observée au
+  niveau décomp ; l'incertitude porte sur la **capacité HUD exacte** (1 icône
+  par frame stationnée — hypothèse).
+- **Instruction portage** : l'oracle par segment (flk_sim_playlist_totals)
+  est STRUCTUREL (ordre + beats) ; la calibration fine de la capacité HUD se
+  fera contre le fps.txt global de ton moteur (la chaîne doit totaliser
+  ~125-130 s de sim), pas contre des mesures mur.
