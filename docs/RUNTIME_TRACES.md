@@ -78,7 +78,8 @@ imagery must not be published).
 |---|---|---|
 | 2026-10-14 | GOG 1.449, pid 25488 | menu reached; stale-BP + sensor module-gate bugs found+fixed |
 | 2026-10-14 | GOG 1.449, pid 27684 | **fresh boot auto-loaded intro-island gameplay (no clicks)**; 19 event BPs; 46 sound_play_obj hits captured; memory-input menu drive PROVEN (before/after pngs); dt register observed 2ms at menu, FPS counter 742-853 in-game (uncapped, confirms dt-driven sim) |
-| 2026-10-14 | GOG 1.449, `-gamegauge` runs 1-3 | **byte-exact oracle proven**: fps.txt BYTE-IDENTICAL across runs despite different tracing load; 24-flick deterministic playlist captured (0x0D→0x41); cinematic = in-engine (characters, subtitles, anims, world) |
+| 2026-10-14 | GOG 1.449, `-gamegauge` runs 1-3 | runs 1&3 fps.txt byte-identical (same session, different tracing load); 24-flick deterministic playlist captured (0x0D→0x41); cinematic = in-engine |
+| 2026-10-15 | `-gamegauge` run 4 | **CORRECTION**: fps.txt DIFFERS across sessions (run4: avg 309.12, 209 lines vs 357.28/228) — per-second counts are machine-load-dependent; the run1==run3 identity held only within one session/conditions. The deterministic oracle = flick playlist + scene-boundary STRUCTURE (same dip positions s8/s15-17), NOT raw fps values |
 | — | session artifacts | `hits_session_20261014.json`, `session_hashes.txt`, `trace_report.json`, before/after drive captures (local only) |
 
 ## Machine environment notes (visual oracle caveats)
