@@ -296,9 +296,15 @@ Même flux que les ops scène (histogramme `flk_decode.py --stats` : ops
   256×128 u16, métriques 5 octets/char).
 - ~~Payloads ops 30-53~~ **RÉSOLU 2026-10-15** : table exacte dans
   `docs/systems/MISSION_VM.md` §MISE À JOUR 3 (op 41/0x29 = skipped observé).
-- Dernier maillon de fermeture : entre `gameover_menu` (dialog Restart/Quit) et
-  l'exit processus observé — le chemin exact en gamegauge (auto-quit du dialog ?)
-  reste à lire si le portage veut reproduire le décompte exact des frames.
+- ~~Dernier maillon de fermeture~~ **CLÔS (2026-10-15)** : entre `gameover_menu`
+  et l'exit processus, le chemin est le retour standard de WinMain (aucun
+  ExitProcess direct dans le binaire ; CRT statiquement liée — l'exit passe par
+  le `exit()` interne après cassure de la game loop). Contrat observable pour
+  le portage : **le processus se ferme normalement** après le 2e "end" —
+  `process::exit(0)` après le dernier flick est le comportement équivalent.
+  (Le dump runtime du f6 .abx est également clos comme non-bloquant : la
+  formule euler est observed, le mapping float→argument se calibre visuellement
+  au premier rendu d'île.)
 
 ## 11. MANIFESTE D'ASSETS de la cinématique (outils : `tools_spec/flk_manifest.py`)
 
