@@ -151,3 +151,44 @@ la consommation passe par les slots WS. Vertex layout des corps : encore open.
 - Corpus décompilé : `RuntimeLab/ggdx7_decomp/ggdx7_decompiled.c` (367 fns) +
   index + projet Ghidra `ghidra_projects_ggdx7/` (local).
 - Script d'export : `scripts/export_ggdx7_pyghidra.py`.
+
+## MISE À JOUR 3 — 2026-10-15 : passe GBS (acteurs/props) + rôle réel du GTI + clarification terrain
+
+### `animate_core_caller @ 0x0042E460` — LA passe mesh GBS (les acteurs de la cinématique)
+
+```c
+// 1. LOD par distance : d = distance3d(obj, cam) ; fVar1 = (camRight/objScale)*(d+objRadius)
+//    sélection du 1er slot LOD (table pondérateur DAT_005565C0[DAT_631150]) — 9 niveaux
+// 2. main_animate (skin CPU) → GEO_MatTranspose → gfx_sys+0x18(matrice modèle)
+// 3. gfx_state+8(FVF=0x20060, texture=0, couleur=0xFFFFFF)
+// 4. par LOD-section (stride 0x14 dwords, count=+0x68 du LOD entry) :
+//    vbuf = primbuffer+0x10(count, ctx, section)      // lock 3-args (contexte section)
+//    PTR_mesh_build_fvf_verts_2_005565B0(vbuf)         // builder FVF (ptr table)
+//    primbuffer+0x18(-count)                          // unlock
+//    → TOKEN STREAM u16 (le format de soumission GBS) :
+//        0            = fin de section
+//        bit15 set    : strip  → primbuffer+0x24(n & 0x7FFF)
+//        bit14 set    : fan    → primbuffer+0x28(n & 0xBFFF)
+//        sinon        : tri-list → primbuffer+0x20(n*3, indices[n*3] suivent)
+```
+
+C'est le rendu de TOUS les modèles (Meccs, Reapers, smarties de la cinématique).
+
+### Rôle réel du GTI (`gti_terrain_load @ 0x00474440`)
+
+Le GTI n'est PAS le mesh visuel : il produit **les 958 bounding-boxes monde de
+collision** (records 0x38 octets : bbox 8 dwords + 6 dwords auxiliaires,
+`WS+0x204`) + les **bornes du monde** (`WS+0x1C8..0x1DC`, cellSize `WS+0x1C0` +
+inverse `WS+0x1C4`). Le mesh visuel du terrain est le quadtree de
+`terrain_elevation_gen` (formule palette-hauteur §MISE À JOUR 2).
+
+### Récap des passes de rendu (carte complète pour la cinématique)
+
+| passe | fonction | FVF GDV | texture | géométrie |
+|---|---|---|---|---|
+| gb2 (sky/sea/underside) | `dlog_scene_submit` | 0x24 | WS+0x4C (op30) | pos+uv gb2, diffuse blanc, tri-list (+2e passe fog 0x60720 si WS+0x16C>0) |
+| terrain | `terrain_elevation_gen` (+ appel wave) | 0x124 (local) | ramp64 élévation | quadtree LOD, palette hauteur |
+| mer | `main_drawwatr_00431700` | 0x23004/0x14 | WS+0x6C (sea du gb2) | grille 33×13 caméra, uv=pos/WS+0x7C |
+| GBS acteurs/props | `animate_core_caller` | 0x20060 | par-section | token-stream strip/fan/tri |
+| HUD/texte | `status_hud_render`/`showchat_mission_objective` | var / 0x20000 | var | quads |
+| effets | `animate_core_caller` alias 0x20060, `fx_*` | var | var | billboards |
