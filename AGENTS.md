@@ -11,8 +11,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   non-thunk, `done=2807 failed=0 named=2807` — voir `decompiled/gog144_full/stats.txt`, corpus complet dans
   `decompiled/gog144_full/all_decompiled.c(.gz)` + modules `decompiled/gog144_modules/`.
 - **Projet Ghidra de référence : `ghidra_projects_gog144/`** (programme `Giants.exe`) — tous les renames validés
-  y sont appliqués ; c'est LA source de vérité des noms. Mapping v1.0↔1.449 : `decompiled/v10_1449_ranges.json` +
-  `decompiled/v10_to_v149_map.json` (générés par `scripts/cross_version_map.py`).
+  y sont appliqués ; c'est LA source de vérité des noms. Mapping v1.0↔1.449 : `decompiled/v10_v149_bytemap.csv` +
+  `decompiled/v10_v149_propagated.csv` + `decompiled/v10_v149_stringmatch.csv` (générés par `scripts/cross_version_map.py`).
 - **Référence secondaire : vanilla v1.0 retail** — `GameFiles-VanillaV1/Giants.exe` (PE32, 1 634 304 octets,
   30 nov 2000, MD5 `330c6a9a8ab0fa4b0173d925e1d5ec27`, entry `0x547358`). Snapshot bit-exact conservé pour les
   comparaisons inter-versions (REA `compare_functions`/`find_changed_behavior`) et toute éventuelle validation

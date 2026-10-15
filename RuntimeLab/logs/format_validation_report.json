@@ -1,0 +1,1892 @@
+{
+ "generated": "2026-10-14",
+ "sources": {
+  "vanilla-v10": {
+   "summary": {
+    "other:FAIL": 737,
+    "abx:PASS": 33,
+    "worldlist:PASS": 1,
+    "bin_world:PASS": 121
+   },
+   "golden": [
+    {
+     "file": "GameObj.bin",
+     "family": "abx",
+     "size": 182,
+     "md5": "b7dd8abed4df8529694de3269e2e85fb"
+    },
+    {
+     "file": "WorldList.bin",
+     "family": "worldlist",
+     "size": 688,
+     "md5": "1ae05c94420ce210e5163a23ae4576f3"
+    },
+    {
+     "file": "sfxlev1.bin",
+     "family": "bin_world",
+     "size": 92,
+     "md5": "0da78f484c8c0ecca528274761afb629"
+    },
+    {
+     "file": "tx_lev1.bin",
+     "family": "bin_world",
+     "size": 847,
+     "md5": "016f05c30d750f1da559d5ead04ca1a9"
+    },
+    {
+     "file": "vo_sfx.bin",
+     "family": "bin_world",
+     "size": 3440,
+     "md5": "45eaebce4f55c82c153739f977351c6d"
+    },
+    {
+     "file": "w_Kstory1.abx",
+     "family": "abx",
+     "size": 28800,
+     "md5": "f04c1332a2dcb737d285df8435b9b99a"
+    },
+    {
+     "file": "w_Kstory1.bin",
+     "family": "bin_world",
+     "size": 7319,
+     "md5": "072abcdaee3b1039881f9887a54dc546"
+    },
+    {
+     "file": "w_Kstory2.abx",
+     "family": "abx",
+     "size": 27208,
+     "md5": "d9c519bb5cd8a14fa3004b57cdb2c9c2"
+    },
+    {
+     "file": "w_Kstory2.bin",
+     "family": "bin_world",
+     "size": 5323,
+     "md5": "fb9defdd2ed74c3c1531c8fdcd38d1b1"
+    },
+    {
+     "file": "w_Kstory3.abx",
+     "family": "abx",
+     "size": 26020,
+     "md5": "62c8af87ea1ddf887eb7978c46625145"
+    },
+    {
+     "file": "w_Kstory3.bin",
+     "family": "bin_world",
+     "size": 6668,
+     "md5": "f28d6382d45c8724fecbc6afce9e19a2"
+    },
+    {
+     "file": "w_Kstory4.abx",
+     "family": "abx",
+     "size": 26656,
+     "md5": "e6ac4af3658ab2986b1dcf1203342c95"
+    },
+    {
+     "file": "w_Kstory4.bin",
+     "family": "bin_world",
+     "size": 4478,
+     "md5": "3f7d8e3a4234187907d8ed3215903713"
+    },
+    {
+     "file": "w_Kstory5.abx",
+     "family": "abx",
+     "size": 34340,
+     "md5": "e2770818e3e3066f01500e3aa7124ea4"
+    },
+    {
+     "file": "w_Kstory5.bin",
+     "family": "bin_world",
+     "size": 6932,
+     "md5": "ac2503660af0c733788c4464223f4219"
+    },
+    {
+     "file": "w_M_3WAY_L1.abx",
+     "family": "abx",
+     "size": 34172,
+     "md5": "e9417a5e5e899ebfb63b7e7e3941160c"
+    },
+    {
+     "file": "w_M_3WAY_L1.bin",
+     "family": "bin_world",
+     "size": 8584,
+     "md5": "96febbd8016feeba27f95c2663611c6d"
+    },
+    {
+     "file": "w_M_3WAY_L2.abx",
+     "family": "abx",
+     "size": 34284,
+     "md5": "993e0f1464507387f8ec7a50cc884a9a"
+    },
+    {
+     "file": "w_M_3WAY_L2.bin",
+     "family": "bin_world",
+     "size": 3895,
+     "md5": "3e73695d876023c682db7bac27be2634"
+    },
+    {
+     "file": "w_M_3WAY_L3.abx",
+     "family": "abx",
+     "size": 34284,
+     "md5": "993e0f1464507387f8ec7a50cc884a9a"
+    },
+    {
+     "file": "w_M_3WAY_L3.bin",
+     "family": "bin_world",
+     "size": 3987,
+     "md5": "dd8922d9bd0abf2e84f16c4030751f3b"
+    },
+    {
+     "file": "w_M_3WAY_Lw1.abx",
+     "family": "abx",
+     "size": 34084,
+     "md5": "3df682d7703a20fa5c79c51ae9790c81"
+    },
+    {
+     "file": "w_M_3WAY_Lw1.bin",
+     "family": "bin_world",
+     "size": 3665,
+     "md5": "7c4ed7131cd89d7a9c95e67f76c1dc26"
+    },
+    {
+     "file": "w_M_Mecc_L1.abx",
+     "family": "abx",
+     "size": 22352,
+     "md5": "b6af38000f9e9c3a0ff1fef52726fc1b"
+    },
+    {
+     "file": "w_M_Mecc_L1.bin",
+     "family": "bin_world",
+     "size": 5651,
+     "md5": "9282f061181717d30d8f52a784d609ab"
+    },
+    {
+     "file": "w_M_Mecc_L2.abx",
+     "family": "abx",
+     "size": 19640,
+     "md5": "378e9b495ccbd0f72a48bf06e5e98c4a"
+    },
+    {
+     "file": "w_M_Mecc_L2.bin",
+     "family": "bin_world",
+     "size": 7474,
+     "md5": "bebc6c0926f940af2c8d4c3a66e98eb4"
+    },
+    {
+     "file": "w_M_Mecc_L3.abx",
+     "family": "abx",
+     "size": 19640,
+     "md5": "378e9b495ccbd0f72a48bf06e5e98c4a"
+    },
+    {
+     "file": "w_M_Mecc_L3.bin",
+     "family": "bin_world",
+     "size": 6737,
+     "md5": "0e22f179a0d534ef95f83a0f1e08bc1c"
+    },
+    {
+     "file": "w_M_Mecc_Lw1.abx",
+     "family": "abx",
+     "size": 19820,
+     "md5": "fdc497bc9e03e612745aae728364205c"
+    },
+    {
+     "file": "w_M_Mecc_Lw1.bin",
+     "family": "bin_world",
+     "size": 7194,
+     "md5": "368bfd69c78d2094b52b7b92e5d6012c"
+    },
+    {
+     "file": "w_M_Reaper_L1.abx",
+     "family": "abx",
+     "size": 21224,
+     "md5": "7ee200825b064d62f38423d48e9cb982"
+    },
+    {
+     "file": "w_M_Reaper_L1.bin",
+     "family": "bin_world",
+     "size": 3233,
+     "md5": "52b9962f39dad4b3704e0a15dbc40b97"
+    },
+    {
+     "file": "w_M_Reaper_L2.abx",
+     "family": "abx",
+     "size": 21404,
+     "md5": "fa8d2f048c7a6ccba0f1600273134deb"
+    },
+    {
+     "file": "w_M_Reaper_L2.bin",
+     "family": "bin_world",
+     "size": 3935,
+     "md5": "de62a932148cc6aead3e6c461cabb22f"
+    },
+    {
+     "file": "w_M_Reaper_L3.abx",
+     "family": "abx",
+     "size": 21404,
+     "md5": "0dbb9e7fa0d1802fbf00f2805b5b7748"
+    },
+    {
+     "file": "w_M_Reaper_L3.bin",
+     "family": "bin_world",
+     "size": 4286,
+     "md5": "9e14843cbc9a2b42be69bf622e9ff0f1"
+    },
+    {
+     "file": "w_M_Reaper_Lw1.abx",
+     "family": "abx",
+     "size": 21404,
+     "md5": "fa8d2f048c7a6ccba0f1600273134deb"
+    },
+    {
+     "file": "w_M_Reaper_Lw1.bin",
+     "family": "bin_world",
+     "size": 4050,
+     "md5": "0f4dc503122f3ce0edfc88b49bb64e90"
+    },
+    {
+     "file": "w_Rstory1.abx",
+     "family": "abx",
+     "size": 24560,
+     "md5": "c5433649df3348722f587dae40adf24d"
+    },
+    {
+     "file": "w_Rstory1.bin",
+     "family": "bin_world",
+     "size": 10138,
+     "md5": "60b498687ba1f9f04107c587d8881601"
+    },
+    {
+     "file": "w_Rstory2.abx",
+     "family": "abx",
+     "size": 28796,
+     "md5": "40d1f2f87438745672765e9eb781b767"
+    },
+    {
+     "file": "w_Rstory2.bin",
+     "family": "bin_world",
+     "size": 6265,
+     "md5": "c75805a6d8a74299a91ed3f83733b792"
+    },
+    {
+     "file": "w_Rstory3_race_1.abx",
+     "family": "abx",
+     "size": 16656,
+     "md5": "3e9531d51d5eab482a4f10e2d0735769"
+    },
+    {
+     "file": "w_Rstory3_race_1.bin",
+     "family": "bin_world",
+     "size": 4023,
+     "md5": "56c7685232f700d51c3f907eb4f8ce31"
+    },
+    {
+     "file": "w_Rstory3_race_2.abx",
+     "family": "abx",
+     "size": 16596,
+     "md5": "0357a588beeb230f0fe00b43f4afa2c9"
+    },
+    {
+     "file": "w_Rstory3_race_2.bin",
+     "family": "bin_world",
+     "size": 2405,
+     "md5": "d06b9effe43912dbc32731cb4b03cd86"
+    },
+    {
+     "file": "w_Rstory3_race_3.abx",
+     "family": "abx",
+     "size": 16596,
+     "md5": "3c3549be7b15cfb7dc001d32b799df68"
+    },
+    {
+     "file": "w_Rstory3_race_3.bin",
+     "family": "bin_world",
+     "size": 2623,
+     "md5": "90034fde8d91d42cd8a320eee5a85ce0"
+    },
+    {
+     "file": "w_Rstory4.abx",
+     "family": "abx",
+     "size": 29168,
+     "md5": "eaf034771b02d6dccb029759887a8817"
+    },
+    {
+     "file": "w_Rstory4.bin",
+     "family": "bin_world",
+     "size": 4966,
+     "md5": "8d632774a4a79eb63ce99198ea5d74d7"
+    },
+    {
+     "file": "w_Rstory5.abx",
+     "family": "abx",
+     "size": 32176,
+     "md5": "2a267c529145444c338b47d201e51cce"
+    },
+    {
+     "file": "w_Rstory5.bin",
+     "family": "bin_world",
+     "size": 10251,
+     "md5": "da1e6d6daba1aabc7808eabc0ed7f5c2"
+    },
+    {
+     "file": "w_Story1.abx",
+     "family": "abx",
+     "size": 26852,
+     "md5": "6504a0c5c300e09aa518e5e8b87ab66d"
+    },
+    {
+     "file": "w_Story1.bin",
+     "family": "bin_world",
+     "size": 10425,
+     "md5": "ba1c82630649843c344dee0fd44fe4eb"
+    },
+    {
+     "file": "w_Story2.abx",
+     "family": "abx",
+     "size": 22780,
+     "md5": "0b2fcb602f5153124dbe6684bcce5442"
+    },
+    {
+     "file": "w_Story2.bin",
+     "family": "bin_world",
+     "size": 14082,
+     "md5": "28843253849912cdcdefb1a6fa5392f4"
+    },
+    {
+     "file": "w_Story3.abx",
+     "family": "abx",
+     "size": 19380,
+     "md5": "f8b767562851e7118040abe123228531"
+    },
+    {
+     "file": "w_Story3.bin",
+     "family": "bin_world",
+     "size": 9556,
+     "md5": "f59027cff04290abc4c23190b5163bca"
+    },
+    {
+     "file": "w_Story4.abx",
+     "family": "abx",
+     "size": 23456,
+     "md5": "8e819b9059d0c8bce95369f7118ea1de"
+    },
+    {
+     "file": "w_Story4.bin",
+     "family": "bin_world",
+     "size": 11557,
+     "md5": "f3435837d40d8a2e01f34116b15c423c"
+    },
+    {
+     "file": "w_Story5.abx",
+     "family": "abx",
+     "size": 24184,
+     "md5": "19fd5b9907998396ab602af579525cfa"
+    },
+    {
+     "file": "w_Story5.bin",
+     "family": "bin_world",
+     "size": 8307,
+     "md5": "700316223bb3c1867896c1fee93b47de"
+    },
+    {
+     "file": "w_intro.bin",
+     "family": "bin_world",
+     "size": 3301,
+     "md5": "7152931cd1e79067695bd594ea69b68d"
+    },
+    {
+     "file": "w_intro_island.abx",
+     "family": "abx",
+     "size": 2028,
+     "md5": "3dfc7d9451490a6c1b0178df48032b32"
+    },
+    {
+     "file": "w_intro_island.bin",
+     "family": "bin_world",
+     "size": 1514,
+     "md5": "6c71c14d52c1f84d898ff5319d4dc31d"
+    },
+    {
+     "file": "w_menus.abx",
+     "family": "abx",
+     "size": 20128,
+     "md5": "5a9a817c2f04db483d0bbe98d7f08413"
+    },
+    {
+     "file": "w_menus.bin",
+     "family": "bin_world",
+     "size": 3878,
+     "md5": "6d2694835b0da3942a2cb084a56f3a90"
+    },
+    {
+     "file": "w_the_end.abx",
+     "family": "abx",
+     "size": 15900,
+     "md5": "4c5a8fd1363f6ce3e664e22742cce11a"
+    },
+    {
+     "file": "w_the_end.bin",
+     "family": "bin_world",
+     "size": 3937,
+     "md5": "c0c391599e0301d18e634c6684f85071"
+    },
+    {
+     "file": "xx_ambient.bin",
+     "family": "bin_world",
+     "size": 7398,
+     "md5": "b2b695ccd95bf013227131d4c698a2ba"
+    },
+    {
+     "file": "xx_bigwalls.bin",
+     "family": "bin_world",
+     "size": 5401,
+     "md5": "d9d963a55a4e2d455b96be8ba6ebc53f"
+    },
+    {
+     "file": "xx_bigwalls_lite.bin",
+     "family": "bin_world",
+     "size": 2480,
+     "md5": "ad80718fae43d3e2d568bd074da34a4a"
+    },
+    {
+     "file": "xx_birds.bin",
+     "family": "bin_world",
+     "size": 1021,
+     "md5": "dc87cd614e4bed0eab4f55faf2613c3f"
+    },
+    {
+     "file": "xx_bones.bin",
+     "family": "bin_world",
+     "size": 296,
+     "md5": "9beb5a414d5e1ad6e68471ba8555490e"
+    },
+    {
+     "file": "xx_bridge.bin",
+     "family": "bin_world",
+     "size": 1633,
+     "md5": "c83bfe306a1169095b42cf2735d23d83"
+    },
+    {
+     "file": "xx_charger.bin",
+     "family": "bin_world",
+     "size": 1334,
+     "md5": "76d3560a3be1dd67e6b020676256bf10"
+    },
+    {
+     "file": "xx_dactyl.bin",
+     "family": "bin_world",
+     "size": 491,
+     "md5": "b09cdfefa95afcb39d9c151417996ff9"
+    },
+    {
+     "file": "xx_effects.bin",
+     "family": "bin_world",
+     "size": 1845,
+     "md5": "bb76affa9d9fd0f78add299d327579c1"
+    },
+    {
+     "file": "xx_efx.bin",
+     "family": "bin_world",
+     "size": 25092,
+     "md5": "8df727e85058eb06a64c56e6ce640a20"
+    },
+    {
+     "file": "xx_fish.bin",
+     "family": "bin_world",
+     "size": 181,
+     "md5": "546c93f22fed586206782f67fd345345"
+    },
+    {
+     "file": "xx_formations.bin",
+     "family": "bin_world",
+     "size": 2816,
+     "md5": "66b8485f2f7ca815bdd3187307a77c66"
+    },
+    {
+     "file": "xx_giants_logo_3d.bin",
+     "family": "bin_world",
+     "size": 317,
+     "md5": "cda63779aa4545aa8f0fd995094cf62a"
+    },
+    {
+     "file": "xx_giantwalls.bin",
+     "family": "bin_world",
+     "size": 4267,
+     "md5": "e674d6f26fd5331c5e4c493c1a252aac"
+    },
+    {
+     "file": "xx_guard_army_barracks.bin",
+     "family": "bin_world",
+     "size": 842,
+     "md5": "62ec47454756fe668e7a3280169e7fbb"
+    },
+    {
+     "file": "xx_guard_barracks.bin",
+     "family": "bin_world",
+     "size": 3630,
+     "md5": "7d57d9bf55afb3ef01c9a1c312c44263"
+    },
+    {
+     "file": "xx_guard_buildings.bin",
+     "family": "bin_world",
+     "size": 7172,
+     "md5": "4d0ac798afe79027b164ad6568bcd146"
+    },
+    {
+     "file": "xx_guard_drawbridge.bin",
+     "family": "bin_world",
+     "size": 677,
+     "md5": "13f1d51f4c2184a86a0ddb2dbcc330fc"
+    },
+    {
+     "file": "xx_guard_log_launcher.bin",
+     "family": "bin_world",
+     "size": 928,
+     "md5": "75cb3672fb3a0ef2d3c42b877bbd82ab"
+    },
+    {
+     "file": "xx_guard_prison.bin",
+     "family": "bin_world",
+     "size": 688,
+     "md5": "6156ce2f8efc3281e4e09cfd250145f8"
+    },
+    {
+     "file": "xx_guard_reaper_tower.bin",
+     "family": "bin_world",
+     "size": 478,
+     "md5": "9866ee5db00080c09927d315585c9418"
+    },
+    {
+     "file": "xx_guard_turrets.bin",
+     "family": "bin_world",
+     "size": 1255,
+     "md5": "13c8b7e38994132534ad912cea06c1fa"
+    },
+    {
+     "file": "xx_intro.bin",
+     "family": "bin_world",
+     "size": 391,
+     "md5": "a67bd9d0b7de2781aca600d1648d3c88"
+    },
+    {
+     "file": "xx_jetski.bin",
+     "family": "bin_world",
+     "size": 2431,
+     "md5": "9bbc31f543031d3075aca27de451810a"
+    },
+    {
+     "file": "xx_jetski_rpm.bin",
+     "family": "bin_world",
+     "size": 688,
+     "md5": "afc2145804980e1af861615abaad1f90"
+    },
+    {
+     "file": "xx_kab_stuff.bin",
+     "family": "bin_world",
+     "size": 1966,
+     "md5": "7dd4a8c13af31e939b80ba4d31794d5c"
+    },
+    {
+     "file": "xx_kabuto_flick.bin",
+     "family": "bin_world",
+     "size": 644,
+     "md5": "fc19f4d46d3aac50893b599c91ec0e62"
+    },
+    {
+     "file": "xx_kabutolev1.bin",
+     "family": "bin_world",
+     "size": 9906,
+     "md5": "c6cccbc21be220cad80f2e1ad2dd2dd7"
+    },
+    {
+     "file": "xx_kstory5.bin",
+     "family": "bin_world",
+     "size": 693,
+     "md5": "9cec8f773ed222a9efbdebb8985b24d8"
+    },
+    {
+     "file": "xx_lander.bin",
+     "family": "bin_world",
+     "size": 666,
+     "md5": "3149b533bb9a614fcbc1fa8104fa91ab"
+    },
+    {
+     "file": "xx_markers.bin",
+     "family": "bin_world",
+     "size": 357,
+     "md5": "58b7b7262270b2b0b45085f467976553"
+    },
+    {
+     "file": "xx_mecc_base.bin",
+     "family": "bin_world",
+     "size": 20441,
+     "md5": "af91f4359360857d33a5a32b106866f7"
+    },
+    {
+     "file": "xx_mecc_flick.bin",
+     "family": "bin_world",
+     "size": 5961,
+     "md5": "27ef0f669e816e8e21503ee881465d4c"
+    },
+    {
+     "file": "xx_mecclev1.bin",
+     "family": "bin_world",
+     "size": 26492,
+     "md5": "9f52cbd10a187f4cb58ec951bceeef65"
+    },
+    {
+     "file": "xx_mecclev1_nothrust.bin",
+     "family": "bin_world",
+     "size": 11652,
+     "md5": "48ec56a03b912cc476013c5a66f9b45f"
+    },
+    {
+     "file": "xx_menus.bin",
+     "family": "bin_world",
+     "size": 689,
+     "md5": "1211fcd52947f9665e4ab834035ed99e"
+    },
+    {
+     "file": "xx_music_temp.bin",
+     "family": "bin_world",
+     "size": 592,
+     "md5": "209d2671102c340aa0e038cb380a8045"
+    },
+    {
+     "file": "xx_offspring.bin",
+     "family": "bin_world",
+     "size": 5434,
+     "md5": "53f5d3e962b76bde7e0fc5a45177d349"
+    },
+    {
+     "file": "xx_permanentaliens.bin",
+     "family": "bin_world",
+     "size": 5361,
+     "md5": "afa8e5a46298d4dd4b5f40a9e768be95"
+    },
+    {
+     "file": "xx_pier.bin",
+     "family": "bin_world",
+     "size": 1082,
+     "md5": "9ea53a8327a845de1fd9686e26c8e541"
+    },
+    {
+     "file": "xx_plants.bin",
+     "family": "bin_world",
+     "size": 2364,
+     "md5": "e7b5498b3a4e0bc8688445a13137d900"
+    },
+    {
+     "file": "xx_ptree.bin",
+     "family": "bin_world",
+     "size": 1809,
+     "md5": "8ea00caf918899a0a3534fb742c2e133"
+    },
+    {
+     "file": "xx_raik.bin",
+     "family": "bin_world",
+     "size": 5144,
+     "md5": "45244abe2ce1406cdb2f3b5546a5b7d3"
+    },
+    {
+     "file": "xx_reaper_base.bin",
+     "family": "bin_world",
+     "size": 20525,
+     "md5": "94be2ecbe8d20c873532a4d03695cf5d"
+    },
+    {
+     "file": "xx_reaper_flick.bin",
+     "family": "bin_world",
+     "size": 1604,
+     "md5": "d517a3ff1861b2dff6015b79b52eb927"
+    },
+    {
+     "file": "xx_reaper_ship.bin",
+     "family": "bin_world",
+     "size": 507,
+     "md5": "d20bcad1727d225916067157b054dac3"
+    },
+    {
+     "file": "xx_reaper_spells.bin",
+     "family": "bin_world",
+     "size": 457,
+     "md5": "5e3ed169949be5161e99a5a1a53fb00d"
+    },
+    {
+     "file": "xx_reaperlev1.bin",
+     "family": "bin_world",
+     "size": 24390,
+     "md5": "d92ee4fc6bd124620602d6068a020eb5"
+    },
+    {
+     "file": "xx_reaperman.bin",
+     "family": "bin_world",
+     "size": 12134,
+     "md5": "20453186b033013f5a38b6e7d7ea73b7"
+    },
+    {
+     "file": "xx_ripper.bin",
+     "family": "bin_world",
+     "size": 4278,
+     "md5": "77bd98bfc5f4a9c94685bcf44520527a"
+    },
+    {
+     "file": "xx_rocks.bin",
+     "family": "bin_world",
+     "size": 1043,
+     "md5": "77f177e1eb163353694d9e9344ff1ff3"
+    },
+    {
+     "file": "xx_rpman_weapons.bin",
+     "family": "bin_world",
+     "size": 9165,
+     "md5": "1485a8f302ea9bf8ca3c78c80d9ac648"
+    },
+    {
+     "file": "xx_rpqueen.bin",
+     "family": "bin_world",
+     "size": 4609,
+     "md5": "745484729430d7d7034f13e79c098a35"
+    },
+    {
+     "file": "xx_rpqueen_flick.bin",
+     "family": "bin_world",
+     "size": 478,
+     "md5": "4a3611b59c7ad960bf0e02dd6aee5c55"
+    },
+    {
+     "file": "xx_rstory3.bin",
+     "family": "bin_world",
+     "size": 684,
+     "md5": "8ce96f516e521e85ca7b06d2d22fb151"
+    },
+    {
+     "file": "xx_rstory4.bin",
+     "family": "bin_world",
+     "size": 181,
+     "md5": "01d08f49dccad11bb93c4c56107c946a"
+    },
+    {
+     "file": "xx_rstory5.bin",
+     "family": "bin_world",
+     "size": 850,
+     "md5": "9d15aade34c917de41e0dd6e4542c2c6"
+    },
+    {
+     "file": "xx_seamonster.bin",
+     "family": "bin_world",
+     "size": 1323,
+     "md5": "aa5f3048b478284ac9003ad439566c8a"
+    },
+    {
+     "file": "xx_shadows.bin",
+     "family": "bin_world",
+     "size": 521,
+     "md5": "80b4b2f446c3b8c1391d4774ce078d83"
+    },
+    {
+     "file": "xx_sm_book.bin",
+     "family": "bin_world",
+     "size": 211,
+     "md5": "3ed5106e12170af08f30dc4755e86357"
+    },
+    {
+     "file": "xx_sm_evil.bin",
+     "family": "bin_world",
+     "size": 3209,
+     "md5": "48ba798f926690061f8937acb78d00cf"
+    },
+    {
+     "file": "xx_smartie.bin",
+     "family": "bin_world",
+     "size": 3672,
+     "md5": "2799a3e833f6e765c88c78e249dc8d49"
+    },
+    {
+     "file": "xx_smartie_stuff.bin",
+     "family": "bin_world",
+     "size": 11802,
+     "md5": "aa51b328900fa2a9e9257089451118a9"
+    },
+    {
+     "file": "xx_smartie_stuff_lite.bin",
+     "family": "bin_world",
+     "size": 124,
+     "md5": "d66aeaa24e24ffede817d15ce3deb608"
+    },
+    {
+     "file": "xx_smartie_stuff_multi.bin",
+     "family": "bin_world",
+     "size": 124,
+     "md5": "d66aeaa24e24ffede817d15ce3deb608"
+    },
+    {
+     "file": "xx_smborjoyzee.bin",
+     "family": "bin_world",
+     "size": 1149,
+     "md5": "faf72fec44d6478d21c3f9cded4b6e54"
+    },
+    {
+     "file": "xx_smborjoyzee_flick.bin",
+     "family": "bin_world",
+     "size": 545,
+     "md5": "d472b5ad4180a6184868e9ed82827bea"
+    },
+    {
+     "file": "xx_smdoomed.bin",
+     "family": "bin_world",
+     "size": 403,
+     "md5": "2eaa7f2978fc0eaf5d41066544b260f2"
+    },
+    {
+     "file": "xx_smfemale.bin",
+     "family": "bin_world",
+     "size": 787,
+     "md5": "6e30bd0a63b45d005e1b582d4d44485b"
+    },
+    {
+     "file": "xx_smtimmy.bin",
+     "family": "bin_world",
+     "size": 963,
+     "md5": "22d8facba5acc830ddf0934af741ba5a"
+    },
+    {
+     "file": "xx_smtimmy_flick.bin",
+     "family": "bin_world",
+     "size": 355,
+     "md5": "b35ef993b1416573560f656d848ee4b8"
+    },
+    {
+     "file": "xx_smyan.bin",
+     "family": "bin_world",
+     "size": 1243,
+     "md5": "9cdffd1719094fa41e58673aae824b6e"
+    },
+    {
+     "file": "xx_smyan_flick.bin",
+     "family": "bin_world",
+     "size": 500,
+     "md5": "add4e212ae6c27dc509715de998133dc"
+    },
+    {
+     "file": "xx_smyan_pagoda.bin",
+     "family": "bin_world",
+     "size": 1474,
+     "md5": "a1908061ac25fd1e3926ae48170d8731"
+    },
+    {
+     "file": "xx_snow_stuff.bin",
+     "family": "bin_world",
+     "size": 1231,
+     "md5": "39fc499a1ca10fd75932594c34038dec"
+    },
+    {
+     "file": "xx_snowtree.bin",
+     "family": "bin_world",
+     "size": 231,
+     "md5": "f2b0a7c3e17c09c25169913ec5eecb30"
+    },
+    {
+     "file": "xx_sonak.bin",
+     "family": "bin_world",
+     "size": 2819,
+     "md5": "ff7b5e4039873c56ac389e47394236e8"
+    },
+    {
+     "file": "xx_story1.bin",
+     "family": "bin_world",
+     "size": 1803,
+     "md5": "e7362c42c1a9467d53f53f6895f49f5f"
+    },
+    {
+     "file": "xx_story4.bin",
+     "family": "bin_world",
+     "size": 1034,
+     "md5": "cfcadd5b63e5e8f7a5d5ffce11b203e4"
+    },
+    {
+     "file": "xx_theend.bin",
+     "family": "bin_world",
+     "size": 201,
+     "md5": "1618c7b863724ef1e1e4948c9dcc58cd"
+    },
+    {
+     "file": "xx_toby.bin",
+     "family": "bin_world",
+     "size": 202,
+     "md5": "330576a3cdcc7c45a2260bb55eb42538"
+    },
+    {
+     "file": "xx_tools.bin",
+     "family": "bin_world",
+     "size": 431,
+     "md5": "6473df80eee15d0a7889fe1501db249a"
+    },
+    {
+     "file": "xx_verm.bin",
+     "family": "bin_world",
+     "size": 1791,
+     "md5": "f0dbd7d426a71f07233bc59350a6984e"
+    },
+    {
+     "file": "xx_vimp.bin",
+     "family": "bin_world",
+     "size": 2735,
+     "md5": "3b6911929679428eeba0136a134b1d60"
+    },
+    {
+     "file": "xx_water_rings.bin",
+     "family": "bin_world",
+     "size": 311,
+     "md5": "41c435166aa9da56193d4487ef473954"
+    }
+   ]
+  },
+  "gog-1449": {
+   "summary": {
+    "other:FAIL": 743,
+    "abx:PASS": 33,
+    "worldlist:PASS": 1,
+    "bin_world:PASS": 122
+   },
+   "golden": [
+    {
+     "file": "GameObj.bin",
+     "family": "abx",
+     "size": 182,
+     "md5": "b7dd8abed4df8529694de3269e2e85fb"
+    },
+    {
+     "file": "WorldList.bin",
+     "family": "worldlist",
+     "size": 688,
+     "md5": "1ae05c94420ce210e5163a23ae4576f3"
+    },
+    {
+     "file": "sfxlev1.bin",
+     "family": "bin_world",
+     "size": 92,
+     "md5": "0da78f484c8c0ecca528274761afb629"
+    },
+    {
+     "file": "tx_lev1.bin",
+     "family": "bin_world",
+     "size": 847,
+     "md5": "016f05c30d750f1da559d5ead04ca1a9"
+    },
+    {
+     "file": "vo_sfx.bin",
+     "family": "bin_world",
+     "size": 3440,
+     "md5": "45eaebce4f55c82c153739f977351c6d"
+    },
+    {
+     "file": "w_Kstory1.abx",
+     "family": "abx",
+     "size": 28800,
+     "md5": "f04c1332a2dcb737d285df8435b9b99a"
+    },
+    {
+     "file": "w_Kstory1.bin",
+     "family": "bin_world",
+     "size": 7319,
+     "md5": "072abcdaee3b1039881f9887a54dc546"
+    },
+    {
+     "file": "w_Kstory2.abx",
+     "family": "abx",
+     "size": 27208,
+     "md5": "d9c519bb5cd8a14fa3004b57cdb2c9c2"
+    },
+    {
+     "file": "w_Kstory2.bin",
+     "family": "bin_world",
+     "size": 5323,
+     "md5": "fb9defdd2ed74c3c1531c8fdcd38d1b1"
+    },
+    {
+     "file": "w_Kstory3.abx",
+     "family": "abx",
+     "size": 26020,
+     "md5": "62c8af87ea1ddf887eb7978c46625145"
+    },
+    {
+     "file": "w_Kstory3.bin",
+     "family": "bin_world",
+     "size": 6668,
+     "md5": "f28d6382d45c8724fecbc6afce9e19a2"
+    },
+    {
+     "file": "w_Kstory4.abx",
+     "family": "abx",
+     "size": 26656,
+     "md5": "e6ac4af3658ab2986b1dcf1203342c95"
+    },
+    {
+     "file": "w_Kstory4.bin",
+     "family": "bin_world",
+     "size": 4478,
+     "md5": "3f7d8e3a4234187907d8ed3215903713"
+    },
+    {
+     "file": "w_Kstory5.abx",
+     "family": "abx",
+     "size": 34340,
+     "md5": "e2770818e3e3066f01500e3aa7124ea4"
+    },
+    {
+     "file": "w_Kstory5.bin",
+     "family": "bin_world",
+     "size": 6932,
+     "md5": "ac2503660af0c733788c4464223f4219"
+    },
+    {
+     "file": "w_M_3WAY_L1.abx",
+     "family": "abx",
+     "size": 34172,
+     "md5": "e9417a5e5e899ebfb63b7e7e3941160c"
+    },
+    {
+     "file": "w_M_3WAY_L1.bin",
+     "family": "bin_world",
+     "size": 8584,
+     "md5": "96febbd8016feeba27f95c2663611c6d"
+    },
+    {
+     "file": "w_M_3WAY_L2.abx",
+     "family": "abx",
+     "size": 34284,
+     "md5": "993e0f1464507387f8ec7a50cc884a9a"
+    },
+    {
+     "file": "w_M_3WAY_L2.bin",
+     "family": "bin_world",
+     "size": 3895,
+     "md5": "3e73695d876023c682db7bac27be2634"
+    },
+    {
+     "file": "w_M_3WAY_L3.abx",
+     "family": "abx",
+     "size": 34284,
+     "md5": "993e0f1464507387f8ec7a50cc884a9a"
+    },
+    {
+     "file": "w_M_3WAY_L3.bin",
+     "family": "bin_world",
+     "size": 3987,
+     "md5": "dd8922d9bd0abf2e84f16c4030751f3b"
+    },
+    {
+     "file": "w_M_3WAY_Lw1.abx",
+     "family": "abx",
+     "size": 34084,
+     "md5": "3df682d7703a20fa5c79c51ae9790c81"
+    },
+    {
+     "file": "w_M_3WAY_Lw1.bin",
+     "family": "bin_world",
+     "size": 3665,
+     "md5": "7c4ed7131cd89d7a9c95e67f76c1dc26"
+    },
+    {
+     "file": "w_M_Mecc_L1.abx",
+     "family": "abx",
+     "size": 22352,
+     "md5": "b6af38000f9e9c3a0ff1fef52726fc1b"
+    },
+    {
+     "file": "w_M_Mecc_L1.bin",
+     "family": "bin_world",
+     "size": 5651,
+     "md5": "9282f061181717d30d8f52a784d609ab"
+    },
+    {
+     "file": "w_M_Mecc_L2.abx",
+     "family": "abx",
+     "size": 19640,
+     "md5": "378e9b495ccbd0f72a48bf06e5e98c4a"
+    },
+    {
+     "file": "w_M_Mecc_L2.bin",
+     "family": "bin_world",
+     "size": 7474,
+     "md5": "bebc6c0926f940af2c8d4c3a66e98eb4"
+    },
+    {
+     "file": "w_M_Mecc_L3.abx",
+     "family": "abx",
+     "size": 19640,
+     "md5": "378e9b495ccbd0f72a48bf06e5e98c4a"
+    },
+    {
+     "file": "w_M_Mecc_L3.bin",
+     "family": "bin_world",
+     "size": 6737,
+     "md5": "0e22f179a0d534ef95f83a0f1e08bc1c"
+    },
+    {
+     "file": "w_M_Mecc_Lw1.abx",
+     "family": "abx",
+     "size": 19820,
+     "md5": "fdc497bc9e03e612745aae728364205c"
+    },
+    {
+     "file": "w_M_Mecc_Lw1.bin",
+     "family": "bin_world",
+     "size": 7194,
+     "md5": "368bfd69c78d2094b52b7b92e5d6012c"
+    },
+    {
+     "file": "w_M_Reaper_L1.abx",
+     "family": "abx",
+     "size": 21224,
+     "md5": "7ee200825b064d62f38423d48e9cb982"
+    },
+    {
+     "file": "w_M_Reaper_L1.bin",
+     "family": "bin_world",
+     "size": 3233,
+     "md5": "52b9962f39dad4b3704e0a15dbc40b97"
+    },
+    {
+     "file": "w_M_Reaper_L2.abx",
+     "family": "abx",
+     "size": 21404,
+     "md5": "fa8d2f048c7a6ccba0f1600273134deb"
+    },
+    {
+     "file": "w_M_Reaper_L2.bin",
+     "family": "bin_world",
+     "size": 3935,
+     "md5": "de62a932148cc6aead3e6c461cabb22f"
+    },
+    {
+     "file": "w_M_Reaper_L3.abx",
+     "family": "abx",
+     "size": 21404,
+     "md5": "0dbb9e7fa0d1802fbf00f2805b5b7748"
+    },
+    {
+     "file": "w_M_Reaper_L3.bin",
+     "family": "bin_world",
+     "size": 4286,
+     "md5": "9e14843cbc9a2b42be69bf622e9ff0f1"
+    },
+    {
+     "file": "w_M_Reaper_Lw1.abx",
+     "family": "abx",
+     "size": 21404,
+     "md5": "fa8d2f048c7a6ccba0f1600273134deb"
+    },
+    {
+     "file": "w_M_Reaper_Lw1.bin",
+     "family": "bin_world",
+     "size": 4050,
+     "md5": "0f4dc503122f3ce0edfc88b49bb64e90"
+    },
+    {
+     "file": "w_Rstory1.abx",
+     "family": "abx",
+     "size": 24560,
+     "md5": "c5433649df3348722f587dae40adf24d"
+    },
+    {
+     "file": "w_Rstory1.bin",
+     "family": "bin_world",
+     "size": 10138,
+     "md5": "60b498687ba1f9f04107c587d8881601"
+    },
+    {
+     "file": "w_Rstory2.abx",
+     "family": "abx",
+     "size": 28796,
+     "md5": "40d1f2f87438745672765e9eb781b767"
+    },
+    {
+     "file": "w_Rstory2.bin",
+     "family": "bin_world",
+     "size": 6265,
+     "md5": "c75805a6d8a74299a91ed3f83733b792"
+    },
+    {
+     "file": "w_Rstory3_race_1.abx",
+     "family": "abx",
+     "size": 16656,
+     "md5": "3e9531d51d5eab482a4f10e2d0735769"
+    },
+    {
+     "file": "w_Rstory3_race_1.bin",
+     "family": "bin_world",
+     "size": 4023,
+     "md5": "56c7685232f700d51c3f907eb4f8ce31"
+    },
+    {
+     "file": "w_Rstory3_race_2.abx",
+     "family": "abx",
+     "size": 16596,
+     "md5": "0357a588beeb230f0fe00b43f4afa2c9"
+    },
+    {
+     "file": "w_Rstory3_race_2.bin",
+     "family": "bin_world",
+     "size": 2405,
+     "md5": "d06b9effe43912dbc32731cb4b03cd86"
+    },
+    {
+     "file": "w_Rstory3_race_3.abx",
+     "family": "abx",
+     "size": 16596,
+     "md5": "3c3549be7b15cfb7dc001d32b799df68"
+    },
+    {
+     "file": "w_Rstory3_race_3.bin",
+     "family": "bin_world",
+     "size": 2623,
+     "md5": "90034fde8d91d42cd8a320eee5a85ce0"
+    },
+    {
+     "file": "w_Rstory4.abx",
+     "family": "abx",
+     "size": 29168,
+     "md5": "eaf034771b02d6dccb029759887a8817"
+    },
+    {
+     "file": "w_Rstory4.bin",
+     "family": "bin_world",
+     "size": 4966,
+     "md5": "8d632774a4a79eb63ce99198ea5d74d7"
+    },
+    {
+     "file": "w_Rstory5.abx",
+     "family": "abx",
+     "size": 32176,
+     "md5": "2a267c529145444c338b47d201e51cce"
+    },
+    {
+     "file": "w_Rstory5.bin",
+     "family": "bin_world",
+     "size": 10251,
+     "md5": "da1e6d6daba1aabc7808eabc0ed7f5c2"
+    },
+    {
+     "file": "w_Story1.abx",
+     "family": "abx",
+     "size": 26852,
+     "md5": "6504a0c5c300e09aa518e5e8b87ab66d"
+    },
+    {
+     "file": "w_Story1.bin",
+     "family": "bin_world",
+     "size": 10425,
+     "md5": "ba1c82630649843c344dee0fd44fe4eb"
+    },
+    {
+     "file": "w_Story2.abx",
+     "family": "abx",
+     "size": 22780,
+     "md5": "0b2fcb602f5153124dbe6684bcce5442"
+    },
+    {
+     "file": "w_Story2.bin",
+     "family": "bin_world",
+     "size": 14082,
+     "md5": "28843253849912cdcdefb1a6fa5392f4"
+    },
+    {
+     "file": "w_Story3.abx",
+     "family": "abx",
+     "size": 19380,
+     "md5": "f8b767562851e7118040abe123228531"
+    },
+    {
+     "file": "w_Story3.bin",
+     "family": "bin_world",
+     "size": 9556,
+     "md5": "f59027cff04290abc4c23190b5163bca"
+    },
+    {
+     "file": "w_Story4.abx",
+     "family": "abx",
+     "size": 23456,
+     "md5": "8e819b9059d0c8bce95369f7118ea1de"
+    },
+    {
+     "file": "w_Story4.bin",
+     "family": "bin_world",
+     "size": 11557,
+     "md5": "f3435837d40d8a2e01f34116b15c423c"
+    },
+    {
+     "file": "w_Story5.abx",
+     "family": "abx",
+     "size": 24184,
+     "md5": "19fd5b9907998396ab602af579525cfa"
+    },
+    {
+     "file": "w_Story5.bin",
+     "family": "bin_world",
+     "size": 8307,
+     "md5": "700316223bb3c1867896c1fee93b47de"
+    },
+    {
+     "file": "w_intro.bin",
+     "family": "bin_world",
+     "size": 3301,
+     "md5": "7152931cd1e79067695bd594ea69b68d"
+    },
+    {
+     "file": "w_intro_island.abx",
+     "family": "abx",
+     "size": 2028,
+     "md5": "3dfc7d9451490a6c1b0178df48032b32"
+    },
+    {
+     "file": "w_intro_island.bin",
+     "family": "bin_world",
+     "size": 1514,
+     "md5": "6c71c14d52c1f84d898ff5319d4dc31d"
+    },
+    {
+     "file": "w_menus.abx",
+     "family": "abx",
+     "size": 20128,
+     "md5": "5a9a817c2f04db483d0bbe98d7f08413"
+    },
+    {
+     "file": "w_menus.bin",
+     "family": "bin_world",
+     "size": 3878,
+     "md5": "6d2694835b0da3942a2cb084a56f3a90"
+    },
+    {
+     "file": "w_the_end.abx",
+     "family": "abx",
+     "size": 15900,
+     "md5": "4c5a8fd1363f6ce3e664e22742cce11a"
+    },
+    {
+     "file": "w_the_end.bin",
+     "family": "bin_world",
+     "size": 3937,
+     "md5": "c0c391599e0301d18e634c6684f85071"
+    },
+    {
+     "file": "xx_ambient.bin",
+     "family": "bin_world",
+     "size": 7398,
+     "md5": "b2b695ccd95bf013227131d4c698a2ba"
+    },
+    {
+     "file": "xx_bigwalls.bin",
+     "family": "bin_world",
+     "size": 5401,
+     "md5": "d9d963a55a4e2d455b96be8ba6ebc53f"
+    },
+    {
+     "file": "xx_bigwalls_lite.bin",
+     "family": "bin_world",
+     "size": 2480,
+     "md5": "ad80718fae43d3e2d568bd074da34a4a"
+    },
+    {
+     "file": "xx_birds.bin",
+     "family": "bin_world",
+     "size": 1021,
+     "md5": "dc87cd614e4bed0eab4f55faf2613c3f"
+    },
+    {
+     "file": "xx_bones.bin",
+     "family": "bin_world",
+     "size": 296,
+     "md5": "9beb5a414d5e1ad6e68471ba8555490e"
+    },
+    {
+     "file": "xx_bridge.bin",
+     "family": "bin_world",
+     "size": 1633,
+     "md5": "c83bfe306a1169095b42cf2735d23d83"
+    },
+    {
+     "file": "xx_charger.bin",
+     "family": "bin_world",
+     "size": 1334,
+     "md5": "76d3560a3be1dd67e6b020676256bf10"
+    },
+    {
+     "file": "xx_dactyl.bin",
+     "family": "bin_world",
+     "size": 491,
+     "md5": "b09cdfefa95afcb39d9c151417996ff9"
+    },
+    {
+     "file": "xx_effects.bin",
+     "family": "bin_world",
+     "size": 1845,
+     "md5": "bb76affa9d9fd0f78add299d327579c1"
+    },
+    {
+     "file": "xx_efx.bin",
+     "family": "bin_world",
+     "size": 25092,
+     "md5": "8df727e85058eb06a64c56e6ce640a20"
+    },
+    {
+     "file": "xx_fish.bin",
+     "family": "bin_world",
+     "size": 181,
+     "md5": "546c93f22fed586206782f67fd345345"
+    },
+    {
+     "file": "xx_formations.bin",
+     "family": "bin_world",
+     "size": 2816,
+     "md5": "66b8485f2f7ca815bdd3187307a77c66"
+    },
+    {
+     "file": "xx_giants_logo_3d.bin",
+     "family": "bin_world",
+     "size": 317,
+     "md5": "cda63779aa4545aa8f0fd995094cf62a"
+    },
+    {
+     "file": "xx_giantwalls.bin",
+     "family": "bin_world",
+     "size": 4267,
+     "md5": "e674d6f26fd5331c5e4c493c1a252aac"
+    },
+    {
+     "file": "xx_guard_army_barracks.bin",
+     "family": "bin_world",
+     "size": 842,
+     "md5": "62ec47454756fe668e7a3280169e7fbb"
+    },
+    {
+     "file": "xx_guard_barracks.bin",
+     "family": "bin_world",
+     "size": 3630,
+     "md5": "7d57d9bf55afb3ef01c9a1c312c44263"
+    },
+    {
+     "file": "xx_guard_buildings.bin",
+     "family": "bin_world",
+     "size": 7172,
+     "md5": "4d0ac798afe79027b164ad6568bcd146"
+    },
+    {
+     "file": "xx_guard_drawbridge.bin",
+     "family": "bin_world",
+     "size": 677,
+     "md5": "13f1d51f4c2184a86a0ddb2dbcc330fc"
+    },
+    {
+     "file": "xx_guard_log_launcher.bin",
+     "family": "bin_world",
+     "size": 928,
+     "md5": "75cb3672fb3a0ef2d3c42b877bbd82ab"
+    },
+    {
+     "file": "xx_guard_prison.bin",
+     "family": "bin_world",
+     "size": 688,
+     "md5": "6156ce2f8efc3281e4e09cfd250145f8"
+    },
+    {
+     "file": "xx_guard_reaper_tower.bin",
+     "family": "bin_world",
+     "size": 478,
+     "md5": "9866ee5db00080c09927d315585c9418"
+    },
+    {
+     "file": "xx_guard_turrets.bin",
+     "family": "bin_world",
+     "size": 1255,
+     "md5": "13c8b7e38994132534ad912cea06c1fa"
+    },
+    {
+     "file": "xx_intro.bin",
+     "family": "bin_world",
+     "size": 391,
+     "md5": "a67bd9d0b7de2781aca600d1648d3c88"
+    },
+    {
+     "file": "xx_jetski.bin",
+     "family": "bin_world",
+     "size": 2431,
+     "md5": "9bbc31f543031d3075aca27de451810a"
+    },
+    {
+     "file": "xx_jetski_rpm.bin",
+     "family": "bin_world",
+     "size": 688,
+     "md5": "afc2145804980e1af861615abaad1f90"
+    },
+    {
+     "file": "xx_kab_stuff.bin",
+     "family": "bin_world",
+     "size": 1966,
+     "md5": "7dd4a8c13af31e939b80ba4d31794d5c"
+    },
+    {
+     "file": "xx_kabuto_flick.bin",
+     "family": "bin_world",
+     "size": 644,
+     "md5": "fc19f4d46d3aac50893b599c91ec0e62"
+    },
+    {
+     "file": "xx_kabutolev1.bin",
+     "family": "bin_world",
+     "size": 9906,
+     "md5": "c6cccbc21be220cad80f2e1ad2dd2dd7"
+    },
+    {
+     "file": "xx_kstory5.bin",
+     "family": "bin_world",
+     "size": 693,
+     "md5": "9cec8f773ed222a9efbdebb8985b24d8"
+    },
+    {
+     "file": "xx_lander.bin",
+     "family": "bin_world",
+     "size": 666,
+     "md5": "3149b533bb9a614fcbc1fa8104fa91ab"
+    },
+    {
+     "file": "xx_markers.bin",
+     "family": "bin_world",
+     "size": 357,
+     "md5": "58b7b7262270b2b0b45085f467976553"
+    },
+    {
+     "file": "xx_mecc_base.bin",
+     "family": "bin_world",
+     "size": 20445,
+     "md5": "744575c153cdaaad88caa5c531cd27bb"
+    },
+    {
+     "file": "xx_mecc_flick.bin",
+     "family": "bin_world",
+     "size": 5961,
+     "md5": "27ef0f669e816e8e21503ee881465d4c"
+    },
+    {
+     "file": "xx_mecclev1.bin",
+     "family": "bin_world",
+     "size": 26492,
+     "md5": "9f52cbd10a187f4cb58ec951bceeef65"
+    },
+    {
+     "file": "xx_mecclev1_nothrust.bin",
+     "family": "bin_world",
+     "size": 11652,
+     "md5": "48ec56a03b912cc476013c5a66f9b45f"
+    },
+    {
+     "file": "xx_menus.bin",
+     "family": "bin_world",
+     "size": 689,
+     "md5": "1211fcd52947f9665e4ab834035ed99e"
+    },
+    {
+     "file": "xx_music_temp.bin",
+     "family": "bin_world",
+     "size": 592,
+     "md5": "209d2671102c340aa0e038cb380a8045"
+    },
+    {
+     "file": "xx_offspring.bin",
+     "family": "bin_world",
+     "size": 5434,
+     "md5": "53f5d3e962b76bde7e0fc5a45177d349"
+    },
+    {
+     "file": "xx_patch_screens.bin",
+     "family": "bin_world",
+     "size": 239,
+     "md5": "2d678727deb20f0189c8a94622e66038"
+    },
+    {
+     "file": "xx_permanentaliens.bin",
+     "family": "bin_world",
+     "size": 5393,
+     "md5": "ad6f766fb07a16392339ab977c50745b"
+    },
+    {
+     "file": "xx_pier.bin",
+     "family": "bin_world",
+     "size": 1082,
+     "md5": "9ea53a8327a845de1fd9686e26c8e541"
+    },
+    {
+     "file": "xx_plants.bin",
+     "family": "bin_world",
+     "size": 2364,
+     "md5": "e7b5498b3a4e0bc8688445a13137d900"
+    },
+    {
+     "file": "xx_ptree.bin",
+     "family": "bin_world",
+     "size": 1809,
+     "md5": "8ea00caf918899a0a3534fb742c2e133"
+    },
+    {
+     "file": "xx_raik.bin",
+     "family": "bin_world",
+     "size": 5144,
+     "md5": "45244abe2ce1406cdb2f3b5546a5b7d3"
+    },
+    {
+     "file": "xx_reaper_base.bin",
+     "family": "bin_world",
+     "size": 20541,
+     "md5": "fcfee42ea2a7bffb6711e8f2f8ad5572"
+    },
+    {
+     "file": "xx_reaper_flick.bin",
+     "family": "bin_world",
+     "size": 1604,
+     "md5": "d517a3ff1861b2dff6015b79b52eb927"
+    },
+    {
+     "file": "xx_reaper_ship.bin",
+     "family": "bin_world",
+     "size": 507,
+     "md5": "d20bcad1727d225916067157b054dac3"
+    },
+    {
+     "file": "xx_reaper_spells.bin",
+     "family": "bin_world",
+     "size": 457,
+     "md5": "5e3ed169949be5161e99a5a1a53fb00d"
+    },
+    {
+     "file": "xx_reaperlev1.bin",
+     "family": "bin_world",
+     "size": 24390,
+     "md5": "d92ee4fc6bd124620602d6068a020eb5"
+    },
+    {
+     "file": "xx_reaperman.bin",
+     "family": "bin_world",
+     "size": 12134,
+     "md5": "20453186b033013f5a38b6e7d7ea73b7"
+    },
+    {
+     "file": "xx_ripper.bin",
+     "family": "bin_world",
+     "size": 4278,
+     "md5": "77bd98bfc5f4a9c94685bcf44520527a"
+    },
+    {
+     "file": "xx_rocks.bin",
+     "family": "bin_world",
+     "size": 1043,
+     "md5": "77f177e1eb163353694d9e9344ff1ff3"
+    },
+    {
+     "file": "xx_rpman_weapons.bin",
+     "family": "bin_world",
+     "size": 9165,
+     "md5": "1485a8f302ea9bf8ca3c78c80d9ac648"
+    },
+    {
+     "file": "xx_rpqueen.bin",
+     "family": "bin_world",
+     "size": 4609,
+     "md5": "745484729430d7d7034f13e79c098a35"
+    },
+    {
+     "file": "xx_rpqueen_flick.bin",
+     "family": "bin_world",
+     "size": 478,
+     "md5": "4a3611b59c7ad960bf0e02dd6aee5c55"
+    },
+    {
+     "file": "xx_rstory3.bin",
+     "family": "bin_world",
+     "size": 684,
+     "md5": "8ce96f516e521e85ca7b06d2d22fb151"
+    },
+    {
+     "file": "xx_rstory4.bin",
+     "family": "bin_world",
+     "size": 181,
+     "md5": "01d08f49dccad11bb93c4c56107c946a"
+    },
+    {
+     "file": "xx_rstory5.bin",
+     "family": "bin_world",
+     "size": 850,
+     "md5": "9d15aade34c917de41e0dd6e4542c2c6"
+    },
+    {
+     "file": "xx_seamonster.bin",
+     "family": "bin_world",
+     "size": 1323,
+     "md5": "aa5f3048b478284ac9003ad439566c8a"
+    },
+    {
+     "file": "xx_shadows.bin",
+     "family": "bin_world",
+     "size": 521,
+     "md5": "80b4b2f446c3b8c1391d4774ce078d83"
+    },
+    {
+     "file": "xx_sm_book.bin",
+     "family": "bin_world",
+     "size": 211,
+     "md5": "3ed5106e12170af08f30dc4755e86357"
+    },
+    {
+     "file": "xx_sm_evil.bin",
+     "family": "bin_world",
+     "size": 3209,
+     "md5": "48ba798f926690061f8937acb78d00cf"
+    },
+    {
+     "file": "xx_smartie.bin",
+     "family": "bin_world",
+     "size": 3672,
+     "md5": "2799a3e833f6e765c88c78e249dc8d49"
+    },
+    {
+     "file": "xx_smartie_stuff.bin",
+     "family": "bin_world",
+     "size": 11802,
+     "md5": "aa51b328900fa2a9e9257089451118a9"
+    },
+    {
+     "file": "xx_smartie_stuff_lite.bin",
+     "family": "bin_world",
+     "size": 124,
+     "md5": "d66aeaa24e24ffede817d15ce3deb608"
+    },
+    {
+     "file": "xx_smartie_stuff_multi.bin",
+     "family": "bin_world",
+     "size": 124,
+     "md5": "d66aeaa24e24ffede817d15ce3deb608"
+    },
+    {
+     "file": "xx_smborjoyzee.bin",
+     "family": "bin_world",
+     "size": 1149,
+     "md5": "faf72fec44d6478d21c3f9cded4b6e54"
+    },
+    {
+     "file": "xx_smborjoyzee_flick.bin",
+     "family": "bin_world",
+     "size": 545,
+     "md5": "d472b5ad4180a6184868e9ed82827bea"
+    },
+    {
+     "file": "xx_smdoomed.bin",
+     "family": "bin_world",
+     "size": 403,
+     "md5": "2eaa7f2978fc0eaf5d41066544b260f2"
+    },
+    {
+     "file": "xx_smfemale.bin",
+     "family": "bin_world",
+     "size": 787,
+     "md5": "6e30bd0a63b45d005e1b582d4d44485b"
+    },
+    {
+     "file": "xx_smtimmy.bin",
+     "family": "bin_world",
+     "size": 963,
+     "md5": "22d8facba5acc830ddf0934af741ba5a"
+    },
+    {
+     "file": "xx_smtimmy_flick.bin",
+     "family": "bin_world",
+     "size": 355,
+     "md5": "b35ef993b1416573560f656d848ee4b8"
+    },
+    {
+     "file": "xx_smyan.bin",
+     "family": "bin_world",
+     "size": 1243,
+     "md5": "9cdffd1719094fa41e58673aae824b6e"
+    },
+    {
+     "file": "xx_smyan_flick.bin",
+     "family": "bin_world",
+     "size": 500,
+     "md5": "add4e212ae6c27dc509715de998133dc"
+    },
+    {
+     "file": "xx_smyan_pagoda.bin",
+     "family": "bin_world",
+     "size": 1474,
+     "md5": "a1908061ac25fd1e3926ae48170d8731"
+    },
+    {
+     "file": "xx_snow_stuff.bin",
+     "family": "bin_world",
+     "size": 1231,
+     "md5": "39fc499a1ca10fd75932594c34038dec"
+    },
+    {
+     "file": "xx_snowtree.bin",
+     "family": "bin_world",
+     "size": 231,
+     "md5": "f2b0a7c3e17c09c25169913ec5eecb30"
+    },
+    {
+     "file": "xx_sonak.bin",
+     "family": "bin_world",
+     "size": 2819,
+     "md5": "ff7b5e4039873c56ac389e47394236e8"
+    },
+    {
+     "file": "xx_story1.bin",
+     "family": "bin_world",
+     "size": 1803,
+     "md5": "e7362c42c1a9467d53f53f6895f49f5f"
+    },
+    {
+     "file": "xx_story4.bin",
+     "family": "bin_world",
+     "size": 1034,
+     "md5": "cfcadd5b63e5e8f7a5d5ffce11b203e4"
+    },
+    {
+     "file": "xx_theend.bin",
+     "family": "bin_world",
+     "size": 201,
+     "md5": "1618c7b863724ef1e1e4948c9dcc58cd"
+    },
+    {
+     "file": "xx_toby.bin",
+     "family": "bin_world",
+     "size": 202,
+     "md5": "330576a3cdcc7c45a2260bb55eb42538"
+    },
+    {
+     "file": "xx_tools.bin",
+     "family": "bin_world",
+     "size": 431,
+     "md5": "6473df80eee15d0a7889fe1501db249a"
+    },
+    {
+     "file": "xx_verm.bin",
+     "family": "bin_world",
+     "size": 1791,
+     "md5": "f0dbd7d426a71f07233bc59350a6984e"
+    },
+    {
+     "file": "xx_vimp.bin",
+     "family": "bin_world",
+     "size": 2735,
+     "md5": "3b6911929679428eeba0136a134b1d60"
+    },
+    {
+     "file": "xx_water_rings.bin",
+     "family": "bin_world",
+     "size": 311,
+     "md5": "41c435166aa9da56193d4487ef473954"
+    }
+   ]
+  }
+ },
+ "files": []
+}

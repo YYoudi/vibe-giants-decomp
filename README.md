@@ -14,7 +14,7 @@ No game code or assets are recreated here from scratch: everything is derived by
 |---|---|
 | `decompiled/gog144_full/` | Full decompiled corpus of GOG 1.449 (`all_decompiled.c.gz` + `index.json` + `stats.txt`) |
 | `decompiled/gog144_modules/` | Same corpus split into 76 per-module `.c` files (`_INDEX.md` to navigate) |
-| `decompiled/v10_to_v149_map.json` | Cross-version address mapping (vanilla 1.0 ↔ 1.449) |
+| `decompiled/v10_v149_bytemap.csv` (+ `_propagated.csv`, `_stringmatch.csv`) | Cross-version address mapping (vanilla 1.0 ↔ 1.449) |
 | `ps2_symbols/` | 4 769 named functions from the unstripped PS2 build (SLUS_201.78) used as naming ground truth, plus per-wave naming ledgers (`llm_waveNN.csv`: address, name, evidence note) |
 | `scripts/` | The tooling: `apply_names_pyghidra.py`, `export_decomp_pyghidra.py`, `build_modules.py`, `dump_callgraph_pyghidra.py`, `cross_version_map.py`, x64dbg MCP bridge (`xdbg_call.py`), … |
 | `RuntimeLab/` | Runtime lab: boot recipes, filtered logs (no game binaries) |
