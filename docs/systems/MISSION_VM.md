@@ -430,7 +430,8 @@ MAJ 4 ; tout observed (decomp).
 ### Le modèle d'exécution (l'algorithme exact du portage)
 
 ```
-par frame (FLK_FlickProcess(flick), dt dans flick+0xAC, temps écoulé flick+0x2C) :
+par frame (FLK_FlickProcess(flick), dt dans flick+0xAC, temps écoulé à
+l'octet flick+0xB0 — dword index [0x2C], attention à la notation) :
     curseur = flick+0x22 (persiste entre les frames)
     boucle :
         op = *curseur
@@ -448,7 +449,9 @@ par frame (FLK_FlickProcess(flick), dt dans flick+0xAC, temps écoulé flick+0x2
 - **Ops 9/10** : variantes avec condition sur un acteur (hold si
   `idx_acteur < p` etc. — mêmes labels caseD_5).
 - Le dt `flick+0xAC` (commun acteurs+texte, cf. §8) avance le temps
-  `flick+0x2c` comparé par les WAIT.
+  l'horloge (octet flick+0xB0, dword [0x2C]) comparée par les WAIT —
+  avancée par `hud_icon_timed(flick, dt_global)` appelée au caseD_5 de
+  chaque frame (voir MAJ 6).
 
 ### Ops 1-10 — payloads exactes (complément MAJ 4)
 
@@ -470,3 +473,39 @@ ANM sélectionnée par **op 4** sur l'objet director (`flick+0x2d` = mask de
 l'anim, `flick+0x2e` = director). Dans le portage : `camera_anm =
 anim_lookup(director_object, cam_node_name, cam_track_name)` puis sample la
 track par le temps flick — exactement le même sampler que les acteurs ANM.
+
+## MISE À JOUR 6 — 2026-10-15 : l'HORLOGE flick — `hud_icon_timed @ 0x004457D0` (réponse Q8)
+
+La pièce manquante du timing, lue intégralement (decomp `_unmapped_0044.c`
+5549-5660) :
+
+**Appel** : une fois par frame, depuis le caseD_5 de `FLK_FlickProcess`
+(la sortie de passe d'ops) : `hud_icon_timed(flick, uVar7)` où
+**uVar7 = DAT_006328E0** — le dt GLOBAL du jeu (la même source que
+`FRateGetSecsframe` ; en gamegauge il vaut 1/60 forcé).
+
+```c
+if (flick+0xB4 == 0) return 1;              // pas d'objet horloge-HUD → rien
+if (flick+0xA8 != 0) { time = 0; dt = 0; }  // reset au (re)démarrage
+// [modulation optionnelle du dt par un timer global si DAT_0059cdb0]
+time(+0xB0) += dt;
+flick+0xAC = dt;                            // ← le dt stocké lu par texte/acteurs
+count = AddHud(hud+0xC, time);              // ← l'horloge HUD alimentée CHAQUE FRAME
+flick+0xA8 (done) = (count >= *(hud+0x14)); // FINI = horloge HUD PLEINE
+if (message && flag && done && ...) {       // boucle d'attirance (vue run5) :
+    time = ANM_SecsFromTicks(hud, count) - 1.0;  // repart ~1 s avant la fin
+    dt = 0; done = 0;
+}
+```
+
+**Conséquences pour le portage** :
+1. L'horloge vit à l'**octet +0xB0** (dword index [0x2C] — l'erreur de notation
+   "+0x2C" des MAJ 5 est corrigée) et avance du **dt global**, pas d'un dt
+   propre au flick ; +0xAC = copie du dt du frame pour texte/acteurs.
+2. **La fin d'un flick = l'horloge HUD pleine** (`count >= hud+0x14`) — les ops
+   9/10 (hold par icônes) et la fin de flick partagent le MÊME compteur
+   d'icônes : toute la timeline est pilotée par ce seul cadran. La capacité
+   `hud+0x14` est runtime — c'est le knob de calibration de l'oracle (n°13).
+3. Le "wrap" observé au run5 (retour 0x42 → 0x0D) se boucle localement ICI
+   (time = fin − 1 s) tant que le message global est actif — et le slot "end"
+   (§10) coupe la boucle au niveau monde.
