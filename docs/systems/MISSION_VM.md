@@ -362,3 +362,62 @@ runtime si la parité l'exige — BP conditionnel sur *puVar12==0x29 dans le dis
 - Les floats payload sont stockés tels quels (f32 little-endian) ; les noms
   d'acteurs/fichiers = offsets dans le string pool relatif à `flick+0x21*4`
   (iVar4 = base noms — voir flick_file_load).
+
+## MISE À JOUR 4 — 2026-10-15 : record ACTEUR FLK (0x874) et binding SKN/ANM (M6)
+
+Source : `FLK_ActorAdd @ 0x00443A90` (decomp). C'est le pont entre les noms du
+string pool et les assets : les acteurs de flick sont des objets skinnés
+(GBS+SKN+ANM) créés depuis un **director** (table des directors du header FLK,
+records de 0xC octets, `flick[0x27]+idx*0xC`).
+
+### Record acteur (stride 0x874, base `flick[0x28]`)
+
+| offset | contenu (observed) |
+|--------|--------------------|
+| +0x000 | ptr director/template (le record 0xC du header FLK) |
+| +0x004 | ptr nom (string pool — le nom affiché/référencé par les ops) |
+| +0x008 | flag enabled (op 0x0B=1 / 0x0C=0) |
+| +0x00C | **OBJECT embarqué** (`objobj_type_lookup(type, act+0xC)`) — position, source son 3D (op 0x0D → act+0xC), physique |
+| +0x014 | type id (param_5 de l'op ; -1 → type 0 + scale défaut 1.0 à +0x134=0x3f800000... champ [0x34]) |
+| +0x0A8 | matrice GEO (identité au spawn) |
+| +0x0C4 | **bloc template copié du director : 0x119 dwords (0x464 octets)** — contient notamment : |
+| +0x1C4..+0x1EC | **10 slots de ptrs-noms (SKN/ANM par LOD)** : chaque slot non-nul → `*slot+0x6c` = nom → `editor_anim_skin(director, name, nom, 0)` → résultat stocké dans la struct ANIMATE |
+| +0x21C | flag "déjà initialisé" (évite la double création) |
+| +0x2EC | ptr record ombre `"Flick_shadow"` (op 0x22) |
+| +0x7D4 | flag ombre active |
+| +0x820-0x834 | clés d'offset (op 0x20) → `FLK_ActorOffsetEval` |
+| +0x83C-0x844 | état de fade d'ombre (op 0x23) |
+| +0x848-0x85C | paramètres d'ombre (op 0x22 : p3..p8) |
+| +0x860 | trio scale lerp {courant, cible, rate} (op 0x2A) |
+
+### Struct ANIMATE (`main_animate_004050d0(director)` → act+0xC6)
+
+- `+0x2C..+0x50` : **10 slots de skins résolus** (résultats `editor_anim_skin`,
+  un par entrée non-nulle du bloc template +0x1C4..0x1EC).
+- `+0x54` : vertex buffer de skinning (`map_chunk_alloc(animate[0x1D8] << 2)` —
+  0x1D8 = nombre de verts × 4 octets).
+- Rendu : `animate_core_caller @ 0x0042E460` (RENDERER_GGDX7 MAJ 3 — LOD 9
+  slots par distance + token-stream u16).
+
+### Chaîne de création d'un acteur (pour le portage M6)
+
+1. **Op 1 (545×, ~1/file) = DECLARE DIRECTOR** : payload {idx_director,
+   nom} — `bistream_tell_user(0,0, base+nom)` résout le nom dans le **monde
+   .bin chargé** (le director = une définition d'objet du monde !) et range le
+   template dans la table des directors (`flick[0x27]+idx*0xC` : {ptr, ?, used}
+   — doublon → erreur `"Error: Duplicate director already..."`).
+2. **Op 2 (3602×) = ADD ACTOR** : payload {idx_director p0, nom p1,
+   idx_slot_acteur p2, type p3} → `FLK_ActorAdd(flick, p0, base+p1, p2, p3)` :
+   lit le template du director, crée le record 0x874, copie le bloc template
+   (les 10 noms de skins/ANM par LOD), résout les skins, alloue le VB de
+   skinning, `ObjectSetAnim(act+0xC, 0, 0x20, 1, 0, 0)` (anim par défaut),
+   matrice identité.
+2. Par frame : `FLK_FlickProcess` avance le curseur (ops position/ombre/son/
+   scale...), le dt flick à `flick+0xAC` anime les acteurs, la caméra vient du
+   node (CINEMATIC_PIPELINE §4), puis `FLK_FlickRender` soumet.
+3. Fin de flick : `main_flick_00443740` charge le flick suivant de la chaîne
+   (la playlist §7 de CINEMATIC_PIPELINE).
+
+**Pour le portage Rust** : votre `giants_skn_anm` (en cours) se branche ICI —
+le nom du slot template + le nom d'acteur = la clé de lookup dans les SKN/ANM
+des gzp ; le résultat = mesh GBS skinné par le token-stream documenté.
