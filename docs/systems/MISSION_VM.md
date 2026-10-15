@@ -586,3 +586,42 @@ actif de la table flick+0xA0 :
 + matrice composée {GEO ∘ offset(0x20) ∘ node ANM director} + scale op 0x2A
 (+0x860), anim propre GELÉE (n°16), soumis via `animate_core_caller` dans
 des tiles de viewport. Le billboard basis (D-3) sert aux sprites/quads attachés.
+
+## MISE À JOUR 8 — 2026-10-15 : FOV/aspect caméra + MYSTÈRE DES BLOCS 0x310 RÉSOLU (points d'attache HUD/fx)
+
+**1. Camera FOV/aspect (`render_get_fov/aspect @ 0x515D90/0x515DA0`)** :
+lectures directes des globals +0xB8/+0xBC de la struct render (0x57C0B8/BC).
+Écrites par le setup de projection :
+- fov en **degrés** (conversion ×0.008726646 = π/360) → sin/cos stockés
+  (_DAT_005DCF4C et suivants = la matrice projection) ;
+- aspect = param, ou si 0 : `DAT_005DCF0C / DAT_005DCF10` (résolution écran) ;
+- le ratio est aussi recalculé au viewport change : `aspect = (2/(right-left)) / (2/(top-bottom))`.
+Pour la parité : fov de la cinématique = celui posé par le setup monde/caméra
+du node camera01 (à dumper runtime si parité pixel exacte voulue).
+
+**2. LES BLOCS 0x310 = POINTS D'ATTACHE HUD/FX** (`hud_icon_for_object @ 0x00443D60`,
+op 0x27) — le mystère ouvert depuis la MAJ 3 est résolu :
+
+Signature op 0x27 : `(flick, id=block_idx, name1, p, slot_idx, name2)` →
+`hud_icon_for_object(flick, id, base+name1, p, slot_idx, base+name2)` :
+- **block_idx × 0x310 + flick+0xA4** = un objet-attach (struct 0x310) — il y en
+  a `count_blocks` par flick ;
+- **slot_idx × 0x874 + flick+0xA0** = l'acteur PORTEUR ;
+- `animGetIndexByName(director_obj, actor_name, name2)` : name2 = un **nom de
+  node/anim de l'acteur** (erreur "Can't find fx actor" sinon). Les strings du
+  pool de T_square_2 (`ref_lhand01`, `ref_staff`, `ref_rhand`, `ref_handle`)
+  sont ces noms de nodes d'attache (main gauche, arme…) ;
+- remplit le bloc : +0x308 = anim idx, +0x304 = acteur porteur, +0x30C = param,
+  type 0, scale +0xC4 = 1.0 ;
+- **matrice d'attache** : `wredit_matrix_recurse(acteur)` puis composition avec
+  `ANM_NodeGetMat(anim, time, node)` = position du bloc SUIT le node du
+  squelette animé de l'acteur (ex. l'arme dans la main qui bouge) ;
+- `object_set_location(block, +0x2A4, +0x2B4, +0x2C4)`.
+
+Layout struct 0x310 (partiel observed) : +0xC4 scale, +0x294 matrice 3×4,
++0x2A4/B4/C4 position, +0x304 acteur, +0x308 anim idx, +0x30C param.
+
+**Ça ferme l'open item "rôle des blocs 0x310"** (CINEMATIC_PIPELINE §10/Q9) :
+ce sont les ancres d'icônes/effets attachés à des nodes d'acteurs. En story4
+(count=0 pour T_square_2) les ops 0x27 visent des blocs d'AUTRES flk (les
+flk de gameplay utilisent ces attaches pour les marqueurs d'objets).
