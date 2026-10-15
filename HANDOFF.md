@@ -51,14 +51,26 @@
 
 ## 3. Known risks / unknowns
 
-- Collision grid cell scale + full cell-flag map (COLLISION.md open items).
-- ~~FLK per-op payload details (31 ops — decode against the trace harness).~~
-  RESOLVED 2026-10-15: per-op payloads decoded (MISSION_VM.md MAJ 3-5, ops 30-53 exact;
-  subtitle/sound/camera verified frame-exact in giants-rs).
+> Re-verified 2026-10-16 by the architect (measured from giants-rs gates,
+> not from prose). Read [docs/TRUST.md](docs/TRUST.md) first: most corpus
+> names are LLM-inferred, bodies are raw Ghidra without applied structs.
+
+- Collision grid cell scale + full cell-flag map (docs/systems/COLLISION.md open items).
+- ~~FLK per-op payload details.~~ RESOLVED 2026-10-15: 41 ops, per-op payloads
+  decoded (docs/systems/MISSION_VM.md); the giants-rs VM plays the 53-flick
+  playlist to a clean exit.
 - Savegame structure (registry + `savegame_%d` files) — not yet decoded.
-- The 11 world `.bin` files hitting the op-41 size variant (bin_objects.md).
+- World `.bin` opcode walk: giants-rs `validate-formats` (measured
+  2026-10-16) reports 11 known op-41 desyncs (tolerated by name) PLUS 21
+  DESYNC failures on `w_*.bin` files outside that list (op-70 / section-6
+  regression) — giants-rs TASK-001. The old "11 files" framing understated it.
 - `world.gb2` component vertex layouts (prologue known, bodies are renderer-side).
-- Exact tick rate + RNG seeding (SIM_LOOP.md — confirm via `RUNTIME_TRACES.md` harness).
+- Exact tick rate + RNG seeding (docs/systems/SIM_LOOP.md — confirm via the
+  `docs/RUNTIME_TRACES.md` harness). Still open.
+- OBJECT layout: `docs/formats/OBJECT_LAYOUT.md` (135 fields: 4 observed /
+  27 derived PS2+PC / 104 inferred PS2). No PC offset-by-offset verified
+  layout exists yet; Ghidra structs live in `giants_types.h` and are
+  applied function by function (giants-rs TASKS TASK-017).
 
 ## 4. The oracle
 

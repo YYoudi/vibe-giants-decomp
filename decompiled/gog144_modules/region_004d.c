@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_004d
- * 54 functions (54 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_004d.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_004d (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 54 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== EnemyIsInvalid__FP6OBJECTT0 @ 0x004D1790 ===== */
 /* PS2 candidate: EnemyIsInvalid__FP6OBJECTT0 (conf 0.631) */

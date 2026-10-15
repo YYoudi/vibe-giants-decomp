@@ -1,133 +1,111 @@
-# CLAUDE.md
+# AGENTS.md — manuel des workers GiantsRE
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Repo de reverse engineering de **Giants: Citizen Kabuto** (GOG 1.4.0 build
+1.449, PC x86 32-bit). Tu es un worker d'exécution coordonné par
+l'architecte (même responsable que `G:\VibeRE\giants-rs`). La file de
+tâches unique des deux repos est `G:\VibeRE\giants-rs\TASKS.md` : les
+tâches marquées « repo : GiantsRE » sont les tiennes.
 
-# GIANTS: CITIZEN KABUTO — Reverse Engineering (GOG 1.449 PC, x86 32-bit)
+**LIRE D'ABORD [docs/TRUST.md](docs/TRUST.md).** Le corpus est exporté à
+100 % (2 807 fonctions), mais ~85 % des noms sont des inférences LLM —
+« 100 % nommé » est une couverture, pas une sémantique. Ne crois jamais
+un nom (surtout `_cNN`) sans lire le corps décompilé.
 
-> **LIRE D'ABORD [docs/TRUST.md](docs/TRUST.md)** : le « 100 % nommé »
-> ci-dessous est une couverture, pas une sémantique — ~85 % des noms sont
-> des inférences LLM. Tout worker suit la boucle de
-> `G:\VibeRE\giants-rs\TASKS.md` (tâches GiantsRE incluses) et ne committe
-> que sur gates vertes.
+## Session type (dans l'ordre)
 
-## CIBLE (Ground Truth)
+1. `git pull --rebase` dans ce repo (et dans `giants-rs` si la tâche y
+   touche). Ne jamais écrire pendant la session d'un autre agent sans
+   pull préalable ; commit + push à la fin de chaque session.
+2. Lire `G:\VibeRE\giants-rs\TASKS.md`, prendre la première tâche
+   GiantsRE `TODO` dont les dépendances sont `DONE`.
+3. Lire exactement les fichiers nommés dans CONTEXTE. Fichier manquant =
+   `BLOCKED`, pas une devinette.
+4. Travailler selon la MÉTHODE ci-dessous. Toute conclusion distingue
+   **observed / derived / inferred** et cite sa source (Evidence ID REA,
+   run RuntimeLab horodaté, ou fichier:ligne du corpus).
+5. DoD de la tâche atteint → statut `DONE (commit <hash>, <date>)` dans
+   TASKS.md, commit (message en anglais, concis, sans trailer IA), push.
+   Sinon `BLOCKED: <question précise>` + question dans
+   `G:\VibeRE\giants-rs\QUESTIONS_FOR_DECOMP.md`, tâche suivante.
+6. Réponses aux questions du moteur : dans
+   `G:\VibeRE\giants-rs\QUESTIONS_FOR_DECOMP.md`, au format des réponses
+   existantes (citations vérifiables, jamais de prose non sourcée).
 
-- **Binaire de référence : GOG 1.4.0 (build 1.449)** — `G:\Games\Giants\Giants.exe` (1 630 208 octets, daté
-  déc 2008). Image base `0x400000`. **Décompilé à 100 % et nommé à 100 %** (2026-10-14) : 2 807 fonctions
-  non-thunk, `done=2807 failed=0 named=2807` — voir `decompiled/gog144_full/stats.txt`, corpus complet dans
-  `decompiled/gog144_full/all_decompiled.c(.gz)` + modules `decompiled/gog144_modules/`.
-- **Projet Ghidra de référence : `ghidra_projects_gog144/`** (programme `Giants.exe`) — tous les renames validés
-  y sont appliqués ; c'est LA source de vérité des noms. Mapping v1.0↔1.449 : `decompiled/v10_v149_bytemap.csv` +
-  `decompiled/v10_v149_propagated.csv` + `decompiled/v10_v149_stringmatch.csv` (générés par `scripts/cross_version_map.py`).
-- **Référence secondaire : vanilla v1.0 retail** — `GameFiles-VanillaV1/Giants.exe` (PE32, 1 634 304 octets,
-  30 nov 2000, MD5 `330c6a9a8ab0fa4b0173d925e1d5ec27`, entry `0x547358`). Snapshot bit-exact conservé pour les
-  comparaisons inter-versions (REA `compare_functions`/`find_changed_behavior`) et toute éventuelle validation
-  bit-à-bit de recomp — ne plus s'y calquer pour l'analyse courante.
-- ⚠️ **Fichiers contaminés** dans `GameFiles-VanillaV1/` (modifiés lors de sessions précédentes — NE PAS utiliser
-  comme ground truth) : `Giants_nocd.exe`, `gg_dx7r.dll`, `libgcc_s_dw2-1.dll`, `libstdc++-6.dll`,
-  `libwinpthread-1.dll`, `vfsdump_logo512.tga` (dates 2025 = modifiés ; dates 2000 = propres).
-- Renderers DX7 propres disponibles : `RESSOURCES_FOR_AI/Giants Mecc Demo/gg_dx7r.dll` (jan 2001) et
-  `Giants Reaper Demo/gg_dx7r.dll` (fév 2001). Interface renderer : `GDVSysCreate` / `GFXGetCapabilities` / `UpCallsLoad`.
+## Cible (ground truth)
 
-## OUTIL PRINCIPAL : x64dbg via MCP (observation runtime)
+- **Référence : GOG 1.4.0 (build 1.449)** — `G:\Games\Giants\Giants.exe`
+  (1 630 208 octets, déc 2008). **INTOUCHABLE** : on y lit, on y exécute
+  le harnais, on n'y écrit jamais (le jeu écrit seul `fps.txt`/saves).
+- Corpus : `decompiled/gog144_full/` (export complet + stats) et
+  `decompiled/gog144_modules/` (76 fichiers ; les `region_00XX.c` sont
+  des **bandes d'adresses**, pas des sources retrouvées — en-têtes
+  neutres depuis le 2026-10-16).
+- Projet Ghidra de référence : `ghidra_projects_gog144/` (programme
+  `Giants.exe`) — source de vérité des renames validés. Structs :
+  `giants_types.h`, application fonction par fonction
+  (`docs/formats/OBJECT_LAYOUT.md` donne la provenance par champ).
+- Symboles PS2 : `ps2_symbols/` (4 769 noms du build PS2 SLUS_201.78) —
+  l'ancre de nommage. `python ps2_symbols/lookup.py <motif>`.
+- Référence secondaire : `GameFiles-VanillaV1/` (snapshot bit-exact v1.0,
+  **lecture seule**). Fichiers CONTAMINÉS (jamais ground truth) :
+  `Giants_nocd.exe`, `gg_dx7r.dll`, `libgcc_s_dw2-1.dll`,
+  `libstdc++-6.dll`, `libwinpthread-1.dll`, `vfsdump_logo512.tga`
+  (dates 2025 = modifiés ; dates 2000 = propres).
 
-**La mesure = OBSERVER LE VRAI JEU DANS LE DEBUGGER. On ne devine JAMAIS un comportement non observé.**
+## Outils
 
-1. **Lancer le debugger d'abord** : `G:\Tools\x64dbg\release\x32\x32dbg.exe` (x32dbg — le jeu est 32-bit).
-   Le plugin MCP démarre automatiquement : HTTP sur `http://localhost:9095/`, token Bearer dans
-   `G:\Tools\x64dbg\release\x32\mcp_config.json` (serveur MCP déjà enregistré dans Claude Code en scope *local* —
-   le token ne doit JAMAIS être commité, le repo est public).
-2. **Outils MCP** (`mcp__x64dbg__*` après rechargement de session) :
-   - `GetDebugState` — TOUJOURS l'appeler en premier (état, PID, adresse courante).
-   - `LoadBinary` — paramètre **`filePath`** (pas `path`). Charge l'exe et pause au breakpoint système.
-   - `ExecuteDebuggerCommand` — **escape hatch universel** : toute commande x64dbg
-     (`bp`, `bpx`, `bc`, `g`, `r`, `dump`, `disasm`, `SetBPX`, etc.).
-   - `SearchForStrings` — paramètre **`searchText`**. `EvalExpression`, `GetEventLog`, `AttachProcess`, `ListCommandsByCategory`.
-   - La cible doit être **PAUSED** pour lire mémoire/disassembler.
-3. **Fallback CLI** (marche même sans outils MCP dans la session) :
-   `python scripts/xdbg_call.py <ToolName> '<json-args>'` — lit token/port tout seul depuis `mcp_config.json`.
-   Utiliser des `/` dans les chemins JSON (bash mange les `\`).
-4. Debugger statique : Ghidra à `G:\Tools\ghidra_12.1.2_PUBLIC` (analyse batch/headless si besoin ; c'est la même
-   install que REA auto-détecte, voir section REA).
+- **x32dbg + MCP** (vérité runtime) : `G:\Tools\x64dbg\release\x32\x32dbg.exe`
+  (jeu 32-bit, UAC requis), HTTP :9095. Token dans
+  `G:\Tools\x64dbg\release\x32\mcp_config.json` — **jamais commité**
+  (repo public). Premier appel : `GetDebugState` ; chargement :
+  `LoadBinary` (paramètre `filePath`) ; cible PAUSED pour lire la
+  mémoire. Fallback CLI : `python scripts/xdbg_call.py <Tool> '<json>'`
+  (chemins JSON avec `/`). Harnais sans interaction :
+  `RuntimeLab/run_gauge.bat` (= `Giants.exe -gamegauge`, monde 3 imposé,
+  écrit `fps.txt`).
+- **REA** (`mcp__rea__*`, lecture statique + évidence) : `open_binary` →
+  `trace_feature` / `search_procedures` / `analyze_function` (Evidence
+  `ev_*` à citer) → `close_binary`. Pas de renames via REA sous Windows :
+  les renames passent par le bridge Ghidra ci-dessous.
+- **Ghidra** 12.1.2 : `G:\Tools\ghidra_12.1.2_PUBLIC`. MCP interactif :
+  `RuntimeLab/start_ghidra_mcp.bat` (127.0.0.1:8089, ouvre GOG144.gpr).
+  Boucle corpus : `scripts/apply_names_pyghidra.py` (CSV
+  `ps2_symbols/llm_waveNN.csv`, seuil 0.9) →
+  `scripts/export_decomp_pyghidra.py` → `scripts/build_modules.py`.
+- **Parseurs de référence** : `tools_spec/bin_formats.py` +
+  `tools_spec/flk_decode.py` (validés par les goldens giants-rs).
 
-## OUTIL REA — MCP `mcp__rea__*` (lecture statique + ledger d'évidence ; installé/validé 2026-10-12)
+## Méthode
 
-**REA = couche LECTURE/ÉVIDENCE statique sur Ghidra headless 12.1.2 + captures runtime contrôlées.**
-Skill : `reverse-engineer-anything` (doc : https://rea.tools/get-started/). Rien à lancer : outils MCP
-`mcp__rea__*` déjà connectés dans la session. `binary_session` = check d'état (doit répondre `{open:false, ...}` au repos).
+1. **Observer** le vrai jeu (breakpoints, harnais `-gamegauge`, ProcMon)
+   avant de conclure ; ne jamais deviner quel asset/flow/valeur est pris.
+2. **Nommer** depuis les ancres PS2 (string-anchor + call-graph), jamais
+   depuis la plausibilité du corps seul.
+3. **Réutiliser** `RESSOURCES_FOR_AI/` (repos communautaires, lecture
+   seule — pas de réécriture historique).
+4. Le code décompilé est de la **documentation** : on transpose des
+   constantes et des sémantiques vers giants-rs, on ne copie jamais le C.
+5. Oracle runtime = événementiel seulement (les breakpoints par-frame
+   s'effondrent sous le dédup) : toute mesure par-frame passe par le
+   harnais scripté et des dossiers `RuntimeLab/runs/<horodatage>/`.
 
-1. **Boucle statique PE** : `open_binary` (chemin absolu de l'exe, cible PAUSED pas requis — lecture fichier) →
-   `trace_feature` (ancre string → strings → xrefs → procédures conteneuses : cœur du matching PS2 wave-2),
-   `search_procedures` / `search_strings`, `list_procedures`, `analyze_function` (dossier complet avec Evidence),
-   `procedure_pseudo_code` / `procedure_assembly`, `xrefs`, `get_call_graph`, `batch_decompile`, `read_bytes`,
-   `inspect_native_data_type`. `close_binary` en fin d'investigation.
-2. **Évidence** : chaque opération produit un Evidence ID (`ev_*`). Citer les IDs dans les conclusions ; distinguer
-   observed / derived / inferred ; ne jamais présenter du statique comme de l'exécution observée.
-   `get_evidence_bundle` (résumé) et `export_evidence_bundle` (export complet vers un chemin) pour sauver/passer
-   une session — utile comme sauvegarde avant un crash.
-3. **Comparaisons inter-versions** (v1.0 vs GOG 1.449) : `compare_functions` (identity/pseudocode/calls/cfg…),
-   `compare_artifacts`, `find_changed_behavior` — différences exactes, digest-anchored, sans fuzzy matching.
-4. **Limites Windows (attendues, pas des pannes)** : PAS de renames/commentaires via REA
-   (`annotate_native_function` bloqué — le Ghidra P0 Windows refuse la mutation de base) → **les renames restent
-   dans le bridge ghidra-mcp ci-dessous**. Import headless éphémère : pas de persistance d'analyse entre sessions
-   REA. Outils natifs macOS indisponibles (sans objet pour du PE x86).
+## Interdictions absolues
 
-**Répartition des rôles** : x64dbg = vérité runtime · REA = lecture statique + évidence + comparaisons ·
-bridge ghidra-mcp = renames + projet persistant · analyzeHeadless = passes batch complètes.
+- Écrire dans `G:\Games\Giants`, `GameFiles-VanillaV1/`,
+  `RESSOURCES_FOR_AI/`.
+- Committer le token x32dbg, un binaire du jeu, ou une capture non
+  horodatée présentée comme preuve.
+- Affirmer un nom, un offset ou un chiffre sans provenance
+  (observed/derived/inferred) — voir `docs/TRUST.md`.
+- Réécrire l'historique git ; modifier la structure de
+  `giants-rs/TASKS.md` ou les gates de giants-rs.
+- Demander à l'humain un choix technique : il est testeur visuel
+  uniquement. Blocage = `BLOCKED` écrit, pas une question orale.
 
-## MÉTHODE (dans l'ordre)
+## Git
 
-1. **OBSERVER le vrai jeu en runtime** (breakpoints x64dbg sur APIs Win32 / entry du module / strings)
-   → jamais deviner quel asset est chargé, quel flow est pris, quelle valeur est passée.
-2. **NOMMER** les fonctions via `ps2_symbols/` (4769 fonctions nommées du binaire PS2 SLUS_201.78,
-   même code source C++). Pipeline de matching string-anchor + call-graph : voir `ps2_symbols/README.md`.
-   `python ps2_symbols/lookup.py <motif>` pour chercher. Depuis 2026-10 : les lectures d'ancres, xrefs et
-   decomp du matching passent par REA (`trace_feature`, `analyze_function`… — section REA) ; les renames
-   validés sont appliqués via le bridge ghidra-mcp dans `ghidra_projects_gog144/`.
-3. **Réutiliser les 14 repos d'Amazed** (`RESSOURCES_FOR_AI/git_repos_from_amazed/`) — RE clean-room des formats
-   GZP/GTI/GBS/SKN/ANM/.BIN, décompression LZ (`gck-map-extract-objects/lib/fileutils.py` = décompresseur canonique).
-4. **Compléments** : `RESSOURCES_FOR_AI/sent_by_Amazed/` (debug.exe + doc, prototype PS2 ISO 2001, docs
-   mécaniques du jeu, maps, outils), `RESSOURCES_FOR_AI/Patches_extracts/` (patches 1.4→1.520 avec renderers
-   DX9/DX11/DX12 — utiles pour comprendre l'interface renderer), `RESSOURCES_FOR_AI/GiantsTools` + `GiantsEdit`
-   (C#), `RESSOURCES_FOR_AI/GiantZiP` (Delphi, format GZP).
-
-## RÈGLES D'AUTONOMIE
-
-- **Agent pleinement autonome** : l'humain est uniquement testeur visuel (0 connaissance RE). Ne jamais lui
-  demander d'installer un outil, deviner une data, ou choisir une techno. Il manque un outil → l'installer
-  (`pip`, `curl`, terminal, internet) ou l'écrire.
-- Pas de code custom/inventé dans une éventuelle recomp : tout est validé bit-à-bit vs l'original.
-- Ne jamais modifier les fichiers des snapshots de référence (`GameFiles-VanillaV1/` pour v1.0 ;
-  l'install GOG `G:\Games\Giants\` pour 1.449) — travailler sur des copies.
-
-## GIT
-
-- Repo **public** : `origin/main` → https://github.com/YYoudi/vibe-giants-decomp. Commit+push = sauvegarde
-  (un crash perd le cycle sinon).
-- Messages de commit en **anglais**, concis (ce qui a été reversé + statut).
-- `pull --rebase` avant push ; si rejet, rebase + retry.
-- **JAMAIS** de trailer `Co-Authored-By` ni mention de Claude/AI dans les commits.
-
-## OUTIL GHIDRA MCP INTERACTIF (bethington/ghidra-mcp, installé 2026-08-28)
-
-- Serveur headless : `cmd //c G:/VibeRE/GiantsRE/RuntimeLab/start_ghidra_mcp.bat`
-  (HTTP 127.0.0.1:8089, ouvre ghidra_projects_gog144/GOG144.gpr — le projet de référence 1.449).
-- MCP dans ZCode : serveur stdio `python -m bridge_mcp_ghidra` (déjà enregistré,
-  scope user, avec x64dbg). 253 outils : décomp unitaire/bulk, renames, xrefs,
-  strings, types/structs, scripts, émulation P-code.
-- Boucle decomp courante (100 % faite, à réutiliser pour toute reprise) :
-  `scripts/apply_names_pyghidra.py` (applique les CSV `ps2_symbols/llm_waveNN.csv`, seuil conf 0.9)
-  → `scripts/export_decomp_pyghidra.py` (corpus complet + index + stats)
-  → `scripts/build_modules.py` → gzip → commit. Ancienne boucle re_db.json/system_layer : docs/DECOMP_PIPELINE.md.
-- Runner headless classique (analyzeHeadless + scripts Java) reste pour les
-  passes batch complètes.
-## HANDOFF RUST+BEVY (phase courante, depuis 2026-10-14)
-
-Mission active : finir la documentation amont pour un second agent qui reimplementera
-le jeu en Rust+Bevy (lire docs/RUNTIME_TRACES.md, docs/systems/*.md, docs/formats/*.md,
-docs/specs/formats.json, docs/constants/, tools_spec/). Ordre de bataille et DoD : voir
-le goal de session. Regles : PAS de moteur Rust ici ; provenance systematique
-(observed/derived/inferred) ; snapshots intouchables ; captures d'ecran locales only.
-Fait : P0.1 (formats .bin/.abx/gb2/WorldList), P0.2 (verdict wm=data / flk=VM a porter),
-P1.3 partiel (6 docs systemes), P2.1 (constantes), P2.2 (specs JSON), P2.3 (validateur+golden).
-En cours : P1.1 (traces runtime — x32dbg DOIT tourner eleve, voir docs/RUNTIME_TRACES.md).
+- Repo public : `origin` → github.com/YYoudi/vibe-giants-decomp.
+- `pull --rebase` avant push ; messages en anglais, concis (ce qui a été
+  reversé + statut) ; aucun trailer `Co-Authored-By`.
+- Un commit par session de travail terminée ; jamais de demi-tâche
+  commitée comme finie.

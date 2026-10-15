@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0047
- * 75 functions (75 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0047.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0047 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 75 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== object_destroy_all__7PS2Game @ 0x00470220 ===== */
 /* PS2 candidate: object_destroy_all__7PS2Game (conf 0.642) */

@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_004e
- * 109 functions (109 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_004e.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_004e (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 109 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== rpman_goto_last_loc__FP6OBJECTi @ 0x004E1030 ===== */
 /* PS2 candidate: rpman_goto_last_loc__FP6OBJECTi (conf 0.354) */

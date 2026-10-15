@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0041
- * 102 functions (102 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0041.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0041 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 102 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== collgrid_collide_c @ 0x00410720 ===== */
 void collgrid_collide_c(undefined4 param_1,undefined4 *param_2,int *param_3)

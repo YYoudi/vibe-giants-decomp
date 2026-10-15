@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0054
- * 351 functions (351 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0054.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0054 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 351 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== map_memfree @ 0x00540020 ===== */
 void map_memfree(int param_1,int param_2)

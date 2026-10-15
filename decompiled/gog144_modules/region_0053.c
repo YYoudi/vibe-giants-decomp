@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0053
- * 179 functions (179 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0053.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0053 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 179 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== comm_chat_send_3 @ 0x00530010 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */

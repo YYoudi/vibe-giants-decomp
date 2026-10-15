@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0040
- * 120 functions (120 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0040.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0040 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 120 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== ai_clear_move_goal @ 0x00401000 ===== */
 /* PS2 candidate: ai_clear_move_goal (conf 0.469) */

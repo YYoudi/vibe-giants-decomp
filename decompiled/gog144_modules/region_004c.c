@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_004c
- * 87 functions (87 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_004c.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_004c (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 87 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== fxb_firecircle_create @ 0x004C0210 ===== */
 void fxb_firecircle_create(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)

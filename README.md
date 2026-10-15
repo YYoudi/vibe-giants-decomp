@@ -4,9 +4,11 @@ AI-assisted, clean-room reverse engineering of **Giants: Citizen Kabuto** (PC, x
 No game code or assets are recreated here from scratch: everything is derived by analysis
 (Ghidra decompilation + runtime observation) and documented in this repo.
 
-**Current status (2026-10-14): the GOG 1.4.0 build (1.449) is 100 % decompiled and 100 % named**
-— 2 807 non-thunk functions, `done=2807 failed=0 named=2807`
-(see [`decompiled/gog144_full/stats.txt`](decompiled/gog144_full/stats.txt)).
+**Current status (re-verified 2026-10-16): the GOG 1.4.0 build (1.449) corpus is fully exported**
+— 2 807 non-thunk functions, done=2807 failed=0 (see decompiled/gog144_full/stats.txt).
+**Naming is coverage, not truth**: ~15 % of names are anchored on real PS2 symbols, the rest are
+LLM inferences (some flatly wrong, e.g. ANM_BinderDestroy_3 is atoi). Read docs/TRUST.md before
+trusting any name, and verify the decompiled body.
 
 ## What's in the repo
 

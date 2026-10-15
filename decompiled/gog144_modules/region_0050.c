@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0050
- * 103 functions (103 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0050.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0050 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 103 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== shopmenu_slot_dword_get @ 0x00500100 ===== */
 undefined4 shopmenu_slot_dword_get(int param_1,int param_2,int param_3)

@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0055
- * 1 functions (1 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0055.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0055 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 1 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== crt_strdup @ 0x0055001B ===== */
 undefined4 crt_strdup(char *param_1)

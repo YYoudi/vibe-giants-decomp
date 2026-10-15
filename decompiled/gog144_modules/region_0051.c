@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0051
- * 195 functions (195 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0051.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0051 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 195 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== herd_promote_check @ 0x005108F0 ===== */
 undefined4 herd_promote_check(int param_1)

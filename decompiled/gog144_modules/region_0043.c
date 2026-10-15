@@ -1,7 +1,8 @@
-/* Giants 1.449 — module _unmapped_0043
- * 74 functions (74 named) — decompiled, names from PS2 symbols
- * Original source: C:\Giants\source\_unmapped_0043.c(pp) (assert-string evidence)
- */
+/* Giants 1.449 — address bucket region_0043 (NO original-source claim:
+ * this file is an address band of the Ghidra export, not a recovered
+ * source file). 74 functions, decompiled by Ghidra; names are of
+ * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
+ * and verify the body before trusting any name. */
 
 /* ===== dlog_alpha_flags_copy @ 0x00430480 ===== */
 void dlog_alpha_flags_copy(int param_1,undefined4 *param_2,int *param_3,undefined4 *param_4)
