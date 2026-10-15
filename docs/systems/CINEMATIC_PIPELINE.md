@@ -268,17 +268,33 @@ Même flux que les ops scène (histogramme `flk_decode.py --stats` : ops
 - L'id 0x42 = 0x0D + 53 = l'entrée juste après le dernier fichier T_square_58 →
   la playlist des fichiers EST la chaîne story4, et 0x42 est son terminateur.
 - La boucle observée en run5 (retour à 0x0D après 0x42) = reprise de la chaîne
-  par le slot "start" (`match_start_entry`) — voir §Open items pour la condition
-  exacte exit vs reprise (éclaircie au run6).
+  par le slot "start" (`match_start_entry`) — **et le run6 a tranché le modèle
+  complet (2026-10-15, observed)** :
+  1. La playlist joue 0x0D→0x41 (~227-229 s de sim).
+  2. **1er passage par "end"** : `fx_logic(3)` (flag `DAT_00632b94==0`) charge le
+     flick "end", pose 94=1, puis la chaîne **repart au début** (boucle d'attirance).
+  3. **2e passage par "end"** : 94==1 → branche sautée → suite du fx →
+     `world_next_enter` : `FLK_FlickStop()`, index monde+1 vs dict (InitFxDict),
+     plus de monde → `gameover_menu` → **le processus se ferme** (confirmé run6 :
+     exit propre à 04:06:45, fps.txt écrit une seule fois à la fermeture —
+     229 lignes "Second", avg 498.99, machine-load-dépendant comme établi).
+  Le flag 94 n'est remis à 0 QUE par le rechargement de monde (`_unmapped_004e`
+  :11308) — d'où exactement UNE boucle d'attirance puis l'arrêt.
+- **Pour le portage Rust** : comportement fidèle = jouer la chaîne 0x0D→0x41,
+  jouer le flick "end", reprendre la chaîne une fois, fermer au 2e "end" — ou
+  simplifier en : chaîne + end + fermeture (l'utilisateur perçoit la boucle
+  comme une seconde lecture de la cinématique).
+- `world_next_enter @ 0x004EE800` (observed) : `if (dialog_level_is_base()) return;
+  FLK_FlickStop(); if (InitFxDict() < world_index+1) gameover_menu(); else
+  AudioSetSpeakerConfig(next); mission_texture_audio();`
 
 
 ## Open items
 
-- **Condition exit vs reprise** en gamegauge : run6 (sans capteur) en cours
-  pour dater la fermeture du processus ; `world_next_enter` à documenter si le
-  portage doit reproduire la fermeture exacte.
-- Entrée de wrap 0x42 : confirmée = slot "end" de la chaîne story (§10).
 - Fonte FNT : format non inversé (IDs posés par l'op 21 dans les flk ; le
-  rasterizer exact reste à documenter si parité glyphe demanded).
+  rasterizer exact reste à documenter si parité glyphe demandée).
 - Payloads fins des ops 30-53 (les corps de cases sont dans le corpus, à transcrire
   au fur et à mesure des besoins du portage).
+- Dernier maillon de fermeture : entre `gameover_menu` (dialog Restart/Quit) et
+  l'exit processus observé — le chemin exact en gamegauge (auto-quit du dialog ?)
+  reste à lire si le portage veut reproduire le décompte exact des frames.
