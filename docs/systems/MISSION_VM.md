@@ -509,3 +509,22 @@ if (message && flag && done && ...) {       // boucle d'attirance (vue run5) :
 3. Le "wrap" observé au run5 (retour 0x42 → 0x0D) se boucle localement ICI
    (time = fin − 1 s) tant que le message global est actif — et le slot "end"
    (§10) coupe la boucle au niveau monde.
+
+### Complément MAJ 4 (2026-10-15) — FLK_ActorOffsetEval + ObjectSetAnim
+
+**`FLK_ActorOffsetEval @ 0x00443FB0`** (op 0x20) = `math_euler_to_matrix`
+inlinée sur les champs acteur : angles euler à **+0x82C (a), +0x830 (b —
+niégé, même convention), +0x834 (c)**, translation +0x820/+0x824/+0x828 →
+écrit la matrice 3×3 à **+0x7E0..+0x808** (colonnes translation à
++0x7EC/+0x7FC/+0x80C), flags +0x7D8=1 (valide), +0x7DC=0x11 (tag).
+C'est le repère d'offset local de l'acteur (3e confirmation de la convention
+euler b-négatif du moteur).
+
+**`ObjectSetAnim @ 0x004034A0`** (appelé par FLK_ActorAdd avec
+`(act+0xC, 0, 0x20, 1, 0, 0)`) : pose (anim_idx, frame, ..., time_scale) ;
+time_scale=0 → **l'horloge d'anim propre de l'objet est GELÉE**. Lecture
+architecturale : les acteurs de flick ont leur mesh/squelette fourni par le
+binding SKN/ANM (les 10 slots LOD), mais **leur mouvement vient des ops FLK**
+(clés d'offset 0x20, positions), pas d'une ANM auto-jouée — l'anim propre
+sert de pose de base. Point ouvert mineur : la lecture exacte de la paire
+(anim_idx=0, frame=0x20) — tester les deux lectures contre le rendu golden.
