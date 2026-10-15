@@ -88,20 +88,63 @@ Les valeurs par défaut de ces WS viennent des ops 41 (fog RGB+near/max),
 46 (fog alt), 88 (water fog), 119/120 (fog packs A/B) des world bins —
 cf docs/formats/bin_objects.md (table des cibles WS par op).
 
-## Items 1-3 de Q6 (UV terrain, mer, gb2) — où c'est, statut
+## MISE À JOUR 2 — items 1 & 2 de Q6 RÉSOLUS (engine side, 2026-10-15)
 
-- **UV terrain** : générées ENGINE-side dans la famille `main_drawwrld_00434xxx`
-  (le DLL ne fait que DrawPrimitive des FVF engine). Le GTI (1024×1024) n'a pas
-  d'UV : le mapping naît dans le builder de vertex du terrain. **Open** : lire
-  `main_drawwrld_00434c80` (scene draw) + le builder (suivre `DAT_006573B0-BC`,
-  la liste de draw contexts vidée par `main_drawwrld_00432E10`). Hypothèse de
-  départ (`inferred`) : `tu = grid_x/(N-1)`, `tv = grid_z/(N-1)` à confirmer.
-- **Mer** : chercher `main_drawwatr*` / passes water dans la même famille (les
-  flags waterfog WS+0x140..0x150 = op 88 s'y consomment).
-- **gb2** : les composants (sky/sea/underside) sont instanciés via le registre
-  GameObj (`main_makeobj_00472dd0(DAT_00632D2C/30)`) → objets rendus par la même
-  passe scene. Vertex layout des corps gb2 : encore open (prologue décodé dans
-  docs/formats/world_gb2.md).
+### (1) TERRAIN — `terrain_elevation_gen @ 0x00514D60` (la formule, enfin)
+
+Le terrain NE MAPPE PAS de texture par position : la 1re passe est une **palette par
+hauteur** via une texture ramp **64×64 générée procéduralement** (`elevation_texture`,
+gris `v<<16|v<<8|v` ×4 rampes de 0x21/0x20 échantillons, stat `DAT_005DC8B0..CE`).
+
+Boucle vertex exacte (stride **6 floats = 24 octets** : x, z, y, (rhw/0), u, v) :
+
+```c
+v[0] = x_monde;                       // avance de cell_size à chaque colonne
+v[1] = z_monde;                       // avance de cell_size à chaque rangée
+h_a = mesh[node ^ 1];  h_b = mesh[node];     // hauteurs des niveaux LOD voisins
+v[2] = h = (1-ratio)*h_a + ratio*h_b;        // ratio = (hmax-hmin)/hmax  (+0x38/+0x3C)
+                                            //   → le "skirt" entre patchs LOD
+v[5] = 0.0;                            // v = 0 (ramp 1D)
+v[4] = h * (0.5 / heightScale) + lodBias + 0.5;   // ← UV = hauteur normalisée!
+lodBias = 0.0078125 par défaut | 0.5/2^mip si flag 0x1000 (tex détail) | 0
+cell_size = terrain+0x14 ; heightScale = terrain+0x18
+```
+
+- Maillage : **quadtree LOD** — chaque nœud 16 octets avec liens ushort
+  (`+8/+A/+C/+E/+10` = neighbors/children), grille de départ `param_2*0x10`.
+- Soumission : `primbuffer+0x10(cols*rows)` → vertex lock, puis
+  `primbuffer+0x20(count=(cols-1)*(rows-1), indices=terrain+0x24)` = **indexed**,
+  FVF local `0x124` passé à gfx_state+0x14 avec la texture elevation.
+- État : `gfx_sys+0x18(mat identity)`, `state+0x10=1, +0xC=0`, `sys+0x50(2,0)`.
+- Bonus : `terrain_vertex_walk @ 0x00514A50` = déformation radiale (cratères) :
+  `d = fast_rsqrt(x²+z²)` (table `DAT_005F0A18`), si `d < R` :
+  `y += (1-d/R)*cos(phase1*2π*d + phase2*2π)*amp` — via table log, exact.
+- La 2e passe (texture détail / multi-tex stage2) : voir suite de la fonction
+  (`sys+0x50(0,0)` final) — le couple TSS stage2 MODULATE2X s'applique ici.
+
+### (2) MER — `main_drawwatr_00430F30` + `_00431700` (complet)
+
+- **UV** : `seauv[i].u = seapos[i].x / scale ; seauv[i].v = seapos[i].z / scale`
+  avec `scale = WS+0x7C` (op 46 fog-near réutilisée comme taille de tiling !).
+- Maillage : **grille 33×13 (429 verts) caméra-centrée**, indices en strip-triangles
+  générés une fois (`v, v+1, v+0x21, v+1, v+0x22, v+0x21`) dans `DAT_0059B7D0`.
+- Placement : direction horizon = normalize(WS+0x4F60/64) × **12500**, caméra
+  **réfléchie** à travers le plan horizon (`p' = p - 2*(p·n)*n` via fVar7*2+fVar5) ;
+  vertex = lerp(cam, horizon, fade[row]) avec y=0.
+- Fade alpha par rangée : table `((i-1)-5)*0.1*0.25+0.5` + couleur par rangée
+  `cos(clamp((i-0x10)*WS+0x50AC*0.09817477, ±π/2))^pow << 24 | WS+0x50A0`
+  (WS+0x50A0/A4/A8 = palette terrain op 121 !).
+- Fog : `gfx_sys+0xAC(WS+0x140, WS+0x144, WS+0x148..150)` (waterfog op 88 ;
+  variante sous-marine couleur 0).
+- Textures : mer = `WS+0x6C` (la texture sea de world.gb2 !), variante via
+  `WS+0x4EA0` si flag 0x40, FVF `0x23004`/`0x14` selon état.
+- Anim : `DAT_006331B0` gate + reset `WS+0x50B8` (init une fois).
+
+### (3) gb2 — reste open (prologue seul)
+
+Composants instanciés via GameObj registry (`main_makeobj_00472dd0`), la texture
+mer ci-dessus (`WS+0x6C`) est précisément le composant `sea` de world.gb2 →
+la consommation passe par les slots WS. Vertex layout des corps : encore open.
 
 ## Livrables
 
