@@ -360,3 +360,26 @@ W_Story4.bin → xx_giants_logo_3d.bin → wm_mission1.bin → xx_story4.bin
   parfaitement avec un BP sur `flick_file_load` seul (runs 5-6). Suspect :
   race sensible au timing IO sous instrumentation lourde. Ne PAS utiliser ce
   BP pendant les runs de parité ; pour retracer, logger léger (déjà dédupliqué).
+
+## 13. ÉCHANTILLONNAGE DE LA MATRICE CAMÉRA/NOEUD (M6 — decomp 2026-10-15)
+
+Chaîne complète, `flick_node_mat_get @ 0x0053BEF0` → `ANM_NodeGetMat @ 0x0053CB50`
+→ `ANM_NodeGetAffine @ 0x0053C660` :
+
+1. **Hiérarchie** : remonte la chaîne des nodes (node+0x10 = parent), évalue
+   l'affine de chaque node puis compose parent×enfant (`anm_mat_init_copy` +
+   multiplication), résultat copié dans obj+0xA4 (la matrice de l'objet caméra)
+   et mis en cache à node+0x24. Callback optionnel par node (+0x18).
+2. **Affine par node** : 3 tracks pointées par node+0x98 / +0x9C / +0xA0
+   (translation / rotation euler / échelle), évaluées par `crt_stream_seek`
+   (seek + interpolation + modes de wrap : repeat, ping-pong mode 4 — octets de
+   mode à track+1/+2). Cache par node (validité = stamp anim à node+0x68).
+3. **Convention d'angles** : la rotation lue en track voit **y et z niégés** à
+   la stockage (+0x7C/+0x80 = -val) — cohérent avec la négation interne de
+   `math_euler_to_matrix` (docs/formats/abx.md). Même convention pour l'échelle
+   sous flag +0x94&8.
+4. **Pour le portage** : le sampler ANM des tracks (keys + wrap + interpolation)
+   est LA même brique pour la caméra (op 4 → camera01) et les acteurs ; la
+   structure des tracks/keys est celle des ANM déjà parsés par la référence
+   Amazed (`lib/skn_anm.py`) — ajouter le seek/wrap + la composition hiérarchique
+   et la négation d'angles.
