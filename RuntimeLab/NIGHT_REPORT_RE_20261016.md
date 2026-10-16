@@ -17,8 +17,9 @@ provenance dans le commit cité (observed/derived/inferred par affirmation).
 
 ## Non fait / restant
 
-- **TASK-013 fin** : renommage Ghidra des 17 dupliqués + ré-export (suffixe à
-  convenir avec l'architecte — audit prêt).
+- ~~TASK-013 fin~~ **FAIT en clôture de session** (f8bb3e8) : 18 renommages
+  Ghidra `_dup<addr8>` (convention neutre), corpus ré-exporté 2807/2807,
+  DoD grep vide hors 6 fragments CRT documentés.
 - **Q12** (dump ospec runtime) : laissée conformément à la consigne (UAC humain
   requis). Le protocole est prêt : BP `read_objects_bin_PS2 @ 0x4AE4C0`, à la
   sortie lire la liste `[0x632D50]` ({next; count; ospecs[n] inline 0x464}).
