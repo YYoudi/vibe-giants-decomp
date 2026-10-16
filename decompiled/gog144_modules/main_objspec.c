@@ -35,67 +35,65 @@ void main_objspec_00499c80(int param_1)
 }
 
 /* ===== object_free_all_allocated_data @ 0x00499CD0 ===== */
+/* WARNING: Unknown calling convention -- yet parameter storage is locked */
+
 /* PS2 candidate: object_free_all_allocated_data (conf 0.468) */
 
 
 
-void object_free_all_allocated_data(int param_1)
+void object_free_all_allocated_data(OBJECT *obj)
 
 
 
 {
 
-  int iVar1;
+  dword dVar1;
 
   
 
-  if (((*(int *)(param_1 + 0x1e0) < 0x6b) &&
+  if ((((int)obj->state < 0x6b) && (*(code **)(&DAT_0055cb28 + obj->state * 0x44) != (code *)0x0))
 
-      (*(code **)(&DAT_0055cb28 + *(int *)(param_1 + 0x1e0) * 0x44) != (code *)0x0)) &&
+     && (obj->animate_state != 0)) {
 
-     (*(int *)(param_1 + 0x100) != 0)) {
-
-    (**(code **)(&DAT_0055cb28 + *(int *)(param_1 + 0x1e0) * 0x44))(param_1);
+    (**(code **)(&DAT_0055cb28 + obj->state * 0x44))(obj);
 
   }
 
-  if (*(int *)(param_1 + 0x100) != 0) {
+  if (obj->animate_state != 0) {
 
-    mem_free_tagged(*(int *)(param_1 + 0x100),s_C__Giants_source_main_objspec_c_0055e774,0xf9);
+    mem_free_tagged(obj->animate_state,s_C__Giants_source_main_objspec_c_0055e774,0xf9);
 
-    *(undefined4 *)(param_1 + 0x100) = 0;
-
-  }
-
-  iVar1 = *(int *)(param_1 + 0x2e0);
-
-  if ((iVar1 != 0) && (*(char *)(iVar1 + 0x1e) < '\0')) {
-
-    main_00508840(iVar1);
-
-    texture_destroy(*(undefined4 *)(param_1 + 0x2e0));
-
-    mem_free_tagged(*(undefined4 *)(param_1 + 0x2e0),s_C__Giants_source_main_objspec_c_0055e774,0xbb
-
-                   );
+    obj->animate_state = 0;
 
   }
 
-  *(undefined4 *)(param_1 + 0x2e0) = 0;
+  dVar1 = obj->alloc_data2;
 
-  *(undefined4 *)(param_1 + 0x104) = 0;
+  if ((dVar1 != 0) && (*(char *)(dVar1 + 0x1e) < '\0')) {
 
-  collgrid_clear_grid(param_1);
+    main_00508840(dVar1);
 
-  if (*(int *)(param_1 + 0x2dc) != 0) {
+    texture_destroy(obj->alloc_data2);
 
-    mem_free_tagged(*(int *)(param_1 + 0x2dc),s_C__Giants_source_main_objspec_c_0055e774,0xe1);
+    mem_free_tagged(obj->alloc_data2,s_C__Giants_source_main_objspec_c_0055e774,0xbb);
 
   }
 
-  *(undefined4 *)(param_1 + 0x2dc) = 0;
+  obj->alloc_data2 = 0;
 
-  *(undefined4 *)(param_1 + 0x2d8) = 0;
+  obj->pad_104 = 0;
+
+  collgrid_clear_grid(obj);
+
+  if (obj->alloc_data1 != 0) {
+
+    mem_free_tagged(obj->alloc_data1,s_C__Giants_source_main_objspec_c_0055e774,0xe1);
+
+  }
+
+  obj->alloc_data1 = 0;
+
+  obj->alloc_data0 = 0;
 
   return;
 

@@ -107,6 +107,10 @@ void main_menu_004832f0(void)
 
   float10 fVar7;
 
+  OBJECT *pOVar8;
+
+  float fVar9;
+
   
 
   iVar3 = DAT_0059eec4;
@@ -215,7 +219,7 @@ void main_menu_004832f0(void)
 
   }
 
-  iVar3 = dialog_level_is_base();
+  iVar3 = dialog_level_is_base_dup0052aa70();
 
   if (((iVar3 == 0) || (DAT_00633044 == 0)) || (DAT_00632f08 < 0xd)) {
 
@@ -237,25 +241,29 @@ void main_menu_004832f0(void)
 
   }
 
-  *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) & 0xffffffbf;
+  DAT_0059ee98->flags = DAT_0059ee98->flags & 0xffffffbf;
 
   obj_velocity_commit(DAT_0059ee98);
 
-  if ((*(byte *)(DAT_0059ee98 + 0xd8) & 0x40) == 0) {
+  if ((DAT_0059ee98->flags & 0x40) == 0) {
 
     objspec_dispatch_gate(DAT_0059ee98);
 
     fVar7 = (float10)FRateGetSecsframe(0,0);
 
-    object_animate_process(DAT_0059ee98,(float)fVar7);
+    fVar9 = (float)fVar7;
 
-    ObjectCalculateTransform(DAT_0059ee98);
+    pOVar8 = DAT_0059ee98;
 
-    *(uint *)(DAT_0059ee98 + 0xd8) = *(uint *)(DAT_0059ee98 + 0xd8) | 0x20;
+    object_animate_process(DAT_0059ee98);
+
+    ObjectCalculateTransform(DAT_0059ee98,pOVar8,fVar9);
+
+    DAT_0059ee98->flags = DAT_0059ee98->flags | 0x20;
 
   }
 
-  object_lock_apply(0,2);
+  object_lock_apply((OBJECT *)0x0);
 
   if (DAT_00632a88 == 0) {
 

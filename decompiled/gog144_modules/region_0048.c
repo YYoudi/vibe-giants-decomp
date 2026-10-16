@@ -1,8 +1,7 @@
-/* Giants 1.449 — address bucket region_0048 (NO original-source claim:
- * this file is an address band of the Ghidra export, not a recovered
- * source file). 84 functions, decompiled by Ghidra; names are of
- * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
- * and verify the body before trusting any name. */
+/* Giants 1.449 — module region_0048
+ * 84 functions (84 named) — decompiled, names from PS2 symbols
+ * Original source: C:\Giants\source\region_0048.c(pp) (assert-string evidence)
+ */
 
 /* ===== mecc_exit_bush @ 0x00480150 ===== */
 /* PS2 candidate: mecc_exit_bush (conf 0.499) */
@@ -60,19 +59,7 @@ void mecc_enable_personal_shield(int param_1)
 
   undefined4 uVar3;
 
-  char *pcVar4;
-
-  undefined4 uVar5;
-
-  undefined1 *puVar6;
-
-  undefined1 local_34 [16];
-
-  undefined4 local_24;
-
-  undefined4 local_20;
-
-  int local_1c;
+  OBJECT *obj;
 
   
 
@@ -98,27 +85,15 @@ LAB_00480200:
 
   uVar3 = IconDefWieldType(0x11,1);
 
-  iVar2 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar3);
+  obj = (OBJECT *)player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar3);
 
-  if (iVar2 != 0) {
-
-    puVar6 = local_34;
-
-    uVar5 = 0x24;
-
-    pcVar4 = s_fxb_shield_0055bd38;
-
-    local_20 = 1;
-
-    local_24 = 8;
-
-    local_1c = iVar2;
+  if (obj != (OBJECT *)0x0) {
 
     uVar3 = fx_get_free_effect__Fv();
 
     *(undefined4 *)(iVar1 + 0xf8) = uVar3;
 
-    ObjectSetAnim(iVar2,1,0x20,0,0,0,pcVar4,uVar5,puVar6);
+    ObjectSetAnim(obj);
 
   }
 
@@ -157,7 +132,17 @@ void mecc_disable_personal_shield(int param_1)
 
   undefined4 uVar2;
 
+  OBJECT *obj;
+
   int iVar3;
+
+  undefined4 uVar4;
+
+  undefined4 uVar5;
+
+  undefined4 uVar6;
+
+  undefined4 uVar7;
 
   
 
@@ -193,13 +178,23 @@ LAB_004802fd:
 
   uVar2 = IconDefWieldType(0x11,1);
 
-  iVar1 = player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar2);
+  obj = (OBJECT *)player_find_weapon_obj_type__FP6OBJECTii(param_1,10,uVar2);
 
-  if (iVar1 != 0) {
+  if (obj != (OBJECT *)0x0) {
 
-    ObjectSetAnim(iVar1,1,0x10,0,0,0);
+    uVar7 = 0;
 
-    fx_delete(*(undefined4 *)(iVar3 + 0xf8));
+    uVar6 = 0;
+
+    uVar5 = 0;
+
+    uVar4 = 0x10;
+
+    uVar2 = 1;
+
+    ObjectSetAnim(obj);
+
+    fx_delete(*(undefined4 *)(iVar3 + 0xf8),obj,uVar2,uVar4,uVar5,uVar6,uVar7);
 
     *(undefined4 *)(iVar3 + 0xf8) = 0;
 
@@ -463,7 +458,7 @@ void mecc_special_weapon_logic__FP6OBJECT(int param_1)
 
          ((*(int *)(iVar3 + 0x54) == 1 || (*(int *)(iVar3 + 0x54) == 3)))) {
 
-        iVar6 = dialog_level_is_base();
+        iVar6 = dialog_level_is_base_dup0052aa70();
 
         if ((iVar6 == 0) || (iVar6 = net_active_players_get(), iVar6 != 0)) {
 
@@ -575,7 +570,7 @@ void mecc_bush_logic(int param_1)
 
   
 
-  iVar3 = dialog_level_is_base();
+  iVar3 = dialog_level_is_base_dup0052aa70();
 
   if (iVar3 == 0) {
 
@@ -1329,7 +1324,7 @@ void obj_give_carried_item_3(int param_1,int param_2)
 
 
 
-int menu_fx_spawn(undefined4 param_1,int param_2)
+int menu_fx_spawn(undefined4 param_1,OBJECT *param_2)
 
 
 
@@ -1363,7 +1358,7 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
   local_18 = 0;
 
-  if (param_2 != 0) {
+  if (param_2 != (OBJECT *)0x0) {
 
     bldg_get_refpt_worldlocdir(param_2,2,&local_c,&local_18);
 
@@ -1383,21 +1378,21 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
   *(undefined4 *)(iVar1 + 0xe8) = 0x96;
 
-  sound_play_obj(0x59a,iVar1);
+  sound_play_obj(0x59a);
 
-  if (param_2 != 0) {
+  if (param_2 != (OBJECT *)0x0) {
 
-    *(int *)(iVar1 + 0x210) = param_2;
+    *(OBJECT **)(iVar1 + 0x210) = param_2;
 
     *(undefined4 *)(iVar1 + 0x218) = 1;
 
     *(undefined4 *)(iVar1 + 0x214) = 0xffffffff;
 
-    *(undefined4 *)(param_2 + 0xe4) = 10;
+    param_2->pad_E4 = 10;
 
-    ObjectSetAnim(param_2,2,0x20,0,0,0);
+    ObjectSetAnim(param_2);
 
-    sound_play_obj(0x6f1,param_2);
+    sound_play_obj(0x6f1);
 
   }
 
@@ -1407,7 +1402,7 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
     local_10 = *(undefined4 *)(iVar1 + 0x188);
 
-    if (param_2 == 0) {
+    if (param_2 == (OBJECT *)0x0) {
 
       local_14 = 0;
 
@@ -1415,7 +1410,7 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
     else {
 
-      local_14 = *(undefined4 *)(param_2 + 0x188);
+      local_14 = *(undefined4 *)&param_2->field_0x188;
 
     }
 
@@ -1434,31 +1429,45 @@ int menu_fx_spawn(undefined4 param_1,int param_2)
 
 
 
-void projectile_logic(int param_1)
+void projectile_logic(OBJECT *param_1)
 
 
 
 {
 
-  char cVar1;
+  undefined1 *puVar1;
 
-  uint uVar2;
+  char cVar2;
 
-  undefined4 *puVar3;
+  dword dVar3;
 
-  int iVar4;
+  uint uVar4;
 
-  int iVar5;
+  undefined4 *puVar5;
 
-  char *pcVar6;
+  int iVar6;
 
-  char *pcVar7;
+  int iVar7;
 
   int iVar8;
 
-  float10 fVar9;
+  char *pcVar9;
 
-  undefined4 uVar10;
+  char *pcVar10;
+
+  float10 fVar11;
+
+  OBJECT *pOVar12;
+
+  undefined4 uVar13;
+
+  undefined4 uVar14;
+
+  undefined4 uVar15;
+
+  undefined4 uVar16;
+
+  undefined4 uVar17;
 
   float local_24;
 
@@ -1472,77 +1481,89 @@ void projectile_logic(int param_1)
 
   
 
-  iVar4 = fx_create(param_1);
+  iVar6 = fx_create(param_1);
 
-  if ((((iVar4 != 0) && (*(int *)(param_1 + 0x1e0) == 2)) &&
+  if ((((iVar6 != 0) && (param_1->state == 2)) && ((param_1->coll_radius & 0x20000) == 0)) &&
 
-      ((*(uint *)(param_1 + 0xe0) & 0x20000) == 0)) && (*(int *)(param_1 + 0x210) == 0)) {
+     (*(int *)&param_1->field_0x210 == 0)) {
 
-    iVar4 = *(int *)(param_1 + 0x100);
+    dVar3 = param_1->animate_state;
 
-    fVar9 = (float10)FRateGetSecsframe(0,0);
+    fVar11 = (float10)FRateGetSecsframe(0,0);
 
-    fVar9 = (float10)*(float *)(iVar4 + 0x1d8) - fVar9;
+    fVar11 = (float10)*(float *)(dVar3 + 0x1d8) - fVar11;
 
-    *(float *)(iVar4 + 0x1d8) = (float)fVar9;
+    *(float *)(dVar3 + 0x1d8) = (float)fVar11;
 
-    if (fVar9 <= (float10)0.0) {
+    if (fVar11 <= (float10)0.0) {
 
-      *(undefined4 *)(iVar4 + 0x1d8) = 0x3f000000;
+      *(undefined4 *)(dVar3 + 0x1d8) = 0x3f000000;
 
-      for (puVar3 = DAT_00632d70; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
+      for (puVar5 = DAT_00632d70; puVar5 != (undefined4 *)0x0; puVar5 = (undefined4 *)*puVar5) {
 
-        iVar4 = puVar3[3];
+        iVar6 = puVar5[3];
 
-        if ((((-1 < (char)((uint)*(undefined4 *)(iVar4 + 0xd8) >> 8)) &&
+        if ((((-1 < (char)((uint)*(undefined4 *)(iVar6 + 0xd8) >> 8)) &&
 
-             (*(int *)(iVar4 + 4) == 0x3df)) &&
+             (*(int *)(iVar6 + 4) == 0x3df)) &&
 
-            ((*(int *)(iVar4 + 0x18c) == *(int *)(param_1 + 0x18c) &&
+            ((*(dword *)(iVar6 + 0x18c) == param_1->ai_state_b &&
 
-             (*(int *)(iVar4 + 0x210) != param_1)))) &&
+             (*(OBJECT **)(iVar6 + 0x210) != param_1)))) &&
 
-           ((*(int *)(param_1 + 0x210) == 0 || (*(int *)(*(int *)(param_1 + 0x210) + 0x1e0) != 0x5f)
+           ((*(int *)&param_1->field_0x210 == 0 ||
 
-            ))) {
+            (*(int *)(*(int *)&param_1->field_0x210 + 0x1e0) != 0x5f)))) {
 
-          iVar8 = param_1 + 0xa0;
+          puVar1 = &param_1->field_0xa0;
 
-          fVar9 = (float10)distancesq3d(iVar8,iVar4 + 0xa0);
+          fVar11 = (float10)distancesq3d(puVar1,iVar6 + 0xa0);
 
-          if (fVar9 <= (float10)49.0) {
+          if (fVar11 <= (float10)49.0) {
 
-            if (*(int *)(iVar4 + 0x210) == 0) {
+            if (*(int *)(iVar6 + 0x210) == 0) {
 
-              iVar8 = reaper_has_linked_smartie(param_1);
+              iVar7 = reaper_has_linked_smartie(param_1);
 
-              if (iVar8 == 0) {
+              if (iVar7 == 0) {
 
-                iVar8 = dialog_level_is_base();
+                iVar7 = dialog_level_is_base_dup0052aa70();
 
-                if ((iVar8 == 0) || (iVar8 = net_active_players_get(), iVar8 != 0)) {
+                if ((iVar7 == 0) || (iVar7 = net_active_players_get(), iVar7 != 0)) {
 
-                  *(int *)(iVar4 + 0x210) = param_1;
+                  uVar17 = 0;
 
-                  *(undefined4 *)(iVar4 + 0x218) = 4;
+                  *(OBJECT **)(iVar6 + 0x210) = param_1;
 
-                  *(undefined4 *)(iVar4 + 0x214) = 0;
+                  *(undefined4 *)(iVar6 + 0x218) = 4;
 
-                  *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x20000;
+                  *(undefined4 *)(iVar6 + 0x214) = 0;
 
-                  *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) & 0xfff7ffff;
+                  uVar16 = 0;
 
-                  *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | 1;
+                  uVar14 = 0;
 
-                  ObjectSetAnim(param_1,0xd3,0x21,0,0,0);
+                  param_1->coll_radius = param_1->coll_radius | 0x20000;
 
-                  mecc_stop_looping_effects(param_1);
+                  param_1->flags = param_1->flags & 0xfff7ffff;
 
-                  iVar8 = reaper_0052e4a0(iVar4);
+                  uVar13 = 0x21;
 
-                  if (iVar8 != 0) {
+                  uVar15 = 0xd3;
 
-                    local_24 = *(float *)(iVar4 + 0x188);
+                  *(uint *)(iVar6 + 0xe0) = *(uint *)(iVar6 + 0xe0) | 1;
+
+                  pOVar12 = param_1;
+
+                  ObjectSetAnim(param_1);
+
+                  mecc_stop_looping_effects(param_1,pOVar12,uVar15,uVar13,uVar14,uVar16,uVar17);
+
+                  iVar7 = reaper_0052e4a0(iVar6);
+
+                  if (iVar7 != 0) {
+
+                    local_24 = *(float *)(iVar6 + 0x188);
 
                     reaper_00530bd0(param_1,0,1,0,0x18,&local_24);
 
@@ -1550,25 +1571,25 @@ void projectile_logic(int param_1)
 
                   mecc_disable_personal_shield(param_1);
 
-                  iVar4 = *(int *)(param_1 + 0x100);
+                  dVar3 = param_1->animate_state;
 
-                  if ((*(uint *)(param_1 + 0xe0) & 0x1000000) != 0) {
+                  if ((param_1->coll_radius & 0x1000000) != 0) {
 
                     mecc_repairwand_off(param_1);
 
-                    if (*(int *)(iVar4 + 0x18c) == 0x13) {
+                    if (*(int *)(dVar3 + 0x18c) == 0x13) {
 
-                      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar4 + 0xfc));
+                      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(dVar3 + 0xfc));
 
-                      *(undefined4 *)(iVar4 + 0xfc) = 0xffffffff;
+                      *(undefined4 *)(dVar3 + 0xfc) = 0xffffffff;
 
                     }
 
-                    *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfeffffff;
+                    param_1->coll_radius = param_1->coll_radius & 0xfeffffff;
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    iVar6 = reaper_0052e4a0(param_1);
 
-                    if (iVar4 != 0) {
+                    if (iVar6 != 0) {
 
                       reaper_00530bd0(param_1,0,0,0,0x15,0);
 
@@ -1576,33 +1597,33 @@ void projectile_logic(int param_1)
 
                   }
 
-                  if (((*(uint *)(param_1 + 0xe0) & 0x2000000) != 0) &&
+                  if (((param_1->coll_radius & 0x2000000) != 0) &&
 
-                     ((*(uint *)(param_1 + 0xe0) & 0x4000000) == 0)) {
+                     ((param_1->coll_radius & 0x4000000) == 0)) {
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    iVar6 = reaper_0052e4a0(param_1);
 
-                    if (iVar4 != 0) {
+                    if (iVar6 != 0) {
 
                       reaper_00530bd0(param_1,0,0,0,0xc,0);
 
                     }
 
-                    *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x4000000;
+                    param_1->coll_radius = param_1->coll_radius | 0x4000000;
 
-                    *(undefined4 *)(param_1 + 0x274) = 0;
+                    *(undefined4 *)&param_1->field_0x274 = 0;
 
                     sound_play_player(0x572,param_1);
 
                   }
 
-                  uVar10 = 0x598;
+                  uVar15 = 0x598;
 
                   goto LAB_0048160d;
 
                 }
 
-                local_24 = *(float *)(iVar4 + 0x188);
+                local_24 = *(float *)(iVar6 + 0x188);
 
                 comm_chat_send_1(param_1,0,1,0,0x23,&local_24);
 
@@ -1610,21 +1631,21 @@ void projectile_logic(int param_1)
 
               else {
 
-                pcVar6 = (char *)TextGetPtr(s_FlagHintDriveGyro_0055bccc);
+                pcVar9 = (char *)TextGetPtr(s_FlagHintDriveGyro_0055bccc);
 
-                pcVar7 = &DAT_00632c10;
+                pcVar10 = &DAT_00632c10;
 
                 do {
 
-                  cVar1 = *pcVar6;
+                  cVar2 = *pcVar9;
 
-                  pcVar6 = pcVar6 + 1;
+                  pcVar9 = pcVar9 + 1;
 
-                  *pcVar7 = cVar1;
+                  *pcVar10 = cVar2;
 
-                  pcVar7 = pcVar7 + 1;
+                  pcVar10 = pcVar10 + 1;
 
-                } while (cVar1 != '\0');
+                } while (cVar2 != '\0');
 
                 _DAT_00632d10 = 0x3f800000;
 
@@ -1634,35 +1655,35 @@ void projectile_logic(int param_1)
 
             else {
 
-              iVar5 = ObjIsMecc(*(int *)(iVar4 + 0x210));
+              iVar7 = ObjIsMecc(*(int *)(iVar6 + 0x210));
 
-              if (iVar5 != 0) {
+              if (iVar7 != 0) {
 
-                uVar2 = *(uint *)(iVar4 + 0xe0);
+                uVar4 = *(uint *)(iVar6 + 0xe0);
 
-                if ((uVar2 & 6) == 0) {
+                if ((uVar4 & 6) == 0) {
 
-                  bldg_get_refpt_worldloc(iVar4,3,local_18);
+                  bldg_get_refpt_worldloc(iVar6,3,local_18);
 
-                  bldg_get_refpt_worldloc(iVar4,4,local_c);
+                  bldg_get_refpt_worldloc(iVar6,4,local_c);
 
-                  fVar9 = (float10)distancesq3d(iVar8,local_18);
+                  fVar11 = (float10)distancesq3d(puVar1,local_18);
 
-                  local_24 = (float)fVar9;
+                  local_24 = (float)fVar11;
 
-                  fVar9 = (float10)distancesq3d(iVar8,local_c);
+                  fVar11 = (float10)distancesq3d(puVar1,local_c);
 
-                  if (fVar9 <= (float10)local_24) {
+                  if (fVar11 <= (float10)local_24) {
 
 LAB_00481264:
 
-                    iVar8 = 2;
+                    iVar7 = 2;
 
                   }
 
                   else {
 
-                    iVar8 = 1;
+                    iVar7 = 1;
 
                   }
 
@@ -1670,41 +1691,41 @@ LAB_00481264:
 
                 else {
 
-                  if ((uVar2 & 2) != 0) {
+                  if ((uVar4 & 2) != 0) {
 
-                    if ((uVar2 & 4) == 0) goto LAB_00481264;
+                    if ((uVar4 & 4) == 0) goto LAB_00481264;
 
                     goto LAB_00481615;
 
                   }
 
-                  iVar8 = 1;
+                  iVar7 = 1;
 
                 }
 
-                iVar5 = dialog_level_is_base();
+                iVar8 = dialog_level_is_base_dup0052aa70();
 
-                if ((iVar5 == 0) || (iVar5 = net_active_players_get(), iVar5 != 0)) {
+                if ((iVar8 == 0) || (iVar8 = net_active_players_get(), iVar8 != 0)) {
 
-                  *(int *)(param_1 + 0x210) = iVar4;
+                  *(int *)&param_1->field_0x210 = iVar6;
 
-                  *(undefined4 *)(param_1 + 0x214) = 4;
+                  *(undefined4 *)&param_1->field_0x214 = 4;
 
-                  *(uint *)(param_1 + 0x218) = (iVar8 != 1) + 3;
+                  *(uint *)&param_1->field_0x218 = (iVar7 != 1) + 3;
 
-                  *(uint *)(param_1 + 0xdc) = *(uint *)(param_1 + 0xdc) | 0x8000;
+                  param_1->pad_DC = param_1->pad_DC | 0x8000;
 
-                  *(uint *)(iVar4 + 0xe0) = *(uint *)(iVar4 + 0xe0) | (uint)(iVar8 != 1) * 2 + 2;
+                  *(uint *)(iVar6 + 0xe0) = *(uint *)(iVar6 + 0xe0) | (uint)(iVar7 != 1) * 2 + 2;
 
                   mecc_stop_looping_effects(param_1);
 
-                  iVar5 = reaper_0052e4a0(iVar4);
+                  iVar8 = reaper_0052e4a0(iVar6);
 
-                  if (iVar5 != 0) {
+                  if (iVar8 != 0) {
 
-                    local_20 = *(undefined4 *)(iVar4 + 0x188);
+                    local_20 = *(undefined4 *)(iVar6 + 0x188);
 
-                    local_1c = iVar8;
+                    local_1c = iVar7;
 
                     reaper_00530bd0(param_1,0,2,0,0x1a,&local_20);
 
@@ -1712,19 +1733,19 @@ LAB_00481264:
 
                   mecc_disable_personal_shield(param_1);
 
-                  iVar4 = *(int *)(param_1 + 0x100);
+                  dVar3 = param_1->animate_state;
 
-                  if ((*(uint *)(param_1 + 0xe0) & 0x1000000) != 0) {
+                  if ((param_1->coll_radius & 0x1000000) != 0) {
 
-                    if (*(int *)(iVar4 + 0x144) != 0) {
+                    if (*(int *)(dVar3 + 0x144) != 0) {
 
-                      fx_delete(*(int *)(iVar4 + 0x144));
+                      fx_delete(*(int *)(dVar3 + 0x144));
 
-                      *(undefined4 *)(iVar4 + 0x144) = 0;
+                      *(undefined4 *)(dVar3 + 0x144) = 0;
 
-                      iVar8 = reaper_0052e4a0(param_1);
+                      iVar6 = reaper_0052e4a0(param_1);
 
-                      if (iVar8 != 0) {
+                      if (iVar6 != 0) {
 
                         reaper_00530bd0(param_1,0,0,0,0x1f,0);
 
@@ -1732,27 +1753,27 @@ LAB_00481264:
 
                     }
 
-                    if (*(int *)(iVar4 + 0x1ec) != 0) {
+                    if (*(int *)(dVar3 + 0x1ec) != 0) {
 
-                      sound_interrupt_sequence(iVar4 + 0x1ec);
-
-                    }
-
-                    *(undefined4 *)(iVar4 + 0x140) = 0;
-
-                    if (*(int *)(iVar4 + 0x18c) == 0x13) {
-
-                      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(iVar4 + 0xfc));
-
-                      *(undefined4 *)(iVar4 + 0xfc) = 0xffffffff;
+                      sound_interrupt_sequence(dVar3 + 0x1ec);
 
                     }
 
-                    *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xfeffffff;
+                    *(undefined4 *)(dVar3 + 0x140) = 0;
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    if (*(int *)(dVar3 + 0x18c) == 0x13) {
 
-                    if (iVar4 != 0) {
+                      WeaponIdSetCurrent__FP6OBJECTi(param_1,*(undefined4 *)(dVar3 + 0xfc));
+
+                      *(undefined4 *)(dVar3 + 0xfc) = 0xffffffff;
+
+                    }
+
+                    param_1->coll_radius = param_1->coll_radius & 0xfeffffff;
+
+                    iVar6 = reaper_0052e4a0(param_1);
+
+                    if (iVar6 != 0) {
 
                       reaper_00530bd0(param_1,0,0,0,0x15,0);
 
@@ -1760,37 +1781,37 @@ LAB_00481264:
 
                   }
 
-                  if (((*(uint *)(param_1 + 0xe0) & 0x2000000) != 0) &&
+                  if (((param_1->coll_radius & 0x2000000) != 0) &&
 
-                     ((*(uint *)(param_1 + 0xe0) & 0x4000000) == 0)) {
+                     ((param_1->coll_radius & 0x4000000) == 0)) {
 
-                    iVar4 = reaper_0052e4a0(param_1);
+                    iVar6 = reaper_0052e4a0(param_1);
 
-                    if (iVar4 != 0) {
+                    if (iVar6 != 0) {
 
                       reaper_00530bd0(param_1,0,0,0,0xc,0);
 
                     }
 
-                    *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x4000000;
+                    param_1->coll_radius = param_1->coll_radius | 0x4000000;
 
-                    *(undefined4 *)(param_1 + 0x274) = 0;
+                    *(undefined4 *)&param_1->field_0x274 = 0;
 
                     sound_play_player(0x572,param_1);
 
                   }
 
-                  uVar10 = 0x59d;
+                  uVar15 = 0x59d;
 
 LAB_0048160d:
 
-                  sound_play_player(uVar10,param_1);
+                  sound_play_player(uVar15,param_1);
 
                 }
 
                 else {
 
-                  local_24 = *(float *)(iVar4 + 0x188);
+                  local_24 = *(float *)(iVar6 + 0x188);
 
                   comm_chat_send_1(param_1,0,1,0,0x23,&local_24);
 
@@ -1948,121 +1969,145 @@ LAB_0048167a:
 }
 
 /* ===== obj_grab_carry @ 0x00481830 ===== */
-void obj_grab_carry(int param_1,int param_2)
+void obj_grab_carry(OBJECT *param_1,int param_2)
 
 
 
 {
 
-  int iVar1;
+  dword dVar1;
 
-  int iVar2;
+  OBJECT *pOVar2;
 
   int iVar3;
 
+  int iVar4;
+
+  OBJECT *pOVar5;
+
+  undefined4 uVar6;
+
+  undefined4 uVar7;
+
+  undefined4 uVar8;
+
+  undefined4 uVar9;
+
+  undefined4 uVar10;
+
   
 
-  iVar3 = param_2;
+  iVar4 = param_2;
 
-  iVar1 = param_1;
+  pOVar2 = param_1;
 
-  *(int *)(param_2 + 0x210) = param_1;
+  uVar10 = 0;
+
+  *(OBJECT **)(param_2 + 0x210) = param_1;
 
   *(undefined4 *)(param_2 + 0x218) = 4;
 
   *(undefined4 *)(param_2 + 0x214) = 0;
 
-  *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 0x20000;
+  uVar9 = 0;
 
-  *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) & 0xfff7ffff;
+  uVar8 = 0;
+
+  param_1->coll_radius = param_1->coll_radius | 0x20000;
+
+  param_1->flags = param_1->flags & 0xfff7ffff;
+
+  uVar7 = 0x21;
+
+  uVar6 = 0xd3;
 
   *(uint *)(param_2 + 0xe0) = *(uint *)(param_2 + 0xe0) | 1;
 
-  ObjectSetAnim(param_1,0xd3,0x21,0,0,0);
+  pOVar5 = param_1;
 
-  mecc_stop_looping_effects(iVar1);
+  ObjectSetAnim(param_1);
 
-  iVar2 = reaper_0052e4a0(iVar3);
+  mecc_stop_looping_effects(pOVar2,pOVar5,uVar6,uVar7,uVar8,uVar9,uVar10);
 
-  if (iVar2 != 0) {
+  iVar3 = reaper_0052e4a0(iVar4);
 
-    param_1 = *(int *)(iVar3 + 0x188);
+  if (iVar3 != 0) {
 
-    reaper_00530bd0(iVar1,0,1,0,0x18,&param_1);
+    param_1 = *(OBJECT **)(iVar4 + 0x188);
+
+    reaper_00530bd0(pOVar2,0,1,0,0x18,&param_1);
 
   }
 
-  mecc_disable_personal_shield(iVar1);
+  mecc_disable_personal_shield(pOVar2);
 
-  iVar3 = *(int *)(iVar1 + 0x100);
+  dVar1 = pOVar2->animate_state;
 
-  if ((*(uint *)(iVar1 + 0xe0) & 0x1000000) != 0) {
+  if ((pOVar2->coll_radius & 0x1000000) != 0) {
 
-    if (*(int *)(iVar3 + 0x144) != 0) {
+    if (*(int *)(dVar1 + 0x144) != 0) {
 
-      fx_delete(*(int *)(iVar3 + 0x144));
+      fx_delete(*(int *)(dVar1 + 0x144));
 
-      *(undefined4 *)(iVar3 + 0x144) = 0;
+      *(undefined4 *)(dVar1 + 0x144) = 0;
 
-      iVar2 = reaper_0052e4a0(iVar1);
+      iVar4 = reaper_0052e4a0(pOVar2);
 
-      if (iVar2 != 0) {
+      if (iVar4 != 0) {
 
-        reaper_00530bd0(iVar1,0,0,0,0x1f,0);
+        reaper_00530bd0(pOVar2,0,0,0,0x1f,0);
 
       }
 
     }
 
-    if (*(int *)(iVar3 + 0x1ec) != 0) {
+    if (*(int *)(dVar1 + 0x1ec) != 0) {
 
-      sound_interrupt_sequence(iVar3 + 0x1ec);
-
-    }
-
-    *(undefined4 *)(iVar3 + 0x140) = 0;
-
-    if (*(int *)(iVar3 + 0x18c) == 0x13) {
-
-      WeaponIdSetCurrent__FP6OBJECTi(iVar1,*(undefined4 *)(iVar3 + 0xfc));
-
-      *(undefined4 *)(iVar3 + 0xfc) = 0xffffffff;
+      sound_interrupt_sequence(dVar1 + 0x1ec);
 
     }
 
-    *(uint *)(iVar1 + 0xe0) = *(uint *)(iVar1 + 0xe0) & 0xfeffffff;
+    *(undefined4 *)(dVar1 + 0x140) = 0;
 
-    iVar3 = reaper_0052e4a0(iVar1);
+    if (*(int *)(dVar1 + 0x18c) == 0x13) {
 
-    if (iVar3 != 0) {
+      WeaponIdSetCurrent__FP6OBJECTi(pOVar2,*(undefined4 *)(dVar1 + 0xfc));
 
-      reaper_00530bd0(iVar1,0,0,0,0x15,0);
+      *(undefined4 *)(dVar1 + 0xfc) = 0xffffffff;
+
+    }
+
+    pOVar2->coll_radius = pOVar2->coll_radius & 0xfeffffff;
+
+    iVar4 = reaper_0052e4a0(pOVar2);
+
+    if (iVar4 != 0) {
+
+      reaper_00530bd0(pOVar2,0,0,0,0x15,0);
 
     }
 
   }
 
-  if (((*(uint *)(iVar1 + 0xe0) & 0x2000000) != 0) && ((*(uint *)(iVar1 + 0xe0) & 0x4000000) == 0))
+  if (((pOVar2->coll_radius & 0x2000000) != 0) && ((pOVar2->coll_radius & 0x4000000) == 0)) {
 
-  {
+    iVar4 = reaper_0052e4a0(pOVar2);
 
-    iVar3 = reaper_0052e4a0(iVar1);
+    if (iVar4 != 0) {
 
-    if (iVar3 != 0) {
-
-      reaper_00530bd0(iVar1,0,0,0,0xc,0);
+      reaper_00530bd0(pOVar2,0,0,0,0xc,0);
 
     }
 
-    *(uint *)(iVar1 + 0xe0) = *(uint *)(iVar1 + 0xe0) | 0x4000000;
+    pOVar2->coll_radius = pOVar2->coll_radius | 0x4000000;
 
-    *(undefined4 *)(iVar1 + 0x274) = 0;
+    *(undefined4 *)&pOVar2->field_0x274 = 0;
 
-    sound_play_player(0x572,iVar1);
+    sound_play_player(0x572,pOVar2);
 
   }
 
-  sound_play_player(0x598,iVar1);
+  sound_play_player(0x598,pOVar2);
 
   return;
 
@@ -2201,29 +2246,31 @@ void sound_stop_init_c96(undefined4 param_1)
 }
 
 /* ===== reaper_artillery_ai_c95 @ 0x00481BF0 ===== */
-void reaper_artillery_ai_c95(int param_1)
+void reaper_artillery_ai_c95(OBJECT *param_1)
 
 
 
 {
 
-  int iVar1;
+  OBJECT *pOVar1;
 
-  uint uVar2;
+  dword dVar2;
 
-  undefined4 *puVar3;
+  uint uVar3;
 
-  int iVar4;
+  undefined4 *puVar4;
 
-  int *piVar5;
+  int iVar5;
 
-  undefined4 uVar6;
+  int *piVar6;
 
-  float10 fVar7;
+  undefined4 uVar7;
 
   float10 fVar8;
 
-  float fVar9;
+  float10 fVar9;
+
+  float fVar10;
 
   float fStack_44;
 
@@ -2231,71 +2278,73 @@ void reaper_artillery_ai_c95(int param_1)
 
   undefined4 uStack_20;
 
-  int iStack_1c;
+  OBJECT *pOStack_1c;
 
   
 
-  fVar7 = (float10)distancesq3d(DAT_00632a88 + 0xa0,param_1 + 0xa0);
+  fVar8 = (float10)distancesq3d(DAT_00632a88 + 0xa0,&param_1->field_0xa0);
 
-  if ((fVar7 < (float10)90000.0) && (iVar4 = ObjIsMecc(DAT_00632a88), iVar4 != 0)) {
+  if ((fVar8 < (float10)90000.0) && (iVar5 = ObjIsMecc(DAT_00632a88), iVar5 != 0)) {
 
     ANM_DumpCluster(DAT_00632a88,10);
 
   }
 
-  if ((*(byte *)(param_1 + 0xe0) & 1) == 0) {
+  if ((param_1->coll_radius & 1) == 0) {
 
     return;
 
   }
 
-  fVar8 = (float10)FRateGetSecsframe(0,0);
+  fVar9 = (float10)FRateGetSecsframe(0,0);
 
-  fVar7 = (float10)fRam0059dcc8;
+  fVar8 = (float10)fRam0059dcc8;
 
-  fRam0059dcc8 = (float)(fVar8 + fVar7);
+  fRam0059dcc8 = (float)(fVar9 + fVar8);
 
-  if ((float10)0.2 < fVar8 + fVar7) {
+  if ((float10)0.2 < fVar9 + fVar8) {
 
     fRam0059dcc8 = 0.0;
 
-    iVar4 = fx_create(param_1);
+    iVar5 = fx_create(param_1);
 
-    puVar3 = DAT_00632d6c;
+    puVar4 = DAT_00632d6c;
 
-    if (iVar4 != 0) {
+    if (iVar5 != 0) {
 
-      for (; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
+      for (; puVar4 != (undefined4 *)0x0; puVar4 = (undefined4 *)*puVar4) {
 
-        iVar4 = puVar3[3];
+        pOVar1 = (OBJECT *)puVar4[3];
 
-        if (((((*(uint *)(iVar4 + 0xd8) & 0x4000c000) == 0) &&
+        if (((((pOVar1->flags & 0x4000c000) == 0) &&
 
-             (*(float *)(iVar4 + 0x278) < *(float *)(iVar4 + 0x1c0))) &&
+             (*(float *)&pOVar1->field_0x278 < *(float *)&pOVar1->field_0x1c0)) &&
 
-            ((iVar1 = *(int *)(iVar4 + 4), iVar1 == 8 ||
+            ((dVar2 = pOVar1->type_id, dVar2 == 8 ||
 
-             (((iVar1 == 0xd2 || (iVar1 == 0x7c)) || (iVar1 == 0x3df)))))) && (iVar4 != param_1)) {
+             (((dVar2 == 0xd2 || (dVar2 == 0x7c)) || (dVar2 == 0x3df)))))) && (pOVar1 != param_1)) {
 
-          fVar7 = (float10)distancesq2d__FP3P3DT0(iVar4 + 0xa0,param_1 + 0xa0);
+          fVar8 = (float10)distancesq2d__FP3P3DT0(&pOVar1->field_0xa0,&param_1->field_0xa0);
 
-          if (((fVar7 <= (float10)900.0) &&
+          if (((fVar8 <= (float10)900.0) &&
 
-              (*(float *)(iVar4 + 0xa8) - 5.0 <=
+              (*(float *)&pOVar1->field_0xa8 - 5.0 <=
 
-               *(float *)(param_1 + 0x1ec) * *(float *)(param_1 + 0xc4) + *(float *)(param_1 + 0xa8)
+               *(float *)&param_1->field_0x1ec * *(float *)&param_1->field_0xc4 +
 
-              )) && ((*(float *)(param_1 + 0xa8) <=
+               *(float *)&param_1->field_0xa8)) &&
 
-                      *(float *)(iVar4 + 0x1ec) * *(float *)(iVar4 + 0xc4) +
+             ((*(float *)&param_1->field_0xa8 <=
 
-                      *(float *)(iVar4 + 0xa8) + 5.0 &&
+               *(float *)&pOVar1->field_0x1ec * *(float *)&pOVar1->field_0xc4 +
 
-                     (obj_damage_apply(2,0x461c4000,iVar4,0,iVar4 + 0xa0,0),
+               *(float *)&pOVar1->field_0xa8 + 5.0 &&
 
-                     *(int *)(iVar4 + 4) == 0x3df)))) {
+              (obj_damage_apply(2,0x461c4000,pOVar1,0,&pOVar1->field_0xa0,0),
 
-            obj_damage_apply(2,0x461c4000,param_1,0,param_1 + 0xa0,0);
+              pOVar1->type_id == 0x3df)))) {
+
+            obj_damage_apply(2,0x461c4000,param_1,0,&param_1->field_0xa0,0);
 
             break;
 
@@ -2309,41 +2358,41 @@ void reaper_artillery_ai_c95(int param_1)
 
   }
 
-  if (*(int *)(param_1 + 0x210) != 0) {
+  if (*(int *)&param_1->field_0x210 != 0) {
 
-    *(undefined4 *)(param_1 + 0xf0) = 0;
+    *(undefined4 *)&param_1->field_0xf0 = 0;
 
-    *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffdffff | 0x800;
+    *(uint *)&param_1->field_0x1c8 = *(uint *)&param_1->field_0x1c8 & 0xfffdffff | 0x800;
 
-    if ((*(uint *)(*(int *)(param_1 + 0x210) + 0xd8) & 0x80000) == 0) {
+    if ((*(uint *)(*(int *)&param_1->field_0x210 + 0xd8) & 0x80000) == 0) {
 
-      if ((*(byte *)(param_1 + 0xe0) & 0x10) != 0) {
+      if ((param_1->coll_radius & 0x10) != 0) {
 
-        sound_play_obj(0x59f,param_1);
+        sound_play_obj(0x59f);
 
-        *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) & 0xffffffef;
+        param_1->coll_radius = param_1->coll_radius & 0xffffffef;
 
       }
 
-      *(uint *)(param_1 + 0xe0) = *(uint *)(param_1 + 0xe0) | 8;
+      param_1->coll_radius = param_1->coll_radius | 8;
 
       return;
 
     }
 
-    uVar2 = *(uint *)(param_1 + 0xe0);
+    uVar3 = param_1->coll_radius;
 
-    *(uint *)(param_1 + 0xe0) = uVar2 | 0x10;
+    param_1->coll_radius = uVar3 | 0x10;
 
-    if ((uVar2 & 8) != 0) {
+    if ((uVar3 & 8) != 0) {
 
-      *(uint *)(param_1 + 0xe0) = uVar2 & 0xfffffff7 | 0x10;
+      param_1->coll_radius = uVar3 & 0xfffffff7 | 0x10;
 
-      sound_play_obj(0x599,param_1);
+      sound_play_obj(0x599);
 
     }
 
-    piVar5 = DAT_00632d9c;
+    piVar6 = DAT_00632d9c;
 
     if (DAT_00632d9c == (int *)0x0) {
 
@@ -2351,13 +2400,13 @@ void reaper_artillery_ai_c95(int param_1)
 
     }
 
-    while ((iVar4 = piVar5[3], *(int *)(iVar4 + 4) != 0x3d8 ||
+    while ((iVar5 = piVar6[3], *(int *)(iVar5 + 4) != 0x3d8 ||
 
-           (*(int *)(iVar4 + 0x18c) != *(int *)(*(int *)(param_1 + 0x210) + 0x18c)))) {
+           (*(int *)(iVar5 + 0x18c) != *(int *)(*(int *)&param_1->field_0x210 + 0x18c)))) {
 
-      piVar5 = (int *)*piVar5;
+      piVar6 = (int *)*piVar6;
 
-      if (piVar5 == (int *)0x0) {
+      if (piVar6 == (int *)0x0) {
 
         return;
 
@@ -2365,51 +2414,51 @@ void reaper_artillery_ai_c95(int param_1)
 
     }
 
-    bldg_get_refpt_worldlocdir(iVar4,2,auStack_40,&fStack_44);
+    bldg_get_refpt_worldlocdir(iVar5,2,auStack_40,&fStack_44);
 
-    fVar7 = (float10)distancesq3d(auStack_40,param_1 + 0xa0);
+    fVar8 = (float10)distancesq3d(auStack_40,&param_1->field_0xa0);
 
-    if ((float10)100.0 <= fVar7) {
-
-      return;
-
-    }
-
-    fVar7 = (float10)FRateGetSecsframe(param_1,0);
-
-    fVar7 = (float10)*(float *)(param_1 + 0xec) - fVar7;
-
-    *(float *)(param_1 + 0xec) = (float)fVar7;
-
-    if ((float10)0.0 <= fVar7) {
+    if ((float10)100.0 <= fVar8) {
 
       return;
 
     }
 
-    *(undefined4 *)(param_1 + 0xec) = *(undefined4 *)(DAT_00632ed8 + 0x1110);
+    fVar8 = (float10)FRateGetSecsframe(param_1,0);
 
-    if ((float)*(int *)(param_1 + 0xf4) < *(float *)(DAT_00632ed8 + 0x89c)) {
+    fVar8 = (float10)*(float *)&param_1->field_0xec - fVar8;
 
-      *(int *)(param_1 + 0xf4) = *(int *)(param_1 + 0xf4) + 1;
+    *(float *)&param_1->field_0xec = (float)fVar8;
+
+    if ((float10)0.0 <= fVar8) {
+
+      return;
+
+    }
+
+    *(undefined4 *)&param_1->field_0xec = *(undefined4 *)(DAT_00632ed8 + 0x1110);
+
+    if ((float)*(int *)&param_1->field_0xf4 < *(float *)(DAT_00632ed8 + 0x89c)) {
+
+      *(int *)&param_1->field_0xf4 = *(int *)&param_1->field_0xf4 + 1;
 
       sound_play_player(0x63b,param_1);
 
     }
 
-    if (0x95 < *(int *)(param_1 + 0xe8)) {
+    if (0x95 < *(int *)&param_1->field_0xe8) {
 
       return;
 
     }
 
-    iVar4 = *(int *)(param_1 + 0xe8) + 0xf;
+    iVar5 = *(int *)&param_1->field_0xe8 + 0xf;
 
-    *(int *)(param_1 + 0xe8) = iVar4;
+    *(int *)&param_1->field_0xe8 = iVar5;
 
-    if (0x96 < iVar4) {
+    if (0x96 < iVar5) {
 
-      *(undefined4 *)(param_1 + 0xe8) = 0x96;
+      *(undefined4 *)&param_1->field_0xe8 = 0x96;
 
     }
 
@@ -2419,21 +2468,21 @@ void reaper_artillery_ai_c95(int param_1)
 
   }
 
-  fVar7 = (float10)FRateGetSecsframe(param_1,0);
+  fVar8 = (float10)FRateGetSecsframe(param_1,0);
 
-  fVar7 = fVar7 + (float10)*(float *)(param_1 + 0xf0);
+  fVar8 = fVar8 + (float10)*(float *)&param_1->field_0xf0;
 
-  *(float *)(param_1 + 0xf0) = (float)fVar7;
+  *(float *)&param_1->field_0xf0 = (float)fVar8;
 
-  if ((float10)1.0 <= fVar7) {
+  if ((float10)1.0 <= fVar8) {
 
-    *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) & 0xfffff7ff | 0x20000;
+    *(uint *)&param_1->field_0x1c8 = *(uint *)&param_1->field_0x1c8 & 0xfffff7ff | 0x20000;
 
   }
 
-  fVar9 = *(float *)(param_1 + 0x108);
+  fVar10 = (float)param_1->vel0;
 
-  fStack_44 = *(float *)(param_1 + 0xa8);
+  fStack_44 = *(float *)&param_1->field_0xa8;
 
   vvel_decay_tick(param_1);
 
@@ -2443,41 +2492,41 @@ void reaper_artillery_ai_c95(int param_1)
 
   object_apply_location(param_1);
 
-  iVar4 = fx_create(param_1);
+  iVar5 = fx_create(param_1);
 
-  if (iVar4 != 0) {
+  if (iVar5 != 0) {
 
-    fVar9 = *(float *)(param_1 + 0x108) - fVar9;
+    fVar10 = (float)param_1->vel0 - fVar10;
 
-    if (*(float *)(DAT_00632ed8 + 0xb68) < fVar9 == (*(float *)(DAT_00632ed8 + 0xb68) == fVar9)) {
+    if (*(float *)(DAT_00632ed8 + 0xb68) < fVar10 == (*(float *)(DAT_00632ed8 + 0xb68) == fVar10)) {
 
-      if (*(float *)(DAT_00632ed8 + 0xb60) < fVar9 == (*(float *)(DAT_00632ed8 + 0xb60) == fVar9))
+      if (*(float *)(DAT_00632ed8 + 0xb60) < fVar10 == (*(float *)(DAT_00632ed8 + 0xb60) == fVar10))
 
       goto code_r0x00482056;
 
-      fVar9 = (fVar9 - *(float *)(DAT_00632ed8 + 0xb60)) * *(float *)(DAT_00632ed8 + 0xb64);
+      fVar10 = (fVar10 - *(float *)(DAT_00632ed8 + 0xb60)) * *(float *)(DAT_00632ed8 + 0xb64);
 
     }
 
     else {
 
-      fVar9 = 1000.0;
+      fVar10 = 1000.0;
 
     }
 
-    obj_damage_apply(0x1a,fVar9,param_1,0,param_1 + 0xa0,0);
+    obj_damage_apply(0x1a,fVar10,param_1,0,&param_1->field_0xa0,0);
 
   }
 
 code_r0x00482056:
 
-  if (((*(uint *)(param_1 + 0xd8) & 0x80000) != 0) || (fStack_44 <= *(float *)(param_1 + 0xa8))) {
+  if (((param_1->flags & 0x80000) != 0) || (fStack_44 <= *(float *)&param_1->field_0xa8)) {
 
-    if (*(int *)(param_1 + 0xf8) != 0) {
+    if (*(int *)&param_1->field_0xf8 != 0) {
 
-      fx_delete(*(int *)(param_1 + 0xf8));
+      fx_delete(*(int *)&param_1->field_0xf8);
 
-      *(undefined4 *)(param_1 + 0xf8) = 0;
+      *(undefined4 *)&param_1->field_0xf8 = 0;
 
     }
 
@@ -2485,21 +2534,21 @@ code_r0x00482056:
 
   else {
 
-    fVar7 = (float10)FRateGetSecsframe(param_1,0);
+    fVar8 = (float10)FRateGetSecsframe(param_1,0);
 
-    *(float *)(param_1 + 200) = (float)(fVar7 * (float10)360.0 + (float10)*(float *)(param_1 + 200))
+    *(float *)&param_1->field_0xc8 =
 
-    ;
+         (float)(fVar8 * (float10)360.0 + (float10)*(float *)&param_1->field_0xc8);
 
-    if (*(int *)(param_1 + 0xf8) == 0) {
+    if (*(int *)&param_1->field_0xf8 == 0) {
 
-      iStack_1c = param_1;
+      pOStack_1c = param_1;
 
       uStack_20 = 4;
 
-      uVar6 = fx_get_free_effect__Fv();
+      uVar7 = fx_get_free_effect__Fv();
 
-      *(undefined4 *)(param_1 + 0xf8) = uVar6;
+      *(undefined4 *)&param_1->field_0xf8 = uVar7;
 
       return;
 
@@ -2592,9 +2641,13 @@ void smartie_swap_capture_c95
 
       if (0.5 <= *(float *)(param_3 + 0x278) / *(float *)(param_3 + 0x1c0)) {
 
-        sound_play_obj(0x597,param_3);
+        uVar5 = 0x597;
 
-        sound_stop_obj(0x59a,param_3);
+        iVar3 = param_3;
+
+        sound_play_obj(0x597);
+
+        sound_stop_obj(0x59a,param_3,uVar5,iVar3);
 
       }
 
@@ -2660,9 +2713,13 @@ void smartie_swap_capture_c95
 
     if (*(float *)(param_3 + 0x278) / *(float *)(param_3 + 0x1c0) < 0.5) {
 
-      sound_play_obj(0x59a,param_3);
+      uVar5 = 0x59a;
 
-      sound_stop_obj(0x597,param_3);
+      iVar3 = param_3;
+
+      sound_play_obj(0x59a);
+
+      sound_stop_obj(0x597,param_3,uVar5,iVar3);
 
       return;
 
@@ -8606,7 +8663,7 @@ void dlog_page_1b_open(void)
 
       (*DAT_005dd288)();
 
-      iVar1 = dialog_level_is_base();
+      iVar1 = dialog_level_is_base_dup0052aa70();
 
       if (iVar1 == 0) {
 
@@ -12935,6 +12992,8 @@ void menu_gameplay_teardown(int param_1)
 
   byte bVar2;
 
+  OBJECT *obj;
+
   undefined4 uVar3;
 
   byte *pbVar4;
@@ -12952,8 +13011,6 @@ void menu_gameplay_teardown(int param_1)
   undefined4 *puVar10;
 
   bool bVar11;
-
-  float10 fVar12;
 
   
 
@@ -13113,21 +13170,21 @@ LAB_0048f768:
 
   for (puVar10 = DAT_00632d68; puVar10 != (undefined4 *)0x0; puVar10 = (undefined4 *)*puVar10) {
 
-    iVar9 = puVar10[3];
+    obj = (OBJECT *)puVar10[3];
 
-    obj_velocity_commit(iVar9);
+    obj_velocity_commit(obj);
 
     if (DAT_00632a88 == 0) break;
 
-    if (((*(uint *)(iVar9 + 0xd8) & 0xc000) == 0) && ((*(uint *)(iVar9 + 0xd8) & 0x40) == 0)) {
+    if (((obj->flags & 0xc000) == 0) && ((obj->flags & 0x40) == 0)) {
 
-      objspec_dispatch_gate(iVar9);
+      objspec_dispatch_gate(obj);
 
-      fVar12 = (float10)FRateGetSecsframe(iVar9,0);
+      FRateGetSecsframe(obj,0);
 
-      object_animate_process(iVar9,(float)fVar12);
+      object_animate_process(obj);
 
-      object_apply_location(iVar9);
+      object_apply_location(obj);
 
     }
 
@@ -13198,7 +13255,7 @@ void reaper_explosive_shot_c57(int param_1)
 
   if ((*(int *)(param_1 + 0xdc) < 0) && (*(int *)(param_1 + 0xf4) != 0)) {
 
-    sound_play_obj(*(int *)(param_1 + 0xf4),param_1);
+    sound_play_obj(*(int *)(param_1 + 0xf4));
 
   }
 

@@ -438,7 +438,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
   local_19c = 0;
 
-  ObjectUpdateSpeedDist(piVar3[1],&local_1ac,local_1c4 + 3);
+  ObjectUpdateSpeedDist_dup0053d940(piVar3[1],&local_1ac,local_1c4 + 3);
 
   local_1dc = 0;
 
@@ -450,7 +450,7 @@ void marker_create_path__FP6OBJECTi(int param_1,int param_2)
 
     local_1ac = 0;
 
-    ObjectUpdateSpeedDist(piVar3[1],&local_1ac,local_1c4);
+    ObjectUpdateSpeedDist_dup0053d940(piVar3[1],&local_1ac,local_1c4);
 
     distance3d__FP3P3DT0(local_1c4 + 3,local_1c4);
 

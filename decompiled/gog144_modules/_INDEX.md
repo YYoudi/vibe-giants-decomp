@@ -64,7 +64,6 @@
 | Main/commonbase | 1 | 1 | Main_commonbase.c |
 | Main/flick | 1 | 1 | Main_flick.c |
 | Main/kabuto | 1 | 1 | Main_kabuto.c |
-| region_0055 | 1 | 1 | region_0055.c |
 | main/STATUS | 1 | 1 | main_STATUS.c |
 | main/flame | 1 | 1 | main_flame.c |
 | main/marker | 1 | 1 | main_marker.c |
@@ -77,4 +76,5 @@
 | main/teammecc | 1 | 1 | main_teammecc.c |
 | main/verm | 1 | 1 | main_verm.c |
 | main/xform | 1 | 1 | main_xform.c |
+| region_0055 | 1 | 1 | region_0055.c |
 | win95/W95MAIN | 1 | 1 | win95_W95MAIN.c |

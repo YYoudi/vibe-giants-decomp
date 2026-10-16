@@ -50,7 +50,7 @@ void readobjs_load_object(void)
 
         }
 
-        object_free_all_allocated_data(puVar5 + -0x77);
+        object_free_all_allocated_data((OBJECT *)(puVar5 + -0x77));
 
         iVar3 = iVar3 + 1;
 

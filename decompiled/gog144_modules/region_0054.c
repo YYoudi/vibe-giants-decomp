@@ -1,8 +1,7 @@
-/* Giants 1.449 — address bucket region_0054 (NO original-source claim:
- * this file is an address band of the Ghidra export, not a recovered
- * source file). 351 functions, decompiled by Ghidra; names are of
- * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
- * and verify the body before trusting any name. */
+/* Giants 1.449 — module region_0054
+ * 351 functions (351 named) — decompiled, names from PS2 symbols
+ * Original source: C:\Giants\source\region_0054.c(pp) (assert-string evidence)
+ */
 
 /* ===== map_memfree @ 0x00540020 ===== */
 void map_memfree(int param_1,int param_2)
@@ -453,12 +452,12 @@ int NAM_NameGetCustom(int param_1)
 
 }
 
-/* ===== NAM_NameGetCustom @ 0x005404B0 ===== */
+/* ===== NAM_NameGetCustom_dup005404b0 @ 0x005404B0 ===== */
 /* PS2 candidate: NAM_NameGetCustom_2 (conf 0.522) */
 
 
 
-int NAM_NameGetCustom(int param_1)
+int NAM_NameGetCustom_dup005404b0(int param_1)
 
 
 

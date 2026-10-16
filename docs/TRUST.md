@@ -36,11 +36,13 @@ du corps est un **piège**, pas une source.
 - `ANM_BinderDestroy_3` est en réalité `atoi`. Exemple type : suffixe
   `_3` = 3e homonyme LLM, pas une variante.
 - 23 noms dupliqués dans le corpus (un nom ≠ un corps). AUDIT 2026-10-16
-  (`decompiled/dup_audit.json`) : 17 vrais doublons de fonctions (2-3 corps
-  DISTINCTS par nom — tailles différentes partout, ex. mecc_fire_logic 22 070
-  vs 43 293 octets de corps), 6 entrées = artefacts de parsing (Main/Utils/
-  _GLOBAL_/main/__get_eh_context/_malloc). Renommage Ghidra à faire
-  (un nom = un corps, suffixe à convenir avec l'architecte).
+  (`decompiled/dup_audit.json`) — RÉSOLU 2026-10-16 : 17 noms dédupliqués
+  dans Ghidra (convention neutre : 1re occurrence [adresse la plus basse]
+  garde le nom, suivantes `<name>_dup<addr8>` — scripts/dedup_rename_pyghidra.py,
+  corpus ré-exporté, 0 doublon de fonction du jeu au grep). Les 6 restants au
+  grep = fragments CRT MSVC dupliqués (paires debug/ret : __get_eh_context
+  0x53FC50/0x544C62, _malloc 0x544285/0x544C365, + Main/Utils/_GLOBAL_/main)
+  — pas des fonctions du jeu.
 - Anciens en-têtes « Original source » des seaux d'adresses : fictifs.
   Les fichiers sont renommés `region_00XX.c` (bande d'adresses neutre) ;
   tout en-tête survivant qui affirme une source est faux jusqu'à preuve.

@@ -1,8 +1,7 @@
-/* Giants 1.449 — address bucket region_0042 (NO original-source claim:
- * this file is an address band of the Ghidra export, not a recovered
- * source file). 132 functions, decompiled by Ghidra; names are of
- * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
- * and verify the body before trusting any name. */
+/* Giants 1.449 — module region_0042
+ * 132 functions (132 named) — decompiled, names from PS2 symbols
+ * Original source: C:\Giants\source\region_0042.c(pp) (assert-string evidence)
+ */
 
 /* ===== key_to_bitmask @ 0x00420090 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -8100,7 +8099,7 @@ void reaperbase_harass_ai_c89(float param_1)
 
   if (DAT_00632e74 == 0) {
 
-    iVar4 = dialog_level_is_base();
+    iVar4 = dialog_level_is_base_dup0052aa70();
 
     if ((iVar4 == 0) && (DAT_00632c00 == 0)) {
 
@@ -8201,87 +8200,87 @@ void reaperbase_harass_ai_c89(float param_1)
 
 
 
-int kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
+OBJECT * kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
 
 
 
 {
 
+  OBJECT *obj;
+
   int iVar1;
 
-  int iVar2;
+  undefined4 *puVar2;
 
   undefined4 *puVar3;
 
-  undefined4 *puVar4;
-
   
 
-  iVar1 = object_allocate_type(param_2,0);
+  obj = (OBJECT *)object_allocate_type(param_2,0);
 
-  if (iVar1 != 0) {
+  if (obj != (OBJECT *)0x0) {
 
-    object_change_ospec(iVar1,0x59);
+    object_change_ospec(obj,0x59);
 
     if (param_1 != 0) {
 
-      iVar2 = ObjIsMecc(param_1);
+      iVar1 = ObjIsMecc(param_1);
 
-      if (iVar2 == 0) {
+      if (iVar1 == 0) {
 
-        *(undefined4 *)(iVar1 + 0xf4) = 0;
+        *(undefined4 *)&obj->field_0xf4 = 0;
 
       }
 
       else {
 
-        *(undefined4 *)(iVar1 + 0xf4) = *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x4c);
+        *(undefined4 *)&obj->field_0xf4 = *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x4c);
 
       }
 
-      *(undefined4 *)(iVar1 + 200) = *(undefined4 *)(param_1 + 200);
+      *(undefined4 *)&obj->field_0xc8 = *(undefined4 *)(param_1 + 200);
 
-      *(undefined4 *)(iVar1 + 0xd0) = *(undefined4 *)(param_1 + 0xd0);
+      *(undefined4 *)&obj->field_0xd0 = *(undefined4 *)(param_1 + 0xd0);
 
-      *(undefined4 *)(iVar1 + 0xcc) = *(undefined4 *)(param_1 + 0xcc);
+      *(undefined4 *)&obj->field_0xcc = *(undefined4 *)(param_1 + 0xcc);
 
-      *(undefined4 *)(iVar1 + 0xc4) = *(undefined4 *)(param_1 + 0xc4);
+      *(undefined4 *)&obj->field_0xc4 = *(undefined4 *)(param_1 + 0xc4);
 
-      puVar3 = (undefined4 *)(param_1 + 0x294);
+      puVar2 = (undefined4 *)(param_1 + 0x294);
 
-      puVar4 = (undefined4 *)(iVar1 + 0x294);
+      puVar3 = (undefined4 *)&obj->field_0x294;
 
-      for (iVar2 = 0x11; iVar2 != 0; iVar2 = iVar2 + -1) {
+      for (iVar1 = 0x11; iVar1 != 0; iVar1 = iVar1 + -1) {
 
-        *puVar4 = *puVar3;
+        *puVar3 = *puVar2;
+
+        puVar2 = puVar2 + 1;
 
         puVar3 = puVar3 + 1;
 
-        puVar4 = puVar4 + 1;
-
       }
 
-      *(uint *)(iVar1 + 0xd8) = *(uint *)(iVar1 + 0xd8) | 0x10000;
+      obj->flags = obj->flags | 0x10000;
 
-      object_set_location(iVar1,*(undefined4 *)(iVar1 + 0x2a4),*(undefined4 *)(iVar1 + 0x2b4),
+      object_set_location(obj,*(undefined4 *)&obj->field_0x2a4,*(undefined4 *)&obj->field_0x2b4,
 
-                          *(undefined4 *)(iVar1 + 0x2c4));
+                          *(undefined4 *)&obj->field_0x2c4);
 
-      ObjectCalculateTransform(iVar1);
+      ObjectCalculateTransform(obj);
 
-      PROJ_ObjectFinalize(iVar1);
+      PROJ_ObjectFinalize(obj);
 
-      ObjectSetAnim(iVar1,*(undefined4 *)(param_1 + 0x10),0x20,0,0,0);
+      ObjectSetAnim(obj);
 
     }
 
-    object_init_usage(iVar1);
+    object_init_usage(obj);
 
-    **(undefined4 **)(iVar1 + 0x100) = 0x41a00000;
+    *(undefined4 *)obj->animate_state = 0x41a00000;
 
   }
 
-  return iVar1;
+  return obj;
 
 }
 
@@ -8290,7 +8289,7 @@ int kabuto_corpse_create__FP6OBJECTi(int param_1,undefined4 param_2)
 
 
 
-int corpse_create(int param_1)
+OBJECT * corpse_create(int param_1)
 
 
 
@@ -8298,9 +8297,7 @@ int corpse_create(int param_1)
 
   int iVar1;
 
-  int iVar2;
-
-  undefined4 uVar3;
+  OBJECT *obj;
 
   
 
@@ -8308,45 +8305,33 @@ int corpse_create(int param_1)
 
   if (iVar1 != 0) {
 
-    iVar1 = object_allocate_type(2,0);
+    obj = (OBJECT *)object_allocate_type(2,0);
 
-    *(undefined4 *)(iVar1 + 0xf4) = *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x4c);
+    *(undefined4 *)&obj->field_0xf4 = *(undefined4 *)(*(int *)(param_1 + 0x100) + 0x4c);
 
-    object_change_ospec(iVar1,0x59);
+    object_change_ospec(obj,0x59);
 
-    *(undefined4 *)(iVar1 + 0xa0) = *(undefined4 *)(param_1 + 0xa0);
+    *(undefined4 *)&obj->field_0xa0 = *(undefined4 *)(param_1 + 0xa0);
 
-    *(undefined4 *)(iVar1 + 0xa4) = *(undefined4 *)(param_1 + 0xa4);
+    *(undefined4 *)&obj->field_0xa4 = *(undefined4 *)(param_1 + 0xa4);
 
-    *(undefined4 *)(iVar1 + 0xa8) = *(undefined4 *)(param_1 + 0xa8);
+    *(undefined4 *)&obj->field_0xa8 = *(undefined4 *)(param_1 + 0xa8);
 
-    *(undefined4 *)(iVar1 + 200) = *(undefined4 *)(param_1 + 200);
+    *(undefined4 *)&obj->field_0xc8 = *(undefined4 *)(param_1 + 200);
 
-    **(undefined4 **)(iVar1 + 0x100) = 0x41a00000;
+    *(undefined4 *)obj->animate_state = 0x41a00000;
 
-    iVar2 = fx_create(param_1);
+    fx_create(param_1);
 
-    if (iVar2 == 0) {
+    ObjectSetAnim(obj);
 
-      uVar3 = 0x90;
+    obj->pad_14 = 0x3f800000;
 
-    }
-
-    else {
-
-      uVar3 = *(undefined4 *)(param_1 + 0x10);
-
-    }
-
-    ObjectSetAnim(iVar1,uVar3,0x80,0,0,0);
-
-    *(undefined4 *)(iVar1 + 0x14) = 0x3f800000;
-
-    return iVar1;
+    return obj;
 
   }
 
-  return 0;
+  return (OBJECT *)0x0;
 
 }
 
@@ -8416,47 +8401,47 @@ void harass_atan_death_c89(int param_1,float param_2,int param_3)
 }
 
 /* ===== generic_walker_ai_c45 @ 0x00425CA0 ===== */
-void generic_walker_ai_c45(int param_1)
+void generic_walker_ai_c45(OBJECT *param_1)
 
 
 
 {
 
-  float *pfVar1;
+  undefined1 *puVar1;
 
-  float fVar2;
+  undefined4 *puVar2;
 
-  undefined4 *puVar3;
+  int iVar3;
 
   int iVar4;
 
-  int iVar5;
+  float10 fVar5;
 
-  float10 fVar6;
+  OBJECT *pOVar6;
 
-  undefined4 uVar7;
+  float fVar7;
 
   
 
   if (DAT_00632e74 == 0) {
 
-    puVar3 = DAT_00632d68;
+    puVar2 = DAT_00632d68;
 
-    if (*(int *)(param_1 + 0xe4) == 0) {
+    if (param_1->pad_E4 == 0) {
 
-      for (; puVar3 != (undefined4 *)0x0; puVar3 = (undefined4 *)*puVar3) {
+      for (; puVar2 != (undefined4 *)0x0; puVar2 = (undefined4 *)*puVar2) {
 
-        iVar4 = puVar3[3];
+        iVar3 = puVar2[3];
 
-        if ((((*(int *)(iVar4 + 0x1e0) == 0x60) && (*(int *)(iVar4 + 4) == 0x41c)) &&
+        if ((((*(int *)(iVar3 + 0x1e0) == 0x60) && (*(int *)(iVar3 + 4) == 0x41c)) &&
 
-            (*(int *)(iVar4 + 0x174) == 0)) && (iVar5 = __ftol(), *(int *)(iVar4 + 0xe8) == iVar5))
+            (*(int *)(iVar3 + 0x174) == 0)) && (iVar4 = __ftol(), *(int *)(iVar3 + 0xe8) == iVar4))
 
         {
 
-          *(int *)(param_1 + 0x274) = iVar4;
+          *(int *)&param_1->field_0x274 = iVar3;
 
-          *(undefined4 *)(param_1 + 0xf8) = 0;
+          *(undefined4 *)&param_1->field_0xf8 = 0;
 
           break;
 
@@ -8464,83 +8449,87 @@ void generic_walker_ai_c45(int param_1)
 
       }
 
-      fVar6 = (float10)rndfloatrange(0x41700000,0x41f00000);
+      fVar5 = (float10)rndfloatrange(0x41700000,0x41f00000);
 
-      *(float *)(param_1 + 0xf0) = (float)fVar6;
+      *(float *)&param_1->field_0xf0 = (float)fVar5;
 
-      *(undefined4 *)(param_1 + 0xe4) = 1;
+      param_1->pad_E4 = 1;
 
     }
 
-    else if (*(int *)(param_1 + 0xe4) == 1) {
+    else if (param_1->pad_E4 == 1) {
 
-      if (*(int *)(param_1 + 0x274) != 0) {
+      if (*(int *)&param_1->field_0x274 != 0) {
 
-        fVar6 = (float10)FRateGetSecsframe(param_1,0);
+        fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
-        fVar6 = (float10)*(float *)(param_1 + 0xf0) - fVar6;
+        fVar5 = (float10)*(float *)&param_1->field_0xf0 - fVar5;
 
-        *(float *)(param_1 + 0xf0) = (float)fVar6;
+        *(float *)&param_1->field_0xf0 = (float)fVar5;
 
-        if (fVar6 < (float10)0.0) {
+        if (fVar5 < (float10)0.0) {
 
-          fVar6 = (float10)rndfloatrange(0x41700000,0x41f00000);
+          fVar5 = (float10)rndfloatrange(0x41700000,0x41f00000);
 
-          *(float *)(param_1 + 0xf0) = (float)fVar6;
+          *(float *)&param_1->field_0xf0 = (float)fVar5;
 
-          iVar4 = crt_rand_scaled(100);
+          iVar3 = crt_rand_scaled(100);
 
-          if (iVar4 < 0x32) {
+          if (iVar3 < 0x32) {
 
-            uVar7 = 0x6e7;
+            iVar3 = 0x6e7;
 
           }
 
           else {
 
-            uVar7 = 0x6e8;
+            iVar3 = 0x6e8;
 
           }
 
-          sound_play_obj(uVar7,param_1);
+          sound_play_obj(iVar3);
 
         }
 
-        iVar4 = *(int *)(param_1 + 0x274);
+        iVar3 = *(int *)&param_1->field_0x274;
 
-        fVar6 = (float10)FRateGetSecsframe(param_1,0);
+        fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
-        pfVar1 = (float *)(param_1 + 0xa0);
+        puVar1 = &param_1->field_0xa0;
 
-        fVar6 = fVar6 * (float10)*(float *)(iVar4 + 0xfc) + (float10)*(float *)(param_1 + 0xf8);
+        fVar5 = fVar5 * (float10)*(float *)(iVar3 + 0xfc) + (float10)*(float *)&param_1->field_0xf8;
 
-        fVar2 = (float)fVar6;
+        fVar7 = (float)fVar5;
 
-        *(float *)(param_1 + 0xf8) = (float)fVar6;
+        *(float *)&param_1->field_0xf8 = (float)fVar5;
 
-        ai_move_ground_common(iVar4,fVar2,fVar2,pfVar1);
+        ai_move_ground_common(iVar3,fVar7,fVar7,puVar1);
 
-        if ((*(float *)(param_1 + 0xb8) != *pfVar1) ||
+        if ((*(float *)&param_1->field_0xb8 != *(float *)puVar1) ||
 
-           (*(float *)(param_1 + 0xbc) != *(float *)(param_1 + 0xa4))) {
+           (*(float *)&param_1->field_0xbc != *(float *)&param_1->field_0xa4)) {
 
-          fVar6 = (float10)dirfcalcp3d__FP3P3DT0(param_1 + 0xb8,pfVar1);
+          fVar5 = (float10)dirfcalcp3d__FP3P3DT0(&param_1->field_0xb8,puVar1);
 
-          *(float *)(param_1 + 200) = (float)fVar6;
+          *(float *)&param_1->field_0xc8 = (float)fVar5;
 
         }
 
-        *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x40;
+        param_1->flags = param_1->flags | 0x40;
 
         objspec_dispatch_gate(param_1);
 
-        fVar6 = (float10)FRateGetSecsframe(param_1,0);
+        fVar5 = (float10)FRateGetSecsframe(param_1,0);
 
-        object_animate_process(param_1,(float)fVar6);
+        fVar7 = (float)fVar5;
 
-        ObjectCalculateTransform(param_1);
+        pOVar6 = param_1;
 
-        *(uint *)(param_1 + 0xd8) = *(uint *)(param_1 + 0xd8) | 0x20;
+        object_animate_process(param_1);
+
+        ObjectCalculateTransform(param_1,pOVar6,fVar7);
+
+        param_1->flags = param_1->flags | 0x20;
 
         return;
 
@@ -9116,7 +9105,7 @@ undefined4 comm_00426540(void)
 
   if (DAT_00633238 != 0) {
 
-    iVar1 = dialog_level_is_base();
+    iVar1 = dialog_level_is_base_dup0052aa70();
 
     if (iVar1 != 0) {
 

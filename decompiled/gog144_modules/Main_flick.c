@@ -58,7 +58,7 @@ undefined4 main_flick_00443740(undefined4 *param_1)
 
       }
 
-      object_free_all_allocated_data(piVar6 + -0xb8);
+      object_free_all_allocated_data((OBJECT *)(piVar6 + -0xb8));
 
       piVar6[-0x82] = piVar6[-0x82] | 0x8000;
 

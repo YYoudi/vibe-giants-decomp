@@ -1,8 +1,7 @@
-/* Giants 1.449 — address bucket region_0052 (NO original-source claim:
- * this file is an address band of the Ghidra export, not a recovered
- * source file). 162 functions, decompiled by Ghidra; names are of
- * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
- * and verify the body before trusting any name. */
+/* Giants 1.449 — module region_0052
+ * 162 functions (162 named) — decompiled, names from PS2 symbols
+ * Original source: C:\Giants\source\region_0052.c(pp) (assert-string evidence)
+ */
 
 /* ===== comm_client_connect_menu @ 0x00520050 ===== */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
@@ -6613,12 +6612,12 @@ void game_settings_unpack(uint param_1,uint param_2,uint param_3,uint param_4)
 
 }
 
-/* ===== showchat_mission_objective__Fi_2 @ 0x0052A050 ===== */
+/* ===== showchat_mission_objective__Fi_2_dup0052a050 @ 0x0052A050 ===== */
 /* PS2 candidate: showchat_mission_objective__Fi (conf 0.333) */
 
 
 
-void showchat_mission_objective__Fi_2(int param_1)
+void showchat_mission_objective__Fi_2_dup0052a050(int param_1)
 
 
 
@@ -7307,12 +7306,12 @@ int comm_server_heartbeat(int param_1)
 
 }
 
-/* ===== dialog_level_is_base @ 0x0052AA70 ===== */
+/* ===== dialog_level_is_base_dup0052aa70 @ 0x0052AA70 ===== */
 /* PS2 candidate: hurt_object (conf 0.621) */
 
 
 
-bool dialog_level_is_base(void)
+bool dialog_level_is_base_dup0052aa70(void)
 
 
 
@@ -10298,7 +10297,7 @@ void comm_socket_recv_loop(SOCKET *param_1)
 
         } while (iVar7 < 9);
 
-        new_fire__FP6OBJECTiPfT0P3P3Df(param_1,&local_8a4,&local_67c,&local_87c);
+        new_fire__FP6OBJECTiPfT0P3P3Df_dup0052e250(param_1,&local_8a4,&local_67c,&local_87c);
 
       }
 
@@ -11419,12 +11418,14 @@ void comm_echo_send(undefined4 param_1,undefined4 param_2,undefined4 param_3,cha
 
 }
 
-/* ===== new_fire__FP6OBJECTiPfT0P3P3Df @ 0x0052E250 ===== */
+/* ===== new_fire__FP6OBJECTiPfT0P3P3Df_dup0052e250 @ 0x0052E250 ===== */
 /* PS2 candidate: new_fire__FP6OBJECTiPfT0P3P3Df (conf 0.495) */
 
 
 
-void new_fire__FP6OBJECTiPfT0P3P3Df(SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
+void new_fire__FP6OBJECTiPfT0P3P3Df_dup0052e250
+
+               (SOCKET *param_1,sockaddr *param_2,char *param_3,char *param_4)
 
 
 
@@ -11763,7 +11764,7 @@ undefined4 fx_create(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 == 0) {
 
@@ -11792,7 +11793,7 @@ void reaper_0052e4a0(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 == 0) {
 
@@ -11821,7 +11822,7 @@ undefined4 comm_send_gate_check_2(undefined4 param_1)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 == 0) {
 
@@ -11880,7 +11881,7 @@ undefined4 comm_send_gate_check(undefined4 param_1)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 == 0) {
 
@@ -11992,7 +11993,7 @@ void comm_player_name_user(void)
 
   
 
-  iVar2 = dialog_level_is_base();
+  iVar2 = dialog_level_is_base_dup0052aa70();
 
   if (iVar2 != 0) {
 
@@ -12508,7 +12509,7 @@ void comm_audio_volume_user(char *param_1,undefined4 param_2,byte param_3,undefi
 
   
 
-  iVar2 = dialog_level_is_base();
+  iVar2 = dialog_level_is_base_dup0052aa70();
 
   if (iVar2 == 0) {
 
@@ -12637,7 +12638,7 @@ void comm_team_broadcast_send(undefined4 param_1,undefined1 param_2)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -12708,7 +12709,7 @@ void comm_team_broadcast_menu(int param_1)
 
   uVar3 = comm_0052ab20(*(undefined4 *)(param_1 + 2));
 
-  iVar4 = dialog_level_is_base();
+  iVar4 = dialog_level_is_base_dup0052aa70();
 
   if (iVar4 == 0) {
 
@@ -12752,7 +12753,7 @@ void comm_team_broadcast_menu(int param_1)
 
     crt_sprintf(local_280,uVar7);
 
-    iVar4 = dialog_level_is_base();
+    iVar4 = dialog_level_is_base_dup0052aa70();
 
     if (iVar4 == 0) {
 
@@ -12990,7 +12991,7 @@ LAB_0052edc5:
 
   }
 
-  iVar4 = dialog_level_is_base();
+  iVar4 = dialog_level_is_base_dup0052aa70();
 
   if ((iVar4 == 0) || (iVar4 = comm_player_active_check(iVar9), iVar4 != 0)) {
 
@@ -13045,7 +13046,7 @@ void comm_players_state_send(undefined4 param_1,undefined4 param_2)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -13071,7 +13072,7 @@ void comm_players_state_send(undefined4 param_1,undefined4 param_2)
 
           uVar2 = comm_player_active_get(param_1);
 
-          iVar1 = dialog_level_is_base();
+          iVar1 = dialog_level_is_base_dup0052aa70();
 
           if (iVar1 != 0) {
 
@@ -13115,7 +13116,7 @@ void comm_players_state_send(undefined4 param_1,undefined4 param_2)
 
       if (iVar1 != 0) {
 
-        iVar1 = dialog_level_is_base();
+        iVar1 = dialog_level_is_base_dup0052aa70();
 
         if (iVar1 != 0) {
 
@@ -13223,7 +13224,7 @@ void comm_entergame_msg_2(int param_1)
 
   comm_0052ac60(uVar1);
 
-  iVar2 = dialog_level_is_base();
+  iVar2 = dialog_level_is_base_dup0052aa70();
 
   if (iVar2 != 0) {
 
@@ -13334,7 +13335,7 @@ void comm_0052b780_user_1(int param_1)
 
   } while ((int)piVar3 < 0x633014);
 
-  iVar2 = dialog_level_is_base();
+  iVar2 = dialog_level_is_base_dup0052aa70();
 
   if (iVar2 != 0) {
 
@@ -13367,7 +13368,7 @@ void comm_dp_packet_send_b(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -13464,7 +13465,7 @@ void comm_0052b780_user_3(int param_1)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -13509,7 +13510,7 @@ void comm_0052b780_user_4(int param_1)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -13552,7 +13553,7 @@ void comm_fakehost_menu_user(int param_1,undefined4 param_2)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -13730,7 +13731,7 @@ void comm_fakehost_player(undefined4 param_1)
 
           uVar3 = comm_player_active_get(iVar1);
 
-          iVar1 = dialog_level_is_base();
+          iVar1 = dialog_level_is_base_dup0052aa70();
 
           if (iVar1 == 0) {
 
@@ -13791,7 +13792,7 @@ void comm_fakehost_toggle(void)
 
   iVar1 = comm_00426540();
 
-  if ((iVar1 == 0) || (iVar1 = dialog_level_is_base(), iVar1 == 0)) {
+  if ((iVar1 == 0) || (iVar1 = dialog_level_is_base_dup0052aa70(), iVar1 == 0)) {
 
     return;
 
@@ -13870,7 +13871,7 @@ void comm_audio_vol_a(undefined4 param_1)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -13932,7 +13933,7 @@ void comm_audio_vol_b(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -13967,7 +13968,7 @@ void comm_audio_vol_c(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14014,7 +14015,7 @@ void comm_player_marker_menu(void)
 
   }
 
-  iVar2 = dialog_level_is_base();
+  iVar2 = dialog_level_is_base_dup0052aa70();
 
   auVar1 = local_4;
 
@@ -14077,7 +14078,7 @@ void comm_audio_vol_d(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14112,7 +14113,7 @@ void comm_audio_vol_f(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14147,7 +14148,7 @@ void comm_audio_vol_e(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14192,7 +14193,7 @@ void comm_0052b780_user_5(int param_1)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14387,7 +14388,7 @@ LAB_0052fabe:
 
       }
 
-      iVar4 = dialog_level_is_base();
+      iVar4 = dialog_level_is_base_dup0052aa70();
 
       if ((iVar4 != 0) && (iVar4 = comm_player_active_check(iVar5), iVar4 != 0)) {
 
@@ -14415,7 +14416,7 @@ LAB_0052fabe:
 
         local_3 = 0;
 
-        iVar5 = dialog_level_is_base();
+        iVar5 = dialog_level_is_base_dup0052aa70();
 
         if (iVar5 != 0) {
 
@@ -14504,7 +14505,7 @@ void comm_0052b780_user_6(int param_1,int param_2)
 
   
 
-  iVar3 = dialog_level_is_base();
+  iVar3 = dialog_level_is_base_dup0052aa70();
 
   if (iVar3 != 0) {
 
@@ -14595,7 +14596,7 @@ void comm_0052b780_user_7(int param_1)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14664,7 +14665,7 @@ void comm_obj_sync(int param_1)
 
   
 
-  iVar4 = dialog_level_is_base();
+  iVar4 = dialog_level_is_base_dup0052aa70();
 
   if (iVar4 != 0) {
 
@@ -14789,7 +14790,7 @@ void comm_dp_packet_send_a(void)
 
   uStack_4 = (uint)CONCAT12(0xe,in_CX);
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14828,7 +14829,7 @@ void comm_0052b780_user_8(undefined4 *param_1,uint param_2)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 
@@ -14950,7 +14951,7 @@ void IconIsKabutoIcon__Fi(void)
 
   
 
-  iVar1 = dialog_level_is_base();
+  iVar1 = dialog_level_is_base_dup0052aa70();
 
   if (iVar1 != 0) {
 

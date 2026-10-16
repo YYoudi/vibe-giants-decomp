@@ -151,6 +151,8 @@ void object_list_update(void)
 
   int iVar1;
 
+  OBJECT *obj;
+
   int *piVar2;
 
   bool bVar3;
@@ -215,29 +217,29 @@ void object_list_update(void)
 
   while (piVar2 != (int *)0x0) {
 
-    piVar4 = (int *)piVar2[3];
+    obj = (OBJECT *)piVar2[3];
 
     piVar2 = (int *)*piVar2;
 
-    if ((char)((uint)piVar4[0x36] >> 8) < '\0') {
+    if ((char)(obj->flags >> 8) < '\0') {
 
-      object_free_all_allocated_data(piVar4);
+      object_free_all_allocated_data(obj);
 
-      main_linkage_00470480(piVar4);
+      main_linkage_00470480(obj);
 
-      *piVar4 = (int)DAT_00632da4;
+      obj->pad_0 = (dword)DAT_00632da4;
 
       DAT_0059f374 = DAT_0059f374 + -1;
 
-      DAT_00632da4 = piVar4;
+      DAT_00632da4 = obj;
 
-      if ((*(byte *)(piVar4 + 0x72) & 0x20) != 0) {
+      if ((obj->field_0x1c8 & 0x20) != 0) {
 
-        mem_free_tagged(piVar4[2],s_C__Giants_source_main_object_c_0055c9ec,0x1db);
+        mem_free_tagged(obj->class_ptr,s_C__Giants_source_main_object_c_0055c9ec,0x1db);
 
-        piVar4[0x72] = piVar4[0x72] & 0xffffffdf;
+        *(uint *)&obj->field_0x1c8 = *(uint *)&obj->field_0x1c8 & 0xffffffdf;
 
-        piVar4[2] = 0;
+        obj->class_ptr = 0;
 
       }
 

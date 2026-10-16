@@ -456,7 +456,7 @@ void comm_comm_00529f80(void)
 
     }
 
-    showchat_mission_objective__Fi_2(puVar2);
+    showchat_mission_objective__Fi_2_dup0052a050(puVar2);
 
     mem_free_tagged(puVar2,s_C__Giants_source_comm_comm_cpp_0057ded4,0x111f);
 

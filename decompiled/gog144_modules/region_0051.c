@@ -1,8 +1,7 @@
-/* Giants 1.449 — address bucket region_0051 (NO original-source claim:
- * this file is an address band of the Ghidra export, not a recovered
- * source file). 195 functions, decompiled by Ghidra; names are of
- * mixed provenance (PS2-anchored + LLM-inferred) — see docs/TRUST.md
- * and verify the body before trusting any name. */
+/* Giants 1.449 — module region_0051
+ * 195 functions (195 named) — decompiled, names from PS2 symbols
+ * Original source: C:\Giants\source\region_0051.c(pp) (assert-string evidence)
+ */
 
 /* ===== herd_promote_check @ 0x005108F0 ===== */
 undefined4 herd_promote_check(int param_1)
@@ -242,29 +241,29 @@ void evilreaper_herd_handler_c21(int param_1,undefined4 param_2,undefined4 param
 
       if (iVar6 < 0x19) {
 
-        uVar9 = 0x55e;
+        iVar6 = 0x55e;
 
       }
 
       else if (iVar6 < 0x32) {
 
-        uVar9 = 0x55f;
+        iVar6 = 0x55f;
 
       }
 
       else if (iVar6 < 0x4b) {
 
-        uVar9 = 0x557;
+        iVar6 = 0x557;
 
       }
 
       else {
 
-        uVar9 = 0x558;
+        iVar6 = 0x558;
 
       }
 
-      sound_play_obj(uVar9,param_1);
+      sound_play_obj(iVar6);
 
     }
 
@@ -774,17 +773,17 @@ void death_handler_c21(int param_1,float param_2,int param_3,undefined4 param_4,
 
         if (iVar4 < 0x32) {
 
-          uVar5 = 0x561;
+          iVar4 = 0x561;
 
         }
 
         else {
 
-          uVar5 = 0x562;
+          iVar4 = 0x562;
 
         }
 
-        sound_play_obj(uVar5,param_3);
+        sound_play_obj(iVar4);
 
         *(undefined4 *)(param_3 + 0xe4) = 4;
 
@@ -798,13 +797,13 @@ void death_handler_c21(int param_1,float param_2,int param_3,undefined4 param_4,
 
     if (iVar4 < 0x32) {
 
-      sound_play_obj(0x55b,param_3);
+      sound_play_obj(0x55b);
 
       return;
 
     }
 
-    sound_play_obj(0x55c,param_3);
+    sound_play_obj(0x55c);
 
   }
 
@@ -1020,7 +1019,7 @@ LAB_005116a3:
 
 
 
-void vimp_animselect(int param_1)
+void vimp_animselect(OBJECT *param_1)
 
 
 
@@ -1028,13 +1027,15 @@ void vimp_animselect(int param_1)
 
   float fVar1;
 
-  int iVar2;
+  dword dVar2;
 
   int iVar3;
 
-  int iVar4;
+  dword dVar4;
 
-  float10 fVar5;
+  int iVar5;
+
+  float10 fVar6;
 
   undefined4 local_8;
 
@@ -1042,11 +1043,11 @@ void vimp_animselect(int param_1)
 
   
 
-  iVar2 = *(int *)(param_1 + 0x100);
+  dVar4 = param_1->animate_state;
 
-  if (*(int *)(param_1 + 0x210) == 0) {
+  if (*(int *)&param_1->field_0x210 == 0) {
 
-    if (*(int *)(param_1 + 0xd8) < 0) {
+    if ((int)param_1->flags < 0) {
 
       anim_select_user(param_1,0x32);
 
@@ -1054,11 +1055,11 @@ void vimp_animselect(int param_1)
 
     }
 
-    iVar3 = *(int *)(param_1 + 0xe4);
+    dVar2 = param_1->pad_E4;
 
-    if (iVar3 == 9) {
+    if (dVar2 == 9) {
 
-      if (*(int *)(param_1 + 0x10) != 0x49) {
+      if (param_1->anim != 0x49) {
 
         objanim_select_anim(param_1,0x49);
 
@@ -1066,7 +1067,7 @@ void vimp_animselect(int param_1)
 
       }
 
-      if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
+      if ((param_1->field_0x30 & 2) != 0) {
 
         object_destroy(param_1);
 
@@ -1078,7 +1079,7 @@ void vimp_animselect(int param_1)
 
     else {
 
-      if (iVar3 == 5) {
+      if (dVar2 == 5) {
 
         objanim_select_anim(param_1,0x34);
 
@@ -1086,15 +1087,15 @@ void vimp_animselect(int param_1)
 
       }
 
-      if (iVar3 == 4) {
+      if (dVar2 == 4) {
 
-        iVar2 = *(int *)(param_1 + 0x10);
+        dVar4 = param_1->anim;
 
-        if (((iVar2 != 0x20) && (iVar2 != 0x45)) && (iVar2 != 0x46)) {
+        if (((dVar4 != 0x20) && (dVar4 != 0x45)) && (dVar4 != 0x46)) {
 
-          iVar2 = crt_rand_scaled(100);
+          iVar3 = crt_rand_scaled(100);
 
-          if (iVar2 < 0x21) {
+          if (iVar3 < 0x21) {
 
             objanim_select_anim(param_1,0x20);
 
@@ -1102,7 +1103,7 @@ void vimp_animselect(int param_1)
 
           }
 
-          if (iVar2 < 0x42) {
+          if (iVar3 < 0x42) {
 
             objanim_select_anim(param_1,0x45);
 
@@ -1120,7 +1121,7 @@ void vimp_animselect(int param_1)
 
       else {
 
-        if (iVar3 == 2) {
+        if (dVar2 == 2) {
 
           anim_select_user(param_1,0x24);
 
@@ -1128,7 +1129,7 @@ void vimp_animselect(int param_1)
 
         }
 
-        if (iVar3 == 3) {
+        if (dVar2 == 3) {
 
           objanim_select_anim(param_1,0x22);
 
@@ -1136,19 +1137,19 @@ void vimp_animselect(int param_1)
 
         }
 
-        if (iVar3 == 6) {
+        if (dVar2 == 6) {
 
-          if (*(int *)(param_1 + 0x10) != 0x43) {
+          if (param_1->anim != 0x43) {
 
-            ObjectSetAnim(param_1,0x43,0x20,0,0,0x3f2aaaab);
+            ObjectSetAnim(param_1);
 
             return;
 
           }
 
-          if ((*(byte *)(param_1 + 0x30) & 2) != 0) {
+          if ((param_1->field_0x30 & 2) != 0) {
 
-            ObjectSetAnim(param_1,0x44,0x21,0,0,0x3f2aaaab);
+            ObjectSetAnim(param_1);
 
             return;
 
@@ -1156,81 +1157,81 @@ void vimp_animselect(int param_1)
 
         }
 
-        else if (iVar3 == 7) {
+        else if (dVar2 == 7) {
 
-          if ((*(int *)(param_1 + 0x10) != 0x37) && (*(int *)(param_1 + 0x10) != 0x38)) {
+          if ((param_1->anim != 0x37) && (param_1->anim != 0x38)) {
 
-            if (*(char *)(iVar2 + 0x88) != '\0') {
+            if (*(char *)(dVar4 + 0x88) != '\0') {
 
-              ObjectSetAnim(param_1,0x37,0x20,0,0,0x3f2aaaab);
+              ObjectSetAnim(param_1);
 
               return;
 
             }
 
-            ObjectSetAnim(param_1,0x38,0x20,0,0,0x3f2aaaab);
+            ObjectSetAnim(param_1);
 
             return;
 
           }
 
-          if (((*(byte *)(param_1 + 0x30) & 2) != 0) && (iVar3 = fx_create(param_1), iVar3 != 0)) {
+          if (((param_1->field_0x30 & 2) != 0) && (iVar3 = fx_create(param_1), iVar3 != 0)) {
 
-            iVar3 = *(int *)(iVar2 + 0xd4);
+            iVar3 = *(int *)(dVar4 + 0xd4);
 
-            iVar4 = *(int *)(param_1 + 0x100);
+            dVar2 = param_1->animate_state;
 
-            *(undefined4 *)(param_1 + 0xe4) = 1;
+            param_1->pad_E4 = 1;
 
-            *(undefined4 *)(iVar4 + 0xd4) = 0;
+            *(undefined4 *)(dVar2 + 0xd4) = 0;
 
-            *(undefined4 *)(iVar4 + 0x94) = 0;
+            *(undefined4 *)(dVar2 + 0x94) = 0;
 
-            fVar5 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x91c),
+            fVar6 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x91c),
 
                                            *(undefined4 *)(DAT_00632ed8 + 0x920));
 
-            *(float *)(iVar4 + 100) = (float)fVar5;
+            *(float *)(dVar2 + 100) = (float)fVar6;
 
-            *(undefined4 *)(iVar4 + 0x74) = 0;
+            *(undefined4 *)(dVar2 + 0x74) = 0;
 
-            *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x400;
+            *(uint *)&param_1->field_0x1c8 = *(uint *)&param_1->field_0x1c8 | 0x400;
 
-            *(undefined4 *)(iVar4 + 0xac) = 0x3f800000;
+            *(undefined4 *)(dVar2 + 0xac) = 0x3f800000;
 
             if (1 < iVar3) {
 
-              *(int *)(iVar2 + 0xd4) = iVar3;
+              *(int *)(dVar4 + 0xd4) = iVar3;
 
-              iVar2 = *(int *)(param_1 + 0x100);
+              dVar4 = param_1->animate_state;
 
-              *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x400;
+              *(uint *)&param_1->field_0x1c8 = *(uint *)&param_1->field_0x1c8 | 0x400;
 
-              *(undefined4 *)(iVar2 + 0x74) = 1;
+              *(undefined4 *)(dVar4 + 0x74) = 1;
 
-              *(undefined4 *)(iVar2 + 0xb0) = 1;
+              *(undefined4 *)(dVar4 + 0xb0) = 1;
 
-              *(undefined4 *)(iVar2 + 0xb8) = 3;
+              *(undefined4 *)(dVar4 + 0xb8) = 3;
 
-              iVar2 = fx_create(param_1);
+              iVar3 = fx_create(param_1);
 
-              if (iVar2 == 0) {
+              if (iVar3 == 0) {
 
-                *(undefined4 *)(param_1 + 0xec) = 0;
+                *(undefined4 *)&param_1->field_0xec = 0;
 
                 return;
 
               }
 
-              fVar5 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x98c),
+              fVar6 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x98c),
 
                                              *(undefined4 *)(DAT_00632ed8 + 0x9a8));
 
-              *(float *)(param_1 + 0xec) = (float)fVar5;
+              *(float *)&param_1->field_0xec = (float)fVar6;
 
-              iVar2 = reaper_0052e4a0(param_1);
+              iVar3 = reaper_0052e4a0(param_1);
 
-              if (iVar2 != 0) {
+              if (iVar3 != 0) {
 
                 local_4 = 1;
 
@@ -1248,11 +1249,9 @@ void vimp_animselect(int param_1)
 
         }
 
-        else if (*(float *)(param_1 + 0x10c) == 0.0) {
+        else if ((float)param_1->vel1 == 0.0) {
 
-          if ((*(float *)(param_1 + 0x114) != 0.0) && (*(int *)(*(int *)(param_1 + 8) + 0xa0) != 0))
-
-          {
+          if (((float)param_1->vel_w != 0.0) && (*(int *)(param_1->class_ptr + 0xa0) != 0)) {
 
             anim_select_user(param_1,0x26);
 
@@ -1260,13 +1259,13 @@ void vimp_animselect(int param_1)
 
           }
 
-          if (iVar3 == 8) {
+          if (dVar2 == 8) {
 
-            iVar3 = *(int *)(param_1 + 0x10);
+            dVar2 = param_1->anim;
 
-            if ((((iVar3 != 0x39) && (iVar3 != 0x23)) && (iVar3 != 0x3d)) &&
+            if ((((dVar2 != 0x39) && (dVar2 != 0x23)) && (dVar2 != 0x3d)) &&
 
-               ((iVar3 != 0x3b && (iVar3 != 0x3c)))) {
+               ((dVar2 != 0x3b && (dVar2 != 0x3c)))) {
 
               anim_select_user(param_1,0x23);
 
@@ -1274,39 +1273,39 @@ void vimp_animselect(int param_1)
 
             }
 
-            if (((*(byte *)(param_1 + 0x30) & 2) != 0) &&
+            if (((param_1->field_0x30 & 2) != 0) &&
 
-               (((*(byte *)(param_1 + 0xe0) & 1) == 0 ||
+               (((param_1->coll_radius & 1) == 0 || (iVar3 = evilreaper_ai_big(param_1), iVar3 == 0)
 
-                (iVar3 = evilreaper_ai_big(param_1), iVar3 == 0)))) {
+                ))) {
 
-              if (*(float *)(iVar2 + 100) < 0.0 != (*(float *)(iVar2 + 100) == 0.0)) {
+              if (*(float *)(dVar4 + 100) < 0.0 != (*(float *)(dVar4 + 100) == 0.0)) {
 
-                iVar3 = *(int *)(*(int *)(param_1 + 0x274) + 0x100);
+                iVar3 = *(int *)(*(int *)&param_1->field_0x274 + 0x100);
 
-                iVar4 = fx_create(param_1);
+                iVar5 = fx_create(param_1);
 
-                if (iVar4 != 0) {
+                if (iVar5 != 0) {
 
-                  fVar1 = *(float *)(*(int *)(*(int *)(iVar3 + 0x30) + *(int *)(iVar2 + 0x98) * 4) +
+                  fVar1 = *(float *)(*(int *)(*(int *)(iVar3 + 0x30) + *(int *)(dVar4 + 0x98) * 4) +
 
                                     0xf8);
 
-                  fVar5 = (float10)distancesq2d__FP3P3DT0
+                  fVar6 = (float10)distancesq2d__FP3P3DT0
 
                                              (*(int *)(*(int *)(iVar3 + 0x30) +
 
-                                                      *(int *)(iVar2 + 0x98) * 4) + 0xa0,
+                                                      *(int *)(dVar4 + 0x98) * 4) + 0xa0,
 
-                                              param_1 + 0xa0);
+                                              &param_1->field_0xa0);
 
-                  if (fVar5 <= (float10)fVar1 * (float10)fVar1) {
+                  if (fVar6 <= (float10)fVar1 * (float10)fVar1) {
 
-                    if (*(int *)(iVar2 + 0xa0) == 0) {
+                    if (*(int *)(dVar4 + 0xa0) == 0) {
 
-                      *(int *)(iVar2 + 0x9c) = *(int *)(iVar2 + 0x9c) + 1;
+                      *(int *)(dVar4 + 0x9c) = *(int *)(dVar4 + 0x9c) + 1;
 
-                      *(undefined4 *)(iVar2 + 0xa0) = 1;
+                      *(undefined4 *)(dVar4 + 0xa0) = 1;
 
                     }
 
@@ -1314,9 +1313,9 @@ void vimp_animselect(int param_1)
 
                     if (iVar3 == 0) {
 
-                      herdgen_get_next_marker(*(undefined4 *)(param_1 + 0x274),iVar2 + 0x98);
+                      herdgen_get_next_marker(*(undefined4 *)&param_1->field_0x274,dVar4 + 0x98);
 
-                      *(undefined4 *)(iVar2 + 0xa0) = 0;
+                      *(undefined4 *)(dVar4 + 0xa0) = 0;
 
                     }
 
@@ -1326,51 +1325,51 @@ void vimp_animselect(int param_1)
 
                 }
 
-                *(uint *)(param_1 + 0x1c8) = *(uint *)(param_1 + 0x1c8) | 0x400;
+                *(uint *)&param_1->field_0x1c8 = *(uint *)&param_1->field_0x1c8 | 0x400;
 
-                *(undefined4 *)(iVar2 + 0xac) = 0x3f800000;
+                *(undefined4 *)(dVar4 + 0xac) = 0x3f800000;
 
-                *(undefined4 *)(param_1 + 0xe4) = 1;
+                param_1->pad_E4 = 1;
 
-                fVar5 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x91c),
+                fVar6 = (float10)rndfloatrange(*(undefined4 *)(DAT_00632ed8 + 0x91c),
 
                                                *(undefined4 *)(DAT_00632ed8 + 0x920));
 
-                *(float *)(iVar2 + 100) = (float)fVar5;
+                *(float *)(dVar4 + 100) = (float)fVar6;
 
-                *(undefined4 *)(iVar2 + 0x58) = 0;
+                *(undefined4 *)(dVar4 + 0x58) = 0;
 
-                *(undefined4 *)(iVar2 + 0x68) = 0;
+                *(undefined4 *)(dVar4 + 0x68) = 0;
 
                 return;
 
               }
 
-              iVar2 = crt_rand_scaled(100);
+              iVar3 = crt_rand_scaled(100);
 
-              if (*(int *)(param_1 + 0x10) == 0x23) {
+              if (param_1->anim == 0x23) {
 
-                if (iVar2 < 0x3c) {
+                if (iVar3 < 0x3c) {
 
-                  iVar2 = 0x39;
-
-                }
-
-                else if (iVar2 < 0x50) {
-
-                  iVar2 = 0x23;
+                  dVar4 = 0x39;
 
                 }
 
-                else if (iVar2 < 0x5a) {
+                else if (iVar3 < 0x50) {
 
-                  iVar2 = 0x3d;
+                  dVar4 = 0x23;
+
+                }
+
+                else if (iVar3 < 0x5a) {
+
+                  dVar4 = 0x3d;
 
                 }
 
                 else {
 
-                  iVar2 = (0x5e < iVar2) + 0x3b;
+                  dVar4 = (0x5e < iVar3) + 0x3b;
 
                 }
 
@@ -1378,13 +1377,13 @@ void vimp_animselect(int param_1)
 
               else {
 
-                iVar2 = ((0x4a < iVar2) - 1 & 0x16) + 0x23;
+                dVar4 = ((0x4a < iVar3) - 1 & 0x16) + 0x23;
 
               }
 
-              if (iVar2 != *(int *)(param_1 + 0x10)) {
+              if (dVar4 != param_1->anim) {
 
-                ObjectSetAnim(param_1,iVar2,0x21,0,0,0x3f2aaaab);
+                ObjectSetAnim(param_1);
 
                 return;
 
@@ -1396,33 +1395,27 @@ void vimp_animselect(int param_1)
 
         }
 
-        else if ((*(int *)(param_1 + 0x10) != 0x40) || ((*(byte *)(param_1 + 0x30) & 2) != 0)) {
+        else if ((param_1->anim != 0x40) || ((param_1->field_0x30 & 2) != 0)) {
 
-          if ((**(byte **)(param_1 + 0x104) & 0x40) == 0) {
+          if ((*(byte *)param_1->pad_104 & 0x40) == 0) {
 
-            if (*(float *)(param_1 + 0x278) <= 0.0) {
+            if (*(float *)&param_1->field_0x278 <= 0.0) {
 
-              if (*(int *)(iVar2 + 0x74) == 0) {
+              if (*(int *)(dVar4 + 0x74) == 0) {
 
-                fVar1 = *(float *)(DAT_00632ed8 + 0x9b0);
-
-                iVar2 = 2;
+                dVar4 = 2;
 
               }
 
-              else if (*(int *)(iVar2 + 0x74) == 1) {
+              else if (*(int *)(dVar4 + 0x74) == 1) {
 
-                fVar1 = *(float *)(DAT_00632ed8 + 0x9b4);
-
-                iVar2 = 3;
+                dVar4 = 3;
 
               }
 
               else {
 
-                fVar1 = *(float *)(DAT_00632ed8 + 0x9b8);
-
-                iVar2 = 4;
+                dVar4 = 4;
 
               }
 
@@ -1430,9 +1423,7 @@ void vimp_animselect(int param_1)
 
             else {
 
-              fVar1 = *(float *)(DAT_00632ed8 + 0x9ac);
-
-              iVar2 = 0x47;
+              dVar4 = 0x47;
 
             }
 
@@ -1440,15 +1431,13 @@ void vimp_animselect(int param_1)
 
           else {
 
-            fVar1 = *(float *)(DAT_00632ed8 + 0x970);
-
-            iVar2 = 0x48;
+            dVar4 = 0x48;
 
           }
 
-          if (iVar2 != *(int *)(param_1 + 0x10)) {
+          if (dVar4 != param_1->anim) {
 
-            ObjectSetAnim(param_1,iVar2,0x21,1,fVar1 * *(float *)(param_1 + 0xc4),0x3f000000);
+            ObjectSetAnim(param_1);
 
             return;
 

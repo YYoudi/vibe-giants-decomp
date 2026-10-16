@@ -51,15 +51,15 @@ void cleaner_go_obj(void)
 
   int iVar8;
 
-  int iVar9;
+  OBJECT *obj;
 
-  int iVar10;
+  int iVar9;
 
   float10 extraout_ST0;
 
-  float10 fVar11;
+  float10 fVar10;
 
-  float10 fVar12;
+  float10 fVar11;
 
   float10 extraout_ST1;
 
@@ -81,7 +81,7 @@ void cleaner_go_obj(void)
 
     _DAT_0058431c = 1.5;
 
-    iVar7 = dialog_level_is_base();
+    iVar7 = dialog_level_is_base_dup0052aa70();
 
     if (iVar7 == 0) {
 
@@ -89,19 +89,19 @@ void cleaner_go_obj(void)
 
       for (puVar5 = DAT_00632d68; puVar5 != (undefined4 *)0x0; puVar5 = (undefined4 *)*puVar5) {
 
-        iVar10 = puVar5[3];
+        iVar9 = puVar5[3];
 
         iVar8 = iVar7;
 
-        if ((((*(uint *)(iVar10 + 0xd8) & 0x8000) == 0) &&
+        if ((((*(uint *)(iVar9 + 0xd8) & 0x8000) == 0) &&
 
-            ((((*(uint *)(iVar10 + 0xdc) & 0x20000) == 0 ||
+            ((((*(uint *)(iVar9 + 0xdc) & 0x20000) == 0 ||
 
-              (*(float *)(iVar10 + 0x278) < *(float *)(iVar10 + 0x1c0))) ||
+              (*(float *)(iVar9 + 0x278) < *(float *)(iVar9 + 0x1c0))) ||
 
-             (iVar8 = iVar10, DAT_00632e6c <= *(float *)(iVar10 + 0xec) + 3.0)))) &&
+             (iVar8 = iVar9, DAT_00632e6c <= *(float *)(iVar9 + 0xec) + 3.0)))) &&
 
-           (iVar8 = iVar7, *(int *)(iVar10 + 4) == 0x2ad)) {
+           (iVar8 = iVar7, *(int *)(iVar9 + 4) == 0x2ad)) {
 
           return;
 
@@ -123,7 +123,7 @@ void cleaner_go_obj(void)
 
         main_cleaner_0040f750(iVar7);
 
-        iVar10 = DAT_00632ed8;
+        iVar9 = DAT_00632ed8;
 
         fVar6 = DAT_00584300 - DAT_005842f4;
 
@@ -131,37 +131,35 @@ void cleaner_go_obj(void)
 
         iVar8 = __ftol();
 
-        fVar11 = ((float10)*(float *)(iVar10 + 0x528) - (float10)*(float *)(iVar10 + 0x530)) /
+        fVar10 = ((float10)*(float *)(iVar9 + 0x528) - (float10)*(float *)(iVar9 + 0x530)) /
 
                  extraout_ST0;
 
-        fVar11 = fVar11 * extraout_ST1 +
+        fVar10 = fVar10 * extraout_ST1 +
 
-                 ((float10)*(float *)(iVar10 + 0x528) - (float10)*(float *)(iVar10 + 0x524) * fVar11
+                 ((float10)*(float *)(iVar9 + 0x528) - (float10)*(float *)(iVar9 + 0x524) * fVar10);
 
-                 );
+        local_8 = (float)(((float10)_DAT_00584304 - (float10)DAT_005842f8) / fVar10);
 
-        local_8 = (float)(((float10)_DAT_00584304 - (float10)DAT_005842f8) / fVar11);
+        local_4 = (float)(fVar10 - (float10)*(float *)(iVar9 + 0x534));
 
-        local_4 = (float)(fVar11 - (float10)*(float *)(iVar10 + 0x534));
-
-        fVar11 = ((float10)*(float *)(iVar10 + 0x550) - (float10)*(float *)(iVar10 + 0x54c)) /
+        fVar10 = ((float10)*(float *)(iVar9 + 0x550) - (float10)*(float *)(iVar9 + 0x54c)) /
 
                  extraout_ST0;
 
-        local_c = (float)(fVar11 * extraout_ST1 +
+        local_c = (float)(fVar10 * extraout_ST1 +
 
-                         ((float10)*(float *)(iVar10 + 0x550) -
+                         ((float10)*(float *)(iVar9 + 0x550) -
 
-                         (float10)*(float *)(iVar10 + 0x524) * fVar11));
+                         (float10)*(float *)(iVar9 + 0x524) * fVar10));
 
-        fVar11 = ((float10)*(float *)(iVar10 + 0x558) - (float10)*(float *)(iVar10 + 0x554)) /
+        fVar10 = ((float10)*(float *)(iVar9 + 0x558) - (float10)*(float *)(iVar9 + 0x554)) /
 
                  extraout_ST0;
 
-        fVar1 = *(float *)(iVar10 + 0x558);
+        fVar1 = *(float *)(iVar9 + 0x558);
 
-        fVar2 = *(float *)(iVar10 + 0x524);
+        fVar2 = *(float *)(iVar9 + 0x524);
 
         if (fVar6 < fVar3) {
 
@@ -171,63 +169,63 @@ void cleaner_go_obj(void)
 
         fVar3 = *(float *)(iVar7 + 0xc4);
 
-        iVar10 = 0;
+        iVar9 = 0;
 
         if (0 < iVar8) {
 
           do {
 
-            iVar9 = object_allocate_type(0x2ad,0x80000000);
+            obj = (OBJECT *)object_allocate_type(0x2ad,0x80000000);
 
-            fVar12 = (float10)rndfloat(*(undefined4 *)(DAT_00632ed8 + 0x538));
+            fVar11 = (float10)rndfloat(*(undefined4 *)(DAT_00632ed8 + 0x538));
 
-            fVar4 = (float)(fVar12 + (float10)(fVar6 * fVar3 * 0.5));
+            fVar4 = (float)(fVar11 + (float10)(fVar6 * fVar3 * 0.5));
 
-            fVar12 = (float10)rndfloat(0x43b40000);
+            fVar11 = (float10)rndfloat(0x43b40000);
 
-            sine_cos_lookup((float)fVar12,&local_14,&local_10);
+            sine_cos_lookup((float)fVar11,&local_14,&local_10);
 
-            *(float *)(iVar9 + 0xa0) = local_14 * fVar4 + *(float *)(iVar7 + 0xa0);
+            *(float *)&obj->field_0xa0 = local_14 * fVar4 + *(float *)(iVar7 + 0xa0);
 
-            *(float *)(iVar9 + 0xa4) = *(float *)(iVar7 + 0xa4) - local_10 * fVar4;
+            *(float *)&obj->field_0xa4 = *(float *)(iVar7 + 0xa4) - local_10 * fVar4;
 
-            *(undefined4 *)(iVar9 + 0xa8) = *(undefined4 *)(iVar7 + 0xa8);
+            *(undefined4 *)&obj->field_0xa8 = *(undefined4 *)(iVar7 + 0xa8);
 
-            fVar12 = (float10)rndfloat(0x43b40000);
+            fVar11 = (float10)rndfloat(0x43b40000);
 
-            *(float *)(iVar9 + 200) = (float)fVar12;
+            *(float *)&obj->field_0xc8 = (float)fVar11;
 
-            fVar12 = (float10)rndfloatrange(local_c,(float)(fVar11 * extraout_ST1 +
+            fVar11 = (float10)rndfloatrange(local_c,(float)(fVar10 * extraout_ST1 +
 
-                                                           ((float10)fVar1 - (float10)fVar2 * fVar11
+                                                           ((float10)fVar1 - (float10)fVar2 * fVar10
 
                                                            )));
 
-            *(float *)(iVar9 + 0xc4) = (float)fVar12;
+            *(float *)&obj->field_0xc4 = (float)fVar11;
 
-            object_copy_posdirinfo(iVar9);
+            object_copy_posdirinfo(obj);
 
-            *(int *)(iVar9 + 0x274) = iVar7;
+            *(int *)&obj->field_0x274 = iVar7;
 
-            *(undefined4 *)(iVar9 + 0xe4) = 0;
+            obj->pad_E4 = 0;
 
-            *(float *)(iVar9 + 0xf4) = local_8;
+            *(float *)&obj->field_0xf4 = local_8;
 
-            *(float *)(iVar9 + 0xf8) = local_4;
+            *(float *)&obj->field_0xf8 = local_4;
 
-            *(undefined4 *)(iVar9 + 0xfc) = 0x3f800000;
+            *(undefined4 *)&obj->field_0xfc = 0x3f800000;
 
-            fVar12 = (float10)rndfloat(0x3f800000);
+            fVar11 = (float10)rndfloat(0x3f800000);
 
-            *(float *)(iVar9 + 0xec) = (float)fVar12;
+            *(float *)&obj->field_0xec = (float)fVar11;
 
-            ObjectSetAnim(iVar9,0xb,0x24,0,0,0);
+            ObjectSetAnim(obj);
 
-            iVar10 = iVar10 + 1;
+            iVar9 = iVar9 + 1;
 
-            *(int *)(iVar9 + 0x174) = iVar10;
+            *(int *)&obj->field_0x174 = iVar9;
 
-          } while (iVar10 < iVar8);
+          } while (iVar9 < iVar8);
 
         }
 
