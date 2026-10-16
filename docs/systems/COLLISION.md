@@ -96,11 +96,72 @@ table. The frame order (SIM_LOOP.md: `obj_velocity_commit` → per-class AI →
 `object_apply_location`) still consumes collision in that window, but the
 sweep itself lives in the consumers of the table (open items below).
 
+## Movement sweep — sliding/stepping DECODED (`collgrid_collide_d @ 0x414990`)
+
+`(mover_obj, pos_from*, pos_to*)` — the full walk-mode movement resolver, in
+TWO phases (all **derived**, corpus l.12252-12380):
+
+### Phase 1 — STEPPING (slope/step negotiation, ≤4 iterations)
+
+```
+while (collide_wall_block(obj+0xA0, pos_to, radius=obj+0x154)
+       && obj+0x1BC < 0 && obj+0x224 == 0) {
+    floor_z = get_floor_z_point_plat(pos_to)           # ground height under target
+    if (physics_vec_math(pos_to,..) >= 0.64278          # slope <= ~50° (cos 50°)
+        && -(obj->step_h(+0x1E8) * obj->q(+0xC4)) <= floor_z)
+        break                                           # step is climbable: accept
+    dir = dirfcalcp3d(...)                              # push direction out of the wall
+    sincos(dir)
+    pos_to += (cos, -sin) * global(DAT_006330e4+0x1C0) * 0.25   # small push step
+    if (--iterations < 1) break
+}
+```
+- A blocked target is RETRIED up to 4× by pushing 0.25·scale per attempt
+  (**stepping**); a target on a slope ≤ ~50° (threshold 0.64278 = cos 50°)
+  whose ground height is within the step budget
+  (`-step_h(+0x1E8)·q(+0xC4) <= floor_z`) is accepted outright.
+- `collide_wall_block @ 0x49C550` (l.92137) = the world-grid broad phase:
+  extends the segment by radius(+1.1 in param units), maps to grid coords
+  (`grid_coords_from_floats`), walks the covered cells (DDA-style), against
+  the world grid. PS2 twin exists (`collide_wall_block`, 476 B).
+
+### Phase 2 — SLIDING (footprint clamp, per blocking object)
+
+For each object in the blocking list `DAT_00632d7c` passing the gates
+(`+0xD8 & 0x4000C000 == 0`, `+0x1C8 & 0x800 == 0`, not Kabuto/type0f unless
+`+0x1CC b0`, `+0x8 != 0`, `+0x210 != mover`):
+
+```
+while (collgrid_collide_resolve(blocker, cell(pos_to))) {   # target cell covered
+    c_from = cell(pos_from); c_to = cell(pos_to)
+    if (c_from == c_to) return                              # already inside: give up
+    t_x = (adjacent_cell*5.0 - from.x) / (to.x - from.x)    # border crossing on X
+    t_y = (adjacent_cell*5.0 - from.y) / (to.y - from.y)    # ... on Y
+    t = max(t_x, t_y)
+    pos_to = from + (to - from) * t                          # CLAMP at last free border
+}
+```
+- The movement segment is SHORTENED to the last cell border before the
+  blocker's footprint — component-wise (`max` of the two axis parameters),
+  which produces the classic wall **slide** (the freer axis keeps its motion).
+- Cell scale re-proven here: borders computed as `cell * 5.0` (l.12340/12347).
+- Same-scale rounding everywhere: `round(pos * 0.2)` (l.12329-12332).
+
+### Related queries
+
+- `collgrid_query_obj @ 0x418CF0` : scans the object list `DAT_00632d9c` for
+  occupants (type 0x4A8, same-team filter via `+0x18C`, `+0xD8>>8 >= 0`),
+  returns blocker + radius `+0xE0` — an occupancy QUERY, not a sweep.
+- PS2 parity refs: `collide_localline_objtris` (460 B) /
+  `collide_localline_objtris_mips` (1184 B, `P3D*,P3D*,OBJECT*,P3D*,char**`) —
+  the PS2 line-vs-object-triangles walk (for the mesh-level line semantics).
+
 ## Open items (next pass)
 
-1. **Movement sweep** (sliding/stepping): consumers of the occupancy table —
-   candidates `collgrid_query_obj @ 0x418CF0`, `collgrid_collide_d @ 0x414990`,
-   PS2 `collide_localline_objtris_mips` for the line-walk semantics.
+1. ~~Movement sweep (sliding/stepping)~~ **RESOLVED 2026-10-16** — decoded in
+   `collgrid_collide_d` (phases above). Remaining: per-bit semantics of the
+   exclusion masks `0x4000C000` / `0x800` / `0x1CC.b0`, and the mesh-level
+   line walk (PS2 localline) if the port needs triangle-precision.
 2. Per-cell world-flag map beyond b1 (blocked) — read the writers of the world
    grid (build path `main_collgrid_00410200`) or dump a runtime grid.
 3. Confirm the 5.0 u/cell scale at runtime (one BP at 0x412730, read
