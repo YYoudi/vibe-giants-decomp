@@ -1,6 +1,6 @@
 # SIM_LOOP — main loop, timing, RNG
 
-Status: ✅ frame order + timing derived from corpus; RNG = CRT rand (seed source open).
+Status: ✅ frame order + timing derived; RNG seeded NEVER (srand not imported — 2026-10-16); dt = real-time EMA (see Timing).
 
 **Evidence:** `game_loop_run @ 0x00471A60` (source `C:\Giants\source\Main\…`), timing
 `win95_frate_00518c60 @ 0x00518C60` (`win95/frate.c`), `FRateGetSecsframe @ 0x00518B70`,
@@ -76,21 +76,44 @@ update) via `cspec_update_dispatch @ 0x0049A090` — 107 classes, see
 - Frame-rate target: **derived — pending trace** (expected 30 fps lock; confirm via
   `fps_log_write` cadence in the P1.1 trace).
 
-## RNG
+## RNG — CLOSED 2026-10-16 (worker pass)
 
-- `crt_rand_scaled(n) = rand() * n >> 15` — the CRT 15-bit LCG (`_rand @ 0x00543DD4`).
-- Used by AI decisions (`ai_rand_anim_select`, `facing_player_bark` 50/50), loot,
-  procedural textures (`kabuto_laser_texture_init` noise).
-- **Seed source: open item** — locate the `srand` call site (likely world init); matters
-  for replay determinism (report §5.6). P1.1 trace will confirm whether the seed resets
-  per world.
+- `_rand @ 0x00543DD4` = MSVC CRT LCG, **per-thread** state at `__getptd()+0x14`:
+  `seed = seed*0x343FD + 0x269EC3 ; return (seed>>16) & 0x7FFF` (corpus l.191779+,
+  VS2003-2008 signature per Ghidra lib match).
+- **The game NEVER seeds it**: `srand` is absent from the PE import table
+  (byte-scan of imports: only time fns — GetSystemTimeAsFileTime/GetTickCount/
+  timeGetTime) and from the corpus. → the RNG sequence is IDENTICAL every run
+  (determinism for free; the initial seed is the CRT default, 0-or-1 per ptd
+  init — for parity, port the LCG and match the first outputs empirically).
+- Helpers: `crt_rand_scaled(n) = rand()*n >> 15` (@0x4D5730, PS2 `rndint`),
+  `rndintrange(a,b)`, `rndfloat(x) = rand()*x*(1/32768)` (@0x4D5760),
+  `rndfloatrange` (@0x4D5780).
 
-## Savegame
+## Timing — dt pipeline decoded 2026-10-16 (`time_frame_update @ 0x00518950`)
 
-- `savegame_slot_load @ 0x00425EB0` builds `savegame_%d` paths, `BinFileSeek`+
-  read via the file layer; save REGISTRY interaction at `registry_enum_key_create @
-  0x00519F20` (RegCreateKeyExA KEY_ALL_ACCESS — the game stores player profiles /
-  settings under HKLM/HKCU). Full save-structure decode = open item (P2 track).
+Clock = `timeGetTime()` (WINMM ms; `timeBeginPeriod` imported). Per frame:
+
+1. raw dt = (now − last) × 0.001 s (branch replay/dedicated: `+0x32` ms fixed,
+   `DAT_00632d5c/60` gates).
+2. Smoothing: first 6 frames prime `_DAT_006328e4`; then EMA
+   `_DAT_006328e4 = ema·α + (1−α)·dt` with α stepping +0.15 to 0.75.
+3. `DAT_006328e0 (GLOBAL dt) = DAT_006328f0 (time_scale) × ema`.
+4. Command-line modes (globals DAT_00633xxx):
+   - `DAT_00633130` → dt fixed **0.025 (1/40 s)**;
+   - `DAT_0063312c` → dt × 0.1 in frame_update (× 10 in `time_get_ms` init —
+     dual use, flag semantics to disambiguate);
+   - default clamp: dt > 0.25 → 0.25 (outside modes);
+   - **`DAT_00633248` → dt FORCED 0.016666668 (1/60)** — the gamegauge-mode gate
+     (matches every cinematic measurement).
+5. Defaults at init (`time_get_ms @ 0x00518890`): dt = 0.025 (1/40 s nominal).
+
+**Answer to the tick-rate open item**: there is NO fixed tick outside the
+command-line modes — gameplay runs on the smoothed real-time dt (nominal seed
+0.025 s = 40 fps expectation, clamp 0.25 s, EMA-smoothed). Fixed-step ports
+should drive 1/40 s by default and 1/60 s under the gamegauge flag.
+
+settings under HKLM/HKCU). Full save-structure decode = open item (P2 track).
 
 ## Validation
 
