@@ -1,7 +1,7 @@
 # `world.gb2` — world component bundle (magic `0xAA0100AB`)
 
-Status: ✅ container decoded · component bodies: prologue decoded, vertex/body layouts
-partial (see Open items).
+Status: ✅ container + component bodies decoded —
+clos le 2026-10-16 (indices u32, voir la correction sous le layout).
 
 **Evidence:** GOG 1.449 corpus (`game_files_check @ 0x004EE890` — integrity check;
 component instantiation path via the GameObj.bin registry, see
@@ -81,13 +81,23 @@ component @ offset:
     [f32 pos2[vertex_count * 3]]         // SI flags&1 (2e canal position, skinned)
     [f32 uv[vertex_count * 2] ]          // SI flags&2 ("objuv", 8 B/vertex)
     [u8  rgb[vertex_count * 3] ]         // SI flags&4 ("objrgb", 3 B/vertex)
-    u16   tri_indices[tri_count * 3]     // "objtri" (triangle list)
+    u32   tri_indices[tri_count * 3]     // "objtri" (triangle list)
 ```
 
 **Validé par octets** sur `world.gb2` réel : composant `space` = name "space",
 flags=2, usage=0, fmt=0, texture "tspace", **vcount=89, tricount=120**, puis les
 floats. (Les tailles restantes suggèrent un bloc index redondant par composant —
 à trancher en décodant les 9 composants avec le parseur.)
+
+**CORRECTION 2026-10-16 (giants-rs TASK-020, walk Python indépendant + parseur
+Rust)** : les indices sont des **u32**, pas des u16. Lus en u32, les 9
+composants se terminent **exactement** sur l'offset du composant suivant (ou
+EOF pour `sea`), tous les indices sont `< vcount`, et les triangles sont
+cohérents (ex. `sky` : 16,17,18 / 16,18,19…). L'ancien « bloc index redondant »
+était la seconde moitié de ce même tableau u32 relue en u16 (moitiés hautes à
+zéro) — il n'existe pas. Comptes validés (sommets/triangles) : space 89/120,
+waterfall 136/224, waterfall2 136/224, wfall_edge 16/14, underside 65/112,
+world_glow 7/5, outsky 73/112, sky 76/112, sea 49/80.
 
 ### Rendu (dlog_scene_submit @ 0x0042A4F0)
 
