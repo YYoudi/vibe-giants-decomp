@@ -89,6 +89,24 @@ ANM_Keys, FLK_Flick, FLK_Actor 0x874, bloc attach HUD 0x310). Champs inconnus =
 ne touche jamais au corpus source). Procédure : ajouter la fonction à
 `ANNOTATED_FUNCS`, relancer, relire le diff.
 
+## Corrections apportées par les témoins TASK-017 (export Ghidra typé)
+
+- `object_stop_movement` (region_0044.c @0x446A90) écrit des CONSTANTES float
+  0.25/0.5/1.0 sur +0x00..+0x30 : ce bloc est un bloc de **constantes physiques
+  réinitialisables** — la sémantique « ptr » de +0x08/+0x0C est DOWNGRADED à
+  incertaine (les accès PS2 mass/army restent réels ; witness : export
+  `decompiled/gog144_annotated/ghidra/object_stop_movement.c`).
+- `object_stop_movement_2` (@0x4973C0) = reset de la ZONE +0x190..+0x208
+  (0x1E dwords à zéro puis 1.0/30.0/32.0/100.0) — les deux homonymes sont
+  légitimes (zones distinctes), pas un doublon de nommage.
+- `sound_play_obj` : l'OBJECT\* arrive en **paramètre 1** (call-site FLK_FlickProcess
+  `sound_play_obj(idx, actor+0xC)`) ; le typage param1 a échoué (AddParameter
+  ordinal 1 refusé) → témoin RÉSERVÉ, param0 laissé int.
+- `object_lock_apply` : aucun accès couvert dans le corps (appelé avec des
+  scalaires dans FLK_FlickRender) — typage sans effet, inoffensif.
+- Exports typés : `decompiled/gog144_annotated/ghidra/<name>.c` (10 fichiers,
+  script `scripts/apply_object_witness_pyghidra.py`, DoD auto-vérifié PASS).
+
 ## Trous assumés (ne pas deviner)
 
 - Taille exacte de OBJECT et bornes des sous-blocs (0x180 = ptr ou inline ?).
