@@ -109,3 +109,12 @@ un nom (surtout `_cNN`) sans lire le corps décompilé.
   reversé + statut) ; aucun trailer `Co-Authored-By`.
 - Un commit par session de travail terminée ; jamais de demi-tâche
   commitée comme finie.
+
+## FEATURE_MAP — la carte de maturité (obligatoire)
+
+`docs/FEATURE_MAP.md` liste TOUTES les features du jeu avec deux pourcents :
+compréhension des bytes / implémentation moteur, chacun sourcé. **Toute tâche
+fermée met à jour la ou les lignes concernées** (et lance
+`python scripts/render_feature_map.py` pour régénérer la vue HTML). Un % sans
+preuve n'a pas le droit d'exister dans la carte. Consulter la carte AVANT toute
+décision de priorité.
