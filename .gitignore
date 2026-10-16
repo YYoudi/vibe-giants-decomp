@@ -122,3 +122,4 @@ venv/
 /reference_screens/
 /RuntimeLab/logs/*.png
 /RuntimeLab/gti_re/*.png
+RuntimeLab/RecordedVideoByHuman/

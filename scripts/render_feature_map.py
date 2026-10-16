@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MD = ROOT / "docs" / "FEATURE_MAP.md"
-OUT = ROOT / "docs" / "FEATURE_MAP.html"
+OUTS = [ROOT.parent / "FEATURE_MAP.html", ROOT / "docs" / "FEATURE_MAP.html"]  # vue officielle au-dessus + copie git
 
 
 def colour(pct: int) -> str:
@@ -121,8 +121,9 @@ def main() -> int:
 <footer>Généré par scripts/render_feature_map.py — régénérer après toute modification du markdown.</footer>
 </body></html>
 """
-    OUT.write_text(page, encoding="utf-8")
-    print(f"{OUT} — {len(total)} features, compris moyen {avg_all_c:.0f}%, moteur {avg_all_i:.0f}%")
+    for out in OUTS:
+        out.write_text(page, encoding="utf-8")
+    print(f"{OUTS[0]} (+copie docs/) — {len(total)} features, compris {avg_all_c:.0f}%, moteur {avg_all_i:.0f}%")
     return 0
 
 

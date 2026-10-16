@@ -110,11 +110,21 @@ un nom (surtout `_cNN`) sans lire le corps décompilé.
 - Un commit par session de travail terminée ; jamais de demi-tâche
   commitée comme finie.
 
-## FEATURE_MAP — la carte de maturité (obligatoire)
+## FEATURE_MAP — LA source de vérité de l'état du projet
 
-`docs/FEATURE_MAP.md` liste TOUTES les features du jeu avec deux pourcents :
-compréhension des bytes / implémentation moteur, chacun sourcé. **Toute tâche
-fermée met à jour la ou les lignes concernées** (et lance
-`python scripts/render_feature_map.py` pour régénérer la vue HTML). Un % sans
-preuve n'a pas le droit d'exister dans la carte. Consulter la carte AVANT toute
-décision de priorité.
+**L'état officiel du projet est `docs/FEATURE_MAP.md` et sa vue
+`G:\VibeRE\FEATURE_MAP.html`** (générée par `python scripts/render_feature_map.py`,
+aussi copiée versionnée dans docs/). Elle liste TOUTES les features du jeu avec deux
+pourcents sourcés : compréhension des bytes / implémentation moteur.
+
+**Obligation absolue, avant CHAQUE commit/push** (les deux repos) :
+1. mettre à jour la ou les lignes de FEATURE_MAP.md concernées par ton travail
+   (un % sans preuve n'existe pas) ;
+2. régénérer la vue : `python scripts/render_feature_map.py` ;
+3. committer le tout.
+
+Il n'existe AUCUN autre fichier de suivi d'état (les anciens HANDOFF/PROGRESS/
+NIGHT_REPORT sont supprimés : l'historique = `git log`, l'état = la carte).
+Le travail à faire = `G:\VibeRE\giants-rs\TASKS.md`. Les questions techniques
+moteur↔RE = `G:\VibeRE\giants-rs\QUESTIONS_FOR_DECOMP.md`. Consulter la carte
+AVANT toute décision de priorité.
