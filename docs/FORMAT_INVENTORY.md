@@ -14,7 +14,7 @@ Only reverse what is NOT covered. Update this file when coverage changes.
 | **wdefs.bin** | weapon definitions | `giants-wdefs-importer-gui` | ✅ |
 | **GCK** | world containers (zip) | documented `sent_by_Amazed/game_structure.txt` ("just zip files") | ✅ (zip) |
 | **.bin map logic** | objects/spawns/map attrs | `docs/formats/bin_objects.md` + `tools_spec/bin_formats.py` (opcode stream 19-138 byte-validated) | ✅ SOLVED 2026-10-14 |
-| **GTI (terrain)** | map terrain | — | 🔶 STARTED: header decoded (see gaps) |
+| **GTI (terrain)** | map terrain | [formats/GTI.md](formats/GTI.md) | ✅ SOLVED (cell stream corrected 2026-10-16, see doc) |
 | **GText*.bin** | translations | — (`scripts/gtext_parse.py` now) | 🔶 ~95% solved (see gaps) |
 | **WorldList.bin** | world registry | `docs/formats/worldlist.md` + `tools_spec/bin_formats.py` | ✅ SOLVED 2026-10-14 |
 | **GDF** | dedicated server defs | `dedicated.exe` generates (game_structure.txt) | 📝 tool exists |
