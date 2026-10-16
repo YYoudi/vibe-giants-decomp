@@ -1,0 +1,42 @@
+{
+ "started": "20261016_152609",
+ "runs": [
+  {
+   "run": 1,
+   "duration_s": 239.2,
+   "process_exit_detected": true,
+   "fps_sha256_before": "1a25e0226b11f5892a2862378174e8c0b82fd8a1671176737198efd8722b9265",
+   "fps_sha256_after": "fd74ed6e984ab774d877c6f6a293dd4a88d41ac1f46bff759fca7e8b642afe5e",
+   "fps_size_before": 3596,
+   "fps_size_after": 3596,
+   "fps_changed": true,
+   "fps_overwrote_not_appended": true,
+   "screenshot": "run1_screen.png"
+  },
+  {
+   "run": 2,
+   "duration_s": 239.1,
+   "process_exit_detected": true,
+   "fps_sha256_before": "fd74ed6e984ab774d877c6f6a293dd4a88d41ac1f46bff759fca7e8b642afe5e",
+   "fps_sha256_after": "ad34cd68831940c092007c7e2073ed0e369f6dad6c0c3e744a8879007b88416b",
+   "fps_size_before": 3596,
+   "fps_size_after": 3596,
+   "fps_changed": true,
+   "fps_overwrote_not_appended": true,
+   "screenshot": "run2_screen.png"
+  },
+  {
+   "run": 3,
+   "duration_s": 239.1,
+   "process_exit_detected": true,
+   "fps_sha256_before": "ad34cd68831940c092007c7e2073ed0e369f6dad6c0c3e744a8879007b88416b",
+   "fps_sha256_after": "80aa8b6ef89c5ba11b9e5336601722594f3adecc4333b64e000ac9c2a907cbca",
+   "fps_size_before": 3596,
+   "fps_size_after": 3596,
+   "fps_changed": true,
+   "fps_overwrote_not_appended": true,
+   "screenshot": "run3_screen.png"
+  }
+ ],
+ "fps_identical_across_runs": false
+}
