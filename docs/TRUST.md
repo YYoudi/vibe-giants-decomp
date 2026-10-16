@@ -35,7 +35,12 @@ du corps est un **piège**, pas une source.
 
 - `ANM_BinderDestroy_3` est en réalité `atoi`. Exemple type : suffixe
   `_3` = 3e homonyme LLM, pas une variante.
-- 23 noms dupliqués dans le corpus (un nom ≠ un corps).
+- 23 noms dupliqués dans le corpus (un nom ≠ un corps). AUDIT 2026-10-16
+  (`decompiled/dup_audit.json`) : 17 vrais doublons de fonctions (2-3 corps
+  DISTINCTS par nom — tailles différentes partout, ex. mecc_fire_logic 22 070
+  vs 43 293 octets de corps), 6 entrées = artefacts de parsing (Main/Utils/
+  _GLOBAL_/main/__get_eh_context/_malloc). Renommage Ghidra à faire
+  (un nom = un corps, suffixe à convenir avec l'architecte).
 - Anciens en-têtes « Original source » des seaux d'adresses : fictifs.
   Les fichiers sont renommés `region_00XX.c` (bande d'adresses neutre) ;
   tout en-tête survivant qui affirme une source est faux jusqu'à preuve.
