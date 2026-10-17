@@ -113,3 +113,34 @@ résultante reste le moyen de passer à observed.
 - GameObj.bin parsed end-to-end (byte-exact, 9 records + 0xFF).
 - w_Kstory1.abx walked: set_id + member stream matches the reader's expectations.
 - Parser: `tools_spec/abx.py` covers both sub-formats.
+
+### Verdict empirique f6 = AABB (2026-10-17, cross-analyse giants-rs) — `pos+euler` RÉFUTÉ
+
+Analyse des 2 828 membres des 4 mondes (W_Story1/2/4, W_M_Mecc_L1 — probe
+`f6_probe`/`f6_small_sets`/`f6_tight`, crates/giants_game/examples) :
+
+1. **Ordonnancement min ≤ max sur les 3 axes : 99-100 %** sur les Story
+   (819/825, 682/683, 681/682 ; Mecc_L1 432/638 — ses 230 membres template à
+   f6=(0,…,0) expliquent l'écart). Un triplet euler n'a AUCUNE raison
+   d'être ordonné sous son « position ».
+2. **Zéro constante d'angle quantifiée** dans f6[3..5] (0/π/2/π : ~1 % de
+   zéros = bruit + templates ; 65-70 % des valeurs HORS de [-π,π] — des
+   radians s'y trouveraient à ~100 %).
+3. **La boîte n'est PAS l'AABB du modèle enregistré** : ratios
+   modèle/boîte de 13× à 6000× (mc_laser : bounds 0×2×0 vs boîte
+   168×123×161 ; smtimmy_l4 : 5×2×4 vs 68×139×665). La sémantique de la
+   boîte VARIE par set : volumes monde-entiers sur les sets triggers
+   (mc_l4 : 4428×4428×2357), pièces empilées des sets templates (206
+   membres à l'origine, boîtes 8-13 u), empreintes sur les sets de
+   placement.
+4. La valeur par défaut du set = bien l'union des boîtes membres
+   (ré-confirmé).
+
+**Conséquence** : lire f6[0..2] comme position et f6[3..5] comme euler
+(l'hypothèse « inferred » ci-dessus) est statistiquement réfuté ; les
+rotations qui « marchent » au rendu ne marchent que par enroulement
+trigonométrique des valeurs. Ce que la boîte BOUND précisément
+(empreinte LOD, volume de trigger, AABB de rendu) exige le dump runtime
+P1.1 (bp `objectset_find` + lecture de obj+0x44 après pose). En attendant :
+les portages qui utilisent f6[0..2] comme ancre de placement le font sans
+garantie — l'ancre neutre la plus défendable est le CENTRE de la boîte.
