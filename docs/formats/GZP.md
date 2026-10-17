@@ -23,11 +23,15 @@ en-tête local `{79676, 79660, 695619628, 2}` ; `csize == usize + 16` sur tous l
 fichiers stockés testés. Source : giants-modtools `gzp.rs:60-61,166-185`
 (`docs/outils-communautaires.md:8-13`).
 
-## 🐛 Bug OUVERT partagé (golden ne prouve pas la vérité ici)
+## ✅ Bug CORRIGÉ (2026-10-17, TASK-025 giants-rs)
 
-`read_gzp.py:68,90` (référence Python) ET `giants-rs/crates/giants_gzp` portent le
-même défaut (lecture de `csize` sans retrancher les 16 octets sur les entrées
-stockées). La gate golden passe **parce que les deux implémentations descendent de
-la même erreur** — cas d'école : golden ≠ vérité quand les deux côtés partagent un
-bug. Tâche moteur à ouvrir : fix `giants_gzp` + `read_gzp.py` + re-valider les 129
-archives contre un décompressé indépendant (giants-modtools).
+`giants_gzp::read_entry` lit désormais `csize − 16` (byte-proof re-vérifié sur le
+corpus : 1472/1472 entrées stockées `csize == usize + 16` ; 311 entrées testées
+renvoient exactement `usize` octets, zéro mismatch). Le slicing bug de la golden
+vivant dans `giants-rs/tools/golden_dump.py` (aux 2 sites), il est corrigé là —
+`read_gzp.py` (snapshot PROTÉGÉ `RESSOURCES_FOR_AI`) n'est importé que pour son
+décompresseur LZSS, intact. `verify-all` VERT avec les deux côtés corrigés :
+`validate_gzp` hashe chaque payload → tout troisième bug aurait cassé la golden
+(aucun). Ancien effet du bug : les entrées stockées renvoyaient 16 octets de
+déchet en queue (tolérés silencieusement par les parseurs TGA/GBS), le flux LZSS
+recevait 16 octets ignorés.
