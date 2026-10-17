@@ -38,17 +38,31 @@ offsets. Ancrage fichier T_square_2 : origine 0x3D820, 16 entries consécutives 
 +0x10  d4     ptr (fixé ctor) — parent (suivi par ANM_NodeGetAffine)
 +0x14  d5     ptr (fixé ctor)
 +0x18  d6     callback fn-ptr (out, affine, node, anim)
-+0x24..+0x64    matrice cache (runtime)
-+0x68          float -0.0 sentinel
-+0x6C..+0x74   pos (3f)
-+0x78..+0x80   rot euler (3f) — niées au chargement par nam_entry_ctor (flag MAP_Fix+4)
-+0x84..+0x8C   scale (3f)
-+0x90          float 1.0
-+0x94  d37     u32 0x10 constant (ni ptr ni nié — porter tel quel)
++0x24          mot de classe GeoMat (u32) [erratum 2026-10-17]
++0x28..+0x68   matrice cache 16×f32 (runtime)
++0x68          transform.time (u32) — la « sentinelle -0.0 » = 0x80000000 du champ time [erratum]
++0x6C..+0x78   pos (3f)
++0x78..+0x88   rot = **QUATERNION (4f : x,y,z,w)** — x,y,z NÉGÉS par
+               `ANM_NodeGetAffine @0x53C660` (region_0053.c:15550-15586) ;
+               l'ancienne lecture « rot euler (3f) niées » était FAUSSE
+               [erratum 2026-10-17 — source giants-modtools anm_eval.rs, vérifié corpus]
++0x88..+0x94   scale (3f) — à +0x88, PAS +0x84 ; le « float 1.0 » à +0x90 est la
+               3e composante du scale par défaut [erratum]
++0x94  d37     u32 0x10 constant / classe affine (ni ptr ni nié — porter tel quel)
 +0x98..+0xA0   3 × ANM_Keys* (image-offsets dans le fichier)
 +0xA4          ANM_Keys* additionnel (relogé par la fix-table) ; count observé à +0xA8
 +0xF8..+0x100  3 × ANM_Keys* blend (seulement si class@+4 == 1)
 ```
+
+**Erratum 2026-10-17 (source giants-modtools, croisé region_0053.c)** :
+- **Composition monde = `W_parent × L_node`** (ordre NON commutatif) —
+  `ANM_NodeGetMat @0x53CB50` : `crt_matrix_mul(node+0x24, parent+0x24, local)`,
+  la translation du résultat vient de l'opérande GAUCHE (region_0053.c:15907,
+  crt_matrix_mul :17384). `skn_anm.py` compose à l'envers (voir erratum SKN_ANM.md).
+- Types de clés (u8) : 0 NULL, 1 REAL_TCB (stride 36), 2 REAL_BEZ (20), 3 REAL_LIN (8),
+  4 VEC3_TCB (60), 5 VEC3_BEZ (44), 6 VEC3_LIN (16), 7 QUAT_TCB (72), 8 QUAT_BEZ (56),
+  9 QUAT_LIN (20), 10 AFFINE_SAM. Types de nœuds : XFORM NONE=0, SAMPLE=1, PRS=2
+  (courant), LOOKAT=3. Flags nœud : pos/rot/rol/scl/aff/usr animés = bits 0..5.
 
 `ANM_Keys = { ptr@+0, ?@+4, u32 count@+8, ptr keys[count]@+0xC }` — chaque élément de keys[] est
 lui-même un pointeur relogé.
@@ -77,8 +91,9 @@ dans l'image director → ptr → entry → tracks selon track-type.
 - `docs/systems/MISSION_VM.md` (MAJ 5 : op 4 caméra ; MAJ 8 : FLK_ActorOffsetEval euler inlinée).
 - `docs/systems/CINEMATIC_PIPELINE.md` §13/§16 (sampler node, crt_stream_seek).
 - Header ANMAnim **fichier** (dump T_square_2 @0x4706C) : FileVersion@+0=0xB, ptr@+8,
-  Start@+0xC, End@+0x10, TPF@+0x14, **FPS@+0x18=30** (le diviseur op 9 = FrameRate —
-  l'empirisme `[2]/30 s` de giants-rs est validé), NAM-ptrs@+0x1C/+0x20 (la table de
+  Start@+0xC, End@+0x10, TPF@+0x14, **FPS@+0x18=30 SAUF exception** [erratum 2026-10-17] : 30 dans 1317/1318 ANM
+  livrés, MAIS `xx_ripper.gzp::rip_walk.anm` = tpf 120 / fps 40 — durée =
+  (End-Start)/TPF/FPS : toujours LIRE les champs, jamais supposer 30, NAM-ptrs@+0x1C/+0x20 (la table de
   noms du director T_square_2 est à 0x46B50), NumNodes@+0x24=220, chemin source
   `\..\server\Giants\anm\flk_story_T_square_2.ANM` à +0x48. Le runtime ANM_Anim
   (22 dwords, agent) est un struct distinct : FV@+0, Start@+4, End@+8, TPF@+0xC,

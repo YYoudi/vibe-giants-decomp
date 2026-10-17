@@ -31,12 +31,18 @@ u8 mat_lo, u8 mat_hi, u8 pad, u32 pad, f32 1.0, char[16] nom,
 u32 zero, u32 zero, ... (queue ~0x20B lue par le loader)
 ```
 
-## Flux de cellules — RLE PLAT sur toute la grille
+## Flux de cellules — RLE PLAT parcourant la grille
 
-Le flux code **toute** la grille `(tilesX+2) × (tilesZ+2)`, bordures
-comprises : les bordures sont des cellules **inactives** encodées par des
-skip runs (cf. GiantsEdit `Save` : masque linéaire actif/inactif sur
-`w*h`, runs littéraux ≤ 128 cellules).
+Le flux **parcourt** la grille `(tilesX+2) × (tilesZ+2)` via l'arithmétique de
+wrap (lignes 1..=tilesZ, wrap à tilesX+1), mais seule une **fraction des cellules
+est littérale** dans le fichier : les bordures/inactives sont couvertes par des
+skip runs (cf. GiantsEdit `Save` : masque linéaire actif/inactif sur `w*h`, runs
+littéraux ≤ 128 cellules). [Reformulé 2026-10-17 — sur KStory2.gti (195×196) :
+23 012 cellules couvertes (15 667 littérales + 7 345 skippées) sur 39 006 ;
+le flux se termine à z=tilesZ+1, consommant 172 929/172 935 octets — source
+giants-modtools, vérifié aux bytes.] OPEN : champ nom 16 vs 32 octets —
+indécidable sur l'install (tous les noms ≤ 11 chars, octets restants nuls dans
+les deux lectures ; les parseurs consomment 32 o dans tous les cas).
 
 Décodage (état `x=1, z=1`) :
 
